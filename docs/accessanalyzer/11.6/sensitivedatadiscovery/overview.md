@@ -10,7 +10,7 @@ The Sensitive Data Discovery Add-On allows Enterprise Auditor to scan file conte
 the sensitive data criteria. There are several pre-defined criteria, but you can also customize
 existing criteria or create new criteria.
 
-The Sensitive Data Discovery Add-on can be used with any of the following Enterprise Auditor
+You can use the Sensitive Data Discovery Add-on with any of the following Enterprise Auditor
 solutions:
 
 - AWS Solution
@@ -44,10 +44,9 @@ Sensitive Data Discovery Add-on.
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
-configuration; it has been preconfigured to work with Enterprise Auditor and should never be
-customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
-environment.
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
+configuration. The package preconfigures it to work with Enterprise Auditor, so never customize it
+through Java. It doesn't conflict with other JDKs or Java Runtimes in the same environment.
 :::
 
 

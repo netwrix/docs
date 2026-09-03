@@ -18,16 +18,15 @@ types.
 [](#)AD Domains Excluded
 
 The AD Domains Excluded list is used to disable Active Directory expansion for certain domain names.
-This is useful in a multi-Domain forest, where the Netwrix Data Classification server does not have
+This is useful in a multi-Domain forest, where the Netwrix Data Classification server doesn't have
 access to all domains within the forest.
 
 ![configaddomainsexcluded](/images/dataclassification/5.7/configuration/configaddomainsexcluded.webp)
 
 **Attachments Excluded**
 
-When indexing files from that potentially contain attachments (SharePoint List Items) the list of
-file locations that will be ignored is defined by the Attachments Excluded list. The definitions in
-this list may be viewed and modified via the Attachments Excluded form:
+When indexing files that potentially contain attachments (SharePoint List Items), the Attachments Excluded list defines the file locations to ignore. You can view and modify the definitions in
+this list via the Attachments Excluded form:
 
 ![configattachementsexcluded](/images/dataclassification/5.7/configuration/configattachementsexcluded.webp)
 
@@ -39,7 +38,7 @@ anywhere in the pattern definition, with:
 
 **No Index**
 
-Sometimes an application may wish to remove selected documents from all search results. This may be
+Sometimes an application may want to remove selected documents from all search results. This may be
 implemented by specifying No Index entries.
 
 ![confignoindex](/images/dataclassification/5.7/configuration/confignoindex.webp)
@@ -53,13 +52,13 @@ results. Wildcards may be used anywhere in the pattern definition, with:
 **Proxy Server**
 
 The Proxy Server form may be used to define a proxy server to be used when crawling websites, the
-proxy server is not used for SharePoint crawling.
+proxy server isn't used for SharePoint crawling.
 
 ![configproxyserver](/images/dataclassification/5.7/configuration/configproxyserver.webp)
 
 Set Bypass Local to Yes to bypass the proxy server for local addresses (localhost etc).
 
-Any other exclusions that should not go through the proxy server should be defined in the Exceptions
+Any other exclusions that shouldn't go through the proxy server should be defined in the Exceptions
 list.
 
 **Suspend Services (Scheduler)**
@@ -67,7 +66,7 @@ list.
 All Netwrix Data Classification services run as Windows services. They are responsible for building
 the search index and classifying documents against the registered taxonomies.
 
-It can be useful to suspend these services from running so that they do not impact query performance
+It can be useful to suspend these services from running so that they don't impact query performance
 during the peak hours of the working day. Sometimes it may be useful to suspend these services for
 some lower priority sources but have them continue to process higher priority sources.
 

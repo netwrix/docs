@@ -8,7 +8,7 @@ sidebar_position: 180
 
 The ExchangeMailbox Data Collector extracts configuration details from the Exchange Store to provide
 statistical, content, permission, and sensitive data reporting on mailboxes. This is a MAPI-based
-data collector which requires the **Settings** > **Exchange** node to be enabled and configured. See
+data collector which requires you to enable and configure the **Settings** > **Exchange** node. See
 the [Exchange](/docs/accessanalyzer/12.0/admin/settings/exchange.md) topic for additional information.
 
 The ExchangeMailbox Data Collector is available with a special Access Analyzer license. See the
@@ -32,13 +32,13 @@ The ExchangeMailbox Data Collector is available with a special Access Analyzer l
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each thread
+requires a minimum of 2 additional GB of RAM per host. For example, if you configure the job to scan
+8 hosts at a time, the job requires an extra 16 GB of RAM (8x2=16).
 
 ## ExchangeMailbox Query Configuration
 
-The ExchangeMailbox Data Collector is configured through the Exchange Mailbox Data Collector Wizard,
+Configure the ExchangeMailbox Data Collector through the Exchange Mailbox Data Collector Wizard,
 which contains the following wizard pages:
 
 - Welcome
@@ -60,12 +60,12 @@ Select one of the following options for the connection setting:
 
 - Use Global setting – The configured Global Setting is displayed next to this checkbox. Select the
   checkbox to use the global setting.
-- System Attendant (2003 & 2007) – Enabled when the **Use Global Setting** checkbox is not selected.
+- System Attendant (2003 & 2007) – Enabled when the **Use Global Setting** checkbox isn't selected.
   Select this option to use System Attendant (2003 & 2007) for the connection.
 - Use the mailbox associated with the Windows account that Access Analyzer is run with – Enabled
-  when the **Use Global Setting** checkbox is not selected. Select this option to use the mailbox
+  when the **Use Global Setting** checkbox isn't selected. Select this option to use the mailbox
   associated with the Windows account that Access Analyzer is run with for the connection.
-- Exchange Mailbox (2010 and newer) – Enabled when the **Use Global Setting** checkbox is not
+- Exchange Mailbox (2010 and newer) – Enabled when the **Use Global Setting** checkbox isn't
   selected. Select this option to use an Exchange Mailbox (2010 and newer) for the connection. The
   Client Access Server must be entered unless specified in the Global Settings.
 

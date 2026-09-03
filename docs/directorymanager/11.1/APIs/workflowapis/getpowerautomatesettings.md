@@ -6,7 +6,7 @@ sidebar_position: 140
 
 # Get Power Automate Settings
 
-If in Directory Manager you have linked an identity store to Power Automate, you can retrieve the
+If you have linked an identity store to Power Automate in Directory Manager, you can retrieve the
 Power Automate setting using this API.
 
 ## Endpoint

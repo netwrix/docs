@@ -19,13 +19,13 @@ Group. After you assign these to the job group, you can run it directly or sched
 **Dependencies**
 
 - .Active Directory Inventory Job Group run successfully
-- For Activity Auditing – SQL Server Audit Specifications to be configured on the target databases
+- For Activity Auditing – SQL Server Audit Specifications configured on the target databases
     - Audit destination must be a binary file
     - See the Microsoft
       [Create a Server Audit and Database Audit Specification](https://docs.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification)
       article for additional information.
-- For the SQL_SecurityAssessment Job – One or more of the following jobs or job groups must be run
-  to produce results:
+- For the SQL_SecurityAssessment Job – To produce results, run one or more of the following jobs
+  or job groups:
     - [0.Collection > SQL Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/collection/overview.md)
     - [1.Users and Roles Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/usersroles/overview.md)
     - [3.Permissions Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/permissions/overview.md)
@@ -62,9 +62,9 @@ topic for additional information.
 
 Assign the Connection Profile under the SQL > 0.Collection > Settings > Connection node.
 It is set to Use the Default Profile, as configured at the global settings level. However, since
-this may not be the Connection Profile with the necessary permissions for the assigned hosts, click
-the radio button for the Select one of the following user defined profiles option and select the
-appropriate Connection Profile dropdown menu.
+this may not be the Connection Profile with the necessary permissions for the assigned hosts, select
+the Select one of the following user defined profiles option, then choose the appropriate profile
+from the Connection Profile dropdown menu.
 
 See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
@@ -72,7 +72,7 @@ information.
 **Schedule Frequency**
 
 Schedule the SQL Job Group to run based on the types of auditing and the scope of the target
-environment. The general recommendation is to run the solution daily.
+environment. Run the solution daily.
 
 **Run Order**
 
@@ -93,8 +93,8 @@ Prerequisites:
   target SQL Server Databases. Audit destination for the configured server or database audit must be
   a binary file.
 - The 5-SQL_ServerSettings Job contains the Orphaned Users query which returns users that are
-  orphaned for each database. The query uses the sp_Change_users_login procedure which requires the
-  db_owner fixed database to be assigned to the Access Analyzer User. See the
+  orphaned for each database. The query uses the sp_Change_users_login procedure which requires assigning the
+  db_owner fixed database to the Access Analyzer User. See the
   [sp_change_users_login (Transact-SQL)](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-change-users-login-transact-sql?view=sql-server-ver15)
   Microsoft article for additional information.
 

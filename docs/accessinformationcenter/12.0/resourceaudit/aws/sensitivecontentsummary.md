@@ -11,7 +11,7 @@ matches were found in the targeted environment. This report includes a Details t
 
 ![Sensitive Content Summary report](/images/accessinformationcenter/12.0/resourceaudit/aws/sensitivecontentsummary.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Server Name – SQL server name
 - Criteria Name – Type of potentially sensitive criteria matches found

@@ -6,17 +6,17 @@ sidebar_position: 20
 
 # Add a Script to an Existing Query
 
-The Query Properties window provides the ability to add a script to an existing query. Typically, a
-script is used to augment a query providing services such as conversion of returned data.
+The Query Properties window lets you add a script to an existing query. Typically, you use a
+script to augment a query, providing services such as converting returned data.
 
-Follow the steps to add a script.
+To add a script:
 
 **Step 1 –** Navigate to the job's **Configure** node and select **Queries**.
 
 **Step 2 –** Click **Create Query** to open the Query Properties window.
 
-**Step 3 –** Select the **Data Source** tab and select the desired data collector in the Data
-Collector drop-down menu.
+**Step 3 –** Select the **Data Source** tab and select the data collector you want in the Data
+Collector dropdown menu.
 
 ![Query Properties window](/images/accessanalyzer/12.0/admin/datacollector/script/querypropertiesexisting.webp)
 

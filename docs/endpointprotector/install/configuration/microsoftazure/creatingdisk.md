@@ -37,8 +37,7 @@ Machine. To create a disk, follow these steps.
 - VM generation – select Generation 1
 - Size - select 128 GB
 
-**Step 5 –** Click Review + Create and wait for the Successfully created disk message to be
-displayed.
+**Step 5 –** Click Review + Create and wait for the disk creation success message.
 
 ![A screenshot of a computer
 
@@ -76,8 +75,8 @@ generated](newvm.webp)
 **Step 8 –** Click Review + create and then Create.
 
 :::note
-For Additional Features, we recommend selecting HDD instead of SSD to avoid unnecessary
-payments for an unused SSD attached to the Virtual Machine.
+For Additional Features, select HDD instead of SSD to avoid unnecessary payments for an unused SSD
+attached to the Virtual Machine.
 :::
 
 
@@ -86,7 +85,7 @@ payments for an unused SSD attached to the Virtual Machine.
 Description automatically
 generated](publicip.webp)
 
-**Step 9 –** Once the deployment has finished, go to Virtual Machines on the right side and select
+**Step 9 –** After the deployment finishes, go to Virtual Machines on the right side and select
 the Endpoint Protector image.
 
 ![connetctip](connetctip.webp)

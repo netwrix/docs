@@ -18,7 +18,7 @@ Maintain indexes and update statistics for all database tables. Also cleans up d
 |---|---|
 | DisplayName_L1 required | **Type:** String **Description:** Display name of the task in language 1 (up to 16). |
 | AllIndexes <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Defines whether all indexes should be rebuilt without checking average fragmentation percent. |
-| ContinueOnError <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` if the execution of the Task returning an error should not stop the job machine state. |
+| ContinueOnError <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` if the execution of the Task returning an error shouldn't stop the job machine state. |
 | Identifier optional | **Type:** String **Description:** Unique identifier of the task. |
 | NoNormalizationCheck <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Prevent the cleanup of the database inconsistencies (foreign keys, forbidden values...). |
 | Offline <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Defines whether the indexes should be rebuilt offline. |

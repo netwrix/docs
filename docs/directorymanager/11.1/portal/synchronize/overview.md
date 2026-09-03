@@ -8,12 +8,12 @@ sidebar_position: 90
 
 Directory Manager Synchronize is a web-based application that can be accessed using the Directory
 Manager portal. The application is a bi-directional synchronization engine for transferring data
-from one data source to another. The data sources may include directory servers, databases or files.
-Utilizing a very intuitive GUI, you can create Synchronize jobs to provision, de-provision or
+from one data source to another. The data sources may include directory servers, databases, or files.
+With a very intuitive GUI, you can create Synchronize jobs to provision, de-provision, or
 synchronize multiple data sources.
 
 The Synchronize portal is also capable of applying transformations to the data being transferred.
-This allows you to convert data after retrieving it from the source and before it gets saved at the
+With the portal, you can convert data after retrieving it from the source and before it gets saved at the
 destination.
 
 ## Prerequisites for Synchronize
@@ -21,7 +21,7 @@ destination.
 Using Directory Manager, you can create identity stores for several identity providers (such as
 Active Directory and Microsoft Entra ID) as well as create data sources for providers such as files
 and databases. Directory Manager Synchronize uses user-defined identity stores (as source and
-destination) built on databases, files and other applications such as Oracle, SQL and so on. To view
+destination) built on databases, files, and other applications such as Oracle, SQL, and so on. To view
 the list of supported Synchronize providers, see the [Synchronize Providers](/docs/directorymanager/11.1/portal/synchronize/provider.md) topic.
 
 The following must be defined before you can use Synchronize:
@@ -31,12 +31,12 @@ The following must be defined before you can use Synchronize:
   jobs and job collections.
 
     Synchronize data for AD and Microsoft Entra ID is directly saved to Elasticsearch and
-    Replication is not required.
+    replication isn't required.
 
 - Data Sources – You need to add the data sources in Admin Center like Microsoft Excel, Text,
   Oracle, etc for creating job and job collections.
 - Permissions – For performing Synchronize operations, the logged-in user must have Synchronize
-  specific permissions. These permissions enable the user to create, edit and run jobs or job
+  specific permissions. These permissions enable the user to create, edit, and run jobs or job
   collections as per the defined Synchronize policy.
 - Policies – Using the Synchronize policy, you can allow or disallow a provider to be used as a
   source or destination. You can choose the object types that can be created or synced at the

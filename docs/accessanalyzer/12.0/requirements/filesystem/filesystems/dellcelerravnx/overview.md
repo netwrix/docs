@@ -38,12 +38,12 @@ topic for additional information.
 
 Troubleshooting Dell Celerra & Dell VNX Denied Access Errors
 
-If there are folders to which the credential is denied access, it is likely that the Backup
-Operators group does not have the “Back up files and directories” right. In that case, it is
-necessary to assign additional the “Back up files and directories” right to those groups or to
-create a new local group, using Computer Management from a Windows server. Then assign rights to it
-using the CelerraManagementTool.msc plugin, which is available to Dell customers. For further
-information, see the Celerra guide Using Windows Administrative Tools on VNX found on the Celerra
+If there are folders to which the credential is denied access, the Backup
+Operators group likely doesn't have the “Back up files and directories” right. In that case,
+assign the “Back up files and directories” right to those groups, or
+create a new local group using Computer Management on a Windows server. Then assign rights to it
+using the CelerraManagementTool.msc plugin, which is available to Dell customers. For more
+information, see the Celerra guide Using Windows Administrative Tools on VNX on the Celerra
 website.
 
 ## Access & Sensitive Data Auditing Port Requirements
@@ -65,7 +65,7 @@ server:
 - Membership in the local Administrators group
 - READ and WRITE access to the archive location for Archiving feature only
 
-It is also necessary to enable the Remote Registry Service on the Activity Agent server.
+You also need to enable the Remote Registry Service on the Activity Agent server.
 
 For integration between the Activity Monitor and Access Analyzer, the credential used by Access
 Analyzer to read the activity log files must have also have this permission.
@@ -88,9 +88,9 @@ instructions.
 
 **Activity Monitor Archive Location**
 
-If the activity log files are being archived, configurable within the Netwrix Activity Monitor
-Console, then the credential used by Access Analyzer to read the activity log files must also have
-READ and WRITE permissions on the archive location.
+If you configure the Netwrix Activity Monitor Console to archive activity log files, the credential
+used by Access Analyzer to read the activity log files must also have READ and WRITE permissions on
+the archive location.
 
 ## Activity Auditing Port Requirements
 
@@ -101,9 +101,9 @@ are required for communication between the Agent server and the Netwrix Activity
 | -------------------------------- | -------- | ----- | ------------------- |
 | Activity Monitor to Agent Server | TCP      | 4498  | Agent Communication |
 
-The Windows firewall rules need to be configured on the Windows server, which require certain
-inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+Configure the Windows firewall rules on the Windows server. If the scans run in applet mode, create
+the required inbound rules. These scans operate over a default port range, which you can't specify
+in an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 
@@ -119,7 +119,7 @@ Monitor Activity Agent server and the target Dell device:
 
 Additional Firewall Rules for Integration between Access Analyzer and Activity Monitor
 
-Firewall settings are dependent upon the type of environment being targeted. The following firewall
+Firewall settings depend on the type of environment being targeted. The following firewall
 settings are required for communication between the agent server and the Access Analyzer Console:
 
 | Communication Direction         | Protocol | Ports      | Description                    |

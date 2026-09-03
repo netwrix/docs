@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Intel Security
 
-Netwrix Auditor Add-on for SIEM helps you to get most from your SIEM investment. This topic focuses
+Netwrix Auditor Add-on for SIEM helps you get the most from your SIEM investment. This topic focuses
 on the Intel Security SIEM solution.
 
 The add-on works in collaboration with Netwrix Auditor, supplying additional data that augments the
@@ -46,5 +46,4 @@ follows:
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
-leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
+Ensure to check your product version, and then review and update your add-ons and scripts that work with Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

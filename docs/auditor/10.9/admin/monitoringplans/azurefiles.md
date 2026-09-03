@@ -22,8 +22,8 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 1. In the **Netwrix Auditor**, go to **Home > Monitoring Plans > + Add Plan**
 2. Select **Azure Files**
 3. Configure:
- - [Audit database (SQL)](/docs/auditor/10_8/admin/settings/auditdatabase)
- - [Notifications (SMTP or Exchange Online)](/docs/auditor/10_8/admin/settings/notifications)
+ - [Audit database (SQL)](/docs/auditor/10_9/admin/settings/auditdatabase)
+ - [Notifications (SMTP or Exchange Online)](/docs/auditor/10_9/admin/settings/notifications)
  - Plan name and description
  - Select **Add item now**
 
@@ -33,7 +33,7 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 - Option A – Storage Account → Enter **Storage Account Name, Subscription ID, Tenant Name, Application ID, Application Secret**
 - Option B – Subscription → Enter **Subscription Name, Subscription ID, Tenant Name, Application ID, Application Secret**
 
-**Tip:** If you have multiple storage accounts, use the subscription option for easier management
+**Tip:** If you have multiple storage accounts, use the subscription option to manage them from a single monitored item
 
 
 ### Step 3: Configure Monitoring Scope and Actions
@@ -44,37 +44,37 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 3. Select actions:
 
    - **Changes (Success/Fail)** → Track file creation, modification, deletion, and failed attempts
-     - **Successful** - Use this option to track changes to your data. It helps to find out who made changes to your files, including their creation and deletion
-     - **Failed** - Use this option to detect suspicious activity on Azure Files. It helps to identify potential intruders who tried to modify or delete files, etc., but failed to do it
+     - **Successful** - Use this option to track changes to your data. It shows who created, modified, and deleted your files
+     - **Failed** - Use this option to detect suspicious activity on Azure Files. It helps identify potential intruders who tried to modify or delete files but failed
 
    - **Read Access (Success/Fail)** → Track file reads and unauthorized read attempts
      - **Successful** - Show successful attempts to read files
-     - **Failed** - Use this option to track suspicious activity. Helps find out who was trying to access your private data without proper justification.Enabling this option on public shares will result in a high number of events generated on Azure Files and the amount of data written to the Long-Term Archive
+     - **Failed** - Use this option to detect unauthorized attempts to read your data. Enabling this option on public shares generates a high volume of events on Azure Files and increases the amount of data Netwrix Auditor writes to the Long-Term Archive
 
 **Note:** Enabling read access auditing on public shares may generate high event volume
 
 **Tip:** Only enable read auditing where compliance requires it (e.g., HR, Finance)
 
-4. Add exclusions → e.g., service accounts that produce excessive logs
-
-- **Monitored object types** - Select from:
+4. **Monitored object types** - Select from:
  - Files
  - Folders
  - Shares
-- **Monitored actions** - Configure which file operations to track
+5. **Monitored actions** - Configure which file operations to track
+6. **Collect data for state-in-time reports** – Enable this option to have Netwrix Auditor store periodic snapshots of your Azure Files permissions. State-in-Time reports, including permission and effective access reports, require these snapshots. See [Configuring State-in-Time Data Collection for Azure Files](/docs/auditor/10.9/configuration/azurefiles/stateintime.md) for the snapshot schedule, historical snapshot import, and optional Active Directory integration for on-premises accounts and groups.
+7. Click **Save**
 
-### Step 5: Test Connection
+### Step 4: Configure Exclusions (optional)
 
-Click **Test Connection** to verify:
-- Microsoft Entra ID authentication
-- Storage account access
-- Audit log collection
+What you can exclude depends on the monitored item type:
+
+- **Azure Subscription items** – On the item's **Scope** tab, exclude specific **storage accounts** or **resource groups** by name so Netwrix Auditor skips them entirely for this subscription.
+- **Azure Storage Account items** – On the item's **Scope** tab, use the **Omit List** to exclude specific shares, folders, or files (Universal Naming Convention (UNC) paths). Choose **All** to exclude an object from all data collection, **State-in-Time** to exclude it from State-in-Time snapshots only, or **User Activity** to exclude it from activity data collection only. See [Configuring the monitoring scope (omit lists)](/docs/auditor/10.9/configuration/azurefiles/stateintime.md#configuring-the-monitoring-scope-omit-lists) for details.
 
 ## Next Steps
 
 After creating the monitoring plan:
 1. **Verify data collection** is working
-2. **[Configure reports](/docs/auditor/10_8/admin/reports/overview)** as needed
-3. **[Set up alerts](/docs/auditor/10_8/admin/alertsettings/create/)** for important events
+2. **[Configure reports](/docs/auditor/10_9/admin/reports/overview)** as needed
+3. **[Set up alerts](/docs/auditor/10_9/admin/alertsettings/create/)** for important events
 
 For configuration requirements, see [Azure Files Configuration](/docs/auditor/10.9/configuration/azurefiles/overview.md)

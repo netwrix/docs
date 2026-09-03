@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Agent Restoration
 
-Follow the steps to restore the configuration, Active Directory configuration file, and activity log
+To restore the configuration, Active Directory configuration file, and activity log
 files for Activity Monitor Agents deployed on file system servers, SharePoint servers, and domain
-controllers.
+controllers, complete these steps:
 
 :::warning
 Restore the agent before restoring the console to ensure connectivity and monitoring

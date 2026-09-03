@@ -15,10 +15,9 @@ required:
 
 Alternatively, you can assign the default administrator role to that account.
 
-You can grant the required privileges to the existing account, or create a new one. Follow the
-procedure described below.
+You can grant the required privileges to the existing account, or create a new one.
 
-Follow the steps to grant CREATE SESSION and SELECT privileges to the account.
+## Grant CREATE SESSION and SELECT privileges
 
 **Step 1 –** On the computer where your database is deployed, run the sqlplus tool.
 

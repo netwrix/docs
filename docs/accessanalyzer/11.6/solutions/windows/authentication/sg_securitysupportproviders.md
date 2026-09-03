@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # SG_SecuritySupportProviders Job
 
-The SG_SecuritySupportProviders job identifies security support providers on all targeted hosts,
-highlighting potentially malicious SSPs.
+The SG_SecuritySupportProviders job identifies security support providers (SSPs) on all targeted
+hosts, highlighting potentially malicious SSPs.
 
 ## Queries for the SG_SecuritySupportProviders Job
 
@@ -31,7 +31,7 @@ Navigate to the **Windows** > **Authentication** > **SG_SecuritySupportProviders
 node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

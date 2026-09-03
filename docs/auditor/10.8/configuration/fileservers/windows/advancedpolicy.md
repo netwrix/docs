@@ -12,21 +12,14 @@ below instead of the [Configure Local Audit Policies](/docs/auditor/10.8/configu
 
 ## Configure Security Options
 
-Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To force
-basic audit policies to be ignored and prevent conflicts, enable the _Audit: Force audit policy
-subcategory settings_ policy.
+Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To force basic audit policies to be ignored and prevent conflicts, enable the **Audit: Force audit policy subcategory settings** policy.
 
-Follow the steps to enforce advanced policies.
+1. On the audited server, open the **Local Security Policy** snap-in and navigate to **Start** > **Windows Administrative Tools** > **Local Security Policy**.
+2. Navigate to **Security Settings** > **Local Policies** > **Security Options** and locate the **Audit: Force audit policy subcategory settings** policy.
 
-**Step 1 –** On the audited server, open the Local Security Policy snap-in and navigate to Start >
-Windows Administrative Tools > Local Security Policy.
+![Local Security Policy snap-in](/images/1secure/configuration/computer/manualconfig_fileserver_graudit_secpol2016.webp)
 
-**Step 2 –** Navigate to Security Settings > Local Policies > Security Options and locate the Audit:
-Force audit policy subcategory settings policy.
-
-![Local Security Policy snap-in ](/images/1secure/configuration/computer/manualconfig_fileserver_graudit_secpol2016.webp)
-
-**Step 3 –** Double-click the policy and enable it.
+3. Double-click the policy and enable it.
 
 ## Configure Advanced Audit Policy on Windows Server 2016 and Above
 

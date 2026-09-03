@@ -18,7 +18,7 @@ Explicit permissions are assigned to a user. To facilitate permission viewing, d
     This must be a server in an Active Directory based identity store.
 
 - Compute all permissions that directory objects have on the shared files and folders on those
-  server(s).
+  servers.
 - View these permissions in the Directory Manager portal.
 
 ## Entitlement job
@@ -36,7 +36,7 @@ An Entitlement schedule is automatically created for an identity store when:
 By default, the schedule runs weekly to compute permissions on shared files and folders residing on
 the specified servers (for Active Directory), and the document libraries present in the specified
 sites (for SharePoint). It then replicates these permissions to Elasticsearch, enabling users to
-view, manage and update these permissions in the Directory Managerportal.
+view, manage, and update these permissions in the Directory Manager portal.
 
 ## Permissions on the Entitlement portal
 

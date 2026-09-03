@@ -15,18 +15,18 @@ following topics for additional information:
 
 ## Architecture Overview
 
-Netwrix Auditor provides comprehensive auditing of applications, platforms and storage systems. The
-product architecture and components interactions are shown in the figure below.
+Netwrix Auditor provides comprehensive auditing of applications, platforms, and storage systems. The
+following figure shows the product architecture and component interactions.
 
 ![auditorarchitecture_thumb_0_0](/images/auditor/10.9/requirements/auditorarchitecture_thumb_0_0.webp)
 
-- Netwrix Auditor Server — the central component that handles the collection, transfer and
-  processing of audit data from the various data sources (audited systems). Data from the sources
-  not yet supported out of the box is collected using RESTful Integration API.
+- Netwrix Auditor Server — the central component that handles the collection, transfer, and
+  processing of audit data from the various data sources (audited systems). Netwrix Auditor
+  collects data from sources it doesn't natively support using the RESTful Integration API.
 - Netwrix Auditor Client — a component that provides a friendly interface to authorized personnel
-  who can use this console UI to manage product settings, examine alerts, reports and search
-  results. Other users can obtain audit data by email or with 3rd party tools — for example, reports
-  can be provided to the management team via the intranet portal. The Client may be installed on
+  who can use this console UI to manage product settings, examine alerts, reports, and search
+  results. Other users can obtain audit data by email or with third-party tools — for example, you
+  can provide reports to the management team via the intranet portal. You can install the Client on
   other hosts using the same installer as the server.
 - Data sources — entities that represent the types of audited systems supported by Netwrix Auditor
   (for example, Active Directory, Exchange Online, NetApp storage system, and so on), or the areas
@@ -34,16 +34,16 @@ product architecture and components interactions are shown in the figure below.
 - Long-Term Archive — a file-based storage repository that keeps the audit data collected from all your
   data sources or imported using Integration API in a compressed format for a long period of time.
   Default retention period is **120 months**.
-- Audit databases — these are Microsoft SQL Server databases used as operational storage. This type
-  of data storage allows you to browse recent data, run search queries, generate reports and
+- Audit databases — these are Microsoft SQL Server databases used as operational storage. Use this
+  type of data storage to browse recent data, run search queries, and generate reports and
   alerts.
-  Typically, data collected from the certain data source (for example, Exchange Server) is stored to
-  the dedicated Audit database and the long-term archive. So, you can configure as many databases as
-  the data sources you want to process. Default retention period for data stored in the Audit
-  database is **180 days**.
+  Typically, Auditor stores data collected from a specific data source (for example, Exchange
+  Server) in the dedicated Audit database and the long-term archive. So, you can configure as many
+  databases as the data sources you want to process. Default retention period for data stored in
+  the Audit database is **180 days**.
 
 **NOTE:** When auditing Active Directory domains, Exchange servers, expired passwords, and inactive
-users, the data sent by the product can be encrypted using [Signing and Sealing](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/enable-ldap-signing-in-windows-server). See the following
+users, the product can encrypt the data it sends using [Signing and Sealing](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/enable-ldap-signing-in-windows-server). See the following
 Netwrix knowledge base article for additional information on how to secure Netwrix Auditor:
 [Best Practices for Securing Netwrix Auditor](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/best-practices-for-securing-netwrix-auditor).
 
@@ -59,12 +59,12 @@ The general workflow stages are as follows:
 
   - To provide a coherent picture of changes that occurred in the audited systems, the product can
     consolidate data from multiple independent sources (event logs, configuration snapshots,
-    change history records, etc.). This capability is implemented with Netwrix Auditor Server and
-    Integration API.
+    change history records, etc.). Netwrix Auditor Server and Integration API implement this
+    capability.
   - See the [Integration API](/docs/auditor/10.9/api/overview.md) topic for additional information on custom data
     source processing workflow.
-- Audit data is stored to the Audit databases and the repository (Long-Term Archive) and preserved
-  there according to the corresponding retention settings.
+- Netwrix Auditor stores audit data in the Audit databases and the repository (Long-Term Archive)
+  and preserves it there according to the corresponding retention settings.
 - Netwrix Auditor analyzes the incoming audit data and alerts appropriate staff about critical
   changes, according to the built-in alerts you choose to use and any custom alerts you have
   created.

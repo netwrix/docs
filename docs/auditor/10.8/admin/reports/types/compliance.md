@@ -21,8 +21,8 @@ standards and regulations, including but not limited to:
 - SOX
 - CJIS
 
-Each compliance folder provides overview on a selected standard, to read it, click on the folder
-name. Click Read More to learn more about mapping between these standards and Auditor reports.
+Each compliance folder provides overview on a selected standard, to read it, click the folder
+name. See [Compliance Mappings](/docs/auditor/10.8/admin/compliancemappings.md) for details on how Auditor reports align with these standards.
 
 In the report filters, select a monitoring plan you want to generate a report for. To review data
 sources and items included in each plan, navigate to the Monitoring Plans section.

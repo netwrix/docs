@@ -23,8 +23,7 @@ This report is comprised of the following columns:
 - Name – Type of exception found
 - Path – Original location where the operation occurred
 
-There is one table at the bottom displaying Permission Source for the select trustee. It contains
-all of the ways the selected trustee has been granted rights to the selected resource.
+The Permission Source table at the bottom contains all of the ways the selected trustee has been granted rights to the selected resource.
 
 ![Permission Source table](/images/accessinformationcenter/12.0/resourceaudit/filesystem/sharesubfolder/shareexceptionstable.webp)
 

@@ -14,7 +14,7 @@ This page is about [EasyVista Ticket](../../../integration-guide/connectors/refe
 
 ## Overview
 
-EasyVista is an IT Service Manager that provides a service to organize IT resources in a company by using tickets. This allows users to manage projects, materials and teams through a customizable interface.
+EasyVista is an IT Service Manager that provides a service to organize IT resources in a company by using tickets. With EasyVista, you can manage projects, materials, and teams through a customizable interface.
 
 This connector focuses on the creation of EasyVista tickets for editing manually EasyVista resources.
 
@@ -28,11 +28,11 @@ Implementing this connector requires:
 
 ## Export
 
-This connector exports some of EasyVista entities, see the export capabilities of the [EasyVista](../../../integration-guide/connectors/references-packages/easyvista) connector. Some entities cannot be exported.
+This connector exports some of EasyVista entities, see the export capabilities of the [EasyVista](../../../integration-guide/connectors/references-packages/easyvista) connector. Some entities can't be exported.
 
 ## Fulfill
 
-This connector writes to EasyVista to **create** incident and request tickets containing information to **create**, update or delete a resource. It does **not** **create** a resource directly.
+This connector writes to EasyVista to **create** incident and request tickets containing information to **create**, update, or delete a resource. It doesn't **create** a resource directly.
 
 Once created, the ticket is managed in EasyVista, **not** in Identity Manager.
 

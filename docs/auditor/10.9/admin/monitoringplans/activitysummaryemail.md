@@ -6,16 +6,16 @@ sidebar_position: 220
 
 # Activity Summary Email
 
-Activity Summary email is generated automatically by Netwrix Auditor and lists all changes /
+Netwrix Auditor automatically generates the Activity Summary email, which lists all changes /
 recorded user sessions that occurred since the last Activity Summary delivery. By default, for most
-data sources an Activity Summary is generated daily at 3:00 AM and delivered to the specified
+data sources Netwrix Auditor generates an Activity Summary daily at 3:00 AM and delivers it to the specified
 recipients. You can also launch data collection and Activity Summary generation manually.
 
 Notifications on user activity and event log collection (Event Log Collection Status) are a bit
-different and do not show changes.
+different and don't show changes.
 
-The following Activity Summary example applies to Active Directory. Other Activity Summaries
-generated and delivered by Netwrix Auditor will vary slightly depending on the data source.
+The following Activity Summary example applies to Active Directory. Other Activity Summaries that
+Netwrix Auditor generates and delivers vary slightly depending on the data source.
 
 ![ad_activitity_summary_thumb_0_0](/images/auditor/10.9/admin/monitoringplans/ad_activitity_summary_thumb_0_0.webp)
 
@@ -34,8 +34,8 @@ The example Activity Summary provides the following information on Active Direct
 | Details     | Shows the before and after values of the modified AD object.                                                        |
 
 To initiate an on-demand Activity Summary delivery, navigate to the Monitoring Plans section, select
-a plan, click Edit, and then select Update. A summary will be delivered to the specified recipient,
-listing all activity that occurred since the last data collection.
+a plan, click Edit, and then select Update. Netwrix Auditor delivers a summary to the specified
+recipient, listing all activity that occurred since the last data collection.
 
 To disable Activity Summary Emails, you need to disable notifications in the settings. See the
 [Notifications](/docs/auditor/10.9/admin/settings/notifications.md) topic for additional information.

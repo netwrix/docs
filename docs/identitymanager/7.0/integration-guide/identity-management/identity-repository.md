@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Identity Repository
 
-One of the main purposes of an IGA tool is to build a comprehensive repository containing all identities in the organization. This repository is essential in order to set up the features for identity lifecycle management, and manage entitlement assignments.
+One of the main purposes of an IGA tool is to build a comprehensive repository containing all identities in the organization. This repository is essential to set up the features for identity lifecycle management, and manage entitlement assignments.
 
 ## Overview
 
@@ -46,12 +46,12 @@ Not all data is useful for identity governance and administration. Thus, to star
 
     > For example, consider that internal employees must be managed by HR officers only, then you'll
     > need to identify whether users are internal employees or external contractors. Then you should
-    > make sure that you fill an `Employee Type` property with at least two values: one for internal
+    > ensure that you fill an `Employee Type` property with at least two values: one for internal
     > employees, and one for external contractors.
 
 - is needed to automatically grant permissions.
 
-    > For example, if a user's position title ("manager" for instance), defines what users currently
-    > do, and thus what permissions they need, then you should make sure to fill in a property
+ > For example, if a user's position title ("manager" for instance), defines what users 
+    > do, and thus what permissions they need, then you should ensure to fill in a property
     > storing the position's title in the workforce repository.
 

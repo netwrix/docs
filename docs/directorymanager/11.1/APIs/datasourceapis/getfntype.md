@@ -6,8 +6,8 @@ sidebar_position: 80
 
 # Get Filenames by Type
 
-Use this API to get source file name(s) residing on local server(s) or in cloud for a specific type
-of a data source(s), let's say source file name(s) residing in OneDrive for Excel data source(s).
+Use this API to get source file names residing on local servers or in cloud for a specific type
+of data sources. For example, retrieve file names for Excel data sources stored in OneDrive.
 
 ## Endpoint
 

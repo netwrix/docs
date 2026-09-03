@@ -53,7 +53,7 @@ Credentials section.
 ![esxicredentials](/images/changetracker/integration/vmware/esxicredentials.webp)
 
 **Step 2 –** Click the Add button and enter the credential information. For vCenter / ESXi
-monitoring, use vCenter as the Host Type because it allows for ESXi node discovery. The ESXi Host
+monitoring, use vCenter as the Host Type because it enables ESXi node discovery. The ESXi Host
 Type option enables connections to standalone ESXi servers.
 
 ![esxicredentialform](/images/changetracker/integration/vmware/esxicredentialform.webp)
@@ -63,7 +63,7 @@ Type option enables connections to standalone ESXi servers.
 A vSphere cluster consists of ESXi nodes. In the past, you had to add each ESXi node manually as
 a proxied device. You can now add the vSphere service as a proxied device and automatically
 discover all its ESXi nodes and add them as proxied devices. This speeds up configuration and helps
-you keep up with fast-changing environments where ESXi nodes are frequently created, removed, or
+you manage fast-changing environments where ESXi nodes change frequently — created, removed, or
 migrated between clusters.
 
 From the Settings menu, select Device Discovery. Select ESXi / vCenter Discovery from the dropdown

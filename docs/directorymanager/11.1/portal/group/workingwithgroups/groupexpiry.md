@@ -64,7 +64,7 @@ policy is defined for an identity store and applies to all groups.
 
 The Group Life Cycle policy mainly defines:
 
-- When to expire a group. Groups with a 'Never Expire' policy cannot be expired manually or by the
+- When to expire a group. Groups with a 'Never Expire' policy can't be expired manually or by the
   Group Lifecycle job.
 - Whether to notify the group owner or the default approver (in case the group has no owner) about
   group expiry x number of days before the group expires.
@@ -72,7 +72,7 @@ The Group Life Cycle policy mainly defines:
   This also applies to manually expired groups.
 
 Of these, only the expiry period can be changed for individual groups. The remaining settings apply
-to all groups in the identity store and cannot be changed for individual groups.
+to all groups in the identity store and can't be changed for individual groups.
 
 When the Group Lifeycle job executes the Group Lifecycle policy, it monitors group expiry dates as
 determined by each group’s expiration period. See the
@@ -84,12 +84,12 @@ topic.
 The Group Lifecycle job monitors the expiry policy of all groups. When a group approaches its
 expiry, the job does the following:
 
-- When notifications are not enabled in the Group Lifecycle policy, the Group Lifecycle job expires
+- When notifications aren't enabled in the Group Lifecycle policy, the Group Lifecycle job expires
   the group without notifying anyone.
 - When notifications are enabled, the job notifies the primary and additional owners or the default
   approver (in case no owner is set for the group) about the approaching expiry.
 
-    In case the notification could not be sent or no recipient is available, the schedule extends
+    In case the notification couldn't be sent or no recipient is available, the schedule extends
     the expiry date of the group by 7 days on the group’s expiry day. It continues to do so until
     the notification is sent.
 

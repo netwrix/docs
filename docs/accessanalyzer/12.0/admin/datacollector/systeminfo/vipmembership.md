@@ -7,8 +7,8 @@ sidebar_position: 50
 # SystemInfo: VIP Membership
 
 The VIP Membership provides the option to add members to a VIP List and exclude them from contact
-about probable ownership. Any users can be added to VIP membership. This page is enabled when the
-VIPList property is selected on the Results page.
+about probable ownership. You can add any users to VIP membership. This page becomes available
+when you select the VIPList property on the Results page.
 
 ![System Info Data Collector Wizard VIP Membership page](/images/accessanalyzer/12.0/admin/datacollector/systeminfo/vipmembership.webp)
 

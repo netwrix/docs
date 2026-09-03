@@ -30,7 +30,7 @@ ASE or HANA database with a service account, as a database administrator
 
 To connect to the SAP database using SSH, use the following commands:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 su sybaba
@@ -39,7 +39,7 @@ isql -S <database (ABA is the default value)> -U<administrator's login> -P<admin
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 isql -S ABA -Usapsso -PV1H#M$4JIgU$qd -X
@@ -69,7 +69,7 @@ Create a login for Identity Manager's service account with at least reading acce
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 ```text
 execute sp_addlogin <login>, <password>, <database (ABA is the default value)>
 go
@@ -107,7 +107,7 @@ To set up the prerequisites for reading follow the steps below.
 **Set up the prerequisites for writing**
 
 :::note
- Make sure the Read prerequisites are configured first.
+ Ensure the Read prerequisites are configured first.
 :::
 **Step 1 –** Copy the provided DLL `sapnwrfc.dl` into the Runtime of Identity Manager.
 
@@ -131,7 +131,7 @@ This connector extracts users, roles, profiles, profile memberships, role member
 
 This process is configured through a connection in the UI and/or the XML configuration, and in the ***appsettings.agent.json*** > **Connections** section. See the [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) topic for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -155,7 +155,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -179,7 +179,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | Name | Type | Description |
  | --- | --- | --- |
  | IsHana default value: false | Boolean | True to connect to an S/4 HANA instance instead of an ERP 6.0. |
- | AseLogin required | String | Login to connect to SAP ASE. |
+ | AseLogin required | String | log in to connect to SAP ASE. |
  | AsePassword required | String | Password to connect to SAP ASE. |
  | Client required | String | Client id of SAP. |
  | Instance required | String | Instance of the SAP database. |
@@ -214,7 +214,7 @@ Same as for export, fulfill is configured through connections. See the SAP ERP 6
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -237,7 +237,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | --- | --- | --- |
  | IsHana default value: false | Boolean | True to connect to an S/4 HANA instance instead of an ERP 6.0. |
  | Server required | String | URL of the SAP ERP server. |
- | BapiLogin required | String | Login to connect to the specified server. |
+ | BapiLogin required | String | log in to connect to the specified server. |
  | BapiPassword required | String | Password to connect to the specified server. |
 
 ### Password reset
@@ -274,7 +274,7 @@ Protected attributes are stored inside a safe in <b>cyberark</b>, into an accoun
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.<b>cyberark</b>.agent.json*

@@ -17,7 +17,7 @@ You can use group Managed Service Accounts (gMSA) as data collecting accounts.
 1. To access SQL Server, Windows authentication will be used, so data collection account should be a
    Windows account specified in the _domain\user_ format (_domain\user$_ for Managed Service
    Account).
-   SQL Server logins and authentication method are not supported.
+   SQL Server logins and authentication method aren't supported.
 2. The account must be assigned the **System Administrator** server role for this SQL Server. See
    Assigning 'System Administrator' Role section for more information.
 3. For auditing SQL Server availability on groups, the account must have the sysadmin server role

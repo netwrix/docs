@@ -14,7 +14,7 @@ This page is about [Microsoft Exchange](../../../integration-guide/connectors/re
 
 ## Overview
 
-Microsoft Exchange Server is Microsoft's email, calendar, contact, scheduling and collaboration platform. It is deployed on the Windows Server operating system (OS) for business use. This connector uses [Exchange Server PowerShell (Exchange Management Shell)](https://docs.microsoft.com/en-us/powershell/exchange/exchange-management-shell?view=exchange-ps) to export databases and mailboxes.
+Microsoft Exchange Server is Microsoft's email, calendar, contact, scheduling, and collaboration platform. It is deployed on the Windows Server operating system (OS) for business use. This connector uses [Exchange Server PowerShell (Exchange Management Shell)](https://docs.microsoft.com/en-us/powershell/exchange/exchange-management-shell?view=exchange-ps) to export databases and mailboxes.
 
 ## Prerequisites
 
@@ -82,15 +82,15 @@ This connector is meant to generate the following files:
 - `<connectionIdentifier>_mailboxes.csv` with the following columns:
 
 ``` <connectionIdentifier>_databases.csv Command,Database,EmailAddresses,UseDatabaseRetentionDefaults,RetainDeletedItemsUntilBackup,DeliverToMailboxAndForward,ExchangeGuid,ExchangeUserAccountControl,ForwardingAddress,ForwardingSmtpAddress,IsMailboxEnabled,ProhibitSendQuota,ProhibitSendReceiveQuota,RecoverableItemsQuota,RecoverableItemsWarningQuota,CalendarLoggingQuota,IsResource,IsLinked,IsShared,SamAccountName,AntispamBypassEnabled,ServerName,UseDatabaseQuotaDefaults,UserPrincipalName,WhenMailboxCreated,IsInactiveMailbox,AccountDisabledIsDirSynced,Alias,OrganizationalUnit,DisplayName,MaxSendSize,MaxReceiveSize,PrimarySmtpAddress,RecipientType,RecipientTypeDetails,Identity,IsValid,Name,DistinguishedName,Guid,ObjectCategory,WhenChangedUTC,WhenCreatedUTC,ObjectState Insert,value1,value2,...,valueN ```
-    > For example, we could have
+    > For example, the output file might be:
     > `C:/identitymanagerContoso/Temp/ExportOutput/MicrosoftExchangeExport_mailboxes.csv`.
 
-[See more details on mailbox properties in Microsoft's documentation](https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/ff328629(v=exchg.140)).
+[Review Microsoft mailbox properties reference](https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/ff328629(v=exchg.140)).
 
 - `<connectionIdentifier>_databases.csv` with the following columns:
 ``` <connectionIdentifier>_databases.csv Command,Name,Server,Mounted,ObjectCategory,Guid,WhenChangedUTC,WhenCreatedUTC,ObjectState Insert,value1,value2,...,valueN ```
 
-[See more details on mailbox database properties in Microsoft's documentation](https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/ff328150(v=exchg.140)).
+[Review Microsoft mailbox database properties reference](https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/ff328150(v=exchg.140)).
 
 - `<connectionIdentifier>_cookie.bin` which stores the time of the last successful export, thus
 allowing incremental processes.
@@ -99,7 +99,7 @@ The CSV files are stored in the [Application Settings](../../../integration-guid
 
 ## Fulfill
 
-This connector can **create**, **update** or **delete**[ mailboxes](https://docs.microsoft.com/en-us/powershell/module/exchange/get-mailbox?view=exchange-ps)' addresses (PrimarySmtpAddress, ProxyAddress) and mailbox databases.
+This connector can **create**, **update**, or **delete**[ mailboxes](https://docs.microsoft.com/en-us/powershell/module/exchange/get-mailbox?view=exchange-ps)' addresses (PrimarySmtpAddress, ProxyAddress) and mailbox databases.
 
 As it works via a PowerShell script. See the [PowerShellProv](../../../integration-guide/connectors/references-connectors/powershellprov) topic for additional information.
 
@@ -115,7 +115,7 @@ This connector uses Kerberos authentication when trying to connect with the Exch
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 

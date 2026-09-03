@@ -6,15 +6,15 @@ sidebar_position: 20
 
 # **Azure Information Protection Target Requirements**
 
-Microsoft® Azure is a cloud-based computing platform that provides a range of services, such as file storage. Azure uses Azure Information Protection (AIP) labels, a Microsoft tool used to classify and protect stored files. Access Analyzer employs the File System Solution to execute Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans in order to find AIP Protection labels and scan protected (i.e. encrypted) files for sensitive data.
+Microsoft® Azure is a cloud-based computing platform that provides a range of services, such as file storage. Azure uses Azure Information Protection (AIP) labels, a Microsoft tool used to classify and protect stored files. Access Analyzer employs the File System Solution to execute Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans to find AIP Protection labels and scan protected (i.e. encrypted) files for sensitive data.
 
-This document provides information needed to properly configure access required by Access Analyzer to successfully scan for Azure Information Protection labels in a targeted environment.
+This document explains how to configure the access Access Analyzer needs to scan for Azure Information Protection labels in a target environment.
 
 
 :::info
 **NOTE**
 
-Access Analyzer does not scan for AIP Marking labels, only Protection labels.
+Access Analyzer doesn't scan for AIP Marking labels, only Protection labels.
 
 :::
 
@@ -39,7 +39,7 @@ Ensure the following prerequisites are met before configuring AIP scanning:
 * The PowerShell `Install-Module` command requires:
   * PowerShell 5.0 (Run as Administrator)
   * Windows Server 2016 and later
-* Active Directory Rights Management Services Client 2.1 installed on the server where the FSAA applet or proxy is being run
+* Active Directory Rights Management Services Client 2.1 installed on the server where the FSAA applet or proxy runs
 
 ### Rights Management Service Client Installation
 
@@ -75,7 +75,7 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
 
       
 :::warning
-      This will disappear once you leave the page!
+      This disappears when you leave the page.
 
       :::
 4. Add API permissions
@@ -93,7 +93,7 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
 
 ## **Enable the Account as an AIP Super User using PowerShell**
 
-Follow the steps to enable the Service Principal Account in AIP as a Super User:
+Enable the Service Principal Account in AIP as a Super User:
 
 
 :::info
@@ -135,7 +135,7 @@ The Service Principal Account is now successfully added to the Azure Information
 
 ## **Access Analyzer Configurations**
 
-Before Access Analyzer can scan for AIP labels, two configurations must be done prior to the initial scan.
+Complete two configurations before Access Analyzer can scan for AIP labels.
 
 * [Azure Connection Profile](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/filesystem/filesystems/azureinformationprotection#azure-connection-profile)
 * [Configure FSAA Data Collector](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/filesystem/filesystems/azureinformationprotection#configure-fsaa-data-collector)

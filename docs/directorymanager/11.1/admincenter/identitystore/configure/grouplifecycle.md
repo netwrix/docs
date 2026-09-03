@@ -7,7 +7,7 @@ sidebar_position: 30
 # Manage Group Lifecycle Settings
 
 Directory Manager can effectively manage group life cycle through all stages, from creation to
-deletion. It enables you to define the following setting to control the group life cycle in an
+deletion. Use the following setting to control the group life cycle in an
 identity store:
 
 - A default expiry policy for groups
@@ -19,13 +19,13 @@ identity store:
 - Notifications for expiring groups
 
 Of these, only the first setting, i.e., the group expiry policy, can be changed for individual
-groups. All other settings apply to all groups in the identity store and cannot be changed for
+groups. All other settings apply to all groups in the identity store and can't be changed for
 individual groups.
 
 The Group Life Cycle schedule defined for the identity store is responsible for applying the group
 life cycle settings to groups. This schedule runs on containers you specify as its targets, to
 process the groups that reside therein. Groups that reside outside of the target containers will not
-be processed by the schedule; hence, the group life cycle policy is not applied to them. See the
+be processed by the schedule; hence, the group life cycle policy isn't applied to them. See the
 [Group Life Cycle Schedule](/docs/directorymanager/11.1/admincenter/schedule/grouplifecycle.md) topic.
 
 :::note
@@ -51,7 +51,7 @@ job expires groups according to their respective expiry policy.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Group Lifecycle**.
-4. In the **Default Expiration Policy** drop-down list on the **Group Lifecycle** page, select an
+4. In the **Default Expiration Policy** dropdown list on the **Group Lifecycle** page, select an
    expiration criterion that you want to set as default. Options are:
 
     - Never Expire
@@ -69,9 +69,9 @@ job expires groups according to their respective expiry policy.
 
 ## Apply Policy on Specific Containers
 
-By default, the Group Life Cycle schedule evaluates all groups that reside in the container(s)
+By default, the Group Life Cycle schedule evaluates all groups that reside in the containers
 specified as its targets, and processes them according to the group lifecycle policy. However, you
-can exempt containers from the Group Life Cycle schedule, so that it does not process the groups in
+can exempt containers from the Group Life Cycle schedule, so that it doesn't process the groups in
 those containers.
 
 **To limit the policy to specific containers:**
@@ -82,28 +82,28 @@ those containers.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Group Lifecycle**.
 4. On the **Group Lifecycle** page, select one of the following options:
 
-    - **Do not apply policy on following containers**
+    - **Don't apply policy on following containers**
 
-        1. Select this option and click **Add/Modify Container(s)**.
-        2. On the **Add Container(s)** dialog box, select the containers you want to exempt from the
+        1. Select this option and click **Add/Modify Containers**.
+        2. On the **Add Containers** dialog box, select the containers you want to exempt from the
            Group Lifecycle policy settings and click **Add**. The selected containers are displayed
-           in the **Container(s)** area. The Group Life Cycle schedule will not process the groups
+           in the **Containers** area. The Group Life Cycle schedule will not process the groups
            in these containers even when they are set as its targets.
 
     - **Apply policy only on following containers**
 
-        1. Select this option and click **Add/Modify Container(s)**.
-        2. In the **Add Container(s)** dialog box, select the container(s) you want to apply the
+        1. Select this option and click **Add/Modify Containers**.
+        2. In the **Add Containers** dialog box, select the containers you want to apply the
            Group Lifecycle policy to, and click **Add**. The selected containers are displayed in
-           the **Container(s)** area. The Group Life Cycle schedule will only process groups in
+           the **Containers** area. The Group Life Cycle schedule will only process groups in
            these containers in the identity store.
 
 5. Click **Save**.
 
 :::note
 If a container is set as target in a Group Life Cycle schedule while it is also listed as an
-exempted container in the Group Lifecycle policy, the schedule does not process it. As a result,
-different aspects of the Group Lifecycle policy, such as group expiry and group attestation does not
+exempted container in the Group Lifecycle policy, the schedule doesn't process it. As a result,
+different aspects of the Group Lifecycle policy, such as group expiry and group attestation doesn't
 apply to groups in the container.
 :::
 
@@ -111,7 +111,7 @@ apply to groups in the container.
 ## Exempt Security Groups from Expiry
 
 By default, security group expiration is disabled, indicating that security groups in the identity
-store cannot be expired either manually or by the Group Life Cycle schedule. You must enable it to
+store can't be expired either manually or by the Group Life Cycle schedule. You must enable it to
 expire security groups.
 
 When a security group expires, its membership is cleared. However, Directory Manager keeps a backup
@@ -129,8 +129,8 @@ A security group may grant or restrict access to network resources to its member
 group expiry may pose a problem; the members of an expired security group will get undesired access
 to network resources, or will be denied access to resources that were assigned to it.
 
-To manage this, make sure your critical security groups reside in the OU that the expiry policy does
-not apply to. Use the **Do not apply policy on following containers** option to set the OU aside
+To manage this, ensure your critical security groups reside in the OU that the expiry policy does
+not apply to. Use the **Don't apply policy on following containers** option to set the OU aside
 (see the Apply Policy on Specific Containers topic). In this way, those groups will not expire even
 if you enable the expiry of security groups.
 
@@ -140,10 +140,10 @@ if you enable the expiry of security groups.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Group Lifecycle**.
-4. On the **Group Lifecycle** page, select the **Expire Security Groups** check box to allow the
+4. On the **Group Lifecycle** page, select the **Expire Security Groups** checkbox to allow the
    expiry of security groups in the identity store. (Security groups can be expired manually and by
    the Group Life Cycle schedule.)  
-   Clear the check box to prevent the expiry of security group.
+   Clear the checkbox to prevent the expiry of security group.
 5. Click **Save**.
 
 ## Auto Delete Expired Groups
@@ -159,7 +159,7 @@ groups.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Group Lifecycle**.
-4. On the **Group Lifecycle** page, select the **Delete Expired Groups** check box and type the
+4. On the **Group Lifecycle** page, select the **Delete Expired Groups** checkbox and enter the
    number of days after which you want an expired group to be deleted, starting from the expiry
    date.
 5. Click **Save**.
@@ -170,7 +170,7 @@ You can set the expiry of mail-enabled distribution groups based on their usage.
 
 - If an expiring group is used in the last x number of days, it will be renewed by reapplying the
   expiry policy to it.
-- If a group is not used in the last x number of days, its life will be reduced to 7 days.
+- If a group isn't used in the last x number of days, its life will be reduced to 7 days.
 
 The Group Usage Service schedule time stamps each mail-enabled distribution group with respect to
 its last usage. The Group Life Cycle schedule extends or reduces the life of a group based on this
@@ -209,21 +209,21 @@ information.
 You can enforce group owners to review and validate the attributes and membership of expiring groups
 before renewing them. While enabling group attestation, consider the following:
 
-- Group attestation does not apply to groups that have ‘Never Expire’ as their expiry policy.
+- Group attestation doesn't apply to groups that have ‘Never Expire’ as their expiry policy.
 - The Membership Life Cycle schedule must be defined for the identity store.
-- Group attestation does not apply to excluded containers. See the Apply Policy on Specific
+- Group attestation doesn't apply to excluded containers. See the Apply Policy on Specific
   Containers topic.
-- With group attestation enabled, the Group Usage Lifecycle settings cannot be applied. If those
-  settings are already defined, they get disabled when you enable group attestation. See the the
+- With group attestation enabled, the Group Usage Lifecycle settings can't be applied. If those
+  settings are already defined, they get disabled when you enable group attestation. See the
   Enable Group Usage Lifecycle topic.
 - For attestation, group owners must use the Directory Manager portal.
 - In the default portal template, a few fields (attributes) for group attestation are specified. You
   can add and remove fields to include those that you want group owners to validate and update.
-- In case of a Dynasty, parent and child Dynasties have to be attested individually. Child Dynasties
-  include both middle and leaf Dynasties. However, child Dynasties cannot be renewed after
+- In case of a Dynasty, parent, and child Dynasties have to be attested individually. Child Dynasties
+  include both middle and leaf Dynasties. However, child Dynasties can't be renewed after
   attestation, as they are renewed with their respective parent Dynasty.
 - When attesting the membership of a parent Dynasty, child Dynasty, or a Smart Group, the members
-  list does not include group objects for attestation. Only users and contacts are displayed. When
+  list doesn't include group objects for attestation. Only users and contacts are displayed. When
   attesting static groups, however, the members list also includes groups for attestation.
 
 **To enable group attestation:**
@@ -234,13 +234,13 @@ before renewing them. While enabling group attestation, consider the following:
 3. Click **Configurations** under **Settings** in the left pane. Then click **Group Lifecycle**.
 4. On the **Group Lifecycle** page, use the toggle button for **Enforce group owners to attest
    expiring groups** to enable group attestation for the identity store.
-5. Select the **Enforce user to verify each member** check box to enforce group owners to verify
+5. Select the **Enforce user to verify each member** checkbox to enforce group owners to verify
    each group member one by one (by individually specifying the status of each member as _active_ or
-   _inactive_). When this check box is not selected, group owners can select all members in a single
+   _inactive_). When this checkbox isn't selected, group owners can select all members in a single
    click and specify their status as _active or inactive_.
 6. You can specify the duration for which inactive members remain in group membership.
 
-    - Select the **Specify member inactive period** check box and specify a duration in days (for
+    - Select the **Specify member inactive period** checkbox and specify a duration in days (for
       example, 5). When the status of a member is set to _inactive_, he or she is instantly removed
       from group membership in the directory. In Directory Manager, however, he or she remains a
       group member till the specified number of days, starting from the inactivation date. During
@@ -250,8 +250,8 @@ before renewing them. While enabling group attestation, consider the following:
     - If you want inactive members to be instantly removed from group membership in the directory
       and in Directory Manager, do one of the following:
 
-        - Select the **Specify member inactive period** check box and specify ‘0’ in the box.
-        - Do not select the **Specify member inactive period** check box.
+        - Select the **Specify member inactive period** checkbox and specify ‘0’ in the box.
+        - Don't select the **Specify member inactive period** checkbox.
 
 7. Click **Save**.
 
@@ -284,7 +284,7 @@ The Group Life Cycle schedule handles group expiry notifications as follows:
   identity store without notifying anyone.
 - When notifications are enabled, the schedule notifies the primary and additional owners of the
   group, or the default approver (in case the group has no owner) about the approaching expiry. In
-  case the notification could not be sent or no recipient is available, the schedule extends the
+  case the notification couldn't be sent or no recipient is available, the schedule extends the
   expiry date of the group by 7 days on the group’s expiry day. It continues to do so until the
   notification is sent.
 - When the **1 day before group expiration** option is selected for sending notifications and the

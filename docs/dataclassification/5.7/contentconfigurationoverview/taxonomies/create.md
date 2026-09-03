@@ -32,15 +32,15 @@ import options:
   collection specified, as well as the termstore (preferably as a term store administrator).
 - Upload—Imports an XML file directly into the SQL database, large taxonomies will be imported by
   the background services.
-- Load—Certain taxonomies are provided out-of-the-box these can be fully used as part of the product
-  or simply used as a reference for regular expression and metadata clues.
+- Load—Certain taxonomies are provided by default; these can be fully used as part of the product
+  or used as a reference for regular expression and metadata clues.
 
 ![addtaxonomies](/images/dataclassification/5.7/admin/taxonomies/addtaxonomies.webp)
 
 [](#)Merge SQL Taxonomies
 
-SQL taxonomies also be easily merged / updated from the Global Settings page. Select the Update link
-for the taxonomy that you wish to update to load the taxonomy merge wizard:
+SQL taxonomies can also be merged / updated from the Global Settings page. Select the Update link
+for the taxonomy that you want to update to load the taxonomy merge wizard:
 
 ![mergesqltaxonomyupdatelink](/images/dataclassification/5.7/admin/taxonomies/mergesqltaxonomyupdatelink.webp)
 
@@ -67,24 +67,24 @@ update is available (post upgrade):
 
 :::note
 The merge operation relies on matching the source definition to the destination
-definition - utilising the Term Id (GUID). If there are no matching ids then the merge operation
+definition - using the Term Id (GUID). If there are no matching ids then the merge operation
 will be automatically stopped. In this case the taxonomy should be deleted - and re-imported.
 :::
 
 
 [](#)Merge SharePoint Taxonomies
 
-SharePoint taxonomies can be merged with the use of the TermStoreManager tool (please see the
+SharePoint taxonomies can be merged with the use of the TermStoreManager tool (see the
 associated user guide available via documentation downloads).
 
 [](#)Backup/Delete Taxonomies
 
-Existing taxonomies can be managed via the Global Settings tab:
+You can manage existing taxonomies via the Global Settings tab:
 
 ![taxonomyglobalsettings_thumb_0_0](/images/dataclassification/5.7/admin/taxonomies/taxonomyglobalsettings_thumb_0_0.webp)
 
-Taxonomies can be exported as XML regardless of the taxonomy type, as well as removed. When removing
-SharePoint Term Set registrations the source Term Set remains intact - all that is removed is a link
+You can export taxonomies as XML regardless of the taxonomy type, or remove them. When removing
+SharePoint Term Set registrations the source Term Set remains intact - the system removes only a link
 to the Term Store.
 
 [](#)Compare Taxonomy definitions
@@ -106,10 +106,10 @@ Do the following:
 
 [](#)Bulk Updates
 
-The taxonomy update wizard allows large repetitive changes to be made to taxonomies in bulk. The
-wizard can be used to:
+The taxonomy update wizard allows large repetitive changes to be made to taxonomies in bulk. Use the
+wizard to:
 
-- Add Clues—Create a default standard clue, a default metadata clue, or simply define the clue
+- Add Clues—Create a default standard clue, a default metadata clue, or define the clue
   template to be used.
 - Update Clues—Update or replace text within the clue text and reference, adjust the score
   (statically or by percentage), set the local/predefined flags for each clue.
@@ -121,10 +121,10 @@ scoped to a particular branch by right-clicking the top node of the intended bra
 
 ![bulkupdatetreeview](/images/dataclassification/5.7/admin/taxonomies/bulkupdatetreeview.webp)
 
-The wizard will then walk you through performing the update. Each update will allow you to restrict
+The wizard will then walk you through performing the update. Each update lets you restrict
 the scope of your change by specifying:
 
-- Filters—filters for which terms/clues you wish to update (based on score, clue text, etc).
+- Filters—filters for which terms/clues you want to update (based on score, clue text, etc).
 - Descendants Limit—specify how many levels down the update should process within the tree.
 - Exclusions—specific terms to exclude from the update.
 
@@ -134,7 +134,7 @@ the update which will perform the changes (or, leave the update if the scope was
 
 ![bulkupdate_thumb_0_0](/images/dataclassification/5.7/admin/taxonomies/bulkupdate_thumb_0_0.webp)
 
-All updates, report-only or otherwise, can be found under the "Bulk Updates" tab. Updates are queued
+The "Bulk Updates" tab lists all updates, report-only or otherwise. Updates are queued
 and processed in the background with the results exposed through this interface.
 
 ## Managing Term Sets
@@ -144,7 +144,7 @@ required term set and click the **Term Management** tab on the right.
 
 ![term_management_thumb_0_0](/images/dataclassification/5.7/admin/taxonomies/term_management_thumb_0_0.webp)
 
-Then you can work with the tabs you need, including Search, Browse and Working Set tabs.
+Then you can work with the tabs you need, including Search, Browse, and Working Set tabs.
 
 Review the following for additional information:
 

@@ -6,32 +6,29 @@ sidebar_position: 10
 
 # Install the Application
 
-The following components are installed by the Identity Recovery installation package:
+The Identity Recovery installation package installs the following components:
 
 - Netwrix Recovery Server
 - Netwrix Recovery Web Console – Installed on the Recovery Application Server and used to perform
   the operations the application offers
-- RSAT Extension – Installed on the Recovery Application Server automatically. You can manually
+- Remote Server Administration Tools (RSAT) Extension – Installed on the Recovery Application Server automatically. You can manually
   install it on a remote machine to add the object rollback and restore functions to the Active
   Directory Users and Computers console on that machine.
 - Recovery Configuration Utility – Installed on the Recovery Application Server and used to register
   the RSAT Extension on the server. It also provides the option to update the SQL database password.
 
-During a fresh installation, it is possible to modify both or either the application installation
+During a fresh installation, you can modify both or either the application installation
 directory and the SQL Server database location. The application installation directory can be
 modified through the Destination Folder page in the Identity Recovery Setup Wizard.
 
 :::note
-The `msoledbsql.msi` must be installed on the machine the Recovery Application Server will
-be installed on, prior to installing the Recovery Application Server. This allows the Recovery
-Application Server to connect with the SQL Server. If it is not installed, the installer fails on
-the SQL Server Configuration page. The
+You must install `msoledbsql.msi` on the machine before you install the Recovery Application Server. This allows the Recovery
+Application Server to connect with the SQL Server. If you don't install it, the installer fails on
+the SQL Server Configuration page. Download the
 [Microsoft OLE DB Driver for SQL Server](https://www.microsoft.com/en-us/download/details.aspx?id=56730)
-can be downloaded directly from Microsoft.
+directly from Microsoft.
 :::
 
-
-Follow the steps to install Identity Recovery.
 
 **Step 1 –** Run the `NetwrixRecovery_Setup.exe` executable as an administrator to launch the
 Identity Recovery Setup wizard.
@@ -39,7 +36,7 @@ Identity Recovery Setup wizard.
 ![Recovery for Active Directory Setup wizard - Initial EULA page](/images/identityrecovery/3.1/product/installers/product-installer.png)
 
 **Step 2 –** On the Netwrix Identity Recovery page, read the End User License Agreement.
-Then check the **I agree to the license terms and conditions** checkbox and click **Install**.
+Then check the checkbox to agree to the license terms and conditions, and click **Install**.
 
 The Setup Progress page displays the setup progress bar and then the Welcome page is displayed.
 
@@ -79,8 +76,7 @@ database communication.
   procedures.
 
 :::note
-Windows authentication will use the credentials of the account running the installer. Once the database
-is created, Windows authentication will use the credentials of the account specified for the Identity Recovery service on the Netwrix Recovery Server Configuration page of the wizard.
+Windows authentication will use the credentials of the account running the installer. Once Identity Recovery creates the database, Windows authentication will use the credentials of the account you specify for the Identity Recovery service on the Netwrix Recovery Server Configuration page of the wizard.
 :::
 
 
@@ -110,7 +106,7 @@ Click **Next**.
 **Step 9 –** On the Administrator Role page, specify the administrator account to use. By default,
 this is set to the Domain Admins account from the domain the product is being installed into.
 
-- Account – Enter a user account or group [DOMAIN\ACCOUNT] that will be the default Identity Recovery administrator. Use the Browse option to search for a specific account. This account will be locked and cannot be modified after installation.
+- Account – Enter a user account or group [DOMAIN\ACCOUNT] that will be the default Identity Recovery administrator. Use the Browse option to search for a specific account. This account will be locked and can't be modified after installation.
 
     The specified user or group will be responsible for configuring the applcation and managing
     users' access to the console.
@@ -129,7 +125,7 @@ Click **Next**.
 ![Installation Certificates Window](/images/identityrecovery/3.1/install/certificates.webp)
 
 - The Certificates window displays installed certificates on either the local machine or the current
-  user. Select the desired certificate and click **Use Selected Certificate**. This automatically
+  user. Select the certificate you want and click **Use Selected Certificate**. This automatically
   fills in the information for the Certificate section of the Web Host page.
 
 Click **Next**. Identity Recovery is ready to install.
@@ -144,5 +140,5 @@ Click **Next**. Identity Recovery is ready to install.
 progress. Depending on the Active Directory size, installation may take time to complete. When
 installation is complete, click Finish to exit the wizard.
 
-The installer does not automatically open the Recovery Console web page after installation. The
+The installer doesn't automatically open the Recovery Console web page after installation. The
 Recovery Console icon is located on the desktop. See the [First Launch](/docs/identityrecovery/3.1/install/firstlaunch.md) topic for the next step.

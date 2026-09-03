@@ -104,7 +104,7 @@ Set-Schedule -ScheduleName smm4_ -SetNotifications $true -Recepients 'recep1@gid
 Example 7:
 
 This example adds a monthly trigger for smm4 schedule. It is repeated every 10 minutes for 1 hour on
-23rd of March, August and September at 16:56.
+23rd of March, August, and September at 16:56.
 
 ```
 Set-Schedule -ScheduleName smm4_ -TriggerOperation Add -TriggerType Monthly -StartTime '16:56' -MonthDate 23 -YearMonths 'March,August,September' -Repeat -RepeatInterval 10 -RepeatDuration 60

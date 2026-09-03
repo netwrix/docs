@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Custom Search-Based Reports
 
-Netwrix Auditor allows you to save your favorite searches as reports to access them instantly. For
+Use Netwrix Auditor to save your favorite searches as reports and access them instantly. For
 your convenience, the product provides predefined templates for some popular usage scenarios. You
 can save your custom report or use one of the templates provided by Netwrix. Navigate to Reports →
 Custom to review these reports. Click View to generate the selected report.
@@ -34,11 +34,11 @@ Review the following for additional information:
 1. On the main Netwrix Auditor page, navigate to Search.
 2. Apply filters and click Search.
 
-    [View and Search Collected Data](/docs/auditor/10.9/admin/search/overview.md) how to apply filters when searching
+    See [View and Search Collected Data](/docs/auditor/10.9/admin/search/overview.md) for information on how to apply filters when searching
     audit data.
 
 3. Navigate to Tools and select Save as report.
-4. In the Specify a name for your custom report dialog, specify a name. Make sure to specify a
+4. In the Specify a name for your custom report dialog, specify a name. Ensure to specify a
    unique name.
 
 ## To modify a custom report
@@ -48,7 +48,7 @@ Review the following for additional information:
 3. Click View to open search.
 4. Modify filters and click Search.
 
-    [View and Search Collected Data](/docs/auditor/10.9/admin/search/overview.md) how to apply filters when searching
+    See [View and Search Collected Data](/docs/auditor/10.9/admin/search/overview.md) for information on how to apply filters when searching
     audit data.
 
 5. Navigate to Tools and select Save as report.

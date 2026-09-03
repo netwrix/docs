@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Output for Monitored Domains
 
-Once a domain is being monitored the event stream can be sent to multiple outputs.
+After you monitor a domain, you can send the event stream to multiple outputs.
 
 ![Monitored Domains tab with Domain Outputs added](/images/activitymonitor/9.0/admin/monitoreddomains/actiivtymonitordomainoutputsadded.webp)
 
@@ -27,15 +27,13 @@ domain. The domain event outputs are:
 
 ## Add File Output
 
-Follow the steps to add a File output.
+**Step 1 –** On the Monitored Domains tab, select the domain you want to add output to and click **Add Output**.
 
-**Step 1 –** On the Monitored Domains tab, select the desired domain and click **Add Output**.
-
-**Step 2 –** Select **File** from the drop-down menu. The Add New Output window opens.
+**Step 2 –** Select **File** from the dropdown menu. The Add New Output window opens.
 
 ![Log Files configuration](/images/activitymonitor/9.0/admin/monitoreddomains/logfiles.webp)
 
-**Step 3 –** Configure the tab(s) as desired.
+**Step 3 –** Configure the tabs as desired.
 
 **Step 4 –** Click **Add Output** to save your settings. The Add New Output window closes.
 
@@ -45,15 +43,13 @@ information.
 
 ## Add Syslog Output
 
-Follow the steps to add a Syslog output.
+**Step 1 –** On the Monitored Domains tab, select the domain you want to add output to and click **Add Output**.
 
-**Step 1 –** On the Monitored Domains tab, select the desired domain and click **Add Output**.
-
-**Step 2 –** Select **Syslog** from the drop-down menu. The Add New Output window opens.
+**Step 2 –** Select **Syslog** from the dropdown menu. The Add New Output window opens.
 
 ![Syslog Properties](/images/activitymonitor/9.0/admin/monitoreddomains/syslogudp.webp)
 
-**Step 3 –** Configure the tab(s) as desired.
+**Step 3 –** Configure the tabs as desired.
 
 **Step 4 –** Click **Add Output** to save your settings. The Add New Output window closes.
 
@@ -71,16 +67,14 @@ additional information.
 :::
 
 
-Follow the steps to add a Netwrix Threat Manager output.
+**Step 1 –** On the Monitored Domains tab, select the domain you want to add output to and click **Add Output**.
 
-**Step 1 –** On the Monitored Domains tab, select the desired domain and click **Add Output**.
-
-**Step 2 –** Select **Netwrix Threat Manager** from the drop-down menu. The Add New
+**Step 2 –** Select **Netwrix Threat Manager** from the dropdown menu. The Add New
 Output window opens.
 
 ![Threat Manager Properties](/images/activitymonitor/9.0/admin/monitoreddomains/stealthdefendproperties.webp)
 
-**Step 3 –** Configure the tab(s) as desired.
+**Step 3 –** Configure the tabs as desired.
 
 **Step 4 –** Click **Add Output** to save your settings. The Add New Output window closes.
 

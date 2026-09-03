@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Agent Not Communicating with the Enterprise Manager
 
-If the Agent is not communicating with the Enterprise Manager, the following questions should be
-addressed:
+If the Agent isn't communicating with the Enterprise Manager, address the following questions:
 
 - Is there a firewall blocking communication?
 
@@ -22,16 +21,15 @@ addressed:
   - If yes, then the Agent is likely trying to communicate with the Enterprise Manager through the
     wrong network. See the Bind To topic to resolve this issue.
 
-Please contact [Netwrix Support](https://www.netwrix.com/support.html) if these recommendations do
-not resolve the issue.
+Contact [Netwrix Support](https://www.netwrix.com/support.html) if these recommendations don't
+resolve the issue.
 
 ## Bind To
 
 For the Agent to communicate in a multiple network card environment, the ‘… bindTo …’ line in the
 `SIWindowsAgent.exe.config` file needs to be uncommented and set to the IP address associated with
-the desired local (to Agent) network adapter or the name of the desired network adapter that is to
-be used to communicate with the Enterprise Manager. The installer will attempt to configure this
-setting if it detects multiple NICs. If the chosen setting does not work in the environment, it may
+the local network adapter (on the Agent) or the adapter name you want to use to communicate with the Enterprise Manager. The installer will attempt to configure this
+setting if it detects multiple NICs. If the chosen setting doesn’t work in the environment, it may
 need to be set manually.
 
 The default location of the `SIWindowsAgent.exe.config` file is:

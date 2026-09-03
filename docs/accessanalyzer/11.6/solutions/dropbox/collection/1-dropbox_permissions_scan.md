@@ -10,7 +10,7 @@ The 1-Dropbox_Permissions Scan job collects data from the Dropbox environment on
 sharing policies, configurations, and content.
 
 :::warning
-This job should not be run if running sensitive data scans against the Dropbox Business
+This job shouldn't be run if running sensitive data scans against the Dropbox Business
 environment.
 :::
 
@@ -28,8 +28,8 @@ The query for the 1-Dropbox_Permissions Scan job is:
 
 ### Configure the Dropbox Access Query
 
-Follow the steps to either generate the access token needed for the Connection Profile (only done
-prior to first execution) or to set any desired customizations.
+To either generate the access token needed for the Connection Profile (only done
+before first execution) or set any desired customizations:
 
 **Step 1 –** Navigate to the **Jobs** > **Dropbox** > **0.Collection** > **1-Dropbox_Permissions
 Scan** > **Configure** node and select **Queries**.
@@ -42,12 +42,12 @@ Data Collector Wizard opens.
 
 ![Dropbox Access Auditor Data Collector Wizard Scan Options page](/images/accessanalyzer/11.6/solutions/dropbox/collection/permissionsscanoptionspage.webp)
 
-**Step 4 –** T Use the Scan Options page ito generate the access token prior to the first execution
+**Step 4 –** Use the Scan Options page to generate the access token before the first execution
 of the job group.
 
 - Remember to copy the access token, either from the textbox or using the **Copy to Clipboard**
-  button, and use it in the Connection Profile assigned to the Dropbox Solution. Once the access
-  token has been generated and copied, if no customizations are to be made, click **Cancel** to
+  button, and use it in the Connection Profile assigned to the Dropbox Solution. After the access
+  token has been generated and copied, if you don't need to make customizations, click **Cancel** to
   close the Dropbox Access Auditor Data Collector wizard.
 - See the
   [DropboxAccess: Scan Options](/docs/accessanalyzer/11.6/admin/datacollector/dropboxaccess/scanoptions.md)
@@ -65,4 +65,4 @@ collect permissions at the file level. When finished with this page, click **Nex
 **Step 7 –** On the Summary page, click **Finish** to save any setting modifications or click
 **Cancel** if no changes were made. Then click **OK** to close the Query Properties window.
 
-If changes were made, the 1-Dropbox_Permissions Scan job has now been customized.
+If you made changes, the 1-Dropbox_Permissions Scan job is now customized.

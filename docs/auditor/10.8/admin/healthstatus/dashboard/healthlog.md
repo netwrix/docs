@@ -42,7 +42,7 @@ There are three types of events that can be logged:
 | Event Type  | Description                                                                                                                                                             |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Information | An event that describes the successful operation beginning or completion. For example, the product successfully completed data collection for a monitoring plan.        |
-| Warning     | An event that is not necessarily significant, but may indicate a possible future problem. For example, the product failed to process a domain controller.               |
+| Warning     | An event that isn't necessarily significant, but may indicate a possible future problem. For example, the product failed to process a domain controller.               |
 | Error       | An event that indicates a significant problem such as loss of data or loss of functionality. For example, the product failed to retrieve settings for your data source. |
 
 Review the following:
@@ -58,8 +58,6 @@ If you want to monitor Auditor health status in more depth, you can do the follo
 
 ## Inspect Events in Health Log
 
-Follow the steps o inspect events in Netwrix Auditor health log
-
 **Step 1 –** On the main Auditor page, select the Health status tile, then in the Health log
 dashboard widget click Open health log.
 
@@ -72,8 +70,6 @@ collection or events of an important monitoring plan.
 
 ### Filter Events
 
-Follow the steps to filter events.
-
 **Step 1 –** Select Filters in the upper part of the Netwrix Auditor Health Log window.
 
 **Step 2 –** Complete the following fields:
@@ -84,8 +80,8 @@ Follow the steps to filter events.
 | Event level     | Select level of the events that you want to be displayed.                                                                                                                                                               |
 | Event source    | Select services and applications whose events you want to view.                                                                                                                                                         |
 | Monitoring plan | Select to display events from one or several monitoring plans.                                                                                                                                                          |
-| Item name       | Select to display events from the certain item(s) you need.                                                                                                                                                             |
-| Event ID        | Enter event ID number or range of event IDs separated by commas. For example, 1, 3, 5-99. You can also exclude unwanted event IDs from being displayed. Type the minus sign before selected event ID. For example, -76. |
+| Item name       | Select to display events from the certain items you need.                                                                                                                                                             |
+| Event ID        | Enter event ID number or range of event IDs separated by commas. For example, 1, 3, 5-99. You can also exclude unwanted event IDs from being displayed. Enter the minus sign before selected event ID. For example, -76. |
 
 ![healthlogfilters_thumb_0_0](/images/auditor/10.8/admin/healthstatus/dashboard/healthlogfilters_thumb_0_0.webp)
 

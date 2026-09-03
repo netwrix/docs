@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Update Identity Data
 
-How to perform modifications in the identity repository, to manage onboarding, offboarding and position changes.
+How to perform modifications in the identity repository, to manage onboarding, offboarding, and position changes.
 
-This part is not about changing the data model, but data itself.
+This part isn't about changing the data model, but data itself.
 
 ## Overview
 
@@ -24,7 +24,7 @@ or model a position change;
 
 ## Participants and Artifacts
 
-Integrators are able to perform an identity update if they master the new data.
+Integrators can perform an identity update if they master the new data.
 
  | Input | Output | 
  | --- | --- | 

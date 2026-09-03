@@ -115,10 +115,10 @@ The identifier of the connection and thus the name of the subsection must:
  | Name | Details | 
  | --- | --- | 
  | Server required | **Type** String **Description** URL of the target domain controller. | 
- | Controls optional | **Type** String List **Description** List of the controls that will be applied to the request. Possible values are: `PagedResult` to limit the number of returned queries. Results will be returned in smaller and limited packets. `DomainScope` to enable domain control, i.e. the LDAP server won't generate any referrals when completing a request, and the search is restricted to a single name context. **Note:**`PagedResult` is required when using `DomainScope`. [See more details in Microsoft's documentation](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ldap/ldap-server-domain-scope-oid). | 
+ | Controls optional | **Type** String List **Description** List of the controls that will be applied to the request. Possible values are: `PagedResult` to limit the number of returned queries. Results will be returned in smaller and limited packets. `DomainScope` to enable domain control, i.e. the LDAP server won't generate any referrals when completing a request, and the search is restricted to a single name context. **Note:**`PagedResult` is required when using `DomainScope`. [Learn about LDAP domain scope OID](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ldap/ldap-server-domain-scope-oid). | 
  | --- | --- | 
  | --- | --- | 
- | EnableSSL optional | **Type** Boolean **Description** `True` to enable SSL protocol for authentication requests. **Note:** recommended when using `AuthType` set to `Basic` because basic authentication packets are not encrypted by default. **Info:** SSL is not available on Linux. | 
+ | EnableSSL optional | **Type** Boolean **Description** `True` to enable SSL protocol for authentication requests. **Note:** recommended when using `AuthType` set to `Basic` because basic authentication packets aren't encrypted by default. **Info:** SSL isn't available on Linux. | 
  | NoSigning optional | **Type** Boolean **Description** `True` to disable Kerberos encryption. | 
  | --- | --- | 
  | --- | --- | 
@@ -151,7 +151,7 @@ Any property can be exported in a specific format when specified. See the [Refer
 >
 > ```
 >
-> We would have `C:/identitymanagerContoso/Temp/ExportOutput/*LDAPExport_entries.csv*` like:
+> The output file `C:/identitymanagerContoso/Temp/ExportOutput/*LDAPExport_entries.csv*` looks like:
 >
 > ```
 > *LDAPExport_entries.csv*
@@ -160,7 +160,7 @@ Any property can be exported in a specific format when specified. See the [Refer
 >
 > ```
 >
-> And we would also have `C:/identitymanagerContoso/Temp/ExportOutput/*LDAPExport_member.csv*` like:
+> The second output file `C:/identitymanagerContoso/Temp/ExportOutput/*LDAPExport_member.csv*` looks like:
 >
 > ```
 > *LDAPExport_member.csv*
@@ -171,7 +171,7 @@ Any property can be exported in a specific format when specified. See the [Refer
 
 ## Fulfill
 
-The LDAP connector fulfills the creation, deletion and update of LDAP entries, initiated through the Identity Manager UI or by assignment policy enforcement. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
+The LDAP connector fulfills the creation, deletion, and update of LDAP entries, initiated through the Identity Manager UI or by assignment policy enforcement. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
 
 ### Configuration
 
@@ -224,7 +224,7 @@ A new resource is created with the state `disabled`, corresponding to the **user
 
 Some systems using the LDAP protocol require additional attributes in the creation and/or update requests.
 
-If these attributes are not synchronized in Identity Manager, then they cannot be computed and provided by scalar rules or navigation rules. In this case, they can be given as arguments in the provisioning order, through the `ResourceType`'s `ArgumentsExpression`.
+If these attributes aren't synchronized in Identity Manager, then they can't be computed and provided by scalar rules or navigation rules. In this case, they can be given as arguments in the provisioning order, through the `ResourceType`'s `ArgumentsExpression`.
 
 > The following example adds the attribute `description` with a value depending on what is modified:
 >

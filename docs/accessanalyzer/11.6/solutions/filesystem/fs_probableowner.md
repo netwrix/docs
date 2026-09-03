@@ -22,7 +22,7 @@ View the analysis tasks by navigating to the FileSystem > 6.Probable Owner > FS_
 Configure node and select Analysis.
 
 :::warning
-Do not modify or deselect the first and third selected analysis tasks. The analysis
+Don't modify or deselect the first and third selected analysis tasks. The analysis
 tasks are preconfigured for this job.
 :::
 
@@ -35,9 +35,9 @@ The following analysis tasks are selected by default:
   Probable Owners
 - Identify Probable Owners – Creates the SA_FS_ProbableOwner_Details table accessible under the
   job’s Results node
-    - Set to “Start listing ownership at the root share” which is `@minlevel` parameter set to
+    - Set to “Start listing ownership at the root share” which is the `@minlevel` parameter set to
       Value0.
-    - Set to “List ownership as deep into the folder hierarchy as the root share” which is
+    - Set to “List ownership as deep into the folder hierarchy as the root share” which is the
       `@maxlevel` parameter set to Value0.
     - Value0 = root share, Value1 = 1 folder deep, Value2 = 2 folders deep, etc.
     - Set the variable #FILTERED_TRUSTEES to a CSV file that contains one row for each SID to be

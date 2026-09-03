@@ -24,7 +24,7 @@ Navigate to the **Databases** > **0.Collection** > **SQL** > **0-SQL_InstanceDis
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

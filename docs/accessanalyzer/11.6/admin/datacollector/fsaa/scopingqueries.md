@@ -48,7 +48,7 @@ The Scoping Queries buttons have the following functionality:
 
 :::note
 These two Scan Resource Filters are both Share Include queries by default. To restrict the
-scan to only Open Shares or only DFS Shares it is necessary to also configure the Scoping Options on
+scan to only Open Shares or only DFS Shares, also configure the Scoping Options on
 the previous page of the wizard to exclude all other shares.
 :::
 
@@ -68,8 +68,8 @@ topic for additional information and common scoping scenarios.
 
 ## Scoping Query Configuration Window
 
-The Scoping Query Configuration window allows you to create a custom Scoping Query to specify shares
-and folders to be included in or excluded from the scan.
+Use the Scoping Query Configuration window to create a custom Scoping Query that specifies shares
+and folders to include in or exclude from the scan.
 
 ![Scoping Query Configuration window](/images/accessanalyzer/11.6/admin/datacollector/fsaa/scopingqueryconfiguration.webp)
 
@@ -94,7 +94,7 @@ Scoping Options Query Configuration window.
 
 ![Advanced Scoping Options Query Configuration window](/images/accessanalyzer/11.6/admin/datacollector/fsaa/advancedscopingoptionsqueryconfiguration.webp)
 
-Follow the steps to configure a query.
+To configure a query:
 
 **Step 1 –** Enter a SQL Query that will return a list of resources to be included in or excluded
 from the scan.

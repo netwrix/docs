@@ -9,9 +9,9 @@ sidebar_position: 10
 The Decline Access window opens from the Pending Access Requests Page of the Owner portal when you
 select to decline an access request to your resource. See the
 [Pending Access Requests](/docs/accessinformationcenter/11.6/owneroverview/owners/pendingrequests/pendingrequests.md)
-topic for additional information. Follow the steps to decline an access request.
+topic for additional information. To decline an access request:
 
-**Step 1 –** On the Pending Access Requests Page, select the desired request and click **Decline**.
+**Step 1 –** On the Pending Access Requests Page, select the request you want and click **Decline**.
 The Decline Access window opens.
 
 ![Decline Access window](/images/accessinformationcenter/11.6/accessrequests/window/declineaccess.webp)
@@ -28,7 +28,7 @@ You can click **Cancel** to close the window without denying the request.
 
 ![Saving Request window](/images/accessinformationcenter/11.6/accessrequests/window/savingrequest.webp)
 
-**Step 4 –** The Access Information Center starts the action with the status displayed in the Saving
+**Step 4 –** The Access Information Center starts the action and displays the status in the Saving
 request window. When the action completes successfully, click **OK** to close the Saving request
 window.
 

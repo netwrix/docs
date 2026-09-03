@@ -12,11 +12,11 @@ previously quarantined files.
 ## Analysis Tasks for the FS_RestoreInheritance_Status Job
 
 Navigate to the **FileSystem** > **Cleanup** > **3. Quarantine** >
-**FS_RestoredInheritance_Status** > **Configure** node and select **Analysis** to view the analysis
+**FS_RestoreInheritance_Status** > **Configure** node and select **Analysis** to view the analysis
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

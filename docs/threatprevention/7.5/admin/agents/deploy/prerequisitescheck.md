@@ -16,13 +16,12 @@ After the check is run, the status registers as either Success or Failed. Select
 full message in the box at the bottom of the window.
 
 - Failed – Read the failure message and either click **Back** to provide new credentials or click
-  **Finish** to close the window and ensure any error messages are taken care of prior to next
-  attempt
+  **Finish** to close the window and resolve any errors before trying again
 - Success – Click **Next** to install the Agent
 - If some but not all items fail, you can click **Next** to deploy the Agent on those where access
   verification was successful
 
-In addition to confirming access, Threat Prevention also verifies if the target machine has the
-minimum .NET Framework version needed by the Agent already installed; else the deployment fails.
+In addition to confirming access, Threat Prevention verifies if the target machine has the
+minimum .NET Framework version needed by the Agent. If it doesn't, the deployment fails.
 
 See the [Installing Window ](/docs/threatprevention/7.5/admin/agents/deploy/installing.md)topic for the next step.

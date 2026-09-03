@@ -21,7 +21,7 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- United States English language installation
 - Domain member
 
 **RAM, CPU, and Disk Space**
@@ -52,7 +52,7 @@ The disk space calculation formula is: Enterprise Manager GBs + 2(RAM size):
 
 **Additional Enterprise Password Enforcement Solution Requirements**
 
-The Have I Been Pwnd (HIBP) database, which is an optional feature of the Enterprise Password
+The HIBP (Have I Been Pwned) database, which is an optional feature of the Enterprise Password
 Enforcement solution, is deployed on the server where the Enterprise Manager resides. It requires:
 
 - Additional 66 GB of disk space to deploy
@@ -61,7 +61,7 @@ Enforcement solution, is deployed on the server where the Enterprise Manager res
 
 The following are additional requirements for the Threat Prevention server:
 
-- .NET 4.7.2 or .NET 4.8.x installed. If the installer does not find it already installed, it will
+- .NET 4.7.2 or .NET 4.8.x installed. If the installer doesn't find it already installed, it will
   install .NET Framework 4.7.2.
 
 **Additional Server Considerations**

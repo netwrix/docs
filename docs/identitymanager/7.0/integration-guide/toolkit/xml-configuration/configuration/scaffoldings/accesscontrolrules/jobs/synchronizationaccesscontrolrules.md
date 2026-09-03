@@ -25,7 +25,7 @@ Generates the execution rights for Prepare-Synchronization and synchronization t
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Connector_ConnectorMapping_Query" DisplayName_L1="Administrator - SynchronizeSessionConnector" DisplayName_L2="Administrator - SynchronisationConnector" EntityType="Connector" Profile="Administrator">

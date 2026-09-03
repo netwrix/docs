@@ -23,7 +23,7 @@ Get-UserEnrollment
 
 Example 1:
 
-If a user is enrolled, this cmdlet will enlist the authentication type(s) the user is enrolled with.
+If a user is enrolled, this cmdlet will enlist the authentication types the user is enrolled with.
 
 ```
 Get-UserEnrollment -Identity euser1
@@ -31,7 +31,7 @@ Get-UserEnrollment -Identity euser1
 
 Example 2:
 
-Check whether the specified user is enrolled with the specified enrollment type(s).
+Check whether the specified user is enrolled with the specified enrollment types.
 
 ```
 Get-UserEnrollment -Identity euser1 -EnrollmentTypes SecurityQuestions, Email

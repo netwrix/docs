@@ -22,8 +22,7 @@ MIME Type Allowlists are available for both the Content Aware Protection and eDi
 apply to Custom Content, Predeﬁned Content, and Regular Expressions.
 
 :::note
-By default, graphic ﬁles, media ﬁles, some password-protected archive ﬁles and some system
-ﬁles are automatically deﬁned within the MIME Type Allowlists. While this can be changed, only do so after gaining a deeper understanding of the type of data transferred, used, or stored by the users in your system, and the subsequent logs increase in the Endpoint Protector Server.
+By default, Endpoint Protector automatically includes graphic, media, some password-protected archive, and some system files in MIME Type Allowlists. Change these only after understanding what data your users transfer and how logs will increase on the server.
 :::
 
 
@@ -61,8 +60,7 @@ apply to all ﬁles located in the speciﬁc folder but also to any other ﬁles
 subfolders.
 
 :::note
-In addition to deﬁning the File Location Allowlist, the browser or application used to
-transfer ﬁles also needs to be selected from within the Content Aware Protection Policy.
+To use File Location Allowlists, also select the browser or application for file transfers from within the Content Aware Protection Policy.
 :::
 
 
@@ -91,11 +89,9 @@ File Location Allowlists will not apply to groups of users, only to groups of co
 Location Allowlists will only apply for the selected computer groups after 15 minutes.
 
 :::note
-By clicking the "Select All Computers" checkbox, ONLY computers existing in the Computers list at that moment can be checked and selected all at once. This doesn't imply that all the computers that will ever exist in the EPP Server Computer's list will be added to the "Allowlist - File Location" exception.
+Clicking "Select All Computers" only selects computers in the list—it doesn't automatically add future computers to the "Allowlist - File Location" exception. Adding new entities without your knowledge could cause issues. When you add a new computer, "Select All Computers" resets, but previously checked computers stay selected. Select it again to include newly added computers.
 
-This is because adding new entities by default to the File Location's Allowlist exceptions without the Administrator knowledge could prove troublesome. When a new computer is added to the EPP Server, the "Select All Computers" checkbox becomes unchecked again but the computers that were checked before remain selected. By pressing that checkbox again, the newly added/unselected computers are added to the selectoion.
-
-The same behavior also applies for Groups. The Administrator has the option to create custom Groups based on the existing computers/users already existing in the EPP Server's DB. When a new computer is added, it isn't allocated to a group by default because the group in which the computer will be placed might not be the one that the Administrator intended for it to be in and it needs to be added manually.
+Groups behave the same way. You can create custom groups based on existing computers or users, but newly added computers aren't automatically assigned to any group.
 :::
 
 ![New File Location Allowlists ](filelocationnewdenylists.webp)
@@ -224,9 +220,9 @@ available when creating or editing a Content Aware Protection policy.
 | Domain name         | Results matched                                                        | Results not matched                                                      |
 | ------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | box.com             | box.com                                                                | Sub.box.com box1.com                                                     |
-| \*.box.com          | Sub.box.com bad.box.com                                                | Fakebox.com mybox.com                                                    |
-| box.\*.com          | Box.co.com box.bad.com                                                 | Sub.box.co.com Box1.co.com box.co.uk                                     |
-| box.com.\*          | Box.com.co box.com.us                                                  | Sub.box.com.us box1.com.us                                               |
+| \*.box.com          | Sub.box.com, bad.box.com                                               | Fakebox.com, mybox.com                                                   |
+| box.\*.com          | Box.co.com, box.bad.com                                                | Sub.box.co.com, Box1.co.com, box.co.uk                                   |
+| box.com.\*          | Box.com.co, box.com.us                                                 | Sub.box.com.us, box1.com.us                                              |
 | https://cisco.com   | https://cisco.com/drives/downloads/ http://cisco.com/drives/downloads/ | https://sub.cisco.com/drives/download s/ https://cisco.com.ca/downloads/ |
 | https://cisco.com\* | https://cisco.com.ca/downloads/ http://cisco.com.ca/downloads/         | https://sub.cisco.com.ca/downloads/ https://bad.cisco.com/downloads/     |
 

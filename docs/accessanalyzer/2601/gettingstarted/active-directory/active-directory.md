@@ -10,7 +10,7 @@ Access Analyzer scans Active Directory to inventory users, groups, and group mem
 
 ## Prerequisites
 
-Before setting up an Active Directory source group, confirm that your environment meets the requirements below. The source group wizard connects to your domain controllers over LDAP or LDAPS, so the Access Analyzer server must be able to reach them on the network and a domain service account must be available with the appropriate read permissions.
+Before setting up an Active Directory source group, confirm that your environment meets the following requirements. The source group wizard connects to your domain controllers over LDAP or LDAPS, so the Access Analyzer server must be able to reach them on the network and a domain service account must be available with the appropriate read permissions.
 
 ### Service account
 
@@ -29,6 +29,6 @@ See [Username and Password](../../configurations/service-accounts/username-passw
 
 ### Before you begin
 
-- The fully qualified domain name (FQDN) of each domain controller you plan to add. IP addresses aren't supported — DIGEST-MD5 authentication requires a resolvable hostname and will fail if an IP address is provided.
+- The fully qualified domain name (FQDN) of each domain controller you plan to add. Access Analyzer doesn't support IP addresses — DIGEST-MD5 authentication requires a resolvable hostname and fails if you provide an IP address.
 - A Username and Password service account created in Access Analyzer with Read access to the domain.
 - Network connectivity from the Access Analyzer server to port 389 or 636 on each domain controller confirmed.

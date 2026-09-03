@@ -86,23 +86,23 @@ In the Applet Settings section, configure the following options:
   while the proxy server is busy, before it enters the job engine queue
 - Applet communication timeout: [number] minutes – This option determines the length of time (in
   minutes) the Access Analyzer Console attempts to reach the proxy before giving up. Depending on
-  the job configuration, the data collector behaves in one of three ways after the timeout value has
-  been exceeded:
-    - If a communication timeout is reached and the **Stop scan on applet communication timeout**
+  the job configuration, the data collector behaves in one of three ways after the timeout value
+  expires:
+    - If a communication timeout occurs and the **Stop scan on applet communication timeout**
       option is unchecked, the scan continues running. When the proxy is available again, the data
       collector gets the database files on the next scan of that host. It will either bring the
       database files back, if the scan has finished, or display the current state of the scan in a
       **Running Job** node if it is still running.
-    - If the communication timeout is reached and the **Stop scan on applet communication timeout**
+    - If the communication timeout occurs and the **Stop scan on applet communication timeout**
       option is checked, Access Analyzer automatically suspends or cancels the remote scan. If the
       **Restart incomplete scans after (0 always restarts) [number] days** option or the **Rescan
       unimported hosts after (0 always rescans) [number] days** option on the Applet Gathering
       Settings page are both set to zero or unchecked, the scan cancels.
     - If either of these options on the Applet Gathering Settings page are checked with values
-      higher than zero, the scan is suspended after the communication timeout value has been
-      exceeded
+      higher than zero, Access Analyzer suspends the scan after the communication timeout value
+      expires
 - Scan cancellation timeout: [number] minutes – When checked, this option will timeout the applet
-  if there is an attempt to pause the scan and the applet doesn't respond
+  if you attempt to pause the scan and the applet doesn't respond
 
 ![Certificate Exchange Options section of the Applet Settings page](/images/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettingscertificateexchangeoptions.webp)
 

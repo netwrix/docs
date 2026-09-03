@@ -18,12 +18,10 @@ The supported external data providers are:
 - Text/CSV
 - SCIM
 
-Before using any of the above external data providers, a data source for the provider must be
-defined in Admin Center. See the [Create a Data Source](/docs/directorymanager/11.1/admincenter/datasource/create.md)
+Before using any of these external data providers, you must define a data source for the provider in Admin Center. See the [Create a Data Source](/docs/directorymanager/11.1/admincenter/datasource/create.md)
 topic.
 
-A connection is configured in a data source, Directory Manager portal connects to the external
-database, retrieves the results, and then queries the directory for matching records.
+Directory Manager portal configures a connection in the data source, connects to the external database, retrieves the results, and then queries the directory for matching records.
 
 You must map one column returned by the command on the Database tab with a directory attribute to
 join the external data source to the identity store. The query compares the values of the mapped
@@ -31,19 +29,17 @@ attributes and extracts objects with matching values to add to the group’s mem
 
 For example, if you want to add to group membership all employees whose employee IDs are present in
 an external data source, you can select that data source and map a key attribute with a directory
-attribute. Use attributes that store the employee ID. When group membership is updated, Directory
-Manager will fetch only those users from the directory whose employee IDs also exist in the data
-source.
+attribute. Use attributes that store the employee ID. When you update group membership, Directory Manager will fetch only those users from the directory whose employee IDs also exist in the data source.
 
 **External Data Provider**
 
-Select the data source from the drop-down list that you want to use to determine the group's
+Select the data source from the dropdown list that you want to use to determine the group's
 membership.
 
 **External Provider Table**
 
-Once the data source is selected, select the provider's table that contains the data. If the table
-you need is not listed, type its name in the External Provider Table box to select the table.
+After you select the data source, select the provider's table that contains the data. If the table
+you need isn't listed, type its name in the External Provider Table box to select the table.
 
 **Identity Store Attribute**
 
@@ -81,9 +77,7 @@ Click this button to clear the query.
 
 **Preview**
 
-Enables you to preview the results returned with the criteria specified on all tabs of the Query
-Designer dialog box. This is a check to ensure the accuracy of data before changes are committed to
-the directory.
+Preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This checks the accuracy of data before you commit changes to the directory.
 
 **OK**
 

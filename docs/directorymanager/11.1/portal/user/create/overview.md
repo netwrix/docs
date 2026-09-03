@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Create User Objects
 
-Directory Manager portal enables you to create following types of users:
+Directory Manager portal lets you create following types of users:
 
 - User
 - Mailbox

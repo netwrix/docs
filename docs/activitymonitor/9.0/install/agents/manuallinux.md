@@ -6,8 +6,6 @@ sidebar_position: 20
 
 # Manually Install the Linux Agent
 
-Follow the steps to manually install the agent.
-
 **Step 1 –** Transfer the rpm package to the Linux server.
 
 For example, following is a pscp command:
@@ -61,23 +59,21 @@ sudo ./activity-monitor-agentd create-client-certificate --name amagent
 **Step 5 –** Copy full certificate output from previous command on the Linux server.
 
 :::note
-This will be needed to add the agent to the console.
+You'll need this to add the agent to the console.
 :::
 
 
 ## Add the Linux Agent to the Console
 
-Before deploying the Activity agent in a Linux environment, ensure all Prerequisites have been met.
-To effectively monitor activity on a Linux host, it is necessary to deploy an agent to the host.
-Follow the steps to deploy the agent to the Linux host. See the
+Before deploying the Activity agent to a Linux environment, verify you've met all prerequisites.
+Deploy an agent to the Linux host to effectively monitor activity.
+See the
 [Linux Agent Server Requirements](/docs/activitymonitor/9.0/requirements/linuxagent.md) topic for additional
 information.
 
-Follow the steps to add the agent to the console.
-
 **Step 1 –** Open the Activity Monitor Console.
 
-**Step 2 –** On the Agents tab, click **Add Agent**. The Add New Agent(s) window opens.
+**Step 2 –** On the Agents tab, click **Add Agent**. The Add New Agents window opens.
 
 ![Install New Agent](/images/activitymonitor/9.0/install/agent/installnew.webp)
 
@@ -109,7 +105,7 @@ installed.
 **Step 6 –** On the Linux Agent Options page, select which user name to use to run the daemon. To
 use root, leave the **Service user name** field blank. Click **Test** to test the connection.
 
-**Step 7 –** Click **Finish**. The Add New Agent(s) window closes, and the activity agent is
+**Step 7 –** Click **Finish**. The Add New Agents window closes, and the activity agent is
 deployed to and installed on the target host.
 
 :::note

@@ -19,12 +19,12 @@ navigation pane and select **My Groups**. This page lists all your active groups
 
 By default, the **My Groups** tab displays the groups that you are the primary owner for. To include
 the groups for which you are an additional owner, select the **Display additional group ownership in
-My Groups** check box on the [Portal Settings](/docs/directorymanager/11.1/portal/generalfeatures/portal.md) panel. This tab lists active
-groups only; expired and deleted groups are not displayed.
+My Groups** checkbox on the [Portal Settings](/docs/directorymanager/11.1/portal/generalfeatures/portal.md) panel. This tab lists active
+groups only; expired and deleted groups aren't displayed.
 
 You can [Modify Search Directory](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#modify-search-directory) to search your groups and
 add [Filter All Groups](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#filter-all-groups)by clicking **My Groups Grid Filters**. All
-your groups matching the filters will be displayed.
+your groups matching the filters appear.
 
 **You can:**
 
@@ -44,8 +44,8 @@ your groups matching the filters will be displayed.
 - Join / leave a group
   [Join or leave a group on behalf of a direct report or peer](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupjoinleave.md#join-or-leave-a-group-on-behalf-of-a-direct-report-or-peer)a
   direct report or peer.
-- To Join/Leave the group, you can also click on **Want to write reason to group owner?** and state
-  the the reason for joining or leaving the group for the group owner.
+- To Join/Leave the group, you can also click **Want to write reason to group owner?** and state
+  the reason for joining or leaving the group for the group owner.
 - Update the security type of your group using **Set Security Type** option. You can select one of
   the following security types:
 
@@ -64,13 +64,13 @@ your groups matching the filters will be displayed.
   launches the default Windows email application for sending an email to group members.
 - Click **Export Results** on the toolbar to export the group list to a Microsoft Excel file.
 - Update the expiration policy of your group using **Set Expiration Policy** option.
-- Update owner for your group using **Set Owner** option. The drop down list displays two options:
+- Update owner for your group using **Set Owner** option. The dropdown list displays two options:
 
     - **Me:** You can set yourself as the Owner
     - **Other:** You can select some other user as the owner.
 
-- Manually [ Group Deletion](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupdeletion.md) any of your group.
-- Get a list of all groups managed by s particular group (i.e., all groups for which the selected
+- Manually [delete a group](/docs/directorymanager/11.1/portal/group/workingwithgroups/groupdeletion.md).
+- Get a list of all groups managed by a particular group (i.e., all groups for which the selected
   group is a primary or additional owner)
 
     Select a group and click **Managed By** on the toolbar to get a list of groups managed by the
@@ -92,8 +92,8 @@ a domain to search active groups from.
 
 ## Transfer Ownership
 
-You can find [Transfer Ownership](/docs/directorymanager/11.1/portal/group/transferownership.md) option on the top right corner. Transfer
-Ownership enables you to:
+You can find [Transfer Ownership](/docs/directorymanager/11.1/portal/group/transferownership.md) option on the top right corner. Use Transfer
+Ownership to:
 
 - Assign owners to orphan groups.
 - Transfer group ownership (including Exchange 2013/2016/2019 additional ownership) from one
@@ -118,6 +118,4 @@ Step 5 – All your groups that match the specified criterion are displayed.
 
 Step 6 – You can add additional filters by clicking **Add Filter.**
 
-Step 7 – To undo the filters, click **Reset Filter.**
-
-It will remove all the criteria set before.
+Step 7 – To undo the filters, click **Reset Filter.** This removes all previously set criteria.

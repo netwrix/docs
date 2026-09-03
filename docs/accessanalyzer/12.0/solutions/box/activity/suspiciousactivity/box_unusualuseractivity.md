@@ -16,7 +16,7 @@ Navigate to **Box** > **1.Activity** > **Suspicious Activity** > **Box_UnusualUs
 **Configure** node and select **Analysis** to view analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -33,4 +33,4 @@ pre-configured report:
 
 | Report                | Description                                                                                                                                                           | Default Tags | Report Elements                                                                                                                                                                    |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unusual User Activity | This report provides insight into user activity that deviates from the normal range of expected activity.  This is determined by using historical data for each user. | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays top 5 most recent unusual user activity</li><li>Table – Provides details on unusual user activity</li></ul> |
+| Unusual User Activity | This report provides insight into user activity that deviates from the normal range of expected activity. This is determined by using historical data for each user. | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays top 5 most recent unusual user activity</li><li>Table – Provides details on unusual user activity</li></ul> |

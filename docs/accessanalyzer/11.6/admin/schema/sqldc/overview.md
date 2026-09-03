@@ -8,9 +8,9 @@ This is a comprehensive schema documentation for the **NAA 11.6 SQL Server Data 
 
 The tables fall into two categories:
 
-1. **Core Data Collection Tables** (44 tables) — Normalized tables populated directly by data collectors. These contain raw audit data with full foreign key relationships. Includes shared infrastructure tables (`SA_SQL_Instances`, `SA_SQL_Patches`) used across all database collector modules.
+1. **Core Data Collection Tables** (44 tables) — Normalized tables that data collectors populate directly. These contain raw audit data with full foreign key relationships. Includes shared infrastructure tables (`SA_SQL_Instances`, `SA_SQL_Patches`) used across all database collector modules.
 
-2. **Reporting / Summary Tables** (59 tables) — Denormalized, report-ready tables populated by analysis jobs. These use human-readable column names (e.g., `"Instance"`, `"Database"`, `"Permission"`).
+2. **Reporting / Summary Tables** (59 tables) — Denormalized, report-ready tables that analysis jobs populate. These use human-readable column names (e.g., `"Instance"`, `"Database"`, `"Permission"`).
 
 ---
 

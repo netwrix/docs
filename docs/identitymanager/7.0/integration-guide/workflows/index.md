@@ -6,13 +6,13 @@ sidebar_position: 140
 
 # Workflows
 
-In software business, a [Workflow](../../integration-guide/toolkit/xml-configuration/workflows/workflow) is a series of specific actions taken by specific people to accomplish specific tasks. For Identity Manager, workflows are models of business workflows, processes or procedures.
+In software business, a [Workflow](../../integration-guide/toolkit/xml-configuration/workflows/workflow) is a series of specific actions taken by specific people to accomplish specific tasks. For Identity Manager, workflows are models of business workflows, processes, or procedures.
 
 ## Overview
 
-Workflows model business processes and update data within Identity Manager, they handle managed systems only indirectly through Identity Manager. They are engaged in order to complete a task, assigning rights for instance. It is a way of getting work done, a series of steps that are required to be completed sequentially. Most of the time, Identity Manager's workflows are made for:
+Workflows model business processes and update data within Identity Manager, they handle managed systems only indirectly through Identity Manager. They are engaged to complete a task, assigning rights for instance. It is a way of getting work done, a series of steps that are required to be completed sequentially. Most of the time, Identity Manager's workflows are made for:
 
-1. manual entitlement requests = request / send notification(s) / approve / assign entitlement.
+1. manual entitlement requests = request / send notifications / approve / assign entitlement.
 2. addition/update/deletion of resources (used in practice for identities) = create / give basic
 entitlements / review / apply changes.
 
@@ -42,7 +42,7 @@ in the workflow, then build a change set, and finally apply said change set to t
 
 A workflow is made of successive activities, each of which is assigned an [Activity Templates](../../integration-guide/workflows/activity-templates)that defines how transitions occur from a workflow step to another.
 
-Activities never run in parallel in a workflow. Each activity can start once the previous one reached its final state.
+Activities never run in parallel in a workflow. Each activity can start after the previous one reaches its final state.
 
 ## Forms
 
@@ -50,13 +50,13 @@ Workflows use [Form](../../integration-guide/toolkit/xml-configuration/user-inte
 
 A form is a set of fields, configured with controls. A control can define a field to fill, a fields set, call an existing form, etc. depending on its output type. To be displayed in the UI, and potentially filled by a given user with the appropriate data, a form must have a type.
 
-Forms without a type can be created in order to be called in other forms with a type. It can be useful to structure your forms, and to avoid rewriting a part of form that is needed in most forms for example.
+Forms without a type can be created to be called in other forms with a type. It can be useful to structure your forms, and to avoid rewriting a part of form that is needed in most forms for example.
 
 ### Form types
 
 Identity Manager provides a few form types. Each form type implies the necessity of specific controls as child elements with specific purposes.
 
-The following table presents the required child controls required for each form type applicable to a workflow's input form:
+The following table presents the required child controls for each form type applicable to a workflow's input form:
 
 - **M** for `MainControl`(required) groups resource data apart from record data;
 - **Su** for `SummaryControl`(optional when no/mono record) sums up resource data, mostly computed
@@ -88,9 +88,9 @@ computed properties, after the workflow's execution.
 
 For each workflow, some permissions must be assigned to specific [Profile](../../integration-guide/toolkit/xml-configuration/access-control/profile) so that said profiles are entitled to realize the workflow's actions.
 
-While assigning the specific permissions of a workflow, it is necessary to assign the involved profiles a few essential rights via the [Workflow Access Control Rules](../../integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/workflows/workflowaccesscontrolrules) scaffolding.
+When assigning the specific permissions of a workflow, assign the involved profiles a few essential rights via the [Workflow Access Control Rules](../../integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/workflows/workflowaccesscontrolrules) scaffolding.
 
-A workflow needs a permission for each of all its activity states involving user interaction. This means that, for example, the activities following the templates `Persist` and `Persist Only Resources` do not require any permission. This also means that, in the example of the `Action` template, a workflow would need permissions for the states `ActionPending`, `Aborted` and `Purged` (because deletion requires an authorization), but not for the state `Executed` that does not involve user interaction or special authorization. See the [Activity Templates](../../integration-guide/workflows/activity-templates) topic for additional information.
+A workflow needs a permission for each of all its activity states involving user interaction. This means that, for example, the activities following the templates `Persist` and `Persist Only Resources` don't require any permission. This also means that, in the example of the `Action` template, a workflow would need permissions for the states `ActionPending`, `Aborted` and `Purged` (because deletion requires an authorization), but not for the state `Executed` that doesn't involve user interaction or special authorization. See the [Activity Templates](../../integration-guide/workflows/activity-templates) topic for additional information.
 
 All these permissions can be shared and distributed among several profiles, according to the purpose of the workflow.
 

@@ -7,7 +7,7 @@ sidebar_position: 30
 # Antivirus Exclusions
 
 Windows activity monitoring and performance of the Activity Agent may be negatively affected by
-antivirus protections. Add the following components to antivirus exclusions in order to avoid
+antivirus protections. Add the following components to antivirus exclusions to avoid
 potential performance degradation.
 
 ## Directories
@@ -30,7 +30,7 @@ The following binary files can be added to antivirus exclusions:
 
 - Common Exclusions
 
-    - `<INSTALL_DIR>\net472\FSACLoggingSvc.exe` — Logging service. Forwards events to files, syslog, AMQP.
+    - `<INSTALL_DIR>\net472\FSACLoggingSvc.exe` — Logging service. Forwards events to files, syslog, and Advanced Message Queuing Protocol (AMQP).
     - `<INSTALL_DIR>\ConfigurationAgent.Grpc.Host.exe` — Netwrix Activity Monitor Agent service
 
 

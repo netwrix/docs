@@ -24,7 +24,7 @@ knowledge_article_id: kA00g000000H9SdCAK
 
 # How to troubleshoot overwrites in change reports for VMWare
 
-Refer to the KB article for details about how Netwrix Auditor for VMware works: https://kb.netwrix.com/258. Overwrites warnings occur because there is some gap between the last collected and the oldest of newly received events. Try running collections more frequently by changing the notifications frequency under **Monitoring Plan** settings. If this doesn't help, perform the following steps to troubleshoot this and localize the problematic place.
+Overwrites warnings occur because there is some gap between the last collected and the oldest of newly received events. Try running collections more frequently by changing the notifications frequency under **Monitoring Plan** settings. If this doesn't help, perform the following steps to troubleshoot this and localize the problematic place.
 
 After receiving a change report for VMware with event overwrites warning and changes which, as a result of event overwrites, were reported as made by `system`, retrieve audit events using VMware PowerCLI cmdlets by connecting to vCenter and ESX hosts:
 

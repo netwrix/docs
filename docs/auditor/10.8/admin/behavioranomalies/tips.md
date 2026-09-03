@@ -16,7 +16,7 @@ helpful when configuring scoring settings and reviewing behavior anomalies.
     rights elevation or suspicious access attempts?
 
     Try to review user tasks—you may find out that the anomaly the user keeps provoking is a genuine
-    part of his or her daily routine. For example, the office staff should not reset passwords for
+    part of his or her daily routine. For example, the office staff shouldn't reset passwords for
     other accounts while this is a basic task for a system administrator. In this case, review your
     alert settings and exclude the user from the alert filters.
 
@@ -30,6 +30,6 @@ helpful when configuring scoring settings and reviewing behavior anomalies.
 - Is anyone who is charge of "Failed..." anomaly a bad actor?
 
     Anyone can forget a password or accidentally try to access some data in a wrong folder. Such
-    users are not subject to immediate prosecution unless they do not provoke repetitive alerts. The
+    users aren't subject to immediate prosecution unless they don't provoke repetitive alerts. The
     best practice is to review user profile after some time and check if there are any threat
     patterns in user behavior.

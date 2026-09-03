@@ -36,7 +36,7 @@ See the [Entitlement Management](../../../introduction-guide/overview/entitlemen
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements and data model.
+For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -50,7 +50,7 @@ A new resource type requires an existing entity type. See the [Create an Entity 
 
 Create a resource type by proceeding as follows:
 
-1. On the relevant connector page, click on the addition button in the **Resource Types** frame.
+1. On the relevant connector page, click the addition button in the **Resource Types** frame.
 
     ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
 
@@ -71,21 +71,21 @@ exists.
     - `Target Entity Type`: entity type (part of the connector) to be filled with the source entity type.
     - `Category`: category assigned to the resource type. It can be chosen from among the existing categories or [created](../../../user-guide/set-up/single-roles-catalog-creation) directly from the categories list by clicking on the **+ Category** button.
     - `Approval Workflow`: represents the number of validations required to assign a resource from this type to an identity.
-    - `Approve Role Implicitly`: relevant only for workflows with at least a simple approval process. `Implicit` mode bypasses the approval step(s) if the person who issues the role request is also the role officer. `Explicit` refuses said bypass. `Inherited` follows the policy decision to approve role implicitly or not. See the [Create a Policy](../../../user-guide/optimize/policy-creation) topic for additional information.
+    - `Approve Role Implicitly`: relevant only for workflows with at least a simple approval process. `Implicit` mode bypasses the approval steps if the person who issues the role request is also the role officer. `Explicit` refuses said bypass. `Inherited` follows the policy decision to approve role implicitly or not. See the [Create a Policy](../../../user-guide/optimize/policy-creation) topic for additional information.
     - `Prolongation without a new approval workflow`: enables the resource type to have its assignment's end date postponed without any validation. `Inherited` follows the policy decision to enable this option or not. See the [Create a Policy](../../../user-guide/optimize/policy-creation) topic for additional information.
-    - `Hide in Simplified View`: hides the role from the users' **Simplified View** in **View Permissions** dialog. This setting does not apply to roles which are either inferred or have workflow states which require **Manual** action.
-    - `Arguments Expression`: when using a connection for **Automatic** provisioning, C# expression used to compute a dictionary of strings in order to compute the arguments of [provisioning](../../../user-guide/administrate/provisioning) orders, such as the identifier of the workflow to launch within Identity Manager, or the identifier of the user's record to copy. See the [Provision](../../../user-guide/administrate/provisioning) topic for additional information.
+    - `Hide in Simplified View`: hides the role from the users' **Simplified View** in **View Permissions** dialog. This setting doesn't apply to roles which are either inferred or have workflow states which require **Manual** action.
+    - `Arguments Expression`: when using a connection for **Automatic** provisioning, C# expression used to compute a dictionary of strings to compute the arguments of [provisioning](../../../user-guide/administrate/provisioning) orders, such as the identifier of the workflow to launch within Identity Manager, or the identifier of the user's record to copy. See the [Provision](../../../user-guide/administrate/provisioning) topic for additional information.
     - `Allow Addition`: enables Identity Manager to automatically create new resources in the managed system when their owners are given the right entitlements. Otherwise, resource managers must create resources manually directly in the managed system.
 
-        > Consider a role `SAP` which assigns an SAP account to a user. Consider also that SAP accounts are configured with `Allow Addition` disabled. In this case, if we give the role `SAP` to a user, then said user doesn't automatically receive an SAP account. The relevant resource manager must create an account for said user in the SAP application.
+        > Consider a role `SAP` which assigns an SAP account to a user. Consider also that SAP accounts are configured with `Allow Addition` disabled. In this case, granting the role `SAP` to a user doesn't automatically create an SAP account for that user. The relevant resource manager must create an account for said user in the SAP application.
 
     - `Allow Removal`: enables Identity Manager to automatically deprovision resources in the
-managed system when their owners are deprived of the right entitlements. Otherwise, Identity Manager is able to delete resources in the managed system only with a **Manual** approval on the **Resource Reconciliation** screen.
+managed system when their owners are deprived of the right entitlements. Otherwise, Identity Manager can delete resources in the managed system only with a **Manual** approval on the **Resource Reconciliation** screen.
 
         > Consider a role `SAP` which assigns an SAP account to a user. Consider also that SAP
         > accounts are configured with `Allow Removal` disabled. Finally, consider a given user who
-        > has the role `SAP` and the corresponding SAP account. In this case, if we deprive said
-        > user from the role `SAP`, then the SAP account isn't automatically deleted. Identity
+        > has the role `SAP` and the corresponding SAP account. In this case, revoking the role
+        > `SAP` from said user doesn't automatically delete the SAP account. Identity
         > Manager  displays this assignment as non-conforming on the **Resource Reconciliation**
         > page, and the relevant resource manager must confirm the account deletion.
 
@@ -130,7 +130,7 @@ existing target objects from this resource type.
 
     - `Transmitted State Validity`: The period in minutes during which fulfillment orders can stay
 in Transmitted/Executed state. When the time is exceeded the orders are set in error state.
-    - `Depends On Resource Type`: potential resource type (other than the one presently created)
+ - `Depends On Resource Type`: potential resource type (other than the one created)
 which must be provisioned for a given identity **before** this resource type can be created for said identity.
 
         > This option can be used so that a user must have an AD account **before** they can own an
@@ -141,18 +141,18 @@ which must be provisioned for a given identity **before** this resource type can
 
         > This option can be used so that a user must have a ServiceNow identifier **before** they can
         > own an AD administrator account, because the AD administrator account needs this random
-        > identifier computed by ServiceNow in order to be able to perform **Manual** provisioning in
+        > identifier computed by ServiceNow to perform **Manual** provisioning in
         > ServiceNow.
 
 3. Fill the **Fulfill Settings** arguments according to the selected package.
 
 Integrators need to know the required provisioning connection, especially whether the connection is about **Manual** or automated provisioning. **Automatic** provisioning means that Identity Manager writes in the managed system. **Manual** provisioning means that Identity Manager isn't allowed to write directly inside the managed system, and thus it creates tickets so that resource managers perform the needed changes.
 
-4. Click on **+ Create & Close** > **Create**.
+4. Click **+ Create & Close** > **Create**.
 
 ## Verify Resource Type Creation
 
-In order to verify the process, check that the resource type has been added with the right options to the list on the **Access Roles** page, accessible from the home page in the **Administration** section.
+To verify the process, check that the resource type has been added with the right options to the list on the **Access Roles** page, accessible from the home page in the **Administration** section.
 
 ![Home - Access Roles](/images/identitymanager/home_roles_v602.webp)
 

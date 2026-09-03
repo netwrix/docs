@@ -16,7 +16,7 @@ Navigate to the **Databases** > SQL > 4.Configuration > SQL_BestPractices > Con
 select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task(s). The analysis task(s) are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

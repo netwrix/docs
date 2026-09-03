@@ -1,10 +1,10 @@
 ---
 title: "CreateResourceIncrementalAccessControlRules"
-description: "Generates the access control rule which gives to a profile the permission to query the resources modified incrementally"
+description: "Generates the access control rule which gives a profile the permission to query the resources modified incrementally"
 sidebar_position: 1
 ---
 
-Generates the access control rule which gives to a profile the permission to query the resources modified incrementally
+Generates the access control rule which gives a profile the permission to query the resources modified incrementally
 
 
 
@@ -26,7 +26,7 @@ Generates the access control rule which gives to a profile the permission to que
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Resource_Incremental" DisplayName_L1="Administrator Resource Incremental Query" EntityType="Resource" Profile="Administrator">

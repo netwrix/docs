@@ -8,7 +8,7 @@ sidebar_position: 20
 
 This topic describes the recommended configuration of the servers needed to install the application
 in a production environment. Depending on the size of the organization, it is recommended to review
-your environment and requirements with a Netwrix engineer prior to deployment to ensure all
+your environment and requirements with a Netwrix engineer before deployment to ensure all
 exceptions are covered.
 
 ## Architecture Overview
@@ -26,15 +26,15 @@ The following servers are required for installation of the application:
     :::
 
 
-- **Agents** – There are three deployment scenarios that that differ in their requirements:
+- **Agents** – There are three deployment scenarios with different requirements:
 
     - Activity monitoring of Windows file servers, Network Attached Storage (NAS) devices, Azure Files, Microsoft Entra ID, SharePoint On-premise, 
-      SharePoint Online, Exchange Online, and SQL Server. The agent is deployed on a Windows Server. 
+      SharePoint Online, Exchange Online, and SQL Server. Deploy the agent on a Windows Server. 
       See the [Activity Agent Server Requirements](/docs/activitymonitor/10.0/requirements/activityagent/activityagent.md) topic
       for additional information.
-    - Active Directory monitoring – the agent is deployed to every domain controllers to monitor Active Directory
+    - Active Directory monitoring – Deploy the agent to every domain controller to monitor Active Directory
       domains. See the [AD Agent Server Requirements](/docs/activitymonitor/10.0/requirements/adagent/adagent.md) topic for additional information.
-    - Linux monitoring – the agent is deployed to Linux servers to be monitored. See the
+    - Linux monitoring – Deploy the agent to Linux servers to monitor them. See the
       [Linux Agent Server Requirements](/docs/activitymonitor/10.0/requirements/linuxagent.md) topic for additional information.
 
 **Target Environment Considerations**

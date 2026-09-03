@@ -19,7 +19,7 @@ group implementation.
 **Step 3 –** (Optional) Configure a Host List for the job at the job level.
 
 :::note
-If a host list is not configured, this job will analyze and commit actions on every File
+If you don't configure a host list, this job analyzes and commits actions on every File
 System server known to Enterprise Auditor. To scope the actions to target specific servers,
 configure a host list at the job level to target only those servers.
 :::
@@ -31,7 +31,7 @@ configure a host list at the job level to target only those servers.
 - Verify that all actions are disabled
 
     :::warning
-    Do not make configuration changes to the analysis tasks after reviewing and
+    Don't make configuration changes to the analysis tasks after reviewing and
     approving the Change Modeling report
     :::
 
@@ -48,7 +48,7 @@ configure a host list at the job level to target only those servers.
 
 **Step 6 –** Execute File System actions:
 
-- Allow an appropriate grace period for token refresh prior to executing File System action tasks,
+- Allow an appropriate grace period for token refresh before executing File System action tasks,
   for example one week
 - Disable the Active Directory action tasks
 - Enable the File System action tasks
@@ -70,14 +70,14 @@ based groups. See the
 [FS_TraverseGroups Job](/docs/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/fs_traversegroups.md)
 topic for additional information.
 
-**Step 9 –** (Optional) Import resources and access groups from the FS_ResoureBasedGroup Job into
+**Step 9 –** (Optional) Import resources and access groups from the FS_ResourceBasedGroups Job into
 the Netwrix Access Information Center. See the
 [FS_ResourceBasedGroupAICImport Job](/docs/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/fs_resourcebasedgroupaicimport.md)
 topic for additional information.
 
 ## Model Intended Changes
 
-Prior to executing the actions to apply changes, the proposed changes can be modeled and reviewed to
+Before executing the actions to apply changes, model and review the proposed changes to
 determine if the parameters are configured as desired.
 
 ### Configure the Analyze Group Permissions Analysis Task
@@ -107,12 +107,12 @@ topic for additional information.
 | Analyze Group Permissions | @add_admin_groups           | 1                                                    | Add full control admin groups. 1=true. 0=false.                                                                                                                                                                                                                           |
 | Analyze Group Permissions | @admin_groups               |                                                      | ObjectSIDs of admin groups to add to every share if @add_admin_groups = 1                                                                                                                                                                                                 |
 | Analyze Group Permissions | #folders                    |                                                      | List of folders to assign RBG to. Overrides @levels_down.                                                                                                                                                                                                                 |
-| Analyze Group Permissions | @activity_filter            | 1000                                                 | Filter out users with last activity older than X days ago. Will filter out users who have not accessed the folder within the specified threshold. If activity records show the user has never accessed the folder, users will still be included in resource based groups. |
+| Analyze Group Permissions | @activity_filter            | 1000                                                 | Filter out users with last activity older than X days ago. This filters out users who have not accessed the folder within the specified threshold. If activity records show the user has never accessed the folder, the user is still included in resource based groups. |
 
 ### Execute the Analysis Tasks
 
 Execute the analysis tasks to generate the Change Modeling report and review the proposed changed
-prior to executing the actions to apply the changes.
+before executing the actions to apply the changes.
 
 | Report          | Description                                                            | Default Tags | Report Elements                                                                                                                                                                                                                                   |
 | --------------- | ---------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -127,47 +127,45 @@ implementing the changes:
 
 Access changes occur in the following cases:
 
-- The user is granted full access, but is not a member of the administrator group specified in the
+- The user is granted full access, but isn't a member of the administrator group specified in the
   analysis parameters
 - The user is granted less access, but is a member of the administrator group specified in the
   analysis parameters
 - The user has not used access within the timeframe configured in the analysis parameters
 
-Follow the steps to model the proposed changes.
-
-**Step 1 –** Make sure all of the analysis tasks are enabled.
+**Step 1 –** Ensure all of the analysis tasks are enabled.
 
 :::warning
-Prior to executing the analysis tasks, make sure that all action tasks are disabled.
+Before executing the analysis tasks, ensure that all action tasks are disabled.
 The purpose at this point is only to model the intended changes.
 :::
 
 
-**Step 2 –** In the Configure node, select **Actions** and make sure that all of the action tasks
+**Step 2 –** In the Configure node, select **Actions** and ensure that all of the action tasks
 are disabled.
 
-**Step 3 –** Right click on the **Resource Based Groups** folder and select **Run Group**. This will
+**Step 3 –** Right click the **Resource Based Groups** folder and select **Run Group**. This will
 generate the Change Modeling report.
 
 - Wait for the queued jobs to execute.
 
 **Step 4 –** In the **FS_ResourceBasedGroups** node, navigate to **Results** > **Change Modeling**
-to review the proposed changes prior to executing the actions to apply the changes.
+to review the proposed changes before executing the actions to apply the changes.
 
-The Change Modeling report has been created for review. Ensure the modeled changes are approved
-before continuing with implementing them.
+The Change Modeling report is now available for review. Ensure the modeled changes are approved
+before you implement them.
 
 ## Configure & Execute Active Directory Action Tasks
 
 :::warning
-Do not modify the analysis tasks after the Change Modeling report has been reviewed and
+Don't modify the analysis tasks after the Change Modeling report has been reviewed and
 approved. The approved modeled changes are implemented through the execution of the action tasks.
 :::
 
 
-The Active Directory action tasks create and populate resource based groups. The Create Groups and
-Update Members action tasks must be updated to specify a Target OU for group creation prior to
-enabling and executing the actions. It should also be verified that these action tasks are targeting
+The Active Directory action tasks create and populate resource based groups. You must update the
+Create Groups and Update Members action tasks to specify a Target OU for group creation before you
+enable and execute the actions. Also verify that these action tasks target
 the same domain controller.
 
 View the action tasks by navigating to the **Jobs** > **FileSystem** > **Resourced Based Groups** >
@@ -175,12 +173,12 @@ View the action tasks by navigating to the **Jobs** > **FileSystem** > **Resourc
 
 ![Active Directory Action Tasks](/images/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/rbgactivedirectoryactions.webp)
 
-There are the following two Active Directory action tasks:
+Two Active Directory action tasks are available:
 
 - Create Groups – Creates resource based groups
 - Update Members – Adds members to the resource based groups based on permissions
 
-It is recommended to review the tables used by the actions prior to executing the actions. The
+Review the tables used by the actions before you execute the actions. The
 actions act upon the data within the following tables:
 
 - FS_ResourceBasedGroups_GroupsToCreate
@@ -190,8 +188,6 @@ The actions populate the Create Groups and Update Members tables, which can be v
 job’s Results node. The FS_ResourceBasedGroups Job will run analysis tasks against these tables.
 
 ### Configure & Enable the Create Groups Action Task
-
-Follow the steps to configure the Create Groups action task.
 
 **Step 1 –** Select the action and click **Action Properties**.
 
@@ -214,8 +210,6 @@ to identify the domain controller that is closest to the file server and use tha
 The Create Groups action is configured.
 
 ### Configure & Enable the Update Members Action Task
-
-Follow the steps to configure the Create Groups action task.
 
 **Step 1 –** Select the action task and click **Action Properties**.
 
@@ -240,30 +234,28 @@ The Update Members action is configured.
 
 ### Execute Active Directory Action Tasks
 
-Make sure that the File System actions are deselected and execute the Active Directory action tasks.
+Ensure that the File System actions are deselected, and execute the Active Directory action tasks.
 The Create Groups action creates the resource based groups. The Update Members action populates
 those groups.
 
 Enabled action tasks can be manually executed at the Actions node. Action tasks can be scheduled
 only at the job level.
 
-Follow the steps to execute the AD actions.
-
 :::warning
-Do not modify the analysis tasks after the Change Modeling report has been reviewed and
+Don't modify the analysis tasks after the Change Modeling report has been reviewed and
 approved. The approved modeled changes are implemented through the execution of the action tasks.
 :::
 
 
 :::info
-Disable the analysis tasks. It is not necessary to collect the data again.
+Disable the analysis tasks. You don't need to collect the data again.
 :::
 
 
 **Step 1 –** On the Action Selection page, enable the **Create Groups** and **Update Members**
 actions.
 
-**Step 2 –** Right-click on the **Resource Based Groups** folder and select **Run Group**.
+**Step 2 –** Right-click the **Resource Based Groups** folder and select **Run Group**.
 
 - Wait for the queued jobs to execute.
 
@@ -272,25 +264,25 @@ The resource based groups are created and populated.
 ## Execute File System Action Tasks
 
 :::warning
-Prior to executing the File System action tasks, allow a grace period, for example one
+Before executing the File System action tasks, allow a grace period, for example one
 week. This is important for token refresh to occur as users log off and log on again.
 :::
 
 
 The File System actions modify folder permissions and break inheritance. The Modify Permissions and
-Break Inheritance actions modules do not require any configuration.
+Break Inheritance actions modules don't require any configuration.
 
 View the action tasks by navigating to the **Jobs** > **FileSystem** > **Resourced Based Groups** >
 **FS_ResourceBasedGroups** > **Configure** node and select **Actions**.
 
 ![File System action tasks](/images/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/rbgfilesystemactions.webp)
 
-There are the following two File System action tasks:
+Two File System action tasks are available:
 
 - Modify Permissions – Modifies folder permissions
 - Break Inheritance – Breaks inheritance and remove all previous permissions
 
-It is recommended to review the tables used by the actions prior to executing the actions. The
+Review the tables used by the actions before you execute the actions. The
 actions act upon the data within the following table:
 
 - FS_ResourceBasedGroups_GroupsToCreate
@@ -298,10 +290,8 @@ actions act upon the data within the following table:
 The actions populate the Modify Permissions and Break Inheritance tables, which can viewed under the
 job’s Results node. The FS_ResourceBasedGroups Job will run analysis tasks against these tables.
 
-Follow the steps to execute the FS actions.
-
 :::warning
-Do not modify the analysis tasks after the Change Modeling report has been reviewed and
+Don't modify the analysis tasks after the Change Modeling report has been reviewed and
 approved. The approved modeled changes are implemented through the execution of the action tasks.
 :::
 
@@ -311,7 +301,7 @@ actions.
 
 **Step 2 –** Enable the **Modify Permissions** and **Break Inheritance** actions.
 
-**Step 3 –** Right-click on the **Resource Based Groups** folder and select **Run Group**.
+**Step 3 –** Right-click the **Resource Based Groups** folder and select **Run Group**.
 
 - Wait for the queued jobs to execute.
 
@@ -328,15 +318,13 @@ purposes.
 | Action History | This report shows all actions taken on each share for audit trail purposes. | None         | This report is comprised of one element: <ul><li>Table – This table provides details on the actions taken on each share</li></ul> |
 
 
-Follow the steps to analyze and report on action history.
-
 :::warning
-Disable all of the action tasks prior to generating the Action History report.
+Disable all of the action tasks before generating the Action History report.
 :::
 
 
 **Step 1 –** On the Action Selection page, disable the **Modify Permissions** and **Break
-Inheritance** actions. Make sure all of the action tasks are disabled.
+Inheritance** actions. Ensure all of the action tasks are disabled.
 
 **Step 2 –** On the Analysis Selection page, enable the **Create view for action status** and
 **Summarize Access Changes** analysis tasks.

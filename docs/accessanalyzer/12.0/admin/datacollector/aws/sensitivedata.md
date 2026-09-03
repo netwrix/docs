@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # AWS: Sensitive Data Settings
 
-The Sensitive Data Settings page is where sensitive data discovery settings are configured. It is a
+Use the Sensitive Data Settings page to configure sensitive data discovery settings. It is a
 wizard page for the category of Collect SDD Data.
 
 ![Sensitive Data Settings page](/images/accessanalyzer/12.0/admin/datacollector/aws/sensitivedata.webp)
@@ -18,7 +18,8 @@ Configure the following options:
 - Include offline files (this may significantly increase scan times) – Includes offline files in the
   scan
 - Perform Optical Character Recognition for image files – Enables the data collector to scan for
-  sensitive data within digital images of physical documents
+  sensitive data within digital images of physical documents using optical character recognition
+  (OCR)
 
     :::note
     The OCR option is intended to work for clear scanned physical documents or documents
@@ -46,13 +47,13 @@ Configure the following options:
         - Spreadsheets
         - Text/Markup files
 
-- Perform differential scan of – Enables you to choose whether to employ incremental scanning:
+- Perform differential scan of – Choose whether to employ incremental scanning:
 
     - Files modified since last scan – Scans only files modified since the last scan
     - Files modified since [date] – Only scans files modified after the specified date
     - Files modified since the last [number] days – Scans files modified within the specified number
       of days
 
-- Number of SDD scan processes [number] – Increases the number of SDD scanner processes that spawn
-  as part of a scan, increasing parallel scanning. The value should not exceed 2x the number of CPU
-  threads available.
+- Number of SDD scan processes [number] – Increases the number of Sensitive Data Discovery (SDD)
+  scanner processes that spawn as part of a scan, increasing parallel scanning. The value shouldn't
+  exceed 2x the number of CPU threads available.

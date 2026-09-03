@@ -8,7 +8,7 @@ sidebar_position: 100
 
 The AD_Delegation Job highlights user accounts which are trusted for delegation. Kerberos delegation
 enables an application to access resources hosted on a different server, and opens up several
-avenues to compromise based on the type of delegation enabled.  See the
+avenues to compromise based on the type of delegation enabled. See the
 [What Is Kerberos Delegation?](https://blog.netwrix.com/2021/11/30/what-is-kerberos-delegation-an-overview-of-kerberos-delegation/) Netwrix
 blog article for more information about this configuration and the related security risks.
 
@@ -18,7 +18,7 @@ Navigate to the **Active Directory** > **2.Users** > **AD_UserDelegation** > **C
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

@@ -7,8 +7,8 @@ sidebar_position: 20
 # Exchange Remote Connections Permissions
 
 The SMARTLog Data Collector processes the IIS Logs on the server running the Client Access Service
-(CAS) to return information about the remote connections being made to Exchange. This data collector
-uses an applet to process and collect the IIS Logs.
+(CAS) to return information about remote connections to Exchange. This data collector uses an applet
+to process and collect the IIS Logs.
 
 2. CAS Metrics Job Group Requirement
 
@@ -16,7 +16,7 @@ In addition to the permissions required by the SMARTLog Data Collector, the Conn
 assigned to the 2. CAS Metrics Job Group requires the following permissions and User Rights (based
 on default settings):
 
-- Member of the local Administrator group on the targeted Exchange server(s) where the Client Access
+- Member of the local Administrator group on the targeted Exchange servers where the Client Access
   Service is running
 - Log on as a Service Group Policy:
 
@@ -39,7 +39,7 @@ example:
 
 **\\ExchangeServerName\c$\Program Files (x86)\STEALTHbits\StealthAUDIT\LogProcessor**
 
-If there have been additional security or permission modifications on the server(s), the following
+If there have been additional security or permission modifications on the servers, the following
 rights and policies may need to be enabled on the targeted host:
 
 - Ensure the Administrator group has been granted Full Control over IIS Log Directories

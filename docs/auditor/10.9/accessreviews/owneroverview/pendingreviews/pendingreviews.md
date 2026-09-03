@@ -73,8 +73,8 @@ features:
 - Save Changes — Saves all recommended changes, enabling you to leave the review in progress and
   return at a later time to complete it. It opens the Saving review window, which displays a status
   for the action.
-- Remove Access — On the 1 Make changes tab, removes access from the selected trustees. Ctrl-click
-  can be used for multi-select. Current access blue icon with a checkmark will turn to an empty
+- Remove Access — On the 1 Make changes tab, removes access from the selected trustees. Use
+  Ctrl-click for multi-select. Current access blue icon with a checkmark will turn to an empty
   yellow icon.
 - Only show changes since last review — Scopes the table to only display those items that have been
   modified since the last review instance

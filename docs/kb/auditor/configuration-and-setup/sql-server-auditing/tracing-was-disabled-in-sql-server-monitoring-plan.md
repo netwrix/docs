@@ -47,7 +47,7 @@ and it has been automatically enabled for future reports.
 
 - If logged once upon the first data collection, Netwrix Auditor automatically detected the default SQL Server log path and enabled the tracing via this path. This is a standard notification sent after the first data collection. These errors can be ignored.
 - If logged repeatedly upon each data collection, SQL Server is misconfigured as it does not return the default SQL server log path. Netwrix Auditor cannot enable the audit tracing.
-- If logged repeatedly upon every SQL server restart, SQL Server tracing stops on every reboot.
+- If logged repeatedly upon every SQL server restart, SQL Server tracing stops on every reboot and/or SQL services restart. Netwrix Auditor will re-enable tracing automatically.
 - If logged every day, the antivirus exclusions in your environment may be misconfigured.
 
 ## Resolutions

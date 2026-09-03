@@ -12,8 +12,7 @@ job is located in the Collection job group.
 
 **Target Host**
 
-It is recommended to target the **ONE DOMAIN CONTROLLER PER DOMAIN** or **Default domain
-controller** host list.
+Target the **ONE DOMAIN CONTROLLER PER DOMAIN** or **Default domain controller** host list.
 
 ## Queries for the AD_CACollection Job
 
@@ -39,7 +38,7 @@ Navigate to the **Active Directory** > **7.Certificate Authority** > **Collectio
 **AD_CACollection** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

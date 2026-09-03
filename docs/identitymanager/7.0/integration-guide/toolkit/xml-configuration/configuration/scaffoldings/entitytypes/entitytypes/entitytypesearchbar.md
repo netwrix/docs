@@ -26,7 +26,7 @@ Creates the search bar for the entity without criteria.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <SearchBar EntityType="Directory_Country" Menu="Search_Directory_Country" SearchBarDesignElement="Inline" />

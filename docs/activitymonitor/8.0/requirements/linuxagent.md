@@ -20,7 +20,7 @@ are:
 
 :::note
 For monitoring a Linux file server, the The Linux Agent is deployed to Linux servers to be
-monitored. It cannot be deployed to a proxy server.
+monitored. It can't be deployed to a proxy server.
 :::
 
 
@@ -33,7 +33,7 @@ The following protocols are supported for the Linux agent:
 - Network File System (Mounted Client-Side)
 
 :::note
-Server-Side NFS protocol is not supported.
+Server-Side NFS protocol isn't supported.
 :::
 
 
@@ -44,7 +44,7 @@ The following permission is required by the account used to install and manage t
 - Root privileges with password (or SSH private key)
 
 For integration between the Activity Monitor and Access Analyzer, the credential used by Access
-Analyzer to read the activity log files must have also have this permission.
+Analyzer to read the activity log files must also have this permission.
 
 ## Immutable Mode
 

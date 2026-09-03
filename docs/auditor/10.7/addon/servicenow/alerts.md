@@ -19,7 +19,7 @@ By default, none of the alerts are integrated with add-on. To instruct the add-o
 for alerts, you should enable integration. Netwrix provides a command-line tool for enabling
 integration with the add-on.
 
-**NOTE:** Make sure to turn on alerting in Auditor. You should manually set the state to "**On**"
+**NOTE:** Ensure to turn on alerting in Auditor. You should manually set the state to "**On**"
 for all alerts you want to integrate with the add-on.
 
 Perform the following steps to integrate alerts with the add-on:
@@ -36,7 +36,7 @@ C:\Add-on\Netwrix.ITSM.AlertsUploaderTool.exe
 
 | To...                                              | Execute...                                                                                                                                                                                                                                                                                                                                                                    |
 | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Upload alert set shipped with the addon to Auditor | Netwrix.ITSM.AlertsUploaderTool.exe /UploadTemplates Once uploaded, the alerts appear in the **All Alerts** list in Auditor, their names start with "_ITSM add-on_". Make sure to set their state to **"On**" (turn them on) manually.                                                                                                                                        |
+| Upload alert set shipped with the addon to Auditor | Netwrix.ITSM.AlertsUploaderTool.exe /UploadTemplates Once uploaded, the alerts appear in the **All Alerts** list in Auditor, their names start with "_ITSM add-on_". Ensure to set their state to **"On**" (turn them on) manually.                                                                                                                                        |
 | Review alert list and their integration status     | Netwrix.ITSM.AlertsUploaderTool.exe /List You will see the full list of Auditor alerts, with an enabled or disabled integration status for each alert.                                                                                                                                                                                                                        |
 | Enable integration                                 | Netwrix.ITSM.AlertsUploaderTool.exe /Update "`<Alert Name>`" Enable where `<Alert Name>` is the name of the alert you want to integrate with the add-on. Provide alert names as they appear in Auditor. **NOTE:** You can enable integration with one alert at a time. For example: Netwrix.ITSM.AlertsUploaderTool.exe /Update "ITSM Add-On: User Account Locked Out" Enable |
 | Disable integration                                | Netwrix.ITSM.AlertsUploaderTool.exe /Update "`<Alert Name>`" Disable where `<Alert Name>` is the name of the alert for which you want to disable integration. **NOTE:** You can disable integration with one alert at a time. For example: Netwrix.ITSM.AlertsUploaderTool.exe /Update "ITSM Add-On: User Account Locked Out" Disable                                         |

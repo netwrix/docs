@@ -68,10 +68,10 @@ On the Dynasty Options page:
 
     To change the container, click **Browse** and select a new container.
 
-1. From the **Filter** drop-down list, select an additional group-by filter for greater control over
+1. From the **Filter** dropdown list, select an additional group-by filter for greater control over
    the values used to create children.
 
-    - **None**: Do not apply any filter. Simply create a group for each distinct value of the
+    - **None**: Don't apply any filter. Create a group for each distinct value of the
       attribute selected in the **Group items by** list. For example, distinct values for the
       ‘department’ attribute might be _Engineering_, _Marketing_, and _Finance_.
     - **Left**: Select a portion of the group-by attribute starting from the left for the number of

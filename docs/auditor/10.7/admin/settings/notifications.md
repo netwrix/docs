@@ -57,7 +57,6 @@ could use the application to send email. To do this, the following actions requi
 
 ### Create a Group
 
-Follow the steps to create a group.
 
 **Step 1 –** Log in to the Exchange admin center with your administrator account.
 
@@ -78,15 +77,13 @@ the group.
 
 ### Add Email to a Group
 
-Follow the steps to add emails to group.
 
-**Step 1 –** In the Exchange admin cente go to Groupsand click on the [Mail-enabled security] tab.
+**Step 1 –** In the Exchange admin cente go to Groupsand click the [Mail-enabled security] tab.
 
-**Step 2 –** Click on the group you have created and add emails you want to allow APIs to access.
+**Step 2 –** Click the group you have created and add emails you want to allow APIs to access.
 
 ### Apply Restriction Using PowerShell Commands
 
-Follow the steps to run following commands using PowerShell.
 
 **Step 1 –** Open PowerShell
 
@@ -124,14 +121,14 @@ and click Modify to adjust them if necessary.
 | Port number                                             | Specify your SMTP server port number.                                                                                                                                                                                                                                                         |
 | Sender address                                          | Enter the address that will appear in the From field. **_RECOMMENDED:_** click **Send Test Email**. The system will send a test message to the specified email address and inform you if any problems are detected.                                                                           |
 | SMTP authentication                                     | Select this checkbox if your mail server requires the SMTP authentication.                                                                                                                                                                                                                    |
-| Sender email (from)                                     | Enter the address that will appear in the "_From_" field in email notifications. This option does not affect notifications sent to users' managers and administrators. Before configuring the "_From_" field for user email notifications, make sure that your Exchange supports this option. |
+| Sender email (from)                                     | Enter the address that will appear in the "_From_" field in email notifications. This option doesn't affect notifications sent to users' managers and administrators. Before configuring the "_From_" field for user email notifications, ensure that your Exchange supports this option. |
 | User name                                               | Enter a user name for the SMTP authentication.                                                                                                                                                                                                                                                |
 | Password                                                | Enter a password for SMTP authentication.                                                                                                                                                                                                                                                     |
 | Use Secure Sockets Layer encrypted connection (SSL/TLS) | Select this checkbox if your SMTP server requires SSL to be enabled.                                                                                                                                                                                                                          |
 | Use implicit SSL anthentification                       | Select this checkbox if the implicit SSL mode is used, which means that an SSL connection is established before any meaningful data is sent.                                                                                                                                                  |
-| Enforce certificate validation to ensure security       | Select this checkbox if you want to verify security certificate on every email transmission. The option is not available for auditing User Activity as well Netwrix Auditor tools.                                                                                                            |
+| Enforce certificate validation to ensure security       | Select this checkbox if you want to verify security certificate on every email transmission. The option isn't available for auditing User Activity as well Netwrix Auditor tools.                                                                                                            |
 
-You can configure Activity Summary frequency, format and delivery time for each monitoring plan
+You can configure Activity Summary frequency, format, and delivery time for each monitoring plan
 individually. See the [Fine-Tune Your Plan and Edit Settings](/docs/auditor/10.7/admin/monitoringplans/finetune.md) topic
 for more information.
 
@@ -140,17 +137,15 @@ emails.
 
 ## Summary Emails and Notifications about Critical Events
 
-Follow the steps to send summary emails and notifications about critical events.
-
 **Step 1 –** Navigate to the Summary email recipient and click Modify.
 
 **Step 2 –** Specify recipient address:
 
 - To send to a single recipient, enter personal mailbox address.
-- To send to multiple recipients, make sure they are added to a distribution group, and enter the
-  group address. Entering multiple individual addresses is not supported.
+- To send to multiple recipients, ensure they are added to a distribution group, and enter the
+  group address. Entering multiple individual addresses isn't supported.
 
-To learn more about product health, you can also navigate to the Health status tile in the main
+For more information about product health, navigate to the Health status tile in the main
 window. It will take you to the Health Status dashboard that contains information on the product
 activity and system health state. See the
 [Health Status Dashboard](/docs/auditor/10.7/admin/healthstatus/dashboard/overview.md) topic for additional information.

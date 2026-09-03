@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Create Menu Items
 
-After creating a workflow as for the EntityTypes, is mandatory to create the MenuItems to create the Navigation to this Workflow.
+After creating a workflow for the EntityTypes, you must create the MenuItems to set up navigation to this workflow.
 
 ### Create menu items for a workflow in a resource entity list
 

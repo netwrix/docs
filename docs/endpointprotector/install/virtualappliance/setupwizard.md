@@ -11,8 +11,6 @@ from the firewall. They are used for:
 
 - Endpoint Protector Server and Client communication: 443 inbound
 
-Follow the steps to conﬁgure the Endpoint Protector Appliance for the ﬁrst time.
-
 **Step 1 –** Select **Continue** when ﬁnished reading the End User License Agreement.
 
 ![End User License Agreement](licenseagreement.webp)
@@ -25,14 +23,14 @@ Follow the steps to conﬁgure the Endpoint Protector Appliance for the ﬁrst t
 
 ![Selecting Networking](networking.webp)
 
-**Step 4 –** The conﬁguration methods are now available.
-Starting with version 2509, only the manual configuration option is available. Also, starting with version 2512, the options available for networking configuration include an option to use IPV4 and and option for IPV6. One one option must be selected.
+**Step 4 –** Two configuration methods are available.
+Starting with version 2509, only the manual configuration option is available. Also, starting with version 2512, networking configuration includes options for both IPv4 and IPv6. You must select only one option.
 
 ![Networking configuration options](networkingconfig.png)
 
 :::warning
 Modifying network configuration creates certificate a regeneration operation which temporarily stops communication between server and client.
-Changes from one IP version to another should always be saved by pressing the Apply button to make sure the configuration is properly applied.
+Changes from one IP version to another should always be saved by pressing the Apply button to ensure the configuration is properly applied.
 :::
 
 
@@ -44,8 +42,8 @@ As mentioned before, starting with version 2509, only the manual configuration o
 
 ![Manual Network configuration for Endpoint Protector Appliance](manualnetworkconfig.png)
 
-**Step 2 –** Set the IP Address, and Default Gateway (in our example we set the IP Address as
-192.168.7.94 and the Default Gateway as 192.168.7.1).
+**Step 2 –** Set the IP Address and Default Gateway. For example, set the IP Address as
+192.168.7.94 and the Default Gateway as 192.168.7.1.
 
 ![Setting IP and default GateAway](setip.webp)
 

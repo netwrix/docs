@@ -11,25 +11,17 @@ under an Enterprise license, it also displays an expiration date. On license exp
 Manager will refuse events from all Agents.
 
 :::tip
-Remember, if events are not received and displayed in the Administration Console, check if your
-license has expired.
+Remember, if events aren't received and displayed in the Administration Console, check if your license has expired.
 :::
 
 
 **Generate Alerts when the License Nears Expiration**
 
-You can configure alerts to be sent when the.Threat Prevention license nears expiration. These
-alerts serve as a reminder for license renewal.
+You can configure alerts to be sent when the Threat Prevention license nears expiration. These alerts serve as a reminder for license renewal.
 
-To generate license expiration alerts 14 days prior to license expiry, enable the **License** option
-on the [System Alerting Window](/docs/threatprevention/7.5/admin/configuration/systemalerting/overview.md). Go to the Email, Event
-Log or SIEM tab depending on how you want to receive alerts (i.e., by email, in the Windows event
-log, or in a SIEM product) and click Configuration in the left pane to locate the License option for
-enabling it.
+To generate license expiration alerts 14 days before license expiry, enable the **License** option on the [System Alerting Window](/docs/threatprevention/7.5/admin/configuration/systemalerting/overview.md). Go to the Email, Event Log or SIEM tab depending on how you want to receive alerts (for example, by email, in the Windows event log, or in a SIEM product) and click Configuration in the left pane to locate the License option for enabling it.
 
-The first alert is generated 14 days prior to license expiry and then every following day at 9:00
-AM. You can customize the time by modifying the following entry in the
-SIEnterpriseManager.exe.config file:
+The first alert is generated 14 days before license expiry and then every following day at 9:00 AM. You can customize the time by modifying the following entry in the SIEnterpriseManager.exe.config file:
 
 **<add key="timeOfLicenseChecking" value="9:00"/>**
 
@@ -37,10 +29,7 @@ File path: `...\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager`
 
 ## View Licensing Information
 
-Follow the steps to view your Threat Prevention license details.
-
-Click **Help > License Manager** on the menu. The Netwrix Threat Prevention License Manager window
-is displayed.
+Click **Help > License Manager** on the menu. The Netwrix Threat Prevention License Manager window is displayed.
 
 ![License Manager window](/images/threatprevention/7.5/admin/navigation/licensemanager.webp)
 

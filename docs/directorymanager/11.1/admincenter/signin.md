@@ -7,7 +7,7 @@ sidebar_position: 40
 # Access Admin Center
 
 Admin Center is a web-based application that can be accessed over the Internet and Intranet. It
-comes with a default provider,Directory Manager, which primarily facilitates first-time login to the
+comes with a default provider, Directory Manager, which primarily facilitates first-time log in to the
 application. Typically, the Directory Manager provider has one default user, _Super Admin_, that has
 full access to the Admin Center. On signing in, this user can create identity stores and configure
 settings to get the application ready for use.
@@ -33,7 +33,7 @@ Use any of the following methods to connect and sign in:
   provider is configured with the selected identity store.
 
     :::note
-    Microsoft Entra ID MFA enabled users cannot log into Directory Manager using their
+    Microsoft Entra ID MFA enabled users can't log into Directory Manager using their
     username and password. They will be authenticated through the SAML provider configured for in
     Directory Manager.
     :::
@@ -47,7 +47,7 @@ permissions in the identity store.
 
 Use one of the following methods to sign in.
 
-- Type the Admin Center URL in the address bar of a web browser and press Enter. For example:  
+- Enter the Admin Center URL in the address bar of a web browser and press Enter. For example:  
   https://[machine name]:4443//AdminCenter
 - On the Windows Start menu, search for the Directory Manager 11.x icon and double-click it to
   launch Admin Center in a browser window.
@@ -60,9 +60,7 @@ You can sign in using any of the following methods:
 
 ### With your Identity Store Account
 
-Follow the steps to signin with your identify store account.
-
-Step 1 – On the **GroupID Authenticate** page, click an identity store to connect to.
+1. – On the **GroupID Authenticate** page, click an identity store to connect to.
 
 Step 2 – In the **Username** and **Password** boxes, enter the username and password of your
 identity store account, or click **Edit** next to the identity store name to connect to a different
@@ -93,7 +91,7 @@ Directory Manager.
 The administrator can enable second factor authentication for a security role in an identity store.
 
 If enabled for your role in the identity store, you must pass second factor authentication after
-signing in via any of the above methods.
+signing in via any of the preceding methods.
 
 For second factor authentication, one of the following applies:
 
@@ -101,7 +99,7 @@ For second factor authentication, one of the following applies:
   is displayed. You must enroll using at least one authentication type. See the
   [Enroll your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/enroll.md) topic.
 - If you have already enrolled your identity store account in Directory Manager, the Authenticate
-  page is displayed. It lists the authentication type(s) your account is enrolled with. Select an
+  page is displayed. It lists the authentication types your account is enrolled with. Select an
   authentication type to authenticate. See the
   [Authenticate your Identity Store Account](/docs/directorymanager/11.1/admincenter/general/authenticate.md) topic.
 

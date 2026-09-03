@@ -7,7 +7,7 @@ sidebar_position: 30
 # SP_HighRiskPermissions Job
 
 The SP_HighRiskPermissions Job identifies where Authenticated Users, Everyone Except External Users,
-Anonymous Logon, or Domain users have been directly assigned permissions
+Anonymous Logon, or Domain users have been directly assigned permissions.
 
 ## Analysis Tasks for the SP_HighRiskPermissions Job
 
@@ -15,7 +15,7 @@ Navigate to the **Jobs** > **SharePoint** > **1.Direct Permissions** > **SP_High
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

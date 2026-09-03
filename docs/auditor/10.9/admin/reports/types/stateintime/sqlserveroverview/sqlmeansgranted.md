@@ -7,14 +7,14 @@ sidebar_position: 40
 # SQL Server Means Granted
 
 This report shows accounts with explicit and inherited permissions on the selected SQL Server object
-and how those permissions were granted (directly, through role membership, etc.). Use this report to
-investigate how permissions are granted.
+and how the account received those permissions (directly, through role membership, etc.). Use this
+report to investigate how permissions are granted.
 
 Supported object types and attributes are listed in the
 [SQL Server](/docs/auditor/10.9/configuration/sqlserver/overview.md) section.
 
-To instruct Netwrix Auditor to collect data needed for this report, make sure that **Collect data
-for state-in-time reports** option is selected in the monitoring plan properties.
+To instruct Netwrix Auditor to collect data needed for this report, select the **Collect data
+for state-in-time reports** option in the monitoring plan properties.
 
 ![sqlservermeansgranted](/images/auditor/10.9/admin/reports/types/stateintime/sqlservermeansgranted.webp)
 
@@ -31,9 +31,9 @@ The summary section shows:
     - Windows Account
     - Login SQL Authentication
     - DB SQL User with password
-- **Job title** — reported for Active Directory users as set in their corresponding attribute. If not
-  set, _`<not set>`_ is reported.
-- **Object path** — path to the monitored object, as formatted by Netwrix Auditor in the activity
+- **Job title** — the value set in the corresponding attribute for Active Directory users. If no
+  value is set, the report displays _`<not set>`_.
+- **Object path** — path to the monitored object, as Netwrix Auditor formats it in the activity
   records (see '_What_' field in the reports, search results and activity summaries). For example,
   when reporting on the database hosted on selected SQL Server, the path will be as follows:
   _Databases\database_name_.
@@ -42,15 +42,15 @@ The summary section shows:
 
 The detailed information under summary includes:
 
-- **Means granted** — how access permissions were granted to this account, e.g., _Direct permissions_
+- **Means granted** — how this account received access permissions, e.g., _Direct permissions_
   or _Server role permissions_.
-- **Granted to** — the security principal to which the access permissions were granted, e.g.
+- **Granted to** — the security principal that received the access permissions, e.g.
   _sysadmin_.
 - **Type** — the security principal type, e.g. _Server role_.
 - **Grant** — the set of permissions granted to this account on the selected object by all means.
 
-Covering rules do not need to be applied, since **Grant** permissions are reported automatically
-using these rules.
+You don't need to apply covering rules, since the report applies them automatically when
+calculating **Grant** permissions.
 
 ## Filters
 
@@ -62,11 +62,11 @@ This report has the following filters:
   value is filled in automatically.
 - **Snapshot date** — select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
-  To report on other snapshots, make sure they are available through import. For details, see
+  To report on other snapshots, ensure they are available through import. For details, see
   **Manage historical snapshots** option description in the SQL Server monitoring plan
   documentation.
 - **Item** — name of the SQL Server instance monitored with selected monitoring plan.
-- **Object path** — path to the monitored object, as formatted by Netwrix Auditor in the activity
+- **Object path** — path to the monitored object, as Netwrix Auditor formats it in the activity
   records (see '_What_' field in the reports, search results and activity summaries). Wildcard (*)
   is supported. For example, to report on the database hosted on selected SQL Server, specify the
   path as follows: _Databases\database_name_.
@@ -77,14 +77,14 @@ This report has the following filters:
 
 ## Considerations and limitations
 
-- Reporting is not supported for the following objects:
+- The report doesn't support the following objects:
     - Case-sensitive SQL Servers and databases
     - Read-only Filegroups
     - Contained databases.
-- Permissions assigned using **With Grant option** are not reported (see
+- The report doesn't show permissions assigned using the **With Grant option** (see
   [this Microsoft article](https://docs.microsoft.com/en-us/sql/t-sql/statements/grant-object-permissions-transact-sql?view=sql-server-ver15)
   on that means).
-- When calculating effective rights and permissions, the following will not be considered:
+- When calculating effective rights and permissions, the report will not consider the following:
 
     - Ownership chaining
     - Cross DB ownership chaining

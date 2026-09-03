@@ -4,8 +4,8 @@ description: "Gives access rights to the different navigation elements of the Se
 sidebar_position: 2
 ---
 
-The Scaffolding giving access to the different views of the pages of the role model do not give access rights to the different navigation elements of the SearchBars of these pages.
-This Scaffolding allows you to give these rights per page, profile and EntityType.
+The Scaffolding giving access to the different views of the pages of the role model don't give access rights to the different navigation elements of the SearchBars of these pages.
+Use this scaffolding to give these rights per page, profile, and EntityType.
 
 ## Properties
 

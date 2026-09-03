@@ -26,7 +26,7 @@ The query is:
 ## Configure the MongoDB SDD Query
 
 The MongoDB SDD Query is preconfigured to run using the default settings for the Sensitive Data
-Collection category. Follow the steps to customize configurations.
+Collection category. To customize configurations:
 
 **Step 1 –** Navigate to the **Databases** > **0.Collection** > **MongoDB** >
 **MongoDB_SensitiveDataScan** > **Configure** node and select Queries.
@@ -37,7 +37,7 @@ The Query Properties window opens.
 **Step 3 –** Select the Data Source tab, and click Configure. The NoSQL Data Collector Wizard opens.
 
 :::warning
-Do not make changes to wizard pages not listed in these steps. They have been
+Don't make changes to wizard pages not listed in these steps. They have been
 pre-configured for this job.
 :::
 
@@ -47,7 +47,7 @@ pre-configured for this job.
 
 ![Sensitive Data Scan Settings](/images/accessanalyzer/11.6/install/application/options.webp)
 
-**Step 5 –** Select the desired scan options.
+**Step 5 –** Select the scan options you want.
 
 **Step 6 –** Navigate to the
 [NoSQL: Criteria](/docs/accessanalyzer/11.6/admin/datacollector/nosql/criteria.md)
@@ -103,7 +103,7 @@ Connections window.
 **Step 13 –** On the Filter page, click Retrieveto populate the Servers pane with the databases and
 collections.
 
-**Step 14 –** (Optional) Right click on an object in the list to include or exclude it from the
+**Step 14 –** (Optional) Right click an object in the list to include or exclude it from the
 sensitive data scan, or build /edit a pattern to create a custom filter. See the
 [NoSQL: Filter](/docs/accessanalyzer/11.6/admin/datacollector/nosql/filter.md)
 topic for additional information.
@@ -122,7 +122,7 @@ Navigate to the Databases > > 0.Collection > MongoDB > MongoDB_SensitiveDataScan
 and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -134,4 +134,4 @@ The default analysis tasks are:
 - NoSQL Instances — Brings the SA_NoSQL_Instances to view in SA
 - Matches View — Brings the MongoDB matches view to the Enterprise Auditor console
 - Match Hits View — Brings the MongoDB match hits view to the Enterprise Auditor console
-- MongoDB SDD AIC Import — Imports MongoDB SDD into the AIC
+- MongoDB SDD AIC Import — Imports MongoDB SDD into the Access Information Center (AIC)

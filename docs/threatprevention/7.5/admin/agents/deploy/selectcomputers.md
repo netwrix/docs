@@ -7,14 +7,14 @@ sidebar_position: 10
 # Select Computers Window
 
 The Deploy Agents wizard's Select Computer window is the first in a sequence of four windows to
-deploy the Agent on a computer. It provides three methods for selecting computers where Agent(s) can
+deploy the Agent on a computer. It provides three methods for selecting computers where Agents can
 be deployed:
 
 - Add Single Host
 - Add from AD
 - Add from File
 
-Any combination of these three methods can be used to select computers.
+You can use any combination of these three methods to select computers.
 
 ## Add Single Host Tab
 
@@ -35,12 +35,14 @@ Browse the domain's computer objects (Domain Controllers and Computers) to selec
 want to deploy the Agent.
 
 - Domain to Browse – Displays the domain where the Enterprise Manager resides. If unpopulated, type
-  the desired domain in the textbox. Click Connect to connect to the domain.
+  the domain in the textbox and click **Connect** to connect to the domain.
 - List of Domain Controllers/Computers – Populates with computers found in Active Directory
-- Add (>) button – Adds the selected computer(s) to the Deploy Agents to These Computers box
+- Add (>) button – Adds the selected computers to the Deploy Agents to These Computers box
 
-> **NOTE:** Multiple computers can be selected and moved to the Deploy Agents to These Computers
-> box. Checking a top-level node automatically selects all child objects.
+:::note
+Multiple computers can be selected and moved to the Deploy Agents to These Computers
+box. Checking a top-level node automatically selects all child objects.
+:::
 
 ## Add From File Tab
 
@@ -54,7 +56,7 @@ CSV file with comma-separated values.
 - Text File to Read – Click Open to browse and select the required file. The box displays the path
   to the file.
 - List of Hosts/IP Addresses – Populates with computers from the text/CSV file
-- Add (>) button – Adds the selected computer(s) to the Deploy Agents to These Computers box
+- Add (>) button – Adds the selected computers to the Deploy Agents to These Computers box
 
-Once the list in the Deploy Agents to These Computers box is complete, you can continue through the
-wizard to deploy the Agent. See the [Set Options Window ](/docs/threatprevention/7.5/admin/agents/deploy/setoptions.md)topic for the next step.
+When the list in the Deploy Agents to These Computers box is complete, you can continue through the
+wizard to deploy the Agent. See the [Set Options Window](/docs/threatprevention/7.5/admin/agents/deploy/setoptions.md) topic for the next step.

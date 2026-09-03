@@ -8,18 +8,18 @@ sidebar_position: 10
 
 How to anticipate the deep changes in the organization's applications and processes due to Identity Manager installation as a new IGA tool.
 
-Change management is not only part of any IGA project. It is a full project in itself that requires its own project officer, objectives, success indicators, etc. It starts on the very first day with the project kickoff, and runs alongside the technical project.
+Change management isn't only part of any IGA project. It is a full project in itself that requires its own project officer, objectives, success indicators, etc. It starts on the very first day with the project kickoff, and runs alongside the technical project.
 
 ## Overview
 
-The applications and processes of the organization are about to change deeply. Change management is crucial because it determines the future proper use of the solution and the gain that can be achieved by the organization. It requires an upstream impact analysis in order to define the strategy to adopt.
+The applications and processes of the organization are about to change deeply. Change management is crucial because it determines the future proper use of the solution and the gain that can be achieved by the organization. It requires an upstream impact analysis to define the strategy to adopt.
 
 ### Process
 
 A digital project follows two parallel processes:
 
-- The **organizational and digital process** used to design, build and deploy the solution.
-- The **human process** urging staff to accept the solution, familiarize themselves with it, join and
+- The **organizational and digital process** used to design, build, and deploy the solution.
+- The **human process** urging staff to accept the solution, familiarize themselves with it, join, and
 interact with the project.
 
 Change management aims to support the teams throughout the **human process**.
@@ -39,7 +39,7 @@ can be translated into promoting efforts towards the broader enterprise strategy
 - **Managers to grow maturity and confidence in change management** because they allow responsibility
 distribution throughout the organization. They need support in self-assessment and change management at varying degrees according to the strategic importance and complexity level of change. This can be translated into DIY change supports like templates, change coaches for tailored guidance, or change drivers for end-to-end execution.
 - The **employees impacted by change to enter the decision-making process at an early stage**, thus
-improving change absorption. They must be engaged as active participants in shaping change decisions, in order to avoid extreme leader-dictated or consensus-based strategies.
+improving change absorption. They must be engaged as active participants in shaping change decisions, to avoid extreme leader-dictated or consensus-based strategies.
 
  | Input | Output | 
  | --- | --- | 
@@ -47,16 +47,15 @@ improving change absorption. They must be engaged as active participants in shap
 
 ## Run Change Management for Identity Manager
 
-In order to profitably handle change management, any project should start with the question: **in three years from now, what will be the (three to five) main facts attesting the success of this project?** The answer will shape the strategy.
+To profitably handle change management, any project should start with the question: **in three years from now, what will be the (three to five) main facts attesting the success of this project?** The answer will shape the strategy.
 
 Whether Identity Manager replaces manual processes or an existing IGA tool, change management methods are going to be the same. Only the analysis of impacted populations and the effort made to onboard them can define the appropriate response.
 
-IGA impact is based on data quality. Therefore, change management must encompass everything and everyone that consumes and/or feeds data. All three population segments (decision makers, managers and employees) are involved in data quality in one way or another. Hence, it is essential that they understand IGA as an advantage instead of a constraint.
+IGA impact is based on data quality. Therefore, change management must encompass everything and everyone that consumes and/or feeds data. All three population segments (decision makers, managers, and employees) are involved in data quality in one way or another. Hence, it is essential that they understand IGA as an advantage instead of a constraint.
 
 Run change management by proceeding as follows:
 
-1. Identify the populations impacted by change. Below is an example of impacted populations that can
-vary enormously.
+1. Identify the populations impacted by change. An example of impacted populations that can vary enormously appears in the following image.
 
     ![Usual Populations](/images/identitymanager/changemanagement_populations.webp)
 
@@ -82,7 +81,7 @@ A medium or large population (i.e. the size of a department in your organization
 
 ##### Example 3
 
-Let us consider HR teams and managers which have a change impact depending on their frequency of use of the application.
+Consider HR teams and managers which have a change impact depending on their frequency of use of the application.
 
 ###### Example 3a
 
@@ -94,4 +93,4 @@ If they infrequently use the application (i.e. bimonthly use), they may rather b
 
 ## Verify Change Management
 
-In order to verify the process, change managers can rely on implemented indicators, in the same way as for any project management situation.
+To verify the process, change managers can rely on implemented indicators, in the same way as for any project management situation.

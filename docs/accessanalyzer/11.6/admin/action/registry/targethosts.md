@@ -11,6 +11,6 @@ alters.
 
 ![Registry Action Module Wizard Target hosts page](/images/accessanalyzer/11.6/admin/action/registry/targethosts.webp)
 
-Use the drop-down menu to select the field that identifies the systems to be targeted. The list
-displays columns from the specified source table. The action applies the specified operations to all
+Use the dropdown menu to select the field that identifies the systems to target. The list displays
+columns from the specified source table. The action applies the specified operations to all
 systems in the field.

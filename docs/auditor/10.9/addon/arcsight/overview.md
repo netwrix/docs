@@ -6,17 +6,17 @@ sidebar_position: 30
 
 # ArcSight
 
-Netwrix Auditor helps you extend auditing possibilities and get most from your ArcSight investment.
+Netwrix Auditor helps you extend auditing possibilities and get more value from your ArcSight investment.
 The Netwrix Auditor Add-on for ArcSight works in collaboration with Auditor, supplying additional
 data that augments the data collected by ArcSight.
 
 The add-on enriches your SIEM data with actionable context in human-readable format, including the
 before and after values for every change and data access attempt, both failed and successful.
 Aggregating data into a single audit trail simplifies analysis, makes your SIEM more cost effective,
-and helps you keep tabs on your IT infrastructure.
+and helps you monitor your IT infrastructure.
 
 Implemented as a PowerShell script, this add-on facilitates the audit data transition from Netwrix
-Auditor to ArcSight. All you have to do is provide connection details and schedule the script for
+Auditor to ArcSight. To set it up, provide connection details and schedule the script for
 execution.
 
 On a high level, the add-on works as follows:
@@ -44,8 +44,8 @@ follows:
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
-leveraging the Integration API. Download the latest add-on version in the Add-on Store. See the
+Ensure to check your product version, and then review and update your add-ons and scripts
+that use the Integration API. Download the latest add-on version in the Add-on Store. See the
 [Integration API](/docs/auditor/10.9/api/overview.md)topic for additional information.
 
 The add-on was renamed due to HPE acquisition by Micro Focus. The former add-on name was Netwrix

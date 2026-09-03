@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Integrations
 
-Netwrix Auditor Integration API—endless integration, auditing and reporting capabilities.
+Netwrix Auditor Integration API—endless integration, auditing, and reporting capabilities.
 
 The Netwrix Auditor Integration API provides access to audit data collected by Netwrix Auditor
 through REST API endpoints. According to the RESTful model, each operation is associated with a URL.
@@ -17,7 +17,7 @@ Integration API provides the following capabilities:
 - Data out: Further automate your business processes, IT security and operations workflows by
   enriching third-party solutions with actionable audit data.
 
-Netwrix Auditor Integration API is enabled by default and communicates through port 9699. Navigate
+By default, Netwrix Auditor enables the Integration API, which communicates through port 9699. Navigate
 to Settings → Integrations to adjust port settings and review information about possible
 integrations.
 
@@ -26,5 +26,5 @@ Netwrix recommends adding a special data source to your monitoring plan—Netwri
 In Netwrix Auditor 9.0, Netwrix has updated API schemas. See the
 [Compatibility Notice](/docs/auditor/10.9/api/compatibility.md) topic for additional information.
 
-To learn more about Integration API capabilities, refer to the
-[Integration API](/docs/auditor/10.9/api/overview.md).
+For more information about Integration API capabilities, see the
+[Integration API](/docs/auditor/10.9/api/overview.md) topic.

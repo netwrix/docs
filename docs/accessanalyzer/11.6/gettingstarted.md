@@ -6,14 +6,14 @@ sidebar_position: 2
 
 # Getting Started
 
-Once Enterprise Auditor is installed, the following workflow will quickly enable users to begin
-auditing the organization’s IT infrastructure. See the
+After you install Enterprise Auditor, use the following workflow to quickly begin
+auditing the organization's IT infrastructure. See the
 [Navigating the Console](/docs/accessanalyzer/11.6/admin/navigate/overview.md)
 topic for additional information and data grid functionality.
 
 ## Initial Configuration During First Launch
 
-During the initial Enterprise Auditor Configuration Wizard, users are walked through configuring
+The initial Enterprise Auditor Configuration Wizard walks you through configuring
 several key global settings:
 
 - Storage
@@ -45,8 +45,8 @@ several key global settings:
 
 ## Global Settings Configured
 
-The global Settings have an overall impact on the running of Enterprise Auditor jobs. They are
-managed through the Settings node at the top of the Navigation pane. The following global Settings
+The global Settings affect how Enterprise Auditor runs jobs. You manage them
+through the Settings node at the top of the Navigation pane. The following global Settings
 require configuration from the start:
 
 - [Connection](/docs/accessanalyzer/11.6/admin/settings/connection/overview.md)
@@ -58,15 +58,15 @@ require configuration from the start:
 - [Notification](/docs/accessanalyzer/11.6/admin/settings/notification.md)
   – Configure an SMTP server for Enterprise Auditor to use for sending email notifications
 
-The other global Settings provide additional options for impacting how Enterprise Auditor functions:
+The other global Settings provide additional options for how Enterprise Auditor functions:
 
 - [Access](/docs/accessanalyzer/11.6/admin/settings/access/overview.md)
   – Enable and configure Role Based Access for a least privileged application of Enterprise Auditor
   and report viewing or the enable the REST API
 
     :::note
-    If Role Based Access is enabled by accident, contact
-    [Netwrix Support](https://www.netwrix.com/support.html) for assistance in disabling it.
+    If you enable Role Based Access by accident, contact
+    [Netwrix Support](https://www.netwrix.com/support.html) for assistance disabling it.
     :::
 
 
@@ -76,8 +76,8 @@ The other global Settings provide additional options for impacting how Enterpris
   Configure Microsoft® Exchange Server connections
 
 :::warning
-Do not configure data retention at the global level without ensuring History is
-supported by ALL solutions to be run.
+Don't configure data retention at the global level unless History supports all
+the solutions you plan to run.
 :::
 
 
@@ -102,27 +102,27 @@ topic for additional information.
 
 ## Discover Hosts for Enterprise Auditor
 
-Within the terminology of Enterprise Auditor, hosts are the machines being targeted during data
-collection. Hosts can be discovered or manually introduced to Enterprise Auditor. Known hosts are
-then inventoried to populate dynamic host lists. Host discovery is done at the Host Discovery  node.
-Hosts are manually introduced at the Host Management node.
+Within the terminology of Enterprise Auditor, hosts are the machines that Enterprise Auditor targets
+during data collection. You can discover hosts or manually introduce them to Enterprise Auditor.
+Enterprise Auditor then inventories known hosts to populate dynamic host lists. You perform host
+discovery at the Host Discovery node. You manually introduce hosts at the Host Management node.
 
-Host management consists of maintaining up-to-date host inventories and host lists which can be
-assigned to job groups or jobs as targeted hosts. See the
+Host management consists of maintaining up-to-date host inventories and host lists that you can
+assign to job groups or jobs as targeted hosts. See the
 [Host Management](/docs/accessanalyzer/11.6/admin/hostmanagement/overview.md)
 topic for additional information.
 
 ## Enterprise Auditor Job Workflow
 
-Once the global Settings are configured and hosts have been introduced to Enterprise Auditor, it is
+After you configure the global Settings and introduce hosts to Enterprise Auditor, it's
 time to begin auditing. This requires an understanding of the relationship between solutions, job
 groups, jobs, queries, analysis, actions, and reports.
 
 The Enterprise Auditor job is the fundamental unit. Jobs are responsible for all data collection
 queries, analysis tasks, notification tasks, action tasks, and report generation. When Jobs are
 designed to work together, they are housed within job groups to control the order of job execution.
-Solutions are pre-configured job groups which have been designed to target specific types of
-environments to audit for specific data sets, typically the most common types of information
+Solutions are pre-configured job groups that Netwrix designed to target specific types of
+environments and audit specific data sets, typically the most common types of information
 desired.
 
 See the [Jobs Tree](/docs/accessanalyzer/11.6/admin/jobs/overview.md)

@@ -19,7 +19,7 @@ helpdesk-specific tasks, such as:
 :::note
 The Admin Center for helpdesk role is available in Helpdesk mode only. By default, only the
 Helpdesk node of Admin Center is visible to the Helpdesk role members. The administrator can also
-restrict access of a security role by selecting the Helpdesk Role check box on the Security Role
+restrict access of a security role by selecting the Helpdesk Role checkbox on the Security Role
 page. See the [Create a Security Role](/docs/directorymanager/11.1/admincenter/securityrole/create.md) topic for additional information.
 :::
 

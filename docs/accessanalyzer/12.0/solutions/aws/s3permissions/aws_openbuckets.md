@@ -15,7 +15,7 @@ Navigate to the **AWS** > **6.S3 Permissions** > **AWS_OpenBuckets** > **Configu
 **Analysis** to view the analysis task.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

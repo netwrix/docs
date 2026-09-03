@@ -13,7 +13,7 @@ the audited group during the selected date range.
 
 This report is comprised of the following columns:
 
-- Trustee Name – Owner of the trustee account
+- Trustee Name – Name of the trustee
 - Trustee Account – Active Directory account associated with the trustee
 - Department – Department to which the trustee account belongs
 - Title – Trustee’s title as read from Active Directory

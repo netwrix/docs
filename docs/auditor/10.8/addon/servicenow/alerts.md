@@ -23,7 +23,7 @@ Action section of the alert properties specify the full path to Netwrix.ITSM.Ale
 file (the add-on component responsible for alert handling), for example,
 _C:\Addon\ITSM_SI\Netwrix.ITSM.AlertResponseAction.exe_.
 
-**NOTE:** Make sure to turn on alerting in Auditor. You should manually set the state to "**On**"
+**NOTE:** Ensure to turn on alerting in Auditor. You should manually set the state to "**On**"
 for all alerts you want to integrate with the add-on.
 
 Perform the following steps to integrate alerts with the add-on:
@@ -40,4 +40,4 @@ C:\Add-on\Netwrix.ITSM.AlertsUploaderTool.exe
 
 | To...                                    | Execute...                                                                                                                                                                                                                                                                                                                                                                    |
 |------------------------------------------| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Upload alert set shipped with the add-on | Netwrix.ITSM.AlertsUploaderTool.exe /UploadTemplates Once uploaded, the alerts appear in the **All Alerts** list in Auditor, their names start with "_ITSM add-on_". Make sure to set their state to **"On**" (turn them on) manually.
+| Upload alert set shipped with the add-on | Netwrix.ITSM.AlertsUploaderTool.exe /UploadTemplates Once uploaded, the alerts appear in the **All Alerts** list in Auditor, their names start with "_ITSM add-on_". Ensure to set their state to **"On**" (turn them on) manually.

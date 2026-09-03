@@ -46,11 +46,9 @@ Queries that may be useful to an organization include the following:
 - What did user X do between days Y and Z?
 - Administrator activity details?
 
-Follow the steps to use the search feature.
-
 **Step 1 –** Click the magnifying glass icon and select the source type.
 
-**Step 2 –** Set the desired filters and click **Search**.
+**Step 2 –** Set the filters you want to apply and click **Search**.
 
 **Step 3 –** Filter and Sort the results in the table as desired.
 
@@ -58,34 +56,34 @@ Follow the steps to use the search feature.
 
 ## Filter
 
-The drop-down menu for a column header in the search results data grid provides the option to filter
+The dropdown menu for a column header in the search results data grid provides the option to filter
 the search results further.
 
 ![Operations Filter Dropdown Menu](/images/activitymonitor/7.1/admin/search/operationssdropdownfiltermenu.webp)
 
-Choose between checking/unchecking the desired field values from the list of available values and
+Choose between checking or unchecking the field values you want to apply from the list of available values and
 typing in the search textbox. The Clear filter option removes all filters from the selected column.
 A filter icon appears on the header where filters have been applied. Multiple columns can be
 filtered in the search results data grid.
 
 :::note
-The columns that can be filtered will vary depending on what results are.
+The columns you can filter will vary based on your search results.
 :::
 
 
 ## Sort
 
 Clicking on any column header in the search results data grid sorts the results alphanumerically for
-that column, and an arrow shows next to the column name indicating the sort to be ascending or
-descending order.
+that column, and an arrow shows next to the column name indicating the sort direction as ascending or
+descending.
 
 ![Sort Options](/images/activitymonitor/7.1/admin/search/sort.webp)
 
-The drop-down menu on the column header has options to Sort A to Z or Sort Z to A for the selected
-column. Sorting can only occur for one column at a time.
+The dropdown menu on the column header has options to Sort A to Z or Sort Z to A for the selected
+column. You can sort only one column at a time.
 
 :::note
-The columns that can be sorted will vary depending on what results are.
+The columns you can sort will vary based on your search results.
 :::
 
 
@@ -95,5 +93,5 @@ The search results data grid can be exported to a CSV/JSON file.
 
 ![Export Button](/images/activitymonitor/7.1/admin/search/exportbutton.webp)
 
-Once the search results are configured as desired, click the Export button located at the top left
+After you configure the search results as needed, click the Export button located at the top left
 corner of the window. Set the name and location of the CSV/JSON file.

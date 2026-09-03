@@ -14,7 +14,7 @@ concern such as weak passwords, user token size, or stale users.
 The following components comprise the 2.Users Job Group:
 
 - [AD_DirectMembership Job](/docs/accessanalyzer/11.6/solutions/activedirectory/users/ad_directmembership.md)
-  – Identifies users who do not have any group membership. This condition may indicate unnecessary
+  – Identifies users who don't have any group membership. This condition may indicate unnecessary
   user accounts that are suitable candidates for review and cleanup.
 - [AD_DuplicateUsers Job](/docs/accessanalyzer/11.6/solutions/activedirectory/users/ad_duplicateusers.md)
   – Identifies multiple user accounts which may be owned by a single employee. A user may have
@@ -36,7 +36,7 @@ The following components comprise the 2.Users Job Group:
   SID from their current domain, or when a non-admin user has a historical SID with administrative
   rights, both of which may be indicators of compromise.
 - [AD_StaleUsers Job](/docs/accessanalyzer/11.6/solutions/activedirectory/users/ad_staleusers.md)
-  – Identifies potentially stale users based on the amount of time since their last login to the
+  – Identifies potentially stale users based on the amount of time since their last log in to the
   domain, or if the account has been disabled. These accounts should be reviewed and cleaned up in
   order to increase security and reduce complexity.
 - [AD_UserAttributeCompletion Job](/docs/accessanalyzer/11.6/solutions/activedirectory/users/ad_userattributecompletion.md)

@@ -8,7 +8,7 @@ sidebar_position: 50
 
 The Dell EMC Celerra connector reads file shares over SMB to collect share permissions, folder and file ACLs, and file contents for sensitive data classification. The connector doesn't require agent installation on the storage system.
 
-Dell EMC Celerra serves CIFS/SMB file shares through Data Movers. The CIFS service must be licensed and configured on each Data Mover you want to scan.
+Dell EMC Celerra serves CIFS/SMB file shares through Data Movers. You must license and configure the CIFS service on each Data Mover you want to scan.
 
 ## Supported versions
 

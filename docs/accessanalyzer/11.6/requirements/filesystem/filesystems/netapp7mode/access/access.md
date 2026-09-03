@@ -30,7 +30,7 @@ api-volume-list-info-iter-*
 
 ## Bypass NTFS Security for 7-Mode
 
-In order to bypass NTFS, the credential needs to at least have the following permissions on the
+to bypass NTFS, the credential needs to at least have the following permissions on the
 NetApp device:
 
 - Group membership in both of the following groups:

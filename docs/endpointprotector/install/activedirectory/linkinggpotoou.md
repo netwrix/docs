@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # Linking the GPO to OU
 
-Once you have created the GPOs, link them to any of your Organization Units (OU). To do so, follow
-these steps:
+After you create the GPOs, link them to any of your Organization Units (OU). To do so, follow these steps:
 
 **Step 1 –** Right-click the OU and then select Link an Existing GPO;
 

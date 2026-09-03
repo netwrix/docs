@@ -20,7 +20,7 @@ the monitored host.
 
 ## Special Consideration for NAS Device Hosts
 
-For NAS devices, the activity agent can configured to add ‘C:\’ to the beginning of the path, which
+For NAS devices, the activity agent can be configured to add ‘C:\’ to the beginning of the path, which
 is a requirement for the output that is designated for StealthAUDIT.exe or being read by a Netwrix
 Threat Prevention agent. That configuration is on the [Log Files Tab](/docs/activitymonitor/9.0/admin/outputs/logfiles.md). If the option
 is enabled for this monitored device, start your paths with C:\.

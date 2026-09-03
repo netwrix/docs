@@ -6,12 +6,12 @@ sidebar_position: 20
 
 # Host Properties Window
 
-Once a host has been added to the Monitored Hosts & Services list, the configuration settings can be modified
+After you add a host to the Monitored Hosts & Services list, you can modify the configuration settings
 through the host’s Properties window.
 
 ![Activity Monitor with Edit button identified ](/images/activitymonitor/9.0/admin/monitoredhosts/properties/hostpropertiesoverview.webp)
 
-On the Monitored Hosts & Services tab, select the host and click Edit, or right-click on a host and select
+On the Monitored Hosts & Services tab, select the host and click Edit, or right-click a host and select
 **Edit Host** from the right-click menu, to open the host’s Properties window. The tabs vary based
 on the type of host selected:
 

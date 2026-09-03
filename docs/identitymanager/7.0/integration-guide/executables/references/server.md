@@ -27,4 +27,4 @@ When the Server starts, the following log should be displayed (if the log level 
 
  | Argument Name | Details | 
  | --- | --- | 
- | --urls required | **Type** String **Description** URL(s) that the server is listening to. | 
+ | --urls required | **Type** String **Description** URLs that the server is listening to. | 

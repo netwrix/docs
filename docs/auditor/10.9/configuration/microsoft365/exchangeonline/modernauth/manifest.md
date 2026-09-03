@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Assigning Application Permissions Using Manifest
 
-Follow the steps to assign Exchange Online application permissions using manifest.
+Assign Exchange Online application permissions using the manifest:
 
 **Step 1 –** Under App registrations, select the newly created app.
 
@@ -22,7 +22,7 @@ reapply it to your application.
 
 Do one of the following:
 
-- For the clear installation of Netwrix Auditor, add roles as described below.
+- For the clear installation of Netwrix Auditor, add the roles shown in the following JSON snippet.
 
 - If you upgraded Netwrix Auditor from the version 10.0, replace all existing content under the
   **requiredResourceAccess** property.

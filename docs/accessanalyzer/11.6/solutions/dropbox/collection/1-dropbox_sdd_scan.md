@@ -7,7 +7,7 @@ sidebar_position: 20
 # 1-Dropbox_SDD Scan Job
 
 The 1-Dropbox_SDD Scan job collects data from the Dropbox environment on access rights, sharing
-policies, configurations, content and sensitive data.
+policies, configurations, content, and sensitive data.
 
 ## Queries for the 1-Dropbox_SDD Scan Job
 
@@ -22,8 +22,8 @@ The query for the 1-Dropbox_SDD Scan job is:
 
 ### Configure the Sensitive Data Scan Query
 
-Follow the steps to either generate the access token needed for the Connection Profile (only done
-prior to first execution) or to set any desired customizations.
+To either generate the access token needed for the Connection Profile (only done
+before first execution) or set any desired customizations:
 
 **Step 1 –** Navigate to the **Jobs** > **Dropbox** > **0.Collection** > **1-Dropbox_SDD Scan** >
 **Configure** node and select **Queries**.
@@ -45,7 +45,7 @@ for additional information.
 
 ![Dropbox Access Auditor Data Collector Wizard DLP Audit Settings page](/images/accessanalyzer/11.6/solutions/dropbox/collection/sdddlpsettings.webp)
 
-**Step 5 –** On theDLP Audit Settings page:
+**Step 5 –** On the DLP Audit Settings page:
 
 - Modify the maximum file size to be scanned
 - Modify file types to be scanned
@@ -58,7 +58,7 @@ topic for additional information.
 
 ![Dropbox Access Auditor Data Collector Wizard Select DLP criteria page](/images/accessanalyzer/11.6/solutions/dropbox/collection/sddselectdlpcriteria.webp)
 
-**Step 6 –** On the Select DLP Criteria for This Scan page , add or remove criteria as desired.
+**Step 6 –** On the Select DLP Criteria for This Scan page, add or remove criteria as desired.
 
 - (Optional) Create custom criteria with the **Edit** option. See the
   [Sensitive Data Criteria Editor](/docs/accessanalyzer/11.6/sensitivedatadiscovery/criteriaeditor/overview.md)
@@ -71,4 +71,4 @@ topic for additional information.
 **Step 7 –** On the Completion Page, click **Finish** to save any setting modifications or click
 **Cancel** if no changes were made. Then click **OK** to close the Query Properties window.
 
-If changes were made, the 1-Dropbox_SDD Scan job has now been customized.
+If you made changes, the 1-Dropbox_SDD Scan job is now customized.

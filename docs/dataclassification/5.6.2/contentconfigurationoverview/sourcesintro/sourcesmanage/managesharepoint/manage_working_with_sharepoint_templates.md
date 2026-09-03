@@ -11,7 +11,7 @@ to capture your customizations, so that they can be quickly applied to other Sha
 and even use the template as the basis for a business solution.
 
 In Netwrix Data Classification, you may have site collections and want to use the same tagging
-configuration for all of them. It allows you to effectively copy and paste the configuration for one
+configuration for all of them. With templates, you can effectively copy and paste the configuration for one
 source onto others. First you manually configure one source. Then you save that as a template. Then
 you apply that template to other sources.
 
@@ -19,7 +19,7 @@ To get more details about the tagging function, review the
 [Configuring Tagging](/docs/dataclassification/5.6.2/contentconfigurationoverview/sourcesintro/sourcesmanage/managesharepoint/manage_configuring_tagging.md)
 article.
 
-In this article, we will cover:
+This article covers:
 
 - Setting up prerequisites
 - Using SharePoint API
@@ -29,7 +29,7 @@ In this article, we will cover:
 
 ## Setting up prerequisites
 
-As part of configuring tagging, make sure you have set the prerequisites, specified in the
+As part of configuring tagging, ensure you have set the prerequisites, specified in the
 [Configuring Tagging](/docs/dataclassification/5.6.2/contentconfigurationoverview/sourcesintro/sourcesmanage/managesharepoint/manage_configuring_tagging.md)
 article.
 

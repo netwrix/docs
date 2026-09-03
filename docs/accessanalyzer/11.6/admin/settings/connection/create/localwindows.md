@@ -13,7 +13,7 @@ User Credentials window.
 
 The required credentials for the Local Windows Account are:
 
-- User name – Type the user name
+- User name – Enter the user name
 - Password Storage – Choose the option for credential password storage:
 
     - Application – Uses the configured Profile Security setting as selected at the **Settings** >
@@ -22,15 +22,15 @@ The required credentials for the Local Windows Account are:
       topic for additional information.
     - CyberArk – Uses the CyberArk Enterprise Password Vault. See the
       [CyberArk Integration](/docs/accessanalyzer/11.6/admin/settings/connection/cyberarkintegration.md)
-      topic for additional information. The password fields do not apply for CyberArk password
+      topic for additional information. The password fields don't apply for CyberArk password
       storage.
 
         :::note
         If using the CyberArk option, then the associated Connection Profile can only have
-        one user credential in it. Multiple user credentials are not supported with the CyberArk
+        one user credential in it. Multiple user credentials aren't supported with the CyberArk
         integration when using local Windows accounts.
         :::
 
 
-- Password – Type the password
-- Confirm – Re-type the password
+- Password – Enter the password
+- Confirm – Re-enter the password

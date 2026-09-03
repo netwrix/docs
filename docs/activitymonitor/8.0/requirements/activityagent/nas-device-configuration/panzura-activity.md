@@ -26,8 +26,8 @@ Audit events are distributed between two agents. Audit settings are overridden o
 ![auditeventstwoagnt_panzura](/images/activitymonitor/8.0/config/panzura/auditeventstwoagnt_panzura.webp)
 
 The monitoring process relies on the Third Party Vendor Support auditing feature of the Panzura
-CloudFS platform, which uses the AMQP protocol for event delivery. Unlike typical uses of the AMQP
-protocol that require messaging middleware, the Panzura master and subordinate nodes connect
+CloudFS platform, which uses the Advanced Message Queuing Protocol (AMQP) for event delivery. Unlike typical uses of AMQP
+that require messaging middleware, the Panzura master and subordinate nodes connect
 directly to the Netwrix Activity Monitor Agent, eliminating the need for middleware.
 
 Netwrix Activity Monitor uses Panzura API to register itself as a consumer of auditing events. It
@@ -49,8 +49,8 @@ To prepare Panzura CloudFS for monitoring, auditing must be enabled.
 Auditing in CloudFS can be enabled either automatically or manually.
 
 :::info
-Using the automatic option using the CloudFS API streamlines the configuration
-process and ensures that auditing remains enabled and accurate.
+The automatic option streamlines the configuration process and ensures that
+auditing remains enabled and accurate.
 :::
 
 
@@ -67,13 +67,11 @@ The product will also ensure the settings are correct with periodic checks.
 
 ## Manual Configuration
 
-Follow these steps to enable auditing.
-
 **Step 1 –** Navigate to **Audit Settings** > **Third Party Support**.
 
 **Step 2 –** Enable the **Generate Third Party Logs** option.
 
-**Step 3 –** Enable the **Push to Subordinate(s)** option.
+**Step 3 –** Enable the **Push to Subordinates** option.
 
 **Step 4 –** Enter **other** as the Vendor Name.
 

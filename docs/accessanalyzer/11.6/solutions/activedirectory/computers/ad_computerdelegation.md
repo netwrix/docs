@@ -7,10 +7,10 @@ sidebar_position: 20
 # AD_ComputerDelegation Job
 
 The AD_ComputerDelegation Job provides details on computer accounts that have been enabled for
-unconstrained delegation. Once this configuration is enabled for a computer, any time an account
+unconstrained delegation. After this configuration is enabled for a computer, any time an account
 connects to the computer for any reason, their ticket-granting ticket (TGT) is stored in memory so
 it can be used later by the computer for impersonation, which exposes a significant security risk in
-cases where privileged accounts access the computer.  See the
+cases where privileged accounts access the computer. See the
 [What Is Kerberos Delegation?](https://blog.netwrix.com/2021/11/30/what-is-kerberos-delegation-an-overview-of-kerberos-delegation/) Netwrix
 blog article for more information about this configuration and the related security risks.
 
@@ -20,7 +20,7 @@ Navigate to the **Active Directory** > **3.Computers** > **AD_ComputerDelegation
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the analysis task. The analysis task is preconfigured for
+Don't modify or deselect the analysis task. The analysis task is preconfigured for
 this job.
 :::
 

@@ -37,7 +37,7 @@ name.
     In the example above, the `vserver audit create -destination /audit` command executed on the
     `svm1` SVM creates and enables audit on the volume `/audit`.
 
-    Netwrix Auditor accesses audit logs via file shares. Make sure the volume you specified is
+    Netwrix Auditor accesses audit logs via file shares. Ensure the volume you specified is
     mounted on SVM and shared (e.g., `audit$` is a share name and its path is `/audit`).
 
 4. Enable audit:
@@ -59,14 +59,14 @@ name.
     | Option                          | Setting                                                                                                                                                                                                                                                                                                            |
     | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
     | `Auditing State`                | `true`                                                                                                                                                                                                                                                                                                             |
-    | `Categories of Events to Audit` | `file-ops` Only required if you use Clustered Data ONTAP 8.3, ONTAP 9.0, ONTAP 9.1 or later. You cannot select event categories if you use Clustered Data ONTAP 8.2. For ONTAP 9.0 and later, also check the following options: `file-ops, file-share, audit-policy-change`. For ONTAP 8.3, just check `file-ops`. |
+    | `Categories of Events to Audit` | `file-ops` Only required if you use Clustered Data ONTAP 8.3, ONTAP 9.0, ONTAP 9.1 or later. You can't select event categories if you use Clustered Data ONTAP 8.2. For ONTAP 9.0 and later, also check the following options: `file-ops, file-share, audit-policy-change`. For ONTAP 8.3, just check `file-ops`. |
     | Log Format                      | "XML" or "EVTX"                                                                                                                                                                                                                                                                                                    |
 
 7. Modify the log file size limit—set to 300 MB. Execute:
 
     svm1::> vserver audit modify -rotate-size 300MB
 
-    300MB is the recommended maximum log size proceeding from performance evaluations. Make sure
+    300MB is the recommended maximum log size proceeding from performance evaluations. Ensure
     there is enough disk space allocated for the security logs archives. Depending on the file
     access activity, audit data may grow rapidly, and the location specified for the security log
     (and security log auto archives) must be large enough to hold data until it is processed by
@@ -120,5 +120,6 @@ To configure logs retention period
 
     ![manualconfig_retentionperiodbackuplog_winserver2016](/images/auditor/10.7/configuration/fileservers/netappcmode/manualconfig_retentionperiodbackuplog_winserver2016.webp)
 
-6. **NOTE:** If the **CleanAutoBackupLogs** registry value is set to _"0"_, you will have to remove
-   the old logs manually, or you may run out of space on your hard drive.
+6. :::note
+If the **CleanAutoBackupLogs** registry value is set to `"0"`, you will have to remove the old logs manually, or you may run out of space on your hard drive.
+   :::

@@ -17,7 +17,7 @@ the strongest match at the top. It is as:
 
 For a similar group, three attributes are displayed:
 
-- Attribute 1 - The group’s display name. This attribute cannot be changed.
+- Attribute 1 - The group’s display name. This attribute can’t be changed.
 - Attribute 2 - You can specify any attribute. The default attribute is _mail_.
 - Attribute 3 - You can specify any attribute. The default attribute is _expiration policy_.
 
@@ -30,11 +30,11 @@ For a similar group, three attributes are displayed:
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Card View** in the left pane.
-5. On the **Card View** page, select _Object List_ in the **Select Directory Object** drop-down
+5. On the **Card View** page, select _Object List_ in the **Select Directory Object** dropdown
    list.
    The **Name** list shows the _Header_ option only.
 6. Click **Edit** for _Header_.
-   On the **Card View Header/Footer** pane, you can view the attributes currently displayed for a
+   On the **Card View Header/Footer** pane, you can view the attributes displayed for a
    similar group in the portal.
 7. The **Title** box displays the displayName attribute. The value of this attribute will be
    displayed as the name of a similar group.

@@ -27,10 +27,9 @@ IBM X-Force Exchange.
 
 Download the
 [Stealthbits Active Directory App for QRadar](https://exchange.xforce.ibmcloud.com/hub/extension/STEALTHbits%20Technologies:StealthINTERCEPT%20Dashboard)
-from the [IBM X-Force App Exchange](https://exchange.xforce.ibmcloud.com/hub). After downloading it,
-follow these steps to install it within QRadar.
+from the [IBM X-Force App Exchange](https://exchange.xforce.ibmcloud.com/hub). After downloading it, follow these steps:
 
-**Step 1 –** Click on the Admin tab in QRadar.
+**Step 1 –** Click the Admin tab in QRadar.
 
 **Step 2 –** Under System Configuration, click Extensions Management.
 
@@ -49,10 +48,8 @@ additional information.
 
 ## Initial Configuration for the Active Directory App for QRadar
 
-Follow the steps to configure QRadar to receive data from Threat Prevention.
-
 :::tip
-Remember, prior to using the Active Directory app for QRadar, Threat Prevention must be configured
+Remember, before using the Active Directory app for QRadar, Threat Prevention must be configured
 to send data to QRadar.
 :::
 
@@ -66,7 +63,7 @@ Threat Prevention to send data to QRadar.
 
 **Step 3 –** Select **Log Sources**.
 
-**Step 4 –** View the Log Sources list. If the data source was not automatically created, click Add,
+**Step 4 –** View the Log Sources list. If the data source wasn't automatically created, click Add,
 enter the following information, and click Save.
 
 - Log Source Name – Enter a descriptive name to identify the data source
@@ -77,8 +74,7 @@ enter the following information, and click Save.
   - Threat Prevention Alerts
   - Threat Prevention Analytics
 
-    (It is necessary to set up three separate log sources, and each one should use one of these
-    types.)
+    (Set up three separate log sources, using one of these types for each.)
 
 - Protocol Configuration – Select Syslog
 - Log Source Identifier – Enter the hostname or IP address of the host where Threat Prevention is
@@ -96,7 +92,7 @@ The Netwrix Active Directory App will now display activity from the Threat Preve
 Creating an index for the StealthINTERCEPT logs enhances the performance of the Netwrix Active
 Directory App for QRadar.
 
-**Step 1 –** Click on the Admin tab in QRadar.
+**Step 1 –** Click the Admin tab in QRadar.
 
 **Step 2 –** Under System Configuration, click Index Management.
 

@@ -10,7 +10,7 @@ This section contains information on how to configure tagging of your SharePoint
 site from being processed, define custom configuration to your subsite, and other configuration
 procedures.
 
-In this article, we will cover:
+This article covers:
 
 - [Configuring Tagging](/docs/dataclassification/5.6.2/contentconfigurationoverview/sourcesintro/sourcesmanage/managesharepoint/manage_configuring_tagging.md)
 - [Setting advanced configuration](/docs/dataclassification/5.6.2/contentconfigurationoverview/sourcesintro/sourcesmanage/managesharepoint/manage_setting_advanced_configuration.md)

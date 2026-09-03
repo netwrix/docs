@@ -18,13 +18,13 @@ Enforcer integration. See the Password Policy Enforcer topic for additional info
 
 ### Domain List
 
-When Password Policy Enforcer Web is first installed, the Domain List is empty and users must type
+When you first install Password Policy Enforcer Web, the Domain List is empty and users must type
 their domain name. You can configure Password Policy Enforcer Web to display a list of domains
 instead of an empty text box.
 
 **Add Domain**
 
-Follow the steps to add a domain to the list.
+To add a domain to the list:
 
 **Step 1 –** Click the **Add...** button.
 
@@ -41,7 +41,7 @@ them alphabetically.
 
 **Remove Domain**
 
-Follow the steps to remove a domain from the list.
+To remove a domain from the list:
 
 **Step 1 –** Select the domain name from the Domain List.
 
@@ -57,8 +57,8 @@ Enforcer to help users choose a compliant password.
 
 ![configuring_ppe_web_1](/images/passwordpolicyenforcer/11.2/web/configuring_ppe_web_1.webp)
 
-Password Policy Enforcer Web displays the Password Policy Enforcer password policy message when a
-user is prompted for their new password, and the Password Policy Enforcer rejection message if the
+Password Policy Enforcer Web displays the Password Policy Enforcer password policy message when it
+prompts a user for their new password, and the Password Policy Enforcer rejection message if the
 new password doesn't comply with the password policy. Select the **Password Policy Enforcer
 integration** checkbox if you have installed and configured Password Policy Enforcer on your domain
 controllers.

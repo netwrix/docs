@@ -10,13 +10,13 @@ sidebar_position: 40
 the Netwrix Auditor Access Reviews application, see the Special Considerations topic for upgrade
 steps.
 
-To upgrade the Access Reviews application to a newer version, simply run the new `AccessReviews.msi`
-executable. It is not necessary to uninstall the existing version. See the [Install](/docs/auditor/10.8/accessreviews/installation/install.md)
+To upgrade the Access Reviews application to a newer version, run the new `AccessReviews.msi`
+executable. It isn't necessary to uninstall the existing version. See the [Install](/docs/auditor/10.8/accessreviews/installation/install.md)
 topic for additional information.
 
 _Remember,_ the Access Reviews version must align to the compatible Netwrix Auditor version.
 
-When the installer is run over an existing version, the following is happening in the backend:
+When you run the installer over an existing version, the installer does the following:
 
 - During the installation process, a Backup folder is created in the Access Reviews installation
   directory
@@ -25,8 +25,7 @@ When the installer is run over an existing version, the following is happening i
 
     - The Backup folder contains the files where various settings reside listed in the table below
 
-- The backup folder files are copied over the default files laid down by the installer, preserving
-  customized settings
+- The installer copies the backup folder files over the default files, preserving customized settings
 - After the installation is complete, the Backup folder is removed
 
 | File                                | Location                     | Guidance                                                                                                               |
@@ -39,8 +38,7 @@ When the installer is run over an existing version, the following is happening i
 
 The originally released Netwrix Access Information Center has been rebranded to Netwrix Auditor
 Access Reviews. This rebranding project included changing the installation directory, the name of
-the service, and the default name of the database created by the installer. Follow the steps to
-replace Netwrix Access Information Center with Netwrix Auditor Access Reviews.
+the service, and the default name of the database created by the installer. To replace Netwrix Access Information Center with Netwrix Auditor Access Reviews:
 
 **Step 1 –** Install the Netwrix Auditor Access Reviews application on the same server where the
 Netwrix Access Information Center was installed. See the [Install](/docs/auditor/10.8/accessreviews/installation/install.md) topic for additional
@@ -55,10 +53,10 @@ information. On the SQL Server Connection page:
 **Step 2 –** Launch the application and reset the Builtin Administrator password. See the
 [First Launch](/docs/auditor/10.8/accessreviews/admin/firstlaunch.md) topic for additional information.
 
-**Step 3 –** It will be necessary to add your Console Users again. See the
+**Step 3 –** Add your Console Users again. See the
 [Console Access Page](/docs/auditor/10.8/accessreviews/admin/configuration/consoleaccess.md) topic for additional information.
 
-**Step 4 –** It will be necessary to configure the Notification settings. See the
+**Step 4 –** Configure the Notification settings. See the
 [Notifications Page](/docs/auditor/10.8/accessreviews/admin/configuration/notifications.md) topic for additional information.
 
 **Step 5 –** If you have customized your email templates, it will be necessary to copy the Templates

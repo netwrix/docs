@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Notifications
 
-Notification settings are configured when you create the first monitoring plan in the New monitoring
+You configure notification settings when you create the first monitoring plan in the New monitoring
 plan wizard.
 
 You can update notification settings at any time in the **Settings > Notifications**. To disable
@@ -21,7 +21,7 @@ Review the following for additional information:
 ## Enable Notifications via Exchange Online
 
 To enable Netwrix Auditor to send email notifications via Exchange Online using modern
-authentication, configure an application. To do this, follow the steps below.
+authentication, configure an application. To do this, follow these steps.
 
 **Step 1 –** Register a new application in the Microsoft Entra admin center.
 
@@ -57,11 +57,11 @@ could use the application to send email. To do this, the following actions requi
 
 ### Create a Group
 
-Follow the steps to create a group.
+To create a group:
 
 **Step 1 –** Log in to the Exchange admin center with your administrator account.
 
-**Step 2 –** Under Groups click on the **Mail-enabled security** tab.
+**Step 2 –** Under Groups click the **Mail-enabled security** tab.
 
 **Step 3 –** Click **Add a group**.
 
@@ -78,15 +78,15 @@ the group.
 
 ### Add Email to a Group
 
-Follow the steps to add emails to group.
+To add emails to a group:
 
-**Step 1 –** In the Exchange admin center go to Groups and click on the [Mail-enabled security] tab.
+**Step 1 –** In the Exchange admin center go to Groups and click the [Mail-enabled security] tab.
 
-**Step 2 –** Click on the group you have created and add emails you want to allow APIs to access.
+**Step 2 –** Click the group you have created and add emails you want to allow APIs to access.
 
 ### Apply Restriction Using PowerShell Commands
 
-Follow the steps to run following commands using PowerShell.
+To run the following commands using PowerShell:
 
 **Step 1 –** Open PowerShell
 
@@ -115,7 +115,7 @@ New-ApplicationAccessPolicy 
 ## Enable Notifications via SMTP
 
 To enable notifications via SMTP, first select **SMTP** in the **Method** column, then navigate to
-Default SMTP settings below to review settings used to deliver email notifications, reports, etc.,
+the following Default SMTP settings to review settings used to deliver email notifications, reports, etc.,
 and click Modify to adjust them if necessary.
 
 | Option                                                  | Description                                                                                                                                                                                                                                                                                   |
@@ -124,14 +124,14 @@ and click Modify to adjust them if necessary.
 | Port number                                             | Specify your SMTP server port number.                                                                                                                                                                                                                                                         |
 | Sender address                                          | Enter the address that will appear in the From field. **_RECOMMENDED:_** click **Send Test Email**. The system will send a test message to the specified email address and inform you if any problems are detected.                                                                           |
 | SMTP authentication                                     | Select this checkbox if your mail server requires the SMTP authentication.                                                                                                                                                                                                                    |
-| Sender email (from)                                     | Enter the address that will appear in the "_From_" field in email notifications. This option does not affect notifications sent to users' managers and administrators. Before configuring the "_From_" field for user email notifications, make sure that your Exchange supports this option. |
+| Sender email (from)                                     | Enter the address that will appear in the "_From_" field in email notifications. This option doesn't affect notifications sent to users' managers and administrators. Before configuring the "_From_" field for user email notifications, ensure that your Exchange supports this option. |
 | User name                                               | Enter a user name for the SMTP authentication.                                                                                                                                                                                                                                                |
 | Password                                                | Enter a password for SMTP authentication.                                                                                                                                                                                                                                                     |
 | Use Secure Sockets Layer encrypted connection (SSL/TLS) | Select this checkbox if your SMTP server requires SSL to be enabled.                                                                                                                                                                                                                          |
-| Use implicit SSL authentication                       | Select this checkbox if the implicit SSL mode is used, which means that an SSL connection is established before any meaningful data is sent.                                                                                                                                                  |
-| Enforce certificate validation to ensure security       | Select this checkbox if you want to verify security certificate on every email transmission. The option is not available for auditing User Activity as well Netwrix Auditor tools.                                                                                                            |
+| Use implicit SSL authentication                       | Select this checkbox to use implicit SSL mode, which establishes an SSL connection before sending any meaningful data.                                                                                                                                                  |
+| Enforce certificate validation to ensure security       | Select this checkbox if you want to verify security certificate on every email transmission. The option isn't available for auditing User Activity as well Netwrix Auditor tools.                                                                                                            |
 
-You can configure Activity Summary frequency, format and delivery time for each monitoring plan
+You can configure Activity Summary frequency, format, and delivery time for each monitoring plan
 individually. See the [Fine-Tune Your Plan and Edit Settings](/docs/auditor/10.9/admin/monitoringplans/finetune.md) topic
 for more information.
 
@@ -140,17 +140,17 @@ emails.
 
 ## Summary Emails and Notifications about Critical Events
 
-Follow the steps to send summary emails and notifications about critical events.
+To send summary emails and notifications about critical events:
 
 **Step 1 –** Navigate to the Summary email recipient and click Modify.
 
 **Step 2 –** Specify recipient address:
 
 - To send to a single recipient, enter personal mailbox address.
-- To send to multiple recipients, make sure they are added to a distribution group, and enter the
-  group address. Entering multiple individual addresses is not supported.
+- To send to multiple recipients, add them to a distribution group, and enter the
+  group address. Entering multiple individual addresses isn't supported.
 
-To learn more about product health, you can also navigate to the Health status tile in the main
+For more information about product health, you can also navigate to the Health status tile in the main
 window. It will take you to the Health Status dashboard that contains information on the product
 activity and system health state. See the
 [Health Status Dashboard](/docs/auditor/10.9/admin/healthstatus/dashboard/overview.md) topic for additional information.

@@ -13,11 +13,11 @@ screen will present the following pop-up:
 ![addtogroup](/images/dataclassification/5.6.2/sources/source_groups/addtogroup.webp)
 
 A group can either be "mixed", which allows it to contain all source types, or source specific. In
-the example above a group would be created entitled "Demo Content", which only supports the addition
-of SharePoint sources. If a supporting source group already exists, this can be selected from the
-drop-down list provided. [See Dynamic Source Groups for more information.](#dynamic-source-groups)
+the preceding example a group would be created entitled "Demo Content", which only supports the addition
+of SharePoint sources. If a supporting source group already exists, you can select it from the
+dropdown list. [See Dynamic Source Groups for more information.](#dynamic-source-groups)
 
-Selecting the cog icon on the main sources grid screen for a source group allows you to amend the
+Selecting the cog icon on the main sources grid screen for a source group lets you amend the
 group settings:
 
 ![editgroup](/images/dataclassification/5.6.2/sources/source_groups/editgroup.webp)
@@ -41,9 +41,9 @@ Here you can:
 - _(SharePoint only)_ Supply regular expression rules to support automatically assigning sources to
   a specific group
 
-Deleting a group will remove all existing items from the group leaving them unassigned. You can also
-remove a specific source(s) from a group by selecting the source group in the grid and then
-selecting Remove from Group for the required source(s). Source groups can also be created and
+Deleting a group removes all existing items from the group, leaving them unassigned. You can also
+remove specific sources from a group by selecting the source group in the grid and then
+selecting **Remove from Group** for the required sources. Source groups can also be created and
 assigned as part of the source creation process.
 
 ## Dynamic Source Groups

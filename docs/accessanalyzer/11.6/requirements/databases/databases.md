@@ -11,8 +11,8 @@ Server, and Access Information Center. See the
 [Requirements](/docs/accessanalyzer/11.6/requirements/overview.md)
 topic for the core requirements.
 
-In addition to these, integration with either the Netwrix Activity Monitor is required for event
-activity data to be scanned. See the
+In addition to these, you need integration with the Netwrix Activity Monitor to scan event
+activity data. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
 for installation requirements and information on collecting activity data.
 
@@ -43,10 +43,10 @@ These are dependent upon the size of the target environment:
 | Disk Space  | 460 GB               | 280 GB                   | 160 GB                | 80 GB                |
 
 :::note
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the
-minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host.For
-example, if the job is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are
-required (8x2=16).
+If running Sensitive Data Discovery (SDD) scans, you must increase the
+minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For
+example, if you configure the job to scan 8 hosts at a time, the job requires an extra 16 GB of RAM
+(8x2=16).
 :::
 
 
@@ -74,10 +74,9 @@ The following is required to run Sensitive Data Discovery scans:
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
-configuration; it has been preconfigured to work with Enterprise Auditor and should never be
-customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
-environment.
+(Java) version on the server. The deployed JDK is prepackaged, requires no configuration, comes
+preconfigured to work with Enterprise Auditor, and should never be customized through Java. It
+doesn't conflict with other JDKs or Java Runtimes in the same environment.
 :::
 
 

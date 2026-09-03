@@ -14,7 +14,7 @@ objects within the targeted domains.
 The AD_CertificateRights job uses the ADPermissions data collector for the following query:
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 
@@ -31,7 +31,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **0.Collection** >
 **AD_CertificateRights** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

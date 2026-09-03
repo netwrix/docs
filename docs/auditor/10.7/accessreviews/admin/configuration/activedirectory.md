@@ -41,11 +41,10 @@ _Remember,_ click **Save** when any changes are made to this page.
 
 ## Update the Active Directory Service Account Password
 
-Follow the steps to update the Active Directory service account password. These steps only apply for
 the **Use the following Active Directory account** option.
 
-**Step 1 –** On the Active Directory page, enter the new password in the correct field.
+1. On the Active Directory page, enter the new password in the correct field.
 
-**Step 2 –** Click **Save**. Then click **OK** to confirm.
+2. Click **Save**. Then click **OK** to confirm.
 
 The Active Directory service account password has been updated.

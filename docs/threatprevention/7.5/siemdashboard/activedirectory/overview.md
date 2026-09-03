@@ -16,21 +16,20 @@ ability to block undesired changes and access.
 Threat Prevention can be configured to monitor Active Directory events and send the monitored events
 to Splunk.
 
-You can integrate Netwrix’ products with the Netwrix Active Directory App for Splunk.
+To use the Netwrix Active Directory App for Splunk:
 
 - Install the Active Directory App for Splunk.
-- Ensure that Threat Prevention has been configured to send events to Splunk. See the
-  [SIEM Tab](/docs/threatprevention/7.5/admin/configuration/systemalerting/siem.md)topic for additional information.
+- Configure Threat Prevention to send events to Splunk. See the
+  [SIEM Tab](/docs/threatprevention/7.5/admin/configuration/systemalerting/siem.md) topic for additional information.
 
 ## App Installation in Splunk
 
 Download the [Stealthbits Active Directory App for Splunk](https://splunkbase.splunk.com/app/3433/)
-from the [Splunkbase](https://splunkbase.splunk.com/). Then follow the
-[Splunk Add-ons](http://docs.splunk.com/Documentation/AddOns/released/Overview/Installingadd-ons)
-guide provided by Splunk to install the app.
+from [Splunkbase](https://splunkbase.splunk.com/) and install it using the
+[Splunk Add-ons installation guide](http://docs.splunk.com/Documentation/AddOns/released/Overview/Installingadd-ons).
 
 :::note
-In order to use the User Behavior Analytics dashboard in the app, install
+To use the User Behavior Analytics dashboard in the app, install
 [Splunk User Behavior Analytics](https://www.splunk.com/en_us/products/premium-solutions/user-behavior-analytics.html)
 (any version) and the [Machine Learning Toolkit](https://splunkbase.splunk.com/app/2890/) app for
 Splunk (version 2.0.0+).
@@ -44,11 +43,8 @@ Threat Prevention.
 
 ## Initial Configuration of the Active Directory App for Splunk
 
-Follow the steps to configure Splunk to receive data from Threat Prevention.
-
 :::tip
-Remember, prior to using the Active Directory App for Splunk, the relevant Netwrix product must be
-configured to send data to Splunk.
+Before using the Active Directory App for Splunk, the relevant Netwrix product must be configured to send data to Splunk.
 :::
 
 
@@ -76,10 +72,6 @@ not blocked by the network.
 
 **Step 7 –** Review and save the new settings.
 
-**Step 8 –** To test that the configuration is working correctly, check the Search and Reporting app
-inside of the web console for Splunk (search for Threat Prevention). There should be sample logs
-with KEY=%VALUE% pairs in the Event column. If there are no events, use a packet sniffer to ensure
-that packets are being sent correctly between the two hosts, and diagnose any possible network
-issues.
+**Step 8 –** To verify the configuration is working, check the Search and Reporting app in the Splunk web console (search for Threat Prevention). You should see sample logs with KEY=%VALUE% pairs in the Event column. If there are no events, use a packet sniffer to verify packets are being sent correctly between the two hosts and diagnose any network issues.
 
 The Netwrix Active Directory App will now display activity from the Threat Prevention data.

@@ -22,7 +22,7 @@ For a given managed system, integrators may need the help of the **application o
 
  | Input | Output | 
  | --- | --- | 
- | Connector container(required) Connector model(required) | Connection(s) | 
+ | Connector container(required) Connector model(required) | Connections | 
 
 See the [Create the Connector](../../../user-guide/set-up/connect-system/connector-declaration) and [Model the Data](../../../user-guide/set-up/connect-system/connector-modeling) topics for additional information.
 
@@ -30,7 +30,7 @@ See the [Create the Connector](../../../user-guide/set-up/connect-system/connect
 
 Create a connection by proceeding as follows:
 
-1. Click on the addition button in the **Connections** frame on the connector's summary page.
+1. Click the addition button in the **Connections** frame on the connector's summary page.
 
     ![Add a New Connection](/images/identitymanager/connection_newconnection_v602.webp)
 
@@ -46,24 +46,24 @@ and contain only letters, numbers, `.` and/or `-`.
 managed system. See details below.
     - `Agent Settings`: depends on the selected package.
 
-Then click on **Create & Close**.
+Then click **Create & Close**.
 
 ### Select a package
 
 A package is chosen according to the following constraints:
 
-- What kind of technologies do we need?
+- What kind of technologies are needed?
 
     > An Active Directory, a plain CSV file, etc.
 
-- Do we need incremental or complete synchronizations, or both?
+- Are incremental or complete synchronizations needed, or both?
 
 Incremental synchronizations, usually launched approximately every two hours, are to be performed for real-time needs, while complete synchronizations, scheduled no more than once a day, will recover any changes that may have slipped through the cracks of the incremental synchronizations. See the [Upward Data Synchronization](../../../integration-guide/synchronization/upward-data-sync) topic for additional information.
 
-- Do we need [Provision](../../../user-guide/administrate/provisioning)? If so, should provisioning be
+- Is [Provision](../../../user-guide/administrate/provisioning) needed? If so, should provisioning be
 performed manually or automatically by Identity Manager?
 
-NETWRIX recommends starting by creating a connector that only does synchronization, and do not worry yet about provisioning. It allows Identity Manager to read data from your managed system, without writing to the system.
+NETWRIX recommends starting by creating a connector that only does synchronization, and don't worry yet about provisioning. It allows Identity Manager to read data from your managed system, without writing to the system.
 
 One connector can contain **several connections, and each connection contains one package**.
 
@@ -73,7 +73,7 @@ One connector can contain **several connections, and each connection contains on
 > `Ticket/identitymanager` could be added to request manual provisioning of administration accounts that
 > need more security.
 
-Each type of package needs its own settings, and secured options can be used to store sensitive connection information. See the [Connections](../../../integration-guide/connectors/configuration-details/connections) topic for additional information.
+Each type of package needs its own settings, and you can use secured options to store sensitive connection information. See the [Connections](../../../integration-guide/connectors/configuration-details/connections) topic for additional information.
 
 ## Refresh Schemas
 
@@ -108,9 +108,9 @@ Changes on a connection may imply changes in the connector's entity types. When 
 
 ## Verify the Connection
 
-In order to verify the process:
+To verify the process:
 
-1. click on **Check Connection** to ensure that Identity Manager can reach the managed system;
+1. click **Check Connection** to ensure that Identity Manager can reach the managed system;
 
     ![Check Connection](/images/identitymanager/connectioncreation_checkconnection_v602.webp)
 
@@ -139,7 +139,7 @@ If the schema couldn't be recovered, then:
     > Example: For a CSV connection, ensure that the file paths are written correctly in full, such
     > as `C:/identitymanagerDemo/Sources/Directory.xlsx`.
 
-You may have a schema that could not be recovered if you work with a system without a direct access to the agent. In this case, schema refreshment will fail but that does not mean that there necessarily is a problem.
+You may have a schema that couldn't be recovered if you work with a system without a direct access to the agent. In this case, schema refreshment will fail but that doesn't mean that there necessarily is a problem.
 
 Try again from a system that can access the agent.
 

@@ -67,7 +67,7 @@ Depending on the existing network infrastructure and constraints, Identity Manag
 
 ### Database and Servers
 
-The Identity Manager Database can be installed on the same workstation as the Identity Manager Server or run on a separate machine. The second approach is **recommended**.
+The Identity Manager Database can be installed on the same workstation as the Identity Manager Server or run on a separate machine. Netwrix recommends the second approach.
 
 ### Server and Agents
 
@@ -95,5 +95,5 @@ End-users will be able to access Identity Manager after authentication. Several
 
 Identity Manager sends notifications to users by email. An email server will have to be set up for the Agent and the Server. See the [Send Notifications](../installation-guide/production-ready/email-server) topic for additional information.
 
-Before you check out the installation steps, make sure that all the [Requirements](../installation-guide/requirements) are met.
+Before you check out the installation steps, ensure that all the [Requirements](../installation-guide/requirements) are met.
 

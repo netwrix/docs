@@ -72,7 +72,7 @@ The type of business the contact or user's organization conducts.
 
 **Home page**
 
-The URL of the web page of the user. This field is not available for a contact.
+The URL of the web page of the user. This field isn't available for a contact.
 
 **Exchange Assistant**
 
@@ -82,7 +82,7 @@ also forwarded to this assistant.
 Enter a search string to locate the object to add as an Exchange assistant, or click **Browse** to
 use the [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
 
-This field is not available for a user.
+This field isn't available for a user.
 
 **Email**
 

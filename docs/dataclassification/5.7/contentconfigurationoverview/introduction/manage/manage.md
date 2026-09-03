@@ -8,23 +8,21 @@ sidebar_position: 50
 
 The following commands are available on the **General** tab of the **Sources** section:
 
-- Delete—Removes the source from processing. Its content will not appear in the search results in
-  due course.
+- Delete—Removes the source from processing. Its content will not appear in the search results.
 
 :::note
-This does not delete content from the external system
+This doesn't delete content from the external system
 :::
 
 
-- Re-Collect—Queues the source for re-processing. Crawled items will be deleted, and the entire
-  source re-crawled
+- Re-Collect—Queues the source for re-processing. The system deletes crawled items and re-crawls the entire source.
 - Re-Index—Queues a source or item to be re-indexed regardless of if the documents were changed or
   not. You can select Re-Index scope:
 
-    - Selected Item(s) and All Descendants — select to Re-Index an Item and child of a child of so
+    - Selected Items and All Descendants — select to Re-Index an Item and child of a child of so
       forth child element.
-    - Selected Item(s) and Children — select to Re-Index an Item and its direct child elements.
-    - Selected Item(s) Only — select to Re-Index only current item and ignore its child elements.
+    - Selected Items and Children — select to Re-Index an Item and its direct child elements.
+    - Selected Items Only — select to Re-Index only current item and ignore its child elements.
 
 - Re-Classify—Queues a source or item to be re-classified against the latest configured
   classification rules
@@ -40,7 +38,7 @@ operations.
 - Add To Group—Adds a source to a logical container (Source Group), either an existing or a newly
   created one.
 
-Besides, in the source list on the **General** tab you can do the following for selected source:
+In the source list on the **General** tab you can also do the following for selected sources:
 
 - [View Results](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/viewcontent.md)
 - **Edit** the source details by clicking on the "gear" icon

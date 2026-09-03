@@ -20,8 +20,8 @@ The IT risks are grouped into the following categories:
 - Infrastructure
 
 Within each category there are several key metrics identified by Netwrix industry experts who also
-suggested formulas for calculating metrics values. Risks are assessed against these metrics and
-displayed with the color indicators in accordance with the level:
+suggested formulas for calculating metrics values. Netwrix Auditor assesses risks against these metrics and displays them with the color indicators
+in accordance with the level:
 
 - High — red
 - Medium — yellow
@@ -29,16 +29,16 @@ displayed with the color indicators in accordance with the level:
 
 ![dashboard_thumb_0_0](/images/auditor/10.9/admin/riskassessment/dashboard_thumb_0_0.webp)
 
-After reviewing general risks assessment results in each category, you can drill-down to details
+After reviewing general risks assessment results in each category, you can view details
 covered in the underlying report. To do so, double-click the selected metric or use the View Report
 button.
 
 ## Customizing Metrics for Your Organization
 
-Default threshold values for risk levels are set in accordance with recommendations of
-Netwrix industry experts, as described in the [How Risk Levels Are Estimated ](/docs/auditor/10.9/admin/riskassessment/levels.md) topic. They
-can be, however, easily customized to reflect your organization's internal security policies and
-standards. Follow the steps to customize the metrics.
+Default threshold values for risk levels follow recommendations from
+Netwrix industry experts, as described in the [How Risk Levels Are Estimated ](/docs/auditor/10.9/admin/riskassessment/levels.md) topic. You
+can, however, customize them to reflect your organization's internal security policies and
+standards. To customize the metrics:
 
 **Step 1 –** In the dashboard pane, select the metric you need and in the **Actions** section on the
 right click Modify thresholds.
@@ -59,12 +59,12 @@ Also, for several metrics the Customize risk indicators command is available.
 | Servers with unauthorized antivirus software    | Edit the whitelist of permitted antivirus tools. Any other antivirus will be considered a risk factor.                                               |
 | Administrative group membership sprawl          | Edit the whitelist of permitted accounts that can be the members of local administrative groups. Any other account will be considered a risk factor. |
 
-**Note:** Special characters such as %, *, and ? are not interpreted as wildcards in risk indicator customization and are treated as literal characters. The only exception is the domain portion of
-domain\account entries in Administrative group membership sprawl, where % can be used to represent any domain. In all other cases (for example, account names, file names, operating system names, and antivirus names),
-values must be entered explicitly and are not matched using wildcard patterns.
+**Note:** Special characters such as %, *, and ? aren't interpreted as wildcards in risk indicator customization and are treated as literal characters. The only exception is the domain portion of
+domain\account entries in Administrative group membership sprawl, where you can use % to represent any domain. In all other cases (for example, account names, file names, operating system names, and antivirus names),
+values must be entered explicitly and aren't matched using wildcard patterns.
 
-New settings will be applied/risk level thresholds will be refreshed after the next data collection
-session.
+Netwrix Auditor applies new settings and refreshes risk level thresholds after the next data
+collection session.
 
 ## Delivering Assessment Results as a File
 

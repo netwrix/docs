@@ -20,10 +20,10 @@ Configure the agent's settings by proceeding as follows:
 
 1. From the `Runtime/Agent` folder, copy the files `*appsettings.json*`, `*appsettings.agent.json*` and
 `*web.config*` and paste them in the `Runtime` folder, thus replacing the pre-existing ones.
-2. Open `*web.config*` and make sure that, in the `aspNetCore` tag, the value of `arguments` is set to
+2. Open `*web.config*` and ensure that, in the `aspNetCore` tag, the value of `arguments` is set to
 `./Usercube-Agent.dll`.
 
-When needing to get the agent's logs, set also `stdoutLogEnabled` to `true`. See more details in [Microsoft's documentation](https://learn.microsoft.com/fr-fr/aspnet/core/host-and-deploy/iis/logging-and-diagnostics?view=aspnetcore-7.0).
+When needing to get the agent's logs, set also `stdoutLogEnabled` to `true`. Refer to [Microsoft's IIS logging and diagnostics documentation](https://learn.microsoft.com/fr-fr/aspnet/core/host-and-deploy/iis/logging-and-diagnostics?view=aspnetcore-7.0) for details.
 
 ```
 ***web.config***
@@ -31,11 +31,11 @@ When needing to get the agent's logs, set also `stdoutLogEnabled` to `true`. See
 ... <aspNetCore processPath="dotnet" arguments="./Usercube-Agent.dll" stdoutLogEnabled="true" stdoutLogFile="../Temp/stdout-server.log" hostingModel="inprocess">     ... </aspNetCore> ...
 ```
 
-3. Open `*appsettings.json*` and make sure that:
+3. Open `*appsettings.json*` and ensure that:
 
     - **License** contains a valid license;
     - **IdentityServer** contains the encryption certificate's path and password provided by Netwrix
-Identity Manager (formerly Usercube) team, in order to secure agent/server identification;
+Identity Manager (formerly Usercube) team, to secure agent/server identification;
 
 For example (in `*appsettings.json*`):
 
@@ -56,14 +56,14 @@ If the certificates' passwords contain `@`, then they **must** be escaped via th
 For example (in `*appsettings.json*`):
 
 ```json "ApplicationUri": "http://localhost:5000" ```
-Do not write a `/` character at the end of the string.
+Don't write a `/` character at the end of the string.
 
     - **Cors** > **AllowAnyHeader**, **AllowAnyMethod** and **AllowCredentials** are set to `true`;
 
 For example (in `*appsettings.json*`):
 ```json "Cors": { "AllowAnyHeader": "true", "AllowAnyMethod": "true", "AllowCredentials": "true" } ```
 
-4. Open `*appsettings.agent.json*` and make sure that:
+4. Open `*appsettings.agent.json*` and ensure that:
 
     - **OpenId** > **AgentIdentifier** specifies the agent's name which **must** match the XML
 configuration. See the [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) topic for additional information..

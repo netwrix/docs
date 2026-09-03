@@ -30,7 +30,7 @@ The following example gives to the `Administrator` profile the permissions to ac
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_RedundantAssignment" DisplayName_L1="Administrator_RedundantAssignment" EntityType="Policy" Profile="Administrator">

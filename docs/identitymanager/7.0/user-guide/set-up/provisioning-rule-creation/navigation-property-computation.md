@@ -12,7 +12,7 @@ How to define **navigation** rules and/**or** query rules to compute and provisi
 
 Sources are usually identities, and targets are usually accounts from the managed systems.
 
-Here, we are going to compute the values of **navigation** properties for the target resources used in entitlement management, based on source resources. See the[Define **navigation** Properties](../../../user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition) topic for additional information. We are going to provision these properties, i.e. write them to the managed system. See the [Provision](../../../user-guide/administrate/provisioning) topic for additional information.
+This topic explains how to compute the values of **navigation** properties for the target resources used in entitlement management, based on source resources. See the [Define **navigation** Properties](../../../user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition) topic for additional information. It also covers how to provision these properties, that is, write them to the managed system. See the [Provision](../../../user-guide/administrate/provisioning) topic for additional information.
 
 The right tools for the job are **navigation** and query rules.
 
@@ -33,7 +33,7 @@ according to a query via a C# expression with conditions, based on the attribute
 > `ServiceNow_Department` entity type, where the name of the resource would match the display name
 > of the organization specified for the user (owner of the ServiceNow account).
 >
-> We need here to query the `ServiceNow_Department` entity type in order to find the right
+> This rule queries the `ServiceNow_Department` entity type to find the right
 > department to update the value of `department`, which is specific to each ServiceNow account.
 >
 > Thus, each user owning a ServiceNow account will see the value of `department` in their account
@@ -44,7 +44,7 @@ according to a query via a C# expression with conditions, based on the attribute
 > from among AD entries, where the `dn` attribute of the resource would match a complex expression
 > based on the user's (owner of the AD account) presence state, employee type, location, etc.
 >
-> We need here to query the `AD - Entry` entity type in order to find the right dn to update the
+> This rule queries the `AD - Entry` entity type to find the right dn to update the
 > value of `parentdn`, which is specific to each AD nominative account.
 >
 > Thus, each AD nominative account will have the value of its `parentdn` set according to its
@@ -52,7 +52,7 @@ according to a query via a C# expression with conditions, based on the attribute
 
 The application of a **navigation** rule can depend on the assignment of a single role, and/**or** user dimensions. See the[Create Roles in the Role Catalog](../../../user-guide/set-up/single-roles-catalog-creation) topic for additional information on the assignment of a single role and [Conforming Assignments](../../../integration-guide/role-assignment/conformingassignmentcomputation) topic for additional information on dimensions.
 
-A **query rule** does not use criteria as it is designed to compute a given **navigation** property for all existing resources in a given resource type. However, in case of several query rules on a same property, the application of a **query rule** depends on its confidence rate and the corresponding priority it receives compared to other query rules. See the [Classify Resources](../../../user-guide/set-up/categorization/classification) topic for additional information.
+A **query rule** doesn't use criteria as it is designed to compute a given **navigation** property for all existing resources in a given resource type. However, in case of several query rules on a same property, the application of a **query rule** depends on its confidence rate and the corresponding priority it receives compared to other query rules. See the [Classify Resources](../../../user-guide/set-up/categorization/classification) topic for additional information.
 
 While both **navigation** and query rules compute **navigation** properties, the value of one **navigation** property should be computed by **either** **navigation** **or** query rules, not both.
 
@@ -60,14 +60,14 @@ In Identity Manager, a **navigation** property has two "sides", one for each lin
 
 For example in the AD, the group membership of a user is represented by the properties `member` for groups (containing a list of users) and `memberOf` for users (containing a list of groups). However, some managed systems only have one of these two sides.
 
-The AD only uses `member` from among groups' properties. Users do not have a `memberOf` property. As Identity Manager uses and links both sides, it is able to "translate" the information, so that the corresponding **navigation** property, which actually exists in the managed system, is modified by the **navigation**/**query rule**.
+The AD only uses `member` from among groups' properties. Users don't have a `memberOf` property. As Identity Manager uses and links both sides, it can "translate" the information, so that the corresponding **navigation** property, which actually exists in the managed system, is modified by the **navigation**/**query rule**.
 
-Identity Manager assigns an entitlement to a user by assigning a group-membership to an account. Thus we can create a **navigation** rule which adds a group to the `memberOf` property of given accounts. Identity Manager will update the `member` property of groups accordingly (in Identity Manager), and then provision the `member` property of said groups in the AD, adding the impacted accounts.
+Identity Manager assigns an entitlement to a user by assigning a group-membership to an account. Thus, you can create a **navigation** rule that adds a group to the `memberOf` property of given accounts. Identity Manager updates the `member` property of groups accordingly (in Identity Manager), and then provisions the `member` property of said groups in the AD, adding the impacted accounts.
 
-A **navigation** rule will **trigger the creation** of a target resource for all impacted source resources (so all users), which are not yet correlated with a resource of this resource type.
+A **navigation** rule will **trigger the creation** of a target resource for all impacted source resources (so all users), which aren't yet correlated with a resource of this resource type.
 
 :::note
- A **query rule** **does not create** resources, and only computes the **navigation** properties of existing resources. 
+ A **query rule** **doesn't create** resources, and only computes the **navigation** properties of existing resources. 
 :::
 ## Guidelines
 
@@ -94,7 +94,7 @@ Once configured, a rule is a complicated object to modify. Therefore, you must k
 
 When creating **navigation** and query priorities, follow these rules:
 
-- Several rules computing the same property with different criteria should not coexist;
+- Several rules computing the same property with different criteria shouldn't coexist;
 - The only reason to have several rules to compute a single property is when changing the property
 value over time, via time offsets. See the [Resource Type](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) topic for additional information.
 
@@ -119,15 +119,15 @@ This is equivalent to creating individual rules for each resource in the dimensi
 **Configuration requirements:**
 
 - The `SingleRole` property is required
-- Do not use both `Resource` and `ResourceFromDimension` in the same rule
+- Don't use both `Resource` and `ResourceFromDimension` in the same rule
 - The dimension's entity type must match the target entity type of the navigation property
-- Do not specify dimension criteria (D0, D1, etc.) - they are set automatically for each resource in the dimension
+- Don't specify dimension criteria (D0, D1, etc.) - they are set automatically for each resource in the dimension
 
 For complete XML configuration reference, see [ResourceType - NavigationRule](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype#child-element-navigationrule).
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements and data model. See the [Categorize Resources](../../../user-guide/set-up/categorization) topic for additional information.
+For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements, and data model. See the [Categorize Resources](../../../user-guide/set-up/categorization) topic for additional information.
 
  | Input | Output | 
  | --- | --- | 
@@ -137,7 +137,7 @@ For a given managed system, integrators may need the help of the **application o
 
 Fill an entity type with a **navigation** rule by proceeding as follows:
 
-**Step 1 –** Click on **Access Rules** on the home page in the **Configuration** section.
+**Step 1 –** Click **Access Rules** on the home page in the **Configuration** section.
 
 ![Home - Access Rules](/images/identitymanager/home_rules_v602.webp)
 
@@ -145,7 +145,7 @@ Fill an entity type with a **navigation** rule by proceeding as follows:
 
 ![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
-**Step 3 –** Click on the **Navigations** tab and on the addition button at the top right corner.
+**Step 3 –** Click the **Navigations** tab and on the addition button at the top right corner.
 
 ![Addition Icon](/images/identitymanager/iconadd_v602.webp)
 
@@ -165,11 +165,11 @@ computation according to the value's start and/**or** end date.
 
 - **Criteria**: conditions that, if met, trigger the rule application.
 
-> Our example would look like:
+> For example:
 >
 > ![Scalar Rule Example](/images/identitymanager/provrules_examplenav_v602.webp)
 
-**Step 5 –** Click on **Create** and see a line added on the rules page.
+**Step 5 –** Click **Create** and see a line added on the rules page.
 
 The **navigation** rule is now configured and can be found in the Access Rules tab.
 
@@ -177,7 +177,7 @@ The **navigation** rule is now configured and can be found in the Access Rules t
 
 Fill an entity type with a **query rule** by proceeding as follows:
 
-**Step 1 –** Click on **Access Rules** on the home page in the **Configuration** section.
+**Step 1 –** Click **Access Rules** on the home page in the **Configuration** section.
 
 ![Home - Access Rules](/images/identitymanager/home_rules_v602.webp)
 
@@ -185,7 +185,7 @@ Fill an entity type with a **query rule** by proceeding as follows:
 
 ![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
-**Step 3 –** Click on the **Queries** tab and on the addition button at the top right corner.
+**Step 3 –** Click the **Queries** tab and on the addition button at the top right corner.
 
 ![Addition Icon](/images/identitymanager/iconadd_v602.webp)
 
@@ -193,7 +193,7 @@ Fill in the fields.
 
 ![Create **query rule**](/images/identitymanager/provrules_queryrule_v522.webp)
 
-Once the `Resource Type` is provided, more fields appear.
+After you provide the `Resource Type`, more fields appear.
 
 ![**query rule** Fields](/images/identitymanager/provrules_queryrulefields_v602.webp)
 
@@ -208,13 +208,13 @@ value's start and/**or** end date. An offset of effective date can be useful for
 - `Confidence Rate`: rate expressing the confidence in this link, and its priority order. See
 the[Classify Resources](../../../user-guide/set-up/categorization/classification) topic for additional information.
 
-> Our examples would look like:
+> For example:
 >
 > ![**query rule** Example](/images/identitymanager/provrules_examplequery_v602.webp)
 >
 > ![**query rule** Example 2](/images/identitymanager/provrules_examplequerybis_v602.webp)
 
-Click on **Create** and see a line added on the rules page.
+Click **Create** and see a line added on the rules page.
 
 ## Impact of Modifications
 
@@ -222,23 +222,23 @@ Any modification in a **navigation** **or** **query rule** is taken into account
 
 ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
-This task applies the rules and computes new properties. Therefore, if a given rule's criterion is modified, then all corresponding assignments are computed again. If a resource was created automatically for an identity through a **navigation** rule (and its criteria), and if the user's criteria do not comply with the new version of the rule, then the corresponding resource is automatically deleted.
+This task applies the rules and computes new properties. Therefore, if a given rule's criterion is modified, then all corresponding assignments are computed again. If a resource was created automatically for an identity through a **navigation** rule (and its criteria), and if the user's criteria don't comply with the new version of the rule, then the corresponding resource is automatically deleted.
 
 A modification in a provisioning rule can trigger the removal of a resource **only on the Identity Manager side**. There are several barriers to cross before said resource is removed from the managed system.
 
-Simulations are available in order to anticipate the changes induced by a creation/modification/deletion in **navigation** and query rules. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
+Simulations are available to anticipate the changes induced by a creation/modification/deletion in **navigation** and query rules. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
 
 ## Verify Rule Creation
 
-In order to verify the process:
+To verify the process:
 
-**Step 1 –** On the corresponding connector's overview page, in the **Resource Types** frame click on **Jobs** > **Compute Role Model** to apply all rules.
+**Step 1 –** On the corresponding connector's overview page, in the **Resource Types** frame click **Jobs** > **Compute Role Model** to apply all rules.
 
 ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 Review unauthorized accounts (on the **Resource Reconciliation** screen) and roles (on the **Role Reconciliation** screen) to help check query rules: if there are numerous properties to be reconciled following the same pattern, then there may be a rule that needs to be changed.
 
-**Step 2 –** On the corresponding connector's overview page, in the **Resource Types** frame click on **Jobs** > **Compute Role Model** to apply all rules.
+**Step 2 –** On the corresponding connector's overview page, in the **Resource Types** frame click **Jobs** > **Compute Role Model** to apply all rules.
 
 **Step 3 –** Review unauthorized accounts (on the **Resource Reconciliation** screen) and roles (on the **Role Reconciliation** screen) to help check query rules: if there are numerous properties to be reconciled following the same pattern, then there may be a rule that needs to be changed.
 

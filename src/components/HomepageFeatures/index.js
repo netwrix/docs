@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import { ReactTyped } from 'react-typed';
 import { useState } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { generateProductCategories } from '@site/src/config/products.js';
 
 /**
@@ -24,9 +25,6 @@ const SECTION_TITLES = [
   'Queue Up Better Security',
   'Respawn with Stronger Defenses',
 ];
-
-// Generate product categories from centralized configuration
-const ProductCategories = generateProductCategories();
 
 /**
  * Product Card with Rectangular Version Badges
@@ -94,6 +92,15 @@ function ProductCategory({ title, description, icon, products }) {
  * Displays animated title and all product categories
  */
 export default function HomepageFeatures() {
+  const { siteConfig } = useDocusaurusContext();
+  // In DOCS_PRODUCT single-product builds, docusaurus.config.js passes the active
+  // product id list via customFields (process.env isn't available in this bundled
+  // component — rspack/webpack polyfill `process` with an empty env in browser/SSR bundles).
+  const ProductCategories = generateProductCategories(
+    siteConfig.customFields?.activeProductIds,
+    siteConfig.customFields?.activeVersionsByProduct
+  );
+
   return (
     <section className={styles.features}>
       <div className="container">

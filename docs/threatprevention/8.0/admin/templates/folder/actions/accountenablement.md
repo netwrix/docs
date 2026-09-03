@@ -9,19 +9,19 @@ sidebar_position: 10
 The following C# script sends an email notification to the specified administrator when an Active
 Directory account is enabled.
 
-The following environmental variables must be added to the script prior to execution:
+The following environmental variables must be added to the script before execution:
 
 - SMTPHOST – Name of the organization’s SMTP server
 - SMTPPORT – Port used by the organization’s SMTP server
 - SMTPENABLESSL – Indicates whether SSL is enabled or disabled on the SMTP server
-  - False = Do not use SSL
+  - False = Don't use SSL
   - True = Use SSL
 - SMTPFROM – Valid email account sending the email to the recipient
 - SMTPID – Valid username for SMTP server within the user's environment
 - SMTPPwD – Valid password for the username above
 
 In the Templates > Actions folder in the Navigation pane, the _AD Changes: Notify Admin that account
-is now enabled_ template is preconfigured to use this action script.
+is now enabled_ template uses this action script by default.
 
 ```
 namespace ScriptNamespace

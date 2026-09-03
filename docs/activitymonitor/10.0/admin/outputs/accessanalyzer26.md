@@ -6,10 +6,10 @@ sidebar_position: 41
 
 # Access Analyzer 26 Tab
 
-Use the Access Analyzer 26 tab on an output Properties window to modify the connection between Activity Monitor and Netwrix Access Analyzer 26. These settings are initially configured when the output is added.
+Use the Access Analyzer 26 tab on an output Properties window to modify the connection between Activity Monitor and Netwrix Access Analyzer 26. Configure these settings initially when you add the output.
 
 :::note
-Only File System, SharePoint Online, and Microsoft 365 Copilot events are supported by the Access Analyzer 26 output.
+Access Analyzer 26 supports only File System, SharePoint Online, and Microsoft 365 Copilot events.
 :::
 
 Select an Access Analyzer 26 output from the Monitored Hosts/Services tab and click **Edit** to open the output Properties window.
@@ -17,7 +17,7 @@ Select an Access Analyzer 26 output from the Monitored Hosts/Services tab and cl
 The tab contains the following settings:
 
 - Server in SERVER:PORT format – Server name of the Netwrix Access Analyzer 26 application server and
-  the communication port being used between the applications. The format must be `SERVER:PORT`, e.g.
+  the communication port that the applications use. The format must be `SERVER:PORT`, e.g.
   `AASRV01:4504`.
 
     - The server name can be a short name, fully qualified domain name (FQDN), or IP address, as long as the agent can resolve it.

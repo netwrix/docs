@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Work with Collected Data
 
-To leverage data collected with the add-on, you can do the following in Auditor:
+To use data collected with the add-on, you can do the following in Auditor:
 
-- Search for required data. For that, start Auditor client and navigate to **Search**. After
+- Search for required data. To do this, start the Auditor client and navigate to **Search**. After
   specifying the criteria you need, click **Search**. You will get a list of activity records with
   detailed information on who did what in the reported time period.
 
@@ -17,7 +17,7 @@ only.
 
 - You can also click **Tools** in the upper-right corner and select the command you need. For
   example:
-    - If you want to periodically receive the report on the results of search with the specified
+    - If you want to periodically receive the report on the search results with the specified
       criteria, click **Subscribe**. Then specify how you want the report to be delivered – as an
       email or as a file stored to the file share.
     - To create an alert on the specific occurrences, click **Create alert**.

@@ -1,0 +1,40 @@
+---
+title: "Application Permissions for Entra ID Sync"
+description: "Application Permissions for Entra ID Sync"
+sidebar_position: 20
+---
+
+# Application Permissions for Entra ID Sync
+
+The credential Threat Manager uses for Microsoft Entra ID Sync requires the following permissions.
+See the
+[Active Directory Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/activedirectorysync.md)
+topic for additional information about syncing the configured Microsoft Entra ID tenants in Threat
+Manager.
+
+:::tip The following permissions are new in Threat Manager 3.3:
+
+- AgentIdentity.Read.All
+- AgentIdentityBlueprint.Read.All
+- AgentIdentityBlueprintPrincipal.Read.All
+- IdentityRiskyAgent.Read.All
+:::
+
+| Object Type                      | Function                                                   | Access Requirements                         |
+| -------------------------------- | ---------------------------------------------------------- | ------------------------------------------- |
+| Administrative Unit              | Retrieve all administrative units                          | AdministrativeUnit.Read.All                 |
+| Agent Identity                   | Retrieve all agent identities                              | AgentIdentity.Read.All                      |
+| Agent Identity Blueprint         | Retrieve all agent identity blueprints                     | AgentIdentityBlueprint.Read.All             |
+| Agent Identity Blueprint Principal | Retrieve all agent identity blueprint principals         | AgentIdentityBlueprintPrincipal.Read.All    |
+| Application                      | Retrieve all applications                                  | Application.Read.All                        |
+| Device                           | Retrieve all devices                                       | Device.Read.All                             |
+| Group                            | Retrieve all groups                                        | Group.Read.All                              |
+| Group Member                     | Retrieve all group members                                 | GroupMember.Read.All                        |
+| Identity Risky Agent             | Retrieve all risky agents                                  | IdentityRiskyAgent.Read.All                 |
+| Identity Risky Service Principal | Retrieve all risky service principals                      | IdentityRiskyServicePrincipal.Read.All      |
+| Identity Risky User              | Retrieve all risky users                                   | IdentityRiskyUser.Read.All                  |
+| Organization                     | Retrieve organization information                          | Organization.Read.All                       |
+| Role Assignment Schedule         | Read and write role assignment schedules in the directory  | RoleAssignmentSchedule.ReadWrite.Directory  |
+| Role Eligibility Schedule        | Read and write role eligibility schedules in the directory | RoleEligibilitySchedule.ReadWrite.Directory |
+| Role Management                  | Retrieve all role management data                          | RoleManagement.Read.All                     |
+| User                             | Retrieve all users                                         | User.Read.All                               |

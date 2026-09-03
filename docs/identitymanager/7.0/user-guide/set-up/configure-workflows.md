@@ -10,7 +10,7 @@ How to adjust the validation process and homonym detection of onboarding [Workfl
 
 ## Overview
 
-Onboarding workflows are the processes that users follow in order to add in Identity Manager a new user, as a new employee has arrived in the company.
+Onboarding workflows are the processes that users follow to add in Identity Manager a new user, as a new employee has arrived in the company.
 
 The most common situation consists in having two onboarding workflows: one for employees and one for contractors. The Workforce Core Solution module provides these two workflows.
 
@@ -58,7 +58,7 @@ See the [Create the Workforce Repository](../../user-guide/set-up/initial-identi
 
 Configure onboarding workflows by proceeding as follows:
 
-1. On the home page, click on **Settings** in the **Configuration** section, then on **Workforce** >
+1. On the home page, click **Settings** in the **Configuration** section, then on **Workforce** >
 **Onboarding Workflows** in the left menu.
 
     ![Home - Settings](/images/identitymanager/home_settings_v523.webp)
@@ -79,7 +79,7 @@ Netwrix Identity Manager (formerly Usercube) recommends enabling the birth name 
 
 The other parameters for homonym detection should be enabled/disabled according to your needs.
 
-4. Click on **Save** at the top of the page.
+4. Click **Save** at the top of the page.
 
     ![Save Icon](/images/identitymanager/iconsave_v602.svg)
 
@@ -92,13 +92,13 @@ Validate the process by proceeding as follows:
     ![Home Page - Directory User](/images/identitymanager/home_directoryuser_v523.webp)
 
 2. Execute the workflows for a new employee and a new contractor.
-3. Make sure that the homonym detection works in accordance with the specified options.
+3. ensure that the homonym detection works in accordance with the specified options.
 
     > For example, if the inversion comparison is enabled between the first and last names:
 >
     > ![Workflows Homonym Detection](/images/identitymanager/workflows_verifyhomonyms_v601.webp)
 
-4. Make sure that the potential validation steps are in accordance with the specified options.
+4. ensure that the potential validation steps are in accordance with the specified options.
 
 ## Next Steps
 

@@ -16,7 +16,7 @@ of the following columns:
 
 - Trustee Name – Owner of the trustee account
 - Trustee Account – Active Directory account associated with the trustee
-- Department – Department to which the trustee account belongss
+- Department – Department to which the trustee account belongs
 - Title – Trustee’s title as read from Active Directory
 - Mail – Trustee’s email account as read from Active Directory
 - EmployeeId – Corporate ID for the employee as read from Active Directory

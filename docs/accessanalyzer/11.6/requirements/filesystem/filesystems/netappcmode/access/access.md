@@ -21,8 +21,8 @@ an alternative method.
 
 ### Configure Data LIF to Allow HTTPS Traffic
 
-As of NetApp Clustered ONTAP 9.6, users can assign service policies (instead of LIF roles) to LIFs
-that determine the kind of traffic that is supported for the LIFs.
+As of NetApp Clustered ONTAP 9.6, users can assign service policies (instead of Logical Interface
+(LIF) roles) to LIFs that determine the kind of traffic that is supported for the LIFs.
 
 - Starting with ONTAP 9.5, ONTAP supports service policies
 - Starting with ONTAP 9.6, LIF roles are deprecated and service policies are supported for all types
@@ -72,8 +72,8 @@ Example:
 network interface modify -vserver testserver -lif lif_1 -service-policy new_service_policy
 ```
 
-A service policy can only be used by LIFs in the same SVM that is specified when creating the
-service policy.
+A service policy can only be used by LIFs in the same Storage Virtual Machine (SVM) that is
+specified when creating the service policy.
 
 ## CIFS Method 2 Credential Configuration
 
@@ -104,8 +104,8 @@ The following permissions are required:
         cifs users-and-groups local-group add-members ‑group-name "BUILTIN\Backup Operators" ‑member-names [DOMAIN_USER] ‑vserver [SVM_NAME]
         ```
 
-If an ACE does not already exist for a specific user/group on an SVM's c$ share, then it needs to be
-added with the desired rights (No_access, Read, Change, or Full_Control). To check the current ACE
+If an ACE doesn't already exist for a specific user/group on an SVM's c$ share, add one with the
+rights you want (No_access, Read, Change, or Full_Control). To check the current ACE
 for a user or group on each SVM's c$ share, the following ONTAP CLI command should be used at the
 cluster management level.
 
@@ -117,18 +117,17 @@ The output will list each SVM's ACL for its c$ share. For example:
 
 ![ONTAP CLI Command Output Example](/images/accessanalyzer/11.6/config/netappcmode/accesscifsmethod2.webp)
 
-If the desired ACE does not exist on an SVM's c$ share, then one can be created with the following
-command:
+If the ACE you want doesn't exist on an SVM's c$ share, create one with the following command:
 
 ```
 vserver cifs share access-control create -share c$ -user-or-group [USER_OR_GROUP_NAME] -permission Read -vserver [SVM_NAME]
 ```
 
-If an existing ACE needs to be modified, the following command should be used:
+To modify an existing ACE, use the following command:
 
 :::warning
-The following command will overwrite an existing ACE. For example, it is possible to
-downgrade a user with Full_Control to Read, or vice versa.
+The following command will overwrite an existing ACE. For example, you can
+downgrade a user from Full_Control to Read, or the reverse.
 :::
 
 
@@ -137,19 +136,19 @@ vserver cifs share access-control modify -share c$ -user-or-group [USER_OR_GROUP
 ```
 
 :::note
-If users would prefer to avoid permissioning C$, then there is an alternative. Users can
-instead give the SVM's Backup Operators group read-only access to each share to be scanned.
+If you want to avoid permissioning C$, give the SVM's Backup Operators group read-only access to
+each share you want to scan instead.
 :::
 
 
-In order to utilize Enterprise Auditor’s LAT Preservation (Last Access Time) feature during
-sensitive data scans and metadata tag collection, applying ONTAP’s SeRestorePrivilege to the service
-account is also required.
+To use Enterprise Auditor’s LAT Preservation (Last Access Time) feature during
+sensitive data scans and metadata tag collection, also apply ONTAP’s SeRestorePrivilege to the
+service account.
 
-As an alternative to membership in BUILTIN\Backup Operators, SeBackupPrivilege can be directly
-applied to a user via the NetApp command line.
+As an alternative to BUILTIN\Backup Operators membership, apply SeBackupPrivilege directly to a
+user via the NetApp command line.
 
-The following commands can be used to grant these permissions to the service account to be used for
+Use the following commands to grant these permissions to the service account used for
 scanning by Enterprise Auditor.
 
 Use the following commands to add SeBackupPrivilege to the Service Account (or a BUILTIN Group):
@@ -196,13 +195,13 @@ cifs share access-control show ‑vserver [SVM_NAME] ‑share c$
 
 ## NFSv3 Credential Configuration
 
-The following is a list of example commands that can be used to configure a NetApp export policy to
+Use the following example commands to configure a NetApp export policy to
 scan a volume via NFSv3 using the Enterprise Auditor File System Solution.
 
 :::warning
 The export policy for a volume's parent (ex. the SVM's root volume), or the export
 policy for a qtree's parent, must have access rights that are equal or wider in scope to the export
-policy for the target volume/qtree. If Enterprise Auditor cannot access all segments of a target
+policy for the target volume/qtree. If Enterprise Auditor can't access all segments of a target
 volume/qtree's junction path, then NFS access will be denied.
 :::
 
@@ -259,7 +258,7 @@ volume modify ‑vserver testserver ‑volume testVolume ‑policy testNFS
 ### Troubleshooting NFSv3 Export Access
 
 If Enterprise Auditoris not discovering the expected NFS export, it is possible that the export
-policy is not properly configured to allow the Enterprise Auditor server or proxy server IP Address
+policy isn't properly configured to allow the Enterprise Auditor server or proxy server IP Address
 to mount the NFS export. One step in troubleshooting this issue is to confirm a Unix client (or WSL
 for Windows) in the same IP range as the Enterprise Auditor server or proxy server can mount the NFS
 export.

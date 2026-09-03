@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # AWS: Login Roles
 
-The Login Roles page is where the previously created AWS Roles are added. It is a wizard page for
+Use the Login Roles page to add the previously created AWS Roles. It is a wizard page for
 the categories of:
 
 - Collect Org data
@@ -25,5 +25,5 @@ topic for additional information. The page has the following options:
 - Remove – Remove the selected role from the list
 - Clear – Remove all roles from the list
 - Max Session Duration (hours) – Specify the maximum time the account can be logged in for. This
-  value should not exceed the SessionDuration configured for the role in AWS. The default value is 1
+  value shouldn't exceed the SessionDuration configured for the role in AWS. The default value is 1
   and the maximum value is 12.

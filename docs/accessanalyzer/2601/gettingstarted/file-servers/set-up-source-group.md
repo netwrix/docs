@@ -20,7 +20,7 @@ sidebar_position: 3
 
    - Toggle **Access** to enable scanning of file permissions and access controls.
    - Under **Include Shares**, select **All shares** to scan every share on the server, or **Custom selection** to specify a list of shares to include.
-   - Optionally, add share paths to the **Exclude Shares** field to skip specific locations. Wildcards are supported (for example, `\\fileserver\*\temp*`).
+   - Optionally, add share paths to the **Exclude Shares** field to skip specific locations. The field supports wildcards (for example, `\\fileserver\*\temp*`).
    - Select **Automatically enumerate hidden shares** to include hidden shares in the scan. Use the **Exclude Hidden Shares** field to exclude specific hidden shares (for example, `ADMIN$, C$, IPC$`).
    - Select **Include file-level permission data** to collect permissions at the file level in addition to folder level. This increases scan time.
    - Set **Workers** to control the number of concurrent threads used during enumeration. The default is `3`. The valid range is `1–20`.
@@ -29,7 +29,7 @@ sidebar_position: 3
    **Sensitive Data scan:**
 
    - Toggle **Sensitive Data** to enable scanning of file contents for sensitive data patterns.
-   - Configure share selection using the same options as the Access scan above.
+   - Configure share selection using the same options as the Access scan.
    - Select **Inherit from Global Settings** to use the sensitive data types configured at the system level, or disable this option to configure types for this source group specifically.
    - If configuring types directly, enable each sensitive data type you want to detect and assign a classification label.
    - Select **Run OCR** to scan images, screenshots, and scanned documents for sensitive text using optical character recognition (OCR). This increases processing time.

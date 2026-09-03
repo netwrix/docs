@@ -24,7 +24,7 @@ The disk space requirement doesn't include the compromised database. If you want
 ## System components
 
 ### Password Policy Server (PPS)
-The Password Policy Server is the component that enforces the password policy. Install it on all the domain controllers to enforce a password policy for Active Directory user accounts. You can also install the PPS on individual servers and workstations to enforce a password policy for local user accounts on those computers.
+The Password Policy Server enforces the password policy. Install it on all the domain controllers to enforce a password policy for Active Directory user accounts. You can also install the PPS on individual servers and workstations to enforce a password policy for local user accounts on those computers.
 
 ### Configuration Console
 The Configuration Console configures PPE. You will typically install this on your own computer or a management server, but you can also install it on the domain controllers. The Configuration Console also includes some PowerShell cmdlets. Use of the cmdlets is optional.

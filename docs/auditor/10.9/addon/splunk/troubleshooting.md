@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Maintenance and Troubleshooting
 
-Splunk records service logs to the `_internal` index. Follow the steps to troubleshoot data input
+Splunk records service logs to the `_internal` index. To troubleshoot data input
 from Netwrix Auditor API:
 
 **Step 1 –** Navigate to the **Search** page of the add-on or **Search & Reporting** Splunk app.
@@ -23,7 +23,7 @@ For example:
 index=_internal netwrix_data_input
 ```
 
-**Step 3 –** Press the **Last 24 hours** button and choose **All time** time range.
+**Step 3 –** Press the **Last 24 hours** button and choose the **All time** range.
 
 **Step 4 –** Press the search button; you should see list of the events with Splunk service
 information.

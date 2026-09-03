@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # VBScript Editor
 
-The VBScript Editor window provides the means to add a script. The window is ideal for editing small
+The VBScript Editor window lets you add a script. The window is ideal for editing small
 scripts and for pasting larger scripts from external scripting tools.
 
 ![VBScript Editor window](/images/accessanalyzer/11.6/admin/datacollector/script/vbscripteditor.webp)
@@ -14,10 +14,10 @@ scripts and for pasting larger scripts from external scripting tools.
 The options in the VBScript Editor are:
 
 - Save and Close – Use this option to save the script and close the window
-- Syntax Check – Use this option to check the syntax of your script. This does not identify logic
+- Syntax Check – Use this option to check the syntax of your script. This doesn't identify logic
   errors, only cases where the script syntax is incorrect. It helps reduce the overhead of debugging
-  a script. When selected, a Script Errors window opens and a syntax check is performed. Any
-  syntactical errors are displayed within the window.
+  a script. When you select this option, a Script Errors window opens and runs a syntax check. The
+  window displays any syntax errors.
 - Load from file – Use this option to load a VB script from a .vbs file
 - Save to file – Use this option to save the current script in the Editor
 - Undo – Undo previous changes made to the script (Shortcut is Ctrl+Z)
@@ -25,8 +25,8 @@ The options in the VBScript Editor are:
 - Cut – Cut the highlighted text
 - Copy – Copy the highlighted text
 - Paste – Paste cut or copied text into the VB Script Editor
-- Online VBScript Language Reference – Opens internet browser to the Microsoft Technical
-  Documentation website from where documentation for Visual Basic Script can be navigated to
+- Online VBScript Language Reference – Opens a browser to the Microsoft Technical
+  Documentation website, where you can find documentation for Visual Basic Script
 
 After adding or modifying a script, click **Save and close**.
 

@@ -8,21 +8,21 @@ sidebar_position: 50
 
 Having enabled and configured authentication types for an identity store, you can:
 
-- Enforce authentication type(s) for a user role for multifactor authentication (MFA). Role members
+- Enforce authentication types for a user role for multifactor authentication (MFA). Role members
   must use each of the enforced authentication types for account enrollment and authentication.  
   When not enforced, role members can enroll using any authentication type that has been enabled for
   the identity store.
 - Enable second factor authentication (SFA) for a security role in an identity store.
 
 :::note
-For MFA and SFA to work for an identity store, make sure you enable enrollment for it. See the
+For MFA and SFA to work for an identity store, ensure you enable enrollment for it. See the
 [Enable Enrollment](/docs/directorymanager/11.1/admincenter/identitystore/configure/authtypes.md#enable-enrollment) topic.
 :::
 
 
 ## Enforce Authentication Types for Multifactor Authentication
 
-Before enforcing an authentication type for a security role, make sure it is enabled and configured
+Before enforcing an authentication type for a security role, ensure it is enabled and configured
 for the identity store.
 
 **To enforce authentication types:**
@@ -35,7 +35,7 @@ for the identity store.
 5. On the **Edit Security Role** page, click **Specify policies for the members** in the
    **Policies** area.
 6. On the **Add Policies** pane, click the **Authentication** tab.
-7. In the **Multifactor Authentication Policies** area, select the **Enforced** check box for an
+7. In the **Multifactor Authentication Policies** area, select the **Enforced** checkbox for an
    authentication type to enforce it for the role. The **Enforced** box displays the number of
    authentication types you enforced for the role.  
    Role members must enroll and authenticate for multifactor authentication using each of the
@@ -45,7 +45,7 @@ for the identity store.
    enrollment and authentication.  
    Let’s assume five authentication types have been enabled and configured for the identity store.
 
-    - When you do not enforce any authentication type and specify 2 in the **Chosen by End User**
+    - When you don't enforce any authentication type and specify 2 in the **Chosen by End User**
       box, role members can use any two authentication types from the five enabled types for
       multifactor authentication.
     - However, when you enforce two authentication types and specify 1 in the **Chosen by End User**

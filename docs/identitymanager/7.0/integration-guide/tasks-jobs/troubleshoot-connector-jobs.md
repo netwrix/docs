@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Troubleshoot Connector Jobs
 
-This guide helps understand the behavior of synchronization and provisioning tasks in order to spot and fix errors.
+This guide helps understand the behavior of synchronization and provisioning tasks to spot and fix errors.
 
 ## Overview
 
@@ -20,7 +20,7 @@ Exporting means that the agent reads the system's data and takes it out to one o
 
 The output is stored in `Temp/ExportOutput`.
 
-In order to spot what was exported or not for the next incremental export, cookie files are stored in `Temp/ExportCookies`.
+To spot what was exported or not for the next incremental export, cookie files are stored in `Temp/ExportCookies`.
 
 See the [Usercube-Export-Configuration](../../integration-guide/executables/references/export-configuration) topic for additional information.
 
@@ -28,7 +28,7 @@ See the [Usercube-Export-Configuration](../../integration-guide/executables/refe
 
 Preparing the synchronization means that the agent reads the tables, output of the export step, and produces one file for each association (also named multi-valued navigation property), where the data is prepared for synchronization.
 
-> For example, the data is sorted according to their primary keys, in order to optimize the
+> For example, the data is sorted according to their primary keys, to optimize the
 > comparison with the database.
 
 The output is stored in `Work/Collect`, and sent to the server to queue in `Work/Synchronization`.
@@ -51,9 +51,9 @@ The output is stored in `UR_ResourceChanges`.
 
 When at least one synchronization [Thresholds](../../integration-guide/synchronization/synchro-thresholds) is exceeded, the change list can be seen in the **Synchronization Changes** tab, accessible from the job progress screen.
 
-When the synchronization thresholds are not exceeded, or they are bypassed, the potential preparatory files are consumed and the changes are applied.
+When the synchronization thresholds aren't exceeded, or they are bypassed, the potential preparatory files are consumed and the changes are applied.
 
-The server updates the values of the properties computed via expressions. A user's history can be used to view the impact of this step on the properties.
+The server updates the values of the properties computed via expressions. A user's history Use view the impact of this step on the properties.
 
 ### Apply the policy
 
@@ -63,7 +63,7 @@ Preparing the correlation keys means that the server recomputes the keys that wi
 
 This is done by the correlation key computation executable `Usercube-Compute-CorrelationKeys`.
 
-Computing the role model means that the server applies all the rules in order to assign accounts and entitlements to identities.
+Computing the role model means that the server applies all the rules to assign accounts and entitlements to identities.
 
 The assigned accounts and entitlements are stored in `UP_Assigned*`, and can be seen in users' **View Permissions** tab.
 
@@ -79,15 +79,15 @@ This is done by the order generation executable `Usercube-Generate-ProvisioningO
 
 ### Provision
 
-Provisioning means that the agent asks the server to send the provisioning orders, in order to read the orders and actually make modifications to the managed system.
+Provisioning means that the agent asks the server to send the provisioning orders, to read the orders and actually make modifications to the managed system.
 
 Once consumed, the files are moved to the subfolder `Downloaded`.
 
 This is done by the provisioning executables `Usercube-Fulfill-*`.
 
-In order to test the provisioning step, there is no need relaunching the whole task sequence. You can, for example, keep a provisioning order from the previous step, and adjusting it before launching provisioning.
+To test the provisioning step, there is no need relaunching the whole task sequence. You can, for example, keep a provisioning order from the previous step, and adjusting it before launching provisioning.
 
 ## Troubleshoot
 
-Troubleshoot an error in a connector job by running each step individually until you see something that you did not expect.
+Troubleshoot an error in a connector job by running each step individually until you see something that you didn't expect.
 

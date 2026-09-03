@@ -7,8 +7,8 @@ sidebar_position: 50
 # Active Directory Permissions Analyzer Solution
 
 The Enterprise Auditor Active Directory Permissions Analyzer Solution enables organizations to
-easily and automatically determine effective permissions applied to any and all Active Directory
-(AD) objects. AD, Security, and Network Administrators can easily browse and compare information
+automatically determine effective permissions applied to all Active Directory
+(AD) objects. AD, Security, and Network Administrators can browse and compare information
 from individual or multiple domains using comprehensive, preconfigured analyses and reports focused
 on permissions associated with AD domains, organizational units, groups, users, and computers. These
 capabilities enable them to obtain the most authoritative view of who has access to what in AD.

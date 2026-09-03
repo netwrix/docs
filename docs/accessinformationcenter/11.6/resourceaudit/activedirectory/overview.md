@@ -8,9 +8,9 @@ sidebar_position: 40
 
 Active Directory reports are accessed through the Resource Audit interface. Explore the Active
 Directory resources by expanding the levels within the Resources pane and selecting the desired
-resource. The data within these reports is collected by the Enterprise Auditor .Active Directory
+resource. The data within these reports is collected by the Enterprise Auditor Active Directory
 Inventory solution and the Enterprise Auditor Active Directory Permissions Analyzer solution. See
-the .Active Directory Inventory Solution and the Active Directory Permissions Analyzer Solution
+the Active Directory Inventory Solution and the Active Directory Permissions Analyzer Solution
 topics in the
 [Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 for additional information.

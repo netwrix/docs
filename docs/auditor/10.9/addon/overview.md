@@ -7,8 +7,8 @@ sidebar_position: 80
 # Add-Ons
 
 The Netwrix Auditor Add-on Store contains free add-ons developed by Netwrix and your peers in
-the community. The add-ons help you leverage integration between your on-premises or cloud
-applications and Netwrix Auditor.
+the community. The add-ons help you integrate your on-premises or cloud applications with
+Netwrix Auditor.
 
 The list of available add-ons keeps growing because with the new RESTful API, the integration
 capabilities of Netwrix Auditor are unlimited. Netwrix encourages users to develop add-ons, upload
@@ -17,7 +17,7 @@ them to Netwrix website, and share with community.
 Benefits:
 
 - Centralize auditing and reporting of your IT environment — Netwrix unifies auditing of all IT
-  systems across your on-premises, cloud or hybrid environment, and enables centralized reporting
+  systems across your on-premises, cloud, or hybrid environment, and enables centralized reporting
   for security and compliance.
 - Get the most from your SIEM investment — To maximize SIEM value, Netwrix increases the
   signal-to-noise ratio and feeds your HP ArcSight, Splunk, IBM QRadar or any other SIEM solution
@@ -39,23 +39,23 @@ The following menu will appear:
 ![addonstore](/images/auditor/10.7/addon/addonstore.webp)
 
 Netwrix Auditor Integration API uses HTTPS with an automatically generated certificate for running
-requests to its endpoints. By default, add-ons are configured to accept all certificates that is
-appropriate for evaluation purposes and allows running the script without adjusting.
+requests to its endpoints. By default, add-ons accept all certificates, which is appropriate for
+evaluation purposes and lets you run the script without adjustment.
 
 Refer to [Security](/docs/auditor/10.9/api/security.md) for detailed instructions on how to assign a new certificate
 and enable trust on remote computers.
 
 ## Use Add-Ons
 
-Before your start working with the add-on, go through its quick-start guide at
+Before you start working with the add-on, go through its quick-start guide at
 [Netwrix Documentation page](https://www.netwrix.com/documentation.html#netwrix-documentation-page).
 Each guide contains detailed instructions for deploying and running the add-on, as well as
-prerequisites and configuration settings. Generic steps are described below.
+prerequisites and configuration settings. The following steps describe the generic process.
 
-Follow the steps to use the add-on.
+To use the add-on:
 
 **Step 1 –** Check prerequisites. Since the add-ons work only in combination with Netwrix Auditor,
-make sure that Netwrix Auditor and its Audit Database are configured, and roles are assigned
+ensure that Netwrix Auditor and its Audit Database are configured, and roles are assigned
 properly.
 
 **Step 2 –** Specify parameters required for add-on operation. Before running or scheduling the

@@ -10,8 +10,7 @@ Sometimes when troubleshooting an ADInventory issue, it becomes necessary to cle
 reference tables. Follow the steps.
 
 :::warning
-Be careful when using this query task. It will result in the deletion of collected
-data.
+Be careful when using this query task. It deletes collected data.
 :::
 
 
@@ -25,7 +24,7 @@ Tables** category task.
 **Step 3 –** Click **Next** and then **Finish** to close the Active Directory Inventory DC Wizard.
 Click **OK** to close the Query Properties window.
 
-When the job is run, all of the ADInventory standard reference tables are removed from the database.
+When you run the job, it removes all ADInventory standard reference tables from the database.
 
 :::warning
 Never leave the query task selected after job execution. Accidental data loss can
@@ -34,6 +33,6 @@ occur.
 
 
 :::tip
-Remember, this job deletes data from the Access Analyzer database. Check the job has been
-configured correctly prior to job execution.
+Remember, this job deletes data from the Access Analyzer database. Check that you configured the
+job correctly before running it.
 :::

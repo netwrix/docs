@@ -16,14 +16,14 @@ The following components comprise the 4.Group Policy Job Group:
 
 - [AD_CPassword Job](/docs/accessanalyzer/12.0/solutions/activedirectory/grouppolicy/ad_cpassword.md) – Identifies passwords that are stored in Group Policy
   Preferences which present a security risk allowing attackers access to these passwords. Microsoft
-  published the AES private key, which can be used to decrypt passwords stored in Group Policy
+  published the AES private key, which attackers can use to decrypt passwords stored in Group Policy
   Preferences. See the Microsoft
   [2.2.1.1.4 Password Encryption](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/2c15cbf0-f086-4c74-8b70-1f2fa45dd4be)
   article for additional information. Since Authenticated Users have read access to SYSVOL, any
   malicious insider or attacker can search for the cPassword file inside XML files shared through
   SYSVOL to decrypt them. GPOs can be stored in the `%ProgramData%\Microsoft\Group Policy\History`
-  folder on each machine, meaning any results found by this job should be deleted off every computer
-  once this policy has been removed.
+  folder on each machine. After you remove this policy, delete any results this job found from every
+  computer.
 - [AD_GroupPolicy Job](/docs/accessanalyzer/12.0/solutions/activedirectory/grouppolicy/ad_grouppolicy.md) – Audits all Group Policies that are present on the Domain
   Controller, and provides details on the containers they are linked to and the settings that are
   configured

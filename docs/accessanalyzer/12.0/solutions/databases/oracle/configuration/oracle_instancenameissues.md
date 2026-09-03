@@ -8,7 +8,7 @@ sidebar_position: 40
 
 The Oracle_InstanceNameIssues Job discovers if names used for Oracle database instances conform to
 Oracle recommended best practices. The job also checks to see if Oracle SIDs conform to DISA STIG
-V-61413 – Oracle instance name or SID should not contain Oracle version numbers.
+V-61413 – Oracle instance name or SID shouldn't contain Oracle version numbers.
 
 ## Analysis Tasks for the Oracle_InstanceNameIssues Job
 
@@ -16,7 +16,7 @@ Navigate to the **Jobs > Databases > Oracle > 4.Configuration > Oracle_InstanceN
 Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

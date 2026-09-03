@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Configure Node
 
-Changes to configurations for the job’s assigned Host Lists, Queries, Analyses, Actions, and Reports
-are created through the **[Job]** > **Configure** node or through the Configure shortcut on the
+You create changes to configurations for the job’s assigned Host Lists, Queries, Analyses, Actions,
+and Reports through the **[Job]** > **Configure** node or through the Configure shortcut on the
 job’s Description page.
 
 |                                                                                                                            |                                                                                                                                                           |
@@ -18,7 +18,7 @@ job’s Description page.
 The sub-nodes under the **[Job]** > **Configure** node are:
 
 - [Hosts Node](/docs/accessanalyzer/11.6/admin/jobs/job/configure/hosts.md)
-  – Assign a host list at the job level or manually add hosts to be targeted by the job
+  – Assign a host list at the job level or manually add hosts for the job to target
 - [Queries Node](/docs/accessanalyzer/11.6/admin/jobs/job/configure/queries.md)
   – Select and configure a Enterprise Auditor data collector to scan targeted hosts
 - [Analysis Node](/docs/accessanalyzer/11.6/admin/jobs/job/configure/analysis/analysis.md)
@@ -26,11 +26,11 @@ The sub-nodes under the **[Job]** > **Configure** node are:
 - [Actions Node](/docs/accessanalyzer/11.6/admin/jobs/job/configure/actions.md)
   – Create and configure Action tasks for taking action on collected and analyzed data
 - [Reports Node](/docs/accessanalyzer/11.6/admin/jobs/job/configure/reports.md)
-  – Create and configure Reports to be generated during job execution
+  – Create and configure Reports to generate during job execution
 
 ## Configure Page
 
-The job's Configure Page provides an overview with shortcuts for options that are configured in the
+The job's Configure Page provides an overview with shortcuts for options you configure in the
 job's Configure Node.
 
 ![Configure page](/images/accessanalyzer/11.6/admin/jobs/job/configure/configurepage.webp)

@@ -8,7 +8,7 @@ sidebar_position: 50
 
 The SQL_LinkedServers Job identifies Linked Servers or remote database servers on which the
 identified SQL and Azure SQL servers can execute commands. Some of the common remote
-OLE DB providers include IBM DB2, Oracle, Access and Excel. Typically, linked servers are used to
+OLE DB providers include IBM DB2, Oracle, Access, and Excel. Typically, linked servers are used to
 handle distributed queries in SQL and Azure SQL server .
 
 ## Analysis Tasks for the SQL_LinkedServers Job
@@ -17,7 +17,7 @@ Navigate to the **Databases** > Jobs > SQL > 4.Configuration > SQL_LinkedServers
 and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 pre-configured for this job.
 :::
 
@@ -34,4 +34,4 @@ following preconfigured report:
 
 | Report         | Description                                                                                           | Default Tags | Report Elements                                                                                                                                                                                                                                         |
 | -------------- | ----------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Linked Servers | This report highlights Linked Servers where the listed SQL Server is able to execute remote commands. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Provides information on top five linked servers by instance</li><li>Table – Provides details on linked servers by instance</li><li>Table – Provides details on linked servers</li></ul> |
+| Linked Servers | This report highlights Linked Servers where the listed SQL Server can execute remote commands. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Provides information on top five linked servers by instance</li><li>Table – Provides details on linked servers by instance</li><li>Table – Provides details on linked servers</li></ul> |

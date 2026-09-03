@@ -19,7 +19,7 @@ and others excluded as required.
 Optionally, it is also possible to set up the resources necessary to ensure Netwrix Data
 Classification is enabled and configured on the detected OneDrive sites. Templating allows an
 administrator to pre-configure classification configurations for site collections. For more
-information please review the associated templating guide.
+information, review the associated templating guide.
 
 To crawl the data within SharePoint Online, you need to enable Multi-Factor Authentication:
 
@@ -33,9 +33,9 @@ Complete the following fields:
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | SharePoint URL          | - The root of the site collections to be added, by clicking the “(Multiple Urls)” link you can add multiple SharePoint Online Site Collections to be crawled against the same credentials.                                                                                            |
 | Username                | Enter username in the following formats: DOMAIN\USERNAME and USERNAME@DOMAIN.                                                                                                                                                                                                         |
-| Password                | Enter you password for SharePoint Online.                                                                                                                                                                                                                                             |
+| Password                | Enter your password for SharePoint Online.                                                                                                                                                                                                                                             |
 | Match Rules             | Enter the site collections' path for crawling the documents. At least one match rule must be included. Match rules are regular expressions, for example, https:\/\/example.sharepoint.com\/sites\/.                                                                                   |
 | Classification template | Specify the required Classification template for writing classifications. See the Enable Write Classifications and [Working with SharePoint templates](/docs/dataclassification/5.6.2/contentconfigurationoverview/sourcesintro/sourcesmanage/managesharepoint/manage_working_with_sharepoint_templates.md) topics for more information. |
-| Detection Period        | Specify how often you will detect new site collections. Default period is 1 day and 0 hour(s).                                                                                                                                                                                        |
+| Detection Period        | Specify how often you detect new site collections. Default period is 1 day and 0 hours.                                                                                                                                                                                        |
 
 After configuring the settings, click the **Save** button.

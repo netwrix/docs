@@ -10,7 +10,7 @@ The Password Policy Client is self-configuring and doesn't require manual config
 cases. See the [Install Password Policy Enforcer Client](/docs/passwordpolicyenforcer/11.2/installation/installationclient.md) topic for
 additional details. You may need to manually configure the Password Policy Client if:
 
-- You want to install it in a disabled state to be enabled later.
+- You want to install it in a disabled state and enable it later.
 - You want to change the display settings for small screens.
 - Password Policy Client displays policy messages in the wrong language.
 - Default communication settings aren't suitable (for example, if you change the default Password
@@ -18,7 +18,7 @@ additional details. You may need to manually configure the Password Policy Clien
 
 Password Policy Enforcer includes an administrative template to help configure the Password Policy
 Client. You can use Active Directory GPOs to configure many computers, or the Local Group Policy
-Editor to configure one computer. The Password Policy Client configuration is stored in the
+Editor to configure one computer. Windows stores the Password Policy Client configuration in the
 HKLM\SOFTWARE\Policies\ANIXIS\Password Policy Client\ registry key.
 
 **Install the Password Policy Client Administrative Template**
@@ -31,12 +31,12 @@ Policy Enforcer) and copy the **PPEClt.adml** and **PPEClt.admx** files (highlig
 
 ![ppc_configuration](/images/passwordpolicyenforcer/11.2/administration/ppc_configuration.webp)
 
-**Step 3 –** Go to C:\Windows\Policy Definitions and paste the .admx file in the root of this
+**Step 3 –** Go to `C:\Windows\Policy Definitions` and paste the .admx file in the root of this
 folder.
 
 ![ppc_configuration2](/images/passwordpolicyenforcer/11.2/administration/ppc_configuration2.webp)
 
-**Step 4 –** Go to C:\Windows\Policy Definitions\en-US and paste the .adml file in the root of this
+**Step 4 –** Go to `C:\Windows\Policy Definitions\en-US` and paste the .adml file in the root of this
 folder.
 
 ![ppc_configuration1](/images/passwordpolicyenforcer/11.2/administration/ppc_configuration1.webp)
@@ -48,7 +48,7 @@ Client. If not, see the topic's section for additional information.
 **`<domain_name>`**, right-click **`<OU_name>`** and select **Create a GPO** in this domain and Link
 it here.
 
-After the GPO is configured, this view is available:
+After you configure the GPO, this view is available:
 
 ![ppc_configuration3](/images/passwordpolicyenforcer/11.2/administration/ppc_configuration3.webp)
 
@@ -77,12 +77,12 @@ message in a message box to draw attention to the password policy.
 
 ![the_password_policy_client_3](/images/passwordpolicyenforcer/11.2/administration/the_password_policy_client_3.webp)
 
-You can change the default display settings to control which user interface elements are hidden, and
-the point at which they are hidden. The display of the Password Policy message box is also
-configurable.
+You can change the default display settings to control which user interface elements the Password
+Policy Client hides, and the point at which it hides them. You can also configure whether the
+Password Policy message box appears.
 
-Follow the steps to change the default display settings for the Password Policy Client on
-Windows 10 and 11.
+To change the default display settings for the Password Policy Client on
+Windows 10 and 11:
 
 **Step 1 –** Use the **Group Policy Management Console** (gpmc.msc) to display the GPOs linked at
 the domain level.
@@ -103,6 +103,6 @@ Templates**, **Classic Administrative Templates** (**ADM**), **Password Policy E
 Group Policy Management Editor.
 
 :::note
-Information about each option is shown in the Help box.
+The Help box shows information about each option.
 
 :::

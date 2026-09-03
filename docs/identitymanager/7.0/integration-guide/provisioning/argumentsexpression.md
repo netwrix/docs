@@ -12,7 +12,7 @@ This guide gives examples to understand how to configure a resource type's `Argu
 
 This option is used to use provisioning orders to compute useful arguments.
 
-Most standard situations use only one workflow per action type on a resource (addition, update, deletion). But in some more complex situations (like using multi records), several workflows are available for one type of action. As the configuration JSON file of an [InternalWorkflow](../../integration-guide/connectors/references-connectors/internalworkflow) connection cannot contain expressions, a resource type can be configured with the `ArgumentsExpression` attribute to explicit the arguments of provisioning orders, based on conditions and variables.
+Most standard situations use only one workflow per action type on a resource (addition, update, deletion). But in some more complex situations (like using multi records), several workflows are available for one type of action. As the configuration JSON file of an [InternalWorkflow](../../integration-guide/connectors/references-connectors/internalworkflow) connection can't contain expressions, a resource type can be configured with the `ArgumentsExpression` attribute to explicit the arguments of provisioning orders, based on conditions and variables.
 
 The following example computes the identifier of the workflow to launch, based on the provisioning order as a variable (the returned value depends here mostly on the type of change):
 

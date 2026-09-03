@@ -36,7 +36,7 @@ The following query is included in the EX_Mailbox_SDD job:
 The Exchange Sensitive Data Discovery query has been preconfigured to run with the EWSMailbox Data
 Collector to scan for sensitive data.
 
-Follow the steps to configure the scope of the EWSMailbox Data Collector:
+To configure the scope of the EWSMailbox Data Collector:
 
 **Step 1 –** Navigate to the **Exchange** > **7. Sensitive Data** > **0. Collection** >
 **EX_Mailbox_SDD** > **Configure** node and select **Queries**.
@@ -48,7 +48,7 @@ click **Query Properties**. The Query Properties window opens.
 Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -64,7 +64,7 @@ information.
 ![EWS Mailbox Data Collector Wizard Scope select page](/images/accessanalyzer/12.0/solutions/exchange/sensitivedata/collection/mailboxscopeselect.webp)
 
 **Step 5 –** To retrieve available mailboxes, click **Retrieve** on the Scope Select page. Select
-the desired mailboxes and click **Add**. See the
+the mailboxes you want and click **Add**. See the
 [EWSMailbox: Scope Select](/docs/accessanalyzer/12.0/admin/datacollector/ewsmailbox/scopeselect.md) topic for
 additional information.
 
@@ -76,7 +76,7 @@ Sensitive data matches can be limited to reduce storage space. See the
 additional information.
 
 :::note
-By default, discovered sensitive data strings are not stored in the Access Analyzer
+By default, discovered sensitive data strings aren't stored in the Access Analyzer
 database.
 :::
 
@@ -125,7 +125,7 @@ View the analysis task by navigating to the **Exchange** > **7.Sensitive Data** 
 **EX_Mailbox_SDD** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -134,4 +134,4 @@ preconfigured for this job.
 
 The following analysis task is selected by default:
 
-- AIC Import - Exchange SSD – Imports Exchange sensitive data to the Access Information Center
+- AIC Import - Exchange SDD – Imports Exchange sensitive data to the Access Information Center (AIC)

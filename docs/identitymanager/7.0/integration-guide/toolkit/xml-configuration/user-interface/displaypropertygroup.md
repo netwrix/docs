@@ -31,7 +31,7 @@ Knowing that we have the following properties:
 ![Display Property Group - Example](/images/identitymanager/displaypropertygroup_example_v603.webp)
 
 :::info
-Any property without a value is not displayed.
+Any property without a value isn't displayed.
 :::
 
 

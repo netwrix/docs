@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # FSAA: Sensitive Data Settings
 
-The Sensitive Data Settings page is where sensitive data discovery settings are configured. It is a
+Use the Sensitive Data Settings page to configure sensitive data discovery settings. It is a
 wizard page for the category of Sensitive Data Scan.
 
 ![FSAA Data Collector Wizard Sensitive Data Settings page](/images/accessanalyzer/12.0/admin/datacollector/fsaa/sensitivedata.webp)
@@ -19,10 +19,9 @@ wizard page for the category of Sensitive Data Scan.
   sensitive data within digital images of physical documents
 
     :::note
-    The OCR option is intended to work for clear scanned physical documents or documents
-    directly converted to images, with standard fonts. It will not work for scanning photos of
-    documents and may not be able to recognize text on images of credit cards, driver's licenses, or
-    other identity cards.
+    The OCR option works for clear scanned physical documents or documents directly converted to
+    images, with standard fonts. It doesn't work for scanning photos of documents and may not
+    recognize text on images of credit cards, driver's licenses, or other identity cards.
     :::
 
 
@@ -45,7 +44,7 @@ Use the radio buttons to select the File types to scan:
     - Spreadsheets
     - Text/Markup files
 
-- Perform differential scan of – Enables users to choose whether to employ incremental scanning:
+- Perform differential scan of – Choose whether to employ incremental scanning:
 
     - Files modified or newly discovered since last scan – Scans newly discovered files and files
       with a modified date after the previous scan date
@@ -53,10 +52,10 @@ Use the radio buttons to select the File types to scan:
     - Files modified within the last [number] days – Only scans files with a modified date within
       the specified date range
 
-The Performance Options section allows the user to modulate the efficiency of SDD scans.
+Use the Performance Options section to adjust the efficiency of SDD scans.
 
 - Number of SDD scan processes [number] – Increases the number of SDD scanner processes that spawn
-  as part of a scan, increasing parallel scanning. The value should not exceed 2x the number of CPU
+  as part of a scan, increasing parallel scanning. The value shouldn't exceed 2x the number of CPU
   threads available.
 
     :::info

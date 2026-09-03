@@ -6,15 +6,15 @@ sidebar_position: 10
 
 # Requirements to Deploy Virtual Appliance
 
-This section provides the software requirements and represents the default hardware configuration
-for the virtual machine where Netwrix Data Classification virtual appliance is going to be deployed.
-Refer to the following sections for detailed information:
+This section lists the software requirements and default hardware configuration for the virtual machine
+that will host the Netwrix Data Classification virtual appliance.
+See the following sections for detailed information:
 
 - Software Requirements
 - Hardware Configuration
 
 :::note
-The requirements below are sufficient for evaluation purposes only. Refer to the
+The following requirements are sufficient for evaluation purposes only. Refer to the
 [Requirements to Install Netwrix Data Classification](/docs/dataclassification/5.7/introduction/requirements/overview.md) topic for
 complete information on the requirements for installing Netwrix Data Classification in production
 environments.
@@ -23,7 +23,7 @@ environments.
 
 ## Software Requirements
 
-The table below lists the minimum software requirements for the virtual appliance deployment:
+The following table lists the minimum software requirements for the virtual appliance deployment:
 
 | Virtual Environment | Requirements                                                                                     |
 | ------------------- | ------------------------------------------------------------------------------------------------ |
@@ -34,7 +34,7 @@ The table below lists the minimum software requirements for the virtual applianc
 ## Hardware Configuration
 
 When deploying Netwrix Data Classification virtual appliance, a pre-configured virtual machine is
-created. The table below contains the default hardware configuration of the VM where Netwrix Data
+created. The following table contains the default hardware configuration of the VM where Netwrix Data
 Classification virtual appliance is going to be deployed:
 
 | Parameter          | Value                                              |

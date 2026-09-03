@@ -16,21 +16,21 @@ Specify how the operations will be executed:
 - Local Enterprise Auditor server
 - Specific remote server:
 
-    - Fields – Use the drop-down list to select a field (column) from the source table, then click
+    - Fields – Use the dropdown list to select a field (column) from the source table, then click
       the blue arrow to insert the item into the **Remote server** field
-    - Environment Variables – Select an item from the drop-down list, then click the blue arrow to
+    - Environment Variables – Select an item from the dropdown list, then click the blue arrow to
       insert the item into the **Remote Server** field
     - Remote Server – Enter the path to the server
     - Click the **ellipsis (…)** to browse for server
     - Click the **tick** icon to show a preview of the path
     - Click the **Help** icon for additional information
 
-- Preview – Shows what the compound path specified will be resolved in to. The text here is used to
-  initialize the path specification selection dialog.
+- Preview – Shows what the specified compound path resolves to. The text here initializes the path
+  specification selection dialog.
 - Specific remote servers – Click the **ellipsis (…)** to browse for servers
 
     - Click **Add** to add the server
     - Click **Remove** to remove the server
 
-- Fall back to the local Enterprise Auditor server if an applet cannot start – Check to enable this
+- Fall back to the local Enterprise Auditor server if an applet can't start – Check to enable this
   option

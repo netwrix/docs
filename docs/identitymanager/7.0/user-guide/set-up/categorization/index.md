@@ -10,7 +10,7 @@ How to correlate managed systems' resources with identities, classifying resourc
 
 ## Overview
 
-Managing resources can quickly become chaotic when the number of resources increases significantly. You will need to manage orphaned (without an owner) and unused accounts through resource reviews, and make sure that all accounts follow their owner's lifecycle. To do so, resources can be categorized, which for our purposes means two things. They are:
+Managing resources can quickly become chaotic when the number of resources increases significantly. You will need to manage orphaned (without an owner) and unused accounts through resource reviews, and ensure that all accounts follow their owner's lifecycle. To do so, resources can be categorized, which means two things:
 
 - correlated with their owners, so that accounts follow the corresponding identity's lifecycle.
     > For example, if a user leaves the company, then their account is deactivated accordingly.
@@ -25,18 +25,18 @@ Categorization is designed to help resource managers to easily identify a resour
 
 > For example, when Identity Manager spots an orphaned account, resource managers must be able to
 > determine whether the account should have an owner, or if it is a service/technical account and
-> thus does not need an owner.
+> thus doesn't need an owner.
 
 ### Technical principles
 
 Technically, Identity Manager uses the notion of resource types to categorize resources. A resource type is, in fact, a way to gather similar resources under one meaningful name, because they have the same intent.
 
-> Our example above would use a resource type `AD User (administration)` to group all AD
+> The example above uses a resource type `AD User (administration)` to group all AD
 > administrator accounts, and `AD User (nominative)` to group all AD basic user accounts.
 
-Thus, a resource type is a name that informs users about the intent of a resource. As stated above, it serves to implement our two elements of categorization. This happens with two distinct sets of rules, one for correlation, and the other for classification.
+Thus, a resource type is a name that informs users about the intent of a resource. As stated above, it implements the two elements of categorization described above. This happens with two distinct sets of rules, one for correlation, and the other for classification.
 
-**Classification** is a process that simply aims to assign a resource type to specific resources. A specific resource can only be assigned a single resource type. See the [Entitlement Management](../../../introduction-guide/overview/entitlement-management) topic for additional information.
+**Classification** is a process that aims to assign a resource type to specific resources. A specific resource can only be assigned a single resource type. See the [Entitlement Management](../../../introduction-guide/overview/entitlement-management) topic for additional information.
 
 ![Classification Schema](/images/identitymanager/categorization_classifschema.webp)
 
@@ -52,28 +52,28 @@ Some resources are orphaned (without an owner) for good reasons. For example ser
 
 As stated previously, both classification and correlation work through sets of rules.
 
-> For basic users, we have in Identity Manager:
+> For basic users, Identity Manager shows:
 >
 > ![Example - Basic Users in Usercube](/images/identitymanager/categorization_examplebasicuser.webp)
 >
-> For basic users, we have in the AD:
+> For basic users, AD shows:
 >
 > ![Example - Basic Users in AD](/images/identitymanager/categorization_examplebasicad.webp)
 >
-> Thus our example could induce the following rules: | Classification Rules | Correlation Rules | |
+> This example could induce the following rules: | Classification Rules | Correlation Rules | |
 > --- | --- | | all accounts from OU=Users | 1. mail (from AD) = user's email
 > franck.antoine@acme.com = franck.antoine@acme.com 2. displayName = user's last name + user's first
 > name Antoine Franck = Antoine + Franck |
 
-> For administrators, we have in Identity Manager:
+> For administrators, Identity Manager shows:
 >
 > ![Example - Basic Users in Usercube](/images/identitymanager/categorization_exampleadminuser.webp)
 >
-> For administrators, we have in the AD:
+> For administrators, AD shows:
 >
 > ![Example - Admin Users in AD](/images/identitymanager/categorization_exampleadminad.webp)
 >
-> Thus our example could induce the following rules: | Classification Rules | Correlation Rules | |
+> This example could induce the following rules: | Classification Rules | Correlation Rules | |
 > --- | --- | | all accounts from OU=Administrators | 1. sAMAccountName = "A" + user's employee id
 > A28022 = A + 28022 2. displayName = "ADM" + user's last name + user's first name ADM Colin Jean =
 > ADM + Colin + Jean |
@@ -84,8 +84,6 @@ A resource type can have zero correlation rules, since accounts can be without o
 
 **Correlation triggers classification:** a matching correlation rule for a given resource type will perform both actions of categorization: both correlating a resource with its owner, and classifying the resource at the same time.
 
-See below this note.
-
 Hence, integrators should start with correlation rules, and then write classification rules for any remaining uncorrelated resources.
 
 In the same way, Identity Manager will apply correlation rules before classification rules.
@@ -94,11 +92,11 @@ In the same way, Identity Manager will apply correlation rules before classifica
 
 Now that you have created resource types and their correlation/classification rules, you have created the first elements for your role model. See the [Entitlement Management](../../../introduction-guide/overview/entitlement-management) topic for additional information. The role model contains all the roles and rules which drive the entitlement assignment logic inside Identity Manager.
 
-A role model is made up of [Policy](../../../integration-guide/toolkit/xml-configuration/provisioning/policy) which contain roles, rules and resource types. Most often the default policy is enough. However, in more complex situations, additional policies can be created to separate groups of roles, rules and resource types. See the [Create a Policy](../../../user-guide/optimize/policy-creation) topic for additional information.
+A role model is made up of [Policy](../../../integration-guide/toolkit/xml-configuration/provisioning/policy) which contain roles, rules, and resource types. Most often the default policy is enough. However, in more complex situations, additional policies can be created to separate groups of roles, rules, and resource types. See the [Create a Policy](../../../user-guide/optimize/policy-creation) topic for additional information.
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the application owner who knows the application's users, entitlements and data model.
+For a given managed system, integrators may need the help of the application owner who knows the application's users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -110,9 +108,9 @@ Categorize resources by proceeding as follows:
 
 1. Create at least one [Create a Resource Type](../../../user-guide/set-up/categorization/resource-type-creation);
 2. Create the appropriate [Correlate Resources](../../../user-guide/set-up/categorization/correlation);
-3. Create the appropriate [Classify Resources](../../../user-guide/set-up/categorization/classification) for accounts that do not have an owner.
+3. Create the appropriate [Classify Resources](../../../user-guide/set-up/categorization/classification) for accounts that don't have an owner.
 
-Netwrix Identity Manager (formerly Usercube) recommends creating/modifying/deleting correlation and classification rules using [Perform a Simulation](../../../user-guide/optimize/simulation) in order to previsualize changes.
+Netwrix Identity Manager (formerly Usercube) recommends creating/modifying/deleting correlation and classification rules using [Perform a Simulation](../../../user-guide/optimize/simulation) to previsualize changes.
 
 ## Next Steps
 

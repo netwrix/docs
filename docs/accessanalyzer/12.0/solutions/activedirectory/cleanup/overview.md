@@ -28,12 +28,11 @@ environment.
 The job groups in the Cleanup Job Group are:
 
 - [1.Groups Job Group](/docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/groups/overview.md) – Provides an automated workflow to safely deprovision
-  groups, as well as the ability to stamp security groups with what resources they are given access
-  to
+  groups and stamp security groups with the resources they can access
 - [2.Users Job Group](/docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/users/overview.md) – Provides an automated workflow to deprovision stale and
   unused user accounts
 - [3.Computers Job Group](/docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/computers/overview.md) – Provides an automated workflow to deprovision
   stale computer accounts
 - [AD_CleanupProgress Job](/docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/ad_cleanupprogress.md) – Tracks Active Directory computer, group, and
-  user exceptions over time. This information can be used to provide a high-level picture of an
+  user exceptions over time. Use this information to provide a high-level picture of an
   organization's Active Directory cleanup effort.

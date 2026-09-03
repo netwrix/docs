@@ -27,12 +27,11 @@ Auto-Classification.
 The report will be displayed in the preview pane.
 
 You can export document-specific report data along with any associated document metadata. For that,
-in the bottom of the pane select the export option you need (_CSV/XLSX_). The file will be
-downloaded to your default downloads folder.
+in the bottom of the pane select the export option you need (_CSV/XLSX_). Your browser downloads the file to your default downloads folder.
 
 ## Save Report Configuration
 
-Netwrix Data Classification allows you to save report configuration settings as a template for the
+Netwrix Data Classification lets you save report configuration settings as a template for the
 future use. Then if you need to run the report with the specified parameters more than once, you can
 just load its configuration from the template you have saved.
 
@@ -65,6 +64,6 @@ Report configuration templates are saved per user.
 
 1. Select a report you want to load the configuration for.
 2. Click the Load Saved Configuration link.
-3. In the Load Saved Configuration dialog, select the desired template from the **Template Name**
+3. In the Load Saved Configuration dialog, select the template you want from the **Template Name**
    list.
 4. Click Generate to view the report.

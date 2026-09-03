@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Exchange Online Auditing Configuration
 
-It is necessary to register Enterprise Auditor as a web application to the targeted Microsoft Entra
-ID, formerly Azure Active Directory, in order for Enterprise Auditor to scan the environment. This
+Register Enterprise Auditor as a web application with the targeted Microsoft Entra
+ID, formerly Azure Active Directory, so Enterprise Auditor can scan the environment. This
 generates the Client ID (App ID) and self-signed certificate (Certificate Thumbprint) needed for the
 Connection Profile credentials and/or the Custom Attributes Import Wizard page. See
 [Microsoft Support](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-api-prerequisites-azure-portal)
@@ -21,7 +21,7 @@ Microsoft Entra ID.
 
 **Configuration Settings from the Registered Application**
 
-The following settings are needed from your tenant once you have registered the application:
+The following settings are needed from your tenant after you register the application:
 
 - Client ID – This is the Application (client) ID for the registered application
 - Tenant name – This is the primary domain name of the Microsoft Entra tenant
@@ -30,9 +30,9 @@ The following settings are needed from your tenant once you have registered the 
 
 Configure Modern Authentication for Exchange Online using EX_RegisterAzureAppAuth Instant Job
 
-Registering a Microsoft Entra ID application and provisioning it to grant permissions to Exchange
-Online can be automated using the EX_RegisterAzureAppAuth job from the Enterprise Auditor Instant
-Job Library. The EX_RegisterAzureAppAuth job uses the PowerShell Data Collector to automatically
+The EX_RegisterAzureAppAuth job from the Enterprise Auditor Instant Job Library can automate
+registering a Microsoft Entra ID application and provisioning it to grant permissions to Exchange
+Online. The EX_RegisterAzureAppAuth job uses the PowerShell Data Collector to automatically
 configure modern authentication for Exchange Online. It requires:
 
 - A Connection Profile containing a Microsoft Entra ID Global Admin credential with an Account Type
@@ -48,7 +48,7 @@ configure modern authentication for Exchange Online. It requires:
 - Azure AD PowerShell module installed on targeted hosts
 
     :::note
-    If the module is not already installed, the job will attempt to install it.
+    If the module isn't already installed, the job will attempt to install it.
     :::
 
 
@@ -107,12 +107,12 @@ The following permissions are required:
 
 ## Create Self–Signed Certificate
 
-A self signed certificate needs to be created on the Enterprise Auditor console server. This is used
-by Enterprise Auditor to connect to the Microsoft Entra tenant.
+You need to create a self-signed certificate on the Enterprise Auditor console server. Enterprise
+Auditor uses this certificate to connect to the Microsoft Entra tenant.
 
 Follow the steps create the self-signed certificate.
 
-**Step 1 –** To generate a certificate, use the sample PowerShell command below:
+**Step 1 –** To generate a certificate, use the following sample PowerShell command:
 
 - Change the following parameters in the sample PowerShell command. See the Microsoft
   [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pki/new-selfsignedcertificate)
@@ -122,9 +122,9 @@ Follow the steps create the self-signed certificate.
       certificate
     - Subject – A unique name for the new App (always starts with CN=, to denote a canonical name)
     - FriendlyName – Same as Subject name minus the canonical name prefix
-    - NotAfter – A datetime string denoting the certificate's expiration date - in the above sample,
-      Get-Date.AddYears(11) specifies that the certificate will expire 11 years from the current
-      datetime
+    - NotAfter – A datetime string denoting the certificate's expiration date - in the following
+      sample, Get-Date.AddYears(11) specifies that the certificate will expire 11 years from the
+      current datetime
 
 Example PowerShell:
 
@@ -138,7 +138,7 @@ $certPath variable (see Step 1).
 
 :::note
 The environment variable `SAINSTALLDIR` always points to the base Enterprise Auditor
-install directory; simply append the PrivateAssemblies to point to that folder with the following
+install directory; append the PrivateAssemblies to point to that folder with the following
 cmdlet:
 :::
 
@@ -168,15 +168,15 @@ Export-PfxCertificate -Cert $cert -FilePath "$($env:SAINSTALLDIR)PrivateAssembli
   [Export-PfxCertificate](https://docs.microsoft.com/en-us/powershell/module/pki/export-pfxcertificate)
   article for additional information.
 
-The self signed certificate has been created. The next steps are to create a Microsoft Entra ID
+You've created the self-signed certificate. Next, create a Microsoft Entra ID
 application and then upload this certificate to it.
 
 ## Register a Microsoft Entra ID Application
 
-Follow the steps to register Enterprise Auditor with Microsoft Entra ID.
+Register Enterprise Auditor with Microsoft Entra ID.
 
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::
@@ -198,14 +198,14 @@ registrations.
 **Step 5 –** Click **Register**.
 
 The Overview page for the newly registered app opens. Review the newly created registered
-application. Now that the application has been registered, permissions need to be granted to it.
+application. Now that you've registered the application, you need to grant it permissions.
 
 ## Upload Self-Signed Certificate
 
 Follow the steps upload your self-signed certificate.
 
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::
@@ -233,10 +233,10 @@ topic for additional information.
 
 ## Grant Permissions to the Registered Application
 
-Follow the steps to grant permissions to the registered application.
+Grant permissions to the registered application.
 
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::
@@ -265,15 +265,15 @@ uses tab to find and select Office 365 Exchange Online. Select the following per
 **Step 6 –** Click **Grant Admin Consent for [tenant]**. Then click **Yes** in the confirmation
 window.
 
-Now that the permissions have been granted to it, the Connection Profile and host settings for
-Enterprise Auditor need to be collected.
+Now that you've granted the permissions, you need to collect the Connection Profile and host
+settings for Enterprise Auditor.
 
 ## Identify the Tenant's Name
 
-Follow the steps to find the Tenant Name where the registered application resides.
+Find the Tenant Name where the registered application resides.
 
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::
@@ -294,10 +294,10 @@ topic for additional information. Next identify the application’s Client ID.
 
 ## Identify the Client ID
 
-Follow the steps to find the registered application's Client ID.
+Find the registered application's Client ID.
 
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::

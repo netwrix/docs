@@ -10,7 +10,7 @@ Simulations aim to assess the impact of a modification in the role model, i.e. a
 
 ## Overview
 
-Identity Manager's simulations gather roles and rules which are to be created, modified or deleted, without being inserted in the actual role model straight away. More specifically, a simulation can involve:
+Identity Manager's simulations gather roles, and rules which are to be created, modified, or deleted, without being inserted in the actual role model straight away. More specifically, a simulation can involve:
 
 - [Resource Correlation Rule](../integration-guide/toolkit/xml-configuration/provisioning/resourcecorrelationrule)
 and [Resource Classification Rule](../integration-guide/toolkit/xml-configuration/provisioning/resourceclassificationrule);
@@ -25,7 +25,7 @@ A simulation can also be created by the role mining tool for the automation of r
 
 Through simulation, integrators can:
 
-1. create, modify or delete roles and rules in a given policy;
+1. create, modify, or delete roles, and rules in a given policy;
 
 Only one simulation can be active per policy.
 

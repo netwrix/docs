@@ -9,8 +9,8 @@ sidebar_position: 350
 The SMARTLog Data Collector provides search and extraction of details from Windows Event Logs
 (online or offline) and Microsoft Exchange Internet Information Server (IIS) logs.
 
-The SMARTLog Data Collector is a core component of Access Analyzer, but it has been preconfigured
-within the Active Directory Solution, Exchange Solution, SQL Solution, and the Windows Solution.
+The SMARTLog Data Collector is a core component of Access Analyzer, but the Active Directory
+Solution, Exchange Solution, SQL Solution, and Windows Solution preconfigure it.
 While the data collector is available with all Access Analyzer license options, these solutions are
 only available with a special Access Analyzer licenses. See following sections for additional
 information:
@@ -43,7 +43,7 @@ topic for additional information related to permissions required for targeting E
 
 ## SMARTLog Query Configuration
 
-The SMARTLog Data Collector is configured through the SMART Log DC Wizard, which contains the
+You configure the SMARTLog Data Collector through the SMART Log DC Wizard, which contains the
 following wizard pages:
 
 - Welcome

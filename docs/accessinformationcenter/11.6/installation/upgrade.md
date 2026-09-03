@@ -10,8 +10,8 @@ It is necessary for Netwrix Enterprise Auditor and the Access Information Center
 versions. Therefore, when the Netwrix Enterprise Auditor core application and corresponding
 solutions have been upgraded, the Access Information Center must also be upgraded.
 
-To upgrade the Access Information Center application to a newer version, simply run the new
-`AccessInformationCenter.msi` executable. You do not need to uninstall the existing version. See the
+To upgrade the Access Information Center application to a newer version, run the new
+`AccessInformationCenter.msi` executable. You don't need to uninstall the existing version. See the
 [Install the Access Information Center](/docs/accessinformationcenter/11.6/installation/install.md)
 topic for additional information.
 

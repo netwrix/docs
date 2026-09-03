@@ -24,14 +24,14 @@ When you configure `--idp-type`, the installer automatically:
 1. Deploys Keycloak (v26.5.3) as part of the cluster
 2. Waits for Keycloak to become healthy
 3. Creates the IdP federation using the flags you provided
-4. Enables OIDC authentication in the Access Analyzer application
+4. Enables OpenID Connect (OIDC) authentication in the Access Analyzer application
 
 ## Before you begin
 
 Confirm the following before running the installer with IdP flags:
 
-- The Access Analyzer cluster system requirements are met — see [Hardware and System Requirements](system/requirements.md)
-- TLS certificates are prepared and placed on the VM — see [TLS Certificate Requirements](system/certificates.md)
+- Your infrastructure meets the Access Analyzer cluster system requirements — see [Hardware and System Requirements](system/requirements.md)
+- You have prepared and placed TLS certificates on the VM — see [TLS Certificate Requirements](system/certificates.md)
 - You have collected the required credentials from the customer's IdP or directory administrator (see [Identity Provider — Part 1](../configurations/identity-provider.md#part-1-configure-your-identity-provider))
 - For LDAP/AD: the Access Analyzer server has network access to the LDAP server on port 636 (LDAPS) or 389 (LDAP)
 - For a private CA certificate: you have the PEM file available on the server and will pass `--ca-bundle <path>` to the installer
@@ -39,7 +39,7 @@ Confirm the following before running the installer with IdP flags:
 :::warning
 `--hostname` is required and must:
 
-- Be a real DNS hostname (not an IP address — IPs will not work because the browser TLS handshake requires the hostname in the certificate's SAN).
+- Be a real DNS hostname (not an IP address — IPs will not work because the browser TLS handshake requires the hostname in the certificate's Subject Alternative Name (SAN)).
 - Be lowercase, and match lowercase in the certificate SAN list. Keycloak derives its OIDC issuer URL from this value; a case mismatch between SAN and browser-normalized hostname produces HTTP 401 at sign-in.
 - Resolve the same from client browsers and in-cluster pods. The installer configures the in-cluster rewrite automatically; the customer is responsible for the public DNS record or `/etc/hosts` entry that client browsers use.
 - Avoid the `.local` and `.localhost` TLDs — both break in-cluster DNS resolution and silently break OIDC login flows.
@@ -154,7 +154,7 @@ END HIDDEN -->
 ## Configure Active Directory
 
 :::tip
-For a step-by-step end-to-end walkthrough using environment variables (recommended for most customers), see the [Quick Install](quickinstall.md). The section below is the flag-level reference.
+For a step-by-step end-to-end walkthrough using environment variables (recommended for most customers), see the [Quick Install](quickinstall.md). This section is the flag-level reference.
 :::
 
 **Required flags:** `--idp-type ad`, `--idp-alias`, `--ldap-url`, `--ldap-bind-dn`, `--ldap-users-dn`
@@ -163,7 +163,7 @@ For a step-by-step end-to-end walkthrough using environment variables (recommend
 
 **Prompted secret:** LDAP bind credential — entered interactively, never written to disk or logs
 
-If your domain controller's LDAPS certificate is signed by an internal CA not in the OS trust store (typical for on-prem AD), pass the root CA cert via `--ca-bundle`. Without it, Keycloak's LDAPS handshake to the DC will fail with a TLS trust error. The CA that signed the DC's LDAPS certificate may be different from the CA that signed your Access Analyzer server's TLS certificate — verify the DC's cert chain specifically. See [TLS Certificate Requirements](system/certificates.md) for details on assembling the CA bundle.
+If an internal CA not in the OS trust store (typical for on-prem AD) signs your domain controller's LDAPS certificate, pass the root CA cert via `--ca-bundle`. Without it, Keycloak's LDAPS handshake to the DC will fail with a TLS trust error. The CA that signed the DC's LDAPS certificate may be different from the CA that signed your Access Analyzer server's TLS certificate — verify the DC's cert chain specifically. See [TLS Certificate Requirements](system/certificates.md) for details on assembling the CA bundle.
 
 ```bash
 export LICENSE_KEY='[YOUR_LICENSE_KEY]'
@@ -492,7 +492,7 @@ grep -A 20 "Configuring IdP federation" /var/log/dspm-installer.log
 
 | Message | Likely cause |
 | --- | --- |
-| `Failed to authenticate with Keycloak admin CLI` | Keycloak pod not ready; check pod status below |
+| `Failed to authenticate with Keycloak admin CLI` | Keycloak pod not ready; see [Check Keycloak pod health](#check-keycloak-pod-health) |
 | `409 Conflict` from `kcadm.sh create` | An IdP with this alias already exists in Keycloak |
 | `PKIX path building failed` in Keycloak logs (LDAP sign-ins fail silently) | CA bundle is missing the LDAPS DC's CA — see [TLS Certificate Requirements](system/certificates.md#multi-domain-and-multi-ca-environments) |
 

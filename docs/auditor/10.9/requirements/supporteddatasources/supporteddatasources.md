@@ -72,7 +72,9 @@ versions:
 - Dell VNX/VNXe/Celerra families
 - Dell PowerStore family
 
-> **NOTE:** Netwrix Auditor supports only Common Internet File System (CIFS) configuration.
+:::note
+Netwrix Auditor supports only Common Internet File System (CIFS) configuration.
+:::
 
 See the [Dell Data Storage](/docs/auditor/10.9/configuration/fileservers/delldatastorage/overview.md) topic for
 additional information.
@@ -83,9 +85,11 @@ Auditor supports monitoring the following device versions:
 
 - Dell Isilon/PowerScale versions 7.2 – 9.12
 
-> **NOTE:** Netwrix Auditor supports only CIFS configuration.
+:::note
+Netwrix Auditor supports only CIFS configuration.
+:::
 
-> **IMPORTANT:** Netwrix Auditor does not support auditing of the _System_ zone. Dell designates this zone for configuration access only. Store current data in other access zones.
+> **IMPORTANT:** Netwrix Auditor doesn't support auditing of the _System_ zone. Dell designates this zone for configuration access only. Store current data in other access zones.
 
 See the [Dell Isilon/PowerScale](/docs/auditor/10.9/configuration/fileservers/dellisilon/overview.md) topic for
 additional information.
@@ -95,10 +99,12 @@ additional information.
 Auditor supports monitoring the following device versions:
 
 - Clustered-Mode
-    - 9.0 – 9.17
+    - 9.0 – 9.19
     - 8.3
 
-> **NOTE:** Netwrix Auditor supports only CIFS configuration.
+:::note
+Netwrix Auditor supports only CIFS configuration.
+:::
 
 See the [NetApp Data ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/overview.md) topic for
 additional information.
@@ -107,7 +113,7 @@ additional information.
 
 Auditor supports monitoring the following device versions:
 
-- Files 3.6 - 5.2
+- Files 3.6 - 5.3
 
 See the [Nutanix](/docs/auditor/10.9/configuration/fileservers/nutanix/overview.md) topic for additional
 information.
@@ -187,7 +193,9 @@ Auditor supports monitoring the following versions:
 - Exchange Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** Netwrix Auditor does not support Department of Defense (DoD) tenant types.
+:::note
+Netwrix Auditor doesn't support Department of Defense (DoD) tenant types.
+:::
 
 See the [Exchange Online](/docs/auditor/10.9/configuration/microsoft365/exchangeonline/overview.md) topic for
 additional information.
@@ -199,7 +207,9 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** Netwrix Auditor does not support DoD tenant types.
+:::note
+Netwrix Auditor doesn't support DoD tenant types.
+:::
 
 See the
 [Microsoft Entra ID (formerly Azure AD)](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/overview.md)
@@ -212,7 +222,9 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** Netwrix Auditor does not support DoD tenant types.
+:::note
+Netwrix Auditor doesn't support DoD tenant types.
+:::
 
 See the [MS Teams](/docs/auditor/10.9/configuration/microsoft365/teams/overview.md) topic for additional
 information.
@@ -224,7 +236,9 @@ Auditor supports monitoring the following versions:
 - SharePoint Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** Netwrix Auditor does not support DoD tenant types.
+:::note
+Netwrix Auditor doesn't support DoD tenant types.
+:::
 
 See the [SharePoint Online](/docs/auditor/10.9/configuration/microsoft365/sharepointonline/overview.md) topic for
 additional information.
@@ -358,7 +372,9 @@ Auditor supports monitoring the following versions:
 - Microsoft SQL Server 2014
 - Microsoft SQL Server 2012
 
-> **NOTE:** Netwrix Auditor does not support Linux-based versions.
+:::note
+Netwrix Auditor doesn't support Linux-based versions.
+:::
 
 See the [SQL Server](/docs/auditor/10.9/configuration/sqlserver/overview.md) topic for additional information.
 
@@ -384,8 +400,8 @@ scalability issues:
 - Depending on user activity density, the number may be higher for servers and lower for workstations.
 - 50-100 concurrent sessions per terminal server.
 
-Netwrix recommends User Activity auditing only for sensitive or critical infrastructure areas. Applicable usage scenarios include, for
-example:
+Netwrix recommends User Activity auditing only for sensitive or critical infrastructure areas. Applicable usage scenarios
+include:
 
 - Terminal servers where users can log in from external locations
 - Areas accessible by contractor personnel
@@ -432,9 +448,13 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2012 R2
 - Windows Server 2012
 
-> **NOTE:** DNS support on Windows Server 2008 is limited to Windows Server 2008 SP2 (32 and 64-bit).
+:::note
+Auditor supports DNS on Windows Server 2008 SP2 (32 and 64-bit) only.
+:::
 
-> **NOTE:** Netwrix Auditor does not support DHCP on Windows Server 2008.
+:::note
+Netwrix Auditor doesn't support DHCP on Windows Server 2008.
+:::
 
 Internet Information Services (IIS)
 
@@ -447,11 +467,11 @@ information.
 
 ## Netwrix Integration API
 
-In addition to data sources monitored within the product, Auditor supports technology integrations
-leveraging its API. Download free add-ons from
+In addition to the data sources the product monitors, Auditor supports technology integrations
+that use its API. Download free add-ons from
 [Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) to enrich your audit
 trails with activity from the following systems and applications.
 
-Add-ons are also available to export data collected by Auditor to other systems (e.g., ArcSight and ServiceNow).
+Add-ons are also available to export the data that Auditor collects to other systems (e.g., ArcSight and ServiceNow).
 
 See the [Integration API](/docs/auditor/10.9/api/overview.md) topic for additional information.

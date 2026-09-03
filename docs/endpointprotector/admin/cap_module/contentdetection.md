@@ -1,16 +1,16 @@
 ---
-title: "Content Detection, Remediation and Compliance"
-description: "Content Detection, Remediation and Compliance"
+title: "Content Detection, Remediation, and Compliance"
+description: "Content Detection, Remediation, and Compliance"
 sidebar_position: 20
 ---
 
-# Content Detection, Remediation and Compliance
+
+# Content Detection, Remediation, and Compliance
 
 Content detection identifies sensitive data across various file types and applications. Remediation
-allows users to resolve policy violations, while compliance ensures adherence to regulations like
-HIPAA and GDPR. By configuring detection rules, denylists, allowlists, and contextual filters,
-organizations can control the transfer of sensitive information and mitigate risks associated with
-data leakage.
+resolves policy violations, while compliance ensures adherence to regulations like HIPAA and GDPR.
+By configuring detection rules, denylists, allowlists, and contextual filters, organizations can
+control the transfer of sensitive information and mitigate risks associated with data leakage.
 
 ## Content Detection Summary
 
@@ -24,10 +24,10 @@ To edit a Content Detection Rule, click **Edit** and then, on the Deﬁne operat
 the following information:
 
 - Select operator - OR (default), **AND**
-- Enable **Threshold** and type the number adjacent to each entry from 1 to 1000; this will disable
-  the Global Threshold setting from the Content Detection, Remediation and Compliance section.
-- Add item and select from the drop-down Personal Identifiable Information; before saving the
-  operation, you can change PIIs by selecting from the drop-down list. To delete an entry from the
+- Enable **Threshold** and enter the number adjacent to each entry from 1 to 1000; this will disable
+  the Global Threshold setting from the Content Detection, Remediation, and Compliance section.
+- Add item and select from the dropdown Personal Identifiable Information; before saving the
+  operation, you can change PIIs by selecting from the dropdown list. To delete an entry from the
   list, click **x** adjacent to each PII.
 - **Add group**
 
@@ -36,13 +36,13 @@ operation.
 
 ![Content Detection Summary](contentdetectionsummary.webp)
 
-To Restrict Content Detection, select from the drop-down list the ﬁle types you want to apply the
+To Restrict Content Detection, select from the dropdown list the ﬁle types you want to apply the
 Content Detection Rule to.
 
 If no ﬁle type is set, the content deﬁned in the content Detection Rule will be searched in all the
-ﬁle types that are not blocked by this policy.
+ﬁle types that aren't blocked by this policy.
 
-The Context Detection Rules allows you to specify the minimum or maximum number of contexts matches
+The Context Detection Rules let you specify the minimum or maximum number of contexts matches
 for one or more threat types previously deﬁned in the Content Detection Rule and reducing false
 positive detections.
 
@@ -55,17 +55,17 @@ an OR operator.
 To create a new Context Detection Rules click **Add**, ﬁll in the following and then **Save**:
 
 - Name – add a name for the context detection rule
-- Apply Contextual for Items – select from the drop-down list the predeﬁned content selected in the
+- Apply Contextual for Items – select from the dropdown list the predeﬁned content selected in the
   Content Detection Rule
 - Proximity – add a number between 50 and 3000
-- Included Context – select the AND/OR operator and then select from the drop-down list the custom
-  content, RegEx or HIPPA you want to be included in the rule
-- Excluded Context – select the AND/OR operator and then select from the drop-down list the custom
-  content, RegEx or HIPPA you want to be excluded from the rule
+- Included Context – select the AND/OR operator and then select from the dropdown list the custom
+  content, RegEx, or HIPPA you want to be included in the rule
+- Excluded Context – select the AND/OR operator and then select from the dropdown list the custom
+  content, RegEx, or HIPPA you want to be excluded from the rule
 
     :::note
     Custom content used in Content Detection rules will not be displayed in the included
-    and excluded context drop-down lists.
+    and excluded context dropdown lists.
     :::
 
 
@@ -78,11 +78,13 @@ To create a new Context Detection Rules click **Add**, ﬁll in the following an
 
 ![Creating new Context Detection Rules ](contentdetectionrules.webp)
 
-:::warning
-To address conﬂicts between per-policy and Global Contextual Rules, Endpoint Protector
-clients no longer receive Global Contextual Rules if at least one policy has its individual
-Contextual Rule set. This marks the deprecation of Global Contextual Rules, emphasizing the
-prioritization of individual policy conﬁgurations.
+:::note
+Global Contextual Detection has been removed in version 5.9.6.0. Contextual detection rules are
+now configured at the policy level only — each Content Aware Protection policy and eDiscovery
+policy can have its own set of up to 15 contextual detection rules.
+
+For eDiscovery contextual detection configuration, see
+[eDiscovery policies and scans](/docs/endpointprotector/admin/ed_module/edpolicies.md).
 :::
 
 
@@ -102,8 +104,8 @@ capabilities: 1000 lists (previously 10/100) and 50,000 entries per list.
 
 You can use the following Denylists:
 
-- File Type - since many ﬁles (e.g.: Programming Files) are actually .TXT ﬁles, we recommend more
-  precaution when selecting this ﬁle type to avoid any unexpected effects.
+- File Type - since many ﬁles (e.g.: Programming Files) are actually .TXT ﬁles, use extra
+  precaution when selecting this ﬁle type to avoid unexpected effects.
 
     :::note
     File type detection will not always work accurately for some very large
@@ -117,8 +119,8 @@ You can use the following Denylists:
 
 When the Deep Packet Inspection is enabled an extended way to monitor Git is available. If Git is
 selected from the Restricted Apps, Git-related actions (fetch, clone, push, pull) will be blocked,
-regardless of the git application used. This will result in completely blocking Git. However, Deep
-Packet Inspection Allowlists can be used to allow a speciﬁc Git, linked to a speciﬁc domain (e.g.:
+regardless of the git application used. This completely blocks Git. However, Deep
+Packet Inspection Allowlists let you allow a speciﬁc Git linked to a speciﬁc domain (e.g.:
 internalgit.mydomain.com).
 
 :::note
@@ -136,8 +138,7 @@ Starting with Endpoint Protector server version 5.7.0.0, Italian SSN was added t
 Similar to Italian ID, if selected from the list of PIIs, the SSN will detect the same entity.
 
 :::info
-When using Italian SSN and ID, we recommend you upgrade to the latest Endpoint
-Protector agent version.
+When using Italian SSN and ID, upgrade to the latest Endpoint Protector agent version.
 :::
 
 
@@ -148,7 +149,7 @@ under section ID and server upgrade will retain previous settings, including Ita
 - Use Italian ID when deploying to agent versions xxx and earlier
 - Use both Italian SSN and ID for a mixed environment of new and older agent versions
 
-Because the Italian SSN and ID detect the same entity, do not select Italian ID to avoid multiple
+Because the Italian SSN and ID detect the same entity, don't select Italian ID to avoid multiple
 reporting results.
 
 The new Endpoint Protector agent versions will report on both Italian ID and SSN.
@@ -176,9 +177,9 @@ Security Numbers, Addresses, and much more.
 ![HIPAA Compliance](hipaacompliance.webp)
 
 :::note
-For a HIPAA policy to be effective and more accurate, it is recommended to utilize
+For a HIPAA policy to be effective and accurate, use
 Contextual Detection Rules in conjunction with Predeﬁned Content and Custom Content ﬁlters. To
-enhance precision, users should also enable ‘Whole Word Only’ under Custom Content. The ICD-11
+enhance precision, enable ‘Whole Word Only’ under Custom Content. The ICD-11
 dictionary focuses solely on speciﬁc terms, not insurance codes.
 :::
 
@@ -210,7 +211,7 @@ For detailed information on Denylists and Allowlist, refer to the
 :::warning
 The Content Aware Protection Policies continue to report and/or block sensitive data
 transfers from protected computers even after they are disconnected from the company network. Logs
-will be saved within the Endpoint Protector Client and will be sent to the Server once the
+will be saved within the Endpoint Protector Client and will be sent to the Server after the
 connection has been reestablished.
 :::
 
@@ -222,7 +223,7 @@ connection has been reestablished.
 You can deﬁne the monitored URL categories the Deep Packet Inspection will ﬁlter. If none is
 selected, Deep Packet Inspection will ﬁlter all content uploaded for any URL.
 
-You can add, delete and edit [Denylists and Allowlists](/docs/endpointprotector/admin/denylistsallowlists/overview.md) from the
+You can add, delete, and edit [Denylists and Allowlists](/docs/endpointprotector/admin/denylistsallowlists/overview.md) from the
 Denylists and Allowlists section.
 
 ![Deﬁne the monitored URL categories the Deep Packet Inspection](dpimonitored.webp)
@@ -254,7 +255,7 @@ Block and Remediate policies are a category of Content Aware Policies. This cate
 gives the end-user the possibility to resolve the Content Aware threats by using justiﬁcations.
 
 You can create Block and Remediate Content Aware Policies from the Content Aware Protection section,
-Create Content Aware Policies, Policy Action, Block and Remediate.
+Create Content Aware Policies, Policy Action, Block, and Remediate.
 
 When detected, Content Aware threats are displayed:
 
@@ -271,7 +272,7 @@ To remediate the threat, the user has to follow these steps:
 
 **Step 3 –** On the Self Remediate section:
 
-- select a **justiﬁcation** from the drop-down list
+- select a **justiﬁcation** from the dropdown list
 - add a **reason** for the justiﬁcation (if required)
 - navigate to the custom **URL** situated under the logo
 - add your credentials if the **Require Credentials** setting was enabled (click the username icon
@@ -320,19 +321,19 @@ Content Aware Protection tab on the Web Domains column.
 
 ## Applying multiple Content Aware Policies
 
-Content Aware Protection is a very versatile tool, where you can perform the granular implementation
+Content Aware Protection is a very versatile tool for performing granular implementation
 of actions regarding the report and/or block and report of ﬁles.
 
 A Content Aware Policy is a set of rules for reporting or blocking & reporting the selected
 information. All the other options left unchecked will be considered as Ignored by Endpoint
 Protector.
 
-When applying two policies to the same PC, it is possible to block one type of ﬁle, for example, PNG
+When applying two policies to the same PC, you can block one type of ﬁle, for example, PNG
 ﬁles, when they are uploaded through Mozilla Firefox, while a second policy is to report only PNG
-ﬁles when they are uploaded through Internet Explorer. In the same way, it is possible to report
+ﬁles when they are uploaded through Internet Explorer. In the same way, you can report
 only ﬁles that contain conﬁdential words from a selected dictionary that are sent through Skype,
 while the second policy is to block the same ﬁles if they are sent through Yahoo Messenger.
-Similarly, it is possible to create combinations that block a ﬁle type or a ﬁle that contains
+Similarly, you can create combinations that block a ﬁle type or a ﬁle that contains
 predeﬁned content/custom content/regular expression for one application, while letting it through
 reporting it only for another.
 
@@ -368,7 +369,7 @@ The deep packet inspection feature has been expanded to email scanning based on 
 
 :::info
 HIPAA should be considered a Content Aware Policy that, besides the options in
-the HIPAA tab, also has the below conﬁguration:
+the HIPAA tab, also has the following configuration:
 :::
 
 

@@ -75,7 +75,7 @@ And it returns this :
 
 The previous command can be useful to encrypt, for example, an Active Directory's login used by the agent during the synchronization process.
 
-The login to encrypt is stored in the following format, compliant with the [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent).json structure:
+The log in to encrypt is stored in the following format, compliant with the [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent).json structure:
 
 ***appsettings.beforeEncryption.json***
 

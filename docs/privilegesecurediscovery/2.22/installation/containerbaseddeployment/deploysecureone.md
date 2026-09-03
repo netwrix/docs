@@ -13,7 +13,7 @@ deployment script.
 ## Prerequisites
 
 - All nodes have [OS prerequisites](./prerequisites.md) installed
-- All nodes are [authenticated with ECR](./awsconfiguration.md)
+- All nodes have [authenticated with Amazon Elastic Container Registry (ECR)](./awsconfiguration.md)
 
 ## Step 1 — Download the Quickstart Bundle
 
@@ -103,7 +103,7 @@ sudo -E bash secureone.sh setup --cluster --primary --version <version>
 Follow the prompts. The script initializes the swarm, deploys the stack, and then outputs the exact
 command to run on secondary nodes.
 
-**On each secondary node** (use the command output by the primary):
+**On each secondary node** (use the command that the primary node printed):
 
 ```bash
 sudo -E bash secureone.sh setup --cluster --join-token <TOKEN@HOST:PORT> --version <version>
@@ -116,6 +116,14 @@ sudo -E bash secureone.sh promote
 ```
 
 ## Upgrade an Existing Deployment
+
+:::important MongoDB 4.0 upgrade
+NPS-D 26.09.0 is the bridge release for moving existing deployments from MongoDB 4.0 to
+MongoDB 8.0. After upgrading NPS-D services to 26.09.0, complete
+[Upgrade MongoDB 4.0 to 8.0](../upgrademongodb4to8.md) before upgrading to the NPS-D release that
+updates the backend to Python 3.13 and supported library versions, or any later release. That
+platform update will require MongoDB 8.0 and will no longer support MongoDB 4.0.
+:::
 
 To upgrade to a new version, run on the primary node:
 
@@ -162,9 +170,9 @@ sudo -E bash secureone.sh <command> [options]
 
 - Run as root with `sudo -E` to preserve environment variables (AWS credentials)
 - AWS CLI installed and authenticated with the Netwrix ECR registry (see [AWS Configuration](./awsconfiguration.md))
-- `python3` — installed automatically by `setup` if missing
-- Docker — installed automatically by `setup` if missing
-- Ubuntu 24.04 (other distributions not tested)
+- `python3` — `setup` installs it automatically if missing
+- Docker — `setup` installs it automatically if missing
+- Ubuntu 24.04 (Netwrix hasn't tested other distributions)
 
 ### Commands
 

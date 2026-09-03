@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Configure
 
-The Configure page of the Chart Configuration wizard allows you to configure the chart as required.
+Use the Configure page of the Chart Configuration wizard to configure the chart as required.
 The page consist of two tabs, Chart Configuration and Data Preview.
 
 ## Chart Configuration
@@ -17,9 +17,9 @@ shown in the chart.
 
 ![Chart Configuration wizard Configure page](/images/accessanalyzer/12.0/admin/report/chartwizard/configure.webp)
 
-The left side shows all the columns from the data source table that can be used for the label axis.
+The left side shows all the columns from the data source table that you can use for the label axis.
 For example, the label column is the x-axis on a line chart and the y-axis on a bar chart. Select
-the checkbox of the desired label column from the list. You can use the search bar to filter this
+the checkbox of the label column you want from the list. You can use the search bar to filter this
 list of columns.
 
 If a datetime label column has been selected, you can optionally select a transformation function
@@ -42,25 +42,25 @@ existing data series. The following options are available:
 - Color Picker – Available only for pie charts. Opens the Pie slices color window, which allows you
   to customize the color for each slice of the pie chart. On the Pie slices color window:
 
-    - Select the row of the desired value to customize and click **Change Color**
-    - Use the color picker to choose the desired color, then click **OK**
+    - Select the row of the value you want to customize and click **Change Color**
+    - Use the color picker to choose the color you want, then click **OK**
     - Repeat for each color you want to customize
     - Click **OK** to save your selections and close the Pie slices color window, or click
       **Cancel** to close the window without changing the colors
 
-At the bottom of the page is a preview of the chart as it is currently configured using the
+At the bottom of the page is a preview of the chart as it is configured using the
 available data. See the [Chart Preview](#chart-preview) topic for additional information.
 Additionally, you can see a preview of the source data table in the Data Preview tab. See the
 [Data Preview](#data-preview) topic for additional information.
 
-Once you have finished configuring the chart, click **Finish** to close the wizard. You are returned
+After you finish configuring the chart, click **Finish** to close the wizard. You are returned
 to the Widgets page of the Report Configuration wizard, where the newly configured chart is shown.
 You must complete the Report Configuration wizard to save the chart on the report. See the
 [Widgets Page](/docs/accessanalyzer/12.0/admin/report/wizard/widgets.md) topic for additional information.
 
 ### Add New Series / Edit Series Window
 
-The Add new series and Edit series windows allow you to configure the data series of the chart. The
+Use the Add new series and Edit series windows to configure the data series of the chart. The
 appropriate window is opened by clicking **Add** to create a new series, or by selecting an existing
 series and clicking **Edit**.
 
@@ -68,8 +68,8 @@ series and clicking **Edit**.
 
 These windows contain the following options for the data series:
 
-- Column table – This table displays the available columns in the source table that are not
-  currently selected in a series for the chart. Select the checkbox for column that contains the
+- Column table – This table displays the available columns in the source table that aren't
+ selected in a series for the chart. Select the checkbox for column that contains the
   data for the series. You can use the search bar to filter the list of columns.
 
     :::note
@@ -77,7 +77,7 @@ These windows contain the following options for the data series:
     :::
 
 
-- Select a function to aggregate the column by – Use the drop-down to select an aggregation
+- Select a function to aggregate the column by – Use the dropdown to select an aggregation
   function. The available options vary depending on the column selected. The possible options are:
 
     - None
@@ -98,7 +98,7 @@ window without saving.
 
 ### Chart Preview
 
-At the bottom of the page a preview of the currently configured chart is displayed.
+At the bottom of the page a preview of the configured chart is displayed.
 
 ![Chart preview](/images/accessanalyzer/12.0/admin/report/chartwizard/configurechartpreview.webp)
 
@@ -115,14 +115,14 @@ would cause them:
 
 ## Data Preview
 
-The Data Preview tab allows you to see and customize the data that is to be shown in the chart.
+Use the Data Preview tab to see and customize the data that is to be shown in the chart.
 
 ![Data Preview tab](/images/accessanalyzer/12.0/admin/report/chartwizard/configuredatapreview.webp)
 
 The buttons above the column names provide you the following options for configuring the table
 arrangement:
 
-- Filter Editor – Opens the Filter Editor which allows you to add custom filters with conditional
+- Filter Editor – Opens the Filter Editor, which lets you add custom filters with conditional
   statements and logical connectives
 - Best Fit (all columns) –  Adjusts the width of the columns to display all the data within the
   cells

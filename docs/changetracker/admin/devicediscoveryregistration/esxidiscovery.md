@@ -31,13 +31,13 @@ to vCenter using VMware PowerCLI and returns the list of hosts to the Hub.
 | Field | Description |
 |---|---|
 | **Discovery Device** | The Gen 7 Agent that executes the vCenter discovery. Click **Select Device** to choose an agent. |
-| **Parent Device in Hub** | *(Optional)* An existing device to use as the parent for discovered hosts. If left blank, defaults to the discovery device. |
+| **Parent Device in Hub** | *(Optional)* An existing device to use as the parent for discovered hosts. If you leave this field blank, it defaults to the discovery device. |
 | **Credentials** | The stored credential used to authenticate to the vCenter server. |
 | **Device Name Prefix** | The prefix applied to each discovered host name. Defaults to `VM Host`. Discovered devices use the format `<prefix> (<hostname>)`, for example `VM Host (esxi-host-01)`. Change this value to match your organization's naming conventions. If you clear the field, discovered devices use only the hostname. |
 | **Assign to Group** | The device group that receives discovered hosts. |
-| **Add new VM Hosts to ChangeTracker** | When selected, Change Tracker adds hosts found on vCenter that don't already exist as new devices. |
-| **Update existing VM Hosts in ChangeTracker** | When selected, Change Tracker updates existing hosts with the latest information from vCenter. |
-| **Delete missing VM Hosts from ChangeTracker** | When selected, Change Tracker removes hosts that no longer appear on vCenter. |
+| **Add new VM Hosts to ChangeTracker** | Select this option to have Change Tracker add hosts found on vCenter that don't already exist as new devices. |
+| **Update existing VM Hosts in ChangeTracker** | Select this option to have Change Tracker update existing hosts with the latest information from vCenter. |
+| **Delete missing VM Hosts from ChangeTracker** | Select this option to have Change Tracker remove hosts that no longer appear on vCenter. |
 
 **Step 4 –** Click **Run** to start the discovery. The discovery status grid shows the progress
 and results of each discovery task.

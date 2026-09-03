@@ -70,7 +70,7 @@ declare @s varchar(max)='';select @s=@s+(case when @s<>'' then char(13)+char(10)
 ## Logon Trigger (Optional)
 
 The logon trigger is required to obtain IP Addresses of client connections. Run the following script
-in order to allow the Activity Monitor to report client IP Addresses.
+to allow the Activity Monitor to report client IP Addresses.
 
 ```
 CREATE TRIGGER SBAudit_LOGON_Trigger ON ALL SERVER FOR LOGON AS BEGIN declare @str varchar(max)=cast(EVENTDATA() as varchar(max));raiserror(@str,1,1);END

@@ -15,7 +15,7 @@ are required for communication between the Agent server and the Netwrix Activity
 
 The Windows firewall rules need to be configured on the Windows server, which require certain
 inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+port range, which can't be specified via an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 
@@ -109,7 +109,7 @@ Agent server and the target NetApp Data ONTAP 7-Mode device:
 Activity Monitor.
 
 :::note
-If either HTTP or HTTPS are not enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
+If either HTTP or HTTPS aren't enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
 device must be configured manually. Also, the External Engine will not reconnect automatically in
 the case of a server reboot or service restart.
 :::
@@ -130,7 +130,7 @@ Agent server and the target NetApp Data ONTAP Cluster-Mode device:
 Activity Monitor.
 
 :::note
-If either HTTP or HTTPS are not enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
+If either HTTP or HTTPS aren't enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
 device must be configured manually. Also, the External Engine will not reconnect automatically in
 the case of a server reboot or service restart.
 :::
@@ -156,7 +156,7 @@ Agent server and the target Panzura device:
 | Communication Direction                    | Protocol      | Ports | Description             |
 | ------------------------------------------ | ------------- | ----- | ----------------------- |
 | Activity Agent Server to Panzura           | HTTPS         | 443   | Panzura API             |
-| Panzura filers to to Activity Agent Server | AMQP over TCP | 4497  | Panzura Event Reporting |
+| Panzura filers to Activity Agent Server | AMQP over TCP | 4497  | Panzura Event Reporting |
 
 Protect the port with a username and password. The credentials will be configured in Panzura.
 
@@ -190,7 +190,7 @@ Agent server and the target SQL Server:
 | ----------------------------------- | -------- | ----- | ----------------------- |
 | SQL Server to Activity Agent Server | TCP      | 1433  | Default SQL Server Port |
 
-If the Activity Monitor cannot connect to the SQL Server, ensure that SQL Server Browsing state is
+If the Activity Monitor can't connect to the SQL Server, ensure that SQL Server Browsing state is
 **Running**.
 
 ## Integration with Netwrix Enterprise Auditor Additional Firewall Rules

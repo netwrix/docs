@@ -6,31 +6,30 @@ sidebar_position: 90
 
 # HIBP Updater
 
-Password Policy Enforcer can be configured to use the Have I Been Pwnd (HIBP) database. A copy of
-this database is hosted on the Netwrix website. The HIBP database contains a list of the hashes of
-known compromised passwords. During password change operations, the application can be configured to
+You can configure Password Policy Enforcer to use the Have I Been Pwnd (HIBP) database. The Netwrix
+website hosts a copy of this database. The HIBP database contains a list of the hashes of
+known compromised passwords. For password change operations, you can configure the application to
 reject passwords with a hash that matches a hash in the HIBP database. See the Password Policy
 Enforcer [Compromised Password Check](/docs/passwordpolicyenforcer/11.0/admin/compromisedpasswordcheck.md) topic for HIBP database
 information and configuration options.
 
-The HIBP database must be initially deployed to a server or workstation with an internet connection
-that can retrieve and format the file. After the database is formatted, you can distribute the HIBP
+You must first deploy the HIBP database to a server or workstation that has an internet connection
+and can retrieve and format the file. After you format the database, you can distribute the HIBP
 database to your domain controllers so the Password Policy Enforcer server can check passwords
 against the HIBP database.
 
 ## Considerations When Deploying the HIBP Database
 
-Before deploying the HIBP database, consider the pros and cons when choosing its deployment
-location.
+Before deploying the HIBP database, consider the pros and cons of each deployment location.
 
-- The HIBP database takes up additional space on the machine where it is copied (approximately 13
-  GB, but subject to change)
-- A network connection to the application server isn't required to check passwords against the HIBP
-  database
+- The HIBP database takes up additional space (approximately 13 GB, but subject to change) on the
+  machine where you copy it
+- Checking passwords against the HIBP database doesn't require a network connection to the
+  application server
 
 ## Installation and Configuration
 
-The HIBP Updater is installed when you install the Password Policy Enforcer Configuration Console.
+Installing the Password Policy Enforcer Configuration Console also installs the HIBP Updater.
 
 :::info
 Only run this from one server.
@@ -60,8 +59,8 @@ Netwrix website.
 ![HIBP Updater](/images/passwordpolicyenforcer/11.0/administration/hibpupdater.webp)
 
 :::warning
-Ensure the initial update of the database occurs during non-office hours. Due to the
-size of the hash file, this download takes up a significant amount of CPU and download time.
+Run the initial database update during non-office hours. Due to the
+size of the hash file, this download consumes significant CPU and time.
 :::
 
 
@@ -74,13 +73,13 @@ size of the hash file, this download takes up a significant amount of CPU and do
 
     - Full Download – Download all data from the HIBP database hosted on the Netwrix website
     - Incremental Update – Download updates from the HIBP database hosted on the Netwrix website
-      instead of downloading the full HIBP database. This option is enabled after a full download of
-      the HIBP database has completed.
+      instead of downloading the full HIBP database. This option becomes available after a full
+      download of the HIBP database completes.
 
         :::note
-        Only the full HIBP database file obtained from the Netwrix website has version
-        information. That full HIBP database file can be obtained using the Website option.
-        Alternately, the HIBP database can be obtained outside of the application by downloading it
+        Only the full HIBP database file that you download from the Netwrix website has version
+        information. You can obtain that full HIBP database file using the Website option.
+        Alternately, you can obtain the HIBP database outside of the application by downloading it
         directly from the Netwrix website using an FTP connection:
         :::
 
@@ -101,9 +100,9 @@ size of the hash file, this download takes up a significant amount of CPU and do
 
 - Apply:
 
-    - If Website is selected, then clicking **Apply** downloads the HIBP database from the Netwrix
+    - If you select Website, clicking **Apply** downloads the HIBP database from the Netwrix
       website and then processes the database for use by the application
-    - If File is selected, then clicking **Apply** processes the local copy of the (manually obtained) database for use by the application
+    - If you select File, clicking **Apply** processes the local copy of the (manually obtained) database for use by the application
 
 ### Hash File Replication
 
@@ -117,49 +116,49 @@ Compromised rule to read the files from:
 
 See the [Compromised Rule](/docs/passwordpolicyenforcer/11.0/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
 
-This path only works if the computer has a Sysvol share. This won't be the case if you are
-using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
-local policies. If you are using Password Policy Enforcer for local policies and want all computers
-to receive hash file updates, then use the Sysvol share for file replication and a script or
-scheduled task to copy the file to a local folder.
+This path only works if the computer has a Sysvol share. This won't be the case if you use a
+workstation for policy testing, or if you use Password Policy Enforcer to enforce local policies.
+If you use Password Policy Enforcer for local policies and want all computers to receive hash file
+updates, then use the Sysvol share for file replication and a script or scheduled task to copy the
+file to a local folder.
 
 :::warning
-%SystemRoot%. hash files should only be read from a local disk. Using shared hash files
+Read hash files only from a local disk. Using shared hash files
 degrades performance, and could jeopardize security.
 :::
 
 
 ## Scheduler
 
-Password Policy Enforcer administrators can use the Scheduler portion of the HIBP Updater to
-automate the tool to retrieve and/or prepare the HIBP dataset. The Scheduler uses Microsoft Task
-Scheduler technology to execute the process.
+Password Policy Enforcer administrators can use the Scheduler in the HIBP Updater to automate
+retrieving and preparing the HIBP dataset. The Scheduler uses Microsoft Task Scheduler to run the
+process.
 
 ### How to Schedule a Task
 
 **Step 1 –** Click **Scheduler** in the HIBP Updater.
 
-**Step 2 –** Click **Add Schedule**. An Edit Schedule window appears that looks similar to the HIBP
+**Step 2 –** Click **Add Schedule**. An Edit Schedule window appears. It looks similar to the HIBP
 Updater window.
 
 ![editschedule](/images/passwordpolicyenforcer/11.0/administration/editschedule.webp)
 
 **Step 3 –** Enter the Name and Description of the schedule.
 
-**Step 4 –** Select **Add Trigger** to add the interval that you want to have the schedule run.
+**Step 4 –** Select **Add Trigger** to add the interval at which you want the schedule to run.
 
 - You can add as many triggers as you want to a schedule.
 
 **Step 5 –** Select the Update Type and Location to get the update.
 
-**Step 6 –** After you have set up your schedule, click **OK** to save the schedule.
+**Step 6 –** After you set up your schedule, click **OK** to save it.
 
-The HIBP database is updated according to the schedule.
+The HIBP Updater updates the HIBP database according to the schedule.
 
 ### Schedule List
 
-The Schedule List window shows the names, run times, next run times, and whether the schedule is
-enabled or not.
+The Schedule List window shows the names, run times, next run times, and whether each schedule is
+enabled.
 
 ![schedulelist](/images/passwordpolicyenforcer/11.0/administration/schedulelist.webp)
 

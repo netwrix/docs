@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Host Management
 
-The **Host Management** node is used to manage hosts in a targeted environment. Hosts configured
-under the **Host Management** node can be audited using other features in Access Analyzer. This node
+Use the **Host Management** node to manage hosts in a targeted environment. You can audit hosts
+configured under the **Host Management** node using other features in Access Analyzer. This node
 maintains information for audited computers. To view information on all computers in the
 environment, use the
 [.Active Directory Inventory Solution](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/overview.md),
@@ -15,7 +15,7 @@ specifically the Active Directory Summary report.
 
 The Host Management node provides a master list of every host ever introduced to Access Analyzer.
 Introduce hosts through [Host Discovery Node](/docs/accessanalyzer/12.0/admin/hostdiscovery/overview.md) queries or by entering
-them manually. Hosts are removed from this list only by manually deleting them. This master listing
+them manually. You can only remove hosts from this list by manually deleting them. This master listing
 of hosts, or the Host Master Table, is designed around unique host names, not necessarily unique
 hosts themselves. The data grid provides all host inventory information collected on the hosts. See
 the [Host Inventory Data Grid](/docs/accessanalyzer/12.0/admin/hostmanagement/datagrid.md) topic for additional information.
@@ -23,7 +23,7 @@ the [Host Inventory Data Grid](/docs/accessanalyzer/12.0/admin/hostmanagement/da
 The Host Management process consists of the following phases:
 
 - Host Discovery – The process of discovering hosts to audit through Host Discovery queries, which
-  can be scoped to identify computers with commonalities. These queries are managed under the Host
+  you can scope to identify computers with commonalities. You manage these queries under the Host
   Discovery node. See the [Host Discovery Node](/docs/accessanalyzer/12.0/admin/hostdiscovery/overview.md) topic for additional
   information.
 - Host Inventory – The process of collecting key pieces of information about each host to aid in

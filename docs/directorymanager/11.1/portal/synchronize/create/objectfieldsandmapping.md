@@ -1,12 +1,12 @@
 ---
-title: "Objects, Fields and Mapping"
-description: "Objects, Fields and Mapping"
+title: "Objects, Fields, and Mapping"
+description: "Objects, Fields, and Mapping"
 sidebar_position: 30
 ---
 
-# Objects, Fields and Mapping
+# Objects, Fields, and Mapping
 
-On the **Object, Fields and Mappings** page, map the a attributes with source fields.
+On the **Object, Fields, and Mappings** page, map the attributes with source fields.
 
 1. In the **Sync Object Options**, select an object type that you want to either create or update.
 
@@ -106,7 +106,7 @@ On the **Object, Fields and Mappings** page, map the a attributes with source fi
 
         - Others
 
-            Add details for any other provider that is not present in the list.
+            Add details for any other provider that isn't present in the list.
 
         - None
 
@@ -120,9 +120,9 @@ On the **Object, Fields and Mappings** page, map the a attributes with source fi
 
 4. The Global Script Editor allows the script author to extend the functionality of Synchronize by
    authoring scripts in Visual Basic .NET and Python. Before saving a script, the code must be
-   verified by compiling the script. Click on **Edit Global Script,**and follow these steps:
+   verified by compiling the script. Click **Edit Global Script,**and follow these steps:
 
-    1. Click on **Edit** option from the header of the screen to edit the script. You can perform
+    1. Click **Edit** option from the header of the screen to edit the script. You can perform
        the following action:
 
         | Actions             | Description                                                                                                              |
@@ -134,7 +134,7 @@ On the **Object, Fields and Mappings** page, map the a attributes with source fi
         | Undo (Ctrl+Z        | Reverses the last change.                                                                                                |
         | Redo (Ctrl+Y        | Re-applies a change reversed using the Undo action.                                                                      |
         | Insert Datetime     | Inserts the current date and time in the editor.                                                                         |
-        | Insert File As Text | Opens the Select a text file dialog box that allows you to select a text file from which to insert text into the editor. |
+        | Insert File As Text | Opens the Select a text file dialog box to select a text file from which to insert text into the editor. |
 
     2. Use the **Tools > Add or remove references** to display various components and DLL libraries
        included in your script.
@@ -142,13 +142,13 @@ On the **Object, Fields and Mappings** page, map the a attributes with source fi
     4. To export the script, click **Export** to save it for future use.
     5. You can also click the **Plus** icon to clear the scripting editor and then copy and paste
        the attached script in the global scripting editor.
-    6. To compile the script, click on **Build** and then click **Compile Script**.
+    6. To compile the script, click **Build** and then click **Compile Script**.
 
         Synchronize will review the code to determine if there are any errors which would prevent
         the code from loading or executing. While compiling your script will verify the code is free
-        of syntactical errors, it does not guarantee that the code is free from logical errors. If
+        of syntactical errors, it doesn't guarantee that the code is free from logical errors. If
         the code is free of syntactical errors, a message box will appear informing the user that
-        the code has been successfully compiled. In the event of one or more errors, the user can
+        the code has been successfully compiled. If there are one or more errors, the user can
         view any problems at the bottom of the screen in the **Errors** section. Double-clicking on
         a given error will position the cursor to the location of the error in the script.
 
@@ -172,7 +172,7 @@ On the **Object, Fields and Mappings** page, map the a attributes with source fi
 
 5. On the [Selected Fields for object types](/docs/directorymanager/11.1/portal/synchronize/create/selectedfield.md) type section, click **Add/Edit
    Fields**. You can specify the action to take if the data or object being exported from the source
-   does not exist at the destination.
+   doesn't exist at the destination.
 6. Use the **Map Field** section to map the source and destination fields and to apply
    transformations:
 
@@ -198,9 +198,9 @@ On the **Object, Fields and Mappings** page, map the a attributes with source fi
         or to merge values of a multi-valued field at the destination, depending on the types of
         data sources.
 
-    3. In the **New only** column, select the check boxes for fields to be updated only when
-       creating a new object. Fields that are not selected are continually updated. Key fields are
-       selected by default as New Only fields as a requirement; you cannot change this selection.
+    3. In the **New only** column, select the checkboxes for fields to be updated only when
+       creating a new object. Fields that aren't selected are continually updated. Key fields are
+       selected by default as New Only fields as a requirement; you can't change this selection.
 
         :::note
         For Microsoft Entra ID objects, primary key fields are:
@@ -209,6 +209,6 @@ On the **Object, Fields and Mappings** page, map the a attributes with source fi
         :::
 
 
-    4. Select **Show field reference** check box to view a list of attributes from the schema of the
+    4. Select **Show field reference** checkbox to view a list of attributes from the schema of the
        source provider.
     5. Click **Next**.

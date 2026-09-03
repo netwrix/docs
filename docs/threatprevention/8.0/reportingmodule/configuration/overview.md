@@ -12,7 +12,7 @@ Use the gear icon in the upper right corner of the console to open the Configura
 
 It contains the following options:
 
-- Integrations – Allows you to configure integrations with a variety of Netwrix products and
+- Integrations – lets you configure integrations with a variety of Netwrix products and
   third-party systems and applications. See the [Integrations Interface](/docs/threatprevention/8.0/reportingmodule/configuration/integrations/overview.md)
   topic for additional information.
 - System Health – Provides access to the Services page, displays the services associated with the

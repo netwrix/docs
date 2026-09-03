@@ -26,7 +26,7 @@ Generates the permissions to configure the Workforce Core Solution module and co
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Settings_ConnectionPackage_Manage" DisplayName_L1="Administrator_ConnectionPackage" DisplayName_L2="Administrator_ConnectionPackage" EntityType="ConnectionPackage" Profile="Administrator">

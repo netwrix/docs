@@ -21,7 +21,7 @@ report is unpublished, the report is still displayed here.
 
 ![Report in the Results node](/images/accessanalyzer/12.0/admin/report/viewresultsnode.webp)
 
-Select the desired report to be viewed. The report displays in the Results pane of the console.
+Select the report you want to view. The report displays in the Results pane of the console.
 
 ![Access report from configure page](/images/accessanalyzer/12.0/admin/report/viewconfigure.webp)
 
@@ -45,7 +45,7 @@ that solution’s job group. This list includes reports with changed Publish Pat
 Clicking a report name link opens the selected report, or navigate through the folders to select a
 report.
 
-From within the Web Console, reports cannot be edited or deleted. However, the interactive grid
+From within the Web Console, reports can't be edited or deleted. However, the interactive grid
 functions are enabled. See the [Interactive Grids](/docs/accessanalyzer/12.0/admin/report/interactivegrids/overview.md) topic for
 additional information. An additional feature available within the Web Console is the option to
 download data as a CSV file, which can be enabled for grid elements. This exports the data within

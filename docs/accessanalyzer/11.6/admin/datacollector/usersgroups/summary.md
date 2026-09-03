@@ -10,6 +10,6 @@ The Summary page displays a summary of the configured query.
 
 ![Users and Groups Browser wizard Summary page](/images/accessanalyzer/11.6/admin/datacollector/usersgroups/summary.webp)
 
-Click **Finish** to save configuration changes. If no changes were made, it is a best practice to
-click **Cancel** to close the Users and Groups Browser wizard ensuring that no accidental clicks are
-saved.
+Click **Finish** to save configuration changes. If you didn't make changes, it is a best practice to
+click **Cancel** to close the Users and Groups Browser wizard, which prevents the wizard from saving
+accidental clicks.

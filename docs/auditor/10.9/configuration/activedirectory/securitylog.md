@@ -7,15 +7,15 @@ sidebar_position: 80
 # Adjust Security Event Log Size and Retention
 
 Defining the Security event log size is essential for change auditing. If the log size is
-insufficient, overwrites may occur before data is written to the Long-Term Archive and the Audit
-Database, and some audit data may be lost.
+insufficient, overwrites may occur before Netwrix Auditor writes the data to the Long-Term Archive
+and the Audit Database, and you may lose some audit data.
 
 To prevent overwrites, you can increase the maximum size of the Security event log and set retention
 method for this log to “_Overwrite events as needed_”.
 
-To adjust your Security event log size and retention method, follow the procedure described below.
+To adjust your Security event log size and retention method, follow this procedure.
 
-To read about event log settings recommended by Microsoft, refer to the following article:
+To read about event log settings recommended by Microsoft, see
 [Event Log](https://support.microsoft.com/en-us/help/957662/recommended-settings-for-event-log-sizes-in-windows).
 
 To increase the maximum size of the Security event log and set its retention method
@@ -39,9 +39,9 @@ To increase the maximum size of the Security event log and set its retention met
 
     `gpupdate /force`
 
-If "Overwrite" option is not enough to meet your data retention requirements, you can use
+If "Overwrite" option isn't enough to meet your data retention requirements, you can use
 _auto-archiving_ option for Security event log to preserve historical event data in the archive
 files. With that option enabled, you may want to adjust the retention settings for log archives
-(backups). Related procedures are described in the
+(backups). See the
 [Auto-archiving Windows Security log](/docs/kb/auditor/configuration-and-setup/windows-server-monitoring/auto-archiving-windows-security-log)
-Netwrix Knowledge Base article.
+Netwrix Knowledge Base article for related procedures.

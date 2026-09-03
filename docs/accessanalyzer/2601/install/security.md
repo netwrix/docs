@@ -10,10 +10,10 @@ Follow these recommendations to harden your Access Analyzer deployment.
 
 ## License Key Protection
 
-Your Netwrix license key provides access to the OCI package registry. Treat it as a credential:
+Your Netwrix license key provides access to the Open Container Initiative (OCI) package registry. Treat it as a credential:
 
-- Do not commit license keys to version control
-- Do not store license keys in plaintext configuration files
+- Don't commit license keys to version control
+- Don't store license keys in plaintext configuration files
 - Clear shell history after setting the `LICENSE_KEY` environment variable:
 
   ```bash
@@ -29,7 +29,7 @@ Your Netwrix license key provides access to the OCI package registry. Treat it a
 ## TLS / SSL
 
 - Replace the default self-signed certificate with a certificate issued by a trusted CA for production use
-- Ensure outbound TLS verification is enabled by mounting your organization's CA bundle — see [SSL / TLS Configuration](/docs/accessanalyzer/2601/install/system/certificates)
+- Mount your organization's CA bundle to enable outbound TLS verification — see [SSL / TLS Configuration](/docs/accessanalyzer/2601/install/system/certificates)
 
 ## RBAC and Access Control
 
@@ -60,6 +60,6 @@ Your Netwrix license key provides access to the OCI package registry. Treat it a
 
 ## Kubernetes Security
 
-- Secrets at rest are encrypted by default (K3s `--secrets-encryption` flag)
-- Kubeconfig file permissions are set to `644` — restrict further if the VM is shared
+- K3s encrypts secrets at rest by default (`--secrets-encryption` flag)
+- By default, kubeconfig file permissions are `644` — restrict further if the VM is shared
 - Regularly apply OS security patches to the host VM

@@ -6,11 +6,9 @@ sidebar_position: 90
 
 # Licenses
 
-The Licenses tab allows you to review the status of your current licenses, update them and add new
-licenses. To learn about Netwrix Auditor licenses, refer to the following Netwrix Knowledge Base
-article: [Netwrix Auditor Licensing FAQs]([https://www.netwrix.com/kb/2113](https://docs.netwrix.com/docs/kb/auditor/features-and-operations/glossaries-and-faqs/netwrix-auditor-licensing-faqs).
+Use the Licenses tab to review your current license status, update licenses, and add new ones. For information about Netwrix Auditor licensing, see [Netwrix Auditor Licensing FAQs](https://docs.netwrix.com/docs/kb/auditor/features-and-operations/glossaries-and-faqs/netwrix-auditor-licensing-faqs).
 
-Follow the steps to update or add a license.
+## Update or add a license
 
 **Step 1 –** Click **Upload License File**.
 

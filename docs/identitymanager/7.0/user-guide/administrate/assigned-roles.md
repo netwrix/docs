@@ -22,7 +22,7 @@ Users require the `/Custom/ProvisioningPolicy/AssignedRoles/{EntityType}` permis
 
 The following example provides the rights for the Administrator profile to access the Assigned Roles page on the **Entity Type** `Directory_User`. See the [Create a Provisioning Rule](../../user-guide/set-up/provisioning-rule-creation) and [Create Roles in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation) topics for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <AssignedRolesAccessControlRules EntityType="Directory_User" Profile="Administrator" />
@@ -50,11 +50,11 @@ Review the Assigned Roles by proceeding as follows:
 
 ![assignedroles](/images/identitymanager/assignedroles.webp)
 
-**Step 1 –** On the home page, in the Administration section of the UI click on Assigned Roles.
+**Step 1 –** On the home page, in the Administration section of the UI click Assigned Roles.
 
 ![assignedrolesscreen](/images/identitymanager/assignedrolesscreen.webp)
 
-**Step 2 –** View the list of users with different assigned roles and filter them by **Entity Type**, **Workflow State**, **Policy**, **Role** or by using a custom filter.
+**Step 2 –** View the list of users with different assigned roles and filter them by **Entity Type**, **Workflow State**, **Policy**, **Role**, or by using a custom filter.
 
 :::note Role Display
 Roles display their category hierarchy based on the selected category (e.g., Haunes > Administrator). The page shows both manual and automatic role assignments, including parameterized roles, with assignment metadata (workflow state, dates).
@@ -85,7 +85,7 @@ Use multi-select editing when you need to extend expiration dates for a group of
 :::
 
 
-**Note:** Some assignments may display a lock icon instead of a checkbox, indicating they cannot be selected due to permissions or workflow constraints.
+**Note:** Some assignments may display a lock icon instead of a checkbox, indicating they can't be selected due to permissions or workflow constraints.
 
 ## Remove Assignments
 
@@ -97,9 +97,9 @@ To remove multiple role assignments at once:
 4. A success notification will confirm the removal, and the assignment list will refresh automatically. If any removals fail, an error notification will provide details.
 
 :::caution Important Considerations
-- **Cannot be undone**: Removal operations cannot be reversed from this screen. If you remove assignments in error, they must be re-requested through the assignment workflow.
-- **Permission impact**: Ensure that removing a role does not unintentionally revoke permissions users require for their day-to-day responsibilities.
-- **Locked assignments**: Assignments with lock icons cannot be selected or removed due to workflow constraints.
+- **Can't be undone**: Removal operations can't be reversed from this screen. If you remove assignments in error, they must be re-requested through the assignment workflow.
+- **Permission impact**: Ensure that removing a role doesn't unintentionally revoke permissions users require for their day-to-day responsibilities.
+- **Locked assignments**: Assignments with lock icons can't be selected or removed due to workflow constraints.
 :::
 
 :::tip Best Practice
@@ -126,14 +126,14 @@ Use the Assign Roles workflow to assign one or more roles to one or more users s
 :::info
 When selecting users, the AutocompleteBinding of the DisplayEntityType is taken into consideration. The configuration should be modified to correspond to the correct binding.
 
-One should note that an evolution will be made in a future release to add several autocomplete bindings.
+A future release will add several autocomplete bindings.
 
 **Owner Filtering:** The list of available owners is filtered by the criteria applied on the main Assigned Roles page. Click **Remove filters** if you need to access users outside the current filter scope.
 :::
 
 **Selecting Roles:**
 
-1. Below the owner section, browse the **Roles** list organized by category hierarchy.
+1. In the **Roles** section, browse the list organized by category hierarchy.
 2. Use the **Role** search field to filter roles by name if needed.
 3. Click the radio button circle next to a role to select it.
 4. **To select multiple roles**: Click additional role radio buttons. Selected roles are indicated with blue filled circles.
@@ -155,7 +155,7 @@ Roles are displayed with their hierarchy path (e.g., "Career Management > Lariss
 1. Review all assignment details carefully.
 2. Click **Confirm** to create the role assignments.
 3. The system creates the assignments and displays a success notification.
-4. The newly assigned roles appear in the Assigned Roles list once the operation completes.
+4. The newly assigned roles appear in the Assigned Roles list after the operation completes.
 
 :::warning Risk Behavior
 If assigning a role would introduce a blocking risk violation (e.g., segregation of duties conflict), that specific role assignment will not be created. No notification is provided for blocked assignments.

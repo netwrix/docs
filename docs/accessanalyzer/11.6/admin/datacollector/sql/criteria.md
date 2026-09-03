@@ -6,10 +6,10 @@ sidebar_position: 40
 
 # SQL: Criteria
 
-The Criteria page is where criteria to be used for discovering sensitive data are configured. It is
+Use the Criteria page to configure the criteria for discovering sensitive data. It's
 a wizard page for the Sensitive Data Collection category.
 
-This page requires the Sensitive Data Discovery Add-On to be installed on the Enterprise Auditor
+This page requires you to install the Sensitive Data Discovery Add-On on the Enterprise Auditor
 Console to define the criteria and enable the Criteria Editor. See the
 [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
 topic for additional information.
@@ -27,8 +27,8 @@ The options on the Criteria page are:
 
     - Select All– Click **Select All** to enable all sensitive data criteria for scanning
     - Clear All – Click **Clear All** to remove all selections from the table
-    - Select the checkboxes next to the sensitive data criteria options to enable it to be scanned
-      for during job execution
+    - Select the checkboxes next to the sensitive data criteria options to enable the query to scan
+      for them during job execution
 
 The table contains the following types of criteria:
 
@@ -48,7 +48,7 @@ Criteria and User Criteria nodes are visible in the table.
 
 :::note
 Adding unnecessary criteria can adversely impact the scanner performance and can cause the
-scanning job to take a long time. If performance is adversely affected, revisit the sensitive data
-scanning criteria and remove criteria that is not required.
+scanning job to take a long time. If unnecessary criteria adversely affect performance, revisit the
+sensitive data scanning criteria and remove criteria that isn't required.
 
 :::

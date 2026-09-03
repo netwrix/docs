@@ -11,6 +11,6 @@ categories.
 
 ![SQL Data Collector Wizard Rowkey Page](/images/accessanalyzer/11.6/admin/datacollector/sql/rowkey.webp)
 
-Properties selected on the Results page are listed. Select the property or properties to act as the
-Rowkey. Properties can be selected individually, or the **Select All** and **Clear All** buttons can
-be used.
+The Rowkey page lists the properties selected on the Results page. Select the property or
+properties to act as the Rowkey. Select properties individually, or use the **Select All** and
+**Clear All** buttons.

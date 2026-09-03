@@ -6,22 +6,22 @@ sidebar_position: 10
 
 # Configure Unique Property Generation
 
-How to configure Identity Manager to generate unique identifiers, mails and logins for any user who does not have them already.
+How to configure Identity Manager to generate unique identifiers, mails, and logins for any user who doesn't have them already.
 
 ## Overview
 
 All users need to:
 
-- be uniquely identifiable through an identifier, for example in order to link all accounts to their
+- be uniquely identifiable through an identifier, for example to link all accounts to their
 owners;
-- have a reserved **unique email address**, even if they do not need a mailbox;
+- have a reserved **unique email address**, even if they don't need a mailbox;
 - have a **unique login** that can be used as a seed for all users' accounts.
 
 For each unique property, Identity Manager provides a set of generation rules. You are free to choose the most adequate method regarding your actual approach.
 
-An identifier/email/login suffix can be specified later according to users' contract types, when loading identities through an Excel template. See the [Load Identities to Identity Manager](../../../user-guide/set-up/initial-identities-loading/load-identities) topic for additional information. For example, contractors can get `-ext` added automatically to their email addresses. The unicity checks performed for identifiers/emails/logins do not consider prefixes nor suffixes.
+An identifier/email/login suffix can be specified later according to users' contract types, when loading identities through an Excel template. See the [Load Identities to Identity Manager](../../../user-guide/set-up/initial-identities-loading/load-identities) topic for additional information. For example, contractors can get `-ext` added automatically to their email addresses. The unicity checks performed for identifiers/emails/logins don't consider prefixes nor suffixes.
 
-For example, `john.doe@acme.com` and `john.doe-ext@acme.com` cannot exist simultaneously.
+For example, `john.doe@acme.com` and `john.doe-ext@acme.com` can't exist simultaneously.
 
 ## Participants and Artifacts
 
@@ -37,7 +37,7 @@ See the [Install the Development Environment](../../../user-guide/set-up/develop
 
 Configure the generation of unique properties by proceeding as follows:
 
-1. On the home page, click on **Settings** in the **Configuration** section.
+1. On the home page, click **Settings** in the **Configuration** section.
 
     ![Home Page - Configuration](/images/identitymanager/home_settings_v523.webp)
 
@@ -59,7 +59,7 @@ Netwrix Identity Manager (formerly Usercube) recommends using random numbers, as
 configured on the user's contract type.
 
 3. Follow Identity Manager's instructions to configure the generation of a **unique email address** for
-all users (who do not have one), based on one of the available options.
+all users (who don't have one), based on one of the available options.
 
     ![Unique Email Generation](/images/identitymanager/initialload_uniqueemail_v602.webp)
 
@@ -78,26 +78,26 @@ subsidiary;
 from contractors to employees, or change to another subsidiary.
 
 4. Follow Identity Manager's instructions to configure the generation of a **unique login** for new
-workers (who do not have one), based on one of the available options.
+workers (who don't have one), based on one of the available options.
 
     ![**unique login** Generation](/images/identitymanager/initialload_uniquelogin_v602.webp)
 
     - `Based on Email`: uses the local part of the email, i.e. before `@`.
     - `Based on Full Email`: uses the full email.
-    - `Based on **unique identifier**`: uses the **unique identifier** (defined on the same page) prepended
+    - `Based on **unique identifier**`: uses the **unique identifier** (defined earlier on this page) prepended
 with the default prefix when no specific prefix is specified on the user's contract type.
 
-5. Click on the Save icon at the top.
+5. Click the Save icon at the top.
 
     ![Save Icon](/images/identitymanager/iconsave_v602.svg)
 
-6. Click on the **Reload** button to apply the recent changes to the application.
+6. Click the **Reload** button to apply the recent changes to the application.
 
     ![Reload Button](/images/identitymanager/reload_v603.webp)
 
 ## Verify Property Generation
 
-In order to verify the process, add a fictitious employee through the workflows from the UI.
+To verify the process, add a fictitious employee through the workflows from the UI.
 
 ![Home - New Employee](/images/identitymanager/home_newemployee_v600.webp)
 

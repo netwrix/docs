@@ -10,7 +10,7 @@ After a review has been completed, it can be run again, which creates multiple i
 review. Each instance is identified by date timestamps indicating its start and end times.
 
 :::info
-Prior to running another review instance, ensure the most up to date information
+Before running another review instance, ensure the most up to date information
 is available to owners for review.
 :::
 
@@ -24,10 +24,10 @@ buttons, or you can modify as desired. Completing the wizard process restarts th
 [Create Review Wizard](/docs/accessinformationcenter/11.6/resourcereviews/create/create.md)
 topic for additional information.
 
-![Instance drop-down on Review Details page](/images/accessinformationcenter/11.6/resourcereviews/reviewinstances.webp)
+![Instance dropdown on Review Details page](/images/accessinformationcenter/11.6/resourcereviews/reviewinstances.webp)
 
 Previous instances for a review can be viewed on the Review Details page. Select the instance from
-the drop-down menu to show the details for it. See the
+the dropdown menu to show the details for it. See the
 [Review Details Page](/docs/accessinformationcenter/11.6/resourcereviews/interface/interface.md#review-details-page)
 topic for additional information.
 

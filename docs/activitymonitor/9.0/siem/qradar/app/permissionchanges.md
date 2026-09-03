@@ -24,5 +24,5 @@ The Permission Changes dashboard contains the following cards:
 
 The time interval is identified in the upper-right corner with the Start and End boxes. This is set
 by default to the “past day,” or 24 hours. To search within a different interval, either manually
-type the desired date and time or use the calendar buttons to set the desired date and time
+enter the date and time you want or use the calendar buttons to set the date and time you want
 interval. Then click Search to refresh the card data.

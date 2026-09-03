@@ -14,9 +14,9 @@ you the facility to sync or deprovision subscriptions from Google Workspace mess
 While creating or editing a Synchronize job (mailbox-enabled user) you can sync subscriptions from G
 Suite messaging provider.
 
-On the **Object, Fields and Mapping** page:
+On the **Object, Fields, and Mapping** page:
 
-Step 1 – Click **Add Messaging Provider** and select Google Workspace from the drop down list.
+Step 1 – Click **Add Messaging Provider** and select Google Workspace from the dropdown list.
 
 Step 2 – Enter service account name in the **Service Account** box.
 
@@ -45,10 +45,10 @@ by default in the **Selected Fields** box:
 
 Step 8 – Click **Next**.
 
-You have to transform all the above fields to work them properly with Google Workspace messaging
+You have to transform all the preceding fields to work them properly with Google Workspace messaging
 provide.
 
-Step 9 – On the **Field Map(s)** page, click the **Transform** button against:
+Step 9 – On the **Field Maps** page, click the **Transform** button against:
 
 1. the **familyName** field.
 
@@ -85,7 +85,7 @@ Step 9 – On the **Field Map(s)** page, click the **Transform** button against:
 
     1. On the **Transform** dialog box, select _Static - assign a static value_ from the **Set the
        destination field to** box.
-    2. Select check box(es) of the required subscription(s) from the list of subscriptions
+    2. Select checkboxes of the required subscriptions from the list of subscriptions
        displayed.
     3. Click **Transform**
 
@@ -103,15 +103,15 @@ Step 10 – Continue with the rest of the pages of the wizard to complete the jo
 To delete a subscription in an existing job, double click the required job. **Edit job** wizard
 opens.
 
-Step 1 – Click **Next** until you reach on the **Filed Map(s)** page of the **Edit job** wizard.
+Step 1 – Click **Next** until you reach on the **Field Maps** page of the **Edit job** wizard.
 
 Step 2 – Click the **Transform** button against the **LicenseAssignment** field.
 
 1. On the **Transform** dialog box, select _Static - assign a static value_ from the **Set the
    destination field to** box.
-2. Select check box(es) of the required subscription(s) you want to remove from the list of
+2. Select checkboxes of the required subscriptions you want to remove from the list of
    subscriptions displayed.
-3. Select the **Deprovisioning** check box.
+3. Select the **Deprovisioning** checkbox.
 4. Click **OK**.
 
 Step 3 – Click **Finish** or click **Next** if you want to modify a setting on any rest of the pages

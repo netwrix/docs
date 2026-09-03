@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Validate Setup
 
-Once the Activity Monitor agent is configured to monitor the Dell device, the automated
+After the Activity Monitor agent is configured to monitor the Dell device, the automated
 configuration must be validated to ensure events are being monitored.
 
 ## Validate CEE Registry Key Settings
@@ -18,13 +18,9 @@ topic for information on manually setting the registry key.
 :::
 
 
-After the Activity Monitor activity agent has been configured to monitor the Dell device, it will
-configure the Dell CEE automatically if it is installed on the same server as the agent. This needs
-to be set manually in the rare situations where it is necessary for the Dell CEE to be installed on
-a different server than the Windows proxy server(s) where the Activity Monitor activity agent is
-deployed.
+After you deploy and configure the Activity Monitor activity agent to monitor the Dell device, it automatically configures the Dell CEE if the CEE is on the same server. If the Dell CEE is on a different server, configure it manually in the rare situations where you must deploy the CEE to a separate Windows proxy server.
 
-If the monitoring agent is not registering events, validate that the EndPoint is accurately set.
+If the monitoring agent isn't registering events, validate that the EndPoint is accurately set.
 Open the Registry Editor (run regedit). For the synchronous real-time delivery mode (AUDIT), use the
 following steps.
 
@@ -90,7 +86,7 @@ Dell CEE Services are Running topic for additional information.
 ## Validate Dell CEE Services are Running
 
 After the Activity Monitor Activity Agent has been configured to monitor the Dell device, the Dell
-CEE services should be running. If the Activity Agent is not registering events and the EndPoint is
+CEE services should be running. If the Activity Agent isn't registering events and the EndPoint is
 set accurately, validate that the Dell CEE services are running. Open the Services (run
 `services.msc`).
 
@@ -120,19 +116,19 @@ and Disable monitoring.
 
 **HKEY_LOCAL_MACHINE\SOFTWARE\EMC\CEE\Configuration**
 
-**Step 10 –** Right-click on **Debug** and select Modify. The Edit DWORD Value window opens. In the
+**Step 10 –** Right-click **Debug** and select Modify. The Edit DWORD Value window opens. In the
 Value data field, enter the value of 3F. Click OK, and the Edit DWORD Value window closes.
 
 :::note
-If the Debug DWORD Value does not exist, it needs to be added.
+If the Debug DWORD Value doesn't exist, it needs to be added.
 :::
 
 
-**Step 11 –** Right-click on **Verbose** and select Modify. The Edit DWORD Value window opens. In
+**Step 11 –** Right-click **Verbose** and select Modify. The Edit DWORD Value window opens. In
 the Value data field, enter the value of 3F. Click OK, and the Edit DWORD Value window closes.
 
 :::note
-If the Verbose DWORD Value does not exist, it needs to be added.
+If the Verbose DWORD Value doesn't exist, it needs to be added.
 :::
 
 

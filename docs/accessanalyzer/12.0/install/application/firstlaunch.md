@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Access Analyzer Initial Configuration
 
-Once the Access Analyzer installation process is complete, and before performing actions within
-Access Analyzer, the initial settings for the Access Analyzer Console must be configured.
+After the Access Analyzer installation process is complete, and before performing actions within
+Access Analyzer, you must configure the initial settings for the Access Analyzer Console.
 
 ![Newrix Access Governance shortcut](/images/accessanalyzer/12.0/install/application/shortcut.webp)
 
@@ -36,7 +36,7 @@ StealthAUDIT root folder path to copy from**. See the
 **Step 4 –** Configure the options on the SQL Server Settings page.
 
 - Server name – Enter the database server host name (NetBIOS name, FQDN, or IP Address)
-- Instance name – If the SQL Server is configured to use an instance name, provide the instance name
+- Instance name – If you configured the SQL Server to use an instance name, provide the instance name
   in the text box. If not, leave this text box blank.
 
     - To change the instance port number, provide the instance name in the format
@@ -46,30 +46,30 @@ StealthAUDIT root folder path to copy from**. See the
 - Command timeout [number] minutes – Number of minutes before Access Analyzer halts any SQL queries
   running for that amount of time. This prevents SQL queries from running excessively long. The
   default is 1440 minutes.
-- Windows authentication – Leverages the account used to open the Access Analyzer Console. This
+- Windows authentication – Uses the account used to open the Access Analyzer Console. This
   option will use Windows NT Authentication to authenticate to the SQL Server. It also requires the
   Schedule Service Account to have proper permissions on the SQL database.
-- SQL Server authentication – Leverages an account created within the SQL Server.
+- SQL Server authentication – Uses an account created within the SQL Server.
 
-    - User name and password – If SQL Server authentication is selected, provide the **User name**
+    - User name and password – If you select SQL Server authentication, provide the **User name**
       and **Password** for the SQL account.
     - Specify a new password below – Specify a new password for the SQL server.
 
-- Use existing database – Confirm the SQL Server connection has been established by selecting the
-  radio button for **Use existing database** and clicking the drop-down arrow. If a listing of
-  databases appears, then the connection has been established. Select this option to use a
-  pre-existing database. Then select a database from the drop-down menu of available databases.
+- Use existing database – Confirm that Access Analyzer established the SQL Server connection by
+  selecting the radio button for **Use existing database** and clicking the dropdown arrow. If a
+  listing of databases appears, Access Analyzer established the connection. Select this option to
+  use a pre-existing database. Then select a database from the dropdown menu of available databases.
 - Create new database – Select this option to create a new database during the configuration of the
   storage profile. Enter a unique, descriptive name for the new database. If multiple databases
-  might exist for Access Analyzer, then the default name of Access Analyzer is not recommended.
+  might exist for Access Analyzer, avoid using the default name of Access Analyzer.
 
 See the [Securing the Access Analyzer Database](/docs/accessanalyzer/12.0/install/application/database/database.md#securing-the-access-analyzer-database)
 topic for additional information on creating a SQL Server database for Access Analyzer.
 
 **Step 5 –** Click **Next**.
 
-- If SQL Server authentication is used, the Options page is displayed next. Skip to Step 7.
-- If Windows Server authentication is used, the **Schedule Account** page is enabled for
+- If you use SQL Server authentication, the Options page displays next. Skip to Step 7.
+- If you use Windows Server authentication, the **Schedule Account** page becomes enabled for
   configuration. Continue to Step 6.
 
 ![Schedule Account Configuration page](/images/accessanalyzer/12.0/install/application/scheduleaccount.webp)
@@ -79,7 +79,7 @@ page. The account configured here must be an Active Directory account and must h
 Access Analyzer Console server’s local Task folders as well as sufficient rights to the Access
 Analyzer database.
 
-There are two options that can be selected:
+You can select one of two options:
 
 - Skip this step, I will configure a schedule service account later – Select this radio button to
   skip this step and configure the schedule service account later
@@ -93,22 +93,21 @@ There are two options that can be selected:
 
 ![Configuration wizard Options page](/images/accessanalyzer/12.0/install/application/options.webp)
 
-**Step 7 –** On the Options page, select whether to send usage statistics to Netwrix to help us
-improve our product. After the Usage Statistics option is set as desired, click **Next** to
+**Step 7 –** On the Options page, select whether to send usage statistics to Netwrix to help improve the product. After you set the Usage Statistics option as desired, click **Next** to
 continue.
 
-- If selected, usage statistics are collected and sent to Netwrix
+- If selected, Access Analyzer collects usage statistics and sends them to Netwrix
 
-    - Upon startup of the Access Analyzer console, the system checks if usage statistics have been
-      sent in the last 7 days. If they have not been, stored procedures run against the Access
+    - Upon startup of the Access Analyzer console, the system checks whether it sent usage
+      statistics in the last 7 days. If not, stored procedures run against the Access
       Analyzer database and gather data about job runs, access times, and environmental details like
-      resource counts, users counts, number of exceptions, and so on. This data is then sent back to
-      Netwrix to help us identify usage trends and common pain points, so that we can use this
-      information to improve the product.
-    - Only anonymous statistic-level data is included. No private company or personal data is
-      collected or sent to Netwrix.
+      resource counts, users counts, number of exceptions, and so on. Access Analyzer then sends this
+      data back to Netwrix to help identify usage trends and common issues, which Netwrix uses to
+      improve the product.
+    - Access Analyzer includes only anonymous statistic-level data, and doesn't collect or send any
+      private company or personal data to Netwrix.
 
-- If cleared, no usage statistics are collected or sent to Netwrix
+- If cleared, Access Analyzer doesn't collect or send usage statistics to Netwrix
 
 ![Progress page when upgrade process has completed](/images/accessanalyzer/12.0/install/application/completed_1.webp)
 
@@ -126,6 +125,6 @@ the log after exiting the wizard, it is located in the installation directory at
 ![Netwrix Acces Governance Settings Node](/images/accessanalyzer/12.0/install/application/settingsnode.webp)
 
 The Access Analyzer Console is now ready for custom configuration and use. There are a few
-additional steps to complete in order to begin collecting data, such as configuring a Connection
+additional steps to complete to begin collecting data, such as configuring a Connection
 Profile and a Schedule Service account as well as discovering hosts and setting up host lists. See
 the [Getting Started](/docs/accessanalyzer/12.0/gettingstarted.md) topic for additional information.

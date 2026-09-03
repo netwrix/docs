@@ -11,7 +11,7 @@ matches were found on the selected instance. This report includes a Details tabl
 
 ![Sensitive Content Summary report at the instance level](/images/accessinformationcenter/12.0/resourceaudit/mysql/instance/instancesensitivecontentsummary.webp)
 
-This report is comprised of the following columns:
+This report contains the following columns:
 
 - Server Name – MySQL host name or cluster name
 - Criteria Name – Type of potentially sensitive criteria matches found

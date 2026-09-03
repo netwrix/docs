@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # NIS: NIS Query
 
-The NIS Query page is where the NIS query regular expressions are configured and tested. It is a
-wizard page for the category of:
+Use the NIS Query page to configure and test the NIS query regular expressions. It is a wizard page
+for the category of:
 
 - Custom NIS Scan
 

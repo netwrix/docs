@@ -25,8 +25,6 @@ Remember, See the Database Maintenance Permission details in the
 See the [Stored Procedures](/docs/threatprevention/8.0/admin/configuration/databasemaintenance/storedprocedures.md) topic for additional information on stored
 procedures Threat Prevention uses on its SQL Server databases.
 
-Follow the steps to configure database maintenance.
-
 **Step 1 –** Click **Configuration** > **Database** > **Maintenance** on the menu. The Database
 Maintenance window is displayed.
 
@@ -36,7 +34,7 @@ This window is only available to Threat Prevention administrators.
 
 The database maintenance feature is only available if the SQL Server Agent service is running on the
 SQL Server host. A warning message displays instead of the Database Maintenance window if this
-service is not running.
+service isn't running.
 
 To enable the service, go to **Start** > **Administrative Tools** > **Services** interface and start
 the SQL Server Agent (MSSQLSERVER).
@@ -82,7 +80,7 @@ the [Archive Data](/docs/threatprevention/8.0/admin/configuration/databasemainte
 The SQL Server databases should be configured to use 'Simple Recovery Mode' in
 the [SQL Server Requirements](/docs/threatprevention/8.0/requirements/sqlserver/sqlserver.md). This configuration has a direct
 impact on the size of the transaction log during database maintenance delete tasks. If Simple
-Recovery Mode is not configured on the databases, the transaction log may get quite large during
+Recovery Mode isn't configured on the databases, the transaction log may get quite large during
 delete tasks.
 :::
 
@@ -104,7 +102,7 @@ the following information:
     Setting Lockdown, GPO Setting Changes, LSASS Guardian – Monitor, LSASS Guardian – Protect, and
     Password Enforcement Event Types
   - Authentications – Configure maintenance for all event data collected by the Authentication
-    Monitoring and Authentication Lockdown Event Types. This does not apply to Analytics policy
+    Monitoring and Authentication Lockdown Event Types. This doesn't apply to Analytics policy
     data
   - Exchange – Configure maintenance for all event data collected by the Exchange Changes and
     Exchange Lockdown Event Types
@@ -152,7 +150,7 @@ following information:
 
 - Enable – Checked box indicates database maintenance is enabled for the policy
 - Policy – Name of each policy you have created. Policies are listed in alphanumeric order, first
-  live policies (whether or not they are enabled) and then the deleted policies are listed
+  live policies (whether they are enabled) and then the deleted policies are listed
 - Operation – The operation set for the policy: Move (for archiving) or Delete
 - Retention Period – The age of data to be retained when the database maintenance job is executed
   for the policy

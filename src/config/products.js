@@ -167,12 +167,6 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/auditor/10.7.js',
       },
-      {
-        version: '10.6',
-        label: '10.6',
-        isLatest: false,
-        sidebarFile: './sidebars/auditor/10.6.js',
-      },
     ],
     defaultVersion: '10.9',
   },
@@ -437,13 +431,19 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '4.0',
+        label: '4.0',
+        isLatest: true,
+        sidebarFile: './sidebars/pingcastle/4.0.js',
+      },
+      {
         version: '3.5',
         label: '3.5',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/pingcastle/3.5.js',
       },
     ],
-    defaultVersion: '3.5',
+    defaultVersion: '4.0',
   },
   {
     id: 'platgovnetsuite',
@@ -613,9 +613,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '3.3',
+        label: '3.3',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.3.js',
+      },
+      {
         version: '3.2',
         label: '3.2',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.2.js',
       },
       {
@@ -631,7 +637,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/threatmanager/3.0.js',
       },
     ],
-    defaultVersion: '3.2',
+    defaultVersion: '3.3',
   },
   {
     id: 'threatprevention',
@@ -773,6 +779,47 @@ export function getDefaultVersion(product) {
 }
 
 /**
+ * Get the DOCS_PRODUCT env var (single-product build filter), or null if unset.
+ */
+export function getTargetProductId() {
+  return process.env.DOCS_PRODUCT || null;
+}
+
+/**
+ * Whether DOCS_PRODUCT_LATEST_ONLY=true — scopes a single-product build to its latest version only.
+ */
+export function isLatestOnly() {
+  return process.env.DOCS_PRODUCT_LATEST_ONLY === 'true';
+}
+
+/**
+ * Get the products to build. Filters to DOCS_PRODUCT when set.
+ * Throws on a typo'd DOCS_PRODUCT instead of silently building an empty site.
+ */
+export function getActiveProducts() {
+  const target = getTargetProductId();
+  if (!target) return PRODUCTS;
+  if (target === 'kb') return [];
+  const match = PRODUCTS.filter(p => p.id === target);
+  if (match.length === 0) {
+    throw new Error(
+      `DOCS_PRODUCT="${target}" does not match any product id. Valid ids: ${PRODUCTS.map(p => p.id).join(', ')}`
+    );
+  }
+  return match;
+}
+
+/**
+ * Get the versions to build for a product. Scopes to the latest version only when
+ * DOCS_PRODUCT_LATEST_ONLY=true and this is the DOCS_PRODUCT target product.
+ */
+export function getActiveVersions(product) {
+  if (!isLatestOnly() || product.id !== getTargetProductId()) return product.versions;
+  const latest = getDefaultVersion(product);
+  return product.versions.filter(v => v.version === latest.version);
+}
+
+/**
  * Build a map of product ID → latest URL-version string.
  * Used by the evergreen-links redirect config to generate version-less aliases.
  * Skips single-version 'current' products (their URLs are already version-less).
@@ -797,7 +844,7 @@ export function getLatestVersionUrlMap() {
 export function createProductMap() {
   const map = {};
   const injectSubDir = ['kb'];
-  PRODUCTS.forEach((product) => {
+  getActiveProducts().forEach((product) => {
     map[`/${product.path}`] = product.name;
     injectSubDir.forEach((subDir) => {
       const injectedPath = product.path.replace('docs/', `docs/${subDir}/`);
@@ -856,13 +903,11 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
   const plugins = [];
 
   // Filter products if DOCS_PRODUCT environment variable is set
-  const targetProduct = process.env.DOCS_PRODUCT;
-  const productsToProcess = targetProduct
-    ? PRODUCTS.filter(product => product.id === targetProduct)
-    : PRODUCTS;
+  const targetProduct = getTargetProductId();
+  const productsToProcess = getActiveProducts();
 
   productsToProcess.forEach((product) => {
-    product.versions.forEach((version) => {
+    getActiveVersions(product).forEach((version) => {
       const pluginId = generatePluginId(product.id, version.version);
       // Use explicit paths if specified (e.g., for multi-versioned products with 'current')
       // Otherwise use standard path generation
@@ -963,10 +1008,16 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
 /**
  * Generate product categories for HomepageFeatures component
  */
-export function generateProductCategories() {
+export function generateProductCategories(activeProductIds, activeVersionsByProduct) {
+  // activeProductIds/activeVersionsByProduct let callers bundled by rspack/webpack
+  // (e.g. HomepageFeatures) pass build-time values through customFields, since
+  // process.env isn't readable from that bundled code (see docusaurus.config.js).
+  const activeIds = new Set(activeProductIds ?? getActiveProducts().map(p => p.id));
+
   return PRODUCT_CATEGORIES.map((category) => {
     const categoryProducts = getProductsByCategory(category.title)
-      .filter(product => !product.hideFromNavbar); // Exclude products hidden from navbar/landing page
+      .filter(product => !product.hideFromNavbar) // Exclude products hidden from navbar/landing page
+      .filter(product => activeIds.has(product.id));
 
     const products = categoryProducts.map((product) => {
       const defaultVersion = getDefaultVersion(product);
@@ -982,7 +1033,14 @@ export function generateProductCategories() {
       };
 
       // Add versions if product has multiple visible versions
-      const visibleVersions = product.versions.filter(v => !v.hidden);
+      // (scoped to the active version set so a DOCS_PRODUCT_LATEST_ONLY build
+      // doesn't link to a version that wasn't built)
+      const activeVersionStrings = activeVersionsByProduct
+        ? activeVersionsByProduct[product.id]
+        : getActiveVersions(product).map(v => v.version);
+      const visibleVersions = product.versions
+        .filter(v => !v.hidden)
+        .filter(v => activeVersionStrings.includes(v.version));
       if (visibleVersions.length > 1) {
         productInfo.versions = visibleVersions.map((version) => ({
           version: version.label,
@@ -1000,7 +1058,7 @@ export function generateProductCategories() {
       icon: category.icon,
       products: products,
     };
-  });
+  }).filter(category => category.products.length > 0);
 }
 
 /**
@@ -1017,10 +1075,33 @@ export function generateNavbarDropdowns() {
     'Identity Threat Detection & Response (ITDR)': 'ITDR',
   };
 
+  // In DOCS_PRODUCT single-product mode, render one plain link to the target
+  // product instead of filtering its category dropdown — the target may end up
+  // in an emptied category, be flagged hideFromNavbar, or land in 'Other'.
+  const target = getTargetProductId();
+  if (target) {
+    const [product] = getActiveProducts();
+    if (!product) return [];
+    const defaultVersion = getDefaultVersion(product);
+    const link = defaultVersion.customRoutePath
+      ? `/${defaultVersion.customRoutePath}/`
+      : `/${generateRouteBasePath(product.path, defaultVersion.version)}`;
+    return [
+      {
+        label: product.name,
+        to: link,
+        position: 'left',
+      },
+    ];
+  }
+
+  const activeIds = new Set(getActiveProducts().map(p => p.id));
+
   return PRODUCT_CATEGORIES.filter((category) => category.title !== 'Other') // Exclude 'Other' category from navbar
     .map((category) => {
       const categoryProducts = getProductsByCategory(category.title)
-        .filter(product => !product.hideFromNavbar); // Exclude products hidden from navbar
+        .filter(product => !product.hideFromNavbar) // Exclude products hidden from navbar
+        .filter(product => activeIds.has(product.id));
 
       const items = categoryProducts.map((product) => {
         const defaultVersion = getDefaultVersion(product);

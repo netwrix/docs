@@ -11,7 +11,7 @@ changes made to the policy through a comparison of the new xml with the old xml.
 uses fc.exe to do a comparison but you can also employ a third party comparison tool for better
 results.
 
-Follow the steps to run a comparison.
+To run a comparison:
 
 **Step 1 –** Click **Alerts** in the left pane to launch the Alerts interface.
 

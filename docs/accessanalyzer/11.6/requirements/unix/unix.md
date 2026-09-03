@@ -19,7 +19,7 @@ topic for target environment requirements.
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment:
+These depend on the size of the target environment:
 
 | Environment | Large  | Medium – Small |
 | ----------- | ------ | -------------- |
@@ -31,7 +31,7 @@ These are dependent upon the size of the target environment:
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment.
+These depend on the size of the target environment.
 
 | Environment              | Large  | Medium – Small |
 | ------------------------ | ------ | -------------- |

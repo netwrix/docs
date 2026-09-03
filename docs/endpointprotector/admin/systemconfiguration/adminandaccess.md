@@ -6,14 +6,14 @@ sidebar_position: 10
 
 # Administration and Access Control
 
-This section allows you to manage system administrators, their roles, and access permissions. It
+Use this section to manage system administrators, their roles, and access permissions. It
 includes features for setting up account details, applying security measures such as Two-Factor
 Authentication (2FA), and overseeing administrator groups and system departments to ensure effective
 access control and system security.
 
 ## System Administrators
 
-From this section you can view, create, manage and delete administrators.
+From this section you can view, create, manage, and delete administrators.
 
 ![System Administrators](clientuninstall.webp)
 
@@ -32,7 +32,7 @@ provide the following information:
   attempts before a new login attempt can be made
 - Enforce login IP restrictions – restrict login attempts from speciﬁc IP addresses
 - Require password change at next login – request the administrator to change password at ﬁrst
-  login; once the password is changed, this setting is automatically disabled.
+  login; after the password is changed, this setting is automatically disabled.
 
 :::warning
 The Require password change at next login setting is ignored in the following
@@ -42,9 +42,9 @@ situations:
 
 1. When the Enforce all administrator password security at next login setting is also enabled from
    System Conﬁguration, System Security, then Require password change at next login is ignored and
-   disabled once the password is changed.
+   disabled after the password is changed.
 2. For Active Directory imported users
-3. For SSO users (Azure and OKTA) the setting is hidden
+3. For SSO users (Azure and OKTA), the system hides the setting
 
 - Failed Login Alert – receive alerts for any failed login
 - Schedule Exports Alert – receive alerts on any scheduled exports
@@ -67,15 +67,25 @@ The Super Administrator has complete control over the entire system. By enabling
 super administrators settings in the Administration and Access Control section, you can grant Super
 Administrator privilege to all Azure Single Sign On imported users.
 
-Super Administrators have access to the General Dashboard, can run
-Effective Rights reports, can manage Device Control, can manage Content Aware Protection including
-Deep Packet Inspection, can manage eDiscovery, can manage Denylists, Allowlists, and URL Categories,
-can manage Enforced Encryption, can manage Oﬄine Temporary Password, can view Reporting and
-Statistics, manage and view Administrative Actions, manage and view Alerts, manage and view
-Directory Services, manage and view Appliance Conﬁguration and SIEM Integration, manage and view
-System Maintenance, manage and view Systems Conﬁguration, download and view Client Software
-(including Upgrade), manage system parameters , and download and view Client Software (including
-Upgrade).
+Super Administrators have access to:
+
+- General Dashboard
+- Effective Rights reports
+- Device Control (manage)
+- Content Aware Protection, including Deep Packet Inspection (manage)
+- eDiscovery (manage)
+- Denylists, Allowlists, and URL Categories (manage)
+- Enforced Encryption (manage)
+- Oﬄine Temporary Password (manage)
+- Reporting and Statistics (view)
+- Administrative Actions (manage and view)
+- Alerts (manage and view)
+- Directory Services (manage and view)
+- Appliance Conﬁguration and SIEM Integration (manage and view)
+- System Maintenance (manage and view)
+- Systems Conﬁguration (manage and view)
+- Client Software, including Upgrade (download and view)
+- System parameters (manage)
 
 The Normal Administrator is a system user with normal privileges but some limitations. They can only
 manage entities belonging to the system departments for which they are responsible for. Normal
@@ -84,15 +94,24 @@ restrict access. They can, for example, be assigned to a Helpdesk group with spe
 Oﬄine Temporary Password and Enforced Encryption, or their permissions restricted to speciﬁc modules
 such as Content Aware and Device Control.
 
-Despite these restrictions, Normal Administrators have access to a variety of system management
-tools, such as Manage Device Control, Manage Content Aware Protection (including Deep Packet
-Inspection), Manage eDiscovery, Manage Denylists, Manage Allowlists, Manage Oﬄine Temporary
-Password, Manage Enforced Encryption, View Reporting and Statistics, View and Manage Alerts, and
-Download and View Client Software (including Upgrade). They can also control system parameters.
+Despite these restrictions, Normal Administrators have access to:
 
-By assigning Normal Administrators speciﬁc roles and groups, an organization can ensure that
-sensitive data and tools are only accessible to those who need them, while still providing their
-team members with the tools they need to eﬃciently manage the system.
+- Device Control (manage)
+- Content Aware Protection, including Deep Packet Inspection (manage)
+- eDiscovery (manage)
+- Denylists (manage)
+- Allowlists (manage)
+- Oﬄine Temporary Password (manage)
+- Enforced Encryption (manage)
+- Reporting and Statistics (view)
+- Alerts (view and manage)
+- Client Software, including Upgrade (download and view)
+
+They can also control system parameters.
+
+By assigning Normal Administrators specific roles and groups, an organization ensures that only those
+who need them can access sensitive data and tools, while still providing team members with the tools
+they need to manage the system efficiently.
 
 ## Administrators Groups
 
@@ -123,7 +142,7 @@ To create a new Administrators Group, click Create and then provide the followin
 - Roles – select one or more roles from the list
 
 :::warning
-The Read Only role cannot be combined with any other roles!
+The Read Only role can't be combined with any other roles.
 :::
 
 
@@ -155,7 +174,7 @@ permissions. The Super Administrator role is the most powerful and has access to
 whilst other roles have more restricted access based on their job tasks.
 
 :::note
-Each of the aforementioned roles can be assigned to a department. When in read-only mode,
+Each of the roles can be assigned to a department. When in read-only mode,
 users are only given viewing options. This guarantees that they can obtain essential information but
 are unable to alter the system.
 :::
@@ -165,7 +184,7 @@ are unable to alter the system.
 
 The Two Factor Authentication (2FA) allows the login process to include an extra step requesting a
 temporary code generated via the Google Authenticator app. With the Two Factor Authentication on,
-once the user creation or edit is saved, the administrator will be redirected to a veriﬁcation
+after the user creation or edit is saved, the administrator will be redirected to a veriﬁcation
 screen.
 
 ![Two Factor Authentication](twofactorauthentication.webp)
@@ -178,10 +197,10 @@ code that will be used for the second authentication factor.
 
 ## System Departments
 
-This section allows you to create and manage System Departments.
+Use this section to create and manage System Departments.
 
-Using System Departments is optional. Endpoint Protector works perfectly well with just the Default
-Department (defdep). Moreover, most scenarios are best covered by simply using Devices, Computers,
+Using System Departments is optional. Endpoint Protector works well with only the Default
+Department (defdep). Moreover, most scenarios are covered by using Devices, Computers,
 Users, and Groups (the entities also available in AD).
 
 The functionality becomes useful mainly in large installations, with a high number of Administrators
@@ -189,14 +208,14 @@ and, where strict regulatory compliance rules are in place. Under these circumst
 can be created, allowing each Normal Administrators to only manage their own entities.
 
 :::warning
-This functionality should not be confused with Groups of computers and users, nor with
+This functionality shouldn't be confused with Groups of computers and users, nor with
 administrators’ roles.
 :::
 
 
 ![System Departments](systemdepartments.webp)
 
-To create a new department click Create and then provide a name, description and unique code.
+To create a new department click Create and then provide a name, description, and unique code.
 
 :::note
 If you provide a wrong department code or none at all, the department code is considered
@@ -204,11 +223,11 @@ invalid and that computer will be assigned to the default department (defdep).
 :::
 
 
-![Create a new department click Create and then provide a name, description and unique code](newdepartment.webp)
+![Create a new department click Create and then provide a name, description, and unique code](newdepartment.webp)
 
 In terms of terminology, a similarity between Endpoint Protector and Active Directory (or any other
 Director Service software) would make the Department equivalent to an Organization Unit. Of course,
-the Organization Unit is not identical to the Department, and again Endpoint Protector leaves the
+the Organization Unit isn't identical to the Department, and again Endpoint Protector leaves the
 power to the actual Super Administrator to virtually link one or more Organization Units to an
 Endpoint Protector Department.
 
@@ -225,5 +244,5 @@ entities regardless of their departments. They will also be able to create depar
 Normal Administrators or Administrators with other roles. Super Administrators will also be
 responsible for assigning administrators to manage departments.
 
-A regular administrator can only manage the departments it was assigned to. It cannot see entities
+A regular administrator can only manage the departments it was assigned to. It can't see entities
 relating to other departments.

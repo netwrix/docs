@@ -67,7 +67,7 @@ classification attributes to the classified documents:
    this checkbox is unchecked.
 3. Select the taxonomy you want and click **Edit**.
 4. In the taxonomy properties, select the **Enabled** checkbox and specify the settings described in
-   the table above.
+   the preceding table.
 
 ![file_source_write_cfg_thumb_0_0](/images/dataclassification/5.7/admin/sources/filesystem/file_source_write_cfg_thumb_0_0.webp)
 
@@ -76,7 +76,7 @@ classification attributes to the classified documents:
 **File inclusions** tab contains the list of file types that will be included in the indexing
 process. Any file with a file extension not specified in this list will be ignored.
 
-You can delete, modify, or add the necessary inclusions as needed.
+You can delete, modify, or add inclusions.
 
 To specify inclusions, do the following:
 
@@ -131,7 +131,7 @@ Exclusions are case-insensitive.
     | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | Comparison    | Compare a value in the document metadata field with the value set by condition. With this criteria selected, you will then need to specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
     | Has any value | Exclude the document if its metadata field has any value. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
-    | Has no values | Exclude the document if metadata field value isn't specified. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
+    | Has no values | Exclude the document if metadata field value is unspecified. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
 
 5. When finished, click **Add**.
 6. Finally, click **Save** and close the window.

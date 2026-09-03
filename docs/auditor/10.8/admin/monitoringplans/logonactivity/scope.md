@@ -9,7 +9,7 @@ sidebar_position: 10
 You can fine-tune Netwrix Auditor by specifying data that you want to exclude from the Logon
 Activity monitoring scope.
 
-Follow the steps to exclude data from the Logon Activity monitoring scope:
+To exclude data from the Logon Activity monitoring scope:
 
 **Step 1 –** Navigate to the _%working folder%\\NLA\Settings_ folder and locate your monitoring plan
 GUID.

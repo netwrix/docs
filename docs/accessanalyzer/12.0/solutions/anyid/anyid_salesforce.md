@@ -7,7 +7,7 @@ sidebar_position: 40
 # AnyID_Salesforce Job
 
 The AnyID_Salesforce job collects Salesforce contact details including phone, address, email, and
-date of birth. This job requires API access to Salesforce in order to collect this information. The
+date of birth. This job requires API access to Salesforce to collect this information. The
 list of collected attributes can be adjusted as necessary.
 
 ![AnyID_Salesforce Job in the Jobs Tree](/images/accessanalyzer/12.0/solutions/anyid/salesforcejoblocation.webp)
@@ -87,7 +87,7 @@ The query is:
 
 ### Configure the AnyID_Salesforce Query
 
-Follow the steps to configure the AnyID_Salesforce query.
+To configure the AnyID_Salesforce query, complete the following steps.
 
 **Step 1 –** Navigate to the **AnyID Connectors** > **AnyID_Salesforce** > **Configure** node and
 select **Queries**.
@@ -105,15 +105,16 @@ the page to expand the Parameters window. See the
 [PowerShell: Edit Query](/docs/accessanalyzer/12.0/admin/datacollector/powershell/editquery.md) topic for additional
 information. Configure the following attributes as needed:
 
-- $SAHOSTNAME – Created during execution. This parameter cannot be modified.
-- $JobCredential – Created during execution. This parameter cannot be modified.
-- $JobCredentials – Created during execution. This parameter cannot be modified.
+- $SAHOSTNAME – Created during execution. This parameter can't be modified.
+- $JobCredential – Created during execution. This parameter can't be modified.
+- $JobCredentials – Created during execution. This parameter can't be modified.
 - $Attributes – The list of attributes that will be scanned for during sensitive data scanning
 
-    - An attribute in the Attributes list will not be considered a match (in reporting and AIC)
-      unless an attribute in the RequiredAttributes list is also found in the same file
+    - An attribute in the Attributes list will not be considered a match (in reporting and the
+      Access Information Center (AIC)) unless an attribute in the RequiredAttributes list is also
+      found in the same file
 
-- $RequiredAttributes – The list of attributes that need to be found in the document in order to
+- $RequiredAttributes – The list of attributes that need to be found in the document to
   trigger a match
 
     - An attribute in the Attributes list will not be considered a match (in reporting and AIC)
@@ -135,7 +136,7 @@ Navigate to the **Jobs** > **AnyID Connectors** > **AnyID_Salesforce** > **Conf
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

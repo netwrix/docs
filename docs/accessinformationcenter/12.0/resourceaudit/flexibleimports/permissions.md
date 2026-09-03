@@ -10,7 +10,7 @@ The Permissions report for imported data shows the permissions for trustees on t
 
 ![Permissions report for imported data](/images/accessinformationcenter/12.0/resourceaudit/flexibleimports/permissions.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Trustee Type – Type of the trustee (for example, Domain User or Domain Group)
 - Trustee Name – Owner of the trustee account
@@ -27,7 +27,7 @@ This report is comprised of the following columns:
 - Stale – True or False if trustee account is stale (according to the length of inactive time used
   by the Access Analyzer data collection and analysis configuration to identify stale accounts)
 - Source – Direct or Inherited permission type
-- Type – Type of resource where the permission is set
+- Type – Resource type where the permission applies
 
 The following rights are a normalized representation of the permissions granted to the trustee:
 

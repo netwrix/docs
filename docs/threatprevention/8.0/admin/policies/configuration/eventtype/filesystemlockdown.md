@@ -28,7 +28,7 @@ blocked.
 :::
 
 
-It is necessary to select paths/collections to be locked down on the File System filter. The policy
+You must select paths/collections to be locked down on the File System filter. The policy
 will lockdown the path/collection from the SI Agent used to select it for the filter which is
 indicated in the parenthesis after the path/collection. The path/collection can be locked down by
 other SI Agents by selecting them on the **Additional Agents** filter.
@@ -113,10 +113,10 @@ the Paths and Path Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -146,7 +146,7 @@ Agents/Domains list on the right displays Agents and domains included in the pol
   - The double arrows will move all items to the other list.
 
 :::note
-There is no impact if a selected path does not exist on the server where an Agent resides.
+There is no impact if a selected path doesn't exist on the server where an Agent resides.
 :::
 
 
@@ -178,10 +178,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::

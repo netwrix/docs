@@ -10,22 +10,20 @@ To collect logs and monitor Microsoft 365 Copilot activity, register the Netwrix
 with Microsoft Entra ID (formerly Azure AD).
 
 :::note
-A user account with the Global Administrator role is required to register an app with
-Microsoft Entra ID.
+Register the app from a user account with the Global Administrator role in Microsoft Entra ID.
 :::
 
 
 **Configuration Settings from the Registered Application**
 
-The following settings are needed from your tenant after you register the application:
+Gather the following settings from your tenant after you register the application:
 
 - Tenant ID – This is the Tenant ID for Microsoft Entra ID
 - Client ID – This is the Application (client) ID for the registered application
 - Client Secret – This is the Client Secret Value generated when a new secret is created
 
     :::warning
-    It isn't possible to retrieve the value after saving the new key. It must be
-    copied first.
+    You can't retrieve the value after saving the new key. Copy it first.
     :::
 
 
@@ -85,7 +83,7 @@ window.
 
 ## Identify the Client ID and Tenant ID
 
-The Client ID and Tenant ID are available on the registered application's Overview page.
+Find the Client ID and Tenant ID on the registered application's Overview page.
 
 **Step 1 –** Select the registered application in **Identity** > **Applications** > **App
 registrations** > **All applications**.
@@ -96,8 +94,7 @@ them to a text file.
 ## Generate the Client Secret Key
 
 :::warning
-It isn't possible to retrieve the value after saving the new key. It must be copied
-first.
+You can't retrieve the value after saving the new key. Copy it first.
 :::
 
 

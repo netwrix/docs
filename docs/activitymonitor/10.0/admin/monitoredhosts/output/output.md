@@ -22,7 +22,7 @@ The host event outputs are:
 ## Add Access Analyzer 26 Output
 
 :::note
-Only File System, SharePoint Online, and Microsoft 365 Copilot events are supported by the Access Analyzer 26 output.
+The Access Analyzer 26 output supports only File System, SharePoint Online, and Microsoft 365 Copilot events.
 :::
 
 ### Generate an Enrollment Token in Access Analyzer 26

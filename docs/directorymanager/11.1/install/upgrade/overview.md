@@ -49,7 +49,7 @@ Step 4 – To upgrade schedules and Synchronize jobs on a different box, you mus
 Directory Manager 11 server before running the Upgrade wizard. Contact Netwrix Customer Support for
 more info.
 
-If you forget the passphrase you used to encrypt GroupID data, upgrade is not possible.
+If you forget the passphrase you used to encrypt GroupID data, upgrade isn't possible.
 
 ## Upgrade Logs
 

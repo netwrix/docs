@@ -14,7 +14,7 @@ Follow the steps assign group membership through Computer Management.
 
 **Step 1 –** Open Computer Management (`compmgmt.msc`).
 
-**Step 2 –** Right-click on the Computer Management (local) node and select Connect to another
+**Step 2 –** Right-click the Computer Management (local) node and select Connect to another
 computer.
 
 **Step 3 –** Enter the name of the Dell device in the textbox and click OK.

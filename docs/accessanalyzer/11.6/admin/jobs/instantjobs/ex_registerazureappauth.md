@@ -22,7 +22,7 @@ authentication and provision appropriate permissions for Exchange Online scans. 
 - Azure AD PowerShell module installed on targeted hosts
 
     :::note
-    If the module is not already installed, the job will attempt to install it.
+    If the module isn't already installed, the job will attempt to install it.
     :::
 
 
@@ -49,10 +49,10 @@ authentication and provision appropriate permissions for Exchange Online scans. 
 
 ## Using the EX_RegisterAzureAppAuth Job
 
-Follow the steps to configure and run the EX_RegisterAzureAppAuth Job.
+To configure and run the EX_RegisterAzureAppAuth Job:
 
 **Step 1 –** In Enterprise Auditor navigate to the Exchange Job Group (or any other Job Group you
-wish to place the EX_RegistureAzureApp job into).
+want to place the EX_RegistureAzureApp job into).
 
 **Step 2 –** Click **Add Instant Job** to open the Instant Job Wizard.
 
@@ -79,7 +79,7 @@ to provide the full environment name. For a standard tenant, leave this option b
 
 **Step 7 –** On the **Configure** > **Hosts** node, select the target hosts. The targeted hosts
 should be the Microsoft Entra tenant name (for example, `myorg.onmicrosoft.com`). Click **Save**.
-The job is now ready to be run.
+The job is now ready to run.
 
 **Step 8 –** Run the EX_RegisterAzureAppAuth Job.
 
@@ -87,16 +87,16 @@ The job is now ready to be run.
 Log-in as a Global Administrator, and grant administrator consent to the Application's configured
 API Permissions.
 
-- If this login attempt fails or you close the browser, you will need to login to Microsoft Entra ID
+- If this login attempt fails or you close the browser, you will need to log in to Microsoft Entra ID
   as a Global Administrator and navigate to the Application's API Permissions to grant Admin Consent
-  before the Application can be used for Exchange scans in Enterprise Auditor.
+  before you can use the Application for Exchange scans in Enterprise Auditor.
 
-The Microsoft Entra ID application is now provisioned with the necessary permissions for Exchange
-Online scans. There will be a new Connection Profile for this Application. Restart the Enterprise
+The job has now provisioned the Microsoft Entra ID application with the necessary permissions for
+Exchange Online scans. There will be a new Connection Profile for this Application. Restart the Enterprise
 Auditor Console and enter a password to use this Connection Profile.
 
 :::tip
-Remember, the required rights and roles for Exchange Online still need to be configured. See the
+Remember, you still need to configure the required rights and roles for Exchange Online. See the
 [Target Exchange Online Requirements, Permissions, and Ports](/docs/accessanalyzer/11.6/requirements/exchange/exchangeonline/exchangeonline.md)
 topic for additional information.
 :::

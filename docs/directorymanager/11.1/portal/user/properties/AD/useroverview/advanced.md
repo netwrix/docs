@@ -50,9 +50,9 @@ use the [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/fin
 
 **Deliver messages to both forwarding address and mailbox**
 
-Select the check box to ensure that any email sent to the mailbox is also forwarded to the
+Select the checkbox to ensure that any email sent to the mailbox is also forwarded to the
 object/email specified in the Recipient box.
 
-- When no recipient is set and this check box is cleared, emails are only sent to the mailbox.
-- However, when an email/object is specified in the Recipient box and this check box is cleared,
+- When no recipient is set and this checkbox is cleared, emails are only sent to the mailbox.
+- However, when an email/object is specified in the Recipient box and this checkbox is cleared,
   emails will not be sent to the mailbox but only to the recipient.

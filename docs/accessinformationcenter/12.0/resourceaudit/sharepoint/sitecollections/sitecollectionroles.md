@@ -18,7 +18,7 @@ This report is only available at the site collection level.
 
 ![Site Collections Roles report](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/sitecollections/sitecollectionroles.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Role – Role name for the SharePoint permission level
 - Description – Description of the SharePoint role, this is an open text entry within SharePoint and
@@ -26,8 +26,7 @@ This report is comprised of the following columns:
 - Permission Mask – Representation of the granular rights mapped to the permission level in
   SharePoint
 
-The following rights are a normalized representation of the SharePoint permission levels (SharePoint
-Roles) granted to the trustee:
+The following rights normalize the SharePoint permission levels (SharePoint Roles) granted to the trustee:
 
 - Read – Right to view/read SharePoint resources
 - Write – Right to add or modify SharePoint resources

@@ -6,7 +6,7 @@ sidebar_position: 130
 
 # Similar Groups tab
 
-Directory Manager enables you to compare groups for similarity on the basis of:
+Use Directory Manager to compare groups for similarity on the basis of:
 
 - Group type
 - Membership

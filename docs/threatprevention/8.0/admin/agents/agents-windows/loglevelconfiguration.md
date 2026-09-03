@@ -7,7 +7,7 @@ sidebar_position: 40
 # Log Level Configuration Window
 
 The Log Level Configuration window displays the current log levels for the Agents, Enterprise
-Manager, and Administration Console. It also enables you to set new log levels.
+Manager, and Administration Console. You can also set new log levels.
 
 :::note
 Since Threat Prevention supports multiple instances of the Administration Console, each
@@ -17,7 +17,7 @@ made from any console instance apply.
 :::
 
 
-Follow the steps to set log levels.
+To set log levels:
 
 **Step 1 –** Click **Agents** in the left pane to launch the Agents interface. Then click **Update
 Logging Levels** on the top bar to launch the Log Level Configuration window.
@@ -64,7 +64,7 @@ Logging Levels** on the top bar to launch the Log Level Configuration window.
 
 ## Access Agent Log Files
 
-Follow the steps to access the Agent log files.
+To access the Agent log files:
 
 ![Get Agent Log icon](/images/threatprevention/8.0/admin/agents/window/getagentlog.webp)
 

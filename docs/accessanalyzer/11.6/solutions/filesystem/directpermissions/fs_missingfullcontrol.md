@@ -7,7 +7,7 @@ sidebar_position: 40
 # FS_MissingFullControl Job
 
 The FS_MissingFullControl job is designed to report on resources from targeted file servers that
-have no Full Control rights granted to it.
+have no Full Control rights granted to them.
 
 ## Analysis Tasks for the FS_MissingFullControl Job
 
@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **FileSystem** > **2.Direct Permiss
 **FS_MissingFullControl** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -34,4 +34,4 @@ produces the following pre-configured report:
 
 | Report                      | Description                                                                                                                                              | Default Tags | Report Elements                                                                                                                                                                                                                                   |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Missing Full Control Rights | This report identifies folders within the environment which currently do not have any trustee with Full Control rights, adding to administrative burden. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays shares with missing full control rights</li><li>Table – Provides details on folder</li><li>Table – Provides details on shares with missing full control rights</li></ul> |
+| Missing Full Control Rights | This report identifies folders within the environment which don't have any trustee with Full Control rights, adding to administrative burden. | None | This report is comprised of three elements: <ul><li>Bar Chart – Displays shares with missing full control rights</li><li>Table – Provides details on folder</li><li>Table – Provides details on shares with missing full control rights</li></ul> |

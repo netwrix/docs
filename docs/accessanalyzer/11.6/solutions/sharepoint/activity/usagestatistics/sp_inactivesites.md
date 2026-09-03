@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # SP_InactiveSites Job
 
-This job highlights your environments least active Sites or Site Collections.
+This job highlights your environment's least active Sites or Site Collections.
 
 ## Analysis Tasks for the SP_InactiveSites Job
 
@@ -14,7 +14,7 @@ Navigate to the **Jobs** > **SharePoint** > **7.Activity** > **Usage Statistics*
 **SP_InactiveSites** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # PasswordSecurity: Results
 
-The Results page is where Active Directory properties to be gathered are selected.
+Select the Active Directory properties to gather on the Results page.
 
 ![Password Security Data Collection Wizard Results page](/images/accessanalyzer/12.0/admin/datacollector/passwordsecurity/results.webp)
 
-Properties can be selected individually or by using the **Select All** or **Clear All** buttons. All
-selected properties are gathered.
+Select properties individually or use the **Select All** or **Clear All** buttons. The data
+collector gathers all selected properties.

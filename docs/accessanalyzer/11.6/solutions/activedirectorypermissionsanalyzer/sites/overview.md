@@ -14,7 +14,7 @@ targeted domains.
 The jobs in the 9.Sites Job Group are:
 
 - [AD_DCShadowPermissions Job](/docs/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/sites/ad_dcshadowpermissions.md)
-  – Highlights all Active Directory users that are capable of potentially performing a DCShadow
+  – Highlights all Active Directory users that can perform a DCShadow
   attack within the targeted domains
 - [AD_SitePermissions Job](/docs/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/sites/ad_sitepermissions.md)
   – Reports on all Active Directory permissions applied to site objects within the targeted domains

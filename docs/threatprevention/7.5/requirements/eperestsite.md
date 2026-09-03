@@ -31,4 +31,4 @@ The installer creates the “EpeUsers” database when you create the first “i
 :::
 
 
-Uninstalling the EPE Rest Site does not delete the database.
+Uninstalling the EPE Rest Site doesn't delete the database.

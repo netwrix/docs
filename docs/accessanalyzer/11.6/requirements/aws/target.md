@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Target Amazon Web Service Requirements, Permissions, and Ports
 
-The Enterprise Auditor for AWS Solution provides the ability to audit Amazon Web Services (AWS) to
+The Enterprise Auditor for AWS Solution lets you audit Amazon Web Services (AWS) to
 collect IAM users, groups, roles, and policies, as well as S3 permissions, content, and sensitive
 data from target AWS accounts. It scans:
 
@@ -24,11 +24,11 @@ This solution employs the following data collector to scan the target environmen
 The permissions required to scan an AWS account are based on the type of information being
 collected:
 
-- To collect details about the AWS Organization, the following permission is required:
+- To collect details about the AWS Organization, you need the following permission:
 
     - organizations:DescribeOrganization
 
-- To collect details regarding IAM, the following permissions are required:
+- To collect details regarding IAM, you need the following permissions:
 
     - iam:GenerateCredentialReport
     - iam:GenerateServiceLastAccessedDetails
@@ -37,7 +37,7 @@ collected:
     - iam:Simulate\*
     - sts:GetAccessKeyInfo
 
-- To collect details related to S3 buckets and objects, the following permissions are required:
+- To collect details related to S3 buckets and objects, you need the following permissions:
 
     - s3:Describe\*
     - s3:Get\*

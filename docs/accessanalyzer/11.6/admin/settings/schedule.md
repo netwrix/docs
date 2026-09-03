@@ -11,24 +11,24 @@ Account is used to run scheduled tasks on the Enterprise Auditor Console server.
 
 ![Schedule node](/images/accessanalyzer/11.6/admin/settings/schedule.webp)
 
-Jobs can be executed manually as desired or scheduled to execute at designated times. For example,
+You can execute jobs manually as desired or schedule them to execute at designated times. For example,
 you could schedule a job to run during hours when the office is closed and network traffic is low.
 Windows uses the Schedule Service Account to access the task folders when launching scheduled tasks.
-Schedule Service Accounts are configured at the global level, and this account can be used to
+Schedule Service Accounts are configured at the global level, and you can use this account to
 schedule jobs in the Schedule Wizard. See the
 [Schedules](/docs/accessanalyzer/11.6/admin/schedule/overview.md)
 topic for additional information.
 
 :::warning
-On Windows 2016 servers, the Schedule Service Account cannot be signed into an active
-session when the time comes for a scheduled task to start. Windows blocks the starting or running of
+On Windows 2016 servers, the Schedule Service Account can't be signed into an active
+session when a scheduled task is set to start. Windows blocks the starting or running of
 scheduled tasks using an account that is logged into the server.
 :::
 
 
 **Password Storage Options**
 
-The password for the credential provided can be stored in the Enterprise Auditor application or the
+You can store the password for the credential provided in the Enterprise Auditor application or the
 Enterprise Auditor Vault.
 
 Choosing between the Enterprise Auditor application and Enterprise Auditor Vault is a global setting
@@ -69,9 +69,9 @@ least the following to meet Least Privileged specifications:
   topic for additional information.
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Schedule view. These
-buttons become enabled when modifications are made to the Schedule global settings. Whenever changes
-are made at the global level, click **Save** and then **OK** to confirm the changes. Otherwise,
-click **Cancel** if no changes were intended.
+buttons become enabled when you make modifications to the Schedule global settings. Whenever you
+make changes at the global level, click **Save** and then **OK** to confirm the changes. Otherwise,
+click **Cancel** if you don't want to save the changes.
 
 The Enterprise Auditor vault provides enhanced security through enhanced encryption to various
 credentials stored by the Enterprise Auditor application. See the
@@ -80,7 +80,7 @@ topic for additional information.
 
 ## Schedule Service Account Types
 
-There are two types of accounts that can be used to configure the Schedule Service Account.
+Use one of two types of accounts to configure the Schedule Service Account.
 
 ![serviceaccounttypes](/images/accessanalyzer/11.6/admin/settings/serviceaccounttypes.webp)
 
@@ -91,7 +91,7 @@ Use one of the following options for the Schedule Service Account:
 
     - Credentials must have privileges sufficient for scheduling tasks on the Enterprise Auditor
       Console server. If not, scheduled tasks fail to start.
-    - This option cannot be edited or deleted
+    - You can't edit or delete this option
 
 - User-supplied credentials – Provide credentials for a specific account with sufficient rights to
   schedule tasks on the Enterprise Auditor Console server
@@ -100,19 +100,19 @@ Use one of the following options for the Schedule Service Account:
     - A local Windows account is a specific account and not the default local system account
 
 :::tip
-Remember, the Schedule Service Account cannot be signed into an active session on the Enterprise
-Auditor Console server when the time comes for a scheduled task to start when it has a Windows 2016
+Remember, the Schedule Service Account can't be signed into an active session on the Enterprise
+Auditor Console server when a scheduled task is set to start, if the server has a Windows 2016
 operating system.
 :::
 
 
 ## Create a Schedule Service Account
 
-Follow the steps to create a Schedule Service Account.
+To create a Schedule Service Account:
 
 :::tip
-Remember, the Schedule Service Account cannot be signed into an active session on the Enterprise
-Auditor Console server when the time comes for a scheduled task to start when it has a Windows 2016
+Remember, the Schedule Service Account can't be signed into an active session on the Enterprise
+Auditor Console server when a scheduled task is set to start, if the server has a Windows 2016
 operating system.
 :::
 
@@ -138,12 +138,12 @@ types are:
         - Application – Uses Enterprise Auditor’s configured Profile Security setting as selected at
           the **Settings** > **Application** node
         - Managed Service Account – Use previously configured MSA and gMSAs for authentication. The
-          password fields are not applicable when this option is selected. See the
+          password fields aren't applicable when this option is selected. See the
           [Group Managed Service Accounts (gMSA) Configuration](/docs/accessanalyzer/11.6/admin/settings/connection/gmsa.md)
           topic for additional information.
 
-    - Password – Type the password
-    - Confirm – Re-type the password
+    - Password – Enter the password
+    - Confirm – Re-enter the password
 
 - Local Account – Use this option to specify a local account for the Enterprise Auditor Console
   server
@@ -154,32 +154,32 @@ types are:
         - Application – Uses Enterprise Auditor’s configured Profile Security setting as selected at
           the **Settings** > **Application** node
 
-    - Password – Type the password
-    - Confirm – Re-type the password
+    - Password – Enter the password
+    - Confirm – Re-enter the password
 
-**Step 3 –** Click **OK** and the credentials are verified. If there are no problems with the
-provided credentials, the User Credentials window closes. Otherwise, one of the following error
+**Step 3 –** Click **OK**; Enterprise Auditor verifies the credentials. If there are no problems with
+the provided credentials, the User Credentials window closes. Otherwise, one of the following error
 messages might appear:
 
-- Passwords Do Not Match Error
+- Passwords Don't Match Error
 
-    ![Passwords Do Not Match Error](/images/accessanalyzer/11.6/admin/settings/passwordsdontmatch.webp)
+    ![Passwords Don't Match Error](/images/accessanalyzer/11.6/admin/settings/passwordsdontmatch.webp)
 
-    - This error indicates the two password entries do not match. Click **OK** and reenter the
+    - This error indicates the two password entries don't match. Click **OK** and reenter the
       passwords.
 
 - Bad User Name or Password Error
 
     ![Bad User Name or Password Error](/images/accessanalyzer/11.6/admin/settings/incorrectlogondetails.webp)
 
-    - This error indicates either the user account does not exist or the username and password do
+    - This error indicates either the user account doesn't exist or the username and password do
       not match. Click **OK** and reenter the information.
 
 - Insufficient Rights Error
 
     ![Insufficient Rights Error](/images/accessanalyzer/11.6/admin/settings/insufficientrights.webp)
 
-    - This error indicates the account supplied does not have sufficient rights to create and run
+    - This error indicates the account supplied doesn't have sufficient rights to create and run
       scheduled tasks. Click **OK** and provide credentials with sufficient rights.
 
 - GPO Network Security Error
@@ -201,32 +201,32 @@ Enterprise Auditor can now schedule tasks with this Scheduled Service Account.
 
 ## Edit a Schedule Service Account
 
-Follow the steps to edit a Schedule Service Account credentials.
+To edit a Schedule Service Account's credentials:
 
 :::tip
-Remember, the Schedule Service Account cannot be signed into an active session on the Enterprise
-Auditor Console server when the time comes for a scheduled task to start when it has a Windows 2016
+Remember, the Schedule Service Account can't be signed into an active session on the Enterprise
+Auditor Console server when a scheduled task is set to start, if the server has a Windows 2016
 operating system.
 :::
 
 
 ![Edit option in the Schedule view](/images/accessanalyzer/11.6/admin/settings/edit.webp)
 
-**Step 1 –** Select a credential from the User Credentials list and click on **Edit**. The User
+**Step 1 –** Select a credential from the User Credentials list and click **Edit**. The User
 Credentials window opens.
 
 **Step 2 –** Modify the credential information as needed. See Step 2 of the
 [Create a Schedule Service Account](#create-a-schedule-service-account) topic for additional
 information.
 
-**Step 3 –** Click **OK** and the credentials will be verified. If there are no problems with the
-provided credentials, the User Credentials window closes.
+**Step 3 –** Click **OK**; Enterprise Auditor verifies the credentials. If there are no problems with
+the provided credentials, the User Credentials window closes.
 
 Enterprise Auditor can now schedule tasks with this Scheduled Service Account.
 
 ## Delete a Schedule Service Account
 
-Follow the steps to delete a Schedule Service Account.
+To delete a Schedule Service Account:
 
 ![Delete option in the Schedule view](/images/accessanalyzer/11.6/admin/settings/delete.webp)
 
@@ -241,6 +241,6 @@ Credentials confirmation window appears.
 Account. Click **Save** and then **OK** to confirm the changes. To ensure these changes take effect,
 exit and restart the Enterprise Auditor application.
 
-If all Schedule Service Accounts are removed and only the local System account remains, Enterprise
-Auditor cannot create or run scheduled tasks unless the local system account has adequate
+If you remove all Schedule Service Accounts and only the local System account remains, Enterprise
+Auditor can't create or run scheduled tasks unless the local system account has adequate
 permissions.

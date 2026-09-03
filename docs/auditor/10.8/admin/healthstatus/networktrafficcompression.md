@@ -19,7 +19,7 @@ So, network traffic compression helps to increase scalability and optimize netwo
 
 Its key capabilities are as follows:
 
-- Allows Auditor to collect detailed metrics for the servers, log files, hardware and individual
+- Allows Auditor to collect detailed metrics for the servers, log files, hardware, and individual
   processes
 - Collects audit data with no recognizable load on the server
 - Communicates with Netwrix Auditor Server at predefined intervals, relaying data back to a central

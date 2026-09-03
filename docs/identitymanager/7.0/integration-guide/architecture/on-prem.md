@@ -14,13 +14,13 @@ Identity Manager recommends the following architecture:
 
 ![On-Premises Recommended Architecture](/images/identitymanager/architecture_onprem.webp)
 
-Most situations do not need Identity Manager so much that they need a fail-over system, i.e. installing several Identity Manager instances in order to prevent breakdowns. In most situations, a single Identity Manager instance is enough.
+Most situations don't need Identity Manager so much that they need a fail-over system, i.e. installing several Identity Manager instances to prevent breakdowns. In most situations, a single Identity Manager instance is enough.
 
 ### Server
 
 The server should be stateless, i.e. it should store only temporary files.
 
-### Agent(s)
+### Agents
 
 One or several additional agents can be needed only when using a sensitive network, for example an administration network separated from the main network.
 

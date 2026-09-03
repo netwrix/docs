@@ -11,7 +11,7 @@ To configure Cisco Meraki devices, configure the Syslog server for each of your 
 Netwrix recommends assigning a unique identifier to each Cisco Meraki device; otherwise, the
 product may count them as a single anonymous device.
 
-Follow the steps to configure the Syslog server.
+To configure the Syslog server:
 
 **Step 1 –** Sign in to
 [Cisco Meraki Dashboard](https://account.meraki.com/secure/login/dashboard_login).

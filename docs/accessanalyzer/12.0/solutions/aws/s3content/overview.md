@@ -15,5 +15,5 @@ The 7.S3 Content job group is comprised of:
 - [AWS_S3Buckets Job](/docs/accessanalyzer/12.0/solutions/aws/s3content/aws_s3buckets.md) – Provides a summary of AWS S3 buckets including total
   object size and counts
 - [AWS_S3BucketTags Job](/docs/accessanalyzer/12.0/solutions/aws/s3content/aws_s3buckettags.md) – Identifies tags associated with AWS S3 Buckets.
-  Tagging can be helpful to identify the storage class or purpose of a bucket and can be used in AWS
+  Tagging can help identify the storage class or purpose of a bucket, and you can use tags in AWS
   IAM Policy assignments.

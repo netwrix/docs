@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -42,19 +42,19 @@ You can configure your IT Infrastructure for monitoring in one of the following
         - The Maximum Security event log size must be set to 4GB. The retention method of the
           Security event log must be set to _“Overwrite events as needed.”_
         - Auto archiving must be enabled to prevent audit data loss if log overwrites occur.
-        - The Object-level audit settings must be configured for the Domain, Configuration and
+        - The Object-level audit settings must be configured for the Domain, Configuration, and
           Schema partitions.
         - The AD tombstoneLifetime attribute must be set to _"730"_.
-        - If you have an on-premises Exchange server 2019, 2016, 2013 or 2010 in your Active
+        - If you have an on-premises Exchange server 2019, 2016, 2013, or 2010 in your Active
           Directory domain, consider that some changes can be made via that Exchange server. To be
           able to audit and report who made those changes, you should configure the Exchange
           Administrator Audit Logging (AAL) settings, as described in the
           [Exchange Administrator Audit Logging Settings](/docs/auditor/10.7/configuration/exchange/auditlog.md) topic.
         - The Administrator Audit Logging settings must be configured (only required for Exchange
-          2019, 2016, 2013 or 2010). See the
+          2019, 2016, 2013, or 2010). See the
           [Exchange Administrator Audit Logging Settings](/docs/auditor/10.7/configuration/exchange/auditlog.md) topic for additional
           information.
-        - In order to audit mailbox access, native audit logging must be enabled for user, shared,
+        - To audit mailbox access, native audit logging must be enabled for user, shared,
           equipment, linked, and room mailboxes:
 
             - Access types: administrator , delegate user
@@ -76,9 +76,9 @@ You can configure your IT Infrastructure for monitoring in one of the following
             **50** hours). See the
             [Adjust Security Event Log Size and Retention](/docs/auditor/10.7/configuration/activedirectory/securitylog.md) topic.
 
-        - To provide for event data collection, the Secondary Logon service must be up and running .
+        - To provide for event data collection, the Secondary Logon service must be running.
           Open **Administrative Tools** > **Services**, right-click the **Secondary Logon** service
-          and on the **General** tab make sure that Startup type for this service is other than
+          and on the **General** tab ensure that Startup type for this service is other than
           _Disabled_.
 
 _Remember,_ for Exchange auditing, do the following:

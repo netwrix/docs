@@ -20,7 +20,7 @@ Configure the Target Files options:
   Browser and connect to a host to select a registry key and path to be used for the lookup.
 
     - Registry Value – This value is automatically populated from the registry key
-    - Levels – The Levels slider can be used to truncate the path for the key value in the Adjust
+    - Levels – Use the Levels slider to truncate the path for the key value in the Adjust
       Path dialog box
     - Current value – Displays the current value for the registry key
 

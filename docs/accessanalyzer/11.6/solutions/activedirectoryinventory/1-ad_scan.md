@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The 1-AD_Scan Job collects data from Active Directory. In most environments, this job requires no
 additional customizations before running it. Optionally, the job can be configured to scope scan
-options and to collect custom attributes. For enable SSL encryption for communication with Active
+options and to collect custom attributes. To enable SSL encryption for communication with Active
 Directory, see the [Enable SSL Option](#enable-ssloption) topic for additional information.
 
 ## Queries for the 1-AD Scan Job
@@ -27,8 +27,8 @@ The 1-AD_Scan Job uses the ADInventory Data Collector for the following query:
 ### Customize the 1-AD_Scan Query
 
 The 1-AD_Scan Job has been preconfigured to run with the default settings with the category of Scan
-Active Directory. Follow the steps to set any desired customizations to scan options or to collect
-custom attributes.
+Active Directory. To set any desired customizations to scan options or to collect
+custom attributes:
 
 **Step 1 –** Navigate to the **.Active Directory Inventory** > **1-AD_Scan** > **Configure** node
 and select **Queries**.
@@ -40,7 +40,7 @@ opens.
 DC Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -68,16 +68,16 @@ topic for additional information.
 click **Cancel** if no changes were made. Then click **OK** to close the Query Properties window.
 
 :::note
-In order for the Access Information Center to populate NFS permissions within File System
-reports, the .Active Directory Inventory Job Group must be configured to collect the **uid** and
-**uidNumber** attributes for Users. See the
+To let the Access Information Center populate NFS permissions within File System reports,
+configure the .Active Directory Inventory Job Group to collect the **uid** and **uidNumber**
+attributes for Users. See the
 [NFS Permissions for the AIC ](#nfs-permissions-for-the-aic) topic for additional information.
 :::
 
 
 The 1-AD_Scan Job is now ready to run with the customized settings. If any custom attributes are
 added to the data collection, the **Create Extended Attributes View** analysis task can be enabled
-in order to have visibility into the collected data.
+to have visibility into the collected data.
 
 ## Analysis Tasks for the 1-AD_Scan Job
 
@@ -85,7 +85,7 @@ View the analysis tasks by navigating to the **.Active Directory Inventory** > *
 **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -124,14 +124,14 @@ topic, the 1-AD_Scan Job produces the following pre-configured report:
 
 ## NFS Permissions for the AIC
 
-In order for the Access Information Center to populate NFS resources within all File System
-permissions and resource audit reports, the .Active Directory Inventory Job Group must be configured
-to collect the following custom attributes for Users:
+To let the Access Information Center populate NFS resources within all File System permissions and
+resource audit reports, configure the .Active Directory Inventory Job Group to collect the following
+custom attributes for Users:
 
 - uid
 - uidNumber
 
-Follow the steps to add the custom attributes.
+To add the custom attributes:
 
 **Step 1 –** Navigate to the Active Directory Inventory DC Wizard for the AD Inventory Query within
 the 1-AD_Scan Job.
@@ -142,7 +142,7 @@ the 1-AD_Scan Job.
 option is deselected.
 
 :::note
-Whenever query configurations are modified, it is necessary to do a full scan. After the
+Whenever query configurations are modified, run a full scan. After the
 first full scan, differential scanning can be re-enabled.
 :::
 
@@ -176,7 +176,7 @@ The .Active Directory Inventory Job Group is now collecting attributes required 
 visible within the Access Information Center.
 
 :::tip
-Remember, it is necessary to re-enable differential scanning after Step 5 if desired.
+Remember to re-enable differential scanning after Step 5 if desired.
 :::
 
 
@@ -186,7 +186,7 @@ for additional information.
 
 ## Enable SSL Option
 
-Follow the steps to enable SSL encryption for communications with Active Directory:
+To enable SSL encryption for communications with Active Directory:
 
 **Step 1 –** Navigate to the **1-AD_Scan > Configure** node and select **Queries**.
 

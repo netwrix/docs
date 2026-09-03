@@ -26,7 +26,7 @@ The following example gives the permission to access the query page to the admin
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_DataQuery_Universe" DisplayName_L1="Administrator_DataQuery_Universe" EntityType="Universe" Profile="Administrator">

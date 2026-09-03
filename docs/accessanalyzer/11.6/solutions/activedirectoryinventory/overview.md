@@ -50,7 +50,7 @@ Inventory Job Group.
 
 The .Active Directory Inventory Solution is a core component of all Enterprise Auditor
 installations. Typically this solution is instantiated during installation, but it can be installed
-from the Instant Job Wizard. Once it has been installed into the Jobs tree, navigate to the
+from the Instant Job Wizard. After it has been installed into the Jobs tree, navigate to the
 solution: **Jobs** > **.Active Directory Inventory**. This group has been named in such a way to
 keep it at the top of the Jobs tree.
 

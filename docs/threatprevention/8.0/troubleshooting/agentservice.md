@@ -11,7 +11,7 @@ than the default of 30 seconds typically resolves this issue. Windows attempts t
 certification revocation list (which must time out when there is no internet access) in addition to
 the normal service start time that may exceed the default of 30 seconds.
 
-Follow the steps to modify the ServicesPipeTimeout value.
+Complete the following steps to modify the ServicesPipeTimeout value.
 
 **Step 1 –** Open the Registry Editor.
 
@@ -26,7 +26,7 @@ Follow the steps to modify the ServicesPipeTimeout value.
 **Step 3 –** In the right pane, select **ServicesPipeTimeout**.
 
 :::note
-If the ServicesPipeTimeout entry does not exist, you must create it. See the Create the
+If the ServicesPipeTimeout entry doesn't exist, you must create it. See the Create the
 ServicesPipeTimeout Entry topic for additional information.
 :::
 
@@ -45,7 +45,7 @@ The ServicesPipeTimeout value is now modified.
 
 ## Create the ServicesPipeTimeout Entry
 
-Follow the steps to create the ServicesPipeTimeout entry using the Registry Editor.
+Complete the following steps to create the ServicesPipeTimeout entry using the Registry Editor.
 
 **Step 1 –** In the Edit menu, click **New** and then select **DWORD Value**.
 

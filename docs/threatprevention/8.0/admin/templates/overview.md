@@ -47,7 +47,7 @@ It contains the following options:
 
 | Right-Click Command  | Description      |
 | -------------------- | ------------------ |
-| Enable (grayed-out)  | [Does not apply to templates]      |
-| Disable (grayed-out) | [Does not apply to templates]    |
+| Enable (grayed-out)  | [Doesn't apply to templates]      |
+| Disable (grayed-out) | [Doesn't apply to templates]    |
 | Export               | Exports the selected template’s configuration to an XML file through the [Export Policies and Templates Window](/docs/threatprevention/8.0/admin/policies/exportpoliciestemplates.md) |
 | Remove               | Deletes the selected template     |

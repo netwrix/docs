@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Choose Your Job Template
 
-For creating a job, Directory ManagerSynchronize enables you to create a new job based on your
-setting and criteria. In addition to that, it also gives you multiple templates to directly create a
-job from.
+To create a job, use Directory Manager Synchronize to create a new job based on your
+settings and criteria. You can also choose from multiple templates to directly create a
+job.
 
 **Follow these steps:**
 
@@ -22,7 +22,7 @@ Step 3 – On the **Choose Your Job Template** page, enter the following job det
 2. In **Job Description**, enter a description for the job.
 3. In **Job Owner (s)** select one or more owners for the job.
 4. To create a new job from the scratch, select **Blank Job**.
-5. To use a pre-defined template, click on the card of one of the following templates:
+5. To use a pre-defined template, click the card of one of the following templates:
 
     - Linked Mailbox Creation in Active Directory
     - Move and Disable Objects in Active Directory

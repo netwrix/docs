@@ -8,6 +8,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
+source "$REPO_ROOT/scripts/lib/slugify.sh"
 ERRORS=0
 # Bash 3-compatible heading cache: parallel arrays of keys and values
 HEADING_CACHE_KEYS=()
@@ -29,22 +30,6 @@ _cache_set() {
   local key="$1" val="$2"
   HEADING_CACHE_KEYS+=("$key")
   HEADING_CACHE_VALS+=("$val")
-}
-
-slugify() {
-  local heading="$1"
-  # Respect explicit anchor IDs: ## Heading {#custom-id}
-  if [[ "$heading" =~ \{#([a-zA-Z0-9_-]+)\} ]]; then
-    printf '%s' "${BASH_REMATCH[1]}"
-    return
-  fi
-  printf '%s' "$heading" \
-    | sed -E 's/^#+ +//' \
-    | tr '[:upper:]' '[:lower:]' \
-    | sed -E "s/[^a-z0-9 -]//g" \
-    | sed -E 's/ +/-/g' \
-    | sed -E 's/-+/-/g' \
-    | sed -E 's/^-+//;s/-+$//'
 }
 
 load_headings() {

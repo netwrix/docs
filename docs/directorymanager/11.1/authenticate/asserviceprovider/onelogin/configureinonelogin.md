@@ -24,7 +24,7 @@ You also have to:
 
 1. Launch OneLogin.
 2. On the Home page, click **New App** to add a new application in the OneLogin control panel.  
-   To continue with our example, we will be adding the Directory Manager portal _Wizard_.
+   To continue with this example, add the Directory Manager portal _Wizard_.
 3. The **Find Applications** page is displayed, with a list of already created applications. In the
    **Find Applications** box, type ‘SAML’ to search for single sign-on applications.
 4. In the search results, select the **SAML Test Connector (IdP)** option (without any attributes or
@@ -82,7 +82,7 @@ OneLogin provider in Directory Manager.
 1. On the OneLogin Home page, click **More Actions** in the top right corner and select **SAML
    Metadata**. This will download the OneLogin metadata file on your machine.
 2. For convenience, either copy the file to your desktop or save its location, so that you can
-   easily locate it for import into Directory Manager.  
+   locate it for import into Directory Manager.  
    Importing the metadata file will being in all the configurations for the OneLogin identity
    provider in Directory Manager.
 
@@ -99,20 +99,20 @@ _Wizard_ using OneLogin. See the [Sign In Using OneLogin](/docs/directorymanager
    information for this user and click **Save User** to create the user.  
    A message is displayed that the user is created and a few links are displayed under the message.
    Using them, you can specify certain settings for the user.  
-   Notice that we specified a user name but no password for the user. We will specify it later.
+   Notice that a user name was specified but no password for the user. The password will be specified later.
 4. Click the **Authentication** link.
-5. On the Authentication page, make sure _OneLogin_ is selected in the **Authenticated By**
-   drop-down list.
-6. In the **User Security Policy** drop-down list, select _Default policy_.
+5. On the Authentication page, ensure _OneLogin_ is selected in the **Authenticated By**
+   dropdown list.
+6. In the **User Security Policy** dropdown list, select _Default policy_.
 7. Click the **Applications** link.
 8. On the **Applications** page, click the plus sign to specify the application that the user (i.e.,
-   Leo Ferguson in our example) will be able to log on to.
-9. On the **Assign New Login** dialog box, use the **Select Application** drop-down list to select
+   Leo Ferguson in this example) will be able to log on to.
+9. On the **Assign New Login** dialog box, use the **Select Application** dropdown list to select
    the app that you created for Directory Manager in OneLogin. Then click **Continue**.
-10. Another dialog box opens to display the user's email. you provided this email while creating the
+10. Another dialog box opens to display the user’s email. You provided this email while creating the
     user. Click **Save**.
 11. Back on the **Applications** page, click **Save User**.
-12. Next, you have to update the user’s password in OneLogin. Click the **User Info** link. Them
+12. Next, you need to update the user’s password in OneLogin. Click the **User Info** link. Then
     click **More Actions** and select _Change Password_.
 13. On the **Change Password** dialog box, specify a new password for the user and click **Update**.
 14. Click **Save User**.

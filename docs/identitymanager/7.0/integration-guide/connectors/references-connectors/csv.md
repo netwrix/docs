@@ -74,8 +74,8 @@ The identifier of the connection and thus the name of the subsection must:
 
  | Name | Details | 
  | --- | --- | 
- | Path Required if PathIncremental is not defined. | **Type** String **Description** Path of the input file to be used for complete synchronization. | 
- | PathIncremental Required if Path is not defined. | **Type** String **Description** Path of the input file to be used for incremental synchronization. | 
+ | Path Required if PathIncremental isn't defined. | **Type** String **Description** Path of the input file to be used for complete synchronization. | 
+ | PathIncremental Required if Path isn't defined. | **Type** String **Description** Path of the input file to be used for incremental synchronization. | 
  | IsFileNameRegex optional | **Type** Boolean **Description** `True` to enter a regex instead of a normal string for `Path` and `PathIncremental`. **Note:** if several files correspond to the regex, then the export will use the last created file. **Info:** useful when the filename is only partially known, for example when using a generated file. | 
  | ValuesToTrim optional | **Type** String List **Description** Ordered list of the characters to trim at the beginning and at the end of the headers and values of the input file. **Note:** the second value will be trimmed after the first, the order is important. **Example** When writing `---
 title: "CSV" description: "CSV" sidebar_position: 40
@@ -151,12 +151,12 @@ The identifier of the connection and thus the name of the subsection must:
 
  | Name | Details | 
  | --- | --- | 
- | Path Required if PathIncremental is not defined. | **Type** String **Description** Path of the input file to be used for complete synchronization. | 
- | PathIncremental Required if Path is not defined. | **Type** String **Description** Path of the input file to be used for incremental synchronization. | 
+ | Path Required if PathIncremental isn't defined. | **Type** String **Description** Path of the input file to be used for complete synchronization. | 
+ | PathIncremental Required if Path isn't defined. | **Type** String **Description** Path of the input file to be used for incremental synchronization. | 
  | IsFileNameRegex optional | **Type** Boolean **Description** `True` to enter a regex instead of a normal string for `Path` and `PathIncremental`. **Note:** if several files correspond to the regex, then the export will use the last created file. **Info:** useful when the filename is only partially known, for example when using a generated file. | 
 first and then `%` in `ValuesToTrim`, then "$%I am an example$%" becomes "I am an example$". |
  | Encoding default value: UTF-8 | **Type** String **Description** Encoding of the input file. [See the list of available encodings](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding#see-the-list-of-available-encodings). | 
- | NumberOfLinesToSkip default value: 0 | **Type** Int32 **Description** Number of lines to skip in order to reach the line used as data header. | 
+ | NumberOfLinesToSkip default value: 0 | **Type** Int32 **Description** Number of lines to skip to reach the line used as data header. | 
 
 ### Output details
 
@@ -176,11 +176,11 @@ There are no fulfill capabilities for this connector.
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 
-This connector has no credential attributes, and therefore does not use [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection), nor a [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection).
+This connector has no credential attributes, and therefore doesn't use [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection), nor a [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection).
 
 Still, data protection can be ensured through an [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) safe.
 

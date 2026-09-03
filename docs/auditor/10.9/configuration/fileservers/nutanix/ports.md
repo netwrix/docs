@@ -6,18 +6,14 @@ sidebar_position: 10
 
 # Nutanix Ports
 
-Follow the steps to open Nutanix port for inbound connections.
+To open a Nutanix port for inbound connections:
 
-**Step 1 –** On a target computer navigate to **Start** > **Control Panel** and select **Windows
-Firewall.**
-
-**Step 2 –** In the Help Protect your computer with Windows Firewall page, click **Advanced
-settings** on the left.
-
-**Step 3 –** In the Windows Firewall with Advanced Security dialog, select Inbound Rules on the
-left.
-
-**Step 4 –** Click New Rule. In the New Inbound Rule wizard, complete the steps as described below.
+1. On a target computer, navigate to **Start** > **Control Panel** and select **Windows Firewall**.
+2. In the Help Protect your computer with Windows Firewall page, click **Advanced settings** on the
+   left.
+3. In the Windows Firewall with Advanced Security dialog, select **Inbound Rules** on the left.
+4. Click **New Rule**. In the New Inbound Rule wizard, complete the steps described in the following
+   table.
 
 | Option              | Setting                                                                                                  |
 | ------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -27,9 +23,9 @@ left.
 | Profile             | Applies to Domain                                                                                        |
 | Rule name           | Rule name, for example Nutanix Files inbound rule.                                                       |
 
-When you add the first item (_Nutanix SMB shares_) to the Nutanix monitoring plan, you will be
-suggested to use port **9898**. For the next _Nutanix SMB shares_ added as an item, you should
-specify a different TCP port and configure it for inbound connections, as described above.
+When you add the first item (_Nutanix SMB shares_) to the Nutanix monitoring plan, the wizard
+suggests port **9898**. For each additional _Nutanix SMB shares_ item, specify a different TCP port
+and open it for inbound connections following the same procedure.
 
 ### Protocols and Ports Required for Monitoring Nutanix Files
 

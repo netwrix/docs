@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **Exchange** > **1. HUB Metrics** >
 **EX_DomainMetrics** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -29,7 +29,7 @@ The following analysis tasks are selected by default:
 -   **2. External Domain Traffic - Volume** – Creates the SA_EX_DomainMetrics_Volume table, accessible
        under the job’s Results node
 
-In addition to the tables and views by the analysis tasks, the EX_DomainMetrics Job produces the
+In addition to the tables and views created by the analysis tasks, the EX_DomainMetrics Job produces the
 following pre-configured reports:
 
 | Report                                                        | Description                                                                                        | Default Tags | Report Elements                                                                                                                                                                                               |

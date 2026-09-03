@@ -17,7 +17,7 @@ To configure these actions, use the Advanced UI dialog window. See
 
 ## Delete Email
 
-This action will remove an email from Exchange mailbox.
+This action removes an email from Exchange mailbox.
 
 ![action_exchange_delete_email_thumb_0_0](/images/dataclassification/5.7/admin/workflows/advancedwindow/action_exchange_delete_email_thumb_0_0.webp)
 
@@ -31,11 +31,11 @@ Specify the following action parameters:
 
 ## Move Email
 
-This action will move an email to the specified folder within the same mailbox.
+This action moves an email to the specified folder within the same mailbox.
 
 Specify the following action parameters:
 
 | Action parameter       | Description                                                                                                     | Comments                                                             |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | **Target Folder Name** | The name of the folder the move the email to.                                                                   | For subfolders, only include the subfolder name (not the full path). |
-| **Parent Folder Name** | If the target folder name is not unique, specify the parent folder name — to ensure the correct folder is used. | Optional.                                                            |
+| **Parent Folder Name** | If the target folder name isn't unique, specify the parent folder name — to ensure the correct folder is used. | Optional.                                                            |

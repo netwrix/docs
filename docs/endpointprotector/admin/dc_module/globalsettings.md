@@ -4,15 +4,16 @@ description: "Global Settings"
 sidebar_position: 40
 ---
 
+
 # Global Settings
 
 From this section, you can apply settings globally to all Endpoint Protector entities.
 
-Any setting that appears in Global Settings offers additional functionality, as these settings can be customized per group, user, or computer. This allows administrators to configure precise, granular policies across the organization using the options available in this tab. Because of this, Global Settings may include options that are also available in other components, such as [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md), [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket.md) or [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md).
+Any setting that appears in Global Settings offers additional functionality, as these settings can be customized per group, user, or computer. This allows administrators to configure precise, granular policies across the organization using the options available in this tab. As a result, Global Settings may include options also available in other components, such as [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md), [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket.md) or [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md).
 
 - If there are no settings defined granularly for a computer, and it doesn't belong to a group,
   these are the settings it will inherit.
-- If the computer belongs to a group, then it will inherit that group’s settings.
+- If the computer belongs to a group, then it will inherit that group's settings.
 
 
 
@@ -21,7 +22,7 @@ Any setting that appears in Global Settings offers additional functionality, as 
 ## Client Settings
 
 From this section, you can manage settings that relate directly to the Endpoint Protector Client and
-the Client’s behavior for each specific entity (Global, Groups, and Computers).
+the Client's behavior for each specific entity (Global, Groups, and Computers).
 
 - Client Mode – select a mode to change Endpoint Protector Client behavior.
 
@@ -42,17 +43,17 @@ the Client’s behavior for each specific entity (Global, Groups, and Computers)
 > **Step 2 –** In the "Notifier language" section, select either "Automatic" or "Default" based on
 > your preferences.
 >
-> - “Automatic" means the language will be detected automatically from the OS, without server
+> - "Automatic" means the language will be detected automatically from the OS, without server
 >   interaction.
 > - "Default" means the language selected on the server will be applied. If the "Automatic" language
 >   was selected on the server, the "Automatic" language will be used.
 >
 > **Step 3 –** Save your settings to apply the chosen language selection.
 
-> With this enhanced language selection feature, Endpoint Protector provides a more accommodating
-> experience for users, making notifications and alerts more accessible and user-centric.
+> This feature makes notifications more accessible to users.
 
-- Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders on Windows and macOS have limited access. The EPP Client prevents unauthorized actors from unloading processes on Windows and daemons on macOS. 
+- Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders have limited access and the EPP Client prevents unauthorized actors from unloading its processes on Windows and daemons macOS. 
+Tamper Mode applies to all supported operating systems (Windows, macOS, and Linux).
 
   :::note
   Requires EPP Client version 2605 hotfix 1 or later (2605.x.2.x) for the full feature set.
@@ -63,7 +64,7 @@ the Client’s behavior for each specific entity (Global, Groups, and Computers)
   :::
 
   :::note
-  A machine or service reboot is recommended after enabling this setting to work correctly.
+  A machine or service reboot is recommended after enabling this setting for it to take effect.
   :::
 
 - Policy Refresh Interval (sec) – enter the time interval at which the Client checks with the Server
@@ -75,25 +76,15 @@ the Client’s behavior for each specific entity (Global, Groups, and Computers)
     determining an appropriate policy refresh interval.
     :::
 
-- Log Interval (min) – enter the time interval at which the Client attempts to re-send the Logs to
-  the Server.
-- Shadow Interval (min) – enter a time interval between 0-720 minutes at which the Endpoint
-  Protector Client sends the file Shadows to the Endpoint Protector Server.
-
-    :::note
-    Set the interval to 0 to send the file shadows instantly.
-    :::
-
-
 - Recovery Folder Retention Period (days) – this setting is specific for Mac and Linux computers. It
   acts as a quarantine folder before a transferred file has been fully inspected for content,
   avoiding any potential file loss due to blocked transfers. After the specified time interval, the
   files are permanently deleted.
-- Log Size (MB) – enter the largest size of all logs stored on the Client. If the value is reached,
-  new logs will overwrite the oldest ones. These circumstances occur only when the Client and Server
+- Log Size (MB) – enter the largest size of all logs stored on the Client. When the value
+  reaches this limit, new logs overwrite the oldest ones. This occurs only when the Client and Server
   don't communicate for an extended period.
-- Shadow Size (MB) – enter the largest size of all file shadows on the Client. If the value is
-  reached, new shadows will overwrite the oldest ones. These circumstances occur only when the
+- Shadow Size (MB) – enter the largest size of all file shadows on the Client. When the value
+  reaches this limit, new shadows overwrite the oldest ones. This occurs only when the
   Client and Server don't communicate for an extended period.
 - Min File Size for Shadowing (KB) – enter the smallest size of a file at which a File Shadow is
   created.
@@ -103,20 +94,26 @@ the Client’s behavior for each specific entity (Global, Groups, and Computers)
   Maximum size for the quarantine folder. If the value is reached, new files will overwrite the
   oldest ones.
 
+- Total Debug Log Size Limit – set the maximum total disk space for all client debug log files.
+  When this limit is reached, the oldest logs are automatically deleted. Default: 1 GB. Allowed
+  range: 500 MB–8 GB.
+
+  :::note
+  Choose this value carefully based on the available free space on the workstation.
+  :::
+
+- Single Debug Log File Size – set the maximum size for an individual client debug log file.
+  When a single log file reaches this limit, the client rotates to a new log file.
+
 ![Manage settings that relate directly to the Netwrix Endpoint Protector Client](clentsettings.webp)
 
 - Custom Client Notifications - if enabled, the Client Notifications can be customized.
 - Mandatory OTP Justification - if enabled, the Justification a User has to provide when requesting or
   using an Offline Temporary Password is mandatory.
-- Extend Source Code Detection - if enabled, this will extend the detection also inside of file type,
-  such as PDF, Docx, etc. With Monitor Webmail setting enabled, you can also detect source code in
-  emails in subject and body using web browsers.
+- Extend Source Code Detection - if enabled, detection extends to file types such as PDF and Docx. With Monitor Webmail enabled, you can also detect source code in emails using web browsers.
 
     :::note
-    Source Code Detection may encounter challenges when dealing with small code snippets.
-    This can occur due to the potential overlap among various programming languages. It's important
-    to consider these limitations when configuring and using Source Code Detection for optimal
-    results.
+    Source Code Detection may struggle with small code snippets due to overlap among programming languages.
     :::
 
 
@@ -153,8 +150,8 @@ the Client’s behavior for each specific entity (Global, Groups, and Computers)
   notifications.
 - Notifications Pop-up – you can select between the traditional notification, system tray, or pop-up
   notifications.
-- Enable Minifilter driver – only available for Windows, this setting allows the use of an enhanced
-  driver that provides more reliability and ease of maintenance. You can also enable this setting on
+- Enable Minifilter driver – only available for Windows, this setting enables an enhanced
+  driver for more reliability and easier maintenance. You can also enable this setting on
   the Computers/Users/Groups/Global Rights sections with Manage Settings from the Actions column.
 - User Remediation Notification Template - you can select from the dropdown list a custom
   notification.
@@ -218,7 +215,7 @@ Select from the dropdown list a client mode to define the Endpoint Protector Cli
     - Enable file shadowing and file tracing to view and monitor all user activity
     - Administrator receives alerts for all activities
 
-4. Panic – This mode should be selected under extreme situations when a user’s malicious intent or
+4. Panic – This mode should be selected under extreme situations when a user's malicious intent or
    activity is detected by the Endpoint Protector Admin. Panic mode doesn't apply to Content Aware
    Protection; all other client modes, except Silent mode, are specific to Device Control.
 
@@ -306,7 +303,7 @@ In this section, you can manage the following settings:
     - Ignore Hostname - when checked, Endpoint Protector doesn't validate the certificate hostname property against the server hostname.
 
     :::warning
-    Disabling setting ‘Peer Certificate Validation’ will not impact Endpoint Protector
+    Disabling setting 'Peer Certificate Validation' will not impact Endpoint Protector
     functionality. It should only be disabled when an alternative network traffic inspection product,
     such as a Secure Web Gateway Solution, is validating website certificates.
     :::
@@ -316,8 +313,8 @@ In this section, you can manage the following settings:
   on endpoint machines, containing more details.
 - Disable DPI Dropped Connections Notifications - check this setting to suppress notifications shown
   by the Notification Center nearby the System tray.
-- Block Unsecured Connection - if enabled, unsecured access through HTTP will be blocked and user
-  access restricted.
+- Block Unsecured Connection - if enabled, blocks unsecured HTTP access and restricts user
+  access.
 
     :::note
     The Block Unsecured Connection feature is only available when the Deep Packet
@@ -343,7 +340,7 @@ In this section, you can manage the following settings:
               which was issued by Endpoint Protector.
             - The absence of the DPI certificate in the system keychain may also contribute to this
               scenario.
-            - ‘Certificate Pinning’ also falls under this category.
+            - 'Certificate Pinning' also falls under this category.
 
         :::note
         See [Using Wireshark for Network Traffic Analysis](#using-wireshark-for-network-traffic-analysis).
@@ -381,21 +378,20 @@ In this section, you can manage the following settings:
         - Enable this setting, when a server indicates the requirement of a client certificate
           (mTLS).
 
-            - Endpoint Protector triggers bypass for HTTP error codes like ‘400 Bad Response’ and
-              ‘496 SSL Certificate Required’.
+            - Endpoint Protector triggers bypass for HTTP error codes like '400 Bad Response' and '496 SSL Certificate Required'.
             - Accessing [https://client.badssl.com/](https://client.badssl.com/) from a web browser
               without providing the necessary client certificate illustrates such situations.
 
     6. Bypass Invalid Peer Certificates
 
-        - Enable this setting, to permit connections with invalid peer certificates when ‘Peer
-          Certificate Validation’ is enabled.
+        - Enable this setting, to permit connections with invalid peer certificates when 'Peer
+          Certificate Validation' is enabled.
 
-            - If both ‘Bypass Invalid Peer Certificates’ and ‘Peer Certificate Validation’ are
-              enabled, ‘Bypass Invalid Peer Certificates’ will override setting ‘Peer Certificate
-              Validation’.
+            - If both 'Bypass Invalid Peer Certificates' and 'Peer Certificate Validation' are
+              enabled, 'Bypass Invalid Peer Certificates' will override setting 'Peer Certificate
+              Validation'.
             - Accessing [https://expired.badssl.com/](https://expired.badssl.com/)from a web browser
-              with both settings ‘Bypass Invalid Peer Certificates’ and ‘Peer Certificate Validation’
+              with both settings 'Bypass Invalid Peer Certificates' and 'Peer Certificate Validation'
               enabled, illustrates such situations (the website will be accessible).
 
     :::warning
@@ -475,7 +471,7 @@ When network extension is successfully enabled, a Client Integrity OK log is gen
 :::
 
 
-**Step 8 –** Go to **System Configuration** > **System Settings** > **Deep Packet Inspection
+**Step 8 –** Go to **System Configuration** > **System Settings** > **Deep Packet Inspection
 Certificate**, and then download the CA Certificate.
 
 ![Downloading a DPI Certificate](dpicertificate.webp)
@@ -486,7 +482,7 @@ Certificate**, and then download the CA Certificate.
 
 **Step 10 –** Decompress the ClientCerts file.
 
-**Step 11 –** Select the **cacert.pem** file and drag and drop it under **System** > **Keychain
+**Step 11 –** Select the **cacert.pem** file and drag and drop it under **System** > **Keychain
 Access**.
 
 ![Configuring Client Certificate on MacOs](clientcerts.webp)
@@ -597,7 +593,7 @@ For your deployment, activate File Shadowing for not more than 15% of your total
 
 
     :::note
- MTP (Media Transfers Protocols) file transfer is supported only on Windows
+ MTP (Media Transfers Protocols) file transfer is supported only on Windows
     client machines. Use it to transfer files in one direction, from your PC to your Android
     device.
     :::
@@ -626,7 +622,7 @@ For example, when a user opens Microsoft Word, an Endpoint Protector DLL is load
     :::
 
 - Advanced Scanning Exceptions is a list of applications into which Endpoint Protector won't inject its DLL when the "Advanced Printer and MTP Scanning" is enabled.
-For example, many applications can't be used to print or to copy files to MTP devices, so it doesn't make sense to inject the Endpoint Protector DLL into them. For best performance or to avoid unexpected interactions with Endpoint Protector, these applications can be added to the “Advanced Scanning Exceptions” list.
+For example, many applications can't be used to print or to copy files to MTP devices, so it doesn't make sense to inject the Endpoint Protector DLL into them. For best performance or to avoid unexpected interactions with Endpoint Protector, these applications can be added to the "Advanced Scanning Exceptions" list.
 
 - Block Print from Browsers – prevents users from printing web pages from any supported browser on Windows. For details, see [Block Print from Browsers](#block-print-from-browsers).
 
@@ -653,7 +649,7 @@ For example, many applications can't be used to print or to copy files to MTP de
 Newer Linux Ubuntu versions have 'snap'-based applications installed by default,
 affecting Endpoint Protector Client functionality. This may result in missing file-related events in
 File Tracing and File Shadow artifacts. The reliance on 'snap'-based applications also affects
-file-related web browser activities, exacerbating this limitation. Consider non-’snap’-based
+file-related web browser activities, exacerbating this limitation. Consider non-'snap'-based
 applications (where possible) as alternative configurations for optimal functionality.
 :::
 
@@ -787,7 +783,7 @@ This feature only applies for Windows.
 
 ## Configure Max File Size
 
-This section allows customers to tailor Content Aware Protection scanner’s file size settings
+This section allows customers to tailor Content Aware Protection scanner's file size settings
 according to their specific needs. By customizing these settings, users can ensure Endpoint Protector
 meets their organization's requirements. The default maximum file size is set at 40 MB, with a
 maximum limit of 4096 MB.
@@ -806,7 +802,7 @@ eDiscovery Policies and Max File Size for File Shadows.
 :::
 
 
-![ Tailor Content Aware Protection scanner’s file size settings according to their specific needs. ](maxfileconfg.webp)
+![ Tailor Content Aware Protection scanner's file size settings according to their specific needs. ](maxfileconfg.webp)
 
 ## Outside Hours and Outside Network
 
@@ -848,7 +844,7 @@ Limit.
 The mechanism that checks when the Transfer Limit is reached doesn't impact the performance of the computer.
 
 Therefore, there might be a slight delay between the exact time the limit is reached and the
-enforcement of the transfer restrictions. In general, it’s just a few seconds but also depending on
+enforcement of the transfer restrictions. In general, it's just a few seconds but also depending on
 the network, it could be up to a few minutes.
 
 There are three actions to choose from when the Transfer Limit is reached:
@@ -893,7 +889,7 @@ To use the debug feature and collect logs, follow these steps:
 
 **Manual Logging**
 
-On the Global > Computer > User Settings page, configure the following settings:
+On the Global > Computer > User Settings page, configure the following settings:
 
 **Step 1 –** Enable **Debug Mode** from the DEBUG logging section.
 
@@ -970,10 +966,10 @@ the **Actions** column.
 
 ### Data Obfuscation Rules
 
-All data is obfuscated according to the following rules:
+Endpoint Protector obfuscates all data according to these rules:
 
-- the first 4 characters are displayed if the length of the threat is lower than 12 characters, or
-- the first 6 characters are displayed if the length of the threat is longer than 12 characters
+- display the first 4 characters if the threat is shorter than 12 characters, or
+- display the first 6 characters if the threat is longer than 12 characters
 
 Specific use cases:
 
@@ -982,7 +978,7 @@ Specific use cases:
 3. For Brazil ID (CPF), the first 3 and the last 2 characters are obfuscated
 
 :::note
-Data isn't obfuscated for the file-type threat, file-size threat, and date threat.
+Endpoint Protector doesn't obfuscate file-type, file-size, and date threats.
 :::
 
 
@@ -1003,17 +999,36 @@ Endpoint Protector installed or in relation to a list of trusted Endpoint Protec
 
 - **Endpoint Protector Client Presence Required** — When enabled, EasyLock (Enforced Encryption) runs only on computers where the Endpoint Protector (EPP) Client is installed.
 
-  Group-level Client Presence settings take effect only when the EPP Client is present and can evaluate the applicable user or computer group policy. If a user connects an encrypted USB drive to a computer without the EPP Client, that computer can’t evaluate group-level EasyLock settings, and EasyLock falls back to the global Client Presence setting instead.
+  Group-level Client Presence settings take effect only when the EPP Client is present and can evaluate the applicable user or computer group policy. If a user connects an encrypted USB drive to a computer without the EPP Client, that computer can't evaluate group-level EasyLock settings, and EasyLock falls back to the global Client Presence setting instead.
 
   For example, if Client Presence is disabled globally but enabled for a specific user or group, the group-level setting applies only on computers where the EPP Client is running. On computers without the EPP Client, the global setting is used.
 
   :::note
-  To prevent EasyLock from running on computers that don’t have the EPP Client installed, enable **Client Presence Required** at the global level.
+  To prevent EasyLock from running on computers that don't have the EPP Client installed, enable **Client Presence Required** at the global level.
   :::
 
-- **EE Read-Only Mode** — When enabled, EasyLock blocks write access to encrypted drives on computers not managed by the EPP Client. When disabled (default), EasyLock doesn’t start at all on unmanaged computers. See [Enforced Encryption in Read-Only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode).
+- **EE Read-Only Mode** — When enabled, EasyLock blocks write access to encrypted drives on computers not managed by the EPP Client. When disabled (default), EasyLock doesn't start at all on unmanaged computers. See [Enforced Encryption in Read-Only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode).
 
 ![Enforced Encryption in Read-Only mode](eeromode.webp)
+
+## eDiscovery: User-Initiated Scan Settings
+
+This section configures the eDiscovery feature for [user-initiated scans](/docs/endpointprotector/admin/ed_module/edscanning.md#user-initiated-scan-settings).
+
+- **User-Initiated Scans** — Enables the User-Initiated Scan feature in the end-user EPP Notifier.
+
+- **Number of Scans** — Retains a specified number of scan results (range: 1–10, default: 1).
+- **Number of Days** — Retains scan results for a specified number of days (range: 1–30, default: 1).
+:::note
+These two settings are mutually exclusive—select one retention method.
+:::
+
+- **Send User-Initiated Scan Events** — Sending scan events can consume significant storage space. Reports can't distinguish these scans from administrator-initiated scans. Consider enabling only if needed.
+- **Prioritize Server-Initiated Scans** — When enabled, administrator-initiated scans automatically stop any running user-initiated scans.
+- **Log File Rollover Size (MB)** — Sets the maximum log file size, in MB, before EPP archives it automatically. Minimum: 0 MB, maximum: 10240 MB.
+- **Log Disk Space Threshold (%)** — Sets the maximum percentage of disk space log files can use before EPP archives them automatically. Minimum: 1%, maximum: 25%.
+
+![eDiscovery User Initiated Scan](ediscovery_userscan.webp)
 
 ## Additional Information
 

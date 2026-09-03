@@ -77,7 +77,7 @@ purpose of this job.
 ![Applet Settings](/images/accessanalyzer/11.6/solutions/filesystem/collection/fsaaseekappletsettings.webp)
 
 **Step 4 –** The Applet Settings page applies to the applet and proxy mode scans which you select
-on the Scan Server Level page. If employing proxy servers, see the
+on the Scan Server Selection page. If employing proxy servers, see the
 [FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings/appletsettings.md)
 topic for configuration instructions.
 
@@ -109,7 +109,7 @@ topic for additional information.
 
 ![Default Scoping Options](/images/accessanalyzer/11.6/solutions/filesystem/collection/seekdefaultscopingoptions.webp)
 
-**Step 8 –** On the Default Scoping Options page, configure the following on the Scan Setting tab:
+**Step 8 –** On the Default Scoping Options page, configure the following on the Scan Settings tab:
 
 - Limit subfolder scan depth to – Select this checkbox and use the arrow buttons to modify the
   subfolder scan depth
@@ -122,15 +122,15 @@ topic for additional information.
 
     - Action on failure to enable LAT Preservation – Before scanning each file, FSAA attempts to
       enable an operating system feature to preserve the LAT when accessing the file. This operation
-      may fail for a variety of reasons, which include but aren't limited to: the operating system
-      or file system where the file is located doesn't support LAT preservation, or insufficient
-      permissions from the service account trying to access the file. The following configuration
-      addresses a failure to enable the LAT preservation mode:
+      may fail for a variety of reasons, including: the operating system or file system where the
+      file is located doesn't support LAT preservation, or insufficient permissions from the
+      service account trying to access the file. The following configuration addresses a failure
+      to enable the LAT preservation mode:
 
-        - Continue to scan file silently – FSAA scans the file with the possibility that LAT
-          preservation isn't possible. No warning appears.
-        - Continue to scan file with warning – FSAA scans the file with the possibility that LAT
-          will not be preserved. A warning appears for this file.
+        - Continue to scan file silently – FSAA scans the file even if LAT preservation isn't
+          possible. No warning appears.
+        - Continue to scan file with warning – FSAA scans the file even if LAT isn't preserved. A
+          warning appears for this file.
         - Skip file silently – FSAA will not scan the file. No warning appears.
         - Skip file with warning – FSAA will not scan the file. A warning appears indicating
           the file was skipped.
@@ -148,7 +148,7 @@ topic for additional information.
           updated for the processed file. A warning appears.
         - Force-reset file LAT silently – The scan will reset the file's LAT to its original state
           before processing. No warning appears. The scan will proceed to the next file.
-        - Force-reset file LAT with warning – The scan will Reset the file's LAT to its original
+        - Force-reset file LAT with warning – The scan will reset the file's LAT to its original
           state before processing. A warning appears. The scan will proceed to the next file.
         - Abort the scan – FSAA will abort the scan. LAT will be updated for the processed file. No
           other files will be processed

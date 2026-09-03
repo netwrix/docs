@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # Email Templates
 
-The HTML templates used to format notification email can be customized. These templates are designed
-to make the message viewable within an email client. It is recommended to edit text and layout as
-desired, but NOT to embed new images or logos. The following table shows the notification email
+You can customize the HTML templates that format notification emails. These templates are designed
+to make the message viewable within an email client. Edit text and layout as
+desired, but don't embed new images or logos. The following table shows the notification email
 templates and describes the purpose of each.
 
 | Template Name               | Message Type Description                                                                                                                                |
@@ -23,16 +23,15 @@ templates and describes the purpose of each.
 | OwnershipConfirm            | Sent to owners to confirm or decline ownership of a given resource; manually sent by an Ownership Administrator from the Resource Owners interface      |
 | ReminderDigest              | Weekly reminder configured by Administrators on the Notifications page of the Configuration interface to owners with pending reviews or access requests |
 
-While customizing the template content, take note of the inline Substitution Tokens. These exist to
-provide the message with dynamic content, i.e. inserting values and strings from data in line with
+While customizing the template content, take note of the inline Substitution Tokens. These provide
+the message with dynamic content by inserting values and strings into
 the static portion of the message body. These Substitution Tokens begin and end with the “@” symbol,
-e.g. @UserName@.
+for example, @UserName@.
 
-Substitution Tokens are only valid for certain Notification message templates. Below is a table of
-the Substitution Tokens, the value or string they represent, and the message templates in which they
-may be used.
+You can use Substitution Tokens only in certain Notification message templates. The following table shows
+the Substitution Tokens, the value or string they represent, and the message templates in which you can use them.
 
-| Substitution Token    | Description                                                                                                                                                       | Applicable Template(s)                                                                                                 |
+| Substitution Token    | Description                                                                                                                                                       | Applicable Templates                                                                                                 |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | @AccessName@          | Descriptive name of the type of access being requested (Read, Modify, etc.) to a resource                                                                         | AccessRequestConfirm <br />AccessRequestExpired <br />AccessRequestStatus                                                          |
 | @Changes@             | Number of review changes                                                                                                                                          | EntitlementReviewUpdates                                                                                               |
@@ -53,12 +52,12 @@ may be used.
 
 ## Customize Email Templates
 
-Email templates are shipped in a ZIP file and stored in the Access Information Center installation
+The system ships email templates in a ZIP file in the Access Information Center installation
 directory:
 
 **…\STEALTHbits\Access Information Center**
 
-Follow the steps to customize the email templates.
+To customize the email templates:
 
 :::note
 To successfully modify these Notifications email templates, a familiarity with basic HTML
@@ -83,13 +82,13 @@ installation directory to be preserved during future application upgrades.
 
 ![Unzipped Email Templates in Templates Folder](/images/accessinformationcenter/12.0/admin/additionalconfig/emailtemplatesunzipped.webp)
 
-**Step 3 –** Locate the desired HTML message template.
+**Step 3 –** Locate the HTML message template you want.
 
 **Step 4 –** Open the file with a text editor, e.g. Notepad, and customize the email body.
 
 :::note
 Using a tool other than a text editor to edit HTML files, such as a WYSIWYG web page
-editor which may drastically alter the underlying HTML code, is not supported.
+editor which may drastically alter the underlying HTML code, isn't supported.
 :::
 
 
@@ -99,7 +98,6 @@ tag and the closing `</title>` tag.
 **Step 6 –** After making changes, save the file and view it within a web browser to see what the
 changes will look like. The Substitution Tokens will display without supplied values.
 
-**Step 7 –** After making the desired changes, save and close the text editor. Then re-launch the
-application.
+**Step 7 –** After making the changes you want, save the file and close the text editor, then re-launch the application.
 
-The modifications to the HTML email templates are in use by the notification emails.
+Notification emails now use your modified HTML email templates.

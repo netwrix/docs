@@ -16,15 +16,15 @@ The SendMail Action Module has multiple uses, for example:
   workflow to contact clients and solicit feedback for use in the decision-making process
 
 :::warning
-This module sends one or more electronic messages to a selected audience. Prior to
-executing the action, ensure the audience consists of only the desired members.
+This module sends one or more electronic messages to a selected audience. Before
+executing the action, ensure the audience consists of only the members you want.
 :::
 
 
 ## Source Table Configuration
 
-All data tables used in Enterprise Auditor action modules require the presence of certain data
-columns. In addition, individual action modules including SendMail may have their own column
+All data tables used in Enterprise Auditor action modules require certain data columns. In
+addition, individual action modules including SendMail may have their own column
 requirements. The SendMail Action Module requires a column containing well-formatted email addresses
 (for example, `hfinn@netwrix.com`) for your recipients.
 

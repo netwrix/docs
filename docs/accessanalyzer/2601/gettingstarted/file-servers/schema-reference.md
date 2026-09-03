@@ -5,15 +5,15 @@ sidebar_position: 40
 
 # File Servers Schema Reference
 
-Access Analyzer stores File Server scan data in the `access_analyzer` ClickHouse database. The tables below are created when you set up a File Server source group and run a scan. Use this reference when querying scan data directly or integrating Access Analyzer data with external tools.
+Access Analyzer stores File Server scan data in the `access_analyzer` ClickHouse database. Setting up a File Server source group and running a scan creates the following tables. Use this reference when querying scan data directly or integrating Access Analyzer data with external tools.
 
 :::note
-All tables use the `ReplacingMergeTree` engine. Duplicate rows with the same primary key are deduplicated at merge time. Query the `_latest` views to return only the most recent version of each record.
+All tables use the `ReplacingMergeTree` engine. The engine deduplicates rows with the same primary key at merge time. Query the `_latest` views to return only the most recent version of each record.
 :::
 
 ## Metadata columns
 
-All tables include the following columns populated by Access Analyzer during each scan:
+All tables include the following columns, which Access Analyzer populates during each scan:
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -71,7 +71,7 @@ Stores the file system inventory collected during a scan — one row per file, d
 
 ### CIFS Permission
 
-Stores NTFS ACEs (access control entries) for files and directories — one row per trustee per path.
+Stores NTFS access control entries (ACEs) for files and directories — one row per trustee per path.
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -151,10 +151,10 @@ Stores sensitive data classification findings — one row per taxonomy term matc
 
 ### CIFS Sensitive Data MIP Labels
 
-Stores Microsoft Information Protection (MIP) sensitivity label decisions for files that contain sensitive data findings. Each row records the label action Access Analyzer determined for a file based on its classification results. MIP labels are sourced from an Entra ID source group configured in the same Access Analyzer instance — Access Analyzer uses that source group to resolve label definitions and apply or recommend label changes.
+Stores Microsoft Information Protection (MIP) sensitivity label decisions for files that contain sensitive data findings. Each row records the label action Access Analyzer determined for a file based on its classification results. Access Analyzer sources MIP labels from an Entra ID source group configured in the same Access Analyzer instance and uses that source group to resolve label definitions and apply or recommend label changes.
 
 :::note
-This table uses `ReplacingMergeTree(decision_timestamp)` rather than `scanned_at`. The most recent decision per file (identified by `source_id`, `host`, `share_name`, and `path`) is kept at merge time.
+This table uses `ReplacingMergeTree(decision_timestamp)` rather than `scanned_at`. At merge time, the engine keeps the most recent decision per file (identified by `source_id`, `host`, `share_name`, and `path`).
 :::
 
 | Column | Type | Description |
@@ -163,7 +163,7 @@ This table uses `ReplacingMergeTree(decision_timestamp)` rather than `scanned_at
 | `host` | `String` | Hostname of the file server. |
 | `share_name` | `String` | Name of the share containing the file. |
 | `path` | `String` | Full path of the file this label decision applies to. |
-| `mip_is_protected` | `Bool` | Whether the file is currently protected by MIP encryption. |
+| `mip_is_protected` | `Bool` | Whether the file is protected by MIP encryption. |
 | `taxonomy_id` | `Nullable(UUID)` | Optional. Identifier of the taxonomy that triggered this label decision. |
 | `action` | `Enum8('upgrade', 'keep', 'downgrade', 'clear', 'none')` | The label action Access Analyzer determined: `upgrade` applies a higher-sensitivity label, `downgrade` applies a lower-sensitivity label, `keep` leaves the current label unchanged, `clear` removes the label, and `none` indicates no action was taken. |
 | `label_id` | `Nullable(UUID)` | Optional. UUID of the MIP sensitivity label selected by the action. |
@@ -187,7 +187,7 @@ This table uses `ReplacingMergeTree(decision_timestamp)` rather than `scanned_at
 
 ## Views
 
-Access Analyzer creates views that simplify common queries. Use views in preference to querying base tables directly.
+Access Analyzer creates views that simplify common queries. Use views instead of querying base tables directly.
 
 | View | Base table | Description |
 |------|------------|-------------|

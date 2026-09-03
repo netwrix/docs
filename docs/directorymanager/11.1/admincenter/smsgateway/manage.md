@@ -26,7 +26,7 @@ integrate with an unsupported provider.
     The **Create SMS Gateway** page is displayed.
 
 3. Enter a name for the gateway account in the **Name** box.
-4. In the **Gateway Type** drop-down list, select an SMS gateway provider.  
+4. In the **Gateway Type** dropdown list, select an SMS gateway provider.  
    The list includes the gateways that Directory Manager supports and any custom SMS gateways that
    you have written. Selecting a gateway type displays the gateway URL, which is the web service
    address the SMS gateway uses for sending text messages.
@@ -51,7 +51,7 @@ integrate with an unsupported provider.
        18588123169, 447079692712, 923225867987.
     3. Click **OK** to send the message to the mobile number.
 
-9. Select the **Set as default account** check box to link this gateway account with the identity
+9. Select the **Set as default account** checkbox to link this gateway account with the identity
    stores created from this point forward.
 10. Click **Create SMS Gateway** to create the gateway account.
 
@@ -75,7 +75,7 @@ connect to the gateway.
    The **SMS Gateways** page is displayed with a list of the SMS gateway accounts that you have
    created.
 2. Click **Edit** for a gateway account in the **Actions** column.
-3. On the **Edit SMS Gateway** page, select the **Set as default account** check box to set this
+3. On the **Edit SMS Gateway** page, select the **Set as default account** checkbox to set this
    gateway account as default, which means that it will be linked with the identity stores created
    hereafter.
 4. Click **Save SMS Gateway**.
@@ -100,7 +100,7 @@ topic.
 
 ## Delete an SMS Gateway Account
 
-You can delete an SMS gateway account that is not linked with any identity store.
+You can delete an SMS gateway account that isn't linked with any identity store.
 
 **To delete an account:**
 
@@ -108,7 +108,7 @@ You can delete an SMS gateway account that is not linked with any identity store
 2. On the **SMS Gateways** page, click **Delete** for a gateway account to delete it.
 3. One of the following happens:
 
-    - If the gateway account is not linked with an identity store, a message is displayed, asking
+    - If the gateway account isn't linked with an identity store, a message is displayed, asking
       you to confirm its deletion. Clicking **Delete** will delete the account.
     - If the gateway account is linked with an identity store, Directory Manager will not allow you
       to delete it.

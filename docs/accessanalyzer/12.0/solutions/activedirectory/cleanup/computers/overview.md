@@ -24,10 +24,10 @@ The jobs in the 3.Computers Job Group are:
 
 - The .Active Directory Inventory Job Group needs to be successfully run
 - For the AD_DeprovisionComputers Job, the target OU needs to be manually set in the Move Computers
-  Action Task prior to executing the actions. See the
+  Action Task before executing the actions. See the
   [Action Tasks for the AD_DeprovisionComputers Job](ad_deprovisioncomputers.md#action-tasks-for-the-ad_deprovisioncomputers-job)
   topic for additional information.
-- The AD_DeprovisionComputers Job needs to be run prior to running the
+- The AD_DeprovisionComputers Job needs to be run before running the
   AD_DeprovisionComputers_Status Job
 
 **Step 2 –** Schedule the 3.Computers Job Group to run as desired after the prerequisites have been

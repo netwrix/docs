@@ -10,7 +10,7 @@ These requirements apply to any Linux host you want to register as a custom scan
 
 ## Operating system
 
-Access Analyzer supports any Linux distribution as a scanner host. Ubuntu 20.04 LTS or later is recommended.
+Access Analyzer supports any Linux distribution as a scanner host. Netwrix recommends Ubuntu 20.04 LTS or later.
 
 Access Analyzer registers the scanner by connecting over SSH and running an automated installation script. The script installs [k3s](https://k3s.io/) — a lightweight Kubernetes distribution — and joins the host to the Access Analyzer cluster as a worker node.
 
@@ -53,7 +53,7 @@ When you click **Deploy** in the Deploy Scanner wizard, Access Analyzer runs the
 | 22 | TCP | Access Analyzer → Scanner | SSH connection during registration only |
 | 6443 | TCP | Scanner → Access Analyzer | Kubernetes API — ongoing job dispatch |
 
-Port 22 is only required during the initial registration. After the scanner is registered, the scanner host connects outbound to the Access Analyzer server on port 6443 to receive and run scan jobs. Port 22 can be restricted or closed after registration is complete.
+Access Analyzer only requires port 22 during the initial registration. After registration completes, the scanner host connects outbound to the Access Analyzer server on port 6443 to receive and run scan jobs. You can restrict or close port 22 after registration completes.
 
 :::note
 The SSH port defaults to **22** but is configurable in the Deploy Scanner wizard. If your scanner host runs SSH on a non-standard port, enter it in the **SSH Port** field during deployment.
@@ -61,7 +61,7 @@ The SSH port defaults to **22** but is configurable in the Deploy Scanner wizard
 
 ### Internet access
 
-The registration script downloads the k3s installer from `https://get.k3s.io`. The scanner host must be able to reach this URL **during registration only**. After registration completes, internet access is not required for normal scan operation.
+The registration script downloads the k3s installer from `https://get.k3s.io`. The scanner host must be able to reach this URL **during registration only**. After registration completes, normal scan operation doesn't require internet access.
 
 ## Service account
 
@@ -71,7 +71,7 @@ Scanner deployment requires an **SSH Username / SSH Key** service account in Acc
 - Use an **unencrypted** private key in PEM format
 
 :::warning
-Passphrase-protected private keys are not supported. The registration script will fail if the key requires a passphrase. Use a key generated without a passphrase, or strip the passphrase before creating the service account.
+Access Analyzer doesn't support passphrase-protected private keys. The registration script will fail if the key requires a passphrase. Use a key generated without a passphrase, or strip the passphrase before creating the service account.
 :::
 
 See [SSH Username / SSH Key](../../service-accounts/ssh-username-key.md) to create this account. You can also create it inline from the Deploy Scanner wizard using the **+** button next to the Service Account field without navigating away.

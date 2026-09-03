@@ -9,7 +9,7 @@ sidebar_position: 100
 The Ad Hoc Audits Job Group is designed to report on resources and trustees that have been provided
 by the user from targeted file servers.
 
-The Ad Hoc Audits Job Group tables and reports are blank if the CSV file is not modified to contain
+The Ad Hoc Audits Job Group tables and reports are blank if the CSV file isn't modified to contain
 the required information before job execution.
 
 :::info

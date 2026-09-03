@@ -24,11 +24,7 @@ You can also configure advanced audit policies for same purpose. See the
 
 ## Manual Configuration
 
-While there are several methods to configure local audit policies, this topic covers just one of
-them: how to configure policies locally with the Local Security Policy snap-in. To apply settings to
-the whole domain, use the Group Policy but consider the possible impact on your environment.
-
-Follow the steps to configure local audit policies.
+While there are several methods to configure local audit policies, this topic covers just one of them: how to configure policies locally with the Local Security Policy snap-in. To apply settings to the whole domain, use Group Policy but consider the possible impact on your environment.
 
 **Step 1 –** On the audited server, open the Local Security Policy snap-in: navigate to Start >
 Windows Administrative Tools > Local Security Policy.

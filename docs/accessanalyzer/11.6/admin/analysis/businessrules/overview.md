@@ -17,10 +17,10 @@ original baseline expectations.
 
 ## Scorecard
 
-Business Rules analysis module results are displayed in a table called a scorecard. The scorecard
-determines which of the rules are applied, and in what order. A scorecard table contains only
+A table called a scorecard displays Business Rules analysis module results. The scorecard
+determines which rules apply, and in what order. A scorecard table contains only
 exceptions and deviations from the business rule criteria when compared to a baseline value. The
-table does not include matches to the criteria. All scorecard table names are suffixed with
+table doesn't include matches to the criteria. All scorecard table names are suffixed with
 `_SCORECARD` for easy identification.
 
 ## Edit Rules Window

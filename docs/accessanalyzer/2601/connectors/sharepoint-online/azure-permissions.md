@@ -9,7 +9,7 @@ sidebar_position: 10
 Access Analyzer connects to SharePoint Online through a Microsoft Entra ID registered application using certificate-based authentication. You must register a dedicated application for Access Analyzer and grant it the required API permissions before adding SharePoint Online as a data source.
 
 :::note
-A user account with the Global Administrator, Application Administrator, or Cloud Application Administrator role is required to register an application and grant admin consent for permissions.
+You need a user account with the Global Administrator, Application Administrator, or Cloud Application Administrator role to register an application and grant admin consent for permissions.
 :::
 
 ## Register an app in Microsoft Entra ID
@@ -47,7 +47,7 @@ The Overview page for the newly registered application opens. Note the following
 
 6. Click an API to access its permissions, then click the **Application permissions** tab.
 
-7. Select the required permissions for each API (see table below).
+7. Select the required permissions for each API. See [Required permissions](#required-permissions).
 
 8. Click **Add Permissions**.
 
@@ -57,8 +57,8 @@ The Overview page for the newly registered application opens. Note the following
 
 ### Required permissions
 
-| API | Permission | Description |
-| --- | --- | --- |
-| Microsoft Graph | `Sites.FullControl.All` | Full control of all site collections |
-| Microsoft Graph | `Directory.Read.All` | Read directory data |
-| SharePoint | `Sites.FullControl.All` | Full control of all site collections |
+| API | Permission | Type | Description |
+| --- | --- | --- | --- |
+| Microsoft Graph | `Sites.Read.All` | Application | Read items in all site collections |
+| Microsoft Graph | `Directory.Read.All` | Application | Read directory data |
+| SharePoint | `Sites.FullControl.All` | Application | Full control of all site collections |

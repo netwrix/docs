@@ -7,7 +7,7 @@ sidebar_position: 30
 # AAD_StaleUsers Job
 
 The AAD_StaleUsers Job identifies potentially stale users based on a variety of factors. These
-accounts should be reviewed and cleaned up in order to increase security and reduce complexity.
+accounts should be reviewed and cleaned up to increase security and reduce complexity.
 
 ## Analysis Tasks for the AAD_StaleUsers Job
 
@@ -15,7 +15,7 @@ Navigate to the **Jobs** > **Entra ID** > **2.Users** > **AAD_StaleUsers** > **C
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -34,4 +34,4 @@ following pre-configured report.
 
 | Report      | Description                                                                                                                                                                                                                             | Default Tags | Report Elements                                                                                                                                                                                           |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Stale Users | This report identifies user accounts which have not logged into the domain for an extended amount of time or are currently disabled. A user account is considered stale if the last logon is over 30 days ago or is currently disabled. | None         | This report is comprised of three elements: <ul><li>Stacked Bar Chart – Displays users by domain</li><li>Table – Provides details on users</li><li>Tables – Provides details on users by domain</li></ul> |
+| Stale Users | This report identifies user accounts which have not logged into the domain for an extended amount of time or are disabled. A user account is considered stale if the last logon is over 30 days ago or is disabled. | None | This report is comprised of three elements: <ul><li>Stacked Bar Chart – Displays users by domain</li><li>Table – Provides details on users</li><li>Tables – Provides details on users by domain</li></ul> |

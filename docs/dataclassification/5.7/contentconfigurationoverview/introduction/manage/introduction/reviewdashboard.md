@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Reviewing SharePoint Dashboard
 
-The SharePoint dashboard is similar to the main reporting dashboard, with the results filtered to
+The SharePoint dashboard is similar to the main reporting dashboard, but shows results filtered to
 SharePoint types. See [Operations and Health Dashboards](/docs/dataclassification/5.7/dashboards.md) for more
 information on the reporting dashboard.
 

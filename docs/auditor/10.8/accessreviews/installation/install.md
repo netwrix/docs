@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Install
 
-Once the prerequisites have been met, follow the steps to install the Access Reviews application.
+After meeting the prerequisites, install the Access Reviews application.
 
 **Step 1 –** Run the `AccessReviews.exe` executable, and the Netwrix Auditor Access Reviews Setup
 wizard opens.
@@ -46,7 +46,7 @@ specific requirements for changing the path.
 
 - Database — Enter the name of the database. By default, this is set to NetwrixAR.
 
-- Authentication – Select the Database service account type from the drop-down menu. Then enter the
+- Authentication – Select the Database service account type from the dropdown menu. Then enter the
   account information in the **User Name** and **Password** fields.
     - For Windows Authentication – **User Name** format must be `[DOMAIN]\[username]` , for example
       `NWXTECH\ad.bruce`
@@ -54,7 +54,7 @@ specific requirements for changing the path.
 **NOTE:** See the [Database Page](/docs/auditor/10.8/accessreviews/admin/configuration/database.md) topic for additional
 information.
 
-![Database does not exist Confirmation Window](/images/auditor/10.7/access/reviews/installation/installsqldatabase.webp)
+![Database doesn't exist Confirmation Window](/images/auditor/10.7/access/reviews/installation/installsqldatabase.webp)
 
 **Step 6 –** If there are no errors, you will be asked to confirm creation of the new database.
 Click **Yes**.
@@ -73,7 +73,7 @@ field. When the port is set as desired, click **Next**.
 
 ![Netwrix Auditor Access Reviews Setup wizard Completed page](/images/auditor/10.7/access/reviews/installation/installcompleted.webp)
 
-**Step 9 –** Once the installation has successfully completed, click **Finish** to exit the wizard.
+**Step 9 –** After installation has successfully completed, click **Finish** to exit the wizard.
 
 The installation wizard placed a Netwrix Auditor Access Reviews icon on the desktop. Now proceed to
 the [First Launch](/docs/auditor/10.8/accessreviews/admin/firstlaunch.md) topic for next steps.

@@ -34,7 +34,7 @@ See the [Exchange Lockdown Considerations](/docs/threatprevention/8.0/troublesho
 information on resolving this.
 
 :::note
-There are additional factors to consider in order to block delegations through Outlook.
+There are additional factors to consider to block delegations through Outlook.
 See the [Troubleshooting FAQs](/docs/threatprevention/8.0/troubleshooting/overview.md#troubleshooting-faqs) topic for
 additional information.
 :::
@@ -77,7 +77,7 @@ Select the **Include** or **Exclude** button and then edit the list.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Exchange Trustees Filter
 
@@ -97,7 +97,7 @@ Use the buttons in the Trustees and Collections of Trustees areas to edit the li
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 The other option button options dictate how the Exchange Trustees filter and the Exchange
 Perpetrators filter relate to each other. They include:
@@ -111,7 +111,7 @@ Perpetrators filter relate to each other. They include:
     the mailbox trustee.
   - For a Block example, if this policy is protecting a CEO mailbox, the Trustee list includes
     Larry Dawson for Block, and John Adair is included in the Perpetrator block list, then Larry
-    Dawson cannot be added as the mailbox trustee by anyone AND John Adair cannot add anyone else
+    Dawson can't be added as the mailbox trustee by anyone AND John Adair can't add anyone else
     as the mailbox trustee.
 
 - Trustee AND Perpetrator Must Be Met – Both the Trustee selection AND the Perpetrator selection
@@ -132,13 +132,13 @@ committing changes from being locked down.
 
 ![Policy window - Exchange Perpetrator filter for lockdown](/images/threatprevention/8.0/admin/policies/eventtype/exchangeperpetratorlockdown.webp)
 
-Options at the top enable you to block or allow user access to mailboxes based on the assigned
+Use the options at the top to block or allow user access to mailboxes based on the assigned
 roles.
 
 The Logged on As checkbox options are:
 
-- Delegate – User who is not the owner of the mailbox being accessed
-- Administrator – User who is not the owner of the mailbox being accessed but has administrative
+- Delegate – User who isn't the owner of the mailbox being accessed
+- Administrator – User who isn't the owner of the mailbox being accessed but has administrative
   privileges
 - Owner – User who is the owner of the mailbox being accessed
 
@@ -181,10 +181,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::

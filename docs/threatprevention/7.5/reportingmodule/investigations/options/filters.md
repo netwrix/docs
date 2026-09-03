@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Filters section provides options to build a filter statement by selecting the Attribute,
 Operator, and Filter value. A time period for the report data is also configured here. If multiple
-data sources have been configured, there is also a Source drop-down menu.. Filter statements can be
+data sources have been configured, there is also a Source dropdown menu. Filter statements can be
 simple with one value statement or complex with multiple value statements.
 
 Click **Investigate** in the application header bar to open the Investigations interface. Then
@@ -22,7 +22,7 @@ Click the arrow on the right side to expand or collapse the Filters section.
 The following options are available for configuring a filter statement:
 
 - Source – This menu provides a list of all integrations with the application. If there is only one
-  data source configured, the Source menudisplays that only. See the
+  data source configured, the Source menu displays that only. See the
   [Netwrix Integrations Page](/docs/threatprevention/7.5/reportingmodule/configuration/integrations/netwrixintegrations.md) topic for
   additional information.
 - Timeframe – This menu provides several timeframe options as well as a clock and a calendar for
@@ -47,9 +47,9 @@ You must set a timeframe for an investigation query. When you run a query, the a
 available data for activity events that match the set filters for the specified timeframe. By
 default, the timeframe is set for the "Last Hour" of activity.
 
-![Investigations Interface showing the Timeframe drop-down menu](/images/threatprevention/7.5/reportingmodule/investigations/options/timeframe.webp)
+![Investigations Interface showing the Timeframe dropdown menu](/images/threatprevention/7.5/reportingmodule/investigations/options/timeframe.webp)
 
-Click the displayed timeframeto open a window, which provides several timeframe options as well as a
+Click the displayed timeframe to open a window, which provides several timeframe options as well as a
 clock and a calendar for setting a custom range:
 
 - Preset timeframes:
@@ -74,21 +74,19 @@ modified to run a query ad hoc with the same filter statement but a different ti
 
 **Configure a Custom Timeframe Range**
 
-Follow the steps to configure a custom timeframe range.
-
-**Step 1 –** On the Investigations interface, select the desired Investigation or start a new
+**Step 1 –** On the Investigations interface, select an investigation or start a new
 investigation.
 
 **Step 2 –** Click the Timeframe displayed in the Filters section.
 
 **Step 3 –** Set the start date on the left. You can either type it in the box at the top or
-navigate through the calendar to select the desired date.
+navigate through the calendar to select a date.
 
 **Step 4 –** Set the start time on the left. You can either type it in the box at the top or click
 the clock icon within the box to get a menu for selecting the hour, minute, and period (AM or PM).
 
 **Step 5 –** Set the end date on the right. You can either type it in the box at the top or navigate
-through the calendar to select the desired date.
+through the calendar to select a date.
 
 **Step 6 –** Set the end time on the right. You can either type it in the box at the top or click
 the clock icon within the box to get a menu for selecting the hour, minute, and period (AM or PM).
@@ -100,16 +98,16 @@ to the selected investigation, unless you are running an ad hoc query.
 
 ## Filter Attribute Menu
 
-The Attribute menu in the Filters sectionhas the following options grouped by the type of attribute:
+The Attribute menu in the Filters section has the following options grouped by the type of attribute:
 
-![Attribute drop-down menu in the Filters section](/images/threatprevention/7.5/reportingmodule/investigations/options/attrributemenu.webp)
+![Attribute dropdown menu in the Filters section](/images/threatprevention/7.5/reportingmodule/investigations/options/attrributemenu.webp)
 
 - Event (grayed-out category group header in the menu):
 
   - Affected Object – The name of the object in Active Directory that was affected by the event
   - Attribute – The attribute of the Active Directory object affected by the event
   - Attribute New Value – The attribute value of the Active Directory object after the activity
-  - Attribute Old Value – The attribute value of the Active Directory object prior to the activity
+  - Attribute Old Value – The attribute value of the Active Directory object before the activity
   - Blocked – Indicates whether the operation was prevented by a security measure, such as a
     Netwrix agent
   - Client – The device, IP address, or host that initiated the event
@@ -150,8 +148,8 @@ The Attribute menu in the Filters sectionhas the following options grouped by th
 - File System (grayed-out category group header in the menu):
 
   - Extension – The file extension indicating the file type (e.g., .txt, .docx)
-  - File Path – The The full directory path to where the file is located
-  - File Size – The The size of the file, typically measured in bytes
+  - File Path – The full directory path to where the file is located
+  - File Size – The size of the file, typically measured in bytes
   - File Tag – A label or classification applied to the file for organizational or security
     purposes
 
@@ -169,31 +167,30 @@ Attribute. The following is a list of all possible operator options:
 - Equals
 - Not Equal To
 - Contains
-- Does Not Contain
+- Doesn't Contain
 - Starts With
 - Ends With
 
 ## Build a Filter Statement
 
-You can create a filter for a new investigation or modify a filter for a saved investigation. Follow
-the steps to build a filter statement.
+You can create a filter for a new investigation or modify a filter for a saved investigation.
 
-**Step 1 –** Navigate to the desired investigation's Filters section.
+**Step 1 –** Navigate to an investigation's Filters section.
 
 ![filtersimple](/images/threatprevention/7.5/reportingmodule/investigations/options/filtersimple.webp)
 
-**Step 2 –** If multiple data sources are configure, select a source from the **Source** drop-down
+**Step 2 –** If multiple data sources are configure, select a source from the **Source** dropdown
 menu.
 
 **Step 3 –** Set the timeframe for the event data to be returned in the report.
 
-**Step 4 –** Select an attribute from the Attribute drop-down menu.
+**Step 4 –** Select an attribute from the Attribute dropdown menu.
 
-**Step 5 –** Select an operator from the Operator drop-down menu.
+**Step 5 –** Select an operator from the Operator dropdown menu.
 
 **Step 6 –** Enter a value in the Filter box. Possible values available from the events will
-populate in a drop-down menu as you type. Select the desired value from the drop-down menu. If the
-value you type is not available in the drop-down menu, use the Add button to add it to the Filter
+populate in a dropdown menu as you type. Select a value from the dropdown menu. If the
+value you type isn't available in the dropdown menu, use the Add button to add it to the Filter
 box.
 
 :::note
@@ -227,7 +224,7 @@ Click the X at the end of a row to remove it from the statement.
 :::
 
 
-Once the filter is set, you can generate the report ad hoc by clicking **Run Query**. The allows you
+After you set the filter, you can generate the report ad hoc by clicking **Run Query**. This allows you
 to test if your filter statement is working as desired. Save the investigation for reuse. You can
 also add subscriptions or export the report data using the options above the Filters section.
 

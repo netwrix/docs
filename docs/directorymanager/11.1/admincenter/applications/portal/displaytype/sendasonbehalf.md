@@ -57,18 +57,18 @@ would enable the object to delegate the Send As permission to users.
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Properties** in the left pane. The **Properties** page is displayed.
-5. In the **Select Directory Object** drop-down list, select a Mailbox or Group object to add the
+5. In the **Select Directory Object** dropdown list, select a Mailbox or Group object to add the
    Send As setting to its properties page. The **Name** list displays the tabs on the object’s
    properties page.
 6. Click **Edit** for a tab (for example, the **Email** tab).
    The **Edit Design Category** pane is displayed, with the **Fields** area displaying the fields on
    the tab.
 7. Click **Add Field** to add the **Send As** field. The **Add Field** pane is displayed.
-8. In the **Field** drop-down list, select the _XAdPermissionExtendedRights_ attribute.
+8. In the **Field** dropdown list, select the _XAdPermissionExtendedRights_ attribute.
 9. In the **Display Name** box, provide a label for the field, such as ‘Send As Permissions’. The
    Send As field will be displayed with this name in the portal.
-10. In the **Display Type** drop-down list, select ‘DNs’.
-11. In the **Visibility Level** drop-down list, select a security role. The Send As field would be
+10. In the **Display Type** dropdown list, select ‘DNs’.
+11. In the **Visibility Level** dropdown list, select a security role. The Send As field would be
     visible to users of this role and roles with a priority value higher than this role. It would
     not even be visible to group owners (for their respective groups) and user managers (for their
     direct reports) if they fall in a lower priority role. See
@@ -80,15 +80,15 @@ would enable the object to delegate the Send As permission to users.
       the mailbox itself. In other words, the field would be visible to group owners for their
       respective groups and to managers for their respective direct reports in the portal.
     - If you have selected ‘Mailbox’ in the Select Directory Object list, the _Self_ option is also
-      available in the **Visibility Level** drop-down list. Select _Self_ to make the field visible
-      only to the mailbox on his or her properties page. It would not be visible to any other user,
+      available in the **Visibility Level** dropdown list. Select _Self_ to make the field visible
+      only to the mailbox on his or her properties page. It wouldn't be visible to any other user,
       such as a role with a higher priority value or a role with the ‘Manage any profile’ permission
       in the identity store.
 
-12. In the **Access Level** drop-down list, select a security role. Users of this role and roles
+12. In the **Access Level** dropdown list, select a security role. Users of this role and roles
     with a priority value higher than this role can add and update the value of the Send As field,
     i.e., add and remove objects in the Send As list. If group owners/user managers fall in a lower
-    priority role, they would not be able to update the value of the field for their respective
+    priority role, they wouldn't be able to update the value of the field for their respective
     groups/direct reports.
 
     - Select _Never_ to make the field read-only for all users.
@@ -96,22 +96,22 @@ would enable the object to delegate the Send As permission to users.
       of a mailbox) to specify or modify the value of this field. It would be read-only for other
       users, such as group members or the mailbox itself.
       In other words, only group owners can specify or modify the value of this field for their
-      respective groups in the portal. A role with a higher priority value cannot change the value;
-      group members cannot change the value; and even a role with the ‘Manage any Group’ permission
-      in the identity store cannot change the value.
+      respective groups in the portal. A role with a higher priority value can't change the value;
+      group members can't change the value; and even a role with the ‘Manage any Group’ permission
+      in the identity store can't change the value.
       Similarly, only mailbox managers can specify or modify the value of this field for their
-      respective direct reports in the portal. A role with a higher priority value cannot change the
-      value; and even a role with the ‘Manage any profile’ permission in the identity store cannot
+      respective direct reports in the portal. A role with a higher priority value can't change the
+      value; and even a role with the ‘Manage any profile’ permission in the identity store can't
       change the value.
-    - If you have selected ‘Mailbox’ in the Select Directory Object drop-down list, the _Self_
-      option is available in the **Access Level** drop-down list. Select **Self** to enable the
+    - If you have selected ‘Mailbox’ in the Select Directory Object dropdown list, the _Self_
+      option is available in the **Access Level** dropdown list. Select **Self** to enable the
       mailbox to specify or modify the value of the field. It would be read-only for other users,
       such as the mailbox’s manager or a role with a higher priority value or even a role with the
       ‘Manage any profile’ permission in the identity store.
 
 13. As mentioned for access level and visibility level, the field is editable and visible to members
     of the selected role and roles with a priority value higher than the selected role.
-    In the **Exclude Roles** area, select the check boxes for the higher priority role(s) to deny
+    In the **Exclude Roles** area, select the checkboxes for the higher priority roles to deny
     them access and visibility on the field.
 14. Use the **Search Object Types** area to specify the object types that can be searched on the
     portal’s Find dialog box, to set as value for the _Send As_ field.
@@ -123,12 +123,12 @@ would enable the object to delegate the Send As permission to users.
 
     When you select any of these display types, Directory Manager identifies that the value for the
     _Send As_ field has to be searched using the Find dialog box. The **Search Object Types** area
-    is displayed, where you can select the required object type(s). For example, if you select User,
+    is displayed, where you can select the required object types. For example, if you select User,
     only user objects can be searched and selected as value for the field.
 
-15. Select the **Is Required** check box to make it mandatory for users to add at least one object
+15. Select the **Is Required** checkbox to make it mandatory for users to add at least one object
     to the _Send As_ list.
-16. Select the **Is Read Only** check box to make the _Send As_ field read-only.
+16. Select the **Is Read Only** checkbox to make the _Send As_ field read-only.
 17. Click **OK** on the **Add Field** pane and the **Edit Design Category** pane.
 18. Click **Save** on the **Properties** page.
 
@@ -161,13 +161,13 @@ This would enable the object to delegate the Send on Behalf permission to users.
    The **Edit Design Category** pane is displayed, with the **Fields** area displaying the fields on
    the tab.
 7. Click **Add Field** to add the **Send on Behalf** field. The **Add Field** pane is displayed.
-8. In the **Field** drop-down list, select the _publicDelegates_ attribute.
+8. In the **Field** dropdown list, select the _publicDelegates_ attribute.
 9. In the **Display Name** provide a label for the field, such as ‘Send on Behalf Permissions’. The
    Send on Behalf field will be displayed with this name on the portal.
-10. In the **Display Type** drop-down list, select ‘DNs’.
-11. In the **Visibility Level** drop-down list, select a security role. The Send on Behalf field
+10. In the **Display Type** dropdown list, select ‘DNs’.
+11. In the **Visibility Level** dropdown list, select a security role. The Send on Behalf field
     would be visible to users of this role and roles with a priority value higher than this role. It
-    would not be visible to group owners (for their groups) and user managers (for their direct
+    wouldn't be visible to group owners (for their groups) and user managers (for their direct
     reports) if they fall in a lower priority role. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
 
     - Select _Never_ to hide the field from all users.
@@ -176,15 +176,15 @@ This would enable the object to delegate the Send on Behalf permission to users.
       the mailbox itself. In other words, the field would be visible to group owners for their
       respective groups and to managers for their respective direct reports in the portal.
     - If you have selected ‘Mailbox’ in the Select Directory Object list, the _Self_ option is also
-      available in the **Visibility Level** drop-down list. Select _Self_ to make the field visible
-      only to the mailbox on his or her properties page. It would not be visible to any other user,
+      available in the **Visibility Level** dropdown list. Select _Self_ to make the field visible
+      only to the mailbox on his or her properties page. It wouldn't be visible to any other user,
       such as a role with a higher priority value or a role with the ‘Manage any profile’ permission
       in the identity store.
 
-12. In the **Access Level** drop-down list, select a security role. Users of this role and roles
+12. In the **Access Level** dropdown list, select a security role. Users of this role and roles
     with a priority value higher than this role can add and update the value of the Send on Behalf
     field, i.e., add and remove objects in the Send on Behalf list. If group owners/user managers
-    fall in a lower priority role, they would not be able to update the value of the field for their
+    fall in a lower priority role, they wouldn't be able to update the value of the field for their
     respective groups/direct reports.
 
     - Select _Never_ to make the field read-only for all users.
@@ -193,19 +193,19 @@ This would enable the object to delegate the Send on Behalf permission to users.
       users, such as group members or the mailbox itself.
       In other words, only group owners can specify or modify the value of this field for their
       respective groups in the portal. A role with a higher priority value, group members, or a role
-      with the ‘Manage any Group’ permission in the identity store cannot change the value.
+      with the ‘Manage any Group’ permission in the identity store can't change the value.
       Similarly, only mailbox managers can specify or modify the value of this field for their
       respective direct reports in the portal. A role with a higher priority value or a role with
-      the ‘Manage any profile’ permission in the identity store cannot change the value.
-    - If you have selected ‘Mailbox’ in the _Select Directory Object_ drop-down list, the _Self_
-      option is available in the **Access Level** drop-down list. Select **Self** to enable the
+      the ‘Manage any profile’ permission in the identity store can't change the value.
+    - If you have selected ‘Mailbox’ in the _Select Directory Object_ dropdown list, the _Self_
+      option is available in the **Access Level** dropdown list. Select **Self** to enable the
       mailbox to specify or modify the value of the field. It would be read-only for other users,
       such as the mailbox’s manager or a role with a higher priority value or even a role with the
       ‘Manage any profile’ permission in the identity store.
 
 13. As mentioned for access level and visibility level, the field is editable and visible to members
     of the selected role and roles with a priority value higher than the selected role.
-    In the **Exclude Roles** area, select the check boxes for the higher priority role(s) to deny
+    In the **Exclude Roles** area, select the checkboxes for the higher priority roles to deny
     them access and visibility on the field.
 14. Use the **Search Object Types** area to specify the object types that can be searched on the
     portal’s Find dialog box, to set as value for the _Send on Behalf_ field.
@@ -217,12 +217,12 @@ This would enable the object to delegate the Send on Behalf permission to users.
 
     When you select any of these display types, Directory Manager identifies that the value for the
     _Send on Behalf_ field has to be searched using the Find dialog box. The **Search Object Types**
-    area is displayed, where you can select the required object type(s). For example, if you select
+    area is displayed, where you can select the required object types. For example, if you select
     _User_, only user objects can be searched and selected as value for the field.
 
-15. Select the **Is Required** check box to make it mandatory for users to add at least one object
+15. Select the **Is Required** checkbox to make it mandatory for users to add at least one object
     to the _Send on Behalf_ list.
-16. Select the **Is Read Only** check box to make the _Send on Behalf_ field read-only.
+16. Select the **Is Read Only** checkbox to make the _Send on Behalf_ field read-only.
 17. Click **OK** on the **Add Field** pane and the **Edit Design Category** pane.
 18. Click **Save** on the **Properties** page.
 

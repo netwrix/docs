@@ -19,10 +19,10 @@ The table contains one row per assigned resource. The information in this table 
   Administrator or the assigned owner
 - Other Owners – Shows all owners assigned for each resource. The current owner and assigned owners
   who declined ownership will not show.
-- Confirmed State – Indicates whether or not the assigned owner has confirmed ownership of that
-  resource. Tool-tips display when hovering over the icons indicating whether the resource ownership
-  has been confirmed, declined, pending response, or that a confirmation has not been requested.
-  Hover over the icon to display a description of the state and a date timestamp of the last update:
+- Confirmed State – Indicates whether the assigned owner has confirmed ownership of that
+  resource. Hover over the icons to display tool-tips showing the resource ownership state. Tool-tips indicate whether the resource ownership
+  has been confirmed, declined, pending response, or awaiting confirmation.
+  The tool-tip displays a description of the state and a date timestamp of the last update:
 
     - Yellow question mark icon – Indicates ownership confirmation has not been requested, and there
       is no ownership status at this time
@@ -36,12 +36,12 @@ The table contains one row per assigned resource. The information in this table 
 The table data grid functions the same way as other table grids. See the
 [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.
 
-The buttons at the bottom enable you to conduct the following actions:
+The buttons at the bottom let you conduct the following actions:
 
 | Button         | Function                                                                                                                                                                                                                                                                        |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Update         | Opens the Update Resource Window for the selected resource, which allows you to confirm or decline ownership of the resource and to add a description.                                                                                                                          |
-| Change Access  | Opens the [Change Resource Access Wizard](/docs/accessinformationcenter/12.0/owneroverview/ownerportal/assignedresources/changeaccess.md) for the selected resource, which allows you to make ad hoc changes to access and group membership. This button is only enabled if the feature was enabled for the selected resource by the Ownership Administrators. |
+| Update         | Opens the Update Resource Window for the selected resource, where you can confirm or decline ownership of the resource and add a description.                                                                                                                          |
+| Change Access  | Opens the [Change Resource Access Wizard](/docs/accessinformationcenter/12.0/owneroverview/ownerportal/assignedresources/changeaccess.md) for the selected resource, where you can make ad hoc changes to access and group membership. This button is only enabled if the feature was enabled for the selected resource by the Ownership Administrators. |
 | Resource Audit | Opens the Resource Audit interface or Group Audit interface directly to the selected resource. See the [Audit Interfaces](/docs/accessinformationcenter/12.0/resourceaudit/navigate/overview.md) topic for additional information.                                                                           |
 
 ## Update Resource Window
@@ -54,12 +54,12 @@ resource.
 
 There are two options for ownership confirmation:
 
-- I am the owner of this resource — Select this radio button to confirm ownership of the resource.
-  The Resource Description field enables you to optionally provide a description for this resource.
+- You are the owner of this resource — Select this radio button to confirm ownership of the resource.
+  The Resource Description field lets you optionally provide a description for this resource.
   This description will be visible to domain users requesting access as well as Ownership
   Administrators, Resource Review Administrators, and Self-Service Access Request Administrators.
-- I do not own this resource — Select this radio button to deny ownership of the resource. The Do
-  you know who the owner is? field enables you to enter the name of an individual who might be the
+- You don't own this resource — Select this radio button to deny ownership of the resource. The Do
+  you know who the owner is? field lets you enter the name of an individual who might be the
   owner.
 
 Click **OK** to save any changes or Cancel to close the window without saving changes.

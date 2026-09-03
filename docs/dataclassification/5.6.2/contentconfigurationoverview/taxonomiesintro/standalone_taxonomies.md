@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Built-in Taxonomies Overview
 
-Netwrix Data Classification comes with eight taxonomies with hundreds of classification rules
-out-of-the-box.
+Netwrix Data Classification comes with eight taxonomies with hundreds of predefined classification rules.
 
 The four core taxonomies cover a broad range of sensitive personal, financial, and health-related
 information. The remaining four taxonomies derive from the core set. They are tailored to meet the
@@ -89,7 +88,7 @@ for more information on users' permissions.
 
 ### Payment Card Industry Data Security Standard (PCI DSS)
 
-Cardholder data (holder name, card number, expiration and security code) for the major payment
+Cardholder data (holder name, card number, expiration, and security code) for the major payment
 systems:
 
 - American Express
@@ -101,7 +100,7 @@ systems:
 - Visa
 
 ### Patient Health Information (PHI)
-Medical forms, treatment records, prescription drugs, decease names/codes, allergies, social and
+Medical forms, treatment records, prescription drugs, decease names/codes, allergies, social, and
 insurance numbers.
 
 ## Derived Taxonomies
@@ -179,18 +178,18 @@ information (GDPR Article 9):
 
 ### Gramm-Leach-Bliley Act (GLBA)
 
-Combines the Financial Records, PCI DSS and PII (US social security numbers) taxonomies.
+Combines the Financial Records, PCI DSS and PII (United States social security numbers) taxonomies.
 
 ### Health Insurance Portability and Accountability Act (HIPAA)
 
-Combines the PHI and PII (US social security numbers) taxonomies.
+Combines the PHI and PII (United States social security numbers) taxonomies.
 
 ## Sensitive and Non-Sensitive Taxonomies
 
 While creating your own reports, you can specify whether a taxonomy is sensitive (finance,
 сredentials) or non-sensitive (file size, language).
 
-**NOTE:** This applies only to customized taxonomies, which you add by yourself. You cannot change
+**NOTE:** This applies only to customized taxonomies, which you add by yourself. You can't change
 the sensitivity settings for the pre-defined taxonomies.
 
 To specify sensitive taxonomy:
