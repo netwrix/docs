@@ -8,7 +8,7 @@ sidebar_position: 10
 
 **Dependencies**
 
-The following Access Analyzer job groups need to be successfully run:
+Successfully run the following Access Analyzer job groups first:
 
 - .Active Directory Inventory
 - .Entra ID Inventory
@@ -16,7 +16,7 @@ The following Access Analyzer job groups need to be successfully run:
 **Targeted Hosts**
 
 The Mailflow job group uses Remote PowerShell through the ExchangePS Data Collector and the
-PowerShell Data Collector. The host list needs to be set to one of the following:
+PowerShell Data Collector. Set the host list to one of the following:
 
 - Local Host
 - Custom Host List for Exchange Online
@@ -44,7 +44,7 @@ topic for additional information.
 
 **Schedule Frequency**
 
-This job group has been designed to run daily.
+Run this job group daily.
 
 :::info
 Run this job group at 1:00 AM.
@@ -53,21 +53,21 @@ Run this job group at 1:00 AM.
 
 **Query Configuration**
 
-The 8. Exchange Online job group is designed to be run with the default query configurations.
+Run the 8. Exchange Online job group with the default query configurations.
 However, the following queries can be modified:
 
 - **Mailflow** > **0. Collection** > **EX_Mailflow** Job – **MailFlow** Query
 - **EX_ASPolicies** Job – **Exchange Settings** Query
 
-No other queries should be modified.
+Don't modify other queries.
 
 **Analysis Configuration**
 
-The 8. Exchange Online job group should be run with the default analysis configurations. Most of
+Run the 8. Exchange Online job group with the default analysis configurations. Most of
 these analysis tasks are preconfigured and should never be modified or deselected. There are some
 that are deselected by default, as they are for troubleshooting purposes.
 
-The following analysis tasks should not be deselected, but their parameters can be modified:
+The following analysis tasks shouldn't be deselected, but their parameters can be modified:
 
 - **Mailflow** > **0. Collection** > **EX_Mailflow** Job – **03. SET HISTORY RETENTION** Analysis
   Task
@@ -80,7 +80,7 @@ The following analysis tasks should not be deselected, but their parameters can 
 
 **Step 1 –** Set the host on the EX_Mailflow job.
 
-- The **Mailflow** > **0. Collection** > **EX_Mailflow** job needs to be set to run against one of
+- Set the **Mailflow** > **0. Collection** > **EX_Mailflow** job to run against one of
   the following:
 
     - Local Host

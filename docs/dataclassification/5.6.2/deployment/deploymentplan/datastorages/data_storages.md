@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Data Storages and Sizing
 
-Netwrix Data Classification utilizes two data storages:
+Netwrix Data Classification uses two data storages:
 
 - NDC SQL database — SQL Server database that stores product configuration and metadata for the data
   sources.
@@ -15,7 +15,7 @@ Netwrix Data Classification utilizes two data storages:
 
 ### NDC SQL database
 
-Make sure you have NDC Server and **NDC SQL database** deployed on different machines.
+Ensure you have NDC Server and **NDC SQL database** deployed on different machines.
 
 It is recommended to create the NDC SQL database on a dedicated SQL Server instance.
 
@@ -33,15 +33,15 @@ It is recommended to create the NDC SQL database on a dedicated SQL Server inst
     - **File growth**: _128 MB_ - recommended value for small to medium environment, _512 MB_ - for
       large environment, i.e. if planning to index data sources containing 1, 000, 000+ objects.
     - **Maximum File Size** - select _Unlimited_.
-- Make sure that the **Recovery model** for this database is set to _Simple_. Do not change the
-  recovery model — to avoid log files growth.
+- Set the **Recovery model** for this database to _Simple_. Don't change the
+  recovery model to avoid log file growth.
 
 ### NDC Index
 
 Required disk space for the NDC Index file storage will depend, in particular, on the data
-processing mode you plan to use (_No Index_, _Keyword_ or _Compound Term_).
+processing mode you plan to use (_No Index_, _Keyword_, or _Compound Term_).
 
-As a rule of thumb, required space can be calculated as 35% of data you plan to be indexed. For
+As a general guideline, required space can be calculated as 35% of data you plan to be indexed. For
 example, if you have 45 GB of files, they will require up to 15 GB for the NDC Index files.
 
 ## Scalability and Performance
@@ -56,7 +56,6 @@ environments can be ranged as follows:
 | Up to 64, 000, 000            | Large-size environment                      |                                                                            |
 | More than 64, 000, 000        | Extra-large environment                     | System architect's assistance is required for deployment planning requires |
 
-Again, consider that for the large-size and extra-large environments, it is strongly recommended to
-configure a cluster of several NDC Servers and apply DQS mode to these clustered servers. See
+For large-size and extra-large environments, strongly consider configuring a cluster of several NDC Servers and applying DQS mode to these clustered servers. See
 [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.6.2/deployment/deploymentplan/ndcserverclient/distributed_query_server_mode.md)
 for details.

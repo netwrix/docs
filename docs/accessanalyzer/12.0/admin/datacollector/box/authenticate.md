@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Box: Authenticate
 
-The Authenticate page is where connection to the Box environment is configured. It is a wizard page
+Use the Authenticate page to configure the connection to the Box environment. It is a wizard page
 for all categories.
 
 ![Box DC Wizard Authentication page](/images/accessanalyzer/12.0/admin/datacollector/box/authentication.webp)

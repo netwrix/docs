@@ -23,7 +23,7 @@ Remember, Your company domain credentials are used to log in.
 
 ![Reviews link on the Ownership portal](/images/accessinformationcenter/11.6/resourcereviews/ownershipportal.webp)
 
-The Owner portal displays a number next to the **Reviews**link to indicate how many of your
+The Owner portal displays a number next to the **Reviews** link to indicate how many of your
 resources are included in pending reviews. Click the link to open the Reviews interface. The Reviews
 interface has two pages: Pending Reviews and Review History. See the
 [Pending Reviews Page](#pending-reviews-page) and
@@ -38,7 +38,7 @@ The Pending Reviews page lists all of your resources included in pending reviews
 
 The information displayed in the table includes:
 
-- Created — Date timestamp for when the review was creation. If it has been run multiple times, this
+- Created — Date timestamp for when the review was created. If it has run multiple times, this
   is the date timestamp of the last instance.
 - Review Type – Type of review:
     - Access – Review user access rights to resources
@@ -64,11 +64,11 @@ make recommendations for changes. Consider the following examples:
   the resource.
 - In a Membership Review, you can recommend removing group membership from specific users.
 - In a Sensitive Data review, you can choose between keeping the file as is, recommend that a file
-  be removed from its current location, or indicate that the file is not sensitive and flag it as a
+  be removed from its current location, or indicate that the file isn't sensitive and flag it as a
   false positive.
 
 :::tip
-Remember, any proposed changes are not committed until the Review Administrator approves the
+Remember, any proposed changes aren't committed until the Review Administrator approves the
 recommendation and processes those changes.
 :::
 
@@ -87,7 +87,7 @@ features:
     - 1 Make changes — Displays current access for the resource. For a Sensitive Data review, this
       tab displays a list of files on your resource where potentially sensitive content has been
       identified.
-    - 2 Review changes — Displays changes you recommend making for your review prior to submission
+    - 2 Review changes — Displays changes you recommend making for your review before submission
 
 - You are reviewing — Indicates the type of review, the resource being reviewed, and the date
   timestamp for when the review instance was started
@@ -95,8 +95,8 @@ features:
 - Save Changes — Saves all recommended changes, enabling you to leave the review in progress and
   return at a later time to complete it. It opens the Saving review window, which displays a status
   for the action.
-- Remove Access — On the 1 Make changes tab, removes access from the selected trustee(s). Ctrl-click
-  can be used for multi-select. Current access blue icon with a checkmark will turn to an empty
+- Remove Access — On the 1 Make changes tab, removes access from the selected trustees. Use Ctrl-click
+  for multi-select. Current access blue icon with a checkmark will turn to an empty
   yellow icon.
 - Only show changes since last review — Scopes the table to only display those items that have been
   modified since the last review instance

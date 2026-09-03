@@ -23,17 +23,17 @@ named GroupIDSite11 in IIS. By default, it binds this site to any of the availab
 administrator can change it if required. The Data service and Security service directories are
 created within GroupIDSite11.
 
-Admin Center uses the default Data service and Security service; you cannot change this binding.
+Admin Center uses the default Data service and Security service; you can't change this binding.
 
 To view the default services, see the
 [View Data Service Details](manage.md#view-data-service-details) topic.
 
-## Why Create Multiple Data Services?
+## Create Multiple Data Services for Load Balancing
 
-For load balancing and high availability, Directory Manager facilitates you to create and maintain
+For load balancing and high availability, use Directory Manager to create and maintain
 multiple Data services. While creating a Directory Manager portal, you can choose a Data service to
 bind to it. In this way, different portals can use different Data services for improved response
 times and load balancing.
 
-Directory Manager enables you to create and deploy a Data service in any of these web servers:
+With Directory Manager, you can create and deploy a Data service in any of these web servers:
 native IIS, remote IIS, and Docker.

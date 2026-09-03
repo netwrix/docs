@@ -7,21 +7,21 @@ sidebar_position: 10
 # Recommendations
 
 This section covers the Recommendations interface that contains detailed guidance on the Auditor
-usage patterns. Once you installed the product, configured your IT infrastructure, and prepared
+usage patterns. After you have installed the product, configured your IT infrastructure, and prepared
 Netwrix Service Accounts, you can start collecting data and review it with Netwrix Auditor. The
 recommendations are based on your current product configuration and help you to experience the
 Auditor capabilities in earnest.
 
 ![recommendations](/images/auditor/10.7/admin/navigation/recommendations.webp)
 
-Follow the steps to review the recommendations provided by Netwrix industry experts.
+## Review Recommendations provided by Netwrix industry experts.
 
-**Step 1 –** On the Auditor home page, click the **Recommendations** tile.
+1. On the Auditor home page, click the **Recommendations** tile.
 
-**Step 2 –** Review the recommendations applicable to your current Auditor configuration and take
+2. Review the recommendations applicable to your current Auditor configuration and take
 required steps.
 
-Once the required steps are done, the recommendation goes to the '**Complete**' list. You can move
+After the required steps are done, the recommendation goes to the '**Complete**' list. You can move
 it back to the active state any time you want by clicking the **Move to active** link.
 
 ## Available Recommendations
@@ -99,15 +99,15 @@ For completed recommendations, you can configure the retention period to keep th
 select their categories for further displaying on the tile. If you want to proceed with a completed
 recommendation, click the '**Move to active**' link below the recommendation.
 
-Follow the steps to manage recommendations:
+## Manage Recommendations
 
-**Step 1 –** On the Auditor home page, click the **Recommendations** tile.
+1. On the Auditor home page, click the **Recommendations** tile.
 
-**Step 2 –** Click **Settings** at the bottom.
+2. Click **Settings** at the bottom.
 
 ![managerecommendations](/images/auditor/10.7/admin/navigation/managerecommendations.webp)
 
-**Step 3 –** In the Manage recommendations dialog, do the following:
+3. In the Manage recommendations dialog, do the following:
 
 - Keep completed recommendations: `<30>` days – Specify time period in days to keep the completed
   recommendations visible. The default period is set to 30 days.

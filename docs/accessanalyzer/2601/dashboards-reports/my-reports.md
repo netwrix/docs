@@ -24,10 +24,10 @@ You can save any report that has the **Save Report** button in its toolbar. The 
 6. Review the **Current Filters** section to confirm the active filters are correct.
 7. Click **Save Report**.
 
-After saving, Access Analyzer redirects you to **My Reports** where the new report appears in the list.
+After you save the report, Access Analyzer redirects you to **My Reports**, where the new report appears in the list.
 
 :::note
-If no filters are applied when you click **Save Report**, the dialog indicates that no filters are active. You can still save the report, but it will open with the default unfiltered view.
+If you don't apply filters before clicking **Save Report**, the dialog indicates that no filters are active. You can still save the report, but it will open with the default unfiltered view.
 :::
 
 ## Open a saved report

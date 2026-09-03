@@ -7,7 +7,7 @@ sidebar_position: 130
 # Specify Attributes for the Object Card
 
 In the portal, the names of directory objects are displayed as links. When a user hovers the mouse
-over this link, a card is displayed, showcasing information about the object. For a user object, for
+over an object name, a card is displayed, showcasing information about the object. For a user object, for
 example, the card displays the name, email address and phone number. It is as:
 
 ![usercard](/images/directorymanager/11.1/admincenter/portal/design/usercard.webp)
@@ -20,16 +20,16 @@ group, the card is as:
 Notice that the card has three sections, namely:
 
 - Header - The card template allows for four attributes to be specified for display in the header.
-  When a specified attribute does not contain a value, NA is displayed on the card.
-- Body - You can specify any number of attributes for this section. When you do not specify any
-  attribute, this section is not displayed.
+  When a specified attribute doesn't contain a value, NA is displayed on the card.
+- Body - You can specify any number of attributes for this section. When you don't specify any
+  attribute, this section isn't displayed.
 - Footer - This section has the _Add To Contact_ and _Send An Email_ buttons. You can choose whether
   you want to display these buttons on the card or not.
 
 ## Manage the Card Header
 
 By default, four attributes are specified for display in the card header. You can change the default
-attributes, but you cannot add a fifth attribute or reduce the number to three.
+attributes, but you can't add a fifth attribute or reduce the number to three.
 
 **To modify the card header:**
 
@@ -40,17 +40,17 @@ attributes, but you cannot add a fifth attribute or reduce the number to three.
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Card View** in the left pane. The **Card View** page is displayed.
-5. In the **Select Directory Object** drop-down list, select _User_, _Contact_, _Group_, or
+5. In the **Select Directory Object** dropdown list, select _User_, _Contact_, _Group_, or
    _Mailbox_ to manage the card for.
 6. In the **Name** list, click **Edit** for **Header**.
    The **Card View Header/Footer** pane displays a sample header and how the specified attributes
    populate it.
-7. From the **Title** drop-down list, select an attribute whose value will be displayed as the title
+7. From the **Title** dropdown list, select an attribute whose value will be displayed as the title
    of the header. By default, the title is set to the object’s display name.
-8. From the **Image** drop-down list, select an attribute that can store images for directory
+8. From the **Image** dropdown list, select an attribute that can store images for directory
    objects .
-9. Use the **Attribute 1** and **Attribute 2** drop-down lists to select any other object attributes
-   to display on the card. By default, _mail_ and _mobile_ are selected.
+9. Use the **Attribute 1** and **Attribute 2** dropdown lists to select any other object attributes
+   to display on the card. By default, _mail_, and _mobile_ are selected.
 10. Click **OK**.
 11. Click **Save** on the **Card View** page.
 
@@ -63,11 +63,11 @@ attributes, but you cannot add a fifth attribute or reduce the number to three.
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Card View** in the left pane.
-5. On the **Card View** page, use the **Select Directory Object** drop-down list to select _User_,
+5. On the **Card View** page, use the **Select Directory Object** dropdown list to select _User_,
    _Contact_, _Group_, or _Mailbox_ to manage the card for.
 6. In the **Name** list, click **Edit** for _Header_.
 7. In the **Footer** section of the **Card View Header/Footer** pane, select the **Add to Contact**
-   and **Send Email** check boxes to display the respective buttons on the card.
+   and **Send Email** checkboxes to display the respective buttons on the card.
 8. Click **OK**.
 9. Click **Save** on the **Card View** page.
 
@@ -85,7 +85,7 @@ values of these attributes would be displayed on the card body.
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Card View** in the left pane.
-5. On the **Card View** page, use the **Select Directory Object** drop-down list to select _User_,
+5. On the **Card View** page, use the **Select Directory Object** dropdown list to select _User_,
    _Contact_, _Group_, or _Mailbox_ to manage the card for.
 6. Click **Add** to add an attribute to the body of the card. The **Add New Card View Attribute**
    pane is displayed.
@@ -93,7 +93,7 @@ values of these attributes would be displayed on the card body.
    will be displayed on the object card.
 8. Specify a name for the attribute in the **Display Name** box. The attribute value would be
    displayed next to this label on the card.
-   This box is not available when multiple attributes are selected.
+   This box isn't available when multiple attributes are selected.
 9. Click **OK**.
 10. Click **Save** on the **Card View** page.
 
@@ -110,10 +110,10 @@ You can update the display name of an attribute on the body of an object card.
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Card View** in the left pane.
-5. On the **Card View** page, use the **Select Directory Object** drop-down list to select _User_,
+5. On the **Card View** page, use the **Select Directory Object** dropdown list to select _User_,
    _Contact_, _Group_, or _Mailbox_ to manage the card for.
 6. In the **Name** list, click **Edit** for an attribute.
-7. On the **Edit Card View Attribute** pane, the **Field Name** box is not editable, so you cannot
+7. On the **Edit Card View Attribute** pane, the **Field Name** box isn't editable, so you can't
    change the attribute. However, you can specify a different display name for it. This display name
    is displayed on the card's body and the attribute’s value is shown next to it.
 8. Click **OK**.
@@ -132,7 +132,7 @@ You can remove an attribute from the body of an object card.
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Card View** in the left pane.
-5. On the **Card View** page, use the **Select Directory Object** drop-down list to select _User_,
+5. On the **Card View** page, use the **Select Directory Object** dropdown list to select _User_,
    _Contact_, _Group_, or _Mailbox_ to manage the card for.
 6. In the **Name** list, click **Remove** for an attribute to remove it.
 7. Click **Save**.

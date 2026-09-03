@@ -24,7 +24,7 @@ The following performance counters are provided by Activity Monitor.
 | NetApp             | ✔          | Activity Monitor - NetApp\Session Negotiated         | Number of connections established with ONTAP cluster nodes                                                                                                                                                                                                                                                                                                         |
 | NetApp             | ✔          | Activity Monitor - NetApp\Active Connections         | Number of active connections with ONTAP cluster nodes                                                                                                                                                                                                                                                                                                              |
 | NetApp             |             | Activity Monitor - NetApp\Outage Files               | Number of outage (resilience) files processed                                                                                                                                                                                                                                                                                                                      |
-| NetApp             | ✔          | Activity Monitor - NetApp\Overloaded                 | Number of times the agent was overloaded and had to limit the rate of events. This counter may increase from time to time when processing large batches of events. But if it keeps increasing, it is a sure sign that the agent is not coping with the load. Consider moving some SVMs to another agent or spreading the load from one SVM across multiple agents. |
+| NetApp             | ✔          | Activity Monitor - NetApp\Overloaded                 | Number of times the agent was overloaded and had to limit the rate of events. This counter may increase from time to time when processing large batches of events. But if it keeps increasing, it is a sure sign that the agent isn't coping with the load. Consider moving some SVMs to another agent or spreading the load from one SVM across multiple agents. |
 | VNX, Isilon, Unity | ✔          | Activity Monitor - Dell\Events Received              | Number of events received from CEE                                                                                                                                                                                                                                                                                                                                 |
 | VNX, Isilon, Unity | ✔          | Activity Monitor - Dell\Events Received/sec          | Rate at which events are received from CEE                                                                                                                                                                                                                                                                                                                         |
 | VNX, Isilon, Unity | ✔          | Activity Monitor - Dell\Events Reported              | Number of events passed the filters and being reported to outputs                                                                                                                                                                                                                                                                                                  |
@@ -35,7 +35,7 @@ The following performance counters are provided by Activity Monitor.
 | Outputs            | ✔          | Activity Monitor - Outputs\Events Reported/sec       | Rate at which events are reported                                                                                                                                                                                                                                                                                                                                  |
 | Outputs            |             | Activity Monitor - Outputs\Events Reported to Files  | Total number of events reported to log files                                                                                                                                                                                                                                                                                                                       |
 | Outputs            |             | Activity Monitor - Outputs\Events Reported to Syslog | Total number of events reported to syslog servers                                                                                                                                                                                                                                                                                                                  |
-| Outputs            |             | Activity Monitor - Outputs\Events Reported to AMQP   | Total number of events reported to AMQP servers (not used currently)                                                                                                                                                                                                                                                                                               |
+| Outputs | | Activity Monitor - Outputs\Events Reported to AMQP | Total number of events reported to AMQP servers (not used ) |
 | Outputs            | ✔          | Activity Monitor - Outputs\Resolved SIDs             | Number of attempts, both successful and failed, to resolve SIDs to names                                                                                                                                                                                                                                                                                           |
 | Outputs            | ✔          | Activity Monitor - Outputs\Resolved SIDs/sec         | Rate at which SIDs are resolved to names                                                                                                                                                                                                                                                                                                                           |
 | Outputs            | ✔          | Activity Monitor - Outputs\Resolved SIDs Failures    | Number of failed attempts to resolve SIDs to names                                                                                                                                                                                                                                                                                                                 |
@@ -56,7 +56,7 @@ The following performance counters are provided by Activity Monitor.
 DNS and AD queries typically contribute the most to the processing time. Since the
 resolution occurs in real time, slow responses can affect throughput (A 100ms DNS response limits
 the throughput to 10 events per second). Observing average and maximum values of DNS Queries Time,
-Resolved SIDs Time, and Translated UIDs Time allows you to estimate the response time.
+Resolved SIDs Time, and Translated UIDs Time help you estimate the response time.
 :::
 
 
@@ -69,7 +69,7 @@ performance counters:
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Processor(_Total)\% Processor Time                    | The percentage of elapsed time that the processor spends to execute a non-Idle thread.                                                                                                           |
 | Memory\Available MBytes                                | The amount of physical memory, in Megabytes, immediately available for allocation to a process or for system use.                                                                                |
-| Paging File(_Total)\% Usage                           | The percentage of the paging file that is currently in use.                                                                                                                                      |
+| Paging File(_Total)\% Usage | The percentage of the paging file that is in use. |
 | TCPv4\Connections Reset                                | The rate of reset TCPv4 connections                                                                                                                                                              |
 | TCPv4\Segments Received/sec                            | The quantity of segments received via TCPv4 per second.                                                                                                                                          |
 | TCPv4\Segments Retransmitted/Sec                       | Quantity of segments retransmitted via TCPv4 per second.                                                                                                                                         |
@@ -79,7 +79,7 @@ performance counters:
 | Network Interface(\*)\Bytes Sent/sec                   | From all network adapters: The rate at which bytes are sent.                                                                                                                                     |
 | Network Interface(\*)\Output Queue Length              | From all network adapters: The length of the output packet queue (in packets).                                                                                                                   |
 | Network Interface(\*)\Packets Received Discarded       | From all network adapters: The number of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol. |
-| Network Interface(\*)\Packets Received Errors          | From all network adapters: The number of inbound packets that contained errors. As a result, the errored packets were not delivered to a higher-layer protocol.                                  |
+| Network Interface(\*)\Packets Received Errors          | From all network adapters: The number of inbound packets that contained errors. As a result, the errored packets weren't delivered to a higher-layer protocol.                                  |
 | Process(ConfigurationAgent.Grpc.Host)\% Processor Time | For Agent: The percentage of elapsed time that all of process threads used the processor to execution instructions.                                                                              |
 | Process(ConfigurationAgent.Grpc.Host)\Elapsed Time     | For Agent: The duration from when the process was started until the time it terminated.                                                                                                          |
 | Process(ConfigurationAgent.Grpc.Host)\Handle Count     | For Agent: The number of operating system handles the process has opened.                                                                                                                        |
@@ -131,10 +131,9 @@ performance counters:
 
 ## Register Performance Counters
 
-The Activity Monitor performance counters are not registered by default and must be registered
+The Activity Monitor performance counters aren't registered by default and must be registered
 manually.
 
-Follow the steps to register the Activity Monitor performance counters on each SAM Agent server.
 
 **Step 1 –** Run `cmd.exe` as Administrator.
 
@@ -313,10 +312,9 @@ Get-Counter @variables | Export-Counter -FileFormat csv -Path $outputFile -Force
 
 ## Unregister Performance Counters
 
-When performance monitoring is not needed anymore, unregister the Activity Monitor performance
+When performance monitoring isn't needed anymore, unregister the Activity Monitor performance
 counters.
 
-Follow the steps to unregister the Activity Monitor performance counters on each SAM Agent server.
 
 **Step 1 –** Run `cmd.exe` as Administrator.
 
@@ -343,4 +341,4 @@ sc stop SBTLoggingSvc
 
 **sc start SBFileMonAgentSvc**
 
-Once the services have been restarted, the Activity Monitor performance counters are unregistered.
+After the services have been restarted, the Activity Monitor performance counters are unregistered.

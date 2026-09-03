@@ -12,7 +12,7 @@ The General tab is for editing the basic attributes of the policy.
 
 **Policy Status**
 
-It indicates whether or not the policy is enabled. Click the toggle button at the top to enable or
+It indicates whether the policy is enabled. Click the toggle button at the top to enable or
 disable the policy. On the [Policies Interface](/docs/threatprevention/8.0/admin/policies/overview.md), an enabled policy is represented with
 a green dot and a disabled policy is represented with a gray dot.
 

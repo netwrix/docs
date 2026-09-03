@@ -15,7 +15,7 @@ Navigate to the **Jobs** > **SharePoint** > **7.Activity** > **Usage Statistics*
 **SP_MostActiveUsers** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -24,8 +24,8 @@ preconfigured for this job.
 
 The default analysis task is:
 
-- Most Active Users Last 30 Days – SA_SPAC_MostActiveUsers_Last30Days table accessible under the
-  job’s Results node
+- Most Active Users Last 30 Days – Creates the SA_SPAC_MostActiveUsers_Last30Days table accessible
+  under the job’s Results node
 
 In addition to the tables and views created by the analysis tasks, the SQL_MostActiveUsers Job
 produces the following pre-configured report:

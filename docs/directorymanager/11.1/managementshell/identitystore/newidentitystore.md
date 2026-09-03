@@ -90,7 +90,7 @@ New-IdentityStore -IdentityStoreType MicrosoftAzure -IdentityStoreName DemoAzSto
 ```
 
 :::note
-In case of an Microsoft Entra ID based identity store, Domain and AppId parameters are
+In case of a Microsoft Entra ID based identity store, Domain, and AppId parameters are
 mandatory.
 :::
 
@@ -104,7 +104,7 @@ New-IdentityStore -IdentityStoreType GoogleWorkspace -IdentityStoreName DemoGSto
 ```
 
 :::note
-For Google Apps based identity store, AdminUserName and P12CertificatePath parameters are
+For Google Apps based identity store, AdminUserName, and P12CertificatePath parameters are
 mandatory. However, ‘Password’ parameter is ignored.
 :::
 

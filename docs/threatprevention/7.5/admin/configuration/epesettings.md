@@ -7,15 +7,15 @@ sidebar_position: 30
 # EPE Settings Window
 
 Threat Prevention can be configured with Enterprise Password Enforcer (EPE) to use the Have I Been
-Pwnd (HIBP) database. A copy of this database is hosted on the Netwrix website. The HIBP database
+Pwned (HIBP) database. A copy of this database is hosted on the Netwrix website. The HIBP database
 contains a list of the hashes of known compromised passwords. During password change operations, the
 application can be configured to reject passwords with a hash that matches a hash in the HIBP
 database. The EPE Settings window displays current HIBP database information and configuration
 options.
 
-The HIBP database must be initially deployed to the Enterprise Manager. Once the database is stored,
-Threat Prevention Agent(s) can be configured to obtain and use a local copy of the HIBP database. In
-order to give Threat Prevention Agent(s) a local copy of the database, enable the **Use Local Pwned
+The HIBP database must be initially deployed to the Enterprise Manager. After  database is stored,
+Threat Prevention Agents can be configured to obtain and use a local copy of the HIBP database. In
+order to give Threat Prevention Agents a local copy of the database, enable the **Use Local Pwned
 hash DB** setting in the Deploy Agents wizard's
 [Set Options Window ](/docs/threatprevention/7.5/admin/agents/deploy/setoptions.md).
 
@@ -23,12 +23,12 @@ Password hashes can be authenticated against the stored HIBP database in the fol
 the environment:
 
 - Only the Enterprise Manager
-- All or selected Threat Prevention Agent(s)
-- Mix of the Enterprise Manager and Threat Prevention Agent(s)
+- All or selected Threat Prevention Agents
+- Mix of the Enterprise Manager and Threat Prevention Agents
 
 ## Considerations When Deploying the HIBP Database
 
-Prior to deploying the HIBP database, consider the pros and cons when choosing its deployment
+Before deploying the HIBP database, consider the pros and cons when choosing its deployment
 location. It can be deployed on the Threat Prevention Agent and/or the Enterprise Manager machine.
 
 :::tip
@@ -40,7 +40,7 @@ If the HIBP database is copied to and stored on the Agent:
 
 - The HIBP database takes up additional space on the machine where it is copied (approximately 13
   GB, but subject to change)
-- A network connection to the application server is not required to check passwords against the HIBP
+- A network connection to the application server isn't required to check passwords against the HIBP
   database
 - The pending password candidate is checked against the archived hash file at the local Agent level.
   The results are sent to the Enterprise Manager. If a password hash is matched, the pending
@@ -59,9 +59,9 @@ If the HIBP database is kept only on the Enterprise Manager:
 - The Agent sends the candidate hash value to the Enterprise Manager to compare against the
   Enterprise Manager’s copy of the HIBP database
 
-  - The advantage of this approach is that the HIBP database space is not required on the domain
+  - The advantage of this approach is that the HIBP database space isn't required on the domain
     controllers. The disadvantage is that at the time of a password change, if the Enterprise
-    Manager is not available, the Agent must assume the hash is okay.
+    Manager isn't available, the Agent must assume the hash is okay.
 
 ## Configuration Settings
 
@@ -113,7 +113,7 @@ Configure the following options:
   Console when a new version is detected.
 
   :::note
-  This checkbox does not automatically download the new HIBP database version.
+  This checkbox doesn't automatically download the new HIBP database version.
   :::
 
 
@@ -125,13 +125,13 @@ intervals.
 
 ### Passwords Hash Database
 
-Threat Prevention utilizes the Passwords Hash database to check if users’ new and pending password
+Threat Prevention uses the Passwords Hash database to check if users’ new and pending password
 (i.e. during a password reset) matches the hash of a compromised password from a data breach.
 
 :::note
 First-time configuration of this window requires downloading the HIBP database from the
-Netwrix website. If the Administration Console does not have internet access, see the Download and
-Configure the Have I Been Pwnd Hash List topic for instructions.
+Netwrix website. If the Administration Console doesn't have internet access, see the Download and
+Configure the Have I Been Pwned Hash List topic for instructions.
 :::
 
 
@@ -168,7 +168,7 @@ size of the hash file, this download takes up a significant amount of CPU and do
 
 - Location:
 
-  - File – If the application server does not have internet access, you can manually download the
+  - File – If the application server doesn't have internet access, you can manually download the
     HIBP database and select the **File** radio button to browse to your local copy of the
     database
   - Website – This option points to the Netwrix website that hosts a copy of the latest HIBP
@@ -225,7 +225,7 @@ The User Feedback Module section has the following check boxes:
 
 By default, messages are available in the English language.
 
-- Use the Language drop-down menu to select a language, The Default Message column displays messages
+- Use the Language dropdown menu to select a language, The Default Message column displays messages
   in English while you can edit the Custom Message column to provide the message in the selected
   language.
 - To edit, double-click a row in the Custom Message column and enter a message. Click **OK** to save
@@ -239,7 +239,7 @@ the run time generated information.
 ### Rules
 
 The following windows are global settings for the EPE Password Rules filter within the EPE Settings
-window. Whatever is configured in these windows is applied across all EPE Password Rules filter(s)
+window. Whatever is configured in these windows is applied across all EPE Password Rules filters
 in the Administration Console.
 
 ![EPE Settings window - Rules area](/images/threatprevention/7.5/admin/configuration/rules.webp)
@@ -349,21 +349,21 @@ The Substitutions Editor has the following options:
 Click **OK** to save the changes and close the window. Click **Cancel** to close the window to
 discard any changes made.
 
-### Download and Configure the Have I Been Pwnd Hash List
+### Download and Configure the Have I Been Pwned Hash List
 
-If the Administration Console does not have internet access, you can manually download the HIBP
+If the Administration Console doesn't have internet access, you can manually download the HIBP
 database.
 
-The Pwnd Passwords Downloader is a Dotnet tool used to download all Pwned Passwords hash ranges and
+The Pwned Passwords Downloader is a Dotnet tool used to download all Pwned Passwords hash ranges and
 save them offline so they can be used without a dependency on the k-anonymity API. Use this tool to
-get the latest breached hashes from the Have I Been Pwnd (HIBP) database.
+get the latest breached hashes from the Have I Been Pwned (HIBP) database.
 
 :::note
 The
-[](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)[Pwnd Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)
+[](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)[Pwned Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)
 is a third party, open source tool, created by the HaveIBeenPwned team and distributed under a BSD
 3-Clause License. You might experience issues during the hash download process, depending on your
-threading settings or the load on the CloudFlare backend. The Pwnd Passwords Downloader tool will
+threading settings or the load on the CloudFlare backend. The Pwned Passwords Downloader tool will
 automatically retry to continue downloading the hashes until it fully completes the download
 process.
 :::
@@ -371,19 +371,18 @@ process.
 
 **Prerequisites**
 
-The Pwnd Passwords Downloader has the following prerequisite:
+The Pwned Passwords Downloader has the following prerequisite:
 
 - Install .NET 6 before installing the
-  [Pwnd Passwords Downloader ](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)tool. You
+  [Pwned Passwords Downloader ](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)tool. You
   can download .NET 6 from Microsoft:
   [https://dotnet.microsoft.com/en-us/download/dotnet/6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-The Have I Been Pwnd database (HIBP) hashes can take up to 30 GB. Make sure that you have enough
+The Have I Been Pwned database (HIBP) hashes can take up to 30 GB. Ensure that you have enough
 free space on your disk.
 
-**Install the Pwnd Passwords Downloader**
+**Install the Pwned Passwords Downloader**
 
-Follow the steps to install the Pwnd Passwords Downloader.
 
 **Step 1 –** Open command prompt, and navigate to your .NET install folder (for example,
 `C:\Program Files (x86)\dotnet`).
@@ -398,9 +397,8 @@ dotnet tool install --global haveibeenpwned-downloader
 
 **Step 3 –** Close the command prompt.
 
-**Update an Installed Pwnd Passwords Downloader**
+**Update an Installed Pwned Passwords Downloader**
 
-Follow the steps to update an installed Pwnd Passwords Downloader.
 
 **Step 1 –** Open the command prompt.
 
@@ -412,9 +410,8 @@ dotnet tool update --global haveibeenpwned-downloader
 
 ![hibp_installation_1](/images/threatprevention/7.5/admin/configuration/hibp_installation_1.webp)
 
-**Download NTML Hashes with the Pwnd Passwords Downloader**
+**Download NTML Hashes with the Pwned Passwords Downloader**
 
-Follow the steps to download NTLM hashes.
 
 **Step 1 –** Navigate to the folder where you want to download the hashes.
 
@@ -437,5 +434,5 @@ This screenshot shows the completed download.
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm -o
 ```
 
-For a complete list of available parameters, please check the
-[Pwnd Passwords Downloader GitHub page](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader).
+For a complete list of available parameters, check the
+[Pwned Passwords Downloader GitHub page](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader).

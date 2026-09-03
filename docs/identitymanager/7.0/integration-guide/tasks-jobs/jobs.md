@@ -14,7 +14,7 @@ Jobs are used to write sets of successive tasks, and schedule their execution.
 
 See how to configure [Job](../../integration-guide/toolkit/xml-configuration/jobs/job).
 
-A job can contain tasks explicitly, or contain steps used to call existing tasks in order to use a single task in several jobs.
+A job can contain tasks explicitly, or contain steps used to call existing tasks to use a single task in several jobs.
 
 ## Execution
 

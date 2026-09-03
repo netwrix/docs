@@ -6,12 +6,12 @@ sidebar_position: 40
 
 # Credentials
 
-The credentials page is accessible from the Settings menu. This is where credentials used to connect
-to remote devices and services are created and managed.
+You can access the credentials page from the Settings menu. This is where you create and manage
+credentials used to connect to remote devices and services.
 
-The page is a list of grids containing credentials for different types of device, protocol or
-service. While some grids may only be visible if certain licensees or options are in place, this is
-the full list:
+The page is a list of grids containing credentials for different types of device, protocol, or
+service. Some grids are visible only if certain licenses or options are in place; this is the full
+list:
 
 - ITSM System Credentials
 - Cloud System Credentials
@@ -20,55 +20,60 @@ the full list:
 - ESXi / vCenter Credentials
 - Database Credentials
 
-Each grid has a button to create a new credential. The far right column contains buttons to edit and
-delete specific credentials.
+Each grid has a button to create a new credential. The far-right column contains buttons to edit
+and delete specific credentials.
 
 ## ITSM System Credentials
 
-These credentials are used to connect to an ITSM and discover devices to scan from the ITSM's
-configuration item catalog.
+Use these credentials to connect to an IT Service Management (ITSM) system and discover devices to
+scan from the ITSM's configuration item catalog.
 
 ![ITSM System Credentials](/images/changetracker/admin/settings/itsm_system_credentials.webp)
 
 ## Cloud System Credentials
 
-These credentials are used by the Cloud Tracker feature to track changes to cloud platform
-configuration.
+The Cloud Tracker feature uses these credentials to track changes to cloud platform configuration.
 
 ![Cloud System Credentials](/images/changetracker/admin/settings/cloud_system_credentials_1120x365.webp)
 
 ## SSH / Telnet Credentials
 
-These credentials are used for agentless connections to devices (Linux, switches, routers, etc.) via
-SSH or Telnet. Credentials for Windows agentless connections are also stored here.
+Use these credentials for agentless connections to devices (Linux, switches, routers, etc.) via SSH
+or Telnet. This grid also stores credentials for Windows agentless connections.
 
 ![SSH Telnet Credentials](/images/changetracker/admin/settings/ssh_telnet_credentials_1118x372.webp)
 
 ## Splunk Credentials
 
-These credentials are used to connect to the API of a Splunk instance and pull specific logs into
-Change Tracker as change events.
+Use these credentials to connect to the API of a Splunk instance and pull specific logs into Change
+Tracker as change events.
 
 ![Splunk Credentials](/images/changetracker/admin/settings/splunk_credentials_1122x369.webp)
 
 ## ESXi / vCenter Credentials
 
-These credentials are used to connect to ESXi devices or to connect to a vSphere and discover all of
-it's ESXi nodes.
+Use these credentials to connect to ESXi devices, or to connect to a vSphere instance and discover
+all of its ESXi nodes.
 
 ![EXsi Credentials](/images/changetracker/admin/settings/esxi_credentials.webp)
 
 ## Database Credentials
 
-These credentials are used by database compliance reports to connect directly to a database
-instance.
+Database compliance reports use these credentials to connect directly to a database instance.
 
 ![Database Credentials](/images/changetracker/admin/settings/database_credentials_1113x358.webp)
 
-**Note:** v1 database credentials are now deprecated and only maintained for backward compatibility. v2 database credentials should be used for any new connections.
+**Note:** v1 database credentials are deprecated; Netwrix maintains them only for backward
+compatibility. Use v2 database credentials for any new connections.
 
-When adding a v1 database credential a database connection string was required. This required a separate database credential for each database instance to monitor even if the username and password were the same! To address this, v2 database credentials only contain username and password.
+Adding a v1 database credential required a database connection string. This meant you needed a
+separate database credential for each database instance to monitor, even when the username and
+password were the same. To address this, v2 database credentials contain only a username and
+password.
 
-Connection strings are now required when defining a proxied device for a database connection. This allows you to use the same database credential for multiple database connections. It also means there is only one credential to update when its password expires.
+Defining a proxied device for a database connection now requires a connection string. With this,
+you can use the same database credential for multiple database connections. It also means there's
+only one credential to update when its password expires.
 
-For more information on v2 database credentials, see the [v8.1 release notes](https://community.netwrix.com/t/minor-version-8-1-released/2829)
+For more information on v2 database credentials, see the
+[v8.1 release notes](https://community.netwrix.com/t/minor-version-8-1-released/2829).

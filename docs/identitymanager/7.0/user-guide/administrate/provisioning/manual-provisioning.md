@@ -47,8 +47,8 @@ in the **Manual Provisioning** section.
     ![Home Page - Manual Provisioning](/images/identitymanager/home_manualprovisioning_v523.webp)
 
 3. Choose a line to handle the corresponding provisioning order.
-4. Creation, edition and deletion orders follow the same process: read Identity Manager's
-suggestions and create, edit or delete the appropriate resource directly in the managed system (outside Identity Manager).
+4. Creation, edition, and deletion orders follow the same process: read Identity Manager's
+suggestions and create, edit, or delete the appropriate resource directly in the managed system (outside Identity Manager).
 
     ![Creation Provisioning Order](/images/identitymanager/provmanual_createresource_v522.webp)
 
@@ -64,7 +64,7 @@ Several orders can be provisioned simultaneously by clicking on **Bulk Provision
 
 ## Verify Manual Provisioning
 
-In order to verify the process:
+To verify the process:
 
 1. Select a test user in the directory, accessible from the home page.
 

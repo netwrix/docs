@@ -13,7 +13,7 @@ depending on the category selected. It is a wizard page for all of the categorie
 
 Configure the Options step using the following options:
 
-- How to format collected – Select how the table will be formatted according to the return data
+- How to format collected – Select how to format the table based on the return data
 
     - Return data as collected
     - Return each value of the following property in a separate row – Enabled for specific
@@ -21,12 +21,12 @@ Configure the Options step using the following options:
     - Return data in a separate row for each property set in the following group – Enabled for
       specific properties selected on the Results page
 
-- How to return multi-valued properties – Select how the table will be formatted when the return
-  data contains multi-valued properties
+- How to return multi-valued properties – Select how to format the table when the return data
+  contains multi-valued properties
 
     - Concatenated – Return the data in a continuous string without gaps
 
-        - Delimiter – Enter the desired delimiter to be used between values
+        - Delimiter – Enter the delimiter to use between values
 
     - First-value only – Only display the first value
 

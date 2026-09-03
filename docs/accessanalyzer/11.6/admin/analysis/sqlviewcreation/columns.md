@@ -11,7 +11,7 @@ The Result Columns page lists the tables selected on the Input Select page.
 ![View and Table Creation Analysis Module wizard Result Columns page](/images/accessanalyzer/11.6/admin/analysis/sqlviewcreation/columns.webp)
 
 Expand the table to show its columns. Then, select the checkbox next to the column to include it in
-the resulting table or view. If two data tables are being joined, the resulting table displays at
+the resulting table or view. If you join two data tables, the resulting table displays at
 the bottom of the grid. Use the scroll bar to view any hidden tables or data points.
 
 The grid provides the following options for formatting the resulting table or view:
@@ -21,14 +21,14 @@ The grid provides the following options for formatting the resulting table or vi
 - Add Column – Opens the New Trend Column window, where columns can be added to the table
 - Delete – Deletes a selected column
 
-    - Original columns cannot be deleted. Only columns that have been added by users can be deleted.
+    - Original columns can't be deleted. Only columns that have been added by users can be deleted.
 
-- Show All Columns/Hide Unchecked Columns – Hides rows that are not currently selected ,or if
-  columns are currently hidden, displays all columns in the table
+- Show All Columns/Hide Unchecked Columns – Hides rows that aren't selected, or if
+ columns are hidden, displays all columns in the table
 - Checked – Selects data columns for inclusion in the resulting table or view
 - Column Name – Displays the data column name
 - Group Operation – Accesses the available group operations that can be applied to individual data
-  points. Click on a cell in this column to display the drop-down arrow. The following operations
+  points. Click a cell in this column to display the dropdown arrow. The following operations
   are available:
 
     - (none)
@@ -43,7 +43,7 @@ The grid provides the following options for formatting the resulting table or vi
   column name on the materialized table or view. If applying a group operation, a default data label
   shows. To apply a custom label, click in the cell and enter the label.
 - Order By Operation – Accesses the available order-by operations that can be applied to individual
-  data points. Click on a cell in this column to display the drop-down arrow. The following
+  data points. Click a cell in this column to display the dropdown arrow. The following
   operations are available:
 
     - None

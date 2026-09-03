@@ -21,7 +21,7 @@ The following example computes the record display name.
 |---|---|
 | Binding optional | **Type:** Int64 **Description:** References the binding used to compute the result. |
 | EntityType required | **Type:** Int64 **Description:** Identifier of the referenced entity type |
-| Expression optional | **Type:** String **Description:** References the C# or literal expression used to compute the result. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| Expression optional | **Type:** String **Description:** References the C# or literal expression used to compute the result. [Learn about C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
 | Identifier required | **Type:** String **Description:** Unique identifier of the expression. |
 | Priority <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Specifies the execution priority. |
 | Property required | **Type:** Int64 **Description:** Identifier of the referenced entity property |

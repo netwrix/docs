@@ -10,7 +10,7 @@ The Permissions report at the **Roles** node shows the permissions for the insta
 
 ![Permissions report at the Roles node](/images/accessinformationcenter/12.0/resourceaudit/sql/roles/rolespermissions.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Trustee Type – Type of the trustee (for example, Domain User, Database User, or Domain Group)
 - Trustee Name – Owner of the trustee account

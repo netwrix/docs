@@ -8,6 +8,7 @@ keywords:
 sidebar_label: Use Content Detection Summary
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "How to Use the Content Detection Summary"
 knowledge_article_id: kA0Qk0000002BFWKA2
 products:

@@ -20,14 +20,14 @@ The Applies To tab provides the following options:
     - All Source Data – Select this option to run the action using all data
     - Source Data from this Console only – Select this option to run the action specifically using
       data from only this Access Analyzer console
-    - Time Window for source table – Use the drop-down menu to specify a time window from the
+    - Time Window for source table – Use the dropdown menu to specify a time window from the
       following options:
 
         - Most recent data – Use only the most recently collected data
         - Cumulative data for offline hosts – Use data collected from offline hosts
         - Most recent data filtering duplicate and offline hosts – Use most recent data excluding
           duplicate and offline hosts
-        - Do not filter data – Use unfiltered data
+        - Don't filter data – Use unfiltered data
 
 - Hosts Filtering – Specify source hosts
 

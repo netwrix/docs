@@ -1,10 +1,10 @@
 ---
-title: "Get Metadata of Data Source by Server Type and ID"
-description: "Get Metadata of Data Source by Server Type and ID"
+title: "Get Metadata of Data Source by Server Enter and ID"
+description: "Get Metadata of Data Source by Server Enter and ID"
 sidebar_position: 110
 ---
 
-# Get Metadata of Data Source by Server Type and ID
+# Get Metadata of Data Source by Server Enter and ID
 
 Use this API to retrieve metadata information of all data sources defined so far in Directory
 Manager by File Server type (i.e., local server or a cloud server) and by data source type (i.e., MS

@@ -19,7 +19,7 @@ users who own a profile with the permissions to perform the corresponding action
 - Jobs that finished in state completed/errored/aborted/blocked/warning to the users who own a
 profile with the corresponding permissions.
 
-Concerning the notifications sent via permissions: In order to receive the notifications, a profile must have the full permission path. Having a (great-)parent permission will not enable notifications for all child entities.
+Concerning the notifications sent via permissions: to receive the notifications, a profile must have the full permission path. Having a (great-)parent permission will not enable notifications for all child entities.
 
 For example, the permission /ProvisioningPolicy/PerformManualProvisioning/Directory_User allows a profile to perform manual provisioning with Directory_User as the source entity type, and receive the corresponding notifications. On the contrary, the permission `/ProvisioningPolicy/PerformManualProvisioning/` allows a profile to perform manual provisioning for all entity types, but not receive the corresponding notifications.
 

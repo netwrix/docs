@@ -6,17 +6,15 @@ sidebar_position: 80
 
 # Outlook Mail Archive
 
-The Outlook Mail Archive source configuration screen allows you to enable the crawling and
+Use the Outlook Mail Archive source configuration screen to enable crawling and
 classification of content stored in PST files:
 
-**NOTE:** If you wish to make other configuration changes before collection of the source occurs
-ensure you tick the checkbox Pause source on creation.
+**NOTE:** If you want to make other configuration changes before collection of the source occurs,
+ensure you select the **Pause source on creation** checkbox.
 
 ![add_outlook](/images/dataclassification/5.6.2/sources/exchange_mailbox/add_outlook.webp)
 
-Multiple mailboxes can be added at one time via the "+" button. Collection will process all folders
-/ emails / attachments within the mailbox - associating the attachment text with the respective
-email.
+Add multiple mailboxes at once using the "+" button. Collection processes all folders, emails, and attachments within the mailbox, associating attachment text with the respective email.
 
 Select documents' images processing mode:
 

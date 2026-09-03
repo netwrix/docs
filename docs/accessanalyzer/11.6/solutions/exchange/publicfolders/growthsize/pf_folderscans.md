@@ -34,7 +34,7 @@ View the analysis task by navigating to the **Exchange** > **5. Public Folders**
 Size** > **Collection** > **PF_FolderScans** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

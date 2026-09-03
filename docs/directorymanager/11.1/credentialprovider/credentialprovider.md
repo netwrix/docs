@@ -10,7 +10,7 @@ Netwrix Directory Manager Credential Provider (version 3.1.0.0) is a Windows Cre
 
 You must install it on each client workstation to make the password reset and account unlock
 features available to all users. It provides links on the Windows logon screen, which route users to
-the web page(s) where they can unlock their accounts and reset their passwords.
+the web pages where they can unlock their accounts and reset their passwords.
 
 ## Product Information
 

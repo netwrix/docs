@@ -31,7 +31,7 @@ access for domain users and configure notification settings. Select the Configur
 [Console Access Page](/docs/auditor/10.7/accessreviews/admin/configuration/consoleaccess.md) and
 [Notifications Page](/docs/auditor/10.7/accessreviews/admin/configuration/notifications.md) topics for additional information.
 
-The interfaces available to console users are controlled by the role assigned. Owners do not need to
+The interfaces available to console users are controlled by the role assigned. Owners don't need to
 be assigned console access. See the [URL & Login](/docs/auditor/10.7/accessreviews/admin/login.md) topic for information on how users will
 log in and where they are directed after login.
 

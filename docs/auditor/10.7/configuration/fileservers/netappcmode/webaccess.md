@@ -11,8 +11,6 @@ flush from the internal filer format to an MS Event Viewer compatible format. Ne
 supports both the SSL and non-SSL HTTP access, trying HTTPS first, and falling back to HTTP if it is
 unavailable.
 
-Follow the steps to configure ONTAPI\RESTAPI Web Access.
-
 **Step 1 –** Navigate to your cluster management command prompt through the SSH/Telnet connection.
 
 **Step 2 –** Log in as a cluster administrator and review your current web access settings. Make
@@ -87,7 +85,7 @@ RESTAPI
 cluster1::> vserver services web modify -vserver svm1 -name rest -enabled true -ssl-only true
 ```
 
-**Step 7 –** Make sure that the custom role (e.g., netwrix_role for ONTAPI or netwrix_rest_role for
+**Step 7 –** ensure that the custom role (e.g., netwrix_role for ONTAPI or netwrix_rest_role for
 RESTAPI) assigned to your account specified for data collection can access ONTAPI or RESTAPI. See
 [Permissions for NetApp Auditing](/docs/auditor/10.7/configuration/fileservers/netappcmode/permissions.md) topic for additional information.
 

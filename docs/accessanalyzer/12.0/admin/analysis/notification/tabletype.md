@@ -13,19 +13,19 @@ notifications.
 
 The following options are available:
 
-- Change Detection Table – Sends notifications when changes are detected in the data. When selected,
-  the option of **Show only tables for this job** becomes the default selection on the Select Table
+- Change Detection Table – Sends notifications when the data changes. When you select this option,
+  **Show only tables for this job** becomes the default selection on the Select Table
   page. This option targets only change detection tables within the current job. Possible tables (if
   any) display on the Select Table page. See the [Notification: Select Table](/docs/accessanalyzer/12.0/admin/analysis/notification/selecttable.md) topic
   for additional information.
 
     :::note
-    Change Detection Table also locks selections to tables on the Select Table page that
-    are selected through Other. To select tables outside of **Show only tables for this job**,
+    Change Detection Table also locks selections to tables that you select through Other on
+    the Select Table page. To select tables outside of **Show only tables for this job**,
     select Other on the Table Type page, then select either **Show All Tables** or **Show All SA
     Tables**, then click back to return to the Table Type page. Now selecting Change Detection Table
-    and proceeding defaults the selection on the Select Table page to whichever was previously
-    selected through Other.
+    and proceeding defaults the selection on the Select Table page to whichever option you
+    previously selected through Other.
     :::
 
 

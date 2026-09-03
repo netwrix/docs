@@ -27,13 +27,13 @@ Specify the following:
 
 ![action_email_smtp_thumb_0_0](/images/dataclassification/5.7/admin/workflows/actions/action_email_smtp_thumb_0_0.webp)
 
-When finished, slick **Save** to close the dialog and return to email action settings.
+When finished, click **Save** to close the dialog and return to email action settings.
 
 | Field               | Settings to specify                                                                                                                                                                                                                                  |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Email Subject       | Specify the template for email subject. The template can contain dynamic values that will be obtained from the crawled content (e.g. _[cs:PageUrl]_). **TIP:** You can select the corresponding fields from **Add a Merge Field** list on the right. |
 | Email Body Template | Specify the template for email body. The template can contain dynamic values that will be obtained from the crawled content (e.g. _[cs:PageUrl]_). **TIP:** You can select the corresponding fields from **Add a Merge Field** list on the right.    |
 
-To modify action settings for the certain workflow, select the workflow and use the Advanced UI
+To modify action settings for a specific workflow, select the workflow and use the Advanced UI
 window, as described in the
 [Modify Email Alert action settings](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/actions/availableactions/emailalert/modifyemailalertaction.md) section.

@@ -17,7 +17,7 @@ The following jobs comprise the 1.Groups Job Group:
   – Identifies circularly nested groups within Active Directory which can pose administrative and
   operational challenges with identifying effective access to resources
 - [AD_DCLogonGroups Job](/docs/accessanalyzer/11.6/solutions/activedirectory/groups/ad_dclogongroups.md)
-  – Identifies users who are able to log on to Domain Controllers through effective membership to
+  – Identifies users who can log on to Domain Controllers through effective membership to
   the Enterprise Admins, Domain Admins, Administrators, Backup Operators, Account Operators, Print
   Operators, or Remote Desktop Users groups. This type of access should be limited to only those
   individuals who require this level of administrative privileges.
@@ -28,7 +28,7 @@ The following jobs comprise the 1.Groups Job Group:
   – Identifies empty and single member groups which are suitable candidates for consolidation or
   cleanup
 - [AD_GroupProbableOwners Job](/docs/accessanalyzer/11.6/solutions/activedirectory/groups/ad_groupprobableowners.md)
-  – Determines potential owners for Active Directory Groups which can be used to perform automated
+  – Determines potential owners for Active Directory Groups, which you can use to perform automated
   membership reviews and enable self-service group management and membership requests
 - [AD_LargestGroups Job](/docs/accessanalyzer/11.6/solutions/activedirectory/groups/ad_largestgroups.md)
   – Identifies groups with large effective member counts. These types of groups may cause
@@ -44,8 +44,8 @@ The following jobs comprise the 1.Groups Job Group:
   – Identifies mail-enabled security groups within Active Directory
 - [AD_NestedGroups Job](/docs/accessanalyzer/11.6/solutions/activedirectory/groups/ad_nestedgroups.md)
   – Identifies nested groups within Active Directory and provides details such as the levels of
-  nesting. While Active Directory provides the ability to nest certain types of groups within other
-  groups, Microsoft recommends nesting does not go beyond two levels in order to avoid difficulties
+  nesting. While Active Directory lets you nest certain types of groups within other
+  groups, Microsoft recommends nesting doesn't go beyond two levels to avoid difficulties
   in understanding effective membership and access.
 
     - The definition of a deeply nested group is set by the **.Active Directory Inventory** >

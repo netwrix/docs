@@ -35,7 +35,7 @@ to load until all data has been analyzed for the audited user.
 
 
 The scoping options allow Access Information Center users to specifying what collected data should
-be analyzed in order to generate this report. Unlike other filter options, this may impact the
+be analyzed to generate this report. Unlike other filter options, this may impact the
 loading time depending on the scoping options selected. See the
 [Scope an Effective Access Report](/docs/accessinformationcenter/11.6/resourceaudit/navigate/scopeeffectiveaccess.md)
 topic for instructions on using this feature.

@@ -6,10 +6,9 @@ sidebar_position: 10
 
 # Netwrix File Activity Monitor App for QRadar
 
-Netwrix File Activity monitoring solutions enable organizations to successfully, efficiently, and
-affordably monitor file access and permission changes across Windows and Network Attached Storage
+Netwrix File Activity monitoring solutions enable organizations to monitor file access and permission changes across Windows and Network Attached Storage
 (NAS) file systems in real-time. Using the preconfigured  Netwrix File Activity Monitor App for
-QRadar, users can quickly understand all file activities as a whole, for specific resources or
+QRadar, users can understand all file activities as a whole, for specific resources or
 users, as well as patterns of activity indicative of threats such as crypto ransomware or data
 exfiltration attempts. With full control over the data, users can create custom searches, all while
 enabling QRadar to correlate file system activity with any log source.
@@ -26,10 +25,9 @@ the Netwrix website for additional information.
 Download the [Stealthbits File Activity Monitor App for
 QRadar](https://exchange.xforce.ibmcloud.com/hub/extension/STEALTHbits Technologies:STEALTHbits File
 Activity Monitor) from the [IBM X-Force App Exchange](https://exchange.xforce.ibmcloud.com/hub).
-After downloading the Stealthbits File Activity Monitor App for QRadar, follow the steps to install
-it within QRadar.
+After downloading the Stealthbits File Activity Monitor App for QRadar, install it within QRadar by completing the following:
 
-**Step 1 –** Click on the Admin tab within QRadar.
+**Step 1 –** Click the Admin tab within QRadar.
 
 **Step 2 –** Under System Configuration, click Extensions Management.
 
@@ -49,7 +47,7 @@ additional information.
 
 ## Initial Configuration of the QRadar App
 
-Follow the steps to configure QRadar to receive data from Stealthbitsproducts.
+To configure QRadar to receive data from Stealthbits products, complete the following:
 
 **Step 1 –** Determine the IP Address of the QRadar Console, e.g. run the _ifconfig_ command. This
 information is required for the following sections:
@@ -63,7 +61,7 @@ information is required for the following sections:
 
 **Step 3 –** Select Log Sources.
 
-**Step 4 –** View the Log Sources list. If the data source was not automatically created, click Add
+**Step 4 –** View the Log Sources list. If the data source wasn't automatically created, click Add
 and enter the following information:
 
 - Log Source Name – Enter a descriptive name to identify the data source
@@ -79,7 +77,7 @@ sent correctly between the hosts, and diagnose any possible network issues.
 - Protocol Configuration – Select Syslog
 - Log Source Identifier – Enter the host name or IP Address of the host where the Stealthbits
   Activity Monitor Console OR StealthINTERCEPT is installed
-- Then click Save. Remember, prior to using the StealthbitsFile Activity Monitor App for QRadar, the
+- Then click Save. Remember, before using the Stealthbits File Activity Monitor App for QRadar, the
   related Stealthbits product must be configured to send data to QRadar.
 
 The  Stealthbits File Activity Monitor App for QRadar can now display activity data from either the

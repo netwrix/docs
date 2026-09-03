@@ -6,9 +6,9 @@ sidebar_position: 140
 
 # Test Passwords Window
 
-The Test Password window enables users to test the password complexity requirements set in the
+Use the Test Password window to test the password complexity requirements set in the
 [Password Rules Filter](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md#password-rules-filter) against a pending password.
-This window does not change a user’s password but allows pending user passwords to be tested in the
+This window doesn’t change a user’s password but allows pending user passwords to be tested in the
 domain.
 
 ![Test Passwords Window](/images/threatprevention/8.0/admin/policies/eventtype/window/testpasswords.webp)
@@ -27,6 +27,6 @@ This window has the following options:
 
 ![passwordtestpassed](/images/threatprevention/8.0/admin/policies/eventtype/window/passwordtestpassed.webp)
 
-**Password Test Result - Does Not Pass**
+**Password Test Result - Doesn't Pass**
 
 ![passwordtestfailed](/images/threatprevention/8.0/admin/policies/eventtype/window/passwordtestfailed.webp)

@@ -16,7 +16,7 @@ following actions are available for the **SharePoint** content source type:
       by user or retrieved from the related NDC database field, respectively.
     - **Send classification value** — this action writes classification metadata (**Taxonomy**) into
       the selected property field (**Field Name**). If multiple classification values are applied,
-      they will be written using delimiters.
+      the system writes them using delimiters.
     - **Write O365 Label**, **Remove O365 Label** — use these actions to write or remove Office 365
       retention label as document metadata. These labels are typically used to automatically apply
       data protection policies to your documents.
@@ -28,14 +28,14 @@ following actions are available for the **SharePoint** content source type:
     :::
 
 
-    - **Filtered Targeted Meta Update** — this advanced action can be used to update a SharePoint
+    - **Filtered Targeted Meta Update** — this advanced action updates a SharePoint
       property based on rules embedded in the taxonomy clues. Enter the document property to update
       in the **Update Field**, then select the required **Taxonomy** and enter **Match Field**, i.e.
       the field name/clue to match on.
 
-- Apply MIP Label, Remove MIP Label — these actions, respectively, apply and remove sensitivity
+- Apply MIP Label, Remove MIP Label — these actions, respectively, apply, and remove sensitivity
   label to/from a document stored on a file system, using Microsoft Information Protection (MIP).
-  This helps to automate protection policies application. See Modify MIP Label for details.
+  This automates policy application. See Modify MIP Label for details.
 
 To configure actions for SharePoint documents using the Advanced interface:
 

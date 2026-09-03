@@ -14,7 +14,7 @@ Navigate to the **AWS** > **3.Groups** > **AWS_NoPolicyGroups** > **Configure** 
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -35,4 +35,4 @@ produces the following preconfigured report:
 
 | Report                  | Description                                                       | Default Tags | Report Element                                                                                                                                                                                                                                    |
 | ----------------------- | ----------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Groups With No Policies | This report identifies groups that do not have a policy assigned. | None         | This report is comprised of the following elements: <ul><li>Stacked Bar Chart – Displays top accounts by no policy group counts</li><li>Table – Shows no policy groups by accounts</li><li>Table – Provides details on no policy groups</li></ul> |
+| Groups With No Policies | This report identifies groups that don't have a policy assigned. | None         | This report is comprised of the following elements: <ul><li>Stacked Bar Chart – Displays top accounts by no policy group counts</li><li>Table – Shows no policy groups by accounts</li><li>Table – Provides details on no policy groups</li></ul> |

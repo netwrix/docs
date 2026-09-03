@@ -9,7 +9,7 @@ sidebar_position: 10
 Use the **Box** source configuration window to set up the crawling and classification operations for
 content stored in a Box Enterprise account.
 
-By default, the configuration window displays basic configuration settings only. Click the "wrench" icon in the bottom left corner to configure advanced settings.
+By default, the configuration window displays basic configuration settings only. To configure advanced settings, click the "wrench" icon.
 
 :::note
 To configure advanced settings, your user account may need advanced privileges.

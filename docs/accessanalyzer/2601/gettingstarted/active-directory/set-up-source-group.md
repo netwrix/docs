@@ -12,8 +12,8 @@ sidebar_position: 3
 4. Select a service account from the **Service Account** dropdown, or click **+** to create one inline. Service accounts store the credentials Access Analyzer uses to connect to your domain controllers. See [Service Accounts](../../configurations/service-accounts/overview.md) for details.
 5. Click **Add** under **Domain Controllers**, then select **Add Manually**.
 6. Enter the following for each domain controller:
-   - **Server Name / IP** — The FQDN of the domain controller (for example, `dc01.corp.example.com`). IP addresses aren't supported. To add multiple domain controllers, separate entries with a comma or press **Enter** after each one.
-   - **Domain** — The DNS domain name (for example, `corp.example.com`). Applied to all entries above.
+   - **Server Name / IP** — The fully qualified domain name (FQDN) of the domain controller (for example, `dc01.corp.example.com`). Access Analyzer doesn't support IP addresses. To add multiple domain controllers, separate entries with a comma or press **Enter** after each one.
+   - **Domain** — The DNS domain name (for example, `corp.example.com`). Applies to all domain controllers you added in this step.
    - **Port** — The LDAP port. Default is `389`. Use `636` for LDAPS.
 7. Click **Add domain controller**, then click **Done**. Repeat steps 5–7 for each additional domain.
 8. If your domain controllers use self-signed certificates on port 636, select **Ignore SSL errors**.

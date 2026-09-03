@@ -13,7 +13,7 @@ You can specify default values for the following Directory Manager metadata:
 
 ## Specify the Default Issuer URL
 
-Follow the steps to specify the default Issuer URL.
+To specify the default Issuer URL.
 
 Step 1 – In Directory Manager Authenticate, go to the Settings tab.
 
@@ -27,7 +27,7 @@ Replace or update the URL in the Base URL box and click **Save**.
 
 ## Update the Default Signing Certificate
 
-Follow the steps to update the default signing certificate.
+To update the default signing certificate.
 
 Step 1 – In Directory Manager Authenticate, go to the Settings tab.
 

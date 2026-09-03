@@ -42,7 +42,7 @@ This solution employs the following data collector to scan the target environmen
 **For Box Data Collection**
 
 Box scans require the Enterprise Admin or Co-Admin account credentials to generate an authorization
-code. The following can be used as a least privilege model:
+code. You can use the following as a least privilege model:
 
 - Enterprise Admin account
 - Co-Admin account with the permission to **Run new reports and access existing reports** enabled

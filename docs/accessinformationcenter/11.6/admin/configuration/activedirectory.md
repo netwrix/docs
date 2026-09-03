@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Active Directory Page
 
-The Access Information Centerneeds to be connected to Active Directory for user authentication and
+The Access Information Center needs to be connected to Active Directory for user authentication and
 to assign resource ownership in the Resource Owners interface. The Active Directory service account
 is configured on the Active Directory page of the Configuration interface. Read access to Active
 Directory is required for this purpose.
@@ -63,7 +63,7 @@ by the **.Active Directory Inventory** solution of Enterprise Auditor.
 The Access Information Center can optionally be configured to commit Active Directory group
 membership changes via the change modeling feature, by resource owners via ad hoc changes, or as
 part of the Resource Reviews and Self-Service Access Requests workflows. This option require more
-permissions and setup. Once the prerequisites are in place, it can be enabled on this page.
+permissions and setup. When the prerequisites are in place, it can be enabled on this page.
 
 When checked, the **Allow this account to make changes to group membership** option uses the Active
 Directory service account to commit group membership changes. See the
@@ -72,14 +72,14 @@ topic for additional information on provisioning the Active Directory service ac
 practices for group and resource management through the Access Information Center
 
 :::tip
-Remember, click **Save** when any changes are made to this page.
+Click **Save** when any changes are made to this page.
 :::
 
 
 ## Update the Active Directory Service Account Password
 
-Follow the steps to update the Active Directory service account password. These steps only apply for
-the **Use the following Active Directory account** option.
+To update the Active Directory service account password, follow these steps (they apply only for
+the **Use the following Active Directory account** option):
 
 **Step 1 –** On the Active Directory page, enter the new password in the correct field.
 

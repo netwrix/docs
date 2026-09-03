@@ -37,7 +37,7 @@ The following options are available:
        this option is cleared, then after selecting the necessary taxonomy, you will be presented
        the list of its terms. Select the one you plan to use for filtering.
 
-    **NOTE:** Multiple selection is not supported: to configure several filter values, you should
+    **NOTE:** Multiple selection isn't supported: to configure several filter values, you should
     repeat this procedure for each filter value you need.
 
     3. **Include Children** - select this option if needed.
@@ -51,7 +51,7 @@ Then verify that configured filters are displayed properly:
 
 ![workflow_step3_filter_blue_thumb_0_0](/images/dataclassification/5.6.2/workflows/workflow_step3_filter_blue_thumb_0_0.webp)
 
-- Excluding filters (i.e. instructing to include documents without classification tag you selected)
+- Excluding filters (i.e. filters that exclude documents with the classification tag you selected)
   are colored red:
 
 ![workflow_step3_filter_red_thumb_0_0](/images/dataclassification/5.6.2/workflows/workflow_step3_filter_red_thumb_0_0.webp)

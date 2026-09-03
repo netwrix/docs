@@ -9,12 +9,12 @@ sidebar_position: 20
 The Sensitive Content report at the database and table level provides a list of paths and a hit
 count per table where criteria matches were found on the selected resource. This report includes a
 table with criteria matches visible to Access Information Center users with either Security Team
-Member or Administrator roles. The Matches table requires the storage of discovered sensitive data
-within the Access Analyzer database or it will be blank.
+Member or Administrator roles. The Matches table requires the Access Analyzer database to store
+discovered sensitive data or it will be blank.
 
 ![Sensitive Content report at the database and table level](/images/accessinformationcenter/12.0/resourceaudit/mysql/databasetables/databasesensitivecontent.webp)
 
-This report is comprised of the following columns:
+This report contains the following columns:
 
 - Criteria Name – Type of potentially sensitive criteria matches found
 - Criteria Type – Pattern for pattern based matches (System Criteria), and subject type based on

@@ -10,8 +10,8 @@ The commandlet Get-UserRole displays information about the role of the specified
 store.
 
 If a user has different roles in different Directory Manager clients of an identity store; and
-ClientName parameter is not specified, this commandlet displays the highest priority role of the
-user. If the identity store name is not specified, the connected identity store is used by this
+ClientName parameter isn't specified, this commandlet displays the highest priority role of the
+user. If the identity store name isn't specified, the connected identity store is used by this
 cmdlet.
 
 ## Syntax

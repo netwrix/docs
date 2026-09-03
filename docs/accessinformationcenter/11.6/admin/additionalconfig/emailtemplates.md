@@ -32,7 +32,7 @@ Substitution Tokens are only valid for certain Notification message templates. B
 the Substitution Tokens, the value or string they represent, and the message templates in which they
 may be used.
 
-| Substitution Token    | Description                                                                                                                                                       | Applicable Template(s)                                                                                                 |
+| Substitution Token    | Description                                                                                                                                                       | Applicable Templates                                                                                                 |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | @AccessName@          | Descriptive name of the type of access being requested (Read, Modify, etc.) to a resource                                                                         | AccessRequestConfirm <br />AccessRequestExpired <br />AccessRequestStatus                                                          |
 | @Changes@             | Number of review changes                                                                                                                                          | EntitlementReviewUpdates                                                                                               |
@@ -58,7 +58,7 @@ directory:
 
 **…\STEALTHbits\Access Information Center**
 
-Follow the steps to customize the email templates.
+To customize the email templates:
 
 :::note
 To successfully modify these Notifications email templates, a familiarity with basic HTML
@@ -83,13 +83,13 @@ installation directory to be preserved during future application upgrades.
 
 ![Unzipped Email Templates in Templates Folder](/images/accessinformationcenter/11.6/admin/additionalconfig/emailtemplatesunzipped.webp)
 
-**Step 3 –** Locate the desired HTML message template.
+**Step 3 –** Locate the HTML message template you want.
 
 **Step 4 –** Open the file with a text editor, e.g. Notepad, and customize the email body.
 
 :::note
 Using a tool other than a text editor to edit HTML files, such as a WYSIWYG web page
-editor which may drastically alter the underlying HTML code, is not supported.
+editor which may drastically alter the underlying HTML code, isn't supported.
 :::
 
 
@@ -99,7 +99,7 @@ tag and the closing `</title>` tag.
 **Step 6 –** After making changes, save the file and view it within a web browser to see what the
 changes will look like. The Substitution Tokens will display without supplied values.
 
-**Step 7 –** After making the desired changes, save and close the text editor. Then re-launch the
+**Step 7 –** After making the changes you want, save, and close the text editor. Then re-launch the
 application.
 
 The modifications to the HTML email templates are in use by the notification emails.

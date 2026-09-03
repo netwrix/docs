@@ -16,7 +16,7 @@ To configure a SAML provider in Directory Manager, you have to specify the follo
 
 ## Configure the AD FS Provider in Directory Manager
 
-Follow the steps to configure the AD FS provider in Directory Manager.
+To configure the AD FS provider in Directory Manager.
 
 Step 1 – In Directory Manager Authenticate, click the **SAML Providers** tab.
 
@@ -24,9 +24,9 @@ Step 2 – On the SAML Providers page, click **New Provider**.
 
 Step 3 – On the Create New Provider page, enter a name for the provider.
 
-Step 4 – Make sure the Client box displays the name of the Directory Manager client for which you
+Step 4 – Ensure the Client box displays the name of the Directory Manager client for which you
 generated the Entity ID/Audience URL and provided that in AD FS.  
-Keep this page open while we copy configurations from AD FS and provide them here.
+Keep this page open while copying configurations from AD FS and providing them here.
 
 ## Provide Issuer URL
 
@@ -42,18 +42,18 @@ Manager.
 
 ### Provide IDP Login URL
 
-The IDP Login URL is the URL of the AD FS sign-in page. Follow the steps to fetch and enter IDP
+The IDP Login URL is the URL of the AD FS sign-in page. To fetch and enter IDP
 Login URL.
 
 Step 1 – Launch the AD FS login page and copy the URL displayed in the address bar.
 
-Step 2 – We only need the initial part of the URL, up to _ls_. Copy it and paste it in the IDP Login
+Step 2 – You only need the initial part of the URL, up to _ls_. Copy it and paste it in the IDP Login
 URL box on the Create New Provider page.
 
 ### Get Token-Signing Certificate
 
 The next step is to get the token-signing certificate from AD FS and provide it in Directory
-Manager. Follow the steps to do so.
+Manager. To do so.
 
 Step 1 – Go to the AD FS console and click **Certificates**. The certificates are displayed.
 
@@ -91,7 +91,7 @@ Required image file dimensions: 210 x 60 pixels
 :::
 
 
-If you do not upload an image, AD FS authentication will be shown as a button. This button would
+If you don't upload an image, AD FS authentication will be shown as a button. This button would
 have the same name as you entered in the Name box on the Create New Provider page.
 
 Users can click the AD FS image or the button on the login page of the Directory Manager portal
@@ -102,11 +102,11 @@ _Wizard_ for single sign-on.
 Next, specify some advanced configurations for the identity provider. Expand the Advanced section on
 the Create New Provider page and provide the information as follows:
 
-Step 1 – Make sure that _RSA-SHA-256_ is selected in the Response Signing Method box.
+Step 1 – Ensure that _RSA-SHA-256_ is selected in the Response Signing Method box.
 
 Step 2 – The Disable GroupID Authentication option indicates whether to display the Directory
 Manager authentication login on the Directory Manager client's login page ( i.e., Wizard portal’s
-login page in our example).
+login page in this example).
 
 - By default, ‘No’ is selected, which means that when users access the Directory Manager client's
   login page, they will be shown the Directory Manager login and password option along with the
@@ -116,7 +116,7 @@ login page in our example).
   SAML provider is configured, the login page for the provider is displayed rather than the
   Directory Manager client's login page.
 
-Step 3 – Select _Post_ in the Request Binding drop-down list.  
+Step 3 – Select _Post_ in the Request Binding dropdown list.  
 To verify that you have selected the correct binding type, do the following:
 
 1. In the AD FS console click **Relying Party Trust** in the left pane; the middle pane displays the
@@ -125,10 +125,9 @@ To verify that you have selected the correct binding type, do the following:
    This launches the Properties dialog box for the relying party trust.
 3. Click the **Endpoints** tab and confirm that the binding type is _POST_.
 
-Step 4 – In AD FS, we configured an Active Directory attribute that the identity provider will use
+Step 4 – In AD FS, configure an Active Directory attribute that the identity provider will use
 for authenticating users (see step 16 in the
-[Configure Relaying Party Trust in AD FS](/docs/directorymanager/11.1/authenticate/asserviceprovider/adfs/configurerelayingpartytrust.md) topic). In our example, we
-used the UPN attribute that stores the user principal name. Now in the Advanced section, we have to
+[Configure Relaying Party Trust in AD FS](/docs/directorymanager/11.1/authenticate/asserviceprovider/adfs/configurerelayingpartytrust.md) topic). In this example, use the UPN attribute that stores the user principal name. Now in the Advanced section, you must
 refer to this attribute.  
 In the Identity Location list, select the _Identity is an attribute element_ option.
 
@@ -136,7 +135,7 @@ Step 5 – On selecting it, the Identity Location Attribute box is displayed.
 The attribute location will be in the form of a URL. Get this URL from AD FS.
 
 1. In the AD FS console, click **Claim Descriptions** in the left pane and then select the Active
-   Directory attribute you specified for authentication. In our example, it is the UPN attribute.
+   Directory attribute you specified for authentication. In this example, it is the UPN attribute.
 2. Double-click the attribute to open its properties.
 3. On the Attribute Properties dialog box, copy the URL displayed in the Claim type box and paste it
    in the Identity Location Attribute box.

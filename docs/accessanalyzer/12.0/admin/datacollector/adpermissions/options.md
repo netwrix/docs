@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # ADPermissions: Options
 
-The Options page is provides additional options for collecting the Active Directory information. It
+The Options page provides additional options for collecting Active Directory information. It
 is a wizard page for the categories of:
 
 - Scan Active Directory Permissions
@@ -25,5 +25,5 @@ The configurable options are:
     - Target previously scanned domain controller – Select to use the same domain controller as the
       previous scan
     - Track changes into change tracking tables – Enable to track changes
-    - Number of days you want to keep changes in the database – Set the number of days to keep
-      changes in the database
+    - Number of days you want to keep changes in the database – Set how many days to keep changes in
+      the database

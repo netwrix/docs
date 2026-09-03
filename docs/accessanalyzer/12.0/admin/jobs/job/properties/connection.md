@@ -21,7 +21,7 @@ is where the Connection Profile should be configured. If the host list is set un
 
 ![Connection tab of the Jop Properties](/images/accessanalyzer/12.0/admin/jobs/job/properties/viewxml.webp)
 
-Select the desired option to identify the required Connection Profile for the job. See the
+Select the option you want to identify the required Connection Profile for the job. See the
 [Connection Node](/docs/accessanalyzer/12.0/admin/jobs/group/settings/connection.md) topic for additional information for the three
 connection options.
 

@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # File Actions
 
-A File action can output the event data collected by a policy to a log file. Follow the steps to add
-a File action to a policy/template.
+A File action can output the event data collected by a policy to a log file.
 
 ![Actions tab - Actions Configurations area](/images/threatprevention/7.5/admin/policies/actions/actionsconfigurationsarea.webp)
 
@@ -32,7 +31,7 @@ window.
 
   - The name can include a full UNC path to place the file at a desired location.
 
-- Select the radio button for the desired File Output Format:
+- Select the radio button for the File Output Format you want:
   - XML
   - Comma Delimited (CSV)
 - Adjust the File Size Limit and Minimum disk space required for reporting values as desired

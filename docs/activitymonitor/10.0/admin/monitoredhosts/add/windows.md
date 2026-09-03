@@ -13,7 +13,7 @@ The Activity Monitor can be configured to monitor the following:
 - Ability to collect all or specific file activity for specific values or specific combinations of
   values
 
-It provides the ability to feed activity data to SIEM products. The following dashboards have been
+It lets you feed activity data to Security Information and Event Management (SIEM) products. The following dashboards have been
 specifically created for Activity Monitor event data:
 
 - For IBM® QRadar®, see the
@@ -22,26 +22,23 @@ specifically created for Activity Monitor event data:
 - For Splunk®, see the [File Activity Monitor App for Splunk](/docs/activitymonitor/10.0/siem/splunk/overview.md) for
   additional information.
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Access Analyzer
 - Netwrix Threat Manager
 
-Prior to adding a Windows host to the Activity Monitor, the prerequisites for the target environment
+Before adding a Windows host to the Activity Monitor, the prerequisites for the target environment
 must be met. See the
 [Windows File Server Activity Auditing Configuration](/docs/activitymonitor/10.0/requirements/activityagent/windowsfs-activity.md)
 topic for additional information.
 
 :::tip
-Remember, the Activity Agent must be deployed to the server. It cannot be deployed to a proxy
+Remember, the Activity Agent must be deployed to the server. It can't be deployed to a proxy
 server.
 :::
 
 
 ## Add Agent's Windows Host
-
-Follow the steps to add a Windows host to be monitored, if it was not configured when the agent was
-deployed.
 
 **Step 1 –** In Activity Monitor, go to the Monitored Hosts & Services tab and click Add. The Add New Host
 window opens.
@@ -54,7 +51,7 @@ server. Click **Next**.
 ![Add Host page with Windows selected](/images/activitymonitor/9.0/admin/monitoredhosts/add/addhostwindows.webp)
 
 **Step 3 –** On the Add Host page, select the Agent’s Windows host radio button. Remember, the agent
-must be deployed on the Windows file server to be monitored. If desired, add a **Comment**. Click
+must be deployed on the Windows file server you want to monitor. If desired, add a **Comment**. Click
 **Next**.
 
 ![Protocols page](/images/activitymonitor/9.0/admin/monitoredhosts/add/protocolspage.webp)
@@ -95,7 +92,7 @@ in Read events not being monitored.
   permission updates occurred resulting in reordered ACEs (Access Control Entries) but with no other
   changes in the ACL (Access Control List). For example, if a user is removed in the security
   settings of a file, and then the same user is added back with the same security permissions, the
-  change is not logged.
+  change isn't logged.
 - Suppress Inherited Permission Changes – Filters out events for inherited permission changes. This
   option is provided to improve overall performance and reduce output activity log volume.
 - Suppress Microsoft Office operations on temporary files – Filters out events for Microsoft Office
@@ -107,7 +104,7 @@ Click **Next**.
 ![Configure Basic Options page for Windows](/images/activitymonitor/9.0/admin/monitoredhosts/add/configurebasicoptionswindows.webp)
 
 **Step 6 –** On the Configure Basic Options page, choose which settings to enable. The “Log files”
-are the activity logs created by the activity agent on the target host. Select the desired options:
+are the activity logs created by the activity agent on the target host. Select the options you want:
 
 - Report Account Names – Adds an Account Name column in the generated TSV files
 - Report UNC paths – Adds a UNC Path column and a Rename UNC Path column in the generated TSV files
@@ -115,9 +112,9 @@ are the activity logs created by the activity agent on the target host. Select t
       default. The UNC Path is in the following format:
         - For CIFS activity – `\\[HOST]\[SHARE]\[PATH]`
         - Example CIFS activity – `\\ExampleHost\TestShare\DocTeam\Temp.txt`
-    - When the option is enabled, the added columns are populated when a file is accessed remotely
-      through the UNC Path. If a file is accessed locally, these columns are empty. These columns
-      have also been added as Syslog macros.
+    - When the option is enabled, the system populates the added columns when a file is accessed remotely
+      through the UNC Path. If a file is accessed locally, these columns remain empty. These columns
+      are also available as Syslog macros.
 - Report operations with millisecond precision – Changes the timestamps of events being recorded in
   the TSV log file for better ordering of events if multiple events occur within the same second
 
@@ -158,26 +155,26 @@ Click **Next**.
 **Step 9 –** If Syslog Server is selected on the **Where To Log The Activity** page, the Syslog
 Output page can be configured.
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used. The Event stream is the activity
       being monitored according to this configuration for the monitored host.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the Message framing drop-down menu. See the
+    The TCP and TLS protocols add the Message framing dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/10.0/admin/outputs/syslog/syslog.md) topic for additional information.
 
 - The Test button sends a test message to the Syslog server to check the connection. A green check
-  mark or red will determine whether the test message has been sent or failed to send. Messages vary
+  mark or red indicates whether the test message was delivered or if delivery failed. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -188,7 +185,7 @@ Click **Finish**.
 ![Activity Monitor with Windows Host added](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitorwindows.webp)
 
 The added Windows file server host is displayed in the monitored hosts/services table. Once a host has been
-added for monitoring, configure the desired outputs. See the
+added for monitoring, configure the outputs you want. See the
 [Output for Monitored Hosts](/docs/activitymonitor/10.0/admin/monitoredhosts/output/output.md) topic for additional information.
 
 ## Host Properties for Windows File Server

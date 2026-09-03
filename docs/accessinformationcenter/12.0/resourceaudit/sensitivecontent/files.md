@@ -18,7 +18,7 @@ additional tables:
 
 ![Files report for sensitive content](/images/accessinformationcenter/12.0/resourceaudit/navigate/files.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Resource Type – Target environment where the sensitive file exists. For example, File System or
   SharePoint.
@@ -33,7 +33,7 @@ resource.
 The Matches table displays information on the criteria hits found on the selected file. This table
 is comprised of the following columns:
 
-- Prefix – Text just prior to the sensitive data match in the file
+- Prefix – Text just before the sensitive data match in the file
 - Match – Lists any sensitive data matches found for the highlighted criteria in the top grid of the
   report
 - Suffix – Text just after the sensitive data match in the file
@@ -44,13 +44,13 @@ is comprised of the following columns:
 The Activity table displays information on activity performed on the selected file during the
 selected date. It will be blank if any of the following are true:
 
-- Activity is not being monitored for the targeted environment
+- Activity isn't being monitored for the targeted environment
 - The activity collection job within Access Analyzer for the environment have not been run
 - There were no operation events logged on the selected file for the selected date range
 
 ![Activity table](/images/accessinformationcenter/12.0/resourceaudit/sensitivecontent/activitytable.webp)
 
-This table is comprised of the following columns:
+This table includes the following columns:
 
 - Access Time – Date and timestamp for when the operation occurred
 - Trustee Name – Name of the trustee who performed the event on the file
@@ -70,7 +70,7 @@ This table is comprised of the following columns:
 - Access – Whether the trustee was granted access to execute the operation: **Allowed** or
   **Denied**
 - Path – Location of the file
-- Target Path – New location if changed by the operation. Blank if the operation does not result in
+- Target Path – New location if changed by the operation. Blank if the operation doesn't result in
   a new path.
 - Process Name – Name of the process which performed the operation
 
@@ -81,12 +81,12 @@ object or folder housing the selected sensitive data file.
 
 ![Permissions table](/images/accessinformationcenter/12.0/resourceaudit/sensitivecontent/permissionstable.webp)
 
-This table is comprised of the following columns:
+This table includes the following columns:
 
 - Trustee Type – Type of the trustee (for example, Domain User or Domain Group)
 - Trustee Name – Name of the trustee who has effective access to the file
 - Trustee Account – Active Directory account associated with the trustee
-- Department – Department to which the trustee account belongss as read from Active Directory
+- Department – Department to which the trustee account belongs as read from Active Directory
 - Title – Trustee’s title as read from Active Directory
 - Mail – Trustee’s email account as read from Active Directory
 - EmployeeId – Corporate ID for the employee as read from Active Directory

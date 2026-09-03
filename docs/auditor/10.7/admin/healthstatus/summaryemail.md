@@ -21,4 +21,4 @@ The email looks like shown below:
 ![email_thumb_0_0](/images/auditor/10.7/admin/healthstatus/email_thumb_0_0.webp)
 
 The Monitoring Overview section of the email provides detail information only for the monitoring
-plans with issues. Successfully completed monitoring plans are not included.
+plans with issues. Successfully completed monitoring plans aren't included.

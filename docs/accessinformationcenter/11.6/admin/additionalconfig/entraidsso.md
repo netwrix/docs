@@ -7,28 +7,28 @@ sidebar_position: 70
 # Microsoft Entra ID Single Sign-On
 
 The Access Information Center can be configured to use Microsoft Entra ID Single Sign-On (SSO). When
-configured, users are directed to the Microsoft Entra ID login page, and can log in using their
+configured, users are directed to the Microsoft Entra ID login page, and can log in using their
 existing Entra credentials.
 
 :::note
-If enabled, only Microsoft Entra ID SSO can be used for logging in. Other accounts,
-including the default administrator account, cannot be used.
+If enabled, only Microsoft Entra ID SSO lets you log in. Other accounts,
+including the default administrator account, don't work.
 :::
 
 
-The following is required to use Microsoft Entra ID SSO:
+The following is required to use Microsoft Entra ID SSO:
 
-- SSL must be enabled
-- The on-premise Active Directory must be synced with Microsoft Entra ID
+- SSL must be enabled
+- The on-premise Active Directory must be synced with Microsoft Entra ID
 
-To enable Microsoft Entra ID SSO, you must first create a registered application in Microsoft Entra
-ID, and then configure the Access Information Center to use it.
+To enable Microsoft Entra ID SSO, you must first create a registered application in Microsoft Entra
+ID, and then configure the Access Information Center to use it.
 
 ## Configure an Application in Microsoft Entra ID
 
 An application must be registered for the Access Information Center with your Microsoft Entra ID
-tenant and be configured with the necessary single sign-on settings. Follow the steps to create and
-configure the application.
+tenant and be configured with the necessary single sign-on settings. To create and
+configure the application:
 
 **Step 1 –** Sign into the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
@@ -43,7 +43,7 @@ finish creating the application.
 **Step 4 –** In your application, go to **Manage** > **Single sign-on**. Select **SAML** as the
 single sign-on method.
 
-**Step 5 –** On the Set up Single Sign-On with SAML page, click **Edit** on the Basic SAML
+**Step 5 –** On the Set up Single Sign-On with SAML page, click **Edit** on the Basic SAML
 Configuration section. Add your Identifier and Reply URL, and then click **Save**.
 
 - As the Identifier, enter `https://<FQDN of AIC>:<port number>`, for example:
@@ -77,15 +77,15 @@ Once configured they should show under Additional claims as below:
 users or groups to give permission to access the application.
 
 The application is now configured with the necessary settings. The next step is to enable the use of
-Microsoft Entra ID SSO in the Access Information Center config file.
+Microsoft Entra ID SSO in the Access Information Center config file.
 
-## Enable in the Access Information Center Config File
+## Enable in the Access Information Center Config File
 
-To enable Microsoft Entra ID SSO for the Access Information Center, the config file needs to be
-updated with values from Microsoft Entra ID. Follow the steps to enable the SSO.
+To enable Microsoft Entra ID SSO for the Access Information Center, the config file needs to be
+updated with values from Microsoft Entra ID. To enable the SSO:
 
 :::tip
-Remember, Enabling Entra ID SSO requires SSL to be enabled. If this was not done during the
+Remember, Enabling Entra ID SSO requires SSL to be enabled. If this wasn't done during the
 installation, then you must manually configure it. See the
 [Securing the Access Information Center](/docs/accessinformationcenter/11.6/installation/secure.md)
 topic for additional information.
@@ -100,13 +100,13 @@ Notepad. The file is located in the Access Information Center installation direc
 ![Parameters in the config file](/images/accessinformationcenter/11.6/admin/additionalconfig/configfileentrasso.webp)
 
 **Step 2 –** Locate the **WsFederationMetaData**, **WsFederationRealm**, and **WsFederationReply**
-parameters in the config file. If these are not present, then manually add them to your config file
+parameters in the config file. If these aren't present, then manually add them to your config file
 as follows:
 
 ```
-    <add key="WsFederationMetadata" value="" />
-    <add key="WsFederationRealm" value="" />
-    <add key="WsFederationReply" value="" />
+    <add key="WsFederationMetadata" value="" />
+    <add key="WsFederationRealm" value="" />
+    <add key="WsFederationReply" value="" />
 ```
 
 :::note
@@ -116,7 +116,7 @@ config file is retained during an upgrade to maintain the existing settings.
 :::
 
 
-**Step 3 –** Add the required values for the parameters from your Microsoft Entra ID application:
+**Step 3 –** Add the required values for the parameters from your Microsoft Entra ID application:
 
 - WsFederationMetaData – Metadata markup for describing the services provided
 
@@ -136,9 +136,9 @@ config file is retained during an upgrade to maintain the existing settings.
 For example:
 
 ```
-    <add key="WsFederationMetadata" value="https://login.microsoftonline.com/4a728f3b-1234-5678-90ab-cdef13246789/federationmetadata/2007-06/federationmetadata.xml?appid=5d3f1a2e-9876-5432-10ba-fedcba098765" />
-    <add key="WsFederationRealm" value="https://app0190.train90.local:481" />
-    <add key="WsFederationReply" value="https://app0190.train90.local:481/v2/federation" />
+    <add key="WsFederationMetadata" value="https://login.microsoftonline.com/4a728f3b-1234-5678-90ab-cdef13246789/federationmetadata/2007-06/federationmetadata.xml?appid=5d3f1a2e-9876-5432-10ba-fedcba098765" />
+    <add key="WsFederationRealm" value="https://app0190.train90.local:481" />
+    <add key="WsFederationReply" value="https://app0190.train90.local:481/v2/federation" />
 ```
 
 **Step 4 –** Save and close the file.
@@ -146,4 +146,4 @@ For example:
 **Step 5 –** Navigate to Services (`services.msc`). Restart the Netwrix Access Information Center
 service.
 
-The Access Information Center has been enabled for Microsoft Entra ID single sign-on.
+The Access Information Center has been enabled for Microsoft Entra ID single sign-on.

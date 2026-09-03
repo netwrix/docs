@@ -61,7 +61,7 @@ To configure HPE Aruba devices through the Management Console
 
 5. Click Submit. The new server is added to the Syslog Servers list.
 6. Click Pending Changes on the right.
-7. In the Pending Changes for `<X>` Managed Controller(s) dialog, select the device you want to
+7. In the Pending Changes for `<X>` Managed Controllers dialog, select the device you want to
    apply changes to.
 8. Click Deploy Changes.
 9. If the configuration is correct, you will see the following wizard:

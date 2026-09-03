@@ -29,7 +29,7 @@ data collector and the solution are available with a special Access Analyzer lic
 
 **Permissions**
 
-- Member of the local Administrator group on the targeted Exchange server(s)
+- Member of the local Administrator group on the targeted Exchange servers
 
 See the [Exchange Mail-Flow Permissions](/docs/accessanalyzer/12.0/requirements/exchange/support/mailflow.md) topic
 for additional information.
@@ -57,5 +57,5 @@ which contains the following wizard pages:
 
 ![Exchange Metrics Data Collector Wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/exchangemetrics/welcome.webp)
 
-The Welcome page can be hidden by checking the **Do not display this page the next time** box when
+To hide the Welcome page, check the **Don't display this page the next time** box when
 the wizard is open and configuration settings are saved.

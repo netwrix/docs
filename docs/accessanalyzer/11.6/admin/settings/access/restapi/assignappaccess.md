@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Assign Application Access through the Web Service
 
-An application can be assigned to access data remotely through the Web Service. Follow the steps to
-assign roles in the Console.
+You can assign an application to access data remotely through the Web Service. To assign roles in the Console:
 
 ![Add Access option on Access page](/images/accessanalyzer/11.6/admin/settings/access/rolebased/addaccess.webp)
 
@@ -21,8 +20,8 @@ opens.
 
 ![Application Access page of the Access Role Wizard](/images/accessanalyzer/11.6/admin/settings/access/restapi/applicationaccess.webp)
 
-**Step 3 –** The Application Access window displays a list of objects available in the database that
-are available for access. Select the database objects the application will access and click **Add**
+**Step 3 –** The Application Access window displays a list of database objects available for access.
+Select the database objects the application will access and click **Add**
 to open the Select database objects window.
 
 ![Select database objects window](/images/accessanalyzer/11.6/admin/settings/access/restapi/selectdatabaseobjects.webp)
@@ -50,11 +49,11 @@ name** box to filter the list of objects by the characters entered.
 app token.
 
 - Application name – The name of the application accessing that data
-- Access Expiration – The expiration for the client secret. Select an option for the desired access
-  expiration:
+- Access Expiration – The expiration for the client secret. Select an option for the access
+  expiration you want:
 
-    - Access expires within – Select a time frame from the drop-down list. The default is 72 hours.
-    - Access expires on specified date – Select a date from the drop-down list
+    - Access expires within – Select a time frame from the dropdown list. The default is 72 hours.
+    - Access expires on specified date – Select a date from the dropdown list
 
 - Generate – Click this button to generate the Client ID and Client secret
 - Client ID – Copy the Client ID into the application accessing data remotely through the Web
@@ -64,4 +63,4 @@ app token.
 
 **Step 6 –** Click **Finish** to confirm the changes.
 
-The application is added to the table on the Access page.
+Enterprise Auditor adds the application to the table on the Access page.

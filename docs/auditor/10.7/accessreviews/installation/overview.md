@@ -11,8 +11,8 @@ in a Microsoft® SQL® Server database. Netwrix Auditor must be installed and co
 installing and using the Access Reviews application. The Access Reviews Configuration tool must be
 used after installation to complete the integration of these products.
 
-**NOTE:** Access Reviews is a separately licensed product and is not included with Netwrix Auditor.
-Make sure that you have the Access Reviews license enabled in Auditor.
+**NOTE:** Access Reviews is a separately licensed product and isn't included with Netwrix Auditor.
+ensure that you have the Access Reviews license enabled in Auditor.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ The Access Reviews application must be installed on the same server as Netwrix A
 ### Permissions
 
 Permissions are needed to the Netwrix Auditor database and to Active Directory. This can be one
-account with sufficient rights to each or two separate accounts. For the purpose of this document,
+account with sufficient rights to each or two separate accounts. to this document,
 these will be referred to as the Database service account and the Active Directory service account.
 
 - Database service account – This is the same account used by Netwrix Auditor for a database service

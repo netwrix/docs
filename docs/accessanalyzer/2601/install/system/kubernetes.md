@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Kubernetes and Operating System
 
-Access Analyzer uses K3s, a lightweight Kubernetes distribution, which is automatically deployed by the installer. No manual Kubernetes setup is required.
+Access Analyzer uses K3s, a lightweight Kubernetes distribution that the installer deploys automatically. You don't need to set up Kubernetes manually.
 
 ## Operating System
 
@@ -17,7 +17,7 @@ Access Analyzer uses K3s, a lightweight Kubernetes distribution, which is automa
 | **Kernel version** | 5.15 or later |
 
 :::note
-Other Linux distributions may work but are not officially tested or supported. Ubuntu 24.04 LTS is the recommended and validated platform.
+Other Linux distributions may work, but Netwrix doesn't officially test or support them. Ubuntu 24.04 LTS is the recommended and validated platform.
 :::
 
 ## K3s Kubernetes
@@ -29,7 +29,7 @@ Other Linux distributions may work but are not officially tested or supported. U
 | **Secrets encryption** | Enabled (at rest) |
 | **Service name** | `k3s-dspm` |
 
-K3s is installed and managed automatically by the Access Analyzer installer. The `kubectl` command is available immediately after installation for cluster management.
+The Access Analyzer installer installs and manages K3s automatically. The `kubectl` command is available immediately after installation for cluster management.
 
 ## Kernel Features
 
@@ -50,4 +50,4 @@ The following kernel features must be available. The installer validates these a
 | **Namespace** | `argocd` |
 | **UI port** | 8090 (via port-forward) |
 
-ArgoCD is deployed automatically and manages the lifecycle of all Access Analyzer application components through GitOps.
+The installer deploys ArgoCD automatically, and ArgoCD manages the lifecycle of all Access Analyzer application components through GitOps.

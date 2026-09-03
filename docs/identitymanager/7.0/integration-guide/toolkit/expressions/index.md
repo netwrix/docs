@@ -10,16 +10,16 @@ Expressions are a way to define the attributes whose values must be computed bas
 
 ## Overview
 
-In Identity Manager's XML configuration, some attributes are defined with expressions. Expression attributes do not take a plain string value, but rather an expression that computes a value based on a given input. See the [Entity Property Expression](../../../integration-guide/toolkit/xml-configuration/metadata/entitypropertyexpression.md) and [Resource Type](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype.md) topics for additional information.
+In Identity Manager's XML configuration, some attributes are defined with expressions. Expression attributes don't take a plain string value, but rather an expression that computes a value based on a given input. See the [Entity Property Expression](../../../integration-guide/toolkit/xml-configuration/metadata/entitypropertyexpression.md) and [Resource Type](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype.md) topics for additional information.
 
 Every expression must be passed at least one argument and return at least one value.
 
 The expression can either be provided as a built-in function or as a full-fledged C# expression. See the list of available C# utility functions and functions predefined by Identity Manager. See the [Predefined functions](../../../integration-guide/toolkit/expressions/predefined-functions.md) topic for additional information.
 
 :::note
- When changing the value of a property that is part of some expressions in the configuration, do not expect to see all expressions recomputed right away. 
+ When changing the value of a property that is part of some expressions in the configuration, don't expect to see all expressions recomputed right away. 
 :::
-In order to ensure the recomputation of all expressions based on the recent change, wait for the next run of Update Expressions in the complete job or through the corresponding connector's overview page.
+To ensure the recomputation of all expressions based on the recent change, wait for the next run of Update Expressions in the complete job or through the corresponding connector's overview page.
 
 ### Expressions in the UI
 
@@ -39,11 +39,11 @@ The first example defines the source object as simply the user record's Login pr
 
 ### Expressions in XML
 
-In XML, inside the C# expressions, make sure to escape `"` characters by writing them as `&quot;`.
+In XML, inside the C# expressions, ensure to escape `"` characters by writing them as `&quot;`.
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ScalarRule Property="displayName" Expression="C#:person:return person.LastName + &quot; &quot; + person.FirstName;" />
@@ -57,7 +57,7 @@ See Microsoft documentation on [nullable reference types](https://learn.microsof
 
 For example, the following scalar rule computes the value of users' email addresses via a C# expression. The `<?>` characters cut the operations short by returning null when one of the chain members returns null, thus preventing errors.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ScalarRule Property="EmailAddress" Expression="C#:resource:return resource?.mail?.ToLower();" />
@@ -75,7 +75,7 @@ Identity Manager's engine automatically passes the main argument to the function
 
 Plain built-in function:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 // transform string to uppercase
@@ -84,7 +84,7 @@ Expression="ToUpper"
 
 Built-in function with parameters:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 // add 1440 minutes to a date formated as dd/MM/yyyy
@@ -112,7 +112,7 @@ Expression can includes squeries, using the QueryHandler service.
 
 For example, to query the employee type whose Identifier is CDI:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 C#:user:
@@ -193,7 +193,7 @@ Trying to use code from outside this white list would yield the following error 
 
 `The C# method named ... is not authorized. Please refer to the documentation for a list of authorized methods.`
 
-Method ... cannot be called with entities as arguments.
+Method ... can't be called with entities as arguments.
 
 However, here is a whitelist of methods that can be called with these kinds of arguments:
 
@@ -260,13 +260,13 @@ However, here is a whitelist of methods that can be called with these kinds of a
 
 ## Literal Expression
 
-To avoid the use of a C# expression when the parameter is not needed, simple literal values can be written as literal expressions according to the following rules:
+To avoid the use of a C# expression when the parameter isn't needed, simple literal values can be written as literal expressions according to the following rules:
 
 - The expression is prefixed by the Literal: tag.
 - The expression value must be valid according to the expected type of the property to which the
-expression applies. For example, Literal:five does not work for an Int property.
+expression applies. For example, Literal:five doesn't work for an Int property.
 
-Literal expressions are available for ScalarRule, QueryRule and EntityPropertyExpression expressions whose target EntityPropertyType attribute is of the following :
+Literal expressions are available for ScalarRule, QueryRule, and EntityPropertyExpression expressions whose target EntityPropertyType attribute is of the following :
 
 - String = 0
 - Bytes = 1
@@ -279,11 +279,11 @@ Literal expressions are available for ScalarRule, QueryRule and EntityPropertyEx
 - Int16 = 10
 - ForeignKey = 12
 
-Literal expressions are not available for QueryRuleTargetExpression attribute, only SourceExpression. Literal expressions are not available for rules targeting a DateTime or Binary property.
+Literal expressions aren't available for QueryRuleTargetExpression attribute, only SourceExpression. Literal expressions aren't available for rules targeting a DateTime or Binary property.
 
 **Example**
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ScalarRule Property="userAccountControl" Expression="C#:bot:return &quot;66048&quot;;" /><ScalarRule Property="userAccountControl" Expression="Literal:66048" />

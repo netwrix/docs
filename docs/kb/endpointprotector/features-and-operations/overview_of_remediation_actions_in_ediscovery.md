@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Overview of Remediation Actions
 tags:
   - features-and-operations
+  - kb
 title: "Overview of Remediation Actions in eDiscovery"
 knowledge_article_id: kA0Qk0000002B9DKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Overview of Remediation Actions in eDiscovery

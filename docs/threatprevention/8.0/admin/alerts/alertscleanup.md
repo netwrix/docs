@@ -15,7 +15,7 @@ Export alert data before using the Clear option. See the
 :::
 
 
-Follow the steps to clear the alerts data.
+To clear the alerts data:
 
 **Step 1 –** Click **Alerts** in the left pane to launch the Alerts interface.
 

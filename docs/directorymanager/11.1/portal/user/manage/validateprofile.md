@@ -22,11 +22,11 @@ While validating the profile, a user can:
 - Terminate his or her direct reports.
 
 Periodically, users receive reminder emails to validate their profile information. Directory Manager
-expires users who ignore these reminders and do not validate their profiles within the required
+expires users who ignore these reminders and don't validate their profiles within the required
 time. Expired users get disabled in the directory.
 
 Such users can request the administrator or Helpdesk to unlock their accounts temporarily and grant
-an extension period. If they do not validate their profile information within that extension period
+an extension period. If they don't validate their profile information within that extension period
 either, Directory Manager expires them again and their managers are informed by email. To reactivate
 these accounts, users’ managers must send a request to the administrator or Helpdesk. The
 administrator or Helpdesk user can extend the profile validation period on the
@@ -53,7 +53,7 @@ a scheduled job that runs on a set frequency and does the following:
 
 - Monitors the profile validation dates of users.
 - Generates reminder emails.
-- Expires users who do not validate their profiles within the given period.
+- Expires users who don't validate their profiles within the given period.
 
 ## Validate your profile
 
@@ -67,15 +67,15 @@ The message displays the number of days left to validate your profile.
 Step 1 – The My Profile card on the dashboard indicates your profile validation status. Click it to
 launch the user properties page.
 
-Step 2 – The toolbar on user properties page will display Validate your profile option. Click on it
+Step 2 – The toolbar on user properties page will display Validate your profile option. Click it
 to launch the profile validation window.
 
 Step 3 – Provide or update information in the fields displayed on this window.
 
 Step 4 – Your direct reports, if any, are listed in the My Direct Reports area. Select one of these
-options for each of your direct reports:
+options for each direct report:
 
-- Works for me
+- Works for the user
 - Transfer
 - Terminate
 
@@ -83,7 +83,7 @@ Step 5 – After verifying and updating the information, click the **Validate No
 profile is validated and a message is displayed that your changes have been saved.
 
 :::note
-You can also manage your direct reports and managers on the Organization tab of the my profile
+You can also manage your direct reports and managers on the Organization tab of the profile
 window.
 :::
 

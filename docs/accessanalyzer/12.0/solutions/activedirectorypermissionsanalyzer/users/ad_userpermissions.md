@@ -16,7 +16,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **1.Users** > **AD_U
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -30,7 +30,7 @@ The default analysis tasks are:
 - Summarize user object permissions – Creates an interim processing table in the database for use by
   downstream analysis and report generation
 - User Ownership – Lists the owners of each user object and determines if they are a non-standard
-  owner. Principals that are not administrators are considered non-standard owners of user objects.
+  owner. Principals that aren't administrators are considered non-standard owners of user objects.
   Creates the SA_AD_UserOwnership_Details table accessible under the job’s Results node.
 - User Ownership Summary – Summarizes the owner type by domain
 

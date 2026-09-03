@@ -8,6 +8,7 @@
   "data-classification": "@netwrix/dataclassification-docs",
   "directory-manager": "@netwrix/directorymanager-docs",
   "endpoint-policy-manager": "@netwrix/endpointpolicymanager-docs",
+  "policypak": "@netwrix/endpointpolicymanager-docs",
   "endpoint-protector": "@netwrix/endpointprotector-docs",
   "identity-manager": "@netwrix/identitymanager-docs",
   "identity-recovery": "@netwrix/recoveryforactivedirectory-docs",

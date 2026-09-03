@@ -14,6 +14,6 @@ Identity Manager recommends the following architecture:
 
 ![SaaS Recommended Architecture](/images/identitymanager/architecture_saas.webp)
 
-### Agent(s)
+### Agents
 
 One or several additional agents can be needed only when using a sensitive network, for example an administration network separated from the main network.

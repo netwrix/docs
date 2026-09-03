@@ -11,7 +11,7 @@ changes made to the domain.
 
 ![Operations Tab in the Changes Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/operationtab.webp)
 
-After checking the Enable AD Changes box, the following event filters can be modified on the
+After checking the Enable AD Changes box, you can modify the following event filters on the
 sub-tabs:
 
 - Attributes
@@ -26,14 +26,13 @@ sub-tabs:
 
 ## Attributes
 
-The Attributes Tab is where monitoring can be scoped to include events with specific attributes
-within Active Directory. Further scoping of attributes can enable monitoring to only capture events
-based on the new value.
+The Attributes Tab is where you can scope monitoring to include events with specific attributes
+within Active Directory. You can further scope attributes to capture events based only on the new value.
 
 ![Attributes Tab in the Changes Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/attributestab.webp)
 
-Double-click the text box beneath Name to enter the desired attribute to include or exclude.
-Double-click the text box beneath Value to enter the desired attribute value to reference. Choose
+Double-click the text box beneath Name to enter the attribute to include or exclude.
+Double-click the text box beneath Value to enter the attribute value to reference. Choose
 the Operation to relate the Name and Value with. Press the **Enter** or **Tab** key to add another
 textbox.
 
@@ -43,27 +42,27 @@ Name field must contain Active Directory attribute name.
 
 
 Scoping the filter captures events when the new value matches with the supplied value. To scope the
-filter based on the new value of the attribute, use the Operation drop-down menu.
+filter based on the new value of the attribute, use the Operation dropdown menu.
 
 - AnyValue – No scoping applied for this attribute
 - EmptyValue – Blank attribute values
 - Equal – Attribute values that are identical to the Value field
-- NotEqual – Attribute values that do not match the Value field
+- NotEqual – Attribute values that don't match the Value field
 - LessThan – Attribute values below the supplied numeric value or before alphabetically
 - GreaterThan – Attribute values above the supplied numeric value or after alphabetically
 - Contains – Attribute values includes the user supplied string (numbers are treated as strings)
-- NotContain – Attribute values do not include the user supplied string (numbers are treated as
+- NotContain – Attribute values don't include the user supplied string (numbers are treated as
   strings)
 - Startswith – Attribute values start with the user supplied string
 
 ## Classes
 
-The Classes Tab is where the policy can be scoped to only monitor specific classes within Active
-Directory or to exclude specific classes from being monitored.
+The Classes Tab is where you can scope the policy to monitor only specific classes within Active
+Directory or exclude specific classes from monitoring.
 
 ![Classes Tab in the Changes Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/classestab.webp)
 
-Double-click the text box beneath Name to enter the desired classes to include or exclude. Press the
+Double-click the text box beneath Name to enter the classes to include or exclude. Press the
 **Enter** or **Tab** key to add another text box.
 
 :::note
@@ -75,9 +74,8 @@ only last value of this multi-valued attribute. For example, for
 
 ## Context
 
-The Context Tab is where the policy can be scoped to only monitor specific contexts (e.g. Containers
-and Organizational Units) within Active Directory or to exclude specific contexts from being
-monitored.
+The Context Tab is where you can scope the policy to monitor only specific contexts (e.g. Containers
+and Organizational Units) within Active Directory or exclude specific contexts from monitoring.
 
 ![Context Tab in the Changes Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/contexttab.webp)
 
@@ -88,15 +86,14 @@ Underneath each section, there are additional Context details:
 - Distinguished Name – Field must be specified in the form of `distinguishedName` attribute syntax,
   e.g. `CN=Users,DC=Domain,DC=com`
 
-Double-click the text box beneath Distinguished Name to enter the desired context to include or
+Double-click the text box beneath Distinguished Name to enter the context to include or
 exclude. Press the **Enter** or **Tab** key to add another text box. Check the box under Subtree to
 include or exclude child contexts.
 
 ## Host (From)
 
-The Hosts (from) Tab is where the policy can be scoped to only monitor specific hosts as originators
-of an authentication event or to exclude specific hosts from being monitored for authentication
-events.
+The Hosts (from) Tab is where you can scope the policy to monitor only specific hosts as originators
+of an authentication event or exclude specific hosts from monitoring for authentication events.
 
 ![Host (From) Tab in the Changes Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/hostfrom.webp)
 
@@ -112,9 +109,8 @@ from change event collection.
 
 ## IP Addresses (From)
 
-The IP Addresses (from) Tab is where the policy can be scoped to only monitor specific IP Addresses
-as originators of an authentication event or to exclude specific IP Addresses from being monitored
-for authentication events.
+The IP Addresses (from) Tab is where you can scope the policy to monitor only specific IP Addresses
+as originators of an authentication event or exclude specific IP Addresses from monitoring for authentication events.
 
 ![IP Addresses (From) Tab in the Changes Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/ipaddressesfrom.webp)
 
@@ -122,13 +118,13 @@ Underneath each section, there is an additional Address detail.
 
 - Value – Must be provided in IP address format
 
-Double-click the text box beneath **Value** to enter the desired IP addresses to include or exclude.
+Double-click the text box beneath **Value** to enter the IP addresses to include or exclude.
 Press **Enter** or **Tab** key to add another text box.
 
 ## Objects
 
-The Objects Tab is where the policy can be scoped to only monitor specific objects within Active
-Directory or to exclude specific objects from being monitored.
+The Objects Tab is where you can scope the policy to monitor only specific objects within Active
+Directory or exclude specific objects from monitoring.
 
 ![Objects Tab in the Changes Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/objectstab.webp)
 
@@ -137,7 +133,7 @@ Underneath each section, there is an additional Object detail.
 - Distinguished Name – Field must be specified in the form of `distinguishedName` attribute syntax,
   e.g. `CN=Users,DC=Domain,DC=com`
 
-Double-click the text box beneath Distinguished Name to enter the desired objects to include or
+Double-click the text box beneath Distinguished Name to enter the objects to include or
 exclude. Press the **Enter** or **Tab** key to add another text box.
 
 ## Operations
@@ -151,12 +147,12 @@ Monitor These Attempts – Filter for successful events, failed events, or both 
 - Success – Monitors successful events
 - Failure – Monitors failed events
 
-Operations – Filter for Active Directory events to be monitored.
+Operations – Filter for Active Directory events to monitor.
 
-- Object Added – Monitors for objects being added to Active Directory
-- Object Deleted – Monitors for objects being deleted from Active Directory
-- Object Modified – Monitors for objects being modified within Active Directory
-- Object Moved or Renamed – Monitors for objects being moved or renamed within Active Directory
+- Object Added – Monitors objects added to Active Directory
+- Object Deleted – Monitors objects deleted from Active Directory
+- Object Modified – Monitors objects modified within Active Directory
+- Object Moved or Renamed – Monitors objects moved or renamed within Active Directory
 
 ## Servers
 
@@ -167,14 +163,13 @@ The Servers Tab targets servers to be included or excluded when filtering for ch
 In both sections, servers must be specified in the form 'DOMAIN\SERVER', where DOMAIN is NetBIOS
 Domain name and SERVER is NetBIOS server name.
 
-Double-click the text box beneath Name to enter the desired servers to include or exclude. Press the
+Double-click the text box beneath Name to enter the servers to include or exclude. Press the
 Enter or Tab key to add another text box.
 
 ## Users
 
-The Users Tab is where the policy can be scoped to only monitor specific security principals
-committing changes within Active Directory or to exclude specific users committing changes from
-being monitored.
+The Users Tab is where you can scope the policy to monitor only specific security principals
+committing changes within Active Directory or exclude specific users committing changes from monitoring.
 
 ![Users Tab in the Changes Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/userstab.webp)
 
@@ -194,7 +189,7 @@ The following details appear beneath both sections.
   e.g. `CN=Users,DC=Domain,DC=com`. However, for objects with `sidType` type, it must be in the form
   of WellKnownSidType Enum, e.g. `AnonymousSid` or `LocalSid`.
 
-Double-click the text box beneath **Distinguished Name** to enter the desired group types to include
-or exclude. Double-click the text box beneath Type to enter the desired AD object to include or
+Double-click the text box beneath **Distinguished Name** to enter the group types to include
+or exclude. Double-click the text box beneath Type to enter the AD object to include or
 exclude. Press the **Enter** or **Tab** key to add another text box. Check the box under Subtree to
 include or exclude child contexts.

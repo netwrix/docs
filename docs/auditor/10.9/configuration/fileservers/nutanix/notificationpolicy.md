@@ -11,8 +11,8 @@ notification policy for the related events.
 
 ## Monitored Operations
 
-The list of supported operations is provided in the table below. Your notification policy can
-include any of them.
+The following table lists the supported operations. Your notification policy can include any of
+them.
 
 | To audit...                            | Operation name to specify at policy creation |
 | -------------------------------------- | -------------------------------------------- |
@@ -22,12 +22,12 @@ include any of them.
 | Successful _delete_ operations         | FILE_DELETE DIRECTORY_DELETE                 |
 | Failed _read/modify/delete_ attempts\* | FILE_OPEN                                    |
 
-\* - Failed attempt to move/rename file are not audited.
+\* - Failed attempt to move/rename file aren't audited.
 
 ## Configuration Procedure
 
-Notification policy creation procedure involves API requests usage. It is assumed that you have a
-good understanding of REST API concepts, as well as enough experience in working with JSON-formatted
+Notification policy creation procedure involves API requests usage. This procedure assumes you have
+a good understanding of REST API concepts, as well as enough experience working with JSON-formatted
 requests in any API client. To get acquainted with Nutanix REST API Explorer client, refer to
 [Nutanix documentation](https://portal.nutanix.com/#nutanix-documentation).
 
@@ -39,8 +39,8 @@ To create a notification policy for Nutanix File Server via API:
 
     here `< fileserver_ip >` - IP address of the Nutanix File Server to be audited.
 
-If you select to launch the RestAPI Explorer from the Prism menu, the **RestAPI Explorer for Prism**
-client will be opened.
+If you launch the RestAPI Explorer from the Prism menu, the **RestAPI Explorer for Prism**
+client opens.
 
 2. In the **username** and **password** fields, enter the credentials of the
    [Create User Account to Access Nutanix REST API](/docs/auditor/10.9/configuration/fileservers/nutanix/useraccount.md) you have created.
@@ -96,7 +96,7 @@ here:
 
 _"all_mount_targets" : true_ - instructs to notify on changes to all shares
 
-_"protocol_type_list" : ["SMB"]_ - instructs to track SMB shares (the only currently supported)
+_"protocol_type_list" : ["SMB"]_ - instructs to track SMB shares (the only supported)
 
 _`<NAME_OF_NOTIFICATION_POLICY>`_ – enter the name of notification policy you want to create
 
@@ -107,8 +107,8 @@ _`<LIST_OF_FILE_OPERATIONS>`_ - enter the list of operations to be audited.
 6. Send the request, clicking **Try it out**.
 7. Get the response - `Response Code` should be _200_. In the response body, locate the `uuid` of
    the created notification policy.
-8. To check that a new policy was included in the list of existing policies, retrieve the list of
-   policies, sending the POST request to the following endpoint:
+8. To check that the list of existing policies includes the new policy, retrieve the list by sending
+   a POST request to the following endpoint:
 
     `POST /notification_policies/list`. The request body must be empty - for that, enter empty
     brackets as the **value** for _get_entities_request_ parameter : `{ }`
@@ -143,9 +143,9 @@ _`<UUID_OF_MOUNT_TARGET`>_ – enter the uuid of target you want to audit.
 
 ## Example
 
-The JSON-formatted structure below is an example of the request body that can be used to create a
+The following JSON-formatted structure is an example of a request body that creates a
 notification policy named _MOUNT_POINT_POLICY_ to audit the mounted share on Nutanix File Server
-with the _uuid=378896fd-e829-4869-84a2-6c29268acfff_. The following operations will be audited:
+with the _uuid=378896fd-e829-4869-84a2-6c29268acfff_. This example audits the following operations:
 
 - "FILE_READ",
 - "FILE_CREATE",

@@ -32,10 +32,10 @@ These are dependent upon the size of the target environment:
 | Disk Space  | 30 GB          | 30 GB          |
 
 :::note
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the
+If running Sensitive Data Discovery (SDD) scans, you must increase the
 minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For
-example, if the job is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are
-required (8x2=16).
+example, if you configure the job to scan 8 hosts at a time, the job requires an extra 16 GB of RAM
+(8x2=16).
 :::
 
 
@@ -47,10 +47,9 @@ The following is required to run Sensitive Data Discovery scans:
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
-configuration; it has been preconfigured to work with Enterprise Auditor and should never be
-customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
-environment.
+(Java) version on the server. The deployed JDK is prepackaged, requires no configuration, comes
+preconfigured to work with Enterprise Auditor, and should never be customized through Java. It
+doesn't conflict with other JDKs or Java Runtimes in the same environment.
 :::
 
 

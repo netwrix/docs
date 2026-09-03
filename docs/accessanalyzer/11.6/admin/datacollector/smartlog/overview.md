@@ -9,11 +9,11 @@ sidebar_position: 340
 The SMARTLog Data Collector provides search and extraction of details from Windows Event Logs
 (online or offline) and Microsoft Exchange Internet Information Server (IIS) logs.
 
-The SMARTLog Data Collector is a core component of Enterprise Auditor, but it has been preconfigured
-within the Active Directory Solution, Exchange Solution, SQL Solution, and the Windows Solution.
-While the data collector is available with all Enterprise Auditor license options, these solutions
-are only available with a special Enterprise Auditor licenses. See following sections for additional
-information:
+The SMARTLog Data Collector is a core component of Enterprise Auditor, and the Active Directory
+Solution, Exchange Solution, SQL Solution, and Windows Solution all include it as a preconfigured
+component. While the data collector is available with all Enterprise Auditor license options, these
+solutions are only available with a special Enterprise Auditor license. See following sections for
+additional information:
 
 - [Active Directory Solution](/docs/accessanalyzer/11.6/solutions/activedirectory/overview.md)
 - [Exchange Solution](/docs/accessanalyzer/11.6/solutions/exchange/overview.md)

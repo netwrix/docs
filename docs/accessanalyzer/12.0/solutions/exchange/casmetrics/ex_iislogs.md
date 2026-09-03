@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # 0.Collection > EX_IISLogs Job
 
-The 0.Collection > EX_IISLogs Job provides data collection to be utilized in the ActiveSync, Outlook
+The 0.Collection > EX_IISLogs Job provides data collection to be used in the ActiveSync, Outlook
 Web Access, and Outlook Anywhere Reports. This job goes out to each server that contains the
 IIS Logs and parses the log to return the data to the Access Analyzer database.
 
@@ -36,7 +36,7 @@ modified on the Target Log page of the SMART Log DC Wizard. See the
 [SMARTLog Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/smartlog/overview.md) topic for additional
 information.
 
-Follow the steps to modify the query configuration.
+To modify the query configuration:
 
 **Step 1 –** Navigate to the **Exchange** > **2. CAS Metrics** > **0. Collection** >
 **EX_IISLogs** > **Configure** node and select **Queries**.
@@ -47,7 +47,7 @@ opens.
 **Step 3 –** Select the **Data Source** tab, and click **Configure**. The SMART Log DC Wizard opens.
 
 :::warning
-Do not modify other wizard pages. The other wizard pages are pre-configured for this
+Don't modify other wizard pages. The other wizard pages are pre-configured for this
 job.
 :::
 

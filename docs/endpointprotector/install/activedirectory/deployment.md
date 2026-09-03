@@ -28,5 +28,5 @@ and accessible by the computers on your Active Directory.
 
 ![Configuring Deployment for Group Policy Objects](gpoconfiguration.webp)
 
-**Step 5 –** Close the Group Policy Object Editor console and repeat this step for the Endpoint
+**Step 5 –** Close the Group Policy Object Editor console and repeat the steps for the Endpoint
 Protector 64-bit GPO.

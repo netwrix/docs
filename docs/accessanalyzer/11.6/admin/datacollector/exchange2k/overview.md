@@ -7,12 +7,12 @@ sidebar_position: 160
 # Exchange2K Data Collector
 
 The Exchange2K Data Collector extracts configuration details from Exchange organizations for
-versions 2003 and later. This is a MAPI-based data collector which requires the **Settings** >
-**Exchange** node to be enabled and configured. See the
+versions 2003 and later. This is a MAPI-based data collector, which requires you to enable and
+configure the **Settings** > **Exchange** node. See the
 [Exchange](/docs/accessanalyzer/11.6/admin/settings/exchange.md)
 topic for additional information.
 
-The Exchange2K Data Collector has been preconfigured within the Exchange Solution. Both this data
+The Exchange2K Data Collector comes preconfigured within the Exchange Solution. Both this data
 collector and the solution are available with a special Enterprise Auditor license. See the
 [Exchange Solution](/docs/accessanalyzer/11.6/solutions/exchange/overview.md)
 topic for additional information.
@@ -53,5 +53,5 @@ contains the following wizard pages:
 
 ![Exchange 2K+ Data Collector Wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/exchange2k/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not show this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the **Don't show this page the next time** checkbox while the
+wizard is open, then save the configuration settings.

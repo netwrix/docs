@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Configuration Utility
 
-On installing Identity Recovery, the Recovery Configuration Utility is installed on the
-same server. This utility is used to register the RSAT Extension on the Recovery Application Server.
+When you install Identity Recovery, the installation also installs the Recovery Configuration Utility on the
+same server. This utility registers the RSAT Extension on the Recovery Application Server.
 
 To launch the Recovery Configuration Utility, double-click the Recovery_Config.exe executable at the
 following location in the Identity Recovery installation directory:
@@ -23,14 +23,13 @@ The Recovery Configuration Utility window has options to:
 
 ## Register/Unregister the RSAT Extension
 
-The RSAT Extension is an MMC snap-in that can be installed on domain joined machines. It extends the
+The RSAT Extension is an MMC snap-in that you can install on domain-joined machines. It extends the
 Active Directory Users and Computers (ADUC) console with Identity Recovery specific right-click options for object rollback and recovery. Included in this extension is a Recycle Bin for restoring deleted objects. Consider the following:
 
-- The RSAT Extension is automatically installed with the Identity Recovery installation
-  package on the Recovery Application Server. The local Extension must be registered on the server
+- The Identity Recovery installation package automatically installs the RSAT Extension on the Recovery Application Server. You must register the local Extension on the server
   to enable the rollback and restore options in ADUC.
-- The Extension can be manually installed on a remote server where ADUC is installed. The Extension
-  connects to the Recovery Application Server using the server name or IP address you provide while
+- You can manually install the Extension on a remote server where ADUC is installed. The Extension
+  connects to the Recovery Application Server using the server name or IP address you provide when
   installing the Extension on the remote machine. See the
   [Install the RSAT Extension](/docs/identityrecovery/3.1/install/installation.md) topic for additional information.
 
@@ -39,10 +38,8 @@ Active Directory Users and Computers (ADUC) console with Identity Recovery speci
 You must register the RSAT Extension on the Recovery Application Server to add the Rollback and
 Restore options to the ADUC console.
 
-Follow the steps to register the RSAT Extension.
-
 **Step 1 –** On the Recovery Configuration Utility window, click the **Register** button to register
-the RSAT Extension. On registration, the following message is displayed and the button changes to
+the RSAT Extension. On registration, the system displays the following message and the button changes to
 Unregister.
 
 ![RSAT Extension Registered message](/images/identityrecovery/3.1/install/rsatextensionregistered.webp)
@@ -54,10 +51,8 @@ Unregister.
 Unregistering the RSAT Extension will remove the Rollback and Restore options from the Active
 Directory Users and Computers console.
 
-Follow the steps to unregister the RSAT Extension.
-
 **Step 1 –** On the Recovery Configuration Utility window, click the **Unregister** button to
-unregister the RSAT Extension. The following message is displayed and the button changes to
+unregister the RSAT Extension. The system displays the following message and the button changes to
 Register.
 
 ![RSAT Extension Not Registered message](/images/identityrecovery/3.1/install/rsatextensionunregistered.webp)

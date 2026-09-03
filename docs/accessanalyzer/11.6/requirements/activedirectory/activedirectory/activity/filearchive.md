@@ -16,7 +16,7 @@ Deploy the AD Agent to each domain controller in the target domain.
 
 ## Configure Domain Controller Agent
 
-Follow the steps to configure the agent deployed to the domain controller.
+Configure the agent deployed to the domain controller.
 
 :::note
 These steps assume the network share where the activity log files will be archived already
@@ -35,7 +35,7 @@ controller.
 - Select the **Archive log files on a UNC path** option. Click the ... button and navigate to the
   desired network share.
 - The **User name** and **User password** fields only need to be filled in if the account used to
-  install the agent does not have access to this share.
+  install the agent doesn't have access to this share.
 
     :::tip
         Remember, The account used to install the agent on a domain controller is a Domain
@@ -52,7 +52,7 @@ controller.
 **Step 5 –** Repeat Steps 1-4 for each agent deployed to domain controller pointing to the same
 network share in Step 3 for each agent.
 
-These agent are configured to save the Archive logs to the selected share.
+These agents now save the Archive logs to the selected share.
 
 ## Configure Monitored Domain Output
 
@@ -60,13 +60,13 @@ Follow the steps configure the monitored domain output for Netwrix Enterprise Au
 
 **Step 1 –** Select the **Monitored Domains** tab.
 
-**Step 2 –** Select the desired domain and click **Add Output**. The Add New Ouptut window opens.
+**Step 2 –** Select the domain you want and click **Add Output**. The Add New Ouptut window opens.
 
 **Step 3 –** Configure the following:
 
-- Configure the desired number of days for the **Period to keep Log files**. This is the number of
-  days the log files are kept on the API server configured in the sections above. This needs to be
-  set to a greater value than the days between Enterprise Auditor scans.
+- Configure the number of days you want for the **Period to keep Log files**. This is the number of
+  days the log files are kept on the API server configured in the preceding sections. Set this to a
+  greater value than the days between Enterprise Auditor scans.
 
     - For example, if Enterprise Auditor runs the **AD_ActivityCollection** Job once a week (every 7
       days), then the Activity Monitor output should be configured to retain at least 10 days of log
@@ -83,7 +83,7 @@ Enterprise Auditor now has access to the agent log files for this domain.
 
 ## Configure Enterprise Auditor Connection Profile
 
-Follow the steps to configure the Connection Profile in Enterprise Auditor.
+Configure the Connection Profile in Enterprise Auditor.
 
 **Step 1 –** On the Settings > Connection node of the Enterprise Auditor Console, select the
 Connection Profile for the Active Directory solution. If you haven't yet created a Connection
@@ -111,19 +111,19 @@ name.
 the **Settings > Connection** node.
 
 **Step 7 –** Select the **Select one of the following user defined profiles** option. Expand the
-drop-down menu and select the Connection Profile with this credential.
+dropdown menu and select the Connection Profile with this credential.
 
 **Step 8 –** Click **Save** and then **OK** to confirm the changes to the job group settings.
 
-The Connection Profile will now be used for AD Activity collection.
+Enterprise Auditor will now use the Connection Profile for AD Activity collection.
 
 ## Configure the AD_ActivityCollection Job
 
-The Enterprise Auditor requires additional configurations in order to collect domain activity data.
-Follow the steps to configure the **AD_ActivityCollection** Job.
+The Enterprise Auditor requires additional configurations to collect domain activity data.
+Configure the **AD_ActivityCollection** Job.
 
 :::note
-Ensure that the .Active Directory Inventory Job Group has been successfully run against
+Ensure that you have successfully run the .Active Directory Inventory Job Group against
 the target domain.
 :::
 
@@ -154,10 +154,10 @@ Click **Next**.
 - Absolute Timespan – Set the date range for activity logs to collect when the scan is run
 
 :::info
-The threshold should be set to ensure the logs are collected before the Activity
+Set the threshold to ensure you collect the logs before the Activity
 Monitor domain output log retention expires. For example, if Enterprise Auditor runs the
-**AD_ActivityCollection** Job once a week (every 7 days), then the Activity Monitor output should be
-configured to retain at least 10 days of log files.
+**AD_ActivityCollection** Job once a week (every 7 days), then configure the Activity Monitor
+output to retain at least 10 days of log files.
 :::
 
 
@@ -168,5 +168,5 @@ keeps the collected data in the SQL Server database.
 
 **Step 9 –** Click **OK** to save the changes and close the Query Properties page.
 
-The query is now configured to target the network share where the Activity Monitor domain activity
-logs are archived.
+The query now targets the network share where the Activity Monitor archives domain activity
+logs.

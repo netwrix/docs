@@ -10,12 +10,12 @@ On this step, you are prompted to choose how access to the administrative web co
 
 ![initial_config_users](/images/dataclassification/5.7/install/initialconfiguration/initial_config_users.webp)
 
-- Enable User Management (Strongly recommended) - This enables control over access to different sections
-  of the administrative web console on a user-by-user basis. Users can be set as Super Users for
+- Enable User Management (Strongly recommended) — This lets you control access to different sections
+  of the administrative web console on a user-by-user basis. You can set users as Super Users for
   full access, or restrict their access using the Users settings page.
 
-  When selected, you will be prompted to add Super Users. Enter the name of any Super User you want to add and click + on
-  the right. Users with restricted access to NDC will need to be added via the Users configuration page after initial configuration is completed.
+  When selected, you'll be prompted to add Super Users. Enter the name of any Super User you want to add and click + on
+  the right. Add users with restricted access to NDC via the Users configuration page after initial configuration.
 
 - Allow access for all users – select to allow any user to access the administrative web console. All users connecting to the web 
   interface will have full access, equivalent to a Super User.

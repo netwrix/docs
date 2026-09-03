@@ -11,16 +11,16 @@ targeted but also the mode in which the data collection scan is executed. There 
 types of scan modes: local, applet, or proxy. The proxy mode can be conducted via applet deployment,
 or via running as a service (installed in advance).
 
-For the purpose of this document, “applet” refers to the runtime deployment of the
+In this document, “applet” refers to the runtime deployment of the
 `FSAAAppletServer.exe` to either the target host (applet mode scans) or the proxy host (proxy mode
-with applet scans) via Microsoft Task Scheduler. A “proxy” host is any host which can be leveraged
+with applet scans) via Microsoft Task Scheduler. A “proxy” host is any host that can be used
 for running File System scans against target hosts.
 
 ## Local Mode
 
 When File System scans are run in local mode, it means all of the data collection processing is
 conducted by the Enterprise Auditor Console server across the network. The data is collected in the
-SQLite database(s), or Tier 2 database(s), on the Enterprise Auditor Console server, and then
+SQLite databases, or Tier 2 databases, on the Enterprise Auditor Console server, and then
 imported into theEnterprise Auditor database, or Tier 1 database, on the SQL Server.
 
 ![Illustrates the Enterprise Auditor server running the scan against a file server](/images/accessanalyzer/11.6/requirements/solutions/filesystem/localmode.webp)
@@ -35,8 +35,8 @@ See the following topics for additional information:
 ## Applet Mode
 
 :::warning
-The local policy, “Network access: Do not allow storage of passwords and credentials
-for network authentication” must be disabled in order for the applet to start.
+The local policy, “Network access: Don't allow storage of passwords and credentials
+for network authentication” must be disabled for the applet to start.
 :::
 
 
@@ -44,7 +44,7 @@ When File System scans are run in applet mode, it means the File System applet i
 target host when the job is executed to conduct data collection. However, the applet can only be
 deployed to a server with a Windows operating system. The data is collected on the Windows target
 host where the applet is deployed. The final step in data collection is to compress and transfer the
-data collected in the SQLite database(s), or Tier 2 database(s), back to the Enterprise Auditor
+data collected in the SQLite databases, or Tier 2 databases, back to the Enterprise Auditor
 Console server. If the target host is a NAS device, the File System scans will default to local mode
 for that host.
 
@@ -62,14 +62,14 @@ See the following topics for additional information:
 ## Proxy Mode with Applet
 
 :::warning
-The local policy, “Network access: Do not allow storage of passwords and credentials
-for network authentication” must be disabled in order for the applet to start.
+The local policy, “Network access: Don't allow storage of passwords and credentials
+for network authentication” must be disabled for the applet to start.
 :::
 
 
 When File System scans are run in proxy mode with applet, it means the File System applet is
 deployed to the Windows proxy server when the job is executed to conduct data collection. The data
-collection processing is initiated by the proxy server where the applet is deployed and leverages a
+collection processing is initiated by the proxy server where the applet is deployed and uses a
 local mode-type scan to each of the target hosts. The final step in data collection is to compress
 and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Enterprise
 Auditor Console server.
@@ -91,13 +91,13 @@ When File System scans are run in proxy mode as a service, there are two methods
 deploying the service:
 
 - Pre-Installed File System Proxy Service – File System Proxy Service installation package must be
-  installed on the Windows proxy servers prior to executing the scans. This is the recommended
+  installed on the Windows proxy servers before executing the scans. This is the recommended
   method.
 - Ad Hoc File System Proxy Service Deployment – File System Proxy Service is installed on the
   Windows proxy server when the job is executed
 
 The data collection processing is conducted by the proxy server where the service is running and
-leverages a local mode-type scan to each of the target hosts. The final step in data collection is
+uses a local mode-type scan to each of the target hosts. The final step in data collection is
 to compress and transfer the data collected in the SQLite databases, or Tier 2 databases, back to
 the Enterprise Auditor Console server.
 

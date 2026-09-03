@@ -32,11 +32,11 @@ The 6.Activity Job Group is comprised of the following jobs:
   access across the entire environment, the actions taken by the members of a group, and identifies
   where groups may be used for authorization in applications
 - [LDAP > AD_LDAPQueries Job](/docs/accessanalyzer/12.0/solutions/activedirectory/activity/ad_ldapqueries.md) – Analyzes LDAP traffic to determine trends such as
-  most expensive queries, most active servers and users, successful/failed and signing status. This
-  data can be used to troubleshoot performance issues, load balancing, and poorly configured
+  most expensive queries, most active servers and users, successful/failed and signing status. Use
+  this data to troubleshoot performance issues, load balancing, and poorly configured
   services.
 - [Lockouts > AD_Lockouts Job](/docs/accessanalyzer/12.0/solutions/activedirectory/activity/ad_lockouts.md)– Provides a listing of all account lockouts with
-  relevant details which can be used to aid troubleshooting
+  relevant details to aid troubleshooting
 - [Operations Job Group](/docs/accessanalyzer/12.0/solutions/activedirectory/activity/operations/overview.md) – Reports on Active Directory activity events
   related to operational activity. This group can help report on probable machine owners based on
   authentications, domain controller traffic and activity, and authentication protocols being used

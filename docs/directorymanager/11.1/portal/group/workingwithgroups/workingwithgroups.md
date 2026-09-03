@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Working with Groups
 
-A Directory Manager portal enables you to manage your directory groups in the identity store, so you
-can do the following and more:
+Use the Directory Manager portal to manage your directory groups in the identity store. You can
+do the following and more:
 
 - Add and remove members from your groups
 - Join and leave other groups

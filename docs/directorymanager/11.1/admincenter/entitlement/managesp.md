@@ -10,7 +10,7 @@ An Entra ID user, who is:
 
 - logged-in to the Admin Center
 
-- a non-MFA user (i.e. multifactor authentication is not enabled for the user)
+- a non-MFA user (i.e. multifactor authentication isn't enabled for the user)
 
 An Entra ID user can add and configure SharePoint sites in an Entra ID identity store to replicate
 their entitlement data to Elasticsearch for Directory Manager. The user can then manage permissions
@@ -24,7 +24,7 @@ and managing permissions and exclude a document library in a site from entitleme
 Provide the SharePoint admin URL and credentials to connect to SharePoint. Directory Manager fetches
 all the sites under it to replicate the permissions on document libraries there.
 
-Follow the steps to provide the SharePoint Admin URL.
+To provide the SharePoint Admin URL:
 
 In Admin Center, click **Identity Stores** in the left pane.
 
@@ -56,7 +56,7 @@ The information displayed for a site in the Included SharePoint Sites area is th
 for a file server in an Active Directory identity store. Refer to the
 [File Server Details ](/docs/directorymanager/11.1/admincenter/entitlement/managefs.md#file-server-details) topic for more info. Though in this
 case, the User namecolumn displays the username of the account used to connect to the site, and it
-is not blank.
+isn't blank.
 
 #### Search SharePoint Sites
 
@@ -67,7 +67,7 @@ a search.
 
 ## Include Future Sites for Entitlement Management
 
-Follow the steps to include future sites for entitlement management.
+To include future sites for entitlement management:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -76,7 +76,7 @@ Step 2 – On the **Identity Stores** page, click the ellipsis button for an ide
 
 Step 3 – Click **Entitlement** under **Settings** in the left pane.
 
-Step 4 – On the **Entitlement** page, select the **Include all Future Sites** check box to ensure
+Step 4 – On the **Entitlement** page, select the **Include all Future Sites** checkbox to ensure
 that any new site created under the SharePoint admin URL is automatically fetched and displayed in
 the **Included SharePoint Sites** area for permission replication.
 
@@ -84,7 +84,7 @@ Step 5 – Click **Save**.
 
 ## View the Document Libraries in a Site
 
-Follow the steps to view the document libraries in a site.
+To view the document libraries in a site:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -109,7 +109,7 @@ this activity.
 
 When a document library is excluded, its entitlement data replicated to-date is also cleared.
 
-Follow the steps to exclude a document library.
+To exclude a document library:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -122,7 +122,7 @@ Step 4 – In the Included SharePoint Sites area on the **Entitlement** page, cl
 button for a site and select **Edit**.
 
 Step 5 – On the Edit Site dialog box, the **Site Libraries** area displays the document libraries in
-the site. Clear the check box for a library to exclude it from replication and click **Apply
+the site. Clear the checkbox for a library to exclude it from replication and click **Apply
 Changes**.
 
 Step 6 – Click **Save** on the Entitlement page.
@@ -133,7 +133,7 @@ Directory Manager connects to a site using the service account specified while c
 SharePoint admin URL for reading and managing the effective permissions assigned to objects on the
 document libraries. You can designate a different account for this activity.
 
-Follow the steps to change the service account for a site.
+To change the service account for a site:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -157,7 +157,7 @@ in the context of the account specified here.
 
 **Or**
 
-- Select the **Use Identity Store Service Account** check box to use the service account specified
+- Select the **Use Identity Store Service Account** checkbox to use the service account specified
   for the identity store to connect to the site.
 
 The account must have elevated permissions to the Microsoft web applications that host the site in
@@ -179,7 +179,7 @@ replicate the effective permissions on document libraries in the sites. You can 
 schedule any time manually for a site listed in the Included SharePoint sites area on the
 Entitlementpage.
 
-Follow the steps to replicate permissions manually.
+To replicate permissions manually:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -192,8 +192,8 @@ Step 4 – On the Entitlement page, you can manually replicate permissions for o
 
 - To replicate permissions for a site – Select a site in the **Included SharePoint Sites** area and
   click **Replicate**.
-- To replicate permissions for multiple sites – Select the check boxes for the sites you want to
-  replicate. To replicate all sites, select the check box in the header row. This displays the
+- To replicate permissions for multiple sites – Select the checkboxes for the sites you want to
+  replicate. To replicate all sites, select the checkbox in the header row. This displays the
   following icons:
 
     ![replicate_permissions](/images/directorymanager/11.1/admincenter/entitlement/ad/replicate_permissions.webp)
@@ -201,7 +201,7 @@ Step 4 – On the Entitlement page, you can manually replicate permissions for o
     Either click the **Replicate** icon or the **Replicate** button.
 
 This triggers the GroupID Entitlement schedule for the identity store, which computes and replicates
-the effective permissions granted to directory objects on document libraries in the site(s). This
+the effective permissions granted to directory objects on document libraries in the sites. This
 process may take some time.
 The Last Replicated column displays the date and time the GroupID Entitlement schedule last ran.
 
@@ -209,7 +209,7 @@ The Last Replicated column displays the date and time the GroupID Entitlement sc
 
 You can exclude a SharePoint site from replication and entitlement management.
 
-Follow the steps to exclude a site or subsite. **To exclude a site or subsite:**
+To exclude a site or subsite:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -227,8 +227,8 @@ Step 4 – On the **Entitlement** page, you can exclude one or more sites.
 
 - **To exclude multiple sites:**
 
-    Select the check boxes for the sites you do not want to replicate. To exclude all sites, select
-    the check box in the header row. This displays the following icons:
+    Select the checkboxes for the sites you don't want to replicate. To exclude all sites, select
+    the checkbox in the header row. This displays the following icons:
 
     ![replicate_permissions](/images/directorymanager/11.1/admincenter/entitlement/ad/replicate_permissions.webp)
 
@@ -240,7 +240,7 @@ Step 5 – Click **Save**.
 
 You can restore an excluded SharePoint site for replication and entitlement management.
 
-Follow the steps to restore an excluded site.
+To restore an excluded site:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 

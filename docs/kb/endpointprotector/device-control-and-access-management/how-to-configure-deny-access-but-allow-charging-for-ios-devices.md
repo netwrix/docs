@@ -14,10 +14,11 @@ keywords:
   - macOS
   - native sync
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: How to Configure Deny Access but Allow Charging fo
 tags:
   - device-control-and-access-management
+  - kb
 title: "How to Configure Deny Access but Allow Charging for iOS Devices"
 knowledge_article_id: kA0Qk0000002BHDKA2
 ---

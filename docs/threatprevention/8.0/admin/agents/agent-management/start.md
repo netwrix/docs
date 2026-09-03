@@ -7,9 +7,9 @@ sidebar_position: 10
 # Start Agent
 
 If the Agent has stopped on a server, it no longer monitors and captures events. You must restart it
-on the server to enable it to monitor and capture the desired events.
+on the server so it monitors and captures events again.
 
-Follow the steps to start a stopped Agent on a server.
+To start a stopped Agent on a server:
 
 **Step 1 –** Click Agents in the left pane to launch the Agents interface.
 
@@ -23,20 +23,19 @@ on the target machine should have access to the system shares. Click **OK** afte
 credentials.
 
 :::note
-The wizard does not block access to the Administration Console and can be minimized while
+The wizard doesn't block access to the Administration Console and can be minimized while
 actions are in progress. If this wizard is hidden by clicking outside of the dialog box, a flashing
 blue link displays on the upper right corner of the interface with the action name displayed. Click
-this link to bring back the focus to the wizard.
+the action link to bring the wizard back into focus.
 :::
 
 
-**Step 4 –** On the Start Agent window, the Agent will be started. One of two status messages
-display:
+**Step 4 –** On the Start Agent window, the system starts the Agent. One of two status messages
+displays:
 
-- Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of prior to the next attempt.
-- Completed – Indicates that the task is completed
+- Failed – Read the failure messages and close the window. Fix any error messages before the next attempt.
+- Completed – Indicates that the task completes
 
-**Step 5 –** When the task is successfully completed, click **Finish** to close the window.
+**Step 5 –** When you successfully complete the task, click **Finish** to close the window.
 
-The Agent has been started on the server.
+The Agent is now started on the server.

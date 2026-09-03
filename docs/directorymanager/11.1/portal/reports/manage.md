@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Manage Reports
 
-Once you generate a report, the report is listed under the template you used to create it. The
+After you generate a report, the report is listed under the template you used to create it. The
 Reports listings displays the following for each report:
 
 - Report name
@@ -24,7 +24,7 @@ You can run a previously generated report to view the latest data for it.
 Step 1 – In Directory Manager portal, select Reports from the left pane.
 
 Step 2 – On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose
-report you generated and click on the template that you used.
+report you generated and click the template that you used.
 
 The template page will list the generated report.
 
@@ -39,7 +39,7 @@ report. You can launch this wizard again for a report and edit the settings.
 Step 1 – In Directory Manager portal, select **Reports** from the left pane.
 
 Step 2 – On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose
-report you generated and click on the template that you used.
+report you generated and click the template that you used.
 
 The template page will list the generated report.
 
@@ -54,7 +54,7 @@ You can also download a report directly from the Report listing page.
 Step 1 – In Directory Manager portal, select **Reports** from the left pane.
 
 Step 2 – On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose
-report you generated and click on the template that you used.
+report you generated and click the template that you used.
 
 The template page will list generated report.
 
@@ -72,7 +72,7 @@ When you delete a report, all its settings are removed.
 Step 1 – In Directory Manager portal, select **Reports** from the left pane.
 
 Step 2 – On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose
-report you generated and click on the template that you used.
+report you generated and click the template that you used.
 
 The template page will list the generated report.
 

@@ -38,4 +38,4 @@ For domain-based Distributed File System (DFS) namespaces, the scan targets the 
 
 ## Sensitive Data Discovery
 
-Sensitive Data Discovery (SDD) is handled by the scanner infrastructure. No additional software is required on the target file server.
+The scanner infrastructure handles Sensitive Data Discovery (SDD). The target file server doesn't need additional software.

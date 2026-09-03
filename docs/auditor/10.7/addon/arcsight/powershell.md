@@ -6,11 +6,9 @@ sidebar_position: 30
 
 # Run the Add-On with PowerShell
 
-Follow the steps to run add-on with PowerShell:
-
 **Step 1 –** On computer where you want to execute the add-on, start Windows PowerShell.
 
-**Step 2 –** Type a path to the add-on. Or simply drag and drop the add-on file in the console
+**Step 2 –** Enter a path to the add-on. Or simply drag and drop the add-on file in the console
 window.
 
 **Step 3 –** Add script parameters. The console will look similar to the following:
@@ -25,7 +23,10 @@ quotes and insert the ampersand (**&**) symbol in front (e.g., & "_C:\Netwrix Ad
 
 Depending on the number of Activity Records stored in the Audit Database execution may take a while.
 Ensure the script execution completed successfully. As a result, data will be exported to ArcSight.
-Note that events exceeding 4000 symbols are trimmed.
+
+:::note
+Events exceeding 4000 symbols are trimmed.
+:::
 
 Every time you run the script, Auditor makes a timestamp. The next time you run the script, it will
 start retrieving new Activity Records.

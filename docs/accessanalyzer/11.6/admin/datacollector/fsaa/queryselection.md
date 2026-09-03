@@ -28,7 +28,7 @@ auditing focus:
     - Scan and import – Collects Distributed File System information
 
         :::note
-        Starting with v8.1, DFS Audits are completed with a streaming method and do not
+        Starting with v8.1, DFS Audits are completed with a streaming method and don't
         require a bulk import query following the scan query.
         :::
 
@@ -61,9 +61,9 @@ Once a query scan using the FSAA DC has been executed, the **Maintenance** butto
 allow troubleshooting of scan errors that may have occurred.
 
 :::warning
-Do not use the Maintenance button unless instructed by
-[Netwrix Support](https://www.netwrix.com/support.html). It is possible to cause corruption of the
-database and loss of data to occur.
+Don't use the Maintenance button unless instructed by
+[Netwrix Support](https://www.netwrix.com/support.html). Using it incorrectly can corrupt the
+database and cause data loss.
 :::
 
 
@@ -75,7 +75,7 @@ errors.
 
 ![Maintenance Wizard Maintenance Selection page](/images/accessanalyzer/11.6/admin/datacollector/fsaa/maintenancewizardselection.webp)
 
-The Maintenance Selection page allows you to select the type of maintenance to be performed:
+Use the Maintenance Selection page to select the type of maintenance to perform:
 
 - Reset Hosts – Resets the Access GUID column value in the SA_FSAA_Hosts table for the Hosts
   selected. Allows data to be bulk imported when there is a GUID mismatch.
@@ -89,14 +89,14 @@ selection made.
 
     ![Maintenance Wizard Reset Hosts page](/images/accessanalyzer/11.6/admin/datacollector/fsaa/maintenancewizardresethosts.webp)
 
-    Select the desired hosts to reset the SQL data for, and click **Reset Hosts** to perform the
+    Select the hosts you want to reset the SQL data for, and click **Reset Hosts** to perform the
     maintenance.
 
 - If Repair was selected, the Repair Tool page displays:
 
     ![Maintenance Wizard Repair Tool page](/images/accessanalyzer/11.6/admin/datacollector/fsaa/maintenancewizardrepair.webp)
 
-    Select the desired hosts to repair the SQL data for, and click **Run** to perform the
+    Select the hosts you want to repair the SQL data for, and click **Run** to perform the
     maintenance.
 
 Click **Finish** to close the wizard when you have completed the required maintenance.

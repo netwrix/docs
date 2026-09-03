@@ -14,11 +14,11 @@ The configurable scan options are:
 
 - Encrypt communications with Active Directory (SSL) – Enables communication to the domain
   controller over SSL
-- Analyze historical passwords – Scans historical passwords that have been stored in Active
+- Analyze historical passwords – Scans historical passwords stored in Active
   Directory
 
     :::warning
-    Enabling the following option will return clear text passwords to be stored in the
+    Enabling the following option returns clear text passwords and stores them in the
     Access Analyzer database for the following exceptions: **Clear Text Password**, **Potential
     Keytab Password**, and **Weak Password** (when leveraging a plaintext password dictionary).
     :::

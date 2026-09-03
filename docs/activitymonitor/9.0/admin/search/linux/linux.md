@@ -7,7 +7,7 @@ sidebar_position: 30
 # Linux Search Query
 
 You can search Linux file server and NAS device activity that has been monitored and recorded to a
-File output. When you select **Linux** from the magnifying glass drop-down menu, a New Search tab
+File output. When you select **Linux** from the magnifying glass dropdown menu, a New Search tab
 opens with the applicable query filters.
 
 ![Linux Search Query](/images/activitymonitor/9.0/admin/search/query/linuxsearchquerybar.webp)
@@ -24,12 +24,12 @@ headers. Below the Search button is the [Export](/docs/activitymonitor/9.0/admin
 
 Field options vary based on the selected query filter:
 
-- Textbox – Enter the filter value. If the field has a drop-down arrow, then you can select from
+- Textbox – Enter the filter value. If the field has a dropdown arrow, then you can select from
   values known to the application.
-- Gray drop-down menu – Provides options to match the value against on of the following, which vary
+- Gray dropdown menu – Provides options to match the value against on of the following, which vary
   based on the filter:
 
-    - Selected values – Filters by the value selected from the drop-down menu for the textbox
+    - Selected values – Filters by the value selected from the dropdown menu for the textbox
     - Simple string with wildcards – Filters by the value entered into the textbox, which contains
       an asterisk (\*) as the wildcard
     - Regular expression – Filters by the Regex entered into the textbox
@@ -40,9 +40,9 @@ The sections have the following filters:
 
 - Events time range – The time frame filter must be configured for every search query:
 
-    - From – Set the date and timestamp for the start of the activity range. The drop-down menu
+    - From – Set the date and timestamp for the start of the activity range. The dropdown menu
       opens a calendar.
-    - To – Set the date and timestamp for the end of the activity range. The drop-down menu opens a
+    - To – Set the date and timestamp for the end of the activity range. The dropdown menu opens a
       calendar.
 
 - File Path – Filter the data for a specific file path where activity has occurred

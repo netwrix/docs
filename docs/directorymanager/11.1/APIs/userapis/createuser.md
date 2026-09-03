@@ -7,7 +7,7 @@ sidebar_position: 10
 # Create a User
 
 This API creates a user in the identity store specified in the endpoint URL. Provide mandatory
-information for the to be created user in the request syntax such as container in which user will be
+information for the user being created in the request syntax such as container in which user will be
 created, given name, display name and so on.
 
 ## Endpoint

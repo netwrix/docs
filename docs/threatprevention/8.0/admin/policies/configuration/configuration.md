@@ -21,6 +21,6 @@ The [Recent Events Tab](/docs/threatprevention/8.0/admin/policies/configuration/
 recently monitored or blocked by the respective policy. These events are also available on the
 [Investigate Interface](/docs/threatprevention/8.0/admin/investigate/overview.md).
 
-Through a PowerShell API integration, it is possible to create, edit, delete, and enable policies
+Through a PowerShell API integration, you can create, edit, delete, and enable policies
 without opening the Administration Console. See the
 [PowerShell API Integration](/docs/threatprevention/8.0/api/overview.md) topic for additional information.

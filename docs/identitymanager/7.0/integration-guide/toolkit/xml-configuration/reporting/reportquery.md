@@ -4,7 +4,7 @@ description: ""
 sidebar_position: 1
 ---
 
-Allows the user to define queries to generate a report in a CSV file. When creating a new ReportQuery it is recommended to also create the linked [MenuItem](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/user-interface/menuitem).
+Allows the user to define queries to generate a report in a CSV file. When creating a new ReportQuery, consider also creating the linked [MenuItem](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/user-interface/menuitem).
 
 
 ## Examples

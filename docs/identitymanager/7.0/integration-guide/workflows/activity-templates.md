@@ -66,8 +66,8 @@ Saves the workflow's collected data to the repository and triggers dependent pro
 
 Saves the workflow's collected data to the repository **without** triggering the dependent processes (i.e. computation of the role model and provisioning). This activity has only the transition `PersistOnlyResources-Invoked-Invoke` and the state `PersistOnlyResources-Invoked`. It has no user interaction, and hence no need for permissions.
 
-> For example, `PersistOnlyResources` can be used in a workflow to add a new user, as we first
-> create a user sheet but **without** any account, etc.
+> For example, use `PersistOnlyResources` in a workflow to add a new user when creating a user sheet
+> but **without** any account, etc.
 
 ## States
 

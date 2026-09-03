@@ -17,7 +17,7 @@ Navigate to the **Active Directory** > **2.Users** > **AD_SIDHistory** > **Confi
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

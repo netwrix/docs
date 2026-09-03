@@ -13,13 +13,13 @@ Click **Okta** in the left pane to open the Okta page.
 
 ![Okta page](/images/identityrecovery/3.1/product/okta/okta.png)
 
-Select a tenant from the drop-down menu and expand it to view the supported object types.
+Select a tenant from the dropdown menu and expand it to view the supported object types.
 
 The page displays the following information:
 
 - Name – The display name of the object
 - Description – A description of the object
-- Backup Time – The date and time of the last the backup
+- Backup Time – The date and time of the most recent backup
 
 You can perform the rollback operations for objects.
 
@@ -27,7 +27,7 @@ Search for an Object
 
 There are several ways to find an object:
 
-- Column Filters – Click a column header to organize the table alphabetically by the column header.
+- Column Filters – Click a column header to sort the table alphabetically.
   An arrow appears by the column name. Use it to arrange the entries by ascending or descending
   order.
 - Search box – Enter a text string in the search box to filter the table for results that contain

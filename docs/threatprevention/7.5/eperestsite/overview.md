@@ -14,8 +14,8 @@ a candidate password to check whether it complies with the current EPE rules def
 It uses GET and POST APIs for:
 
 - Site Account Management
-- Login to EPE REST Service
-- Check Password (Basic, Digest and Bearer variations)
+- Log in to EPE REST Service
+- Check Password (Basic, Digest, and Bearer variations)
 
 You can use the Boomerang plugin for the Chrome browser to work with the EPE Rest Site.
 

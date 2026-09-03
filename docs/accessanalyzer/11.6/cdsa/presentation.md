@@ -9,7 +9,7 @@ sidebar_position: 20
 In the following subsections, each slide is aligned to the jobs that supply its data. The slide
 number is specific to the **Netwrix_CDSA_Presentation.pptx** file, as there are slight various in
 page numbering with the files designed to be saved as PDFs. Many jobs contribute to multiple slides,
-so jobs are highlighted in bold text the first time they are listed.
+so this topic highlights each job in bold text the first time it's listed.
 
 ## Executive Summary Slide
 

@@ -12,9 +12,9 @@ adjust retention accordingly. The widget displays the name of default SQL Server
 all Netwrix Auditor databases, the overall database capacity at the moment and its change over the
 last day (24 hours).
 
-Transaction logs size is not included in the calculations.
+Transaction logs size isn't included in the calculations.
 
-After you click View details, the following information will be displayed for the specified SQL
+After you click View details, Auditor displays the following information for the specified SQL
 Server instance:
 
 ![dbstats_overview_thumb_0_0](/images/auditor/10.9/admin/healthstatus/dashboard/dbstats_overview_thumb_0_0.webp)
@@ -34,10 +34,10 @@ instance of the SQL Server:
 The following capacity metrics are displayed for each database:
 
 - **State**—database state summary
-- **Size**—current database size (logs are not included)
+- **Size**—current database size (logs aren't included)
 - **Activity records**—number of the activity records stored in the database at the moment
 
-After you expand the database node, the detailed database properties will be shown:
+After you expand the database node, Auditor shows the detailed database properties:
 
 ![dbstatistics_thumb_0_0](/images/auditor/10.9/admin/healthstatus/dashboard/dbstatistics_thumb_0_0.webp)
 
@@ -52,11 +52,11 @@ These properties are as follows:
 | Failed to store data | Failed to store data to the database due to some issues.                                                                                                            |                                                                                                                                      |
 | Unavailable          | Failed to connect to the database.                                                                                                                                  |                                                                                                                                      |
 | Upgrade in progress  | Database is being upgraded.                                                                                                                                         |                                                                                                                                      |
-| Monitoring plans     | _`<monitoring_plan>`_                                                                                                                                               | All monitoring plans for which this database is a target. Usually it is recommended to configure a dedicated database for each plan. |
+| Monitoring plans     | _`<monitoring_plan>`_                                                                                                                                               | All monitoring plans for which this database is a target. Netwrix usually recommends configuring a dedicated database for each plan. |
 
 You can use the Search field, or apply a filter to display the information you need. For example, in
 the Apply Filters dialog you can select the Show only plans with issues to display only the
 monitoring plans that require attention and corrective actions.
 
-This information will help you to troubleshoot the product operation, detect and eliminate the root
-cause of the monitoring errors, providing for auditing continuity and compliance.
+This information helps you troubleshoot product operation; detect and eliminate the root cause of
+monitoring errors; and maintain auditing continuity and compliance.

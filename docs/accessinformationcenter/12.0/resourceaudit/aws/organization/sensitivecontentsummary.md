@@ -11,7 +11,7 @@ criteria matches were found on the selected instance. This report includes a Det
 
 ![Sensitive Content Summary report at the Organization level](/images/accessinformationcenter/12.0/resourceaudit/aws/organization/serversensitivecontentsummary.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Server Name – SQL server name
 - Criteria Name – Type of potentially sensitive criteria matches found

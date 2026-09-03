@@ -45,7 +45,7 @@ The following example applies all rules in the role model concerning the entity 
 
 <IgnoreHistorizationIntro />
 
-The following example is similar to the previous one, except that the values prior to the changes on assigned single roles, composite roles, resource types, scalar or navigation properties, or binaries, will not be stored in the database.
+The following example is similar to the previous one, except that the values before the changes on assigned single roles, composite roles, resource types, scalar, or navigation properties, or binaries, will not be stored in the database.
 
 ```xml
 <ComputeRoleModelTask Identifier="First_ComputeRoleModel" DisplayName_L1="First Compute Role Model" IgnoreHistorization="true">

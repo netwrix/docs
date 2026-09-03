@@ -12,10 +12,11 @@ keywords:
   - network updates
   - rights
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Resolve WiFi Connection Issues When Rights Are Set
 tags:
   - device-control-and-access-management
+  - kb
 title: "Resolve WiFi Connection Issues When Rights Are Set to Allow Access"
 knowledge_article_id: kA0Qk0000002BB4KAM
 ---

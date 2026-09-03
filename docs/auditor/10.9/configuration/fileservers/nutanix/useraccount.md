@@ -17,16 +17,16 @@ To create a user account using the ncli utility:
     here:
 
     - `management_ip_addr` - the IP address of any Nutanix Controller VM in the cluster
-    - `username` - user name to access that VM; if not specified, _admin_ (default name) will be
-      used
+    - `username` - user name to access that VM; if not specified, the utility uses _admin_ (default
+      name)
     - `user_password` - password to access that VM
 
 3. Run the `fs list` command in _ncli_ to get the list of Nutanix Files servers.
-4. Locate the name of Nutanix Files server you want to audit; locate and save the following server
-   parameters to a text file:
+4. Locate the Nutanix Files server you want to audit, and save the following server parameters to a
+   text file:
     - **Uuid** - Nutanix Files server ID
-5. Finally, create a new user and specify credentials that will be used to access this Nutanix Files
-   server. For that, run the following command in _ncli_ :
+5. Finally, create a new user and specify credentials to access this Nutanix Files server. For that,
+   run the following command in _ncli_ :
 
     `fs add-user uuid=<fs_uuid> user=<username> password=<password>`
 

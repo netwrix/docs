@@ -13,7 +13,7 @@ settings the action changes.
 
 Use the following options to enter the Permissions:
 
-- Insert field – Use the drop-down list to select a field (column) from the source table, then click
+- Insert field – Use the dropdown list to select a field (column) from the source table, then click
   the blue arrow
 - Group or user names:
 
@@ -29,7 +29,7 @@ In the table, select from the following options:
 - Audit – Report the status of the change to the attribute
 - Audit Apply To - Select the files or folders to report the status on
 
-Select from the following options (Multiple options can be selected):
+Select from the following options (you can select multiple options):
 
 - Overwrite existing file explicit permissions (target object only)
 - Replace permission entries on all child objects

@@ -6,19 +6,14 @@ sidebar_position: 80
 
 # Working with SharePoint templates
 
-In SharePoint, a site template is like a blueprint for a site. Creating a site template allows you
-to capture your customizations, so that they can be quickly applied to other SharePoint environments
-and even use the template as the basis for a business solution.
+In SharePoint, a site template is like a blueprint for a site. Creating a site template lets you capture customizations and apply them to other SharePoint environments or use them as the basis for a business solution.
 
-In Netwrix Data Classification, you may have site collections and want to use the same tagging
-configuration for all of them. It allows you to effectively copy and paste the configuration for one
-source onto others. First you manually configure one source. Then you save that as a template. Then
-you apply that template to other sources.
+In Netwrix Data Classification, you can use the same tagging configuration for multiple site collections. Configure one source, save it as a template, then apply that template to other sources.
 
 To get more details about the tagging function, review the
 [Configuring Tagging](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/manage/introduction/spotagging.md) article.
 
-In this article, we will cover:
+This article covers:
 
 - Setting up prerequisites
 - Using SharePoint API
@@ -28,7 +23,7 @@ In this article, we will cover:
 
 ## Setting up prerequisites
 
-As part of configuring tagging, make sure you have set the prerequisites, specified in the
+As part of configuring tagging, ensure you have set the prerequisites, specified in the
 [Configuring Tagging](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/manage/introduction/spotagging.md) article.
 
 ## Using SharePoint API

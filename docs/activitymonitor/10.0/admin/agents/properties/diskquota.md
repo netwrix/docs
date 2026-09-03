@@ -6,7 +6,7 @@ sidebar_position: 7
 
 # Disk Quota Tab
 
-The **Disk Quota Tab** is used to limit the size of logs to save disk space.
+Use the **Disk Quota Tab** to limit the size of logs and save disk space.
 
 ![diskquotatab](/images/activitymonitor/9.0/admin/agents/properties/diskquotatab.webp)
 

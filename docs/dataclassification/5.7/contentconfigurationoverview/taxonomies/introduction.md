@@ -6,10 +6,10 @@ sidebar_position: 5
 
 # Taxonomies
 
-## What are Taxonomies?
+## Taxonomies Overview
 
 Netwrix Data Classification comes with several built-in **taxonomies** with hundreds of
-classification rules out-of-the-box. The taxonomies cover a broad range of sensitive personal,
+classification rules by default. The taxonomies cover a broad range of sensitive personal,
 financial, and health-related information. Each taxonomy contains a set of terms. **Terms** are
 defined by set of configuration **rules** (also called **clues**). See
 [Classification Rules (Clues)](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/clues/clues.md) for details.

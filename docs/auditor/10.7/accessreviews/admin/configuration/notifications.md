@@ -18,24 +18,23 @@ for configuring weekly reminders for owners with outstanding reviews.
 
 ## Configure SMTP Server Settings
 
-SMTP server information is supplied and modified on the Notifications page. Follow the steps to
-configure or modify the SMTP settings.
+Configure or modify the SMTP settings on the Notifications page.
 
 ![Notifications page SMTP server settings section](/images/auditor/10.7/access/reviews/admin/configuration/notificationssmtp.webp)
 
-**Step 1 –** In the Configuration interface, select the Notifications page.
+1. In the Configuration interface, select the Notifications page.
 
-**Step 2 –** Enter the SMTP Server Name in the textbox. This should be the fully qualified domain
+2. Enter the SMTP Server Name in the textbox. This should be the fully qualified domain
 name (mail.example.com) or IP Address.
 
-**Step 3 –** If needed, modify the Port used by your SMTP server to listen for new messages.
+3. If needed, modify the Port used by your SMTP server to listen for new messages.
 Historically, the default for SMTP has been port 25. However, if a secure connection is desired
 (SSL/TLS), the SMTPS port needs to be changed, traditionally 465. Alternately, environments with
 off-premises or outsourced email service, e.g. gmail.com, hotmail.com, etc., may have to supply a
 different submission port, traditionally port 587. Ultimately it is an organization’s
 email/messaging administrator who will know the proper value for the SMTP port.
 
-**Step 4 –** SMTP security settings:
+4. SMTP security settings:
 
 - Use a secure connection for this server (SSL/TLS) – Allows for the use of a secure transport layer
   for message relay requests (submissions) and authentication requests
@@ -62,23 +61,23 @@ email/messaging administrator who will know the proper value for the SMTP port.
 
 ![Test Settings window](/images/accessinformationcenter/12.0/admin/configuration/notificationstestsettings.webp)
 
-**Step 5 –** Click **Test Settings** to ensure a connection to the SMTP server. The Test Settings
+5. Click **Test Settings** to ensure a connection to the SMTP server. The Test Settings
 window opens. Enter a valid email address and click **OK**.
 
 ![Testing your settings window](/images/accessinformationcenter/12.0/admin/configuration/notificationstestconfirm.webp)
 
-**Step 6 –** If the SMTP settings are configured correctly, you receive a successful message. Click
+6. If the SMTP settings are configured correctly, you receive a successful message. Click
 **OK** to close the Testing your settings window. The test recipient should have recieved a test
 email.
 
-**Step 7 –** Click **Save**. Then click **OK** to confirm.
+7. Click **Save**. Then click **OK** to confirm.
 
 The Access Reviews Console is now configured to send email. See the following topics for additional
 Notification options.
 
 ## Notification Options
 
-Once the SMTP server is configured, there are additional options. Only the Reply-To field must be
+After the SMTP server is configured, there are additional options. Only the Reply-To field must be
 populated:
 
 ![Notifications page showing Notification Options section](/images/auditor/10.7/access/reviews/admin/configuration/notificationsoptions.webp)
@@ -104,18 +103,18 @@ steps to configure weekly reminders to resource owners.
 
 ![Notifications page showing the Reminders section](/images/accessinformationcenter/12.0/admin/configuration/notificationsreminders.webp)
 
-**Step 1 –** In the Configuration interface, select the Notifications page and scroll down to the
+1. In the Configuration interface, select the Notifications page and scroll down to the
 Reminders section.
 
-**Step 2 –** Check the Send reminders to owners with pending events option.
+2. Check the Send reminders to owners with pending events option.
 
-**Step 3 –** Set the date and time for when the reminder will be sent:
+3. Set the date and time for when the reminder will be sent:
 
-- Day of the week – Select the day of the week from the drop-down menu
-- Time of day – Click on the field to open a clock window. Set the time of day reminders will be
+- Day of the week – Select the day of the week from the dropdown menu
+- Time of day – Click the field to open a clock window. Set the time of day reminders will be
   sent, e.g. 12:00 AM
 
-**Step 4 –** Click **Save**. Then click **OK** to confirm.
+4. Click **Save**. Then click **OK** to confirm.
 
 Assigned resource owners now receive weekly reminders of pending events. The **Notifications were
 last sent on** field will populate with the date timestamp for when the last set of reminders were

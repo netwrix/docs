@@ -34,11 +34,11 @@ topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time ,
-then an extra 16 GB of RAM are required (8x2=16).
+You must install the Sensitive Data Discovery Add-On on the Enterprise Auditor Console server to
+enable Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans, increase
+the minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For
+example, if you configure the job to scan 8 hosts at a time, you need an extra 16 GB of RAM
+(8 x 2 = 16).
 
 ## ExchangeMailbox Query Configuration
 
@@ -62,18 +62,18 @@ permissions on the Welcome page.
 
 Select one of the following options for the connection setting:
 
-- Use Global setting – The configured Global Setting is displayed next to this checkbox. Select the
-  checkbox to use the global setting.
-- System Attendant (2003 & 2007) – Enabled when the **Use Global Setting** checkbox is not selected.
+- Use Global setting – This checkbox shows the configured Global Setting. Select the checkbox to use
+  the global setting.
+- System Attendant (2003 & 2007) – Enabled when the **Use Global Setting** checkbox isn't selected.
   Select this option to use System Attendant (2003 & 2007) for the connection.
 - Use the mailbox associated with the Windows account that Enterprise Auditor is run with – Enabled
-  when the **Use Global Setting** checkbox is not selected. Select this option to use the mailbox
+  when the **Use Global Setting** checkbox isn't selected. Select this option to use the mailbox
   associated with the Windows account that Enterprise Auditor is run with for the connection.
-- Exchange Mailbox (2010 and newer) – Enabled when the **Use Global Setting** checkbox is not
-  selected. Select this option to use an Exchange Mailbox (2010 and newer) for the connection. The
-  Client Access Server must be entered unless specified in the Global Settings.
+- Exchange Mailbox (2010 and newer) – Enabled when the **Use Global Setting** checkbox isn't
+  selected. Select this option to use an Exchange Mailbox (2010 and newer) for the connection. Enter
+  the Client Access Server unless you specified it in the Global Settings.
 
-    - Client Access Server – A private store server is needed if the Exchange server only has public
+    - Client Access Server – Use a private store server if the Exchange server only has public
       stores
 
 **Test Connection Setting**

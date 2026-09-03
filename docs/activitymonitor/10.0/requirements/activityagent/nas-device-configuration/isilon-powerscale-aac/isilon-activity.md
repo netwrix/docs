@@ -6,29 +6,29 @@ sidebar_position: 30
 
 # Dell Isilon/PowerScale Activity Auditing Configuration
 
-Dell Isilon/PowerScale can be configured to audit Server Message Block (SMB) and NFS protocol access
-events on the Dell Isilon/PowerScale cluster. All audit data can be forwarded to the Dell Common
+Configure Dell Isilon/PowerScale to audit Server Message Block (SMB) and NFS protocol access
+events on the Dell Isilon/PowerScale cluster. Forward all audit data to the Dell Common
 Event Enabler (CEE). The Activity Monitor listens for all events coming through the Dell CEE and
 translates all relevant information into entries in the log files or syslog messages.
 
-Protocol auditing must be enabled and then configured on a per-access zone basis. For example, all
-SMB protocol events on a particular access zone can be audited, while only attempts to delete files
-on a different access zone can be audited.
+Enable and configure protocol auditing on a per-access zone basis. For example, audit all
+SMB protocol events on a particular access zone, or audit only attempts to delete files
+on a different access zone.
 
-The audit events are logged and stored on the individual OneFS nodes where the SMB/NFS client
-initiated the activity. The stored events are then forwarded by the node to the Dell CEE instance or
-concurrently to several instances. At this point, Dell CEE forwards the audit event to a defined
+OneFS nodes log and store audit events on the individual nodes where the SMB/NFS client
+initiated the activity. The nodes then forward the stored events to the Dell CEE instance or
+concurrently to several instances. Dell CEE forwards the audit event to a defined
 endpoint, such as Activity Monitor agent.
 
-Complete the following checklist prior to configuring Activity Monitor to monitor the host.
+Complete the following checklist before configuring Activity Monitor to monitor the host.
 Instructions for each item of the checklist are detailed within the following sections.
 
 **Checklist Item 1: Plan Deployment**
 
-- Prior to beginning the deployment, gather the following:
+- Before beginning the deployment, gather the following:
 
-    - DNS name of Isilon/PowerScale CIFS share(s) to be monitored
-    - Access Zone(s) containing the CIFS shares to be monitored
+    - DNS name of Isilon/PowerScale CIFS shares to be monitored
+    - Access Zones containing the CIFS shares to be monitored
     - Account with access to the OneFS UI or CLI
     - Download the Dell CEE from:
 
@@ -46,7 +46,7 @@ activity will be evenly distributed between the pairs.
 - Dell CEE should be installed on a Windows or a Linux server.
 
     :::info
-    Dell CEE can be installed on the same server as the Activity Agent, or on a
+    Install Dell CEE on the same server as the Activity Agent, or on a
     different Windows or Linux server. If CEE is installed on the same server, the Activity Agent
     can configure it automatically.
     :::
@@ -54,9 +54,9 @@ activity will be evenly distributed between the pairs.
 
 - Important:
 
-    - Dell CEE 8.8 is the minimum supported version. It is recommended to use the latest available
+    - Dell CEE 8.8 is the minimum supported version. Use the latest available
       version.
-    - Dell CEE requires .NET Framework 3.5 to be installed on the Windows server
+    - Install .NET Framework 3.5 on the Windows server before installing Dell CEE
 
 Checklist Item 3: Configure Auditing on the Dell Isilon/PowerScale Cluster
 
@@ -79,12 +79,12 @@ Checklist Item 3: Configure Auditing on the Dell Isilon/PowerScale Cluster
 - Important:
 
     - Value of the **Storage Cluster Name** field must exactly match the name entered for the
-      monitored host in the Activity Monitor Console. If the Storage Cluster Name cannot be modified
+      monitored host in the Activity Monitor Console. If the Storage Cluster Name can't be modified
       (for example, another 3rd party depends on it), you need to set the Host Aliases parameter in
       the Activity Monitor Console. Otherwise, if for some reason the Storage Cluster Name must be
       left empty, one can list OneFS cluster node names in the Host Aliases.
 
-        - If the Storage Cluster Name is not empty, set the Host Aliases parameter to its value
+        - If the Storage Cluster Name isn't empty, set the Host Aliases parameter to its value
         - If the Storage Cluster Name is empty, set the Host Aliases to a semicolon-separated list
           of OneFS node names
 

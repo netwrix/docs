@@ -31,7 +31,7 @@ The example below creates a workflow to create a new helpdesk worker, with the p
 
 The XML configuration below represents the creation of a [Form](../../../integration-guide/toolkit/xml-configuration/user-interface/form) that defines the elements to display in the workflow.
 
-Here we create three structured forms, all to be called in our final workflow form.
+Create three structured forms, all to be called in the final workflow form.
 
 ```
 First form for the user's identification data:
@@ -52,7 +52,7 @@ Third form for the user's data specific to each record individually, so here pos
 
 ## Link the Forms to the Workflow
 
-After creating a workflow with given activities, it is necessary to create the form to be displayed when launching the workflow. It has the type corresponding to a resource's creation with several records, i.e. `WorkflowCreateSeveralRecordEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
+After creating a workflow with given activities, create the form to be displayed when launching the workflow. It has the type corresponding to a resource's creation with several records, i.e. `WorkflowCreateSeveralRecordEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
 
 ```
 <WorkflowCreateSeveralRecordsEntityForm Identifier="Workflow_Helpdesk_Directory_User_New" EntityType="Workflow_Directory_User" MainProperty="Workflow_Directory_User:Directory_User" RecordProperty="Directory_User:Records" RecordTable="Directory_UserRecord_Helpdesk" WorkflowRequestType="Helpdesk" Activity="Helpdesk_Directory_User_New:Request" FormTitle_L1="New User (helpdesk)"/>
@@ -80,7 +80,7 @@ created previously;
 
 In a situation where users can have several positions but also several contracts, then contract data would be part of the form called by `RecordUniqueItemControl` instead of `RecordControl`.
 
-In a situation where positions, contracts and personal data are all configured as records because we want to be able to anticipate changes for example, then there would not be any data shared by all records. Then `RecordControl` would be empty. See the [Position Change via Records](../../../integration-guide/identity-management/joiners-movers-leavers/position-change) topic for additional information.
+In a situation where positions, contracts, and personal data are all configured as records to anticipate changes, for example, then there wouldn't be any data shared by all records. Then `RecordControl` would be empty. See the [Position Change via Records](../../../integration-guide/identity-management/joiners-movers-leavers/position-change) topic for additional information.
 
 > ```
 >
@@ -136,7 +136,7 @@ To create a menu item here for the new workflow, you can add the following XML c
 
 ## Add Aspects
 
-For each workflow, it is possible to add aspects according to the workflow's purpose.
+For each workflow, add aspects according to the workflow's purpose.
 
 ## Homonym Detection (Optional)
 
@@ -171,7 +171,7 @@ Partial form for user data:
 
 To configure a display table different from the default one provided by Identity Manager, see the [Customize Display Tables](../../../integration-guide/ui/custom-display-table) topic for additional information.
 
-Below is an example of a display table for our situation:
+Below is an example of a display table for this scenario:
 
 ```
 <DisplayTable Identifier="Directory_UserRecord_SeveralRecords" EntityType="Directory_UserRecord" DisplayTableDesignElement="table">  <Column DisplayBinding="Title.InternalDisplayName" DisplayName_L1="Title" IsDisplayInSummaryView="true" ColumnSize="1" />  <Column DisplayBinding="Organization.InternalDisplayName" DisplayName_L1="Department" IsDisplayInSummaryView="true" ColumnSize="1" />  <Column DisplayBinding="Location.InternalDisplayName" DisplayName_L1="Site" IsDisplayInSummaryView="true" ColumnSize="1" />  <Column DisplayBinding="StartDate" DisplayName_L1="Start Date" IsDisplayInSummaryView="true" ColumnSize="1" />  <Column DisplayBinding="EndDate" DisplayName_L1="End Date" IsDisplayInSummaryView="true" ColumnSize="1" /></DisplayTable>

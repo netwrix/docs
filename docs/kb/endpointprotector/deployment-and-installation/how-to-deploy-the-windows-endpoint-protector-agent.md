@@ -13,15 +13,18 @@ keywords:
   - PROXYSETTINGSRBGPROP
   - DEPT_CODE
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: How to Deploy the Windows Endpoint Protector Agent
 tags:
   - deployment-and-installation
+  - kb
 title: "How to Deploy the Windows Endpoint Protector Agent"
 knowledge_article_id: kA0Qk0000001FTFKA2
 ---
 
 # How to Deploy the Windows Endpoint Protector Agent
+
+For the full reference, see [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation) and [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters) in the Agent documentation. For deploying via Active Directory Group Policy without an MSI transform, see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#upload-procedure) and [Active Directory](/docs/endpointprotector/install/activedirectory/overview).
 
 ## Manual Installation
 
@@ -135,7 +138,14 @@ A full list of properties that can be specified in the installer can be found in
 | **PROXYIP** | `192.168.1.200` | The IP Address of the proxy server. This is only used when **PROXYSETTINGSRBGPROP** is set to ManualProxy. |
 | **PROXYPORT** | `8080` | The port to use for the proxy server. This is only used when **PROXYSETTINGSRBGPROP** is set to ManualProxy. |
 | **AUTHCHECKBOXPROP** | `1` | Enable this to use Authentication on the proxy. Allowed values: 0 (Disabled), 1 (Enabled) |
-| **AUTHUSER** | `ProxyUser` | The username for the user that will authenticate to the proxy. |
-| **AUTHPASSWORD** | `P@ssw0rd123` | The password for the user that will authenticate to the proxy. |
+| **AUTHUSR** | `ProxyUser` | The username for the user that will authenticate to the proxy. |
+| **AUTHPASS** | `P@ssw0rd123` | The password for the user that will authenticate to the proxy. |
 | **INSTALL_NOTES_EXT** | `1` | Installs the Lotus Notes Add-on. Default value: 1 (Install) Allowed values: 1 (Install), 0 (Don't install) |
 | **INSTALL_OUTLOOK_EXT** | `1` | Installs the Outlook Add-on. Default value: 1 (Install) Allowed values: 1 (Install), 0 (Don't install) |
+| **IPV6MAPPING** | `1` | Maps IPv6 addresses to IPv4. |
+| **SUPPRESSRD** | `1` | Suppresses FileRead/FileDelete events for network share and removable devices. |
+| **DISABLECAP** | `1` | Disables loading of Content Aware Protection (CAP) drivers. When enabled, CAP does not work. |
+
+:::note
+Starting with the 2511 Client release, the `IPV6MAPPING`, `SUPPRESSRD`, and `DISABLECAP` install parameters persist across EPP Client upgrades.
+:::

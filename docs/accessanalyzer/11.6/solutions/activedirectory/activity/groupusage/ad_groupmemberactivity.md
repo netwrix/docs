@@ -32,9 +32,9 @@ follow pre-configured report:
 
 ### Configure the Group Member Activity Analysis Task
 
-Customizable parameters enable you to set the values used to include the SIDs for admin groups
+Use customizable parameters to set the values used to include the SIDs for admin groups
 during this job’s analysis. The parameters can be customized and are listed in a section at the
-bottom of the SQL Script Editor. Follow the steps to customize an analysis task’s parameters.
+bottom of the SQL Script Editor.
 
 **Step 1 –** Navigate to the **Active Directory** > **6.Activity** > **Group Usage** >
 **AD_GroupMemberActivity** > **Configure** node and select **Analysis**.
@@ -42,10 +42,10 @@ bottom of the SQL Script Editor. Follow the steps to customize an analysis task�
 ![Group Member Activity analysis task configuration](/images/accessanalyzer/11.6/solutions/activedirectory/activity/groupusage/groupmemberactivityanalysisconfiguration.webp)
 
 **Step 2 –** In the Analysis Selection view, select the Group Member Activity analysis task and
-click on **Analysis Configuration**. The SQL Script Editor opens.
+click **Analysis Configuration**. The SQL Script Editor opens.
 
 :::warning
-Do not change any parameters where the Value states `Created during execution`.
+Don't change any parameters where the Value states `Created during execution`.
 :::
 
 

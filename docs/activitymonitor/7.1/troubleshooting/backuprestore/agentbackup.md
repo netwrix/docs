@@ -6,10 +6,6 @@ sidebar_position: 10
 
 # Agent Backup
 
-Follow the steps to back up the configuration, passwords, Active Directory event data file, and
-activity log files for Activity Monitor Agents deployed on file system servers, SharePoint servers,
-and domain controllers.
-
 **Configuration**
 
 **Step 1 –** Back up the `SBTFileMon.ini` file. The default location is
@@ -48,7 +44,7 @@ default folder is
 **C:\ProgramData\Netwrix\Activity Monitor\Agent\ActivityLogs**
 
 :::note
-Keep in mind that` C:\ProgramData` folder may be hidden. Navigate to it by typing
+The `C:\ProgramData` folder may be hidden. Navigate to it by typing
 `%ALLUSERSPROFILE%` in the File Explorer.
 :::
 

@@ -31,10 +31,10 @@ Use this page to specify basic information about the group.
 4. In the **Security** list, select a security type for the group.
 5. Set the group type by selecting an option for **Group Type**
 
-    - **Security** - this group will be used for securing public folders, printers and other network
+    - **Security** - this group will be used for securing public folders, printers, and other network
       resources.
     - **Distribution** - this group will only be used for email distribution.
-    - **Teams** - this groups is used for manage Microsoft Teams and their associated channels.
+    - **Teams** - this group is used to manage Microsoft Teams and their associated channels.
     - **Microsoft 365** - this group will be used to select a set of people to collaborate and use a
       collection of resources.
 

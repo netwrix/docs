@@ -33,7 +33,7 @@ resource.
 The Matches table displays information on the criteria hits found on the selected file. This table
 is comprised of the following columns:
 
-- Prefix – Text just prior to the sensitive data match in the file
+- Prefix – Text just before the sensitive data match in the file
 - Match – Lists any sensitive data matches found for the highlighted criteria in the top grid of the
   report
 - Suffix – Text just after the sensitive data match in the file
@@ -44,8 +44,8 @@ is comprised of the following columns:
 The Activity table displays information on activity performed on the selected file during the
 selected date. It will be blank if any of the following are true:
 
-- Activity is not being monitored for the targeted environment
-- The activity collection job within Enterprise Auditor for the environment have not been run
+- Activity isn't being monitored for the targeted environment
+- Enterprise Auditor has not run the activity collection job for the targeted environment
 - There were no operation events logged on the selected file for the selected date range
 
 ![Activity table](/images/accessinformationcenter/11.6/resourceaudit/sensitivecontent/activitytable.webp)
@@ -70,7 +70,7 @@ This table is comprised of the following columns:
 - Access – Whether the trustee was granted access to execute the operation: **Allowed** or
   **Denied**
 - Path – Location of the file
-- Target Path – New location if changed by the operation. Blank if the operation does not result in
+- Target Path – New location if changed by the operation. Blank if the operation doesn't result in
   a new path.
 - Process Name – Name of the process which performed the operation
 

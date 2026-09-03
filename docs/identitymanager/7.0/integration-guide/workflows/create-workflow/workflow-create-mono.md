@@ -31,7 +31,7 @@ The example below creates a workflow to create a new worker.
 
 The XML configuration below represents the creation of a [Form](../../../integration-guide/toolkit/xml-configuration/user-interface/form) that defines the elements to display in the workflow.
 
-Here we create two structured forms: the preliminary one is called inside the main one, and the main one is to be called in our final workflow form.
+Create two structured forms: the preliminary one is called inside the main one, and the main one is to be called in the final workflow form.
 
 ```
 Preliminary form for user data:
@@ -55,7 +55,7 @@ Main form for all data:
 
 ## Link the Forms to the Workflow
 
-After creating a workflow with given activities, it is necessary to create the form to be displayed when launching the workflow. It has the type corresponding to a resource's creation with one record, i.e. `WorkflowCreateRecordEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
+After creating a workflow with given activities, create the form to be displayed when launching the workflow. It has the type corresponding to a resource's creation with one record, i.e. `WorkflowCreateRecordEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
 
 ```
 <WorkflowCreateRecordEntityForm Identifier="Workflow_Directory_User_NewInternal" EntityType="Workflow_Directory_User" MainProperty="Workflow_Directory_User:Directory_User" RecordProperty="Directory_User:Records" WorkflowRequestType="Self" Activity="Directory_User_NewInternal:Request" FormTitle_L1="New Employee"/>
@@ -71,7 +71,7 @@ A `WorkflowCreateRecordEntityForm` requires the following child elements:
 </WorkflowCreateRecordEntityForm>
 ```
 
-The `MainControl` attribute is here an empty container because we configure all personal data, contracts and positions as records to be able to anticipate changes for example. The line with the empty `MainControl` is not mandatory. See the [Position Change via Records](../../../integration-guide/identity-management/joiners-movers-leavers/position-change)topic for additional information.
+The `MainControl` attribute is here an empty container because all personal data, contracts, and positions are configured as records to anticipate changes, for example. The line with the empty `MainControl` isn't mandatory. See the [Position Change via Records](../../../integration-guide/identity-management/joiners-movers-leavers/position-change)topic for additional information.
 
 - `RecordControl` that defines record data, and calls the form created previously. See the For
 Resource Creation (Mono Record) topic for additional information.
@@ -86,7 +86,7 @@ Resource Creation (Mono Record) topic for additional information.
 
 ### Add a summary (Optional)
 
-Another child element `RecordSummaryControl` can be added to insert a summary part, i.e. the form used after the workflow execution to show some values, most of the time those affected by the workflow, typically the properties editable in the workflow or generated properties. So in our situation, it displays the `EmployeeId` and `Mail` attributes that the workflow just computed:
+Another child element `RecordSummaryControl` can be added to insert a summary part, i.e. the form used after the workflow execution to show some values, most of the time those affected by the workflow, typically the properties editable in the workflow or generated properties. In this example, it displays the `EmployeeId` and `Mail` attributes that the workflow just computed:
 
 ```
 Summary form:
@@ -130,7 +130,7 @@ To create a menu item here for the new workflow, you can add the following XML c
 
 ## Add Aspects
 
-For each workflow, it is possible to add aspects according to the workflow's purpose.
+For each workflow, add aspects according to the workflow's purpose.
 
 ## Homonym Detection (Optional)
 

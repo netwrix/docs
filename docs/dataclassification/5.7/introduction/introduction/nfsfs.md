@@ -6,12 +6,10 @@ sidebar_position: 40
 
 # Configure NFS File Share for Crawling
 
-To enable processing Network File System (NFS) file shares it is necessary to enable specific
-Windows features. The steps to enable these features differ depending on operating system of the
-computer where Netwrix Data Classification is installed.
+To process Network File System (NFS) file shares, you must enable specific Windows features. The steps to enable these features differ depending on the operating system of the computer where Netwrix Data Classification is installed.
 
 :::note
-Prior to configuration, consider the following:
+Before configuration, consider the following:
 :::
 
 
@@ -26,7 +24,7 @@ Add the Folder source as described in the [File System](/docs/dataclassification
 topic.
 
 :::note
-Do not specify username and password while adding data source.
+Don't specify username and password while adding data source.
 :::
 
 

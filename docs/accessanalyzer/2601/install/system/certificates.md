@@ -29,14 +29,14 @@ All three files must be in PEM format. When you choose **Bring your own certific
 ## 2. Application TLS Private Key (`<hostname>.key`)
 
 - **Format**: PEM (`-----BEGIN PRIVATE KEY-----` or `-----BEGIN RSA PRIVATE KEY-----`).
-- **Must be readable by the OS user running the installer.** If you extracted the key using `sudo` or another elevated context, the file may be owned by `root` with `0600` permissions — the installer will fail to read it. After extraction, set ownership to the user running the installer:
+- **Must be readable by the OS user running the installer.** If you extracted the key using `sudo` or another elevated context, `root` may own the file with `0600` permissions — the installer will fail to read it. After extraction, set ownership to the user running the installer:
 
   ```bash
   sudo chown <install-user>:<install-user> /opt/dspm-tls/<hostname>.key
   sudo chmod 644 /opt/dspm-tls/<hostname>.key
   ```
 
-- **Never share or commit this file.** Once inside `/opt/dspm-tls/` with correct ownership, restrict access via directory permissions.
+- **Never share or commit this file.** After the file is inside `/opt/dspm-tls/` with correct ownership, restrict access via directory permissions.
 
 ## 3. CA Bundle (`ca-bundle.crt`)
 

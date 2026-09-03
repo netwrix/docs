@@ -1,10 +1,10 @@
 ---
 title: "MonitoringAdministrationAccessControlRules"
-description: "Generates the access control rule which gives to a profile the permission to query the monitoring screen."
+description: "Generates the access control rule which gives a profile the permission to query the monitoring screen."
 sidebar_position: 1
 ---
 
-Generates the access control rule which gives to a profile the permission to query the monitoring screen.
+Generates the access control rule which gives a profile the permission to query the monitoring screen.
 
 
 
@@ -26,7 +26,7 @@ Generates the access control rule which gives to a profile the permission to que
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Monitoring" DisplayName_L1="Administrator_Monitoring" EntityType="Setting" Profile="Administrator">

@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Enterprise Auditor Initial Configuration
 
-Once the Enterprise Auditor installation process is complete, and before performing actions within
-Enterprise Auditor, the initial settings for the Enterprise Auditor Console must be configured.
+After the Enterprise Auditor installation process finishes, and before performing actions within
+Enterprise Auditor, configure the initial settings for the Enterprise Auditor Console.
 
 ![Newrix Access Governance shortcut](/images/accessanalyzer/11.6/install/application/shortcut.webp)
 
@@ -47,22 +47,22 @@ topic for additional information.
 - Command timeout [number] minutes – Number of minutes before Enterprise Auditor halts any SQL
   queries running for that amount of time. This prevents SQL queries from running excessively long.
   The default is 1440 minutes.
-- Windows authentication – Leverages the account used to open the Enterprise Auditor Console. This
+- Windows authentication – Uses the account used to open the Enterprise Auditor Console. This
   option will use Windows NT Authentication to authenticate to the SQL Server. It also requires the
   Schedule Service Account to have proper permissions on the SQL database.
-- SQL Server authentication – Leverages an account created within the SQL Server.
+- SQL Server authentication – Uses an account created within the SQL Server.
 
     - User name and password – If SQL Server authentication is selected, provide the **User name**
       and **Password** for the SQL account.
     - Specify a new password below – Specify a new password for the SQL server.
 
-- Use existing database – Confirm the SQL Server connection has been established by selecting the
-  radio button for **Use existing database** and clicking the drop-down arrow. If a listing of
-  databases appears, then the connection has been established. Select this option to use a
-  pre-existing database. Then select a database from the drop-down menu of available databases.
+- Use existing database – Confirm that the SQL Server connection succeeded by selecting the
+  radio button for **Use existing database** and clicking the dropdown arrow. If a listing of
+  databases appears, the connection succeeded. Select this option to use a
+  pre-existing database. Then select a database from the dropdown menu of available databases.
 - Create new database – Select this option to create a new database during the configuration of the
   storage profile. Enter a unique, descriptive name for the new database. If multiple databases
-  might exist for Enterprise Auditor, then the default name of Enterprise Auditor is not
+  might exist for Enterprise Auditor, then the default name of Enterprise Auditor isn't
   recommended.
 
 See the
@@ -71,9 +71,10 @@ topic for additional information on creating a SQL Server database for Enterpris
 
 **Step 5 –** Click **Next**.
 
-- If SQL Server authentication is used, the Options page is displayed next. Skip to Step 7.
-- If Windows Server authentication is used, the **Schedule Account** page is enabled for
-  configuration. Continue to Step 6.
+- If you use SQL Server authentication, Enterprise Auditor displays the Options page next. Skip to
+  Step 7.
+- If you use Windows Server authentication, Enterprise Auditor enables the **Schedule Account**
+  page for configuration. Continue to Step 6.
 
 ![Schedule Account Configuration page](/images/accessanalyzer/11.6/install/application/scheduleaccount.webp)
 
@@ -82,7 +83,7 @@ page. The account configured here must be an Active Directory account and must h
 Enterprise Auditor Console server’s local Task folders as well as sufficient rights to the
 Enterprise Auditor database.
 
-There are two options that can be selected:
+You can select one of two options:
 
 - Skip this step, I will configure a schedule service account later – Select this radio button to
   skip this step and configure the schedule service account later
@@ -96,20 +97,20 @@ There are two options that can be selected:
 
 ![Configuration wizard Options page](/images/accessanalyzer/11.6/install/application/options.webp)
 
-**Step 7 –** On the Options page, select whether to send usage statistics to Netwrix to help us
-improve our product. After the Usage Statistics option is set as desired, click **Next** to
+**Step 7 –** On the Options page, select whether to send usage statistics to Netwrix to help
+improve the product. After you set the Usage Statistics option as desired, click **Next** to
 continue.
 
 - If selected, usage statistics are collected and sent to Netwrix
 
-    - Upon startup of the Enterprise Auditor console, the system checks if usage statistics have
-      been sent in the last 7 days. If they have not been, stored procedures run against the
+    - Upon startup of the Enterprise Auditor console, the system checks whether it sent usage
+      statistics in the last 7 days. If not, stored procedures run against the
       Enterprise Auditor database and gather data about job runs, access times, and environmental
-      details like resource counts, users counts, number of exceptions, and so on. This data is then
-      sent back to Netwrix to help us identify usage trends and common pain points, so that we can
-      use this information to improve the product.
-    - Only anonymous statistic-level data is included. No private company or personal data is
-      collected or sent to Netwrix.
+      details like resource counts, user counts, number of exceptions, and so on. Enterprise Auditor
+      then sends this data back to Netwrix to help identify usage trends and common problem areas,
+      which Netwrix uses to improve the product.
+    - Enterprise Auditor includes only anonymous statistic-level data. It doesn't collect or send
+      private company or personal data to Netwrix.
 
 - If cleared, no usage statistics are collected or sent to Netwrix
 
@@ -130,7 +131,7 @@ topic for more information about logs.
 ![Netwrix Acces Governance Settings Node](/images/accessanalyzer/11.6/install/application/settingsnode.webp)
 
 The Enterprise Auditor Console is now ready for custom configuration and use. There are a few
-additional steps to complete in order to begin collecting data, such as configuring a Connection
+additional steps to complete to begin collecting data, such as configuring a Connection
 Profile and a Schedule Service account as well as discovering hosts and setting up host lists. See
 the [Getting Started](/docs/accessanalyzer/11.6/gettingstarted.md)
 topic for additional information.

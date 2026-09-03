@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Manage Security Roles
 
-After creating a security role, you can manage various settings for it, such as tole criteria,
+After creating a security role, you can manage various settings for it, such as role criteria,
 permissions, and policies.
 
 ## View Security Roles
@@ -15,13 +15,13 @@ permissions, and policies.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Security Roles** under **Settings** in the left pane.  
-   On the **Security Roles** page, the following information is displayed for a role:
+   On the **Security Roles** page, you can see the following information for each role:
 
     | Label | Description |
     | --- | --- |
-    | Enable | Shows whether the security role is enabled or disabled. Use the toggle button for an enabled role to disable it and vice versa. Members of a disabled role cannot access Directory Manager. |
+    | Enable | Shows whether the security role is enabled or disabled. Use the toggle button for an enabled role to disable it and vice versa. Members of a disabled role can't access Directory Manager. |
     | Display name | The display name of the security role. |
-    | Priority | Each security role is assigned a value from 1-99, where 1 indicates the highest priority and 99 indicates the lowest priority. Role priority is unique for a role in an identity store. Role priority is used to resolve conflicts when a user has more than one role in Directory Manager. For example, when a user has two roles, Administrator and User, with role priority set to 1 and 25 respectively, then permissions and policies for the higher priority role (i.e., Administrator), will apply when the user logs into Directory Manager. |
+    | Priority | Each security role is assigned a value from 1-99, where 1 indicates the highest priority and 99 indicates the lowest priority. Role priority is unique for a role in an identity store. Role priority is used to resolve conflicts when a user has more than one role in Directory Manager. For example, when a user has two roles, Administrator, and User, with role priority set to 1 and 25 respectively, then permissions and policies for the higher priority role (i.e., Administrator), will apply when the user logs into Directory Manager. |
     | Criteria | Role criteria determines the users the role applies to. You can specify as container or group as criteria for a role. <br /><ul><li>In case of a container, all users residing in it are assigned the role.</li><li>For a group, all group members are assigned the role.</li></ul> |
     | Description | A description for the security role. |
     | Actions | <ul><li>Click **Edit** for a security role to update its details, criteria, policies, and permissions.</li><li>Click the ellipsis button and select Delete to delete the security role.</li><li>Click the ellipsis button and select Copy to create a new security role by copying the respective role.</li></ul> |

@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # Alerts Interface
 
-The Alerts interface allows you to quickly view recent Security events, Operations events, and
+Use the Alerts interface to quickly view recent Security, Operations, and
 Configuration events for Threat Prevention - all of which are known as alerts. These events are
-system-generated and do not require any prior configuration.
+system-generated and don't require any prior configuration.
 
 You can choose to view alerts related to analytics configuration and monitoring status on the Alerts
 interface. See the [Alerts Cleanup Window](/docs/threatprevention/8.0/admin/alerts/alertscleanup.md) topic for options to display
@@ -106,7 +106,7 @@ Below are some considerations:
 - In addition to the LSASS process termination check, the Agent can be configured for a Safe Mode.
   In Safe Mode, the Agent records the version of the LSASS DLLs that it hooks into during
   installation. When an Agent is restarted, it compares the DLL versions with the recorded list. If
-  the versions do not match, the Windows AD Events monitoring module is not loaded. The Agent’s
+  the versions don’t match, the Windows AD Events monitoring module isn’t loaded. The Agent’s
   status in the Agents interface changes to Active (Modules Pending), and all Active Directory
   monitoring/blocking by that Agent stops. The 'Agent Started in AD Monitor pending mode' alert
   (Operations alert) is triggered in this event. To resolve the issue temporarily, the Threat

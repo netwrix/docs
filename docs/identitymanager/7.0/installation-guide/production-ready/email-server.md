@@ -66,7 +66,7 @@ Here is a classic example that enables Identity Manager to send emails through 
   }
 ```
 
-If you'd rather use a **local** SMTP server with **pickup directory**, _Host_, _Port_, _Username_ and _Password_ won't be needed.
+If you'd rather use a **local** SMTP server with **pickup directory**, _Host_, _Port_, _Username_, and _Password_ won't be needed.
 
 ```json
 "MailSettings": {
@@ -76,9 +76,7 @@ If you'd rather use a **local** SMTP server with **pickup directory**, _Host_, _
   }
 ```
 
-## That's It!
+## Complete
 
-Now, you're all set to start using Identity Manager.
-
-Enjoy the benefits of your new Identity and Access Management solution.
+SMTP is now configured for Identity Manager.
 

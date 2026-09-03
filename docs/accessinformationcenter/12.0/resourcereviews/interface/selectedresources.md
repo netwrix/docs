@@ -11,7 +11,7 @@ The Selected Resources window opens from the **View Selections** button in the
 
 ![Selected Resources windwo](/images/accessinformationcenter/12.0/resourcereviews/window/selectedresources.webp)
 
-The table displays:
+The table shows:
 
 - Resource — The icon indicates the type of resource. The resource name includes its location, such
   as the UNC path for a file system resource, the URL for SharePoint resource, or Group name (e.g.,

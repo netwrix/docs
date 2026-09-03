@@ -107,12 +107,12 @@ thread requires a minimum of 2 additional GB of RAM per host. For example, a job
 
 ## SQL Query Configuration
 
-The SQL Data Collector is configured through the SQL Data Collector Wizard. The wizard contains the
+You configure the SQL Data Collector through the SQL Data Collector Wizard. The wizard contains the
 following pages, which change based upon the query category selected:
 
 :::note
-The SQL Data Collector is used in multiple Access Analyzer Solutions, and the query
-categories used are dependent on the solution.
+Multiple Access Analyzer Solutions use the SQL Data Collector, and the query
+categories depend on the solution.
 :::
 
 

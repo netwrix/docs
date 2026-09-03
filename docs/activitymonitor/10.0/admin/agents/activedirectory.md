@@ -8,20 +8,20 @@ sidebar_position: 40
 
 Before deploying the Active Directory (AD) agent, ensure all
 [AD Agent Server Requirements](/docs/activitymonitor/10.0/requirements/adagent/adagent.md) have been met. To effectively
-monitor Active Directory, it is necessary to deploy an AD agent to every domain controller,
-including the read only domain controllers. However, it is possible to deploy the agents in batches.
-Follow the steps to deploy the AD agents to the domain controllers in the target domain.
+monitor Active Directory, you must deploy an AD agent to every domain controller,
+including the read only domain controllers. However, you can deploy the agents in batches.
+To deploy the AD agents to the domain controllers in the target domain:
 
 :::note
 These steps are specific to deploying AD agents for monitoring Active Directory.
 :::
 
 
-**Step 1 –** On the Agents tab, click Add agent to open the Add New Agent(s) window.
+**Step 1 –** On the Agents tab, click Add agent to open the Add New Agents window.
 
 ![Install New Agent](/images/activitymonitor/9.0/install/agent/installnew.webp)
 
-**Step 2 –** Click on the Install agents on Active Directory domain controllers link to deploy
+**Step 2 –** Click the Install agents on Active Directory domain controllers link to deploy
 activity agents to multiple domain controllers.
 
 :::note
@@ -32,7 +32,7 @@ The Activity Monitor will validate the entered Host Name or IP Address entered 
 
 ![Specify Agent Port](/images/activitymonitor/9.0/install/agent/portdefault.webp)
 
-**Step 3 –** Specify the port that should be used by the new agent(s).
+**Step 3 –** Specify the port that should be used by the new agents.
 
 ![Agent Install Location](/images/activitymonitor/9.0/admin/agents/add/locationdefault.webp)
 
@@ -50,10 +50,10 @@ is a member of BUILTIN\Administrators group on the domain. Then, click **Connect
 
 ![Example of a successful connection on the Active Directory Connection page](/images/activitymonitor/9.0/admin/agents/add/adconnectionsuccessful.webp)
 
-When the connection is successful, the Next button is enabled. Click Next to continue.
+When the connection succeeds, the system enables the Next button. Click Next to continue.
 
 :::note
-An Administrator’s credentials are required to test the connection to the server. This is
+You must use administrator credentials to test the connection to the server. This is
 the only way to enable the Next button.
 :::
 
@@ -77,25 +77,23 @@ controllers to monitor all activity of the domain.
 
 ![Test Connection to Domain Controller](/images/activitymonitor/9.0/admin/agents/add/dcsdeployagentconnection.webp)
 
-**Step 8 –** Click the **Test** button to verify the connection to the domains selected. Once the
+**Step 8 –** Click the **Test** button to verify the connection to the domains selected. After the
 connection is verified, click **Next** to continue.
 
 ![Windows Agent Settings Page](/images/activitymonitor/9.0/admin/agents/add/windowsagentsettingspage.webp)
 
 **Step 9 –** On the Windows Agent Settings page, there are two settings to configure.
 
-- Add Windows file activity monitoring – Select the check box to add Windows file activity
-  monitoring after installing the agent. By default a new agent install monitors nothing. If
-  administrators want to monitor file activity on Windows servers, it is easier to enable it after
-  installation of the agent. Windows file activity monitoring can be enabled and configured later in
-  the console.
+- Add Windows file activity monitoring – Select the checkbox to add Windows file activity
+  monitoring after installing the agent. By default a new agent install monitors nothing. Enable
+  Windows file activity monitoring after agent installation if you need to monitor file activity on
+  Windows servers. You can also enable and configure it later in the console.
 - Management Group – By default, the agent only accepts commands from members of the
-  BUILTIN\Administrators group. Less privilege accounts can be configured to manage the agent with
-  the Management Group setting. Keep in mind that only administrators can install, update and
+  BUILTIN\Administrators group. You can configure less privileged accounts to manage the agent with
+  the Management Group setting. Only administrators can install, update, and
   uninstall the agent.
 
-**Step 10 –** Click **Finish**. The Add New Agent(s) window closes, and the activity agent is
-deployed to and installed on the target host.
+**Step 10 –** Click **Finish**. The Add New Agents window closes, and Activity Monitor deploys and installs the activity agent on the target host.
 
 During the installation process, the status will be Installing. If there are any errors, the
 Activity Monitor stops the installation and lists the errors in the Agent messages box.

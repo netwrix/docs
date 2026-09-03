@@ -27,7 +27,7 @@ Users_ local group on the SCVMM server.
 
 ![deployment_3](/images/auditor/10.7/addon/hyperv/diagram3servers_thumb_0_0.webp)
 
-In this scenario, make sure to specify SCVMM server address in the **DataCollectionServer**
+In this scenario, ensure to specify SCVMM server address in the **DataCollectionServer**
 parameter (not the machine where SCVMM console runs) in the **settings.xml** configuration file. See
 the [Add-On Parameters](/docs/auditor/10.7/addon/hyperv/parameters.md)topic for additional information.
 
@@ -78,7 +78,7 @@ Configuration parameters __NetwrixAuditorUserName__ and __NetrixAuditorPassword_
 
 `<DataCollectionPassword/>`
 
-Credentials for **Data Collection Server** (that is, SCVMM) are not required.
+Credentials for **Data Collection Server** (that is, SCVMM) aren't required.
 
 ## Example 4
 

@@ -13,7 +13,7 @@ The Redshift_Configuration job returns additional configuration settings from Re
 The Redshift_Configuration Job uses the SQL Data Collector for queries.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 

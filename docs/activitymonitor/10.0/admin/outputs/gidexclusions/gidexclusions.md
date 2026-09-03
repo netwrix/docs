@@ -18,7 +18,7 @@ The tab contains the following settings:
 
 - Add – Opens the Add or Edit GID window to add a group for exclusion. See the
   [Add or Edit GID Window](/docs/activitymonitor/10.0/admin/outputs/gidexclusions/addeditgid.md) topic for additional information.
-- Remove – Removes the selected group from exclusion. Confirmation is not requested.
+- Remove – Removes the selected group from exclusion. Confirmation isn't requested.
 
     :::warning
     If an account is removed by group, use the **Cancel** button to discard the change.

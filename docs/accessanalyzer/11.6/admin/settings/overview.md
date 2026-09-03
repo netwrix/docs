@@ -6,15 +6,15 @@ sidebar_position: 20
 
 # Global Settings
 
-The global settings have an overall impact on the running ofEnterprise Auditor jobs. Settings are
-inherited through a parent-child structure from the Settings node through the Jobs tree to the
-individual jobs unless inheritance is broken by direct assignment at either the job group or the
-individual job level.
+The global settings have an overall impact on the running ofEnterprise Auditor jobs. Settings inherit
+through a parent-child structure from the Settings node through the Jobs tree to the
+individual jobs, unless you break inheritance by directly assigning settings at either the job
+group or the individual job level.
 
 ![Configuration Settings](/images/accessanalyzer/11.6/admin/settings/globalsettings.webp)
 
-Some of these settings are configured during the initial launching of theEnterprise Auditor Console.
-Others are configured as desired by the end-user. Expand the Settings node in the Navigation pane to
+You configure some of these settings during the initial launch of the Enterprise Auditor Console.
+The end-user configures others as desired. Expand the Settings node in the Navigation pane to
 select a global setting to configure:
 
 - [Access](/docs/accessanalyzer/11.6/admin/settings/access/overview.md)
@@ -37,11 +37,11 @@ select a global setting to configure:
       according to the data collector being used
 - [Exchange](/docs/accessanalyzer/11.6/admin/settings/exchange.md)
     - Required for auditing an organization’s Exchange environment
-    - Only enabled for configuration once the Enterprise Auditor for Exchange Solution prerequisites
+    - Only enabled for configuration after the Enterprise Auditor for Exchange Solution prerequisites
       are installed
     - Configure Microsoft Exchange server connections and requires Exchange server versions and
       names
-    - The ExchangeMailbox, Exchange2K, ExchangePS, and ExchangePublicFolder Data Collectors utilize
+    - The ExchangeMailbox, Exchange2K, ExchangePS, and ExchangePublicFolder Data Collectors use
       these global settings
 - [History](/docs/accessanalyzer/11.6/admin/settings/history.md)
     - Configure job data retention period settings
@@ -65,7 +65,7 @@ select a global setting to configure:
 - [Schedule](/docs/accessanalyzer/11.6/admin/settings/schedule.md)
     - Optional configuration during the initial launch if Windows authentication is used with the
       Storage Profile
-    - Required in order to schedule host inventory, job, analysis task, and action task execution
+    - Required to schedule host inventory, job, analysis task, and action task execution
     - Provide credentials used against the Enterprise Auditor Console server to execute scheduled
       jobs with the Windows Task Scheduler
     - Creating a Schedule Service Account requires credentials on the Enterprise Auditor Console

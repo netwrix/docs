@@ -24,13 +24,13 @@ The example below creates a workflow to update only the user's name.
   <Workflow Identifier="Directory_User_ChangeName" DisplayName_L1="User - Update Name" VariablesType="Workflow_Directory_User">    <Activity Identifier="Request" DisplayName_L1="Request" Template="ActionWithRefine" />    <Activity Identifier="Persist" DisplayName_L1="Commit" Template="Persist" />  </Workflow>
 ```
 
-For now, our workflow works with an immediate validation and an immediate effect.
+For now, this workflow works with an immediate validation and an immediate effect.
 
 ## Create Forms
 
 The XML configuration below represents the creation of a [Form](../../../integration-guide/toolkit/xml-configuration/user-interface/form) that defines the elements to display in the workflow.
 
-Here we just have the full name field to update the corresponding attributes for a given user:
+In this example, the full name field updates the corresponding attributes for a given user:
 
 ```
 <Form Identifier="Workflow_Directory_User_ChangeName_Base" EntityType="Workflow_Directory_User">  <Control DisplayName_L1="Full Name" OutputType="LayoutRowset" EntityType="Directory_UserRecord">    <Control Binding="LastName" />    <Control Binding="FirstName" />  </Control></Form>
@@ -38,7 +38,7 @@ Here we just have the full name field to update the corresponding attributes for
 
 ## Link the Forms to the Workflow
 
-After creating a workflow with given activities, it is necessary to create the form to be displayed when launching the workflow. It has the type corresponding to a (unique) record's replacement, i.e. `WorkflowAddAndEndRecordEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
+After creating a workflow with given activities, create the form to be displayed when launching the workflow. It has the type corresponding to a (unique) record's replacement, i.e. `WorkflowAddAndEndRecordEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
 
 ```
 <WorkflowAddAndEndRecordEntityForm Identifier="Workflow_Directory_User_ChangeName" EntityType="Workflow_Directory_User" MainProperty="Workflow_Directory_User:Directory_User" RecordProperty="Directory_User:Records" WorkflowRequestType="Self" Activity="Directory_User_ChangeName:Request" HideRoles="true" FormTitle_L1="Change Name"></WorkflowAddAndEndRecordEntityForm>
@@ -54,7 +54,7 @@ A `WorkflowAddAndEndRecordEntityForm` requires the following child elements:
 </WorkflowAddAndEndRecordEntityForm>
 ```
 
-The `MainControl` attribute is here an empty container, because it is a mandatory attribute that is not involved in the changes of this workflow.
+The `MainControl` attribute is here an empty container, because it is a mandatory attribute that isn't involved in the changes of this workflow.
 
 - `RecordControl` that defines record data, and call the form created previously.
 
@@ -96,7 +96,7 @@ To create a menu item here for the new workflow, you can add the following XML c
 
 ## Add Aspects
 
-For each workflow, it is possible to add aspects according to the workflow's purpose.
+For each workflow, add aspects according to the workflow's purpose.
 
 ## Homonym Detection (Optional)
 

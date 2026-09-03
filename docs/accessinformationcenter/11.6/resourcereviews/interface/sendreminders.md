@@ -8,7 +8,7 @@ sidebar_position: 40
 
 The Send Reminders window opens from the
 [Manage Reviews Page](/docs/accessinformationcenter/11.6/resourcereviews/interface/interface.md#manage-reviews-page)
-of the Resource Reviews interface. Select the desired active review(s) and click **Send Reminders**
+of the Resource Reviews interface. Select the active reviews you want and click **Send Reminders**
 to send immediate reminder notifications. The Send Reminders window opens to display an action
 status.
 

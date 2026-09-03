@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Mailbox: Operations
 
-Use the Operations page to specify the operation to be performed as part of the action.
+Use the Operations page to specify the operation to perform as part of the action.
 
 ![New Mailbox Action Wizard Operations page](/images/accessanalyzer/12.0/admin/action/mailbox/operations.webp)
 

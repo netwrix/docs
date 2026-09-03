@@ -16,8 +16,8 @@ The configurable options are:
 
 - Test Database:
 
-    - Data Source – Select the host\instance from the drop-down menu
-    - Database – Select the database from the drop-down menu
+    - Data Source – Select the host\instance from the dropdown menu
+    - Database – Select the database from the dropdown menu
 
         - Convert CDB to DBA on non-container databases
 

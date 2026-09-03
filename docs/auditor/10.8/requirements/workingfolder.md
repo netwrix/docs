@@ -6,10 +6,10 @@ sidebar_position: 70
 
 # Working Folder
 
-The working folder is a file-based storage that also keeps operational information (configuration
-files of the product components, log files, and other data). To ensure audit trail continuity,
-Netwrix Auditor also caches some audit data locally in its working folder for a short period (up to
-30 days) prior to storing it to the Long-Term Archive or audit database.
+The working folder is a file-based storage that keeps operational information (configuration
+files, log files, and other data). To ensure audit trail continuity,
+Netwrix Auditor caches audit data locally in its working folder for a short period (up to
+30 days) before storing it to the Long-Term Archive or audit database.
 
 By default, the working folder is located at _%ProgramData%\Netwrix Auditor_.
 

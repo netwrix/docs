@@ -17,7 +17,7 @@ Create a JSON file with a request. This file should contain the account name and
 want to test.
 
 :::note
-The EPE Rest service only checks the password; it does not change it.
+The EPE Rest service only checks the password; it doesn't change it.
 :::
 
 

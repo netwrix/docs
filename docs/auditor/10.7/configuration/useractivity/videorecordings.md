@@ -17,7 +17,7 @@ be configured:
 - The user must have read permissions (resultant set) to the **Netwrix_UAVR$** shared folder where
   video files are stored. By default, all members of the **Netwrix Auditor Client Users** group can
   access this shared folder. Both the group and the folder are created automatically by Netwrix
-  Auditor. Make sure to grant sufficient permissions on folder or explicitly add user to the group
+  Auditor. Ensure to grant sufficient permissions on folder or explicitly add user to the group
   (regardless his or her role delegated in the product). See the To Add an Account to Netwrix
   Auditor Client Users Group topic for additional information.
 - A dedicated codec must be installed. This codec is installed automatically on the computer where
@@ -45,12 +45,10 @@ Auditor console.
 **NOTE:** Microsoft is in the process of deprecating Internet Explorer. However, if you are trying
 to access the video recordings from browser via direct links (reports on SSRS portal, subscriptions,
 activity summaries, search export results), IE engine should be present on the client machine. IE
-might be disabled with GPO, but it should not be removed completely. Recommended option is to use
+might be disabled with GPO, but it shouldn't be removed completely. Recommended option is to use
 Edge with "IE mode" option enabled.
 
 ## To Configure Internet Explorer Security Settings
-
-Follow the steps to configure Internet Explorer security settings.
 
 **Step 1 –** In Internet Explorer, navigate to **Tools** > **Internet Options**.
 
@@ -68,8 +66,6 @@ checkbox.
 
 ## To Enable JavaScript
 
-Follow the steps to enable JavaScript.
-
 **Step 1 –** In Internet Explorer, navigate to **Tools** > **Internet Options**.
 
 **Step 2 –** Switch to the Security tab and select **Internet**. Click **Custom Level**.
@@ -79,8 +75,6 @@ verify that **Active scripting** is set to **Enable**.
 
 ## To Disable Internet Explorer Enhanced Security Configuration (IE ESC)
 
-Follow the steps to disable Internet Explorer enhanced security configuration.
-
 **Step 1 –** Navigate to Start > Windows Administrative Tools > **Server Manager**.
 
 **Step 2 –** In the Security Information section, click Configure IE ESC link on the right to
@@ -88,10 +82,7 @@ disable it.
 
 ## To Add an Account to Netwrix Auditor Client Users Group
 
-All members of the Netwrix Auditor Client Users group are granted the Global reviewer role in
-Netwrix Auditor and have access to all collected data.
-
-Follow the steps to add an account to the Netwrix Auditor Client Users group.
+All members of the Netwrix Auditor Client Users group are granted the Global reviewer role in Netwrix Auditor and have access to all collected data.
 
 **Step 1 –** On the computer where Netwrix Auditor Server is installed, start the Local Users and
 Computers snap-in.

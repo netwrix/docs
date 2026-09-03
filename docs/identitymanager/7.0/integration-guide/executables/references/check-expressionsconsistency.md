@@ -12,7 +12,7 @@ This tool is used to check the C# expressions consistency.
 
 The following example checks the C# expressions compatibility with Identity Manager.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 .\Usercube-Check-ExpressionsConsistency.exe --database-connection-string "data source=.;Database=UsercubeV5demo;Integrated Security=SSPI;Min Pool Size=10;Encrypt=false" --output-path "C:\UsercubeDemo\Dump"

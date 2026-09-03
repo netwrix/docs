@@ -12,19 +12,19 @@ At this step of the wizard, select processing (indexing) mode for your environme
 
 For starter and evaluation purposes, select Keyword mode.
 
-Review the short description below and select mode:
+Review the following descriptions and select a mode:
 
 ## No Index
 
-In this mode, the core search index will be disabled, heavily reducing the disk space requirements
+In this mode, the system disables the core search index, heavily reducing the disk space requirements
 for the CSE files and improving overall document throughput for classification. Under this mode
-Search is not available and Browse functionality is not subject to security trimming. Recommended
+Search isn't available and Browse functionality isn't subject to security trimming. Recommended
 for data discovery, data security governance and compliance use cases.
 
 ## Keyword
 
-In this mode the search index will be created; however, disk space required for the core search
-index will be of medium size. Both **Browse** and **Search** by keyword will be supported. Overall
+In this mode, the system creates a search index; however, disk space required for the core search
+index is of medium size. Both **Browse** and **Search** by keyword will be supported. Overall
 throughput is capable of supporting large number of documents (> 1M). Recommended for compliance,
 data discovery and classification rules tuning.
 

@@ -21,13 +21,11 @@ available as separate clients.
 
 ## Generate the Consumer URL for a Directory Manager Client
 
-Follow the steps to generate the consumer URL for a Directory Managerclient.
-
 Step 1 – In Authenticate, click the **Generate URL's** tab. The Generate URL's page is displayed.  
 See the [Launch Authenticate](/docs/directorymanager/11.1/authenticate/overview.md#launch-authenticate) section of the
 [Authenticate](/docs/directorymanager/11.1/authenticate/overview.md) topic for additional information.
 
-Step 2 – In the Select Client to Generate Consumer URL drop-down list, select a Directory Manager
+Step 2 – In the Select Client to Generate Consumer URL dropdown list, select a Directory Manager
 client to set up AD FS with it. Let’s suppose you select the Directory Manager portal named
 _Wizard_.
 
@@ -43,22 +41,20 @@ Manager client configured with AD FS, and update it in AD FS.
 
 ## Generate Entity ID/Audience URL
 
-Follow the steps to generate Entity ID/Audience URL.
-
 Step 1 – In Authenticate, click the **SAML Providers** tab. The SAML Providers page is displayed.  
 See the [Launch Authenticate](/docs/directorymanager/11.1/authenticate/overview.md#launch-authenticate) section of the
 [Authenticate](/docs/directorymanager/11.1/authenticate/overview.md) topic for additional information.
 
 Step 2 – Click **New Provider**.
 
-Step 3 – On the Create New Provider page, the Identity storesdrop-down list displays the identity
+Step 3 – On the Create New Provider page, the Identity storesdropdown list displays the identity
 stores defined in Directory Manager. Select an identity store.
 
-The Client drop-down list displays the Directory Manager clients with respect to the identity store.
+The Client dropdown list displays the Directory Manager clients with respect to the identity store.
 Select the client with which you want to set up the SAML provider.  
 The client you select must be the one for which you generated the consumer URL.  
 To continue with the example, select the Directory Manager portal named _Wizard_ in the Client
-drop-down list.
+dropdown list.
 
 Step 4 – The Entity ID/Audience box displays a URL. Click **Copy** to copy it. Then paste it in a
 file, preferably a text file, to save it.

@@ -10,8 +10,8 @@ The Sensitive Content Audit interface is opened by searching for a particular cr
 the [Search Features](/docs/accessinformationcenter/12.0/resourceaudit/navigate/search.md) topic for additional information. It contains three panes in all
 audit interfaces: Reports, Results, and Group Membership.
 
-In order to enable the criteria match search feature, the **Store discovered sensitive data** option
-must be enabled in the Access Analyzer data collector scanning the target environment. See the
+To enable the criteria match search feature, enable the **Store discovered sensitive data** option
+in the Access Analyzer data collector scanning the target environment. See the
 relevant solution topic in the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information on the data collection options.

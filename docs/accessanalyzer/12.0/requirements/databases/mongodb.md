@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Target MongoDB Requirements, Permissions, and Ports
 
-The Access Analyzer for Databases Solution provides the ability to audit and monitor MongoDB
+The Access Analyzer for Databases Solution lets you audit and monitor MongoDB
 database environments to collect permissions and sensitive data. It scans:
 
 - MongoDB 5.0

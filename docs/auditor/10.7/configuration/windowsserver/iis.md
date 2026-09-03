@@ -19,7 +19,7 @@ To configure the Operational log size and retention method
 
     ![manualconfig_iis2016](/images/auditor/10.7/configuration/windowsserver/manualconfig_iis2016.webp)
 
-4. Make sure **Enable logging** is enabled.
+4. Ensure **Enable logging** is enabled.
 5. Set **Maximum log size** to 4 GB.
-6. Make sure **Do not overwrite events (Clear logs manually)** is cleared. If selected, change the
+6. Ensure **Don't overwrite events (Clear logs manually)** is cleared. If selected, change the
    retention method to **Overwrite events as needed (oldest events first)**.

@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Validate Setup
 
-Once the Activity Monitor agent is configured to monitor the Dell device, the automated
-configuration must be validated to ensure events are being monitored.
+After you configure the Activity Monitor agent to monitor the Dell device, validate the automated
+configuration to ensure it's monitoring events.
 
 ## Validate Dell CEE Registry Key Settings
 
@@ -18,13 +18,12 @@ topic for information on manually setting the registry key.
 :::
 
 
-After the Activity Monitor activity agent has been configured to monitor the Dell device, it will
-configure the Dell CEE automatically if it is installed on the same server as the agent. This needs
-to be set manually in the rare situations where it is necessary for the Dell CEE to be installed on
-a different server than the Windows proxy server(s) where the Activity Monitor activity agent is
-deployed.
+After you configure the Activity Monitor activity agent to monitor the Dell device, the agent
+automatically configures Dell CEE if it's installed on the same server. In rare cases, if you
+install Dell CEE on a different server than the Windows proxy servers where the activity agent is
+deployed, you need to set this manually.
 
-If the monitoring agent is not registering events, validate that the EndPoint is accurately set.
+If the monitoring agent isn't registering events, validate that the EndPoint is accurately set.
 Open the Registry Editor (run regedit). For the synchronous real-time delivery mode (AUDIT), use the
 following steps.
 
@@ -90,22 +89,22 @@ additional information.
 
 ## Validate Dell CEE Services are Running
 
-After the Activity Monitor Activity Agent has been configured to monitor the Dell device, the Dell
-CEE services should be running. If the Activity Agent is not registering events and the EndPoint is
+After you configure the Activity Monitor Activity Agent to monitor the Dell device, the Dell
+CEE services should be running. If the Activity Agent isn't registering events and the EndPoint is
 set accurately, validate that the Dell CEE services are running. Open the Services (run
 `services.msc`).
 
 ![services](/images/activitymonitor/8.0/config/dellpowerstore/services.webp)
 
-The following services laid down by the Dell CEE installer should have Running as their status:
+The following services installed by the Dell CEE installer should show Running as their status:
 
 - Dell CAVA
 - Dell CEE Monitor
 
 ## Dell CEE Debug Logs
 
-If an issue arises with communication between the Dell CEE and the Activity Monitor, the debug logs
-need to be enabled for troubleshooting purposes. Follow the steps.
+If an issue arises with communication between the Dell CEE and the Activity Monitor, enable the
+debug logs for troubleshooting. Follow the steps.
 
 **Step 6 –** In the Activity Monitor Console, change the **Trace level** value in the lower right
 corner to Trace.
@@ -121,19 +120,19 @@ and Disable monitoring.
 
 **HKEY_LOCAL_MACHINE\SOFTWARE\EMC\CEE\Configuration**
 
-**Step 10 –** Right-click on **Debug** and select Modify. The Edit DWORD Value window opens. In the
+**Step 10 –** Right-click **Debug** and select Modify. The Edit DWORD Value window opens. In the
 Value data field, enter the value of 3F. Click OK, and the Edit DWORD Value window closes.
 
 :::note
-If the Debug DWORD Value does not exist, it needs to be added.
+If the Debug DWORD Value doesn't exist, add it.
 :::
 
 
-**Step 11 –** Right-click on **Verbose** and select Modify. The Edit DWORD Value window opens. In
+**Step 11 –** Right-click **Verbose** and select Modify. The Edit DWORD Value window opens. In
 the Value data field, enter the value of 3F. Click OK, and the Edit DWORD Value window closes.
 
 :::note
-If the Verbose DWORD Value does not exist, it needs to be added.
+If the Verbose DWORD Value doesn't exist, add it.
 :::
 
 
@@ -154,7 +153,7 @@ and Enable monitoring.
 - Use the **Collect Logs** button to collect debug logs from the activity agent
 
 :::info
-After the logs have been gathered and sent to Netwrix Support, reset these
+After you gather the logs and send them to Netwrix Support, reset these
 configurations.
 
 :::

@@ -9,8 +9,6 @@ sidebar_position: 20
 You can fine-tune Netwrix Auditor by specifying data that you want to exclude from monitoring and
 alerting on password expiration.
 
-Follow the steps to exclude data from the Active Directory monitoring scope.
-
 **Step 1 –** Navigate to the \_%Netwrix Auditor installation folder%\Password Expiration
 Alerting_folder.
 

@@ -6,15 +6,13 @@ sidebar_position: 30
 
 # Secure Console Access
 
-Enable Secure Sockets Layer (SSL) for secure, remote connections to the application web server. In
-order to enable SSL, you need to create a certificate and then bind it to the secure port.
+Enable Secure Sockets Layer (SSL) for secure, remote connections to the application web server. To enable SSL, you need to create a certificate and then bind it to the secure port.
 
 **NOTE:** Organizations typically have one or more system administrators responsible for Public Key
-Infrastructure (PKI) and certificates. To continue with this configuration, it will first be
-necessary to confer with the PKI administrator to determine which certificate method will conform to
-the organization’s security policies.
+Infrastructure (PKI) and certificates. To continue with this configuration, first confer with the PKI
+administrator to determine which certificate method will conform to the organization’s security policies.
 
-Follow the steps to enable SSL.
+## Enable SSL
 
 **Step 1 –** Create an SSL Binding.
 
@@ -33,7 +31,7 @@ variables:
 - The `$port` value must be accurate for your environment. The HTTP default port is 81. The HTTPS
   default is 481. However, it can be customized during installation.
 - The `$guid` value is required for specifying a valid GUID value to identify the owning application
-  for a binding purpose. It obtained from any valid GUID.
+  for a binding purpose. Obtain it from any valid GUID.
 
 If you need to find the `$certHash` value of a certificate that was already created, run the
 PowerShell `dir` command below on the certificate's drive. This will output the Thumbprint (Hash)
@@ -43,7 +41,7 @@ value and the certificate name:
 dir cert:\localmachine\my
 ```
 
-Replace the environmental variables in the example script below. Then Run the PowerShell command to
+Replace the environmental variables in the example script below. Then run the PowerShell command to
 create an SSL binding:
 
 ```powershell
@@ -58,8 +56,7 @@ The next step is to modify the `AccessInformationCenter.Service.exe.Config` file
 
 ## Modify the AccessInformationCenter.Service.exe.Config File
 
-Follow the steps to modify the Modify the `AccessInformationCenter.Service.exe.Config` file for
-HTTPS.
+To modify the `AccessInformationCenter.Service.exe.Config` file for HTTPS:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exe.Config` file in a text editor, e.g.
 Notepad. It is located in the installation directory:

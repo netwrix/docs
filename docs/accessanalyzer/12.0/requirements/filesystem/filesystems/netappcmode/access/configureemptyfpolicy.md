@@ -95,14 +95,14 @@ Example:
 security login role show enterpriseauditor
 ```
 
-Relevant NetApp Documentation: To learn more about creating security login roles, please visit the
+Relevant NetApp Documentation: For more information about creating security login roles, visit the
 NetApp website and read the
 [security login role create](https://library.netapp.com/ecmdocs/ECMP1196817/html/security/login/role/create.html)
 article.
 
 ## Create Security Login for FSAA Scans
 
-Once the access control role has been created, apply it to a domain account.
+After the access control role is created, apply it to a domain account.
 
 **:::warning**
 
@@ -154,7 +154,7 @@ Verify that the output is displayed as follows:
 
 ![validatesecuritylogincreation](/images/activitymonitor/8.0/config/netappcmode/validatesecuritylogincreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating security logins, please visit the NetApp
+Relevant NetApp Documentation: For more information about creating security logins, visit the NetApp
 website and read the
 [security login create](https://library.netapp.com/ecmdocs/ECMP12452955/html/security/login/create.html)
 article.
@@ -165,7 +165,7 @@ The External Engine defines how FPolicy makes and manages connections to externa
 
 IMPORTANT:
 
-- The `-primary-servers` must be the server from which the StealthAUDIT scans will be executed:
+- The `-primary-servers` must be the server that runs the StealthAUDIT scans:
 
     - StealthAUDIT Console server for local mode
     - proxy server if running in any of the proxy mode options
@@ -211,7 +211,7 @@ Verify that the output is displayed as follows:
 
 ![validateexternalenginecreation](/images/accessanalyzer/12.0/config/netappcmode/validateexternalenginecreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating an external engine, please visit the
+Relevant NetApp Documentation: For more information about creating an external engine, visit the
 NetApp website and read the
 [vserver fpolicy policy external-engine create](https://library.netapp.com/ecmdocs/ECMP1366832/html/vserver/fpolicy/policy/external-engine/create.html)
 article.
@@ -259,7 +259,7 @@ Verify that the output is displayed as follows:
 
 ![validatefpolciyeventcreation](/images/accessanalyzer/12.0/config/netappcmode/validatefpolciyeventcreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating an event, please visit the NetApp
+Relevant NetApp Documentation: For more information about creating an event, visit the NetApp
 website and read the
 [vserver fpolicy policy event create](https://library.netapp.com/ecmdocs/ECMP1196817/html/vserver/fpolicy/policy/event/create.html)
 article.
@@ -313,7 +313,7 @@ fpolicy policy show ‑instance
 
 ![validatefpolicypolicycreation](/images/accessanalyzer/12.0/config/netappcmode/validatefpolicypolicycreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating a policy, please visit the NetApp
+Relevant NetApp Documentation: For more information about creating a policy, visit the NetApp
 website and read the
 [vserver fpolicy policy create](https://library.netapp.com/ecmdocs/ECMP1366832/html/vserver/fpolicy/policy/create.html)
 article.
@@ -325,9 +325,9 @@ The FPolicy scope creates the filters necessary to perform scans on specific sha
 IMPORTANT:
 
 - The SVM used must be the SVM hosting the CIFS shares.
-- It is not necessary to specify both volumes and shares. One or the other is sufficient.
+- It isn't necessary to specify both volumes and shares. One or the other is sufficient.
 
-Use the following command to create the FPolicy scope by volume(s):
+Use the following command to create the FPolicy scope by volumes:
 
 ```
 vserver fpolicy policy scope create ‑vserver [SVM_NAME] ‑policy-name StealthAUDIT ‑volumes-to-include
@@ -339,7 +339,7 @@ Example:
 vserver fpolicy policy scope create ‑vserver testserver ‑policy-name StealthAUDIT ‑volumes-to-include
 ```
 
-Use the following command to create the FPolicy scope by share(s):
+Use the following command to create the FPolicy scope by shares:
 
 ```
 vserver fpolicy policy scope create ‑vserver [SVM_NAME] ‑policy-name StealthAUDIT ‑shares-to-include
@@ -363,14 +363,14 @@ fpolicy policy scope show ‑instance
 
 ![validatefpolicyscopecreation](/images/accessanalyzer/12.0/config/netappcmode/validatefpolicyscopecreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating scope, please visit the NetApp website
+Relevant NetApp Documentation: For more information about creating scope, visit the NetApp website
 and read the
 [vserver fpolicy policy scope create](https://library.netapp.com/ecmdocs/ECMP1196817/html/vserver/fpolicy/policy/scope/create.html)
 article.
 
 ## Enable the Empty FPolicy
 
-Once the empty FPolicy has been created, it must be enabled.
+After the empty FPolicy is created, it must be enabled.
 
 IMPORTANT:
 
@@ -400,7 +400,7 @@ vserver fpolicy show
 
 ![validatefpolicyenabled](/images/accessanalyzer/12.0/config/netappcmode/validatefpolicyenabled.webp)
 
-Relevant NetApp Documentation: To learn more about enabling a policy, please visit the NetApp
+Relevant NetApp Documentation: For more information about enabling a policy, visit the NetApp
 website and read the
 [vserver fpolicy enable](https://library.netapp.com/ecmdocs/ECMP1196817/html/vserver/fpolicy/enable.html)
 article.

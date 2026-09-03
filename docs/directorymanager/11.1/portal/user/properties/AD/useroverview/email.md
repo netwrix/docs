@@ -18,7 +18,7 @@ Outlook). These addresses are displayed in this box.
 
 Displays the subscriptions assigned to the mailbox.
 
-It also lists other subscriptions offered by Office 365 to a mailbox user. Select the check box for
+It also lists other subscriptions offered by Office 365 to a mailbox user. Select the checkbox for
 a subscription to assign it to the mailbox.
 
 The subscription list is displayed for mailbox objects when Office 365 is configured as the

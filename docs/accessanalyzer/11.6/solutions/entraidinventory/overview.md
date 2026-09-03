@@ -30,7 +30,7 @@ The .Entra ID Inventory Solution is a core component of all Enterprise Auditor 
 be installed from the Enterprise Auditor Instant Job Wizard. See the
 [Instant Job Wizard](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/overview.md)
 topic for additional information. Navigate to the solution by expanding the Jobs tree and selecting
-the **.Entra ID Inventory** Job Group. This group has been named in such a way to keep it at the top
+the **.Entra ID Inventory** Job Group. This group's name keeps it at the top
 of the Jobs tree.
 
 ## Jobs

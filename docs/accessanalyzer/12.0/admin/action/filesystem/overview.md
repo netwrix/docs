@@ -6,15 +6,14 @@ sidebar_position: 30
 
 # File System Action Module
 
-The File System Action Module allows Access Analyzer Administrators to automate the process of
-remediating and modifying Windows file system attributes and properties. The File System Action
+The File System Action Module lets Access Analyzer administrators automate remediating and
+modifying Windows file system attributes and properties. The File System Action
 Module provides options for changing attributes and permissions, as well as copying, deleting,
 moving, and renaming file system contents. It is available with a special Access Analyzer license.
 
 :::warning
-Be careful when using this Action Module. Make sure that only the changes required are
-applied and only to those target systems desired. Actions perform their functions on all rows in a
-table.
+Be careful when using this Action Module. Apply only the required changes, and only to the target
+systems you want to change. Actions perform their functions on all rows in a table.
 :::
 
 
@@ -24,7 +23,7 @@ its function on a single object per row from the source table defined in the act
 ## Permissions
 
 The File System Action Module requires a Access Analyzer connection profile and privileged access to
-file system devices. The Access Analyzer connection profile may be configured to have a Task account
+file system devices. You can configure the Access Analyzer connection profile to use a Task account
 type. The following are the least privileged access model required for Share Permission Changes:
 
 - Windows – User credential must be member of Power Users group
@@ -50,21 +49,22 @@ type. The following are the least privileged access model required for Share Per
 
 ## Applet Deployment
 
-The File System Action Module deploys an applet the first time an action is executed. Applets are
-installed within the Access Analyzer Installation Directory if the `%SAInstallDir%` environment is
-present. Otherwise, applets are deployed to `C:\Program Files (x86)\STEALTHbits\StealthAUDIT`.
+The File System Action Module deploys an applet the first time you run an action. The module
+installs applets within the Access Analyzer Installation Directory if the `%SAInstallDir%`
+environment variable is present. Otherwise, it deploys applets to
+`C:\Program Files (x86)\STEALTHbits\StealthAUDIT`.
 
 ## Source Table Configuration
 
 Individual action modules, including File System Action Module, may have their own column
 requirements. To take action on a file system resource, the source table must contain a column with
 values to uniquely identify it. File System resources correspond to rows in a Access Analyzer table.
-File System attributes correspond to columns. Once the source table has been scoped, use the Target
+File System attributes correspond to columns. After scoping the source table, use the Target
 page to specify the field that identifies the target attribute along with any environmental
 variables.
 
-These columns are required to use the File System Action Module. Otherwise, errors may occur upon
-execution of the action and with analysis and reports downstream.
+The File System Action Module requires these columns. Otherwise, errors may occur when you run the
+action, affecting analysis and reports downstream.
 
 | Required Columns | Description                                                                                                                  |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -72,12 +72,12 @@ execution of the action and with analysis and reports downstream.
 | RowKey           | Identifies each data row as unique. Sometimes the value is a GUID, but the datatype in the table is a varchar (text string). |
 
 :::tip
-Remember, the individual File System actions may have their own column requirements in addition to
-the above. These columns are made available through the File System Action Module wizard.
+Remember, individual File System actions may have their own column requirements in addition to the
+columns listed here. The File System Action Module wizard makes these columns available.
 :::
 
 
-The Operations page lists the operations that may be performed by the File System Action Module.
+The Operations page lists the operations that the File System Action Module can perform.
 Each operation has its own source table column requirements as follows:
 
 | Operation                       | Column requirements                                                                                                                                                     |

@@ -6,12 +6,12 @@ sidebar_position: 30
 
 # What's New in 5.6.2
 
-## New Netwrix Community!
+## New Netwrix Community
 
 All Netwrix product announcements have moved to the new Netwrix Community. See announcements for
 Netwrix Data Classification in the
 [Data Classification](https://community.netwrix.com/c/data-classification/announcements/102) area of
-our new community.
+the Netwrix Community.
 
 The following information highlights the new and enhanced features introduced in this Netwrix Data
 Classification 5.6.2 version.

@@ -7,7 +7,7 @@ sidebar_position: 10
 # Queries
 - [ManageSettingAccessControlRule](./managesettingaccesscontrolrule)
 
-Generates the access control rule which gives to a profile the permission to query, create, update and delete settings from the UM_Settings table.
+Generates the access control rule which gives a profile the permission to query, create, update, and delete settings from the UM_Settings table.
 - [ReportAccessControlRules](./reportaccesscontrolrules)
 
 Generates the permissions to access the report view.

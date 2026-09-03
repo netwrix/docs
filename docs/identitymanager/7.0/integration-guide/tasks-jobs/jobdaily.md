@@ -24,7 +24,7 @@ In the following example the Synchronization job for the Connector "AD" will be 
 
 If a pre-treatment is needed, you must create an [Export Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/exporttask). Otherwise it is unnecessary. Choose the Export task corresponding to the connector. If the Export uses the incremental mode, set IgnoreCookieFile to true.
 
-All Export task have the ContinueOnError property. It is advisable to begin with the value of True so that the task is not blocking for the Job.
+All Export task have the ContinueOnError property. It is advisable to begin with the value of True so that the task isn't blocking for the Job.
 
 Example :
 
@@ -58,7 +58,7 @@ Example :
 <SynchronizeTask Type="ActiveDirectory" Identifier="AD_Synchronization" DisplayName_L1="AD - Synchronization" DisplayName_L2="AD - Synchronisation" Connector="AD">  <TaskDependsOnTask ParentTask="AD_Export_Complete"/></SynchronizeTask>
 ```
 
-The Synchronization Validation Task is not needed , since it is managed by the [Jobs](../../integration-guide/tasks-jobs/jobs) state machine.
+The Synchronization Validation Task isn't needed , since it is managed by the [Jobs](../../integration-guide/tasks-jobs/jobs) state machine.
 
 For more information on Synchronization task configuration : [Synchronize Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/synchronizetask)
 
@@ -116,9 +116,9 @@ For more information on GenerateProvisioningOrder task configuration: [Generate 
 
 Create the Fulfill task.
 
-You must specify the right connection to fulfill the desired system.
+You must specify the right connection to fulfill the system.
 
-All fulfillment task have the ContinueOnError property. It is advisable to begin with the value of True so that the task is not blocking for the Job. The fulfill Tasks are directly depanding of GenerateProvisioningOrdersTask. If this task has not create a new provisioning order. The fulfillment must be not launch in the job.
+All fulfillment task have the ContinueOnError property. It is advisable to begin with the value of True so that the task isn't blocking for the Job. The fulfill Tasks are directly depanding of GenerateProvisioningOrdersTask. If this task has not create a new provisioning order. The fulfillment must be not launch in the job.
 
 ```
 <FulfillTask Identifier="AD_Fulfill" DisplayName_L1="AD - Automated Provisioning" DisplayName_L2="AD - Alimentation automatique" Connector="AD" OpenIdClient="Job" Connection="AD_Fulfillment" Agent="Local" ContinueOnError="1">  <TaskDependsOnTask ParentTask="AD_Provisioning"/></FulfillTask>
@@ -138,7 +138,7 @@ For more information on Update Classification Task : [Update Classification Task
 
 Create the Set Internal User Profiles Task. The Profile Assignment is needed if one ore more [Profile Rule Context](../../integration-guide/toolkit/xml-configuration/access-control/profilerulecontext) are configured.
 
-This Task is directly linked to a Fulfill parent. if the fulfillment has been completed with the state warning or if it was not started or no processing has been performed, launching this task becomes useless.
+This Task is directly linked to a Fulfill parent. if the fulfillment has been completed with the state warning or if it wasn't started or no processing has been performed, launching this task becomes useless.
 
 ```
 <SetInternalUserProfilesTask Identifier="All_SetAllInternalUserProfiles" DisplayName_L1="Overall - Profiles Update" DisplayName_L2="Global - Mise ï¿½ jour des profils">  <TaskEntityType EntityType="AD_Entry"/>  <TaskResourceType ResourceType="AD_Entry_NominativeUser"/>  <TaskDependsOnTask ParentTask="AD_Fulfill"/></SetInternalUserProfilesTask>
@@ -148,7 +148,7 @@ For more information on SetInternalUserProfiles Task configuration : [Set Intern
 
 ### 12. Create the all-tasks job
 
-Once the tasks created. You must create the job to launch all tasks.
+After the tasks created. You must create the job to launch all tasks.
 
 ```
 <Job Identifier="Job_AD_Complete" DisplayName_L1="AD Job's (Complete mode)" DisplayName_L2="Job de l'AD (mode complet)" Agent="Local">  <ExportTask Identifier="AD_Export_Complete" Agent="Local" Connection="AD_Export_Delta" OpenIdClient="Job" DisplayName_L1="Export AD" DisplayName_L2="Export AD"/>  <PrepareSynchronizationTask Type="ActiveDirectory" DisplayName_L1="AD - Prepare Synchronization (complete Mode)" DisplayName_L2="AD - Prï¿½paration de la synchronisation (mode complet)" Connector="AD" SynchronizationMode="Complete" Agent="Local" OpenIdClient="Job">    <TaskDependsOnTask ParentTask="AD_Export_Complete"/>  </PrepareSynchronizationTask>  <SynchronizeTask Type="ActiveDirectory" Identifier="AD_Synchronization" DisplayName_L1="AD - Synchronization" DisplayName_L2="AD - Synchronisation" Connector="AD">    <TaskDependsOnTask ParentTask="AD_Export_Complete"/>  </SynchronizeTask>  <UpdateEntityPropertyExpressionsTask Identifier="All_ComputeAllProperties" DisplayName_L1="Overall - Computed Properties Refresh" DisplayName_L2="Global - Mise ï¿½ jour des propriï¿½tï¿½s calculï¿½es">    <TaskEntityType Identifier="AD_Entry"/>  </UpdateEntityPropertyExpressionsTask>  <ComputeCorrelationKeysTask Identifier="All_CorrelationKeys" DisplayName_L1="All Correlation Keys" >	<TaskEntityType Identifier="AD_Entry"/>  </ComputeCorrelationKeysTask>  <ComputeRoleModelTask Identifier="Directory_ComputeRoleModel" DisplayName_L1="Directory - Provisioning Orders Generation" DisplayName_L2="Rï¿½fï¿½rentiel - Prï¿½paration des ordres de provisioning">    <TaskEntityType EntityType="Directory_User"/>    <TaskEntityType EntityType="Directory_Guest"/>  </ComputeRoleModelTask>  <GenerateProvisioningOrdersTask Identifier="AD_Provisioning" DisplayName_L1="AD - Provisioning Orders Fetching" DisplayName_L2="AD - Rï¿½cupï¿½ration des ordres de provisioning" Connector="AD"/>  <FulfillTask Identifier="AD_Fulfill" DisplayName_L1="AD - Automated Provisioning" DisplayName_L2="AD - Alimentation automatique" Connector="AD" OpenIdClient="Job" Connection="AD_Fulfillment" Agent="Local"  ContinueOnError="1">    <TaskDependsOnTask ParentTask="AD_Provisioning"/>  </FulfillTask>  <UpdateClassificationTask Identifier="AD_Update_Classification" DisplayName_L1="AD - Update Users Classification" DisplayName_L2="AD - Mise ï¿½ jour de la classification des comptes" >    <TaskEntityType EntityType="AD_Entry"/>  </UpdateClassificationTask>  <SetInternalUserProfilesTask Identifier="All_SetAllInternalUserProfiles" DisplayName_L1="Overall - Profiles Update" DisplayName_L2="Global - Mise ï¿½ jour des profils">    <TaskEntityType EntityType="AD_Entry"/>    <TaskResourceType ResourceType="AD_Entry_NominativeUser"/>    <TaskDependsOnTask ParentTask="AD_Fulfill"/>  </SetInternalUserProfilesTask>  <SendRoleModelNotificationsTask DisplayName_L1="Send Notification" DisplayName_L2="Envoie des Notifications">    <TaskEntityType EntityType="AD_Entry"/>  </SendRoleModelNotificationsTask></Job>

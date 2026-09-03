@@ -11,12 +11,12 @@ cycle.
 
 ## End of Support (EOS) Policy
 
-Netwrix will provide full support for a minimum of two versions. With the release of each new
-software version, Netwrix will publish the End-of-Support (EOS) date for the version entering end of
+Netwrix provides full support for a minimum of two versions. With the release of each new
+software version, Netwrix publishes the End-of-Support (EOS) date for the version entering end of
 support as part of the release notification.
 
-Once an EOS date has been published, that EOS software version will enter limited support and will
-have six months until support ceases. The EOS for a software version applies to that version and all
+Once Netwrix publishes an EOS date, that EOS software version enters limited support and has six
+months until support ceases. The EOS for a software version applies to that version and all
 hot fixes and service packs issued for that version.
 
 ## Gen 7 Agent Versions

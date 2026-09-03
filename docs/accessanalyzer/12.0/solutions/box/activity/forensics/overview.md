@@ -23,7 +23,7 @@ The Forensics Job Group is comprised of:
   user activity which has occurred over the past 30 days
 - [Box_ExternalUserCollaborations Job](/docs/accessanalyzer/12.0/solutions/box/activity/forensics/box_externalusercollaborations.md) – Identifies collaboration
   invites sent to external users. These collaborations should be reviewed to ensure sensitive data
-  is not being shared outside of your organization.
+  isn't being shared outside of your organization.
 - [Box_PermissionChanges Job](/docs/accessanalyzer/12.0/solutions/box/activity/forensics/box_permissionchanges.md) – Provides details on permission changes
   that have occurred over the past 30 days
 - [Box_Sharing Job](/docs/accessanalyzer/12.0/solutions/box/activity/forensics/box_sharing.md) – Provides details on sharing activity that has occurred over

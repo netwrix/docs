@@ -40,33 +40,24 @@ The information displayed in the table includes:
 
     - Status bar with specified percentage completed
 
-        - [Empty bar] 0% – Indicates not started. Hovering over the bar will display the number of
-          items included.
-        - [Partially filled bar] with a non-zero% – Indicates the specific percentage of items
-          completed. Hovering over the bar displays the number of items completed out of the total
-          number of items.
+        - [Empty bar] 0% – Indicates not started. Hover over the bar to see the number of items included.
+        - [Partially filled bar] with a non-zero% – Indicates the specific percentage of items completed. Hover over the bar to see the number of items completed out of the total number of items.
 
-    - Responses awaiting review — Owner(s) completed reviews. Waiting on Review Administrator's
-      approval.
-    - Stopped — Indicates that the review was stopped and is considered complete even if all of the
-      responses have not been received or processed. The review remains static until it is run
-      again.
-    - All responses processed — Reviews have been approved by Review Administrators. The review can
-      be marked as completed.
+    - Responses awaiting review — Owners completed reviews. Waiting for Review Administrator's approval.
+    - Stopped — The review is stopped and considered complete even if all responses have not been received or processed. The review remains static until you run it again.
+    - All responses processed — Review Administrators have approved all reviews. You can mark the review as completed.
     - Completed — Indicates the Review Administrator has processed the owners' responses. The review
       remains static until it is run again. This status can appear by accepting the review as-is
       with the **Mark Completed** button.
 
-- Created By — Name of the Review Administrator who create the review
-- Created On — Date timestamp for when the review was creation. If it has been run multiple times,
-  this is the date timestamp of the last instance.
-- Finished On — Date timestamp when the review is marked complete by the Review Administrator. If it
-  has been run multiple times, this is the date timestamp of the last instance.
+- Created By — Name of the Review Administrator who created the review
+- Created On — Date timestamp for when the review was created. If it has been run multiple times, this is the date timestamp of the last instance.
+- Finished On — Date timestamp when the Review Administrator marks the review as complete. If it has been run multiple times, this is the date timestamp of the last instance.
 
 The table data grid functions the same way as other table grids. See the
 [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.
 
-The buttons at the bottom enable you to conduct the following actions:
+Use the following buttons to conduct these actions:
 
 ![Action buttons in the Resource Reviews Interface](/images/accessinformationcenter/12.0/resourcereviews/interfacebuttons.webp)
 
@@ -74,13 +65,13 @@ The buttons at the bottom enable you to conduct the following actions:
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Create         | Launches the Create Review wizard for creating a new review. See the [Create Review Wizard](/docs/accessinformationcenter/12.0/resourcereviews/create/create.md) topic for additional information.                                                                                                        |
 | Rename         | Opens the Rename Review window for modifying the review name. See the [Rename Review Window](/docs/accessinformationcenter/12.0/resourcereviews/interface/renamereview.md) topic for additional information.                                                                                              |
-| Edit           | Opens the Edit Review wizard for the selected review. This allows you to edit some options for an in progress review. See the [Edit Review Wizard](/docs/accessinformationcenter/12.0/resourcereviews/edit.md) for additional information.                                                                |
+| Edit           | Opens the Edit Review wizard for the selected review. Use this to edit some options for an in progress review. See the [Edit Review Wizard](/docs/accessinformationcenter/12.0/resourcereviews/edit.md) for additional information.                                                                |
 | Delete         | Opens the Delete Review window to delete review and its instance history, which asks for confirmation of the action. See the [Delete Review Window](/docs/accessinformationcenter/12.0/resourcereviews/interface/deletereview.md) topic for additional information.                                       |
 | Stop           | Opens the Stop Review window, which asks for confirmation of the action. See the [Stop Review Window](/docs/accessinformationcenter/12.0/resourcereviews/interface/stopreview.md) topic for additional information.                                                                                       |
-| Mark Completed | Closes the selected review as-is and marks it as completed. Requires the owner(s) to have responded. <br />**CAUTION:** No confirmation is requested for this action.                                                                                                                                     |
+| Mark Completed | Closes the selected review as-is and marks it as completed. Requires the owners to have responded. <br />**CAUTION:** No confirmation is requested for this action.                                                                                                                                     |
 | Run Again      | Opens the Create Review wizard for the selected review without the option to change the review type. Modify as desired and relaunch the review. See the [Review Instances](/docs/accessinformationcenter/12.0/resourcereviews/create/reviewinstances.md) topic for additional information.                |
 | View Details   | Opens the Review Details page for the selected review. See the Review Details Page topic for additional information.                                                                                                                                                                                      |
-| Send Reminders | Sends a notification email to the assigned owner(s), reminding of the pending review. Opens the Send Reminders window, which indicates an action status. See the [Send Reminders Window](/docs/accessinformationcenter/12.0/resourcereviews/interface/sendreminders.md) topic for additional information. |
+| Send Reminders | Sends a notification email to the assigned owners, reminding of the pending review. Opens the Send Reminders window, which indicates an action status. See the [Send Reminders Window](/docs/accessinformationcenter/12.0/resourcereviews/interface/sendreminders.md) topic for additional information. |
 
 
 ## Review Details Page
@@ -91,7 +82,7 @@ Details**.
 
 ![Resource Reviews interface showing the Review Details page](/images/accessinformationcenter/12.0/resourcereviews/reviewdetails.webp)
 
-Instances are selected from the drop-down menu. By default the most current instance will be
+Instances are selected from the dropdown menu. By default the most current instance will be
 displayed. Instances are named with date timestamps indicating the start and end times for the
 review instance.
 
@@ -103,7 +94,7 @@ The information displayed in the table includes:
 - Resource Description — Description or explanation of the resource as supplied by either the
   Ownership Administrator or the assigned owner
 - Reviewer Name — Primary owner assigned to the resource
-- Review Status — Indicates whether or not the assigned owner has submitted the review. Tool-tips
+- Review Status — Indicates whether the assigned owner has submitted the review. Tool-tips
   display when hovering over the icons.
 - Review Changes — Displays a count of items that have recommended changes for the resource
 - Review Time — Date timestamp for when the owner submitted the review
@@ -114,21 +105,18 @@ The information displayed in the table includes:
 
         - [Empty bar] 0% – Indicates not started. Hovering over the bar will display the number of
           items included.
-        - [Partially filled bar] with a non-zero% – Indicates the specific percentage of items
-          completed. Hovering over the bar displays the number of items completed out of the total
-          number of items.
+        - [Partially filled bar] with a non-zero% – Indicates the specific percentage of items completed. Hover over the bar to see the number of items completed out of the total number of items.
 
     - Completed — Indicates the Review Administrator has processed the owners' responses. The review
       remains static until it is run again.
 
-- Approval Notes – Icon indicates a Note has been added. Click on the icon to read the attached
-  note(s). Notes displayed here can only be added or viewed by the Review Administrator. See the
+- Approval Notes – Icon indicates a Note has been added. Click the icon to read the attached notes. Only the Review Administrator can add or view notes displayed here. See the
   [Edit Notes Window](/docs/accessinformationcenter/12.0/admin/navigate/editnotes.md) topic for additional information.
 
 The table data grid functions the same way as other table grids. See the
 [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.
 
-The buttons at the top and bottom enable you to conduct the following actions:
+Use the buttons at the top and bottom to conduct these actions:
 
 ![Action buttons on the Review Details page](/images/accessinformationcenter/12.0/resourcereviews/reviewdetailsbuttons.webp)
 
@@ -139,6 +127,6 @@ The buttons at the top and bottom enable you to conduct the following actions:
 | Export CSV      | Exports the selected review instance information to a CSV file. This automatically downloads the file. See the [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.                                                                                                                                                                                                                                                                                                   |
 | Edit Notes      | Opens the Edit Notes window for the selected resource and allows free-text editing of the notes. See the [Edit Notes Window](/docs/accessinformationcenter/12.0/admin/navigate/editnotes.md) topic for additional information.                                                                                                                                                                                                                                                                                                         |
 | View Responses  | Opens the View Responses window, which is only available if the owner has recommended changes for the resource. This window displays all recommended changes, notes provided by the owner for the recommended change, and action buttons to Accept, Decline, or Defer the recommended change. See the [View Responses Window](/docs/accessinformationcenter/12.0/resourcereviews/interface/viewresponses.md) topic for additional information.                                                                                         |
-| Process Changes | Opens a drop-down menu to Accept, Decline, or Defer all owner-recommended changes for the selected resource. This option allows the Review Administrator to process responses in batches, so all owner-recommended changes for the selected resource will be processed with the same action. <br />**CAUTION:** If the Access Information Center has been configured to commit changes to Active Directory and the automation prerequisites have been met for this type of review, selecting Accept will commit the requested changes. |
+| Process Changes | Opens a dropdown menu to Accept, Decline, or Defer all owner-recommended changes for the selected resource. This option allows the Review Administrator to process responses in batches, so all owner-recommended changes for the selected resource will be processed with the same action. <br />**CAUTION:** If the Access Information Center has been configured to commit changes to Active Directory and the automation prerequisites have been met for this type of review, selecting Accept will commit the requested changes. |
 | Remove Changes  | Opens the Remove changes window. Clears all requested changes for the selected resource. The resource is returned to a ‘Waiting’ status, requiring the owner to review the resource again. See the [Remove Changes Window](/docs/accessinformationcenter/12.0/resourcereviews/approvalprocess/removechanges.md) topic for additional information.                                                                                                                                                                                      |
 | Resource Audit  | Opens the Resource Audit interface for the selected resource. See the [Resource Audit Overview](/docs/accessinformationcenter/12.0/resourceaudit/overview.md) topic for additional information.                                                                                                                                                                                                                                                                                                                                        |

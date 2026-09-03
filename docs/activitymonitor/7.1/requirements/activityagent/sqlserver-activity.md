@@ -6,8 +6,7 @@ sidebar_position: 70
 
 # SQL Server Activity Auditing Configuration
 
-In order for the Netwrix Activity Monitor to monitor SQL Server activity, a SQL login with certain
-server permissions, and must be mapped to user databases.
+To monitor SQL Server activity with Netwrix Activity Monitor, create a SQL login with certain server permissions and map it to user databases.
 
 ## SQL Database Server Permissions
 
@@ -70,7 +69,7 @@ declare @s varchar(max)='';select @s=@s+(case when @s<>'' then char(13)+char(10)
 ## Logon Trigger (Optional)
 
 The logon trigger is required to obtain IP Addresses of client connections. Run the following script
-in order to allow the Activity Monitor to report client IP Addresses.
+to allow the Activity Monitor to report client IP Addresses.
 
 ```
 CREATE TRIGGER SBAudit_LOGON_Trigger ON ALL SERVER FOR LOGON AS BEGIN declare @str varchar(max)=cast(EVENTDATA() as varchar(max));raiserror(@str,1,1);END

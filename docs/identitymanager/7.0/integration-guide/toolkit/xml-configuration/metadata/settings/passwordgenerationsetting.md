@@ -10,6 +10,6 @@ sidebar_position: 7
 
 |Property|Details|
 |---|---|
-| AllowedSymbolChars required | **Type:** String **Description:** The documentation is not yet available. |
+| AllowedSymbolChars required | **Type:** String **Description:** The documentation isn't yet available. |
 | Identifier <span class="optionalAttribute">default value: PasswordGenerationSetting</span> | **Type:** String **Description:** Unique identifier of the setting. |
 

@@ -7,7 +7,7 @@ sidebar_position: 120
 # SQL Server Reports
 
 SQL Server reports are accessed through the Resource Audit interface. Explore the SQL Server
-resources by expanding the levels within the Resources pane and selecting the desired resource. The
+resources by expanding the levels within the Resources pane and selecting the resource you want. The
 data within these reports is collected by the Enterprise Auditor SQL solution. See the SQL Solution
 topic in the
 [Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)

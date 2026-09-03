@@ -30,7 +30,7 @@ See the following topics for target environment requirements:
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment:
+These depend on the size of the target environment:
 
 | Environment | Extra-Large          | Large                    | Medium                | Small                |
 | ----------- | -------------------- | ------------------------ | --------------------- | -------------------- |
@@ -76,7 +76,7 @@ conflict with other JDKs or Java Runtimes in the same environment.
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment.
+These depend on the size of the target environment.
 
 | Environment              | Extra-Large          | Large                    | Medium                | Small                |
 | ------------------------ | -------------------- | ------------------------ | --------------------- | -------------------- |

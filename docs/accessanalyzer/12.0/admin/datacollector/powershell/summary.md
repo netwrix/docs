@@ -11,6 +11,5 @@ Data Collector Wizard.
 
 ![PowerShell Data Collector Wizard Summary page](/images/accessanalyzer/12.0/admin/datacollector/powershell/summary.webp)
 
-Click **Finish** to save configuration changes. If no changes were made, it is a best practice to
-click **Cancel** to close the PowerShell Data Collector Wizard ensuring that no accidental clicks
-are saved.
+Click **Finish** to save configuration changes. If you made no changes, click **Cancel** instead to
+close the PowerShell Data Collector Wizard without saving accidental clicks.

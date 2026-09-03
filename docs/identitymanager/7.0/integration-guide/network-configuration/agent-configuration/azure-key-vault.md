@@ -25,11 +25,11 @@ After creating the Azure Key Vault, open its page on Azure's portal and [add a s
 
 The important part of adding a secret in Azure Key Vault is defining its name and value:
 - As secrets' **names** can only contain alphanumeric characters and double dashes (`--`) as separator, the keys from the appsettings.agent.json file must contain only alphanumeric characters too;
-- Secrets' **values** are simply the value associated with the key in the JSON file.
+- Secrets's **values** are the values associated with the key in the JSON file.
 
 For example, for the Active Directory:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -55,7 +55,7 @@ appsettings.agent.json
   }
 }
 ```
-To save the login to Azure Key Vault, create a secret whose name and value are respectively `<Connections--ADExport--Login>` and `<login123>`.
+To save the log in to Azure Key Vault, create a secret whose name and value are respectively `<Connections--ADExport--Login>` and `<login123>`.
 
 To save the second server, create a secret whose name and value are respectively `<Connections--ADExport--Servers--1--Server>` and `<marseille.contoso.com>`.
 

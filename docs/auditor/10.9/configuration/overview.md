@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Data Source Configuration
 
-With the Netwrix Auditor, the following Data Sources can be monitored:
+Netwrix Auditor can monitor the following data sources:
 
 - [Active Directory](/docs/auditor/10.9/configuration/activedirectory/overview.md)
 - [AD FS](/docs/auditor/10.9/configuration/activedirectoryfederatedservices/overview.md)

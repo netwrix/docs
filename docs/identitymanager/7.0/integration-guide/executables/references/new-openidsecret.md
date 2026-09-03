@@ -6,7 +6,7 @@ sidebar_position: 270
 
 # Usercube-New-OpenIDSecret
 
-This tools generates an hash. In practice, we hash a client secret but the tool can generate randomly a hash without an input string. The name of the executable is: Usercube-New-OpenIDSecret.exe'.
+This tool generates a hash. In practice, it hashes a client secret but the tool can generate randomly a hash without an input string. The name of the executable is Usercube-New-OpenIDSecret.exe.
 
 ## Examples
 

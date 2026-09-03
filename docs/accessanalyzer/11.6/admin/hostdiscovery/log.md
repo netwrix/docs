@@ -6,12 +6,12 @@ sidebar_position: 40
 
 # Discovery Log
 
-The **Host Discovery** > **Discovery Log** node lists host discovery logs. These logs house
-transactions that transpire during the running of host discovery and host inventory tasks.
+The **Host Discovery** > **Discovery Log** node lists host discovery logs. These logs record
+transactions that occur while host discovery and host inventory tasks run.
 
 ![Discovery Log](/images/accessanalyzer/11.6/admin/hostdiscovery/discoverylog.webp)
 
-The Discovery Log logging level is configured within the **Settings** > **Host Discovery** node. See
+Configure the Discovery Log logging level within the **Settings** > **Host Discovery** node. See
 the
 [Host Discovery](/docs/accessanalyzer/11.6/admin/settings/hostdiscovery.md)
 topic for additional information.
@@ -19,9 +19,9 @@ topic for additional information.
 The following options are above the data grid:
 
 - Reload Log – Refresh the log data for the selected Log date and Query Name
-- Log date – Select the desired **Log date** from the drop-down menu to view transactions
+- Log date – Select the **Log date** you want from the dropdown menu to view transactions
 - Query Name – The default selection is **All Queries**. To narrow the data to a desired query,
-  select a query name from the drop-down menu.
+  select a query name from the dropdown menu.
 
 The data grid contains the following columns:
 

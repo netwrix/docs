@@ -17,7 +17,7 @@ steps to add a forest.
 
 ![ Forest configurations ](/images/identityrecovery/3.1/product/configuration/forest/forest_configuration.png)
 
-**Step 1 –** On the Forest Configuration page, click the **Add Forest** button. The Add Forest window is displayed.
+**Step 1 –** On the Forest Configuration page, click the **Add Forest** button. The Add Forest window opens.
 
 ![ Add Forest window](/images/identityrecovery/3.1/product/configuration/forest/forest_configuration_page1.png)
 
@@ -31,4 +31,4 @@ Account field. Ensure that the account has privileges to access the domain.
 
 **Step 5 –** Click **Save**.
 
-The forest has been added to the system.
+Identity Recovery adds the forest to the system.

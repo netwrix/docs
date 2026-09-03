@@ -12,7 +12,7 @@ instances. This report includes a Details table.
 
 ![Sensitive Content Summary report at the SharePoint node](/images/accessinformationcenter/11.6/resourceaudit/sharepoint/sensitivecontent.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Server Name – Single server name representing the entire SharePoint on-premise farm or SharePoint
   Online instance
@@ -21,8 +21,7 @@ This report is comprised of the following columns:
   Subject Profile matches (for example, Customer, Employee, and so on)
 - Count – Number of files with criteria matches
 
-There is one table at the bottom displaying Details on the files where the selected criterion
-matches were found:
+A table displays details on the files where the selected criterion matches were found:
 
 - Source — For System Criteria this shows the criteria name (for example, Credit Cards). For Subject
   Profiles criteria it shows the individual identities (for example, Jon Doe).

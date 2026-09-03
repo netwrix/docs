@@ -55,8 +55,7 @@ information on the new reporting console.
 | Modify User Access Rights                                   | Yes                             | No                              |
 | LDAP Operations Center                                      | Yes                             | No                              |
 
-\*If an administrator changes permissions on protected policies they do not own, a system alert is
-generated.
+\*If an administrator changes permissions on protected policies they don't own, a system alert is generated.
 
 See the [Policies Interface](/docs/threatprevention/7.5/admin/policies/overview.md) topic for information on protected and
 unprotected policies.
@@ -76,13 +75,11 @@ NVMonitorConfig and NVMonitorData databases, according to the assigned role:
 
 ## Administrator Permissions
 
-The Features button is enabled for users with the Administrator role. It provides options to limit
-Administrator permissions to manage features, stop the Agent, or uninstall the Agent.
+The Features button is enabled for users with the Administrator role. It provides options to limit Administrator permissions to manage features, stop the Agent, or uninstall the Agent.
 
 ![Users and Roles window showing the Edit Features window](/images/threatprevention/7.5/admin/configuration/userroles/featuresbutton.webp)
 
-Follow the steps to edit the features for the selected user. All listed features are enabled by
-default.
+All listed features are enabled by default.
 
 **Step 1 –** Click the **Features** button. The Edit features window opens.
 

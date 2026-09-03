@@ -10,7 +10,7 @@ The **Concurrent Logins** analytic type identifies same account logins from mult
 within the specified time frame.
 
 :::info
-Configure a subset of accounts and/or servers to be monitored in order to avoid
+Configure a subset of accounts and/or servers to be monitored to avoid
 the excessive volume of event activity from monitoring all.
 :::
 
@@ -18,7 +18,7 @@ the excessive volume of event activity from monitoring all.
 | Concurrent Logins    |                   |
 | -------------------- | ---------------------------- |
 | Definition           | Logins from multiple locations simultaneously        |
-| Example              | A user does not normally login from multiple locations simultaneously within a short time window. If one or more accounts has been compromised by malware, or in the event of an insider attack, one might see a compromised account authenticating from many systems in parallel and a corresponding analytic alert identifying the account and the authenticating systems. |
+| Example              | A user doesn't normally login from multiple locations simultaneously within a short time window. If one or more accounts has been compromised by malware, or if there is an insider attack, one might see a compromised account authenticating from many systems in parallel and a corresponding analytic alert identifying the account and the authenticating systems. |
 | Trigger              | Successful and failed authentications using the same account from at least X hosts in Y minutes              |
 | Recommended Settings | Netwrix recommends configuring this analytic to trigger a hit if Threat Prevention monitors either successful or failed authentications using the same account from at least 3 hosts in 1 hour.     |
 
@@ -38,7 +38,7 @@ Open the Concurrent Logins Analytic Policy in any of the following ways:
 
 - Click Analytics in the left pane to launch the Analytics interface. Then click the gear icon for
   the analytic.
-- Expand the Analytics node and click the desired analytic. On the analytic window, click the gear
+- Expand the Analytics node and click the Concurrent Logins analytic. On the analytic window, click the gear
   icon available in the top right corner.
 
 The Configure Analytics window has two tabs:
@@ -58,7 +58,7 @@ will trigger an incident record.
 
 By default, authentication event data is cached in memory for 24 hours. When an incident is
 triggered, an incident record is saved to the database along with the events that triggered the
-incident. Raw authentication event data that did not contribute to an incident are purged from
+incident. Raw authentication event data that didn't contribute to an incident are purged from
 memory once they are more than 24 hours old.
 
 **Policy Tab**
@@ -68,12 +68,12 @@ memory once they are more than 24 hours old.
 The **Policy** tab for configuring analytics consists of three sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/8.0/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can't be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/overview.md) is configured. The only exception is that the
   [Authentication Monitoring Event Type](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/authenticationmonitoring.md) is hard
-  coded, and the Success filter cannot be modified.
+  coded, and the Success filter can't be modified.
 
   - _Optional:_ Scope the protocol to be monitored on the Authentication Protocol filter. If
     enabling the analytic on a domain controller, also scope the login type.
@@ -127,8 +127,7 @@ The top data grid includes the following information for each incident:
   :::
 
 
-- Attacking Account SID – Security Identifier of the account used in the event that triggered the
-  incident
+- Attacking Account SID – Security Identifier of the attacking account
 - Number of Attacking Hosts – Number of hosts the account used during the specified interval
   matching this rule
 - First Attempt – Date timestamp of the first monitored event that triggered the incident. Hover
@@ -136,7 +135,7 @@ The top data grid includes the following information for each incident:
   simultaneously.
 - Last Attempt – Date timestamp of the last event that triggered the incident. Hover over the data
   in this column to view the local time (of the Enterprise Manager) and UTC time simultaneously.
-- Protocols – Protocol(s) used for the monitored operation
+- Protocols – Protocols used for the monitored operation
 - Number of Attempts – Number of attempts monitored during the specified interval matching this rule
 
 Select an incident in the top data grid to view information on the events that triggered the
@@ -146,7 +145,7 @@ incident:
 - From Host IP Address – IP address of the originating host
 - To Host – Name of the target host
 - To Host IP Address – IP address of the target host
-- Protocol – Protocol(s) used for the monitored operation
+- Protocol – Protocols used for the monitored operation
 - Access Type – Type of authentication, e.g. RDP, CIFS, etc.
 - Status – Detailed information on the error generated by the event
 - Detected on DC – Fully-qualified name of the domain controller that detected the event

@@ -6,12 +6,10 @@ sidebar_position: 70
 
 # Integration API
 
-Netwrix Auditor Netwrix Risk Insights leverages Netwrix Auditor Integration API. Although you can
-always use the add-on as is, but Netwrix encourages customers to create their own integration
-add-ons. The add-ons created based on Netwrix Auditor Integration API capabilities are easily
-tailored to your specific environment and business requirements.
+Netwrix Auditor integrates with Netwrix Risk Insights using the Netwrix Auditor Integration API. You can use the add-on as-is, or Netwrix encourages you to create custom integration
+add-ons. Add-ons based on Netwrix Auditor Integration API capabilities let you tailor integration to your specific environment and business requirements.
 
-Netwrix Auditor Integration API—endless integration, auditing and reporting capabilities.
+Netwrix Auditor Integration API—endless integration, auditing, and reporting capabilities.
 
 The Netwrix Auditor Integration API provides access to audit data collected by Netwrix Auditor
 through REST API endpoints. According to the RESTful model, each operation is associated with a URL.
@@ -25,7 +23,7 @@ Integration API provides the following capabilities:
 ![diagram_thumb_0_0](/images/auditor/10.8/api/diagram_thumb_0_0.webp)
 
 Netwrix Auditor Integration API operates with XML- and JSON-formatted Activity Records—minimal
-chunks of audit data containing information on _who_ changed _what_, _when_ and _where_ this change
+chunks of audit data containing information on _who_ changed _what_, _when_, and _where_ this change
 was made. XML format is set as default.
 
 With Integration API you can write Activity Records to the SQL Server-based Audit Database and
@@ -37,7 +35,7 @@ is installed along with Netwrix Auditor Server and is enabled automatically. By 
 Auditor Integration API works over HTTPS protocol using an automatically generated certificate.
 Default communication port is 9699.
 
-Netwrix does not limit you with applications that can be used with Integration API. You can write
+Netwrix doesn't limit you with applications that can be used with Integration API. You can write
 RESTful requests using any tool or application you prefer—cURL, Telerik Fiddler, various Google
 Chrome or Mozilla FireFox plug-ins, etc.
 
@@ -53,7 +51,7 @@ Complete the following fields:
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Specify a name for your integration | Specify the add-on name or provide any other name that distinguishes this custom source from any other. This name will be listed in the Item filter in the interactive search. |
 
-Make sure Integration API is enabled. To check it, navigate to Settings → Integrations tab. See
+Ensure Integration API is enabled. To check it, navigate to Settings → Integrations tab. See
 [Integrations](/docs/auditor/10.8/admin/settings/integrations.md) for more information.
 
-Make sure to provide a monitoring plan name and item name in activity records before importing data.
+Ensure to provide a monitoring plan name and item name in activity records before importing data.

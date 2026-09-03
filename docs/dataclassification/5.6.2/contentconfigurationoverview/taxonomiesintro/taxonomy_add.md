@@ -20,7 +20,7 @@ For the full list of supported taxonomies, refer to
 2. Navigate to Loaded Taxonomies, select Add Taxonomies.
 3. Select taxonomies that you want to add in the list.
 
-    **NOTE:** Multiple taxonomies selection supported. Clicking the search field enables drop-down
+    **NOTE:** Multiple taxonomies selection supported. Clicking the search field enables dropdown
     list of default taxonomies.
 
 4. Click Load.

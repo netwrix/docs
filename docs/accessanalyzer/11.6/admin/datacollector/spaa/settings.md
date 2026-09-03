@@ -6,51 +6,52 @@ sidebar_position: 40
 
 # SPAA: SharePoint Data Collection Settings
 
-The SharePoint data collection settings page is where additional scan settings are configured. It is
+Use the SharePoint data collection settings page to configure additional scan settings. It's
 a wizard page for the categories of:
 
 - Scan SharePoint Access
 - Scan For Sensitive Content
 
 :::warning
-Users should not change scans in a way that would result in less data being returned on
-a subsequent scan (i.e. scanning fewer web applications, scanning fewer site collections, or a
-shallower depth scan). Those resources not included in a subsequent scan are marked as deleted in
-the Tier 2 database and subsequently removed from the Tier 1 database.
+Don't change scans in a way that results in a subsequent scan returning less data (for example,
+scanning fewer web applications, scanning fewer site collections, or using a shallower depth scan).
+Enterprise Auditor marks resources not included in a subsequent scan as deleted in the Tier 2
+database and subsequently removes them from the Tier 1 database.
 :::
 
 
 ![SharePoint data collection settings page](/images/accessanalyzer/11.6/admin/datacollector/spaa/datacollectionsettings.webp)
 
-The Probable Owners section provides options for how probable ownership will be calculated:
+The Probable Owners section provides options for how Enterprise Auditor calculates probable
+ownership:
 
 - Limit maximum number of Probable Owners per resource: [number] – Return the maximum user supplied
   number of probable owners per resource
 
 The Collect Personal Sites checkbox enables or disables collection during the scan of personal site
-collections of individual users. Personal site collections are a SharePoint feature which gives
-every user their own site collection, and which are used by Office 365 to store a user’s OneDrive
-files. Personal sites are configured by default to only be accessible by the user to whom they
-belong, and so it is likely that the Connection Profile that the data collector is assigned may not
-have access to some users’ personal sites. There are three radio buttons for identifying how the
-query treats personal sites to which it does not have access:
+collections of individual users. Personal site collections are a SharePoint feature that gives
+every user their own site collection, and Office 365 uses them to store a user's OneDrive
+files. By default, only the user to whom a personal site belongs can access it, so the Connection
+Profile that the data collector is assigned may not have access to some users' personal sites. There
+are three radio buttons for identifying how the
+query treats personal sites to which it doesn't have access:
 
-- Skip inaccessible personal sites – Inaccessible personal sites are not scanned
+- Skip inaccessible personal sites – The query doesn't scan inaccessible personal sites
 - Force scan account as admin of inaccessible personal sites – Make the Connection Profile
-  credentials a Site Collection Administrator of any personal sites to which it does not have
+  credentials a Site Collection Administrator of any personal sites to which it doesn't have
   access:
 
-    - The personal sites will be scanned
-    - When the scan is complete, the permissions are restored to what they were prior to the scan,
-      referring to those credentials made a Site Collection Administrator of personal sites in order
-      to conduct the scan.
+    - The query scans the personal sites
+    - When the scan is complete, Enterprise Auditor restores the permissions to what they were
+      before the scan, referring to those credentials made a Site Collection Administrator of
+      personal sites to conduct the scan.
     - Requires the account used in the Connection Profile credentials to have the Global
       Administrator role for SharePoint Online or be a Farm Administrator for SharePoint on premise.
       This permission is required to facilitate altering the administrators of site collections.
 
         :::note
-        The Microsoft SharePoint API employed to remove personal Site Collection
-        Administrator is unreliable, and occasionally the scanning account is left as a Site
+        The Microsoft SharePoint API used to remove personal Site Collection
+        Administrator access is unreliable and occasionally leaves the scanning account as a Site
         Collection Administrator of personal sites. This may leave the scanning account visible to
         SharePoint users on the permissions of the files in their personal sites.
         :::
@@ -58,17 +59,17 @@ query treats personal sites to which it does not have access:
 
         :::info
         Only use this option if that account is clearly identifiable as an
-        administrative account, and users are advised of the possibility that the account could
-        appear on the permissions of their personal site collection documents.
+        administrative account, and advise users that the account could appear on the permissions
+        of their personal site collection documents.
         :::
 
 
 - Force Company Administrator as admin of inaccessible personal sites – Make the special Company
-  Administrator account an administrator of any personal sites to which it does not have access
+  Administrator account an administrator of any personal sites to which it doesn't have access
 
-    - The personal sites will be scanned
-    - When the scan is complete, the Company Administrator account is left as an administrator of
-      the users’ personal site collections
+    - The query scans the personal sites
+    - When the scan is complete, the Company Administrator account remains an administrator of
+      the users' personal site collections
     - Requires the account used in the Connection Profile credentials to have the Global
       Administrator role for SharePoint Online or be a Farm Administrator for SharePoint on premise.
       This permission is required to facilitate altering the administrators of site collections.
@@ -80,11 +81,11 @@ query treats personal sites to which it does not have access:
 
 
 The **Extract Document Tags** option enables the collection of metadata tags from Microsoft Office
-files in SharePoint. Since this option requires the retrieval and scanning of each document, it
+files in SharePoint. Since this option requires retrieving and scanning each document, it
 results in a noticeable increase in scan time.
 
-- Select a preferred zone – Use the drop-down list to select a preferred zone within the web
-  application to target the scan. If a targeted web application does not have the selected preferred
+- Select a preferred zone – Use the dropdown list to select a preferred zone within the web
+  application to target the scan. If a targeted web application doesn't have the selected preferred
   zone, the scan targets the default zone for that web application. Options include:
 
     - Default

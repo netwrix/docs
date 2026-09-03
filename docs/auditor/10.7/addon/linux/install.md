@@ -6,8 +6,6 @@ sidebar_position: 10
 
 # Install Add-On
 
-Follow the steps to install the Add-On:
-
 **Step 1 –** Navigate to your add-on package.
 
 **Step 2 –** Unzip the Add-On to a desired folder.

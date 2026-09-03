@@ -14,7 +14,7 @@ settings for use in the following analysis jobs and respective reports.
 The MySQL_Configuration Job uses the SQL Data Collector for queries.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 

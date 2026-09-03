@@ -12,7 +12,7 @@ successful authentication in the specified time frame.
 | Breached Password    |                       |
 | -------------------- | ---------------------- |
 | Definition           | Multiple failed authentications followed by a successful authentication          |
-| Example              | This analytic alert may follow one or more alerts identifying repeated failed authentications against an account. This alert is of special importance as it signals that an attacked account may have been breached and a successful login occurred. This could also identify a scenario where an attacker has attempted multiple authentications with a user’s account but has failed, and then subsequent to that, the real user logs in and authenticates successfully. |
+| Example              | This analytic alert may follow one or more alerts identifying repeated failed authentications against an account. This alert is of special importance as it signals that an attacked account may have been breached and a successful login occurred. This could also identify a scenario where an attacker has attempted multiple authentications with a user’s account but has failed, and then after that, the real user logs in and authenticates successfully. |
 | Trigger              | X failed authentication attempts from the same account followed by a successful authentication in Y hours       |
 | Recommended Settings | Netwrix recommends configuring this analytic to trigger a hit if Threat Prevention monitors at least 30 failed authentication attempts from the same account followed by a successful authentication in 4 hours.      |
 
@@ -32,7 +32,7 @@ Open the Breached Password Analytic Policy in any of the following ways:
 
 - Click Analytics in the left pane to launch the Analytics interface. Then click the gear icon for
   the analytic.
-- Expand the Analytics node and click the desired analytic. On the analytic window, click the gear
+- Expand the Analytics node and click the analytic. On the analytic window, click the gear
   icon available in the top right corner.
 
 The Configure Analytics window has two tabs:
@@ -52,7 +52,7 @@ login within the specified interval duration, it will trigger an incident record
 
 By default, authentication event data is cached in memory for 24 hours. When an incident is
 triggered, an incident record is saved to the database along with the events that triggered the
-incident. Raw authentication event data that did not contribute to an incident are purged from
+incident. Raw authentication event data that didn't contribute to an incident are purged from
 memory once they are more than 24 hours old.
 
 **Policy Tab**
@@ -62,12 +62,12 @@ memory once they are more than 24 hours old.
 The **Policy** tab for configuring analytics consists of three sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/7.5/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can’t be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/overview.md) is configured. The only exception is that the
   [Authentication Monitoring Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/authenticationmonitoring.md) is hard
-  coded, and the Success filter cannot be modified.
+  coded, and the Success filter can’t be modified.
 
   - Scope the protocol to be monitored on the Authentication Protocol filter. If enabling the
     analytic on a domain controller, also scope the login type.
@@ -89,8 +89,7 @@ The **Policy** tab for configuring analytics consists of three sub-tabs:
 
     :::note
     Some authentication events may return only a host name (NetBIOS or FQDN), others
-    may return only an IP address. It is recommended to take this into account when entering
-    filter values.
+    may return only an IP address. If you enter filter values, take this into account.
     :::
 
 
@@ -121,7 +120,7 @@ The top data grid includes the following information for each incident:
   :::
 
 
-- Attacked Account SID – Security Identifier of the account used in the event that was attacked
+- Attacked Account SID – Security Identifier of the account attacked
 - First Failed Attempt – Date timestamp of the first monitored event that triggered the incident.
   Hover over the data in this column to view the local time (of the Enterprise Manager) and UTC time
   simultaneously.
@@ -132,18 +131,18 @@ The top data grid includes the following information for each incident:
   in this column to view the local time (of the Enterprise Manager) and UTC time simultaneously.
 - Breach Source Host – Name of the originating host
 - Breach Source Host IP Address – IP address of the originating host
-- Protocols – Protocol(s) used for the monitored operation
+- Protocols – Protocols used for the monitored operation
 - Number of Attempts – Number of attempts monitored during the specified interval matching this rule
 - Number of Hosts – Number of hosts accessed during the specified interval matching this rule
 
-Select an incident in the top data grid to view information on the events thath triggered the
+Select an incident in the top data grid to view information on the events that triggered the
 incident:
 
 - From Host – Name of the originating host
 - From Host IP Address – IP address of the originating host
 - To Host – Name of the target host
 - To Host IP Address – IP address of the target host
-- Protocol – Protocol(s) used for the monitored operation
+- Protocol – Protocols used for the monitored operation
 - Access Type – Type of authentication, e.g. RDP, CIFS, etc.
 - Status – Detailed information on the error generated by the event
 - Detected on DC – Fully-qualified name of the domain controller that detected the event

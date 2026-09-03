@@ -6,10 +6,10 @@ sidebar_position: 30
 
 # Delete Contacts
 
-This API is for deleting multiple contacts from a specified identity store.
+Use this API to delete multiple contacts from a specified identity store.
 
 :::note
-The contact object type is not supported in a Microsoft Entra ID based identity store.
+The contact object type isn't supported in a Microsoft Entra ID based identity store.
 :::
 
 

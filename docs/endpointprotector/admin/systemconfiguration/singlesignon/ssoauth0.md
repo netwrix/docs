@@ -6,30 +6,26 @@ sidebar_position: 30
 
 # Single Sign On (SSO) Conﬁguration with Auth0
 
-Single Sign On (SSO) is a powerful authentication process that enhances security and improves user
-experience by allowing users to access multiple applications with a single set of login credentials.
-In this guide, we focus on configuring SSO using Auth0, a leading identity management service, to
-streamline user access and secure your system effectively.
+Single Sign On (SSO) is a powerful authentication process that enhances security and improves user experience by enabling access to multiple applications with a single set of login credentials. This guide covers configuring SSO using Auth0, a leading identity management service, to streamline user access and secure your system effectively.
 
 ## Configuring SSO with Auth0
 
 Configuring Single Sign-On with Auth0 involves several key steps that integrate your server with
 Auth0’s authentication framework. Begin by activating SSO within your system’s configuration
-settings, selecting a failover user, and preparing for provider selection. This section will guide
-you through the precise steps required to establish a secure and efficient SSO connection, including
+settings, selecting a failover user, and preparing for provider selection. This section guides you
+through the precise steps required to establish a secure and efficient SSO connection, including
 application integration in Auth0, SAML settings configuration, and the necessary data synchronization
-between your server and Auth0. Follow the steps below to ensure a successful setup.
+between your server and Auth0. Follow the following steps to ensure a successful setup.
 
 **Step 1 –** To activate Single Sign-On, navigate to **System Configuration** > **System
-Settings** > **Single Sign-On**. Once activated, select a Failover Login User from the drop-down
-menu. The Root user is selected by default.
+Settings** > **Single Sign-On**. Once activated, select a Failover Login User from the dropdown
+menu. The Root user is the default selection.
 
 ![Single Sign On Conﬁguration with Auth0](ssookta.webp)
 
-After completing the above steps, a Single Sign-On subsection will appear in the System
-Configuration section.
+After completing these steps, a Single Sign-On subsection appears in the System Configuration section.
 
-**Step 2 –** Select the **Provider** in order for Single Sign On subsection to be displayed.
+**Step 2 –** Select the **Provider** to display the Single Sign On subsection.
 
 ![ssoprovider](ssoprovider.webp)
 
@@ -41,7 +37,7 @@ Configuration section.
 4.  Enter a name such as EndpointProtector or MyEPPApp.
 5.  Select **Regular Web Application**.
 6.  Click **Create**.
-7.  Go to **Login Experience** tab and make sure that for the Types of Users, there is "Both" checked (Individuals or Business Users), with either “Prompt for Credentials” or “Prompt for Organization” as options. 
+7.  Go to **Login Experience** tab and verify that for the Types of Users, “Both” is checked (Individuals or Business Users), with either “Prompt for Credentials” or “Prompt for Organization” as options. 
 
 **Note:** “Prompt for Organization” will require you to have an organization created with your connections enabled for it. It will prompt for an organizational email, then redirect you to the password field.
 “Prompt for Credentials” will prompt for a email and password and then redirect you to the application.
@@ -83,7 +79,7 @@ Click **Save** in Endpoint Protector at the end to save the configuration.
 
 **Step 6 –** Enable the Connection for the Endpoint Protector Application
 
-Go back to Auth0. Auth0 controls which applications may use a given Connection. To allow users to log in to Endpoint Protector through Auth0:
+Go back to Auth0. Auth0 controls which applications can use a given Connection. To let users log in to Endpoint Protector through Auth0:
 
 1.  In the Auth0 Dashboard, navigate to **Authentication → Database**
 2.  Select the connection you want to use (for example, **Username-Password-Authentication**).
@@ -101,18 +97,18 @@ For further restriction, use Endpoint Protector’s own user and role management
 **Step 7 –** Add the individual users you need access for to Users
 
 1.  In the Auth0 Dashboard, navigate to **User Management → Users**
-2.  Add the individual users you need to give access to (make sure the have access to the connection created at Step 6, **Username-Password-Authentication**).
+2.  Add the individual users you need to give access to (verify that they have access to the connection created at Step 6, **Username-Password-Authentication**).
 
 Note
-This is a way to grant direct user access to the application, for enterprise level access based on organizational context please see the next step.
+This is a way to grant direct user access to the application, for enterprise level access based on organizational context see the next step.
 
 ![Add Users](4AddUsersIndividually.png)
 
 **Step 8 –** (Optional) Create a SAML Connection under Authentication → Enterprise
 
-If you want Auth0 to act as a broker IdP and authenticate users through an external SAML Identity Provider (for example, Azure AD, Okta, ADFS, Ping, Shibboleth, etc.), you must create an Enterprise SAML Connection.
+To have Auth0 act as a broker IdP and authenticate users through an external SAML Identity Provider (such as Azure AD, Okta, ADFS, Ping, or Shibboleth), you must create an Enterprise SAML Connection.
 
-This step is only needed if Auth0 is not the original IdP, and instead you want EPP → Auth0 → external IdP.
+This step is only needed if Auth0 isn't the original IdP, and instead you want EPP → Auth0 → external IdP.
 
 To create a SAML Enterprise connection:
 
@@ -137,7 +133,7 @@ To create a SAML Enterprise connection:
 
 8.  Click **Create**.
 9.  After saving, go to the **Applications** tab inside this connection.
-10. Enable the toggle for the Endpoint Protector application to allow users to authenticate through this SAML connection.
+10. Enable the toggle for the Endpoint Protector application so users can authenticate through this SAML connection.
 
 ![Enable SAML Connection for the app](5EnterpriseSAMLEnableApp.png)
 
@@ -154,8 +150,8 @@ This step allows Auth0 to accept SAML assertions from another IdP and pass them 
 
 **Disclaimer**
 
-The integration steps described in this document are based on the Auth0 platform and user interface as available at the time of writing. Auth0 is a third-party service that is fully independent from Netwrix. Because Auth0 may update or modify its features, user interface, configuration flow, roadmap, service ownership, or platform behavior at any time, Netwrix cannot guarantee that these instructions will remain accurate in future versions of Auth0.
+The integration steps described in this document are based on the Auth0 platform and user interface as available at the time of writing. Auth0 is a third-party service that is fully independent from Netwrix. Because Auth0 may update or modify its features, user interface, configuration flow, roadmap, service ownership, or platform behavior at any time, Netwrix can't guarantee that these instructions will remain accurate in future versions of Auth0.
 
-Netwrix is not responsible for any changes made by Auth0 to its portal, APIs, configuration settings, authentication methods, or service availability. If discrepancies arise between this document and the current Auth0 platform, please refer to Auth0’s official documentation or contact Auth0 Support for the most up-to-date guidance.
+Netwrix isn't responsible for any changes made by Auth0 to its portal, APIs, configuration settings, authentication methods, or service availability. If discrepancies arise between this document and the current Auth0 platform, refer to Auth0’s official documentation or contact Auth0 Support for the most up-to-date guidance.
 
 Netwrix continues to ensure that Endpoint Protector adheres to SAML 2.0 standards and remains compatible with identity providers that follow these protocols.

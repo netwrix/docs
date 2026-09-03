@@ -31,13 +31,11 @@ This report is comprised of the following columns:
 - Access – Whether the trustee was granted access to execute the operation: **Allowed** or
   **Denied**
 - Path – Original location where the operation occurred
-- Target Path – New location if changed by the operation. Blank if the operation does not result in
+- Target Path – New location if changed by the operation. Blank if the operation doesn't result in
   a new path.
 - Process Name – Name of the process which performed the operation
 
-There is one table at the bottom displaying Permission Changes for the selected event. It contains
-details on the trustee whose permissions were updated, added, or removed. This table is comprised of
-the following columns:
+The Permission Changes table at the bottom shows details on the trustee whose permissions were updated, added, or removed. This table comprises the following columns:
 
 - Trustee Name – Trustee whose permissions were modified
 - Trustee Account – Active Directory account associated with the trustee
@@ -48,7 +46,7 @@ the following columns:
     - Remove – Permission removed from trustee
     - Update – Permission modified for trustee
 
-- Ace Type – Whether or not the right assigned is allowed or denied
-- Inheritance – Whether or not the Ace is inherited
+- Ace Type – Whether the right assigned is allowed or denied
+- Inheritance – Whether the Ace is inherited
 - Ace Flags – Inheritance flag description
 - Access Rights – Type of right assigned

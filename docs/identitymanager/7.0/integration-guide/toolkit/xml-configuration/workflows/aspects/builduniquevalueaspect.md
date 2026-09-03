@@ -24,17 +24,17 @@ The following example generates bots' logins during their creation.
 | Binding required | **Type:** String **Description:** Binding whose difference with `ExpressionBinding` defines the property to be computed. |
 | Identifier required | **Type:** String **Description:** Unique identifier of the aspect. |
 | Expression optional | **Type:** String **Description:** C# expression that computes the unique value.**Note:** the computation can be configured in SQL instead of C# via `SqlBuildExpression`. Decide whether to use either `Expression` or `SqlBuildExpression`, not both. |
-| ExpressionBinding optional | **Type:** String **Description:** Binding:- that defines the variable type used in the potential expressions specified in the aspect;- whose difference with `Binding` defines the property involved in the aspect.**Note:** required when handling the property of multi-valued objects, for example records, to make sure to modify the property in all records and not only in one. |
+| ExpressionBinding optional | **Type:** String **Description:** Binding:- that defines the variable type used in the potential expressions specified in the aspect;- whose difference with `Binding` defines the property involved in the aspect.**Note:** required when handling the property of multi-valued objects, for example records, to ensure to modify the property in all records and not only in one. |
 | HistorizeBinding optional | **Type:** String **Description:** Binding that stores all the old values computed by the aspect. |
 | HistorizeSeparator <span class="optionalAttribute">default value: ¤</span> | **Type:** String **Description:** Defines the character used as a separator in the `HistorizeBinding` property. |
-| IfExpression optional | **Type:** String **Description:** Expression that conditions the aspect execution. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
-| IterationsCount <span class="optionalAttribute">default value: 0</span> | **Type:** String **Description:** Maximum number of computation attempts without finding a unique value.**Note:** a variable named `iteration` is available to use the attempt number in the expressions of the aspect and/or of the potential unicity check rules, for example to help manage homonyms. Hence, a custom variable cannot be declared with the name `iteration`. |
+| IfExpression optional | **Type:** String **Description:** Expression that conditions the aspect execution. [Learn about C# expression syntax](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| IterationsCount <span class="optionalAttribute">default value: 0</span> | **Type:** String **Description:** Maximum number of computation attempts without finding a unique value.**Note:** a variable named `iteration` is available to use the attempt number in the expressions of the aspect and/or of the potential unicity check rules, for example to help manage homonyms. Hence, a custom variable can't be declared with the name `iteration`. |
 | Message_L1 <span class="optionalAttribute">default value: </span> | **Type:** String **Description:** Message in language 1 (up to 16) to be displayed when the value generation failed, i.e. when `IterationsCount` is exceeded. |
 | OnlyIfNew <span class="optionalAttribute">default value: false</span> | **Type:** String **Description:** `true` to trigger the aspect only for the creation of new resources. |
 | Priority <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Execution priority among all aspects. At a given activity state, the aspect with the highest priority will be triggered first.**Note:** the priority can be a negative value. |
 | SimulationExpression optional | **Type:** String **Description:** Expression used instead of the `Expression` parameter when previewing the workflow result before its implementation. |
 | SqlBuildExpression optional | **Type:** String **Description:** SQL command that computes the unique value.**Note:** the computation can be configured in C# instead of SQL via `Expression`. Decide whether to use either `SqlBuildExpression` or `Expression`, not both. |
-| SqlCheckExpression optional | **Type:** String **Description:** SQL request that checks whether the value computed with the binding/expression is unique, i.e. not yet used by another resource.**Note:** required if zero [unicity check rules](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/workflows/aspects/builduniquevalueaspect#child-element-unicitycheckrule) are linked to the aspect.**Warning:** the SQL request must be efficient because a potential timeout may block the progress of the workflow. For example, when the database's state and indexes are not well known, prefer to use views rather than the whole tables, because views store way fewer elements than tables, which makes them faster to use in a request. |
+| SqlCheckExpression optional | **Type:** String **Description:** SQL request that checks whether the value computed with the binding/expression is unique, i.e. not yet used by another resource.**Note:** required if zero [unicity check rules](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/workflows/aspects/builduniquevalueaspect#child-element-unicitycheckrule) are linked to the aspect.**Warning:** the SQL request must be efficient because a potential timeout may block the progress of the workflow. For example, when the database's state and indexes aren't well known, prefer to use views rather than the whole tables, because views store way fewer elements than tables, which makes them faster to use in a request. |
 
 
 ## Child Element: PointCut
@@ -58,21 +58,21 @@ A unicity check rule ensures that the expression computed by a [`BuildUniqueValu
 The comparison performed by these rules to check unicity can be configured in SQL instead of C# via the [`SqlCheckExpression`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/workflows/aspects/builduniquevalueaspect) property of the aspect.
 :::
 
-The value of the source binding/expression is computed based on the properties of the source resource which is the resource whose property we compute via the `BuildUniqueValue` aspect.
+The value of the source binding/expression is computed based on the properties of the source resource which is the resource whose property Identity Manager computes via the `BuildUniqueValue` aspect.
 
 The rule compares the return value of the source binding/expression with the existing values of the target binding/expression in the target entity type.
 
 ![Schema: Unicity Check](/images/identitymanager/aspects_unicitycheck.webp)
 
 
-> For example, we need to generate an email address for any new user joining the company. We configure in a `BuildUniqueValue` aspect that users' emails are computed with `{firstName}.{lastName}@{EmailDomain}`.
+> For example, to generate an email address for any new user joining the company, configure in a `BuildUniqueValue` aspect that users' emails are computed with `{firstName}.{lastName}@{EmailDomain}`.
 >
-> Consider a new user called John Doe. We need to link to the aspect a unicity check rule that is going to compare the email core `john.doe` with the email cores of existing resources in a given entity type. Thus Identity Manager can ensure that the email core is unique, and finally build the unique email address.
+> Consider a new user called John Doe. Link to the aspect a unicity check rule that is going to compare the email core `john.doe` with the email cores of existing resources in a given entity type. Thus Identity Manager can ensure that the email core is unique, and finally build the unique email address.
 
 Both source and target bindings/expressions must be consistent with the binding/expression used in [the corresponding aspect](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/workflows/aspects/builduniquevalueaspect) which must not use a `SqlCheckExpression`.
 
 :::info
-One `BuildUniqueValue` aspect can be linked to many unicity check rules, but should not be linked to more than one rule per target entity type.
+One `BuildUniqueValue` aspect can be linked to many unicity check rules, but shouldn't be linked to more than one rule per target entity type.
 
 The unicity check rules linked to a same aspect are combined with the AND operator. It means that the aspect's iteration goes up when at least one of the rules detects non-unicity.
 :::
@@ -89,14 +89,14 @@ When creating or updating a unicity check rule, launch the [`ComputeCorrelationK
 
 The following example checks the unicity of the login of a new user.
 
-> In order to be able to write the source and target bindings/expressions of the unicity check rule, you must understand the binding/expression of the corresponding `BuildUniqueValue` aspect:
+> to be able to write the source and target bindings/expressions of the unicity check rule, you must understand the binding/expression of the corresponding `BuildUniqueValue` aspect:
 > ```xml
 > <BuildUniqueValueAspect Identifier="Directory_UserRecord_UniqueValue_Login" Binding="Workflow_Directory_User:Directory_User.Records.Login" ExpressionBinding="Workflow_Directory_User:Directory_User.Records" Expression="C#:record:return (record.UserType?.LoginPrefix ?? &amp;quot;U&amp;quot;) + record.UserIdentifier;" IterationsCount="10" Priority="70" >
 >   <PointCut ... />
 > </ BuildUniqueValueAspect >
 > ```
 
-We want to check the unicity of the new user's login, compared with the logins of existing users:
+To check the unicity of the new user's login, compare it with the logins of existing users:
 
 ```xml
 <UnicityCheck Aspect="Directory_UserRecord_UniqueValue_Login" TargetEntityType="Directory_UserRecord" TargetBinding="Login" />
@@ -108,7 +108,7 @@ Here the source binding and expression are those from the aspect.
 
 #### Multiple unicity checks
 
-With the same aspect as the previous example, we might want to compare the login of the new user with the list of reserved logins too:
+To compare the login of the new user with the list of reserved logins, use the same aspect as the previous example:
 
 ```xml
 <UnicityCheck Aspect="Directory_UserRecord_UniqueValue_Login" TargetEntityType="Directory_UserRecord" TargetBinding="Login" />
@@ -119,7 +119,7 @@ With the same aspect as the previous example, we might want to compare the login
 
 The following example checks the unicity of the email address of a new user.
 
-> In order to be able to write the source and target bindings/expressions of the unicity check rule, you must understand the binding/expression of the corresponding `BuildUniqueValue` aspect:
+> to be able to write the source and target bindings/expressions of the unicity check rule, you must understand the binding/expression of the corresponding `BuildUniqueValue` aspect:
 > ```xml
 > <BuildUniqueValueAspect Identifier="Directory_UserRecord_UniqueValue_Email" Binding="Workflow_Directory_User:Directory_User.Records.Email" ExpressionBinding="Workflow_Directory_User:Directory_User.Records" Priority="80"
 >
@@ -145,7 +145,7 @@ The following example checks the unicity of the email address of a new user.
 > return result;" IterationsCount="10" />
 > ```
 
-We want to include in the unicity check only the email's core `firstName.lastName` without the `@EmailDomain` part. This is why the source expression starts like the aspect's expression but does not add the domain part, and the target expression removes the domain part from existing values:
+To include in the unicity check only the email's core `firstName.lastName` without the `@EmailDomain` part, configure the source expression to start like the aspect's expression but not add the domain part, and set the target expression to remove the domain part from existing values:
 
 ```xml
 <UnicityCheck Aspect="Directory_UserRecord_UniqueValue_Email"
@@ -193,7 +193,7 @@ return result;" />
 |Property|Details|
 |---|---|
 |SourceBinding<br/>optional|<p>**Type**<br />Int64<br /><br />**Description**<br />Binding property (from the source entity type specified in the corresponding workflow) whose value is to be compared with the existing values of the target binding/expression.<br/><br/>**Note:** when not specified, the unicity check rule uses the binding from the aspect.</p>|
-|SourceExpression<br/>optional|<p>**Type**<br />String<br /><br />**Description**<br />Binding expression (based on properties from the source entity type specified in the corresponding workflow) whose value is to be compared with the existing values of the target binding/expression. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions).<br/><br/>**Note:** when not specified, the unicity check rule uses the expression from the aspect.</p>|
+|SourceExpression<br/>optional|<p>**Type**<br />String<br /><br />**Description**<br />Binding expression (based on properties from the source entity type specified in the corresponding workflow) whose value is to be compared with the existing values of the target binding/expression. [Learn about C# expression syntax](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions).<br/><br/>**Note:** when not specified, the unicity check rule uses the expression from the aspect.</p>|
 |TargetBinding<br/>optional|<p>**Type**<br />Int64<br /><br />**Description**<br />Binding property (from the target entity type) whose values corresponding to existing resources are to be compared with the value of the source binding/expression.</p>|
 |TargetEntityType<br/>required|<p>**Type**<br />Int64<br /><br />**Description**<br />Identifier of the entity type for which the rule checks the property's unicity.</p>|
-|TargetExpression<br/>optional|<p>**Type**<br />String<br /><br />**Description**<br />Binding expression (based on properties from the target entity type) whose values corresponding to existing resources are to be compared with the value of the source binding/expression. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions).</p>|
+|TargetExpression<br/>optional|<p>**Type**<br />String<br /><br />**Description**<br />Binding expression (based on properties from the target entity type) whose values corresponding to existing resources are to be compared with the value of the source binding/expression. [Learn about C# expression syntax](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions).</p>|

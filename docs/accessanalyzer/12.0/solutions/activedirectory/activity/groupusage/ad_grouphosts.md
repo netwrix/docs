@@ -14,7 +14,7 @@ Navigate to the **Jobs** > **Active Directory** > **6.Activity** > **GroupUsage*
 **AD_GroupHosts** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -35,4 +35,4 @@ following pre-configured reports:
 
 | Report           | Description                                                         | Default Tags                                               | Report Elements                                                                                                                                                                                                    |
 | ---------------- | ------------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Group Host Usage | Understand what groups are utilizing what hosts in the environment. | CCPA GDPR SOX HIPPA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of three elements: <ul><li>Table – Displays security groups by target hosts</li><li>Table – Displays hosts by associated groups</li><li>Table – Displays authentication details</li></ul> |
+| Group Host Usage | Understand what groups are using what hosts in the environment. | CCPA GDPR SOX HIPPA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of three elements: <ul><li>Table – Displays security groups by target hosts</li><li>Table – Displays hosts by associated groups</li><li>Table – Displays authentication details</li></ul> |

@@ -6,19 +6,19 @@ sidebar_position: 20
 
 # 0.Collection Job Group
 
-The MySQL Solution Collection group is designed to collect high level summary information from
-targeted MySQL Servers. This information is used by other jobs in the MySQL Solution Set for further
-analysis and producing respective reports.
+The MySQL Solution Collection group collects high level summary information from
+targeted MySQL Servers. Other jobs in the MySQL Solution Set use this information for further
+analysis and to produce respective reports.
 
 ![0.Collection Job Group for MySQL](/images/accessanalyzer/12.0/solutions/databases/mysql/collection/0.collectionjobgroup.webp)
 
 The jobs in the 0.Collection Job Group are:
 
-- [MySQL_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql_configuration.md) – Designed to collect MySQL server instance and
+- [MySQL_Configuration Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql_configuration.md) – Collects MySQL server instance and
   database configuration settings for use in the following analysis jobs and respective reports
-- [MySQL_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql_sensitivedatascan.md) – Designed to discover sensitive data in
+- [MySQL_SensitiveDataScan Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql_sensitivedatascan.md) – Discovers sensitive data in
   MySQL databases based on pre-defined or user-defined search criteria
-- [MySQL_TablePrivileges Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql_tableprivileges.md) – Designed to collect MySQL table privileges
+- [MySQL_TablePrivileges Job](/docs/accessanalyzer/12.0/solutions/databases/mysql/collection/mysql_tableprivileges.md) – Collects MySQL table privileges
   from all the targeted servers.
 
 **Workflow**

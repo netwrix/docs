@@ -16,8 +16,8 @@ level or a parent job group. See the
 [Connection](/docs/accessanalyzer/11.6/admin/settings/connection/overview.md)
 topic for additional information.
 
-If the Default Setting is not preferred, select the custom type of connection settings desired
-below:
+If you don't want the default setting, select one of the following custom connection settings
+types:
 
 - System default
 
@@ -28,7 +28,7 @@ below:
 
 - Select one of the following user defined profiles
 
-    - Select a pre-configured Connection Profile from the drop-down menu
+    - Select a pre-configured Connection Profile from the dropdown menu
 
 Selecting the **Set all the child objects to inherit these settings** option forces inheritance of
 this setting to all sub-groups and jobs within the job group. When enabled, this option overrides

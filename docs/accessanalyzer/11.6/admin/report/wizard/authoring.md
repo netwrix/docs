@@ -25,7 +25,7 @@ Configure the following settings as required:
 - Author – Name of the person or group who created the report. This is displayed at the top of the
   generated report.
 - Tags – Use the tag editor to add and remove tags, see the
-  [Add Tags to a Report](#add-tags-to-a-report) topic below for more information. Tags are displayed
+  [Add Tags to a Report](#add-tags-to-a-report) topic for more information. Tags are displayed
   in the header of the generated reported.
 - Description – A description of the report content. It is displayed beneath the report Title in the
   generated report.
@@ -42,7 +42,7 @@ Configure the following settings as required:
       [Report Settings Tab](/docs/accessanalyzer/11.6/admin/jobs/job/properties/reportsettings.md)
       topics for additional information.)
     - Publish report – Select this option to publish the report
-    - Do not publish report – Select this option to not publish the report
+    - Don't publish report – Select this option to not publish the report
 - Publish State – Shows the current publish state of the report. If the report is already published,
   you can click the link to open the report in the Web Console.
 
@@ -50,22 +50,22 @@ Configure the following settings as required:
 
 You can add tags to reports to describe the content and use cases of the report (see the
 [Tags](/docs/accessanalyzer/11.6/admin/report/tags.md) topic for
-additional information). The Tag Editor allows you to select the tags for a report, including
+additional information). Use the Tag Editor to select the tags for a report, including
 creating new ones to select.
 
-Follow the steps to select tags using the Tag Editor.
+To select tags using the Tag Editor:
 
 **Step 1 –** On the Authoring page of the Report Configuration wizard, click the **Edit** button
 located next to the Tags text box.
 
 ![Tag Editor](/images/accessanalyzer/11.6/admin/report/wizard/tageditor.webp)
 
-**Step 2 –** In the Tag editor, select the checkbox next to the tags that should be applied to the
+**Step 2 –** In the Tag editor, select the checkbox next to the tags you want to apply to the
 report.
 
-- In addition to selecting existing tags, you can also add new tags to be selected. To create a tag,
-  enter the desired tag name in the text box and click **Add**.
+- In addition to selecting existing tags, you can also add new tags to select. To create a tag,
+  enter the tag name you want in the text box and click **Add**.
 
 **Step 3 –** Click **OK**.
 
-The selected tags are now shown in the Tags field as a comma separated list.
+The Tags field now shows the selected tags as a comma separated list.

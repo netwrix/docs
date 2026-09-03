@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Work with Collected Data
 
-To leverage data collected with the add-on, you can do the following in Auditor:
+To work with data collected with the add-on, you can do the following in Auditor:
 
 - Search for required data. For that, start Auditor client and navigate to **Search**. After
   specifying the criteria you need, click **Search**. You will get a list of activity records with
@@ -31,7 +31,7 @@ See the following topics for additional information:
 - [View and Search Collected Data](/docs/auditor/10.8/admin/search/overview.md)
 - [Subscriptions](/docs/auditor/10.8/admin/subscriptions/overview.md)
 
-To leverage data collected with the add-on, you can do the following in Auditor:
+To work with data collected with the add-on, you can do the following in Auditor:
 
 - Search for required data. For that, start Auditor client and navigate to **Search**. After
   specifying the criteria you need, click **Search**. You will get a list of activity records with

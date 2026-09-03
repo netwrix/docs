@@ -25,7 +25,7 @@ For full details on these reports, see [File Server Reports](/docs/accessanalyze
 
 | Report | Description |
 | --- | --- |
-| **Broken Inheritance** | Lists shares and folders where permission inheritance has been broken, meaning the folder's ACL no longer follows its parent. Use this report to find locations where custom permission assignments may have introduced inconsistencies or unexpected access. |
+| **Broken Inheritance** | Lists shares and folders where permission inheritance is broken, meaning the folder's ACL no longer follows its parent. Use this report to find locations where custom permission assignments may have introduced inconsistencies or unexpected access. |
 | **Domain User ACLs** | Shows share and folder permissions assigned directly to domain user accounts. Use this report to identify accounts with direct ACL entries that should be managed through groups instead. |
 | **High Risk ACLs** | Identifies folders where broad trustees such as Everyone, Authenticated Users, or Domain Users appear in the access control list. Use this report to locate and remediate over-permissioned folders that expose data to wide audiences. |
 | **Local Administrators** | Lists local administrator accounts and the hosts where they hold that privilege. Use this report to identify non-standard or unauthorized local administrator assignments across your file servers. |
@@ -46,7 +46,7 @@ For full details on these reports, see [File Server Reports](/docs/accessanalyze
 | --- | --- |
 | **Empty Shares** | Lists shares that contain no files. Use this report to identify shares that can be reviewed for decommissioning or consolidation. |
 | **Largest Shares** | Ranks file shares by total size. Use this report to identify shares that consume the most storage and prioritize them for review or cleanup. |
-| **Nested Shares** | Identifies shares that are nested inside other shares, creating multiple access paths to the same data with potentially different permissions. Use this report to find and resolve configurations that complicate permission management and access auditing. |
+| **Nested Shares** | Identifies shares nested inside other shares, creating multiple access paths to the same data with potentially different permissions. Use this report to find and resolve configurations that complicate permission management and access auditing. |
 | **Stale Content** | Identifies files and shares that haven't been accessed within a configurable threshold. Use this report to locate data that may be a candidate for archiving, deletion, or access review. |
 
 ### Sensitive Data

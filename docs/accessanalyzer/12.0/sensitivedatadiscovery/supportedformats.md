@@ -7,7 +7,7 @@ sidebar_position: 10
 # Supported Formats for Scanning & Metadata
 
 This topic provides a comprehensive listing of all formats supported by Sensitive Data Discovery.
-The list is divided into three major categories:
+The list has three major categories:
 
 - [Scan-able Formats](#scan-able-formats)
 - [Metadata Only Formats](#metadata-only-formats)
@@ -101,10 +101,10 @@ attachment’s file type is a scan-able format, then it can extract text from th
 | Tagged Image File Format                | .TIF, .TIFF                          |
 
 :::note
-The **FileSystem** > **0.Collection** > **1-SEEK System Scans** job can perform Optical
-Character Recognition (OCR) scans for Raster image files by enabling the option on the SDD Audit
-Settings page in the File System Access Auditor Data Collector Wizard. This is an option for the
-Sensitive Data Scan category. See the
+You can enable Optical Character Recognition (OCR) scans for raster image files on the SDD Audit
+Settings page in the File System Access Auditor Data Collector Wizard. This option belongs to the
+Sensitive Data Scan category. The **FileSystem** > **0.Collection** > **1-SEEK System Scans** job
+then performs the OCR scans. See the
 [1-SEEK System Scans Job](/docs/accessanalyzer/12.0/solutions/filesystem/collection/1-seek_system_scans.md) topic for
 additional information.
 :::
@@ -165,15 +165,14 @@ multimedia. The following file formats are supported as metadata only formats.
 
 ## Scans Against Files with no Extensions
 
-Files with no extensions can be scanned by modifying the XML file for each job where this type of
-scan is desired. Add the following line to the `PerScanExtraScanOptions` section of a job's XML
-script:
+To scan files with no extensions, modify the XML file for each job that requires this type of scan.
+Add the following line to the `PerScanExtraScanOptions` section of a job's XML script:
 
 ```
 <ScanNoExtension>true</ScanNoExtension>
 ```
 
-This line must be added to a specific location within the XML script. See below:
+Add this line to a specific location within the XML script, as shown in the following example:
 
 ```
 <DLPSScanOptions>
@@ -192,5 +191,5 @@ This line must be added to a specific location within the XML script. See below:
 </PerScanExtraScanOptions>
 ```
 
-Once this line has been added to the job's XML script and the XML file is saved, files with no
+After you add this line to the job's XML script and save the XML file, files with no
 extensions are included in scans for the job.

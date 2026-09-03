@@ -15,7 +15,7 @@ Navigate to the **Active Directory** > **4. Group Policy** > **AD_OverlappingGPO
 node and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected first analysis task. The first analysis task is
+Don't modify or deselect the selected first analysis task. The first analysis task is
 preconfigured for this job.
 :::
 
@@ -30,7 +30,7 @@ The default analysis tasks are:
 The following analysis tasks are deselected by default:
 
 :::note
-Deselect the **Conflicting** analysis task before selecting the analysis tasks below.
+Deselect the **Conflicting** analysis task before selecting the following analysis tasks.
 :::
 
 

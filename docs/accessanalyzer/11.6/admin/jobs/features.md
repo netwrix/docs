@@ -11,8 +11,8 @@ Enterprise Auditor users should be familiar.
 
 **View XML Files**
 
-Job, query, analysis, and action property windows all have the **View XML** option. These provide
-the ability to edit through an XML text window.
+Job, query, analysis, and action property windows all have the **View XML** option. These let you
+edit through an XML text window.
 
 **Open Explore Folder**
 
@@ -21,20 +21,20 @@ using the **Explore Folder** option in the right-click menu.
 
 **Publish Reports after Report Generation**
 
-Reports that have been generated but not published can be sent to the Web Console using the
+Send reports that have been generated but not published to the Web Console using the
 **Publish** option in the right-click menu from the selected Jobs tree, job group, or job node. See
 the [Publish Reports Window](#publish-reports-window) topic for additional information.
 
 **Job Configuration Change Tracking**
 
-Jobs configuration changes can be tracked using the **Changes** option in the right-click menu from
+Track job configuration changes using the **Changes** option in the right-click menu from
 the selected Jobs tree, job group, or job node. See the
 [Changes Window](/docs/accessanalyzer/11.6/admin/jobs/overview.md#changes-window)
 topic for additional information.
 
 **Job Export**
 
-Jobs can be exported to a ZIP file using the **Export** option in the right-click menu from the
+Export jobs to a ZIP file using the **Export** option in the right-click menu from the
 selected job group or job node. See the
 [Export Job to Zip Archive Window](#export-job-to-zip-archive-window) topic for additional
 information.
@@ -62,33 +62,33 @@ There are two options for where to save the ZIP file:
 
 - Save in the exported folder – Saves the file in the job’s directory, for example
   `%sainstalldir%Jobs\GROUP_.Active Directory Inventory\.Active Directory Inventory.zip`
-- Save in the following location – Allows you to either type or browse to the desired save location
+- Save in the following location – Enter or browse to the save location you want
 
-The **Email this archive**checkbox provides the opportunity to send an email notification with the
+The **Email this archive**checkbox lets you send an email notification with the
 attached ZIP file.
 
 ![Support Email window](/images/accessanalyzer/11.6/admin/jobs/supportemail.webp)
 
 When the archive has been created, the Enterprise Auditor Support Email window opens. By default,
-the recipient is set to [Netwrix Support](https://www.netwrix.com/support.html) but it can be
-modified prior to sending. Additional recipients can be added, and the Subject and email body can be
-modified.
+the recipient is set to [Netwrix Support](https://www.netwrix.com/support.html) but you can
+modify it before sending. You can also add additional recipients and modify the Subject and email
+body.
 
 ## Publish Reports Window
 
-The **Publish Reports** wizard allows you to better manage the list of reports published to the Web
+Use the **Publish Reports** wizard to better manage the list of reports published to the Web
 Console.
 
-When you right-click on a job group or job and select **Publish**, the Publish Reports wizard opens.
+When you right-click a job group or job and select **Publish**, the Publish Reports wizard opens.
 You can choose the list of reports to be published or removed from the Web Console.
 
-Follow the steps to publish the reports.
+To publish the reports:
 
-**Step 1 –** Right-click on a job group or job and select **Publish** from the drop-down list.
+**Step 1 –** Right-click a job group or job and select **Publish** from the dropdown list.
 
 ![Publish Reports wizard Action Type page](/images/accessanalyzer/11.6/admin/jobs/publishreportsactiontype.webp)
 
-**Step 2 –** On the Action Type page, select the type of action to be performed on the reports and
+**Step 2 –** On the Action Type page, select the type of action to perform on the reports and
 click **Next**:
 
 - Publish Reports
@@ -96,13 +96,13 @@ click **Next**:
 
 ![Publish Reports wizard Report Tree page](/images/accessanalyzer/11.6/admin/jobs/publishreportsreporttree.webp)
 
-**Step 3 –** On the Report Tree page, select the reports to be published or removed (depending on
-the Action Type selected in the previous step). Click **Next** to proceed with the action.
+**Step 3 –** On the Report Tree page, select the reports to publish or remove (depending on
+the Action Type you selected in the previous step). Click **Next** to proceed with the action.
 
 **Step 4 –** The Progress page shows you the status of the action. When it has completed, click
 **Finish** to exit the wizard.
 
-Published reports can be viewed under the **[Job]** > **Results** node or through the Web Console.
+You can view published reports under the **[Job]** > **Results** node or through the Web Console.
 See the
 [Reporting](/docs/accessanalyzer/11.6/admin/report/overview.md) topic
 for additional information.

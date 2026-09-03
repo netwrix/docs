@@ -31,7 +31,7 @@ Navigate to the **Jobs** > **SP_RemoveHost** > **Configure** node and select **A
 the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -40,4 +40,4 @@ preconfigured for this job.
 
 The default analysis tasks are:
 
-- Remove Host(s) — Remove Scanned Hosts from Tier 1
+- Remove Hosts — Remove Scanned Hosts from Tier 1

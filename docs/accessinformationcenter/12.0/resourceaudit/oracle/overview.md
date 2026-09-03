@@ -7,7 +7,7 @@ sidebar_position: 100
 # Oracle Reports
 
 Oracle reports are accessed through the Resource Audit interface. Explore the Oracle resources by
-expanding the levels within the Resources pane and selecting the desired resource. The data within
+expanding the levels within the Resources pane and selecting the resource you want. The data within
 these reports is collected by the Access Analyzer Oracle solution. See the Oracle Solution topic in
 the [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 for additional information.

@@ -16,8 +16,6 @@ Deploy the AD Agent to each domain controller in the target domain.
 
 ## Configure Domain Controller Agent
 
-Follow the steps to configure the agent deployed to the domain controller.
-
 :::note
 These steps assume the network share where the activity log files will be archived already
 exists.
@@ -35,7 +33,7 @@ controller.
 - Select the **Archive log files on a UNC path** option. Click the ... button and navigate to the
   desired network share.
 - The **User name** and **User password** fields only need to be filled in if the account used to
-  install the agent does not have access to this share.
+  install the agent doesn't have access to this share.
 
     :::tip
         Remember, The account used to install the agent on a domain controller is a Domain
@@ -60,11 +58,11 @@ Follow the steps configure the monitored domain output for Netwrix Enterprise Au
 
 **Step 1 –** Select the **Monitored Domains** tab.
 
-**Step 2 –** Select the desired domain and click **Add Output**. The Add New Ouptut window opens.
+**Step 2 –** Select the domain you want to configure and click **Add Output**. The Add New Ouptut window opens.
 
 **Step 3 –** Configure the following:
 
-- Configure the desired number of days for the **Period to keep Log files**. This is the number of
+- Configure the number of days for the **Period to keep Log files**. This is the number of
   days the log files are kept on the API server configured in the sections above. This needs to be
   set to a greater value than the days between Enterprise Auditor scans.
 
@@ -82,8 +80,6 @@ Follow the steps configure the monitored domain output for Netwrix Enterprise Au
 Enterprise Auditor now has access to the agent log files for this domain.
 
 ## Configure Enterprise Auditor Connection Profile
-
-Follow the steps to configure the Connection Profile in Enterprise Auditor.
 
 **Step 1 –** On the Settings > Connection node of the Enterprise Auditor Console, select the
 Connection Profile for the Active Directory solution. If you haven't yet created a Connection
@@ -111,7 +107,7 @@ name.
 the **Settings > Connection** node.
 
 **Step 7 –** Select the **Select one of the following user defined profiles** option. Expand the
-drop-down menu and select the Connection Profile with this credential.
+dropdown menu and select the Connection Profile with this credential.
 
 **Step 8 –** Click **Save** and then **OK** to confirm the changes to the job group settings.
 
@@ -119,8 +115,7 @@ The Connection Profile will now be used for AD Activity collection.
 
 ## Configure the AD_ActivityCollection Job
 
-The Enterprise Auditor requires additional configurations in order to collect domain activity data.
-Follow the steps to configure the **AD_ActivityCollection** Job.
+The Enterprise Auditor requires additional configurations to collect domain activity data.
 
 :::note
 Ensure that the .Active Directory Inventory Job Group has been successfully run against

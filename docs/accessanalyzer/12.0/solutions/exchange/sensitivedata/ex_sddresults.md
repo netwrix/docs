@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **Exchange** > **7. Sensitive Data*
 **EX_SDDResults** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -41,8 +41,8 @@ The following analysis task deletes table data from data collection and analysis
 task should remain cleared unless specifically needed:
 
 :::warning
-Do not select the **Deletes all Stored Data** option. This analysis task is for
-troubleshooting and cleanup only. Data will be deleted from the database.
+Don't select the **Deletes all Stored Data** option. This analysis task is for
+troubleshooting and cleanup only. It deletes data from the database.
 :::
 
 

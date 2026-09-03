@@ -22,50 +22,45 @@ The following statistics are available for each thread type:
 - Real Execution Time—The actual execution time of each thread (average of each threads run time)
 
 Statistics shown on the Dashboard screen are cached and updated regularly by the Collector service.
-If the values are not being updated please ensure that the Collector service is running.
+If the values aren't being updated, ensure that the Collector service is running.
 
-New content will be shown as awaiting collection, and progress through to fully processed once it
-has been classified.
+New content appears as awaiting collection and progresses to fully processed after it's classified.
 
-Content that has failed to process fully will be indicated under the "Exceptions" section, with the
-following meanings:
+Content that fails to process fully appears under the "Exceptions" section, with the following meanings:
 
 - Collection Errors—Items that failed to process during collection (typically due to an error from
   the source system)
 - Text Extraction Errors—Items that failed text extraction (either partially or fully)—this will
   typically mean that the full text for the affected documents will not be available
-- Collection Exclusions—Items that have been excluded due to the specified configuration (such as
-  Sources → SharePoint → Exclusions)
+- Collection Exclusions—Items the system excluded based on the specified configuration (such as Sources → SharePoint → Exclusions)
 - Files Skipped—File share items that have been ignored due to the "Files Included" or "Files
   Excluded" configuration (Sources → File)
-- Deleted Automatically—Items that have been detected as removed from the source system
-- Deleted Manually—Items removed manually by an end-user via the administration console
+- Deleted Automatically—Items the system detected as removed from the source system
+- Deleted Manually—Items that end-users removed via the administration console
 
     ![dashboard_thumb_0_0](/images/dataclassification/5.6.2/dashboard_thumb_0_0.webp)
 
 ## System Health
 
-The health service provides a traffic light based reporting system. Colour-coded traffic lights will
-appear in the top menu bar when issues are detected. The traffic lights provide a quick link to this
+The health service provides a traffic light-based reporting system. Color-coded traffic lights appear in the top menu bar when the system detects issues. The traffic lights provide a quick link to this
 page to display more detailed information.
 
 You will then see the list of reported issues, with the ability to view a detailed description of
 the problem and suggested resolution steps.
 
-It is also possible to configure notifications of system issues, along with daily reports of
-outstanding system issues.
+You can also configure notifications of system issues and daily reports of outstanding system issues.
 
 1. Click Dismiss at the bottom.
 
     ![health_config_notifications](/images/dataclassification/5.6.2/health_config_notifications.webp)
 
-2. Select Only dismiss health notifications that are older than one week, if you do not want to be
+2. Select Only dismiss health notifications that are older than one week, if you don't want to be
    notified on outdated issues.
 3. Select what you want to dismiss – warnings and all security notifications.
 
 ## Netwrix Data Classification Service Viewer
 
-From the Netwrix Data Classification Service Viewer it is possible to view a live stream of the
+From the Netwrix Data Classification Service Viewer, you can view a live stream of the
 current work being processed by the NDC services. As the services progress each document, the
 display will change. Once all work is complete, "Idle..." will be displayed.
 

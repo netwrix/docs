@@ -37,7 +37,7 @@ Implementing this connector requires:
     > and (optionally)
     > [downloading SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15);
 
-- understanding the concept of principals, roles and permissions;
+- understanding the concept of principals, roles, and permissions;
 
     > A little help on that with:
 >
@@ -58,9 +58,9 @@ Implementing this connector requires:
 - a `ConnectionString` with a `Login` to connect to the SQL Server, where either the login has the
 **sysadmin** role, or:
 
-    - the login has the **securityadmin** role, in order to export **server principals**;
+    - the login has the **securityadmin** role, to export **server principals**;
     - each database to export has a database user attached to the login with at least one role among
-**db_accessadmin**, **db_owner** and **db_securityadmin**, in order to export **database principals**.
+**db_accessadmin**, **db_owner**, and **db_securityadmin**, to export **database principals**.
 
 [Securables](https://docs.microsoft.com/en-us/sql/relational-databases/security/securables?view=sql-server-2017) can also be defined manually for both the server and **database principals**, but this is more complicated and hence not recommended.
 
@@ -147,7 +147,7 @@ There are no fulfill capabilities for this connector.
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 
@@ -162,5 +162,5 @@ the `appsettings.encrypted.agent.json` file;
  | ConnectionString | `Connections--<identifier>--ConnectionString` | 
  | Timeout | `Connections--<identifier>--Timeout` | 
 
-[Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) is not available for this connector.
+[Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) isn't available for this connector.
 

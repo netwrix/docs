@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Target Exchange Online Requirements, Permissions, and Ports
 
-The Enterprise Auditor for Exchange Solution provides the ability to audit Exchange Online. It
+The Enterprise Auditor for Exchange Solution lets you audit Exchange Online. It
 scans:
 
 - Exchange Online (Limited)

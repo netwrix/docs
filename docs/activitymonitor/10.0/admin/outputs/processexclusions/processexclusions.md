@@ -23,7 +23,7 @@ The tab contains the following settings and features:
 
 - Add – Opens the Add or Edit Process window to add a new process to the list. See the
   [Add or Edit Process Window](/docs/activitymonitor/10.0/admin/outputs/processexclusions/addeditprocess.md) topic for additional information.
-- Remove – Removes the selected path from the list. Confirmation is not requested.
+- Remove – Removes the selected path from the list. Confirmation isn't requested.
 
     :::warning
     If a process is removed by accident, use the **Cancel** button to discard the

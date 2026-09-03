@@ -7,26 +7,26 @@ sidebar_position: 70
 # Script Example 1: Conversion of Data
 
 This script example demonstrates how to perform a query and modify returned data. The script
-provides the data collector with the information that would have been provided if the user interface
-had been used to design the query. However, in this case it is all done through script. The data
-collector returns a value that is then converted and stored by Access Analyzer.
+provides the data collector with the same information you would provide by using the user
+interface to design the query. However, in this case, the script does all of this instead. The
+data collector returns a value that Access Analyzer then converts and stores.
 
-This script starts by defining a query using the Perfmon Data Collector. Notice that the
-**WorkingQuery** object is used, not the Query object. This is done to preserve the Query object,
-since the Query object will be used to store the results that are different from what the data
-collector is providing.
+This script starts by defining a query using the Perfmon Data Collector. Notice that the script
+uses the **WorkingQuery** object, not the Query object. The script preserves the Query object this
+way, because it later uses the Query object to store results that differ from what the data
+collector provides.
 
-The script then issues the query by calling `WorkingQuery.Execute`. When the query completes,
-**WorkingQuery** is set to view the first row of results by setting the **ResultRow** property. The
-value within the **System Up Time** property is then transferred into the `REMAINDER` variable so
-that it can be more easily manipulated.
+The script then issues the query by calling `WorkingQuery.Execute`. When the query completes, the
+script sets **WorkingQuery** to view the first row of results by setting the **ResultRow**
+property. The script then transfers the value within the **System Up Time** property into the
+`REMAINDER` variable for easier manipulation.
 
 The script then takes the value of `REMAINDER`, which is in seconds, and converts it to days, hours,
-minutes, and seconds. These values are then recorded in the Query object so that Access Analyzer can
-store this data.
+minutes, and seconds. The script then records these values in the Query object so that Access
+Analyzer can store this data.
 
 :::note
-In this task, the hours, minutes, and seconds properties were specified manually using the
+In this task, you specified the hours, minutes, and seconds properties manually using the
 task dialog. See the [Script Properties](/docs/accessanalyzer/12.0/admin/datacollector/script/properties.md) topic for additional information.
 :::
 

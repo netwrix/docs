@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Connections
 
-This page gathers useful information concerning the possible uses of connections, used by connectors in order to extract and/or fulfill data from/to external systems.
+This page gathers useful information concerning the possible uses of connections, used by connectors to extract and/or fulfill data from/to external systems.
 
 ## Connection Configuration
 
@@ -20,9 +20,9 @@ See the [References: Connectors](../../../integration-guide/connectors/reference
 
 ## Connection Tables
 
-A [Connection Table](../../../integration-guide/toolkit/xml-configuration/connectors/connectiontable) represents the potential output of the connection's [Export Task](../../../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/exporttask), when the connection's package allows export. The export process generates CSV files (our connection tables) whose names start with the connection's identifier. The files' suffixes depend on the connector. See the [References: Connectors](../../../integration-guide/connectors/references-connectors) topic for additional information.
+A [Connection Table](../../../integration-guide/toolkit/xml-configuration/connectors/connectiontable) represents the potential output of the connection's [Export Task](../../../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/exporttask), when the connection's package allows export. The export process generates CSV files (connection tables) whose names start with the connection's identifier. The files' suffixes depend on the connector. See the [References: Connectors](../../../integration-guide/connectors/references-connectors) topic for additional information.
 
-The name of these files are used to specify the connection tables of the [Entity Type Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) and [Entity Association Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping) in order to link the connectors' properties to the source files and columns from the managed systems.
+The name of these files are used to specify the connection tables of the [Entity Type Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) and [Entity Association Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping) to link the connectors' properties to the source files and columns from the managed systems.
 
 A connection table is used in the definition of an entity type as `Source`, while the available columns of the selected table are used for the mapping as `Source Columns`.
 

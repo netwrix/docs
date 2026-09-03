@@ -41,14 +41,13 @@ copied to a temporary location as a .txt file and processed as if it were any ot
 
 [](#)Content Type Extraction Methods
 
-The Content Type Extraction methods describes how documents will be handled by the APIs and the core
-services. A number of built-in processing methods are available, where there is no available method
+The Content Type Extraction methods describes how the APIs and core
+services handle documents. A number of built-in processing methods are available, where there is no available method
 the processing will default to running through standard Microsoft Search iFilter processing.
 
 You can alter the methods by clicking Edit and then selecting the preferred processing
 method. You can also specify an iFilter as a backup if the primary method
-fails to extract text from the document – the backup method will be used if the extraction fails to
-find more than 5 characters of text.
+fails to extract text from the document – the backup method activates if the extraction yields fewer than 5 characters.
 
 If you have updated the extraction method, Netwrix recommends re-processing any documents that have already
 been processed to ensure consistency. Selecting Re-index from the grid for the affected content type
@@ -62,8 +61,7 @@ The language detection list specifies which languages will be considered for aut
 
 ![configlanguages_thumb_0_0](/images/dataclassification/5.7/configuration/configlanguages_thumb_0_0.webp)
 
-If a language is excluded then it can't be used to identify the language of a document and it will
-be removed from the language options in Taxonomy Manager.
+If you exclude a language, the system won't use it to identify document language, and it won't appear in the language options in Taxonomy Manager.
 
 :::tip
 You can also enable OCR recognition for non-English images. See the Netwrix knowledge base article [How to enable OCR for non-English images](https://kb.netwrix.com/3519) for setup instructions.
@@ -71,7 +69,7 @@ You can also enable OCR recognition for non-English images. See the Netwrix know
 
 [](#)No Stem
 
-The No Stem list offers the ability to disable language stemming for a particular word or phrase,
+The No Stem list lets you disable language stemming for a particular word or phrase,
 this supports the ability to always apply a phrasematch when a particular term is used as either a
 clue – or a search term.
 
@@ -79,7 +77,7 @@ clue – or a search term.
 
 [](#)OCR Language Mapping
 
-The OCR language mapping configuration screen can be used if you want to OCR non-English images using
+Use the OCR language mapping configuration screen to OCR non-English images with
 Tesseract and the Apache Tika OCR engine. File paths (including parts of paths) can be mapped to specific Tesseract language packs.
 You can also override the OCR processing mode, enable conversion of PDF files to images for improved text extraction, and override 
 the Page Segmentation mode used by Tika to identify text.
@@ -88,7 +86,7 @@ the Page Segmentation mode used by Tika to identify text.
 
 [](#)Synonyms
 
-Often you need to submit a query and have synonyms automatically included. A generic set of
+When you submit a query, the system automatically includes synonyms. A generic set of
 synonyms may be configured by using the Synonyms form.
 
 ![configsynonyms](/images/dataclassification/5.7/configuration/configsynonyms.webp)
@@ -100,13 +98,11 @@ for all pages and/or not relevant to the individual page content. If all of the 
 these HTML pages then this can lead to unwanted search results where a match is made, for example,
 to an entry in a standard page navigation area.
 
-The Text Patterns feature is provided to assist with the cleanup of HTML documents. Use TextPatterns
-to also index terms that would normally be discarded.
+Use the Text Patterns feature to clean up HTML documents and index terms that would normally be discarded.
 
 ![configtextpatterns_thumb_0_0](/images/dataclassification/5.7/configuration/configtextpatterns_thumb_0_0.webp)
 
-The StartTag and EndTag values are case sensitive strings used to identify the content to be
-managed, the content is then managed based on the filter type.
+The StartTag and EndTag values are case-sensitive strings that identify the content you want to manage. The system manages the content based on the filter type.
 
 You can use three tag types to assist in the cleanup:
 

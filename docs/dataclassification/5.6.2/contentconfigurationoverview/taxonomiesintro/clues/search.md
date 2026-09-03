@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Search Documents by Clue
 
-You can search for documents based on the class clues. For that, click on the name of any single
+You can search for documents based on the class clues. For that, click the name of any single
 clue in the clue list in the management console (or even any suggested clue), go to the **Search**
 tab and configure search settings.
 
@@ -26,9 +26,9 @@ tab and configure search settings.
    by quickly examining its usage within the corpus. Consider the following:
 
     - The URL filter must end on a folder boundary.
-    - Use custom filter to specify a number of complex filters: boolean, datetime and numeric.
+    - Use custom filter to specify a number of complex filters: boolean, datetime, and numeric.
 
-    **NOTE:** Full description of all filters can be found in the API Reference Guide. You can
+    **NOTE:** The API Reference Guide fully describes all filters. You can
     access it by entering http://localhost/NDC/apidocumentation from your NDC server. If the
     originally installed version of NDC is 5.6 or older, the path is
     http://localhost/conceptqs/apidocumentation.

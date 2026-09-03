@@ -20,7 +20,7 @@ Each task is assigned a launch order which can be configured in [Job](../../../i
 
 The launch orders of all the tasks of a job can be listed by using the [Usercube-Get-JobSteps](../../../integration-guide/executables/references/get-jobsteps) executable.
 
-Before any task is launched, the **state machine** checks the task's parent tasks in order to verify whether the task must be launched or not.
+Before any task is launched, the **state machine** checks the task's parent tasks to verify whether the task must be launched or not.
 
 If the task must be launched, then the **state machine** checks whether the task should be started server- or agent-side.
 
@@ -30,9 +30,9 @@ Then the task is launched, and then:
 last task then the job ends successfully;
 - if the task exits in error, then the whole job exits in error and stops;
 - if the job is requested to stop from the UI, then the job's state switches to `cancelled` and is
-transmitted to the current task in order to not launch the next task;
+transmitted to the current task to not launch the next task;
 
-A canceled job is not stopped straight away, as the current task first needs to be finished.
+A canceled job isn't stopped straight away, as the current task first needs to be finished.
 
 - if the task exits in error while the warning mode is active, then the next job is loaded.
 
@@ -50,11 +50,11 @@ In the case where the job is blocked and restarted:
 - if the blocked task is a
 [Generate Provisioning Orders Task](../../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/generateprovisioningorderstask), then the **state machine** forces the same provisioning on the related connector.
 
-Both the synchronization validation and the forced provisioning are virtual jobs that do not exist in the database. However, they will be visible in the UI which keeps track of any launched task.
+Both the synchronization validation and the forced provisioning are virtual jobs that don't exist in the database. However, they will be visible in the UI which keeps track of any launched task.
 
-In both cases, the **state machine** resumes the job with the tasks that were not started due to the blockage.
+In both cases, the **state machine** resumes the job with the tasks that weren't started due to the blockage.
 
-Any task launched by the **state machine** is linked to a job instance in order to keep track of the launch group.
+Any task launched by the **state machine** is linked to a job instance to keep track of the launch group.
 
 ## Example
 

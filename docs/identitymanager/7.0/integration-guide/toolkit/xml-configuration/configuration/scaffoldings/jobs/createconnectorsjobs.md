@@ -19,7 +19,7 @@ Creates all jobs by connector to launched task in the connector page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Job Identifier="AD_VirtualJob" DisplayName_L1="ZZ Connectors/AD" Agent="Local" IsConnectorJob="true" UserStartDenied="true">

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # **Azure Information Protection Target Requirements**
 
-Microsoft® Azure is a cloud-based computing platform that provides a range of services, such as file storage. Azure uses Azure Information Protection (AIP) labels, a Microsoft tool used to classify and protect stored files. Access Analyzer employs the File System Solution to execute Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans in order to find AIP Protection labels and scan protected (i.e. encrypted) files for sensitive data.
+Microsoft® Azure is a cloud-based computing platform that provides a range of services, such as file storage. Azure uses Azure Information Protection (AIP) labels, a Microsoft tool used to classify and protect stored files. Access Analyzer employs the File System Solution to execute Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans to find AIP Protection labels and scan protected (i.e. encrypted) files for sensitive data.
 
 This document provides information needed to properly configure access required by Access Analyzer to successfully scan for Azure Information Protection labels in a targeted environment.
 
@@ -14,7 +14,7 @@ This document provides information needed to properly configure access required 
 :::info
 **NOTE**
 
-Access Analyzer does not scan for AIP Marking labels, only Protection labels.
+Access Analyzer doesn't scan for AIP Marking labels, only Protection labels.
 
 :::
 
@@ -43,7 +43,7 @@ Ensure the following prerequisites are met before configuring AIP scanning:
 
 ### Rights Management Service Client Installation
 
-The Rights Management Service Client must be installed on the applet servers where FSAA is running. This may be the local Access Analyzer server, a Proxy server, or a File Server running in applet mode.
+You must install the Rights Management Service Client on the applet servers where FSAA is running. This may be the local Access Analyzer server, a Proxy server, or a File Server running in applet mode.
 
 * To install the Rights Management Service Client 2.1 on the server where the scan is taking place, go to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=38396):
 
@@ -74,7 +74,7 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
 
       
 :::warning
-      This will disappear once you leave the page!
+      This will disappear when you leave the page.
 
       :::
 4. Add API permissions
@@ -92,13 +92,13 @@ Read the System Requirements and Install Instructions provided by Microsoft to c
 
 ## **Enable the Account as an AIP Super User using PowerShell**
 
-Follow the steps to enable the Service Principal Account in AIP as a Super User:
+Enable the Service Principal Account in AIP as a Super User:
 
 
 :::info
 **NOTE**
 
-All PowerShell commands should be run in order through PowerShell as an Admin.
+Run all PowerShell commands in order through PowerShell as an Admin.
 
 :::
 
@@ -119,7 +119,7 @@ All PowerShell commands should be run in order through PowerShell as an Admin.
 
 `Enable-AIPServiceSuperUserFeature`
 
-The Service Principal Account is now added to the Rights Management service as a Super User, and the Super User feature is enabled.
+You've added the Service Principal Account to the Rights Management service as a Super User, and enabled the Super User feature.
 
 ## Add App Registration to the AIP Role in Microsoft® Azure
 
@@ -130,33 +130,33 @@ In Microsoft Azure, add the Account to the Azure Information Protection Administ
 2. Navigate to **Roles and Administrators**. On the Administrative Roles page, select the **Azure Information Protection Administrator** role.
 3. Use the **Add Assignment** button to display the Add assignments pane. Search for the name of the new service principal account (the **DisplayName** entered in PowerShell) and add it to the list of assignments.
 
-The Service Principal Account is now successfully added to the Azure Information Protection Administrator role.
+You've now successfully added the Service Principal Account to the Azure Information Protection Administrator role.
 
 ## **Access Analyzer Configurations**
 
-Before Access Analyzer can scan for AIP labels, two configurations must be done prior to the initial scan.
+Complete two configurations before the initial scan so Access Analyzer can scan for AIP labels.
 
 * [Azure Connection Profile](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/filesystem/filesystems/azureinformationprotection#azure-connection-profile)
 * [Configure FSAA Data Collector](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/filesystem/filesystems/azureinformationprotection#configure-fsaa-data-collector)
 
 ### **Azure Connection Profile**
 
-To collect tags for files protected with Azure Information Protection, an Azure connection profile must be configured in Access Analyzer before an FSAA scan runs. See the [Global Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/overview) topic for additional information on how to set up a connection profile at the global level.
+To collect tags for files protected with Azure Information Protection, you must configure an Azure connection profile in Access Analyzer before an FSAA scan runs. See the [Global Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/overview) topic for additional information on how to set up a connection profile at the global level.
 
 
 1. In Access Analyzer, add a credential for an Azure Active Directory account type to the existing Connection Profile used for File System scanning. Supply the Client ID field with the **AppID** and the Key field with the **Secret Value** created upon creation of the new service principal.
 2. At the job level, apply the connection profile that contains both the Microsoft Entra ID credential and credentials required for File System scanning under the **Jobs** > \[**Job**\] > **Settings** > **Connection** node.
 3. Ensure that the job is configured correctly before running a scan. See the [Configure FSAA Data Collector](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/filesystem/filesystems/azureinformationprotection#configure-fsaa-data-collector) topic for additional information.
 
-An Azure Connection Profile has now been successfully created for an FSAA scan.
+You've now successfully created an Azure Connection Profile for an FSAA scan.
 
 ### **Configure FSAA Data Collector**
 
-In Access Analyzer, configure the FSAA Data Collector wizard pages to scan files protected by Azure Information Protection. This can be done for both FSAA System Scans and SEEK System Scans. In the FSAA Data Collector Wizard, configure the following menus to scan for AIP protection labels:
+In Access Analyzer, configure the FSAA Data Collector wizard pages to scan files protected by Azure Information Protection. You can do this for both FSAA System Scans and SEEK System Scans. In the FSAA Data Collector Wizard, configure the following menus to scan for AIP protection labels:
 
 For FSAA System Scans:
 
-* Scan Server Selection – Choose the server that scanning is executed on. Target the server that has the Rights Management Service Client 2.1 installed where the applet is running.
+* Scan Server Selection – Choose the server where scanning runs. Target the server that has the Rights Management Service Client 2.1 installed where the applet is running.
   * This may be a proxy server, file server (applet mode), or the local Access Analyzer console depending on scan configuration
 * Scan Settings – Select the **Enable scanning of files protected by Azure Information Protection** checkbox to add AIP files to the scan criteria
 * Azure Tenant Mapping page – Add the **AppID** and the **Domain Name** or **Tenant ID**
@@ -175,7 +175,7 @@ For FSAA System Scans:
 
 For SEEK System Scans:
 
-* Scan Server Selection – Choose the server that scanning is executed on. Target the server that has the Rights Management Service Client 2.1 installed where the applet is running.
+* Scan Server Selection – Choose the server where scanning runs. Target the server that has the Rights Management Service Client 2.1 installed where the applet is running.
   * This may be a proxy server, file server (applet mode), or the local Access Analyzer console depending on scan configuration
 * Scan Settings – Select the **Enable scanning of files protected by Azure Information Protection** checkbox to add AIP files to the scan criteria
 * Azure Tenant Mapping page – Add the **AppID** and the **Domain Name** or **Tenant ID**

@@ -6,11 +6,7 @@ sidebar_position: 30
 
 # PowerShell 4.0 Actions
 
-A PowerShell 4.0 script can be written and assigned to a policy by Threat Prevention users or a
-Netwrix Engineer via engaging Netwrix Professional Services. The script will be invoked by the
-Enterprise Manager for an enabled policy.
-
-Follow the steps to add a PowerShell 4.0 action to a policy/template.
+Threat Prevention users or a Netwrix Engineer (through Netwrix Professional Services) can write and assign a PowerShell 4.0 script to a policy. The Enterprise Manager invokes the script when the policy is enabled.
 
 ![Actions tab - Actions Configurations area](/images/threatprevention/7.5/admin/policies/actions/actionsconfigurationsarea.webp)
 
@@ -23,10 +19,10 @@ Follow the steps to add a PowerShell 4.0 action to a policy/template.
 **Step 3 –** Configure the PowerShell 4.0 Script action:
 
 - Name – Provide a unique, descriptive name for this PowerShell 4.0 action
-- Check the box for **Enabled** to allow the policy to launch the script
+- Enable the **Enabled** checkbox to allow the policy to launch the script
 - Description – Provide a clear and detailed description for this PowerShell 4.0 action. This is
   optional but recommended.
-- Click **Edit…** to view the sample script. The Threat Prevention Script Editor opens
+- Click **Edit…** to view the sample script and open the Threat Prevention Script Editor
 
 ![Script Editor for PowerShell Scripts](/images/threatprevention/7.5/admin/policies/actions/scripteditorforps.webp)
 
@@ -35,7 +31,7 @@ Follow the steps to add a PowerShell 4.0 action to a policy/template.
 for additional information, i.e. Run for testing and Encrypt functionality. See the Default
 PowerShell 4.0 Script topic for the default custom script. Save and close.
 
-**Step 5 –** On the Add Action window, the new script is displayed in the **Script Preview**
+**Step 5 –** On the Add Action window, the system displays the new script in the **Script Preview**
 section. Check the **Enable compiler error logging** checkbox to enable Threat Prevention to log
 information about the compiling of scripts.
 
@@ -43,13 +39,12 @@ information about the compiling of scripts.
 
 ![Actions tab – PowerShell 4.0 Action Created](/images/threatprevention/7.5/admin/policies/actions/powershellaction.webp)
 
-The Actions tab now displays the configured settings for the specified PowerShell 4.0 action. The
-action configuration can be directly edited through this display as well.
+The Actions tab now displays the configured settings for the specified PowerShell 4.0 action. You can also directly edit the action configuration from this display.
 
 ## Default PowerShell 4.0 Script
 
-The following PowerShell 4.0 script is configured as a default action. It will either create the
-_c:\nveventdata.txt_ file or append the event data to it.
+The system uses the following PowerShell 4.0 script as a default action. It either creates the
+_c:\nveventdata.txt_ file or appends the event data to it.
 
 ```
 # Note: Powershell 4.0 or later is required for 

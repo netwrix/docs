@@ -6,8 +6,8 @@ sidebar_position: 210
 
 # File Data Collector
 
-The File Data Collector provides file and folder enumeration, properties, and permissions. It is
-used to find files and folders on a target host. The File Data Collector finds one or more files on
+The File Data Collector provides file and folder enumeration, properties, and permissions. It finds
+files and folders on a target host. The File Data Collector finds one or more files on
 the target hosts. It can target any file extension. This data collector is a core component of
 Enterprise Auditor and is available with all Enterprise Auditor licenses.
 
@@ -52,5 +52,5 @@ following wizard pages:
 
 ![File Search Wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/file/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the **Don't display this page the next time** checkbox while the
+wizard is open, then save the configuration settings.

@@ -24,9 +24,7 @@ Every investigation has the following options at the top of the page:
 - Subscriptions – Click the Subscriptions link to open the Subscription to window. You can specify
   recipients to receive this report as an email attachment in a specified format. See the
   [Add Subscription](/docs/threatprevention/7.5/reportingmodule/investigations/options/subscription.md) topic for additional information.
-- Export – The Export option provides choices for how you can export the report results for an
-  investigation. The report can be exported in a specified format and can be downloaded, emailed, or
-  scheduled as desired. See the Export Report topic for additional information.
+- Export – The Export option lets you export report results in a specified format. You can download, email, or schedule reports. See the Export Report topic for additional information.
 - Click the three dots to open a menu with the following options:
 
   - Copy link – The Copy link option copies the URL of the investigation to your clipboard, so
@@ -34,21 +32,20 @@ Every investigation has the following options at the top of the page:
   - Open as new – The Open as New option opens the investigation in Duplicate mode. The filter is
     the same as that of the base investigation. You can save it as a new investigation. See the
     [Edit or Duplicate an Investigation](/docs/threatprevention/7.5/reportingmodule/investigations/options/edit.md) topic for additional information.
-  - Delete – This option is available for a custom investigation. It is not possible to delete an
-    out-of-the-box investigation.
+  - Delete – This option is available for a custom investigation. You can't delete a built-in investigation.
 
 - Run Query – The Run Query button pulls available activity data that match the set filters and
   timeframe. The data is displayed on the Event Details, Events Over Time, and Top Resources tabs.
   See the [Investigation Reports](/docs/threatprevention/7.5/reportingmodule/investigations/reports/reports.md) topic for additional information.
 - Filters – The Filters section provides options to build a filter statement by selecting the
   Attribute, Operator, and Filter value. A time period for the report data is also configured here.
-  If multiple data sources have been configured, there is also a Source drop-down menu. See the
+  If multiple data sources have been configured, there is also a Source dropdown menu. See the
   [Filters Section](/docs/threatprevention/7.5/reportingmodule/investigations/options/filters.md) topic for additional information.
 
 :::note
-For an investigations to return information on user display names, groups, or email
+For an investigation to return information on user display names, groups, or email
 addresses, the StealthDEFEND Active Directory Service must be running to collect Active Directory
-data prior to running an investigation. See the
+data before running an investigation. See the
 [Active Directory Sync Page](/docs/threatprevention/7.5/reportingmodule/configuration/integrations/activedirectorysync.md) topic for
 additional information.
 

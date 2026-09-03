@@ -27,14 +27,14 @@ Settings related to Dynasty membership are configured at the identity store leve
 
 
 :::note
-Do not move a Dynasty from one domain to another. Child Dynasties would get orphaned and
+Don't move a Dynasty from one domain to another. Child Dynasties would get orphaned and
 subsequently deleted.
 :::
 
 
 :::note
-You cannot create mail-enabled Dynasties of the Office 365 group type in a Microsoft Entra ID
-based identity store, since an Office 365 group cannot have groups as its members. Only non
+You can't create mail-enabled Dynasties of the Office 365 group type in a Microsoft Entra ID
+based identity store, since an Office 365 group can't have groups as its members. Only non
 mail-enabled Dynasties of the security group type are supported.
 :::
 
@@ -67,9 +67,9 @@ Dynasty.
 
 ## Create a Dynasty using the Organizational/Geographical/Custom template
 
-Follow the steps to create a dynasty using the the Organizational/Geographical/Custom template.
+To create a dynasty using the Organizational/Geographical/Custom template.
 
-1. In the Directory Managerbportal, click the **Create New** button in the left pane and select
+1. In the Directory Manager portal, click the **Create New** button in the left pane and select
    **Group**.
 
     The **Create Group** wizard opens to the **Group Type** page.
@@ -99,16 +99,16 @@ Follow the steps to create a dynasty using the the Organizational/Geographical/C
 
     Review the query for selecting the group members, then click **Next**.
 
-    For details, see the [ Smart Group page](/docs/directorymanager/11.1/portal/group/create/AD/smartgroup.md).
+    For details, see the [Smart Group page](/docs/directorymanager/11.1/portal/group/create/AD/smartgroup.md).
 
 6. On the [Owners page](/docs/directorymanager/11.1/portal/group/create/AD/owners.md), specify primary and additional
    owners for the Dynasty.
 
     :::note
-    (1) Additional owners are only set for the parent and are not inherited by child Dynasties
+    (1) Additional owners are only set for the parent and aren't inherited by child Dynasties
     during update.  
     (2) When a Smart Group Update job runs on a group, the notification behavior is as follows:  
-    Even when the **Do not Notify** check box is selected, the additional owner will receive the
+    Even when the **Don't Notify** checkbox is selected, the additional owner will receive the
     notifications if the administrator has included its email address for job-specific
     notifications.
     :::
@@ -119,7 +119,7 @@ Follow the steps to create a dynasty using the the Organizational/Geographical/C
 
 ## Create a Dynasty using the Managerial template
 
-Follow the steps to create a Dynasty using the Managerial template.
+To create a Dynasty using the Managerial template.
 
 1. In the Directory Manager portal, click the **Create New** button in the left pane and select
    **Group**.
@@ -152,22 +152,22 @@ Follow the steps to create a Dynasty using the Managerial template.
 
     Review the query for selecting the group members, then click **Next.**
 
-    For details, see the [ Smart Group page](/docs/directorymanager/11.1/portal/group/create/AD/smartgroup.md).
+    For details, see the [Smart Group page](/docs/directorymanager/11.1/portal/group/create/AD/smartgroup.md).
 
 6. On the [Owners page](/docs/directorymanager/11.1/portal/group/create/AD/owners.md), specify primary and additional
    owners for the Dynasty.
 
     :::note
-    (1) Additional owners are only set for the parent and are not inherited by child Dynasties
+    (1) Additional owners are only set for the parent and aren't inherited by child Dynasties
     during update.  
     (2) When a Smart Group Update job runs on a group, the notification behavior is as follows:  
-    Even when the **Do not Notify** check box is selected, the additional owner will receive the
+    Even when the **Don't Notify** checkbox is selected, the additional owner will receive the
     notifications if the administrator has included its email address for job-specific
     notifications.  
     (3) If you have selected the **Set Manager as owner** option on the **Dynasty Options** page,
     the top manager would be displayed as the primary owner instead of the logged-in user.  
     In case you change the owner, the new recipient would be the Dynasty’s primary owner even if
-    the **Set Manager as owner** check box is selected.
+    the **Set Manager as owner** checkbox is selected.
     :::
 
 

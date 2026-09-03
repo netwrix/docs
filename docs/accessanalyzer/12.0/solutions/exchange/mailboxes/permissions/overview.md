@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Permissions Job Group
 
-The Permissions job group is comprised of data collection, analysis and reports that focus on access
+The Permissions job group is comprised of data collection, analysis, and reports that focus on access
 granted to each mailbox in the environment including, Mailbox Rights, Active Directory Permissions,
 Delegation, and Folder Permissions.
 

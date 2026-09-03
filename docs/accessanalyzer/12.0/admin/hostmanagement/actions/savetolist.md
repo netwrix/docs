@@ -9,7 +9,7 @@ sidebar_position: 120
 Use the **Save Selected To List** option to create a static host list. This option is available from
 either the Host Management node or an individual host list node. See the
 [Static Host Lists](/docs/accessanalyzer/12.0/admin/hostmanagement/lists.md#static-host-lists) topic for additional information on static host
-lists. This option is inactive until at least one host within the data grid is selected.
+lists. This option is inactive until you select at least one host in the data grid.
 
 ![Save Selected To List option in Host Management node](/images/accessanalyzer/12.0/admin/hostmanagement/actions/savetolist.webp)
 

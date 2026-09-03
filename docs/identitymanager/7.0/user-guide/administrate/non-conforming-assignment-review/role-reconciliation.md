@@ -23,8 +23,7 @@ For some managed systems, roles are tightly linked to navigation properties.
 
 In this case, when a role is assigned in the managed system without an existing rule that justifies the role, then new items appear on the **Role Reconciliation****and** the **Resource Reconciliation** screens.
 
-> In the case of the AD example, consider that we want to assign a specific role in SAP. Then, we
-> find the corresponding group in the AD **and** add the identity's DN to its `member` property.
+> In the case of the AD example, consider assigning a specific role in SAP. Then, find the corresponding group in the AD **and** add the identity's DN to its `member` property.
 >
 > The result is a new item on the **Role Reconciliation** screen for said SAP role, plus an item on
 > the **Resource Reconciliation** screen for the new `memberOf` property for said identity.
@@ -40,8 +39,8 @@ reconciled accordingly.
 - If the property is reviewed (approved/declined), then the corresponding role is automatically
 reviewed too, its [Entitlement Assignment](../../../integration-guide/role-assignment/assignments-of-entitlements) workflow state transitioned to `Manual` (if approved) or `Cancellation` (if declined, then a deprovisioning order is sent).
 
-> So let's say we add `Cedric Blanc` to the list of members of the SAP groups `SG_APP_SAP_1` **and**
-> `SG_APP_SAP_211`. Then, after the next synchronization, Identity Manager displays one item for
+> For example, add `Cedric Blanc` to the list of members of the SAP groups `SG_APP_SAP_1` **and**
+> `SG_APP_SAP_211`. After the next synchronization, Identity Manager displays one item for
 > each role on the **Role Reconciliation** screen, **and** one item for all changes in the AD account on
 > the **Resource Reconciliation** screen:
 >
@@ -72,7 +71,7 @@ Or through the connector's overview page, **Jobs** > **Compute Role Model**.
 
     ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
-2. On the home page, click on the entity type that you want to manage in the **Role Reconciliation**
+2. On the home page, click the entity type that you want to manage in the **Role Reconciliation**
 section, to get to the non-conforming permissions page.
 
     ![Home Page - Role Reconciliation](/images/identitymanager/home_rolereconciliation_v523.webp)
@@ -108,7 +107,7 @@ Several roles can be reconciled simultaneously by clicking on **Bulk Reconcile R
 
 ## Verify Role Reconciliation
 
-In order to verify the process, check that the changes you ordered appear on the corresponding user's **View Permissions** tab.
+To verify the process, check that the changes you ordered appear on the corresponding user's **View Permissions** tab.
 
 ![View Permissions Tab](/images/identitymanager/viewpermissions_v602.webp)
 

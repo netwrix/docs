@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Generates the rights to access the report view.
 
-Gives access to a shortcut on the navigation to access this page.
+Provides a navigation shortcut to access this page.
 
 ![Reports](/images/identitymanager/home_reports_v602.webp)
 
@@ -30,7 +30,7 @@ Gives access to a shortcut on the navigation to access this page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_ReportQuery" DisplayName_L1="Administrator - Report_ReportQuery" DisplayName_L2="Administrator - Rapport_ReportQuery" EntityType="ReportQuery" Profile="Administrator">

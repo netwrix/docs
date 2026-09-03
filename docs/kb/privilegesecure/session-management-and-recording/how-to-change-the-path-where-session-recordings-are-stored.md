@@ -1,11 +1,11 @@
 ---
 description: >-
-  Shows how to change the location where Netwrix Privilege Secure stores session
-  recordings, including special steps for Netwrix Privilege Secure 3.7+ and web
-  recordings.
+  Shows how to change the location where Netwrix Privilege Secure stores
+  session recordings and web recordings.
 keywords:
   - Netwrix Privilege Secure
   - session recordings
+  - web recordings
   - sbpam_iolog.json
   - appsettings.json
   - recording path
@@ -14,121 +14,101 @@ keywords:
   - icacls
 products:
   - privilege-secure-access-management
-sidebar_label: How to Change the Path Where Session Recordings Ar
-tags: []
-title: "How to Change the Path Where Session Recordings Are Stored"
+sidebar_label: Changing the Path Where Session Recordings Are Stored
+tags:
+  - kb
+  - session-management-and-recording
+title: "Changing the Path Where Session Recordings Are Stored"
 knowledge_article_id: kA04u000000Pd8JCAS
 ---
 
-# How to Change the Path Where Session Recordings Are Stored
+# Changing the Path Where Session Recordings Are Stored
 
-## Summary
+## Overview
 
-The default location for recorded Netwrix Privilege Secure sessions can be modified. This can be helpful if the drive Netwrix Privilege Secure is installed on is running low on space. Note that for Netwrix Privilege Secure installations of version 3.7 or higher, additional steps are necessary. Additionally, note that if the web recording path is to be changed, separate instructions are necessary.
+This article describes how to change the location where Netwrix Privilege Secure stores session recordings and web recordings. Changing the recording path can help if the drive where Netwrix Privilege Secure is installed is running low on space.
+
+Perform these changes on each proxy node, including any node in a high availability (HA) or remote configuration.
 
 ## Instructions
 
-Perform the following changes on each proxy node (HA, remote).
+### Changing the Path Where Session Recordings Are Stored
 
-### Locating or Creating sbpam_iolog.json
-
-The file that controls where Netwrix Privilege Secure session recordings are stored is **sbpam_iolog.json**, which is originally located on the `%PROGRAMDATA%` drive in:
+1. Verify that `sbpam_iolog.json`, the file that controls where Privilege Secure stores session recordings, exists at the following path (substitute the "C" drive letter for the server's `%PROGRAMDATA%` drive letter, if necessary):
 
 ```text
-\ProgramData\STEALTHbits\PAM\ProxyService
+C:\ProgramData\STEALTHbits\PAM\ProxyService
 ```
 
-Consider the following:
+Do one of the following, depending on whether the file exists:
 
-- If this file exists on the Netwrix Privilege Secure server, then it can be modified to change where recorded sessions are stored. If this is the case, follow the instructions in the [Modifying sbpam_iolog.json](#modifying-sbpam-iologjson) section to edit this file.
-- If the file does not exist, then it will need to be created at the following path on the Netwrix Privilege Secure server (substitute the "C" drive letter for the server's `%PROGRAMDATA%` drive letter, if necessary):
+- If the file exists on the Privilege Secure server, you can modify it to change where recorded sessions are stored. Skip to step 3 to edit the file.
+- If the file does not exist, create it in the next step.
+
+2. Generate the iolog config by opening a command prompt, navigating to `\Program Files\Stealthbits\PAM\ProxyService`, and running the following command:
+
+    > **IMPORTANT:** The file needs to be in `\ProgramData\...`, but you must run this command from `\Program Files\...`.
 
 ```text
-C:\ProgramData\STEALTHbits\PAM\ProxyService\sbpam_iolog.json
+.\sbpam-proxy.exe cfg -c sbpam_iolog
 ```
 
-- Generate the iolog config by opening a command prompt, navigating to `\Program Files\Stealthbits\PAM\ProxyService`, and running the following command:
-
-```text
-sbpam-proxy.exe cfg -c sbpam_iolog
-```
-
-### Modifying sbpam_iolog.json {#modifying-sbpam-iologjson}
-
-1. Open **sbpam_iolog.json**, and locate (or create) the **path** key.
+3. Open `sbpam_iolog.json`, and add this:
 
 ```json
 {
     "idletimeout": 300000000000,
-    "path": "C:\ProgramData\Stealthbits\PAM\ProxyService\iolog",
+    "path": "D:\new\path\for\sessions",
     "replicas": 1
 }
 ```
 
-2. The value for the key (after the ":") can be changed to any valid path, which is where new session recordings are stored after this change is saved.
+The `path` value determines where new session recordings are stored after you save the change.
 
-> **IMPORTANT:** The double slashes (`\`) and quotes surrounding the path must be used for the new path, otherwise the file will no longer be valid JSON.
-
-Consider the following:
-
-- In addition to new session recordings, previous session recordings should be manually moved from the old recording path to the new location.
-- If there are active Netwrix Privilege Secure sessions then some of the recordings in the old location are locked by Netwrix Privilege Secure's Proxy Service. It is safe to skip these files for now, and move them later once their associated session has ended and files are no longer locked.
-
-If this process is performed successfully, then all old and new recordings are stored in the new location and are available for playback in Netwrix Privilege Secure.
-
-### For Netwrix Privilege Secure 3.7 or Higher:
-
-In order to ensure that the necessary permissions are applied to the new directory, run the following command in an administrator PowerShell window (substitute `<directory>` with your chosen recording directory):
+4. To apply the necessary permissions to the new directory, run the following command in an administrator PowerShell window:
 
 ```powershell
-$recordingDir = <directory>
+$recordingDir = D:\new\path\for\sessions
 &icacls.exe $recordingDir /grant "NT SERVICE\SbpamProxy:(OI)(CI)F" /Q /T
 ```
 
-# Additional Instructions (Web Recordings)
+Consider the following:
 
-Open the `appsettings.json` file:
+- In addition to new session recordings, manually move previous session recordings from the old recording path to the new location.
+- If there are active Privilege Secure sessions, Privilege Secure's Proxy Service locks some of the recordings in the old location. It is safe to skip these files for now, and move them later once their associated session has ended and the files are no longer locked.
 
-- For Netwrix Privilege Secure 3.6 or earlier it will be located at this path:
+After you complete these steps, all old and new recordings are stored in the new location and are available for playback in Netwrix Privilege Secure.
+
+### Changing the Path Where Web Recordings Are Stored
+
+1. Open `appsettings.json`, located at:
 
 ```text
-\Program Files\STEALTHbits\PAM\Web\appsettings.json
+C:\ProgramData\STEALTHbits\PAM\WebService\appsettings.json
 ```
 
-- For Netwrix Privilege Secure 3.7 or later, it will be located at this path:
+If this file exists on the Privilege Secure server, you can modify it to change where recorded sessions are stored. If the file does not exist, create it.
 
-```text
-\ProgramData\STEALTHbits\PAM\WebService\appsettings.json
-```
-
-If this file exists on the Netwrix Privilege Secure server, then it can be modified to change where recorded sessions are stored. If the file does not exist, then it will need to be created.
-
-### Modifying appsettings.json
-
-1. Open **appsettings.json**, and locate (or create) the `DataDirectory` key.
+2. Open (or create) `appsettings.json`, and locate (or create) the `DataDirectory` key.
 
 ```json
 {
-    "DataDirectory": "C:\ProgramData\Stealthbits\PAM"
+    "DataDirectory": "D:\new\path\for\webrecordings"
 }
 ```
 
-2. The value for the key (after the ":") can be changed to any valid path, which is where new session recordings are stored after this change is saved.
+The `DataDirectory` value determines where new web recordings are stored after you save the change.
 
-> **IMPORTANT:** The double slashes (`\`) and quotes surrounding the path must be used for the new path, otherwise the file will no longer be valid JSON.
+3. To apply the necessary permissions to the new directory, run the following command in an administrator PowerShell window (substitute `<directory>` with your chosen recording directory):
+
+```powershell
+$webRecordingDir = D:\new\path\for\webrecordings
+&icacls.exe $webRecordingDir /grant "NT SERVICE\SbPAMProxy:(OI)(CI)F" /Q /T
+```
 
 Consider the following:
 
-- In addition to new session recordings, previous session recordings should be manually moved from the old recording path to the new location.
-- If there are active Netwrix Privilege Secure sessions then some of the recordings in the old location are locked by Netwrix Privilege Secure's Proxy Service. It is safe to skip these files for now, and move them later once their associated session has ended and files are no longer locked.
+- In addition to new web recordings, manually move previous web recordings from the old recording path to the new location.
+- If there are active Privilege Secure web recordings, Privilege Secure's Web Service locks some of the recordings in the old location. It is safe to skip these files for now, and move them later once their associated session has ended and the files are no longer locked.
 
-If this process is performed successfully, then all old and new recordings are stored in the new location and are available for playback in Netwrix Privilege Secure.
-
-### For Netwrix Privilege Secure 3.7 or Higher:
-
-In order to ensure that the necessary permissions are applied to the new directory, run the following command in an administrator PowerShell window (substitute `<directory>` with your chosen recording directory):
-
-```powershell
-$webRecordingDir = <directory>
-&icacls.exe $webRecordingDir /grant "NT SERVICE\SbPAMProxy:(OI)(CI)F" /Q /T
-```
+After you complete these steps, all old and new recordings are stored in the new location and are available for playback in Netwrix Privilege Secure.

@@ -6,20 +6,12 @@ sidebar_position: 20
 
 # Pre-Created Templates
 
-Threat Prevention comes with several policy templates that cover a wide range of event monitoring
-and lockdown. Pre-created policy templates are provided as part of the initial Threat Prevention
-installation process. New policy templates can be created from scratch or from existing policies.
+Threat Prevention comes with several pre-created policy templates that cover a wide range of event monitoring and lockdown. You can create new policy templates or duplicate existing ones.
 
-When Threat Prevention is upgraded, new and updated policy templates are available for import. They
-are not automatically imported during the installation of the latest version. Updates can be made to
-upgrade existing templates for a new release. See the
-[Upgrade Policy Templates](/docs/threatprevention/8.0/install/upgrade/policytemplates.md) topic for additional
-information.
+When you upgrade Threat Prevention, new policy templates and updates to existing templates become available for import. You must import them manually during installation of the latest version. See the
+[Upgrade Policy Templates](/docs/threatprevention/8.0/install/upgrade/policytemplates.md) topic for additional information on updating existing templates for a new release.
 
-When the Administration Console is launched for the first time, the administrator is asked to import
-pre-created policy templates. If the administrator does not import the templates, they can be
-imported later. See the Import Templates topic for additional information. Once the templates are
-imported, they are available through an organized folder structure.
+When you launch the Administration Console for the first time, you're prompted to import pre-created policy templates. If you skip this step, you can import the templates later. See the Import Templates topic for more information. After you import the templates, they're available through an organized folder structure.
 
 ## Template Folders
 
@@ -39,8 +31,7 @@ Templates in the [Templates Interface](/docs/threatprevention/8.0/admin/template
 
 - The Domain Persistence folder contains templates of policies that detect an attacker's attempt to
   gain persistent administrative access to Active Directory.
-- Templates focused on monitoring for HIPAA regulations are located within subfolders in the HIPAA
-  folder:
+- The HIPAA folder contains templates focused on monitoring for HIPAA regulations. These templates are organized in subfolders:
 
   - 164.306 – Security Standards
   - 164.308 (a)(1)(i) – Security Management Process
@@ -81,7 +72,7 @@ Templates in the [Templates Interface](/docs/threatprevention/8.0/admin/template
 
 ## Import Templates
 
-The pre-created policy templates are stored in the `SI_Templates_All.xml` file. If they were not
+The pre-created policy templates are stored in the `SI_Templates_All.xml` file. If they weren't
 imported when the Administration Console is first launched, you can import them later by following
 these steps.
 
@@ -97,7 +88,7 @@ window. The location of the default templates is:
 
 ![Import window](/images/threatprevention/8.0/admin/templates/import.webp)
 
-**Step 4 –** The Import window auto-fills with the import file details. Do not change the defaults
+**Step 4 –** The Import window auto-fills with the import file details. Don't change the defaults
 settings. Click **Import**.
 
 :::note

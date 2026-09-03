@@ -38,7 +38,7 @@ on-premises to run against:
 - Local host
 
 This Job Group can target a custom host list for Exchange Online instead of targeting Exchange
-on-premises. However, do not try to target both types of environments.
+on-premises. However, don't try to target both types of environments.
 
 **Connection Profile**
 
@@ -63,7 +63,7 @@ topic for additional information.
 
 **Schedule Frequency**
 
-It is not recommended to run these jobs at the 4. Mailboxes job group level. The Logons sub-job
+Don't run these jobs at the 4. Mailboxes job group level. The Logons sub-job
 group and Sizing job group have been designed to run daily. The Features sub-job group and
 Permissions job group have been designed to run weekly. See the table for recommended times:
 
@@ -76,7 +76,7 @@ Permissions job group have been designed to run weekly. See the table for recomm
 
 **History Retention**
 
-History retention should not be enabled on this job group. History is kept through analysis tasks.
+History retention shouldn't be enabled on this job group. History is kept through analysis tasks.
 Modify the following analysis tasks to customize the amount of history which is kept:
 
 | Job Name          | Analysis Task Name    | Default History |
@@ -104,18 +104,18 @@ No other queries should be modified.
 The 4. Mailboxes job group should be run with the default analysis configurations.
 
 :::warning
-Most of these analysis tasks are preconfigured and should not be modified or
+Most of these analysis tasks are preconfigured and shouldn't be modified or
 deselected. There are some tasks that are deselected by default, as they are for troubleshooting
 purposes.
 :::
 
 
-The following analysis tasks should not be deselected, but their parameters can be modified:
+The following analysis tasks shouldn't be deselected, but their parameters can be modified:
 
 - **Logons** > **EX_MailboxLogons** Job – **03.SET HISTORY RETENTION** Analysis Task
 - **Sizing** > **EX_MailboxSizes** Job – **02.SET HISTORY RETENTION** Analysis Task
 
-The following analysis tasks is enabled to send Exchange mailbox permission data to the  
+The following analysis task is enabled to send Exchange mailbox permission data to the
 Netwrix Access Information Center:
 
 - **Permissions** > **EX_MailboxAccess** Job – **13.AIC Import - Export Exchange Permissions**

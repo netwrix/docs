@@ -15,11 +15,8 @@ The NDM11-ADV-2025-014 utility is used to:
 
 **Downloads**
 
-- Click [here](https://releases.netwrix.com/products/directorymanager/11.1/NDM11-ADV-2025-014-Utility.zip) to
-  download NDM11-ADV-2025-014-Utility.
-- Click
-  [here](https://releases.netwrix.com/products/groupid/11.1/GroupIDPasswordTransferUtility.zip) to
-  download GroupIDPasswordTransferUtility.
+- [Download NDM11-ADV-2025-014-Utility](https://releases.netwrix.com/products/directorymanager/11.1/NDM11-ADV-2025-014-Utility.zip)
+- [Download GroupIDPasswordTransferUtility](https://releases.netwrix.com/products/groupid/11.1/GroupIDPasswordTransferUtility.zip)
 
 ## Restrict IP Addresses
 
@@ -30,7 +27,7 @@ Directory Manager services. To achieve this, the utility:
 2. Detects whether the primary public address is obtained from DHCP and alerts that dynamically
    assigned addresses may present operational challenges. A DHCP Reservation or statically
    configured IP should be used for the Directory Manager server.
-3. Allows you to add additional addresses to support remote Directory Manager servers.
+3. Add additional addresses to support remote Directory Manager servers.
 4. The following services/virtual directories have the IP rule applied:
 
     - GroupIDDataService
@@ -38,7 +35,7 @@ Directory Manager services. To achieve this, the utility:
     - GroupIDReplicationService
     - GroupIDSchedulerService
 
-Follow the steps to limit access to the Directory Manager services to specific IP addresses.
+To limit access to the Directory Manager services to specific IP addresses.
 
 Step 1 – On the Directory Manager server, run the “NDM11-ADV-2025-014-Utility.exe” utility from the
 command line as an administrator. This will present the following options:
@@ -67,7 +64,7 @@ Step 3 – After successful configuration, the following message is displayed.
 
 ![Success message](/images/directorymanager/11.1/install/success.webp)
 
-In the event of a Directory Manager multi-instance deployment, execute the above steps on each
+If there is a Directory Manager multi-instance deployment, execute the preceding steps on each
 Directory Manager server in your environment.
 
 :::note
@@ -75,14 +72,14 @@ In case you deploy a new Directory Manager server/instance, add the IP address o
 server to the primary server's IP security rule allowed list. Run the NDM11-ADV-2025-014 utility on
 the primary server to add the additional IP. This should be done before the new server connects to
 the Data service on the primary server (this connection is required while configuring the new
-server). Once the new server is configured, you can remove the IP from the allowed list of the
+server). After the new server is configured, you can remove the IP from the allowed list of the
 primary server.
 :::
 
 
 ## Generate a Secure Password
 
-Follow the steps to generate and encrypt the password for the GroupID user account.
+To generate and encrypt the password for the GroupID user account.
 
 Step 1 – On the Directory Manager server, run the “NDM11-ADV-2025-014-Utility.exe” utility from the
 command line as an administrator.
@@ -105,7 +102,7 @@ If you have multiple Directory Manager servers or distributed portals, you must 
 GroupIDPasswordTransfer utility to securely transport the password to distributed Directory Manager
 systems. When done, you must restart IIS on those systems.
 
-Follow the steps to export the generated password from the primary Directory Manager server to a
+To export the generated password from the primary Directory Manager server to a
 secondary server/instance.
 
 Step 1 – On the Directory Manager server, run the “directorymanagerPasswordTransferUtility.exe” utility from

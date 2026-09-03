@@ -8,10 +8,10 @@ sidebar_position: 10
 
 The CDSA Job is available through the Instant Job Library under the CDSA library. See the
 [Instant Job Wizard](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/overview.md)
-topic for instructions of how to add this instant job to the Jobs tree. When installing the job,
+topic for instructions on adding this instant job to the Jobs tree. When installing the job,
 select **Local host** on the Host pages of the Instant Job Wizard.
 
-Ensure the supporting solutions have successfully collected and analyzed data prior to running this
+Ensure the supporting solutions have successfully collected and analyzed data before running this
 job. See the
 [Presentation Dependencies](/docs/accessanalyzer/11.6/cdsa/presentation.md)
 topic for alignment between presentation slides and jobs that supply the data points.
@@ -30,7 +30,7 @@ The CDSA job generates three PowerPoint files:
       self-review as a PDF file
 
 :::warning
-Do not send any these presentations to a customer in PowerPoint format.
+Don't send any these presentations to a customer in PowerPoint format.
 :::
 
 
@@ -54,7 +54,7 @@ are two presentation options for the live slide show:
 - The **ePHI Security Assessment** slide show contains the ending slides with select summary slides
   from the Classic slide show and is applicable to the healthcare industry
 
-Use the Custom Slide Show drop-down menu on the Slide Show ribbon in PowerPoint to select the
+Use the Custom Slide Show dropdown menu on the Slide Show ribbon in PowerPoint to select the
 appropriate presentation.
 
 :::note
@@ -63,7 +63,7 @@ Slide 17 is hidden by default as same information is available on Slides 18-20.
 
 
 Netwrix University includes a training module with details on the key talking points for a live
-delivery of the slide shows. Check out the **315 – Getting Started with Credential & Data Security
+delivery of the slide shows. Refer to the **315 – Getting Started with Credential & Data Security
 Assessment** training course.
 
 ## Choosing a PDF Version
@@ -74,7 +74,7 @@ Both of the printable assets have two customized options for converting to a PDF
 - ePHI Security Assessment – Contains the ending slides with select summary slides from the Classic
   slide show and is applicable to the healthcare industry
 
-Follow the steps to create the appropriate custom PDF.
+To create the appropriate custom PDF:
 
 **Step 1 –** Use the **Save As** option.
 
@@ -87,7 +87,7 @@ Follow the steps to create the appropriate custom PDF.
 
 **Step 5 –** Click **OK** to confirm the option, and then click **Save** to generate the PDF.
 
-The presentation is converted to a PDF with only the applicable slides included.
+You have now converted the presentation to a PDF with only the applicable slides included.
 
 :::note
 Slide 16 is hidden by default as same information is available on Slides 17-19.

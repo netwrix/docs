@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Sign In Using Microsoft Entra ID SSO
 
-We configured Microsoft Entra ID SSO with a Directory Manager client, that is the Directory Manager
-portal _Wizard_ in our example. For single sign-on using Microsoft Entra ID SSO, we can choose any
+Microsoft Entra ID SSO is configured with a Directory Manager client, such as the Directory Manager
+portal _Wizard_. For single sign-on using Microsoft Entra ID SSO, you can choose any
 of the following ways:
 
 - SP-initiated single sign-on - when the SSO operation is initiated from the SP end, i.e., from the
@@ -30,7 +30,7 @@ displayed.
 
 Step 3 – Enter your credentials and click **Sign In**. You will be routed to the main page of the
 Directory Manager portal _Wizard_.  
-Only users defined for our app in Microsoft Entra Admin Center can log in by entering their user
+Only users defined for the Directory Manager app in Microsoft Entra Admin Center can log in by entering their user
 names and passwords. See step 11 in the
 [Configure Directory Manager in Microsoft Entra ID](configureinentra.md#configure-directory-manager-in-microsoft-entra-id)
 topic.
@@ -43,5 +43,5 @@ again.
 Step 1 – Launch the Microsoft My Apps portal using the following URL and sign in.  
 https://myapps.microsoft.com
 
-Step 2 – Click the Directory Manager app that we created to work with the _Wizard_ portal for single
+Step 2 – Click the Directory Manager app configured to work with the _Wizard_ portal for single
 sign-on; it will redirect you to your portal.

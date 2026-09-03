@@ -23,15 +23,15 @@ The event filters for the AD Replication Monitoring event type are:
 Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
 like an "ALL" for that filter set.
 
-Since Windows cannot detect if a sync request is coming from a legitimate domain controller, this
-event type is designed to monitor requests from computers that are not ‘excluded’ by the policy.
+Since Windows can't detect if a sync request is coming from a legitimate domain controller, this
+event type is designed to monitor requests from computers that aren't ‘excluded’ by the policy.
 Therefore, legitimate domain controllers should be identified in the event filters. This can be done
 through one of the following methods:
 
 - AD Perpetrator filter
 
   - Use this filter for a dynamic list of domain controllers
-  - Add domain controllers to the Exclude list(s)
+  - Add domain controllers to the Exclude lists
   - Add the Users OU > Domain Controllers group
   - Add any other groups containing domain controllers. It triggers an error message reminding the
     user that only domain controllers should be excluded
@@ -73,10 +73,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -108,7 +108,7 @@ The Permissions filter has two sections:
   - Replicate Directory Changes All – Permission required for replication of credentials and
     secret data
   - Replicate Directory Changes in Filtered Set – Replicates attributes protected by filtered
-    attribute sets (FAS). Read-only Domain Controllers (RODCs) should not have this permission.
+    attribute sets (FAS). Read-only Domain Controllers (RODCs) shouldn't have this permission.
 
 ## Domains/Servers Filter
 
@@ -123,10 +123,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -146,10 +146,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 

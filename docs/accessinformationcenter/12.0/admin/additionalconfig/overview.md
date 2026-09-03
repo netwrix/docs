@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # Additional Configuration Options
 
-In addition to the settings that are available on the Configuration interface, the following
-configurations and customizations can be done by Administrators:
+Beyond the settings on the Configuration interface, Administrators can perform the following
+configurations and customizations:
 
 - [Activity Days Sample for Recommendations](/docs/accessinformationcenter/12.0/admin/additionalconfig/recommendations.md)
 - [Alias Server Host Name](/docs/accessinformationcenter/12.0/admin/additionalconfig/aliasserver.md)

@@ -3,7 +3,7 @@
 FSAA, FSAC, and FSDLP views provide pre-joined, human-readable projections of the underlying tables. Reports and the FSAA web UI consume these views rather than the raw tables.
 
 :::note
-For views, column sizes are derived from the underlying source columns and the SQL `CASE` expressions in the view definitions; on a populated database the actual `sys.columns.max_length` may differ slightly. Use `EXEC sp_help '<viewname>'` to inspect a view's exact runtime shape.
+The underlying source columns and the SQL `CASE` expressions in the view definitions determine column sizes for views; on a populated database the actual `sys.columns.max_length` may differ slightly. Use `EXEC sp_help '<viewname>'` to inspect a view's exact runtime shape.
 :::
 
 ---
@@ -549,7 +549,7 @@ For views, column sizes are derived from the underlying source columns and the S
 **Description:** Surface view over `SA_FSAC_PermissionChanges` that resolves the affected trustee and decodes the ACL / ACE / inheritance / access-rights bitmasks into descriptive strings.
 
 :::note
-This view doesn't join `SA_FSAC_ActivityEvents` or `SA_FSAA_Resources` — the access time and resource path aren't exposed; reports needing them must join `SA_FSAC_ActivityEvents` themselves.
+This view doesn't join `SA_FSAC_ActivityEvents` or `SA_FSAA_Resources`, so it doesn't expose the access time or resource path; reports needing them must join `SA_FSAC_ActivityEvents` themselves.
 :::
 
 **Source tables:** `SA_FSAC_PermissionChanges`, `SA_FSAA_Hosts`, UDF `SA_FSAA_GetTrusteeInformation`.

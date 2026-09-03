@@ -33,7 +33,7 @@ The following lists are available when the target attribute is single-valued:
 
 Directory Manager enables a user to add notes to history actions that he or she performed. A note
 may explain the reason for an action, such as why he or she changed the security type for a group.
-Only the user who added a note can update it. Other users can view it, but they cannot edit it or
+Only the user who added a note can update it. Other users can view it, but they can't edit it or
 add comments.
 
 On the **History Details** dialog box, one of the following is available to you:
@@ -43,7 +43,7 @@ On the **History Details** dialog box, one of the following is available to you:
 - **The Save Note button** - When you are the user who performed the action that logged this history
   item and you have already added a note.
 - **The note text** - When the user who performed the action has added a note.
-- **None of the above** - When you are not the user who performed the action and the user performing
+- **None of the above** - When you aren't the user who performed the action and the user performing
   the action has not added any note.
 
 ### Add a Note
@@ -54,7 +54,7 @@ the action) can add and update notes.
 **To add a note:**
 
 1. Click **Add Note** to add a note to the history item. The **Note** text box is displayed.
-2. Type a note for the history item. Your note can have a maximum of 500 characters.
+2. Enter a note for the history item. Your note can have a maximum of 500 characters.
 3. Click **Save Note**. On the **History** page, the annotated item is displayed with a **View
    Note** button next to it. This helps distinguish annotated items from non-annotated items.
 

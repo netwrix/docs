@@ -6,12 +6,11 @@ sidebar_position: 20
 
 # User Management
 
-This topic contains information on how to configure user authentication mechanisms, their
-permissions and manage existing users.
+Configure user authentication mechanisms, manage user permissions, and manage existing users.
 
 ## Authentication Mechanisms
 
-On first install, the QS will be configured for Windows authentication. To set up the QS to use an
+On first install, the QS defaults to Windows authentication. To set up the QS to use an
 ADFS server, follow the "Installation and Configuration" guide using the section "ADFS". To
 use forms based authentication, disable all other authentication methods in IIS other than:
 Anonymous and Forms:
@@ -25,12 +24,12 @@ follows:
 
 **Step 2 –** Check that the Authentication settings are correct in IIS for Windows Authentication:
 
-The NDC web application should have these authentication methods enabled:
+The NDC web application must have these authentication methods enabled:
 
 - Anonymous Authentication
 - Windows Authentication
 
-All other authentication methods should be disabled.
+Disable all other authentication methods.
 
 ![iis_thumb_0_0](/images/dataclassification/5.7/security/iis_thumb_0_0.webp)
 
@@ -47,7 +46,7 @@ file and delete (or comment out) three lines:
 
 </authorization>
 
-If these lines are present then users will be required to login using their Windows credentials.
+If these lines are present, users must log in using their Windows credentials.
 
 ## Configure Microsoft Entra ID Authentication
 
@@ -62,7 +61,7 @@ mode, add one further appSetting entry into the web.config file:
 
 - `<add key="ida:AzureTenant" value="Tenant Name such as: netwrix.com" />`
 
-In certain sections of the QS settings are split between Basic and Advanced. Users wishing to always
+In the QS, settings are split between Basic and Advanced. Users wishing to always
 see Advanced options can enable this by:
 
 - Selecting their username from the footer of the application
@@ -76,18 +75,15 @@ Classification via Microsoft Entra ID authentication:
 
 ## Add or Remove Users
 
-Users can be added and removed via the Users screen at any time.
+You can add and remove users via the Users screen at any time.
 
 ![adduser](/images/dataclassification/5.7/security/adduser.webp)
 
-Additional Windows users can be validated using Integrated Windows Authentication. Additional
-non-Windows users can only be added if the Non-Windows Authentication mode is enabled.
+You can validate additional Windows users using Integrated Windows Authentication. You can only add additional non-Windows users if the Non-Windows Authentication mode is enabled.
 
-If the only user defined is a Super User and that user is deleted then all security is removed and
-usage of the QS administrative functions reverts to unrestricted.
+If you delete the only Super User, the system removes all security and reverts the QS administrative functions to unrestricted access.
 
-User accounts granted access to the REST APIs will still be restricted by their specific user
-permissions. A Super User with REST API access will be able to run any API method. Any normal user
+User accounts with REST API access are still restricted by their specific permissions. A Super User with REST API access will be able to run any API method. Any normal user
 will be restricted by the same rules that govern the UI. Further API samples and documentation can
 be found at: /NDC/\_api
 
@@ -101,9 +97,9 @@ When an area is enabled there are typically more granular permissions that can b
 
 - Within the Taxonomies area, you can also assign permissions at a specific Term Set or
   Term branch level. A full user permission summary (for all Term/Set level permissions) can be
-  viewed by selecting the View Taxonomy Permissions button (shown below).
+  viewed by selecting the View Taxonomy Permissions button.
 - Within the Sources area, you can restrict a user’s access to specific source groups, as
-  shown below.
+  shown in the following image.
 
 ![userpermissions_thumb_0_0](/images/dataclassification/5.7/security/userpermissions_thumb_0_0.webp)
 

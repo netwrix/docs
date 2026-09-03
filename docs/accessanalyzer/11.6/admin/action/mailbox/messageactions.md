@@ -16,8 +16,8 @@ To select a message action, use the following options:
 - Select an action – Select the checkbox next to a message action to apply it to the search. The
   selected action displays in the Edit Actions box. Possible actions include:
 
-    - Delete – Items can be recovered via the Deleted Contents table (folder dumpster)
-    - Permanent Delete – Items are not recoverable
+    - Delete – You can recover items from the Deleted Contents table (folder dumpster)
+    - Permanent Delete – Items aren't recoverable
     - Move to Deleted Items folder
     - Delete Attachment (Append Text Options) – Deletes attachment and adds **Append Text Options**
       to the Edit Conditions box

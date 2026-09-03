@@ -22,7 +22,7 @@ Step 3 – The wizard uses the provided information to populate the Full Name, D
 logon name, and User logon name (pre-windows 2000) boxes. You can modify this information, if
 required.
 
-- The pre-Windows 2000 user logon name cannot exceed 24 characters. This name is used for logging on
+- The pre-Windows 2000 user logon name can't exceed 24 characters. This name is used for logging on
   to computers running Windows 95, Windows 98, or Windows NT.
 
 - The logon name is the user ID the user will use to log into the identity store.

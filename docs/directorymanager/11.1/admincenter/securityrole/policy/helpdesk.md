@@ -24,7 +24,7 @@ them to perform their job:
 - Unlock Any Account
 - Unenroll
 
-If these permissions are denied, the Helpdesk policy would have no impact, as role members would not
+If these permissions are denied, the Helpdesk policy would have no impact, as role members wouldn't
 be authorized to perform the respective operations. See
 [Password Management](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md#password-management) in the
 [Security Role – Permissions](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md) topic.
@@ -46,7 +46,7 @@ You can apply all or any of the following restrictions to a helpdesk role under 
 - Specify the minimum number of security questions helpdesk users must use to authenticate
   end-users.
 
-Under this mode, helpdesk role members cannot perform password reset and account unlock for
+Under this mode, helpdesk role members can't perform password reset and account unlock for
 unenrolled users.
 
 ### Limit Helpdesk to Manage Users in a Specific OU
@@ -54,26 +54,25 @@ unenrolled users.
 You can specify a container to limit helpdesk users to reset passwords, unenroll users, and unlock
 accounts of users that reside in that container.
 
-Follow the steps to specify a container.
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
+2. On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
-Step 3 – Click **Security Roles** under Settings in the left pane.
+3. Click **Security Roles** under Settings in the left pane.
 
-Step 4 – On the Security Roles page, click **Edit** for a security role. This can be the built-in
+4. On the Security Roles page, click **Edit** for a security role. This can be the built-in
 Helpdesk role or any role that you want to define the Helpdesk policy for.
 
-Step 5 – On the Edit Security Role page, click **Specify policies for the members** in the Policies
+5. On the Edit Security Role page, click **Specify policies for the members** in the Policies
 area.
 
-Step 6 – On the Add Policies pane, click the **Helpdesk** tab.
+6. On the Add Policies pane, click the **Helpdesk** tab.
 
-Step 7 – Select the **Restricted Mode** tile.
+7. Select the **Restricted Mode** tile.
 
-Step 8 – Click **Add** next to Add Container. Then select a container on the Add Container dialog
+8. Click **Add** next to Add Container. Then select a container on the Add Container dialog
 box and click **Add**. The container name is displayed on the Helpdesk tab.  
 Helpdesk users can reset passwords, unenroll users, and unlock the accounts of users residing in the
 specified container only. When no container is selected, helpdesk users can perform these operations
@@ -83,7 +82,7 @@ for all users in the identity store.
   select another container.
 - To remove the container – Click **Remove** for a container to remove it.
 
-Step 9 – Click **OK**.
+9. Click **OK**.
 
 Step 10 – On the Edit Security Role page, click **Update Security Role**.
 
@@ -98,27 +97,26 @@ On receiving an account unlock or password reset request from an end-user, the h
 authenticate the user over phone before carrying out the requested operation. This authentication is
 done through all or some of the authentication types the user’s account is enrolled with.
 
-Follow the steps to enforce authentication.
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
+2. On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
-Step 3 – Click **Security Roles** under Settings in the left pane.
+3. Click **Security Roles** under Settings in the left pane.
 
-Step 4 – On the Security Roles page, click **Edit** for a security role. This can be the built-in
+4. On the Security Roles page, click **Edit** for a security role. This can be the built-in
 Helpdesk role or any role that you want to define the Helpdesk policy for.
 
-Step 5 – On the Edit Security Role page, click **Specify policies for the members** in the Policies
+5. On the Edit Security Role page, click **Specify policies for the members** in the Policies
 area.
 
-Step 6 – On the Add Policies pane, click the **Helpdesk** tab.
+6. On the Add Policies pane, click the **Helpdesk** tab.
 
-Step 7 – Select the **Restricted Mode** tile.
+7. Select the **Restricted Mode** tile.
 
-Step 8 – Select the **Do not allow Helpdesk to reset password or unlock account without User's
-interaction** check box, and then select one of the following options:
+8. Select the **Don't allow Helpdesk to reset password or unlock account without User's
+interaction** checkbox, and then select one of the following options:
 
 - **Enforce multifactor authentication as applies to end user:** to force helpdesk role members to
   authenticate an end-user as per the authentication policy defined for the security role of that
@@ -134,12 +132,12 @@ interaction** check box, and then select one of the following options:
   types. A helpdesk user can choose any 2 of these types to authenticate that user.
 
 :::note
-Helpdesk users cannot authenticate end-users with the Linked account, Windows Hello, and
+Helpdesk users can't authenticate end-users with the Linked account, Windows Hello, and
 YubiKey authentication types.
 :::
 
 
-Step 9 – Click **OK**.
+9. Click **OK**.
 
 Step 10 – On the Edit Security Role page, click **Update Security Role**.
 
@@ -151,35 +149,34 @@ You can specify the minimum number of security questions helpdesk role members m
 authenticate end-users before unlocking their identity store accounts or resetting their passwords.
 
 :::info
-As a prerequisite to applying this setting, make sure that the Security Questions
+As a prerequisite to applying this setting, ensure that the Security Questions
 authentication type is enabled and configured for the identity store, as well as enforced as an
 account enrollment method for security roles. See the
 [Set up Authentication via Security Questions](/docs/directorymanager/11.1/admincenter/authpolicy/setupauth/securityquestions.md) topic.
 :::
 
 
-Follow the steps to enforce security questions for authentication.
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
+2. On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
-Step 3 – Click **Security Roles** under Settings in the left pane.
+3. Click **Security Roles** under Settings in the left pane.
 
-Step 4 – On the Security Roles page, click **Edit** for a security role. This can be the built-in
+4. On the Security Roles page, click **Edit** for a security role. This can be the built-in
 Helpdesk role or any role that you want to define the Helpdesk policy for.
 
-Step 5 – On the Edit Security Role page, click **Specify policies for the members** in the Policies
+5. On the Edit Security Role page, click **Specify policies for the members** in the Policies
 area.
 
-Step 6 – On the Add Policies pane, click the **Helpdesk** tab.
+6. On the Add Policies pane, click the **Helpdesk** tab.
 
-Step 7 – Select the **Restricted Mode** tile.
+7. Select the **Restricted Mode** tile.
 
-Step 8 – Select the **Helpdesk must verify answers of at least x Questions** check box and specify a
+8. Select the **Helpdesk must verify answers of at least x Questions** checkbox and specify a
 number that indicates the number of questions to be answered.  
-For security and privacy concerns, answers to security questions are not visible to helpdesk users.
+For security and privacy concerns, answers to security questions aren't visible to helpdesk users.
 Helpdesk users have to type in the answers that end-users provide over phone for verification.
 
 :::note
@@ -189,7 +186,7 @@ unlock.
 :::
 
 
-Step 9 – Click **OK**.
+9. Click **OK**.
 
 Step 10 – On the Edit Security Role page, click **Update Security Role**.
 
@@ -198,7 +195,7 @@ Step 11 – On the Security Roles page, click **Save**.
 ## Set Unrestricted Mode
 
 The unrestricted mode enables helpdesk users to reset passwords and unlock accounts of identity
-store users without authenticating them through the authentication types(s) they enrolled their
+store users without authenticating them through the authentication typess they enrolled their
 accounts with.
 
 - On receiving an account unlock request from an end-user, a helpdesk user operating under the
@@ -207,28 +204,27 @@ accounts with.
   can directly reset the password or send a secure password reset link to the requester. See the
   Specify a Password Reset Method topic.
 
-Follow the steps to set the unrestricted mode:
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the **Identity Stores** page, click the ellipsis button for an identity store and select
+2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
 **Edit**.
 
-Step 3 – Click **Security Roles** under **Settings** in the left pane.
+3. Click **Security Roles** under **Settings** in the left pane.
 
-Step 4 – On the **Security Roles** page, click **Edit** for a security role. This can be the
+4. On the **Security Roles** page, click **Edit** for a security role. This can be the
 built-in Helpdesk role or any role that you want to define the Helpdesk policy for.
 
-Step 5 – On the **Edit Security Role** page, click **Specify policies for the members** in the
+5. On the **Edit Security Role** page, click **Specify policies for the members** in the
 **Policies** area.
 
-Step 6 – On the **Add Policies** pane, click the **Helpdesk** tab.
+6. On the **Add Policies** pane, click the **Helpdesk** tab.
 
-Step 7 – Click the **Unrestricted Mode** tile.
+7. Click the **Unrestricted Mode** tile.
 
-Step 8 – Click **OK**.
+8. Click **OK**.
 
-Step 9 – On the **Edit Security Role** page, click **Update Security Role**.
+9. On the **Edit Security Role** page, click **Update Security Role**.
 
 Step 10 – On the **Security Roles** page, click **Save**.
 
@@ -252,41 +248,40 @@ methods, or limit them to use one of these methods:
 
 - Generate a new password and communicate it to the end-user by SMS, email, or both mediums.
 - Generate a secure password reset link and send it to the end-user by SMS or email or both. The
-  user must click this link to reset his or her password.
+  user must click the secure password reset link to reset his or her password.
 
-Follow the steps to specify a password reset method:
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
+2. On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
-Step 3 – Click **Security Roles** under Settings in the left pane.
+3. Click **Security Roles** under Settings in the left pane.
 
-Step 4 – On the Security Roles page, click **Edit** for a security role. This can be the built-in
+4. On the Security Roles page, click **Edit** for a security role. This can be the built-in
 Helpdesk role or any role that you want to define the Helpdesk policy for.
 
-Step 5 – On the **Edit Security Role** page, click **Specify policies for the members** in the
+5. On the **Edit Security Role** page, click **Specify policies for the members** in the
 **Policies** area.
 
-Step 6 – On the Add Policies pane, click the **Helpdesk** tab.
+6. On the Add Policies pane, click the **Helpdesk** tab.
 
-Step 7 – Select one or both of the following options to specify the password reset method:
+7. Select one or both of the following options to specify the password reset method:
 
-- Allow Helpdesk to Reset Password – Select this check box to enable helpdesk users to generate new
-  passwords and communicate them to end-users by SMS or email. Clear this check box to prevent
+- Allow Helpdesk to Reset Password – Select this checkbox to enable helpdesk users to generate new
+  passwords and communicate them to end-users by SMS or email. Clear this checkbox to prevent
   helpdesk role members from generating new passwords.
-- Allow Helpdesk to Send Secure Password Link to End User – Select this check box to enable helpdesk
+- Allow Helpdesk to Send Secure Password Link to End User – Select this checkbox to enable helpdesk
   users to generate a secure password reset link and send it to end-users by SMS or email or both.
-  End-users must click this link to reset their identity store passwords.
+  End-users must click the secure password reset link to reset their identity store passwords.
 
 When you select both the **Allow Helpdesk to Reset Password** and **Allow Helpdesk to Send Secure
-Password Link to End User** check boxes, helpdesk role members can use any method to reset an end
+Password Link to End User** checkboxes, helpdesk role members can use any method to reset an end
 user’s password.
 
-Step 8 – Click **OK**.
+8. Click **OK**.
 
-Step 9 – On the Edit Security Role page, click **Update Security Role**.
+9. On the Edit Security Role page, click **Update Security Role**.
 
 Step 10 – On the Security Roles page, click **Save**.
 
@@ -303,30 +298,29 @@ the [Configure an SMTP Server](/docs/directorymanager/11.1/admincenter/identitys
 ### Force Users to Change Password on Next Logon
 
 When a helpdesk user resets the password of an end-user, it’s always safe to force the end-user to
-change the password the next time they login to their workstations.
+change the password the next time they log in to their workstations.
 
-Follow the steps to force password change:
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
+2. On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
-Step 3 – Click **Security Roles** under Settings in the left pane.
+3. Click **Security Roles** under Settings in the left pane.
 
-Step 4 – On the Security Roles page, click **Edit** for a security role. This can be the built-in
+4. On the Security Roles page, click **Edit** for a security role. This can be the built-in
 Helpdesk role or any role that you want to define the Helpdesk policy for.
 
-Step 5 – On the Edit Security Role page, click **Specify policies for the members** in the
+5. On the Edit Security Role page, click **Specify policies for the members** in the
 **Policies** area.
 
-Step 6 – On the Add Policies pane, click the **Helpdesk** tab.
+6. On the Add Policies pane, click the **Helpdesk** tab.
 
-Step 7 – Select the **Users must change password at next logon** check box to force users to change
-their passwords when they login to their workstations for the first time after password reset.
+7. Select the **Users must change password at next logon** checkbox to force users to change
+their passwords when they log in to their workstations for the first time after password reset.
 
-Step 8 – Click **OK**.
+8. Click **OK**.
 
-Step 9 – On the Edit Security Role page, click **Update Security Role**.
+9. On the Edit Security Role page, click **Update Security Role**.
 
 Step 10 – On the Security Roles page, click **Save**.

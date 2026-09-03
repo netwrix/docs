@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Administration
 
-The Change Tracker console contains several pages that can be selected from the tabs at the top:
+The Change Tracker console contains several pages, which you select from the tabs at the top:
 
 - Dashboard Tab
 - [Events Tab](/docs/changetracker/admin/events/events.md)

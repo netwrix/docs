@@ -7,9 +7,9 @@ sidebar_position: 40
 # Sensitive Documents Dashboard
 
 The dashboard provides a top-level overview of the security classifications tagged against the
-content and allows users to drill down into the data to gain visibility of where/what their
-sensitive content is. By default, the dashboard shows all classified data. However, users can
-customize it for their needs. See Customize Dashboard for more information.
+content and lets you view detailed data to identify where your
+sensitive content is and what it contains. By default, the dashboard shows all classified data. However, you can
+customize it for your needs. See Customize Dashboard for more information.
 
 :::note
 To review the dashboard a user requires the Access Reports permission and must have at
@@ -37,8 +37,11 @@ console, do the following:
 
 - Select the Dashboard tab on the left.
 
-**IMPORTANT!** The data for the dashboard automatically updates every 15 minutes. Please note that
-refreshing the page will not update the data.
+**IMPORTANT!** The data for the dashboard automatically updates every 15 minutes.
+
+:::note
+Refreshing the page will not update the data.
+:::
 
 ## Review Sensitive Documents Dashboard
 
@@ -47,7 +50,7 @@ The dashboard includes the following sections:
 - Total processed files – shows the actual number of the classified files.
 
     :::note
-    Folders are not counted.
+    Folders aren't counted.
     :::
 
 
@@ -57,7 +60,7 @@ The dashboard includes the following sections:
   full list of predefined taxonomies.
 
     :::note
-    Custom taxonomies are not counted.
+    Custom taxonomies aren't counted.
     :::
 
 
@@ -81,8 +84,8 @@ legacy documents reside. Besides, you can apply filters to narrow the reporting 
 
 ## Customize Dashboard
 
-By default, the dashboard shows all classified data in your environment. However, users can do one
-of the following to look after the desired metrics:
+By default, the dashboard shows all classified data in your environment. However, you can do one
+of the following to look after the metrics you want:
 
 - Apply filters to view live data instantly and narrow classifications scope at a glance
 - Save configurations to quickly access required data
@@ -93,7 +96,7 @@ of the following to look after the desired metrics:
 
     ![dashboard_filters_thumb_0_0](/images/dataclassification/5.7/admin/reporting/dashboard_filters_thumb_0_0.webp)
 
-2. Select a taxonomy(-ies) and/or a source group(s) you want to see real-time data for.
+2. Select one or more taxonomies and/or one or more source groups you want to see real-time data for.
 3. Click Apply Filters to immediately review classified data matching your filtering criteria.
 
 **To save configuration**
@@ -102,7 +105,7 @@ You can build up a few different dashboards for combinations of particular sourc
 interested in or particular taxonomies and save this configuration to quickly access required data
 later.
 
-1. Apply custom filters as described above.
+1. Apply custom filters as described previously.
 
     ![dashboard_filters_thumb_0_0](/images/dataclassification/5.7/admin/reporting/dashboard_filters_thumb_0_0.webp)
 

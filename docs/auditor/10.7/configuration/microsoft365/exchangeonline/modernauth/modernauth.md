@@ -6,8 +6,7 @@ sidebar_position: 30
 
 # Access Exchange Online Using Modern Authentication
 
-Support for modern authentication will allow you to audit the organizations where MFA is enabled for
-all users, including service accounts.
+Modern authentication lets you audit organizations where MFA is enabled for all users, including service accounts.
 
 This option is recommended for organizations that use modern authentication as the identity
 management approach, having multi-factor authentication (MFA) enabled for their user accounts. In
@@ -28,8 +27,6 @@ You will need to create a dedicated app for each cloud-based data source you pla
 - MS Teams
 
 If you plan to audit all of them, you need to create 4 apps.
-
-Follow the steps to register a new Microsoft Entra ID application.
 
 **Step 1 –** Sign into the **Microsoft 365 Admin Center** with your _Global Administrator_,
 _Application Administrator_ or _Cloud Application Administrator_ account and go to the **Microsoft
@@ -91,23 +88,18 @@ article: [ Microsoft Entra app manifest](https://learn.microsoft.com/en-us/azur
 
 #### Grant Admin Consent to a Tenant
 
-Follow the steps to grant Admin consent to a tenant.
 
 Go back to the **Microsoft Entra ID admin center** > **Applications** > **App registrations** >
 **API permissions** and click **Grant admin consent for** *`<tenant name>`*. When prompted to
 confirm, click **Yes**.
 
-**NOTE:** For Office 365 permissions, go to **Request API Permissions** > **APIs my organization
-users** and type "Office 365" in the search bar.
+**NOTE:** For Office 365 permissions, go to **Request API Permissions** > **APIs my organization uses** and type "Office 365" in the search bar.
 
 See the following Microsoft article for additional information on how to create an application and
 service principal using Microsoft Entra ID Admin portal:
 [Create an Microsoft Entra application and service principal that can access resources](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal).
 
 ### Grant Required Roles
-
-Follow the steps to grant the required Microsoft Entra ID (formerly Azure AD) roles to the new
-application.
 
 **Step 1 –** In the Entra portal, click **View** under Manage Azure Active Directory.
 
@@ -126,8 +118,6 @@ service principal using Azure AD Admin portal:
 
 ### Configure Client Secret
 
-Follow the steps to create a new client secret to be used by the app.
-
 **Step 1 –** Go to **Manage** > **Certificates & secrets** and click **New client secret**.
 
 **Step 2 –** Enter the description. From the expiration options select **24 months**.
@@ -141,8 +131,6 @@ See the following Microsoft article for more information on how to add a client 
 [Add a client secret](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-client-secret).
 
 ## Add an Exchange Online Monitoring Plan
-
-Follow the steps to add Exchange Online monitoring plan in the Netwrix Auditor:
 
 **Step 1 –** In the Monitoring Plans, click **Add Plan** button.
 
@@ -163,8 +151,6 @@ Follow the steps to add Exchange Online monitoring plan in the Netwrix Auditor:
 Exchange Online monitoring plan has been added to Auditor and initial data collection has begun.
 
 ### Obtain the Tenant Name
-
-Follow the steps to obtain the tenant name.
 
 **Step 1 –** Navigate to **Microsoft Entra ID** > **Overview**.
 

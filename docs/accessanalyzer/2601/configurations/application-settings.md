@@ -19,7 +19,7 @@ This page is available to users with the **Administrator** role only.
 | **Feature Flags** | Enable or disable product features and integrations |
 | **Scanning** | Execution history retention for scans and identity syncs |
 | **File Scanning** | File size limits and excluded extensions for SMB and SharePoint scans |
-| **Activity Monitor** | TCP listener behavior and enrollment token for NAM agent connections |
+| **Activity Monitor** | TCP listener behavior and enrollment token for Netwrix Activity Monitor (NAM) agent connections |
 | **Branding** | Company name and support email displayed in the application |
 
 ## Feature Flags
@@ -31,7 +31,7 @@ Feature flags enable or disable specific product capabilities. Changes take effe
 | **MIP Labeling** | Enabled | Enables Microsoft Information Protection (MIP) sensitivity label management for SMB file shares and SharePoint Online. When disabled, the label handling options on the Sensitive Data page are hidden and no labels are applied to or read from files during scans. |
 
 :::note
-Disabling MIP Labeling does not remove existing labels from files. It stops Access Analyzer from applying or updating labels in future scans.
+Disabling MIP Labeling doesn't remove existing labels from files. It stops Access Analyzer from applying or updating labels in future scans.
 :::
 
 ## File Scanning
@@ -39,7 +39,7 @@ Disabling MIP Labeling does not remove existing labels from files. It stops Acce
 These settings control which files are included in content classification during sensitive data scans. Adjusting them can reduce scan duration in environments with large binary or media files.
 
 :::note
-File metadata — name, size, permissions, and owner — is always collected regardless of file size or extension settings. These limits apply only to content classification during sensitive data scans.
+Access Analyzer always collects file metadata — name, size, permissions, and owner — regardless of file size or extension settings. These limits apply only to content classification during sensitive data scans.
 :::
 
 ### SMB / CIFS
@@ -71,7 +71,7 @@ Reducing retention frees database storage. Increasing it extends the history ava
 
 ## Activity Monitor
 
-The Activity Monitor category contains settings for the built-in TCP listener and the enrollment token used when connecting Netwrix Activity Monitor (NAM) agents to Access Analyzer.
+The Activity Monitor category contains settings for the built-in TCP listener and the enrollment token used when connecting NAM agents to Access Analyzer.
 
 ### Enrollment Token
 
@@ -101,6 +101,6 @@ The remaining settings in the Activity Monitor category control TCP listener beh
 
 ## Resetting and cache behavior
 
-**Resetting to default:** Each setting has a reset action that restores the factory default value. Resetting one setting does not affect any other settings.
+**Resetting to default:** Each setting has a reset action that restores the factory default value. Resetting one setting doesn't affect any other settings.
 
-**Cache:** Application Settings are cached for up to 5 minutes. Changes take effect immediately on the instance that applied them. Other running instances pick up the change within 5 minutes. To force an immediate refresh across all instances, click **Refresh Cache** at the top of the page.
+**Cache:** Access Analyzer caches Application Settings for up to 5 minutes. Changes take effect immediately on the instance that applied them. Other running instances pick up the change within 5 minutes. To force an immediate refresh across all instances, click **Refresh Cache** at the top of the page.

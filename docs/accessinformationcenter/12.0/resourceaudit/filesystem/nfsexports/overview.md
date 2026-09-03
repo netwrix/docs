@@ -12,7 +12,7 @@ available at the **NFS Exports** node:
 
 - [Scan Summary Report](/docs/accessinformationcenter/12.0/resourceaudit/filesystem/nfsexports/scansummary.md)
 
-The following reports are available at the share and subfolder levels below the NFS Exports node:
+The share and subfolder levels under the NFS Exports node include the following reports:
 
 - [Activity Details Report](/docs/accessinformationcenter/12.0/resourceaudit/filesystem/nfsexports/activitydetails.md)
 - [Activity Statistics Report](/docs/accessinformationcenter/12.0/resourceaudit/filesystem/nfsexports/activitystatistics.md)

@@ -8,7 +8,7 @@ sidebar_position: 60
 
 The AWS Data Collector collects IAM users, groups, roles, and policies, as well as S3 permissions,
 content, and sensitive data from the target Amazon Web Services (AWS) accounts. The AWS Data
-Collector has been preconfigured for the AWS Solution. Both this data collector and the solution are
+Collector comes preconfigured for the AWS Solution. Both this data collector and the solution are
 available with a special Access Analyzer license. See the
 [AWS Solution](/docs/accessanalyzer/12.0/solutions/aws/overview.md) topic for additional information.
 
@@ -22,11 +22,11 @@ available with a special Access Analyzer license. See the
 
 **Permissions**
 
-- To collect details about the AWS Organization, the following permission is required:
+- To collect details about the AWS Organization, grant the following permission:
 
     - organizations:DescribeOrganization
 
-- To collect details regarding IAM, the following permissions are required:
+- To collect details regarding IAM, grant the following permissions:
 
     - iam:GenerateCredentialReport
     - iam:GenerateServiceLastAccessedDetails
@@ -35,7 +35,7 @@ available with a special Access Analyzer license. See the
     - iam:Simulate\*
     - sts:GetAccessKeyInfo
 
-- To collect details related to S3 buckets and objects, the following permissions are required:
+- To collect details related to S3 buckets and objects, grant the following permissions:
 
     - s3:Describe\*
     - s3:Get\*
@@ -44,14 +44,14 @@ available with a special Access Analyzer license. See the
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each thread
+requires a minimum of 2 additional GB of RAM per host. For example, if you configure the job to scan
+8 hosts at a time, it requires an extra 16 GB of RAM (8 x 2 = 16).
 
 ## AWS Query Configuration
 
-The AWS Data Collector is configured through the Amazon Web Services Data Collector Wizard. The
-wizard contains the following pages, which change based up on the query category selected:
+You configure the AWS Data Collector through the Amazon Web Services Data Collector Wizard. The
+wizard contains the following pages, which change based on the query category you select:
 
 - [AWS: Category](/docs/accessanalyzer/12.0/admin/datacollector/aws/category.md)
 - [AWS: Login Roles](/docs/accessanalyzer/12.0/admin/datacollector/aws/loginroles.md)

@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Effective Access Report for Entra ID Group
 
-The Effective Access report for a group object provides the insight into every resource the audited
+The Effective Access report for a group object provides insight into every resource the audited
 Entra ID (formerly Azure Active Directory) group has access to and what level of access has been
 granted. Effective access is a calculation based on several variables according to the type of
 resource. This report includes a Permission Source table.
@@ -34,8 +34,8 @@ to load until all data has been analyzed for the audited group.
 :::
 
 
-The scoping options allow Access Information Center users to specifying what collected data should
-be analyzed in order to generate this report. Unlike other filter options, this can impact the
+The scoping options allow Access Information Center users to specify what collected data should
+be analyzed to generate this report. Unlike other filter options, this can impact the
 loading time depending on the scoping options selected. See the
 [Scope an Effective Access Report](/docs/accessinformationcenter/11.6/resourceaudit/navigate/scopeeffectiveaccess.md)
 topic for instructions on using this feature.

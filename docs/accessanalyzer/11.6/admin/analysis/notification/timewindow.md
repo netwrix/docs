@@ -16,7 +16,7 @@ The following option is available:
   task to the most recent data
 
     :::note
-    The checkbox is only enabled if the table selected on the Select Table page has a
-    Enterprise Auditor **JobRunTimeKey** property. Otherwise, the checkbox is cleared by default.
+    Enterprise Auditor enables the checkbox only if the table selected on the Select Table page has
+    a **JobRunTimeKey** property. Otherwise, it clears the checkbox by default.
 
     :::

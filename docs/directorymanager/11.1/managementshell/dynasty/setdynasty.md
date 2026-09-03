@@ -172,7 +172,7 @@ Set-Dynasty -Identity "CN=Organizational,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -
 
 Example 5:
 
-The following command modifies additional owners, Includes and Excludes lists and replaces Search
+The following command modifies additional owners, Includes, and Excludes lists and replaces Search
 Scope of a Managerial Dynasty.
 
 ```

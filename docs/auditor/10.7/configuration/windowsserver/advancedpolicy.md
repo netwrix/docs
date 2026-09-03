@@ -22,11 +22,7 @@ components:
 
 ## Configure Security Options
 
-Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To force
-basic audit policies to be ignored and prevent conflicts, enable the _Audit: Force audit policy
-subcategory settings_ policy.
-
-Follow the steps to enforce advanced policies.
+Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To force basic audit policies to be ignored and prevent conflicts, enable the _Audit: Force audit policy subcategory settings_ policy.
 
 **Step 1 –** On the audited server, open the Local Security Policy snap-in and navigate to Start >
 Windows Administrative Tools > Local Security Policy.
@@ -40,9 +36,9 @@ Force audit policy subcategory settings policy.
 
 ## Configure Advanced Audit Policy on Windows Server 2016
 
-In Windows Server 2016 audit policies are not integrated with the Group Policies and can only be
+In Windows Server 2016 audit policies aren't integrated with the Group Policies and can only be
 deployed using logon scripts generated with the native Windows **auditpol.exe** command line tool.
-Therefore, these settings are not permanent and will be lost after server reboot.
+Therefore, these settings aren't permanent and will be lost after server reboot.
 
 The procedure below explains how to configure Advanced audit policy for a single server. If you
 audit multiple servers, you may want to create logon scripts and distribute them to all target
@@ -100,4 +96,4 @@ System Audit Policies.
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
 | Account Management | <ul><li>Audit Security Group Management</li><li>Audit User Account Management</li></ul>                                              | "Success"    |
 | Object Access      | <ul><li>Audit Handle Manipulation</li><li>Audit Other Object Access Events</li><li>Audit Registry</li><li>Audit File Share</li></ul> | "Success"    |
-| Policy Change      | <ul><li>Audit Audit Policy Change</li></ul>                                                                                          | "Success"    |
+| Policy Change      | <ul><li>Audit Policy Change</li></ul>                                                                                          | "Success"    |

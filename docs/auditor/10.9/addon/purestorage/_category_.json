@@ -1,0 +1,10 @@
+{
+  "label": "Pure Storage",
+  "position": 175,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

@@ -15,7 +15,7 @@ The jobs in the 7.Containers Job Group are:
 
 - [AD_AdminSDHolder Job](/docs/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/containers/ad_adminsdholder.md)
   – Reports on all non-default Active Directory permissions applied to the AdminSDHolder container
-  within the targeted domains. The AdminSDHolder container can be leveraged by an attacker to create
+  within the targeted domains. An attacker can use the AdminSDHolder container to create
   persistence within the environment. See the Microsoft
   [AdminSDHolder, Protected Groups and SDPROP](https://technet.microsoft.com/en-us/library/2009.09.sdadminholder.aspx)
   article for additional information.

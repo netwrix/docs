@@ -11,8 +11,8 @@ Center to have compatible versions. Therefore, when the Netwrix Access Analyzer 
 Auditor) core application and corresponding solutions have been upgraded, the Access Information
 Center must also be upgraded.
 
-To upgrade the Access Information Center application to a newer version, simply run the new
-`AccessInformationCenter.msi` executable. You do not need to uninstall the existing version. See the
+To upgrade the Access Information Center application to a newer version, run the new
+`AccessInformationCenter.msi` executable. You don't need to uninstall the existing version. See the
 [Install the Access Information Center](/docs/accessinformationcenter/12.0/installation/install.md) topic for additional information.
 
 Any config file and email template customizations that were made in the previous version are

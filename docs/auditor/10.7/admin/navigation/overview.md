@@ -13,7 +13,7 @@ illustrates the customization process with several common scenarios.
 
 ## Home Screen Tiles
 
-Home Screen Tiles in the Netwrix Auditor provide an interface that allows users to access main
+Home Screen Tiles in the Netwrix Auditor provide an interface that lets you access main
 information. The following tiles are displayed on the initially configured Home Screen:
 
 - Welcome to Netwrix Auditor Tile
@@ -65,8 +65,8 @@ following links:
 
 | Option           | Description                                                                                                                                                                                                                                                            |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Monitoring plans | Opens the Monitoring plans wizard, where you can add, edit and delete monitoring plans, as well as group them into folders. See the [Monitoring Plans](/docs/auditor/10.7/admin/monitoringplans/overview.md) topic for additional information.                                               |
-| Subscriptions    | Opens the Subscriptions wizard, which enables you to subscribe to Auditor reports and searches, so you can easily stay informed about what is going on in your infrastructure. See the [Subscriptions](/docs/auditor/10.7/admin/subscriptions/overview.md) topic for additional information. |
+| Monitoring plans | Opens the Monitoring plans wizard, where you can add, edit, and delete monitoring plans, as well as group them into folders. See the [Monitoring Plans](/docs/auditor/10.7/admin/monitoringplans/overview.md) topic for additional information.                                               |
+| Subscriptions    | Opens the Subscriptions wizard, which lets you subscribe to Auditor reports and searches, so you can easily stay informed about what is going on in your infrastructure. See the [Subscriptions](/docs/auditor/10.7/admin/subscriptions/overview.md) topic for additional information. |
 | Alert settings   | Opens the All Alerts wizard, where you can create, edit, and enable or disable alerts on critical events in your environment. See the [Alerts](/docs/auditor/10.7/admin/alertsettings/overview.md)topic for additional information.                                                          |
 
 ## Risk Assessment, Compliance Mapping, Live News, and Health Tiles
@@ -74,14 +74,14 @@ following links:
 | Tile               | Description                                                                                                                                                                                                                                                                                                 |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | RISK ASSESSMENT    | Opens the Risk Assessment Overview dashboard, which identifies possible configuration issues in your environment that could impact security. See the [IT Risk Assessment Overview ](/docs/auditor/10.7/admin/riskassessment/overview.md) topic for additional information.                                                        |
-| COMPLIANCE MAPPING | Enables you to review how Auditor can help you comply common standards and regulations. See the [Compliance Mappings](/docs/auditor/10.7/admin/compliancemappings.md) topic for additional information.                                                                                                                           |
+| COMPLIANCE MAPPING | Review how Auditor helps you comply with common standards and regulations. See the [Compliance Mappings](/docs/auditor/10.7/admin/compliancemappings.md) topic for additional information.                                                                                                                           |
 | LIVE NEWS          | Shows the latest Netwrix news, including product updates.                                                                                                                                                                                                                                                   |
-| HEALTH STATUS      | Opens the Health Status dashboard, which provides at-a-glance insight into product health, data collection, storage and more. See the [Health Status Dashboard](/docs/auditor/10.7/admin/healthstatus/dashboard/overview.md) topic for additional information.                                                                    |
+| HEALTH STATUS      | Opens the Health Status dashboard, which provides at-a-glance insight into product health, data collection, storage, and more. See the [Health Status Dashboard](/docs/auditor/10.7/admin/healthstatus/dashboard/overview.md) topic for additional information.                                                                    |
 | ALERTS HISTORY     | Clicking this tile opens the Alerts History dashboard, which provides detailed information about the latest alerts triggered in your IT infrastructure, enriched with actionable charts and timelines. See the [Alerts Overview Dashboard](/docs/auditor/10.7/admin/alertsettings/dashboard.md) topic for additional information. |
 
 ## Favorite Reports
 
-Initially, the Favorite Reports tile lists the reports that our customers use most frequently. You
+Initially, the Favorite Reports tile lists the reports that the customers use most frequently. You
 can add and remove reports to reflect your needs and interests. If you have more favorite reports
 than can fit in the tile, simply click **View all** to see the complete list. See the
 [Customizing Favorite Reports](/docs/auditor/10.7/admin/navigation/customizefavorite.md) topic for additional information.

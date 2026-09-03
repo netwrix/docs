@@ -12,7 +12,7 @@ A user having REST API access must be created on the Nutanix Files server to mon
 server using Activity Monitor. Additional configurations are done automatically by Activity Monitor
 using the Nutanix API with the help of this user.
 
-Follow the steps to create a new user account with Nutanix Prism:
+## Create a new user account with Nutanix Prism
 
 **Step 1 –** Open Nutanix Prism web portal.
 
@@ -37,7 +37,7 @@ Monitor.
 
 
 :::note
-Nutanix Files does not report events for activity originating from a server where the
+Nutanix Files doesn't report events for activity originating from a server where the
 Activity Monitor Agent is installed.
 
 :::

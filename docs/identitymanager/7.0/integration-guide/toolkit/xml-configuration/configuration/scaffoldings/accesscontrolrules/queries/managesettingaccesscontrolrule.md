@@ -1,10 +1,10 @@
 ---
 title: "ManageSettingAccessControlRule"
-description: "Generates the access control rule which gives to a profile the permission to query, create, update and delete settings from the UM_Settings table."
+description: "Generates the access control rule which gives a profile the permission to query, create, update, and delete settings from the UM_Settings table."
 sidebar_position: 1
 ---
 
-Generates the access control rule which gives to a profile the permission to query, create, update and delete settings from the UM_Settings table.
+Generates the access control rule which gives a profile the permission to query, create, update, and delete settings from the UM_Settings table.
 
 
 ## Properties

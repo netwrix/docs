@@ -22,8 +22,8 @@ The 5.Policies job group is comprised of:
 - [AWS_SensitivePolicies Job](/docs/accessanalyzer/12.0/solutions/aws/policies/aws_sensitivepolicies.md) – Provides details on users, groups, and
   roles as well as the policies granting them sensitive permissions
 - [AWS_UnusedManagedPolicies Job](/docs/accessanalyzer/12.0/solutions/aws/policies/aws_unusedmanagedpolicies.md) – Provides details on customer
-  managed policies that exist in the AWS Organization. Optionally, AWS managed policies can be
-  included by changing the @IncludeAWSManaged parameter on the analysis task.
+  managed policies that exist in the AWS Organization. Optionally, include AWS managed policies
+  by changing the @IncludeAWSManaged parameter on the analysis task.
 - [AWS_UserPolicies Job](/docs/accessanalyzer/12.0/solutions/aws/policies/aws_userpolicies.md) – Provides details outlining user policy assignment.
   This includes where the policy is assigned, directly or at a group level, and if the policy
   assignment has been duplicated.

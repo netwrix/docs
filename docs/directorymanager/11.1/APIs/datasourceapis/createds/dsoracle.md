@@ -29,7 +29,7 @@ source and destination provider in Synchronize jobs. This provider supports dyna
 detection.
 
 :::note
-Oracle client must be installed to use this provider. Make sure you reboot your computer after
+Oracle client must be installed to use this provider. Ensure you reboot your computer after
 installing the Oracle client.
 :::
 

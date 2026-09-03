@@ -109,7 +109,7 @@ jobs:
             path: build/
 
   deploy:
-    runs-on: gh-runner-large
+    runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
     needs: [build, determine-environment]
     environment: ${{ needs.determine-environment.outputs.environment }}

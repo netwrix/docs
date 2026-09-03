@@ -4,16 +4,17 @@ description: "Directory Services"
 sidebar_position: 110
 ---
 
+
 # Directory Services
 
 From this section, you can import and synchronize the entities (Users, Computers, and Groups) from
-the company’s Active Directories.
+the company's Active Directories.
 
-![Import and synchronize the entities (Users, Computers, and Groups) from the company’s Active Directories](directoryservices.webp)
+![Import and synchronize the entities (Users, Computers, and Groups) from the company's Active Directories](directoryservices.webp)
 
 
 :::note
-This section of the documentation is provided as a best-effort guideline to support deployment. Since third-party products can change frequently, the screenshots and images may not always reflect the latest interfaces or features. For the most up-to-date information, please refer to the official resources from the product vendor.
+This section of the documentation is provided as a best-effort guideline to support deployment. Since third-party products can change frequently, the screenshots and images may not always reflect the latest interfaces or features. For the most up-to-date information, refer to the official resources from the product vendor.
 :::
 
 ## Microsoft Active Directory
@@ -25,10 +26,7 @@ Password.
 ![Manage connections from the Directory Services](newconnection.webp)
 
 :::note
-When having to import a very large number of entities, we recommend using the Base Search
-Path to get only the relevant information displayed. Due to browser limitations, importing the whole
-AD structure may impede the display of the import tree if it contains a very large number of
-entities.
+When importing many entities, use Base Search Path to show only relevant information. Importing the entire AD structure can slow the import tree display.
 :::
 
 
@@ -42,8 +40,7 @@ connection credentials and synchronization interval can also be changed.
 
 ![Change connection credentials and synchronization interval](testsync.webp)
 
-The Advanced Groups Filter can be used to import and synchronize only speciﬁc groups, ignoring all
-other entities.
+Use the Advanced Groups Filter to import and synchronize only specific groups, ignoring all other entities.
 
 From the Directory Browser section, you can select the entities that need to be synced.
 
@@ -54,7 +51,7 @@ You can view only Organizational units (OU) and Groups in the Directory Browser.
 
 ![From the Directory Browser section, you can select the entities that need to be synced.](directorybrowser.webp)
 
-Once the entities have been selected, they can be saved to sync.
+After the entities have been selected, they can be saved to sync.
 
 ![Synchronization Filters](synchfilters.webp)
 
@@ -83,8 +80,6 @@ After the synchronization is done, it will look like that on the Endpoint Protec
 
 #### Create the Application on Microsoft Entra ID
 
-Follow the steps to create the application on Microsoft Entra ID.
-
 **Step 1 –** Log in to Azure Portal.
 
 **Step 2 –** Go to Microsoft Entra ID.
@@ -99,7 +94,7 @@ left side, then on New Registration.
 **Step 5 –** On the Supported account type select **Default Directory**.
 
 :::warning
-Do not ﬁll in the Redirect URI ﬁeld!
+Don't fill in the Redirect URI field.
 :::
 
 
@@ -137,7 +132,7 @@ API.
 
 ![Create a Secret ID for the Application](certsecretsfour.webp)
 
-**Step 5 –** Take note of the Secret ID value and make sure to copy it to the clipboard and also to
+**Step 5 –** Take note of the Secret ID value and ensure to copy it to the clipboard and also to
 store it safely because it will be needed further on.
 
 :::note
@@ -148,8 +143,6 @@ Notice that when navigating back, the secret ID will be hidden.
 ![Create a Secret ID for the Application](certsecretsfive.webp)
 
 #### Create Users/Groups Using Graph API
-
-Follow the steps to create users/groups using Graph API.
 
 **Step 1 –** Click **Home** and then Microsoft Entra ID.
 
@@ -185,13 +178,13 @@ Follow the steps to create users/groups using Graph API.
 
 #### Add Permissions to the Application
 
-Permission to be added to our application:
+Permissions to add to the application:
 
 - Directory.Read.All
 - Group.Read.All
 - User.Read.All
 
-Make sure the created application is open then:
+ensure the created application is open then:
 
 **Step 1 –** Click **API Permissions**.
 
@@ -224,13 +217,9 @@ Make sure the created application is open then:
 
 #### Add Graph Application to Server
 
-Follow the steps to add a graph application to the Endpoint Protector server.
+**Step 1 –** Open the Endpoint ProtectorServer and navigate to **Directory Services** > **Microsoft Entra ID**.
 
-**Step 1 –** Open the Endpoint ProtectorServer and navigate to **Directory Services** > **Microsoft
-Entra ID**.
-
-**Step 2 –** Click **Add** to add an API Consumer – One API Consumer can be used for multiple
-synchronization jobs.
+**Step 2 –** Click **Add** to add an API Consumer. Use one API Consumer for multiple synchronization jobs.
 
 ![Add Graph Application to Endpoint Protector Server](azuread.webp)
 
@@ -241,6 +230,9 @@ synchronization jobs.
 - Directory (tenant) ID saved earlier on the Tenant ID ﬁeld
 - Application (client) ID saved earlier on the Application (Client) ID ﬁeld
 - Secret ID saved earlier in the Client Secret Value ﬁeld
+- Azure Cloud Environment – select the cloud environment that matches your tenant:
+  - **Commercial** (default) – uses `login.microsoftonline.com` and `graph.microsoft.com`
+  - **GCC High** – uses `login.microsoftonline.us` and `graph.microsoft.us` (for US government and regulated-industry tenants)
 
 ![Add Graph Application to Endpoint Protector Server](azureadtwo.webp)
 
@@ -249,8 +241,6 @@ synchronization jobs.
 ![Add Graph Application to Endpoint Protector Server](azureadthree.webp)
 
 #### Create a Synchronization Job on the Server
-
-Follow the steps to create a synchronization job on the Endpoint Protector server.
 
 **Step 1 –** Click **Create Sync Job**.
 
@@ -278,6 +268,11 @@ Microsoft Entra ID. This switch has two states:
   attribute to retrieve user names, ensuring accurate synchronization between the local Active
   Directory and Azure AD.
 
-By utilizing this feature, Endpoint Protector ensures seamless synchronization of user names,
+By using this feature, Endpoint Protector ensures seamless synchronization of user names,
 preventing duplicate usernames. Enable or disable the "Map on-premises users" feature based on your
 speciﬁc hybrid environment setup and requirements.
+
+:::note
+You can configure both Commercial and GCC High environments simultaneously using separate API
+Consumer connections. Each connection syncs independently.
+:::

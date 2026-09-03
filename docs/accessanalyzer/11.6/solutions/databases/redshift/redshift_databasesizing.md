@@ -11,7 +11,7 @@ vulnerabilities related to instance configuration settings.
 
 ![configurationjobgroup](/images/accessanalyzer/11.6/solutions/databases/redshift/configurationjobgroup.webp)
 
-The job(s) in the Configuration Job Group are:
+The jobs in the Configuration Job Group are:
 
 - Redshift_DatabaseSizing Job — Provides details about Redshift databases and overall database size.
 
@@ -21,7 +21,7 @@ Navigate to the **Jobs** > **Databases**> **Redshift** > **Configuration** >
 **Redshift_DatabaseSizing** > **Configure** node and select **Analysis** to view the Analysis Tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

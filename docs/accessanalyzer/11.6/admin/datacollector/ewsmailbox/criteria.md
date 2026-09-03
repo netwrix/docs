@@ -6,10 +6,10 @@ sidebar_position: 60
 
 # EWSMailbox: Criteria
 
-The Select DLP criteria for this scan page is where to select the criteria to use for the sensitive
-data scan are selected. It is a wizard page for the Sensitive Data category.
+Use the Select DLP criteria for this scan page to select the criteria to use for the sensitive
+data scan. It is a wizard page for the Sensitive Data category.
 
-This page requires the Sensitive Data Discovery Add-On to be been installed on the Enterprise
+This page requires you to install the Sensitive Data Discovery Add-On on the Enterprise
 Auditor Console to define the criteria and enable the Criteria Editor. See the
 [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
 topic for additional information.
@@ -32,7 +32,7 @@ The options on the Criteria page are:
 The table contains the following types of criteria:
 
 :::note
-Until the Sensitive Data Discovery Add-On is installed, only the headers for the System
+Until you install the Sensitive Data Discovery Add-On, only the headers for the System
 Criteria and User Criteria nodes are visible in the table.
 :::
 

@@ -11,11 +11,9 @@ is preceded with a dash; a space separates a parameter name from its value. You 
 parameters— the script uses a default value unless a parameter is explicitly defined. If necessary,
 modify the parameters as required.
 
-Follow the steps to run the script with PowerShell.
-
 **Step 1 –** On computer where you want to execute the add-on, start **Windows PowerShell**.
 
-**Step 2 –** Type a path to the add-on. Or simply drag and drop the add-on file in the console
+**Step 2 –** Enter a path to the add-on. Or simply drag and drop the add-on file in the console
 window.
 
 **Step 3 –** Add script parameters. The console will look similar to the following:

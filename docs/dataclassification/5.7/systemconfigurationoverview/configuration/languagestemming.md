@@ -6,12 +6,13 @@ sidebar_position: 80
 
 # Language Stemming
 
-Language stemming is a morphological process that converts words to their root form so that most
-inflected forms are considered equal. For example, an English language search for the word "baby"
+Language stemming is a morphological process that converts words to their root form so that the
+system treats most inflected forms as equal. For example, an English language search for the word "baby"
 will also locate documents containing the word "babies".
 
-Note that the stemming process is highly language specific and so one word may stem differently in
-different languages.
+:::note
+The stemming process is highly language specific and so one word may stem differently in different languages.
+:::
 
 Netwrix Data Classification has support for most common languages and will detect the language for
 each document. However, when an index is to be built for documents in multiple languages it is
@@ -20,8 +21,8 @@ collection may be compromised when some words from the query are stemmed differe
 languages.
 
 If all searches are filtered by language then it may make sense to use a different stemmer for each
-language. However, in this case we would recommend building a separate index for each language
-rather than combining all languages in a single index.
+language. However, in this case, building a separate index for each language is preferable to combining
+all languages in a single index.
 
 The reason that automatic language detection is important during the indexing process is so that the
 correct stoplist is used when extracting terms and concepts. By excluding words in the stoplist the
@@ -120,9 +121,9 @@ will match with:
 
 and vice versa.
 
-Note that this mapping of diacritics is transparent to the end user and all data displayed will
-always contain the original characters formats. Therefore, all document summaries, extracts and
-related topics will always be displayed with diacritics if the original documents contained them.
+:::note
+This mapping of diacritics is transparent to the end user and all data displayed will always contain the original characters formats. Therefore, all document summaries, extracts, and related topics will always be displayed with diacritics if the original documents contained them.
+:::
 
 In addition, all stopword processing is based on the extended ASCII character set, and so stopwords
 for different languages are always held with appropriate diacritics.
@@ -139,7 +140,7 @@ needs of precision and recall.
 
 ### Fuzzy Stemming
 
-Our stemming algorithms can optionally include a degree of fuzzy matching based on removal of
+The stemming algorithms can optionally include a degree of fuzzy matching based on removal of
 duplicated consonants. The advantage of this technique is that is improves recall without any loss
 of precision since duplicated consonants are largely redundant in word matching. Enabling this
 option (set StemmingMode=1 in the Config table) will cause the following words to match:

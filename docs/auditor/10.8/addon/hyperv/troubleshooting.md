@@ -6,13 +6,11 @@ sidebar_position: 60
 
 # Maintenance and Troubleshooting
 
-If you cannot see collected data in Auditor, check the following:
+If you can't see collected data in Auditor, check the following:
 
 - Add-on account has sufficient rights to access SCVMM and Auditor.
-- In Netwrix Auditor settings, go to the **Integrations** section and make sure the **Leverage
-  Integration API** is switched to **ON**. Check the communication port number – default is
-  **9699**.
-- If you configured a dedicated monitoring plan, make sure data source monitoring is enabled.
+- In Netwrix Auditor settings, go to the **Integrations** section and ensure the **Leverage Integration API** is switched to **ON**. Check the communication port number – default is **9699**.
+- If you configured a dedicated monitoring plan, ensure data source monitoring is enabled.
 - Verify the parameters you provided in **settings.xml**.
 
 ## Monitor Several SCVMM
@@ -50,11 +48,11 @@ Alternatively, you can use **Windows Task Scheduler**.
 - If the solution was deployed using the third scenario (that is, SCVMM server and add-on are
   running on different machines), then the following error may be written in the solution log:
 
-The WinRM client cannot process the request.
+The WinRM client can't process the request.
 
 See the [Deployment Scenarios](/docs/auditor/10.8/addon/hyperv/deployment.md)topic for additional information.
 
-If the authentication scheme is different from Kerberos, or if the client computer is not joined to
+If the authentication scheme is different from Kerberos, or if the client computer isn't joined to
 a domain, then HTTPS transport must be used or the destination machine must be added to the
 **TrustedHosts** list. To configure this list, use **winrm.cmd**.
 

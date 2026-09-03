@@ -34,8 +34,8 @@ Each connector authenticates with the source system's REST API (OAuth or basic a
 depending on the platform), and stores its per-CR sync state on the Change Tracker Hub.
 
 :::note
-Change Tracker links change events to a Planned Change only after the CR is approved in
-the ITSM system. Create and approve CRs before the work starts. If a CR is approved
+Change Tracker links change events to a Planned Change only after you approve the CR in
+the ITSM system. Create and approve CRs before the work starts. If you approve a CR
 retrospectively, Change Tracker reassesses the matching events and marks them as
 planned, but Change Tracker has already sent any unplanned-change alerts.
 :::

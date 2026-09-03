@@ -28,6 +28,6 @@ tabs:
 - [Qumulo Tab](/docs/activitymonitor/9.0/admin/agents/properties/qumulo.md) – Activity Agent only
 - [Additional Properties Tab](/docs/activitymonitor/9.0/admin/agents/properties/additionalproperties.md)
 
-Select the desired agent and click **Edit** to open the agent’s Properties window.
+Select the agent you want and click **Edit** to open the agent’s Properties window.
 
 ![Properties Window](/images/activitymonitor/9.0/admin/agents/properties/mainimage.webp)

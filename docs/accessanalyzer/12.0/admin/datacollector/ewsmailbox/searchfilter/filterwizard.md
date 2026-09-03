@@ -22,7 +22,7 @@ Customize folder search conditions using the following options:
   of the template conditions
 
     :::note
-    The values present depends on the selections made in the Select conditions box.
+    The available values depend on the selections in the Select conditions box.
     :::
 
 
@@ -31,7 +31,7 @@ Customize folder search conditions using the following options:
       [MessageClasses Window ](#messageclasses-window) topic for additional information.
     - Click **over 90 Day ago** to open the Date Range Selection Window. See the
       [Date Range Selection Window](#date-range-selection-window) topic for additional information.
-    - Click **has attachment(s)** to convert the condition to **has no attachment(s)** and vice
+    - Click **has attachments** to convert the condition to **has no attachments** and vice
       versa
 
 ## MessageClasses Window
@@ -45,7 +45,7 @@ Filter page.
 Determine MessageClass-related criteria using the following options:
 
 - To add a class, click **Add**
-- Enter the desired Message Class in the corresponding textbox
+- Enter the Message Class in the corresponding textbox
 - Click **Exact Match** to reveal a dropdown menu of other search criteria under Matching Strategy
   and select the preferred option:
 

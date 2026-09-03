@@ -13,14 +13,14 @@ control of target devices may be limited.
 This reduction in administration comes at the cost of reduced functionality and potentially a
 requirement for higher levels of privileges on the target machine.
 
-The Hub does not communicate directly to target devices, so an agent is still required, but this
-agent can reside on the same device that the Hub is hosted on. This agent (the master proxy) will
-remotely communicate with devices and relay the data back to the hub. For this reason, with Netwrix
-Change Tracker, the term proxied device is preferred to agentless device.
+The Hub doesn't communicate directly to target devices, so an agent is still required, but this
+agent can reside on the same device that hosts the Hub. This agent (the master proxy) remotely
+communicates with devices and relays the data back to the hub. For this reason, Netwrix Change
+Tracker uses the term proxied device instead of agentless device.
 
 ## Functionality and Scope
 
-Currently, the only functionality for proxied Windows devices is the execution of the following
+The only functionality for proxied Windows devices is the execution of the following
 Center for Internet Security (CIS) compliance reports:
 
 - CIS Microsoft Windows Server 2022, 2019
@@ -31,14 +31,14 @@ settings.
 
 ## Requirements and Permissions
 
-The credential used run the agent service on the master proxy device and the credential used to
+The credential used to run the agent service on the master proxy device and the credential used to
 connect to the proxied Windows devices require domain admin privileges.
 
 ### Remote Registry Service
 
 The master proxy and target Windows devices require the remote registry service to be running and
-have remote administration enabled. This can be enabled on each device or on mass with the use of a
-Group Policy Object.
+have remote administration enabled. You can enable this on each device individually or across all
+devices at once using a Group Policy Object.
 
 :::note
 The remote registry service requires port 445 to be open on the target device.
@@ -53,7 +53,7 @@ Windows Server report against it. This requires the existence of a device group 
 
 ### Windows Logon Credentials
 
-Currently Windows logon credentials are added in SSH/Telnet Credentials section of the Credentials
+Add Windows logon credentials in the SSH/Telnet Credentials section of the Credentials
 Administration page.
 
 **Step 1 –** Click the **Add Shell Credential (SSH/Telnet/Windows)** button to open the credential
@@ -61,20 +61,20 @@ creation form.
 
 ![credential_creation](/images/changetracker/admin/agentlesscis/credential_creation.webp)
 
-**Step 2 –** Name the credential. **Remote Windows Test1** has been used in this example.
+**Step 2 –** Name the credential. This example uses **Remote Windows Test1**.
 
 **Step 3 –** Select Windows device from the top dropdown menu to populate the settings with defaults
 for proxied devices.
 
-The credential will now be listed in the grid.
+The credential now appears in the grid.
 
 ![credential_grid](/images/changetracker/admin/agentlesscis/credential_grid.webp)
 
 ### Configure the Proxied Windows Device
 
-On the Agent and Device Administration page click the “Add Proxied Device” button on the device that
-will act as the master proxy. The agent on this master proxy device will make the remote calls to
-the proxied devices.
+On the Agent and Device Administration page, click **Add Proxied Device** on the device that acts
+as the master proxy. The agent on this master proxy device makes the remote calls to the proxied
+devices.
 
 **Step 1 –** Name the proxied device.
 
@@ -88,15 +88,15 @@ the proxied devices.
 
 ![proxide_device_configuration](/images/changetracker/admin/agentlesscis/proxide_device_configuration.webp)
 
-The proxied Windows device will now be present in the detail grid of the master proxy device.
+The proxied Windows device now appears in the detail grid of the master proxy device.
 
 ![device_grid](/images/changetracker/admin/agentlesscis/device_grid.webp)
 
 ### Windows Compliance Reports
 
-The steps to create or configure a compliance report is out of scope for this guide, but the desired
-report must be configured to run against the RemoteTest group to ensure the proxied device, created
-in the previous step, is included in the report.
+The steps to create or configure a compliance report are out of scope for this guide, but you must
+configure the report to run against the RemoteTest group to ensure it includes the proxied
+device you created in the previous step.
 
 ![compliance_report_configuration](/images/changetracker/admin/agentlesscis/compliance_report_configuration.webp)
 
@@ -108,8 +108,7 @@ Completed compliance report:
 
 ![completed_compliance_report](/images/changetracker/admin/agentlesscis/completed_compliance_report.webp)
 
-The Windows compliance report will look the just the same as a report executed on Windows devices
-with agents. The details of the report will contain all passed and failed checks for the proxied
-Windows device.
+The Windows compliance report looks the same as a report run on Windows devices with agents. The
+report details show all passed and failed checks for the proxied Windows device.
 
 ![compliance_report](/images/changetracker/admin/agentlesscis/compliance_report.webp)

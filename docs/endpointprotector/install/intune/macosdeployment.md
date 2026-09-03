@@ -29,7 +29,7 @@ macOS platform;
 ![macOS configurations on the Apps Overview page](macappsoverview.webp)
 
 **Step 7 –** Click Select app package file and from the right-hand side, select the Endpoint
-Protector intunemac file, Upload and click **OK.**
+Protector intunemac file, upload it, and click **OK.**
 
 ![Information about the app package file](macaddapp.webp)
 
@@ -55,7 +55,7 @@ package upload.
 **Add**.
 
 :::note
-Please contact the Customer Support department to provide the script.
+contact the Customer Support department to provide the script.
 :::
 
 

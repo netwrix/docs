@@ -7,7 +7,7 @@ sidebar_position: 90
 # Hyper-V SCVMM
 
 Netwrix Auditor is a visibility platform for user behavior analysis and risk mitigation that enables
-control over changes, configurations and access in hybrid IT environments to protect data regardless
+control over changes, configurations, and access in hybrid IT environments to protect data regardless
 of its location. The platform provides security analytics to detect anomalies in user behavior and
 investigate threat patterns before a data breach occurs.
 
@@ -23,7 +23,7 @@ supporting detailed SCVMM monitoring and effective response to changes.
 For that purpose, you can use a specially designed add-on. It works in collaboration with Netwrix
 Auditor, supplying data about operations on your SCVMM server to Netwrix database. Aggregating data
 into a single audit trail simplifies the analysis, makes activity monitoring more cost-effective,
-and helps you keep tabs on your virtual infrastructure.
+and helps you monitor your virtual infrastructure.
 
 Major benefits:
 
@@ -42,8 +42,8 @@ On a high level, the solution works as follows:
 1. An IT administrator configures the Integration API settings to enable data collection and storage
    to the Netwrix database for further reporting, search, etc.
 
-    It is recommended to create a dedicated monitoring plan in Auditor and add a dedicated item of
-    **Integration** type to it — then you will be able to filter data in reports and search results
+    Netwrix recommends creating a dedicated monitoring plan in Auditor and adding a dedicated item of
+    **Integration** type to it — then you can filter data in reports and search results
     by monitoring plan or item name.
 
 2. On SCVMM side, the IT administrator prepares a dedicated user account for accessing SCVMM server.
@@ -56,7 +56,7 @@ On a high level, the solution works as follows:
    collect audit data from VMM server.
 
     See the [Monitoring Scope](/docs/auditor/10.9/addon/hyperv/monitoredevents.md) for additional information on the default list of
-    the events supported out-of-the box.
+    the events supported by default.
 
 6. The add-on component **HVARunner.exe** starts collecting activity data from VMM. Data
    communication is performed using TCP protocol.
@@ -68,7 +68,7 @@ See the [Integration API](/docs/auditor/10.9/api/overview.md) topic for addition
 of the Activity Record and the capabilities of the Integration API.
 
 8. The add-on uses the Integration API to send the Activity Records to Auditor Server, where this
-   data becomes available for search, reporting and alerting.
+   data becomes available for search, reporting, and alerting.
 9. Users open Auditor Client to work with collected data:
     - Search for file changes using certain criteria
     - Export data to PDF or CSV files
@@ -78,8 +78,8 @@ of the Activity Record and the capabilities of the Integration API.
 
 ### Add-on Delivery Package
 
-The add-on delivery package is a ZIP archive comprising several files, including DLLs, configuration
-and executable files. The latter ones are listed in the table below.
+The add-on delivery package is a ZIP archive comprising several files, including DLLs, configuration,
+and executable files. The following table lists the executable files.
 
 | File name         | Description                                                                                             |
 | ----------------- | ------------------------------------------------------------------------------------------------------- |
@@ -101,7 +101,7 @@ follows:
 
 ### Accounts and Rights
 
-It is recommended to create a dedicated account for running the add-on.
+Netwrix recommends creating a dedicated account for running the add-on.
 
 This account should have the following minimal rights and permissions:
 

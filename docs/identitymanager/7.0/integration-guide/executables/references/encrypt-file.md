@@ -6,13 +6,13 @@ sidebar_position: 100
 
 # Usercube-Encrypt-File
 
-In Identity Manager, files are encrypted by default. This tool encrypts an input file or the InputConsole of a Powershell program or file to save it as an encrypted output file. This task cannot be configured in the configuration.
+In Identity Manager, files are encrypted by default. This tool encrypts an input file or the InputConsole of a Powershell program or file to save it as an encrypted output file. This task can't be configured in the configuration.
 
 ## Examples
 
 ### Launch the tools with input console (powershell script)
 
-The following example, used in a Powershell script, decrypts the file(s) specified by the `csvResult` variable and saves the result in the location specified in `resultsFile`. The encryption is made using the certificate's thumbprint, store location and store name.
+The following example, used in a Powershell script, decrypts the files specified by the `csvResult` variable and saves the result in the location specified in `resultsFile`. The encryption is made using the certificate's thumbprint, store location and store name.
 
 ```shell
 $csvResult | & ./Usercube-Encrypt-File.exe --file-cert-thumbprint $certificateThumbprint --file-cert-store-location $certificateStoreLocation --file-cert-store-name $certificateStoreName --output-path $resultsFile

@@ -8,19 +8,18 @@ sidebar_position: 10
 
 ## Predefined Script Variables
 
-These are created by the script execution engine, and, in the case of all but $$RESULT$$, are
-pre-populated with the values supplied in the Credentials Key. They can be used in the script where
-required.
+The script execution engine creates these variables. Except for $$RESULT$$, it pre-populates them
+with the values from the Credentials Key. Use these variables in the script where required.
 
 - $$USERNAME$$ - the user name used for initial ssh / telnet connection
 - $$PASSWORD$$ - the password used for initial ssh / telnet connection
 - $$USERNAME2$$ - the second level (admin / privilege) user name
 - $$PASSWORD2$$ - the second level (admin / privilege) password
-- $$RESULTS$$ - the variable whose contents are used as the ‘result text’ of the script.
+- $$RESULTS$$ - the variable that holds the ‘result text’ of the script.
 
 :::note
-Using multiple capturing commands with the same variable will result in the data being
-appended to the existing value.
+Using multiple capturing commands with the same variable appends the new data to the existing
+value.
 :::
 
 

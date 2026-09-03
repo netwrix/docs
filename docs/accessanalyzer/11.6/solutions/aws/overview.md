@@ -6,9 +6,9 @@ sidebar_position: 70
 
 # AWS Solution
 
-Enterprise Auditor for AWS allows organizations to secure their data residing in Amazon Web Services
-(AWS) S3 platform, reducing their risk exposure through proactive, automated auditing and reporting
-of S3 permissions, sensitive data, and ultimately a consolidated view of user access rights across
+Enterprise Auditor for AWS helps organizations secure data stored in the Amazon Web Services
+(AWS) S3 platform. It reduces risk exposure through proactive, automated auditing and reporting
+of S3 permissions and sensitive data, giving you a consolidated view of user access rights across
 dozens of structured and unstructured data resources both on-premises and in the cloud.
 
 The AWS Solution is designed to provide information about data access such as:
@@ -17,10 +17,10 @@ The AWS Solution is designed to provide information about data access such as:
 - Who is accessing your data
 - What sensitive data is being stored and accessed
 
-The AWS Solution provides the ability to audit AWS IAM and S3. Enterprise Auditor uses the AWS
+The AWS Solution lets you audit AWS IAM and S3. Enterprise Auditor uses the AWS
 solution to collect IAM users, groups, roles, and policies, as well as S3 permissions, content, and
 sensitive data from target AWS accounts. The solution requires a special Enterprise Auditor license.
-It can be focused to only conduct auditing of AWS IAM. Additionally, the Sensitive Data Discovery
+You can focus it to audit only AWS IAM. Additionally, the Sensitive Data Discovery
 Add-On enables the solution to search AWS S3 content for sensitive data.
 
 **Supported Platforms**
@@ -37,16 +37,16 @@ topic for additional information.
 **Sensitive Data Discovery Considerations**
 
 The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time ,
-then an extra 16 GB of RAM are required (8x2=16).
+which enables Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans,
+increase the minimum amount of RAM. Each thread requires a minimum of 2
+additional GB of RAM per host. For example, if you configure the job to scan 8 hosts at a time,
+it requires an extra 16 GB of RAM (8 x 2 = 16).
 
 :::note
-The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
-configuration; it has been preconfigured to work with Enterprise Auditor and should never be
-customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
+The Sensitive Data Discovery Add-on installation package installs the appropriate Java
+Development Kit (JDK) version on the server. The deployed JDK is prepackaged and doesn't require
+any configuration; it comes preconfigured to work with Enterprise Auditor. Don't customize it
+through Java. It won't conflict with other JDKs or Java Runtimes in the same
 environment.
 :::
 
@@ -58,7 +58,7 @@ Enterprise Auditor Instant Job Wizard. See the
 [Instant Job Wizard](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/overview.md)
 topic for information on installing instant solutions from the Enterprise Auditor Library.
 
-Once it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **AWS**.
+After it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **AWS**.
 
 ## Job Groups
 

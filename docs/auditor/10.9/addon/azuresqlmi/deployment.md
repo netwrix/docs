@@ -32,7 +32,7 @@ To integrate with Microsoft Entra ID, you need to create a separate application 
    - **Description**: "Netwrix Integration Secret"
    - **Expires**: Choose appropriate expiration period (recommended: 12-24 months)
 4. Click **Add**
-5. **Important**: Copy the secret value - you cannot retrieve it later
+5. **Important**: Copy the secret value - you can't retrieve it later
 
 ### 1.3 Configure API Permissions (Optional)
 
@@ -382,7 +382,7 @@ Run the Netwrix Auditor Add-on Setup Wizard and follow these configuration steps
 
 This Azure SQL Managed Instance add-on is a **free integration solution** for Netwrix Auditor.
 
-**We value your feedback!** Your experience and suggestions help us improve the add-on. Please share your feedback on:
+Your feedback helps improve the add-on. Share your feedback on:
 - Functionality and features
 - Documentation and setup process
 - Additional requirements or use cases

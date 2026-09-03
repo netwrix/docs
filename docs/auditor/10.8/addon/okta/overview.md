@@ -11,7 +11,7 @@ Okta-based devices. Aggregating data into a single audit trail simplifies analys
 monitoring more cost effective, and helps you keep tabs on your IT infrastructure.
 
 Implemented as a service, this add-on facilitates the data transition from Okta-based systems to
-Netwrix Auditor. All you have to do is provide connect ion details and specify parsing rules.
+Netwrix Auditor. All you have to do is provide connection details and specify parsing rules.
 
 On a high level, the add-on works as follows:
 
@@ -22,7 +22,7 @@ On a high level, the add-on works as follows:
    which writes them to the Long-Term Archive and the Audit Database.
 
 See the [Integration API](/docs/auditor/10.8/api/overview.md) topic for additional information on the structure
-of the Activity Record and the capabilities of the NIntegration API.
+of the Activity Record and the capabilities of the Integration API.
 
 ## Prerequisites
 
@@ -52,5 +52,4 @@ In case the add-on and Auditor are installed on the same server, no special sett
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
-leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
+Ensure to check your product version, and then review and update your add-ons and scripts that work with Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

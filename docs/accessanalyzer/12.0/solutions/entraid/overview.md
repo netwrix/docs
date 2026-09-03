@@ -24,7 +24,7 @@ for additional information.
 
 The Entra ID Solution requires a special Access Analyzer license. It can be installed from the
 Instant Job Wizard, see the [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for
-additional information. Once it has been installed into the Jobs tree, navigate to the solution:
+additional information. After it's installed into the Jobs tree, navigate to the solution:
 **Jobs** > **Entra ID**.
 
 The .Entra ID Inventory Job Group collects the data. The Entra ID Job Groups run analysis and

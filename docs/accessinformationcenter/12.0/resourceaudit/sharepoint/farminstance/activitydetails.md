@@ -12,7 +12,7 @@ includes a line graph for Active Users Trend.
 
 ![Activity Details report at the on-premise farm and online instance levels](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/farminstance/instanceactivitydetails.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Access Time – Date and timestamp for when the operation occurred
 - Trustee Name – Owner of the trustee account
@@ -31,19 +31,18 @@ This report is comprised of the following columns:
 - Access – Whether the trustee was granted access to execute the operation: **Allowed** or
   **Denied**
 - Path – Original location where the operation occurred
-- Target Path – New location if changed by the operation. Blank if the operation does not result in
+- Target Path – New location if changed by the operation. Blank if the operation doesn't result in
   a new path.
 - Process Name – Name of the process which performed the operation
 
 The table data grid functions the same way as other table grids. See the
 [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.
 
-There is one line graph at the bottom displaying Active Users Trend for the selected resource.
+One line graph displays Active Users Trend for the selected resource.
 
 ![Active Users Trend graph](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/farminstance/instanceactivitydetailstrendgraph.webp)
 
-The Active Users Trend line graph provides a visual representation of the number of active users
-over the selected date range. It indicates how many users are performing activity per day.
+The Active Users Trend line graph shows the number of active users over the selected date range, indicating how many users are performing activity per day.
 
 See the
 [Activity Report Results Pane Features](/docs/accessinformationcenter/12.0/resourceaudit/navigate/overview.md#activity-report-results-pane-features)

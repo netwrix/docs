@@ -6,8 +6,7 @@ sidebar_position: 30
 
 # Creating the Policy
 
-Once the script and package are successfully uploaded, you need to create a new Jamf policy. To
-create the new policy, follow these steps:
+After the script and package are successfully uploaded, create a new Jamf policy. To create the new policy, follow these steps:
 
 **Step 1 –** In your Jamf account, from the main navigation bar, click **Computer**, from the left
 sidebar menu, select **Policies**, and then click **+ New**.
@@ -24,7 +23,7 @@ sidebar menu, select **Policies**, and then click **+ New**.
 **Step 3 –** On the Scripts section, click **Configure** and then enter the following information:
 
 - Add the epp_change_ip.sh script.
-- Priority – set priority to Before, as the script needs to be installed before the next step.
+- Priority – set priority to Before, so you install the script before the next step.
 
 ![Configuring Script under Policies](scripts.webp)
 
@@ -39,6 +38,6 @@ EndpointProtector.pkg.
 
 ![Adding Devices and users to apply to the scope](policyscope.webp)
 
-To confirm that the Endpoint Protector Client has been successfully deployed and the Server- Client
-communication and policies work as expected, you can view the endpoint in the List of Computers from
-the Endpoint Protector UI, and the Endpoint Protector Client is displayed in the menu bar.
+To verify that you've successfully deployed the Endpoint Protector Client and that Server-Client
+communication and policies work as expected, view the endpoint in the List of Computers from
+the Endpoint Protector UI. The Endpoint Protector Client appears in the menu bar.

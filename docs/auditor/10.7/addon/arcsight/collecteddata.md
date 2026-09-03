@@ -6,8 +6,6 @@ sidebar_position: 50
 
 # Work with Collected Data
 
-Follow the steps to see collected data.
-
 **Step 1 –** Log on to your ArcSight Logger web interface.
 
 **Step 2 –** On the **Summary** page, select the **Event Summary by Receiver** diagram and click the

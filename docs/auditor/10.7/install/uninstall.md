@@ -8,11 +8,9 @@ sidebar_position: 90
 
 This topic provides instructions to uninstall Netwrix Auditor.
 
-**NOTE:** If you enabled network traffic compression for data collection, make sure to disable it
-before uninstalling the product. Some network compression services must be removed manually. See the
-Uninstall Compression and Core Services topic for additional information.
-
-Follow the steps to uninstall Auditor.
+:::note
+If you enabled network traffic compression for data collection, disable it before uninstalling the product. Some network compression services must be removed manually. See the Uninstall Compression and Core Services topic for additional information.
+:::
 
 **Step 1 –** On the computer where Auditor is installed, navigate to **Start > Control Panel >
 Programs and Features**.
@@ -27,12 +25,9 @@ client consoles will become inoperable.
 Perform the procedures below if you used Compression Services and Core Services for data collection
 (i.e., the **Network traffic compression** option was enabled).
 
-Some Auditor Compression services are stopped but not removed when the product is uninstalled. You
-need to delete them manually prior to uninstalling Auditor.
+Some Auditor Compression services are stopped but not removed when the product is uninstalled. You need to delete them manually before you uninstall Auditor.
 
 ### Delete Netwrix Auditor for Active Directory Compression Service
-
-Follow the steps to uninstall the service.
 
 **Step 1 –** Navigate to the Active Directory monitoring plan you are using. In the command prompt,
 execute the following command:
@@ -52,8 +47,6 @@ sc delete adcrsvc
 
 ### Delete Netwrix Auditor for SharePoint Core Service
 
-Follow the steps to delete the Netwrix Auditor for the SharePoint Core Service.
-
 **Step 1 –** In the audited SharePoint farm, navigate to the computer where Central Administration
 is installed and where the Netwrix Auditor for SharePoint Core Service resides.
 
@@ -61,14 +54,13 @@ is installed and where the Netwrix Auditor for SharePoint Core Service resides.
 
 **Step 3 –** Select the Netwrix Auditor **for SharePoint Core Service** and click Uninstall.
 
-**CAUTION:** Once you click Uninstall you cannot cancel the uninstallation. The Netwrix Auditor
-**for SharePoint Core Service** will be uninstalled even if you click Cancel.
+**CAUTION:** When you click Uninstall, you can't cancel the uninstallation. The Netwrix Auditor for SharePoint Core Service will be uninstalled even if you click Cancel.
 
 ### Delete Netwrix Auditor for Windows Server Compression Service
 
-**NOTE:** Perform this procedure only if you enabled the Compression Service for data collection.
-
-Follow the steps to delete the Netwrix Auditor for Windows Server Compression Service.
+:::note
+Perform this procedure only if you enabled the Compression Service for data collection.
+:::
 
 **Step 1 –** On the target servers, navigate to **Start > Control Panel > Programs and Features**.
 
@@ -76,8 +68,6 @@ Follow the steps to delete the Netwrix Auditor for Windows Server Compression Se
 **Uninstall**.
 
 ### Delete Netwrix Auditor Mailbox Access Core Service
-
-Follow the steps to delete a Netwrix Auditor Mailbox Access Core Service.
 
 **Step 1 –** In the command prompt, execute the following command:
 
@@ -92,9 +82,6 @@ If any argument contains spaces, use double quotes.
 
 ### Delete Netwrix Auditor User Activity Core Service
 
-Follow the steps to remove the Core Service via Auditor client on the computer where the Auditor
-Server resides:
-
 **Step 1 –** In Auditor client, navigate to All **monitoring plans** and specify the plan.
 
 **Step 2 –** In the right pane, select the **Items** tab.
@@ -103,11 +90,11 @@ Server resides:
 Core Service** will be deleted from the selected computer. Perform this action with other computers.
 
 **Step 4 –** In the left pane navigate to **All monitoring plans >\_\_**User Activity monitoring
-plan > Monitored Computers.\_\_ Make sure that the computers you have removed from auditing are no
+plan > Monitored Computers.\_\_ ensure that the computers you have removed from auditing are no
 longer present in the list.
 
 **Step 5 –** In case some computers are still present in the list, select them one by one and click
-**Retry Uninstallation**. If this does not help, remove the Core Services manually from the target
+**Retry Uninstallation**. If this doesn't help, remove the Core Services manually from the target
 computers through **Programs and Features**.
 
 Remove the Netwrix Auditor User Activity Core Service manually on each audited computer:
@@ -116,7 +103,7 @@ Remove the Netwrix Auditor User Activity Core Service manually on each audited c
 
 **Step 2 –** Select the **Netwrix Auditor User Activity** **Core Service** and click **Uninstall**.
 
-**NOTE:** You may also use the attached PowerShell script in order to remove the User Activity Core Service from multiple systems: [Uninstall-NetwrixProduct.ps1](/files/auditor/Uninstall-NetwrixProduct.ps1)
+**NOTE:** You may also use the attached PowerShell script to remove the User Activity Core Service from multiple systems: [Uninstall-NetwrixProduct.ps1](/files/auditor/Uninstall-NetwrixProduct.ps1)
 
 ### Delete the Netwrix Auditor Application Deployment Service
 
@@ -126,7 +113,7 @@ service runs on the target servers.
 **NOTE:** Perform this procedure only if you enabled the Network traffic compression option for
 Windows File Servers data collection.
 
-Follow the steps to delete the Netwrix Auditor Application Deployment Service.
+To delete the Netwrix Auditor Application Deployment Service:
 
 **Step 1 –** On the target server, navigate to **Start > Registry Editor > Programs and Features**.
 
@@ -137,13 +124,11 @@ key.
 
 ### Delete Netwrix Auditor for File Servers Compression Service
 
-The Netwrix Auditor for File Servers Compression Service runs on the Auditor Server host as
-designed.
+The Netwrix Auditor for File Servers Compression Service runs on the Auditor Server host as designed.
 
-**NOTE:** This is applicable for NetApp and Dell Data Storage sources. Delete the service
-irrespective of the Network traffic compression option for Dell Isilon source.
-
-Follow the steps to delete the Netwrix Auditor for File Servers Compression Service.
+:::note
+This is applicable for NetApp and Dell Data Storage sources. Delete the service irrespective of the Network traffic compression option for Dell Isilon source.
+:::
 
 **Step 1 –** On the computer where AuditorServer resides, navigate to **Start > Control Panel >
 Programs and Features**.
@@ -155,8 +140,6 @@ the Auditor Server. For a Windows File Server, the service is the Netwrix Audito
 Deployment Service and runs on the File Server directly.
 
 ### Delete the Netwrix Auditor Event Log Compression Service
-
-Follow the steps to delete the Netwrix Auditor Event Log Compression Service.
 
 **Step 1 –** Navigate to **Start > Control Panel > Programs and Features**.
 

@@ -14,7 +14,7 @@ Navigate to the **AWS** > **4.Roles** > **AWS_Roles** > **Configure** node and s
 to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

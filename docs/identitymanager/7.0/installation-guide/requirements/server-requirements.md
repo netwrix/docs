@@ -26,7 +26,7 @@ The server can be run as:
 - A [Windows service](https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications);
 - a stand-alone executable for tests or debugging purposes.
 
-It is **recommended** to enable the following [Internet Information Services (IIS)](https://www.iis.net/) features to host Identity Manager:
+Netwrix recommends enabling the following [Internet Information Services (IIS)](https://www.iis.net/) features to host Identity Manager:
 
 - [Windows Authentication](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/windowsauthentication/#windows-authentication)
 - [Anonymous Authentication](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/security/authentication/anonymousauthentication#anonymous-authentication)

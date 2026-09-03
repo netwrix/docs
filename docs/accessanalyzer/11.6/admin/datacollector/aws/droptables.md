@@ -7,7 +7,7 @@ sidebar_position: 80
 # Drop AWS Tables
 
 Sometimes when troubleshooting an AWS issue, it becomes necessary to clear the AWS DC data and
-tables from the Enterprise Auditor database. Follow the steps to configure a job to remove tables.
+tables from the Enterprise Auditor database. To configure a job to remove tables:
 
 **Step 1 –** Create a new job.
 
@@ -24,13 +24,14 @@ tables from the Enterprise Auditor database. Follow the steps to configure a job
 Collector Wizard. Click **OK** to close the Query Properties window.
 
 :::warning
-When the job is run, all of the AWS DC data and tables are removed from the database.
+When you run the job, Enterprise Auditor removes all of the AWS DC data and tables
+from the database.
 :::
 
 
 The job is now configured and ready to run.
 
 :::note
-An AWS connection profile is not required for the Drop AWS DC Tables task.
+An AWS connection profile isn't required for the Drop AWS DC Tables task.
 
 :::

@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Get Job Collections
 
-Use this API to retrieve information of job collection(s) based on filters provided in the request
+Use this API to retrieve information of job collections based on filters provided in the request
 syntax.
 
 See the [Create a Job Collection ](/docs/directorymanager/11.1/portal/synchronize/collection/create.md)topic for

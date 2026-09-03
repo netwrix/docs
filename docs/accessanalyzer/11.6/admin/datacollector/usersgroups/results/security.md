@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # UsersGroups: Security Category
 
-This Security policy is used to audit security policies.
+This Security policy audits security policies.
 
 ![Users and Groups Browser wizard Results page Security category](/images/accessanalyzer/11.6/admin/datacollector/usersgroups/category/security.webp)
 
-Select from the following options for what data will be returned:
+Select from the following options for what data to return:
 
 - Security Policy (User Rights Assignment) – Identifies user rights assignment for each individual
   policy part that grants or removes rights

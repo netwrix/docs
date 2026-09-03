@@ -35,19 +35,21 @@ export default function VersionSwitcher() {
     }
   }
 
+  // Sort versions so latest is always first (on the left), excluding hidden versions
+  const sortedVersions = matchedProduct
+    ? [...matchedProduct.versions].filter((v) => !v.hidden).sort((a, b) => {
+        if (a.isLatest) return -1;
+        if (b.isLatest) return 1;
+        return 0;
+      })
+    : [];
+
   // Don't render anything if:
   // - No product matched
-  // - Product only has one version
-  if (!matchedProduct || matchedProduct.versions.length <= 1) {
+  // - Product has one or fewer visible versions
+  if (!matchedProduct || sortedVersions.length <= 1) {
     return null;
   }
-
-  // Sort versions so latest is always first (on the left), excluding hidden versions
-  const sortedVersions = [...matchedProduct.versions].filter(v => !v.hidden).sort((a, b) => {
-    if (a.isLatest) return -1;
-    if (b.isLatest) return 1;
-    return 0;
-  });
 
   return (
     <div className={styles.versionSwitcherContainer}>

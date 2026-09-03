@@ -11,7 +11,7 @@ Enforcer. This guide is an introduction to Password Policy Enforcer's capabiliti
 almost any password policy imaginable with Password Policy Enforcer, customize the Password Policy
 Client messages, and even synchronize passwords with other networks and applications. The
 [Administration](/docs/passwordpolicyenforcer/11.2/admin/administration_overview.md) topic contains more information to
-help you get the most out of Password Policy Enforcer.
+help you use Password Policy Enforcer's full capabilities.
 
 The [Password Policy Enforcer Web](/docs/passwordpolicyenforcer/11.2/web-overview/web_overview.md) application lets users securely manage their passwords from a web browser, ensuring passwords comply with the password policy, and
 helping users choose compliant passwords.

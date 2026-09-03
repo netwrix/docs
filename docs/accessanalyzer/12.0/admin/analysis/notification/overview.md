@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Notification Analysis Module
 
-The Notification Data analysis module provides the ability to send an email or command-line
+The Notification Data analysis module lets you send an email or command-line
 notification to selected targets based on the values contains in any table.
 
 The Notification Data Analysis Module has the following prerequisites:

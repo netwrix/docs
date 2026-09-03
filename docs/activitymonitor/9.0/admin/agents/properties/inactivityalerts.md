@@ -35,10 +35,10 @@ configured interval. The alert is sent to the Syslog configured on the **Syslog 
 
 ![inactivityalertssyslogalerts](/images/activitymonitor/9.0/admin/agents/properties/inactivityalertssyslogalerts.webp)
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:PORT format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:PORT format
   in the text box. The server name can be short name, fully qualified name (FQDN), or IP Address, as
   long as the organization’s environment can resolve the name format used.
-- Syslog protocol – Identify the **Syslog protocol** to be used for the alert. The drop-down menu
+- Syslog protocol – Identify the **Syslog protocol** to be used for the alert. The dropdown menu
   includes:
 
     - UDP
@@ -46,7 +46,7 @@ configured interval. The alert is sent to the Syslog configured on the **Syslog 
     - TLS
 
         :::note
-        The TCP and TLS protocols add the **Message framing** drop-down menu. **Message
+        The TCP and TLS protocols add the **Message framing** dropdown menu. **Message
         framing** options include:
         :::
 
@@ -61,7 +61,7 @@ configured interval. The alert is sent to the Syslog configured on the **Syslog 
   connection. A connection status message displays with either a green check mark or a red X
   identifying the success of the sent test message. Messages vary by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -71,9 +71,9 @@ configured interval. The alert is sent to the Syslog configured on the **Syslog 
 
 ![Message Template popup window for Syslog Alerts](/images/activitymonitor/9.0/admin/agents/properties/inactivityalertssyslogalertsmessagetemplate.webp)
 
-Custom templates can be created. Select the desired template or create a new template by modifying
-an existing template within the Syslog Message Template window. The new message template is named
-Custom.
+You can create custom templates. Select the template you want or create a new template by modifying
+an existing template within the Syslog Message Template window. Activity Monitor names the new message
+template Custom.
 
 Click **OK** to apply changes and exit, or **Cancel** to exit without saving any changes.
 
@@ -84,7 +84,7 @@ configured interval. The alert is sent to the configured recipients on the Email
 
 ![inactivityalertsemailalerts](/images/activitymonitor/9.0/admin/agents/properties/inactivityalertsemailalerts.webp)
 
-- Syslog server in SERVER[:PORT] format – Type the **SMTP server name** with a SERVER:PORT format in
+- Syslog server in SERVER[:PORT] format – Enter the **SMTP server name** with a SERVER:PORT format in
   the text box. The server name can be short name, fully qualified name (FQDN), or IP Address, as
   long as the organization’s environment can resolve the name format used.
 
@@ -98,7 +98,7 @@ configured interval. The alert is sent to the configured recipients on the Email
 ![Email Alerts - Message Subject popup window](/images/activitymonitor/9.0/admin/agents/properties/inactivityalertsemailalertsmessagesubject.webp)
 
 - Message subject – Click the ellipsis (…) to open the Message Template window to customize the
-  subject. Macros can be used to insert
+  subject. Use macros to insert values in the subject line. Refer to the Macros section below for available variables.
 
 ![Email Alerts - Message Body popup window](/images/activitymonitor/9.0/admin/agents/properties/inactivityalertsemailalertsmessagebody.webp)
 
@@ -111,7 +111,7 @@ Click **OK** to apply changes and exit, or **Cancel** to exit without saving any
 
 ## Macro Variables for Agents
 
-Macros are text strings that are replaced with actual values at run time. The following Macro
+Macros are text strings that Activity Monitor replaces with actual values at run time. The following Macro
 variables are available to customize the Syslog and Email message template:
 
 | Macro                       | Definition                                                    |

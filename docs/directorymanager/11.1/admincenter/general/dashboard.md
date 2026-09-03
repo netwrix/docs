@@ -43,7 +43,7 @@ This card displays the following information about the Elasticsearch service:
   to.
 - Elasticsearch service status, which can be:
 
-    - **Running** - indicates that the service is up and running.
+    - **Running** - indicates that the service is running.
     - **Stopped** - indicates that the Directory Manager Elasticsearch node has run into issues. You
       must troubleshoot it for Directory Manager to work.
 
@@ -59,7 +59,7 @@ list next to the card name to view the data for it.
 ## Failed Notifications
 
 This card displays the count for failed notifications, i.e., the Directory Manager-generated
-notifications that could not be delivered for any reason, such as when the SMTP server is down or
+notifications that couldn't be delivered for any reason, such as when the SMTP server is down or
 the recipient’s address is incorrect.
 
 Click **View All** to go to the **Notification Queue** page, where you can view the failed
@@ -91,7 +91,7 @@ Generic LDAP defined in Directory Manager, along with their replication status, 
 
 - **Successful:** Indicates that identity store objects are successfully replicated.
 - **Failed:** Indicates that identity store objects have failed to replicate either because the
-  Replication service did not run as scheduled or an error occurred during replication.
+  Replication service didn't run as scheduled or an error occurred during replication.
 - **Never Replicated:** Indicates that the identity store is never replicated.
 
 ## Enrollment Summary
@@ -110,7 +110,7 @@ Consider the following:
   type. Click a bar to launch the **Helpdesk** page, that displays a list of users enrolled with
   that authentication type. See the
   [View Users' Information](/docs/directorymanager/11.1/admincenter/helpdesk/operation/search.md#view-users-information) topic for
-  details on the information displayed for a user. (Notice that the **Filter(s)** dialog box
+  details on the information displayed for a user. (Notice that the **Filters** dialog box
   displays the selected authentication type in the **Enrolled With** box.)
 - By default, data is displayed for the last one month. You can view enrollment data for any
   specific period. Click the tile showing the time period to launch the calendar. Use it to specify
@@ -168,13 +168,13 @@ Consider the following:
   all identity stores.
 - To view a list of users who used a function on a particular date, click the relevant data point on
   the function line. A list of users is displayed on the **History** tab of the **Helpdesk** page.
-  See the [History in Helpdesk](/docs/directorymanager/11.1/admincenter/helpdesk/history.md) topic. (Notice that the **Filter(s)** dialog
+  See the [History in Helpdesk](/docs/directorymanager/11.1/admincenter/helpdesk/history.md) topic. (Notice that the **Filters** dialog
   box displays the selected function in the **Action Type** box.)
 - By default, data is displayed for the last one week. You can view activity summary for any
   specific period. Click the tile showing the time period to launch the calendar. Use it to specify
   a date range to view the data.
 - By default, data for all the activities is displayed. Click an activity name at the bottom of the
-  graph to hide its data. The name is struck out, indicating that data for the activity is not
+  graph to hide its data. The name is struck out, indicating that data for the activity isn't
   depicted on the graph. Click the activity name again to display its data on the graph.
 
 **See Also**

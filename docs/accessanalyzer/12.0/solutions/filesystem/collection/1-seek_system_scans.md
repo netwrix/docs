@@ -39,7 +39,7 @@ The following default configurations are commonly customized:
     - Set to **Store discovered sensitive data**
     - Set to scan typical documents
 
-- SDD Criteria Settings page:
+- SDD (Sensitive Data Discovery) Criteria Settings page:
 
     - Set to the following System Criteria:
 
@@ -76,7 +76,7 @@ purpose of this job.
 ![Applet Settings](/images/accessanalyzer/12.0/solutions/filesystem/collection/fsaaseekappletsettings.webp)
 
 **Step 4 –** The Applet Settings page applies to the applet and proxy mode scans which you select
-on the Scan Server Level page. If employing proxy servers, see the
+on the Scan Server Selection page. If employing proxy servers, see the
 [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/appletsettings.md) topic for configuration
 instructions.
 

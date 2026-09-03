@@ -8,6 +8,7 @@ keywords:
 sidebar_label: AD Admin Login Issues
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "AD Admins Not Able to Log In"
 knowledge_article_id: kA0Qk0000002B31KAE
 products:

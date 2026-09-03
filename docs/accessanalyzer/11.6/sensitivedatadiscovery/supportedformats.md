@@ -166,15 +166,15 @@ multimedia. The following file formats are supported as metadata only formats.
 
 ## Scans Against Files with no Extensions
 
-Files with no extensions can be scanned by modifying the XML file for each job where this type of
-scan is desired. Add the following line to the `PerScanExtraScanOptions` section of a job's XML
+You can scan files with no extensions by modifying the XML file for each job where you want this
+type of scan. Add the following line to the `PerScanExtraScanOptions` section of a job's XML
 script:
 
 ```
 <ScanNoExtension>true</ScanNoExtension>
 ```
 
-This line must be added to a specific location within the XML script. See below:
+Add this line to the specific location shown in the following XML script:
 
 ```
 <DLPSScanOptions>
@@ -193,5 +193,5 @@ This line must be added to a specific location within the XML script. See below:
 </PerScanExtraScanOptions>
 ```
 
-Once this line has been added to the job's XML script and the XML file is saved, files with no
+After you add this line to the job's XML script and save the XML file, files with no
 extensions are included in scans for the job.

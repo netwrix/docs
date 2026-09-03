@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Client Secret Configuration
 
-Access Analyzer authenticates to Microsoft Entra ID using a client secret. The client secret is generated within your registered Microsoft Entra ID application and provided to Access Analyzer when configuring the Entra ID connector.
+Access Analyzer authenticates to Microsoft Entra ID using a client secret. You generate the client secret within your registered Microsoft Entra ID application and provide it to Access Analyzer when configuring the Entra ID connector.
 
 ## Generate a client secret
 
@@ -25,15 +25,15 @@ Access Analyzer authenticates to Microsoft Entra ID using a client secret. The c
    - **Description** — Enter a description for the secret
    - **Expires** — Select an expiration period
 
-7. Click **Add**. The client secret value is displayed in the **Value** column.
+7. Click **Add**. Access Analyzer displays the client secret value in the **Value** column.
 
 :::warning
-Copy the client secret value immediately. Once you navigate away from this page, the value can't be retrieved and you'll need to create a new secret.
+Copy the client secret value immediately. After you navigate away from this page, you can't retrieve the value and you'll need to create a new secret.
 :::
 
 ## Assign roles to the app
 
-The registered application must be assigned to the **Global Administrator** role for Entra ID data collection.
+You must assign the registered application to the **Global Administrator** role for Entra ID data collection.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
@@ -51,4 +51,4 @@ The registered application must be assigned to the **Global Administrator** role
 
 8. Search for and select your registered application.
 
-9. Click **Add**. The application is listed on the Assignments page.
+9. Click **Add**. Access Analyzer lists the application on the Assignments page.

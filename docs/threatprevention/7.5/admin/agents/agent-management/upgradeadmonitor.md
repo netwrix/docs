@@ -8,7 +8,7 @@ sidebar_position: 60
 
 You can update the instrumentation DLL, SI.ActiveDirectoryMonitor.dll (commonly known as ADMonitor
 DLL), in LSASS without having to upgrade the entire Agent. To facilitate this, the
-[Agents Interface](/docs/threatprevention/7.5/admin/agents/overview.md) displays the currently installed versions of the Agent and the
+[Agents Interface](/docs/threatprevention/7.5/admin/agents/overview.md) displays the installed versions of the Agent and the
 ADMonitor DLL.
 
 :::note
@@ -18,11 +18,9 @@ DLL 7.5.0.777
 :::
 
 
-In previous Threat Prevention versions, you had to uninstall the Agent and then reinstall it just to
-update the ADMonitor DLL. With Threat Prevention 7.5, the _Upgrade ADMonitor_ feature enables you to
-simply replace the DLL without having to uninstall and reinstall the Agent.
-
-Follow the steps to update ADMonitor.
+In previous Threat Prevention versions, you had to uninstall the Agent and then reinstall it to
+update the ADMonitor DLL. With Threat Prevention 7.5, the _Upgrade ADMonitor_ feature lets you
+replace the DLL without having to uninstall and reinstall the Agent.
 
 **Step 1 –** Click **Agents** in the left pane to launch the Agents interface.
 
@@ -38,8 +36,6 @@ statuses are:
 - Started – The ADMonitor update operation has successfully started and it is in progress. You may
   close the window as the process will complete on its own.
 - Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of prior to the next attempt.
+  of before the next attempt.
 
 **Step 5 –** When the upgrade completes, click **Close**.
-
-ADMonitor has been updated.

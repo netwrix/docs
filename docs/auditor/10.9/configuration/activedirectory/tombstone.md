@@ -13,23 +13,22 @@ Archive, a local file-based storage of audit data) and AD tombstones.
 
 To be able to restore deleted Active Directory objects longer, increase the **Active Directory
 tombstone lifetime** property (set by default to 180 days). Netwrix recommends setting it to 2 years
-(**730 days**). You can specify any number of days, but a selected value should not exceed the
+(**730 days**). You can specify any number of days, but a selected value shouldn't exceed the
 Long-Term Archive retention period.
 
-Take into consideration that increasing tombstone lifetime may affect Active Directory performance
-and operability.
+Increasing tombstone lifetime may affect Active Directory performance and operability.
 
 To perform this procedure, you will need the
-[ADSI Edit](http://technet.microsoft.com/en-us/library/cc773354(v=ws.10).aspx) utility.utility.
+[ADSI Edit](http://technet.microsoft.com/en-us/library/cc773354(v=ws.10).aspx) utility.
 
-Follow the steps to change the tombstone lifetime attribute.
+### Change the Tombstone Lifetime Attribute
 
 **Step 1 –** On any domain controller in the target domain, navigate to Start > Windows
 Administrative Tools **> ADSI Edit**.
 
 **Step 2 –** Right-click the **ADSI Edit** node and select **Connect To**. In the **Connection
 Settings** dialog, enable **Select a well-known Naming Context** and select **Configuration** from
-the drop-down list.
+the dropdown list.
 
 ![manualconfig_adsi_connectionwinserver2016](/images/1secure/configuration/ad/manualconfig_adsi_connectionwinserver2016.webp)
 

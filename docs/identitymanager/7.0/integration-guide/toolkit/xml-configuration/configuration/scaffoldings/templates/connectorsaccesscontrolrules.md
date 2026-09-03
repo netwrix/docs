@@ -20,7 +20,7 @@ The scaffolding generates the following scaffoldings:
 Gives the rights to create and update resource types, generate provisioning orders and fulfill from the connector screen.
 - [Job View Access Control Rules](../templates/jobviewaccesscontrolrules)
 
-Scaffolding to generate a set of rights to view all JobInstances, TaskInstances and logs.
+Scaffolding to generate a set of rights to view all JobInstances, TaskInstances, and logs.
 - [Resource Type Mapping Control Rules](../accesscontrolrules/jobs/resourcetypemappingcontrolrules)
 
 Generate rights to launch agent fulfillment.
@@ -53,7 +53,7 @@ Generates all rights to have the access to job administration page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="ConnectorConnection_Administrator_ActivityTemplateTransition" DisplayName_L1="Administrator - Connection Configuration - ActivityTemplateTransition" DisplayName_L2="Administrator - Configuration d'une connexion - ActivityTemplateTransition" EntityType="ActivityTemplateTransition" Profile="Administrator">

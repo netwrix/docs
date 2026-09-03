@@ -35,19 +35,19 @@ The 5-SQL_ServerSettings Job uses the SQL Data Collector for the following queri
 ### Configure the Configuration Query
 
 The 5-SQL_ServerSettings Job’s Configuration Query is configured to run with the default settings
-with the Configuration Properties category. Follow the steps to customize configurations.
+with the Configuration Properties category. To customize configurations, complete the following steps.
 
 **Step 1 –** Navigate to the **Databases** > 0.Collection > SQL > 5-SQL_ServerSettings > Configure
 node and select Queries.
 
-**Step 2 –** In the Query Selection view, select the Configuration Query and click on Query
+**Step 2 –** In the Query Selection view, select the Configuration Query and click Query
 Properties. The Query Properties window will appear.
 
 **Step 3 –** Select the Data Source tab, and click Configure. The SQL Data Collector Wizard will
 open.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -60,7 +60,7 @@ by default to target All instances. Change the query scope to Only select instan
 Retrieve. The Available server audits will be populated. Databases and instances can be added in the
 following ways:
 
-- Select the desired instances and click Add.
+- Select the instances you want and click Add.
 - Use the Import CSV button to import a list from a CSV file.
 - (Optional) Use the Add Custom Filter button to create and apply a custom filter.
 
@@ -73,20 +73,20 @@ The 5-SQL_ServerSettings Job is now ready to run with the customized settings.
 
 The 5-SQL_ServerSettingsJob > Server Query has been preconfigured to run with the default settings
 with the category of Server Properties. However, the query can be scoped to target specific
-databases/instances on the Filters page of the SQL Data Collector Wizard. Follow these steps to
-modify the query configuration.
+databases/instances on the Filters page of the SQL Data Collector Wizard. To modify the query
+configuration, complete the following steps.
 
 **Step 1 –** Navigate to the **Databases** > 0.Collection > SQL > 5-SQL_ServerSettings > Configure
 node and select Queries.
 
-**Step 2 –** In the Query Selection view, select the Server query click on Query Properties. The
+**Step 2 –** In the Query Selection view, select the Server query click Query Properties. The
 Query Properties window will appear.
 
 **Step 3 –** Select the Data Source tab, and click Configure. The SQL Data Collector Wizard will
 open.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -99,7 +99,7 @@ by default to target All instances. Change the query scope to Only select instan
 Retrieve. The Available server audits will be populated. Databases and instances can be added in the
 following ways:
 
-- Select the desired instances and click Add.
+- Select the instances you want and click Add.
 - Use the Import CSV button to import a list from a CSV file.
 - Optionally use the Add Custom Filter button to create and apply a custom filter.
 

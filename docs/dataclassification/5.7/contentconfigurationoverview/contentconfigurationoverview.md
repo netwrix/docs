@@ -14,7 +14,7 @@ following areas
 - To configure automated workflows that will be triggered upon classification results, click
   **Workflows**.
 
-**IMPORTANT!** To access the **Sources** area, users require sufficient rights. See the
+**IMPORTANT** To access the **Sources** area, users require sufficient rights. See the
 [User Management](/docs/dataclassification/5.7/systemconfigurationoverview/users/usermanagement.md) section for more information.
 
 ![content_config_thumb_0_0](/images/dataclassification/5.7/admin/sources/content_config_thumb_0_0.webp)

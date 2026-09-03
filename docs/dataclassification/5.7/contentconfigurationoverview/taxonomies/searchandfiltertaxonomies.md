@@ -28,12 +28,10 @@ termset level including:
 - Reuse Terms
 - Export CSV
 
-You can also drag-and-drop a node from one location on the tree view to another, once you have
-dropped the node you can select to either move, copy, or merge the node(s).
+You can also drag-and-drop a node from one location on the tree view to another. After dropping the node, you can select to either move, copy, or merge the nodes.
 
-Browser rendering restrictions limits the maximum suitable size per level within the tree view at
-10,000 terms. Therefore we recommend that the tree view is structured across multiple branches, both
-for performance and usability. Once a branch within the taxonomy reaches 10,000 terms the tree view
+Browser rendering restrictions limit the maximum suitable size per level within the tree view at
+10,000 terms. Structure the tree view across multiple branches for both performance and usability. Once a branch within the taxonomy reaches 10,000 terms the tree view
 will cap the returned nodes and log a warning to the event logs.
 
 Review the following for additional information:
@@ -44,16 +42,16 @@ Review the following for additional information:
 
 [](#)Searching for Taxonomy Terms
 
-A search facility is provided to locate terms that contains specified text:
+The system provides a search facility to locate terms containing specified text:
 
 Click the magnifying glass icon to the right of the taxonomy dropdown and a new edit box appears
-where search text may be entered:
+where you can enter search text:
 
 ![taxonomysearch](/images/dataclassification/5.7/admin/taxonomies/taxonomysearch.webp)
 
 [](#)"Sync Enabled" Treeview Filter
 
-For SharePoint Term Sets the treeview can optionally be filtered to only show terms that are enabled
+For SharePoint Term Sets you can optionally filter the treeview to only show terms that are enabled
 for synchronisation (configured on the term Settings screen).
 
 This setting is session specific and applicable only to the current user:
