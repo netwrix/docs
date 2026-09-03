@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Maximum Age rule forces users to change their passwords regularly. This decreases the likelihood of an attacker finding a password that is still in use. Only [domain policies](../../../installation/domain_and_local_policies.md) can enforce this rule.
 
-![Maximum Age rule](/images/passwordpolicyenforcer/11.2/administration/agemax.webp)
+![Maximum Age rule](/images/passwordpolicyenforcer/12.0/administration/agemax.webp)
 
 Select the **Age (Max)** checkbox to enable the Maximum Age rule.
 
@@ -40,7 +40,7 @@ Select **Send email reminders at** if you want PPE to send email reminders to us
 
 Click **Set up email** to edit the email template for the email reminders.
 
-![Email Template Editor](/images/passwordpolicyenforcer/11.2/administration/email_template_editor.webp)
+![Email Template Editor](/images/passwordpolicyenforcer/12.0/administration/email_template_editor.webp)
 
 The correct format for the **From** text box is `"Display Name" <mailbox@domain.com>`. You can edit the email body with a visual editor or raw HTML editor by clicking **Visual** or **HTML**.
 

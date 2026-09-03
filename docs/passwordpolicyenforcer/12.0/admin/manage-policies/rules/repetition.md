@@ -8,7 +8,7 @@ sidebar_position: 100
 
 The Repetition rule rejects passwords that contain repeating patterns like abbbbc and pwdpwdpwd. Excessive repetition decreases password entropy, making passwords easier to guess or crack.
 
-![Repetition Rule](/images/passwordpolicyenforcer/11.2/administration/repetition.webp)
+![Repetition Rule](/images/passwordpolicyenforcer/12.0/administration/repetition.webp)
 
 ## Character repetition
 

@@ -10,7 +10,7 @@ Most Password Policy Enforcer (PPE) settings are policy-specific, but there are 
 
 ## General
 
-![General Settings PPE](/images/passwordpolicyenforcer/11.2/administration/settingsgeneral.webp)
+![General Settings PPE](/images/passwordpolicyenforcer/12.0/administration/settingsgeneral.webp)
 
 **Default policy**. Select the policy to use as the default from the dropdown. Users must comply with the default password policy if you haven't assigned another policy to them. See [Set the default policy](manage-policies/manage_policies.md#set-the-default-policy) to learn how PPE uses the default policy and how to exempt specific users from it.
 
@@ -49,7 +49,7 @@ The Password Policy Client and the Password Policy Server each enforce most PPE 
 
 Password Policy Enforcer sends notification emails to users and administrators. Use the settings in the **Notifications** tab to configure your mail delivery settings. PPE can send email directly to a mail server or a pickup folder.
 
-![Notifications Settings](/images/passwordpolicyenforcer/11.2/administration/settingsnotifications.webp)
+![Notifications Settings](/images/passwordpolicyenforcer/12.0/administration/settingsnotifications.webp)
 
 **Send email reminders**. Select this option if you want PPE to send email notifications directly to a mail server. Select your mail server type, **SMTP Server**, **Google OAuth2**, or **O365 OAuth2**, then enter the requested information for the mail server. If you select **Google OAuth2**, click **Update credentials** to complete authorization in a web browser. Finally, click **Send test email** to ensure that the PPE Mailer can deliver email to your mail server.
 
@@ -69,7 +69,7 @@ The default Google OAuth2 timeout is 60 seconds. You can change this by setting 
 
 Install the Password Policy Enforcer Mailer Service on one server in the domain. Use the settings in the **Mail Service** tab to allow PPE to locate the mailer service.
 
-![Mail Server Tab](/images/passwordpolicyenforcer/11.2/administration/settingsmailserver.webp)
+![Mail Server Tab](/images/passwordpolicyenforcer/12.0/administration/settingsmailserver.webp)
 
 **Service**. Enter the hostname or IP address of the server that hosts the mailer service.
 
@@ -80,7 +80,7 @@ Install the Password Policy Enforcer Mailer Service on one server in the domain.
 
 Use the **License** tab to view and update your license key.
 
-![License Settings Tab](/images/passwordpolicyenforcer/11.2/administration/settingslicense.webp)
+![License Settings Tab](/images/passwordpolicyenforcer/12.0/administration/settingslicense.webp)
 
 **Paste license from clipboard**. Copy your new license key to the clipboard, then click **Paste license from clipboard** to update the license key.
 

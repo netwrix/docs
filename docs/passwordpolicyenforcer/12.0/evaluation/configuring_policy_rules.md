@@ -19,7 +19,7 @@ When you create a policy, Password Policy Enforcer opens the policy settings. Yo
 settings for a policy at any time by clicking the policy name on the Configuration Console
 dashboard.
 
-![New policy open for settings](/images/passwordpolicyenforcer/11.2/evaluation/newpolicysettings.webp)
+![New policy open for settings](/images/passwordpolicyenforcer/12.0/evaluation/newpolicysettings.webp)
 
 Requirement: Password must contain at least seven characters.
 
@@ -32,7 +32,7 @@ You set this condition with the **Length** rule.
 **Step 3 –** Select **7** for the **At least...** value. Depending on the template, this might be
 the default.
 
-![Set the Length](/images/passwordpolicyenforcer/11.2/evaluation/evallength.webp)
+![Set the Length](/images/passwordpolicyenforcer/12.0/evaluation/evallength.webp)
 
 Requirement: Password must contain at least one lowercase alpha character.
 
@@ -48,7 +48,7 @@ You set this condition with the **Characters (Complexity)** rule.
 
 **Step 5 –** Select **Upper Alpha (A-Z)** now for the next requirement.
 
-![Set upper and lower case requirements](/images/passwordpolicyenforcer/11.2/evaluation/evalchars.webp)
+![Set upper and lower case requirements](/images/passwordpolicyenforcer/12.0/evaluation/evalchars.webp)
 
 Password must contain at least one uppercase character.
 
@@ -64,7 +64,7 @@ You set this condition with the **Characters (Granular)** rule.
 
 **Step 5 –** Select **Lower Alpha (a-z)** **Contain** **1** or more characters.
 
-![set character granularity](/images/passwordpolicyenforcer/11.2/evaluation/evalcharsgran.webp)
+![set character granularity](/images/passwordpolicyenforcer/12.0/evaluation/evalcharsgran.webp)
 
 Requirement: Password must not be similar to the user's logon name.
 
@@ -76,7 +76,7 @@ You set this condition with the **Similarity** rule.
 
 **Step 3 –** Select **User logon name**.
 
-![Set Similarity rule](/images/passwordpolicyenforcer/11.2/evaluation/evalsimilarity.webp)
+![Set Similarity rule](/images/passwordpolicyenforcer/12.0/evaluation/evalsimilarity.webp)
 
 Requirement: Password must not exist in a dictionary of common passwords.
 
@@ -90,6 +90,6 @@ You set this condition with the **Dictionary** rule.
 
 **Step 4 –** Navigate to **\Program Files\Password Policy Enforcer** folder and select**Dict.txt**.
 
-![Enable the sample dictionary](/images/passwordpolicyenforcer/11.2/evaluation/evaldict.webp)
+![Enable the sample dictionary](/images/passwordpolicyenforcer/12.0/evaluation/evaldict.webp)
 
 After you add all the rules, click **Save**.

@@ -23,11 +23,11 @@ A distribution point can be a UNC path to a server share, or a Distributed File 
 2. Expand the **Forest** and **Domains** items, then expand your domain in the left pane.
 3. Right-click the target OU in the left pane, then click **Create a GPO in this domain, and Link it here...**. Target the Domain Controllers OU to install a package only on the domain controllers (typical for the Password Policy Server). Target the OU containing your workstations to install a package on those computers (typical for the Password Policy Client), or target the domain root to deploy to all computers in the domain.
 
-   ![GPM installation](/images/passwordpolicyenforcer/11.2/install/gpm1.webp)
+   ![GPM installation](/images/passwordpolicyenforcer/12.0/install/gpm1.webp)
 
 4. Enter a descriptive name for the GPO (for example, **Password Policy Enforcer**) in the name field, then press **Enter**.
 
-   ![GPM Install](/images/passwordpolicyenforcer/11.2/install/gpm2.webp)
+   ![GPM Install](/images/passwordpolicyenforcer/12.0/install/gpm2.webp)
 
 ## Edit the Group Policy Object
 
@@ -42,7 +42,7 @@ A distribution point can be a UNC path to a server share, or a Distributed File 
 
 5. Click **Open**.
 
-   ![installing_ppe_2](/images/passwordpolicyenforcer/11.2/install/installing_ppe_2.webp)
+   ![installing_ppe_2](/images/passwordpolicyenforcer/12.0/install/installing_ppe_2.webp)
 
 6. Select **Assigned** as the deployment method.
 7. Click **OK**.

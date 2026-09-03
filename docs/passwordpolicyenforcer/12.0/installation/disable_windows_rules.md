@@ -23,7 +23,7 @@ To disable the Windows password policy rules:
 9. Select **Disabled**, then click **OK**.
 10. Close the Group Policy Management Editor.
 
-![installing_ppe_3](/images/passwordpolicyenforcer/11.2/evaluation/preparing_the_computer.webp)
+![installing_ppe_3](/images/passwordpolicyenforcer/12.0/evaluation/preparing_the_computer.webp)
 
 :::note
 Don't set the Windows policies to **Not Configured** as that leaves the previously enforced value in place and doesn't disable the rule. Instead, follow the preceding steps to explicitly set each numeric policy to **0** and set the complexity policy to **Disabled**.

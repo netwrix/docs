@@ -13,7 +13,7 @@ Download Password Policy Enforcer Web:
 
 [PasswordPolicyEnforcer-Web-10.3.0.1.msi](https://releases.netwrix.com/products/passwordpolicyenforcer/10.3/passwordpolicyenforcer-web-10.3.0.1.msi)
 
-![introduction_4](/images/passwordpolicyenforcer/11.2/web/introduction_4.webp)
+![introduction_4](/images/passwordpolicyenforcer/12.0/web/introduction_4.webp)
 
 Password Policy Enforcer Web communicates directly with the domain controllers, so it works best
 when both the web server and domain controllers are on the same network. If you need to put the web

@@ -8,7 +8,7 @@ sidebar_position: 60
 
 The Dictionary rule rejects passwords that are vulnerable to guessing, hybrid, and precomputed attacks. These attacks can crack weak passwords in seconds, and they are very effective if users base their passwords on common words.
 
-![Dictionary rule configuration options](/images/passwordpolicyenforcer/11.2/administration/dictionary.webp)
+![Dictionary rule configuration options](/images/passwordpolicyenforcer/12.0/administration/dictionary.webp)
 
 Select the **Dictionary** checkbox to enable the Dictionary rule.
 

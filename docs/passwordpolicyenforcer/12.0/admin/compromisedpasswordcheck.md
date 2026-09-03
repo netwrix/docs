@@ -47,7 +47,7 @@ Click the **Password Scanner** toggle to enable/disable the feature.
 - **Set up email** click to set up the email message for users. Enter the **From** address and edit
   the subject and body template as needed. Click **Apply** to save changes.
 
-    ![Email user notification of compromised password](/images/passwordpolicyenforcer/11.2/administration/emailusernotification.webp)
+    ![Email user notification of compromised password](/images/passwordpolicyenforcer/12.0/administration/emailusernotification.webp)
 
 Click **Save** to save your settings before running the check or setting up a schedule.
 
@@ -79,7 +79,7 @@ Guest (S-1-5-21-1006207104-1546379664-2458629591-501)
 
 Click **Schedule** to set up a schedule to run the Password Scanner.
 
-![Schedule the Password Scanner](/images/passwordpolicyenforcer/11.2/administration/compromisedpasswordsschedule.webp)
+![Schedule the Password Scanner](/images/passwordpolicyenforcer/12.0/administration/compromisedpasswordsschedule.webp)
 
 Select the **Frequency**:
 

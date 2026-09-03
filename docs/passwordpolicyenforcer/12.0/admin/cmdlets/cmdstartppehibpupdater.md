@@ -45,4 +45,4 @@ This cmdlet supports the common parameters: **Verbose**, **Debug**, **ErrorActio
 PS C:\> Start-PPEHibpUpdater -Folder "C:\HIBP\DB" -File "C:\Users\Administrator\Desktop\db for HIBP
 Updater not real small\stealthintercept-hibp-database-1.0.0.zip
 
-![HIBP Update](/images/passwordpolicyenforcer/11.2/administration/cmdletstartppehibpupdater.webp)
+![HIBP Update](/images/passwordpolicyenforcer/12.0/administration/cmdletstartppehibpupdater.webp)

@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The Complexity rule rejects passwords that don't contain characters from a variety of character sets. A complex password takes longer to brute-force crack than a simple password of the same length.
 
-![Character Complexity Rule](/images/passwordpolicyenforcer/11.2/administration/charcomplexity.webp)
+![Character Complexity Rule](/images/passwordpolicyenforcer/12.0/administration/charcomplexity.webp)
 
 Select the **Characters (Complexity)** checkbox to enable the Complexity rule.
 

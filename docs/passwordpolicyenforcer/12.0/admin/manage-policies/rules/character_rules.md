@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Selecting the **Characters (Granular)** item in the rules pane displays the settings for nine related rules. Unlike the [Complexity rule](complexity_rule.md), these rules offer granular control over which characters to require or reject, and can even require certain character types at specific character positions. Use these rules to increase password strength or to ensure password compatibility with other systems.
 
-![Character (Granular) Rule](/images/passwordpolicyenforcer/11.2/administration/chargranular.webp)
+![Character (Granular) Rule](/images/passwordpolicyenforcer/12.0/administration/chargranular.webp)
 
 :::note
 You must select the **Characters (Granular)** checkbox at the top of the page before you can enable any of the other rules on the page.
@@ -26,13 +26,13 @@ These rules require passwords to contain certain characters by default. The word
 
 When you select **Contain**, PPE defaults to requiring at least one character from this character set. If you want to require more than one character, select the required number from the dropdown beside **Contain**. For example, you might want to specify that passwords must contain at least two special characters.
 
-![Passwords must contain at least two special characters](/images/passwordpolicyenforcer/11.2/administration/characters_granular_must_contain_two_special.webp)
+![Passwords must contain at least two special characters](/images/passwordpolicyenforcer/12.0/administration/characters_granular_must_contain_two_special.webp)
 
 Click **+** to add more specific positional requirements for this rule. Two options appear: **In position** and **Embedded**.
 
 Select **In position** to specify the character positions where the characters must (or must not) appear in the password. For example, you might have a legacy system that requires a special character in the first three characters of a password. You can configure PPE to enforce this rule by selecting **In position**, then selecting **1** and **3** in the next two dropdowns.
 
-![Restricting Characters](/images/passwordpolicyenforcer/11.2/administration/chargranularrestrict.webp)
+![Restricting Characters](/images/passwordpolicyenforcer/12.0/administration/chargranularrestrict.webp)
 
 :::tip
 Select the same number for the start and end position if you want the rule to only check one character position.
@@ -42,7 +42,7 @@ Select **Embedded** to specify that the characters must (or must not) be embedde
 
 Click **Characters** if you want to redefine the character set.
 
-![Set up custom character set](/images/passwordpolicyenforcer/11.2/administration/chargranularvowel.webp)
+![Set up custom character set](/images/passwordpolicyenforcer/12.0/administration/chargranularvowel.webp)
 
 Enter a **Name** for the character set, then enter the characters making up the set in the **Characters set** text box. Don't enter any delimiters, just the characters. For example, `AaEeIiOoUu` for vowels. Your custom character set name doesn't appear throughout the user interface — it only appears in the [Policy and Rejection messages](../messages.md). Clear one or both of these text boxes, then click **Apply** to revert them to their default values.
 
@@ -68,6 +68,6 @@ These rules require passwords to begin or end with certain characters by default
 
 Select the character set names to enable them. A checkmark appears next to the selected character sets. For example, selecting **Not end** with **Numeric** and **Special** rejects passwords that end with a numeric or special character:
 
-![Characters (Last) rule](/images/passwordpolicyenforcer/11.2/administration/last_character_rule.webp)
+![Characters (Last) rule](/images/passwordpolicyenforcer/12.0/administration/last_character_rule.webp)
 
 The First and Last Character rules use custom character set definitions defined by the granular character rules. If you haven't defined custom character sets, these rules use the [default character sets](../policy_properties.md).

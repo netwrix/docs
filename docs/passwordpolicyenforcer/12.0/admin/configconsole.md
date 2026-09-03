@@ -10,7 +10,7 @@ The Password Policy Enforcer (PPE) Configuration Console is a graphical user int
 
 Use the **PPE Configuration** desktop shortcut or Start menu item to open the console. If these don't exist, then use the [server components installer](../installation/installationserver.md) to install the Configuration Console.
 
-![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
+![Configuration Console Dashboard](/images/passwordpolicyenforcer/12.0/evaluation/ppedashboard.webp)
 
 When you connect the console to a [domain configuration](../installation/domain_and_local_policies.md), the configuration changes you make in the console replicate to all the domain controllers in the domain. Active Directory (AD) replication propagates the changes at normal replication intervals. The console applies configuration changes only to the local computer's registry when connected to a [local configuration](../installation/domain_and_local_policies.md).
 
@@ -18,7 +18,7 @@ When you connect the console to a [domain configuration](../installation/domain_
 
 Use the toggle switch in the upper-left corner of the home page to enable and disable Password Policy Enforcer. PPE is enabled by default, but it doesn't enforce any rules when first installed because you haven't defined any policies yet.
 
-![Enable/Disable PPE](/images/passwordpolicyenforcer/11.2/administration/enabledisableppeconsole.webp)
+![Enable/Disable PPE](/images/passwordpolicyenforcer/12.0/administration/enabledisableppeconsole.webp)
 
 ## Get help
 

@@ -8,7 +8,7 @@ sidebar_position: 50
 
 The Compromised rule rejects passwords found in data breaches. Blocking these passwords reduces the risk of a successful credential stuffing attack.
 
-![Compromised password rule](/images/passwordpolicyenforcer/11.2/administration/compromised.webp)
+![Compromised password rule](/images/passwordpolicyenforcer/12.0/administration/compromised.webp)
 
 Select the **Compromised** checkbox to enable the Compromised rule.
 

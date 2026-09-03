@@ -18,12 +18,12 @@ Domain policy assignments for users and groups reference the object's Security I
 2. Click the name of a policy in the policy list.
 3. Select the **Users & Groups** tab.
 
-   ![Assign policies to Users and Groups](/images/passwordpolicyenforcer/11.2/administration/usersandgroups.webp)
+   ![Assign policies to Users and Groups](/images/passwordpolicyenforcer/12.0/administration/usersandgroups.webp)
 
 4. Click the **+** beside **Users**, **Groups**, or **Containers/OUs** to add an assignment of that type. The Configuration Console displays a selection dialog box to help you select the users, groups, or OUs you want.
 5. Click **OK** to add the assignment. The entry appears under the corresponding list.
 
-   ![Policy assignments](/images/passwordpolicyenforcer/11.2/administration/usersandgroups2.webp)
+   ![Policy assignments](/images/passwordpolicyenforcer/12.0/administration/usersandgroups2.webp)
 
 :::tip
 You can have different assignment types for a policy. For example, you may assign users to a policy by both OU and group at the same time.
@@ -40,7 +40,7 @@ When you assign a policy to a group, PPE enforces the policy for all members of 
 
 When you assign a policy to an OU, PPE enforces the policy for all users in the OU as well as any child OUs. For example, if the Helpdesk and Managers OUs are children of the Info Tech OU, then any policy assigned to the Info Tech OU also applies to the two child OUs. If you want to override the inherited policy, then assign a different policy to a child OU directly.
 
-![managing_policies_3](/images/passwordpolicyenforcer/11.2/administration/managing_policies_3.webp)
+![managing_policies_3](/images/passwordpolicyenforcer/12.0/administration/managing_policies_3.webp)
 
 ## Policy assignment conflicts
 
@@ -64,10 +64,10 @@ If Password Policy Enforcer has only one policy, and that policy is also the def
 
 Use the [**Test Policy by User** feature](testpolicy.md#by-user) to check which policy PPE enforces for a user. Enter a username on the left, and the right pane shows the enforced policy.
 
-![testviewlog](/images/passwordpolicyenforcer/11.2/administration/testviewlog.webp)
+![testviewlog](/images/passwordpolicyenforcer/12.0/administration/testviewlog.webp)
 
 ## Policy selection flowchart
 
 This flowchart shows how Password Policy Enforcer determines which policy to enforce for a user.
 
-![managing_policies](/images/passwordpolicyenforcer/11.2/administration/managing_policies.webp)
+![managing_policies](/images/passwordpolicyenforcer/12.0/administration/managing_policies.webp)

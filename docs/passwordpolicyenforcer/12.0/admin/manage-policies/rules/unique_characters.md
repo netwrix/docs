@@ -8,7 +8,7 @@ sidebar_position: 120
 
 The Unique Characters rule rejects passwords that don't contain a minimum number of unique characters. For example, the password aaaaaaaa only contains one unique character (a), whereas mypassword contains nine unique characters (mypasword). Increasing the number of unique characters in a password reduces repetition. This increases password entropy and makes the password harder to guess or crack.
 
-![Unique characters rule](/images/passwordpolicyenforcer/11.2/administration/unique.webp)
+![Unique characters rule](/images/passwordpolicyenforcer/12.0/administration/unique.webp)
 
 Select the **Unique characters** checkbox to enable the Unique Characters rule.
 

@@ -8,7 +8,7 @@ sidebar_position: 90
 
 The Patterns rule rejects passwords that contain sequential character patterns like abcde and keyboard patterns like qwerty. Passwords with predictable character patterns are easier to guess and crack.
 
-![Patterns rule](/images/passwordpolicyenforcer/11.2/administration/patterns.webp)
+![Patterns rule](/images/passwordpolicyenforcer/12.0/administration/patterns.webp)
 
 ## Sequential character patterns
 
@@ -26,7 +26,7 @@ Increase the tolerance if [testing](../testpolicy.md#by-user) shows that this ru
 
 Click **Character patterns** to select which sequential character patterns PPE detects.
 
-![Character patterns](/images/passwordpolicyenforcer/11.2/administration/character_patterns.webp)
+![Character patterns](/images/passwordpolicyenforcer/12.0/administration/character_patterns.webp)
 
 ## Keyboard patterns
 
@@ -52,4 +52,4 @@ Increase the tolerance if [testing](../testpolicy.md#by-user) shows that this ru
 
 Click **Keyboard layouts** to select which international keyboard layouts PPE detects.
 
-![Keyboard layouts](/images/passwordpolicyenforcer/11.2/administration/keyboard_layouts.webp)
+![Keyboard layouts](/images/passwordpolicyenforcer/12.0/administration/keyboard_layouts.webp)

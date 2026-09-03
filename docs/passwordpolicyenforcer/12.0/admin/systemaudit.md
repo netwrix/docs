@@ -21,7 +21,7 @@ configuration setting. System Audit and Support opens on the **Version Tracker**
 
 ## Version Tracker
 
-![System Audit and Support Version Tracker tab](/images/passwordpolicyenforcer/11.2/administration/systemaudit.webp)
+![System Audit and Support Version Tracker tab](/images/passwordpolicyenforcer/12.0/administration/systemaudit.webp)
 
 Click **Run test**. The audit reports the discovered domain controllers and versions.
 
@@ -31,7 +31,7 @@ set up the firewall to allow Password Policy Enforcer to communicate.
 :::
 
 
-![System Audit results](/images/passwordpolicyenforcer/11.2/administration/systemauditversion.webp)
+![System Audit results](/images/passwordpolicyenforcer/12.0/administration/systemauditversion.webp)
 
 You can click the export icon to download your results. The file name is
 **Audit\_\_**timestamp**\_.xlxs**, and it downloads to the default **Downloads** folder. For large
@@ -49,7 +49,7 @@ the logs.
 Use the **Support Tools** tab to save a configuration report, export/import PPE settings,
 and open the property editor.
 
-![System Audit Support Tools tab](/images/passwordpolicyenforcer/11.2/administration/systemaudittools.webp)
+![System Audit Support Tools tab](/images/passwordpolicyenforcer/12.0/administration/systemaudittools.webp)
 
 - **Policies Configuration Report** saves the configuration as a text file. Browse to the folder
   where you want the report. The default filename is **PPEConfig.txt**.
@@ -77,7 +77,7 @@ when Netwrix Support instructs you to. Access it from the Configuration Console:
 
 **System Audit and Support** > **Support Tools** > **Open editor**
 
-![Property Editor](/images/passwordpolicyenforcer/11.2/administration/propertyeditor.webp)
+![Property Editor](/images/passwordpolicyenforcer/12.0/administration/propertyeditor.webp)
 
 - **Policy**: select the policy to edit.
 - **Property**: select the property to change.

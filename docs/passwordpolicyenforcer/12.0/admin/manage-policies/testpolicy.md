@@ -13,7 +13,7 @@ testing.
 
 Test policy opens on the **By user** tab.
 
-![Test by User](/images/passwordpolicyenforcer/11.2/administration/testuser.webp)
+![Test by User](/images/passwordpolicyenforcer/12.0/administration/testuser.webp)
 
 ## By User
 
@@ -26,14 +26,14 @@ policy.
 
 **Step 3 –** **Type in a password to simulate its change**. As you type, Password Policy Enforcer evaluates the new password and displays the results.
 
-![Failing Password](/images/passwordpolicyenforcer/11.2/administration/testuserfail.webp)
+![Failing Password](/images/passwordpolicyenforcer/12.0/administration/testuserfail.webp)
 
 In this example, the password fails because it doesn't meet the length requirement. A red x
 indicates the failure. You can hover over the requirements to see the rule name.
 
 In this example, the password passes. Notice the green check beside the entered password.
 
-![Passing password](/images/passwordpolicyenforcer/11.2/administration/testuserpass.webp)
+![Passing password](/images/passwordpolicyenforcer/12.0/administration/testuserpass.webp)
 
 Expand the **View log** for details:
 
@@ -44,7 +44,7 @@ Expand the **View log** for details:
 
 Turn on **Verbose Logging** to view the tests that Password Policy Enforcer performed and their results.
 
-![Verbose logging](/images/passwordpolicyenforcer/11.2/administration/testuserverbose.webp)
+![Verbose logging](/images/passwordpolicyenforcer/12.0/administration/testuserverbose.webp)
 
 ## Bulk Password Test
 
@@ -55,7 +55,7 @@ policy.
 
 **Step 2 –** Open the **Password bulk test** tab.
 
-![Password bulk test](/images/passwordpolicyenforcer/11.2/administration/testbulk.webp)
+![Password bulk test](/images/passwordpolicyenforcer/12.0/administration/testbulk.webp)
 
 **Step 3 –** Select a policy for the test.
 
@@ -64,7 +64,7 @@ the file isn't on a shared drive.
 
 **Step 5 –** Click **Test passwords**. The **Statistics** appear.
 
-![Test results](/images/passwordpolicyenforcer/11.2/administration/testbulkresult.webp)
+![Test results](/images/passwordpolicyenforcer/12.0/administration/testbulkresult.webp)
 
 | Statistics of the Bulk Password Testing |                                                                                         |
 | --------------------------------------- | --------------------------------------------------------------------------------------- |
@@ -77,7 +77,7 @@ the file isn't on a shared drive.
 
 Click **Show full report** to view the test details.
 
-![Test Bulk Report](/images/passwordpolicyenforcer/11.2/administration/testbulkreport.webp)
+![Test Bulk Report](/images/passwordpolicyenforcer/12.0/administration/testbulkreport.webp)
 
 You can use the **Report settings** to customize the report:
 

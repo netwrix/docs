@@ -117,7 +117,7 @@ or Password Policy Enforcer Web may display them on the wrong page.
 Password Policy Enforcer Web shows validation error messages in a yellow box below the page
 instructions. Invalid user input normally causes validation errors.
 
-![using_ppe_web_1](/images/passwordpolicyenforcer/11.2/web/using_ppe_web_1.webp)
+![using_ppe_web_1](/images/passwordpolicyenforcer/12.0/web/using_ppe_web_1.webp)
 
 en_ppeweb.htm defines the validation error messages. The error messages are in the resource
 strings section near the end of the file. See the Resource Strings topic for additional information.
@@ -134,7 +134,7 @@ strings section near the end of the file. See the Resource Strings topic for add
 resource strings section near the end of the file. See the Resource Strings topic for additional
 information.
 
-![using_ppe_web_2](/images/passwordpolicyenforcer/11.2/web/using_ppe_web_2.webp)
+![using_ppe_web_2](/images/passwordpolicyenforcer/12.0/web/using_ppe_web_2.webp)
 
 You may see placeholders like %1 and %2 in some error messages. Password Policy Enforcer Web
 replaces these with more information about the error. Keep these placeholders because they provide
@@ -162,7 +162,7 @@ If you want to display some text for all error messages, then insert your text a
 Password Policy Enforcer Web shows the finished message after users successfully change their
 password. en_finished.htm defines this message.
 
-![editing_the_html_templates_1](/images/passwordpolicyenforcer/11.2/web/editing_the_html_templates_1.webp)
+![editing_the_html_templates_1](/images/passwordpolicyenforcer/12.0/web/editing_the_html_templates_1.webp)
 
 `<h1>Finished</h1>`
 
