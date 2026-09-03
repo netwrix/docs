@@ -27,7 +27,7 @@ knowledge_article_id: kA04u0000000I2PCAU
 This article describes how to enable additional logging for the Threat Prevention Admin Console.
 
 ## Instructions
-There are two options for enabling additional logging:
+There are two options: edit the log config file directly on the SI management server, or update the log level from within the Admin Console.
 
 > **NOTE:** Version 8.1 changed the logging engine used by the Admin Console, so the `SIWinConsole.log.config` file has a different format. In version 8.1 and later:
 >

@@ -27,7 +27,7 @@ knowledge_article_id: kA04u0000000I2dCAE
 This article describes how to enable debug logging on the Netwrix Threat Prevention Windows agent.
 
 ## Instructions
-There are two options.
+There are two options: edit the agent's log config file directly on the server running the agent, or update the log level for one or more agents remotely from the Administration Console.
 
 > **NOTE:** Version 8.1 changed the logging engine used by the agent, so the `SIWindowsAgent.log.config` file has a different format. In version 8.1 and later:
 >
