@@ -79,7 +79,7 @@ Click Save to commit the configuration settings.
 ## Customization Tab
 
 The Customization tab is unique to RADIUS authentication providers. It contains the following
-settings that need to be configured:
+settings you must configure:
 
 ![Customization tab for a Radius authneication provider](/images/threatprevention/8.1/reportingmodule/configuration/integrations/authenticationprovider/customizationtab.webp)
 

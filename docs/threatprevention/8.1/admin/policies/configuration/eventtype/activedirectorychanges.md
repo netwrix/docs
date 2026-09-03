@@ -294,8 +294,8 @@ Filter statements can be added to the Include condition and Exclude condition bo
 pre-defined logical and comparison operators to create filter criteria for the scan. You can add
 conditions to a filter statement. Conditions can be singular or grouped by a logical operator.
 
-In the screenshot above, the Exclude condition box displays singular conditions while the Include
-condition box displays conditions grouped by logical operators.
+In the Advanced Filter screenshot, the Exclude condition box displays singular conditions while the
+Include condition box displays conditions grouped by logical operators.
 
 **Logical Operator**
 
@@ -324,7 +324,8 @@ The Event Data dropdown menu is displayed in orange. it contains a list of all t
 be part of an event. Click it to select an event name. Your selection is displayed in orange text in
 the box below.
 
-The “Attributes: New” and “Attributes: Old” options are special cases discussed below in detail.
+The “Attributes: New” and “Attributes: Old” options are special cases, and the following
+descriptions cover them in detail.
 
 **Comparison Operator**
 

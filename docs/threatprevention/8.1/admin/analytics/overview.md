@@ -6,26 +6,26 @@ sidebar_position: 70
 
 # Analytics Interface
 
-Analytics provide organizations with the ability to capture and analyze authentication traffic
-occurring within their Active Directory environments in real-time to detect patterns of behavior and
-scenarios relating to attacks and attempts to compromise security.
+Analytics let organizations capture and analyze authentication traffic occurring within their Active
+Directory environments in real time to detect patterns of behavior and scenarios relating to attacks
+and attempts to compromise security.
 
 An Analytic is a hard-coded policy that reports on incidents triggered by events, rather than on the
 individual events themselves.
 
-Once you configure and enable an Analytic, the Agent begins monitoring for events. The Agent stores
-each event in memory until the trigger threshold is met. It then logs an incident in the
+After you configure and enable an Analytic, the Agent begins monitoring for events. The Agent stores
+each event in memory until events reach the trigger threshold. It then logs an incident in the
 database along with the event details that triggered the incident. The Agent discards events that
 don't trigger an incident from memory after the corresponding time range.
 
-The following tables outline the authentication analytics Threat Prevention provides out-of-the box,
+The following tables outline the authentication analytics Threat Prevention provides by default,
 along with definitions and examples to better understand each analytic.
 
 Click **Analytics** in the left pane to launch the Analytics interface.
 
 ![Analytics interface](/images/threatprevention/8.1/admin/analytics/analyticsinterface.webp)
 
-At the top of the interface is a graphical display of incidents monitored by Threat Prevention. Use
+At the top of the interface is a graphical display of the incidents Threat Prevention monitors. Use
 the color key on the left to toggle off and on results for desired analytics. In the upper-right
 corner, set the number of days’ worth of incidents the graphs display. Use the Refresh button in the
 graphics area to regenerate the graphs.
@@ -35,9 +35,9 @@ There are two graphs:
 - Pie graph – Shows the percentage of incidents generated for each analytic type
 - Line graph – Shows a timeline of incidents for each analytic type
 
-In the middle of the interface, you can view a list of the analytic types, number of attacks
-identified in the last 24 hours per type, the ability to enable or disable monitoring, access to the
-analytic configuration, and a tool tip with a brief summary of the analytic.
+The middle of the interface lists the analytic types, the number of attacks identified in the last
+24 hours per type, controls to enable or disable monitoring, access to the analytic configuration,
+and a tool tip with a brief summary of the analytic.
 
 :::info
 For most analytics, configure at least one filter before enabling an analytic
@@ -49,7 +49,7 @@ The Refresh button on the Analytics ribbon repopulates both the graphical displa
 list.
 
 Use the Permissions section at the bottom of the interface to protect Analytic policies at
-the Analytics node. Once you assign permission to a user, Threat Prevention protects all analytic
+the Analytics node. After you assign permission to a user, Threat Prevention protects all analytic
 policies, configurations, and data from any user not included in the permissions list. See the
 [Protect Policies](/docs/threatprevention/8.1/admin/policies/dataprotection.md#protect-policies) topic for instructions on how to
 protect analytic policies.

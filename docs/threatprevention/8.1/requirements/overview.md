@@ -67,7 +67,7 @@ protected by Threat Prevention:
 - Exchange – Deploy an Agent to all HUB, CAS, and Mailbox Exchange servers and one domain controller
 - File System:
 
-  - Windows – Deploy an Agent to all file servers containing objects that need to be protected
+  - Windows – Deploy an Agent to all file servers containing objects that require protection
   - Network Attached Storage (NAS) Devices – This requires integration with Netwrix Activity
     Monitor. Deploy an Agent to the proxy server where the Netwrix Activity Monitor Activity Agent
     is deployed. See the

@@ -7,8 +7,8 @@ sidebar_position: 70
 # My Investigations Page
 
 The My Investigations page in the Investigations interface provides a list of saved investigations
-created by the application users. This page is available when the first investigation is saved by a
-user.
+that application users created. This page becomes available after a user saves the first
+investigation.
 
 Click **Investigate** in the application header bar to open the Investigations interface. Then click
 **My Investigations** in the navigation pane. This expands the menu to display a list of saved

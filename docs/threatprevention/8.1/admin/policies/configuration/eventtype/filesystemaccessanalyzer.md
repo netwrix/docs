@@ -44,8 +44,8 @@ specific file system paths or to exclude specific file system paths from monitor
 
 The Include Paths section defines the top level folder or individual files for monitoring. Use the
 Exclude Paths section to refine and remove any child items from monitoring. Any files or
-folders to be excluded need to be a subset of a folder identified in the Include Paths section. This
-is also where the NAS device paths are added.
+folders you exclude must be a subset of a folder identified in the Include Paths section. This
+is also where you add the NAS device paths.
 
 Use the buttons in the Include Paths, Include Collections, Exclude Paths, and Exclude Collections
 areas to edit the lists.

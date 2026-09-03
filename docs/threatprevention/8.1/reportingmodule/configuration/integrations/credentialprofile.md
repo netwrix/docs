@@ -124,8 +124,8 @@ The Credential Profile name and/or description have been modified.
 
 ## Edit Credential
 
-Use the following steps to edit a credential within a Credential Profile. This may be necessary if the
-account password needs to be updated.
+Use the following steps to edit a credential within a Credential Profile. This may be necessary if
+you need to update the account password.
 
 **Step 1 –** On the Integrations interface, click **Credential Profile** in the navigation pane to
 view a list of the already created Credential Profiles, if any. Select a Credential Profile.

@@ -16,12 +16,12 @@ must create an exclusion for Threat Prevention using any of these methods:
 
 - Add the path or names of the files listed under Agent Server in the [Installation](/docs/threatprevention/8.1/install/overview.md)
   topic in the EDR.
-- Add the hash of the individual files in the EDR. In this case, every time a new Agent version is
-  deployed, the hashes change and will have to be updated. If this isn't done before upgrade, the
+- Add the hash of the individual files in the EDR. In this case, every time you deploy a new Agent
+  version, the hashes change and you must update them. If you don't do this before upgrade, the
   Agent will not be able to hook into LSASS as the executable hash will be different.
 
-In most cases, only the SIWindowsAgent.exe and SI.ActiveDirectoryMonitor.dll files need to be
-white-listed.
+In most cases, you only need to white-list the SIWindowsAgent.exe and SI.ActiveDirectoryMonitor.dll
+files.
 
 To upgrade a deployed Agent:
 

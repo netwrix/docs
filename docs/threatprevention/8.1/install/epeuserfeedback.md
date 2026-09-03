@@ -10,8 +10,8 @@ You can choose to install the optional Enterprise Password Enforcer (EPE) User F
 the Password Enforcement event type. This module has no impact on the application of EPE rules. It
 only provides feedback to end users by listing the reasons EPE rejected a candidate password.
 
-While rejecting a password, EPE displays the reasons for rejected to the user. If no reasons are
-shown, then the password was rejected by the OS before being evaluated by EPE.
+While rejecting a password, EPE displays the reasons for the rejection to the user. If no reasons
+appear, the OS rejected the password before EPE evaluated it.
 
 :::note
 For multilingual support, you must uninstall a previous version of the Credential Provider
@@ -58,9 +58,8 @@ SICredentialProviderx64 or x32.
 ## Configure Static User Text for the Windows Login Screen
 
 The _Enterprise Password Enforcer_ GPO contains static text that the EPE User Feedback module
-displays on the login screen. Typically this text would be edited by the Threat Prevention
-administrator to describe password policy rules to provide guidance to end users before typing in
-a new password.
+displays on the login screen. Typically the Threat Prevention administrator edits this text to
+describe password policy rules and guide end users before they type a new password.
 
 Edit the Enterprise Password Enforcer GPO to modify the text displayed to the end-users. You can
 change up to ten lines of text.

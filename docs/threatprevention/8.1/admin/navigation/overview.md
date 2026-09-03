@@ -117,7 +117,7 @@ on incidents identified by the analytic policies.
 **Policies**
 
 The Policies interface provides a central location for creating and configuring all policies. On
-selecting the Policy node, the Display area lists the policies. The Navigation pane organizes the
+When you select the Policy node, the Display area lists the policies. The Navigation pane organizes the
 policies into folders. By default, the folder structure comprises (but isn't
 limited to) three folders: Auditing, Blocking, and Notifications, representing the most common types
 of policies users enable. You can configure policies to monitor or block Windows Active

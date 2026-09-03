@@ -152,7 +152,7 @@ following information:
 
 - Enable – Checked box indicates database maintenance is enabled for the policy
 - Policy – Name of each policy you created. The tab lists policies in alphanumeric order, showing
-  live policies (whether or not they are enabled) first and deleted policies last
+  live policies (whether they are enabled) first and deleted policies last
 - Operation – The operation set for the policy: Move (for archiving) or Delete
 - Retention Period – The age of data to retain when the database maintenance job runs
   for the policy

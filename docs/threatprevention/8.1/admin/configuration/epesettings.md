@@ -36,19 +36,19 @@ Both the Agent and the Enterprise Manager can be in one environment.
 :::
 
 
-If the HIBP database is copied to and stored on the Agent:
+If you copy and store the HIBP database on the Agent:
 
-- The HIBP database takes up additional space on the machine where it is copied (approximately 8
+- The HIBP database takes up additional space on the machine where you copy it (approximately 8
   GB, but subject to change)
-- A network connection to the application server isn't required to check passwords against the HIBP
-  database
+- Checking passwords against the HIBP database doesn't require a network connection to the
+  application server
 - The Agent checks the pending password candidate against the archived hash file locally and sends
   the results to the Enterprise Manager. If a password hash matches, Threat Prevention rejects the
   pending password change.
 - The Enterprise Manager periodically compares its HIBP database version against the Agent's local
   copy. If the Enterprise Manager has a newer copy, it updates the Agent copy.
 
-If the HIBP database is kept only on the Enterprise Manager:
+If you keep the HIBP database only on the Enterprise Manager:
 
 - The database takes up space only on the Enterprise Manager machine, not on the Agent machine
 - Requires a working network connection from the Agent to the Enterprise Manager to check:
@@ -59,8 +59,8 @@ If the HIBP database is kept only on the Enterprise Manager:
 - The Agent sends the candidate hash value to the Enterprise Manager to compare against the
   Enterprise Manager’s copy of the HIBP database
 
-  - The advantage of this approach is that the HIBP database space isn't required on the domain
-    controllers. The disadvantage is that at the time of a password change, if the Enterprise
+  - The advantage of this approach is that the domain controllers don't need space for the HIBP
+    database. The disadvantage is that at the time of a password change, if the Enterprise
     Manager isn't available, the Agent must assume the hash is okay.
 
 ## Configuration Settings
@@ -79,8 +79,8 @@ displayed in sections on the window.
 
 ### Current Hash DB Info
 
-The Current hash DB Info area is enabled after you deploy the HIBP database to Enterprise
-Manager for the first time. It displays the source you downloaded the database from, its size,
+Threat Prevention enables the Current hash DB Info area after you deploy the HIBP database to
+Enterprise Manager for the first time. It displays the source you downloaded the database from, its size,
 version, and the number of hashes it contains. It also shows a thumbprint value that changes
 whenever the content of the Hash DB changes.
 
@@ -96,8 +96,8 @@ The Check for Update options area specifies when Threat Prevention checks the Ne
 new version of the HIBP database.
 
 :::note
-These options are enabled after you deploy the HIBP database to Enterprise Manager
-for the first time.
+Threat Prevention enables these options after you deploy the HIBP database to Enterprise
+Manager for the first time.
 :::
 
 
@@ -166,9 +166,9 @@ size of the hash file, this download takes up a significant amount of CPU and do
 
 - Apply:
 
-  - If Website is selected, then clicking **Apply** downloads the HIBP database from the Netwrix
+  - If you select Website, clicking **Apply** downloads the HIBP database from the Netwrix
     website and then processes the database for use by the application
-  - If File is selected, then clicking **Apply** will process the local copy of the (manually
+  - If you select File, clicking **Apply** processes the local copy of the (manually
     obtained) database for use by the application
 
 ### User Feedback Module
@@ -266,13 +266,13 @@ The buttons on the right have the following functions:
   desired location
 - Sort and Distinct – Automatically removes duplicates and sorts passwords in alphanumeric order
 - Find – Use the textbox to search for a password
-- Default List – Resets the password values to the original list provided during installation. Any
-  modifications are discarded.
+- Default List – Resets the password values to the original list provided during installation. This
+  discards any modifications.
 - Remove All – Deletes all passwords from the window
 
 Click **OK** to push modifications to all active Threat Prevention Agents. Inactive Agents get the
-updated list when they reconnect to the Enterprise Manager. Select **Cancel** to close the window to
-discard your changes.
+updated list when they reconnect to the Enterprise Manager. Select **Cancel** to close the window
+and discard your changes.
 
 #### Words List Dictionary Window
 
@@ -297,8 +297,8 @@ functions:
 - Remove All – Deletes all character substituted passwords from the window
 
 Click **OK** to push modifications to all active Threat Prevention Agents. Inactive Agents get the
-updated list when they reconnect to the Enterprise Manager. Select **Cancel** to close the window to
-discard your changes.
+updated list when they reconnect to the Enterprise Manager. Select **Cancel** to close the window
+and discard your changes.
 
 #### Substitutions Editor Window
 
@@ -324,26 +324,28 @@ The Substitutions Editor has the following options:
 - Import – Imports a full set of the character substitutions from a user specified file
 - Export – Saves the current set of character substitutions to a user specified file
 - Reset to default – Resets the character substitutions to the original list provided during
-  installation. Any modifications are discarded.
+  installation. This discards any modifications.
 - Insert – Displays a custom row for the user to enter Sequence and Replacement values
 
   :::note
-  Threat Prevention inserts the new row underneath the currently highlighted row.
+ Threat Prevention inserts the new row underneath the highlighted row.
   :::
 
 
 - Delete – Removes a single row from the Substitutions Editor list. You can delete only one row at a
   time.
 
-Click **OK** to save the changes and close the window. Click **Cancel** to close the window to
-discard any changes made.
+Click **OK** to save the changes and close the window. Click **Cancel** to close the window and
+discard any changes.
 
 ### Download and Configure the Have I Been Pwned Hash List
 
 If the Administration Console doesn't have internet access, you can manually download the HIBP
 database.
 
-The Pwned Passwords Downloader is a .NET tool you can use to download all Pwned Passwords hash ranges and save them offline so you can use them without a dependency on the k-anonymity API. Use this tool to get the latest breached hashes from the Have I Been Pwned (HIBP) database.
+The Pwned Passwords Downloader is a .NET tool that downloads all Pwned Passwords hash ranges and
+saves them offline, so you can use them without depending on the k-anonymity API. Use this tool to
+get the latest breached hashes from the Have I Been Pwned (HIBP) database.
 
 See the [Have I Been Pwned](https://haveibeenpwned.com/) website for more information about the HIBP database.
 

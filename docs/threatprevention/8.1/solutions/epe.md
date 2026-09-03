@@ -11,9 +11,9 @@ passwords to compromise accounts. To mitigate this risk and the likelihood of ge
 passwords used in organizations, Threat Prevention Enterprise Password Enforcer (EPE) proactively
 prevents their usage when passwords are set (even when they meet complexity requirements).
 
-An optional module, EPE User Feedback, is packaged with the zip file for Threat Prevention
-installation. It provides feedback to end users on the Windows login screen for why their pending
-password change was rejected. It lists the failed complexity requirements set up in the Password
+The zip file for Threat Prevention installation includes an optional module, EPE User Feedback. It
+provides feedback to end users on the Windows login screen for why Threat Prevention rejected their
+pending password change. It lists the failed complexity requirements set up in the Password
 Rules policy (see the
 [Password Rules Filter](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md#password-rules-filter) of
 the Password Enforcement event type). The user can use this information to create a new password

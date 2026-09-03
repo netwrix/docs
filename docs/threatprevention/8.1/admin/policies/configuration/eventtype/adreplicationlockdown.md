@@ -58,7 +58,7 @@ If no filters are applied, saving the policy configuration displays a warning me
 
 :::note
 The AD Replication Lockdown event type internally looks for use of the GetNCChanges() API
-and blocks the API call when it is invoked by a machine outside the scope of the policy filters.
+and blocks the API call when a machine outside the scope of the policy filters invokes it.
 :::
 
 

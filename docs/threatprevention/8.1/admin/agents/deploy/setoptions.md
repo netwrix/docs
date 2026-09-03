@@ -19,7 +19,7 @@ The Set Options window provides the following options:
 - Use These Credentials – Credentials for deploying the Agent on the selected computers
   - Username – Must be in the DOMAIN\Username format
   - Password – Username password
-- Enterprise Manager – IP address/name and port where the Enterprise Manager is located
+- Enterprise Manager – IP address/name and port of the Enterprise Manager
 - Modules to Install – Select the check boxes for the modules to install on the selected
   computers:
   - Windows AD Events – Installs the Threat Prevention for Active Directory Solution and Threat
@@ -51,19 +51,19 @@ The Set Options window provides the following options:
 
 ![Deploy Agents wizard – Set Options page: Agent Install Path box](/images/threatprevention/8.1/admin/agents/deploy/installpath.webp)
 
-If checked, Threat Prevention installs the Agent to the default location: ...\Netwrix\Netwrix Threat
-Prevention\SIWindowsAgent
+If you check this option, Threat Prevention installs the Agent to the default location:
+...\Netwrix\Netwrix Threat Prevention\SIWindowsAgent
 
-If unchecked, specify the installation location you want, e.g. d:\myagent.
+If you clear this option, specify the installation location you want, for example, d:\myagent.
 
 The installation location applies to all computers where you deploy the Agent in this session
 (as specified on the [Select Computers Window](/docs/threatprevention/8.1/admin/agents/deploy/selectcomputers.md) of the Deploy Agents wizard).
-Once you configure these settings, the Agent is ready for deployment on the selected
+After you configure these settings, the Agent is ready for deployment on the selected
 machines. See the [Prerequisites Check Window](/docs/threatprevention/8.1/admin/agents/deploy/prerequisitescheck.md) topic for the next step.
 
 ##### DNS Host Name Resolution
 
-The Agent is configured to “Enable DNS Host Name Resolution” by default during deployment. Depending
+By default, deployment enables “Enable DNS Host Name Resolution” for the Agent. Depending
 on the event type, the Agent may see some but not all of the following information:
 
 - NetBIOS name
@@ -103,8 +103,9 @@ exceptions:
 - Enable DNS Host Name Resolution – See the DNS Host Name Resolution topic for information. Even
   when this option is enabled for the Agent, the window displays it as unchecked. You must either
   check this setting or check the Keep Existing Settings checkbox to keep it enabled for the Agent.
-- Keep Existing Settings – When checked, the Modules to Set and Additional Options areas are grayed
-  out and you can't change them, indicating that the Agent retains its current settings.
+- Keep Existing Settings – When you check this option, the Modules to Set and Additional Options
+  areas are grayed out and you can't change them, indicating that the Agent retains its current
+  settings.
 
   This setting has no impact on the Use These Credentials and Enterprise Manager areas.
 

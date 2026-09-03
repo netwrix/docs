@@ -23,8 +23,8 @@ Reporting Module.
 **Netwrix_Setup.exe**
 
 This executable starts a setup launcher containing buttons to install the PostgreSQL database and
-the application. The launcher installs these components on the same server. See the installation
-details for each components below.
+the application. The launcher installs these components on the same server. The following sections
+provide the installation details for each component.
 
 **NetwrixPostgreSQL14.exe**
 
@@ -94,6 +94,6 @@ launcher opens. You can now install the following components on the same server:
 **Step 2 –** Log into the console for the first time. See the [First Launch](/docs/threatprevention/8.1/install/reportingmodule/firstlaunch.md) topic
 for additional information.
 
-After completing the first launch, it is time to complete the initial configuration. See the
+After you complete the first launch, complete the initial configuration. See the
 [Set Up the Threat Manager Reporting Module](/docs/threatprevention/8.1/gettingstarted.md#set-up-the-threat-manager-reporting-module)
 topic for additional information.

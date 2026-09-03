@@ -37,7 +37,7 @@ five minutes between a change in the table and the Agent refresh.
 
 ## Dynamic Domains & Servers Collection Table Requirements
 
-When using a dynamic Domains & Servers collection, the referenced table must meet the
+When you use a dynamic Domains & Servers collection, the referenced table must meet the
 following requirements:
 
 - Table Location – Must be in the NVMonitorConfig database
@@ -64,7 +64,7 @@ name] entered doesn't exist in the NVMonitorConfig database.
 
 ## Dynamic Objects Collection Table Requirements
 
-When using a dynamic Object collection, the referenced table must meet the following
+When you use a dynamic Object collection, the referenced table must meet the following
 requirements:
 
 - Table Location – Must be in the NVMonitorConfig database
@@ -87,7 +87,7 @@ name] entered doesn't exist in the NVMonitorConfig database.
 
 ## Dynamic Perpetrators Collections Table Requirements
 
-When using a dynamic Perpetrators or Lockdown Perpetrators collection, the referenced table
+When you use a dynamic Perpetrators or Lockdown Perpetrators collection, the referenced table
 must meet the following requirements:
 
 - Table Location – Must be in the NVMonitorConfig database
@@ -113,7 +113,7 @@ name] entered doesn't exist in the NVMonitorConfig database.
 
 ## Dynamic IP Addresses Collection Table Requirements
 
-When using a dynamic IP Addresses collection, the referenced table must meet the following
+When you use a dynamic IP Addresses collection, the referenced table must meet the following
 requirements:
 
 - Table Location – Must be in the NVMonitorConfig database
@@ -136,7 +136,7 @@ name] entered doesn't exist in the NVMonitorConfig database.
 
 ## Dynamic Hosts Collection Table Requirements
 
-When using a dynamic Hosts collection, the referenced table must meet the following
+When you use a dynamic Hosts collection, the referenced table must meet the following
 requirements:
 
 - Table Location – Must be in the NVMonitorConfig database
@@ -172,7 +172,7 @@ name] entered doesn't exist in the NVMonitorConfig database.
 
 ## Dynamic File Paths Collection Table Requirements
 
-When using a dynamic File Paths collection, the referenced table must meet the following
+When you use a dynamic File Paths collection, the referenced table must meet the following
 requirements:
 
 - Table Location – Must be in the NVMonitorConfig database

@@ -27,12 +27,12 @@ not resolve the issue.
 
 ## Bind To
 
-For the Agent to communicate in a multiple network card environment, the ‘… bindTo …’ line in the
-`SIWindowsAgent.exe.config` file needs to be uncommented and set to the IP address associated with
-the local (to Agent) network adapter you want, or to the name of that adapter, which is
-used to communicate with the Enterprise Manager. The installer will attempt to configure this
-setting if it detects multiple NICs. If the chosen setting doesn't work in the environment, it may
-need to be set manually.
+For the Agent to communicate in a multiple network card environment, you must uncomment the
+‘… bindTo …’ line in the `SIWindowsAgent.exe.config` file and set it to the IP address associated
+with the local (to Agent) network adapter you want, or to the name of that adapter, which
+communicates with the Enterprise Manager. The installer will attempt to configure this
+setting if it detects multiple NICs. If the chosen setting doesn't work in the environment, you may
+need to set it manually.
 
 The default location of the `SIWindowsAgent.exe.config` file is:
 

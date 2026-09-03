@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Installation
 
-Threat Prevention consists of a number of components that work together to monitor activity in
+Threat Prevention consists of several components that work together to monitor activity in
 Active Directory, Exchange, and file systems.
 
 - Threat Prevention Enterprise Manager
@@ -25,7 +25,7 @@ using it on the Enterprise Manager server only.
 :::
 
 
-The following components are installed by the Threat Prevention installation package:
+The Threat Prevention installation package installs the following components:
 
 - Threat Prevention Prerequisites – .NET 4.7.2 or .NET 4.8.x installed. If the installer doesn't
   find it already installed, it will install .NET Framework 4.7.2.
@@ -68,7 +68,7 @@ The following files are available for download:
 ## Antivirus Software Considerations
 
 Occasionally, an organization’s antivirus program may shut down the processes launched by Threat
-Prevention. The processes that may be impacted are listed below.
+Prevention. The following processes may be impacted.
 
 **Threat Prevention Server**
 
@@ -116,8 +116,7 @@ not be displayed to the end-user, but all EPE rules will be fully enforced.
 
 ### Netwrix Password Policy Enforcer (PPE)
 
-If you are using Netwrix Password Policy Enforcer, the processes that may be impacted are listed
-below.
+If you are using Netwrix Password Policy Enforcer, the following processes may be impacted.
 
 **Client Machines**
 

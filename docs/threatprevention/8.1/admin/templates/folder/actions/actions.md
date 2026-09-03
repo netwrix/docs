@@ -32,4 +32,4 @@ emails:
 - [Password Changes Custom Script](/docs/threatprevention/8.1/admin/templates/folder/actions/passwordchanges.md)
 - [Password Rejection Custom Script](/docs/threatprevention/8.1/admin/templates/folder/actions/passwordrejection.md)
 
-All of the actions above are used in templates found within the Actions Policy Templates folder.
+Templates within the Actions Policy Templates folder use all of these actions.

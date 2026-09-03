@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # MSI Installer Logs
 
-The Threat Prevention installer runs under control of Windows Installer. All available command line
-options can be found In the Microsoft
-[Msiexec](https://technet.microsoft.com/en-us/library/bb490936.aspx) article.
+The Threat Prevention installer runs under control of Windows Installer. The Microsoft
+[Msiexec](https://technet.microsoft.com/en-us/library/bb490936.aspx) article lists all available
+command line options.
 
 Every install process of Threat Prevention creates several log files:
 
@@ -47,7 +47,7 @@ command prompt to locate the Temp folder:
 
 **cd %temp%**
 
-When performing remote Agent deployment using the Administration Console, log files can be found in
+When you perform remote Agent deployment using the Administration Console, the log files are in
 the `C:\Windows\Temp` folder on the target Agent machine. See the
 [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) topic for additional information.
 

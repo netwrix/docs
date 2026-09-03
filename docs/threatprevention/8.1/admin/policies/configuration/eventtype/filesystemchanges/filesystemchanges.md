@@ -28,7 +28,7 @@ Agent is indicated in the parenthesis after the path/collection. The path/collec
 monitored by other Agents that you can select on the Additional Agents filter.
 
 :::note
-Any files or folders to be excluded need to be a subset of a folder identified in the
+Any files or folders you exclude must be a subset of a folder identified in the
 Include Paths section.
 :::
 
@@ -43,7 +43,7 @@ Example:
   - C:\Documents and Settings (EXAMPLE\server1)
   - C:\Users\All Users (EXAMPLE\server2)
 
-The above configuration in a policy results in the Agent on server1 monitoring only the C:\Documents
+This configuration in a policy results in the Agent on server1 monitoring only the C:\Documents
 and Settings folder and the Agent on server2 monitoring only the C:\Users\All Users folder.
 
 - Paths filter – Paths identified:
@@ -132,14 +132,16 @@ blank, all files are monitored according to all the policy filter selections.
 **Enable Automatic Lockdown option**
 
 Adding a wildcard to the policy allows the policy to use the **Enable Automatic Lockdown** option.
-When checked, perpetrators of this policy are locked down, i.e. denied access to files and folders
-monitored by this policy. When this option is checked, no other event types can be added to the
-policy. If other event types were previously assigned to the policy, the option is grayed-out.
+When you check this option, Threat Prevention locks down perpetrators of this policy, denying them
+access to the files and folders this policy monitors. When this option is checked, you can't add
+other event types to the policy. If you previously assigned other event types to the policy, the
+option is grayed-out.
 
-If the **Enable Automatic Lockdown** option is enabled, the File System Lockdown Event Type is added
-to the policy when the configuration is saved. The perpetrator of the monitored event is added to
-the File System Lockdown event type’s AD Perpetrator filter as a blocked security principal. If the
-perpetrator should be granted access to files and folders monitored by this policy, remove them from
+If you enable the **Enable Automatic Lockdown** option, Threat Prevention adds the File System
+Lockdown Event Type to the policy when you save the configuration. Threat Prevention also adds the
+perpetrator of the monitored event to the File System Lockdown event type’s AD Perpetrator filter as
+a blocked security principal. To grant the perpetrator access to the files and folders this policy
+monitors, remove them from
 the blocked perpetrators list on the File System Lockdown event type’s AD Perpetrator filter and add
 the perpetrator to the Exclude Perpetrator’s list on the File System Changes event type’s AD
 Perpetrator filter.
@@ -153,8 +155,8 @@ exclude specific file system paths from monitoring.
 
 The Include Paths section defines the top level folder or individual files for monitoring. Use the
 Exclude Paths section to refine and remove any child items from monitoring. Any files or
-folders to be excluded need to be a subset of a folder identified in the Include Paths section. This
-is also where the NAS device paths are added.
+folders you exclude must be a subset of a folder identified in the Include Paths section. This
+is also where you add the NAS device paths.
 
 Use the buttons in the Include Paths, Include Collections, Exclude Paths, and Exclude Collections
 areas to edit the lists.
