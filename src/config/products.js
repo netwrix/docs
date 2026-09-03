@@ -648,12 +648,6 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '8.1',
-        label: '8.1',
-        isLatest: false,
-        sidebarFile: './sidebars/threatprevention/8.1.js',
-      },
-      {
         version: '8.0',
         label: '8.0',
         isLatest: true,
