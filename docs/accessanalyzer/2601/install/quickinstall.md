@@ -70,7 +70,7 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | Option | What It Does | Best For | What to Prepare |
 | --- | --- | --- | --- |
 | **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
-| **Sign with AD Certificate Services** | Installer generates a certificate signing request (CSR) and submits it to your organization's Active Directory Certificate Services (AD CS), where your internal Enterprise CA signs it | Enterprise environments that already run AD CS and where the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
+| **Sign with AD Certificate Services** | Installer generates a certificate signing request (CSR) and submits it to your organization's Active Directory Certificate Services (AD CS), where your internal Enterprise CA signs it | Enterprise environments that already run AD CS and where the server can reach the CA | AD CS reachable from the server; an account with certificate enrollment rights |
 | **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized Public Key Infrastructure (PKI) team, or where AD CS isn't available | Three PEM files — see [file requirements](#bring-your-own-certificate-file-requirements) |
 
 #### Bring your own certificate file requirements

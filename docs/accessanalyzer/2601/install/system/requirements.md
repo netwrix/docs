@@ -20,7 +20,7 @@ Choose a deployment size with `--size` — see [Installer Command Reference](../
 | **Enterprise** | 32 cores | 128 GB | 8 TB SSD | Up to ~3 billion objects and 100,000+ identities |
 
 :::warning
-A `micro` size also exists (8 cores, 24 GB, 80 GB SSD), but it's sized for development, CI, and demo installs only. Don't use it for a production or customer-facing deployment.
+A `micro` size also exists (8 cores, 24 GB, 80 GB SSD), but it targets development, CI, and demo installs only. Don't use it for a production or customer-facing deployment.
 :::
 
 
@@ -32,7 +32,7 @@ The installer validates free space on the following paths:
 | --- | --- | --- |
 | `/` | 20 GB | Root filesystem |
 | `/var` | 20 GB | K3s data, containers, logs |
-| `/var/lib` | 40 GB minimum; see table above for the recommended amount ** | K3s data directory |
+| `/var/lib` | 40 GB minimum; see the [Deployment Sizing](#deployment-sizing) table for the recommended amount ** | K3s data directory |
 | `/var/log` | 5 GB | System and application logs |
 | `/etc` | 1 GB | Configuration files |
 
