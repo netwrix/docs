@@ -15,8 +15,6 @@ The left pane of the policy editor lists the available rules. A check mark appea
 
 Click **Save** in the upper-right corner of the policy editor to apply your changes. The toggle switch in the upper-left corner of the policy editor enables and disables the entire policy.
 
-![Enabled rules are checked](/images/passwordpolicyenforcer/12.0/administration/enabledrules.webp)
-
 Several PPE rules have **Detect character substitution** and **Tolerance** settings. Understanding how these settings work helps you fine-tune your policies.
 
 ## Detecting character substitution

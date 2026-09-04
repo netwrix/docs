@@ -20,20 +20,12 @@ To manually install the Password Policy Client:
 
 1. Run **Netwrix_PPE_Client_12.0.0.78_x64.msi** (64-bit) or **Netwrix_PPE_Client_12.0.0.78_x86.msi** (32-bit). The Setup wizard opens.
 
-   ![Client Setup](/images/passwordpolicyenforcer/12.0/install/clientsetup1.webp)
-
 2. Click **Next**.
-
-   ![Client Setup](/images/passwordpolicyenforcer/12.0/install/clientsetup2.webp)
 
 3. Review the End-User License Agreement, select the checkbox to accept the Agreement, then click
    **Next**.
 
-   ![Client Setup](/images/passwordpolicyenforcer/12.0/install/clientsetup3.webp)
-
 4. Click **Install**.
-
-   ![Client Setup](/images/passwordpolicyenforcer/12.0/install/clientsetup4.webp)
 
 5. Click **Finish** when installation is complete. You don't typically need to restart the computer.
 

@@ -20,8 +20,6 @@ option shows you the most information about the policy.
 **Step 2 –** Select the **PPETestUser** you created. The details pane displays the policy applied to
 the selected user.
 
-![Enter user name for the test](/images/passwordpolicyenforcer/12.0/evaluation/evaltestuser.webp)
-
 **Step 3 –** Enter a password to test.
 
 The Password Policy Enforcer configuration console tests the password by simulating a password
@@ -32,8 +30,6 @@ results pane.
 **mypassword** fails two requirements. You can hover over the requirements to view the associated
 rule.
 
-![mypassword fails](/images/passwordpolicyenforcer/12.0/evaluation/evaltestuserfail.webp)
-
 Click **View log** to expand Password Policy Enforcer's internal event log. The information in the
 event log can help you to understand why Password Policy Enforcer accepted or rejected a password.
 
@@ -43,7 +39,6 @@ when a user changes their password. See the
 [Policy Testing vs. Password Changes](/docs/passwordpolicyenforcer/12.0/admin/manage-policies/testpolicy.md#policy-testing-vs-password-changes)
 topic for additional information.
 :::
-
 
 ## Windows Change Password Screen
 
@@ -67,8 +62,6 @@ Policy Enforcer shows its password policy during password changes if you install
 Client. This helps users to choose a compliant password. The Password Policy Client also changes the
 message that users see when Password Policy Enforcer rejects their password. Both these messages are
 customizable.
-
-![introduction_3](/images/passwordpolicyenforcer/12.0/evaluation/introduction_3.webp)
 
 The Password Policy Client doesn't modify any Windows system files, and you don't have to install
 it to enforce a Password Policy Enforcer password policy. Web browser based versions of the Password
@@ -107,7 +100,6 @@ These consoles don't explain why Password Policy Enforcer rejected a password. U
 Enforcer configuration console, or the Change Password screen with the Password Policy Enforcer
 Client installed to see this information.
 :::
-
 
 The following table shows sample passwords and expected test results when Password Policy Enforcer
 enforces the Users policy. Try to

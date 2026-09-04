@@ -8,8 +8,6 @@ sidebar_position: 70
 
 The History rule stops users from reusing passwords or cycling through a fixed set of passwords. Password reuse defeats the purpose of enforced password changes. Password Policy Enforcer (PPE) can stop users from reusing passwords for a number of password changes or a number of days.
 
-![History rule](/images/passwordpolicyenforcer/12.0/administration/history.webp)
-
 Select the **History** checkbox to enable the History rule.
 
 Select the **One of the last** option if you want PPE to stop password reuse for a specified number of password changes. Select the number of password changes from the **passwords** dropdown.
@@ -61,9 +59,7 @@ To create a new Active Directory attribute for the password history:
    ```
    ldifde -i -f History.ldf -c "DC=X" "DC=<domain>,DC=<top-level-domain>"
    ```
-4. Check the output. You should see the two success messages highlighted by the yellow box in the following screenshot.
-
-   ![ppe_rules_8](/images/passwordpolicyenforcer/12.0/administration/ppe_rules_8.webp)
+4. Check the output. A successful import displays two success messages from `ldifde`: one confirming the number of entries modified, and one confirming the command completed successfully.
 
 ### Use an existing attribute for the password history
 

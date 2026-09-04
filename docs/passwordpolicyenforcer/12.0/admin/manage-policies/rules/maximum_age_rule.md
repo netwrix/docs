@@ -8,8 +8,6 @@ sidebar_position: 10
 
 The Maximum Age rule forces users to change their passwords regularly. This decreases the likelihood of an attacker finding a password that is still in use. Only [domain policies](../../../installation/domain_and_local_policies.md) can enforce this rule.
 
-![Maximum Age rule](/images/passwordpolicyenforcer/12.0/administration/agemax.webp)
-
 Select the **Age (Max)** checkbox to enable the Maximum Age rule.
 
 Select a value from the first **days** dropdown to specify how many days must elapse before passwords expire.
@@ -39,8 +37,6 @@ PPE expires passwords at 1:00 AM every day on the domain controller holding the 
 Select **Send email reminders at** if you want PPE to send email reminders to users before their passwords expire. PPE can send up to three email reminders before a password expires. Use the **days before password expiration** dropdowns to choose when PPE sends each email. If you want to send fewer than three emails, then select the first, empty item from the dropdown.
 
 Click **Set up email** to edit the email template for the email reminders.
-
-![Email Template Editor](/images/passwordpolicyenforcer/12.0/administration/email_template_editor.webp)
 
 The correct format for the **From** text box is `"Display Name" <mailbox@domain.com>`. You can edit the email body with a visual editor or raw HTML editor by clicking **Visual** or **HTML**.
 

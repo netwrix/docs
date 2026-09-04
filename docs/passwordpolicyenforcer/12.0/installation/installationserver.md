@@ -21,23 +21,13 @@ To manually install one or more server components:
 
 1. Run **Netwrix_PPE_Server_12.0.0.78_x64.msi**. The Setup wizard opens.
 
-   ![Server Setup](/images/passwordpolicyenforcer/12.0/install/serversetup1.webp)
-
 2. Click **Next**.
-
-   ![Server Setup](/images/passwordpolicyenforcer/12.0/install/serversetup2.webp)
 
 3. Review the End-User License Agreement, select the checkbox to accept the Agreement, then click **Next**.
 
-   ![Server Setup](/images/passwordpolicyenforcer/12.0/install/serversetup3.webp)
-
 4. Select one or more components to install, then click **Next**.
 
-   ![Server Setup](/images/passwordpolicyenforcer/12.0/install/serversetup4.webp)
-
 5. Review your selections, then click **Install**.
-
-   ![Server Setup](/images/passwordpolicyenforcer/12.0/install/serversetup5.webp)
 
 6. Click **Finish** when installation is complete. If the installer prompts you to restart the computer, then restart before using the installed components.
 

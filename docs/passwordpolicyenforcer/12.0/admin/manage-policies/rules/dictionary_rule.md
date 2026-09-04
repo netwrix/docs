@@ -8,8 +8,6 @@ sidebar_position: 60
 
 The Dictionary rule rejects passwords that are vulnerable to guessing, hybrid, and precomputed attacks. These attacks can crack weak passwords in seconds, and they are very effective if users base their passwords on common words.
 
-![Dictionary rule configuration options](/images/passwordpolicyenforcer/12.0/administration/dictionary.webp)
-
 Select the **Dictionary** checkbox to enable the Dictionary rule.
 
 Click **Browse** to select a dictionary file, or enter a path to a file in the **Dictionary file** text box. The path can include environment variables. Password Policy Enforcer (PPE) installs a file called `Dict.txt` in the `%ProgramFiles%\Netwrix\Password Policy Enforcer\` folder. This file contains approximately 278,000 words, names, and acronyms.

@@ -10,11 +10,7 @@ Password Policy Enforcer (PPE) can enforce up to 256 different password policies
 
 PPE doesn't enforce any policies when you first install it, so the policy list is empty when you open the [configuration console](../configconsole.md) for the first time.
 
-![Configuration Console Dashboard](/images/passwordpolicyenforcer/12.0/evaluation/ppedashboard.webp)
-
 PPE adds the policies you create to the policy list. Use the buttons above the policy list to [test policies](testpolicy.md), set policy priorities, and export the configuration. Use the options menu (**⋮**) to the right of each policy to perform actions on that policy.
-
-![Dashboard with Policies](/images/passwordpolicyenforcer/12.0/administration/ppedashboardpolicies.webp)
 
 ## Add a policy
 
@@ -31,7 +27,6 @@ The policy editor opens. The policy editor has many settings. The following page
 - [Properties](policy_properties.md)
 - [Messages](messages.md)
 
-
 ## Edit a policy
 
 Click the name of a policy in the policy list to make changes to the policy.
@@ -46,8 +41,6 @@ Policy priorities help Password Policy Enforcer resolve [policy assignment confl
 
 Click **Set priorities** to view or modify policy priorities. This button is only visible if you have more than one password policy.
 
-![Set priorities](/images/passwordpolicyenforcer/12.0/administration/policypriority.webp)
-
 Select the policy you want to reprioritize, then click **Higher** or **Lower** to move the policy up or down. Click **Apply priorities** to accept the new priority order.
 
 The [Assign Policies to Users](usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also use the [**Test Policy by User** feature](testpolicy.md#by-user) to see which policy PPE enforces for a particular user.
@@ -59,8 +52,6 @@ Click **Export** to create an HTML configuration report in `%ProgramFiles%\Netwr
 ## Policy options menu
 
 Click the policy options menu to perform one of the following actions on the policy. The policy options menu appears as three vertical dots (**⋮**) to the right of each policy in the policy list.
-
-![Policy Options Menu](/images/passwordpolicyenforcer/12.0/administration/policy_options_menu.webp)
 
 ### Copy a policy
 

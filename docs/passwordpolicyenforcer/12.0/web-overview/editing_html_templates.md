@@ -31,7 +31,6 @@ Policy Enforcer Web from working correctly. Web browsers display pages different
 changes with several versions of the most popular browsers to ensure compatibility.
 :::
 
-
 The en_default.htm contains static HTML, but the other .htm files contain special comment tags that
 Password Policy Enforcer Web uses to prepare the pages. Some of these comments define ranges. A range looks like this:
 
@@ -68,7 +67,6 @@ Web deletes this range before sending the page to the user's web browser.
 You may rebrand the Password Policy Enforcer Web user interface, but modifying, removing, or
 obscuring any copyright notice violates the License Agreement.
 :::
-
 
 ## Examples
 
@@ -117,8 +115,6 @@ or Password Policy Enforcer Web may display them on the wrong page.
 Password Policy Enforcer Web shows validation error messages in a yellow box below the page
 instructions. Invalid user input normally causes validation errors.
 
-![using_ppe_web_1](/images/passwordpolicyenforcer/12.0/web/using_ppe_web_1.webp)
-
 en_ppeweb.htm defines the validation error messages. The error messages are in the resource
 strings section near the end of the file. See the Resource Strings topic for additional information.
 
@@ -133,8 +129,6 @@ strings section near the end of the file. See the Resource Strings topic for add
 `en_error.htm` defines all the critical error messages. The error messages are in the
 resource strings section near the end of the file. See the Resource Strings topic for additional
 information.
-
-![using_ppe_web_2](/images/passwordpolicyenforcer/12.0/web/using_ppe_web_2.webp)
 
 You may see placeholders like %1 and %2 in some error messages. Password Policy Enforcer Web
 replaces these with more information about the error. Keep these placeholders because they provide
@@ -161,8 +155,6 @@ If you want to display some text for all error messages, then insert your text a
 
 Password Policy Enforcer Web shows the finished message after users successfully change their
 password. en_finished.htm defines this message.
-
-![editing_the_html_templates_1](/images/passwordpolicyenforcer/12.0/web/editing_the_html_templates_1.webp)
 
 `<h1>Finished</h1>`
 
@@ -199,7 +191,6 @@ browser's cache to see the changes.
 Web browsers display pages differently, so test your changes with several versions of the
 most popular browsers to ensure compatibility.
 :::
-
 
 ### Replace URLs to the Welcome Page
 

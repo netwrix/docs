@@ -12,8 +12,6 @@ The **Properties** tab contains general settings for the displayed policy.
 2. Click the name of a policy in the policy list.
 3. Select the **Properties** tab.
 
-![Set the Policy Properties](/images/passwordpolicyenforcer/12.0/administration/properties.webp)
-
 **Name**. Every policy must have a unique name. You can change the name in this text box if you want to rename the policy.
 
 **Notes**. This is an optional field that you can use to keep notes about the policy.

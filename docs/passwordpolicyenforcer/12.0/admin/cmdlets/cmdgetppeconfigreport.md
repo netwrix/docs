@@ -13,7 +13,6 @@ This cmdlet calls the PPE Tool. You must be an administrator to run this cmdlet
 PowerShell with the **Run as Administrator** option.
 :::
 
-
 **SYNTAX**
 
 **Get-PPEConfigReport** **-Folder** `<_string_>`
@@ -36,4 +35,3 @@ PS C:\> Get-PPEConfigReport -Folder C:\PPE
 
 The report is created: "C:\PPE\report.html".
 
-![Creates the PPE Configuration report](/images/passwordpolicyenforcer/12.0/administration/cmdletgetppeconfigreport.webp)

@@ -8,8 +8,6 @@ sidebar_position: 110
 
 The Similarity rule rejects passwords that are similar to a user's current password, display name, or logon name. These passwords are predictable and relatively easy to guess.
 
-![Similarity rule](/images/passwordpolicyenforcer/12.0/administration/similarity.webp)
-
 Select the **Similarity** checkbox at the top of the page, then select the types of similarity that you want Password Policy Enforcer (PPE) to detect:
 
 - Select the **Current password** checkbox if you want PPE to reject passwords that are similar to the user's current password. Password similarity may indicate that a user is serializing their passwords. For example, password1, password2, password3. Password serialization allows an attacker to predict future passwords.

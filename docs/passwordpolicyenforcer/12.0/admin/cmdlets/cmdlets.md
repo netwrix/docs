@@ -26,8 +26,6 @@ the **Run as Administrator** option.
 **Get-PPEHelp** with no parameters, displays a list of available cmdlets. Use the PowerShell
 **get-help** _Cmdlet_ for information about the cmdlet.
 
-![PPE cmdlets Connect](/images/passwordpolicyenforcer/12.0/administration/cmdletconnect.webp)
-
 Click a PPE cmdlet name for details.
 
 - [Connect-PPE](/docs/passwordpolicyenforcer/12.0/admin/cmdlets/cmdconnectppe.md)

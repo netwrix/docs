@@ -8,15 +8,13 @@ sidebar_position: 30
 
 The Complexity rule rejects passwords that don't contain characters from a variety of character sets. A complex password takes longer to brute-force crack than a simple password of the same length.
 
-![Character Complexity Rule](/images/passwordpolicyenforcer/12.0/administration/charcomplexity.webp)
-
 Select the **Characters (Complexity)** checkbox to enable the Complexity rule.
 
 Select a number from the **Must contain at least** dropdown. This rule rejects passwords if they don't contain characters from at least the specified number of character sets. This number must be less than or equal to the number of character sets selected below it.
 
 Select the checkbox beside each required character set. Password Policy Enforcer (PPE) has seven character sets. The [Policy Properties](../policy_properties.md) page has more information about PPE's character sets. You can also use the [Characters (Granular) rules](character_rules.md) to customize the default character sets.
 
-If the number in the dropdown is less than the number of selected character sets, then users have some flexibility in their choice of characters. For example, in the preceding screenshot, the password must contain only three of the four selected character sets.
+If the number in the dropdown is less than the number of selected character sets, then users have some flexibility in their choice of characters. For example, if you select four character sets but set **Must contain at least** to 3, then a password only needs characters from three of those four sets to comply.
 
 :::note
 This rule uses custom character set definitions from the [Characters (Granular) rules](character_rules.md), even if you disable the granular rules.

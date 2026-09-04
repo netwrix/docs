@@ -14,8 +14,6 @@ Enforcer Web Configuration Console.
 Use the General tab to maintain the list of managed domains, and to configure Password Policy
 Enforcer integration. See the Password Policy Enforcer topic for additional information.
 
-![configuring_ppe_web](/images/passwordpolicyenforcer/12.0/web/configuring_ppe_web.webp)
-
 ### Domain List
 
 When you first install Password Policy Enforcer Web, the Domain List is empty and users must type
@@ -38,7 +36,6 @@ can rearrange the domains by dragging them to another position. You can also cli
 them alphabetically.
 :::
 
-
 **Remove Domain**
 
 To remove a domain from the list:
@@ -55,8 +52,6 @@ Password Policy Enforcer is a configurable password filter that enforces granula
 with many advanced features. Password Policy Enforcer Web can integrate with Password Policy
 Enforcer to help users choose a compliant password.
 
-![configuring_ppe_web_1](/images/passwordpolicyenforcer/12.0/web/configuring_ppe_web_1.webp)
-
 Password Policy Enforcer Web displays the Password Policy Enforcer password policy message when it
 prompts a user for their new password, and the Password Policy Enforcer rejection message if the
 new password doesn't comply with the password policy. Select the **Password Policy Enforcer
@@ -70,7 +65,6 @@ defaults aren't suitable.
 A Password Policy Enforcer Web license doesn't include a Password Policy Enforcer
 license. See [Netwrix Password Policy Enforcer](https://www.netwrix.com/password_policy_enforcer.html) for licensing information.
 :::
-
 
 ## About Tab
 

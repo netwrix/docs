@@ -15,28 +15,20 @@ containers (Organizational Units).
 If you are in the settings for your first policy, click the left arrow beside the policy name to
 return to the Configuration Console dashboard.
 
-![Return to the dashboard](/images/passwordpolicyenforcer/12.0/evaluation/evaldashboard.webp)
-
 Create an additional password policy.
 
 **Step 1 –** Click the context menu beside your first policy and select **Make copy**.
 
 **Step 2 –** Enter **Admins Policy** for the Policy duplication.
 
-![Enter Admins Policy](/images/passwordpolicyenforcer/12.0/evaluation/evalcopypolicy2.webp)
-
 **Step 3 –** Click **Make copy**.
 
 **Step 4 –** Open the **Users & Groups** tab.
-
-![Open the Users & Groups tab](/images/passwordpolicyenforcer/12.0/evaluation/evalusergroups.webp)
 
 **Step 5 –** Click the **+** in the **Groups** list and enter **Domain Admins**. Specify a Domain or
 local **Location** depending on your evaluation set up.
 
 **Step 6 –** Click **OK**. Domain Admins appear in the **Groups** list.
-
-![Domain Admins added](/images/passwordpolicyenforcer/12.0/evaluation/evaldomainadmins.webp)
 
 - Members of the Domain Admins group (or, if you aren't using a domain controller, the PPETestAdmin
   user) must now comply with the Administrators policy. All other users must comply with the Users policy.
@@ -53,15 +45,11 @@ to nine characters.
 
 **Step 3 –** Select **9** from the **At Least** dropdown list.
 
-![Set the length to 9](/images/passwordpolicyenforcer/12.0/evaluation/evallength9.webp)
-
 **Step 4 –** Click **Save**.
 
 **Step 5 –** Click **Test policy**.
 
 **Step 6 –** Select the **PPETestAdmin** user. The results pane shows that the **Admins Policy** applies, and that the password must **contain at least 9 characters**.
-
-![Testing the Admins policy](/images/passwordpolicyenforcer/12.0/evaluation/evaladmin.webp)
 
 Use the Password Policy Enforcer configuration console, the Windows Change Password screen, the
 Active Directory Users and Computers console, or the Local Users and Groups console to test password

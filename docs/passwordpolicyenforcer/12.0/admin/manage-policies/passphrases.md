@@ -15,8 +15,6 @@ Rules like [Complexity](rules/complexity_rule.md) and [Dictionary](rules/diction
 3. Select the **Passphrase** tab.
 4. Select the **Passphrase** checkbox to enable this feature.
 
-   ![Enable Passphrases](/images/passwordpolicyenforcer/12.0/administration/passphrase.webp)
-
 5. Select the minimum number of characters from the **contains** dropdown. PPE disables the specified rules when a password contains at least this many characters.
 6. Select the rules you want to disable for passphrases.
 

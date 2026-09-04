@@ -14,7 +14,6 @@ You can schedule the check to run at any time to verify existing passwords again
 Create the **Compromised Passwords Base** file before enabling the Password Scanner. See the [HIBP Updater](/docs/passwordpolicyenforcer/12.0/admin/hibpupdater.md) topic for instructions.
 :::
 
-
 Launch the Password Scanner from the Configuration Console:
 
 Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
@@ -47,8 +46,6 @@ Click the **Password Scanner** toggle to enable/disable the feature.
 - **Set up email** click to set up the email message for users. Enter the **From** address and edit
   the subject and body template as needed. Click **Apply** to save changes.
 
-    ![Email user notification of compromised password](/images/passwordpolicyenforcer/12.0/administration/emailusernotification.webp)
-
 Click **Save** to save your settings before running the check or setting up a schedule.
 
 Click **Run now** to run the check. Depending on your network, the check can take a long time to
@@ -62,7 +59,6 @@ Here is an example of the compromised passwords report:
 | --- | --- | --- | --- | --- |
 | admin    | Administrator | S-1-5-21-1006207104-1546379664-2458629591-500  |      | Sending emails isn't possible due to the lack of an email address in the account. |
 | user2   | user2  | S-1-5-21-1006207104-1546379664-2458629591-1118 | user2@company.com | Email has been sent  |
-
 
 **List of reused passwords**
 |User  |  Account | Sid | Email | Description |
@@ -78,8 +74,6 @@ Guest (S-1-5-21-1006207104-1546379664-2458629591-501)
 #### Schedule the Password Scanner
 
 Click **Schedule** to set up a schedule to run the Password Scanner.
-
-![Schedule the Password Scanner](/images/passwordpolicyenforcer/12.0/administration/compromisedpasswordsschedule.webp)
 
 Select the **Frequency**:
 

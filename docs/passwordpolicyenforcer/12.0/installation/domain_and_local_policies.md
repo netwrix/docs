@@ -41,13 +41,9 @@ You can also use Group Policy to distribute a local configuration to many comput
 4. Expand the **Computer Configuration**, **Preferences**, and **Windows Settings** items in the left pane.
 5. Right-click the **Registry** item, then select **New** > **Registry Wizard**.
 
-   ![domain_and_local_policies](/images/passwordpolicyenforcer/12.0/administration/domain_and_local_policies.webp)
-
 6. Select the computer that contains the Password Policy Enforcer local configuration you want to distribute, then click **Next**.
 7. Expand the **HKEY_LOCAL_MACHINE**, **SOFTWARE**, and **ANIXIS** items.
 8. Click the **Password Policy Enforcer 11.0** item, then select the checkboxes beside each item in the bottom pane of the window.
-
-   ![domain_and_local_policies_1](/images/passwordpolicyenforcer/12.0/administration/domain_and_local_policies_1.webp)
 
 9. Click **Finish**.
 10. Close the Group Policy Management Editor.

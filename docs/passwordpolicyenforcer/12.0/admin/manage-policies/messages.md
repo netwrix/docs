@@ -12,8 +12,6 @@ The [Password Policy Client](../password-policy-client/password_policy_client.md
 2. Click the name of a policy in the policy list.
 3. Select the **Messages** tab.
 
-![Messages](/images/passwordpolicyenforcer/12.0/administration/messages.webp)
-
 Password Policy Enforcer (PPE) automatically generates messages in English from the policy settings, but you can define messages in other languages by selecting a different language from the language dropdown in the left pane. You can also override the generated English messages by selecting **English** in the language dropdown.
 
 :::note
@@ -34,11 +32,7 @@ The [Password Policy Client](../password-policy-client/password_policy_client.md
 
 When you select **Password policy** in the left pane, you see a multiline text box with the template in the right pane, a **Preview** below it, and a **Macro** dropdown on the right.
 
-![Message template](/images/passwordpolicyenforcer/12.0/administration/message_template.webp)
-
 The default password policy template includes several macros in square brackets. The most important is `[LIVE_POLICY]`. PPE populates this macro with a list of rules that the password must comply with. An icon beside each line indicates if the new password complies with the rule. The icons update automatically as the user types to give them constant feedback. If you prefer a static policy message without the icons, then change `[LIVE_POLICY]` to `[POLICY]`. You must use [Password Policy Client](../password-policy-client/password_policy_client.md) 10.2 or later for live policies.
-
-![Live policy](/images/passwordpolicyenforcer/12.0/administration/mesages2.webp)
 
 PPE shows the other macros in the default message only when the policy configuration requires them. Leave them for now and replace them with your own text later if necessary.
 
@@ -50,8 +44,6 @@ You can insert macros into the policy message template by positioning the text c
 
 The **Rejection reason** template editor also has a multiline text box for the template, but no preview. The default message text includes only one macro, `[REASON]`. PPE populates this macro with the list of rules that the password doesn't comply with. PPE generates the reason text for each rule from the policy settings, but you can override the default rule insert text by entering your own text in the relevant text box below the template text box. See the tip in [Message macros](#message-macros) for how to format rule inserts.
 
-![Rejection reason template](/images/passwordpolicyenforcer/12.0/administration/message_rejection_reason_template.webp)
-
 :::note
 The [Dictionary rule](rules/dictionary_rule.md) inserts only one line into the `[REASON]` macro by default, even if the password matches a word in both dictionary files. If you enter different text in the **Dictionary > Main** and **Secondary dictionary** text boxes, the rule inserts the text for whichever file contains the matching word. If the word appears in both files, the rule inserts both lines.
 :::
@@ -60,13 +52,9 @@ The [Dictionary rule](rules/dictionary_rule.md) inserts only one line into the `
 
 The **Generic rejection** template editor has only a multiline text box for the template. You can't include any macros in this template.
 
-![Generic rejection template](/images/passwordpolicyenforcer/12.0/administration/message_generic_rejection_template.webp)
-
 ## Message macros
 
 Select **[POLICY]** or **[LIVE_POLICY]** in the left pane to edit the rule inserts for these macros. In the right pane, enter the text you want the respective rules to insert. The **[LIVE_POLICY]** editor has three additional text boxes below the rule inserts. Use these text boxes to define the legend text for the three icons in the live policy.
-
-![Live policy macro](/images/passwordpolicyenforcer/12.0/administration/message_live_policy_macro.webp)
 
 :::tip
 Rule inserts should generally begin with two spaces, a hyphen, and a space. While not mandatory, PPE recognizes this sequence and displays it as either a bullet point or a compliance icon. If the insert doesn't begin with this character sequence, then PPE adds the text to the macro without any decoration.

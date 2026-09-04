@@ -8,8 +8,6 @@ sidebar_position: 50
 
 The Compromised rule rejects passwords found in data breaches. Blocking these passwords reduces the risk of a successful credential stuffing attack.
 
-![Compromised password rule](/images/passwordpolicyenforcer/12.0/administration/compromised.webp)
-
 Select the **Compromised** checkbox to enable the Compromised rule.
 
 Password Policy Enforcer (PPE) uses data from the [Have I Been Pwned](https://haveibeenpwned.com/) service to identify compromised passwords. PPE creates a local copy of the database for better performance, and to ensure that no password information leaves your network. Click **HIBP Downloader** to open the database downloader. The [HIBP Updater](../../hibpupdater.md) page explains how to configure and use the database downloader. You must download the database before you can use the Compromised rule.
