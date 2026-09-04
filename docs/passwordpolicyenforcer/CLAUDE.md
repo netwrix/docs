@@ -15,12 +15,15 @@ This file scopes guidance to the **Password Policy Enforcer (PPE)** product docu
 
 | Version | Status | Notes |
 |---|---|---|
-| `11.2` | Latest (default) | Active version — most edits land here |
+| `12.0` | Latest (default) | Active version — most edits land here |
+| `11.2` | Hidden | Previous release; still fully built and linkable |
 | `11.1` | Hidden | Previous minor; don't surface in navigation |
 | `11.0` | Hidden | Kept for users on 11.0; don't surface in navigation |
 | `10.2` | Hidden | Legacy; different section layout (see below) |
 
-Edits to one version **do not** propagate. Apply changes to each version explicitly when they apply to more than one. When a change only applies to 11.2 (new feature, renamed control), note that clearly and skip the older versions.
+The **Latest (default)** version is whichever entry has `isLatest: true` / matches `defaultVersion` for `passwordpolicyenforcer` in `src/config/products.js` — check that file rather than trusting this table if it looks stale.
+
+Edits to one version **do not** propagate. Apply changes to each version explicitly when they apply to more than one. When a change only applies to the latest version (new feature, renamed control), note that clearly and skip the older versions.
 
 ## Section Layout Differences
 
@@ -62,8 +65,8 @@ KB articles are **canonically** in `/docs/kb/` and copied into each version's `k
 
 ## Cmdlets Convention
 
-PowerShell cmdlet pages under `11.2/admin/cmdlets/` follow a fixed naming pattern: `cmd<verb><noun>.md` (e.g., `cmdgetppepolicies.md`, `cmdsetppeenabled.md`). New cmdlet pages should match that pattern and be added to both the cmdlets index (`cmdlets.md`) and the sidebar (auto-generated — verify after build).
+PowerShell cmdlet pages under `<latest-version>/admin/cmdlets/` (see the Versions table above for the current latest version) follow a fixed naming pattern: `cmd<verb><noun>.md` (e.g., `cmdgetppepolicies.md`, `cmdsetppeenabled.md`). New cmdlet pages should match that pattern and be added to both the cmdlets index (`cmdlets.md`) and the sidebar (auto-generated — verify after build).
 
 ## Rules Pages
 
-Each password rule under `11.2/admin/manage-policies/rules/` is its own file (character, complexity, compromised, dictionary, history, length, min/max age, patterns, repetition, similarity, unique characters). When adding a new rule type, create a new file in this folder and link from `rules.md` — don't collapse into an existing file.
+Each password rule under `<latest-version>/admin/manage-policies/rules/` (see the Versions table above for the current latest version) is its own file (character, complexity, compromised, dictionary, history, length, min/max age, patterns, repetition, similarity, unique characters). When adding a new rule type, create a new file in this folder and link from `rules.md` — don't collapse into an existing file.

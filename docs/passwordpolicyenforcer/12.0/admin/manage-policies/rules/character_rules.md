@@ -58,6 +58,6 @@ Select the **Characters (Granular)** checkbox at the top of the page, then selec
 
 These rules require passwords to begin or end with certain characters by default. **Begin** (First Character rule) or **End** (Last Character rule) below the rule's name indicates this. If you don't want certain characters to appear at the beginning or end of a password, select **Not begin** or **Not end** from the dropdown.
 
-Select the character set names to enable them. A checkmark appears next to the selected character sets. For example, selecting **Not end** with **Numeric** and **Special** rejects passwords that end with a numeric or special character:
+Select the character set names to enable them. A checkmark appears next to the selected character sets. For example, selecting **Not end** with **Numeric** and **Special** rejects passwords that end with a numeric or special character.
 
 The First and Last Character rules use the custom character set definitions from the granular character rules. If you haven't defined custom character sets, these rules use the [default character sets](../policy_properties.md).

@@ -24,10 +24,9 @@ policy.
 
 **Step 3 –** **Type in a password to simulate its change**. As you type, Password Policy Enforcer evaluates the new password and displays the results.
 
-In this example, the password fails because it doesn't meet the length requirement. A red x
-indicates the failure. You can hover over the requirements to see the rule name.
+As you type, Password Policy Enforcer evaluates the password against the policy in real time. For example, typing a short password like ThisIs causes the password to fail the policy overall. In the requirements list, you can see how the minimum length was not met. Hovering over a requirement gives you the rule name.
 
-In this example, the password passes. Notice the green check beside the entered password.
+When you type a password that addresses the minimum length requirement — for example, ThisIsNewSecurityCode — it passes the check.
 
 Expand the **View log** for details:
 

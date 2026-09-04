@@ -27,7 +27,7 @@ HKLM\SOFTWARE\Policies\ANIXIS\Password Policy Client\ registry key.
 have the group policy management console available.
 
 **Step 2 –** Go to Password Policy Enforcer install directory (C:\Program Files\Netwrix\Password 
-Policy Enforcer) and copy the **PPEClt.adml** and **PPEClt.admx** files (highlighted in yellow):
+Policy Enforcer) and copy the **PPEClt.adml** and **PPEClt.admx** files.
 
 **Step 3 –** Go to `C:\Windows\Policy Definitions` and paste the .admx file in the root of this
 folder.
@@ -42,7 +42,7 @@ Client. If not, see the topic's section for additional information.
 **`<domain_name>`**, right-click **`<OU_name>`** and select **Create a GPO** in this domain and Link
 it here.
 
-After you configure the GPO, this view is available:
+After you configure the GPO, this view is available.
 
 **Step 7 –** Right-click the newly created GPO and select **Edit** from the pop-up menu.
 

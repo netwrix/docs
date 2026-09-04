@@ -27,7 +27,7 @@ change, but it doesn't change the user's password. A green check mark indicates 
 complies, a red and white x indicates the password fails. Detailed test results appear in the
 results pane.
 
-**mypassword** fails two requirements. You can hover over the requirements to view the associated
+**mypassword** fails two requirements: it does not contain an upper alpha character and it is similar to a common password. You can hover over the requirements to view the associated
 rule.
 
 Click **View log** to expand Password Policy Enforcer's internal event log. The information in the

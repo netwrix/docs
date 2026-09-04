@@ -62,3 +62,32 @@ Use the [**Test Policy by User** feature](testpolicy.md#by-user) to check which 
 
 This flowchart shows how Password Policy Enforcer determines which policy to enforce for a user.
 
+```mermaid
+flowchart TD
+    Start(["START"]) --> Q1{"How many policies assigned to user?"}
+    Q1 -->|"One"| A1["Enforce the assigned policy"]
+    Q1 -->|"More than one"| Q2{"Any policies assigned by username?"}
+    Q1 -->|"None"| Q5{"Is a default policy specified?"}
+
+    Q2 -->|"Yes"| A2["Discard policies not assigned by username"]
+    Q2 -->|"No"| Q3{"Any policies assigned by group?"}
+
+    Q3 -->|"Yes"| A3["Discard policies not assigned by group"]
+    Q3 -->|"No"| A4["Discard policies not assigned to the nearest parent container"]
+
+    A2 --> Q4{"Only one remaining policy?"}
+    A3 --> Q4
+    A4 --> Q4
+
+    Q4 -->|"No"| A5["Enforce the policy with the highest priority"]
+    Q4 -->|"Yes"| A6["Enforce the only remaining policy"]
+
+    Q5 -->|"Yes"| A7["Enforce the default policy"]
+    Q5 -->|"No"| End(["END"])
+
+    A1 --> End
+    A5 --> End
+    A6 --> End
+    A7 --> End
+```
+
