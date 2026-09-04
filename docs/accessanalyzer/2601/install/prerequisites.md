@@ -106,7 +106,7 @@ sudo update-ca-certificates
 
 **Verifying certificate files before install:**
 
-These commands confirm the certificate covers the right hostname and IP address, was signed by your CA bundle, and is paired with the correct private key.
+These commands confirm the certificate covers the right hostname and IP address, that your CA bundle signed it, and that it matches the correct private key.
 
 ```bash
 # Check that the SAN includes your hostname (lowercase) and server IP
@@ -124,7 +124,7 @@ openssl x509 -noout -pubkey -in /etc/dspm/<hostname>.crt | md5sum
 
 Identify the email address and display name of your first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
-To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values for the directory you use before you start, so you have them ready in the installer.
+To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values for the directory you use before you start the installer.
 
 ## Identity provider
 
@@ -226,4 +226,4 @@ All outbound endpoints use HTTPS (port 443). The Access Analyzer server must rea
 
 ## Before you start the installer
 
-Work through the checklist at the top of this page and confirm every item is complete before installation begins. Unmet prerequisites are the most common cause of failed and delayed installs, and confirming them in advance is the best way to ensure a smooth first-time setup.
+Work through the [Checklist](#checklist) and confirm every item is complete before installation begins. Unmet prerequisites are the most common cause of failed and delayed installs — confirm them in advance.
