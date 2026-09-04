@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # PPE cmdlets
 
-Cmdlets are available to manage Password Policy Enforcer from a Windows PowerShell. The
+Use cmdlets to manage Password Policy Enforcer from Windows PowerShell. The
 cmdlets aren't case-sensitive.
 
 Install the [.NET Desktop Runtime 10.0 or later](https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-x64.exe) and [PowerShell 7.4 or later](https://github.com/powershell/powershell/releases) to use the PowerShell cmdlets.

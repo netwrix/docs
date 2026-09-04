@@ -23,7 +23,7 @@ The Help menu contains the following items:
 - **Netwrix Help Center** - displays the help documentation.
 - **About** - displays version information.
 - **Export Configuration Report** - creates a configuration report in HTML or text format. Netwrix Support may ask you to send a configuration report to help troubleshoot an issue.
-- **Open Property Editor** - opens the Property Editor to directly edit the configuration, including settings that aren't exposed in the user interface. Only use the Property Editor when Netwrix Support instructs you to.
+- **Open Property Editor** - opens the Property Editor to directly edit the configuration, including settings that aren't available in the user interface. Only use the Property Editor when Netwrix Support instructs you to.
 
 ## Set global settings
 

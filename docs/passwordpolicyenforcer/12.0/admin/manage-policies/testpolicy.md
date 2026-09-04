@@ -22,7 +22,7 @@ policy.
 
 **Step 2 –** Select a **user**.
 
-**Step 3 –** **Type in a password to simulate its change**. As you type, Password Policy Enforcer evaluates the new password and displays the results.
+**Step 3 –** **Type in a password to simulate its change**.
 
 As you type, Password Policy Enforcer evaluates the password against the policy in real time. For example, typing a short password like ThisIs causes the password to fail the policy overall. The requirements list shows that the password doesn't meet the minimum length. Hovering over a requirement gives you the rule name.
 

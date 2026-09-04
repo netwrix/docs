@@ -6,8 +6,8 @@ sidebar_position: 90
 
 # Get-PPEHelp
 
-The **Get-PPEHelp** cmdlet lists the available Password Policy Enforcer cmdlets. If a cmdlet is
-specified, returns help for the cmdlet.
+The **Get-PPEHelp** cmdlet lists the available Password Policy Enforcer cmdlets. If you specify a
+cmdlet, it returns help for that cmdlet.
 
 **SYNTAX**
 
