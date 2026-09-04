@@ -1,7 +1,7 @@
 ---
 description: >-
-  How to restore a GPO's actual settings from a Netwrix Recovery for Active
-  Directory GPO backup using the Group Policy Management Console (GPMC).
+  How to restore a GPO's actual settings from an Identity Recovery GPO
+  backup using the Group Policy Management Console (GPMC).
 keywords:
   - GPO backup
   - GPO restore
@@ -9,9 +9,9 @@ keywords:
   - Group Policy Management Console
   - manifest.xml
   - Restore from Backup
-  - Netwrix Recovery for Active Directory
+  - Identity Recovery
 products:
-  - recovery-active-directory
+  - identityrecovery
 sidebar_label: "Restoring a GPO from Backup Using GPMC"
 tags:
   - kb
@@ -22,16 +22,16 @@ title: "Restoring a GPO from Backup Using GPMC"
 
 ## Question
 
-How do you restore a GPO's actual settings from a Netwrix Recovery for Active Directory GPO backup?
+How do you restore a GPO's actual settings from a Identity Recovery GPO backup?
 
 ## Answer
 
-Use the Group Policy Management Console (GPMC) directly, pointed at the Netwrix Recovery for Active Directory GPO backup path. This restores the GPO's actual settings, not just its AD-side permissions or linking — rollback/recovery actions inside the Netwrix Recovery for Active Directory console only ever restore AD attributes, never settings content.
+Use the Group Policy Management Console (GPMC) directly, pointed at the Identity Recovery GPO backup path. This restores the GPO's actual settings, not just its AD-side permissions or linking — rollback/recovery actions inside the Identity Recovery console only ever restore AD attributes, never settings content.
 
 ### Before You Start
 
 - You'll need permissions to manage Group Policy in the target domain.
-- Locate the backup share/path configured for GPO backups on the domain configuration page in Netwrix Recovery for Active Directory.
+- Locate the backup share/path configured for GPO backups on the domain configuration page in Identity Recovery.
 - Know which GPO you need to restore.
 
 > **Note:** Folder names under the backup path are not the GPO's own GUID — they're a separate ID per backup instance. To match a folder to a GPO, check `manifest.xml` in the root of the backup location; each `<BackupInst>` entry lists the backup instance ID (matches the folder name), the real `<GPOGuid>`, and the `<GPODisplayName>`.
@@ -79,11 +79,11 @@ Use the Group Policy Management Console (GPMC) directly, pointed at the Netwrix 
 - **Restores:** the GPO's settings content, its ACL/permissions, and its WMI filter link.
 - **Does not restore:** where the GPO is linked (links live on the OU/domain/site, not the GPO itself). If the GPO shows up unlinked after this restore, re-link it manually in GPMC (right-click the OU/domain → **Link an Existing GPO...**, or `Set-GPLink` in PowerShell).
 
-> **Note:** Don't use Netwrix Recovery for Active Directory's rollback feature to restore a lost link by rolling back the OU's `gPLink` attribute. `gPLink` is a plain string, but its contents are a specific bracketed format GPMC expects (`[LDAP://<GPO DN>;<link options>]`) — writing it back through a generic attribute rollback can result in AD accepting the value while GPMC still doesn't recognize the link, even after `gpupdate /force`. Re-linking manually in GPMC is the reliable path.
+> **Note:** Don't use Identity Recovery's rollback feature to restore a lost link by rolling back the OU's `gPLink` attribute. `gPLink` is a plain string, but its contents are a specific bracketed format GPMC expects (`[LDAP://<GPO DN>;<link options>]`) — writing it back through a generic attribute rollback can result in AD accepting the value while GPMC still doesn't recognize the link, even after `gpupdate /force`. Re-linking manually in GPMC is the reliable path.
 
 ### If the Backup Location Is Empty or the GPO Isn't Listed
 
-The backup for this GPO likely doesn't exist yet. Confirm with your Netwrix Recovery for Active Directory administrator that GPO backups are working for this domain before troubleshooting the restore itself further.
+The backup for this GPO likely doesn't exist yet. Confirm with your Identity Recovery administrator that GPO backups are working for this domain before troubleshooting the restore itself further.
 
 ## Related Links
 
