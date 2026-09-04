@@ -1,8 +1,7 @@
 # Document Review
 
 * **Version:** 
-* **Source Path:** 
-* **Duplicated in:**
+* **Source Path:**
 
 ## Steps
 
@@ -38,16 +37,4 @@
 
 ## Applying corrections
 
-Once the Corrections section is filled in, paste this whole document into a Claude Code chat opened at the root of the docs repo — the `audit-fix` skill picks it up from there, applies each fix, checks whether this page is duplicated in other versions, and offers to apply the same fix to any duplicates it finds. It reports back what it changed.
-
-## Status
-
-<!-- Fill in after audit-fix reports back. -->
-
-* **Audited:** 
-* **Accurate:** 
-* **Complete:** 
-
-## Fix Summary
-
-<!-- Paste the report audit-fix gives you here. -->
+Once the Corrections section is filled in, paste this whole document into a Claude Code chat opened at the root of the docs repo — the `audit-fix` skill picks it up from there, applies each fix, checks whether this page is duplicated in other versions, and offers to apply the same fix to any duplicates it finds. It reports back what it changed and folds that summary into the commit it offers to make — there's nothing to paste back here. Once the resulting PR merges, mark this document `Done` in the workbook's **Audited** column.

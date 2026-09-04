@@ -57,7 +57,8 @@ const AUDIT_EXCLUDED_PRODUCTS = new Set(['partner', 'customer', 'privilegesecure
 const AUDIT_EXCLUDED_VERSIONS = {
   activitymonitor: new Set(['7.1', '8.0']),
   auditor: new Set(['10.7']),
-  identitymanager: new Set(['6.1']),
+  identitymanager: new Set(['6.1', '7.0']),
+  pingcastle: new Set(['4.0']),
   recoveryforactivedirectory: new Set(['2.6']),
   privilegesecure: new Set(['4.2']),
   threatmanager: new Set(['3.0']),
