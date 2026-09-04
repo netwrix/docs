@@ -28,7 +28,7 @@ Don't set the Windows policies to **Not Configured** as that leaves the previous
 :::
 
 :::note
-You don't have to disable the Windows password policy rules to use PPE. A password must comply with both the Windows and PPE policies to be accepted.
+You don't have to disable the Windows password policy rules to use PPE. Users must comply with both the Windows and PPE policies when they choose a password.
 
 Fine-Grained Password Policies (FGPP) override the domain password policy. If your organization uses FGPP, you'll also need to remove or modify any Password Settings Objects (PSOs) that apply to your users. To do that, open **Active Directory Administrative Center**, navigate to **System** > **Password Settings Container**, and remove or modify the relevant PSOs.
 :::

@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Get-PPEEnabled
 
-The **Get-PPEEnabled** cmdlet returns the enabled/disabled status of the PPE Server.
+The **Get-PPEEnabled** cmdlet returns the enabled/disabled status of the Password Policy Enforcer (PPE) Server.
 
 **SYNTAX**
 

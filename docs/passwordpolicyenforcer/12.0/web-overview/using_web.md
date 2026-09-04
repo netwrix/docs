@@ -10,7 +10,7 @@ The default URL for Password Policy Enforcer Web is: `http://[server]/ppeweb/`
 
 Where [server] is the name or IP address of the server hosting Password Policy Enforcer Web.
 
-The default page is called the Welcome page. You can customize the information on this page by
+The default page is the Welcome page. You can customize the information on this page by
 editing **en_default.htm**, or you can bypass this page and send users directly to the Password
 Change page:
 

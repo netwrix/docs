@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Copy-PPEPolicy
 
-The **CopyPPEPolicy** cmdlet makes a copy of a PPE policy.
+The **CopyPPEPolicy** cmdlet makes a copy of a Password Policy Enforcer (PPE) policy.
 
 **SYNTAX**
 

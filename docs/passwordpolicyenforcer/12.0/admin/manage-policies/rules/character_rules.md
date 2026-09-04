@@ -14,7 +14,7 @@ You must select the **Characters (Granular)** checkbox at the top of the page be
 
 ## Character set rules
 
-The first seven rules work identically; they differ only in their default character set. A character set is the collection of characters that each rule searches for when checking a password. The first seven rules are named after their default character set: Alpha, Upper Alpha, Lower Alpha, Numeric, Special, High, and Custom.
+The first seven rules work identically; they differ only in their default character set. A character set is the collection of characters that each rule searches for when checking a password. The first seven rules take the name of their default character set: Alpha, Upper Alpha, Lower Alpha, Numeric, Special, High, and Custom.
 
 A description of the default character set appears beside each rule's name. For example, the Alpha set's description is **(a-z and A-Z)**. This description is for the Password Policy Enforcer (PPE) default character set. The default characters will be different if you configure the policy to use the Windows character set. The [Policy Properties](../policy_properties.md) page has more information about character sets.
 

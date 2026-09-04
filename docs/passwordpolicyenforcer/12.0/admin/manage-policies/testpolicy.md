@@ -24,9 +24,9 @@ policy.
 
 **Step 3 –** **Type in a password to simulate its change**. As you type, Password Policy Enforcer evaluates the new password and displays the results.
 
-As you type, Password Policy Enforcer evaluates the password against the policy in real time. For example, typing a short password like ThisIs causes the password to fail the policy overall. In the requirements list, you can see how the minimum length was not met. Hovering over a requirement gives you the rule name.
+As you type, Password Policy Enforcer evaluates the password against the policy in real time. For example, typing a short password like ThisIs causes the password to fail the policy overall. The requirements list shows that the password doesn't meet the minimum length. Hovering over a requirement gives you the rule name.
 
-When you type a password that addresses the minimum length requirement — for example, ThisIsNewSecurityCode — it passes the check.
+When you enter a password that addresses the minimum length requirement — for example, ThisIsNewSecurityCode — it passes the check.
 
 Expand the **View log** for details:
 

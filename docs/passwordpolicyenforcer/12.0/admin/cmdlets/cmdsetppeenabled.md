@@ -6,7 +6,7 @@ sidebar_position: 200
 
 # Set-PPEEnabled
 
-The **Set-PPEEnabled** cmdlet sets the enabled/disabled status for the PPE Server.
+The **Set-PPEEnabled** cmdlet sets the enabled/disabled status for the Password Policy Enforcer (PPE) Server.
 
 **SYNTAX**
 

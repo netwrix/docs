@@ -9,7 +9,7 @@ sidebar_position: 90
 This topic contains troubleshooting information for the most common support questions. Contact
 Netwrix support with any questions.
 
-PPE enforces a password policy assigned to some users for all users. Check the Default Policy in
+Password Policy Enforcer enforces a password policy assigned to some users for all users. Check the Default Policy in
 the Password Policy Server (PPS) Properties page. Users must comply with the default policy if you
 haven't assigned another policy to them. Select the first (blank) item in the dropdown list if you don't want a default policy.
 

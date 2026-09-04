@@ -57,7 +57,7 @@ After you configure the GPO, this view is available.
 
 The Windows 10 and 11 Change Password screen has less space for the Password Policy message than
 earlier Windows versions. Users may need to scroll to see the message if their screen is small, or
-if their computer is set to use large fonts.
+if their computer uses large fonts.
 
 The Password Policy Client for Windows 10 and 11 maximizes the available screen space by hiding
 non-essential user interface elements on small screens. It can also display the Password Policy

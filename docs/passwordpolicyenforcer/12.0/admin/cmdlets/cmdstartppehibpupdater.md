@@ -6,7 +6,7 @@ sidebar_position: 230
 
 # Start-PPEHibpUpdater
 
-The **Start-PPEHibpUpdater** cmdlet starts an update of the Hibp database.
+The **Start-PPEHibpUpdater** cmdlet starts an update of the Have I Been Pwned (HIBP) database.
 
 **SYNTAX**
 

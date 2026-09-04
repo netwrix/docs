@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Connect-PPE
 
-The **Connect-PPE** cmdlet establishes a connection to the PPE Server.
+The **Connect-PPE** cmdlet establishes a connection to the Password Policy Enforcer (PPE) Server.
 
 **SYNTAX**
 
