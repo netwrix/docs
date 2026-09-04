@@ -26,10 +26,10 @@ Choose a deployment size based on your environment:
 
 | Size | CPU | Memory | Minimum Disk Space |
 | --- | --- | --- | --- |
-| **Small** | 8 cores | 32 GB | 500 GB SSD |
-| **Medium** | 16 cores | 48 GB | 1 TB SSD |
-| **Large** | 32 cores | 64 GB | 1 TB SSD |
-| **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD |
+| **Small** | 8 cores | 32 GB | 400 GB SSD |
+| **Medium** *(default)* | 16 cores | 64 GB | 1 TB SSD |
+| **Large** | 24 cores | 96 GB | 3 TB SSD |
+| **Enterprise** | 32 cores | 128 GB | 8 TB SSD |
 
 :::note
 The required disk space scales with the number of objects across your sources, not the size of on-disk data, because Access Analyzer stores only object metadata, not actual contents. These are minimum disk space requirements — allocate more if possible to avoid running out of space later.
