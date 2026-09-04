@@ -1,0 +1,15 @@
+---
+title: "Add IP Address Window"
+description: "Add IP Address Window"
+sidebar_position: 10
+---
+
+# Add IP Address Window
+
+The Add IP Address window provides a textbox to enter the IP address to include or exclude.
+
+![Add IP Address Window](/images/threatprevention/8.1/admin/policies/eventtype/window/addipaddress.webp)
+
+Threat Prevention adds the IP addresses you enter to the appropriate box on the IP Addresses (from)
+filter or the IP Addresses (to) filter, from where you clicked the **Add** (+) button to open this
+window.
