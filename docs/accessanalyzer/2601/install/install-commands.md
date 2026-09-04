@@ -178,6 +178,10 @@ Each directory must already exist and be writable before the installer runs. The
 
 The `--size` option selects the deployment size profile, which sets the CPU, memory, and disk allocations for all Access Analyzer workloads and the host minimums preflight enforces. Accepted values are `small`, `medium`, `large`, and `enterprise`. The default is `medium`.
 
+:::warning
+The installer also accepts `--size micro`, but this profile is sized for development, CI, and demo installs only. Don't use it for a production or customer-facing deployment.
+:::
+
 ```bash
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --size large
 ```

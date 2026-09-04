@@ -19,6 +19,10 @@ Choose a deployment size with `--size` — see [Installer Command Reference](../
 | **Large** | 24 cores | 96 GB | 3 TB SSD | Up to ~800 million objects and 25,000–100,000 identities |
 | **Enterprise** | 32 cores | 128 GB | 8 TB SSD | Up to ~3 billion objects and 100,000+ identities |
 
+:::warning
+A `micro` size also exists (8 cores, 24 GB, 80 GB SSD), but it's sized for development, CI, and demo installs only. Don't use it for a production or customer-facing deployment.
+:::
+
 
 ## Disk Space Requirements
 
