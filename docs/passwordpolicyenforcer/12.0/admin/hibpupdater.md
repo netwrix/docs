@@ -10,7 +10,7 @@ You can configure Password Policy Enforcer to use the Have I Been Pwnd (HIBP) da
 a copy of this database on its website. The HIBP database contains a list of the hashes of
 known compromised passwords. During password change operations, you can configure the application to
 reject passwords with a hash that matches a hash in the HIBP database. See the Password Policy
-Enforcer [Password Scanner](/docs/passwordpolicyenforcer/11.2/admin/compromisedpasswordcheck.md) topic for HIBP database
+Enforcer [Password Scanner](/docs/passwordpolicyenforcer/12.0/admin/compromisedpasswordcheck.md) topic for HIBP database
 information and configuration options.
 
 You must initially deploy the HIBP database to a server or workstation that has an internet
@@ -30,7 +30,6 @@ If you copy and store the HIBP database locally on the Domain Controllers:
 - Checking the password against the HIBP database doesn't involve a network connection, so network conditions don't affect performance
 - PPE checks the pending password candidate against the archived hash file locally. If the password hash matches an entry, PPE rejects the pending password change.
 
-
 If you keep the HIBP database on a Network Share:
 
 - The database takes up space only on the Network Share, not on each Domain Controller. 
@@ -47,12 +46,9 @@ Installing the Password Policy Enforcer Configuration Console also installs the 
 Only run this from one server.
 :::
 
-
 **Step 1 –** To access the HIBP Updater, navigate to the installation location:
 
 **...\Program Files\Password Policy Enforcer\HIBP\**
-
-![hibpfolder](/images/passwordpolicyenforcer/11.2/administration/hibpfolder.webp)
 
 **Step 2 –** Click HIBPWINUpdater.
 
@@ -67,14 +63,10 @@ First-time configuration of this window requires downloading the HIBP database f
 Netwrix website.
 :::
 
-
-![HIBP Updater](/images/passwordpolicyenforcer/11.2/administration/hibpupdater.webp)
-
 :::warning
 Ensure the initial update of the database occurs during non-office hours. Due to the
 size of the hash file, this download requires significant CPU and download time.
 :::
-
 
 - Passwords Hash Database Folder – Central location of the Pwned database on the application server.
   The default path is:
@@ -94,7 +86,6 @@ size of the hash file, this download requires significant CPU and download time.
         Alternately, you can obtain the HIBP database outside of the application by downloading it
         directly from the Netwrix website using an FTP connection:
         :::
-
 
         - [https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip](https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip)
         - [https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip.sha256.txt](https://releases.netwrix.com/resources/stealthintercept/stealthintercept-hibp-database-1.0.0.zip.sha256.txt)
@@ -126,7 +117,7 @@ Compromised rule to read the files from:
 
 **\\127.0.0.1\sysvol\your.domain\filename.db**
 
-See the [Compromised Rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
+See the [Compromised Rule](/docs/passwordpolicyenforcer/12.0/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
 
 The preceding path only works if the computer has a Sysvol share. This won't be the case if you are
 using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
@@ -138,7 +129,6 @@ scheduled task to copy the file to a local folder.
 Read hash files only from a local disk. Using shared hash files
 degrades performance, and could jeopardize security.
 :::
-
 
 ## Scheduler
 
@@ -152,8 +142,6 @@ Scheduler technology to execute the process.
 
 **Step 2 –** Click **Add Schedule**. An Edit Schedule window appears. It looks similar to the HIBP
 Updater window.
-
-![editschedule](/images/passwordpolicyenforcer/11.2/administration/editschedule.webp)
 
 **Step 3 –** Enter the Name and Description of the schedule.
 
@@ -171,7 +159,5 @@ PPE updates the HIBP database according to the schedule.
 
 The Schedule List window shows the names, run times, next run times, and whether the schedule is
 enabled.
-
-![schedulelist](/images/passwordpolicyenforcer/11.2/administration/schedulelist.webp)
 
 Use this window to Add, Edit, or Delete schedules for the HIBP Updater.
