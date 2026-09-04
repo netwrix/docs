@@ -77,21 +77,10 @@ sudo mkdir -p /etc/dspm
 
 **SAN requirement:** Browsers normalize hostnames to lowercase during TLS validation. If the SAN entry carries any uppercase characters, sign-in fails with an HTTP 401.
 
-These commands set ownership and permissions on the private key, then install your Certificate Authority into the operating system trust store so the system can validate the Access Analyzer TLS certificate. Use the tab for your distribution.
+These commands set ownership and permissions on the private key. If an internal or private CA signed your certificate, they also install that CA into the operating system trust store so the system can validate the Access Analyzer TLS certificate. Skip the two CA commands for a publicly trusted certificate. Use the tab for your distribution.
 
 <Tabs>
-<TabItem value="rhel" label="RHEL / CentOS / Fedora" default>
-
-```bash
-sudo chown $(whoami) /etc/dspm/<hostname>.key
-sudo chmod 644 /etc/dspm/<hostname>.key
-
-sudo cp /etc/dspm/ca-bundle.crt /etc/pki/ca-trust/source/anchors/dspm-ca.crt
-sudo update-ca-trust
-```
-
-</TabItem>
-<TabItem value="debian" label="Debian / Ubuntu">
+<TabItem value="debian" label="Debian / Ubuntu" default>
 
 ```bash
 sudo chown $(whoami) /etc/dspm/<hostname>.key
@@ -99,6 +88,17 @@ sudo chmod 644 /etc/dspm/<hostname>.key
 
 sudo cp /etc/dspm/ca-bundle.crt /usr/local/share/ca-certificates/dspm-ca.crt
 sudo update-ca-certificates
+```
+
+</TabItem>
+<TabItem value="rhel" label="RHEL / CentOS / Fedora">
+
+```bash
+sudo chown $(whoami) /etc/dspm/<hostname>.key
+sudo chmod 644 /etc/dspm/<hostname>.key
+
+sudo cp /etc/dspm/ca-bundle.crt /etc/pki/ca-trust/source/anchors/dspm-ca.crt
+sudo update-ca-trust
 ```
 
 </TabItem>
@@ -189,6 +189,8 @@ Ports the Access Analyzer server must reach on your data sources and directory s
 - **Outbound** from the Access Analyzer server to the target source/host — **required** for all connectors.
 - **Inbound** at the target source/host from the Access Analyzer server — **required** (the target must accept the connection on the listed port).
 
+The table lists default ports. If a source listens on a different port, open that port instead.
+
 | Connector | Default Port | Protocol | Notes |
 | --- | --- | --- | --- |
 | CIFS / SMB | 445 | TCP | SMB file sharing |
@@ -224,6 +226,6 @@ All outbound endpoints use HTTPS (port 443). The Access Analyzer server must rea
 | `rpm.rancher.io` | K3s / Rancher | K3s package repository | Installation only |
 | `storage.googleapis.com` | K3s / Rancher | K3s artifact storage | Installation only |
 
-## Before you start the installer
+## Before installation
 
-Work through the [Checklist](#checklist) and confirm every item is complete before installation begins. Unmet prerequisites are the most common cause of failed and delayed installs — confirm them in advance.
+Work through the [Checklist](#checklist) and confirm every item is complete before you start the installer. The installer runs preflight checks and stops if they fail, so confirming these items first avoids a restart.
