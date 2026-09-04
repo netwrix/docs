@@ -130,9 +130,7 @@ See the [Qumulo](/docs/auditor/10.9/configuration/fileservers/qumulo/overview.md
 
 Auditor supports monitoring the following device versions:
 
-- DiskStation Manager (DSM) 7.2.1
-- DSM 7.1
-- DSM 7.0
+- DSM (DiskStation Manager) 7.0 - 7.4.1
 - DSM 6.2.3
 
 See the [Synology](/docs/auditor/10.9/configuration/fileservers/synology/overview.md) topic for additional
