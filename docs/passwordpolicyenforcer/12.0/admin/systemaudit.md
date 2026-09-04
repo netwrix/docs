@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # System Audit and Support
 
-Password Policy Enforcer can run a discovery and testing of your domain controllers for an overview
-on PPE health, versions, and logs.
+Password Policy Enforcer can discover and test your domain controllers to give you an overview of
+PPE health, versions, and logs.
 
 Open the Configuration Console:
 

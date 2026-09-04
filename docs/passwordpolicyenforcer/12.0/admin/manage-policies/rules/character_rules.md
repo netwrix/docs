@@ -60,4 +60,4 @@ These rules require passwords to begin or end with certain characters by default
 
 Select the character set names to enable them. A checkmark appears next to the selected character sets. For example, selecting **Not end** with **Numeric** and **Special** rejects passwords that end with a numeric or special character:
 
-The First and Last Character rules use custom character set definitions defined by the granular character rules. If you haven't defined custom character sets, these rules use the [default character sets](../policy_properties.md).
+The First and Last Character rules use the custom character set definitions from the granular character rules. If you haven't defined custom character sets, these rules use the [default character sets](../policy_properties.md).

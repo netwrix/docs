@@ -124,8 +124,9 @@ password policy, but this highlights some weaknesses in this policy:
 - kravdraA is Aardvark with the characters reversed
 - Aardv@rk is Aardvark with an @ substituting an "a."
 
-These three passwords are only marginally stronger than the rejected passwords. The next section
-shows you how to improve the password policy so Password Policy Enforcer rejects these passwords.
+These three passwords are only marginally stronger than the rejected passwords. The
+[Improve the Password Policy](/docs/passwordpolicyenforcer/12.0/evaluation/improving_the_password_policy.md)
+topic shows you how to improve the password policy so Password Policy Enforcer rejects these passwords.
 
 :::note
 Contact [Netwrix support](mailto:support@anixis.com) if Password Policy Enforcer isn't

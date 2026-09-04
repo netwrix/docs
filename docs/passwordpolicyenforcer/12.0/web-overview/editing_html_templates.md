@@ -36,9 +36,9 @@ Password Policy Enforcer Web uses to prepare the pages. Some of these comments d
 
 `<!—RANGE_NAME-->Some text or HTML<!--/RANGE_NAME-->`
 
-Password Policy Enforcer Web deletes ranges (and the text inside them) when they aren't needed.
-Some ranges span only one word, while others span several lines. The other type of comment tag is
-called a field.
+Password Policy Enforcer Web deletes ranges (and the text inside them) when it doesn't need them.
+Some ranges span only one word, while others span several lines. The other type of comment tag is a
+field.
 
 `<!--USERNAME-->`
 
@@ -79,8 +79,8 @@ the format is the same for all languages.
 ### Replacing the Netwrix Logo
 
 Password Policy Enforcer Web shows the Netwrix logo in the top left corner of the Welcome page. By
-default, the installer places the logo in the `\Inetpub\wwwroot\ppeweb\images\` folder, and it is
-called logo.gif. You can replace this
+default, the installer places the logo in the `\Inetpub\wwwroot\ppeweb\images\` folder and names it
+logo.gif. You can replace this
 file with one containing your organization's logo.
 
 Your logo may appear distorted if it isn't the same size as the Netwrix logo. To fix this, open
