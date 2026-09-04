@@ -3,7 +3,7 @@ sidebar_label: Agent deployment
 ---
 # Agent Deployment for PingCastle Enterprise
 
-`PingCastleSchedulerService` handles scheduled scanning for domains it can reach directly. Use agent deployment instead when a security or network boundary prevents that — for example, an isolated or air-gapped domain, or a domain separated from the PingCastle Enterprise server by a firewall the scheduler can't cross. In these cases, run `PingCastle.exe` locally on a server that has access to the target domain, and have it push results directly to PingCastle Enterprise over the API.
+`PingCastleSchedulerService` handles scheduled scanning for domains it can reach directly. Use agent deployment instead when a security or network boundary prevents that — for example, an isolated or air-gapped domain, or a domain that sits behind a firewall the scheduler can't cross. In these cases, run `PingCastle.exe` locally on a server that has access to the target domain, and have it push results directly to PingCastle Enterprise over the API.
 
 ## Program version
 
@@ -31,9 +31,11 @@ PingCastle.exe --healthcheck --server <other domain> --level Full --api-endpoint
 
 If the server requires TLS 1.2, install the TLS 1.2 client package on the system running the audit.
 
+For details on calling the API directly (including through Swagger or PowerShell), see [Using the Swagger API for PingCastle Enterprise](enterpriseapiswagger.md).
+
 ## Automatic Forest Exploration Setup
 
-For large environments, you can simplify scan configuration by using automatic forest exploration. PingCastle then discovers and scans all domains within a forest automatically, using a wildcard in the `--server` parameter.
+For large environments, you can simplify scan configuration with automatic forest exploration. When you use a wildcard in the `--server` parameter, PingCastle discovers and scans all domains within a forest automatically.
 
 ### Manual Execution
 
