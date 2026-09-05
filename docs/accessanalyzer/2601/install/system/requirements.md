@@ -10,7 +10,7 @@ Access Analyzer runs on a single Linux virtual machine. The installer runs prefl
 
 ## Deployment Sizing
 
-Choose a deployment size with `--size` — see [Installer Command Reference](../install-commands.md#choosing-a-deployment-size). The installer enforces each size's CPU and memory figures as hard preflight minimums and blocks installation if the system falls below them. Disk works differently: a fixed 40 GB floor blocks installation regardless of size, and the size's disk figure is a recommendation that only warns if the host falls short (see [Disk Space Requirements](#disk-space-requirements)).
+Choose a deployment size with the installer's `--size` option. The installer enforces each size's CPU and memory figures as hard preflight minimums and blocks installation if the system falls below them. Disk works differently: a fixed 40 GB floor blocks installation regardless of size, and the size's disk figure is a recommendation that only warns if the host falls short (see [Disk Space Requirements](#disk-space-requirements)).
 
 | Size | CPU | Memory | Recommended Disk | Scale |
 | --- | --- | --- | --- | --- |
@@ -20,7 +20,7 @@ Choose a deployment size with `--size` — see [Installer Command Reference](../
 | **Enterprise** | 32 cores | 128 GB | 8 TB SSD | Up to ~3 billion objects and 100,000+ identities |
 
 :::warning
-A `micro` size also exists (8 cores, 24 GB, 80 GB SSD), but it targets development, CI, and demo installs only. Don't use it for a production or customer-facing deployment.
+A `micro` size also exists (8 cores, 24 GB, 80 GB SSD), but it targets development, continuous integration (CI), and demo installs only. Don't use it for a production or customer-facing deployment.
 :::
 
 
@@ -36,7 +36,7 @@ The installer validates free space on the following paths:
 | `/var/log` | 5 GB | System and application logs |
 | `/etc` | 1 GB | Configuration files |
 
-** 40 GB free on `/var/lib` is the hard floor for every size — the installer fails preflight below it. The recommended amount in the [Deployment Sizing](#deployment-sizing) table is what your chosen `--size` is designed to hold as data accumulates; a host below it passes preflight with a warning rather than failing, because k3s thin-provisions storage and consumes it only as data actually arrives.
+** 40 GB free on `/var/lib` is the hard floor for every size — the installer fails preflight below it. The recommended amount in the [Deployment Sizing](#deployment-sizing) table is the amount your chosen `--size` needs as data accumulates; a host below it passes preflight with a warning rather than failing, because k3s thin-provisions storage and consumes it only as data arrives.
 
 The installer also verifies write access for `/var`, `/tmp`, and `/etc`.
 
