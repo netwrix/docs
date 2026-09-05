@@ -36,7 +36,7 @@ The installer validates free space on the following paths:
 | `/var/log` | 5 GB | System and application logs |
 | `/etc` | 1 GB | Configuration files |
 
-** 40 GB free on `/var/lib` is the hard floor for every size — the installer fails preflight below it. The recommended amount in the [Deployment Sizing](#deployment-sizing) table is what your chosen `--size` is designed to hold as data accumulates; a host below it passes preflight with a warning rather than failing, because k3s thin-provisions storage and consumes it only as data actually arrives.
+** 40 GB free on `/var/lib` is the hard floor for every size — the installer fails preflight below it. The recommended amount in the [Deployment Sizing](#deployment-sizing) table is the amount your chosen `--size` needs as data accumulates; a host below it passes preflight with a warning rather than failing, because k3s thin-provisions storage and consumes it only as data arrives.
 
 The installer also verifies write access for `/var`, `/tmp`, and `/etc`.
 
