@@ -10,7 +10,7 @@ Access Analyzer runs on a single Linux virtual machine. The installer runs prefl
 
 ## Deployment Sizing
 
-Choose a deployment size with `--size` — see [Installer Command Reference](../install-commands.md#choosing-a-deployment-size). The installer enforces each size's CPU and memory figures as hard preflight minimums and blocks installation if the system falls below them. Disk works differently: a fixed 40 GB floor blocks installation regardless of size, and the size's disk figure is a recommendation that only warns if the host falls short (see [Disk Space Requirements](#disk-space-requirements)).
+Choose a deployment size with `--size` — see [Installer Command Reference](/docs/accessanalyzer/2601/install/install-commands#choosing-a-deployment-size). The installer enforces each size's CPU and memory figures as hard preflight minimums and blocks installation if the system falls below them. Disk works differently: a fixed 40 GB floor blocks installation regardless of size, and the size's disk figure is a recommendation that only warns if the host falls short (see [Disk Space Requirements](#disk-space-requirements)).
 
 | Size | CPU | Memory | Recommended Disk | Scale |
 | --- | --- | --- | --- | --- |
