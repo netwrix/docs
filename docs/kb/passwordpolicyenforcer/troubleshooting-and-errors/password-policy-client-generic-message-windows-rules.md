@@ -52,7 +52,7 @@ The following steps occur in order when you change your password:
   maximum age, minimum length, and complexity.
    - If the password fails any Windows rule, LSASS rejects the change immediately. PPE does not see the password on the domain controller.
    - If the password passes all Windows rules, LSASS sends it to PPE for additional checks.
-3. **Password Policy Server** — On the domain controller, PPE evaluates the password against all its rules except [Similarity](pathname:///docs/passwordpolicyenforcer/11_2/admin/manage-policies/rules/similarity_rule), and accepts or rejects the password.
+3. **Password Policy Server** — On the domain controller, PPE evaluates the password against all its rules except [Similarity](pathname:///docs/passwordpolicyenforcer/admin/manage-policies/rules/similarity_rule), and accepts or rejects the password.
 
 ### Effect on the Password Policy Client
 
@@ -71,11 +71,11 @@ PPE can only log rejection events if PPE rejects the password, either on the cli
 
 To ensure PPE evaluates all passwords and can provide detailed rejection messages, disable the Windows password policy rules. You must then satisfy only the PPE rules.
 
-See [Disable Windows Rules](pathname:///docs/passwordpolicyenforcer/11_2/installation/disable_windows_rules) for instructions.
+See [Disable Windows Rules](pathname:///docs/passwordpolicyenforcer/installation/disable_windows_rules) for instructions.
 
 > **NOTE:** If your organization requires both Windows and PPE rules, you must satisfy both. A password that passes all client-side PPE rules but fails a Windows rule will always produce a generic rejection message, and PPE logs no event for that rejection. This is expected behavior.
 
 ## Related Links
 
-- [Similarity](pathname:///docs/passwordpolicyenforcer/11_2/admin/manage-policies/rules/similarity_rule)
-- [Disable Windows Rules](pathname:///docs/passwordpolicyenforcer/11_2/installation/disable_windows_rules)
+- [Similarity](pathname:///docs/passwordpolicyenforcer/admin/manage-policies/rules/similarity_rule)
+- [Disable Windows Rules](pathname:///docs/passwordpolicyenforcer/installation/disable_windows_rules)

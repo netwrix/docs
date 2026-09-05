@@ -90,7 +90,7 @@ Export the variables before running the installer. When you set the same option 
 | `LICENSE_KEY` | `--license-key` | `NWRX-XXXX-XXXX-XXXX` |
 | `DSPM_HOSTNAME` | `--hostname` | `aa2601.corp.example.com` |
 | `TARGET_REVISION` | `--target-revision` | `1.0.8` (pinned) or omit for latest |
-| `SIZE` | `--size` | `1` (default), `2`, up to `10` |
+| `SIZE` | `--size` | `small`, `medium` (default), `large`, `enterprise` |
 | `TLS_CERT_FILE` | `--tls-cert` | `/opt/dspm-tls/aa2601.crt` |
 | `TLS_KEY_FILE` | `--tls-key` | `/opt/dspm-tls/aa2601.key` |
 | `TLS_CA_BUNDLE_FILE` | `--ca-bundle` | `/opt/dspm-tls/ca-bundle.crt` |
@@ -174,15 +174,23 @@ Each directory must already exist and be writable before the installer runs. The
 - Not be a system directory (`/bin`, `/etc`, `/usr`, `/var/log`, and others)
 - Not contain special characters: `"`, `'`, `\`, `` ` ``, or `$`
 
-### Scaling resources for larger servers
+### Choosing a deployment size
 
-The `--size` option scales CPU and memory allocations for all Access Analyzer workloads. The default value of `1` suits the minimum recommended hardware (24 GB RAM, 6 vCPUs). Increase this on servers with more resources:
+The `--size` option selects the deployment size profile, which sets the CPU, memory, and disk allocations for all Access Analyzer workloads and the host minimums preflight enforces. Accepted values are `small`, `medium`, `large`, and `enterprise`. The default is `medium`.
+
+:::warning
+The installer also accepts `--size micro`, but this profile is sized for development, CI, and demo installs only. Don't use it for a production or customer-facing deployment.
+:::
 
 ```bash
-curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --size 2
+curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --size large
 ```
 
-The valid range is `1` through `10`. Contact Netwrix Support for guidance on which value is appropriate for your server.
+See [Hardware and System Requirements](system/requirements.md#deployment-sizing) for the CPU, memory, and disk requirements of each size. Contact Netwrix Support for guidance on which size is appropriate for your environment.
+
+:::note
+Earlier releases accepted a numeric `--size` value from `1` through `10`. Numeric values are no longer accepted — the installer rejects them and names the closest replacement size, but confirm that size's requirements against your server before using it.
+:::
 
 ### Increasing log verbosity
 
@@ -223,7 +231,7 @@ If you run the installer on multiple servers with the same options, you can stor
 log-level: info
 postgres-data-dir: /mnt/ssd/postgres
 clickhouse-data-dir: /mnt/nvme/clickhouse
-size: 2
+size: large
 ```
 
 Don't store your license key in this file. Use the `LICENSE_KEY` environment variable instead.

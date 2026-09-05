@@ -26,10 +26,10 @@ Choose a deployment size based on your environment:
 
 | Size | CPU | Memory | Minimum Disk Space |
 | --- | --- | --- | --- |
-| **Small** | 8 cores | 32 GB | 500 GB SSD |
-| **Medium** | 16 cores | 48 GB | 1 TB SSD |
-| **Large** | 32 cores | 64 GB | 1 TB SSD |
-| **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD |
+| **Small** | 8 cores | 32 GB | 400 GB SSD |
+| **Medium** *(default)* | 16 cores | 64 GB | 1 TB SSD |
+| **Large** | 24 cores | 96 GB | 3 TB SSD |
+| **Enterprise** | 32 cores | 128 GB | 8 TB SSD |
 
 :::note
 The required disk space scales with the number of objects across your sources, not the size of on-disk data, because Access Analyzer stores only object metadata, not actual contents. These are minimum disk space requirements — allocate more if possible to avoid running out of space later.
@@ -70,7 +70,7 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | Option | What It Does | Best For | What to Prepare |
 | --- | --- | --- | --- |
 | **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
-| **Sign with AD Certificate Services** | Installer generates a certificate signing request (CSR) and submits it to your organization's Active Directory Certificate Services (AD CS), where your internal Enterprise CA signs it | Enterprise environments that already run AD CS and where the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
+| **Sign with AD Certificate Services** | Installer generates a certificate signing request (CSR) and submits it to your organization's Active Directory Certificate Services (AD CS), where your internal Enterprise CA signs it | Enterprise environments that already run AD CS and where the server can reach the CA | AD CS reachable from the server; an account with certificate enrollment rights |
 | **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized Public Key Infrastructure (PKI) team, or where AD CS isn't available | Three PEM files — see [file requirements](#bring-your-own-certificate-file-requirements) |
 
 #### Bring your own certificate file requirements

@@ -10,16 +10,18 @@ Access Analyzer runs on a single Linux virtual machine. The installer runs prefl
 
 ## Deployment Sizing
 
-The installer enforces absolute minimums via preflight checks and blocks installation if the system falls below these thresholds. Use the **Production Recommended** specifications for customer-facing or enterprise deployments.
+Choose a deployment size with the installer's `--size` option. The installer enforces each size's CPU and memory figures as hard preflight minimums and blocks installation if the system falls below them. Disk works differently: a fixed 40 GB floor blocks installation regardless of size, and the size's disk figure is a recommendation that only warns if the host falls short (see [Disk Space Requirements](#disk-space-requirements)).
 
-**Absolute installer minimums:** 6 vCPUs, 24 GB RAM, 20 GB free disk.
-
-| Size | Recommended CPU | Recommended Memory | Recommended Disk | Data Threshold |
+| Size | CPU | Memory | Recommended Disk | Scale |
 | --- | --- | --- | --- | --- |
-| **Small** | 8 cores | 24 GB | 300 GB SSD | Up to 5 TB |
-| **Medium** | 16 cores | 48 GB | 600 GB SSD | 5 TB – 100 TB |
-| **Large** | 32 cores | 64 GB | 1 TB SSD | 100 TB – 1 PB |
-| **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD | 1 PB+ |
+| **Small** | 8 cores | 32 GB | 400 GB SSD | Up to ~25 million objects and under 5,000 identities |
+| **Medium** *(default)* | 16 cores | 64 GB | 1 TB SSD | Up to ~200 million objects and 5,000–25,000 identities |
+| **Large** | 24 cores | 96 GB | 3 TB SSD | Up to ~800 million objects and 25,000–100,000 identities |
+| **Enterprise** | 32 cores | 128 GB | 8 TB SSD | Up to ~3 billion objects and 100,000+ identities |
+
+:::warning
+A `micro` size also exists (8 cores, 24 GB, 80 GB SSD), but it targets development, continuous integration (CI), and demo installs only. Don't use it for a production or customer-facing deployment.
+:::
 
 
 ## Disk Space Requirements
@@ -30,11 +32,11 @@ The installer validates free space on the following paths:
 | --- | --- | --- |
 | `/` | 20 GB | Root filesystem |
 | `/var` | 20 GB | K3s data, containers, logs |
-| `/var/lib` | 52 GB ** | K3s data directory |
+| `/var/lib` | 40 GB minimum; see the [Deployment Sizing](#deployment-sizing) table for the recommended amount ** | K3s data directory |
 | `/var/log` | 5 GB | System and application logs |
 | `/etc` | 1 GB | Configuration files |
 
-** The scan queue reserves disk space in `/var/lib`, so the required size of `/var/lib` depends on the deployment size. The scan queue needs 32 GB multiplied by the deployment size. For example, a deployment size of 2 requires 64 GB for the scan queue plus the 20 GB baseline, for a total of 84 GB in `/var/lib`.
+** 40 GB free on `/var/lib` is the hard floor for every size — the installer fails preflight below it. The recommended amount in the [Deployment Sizing](#deployment-sizing) table is the amount your chosen `--size` needs as data accumulates; a host below it passes preflight with a warning rather than failing, because k3s thin-provisions storage and consumes it only as data arrives.
 
 The installer also verifies write access for `/var`, `/tmp`, and `/etc`.
 

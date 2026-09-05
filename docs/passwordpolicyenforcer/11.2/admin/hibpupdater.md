@@ -27,7 +27,7 @@ If you copy and store the HIBP database locally on the Domain Controllers:
 
 - The HIBP database takes up additional space on the machine where you copy it. (Aproximetly 13GB but subject to change)
 - For local storage, the database must be on every Domain Controller in the same location that the Rule specifies.
-- A network connection isn't involved and doesn't affect the performance of checking the password against the HIBP database
+- Checking the password against the HIBP database doesn't involve a network connection, so network conditions don't affect performance
 - PPE checks the pending password candidate against the archived hash file locally. If the password hash matches an entry, PPE rejects the pending password change.
 
 
@@ -135,7 +135,7 @@ to receive hash file updates, then use the Sysvol share for file replication and
 scheduled task to copy the file to a local folder.
 
 :::warning
-%SystemRoot%. Read hash files only from a local disk. Using shared hash files
+Read hash files only from a local disk. Using shared hash files
 degrades performance, and could jeopardize security.
 :::
 

@@ -1,0 +1,10 @@
+{
+  "label": "Password Policy Enforcer Web",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "web_overview"
+  }
+}
