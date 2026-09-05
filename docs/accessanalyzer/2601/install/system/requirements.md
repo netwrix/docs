@@ -20,7 +20,7 @@ Choose a deployment size with the installer's `--size` option. The installer enf
 | **Enterprise** | 32 cores | 128 GB | 8 TB SSD | Up to ~3 billion objects and 100,000+ identities |
 
 :::warning
-A `micro` size also exists (8 cores, 24 GB, 80 GB SSD), but it targets development, CI, and demo installs only. Don't use it for a production or customer-facing deployment.
+A `micro` size also exists (8 cores, 24 GB, 80 GB SSD), but it targets development, continuous integration (CI), and demo installs only. Don't use it for a production or customer-facing deployment.
 :::
 
 
