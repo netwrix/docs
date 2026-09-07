@@ -12,9 +12,9 @@ sidebar_position: 6
 
 | Column | What it shows |
 |---|---|
-| **Timestamp** | When the entry was written. Sortable; newest first by default. |
+| **Timestamp** | When Access Analyzer wrote the entry. Sortable; newest first by default. |
 | **Level** | A colored chip: **Error** (red), **Warn** (orange), **Info** (blue), or **Debug** (gray). |
-| **Component** | The component that wrote the entry, or **—** when none was recorded. |
+| **Component** | The component that wrote the entry, or **—** when the entry names none. |
 | **Message** | The log message on one line. Hover to read a long message in full. Entries that carry an error detail show it as a second line in red beneath the message. |
 
 The table shows 25 rows per page by default; 10, 50, and 100 are also available. Click a row to open the **Log details** drawer. It repeats the level, timestamp, and component, shows the full text under **MESSAGE**, and lists every attribute recorded with the entry as key-value pairs under **DETAILS**.
@@ -29,7 +29,7 @@ The toolbar narrows the table, and every filter also applies to downloads.
 | **Level** | One level: **All levels**, **Error**, **Warn**, **Info**, or **Debug**. |
 | **Component** | Any number of components, chosen with checkboxes. The list holds only components that appear in the retained logs. |
 | **From** and **To** | A date and time range, picked as day/month/year with a 12-hour clock. There are no preset ranges. |
-| **Clear filters** | Clears the active filters. Unavailable when no filter is set. |
+| **Clear filters** | Clears the active filters. Unavailable when no filter is active. |
 
 The view doesn't refresh on its own; reload the page or change a filter to pick up new entries.
 

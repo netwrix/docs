@@ -6,7 +6,7 @@ sidebar_position: 2
 
 The built-in library covers regulated identifiers and secrets, not the identifiers specific to your organization: employee numbers, customer account codes, project codenames, and internal hostnames. A custom pattern is a regular expression you write for one of those, with a name, a confidence level, and the pattern groups it belongs to.
 
-Once saved, a custom pattern behaves like any other: it appears in the patterns table with its regular expression and a **Copy regex** button, it runs in every Sensitive data scan that classifies one of its groups, and its matches appear in reports under its name. Changes reach scans within about a minute. At scan time, a custom pattern records at most 10 matches per file.
+After you save it, a custom pattern behaves like any other: it appears in the patterns table with its regular expression and a **Copy regex** button, it runs in every Sensitive data scan that classifies one of its groups, and its matches appear in reports under its name. Changes reach scans within about a minute. At scan time, a custom pattern records at most 10 matches per file.
 
 You need the Admin role to create, edit, or delete patterns.
 
@@ -52,9 +52,9 @@ The pattern appears in the table, and a message confirms the save: **Pattern "`<
 |---|---|---|
 | **Name** | Yes | 1 to 255 characters. Shown in the patterns table, in group listings, and in reports. |
 | **Description** | No | Up to 2,000 characters. |
-| **Regex Pattern** | Yes | The regular expression, in the dialect described above. Validated on the server as you type. |
+| **Regex Pattern** | Yes | The regular expression, in the dialect described in [Regular expression dialect](#regular-expression-dialect). Access Analyzer validates it on the server as you type. |
 | **Confidence** | Yes | **Low**, **Medium**, or **High**. Defaults to **Medium**. See [Confidence levels](index.md#confidence-levels). |
-| **Groups** | No | Any combination of built-in and custom groups. A pattern in no group is listed under **Ungrouped**. |
+| **Groups** | No | Any combination of built-in and custom groups. A pattern in no group appears under **Ungrouped**. |
 
 Scans select groups, not individual patterns, so no scan can target a pattern that belongs to no group. Put it in at least one group. See [Pattern groups](pattern-groups.md).
 
@@ -83,7 +83,7 @@ Badge: 4821
 Cost center: CC-004821
 ```
 
-The first two lines are tinted green and the last two red, and the status reads **2 of 4 lines matched**. Click **Create Pattern**.
+The tester tints the first two lines green and the last two red, and the status reads **2 of 4 lines matched**. Click **Create Pattern**.
 
 ## Edit a custom pattern
 
@@ -96,7 +96,7 @@ The first two lines are tinted green and the last two red, and the status reads 
 
 A message confirms the change: **Pattern "`<name>`" updated successfully.**
 
-If the pattern saves but its group changes fail, the message **Pattern "`<name>`" was saved, but its group memberships could not be updated.** appears, followed by the error. Click **Save Changes** again (or **Create Pattern**, when you're creating the pattern). The retry updates the saved pattern instead of creating a duplicate.
+If the pattern saves but its group changes fail, the message **Pattern "`<name>`" was saved, but its group memberships couldn't be updated.** appears, followed by the error. Click **Save Changes** again (or **Create Pattern**, when you're creating the pattern). The retry updates the saved pattern instead of creating a duplicate.
 
 ## Delete a custom pattern
 
@@ -111,7 +111,7 @@ Scans and groups that use a pattern don't block its deletion, and there is no in
 3. In **Actions**, click **Delete pattern**.
 4. Confirm the deletion.
 
-A message confirms the deletion: **Pattern "`<name>`" was deleted successfully.** Deleting a pattern also removes it from every group. Findings already recorded keep the pattern's name, so historical reports are unaffected.
+A message confirms the deletion: **Pattern "`<name>`" was deleted successfully.** Deleting a pattern also removes it from every group. Findings already recorded keep the pattern's name, so historical reports don't change.
 
 ## Manage a pattern's groups
 
@@ -120,4 +120,4 @@ You can change a custom pattern's groups in two places:
 - In the pattern's **Edit Pattern** dialog, through the **Groups** field, where you set all of the pattern's groups at once.
 - From a group's **Manage patterns** action, which adds or removes custom patterns for that one group. See [Pattern groups](pattern-groups.md#manage-the-patterns-in-a-group).
 
-Neither path changes a built-in pattern: **Edit pattern** is disabled for built-ins, and adding or removing one through **Manage patterns** is rejected. Their group membership is fixed.
+Neither path changes a built-in pattern: you can't open **Edit pattern** for a built-in, and **Manage patterns** rejects adding or removing one. Their group membership is fixed.

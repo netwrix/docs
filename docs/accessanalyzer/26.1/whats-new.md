@@ -18,7 +18,7 @@ A source is one system Access Analyzer scans: File Server, Active Directory, Ent
 
 ## Service accounts
 
-A service account is a saved credential for reading a source or deploying an agent: Username/password, Client ID/secret, Client ID/certificate, or SSH username/key. For a certificate account, Access Analyzer can generate a self-signed certificate valid for one year, or you can upload your own. Secrets are never displayed after you save them. See [Service accounts](service-accounts/index.md).
+A service account is a saved credential for reading a source or deploying an agent: Username/password, Client ID/secret, Client ID/certificate, or SSH username/key. For a certificate account, Access Analyzer can generate a self-signed certificate valid for one year, or you can upload your own. Access Analyzer never displays a secret after you save it. See [Service accounts](service-accounts/index.md).
 
 ## Agents
 

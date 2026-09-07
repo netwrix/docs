@@ -33,7 +33,7 @@ A label is a `key=value` pair. Source labels group sources and let a scan target
 
 ## Scan and scan type
 
-A scan is a saved definition: a name, one scan type, a target, settings per source type, an agent, and a schedule. Nothing is collected until it runs. The type is fixed at creation and decides what is collected. An **Access scan** inventories shares, folders, files, sites, and their permissions. A **Sensitive data scan** reads file content and matches it against sensitive data patterns. An **Identity sync** pulls users, groups, and memberships from a directory. "Finance access" is an Access scan targeting `team=finance` sources; "Finance sensitive data" reads the same sources after the first has completed. See [Scans](scans/index.md) and [Scan types](scans/scan-types.md).
+A scan is a saved definition: a name, one scan type, a target, settings per source type, an agent, and a schedule. The scan collects nothing until it runs. You choose the type at creation, and it decides what the scan collects. An **Access scan** inventories shares, folders, files, sites, and their permissions. A **Sensitive data scan** reads file content and matches it against sensitive data patterns. An **Identity sync** pulls users, groups, and memberships from a directory. "Finance access" is an Access scan targeting `team=finance` sources; "Finance sensitive data" reads the same sources after the first has completed. See [Scans](scans/index.md) and [Scan types](scans/scan-types.md).
 
 ## Schedule
 

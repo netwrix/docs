@@ -55,7 +55,7 @@ You choose the agent that runs the sync when you create the scan; see [Agents](.
 
 :::note
 
-Changing **Host** or **Domain** on an existing source shows the warning **Existing scan data won't follow this change**. Data already synced stays associated with the previous host and domain. To rename the source, change **Name** instead.
+Changing **Host** or **Domain** on an existing source shows the warning **Existing scan data won't follow this change**. Data already synced stays with the previous host and domain. To rename the source, change **Name** instead.
 
 :::
 
@@ -66,13 +66,13 @@ Changing **Host** or **Domain** on an existing source shows the warning **Existi
 Success shows the message **Connection successful**. Failure shows **Connection failed** with the reason. Two failures are common:
 
 - On port 389 with an IP address in **Host**, authentication can fail; the message then asks you to use an FQDN instead of an IP address.
-- On port 636, a TLS failure usually means the domain controller isn't offering LDAPS on that port or presents a certificate the agent doesn't trust. Check that LDAPS is enabled on 636 and the certificate validates, select **Ignore SSL errors** to skip validation, or connect on port 389 instead.
+- On port 636, a TLS failure usually means the domain controller isn't offering LDAPS on that port or presents a certificate the agent doesn't trust. Check that the domain controller offers LDAPS on 636 and that its certificate validates, select **Ignore SSL errors** to skip validation, or connect on port 389 instead.
 
 ## What the sync collects
 
 An **Identity sync** reads three kinds of objects:
 
-| Object | What's recorded |
+| Object | What Access Analyzer records |
 |---|---|
 | Users: identifiers | Account name, SID, globally unique identifier (GUID), distinguished name, and user principal name |
 | Users: profile | Display and contact details, title, department, company, manager, and employee ID |

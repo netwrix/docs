@@ -8,7 +8,7 @@ Gather everything on this page before you run the installer. The installer runs 
 
 ## Server
 
-Access Analyzer installs on a single Linux server, physical or virtual.
+Access Analyzer installs on a single physical or virtual Linux server.
 
 | Requirement | Details |
 |---|---|
@@ -86,7 +86,7 @@ The server also listens on port 9000. Users don't need it, so block it at the fi
 
 ### Outbound
 
-The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or is refused.
+The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or the host refuses it.
 
 | Host | Purpose |
 |---|---|
@@ -122,6 +122,6 @@ Some features add outbound connections of their own after you configure them.
 
 ## Browser
 
-Any current browser works. Internet Explorer isn't supported.
+Any current browser works. Access Analyzer doesn't support Internet Explorer.
 
 Once everything on this page is in place, continue to [Install Access Analyzer](run-the-installer.md).

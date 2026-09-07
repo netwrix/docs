@@ -42,11 +42,11 @@ Go to **Configuration > Agents**.
 | **Name / IP** | The agent's name, with its hostname or IP address underneath |
 | **Labels** | The `key=value` labels used for scan routing |
 | **Health Status** | Whether the agent is reporting normally; see [Health status](#health-status) |
-| **Last Heartbeat** | When the agent last reported in to the server; a dash means no heartbeat has been recorded |
+| **Last Heartbeat** | When the agent last reported in to the server; a dash means the agent hasn't reported yet |
 | **Last Updated** | When the agent's record last changed |
 | **Actions** | **Edit** for every agent; **Delete** for deployed agents only |
 
-The list is sorted by **Last Updated**, newest first, and you can sort by **Name** and **Health Status** as well. It shows 25 agents per page (you can pick 10, 25, or 50) and refreshes every 60 seconds on its own, pausing while the **Deploy agent** or **Edit agent** panel is open.
+The list sorts by **Last Updated**, newest first, and you can sort by **Name** and **Health Status** as well. It shows 25 agents per page (you can pick 10, 25, or 50) and refreshes every 60 seconds on its own, pausing while the **Deploy agent** or **Edit agent** panel is open.
 
 The **Search agents…** field matches an agent's name, a label key, a label value, or a `key:value` pair, so `region:us-east` finds every agent carrying that label. **Clear filters** resets the search. **Deploy agent** starts the deployment flow.
 
@@ -57,7 +57,7 @@ The **Search agents…** field matches an agent's name, a label key, a label val
 | **Healthy** | The agent is connected and reporting to the server | Nothing; scans routed to it run normally |
 | **Offline** | The server has stopped hearing from the agent | Check the host and its connection to the server |
 
-The heartbeat is the agent's regular check-in with the server. **Last Heartbeat** shows the time of the most recent one, so a stale value alongside **Offline** tells you roughly when the agent went offline. Scan executions routed to an offline agent wait for it to come back and are marked **Failed** if it stays offline for about two hours; see [When no agent matches](agent-labels.md#when-no-agent-matches).
+The heartbeat is the agent's regular check-in with the server. **Last Heartbeat** shows the time of the most recent one, so a stale value alongside **Offline** tells you roughly when the agent went offline. Scan executions routed to an offline agent wait for it to come back, and fail if it stays offline for about two hours; see [When no agent matches](agent-labels.md#when-no-agent-matches).
 
 Offline agents also surface on the Home page. The **Needs attention** panel counts them ("1 agent is offline.") and its **Check agents** link opens the Agents page.
 

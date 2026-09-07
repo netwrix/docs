@@ -12,7 +12,7 @@ Open the page from **Reports > Data**. [Dashboards and reports](../index.md) cov
 
 ## The Data page
 
-The page is a table with two columns, **Report** and **Category**. Each row shows the report name with its description underneath, and a category chip on the right. Click anywhere on a row to open the report.
+The page is a table with two columns: **Report** and **Category**. Each row shows the report name with its description underneath, and a category chip on the right. Click anywhere on a row to open the report.
 
 Above the table, tabs narrow the list by platform and chips narrow it by category. Each tab and chip shows how many reports it contains.
 
@@ -122,7 +122,7 @@ Where High Risk ACLs looks at individual permission entries, Open Access resolve
 | **Exposed Sensitive Data** | A pie chart of the patterns matched in open folders |
 | **Folders with Open Access** | The detail list, one row per open folder |
 
-Needs an Access scan on the File Server source, plus a Sensitive data scan for the two sensitive data cards. The effective membership resolution uses the Identity sync of the Active Directory domain the trustees belong to; without it, access granted through nested groups isn't detected.
+Needs an Access scan on the File Server source, plus a Sensitive data scan for the two sensitive data cards. The effective membership resolution uses the Identity sync of the Active Directory domain the trustees belong to; without it, the report doesn't detect access granted through nested groups.
 
 ### Share Audit
 
@@ -142,7 +142,7 @@ Share Audit is the one report that looks at a single share at a time and covers 
 
 | Tab | Card | What it shows |
 |---|---|---|
-| **Overview** | **Last Scanned** | When the share was last scanned |
+| **Overview** | **Last Scanned** | When a scan last covered the share |
 | **Overview** | **Folders** | The number of folders in the share |
 | **Overview** | **Files** | The number of files in the share |
 | **Overview** | **File Size** | The total size of those files |
@@ -152,7 +152,7 @@ Share Audit is the one report that looks at a single share at a time and covers 
 | **Overview** | **Probable Owner** | The account whose activity suggests it owns the share; needs Netwrix Activity Monitor events |
 | **Permissions** | **Share Permissions** | The share-level permission list, with trustees resolved to user and group names |
 | **Permissions** | **Expanded Permissions** | Effective folder permissions, with group membership expanded |
-| **Permissions** | **Broken Inheritance** | Folders in this share whose inheritance has been broken |
+| **Permissions** | **Broken Inheritance** | Folders in this share with broken inheritance |
 | **Sensitive Data** | **Files with Sensitive Data** | The number of files with at least one match |
 | **Sensitive Data** | **Patterns Found** | The number of distinct patterns matched |
 | **Sensitive Data** | **Pattern Groups Found** | The number of distinct pattern groups matched |
@@ -227,7 +227,7 @@ Needs a Sensitive data scan on the File Server source.
 
 "Permission breakdown filtered to shares that contain sensitive data."
 
-This second Share Audit row sits under the **Classification / Stale Data** category so that it's findable when you're working through sensitive data rather than permissions. It opens the same Share Audit report described [above](#share-audit), with the same filters and tabs; the **Share** filter lists every scanned share, not only those with sensitive data. Pick the share you're interested in and go to the **Sensitive Data** tab.
+This second Share Audit row sits under the **Classification / Stale Data** category so that it's findable when you're working through sensitive data rather than permissions. It opens the same report described in [Share Audit](#share-audit), with the same filters and tabs; the **Share** filter lists every scanned share, not only those with sensitive data. Pick the share you're interested in and go to the **Sensitive Data** tab.
 
 ![Share Audit report](/images/accessanalyzer/26.1/dashboards-reports/report-share-audit-sensitive.webp)
 

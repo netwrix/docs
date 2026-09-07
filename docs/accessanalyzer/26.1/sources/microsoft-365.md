@@ -66,13 +66,13 @@ The **Connection** fields:
 | **SharePoint domain** | Yes | The tenant's SharePoint Online domain, for example `contoso.sharepoint.com`. | None |
 | **Azure cloud** | No | The Azure cloud environment that hosts the tenant: **Azure (Commercial)**, **Azure Government (GCC)**, **Azure Government (GCC High)**, **Azure Government (DoD)**, or **Azure China (21Vianet)**. | Azure (Commercial) |
 
-Changing **SharePoint domain** on an existing source shows the warning **Existing scan data won't follow this change**: data already collected stays associated with the old domain. To rename the source, change **Name** instead.
+Changing **SharePoint domain** on an existing source shows the warning **Existing scan data won't follow this change**: data already collected stays with the old domain. To rename the source, change **Name** instead.
 
 ## Test connection
 
 **Test connection** signs in to the tenant with the service account's client ID and certificate. The button becomes available after you enter a **SharePoint domain** and select a service account.
 
-Success shows the message **Connection successful**. Failure shows an alert titled **Connection failed** with the reason. If no specific reason is available, the message is **SharePoint connection validation failed.**
+Success shows the message **Connection successful**. Failure shows an alert titled **Connection failed** with the reason. If Access Analyzer has no specific reason to report, the message is **SharePoint connection validation failed.**
 
 ## What the scans collect
 
@@ -80,10 +80,10 @@ Success shows the message **Connection successful**. Failure shows an alert titl
 
 Access scans crawl everything within the scope you set on the scan, on every run; there is no differential mode for this source type.
 
-| Object | What's recorded |
+| Object | What Access Analyzer records |
 |---|---|
 | Tenant sharing settings | External sharing capability for the tenant and for OneDrive, whether the Everyone and All Users claims are visible, and the sharing domain allow and block lists |
-| Site collections | Site and web IDs, type (Team, Communication, or Personal), template, external sharing capability at that scope, guest access, read-only and lock state, and whether custom scripts are blocked |
+| Site collections | Site and web IDs, type (Team, Communication, or Personal), template, external sharing capability at that scope, guest access, read-only and lock state, and whether the site blocks custom scripts |
 | Lists and libraries | List ID and template type |
 | Documents | Document ID, version label, and the user who has it checked out |
 | Permissions | Which principal holds which permission level on which object, the numeric permission mask, and the sharing type |
@@ -105,6 +105,6 @@ See [Scan types](../scans/scan-types.md) for how these options appear when you c
 
 ### Sensitive data scans
 
-Sensitive data scans read the contents of the documents an Access scan found and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). The scan skips documents larger than `sharepoint_file_size_max_mb` (10 MB by default) and documents whose extension is listed in `sharepoint_excluded_extensions`; you set both in [Application settings](../settings/application.md). When the tenant throttles requests, the scan backs off and retries.
+Sensitive data scans read the contents of the documents an Access scan found and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). The scan skips documents larger than `sharepoint_file_size_max_mb` (10 MB by default) and documents whose extension appears in `sharepoint_excluded_extensions`; you set both in [Application settings](../settings/application.md). When the tenant throttles requests, the scan backs off and retries.
 
 The collected data drives the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) and the SharePoint [Data reports](../dashboards-reports/reports/data.md).

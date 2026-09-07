@@ -6,7 +6,7 @@ description: A scan is a saved definition of what to collect, from which sources
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A scan is a saved definition: a name, one scan type, a target, settings per source type, an agent, and a schedule. Nothing is collected until the scan runs. Each run creates one scan execution per target source, and those executions are what fill the dashboards and reports.
+A scan is a saved definition: a name, one scan type, a target, settings per source type, an agent, and a schedule. The scan collects nothing until it runs. Each run creates one scan execution per target source, and those executions are what fill the dashboards and reports.
 
 Three scan types exist. An **Access scan** inventories shares, folders, files, sites, and their permissions. A **Sensitive data scan** reads file content and classifies it against sensitive data patterns. An **Identity sync** pulls users, groups, and memberships from a directory. [Scan types](scan-types.md) explains what each one collects, which source types support it, and every setting. [Schedules](schedules.md) covers when scans run, and [Scan executions](scan-executions.md) covers following a run after it has started.
 
@@ -38,8 +38,8 @@ Go to **Configuration > Scans**. The page lists every scan with its type, target
 | **Agent** | **System** when the scan runs on the System agent, otherwise the agent label as `key=value`. |
 | **Schedule** | **Manual**, or a short summary of the schedule such as **Daily 2AM** or **Hourly**. Click it to open the calendar. |
 | **Schedule Status** | **Active** when the scan runs on a schedule, **Disabled** when it runs manually. |
-| **Created** | When the scan was created. |
-| **Actions** | The row menu, described below. |
+| **Created** | When you created the scan. |
+| **Actions** | The row menu; see [Row actions](#row-actions). |
 
 **Search scans…** matches the scan name, the scan type, the names and types of the target sources, and label selectors written as `key=value`. The **Scan type** and **Source type** dropdowns narrow the list further, and **Clear filters** resets both. You can sort by **Name**, **Scan Type**, or **Created**; the newest scans come first by default. The table shows 10, 25, 50, or 100 rows per page.
 
@@ -53,8 +53,8 @@ The **Actions** menu on each row offers up to five items. **Run**, **Pause**, an
 
 | Action | What it does | When it appears |
 |---|---|---|
-| **Run** | Starts one execution per target source, or resumes a source's paused execution, and opens Scan executions filtered to this scan. | At least one target source has no execution in progress, or has a paused execution that can be resumed |
-| **Pause** | Asks every active execution of the scan to pause. Paused executions keep their progress and can be resumed. | The scan has an execution that can be paused |
+| **Run** | Starts one execution per target source, or resumes a source's paused execution, and opens Scan executions filtered to this scan. | At least one target source has no execution in progress, or has a paused execution you can resume |
+| **Pause** | Asks every active execution of the scan to pause. Paused executions keep their progress, and you can resume them. | The scan has an execution that can be paused |
 | **Stop** | Opens **Stop scan**, which stops every running and paused execution of the scan. | The scan has an execution that hasn't finished |
 | **Edit scan** | Opens the scan at the **Review** step. | Always |
 | **Delete** | Opens **Delete scan**. | Always |
@@ -193,4 +193,4 @@ Removing a source from a scan's target, whether by clearing its checkbox or by c
 2. Open the scan's **Actions** menu and click **Delete**.
 3. In the **Delete scan** dialog, click **Delete**.
 
-The dialog states the consequences: "Are you sure you want to delete this scan? This action cannot be undone. Any running executions will be stopped, and all associated scan executions and data will be permanently removed." When an execution is in progress, the dialog adds a line warning that deleting the scan stops it. Deletion goes ahead either way.
+The dialog states the consequences: "Are you sure you want to delete this scan? This action can't be undone. Any running executions will be stopped, and all associated scan executions and data will be permanently removed." When an execution is in progress, the dialog adds a line warning that deleting the scan stops it. Deletion goes ahead either way.

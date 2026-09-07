@@ -18,9 +18,9 @@ The page lists every account in a table. Enter text in **Search service accounts
 | Column | What it shows |
 |---|---|
 | **Name** | The name you gave the account. Sources and the CSV import refer to accounts by this name. |
-| **Account Type** | One of the four types described below. |
-| **Created At** | When the account was created. The list is sorted by this column, newest first, until you click another header. |
-| **Last Updated** | When the account was last saved. |
+| **Account Type** | One of the four types; see [Service account types](#service-account-types). |
+| **Created At** | When you created the account. The list sorts by this column, newest first, until you click another header. |
+| **Last Updated** | When you last saved the account. |
 | **Actions** | A menu with **Edit** and **Delete**. |
 
 **Rows per page** offers 10, 25, 50, or 100 rows. Before you add anything, the page reads **No service accounts yet**; if a search matches nothing, it reads **No service accounts match your filters**.
@@ -29,7 +29,7 @@ The page lists every account in a table. Enter text in **Search service accounts
 
 ## Service account types
 
-Each account has one type, chosen when you create it and fixed from then on. The type decides which fields the form asks for and which systems the account can authenticate to.
+Each account has one type. You choose it when you create the account, and it stays fixed from then on. The type decides which fields the form asks for and which systems the account can authenticate to.
 
 | Type (as shown in the form) | Use it for | Details |
 |---|---|---|
@@ -38,7 +38,7 @@ Each account has one type, chosen when you create it and fixed from then on. The
 | **Client ID/certificate** | SharePoint Online sources | [Client ID and certificate](client-id-certificate.md) |
 | **SSH username/key** | Deploying agents | [SSH username and key](ssh-key.md) |
 
-For example, a File Server source pointing at `fs01.corp.example.com` needs a Username/password account for a domain user that can read the shares you want scanned. A SharePoint Online source needs a Client ID/certificate account for an app registration in the same tenant.
+For example, a File Server source pointing at `fs01.corp.example.com` needs a Username/password account for a domain user that can read the shares you want to scan. A SharePoint Online source needs a Client ID/certificate account for an app registration in the same tenant.
 
 :::warning
 
@@ -97,7 +97,7 @@ The message **Service account deleted** confirms the removal.
 
 ### Why a delete can fail
 
-You can't delete an account that's attached to a source. Access Analyzer refuses the request and shows **Failed to delete service account** with a message that the account is assigned to sources. Nothing warns you in advance: the list has no in-use column, and **Delete** stays available in the menu.
+You can't delete an account that's attached to a source. Access Analyzer refuses the request and shows **Failed to delete service account** with a message that sources are using the account. Nothing warns you in advance: the list has no in-use column, and **Delete** stays available in the menu.
 
 To remove such an account:
 

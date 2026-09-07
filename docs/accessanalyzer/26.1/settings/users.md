@@ -31,7 +31,7 @@ The **Add user** form labels the Admin role **Administrator**; the Users list an
 | **Role** | **Admin**, **User admin**, or **Viewer**. |
 | **Status** | **Active** or **Inactive**. Inactive users can't sign in. |
 | **Last login** | When the user last signed in. |
-| **Actions** | The row menu described below. |
+| **Actions** | The row menu; see [Row actions](#row-actions). |
 
 The toolbar has a **Search users…** box, a **Role** filter (**All roles**, **Admin**, **User admin**, **Viewer**), a **Status** filter (**All statuses**, **Active**, **Inactive**), **Clear filters**, and **Add user**. The table shows 10, 25, 50, or 100 rows per page.
 
@@ -46,11 +46,11 @@ Each row has an **Actions** menu.
 | **Edit** | Opens the **Edit user** form to change name, email, and role. | Every account |
 | **Deactivate** | Blocks sign-in and ends the user's sessions. | Active accounts |
 | **Activate** | Lets the user sign in again. | Inactive accounts |
-| **Reset password** | Issues a new password, generated or typed, and ends the user's sessions. | Local accounts |
+| **Reset password** | Issues a new password, either generated or typed, and ends the user's sessions. | Local accounts |
 | **Unlock** | Clears the lockout from repeated failed sign-ins. Doesn't reset the password. | Local accounts |
 | **Delete** | Removes the account permanently and ends the user's sessions. | Every account |
 
-**Deactivate** and **Delete** are disabled for your own account and for the last remaining active Admin or User admin, so you can't lock everyone out.
+You can't deactivate or delete your own account, or the last remaining active Admin or User admin, so you can't lock everyone out.
 
 ## Add a user
 
@@ -60,7 +60,7 @@ Decide two things before you start: the role, and whether the person signs in wi
 2. Click **Add user**.
 3. Under **Account information**, enter the **Name** (2 to 100 characters) and **Email**.
 4. Under **Role**, select **Administrator**, **User admin**, or **Viewer**. The default is **Viewer**.
-5. Under **Account type**, select **Federated (SSO)** for single sign-on (SSO) through your identity provider, or **Local (password)**. Federated is the default when an identity provider is connected. If none is, Access Analyzer disables that option, shows "No identity provider is configured yet", and selects **Local (password)** for you.
+5. Under **Account type**, select **Federated (SSO)** for single sign-on (SSO) through your identity provider, or **Local (password)**. Federated is the default when you've connected an identity provider. If you haven't, Access Analyzer disables that option, shows "No identity provider is configured yet", and selects **Local (password)** for you.
 6. For a local account, under **Security > Password**, keep **Generate** or select **Set explicitly**.
 7. If you selected **Set explicitly**, enter a password of at least 12 characters in the **Password** field that appears.
 8. Leave **Require password change at next sign-in** on. It's on by default and appears only for local accounts.
@@ -68,7 +68,7 @@ Decide two things before you start: the role, and whether the person signs in wi
 
 ![Add user dialog with account information, role, account type, and password options](/images/accessanalyzer/26.1/settings/add-user.webp)
 
-If you chose **Generate**, the **Password generated** dialog appears. It reads "This password is shown once and cannot be retrieved again. Copy it now and deliver it to the user through a secure channel."
+If you chose **Generate**, the **Password generated** dialog appears. It reads "This password is shown once and can't be retrieved again. Copy it now and deliver it to the user through a secure channel."
 
 1. Click the copy icon next to the password.
 2. Select the **I have copied this password** checkbox.
@@ -100,7 +100,7 @@ Once a federated user has signed in for the first time, the form locks **Name** 
 
 On the row, click **Actions > Deactivate**. The user's sessions end immediately and their status changes to **Inactive**. A message confirms **User "`<name>`" deactivated**. To let them back in, click **Actions > Activate**.
 
-Deactivating is the right choice when someone leaves temporarily or you want to keep their row for reference. For a federated user who has been disabled in your directory, deactivating the Access Analyzer row is optional: the directory already blocks their sign-in.
+Deactivating is the right choice when someone leaves temporarily or you want to keep their row for reference. For a federated user your directory has disabled, deactivating the Access Analyzer row is optional: the directory already blocks their sign-in.
 
 ## Reset a password
 
@@ -129,7 +129,7 @@ The user's sessions end, the row disappears, and a message confirms **User "`<na
 
 ## Password policy and lockout
 
-Local passwords must be at least 12 characters. There are no character-class rules, and the policy isn't editable in the web app. Passwords for federated users are governed by their directory, not by Access Analyzer.
+Local passwords must be at least 12 characters. There are no character-class rules, and you can't edit the policy in the web app. For federated users, their directory governs passwords, not Access Analyzer.
 
 An account locks after repeated failed sign-ins; the thresholds and how to clear the lock are in [Unlock a user](#unlock-a-user).
 
@@ -137,9 +137,9 @@ When a user signs in with **Require password change at next sign-in** set, a **C
 
 | Message | Cause |
 |---|---|
-| **Passwords do not match.** | **New password** and **Confirm password** differ. |
-| **Password does not meet complexity requirements.** | The new password is under 12 characters. |
-| **New password cannot be the same as your current password.** | The new password matches the current one. |
+| **Passwords don't match.** | **New password** and **Confirm password** differ. |
+| **Password doesn't meet complexity requirements.** | The new password is under 12 characters. |
+| **New password can't be the same as your current password.** | The new password matches the current one. |
 
 The first Admin created by the installer goes through this step on their first sign-in; see [Sign in for the first time](../install/first-sign-in.md).
 
@@ -170,7 +170,7 @@ The card then reads "An authenticator app is configured. You will be prompted fo
 
 :::warning
 
-There are no recovery codes, and the **Users** tab has no action to remove another user's authenticator app. If you lose access to your authenticator app, you can't sign in until the app is removed from your account on the server, outside the web app. Remove the app from this page before you replace or reset your device.
+There are no recovery codes, and the **Users** tab has no action to remove another user's authenticator app. If you lose access to your authenticator app, you can't sign in until someone removes the app from your account on the server, outside the web app. Remove the app from this page before you replace or reset your device.
 
 :::
 

@@ -86,9 +86,9 @@ The list shows one row per source.
 | **Name** | The name you gave the source. Sortable; the default sort. |
 | **Type** | The source type. Sortable. |
 | **Connection** | The system the source points at: the host (and port, if not the default) for a file server, the domain controller for Active Directory, the tenant ID for Entra ID, or the SharePoint domain for SharePoint Online. |
-| **Service account** | The service account the source signs in with, or a dash when none is assigned. |
+| **Service account** | The service account the source signs in with, or a dash when the source has none. |
 | **Labels** | The source's labels as `key=value` chips. |
-| **Updated** | When the source was last changed. Sortable. |
+| **Updated** | When the source last changed. Sortable. |
 
 At the end of each row, the **Edit source** and **Delete source** buttons open the edit form and the delete confirmation.
 

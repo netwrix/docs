@@ -23,7 +23,7 @@ Settings holds what applies to the whole installation rather than to one source 
 
 **User admin** gets the Users and System tabs and lands on Users when opening Settings. On System, a User admin sees the **Single sign-on** card but not the **Backups** card. A User admin also can't grant the Admin role or change an existing Admin's account.
 
-**Viewer** gets the Application and Feature flags tabs but can't save changes on either. The controls look editable, but every save fails with the message **Some settings were not saved**.
+**Viewer** gets the Application and Feature flags tabs but can't save changes on either. The controls look editable, but every save fails with the message **Some settings weren't saved**.
 
 [Users and roles](users.md#roles) describes each role and what it can do across the rest of the product.
 

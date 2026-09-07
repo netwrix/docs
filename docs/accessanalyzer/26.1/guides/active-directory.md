@@ -16,7 +16,7 @@ The Identity sync only reads. A regular domain user with the default read access
 
 ### Network
 
-The Access Analyzer server, or the agent that runs the scan, needs one Lightweight Directory Access Protocol (LDAP) port open to a domain controller. The port you choose decides how the connection is secured.
+The Access Analyzer server, or the agent that runs the scan, needs one Lightweight Directory Access Protocol (LDAP) port open to a domain controller. The port you choose decides how Access Analyzer secures the connection.
 
 | Port | Protocol | Notes |
 |------|----------|-------|

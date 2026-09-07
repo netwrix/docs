@@ -39,7 +39,7 @@ Any object store that uses the Amazon Simple Storage Service (S3) protocol works
 | **S3 endpoint (optional)** | The service URL for a non-Amazon store, for example `https://s3.example.com`. Leave empty for Amazon S3. |
 | **S3 region (optional)** | The bucket's region, for example `us-east-1`. |
 | **Access key ID** | Under **S3 credentials**. Enter it together with the secret; the form rejects one without the other. |
-| **Secret access key** | Under **S3 credentials**. Never shown again after you save. |
+| **Secret access key** | Under **S3 credentials**. Access Analyzer never shows it again after you save. |
 
 After you save credentials, the **S3 credentials** heading shows a **Configured** badge and both credential fields show **Configured** as their placeholder.
 
@@ -53,15 +53,15 @@ If you don't store credentials, Access Analyzer uses whatever credentials are av
 |---|---|
 | **Daily retention must be at least 1** | **Daily** is less than 1. The same message exists for **Weekly** and **Monthly**. |
 | **Daily retention must be a number** | **Daily** isn't a number. The same message exists for **Weekly** and **Monthly**. |
-| **Local path is required when destination is local disk** | **Local disk** is selected and **Local path** is empty. |
-| **S3 bucket is required when destination is S3** | **S3-compatible storage** is selected and **S3 bucket** is empty. |
-| **Both access key ID and secret access key are required** | Only one of the two credential fields is filled. |
+| **Local path is required when destination is local disk** | You selected **Local disk** and left **Local path** empty. |
+| **S3 bucket is required when destination is S3** | You selected **S3-compatible storage** and left **S3 bucket** empty. |
+| **Both access key ID and secret access key are required** | You filled only one of the two credential fields. |
 
 ## Backup schedule and file names
 
 Backups run once a day at 02:00 Coordinated Universal Time (UTC). You can't change the time from the Access Analyzer settings, and no backup runs while **Enable daily backups** is off.
 
-Every backup is a single file named `pg_backup_<YYYYMMDD>T<HHMMSS>Z.sql.gz`, with the timestamp in UTC, for example `pg_backup_20260906T020000Z.sql.gz`. Files are compressed, integrity-checked after writing, and readable only by the owner.
+Every backup is a single file named `pg_backup_<YYYYMMDD>T<HHMMSS>Z.sql.gz`, with the timestamp in UTC, for example `pg_backup_20260906T020000Z.sql.gz`. Access Analyzer compresses each file, checks its integrity after writing, and makes it readable only by the owner.
 
 Each run writes into a `son/` folder, which is the daily tier. On Sundays the run also writes the same file to `father/`, the weekly tier, and on the first day of the month to `grandfather/`, the monthly tier. The three folders sit at the root of the backup volume for **Local disk**, or at the root of the bucket for **S3-compatible storage**.
 

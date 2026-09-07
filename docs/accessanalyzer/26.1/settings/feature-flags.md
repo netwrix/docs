@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Feature flags switch experimental behavior on or off for the whole deployment. Admins can change them; Viewers can open the tab but can't save. The tab carries this warning:
 
-> Experimental feature flags. These should be used at your own risk and either in conjunction with the Netwrix engineering team or the Netwrix community. Support should not be expected for experimental features.
+> Experimental feature flags. These should be used at your own risk and either in conjunction with the Netwrix engineering team or the Netwrix community. Support shouldn't be expected for experimental features.
 
 ![Feature flags tab showing enable_pattern_execution_budget](/images/accessanalyzer/26.1/settings/feature-flags.webp)
 
@@ -16,7 +16,7 @@ Feature flags switch experimental behavior on or off for the whole deployment. A
 2. Click the switch next to the flag. The row shows a **Modified** badge, and a bar appears at the bottom of the page with the count of unsaved changes.
 3. Click **Save changes**, or press Ctrl+S (Cmd+S on a Mac).
 
-A message confirms **1 setting saved**. To drop an unsaved change instead, click **Discard**. To restore the default, set the switch to the default shown in the table below, then click **Save changes**. If you leave the page with an unsaved change, the same **Unsaved changes** dialog as on [Application settings](application.md#change-a-setting) asks whether to stay or leave.
+A message confirms **1 setting saved**. To drop an unsaved change instead, click **Discard**. To restore the default, set the switch to the default listed in [Available flags](#available-flags), then click **Save changes**. If you leave the page with an unsaved change, the same **Unsaved changes** dialog as on [Application settings](application.md#change-a-setting) asks whether to stay or leave.
 
 You don't need to restart anything. The classification engine rechecks the flag on its own; allow up to 6 minutes for the change to take effect. Documents classified after that point use the new setting.
 

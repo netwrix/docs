@@ -40,7 +40,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--version` | — | — | Print the installer version and exit. |
 | `--help` | — | — | Print flag help and exit. |
 
-The defaults for `--tls-cert` and `--tls-key` apply only when both flags are omitted. Supplying one without the other is an error: `--tls-cert and --tls-key must both be provided together`.
+The defaults for `--tls-cert` and `--tls-key` apply only when you omit both flags. Supplying one without the other is an error: `--tls-cert and --tls-key must both be provided together`.
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 

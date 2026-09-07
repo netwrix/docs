@@ -4,7 +4,7 @@ description: Add a File Server source to scan the shares, permissions, and file 
 sidebar_position: 1
 ---
 
-A **File Server** source points Access Analyzer at one SMB file server: a Windows file server, NetApp, Dell PowerScale (formerly Isilon), or Nutanix Files. Access scans walk its shares and record who can reach which folders and files; Sensitive data scans open the files and look for sensitive data patterns. Connections use SMB 2 or 3; SMB 1 isn't supported.
+A **File Server** source points Access Analyzer at one SMB file server: a Windows file server, NetApp, Dell PowerScale (formerly Isilon), or Nutanix Files. Access scans walk its shares and record who can reach which folders and files; Sensitive data scans open the files and look for sensitive data patterns. Connections use SMB 2 or 3; Access Analyzer doesn't support SMB 1.
 
 Add one source per server, using the server's own hostname or IP address. Access Analyzer doesn't follow Distributed File System (DFS) namespaces; when a DFS link points at a share it can't reach, the scan records an error on that object and continues.
 
@@ -69,7 +69,7 @@ A successful test shows the message **Connection successful**. A failed test sho
 | Connection timed out | The host is reachable and the port is open |
 | Connection refused | An SMB service is listening on the port you entered |
 | Permission denied | The account can sign in to the server and list its shares |
-| SMB protocol version not supported by server or client | The server allows SMB 2 or 3; SMB 1 isn't supported |
+| SMB protocol version not supported by server or client | The server allows SMB 2 or 3; Access Analyzer doesn't support SMB 1 |
 
 ## What the scans collect
 

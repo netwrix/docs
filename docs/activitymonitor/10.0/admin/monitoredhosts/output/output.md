@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # Output for Monitored Hosts/Services
 
-Once a host is being monitored the event stream can be sent to multiple outputs.
+After you start monitoring a host, you can send its event stream to multiple outputs.
 
 ![Output Properties Overview](/images/activitymonitor/9.0/admin/monitoredhosts/outputpropertiesoverview.webp)
 
-Configured outputs are grouped under the host. You can have multiple outputs configured for a host.
+Activity Monitor groups configured outputs under the host. You can have multiple outputs configured for a host.
 The host event outputs are:
 
 - Access Analyzer 26 – Sends activity events to Netwrix Access Analyzer 26.

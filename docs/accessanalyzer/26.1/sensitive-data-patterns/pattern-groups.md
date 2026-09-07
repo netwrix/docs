@@ -48,7 +48,7 @@ A new group is empty. Add patterns to it with **Manage patterns**, or set the gr
 
 ![Pattern group menu with Test patterns, Manage patterns, Edit, and Delete](/images/accessanalyzer/26.1/sensitive-data-patterns/group-actions.webp)
 
-**Edit** and **Delete** are disabled for built-in groups. Scans and the default set refer to groups by name. After you rename a custom group, reselect it in any scan that picks its own groups, and check its **Scanned by default** switch.
+You can't edit or delete built-in groups. Scans and the default set refer to groups by name. After you rename a custom group, reselect it in any scan that picks its own groups, and check its **Scanned by default** switch.
 
 ## Manage the patterns in a group
 
@@ -93,7 +93,7 @@ Turning every switch off doesn't stop classification. A scan that inherits an em
 
 ## How a scan picks its groups
 
-On a Sensitive data scan's **Configure** step, the **Sensitive data classification** section has two cards. **Configuration source** holds the **Inherit from global configuration** switch, on for new scans. While it's on, the alert **Using global configuration with `<N>` pattern group(s) enabled.** tells you how many groups the default set holds. Turn it off to pick groups for this scan alone in **Sensitive Data Pattern Groups to Classify**, where you can search, select individual groups, or click **Select All**.
+On a Sensitive data scan's **Configure** step, the **Sensitive data classification** section has two cards. **Configuration source** holds the **Inherit from global configuration** switch, on for new scans. While it's on, the alert **Using global configuration with `<N>` pattern groups enabled.** tells you how many groups the default set holds. Turn it off to pick groups for this scan alone in **Sensitive Data Pattern Groups to Classify**, where you can search, select individual groups, or click **Select All**.
 
 ![Sensitive data scan settings with pattern groups to classify](/images/accessanalyzer/26.1/scans/create-scan-sensitive-3-configure.webp)
 

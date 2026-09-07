@@ -4,7 +4,7 @@ description: Create a Username/password service account for File Server and Acti
 sidebar_position: 1
 ---
 
-A Username/password account is a domain or local account and its password. It's the type that File Server and Active Directory sources use. In the form, the type is labeled **Username/password**.
+A Username/password account is a domain or local account and its password. It's the type that File Server and Active Directory sources use. The form labels this type **Username/password**.
 
 ## When to use it
 
@@ -17,9 +17,9 @@ One account can serve many sources. Create separate accounts when sources live i
 
 ## Required permissions
 
-Grant the account only the access it needs to read what you want scanned.
+Grant the account only the access it needs to read what you want to scan.
 
-On a file server, the account needs **Read** access to every share and folder you want scanned: **List folder / Read data**, **Read attributes**, and **Read permissions**. The scan records an error for folders the account can't read and moves on. Adding the account to the server's **Backup Operators** or **Administrators** group lets it read folders it otherwise couldn't open. For the full list of permissions, see [SMB file servers](../sources/smb-file-servers.md).
+On a file server, the account needs **Read** access to every share and folder you want to scan: **List folder / Read data**, **Read attributes**, and **Read permissions**. The scan records an error for folders the account can't read and moves on. Adding the account to the server's **Backup Operators** or **Administrators** group lets it read folders it otherwise couldn't open. For the full list of permissions, see [SMB file servers](../sources/smb-file-servers.md).
 
 In Active Directory, a regular domain user with the default read access to the domain is enough to read users, groups, and organizational units. See [Active Directory](../sources/active-directory.md).
 
@@ -35,7 +35,7 @@ In Active Directory, a regular domain user with the default read access to the d
 
 ![Add service account dialog with Username/password selected](/images/accessanalyzer/26.1/service-accounts/add-username-password.webp)
 
-The account appears in the list with **Account Type** set to Username/password. To use it, select it in the source's **Service account** field and click **Test connection** on the source to confirm that the credentials work. The source settings are covered in [SMB file servers](../sources/smb-file-servers.md) and [Active Directory](../sources/active-directory.md). For the whole path from account to first scan, follow [Scan SMB file servers](../guides/smb-file-servers.md) or [Scan Active Directory](../guides/active-directory.md).
+The account appears in the list with **Account Type** set to Username/password. To use it, select it in the source's **Service account** field and click **Test connection** on the source to confirm that the credentials work. [SMB file servers](../sources/smb-file-servers.md) and [Active Directory](../sources/active-directory.md) cover the source settings. For the whole path from account to first scan, follow [Scan SMB file servers](../guides/smb-file-servers.md) or [Scan Active Directory](../guides/active-directory.md).
 
 ## Change the password
 

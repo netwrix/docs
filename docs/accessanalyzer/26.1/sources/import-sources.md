@@ -145,7 +145,7 @@ The import checks each row in the following order and shows only the first probl
 | **Name is required.** | The `name` cell is empty. |
 | **Unknown type "X". Use one of: …** | The `type` cell matches no source type. The message lists the record names. |
 | **Missing required field: host.** (or another column) | A required connection column for that type is empty. |
-| **"X" is not a valid hostname or IP address.** | The `host` cell fails the hostname and IPv4 checks. Other fields show their own format message. |
+| **"X" isn't a valid hostname or IP address.** | The `host` cell fails the hostname and IPv4 checks. Other fields show their own format message. |
 | **ignore_ssl_errors must be true or false.** | A boolean column holds something other than `true` or `false`. |
 | **Duplicate name — first used on row N.** | Another row in the file uses the same name, ignoring case. |
 | **A source named "X" already exists.** | A source with that name exists in Access Analyzer. |

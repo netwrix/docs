@@ -4,7 +4,7 @@ description: Learn what Access scans, Sensitive data scans, and Identity sync co
 sidebar_position: 1
 ---
 
-Every scan has exactly one type, chosen on the first step of [Create a scan](index.md#create-a-scan) and fixed from then on. The type decides what the scan collects, which sources it can target, and which settings the **Configure** step offers.
+Every scan has exactly one type. You choose it on the first step of [Create a scan](index.md#create-a-scan), and it stays fixed from then on. The type decides what the scan collects, which sources it can target, and which settings the **Configure** step offers.
 
 | Scan type | What it collects | Source types |
 |---|---|---|
@@ -12,7 +12,7 @@ Every scan has exactly one type, chosen on the first step of [Create a scan](ind
 | **Sensitive data** | Sensitive data patterns found inside file content | File Server, SharePoint Online |
 | **Identity sync** | Users, groups, and group memberships from a directory | Active Directory, Entra ID |
 
-On the **Configure** step, each source type in the target starts on **Use default configuration**. To change the values in the tables below for every source of that type, select **Customize for all File Server sources**; the label names the source type, and it reads **Customize this source** when the target is a single source. To change them for one source only, add a **Source overrides** entry. Settings you don't touch keep their defaults.
+On the **Configure** step, each source type in the target starts on **Use default configuration**. To change the values in the following tables for every source of that type, select **Customize for all File Server sources**; the label names the source type, and it reads **Customize this source** when the target is a single source. To change them for one source only, add a **Source overrides** entry. Settings you don't touch keep their defaults.
 
 ## Access scan
 
@@ -38,8 +38,8 @@ Share names can contain letters, digits, hyphens, and underscores, and hidden sh
 
 | Setting | Default | Meaning |
 |---|---|---|
-| **Workers** | 4 | Concurrent workers, from 1 to 256. Higher values shorten the scan but put more load on the tenant. Raise it only when SharePoint Online prioritization (adaptive throttling) is enabled for the tenant, and treat 32 as the practical ceiling; beyond that, throttling tends to cancel out the gain. |
-| **Include site collections** | Scan all URLs | Switch to **Include specific site collections** and enter exact site collection URLs, such as `https://contoso.sharepoint.com/sites/marketing`, to scan only those. Wildcards aren't supported here. |
+| **Workers** | 4 | Concurrent workers, from 1 to 256. Higher values shorten the scan but put more load on the tenant. Raise it only when the tenant has SharePoint Online prioritization (adaptive throttling) enabled, and treat 32 as the practical ceiling; beyond that, throttling tends to cancel out the gain. |
+| **Include site collections** | Scan all URLs | Switch to **Include specific site collections** and enter exact site collection URLs, such as `https://contoso.sharepoint.com/sites/marketing`, to scan only those. This field doesn't support wildcards. |
 | **Exclude site collections** | Empty | Site collections to skip. Supports the `*` wildcard, for example `*.sharepoint.com/sites/archive`. |
 | **Exclude object URLs** | Empty | URL patterns for documents, folders, and lists to skip inside the scanned site collections. Supports the `*` wildcard. |
 | **Collect OneDrive** | On | Includes users' OneDrive personal drives in the scan. |
@@ -80,11 +80,11 @@ Changes to these settings reach the scanning service within five minutes and app
 | **Exclude System Shares** | On | Skips administrative shares such as `ADMIN$`, `IPC$`, and `C$`. |
 | **Exclude Hidden Shares** | Empty | Hidden share names to leave out of share enumeration. |
 
-Turn on **Differential scan** for a recurring scan after the first full pass finishes. The first run still reads everything, because nothing has been classified yet; later runs then touch only what changed.
+Turn on **Differential scan** for a recurring scan after the first full pass finishes. The first run still reads everything, because the scan hasn't classified anything yet; later runs then touch only what changed.
 
 ![Create scan step 3 with customized File Server settings](/images/accessanalyzer/26.1/scans/create-scan-3-configure-customize.webp)
 
-SharePoint Online has no per-type Sensitive data settings. Its sources run with the global classification settings above.
+SharePoint Online has no per-type Sensitive data settings. Its sources run with the global classification settings in [Prerequisites](#prerequisites).
 
 ### Pattern groups
 
@@ -96,7 +96,7 @@ Turn the switch off to select groups for this scan alone. **Sensitive Data Patte
 
 :::warning
 
-An empty selection doesn't mean "classify nothing". If the scan inherits the global configuration and no group is marked **Scanned by default**, or if you turn inheritance off and select no groups, the scan classifies against every pattern group, built-in and custom alike. To narrow a scan, select the groups you want.
+An empty selection doesn't mean "classify nothing". If the scan inherits the global configuration and no group carries **Scanned by default**, or if you turn inheritance off and select no groups, the scan classifies against every pattern group, built-in and custom alike. To narrow a scan, select the groups you want.
 
 :::
 

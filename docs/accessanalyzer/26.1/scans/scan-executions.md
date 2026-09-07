@@ -21,7 +21,7 @@ Go to **Configuration > Scan executions**. The page refreshes itself every 3 sec
 | **Status** | The execution's status; see [Execution statuses](#execution-statuses). |
 | **Objects** | How many objects the execution has processed so far, or in total after it has finished. |
 | **Duration** | How long the execution ran, or has been running. |
-| **Started** | When the execution was created. |
+| **Started** | When Access Analyzer created the execution. |
 | **Actions** | The row menu with **View logs** and, while the run is active, **Pause**, **Resume**, or **Stop**. |
 
 Some executions run follow-up steps after the main collection. Those rows have an expand button in the first column; click it to show the child steps, each with its own status, duration, and **View logs**.
@@ -39,15 +39,15 @@ There is no separate detail page for an execution. Everything beyond the row its
 | **Pending** | Created and waiting for Access Analyzer to pick it up and start it. Also the state right after **Resume**. | **Stop** cancels it |
 | **Running** | The agent is collecting data. | **Pause**, **Stop**, **View logs** |
 | **Pausing** | Pause requested; the run is saving its progress. | Wait |
-| **Paused** | Progress is saved and the run is waiting. It stays paused until you resume or stop it, or until the scan runs again. | **Resume** or **Run** on the scan; **Stop** ends it |
+| **Paused** | The run has saved its progress and is waiting. It stays paused until you resume or stop it, or until the scan runs again. | **Resume** or **Run** on the scan; **Stop** ends it |
 | **Resuming** | Resume requested; the run is continuing from its saved progress. | Wait |
 | **Stopping** | Stop requested; the run is shutting down. | Wait |
 | **Post processing** | Collection is done and a follow-up step is running. | **View logs** |
-| **Completed** | Finished, and all data was written. | **View logs** |
-| **Completed with errors** | Finished, but some data couldn't be written. The data is partial and the next run of the scan uploads it again. | **View logs** to see the errors |
+| **Completed** | Finished, and the run wrote all its data. | **View logs** |
+| **Completed with errors** | Finished, but the run couldn't write some of its data. The data is partial and the next run of the scan uploads it again. | **View logs** to see the errors |
 | **Failed** | The run ended without finishing. | **View logs**, then fix the cause and **Run** the scan again |
-| **Stopped** | Ended by **Stop**, including a stalled run that Access Analyzer ended after you requested a stop. | **View logs**; **Run** the scan again |
-| **Cancelled** | Stopped while still **Pending**, either by **Stop** or because the scan was deleted. | Nothing further |
+| **Stopped** | **Stop** ended it, including a stalled run that Access Analyzer ended after you requested a stop. | **View logs**; **Run** the scan again |
+| **Cancelled** | Stopped while still **Pending**, either by **Stop** or because someone deleted the scan. | Nothing further |
 
 **Completed**, **Completed with errors**, **Failed**, **Stopped**, and **Cancelled** are final; an execution in one of those states never changes again. **Paused** isn't final, so a forgotten paused execution sits in the list until something resumes or stops it.
 
@@ -92,7 +92,7 @@ A **Running** execution moves to **Stopping** and then **Stopped**. A **Paused**
 4. Click **Detailed logs** for the full record.
 5. Click **Close**.
 
-The dialog is titled **Logs — `<scan name>`**. Its header shows when the execution started and its status, and offers **Pause scan**, **Resume scan**, or **Stop scan** for an active run, so you can act without closing the dialog. The footer shows **Last updated** with the time the dialog last refreshed.
+The dialog's title is **Logs — `<scan name>`**. Its header shows when the execution started and its status, and offers **Pause scan**, **Resume scan**, or **Stop scan** for an active run, so you can act without closing the dialog. The footer shows **Last updated** with the time the dialog last refreshed.
 
 ### Overview
 

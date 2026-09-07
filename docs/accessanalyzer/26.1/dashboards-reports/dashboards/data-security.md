@@ -23,7 +23,7 @@ The dashboard has two tabs, **Scan Overview** and **Activity**. Each tab has its
 | **Data Source** | Scan Overview | Limits every card except **SharePoint Sites by Type** to **File Servers**, **SharePoint Online**, or both |
 | **Start Date** | Activity | Earliest event time to include |
 | **End Date** | Activity | Latest event time to include |
-| **Event Type** | Activity | One or more event types, drawn from the events received |
+| **Event Type** | Activity | One or more event types, drawn from the events Access Analyzer has received |
 | **Activity Source** | Activity | **File Servers**, **SharePoint Online**, or **Microsoft Copilot** |
 | **User** | Activity | One or more users who performed events |
 | **Event Status** | Activity | **Success** or **Failed** |
@@ -36,15 +36,15 @@ The table lists the cards in the order they appear, top to bottom and left to ri
 
 | Card | What it shows | How to read it |
 |---|---|---|
-| **Total Data Repositories** | The number of file shares plus SharePoint Online site collections that have been scanned | The breadth of coverage; if you expect 40 shares and see 12, some sources haven't been scanned yet |
+| **Total Data Repositories** | The number of file shares plus SharePoint Online site collections your scans have covered | The breadth of coverage; if you expect 40 shares and see 12, you haven't scanned some sources yet |
 | **Total Objects Scanned** | The number of objects collected from file servers and SharePoint Online | Rises with each newly scanned source |
 | **Sensitive Data Findings** | The total number of pattern matches across both source types | Zero until a Sensitive data scan has run; a single file can contribute several matches |
 | **Permissions Analyzed** | The number of permission entries collected | A rough measure of how much data the permission reports draw on |
 | **Objects by Data Source** | A bar chart comparing object counts for File Servers and SharePoint Online | Shows where the bulk of your data sits |
 | **Sensitive Data by Source** | A pie chart splitting the findings between File Servers and SharePoint Online | Shows which platform carries more sensitive content |
 | **File Server Objects by Host** | A bar chart of object counts per file server | Picks out the largest servers; each bar is one host |
-| **SharePoint Sites by Type** | A pie chart of SharePoint Online sites by site type | Not affected by the **Data Source** filter |
-| **Data Source Inventory** | One row per share or SharePoint Online site, with columns **Source Type**, **Location**, **Total Objects**, **Files**, **Folders**, **Sensitive Files**, and **Sensitive Findings** | Sorted by total objects, largest first; shows up to 20,000 rows; shares appear as `\\host\share` paths |
+| **SharePoint Sites by Type** | A pie chart of SharePoint Online sites by site type | The **Data Source** filter doesn't affect it |
+| **Data Source Inventory** | One row per share or SharePoint Online site, with columns **Source Type**, **Location**, **Total Objects**, **Files**, **Folders**, **Sensitive Files**, and **Sensitive Findings** | Sorts by total objects, largest first; shows up to 20,000 rows; shares appear as `\\host\share` paths |
 
 ## Activity tab
 

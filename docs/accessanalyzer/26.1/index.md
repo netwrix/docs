@@ -30,7 +30,7 @@ Two dashboards, Data security and Active Directory, summarize what your scans ha
 
 ### Activity data
 
-Scans show who can reach data. To see who used that access, connect [Netwrix Activity Monitor](integrations/netwrix-activity-monitor.md), which streams the events it records on file servers, SharePoint Online, and Microsoft 365 Copilot to Access Analyzer. They fill the **Activity** tab of the Data security dashboard and the Activity Investigation report. See [Integrations](integrations/index.md).
+Scans show who can reach data. To see who used that access, connect [Netwrix Activity Monitor](integrations/netwrix-activity-monitor.md), which streams to Access Analyzer the events it records on file servers, SharePoint Online, and Microsoft 365 Copilot. They fill the **Activity** tab of the Data security dashboard and the Activity Investigation report. See [Integrations](integrations/index.md).
 
 ### Users and sign-in
 
@@ -42,4 +42,4 @@ Start with [Installation](install/index.md): pick a size, prepare the server, an
 
 ## Supported browsers
 
-Access Analyzer works in any current browser. Internet Explorer isn't supported.
+Access Analyzer works in any current browser. It doesn't support Internet Explorer.

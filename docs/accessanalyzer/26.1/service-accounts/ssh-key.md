@@ -20,7 +20,7 @@ The form accepts a PEM-framed private key: the text must start with `-----BEGIN 
 | Public-Key Cryptography Standards (PKCS) #1 | `-----BEGIN RSA PRIVATE KEY-----` |
 | PKCS #8 | `-----BEGIN PRIVATE KEY-----` |
 
-Access Analyzer doesn't support passphrase-protected keys. There's no field for a passphrase, and deployment rejects an encrypted key with the message **passphrase-protected SSH private keys are not supported; provide an unencrypted key**. Create a key without a passphrase and dedicate it to agent deployment.
+Access Analyzer doesn't support passphrase-protected keys. There's no field for a passphrase, and deployment rejects an encrypted key with the message **passphrase-protected SSH private keys aren't supported; provide an unencrypted key**. Create a key without a passphrase and dedicate it to agent deployment.
 
 ## SSH host key
 

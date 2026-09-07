@@ -277,7 +277,7 @@ The **Credentials** group targets cloud provider keys and tokens, private keys a
 
 ### Financial Records
 
-**Financial Records** is built around International Bank Account Numbers (IBANs): one generic IBAN pattern and one for each of 28 European countries. The other nine patterns are routing and bank account numbers, SWIFT/BIC bank identifier codes, securities identifiers, value-added tax (VAT) and employer identification numbers, and financial-statement terms.
+**Financial Records** centers on International Bank Account Numbers (IBANs): one generic IBAN pattern and one for each of 28 European countries. The other nine patterns are routing and bank account numbers, SWIFT/BIC bank identifier codes, securities identifiers, value-added tax (VAT) and employer identification numbers, and financial-statement terms.
 
 <details>
 <summary>Financial Records patterns (38)</summary>

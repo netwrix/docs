@@ -37,18 +37,18 @@ The toolbar has a **Search patterns** field, a **Confidence** filter, **Clear fi
 | **Regex / Description** | For built-in patterns, the description of what the pattern detects. For custom patterns, the regular expression, with a **Copy regex** button. |
 | **Confidence** | A badge with the pattern's confidence level: Low, Medium, or High. |
 | **Groups** | The pattern groups the pattern belongs to. |
-| **Actions** | **Test pattern**, **Edit pattern**, and **Delete pattern**. Edit and delete are disabled for built-in patterns. |
+| **Actions** | **Test pattern**, **Edit pattern**, and **Delete pattern**. You can't edit or delete built-in patterns. |
 
 ## Confidence levels
 
-Confidence describes how much a match should be trusted. It's a label on the pattern, shown in the **Confidence** column and used by the **Confidence** filter.
+Confidence describes how much you should trust a match. It's a label on the pattern; the **Confidence** column shows it and the **Confidence** filter uses it.
 
 The built-in patterns show what each level means:
 
-| Level | Used for | Built-in examples |
+| Level | Use it for | Built-in examples |
 |---|---|---|
 | **High** | Formats with a checksum, a fixed prefix, or another strong structural signal, so a match is rarely accidental. | **Credit Card Number** (Luhn checksum), **US SSN** (Social Security number allocation rules), **AWS Access Key ID** (fixed Amazon Web Services prefix) |
-| **Medium** | Distinctive formats without a checksum, often matched only when a label such as "DOB" or "password" appears nearby. | **Email address**, **Password**, **Date of birth** |
+| **Medium** | Distinctive formats without a checksum, often matching only when a label such as "DOB" or "password" appears nearby. | **Email address**, **Password**, **Date of birth** |
 | **Low** | Generic shapes that legitimately occur in non-sensitive text. | **Phone number**, **IPv4 Address**, **US bank account number** (a 7- to 14-digit sequence with no validation) |
 
 Use the same reasoning when you set the confidence of a [custom pattern](custom-patterns.md).
@@ -80,10 +80,10 @@ The tester opens with a short prefilled sample containing an SSN, a card number,
 2. Select **Line by line** or **Multiline**.
 3. Click **Test**.
 
-| Mode | How the text is treated | Result |
+| Mode | How the tester treats the text | Result |
 |---|---|---|
-| **Line by line** (default) | Each line is tested separately. Matching lines are tinted green and non-matching lines red. | **X of Y lines matched** |
-| **Multiline** | The whole text is tested as one document, with every match highlighted in place. | **N matches**, or **No matches**. Above 100 matches, only the first 100 are highlighted and the status adds **(first 100 shown)**. |
+| **Line by line** (default) | The tester checks each line separately, tinting matching lines green and non-matching lines red. | **X of Y lines matched** |
+| **Multiline** | The tester checks the whole text as one document and highlights every match in place. | **N matches**, or **No matches**. Above 100 matches, it highlights only the first 100 and the status adds **(first 100 shown)**. |
 
 If you change the pattern or the text after a run, the highlights dim and the status reads **Results outdated — run Test again.**
 

@@ -32,13 +32,13 @@ Leave **Domain** empty to see all domains together. Because every card responds 
 | **Users** | The number of user objects | Includes disabled accounts |
 | **Enabled Users** | The number of users whose account status is Enabled | The difference between this and **Users** is the number of disabled accounts |
 | **Groups** | The number of groups | Security groups and distribution lists together |
-| **Direct Memberships** | The number of direct group membership entries | Direct means nested membership isn't expanded; **Administrator Accounts** below does expand it |
+| **Direct Memberships** | The number of direct group membership entries | Direct means the count doesn't expand nested membership; the **Administrator Accounts** card does |
 
 ## Users section
 
 | Card | What it shows | How to read it |
 |---|---|---|
-| **Administrator Accounts** | The number of effective memberships in the built-in privileged groups listed below | Effective means nested membership is followed, so an account inside a group inside Domain Admins counts |
+| **Administrator Accounts** | The number of effective memberships in the built-in privileged groups in the following list | Effective means the count follows nested membership, so an account inside a group inside Domain Admins counts |
 | **User Risks** | A pie chart of user-category risks by risk type | Shows which kind of user risk dominates; [Risk types](#risk-types) explains each type |
 | **New Users** | Users created in the past seven days | A quick check on recent provisioning |
 | **Users with Associated Risks** | The number of risk entries in the User category | Drill into it, or scroll to **Active Directory Risks**, to see which accounts are involved |
@@ -65,7 +65,7 @@ Domain Admins, Enterprise Admins, Schema Admins, Administrators, Account Operato
 |---|---|---|
 | **Risks by Level** | A pie chart of all risks by level: LOW, MEDIUM, or HIGH | Start remediation with the HIGH slice |
 | **Riskiest Objects** | A table of risk counts grouped by domain and object name, highest first | The users and groups with the most detected risks |
-| **Active Directory Risks** | The full list: one row per detected risk, with the risk type, the object and its domain, when it was detected, additional context, the level, the category, and a description | Use the **Domain** filter to keep this list manageable, then drill into a row |
+| **Active Directory Risks** | The full list: one row per detected risk, with the risk type, the object and its domain, when Access Analyzer detected it, additional context, the level, the category, and a description | Use the **Domain** filter to keep this list manageable, then drill into a row |
 
 ## Risk types
 

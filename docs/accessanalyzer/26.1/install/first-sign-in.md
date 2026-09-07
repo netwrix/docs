@@ -33,9 +33,9 @@ The page rejects a new password for one of these reasons:
 
 | Message | Cause |
 |---|---|
-| Passwords do not match. | The two entries differ. |
-| Password does not meet complexity requirements. | The password has fewer than 12 characters. |
-| New password cannot be the same as your current password. | You entered the one-time password again. |
+| Passwords don't match. | The two entries differ. |
+| Password doesn't meet complexity requirements. | The password has fewer than 12 characters. |
+| New password can't be the same as your current password. | You entered the one-time password again. |
 
 ## Choose how to set up sign-in
 
@@ -52,11 +52,11 @@ Click **Set up identity provider** to connect your directory right away. The set
    ![Identity provider selection step with Active Directory and Entra ID](/images/accessanalyzer/26.1/integrations/identity-provider-choose.webp)
 
 2. Click **Continue**.
-3. On **Connect**, enter the connection details for the provider you chose. Active Directory needs a domain controller, a service account (a read-only account is recommended), and the certificate authority (CA) that issued the domain controller's certificate for Lightweight Directory Access Protocol over TLS (LDAPS). Entra ID needs an app registration and a one-time administrator consent. [Single sign-on](../settings/single-sign-on.md) describes every field and what to prepare on the directory side.
+3. On **Connect**, enter the connection details for the provider you chose. Active Directory needs a domain controller, a service account (Netwrix recommends a read-only account), and the certificate authority (CA) that issued the domain controller's certificate for Lightweight Directory Access Protocol over TLS (LDAPS). Entra ID needs an app registration and a one-time administrator consent. [Single sign-on](../settings/single-sign-on.md) describes every field and what to prepare on the directory side.
 4. Click **Test connection and continue** for Active Directory, or **Sign in with Microsoft and continue** for Entra ID.
 5. On **Admins**, add the people who should hold the Admin role, or leave the list empty.
 6. Click **Finish setup**. If you added nobody, the button reads **Continue without admins** instead.
-7. Wait while Access Analyzer applies the configuration, then click **Login to Access Analyzer**.
+7. Wait while Access Analyzer applies the configuration, then click **log in to Access Analyzer**.
 
 That last click signs you out, because the setup has just changed the sign-in service. Sign in again with the local administrator account. Anyone you added on **Admins** signs in through the directory instead; if you connected Entra ID, the sign-in page also shows **Sign in with Microsoft**.
 
@@ -64,7 +64,7 @@ That last click signs you out, because the setup has just changed the sign-in se
 
 Choose this if you don't have the directory details yet, or if you want to explore the application before inviting anyone else.
 
-Click **Set up later** to skip straight to the application. The local administrator account keeps working, and Access Analyzer stops redirecting you to this page. You can run the same steps later: go to **Settings > System** and, under **Single sign-on**, click **Go to setup**.
+Click **Set up later** to skip straight to the application. The local administrator account keeps working, and Access Analyzer stops redirecting you to this page. You can run the same steps later: go to **Settings > System** and, under **Single sign-on**, click **Go to set up**.
 
 ## Retrieve the one-time password again
 

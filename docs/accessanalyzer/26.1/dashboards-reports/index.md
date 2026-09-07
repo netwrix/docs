@@ -32,7 +32,7 @@ If the content fails to load, the page shows **Dashboard error** and **Unable to
 
 ## Data freshness
 
-Nothing on these pages updates on its own, and dashboard results are cached, so a scan that finished a moment ago may not appear on a dashboard yet. After a scan completes, click **Refresh** to reload the page's data. If a dashboard's figures haven't changed after a refresh, the cached results may not have expired yet; wait and refresh again later.
+Nothing on these pages updates on its own, and Access Analyzer caches dashboard results, so a scan that finished a moment ago may not appear on a dashboard yet. After a scan completes, click **Refresh** to reload the page's data. If a dashboard's figures haven't changed after a refresh, the cached results may not have expired yet; wait and refresh again later.
 
 ## What each dashboard and report needs
 

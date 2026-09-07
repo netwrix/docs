@@ -71,12 +71,12 @@ The **Filter by labels (all must match)** box in the Sources toolbar takes one o
 When you create a scan, the **Target** step asks **Which sources should this scan cover?** and offers two answers:
 
 - **Specific sources**: pick exactly which sources to scan. The list stays fixed until you edit the scan.
-- **Sources matching labels**: target every source that carries all of the labels you enter, re-evaluated at each run.
+- **Sources matching labels**: target every source that carries all of the labels you enter. Access Analyzer re-evaluates the set at each run.
 
-With **Sources matching labels**, enter the labels under **Source labels**. A source must carry all of them to be included: `env=production` plus `team=finance` targets production finance sources only. As you type, the step shows how many sources match right away, so you can check the selection before saving.
+With **Sources matching labels**, enter the labels under **Source labels**. A source must carry all of them for the scan to cover it: `env=production` plus `team=finance` targets production finance sources only. As you type, the step shows how many sources match right away, so you can check the selection before saving.
 
 A scan can match nothing yet. The step shows **No sources match these labels yet** with the reminder **You can still create this scan — it will target any sources that match when it runs.** This is how you set up a scan before you add the sources it covers.
 
-Each run resolves the labels again. A source you add or relabel into the set joins the next run; a source you delete or relabel out of it drops out. When a source drops out, its executions for that scan are removed as well. If a matching source is of a type that the scan can't handle, such as an Active Directory source matched by an Access scan, the step warns you, and the run skips that source without failing.
+Each run resolves the labels again. A source you add or relabel into the set joins the next run; a source you delete or relabel out of it drops out. When a source drops out, Access Analyzer removes its executions for that scan as well. If a matching source is of a type that the scan can't handle, such as an Active Directory source matched by an Access scan, the step warns you, and the run skips that source without failing.
 
 See [Scans](../scans/index.md) for the rest of the scan settings.

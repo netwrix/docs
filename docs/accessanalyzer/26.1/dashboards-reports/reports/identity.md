@@ -12,7 +12,7 @@ Open the page from **Reports > Identity**. [Dashboards and reports](../index.md)
 
 ## The Identity page
 
-The page is a table with two columns, **Report** and **Category**, and the description sits under each report name, as on the [Data reports](data.md) page. Tabs split the list by directory and chips split it by category; each shows a count.
+The page is a table with **Report** and **Category** columns, and the description sits under each report name, as on the [Data reports](data.md) page. Tabs split the list by directory and chips split it by category; each shows a count.
 
 | Tab | Reports | Category chips |
 |---|---|---|
@@ -56,7 +56,7 @@ The columns, in order:
 <details>
 <summary>AD Users columns</summary>
 
-**SAM Account Name**, **Display Name**, **First Name**, **Last Name**, **User Principal Name**, **Distinguished Name**, **Canonical Name**, **Common Name**, **Domain**, **Domain Canonical Name**, **Account Status** (Enabled or Disabled), **Created**, **Last Modified**, **Description**, **Admin Count**, **Email**, **Phone**, **Mobile**, **Office**, **Street Address**, **City**, **State**, **Postal Code**, **Country**, **Job Title**, **Department**, **Company**, **Manager**, **Employee ID**, **Password Last Set**, **Password Age (Days)**, **Password Never Expires**, **Account Expires** (Never when no expiry is set), **Smartcard Required**, **MFA Enforced**, **Last Logon**, **Last Logon Timestamp**, **Days Since Last Logon**, **Bad Password Count**, **Last Bad Password**, **Lockout Time**, **Last Logoff**, **Logon Workstations**, **Allowed to Delegate To**, **Allowed to Act on Behalf Of**, **Service Principal Names**, and **Legacy Exchange DN**.
+**SAM Account Name**, **Display Name**, **First Name**, **Last Name**, **User Principal Name**, **Distinguished Name**, **Canonical Name**, **Common Name**, **Domain**, **Domain Canonical Name**, **Account Status** (Enabled or Disabled), **Created**, **Last Modified**, **Description**, **Admin Count**, **Email**, **Phone**, **Mobile**, **Office**, **Street Address**, **City**, **State**, **Postal Code**, **Country**, **Job Title**, **Department**, **Company**, **Manager**, **Employee ID**, **Password Last Set**, **Password Age (Days)**, **Password Never Expires**, **Account Expires** (Never when the account has no expiry), **Smartcard Required**, **MFA Enforced**, **Last Logon**, **Last Logon Timestamp**, **Days Since Last Logon**, **Bad Password Count**, **Last Bad Password**, **Lockout Time**, **Last Logoff**, **Logon Workstations**, **Allowed to Delegate To**, **Allowed to Act on Behalf Of**, **Service Principal Names**, and **Legacy Exchange DN**.
 
 </details>
 

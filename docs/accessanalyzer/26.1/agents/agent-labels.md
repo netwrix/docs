@@ -21,7 +21,7 @@ After that clean-up, the key and the value must fit these rules.
 | Key | A letter or number | Letters, numbers, and hyphens | 53 characters |
 | Value | A letter or number | Letters, numbers, hyphens, underscores, and dots | 63 characters |
 
-Avoid two keys. `name` is reserved, and `default` marks the System agent internally. Common choices are `region`, `environment`, and `network`, but any keys that make sense for you are fine.
+Avoid two keys. Access Analyzer reserves `name`, and `default` marks the System agent internally. Common choices are `region`, `environment`, and `network`, but any keys that make sense for you are fine.
 
 Pick labels around how you'll route scans, not around how the hosts are built. `region=us-east` and `network=dmz` describe what a scan needs; `cpu=16` doesn't. The **Search agents…** field on the Agents page finds agents by label key, label value, or `key:value`, so a consistent scheme helps there too.
 
@@ -59,7 +59,7 @@ Two details matter here. First, matching is exact: the agent must carry both the
 
 Access Analyzer decides routing each time an execution starts, not when you save the scan. Relabeling an agent, or changing a scan's **Agent** field, takes effect from the next execution.
 
-The **Agent** column on the Scans page shows where each scan is set to run: **System** for scans with no label, otherwise the label.
+The **Agent** column on the Scans page shows where each scan runs: **System** for scans with no label, otherwise the label.
 
 ## Executions with no matching agent {#when-no-agent-matches}
 
@@ -89,11 +89,11 @@ You configure four scans.
 
 | Scan | Agent field | Override | Where it runs |
 |---|---|---|---|
-| HR shares | **System agent** | none | On the server, because no label is set |
+| HR shares | **System agent** | none | On the server, because you set no label |
 | East finance shares | `region=us-east` | none | On `agent-east`, the only agent with that label |
 | All production shares | `env=production` | none | On either `agent-east` or `agent-west`, since both carry the label |
 | Regional archives | `region=us-east` | `fs-west-01` set to `region=us-west` | On `agent-east` for every source except `fs-west-01`, which runs on `agent-west` |
 
 If `agent-west` goes offline, "All production shares" keeps running on `agent-east`, while the `fs-west-01` override in "Regional archives" waits for `agent-west` to report **Healthy** again, or fails after about two hours.
 
-Later you delete `agent-east` to rebuild it. "East finance shares" and the `region=us-east` sources of "Regional archives" keep their label, so their next executions wait, while "All production shares" continues on `agent-west`. The waiting executions start as soon as you deploy the rebuilt agent with `region=us-east` again; if that takes longer than about two hours, they're marked **Failed** and the next scheduled executions try again.
+Later you delete `agent-east` to rebuild it. "East finance shares" and the `region=us-east` sources of "Regional archives" keep their label, so their next executions wait, while "All production shares" continues on `agent-west`. The waiting executions start as soon as you deploy the rebuilt agent with `region=us-east` again; if that takes longer than about two hours, Access Analyzer marks them **Failed** and the next scheduled executions try again.

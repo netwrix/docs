@@ -112,7 +112,7 @@ After the Access scan shows **Completed**, create the second scan. It downloads 
 
 :::note
 
-On a fresh install no pattern group is marked **Scanned by default**, and a scan with no groups selected classifies against every pattern group. Select the groups you care about before putting the scan on a schedule.
+On a fresh install, no pattern group carries **Scanned by default**, and a scan with no groups selected classifies against every pattern group. Select the groups you care about before putting the scan on a schedule.
 
 :::
 

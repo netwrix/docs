@@ -23,34 +23,34 @@ Whichever provider you connect, you need an Access Analyzer account with the Adm
 
 For **Active Directory**, gather:
 
-- The fully qualified domain name of your AD forest. The domain controller must be reachable from the Access Analyzer server on port 636, and LDAPS must be enabled on it.
+- The fully qualified domain name of your AD forest. The Access Analyzer server must be able to reach the domain controller on port 636, and the domain controller must have LDAPS enabled.
 - The certificate of the certificate authority (CA) that issued the domain controller's LDAPS certificate, as a PEM, CRT, or CER file of at most 1 MB. Access Analyzer trusts the domain controller only through this CA.
 - A read-only service account and its password. The account must be able to bind over LDAPS, read the directory root, and read user objects with their `mail`, `userPrincipalName`, `sAMAccountName`, `objectGUID`, `givenName`, `sn`, `displayName`, and `title` attributes. Access Analyzer never writes to your directory.
 
 For **Entra ID**, gather:
 
 - Your tenant's ID as a globally unique identifier (GUID), from **Overview** in the Entra admin center.
-- An app registration in that tenant with a client secret. Certificate credentials aren't supported. Note its **Application (client) ID**.
+- An app registration in that tenant with a client secret. Access Analyzer doesn't support certificate credentials. Note its **Application (client) ID**.
 - Two redirect Uniform Resource Identifiers (URIs) added to the registration under **Authentication > Redirect URIs** before you start, both using your Access Analyzer hostname: `https://<your-access-analyzer-host>/setup/entra-consent-callback` and `https://<your-access-analyzer-host>/idps/callback`.
 - Someone with the Global Administrator or Privileged Role Administrator role in the tenant to approve admin consent during setup.
 
 ## Open the setup flow
 
-The setup flow opens automatically for an Admin who signs in before an identity provider is connected, until someone completes it or clicks **Set up later**; see [Sign in for the first time](../install/first-sign-in.md). To reach it from Settings:
+The setup flow opens automatically for an Admin who signs in before anyone connects an identity provider, until someone completes it or clicks **Set up later**; see [Sign in for the first time](../install/first-sign-in.md). To reach it from Settings:
 
 1. Go to **Settings > System**.
-2. On the **Single sign-on** card, click **Go to setup**. Before you connect a provider, the card reads "No external authentication providers are connected. Connect a service first."
+2. On the **Single sign-on** card, click **Go to set up**. Before you connect a provider, the card reads "No external authentication providers are connected. Connect a service first."
 3. On the **Connect an identity provider** page, click **Set up identity provider**.
 
 ![System settings with Backups and Single sign-on](/images/accessanalyzer/26.1/settings/system.webp)
 
-The steps that follow have **Back**, a button that continues to the next step, and **Set up later**, which takes you into the app; **Go to setup** brings you back whenever you're ready.
+The steps that follow have **Back**, a button that continues to the next step, and **Set up later**, which takes you into the app; **Go to set up** brings you back whenever you're ready.
 
 ![Connect an identity provider page with Set up identity provider and Set up later](/images/accessanalyzer/26.1/integrations/identity-provider-setup.webp)
 
 ## Choose the identity provider
 
-The **Connect Access Analyzer to your directory** step offers two cards. The **Active Directory** card is labeled "On-prem AD over LDAPS. Recommended for most existing deployments."
+The **Connect Access Analyzer to your directory** step offers two cards. The **Active Directory** card reads "On-prem AD over LDAPS. Recommended for most existing deployments."
 
 ![Identity provider selection step with Active Directory and Entra ID](/images/accessanalyzer/26.1/integrations/identity-provider-choose.webp)
 
@@ -80,10 +80,10 @@ If the header reads **Connection failed**, or Access Analyzer couldn't save the 
 
 | Message | What to check |
 |---|---|
-| Could not reach the domain controller on port 636. Check the address is correct, resolvable from the cluster, and that LDAPS is open. | DNS for the domain name from the Access Analyzer server, and the firewall path to port 636. |
-| The TLS handshake failed — the domain controller's certificate is not trusted by the certificate you supplied. Upload the CA that issued the DC's LDAPS certificate and test again. | That the uploaded file is the CA that issued the domain controller's LDAPS certificate. |
+| Couldn't reach the domain controller on port 636. Check the address is correct, resolvable from the cluster, and that LDAPS is open. | DNS for the domain name from the Access Analyzer server, and the firewall path to port 636. |
+| The TLS handshake failed — the domain controller's certificate isn't trusted by the certificate you supplied. Upload the CA that issued the DC's LDAPS certificate and test again. | That the uploaded file is the CA that issued the domain controller's LDAPS certificate. |
 | The domain controller rejected the credentials. Check the service account (for example `aa26-svc@corp.example.com`) and its password. | The service account name or password. |
-| The bind succeeded but the directory did not return a base DN. Check the service account can read the directory root. | The service account's read permission on the directory root. |
+| The bind succeeded but the directory didn't return a base DN. Check the service account can read the directory root. | The service account's read permission on the directory root. |
 | The connection succeeded, but saving the certificate failed. Try again. | Nothing on your side; Access Analyzer couldn't save the CA file after a passing test. Click **Try again**. |
 
 </TabItem>
@@ -108,9 +108,9 @@ When Microsoft grants consent, the flow moves to the next step on its own. If it
 | Message | What to do |
 |---|---|
 | Consent was denied. A Global Administrator or Privileged Role Administrator must approve this app. | Ask someone with one of those roles to sign in when the Microsoft window opens. |
-| Microsoft did not grant consent. Please try again. | Click the button again. |
+| Microsoft didn't grant consent. try again. | Click the button again. |
 | Your browser blocked the sign-in popup. Allow popups for this site and try again. | Allow popups for your Access Analyzer hostname and click the button again. |
-| The sign-in window was closed before consent finished. Please try again. | Click the button again and leave the Microsoft window open until consent finishes. |
+| The sign-in window was closed before consent finished. try again. | Click the button again and leave the Microsoft window open until consent finishes. |
 
 </TabItem>
 </Tabs>
@@ -131,22 +131,22 @@ Each address becomes an Access Analyzer user with the Admin role and Active stat
 
 The **Applying configuration** page works through **Configuring identity provider**, **Adding administrators**, and then either **Restarting the authentication service** (Active Directory) or **Verifying configuration** (Entra ID). For Active Directory, the sign-in service restarts so it trusts your domain controller; this usually takes under a minute, so keep the page open.
 
-When it's done, the **You are all set** page shows a **Setup summary** with the **Identity provider**, **AD Authentication certificate**, and **Administrators** rows, plus **AD domain** for Active Directory. Click **Login to Access Analyzer**. This signs you out; sign in again with your local account, or with a directory account you added as an administrator.
+When it's done, the **You are all set** page shows a **Setup summary** with the **Identity provider**, **AD Authentication certificate**, and **Administrators** rows, plus **AD domain** for Active Directory. Click **log in to Access Analyzer**. This signs you out; sign in again with your local account, or with a directory account you added as an administrator.
 
-If a step fails, the page says which one: "We could not configure the identity provider. Check the connection details and try again." or "We could not add the administrators. Check the addresses and try again." An **Edit connection**, **Edit identity provider**, or **Edit administrators** link takes you back to the relevant step. If the restart takes longer than expected, the page shows "The sign-in service did not finish restarting in time. It may still be starting — keep checking, or try again."
+If a step fails, the page says which one: "We couldn't configure the identity provider. Check the connection details and try again." or "We couldn't add the administrators. Check the addresses and try again." An **Edit connection**, **Edit identity provider**, or **Edit administrators** link takes you back to the relevant step. If the restart takes longer than expected, the page shows "The sign-in service didn't finish restarting in time. It may still be starting — keep checking, or try again."
 
 ## How federated users sign in
 
 Access Analyzer never creates a user on its own. Before a directory user can sign in, an Admin or User admin must add them in **Settings > Users** as a **Federated (SSO)** account with the email address the directory reports for them, or list them in [Add administrators](#add-administrators) during setup. At sign-in, Access Analyzer matches the directory identity to that row by email, ignoring case. The row must be **Active**.
 
-The user's role is the one set on the row, Viewer by default. Access Analyzer doesn't map directory groups to roles. Once a federated user has signed in, Access Analyzer locks their name and email; only their role and status stay editable.
+The user's role is the one on the row, Viewer by default. Access Analyzer doesn't map directory groups to roles. Once a federated user has signed in, Access Analyzer locks their name and email; only their role and status stay editable.
 
 ![Access Analyzer sign-in page with Username and Password fields](/images/accessanalyzer/26.1/overview/sign-in.webp)
 
 - **Active Directory** users type their `sAMAccountName` or their email attribute into **Username**, and their domain password into **Password**, on the same form local users use. There is no separate Active Directory button. After two failed directory sign-in attempts for the same username within 30 minutes, Access Analyzer refuses further attempts with the message "Too many sign-in attempts. Wait a few minutes and try again, or contact your administrator." A successful sign-in clears the count.
-- **Entra ID** users click **Sign in with Microsoft**, which appears below an **or** divider under the password form once Entra ID is connected. If Microsoft sends them back before sign-in completes, the form shows "Microsoft sign-in did not complete. Please try again."
+- **Entra ID** users click **Sign in with Microsoft**, which appears below an **or** divider under the password form once you've connected Entra ID. If Microsoft sends them back before sign-in completes, the form shows "Microsoft sign-in didn't complete. try again."
 
-A directory user with no matching row sees **Access denied** and "Your account is not authorized to access this application. Please contact your administrator." A user whose row is Inactive sees "Your account is inactive. Please contact your administrator."
+A directory user with no matching row sees **Access denied** and "Your account isn't authorized to access this application. contact your administrator." A user whose row is Inactive sees "Your account is inactive. contact your administrator."
 
 Disabling someone in your directory stops them from signing in to Access Analyzer; their Access Analyzer row stays until you deactivate or delete it. Deleting a federated user in Access Analyzer removes only the Access Analyzer account. The password length rule in [Users and roles](users.md#password-policy-and-lockout) applies to local accounts only; the directory governs its own passwords.
 
