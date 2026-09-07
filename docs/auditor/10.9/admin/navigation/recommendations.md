@@ -70,7 +70,7 @@ the problems that need your attention. See the
 [Health Summary Email](/docs/auditor/10.9/admin/healthstatus/summaryemail.md) topic for additional information.
 
 Clicking the **Go to Notifications** button opens the Netwrix Auditor notifications settings page.
-See the [Notifications](/docs/auditor/10.9/admin/settings/notifications.md) topic for additional information.
+See the [Notifications](/docs/auditor/10.9/admin/settings/notifications/notifications.md) topic for additional information.
 
 ### Logon Activity: Start Auditing Item
 

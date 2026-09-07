@@ -1,7 +1,7 @@
 ---
 title: "Enable Notifications via Exchange Online"
 description: "Enable Notifications via Exchange Online"
-sidebar_position: 51
+sidebar_position: 20
 ---
 
 # Enable Notifications via Exchange Online

@@ -1,7 +1,7 @@
 ---
 title: "Enable Notifications via SMTP"
 description: "Enable Notifications via SMTP"
-sidebar_position: 52
+sidebar_position: 30
 ---
 
 # Enable Notifications via SMTP

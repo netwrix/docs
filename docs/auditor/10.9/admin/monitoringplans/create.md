@@ -138,7 +138,7 @@ server used for reporting) are available on the Audit Database page of Auditor s
 When you create the first monitoring plan, Auditor prompts you to specify the email settings that
 will be used for activity and health summaries, reports, and alerts delivery. For the monitoring plans
 that follow, Netwrix Auditor will automatically detect SMTP settings; however, for your first plan
-you should provide them manually. See the [Notifications](/docs/auditor/10.9/admin/settings/notifications.md) topic for
+you should provide them manually. See the [Notifications](/docs/auditor/10.9/admin/settings/notifications/notifications.md) topic for
 additional information.
 
 You can skip this step if you don't want to receive email notifications, or configure SMTP settings

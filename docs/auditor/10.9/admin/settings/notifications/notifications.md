@@ -1,7 +1,7 @@
 ---
 title: "Notifications"
 description: "Notifications"
-sidebar_position: 50
+sidebar_position: 10
 ---
 
 # Notifications
@@ -16,10 +16,10 @@ option.
 Netwrix Auditor can deliver email notifications, reports, and activity summaries using either of
 two delivery methods, selected in the **Method** column:
 
-- [Enable Notifications via Exchange Online](/docs/auditor/10.9/admin/settings/notifications-exchangeonline.md) —
+- [Enable Notifications via Exchange Online](/docs/auditor/10.9/admin/settings/notifications/exchangeonline.md) —
   modern (OAuth 2.0) authentication against Exchange Online / Microsoft 365, including national
   cloud (GCC, GCC High, DoD, China) support.
-- [Enable Notifications via SMTP](/docs/auditor/10.9/admin/settings/notifications-smtp.md) —
+- [Enable Notifications via SMTP](/docs/auditor/10.9/admin/settings/notifications/smtp.md) —
   traditional SMTP delivery to any SMTP server, on-premises Exchange, or public mail provider.
 
 ## Activity and Health Summary Email

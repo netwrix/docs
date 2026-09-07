@@ -38,4 +38,4 @@ a plan, click Edit, and then select Update. Netwrix Auditor delivers a summary t
 recipient, listing all activity that occurred since the last data collection.
 
 To disable Activity Summary Emails, you need to disable notifications in the settings. See the
-[Notifications](/docs/auditor/10.9/admin/settings/notifications.md) topic for additional information.
+[Notifications](/docs/auditor/10.9/admin/settings/notifications/notifications.md) topic for additional information.

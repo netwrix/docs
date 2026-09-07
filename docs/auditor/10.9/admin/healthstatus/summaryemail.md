@@ -9,7 +9,7 @@ sidebar_position: 30
 Auditor Health Summary email includes all statistics on the product operations and health for the
 last 24 hours; it also notifies you about license status. By default, Auditor generates this email
 daily at 7:00 AM and delivers it to the recipient specified in the
-[Notifications](/docs/auditor/10.9/admin/settings/notifications.md) settings. Email content is very similar to data
+[Notifications](/docs/auditor/10.9/admin/settings/notifications/notifications.md) settings. Email content is very similar to data
 presented in the [Health Status Dashboard](/docs/auditor/10.9/admin/healthstatus/dashboard/overview.md).
 
 For greater usability, to depict overall product health state, the email includes a color indicator
