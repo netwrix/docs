@@ -1,67 +1,45 @@
 ---
-id: access-analyzer
-title: "Access Analyzer"
-pagination_label: Access Analyzer
-keywords: ['access', 'analyzer', 'dspm']
-description: "Netwrix Access Analyzer, an on-premises DSPM product for data security and access analysis"
+title: Access Analyzer
+description: What Netwrix Access Analyzer does, how its parts fit together, and where to begin.
 sidebar_position: 1
 ---
 
-# Overview
+## What Access Analyzer is
 
-Access Analyzer is an on-premises Data Security Posture Management (DSPM) product that helps organizations discover, classify, and report on sensitive data across enterprise file systems. Deployed on your own infrastructure, it provides visibility into data access patterns, identifies compliance risks, and more, all without sending data to the cloud.
+Netwrix Access Analyzer is a self-hosted web application that you install on a Linux server you own. It scans your file servers, directories, and Microsoft 365 tenant and builds a picture of where sensitive data lives and who can reach it. It belongs to the data security posture management (DSPM) category of products. [Key concepts](key-concepts.md) defines the terms used throughout.
 
-Today, Access Analyzer has three functional components:
+![Access Analyzer Home page with the navigation sidebar and getting-started content](/images/accessanalyzer/26.1/overview/home.webp)
 
-- **Discovery** - Connect to file systems, cloud file sources, and your identity systems to collect metadata about your files and employees
-- **Classification** - Detect and classify your data using our pattern classifier
-- **Reporting** - Visualize your security posture with built-in dashboards
+## What it does
 
-:::note Using an older version?
-This documentation covers **Access Analyzer version 26.0**. If you are running a previous Windows-based version, select your version from the following list:
+### Sources
 
-- [Access Analyzer 12.0 documentation](https://docs.netwrix.com/docs/accessanalyzer/12_0)
-- [Access Analyzer 11.6 documentation](https://docs.netwrix.com/docs/accessanalyzer/11_6)
-:::
+Access Analyzer collects permissions and inventory from SMB file servers (the **File Server** source type), Active Directory, Entra ID, and Microsoft 365 (the **SharePoint Online** source type). Each connected system is a source, and most sign in with a [service account](service-accounts/index.md). [Sources](sources/index.md) covers each type.
 
-## Discovery
+### Scans and agents
 
-One of the three major components to Access Analyzer is discovering the files and other metadata available within your sources. When you add a Service Account & a Source then setup a Scan, Access Analyzer immediately starts pulling in this metadata.
+A scan defines what to collect, from which sources, and when. Access scans inventory shares, folders, files, and sites with their permissions; Sensitive data scans read file content; Identity sync pulls users, groups, and memberships from a directory. Scans run on demand or on a schedule. Every scan runs on an agent: the System agent built into the server, or agents you deploy on other Linux hosts and pick with labels. See [Scans](scans/index.md) and [Agents](agents/index.md).
 
-An optional but powerful feature of Access Analyzer is that you can run Access Analyzer Agents anywhere, and these agents can share the load of your scans (or handle them entirely!). This is great to ensure data never leaves certain regions or to improve discovery performance by handling the discovery process close to the source.
+### Sensitive data
 
-:::note
-The discovery process is a read-only operation. Access Analyzer does not modify objects on a source. It also does not install persistent agents on file servers or domain controllers.
-:::
+Sensitive data patterns are regular expressions grouped by compliance program or data category, each rated Low, Medium, or High confidence. Access Analyzer ships 139 built-in patterns in 11 groups, and you can add your own. A scan records which patterns matched in a file and how many times, never the matched text. See [Sensitive data patterns](sensitive-data-patterns/index.md).
 
-## Classification
+### Dashboards and reports
 
-Once you have gotten the metadata about your information and where it lives you can classify that information by reading it in and classifying that information with known patterns. We do this today with our Pattern Classifier.
+Two dashboards, Data security and Active Directory, summarize what your scans have found. Reports under **Data**, **Identity**, and **Compliance** each answer one question, such as which folders have broken permission inheritance or which files contain sensitive data. Both have filters and drill-down. See [Dashboards and reports](dashboards-reports/index.md).
 
-## Reporting
+### Activity data
 
-After each scan, Access Analyzer stores results in a high-performance analytics database and makes them available through embedded dashboards and reports. Security teams can filter by domain, file server, site, classification type, and more to drill into specific findings without having to write queries.
+Scans show who can reach data. To see who used that access, connect [Netwrix Activity Monitor](integrations/netwrix-activity-monitor.md), which streams the events it records on file servers, SharePoint Online, and Microsoft 365 Copilot to Access Analyzer. They fill the **Activity** tab of the Data security dashboard and the Activity Investigation report. See [Integrations](integrations/index.md).
 
-Below are just a few examples of the reports available:
+### Users and sign-in
 
-| Report | Description |
-| --- | --- |
-| **Sensitive Data Discovery** | Classifies file content across file servers and SharePoint Online against built-in detection patterns for PII, PHI, credentials, and financial data. Access Analyzer maps findings to compliance frameworks including GDPR, HIPAA, PCI DSS, and CCPA. |
-| **Access Risk Analysis** | Identifies open access, overly permissive ACLs, broken permission inheritance, and stale entitlements across file shares and SharePoint sites. Shows effective permissions for any user or group. |
-| **Identity Inventory** | Continuously syncs users, groups, memberships, and roles from Active Directory and Entra ID. Tracks group nesting, stale accounts, and role assignments across your identity providers. |
-| **File Activity Monitoring** | Ingests real-time file system and SharePoint activity events from Netwrix Activity Monitor. Powers activity reports and enables anomaly detection and sensitive data activity tracking. Requires a separate Netwrix Activity Monitor deployment. |
+Every user holds one of three roles: Admin, User admin, or Viewer. Admins can change anything, User admins manage accounts only, and Viewers have read-only access. People sign in with a local account or, after you connect a directory, with Active Directory or Entra ID credentials. See [Users and roles](settings/users.md) and [Single sign-on](settings/single-sign-on.md) under [Settings](settings/index.md).
 
-# Supported Source Types
+## Where to start
 
-Where can you look for information in your environment? Today, Access Analyzer supports connecting to the following sources types:
+Start with [Installation](install/index.md): pick a size, prepare the server, and run the installer. Then [sign in for the first time](install/first-sign-in.md), change the one-time password, and connect a directory or put that off. After that, follow the [Guides](guides/index.md), one per platform, to your first populated dashboard. Before a rollout, read [What's new in 26.1](whats-new.md) and [Known limitations](known-limitations.md).
 
-| Name | Type | Connection Method |
-|---|---|---|
-| Active Directory | Identity | LDAP/LDAPS |
-| Entra ID | Identity | API |
-| SMB (generic) | File System | SMB 3.x |
-| NetApp | File System | SMB 3.x |
-| Dell PowerScale (formerly Isilon) | File System | SMB 3.x |
-| Windows File Server | File System | SMB 3.x |
-| Nutanix | File System | SMB 3.x |
-| Microsoft 365 (M365) | Cloud Storage | API |
+## Supported browsers
+
+Access Analyzer works in any current browser. Internet Explorer isn't supported.

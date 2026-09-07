@@ -30,7 +30,7 @@ ArgoCD deploys Netwrix Access Analyzer 26.1, and you update it using the `dspmct
 - **Auto-update installation** — ArgoCD automatically applies new releases as they become available. You do not need to perform any manual update steps; you only need to verify that ArgoCD applied the update.
 - **Targeted version installation** — The original installation pinned a specific version. You must manually set the new target version and trigger a sync.
 
-If you are not sure which installation type applies to your environment, run `sudo dspmctl version` and compare the output to the latest announced release. If they match, the application is already current. For system requirements, see [System Requirements](/docs/accessanalyzer/26_1/install/system/requirements).
+If you are not sure which installation type applies to your environment, run `sudo dspmctl version` and compare the output to the latest announced release. If they match, the application is already current. For system requirements, see [System Requirements](/docs/accessanalyzer/26_1/install/requirements).
 
 ## Instructions
 

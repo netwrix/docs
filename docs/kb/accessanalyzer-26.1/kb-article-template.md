@@ -104,7 +104,7 @@ If multiple resolutions exist, use ### subheadings for each.
 
 ## Related Links
 
-- [Netwrix Access Analyzer Documentation — System Requirements](/docs/accessanalyzer/26_1/install/system/requirements)
+- [Netwrix Access Analyzer Documentation — System Requirements](/docs/accessanalyzer/26_1/install/requirements)
 - [Link text describing destination — add a line for each relevant resource](#)
 
 ---
