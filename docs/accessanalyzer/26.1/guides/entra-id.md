@@ -8,7 +8,7 @@ Connect a Microsoft Entra ID tenant to Access Analyzer and run an Identity sync.
 
 Access Analyzer signs in to the tenant as an application, not as a user, so the first job is an app registration with a client secret.
 
-## Before you start
+## Before You Start
 
 **In Entra ID.** You need an administrator who can create an app registration and grant admin consent for its permissions. The registration needs Microsoft Graph application permissions that let Access Analyzer read users, groups, and directory roles; the sync never writes to the directory. When you add the source, **Test connection** checks that the app has the permissions it needs.
 
@@ -22,7 +22,7 @@ Registering this application doesn't let people sign in to Access Analyzer with 
 
 :::
 
-## 1. Register an application in Entra ID
+## 1. Register an Application in Entra ID
 
 1. In the Microsoft Entra admin center, create an app registration for Access Analyzer.
 2. On the registration's **Overview** page, copy the **Application (client) ID** and the **Directory (tenant) ID**. You need both in later steps.
@@ -33,7 +33,7 @@ Registering this application doesn't let people sign in to Access Analyzer with 
 
 Record the secret's expiry date. When you rotate it, update the service account you create in the next section.
 
-## 2. Create the service account
+## 2. Create the Service Account
 
 Entra ID sources use a **Client ID/secret** service account. The tenant isn't part of the account; you enter it on the source in the next section.
 
@@ -48,7 +48,7 @@ Entra ID sources use a **Client ID/secret** service account. The tenant isn't pa
 
 The [Client ID and secret](../service-accounts/client-id-secret.md) page covers editing the account when you rotate the secret.
 
-## 3. Add the source
+## 3. Add the Source
 
 1. Go to **Configuration > Sources** and click **Add source**.
 2. In **Source type**, select **Entra ID**.
@@ -63,7 +63,7 @@ The [Client ID and secret](../service-accounts/client-id-secret.md) page covers 
 
 Field details are on the [Entra ID](../sources/entra-id.md) source page.
 
-## 4. Create the Identity sync
+## 4. Create the Identity Sync
 
 Click **Next** to move from one step to the next.
 
@@ -80,7 +80,7 @@ Click **Next** to move from one step to the next.
 8. On the **Review** step, enter a **Name** such as `contoso.onmicrosoft.com - identity sync`.
 9. Click **Create & run now**.
 
-## 5. Watch the execution
+## 5. Watch the Execution
 
 Go to **Configuration > Scan executions** and find the new scan in the list. The list refreshes on its own; the status moves from **Pending** through **Running** to **Completed**, and **Objects** shows how many directory objects the sync read.
 
@@ -88,7 +88,7 @@ Go to **Configuration > Scan executions** and find the new scan in the list. The
 
 If the status is **Failed**, open the row's actions menu and click **View logs**, then check the **Detailed logs** tab. A sign-in error points at the client ID, secret, or tenant ID; a permission error means the app registration is missing a Graph permission or its admin consent. [Scan executions](../scans/scan-executions.md) lists every status.
 
-## 6. Check the reports
+## 6. Check the Reports
 
 Go to **Reports > Identity** and open the **Entra ID** tab.
 

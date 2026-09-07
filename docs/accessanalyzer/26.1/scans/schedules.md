@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Every scan is either manual or scheduled. You set this on the **Schedule** step when you create a scan and can change it at any time by editing the scan. On the same step you also pick the agent the scan runs on.
 
-## Manual and scheduled scans
+## Manual and Scheduled Scans
 
 **Manual — run on demand** is the default. A manual scan runs only when someone starts it: **Run** on the Scans page, or **Create & run now** when you create it. Its **Schedule** column reads **Manual** and its **Schedule Status** badge reads **Disabled**.
 
@@ -14,7 +14,7 @@ Every scan is either manual or scheduled. You set this on the **Schedule** step 
 
 ![Create scan step 4 schedule with Manual selected](/images/accessanalyzer/26.1/scans/create-scan-4-schedule-manual.webp)
 
-## Frequency options
+## Frequency Options
 
 Select a **Frequency**, and its controls appear below it.
 
@@ -41,7 +41,7 @@ There is no one-time schedule. To run a scan once, leave it manual and click **R
 
 Access Analyzer checks schedules every minute and queues a scheduled run within a minute of its start time.
 
-## Time zone
+## Time Zone
 
 Access Analyzer saves start times in the time zone of the browser you save the scan from. A scan with **Start time** 02:00 saved from a browser in Berlin runs at 02:00 Berlin time, whoever views it later. To move the scan to a different time zone, edit it from a browser set to that zone and save it again.
 
@@ -51,7 +51,7 @@ Saving a scheduled scan from a browser in another time zone moves the schedule t
 
 :::
 
-## Set a schedule
+## Set a Schedule
 
 Start on the **Schedule** step of the Create scan flow. For an existing scan, click **Edit scan** in the scan's **Actions** menu on the Scans page. On the **Review** step, click **Edit** next to **Schedule**.
 
@@ -65,7 +65,7 @@ Start on the **Schedule** step of the Create scan flow. For an existing scan, cl
 
 The **Schedule** row of the **Summary** card shows the schedule as it appears on the Scans page, and the [Calendar view](index.md#calendar-view) shows the upcoming runs of every scheduled scan together.
 
-## Turn a schedule off and on
+## Turn a Schedule Off and On
 
 There is no separate pause for a schedule. To stop a scan from running on its own:
 

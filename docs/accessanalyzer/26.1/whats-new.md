@@ -1,5 +1,5 @@
 ---
-title: What's new in 26.1
+title: What's New in 26.1
 description: A tour of what you can do in Access Analyzer 26.1, from installation to dashboards, reports, and the Netwrix Activity Monitor integration.
 sidebar_position: 2
 ---
@@ -16,7 +16,7 @@ One installer binary, `dspm-installer`, sets up the whole product on a single Li
 
 A source is one system Access Analyzer scans: File Server, Active Directory, Entra ID, or SharePoint Online. Tag sources with `key=value` labels such as `env=production` to filter the list and to point scans at every source that matches, and import many at once from a CSV file. See [Sources](sources/index.md).
 
-## Service accounts
+## Service Accounts
 
 A service account is a saved credential for reading a source or deploying an agent: Username/password, Client ID/secret, Client ID/certificate, or SSH username/key. For a certificate account, Access Analyzer can generate a self-signed certificate valid for one year, or you can upload your own. Access Analyzer never displays a secret after you save it. See [Service accounts](service-accounts/index.md).
 
@@ -40,6 +40,6 @@ Two dashboards give the wide view: Data security for File Server and SharePoint 
 
 Settings holds what applies to the whole installation: classification and Netwrix Activity Monitor defaults, feature flags, and user accounts with the Admin, User admin, and Viewer roles. People sign in with local accounts, and you can connect Active Directory or Entra ID alongside them. Daily backups of the configuration database go to local disk or S3-compatible storage, and System logs gathers logs from every component. See [Settings](settings/index.md).
 
-## Netwrix Activity Monitor integration
+## Netwrix Activity Monitor Integration
 
 Netwrix Activity Monitor records who did what on file servers, in SharePoint Online, and in Microsoft 365 Copilot. Connect it and that activity feed streams into Access Analyzer, so you can see which users touched sensitive files on an open share. Enrollment is one step: generate an enrollment token in Settings and enter it in the Activity Monitor agent with the server address and port 4504. See [Netwrix Activity Monitor](integrations/netwrix-activity-monitor.md).

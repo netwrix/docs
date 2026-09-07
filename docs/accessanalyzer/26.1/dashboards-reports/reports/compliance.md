@@ -1,5 +1,5 @@
 ---
-title: Compliance reports
+title: Compliance Reports
 description: How the Compliance page arranges eight of the Data reports under GDPR, HIPAA, PCI DSS, SOX, ISO 27001, NIST CSF, and SOC 2, and what the Primary and Supporting badges mean.
 sidebar_position: 3
 ---
@@ -10,7 +10,7 @@ Open the page from **Reports > Compliance**. [Data reports](data.md) describes e
 
 ![Compliance reports list, All tab](/images/accessanalyzer/26.1/dashboards-reports/reports-compliance.webp)
 
-## The Compliance page
+## The Compliance Page
 
 The layout matches the other two report pages: a table with **Report** and **Category** columns, tabs above it, and chips under the tabs. Here the tabs are regulatory frameworks and the chips are control areas.
 
@@ -40,7 +40,7 @@ The chips group the eight reports by control area. The counts are the same on ev
 
 Both Share Audit rows from the Data page appear here, under different control areas. They open the same report. Switching tabs clears the selected chip, as on the other report pages.
 
-## Primary and Supporting badges
+## Primary and Supporting Badges
 
 On the **All** tab, report names carry no badge. Select a framework and each name gains a small **Primary** or **Supporting** label. **Primary** means the report is direct evidence for that framework's controls; **Supporting** means it's useful context rather than the main exhibit.
 
@@ -48,11 +48,11 @@ On the **All** tab, report names carry no badge. Select a framework and each nam
 
 Only two report-framework pairings carry the **Supporting** badge: the Share Audit row under **File share structure** on the **GDPR** tab and Shared Links under **SOX**. The second Share Audit row, under **Sensitive data**, is **Primary** on every tab, as is every other pairing. The badges are fixed, so they read the same in every deployment; they don't reflect anything about your data.
 
-## Included and excluded reports
+## Included and Excluded Reports
 
 The eight reports on this page are the seven file server reports from the Data page plus Shared Links, the SharePoint sharing-links report. The page leaves out the Data page's other three SharePoint reports (High-Risk ACLs, Open Access, and Sensitive Data Overview, the SharePoint counterparts of three listed file server reports) and the [Identity reports](identity.md). To use those for compliance work, open them from their own pages.
 
-## Open a report
+## Open a Report
 
 Click a row to open the report exactly as the Data page does, with the same filters and cards. The link at the top of the report reads **Back to Data reports** and takes you to the Data reports page, not back to Compliance. To return to the framework tab you were on, use your browser's Back button or open **Reports > Compliance** again.
 

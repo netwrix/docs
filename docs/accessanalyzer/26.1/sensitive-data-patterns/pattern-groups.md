@@ -1,5 +1,5 @@
 ---
-title: Pattern groups
+title: Pattern Groups
 description: Create and manage pattern groups, choose which groups are scanned by default, and understand how group selection shapes a Sensitive data scan.
 sidebar_position: 3
 ---
@@ -10,7 +10,7 @@ Access Analyzer ships 11 built-in groups, from **PCI DSS** (Payment Card Industr
 
 You manage groups in the **Pattern Groups** panel on **Configuration > Sensitive data patterns**. The page needs the Admin role.
 
-## View the patterns in a group
+## View the Patterns in a Group
 
 Click a group in the **Pattern Groups** panel. The patterns table filters to that group's patterns and shows **Showing patterns in group** together with the group name. Search and the **Confidence** filter keep working within the group.
 
@@ -18,7 +18,7 @@ Click a group in the **Pattern Groups** panel. The patterns table filters to tha
 
 Click **Show all patterns** to return to the full list. The **Ungrouped** row works the same way for patterns that belong to no group.
 
-## Create a pattern group
+## Create a Pattern Group
 
 1. Go to **Configuration > Sensitive data patterns**.
 2. In the **Pattern Groups** panel, click **New**.
@@ -39,7 +39,7 @@ The group appears in the panel without a **Built-in** badge, and a message confi
 
 A new group is empty. Add patterns to it with **Manage patterns**, or set the group in a pattern's **Groups** field when you create or edit the pattern.
 
-## Edit a pattern group
+## Edit a Pattern Group
 
 1. In the **Pattern Groups** panel, open the group's actions menu.
 2. Click **Edit**.
@@ -50,7 +50,7 @@ A new group is empty. Add patterns to it with **Manage patterns**, or set the gr
 
 You can't edit or delete built-in groups. Scans and the default set refer to groups by name. After you rename a custom group, reselect it in any scan that picks its own groups, and check its **Scanned by default** switch.
 
-## Manage the patterns in a group
+## Manage the Patterns in a Group
 
 1. In the **Pattern Groups** panel, open the group's actions menu.
 2. Click **Manage patterns**.
@@ -69,7 +69,7 @@ If a custom pattern you expect isn't offered in **Select patterns to add**, open
 
 :::
 
-## Test a group's patterns
+## Test a Group's Patterns
 
 1. In the **Pattern Groups** panel, open the group's actions menu.
 2. Click **Test patterns**.
@@ -83,7 +83,7 @@ The **Test Group — `<name>`** dialog shows one highlighted section per pattern
 
 A group test shares a single 2-second limit across every pattern in the group, so keep samples short for large groups such as **GDPR** (General Data Protection Regulation). See [Test patterns](index.md#test-patterns) for the modes and result formats.
 
-## Scanned by default
+## Scanned by Default
 
 Every group row has a **Scanned by default** switch. Together, the groups with the switch on form the global default set: the groups a Sensitive data scan classifies against when it inherits the global configuration rather than choosing its own.
 
@@ -91,7 +91,7 @@ The switch saves as soon as you turn it on or off, for built-in and custom group
 
 Turning every switch off doesn't stop classification. A scan that inherits an empty default set classifies against all groups; see [How a scan picks its groups](#how-a-scan-picks-its-groups).
 
-## How a scan picks its groups
+## How a Scan Picks Its Groups
 
 On a Sensitive data scan's **Configure** step, the **Sensitive data classification** section has two cards. **Configuration source** holds the **Inherit from global configuration** switch, on for new scans. While it's on, the alert **Using global configuration with `<N>` pattern groups enabled.** tells you how many groups the default set holds. Turn it off to pick groups for this scan alone in **Sensitive Data Pattern Groups to Classify**, where you can search, select individual groups, or click **Select All**.
 
@@ -120,7 +120,7 @@ Two things follow from this:
 
 For the other **Configure** settings and their defaults, see [Scan types](../scans/scan-types.md); for creating, editing, and running a scan, see [Scans](../scans/index.md).
 
-## Delete a pattern group
+## Delete a Pattern Group
 
 1. In the **Pattern Groups** panel, open the group's actions menu.
 2. Click **Delete**.

@@ -1,5 +1,5 @@
 ---
-title: Built-in patterns
+title: Built-in Patterns
 description: The 139 sensitive data patterns that ship with Access Analyzer, listed by pattern group with their confidence levels.
 sidebar_position: 1
 ---
@@ -8,7 +8,7 @@ Access Analyzer ships 139 built-in sensitive data patterns organized into 11 bui
 
 Built-in patterns are read-only. You can't edit or delete them, and you can't add a built-in pattern to a group or remove it from one. On the **Sensitive Data Patterns** page, the **Regex / Description** column shows what each built-in pattern detects rather than its regular expression. You can add your own [custom patterns](custom-patterns.md) to any built-in group.
 
-## Built-in groups
+## Built-in Groups
 
 | Group | Patterns | Description |
 |---|---|---|
@@ -26,7 +26,7 @@ Built-in patterns are read-only. You can't edit or delete them, and you can't ad
 
 Many patterns belong to more than one group: 85 of the 139 do. **US SSN** (US Social Security number), for example, is in **GLBA**, **HIPAA**, and **PII**. Every pattern in **Credentials** is also in **CMMC**. A scan selects groups rather than individual patterns, so Access Analyzer reports a pattern's matches whenever you pick any group it belongs to. [Pattern groups](pattern-groups.md) explains how that selection works.
 
-## Patterns by group
+## Patterns by Group
 
 Expand a group to see its patterns in alphabetical order, each with its confidence level and the text from the **Regex / Description** column.
 

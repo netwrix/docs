@@ -1,5 +1,5 @@
 ---
-title: Custom patterns
+title: Custom Patterns
 description: Create, test, edit, and delete your own sensitive data patterns and assign them to pattern groups.
 sidebar_position: 2
 ---
@@ -10,7 +10,7 @@ After you save it, a custom pattern behaves like any other: it appears in the pa
 
 You need the Admin role to create, edit, or delete patterns.
 
-## Regular expression dialect
+## Regular Expression Dialect
 
 Access Analyzer compiles custom patterns with a linear-time engine that uses the RE2 dialect. Linear-time matching means a pattern can't stall a scan on a pathological input, but it also means the engine rejects a few constructs from other regex engines:
 
@@ -30,7 +30,7 @@ unsupported syntax: positive lookahead `(?=` at byte offset 12: the linear engin
 
 Rewrite the expression without the construct. You can usually replace a lookaround by matching the surrounding text as part of the pattern, and a word boundary (`\b`) at each end stops a pattern from matching inside a longer token.
 
-## Create a custom pattern
+## Create a Custom Pattern
 
 1. Go to **Configuration > Sensitive data patterns**.
 2. Click **Create Pattern**.
@@ -58,7 +58,7 @@ The pattern appears in the table, and a message confirms the save: **Pattern "`<
 
 Scans select groups, not individual patterns, so no scan can target a pattern that belongs to no group. Put it in at least one group. See [Pattern groups](pattern-groups.md).
 
-## Example: an internal employee ID
+## Example: An Internal Employee ID
 
 Suppose employee IDs at your organization are the letters `EMP`, a hyphen, and six digits, and you want scans to flag documents that contain them.
 
@@ -85,7 +85,7 @@ Cost center: CC-004821
 
 The tester tints the first two lines green and the last two red, and the status reads **2 of 4 lines matched**. Click **Create Pattern**.
 
-## Edit a custom pattern
+## Edit a Custom Pattern
 
 1. Go to **Configuration > Sensitive data patterns**.
 2. Find the pattern in the table, or type its name in the search box to filter the list.
@@ -98,7 +98,7 @@ A message confirms the change: **Pattern "`<name>`" updated successfully.**
 
 If the pattern saves but its group changes fail, the message **Pattern "`<name>`" was saved, but its group memberships couldn't be updated.** appears, followed by the error. Click **Save Changes** again (or **Create Pattern**, when you're creating the pattern). The retry updates the saved pattern instead of creating a duplicate.
 
-## Delete a custom pattern
+## Delete a Custom Pattern
 
 :::warning
 
@@ -113,7 +113,7 @@ Scans and groups that use a pattern don't block its deletion, and there is no in
 
 A message confirms the deletion: **Pattern "`<name>`" was deleted successfully.** Deleting a pattern also removes it from every group. Findings already recorded keep the pattern's name, so historical reports don't change.
 
-## Manage a pattern's groups
+## Manage a Pattern's Groups
 
 You can change a custom pattern's groups in two places:
 

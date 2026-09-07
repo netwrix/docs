@@ -8,7 +8,7 @@ Netwrix Activity Monitor records who did what in the systems it monitors. Access
 
 The connection is one-way: an Activity Monitor agent sends events to the Access Analyzer server over a Transmission Control Protocol (TCP) connection on port 4504, secured with TLS.
 
-## How the integration works
+## How the Integration Works
 
 Setup is a one-time enrollment, followed by a continuous stream of events.
 
@@ -32,7 +32,7 @@ Once Access Analyzer accepts the token, each side remembers the other's certific
 
 The Activity Monitor output sends three kinds of events: File System, SharePoint Online, and Microsoft 365 Copilot.
 
-## Where the data appears
+## Where the Data Appears
 
 Activity data shows up in three places. Only the dashboard includes SharePoint Online and Copilot events; the two reports cover file server activity.
 
@@ -51,7 +51,7 @@ Until an enrolled agent sends events, every card on the **Activity** tab reads *
 - **TLS certificate.** The Access Analyzer listener on port 4504 presents the same TLS certificate as the web interface, the one you supplied when you [installed Access Analyzer](../install/run-the-installer.md). The connection uses TLS 1.3. If the certificate has expired, the listener doesn't start and agents can't connect.
 - **Admin role.** Only an Admin sees the **Enrollment token** panel, generates tokens, and changes the connection settings. A Viewer can see the connection settings but not change them. See [Users and roles](../settings/users.md).
 
-## Generate an enrollment token
+## Generate an Enrollment Token
 
 1. Sign in to Access Analyzer as an Admin.
 2. Go to **Settings > Application**.
@@ -71,7 +71,7 @@ For example, a token generated at 09:00 expires at 10:00. Between those times yo
 
 If the panel is disabled, the port 4504 listener has no TLS certificate and Access Analyzer can't issue a token. The panel shows **NAM listener certificate isn't configured on this server.** NAM is short for Netwrix Activity Monitor. The listener uses the certificate you supplied at installation; see [Troubleshooting](#troubleshooting).
 
-## Enroll the Activity Monitor agent
+## Enroll the Activity Monitor Agent
 
 The rest of the setup happens in Activity Monitor. The following steps are the outline; the field-by-field description is in the Activity Monitor documentation for the [Access Analyzer 26 output](/docs/activitymonitor/10_0/admin/outputs/accessanalyzer26).
 
@@ -82,7 +82,7 @@ The rest of the setup happens in Activity Monitor. The following steps are the o
 
 The agent connects, checks that the server's certificate matches the one described in the token, and sends the token. Access Analyzer accepts it, records the agent, and events start flowing. Repeat for each agent, reusing the same token while it's valid.
 
-## Certificate trust after enrollment
+## Certificate Trust After Enrollment
 
 Enrollment does more than check the token. The token carries a fingerprint of the public key in the Access Analyzer server's TLS certificate, so the agent knows it has reached the right server before it sends anything. In return, Access Analyzer records the fingerprint of the public key in the agent's certificate. Renewing a certificate with the same key pair keeps that trust intact. From then on the two sides recognize each other by those certificates alone.
 
@@ -93,7 +93,7 @@ That trust depends on the certificates in use at enrollment time:
 
 Access Analyzer treats an agent that connects with an unrecognized certificate as new: the agent has 10 seconds by default to present a valid token before Access Analyzer disconnects it.
 
-## Connection settings
+## Connection Settings
 
 The four settings in the **Netwrix Activity Monitor** card on **Settings > Application** tune how the listener treats agent connections. The defaults suit most environments. Each row shows its setting key, with the allowed range under the field. To change a value, edit it and click **Save changes** in the bar that appears at the bottom of the page. Changes apply to new connections without a restart. [Application settings](../settings/application.md) describes how the settings page itself behaves, including the **Overridden** badge and the reset-to-default control.
 

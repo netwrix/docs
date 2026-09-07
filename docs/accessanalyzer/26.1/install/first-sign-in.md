@@ -1,12 +1,12 @@
 ---
-title: Sign in for the first time
+title: Sign In for the First Time
 description: Sign in with the first administrator's one-time password, set a permanent password, and choose whether to connect an identity provider right away or later.
 sidebar_position: 3
 ---
 
 The installer ends by printing a URL, a username, and a one-time password. The username is the email address you gave as the first administrator. Sign in with them once, and Access Analyzer walks you through replacing the password and deciding how everyone else signs in.
 
-## Sign in
+## Sign In
 
 1. Open `https://<hostname>` in a browser, using the hostname you gave the installer.
 2. In **Username**, enter the first administrator's email address.
@@ -21,7 +21,7 @@ Three wrong passwords lock the account, and at this point no other administrator
 
 :::
 
-## Set a new password
+## Set A New Password
 
 The one-time password works only once, so Access Analyzer immediately asks for a new one, with the message "You must set a new password before continuing."
 
@@ -37,13 +37,13 @@ The page rejects a new password for one of these reasons:
 | Password doesn't meet complexity requirements. | The password has fewer than 12 characters. |
 | New password can't be the same as your current password. | You entered the one-time password again. |
 
-## Choose how to set up sign-in
+## Choose How to Set Up Sign-in
 
 After the password change, Access Analyzer shows a page titled **Connect an identity provider**. It explains that you're signed in with the local administrator account, and that connecting Active Directory or Entra ID lets the rest of your team sign in with the accounts they already have. It offers two buttons.
 
 ![Connect an identity provider page with Set up identity provider and Set up later](/images/accessanalyzer/26.1/integrations/identity-provider-setup.webp)
 
-### Set up identity provider
+### Connect Your Identity Provider
 
 Click **Set up identity provider** to connect your directory right away. The setup runs in three steps, shown across the top of the page as **Identity provider**, **Connect**, and **Admins**.
 
@@ -60,13 +60,13 @@ Click **Set up identity provider** to connect your directory right away. The set
 
 That last click signs you out, because the setup has just changed the sign-in service. Sign in again with the local administrator account. Anyone you added on **Admins** signs in through the directory instead; if you connected Entra ID, the sign-in page also shows **Sign in with Microsoft**.
 
-### Set up later
+### Set Up Later
 
 Choose this if you don't have the directory details yet, or if you want to explore the application before inviting anyone else.
 
 Click **Set up later** to skip straight to the application. The local administrator account keeps working, and Access Analyzer stops redirecting you to this page. You can run the same steps later: go to **Settings > System** and, under **Single sign-on**, click **Go to set up**.
 
-## Retrieve the one-time password again
+## Retrieve the One-Time Password Again
 
 If you closed the terminal before copying the password, you can read it back from the server. The stored password works only until the first administrator replaces it. Run this command on the server as root:
 
@@ -76,6 +76,6 @@ kubectl get secret dspm-bootstrap-admin -n access-analyzer -o jsonpath='{.data.p
 
 The command prints the password.
 
-## The Home page
+## The Home Page
 
 After you sign in, the **Home** page greets you by name and offers to connect your first source. The [Guides](../guides/index.md) walk through connecting a source and scanning it.

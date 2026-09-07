@@ -1,5 +1,5 @@
 ---
-title: Scan types
+title: Scan Types
 description: Learn what Access scans, Sensitive data scans, and Identity sync collect, which sources each supports, their prerequisites and Configure settings, and the reports they feed.
 sidebar_position: 1
 ---
@@ -14,13 +14,13 @@ Every scan has exactly one type. You choose it on the first step of [Create a sc
 
 On the **Configure** step, each source type in the target starts on **Use default configuration**. To change the values in the following tables for every source of that type, select **Customize for all File Server sources**; the label names the source type, and it reads **Customize this source** when the target is a single source. To change them for one source only, add a **Source overrides** entry. Settings you don't touch keep their defaults.
 
-## Access scan
+## Access Scan
 
 An Access scan builds the inventory of what exists and who can reach it. On a File Server source that means the shares, the folders and files beneath them, and the permissions on shares and folders, with file-level permissions as an option. On a SharePoint Online source it means site collections, sites, lists, folders, and documents, plus the users and groups that hold permissions on them. When **Collect OneDrive** is on, it also covers users' OneDrive personal drives.
 
 The inventory is also what a Sensitive data scan works from, so run an Access scan before you schedule a Sensitive data scan on the same source.
 
-### File Server settings
+### File Server Settings
 
 | Setting | Default | Meaning |
 |---|---|---|
@@ -34,7 +34,7 @@ The inventory is also what a Sensitive data scan works from, so run an Access sc
 
 Share names can contain letters, digits, hyphens, and underscores, and hidden shares end with `$`, as in `backup$`. Spaces, dots, and wildcards don't work, and you can list each share only once. The share settings take share names only; there is no setting for individual folder paths.
 
-### SharePoint Online settings
+### SharePoint Online Settings
 
 | Setting | Default | Meaning |
 |---|---|---|
@@ -46,11 +46,11 @@ Share names can contain letters, digits, hyphens, and underscores, and hidden sh
 
 Exclude rules always win over include rules. A bare URL in **Exclude object URLs** doesn't match any documents; to exclude a whole site, end the pattern with `/*`, as in `*.sharepoint.com/sites/archive/*`.
 
-### Reports fed by Access scans
+### Reports Fed by Access Scans
 
 Access scans feed the reports in the **Permissions** category on **Reports > Data**: for File Server, **Broken Inheritance**, **High Risk ACLs**, **Open Access**, and **Share Audit**; for SharePoint Online, **Shared Links**, **High-Risk ACLs**, and **Open Access**. Both feed the [Data security dashboard](../dashboards-reports/dashboards/data-security.md), and [Data reports](../dashboards-reports/reports/data.md) describes each report.
 
-## Sensitive data scan
+## Sensitive Data Scan
 
 A Sensitive data scan opens files, reads their content, and matches it against [sensitive data patterns](../sensitive-data-patterns/index.md). For each file it records which pattern groups and patterns matched and how many times; it doesn't store the matched text itself.
 
@@ -69,7 +69,7 @@ The scan doesn't read every inventoried file. Two settings per source type on **
 
 Changes to these settings reach the scanning service within five minutes and apply to scans that start after that. Scans already running keep the values they started with.
 
-### File Server settings for Sensitive data scans
+### File Server Settings for Sensitive Data Scans
 
 | Setting | Default | Meaning |
 |---|---|---|
@@ -86,7 +86,7 @@ Turn on **Differential scan** for a recurring scan after the first full pass fin
 
 SharePoint Online has no per-type Sensitive data settings. Its sources run with the global classification settings in [Prerequisites](#prerequisites).
 
-### Pattern groups
+### Pattern Groups
 
 Under **Sensitive data classification**, the **Configuration source** card holds the **Inherit from global configuration** switch, which is on by default. While it's on, the scan classifies against the pattern groups marked **Scanned by default** on the Sensitive data patterns page, and the card reports how many groups that is. Changing the global set later changes what this scan looks for on its next run.
 
@@ -100,24 +100,24 @@ An empty selection doesn't mean "classify nothing". If the scan inherits the glo
 
 :::
 
-### Reports fed by Sensitive data scans
+### Reports Fed by Sensitive Data Scans
 
 Sensitive data scans feed both **Sensitive Data Overview** reports, one for file systems and one for SharePoint, and the sensitive-data variant of **Share Audit**, all listed in [Data reports](../dashboards-reports/reports/data.md). Findings also appear on the [Data security dashboard](../dashboards-reports/dashboards/data-security.md).
 
-## Identity sync
+## Identity Sync
 
 An Identity sync collects the accounts and groups of a directory. From Active Directory it collects users, groups, group memberships, and custom user attributes. From Entra ID it collects users, groups, and memberships.
 
-### Active Directory settings
+### Active Directory Settings
 
 | Setting | Default | Meaning |
 |---|---|---|
 | **Enable differential scan** | On | Collects only objects that changed since the last sync. Turn it off to force a full collection. |
 
-### Entra ID settings
+### Entra ID Settings
 
 Entra ID has no per-type settings. The **Configure** step tells you so and the source runs with the defaults.
 
-### Reports fed by Identity sync
+### Reports Fed by Identity Sync
 
 Active Directory syncs feed the **AD Users** report and the [Active Directory dashboard](../dashboards-reports/dashboards/active-directory.md). Entra ID syncs feed the **Entra Users** and **Entra Groups** reports. [Identity reports](../dashboards-reports/reports/identity.md) describes all three.

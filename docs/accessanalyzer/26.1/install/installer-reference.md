@@ -1,5 +1,5 @@
 ---
-title: Installer reference
+title: Installer Reference
 description: The dspm-installer flags, environment variables, configuration file keys, exit codes, preflight checks, and log locations.
 sidebar_position: 4
 ---
@@ -44,7 +44,7 @@ The defaults for `--tls-cert` and `--tls-key` apply only when you omit both flag
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 
-### Value checks
+### Value Checks
 
 The installer rejects bad values before it changes anything on the server.
 
@@ -56,7 +56,7 @@ The installer rejects bad values before it changes anything on the server.
 | TLS certificate and key | PEM. The pair must match, the certificate must not be expired, and its Subject Alternative Names must include the hostname. A certificate that expires within 30 days produces a warning in the log. |
 | CA bundle | PEM with at least one certificate. The TLS certificate must chain to it. If the TLS certificate is self-signed and you give no bundle, the installer uses the certificate as its own bundle. |
 
-## Configuration file
+## Configuration File
 
 The installer keeps its answers in `/etc/dspm/installer.yaml`. It writes the file itself: after every confirmed prompt in an interactive run, or once after license validation in a flag-driven run. On the first save it prints `Progress saved to /etc/dspm/installer.yaml — future runs will pre-fill these values.` A later run reads the file and asks only for what's still missing, so a canceled install resumes where it stopped.
 
@@ -76,7 +76,7 @@ The file holds the license key, so the installer creates it owned by root with m
 
 When the file supplies every required value and the installer runs in a terminal, it first asks **Show advanced settings?** (the default is **No**), then shows the review screen and asks **Everything look good?** before it starts. Declining the review prints `Config file /etc/dspm/installer.yaml was loaded — edit or delete that file, or override individual values with flags.` Pass `--assume-yes` to skip both questions.
 
-## Exit codes
+## Exit Codes
 
 | Code | Meaning |
 |---|---|
@@ -90,7 +90,7 @@ When the file supplies every required value and the installer runs in a terminal
 | 71 | A service stayed in a failed state for 5 minutes. Returned only by `wait-for-apps`; during an install the same condition exits 70. |
 | 80 | Preflight checks failed (`preflight checks failed`), or you didn't accept warnings (`preflight warnings detected; use --accept-warnings to continue` or `installation stopped at preflight warnings`). |
 
-## Preflight checks
+## Preflight Checks
 
 Eleven checks run before the installer changes anything on the server, in the order the following table lists them. Each ends as PASS, WARN, or FAIL. The installer prints only WARN and FAIL results, as `  [FAIL] <check> <message>` or `  [WARN] <check> <message>`. Any FAIL stops the install; `--accept-warnings` doesn't override it. Any WARN stops it too unless you answer **Yes** to **Continue despite these warnings?** or pass `--accept-warnings`.
 
@@ -115,7 +115,7 @@ When the `antivirus` check finds a product, add these paths to that product's ex
 
 The [Requirements](requirements.md) page lists the 18 hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
 
-## The `wait-for-apps` command
+## The `wait-for-apps` Command
 
 `wait-for-apps` repeats the readiness wait without reinstalling anything. Use it when an install stopped while waiting for the services, or to check whether they're all ready.
 

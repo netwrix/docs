@@ -17,7 +17,7 @@ Settings holds what applies to the whole installation rather than to one source 
 | **System** | [Backups](backups.md) and [single sign-on](single-sign-on.md) | Admin, User admin |
 | [**System logs**](system-logs.md) | Application logs from every component, with search, filter, and download | Admin |
 
-## Permissions by role
+## Permissions by Role
 
 **Admin** reads and changes everything on every tab. Two controls are Admin-only even on a shared tab: the **Enrollment token** panel on Application and the **Backups** card on System. Admins land on the Application tab when they open Settings.
 
@@ -27,7 +27,7 @@ Settings holds what applies to the whole installation rather than to one source 
 
 [Users and roles](users.md#roles) describes each role and what it can do across the rest of the product.
 
-## Timing of saved changes
+## Timing of Saved Changes
 
 Saving an Application setting or a feature flag doesn't restart anything. Access Analyzer picks up the change on its own within 5 minutes; a feature flag can take about a minute longer to reach the classification engine. That has two consequences:
 

@@ -1,12 +1,12 @@
 ---
-title: Scan executions
+title: Scan Executions
 description: Track each run of a scan on the Scan executions page, act on a run that's still in progress, open its logs, and see how long the history is kept.
 sidebar_position: 3
 ---
 
 A scan execution is one run of one scan against one source. A scan that targets six sources creates up to six executions each time it runs, and each one has its own status, object count, duration, and logs. The Scan executions page lists them all.
 
-## The Scan executions page
+## The Scan Executions Page
 
 Go to **Configuration > Scan executions**. The page refreshes itself every 3 seconds while it's open, so a running execution's status, object count, and duration update without a reload. Clicking **Run** on the Scans page brings you here with the list already filtered to that scan.
 
@@ -32,7 +32,7 @@ Some executions run follow-up steps after the main collection. Those rows have a
 
 There is no separate detail page for an execution. Everything beyond the row itself lives in the logs dialog, described in [View the logs](#view-the-logs).
 
-## Execution statuses
+## Execution Statuses
 
 | Status | Meaning | What you can do |
 |---|---|---|
@@ -53,13 +53,13 @@ There is no separate detail page for an execution. Everything beyond the row its
 
 An execution can run for at most 7 days. Access Analyzer also ends a run that has been stuck in **Pending** or **Running** for more than 2 hours: as **Stopped** when you requested a stop, and as **Failed** otherwise.
 
-## Pause, resume, or stop an execution
+## Pause, Resume, or Stop an Execution
 
 The **Actions** menu on each row offers whichever of **Pause**, **Resume**, and **Stop** apply to its status. A confirmation message appears for each request: **Pausing execution**, **Resuming execution**, or **Stopping execution**. To act on every execution of a scan at once, use **Pause** or **Stop** on the scan's row on the Scans page instead.
 
 ![Scan execution actions menu with View logs](/images/accessanalyzer/26.1/scans/executions-row-actions.webp)
 
-### Pause an execution
+### Pause an Execution
 
 1. Open the **Actions** menu of a **Running** execution.
 2. Click **Pause**.
@@ -67,14 +67,14 @@ The **Actions** menu on each row offers whichever of **Pause**, **Resume**, and 
 
 The status moves to **Pausing**, then to **Paused** when the run has saved its progress.
 
-### Resume an execution
+### Resume an Execution
 
 1. Open the **Actions** menu of a **Paused** execution.
 2. Click **Resume**.
 
 The status passes through **Pending** or **Resuming** and returns to **Running** when the agent picks the work back up. Clicking **Run** on the scan resumes its paused executions too.
 
-### Stop an execution
+### Stop an Execution
 
 1. Open the **Actions** menu of a **Running**, **Pending**, or **Paused** execution.
 2. Click **Stop**.
@@ -82,7 +82,7 @@ The status passes through **Pending** or **Resuming** and returns to **Running**
 
 A **Running** execution moves to **Stopping** and then **Stopped**. A **Paused** execution becomes **Stopped** immediately, and a **Pending** one becomes **Cancelled**. All three are final; the next **Run** of the scan creates a new execution.
 
-## View the logs
+## View the Logs
 
 **View logs** is available on every execution, whatever its status. Use it to see what a run did and why it ended.
 
@@ -100,7 +100,7 @@ The **Overview** tab is a short timeline of the run's milestones. It opens with 
 
 ![Execution logs dialog Overview tab with execution summary](/images/accessanalyzer/26.1/scans/execution-logs-overview.webp)
 
-### Detailed logs
+### Detailed Logs
 
 The **Detailed logs** tab shows the log lines the agent wrote during the run. It holds the last 1,000 entries, as the **Showing last 1,000 entries** footer says, and refreshes every 3 seconds while the execution is running. Type in **Search logs…** to filter the lines. **Auto-scroll** keeps the newest line in view on a live run; click **Pause scroll** to stop the view from moving while you read.
 
@@ -108,7 +108,7 @@ An execution that has just started shows **No logs available yet** until the age
 
 ![Execution logs dialog Detailed logs tab with structured log lines](/images/accessanalyzer/26.1/scans/execution-logs-detailed.webp)
 
-## Run a scan again
+## Run a Scan Again
 
 You can't retry an execution on its own. To collect again, run the scan:
 

@@ -8,7 +8,7 @@ A label is a `key=value` pair attached to a source, such as `env=production` or 
 
 Labels on sources are separate from labels on agents, which decide where scans run; see [Agent labels and scan routing](../agents/agent-labels.md).
 
-## The label model
+## The Label Model
 
 - A label has a key and a value. Both are required.
 - A source can carry up to 50 labels, and each key appears at most once per source. `env=production` and `env=staging` can't both be on the same source.
@@ -16,7 +16,7 @@ Labels on sources are separate from labels on agents, which decide where scans r
 - Access Analyzer trims leading and trailing whitespace and compares labels case-insensitively: `Env=Production` and `env=production` are the same label. When you enter a key or value that already exists in another casing, the editor snaps it to the existing form.
 - Labels form a shared vocabulary. Attaching `env=production` to a second source reuses the same label, and the editor suggests known keys and, after you pick a key, its known values.
 
-### A labeling scheme that works
+### A Labeling Scheme That Works
 
 Pick a small set of keys, decide their values up front, and use them on every source. The following scheme answers most of the questions people ask of the Sources page and gives scans something stable to target.
 
@@ -30,13 +30,13 @@ Pick a small set of keys, decide their values up front, and use them on every so
 
 With this scheme, a scan targeting `env=production` and `data=confidential` covers every confidential production source, including any you add later.
 
-## Ways to set labels
+## Ways to Set Labels
 
 - In the **Labels** field in the **Details** section of the source form, when you add or edit a source. See [Add a source](index.md#add-a-source).
 - In bulk: select several sources on the Sources page and click **Edit labels**. See [Edit labels on several sources](#edit-labels-on-several-sources).
 - In a CSV import: the `labels` column takes `key=value` pairs separated by `;`. See [Import sources from a CSV file](import-sources.md).
 
-### The label editor
+### The Label Editor
 
 The editor is a two-column grid with **Key** and **Value** headers, a remove button at the end of each row, and an always-present empty row at the bottom for the next label. There's no add button; filling in the empty row creates a new one below it.
 
@@ -52,7 +52,7 @@ The editor rejects mistakes inline:
 | **Label key must be at most 63 characters** / **Label value must be at most 255 characters** | Too long |
 | **Label key must not contain "=", ";", or ","** (or the value equivalent) | A forbidden character |
 
-## Edit labels on several sources
+## Edit Labels on Several Sources
 
 1. On the Sources page, select the sources with the row checkboxes.
 2. In the bulk action bar, click **Edit labels**. The dialog title shows how many sources you're editing.
@@ -62,11 +62,11 @@ The editor rejects mistakes inline:
 
 You must add or remove at least one label. If an addition would take a source past 50 labels, the dialog names that source and rejects the whole update, so none of the sources change. After the update, the dialog switches to **Label update results** and lists each source as **Updated** or with the reason it failed.
 
-## Filter the Sources page by labels
+## Filter the Sources Page by Labels
 
 The **Filter by labels (all must match)** box in the Sources toolbar takes one or more labels and shows only the sources that carry every one of them. Selecting `env=production` and `team=finance` shows the sources that have both, not either. The page URL carries the active filter, so you can bookmark a filtered view or send the link to a colleague. Click **Clear filters** to remove it and any other active filter.
 
-## Target scans at labels
+## Target Scans at Labels
 
 When you create a scan, the **Target** step asks **Which sources should this scan cover?** and offers two answers:
 

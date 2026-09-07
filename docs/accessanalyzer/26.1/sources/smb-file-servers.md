@@ -1,5 +1,5 @@
 ---
-title: SMB file servers
+title: SMB File Servers
 description: Add a File Server source to scan the shares, permissions, and file contents of an SMB file server.
 sidebar_position: 1
 ---
@@ -12,7 +12,7 @@ For an end-to-end walkthrough from source to first report, see [Scan SMB file se
 
 ## Prerequisites
 
-### Service account
+### Service Account
 
 File Server sources use a [Username and password](../service-accounts/username-password.md) service account. Enter the username as `DOMAIN\username`; the `username@domain` form works for Access scans but not for Sensitive data scans. For a server that isn't domain-joined, use the server's workgroup name in place of the domain, for example `WORKGROUP\username`, or enter it in the source's **Domain** field.
 
@@ -38,7 +38,7 @@ Access scans can use any port you enter in **Port**. Sensitive data scans work o
 
 You select the agent on the scan, not on the source; see [Agents](../agents/index.md).
 
-## Add a File Server source
+## Add a File Server Source
 
 1. Go to **Configuration > Sources**.
 2. Click **Add source**.
@@ -58,7 +58,7 @@ You select the agent on the scan, not on the source; see [Agents](../agents/inde
 | **Port** | No | The TCP port for the SMB connection, 1 to 65535. Leave the default unless the server listens elsewhere; Sensitive data scans require 445. | 445 |
 | **Domain** | No | The Windows domain or workgroup name, for example `CORP`. Applies when the username doesn't include a domain. | None |
 
-## Test connection
+## Test Connection
 
 **Test connection** opens an SMB session on the host and port with the service account's credentials and lists the first page of shares. The button becomes available after you fill in **Host** and select a service account.
 
@@ -71,9 +71,9 @@ A successful test shows the message **Connection successful**. A failed test sho
 | Permission denied | The account can sign in to the server and list its shares |
 | SMB protocol version not supported by server or client | The server allows SMB 2 or 3; Access Analyzer doesn't support SMB 1 |
 
-## What the scans collect
+## What the Scans Collect
 
-### Access scans
+### Access Scans
 
 Access scans enumerate the server's shares, then walk each share's folders down to the configured depth. For every share, folder, and file, they record the path, name, owner, size, timestamps, and attributes, plus, for shares and folders, the permission entries: which security identifier (SID) is allowed or denied which rights, and whether each entry is inherited or explicit. The results also flag conditions such as access granted to Everyone or Authenticated Users, explicit deny entries, and folders where inheritance is broken.
 
@@ -83,7 +83,7 @@ Access scans treat shares whose names end in `$`, such as `C$` or `ADMIN$`, as s
 
 Access scans record each trustee (the account or group named in a permission entry) as a SID. Add an [Active Directory](active-directory.md) source for the same domain and run an Identity sync on it so that reports show names for domain accounts and groups instead. Server-local accounts and groups stay as SIDs.
 
-### Sensitive data scans
+### Sensitive Data Scans
 
 Sensitive data scans read the contents of the files a completed Access scan inventoried and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). Run an Access scan on the source first. The scan skips files larger than the maximum file size set in [Application settings](../settings/application.md). With **Differential scan** turned on, the scan reads only files added or changed since the last Sensitive data scan.
 

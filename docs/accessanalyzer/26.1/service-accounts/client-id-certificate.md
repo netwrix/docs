@@ -1,5 +1,5 @@
 ---
-title: Client ID and certificate
+title: Client ID and Certificate
 description: Create a Client ID/certificate service account for SharePoint Online sources, with a certificate Access Analyzer generates or one you upload.
 sidebar_position: 3
 ---
@@ -11,7 +11,7 @@ A Client ID/certificate account holds the application (client) ID and tenant ID 
 
 Access Analyzer holds the private key, and the app registration holds the matching public certificate. Both halves must be in place before a scan can authenticate, so update the app registration whenever you change the certificate here.
 
-## Certificate options
+## Certificate Options
 
 When you create the account, the **Certificate** section offers two choices.
 
@@ -22,7 +22,7 @@ When you create the account, the **Certificate** section offers two choices.
 
 Whichever you choose, Access Analyzer keeps the private key. You can't download it, and Access Analyzer discards it when you regenerate or replace the certificate.
 
-### Requirements for an uploaded PEM file
+### Requirements for an Uploaded PEM File
 
 | Requirement | Detail |
 |---|---|
@@ -55,7 +55,7 @@ Validation runs when you leave a field. An ID that isn't a GUID shows **Client (
 
 ![Add service account dialog with Client ID/certificate selected](/images/accessanalyzer/26.1/service-accounts/add-client-id-certificate.webp)
 
-## Create a Client ID/certificate service account
+## Create a Client ID/Certificate Service Account
 
 <Tabs groupId="certificate-mode">
 <TabItem value="generate" label="Generate for me">
@@ -105,7 +105,7 @@ If the upload fails, the panel reads **Certificate upload failed** with the reas
 
 Then create or edit the SharePoint Online source, select this account in **Service account**, and click **Test connection**. For the source settings, see [Microsoft 365](../sources/microsoft-365.md); for the whole path from app registration to first scan, see [Scan Microsoft 365](../guides/microsoft-365.md).
 
-## Manage the certificate
+## Manage the Certificate
 
 Open the account with **Actions > Edit**. The **Certificate** section shows the current thumbprint and expiry date with three buttons. Unlike the rest of the form, these act right away: **Download** on click; **Regenerate** and **Replace** as soon as you confirm their dialogs. You don't need to click **Save changes**.
 
@@ -117,7 +117,7 @@ Open the account with **Actions > Edit**. The **Certificate** section shows the 
 
 If the account has no certificate, for example because generation failed when you created it, the section shows **Generate certificate** and **Upload certificate** buttons together with the warning **No certificate is attached to this account. Scans can't authenticate until you add one.**
 
-## Renew the certificate before it expires
+## Renew the Certificate Before It Expires
 
 A generated certificate is valid for one year from the day you create it. The **Certificate** section shows **Expires** and the date; after the date passes, it shows **Expired** in red. Plan to renew before then:
 

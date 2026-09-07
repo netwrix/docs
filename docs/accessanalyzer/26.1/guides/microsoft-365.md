@@ -8,7 +8,7 @@ Connect one Microsoft 365 tenant's SharePoint Online sites and OneDrive drives t
 
 Access Analyzer calls the source type **SharePoint Online**. It signs in to the tenant as an application with a certificate, so setup is a round trip between Access Analyzer and the Microsoft Entra app registration.
 
-## Before you start
+## Before You Start
 
 **In Entra ID.** You need an administrator who can create an app registration, upload a certificate to it, and grant admin consent for its permissions. The registration needs application permissions that let Access Analyzer read SharePoint sites, their permissions, and their files. Don't create a client secret for it: SharePoint Online sources authenticate only with a certificate, and Access Analyzer generates that certificate for you in step 1.
 
@@ -18,7 +18,7 @@ Access Analyzer calls the source type **SharePoint Online**. It signs in to the 
 
 **In Access Analyzer.** Sign in with the Admin role.
 
-## 1. Create the service account and its certificate
+## 1. Create the Service Account and Its Certificate
 
 SharePoint Online sources use a **Client ID/certificate** service account. Unlike an Entra ID source, which records the tenant ID on the source itself, a SharePoint Online source takes the tenant ID from the service account.
 
@@ -39,7 +39,7 @@ SharePoint Online sources use a **Client ID/certificate** service account. Unlik
 
 If your organization issues its own certificates, select **Upload my own** instead and provide a `.pem` file, up to 1 MB, that contains both the certificate and its unencrypted private key. Access Analyzer rejects expired certificates and PFX files. The [Client ID and certificate](../service-accounts/client-id-certificate.md) page covers both options and what to do when the certificate is due to expire.
 
-## 2. Upload the certificate to the app registration
+## 2. Upload the Certificate to the App Registration
 
 1. In the Microsoft Entra admin center, open the app registration.
 2. Under **Certificates & secrets**, upload the `.pem` file you downloaded. It holds only the public certificate.
@@ -53,7 +53,7 @@ The generated certificate expires one year after you create the account, and sca
 
 :::
 
-## 3. Add the source
+## 3. Add the Source
 
 1. Go to **Configuration > Sources** and click **Add source**.
 2. In **Source type**, select **SharePoint Online**.
@@ -68,7 +68,7 @@ The generated certificate expires one year after you create the account, and sca
 
 Field details are on the [Microsoft 365](../sources/microsoft-365.md) source page.
 
-## 4. Create the Access scan
+## 4. Create the Access Scan
 
 Run the Access scan first. The Sensitive data scan in step 6 classifies documents from the inventory this scan builds.
 
@@ -87,7 +87,7 @@ Run the Access scan first. The Sensitive data scan in step 6 classifies document
 
 When you're ready to narrow the scan, edit it and select **Customize this source** on the **Configure** step. **Include site collections** limits the scan to the site collections you list and takes no wildcards; **Exclude site collections** and **Exclude object URLs** accept the `*` wildcard. Keep **Workers** at 4 unless the tenant has SharePoint Online prioritization (adaptive throttling) turned on; even then, 32 is the practical maximum before throttling cancels out the gain. Every Access scan is a full crawl of the sites in scope; there is no differential option. [Scan types](../scans/scan-types.md) describes each setting.
 
-## 5. Watch the execution
+## 5. Watch the Execution
 
 Go to **Configuration > Scan executions**. The list refreshes on its own, and the **Objects** column grows as the scan reads the tenant. A first scan of a large tenant takes a while.
 
@@ -95,7 +95,7 @@ Go to **Configuration > Scan executions**. The list refreshes on its own, and th
 
 If the status is **Failed**, open the row's actions menu, click **View logs**, and check the **Detailed logs** tab. A sign-in error points at the certificate or the app registration. [Scan executions](../scans/scan-executions.md) lists every status.
 
-## 6. Create the Sensitive data scan
+## 6. Create the Sensitive Data Scan
 
 After the Access scan shows **Completed**, create the second scan. It downloads documents from the Access scan's inventory and classifies them against sensitive data patterns. By default the scan skips documents larger than 10 MB and files with excluded extensions; both limits are in [Application settings](../settings/application.md).
 
@@ -118,7 +118,7 @@ On a fresh install, no pattern group carries **Scanned by default**, and a scan 
 
 [Sensitive data patterns](../sensitive-data-patterns/index.md) describes the built-in groups and confidence levels.
 
-## 7. Check the dashboards and reports
+## 7. Check the Dashboards and Reports
 
 Dashboards and reports don't refresh on their own. Open one and click **Refresh** to reload it; results from a scan that has just finished can take some time to appear.
 

@@ -1,5 +1,5 @@
 ---
-title: Agent labels and scan routing
+title: Agent Labels and Scan Routing
 description: How agent labels route each scan execution to an agent, and what happens when no agent carries the label.
 sidebar_position: 2
 ---
@@ -8,7 +8,7 @@ Labels are how you tell a scan where to run. Each deployed agent carries one or 
 
 Agent labels are separate from the labels you put on sources. Source labels group sources and pick scan targets; agent labels pick the machine that does the scanning. They don't interact, and they follow different rules. [Labels](../sources/labels.md) describes source labels.
 
-## Agent labels
+## Agent Labels
 
 You add labels when you [deploy an agent](deploy-agent.md) and change them later with **Edit**. A deployed agent must have at least one label. The System agent has no labels you can edit, so its **Labels** column on the Agents page is empty.
 
@@ -25,7 +25,7 @@ Avoid two keys. Access Analyzer reserves `name`, and `default` marks the System 
 
 Pick labels around how you'll route scans, not around how the hosts are built. `region=us-east` and `network=dmz` describe what a scan needs; `cpu=16` doesn't. The **Search agents…** field on the Agents page finds agents by label key, label value, or `key:value`, so a consistent scheme helps there too.
 
-## Agent selection
+## Agent Selection
 
 You select a scan's agent when you create it, in the **Agent** field on the **Schedule** step. The dropdown has two groups: **System**, holding the single option **System agent**, and **Agent labels**, listing every `key=value` your agents carry. Select one label. Any agent that carries it can run the scan.
 
@@ -61,7 +61,7 @@ Access Analyzer decides routing each time an execution starts, not when you save
 
 The **Agent** column on the Scans page shows where each scan runs: **System** for scans with no label, otherwise the label.
 
-## Executions with no matching agent {#when-no-agent-matches}
+## Executions With No Matching Agent {#when-no-agent-matches}
 
 The **Agent** dropdown only offers labels that agents carry, but nothing checks again later. If you delete or relabel the only agent with a scan's label, the scan keeps that label and its schedule fires as normal. Access Analyzer creates the execution, but no scanning happens and the execution doesn't fail immediately. It waits for an agent that carries the label to come online: a new agent you deploy, an offline agent that comes back, or an existing agent you relabel. If no matching agent comes online within about two hours, Access Analyzer marks the execution **Failed**, and the scan's next scheduled execution tries again.
 

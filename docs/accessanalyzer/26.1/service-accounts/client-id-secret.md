@@ -1,12 +1,12 @@
 ---
-title: Client ID and secret
+title: Client ID and Secret
 description: Create a Client ID/secret service account for Entra ID sources from an app registration's application ID and client secret.
 sidebar_position: 2
 ---
 
 A Client ID/secret account holds the application (client) ID and a client secret of an app registration in Microsoft Entra ID. Entra ID sources use it to sign in as the application and read the directory. No user signs in, and the account holds no user password; the application permissions granted to the app registration decide what the account can read. The form labels this type **Client ID/secret**.
 
-## When to use it
+## When to Use It
 
 Use a Client ID/secret account for Entra ID sources. It's the only type that works for them; the source form doesn't stop you from picking another type, but a scan that uses one fails when it runs.
 
@@ -18,14 +18,14 @@ This account is for scanning. Letting your team sign in to Access Analyzer with 
 
 :::
 
-## What you need from the app registration
+## What You Need From the App Registration
 
 - Its **Application (client) ID**, a globally unique identifier (GUID).
 - A client secret, created under **Certificates & secrets** on the app registration. Copy the secret's value.
 
 You don't enter the tenant ID on this account. It belongs to the Entra ID source, together with the **Azure cloud** setting. For the source settings and the permissions the app registration needs, see [Entra ID](../sources/entra-id.md).
 
-## Create a Client ID/secret service account
+## Create a Client ID/Secret Service Account
 
 1. Go to **Configuration > Service accounts**.
 2. Click **Add service account**.
@@ -39,7 +39,7 @@ You don't enter the tenant ID on this account. It belongs to the Entra ID source
 
 Next, select this account in **Service account** on the Entra ID source and click **Test connection**. [Scan Entra ID](../guides/entra-id.md) walks through the whole setup, from app registration to first scan.
 
-## Rotate the client secret
+## Rotate the Client Secret
 
 When you create a new secret on the app registration, update the account before the old secret expires.
 

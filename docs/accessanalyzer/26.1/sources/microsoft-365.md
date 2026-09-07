@@ -12,7 +12,7 @@ For an end-to-end walkthrough, see [Scan Microsoft 365](../guides/microsoft-365.
 
 ## Prerequisites
 
-### App registration
+### App Registration
 
 In the Microsoft Entra admin center, register an application in the tenant that owns the SharePoint Online sites. The scan uses the OAuth 2.0 client credentials flow, so no user signs in. On the app registration:
 
@@ -21,7 +21,7 @@ In the Microsoft Entra admin center, register an application in the tenant that 
 3. Grant admin consent for the tenant.
 4. Leave **Certificates & secrets** for later: you upload the certificate after creating the service account in Access Analyzer.
 
-### Service account
+### Service Account
 
 SharePoint Online sources use a [Client ID and certificate](../service-accounts/client-id-certificate.md) service account. It carries the **Client (application) ID**, the **Tenant ID**, and a certificate. The tenant ID belongs to the service account, not the source; the source records only the SharePoint domain and the cloud. Under **Certificate**, choose one of two options:
 
@@ -36,7 +36,7 @@ After you save the account, upload the public certificate to the app registratio
 
 Scans can't authenticate until the certificate is on the app registration. Repeat the upload whenever you regenerate or replace the certificate.
 
-### Entra ID sync for effective permissions
+### Entra ID Sync for Effective Permissions
 
 An **Effective Permissions Calculation** step determines who has access to each object. It expands Entra ID group memberships using the most recent completed Identity sync of an [Entra ID](entra-id.md) source for the same tenant. If no such sync exists, the step still runs but calculates effective permissions from SharePoint data only, without expanding Entra ID groups. Add an Entra ID source for the tenant and sync it before your first SharePoint Online scan.
 
@@ -44,7 +44,7 @@ An **Effective Permissions Calculation** step determines who has access to each 
 
 The agent that runs the scan needs outbound HTTPS access to Microsoft's sign-in service, to Microsoft Graph, and to the tenant's SharePoint domains: the one you enter in **SharePoint domain** and its OneDrive counterpart, for example `contoso.sharepoint.com` and `contoso-my.sharepoint.com`. You choose the agent in the scan's **Agent** field; see [Agents](../agents/index.md).
 
-## Add a SharePoint Online source
+## Add a SharePoint Online Source
 
 1. Go to **Configuration > Sources**.
 2. Click **Add source**.
@@ -68,15 +68,15 @@ The **Connection** fields:
 
 Changing **SharePoint domain** on an existing source shows the warning **Existing scan data won't follow this change**: data already collected stays with the old domain. To rename the source, change **Name** instead.
 
-## Test connection
+## Test Connection
 
 **Test connection** signs in to the tenant with the service account's client ID and certificate. The button becomes available after you enter a **SharePoint domain** and select a service account.
 
 Success shows the message **Connection successful**. Failure shows an alert titled **Connection failed** with the reason. If Access Analyzer has no specific reason to report, the message is **SharePoint connection validation failed.**
 
-## What the scans collect
+## What the Scans Collect
 
-### Access scans
+### Access Scans
 
 Access scans crawl everything within the scope you set on the scan, on every run; there is no differential mode for this source type.
 
@@ -103,7 +103,7 @@ Raise **Workers** only if the tenant has SharePoint Online prioritization or ada
 
 See [Scan types](../scans/scan-types.md) for how these options appear when you create a scan.
 
-### Sensitive data scans
+### Sensitive Data Scans
 
 Sensitive data scans read the contents of the documents an Access scan found and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). The scan skips documents larger than `sharepoint_file_size_max_mb` (10 MB by default) and documents whose extension appears in `sharepoint_excluded_extensions`; you set both in [Application settings](../settings/application.md). When the tenant throttles requests, the scan backs off and retries.
 

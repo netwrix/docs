@@ -13,12 +13,12 @@ An installation takes three steps, each covered on its own page.
 
 After the first sign-in, the [Guides](../guides/index.md) walk you through scanning your first source.
 
-## People you need
+## People You Need
 
 You need an administrator with root access to the Linux server, either signed in as root or using `sudo`. The installer writes to `/etc/dspm`, `/var/log`, and `/usr/local/bin`, so a non-root account can't complete it.
 
 You also need someone who can issue a TLS certificate for the server's hostname and someone who can open firewall ports. The [Requirements](requirements.md) page lists exactly what to ask for.
 
-## Scripting or troubleshooting an installation
+## Scripting or Troubleshooting an Installation
 
 The [Installer reference](installer-reference.md) lists the flags, environment variables, exit codes, and preflight checks, for when you script an installation or need to find out why one stopped.

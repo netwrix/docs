@@ -1,5 +1,5 @@
 ---
-title: Scan SMB file servers
+title: Scan SMB File Servers
 description: Connect a Windows, NetApp, Dell PowerScale, or Nutanix Files server over SMB, run an Access scan and a Sensitive data scan, and find the results.
 sidebar_position: 1
 ---
@@ -8,7 +8,7 @@ Connect one SMB file server to Access Analyzer and run the two scans that matter
 
 In the UI the source type is called **File Server**. It covers Windows file servers, NetApp, Dell PowerScale (formerly Isilon), and Nutanix Files over SMB 2 or SMB 3.
 
-## Before you start
+## Before You Start
 
 You need three things: an account that can read the shares, a network path to the server, and the Admin role in Access Analyzer.
 
@@ -30,7 +30,7 @@ Keep **Port** at 445. Sensitive data scans read file contents only over port 445
 
 **Names in reports.** The Access scan records permissions as security identifiers (SIDs). To see account and group names in reports, and to expand group membership, add the domain as an Active Directory source and run an Identity sync. The [Scan Active Directory](./active-directory.md) guide covers it; you can do it before or after this guide.
 
-## 1. Create the service account
+## 1. Create the Service Account
 
 File Server sources use a **Username/password** service account.
 
@@ -51,7 +51,7 @@ The field accepts `username@domain` too, but Sensitive data scans read only the 
 
 The [Username and password](../service-accounts/username-password.md) page has the full field reference.
 
-## 2. Add the source
+## 2. Add the Source
 
 1. Go to **Configuration > Sources** and click **Add source**.
 2. In **Source type**, select **File Server**.
@@ -68,7 +68,7 @@ The [Username and password](../service-accounts/username-password.md) page has t
 
 To add many servers at once, [import sources from a CSV file](../sources/import-sources.md) instead. Field details and the connection checks are on the [SMB file servers](../sources/smb-file-servers.md) source page.
 
-## 3. Create the Access scan
+## 3. Create the Access Scan
 
 Run the Access scan first. The Sensitive data scan you create in [Create the Sensitive data scan](#5-create-the-sensitive-data-scan) works from the file inventory this scan builds, so there's nothing for it to classify until an Access scan has completed.
 
@@ -90,7 +90,7 @@ Run the Access scan first. The Sensitive data scan you create in [Create the Sen
 
 **Create scan** saves the scan without running it. You can start it any time from **Configuration > Scans** with **Run** in the row's actions menu.
 
-## 4. Watch the execution
+## 4. Watch the Execution
 
 Go to **Configuration > Scan executions** and find the row for your scan. The list refreshes on its own.
 
@@ -104,7 +104,7 @@ The status moves from **Pending** to **Running** and ends at **Completed**, **Co
 
 [Scan executions](../scans/scan-executions.md) lists every status and the pause, resume, and stop controls.
 
-## 5. Create the Sensitive data scan
+## 5. Create the Sensitive Data Scan
 
 After the Access scan shows **Completed**, create the second scan. It classifies files from the Access scan's inventory against sensitive data patterns. By default the scan skips files larger than 10 MB and files with excluded extensions; both limits are in [Application settings](../settings/application.md).
 
@@ -128,7 +128,7 @@ On a fresh install, no pattern group carries **Scanned by default**. A scan that
 
 Follow the run in **Configuration > Scan executions**, as described in [Watch the execution](#4-watch-the-execution). [Sensitive data patterns](../sensitive-data-patterns/index.md) describes the built-in groups and how to add your own patterns.
 
-## 6. Check the dashboards and reports
+## 6. Check the Dashboards and Reports
 
 Dashboards and reports don't refresh on their own. Open one and click **Refresh** after a scan completes.
 

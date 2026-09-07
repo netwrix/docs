@@ -1,5 +1,5 @@
 ---
-title: Identity reports
+title: Identity Reports
 description: The AD Users, Entra Users, and Entra Groups reports on the Identity page, with the filters and columns of AD Users.
 sidebar_position: 2
 ---
@@ -10,7 +10,7 @@ Open the page from **Reports > Identity**. [Dashboards and reports](../index.md)
 
 ![Identity reports list, All tab](/images/accessanalyzer/26.1/dashboards-reports/reports-identity.webp)
 
-## The Identity page
+## The Identity Page
 
 The page is a table with **Report** and **Category** columns, and the description sits under each report name, as on the [Data reports](data.md) page. Tabs split the list by directory and chips split it by category; each shows a count.
 

@@ -10,7 +10,7 @@ A scan is a saved definition: a name, one scan type, a target, settings per sour
 
 Three scan types exist. An **Access scan** inventories shares, folders, files, sites, and their permissions. A **Sensitive data scan** reads file content and classifies it against sensitive data patterns. An **Identity sync** pulls users, groups, and memberships from a directory. [Scan types](scan-types.md) explains what each one collects, which source types support it, and every setting. [Schedules](schedules.md) covers when scans run, and [Scan executions](scan-executions.md) covers following a run after it has started.
 
-## How a scan runs
+## How a Scan Runs
 
 Whether you click **Run** or a schedule fires, the same thing happens.
 
@@ -24,7 +24,7 @@ flowchart LR
 
 Access Analyzer resolves the target first. For a scan that targets specific sources, that's the list you picked. For a scan that targets sources by label, Access Analyzer looks up which sources carry the labels at that moment, so it picks up a source you labeled yesterday without any change to the scan. Each source then gets its own execution, and each execution runs on the agent the scan (or a per-source override) points at. Access Analyzer skips a source that already has an execution in progress for this scan rather than starting it twice, and resumes a source whose execution is paused.
 
-## The Scans page
+## The Scans Page
 
 Go to **Configuration > Scans**. The page lists every scan with its type, target, agent, and schedule.
 
@@ -45,7 +45,7 @@ Go to **Configuration > Scans**. The page lists every scan with its type, target
 
 Scan names don't have to be unique. Two scans can both be called "Finance shares", so give scans names that tell them apart at a glance.
 
-### Row actions
+### Row Actions
 
 The **Actions** menu on each row offers up to five items. **Run**, **Pause**, and **Stop** appear only when they can do something.
 
@@ -61,13 +61,13 @@ The **Actions** menu on each row offers up to five items. **Run**, **Pause**, an
 
 After **Run**, a notification reports the outcome: **Scan started** with the number of sources started, **Scan resumed** when the run picks up paused executions, **Scan already running** when every source already has an execution in progress, or **Scan partially started** when some sources couldn't start. If a scan targets sources by label and no source carries those labels at the moment, there is nothing to run and the scan doesn't start.
 
-### Calendar view
+### Calendar View
 
 **Calendar view** opens the **Scan schedule calendar**, a month grid of upcoming scheduled runs across every scan. Switch between **month**, **week**, **day**, and **agenda** views, and move with **Previous**, **Today**, and **Next**. The legend tells **Access scan**, **Sensitive data scan**, and **Disabled** entries apart, and the footer counts the scheduled executions in view. Clicking a scan's **Schedule** cell opens the same calendar.
 
 ![Scan schedule calendar dialog showing a month grid with Previous, Today, Next, and month/week/day/agenda controls](/images/accessanalyzer/26.1/scans/calendar.webp)
 
-## Before you begin
+## Before You Begin
 
 You need at least one source whose type supports the scan type you want. File Server and SharePoint Online sources support Access and Sensitive data scans; Active Directory and Entra ID sources support Identity sync. [Sources](../sources/index.md) covers adding them.
 
@@ -75,14 +75,14 @@ For a File Server source, a Sensitive data scan needs a completed Access scan fi
 
 If you want to target sources by label, put the labels on the sources first. [Labels](../sources/labels.md) explains source labels.
 
-## Create a scan
+## Create a Scan
 
 Creating a scan takes five steps: **Type**, **Target**, **Configure**, **Schedule**, and **Review**. The panel shows **Step N of 5** as you go, and **Back** returns to the previous step at any point.
 
 1. Go to **Configuration > Scans**.
 2. Click **Create scan**.
 
-### Select the scan type
+### Select the Scan Type
 
 1. Under **What should this scan do?**, select **Access**, **Sensitive data**, or **Identity sync**.
 2. Click **Next**.
@@ -95,7 +95,7 @@ You can't change the scan type after you create the scan. To collect something e
 
 :::
 
-### Select the target
+### Select the Target
 
 Under **Which sources should this scan cover?**, select one of two targeting modes.
 
@@ -128,7 +128,7 @@ Either way, the step offers only sources whose type supports the scan type. If n
 
 You can save a label-targeted scan that matches no sources yet. It targets whatever matches when it runs. While a scan targets a label, you can't delete that label.
 
-### Configure scan settings
+### Configure Scan Settings
 
 Every source type in the target starts on its default settings. You can leave it there, customize the settings for all sources of that type, or give individual sources their own values. [Scan types](scan-types.md) lists every setting.
 
@@ -144,7 +144,7 @@ Every source type in the target starts on its default settings. You can leave it
 
 If a source type has no settings for this scan type, the section says so and the sources run with the defaults. For a scan that targets sources by label, individual overrides become available when at least one source matches. If a source stops matching, its override moves to **Inactive overrides**.
 
-### Set the schedule and agent
+### Set the Schedule and Agent
 
 1. Under **When should this scan run?**, keep **Manual — run on demand** or select **On a schedule**.
 2. If you selected **On a schedule**, select a **Frequency** and its time options. [Schedules](schedules.md) describes each option and the time zone rule.
@@ -153,7 +153,7 @@ If a source type has no settings for this scan type, the section says so and the
 
 ![Create scan step 4 with a daily schedule](/images/accessanalyzer/26.1/scans/create-scan-4-schedule-daily.webp)
 
-### Name and review the scan
+### Name and Review the Scan
 
 1. In **Name**, enter a name. This is the only required field on the step.
 2. Optionally, enter a **Description**. It shows as a tooltip on the Scans page.
@@ -168,7 +168,7 @@ Closing the panel with unsaved changes opens **Unsaved changes**: "You have unsa
 
 ![Unsaved changes dialog with Stay and Leave](/images/accessanalyzer/26.1/scans/create-scan-unsaved-changes.webp)
 
-## Edit a scan
+## Edit a Scan
 
 1. Go to **Configuration > Scans**.
 2. Click the scan's name, or open its **Actions** menu and click **Edit scan**. The **Edit scan** panel opens at **Step 5 of 5: Review**.
@@ -187,7 +187,7 @@ Removing a source from a scan's target, whether by clearing its checkbox or by c
 
 :::
 
-## Delete a scan
+## Delete a Scan
 
 1. Go to **Configuration > Scans**.
 2. Open the scan's **Actions** menu and click **Delete**.

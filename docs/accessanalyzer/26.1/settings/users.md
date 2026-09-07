@@ -1,5 +1,5 @@
 ---
-title: Users and roles
+title: Users and Roles
 description: Understand the Admin, User admin, and Viewer roles, manage accounts on the Users tab, and secure your own account with a password and an authenticator app.
 sidebar_position: 3
 ---
@@ -18,7 +18,7 @@ If someone opens a page their role doesn't allow, Access Analyzer redirects them
 
 The **Add user** form labels the Admin role **Administrator**; the Users list and the rest of the product show it as **Admin**.
 
-## The Users tab
+## The Users Tab
 
 **Settings > Users** lists every account. Admins and User admins can open it.
 
@@ -35,7 +35,7 @@ The **Add user** form labels the Admin role **Administrator**; the Users list an
 
 The toolbar has a **Search users…** box, a **Role** filter (**All roles**, **Admin**, **User admin**, **Viewer**), a **Status** filter (**All statuses**, **Active**, **Inactive**), **Clear filters**, and **Add user**. The table shows 10, 25, 50, or 100 rows per page.
 
-### Row actions
+### Row Actions
 
 Each row has an **Actions** menu.
 
@@ -52,7 +52,7 @@ Each row has an **Actions** menu.
 
 You can't deactivate or delete your own account, or the last remaining active Admin or User admin, so you can't lock everyone out.
 
-## Add a user
+## Add a User
 
 Decide two things before you start: the role, and whether the person signs in with a local password or through your identity provider. You can't change the account type later.
 
@@ -78,7 +78,7 @@ Generated passwords are at least 20 characters long. If you close the dialog wit
 
 A federated user doesn't get a password. They sign in through Active Directory or Entra ID, and Access Analyzer matches them to this row by email. See [How federated users sign in](single-sign-on.md#how-federated-users-sign-in).
 
-### Validation messages
+### Validation Messages
 
 | Message | Cause |
 |---|---|
@@ -88,7 +88,7 @@ A federated user doesn't get a password. They sign in through Active Directory o
 | **Password is required when setting it explicitly** | **Set explicitly** is selected and the password is empty. |
 | **Password must be at least 12 characters** | The typed password is too short. |
 
-## Edit a user
+## Edit a User
 
 1. On the user's row, click **Actions > Edit**.
 2. Change the **Name**, **Email**, or **Role**.
@@ -96,13 +96,13 @@ A federated user doesn't get a password. They sign in through Active Directory o
 
 Once a federated user has signed in for the first time, the form locks **Name** and **Email**, and you can change only **Role**. You can never change the account type.
 
-## Deactivate or reactivate a user
+## Deactivate or Reactivate a User
 
 On the row, click **Actions > Deactivate**. The user's sessions end immediately and their status changes to **Inactive**. A message confirms **User "`<name>`" deactivated**. To let them back in, click **Actions > Activate**.
 
 Deactivating is the right choice when someone leaves temporarily or you want to keep their row for reference. For a federated user your directory has disabled, deactivating the Access Analyzer row is optional: the directory already blocks their sign-in.
 
-## Reset a password
+## Reset a Password
 
 Only local accounts have a password to reset. There is no self-service password reset on the sign-in page, so this is how a user who has forgotten their password gets back in.
 
@@ -114,20 +114,20 @@ Only local accounts have a password to reset. There is no self-service password 
 
 If you chose **Generate**, the **Password generated** dialog appears as it does when creating a user. The user's existing sessions end, and a message confirms **Password reset**.
 
-## Unlock a user
+## Unlock a User
 
 An account locks after three consecutive wrong passwords or five consecutive wrong two-factor verification codes. The sign-in page then shows "Account locked. Contact your administrator." An Admin or User admin clears the lock with **Unlock**.
 
 On the row, click **Actions > Unlock**. A message confirms **User "`<name>`" unlocked**. Unlocking doesn't change the password; if the user has forgotten it, also click **Actions > Reset password**.
 
-## Delete a user
+## Delete a User
 
 1. On the row, click **Actions > Delete**.
 2. In the **Delete user** dialog, confirm the deletion.
 
 The user's sessions end, the row disappears, and a message confirms **User "`<name>`" deleted**. Deleting a federated user removes only the Access Analyzer account; nothing changes in Active Directory or Entra ID.
 
-## Password policy and lockout
+## Password Policy and Lockout
 
 Local passwords must be at least 12 characters. There are no character-class rules, and you can't edit the policy in the web app. For federated users, their directory governs passwords, not Access Analyzer.
 
@@ -147,7 +147,7 @@ The first Admin created by the installer goes through this step on their first s
 
 A session ends after 4 hours of inactivity or 8 hours after signing in, whichever comes first. Deactivating a user, deleting them, or resetting their password ends their sessions immediately.
 
-## Security settings for your own account
+## Security Settings for Your Own Account
 
 If you have a local account, you can manage your own password and two-factor authentication. Open the avatar menu in the top-right corner and click **Security settings**. The menu also shows your name and email (Admins see an **Admin** badge next to the name), and holds **Log out**. Federated users don't see **Security settings**; their password and any second factor belong to the directory.
 
@@ -157,7 +157,7 @@ The **Security settings** page has two cards: **Authenticator app (TOTP)**, for 
 
 ![Security settings page for the signed-in user](/images/accessanalyzer/26.1/settings/security-settings.webp)
 
-### Set up an authenticator app
+### Set Up an Authenticator App
 
 Two-factor authentication is optional and per user; no role can make it mandatory. It works with any TOTP authenticator app.
 
@@ -174,7 +174,7 @@ There are no recovery codes, and the **Users** tab has no action to remove anoth
 
 :::
 
-### Remove an authenticator app
+### Remove an Authenticator App
 
 1. On the **Authenticator app (TOTP)** card, click **Remove**.
 2. In the **Remove authenticator app** dialog, enter your **Current password**.
@@ -182,7 +182,7 @@ There are no recovery codes, and the **Users** tab has no action to remove anoth
 
 A message confirms **Authenticator app removed**.
 
-### Change your password
+### Change Your Password
 
 1. On the **Change password** card, enter your **Current password**.
 2. Enter the **New password** and repeat it in **Confirm new password**.

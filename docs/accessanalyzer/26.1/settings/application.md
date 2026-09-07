@@ -1,10 +1,10 @@
 ---
-title: Application settings
+title: Application Settings
 description: Deployment-wide defaults for classification and Netwrix Activity Monitor on the Settings > Application tab, with each setting's default, range, and effect.
 sidebar_position: 1
 ---
 
-## What the Application tab holds
+## What the Application Tab Holds
 
 **Settings > Application** is where deployment-wide defaults live. There are two cards: **Classification** and **Netwrix Activity Monitor**. At the bottom of the Netwrix Activity Monitor card, Admins also see an **Enrollment token** panel. Admins can change everything on the tab. Viewers can open the tab and edit fields, but their saves fail with the message **Some settings weren't saved**.
 
@@ -19,7 +19,7 @@ Number fields show their allowed range as a hint under the field. Any row whose 
 
 As soon as you edit a row, a bar appears at the bottom of the page. It counts your edits (**1 unsaved change**, **3 unsaved changes**) or, if a value is invalid, names the field (**1 field has an invalid value:** followed by the key). You can't save while a field is invalid.
 
-## Change a setting
+## Change a Setting
 
 1. Go to **Settings > Application**.
 2. Edit the setting. For a number, enter the new value; for an extension list, see [Edit an extension list](#edit-an-extension-list).
@@ -30,7 +30,7 @@ A message confirms the result: **1 setting saved** or **3 settings saved**. If a
 
 To drop every unsaved edit, click **Discard**. If you navigate away with unsaved edits, an **Unsaved changes** dialog asks "You have unsaved changes that will be lost if you leave. Are you sure you want to leave?" Click **Stay** to keep editing or **Leave** to drop the edits.
 
-### Validation messages
+### Validation Messages
 
 | Message | Cause |
 |---|---|
@@ -38,7 +38,7 @@ To drop every unsaved edit, click **Discard**. If you navigate away with unsaved
 | **Must be a whole number** | The value has a decimal point or non-numeric characters. |
 | **Must be between `{min}` and `{max}`** | The value is outside the setting's range. |
 
-### Edit an extension list
+### Edit an Extension List
 
 The extension lists are chip editors: each extension is a separate chip in the field.
 
@@ -52,7 +52,7 @@ To remove an extension, click the remove icon on its chip, or press Backspace.
 
 Pasting text separated by spaces, commas, or semicolons adds one chip per extension. The editor drops duplicates, ignoring case, so `.PDF` and `.pdf` count as the same entry.
 
-### Reset a setting to its default
+### Reset a Setting to Its Default
 
 When a value differs from the shipped default, a reset icon appears on the row. Its tooltip reads **Reset to default**, followed by the default value in parentheses for number settings.
 
@@ -111,7 +111,7 @@ These settings tune the listener that Netwrix Activity Monitor agents connect to
 | `activitymonitor_enrollment_first_message_timeout_seconds` | 10 | 5–60 | Seconds to wait for the first message from a newly connected Netwrix Activity Monitor agent. |
 | `activitymonitor_max_message_size` | 16777216 | 65536–67108864 | Maximum size in bytes of a single Netwrix Activity Monitor message. The default is 16 MB. |
 
-### Enrollment token
+### Enrollment Token
 
 Only Admins see the **Enrollment token** panel. Click **Generate token** to issue a token. The token appears in a read-only field with a copy icon, followed by **Expires:** and the expiry time. A token is valid for 1 hour.
 
@@ -119,6 +119,6 @@ After the first token, the button reads **Generate new token**. Each new token i
 
 If the panel is disabled and shows **NAM listener certificate isn't configured on this server**, the Netwrix Activity Monitor (NAM) listener has no TLS certificate yet. [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md) covers that setup and how the agent uses the token.
 
-## When changes take effect
+## When Changes Take Effect
 
 You don't need to restart anything. Services pick up new values within 5 minutes. Classification settings apply to Sensitive data scans that start after the services pick up the new value, which can take up to 5 minutes; a running scan keeps the values it started with. Netwrix Activity Monitor settings apply to connections opened after the change; Activity Monitor agents already connected keep their current session.

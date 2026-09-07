@@ -1,5 +1,5 @@
 ---
-title: Data security dashboard
+title: Data Security Dashboard
 description: Scan coverage, sensitive data findings, and permissions across your File Server and SharePoint Online sources, plus an Activity tab of events from Netwrix Activity Monitor.
 sidebar_position: 1
 ---
@@ -10,11 +10,11 @@ Open it from **Dashboards > Data security**. Users with the Admin or Viewer role
 
 ![Data security dashboard, Scan Overview tab, full page](/images/accessanalyzer/26.1/dashboards-reports/data-security-dashboard-full.webp)
 
-## Data prerequisites
+## Data Prerequisites
 
 An Access scan on your File Server and SharePoint Online sources fills the **Scan Overview** tab. Until a Sensitive data scan has run on those sources as well, **Sensitive Data Findings** shows 0, **Sensitive Data by Source** stays empty, and the **Sensitive Files** and **Sensitive Findings** columns of **Data Source Inventory** have nothing to report. The **Activity** tab holds no scan data at all: it shows events from Netwrix Activity Monitor and stays empty until that connection is in place. [Scan types](../../scans/scan-types.md) covers the scans; [Netwrix Activity Monitor](../../integrations/netwrix-activity-monitor.md) covers the feed.
 
-## Tabs and filters
+## Tabs and Filters
 
 The dashboard has two tabs, **Scan Overview** and **Activity**. Each tab has its own filters, shown above its cards, and every filter applies as soon as you change it.
 
@@ -30,7 +30,7 @@ The dashboard has two tabs, **Scan Overview** and **Activity**. Each tab has its
 
 All filters are optional and start empty, which means no restriction.
 
-## Scan Overview tab
+## Scan Overview Tab
 
 The table lists the cards in the order they appear, top to bottom and left to right.
 
@@ -46,7 +46,7 @@ The table lists the cards in the order they appear, top to bottom and left to ri
 | **SharePoint Sites by Type** | A pie chart of SharePoint Online sites by site type | The **Data Source** filter doesn't affect it |
 | **Data Source Inventory** | One row per share or SharePoint Online site, with columns **Source Type**, **Location**, **Total Objects**, **Files**, **Folders**, **Sensitive Files**, and **Sensitive Findings** | Sorts by total objects, largest first; shows up to 20,000 rows; shares appear as `\\host\share` paths |
 
-## Activity tab
+## Activity Tab
 
 ![Data security dashboard, Activity tab, with date, event type, source, user, and status filters](/images/accessanalyzer/26.1/dashboards-reports/data-security-dashboard-activity.webp)
 

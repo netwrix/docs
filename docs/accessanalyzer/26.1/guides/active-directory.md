@@ -8,7 +8,7 @@ Add one Active Directory domain as a source and run an Identity sync, which read
 
 One source covers one domain. If you have several domains, repeat the guide for each.
 
-## Before you start
+## Before You Start
 
 ### Account
 
@@ -31,7 +31,7 @@ Adding a domain as a source has nothing to do with how people sign in to Access 
 
 :::
 
-## 1. Create the service account
+## 1. Create the Service Account
 
 Active Directory sources use a **Username/password** service account.
 
@@ -46,7 +46,7 @@ Active Directory sources use a **Username/password** service account.
 
 If you already created a **Username/password** account for a file server in the same domain and its **Username** is a plain user name with no domain prefix, you can reuse it here; the [Username and password](../service-accounts/username-password.md) page covers the details.
 
-## 2. Add the source
+## 2. Add the Source
 
 1. Go to **Configuration > Sources** and click **Add source**.
 2. In **Source type**, select **Active Directory**.
@@ -63,7 +63,7 @@ If you already created a **Username/password** account for a file server in the 
 
 The [Active Directory](../sources/active-directory.md) source page describes each field and the connection checks in more depth.
 
-## 3. Create the Identity sync
+## 3. Create the Identity Sync
 
 Click **Next** to move from one step to the next.
 
@@ -85,7 +85,7 @@ Click **Next** to move from one step to the next.
 
 [Schedules](../scans/schedules.md) explains the frequency options and what the **Schedule Status** column shows.
 
-## 4. Watch the execution
+## 4. Watch the Execution
 
 Go to **Configuration > Scan executions** and find the row for the new scan. The list refreshes on its own and shows the execution's **Status** and its **Objects** count.
 
@@ -95,7 +95,7 @@ When the sync itself finishes, the execution moves to **Post processing** while 
 
 If the status is **Failed**, open the row's **Actions** menu and click **View logs**. Authentication problems appear in the **Detailed logs** tab. If the message asks for an FQDN, **Host** holds an IP address and the port is 389; enter the domain controller's name instead.
 
-## 5. Check the dashboard and reports
+## 5. Check the Dashboard and Reports
 
 Go to **Dashboards > Active Directory** and click **Refresh**. In the **Domain** filter, select the domain you synced. The dashboard opens with counts for **Domains**, **Users**, **Enabled Users**, **Groups**, and **Direct Memberships**, followed by **Users**, **Groups**, and **All Risks** sections that end in the **Active Directory Risks** table. The [Active Directory dashboard](../dashboards-reports/dashboards/active-directory.md) page describes each card.
 

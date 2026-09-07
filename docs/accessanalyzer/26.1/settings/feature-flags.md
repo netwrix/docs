@@ -1,5 +1,5 @@
 ---
-title: Feature flags
+title: Feature Flags
 description: The experimental toggles on the Settings > Feature flags tab, including the classification pattern execution budget and how to change it.
 sidebar_position: 2
 ---
@@ -10,7 +10,7 @@ Feature flags switch experimental behavior on or off for the whole deployment. A
 
 ![Feature flags tab showing enable_pattern_execution_budget](/images/accessanalyzer/26.1/settings/feature-flags.webp)
 
-## Change a flag
+## Change a Flag
 
 1. Go to **Settings > Feature flags**.
 2. Click the switch next to the flag. The row shows a **Modified** badge, and a bar appears at the bottom of the page with the count of unsaved changes.
@@ -20,7 +20,7 @@ A message confirms **1 setting saved**. To drop an unsaved change instead, click
 
 You don't need to restart anything. The classification engine rechecks the flag on its own; allow up to 6 minutes for the change to take effect. Documents classified after that point use the new setting.
 
-## Available flags
+## Available Flags
 
 | Flag | Default | What it does |
 |---|---|---|

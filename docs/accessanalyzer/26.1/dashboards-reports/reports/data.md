@@ -1,5 +1,5 @@
 ---
-title: Data reports
+title: Data Reports
 description: The reports on the Data page, covering permissions, sensitive data, and access activity on File Server and SharePoint Online sources, with the filters and cards of each one.
 sidebar_position: 1
 ---
@@ -10,7 +10,7 @@ Open the page from **Reports > Data**. [Dashboards and reports](../index.md) cov
 
 ![Data reports list, All tab](/images/accessanalyzer/26.1/dashboards-reports/reports-data.webp)
 
-## The Data page
+## The Data Page
 
 The page is a table with two columns: **Report** and **Category**. Each row shows the report name with its description underneath, and a category chip on the right. Click anywhere on a row to open the report.
 
@@ -44,13 +44,13 @@ The rows appear in this order:
 
 Two names, Open Access and Sensitive Data Overview, appear on both the file system and SharePoint sides, and High Risk ACLs has a SharePoint twin spelled High-Risk ACLs. The **File system** and **SharePoint** tabs keep them apart, and the description under each name tells you which is which.
 
-## Inside a report
+## Inside a Report
 
 Every report opens the same way: breadcrumbs **Reports > Data** followed by the report name, a **Back to Data reports** link, the name as the page heading with the description under it, and **Refresh** at the top right. The report's own filters sit at the top of the content and take effect as soon as you change them. Only [Share Audit](#share-audit) and [Activity Investigation](#activity-investigation) have required filters; everywhere else, an empty filter means no restriction.
 
 **Back to Data reports** returns you to the list with the tab and chip you had selected.
 
-## File system reports
+## File System Reports
 
 These seven reports read from your File Server sources. The permission reports need a completed Access scan on the source. The sensitive data reports need a Sensitive data scan. The activity report and the activity cards in Share Audit need events from Netwrix Activity Monitor. Where a report shows account or group names rather than identifiers, or expands group membership, it relies on an Identity sync of the Active Directory domain those accounts belong to. [Scan types](../../scans/scan-types.md) explains each scan.
 
@@ -223,7 +223,7 @@ The file server counterpart of the sensitive data tiles on the Data security das
 
 Needs a Sensitive data scan on the File Server source.
 
-### Share Audit (Sensitive Data entry)
+### Share Audit (Sensitive Data Entry)
 
 "Permission breakdown filtered to shares that contain sensitive data."
 
@@ -231,7 +231,7 @@ This second Share Audit row sits under the **Classification / Stale Data** categ
 
 ![Share Audit report](/images/accessanalyzer/26.1/dashboards-reports/report-share-audit-sensitive.webp)
 
-## SharePoint reports
+## SharePoint Reports
 
 These four reports read from your SharePoint Online sources. Three need an Access scan; the fourth needs a Sensitive data scan. All four share the **Site** and **Site Type** filters, which limit a report to the selected sites or to sites of the selected types.
 

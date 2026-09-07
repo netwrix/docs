@@ -14,7 +14,7 @@ For an end-to-end walkthrough, see [Scan Active Directory](../guides/active-dire
 
 ## Prerequisites
 
-### Service account
+### Service Account
 
 Active Directory sources use a [Username and password](../service-accounts/username-password.md) service account. The sync only reads, so a regular domain user with the default read access to the domain is enough for a full sync.
 
@@ -33,7 +33,7 @@ Access Analyzer treats any port other than 636 as plain LDAP and uses the 389 be
 
 You choose the agent that runs the sync when you create the scan; see [Agents](../agents/index.md).
 
-## Add an Active Directory source
+## Add an Active Directory Source
 
 1. Go to **Configuration > Sources**.
 2. Click **Add source**.
@@ -59,7 +59,7 @@ Changing **Host** or **Domain** on an existing source shows the warning **Existi
 
 :::
 
-## What Test connection checks
+## What Test Connection Checks
 
 **Test connection** connects to the domain controller on the selected port and binds with the service account's credentials, using the same sequence as a real sync. The button becomes available after you've entered **Host**, **Port**, and **Domain** and selected a service account.
 
@@ -68,7 +68,7 @@ Success shows the message **Connection successful**. Failure shows **Connection 
 - On port 389 with an IP address in **Host**, authentication can fail; the message then asks you to use an FQDN instead of an IP address.
 - On port 636, a TLS failure usually means the domain controller isn't offering LDAPS on that port or presents a certificate the agent doesn't trust. Check that the domain controller offers LDAPS on 636 and that its certificate validates, select **Ignore SSL errors** to skip validation, or connect on port 389 instead.
 
-## What the sync collects
+## What the Sync Collects
 
 An **Identity sync** reads three kinds of objects:
 

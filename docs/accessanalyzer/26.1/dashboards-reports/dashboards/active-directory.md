@@ -1,5 +1,5 @@
 ---
-title: Active Directory dashboard
+title: Active Directory Dashboard
 description: A single-page summary of your Active Directory domains with user, group, and membership counts, privileged accounts, and every detected risk by type, level, and object.
 sidebar_position: 2
 ---
@@ -10,7 +10,7 @@ Open it from **Dashboards > Active Directory**. Users with the Admin or Viewer r
 
 ![Active Directory dashboard with Domains, Users, Groups, and risk tiles](/images/accessanalyzer/26.1/dashboards-reports/active-directory-dashboard.webp)
 
-## Where the data comes from
+## Where the Data Comes From
 
 Every card reads from an Identity sync on an Active Directory source. The dashboard needs no Access scan or Sensitive data scan, and no card depends on Netwrix Activity Monitor. Until the first Identity sync completes, the tiles show zero and the charts show **No results!**. [Scan types](../../scans/scan-types.md) explains how to run one; [Active Directory](../../sources/active-directory.md) explains the source itself.
 
@@ -24,7 +24,7 @@ The dashboard has one filter and no tabs.
 
 Leave **Domain** empty to see all domains together. Because every card responds to it, the filter is the quickest way to look at one domain at a time.
 
-## Summary row
+## Summary Row
 
 | Card | What it shows | How to read it |
 |---|---|---|
@@ -34,7 +34,7 @@ Leave **Domain** empty to see all domains together. Because every card responds 
 | **Groups** | The number of groups | Security groups and distribution lists together |
 | **Direct Memberships** | The number of direct group membership entries | Direct means the count doesn't expand nested membership; the **Administrator Accounts** card does |
 
-## Users section
+## Users Section
 
 | Card | What it shows | How to read it |
 |---|---|---|
@@ -50,7 +50,7 @@ Domain Admins, Enterprise Admins, Schema Admins, Administrators, Account Operato
 
 </details>
 
-## Groups section
+## Groups Section
 
 | Card | What it shows | How to read it |
 |---|---|---|
@@ -59,7 +59,7 @@ Domain Admins, Enterprise Admins, Schema Admins, Administrators, Account Operato
 | **DLs** | The number of distribution lists, meaning groups whose type isn't Security | Together with **Security Groups**, this accounts for every group in **Groups** |
 | **Groups with Associated Risks** | The number of risk entries in the Group category | Drill into it, or scroll to **Active Directory Risks**, for the group names |
 
-## All Risks section
+## All Risks Section
 
 | Card | What it shows | How to read it |
 |---|---|---|
@@ -67,7 +67,7 @@ Domain Admins, Enterprise Admins, Schema Admins, Administrators, Account Operato
 | **Riskiest Objects** | A table of risk counts grouped by domain and object name, highest first | The users and groups with the most detected risks |
 | **Active Directory Risks** | The full list: one row per detected risk, with the risk type, the object and its domain, when Access Analyzer detected it, additional context, the level, the category, and a description | Use the **Domain** filter to keep this list manageable, then drill into a row |
 
-## Risk types
+## Risk Types
 
 Each row in **Active Directory Risks** carries one of the following risk types. The level and description are what you see in the table.
 

@@ -4,7 +4,7 @@ description: Daily backups of the Access Analyzer configuration database from th
 sidebar_position: 5
 ---
 
-## What a backup contains
+## What a Backup Contains
 
 A backup is a compressed copy of the Access Analyzer configuration database, including settings and user accounts. It doesn't include scan results, the analytics store behind dashboards and reports, or the server's own configuration. A backup lets you recover a working configuration.
 
@@ -12,7 +12,7 @@ Backups are off until an Admin turns them on. Only [Admins](./users.md) see the 
 
 ![System settings with Backups and Single sign-on](/images/accessanalyzer/26.1/settings/system.webp)
 
-## Turn on daily backups
+## Turn On Daily Backups
 
 1. On **Settings > System**, find the **Backups** card.
 2. Turn on **Enable daily backups**.
@@ -23,13 +23,13 @@ Backups are off until an Admin turns them on. Only [Admins](./users.md) see the 
 
 A confirmation message appears after you save. To discard your edits without saving, click **Cancel**. If you navigate away with unsaved edits, the **Unsaved changes** dialog asks whether to stay or leave.
 
-### Local disk
+### Local Disk
 
 | Field | What to enter |
 |---|---|
 | **Local path** | Required. A path you record for your own reference. Backups always write to the volume mounted at install time, so the path you enter doesn't change where files land. |
 
-### S3-compatible storage
+### S3-Compatible Storage
 
 Any object store that uses the Amazon Simple Storage Service (S3) protocol works, including Amazon S3 itself.
 
@@ -47,7 +47,7 @@ To remove them, click **Clear credentials**. Until you save, the card shows **Cr
 
 If you don't store credentials, Access Analyzer uses whatever credentials are available to the server itself, such as an attached cloud identity.
 
-### Validation messages
+### Validation Messages
 
 | Message | Cause |
 |---|---|
@@ -57,7 +57,7 @@ If you don't store credentials, Access Analyzer uses whatever credentials are av
 | **S3 bucket is required when destination is S3** | You selected **S3-compatible storage** and left **S3 bucket** empty. |
 | **Both access key ID and secret access key are required** | You filled only one of the two credential fields. |
 
-## Backup schedule and file names
+## Backup Schedule and File Names
 
 Backups run once a day at 02:00 Coordinated Universal Time (UTC). You can't change the time from the Access Analyzer settings, and no backup runs while **Enable daily backups** is off.
 
@@ -67,6 +67,6 @@ Each run writes into a `son/` folder, which is the daily tier. On Sundays the ru
 
 The **Retention** counts control how many files each folder keeps. With the defaults, `son/` holds the 7 most recent daily backups, `father/` the 4 most recent Sunday backups, and `grandfather/` the 12 most recent first-of-month backups. When a folder exceeds its count, Access Analyzer removes the oldest file first.
 
-## Restores and on-demand runs
+## Restores and On-Demand Runs
 
 Access Analyzer has no control to restore a backup, download one, or run one on demand, and the **Backups** card shows no status for past runs. A restore is a manual procedure on the server, outside Access Analyzer.

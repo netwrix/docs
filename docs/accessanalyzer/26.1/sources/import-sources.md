@@ -1,5 +1,5 @@
 ---
-title: Import sources from a CSV file
+title: Import Sources From a CSV File
 description: Create many sources at once by uploading a CSV file that lists them, with one row per source and columns for each type's connection fields.
 sidebar_position: 6
 ---
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 The import validates every row before it creates anything, imports the rows that pass, and hands you a report of the rows it skipped so you can fix them and import the report.
 
-## Before you start
+## Before You Start
 
 - Create the [service accounts](../service-accounts/index.md) the sources need. The import skips any row that names a service account that doesn't exist.
 - Check the connection requirements for each type on its page: [SMB file servers](smb-file-servers.md) (the **File Server** source type), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [Microsoft 365](microsoft-365.md) (the **SharePoint Online** source type). The import doesn't test connections; it only creates the sources.
@@ -19,7 +19,7 @@ The import validates every row before it creates anything, imports the rows that
 
 Users with the Viewer role don't see the **Import CSV** button.
 
-## Import a file
+## Import a File
 
 1. Go to **Configuration > Sources**.
 2. Click **Import CSV**.
@@ -36,7 +36,7 @@ Users with the Viewer role don't see the **Import CSV** button.
 
 If you try to close the dialog before the import finishes, a warning says **If you close now, this import will be discarded.** Click **Stay** to continue or **Discard import** to abandon it.
 
-## File format
+## File Format
 
 The file is a standard CSV with a header row. The import matches header names after trimming and lowercasing them, so `Name`, `name`, and `NAME` all work and column order doesn't matter. It ignores columns it doesn't recognize, trims every cell, and skips empty lines. Only `name` and `type` are required columns; leave out any other column when no row needs it.
 
@@ -125,7 +125,7 @@ Contoso SharePoint,sharepoint-online-ccf,,spo-app,env=production,,,,,,AzurePubli
 
 ## Validation
 
-### File-level errors
+### File-Level Errors
 
 These stop the import before the preview:
 
@@ -136,7 +136,7 @@ These stop the import before the preview:
 | **The file contains no data rows.** | Add at least one row under the header. |
 | **File exceeds 5,000 rows.** | Split the file. |
 
-### Row-level errors
+### Row-Level Errors
 
 The import checks each row in the following order and shows only the first problem it finds in the **Problem** column. Fixing that problem can reveal the next.
 
@@ -154,7 +154,7 @@ The import checks each row in the following order and shows only the first probl
 | **Duplicate label key "X" — a key can have only one value.** | The same key appears twice in `labels`. |
 | **At most 50 labels per source.** | Too many pairs in `labels`. |
 
-## Partial success and the skipped rows report
+## Partial Success and the Skipped Rows Report
 
 An import never fails as a whole because of one bad row. The import leaves out rows marked **Error** in the preview and creates the valid rows. A row that passes the preview can still fail when the import saves it, for example if someone created a source with the same name in the meantime. The result counts that row as skipped, and the skipped rows report shows it with a **Server error:** message.
 

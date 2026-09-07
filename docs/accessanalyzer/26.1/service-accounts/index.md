@@ -1,5 +1,5 @@
 ---
-title: Service accounts
+title: Service Accounts
 description: Store the credentials Access Analyzer uses to read your sources and deploy agents, and manage them from one page.
 ---
 
@@ -11,7 +11,7 @@ Manage them at **Configuration > Service accounts**.
 
 ![Service accounts list with Name, Account Type, and Created At columns](/images/accessanalyzer/26.1/service-accounts/list.webp)
 
-## The Service accounts page
+## The Service Accounts Page
 
 The page lists every account in a table. Enter text in **Search service accounts…** to filter the list, and click **Clear filters** next to it to reset. **Add service account** opens the form.
 
@@ -27,7 +27,7 @@ The page lists every account in a table. Enter text in **Search service accounts
 
 ![Service account row menu with Edit and Delete](/images/accessanalyzer/26.1/service-accounts/row-actions.webp)
 
-## Service account types
+## Service Account Types
 
 Each account has one type. You choose it when you create the account, and it stays fixed from then on. The type decides which fields the form asks for and which systems the account can authenticate to.
 
@@ -46,7 +46,7 @@ The **Service account** list on a source shows every account, whatever its type.
 
 :::
 
-## Secret handling
+## Secret Handling
 
 Access Analyzer treats passwords, client secrets, SSH private keys, and certificate private keys as write-only. After you save an account, Access Analyzer never displays the value again, in the list or in the edit form. When you edit an account, the secret fields are empty. Leave a field empty to keep the stored value, or enter a new value to replace it.
 
@@ -54,7 +54,7 @@ Access Analyzer keeps secret values in a secret store on the server, separate fr
 
 If you bulk-add sources with a CSV file, the file names the service account to attach and never contains credentials. See [Import sources from a CSV file](../sources/import-sources.md).
 
-## Add a service account
+## Add a Service Account
 
 1. Go to **Configuration > Service accounts**.
 2. Click **Add service account**. The **Add service account** form opens.
@@ -68,7 +68,7 @@ If you bulk-add sources with a CSV file, the file names the service account to a
 
 If you change the type after you've started filling in fields, the **Confirm service account type change** dialog warns that the change clears the values you entered. After you save the account, you can't change its type; create a new account instead.
 
-## Edit a service account
+## Edit a Service Account
 
 1. In the account's **Actions** menu, click **Edit**.
 2. Change the name or the non-secret fields as needed.
@@ -77,7 +77,7 @@ If you change the type after you've started filling in fields, the **Confirm ser
 
 ![Edit service account dialog](/images/accessanalyzer/26.1/service-accounts/edit.webp)
 
-### The Confirm service account update dialog
+### The Confirm Service Account Update Dialog
 
 If any scan or Identity sync uses the account, the **Confirm service account update** dialog opens before Access Analyzer saves the change. It lists the affected scans and syncs by name (the first five, with a count of the rest) and spells out what happens when you continue:
 
@@ -87,7 +87,7 @@ If any scan or Identity sync uses the account, the **Confirm service account upd
 
 Click **Yes, update service account** to continue, or **Cancel** to leave the account as it was. To follow the restarted executions, see [Scan executions](../scans/scan-executions.md).
 
-## Delete a service account
+## Delete a Service Account
 
 1. In the account's **Actions** menu, click **Delete**.
 2. In the **Delete Service account** dialog, confirm that it names the account you mean to delete.
@@ -95,7 +95,7 @@ Click **Yes, update service account** to continue, or **Cancel** to leave the ac
 
 The message **Service account deleted** confirms the removal.
 
-### Why a delete can fail
+### Why a Delete Can Fail
 
 You can't delete an account that's attached to a source. Access Analyzer refuses the request and shows **Failed to delete service account** with a message that sources are using the account. Nothing warns you in advance: the list has no in-use column, and **Delete** stays available in the menu.
 

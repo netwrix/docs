@@ -1,5 +1,5 @@
 ---
-title: Single sign-on
+title: Single Sign-on
 description: How to connect Active Directory or Entra ID as an identity provider through the setup flow, how federated users sign in, and how to rotate the directory service account password from Settings > System.
 sidebar_position: 4
 ---
@@ -7,7 +7,7 @@ sidebar_position: 4
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Ways to sign in
+## Ways to Sign In
 
 Access Analyzer supports three kinds of sign-in. Local sign-in always stays available, and you can connect one directory provider alongside it:
 
@@ -17,7 +17,7 @@ Access Analyzer supports three kinds of sign-in. Local sign-in always stays avai
 
 Connecting a directory is what the product calls single sign-on (SSO), and users who sign in that way are **Federated (SSO)** accounts in [Users and roles](users.md). You connect one provider, once, through the setup flow. After that, **Settings > System > Single sign-on** is where you rotate the AD service account password.
 
-## Before you begin
+## Before You Begin
 
 Whichever provider you connect, you need an Access Analyzer account with the Admin or User admin role. The flow signs you out when it finishes.
 
@@ -34,7 +34,7 @@ For **Entra ID**, gather:
 - Two redirect Uniform Resource Identifiers (URIs) added to the registration under **Authentication > Redirect URIs** before you start, both using your Access Analyzer hostname: `https://<your-access-analyzer-host>/setup/entra-consent-callback` and `https://<your-access-analyzer-host>/idps/callback`.
 - Someone with the Global Administrator or Privileged Role Administrator role in the tenant to approve admin consent during setup.
 
-## Open the setup flow
+## Open the Setup Flow
 
 The setup flow opens automatically for an Admin who signs in before anyone connects an identity provider, until someone completes it or clicks **Set up later**; see [Sign in for the first time](../install/first-sign-in.md). To reach it from Settings:
 
@@ -48,7 +48,7 @@ The steps that follow have **Back**, a button that continues to the next step, a
 
 ![Connect an identity provider page with Set up identity provider and Set up later](/images/accessanalyzer/26.1/integrations/identity-provider-setup.webp)
 
-## Choose the identity provider
+## Choose the Identity Provider
 
 The **Connect Access Analyzer to your directory** step offers two cards. The **Active Directory** card reads "On-prem AD over LDAPS. Recommended for most existing deployments."
 
@@ -57,7 +57,7 @@ The **Connect Access Analyzer to your directory** step offers two cards. The **A
 1. Select **Active Directory** or **Entra ID**.
 2. Click **Continue**.
 
-## Connect the provider
+## Connect the Provider
 
 <Tabs groupId="idp">
 <TabItem value="ad" label="Active Directory">
@@ -115,7 +115,7 @@ When Microsoft grants consent, the flow moves to the next step on its own. If it
 </TabItem>
 </Tabs>
 
-## Add administrators
+## Add Administrators
 
 The **Add Access Analyzer admins** step creates or promotes Admin accounts so that at least one person can sign in through the new provider with full rights. People listed here can manage settings, integrations, and other administrators, and you can add or remove admins later from Settings.
 
@@ -135,7 +135,7 @@ When it's done, the **You are all set** page shows a **Setup summary** with the 
 
 If a step fails, the page says which one: "We couldn't configure the identity provider. Check the connection details and try again." or "We couldn't add the administrators. Check the addresses and try again." An **Edit connection**, **Edit identity provider**, or **Edit administrators** link takes you back to the relevant step. If the restart takes longer than expected, the page shows "The sign-in service didn't finish restarting in time. It may still be starting — keep checking, or try again."
 
-## How federated users sign in
+## How Federated Users Sign In
 
 Access Analyzer never creates a user on its own. Before a directory user can sign in, an Admin or User admin must add them in **Settings > Users** as a **Federated (SSO)** account with the email address the directory reports for them, or list them in [Add administrators](#add-administrators) during setup. At sign-in, Access Analyzer matches the directory identity to that row by email, ignoring case. The row must be **Active**.
 
@@ -150,7 +150,7 @@ A directory user with no matching row sees **Access denied** and "Your account i
 
 Disabling someone in your directory stops them from signing in to Access Analyzer; their Access Analyzer row stays until you deactivate or delete it. Deleting a federated user in Access Analyzer removes only the Access Analyzer account. The password length rule in [Users and roles](users.md#password-policy-and-lockout) applies to local accounts only; the directory governs its own passwords.
 
-## Rotate the directory service account password
+## Rotate the Directory Service Account Password
 
 When your Active Directory service account's password changes, update it on the **Single sign-on** card. **Directory hosts** and **Bind DN** show the connection from setup; you can't edit them. Nothing restarts.
 
@@ -161,6 +161,6 @@ When your Active Directory service account's password changes, update it on the 
 
 The card manages only an Active Directory connection. If you connected Entra ID, the card still shows the not-connected message, and you can't update the Entra ID client secret from the web app.
 
-## What you can't do from the web app
+## What You Can't Do From the Web App
 
 After you connect a provider, you can't reopen the setup flow, and Settings has no control to disconnect the provider, replace it with a different one, connect a second provider, change the AD domain name, or upload a new CA certificate. If you need any of those, keep a record of your current configuration and contact Netwrix support.

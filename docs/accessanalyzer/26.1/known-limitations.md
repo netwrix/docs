@@ -1,5 +1,5 @@
 ---
-title: Known limitations
+title: Known Limitations
 description: Behaviors of Access Analyzer 26.1 to plan around, from installation and scanning to sign-in, backups, and the Netwrix Activity Monitor connection.
 sidebar_position: 4
 ---
@@ -58,7 +58,7 @@ User admins don't see **Dashboards**, and [report](dashboards-reports/index.md) 
 
 File system permission reports show account and group names only after an Active Directory Identity sync has run for the domain, so pair a File Server scan with an Identity sync. The [Guides](guides/index.md) walk through both.
 
-## Users and sign-in
+## Backups and System Logs
 
 There is no self-service password reset. An Admin or User admin resets a local account's password from [**Settings > Users**](settings/users.md).
 

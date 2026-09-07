@@ -9,7 +9,7 @@ Manage sources at **Configuration > Sources**. Users with the Viewer role see a 
 
 ![Sources list showing three File Server sources with service accounts and labels](/images/accessanalyzer/26.1/sources/list.webp)
 
-## Source types
+## Source Types
 
 Four source types are available. The first column shows the name you select in the **Source type** list when you add a source.
 
@@ -24,7 +24,7 @@ Each type has its own page with prerequisites, the fields to fill in, and what t
 
 Identity sources do more than feed the identity reports. File Server scans record who has access as security identifiers (SIDs); an Active Directory source for the same domain is what turns those SIDs into account and group names in the reports.
 
-## Add a source
+## Add a Source
 
 1. Go to **Configuration > Sources**.
 2. Click **Add source**.
@@ -46,7 +46,7 @@ The **Name** is required, can be up to 128 characters, and must be unique across
 
 To add many sources at once, use [Import sources from a CSV file](import-sources.md).
 
-## Edit a source
+## Edit a Source
 
 1. Click **Edit source** in the row. The form opens with the same sections as when adding.
 
@@ -58,7 +58,7 @@ To add many sources at once, use [Import sources from a CSV file](import-sources
 
 Changing the field that identifies the system, such as **Host**, **Domain** (Active Directory), **Tenant ID**, or **SharePoint domain**, shows the warning **Existing scan data won't follow this change**. Data already collected stays with the old target, and future scans store data under the new one. If you only want a different display name, change **Name** instead.
 
-## Delete a source
+## Delete a Source
 
 1. Click **Delete source** in the row.
 2. Click **Delete Source** to confirm. You can't undo a deletion.
@@ -68,7 +68,7 @@ Access Analyzer refuses to delete a source in two cases:
 - A scan execution is running or pending on the source. The dialog says a scan is running; stop it from [Scan executions](../scans/scan-executions.md) or wait for it to finish, then try again.
 - The source has scan history. A source that scans have run against, or that a scan references, stays in place.
 
-## Work with several sources at once
+## Work With Several Sources at Once
 
 Select rows with the checkboxes to open the bulk action bar. It shows the number of selected rows, a **Clear selection** link, and two actions. The selection survives paging but clears when you change the search, filters, or sort order.
 
@@ -77,7 +77,7 @@ Select rows with the checkboxes to open the bulk action bar. It shows the number
 - **Edit labels** adds labels to, or removes labels from, every selected source in one step. See [Labels](labels.md).
 - **Delete** removes the selected sources. The dialog lists each source. After you confirm, a **Deletion results** view shows **Deleted** for each removed source, or the reason it stayed: **Scan in progress**, **Has scan history**, or **Source not found**. Sources that stayed remain selected so you can retry, for example after a running scan finishes.
 
-## The Sources page
+## The Sources Page
 
 The list shows one row per source.
 

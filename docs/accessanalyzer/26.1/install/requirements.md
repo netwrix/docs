@@ -49,7 +49,7 @@ The server needs a fully qualified domain name, such as `access-analyzer.corp.ex
 
 Create the DNS record before you install. The TLS certificate's Subject Alternative Names must cover this name.
 
-## TLS certificate
+## TLS Certificate
 
 Access Analyzer serves the web application only over HTTPS, and the installer never generates a certificate. You supply one.
 
@@ -61,11 +61,11 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 
 The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/etc/dspm/tls.key` unless you point it elsewhere. A self-signed certificate works, and the installer uses it as its own CA bundle, but browsers warn users about it.
 
-## License key
+## License Key
 
 You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The installer validates it online during the install, so the server must reach the licensing endpoints listed under [Outbound](#outbound). An expired, suspended, or unknown key stops the install.
 
-## First administrator
+## First Administrator
 
 The installer creates the first administrator account and prints a temporary password at the end of the install. Have that person's email address ready; it becomes their username. Their full name is optional.
 

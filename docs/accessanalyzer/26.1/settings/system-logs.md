@@ -1,10 +1,10 @@
 ---
-title: System logs
+title: System Logs
 description: Search, filter, inspect, and download Access Analyzer application logs from the Settings > System logs tab, with a 30-day retention window and a 10,000-row export cap.
 sidebar_position: 6
 ---
 
-## What the System logs tab shows
+## What the System Logs Tab Shows
 
 **Settings > System logs** is a single searchable view of application logs from every Access Analyzer component, kept for 30 days. Only Admins can open it. Look here when Netwrix Activity Monitor events stop arriving, or when a scan execution's own logs don't explain a failure.
 
@@ -19,7 +19,7 @@ sidebar_position: 6
 
 The table shows 25 rows per page by default; 10, 50, and 100 are also available. Click a row to open the **Log details** drawer. It repeats the level, timestamp, and component, shows the full text under **MESSAGE**, and lists every attribute recorded with the entry as key-value pairs under **DETAILS**.
 
-## Search and filter
+## Search and Filter
 
 The toolbar narrows the table, and every filter also applies to downloads.
 
@@ -39,7 +39,7 @@ When troubleshooting Netwrix Activity Monitor, select only `nam-listener` (the A
 
 :::
 
-## Download logs
+## Download Logs
 
 Downloads come as JavaScript Object Notation (JSON) or CSV files.
 

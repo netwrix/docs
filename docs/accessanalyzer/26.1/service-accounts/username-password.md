@@ -1,12 +1,12 @@
 ---
-title: Username and password
+title: Username and Password
 description: Create a Username/password service account for File Server and Active Directory sources, and choose the right username format.
 sidebar_position: 1
 ---
 
 A Username/password account is a domain or local account and its password. It's the type that File Server and Active Directory sources use. The form labels this type **Username/password**.
 
-## When to use it
+## When to Use It
 
 Use a Username/password account for:
 
@@ -15,7 +15,7 @@ Use a Username/password account for:
 
 One account can serve many sources. Create separate accounts when sources live in different domains, or when you want to rotate their passwords independently.
 
-## Required permissions
+## Required Permissions
 
 Grant the account only the access it needs to read what you want to scan.
 
@@ -23,7 +23,7 @@ On a file server, the account needs **Read** access to every share and folder yo
 
 In Active Directory, a regular domain user with the default read access to the domain is enough to read users, groups, and organizational units. See [Active Directory](../sources/active-directory.md).
 
-## Create a Username/password service account
+## Create a Username/Password Service Account
 
 1. Go to **Configuration > Service accounts**.
 2. Click **Add service account**.
@@ -37,7 +37,7 @@ In Active Directory, a regular domain user with the default read access to the d
 
 The account appears in the list with **Account Type** set to Username/password. To use it, select it in the source's **Service account** field and click **Test connection** on the source to confirm that the credentials work. [SMB file servers](../sources/smb-file-servers.md) and [Active Directory](../sources/active-directory.md) cover the source settings. For the whole path from account to first scan, follow [Scan SMB file servers](../guides/smb-file-servers.md) or [Scan Active Directory](../guides/active-directory.md).
 
-## Change the password
+## Change the Password
 
 When you rotate the password in your directory, update it in Access Analyzer:
 
@@ -60,7 +60,7 @@ If scans already use this account, the **Confirm service account update** dialog
 
 Validation runs when you leave a field. An empty field shows **Name is required**, **Username is required**, or **Password is required**.
 
-### Username format
+### Username Format
 
 There's no separate domain field. If you need to specify a domain, put it in the username.
 

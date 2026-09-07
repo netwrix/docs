@@ -7,7 +7,7 @@ An agent is a Linux machine that runs scans. Every installation has one from the
 
 You can deploy more agents on other Linux hosts. Access Analyzer connects to the host over SSH, installs the agent software, and adds the agent to the list. From then on you steer scans to it with labels. [Deploy an agent](deploy-agent.md) covers the host requirements and the procedure; [Agent labels and scan routing](agent-labels.md) explains how a scan chooses where to run.
 
-## The System agent
+## The System Agent
 
 The System agent always exists. You can't delete or rename it, and you can't give it labels, so its **Labels** column is empty. It shares the server with the rest of Access Analyzer, so heavy scans compete with the server's own services.
 
@@ -19,7 +19,7 @@ The same agent goes by three names in the interface, depending on where it appea
 | The **Agent** field in the Create scan steps | **System agent** |
 | The **Agent** column on the Scans page | **System** |
 
-## When to deploy more agents
+## When to Deploy More Agents
 
 The System agent is enough for many installations. Add an agent when:
 
@@ -27,11 +27,11 @@ The System agent is enough for many installations. Add an agent when:
 - You want scan traffic to stay local. An agent in the same site or region as the data keeps large reads off slow or expensive links.
 - Scans compete with the server. A dedicated agent takes only scan work, so long-running scans no longer slow the server.
 
-## Who can manage agents
+## Who Can Manage Agents
 
 Deploying, editing, and deleting agents requires the Admin role. Viewers can open the Agents page and see every agent but can't change anything. Assign roles on the [Users and roles](../settings/users.md) page.
 
-## The Agents page
+## The Agents Page
 
 Go to **Configuration > Agents**.
 
@@ -50,7 +50,7 @@ The list sorts by **Last Updated**, newest first, and you can sort by **Name** a
 
 The **Search agents…** field matches an agent's name, a label key, a label value, or a `key:value` pair, so `region:us-east` finds every agent carrying that label. **Clear filters** resets the search. **Deploy agent** starts the deployment flow.
 
-### Health status
+### Health Status
 
 | Status | Meaning | What to do |
 |---|---|---|

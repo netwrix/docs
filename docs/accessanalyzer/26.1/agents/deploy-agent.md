@@ -1,5 +1,5 @@
 ---
-title: Deploy an agent
+title: Deploy an Agent
 description: Prepare a Linux host and an SSH service account, deploy the agent from the Agents page, and edit or remove it later.
 sidebar_position: 1
 ---
@@ -8,7 +8,7 @@ Access Analyzer installs agents for you. You point it at a Linux host it can rea
 
 You need the Admin role for everything on this page. Viewers can see the Agents page but can't deploy, edit, or remove agents.
 
-## Prepare the host
+## Prepare the Host
 
 The host needs a Linux operating system with `bash`, `curl`, and `sudo` installed, an SSH user the server can sign in as, and enough headroom to run scans. Access Analyzer checks every requirement in this table before it installs anything, both when you click **Test connection** and again at the start of a real deployment.
 
@@ -33,7 +33,7 @@ The host also needs these network paths; every port is Transmission Control Prot
 
 A deployed agent runs scan work and nothing else. Access Analyzer places nothing else on it.
 
-## SSH service account
+## SSH Service Account
 
 Access Analyzer signs in to the host with a service account of type **SSH username/key**. The account holds two values: **SSH username**, the Linux user to sign in as, and **SSH key**, that user's private key pasted in PEM or OpenSSH format. The key must not have a passphrase; deployment rejects a passphrase-protected key. The user must be able to run `sudo` without a password prompt.
 
@@ -41,7 +41,7 @@ You can create the account ahead of time under **Configuration > Service account
 
 The host key isn't part of the service account. Each agent has its own, entered when you deploy it.
 
-## Get the host key
+## Get the Host Key
 
 Access Analyzer checks the host's SSH identity against the key you enter and refuses to continue if the host presents a different one. Collect the public host key from a machine that can reach the host, such as the Access Analyzer server:
 
@@ -51,7 +51,7 @@ ssh-keyscan -t ecdsa <host>
 
 If SSH listens on a port other than 22, add `-p <port>`. The output line begins with the hostname; copy the key type and the key that follow it, for example `ecdsa-sha2-nistp256 AAAA…`. That is the value the **SSH host key** field expects: a key type, a space, and the key. If you can, compare it with the key on the host itself before you trust it.
 
-## Deploy the agent
+## Deploy the Agent
 
 1. Go to **Configuration > Agents**.
 2. Click **Deploy agent**.
@@ -82,13 +82,13 @@ When deployment finishes, the panel closes, a notification reads `Agent "<name>"
 
 If you close the panel with unsaved changes, Access Analyzer asks you to confirm.
 
-### Test connection
+### Test Connection
 
 In the Deploy agent panel, **Test connection** becomes available after you fill in **SSH host**, **SSH host key**, and **Service account**. It signs in to the host and runs the checks from [Prepare the host](#prepare-the-host), installing nothing. The button reads **Testing...** while it runs.
 
 A green **Connection successful** alert means every check passed. It can carry warnings underneath. A red alert reports what failed, for example a missing `curl`, a `sudo` that prompts for a password, or too little free disk. The result clears if you change any of the connection fields.
 
-### Deployment sequence
+### Deployment Sequence
 
 1. The server signs in over SSH and runs the same checks as **Test connection**.
 2. It configures the host to download scan components from the software distribution service, authenticated with your license key, and writes the key to a root-only file on the host.
@@ -100,7 +100,7 @@ Allow about five minutes. Installation typically takes three to four minutes, an
 
 If deployment fails, the panel shows the reason. Causes include an SSH user without passwordless `sudo`, a host that can't reach the server on port 6443, and a pasted host key that doesn't match the host.
 
-## Edit an agent
+## Edit an Agent
 
 1. Go to **Configuration > Agents**.
 2. In the agent's **Actions** menu, click **Edit**.
@@ -119,7 +119,7 @@ The SSH fields don't appear when you edit. Access Analyzer uses SSH only to depl
 
 You can't rename or relabel the System agent, listed as **Default Agent**; opening **Edit** on it shows **Name** and **Labels** locked.
 
-## Remove an agent
+## Remove an Agent
 
 1. Go to **Configuration > Agents**.
 2. In the agent's **Actions** menu, click **Delete**.

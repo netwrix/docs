@@ -11,7 +11,7 @@ The installer is a single Linux binary, `dspm-installer`. Run it as root on the 
 
 Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, and the email address of the first administrator.
 
-## Download the installer
+## Download the Installer
 
 1. Download the Access Analyzer installer for your server's architecture from the download link Netwrix supplied with your license: `dspm-installer-linux-amd64` for 64-bit x86 or `dspm-installer-linux-arm64` for Arm.
 2. Copy the file to the server, for example with `scp`.
@@ -33,7 +33,7 @@ Before you start, work through [Requirements](requirements.md). You need the lic
    ./dspm-installer --version
    ```
 
-## Copy the TLS certificate to the server
+## Copy the TLS Certificate to the Server
 
 The installer expects the certificate at `/etc/dspm/tls.crt` and the private key at `/etc/dspm/tls.key`. If you keep them somewhere else, enter the paths when the installer prompts for them, or pass them with `--tls-cert` and `--tls-key`.
 
@@ -58,7 +58,7 @@ The installer expects the certificate at `/etc/dspm/tls.crt` and the private key
 
 If a private certificate authority (CA) issued the certificate, copy its CA bundle too. `/etc/dspm/ca-bundle.pem` is a convenient place; the installer asks for the path.
 
-## Run the installer
+## Run the Installer
 
 Run the installer with `sudo`. The `-E` flag carries your environment through to root, which matters if you export the license key as `LICENSE_KEY` instead of typing it.
 
@@ -113,7 +113,7 @@ Every flag also has an environment variable, listed in the [Installer reference]
 </TabItem>
 </Tabs>
 
-## Preflight checks
+## Preflight Checks
 
 The installer checks the server first, under the heading `Running preflight checks...`. Checks that pass are silent. Each failure or warning gets its own line, tagged `[FAIL]` or `[WARN]`, for example:
 
@@ -128,7 +128,7 @@ A `[WARN]` is a condition the install can continue past, such as less disk than 
 
 The full list of checks, thresholds, and messages is in the [Installer reference](installer-reference.md#preflight-checks). The installer also writes the complete result of each run to `/var/log/dspm-preflight.json` (a `--dry-run` doesn't write it).
 
-## Install phases
+## Install Phases
 
 After the checks and prompts, the installer validates the certificate and hostname, confirms the license key online, and saves your answers. Then it works through these phases, printing a progress line for each:
 
@@ -138,7 +138,7 @@ After the checks and prompts, the installer validates the certificate and hostna
 
 If the platform or the services don't become ready inside those limits, the installer stops with a non-zero exit code; the [Installer reference](installer-reference.md#exit-codes) lists the codes. If creating the first administrator fails, the installer prints a warning and still finishes. The installer logs everything it does to `/var/log/dspm-installer.log`.
 
-## Install summary
+## Install Summary
 
 The installer prints a summary. It contains:
 

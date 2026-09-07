@@ -1,11 +1,11 @@
 ---
-title: Dashboards and reports
+title: Dashboards and Reports
 description: Dashboards summarize what your scans have found, reports answer one question in depth, and both open in the same viewer with filters, drill-down, and a Refresh button.
 ---
 
 Everything a scan collects ends up in one of two places. Dashboards give you the wide view: a page of counts, charts, and a detail table for a whole area of your environment. Reports answer one question at a time, with filters tuned to that question. Both open in the same viewer and behave the same way once they're on screen.
 
-## Dashboards and reports compared
+## Dashboards and Reports Compared
 
 There are two dashboards, listed under **Dashboards** in the sidebar:
 
@@ -16,11 +16,11 @@ Reports live under **Reports**, on three pages. **Data** lists 11 reports on fil
 
 Use a dashboard when you want totals and trends for a whole area. Use a report when you want the reason behind a number, or the specific folders, links, or accounts involved. [Data reports](reports/data.md), [Identity reports](reports/identity.md), and [Compliance reports](reports/compliance.md) describe every report and its cards.
 
-## Role access
+## Role Access
 
 Users with the Admin or Viewer role see the **Dashboards** section and can open any report. Users with the User admin role don't see **Dashboards**, and although they can open the **Reports** pages, report content doesn't load for their account. [Users and roles](../settings/users.md) explains the three roles.
 
-## The viewer
+## The Viewer
 
 A dashboard or report page has breadcrumbs, a heading, a **Refresh** button at the top right, and the content itself below. Reports also show the report's description under the heading and a **Back to Data reports** or **Back to Identity reports** link that returns you to the list you came from, with the tab and category you had selected.
 
@@ -30,11 +30,11 @@ Drill-down works on any tile, chart segment, bar, or table cell. Click one, and 
 
 If the content fails to load, the page shows **Dashboard error** and **Unable to load** followed by the dashboard or report name, sometimes with an **Error details** box. Click **Reload dashboard** to reload the page.
 
-## Data freshness
+## Data Freshness
 
 Nothing on these pages updates on its own, and Access Analyzer caches dashboard results, so a scan that finished a moment ago may not appear on a dashboard yet. After a scan completes, click **Refresh** to reload the page's data. If a dashboard's figures haven't changed after a refresh, the cached results may not have expired yet; wait and refresh again later.
 
-## What each dashboard and report needs
+## What Each Dashboard and Report Needs
 
 Every dashboard and report appears in the interface from the first sign-in, even when there's no data behind it. Until the right scan has run, tiles show zero or **No results!**, and charts and tables show **No results!**. The table shows which scan, or which event feed, populates each dashboard and group of reports. [Scan types](../scans/scan-types.md) explains the Access scan, Sensitive data scan, and Identity sync; [Sources](../sources/index.md) explains which source types each applies to.
 
