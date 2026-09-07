@@ -12,8 +12,8 @@ health and storage capacity. The dashboard comprises a set of widgets that displ
 these aspects using aggregated statistics and charts. Nearly every widget lets you explore
 detailed information about the aspect you're interested in.
 
-To view the dashboard, on the main Auditor page, click the Health status tile located in the
-Configuration section.
+To view the dashboard, on the main Auditor page, click the Health status tile in the Configuration
+section.
 
 The dashboard includes the following widgets:
 
@@ -21,10 +21,10 @@ The dashboard includes the following widgets:
   produced and Netwrix Auditor collected and saved during the last 7 days. See the
   [Activity Records Statistics](/docs/auditor/10.9/admin/healthstatus/dashboard/activityrecordstatistics.md) topic for additional information.
 - The Monitoring overview widget—Shows aggregated statistics on the statuses of all monitoring plans
-  configured in Netwrix Auditor at the moment. See the [Monitoring Overview](/docs/auditor/10.9/admin/healthstatus/dashboard/monitoringoverview.md)
+  configured in Netwrix Auditor. See the [Monitoring Overview](/docs/auditor/10.9/admin/healthstatus/dashboard/monitoringoverview.md)
   topic for additional information.
-- The Health log chart—Shows the statistics on the events written in the Netwrix Auditor health log
-  in the last 24 hours. Click the link in this widget to view the log. See the
+- The Health log chart—Shows statistics on the events Netwrix Auditor wrote to the health log in the
+  last 24 hours. Click the link in this widget to view the log. See the
   [Netwrix Auditor Health Log](/docs/auditor/10.9/admin/healthstatus/dashboard/healthlog.md) topic for additional information.
 - The Database statistics widget—Helps you to estimate database capacity on the default SQL Server
   instance that hosts the product databases. See the [Database Statistics](/docs/auditor/10.9/admin/healthstatus/dashboard/databasestatistics.md)
@@ -42,5 +42,5 @@ The dashboard includes the following widgets:
 ![healthstatusdashboard_thumb_0_0](/images/auditor/10.9/admin/healthstatus/dashboard/healthstatusdashboard_thumb_0_0.webp)
 
 You can also instruct Netwrix Auditor to forward similar statistics as a health summary email to
-personnel in charge. For that, click Notification settings, then follow the steps described in the
+personnel in charge. To do that, click Notification settings, then follow the steps in the
 [Notifications](/docs/auditor/10.9/admin/settings/notifications/notifications.md) topic.
