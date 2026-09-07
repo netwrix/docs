@@ -4,11 +4,11 @@ description: Server sizing, hostname, network ports, TLS certificate, license ke
 sidebar_position: 1
 ---
 
-Gather everything on this page before you run the installer. The installer runs a preflight check on the server first and stops if the server doesn't meet the hard requirements, so a few minutes here saves a failed run later.
+Gather everything on this page before you run the installer. The installer runs a preflight check on the server first and stops if the server doesn't meet the hard requirements, so a few minutes here saves a failed installation later.
 
 ## Server
 
-Access Analyzer installs on a single physical or virtual Linux server.
+Access Analyzer installs on a single Linux server, physical or virtual.
 
 | Requirement | Details |
 |---|---|
@@ -17,11 +17,11 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Access | Root, either directly or through `sudo`. |
 | Free disk on `/var/lib` | At least 40 GB for every [size](#size). Access Analyzer stores its data under `/var/lib`. |
 
-On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue.
+On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
 
 ## Size
 
-You pick a size when you install. The size sets the CPU and RAM the installer requires, the disk it recommends, and how much capacity Access Analyzer reserves for itself. The default is **medium**.
+You pick a size when you install. The size sets the CPU and RAM the installer requires, the disk it recommends, and how much capacity Access Analyzer reserves for itself. _The default is **medium**_.
 
 | Size | CPU cores | RAM | Disk | Designed for |
 |---|---|---|---|---|
@@ -51,7 +51,7 @@ Create the DNS record before you install. The TLS certificate's Subject Alternat
 
 ## TLS Certificate
 
-Access Analyzer serves the web application only over HTTPS, and the installer never generates a certificate. You supply one.
+Access Analyzer serves the web application **only** over HTTPS, and the installer never generates a certificate. You supply one.
 
 | Item | Requirement |
 |---|---|
@@ -82,11 +82,9 @@ Open these ports on the server's firewall.
 | 4504 | TCP | Netwrix Activity Monitor | Receives activity data. Open it only if you use [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md). |
 | 6443 | TCP | Agent hosts | Lets [agents](../agents/index.md) connect back to the server. Open it only to the hosts you deploy agents on. |
 
-The server also listens on port 9000. Users don't need it, so block it at the firewall.
-
 ### Outbound
 
-The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or the host refuses it.
+The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or is refused.
 
 | Host | Purpose |
 |---|---|
@@ -122,6 +120,6 @@ Some features add outbound connections of their own after you configure them.
 
 ## Browser
 
-Any current browser works. Access Analyzer doesn't support Internet Explorer.
+Any modern browser should work. Internet Explorer isn't supported or recommended.
 
 Once everything on this page is in place, continue to [Install Access Analyzer](run-the-installer.md).

@@ -15,7 +15,7 @@ After the first sign-in, the [Guides](../guides/index.md) walk you through scann
 
 ## People You Need
 
-You need an administrator with root access to the Linux server, either signed in as root or using `sudo`. The installer writes to `/etc/dspm`, `/var/log`, and `/usr/local/bin`, so a non-root account can't complete it.
+You need an administrator with root access to the Linux server, either signed in as root or using `sudo`. The installer writes to `/etc/dspm`, `/var/log`, and `/usr/local/bin`, so a non-root account cannot complete it.
 
 You also need someone who can issue a TLS certificate for the server's hostname and someone who can open firewall ports. The [Requirements](requirements.md) page lists exactly what to ask for.
 

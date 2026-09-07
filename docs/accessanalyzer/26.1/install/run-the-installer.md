@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 The installer is a single Linux binary, `dspm-installer`. Run it as root on the server, and it checks the hardware, asks for anything you haven't supplied, sets up every service, and prints the address and credentials for the first sign-in.
 
-Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, and the email address of the first administrator.
+Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, and the email address & name of the first administrator at hand.
 
 ## Download the Installer
 
@@ -43,11 +43,11 @@ The installer expects the certificate at `/etc/dspm/tls.crt` and the private key
    sudo mkdir -p /etc/dspm
    ```
 
-2. Copy the certificate and key into place.
+2. Move the certificate and key into place.
 
    ```bash
-   sudo cp /path/to/your.crt /etc/dspm/tls.crt
-   sudo cp /path/to/your.key /etc/dspm/tls.key
+   sudo mv /path/to/your.crt /etc/dspm/tls.crt
+   sudo mv /path/to/your.key /etc/dspm/tls.key
    ```
 
 3. Restrict the key to root.
@@ -75,11 +75,11 @@ The installer runs its preflight checks first, then collects any value it doesn'
 
 When you run the installer with no flags in a terminal, it asks for each value it needs, one screen at a time. It asks only for values it doesn't already have, so a re-run skips what you answered before.
 
-1. **License Key**—paste your Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The installer validates it online before moving on.
-2. **Hostname**—enter the fully qualified domain name users open in their browsers, for example `dspm.corp.example.com`. If the server's own name is a valid choice, the installer offers it as a suggestion.
-3. **First Admin Email** and **First Admin Name**—enter the email address of the first administrator, and optionally their full name. The address becomes their username.
-4. **TLS Certificate File**, **TLS Private Key File**, and **CA Bundle File (optional)**—press Enter to accept `/etc/dspm/tls.crt` and `/etc/dspm/tls.key`, or enter other paths. Fill in the CA bundle only if a private certificate authority issued the certificate. The installer checks that the certificate and key match, that the certificate hasn't expired, and that it covers the hostname you entered.
-5. **Show advanced settings?**—select **No**.
+1. **License Key** - paste your Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The installer validates it online before moving on.
+2. **Hostname** - enter the fully qualified domain name users open in their browsers, for example `dspm.corp.example.com`. If the server's own name is a valid choice, the installer offers it as a suggestion.
+3. **First Admin Email** and **First Admin Name** - enter the email address of the first administrator, and optionally their full name. The address becomes their username.
+4. **TLS Certificate File**, **TLS Private Key File**, and **CA Bundle File (optional)** - press Enter to accept `/etc/dspm/tls.crt` and `/etc/dspm/tls.key`, or enter other paths. Fill in the CA bundle only if a private certificate authority issued the certificate. The installer checks that the certificate and key match, that the certificate hasn't expired, and that it covers the hostname you entered.
+5. **Show advanced settings?** - select **No**.
 6. Check the review screen. It lists the hostname, the certificate path (and the CA bundle path if you gave one), the first administrator, and a masked license key.
 7. Answer **Yes** to **Everything look good?**
 
@@ -118,8 +118,8 @@ Every flag also has an environment variable, listed in the [Installer reference]
 The installer checks the server first, under the heading `Running preflight checks...`. Checks that pass are silent. Each failure or warning gets its own line, tagged `[FAIL]` or `[WARN]`, for example:
 
 ```text
-  [FAIL] ram       48.0 GB RAM; the medium size requires 64 GB
-  [WARN] clock-sync no clock sync daemon detected; ...
+  [FAIL] 48.0 GB RAM; the medium size requires 64 GB
+  [WARN] clock-sync no clock sync daemon detected
 ```
 
 A `[FAIL]` stops the install. There's no way to override it: fix the server or choose a smaller size, then run the installer again. Failures cover CPU cores, RAM, the 40 GB disk floor, DNS resolution of the hosts the installer downloads from, and the availability of cgroups, a kernel feature the platform depends on.
