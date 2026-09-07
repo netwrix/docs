@@ -4,7 +4,7 @@ description: The terms Access Analyzer uses for what it scans, how it signs in, 
 sidebar_position: 3
 ---
 
-Most of Access Analyzer's vocabulary sits in the sidebar under **Configuration**. The terms below come in the order a new administrator meets them.
+Most of Access Analyzer's vocabulary sits in the sidebar under **Configuration**. The following terms come in the order a new administrator meets them.
 
 ```mermaid
 flowchart LR
@@ -21,7 +21,7 @@ A source is a system that Access Analyzer connects to and scans. Its source type
 
 ## Service Account
 
-A Service Account is a saved credential that Access Analyzer uses to authenticate to a source. Attach it to every source that needs it and you can easily rotate the secret in one place. Its type must match the source: Username/password for File Server and Active Directory, Client ID/secret for Entra ID, Client ID/certificate for SharePoint Online, and SSH username/key for deploying agents. A `corp-file-servers` account holding a domain user that can read the shares serves every File Server source in that domain. [Service accounts](service-accounts/index.md) covers each type.
+A Service Account is a saved credential that Access Analyzer uses to authenticate to a source. Attach it to every source that needs it, and you can rotate the secret in one place. Its type must match the source: Username/password for File Server and Active Directory, Client ID/secret for Entra ID, Client ID/certificate for SharePoint Online, and SSH username/key for deploying agents. A `corp-file-servers` account holding a domain user that can read the shares serves every File Server source in that domain. [Service accounts](service-accounts/index.md) covers each type.
 
 ## Agent and the System Agent
 
@@ -33,7 +33,7 @@ A label is a `key=value` pair. Source labels group sources and let a scan target
 
 ## Scan and Scan Type
 
-A scan is a saved definition: a name, one scan type, a target, settings per source type, an agent, and a schedule. Nothing is collected until it runs. The type is fixed at creation and decides what is collected. An **Access Scan** inventories shares, folders, files (their metadata), sites, and their permissions. A **Sensitive Data Scan** reads file content and matches it against sensitive data patterns. An **Identity Sync** pulls users, groups, and memberships from a directory. "Finance access" is an Access Scan targeting `team=finance` sources; "Finance sensitive data" reads the same sources after the first has completed. See [Scans](scans/index.md) and [Scan types](scans/scan-types.md).
+A scan is a saved definition: a name, one scan type, a target, settings per source type, an agent, and a schedule. It collects nothing until it runs. The type can't change after creation, and it decides what the scan collects. An **Access Scan** inventories shares, folders, files (their metadata), sites, and their permissions. A **Sensitive Data Scan** reads file content and matches it against sensitive data patterns. An **Identity Sync** pulls users, groups, and memberships from a directory. "Finance access" is an Access Scan targeting `team=finance` sources; "Finance sensitive data" reads the same sources after the first has completed. See [Scans](scans/index.md) and [Scan types](scans/scan-types.md).
 
 ## Schedule
 
@@ -45,7 +45,7 @@ The scan target is the set of sources a scan covers: a fixed list (**Specific So
 
 ## Sensitive Data Pattern and Pattern Group
 
-A sensitive data pattern is a regular expression with a name and a description. A pattern group can be used to collect related patterns under a name such as **PCI DSS** (Payment Card Industry Data Security Standard) or **Credentials**. Scans work at the group level: pick the groups, and every pattern in them runs. Access Analyzer ships 139 built-in patterns in 11 built-in groups. A custom employee ID pattern placed in the built-in **PII** (personally identifiable information) group runs in every scan that classifies PII. See [Sensitive data patterns](sensitive-data-patterns/index.md).
+A sensitive data pattern is a regular expression with a name and a description. A pattern group collects related patterns under a name such as **PCI DSS** (Payment Card Industry Data Security Standard) or **Credentials**. Scans work at the group level: pick the groups, and every pattern in them runs. Access Analyzer ships 139 built-in patterns in 11 built-in groups. A custom employee ID pattern placed in the built-in **PII** (personally identifiable information) group runs in every scan that classifies PII. See [Sensitive data patterns](sensitive-data-patterns/index.md).
 
 ## Dashboard and Report
 
@@ -59,6 +59,6 @@ A role decides what a user can do; every user holds exactly one of three. **Admi
 
 The installer's size table measures capacity in two units:
 
-Objects are what an Access scan inventories: shares, folders, and files on a file server; sites, libraries, and documents in SharePoint Online. Each of these are independently known as objects, and the **Objects** column on the Scan executions page counts them _per run_.
+Objects are what an Access scan inventories: shares, folders, and files on a file server; sites, libraries, and documents in SharePoint Online. Each of these counts as an object, and the **Objects** column on the Scan executions page counts them _per run_.
 
 Identities are the users and groups an Identity Sync collects. A file server holding ~12 million objects, plus a domain with ~3,000 users & groups, would the **small** size in [Requirements](install/requirements.md).

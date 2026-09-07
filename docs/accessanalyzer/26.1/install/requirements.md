@@ -120,6 +120,6 @@ Some features add outbound connections of their own after you configure them.
 
 ## Browser
 
-Any modern browser should work. Internet Explorer isn't supported or recommended.
+Any modern browser should work. Netwrix doesn't support or recommend Internet Explorer.
 
 Once everything on this page is in place, continue to [Install Access Analyzer](run-the-installer.md).

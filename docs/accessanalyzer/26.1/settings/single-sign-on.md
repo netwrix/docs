@@ -144,7 +144,7 @@ The user's role is the one on the row, Viewer by default. Access Analyzer doesn'
 ![Access Analyzer sign-in page with Username and Password fields](/images/accessanalyzer/26.1/overview/sign-in.webp)
 
 - **Active Directory** users type their `sAMAccountName` or their email attribute into **Username**, and their domain password into **Password**, on the same form local users use. There is no separate Active Directory button. After two failed directory sign-in attempts for the same username within 30 minutes, Access Analyzer refuses further attempts with the message "Too many sign-in attempts. Wait a few minutes and try again, or contact your administrator." A successful sign-in clears the count.
-- **Entra ID** users click **Sign in with Microsoft**, which appears below an **or** divider under the password form once you've connected Entra ID. If Microsoft sends them back before sign-in completes, the form shows "Microsoft sign-in didn't complete. try again."
+- **Entra ID** users click **Sign in with Microsoft**, which appears below an **or** divider under the password form after you connect Entra ID. If Microsoft sends them back before sign-in completes, the form shows "Microsoft sign-in didn't complete. try again."
 
 A directory user with no matching row sees **Access denied** and "Your account isn't authorized to access this application. contact your administrator." A user whose row is Inactive sees "Your account is inactive. contact your administrator."
 

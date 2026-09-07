@@ -23,11 +23,11 @@ A scan defines:
 2. from which sources
 3. and when
 
-An Access Scan inventories shares, folders, files (and their metadata), and sites with their permissions. Sensitive Data Scans read each file's content (and thus a bit slower). An Identity Sync pulls users, groups, and memberships from a directory service. Scans can run on demand or on a schedule. Every scan runs on an Agent: the System agent built into the server, or agents you deploy on other Linux hosts and pick with labels. See [Scans](scans/index.md) and [Agents](agents/index.md) to learn more about what they are and how they're used.
+An Access Scan inventories shares, folders, files (and their metadata), and sites with their permissions. Sensitive Data Scans read each file's content, so they take longer. An Identity Sync pulls users, groups, and memberships from a directory service. Scans can run on demand or on a schedule. Every scan runs on an Agent: the System agent built into the server, or agents you deploy on other Linux hosts and pick with labels. See [Scans](scans/index.md) and [Agents](agents/index.md) for what they are and how to use them.
 
 ### Sensitive Data
 
-Sensitive Data Patterns are regular expressions (that are optionally grouped) by compliance program, data category or whatever categorical system you wish. Access Analyzer ships 139 built-in patterns in 11 groups, and you can add your own. A scan records which patterns matched in a file and how many times, but never the matched text. See [Sensitive data patterns](sensitive-data-patterns/index.md).
+Sensitive Data Patterns are regular expressions that you can group by compliance program, data category, or any other system you choose. Access Analyzer ships 139 built-in patterns in 11 groups, and you can add your own. A scan records which patterns matched in a file and how many times, but never the matched text. See [Sensitive data patterns](sensitive-data-patterns/index.md).
 
 ### Dashboards and Reports
 
@@ -35,7 +35,7 @@ Two dashboards, Data security and Active Directory, summarize what your scans ha
 
 ### Activity Data
 
-Scans show _who_ can reach _what_ data. To see who used that access, you can connect [Netwrix Activity Monitor](integrations/netwrix-activity-monitor.md), which streams the events it records on file servers, SharePoint Online, and Microsoft 365 Copilot and more to Access Analyzer. They fill the **Activity** tab of the Data security dashboard and the Activity Investigation report. See [Integrations](integrations/index.md).
+Scans show _who_ can reach _what_ data. To see who used that access, you can connect [Netwrix Activity Monitor](integrations/netwrix-activity-monitor.md), which streams the events it records on file servers, SharePoint Online, Microsoft 365 Copilot, and other systems to Access Analyzer. They fill the **Activity** tab of the Data security dashboard and the Activity Investigation report. See [Integrations](integrations/index.md).
 
 ### Users and Sign-in
 
@@ -43,4 +43,4 @@ Every user in Access Analyzer can have one of three roles: Admin, User Admin, or
 
 ## Where to Start
 
-Start with [Installation](install/index.md): pick a size, prepare the server, and run the installer. Then [sign in for the first time](install/first-sign-in.md), change the one-time password, and connect a directory or you can put that off until later. After that, follow the [Guides](guides/index.md), one per platform, to populate your first report. Before a rollout, read [What's new in 26.1](whats-new.md) and [Known limitations](known-limitations.md).
+Start with [Installation](install/index.md): pick a size, prepare the server, and run the installer. Then [sign in for the first time](install/first-sign-in.md), change the one-time password, and connect a directory or leave that for later. After that, follow the [Guides](guides/index.md), one per platform, to populate your first report. Before a rollout, read [What's new in 26.1](whats-new.md) and [Known limitations](known-limitations.md).

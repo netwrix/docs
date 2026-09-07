@@ -25,11 +25,11 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--hostname` | `DSPM_HOSTNAME` | none | Fully qualified domain name users open in their browsers. Lowercased before use. |
 | `--first-admin-email` | `FIRST_ADMIN_EMAIL` | none | Email address of the first administrator. Required. Becomes that person's username. |
 | `--first-admin-name` | `FIRST_ADMIN_NAME` | none | Full name of the first administrator. |
-| `--tls-cert` | `TLS_CERT_FILE` | `/etc/dspm/tls.crt` | PEM TLS certificate file, full chain with the leaf certificate first. Must be given together with `--tls-key`. |
-| `--tls-key` | `TLS_KEY_FILE` | `/etc/dspm/tls.key` | PEM TLS private key file. Must be given together with `--tls-cert`. |
+| `--tls-cert` | `TLS_CERT_FILE` | `/etc/dspm/tls.crt` | PEM TLS certificate file, full chain with the leaf certificate first. Requires `--tls-key`. |
+| `--tls-key` | `TLS_KEY_FILE` | `/etc/dspm/tls.key` | PEM TLS private key file. Requires `--tls-cert`. |
 | `--ca-bundle` | `TLS_CA_BUNDLE_FILE` | none | PEM certificate authority (CA) bundle. Needed when a private CA issued the certificate. |
 | `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. |
-| `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. Also shown as **Target Revision** under **Show advanced settings?**. |
+| `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. Also appears as **Target Revision** under **Show advanced settings?**. |
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
 | `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen shown when the configuration file already supplies every required value. |
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
@@ -87,7 +87,7 @@ When the file supplies every required value and the installer runs in a terminal
 | 50 | The installer couldn't install the platform, or the platform didn't become ready within 5 minutes. |
 | 60 | The installer couldn't install a platform component. |
 | 70 | The Access Analyzer services didn't all become healthy within 30 minutes, or you pressed Ctrl-C while waiting for them. |
-| 71 | A service stayed in a failed state for 5 minutes. Returned only by `wait-for-apps`; during an install the same condition exits 70. |
+| 71 | A service stayed in a failed state for 5 minutes. Only `wait-for-apps` returns this code; during an install the same condition exits 70. |
 | 80 | Preflight checks failed (`preflight checks failed`), or you didn't accept warnings (`preflight warnings detected; use --accept-warnings to continue` or `installation stopped at preflight warnings`). |
 
 ## Preflight Checks
@@ -108,7 +108,7 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 | `selinux` | SELinux isn't in enforcing mode. | WARN | The message says SELinux is enforcing and asks you to allow the platform's container policy or set SELinux to permissive. |
 | `antivirus` | No known antivirus product is installed or running: `mdatp`, CrowdStrike, ClamAV, Sophos, Carbon Black, or Trend Micro. | WARN | `antivirus software detected: <product> (exclusion hint: <hint>)` |
 | `network` | Each of the 18 required hosts resolves in DNS and accepts a connection on port 443 within 5 seconds. | FAIL when a name doesn't resolve; WARN when a connection times out or is refused | `DNS resolution failed for: <hosts>` or `connection failed (timeout/refused) for: <hosts>` |
-| `domain-join` | Whether the server is joined to an Active Directory domain. Informational only. | — | `no AD domain detected`, or a message naming the detected domain |
+| `domain-join` | Whether the server belongs to an Active Directory domain. Informational only. | — | `no AD domain detected`, or a message naming the detected domain |
 | `clock-sync` | A time-sync service (`chronyd`, `ntpd`, or `systemd-timesyncd`) is running. | WARN | `no clock sync daemon detected; Kerberos authentication requires clocks within 5 minutes of the AD domain controller — install chronyd, ntpd, or systemd-timesyncd to eliminate clock-skew risk` |
 
 When the `antivirus` check finds a product, add these paths to that product's exclusion list: `/var/lib/rancher/k3s/agent/containerd`, `/var/lib/rancher/k3s/data`, and `/run/k3s/containerd`. The hint in the message names the product's own command or console for adding exclusions.
@@ -135,5 +135,5 @@ Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a 
 
 | File | Contents |
 |---|---|
-| `/var/log/dspm-installer.log` | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail set by `--log-level`. Appended on every run, mode `0640`. If the installer can't write the file, it sends the same output to the terminal's standard error as text. |
-| `/var/log/dspm-preflight.json` | The full result of the most recent preflight run: `timestamp`, `overallStatus`, and a `checks` list with `name`, `status`, and `message` for every check, including the ones that passed. Not written by `--dry-run`. |
+| `/var/log/dspm-installer.log` | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail set by `--log-level`. The installer appends to the file on every run, with mode `0640`. If the installer can't write the file, it sends the same output to the terminal's standard error as text. |
+| `/var/log/dspm-preflight.json` | The full result of the most recent preflight run: `timestamp`, `overallStatus`, and a `checks` list with `name`, `status`, and `message` for every check, including the ones that passed. `--dry-run` doesn't write it. |

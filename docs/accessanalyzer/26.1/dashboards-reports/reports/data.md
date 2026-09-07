@@ -128,7 +128,7 @@ Needs an Access scan on the File Server source, plus a Sensitive data scan for t
 
 "Detailed breakdown of effective permissions on each network share."
 
-Share Audit is the one report that looks at a single share at a time and covers it from every angle: what's in it, who can reach it, what sensitive data it holds, and who has been using it. The content is split across four tabs inside the report.
+Share Audit is the one report that looks at a single share at a time and covers it from every angle: what's in it, who can reach it, what sensitive data it holds, and who has been using it. The report splits its content across four tabs.
 
 ![Share Audit report](/images/accessanalyzer/26.1/dashboards-reports/report-share-audit.webp)
 

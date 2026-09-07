@@ -18,7 +18,7 @@ A source is a system Access Analyzer scans: File Server, Active Directory, Entra
 
 ## Service Accounts
 
-A Service Account is a saved credential for reading a source or deploying an agent: Username/password, Client ID/secret, Client ID/certificate, or SSH username/key. For a certificate account, Access Analyzer can generate a self-signed certificate valid for one year, or you can upload your own. Secrets are never (and will never again be) displayed after you save them. See [Service Accounts](service-accounts/index.md).
+A Service Account is a saved credential for reading a source or deploying an agent: Username/password, Client ID/secret, Client ID/certificate, or SSH username/key. For a certificate account, Access Analyzer can generate a self-signed certificate valid for one year, or you can upload your own. Access Analyzer never displays a secret again after you save it. See [Service Accounts](service-accounts/index.md).
 
 ## Agents
 
@@ -36,7 +36,7 @@ An Access Scan inventories shares, folders, files (and their metadata), sites, a
 
 ## Sensitive Data Patterns
 
-Sensitive Data Patterns are regular expressions (that are optionally grouped) by compliance program, data category or whatever categorical system you wish. Add your own patterns and groups, place custom patterns in built-in groups, and test any pattern against sample text before saving. See [Sensitive data patterns](sensitive-data-patterns/index.md).
+Sensitive Data Patterns are regular expressions that you can group by compliance program, data category, or any other system you choose. Add your own patterns and groups, place custom patterns in built-in groups, and test any pattern against sample text before saving. See [Sensitive data patterns](sensitive-data-patterns/index.md).
 
 ## Dashboards and Reports
 

@@ -14,9 +14,9 @@ You need three things: an account that can read the shares, a network path to th
 
 **The account** - Access Analyzer only reads. Give the account NTFS **Read** on every folder and file you want inventoried; the specific rights it needs are List folder / Read data, Read attributes, and Read permissions. The Sensitive data scan reads file contents, which the same Read right covers.
 
-Making the account a member of the file server's local **Administrators** or **Backup Operators** group lets the scan read folders whose permissions would otherwise lock it out. Without administrative rights the scan still lists every share, but it can't record each share's local path, and any folder it can't open is logged as an error.
+Making the account a member of the file server's local **Administrators** or **Backup Operators** group lets the scan read folders whose permissions would otherwise lock it out. Without administrative rights the scan still lists every share, but it can't record each share's local path, and it logs any folder it can't open as an error.
 
-**The network** - The Access Analyzer server, or the agent that runs the scan, needs TCP 445 to the file server. The connection uses SMB 2 or 3 with signing; SMB 1 isn't supported. Authentication uses NT LAN Manager (NTLM).
+**The network** - The Access Analyzer server, or the agent that runs the scan, needs TCP 445 to the file server. The connection uses SMB 2 or 3 with signing; Access Analyzer doesn't support SMB 1. Authentication uses NT LAN Manager (NTLM).
 
 | Direction | Port | Purpose |
 |-----------|------|---------|
@@ -77,11 +77,11 @@ Run the Access scan first. The Sensitive data scan you create in [Create the Sen
 
    ![Create scan Type step with the Access, Sensitive data, and Identity sync cards](/images/accessanalyzer/26.1/scans/create-scan-1-type.webp)
 
-3. On the **Target** step, keep **Specific sources** and select the file server you added. Only sources that support Access scans are listed. For a group of servers, select **Sources matching labels** instead and enter the label; the scan picks up any source that carries it at run time.
+3. On the **Target** step, keep **Specific sources** and select the file server you added. The list shows only sources that support Access scans. For a group of servers, select **Sources matching labels** instead and enter the label; the scan picks up any source that carries it at run time.
 
    ![Create scan Target step with one File Server source selected](/images/accessanalyzer/26.1/scans/create-scan-2-target-selected.webp)
 
-4. On the **Configure** step, leave **Use default configuration** selected. The defaults are **Workers** 3, **Exclude system shares** on (shares whose names end in `$` are skipped), **Maximum scan depth** 50, and **Enable File-Level Permission Scanning** off, which means permissions are collected for shares and folders but not for individual files. Change these later, after you've seen a first run; [Scan types](../scans/scan-types.md) explains each setting.
+4. On the **Configure** step, leave **Use default configuration** selected. The defaults are **Workers** 3, **Exclude system shares** on (the scan skips shares whose names end in `$`), **Maximum scan depth** 50, and **Enable File-Level Permission Scanning** off, which means the scan collects permissions for shares and folders but not for individual files. Change these later, after you've seen a first run; [Scan types](../scans/scan-types.md) explains each setting.
 5. On the **Schedule** step, leave **Manual — run on demand** for the first run. When the first run looks right, edit the scan and switch to **On a schedule**; the default is **Daily** at 02:00. Leave the agent set to **System agent** unless you have deployed an [agent](../agents/index.md) closer to the file server.
 6. On the **Review** step, enter a **Name** such as `Finance file server - access` and check the summary.
 7. Click **Create & run now**.
@@ -100,13 +100,13 @@ The status moves from **Pending** to **Running** and ends at **Completed**, **Co
 
 ![Execution logs dialog on the Overview tab](/images/accessanalyzer/26.1/scans/execution-logs-overview.webp)
 
-**Completed with errors** means some objects couldn't be read, most often folders the account has no rights to. The data that was collected is kept, and the next run uploads the rest. Check **Detailed logs** for the paths, fix the permissions or add the account to **Backup Operators**, and run the scan again from **Configuration > Scans**.
+**Completed with errors** means the scan couldn't read some objects, most often folders the account has no rights to. Access Analyzer keeps the data the scan did collect, and the next run uploads the rest. Check **Detailed logs** for the paths, fix the permissions or add the account to **Backup Operators**, and run the scan again from **Configuration > Scans**.
 
 [Scan executions](../scans/scan-executions.md) lists every status and the pause, resume, and stop controls.
 
 ## 5. Create the Sensitive Data Scan
 
-After the Access scan shows **Completed**, create the second scan. It classifies files from the Access scan's inventory against sensitive data patterns. Files larger than 10 MB and files with excluded extensions are skipped by default; both limits are in [Application settings](../settings/application.md).
+After the Access scan shows **Completed**, create the second scan. It classifies files from the Access scan's inventory against sensitive data patterns. By default the scan skips files larger than 10 MB and files with excluded extensions; both limits are in [Application settings](../settings/application.md).
 
 1. Go to **Configuration > Scans** and click **Create scan**.
 2. On the **Type** step, select **Sensitive data** and click **Next**.
