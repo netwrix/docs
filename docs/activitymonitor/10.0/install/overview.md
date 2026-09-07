@@ -18,7 +18,7 @@ the versions to be compatible.
 | Component                                             | Version |
 | ----------------------------------------------------- | ------- |
 | Netwrix Activity Monitor                              | 10.0.x  |
-| Netwrix Access Analyzer                               | 12.0.x or 2601 |
+| Netwrix Access Analyzer                               | 12.0.x or 26.1 |
 | Netwrix Threat Prevention                             | 8.0.x   |
 | Netwrix Threat Manager                                | 3.0.x   |
 

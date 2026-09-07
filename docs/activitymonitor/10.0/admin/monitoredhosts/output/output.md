@@ -44,7 +44,7 @@ Tokens expire after **1 hour**. Generating a new token immediately invalidates a
 A single token can enroll multiple agents and outputs simultaneously — plan your enrollment session and generate the token immediately before you begin.
 :::
 
-See the [Netwrix Access Analyzer 26 Documentation](/docs/accessanalyzer/2601/configurations/activity-monitor-integration) for
+See the [Netwrix Access Analyzer 26 Documentation](/docs/accessanalyzer/26_1/integrations/netwrix-activity-monitor) for
 additional information.
 
 ### Add the Output in Netwrix Activity Monitor
