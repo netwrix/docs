@@ -89,7 +89,7 @@ sudo -E dspm-installer
 
 If your `sudo` policy doesn't allow `-E`, pass the variable inline instead: `sudo LICENSE_KEY="$LICENSE_KEY" dspm-installer`.
 
-The installer runs its preflight checks first, then collects any value it doesn't have yet. You can let it ask, or supply everything up front.
+The installer runs its preflight checks first, then collects any value it doesn't have yet. You can let it ask, or supply everything in advance.
 
 <Tabs groupId="install-method">
 <TabItem value="prompts" label="Answer the prompts">
@@ -162,7 +162,7 @@ The installer checks the server first, under the heading `Running preflight chec
 
 A `[FAIL]` stops the install. There's no way to override it: fix the server or choose a smaller size, then run the installer again. Failures cover CPU cores, RAM, the 40 GB disk floor, DNS resolution of the hosts the installer downloads from, and the availability of cgroups, a kernel feature the platform depends on.
 
-A `[WARN]` is a condition the install can continue past, such as less disk than the size recommends, no time-sync service, or antivirus software that may need exclusions. In a terminal the installer asks **Continue despite these warnings?**; answer **Yes** to go on. Without a terminal, warnings stop the install unless you pass `--accept-warnings`.
+A `[WARN]` is a condition the install can continue past, such as less disk than the size recommends, no time-sync service, or antivirus software that may need exclusions. In a terminal the installer asks **Continue despite these warnings?**; answer **Yes** to continue. Without a terminal, warnings stop the install unless you pass `--accept-warnings`.
 
 The full list of checks, thresholds, and messages is in the [Installer reference](installer-reference.md#preflight-checks). The installer also writes the complete result of each run to `/var/log/dspm-preflight.json` (a `--dry-run` doesn't write it).
 

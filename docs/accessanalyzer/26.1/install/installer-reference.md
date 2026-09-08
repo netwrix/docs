@@ -65,7 +65,7 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 | `--local-charts-dir` | `LOCAL_CHARTS_DIR` | none | Mount a local Helm chart directory into `argocd-repo-server` and install from it with a `file://` source, instead of a remote repository. |
 | `--use-mirrored-images` | none | `true` | Pull container images from the Netwrix mirror registry. |
 | `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
-| `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all DSPM data. Prompts for confirmation unless you pass `--force`. |
+| `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all Access Analyzer data. Prompts for confirmation unless you pass `--force`. |
 | `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
@@ -133,7 +133,7 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 | `os` | The Linux distribution belongs to a recognized family. | WARN | `unrecognised Linux distribution; installation may not be supported` |
 | `selinux` | SELinux isn't in enforcing mode. | WARN | The message says SELinux is enforcing and asks you to allow the platform's container policy or set SELinux to permissive. |
 | `antivirus` | No known antivirus product is installed or running: `mdatp`, CrowdStrike, ClamAV, Sophos, Carbon Black, or Trend Micro. | WARN | `antivirus software detected: <product> (exclusion hint: <hint>)` |
-| `network` | Each of the 18 required hosts resolves in DNS and accepts a connection on port 443 within 5 seconds. | FAIL when a name doesn't resolve; WARN when a connection times out or is refused | `DNS resolution failed for: <hosts>` or `connection failed (timeout/refused) for: <hosts>` |
+| `network` | Each of the 18 required hosts resolves in DNS and accepts a connection on port 443 within 5 seconds. | FAIL when a name doesn't resolve; WARN when a connection times out or the host refuses it | `DNS resolution failed for: <hosts>` or `connection failed (timeout/refused) for: <hosts>` |
 | `domain-join` | Whether the server belongs to an Active Directory domain. Informational only. | — | `no AD domain detected`, or a message naming the detected domain |
 | `clock-sync` | A time-sync service (`chronyd`, `ntpd`, or `systemd-timesyncd`) is running. | WARN | `no clock sync daemon detected; Kerberos authentication requires clocks within 5 minutes of the AD domain controller — install chronyd, ntpd, or systemd-timesyncd to eliminate clock-skew risk` |
 
