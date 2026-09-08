@@ -31,7 +31,23 @@ const VERSION_SEGMENT_RE = /^(?:v?\d+(?:_\d+)*|saas|current)$/i;
 // so plugin-client-redirects has nothing to emit), so it still answers HTTP 404
 // to crawlers and JS-disabled clients and passes no link equity to the new
 // location.
-export function findVersionlessRedirect(pathname, unversionedDocsBasePaths) {
+export function findVersionlessRedirect(pathname, unversionedDocsBasePaths, rootOnlyDocsBasePaths) {
+  // A product opts into "always redirect to root" (rootOnlyDocsBasePaths) instead
+  // of the default "preserve the sub-path" handling below when its old versions'
+  // page structure isn't guaranteed to line up with the new unversioned latest
+  // (see passwordpolicyenforcer in docusaurus.config.js). Checked first so a
+  // product never needs to appear in both lists.
+  const rootOnlyBase = rootOnlyDocsBasePaths?.find((base) =>
+    pathname.startsWith(`${base}/`)
+  );
+  if (rootOnlyBase) {
+    const [maybeVersion] = pathname
+      .slice(rootOnlyBase.length + 1)
+      .split('/')
+      .filter(Boolean);
+    return maybeVersion && VERSION_SEGMENT_RE.test(maybeVersion) ? `${rootOnlyBase}/` : null;
+  }
+
   // Each base path is matched with a trailing slash so that products whose base
   // path is a string prefix of another's (platgovnetsuite vs
   // platgovnetsuiteflashlight) can't match each other.

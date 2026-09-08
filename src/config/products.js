@@ -336,40 +336,26 @@ export const PRODUCTS = [
     path: 'docs/passwordpolicyenforcer',
     categories: ['Directory Management'],
     icon: '',
+    // De-versioned 2026-09: only 12.0 is built/served now, at the bare product
+    // path (no version segment). The 11.2/11.1/11.0/10.2 entries that used to
+    // live here were removed, not deleted — their docs, images, and sidebar
+    // files are untouched on disk (docs/passwordpolicyenforcer/<version>/,
+    // sidebars/passwordpolicyenforcer/<version>.js). To revive a version,
+    // re-add its entry here (see git history of this file for the exact
+    // shape) and it picks back up where it left off. Every old versioned URL
+    // (including the old /12_0 one) now redirects to the bare product root —
+    // see passwordPolicyEnforcerDeversionRedirects in docusaurus.config.js for
+    // known static paths, and redirectStaleVersionsToRoot below for the
+    // catch-all client-side fallback for unlisted old deep links.
     versions: [
       {
         version: '12.0',
         label: '12.0',
         isLatest: true,
         sidebarFile: './sidebars/passwordpolicyenforcer/12.0.js',
-      },
-      {
-        version: '11.2',
-        label: '11.2',
-        isLatest: false,
-        hidden: true,
-        sidebarFile: './sidebars/passwordpolicyenforcer/11.2.js',
-      },
-      {
-        version: '11.1',
-        label: '11.1',
-        isLatest: false,
-        hidden: true,
-        sidebarFile: './sidebars/passwordpolicyenforcer/11.1.js',
-      },
-      {
-        version: '11.0',
-        label: '11.0',
-        isLatest: false,
-        hidden: true,
-        sidebarFile: './sidebars/passwordpolicyenforcer/11.0.js',
-      },
-      {
-        version: '10.2',
-        label: '10.2',
-        isLatest: false,
-        hidden: true,
-        sidebarFile: './sidebars/passwordpolicyenforcer/10.2.js',
+        customRoutePath: 'docs/passwordpolicyenforcer',
+        customDocPath: 'docs/passwordpolicyenforcer/12.0',
+        redirectStaleVersionsToRoot: true,
       },
     ],
     defaultVersion: '12.0',
@@ -829,7 +815,9 @@ export function getActiveVersions(product) {
 /**
  * Build a map of product ID → latest URL-version string.
  * Used by the evergreen-links redirect config to generate version-less aliases.
- * Skips single-version 'current' products (their URLs are already version-less).
+ * Skips single-version 'current' products (their URLs are already version-less),
+ * and any product whose latest version already serves at the bare product path
+ * (e.g. passwordpolicyenforcer 12.0) — those have no version segment to alias.
  */
 export function getLatestVersionUrlMap() {
   const map = {};
@@ -837,6 +825,7 @@ export function getLatestVersionUrlMap() {
     if (product.versions.length === 1 && product.versions[0].version === 'current') continue;
     const latest = getDefaultVersion(product);
     if (!latest) continue;
+    if (latest.customRoutePath === product.path) continue;
     const urlVersion = latest.customRoutePath
       ? latest.customRoutePath.split('/').pop()
       : versionToUrl(latest.version);
