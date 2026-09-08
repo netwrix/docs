@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 The installer is a single Linux binary, `dspm-installer`. Run it as root on the server, and it checks the hardware, asks for anything you haven't supplied, sets up every service, and prints the address and credentials for the first sign-in.
 
-Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, and the email address & name of the first administrator at hand.
+Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, and the email address and name of the first administrator.
 
 ## Download the Installer
 

@@ -8,7 +8,7 @@ Gather everything on this page before you run the installer. The installer runs 
 
 ## Server
 
-Access Analyzer installs on a single Linux server, physical or virtual.
+Access Analyzer installs on a single physical or virtual Linux server.
 
 | Requirement | Details |
 |---|---|
@@ -84,7 +84,7 @@ Open these ports on the server's firewall.
 
 ### Outbound
 
-The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or is refused.
+The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or the host refuses it.
 
 | Host | Purpose |
 |---|---|
