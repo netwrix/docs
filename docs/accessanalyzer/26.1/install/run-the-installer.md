@@ -9,29 +9,40 @@ import TabItem from '@theme/TabItem';
 
 The installer is a single Linux binary, `dspm-installer`. Run it as root on the server, and it checks the hardware, asks for anything you haven't supplied, sets up every service, and prints the address and credentials for the first sign-in.
 
-Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, and the email address & name of the first administrator at hand.
+Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, and the email address and name of the first administrator.
 
 ## Download the Installer
 
-1. Download the Access Analyzer installer for your server's architecture from the download link Netwrix supplied with your license: `dspm-installer-linux-amd64` for 64-bit x86 or `dspm-installer-linux-arm64` for Arm.
-2. Copy the file to the server, for example with `scp`.
-3. Rename it.
+The Netwrix package registry hosts the installer, and your license key authenticates the download. Run these commands on the server.
+
+1. Export your license key.
 
    ```bash
-   mv dspm-installer-linux-amd64 dspm-installer
+   export LICENSE_KEY='<license-key>'
    ```
 
-4. Make it executable.
+2. Download the installer for the server's architecture and place it in `/usr/local/bin`.
 
    ```bash
-   chmod +x dspm-installer
+   ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+   TMP_FILE=$(mktemp)
+   curl -sLf -o "$TMP_FILE" \
+     "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
+   sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+   rm -f "$TMP_FILE"
    ```
 
-5. Confirm it runs.
+3. Confirm it runs.
 
    ```bash
-   ./dspm-installer --version
+   dspm-installer --version
    ```
+
+   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains listed under [Outbound](requirements.md#outbound).
+
+:::note
+Keep the `channel=stable` parameter. Without it, the registry returns the newest artifact across all channels, which can be a pre-release or development build instead of the latest stable release.
+:::
 
 ## Copy the TLS Certificate to the Server
 
@@ -60,13 +71,13 @@ If a private certificate authority (CA) issued the certificate, copy its CA bund
 
 ## Run the Installer
 
-Run the installer with `sudo`. The `-E` flag carries your environment through to root, which matters if you export the license key as `LICENSE_KEY` instead of typing it.
+Run the installer with `sudo`. The `-E` flag carries your environment through to root, so the installer reads the `LICENSE_KEY` you exported for the download instead of prompting for it.
 
 ```bash
-sudo -E ./dspm-installer
+sudo -E dspm-installer
 ```
 
-If your `sudo` policy doesn't allow `-E`, pass the variable inline instead: `sudo LICENSE_KEY="$LICENSE_KEY" ./dspm-installer`.
+If your `sudo` policy doesn't allow `-E`, pass the variable inline instead: `sudo LICENSE_KEY="$LICENSE_KEY" dspm-installer`.
 
 The installer runs its preflight checks first, then collects any value it doesn't have yet. You can let it ask, or supply everything up front.
 
@@ -91,7 +102,7 @@ The installer saves each answer to `/etc/dspm/installer.yaml` as soon as you con
 Pass every value as a flag and the installer asks nothing. Use this form in scripts or over a connection without a terminal, where the installer can't prompt and exits with an error for any missing value.
 
 ```bash
-sudo ./dspm-installer \
+sudo dspm-installer \
   --license-key "<license-key>" \
   --hostname dspm.corp.example.com \
   --tls-cert /etc/dspm/tls.crt \
