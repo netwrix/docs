@@ -26,7 +26,7 @@ Active Directory sources use a [Username and password](../service-accounts/usern
 The sync only reads, so a regular domain user needs no additional delegation. Don't add the account to Domain Admins or another privileged group.
 
 :::note
-The Deleted Objects container is hidden and denies read access by default. See the Microsoft [Searching for Deleted Objects](https://technet.microsoft.com/en-us/library/cc978013.aspx) article and [Dsacls](https://technet.microsoft.com/en-us/library/cc771151(v=ws.11).aspx) reference for how to grant access.
+Active Directory hides the Deleted Objects container and denies read access to it by default. See the Microsoft [Searching for Deleted Objects](https://technet.microsoft.com/en-us/library/cc978013.aspx) article and [Dsacls](https://technet.microsoft.com/en-us/library/cc771151(v=ws.11).aspx) reference for how to grant access.
 :::
 
 When you create the service account, enter the plain username without a domain prefix, for example `svc-access-analyzer`. The domain goes in the source's **Domain** field; Access Analyzer combines the two in the form the domain controller expects for the port you connect on.
