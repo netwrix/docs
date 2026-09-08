@@ -15,7 +15,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Operating system | Ubuntu. Any Debian-based distribution should work. The installer doesn't check the release version. |
 | Architecture | 64-bit x86 or Arm. |
 | Access | Root, either directly or through `sudo`. |
-| Free disk on `/var/lib` | At least 40 GB for every [size](#size). Access Analyzer stores its data under `/var/lib`. |
+| Free disk on `/var/lib` | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib`. |
 
 On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
 
@@ -23,7 +23,7 @@ On a distribution the installer doesn't recognize, the preflight check reports a
 
 You pick a size when you install. The size sets the CPU and RAM the installer requires, the disk it recommends, and how much capacity Access Analyzer reserves for itself. _The default is **medium**_.
 
-| Size | CPU cores | RAM | Disk | Designed for |
+| Size | CPU cores | RAM | Disk <br> (/var/lib) | Designed for |
 |---|---|---|---|---|
 | small | 8 | 32 GB | 400 GB | Up to about 25 million objects and fewer than 5,000 identities. |
 | medium | 16 | 64 GB | 1,000 GB | Up to about 200 million objects and 5,000 to 25,000 identities. |
