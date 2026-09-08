@@ -3,16 +3,156 @@
 // versions were removed from the build (their source files are untouched on
 // disk, just unplugged from src/config/products.js).
 //
-// These are static redirects for the well-known version-root URLs so old
-// bookmarks/links to those roots get a real (crawlable, no-JS) redirect rather
-// than depending on the client-side 404 fallback (findVersionlessRedirect),
-// which only fires for a browser that hits a dead route. Deep links into pages
-// under those old versions aren't enumerated here — the 10.2 layout in
-// particular doesn't map cleanly onto 12.0 — so they fall through to that
-// client-side fallback, which sends any old versioned URL to the docs root.
-const OLD_VERSION_URL_SEGMENTS = ['12_0', '11_2', '11_1', '11_0', '10_2'];
+// 11.2/11.1/11.0 share 12.0's exact section layout (see
+// docs/passwordpolicyenforcer/CLAUDE.md), so old links into them are redirected
+// to the same page path under the new unversioned root — computed here by
+// walking 12.0's real doc files and checking each one also exists at the same
+// relative path in the older version. A handful of 11.1/11.0 pages don't have a
+// 12.0 counterpart (removed/renamed features); those are skipped here and fall
+// through to the client-side root redirect (rootOnlyUnversionedDocsBasePaths in
+// docusaurus.config.js) instead of a broken precise redirect.
+//
+// 10.2's layout was reorganized for 11.x/12.0, so its redirects use an explicit,
+// hand-verified old-path -> new-path map instead. Unmapped 10.2 pages (content
+// that was dropped or merged in a way with no single clear target — e.g. the
+// old mailer pages, now covered by KB articles) also fall through to the root.
 
-export const passwordPolicyEnforcerDeversionRedirects = OLD_VERSION_URL_SEGMENTS.map((segment) => ({
-  from: `/docs/passwordpolicyenforcer/${segment}`,
-  to: '/docs/passwordpolicyenforcer',
+import { readdirSync, existsSync, statSync } from 'fs';
+import { join, resolve } from 'path';
+
+const PRODUCT_DOCS_ROOT = resolve(process.cwd(), 'docs/passwordpolicyenforcer');
+const NEW_PREFIX = '/docs/passwordpolicyenforcer';
+
+const EXCLUDED_DIRS = new Set(['kb', '_partials']);
+
+// List every real doc under a version's folder. Returns { docPath, route } pairs:
+// docPath is the file's relative path (extension stripped, used to check the
+// same file exists in an older version); route is the URL suffix Docusaurus
+// actually serves it at, which isn't always the same as docPath — a doc file
+// named the same as its parent folder (e.g. admin/cmdlets/cmdlets.md,
+// admin/manage-policies/rules/rules.md) becomes that folder's category index
+// instead of an extra path segment, so its route drops the repeated segment
+// and gets a trailing slash.
+function listDocRoutes(versionDir) {
+  const docs = [];
+  function walk(dir, relPrefix) {
+    if (!existsSync(dir)) return;
+    for (const entry of readdirSync(dir)) {
+      if (EXCLUDED_DIRS.has(entry) || entry === 'CLAUDE.md') continue;
+      const fullPath = join(dir, entry);
+      if (statSync(fullPath).isDirectory()) {
+        walk(fullPath, relPrefix ? `${relPrefix}/${entry}` : entry);
+        continue;
+      }
+      if (!/\.mdx?$/.test(entry)) continue;
+      const base = entry.replace(/\.mdx?$/, '');
+      const docPath = relPrefix ? `${relPrefix}/${base}` : base;
+      const parentFolderName = relPrefix.split('/').pop();
+      let route;
+      if (base === 'index') {
+        route = relPrefix;
+      } else if (base === parentFolderName) {
+        route = `${relPrefix}/`;
+      } else {
+        route = docPath;
+      }
+      docs.push({ docPath, route });
+    }
+  }
+  walk(versionDir, '');
+  return docs;
+}
+
+// 12.0/11.2/11.1/11.0: redirect every 12.0 route that also exists at the same
+// relative path under the older version's own folder. 12.0 itself is included
+// so its own old versioned URL (/12_0/<page>) redirects to the new one.
+const STRUCTURALLY_IDENTICAL_VERSIONS = ['12.0', '11.2', '11.1', '11.0'];
+
+function docExistsInVersion(versionDir, docPath) {
+  const stem = join(versionDir, ...(docPath ? docPath.split('/') : ['index']));
+  return existsSync(`${stem}.md`) || existsSync(`${stem}.mdx`);
+}
+
+const exactMatchRedirects = STRUCTURALLY_IDENTICAL_VERSIONS.flatMap((version) => {
+  const urlVersion = version.replace(/\./g, '_');
+  const versionDir = join(PRODUCT_DOCS_ROOT, version);
+  if (!existsSync(versionDir)) return [];
+  return listDocRoutes(join(PRODUCT_DOCS_ROOT, '12.0'))
+    .filter(({ docPath }) => docExistsInVersion(versionDir, docPath))
+    .map(({ route }) => ({
+      from: route ? `${NEW_PREFIX}/${urlVersion}/${route}` : `${NEW_PREFIX}/${urlVersion}`,
+      to: route ? `${NEW_PREFIX}/${route}` : NEW_PREFIX,
+    }));
+});
+
+// 10.2: layout was reorganized in 11.x/12.0, so map old page -> new page
+// explicitly. Verified by comparing file titles/content, not just names.
+// '' (index) -> '' (index) covers the version root.
+const TEN_TWO_PAGE_MAP = {
+  '': '',
+  'administration/administration_overview': 'admin/administration_overview',
+  'administration/domain_and_local_policies': 'installation/domain_and_local_policies',
+  'administration/hibpupdater': 'admin/hibpupdater',
+  'administration/installation/disable_windows_rules': 'installation/disable_windows_rules',
+  'administration/installation/writeback': 'admin/writeback',
+  'administration/managementconsole/management_console_views': 'admin/configconsole',
+  'administration/managementconsole/management_console': 'admin/configconsole',
+  'administration/managingpolicies/assigning_policies': 'admin/manage-policies/usersgroups',
+  'administration/managingpolicies/creating_a_policy': 'admin/manage-policies/manage_policies',
+  'administration/managingpolicies/deleting_a_policy': 'admin/manage-policies/manage_policies',
+  'administration/managingpolicies/managing_policies': 'admin/manage-policies/manage_policies',
+  'administration/managingpolicies/passphrases': 'admin/manage-policies/passphrases',
+  'administration/managingpolicies/policy_priorities': 'admin/manage-policies/manage_policies',
+  'administration/managingpolicies/policy_properties': 'admin/manage-policies/policy_properties',
+  'administration/managingpolicies/testing_policies': 'admin/manage-policies/testpolicy',
+  'administration/passwordpolicyclient/configuring_the_password_policy_client': 'admin/password-policy-client/configuring_the_password_policy_client',
+  'administration/passwordpolicyclient/installing_password_policy_client': 'installation/installationclient',
+  'administration/passwordpolicyclient/password_policy_client': 'admin/password-policy-client/password_policy_client',
+  'administration/ppe_tool': 'admin/ppe_tool',
+  'administration/properties/properties': 'admin/settings',
+  'administration/rules/character_pattern': 'admin/manage-policies/rules/patterns',
+  'administration/rules/character_rules': 'admin/manage-policies/rules/character_rules',
+  'administration/rules/complexity_rule': 'admin/manage-policies/rules/complexity_rule',
+  'administration/rules/compromised_rule': 'admin/manage-policies/rules/compromised_rule',
+  'administration/rules/dictionary_rule': 'admin/manage-policies/rules/dictionary_rule',
+  'administration/rules/history_rule': 'admin/manage-policies/rules/history_rule',
+  'administration/rules/keyboard_pattern': 'admin/manage-policies/rules/patterns',
+  'administration/rules/length_rule': 'admin/manage-policies/rules/length_rule',
+  'administration/rules/maximum_age_rule': 'admin/manage-policies/rules/maximum_age_rule',
+  'administration/rules/minimum_age_rule': 'admin/manage-policies/rules/minimum_age_rule',
+  'administration/rules/repeating_characters': 'admin/manage-policies/rules/repetition',
+  'administration/rules/repeating_pattern': 'admin/manage-policies/rules/repetition',
+  // rules.md shares its filename with its parent folder, so Docusaurus serves
+  // it as that folder's category index (trailing slash, no repeated segment).
+  'administration/rules/rules': 'admin/manage-policies/rules/',
+  'administration/rules/similarity_rule': 'admin/manage-policies/rules/similarity_rule',
+  'administration/rules/unique_characters': 'admin/manage-policies/rules/unique_characters',
+  'administration/troubleshooting': 'admin/troubleshooting',
+  'administration/upgrading': 'installation/upgrading',
+  'evaluation/conclusion': 'evaluation/conclusion',
+  'evaluation/configuring_policy_rules': 'evaluation/configuring_policy_rules',
+  'evaluation/creatingapasswordpolicy/creating_a_password_policy': 'evaluation/creating-a-password-policy/creating_a_password_policy',
+  'evaluation/creatingapasswordpolicy/policy_templates': 'evaluation/creating-a-password-policy/policy_templates',
+  'evaluation/enforcing_multiple_policies': 'evaluation/enforcing_multiple_policies',
+  'evaluation/evaluation_overview': 'evaluation/evaluation_overview',
+  'evaluation/improving_the_password_policy': 'evaluation/improving_the_password_policy',
+  'evaluation/installation': 'evaluation/installforeval',
+  'evaluation/preparing_the_computer': 'evaluation/preparing_the_computer',
+  'evaluation/testing_the_password_policy': 'evaluation/testing_the_password_policy',
+  'web/configuration': 'web-overview/configuration',
+  'web/editing_html_templates': 'web-overview/editing_html_templates',
+  'web/installation': 'web-overview/installationweb',
+  'web/securing_web': 'web-overview/securing_web',
+  'web/using_web': 'web-overview/using_web',
+  'web/web_overview': 'web-overview/web_overview',
+};
+
+const tenTwoRedirects = Object.entries(TEN_TWO_PAGE_MAP).map(([oldRoute, newRoute]) => ({
+  from: oldRoute ? `${NEW_PREFIX}/10_2/${oldRoute}` : `${NEW_PREFIX}/10_2`,
+  to: newRoute ? `${NEW_PREFIX}/${newRoute}` : NEW_PREFIX,
 }));
+
+export const passwordPolicyEnforcerDeversionRedirects = [
+  ...exactMatchRedirects,
+  ...tenTwoRedirects,
+];
