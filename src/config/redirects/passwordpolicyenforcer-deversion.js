@@ -13,9 +13,13 @@
 // docusaurus.config.js) instead of a broken precise redirect.
 //
 // 10.2's layout was reorganized for 11.x/12.0, so its redirects use an explicit,
-// hand-verified old-path -> new-path map instead. Unmapped 10.2 pages (content
-// that was dropped or merged in a way with no single clear target — e.g. the
-// old mailer pages, now covered by KB articles) also fall through to the root.
+// hand-verified old-path -> new-path map instead, built by reading each old
+// page's content/title and matching it to whichever 12.0 page now covers that
+// topic (not just matching similar file/folder names). The only page left
+// unmapped is administration/password_reset.md, which covered integration
+// with the separate Netwrix Password Reset product and has no PPE-side
+// equivalent in 12.0; it falls through to the root like any other stale link
+// with no single clear target.
 
 import { readdirSync, existsSync, statSync } from 'fs';
 import { join, resolve } from 'path';
@@ -91,10 +95,25 @@ const exactMatchRedirects = STRUCTURALLY_IDENTICAL_VERSIONS.flatMap((version) =>
 const TEN_TWO_PAGE_MAP = {
   '': '',
   'administration/administration_overview': 'admin/administration_overview',
+  // "Connect to a Configuration" is now covered by the Configuration Console
+  // overview, which documents connecting to a domain vs. local configuration.
+  'administration/connecting': 'admin/configconsole',
   'administration/domain_and_local_policies': 'installation/domain_and_local_policies',
   'administration/hibpupdater': 'admin/hibpupdater',
+  // The separate automated/manual/general installation pages were consolidated
+  // into the single server-components installer page.
+  'administration/installation/automated_installation': 'installation/installationserver',
+  'administration/installation/installation': 'installation/installationserver',
+  'administration/installation/manual_installation': 'installation/installationserver',
   'administration/installation/disable_windows_rules': 'installation/disable_windows_rules',
   'administration/installation/writeback': 'admin/writeback',
+  // Mailer/email settings and license management moved into the global Settings
+  // page (see its "Mail service", "Notifications", and "License" sections).
+  'administration/mailer/command_line_interface': 'admin/settings',
+  'administration/mailer/email_delivery_options': 'admin/settings',
+  'administration/mailer/email_message_options': 'admin/settings',
+  'administration/mailer/mailer': 'admin/settings',
+  'administration/properties/license_generator': 'admin/settings',
   'administration/managementconsole/management_console_views': 'admin/configconsole',
   'administration/managementconsole/management_console': 'admin/configconsole',
   'administration/managingpolicies/assigning_policies': 'admin/manage-policies/usersgroups',
@@ -108,6 +127,11 @@ const TEN_TWO_PAGE_MAP = {
   'administration/passwordpolicyclient/configuring_the_password_policy_client': 'admin/password-policy-client/configuring_the_password_policy_client',
   'administration/passwordpolicyclient/installing_password_policy_client': 'installation/installationclient',
   'administration/passwordpolicyclient/password_policy_client': 'admin/password-policy-client/password_policy_client',
+  // Message template/rule insert/multilingual customization is documented
+  // together with the client's other GPO-based configuration steps now.
+  'administration/passwordpolicyclient/customizing_message_templates': 'admin/password-policy-client/configuring_the_password_policy_client',
+  'administration/passwordpolicyclient/customizing_rule_inserts': 'admin/password-policy-client/configuring_the_password_policy_client',
+  'administration/passwordpolicyclient/multilingual_messages': 'admin/password-policy-client/configuring_the_password_policy_client',
   'administration/ppe_tool': 'admin/ppe_tool',
   'administration/properties/properties': 'admin/settings',
   'administration/rules/character_pattern': 'admin/manage-policies/rules/patterns',
@@ -115,6 +139,9 @@ const TEN_TWO_PAGE_MAP = {
   'administration/rules/complexity_rule': 'admin/manage-policies/rules/complexity_rule',
   'administration/rules/compromised_rule': 'admin/manage-policies/rules/compromised_rule',
   'administration/rules/dictionary_rule': 'admin/manage-policies/rules/dictionary_rule',
+  // "First and Last Character Rules" is now covered by the general Character
+  // rules page's "In position" option.
+  'administration/rules/first_and_last': 'admin/manage-policies/rules/character_rules',
   'administration/rules/history_rule': 'admin/manage-policies/rules/history_rule',
   'administration/rules/keyboard_pattern': 'admin/manage-policies/rules/patterns',
   'administration/rules/length_rule': 'admin/manage-policies/rules/length_rule',
@@ -126,8 +153,15 @@ const TEN_TWO_PAGE_MAP = {
   // it as that folder's category index (trailing slash, no repeated segment).
   'administration/rules/rules': 'admin/manage-policies/rules/',
   'administration/rules/similarity_rule': 'admin/manage-policies/rules/similarity_rule',
+  // User display name/logon name rules are now options within Similarity.
+  'administration/rules/user_display_name_rule': 'admin/manage-policies/rules/similarity_rule',
+  'administration/rules/user_logon_name_rule': 'admin/manage-policies/rules/similarity_rule',
   'administration/rules/unique_characters': 'admin/manage-policies/rules/unique_characters',
+  // "Support Tools" is now a section within System Audit and Support.
+  'administration/support_tools': 'admin/systemaudit',
   'administration/troubleshooting': 'admin/troubleshooting',
+  // Uninstall steps moved into the server-components installer page.
+  'administration/uninstall': 'installation/installationserver',
   'administration/upgrading': 'installation/upgrading',
   'evaluation/conclusion': 'evaluation/conclusion',
   'evaluation/configuring_policy_rules': 'evaluation/configuring_policy_rules',
