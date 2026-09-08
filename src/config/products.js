@@ -62,11 +62,11 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '2601',
-        label: '2601',
+        version: '26.1',
+        label: '26.1',
         isLatest: true,
-        sidebarFile: './sidebars/accessanalyzer/2601.js',
-        kbSource: 'docs/kb/accessanalyzer-2601',
+        sidebarFile: './sidebars/accessanalyzer/26.1.js',
+        kbSource: 'docs/kb/accessanalyzer-26.1',
       },
       {
         version: '12.0',
@@ -81,7 +81,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/accessanalyzer/11.6.js',
       },
     ],
-    defaultVersion: '2601',
+    defaultVersion: '26.1',
   },
   {
     id: 'accessinformationcenter',
