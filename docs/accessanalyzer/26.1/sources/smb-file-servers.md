@@ -22,6 +22,7 @@ The account needs the following rights on the file server:
 |---|---|
 | **Read** access to every share to scan | Access scans list folders and files within each share; Sensitive data scans read file contents. |
 | **Read permission on object security descriptors** for every share, folder, and file to scan | Access scans enumerate the access control list (ACL) on each object to record who can reach it. |
+| The **Back up files and directories** user right, or membership in the local **Backup Operators** group (optional) | Lets the scan open folders and files the account has no explicit permission on. Without it, the scan records those objects with an error status and skips their contents. |
 
 The account doesn't need write rights. The scans only read.
 
