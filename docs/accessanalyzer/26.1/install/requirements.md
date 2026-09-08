@@ -4,7 +4,7 @@ description: Server sizing, hostname, network ports, TLS certificate, license ke
 sidebar_position: 1
 ---
 
-Gather everything on this page before you run the installer. The installer runs a preflight check on the server first and stops if the server doesn't meet the hard requirements, so a few minutes here saves a failed installation later.
+Gather everything on this page before you run the installer. The installer runs a preflight check on the server first and stops if the server doesn't meet the hard requirements, so a few minutes of preparation now prevents a failed installation later.
 
 ## Server
 
@@ -30,7 +30,7 @@ You pick a size when you install. The size sets the CPU and RAM the installer re
 | large | 24 | 96 GB | 3,000 GB | Up to about 800 million objects and 25,000 to 100,000 identities. |
 | enterprise | 32 | 128 GB | 8,000 GB | Up to about 3 billion objects and more than 100,000 identities. |
 
-CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine provisioned at exactly the stated figure passes even though the guest sees slightly less.
+CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine you provision at exactly the stated figure passes even though the guest sees slightly less.
 
 Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size is designed to hold. The 40 GB floor is different: below that, the preflight check fails.
 
@@ -84,7 +84,7 @@ Open these ports on the server's firewall.
 
 ### Outbound
 
-The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or the host refuses it.
+The installer downloads everything it needs during the install, and the running product keeps a few outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or the host refuses it.
 
 | Host | Purpose |
 |---|---|
