@@ -15,11 +15,9 @@
 // 10.2's layout was reorganized for 11.x/12.0, so its redirects use an explicit,
 // hand-verified old-path -> new-path map instead, built by reading each old
 // page's content/title and matching it to whichever 12.0 page now covers that
-// topic (not just matching similar file/folder names). The only page left
-// unmapped is administration/password_reset.md, which covered integration
-// with the separate Netwrix Password Reset product and has no PPE-side
-// equivalent in 12.0; it falls through to the root like any other stale link
-// with no single clear target.
+// topic (not just matching similar file/folder names). Every 10.2 page has a
+// mapped target; any other stale link with no single clear target still falls
+// through to the root.
 
 import { readdirSync, existsSync, statSync } from 'fs';
 import { join, resolve } from 'path';
@@ -111,6 +109,9 @@ const TEN_TWO_PAGE_MAP = {
   // page (see its "Mail service", "Notifications", and "License" sections).
   'administration/mailer/command_line_interface': 'admin/settings',
   'administration/mailer/email_delivery_options': 'admin/settings',
+  // Intro/comparison blurb for the separate Netwrix Password Reset product —
+  // that comparison (PPE Web vs. Password Reset) now lives in the Web overview.
+  'administration/password_reset': 'web-overview/web_overview',
   'administration/mailer/email_message_options': 'admin/settings',
   'administration/mailer/mailer': 'admin/settings',
   'administration/properties/license_generator': 'admin/settings',
