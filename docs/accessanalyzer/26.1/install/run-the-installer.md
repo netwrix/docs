@@ -137,16 +137,16 @@ Every flag also has an environment variable, listed in the [Installer reference]
 Whether you answer prompts or pass flags, the installer saves the following values to `/etc/dspm/installer.yaml`. A later run reads this file first and only asks for (or requires) values that are still missing.
 
 ```yaml
-ca-bundle:
 first-admin-email: admin@example.com
 first-admin-name: Jane Doe
 hostname: dspm.example.com
 license-key: XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXX9
 tls-cert: /etc/dspm/tls.crt
 tls-key: /etc/dspm/tls.key
+ca-bundle: /etc/dspm/ca-bundle.pem
 ```
 
-`ca-bundle` stays empty unless you gave a CA bundle path. The installer stores the license key in plain text in this file, so restrict access to it the same way you restrict `/etc/dspm/tls.key`.
+`ca-bundle` only appears if you gave a CA bundle path. The installer stores the license key in plain text in this file, so restrict access to it the same way you restrict `/etc/dspm/tls.key`.
 
 </TabItem>
 </Tabs>
@@ -176,8 +176,10 @@ After the checks and prompts, the installer validates the certificate and hostna
 
 If the platform or the services don't become ready inside those limits, the installer stops with a non-zero exit code; the [Installer reference](installer-reference.md#exit-codes) lists the codes. If creating the first administrator fails, the installer prints a warning and still finishes. The installer logs everything it does to `/var/log/dspm-installer.log`.
 
-:::note
-The installer's progress line only reports how many services are running, not which ones are degraded. For a visual, service-by-service view while phase 2 runs, open the ArgoCD UI.
+<details>
+<summary>Troubleshooting: check per-service status in ArgoCD</summary>
+
+The installer's progress line only reports how many services are running, not which ones are degraded. If phase 2 is taking longer than expected and you need a visual, service-by-service view, open the ArgoCD UI.
 
 Retrieve the initial admin password:
 
@@ -192,7 +194,8 @@ sudo kubectl port-forward -n argocd svc/argocd-server 8080:80 --address 0.0.0.0
 ```
 
 Open `http://<server-address>:8080`, sign in as `admin` with the password you retrieved, and check each application's health and sync status.
-:::
+
+</details>
 
 ## Install Summary
 
