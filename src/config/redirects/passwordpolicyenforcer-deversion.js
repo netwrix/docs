@@ -152,7 +152,19 @@ const tenTwoRedirects = Object.entries(TEN_TWO_PAGE_MAP).map(([oldRoute, newRout
   to: newRoute ? `${NEW_PREFIX}/${newRoute}` : NEW_PREFIX,
 }));
 
-export const passwordPolicyEnforcerDeversionRedirects = [
+// plugin-client-redirects matches `from` literally, with no trailing-slash
+// normalization, and writes each redirect to <from>/index.html on disk. A
+// trailing-slash `from` and its no-slash sibling resolve to the same file, so
+// only the no-slash form is kept — matching how a reader actually types a
+// folder-index URL (e.g. .../admin/cmdlets, not .../admin/cmdlets/).
+function stripTrailingSlash(entries) {
+  return entries.map((entry) => ({
+    ...entry,
+    from: entry.from.endsWith('/') && entry.from.length > 1 ? entry.from.slice(0, -1) : entry.from,
+  }));
+}
+
+export const passwordPolicyEnforcerDeversionRedirects = stripTrailingSlash([
   ...exactMatchRedirects,
   ...tenTwoRedirects,
-];
+]);
