@@ -69,6 +69,16 @@ The installer expects the certificate at `/etc/dspm/tls.crt` and the private key
 
 If a private certificate authority (CA) issued the certificate, copy its CA bundle too. `/etc/dspm/ca-bundle.pem` is a convenient place; the installer asks for the path.
 
+:::note
+The installer rejects the certificate if it doesn't cover the hostname you enter at the **Hostname** prompt. Confirm the certificate's subject before you run the installer:
+
+```bash
+openssl x509 -in /etc/dspm/tls.crt -noout -subject -nameopt multiline
+```
+
+Enter the exact hostname that appears in the output, for example `commonName=dspm.corp.example.com`.
+:::
+
 ## Run the Installer
 
 Run the installer with `sudo`. The `-E` flag carries your environment through to root, so the installer reads the `LICENSE_KEY` you exported for the download instead of prompting for it.
@@ -122,6 +132,23 @@ If `/etc/dspm/installer.yaml` exists from an earlier run and you're in a termina
 Every flag also has an environment variable, listed in the [Installer reference](installer-reference.md).
 
 </TabItem>
+<TabItem value="yaml" label="installer.yaml">
+
+Whether you answer prompts or pass flags, the installer saves the values below to `/etc/dspm/installer.yaml`. A later run reads this file first and only asks for (or requires) values that are still missing.
+
+```yaml
+ca-bundle:
+first-admin-email: admin@example.com
+first-admin-name: Jane Doe
+hostname: dspm.example.com
+license-key: XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXX9
+tls-cert: /etc/dspm/tls.crt
+tls-key: /etc/dspm/tls.key
+```
+
+`ca-bundle` stays empty unless you gave a CA bundle path. The installer stores the license key in plain text in this file, so restrict access to it the same way you restrict `/etc/dspm/tls.key`.
+
+</TabItem>
 </Tabs>
 
 ## Preflight Checks
@@ -148,6 +175,24 @@ After the checks and prompts, the installer validates the certificate and hostna
 3. Creates the first administrator account, under `Provisioning first admin user...`.
 
 If the platform or the services don't become ready inside those limits, the installer stops with a non-zero exit code; the [Installer reference](installer-reference.md#exit-codes) lists the codes. If creating the first administrator fails, the installer prints a warning and still finishes. The installer logs everything it does to `/var/log/dspm-installer.log`.
+
+:::note
+The installer's progress line only reports how many services are running, not which ones are degraded. For a visual, service-by-service view while phase 2 runs, open the ArgoCD UI.
+
+Retrieve the initial admin password:
+
+```bash
+sudo kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d && echo
+```
+
+Forward the ArgoCD server so you can reach it in a browser:
+
+```bash
+sudo kubectl port-forward -n argocd svc/argocd-server 8080:80 --address 0.0.0.0
+```
+
+Open `http://<server-address>:8080`, sign in as `admin` with the password above, and check each application's health and sync status.
+:::
 
 ## Install Summary
 

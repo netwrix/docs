@@ -28,7 +28,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--tls-cert` | `TLS_CERT_FILE` | `/etc/dspm/tls.crt` | PEM TLS certificate file, full chain with the leaf certificate first. Requires `--tls-key`. |
 | `--tls-key` | `TLS_KEY_FILE` | `/etc/dspm/tls.key` | PEM TLS private key file. Requires `--tls-cert`. |
 | `--ca-bundle` | `TLS_CA_BUNDLE_FILE` | none | PEM certificate authority (CA) bundle. Needed when a private CA issued the certificate. |
-| `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. |
+| `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](requirements.md#size) for the CPU, RAM, and disk each size requires. |
 | `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. Also appears as **Target Revision** under **Show advanced settings?**. |
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
 | `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen shown when the configuration file already supplies every required value. |
@@ -36,11 +36,37 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--log-level` | `LOG_LEVEL` | `info` | Detail written to the log file: `debug`, `info`, `warn`, or `error`. |
 | `--postgres-data-dir` | `POSTGRES_DATA_DIR` | none | Custom directory for the application database's data. |
 | `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |
+| `--log-exports-storage` | `LOG_EXPORTS_STORAGE` | none | Persistent volume claim (PVC) size for log exports, such as `10Gi`. |
 | `--skip-preflight` | `SKIP_PREFLIGHT` | `false` | Skip the preflight checks. Intended for testing only. |
 | `--version` | — | — | Print the installer version and exit. |
 | `--help` | — | — | Print flag help and exit. |
 
 The defaults for `--tls-cert` and `--tls-key` apply only when you omit both flags. Supplying one without the other is an error: `--tls-cert and --tls-key must both be provided together`.
+
+### Advanced Flags
+
+These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart the installer manages. Most installs never need them — they exist for troubleshooting, custom environments, and uninstalling.
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--k3s-version` | none | `v1.33.4+k3s1` | K3s version to install. |
+| `--k3s-name` | none | `dspm` | K3s service and instance name. |
+| `--kubeconfig` | `KUBECONFIG` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-version` | none | `3.2.0` | ArgoCD image tag. |
+| `--argocd-namespace` | none | `argocd` | Kubernetes namespace for ArgoCD. |
+| `--argocd-reconciliation-timeout` | none | `1h` | How often ArgoCD self-heals configuration drift. The version-poller CronJob detects new releases separately. |
+| `--disable-dex` | none | `true` | Disable the Dex identity provider. |
+| `--disable-notifications` | none | `true` | Disable the ArgoCD notifications controller. |
+| `--helm-namespace` | none | `default` | Kubernetes namespace for the Helm chart. |
+| `--helm-values` | none | none | Path to a Helm values YAML file. |
+| `--chart` | none | none | Chart name, for custom chart sources. |
+| `--repo` | none | none | Helm repository URL, for custom chart sources. |
+| `--release` | none | none | Helm release name, for custom chart sources. |
+| `--local-charts-dir` | `LOCAL_CHARTS_DIR` | none | Mount a local Helm chart directory into `argocd-repo-server` and install from it with a `file://` source, instead of a remote repository. |
+| `--use-mirrored-images` | none | `true` | Pull container images from the Netwrix mirror registry. |
+| `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
+| `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all DSPM data. Prompts for confirmation unless you pass `--force`. |
+| `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 
