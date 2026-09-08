@@ -17,9 +17,20 @@ For an end-to-end walkthrough, see [Scan Microsoft 365](../guides/microsoft-365.
 In the Microsoft Entra admin center, register an application in the tenant that owns the SharePoint Online sites. The scan uses the OAuth 2.0 client credentials flow, so no user signs in. On the app registration:
 
 1. Copy the **Application (client) ID** and the **Directory (tenant) ID** from **Overview**.
-2. Add the application permissions that give the app access to the tenant's SharePoint Online sites, their content, and their permissions.
+2. Under **API permissions**, add the following application permissions:
+
+   | API | Permission | Description |
+   |---|---|---|
+   | Microsoft Graph | `Sites.Read.All` | Read items in all site collections |
+   | Microsoft Graph | `Directory.Read.All` | Read directory data |
+   | SharePoint | `Sites.FullControl.All` | Full control of all site collections; SharePoint Online has no read-only application permission that includes permission entries, so scans need this permission to read the sharing settings and permissions on every site collection |
+
 3. Grant admin consent for the tenant.
 4. Leave **Certificates & secrets** for later: you upload the certificate after creating the service account in Access Analyzer.
+
+:::note
+Registering the application and granting admin consent requires a user account with the **Global Administrator**, **Application Administrator**, or **Cloud Application Administrator** role.
+:::
 
 ### Service Account
 
