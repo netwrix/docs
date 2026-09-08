@@ -134,7 +134,7 @@ Every flag also has an environment variable, listed in the [Installer reference]
 </TabItem>
 <TabItem value="yaml" label="installer.yaml">
 
-Whether you answer prompts or pass flags, the installer saves the values below to `/etc/dspm/installer.yaml`. A later run reads this file first and only asks for (or requires) values that are still missing.
+Whether you answer prompts or pass flags, the installer saves the following values to `/etc/dspm/installer.yaml`. A later run reads this file first and only asks for (or requires) values that are still missing.
 
 ```yaml
 ca-bundle:
@@ -191,7 +191,7 @@ Forward the ArgoCD server so you can reach it in a browser:
 sudo kubectl port-forward -n argocd svc/argocd-server 8080:80 --address 0.0.0.0
 ```
 
-Open `http://<server-address>:8080`, sign in as `admin` with the password above, and check each application's health and sync status.
+Open `http://<server-address>:8080`, sign in as `admin` with the password you retrieved, and check each application's health and sync status.
 :::
 
 ## Install Summary

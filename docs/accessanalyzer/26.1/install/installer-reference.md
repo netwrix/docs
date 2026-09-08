@@ -21,8 +21,8 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
-| `--license-key` | `LICENSE_KEY` | none | Netwrix license key. Required. Validated online before the install starts. |
-| `--hostname` | `DSPM_HOSTNAME` | none | Fully qualified domain name users open in their browsers. Lowercased before use. |
+| `--license-key` | `LICENSE_KEY` | none | Netwrix license key. Required. The installer validates it online before the install starts. |
+| `--hostname` | `DSPM_HOSTNAME` | none | Fully qualified domain name users open in their browsers. The installer lowercases it before use. |
 | `--first-admin-email` | `FIRST_ADMIN_EMAIL` | none | Email address of the first administrator. Required. Becomes that person's username. |
 | `--first-admin-name` | `FIRST_ADMIN_NAME` | none | Full name of the first administrator. |
 | `--tls-cert` | `TLS_CERT_FILE` | `/etc/dspm/tls.crt` | PEM TLS certificate file, full chain with the leaf certificate first. Requires `--tls-key`. |
@@ -31,7 +31,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](requirements.md#size) for the CPU, RAM, and disk each size requires. |
 | `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. Also appears as **Target Revision** under **Show advanced settings?**. |
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
-| `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen shown when the configuration file already supplies every required value. |
+| `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen that appears when the configuration file already supplies every required value. |
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
 | `--log-level` | `LOG_LEVEL` | `info` | Detail written to the log file: `debug`, `info`, `warn`, or `error`. |
 | `--postgres-data-dir` | `POSTGRES_DATA_DIR` | none | Custom directory for the application database's data. |
@@ -76,9 +76,9 @@ The installer rejects bad values before it changes anything on the server.
 
 | Value | Rules |
 |---|---|
-| License key | Letters, digits, hyphens, and underscores only. Checked online; an expired, suspended, unknown, or invalid key stops the install with exit code 10. If the installer can't reach the licensing service, it warns and continues. |
+| License key | Letters, digits, hyphens, and underscores only. The installer checks it online; an expired, suspended, unknown, or invalid key stops the install with exit code 10. If the installer can't reach the licensing service, it warns and continues. |
 | Hostname | Must contain a dot, must not be an IP address, must not end in `.localhost`, and must not exceed 253 characters. Each dot-separated part is 1 to 63 letters, digits, or hyphens and can't start or end with a hyphen. |
-| First administrator email | A plain address such as `admin@corp.example.com`, with a dotted domain and without a display name, quotes, backslashes, or spaces. Lowercased before use. |
+| First administrator email | A plain address such as `admin@corp.example.com`, with a dotted domain and without a display name, quotes, backslashes, or spaces. The installer lowercases it before use. |
 | TLS certificate and key | PEM. The pair must match, the certificate must not be expired, and its Subject Alternative Names must include the hostname. A certificate that expires within 30 days produces a warning in the log. |
 | CA bundle | PEM with at least one certificate. The TLS certificate must chain to it. If the TLS certificate is self-signed and you give no bundle, the installer uses the certificate as its own bundle. |
 
@@ -109,7 +109,7 @@ When the file supplies every required value and the installer runs in a terminal
 | 0 | Success. |
 | 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or prompts canceled with Esc or Ctrl-C (`installation cancelled`). |
 | 10 | License key error. The key is expired, suspended, not found, or invalid. |
-| 20 | The release version requested with `--target-revision` isn't available for this license key. |
+| 20 | The release version you requested with `--target-revision` isn't available for this license key. |
 | 50 | The installer couldn't install the platform, or the platform didn't become ready within 5 minutes. |
 | 60 | The installer couldn't install a platform component. |
 | 70 | The Access Analyzer services didn't all become healthy within 30 minutes, or you pressed Ctrl-C while waiting for them. |
@@ -129,7 +129,7 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 | `disk` | Free space on `/var/lib` against the 40 GB floor. | FAIL | `<n> GB free on /var/lib; at least 40 GB is needed to install` |
 | `disk` | Free space on `/var/lib` against the size's recommended disk. | WARN | `<n> GB free on /var/lib; the <size> size is designed to hold <n> GB, so it will run out as data accumulates` |
 | `cgroups` | The kernel exposes cgroups at `/sys/fs/cgroup`. | FAIL | `cgroups not available at /sys/fs/cgroup` |
-| `kernel-modules` | The `br_netfilter` and `overlay` modules are loaded or built in. The install loads missing modules itself, so this check warns only when it can't inspect a module, or during a dry run when a module isn't loaded. | WARN | `kernel module issues: <module>: could not check module: <error>` or `kernel module issues: <module>: not loaded (dry run; will not be modprobed)` |
+| `kernel-modules` | The kernel has the `br_netfilter` and `overlay` modules loaded or built in. The install loads missing modules itself, so this check warns only when it can't inspect a module, or during a dry run when a module isn't loaded. | WARN | `kernel module issues: <module>: could not check module: <error>` or `kernel module issues: <module>: not loaded (dry run; will not be modprobed)` |
 | `os` | The Linux distribution belongs to a recognized family. | WARN | `unrecognised Linux distribution; installation may not be supported` |
 | `selinux` | SELinux isn't in enforcing mode. | WARN | The message says SELinux is enforcing and asks you to allow the platform's container policy or set SELinux to permissive. |
 | `antivirus` | No known antivirus product is installed or running: `mdatp`, CrowdStrike, ClamAV, Sophos, Carbon Black, or Trend Micro. | WARN | `antivirus software detected: <product> (exclusion hint: <hint>)` |
@@ -161,5 +161,5 @@ Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a 
 
 | File | Contents |
 |---|---|
-| `/var/log/dspm-installer.log` | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail set by `--log-level`. The installer appends to the file on every run, with mode `0640`. If the installer can't write the file, it sends the same output to the terminal's standard error as text. |
+| `/var/log/dspm-installer.log` | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail `--log-level` sets. The installer appends to the file on every run, with mode `0640`. If the installer can't write the file, it sends the same output to the terminal's standard error as text. |
 | `/var/log/dspm-preflight.json` | The full result of the most recent preflight run: `timestamp`, `overallStatus`, and a `checks` list with `name`, `status`, and `message` for every check, including the ones that passed. `--dry-run` doesn't write it. |
