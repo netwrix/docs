@@ -197,14 +197,19 @@ const config = {
         };
       },
 
-      // Google Analytics
-      [
-        '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-FZPWSDMTEX',
-        anonymizeIP: true,
-      },
-    ],
+      // Google Analytics — only loaded for production builds. In dev
+      // (npm run start), the gtag script often can't load (network, ad
+      // blockers), leaving window.gtag undefined and throwing a runtime error
+      // overlay on every route change.
+      ...(process.env.NODE_ENV === 'production' ? [
+        [
+          '@docusaurus/plugin-google-gtag',
+          {
+            trackingID: 'G-FZPWSDMTEX',
+            anonymizeIP: true,
+          },
+        ],
+      ] : []),
     // Client-side redirects - redirect base product URLs to latest version
     [
       '@docusaurus/plugin-client-redirects',
