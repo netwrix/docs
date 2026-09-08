@@ -13,6 +13,8 @@ An installation takes three steps, each covered on its own page.
 
 After the first sign-in, the [Guides](../guides/index.md) walk you through scanning your first source.
 
+After you're running, see [Upgrade to a new version](upgrade-to-a-new-version.md) for how new releases roll out and when you need to act.
+
 ## People You Need
 
 You need an administrator with root access to the Linux server, either signed in as root or using `sudo`. The installer writes to `/etc/dspm`, `/var/log`, and `/usr/local/bin`, so a non-root account can't complete it.
