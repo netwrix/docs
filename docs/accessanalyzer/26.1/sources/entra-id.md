@@ -26,8 +26,20 @@ The sync uses the OAuth 2.0 client credentials flow, so no user signs in. In the
 2. On the app's **Overview** page, copy the **Application (client) ID** and the **Directory (tenant) ID**.
 3. Under **Certificates & secrets**, create a client secret.
 4. Copy the secret value before you leave the page.
-5. Under **API permissions**, add the Microsoft Graph application permissions that grant read access to users, groups, and directory roles.
-6. Grant admin consent for the permissions you added. A tenant administrator must approve the consent.
+5. Under **API permissions**, add the following Microsoft Graph application permissions:
+
+   | Permission | Description |
+   |---|---|
+   | `Directory.Read.All` | Read directory data — users, groups, and role assignments |
+   | `Policy.Read.All` | Read your organization's policies |
+   | `InformationProtectionPolicy.Read.All` | Read your organization's information protection policies, required for Microsoft Purview Information Protection (MIP) label retrieval |
+
+6. Grant admin consent for the permissions. A tenant administrator must approve the consent.
+7. Under **Roles and administrators**, assign the app registration the **Global Administrator** role. Entra ID data collection requires this role in addition to the Microsoft Graph permissions.
+
+:::note
+Registering the application and granting admin consent requires a user account with the **Global Administrator**, **Application Administrator**, or **Cloud Application Administrator** role.
+:::
 
 ### Service Account
 

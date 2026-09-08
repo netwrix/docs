@@ -8,7 +8,7 @@ Gather everything on this page before you run the installer. The installer runs 
 
 ## Server
 
-Access Analyzer installs on a single Linux server, physical or virtual.
+Access Analyzer installs on a single physical or virtual Linux server.
 
 | Requirement | Details |
 |---|---|
@@ -63,7 +63,7 @@ The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/
 
 ## License Key
 
-You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The installer validates it online during the install, so the server must reach the licensing endpoints listed under [Outbound](#outbound). An expired, suspended, or unknown key stops the install.
+You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download, and the installer validates it online during the install, so the server must reach the licensing endpoints listed under [Outbound](#outbound). An expired, suspended, or unknown key stops the install.
 
 ## First Administrator
 
@@ -84,7 +84,7 @@ Open these ports on the server's firewall.
 
 ### Outbound
 
-The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or is refused.
+The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or the host refuses it.
 
 | Host | Purpose |
 |---|---|
