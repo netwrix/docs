@@ -4,7 +4,7 @@ description: How dspmctl upgrades Access Analyzer, when you need to run it, and 
 sidebar_position: 4
 ---
 
-You upgrade Access Analyzer with `dspmctl` on the install host. `dspmctl` is a small shell wrapper the installer drops at `/usr/local/bin/dspmctl`. It runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace, which signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
+You upgrade Access Analyzer with `dspmctl` on the install host. `dspmctl` is a small shell wrapper the installer drops at `/usr/local/bin/dspmctl`. It runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace, and that pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
 
 Run it with `sudo`. The default kubeconfig at `/etc/rancher/k3s/k3s.yaml` is readable only by root, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
