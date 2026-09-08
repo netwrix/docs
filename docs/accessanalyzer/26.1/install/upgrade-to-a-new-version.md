@@ -49,3 +49,47 @@ Check `TARGET REVISION` and `Sync Status`. The `netwrix` app only manages the ch
 ```bash
 sudo dspmctl sync netwrix.webapp
 ```
+
+<details>
+<summary>Troubleshooting: dspmctl hangs after a cancelled command</summary>
+
+If you press Ctrl-C during a `dspmctl` command part-way through (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. This isn't an ArgoCD or network problem: `argocd version --client`, which needs no network at all, hangs too. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod in a wedged state.
+
+Restart that pod and re-run the upgrade:
+
+```bash
+sudo kubectl rollout restart deploy/dspmctl -n argocd
+sudo kubectl rollout status deploy/dspmctl -n argocd
+sudo kubectl exec -n argocd deploy/dspmctl -- argocd version --client   # should print instantly now
+sudo dspmctl set-revision netwrix 1.1.2
+sudo dspmctl sync netwrix
+```
+
+If `argocd version --client` still hangs after the restart, `dspmctl` isn't usable in that environment. Everything `dspmctl` does is an edit to the `netwrix` ArgoCD `Application` object, so make the same changes directly with `kubectl` from the host.
+
+Pin the umbrella chart:
+
+```bash
+sudo kubectl patch application netwrix -n argocd --type merge \
+  -p '{"spec":{"source":{"targetRevision":"1.1.2"}}}'
+```
+
+Set the Helm parameter that propagates the version to the child apps. List the parameters, find the 0-based position of `config.spec.source.targetRevision`, and use it as `N`:
+
+```bash
+sudo kubectl get application netwrix -n argocd \
+  -o jsonpath='{range .spec.source.helm.parameters[*]}{.name}{"\n"}{end}'
+sudo kubectl patch application netwrix -n argocd --type json \
+  -p '[{"op":"replace","path":"/spec/source/helm/parameters/N/value","value":"1.1.2"}]'
+```
+
+Turn auto-sync back on and force an immediate refresh:
+
+```bash
+sudo kubectl patch application netwrix -n argocd --type merge \
+  -p '{"spec":{"syncPolicy":{"automated":{"selfHeal":true,"prune":true}}}}'
+sudo kubectl annotate application netwrix -n argocd argocd.argoproj.io/refresh=hard --overwrite
+sudo kubectl get applications -n argocd -w
+```
+
+</details>
