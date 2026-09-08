@@ -16,7 +16,18 @@ For an end-to-end walkthrough, see [Scan Active Directory](../guides/active-dire
 
 ### Service Account
 
-Active Directory sources use a [Username and password](../service-accounts/username-password.md) service account. The sync only reads, so a regular domain user with the default read access to the domain is enough for a full sync.
+Active Directory sources use a [Username and password](../service-accounts/username-password.md) service account.
+
+| Right | Why |
+|---|---|
+| **Read** access to the directory tree (the default access Active Directory grants Authenticated Users) | Identity syncs read user, group, and organizational unit objects and their attributes over LDAP. |
+| **List Contents** and **Read Property** on the Deleted Objects container | Identity syncs check the Deleted Objects container to reconcile accounts removed from the domain. |
+
+The sync only reads, so a regular domain user needs no additional delegation. Don't add the account to Domain Admins or another privileged group.
+
+:::note
+The Deleted Objects container is hidden and denies read access by default. See the Microsoft [Searching for Deleted Objects](https://technet.microsoft.com/en-us/library/cc978013.aspx) article and [Dsacls](https://technet.microsoft.com/en-us/library/cc771151(v=ws.11).aspx) reference for how to grant access.
+:::
 
 When you create the service account, enter the plain username without a domain prefix, for example `svc-access-analyzer`. The domain goes in the source's **Domain** field; Access Analyzer combines the two in the form the domain controller expects for the port you connect on.
 
