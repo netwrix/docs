@@ -1,0 +1,60 @@
+name: Label PR by CODEOWNERS
+
+# Applies product labels to a PR based on the CODEOWNERS team(s) that own
+# its changed files. slack-notify-pr.yml triggers off the resulting
+# `labeled` event instead of `opened`, so CODEOWNERS teams are always known
+# by the time it notifies.
+
+on:
+  # pull_request_target (not pull_request) so this job has a write-scoped
+  # token even for fork PRs. SAFETY: this workflow must never check out or
+  # execute the PR's head content — only read PR metadata via the GitHub
+  # API (gh pr view) and run code from the pinned base ref below.
+  pull_request_target:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: label-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Always the base ref — see the SAFETY note above. Never point
+          # this at the PR head/merge ref.
+          ref: ${{ github.event.pull_request.base.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22.x'
+
+      - name: Resolve and apply CODEOWNERS labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          FILES=$(gh pr view ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --json files --jq '.files[].path')
+          mapfile -t FILE_ARRAY <<< "$FILES"
+          TEAMS=$(node scripts/resolve-codeowners-teams.mjs "${FILE_ARRAY[@]}")
+          LABELS=$(node scripts/resolve-labels-for-teams.mjs "$TEAMS")
+
+          if [ -z "$LABELS" ]; then
+            echo "No matching CODEOWNERS labels for changed files — nothing to add"
+            exit 0
+          fi
+
+          IFS=',' read -ra LABEL_ARRAY <<< "$LABELS"
+          ARGS=()
+          for label in "${LABEL_ARRAY[@]}"; do
+            ARGS+=(--add-label "$label")
+          done
+
+          gh pr edit ${{ github.event.pull_request.number }} --repo ${{ github.repository }} "${ARGS[@]}"

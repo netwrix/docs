@@ -1,11 +1,14 @@
 name: Slack Notify Issue
 
-# Posts a Slack message to #docs-gh whenever an Issue is created or commented on,
-# @-mentioning the relevant CODEOWNERS team members.
+# Posts a Slack message to #docs-gh once an Issue has been labeled, or is
+# commented on, @-mentioning the relevant CODEOWNERS team members.
+# Triggering on `labeled` (rather than `opened`) avoids racing the
+# auto-labeler (claude-issue-labeler.yml), which assigns labels
+# asynchronously — by the time an issue is labeled, its teams are known.
 
 on:
   issues:
-    types: [opened]
+    types: [labeled]
   issue_comment:
     types: [created]
 
@@ -43,9 +46,20 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
-          # Fetch current labels from the issue. Labels may not be applied yet
-          # (auto-labeling runs asynchronously), so an empty result here just
-          # means no team mention — it does not skip the notification itself.
+          # Only notify once per issue — on the first label landing. Later
+          # labels (manual or from a second auto-labeler pass) shouldn't
+          # re-announce "Issue created".
+          if [ "${{ github.event_name }}" = "issues" ]; then
+            LABEL_COUNT=$(jq '.issue.labels | length' "$GITHUB_EVENT_PATH")
+            if [ "$LABEL_COUNT" != "1" ]; then
+              echo "Not the first label on this issue — already notified"
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+
+          # Fetch current labels. May include more than just the one that
+          # triggered this run, if several landed in the same labeling pass.
           LABELS=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json labels --jq '.labels[].name')
 
           # Skip for KB Operations tracking issues (any kb/ label)
@@ -68,11 +82,10 @@ jobs:
           # Collect matched teams (deduplicated), comma-joined
           TEAMS=""
           while IFS= read -r label; do
+            [ -z "$label" ] && continue
             team=$(echo "$MAPPING" | jq -r --arg l "$label" '.[$l] // empty')
-            if [ -n "$team" ]; then
-              if ! echo "$TEAMS" | grep -qF "$team"; then
-                TEAMS="${TEAMS:+$TEAMS,}$team"
-              fi
+            if [ -n "$team" ] && [[ ",$TEAMS," != *",$team,"* ]]; then
+              TEAMS="${TEAMS:+$TEAMS,}$team"
             fi
           done <<< "$LABELS"
 
