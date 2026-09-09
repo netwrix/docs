@@ -1,17 +1,17 @@
 ---
 title: "Exchange Server (Graph)"
 description: "Exchange Server (Graph)"
-sidebar_position: 40
+sidebar_position: 45
 ---
 
 # Exchange Server (Graph)
 
 Use the Exchange Server (Graph) source configuration screen to crawl and classify
-multiple Exchange mailboxes from the same Exchange server.
+multiple Exchange mailboxes from the same Exchange server. The Graph source type applies to Exchange Online only. To crawl mailboxes on an on-premises Exchange server, use Exchange Server (EWS).
 
 You can use Match Rules to include or exclude specific mailboxes.
 
-To configure an Exchange Server (Graph) source:
+To configure an Exchange Server (Graph) source, follow these steps.
 
 **Step 1 –** In Netwrix Data Classification management console, open the **Sources** view and click
 **Add**.
@@ -19,10 +19,9 @@ To configure an Exchange Server (Graph) source:
 **Step 2 –** Select **Exchange (Graph)** source type and in the properties window specify the necessary
 settings.
 
-**Step 3 –** Remember to click the "wrench" icon next to **Settings** in the bottom-left corner to
-display all settings.
+**Step 3 –** To display all settings, click the 'wrench' icon next to Settings in the bottom-left corner.
 
-## Authentication 
+## Authentication
 
 You must specify the following:
 
