@@ -23,7 +23,7 @@ This article explains how to remotely enable debug logging on an endpoint machin
 
 This procedure uses the **Automatic Logging** method (the **Collect diagnostics** action), which is the optimal way to gather logs since it requires no action from the end user. For the full Debug Logging reference, see [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) in the Global Settings documentation.
 
-If this automatic method isn't available or doesn't apply to your situation, use the manual terminal-based alternative instead: [How to Manually Activate Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows) or [How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal).
+If the EPP Client can't communicate with the EPP Server at all, this remote method isn't available. Use the [diagnostic collection script](/docs/kb/endpointprotector/troubleshooting-and-errors/how-to-collect-debug-logs-locally-on-an-endpoint-using-the-diagnostic-script) instead, or the manual terminal-based alternative as a last resort: [How to Manually Activate Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows) or [How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal).
 
 ## Instructions
 
