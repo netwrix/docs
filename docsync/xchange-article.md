@@ -81,7 +81,9 @@ flowchart TB
   class READ,SLOP check
 ```
 
-Drafting isn't a single step: before a human ever sees it, the draft loops through a deterministic readability check and an AI-slop self-check (the existing Dale ruleset) — either one can send it back for revision, and the model never grades its own work. Diagram 2, below, expands this loop in full. Everything below is the same loop, expanded one layer at a time: which repository each step runs in, what's deterministic versus AI-driven, and how the pieces stay correct as both the product and the documentation change underneath them.
+Before a human sees it, the draft loops through two automated checks: a readability score and an AI-slop check using the existing Dale ruleset. Either check can send the draft back for revision. Diagram 2 expands this loop in full.
+
+Everything below is the same loop, expanded one layer at a time: which repository each step runs in, what's deterministic versus AI-driven, and how the pieces stay correct as both the product and the documentation change underneath them.
 
 ## The three capabilities
 
