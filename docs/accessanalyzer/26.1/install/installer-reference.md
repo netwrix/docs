@@ -163,7 +163,7 @@ Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a 
 
 ## The `update-cert` Command
 
-`update-cert` installs a new TLS certificate on a running Access Analyzer installation, without re-running the full installer. Use it to replace a certificate that's expiring or expired, to replace one pods don't trust, or to swap a self-signed certificate for a CA-issued one.
+`update-cert` installs a new TLS certificate on a running Access Analyzer installation, without re-running the full installer. Use it to replace a certificate that's expiring or expired, to replace one that pods don't trust, or to swap a self-signed certificate for a CA-issued one.
 
 ```bash
 sudo dspm-installer update-cert \
@@ -182,12 +182,12 @@ sudo dspm-installer update-cert \
 | `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the certificate must cover. |
 | `--port` | `443` | External HTTPS port for probing the certificate the cluster serves. |
 | `--timeout` | `30m0s` | Time budget for the whole rotation. A rollback, if needed, gets its own budget of the same size. |
-| `--dry-run` | off | Validate the certificate and print the plan without changing the cluster. Doesn't need cluster access. |
-| `--no-rollback` | off | Leave the new certificate in place if verification fails, instead of restoring the previous one automatically. |
+| `--dry-run` | `false` | Validate the certificate and print the plan without changing the cluster. Doesn't need cluster access. |
+| `--no-rollback` | `false` | Leave the new certificate in place if verification fails, instead of restoring the previous one automatically. |
 | `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
 | `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
 
-If verification fails, `update-cert` restores the previous certificate from its snapshot and exits with a code that tells you what state the cluster is in:
+If verification fails, `update-cert` restores the previous certificate from its snapshot—unless you passed `--no-rollback`, or it couldn't reach the ingress at all. It exits with a code that tells you what state the cluster is in:
 
 | Code | Meaning |
 |---|---|
@@ -200,7 +200,7 @@ If verification fails, `update-cert` restores the previous certificate from its 
 
 ## The `rollback-cert` Command
 
-`rollback-cert` restores a certificate from a snapshot `update-cert` saved during an earlier rotation. Snapshots live under `/etc/dspm/cert-snapshots/`, and Access Analyzer never prunes them automatically.
+`rollback-cert` restores a certificate from a snapshot `update-cert` saved during an earlier rotation. Snapshots live under `/etc/dspm/cert-snapshots/`, and Access Analyzer never prunes them automatically. Snapshots contain private key material. See [Roll back a certificate](rotate-the-tls-certificate.md#roll-back-a-certificate) for how to remove ones you no longer need.
 
 ```bash
 sudo dspm-installer rollback-cert --latest
@@ -208,11 +208,18 @@ sudo dspm-installer rollback-cert --latest
 
 | Flag | Default | Description |
 |---|---|---|
-| `--list` | off | List available snapshots: timestamp, hostname, leaf certificate fingerprint, and expiry. Doesn't need cluster access. |
-| `--latest` | off | Restore the most recent snapshot. |
+| `--list` | `false` | List available snapshots: timestamp, hostname, leaf certificate fingerprint, and expiry. Doesn't need cluster access. |
+| `--latest` | `false` | Restore the most recent snapshot. |
 | `--snapshot` | none | Restore the snapshot at the given path, such as `/etc/dspm/cert-snapshots/2026-09-08T14-02-11Z`. |
 
-`--list`, `--latest`, and `--snapshot` are mutually exclusive. `rollback-cert` exits `1` when a check fails before it writes anything, such as combining these flags or naming a snapshot that doesn't exist, `0` when it applies and verifies the restore, `72` when it applies the restore but verification fails, and `73` when it can't apply the restore.
+`--list`, `--latest`, and `--snapshot` are mutually exclusive.
+
+| Code | Meaning |
+|---|---|
+| 0 | `rollback-cert` applied and verified the restore. |
+| 1 | A check failed before `rollback-cert` wrote anything, such as combining mutually exclusive flags or naming a snapshot that doesn't exist. |
+| 72 | `rollback-cert` applied the restore, but verification failed. |
+| 73 | `rollback-cert` couldn't apply the restore. |
 
 ## Logs
 

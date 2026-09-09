@@ -4,7 +4,7 @@ description: Replace the TLS certificate on a running Access Analyzer installati
 sidebar_position: 5
 ---
 
-Rotate the TLS certificate with `update-cert`, a subcommand of the same `dspm-installer` binary you used to install Access Analyzer. `update-cert` and its counterpart, `rollback-cert`, talk to the cluster directly with `kubectl` instead of through the product API, so they work even when `platform-service` is failing because it doesn't trust the current certificate.
+Rotate the TLS certificate with `update-cert`, a subcommand of the same `dspm-installer` binary you used to install Access Analyzer. `update-cert` and its counterpart, `rollback-cert`, talk to the cluster directly with `kubectl` instead of through the product API, so they work even when the `platform-service` workload is failing because it doesn't trust the current certificate.
 
 Run both commands with `sudo`. The default kubeconfig at `/etc/rancher/k3s/k3s.yaml` is readable only by root, so without `sudo`, `kubectl` falls back to `localhost:8080` and fails with "connection refused."
 
@@ -17,7 +17,7 @@ Use `update-cert` when:
 - You want to replace a self-signed demo certificate with a CA-issued one.
 
 :::warning
-Don't re-run the installer to change the certificate. The installer only writes the Kubernetes Secret that holds the certificate and key (`dspm-tls`)—it doesn't update the CA bundle every pod trusts, and ArgoCD reverts a manual edit on its next sync. `update-cert` updates both and waits for the cluster to pick them up.
+Don't re-run the installer to change the certificate. The installer only writes the Kubernetes Secret that holds the certificate and key (`dspm-tls`)—it doesn't update the CA bundle every pod trusts, and ArgoCD reverts a hand-edited Secret on its next sync. `update-cert` updates both and waits for the cluster to pick them up.
 :::
 
 ## Before You Start
@@ -36,7 +36,7 @@ Don't re-run the installer to change the certificate. The installer only writes 
    openssl pkcs12 -in cert.pfx -nocerts -nodes  -out /etc/dspm/tls.key
    ```
 
-2. If a private CA issued the certificate, get the issuing root CA in PEM form too, for example `/etc/dspm/internal-root-ca.pem`. A certificate from a private CA requires this: a full-chain PEM omits the root by convention, so the certificate file alone gives `update-cert` nothing to derive a trust anchor from. Only a self-signed certificate can skip this.
+2. If a private CA issued the certificate, get the issuing root CA in PEM form too, for example `/etc/dspm/internal-root-ca.pem`. A certificate from a private CA requires this: a full-chain PEM omits the root by convention, so the certificate file alone doesn't tell `update-cert` which CA to trust. Only a self-signed certificate can skip this.
 
 3. Confirm the certificate covers the installed hostname. `update-cert` reads the hostname from `/etc/dspm/installer.yaml` and stops if the certificate's Subject Alternative Names don't cover it. Pass `--hostname` to override the value in that file, or to supply it when the file is missing.
 
@@ -59,7 +59,7 @@ If a load balancer, reverse proxy, or split-horizon DNS sits in front of the clu
 2. Run the rotation.
 
    :::note
-   Restarting the workloads that mount the CA bundle briefly interrupts the web application. A rotation typically finishes in a few minutes; `--timeout` allows up to 30 minutes. Run it during a maintenance window.
+   Restarting the workloads that mount the CA bundle briefly interrupts the web application. A rotation typically finishes in a few minutes; the default `--timeout` gives it up to 30 minutes. Run it during a maintenance window.
    :::
 
    ```bash
@@ -80,7 +80,7 @@ If a load balancer, reverse proxy, or split-horizon DNS sits in front of the clu
 
    The fingerprint should match the `leaf` value `update-cert` printed.
 
-If verification fails, `update-cert` restores the previous certificate from its snapshot and exits with a non-zero code—unless you passed `--no-rollback`, or it couldn't reach the ingress at all, in which case the new certificate stays in place. See [The `update-cert` command](installer-reference.md#the-update-cert-command) in the installer reference for what each code means and what to do next.
+If verification fails, `update-cert` restores the previous certificate from its snapshot and exits with a non-zero code—unless you passed `--no-rollback`, or it couldn't reach the ingress at all, in which case the new certificate stays in place. See [The `update-cert` command](installer-reference.md#the-update-cert-command) in the installer reference for what each code means. If it exits `74`, see the "Recovering when rollback-cert can't restore a snapshot" troubleshooting section under [Check the Result](#check-the-result).
 
 ## If the Probe Fails Behind a Reverse Proxy
 
@@ -123,7 +123,7 @@ Every rotation leaves a snapshot under `/etc/dspm/cert-snapshots/`. To restore a
    sudo dspm-installer rollback-cert --snapshot /etc/dspm/cert-snapshots/2026-09-08T14-02-11Z
    ```
 
-   `rollback-cert` restores the CA bundle along with the certificate and key, restarts the workloads that consume them, and verifies the result. On success, it prints `Restored and verified certificate from <dir>`.
+   `rollback-cert` restores the CA bundle along with the certificate and key, restarts the workloads that consume them, and verifies the result. On success, it prints `Restored and verified certificate from <dir>`. See [The `rollback-cert` command](installer-reference.md#the-rollback-cert-command) in the installer reference for its flags and exit codes.
 
 :::note
 Snapshots contain private key material. Access Analyzer writes them with restricted file permissions and never prunes them automatically. Remove ones you no longer need:
@@ -154,7 +154,7 @@ sudo kubectl rollout status deploy/platform-service -n access-analyzer
 sudo kubectl logs deploy/platform-service -n access-analyzer --tail=50
 ```
 
-Every application should show `Synced` and `Healthy`, and the `platform-service` log should show OpenID Connect (OIDC) discovery completing rather than exiting on a certificate error.
+The CA bundle should start with `-----BEGIN CERTIFICATE-----`, every application should show `Synced` and `Healthy`, and the `platform-service` log should show OpenID Connect (OIDC) discovery completing rather than exiting on a certificate error.
 
 <details>
 <summary>Troubleshooting: recovering when rollback-cert can't restore a snapshot</summary>
