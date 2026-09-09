@@ -1,6 +1,6 @@
 ---
 name: audit-fix
-description: "Apply a documentation-audit correction to a doc page — normally written with docs-audit/template.md's Document Review form (Version / Source Path / Duplicated in header, plus Error/Fix correction blocks), but also handles freeform prose describing what's wrong and what it should say instead. Trigger this whenever someone pastes a filled-out Document Review template or any docs-audit correction alongside a source path — usually alongside an instruction like 'Apply these documentation audit findings to `docs/accessanalyzer/11.6/admin/foo.md`' — even if they never say the word 'audit' or invoke this skill by name. Sets up a branch off dev, locates the file, cross-references the product's docs-audit review-list.csv to find exact-duplicate sibling versions and check near-duplicate ones for the same problem text, applies the fix, and — only after the reviewer confirms the diff looks right — checks Vale is installed and runs vale and /dale until clean, then offers to commit and open a PR."
+description: "Apply a documentation-audit correction to one or more doc pages — normally written with docs-audit/template.md's Document Review form (Version / Source Path header, plus Error/Fix correction blocks), but also handles freeform prose describing what's wrong and what it should say instead. Trigger this whenever someone pastes a filled-out Document Review template or any docs-audit correction alongside a source path — usually alongside an instruction like 'Apply these documentation audit findings to `docs/accessanalyzer/11.6/admin/foo.md`' — even if they never say the word 'audit' or invoke this skill by name, and even if they paste corrections for several documents at once. Sets up a `doc-audit/{product}/{detail}` branch off dev, locates each file, cross-references the product's docs-audit review-list.csv to find exact-duplicate sibling versions and check near-duplicate ones for the same problem text, fans out to a subagent per document for batches, applies the fix(es), and — only after the reviewer confirms the diff looks right — checks Vale is installed and runs vale and /dale until clean, then writes a fix summary for the commit message and offers to commit and open a PR."
 ---
 
 # Audit Fix
@@ -25,14 +25,13 @@ The same posture applies to the corrections themselves: a `Fix` is a reviewer's 
 
 The expected shape is `docs-audit/template.md`'s Document Review template:
 
-- A header with **Version**, **Source Path**, and **Duplicated in** fields.
+- A header with **Version** and **Source Path** fields.
 - A **Corrections** section with one or more blocks, each an `Error (quote the exact text if possible):` line and a `Fix:` line.
 
 If the reviewer pastes something close to this, extract:
 
 - **The source path** from the `Source Path` field. If it's missing, ask for it — don't guess which file they mean from context.
 - **The version**, from the `Version` field — cross-check it against what Step 2's script reports for the source path, and flag any mismatch to the reviewer rather than silently trusting one over the other.
-- **The `Duplicated in` field**, if filled in — carry it into Step 2 as something to reconcile against `review-list.csv`, not as the source of truth on its own (reviewers fill this in by hand from the spreadsheet, so it can be stale).
 - **One or more correction blocks**, each an `Error` quote and a `Fix`. Read the `Error` as a literal string to locate — treat it as a paraphrase only if it isn't found verbatim (see Step 5). Read the `Fix` for what it is: sometimes literal replacement text, often a description of what's wrong and what the product actually does (see `template.md`'s good examples — a `Fix` like "the parameter is `-SubCategory`, not `-Category`" describes the correction, it isn't drop-in text). Composing the actual edit from that description is your job in Step 5.
 
 Reviewers don't always use the template, though. Two other shapes to handle:
@@ -59,8 +58,6 @@ This reads `docs-audit/<product>/review-list.csv` and reports, for every other v
 - `quote-not-found` — the quote isn't there. Almost always means this version's wording is genuinely different at that spot; leave it alone.
 - `file-missing` — no file at that path for this version (nothing to do).
 
-Reconcile this against the template's own `Duplicated in` field from Step 1: if the reviewer listed a version the script doesn't confirm as `exact-duplicate` (or vice versa), mention the discrepancy when you ask about scope in Step 3 — trust the script's CSV-based answer for what gets auto-applied, but don't silently drop what the reviewer wrote.
-
 If the script exits non-zero — because the source path isn't in `review-list.csv` (it can happen — pages are excluded from the audit list for recent churn, draft status, or product-exclusion reasons), or because the quotes JSON on stdin was malformed — tell the reviewer and ask how to proceed rather than silently skipping, guessing, or retrying with no quotes.
 
 ## Step 3: Confirm scope with the reviewer
@@ -74,7 +71,7 @@ If the script exits non-zero — because the source path isn't in `review-list.c
 Before touching any files, check the current branch (`git branch --show-current`) and working tree state (`git status`):
 
 - If you already created a branch for this audit session earlier in the conversation, reuse it — don't create a new branch per page or per correction. A single branch can carry several audited pages' fixes.
-- Otherwise, offer to create one: fetch an up-to-date `dev` (`git fetch origin dev`), then branch off it (e.g. `git checkout -b audit-fix/<product>-<short-slug> origin/dev`). Propose a name and get the reviewer's go-ahead before creating it — don't create or switch branches silently.
+- Otherwise, offer to create one: fetch an up-to-date `dev` (`git fetch origin dev`), then branch off it using the standard naming convention `doc-audit/<product>/<detail>` (e.g. `git checkout -b doc-audit/accessanalyzer/admin-fixes origin/dev`). Propose the name and get the reviewer's go-ahead before creating it — don't create or switch branches silently.
 - If the current branch already has uncommitted changes that don't look like they're from this session, stop and ask how to proceed rather than switching out from under someone's in-progress work.
 
 ## Step 5: Apply the fix(es)
@@ -137,18 +134,26 @@ Re-run each linter after any fix until the lines you touched are clean, then rep
 
 Once linting is clean for every edited file:
 
-1. **Write a fix summary.** One or two plain-language sentences per file — what was wrong, what changed. Give it to the reviewer directly in your response, worded so they can paste it straight into the page's Document Review doc's **Fix Summary** section in Xchange. Don't just say a summary exists; write it. Always name every duplicate you actually touched alongside the primary file — that's the whole point of the sibling-resolution step, don't bury it in a per-file diff they have to reconstruct themselves.
-2. **Offer to commit.** Ask whether to commit now. If yes, stage only the files this correction touched (never a blanket `git add`) and commit with a message describing the fix.
+1. **Write a fix summary.** One or two plain-language sentences per file — whether the page was inaccurate, incomplete, or both, and what changed. This is what goes into the commit message (step 2), so write it there directly rather than describing that a summary exists. If this fix touched a batch of documents, give each file its own line rather than one blended paragraph, so the commit message tells someone at a glance which files changed for which reason. Always name every duplicate you actually touched alongside the primary file — that's the whole point of the sibling-resolution step, don't bury it in a per-file diff they have to reconstruct themselves.
+2. **Offer to commit.** Ask whether to commit now. If yes, stage only the files this correction touched (never a blanket `git add`) and commit with a message whose body is the fix summary from step 1.
 3. **Ask what's next:**
    - If they're done auditing for this session: offer to open a pull request against `dev` (covering everything committed on this branch so far).
    - If they have more pages to audit: prompt them to paste the next correction. Stay on the same branch — no need to restart Step 4 unless they say otherwise.
-4. **Remind them about the two places status lives** — this skill doesn't update either directly:
-   - The page's **Document Review doc** in Xchange: fill in its **Status** section (`Audited`, `Accurate`, `Complete`) and paste the fix summary from step 1 into its **Fix Summary** section.
-   - The **imported spreadsheet** (Google Sheets/Excel Online), for the primary version and every duplicate actually touched: set `audited` (and, if this was the first pass on the page, `accurate`/`complete`) too — the Document Review doc and the spreadsheet track different things (per-page narrative vs. cross-product rollup) and both need updating, ideally once the PR merges. Don't edit the committed `docs-audit/<product>/review-list.csv` file itself for this — per `generate-audit-list.mjs`, review status lives only in the imported spreadsheet, and the next `npm run audit:generate` regenerates the CSV from scratch, silently discarding anything written into it directly.
+4. **Remind them about the one place status still lives** — this skill doesn't update it directly: once the PR merges, mark the workbook's **Audited** column `Done` for the primary page and every duplicate actually touched. There's no per-page Xchange status field or separate accurate/complete columns anymore — the fix summary now lives in the commit/PR instead. Don't edit the committed `docs-audit/<product>/review-list.csv` file itself for this — per `generate-audit-list.mjs`, the next `npm run audit:generate` regenerates it from scratch, silently discarding anything written into it directly.
 
 ## Handling multiple pages in one paste
 
-If the reviewer pastes corrections for more than one page in a single message, treat each source path as its own pass through Steps 1–7 (skip Step 4 after the first page — you're already on the branch), still one combined confirmation ask if that reads more naturally, and give one wrap-up covering every file touched.
+If the reviewer pastes corrections for more than one source path in a single message, don't work through them yourself one at a time — fan out:
+
+1. Do Step 1 (parse) once for the whole paste, splitting it into one correction set per source path.
+2. Do Step 4 (branch) once, before spawning anything — every document's fix needs to land on the same branch, and creating one per document would fragment the fix across branches the reviewer didn't ask for.
+3. For each document, spawn a fork (`Agent` tool, `subagent_type: "fork"`) with a directive covering Steps 2, 3, 5, 6, and 7 for that document only: its exact source path and its `Error`/`Fix` blocks verbatim, plus an explicit instruction to run `find-siblings.mjs`, apply the fix(es), and lint. Forks share your context, so the prompt only needs the per-document specifics, not a re-explanation of the process — but be explicit that the fork must **stop and report back a specific question, never guess or proceed past it**, whenever it hits any "ask, don't guess" trigger (quote not found, vague `Fix`, sibling scope to confirm, a lint violation inside composed text).
+4. Launch every document's fork in the same message so they run concurrently.
+5. As forks complete, collect their diffs and any open questions. Batch every open question across every fork into as few rounds as possible back to the reviewer (e.g. "these 3 documents have sibling versions with the same text — apply there too?") rather than interrupting once per fork.
+6. Once you have an answer, resume the specific fork with `SendMessage` rather than re-spawning it — it already has the file open and the edit in progress.
+7. Once every fork reports a reviewer-approved diff and clean lint, do one combined Step 6 confirmation summary (per file, not full documents) and one combined Step 8 wrap-up covering every file touched across every document.
+
+For a single document, none of this applies — just work through Steps 1–7 yourself as written above; forking one document for one file is pure overhead.
 
 ## When something doesn't add up
 
@@ -160,3 +165,4 @@ Ask rather than guess, always — this reuses guidance from `docs-audit/template
 - A `Fix` that reads like a broader rewrite than the `Error` quote justifies.
 - A sibling the script can't resolve (e.g. `find-siblings.mjs` itself errors) — report the error, don't fall back to manual guessing about which versions share this page.
 - Uncommitted changes already on the current branch that don't look like they're from this session — ask before creating or switching branches.
+- A fork working on one document in a batch hits one of these triggers — relay its question to the reviewer yourself; don't answer on the fork's behalf just to keep the batch moving.
