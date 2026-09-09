@@ -30,7 +30,7 @@ This is the architecture for a system that closes that loop. It builds an unders
 
 ## The workflow, at a glance
 
-A finding and its human review happen inside the product team's own workspace, not in the public documentation repository — a writer and an engineer look at it there first. Only one thing ever crosses into the public repo: a draft page, and only after it has been stripped down to plain customer-facing language. No internal file names, code, or ticket numbers ever make that crossing.
+A finding and its human review happen inside the product team's own workspace, not in the public documentation repository — a writer and an engineer look at it there first, which means writers will need access to that workspace, not just the docs site. Only one thing ever crosses into the public repo: a draft page, and only after it has been stripped down to plain customer-facing language. No internal file names, code, or ticket numbers ever make that crossing.
 
 This diagram shows the automated path, triggered when the product changes. A writer can also ask for a check on demand instead; that version happens entirely within the documentation repository.
 
@@ -328,3 +328,4 @@ That "actually merged" bar is the one both earlier attempts failed on. One built
 2. A home for the shared toolkit, and confirmation that its usage is billed centrally rather than through individual accounts.
 3. Access to one more work-tracking system that today only works interactively, not from automation.
 4. A conversation with the owner of the largest product before its stage begins — that team already runs its own separate, manual documentation process, and this needs to work with that process, not around it.
+5. Read and comment access to each product team's workspace for documentation writers. Today writers only work inside the public documentation site.
