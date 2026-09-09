@@ -30,7 +30,11 @@ This is the architecture for a system that closes that loop: it derives what a p
 
 ## The workflow, at a glance
 
-The whole loop in one picture, including the two boundaries that matter most: detection runs in the product's own repository (internal), reading real source code; a **fail-closed redaction gate** sits between that and anything public, so the internal evidence — file paths, line numbers, ticket IDs — never leaves the internal side. Only the gate's plain-language output crosses into `netwrix/docs` (public), as an issue, a draft, a pull request, and finally a published change. No pull request is ever opened anywhere else.
+The finding, and the human review of it, stay entirely inside the product's own repository (internal) — a writer and an engineer see and triage it there, not in `netwrix/docs`. The redaction gate no longer guards the finding; it guards the one remaining crossing, once, at draft time: it strips the AI's draft down to customer-language before a pull request can be opened in `netwrix/docs` (public). No internal repo name, file path, or ticket ID ever reaches the public repo, and no pull request is ever opened anywhere else.
+
+:::warning
+Keeping the finding in the product repo is a new access requirement, not something today's design already covers: writers need read/comment access to that repo (or another bridge) to see and triage it. Today writers work only in `netwrix/docs`.
+:::
 
 This traces the automated, merge-triggered path (the Stage 3 rollout target). A writer asking for a report on demand instead does the whole exchange inside `netwrix/docs` — nothing runs in the product repo for that path.
 
@@ -42,26 +46,23 @@ flowchart TB
     B --> C["AI agent compares against<br/>the current docs"]
     C --> D{"Gap or drift<br/>found?"}
     D -- "no" --> E(["Nothing happens<br/>— zero cost"])
-    D -- "yes" --> RED{{"Redaction gate<br/>only customer-language survives —<br/>no code, paths, or ticket IDs"}}
+    D -- "yes" --> F["Finding opens as<br/>an issue in this repo"]
+    F --> G{"Writer and engineer<br/>review the finding"}
+    G -- "not real" --> H(["Recorded so it<br/>never resurfaces"])
+    G -- "confirmed" --> I["AI agent drafts<br/>the page"]
+    I --> RED{{"Redaction gate<br/>only customer-language survives —<br/>no code, paths, or ticket IDs"}}
     RED -- "internal detail found —<br/>fails closed" --> FAIL(["Job fails<br/>nothing is posted"])
   end
 
   subgraph DOCS["netwrix/docs — public"]
     direction TB
-    F["Finding opens as<br/>an issue"]
-    G{"Writer reviews<br/>the finding"}
-    H(["Recorded so it<br/>never resurfaces"])
-    I["AI agent drafts the page<br/>and opens a pull request"]
+    PRQ["Pull request<br/>opened"]
     J["Writers and engineers<br/>review the pull request"]
     K(["Change is published"])
-    F --> G
-    G -- "not real" --> H
-    G -- "confirmed,<br/>writer labels content:fix" --> I
-    I --> J
-    J --> K
+    PRQ --> J --> K
   end
 
-  RED -- "clean" --> F
+  RED -- "clean" --> PRQ
   K -.->|"docs are current<br/>again"| C
 
   classDef stop fill:#374151,stroke:#6b7280,color:#f9fafb
@@ -69,7 +70,7 @@ flowchart TB
   classDef ai fill:#0c4a6e,stroke:#0ea5e9,color:#f0f9ff
   classDef gate fill:#7f1d1d,stroke:#ef4444,color:#fef2f2
   class E,H,K stop
-  class F,G,J human
+  class G,J human
   class B,C,I ai
   class RED,FAIL gate
 ```
