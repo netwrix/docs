@@ -30,7 +30,7 @@ This is the architecture for a system that closes that loop: it derives what a p
 
 ## The workflow, at a glance
 
-The whole loop in one picture, including the one boundary that matters most: detection runs in the product's own repository (internal); everything from the first human touchpoint onward — the issue, the draft, the pull request, the published change — lives in `netwrix/docs` (public). No pull request is ever opened anywhere else.
+The whole loop in one picture, including the two boundaries that matter most: detection runs in the product's own repository (internal), reading real source code; a **fail-closed redaction gate** sits between that and anything public, so the internal evidence — file paths, line numbers, ticket IDs — never leaves the internal side. Only the gate's plain-language output crosses into `netwrix/docs` (public), as an issue, a draft, a pull request, and finally a published change. No pull request is ever opened anywhere else.
 
 This traces the automated, merge-triggered path (the Stage 3 rollout target). A writer asking for a report on demand instead does the whole exchange inside `netwrix/docs` — nothing runs in the product repo for that path.
 
@@ -42,6 +42,8 @@ flowchart TB
     B --> C["AI agent compares against<br/>the current docs"]
     C --> D{"Gap or drift<br/>found?"}
     D -- "no" --> E(["Nothing happens<br/>— zero cost"])
+    D -- "yes" --> RED{{"Redaction gate<br/>only customer-language survives —<br/>no code, paths, or ticket IDs"}}
+    RED -- "internal detail found —<br/>fails closed" --> FAIL(["Job fails<br/>nothing is posted"])
   end
 
   subgraph DOCS["netwrix/docs — public"]
@@ -59,15 +61,17 @@ flowchart TB
     J --> K
   end
 
-  D -- "yes" --> F
+  RED -- "clean" --> F
   K -.->|"docs are current<br/>again"| C
 
   classDef stop fill:#374151,stroke:#6b7280,color:#f9fafb
   classDef human fill:#78350f,stroke:#f59e0b,color:#fffbeb
   classDef ai fill:#0c4a6e,stroke:#0ea5e9,color:#f0f9ff
+  classDef gate fill:#7f1d1d,stroke:#ef4444,color:#fef2f2
   class E,H,K stop
   class F,G,J human
   class B,C,I ai
+  class RED,FAIL gate
 ```
 
 Everything below is the same loop, expanded one layer at a time: which repository each step runs in, what's deterministic versus AI-driven, and how the pieces stay correct as both the product and the documentation change underneath them.
