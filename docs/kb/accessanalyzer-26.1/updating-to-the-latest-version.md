@@ -32,12 +32,16 @@ ArgoCD deploys Netwrix Access Analyzer 26.1, and you update it using the `dspmct
 
 If you are not sure which installation type applies to your environment, run `sudo dspmctl version` and compare the output to the latest announced release. If they match, the application is already current. For system requirements, see [System Requirements](/docs/accessanalyzer/26_1/install/requirements).
 
+> **NOTE:** `dspmctl version` reports the target version configured on the underlying Helm chart, not the version running in the deployed application or shown in the Access Analyzer web interface. These can differ by design: the web interface reads a separate version string built into its own bundle. Use `dspmctl version` to confirm which release ArgoCD is configured to deploy, and the web interface to confirm which release is actually running.
+>
+> Auto-update installations poll for new releases every 12 hours, but the poller only advances an install whose target revision is a wildcard, such as `1.*`. If you pinned an exact version at install time (for example, `1.1.2`), the poller has nothing to advance and you must set the new version and sync it yourself, as described under [Targeted Version Installations](#targeted-version-installations).
+
 ## Instructions
 
 ### Auto-Update Installations
 
 1. Connect to the Access Analyzer host server over SSH.
-2. Run the following command to check the currently installed version:
+2. Run the following command to check the configured target version:
 
    ```bash
    sudo dspmctl version
@@ -48,7 +52,7 @@ If you are not sure which installation type applies to your environment, run `su
 ### Targeted Version Installations
 
 1. Connect to the Access Analyzer host server over SSH.
-2. Run the following command to check the currently installed version:
+2. Run the following command to check the configured target version:
 
    ```bash
    sudo dspmctl version
