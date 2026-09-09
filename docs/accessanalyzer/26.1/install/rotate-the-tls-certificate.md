@@ -159,7 +159,7 @@ The CA bundle should start with `-----BEGIN CERTIFICATE-----`, every application
 <details>
 <summary>Troubleshooting: recovering when rollback-cert can't restore a snapshot</summary>
 
-If `rollback-cert` itself can't apply a snapshot, the snapshot directory still holds everything you need to recover by hand. Each snapshot contains:
+If `rollback-cert` itself can't apply a snapshot, the snapshot directory still holds everything you need to recover manually. Each snapshot contains:
 
 | File | Contents |
 |---|---|
