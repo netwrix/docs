@@ -42,7 +42,7 @@ This traces the automated, merge-triggered path (the Stage 3 rollout target). A 
 flowchart TB
   subgraph PR["Product repo — internal"]
     direction TB
-    A(["Product code changes<br/>or a spec is written"]) --> B["AI agent reads the product<br/>and its specs"]
+    A(["Product code changes"]) --> B["AI agent reads the product<br/>and its specs"]
     B --> C["AI agent compares against<br/>the current docs"]
     C --> D{"Gap or drift<br/>found?"}
     D -- "no" --> E(["Nothing happens<br/>— zero cost"])
