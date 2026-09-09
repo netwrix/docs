@@ -211,7 +211,7 @@ sudo dspm-installer rollback-cert --latest
 |---|---|---|
 | `--list` | `false` | List available snapshots: timestamp, hostname, leaf certificate fingerprint, and expiry. Doesn't need cluster access. |
 | `--latest` | `false` | Restore the most recent snapshot. |
-| `--snapshot` | none | Restore the snapshot at the given path, such as `/etc/dspm/cert-snapshots/2026-09-08T14-02-11Z`. |
+| `--snapshot` | none | Restore the snapshot at the given path, such as `/etc/dspm/cert-snapshots/<timestamp>`. |
 | `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the restored certificate must cover. |
 | `--port` | `443` | External HTTPS port for verifying the restore. |
 | `--timeout` | `30m0s` | Time budget for the restore. |

@@ -120,7 +120,7 @@ Every rotation leaves a snapshot under `/etc/dspm/cert-snapshots/`. To restore a
    sudo dspm-installer rollback-cert --latest
 
    # or a specific one
-   sudo dspm-installer rollback-cert --snapshot /etc/dspm/cert-snapshots/2026-09-08T14-02-11Z
+   sudo dspm-installer rollback-cert --snapshot /etc/dspm/cert-snapshots/<timestamp>
    ```
 
    `rollback-cert` restores the CA bundle along with the certificate and key, restarts the workloads that consume them, and verifies the result. On success, it prints `Restored and verified certificate from <dir>`. See [The `rollback-cert` command](installer-reference.md#the-rollback-cert-command) in the installer reference for its flags and exit codes.
