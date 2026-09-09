@@ -15,9 +15,16 @@ products:
 sidebar_label: "Migration Overview"
 tags:
   - migration
+unlisted: true
 ---
 
 # Migrating to Access Analyzer 26
+
+:::warning[Content under revision]
+
+This article is being revised. It describes an earlier Access Analyzer 26 configuration model and does not match the shipping 26.1 product. Do not use it to plan or perform a migration. Contact Netwrix Support for current migration guidance.
+
+:::
 
 This section covers migrating credentials, target servers, and job schedules from Netwrix Access Analyzer 12.0 and earlier (formerly StealthAUDIT) to Access Analyzer 26 (AA26). These procedures apply whether you are replacing the previous version or running both products in parallel. Historical audit data collected by the previous version remains in the SQL Server database and is not affected.
 

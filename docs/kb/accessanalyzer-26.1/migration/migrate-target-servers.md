@@ -14,9 +14,16 @@ sidebar_label: "Migrating Target Servers and Host Lists"
 tags:
   - migration
   - source-groups
+unlisted: true
 ---
 
 # Migrating Target Servers and Host Lists to Source Groups
+
+:::warning[Content under revision]
+
+This article is being revised. It describes an earlier Access Analyzer 26 configuration model and does not match the shipping 26.1 product. Do not use it to plan or perform a migration. Contact Netwrix Support for current migration guidance.
+
+:::
 
 ## Overview
 
