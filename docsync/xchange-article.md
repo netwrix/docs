@@ -20,45 +20,45 @@ with an H1.
 
 ---
 
-Netwrix documents 27 products in `netwrix/docs` — about 22,000 markdown files. Documentation drifts from product reality because nothing connects a doc page to the code or the spec that makes it true. A page carries a title, a description, and a sidebar position; it does not carry which feature it documents, which version introduced that feature, or when anyone last checked it against the product. Drift is found today by humans reading pages one at a time.
+Netwrix documents 27 products, in one shared documentation site. Documentation drifts from product reality because nothing connects a doc page back to the product feature it describes. A page has a title and a description, but nothing says which feature it covers, when that feature last changed, or whether anyone has checked the page since. Today, drift is found by a person reading pages one at a time.
 
-This is the architecture for a system that closes that loop: it derives what a product does from its own source and specs, maps that onto the existing doc set to find gaps in both directions, and drafts documentation that lands in the right place.
+This is the architecture for a system that closes that loop. It builds an understanding of what a product actually does, compares that against the existing documentation to find gaps in both directions, and drafts the fix.
 
 :::info
-**Status: design proposal.** Nothing here is built yet. The pilot described at the end is deliberately small and has explicit numeric kill criteria, because two earlier attempts at this problem produced zero merged documentation changes.
+**Status: design proposal.** Nothing here is built yet. The pilot described at the end is deliberately small and has clear pass/fail criteria, because two earlier attempts at this problem produced zero merged documentation changes.
 :::
 
 ## The workflow, at a glance
 
-The finding and its human review happen entirely inside the product's own repository. A writer and an engineer triage it there, not in `netwrix/docs`, so writers will need read and comment access to that repo. The redaction gate guards the one remaining crossing: it strips the AI's draft down to customer language before a pull request opens in the public repo. No internal repo name, file path, or ticket ID ever reaches `netwrix/docs`.
+A finding and its human review happen inside the product team's own workspace, not in the public documentation repository — a writer and an engineer look at it there first. Only one thing ever crosses into the public repo: a draft page, and only after it has been stripped down to plain customer-facing language. No internal file names, code, or ticket numbers ever make that crossing.
 
-This diagram traces the automated, merge-triggered path, the Stage 3 rollout target. A writer asking for a report on demand instead does the whole exchange inside `netwrix/docs`, and nothing runs in the product repo for that path.
+This diagram shows the automated path, triggered when the product changes. A writer can also ask for a check on demand instead; that version happens entirely within the documentation repository.
 
 ```mermaid
 flowchart TB
-  subgraph PR["Product repo — internal"]
+  subgraph PR["Product team's workspace — internal"]
     direction TB
-    A(["Product code changes"]) --> B["AI agent reads the product<br/>and its specs"]
-    B --> C["AI agent compares against<br/>the current docs"]
+    A(["Product changes"]) --> B["Understand what changed"]
+    B --> C["Compare against<br/>the current docs"]
     C --> D{"Gap or drift<br/>found?"}
-    D -- "no" --> E(["Nothing happens<br/>— zero cost"])
-    D -- "yes" --> F["Finding opens as<br/>an issue in this repo"]
-    F --> G{"Writer and engineer<br/>review the finding"}
+    D -- "no" --> E(["Nothing happens<br/>— no cost"])
+    D -- "yes" --> F["Finding is recorded<br/>for review"]
+    F --> G{"Writer and engineer<br/>review it"}
     G -- "not real" --> H(["Recorded so it<br/>never resurfaces"])
-    G -- "confirmed" --> I["AI agent drafts<br/>the page<br/><i>per structural conventions</i>"]
-    I --> READ{"Readability check<br/>above threshold?"}
-    READ -- "below threshold —<br/>revise" --> I
-    READ -- "passes" --> SLOP{"AI-slop self-check<br/>clean?"}
-    SLOP -- "found —<br/>revise" --> I
-    SLOP -- "clean" --> RED{{"Redaction gate<br/>only customer-language survives —<br/>no code, paths, or ticket IDs"}}
-    RED -- "internal detail found —<br/>fails closed" --> FAIL(["Job fails<br/>nothing is posted"])
+    G -- "confirmed" --> I["Draft the page"]
+    I --> READ{"Is it readable?"}
+    READ -- "no — revise" --> I
+    READ -- "yes" --> SLOP{"Does it sound<br/>human, not AI?"}
+    SLOP -- "no — revise" --> I
+    SLOP -- "yes" --> RED{{"Only customer language<br/>survives from here on"}}
+    RED -- "internal detail found —<br/>blocked" --> FAIL(["Nothing is posted"])
   end
 
-  subgraph DOCS["netwrix/docs — public"]
+  subgraph DOCS["Public documentation site"]
     direction TB
     PRQ["Pull request<br/>opened"]
-    LINT["Vale autofix<br/><i>existing CI</i>"]
-    J["Writers and engineers<br/>review the pull request"]
+    LINT["Existing style check<br/>runs, as always"]
+    J["Writers and engineers<br/>review the change"]
     K(["Change is published"])
     PRQ --> LINT --> J --> K
   end
@@ -78,9 +78,9 @@ flowchart TB
   class READ,SLOP,LINT check
 ```
 
-Before a human sees it, the draft loops through two automated checks: a readability score and an AI-slop check using the existing Dale ruleset. Either check can send the draft back for revision, so Dale has already passed by the time the pull request opens. The existing Vale autofix CI in `netwrix/docs` still runs on the PR, the same as it does for every other change. Diagram 2 expands this loop in full.
+Before a person ever sees a draft, it has to pass two checks on its own: is it readable, and does it sound natural rather than generic AI writing? Either one can send it back for another pass. By the time a pull request opens, both have already passed — the public repo's own style check still runs too, the same as it does for every other change.
 
-Everything below is the same loop, expanded one layer at a time: which repository each step runs in, what's deterministic versus AI-driven, and how the pieces stay correct as both the product and the documentation change underneath them.
+The rest of this article walks through the same loop one layer at a time: what stays private, what's mechanical versus judgment-based, and how the system keeps working as both the product and the documentation change underneath it.
 
 ## The three capabilities
 
@@ -90,275 +90,241 @@ Everything below is the same loop, expanded one layer at a time: which repositor
 | 2 | **Documentation alignment** | Which doc page covers which feature — and what is uncovered, stale, or describing something that no longer exists? |
 | 3 | **Documentation drafting** | Given a gap, what should the page say and where does it belong? |
 
-Each capability runs in the product's own repository and reports into `netwrix/docs`. Understanding feeds drafting with substance; alignment feeds it with placement.
+Understanding feeds drafting with substance. Alignment feeds it with placement.
 
 ## The design principle
 
-**Deterministic code extracts facts and computes joins. The model only writes prose and classifies ambiguous candidates.**
+**Mechanical steps find and match facts. The model only writes prose and makes judgment calls on genuinely ambiguous cases.**
 
-Every place a model is asked to *find* something rather than *describe* something is a place false positives enter — and writer trust is the scarce resource in a system like this. A tool that produces three bad findings gets filtered out permanently, and no later precision improvement wins those readers back. So the model never scans a codebase hunting for drift. A script extracts config keys, defaults, routes, and installer values into a fingerprinted manifest; a second script joins that manifest against a docs index; and only the leftover ambiguous cases go to a model.
+Every place a model is asked to *find* something rather than *describe* something is a place mistakes creep in — and writer trust is the scarce resource here. A tool that produces three bad findings gets ignored from then on, and no later improvement wins those readers back. So the model is never turned loose to hunt for drift on its own. A mechanical pass first extracts the facts that make a page true — a setting, a default value, a route — and matches them against what the docs currently say. Only the leftover, genuinely unclear cases go to a model for a judgment call.
 
-This also means drift detection is a **hash comparison, not a judgment call**. Build the manifest at commit A, build it at commit B, and diff the manifests. Because the manifest contains only customer-observable facts, code churn that doesn't move the manifest is by construction not documentation-relevant.
+This also means most drift detection is a simple comparison, not a guess: capture the facts as they stand today, capture them again later, and compare. Because that snapshot only contains things a customer could actually observe, a code change that doesn't move the snapshot is, by definition, not something a doc needs to reflect.
 
-## 1. Topology and the trust boundary
+## 1. What stays private, and what's allowed to cross
 
-`netwrix/docs` is a **public** repository. Every product repository is internal. That single fact drives the shape of the system: the toolkit, every manifest, and every coverage map stay in `netwrix-corp`, and anything crossing into the public repo passes a fail-closed redaction gate.
+The documentation site is public. Every product team's own workspace is internal. That one fact shapes the whole design: the tools, the raw findings, and anything that references internal file names or ticket numbers all stay inside the product team's side. Anything crossing into the public docs has to pass through a check that blocks the crossing if anything internal slips in.
 
 ```mermaid
 flowchart TB
-  subgraph INT["netwrix-corp — INTERNAL"]
+  subgraph INT["Internal"]
     direction TB
-    KIT["<b>docsync</b> kit<br/>composite action + reusable workflow + plugin<br/>skills · bin · adapters · products/*.yml"]
-    MKT["claude-marketplace<br/><i>registers the plugin</i>"]
-    MS["claude-managed-settings<br/><i>MDM push to writer machines</i>"]
-    subgraph PR["product repos"]
+    TOOLKIT["Shared toolkit<br/><i>works the same way<br/>in every product</i>"]
+    subgraph PR["Product teams"]
       direction LR
-      PC["itdr-pingcastle-core"]
-      PPE["itdr-passwordpolicyenforcer"]
-      ONE["platform-1secure"]
-      IDM["identity-identitymanager"]
+      P1["Product A"]
+      P2["Product B"]
+      P3["Product C"]
+      P4["Product D"]
     end
-    ART["manifest + coverage.json<br/><i>release asset, never public</i>"]
+    ART["Findings, with full detail"]
   end
 
-  RED{{"redact.mjs --verify<br/><b>fail closed</b>"}}
+  RED{{"Only customer language<br/>gets through<br/><b>blocks by default</b>"}}
 
-  subgraph PUB["netwrix — PUBLIC"]
+  subgraph PUB["Public documentation site"]
     direction TB
-    DOCS["netwrix/docs<br/>22,203 md files"]
-    IDX["docs-index-&lt;product&gt;.json<br/><i>generated centrally</i>"]
-    LEDG["docs-audit/verdicts/*.jsonl<br/><i>append-only</i>"]
+    DOCS["The doc pages themselves"]
+    LEDG["Review history<br/><i>never overwritten</i>"]
   end
 
-  WRITER(["writer in netwrix/docs"])
+  WRITER(["A writer"])
 
-  KIT -- "pinned @v1" --> PR
-  KIT -- "one entry" --> MKT
-  MKT --> MS
-  MS -- "plugin, zero setup" --> WRITER
-  PR -- "publishes" --> ART
-  ART -- "gh release download, ~200 KB" --> WRITER
-  IDX -- "gh api, no clone" --> PR
-  DOCS --> IDX
-  PR -- "findings" --> RED
-  RED -- "App token<br/>issue / PR" --> DOCS
-  WRITER -- "verdict" --> LEDG
+  TOOLKIT --> PR
+  PR -- "raises" --> ART
+  ART -- "customer-facing summary only" --> RED
+  RED -- "passes" --> DOCS
+  WRITER -- "records a verdict" --> LEDG
 ```
 
-The natural output of "read the source, write the doc" is a citation like `Netwrix.Overlord.Core/Foo.cs:42`. That is useful internally and unacceptable in a public repository. So the model never holds a write credential — it writes to a temp file, a shell step assembles public output from a **closed-field template**, and a verifier fails the job outright on any internal repo name, source file extension, ADO or JIRA work-item reference, or internal hostname. It fails rather than strips: silent stripping trains people to trust a filter nobody checks.
+Reading a product's own source naturally produces something like "this file, this line." That's useful for an engineer and unacceptable in a public page. So the model never gets to publish anything directly — it hands off a draft, and a separate check blocks the handoff outright if it spots an internal reference of any kind. It blocks rather than quietly stripping the reference out: a filter nobody has to double-check is a filter people learn not to trust.
 
-Internal detail still reaches the reviewer — it goes to the product repo's job summary, joined to the public issue by a run ID.
+None of that internal detail is lost — it's just kept where it belongs, visible to the product team, linked to the public finding so the two can be cross-referenced.
 
-## 2. The pipeline, split by cost
+## 2. What's mechanical, and what's judgment
 
 ```mermaid
 flowchart LR
-  subgraph SRC["sources"]
+  subgraph SRC["Sources"]
     direction TB
-    CODE["product source<br/>appsettings · .resx · routes<br/>installer templates"]
-    CURATED["AI-readiness artifacts<br/>ARCHITECTURE.md · GLOSSARY.md"]
-    SPEC["specs<br/>ADO folders · ADO REST · JIRA"]
+    CODE["The product's own code"]
+    CURATED["Docs the engineering team<br/>already maintains<br/><i>architecture notes, glossaries</i>"]
+    SPEC["Specs and tickets"]
   end
 
   subgraph C1["① Understanding"]
     direction TB
-    EXTRACT["<b>collect-surface.mjs</b><br/>enumerate keys, defaults,<br/>routes, spec index"]
-    ADAPT["<b>adapters/*.sh</b><br/>probe · extract · fetch"]
-    SYNTH["docsync-understand<br/><i>narrative fields only</i>"]
+    EXTRACT["Extract the facts<br/><i>mechanical</i>"]
+    SYNTH["Summarize context<br/><i>model</i>"]
   end
 
-  MAN[("manifest.json<br/>+ evidence/*.jsonl<br/><i>fingerprinted</i>")]
+  MAN[("A snapshot of<br/>verified facts")]
 
   subgraph C2["② Alignment"]
     direction TB
-    DOCIDX["<b>generate-docs-index.mjs</b><br/>paths · frontmatter · slugs"]
-    JOIN["<b>build-coverage.mjs</b><br/>manifest × docs index"]
-    CLASS["docsync-align<br/><i>is this gap real?</i>"]
+    JOIN["Match facts against<br/>the current docs<br/><i>mechanical</i>"]
+    CLASS["Judge the unclear cases<br/><i>model</i>"]
   end
 
-  COV[("coverage.json<br/>edges · states · staleness")]
+  COV[("Coverage map")]
 
   subgraph C3["③ Drafting"]
     direction TB
-    PLACE["docsync-place<br/><i>which file, which version,<br/>which required sections</i>"]
-    PROSE["doc-help / tech-writer<br/>writes or revises prose"]
-    READ{"readability-check.mjs<br/><i>score above threshold?</i>"}
-    SLOP{"dale --self-check<br/><i>AI-isms found?</i>"}
-    SHELL["<b>shell</b>: branch, commit, PR"]
+    PLACE["Decide where it belongs<br/><i>model</i>"]
+    PROSE["Write or revise the page<br/><i>model</i>"]
+    CHECK{"Self-check:<br/>readable, and sounds human?"}
+    SHELL["Open the pull request<br/><i>mechanical</i>"]
   end
 
-  OUT["gap report<br/><i>first output</i>"]
-  PRD["draft PR to dev"]
+  OUT["Gap report<br/><i>the first output</i>"]
+  PRD["Draft pull request"]
 
   CODE --> EXTRACT
   CURATED --> SYNTH
-  SPEC --> ADAPT
+  SPEC --> EXTRACT
   EXTRACT --> MAN
-  ADAPT --> MAN
   SYNTH --> MAN
   MAN --> JOIN
-  DOCIDX --> JOIN
   JOIN --> CLASS
   CLASS --> COV
   COV --> OUT
   COV --> PLACE
   MAN --> PLACE
   PLACE --> PROSE
-  PROSE --> READ
-  READ -- "below threshold" --> PROSE
-  READ -- "passes" --> SLOP
-  SLOP -- "found, revise" --> PROSE
-  SLOP -- "clean" --> SHELL
+  PROSE --> CHECK
+  CHECK -- "no — revise" --> PROSE
+  CHECK -- "yes" --> SHELL
   SHELL --> PRD
 ```
 
-Drafting's self-check loop follows the same rule as everything upstream of it: readability and AI-slop are **measured, not judged**. `readability-check.mjs` computes a deterministic score (e.g., Flesch-Kincaid) against a per-doc-area threshold; `dale --self-check` runs the same AI-isms/style ruleset that already gates incoming PRs, kept current by the existing `vale-rule-writer`/`vale-auditor` agents rather than some separate list the model consults ad hoc. Either gate failing sends the draft back to `doc-help`/`tech-writer` for revision — the model revises, but never grades its own work. This doesn't replace human review or the post-PR Vale/Dale CI gate; it means a human's first look has already cleared both bars, so a bad draft costs revision cycles rather than reviewer patience.
+The drafting self-check follows the same rule as everything upstream of it: readability and "does this sound like AI wrote it" are measured, not eyeballed, against a fixed bar. Failing either sends the draft back for another pass — the model can revise its own work, but it never gets to grade its own work. None of this replaces a person's review, or the public repo's own style check; it just means that by the time a person looks at a draft, it has already cleared the bars a machine can check on its own, so a bad draft costs a revision cycle instead of a reviewer's patience.
 
-An important input here is one we already have. The **AI Readiness Sprint** left every product repo with an engineer-curated `ARCHITECTURE.md` and `GLOSSARY.md` — 1Secure's architecture doc runs 555 lines with a full project reference, and its glossary defines domain terms *with pointers into the code*. Understanding should lean on those curated artifacts, written by the people who own the code, rather than trying to re-derive meaning from a gigabyte of C#. An LLM turned loose on raw source cannot reliably tell a customer-visible feature from an internal service class; an engineer-maintained glossary already made that distinction.
+One input matters more than it might seem: every product team already maintains its own architecture and glossary notes, written by the engineers who own the code. Understanding leans on those, rather than trying to re-derive meaning from raw source code. A model turned loose on source code alone can't reliably tell a customer-facing feature from an internal implementation detail; an engineer's own glossary already makes that distinction.
 
-## 3. Why folder renames can't break the map
+## 3. Why reorganizing the docs can't break anything
 
-A separate initiative will rename documentation folders across all 27 products (`installation` → `install`, `administration` → `admin`, and so on). Any coverage map keyed on file paths would be invalidated wholesale. So none of them are.
+A separate effort is going to reorganize documentation folders across all 27 products. Any map that identified a feature by its file path would be destroyed by that reorganization. So nothing here works that way.
 
 ```mermaid
 flowchart LR
-  subgraph P["product side"]
-    F1["<b>feature</b><br/>nwx:pingcastle:config:<br/>Reports.ArchiveAfterDays"]
-    EV["evidence<br/>appsettings.json:57<br/>value = 90<br/>first_seen · last_confirmed"]
-    FP(["fingerprint<br/>sha256 of value tuples"])
+  subgraph P["Product side"]
+    F1["A feature<br/><i>identified by a stable ID,<br/>never a file path</i>"]
+    EV["Evidence<br/><i>where the fact<br/>was found</i>"]
   end
 
-  subgraph D["docs side"]
-    U["<b>doc_uid</b><br/>pc-4_0-settings-<br/>dataretention-a1b2c3<br/><i>in frontmatter, minted once</i>"]
-    PATHS[("paths.json<br/><b>the only file<br/>containing a path</b><br/><i>regenerated</i>")]
-    FILE["docs/pingcastle/4.0/<br/>enterprisesettings-<br/>dataretention.md"]
+  subgraph D["Docs side"]
+    U["A document ID<br/><i>stored inside the page itself</i>"]
+    PATHS[("Path lookup<br/><b>the only place<br/>a file path lives</b><br/><i>rebuilt automatically</i>")]
+    FILE["The doc page"]
   end
 
   F1 --- EV
-  F1 --- FP
-  F1 -- "<b>documents</b><br/>verified_at: fingerprint" --> U
-  F1 -. "mentions" .-> U
+  F1 -- "documents" --> U
   U --> PATHS
   PATHS --> FILE
 
-  RENAME{{"IA migration<br/>git mv folder"}}
-  RENAME -- "frontmatter travels<br/>with the file" --> U
-  RENAME -- "regenerate" --> PATHS
+  RENAME{{"A folder gets<br/>renamed or moved"}}
+  RENAME -- "the ID moves<br/>with the page" --> U
+  RENAME -- "lookup<br/>rebuilds itself" --> PATHS
 ```
 
-Every edge is keyed on a **feature ID and a document ID**, never a path. Document IDs live in frontmatter, so `git mv` carries them. Paths appear in exactly one regenerated lookup file. A rename touches that file and breaks nothing.
+Every connection between a feature and a page is keyed on two stable IDs, never a path. The document's ID travels with the page when it moves. The file path lives in exactly one lookup table, and that table gets rebuilt automatically. A reorganization touches that one table and breaks nothing else.
 
-Feature IDs are minted from code-owned registry strings — a feature flag literal, a rule attribute ID, a config key — never from a file path and never by a model. The ID ledger is append-only and CI-enforced: you may add an alias, you may not silently redefine an ID.
+Feature IDs come from the product's own code — a setting name, a flag, a rule ID — never from a file path, and never invented by a model. Once assigned, an ID is never silently reused or redefined; only new aliases can be added on top of it.
 
-## 4. Coverage states
+## 4. The states a doc page can be in
 
 ```mermaid
 stateDiagram-v2
   direction LR
-  [*] --> undocumented: in manifest,<br/>no edge
-  undocumented --> drafted: covers: added<br/>on a branch
-  drafted --> published: merged to dev
-  published --> stale: fingerprint ≠<br/>verified_at
+  [*] --> undocumented: feature exists,<br/>no page covers it
+  undocumented --> drafted: a draft<br/>is in progress
+  drafted --> published: merged
+  published --> stale: the underlying<br/>fact changed
   stale --> published: re-verified
-  undocumented --> exempt: features.yaml<br/><b>human</b> + reason + owner
+  undocumented --> exempt: a human marks it<br/>exempt, with a reason
   exempt --> undocumented: exemption removed
-  published --> retired: registry string gone<br/><b>human confirm</b>
-  stale --> retired: registry string gone<br/><b>human confirm</b>
+  published --> retired: the feature<br/>no longer exists<br/><b>human confirms</b>
+  stale --> retired: the feature<br/>no longer exists<br/><b>human confirms</b>
   retired --> [*]
 
   note right of exempt
-    Without exempt, the
-    denominator is garbage
-    and the score gets
-    dismissed
+    Without this state,
+    the coverage number
+    is misleading and
+    gets dismissed
   end note
 ```
 
-The `exempt` state is what makes a coverage number survive contact with an audience. "41 of 412 features documented" invites the entirely correct objection that most of that denominator is internal plumbing. So the denominator is *customer-visible and not exempt*, exemptions require a stated reason and an owner, and they show up in pull request diffs. We publish three separate numbers — covered, stale, orphaned — and never a single composite. A number's job is to be arguable in a specific, fixable way.
+The `exempt` state is what keeps a coverage number honest. "41 of 412 features documented" invites the fair objection that most of that 412 is internal plumbing nobody should ever document. So the count only includes features a customer can actually see, exemptions require a stated reason, and they're visible whenever they're added. The system reports three separate numbers — covered, stale, and orphaned — never one composite score, because a single number invites disbelief and three numbers invite a specific, fixable conversation.
 
-The reverse direction matters as much as the forward one. A page describing something that no longer exists is detected two ways: a coverage reference to a feature ID that has left the manifest, and a code identifier that was **present in one snapshot and absent in the next**. Absolute absence proves nothing; a transition between two deterministic snapshots proves a great deal. A page with no coverage claim at all is reported as *unmapped*, never as drift.
+The reverse case matters just as much: a page describing something that no longer exists. That's caught when a page's claimed feature disappears from the current snapshot, or when something the product used to expose is simply gone in a later snapshot. A page that never claimed to cover anything specific is reported as merely unmapped, never as drift — that distinction is what keeps the whole report credible.
 
-## 5. Spending nothing on the 85% of merges that don't matter
+## 5. Spending nothing on the changes that don't matter
 
 ```mermaid
 flowchart TB
-  PUSH(["push to product default branch"]) --> LOOP{"bot commit?<br/>docs&#40;sync&#41;: · [skip docsync]<br/>· bot author"}
-  LOOP -- yes --> STOP1(["exit — loop broken"])
-  LOOP -- no --> G1{"<b>gate 1</b><br/>any path survives<br/>test/IaC/lockfile filter?"}
-  G1 -- no --> STOP2(["exit — 0 tokens"])
-  G1 -- yes --> G2{"<b>gate 2</b><br/>surface-map hit in<br/>products/&lt;id&gt;.yml?"}
-  G2 -- no --> STOP3(["exit — 0 tokens<br/><i>log reason to step summary</i>"])
-  G2 -- yes --> G3{"<b>gate 3</b><br/>doc-relevant token in<br/>git diff -U0?"}
-  G3 -- no --> STOP3
-  G3 -- yes --> DEDUPE{"issue already exists<br/>for docsync:&lt;product&gt;:&lt;sha12&gt;?"}
-  DEDUPE -- yes --> STOP4(["exit — idempotent"])
-  DEDUPE -- no --> FETCH["fetch docs index + specs<br/><i>deterministic</i>"]
-  FETCH --> ALIGN["docsync-align<br/>Sonnet · max-turns 20"]
-  ALIGN --> RED{{"redact.mjs --verify"}}
-  RED -- fail --> FAILJOB(["<b>fail the job</b><br/>never strip silently"])
-  RED -- pass --> ISSUE["gh issue create<br/>label: docsync"]
-  ISSUE --> HUMAN(["writer triages"])
-  HUMAN -- "adds content:fix" --> EXISTING["<b>existing</b> claude-issue-labeler<br/>drafts the PR"]
+  PUSH(["Product code changes"]) --> LOOP{"Was this our own<br/>automated commit?"}
+  LOOP -- yes --> STOP1(["Stop — avoid a loop"])
+  LOOP -- no --> G1{"Did anything<br/>customer-facing change?"}
+  G1 -- no --> STOP2(["Stop — no cost"])
+  G1 -- yes --> DEDUPE{"Already flagged?"}
+  DEDUPE -- yes --> STOP3(["Stop — already tracked"])
+  DEDUPE -- no --> ALIGN["Check it against<br/>the docs"]
+  ALIGN --> RED{{"Only customer language<br/>gets through"}}
+  RED -- fail --> FAILJOB(["Blocked — nothing posted"])
+  RED -- pass --> ISSUE["Finding is recorded"]
+  ISSUE --> HUMAN(["Writer triages it"])
+  HUMAN -- "confirmed" --> EXISTING["Existing process<br/>drafts the fix"]
 ```
 
-Three gates fire before a single token is spent, and gates 2 and 3 must **both** hit. A 400-file refactor that renames private members produces zero hits and costs nothing. When a changeset *is* filtered out, the reason is logged — false negatives are the failure mode you cannot otherwise see.
+Cheap checks run first, and have to agree before anything expensive happens. A large refactor that doesn't touch anything customer-facing costs nothing, because nothing about it looks worth checking.
 
-The output is a GitHub issue, not a pull request. Issues are cheap to ignore; unsolicited draft PRs are not, and at 27 products notification cost is the real budget. A writer who wants the draft adds the existing `content:fix` label and the automation we already run in `netwrix/docs` produces the pull request.
+The result is a recorded finding, not an automatic pull request. A finding is easy to ignore if it's wrong; an unwanted pull request is not, and across 27 products that difference in cost adds up fast. A writer who agrees the finding is real triggers the existing process that turns a confirmed finding into a pull request.
 
-## 6. Rollout, with a gate between each stage
+## 6. Rollout, with a checkpoint between each stage
 
 ```mermaid
 flowchart LR
-  S0["<b>Stage 0</b><br/>Unblock · no AI · ~1 day<br/>gitignore · cache · docs-index<br/>create docsync kit"]
-  G0{"/doc-code-audit<br/>runs end to end<br/>for the first time"}
-  S1["<b>Stage 1</b><br/>PingCastle settings<br/>9 pages · 308 lines<br/>Arm A vs Arm B"]
-  G1{"precision ≥0.70<br/>≥5 real · <b>≥3 merged</b><br/>≤4 min/finding<br/>Arm A beats Arm B"}
-  S2["<b>Stage 2</b><br/>PPE<br/>HelpHelper.cs free edges<br/>+ multi-version siblings"]
-  G2{"gap reported once<br/>with version list,<br/>not 5 times"}
-  S3["<b>Stage 3</b><br/>1Secure<br/>ADO spec folders<br/>+ merge trigger + drafting"]
-  G3{"drafted PR passes<br/>doc-pr + vale + dale<br/>zero internal refs"}
-  S4["<b>Stage 4</b><br/>Identity Manager<br/>scale · JIRA<br/><i>talk to docs owner first</i>"]
-  S5["remaining 23 products<br/>= products/&lt;id&gt;.yml<br/>+ 14 lines"]
+  S0["Stage 0<br/>Fix what's blocking us<br/>no automation yet"]
+  G0{"A first manual run<br/>works end to end"}
+  S1["Stage 1<br/>One small, falsifiable pilot"]
+  G1{"Findings are accurate,<br/>and changes actually get merged"}
+  S2["Stage 2<br/>A second product,<br/>with multiple versions"]
+  G2{"A gap is reported once,<br/>not once per version"}
+  S3["Stage 3<br/>A third product,<br/>fully automatic trigger"]
+  G3{"Drafts pass review<br/>with zero internal leaks"}
+  S4["Stage 4<br/>The largest product<br/><i>talk to its owner first</i>"]
+  S5["Every remaining product<br/><i>same toolkit,<br/>new configuration only</i>"]
 
   S0 --> G0 --> S1 --> G1 --> S2 --> G2 --> S3 --> G3 --> S4 --> S5
-  G1 -- fail --> KILL(["<b>kill</b><br/>invest in the<br/>UI-grounded prototype"])
+  G1 -- fail --> KILL(["Stop —<br/>invest elsewhere instead"])
 ```
 
-## What we are reusing rather than building
+## What we're building on, not rebuilding
 
-Most of this system already exists somewhere in the organization.
+Most of what this needs already exists somewhere in the organization: a way to distribute a tool to every product team without copy-pasting it into each repo; working connections to the two systems that track work items; usage and cost tracking already in place; and, in every product repo, architecture and glossary notes the engineering team already keeps up to date. The documentation site itself already has editorial review, style checking, and a path from a labeled issue to a drafted fix.
 
-| Existing asset | Role here |
-|---|---|
-| `netwrix-corp/claude-marketplace` | The internal Claude Code plugin marketplace. Distribution is solved — no copying skills into 27 repositories. |
-| `netwrix-corp/claude-reviewer` | A composite action with a floating `v1` tag that product repos consume in six lines. This is the organization's proven answer to shipping a capability to N repos without drift. Its skeleton is the template. |
-| `claude-reviewer/scripts/find-linked-items.sh` | A working Azure DevOps adapter. Removes the need for the `az` CLI entirely. |
-| Identity Manager's `claude-pr-review.yml` | A working JIRA adapter with credentials already provisioned. |
-| `netwrix-corp/claude-managed-settings` | Pushes the plugin to writer machines via MDM, and already exports telemetry — cost observability is solved. |
-| The AI Readiness Sprint artifacts | Engineer-curated architecture and glossary docs in every product repo: the substrate for product understanding. |
-| In `netwrix/docs` | Existing Vale and Dale linting, the editorial PR review, the `content:fix` issue-to-PR path, sibling-version resolution, and the audit page walker. |
+The one genuinely new piece is the toolkit that connects all of this together, plus the snapshot and coverage formats it produces.
 
-The one genuinely new component is the toolkit that binds these together, plus the manifest and coverage schemas.
+## The pilot, and how we'll know it failed
 
-## The pilot, and how we will know it failed
+The pilot is a small set of settings pages for one product, checked against that product's own configuration and installer code.
 
-The pilot is **nine PingCastle settings pages — 308 lines of documentation** — checked against the product's configuration files, its config-service defaults, and its installer templates.
+That target was chosen deliberately, after rejecting a more obvious one. The same product has a large rule catalogue that the docs barely mention — that looks like an enormous gap, but it isn't: the product's own report and public website already document the rule catalogue in full, on purpose. Pointing the pilot there would produce a wall of correct-by-design "gaps" on day one, which is exactly the kind of bad first impression that would end this project before it started.
 
-That target was chosen after rejecting a more attractive one. PingCastle has 191 rule classes carrying rich typed metadata, and the documentation mentions three of them. That looks like 188 gaps. It is not: rule descriptions ship inside the product's own HTML report and on the public PingCastle site, so the documentation deliberately covers *operating the scanner*, not the rule catalogue. A pilot aimed there would open with 188 correct-by-design findings — precisely the first impression that ends a project like this.
-
-The settings pages, by contrast, assert genuinely checkable values: a cap of 100 users, a ceiling of 10,000, a 90-day minimum. And the product repo contains a skill documenting how to add new settings that survive upgrades, which tells you settings change often — which is exactly how documentation falls behind.
+The settings pages, by contrast, make genuinely checkable claims — specific caps, ceilings, and minimums — and the product changes those settings often enough that its own team documents how new ones survive an upgrade. That's exactly the kind of thing that quietly falls out of sync.
 
 :::warning
-**Two arms, not one.** An existing internal prototype already audits documentation against the live product UI, and scored precision 1.000 with recall 0.871 on a blind adversarial benchmark — while **explicitly refusing source-code input**. The premise of this project is the thing that pipeline cut. So the pilot runs both approaches over the same nine pages with the same reviewer, blind to arm. If reading source code does not beat UI capture on accepted findings per reviewer-minute, that is decisive, and it is far cheaper to learn now than in six months.
+**Two approaches run side by side, not one.** An existing internal tool already checks documentation against what's visible in the product's own interface, and it scores very well doing that — while deliberately refusing to look at any source code at all. That's the exact premise this project is testing. So the pilot runs both approaches on the same pages, with the same reviewer, without telling the reviewer which is which. If reading the source code doesn't outperform reading the interface, that's a decisive, cheap answer to get now rather than after months of investment.
 :::
 
-Continue only if **all four** hold: precision at or above 0.70; at least five findings accepted as real; **at least three merged**; and no more than four reviewer-minutes per accepted finding.
+The pilot continues only if the findings are accurate, several are confirmed real, several of those are actually merged, and reviewing them doesn't take long per finding.
 
-That third criterion is the one both earlier attempts failed. The prior prototype built an excellent review dashboard and merged zero documentation changes; the source-code audit skill was never run at all. In neither case was detection quality the bottleneck — the missing piece was a path from a reviewer's verdict to a merged pull request. So this design adds no dashboard. Verdicts are captured in GitHub pull request reviews, which writers already do daily, and land in an append-only ledger keyed so that **a rejected finding stays rejected**. Re-reporting something a reviewer already dismissed is enough to kill adoption on its own, regardless of precision.
+That "actually merged" bar is the one both earlier attempts failed on. One built an excellent review tool and merged zero documentation changes; the other was never run at all. In neither case was finding accuracy the problem — the missing piece was a path from a reviewer's decision to a merged change. So this design adds no separate review tool. A reviewer's decision is captured the same way writers already work today, and it's remembered permanently: once something is marked "not real," it never comes back. Resurfacing something a reviewer already dismissed is enough on its own to kill trust in the whole system, regardless of how accurate it otherwise is.
 
 ## Open asks
 
-1. A GitHub App with write access to `netwrix/docs` and read access to the product repos, so automation is not running on a person's credentials.
-2. An internal `docsync` repository, and confirmation that the Anthropic API key is org-scoped.
-3. A ProductBoard API token. Of the four spec sources we want, Azure DevOps and JIRA need no new credentials and Xchange is reachable interactively; ProductBoard is the only one blocked in CI today.
-4. A conversation with the Identity Manager documentation owner. That repository already contains its own documentation site and a release script that copies pages into a local clone of the docs repo — a real process, run by a person, that this system must reconcile with rather than route around.
+1. A dedicated identity for this automation, with write access to the documentation site and read access to product teams' workspaces, so it isn't running on any one person's personal access.
+2. A home for the shared toolkit, and confirmation that its usage is billed centrally rather than through individual accounts.
+3. Access to one more work-tracking system that today only works interactively, not from automation.
+4. A conversation with the owner of the largest product before its stage begins — that team already runs its own separate, manual documentation process, and this needs to work with that process, not around it.
