@@ -30,20 +30,36 @@ This is the architecture for a system that closes that loop: it derives what a p
 
 ## The workflow, at a glance
 
-Before the detail, the whole loop in one picture — no tools or filenames, just what happens and who's involved.
+The whole loop in one picture, including the one boundary that matters most: detection runs in the product's own repository (internal); everything from the first human touchpoint onward — the issue, the draft, the pull request, the published change — lives in `netwrix/docs` (public). No pull request is ever opened anywhere else.
+
+This traces the automated, merge-triggered path (the Stage 3 rollout target). A writer asking for a report on demand instead does the whole exchange inside `netwrix/docs` — nothing runs in the product repo for that path.
 
 ```mermaid
 flowchart TB
-  A(["Product code changes<br/>or a spec is written"]) --> B["AI agent reads the product<br/>and its specs"]
-  B --> C["AI agent compares against<br/>the current docs"]
-  C --> D{"Gap or drift<br/>found?"}
-  D -- "no" --> E(["Nothing happens<br/>— zero cost"])
-  D -- "yes" --> F["Report goes to<br/>a documentation writer"]
-  F --> G{"Writer reviews<br/>the finding"}
-  G -- "not real" --> H(["Recorded so it<br/>never resurfaces"])
-  G -- "confirmed" --> I["AI agent drafts the page<br/>and opens a pull request"]
-  I --> J["Writers and engineers<br/>review the pull request"]
-  J --> K(["Change is published"])
+  subgraph PR["Product repo — internal"]
+    direction TB
+    A(["Product code changes<br/>or a spec is written"]) --> B["AI agent reads the product<br/>and its specs"]
+    B --> C["AI agent compares against<br/>the current docs"]
+    C --> D{"Gap or drift<br/>found?"}
+    D -- "no" --> E(["Nothing happens<br/>— zero cost"])
+  end
+
+  subgraph DOCS["netwrix/docs — public"]
+    direction TB
+    F["Finding opens as<br/>an issue"]
+    G{"Writer reviews<br/>the finding"}
+    H(["Recorded so it<br/>never resurfaces"])
+    I["AI agent drafts the page<br/>and opens a pull request"]
+    J["Writers and engineers<br/>review the pull request"]
+    K(["Change is published"])
+    F --> G
+    G -- "not real" --> H
+    G -- "confirmed,<br/>writer labels content:fix" --> I
+    I --> J
+    J --> K
+  end
+
+  D -- "yes" --> F
   K -.->|"docs are current<br/>again"| C
 
   classDef stop fill:#374151,stroke:#6b7280,color:#f9fafb
