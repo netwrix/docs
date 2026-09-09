@@ -26,7 +26,7 @@ knowledge_article_id:
 
 ## Symptom
 
-When attempting to save a configuration change in Netwrix Password Policy Enforcer a “Cannot write the app configuration settings (access denied)” error occurs.  
+When attempting to save a configuration change in Netwrix Password Policy Enforcer, the following error occurs: `Cannot write the app configuration settings (access denied)`.
 
 ## Cause
 
@@ -34,15 +34,15 @@ The account currently using the Password Policy Enforcer Management Console does
 
 ## Resolution
 
-Ensure that the account you use to run the Password Policy Enforcer Management Console has Read and Write permissions on the object in Active Directory where the Password Policy Enforcer configuration is stored. A Deny permission on the object — for the account itself or a group it belongs to — blocks access even when an Allow permission is also present, so remove any Deny permissions if they are not intentional.
+Ensure that the account you use to run the Password Policy Enforcer Management Console has Read and Write permissions on the object where Active Directory stores the Password Policy Enforcer configuration. A Deny permission on the object — for the account itself or a group it belongs to — blocks access even when an Allow permission is also present, so remove any Deny permissions if they are not intentional.
 
-1. Open Active Directory Users and Computers.
+1. Open **Active Directory Users and Computers**.
 
 2. Click **View**, then select **Advanced Features**.
 
 ![Advanced view of Active Directory Users and Computers](../0-images/AdvancedViewUsersandComputers.png)
 
-3. Locate the Password Policy Enforcer object for the version you are using under the System directory.
+3. Locate the Password Policy Enforcer object for the version you are using under the **System** directory.
 
 ![PPE configuration object in ADUC System container](../0-images/PPEConfigObjectADUCSytem.png)
 
