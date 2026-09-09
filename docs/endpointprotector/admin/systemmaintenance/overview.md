@@ -27,10 +27,10 @@ of files from the Endpoint Protector Server, click **Delete**.
 
 ## Exported Entities
 
-From this section, you can view the list of exported entities, download or delete them, and view the
-scheduled export in the system and reschedule them accordingly.
+From this section, you can view the list of exported entities. You can also download or delete them,
+view the scheduled export in the system, and reschedule them accordingly.
 
-![View the list of exported entities, download or delete them, and view the scheduled export in the system and reschedule them accordingly](listofentities.webp)
+![List of exported entities with options to download or delete them and to view or reschedule the scheduled export](listofentities.webp)
 
 You can initiate the manual generation of the scheduled export from the Device Control, List of
 Devices / List of Computers / List of Users / List of Groups sections.
@@ -39,15 +39,15 @@ Devices / List of Computers / List of Users / List of Groups sections.
 
 ![Manual generation of the scheduled export from the Device Control](dcscheduleexport.webp)
 
-The scheduled exports can be sent automatically via e-mail to all the Administrators that have the
-**Scheduled Export Alert** setting enabled.
+Endpoint Protector can send the scheduled exports automatically by e-mail to all the Administrators
+that have the **Scheduled Export Alert** setting enabled.
 
-The Scheduled Exports are reoccurring (Daily / Weekly or Monthly), and, as such, will continuously
-take up more and more storage on the Endpoint Protector Server.
+The Scheduled Exports are reoccurring (Daily / Weekly or Monthly), and so they take up progressively
+more storage on the Endpoint Protector Server.
 
-To maintain performance—and since scheduled exports can also be sent automatically via email to
-specific administrators—scheduled exports already generated are automatically deleted from the
-server after 14 days.
+To maintain performance—and because Endpoint Protector can also email scheduled exports to specific
+administrators—the server automatically deletes scheduled exports it has already generated after 14
+days.
 
 The Disable Logging option lets you keep logs on the Endpoint Protector Server or only in the SIEM Server.
 
@@ -56,7 +56,7 @@ The Disable Logging option lets you keep logs on the Endpoint Protector Server o
 The System Snapshots module lets you save all device control rights and settings and restore them later if needed.
 
 :::info
-After installing the Endpoint Protector Server, create a System Snapshot before modifying anything. This way, you can revert back to the original settings if you configure the server incorrectly.
+After installing the Endpoint Protector Server, create a System Snapshot before modifying anything. This way, you can revert to the original settings if you configure the server incorrectly.
 :::
 
 **Step 1 –** Go to **System Configuration** and click **Make Snapshot**.
@@ -77,8 +77,8 @@ then conﬁrm your action.
 
 :::warning
 Audit Log Backup is a legacy feature. From Endpoint Protector 2608, it applies only to logs collected
-before the migration to the new database structure, and it receives no new log data. Logs collected
-from 2608 onward are exported through **Reports and Analysis** > **Export Logs** instead. Base any new
+before the migration to the new database structure, and it receives no new log data. Endpoint Protector
+exports logs collected from 2608 onward through **Reports and Analysis** > **Export Logs** instead. Base any new
 log export process on Export Logs rather than Audit Log Backup.
 :::
 
@@ -86,13 +86,13 @@ To display this section, enable **Show old logs structure** under **System Confi
 **System Settings** > **Log Settings**. Servers that hold no pre-migration logs don't need it.
 
 Like the Log Backup and Content Aware Log Backup sections, this area lets you save and export old logs. You can select the number of logs to export, specify the period, and set the file size.
-Additionally, options are available to view a Backup List or set a Backup Scheduler.
+You can also view a Backup List or set a Backup Scheduler.
 
-Both the Audit Log Backup and Audit Backup Scheduler offer several options like what type of logs to
-backup, how old should the included logs be, to keep or delete them from the server, to include ﬁle
-shadows or not, etc.
+Both the Audit Log Backup and Audit Backup Scheduler offer several options, such as which types of
+logs to back up, how old the included logs must be, whether to keep or delete them from the server,
+and whether to include ﬁle shadows.
 
-![Allows old logs to be saved and exported](auditlogbackup.webp)
+![Audit Log Backup section for saving and exporting old logs](auditlogbackup.webp)
 
 However, exported logs use an improved visual format that makes auditing simpler and report generation easier for executives.
 
@@ -102,7 +102,7 @@ The Backup export CSV ﬁle will differ based on the Endpoint Protector Server v
 - For Endpoint Protector 5.7.0.0, reports, only one ﬁle containing all threats discovered, separated
   by an underscore
 
-When backing up Content Aware logs, the export includes the **Date/Time(Client UTC)** field.
+When you back up Content Aware logs, the export includes the **Date/Time(Client UTC)** field.
 
 :::warning
 The audit log backups feature lets you create copies and/or exports of logs and file shadows, either manually or on a scheduled basis. The initial storage location for export files isn't suitable for long-term storage. Download and store these files in secure locations. In SaaS environments, upgrades may delete export files, so download them regularly and store them securely.

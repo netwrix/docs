@@ -11,15 +11,15 @@ This section provides an overview of the system logs, Device Control logs and sh
 logs and shadows, eDiscovery logs, admin actions, statistics, and other helpful information.
 
 eDiscovery scan results are accessible both from this section and from the dedicated
-**eDiscovery** > **Scan Results and Actions** section. Enforced Encryption details can be viewed in
+**eDiscovery** > **Scan Results and Actions** section. You can view Enforced Encryption details in
 the Enforced Encryption section.
 
-As an additional security measure, this section can be protected by an additional password set by
-the Super Administrator from **System Configuration** > **System Security**.
+As an additional security measure, the Super Administrator can protect this section with an
+additional password from **System Configuration** > **System Security**.
 
 ## Device Control logs
 
-Device Control logs display events related to device connections, file transfers, and policy enforcement. When the scalability architecture is active, Device Control logs are stored in CrateDB and displayed in an updated log view with improved filtering and sorting.
+Device Control logs display events related to device connections, file transfers, and policy enforcement. When the scalability architecture is active, Endpoint Protector stores Device Control logs in CrateDB and displays them in an updated log view with improved filtering and sorting.
 
 The log view supports:
 
@@ -30,9 +30,9 @@ The log view supports:
 
 ## Logs report
 
-From this section, you can view, sort, and export the main logs in the system. There are several
-event types such as User Login, User Logout, AD Import, AD Synchronization, Uninstall Attempt, and others
-included in this section. Additionally, the main Device Control logs can be viewed in this section.
+From this section, you can view, sort, and export the main logs in the system. This section includes
+several event types, such as User Login, User Logout, AD Import, AD Synchronization, Uninstall
+Attempt, and others. You can also view the main Device Control logs in this section.
 
 ![Logs Report Settings](logsreport.webp)
 
@@ -44,7 +44,7 @@ list.
 
 ## File tracing
 
-This section provides an overview of trace files that have been transferred from a protected computer
+This section provides an overview of trace files transferred from a protected computer
 to a portable device or another computer on the network, and vice versa.
 
 Endpoint Protector computes an MD5 hash for most files to which the File Tracing feature applies. This approach helps mitigate threats from changing file content.
@@ -115,19 +115,19 @@ Expand each entry to view detailed log information:
 
 Use the **Show/Hide Columns** dropdown to customize which columns are visible in the report. The **Date/Time(Client UTC)** column is available in this dropdown but is hidden by default.
 
-From the Filters section, select the **Include old logs before 5.7** upgrade option from the filter
-section to include all logs in your searches. If the option isn't selected, the filters apply
+From the Filters section, select the **Include old logs before 5.7** upgrade option to include all
+logs in your searches. If you don't select the option, the filters apply
 only to the new structure of logs. The **Date/Time(Client UTC)** field is also available as a filter option.
 
 ![Content Aware Protection Filters](capfilters.webp)
 
 For macOS users, when the Deep Packet Inspection feature is enabled on the Endpoint Protector agent
-for macOS, certain scenarios might occur where the agent doesn't provide full destination details
-for files being transferred from a network share through monitored applications, such as browsers. In
-such cases, the destination information might not be fully captured.
+for macOS, the agent might not provide full destination details for files transferred from a network
+share through monitored applications, such as browsers. In such cases, the destination information
+might not be complete.
 
-For Linux users, the Endpoint Protector agent doesn't support network share visibility, except when
-files are transferred from a network share through Deep Packet Inspection monitored applications,
+For Linux users, the Endpoint Protector agent doesn't support network share visibility, except for
+files transferred from a network share through Deep Packet Inspection monitored applications,
 such as browsers.
 
 ### Export Content Aware reports
@@ -146,7 +146,7 @@ type, Matched type, Matched items, and Count.
 
 ![Creating Export](createexport.webp)
 
-After the message displays that a new export has been made and is available on the Export List,
+After the message displays that a new export is available on the Export List,
 click **View Export List** to open the list of Reports, where you can download or delete a report.
 
 ![Viewing Export List](viewexportlist.webp)
@@ -157,7 +157,7 @@ click **View Export List** to open the list of Reports, where you can download o
 
 eDiscovery scan results are accessible from the Reports and Analysis section. The eDiscovery log view displays discovered files with their detection details, remediation status, and associated policies.
 
-eDiscovery logs are stored in CrateDB and support the same filtering, sorting, and export capabilities as Device Control and Content Aware logs.
+Endpoint Protector stores eDiscovery logs in CrateDB, and they support the same filtering, sorting, and export capabilities as Device Control and Content Aware logs.
 
 For detailed information on viewing and managing eDiscovery scan results, see [Scan results and actions](/docs/endpointprotector/admin/ed_module/edscanresults.md).
 
@@ -171,17 +171,17 @@ From the Export List you can download completed exports or delete entries you no
 
 The Export List contains two types of export: exports you create manually, and exports Endpoint Protector generates automatically.
 
-Endpoint Protector generates a scheduled export once per day for each module: Device Control, Content Aware Protection, and eDiscovery. These scheduled exports are created during the upgrade to 2608 and run without any configuration.
+Endpoint Protector generates a scheduled export once per day for each module: Device Control, Content Aware Protection, and eDiscovery. Endpoint Protector creates these scheduled exports during the upgrade to 2608, and they run without any configuration.
 
 Identify the two types by the file name prefix:
 
-- `Scheduled_Export_...` — generated automatically by Endpoint Protector. For example, `Scheduled_Export_Device_Control_Logs_2026-09-09 06:00:00`.
-- `Generated_Export ...` — created manually by an administrator. For example, `Generated_Export 2026-09-09_14-22-05`.
+- `Scheduled_Export_...` — Endpoint Protector generates these automatically. For example, `Scheduled_Export_Device_Control_Logs_2026-09-09 06:00:00`.
+- `Generated_Export ...` — an administrator creates these manually. For example, `Generated_Export 2026-09-09_14-22-05`.
 
 Scheduled exports belong to the system rather than to an administrator, so no user name appears against them in the Export List. This is expected and doesn't indicate a configuration problem.
 
 :::note
-The daily schedule for automatic exports can't be viewed, changed, or disabled from the interface.
+You can't view, change, or disable the daily schedule for automatic exports from the interface.
 :::
 
 ### Background processing
@@ -201,17 +201,17 @@ When an export is in progress, a banner appears at the top of the page:
 Wait for the current export to finish before starting a new one. The banner disappears when processing is complete. Large exports might take several minutes depending on the number of records and the load on the server.
 
 :::note
-If a system backup is running at the same time as an export, queued exports are cancelled automatically. Create the export again after the backup completes.
+If a system backup is running at the same time as an export, Endpoint Protector cancels queued exports automatically. Create the export again after the backup completes.
 :::
 
 ### Export retention
 
-Completed exports are deleted automatically after a configurable retention period. The default is 29 days. Both the entry in the Export List and the archive file on disk are removed.
+Endpoint Protector deletes completed exports automatically after a configurable retention period. The default is 29 days. It removes both the entry in the Export List and the archive file on disk.
 
 This cleanup applies to manual and scheduled exports alike, so exports don't accumulate on the server over time.
 
 :::note
-Export retention controls how long the generated export files are kept. It doesn't affect how long the log data itself is stored. To control log data retention, use the **Enable Log Rotate After** setting described in [Log Settings](/docs/endpointprotector/admin/systemconfiguration/systemsettings.md).
+Export retention controls how long Endpoint Protector keeps the generated export files. It doesn't affect how long Endpoint Protector stores the log data itself. To control log data retention, use the **Enable Log Rotate After** setting described in [Log Settings](/docs/endpointprotector/admin/systemconfiguration/systemsettings.md).
 :::
 
 ## Admin actions
@@ -223,7 +223,8 @@ Action column, you can view additional information.
 
 ## SCIM provisioning logs
 
-The logs display detailed information for each SCIM request, including:
+The logs display detailed information for each System for Cross-domain Identity Management (SCIM)
+request, including:
 
 - Request ID
 - Timestamp
@@ -314,8 +315,8 @@ for the active view.
 The page updates to reflect the saved filter settings and column visibility.
 
 :::note
-When you return to a page where you previously used a saved filter, the last used filter and column
-view are loaded automatically.
+When you return to a page where you previously used a saved filter, Endpoint Protector loads the
+last used filter and column view automatically.
 :::
 
 ### Reset filters
@@ -331,6 +332,6 @@ its default (unfiltered) state.
 
 ### Column visibility
 
-Column visibility preferences are saved automatically per view. When you show or hide columns using
-the **Show/Hide Columns** control, the change is retained for your administrator account on that
-specific page.
+Endpoint Protector saves column visibility preferences automatically per view. When you show or hide
+columns using the **Show/Hide Columns** control, the change persists for your administrator account
+on that specific page.
