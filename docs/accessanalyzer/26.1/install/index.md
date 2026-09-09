@@ -13,7 +13,7 @@ An installation takes three steps, each on its own page.
 
 After the first sign-in, the [Guides](../guides/index.md) show you how to scan your first source.
 
-After you're running, see [Upgrade to a new version](upgrade-to-a-new-version.md) for how new releases roll out and when you need to act.
+After you're running, see [Upgrade to a new version](upgrade-to-a-new-version.md) for how new releases roll out and when you need to act, and [Rotate the TLS certificate](rotate-the-tls-certificate.md) to replace the certificate without reinstalling.
 
 ## People You Need
 

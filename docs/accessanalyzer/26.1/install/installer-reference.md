@@ -9,6 +9,8 @@ sidebar_position: 4
 ```bash
 dspm-installer [flags]
 dspm-installer wait-for-apps [flags]
+dspm-installer update-cert [flags]
+dspm-installer rollback-cert [flags]
 dspm-installer --help
 dspm-installer --version
 ```
@@ -156,6 +158,59 @@ It prints `Waiting for applications to become Synced and Healthy…` and exits w
 | `--timeout` | `30m0s` | Maximum time to wait. |
 
 Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a service stays in a failed state for 5 minutes, and 1 for any other error. Ctrl-C exits 1.
+
+## The `update-cert` Command
+
+`update-cert` installs a new TLS certificate on a running Access Analyzer installation, without re-running the full installer. Use it to replace a certificate that's expiring or expired, to replace one pods don't trust, or to swap a self-signed certificate for a CA-issued one.
+
+```bash
+sudo dspm-installer update-cert \
+  --tls-cert /etc/dspm/tls.crt \
+  --tls-key /etc/dspm/tls.key \
+  --ca-bundle /etc/dspm/internal-root-ca.pem
+```
+
+`update-cert` validates the certificate and key pair, confirms the certificate's Subject Alternative Names cover the installed hostname, snapshots the certificate the cluster serves, applies the new certificate and CA bundle, restarts every workload that mounts the CA bundle, and verifies the result before it exits. See [Rotate the TLS certificate](rotate-the-tls-certificate.md) for the full procedure, including how to roll back with `rollback-cert`.
+
+| Flag | Default | Description |
+|---|---|---|
+| `--tls-cert` | (required) | PEM certificate file, full chain with the leaf certificate first. |
+| `--tls-key` | (required) | PEM private key file matching `--tls-cert`. |
+| `--ca-bundle` | none | PEM CA bundle the certificate chains to. Required unless the certificate is self-signed. |
+| `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the certificate must cover. |
+| `--port` | `443` | External HTTPS port used to probe the certificate the cluster serves. |
+| `--timeout` | `30m` | Time budget for the whole rotation. A rollback, if needed, gets its own budget of the same size. |
+| `--dry-run` | off | Validate the certificate and print the plan without changing the cluster. Doesn't need cluster access. |
+| `--no-rollback` | off | Leave the new certificate in place if verification fails, instead of restoring the previous one automatically. |
+| `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
+
+If verification fails, `update-cert` restores the previous certificate from its snapshot and exits with a code that tells you what state the cluster is in:
+
+| Code | Meaning |
+|---|---|
+| 0 | `update-cert` applied and verified the new certificate. |
+| 1 | A check failed before `update-cert` wrote anything. The cluster is unchanged. |
+| 72 | Verification failed; `update-cert` restored and verified the previous certificate. |
+| 73 | Verification failed; `update-cert` restored the previous certificate but couldn't verify it. |
+| 74 | Verification failed and `update-cert` couldn't apply the rollback. |
+| 75 | `update-cert` couldn't reach the ingress, so it verified nothing and rolled nothing back. The new certificate is still in place. |
+
+## The `rollback-cert` Command
+
+`rollback-cert` restores a certificate from a snapshot `update-cert` saved during an earlier rotation. Snapshots live under `/etc/dspm/cert-snapshots/` and are never pruned automatically.
+
+```bash
+sudo dspm-installer rollback-cert --latest
+```
+
+| Flag | Default | Description |
+|---|---|---|
+| `--list` | off | List available snapshots: timestamp, hostname, leaf certificate fingerprint, and expiry. Doesn't need cluster access. |
+| `--latest` | off | Restore the most recent snapshot. |
+| `--snapshot` | none | Restore the snapshot at the given path, such as `/etc/dspm/cert-snapshots/2026-09-08T14-02-11Z`. |
+
+`--list`, `--latest`, and `--snapshot` are mutually exclusive. `rollback-cert` exits `0` when it applies and verifies the restore, `72` when it applies the restore but verification fails, and `73` when it can't apply the restore.
 
 ## Logs
 
