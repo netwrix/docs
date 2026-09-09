@@ -40,7 +40,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--postgres-data-dir` | `POSTGRES_DATA_DIR` | none | Custom directory for the application database's data. |
 | `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |
 | `--log-exports-storage` | `LOG_EXPORTS_STORAGE` | none | Persistent volume claim (PVC) size for log exports, such as `10Gi`. |
-| `--skip-preflight` | `SKIP_PREFLIGHT` | `false` | Skip the preflight checks. Intended for testing only. |
+| `--skip-preflight` | `SKIP_PREFLIGHT` | `false` | Skip the preflight checks. For testing only. |
 | `--version` | — | — | Print the installer version and exit. |
 | `--help` | — | — | Print flag help and exit. |
 
