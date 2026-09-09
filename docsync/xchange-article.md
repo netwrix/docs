@@ -28,6 +28,32 @@ This is the architecture for a system that closes that loop: it derives what a p
 **Status: design proposal.** Nothing here is built yet. The pilot described at the end is deliberately small and has explicit numeric kill criteria, because two earlier attempts at this problem produced zero merged documentation changes.
 :::
 
+## The workflow, at a glance
+
+Before the detail, the whole loop in one picture — no tools or filenames, just what happens and who's involved.
+
+```mermaid
+flowchart TB
+  A(["Product code changes<br/>or a spec is written"]) --> B["System reads the product<br/>and its specs"]
+  B --> C["Compares against<br/>the current docs"]
+  C --> D{"Gap or drift<br/>found?"}
+  D -- "no" --> E(["Nothing happens<br/>— zero cost"])
+  D -- "yes" --> F["Report goes to<br/>a documentation writer"]
+  F --> G{"Writer reviews<br/>the finding"}
+  G -- "not real" --> H(["Recorded so it<br/>never resurfaces"])
+  G -- "confirmed" --> I["Draft is written<br/>and placed"]
+  I --> J["Writers and engineers<br/>review the pull request"]
+  J --> K(["Change is published"])
+  K -.->|"docs are current<br/>again"| C
+
+  classDef stop fill:#374151,stroke:#6b7280,color:#f9fafb
+  classDef human fill:#78350f,stroke:#f59e0b,color:#fffbeb
+  class E,H,K stop
+  class F,G,J human
+```
+
+Everything below is the same loop, expanded one layer at a time: which repository each step runs in, what's deterministic versus AI-driven, and how the pieces stay correct as both the product and the documentation change underneath them.
+
 ## The three capabilities
 
 | # | Capability | Question it answers |
