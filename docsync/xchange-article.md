@@ -175,8 +175,10 @@ flowchart LR
 
   subgraph C3["③ Drafting"]
     direction TB
-    PLACE["docsync-place<br/><i>which file, which versions</i>"]
-    PROSE["doc-help / tech-writer<br/>+ dale + vale"]
+    PLACE["docsync-place<br/><i>which file, which version,<br/>which required sections</i>"]
+    PROSE["doc-help / tech-writer<br/>writes or revises prose"]
+    READ{"readability-check.mjs<br/><i>score above threshold?</i>"}
+    SLOP{"dale --self-check<br/><i>AI-isms found?</i>"}
     SHELL["<b>shell</b>: branch, commit, PR"]
   end
 
@@ -197,9 +199,15 @@ flowchart LR
   COV --> PLACE
   MAN --> PLACE
   PLACE --> PROSE
-  PROSE --> SHELL
+  PROSE --> READ
+  READ -- "below threshold" --> PROSE
+  READ -- "passes" --> SLOP
+  SLOP -- "found, revise" --> PROSE
+  SLOP -- "clean" --> SHELL
   SHELL --> PRD
 ```
+
+Drafting's self-check loop follows the same rule as everything upstream of it: readability and AI-slop are **measured, not judged**. `readability-check.mjs` computes a deterministic score (e.g., Flesch-Kincaid) against a per-doc-area threshold; `dale --self-check` runs the same AI-isms/style ruleset that already gates incoming PRs, kept current by the existing `vale-rule-writer`/`vale-auditor` agents rather than some separate list the model consults ad hoc. Either gate failing sends the draft back to `doc-help`/`tech-writer` for revision — the model revises, but never grades its own work. This doesn't replace human review or the post-PR Vale/Dale CI gate; it means a human's first look has already cleared both bars, so a bad draft costs revision cycles rather than reviewer patience.
 
 An important input here is one we already have. The **AI Readiness Sprint** left every product repo with an engineer-curated `ARCHITECTURE.md` and `GLOSSARY.md` — 1Secure's architecture doc runs 555 lines with a full project reference, and its glossary defines domain terms *with pointers into the code*. Understanding should lean on those curated artifacts, written by the people who own the code, rather than trying to re-derive meaning from a gigabyte of C#. An LLM turned loose on raw source cannot reliably tell a customer-visible feature from an internal service class; an engineer-maintained glossary already made that distinction.
 
