@@ -49,8 +49,12 @@ flowchart TB
     D -- "yes" --> F["Finding opens as<br/>an issue in this repo"]
     F --> G{"Writer and engineer<br/>review the finding"}
     G -- "not real" --> H(["Recorded so it<br/>never resurfaces"])
-    G -- "confirmed" --> I["AI agent drafts<br/>the page"]
-    I --> RED{{"Redaction gate<br/>only customer-language survives —<br/>no code, paths, or ticket IDs"}}
+    G -- "confirmed" --> I["AI agent drafts<br/>the page<br/><i>per structural conventions</i>"]
+    I --> READ{"Readability check<br/>above threshold?"}
+    READ -- "below threshold —<br/>revise" --> I
+    READ -- "passes" --> SLOP{"AI-slop self-check<br/>clean?"}
+    SLOP -- "found —<br/>revise" --> I
+    SLOP -- "clean" --> RED{{"Redaction gate<br/>only customer-language survives —<br/>no code, paths, or ticket IDs"}}
     RED -- "internal detail found —<br/>fails closed" --> FAIL(["Job fails<br/>nothing is posted"])
   end
 
@@ -69,13 +73,15 @@ flowchart TB
   classDef human fill:#78350f,stroke:#f59e0b,color:#fffbeb
   classDef ai fill:#0c4a6e,stroke:#0ea5e9,color:#f0f9ff
   classDef gate fill:#7f1d1d,stroke:#ef4444,color:#fef2f2
+  classDef check fill:#134e4a,stroke:#14b8a6,color:#f0fdfa
   class E,H,K stop
   class G,J human
   class B,C,I ai
   class RED,FAIL gate
+  class READ,SLOP check
 ```
 
-Everything below is the same loop, expanded one layer at a time: which repository each step runs in, what's deterministic versus AI-driven, and how the pieces stay correct as both the product and the documentation change underneath them.
+Drafting isn't a single step: before a human ever sees it, the draft loops through a deterministic readability check and an AI-slop self-check (the existing Dale ruleset) — either one can send it back for revision, and the model never grades its own work. Diagram 2, below, expands this loop in full. Everything below is the same loop, expanded one layer at a time: which repository each step runs in, what's deterministic versus AI-driven, and how the pieces stay correct as both the product and the documentation change underneath them.
 
 ## The three capabilities
 
