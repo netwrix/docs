@@ -1,7 +1,7 @@
 ---
 title: Installer Reference
 description: The dspm-installer flags, environment variables, configuration file keys, exit codes, preflight checks, and log locations.
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 `dspm-installer` takes its settings from four places. A flag wins over an environment variable, an environment variable wins over the configuration file, and the configuration file wins over the built-in default. When the installer runs in a terminal, it prompts for any required value still missing; without a terminal, a missing required value is an error.
@@ -118,6 +118,8 @@ When the file supplies every required value and the installer runs in a terminal
 | 71 | A service stayed in a failed state for 5 minutes. Only `wait-for-apps` returns this code; during an install the same condition exits 70. |
 | 80 | Preflight checks failed (`preflight checks failed`), or you didn't accept warnings (`preflight warnings detected; use --accept-warnings to continue` or `installation stopped at preflight warnings`). |
 
+The `update-cert` and `rollback-cert` commands return their own codes. See [The `update-cert` command](#the-update-cert-command) and [The `rollback-cert` command](#the-rollback-cert-command).
+
 ## Preflight Checks
 
 Eleven checks run before the installer changes anything on the server, in the order the following table lists them. Each ends as PASS, WARN, or FAIL. The installer prints only WARN and FAIL results, as `  [FAIL] <check> <message>` or `  [WARN] <check> <message>`. Any FAIL stops the install; `--accept-warnings` doesn't override it. Any WARN stops it too unless you answer **Yes** to **Continue despite these warnings?** or pass `--accept-warnings`.
@@ -179,7 +181,7 @@ sudo dspm-installer update-cert \
 | `--ca-bundle` | none | PEM CA bundle the certificate chains to. Required unless the certificate is self-signed. |
 | `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the certificate must cover. |
 | `--port` | `443` | External HTTPS port for probing the certificate the cluster serves. |
-| `--timeout` | `30m` | Time budget for the whole rotation. A rollback, if needed, gets its own budget of the same size. |
+| `--timeout` | `30m0s` | Time budget for the whole rotation. A rollback, if needed, gets its own budget of the same size. |
 | `--dry-run` | off | Validate the certificate and print the plan without changing the cluster. Doesn't need cluster access. |
 | `--no-rollback` | off | Leave the new certificate in place if verification fails, instead of restoring the previous one automatically. |
 | `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
@@ -210,7 +212,7 @@ sudo dspm-installer rollback-cert --latest
 | `--latest` | off | Restore the most recent snapshot. |
 | `--snapshot` | none | Restore the snapshot at the given path, such as `/etc/dspm/cert-snapshots/2026-09-08T14-02-11Z`. |
 
-`--list`, `--latest`, and `--snapshot` are mutually exclusive. `rollback-cert` exits `0` when it applies and verifies the restore, `72` when it applies the restore but verification fails, and `73` when it can't apply the restore.
+`--list`, `--latest`, and `--snapshot` are mutually exclusive. `rollback-cert` exits `1` when a check fails before it writes anything, such as combining these flags or naming a snapshot that doesn't exist, `0` when it applies and verifies the restore, `72` when it applies the restore but verification fails, and `73` when it can't apply the restore.
 
 ## Logs
 

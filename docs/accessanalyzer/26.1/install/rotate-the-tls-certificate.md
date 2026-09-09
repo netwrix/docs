@@ -17,7 +17,7 @@ Use `update-cert` when:
 - You want to replace a self-signed demo certificate with a CA-issued one.
 
 :::warning
-Don't re-run the installer to change the certificate. The installer only writes the certificate and key Secret—it doesn't update the CA bundle every pod trusts, and ArgoCD reverts a manual edit on its next sync. `update-cert` updates both and waits for the cluster to pick them up.
+Don't re-run the installer to change the certificate. The installer only writes the Kubernetes Secret that holds the certificate and key (`dspm-tls`)—it doesn't update the CA bundle every pod trusts, and ArgoCD reverts a manual edit on its next sync. `update-cert` updates both and waits for the cluster to pick them up.
 :::
 
 ## Before You Start
@@ -36,9 +36,11 @@ Don't re-run the installer to change the certificate. The installer only writes 
    openssl pkcs12 -in cert.pfx -nocerts -nodes  -out /etc/dspm/tls.key
    ```
 
-2. If a private CA issued the certificate, get the issuing root CA in PEM form too, for example `/etc/dspm/internal-root-ca.pem`. A certificate from a private CA requires this: a full-chain PEM omits the root by convention, so the certificate file alone gives the installer nothing to derive a trust anchor from. Only a self-signed certificate can skip this.
+2. If a private CA issued the certificate, get the issuing root CA in PEM form too, for example `/etc/dspm/internal-root-ca.pem`. A certificate from a private CA requires this: a full-chain PEM omits the root by convention, so the certificate file alone gives `update-cert` nothing to derive a trust anchor from. Only a self-signed certificate can skip this.
 
-3. Confirm the certificate covers the installed hostname. `update-cert` reads the hostname from `/etc/dspm/installer.yaml` and stops if the certificate's Subject Alternative Names don't cover it.
+3. Confirm the certificate covers the installed hostname. `update-cert` reads the hostname from `/etc/dspm/installer.yaml` and stops if the certificate's Subject Alternative Names don't cover it. Pass `--hostname` to override the value in that file, or to supply it when the file is missing.
+
+If a load balancer, reverse proxy, or split-horizon DNS sits in front of the cluster's ingress, read [If the probe fails behind a reverse proxy](#if-the-probe-fails-behind-a-reverse-proxy) before you start.
 
 ## Rotate the Certificate
 
@@ -56,6 +58,10 @@ Don't re-run the installer to change the certificate. The installer only writes 
 
 2. Run the rotation.
 
+   :::note
+   Restarting the workloads that mount the CA bundle briefly interrupts the web application. A rotation typically finishes in a few minutes; `--timeout` allows up to 30 minutes. Run it during a maintenance window.
+   :::
+
    ```bash
    sudo dspm-installer update-cert \
      --tls-cert /etc/dspm/tls.crt \
@@ -65,16 +71,16 @@ Don't re-run the installer to change the certificate. The installer only writes 
 
    `update-cert` validates the certificate and key pair, confirms the certificate covers the hostname, and (with `--ca-bundle`) confirms the certificate chains to the bundle. It then snapshots the certificate the cluster serves to `/etc/dspm/cert-snapshots/<timestamp>/`, applies the new certificate and CA bundle, restarts every workload that mounts the CA bundle, and verifies the ingress serves the new certificate before it exits. On success, it prints `New certificate applied and verified (leaf <sha256>)`.
 
-3. Confirm the certificate from a client machine.
+3. Confirm the certificate from a client machine. Substitute your installed hostname for `<hostname>`.
 
    ```bash
-   openssl s_client -connect dspm.corp.example.com:443 -servername dspm.corp.example.com </dev/null 2>/dev/null \
+   openssl s_client -connect <hostname>:443 -servername <hostname> </dev/null 2>/dev/null \
      | openssl x509 -noout -subject -issuer -dates -fingerprint -sha256
    ```
 
    The fingerprint should match the `leaf` value `update-cert` printed.
 
-If verification fails, `update-cert` automatically restores the previous certificate from its snapshot and exits with a non-zero code. See [Exit codes](installer-reference.md#exit-codes) in the installer reference for what each code means and what to do next.
+If verification fails, `update-cert` restores the previous certificate from its snapshot and exits with a non-zero code—unless you passed `--no-rollback`, or it couldn't reach the ingress at all, in which case the new certificate stays in place. See [The `update-cert` command](installer-reference.md#the-update-cert-command) in the installer reference for what each code means and what to do next.
 
 ## If the Probe Fails Behind a Reverse Proxy
 
@@ -128,7 +134,7 @@ sudo rm -rf /etc/dspm/cert-snapshots/<timestamp>
 ```
 :::
 
-## Checking the Result
+## Check the Result
 
 Confirm the cluster's state directly if an exit code left you unsure what happened:
 
