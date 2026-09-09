@@ -21,7 +21,7 @@ The organizing principle of this design: **deterministic code extracts facts and
 
 | Decision | Choice |
 |---|---|
-| Topology | Distributed — capabilities run in product repos, opening PRs/issues against `netwrix/docs` |
+| Topology | Distributed — capabilities run in product repos; the finding issue opens **there** too. Only the drafted PR crosses into `netwrix/docs` |
 | First output | Read-only gap report. No automated writes until accuracy is proven |
 | State | Regenerable derived data in freely-overwritten generated files; durable human verdicts in frontmatter + an append-only ledger |
 | Sequencing | This system first; IA taxonomy migration after (design makes renames non-breaking anyway) |
@@ -40,7 +40,7 @@ The organizing principle of this design: **deterministic code extracts facts and
 `identity-identitymanager/.github/workflows/claude-pr-review.yml` | Working JIRA adapter: `NIM-\d+` → `POST ${JIRA_URL}/rest/api/3/search`, `renderedFields`. Secrets already provisioned. |
 `netwrix-corp/claude-managed-settings` | Org-wide managed settings incl. `availableModels` and **OTEL telemetry to `otel.claudecode.nwx.ai`**. Cost observability already exists; add CI to it rather than building a second path. |
 AI Readiness Sprint | All four candidate repos carry engineer-curated `ARCHITECTURE.md`, `GLOSSARY.md`, `CONTRIBUTING.md`, `README.md`, `.claude/`. PingCastle has 25 skills tracked in git. **Understanding should lean on these curated artifacts, not raw C#.** |
-In `netwrix/docs` | `.claude/skills/audit-fix/` + `scripts/find-siblings.mjs` (sibling-version classification), `scripts/generate-audit-list.mjs` (page walker + Docusaurus slug reproduction + content-hash duplicate detection), `doc-help`, `tech-writer`, `dale`, `derek`, Vale. `claude-issue-labeler.yml` already has a **label-gated issue→PR path** (`content:fix` → `/content-fix` → `jq --slurp` → `gh pr create`). |
+In `netwrix/docs` | `.claude/skills/audit-fix/` + `scripts/find-siblings.mjs` (sibling-version classification), `scripts/generate-audit-list.mjs` (page walker + Docusaurus slug reproduction + content-hash duplicate detection), `doc-help`, `tech-writer`, `dale`, `derek`, Vale. `claude-issue-labeler.yml` has a **label-gated issue→PR path** (`content:fix` → `/content-fix` → `jq --slurp` → `gh pr create`) — cataloged here as a precedent, but **not reused by Stage 3 drafting**, since it only fires on issues already in `netwrix/docs` and the finding issue now lives in the product repo instead (see Triggers). |
 
 ## Blockers to fix before anything else
 
@@ -51,7 +51,7 @@ In `netwrix/docs` | `.claude/skills/audit-fix/` + `scripts/find-siblings.mjs` (s
 
 ### 1. Repo topology and the public/internal trust boundary
 
-The single most important structural fact: the kit and every manifest stay internal, and everything crossing into the public repo passes a fail-closed redaction gate.
+The single most important structural fact: the kit, every manifest, and the finding itself all stay internal. Only a redacted, drafted page crosses into the public repo, and it passes a fail-closed redaction gate to get there.
 
 ```mermaid
 flowchart TB
@@ -67,6 +67,8 @@ flowchart TB
       ONE["platform-1secure<br/>main · 253 MB"]
       IDM["identity-identitymanager<br/>master · 1.53 GB"]
     end
+    ISSUE["finding opens as<br/>an issue, here<br/><i>full internal evidence</i>"]
+    DRAFT["AI drafts the page<br/><i>after triage confirms it's real</i>"]
     ART["manifest + coverage.json<br/><i>release asset, never public</i>"]
   end
 
@@ -79,24 +81,28 @@ flowchart TB
     LEDG["docs-audit/verdicts/*.jsonl<br/><i>append-only</i>"]
   end
 
-  WRITER(["writer in netwrix/docs"])
+  WRITER(["writer + engineer<br/>triage in the product repo"])
+  PRWRITER(["writer in netwrix/docs"])
 
   KIT -- "pinned @v1" --> PR
   KIT -- "one entry" --> MKT
   MKT --> MS
-  MS -- "plugin, zero setup" --> WRITER
+  MS -- "plugin, zero setup" --> PRWRITER
   PR -- "publishes" --> ART
-  ART -- "gh release download, ~200 KB" --> WRITER
+  ART -- "gh release download, ~200 KB" --> PRWRITER
   IDX -- "gh api, no clone" --> PR
   DOCS --> IDX
-  PR -- "findings" --> RED
-  RED -- "App token<br/>issue / PR" --> DOCS
-  WRITER -- "verdict" --> LEDG
+  PR -- "findings" --> ISSUE
+  ISSUE --> WRITER
+  WRITER -- "confirmed" --> DRAFT
+  DRAFT --> RED
+  RED -- "App token<br/>PR only, no Issues scope" --> DOCS
+  PRWRITER -- "verdict" --> LEDG
 
   classDef internal fill:#1f2937,stroke:#4b5563,color:#f9fafb
   classDef public fill:#064e3b,stroke:#10b981,color:#ecfdf5
   classDef gate fill:#7f1d1d,stroke:#ef4444,color:#fef2f2
-  class KIT,MKT,MS,PC,PPE,ONE,IDM,ART internal
+  class KIT,MKT,MS,PC,PPE,ONE,IDM,ART,ISSUE,DRAFT internal
   class DOCS,IDX,LEDG public
   class RED gate
 ```
@@ -250,23 +256,25 @@ flowchart TB
   DEDUPE -- yes --> STOP4(["exit — idempotent"])
   DEDUPE -- no --> FETCH["fetch docs index + specs<br/><i>deterministic</i>"]
   FETCH --> ALIGN["docsync-align<br/>Sonnet · max-turns 20"]
-  ALIGN --> RED{{"redact.mjs --verify"}}
+  ALIGN --> ISSUE["gh issue create,<br/><b>in this repo</b><br/>label: docsync"]
+  ISSUE --> HUMAN(["writer + engineer<br/>triage"])
+  HUMAN -- "not real" --> CLOSE(["issue closed<br/>recorded, never resurfaces"])
+  HUMAN -- "confirmed" --> DRAFT["docsync-draft:<br/>docsync-place + doc-help/tech-writer"]
+  DRAFT --> RED{{"redact.mjs --verify"}}
   RED -- fail --> FAILJOB(["<b>fail the job</b><br/>never strip silently"])
-  RED -- pass --> ISSUE["gh issue create<br/>label: docsync"]
-  ISSUE --> HUMAN(["writer triages"])
-  HUMAN -- "adds content:fix" --> EXISTING["<b>existing</b> claude-issue-labeler<br/>drafts the PR"]
+  RED -- pass --> PROPEN["gh pr create,<br/><b>in netwrix/docs</b>"]
 
   classDef stop fill:#374151,stroke:#6b7280,color:#f9fafb
   classDef det fill:#0c4a6e,stroke:#0ea5e9,color:#f0f9ff
   classDef mod fill:#78350f,stroke:#f59e0b,color:#fffbeb
   classDef gate fill:#7f1d1d,stroke:#ef4444,color:#fef2f2
-  class STOP1,STOP2,STOP3,STOP4 stop
-  class FETCH,ISSUE det
-  class ALIGN,EXISTING mod
+  class STOP1,STOP2,STOP3,STOP4,CLOSE stop
+  class FETCH,ISSUE,PROPEN det
+  class ALIGN,DRAFT mod
   class RED,FAILJOB gate
 ```
 
-Gates 2 **and** 3 must both fire. A 400-file refactor that renames only private members yields zero hits and costs nothing.
+Gates 2 **and** 3 must both fire. A 400-file refactor that renames only private members yields zero hits and costs nothing. The finding, and its triage, stay in this repo — the redaction gate now guards the one remaining crossing, the drafted page, right before `gh pr create` targets `netwrix/docs`.
 
 ### 6. Rollout, with the gate between each stage
 
@@ -413,12 +421,16 @@ jobs:
 
 ```
 App: netwrix-docsync
-  netwrix/docs           → Contents: write, Pull requests: write, Issues: write
-  netwrix-corp/<products> → Contents: read
+  netwrix/docs             → Contents: write, Pull requests: write
+  netwrix-corp/<products>  → Contents: read, Issues: write
   Org secrets: DOCSYNC_APP_ID, DOCSYNC_APP_PRIVATE_KEY
 ```
 
+Note the scope shift from the original draft: since the finding issue now opens in the product repo rather than `netwrix/docs`, the App's write access to the **public** repo shrinks to Contents + Pull requests only — no `Issues: write` there at all. The App instead gains `Issues: write` on the internal product repos. Net effect: less write capability on the public side, not more.
+
 Mint per job with `actions/create-github-app-token@v2` and `repositories: docs` — never a token valid for both orgs in one job. Interim substitute if App provisioning is slow: a dedicated `DOCSYNC_PAT` org secret (do **not** reuse `KB_OPS_PAT` — don't share a blast radius with the project-board automation).
+
+**Open access question this creates:** writers currently work only in `netwrix/docs`. Triaging a finding that now lives in the product repo means a writer needs read/comment access there (or some other bridge) — that's a new requirement, not something this design already provisions. Resolve before Stage 3.
 
 **Load-bearing detail:** a real token is functionally required, not just convenient. `vale-autofix.yml:301-303` documents that `claude-code-action` overrides git credentials with `GITHUB_TOKEN`, "which doesn't trigger workflows." Incoming docs PRs **must** fire `claude-doc-pr.yml` and `vale-autofix.yml` — that's the entire quality gate. Inherit the mitigation: re-set `origin` with the App token after any Claude step that precedes a push.
 
@@ -436,9 +448,9 @@ Mint per job with `actions/create-github-app-token@v2` and `repositories: docs` 
 
 Writers work in `netwrix/docs`. The manifest is fetched, not derived — product repos publish it as a release asset on a `docsync-latest` prerelease, so `gh release download` pulls ~200 KB in a second with no 1.5 GB clone. The manifest carries its source SHA, so the skill can say *"manifest is 3 days / 41 commits stale"* — the same freshness honesty `doc-code-audit` already practices.
 
-**Merge trigger (Stage 3), output is an issue — not a PR.** The pre-filter is the cost keystone: three gates, all before any model call — (1) path irrelevance drops tests/IaC/lockfiles/`.sln`; (2) surface-map hit against `products/<id>.yml` globs; (3) content screen on `git diff -U0` for doc-relevant token classes only (`public (class|interface|enum)`, `const string`, changed `.resx` `<value>`, new config keys, port/URL literals). Emit `impacted=false` unless gates 2 **and** 3 both fire, and **log why a changeset was filtered out** to `$GITHUB_STEP_SUMMARY` — false negatives are the failure you can't see otherwise. A 400-file private-rename refactor yields zero hits and zero tokens.
+**Merge trigger (Stage 3), output is an issue in the product repo — not a PR, and not an issue in `netwrix/docs`.** The pre-filter is the cost keystone: three gates, all before any model call — (1) path irrelevance drops tests/IaC/lockfiles/`.sln`; (2) surface-map hit against `products/<id>.yml` globs; (3) content screen on `git diff -U0` for doc-relevant token classes only (`public (class|interface|enum)`, `const string`, changed `.resx` `<value>`, new config keys, port/URL literals). Emit `impacted=false` unless gates 2 **and** 3 both fire, and **log why a changeset was filtered out** to `$GITHUB_STEP_SUMMARY` — false negatives are the failure you can't see otherwise. A 400-file private-rename refactor yields zero hits and zero tokens.
 
-Issues, not PRs, for three reasons: the docs repo *already* has a label-gated issue→PR path (`content:fix` → `/content-fix` → `gh pr create`), so a writer labels a docsync issue and existing machinery drafts it — Stage 3 needs no new drafting workflow; issues are cheap to ignore and auto-PRs are not; and product labels already exist for routing.
+Issues, not PRs, for the same reasons as before: they're cheap to ignore and auto-PRs aren't, and product labels already exist for routing. But the issue lands **in the product repo, not `netwrix/docs`** — a locked-in change from the original draft. That's a real evidence-quality win (a private-repo issue can carry full internal detail — file:line citations, ticket links — with no redaction, versus a job summary that expires) but it **costs the original reuse win**: the docs repo's existing `content:fix` → `/content-fix` label path only fires on issues *in* `netwrix/docs`, so it no longer applies here. Stage 3 needs its own drafting step after all — `docsync-draft` (already anticipated in the kit's file layout as `skills/docsync-draft/`), invoked when a writer or engineer labels the *product-repo* issue confirmed. It runs `docsync-place` for placement, then the same `doc-help`/`tech-writer` prose tools, then opens the PR directly in `netwrix/docs` through the redaction gate — see Diagram 5.
 
 **Release gate (Stage 4).** The four pilots use four conventions (`release/release_*`, `Releases/12.0`, `release/7.1` + `v/7.1.1`, and 1Secure has no release branches at all — SaaS, so it gates on `workflow_run` of `deploy-prod-core.yml`), so patterns live in `products/<id>.yml`. The enforceable gate is **the product-repo job exiting non-zero** while blocking gaps stand, surfaced as a required check where the release is cut. Ship the `docs-gate-override` label escape hatch in v1 — a gate with no override gets disabled wholesale the first time it's wrong at 5pm on release day.
 
@@ -496,7 +508,7 @@ Each gated on the prior stage's DoD.
 
 **Stage 2 — Password Policy Enforcer: free edges + multi-version.** `Source/PPEConfUI/Helper/HelpHelper.cs` and a root `HelpLinks.md` contain **compiled `docs.netwrix.com` URLs** (7 files reference them) — the product's own UI declares which doc pages it expects to exist. Every URL that doesn't resolve to a file in `docs/` is a mechanically provable broken edge with zero judgment involved, and it seeds the coverage map for free. PPE is also the first product where multi-version fan-out matters (5 version dirs, 467 files), so `find-siblings.mjs` is reused **unmodified** — feed it the feature's evidence values as its quote array; `quote-not-found` is positive evidence a version genuinely differs and must **not** propagate. Note PPE has no `.github/workflows` at all and no secrets, so it needs the workflow and a read-only ADO PAT.
 
-**Stage 3 — 1Secure: specs, and the merge trigger.** 127 pages, single `current` version (no sibling fan-out), `docs-audit/1secure` already populated, and **50 ADO work-item spec folders readable over plain git** (`docs/<id>-<slug>/{spec,plan,requirements,progress}.md`, with `Acceptance Criteria` and `Out of Scope` sections). `adapters/ado-git.sh` needs zero credentials. This is where drafting turns on — delivered through the **existing** `content:fix` label path, not a new workflow.
+**Stage 3 — 1Secure: specs, and the merge trigger.** 127 pages, single `current` version (no sibling fan-out), `docs-audit/1secure` already populated, and **50 ADO work-item spec folders readable over plain git** (`docs/<id>-<slug>/{spec,plan,requirements,progress}.md`, with `Acceptance Criteria` and `Out of Scope` sections). `adapters/ado-git.sh` needs zero credentials. This is where drafting turns on — through the kit's own `docsync-draft` skill, triggered by a label on the finding issue in `platform-1secure` itself (the finding no longer lives in `netwrix/docs`, so the existing `content:fix` path doesn't apply here — see Triggers).
 
 **Stage 4 — Identity Manager: scale, but talk to its owner first.** 2,082 files, 1.53 GB, three versions, JIRA + ADO. **It already has a competing documentation pipeline**: `docs/product/` is a complete second Docusaurus site with `release-docs.ps1` and `release-config.json` whose `destBasePath` is `C:\Projects\NWXdocs` — someone authors IM docs in the product repo and hand-copies them into a local clone of the docs repo. Pointing a PR-opening bot at IM docs puts it in direct conflict with a person and a process. Reconcile with that pipeline, don't route around it. (It also validates the distributed topology — it already exists there, manually.)
 
@@ -520,15 +532,15 @@ Note this inverts the stated preference order — not a re-litigation, just that
 
 **Never automated without human review:** any merge to `dev` (it reaches production within 24 hours via `sync-dev-to-main.yml`, with no take-back); deleting or moving pages, or **any heading edit** (breaks anchors — the reason both `vale-autofix.yml` prompts hard-forbid heading changes); `sidebars/**`, `_category_.json`, `src/config/products.js`; new version directories; security-relevant content (permissions, ports, credential handling); `docs/kb/**` (excluded entirely — it has its own `kb-pr-open`/`derek` pipeline); and **any claim whose only support is `unverifiable` evidence** — `doc-code-checker`'s "never stretch a weak match into a contradiction" must survive into drafting, where the temptation to fill a gap with a plausible number is far stronger than in an audit.
 
-**Preventing internal leakage into the public repo.** The natural output of code-grounded drafting is `Path/To/File.cs:42` — exactly what `doc-code-checker` is built to emit, fine internally and unacceptable in a public PR. Four layers:
+**Preventing internal leakage into the public repo.** The natural output of code-grounded drafting is `Path/To/File.cs:42` — exactly what `doc-code-checker` is built to emit, fine internally and unacceptable in a public PR. There is now exactly **one** crossing to guard — the finding issue itself never leaves the product repo, so it needs no redaction at all. Four layers, all applied to the drafted page, right before it can become a PR:
 1. Claude writes `/tmp/*.json` only; a shell step publishes. Nothing model-authored reaches `netwrix/docs` unfiltered — and this also means prompt injection from product source or a spec description cannot reach a write credential.
 2. Public output is assembled from a **closed-field template** (product, version, doc area, doc paths, customer-language description, `docsync-run-id`) — an allowlist, not a denylist.
 3. `redact.mjs --verify` **fails the job closed** on any hit for internal repo names, `Netwrix.Overlord.*`, source extensions (`.cs`/`.csproj`/`.resx`/`.ps1`), `dev.azure.com`, `AB#\d+`, `NIM-\d+`, `PLAT-\d+`, internal hostnames. Fail, don't strip — silent stripping trains people to trust an unverified filter.
-4. Internal detail (citations, SHAs, work items) goes to `$GITHUB_STEP_SUMMARY` in the **product** repo, joinable to the public issue by run-id. Set `show_full_output: false` on every docsync step — the action's docs warn it "outputs ALL Claude messages including tool execution results which may contain secrets," and three existing workflows in the public repo set it `true` today, which is worth a separate look.
+4. Internal detail (citations, SHAs, work items) simply stays where it already lives — in the finding issue, in the product repo — rather than in a `$GITHUB_STEP_SUMMARY` that expires (GitHub's default retention is 90 days). Set `show_full_output: false` on every docsync step regardless — the action's docs warn it "outputs ALL Claude messages including tool execution results which may contain secrets," and three existing workflows in the public repo set it `true` today, which is worth a separate look.
 
 **Cost.** Models per role: none for extraction/joins/redaction; Haiku for bulk per-file summarization (`--max-turns 8`, ≤30 files/batch); Sonnet for synthesis, gap classification, drafting; **Opus only for release-blocking judgment** (`--max-turns 10`). Pin the current-generation alias in `products/*.yml`, not inline (`claude-issue-labeler.yml:230` pins `claude-sonnet-4-6` inline — one edit in the kit should re-point all 27). `bin/budget.mjs` enforces `max_runs_per_day` from `products/<id>.yml`, failing closed — cheap insurance against a rebase storm on Identity Manager triggering 40 assessments. Export OTEL to `otel.claudecode.nwx.ai` with `service.name=docsync-ci` so CI spend lands in the dashboard the AI Enablement Group already watches.
 
-**Idempotency.** Stable key `docsync:<product>:<sha12>` in every issue/PR body, checked via `gh issue list --search` **before spending tokens** (inherit the honest caveat from `auto-create-pr-tracking-issues.yml:41` — search indexing has 10-60s latency, so the per-product concurrency group reduces but doesn't eliminate races). Deterministic branch names `docsync/<product>/<sha12>`; a rerun force-updates and edits the existing PR. Release-readiness issues are **updated, never duplicated**, keyed on exact title. Manifests are content-addressed by source SHA — identical SHA short-circuits before any model call.
+**Idempotency.** Stable key `docsync:<product>:<sha12>` in every issue/PR body, checked via `gh issue list --search` **in the product repo, before spending tokens** (inherit the honest caveat from `auto-create-pr-tracking-issues.yml:41` — search indexing has 10-60s latency, so the per-product concurrency group reduces but doesn't eliminate races). Deterministic branch names `docsync/<product>/<sha12>`; a rerun force-updates and edits the existing PR. Release-readiness issues are **updated, never duplicated**, keyed on exact title. Manifests are content-addressed by source SHA — identical SHA short-circuits before any model call.
 
 ## Success metrics
 
@@ -578,3 +590,4 @@ Cost per accepted finding | ≤$5 / ≤$3 / ≤$2 | OTEL. Baseline to beat: the 
 6. **Add `docsync` to `netwrix-corp/claude-managed-settings`** so writers get the plugin via MDM.
 7. **Talk to the Identity Manager docs owner** before Stage 4 — `docs/product/release-docs.ps1` is someone's existing process.
 8. **Set a spend alert** on the CI Anthropic key (or issue a separate key) so automation burn is separable from interactive use.
+9. **Grant writers read/comment access to product-repo issues** (or design another bridge/notification). Introduced by keeping the finding issue in the product repo rather than `netwrix/docs` — today writers work only in the latter, and this design doesn't yet resolve that gap.
