@@ -34,22 +34,24 @@ Before the detail, the whole loop in one picture — no tools or filenames, just
 
 ```mermaid
 flowchart TB
-  A(["Product code changes<br/>or a spec is written"]) --> B["System reads the product<br/>and its specs"]
-  B --> C["Compares against<br/>the current docs"]
+  A(["Product code changes<br/>or a spec is written"]) --> B["AI agent reads the product<br/>and its specs"]
+  B --> C["AI agent compares against<br/>the current docs"]
   C --> D{"Gap or drift<br/>found?"}
   D -- "no" --> E(["Nothing happens<br/>— zero cost"])
   D -- "yes" --> F["Report goes to<br/>a documentation writer"]
   F --> G{"Writer reviews<br/>the finding"}
   G -- "not real" --> H(["Recorded so it<br/>never resurfaces"])
-  G -- "confirmed" --> I["Draft is written<br/>and placed"]
+  G -- "confirmed" --> I["AI agent drafts the page<br/>and opens a pull request"]
   I --> J["Writers and engineers<br/>review the pull request"]
   J --> K(["Change is published"])
   K -.->|"docs are current<br/>again"| C
 
   classDef stop fill:#374151,stroke:#6b7280,color:#f9fafb
   classDef human fill:#78350f,stroke:#f59e0b,color:#fffbeb
+  classDef ai fill:#0c4a6e,stroke:#0ea5e9,color:#f0f9ff
   class E,H,K stop
   class F,G,J human
+  class B,C,I ai
 ```
 
 Everything below is the same loop, expanded one layer at a time: which repository each step runs in, what's deterministic versus AI-driven, and how the pieces stay correct as both the product and the documentation change underneath them.
