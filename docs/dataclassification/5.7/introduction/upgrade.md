@@ -24,10 +24,18 @@ Classification resides. If not, download it from Microsoft website:
 - In the Object Explorer, right-click the database and select **Tasks** > **Back Up**.
 - Wait for the process to complete.
 
-**Step 3 –** Back up the Index files. Netwrix recommends the following:
+**Step 3 –** Stop all NDC services. Netwrix recommends the following:
 
 - On the computer where Netwrix Data Classification is installed, start the Netwrix Data
   Classification Service Viewer tool. Select **Stop** next to each service.
+- If upgrading a Distributed Query Server (DQS) environment, make sure all services on all instances are stopped before upgrading any instance. 
+
+:::warning
+If any services are running while the upgrade occurs, database schema updates may fail to apply correctly. If this occurs, Netwrix recommends contacting Netwrix Support for assistance with remediation.
+:::
+
+**Step 4 –** Back up the Index files. Netwrix recommends the following:
+
 - Locate the folder containing index files (the default location is _C:\Program
   Files\Netwrix\Data Classification\Index_) and back it up.
 

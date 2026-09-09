@@ -4,30 +4,29 @@ description: "Exchange Server (EWS)"
 sidebar_position: 40
 ---
 
-# Exchange Server
+# Exchange Server (EWS)
 
 Use the Exchange Server (EWS) source configuration screen to crawl and classify
-multiple Exchange mailboxes from the same Exchange server using the Exchange Web services (EWS).
+multiple Exchange mailboxes from the same Exchange server using the Exchange Web Services (EWS).
 
 :::warning
 Automatic detection, crawling, and classification of multiple Exchange mailboxes from
-the same Exchange server (and, respectively, the _Exchange Server_ content source configuration) works
+the same Exchange server (and, respectively, the _Exchange Server (EWS)_ content source configuration) works
 only with Exchange Server 2013 or later, due to limitations in the Microsoft APIs. For earlier
-versions, consider using the _Exchange Mailbox_ content source.
+versions, consider using the _Exchange Mailbox (EWS)_ content source.
 :::
 
 You can use Match Rules to include or exclude specific mailboxes.
 
-To configure an Exchange Server (EWS) source:
+To configure an Exchange Server (EWS) source, follow these steps.
 
 **Step 1 –** In Netwrix Data Classification management console, open the **Sources** view and click
 **Add**.
 
-**Step 2 –** Select **Exchange (EWS)** source type and in the properties window specify the necessary
+**Step 2 –** Select the **Exchange Server (EWS)** source type and in the properties window specify the necessary
 settings.
 
-**Step 3 –** Remember to click the "wrench" icon next to **Settings** in the bottom-left corner to
-display all settings.
+**Step 3 –**  To display all settings, click the 'wrench' icon next to Settings in the bottom-left corner.
 
 ## Authentication type: Modern authentication
 
@@ -41,7 +40,7 @@ If you plan to use this authentication type, specify the following:
 
 | Option                 | Description                                                                                                                                                                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Authentication type    | Select **Modern (Exchange Online)**                                                                                                                                                                                                                                                                    |
+| Authentication type    | Select **Modern (O365)**                                                                                                                                                                                                                                                                    |
 | Admin Username         | Specify the administrative account for the required Exchange Online organization. The user must have a mailbox connected to it to crawl Exchange.                                                                                                                                             |
 | Tenant ID              | Enter the **Tenant ID** you obtained at [Step 5: Obtain Tenant ID](/docs/dataclassification/5.7/introduction/introduction/exchange/azureappexchangeonlinemfa.md#step-5-obtain-tenant-id).                                                                                                                                  |
 | Certificate thumbprint | Enter the certificate thumbprint you prepared at [Step 4: Configure Certificates & secrets](/docs/dataclassification/5.7/introduction/introduction/exchange/azureappexchangeonlinemfa.md).                                                                                                                                 |

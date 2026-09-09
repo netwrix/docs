@@ -27,7 +27,8 @@ Complete the following fields:
 
 | Option                  | Description                                                                                                                                                                                                                                                 |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Cloud Environment | Select the Azure instance hosting the Exchange Online server. |
+| SharePoint URL          | The root of the site collections to be added, by clicking the “(Multiple Urls)” link you can add multiple SharePoint Online Site Collections to be crawled against the same credentials.                                                                    |
+| Cloud Environment | Select the Azure instance hosting the SharePoint Online server. |
 | Username                | Enter username in the following formats: DOMAIN\USERNAME and USERNAME@DOMAIN.                                                                                                                                                                               |
 | Password                | Enter your password for SharePoint Online.                                                                                                                                                                                                                   |
 | Match Rules             | Enter the site collections' path for crawling the documents. You must include at least one match rule. Match rules are regular expressions, for example, https:\/\/example.sharepoint.com\/sites\/.                                                         |
