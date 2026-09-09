@@ -40,7 +40,7 @@ The organizing principle of this design: **deterministic code extracts facts and
 `identity-identitymanager/.github/workflows/claude-pr-review.yml` | Working JIRA adapter: `NIM-\d+` → `POST ${JIRA_URL}/rest/api/3/search`, `renderedFields`. Secrets already provisioned. |
 `netwrix-corp/claude-managed-settings` | Org-wide managed settings incl. `availableModels` and **OTEL telemetry to `otel.claudecode.nwx.ai`**. Cost observability already exists; add CI to it rather than building a second path. |
 AI Readiness Sprint | All four candidate repos carry engineer-curated `ARCHITECTURE.md`, `GLOSSARY.md`, `CONTRIBUTING.md`, `README.md`, `.claude/`. PingCastle has 25 skills tracked in git. **Understanding should lean on these curated artifacts, not raw C#.** |
-In `netwrix/docs` | `.claude/skills/audit-fix/` + `scripts/find-siblings.mjs` (sibling-version classification), `scripts/generate-audit-list.mjs` (page walker + Docusaurus slug reproduction + content-hash duplicate detection), `doc-help`, `tech-writer`, `dale`, `derek`, Vale. `claude-issue-labeler.yml` has a **label-gated issue→PR path** (`content:fix` → `/content-fix` → `jq --slurp` → `gh pr create`) — cataloged here as a precedent, but **not reused by Stage 3 drafting**, since it only fires on issues already in `netwrix/docs` and the finding issue now lives in the product repo instead (see Triggers). |
+In `netwrix/docs` | `.claude/skills/audit-fix/` + `scripts/find-siblings.mjs` (sibling-version classification), `scripts/generate-audit-list.mjs` (page walker + Docusaurus slug reproduction + content-hash duplicate detection), `doc-help`, `tech-writer`, `dale`, `derek`, Vale, and the `vale-rule-writer`/`vale-auditor` agents that keep the Dale/Vale rule set — including AI-isms — current and conflict-free. `claude-issue-labeler.yml` has a **label-gated issue→PR path** (`content:fix` → `/content-fix` → `jq --slurp` → `gh pr create`) — cataloged here as a precedent, but **not reused by Stage 3 drafting**, since it only fires on issues already in `netwrix/docs` and the finding issue now lives in the product repo instead (see Triggers). |
 
 ## Blockers to fix before anything else
 
@@ -140,8 +140,10 @@ flowchart LR
 
   subgraph C3["③ Drafting"]
     direction TB
-    PLACE["docsync-place<br/><i>which file, which versions</i>"]
-    PROSE["doc-help / tech-writer<br/>+ dale + vale"]
+    PLACE["docsync-place<br/><i>which file, which version,<br/>which required sections</i>"]
+    PROSE["doc-help / tech-writer<br/>writes or revises prose"]
+    READ{"readability-check.mjs<br/><i>score above threshold?</i>"}
+    SLOP{"dale --self-check<br/><i>AI-isms found?</i>"}
     SHELL["<b>shell</b>: branch, commit, PR"]
   end
 
@@ -162,18 +164,24 @@ flowchart LR
   COV --> PLACE
   MAN --> PLACE
   PLACE --> PROSE
-  PROSE --> SHELL
+  PROSE --> READ
+  READ -- "below threshold" --> PROSE
+  READ -- "passes" --> SLOP
+  SLOP -- "found, revise" --> PROSE
+  SLOP -- "clean" --> SHELL
   SHELL --> PRD
 
   classDef det fill:#0c4a6e,stroke:#0ea5e9,color:#f0f9ff
   classDef mod fill:#78350f,stroke:#f59e0b,color:#fffbeb
   classDef store fill:#312e81,stroke:#6366f1,color:#eef2ff
-  class EXTRACT,ADAPT,DOCIDX,JOIN,SHELL det
+  class EXTRACT,ADAPT,DOCIDX,JOIN,SHELL,READ,SLOP det
   class SYNTH,CLASS,PLACE,PROSE mod
   class MAN,COV store
 ```
 
 Blue = deterministic, zero tokens. Amber = model. Note the model never *finds* a gap unaided — it only classifies candidates the join already produced, and writes prose.
+
+Drafting's self-check loop follows the same rule: readability and AI-slop are **measured, not judged**. `readability-check.mjs` computes a deterministic score (e.g., Flesch-Kincaid) against a per-doc-area threshold; `dale --self-check` runs the same AI-isms/style ruleset that already gates incoming PRs (see "What already exists"), kept current by the existing `vale-rule-writer`/`vale-auditor` agents rather than some separate list the model consults ad hoc. Either gate failing sends the draft back to `doc-help`/`tech-writer` for revision — the model revises, but never grades its own work. This doesn't replace the human review or the post-PR Vale/Dale CI gate (`vale-autofix.yml`, `claude-documentation-reviewer.yml`); it means a human's first look has already cleared both bars, so a bad draft costs revision cycles rather than reviewer patience.
 
 ### 3. The graph: why folder renames can't break it
 
@@ -312,7 +320,7 @@ The line between script and model is the most important choice in this design.
 |---|---|---|
 **1. Understanding** | `bin/collect-surface.mjs` — enumerate projects, config keys from `appsettings*.json`, `.resx` strings, public API surface, installer templates, spec-folder index, git metadata. `adapters/*.sh` — fetch linked ADO/JIRA items | `docsync-understand` skill (Sonnet, `--max-turns 25`) synthesizes the manifest's *narrative* fields only. `docsync-source-reader` subagent (generalized from `doc-code-checker.md`) answers bounded questions |
 **2. Alignment** | `scripts/generate-docs-index.mjs` (**central, in `netwrix/docs`**) — every md path, frontmatter, heading slugs, version dirs. `bin/build-coverage.mjs` — join manifest keys × docs index → matches, orphan features, orphan pages | `docsync-align` skill (Sonnet, `--max-turns 20`, ≤25 candidates/batch) classifies whether an unmatched item is genuinely doc-worthy |
-**3. Drafting** | `bin/impact-filter.mjs` pre-filter; all git/gh operations in shell steps | `docsync-place` (placement) then **existing** `doc-help` / `tech-writer` / `dale` for prose. `docsync-gate` (Opus, `--max-turns 10`) only on the release trigger |
+**3. Drafting** | `bin/impact-filter.mjs` pre-filter; `bin/readability-check.mjs` (deterministic score against a per-doc-area threshold) and `dale --self-check` (same AI-isms/style ruleset as the post-PR gate) loop a draft back for revision until both pass; all git/gh operations in shell steps | `docsync-place` (placement + structural conventions — required sections, heading order) then **existing** `doc-help` / `tech-writer` for prose, revised until it clears both gates. `docsync-gate` (Opus, `--max-turns 10`) only on the release trigger |
 
 **Rejected:** an MCP server in v1 (build the index before the retrieval layer; then adopt `netwrix/Netwrix-MCP` or `mcp-server-Qdrant` rather than writing a third). A cron-driven agent as primary driver (event triggers give you a SHA, which is a free idempotency key). Hooks (can't cross repos, don't run in CI).
 
@@ -450,7 +458,7 @@ Writers work in `netwrix/docs`. The manifest is fetched, not derived — product
 
 **Merge trigger (Stage 3), output is an issue in the product repo — not a PR, and not an issue in `netwrix/docs`.** The pre-filter is the cost keystone: three gates, all before any model call — (1) path irrelevance drops tests/IaC/lockfiles/`.sln`; (2) surface-map hit against `products/<id>.yml` globs; (3) content screen on `git diff -U0` for doc-relevant token classes only (`public (class|interface|enum)`, `const string`, changed `.resx` `<value>`, new config keys, port/URL literals). Emit `impacted=false` unless gates 2 **and** 3 both fire, and **log why a changeset was filtered out** to `$GITHUB_STEP_SUMMARY` — false negatives are the failure you can't see otherwise. A 400-file private-rename refactor yields zero hits and zero tokens.
 
-Issues, not PRs, for the same reasons as before: they're cheap to ignore and auto-PRs aren't, and product labels already exist for routing. But the issue lands **in the product repo, not `netwrix/docs`** — a locked-in change from the original draft. That's a real evidence-quality win (a private-repo issue can carry full internal detail — file:line citations, ticket links — with no redaction, versus a job summary that expires) but it **costs the original reuse win**: the docs repo's existing `content:fix` → `/content-fix` label path only fires on issues *in* `netwrix/docs`, so it no longer applies here. Stage 3 needs its own drafting step after all — `docsync-draft` (already anticipated in the kit's file layout as `skills/docsync-draft/`), invoked when a writer or engineer labels the *product-repo* issue confirmed. It runs `docsync-place` for placement, then the same `doc-help`/`tech-writer` prose tools, then opens the PR directly in `netwrix/docs` through the redaction gate — see Diagram 5.
+Issues, not PRs, for the same reasons as before: they're cheap to ignore and auto-PRs aren't, and product labels already exist for routing. But the issue lands **in the product repo, not `netwrix/docs`** — a locked-in change from the original draft. That's a real evidence-quality win (a private-repo issue can carry full internal detail — file:line citations, ticket links — with no redaction, versus a job summary that expires) but it **costs the original reuse win**: the docs repo's existing `content:fix` → `/content-fix` label path only fires on issues *in* `netwrix/docs`, so it no longer applies here. Stage 3 needs its own drafting step after all — `docsync-draft` (already anticipated in the kit's file layout as `skills/docsync-draft/`), invoked when a writer or engineer labels the *product-repo* issue confirmed. It runs `docsync-place` for placement and structural conventions, then the same `doc-help`/`tech-writer` prose tools — looping the draft through a deterministic readability check and an AI-slop self-check until both pass, see Diagram 2 — then opens the PR directly in `netwrix/docs` through the redaction gate — see Diagram 5.
 
 **Release gate (Stage 4).** The four pilots use four conventions (`release/release_*`, `Releases/12.0`, `release/7.1` + `v/7.1.1`, and 1Secure has no release branches at all — SaaS, so it gates on `workflow_run` of `deploy-prod-core.yml`), so patterns live in `products/<id>.yml`. The enforceable gate is **the product-repo job exiting non-zero** while blocking gaps stand, surfaced as a required check where the release is cut. Ship the `docs-gate-override` label escape hatch in v1 — a gate with no override gets disabled wholesale the first time it's wrong at 5pm on release day.
 
