@@ -1,0 +1,47 @@
+---
+description: >-
+  Steps to configure permissions so the user attempting to run PPE Console can read/write the PPE configuration. 
+keywords:
+  - Netwrix Password Policy Enforcer
+  - Console
+  - Read/Write
+  - Configuration
+products:
+  - passwordpolicyenforcer
+sidebar_label: Cannot write the app configuration settings (access denied)
+tags:
+  - kb
+title: "Cannot write the app configuration settings (access denied)"
+knowledge_article_id: 
+---
+
+# Cannot write the app configuration settings (access denied)
+
+## Symptom
+
+When attempting to save a configuration change in Netwrix Password Policy Enforcer a “Cannot write the app configuration settings (access denied)” error occurs.  
+
+## Cause
+
+The account currently using the Password Policy Enforcer Management Console does not have sufficient rights to edit the object in Active Directory. 
+
+## Resolution
+
+Ensure that the account being used to run the Password Policy Enforcer Management Console has Read and Write permissions on the object in Active Directory where the Password Policy Enforcer configuration is stored. A Deny permission on the object — for the account itself or a group it belongs to — blocks access even when an Allow permission is also present, so remove any Deny permissions if they are not intentional.
+
+1. Open Active Directory Users and Computers
+
+2. Click on View to make sure “Advanced Features” is checked
+
+![Advanced view of Active Directory Users and Computers](../0-images/AdvancedViewUsersandComputers.png)
+
+3. Locate the Password Policy Enforcer object for the version you are using under the System directory
+
+![PPE configuration object in ADUC System container](../0-images/PPEConfigObjectADUCSytem.png)
+
+
+**Note** The version of the object only changes per major version number, it does not change for minor version number or build numbers. 
+
+4. Right click on the Password Policy Enforcer object of your version and click **Properties**, then click the **Security** tab to view all the permissions applied to this object. Grant the account Read and Write permissions, and remove any Deny permissions that are blocking access.
+
+5. Reopen the Password Policy Enforcer Management Console and retry saving the configuration change. The save should now complete without the access denied error.
