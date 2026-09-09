@@ -30,13 +30,9 @@ This is the architecture for a system that closes that loop: it derives what a p
 
 ## The workflow, at a glance
 
-The finding, and the human review of it, stay entirely inside the product's own repository (internal) — a writer and an engineer see and triage it there, not in `netwrix/docs`. The redaction gate no longer guards the finding; it guards the one remaining crossing, once, at draft time: it strips the AI's draft down to customer-language before a pull request can be opened in `netwrix/docs` (public). No internal repo name, file path, or ticket ID ever reaches the public repo, and no pull request is ever opened anywhere else.
+The finding and its human review happen entirely inside the product's own repository. A writer and an engineer triage it there, not in `netwrix/docs`, so writers will need read and comment access to that repo. The redaction gate guards the one remaining crossing: it strips the AI's draft down to customer language before a pull request opens in the public repo. No internal repo name, file path, or ticket ID ever reaches `netwrix/docs`.
 
-:::warning
-Keeping the finding in the product repo is a new access requirement, not something today's design already covers: writers need read/comment access to that repo (or another bridge) to see and triage it. Today writers work only in `netwrix/docs`.
-:::
-
-This traces the automated, merge-triggered path (the Stage 3 rollout target). A writer asking for a report on demand instead does the whole exchange inside `netwrix/docs` — nothing runs in the product repo for that path.
+This diagram traces the automated, merge-triggered path, the Stage 3 rollout target. A writer asking for a report on demand instead does the whole exchange inside `netwrix/docs`, and nothing runs in the product repo for that path.
 
 ```mermaid
 flowchart TB
