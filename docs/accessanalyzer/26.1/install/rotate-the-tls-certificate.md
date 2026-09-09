@@ -36,7 +36,7 @@ Don't re-run the installer to change the certificate. The installer only writes 
    openssl pkcs12 -in cert.pfx -nocerts -nodes  -out /etc/dspm/tls.key
    ```
 
-2. If a private CA issued the certificate, get the issuing root CA in PEM form too, for example `/etc/dspm/internal-root-ca.pem`. This is required for a certificate from a private CA: a full-chain PEM omits the root by convention, so the certificate file alone gives the installer nothing to derive a trust anchor from. Only a self-signed certificate can skip this.
+2. If a private CA issued the certificate, get the issuing root CA in PEM form too, for example `/etc/dspm/internal-root-ca.pem`. A certificate from a private CA requires this: a full-chain PEM omits the root by convention, so the certificate file alone gives the installer nothing to derive a trust anchor from. Only a self-signed certificate can skip this.
 
 3. Confirm the certificate covers the installed hostname. `update-cert` reads the hostname from `/etc/dspm/installer.yaml` and stops if the certificate's Subject Alternative Names don't cover it.
 
@@ -52,7 +52,7 @@ Don't re-run the installer to change the certificate. The installer only writes 
      --dry-run
    ```
 
-   Leave out `--ca-bundle` for a self-signed certificate. The output shows the hostname, the fingerprint of the replacement certificate, where the CA bundle comes from, and, if the cluster is reachable, the fingerprint being served. Fix the certificate or key files if validation fails here—`update-cert` hasn't written anything yet.
+   Leave out `--ca-bundle` for a self-signed certificate. The output shows the hostname, the fingerprint of the replacement certificate, where the CA bundle comes from, and, if the cluster is reachable, the fingerprint the cluster serves. Fix the certificate or key files if validation fails here—`update-cert` hasn't written anything yet.
 
 2. Run the rotation.
 
@@ -153,7 +153,7 @@ Every application should show `Synced` and `Healthy`, and the `platform-service`
 <details>
 <summary>Troubleshooting: recovering when rollback-cert can't restore a snapshot</summary>
 
-If `rollback-cert` itself can't apply a snapshot, the snapshot directory still holds everything needed to recover by hand. Each snapshot contains:
+If `rollback-cert` itself can't apply a snapshot, the snapshot directory still holds everything you need to recover by hand. Each snapshot contains:
 
 | File | Contents |
 |---|---|

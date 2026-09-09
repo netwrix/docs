@@ -178,7 +178,7 @@ sudo dspm-installer update-cert \
 | `--tls-key` | (required) | PEM private key file matching `--tls-cert`. |
 | `--ca-bundle` | none | PEM CA bundle the certificate chains to. Required unless the certificate is self-signed. |
 | `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the certificate must cover. |
-| `--port` | `443` | External HTTPS port used to probe the certificate the cluster serves. |
+| `--port` | `443` | External HTTPS port for probing the certificate the cluster serves. |
 | `--timeout` | `30m` | Time budget for the whole rotation. A rollback, if needed, gets its own budget of the same size. |
 | `--dry-run` | off | Validate the certificate and print the plan without changing the cluster. Doesn't need cluster access. |
 | `--no-rollback` | off | Leave the new certificate in place if verification fails, instead of restoring the previous one automatically. |
@@ -198,7 +198,7 @@ If verification fails, `update-cert` restores the previous certificate from its 
 
 ## The `rollback-cert` Command
 
-`rollback-cert` restores a certificate from a snapshot `update-cert` saved during an earlier rotation. Snapshots live under `/etc/dspm/cert-snapshots/` and are never pruned automatically.
+`rollback-cert` restores a certificate from a snapshot `update-cert` saved during an earlier rotation. Snapshots live under `/etc/dspm/cert-snapshots/`, and Access Analyzer never prunes them automatically.
 
 ```bash
 sudo dspm-installer rollback-cert --latest
