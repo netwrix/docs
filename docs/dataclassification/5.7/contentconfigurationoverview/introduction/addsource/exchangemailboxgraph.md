@@ -7,7 +7,7 @@ sidebar_position: 35
 # Exchange Mailbox (Graph)
 
 Use the **Exchange Mailbox (Graph)** source to crawl and classify content stored in a
-single Exchange mailbox on Exchange Online. Use this source type for Exchange Online mailboxes. For on-premises Exchange mailboxes, use Exchange Mailbox (EWS).
+single Exchange mailbox on Exchange Online. For on-premises Exchange mailboxes, use Exchange Mailbox (EWS).
 
 **Step 1 –** In Netwrix Data Classification management console, open the **Sources** view and click
 **Add**.

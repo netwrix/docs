@@ -28,7 +28,7 @@ Classification resides. If not, download it from Microsoft website:
 
 - On the computer where Netwrix Data Classification is installed, start the Netwrix Data
   Classification Service Viewer tool. Select **Stop** next to each service.
-- If upgrading a Distributed Query Server (DQS) environment, make sure all services on all instances are stopped before upgrading any instance. 
+- If upgrading a Distributed Query Server (DQS) environment, stop all services on all instances before upgrading any instance. 
 
 :::warning
 If any services are running while the upgrade occurs, database schema updates may fail to apply correctly. If this occurs, Netwrix recommends contacting Netwrix Support for assistance with remediation.
@@ -59,8 +59,8 @@ upgrade to version 5.7.
 
 When upgrading an NDC environment which uses the **Distributed Query Server** (DQS) functionality to 5.7.10 or later, 
 upgrade the primary server before the secondary instances. Secondary instances 
-attempt to resynchronize with the primary instance during the upgrade process, which fails if you haven't 
-upgraded the primary instance.
+attempt to resynchronize with the primary instance during the upgrade process, and this resynchronization 
+fails if you haven't upgraded the primary instance.
 
 When upgrading to 5.7.10 or later from an earlier version of 5.7, you should
 run the installer as the NDC service account if possible so that the installer can synchronize the DQS instances automatically. 
