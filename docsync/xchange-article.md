@@ -25,7 +25,7 @@ Netwrix documents 27 products, in one shared documentation site. Documentation d
 This is the architecture for a system that closes that loop. It builds an understanding of what a product actually does, compares that against the existing documentation to find gaps in both directions, and drafts the fix.
 
 :::info
-**Status: design proposal.** Nothing here is built yet. The pilot described at the end is deliberately small and has clear pass/fail criteria, because two earlier attempts at this problem produced zero merged documentation changes.
+**Status: design proposal.** Nothing here is built yet. Rollout starts deliberately small, with clear pass/fail criteria at each stage, because two earlier attempts at this problem produced zero merged documentation changes.
 :::
 
 ## The workflow, at a glance
@@ -305,22 +305,6 @@ flowchart LR
 Most of what this needs already exists somewhere in the organization: a way to distribute a tool to every product team without copy-pasting it into each repo; working connections to the two systems that track work items; usage and cost tracking already in place; and, in every product repo, architecture and glossary notes the engineering team already keeps up to date. The documentation site itself already has editorial review, style checking, and a path from a labeled issue to a drafted fix.
 
 The one genuinely new piece is the toolkit that connects all of this together, plus the snapshot and coverage formats it produces.
-
-## The pilot, and how we'll know it failed
-
-The pilot is a small set of settings pages for one product, checked against that product's own configuration and installer code.
-
-That target was chosen deliberately, after rejecting a more obvious one. The same product has a large rule catalogue that the docs barely mention — that looks like an enormous gap, but it isn't: the product's own report and public website already document the rule catalogue in full, on purpose. Pointing the pilot there would produce a wall of correct-by-design "gaps" on day one, which is exactly the kind of bad first impression that would end this project before it started.
-
-The settings pages, by contrast, make genuinely checkable claims — specific caps, ceilings, and minimums — and the product changes those settings often enough that its own team documents how new ones survive an upgrade. That's exactly the kind of thing that quietly falls out of sync.
-
-:::warning
-**Two approaches run side by side, not one.** An existing internal tool already checks documentation against what's visible in the product's own interface, and it scores very well doing that — while deliberately refusing to look at any source code at all. That's the exact premise this project is testing. So the pilot runs both approaches on the same pages, with the same reviewer, without telling the reviewer which is which. If reading the source code doesn't outperform reading the interface, that's a decisive, cheap answer to get now rather than after months of investment.
-:::
-
-The pilot continues only if the findings are accurate, several are confirmed real, several of those are actually merged, and reviewing them doesn't take long per finding.
-
-That "actually merged" bar is the one both earlier attempts failed on. One built an excellent review tool and merged zero documentation changes; the other was never run at all. In neither case was finding accuracy the problem — the missing piece was a path from a reviewer's decision to a merged change. So this design adds no separate review tool. A reviewer's decision is captured the same way writers already work today, and it's remembered permanently: once something is marked "not real," it never comes back. Resurfacing something a reviewer already dismissed is enough on its own to kill trust in the whole system, regardless of how accurate it otherwise is.
 
 ## Open asks
 
