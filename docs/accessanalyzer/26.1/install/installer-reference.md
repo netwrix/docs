@@ -193,7 +193,7 @@ If verification fails, `update-cert` restores the previous certificate from its 
 |---|---|
 | 0 | `update-cert` applied and verified the new certificate. |
 | 1 | A check failed before `update-cert` wrote anything. The cluster is unchanged. |
-| 72 | Verification failed; `update-cert` restored and verified the previous certificate. |
+| 72 | Verification failed; `update-cert` restored and verified the previous certificate. Also returned when `--no-rollback` was set (nothing restored) or the saved snapshot couldn't be loaded. |
 | 73 | Verification failed; `update-cert` restored the previous certificate but couldn't verify it. |
 | 74 | Verification failed and `update-cert` couldn't apply the rollback. |
 | 75 | `update-cert` couldn't reach the ingress, so it verified nothing and rolled nothing back. The new certificate is still in place. |
@@ -211,6 +211,11 @@ sudo dspm-installer rollback-cert --latest
 | `--list` | `false` | List available snapshots: timestamp, hostname, leaf certificate fingerprint, and expiry. Doesn't need cluster access. |
 | `--latest` | `false` | Restore the most recent snapshot. |
 | `--snapshot` | none | Restore the snapshot at the given path, such as `/etc/dspm/cert-snapshots/2026-09-08T14-02-11Z`. |
+| `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the restored certificate must cover. |
+| `--port` | `443` | External HTTPS port used to verify the restore. |
+| `--timeout` | `30m0s` | Time budget for the restore. |
+| `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
 
 `--list`, `--latest`, and `--snapshot` are mutually exclusive.
 
@@ -218,8 +223,8 @@ sudo dspm-installer rollback-cert --latest
 |---|---|
 | 0 | `rollback-cert` applied and verified the restore. |
 | 1 | A check failed before `rollback-cert` wrote anything, such as combining mutually exclusive flags or naming a snapshot that doesn't exist. |
-| 72 | `rollback-cert` applied the restore, but verification failed. |
-| 73 | `rollback-cert` couldn't apply the restore. |
+| 73 | `rollback-cert` applied the restore, but verification failed. |
+| 74 | `rollback-cert` couldn't apply the restore. |
 
 ## Logs
 
