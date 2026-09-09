@@ -51,7 +51,7 @@ There is no separate detail page for an execution. Everything beyond the row its
 
 **Completed**, **Completed with errors**, **Failed**, **Stopped**, and **Cancelled** are final; an execution in one of those states never changes again. **Paused** isn't final, so a forgotten paused execution sits in the list until something resumes or stops it.
 
-An execution can run for at most 7 days. Access Analyzer also ends a run that has been stuck in **Pending** or **Running** for more than 2 hours: as **Stopped** when you requested a stop, and as **Failed** otherwise.
+Access Analyzer ends a run that has been stuck in **Pending** or **Running** for more than 2 hours: as **Stopped** when you requested a stop, and as **Failed** otherwise.
 
 ## Pause, Resume, or Stop an Execution
 
