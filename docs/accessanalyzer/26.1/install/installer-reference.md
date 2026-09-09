@@ -36,6 +36,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen that appears when the configuration file already supplies every required value. |
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
 | `--log-level` | `LOG_LEVEL` | `info` | Detail written to the log file: `debug`, `info`, `warn`, or `error`. |
+| `--log-path` | `LOG_PATH` | `/var/log/dspm-installer.log` | Path to the installer's log file. If you set this explicitly (flag, environment variable, or configuration file) and the path isn't writable or is a symlink, the installer stops with an error instead of falling back to the terminal. |
 | `--postgres-data-dir` | `POSTGRES_DATA_DIR` | none | Custom directory for the application database's data. |
 | `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |
 | `--log-exports-storage` | `LOG_EXPORTS_STORAGE` | none | Persistent volume claim (PVC) size for log exports, such as `10Gi`. |
@@ -230,5 +231,5 @@ sudo dspm-installer rollback-cert --latest
 
 | File | Contents |
 |---|---|
-| `/var/log/dspm-installer.log` | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail `--log-level` sets. The installer appends to the file on every run, with mode `0640`. If the installer can't write the file, it sends the same output to the terminal's standard error as text. |
+| The `--log-path` file (default `/var/log/dspm-installer.log`) | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail `--log-level` sets. The installer appends to the file on every run, with mode `0640`, and rejects a symlink at that path. At the default path, a write failure is non-fatal and the installer sends the same output to the terminal's standard error as text instead; with `--log-path` set explicitly, the same failure stops the installer with an error. |
 | `/var/log/dspm-preflight.json` | The full result of the most recent preflight run: `timestamp`, `overallStatus`, and a `checks` list with `name`, `status`, and `message` for every check, including the ones that passed. `--dry-run` doesn't write it. |
