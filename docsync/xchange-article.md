@@ -57,9 +57,10 @@ flowchart TB
   subgraph DOCS["netwrix/docs — public"]
     direction TB
     PRQ["Pull request<br/>opened"]
+    LINT["Vale + Dale autofix<br/><i>existing CI, runs today</i>"]
     J["Writers and engineers<br/>review the pull request"]
     K(["Change is published"])
-    PRQ --> J --> K
+    PRQ --> LINT --> J --> K
   end
 
   RED -- "clean" --> PRQ
@@ -74,10 +75,10 @@ flowchart TB
   class G,J human
   class B,C,I ai
   class RED,FAIL gate
-  class READ,SLOP check
+  class READ,SLOP,LINT check
 ```
 
-Before a human sees it, the draft loops through two automated checks: a readability score and an AI-slop check using the existing Dale ruleset. Either check can send the draft back for revision. Diagram 2 expands this loop in full.
+Before a human sees it, the draft loops through two automated checks: a readability score and an AI-slop check using the existing Dale ruleset. Either check can send the draft back for revision. Once the pull request opens, the same style checks run again in `netwrix/docs`: the existing Vale + Dale autofix CI catches whatever the pre-PR checks missed before a human reviews the change. Diagram 2 expands this loop in full.
 
 Everything below is the same loop, expanded one layer at a time: which repository each step runs in, what's deterministic versus AI-driven, and how the pieces stay correct as both the product and the documentation change underneath them.
 
