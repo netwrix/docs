@@ -66,6 +66,10 @@ Setting the `DOCS_PRODUCT` environment variable (matching a product's `id`) scop
 
 Images go in `static/images/<product>/` as `.webp` files, organized by version and section (e.g., `static/images/passwordreset/3.3/administration/`). Reference with absolute paths: `/images/<product>/<version>/<image>.webp`. Some products share images across product boundaries (e.g., passwordreset images under `passwordpolicyenforcer/`).
 
+## Commit Messages
+
+Do not add a `Co-Authored-By: Claude Code` trailer or a "Generated with AI" line to commits in this repository. Commits should show only the human author.
+
 ## Branch Workflow
 
 PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-main` workflow merges `dev` to `main` daily at 8 AM PST if the build passes. Production deploys from `main` to Azure Blob Storage.
