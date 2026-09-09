@@ -109,7 +109,7 @@ When the file supplies every required value and the installer runs in a terminal
 | Code | Meaning |
 |---|---|
 | 0 | Success. |
-| 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or prompts canceled with Esc or Ctrl-C (`installation cancelled`). |
+| 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or you canceled the prompts with Esc or Ctrl-C (`installation cancelled`). |
 | 10 | License key error. The key is expired, suspended, not found, or invalid. |
 | 20 | The release version you requested with `--target-revision` isn't available for this license key. |
 | 50 | The installer couldn't install the platform, or the platform didn't become ready within 5 minutes. |
@@ -193,7 +193,7 @@ If verification fails, `update-cert` restores the previous certificate from its 
 |---|---|
 | 0 | `update-cert` applied and verified the new certificate. |
 | 1 | A check failed before `update-cert` wrote anything. The cluster is unchanged. |
-| 72 | Verification failed; `update-cert` restored and verified the previous certificate. Also returned when `--no-rollback` was set (nothing restored) or the saved snapshot couldn't be loaded. |
+| 72 | Verification failed; `update-cert` restored and verified the previous certificate. `update-cert` also returns 72 when you pass `--no-rollback` (nothing restored) or when it can't load the saved snapshot. |
 | 73 | Verification failed; `update-cert` restored the previous certificate but couldn't verify it. |
 | 74 | Verification failed and `update-cert` couldn't apply the rollback. |
 | 75 | `update-cert` couldn't reach the ingress, so it verified nothing and rolled nothing back. The new certificate is still in place. |
@@ -212,7 +212,7 @@ sudo dspm-installer rollback-cert --latest
 | `--latest` | `false` | Restore the most recent snapshot. |
 | `--snapshot` | none | Restore the snapshot at the given path, such as `/etc/dspm/cert-snapshots/2026-09-08T14-02-11Z`. |
 | `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the restored certificate must cover. |
-| `--port` | `443` | External HTTPS port used to verify the restore. |
+| `--port` | `443` | External HTTPS port for verifying the restore. |
 | `--timeout` | `30m0s` | Time budget for the restore. |
 | `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
 | `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
