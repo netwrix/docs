@@ -101,7 +101,7 @@ const TEN_TWO_PAGE_MAP = {
   // The separate automated/manual/general installation pages were consolidated
   // into the single server-components installer page.
   'administration/installation/automated_installation': 'installation/installationserver',
-  'administration/installation/installation': 'installation/installationserver',
+  'administration/installation': 'installation/installationserver',
   'administration/installation/manual_installation': 'installation/installationserver',
   'administration/installation/disable_windows_rules': 'installation/disable_windows_rules',
   'administration/installation/writeback': 'admin/writeback',
@@ -113,7 +113,7 @@ const TEN_TWO_PAGE_MAP = {
   // that comparison (PPE Web vs. Password Reset) now lives in the Web overview.
   'administration/password_reset': 'web-overview/web_overview',
   'administration/mailer/email_message_options': 'admin/settings',
-  'administration/mailer/mailer': 'admin/settings',
+  'administration/mailer': 'admin/settings',
   'administration/properties/license_generator': 'admin/settings',
   'administration/managementconsole/management_console_views': 'admin/configconsole',
   'administration/managementconsole/management_console': 'admin/configconsole',
@@ -134,7 +134,7 @@ const TEN_TWO_PAGE_MAP = {
   'administration/passwordpolicyclient/customizing_rule_inserts': 'admin/password-policy-client/configuring_the_password_policy_client',
   'administration/passwordpolicyclient/multilingual_messages': 'admin/password-policy-client/configuring_the_password_policy_client',
   'administration/ppe_tool': 'admin/ppe_tool',
-  'administration/properties/properties': 'admin/settings',
+  'administration/properties': 'admin/settings',
   'administration/rules/character_pattern': 'admin/manage-policies/rules/patterns',
   'administration/rules/character_rules': 'admin/manage-policies/rules/character_rules',
   'administration/rules/complexity_rule': 'admin/manage-policies/rules/complexity_rule',
@@ -152,7 +152,7 @@ const TEN_TWO_PAGE_MAP = {
   'administration/rules/repeating_pattern': 'admin/manage-policies/rules/repetition',
   // rules.md shares its filename with its parent folder, so Docusaurus serves
   // it as that folder's category index (trailing slash, no repeated segment).
-  'administration/rules/rules': 'admin/manage-policies/rules/',
+  'administration/rules': 'admin/manage-policies/rules/',
   'administration/rules/similarity_rule': 'admin/manage-policies/rules/similarity_rule',
   // User display name/logon name rules are now options within Similarity.
   'administration/rules/user_display_name_rule': 'admin/manage-policies/rules/similarity_rule',
