@@ -163,9 +163,26 @@ For detailed information on viewing and managing eDiscovery scan results, see [S
 
 ## Export list
 
-The Export List shows all exports you've created, regardless of log type. Access it at any time by clicking **View Export List** in any log report section. The Export List includes exports for Device Control, Content Aware Protection, and eDiscovery logs.
+The Export List shows all exports held on the server, regardless of log type. Access it at any time by clicking **View Export List** in any log report section. The Export List includes exports for Device Control, Content Aware Protection, and eDiscovery logs.
 
-From the Export List you can download completed exports or delete entries you no longer need.
+From the Export List you can download completed exports or delete entries you no longer need. Deleting an entry removes both the record and the archive file from the server.
+
+### Scheduled exports
+
+The Export List contains two types of export: exports you create manually, and exports Endpoint Protector generates automatically.
+
+Endpoint Protector generates a scheduled export once per day for each module: Device Control, Content Aware Protection, and eDiscovery. These scheduled exports are created during the upgrade to 2608 and run without any configuration.
+
+Identify the two types by the file name prefix:
+
+- `Scheduled_Export_...` — generated automatically by Endpoint Protector. For example, `Scheduled_Export_Device_Control_Logs_2026-09-09 06:00:00`.
+- `Generated_Export ...` — created manually by an administrator. For example, `Generated_Export 2026-09-09_14-22-05`.
+
+Scheduled exports belong to the system rather than to an administrator, so no user name appears against them in the Export List. This is expected and doesn't indicate a configuration problem.
+
+:::note
+The daily schedule for automatic exports can't be viewed, changed, or disabled from the interface.
+:::
 
 ### Background processing
 
@@ -189,7 +206,13 @@ If a system backup is running at the same time as an export, queued exports are 
 
 ### Export retention
 
-Completed exports are automatically deleted after seven days.
+Completed exports are deleted automatically after a configurable retention period. The default is 29 days. Both the entry in the Export List and the archive file on disk are removed.
+
+This cleanup applies to manual and scheduled exports alike, so exports don't accumulate on the server over time.
+
+:::note
+Export retention controls how long the generated export files are kept. It doesn't affect how long the log data itself is stored. To control log data retention, use the **Enable Log Rotate After** setting described in [Log Settings](/docs/endpointprotector/admin/systemconfiguration/systemsettings.md).
+:::
 
 ## Admin actions
 

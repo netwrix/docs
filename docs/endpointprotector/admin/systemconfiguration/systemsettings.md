@@ -146,6 +146,22 @@ You can set a number of reported threats between 100 and 1000.
 :::
 
 
+- Enable Log Rotate After – sets how long logs are kept on the server, in months. The default is
+  three months. Log rotation runs every five minutes and deletes Device Control, Content Aware
+  Protection, and eDiscovery logs older than the retention period, together with their associated
+  file shadows. For example, setting this option to 6 keeps six months of logs and removes anything
+  older. Set the value to 0 to disable log rotation.
+
+:::warning
+Disabling log rotation means logs are never removed automatically and the server continues to
+consume storage until you intervene.
+:::
+
+
+- Show old logs structure – displays logs collected before the migration to the 2608 database
+  structure. Enabling this option adds an **Export Audit Logs** tab and makes the legacy Audit Log
+  Backup sections visible. Leave it disabled if the server holds no pre-migration logs.
+
 ![Log Settings](logsettings.png)
 
 ### Log Settings Use Case and Terminology
