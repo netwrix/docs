@@ -36,7 +36,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
           must be allowed to communicate through the Windows Firewall.
         - Local TCP Port 9003 must be opened for inbound connections.
         - Remote TCP Port 9004 must be opened for outbound connections.
-        - The User Activity Core Service is installed on the monitored computers. See the
+        - The User Activity Core Service must be installed on the monitored computers. See the
           [Install for User Activity Core Service](/docs/auditor/10.7/install/useractivitycoreservice.md)
           topic for additional information.
         - .NET 4.8 must be installed.
@@ -54,6 +54,7 @@ See the following topics for additional information:
 
 - [Configure Data Collection Settings](/docs/auditor/10.7/configuration/useractivity/datacollection.md)
 - [Configure Video Recordings Playback Settings](/docs/auditor/10.7/configuration/useractivity/videorecordings.md)
+- [Install for User Activity Core Service](/docs/auditor/10.7/install/useractivitycoreservice.md)
 
 ## User Sessions
 
@@ -85,11 +86,3 @@ Review the following table to discover how the product reflects different "run a
 | Window          | Application Run As: `<account_name>` | Standard user runs an application under credentials of another standard user.                                                       |
 | Elevated Window | Application Run As: `<account_name>` | User runs program through Run As Administrator or Accepts UAC (User Account Control) elevation prompts.                             |
 | Elevated Window | None                                 | Administrator needs to run the program with Run as Administrator enabled. Server Manager is one of the main examples for this case. |
-
-## Install Netwrix Auditor User Activity Core Service
-
-By default, Netwrix Auditor automatically installs the User Activity Core Service on the audited
-computers when you set up auditing. If the installation fails, you must install it manually on each
-of the audited computers. See the
-[Install for User Activity Core Service](/docs/auditor/10.7/install/useractivitycoreservice.md) topic
-for additional information.

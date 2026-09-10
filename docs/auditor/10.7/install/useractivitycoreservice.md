@@ -15,13 +15,14 @@ Before installing the Netwrix Auditor User Activity Core Service manually, ensur
 - The audit settings are configured properly.
 - The Data Processing Account has access to the administrative shares.
 
-To install the Netwrix Auditor User Activity Core Service manually, complete the following steps:
+## Install User Activity Core Service Manually
 
 **Step 1 –** On the computer where Auditor Server resides, navigate to _%ProgramFiles% (x86)\Netwrix
 Auditor\User Activity Video Recording_ and copy the UACoreSvcSetup.msi file to the audited computer.
 
-**NOTE:** This is the default location. However, it may differ because users can move this
-folder.
+:::note
+This is the default location. It may differ because users can move this folder.
+:::
 
 **Step 2 –** Run the installation package.
 
