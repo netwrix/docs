@@ -1,14 +1,16 @@
 ---
 title: Installer Reference
 description: The dspm-installer flags, environment variables, configuration file keys, exit codes, preflight checks, and log locations.
-sidebar_position: 4
+sidebar_position: 6
 ---
 
-`dspm-installer` takes its settings from four places. A flag wins over an environment variable, an environment variable wins over the configuration file, and the configuration file wins over the built-in default. When the installer runs in a terminal, it prompts for any required value still missing; without a terminal, a missing required value is an error.
+`dspm-installer` takes its settings from four places. A flag overrides an environment variable, an environment variable overrides the configuration file, and the configuration file overrides the built-in default. When the installer runs in a terminal, it prompts for any required value still missing; without a terminal, a missing required value is an error.
 
 ```bash
 dspm-installer [flags]
 dspm-installer wait-for-apps [flags]
+dspm-installer update-cert [flags]
+dspm-installer rollback-cert [flags]
 dspm-installer --help
 dspm-installer --version
 ```
@@ -34,10 +36,11 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen that appears when the configuration file already supplies every required value. |
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
 | `--log-level` | `LOG_LEVEL` | `info` | Detail written to the log file: `debug`, `info`, `warn`, or `error`. |
+| `--log-path` | `LOG_PATH` | `/var/log/dspm-installer.log` | Path to the installer's log file. If you set this explicitly (flag, environment variable, or configuration file) and the path isn't writable or is a symlink, the installer stops with an error instead of falling back to the terminal. |
 | `--postgres-data-dir` | `POSTGRES_DATA_DIR` | none | Custom directory for the application database's data. |
 | `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |
 | `--log-exports-storage` | `LOG_EXPORTS_STORAGE` | none | Persistent volume claim (PVC) size for log exports, such as `10Gi`. |
-| `--skip-preflight` | `SKIP_PREFLIGHT` | `false` | Skip the preflight checks. Intended for testing only. |
+| `--skip-preflight` | `SKIP_PREFLIGHT` | `false` | Skip the preflight checks. For testing only. |
 | `--version` | — | — | Print the installer version and exit. |
 | `--help` | — | — | Print flag help and exit. |
 
@@ -107,14 +110,16 @@ When the file supplies every required value and the installer runs in a terminal
 | Code | Meaning |
 |---|---|
 | 0 | Success. |
-| 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or prompts canceled with Esc or Ctrl-C (`installation cancelled`). |
-| 10 | License key error. The key is expired, suspended, not found, or invalid. |
+| 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or you canceled the prompts with Esc or Ctrl-C (`installation cancelled`). |
+| 10 | License key error. The key is expired, suspended, unknown, or invalid. |
 | 20 | The release version you requested with `--target-revision` isn't available for this license key. |
 | 50 | The installer couldn't install the platform, or the platform didn't become ready within 5 minutes. |
 | 60 | The installer couldn't install a platform component. |
 | 70 | The Access Analyzer services didn't all become healthy within 30 minutes, or you pressed Ctrl-C while waiting for them. |
 | 71 | A service stayed in a failed state for 5 minutes. Only `wait-for-apps` returns this code; during an install the same condition exits 70. |
 | 80 | Preflight checks failed (`preflight checks failed`), or you didn't accept warnings (`preflight warnings detected; use --accept-warnings to continue` or `installation stopped at preflight warnings`). |
+
+The `update-cert` and `rollback-cert` commands return their own codes. See [The `update-cert` command](#the-update-cert-command) and [The `rollback-cert` command](#the-rollback-cert-command).
 
 ## Preflight Checks
 
@@ -132,7 +137,7 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 | `kernel-modules` | The kernel has the `br_netfilter` and `overlay` modules loaded or built in. The install loads missing modules itself, so this check warns only when it can't inspect a module, or during a dry run when a module isn't loaded. | WARN | `kernel module issues: <module>: could not check module: <error>` or `kernel module issues: <module>: not loaded (dry run; will not be modprobed)` |
 | `os` | The Linux distribution belongs to a recognized family. | WARN | `unrecognised Linux distribution; installation may not be supported` |
 | `selinux` | SELinux isn't in enforcing mode. | WARN | The message says SELinux is enforcing and asks you to allow the platform's container policy or set SELinux to permissive. |
-| `antivirus` | No known antivirus product is installed or running: `mdatp`, CrowdStrike, ClamAV, Sophos, Carbon Black, or Trend Micro. | WARN | `antivirus software detected: <product> (exclusion hint: <hint>)` |
+| `antivirus` | The server has no known antivirus product installed or running: `mdatp`, CrowdStrike, ClamAV, Sophos, Carbon Black, or Trend Micro. | WARN | `antivirus software detected: <product> (exclusion hint: <hint>)` |
 | `network` | Each of the 18 required hosts resolves in DNS and accepts a connection on port 443 within 5 seconds. | FAIL when a name doesn't resolve; WARN when a connection times out or the host refuses it | `DNS resolution failed for: <hosts>` or `connection failed (timeout/refused) for: <hosts>` |
 | `domain-join` | Whether the server belongs to an Active Directory domain. Informational only. | — | `no AD domain detected`, or a message naming the detected domain |
 | `clock-sync` | A time-sync service (`chronyd`, `ntpd`, or `systemd-timesyncd`) is running. | WARN | `no clock sync daemon detected; Kerberos authentication requires clocks within 5 minutes of the AD domain controller — install chronyd, ntpd, or systemd-timesyncd to eliminate clock-skew risk` |
@@ -157,9 +162,74 @@ It prints `Waiting for applications to become Synced and Healthy…` and exits w
 
 Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a service stays in a failed state for 5 minutes, and 1 for any other error. Ctrl-C exits 1.
 
+## The `update-cert` Command
+
+`update-cert` installs a new TLS certificate on a running Access Analyzer installation, without re-running the full installer. Use it to replace a certificate that's expiring or expired, to replace one that pods don't trust, or to swap a self-signed certificate for a CA-issued one.
+
+```bash
+sudo dspm-installer update-cert \
+  --tls-cert /etc/dspm/tls.crt \
+  --tls-key /etc/dspm/tls.key \
+  --ca-bundle /etc/dspm/internal-root-ca.pem
+```
+
+`update-cert` validates the certificate and key pair, confirms the certificate's Subject Alternative Names cover the installed hostname, snapshots the certificate the cluster serves, applies the new certificate and CA bundle, restarts every workload that mounts the CA bundle, and verifies the result before it exits. See [Rotate the TLS certificate](rotate-the-tls-certificate.md) for the full procedure, including how to roll back with `rollback-cert`.
+
+| Flag | Default | Description |
+|---|---|---|
+| `--tls-cert` | (required) | PEM certificate file, full chain with the leaf certificate first. |
+| `--tls-key` | (required) | PEM private key file matching `--tls-cert`. |
+| `--ca-bundle` | none | PEM CA bundle the certificate chains to. Required unless the certificate is self-signed. |
+| `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the certificate must cover. |
+| `--port` | `443` | External HTTPS port for probing the certificate the cluster serves. |
+| `--timeout` | `30m0s` | Time budget for the whole rotation. A rollback, if needed, gets its own budget of the same size. |
+| `--dry-run` | `false` | Validate the certificate and print the plan without changing the cluster. Doesn't need cluster access. |
+| `--no-rollback` | `false` | Leave the new certificate in place if verification fails, instead of restoring the previous one automatically. |
+| `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
+
+If verification fails, `update-cert` restores the previous certificate from its snapshot—unless you passed `--no-rollback`, or it couldn't reach the ingress at all. It exits with a code that tells you what state the cluster is in:
+
+| Code | Meaning |
+|---|---|
+| 0 | `update-cert` applied and verified the new certificate. |
+| 1 | A check failed before `update-cert` wrote anything. The cluster is unchanged. |
+| 72 | Verification failed; `update-cert` restored and verified the previous certificate. `update-cert` also returns 72 when you pass `--no-rollback` (nothing restored) or when it can't load the saved snapshot. |
+| 73 | Verification failed; `update-cert` restored the previous certificate but couldn't verify it. |
+| 74 | Verification failed and `update-cert` couldn't apply the rollback. |
+| 75 | `update-cert` couldn't reach the ingress, so it verified nothing and rolled nothing back. The new certificate is still in place. |
+
+## The `rollback-cert` Command
+
+`rollback-cert` restores a certificate from a snapshot `update-cert` saved during an earlier rotation. Snapshots live under `/etc/dspm/cert-snapshots/`, and Access Analyzer never prunes them automatically. Snapshots contain private key material. See [Roll back a certificate](rotate-the-tls-certificate.md#roll-back-a-certificate) for how to remove ones you no longer need.
+
+```bash
+sudo dspm-installer rollback-cert --latest
+```
+
+| Flag | Default | Description |
+|---|---|---|
+| `--list` | `false` | List available snapshots: timestamp, hostname, leaf certificate fingerprint, and expiry. Doesn't need cluster access. |
+| `--latest` | `false` | Restore the most recent snapshot. |
+| `--snapshot` | none | Restore the snapshot at the given path, such as `/etc/dspm/cert-snapshots/<timestamp>`. |
+| `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the restored certificate must cover. |
+| `--port` | `443` | External HTTPS port for verifying the restore. |
+| `--timeout` | `30m0s` | Time budget for the restore. |
+| `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
+
+`--list`, `--latest`, and `--snapshot` are mutually exclusive.
+
+| Code | Meaning |
+|---|---|
+| 0 | `rollback-cert` applied and verified the restore. |
+| 1 | A check failed before `rollback-cert` wrote anything, such as combining mutually exclusive flags or naming a snapshot that doesn't exist. |
+| 73 | `rollback-cert` applied the restore, but verification failed. |
+| 74 | `rollback-cert` couldn't apply the restore. |
+
 ## Logs
 
 | File | Contents |
 |---|---|
-| `/var/log/dspm-installer.log` | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail `--log-level` sets. The installer appends to the file on every run, with mode `0640`. If the installer can't write the file, it sends the same output to the terminal's standard error as text. |
+| The `--log-path` file (default `/var/log/dspm-installer.log`) | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail `--log-level` sets. The installer appends to the file on every run, with mode `0640`, and rejects a symlink at that path. At the default path, a write failure is non-fatal and the installer sends the same output to the terminal's standard error as text instead; with `--log-path` set explicitly, the same failure stops the installer with an error. |
 | `/var/log/dspm-preflight.json` | The full result of the most recent preflight run: `timestamp`, `overallStatus`, and a `checks` list with `name`, `status`, and `message` for every check, including the ones that passed. `--dry-run` doesn't write it. |

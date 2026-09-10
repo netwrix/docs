@@ -10,7 +10,15 @@ Run it with `sudo`. The default kubeconfig at `/etc/rancher/k3s/k3s.yaml` is rea
 
 ## Check Whether You Need to Act
 
-Check how you installed the app. The installer's default `--target-revision` is `1.*`, a wildcard. If nobody pinned a specific version at install time, ArgoCD already tracks the newest stable 1.x tag and picks up new releases on its next sync. You don't need any `dspmctl` steps.
+Start by checking which version is running:
+
+```bash
+sudo dspmctl version
+```
+
+Compare the output with the latest release Netwrix has announced. If they match, Access Analyzer is already up to date.
+
+If they don't match, check how you installed the app. The installer's default `--target-revision` is `1.*`, a wildcard. If nobody pinned a specific version at install time, ArgoCD already tracks the newest stable 1.x tag and picks up new releases on its next sync. You don't need any `dspmctl` steps.
 
 If you pinned a specific version at install time, or want to pin one now, follow these steps.
 
@@ -39,6 +47,16 @@ If you pinned a specific version at install time, or want to pin one now, follow
    `enable-auto` only changes the sync policy. It doesn't force a reconcile, and the ArgoCD controller polls roughly every 3 minutes. If you ran only `enable-auto` and nothing changed yet, run `sync`.
 
 ## Checking the Result
+
+Wait one to five minutes for the pods to restart, then check the version again:
+
+```bash
+sudo dspmctl version
+```
+
+The output should show the version you set. Pod restarts take longer on a busy server, so if the version hasn't changed after five minutes, wait another two or three minutes and run the command again.
+
+For a detailed view of the sync, ask ArgoCD directly:
 
 ```bash
 sudo kubectl exec -n argocd -ti deploy/dspmctl -- argocd app get argocd/netwrix
