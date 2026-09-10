@@ -43,14 +43,14 @@ or [How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal
 
 ### Windows
 
-1. Run the following script from PowerShell or Command Prompt:
+1. Run the following script from PowerShell or Command Prompt as an administrator:
 
    `"C:\Program Files\CoSoSys\Endpoint Protector\Resources\epp_collect_dpi_info.bat"`
 
 2. Wait for the script to finish. Some steps, such as listing installed apps and collecting console
    logs, can take a few minutes. Do not interrupt the script.
-3. Collect the generated files from the output folder the script prints at the end of the run, for
-   example `C:\Users\<username>\AppData\Local\Temp\epp_logs`.
+3. Collect the generated files from the output folder the script prints at the end of the run. By
+   default, this is `%TEMP%\epp_logs`.
 
 :::note
 If Tamper Mode is enabled, the script only works on Windows.
@@ -59,11 +59,36 @@ If Tamper Mode is enabled, the script only works on Windows.
 ### macOS
 
 1. Run the following command as root:
-   - With Deep Packet Inspection (DPI) on: `sudo /Applications/EndpointProtectorClient.app/Contents/Resources/epp_collect_dpi_info_mac.sh 1`
-   - With DPI off: `sudo /Applications/EndpointProtectorClient.app/Contents/Resources/epp_collect_dpi_info_mac.sh`
+
+   `sudo /Applications/EndpointProtectorClient.app/Contents/Resources/epp_collect_dpi_info_mac.sh`
+
 2. Enter the password when prompted. The script must run as root.
 3. Wait for the script to finish. Some steps, such as listing installed apps and collecting console
    logs, can take a few minutes. Do not interrupt the script.
-4. Collect the generated files from the output folder the script prints, `/tmp/epp_logs`.
+4. Collect the generated files from the output folder the script prints. By default, this is
+   `/tmp/epp_logs`.
+
+### Advanced Options
+
+Both scripts accept optional parameters to also collect Deep Packet Inspection (DPI) diagnostics
+(network, proxy, and certificate information) and to change the output folder. Both scripts delete
+the destination folder if it already exists and recreate it, then print the final path where they
+save the collected files.
+
+**Windows:**
+
+`epp_collect_dpi_info.bat -dpi --output="C:\epp_logs"`
+
+- `-dpi` (or `/dpi`, `--dpi`) — also collects DPI information (network, WFP, proxy). Without this
+  flag, the script only collects basic logs and configuration.
+- `--output="C:\path"` (or `-output`, `/output`) — sets the destination folder. Defaults to
+  `%TEMP%\epp_logs`.
+
+**macOS:**
+
+`sudo /Applications/EndpointProtectorClient.app/Contents/Resources/epp_collect_dpi_info_mac.sh 1 /tmp/epp_logs`
+
+- First parameter — `1` also collects DPI information (network, proxy, certificates); `0` skips it.
+- Second parameter (optional) — sets the destination folder. Defaults to `/tmp/epp_logs`.
 
 Share the collected files with Netwrix Technical Support for further investigation.
