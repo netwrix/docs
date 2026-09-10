@@ -6,8 +6,13 @@ sidebar_position: 20
 
 # Uploading the Script and Package
 
-To deploy the Endpoint Protector Client, upload the `EndpointProtector.pkg` package along with the
+To deploy the Endpoint Protector Client, upload the `EndpointProtectorClient2608.2.1.3.pkg` package along with the
 `epp_change_ip.sh` script.
+
+:::note
+`EndpointProtectorClient2608.2.1.3.pkg` is an example filename. Always download and deploy the
+latest available EPP Client version.
+:::
 
 :::warning
 To obtain the `epp_change_ip.sh script`, customers should submit a support ticket
@@ -17,14 +22,13 @@ through the [Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my
 
 To upload the script and package, follow these steps:
 
-**Step 1 –** In your Jamf account, from the main navigation bar, click **Computer**, and then from
-the left sidebar menu, select **Management Settings**.
+**Step 1 –** In your Jamf account, from the main navigation bar, click **Settings**, and then select
+**Computer Management**, then **Scripts**.
 
-**Step 2 –** From the Computer Management section, select **Scripts** and then, in the upper right,
-click **+ New**.
+**Step 2 –** From the Scripts section, in the upper right, click **+ New**.
 
 **Step 3 –** On the General section, add a name for the profile, and then select the **Script tab**
-and add the `epp_change_ip.sh` script.
+and paste the content of the `epp_change_ip.sh` script.
 
 **Step 4 –** Add your Server IP to the EPP_SERVER_ADDRESS field.
 
@@ -39,6 +43,6 @@ Protector Client on specific departments or custom ports.
 **Step 5 –** From the Computer Management section, select **Package** and then, in the upper right,
 click **+ New**.
 
-**Step 6 –** On the General tab, add a name and then upload the package `EndpointProtector.pkg`.
+**Step 6 –** On the General tab, add a name and then upload the package `EndpointProtectorClient2608.2.1.3.pkg`.
 
 ![Uploading the new Package](newpackage.webp)

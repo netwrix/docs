@@ -225,7 +225,7 @@ If errors appear instead:
 **Symptom:** Endpoints show as offline; Last Seen timestamps are old.
 
 **Checklist:**
-1. Verify that you have re-enabled client communications on the new server.
+1. Verify that you've reversed whatever mechanism you used to block client connectivity to the new server (firewall rule, routing block, disconnected network cable, and so on).
 2. Confirm the new server is reachable on the expected IP/FQDN from endpoints.
 3. Check that you uploaded the 2608 client package to the server.
 4. Verify the old server is no longer running on the same IP if using same-IP strategy.

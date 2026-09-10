@@ -4,7 +4,7 @@ description: "Netwrix Endpoint Protector — migrating a legacy 5.7.0.0–5.9.4.
 sidebar_position: 12
 ---
 
-<small><em>Document version: 1.0</em></small>
+<small><em>Document version: 1.1</em></small>
 
 ---
 
@@ -344,16 +344,17 @@ On unpatched 2509 and early 2510 environments, IP network settings didn't save u
 
 4. Power on the new VM and access the console at `https://<new-ip-or-fqdn>:443`.
 
-### Temporarily Disabling Client Communications
+### Blocking Client Connectivity to the New Server
 
-Immediately after you provision the new VM and it's reachable, disable client communications before performing any further configuration. This prevents endpoints from discovering and connecting to the new server while you're still preparing it.
+Immediately after you provision the new VM and it's reachable, consider blocking client connectivity to it before performing any further configuration. This prevents endpoints from discovering and connecting to the new server while you're still preparing it.
 
-1. Log in to the new server console.
-2. Navigate to **System Configuration → System Settings**.
-3. Disable client communication.
+How you do this depends on how you host and manage your environment. Options include:
+- Disabling routing to the new server's IP address
+- Disconnecting the physical or virtual network cable until you're ready
+- Blocking the relevant EPP communication port at your perimeter or host-based firewall
 
 :::tip
-Disabling client communications prevents endpoints from registering with an incomplete server configuration. Re-enable only after the full restoration and verification is complete.
+Blocking client connectivity prevents endpoints from registering with an incomplete server configuration. Restore connectivity only after the full restoration and verification is complete.
 :::
 
 ### Activate Trial License on a Newly Deployed Image
@@ -447,13 +448,12 @@ Complete all items in this checklist after you finish the migration.
 
 ![Appliance → Server Information — license](server_info_license.webp)
 
-### Re-Enabling Client Communications
+### Restoring Client Connectivity
 
 After you verify the restore and upload the client packages (see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade)):
 
-1. Navigate to **System Configuration → System Settings**.
-2. Re-enable client communications.
-3. Monitor **Device Control → Computers** — endpoints should begin checking in within their configured communication interval.
+1. Reverse whichever method you used to block client connectivity to the new server (re-enable routing, reconnect the network cable, or remove the firewall rule).
+2. Monitor **Device Control → Computers** — endpoints should begin checking in within their configured communication interval.
 
 ### Endpoint Communication Check
 
