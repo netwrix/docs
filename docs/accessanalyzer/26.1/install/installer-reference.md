@@ -101,7 +101,7 @@ tls-key: /etc/dspm/tls.key
 ca-bundle: /etc/dspm/ca-bundle.pem
 ```
 
-The file holds the license key, so the installer creates it owned by root with mode `0600` inside a `0755` directory. A later run without `sudo` can't read it; the error ends with `re-run with sudo, or remove the file`. If `/etc/dspm/installer.yaml` doesn't exist, the installer also looks for `~/.dspm/installer.yaml`. `--dry-run` never writes the file.
+The file holds the license key, so the installer creates it with root ownership and mode `0600` inside a `0755` directory. A later run without `sudo` can't read it; the error ends with `re-run with sudo, or remove the file`. If `/etc/dspm/installer.yaml` doesn't exist, the installer also looks for `~/.dspm/installer.yaml`. `--dry-run` never writes the file.
 
 When the file supplies every required value and the installer runs in a terminal, it first asks **Show advanced settings?** (the default is **No**), then shows the review screen and asks **Everything look good?** before it starts. Declining the review prints `Config file /etc/dspm/installer.yaml was loaded — edit or delete that file, or override individual values with flags.` Pass `--assume-yes` to skip both questions.
 

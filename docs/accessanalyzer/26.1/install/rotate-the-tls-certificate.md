@@ -17,7 +17,7 @@ Use `update-cert` when:
 - You want to replace a self-signed demo certificate with a CA-issued one.
 
 :::warning
-Don't re-run the installer to change the certificate. The installer writes only the Kubernetes Secret that holds the certificate and key (`dspm-tls`)—it doesn't update the CA bundle every pod trusts, and ArgoCD reverts a hand-edited Secret on its next sync. `update-cert` updates both and waits for the cluster to load them.
+Don't re-run the installer to change the certificate. The installer writes only the Kubernetes Secret (`dspm-tls`) that holds the certificate and key—it doesn't update the CA bundle every pod trusts, and ArgoCD reverts a hand-edited Secret on its next sync. `update-cert` updates both and waits for the cluster to load them.
 :::
 
 ## Before You Start
