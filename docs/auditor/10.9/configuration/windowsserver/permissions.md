@@ -51,8 +51,7 @@ Set\Services\EventLog\Security_.
 Follow the steps to assign permission using the Group Policy Management console;
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
-navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools
-(Windows 2012 R2 and below) > Group Policy Management.
+navigate to Start > Windows Administrative Tools > Group Policy Management.
 
 **Step 2 –** In the left pane, navigate to Forest: `<forest name>` > Domains > `<domain name>` >
 Domain Controllers. Right-click the effective domain controllers policy (by default, it is the
