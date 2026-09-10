@@ -6,6 +6,10 @@ sidebar_position: 20
 
 # Client
 
+The Netwrix Endpoint Protector Client runs natively on Windows, macOS, and Linux, on both x86
+64-bit and ARM64 hardware, enforcing the same data protection policies regardless of operating
+system or CPU architecture.
+
 ## Lightweight, Cross-Platform Design
 
 The Endpoint Protector Client doesn't require OS kernel-level integration. This design reduces the
@@ -58,6 +62,8 @@ active, and policies are configured for a stress test:
 | CPU       | 1 GHz                                                                     | 1 GHz (in general) > 1 GHz (during scanning)                              | 1 GHz (in general) > 1 GHz (during scanning)                              |
 | RAM       | 30 MB                                                                     | 30 MB (in general) > 30 MB (during scanning)                              | 30 MB (in general) > 30 MB (during scanning)                              |
 | Bandwidth | < 1 Kbs (when idle) > 1 Kbs (when sending logs or uploading shadow files) | < 1 Kbs (when idle) > 1 Kbs (when sending logs or uploading shadow files) | < 1 Kbs (when idle) > 1 Kbs (when sending logs or uploading shadow files) |
+
+These CPU figures apply equally to x86 64-bit and ARM64 architectures.
 
 ## Security Exclusions
 

@@ -6,12 +6,13 @@ sidebar_position: 2
 
 # Getting Started
 
-Welcome to Netwrix Endpoint Protector, your solution for securing endpoint data. With features like
-Device Control, Content Aware Protection, eDiscovery, and Enforced Encryption, Endpoint Protector
-safeguards against data breaches originating from a wide range of endpoints, including portable storage devices
-such as USB flash drives, external HDDs, digital cameras, MP3 players, and iPods. These devices connect
-seamlessly to Windows, Mac, or Linux computers, increasing the risk of data theft or
-accidental loss. Ensure compliance and protect sensitive information with Netwrix Endpoint Protector.
+Welcome to Netwrix Endpoint Protector, a data loss prevention (DLP) platform that secures endpoint
+data across Windows, macOS, and Linux. With features like Device Control, Content Aware Protection,
+eDiscovery, and Enforced Encryption, Endpoint Protector safeguards against data breaches
+originating from a wide range of endpoints, including portable storage devices such as USB flash
+drives, external HDDs, digital cameras, MP3 players, and iPods. These devices connect seamlessly to
+Windows, Mac, or Linux computers, increasing the risk of data theft or accidental loss. Ensure
+compliance and protect sensitive information with Netwrix Endpoint Protector.
 
 ## System Requirements
 
@@ -45,6 +46,13 @@ For more information, see [System Configuration](/docs/endpointprotector/admin/s
 
 ## Configuring Device Control
 
+[Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) governs data movement across
+dozens of device categories, including removable storage (USB flash drives, external hard drives,
+and memory cards), mobile devices (smartphones and tablets), imaging devices (digital cameras and
+webcams), connectivity interfaces (Bluetooth, Wi-Fi, Thunderbolt, and FireWire), and peripherals
+such as printers, card readers, and biometric devices. Device Control policies apply consistently
+across Windows, macOS, and Linux endpoints.
+
 - Create Device Control Policies:
 
     - Navigate to Device Control.
@@ -55,6 +63,16 @@ For more information, see [Device Control](/docs/endpointprotector/admin/dc_modu
 
 ## Configuring Content Aware Protection
 
+[Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md) is Endpoint
+Protector's data loss prevention module for data in motion. It inspects file transfers, clipboard
+actions, print jobs, and network communications for sensitive content, combining content-aware
+detection (what the data contains) with context-aware detection (how and where it's being
+transferred) to block or report on policy violations before sensitive data leaves the
+organization. Content Aware Protection and eDiscovery policies also recognize labels from
+third-party document classification tools, including
+[Netwrix Data Classification](/docs/endpointprotector/admin/denylistsallowlists/denylists.md#ndc-classification)
+and [Microsoft Purview Information Protection](/docs/endpointprotector/admin/denylistsallowlists/denylists.md#microsoft-information-protection).
+
 - Create Content Aware Policies:
 
     - Navigate to Content Aware Protection > Content Aware Policies.
@@ -64,6 +82,12 @@ For more information, see [Device Control](/docs/endpointprotector/admin/dc_modu
 For more information, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md).
 
 ## Configuring an eDiscovery Scan
+
+[eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md) is Endpoint Protector's
+data-at-rest scanning module. It scans data stored on Windows, macOS, and Linux endpoints to
+discover, encrypt, or delete sensitive data wherever it resides. In addition to
+administrator-initiated scans, eDiscovery supports user-initiated scans, letting end users start
+their own data-at-rest scans directly from the Endpoint Protector Client.
 
 - Setup eDiscovery Scans:
 
@@ -103,6 +127,11 @@ For more information, see [Offline Temporary Password](/docs/endpointprotector/a
 
 ## Deploying Agents
 
+The Endpoint Protector Client runs natively on Windows, macOS, and Linux distributions, including
+Ubuntu LTS and Red Hat Enterprise Linux (RHEL), with native ARM64 builds available. This lets
+administrators apply and enforce the same data protection policies across mixed-OS environments
+from a single console.
+
 - Deploy Netwrix Endpoint Protector Agents:
 
     - Access System Configuration > Client Software.
@@ -132,6 +161,15 @@ For remediation action details, see
 [eDiscovery Scan Results and Actions](/docs/endpointprotector/admin/ed_module/edmodule.md).
 
 ## Deploying Enforced Encryption
+
+[Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) centralizes management
+of encrypted removable storage. It enforces FIPS 140-3 validated encryption on USB storage
+devices, and administrators can remotely reset a protected device to delete the sensitive data it
+holds. Administrators can also control whether Enforced Encryption launches on computers where the
+Endpoint Protector Client isn't installed, and whether it runs in
+[read-only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode)
+on those unmanaged computers — for example, when a protected device is used outside the
+organization.
 
 - Automatic Deployment:
 

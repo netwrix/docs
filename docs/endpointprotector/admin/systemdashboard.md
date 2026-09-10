@@ -8,7 +8,7 @@ sidebar_position: 20
 
 After the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User Interface from the assigned IP address.
 
-The default Endpoint Protector Appliance IP address is https://192.168.0.201
+Use your assigned Appliance IP address, for example, `https://192.168.0.201`.
 
 :::note
 Always use the IP address with HTTPS (Hypertext Transfer Protocol Secure).
@@ -21,7 +21,7 @@ ticket through the
 
 To configure settings or create administrators, see [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 
-![Page for default login credentials for the root account](login.webp)
+![Page for default login credentials for the root account](serverlogin.webp)
 
 ## Conﬁguration Wizard
 
@@ -52,7 +52,7 @@ important activities logged by Endpoint Protector.
 You will view more speciﬁc dashboards on the Device Control, Content Aware Protection and eDiscovery
 sections.
 
-![View general information as graphics and charts related to the most important activities](general.webp)
+![View general information as graphics and charts related to the most important activities](dashboard.webp)
 
 ## System Status
 

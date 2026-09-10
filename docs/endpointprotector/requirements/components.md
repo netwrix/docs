@@ -7,6 +7,20 @@ sidebar_position: 10
 
 # Main components
 
+Netwrix Endpoint Protector is a client-server data loss prevention (DLP) solution that scales from
+small business environments to large, distributed enterprises. The Endpoint Protector Server
+enforces security policies across the organization, while the Endpoint Protector Client applies
+those policies locally on each Windows, macOS, or Linux computer, whether it runs on x86 64-bit or
+ARM64 hardware. This architecture delivers full
+Device Control alongside Content Aware Protection, eDiscovery, and Enforced Encryption, all
+configurable at a granular level, down to individual users, computers, and groups. Administrators
+can set each policy to log activity without blocking it, block it outright, or block it
+interactively with user remediation, so a single deployment can address a range of business and
+compliance use cases. For large enterprises, the
+[System Departments](/docs/endpointprotector/admin/systemconfiguration/adminandaccess.md#system-departments)
+feature splits the endpoint population into separate administrative divisions, each with its own
+delegated administrators managing only their own devices, computers, and users.
+
 Endpoint Protector's design centers on several physical entities:
 
 - Computers—the Windows, macOS, and Linux workstations that run the Endpoint Protector Client
@@ -17,8 +31,7 @@ The server side of Endpoint Protector has several parts working together:
 
 - **Endpoint Protector Hardware or Virtual Appliance**—contains the operating system, database, and supporting services
 - **MySQL Database**—stores configuration data, agent provisioning settings, information about users and groups, and policy definitions
-- **CrateDB**—a distributed SQL database that stores Device Control, Content Aware Protection, and eDiscovery logs. CrateDB, optimized for time-series log data, provides faster queries and horizontal scalability for environments with high log volumes
-- **Redis**—an in-memory data store that buffers incoming agent logs before Endpoint Protector ingests them into CrateDB
+- **CrateDB**—a distributed SQL database, optimized for time-series data, that stores Device Control, Content Aware Protection, and eDiscovery logs, providing faster queries and horizontal scalability for environments with high log volumes
 - **Web Service**—communicates with the Endpoint Protector Clients and stores the information they send
 - **Endpoint Protector User Interface**—manages the existing devices, computers, users, groups, and their behavior in the system
 
@@ -50,9 +63,9 @@ protection rules and logs activity for auditing purposes.
 The Endpoint Protector server uses a lastest MySQL LTS database that stores configuration data, agent provisioning settings,
 user activity logs, and incident reports. MySQL handles agent registration, policy definitions, entity management, and other provisioning data.
 
-**Relational Database Management System**
+**CrateDB**
 
-Relational Database Management System is a distributed SQL database optimized for time-series log data. Endpoint Protector uses RDBMS to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy RDBMS as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. You can add cluster nodes with minimal downtime and availability impact.
+CrateDB as Relational Database Management System is a distributed SQL database optimized for time-series log data. Endpoint Protector uses RDBMS to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy RDBMS as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. You can add cluster nodes with minimal downtime and availability impact.
 
 **Firewall/gateway device**
 
