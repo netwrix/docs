@@ -18,26 +18,30 @@ be configured:
   video files are stored. By default, all members of the **Netwrix Auditor Client Users** group can
   access this shared folder. Both the group and the folder are created automatically by Netwrix
   Auditor. Ensure to grant sufficient permissions on folder or explicitly add user to the group
-  (regardless his or her role delegated in the product). See the To Add an Account to Netwrix
-  Auditor Client Users Group topic for additional information.
+  (regardless his or her role delegated in the product). See the
+  [To Add an Account to Netwrix Auditor Client Users Group](#to-add-an-account-to-netwrix-auditor-client-users-group)
+  topic for additional information.
 - A dedicated codec must be installed. This codec is installed automatically on the computer where
   Netwrix Auditor is deployed, and on the monitored computers. To install it on a different
   computer, download it from
   [https://www.netwrix.com/download/ScreenPressorNetwrix.zip](https://www.netwrix.com/download/ScreenPressorNetwrix.zip).
 - The Ink and Handwriting Services, Media Foundation, and Desktop Experience Windows features must
   be installed on the computer where Netwrix Auditor Server is deployed. These features allow
-  enabling Windows Media Player and sharing video recordings via DLNA. See the To Enable Windows
-  Features topic for additional information.
+  enabling Windows Media Player and sharing video recordings via DLNA. See the
+  [To Enable Windows Features](#to-enable-windows-features) topic for additional information.
 
 To be able to watch video files captured by Netwrix Auditor via direct links, the following settings
 must be configured:
 
 - Microsoft Internet Explorer 7.0 and above must be installed and ActiveX must be enabled.
-- Internet Explorer security settings must be configured properly. See the To Configure Internet
-  Explorer Security Settings topic for additional information.
-- JavaScript must be enabled. See the To Enable JavaScript topic for additional information.
-- Internet Explorer Enhanced Security Configuration (IE ESC) must be disabled. See the To Disable
-  Internet Explorer Enhanced Security Configuration (IE ESC) topic for additional information.
+- Internet Explorer security settings must be configured properly. See the
+  [To Configure Internet Explorer Security Settings](#to-configure-internet-explorer-security-settings)
+  topic for additional information.
+- JavaScript must be enabled. See the [To Enable JavaScript](#to-enable-javascript) topic for
+  additional information.
+- Internet Explorer Enhanced Security Configuration (IE ESC) must be disabled. See the
+  [To Disable Internet Explorer Enhanced Security Configuration (IE ESC)](#to-disable-internet-explorer-enhanced-security-configuration-ie-esc)
+  topic for additional information.
 
 All Internet Explorer-related settings are relevant only for those who watch videos not in Netwrix
 Auditor console.

@@ -1,10 +1,10 @@
 ---
-title: "Windows Server Registry Keys"
-description: "Windows Server Registry Keys"
+title: "Windows Server Auditing Registry Keys"
+description: "Windows Server Auditing Registry Keys"
 sidebar_position: 110
 ---
 
-# Windows Server Registry Keys
+# Windows Server Auditing Registry Keys
 
 Review the basic registry keys that you may need to configure for monitoring Windows Server with
 Netwrix Auditor. Navigate to Start → Run and type _"regedit"_.

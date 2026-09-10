@@ -16,7 +16,7 @@ for these logs to "_Overwrite events as needed_". This refers to the following e
 - Security
 - Setup
 - System
-- Applications and Services logs > Microsoft>Windows > TaskScheduler > Operational
+- Applications and Services logs > Microsoft > Windows > TaskScheduler > Operational
 - Applications and Services logs > Microsoft > Windows > DNS-Server > Audit (only for DCs running
   Windows Server 2012 R2 and above)
 - Applications and Services logs > AD FS > Admin log (for AD FS servers )
@@ -24,8 +24,10 @@ for these logs to "_Overwrite events as needed_". This refers to the following e
 See the Microsoft article on [recommended event log settings](https://support.microsoft.com/en-us/help/957662/recommended-settings-for-event-log-sizes-in-windows) for more information.
 
 The procedure below provides a possible way to specify the event log settings manually. However, if
-you have multiple target computers, consider configuring these settings via Group Policy as also
-described in this section
+you have multiple target computers, consider configuring these settings via Group Policy as
+described in
+[Configure the Event Log Size Using Group Policy](#configure-the-event-log-size-using-group-policy)
+below
 
 ## Configure the Event Log Size Manually
 

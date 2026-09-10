@@ -10,18 +10,20 @@ To successfully track user activity, ensure that the following settings are conf
 audited computers and on the computer where Netwrix Auditor Server is installed:
 
 - The **Windows Management Instrumentation** and the **Remote Registry** services are running and
-  their **Startup Type** is set to _"Automatic"_. See the Check the Windows Services Status topic
-  for additional information.
+  their **Startup Type** is set to _"Automatic"_. See the
+  [Check the Windows Services Status](#check-the-windows-services-status) topic for additional
+  information.
 - The **File and Printer Sharing** and the **Windows Management Instrumentation** features are
-  allowed to communicate through Windows Firewall. See the Windows Features Communication topic for
-  additional information.
+  allowed to communicate through Windows Firewall. See the
+  [Windows Features Communication](#windows-features-communication) topic for additional
+  information.
 - Local TCP Port 9004 is opened for inbound connections on the computer where Netwrix Auditor Server
-  is installed. This is done automatically on the product installation. See the Open Local TCP Port
-  9004 topic for additional information.
-- Local TCP Port 9003 is opened for inbound connections on the audited computers. See the Open Local
-  TCP Port 9003 topic for additional information.
-- Remote TCP Port 9004 is opened for outbound connections on the audited computers. See the Open
-  Remote TCP Port 9004 topic for additional information.
+  is installed. This is done automatically on the product installation. See the
+  [Open Local TCP Port 9004](#open-local-tcp-port-9004) topic for additional information.
+- Local TCP Port 9003 is opened for inbound connections on the audited computers. See the
+  [Open Local TCP Port 9003](#open-local-tcp-port-9003) topic for additional information.
+- Remote TCP Port 9004 is opened for outbound connections on the audited computers. See the
+  [Open Remote TCP Port 9004](#open-remote-tcp-port-9004) topic for additional information.
 
 ## Check the Windows Services Status
 
