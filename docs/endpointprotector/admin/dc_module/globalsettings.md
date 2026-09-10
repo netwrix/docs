@@ -9,10 +9,9 @@ sidebar_position: 40
 
 From this section, you can apply settings globally to all Endpoint Protector entities.
 
-Any setting that appears in Global Settings offers additional functionality, as these settings can be customized per group, user, or computer. This allows administrators to configure precise, granular policies across the organization using the options available in this tab. As a result, Global Settings may include options also available in other components, such as [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md), [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket.md) or [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md).
+Any setting that appears in Global Settings offers additional functionality, as you can customize these settings per group, user, or computer. This lets administrators configure precise, granular policies across the organization using the options available in this tab. As a result, Global Settings may include options also available in other components, such as [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md), [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket.md) or [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md).
 
-- If there are no settings defined granularly for a computer, and it doesn't belong to a group,
-  these are the settings it will inherit.
+- If a computer has no granular settings and doesn't belong to a group, it inherits these settings.
 - If the computer belongs to a group, then it will inherit that group's settings.
 
 
@@ -32,7 +31,7 @@ the Client's behavior for each specific entity (Global, Groups, and Computers).
 
 
 - Notifier Language – Configure the Endpoint Protector Client to automatically match the OS language
-  of the user for notifications. When set to "Automatic," the client adjusts its language to the
+  of the user for notifications. When you select "Automatic," the client adjusts its language to the
   user's OS language preference without any server interactions, enhancing the user experience and
   reducing confusion.
 
@@ -43,10 +42,10 @@ the Client's behavior for each specific entity (Global, Groups, and Computers).
 > **Step 2 –** In the "Notifier language" section, select either "Automatic" or "Default" based on
 > your preferences.
 >
-> - "Automatic" means the language will be detected automatically from the OS, without server
+> - "Automatic" means the client detects the language automatically from the OS, without server
 >   interaction.
-> - "Default" means the language selected on the server will be applied. If the "Automatic" language
->   was selected on the server, the "Automatic" language will be used.
+> - "Default" means the client applies the language you selected on the server. If you selected
+>   "Automatic" on the server, the client uses the "Automatic" language.
 >
 > **Step 3 –** Save your settings to apply the chosen language selection.
 
@@ -64,39 +63,39 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
   :::
 
   :::note
-  A machine or service reboot is recommended after enabling this setting for it to take effect.
+  Reboot the machine or restart the service after enabling this setting for it to take effect.
   :::
 
 - Policy Refresh Interval (sec) – enter the time interval at which the Client checks with the Server
   and updates with the latest settings, rights, and policies.
 
     :::note
-    Azure Active Directory sync intervals (or Active Directory syncs) may affect the policy refresh cycles if Endpoint Protector is configured to sync entities. Consider
+    Azure Active Directory sync intervals (or Active Directory syncs) may affect the policy refresh cycles if you configure Endpoint Protector to sync entities. Consider
     the sync intervals of your Azure Active Directory or Active Directory sync processes when
     determining an appropriate policy refresh interval.
     :::
 
 - Recovery Folder Retention Period (days) – this setting is specific for Mac and Linux computers. It
   acts as a quarantine folder before a transferred file has been fully inspected for content,
-  avoiding any potential file loss due to blocked transfers. After the specified time interval, the
-  files are permanently deleted.
+  avoiding any potential file loss due to blocked transfers. After the specified time interval,
+  Endpoint Protector permanently deletes the files.
 - Log Size (MB) – enter the largest size of all logs stored on the Client. When the value
   reaches this limit, new logs overwrite the oldest ones. This occurs only when the Client and Server
   don't communicate for an extended period.
 - Shadow Size (MB) – enter the largest size of all file shadows on the Client. When the value
   reaches this limit, new shadows overwrite the oldest ones. This occurs only when the
   Client and Server don't communicate for an extended period.
-- Min File Size for Shadowing (KB) – enter the smallest size of a file at which a File Shadow is
-  created.
-- Max File Size for Shadowing (KB) – enter the largest size of a file at which a File Shadow is
-  created.
+- Min File Size for Shadowing (KB) – enter the smallest file size at which Endpoint Protector creates
+  a File Shadow.
+- Max File Size for Shadowing (KB) – enter the largest file size at which Endpoint Protector creates
+  a File Shadow.
 - Devices Recovery Folder Max Size (MB) – this setting is specific for Mac and Linux computers.
-  Maximum size for the quarantine folder. If the value is reached, new files will overwrite the
+  Maximum size for the quarantine folder. When the folder reaches this limit, new files overwrite the
   oldest ones.
 
 - Total Debug Log Size Limit – set the maximum total disk space for all client debug log files.
-  When this limit is reached, the oldest logs are automatically deleted. Default: 1 GB. Allowed
-  range: 500 MB–8 GB.
+  When the logs reach this limit, the client automatically deletes the oldest ones. Default: 1 GB.
+  Allowed range: 500 MB–8 GB.
 
   :::note
   Choose this value carefully based on the available free space on the workstation.
@@ -107,7 +106,7 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
 
 ![Manage settings that relate directly to the Netwrix Endpoint Protector Client](clentsettings.webp)
 
-- Custom Client Notifications - if enabled, the Client Notifications can be customized.
+- Custom Client Notifications - if enabled, you can customize the Client Notifications.
 - Mandatory OTP Justification - if enabled, the Justification a User has to provide when requesting or
   using an Offline Temporary Password is mandatory.
 - Extend Source Code Detection - if enabled, detection extends to file types such as PDF and Docx. With Monitor Webmail enabled, you can also detect source code in emails using web browsers.
@@ -119,13 +118,13 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
 
 - User edited information - if enabled, the User can edit the user and computer information from
   within the Endpoint Protector Client.
-- Optical Character Recognition - if enabled, JPEG, PNG, GIF, BMP, and TIFF file types can be
-  inspected for content. This option will also change the global MIME Type Allowlists.
+- Optical Character Recognition - if enabled, Endpoint Protector can inspect JPEG, PNG, GIF, BMP,
+  and TIFF file types for content. This option will also change the global MIME Type Allowlists.
 - Disable OCR notifications – if enabled, this will disable all notifications generated by the Optical
   Character Recognition setting.
-- Limit Reporting Content Aware Protection - if enabled, this will allow information discovered
-  after reaching the Threat Threshold or after matching the Content Detection Rule that contains AND
-  operator for a Report Only Content Aware Protection policy, to no longer be logged. This
+- Limit Reporting Content Aware Protection - if enabled, Endpoint Protector no longer logs
+  information discovered after reaching the Threat Threshold or after matching the Content Detection
+  Rule that contains AND operator for a Report Only Content Aware Protection policy. This
   considerably reduces the number of logs, therefore, optimizing the allocated storage space.
 
 ![Manage settings that relate directly to the Netwrix Endpoint Protector Client](clientsettingstwo.webp)
@@ -133,8 +132,8 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
 - Disable Bluetooth File Transfer – if enabled, this setting will block transfers to Bluetooth
   Devices, without considering if they are paired or not to the endpoint. This only applies to
   Windows endpoints.
-- Allow formatting/renaming Removable devices in Trusted Device™ Level 1+ (TD1+) – only available
-  for Windows, enable this setting to allow the user to format or rename a USB device that has TD1-x
+- Allow formatting/renaming Removable devices in Trusted Device™ Level 1+ (TD1+) – available only
+  for Windows. Enable this setting to allow the user to format or rename a USB device that has TD1-x
   access permission.
 
     :::note
@@ -168,7 +167,7 @@ Select from the dropdown list a client mode to define the Endpoint Protector Cli
 
 ![Select from the dropdown list a client mode to define the Endpoint Protector Client behavior.](clientmode.webp)
 
-1. Normal – this is the default and recommended setting to use before being fully aware of what the
+1. Normal – this is the default and recommended setting to use before you are fully aware of what the
    other modes imply. Normal mode doesn't apply to Content Aware Protection; all other client
    modes, except Silent mode, are specific to Device Control.
 
@@ -178,8 +177,8 @@ Select from the dropdown list a client mode to define the Endpoint Protector Cli
     :::
 
 
-2. Transparent – use this mode to block all devices whilst maintaining users unaware of any
-   restrictions or presence of the Endpoint Protector Client. Transparent mode doesn't apply to
+2. Transparent – use this mode to block all devices while keeping users unaware of any
+   restrictions or of the presence of the Endpoint Protector Client. Transparent mode doesn't apply to
    Content Aware Protection; all other client modes, except Silent mode, are specific to Device
    Control.
 
@@ -189,11 +188,11 @@ Select from the dropdown list a client mode to define the Endpoint Protector Cli
     - Not display system tray notifications
     - Block all devices, regardless of authorization, with the following exceptions:
 
-        - Keyboards are blocked either when a third one is connected to the same computer or after
-          48 hours have passed
-        - Wi-Fi connections aren't blocked
+        - Endpoint Protector blocks keyboards either when a third keyboard connects to the same
+          computer or after 48 hours
+        - Endpoint Protector doesn't block Wi-Fi connections
         - Bluetooth devices remain operational
-        - USB modems aren't blocked
+        - Endpoint Protector doesn't block USB modems
 
     - Administrator receives alerts for all activities
 
@@ -202,8 +201,8 @@ Select from the dropdown list a client mode to define the Endpoint Protector Cli
    except Silent mode, are specific to Device Control.
 
     :::note
-    As everything is allowed, there will be no disruptions in the daily activities of the
-    users.
+    As Stealth mode allows everything, users experience no disruptions in their daily
+    activities.
     :::
 
 
@@ -220,8 +219,8 @@ Select from the dropdown list a client mode to define the Endpoint Protector Cli
    Protection; all other client modes, except Silent mode, are specific to Device Control.
 
     :::info
-    It is recommended to use this mode for selected users/groups/computers only,
-    as it will block all devices and generate a high volume of logs.
+    Use this mode for selected users/groups/computers only, as it will block all devices and
+    generate a high volume of logs.
     :::
 
 
@@ -231,11 +230,11 @@ Select from the dropdown list a client mode to define the Endpoint Protector Cli
     - Display system tray notifications
     - Block all devices, regardless of authorization, with the following exceptions:
 
-        - Keyboards are blocked either when a third one is connected to the same computer or after
-          48 hours have passed
-        - Wi-Fi connections aren't blocked
+        - Endpoint Protector blocks keyboards either when a third keyboard connects to the same
+          computer or after 48 hours
+        - Endpoint Protector doesn't block Wi-Fi connections
         - Bluetooth devices remain operational
-        - USB modems aren't blocked
+        - Endpoint Protector doesn't block USB modems
 
     - Enable file shadowing and file tracing to view and monitor all user activity
     - Administrator receives alerts when computers go in and out of Panic Mode
@@ -250,7 +249,7 @@ Select from the dropdown list a client mode to define the Endpoint Protector Cli
     - Not display system tray notifications
     - Apply all set rights and settings as per their configuration
 
-    When Hidden Icon mode is selected, the **Show notifications in Hidden Icon mode** setting becomes available under the Client Mode section. This setting is disabled by default. Enable it to allow client notifications to be displayed while the Endpoint Protector Client icon remains hidden.
+    When Hidden Icon mode is selected, the **Show notifications in Hidden Icon mode** setting becomes available under the Client Mode section. This setting is disabled by default. Enable it to display client notifications while the Endpoint Protector Client icon remains hidden.
 
 6. Silent - this mode is similar to Normal mode, except that pop-up notifications aren't visible to
    the user.
@@ -276,8 +275,9 @@ For more Deep Packet Inspection (DPI) description refer to dedicated chapter: [D
 
 In this section, you can manage the following settings:
 
-- Deep Packet Inspection - if enabled, both network and browser traffic can be inspected for content. This
-  option is required for both the Deep Packet Inspection Allowlists and URL and Domain Denylist
+- Deep Packet Inspection - if enabled, Endpoint Protector can inspect both network and browser
+  traffic for content. This option is required for both the Deep Packet Inspection Allowlists and
+  URL and Domain Denylist
 
 - Use Stealthy DPI Driver – enable this driver to improve interoperability with independent software
   vendors
@@ -289,14 +289,14 @@ In this section, you can manage the following settings:
     See the [Intercept VPN Traffic](#intercept-vpn-traffic) topic.
     :::
 
-- Linux proxy loopback address –  aims to facilitate seamless integration with custom VPN and proxy solutions, particularly those like Cisco ANYConnect. When activated, you can specify a custom loopback address, tipically within the 127.0.0.0/8 range. This features is applicable for Linux Clients with version 2509.x.x.x or later
+- Linux proxy loopback address – supports integration with custom VPN and proxy solutions, particularly those like Cisco ANYConnect. When you enable this setting, you can specify a custom loopback address, typically within the 127.0.0.0/8 range. This feature applies to Linux Clients with version 2509.x.x.x or later
 
-- Enable Http/2 - this feature is designed to enhance network protocol management and allows administrators to enable support for HTTP/2 within DPI protocols. If negotiation fails, the protocol will revert to HTTP. It aims to provide greater flexibility and control over HTTP/2 protocol usage.
+- Enable Http/2 - lets administrators enable support for HTTP/2 within DPI protocols, giving greater flexibility and control over HTTP/2 protocol usage. If negotiation fails, the protocol reverts to HTTP.
 
 - Endpoint Protector Behavior with Network Extension Off – select a behavior type from the available
   entries
 - Peer Certificate Validation – enable this setting to turn on the Endpoint Protector certificate
-  validation of the websites that are accessed by the user when DPI is active
+  validation of the websites that the user accesses when DPI is active
 
     - Ignore Expiration Date - when checked, Endpoint Protector ignores expired certificates and permits traffic.
     - Ignore Trust - when checked, Endpoint Protector doesn't validate certificates against the Root Certificate.
@@ -304,15 +304,15 @@ In this section, you can manage the following settings:
 
     :::warning
     Disabling setting 'Peer Certificate Validation' will not impact Endpoint Protector
-    functionality. It should only be disabled when an alternative network traffic inspection product,
+    functionality. Disable it only when an alternative network traffic inspection product,
     such as a Secure Web Gateway Solution, is validating website certificates.
     :::
 
 
-- Display Dialog Boxes for DPI Dropped Connections - enable this setting to display Dialog windows
-  on endpoint machines, containing more details.
-- Disable DPI Dropped Connections Notifications - check this setting to suppress notifications shown
-  by the Notification Center nearby the System tray.
+- Display Dialog Boxes for DPI Dropped Connections - enable this setting to display dialog windows
+  containing more details on endpoint machines.
+- Disable DPI Dropped Connections Notifications - check this setting to suppress notifications that
+  the Notification Center shows near the System tray.
 - Block Unsecured Connection - if enabled, blocks unsecured HTTP access and restricts user
   access.
 
@@ -329,15 +329,15 @@ In this section, you can manage the following settings:
 
     1. Bypass DPI Certificate Rejection by Third-Party Applications
 
-        - Enable this setting, if SSL errors are encountered from the source applications, such as
+        - Enable this setting if you encounter SSL errors from the source applications, such as
           web browsers, like:
 
             > SSL_R_TLSV1_ALERT_UNKNOWN_CA
             >
             > SSL_R_SSLV3_ALERT_CERTIFICATE_UNKNOWN
 
-            - This signifies that the source application failed to validate the server certificate,
-              which was issued by Endpoint Protector.
+            - This signifies that the source application failed to validate the server certificate
+              that Endpoint Protector issued.
             - The absence of the DPI certificate in the system keychain may also contribute to this
               scenario.
             - 'Certificate Pinning' also falls under this category.
@@ -349,11 +349,11 @@ In this section, you can manage the following settings:
 
     2. Bypass Unknown TLS Handshakes
 
-        - Enable this setting, when a secure port connection employs custom encryption instead of
-          TLS, the DPI bypass is activated.
+        - Enable this setting when a secure port connection uses custom encryption instead of
+          TLS. Endpoint Protector then activates the DPI bypass.
 
-            - This is exemplified by configuring Telegram.app for DPI monitoring, logging into the
-              app, and encountering an unknown TLS handshake.
+            - For example, this occurs when you configure Telegram.app for DPI monitoring, log into
+              the app, and encounter an unknown TLS handshake.
 
     3. Bypass Websites Temporarily Whitelisted (Possible mTLS Connection/SSL Setup
        Failure/Unsupported TLS Protocol)
@@ -367,9 +367,9 @@ In this section, you can manage the following settings:
 
     4. Bypass Websockets
 
-        - Enable this setting, when Websites use websockets with arbitrary data protocols.
+        - Enable this setting when Websites use websockets with arbitrary data protocols.
 
-            - Endpoint Protector passthroughs connections upon the HTTP connection's upgrade to a
+            - Endpoint Protector passes connections through when the HTTP connection upgrades to a
               websocket.
             - Examples are applications, such as WhatsApp Web, Firefox Send etc.
 
@@ -395,9 +395,8 @@ In this section, you can manage the following settings:
               enabled, illustrates such situations (the website will be accessible).
 
     :::warning
- be aware that the current Default DPI list and the new Default DPI bypass
-    list apply only when manually checked within CAP (Content Aware Protection)
-    policies.
+    The current Default DPI list and the new Default DPI bypass list apply only when manually
+    checked within CAP (Content Aware Protection) policies.
     :::
 
 
@@ -407,7 +406,7 @@ In this section, you can manage the following settings:
 
 
 - DPI Bypass Event Logging – this setting will automatically send DPI Bypass events/reasons to
-  Endpoint Protector Server when connections are being bypassed on endpoints.
+  Endpoint Protector Server when Endpoint Protector bypasses connections on endpoints.
 
     :::note
     See [Bypass Log Reporting Frequency](#bypass-log-reporting-frequency).
@@ -417,7 +416,7 @@ In this section, you can manage the following settings:
   if available. Applicable only to EPP Clients for Linux with version 2.4.5.x or higher.
 
 
-![If enabled, both network and browser traffic can be inspected for content](dpiconfiguration.png)
+![If enabled, Endpoint Protector can inspect both network and browser traffic for content](dpiconfiguration.png)
 
 ### Intercept VPN Traffic
 
@@ -430,8 +429,8 @@ the network extension framework.
 
 :::note
 The Intercept VPN Traffic feature is only available when the Deep Packet Inspection feature
-is enabled. It will only work for macOS from version 11.0 onwards and only if Deep Packet Inspection
-Certificate is also added.
+is enabled. It will only work for macOS from version 11.0 onwards and only if you also add the Deep
+Packet Inspection Certificate.
 :::
 
 
@@ -467,7 +466,8 @@ To use this feature, follow these steps:
 ![Proxy Configuration pop-up window](proxypop-up.webp)
 
 :::note
-When network extension is successfully enabled, a Client Integrity OK log is generated.
+When the network extension is successfully enabled, Endpoint Protector generates a Client Integrity
+OK log.
 :::
 
 
@@ -496,10 +496,9 @@ from the Trust section.
 
 ### Smart DPI (Log Throttling)
 
-Enable this setting to address the number of excessive false positives for URL Denylists. This
-improvement provides you with a configuration option to filter out non-relevant information, resulting
-in a more accurate log that focuses on true false positives and reduces unnecessary noise saving
-database storage.
+Enable this setting to reduce excessive false positives for URL Denylists. Filtering out
+non-relevant information produces a more accurate log that focuses on true false positives, reduces
+unnecessary noise, and saves database storage.
 
 ![Enable this setting to address the number of excessive false positives for URL Denylists](smartdpi.webp)
 
@@ -512,12 +511,13 @@ which could reach excessive numbers if reported more frequently.
 ### Timeout Period for Bypassed Websites
 
 To maintain a streamlined process, Endpoint Protector enforces a timeout period of two weeks. During
-this time frame, the state for bypassed websites is retained. Beyond this period, the bypass state
-is automatically removed, contributing to effective resource management.
+this time frame, Endpoint Protector retains the state for bypassed websites. Beyond this period,
+Endpoint Protector automatically removes the bypass state, contributing to effective resource
+management.
 
 ### Handling of Bypassed Domains and Applications
 
-Endpoint Protector employs a nuanced approach to handle bypassed domains and applications:
+Endpoint Protector handles bypassed domains and applications as follows:
 
 #### Memory and Disk Persistence
 
@@ -531,8 +531,7 @@ To reset the bypass state and clear associated records, administrators can tempo
 
 ### Using Wireshark for Network Traffic Analysis
 
-Before a "DPI certificate rejected" event, Wireshark can be instrumental in diagnosing network
-traffic. The presence of a "TLS alert" error in Wireshark signals the impending event.
+Before a "DPI certificate rejected" event, Wireshark helps you diagnose network traffic. The presence of a "TLS alert" error in Wireshark signals the impending event.
 
 ## File Tracing and Shadowing
 
@@ -562,8 +561,8 @@ File Shadowing requires File Tracing.
 :::
 
 
-File Shadowing can be delayed due to network traffic and Endpoint Protector Settings for different
-computers or file sizes. Shadowed files are usually available after a few minutes. Shadow creation may
+Network traffic and Endpoint Protector settings for different computers or file sizes can delay File
+Shadowing. Shadowed files are usually available after a few minutes. Shadow creation may
 not occur for newly created files; however, the system diligently tracks file activities and generates
 File Shadowing for subsequent file events as expected.
 
@@ -578,12 +577,11 @@ For your deployment, activate File Shadowing for not more than 15% of your total
 - File Tracing Direction – this setting lets you monitor file transfers based on transfer
   direction:
 
-    - Outgoing File Tracing Direction is defined by transfers made from the local machine to
-      removable devices.
+    - Outgoing File Tracing Direction covers transfers from the local machine to removable devices.
     - Incoming File Tracing Direction indicates transfers from the removable devices to the local
       machine.
-    - Both (Outgoing & Incoming) lets you monitor all types of transfers that are made between
-      removable devices and the local machine.
+    - Both (Outgoing & Incoming) lets you monitor all transfers between removable devices and the
+      local machine.
 
     :::note
     The File Tracing Direction setting only applies for transfers between removable
@@ -593,7 +591,7 @@ For your deployment, activate File Shadowing for not more than 15% of your total
 
 
     :::note
- MTP (Media Transfers Protocols) file transfer is supported only on Windows
+    Endpoint Protector supports MTP (Media Transfers Protocols) file transfer only on Windows
     client machines. Use it to transfer files in one direction, from your PC to your Android
     device.
     :::
@@ -613,7 +611,7 @@ For your deployment, activate File Shadowing for not more than 15% of your total
   Office Files DOCX, XLSX, PPTX, DOC, XLX, PPT).
 
 - Advanced Printer and MTP Scanning – enables a feature that loads a small DLL into certain Windows applications when they launch. That small DLL enables Endpoint Protector to monitor printing and files copied to MTP devices, by hooking Windows API functions responsible with printing and copying files to MTP devices.
-For example, when a user opens Microsoft Word, an Endpoint Protector DLL is loaded into Microsoft Word's address space. If the user wants to print a document, that DLL is called, and Endpoint Protector can scan the printed document content. If the printed content contains sensitive data Endpoint Protector can block the print operation.
+For example, when a user opens Microsoft Word, Endpoint Protector loads a DLL into Microsoft Word's address space. If the user wants to print a document, Endpoint Protector calls that DLL and can scan the printed document content. If the printed content contains sensitive data Endpoint Protector can block the print operation.
 
 
     :::note
@@ -622,7 +620,7 @@ For example, when a user opens Microsoft Word, an Endpoint Protector DLL is load
     :::
 
 - Advanced Scanning Exceptions is a list of applications into which Endpoint Protector won't inject its DLL when the "Advanced Printer and MTP Scanning" is enabled.
-For example, many applications can't be used to print or to copy files to MTP devices, so it doesn't make sense to inject the Endpoint Protector DLL into them. For best performance or to avoid unexpected interactions with Endpoint Protector, these applications can be added to the "Advanced Scanning Exceptions" list.
+For example, many applications can't print or copy files to MTP devices, so it doesn't make sense to inject the Endpoint Protector DLL into them. For best performance or to avoid unexpected interactions with Endpoint Protector, add these applications to the "Advanced Scanning Exceptions" list.
 
 - Block Print from Browsers – prevents users from printing web pages from any supported browser on Windows. For details, see [Block Print from Browsers](#block-print-from-browsers).
 
@@ -641,7 +639,7 @@ For example, many applications can't be used to print or to copy files to MTP de
   transfer logs.
 
 - Scan Printed Document – specifies whether to scan the entire document or individual pages when a print operation is detected.
-  - `Per printed page` – scans each page as it is printed. Metadata isn't included, as metadata isn't printed.
+  - `Per printed page` – scans each page as it prints. Metadata isn't included, as metadata isn't printed.
   - `Per document` – scans the entire file, including metadata (MIP/NDC). Use this option when metadata inspection is required.
 
 
@@ -667,17 +665,17 @@ This setting is available only for Windows.
 
 :::warning
 After enabling the Block Print from Browsers setting and applying the configuration on
-the Client to enforce it, be aware that you will need to reload open browser tabs or restart the browser for the changes to take effect.
+the Client to enforce it, reload open browser tabs or restart the browser for the changes to take effect.
 :::
 
 
 :::warning
 Since version 5.9.4.1, Endpoint Protector Clients require binding to the new Endpoint
-Protector web printing extensions. Customers using GPO configuration, should ensure that the browser
-extension ID configured in the GPO is updated. The old extensions will soon be deprecated. Customers
+Protector web printing extensions. Customers using GPO configuration should update the browser
+extension ID configured in the GPO. The old extensions will soon be deprecated. Customers
 using this feature and older Endpoint Protector Clients than version 5.9.4.1 should immediately
 enforce an Endpoint Protector Client upgrade process. After updating the GPO configurations and
-completing the Endpoint Protector Client upgrade process, a full computer reboot is required for the
+completing the Endpoint Protector Client upgrade process, fully reboot the computer for the
 changes to take effect.
 :::
 
@@ -688,7 +686,7 @@ full computer restart.
 :::
 
 :::note
-When printing from Excel Online, changes made in the last few seconds may not be inspected immediately. The web application must sync recent changes to OneDrive before Endpoint Protector can inspect them. The sync delay depends on your connection bandwidth and the autosave configuration in your Microsoft 365 apps.
+When printing from Excel Online, Endpoint Protector may not immediately inspect changes made in the last few seconds. The web application must sync recent changes to OneDrive before Endpoint Protector can inspect them. The sync delay depends on your connection bandwidth and the autosave configuration in your Microsoft 365 apps.
 :::
 
 ![blockprinttwo](blockprinttwo.webp)
@@ -697,8 +695,7 @@ Users printing from Google Chrome and Microsoft Edge can use content-aware detec
 enforcing a Content Aware Policy that includes Printers from the Policy Exit Points section. For
 seamless protection, the Endpoint Protector Browser Connection extension installs automatically the
 first time upon enabling the Block Print from Browsers setting. This extension enhances content
-scanning capabilities during web document printing, integrating seamlessly on both server and client
-sides.
+scanning during web document printing on both server and client sides.
 
 :::note
 The extension doesn't function in 'in Private/Incognito' mode. If it fails to load, it
@@ -714,8 +711,8 @@ Microsoft Edge.
 
 
 :::warning
-Use the Group Policies to set PDF files to be downloaded instead of opened in the web
-browser for the block print from the browser to function accurately.
+Use Group Policies to set PDF files to download instead of open in the web
+browser so that block print from the browser functions accurately.
 :::
 
 
@@ -761,7 +758,7 @@ users from removing it, follow these steps:
 ![Configuring GPO for Browser Extensions](grouppolicyeditortwo.webp)
 
 :::warning
-ensure to thoroughly test the configuration in a controlled environment to ensure the
+Thoroughly test the configuration in a controlled environment to confirm the
 intended behavior. Always keep endpoint security policies updated and aligned with organizational
 security standards.
 :::
@@ -769,12 +766,11 @@ security standards.
 
 ## Ignore Virtual Printers
 
-The option to Ignore Virtual Printing events, empowers users to have control over Content Aware
-Protection and File Tracing visibility over virtual printers like Microsoft to PDF, PDFCreator, and
-more. This not only helps conserve valuable log space but also reduces the workload on your
-analytics and administration teams. With this option, users can focus on tracking PDFs only when
-they exit your organization's environment and not when they have been created, streamlining
-monitoring efforts and improving efficiency.
+The option to Ignore Virtual Printing events lets you control Content Aware Protection and File
+Tracing visibility over virtual printers like Microsoft to PDF, PDFCreator, and more. This conserves
+log space and reduces the workload on your analytics and administration teams. With this option, you
+can track PDFs only when they exit your organization's environment rather than when Endpoint
+Protector creates them, streamlining monitoring efforts and improving efficiency.
 
 :::note
 This feature only applies for Windows.
@@ -783,18 +779,16 @@ This feature only applies for Windows.
 
 ## Configure Max File Size
 
-This section allows customers to tailor Content Aware Protection scanner's file size settings
-according to their specific needs. By customizing these settings, users can ensure Endpoint Protector
-meets their organization's requirements. The default maximum file size is set at 40 MB, with a
-maximum limit of 4096 MB.
+In this section, you can tailor the Content Aware Protection scanner's file size settings to your
+organization's requirements. The default maximum file size is 40 MB, with a maximum limit of
+4096 MB.
 
-Furthermore, users have the flexibility to configure additional file type sizes, which are set as
-follows by default: PDF (2048 MB) and Archives (256 MB). These file type sizes can be adjusted within
-the range of 1 KB to 4 GB to accommodate your specific needs.
+You can also configure additional file type sizes. The defaults are PDF (2048 MB) and Archives
+(256 MB). You can adjust these file type sizes within the range of 1 KB to 4 GB.
 
-Additionally, in the Windows environment, a default time-out of 10 seconds is applied. For MacOS, a
-strict 10-second time-out is enforced due to Apple OS architecture, which terminates processes that
-don't respond promptly. Linux operates without a specific time-out limitation.
+On Windows, Endpoint Protector applies a default time-out of 10 seconds. On macOS, Apple OS
+architecture enforces a strict 10-second time-out, because it terminates processes that don't
+respond promptly. Linux operates without a specific time-out limitation.
 
 :::note
 This setting only applies to Content Aware Protection policies and doesn't affect
@@ -814,7 +808,7 @@ Control and Content Aware modules.
 - Outside Network policies – enable the setting and then add the DNS Fully Qualified Domain Name and
   DNS IP Addresses.
 
-Once these settings are made, the fallback device type rights can be set Globally, per Groups,
+After you make these settings, you can set the fallback device type rights globally, or per Groups,
 Users, or Computers.
 
 :::warning
@@ -834,30 +828,30 @@ and Outside Hours Policy Type also needs to be selected.
 ## Transfer Limit
 
 From this section, users can set the transfer limit, within a specific time interval (hours). Once
-the limit is reached, file transfers to storage devices (Device Control) to control applications
+transfers reach the limit, file transfers to storage devices (Device Control) to control applications
 (Content Aware Protection) will no longer be possible, until the time interval expires and the count
-is reset. Similarly, file transfers through Network Shares can also be included in the Transfer
+resets. Similarly, file transfers through Network Shares can also be included in the Transfer
 Limit.
 
 ![Set the transfer limit, within a specific time interval (hours)](transferlimit.webp)
 
 The mechanism that checks when the Transfer Limit is reached doesn't impact the performance of the computer.
 
-Therefore, there might be a slight delay between the exact time the limit is reached and the
-enforcement of the transfer restrictions. In general, it's just a few seconds but also depending on
-the network, it could be up to a few minutes.
+Therefore, there might be a slight delay between the exact time transfers reach the limit and the
+enforcement of the transfer restrictions. In general the delay is a few seconds, but depending on
+the network it could be up to a few minutes.
 
-There are three actions to choose from when the Transfer Limit is reached:
+There are three actions to choose from when transfers reach the Transfer Limit:
 
-- Monitor Only – this setting reports when the limit is reached
-- Restrict – this setting blocks the devices and applications that have been defined in the Device
+- Monitor Only – this setting reports when transfers reach the limit
+- Restrict – this setting blocks the devices and applications that you defined in the Device
   Control policies
-- Lockdown – this setting blocks all devices, regardless if they have been defined within the Device
-  Control policies, including the network interfaces and therefore, any type of transfer
+- Lockdown – this setting blocks all devices, regardless of whether you defined them within the
+  Device Control policies, including the network interfaces and therefore, any type of transfer
 
 :::note
 To re-establish the Server-Client communication before the Transfer Limit Time Interval
-expires, a Transfer Limit Reached Offline Temporary Password is available. For detailed information,
+expires, use a Transfer Limit Reached Offline Temporary Password. For detailed information,
 refer to the Offline Temporary Password chapter.
 :::
 
@@ -872,8 +866,8 @@ daily, weekly, or monthly basis.
 You can use this feature to collect logs for a specific issue and send the resulting archive to the
 Endpoint Protector Server on the Reports and analysis section, the Logs Report page.
 
-By enabling this feature, the Endpoint Protector Client will create the log file (general log file),
-and if Deep Packet Inspection is enabled, it will collect supplementary Deep Packet Inspection logs
+When you enable this feature, the Endpoint Protector Client creates the log file (general log file),
+and if Deep Packet Inspection is enabled, it collects supplementary Deep Packet Inspection logs
 along with sslsplit logs.
 
 :::note
@@ -932,8 +926,8 @@ logging option.
 - Hover over a computer, right-click, and select **Collect diagnostic** - this will collect logs
   from a specific computer without input or knowledge from the computer user.
 
-Logs will be sent to the Endpoint Protector Server on the Logs Report page, Artifact Received events
-are registered when diagnostic data are received.
+The Client sends logs to the Endpoint Protector Server on the Logs Report page, and Endpoint
+Protector registers Artifact Received events when it receives diagnostic data.
 
 ### Getting Debug Logs via EPP Server
 
@@ -942,10 +936,10 @@ the **Actions** column.
 
 ![Debug Logging Actions](debugloggingactions.webp)
 
-- Collect Diagnostics - registers an event when diagnostic data are requested (Artifact requested
+- Collect Diagnostics - registers an event when you request diagnostic data (Artifact requested
   event)
 
-![Registers an event when diagnostic data are requested](collectdiagnostics.webp)
+![Registers an event when you request diagnostic data](collectdiagnostics.webp)
 
 - Go to Diagnostic data - this option redirects the user to the Reports and Analysis module on the
   Logs Report page to Artifact received type events with debug mode logs
@@ -1031,9 +1025,10 @@ Endpoint Protector obfuscates all data according to these rules:
 
 Specific use cases:
 
-1. For credit cards, the PCI Security Standards were implemented with full text obfuscation
-2. For SSNs, the last 4 characters are displayed
-3. For Brazil ID (CPF), the first 3 and the last 2 characters are obfuscated
+1. For credit cards, Endpoint Protector implements the PCI Security Standards with full text
+   obfuscation
+2. For SSNs, Endpoint Protector displays the last 4 characters
+3. For Brazil ID (CPF), Endpoint Protector obfuscates the first 3 and the last 2 characters
 
 :::note
 Endpoint Protector doesn't obfuscate file-type, file-size, and date threats.
@@ -1050,7 +1045,7 @@ Endpoint Protector doesn't obfuscate file-type, file-size, and date threats.
 
 ## Enforced Encryption (EasyLock) Settings
 
-From this section you can allow EasyLock to be installed and run only on computers that have
+From this section you can allow EasyLock to install and run only on computers that have
 Endpoint Protector installed or in relation to a list of trusted Endpoint Protector Servers.
 
 :::note
@@ -1063,7 +1058,7 @@ Before you use these settings, ensure that you configure a Master Password. See 
 
   Group-level Client Presence settings take effect only when the EPP Client is present and can evaluate the applicable user or computer group policy. If a user connects an encrypted USB drive to a computer without the EPP Client, that computer can't evaluate group-level EasyLock settings, and EasyLock falls back to the global Client Presence setting instead.
 
-  For example, if Client Presence is disabled globally but enabled for a specific user or group, the group-level setting applies only on computers where the EPP Client is running. On computers without the EPP Client, the global setting is used.
+  For example, if Client Presence is disabled globally but enabled for a specific user or group, the group-level setting applies only on computers where the EPP Client is running. On computers without the EPP Client, EasyLock uses the global setting.
 
   :::note
   To prevent EasyLock from running on computers that don't have the EPP Client installed, enable **Client Presence Required** at the global level.
@@ -1094,23 +1089,23 @@ These two settings are mutually exclusive—select one retention method.
 
 ## Additional Information
 
-From this section you can restore global settings to default and view the name and date when the
-action was performed.
+From this section you can restore global settings to default and view who performed the action and
+when.
 
-![Restore global settings to default and view the name and date when the action was performed](additionalinformation.webp)
+![Restore global settings to default and view who performed the action and when](additionalinformation.webp)
 
 ## Display Settings
 
 From this section you can set the maximum number of logs displayed on the Endpoint Protector Server
 and the number of reports per page.
 
-You can set a maximum number of 10 000 logs to be displayed per report. To export all entries when
+You can display a maximum of 10 000 logs per report. To export all entries when
 the log number exceeds the maximum 10 000 limit, use the Create export option or narrow the search
 using filters.
 
 :::note
-The information you set on this setting will also be applied for eDiscovery.
+This setting also applies to eDiscovery.
 :::
 
 
-![Set the maximum number of logs that can be displayed](displaysettings.webp)
+![Set the maximum number of logs to display](displaysettings.webp)

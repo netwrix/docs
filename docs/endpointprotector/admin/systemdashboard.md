@@ -30,12 +30,12 @@ setting up the Server Time Zone, importing Licenses, Server Update or uploading 
 Global device rights, E-mail Server settings, Main Administrator details, etc. You can change these
 settings at any time.
 
-The Conﬁguration Wizard is available only if the basic settings for the Endpoint Protector have
-never been conﬁgured.
+The Conﬁguration Wizard is available only if you have never conﬁgured the basic settings for
+Endpoint Protector.
 
-As an additional security measure, a session timeout is set to 300 seconds (5 minutes) of
+As an additional security measure, the session times out after 300 seconds (5 minutes) of
 inactivity. If you aren't active for this amount of time, a notification appears indicating the session will expire,
-and you are logged out unless you select to continue the session.
+and Endpoint Protector logs you out unless you select to continue the session.
 
 :::note
 You can customize the session timeout and timeout counter in [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
@@ -70,7 +70,7 @@ From the System Status subsection, you can enable the HDD Disk Space and Log Rot
 
 :::note
 If this setting is enabled, when the Server’s disk space reaches a certain percentage
-(starting from 50% up to 90%), old logs will be automatically overwritten by the new ones.
+(starting from 50% up to 90%), new logs automatically overwrite the old ones.
 :::
 
 
@@ -93,4 +93,5 @@ Based on the options you select from the Effective Rights Criteria form, you can
 based on rights, users, computers, device types, speciﬁc devices, report type (PDF or XLS),
 including Outside Hours and Outside Network Policies, and more.
 
-After the report is generated, from the Actions column, you can download or delete it.
+After Endpoint Protector generates the report, you can download or delete it from the Actions
+column.

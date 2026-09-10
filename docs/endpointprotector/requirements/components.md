@@ -60,7 +60,7 @@ protection rules and logs activity for auditing purposes.
 
 **MySQL database**
 
-The Endpoint Protector server uses a lastest MySQL LTS database that stores configuration data, agent provisioning settings. MySQL handles agent registration, policy definitions, entity management, and other provisioning data.
+The Endpoint Protector server uses the latest MySQL LTS database to store configuration data and agent provisioning settings. MySQL handles agent registration, policy definitions, entity management, and other provisioning data.
 
 :::note
 Starting with the 2608 release, MySQL no longer stores user activity logs or incident reports — this data now lives in CrateDB instead. SaaS deployments are the exception: Netwrix retains historical data in MySQL to meet compliance requirements, while new logs go to CrateDB.
@@ -68,7 +68,7 @@ Starting with the 2608 release, MySQL no longer stores user activity logs or inc
 
 **CrateDB**
 
-CrateDB as Relational Database Management System is a distributed SQL database optimized for time-series log data. Endpoint Protector uses RDBMS to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy RDBMS as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. You can add cluster nodes with minimal downtime and availability impact.
+CrateDB is a Relational Database Management System (RDBMS) — a distributed SQL database optimized for time-series log data. Endpoint Protector uses this RDBMS to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy the RDBMS as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. You can add cluster nodes with minimal downtime and availability impact.
 
 **Firewall/gateway device**
 

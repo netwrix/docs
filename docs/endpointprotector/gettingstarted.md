@@ -29,7 +29,7 @@ For more information, see [Requirements](/docs/endpointprotector/requirements/ov
 
 - Access the Endpoint Protector Management Console:
 
-    - Access the appliance using the IP address configured during the deployment process, which is
+    - Access the appliance using the IP address you configured during deployment. This address is
       also visible on the backend console.
     - Log in using your administrator credentials.
 
