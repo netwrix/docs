@@ -18,6 +18,7 @@
  * @property {boolean} isLatest - Whether this is the latest version
  * @property {string} [sidebarFile] - Custom sidebar file path (defaults to generated path)
  * @property {string} [kbSource] - Optional override for the KB source directory for this version (relative to repo root). When set, this version pulls KB articles from this directory instead of the product-level default (docs/kb/<productId>/).
+ * @property {boolean} [kb] - Set to false to give this version no Knowledge Base section. The KB copy script skips the version (and removes any previously copied kb/ folder) instead of falling back to the product-level KB source. Defaults to true.
  */
 
 /**
@@ -66,7 +67,7 @@ export const PRODUCTS = [
         label: '26.1',
         isLatest: true,
         sidebarFile: './sidebars/accessanalyzer/26.1.js',
-        kbSource: 'docs/kb/accessanalyzer-26.1',
+        kb: false, // No Knowledge Base section: the docs/kb/accessanalyzer articles apply to 12.0 and 11.6 only
       },
       {
         version: '12.0',
