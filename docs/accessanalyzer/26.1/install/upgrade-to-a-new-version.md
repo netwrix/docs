@@ -71,7 +71,7 @@ sudo dspmctl sync netwrix.webapp
 <details>
 <summary>Troubleshooting: dspmctl hangs after a cancelled command</summary>
 
-If you press Ctrl-C during a `dspmctl` command part-way through (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. Even `argocd version --client`, which needs no network at all, hangs, so the cause is local to the pod. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod unresponsive.
+If you press Ctrl-C part-way through a `dspmctl` command (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. Even `argocd version --client`, which needs no network at all, hangs, so the cause is local to the pod. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod unresponsive.
 
 Restart that pod and re-run the upgrade:
 
