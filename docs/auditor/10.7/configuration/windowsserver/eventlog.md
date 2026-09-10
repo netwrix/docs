@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # Adjusting Event Log Size and Retention Settings
 
-Consider that if the event log size is insufficient, overwrites may occur before data is written to
-the Long-Term Archive and the Audit Database, and some audit data may be lost.
+Consider that if the event log size is insufficient, overwrites may occur before the product writes
+data to the Long-Term Archive and the Audit Database, and you may lose some audit data.
 
 To prevent overwrites, you can increase the maximum size of the event logs and set retention method
 for these logs to "_Overwrite events as needed_". This refers to the following event logs:
@@ -23,11 +23,10 @@ for these logs to "_Overwrite events as needed_". This refers to the following e
 
 See the Microsoft article on [recommended event log settings](https://support.microsoft.com/en-us/help/957662/recommended-settings-for-event-log-sizes-in-windows) for more information.
 
-The procedure below provides a possible way to specify the event log settings manually. However, if
-you have multiple target computers, consider configuring these settings via Group Policy as
+The following procedure provides a possible way to specify the event log settings manually. However,
+if you have multiple target computers, consider configuring these settings via Group Policy as
 described in
-[Configure the Event Log Size Using Group Policy](#configure-the-event-log-size-using-group-policy)
-below
+[Configure the Event Log Size Using Group Policy](#configure-the-event-log-size-using-group-policy).
 
 ## Configure the Event Log Size Manually
 
@@ -94,7 +93,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Directory Service
 ![gpo_eventlog_regedit_thumb_0_0](/images/auditor/10.7/configuration/windowsserver/gpo_eventlog_regedit_thumb_0_0.webp)
 
 You can configure Group Policy Preferences to push registry changes to the target domain computers.
-For the example above (Directory Service Log), perform the following steps.
+For the preceding example (Directory Service Log), perform the following steps.
 
 **Step 1 –** In Group Policy Management Console on the domain controller go to **Computer >
 Preferences > Windows Settings > Registry**.

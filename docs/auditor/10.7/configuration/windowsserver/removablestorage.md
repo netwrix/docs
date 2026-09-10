@@ -22,8 +22,8 @@ _"%ALLUSERSPROFILE%\Netwrix Auditor\Windows Server Audit\ETS\"_. For instruction
 the root directory, see [Review Event Trace Session object configuration](#review-event-trace-session-object-configuration).
 
 :::note
-If you do not want to use the Netwrix Auditor for Windows Server Compression Service for data
-collection, make sure that this path is readable via any shared resource.
+If you don't want to use the Netwrix Auditor for Windows Server Compression Service for data
+collection, ensure that this path is readable via any shared resource.
 :::
 
 After environment variable substitution, the path is as follows:
@@ -36,7 +36,7 @@ If your environment variable accesses another directory, update the path.
 
 **Step 2 –** Run the Command Prompt as Administrator.
 
-**Step 3 –** Execute the commands below.
+**Step 3 –** Execute the following commands.
 
 - To create the Event Trace Session object:
 
@@ -49,7 +49,7 @@ If your environment variable accesses another directory, update the path.
     where:
 
     - `NetwrixAuditorForWindowsServer`—Fixed name the product uses to identify the Event Trace
-      Session object. The name cannot be changed.
+      Session object. The name can't be changed.
     - `<path to the EventTraceSessionTemplate.xml file>`—Path to the Event Trace Session
       template file that comes with Netwrix Auditor. The default path is _"C:\Program Files
       (x86)\Netwrix Auditor\Windows Server Auditing\EventTraceSessionTemplate.xml"_.
@@ -61,8 +61,8 @@ _"%ALLUSERSPROFILE%\Netwrix Auditor\Windows Server Audit\ETS\"_. For instruction
 the root directory, see [Review Event Trace Session object configuration](#review-event-trace-session-object-configuration).
 
 :::note
-If you do not want to use the Netwrix Auditor for Windows Server Compression Service for data
-collection, make sure that this path is readable via any shared resource.
+If you don't want to use the Netwrix Auditor for Windows Server Compression Service for data
+collection, ensure that this path is readable via any shared resource.
 :::
 
 After environment variable substitution, the path is as follows:
@@ -75,7 +75,7 @@ If your environment variable accesses another directory, update the path.
 
 **Step 2 –** Run the Command Prompt under the target server Administrator's account.
 
-**Step 3 –** Execute the commands below.
+**Step 3 –** Execute the following commands.
 
 - To create the Event Trace Session object:
 
@@ -88,18 +88,18 @@ If your environment variable accesses another directory, update the path.
     where:
 
     - `NetwrixAuditorForWindowsServer`—Fixed name the product uses to identify the Event Trace
-      Session object. The name cannot be changed.
+      Session object. The name can't be changed.
     - `<path to the EventTraceSessionTemplate.xml file>`—Path to the Event Trace Session
       template file that comes with Netwrix Auditor. The default path is _"C:\Program Files
       (x86)\Netwrix Auditor\Windows Server Auditing\EventTraceSessionTemplate.xml"_.
     - `<target server name>`—Name of the target server. Provide a server name by entering its
-      FQDN, NETBIOS or IPv4 address.
+      FQDN, NETBIOS, or IPv4 address.
 
 ## Review Event Trace Session Object Configuration
 
 :::note
-An Administrator can only modify the root directory and log file name. Other configurations are not
-supported by Netwrix Auditor.
+An Administrator can only modify the root directory and log file name. Netwrix Auditor doesn't
+support other configurations.
 :::
 
 **Step 1 –** On the target server, navigate to Start → Administrative Tools → Performance Monitor.

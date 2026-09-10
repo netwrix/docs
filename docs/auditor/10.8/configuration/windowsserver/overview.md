@@ -12,7 +12,7 @@ and on the Auditor console computer. Configuring your IT infrastructure may also
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
 integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
@@ -20,9 +20,9 @@ knowledge base article for additional information.
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
 - Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
-- Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
+  automatically configure audit in the target environment, Auditor checks your current audit
+  settings on each data collection and adjusts them if necessary.
+- Manually – You must adjust native audit settings manually to ensure collecting comprehensive and
   reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
   configure them manually:
 
@@ -117,15 +117,15 @@ When monitoring a Windows Server, Netwrix Auditor needs to audit some registry s
 want Netwrix Auditor to audit custom registry keys, see
 [Monitoring Custom Registry Keys](#monitoring-custom-registry-keys) for additional information.
 
-The table below is organized in three levels: a **Component** is a system component you enable for
+The following table is organized in three levels: a **Component** is a system component you enable for
 auditing in the monitoring plan (see
 [Monitor changes to system components](/docs/auditor/10.8/admin/monitoringplans/windows/overview.md)
 for a description of each component); each component contains one or more **Object types**, which
 are the specific entities Netwrix Auditor tracks; and **Attributes** are the individual properties
-of that object type whose changes are reported.
+of that object type whose changes Netwrix Auditor reports.
 
-Double asterisks (\*\*) indicate the object types and attributes for which the Who value is
-reported as _“Not Applicable”_.
+Double asterisks (\*\*) indicate the object types and attributes for which Netwrix Auditor reports
+the Who value as _“Not Applicable”_.
 
 | Component | Object type | Attributes |
 | --- | --- | --- |
@@ -175,13 +175,13 @@ reported as _“Not Applicable”_.
 |  | DHCP scope | <ul><li>Type:</li><li>IPv4</li><li>Multicast IPv4</li><li>Superscope for IPv4</li><li>IPv6</li><li>Action:</li><li>Added</li><li>Removed</li><li>Modified</li><li>Moved</li></ul> |
 |  | DHCP Reservation | <ul><li>Type:</li><li>IPv4</li><li>IPv6</li><li>Action:</li><li>Added</li><li>Removed</li><li>Modified</li></ul> |
 |  | DHCP Policy | <ul><li>Type:</li><li>IPv4</li><li>IPv4 server-wide</li><li>Action:</li><li>Added</li><li>Removed</li><li>Modified</li><li>Renamed</li></ul> |
-| Removable media | Removable Storage Media\*\* | Netwrix Auditor does not report on floppy/optical disk and memory card storage medias. For removable storages, the When value reports actual time when a change was made and/or a target server was started. <ul><li>Device class:</li><li>CD and DVD</li><li>Floppy Drives</li><li>Removable Disk</li><li>Tape Drives</li><li>Windows Portable Devices When the Audit Object Access local audit policy and/or the Audit Central Access Policy Staging \ Audit Removable Storage advanced audit policies are enabled on the target server, the `gpupdate /force` command execution issues removable storage restart. These actions are disclosed in Netwrix Auditor reports, search, and activity summaries. Note that these actions are system, not user-effected.</li></ul> |
+| Removable media | Removable Storage Media\*\* | Netwrix Auditor doesn't report on floppy/optical disk and memory card storage medias. For removable storages, the When value reports actual time when a change was made and/or a target server was started. <ul><li>Device class:</li><li>CD and DVD</li><li>Floppy Drives</li><li>Removable Disk</li><li>Tape Drives</li><li>Windows Portable Devices When the Audit Object Access local audit policy and/or the Audit Central Access Policy Staging \ Audit Removable Storage advanced audit policies are enabled on the target server, the `gpupdate /force` command execution issues removable storage restart. These actions are disclosed in Netwrix Auditor reports, search, and activity summaries. These actions are system, not user-effected.</li></ul> |
 | Scheduled tasks | Scheduled Task | <ul><li>Account Name</li><li>Application</li><li>Comment</li><li>Creator</li><li>Enabled</li><li>Parameters</li><li>Triggers</li></ul> |
 | Local users and groups | Local Group | <ul><li>Description</li><li>Name</li><li>Members</li></ul> |
-|  | Local User | <ul><li>Description</li><li>Disabled/Enabled</li><li>Full Name</li><li>Name</li><li>User cannot change password</li><li>Password Never Expires</li><li>User must change password at next logon</li></ul> |
+|  | Local User | <ul><li>Description</li><li>Disabled/Enabled</li><li>Full Name</li><li>Name</li><li>User can't change password</li><li>Password Never Expires</li><li>User must change password at next logon</li></ul> |
 
 :::note
-The Who value will be reported for DNS configuration settings only if the DNS server runs on Windows Server 2012 R2. See the following Microsoft article for additional information: [Update adds query logging and change auditing to Windows DNS servers](https://support.microsoft.com/en-us/kb/2956577).
+Netwrix Auditor reports the Who value for DNS configuration settings only if the DNS server runs on Windows Server 2012 R2. See the following Microsoft article for additional information: [Update adds query logging and change auditing to Windows DNS servers](https://support.microsoft.com/en-us/kb/2956577).
 :::
 
 | Component | Object type | Attributes |
@@ -190,7 +190,7 @@ The Who value will be reported for DNS configuration settings only if the DNS se
 |  | DNS Zone | <ul><li>Aging State</li><li>Allow update</li><li>Auto created</li><li>Data file name</li><li>Ds integrated</li><li>Expires after</li><li>Forwarder slave</li><li>Forwarder timeout</li><li>Master servers</li><li>Minimum TTL</li><li>No refresh interval</li><li>Notify</li><li>Notify servers</li><li>Owner name</li><li>Paused</li><li>Primary server</li><li>Refresh interval</li><li>Responsible person</li><li>Retry interval</li><li>Reverse</li><li>Scavenge servers</li><li>Secondary servers</li><li>Secure secondaries</li><li>Shutdown</li><li>TTL</li><li>User NB stat</li><li>Use WINS</li><li>Zone type</li></ul> |
 
 :::note
-The Who value will be reported for DNS Resource Records only if the DNS server runs Windows Server 2012 R2. See the following Microsoft article for additional information: [Update adds query logging and change auditing to Windows DNS servers](https://support.microsoft.com/en-us/kb/2956577).
+Netwrix Auditor reports the Who value for DNS Resource Records only if the DNS server runs Windows Server 2012 R2. See the following Microsoft article for additional information: [Update adds query logging and change auditing to Windows DNS servers](https://support.microsoft.com/en-us/kb/2956577).
 :::
 
 | Component | Object type | Attributes |
@@ -224,7 +224,7 @@ The Who value will be reported for DNS Resource Records only if the DNS server r
 |  | DNS SIG | <ul><li>Algorithm</li><li>Container name</li><li>Key tag</li><li>Labels</li><li>Original TTL</li><li>Owner name</li><li>Record class</li><li>Signature expiration (GMT)</li><li>Signature inception (GMT)</li><li>Signature (base 64)</li><li>Signer's name</li><li>TTL</li><li>Type covered</li><li>Zone type</li></ul> |
 |  | DNS SRV | <ul><li>Container name</li><li>Host offering this service</li><li>Owner name</li><li>Port number</li><li>Priority</li><li>Record class</li><li>TTL</li><li>Weight</li><li>Zone type</li></ul> |
 |  | DNS TEXT | <ul><li>Container name</li><li>Owner name</li><li>Record class</li><li>Text</li><li>TTL</li><li>Zone type</li></ul> |
-|  | DNS WINS | <ul><li>Cache time-out</li><li>Container name</li><li>Do not replicate this record</li><li>Lookup time-out</li><li>Owner name</li><li>Record class</li><li>Wins servers</li><li>Zone type</li></ul> |
+|  | DNS WINS | <ul><li>Cache time-out</li><li>Container name</li><li>Don't replicate this record</li><li>Lookup time-out</li><li>Owner name</li><li>Record class</li><li>Wins servers</li><li>Zone type</li></ul> |
 |  | DNS WKS | <ul><li>Container name</li><li>IP address</li><li>Owner name</li><li>Protocol</li><li>Record class</li><li>Services</li><li>TTL</li><li>Zone type</li></ul> |
 |  | DNS X25 | <ul><li>Container name</li><li>Owner name</li><li>Record</li><li>Record class</li><li>TTL</li><li>X.121 PSDN address</li><li>Zone type</li></ul> |
 | File shares | Share | <ul><li>Access-based enumeration</li><li>Caching</li><li>Description</li><li>Enable BranchCache</li><li>Encrypt data access</li><li>Folder path</li><li>Share permissions</li><li>User limit</li></ul> |
@@ -232,8 +232,8 @@ The Who value will be reported for DNS Resource Records only if the DNS server r
 
 ### Windows Server Registry Keys
 
-If you want to monitor changes to system components on a Windows Server, ensure that Windows
-Registry audit settings are configured on that Windows server.
+If you want to monitor changes to system components on a Windows Server, ensure that you configure
+Windows Registry audit settings on that Windows server.
 
 This refers to the following keys:
 
@@ -250,7 +250,7 @@ type required):
 - Write DAC
 - Write Owner
 
-The below is the full list of keys (and subkeys) involved in Windows Server auditing.
+The following table lists all keys (and subkeys) involved in Windows Server auditing.
 
 | Category       | Registry Keys                                                                                                     |
 |----------------|-------------------------------------------------------------------------------------------------------------------|
@@ -272,8 +272,8 @@ The below is the full list of keys (and subkeys) involved in Windows Server audi
 
 
 Consider that audit data for the registry keys themselves will not appear in Netwrix Auditor
-reports, alerts, or search results, as it is only used as one of the sources for the Activity Records
-formation.
+reports, alerts, or search results, as the product uses it only as one of the sources for Activity
+Record formation.
 
 - You can configure these settings automatically using Netwrix Auditor, as described in the
   [Settings for Data Collection](/docs/auditor/10.8/admin/monitoringplans/create.md#settings-for-data-collection)
@@ -281,9 +281,9 @@ formation.
   under **Monitor changes to system components** on the **General** tab in the Windows Server data
   source properties.
 
-Audit settings will be automatically adjusted only for the keys/subkeys involved in the monitoring
-of selected components (granular adjustment). For example, if you selected **Services**, the program
-will adjust the audit settings for the following subkeys:
+Netwrix Auditor automatically adjusts audit settings only for the keys/subkeys involved in the
+monitoring of selected components (granular adjustment). For example, if you selected **Services**,
+the program adjusts the audit settings for the following subkeys:
 
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services(|\\.\*)
 - HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services(|\\.\*)
@@ -310,9 +310,9 @@ For example:
 **Step 3 –** Consider the following:
 
 - Each entry must be a separate line.
-- Wildcards (\* and ?) are supported (except for the `registry key name` field). A backslash (\)
-  must be put in front of (\*), (?), (,), and (\) if they are a part of an entry value.
-- Lines that start with the # sign are treated as comments and are ignored.
+- Wildcards (\* and ?) are supported (except for the `registry key name` field). Put a backslash (\)
+  in front of (\*), (?), (,), and (\) if they are a part of an entry value.
+- The product treats lines that start with the # sign as comments and ignores them.
 
 ![customregistrykey](/images/auditor/10.8/configuration/windowsserver/customregistrykey.webp)
 
@@ -321,12 +321,12 @@ there is no necessary event in the Security log with this path.
 
 ## VM Template Cloning
 
-While VM cloning is supported by Netwrix Auditor, an additional setup process should be taken into
-consideration before the deployment process.
+Netwrix Auditor supports VM cloning, but you must complete an additional setup process before
+deployment.
 
 Every monitored VM instance gets a unique ID assigned for monitoring and data collection purposes.
-To ensure proper operation, the VM template must be excluded from the monitoring scope beforehand.
-Omitting the VM template will allow Netwrix Auditor to assign unique IDs correctly and collect data
+To ensure proper operation, you must exclude the VM template from the monitoring scope beforehand.
+Omitting the VM template allows Netwrix Auditor to assign unique IDs correctly and collect data
 as intended.
 
 **Step 1 –** In main Netwrix Auditor menu, select **Monitoring plans**.
@@ -341,4 +341,4 @@ the right pane.
 **Step 5 –** Check the **Exclude these objects** checkbox and add the template VM by clicking **Add
 Computer**.
 
-VM template server is added to exclusions and ready to use.
+The VM template server is now in the exclusions list and ready to use.

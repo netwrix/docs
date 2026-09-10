@@ -37,7 +37,7 @@ its status is _"Started"_ (on pre-Windows Server 2012 versions) and _"Running"_ 
 service. In the **Remote Registry Properties** dialog, in the **General** tab, select _"Automatic"_
 from the dropdown list.
 
-**Step 4 –** Perform the steps above for the **Windows Management Instrumentation** service.
+**Step 4 –** Repeat these steps for the **Windows Management Instrumentation** service.
 
 ## Windows Features Communication
 
@@ -63,7 +63,7 @@ settings** on the left.
 **Step 3 –** In the Windows Firewall with Advanced Security dialog, select Inbound Rules on the
 left.
 
-**Step 4 –** Click New Rule. In the New Inbound Rule wizard, complete the steps as described below:
+**Step 4 –** Click New Rule. In the New Inbound Rule wizard, complete the following steps:
 
 - On the Rule Type step, select Program.
 - On the Program step, specify the path: %Netwrix Auditor installation folder%/Netwrix Auditor/User
@@ -74,7 +74,7 @@ left.
 
 **Step 5 –** Double-click the newly created rule and open the Protocols and Ports tab.
 
-**Step 6 –** In the Protocols and Ports tab, complete the steps as described below:
+**Step 6 –** In the Protocols and Ports tab, complete the following steps:
 
 - Set Protocol type to _"TCP"_.
 - Set Local port to _"Specific Ports"_ and specify to _"9004"_.
@@ -90,7 +90,7 @@ settings** on the left.
 **Step 3 –** In the Windows Firewall with Advanced Security dialog, select Inbound Rules on the
 left.
 
-**Step 4 –** Click New Rule. In the New Inbound Rule wizard, complete the steps as described below.
+**Step 4 –** Click New Rule. In the New Inbound Rule wizard, complete the following steps.
 
 | Option    | Setting                                                                                                                            |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -102,7 +102,7 @@ left.
 
 **Step 5 –** Double-click the newly created rule and open the Protocols and Ports tab.
 
-**Step 6 –** In the Protocols and Ports tab, complete the steps as described below:
+**Step 6 –** In the Protocols and Ports tab, complete the following steps:
 
 - Set Protocol type to _"TCP"_.
 - Set Local port to _"Specific Ports"_ and specify to _"9003"_.
@@ -118,7 +118,7 @@ settings** on the left.
 **Step 3 –** In the Windows Firewall with Advanced Security dialog, select Outbound Rules on the
 left.
 
-**Step 4 –** Click New Rule. In the New Outbound Rule wizard, complete the steps as described below.
+**Step 4 –** Click New Rule. In the New Outbound Rule wizard, complete the following steps.
 
 | Option    | Setting                                                                                                                            |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -130,7 +130,7 @@ left.
 
 **Step 5 –** Double-click the newly created rule and open the Protocols and Ports tab.
 
-**Step 6 –** In the Protocols and Ports tab, complete the steps as described below:
+**Step 6 –** In the Protocols and Ports tab, complete the following steps:
 
 - Set Protocol type to _"TCP"_.
 - Set Remote port to _"Specific Ports"_ and specify to _"9004"_.

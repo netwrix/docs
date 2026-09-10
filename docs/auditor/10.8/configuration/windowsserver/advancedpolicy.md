@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Configure Advanced Audit Policies
 
-Advanced audit policies can be configured instead of local policies. Any of them are required if you
+You can configure advanced audit policies instead of local policies. Any of them are required if you
 want to get the "Who" and "When" values for the changes to the following monitored system
 components:
 
@@ -22,8 +22,8 @@ components:
 
 ## Configure Security Options
 
-Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To force
-basic audit policies to be ignored and prevent conflicts, enable the _Audit: Force audit policy
+Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To make
+Windows ignore basic audit policies and prevent conflicts, enable the _Audit: Force audit policy
 subcategory settings_ policy.
 
 **Step 1 –** On the audited server, open the Local Security Policy snap-in and navigate to Start >
@@ -38,9 +38,9 @@ Force audit policy subcategory settings policy.
 
 ## Configure Advanced Audit Policy
 
-Advanced audit policies are integrated with Group Policies, so they can be applied via Group Policy
-Object or Local Security Policies. The procedure below describes how to apply Advanced policies via
-Local Security Policy console.
+Advanced audit policies are integrated with Group Policies, so you can apply them via Group Policy
+Object or Local Security Policies. The following procedure describes how to apply Advanced policies
+via the Local Security Policy console.
 
 **Step 1 –** On the audited server, open the **Local Security Policy** snap-in and navigate to
 Start > Windows Administrative Tools >Local Security Policy.

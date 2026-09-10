@@ -12,7 +12,7 @@ and on the Auditor console computer. Configuring your IT infrastructure may also
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
 integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
@@ -22,13 +22,13 @@ You can use group Managed Service Accounts (gMSA) as data collecting accounts.
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
 - **Automatically through a monitoring plan** – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
-- **Manually** – Native audit settings must be adjusted manually to ensure collecting comprehensive and
+  automatically configure audit in the target environment, Auditor checks your current audit
+  settings on each data collection and adjusts them if necessary.
+- **Manually** – You must adjust native audit settings manually to ensure collecting comprehensive and
   reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
   configure them manually.
 
-  **IMPORTANT:** Even if automatic configuration is selected, the following prerequisites must be configured manually.
+  **IMPORTANT:** Even if you select automatic configuration, you must configure the following prerequisites manually.
 
     - On the audited systems:
 
@@ -39,7 +39,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
         - Local **TCP Port 9003** must be opened for inbound connections.
         - Remote **TCP Port 9004** must be opened for outbound connections.
         - The **User Activity Core Service** must be installed on the monitored computers.
-          It is deployed automatically by Netwrix Auditor, provided that all required prerequisites are met. If necessary, you can install it manually.
+          Netwrix Auditor deploys it automatically, provided that your environment meets all required prerequisites. If necessary, you can install it manually.
           For manual installation instructions, see the
           [Install for User Activity Core Service](/docs/auditor/10.8/install/useractivitycoreservice.md) topic.
         - **.NET Framework 4.8** must be installed.
@@ -80,7 +80,7 @@ Netwrix Auditor reports all of these actions under the **User session** object t
 ### Run As Monitoring
 
 Netwrix Auditor for User Activity can monitor programs executed under different user accounts.
-Review the table below to discover how different "run as" scenarios are reflected in the product.
+Review the following table to discover how the product reflects different "run as" scenarios.
 
 | Object type     | Details                              | Description                                                                                                                         |
 | --------------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -91,8 +91,8 @@ Review the table below to discover how different "run as" scenarios are reflecte
 
 ## Install Netwrix Auditor User Activity Core Service
 
-By default, the Netwrix Auditor User Activity Core Service is installed automatically on the audited
-computers when setting up auditing in Netwrix Auditor. If, for some reason, installation has failed,
-you must install it manually on each of the audited computers. See the
+By default, Netwrix Auditor automatically installs the User Activity Core Service on the audited
+computers when you set up auditing. If the installation fails, you must install it manually on each
+of the audited computers. See the
 [Install for User Activity Core Service](/docs/auditor/10.8/install/useractivitycoreservice.md) topic
 for additional information.

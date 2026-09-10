@@ -21,6 +21,6 @@ set to _Automatic_ and click **Start**.
 **Step 4 –** In the Services window, ensure that the Remote Registry service has the _Running_
 status on Windows Server 2012 and above.
 
-**NOTE:** The Remote Registry service should be enabled on the target server.
+**NOTE:** You must enable the Remote Registry service on the target server.
 
 **Step 5 –** Locate the Windows Management Instrumentation service and repeat these steps.
