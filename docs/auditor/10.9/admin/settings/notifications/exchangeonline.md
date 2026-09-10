@@ -49,8 +49,8 @@ the **Method** column, and click **Modify**.
 | Field                | Description                                                                                                                                                                                                 |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Tenant name          | Your Microsoft Entra primary domain name.                                                                                                                                                  |
-| Application ID       | The Application (client) ID saved in Step 1.                                                                                                                                                                    |
-| Application secret   | The client secret value saved in Step 1.                                                                                                                                                                        |
+| Application ID       | The Application (client) ID you saved in Step 1.                                                                                                                                                                    |
+| Application secret   | The client secret value you saved in Step 1.                                                                                                                                                                        |
 | Tenant environment    | The Microsoft cloud environment your tenant belongs to. Select **Default** unless your organization uses a national/sovereign cloud (see [Tenant Environment Options](#tenant-environment-options)). This determines which login and Graph API endpoints Netwrix Auditor uses to authenticate and send mail. |
 | Sender address       | The mailbox Netwrix Auditor sends email from. This mailbox must exist in the tenant, and the application must have permission to act on its behalf (see [Restrict Application Access](#restrict-application-access-optional)). |
 
@@ -78,9 +78,9 @@ environment for these to work.
 
 ## Restrict Application Access (Optional)
 
-By default, once it has `Mail.Send`/`Mail.ReadWrite`, the application can send mail as **any**
-mailbox in the tenant. To restrict it to one or a few specific mailboxes, apply an Exchange Online
-application access policy.
+By default, the application can send mail as **any** mailbox in the tenant when it has
+`Mail.Send`/`Mail.ReadWrite`. To restrict it to one or a few specific mailboxes, apply an Exchange
+Online application access policy.
 
 ### Create a Mail-Enabled Security Group
 

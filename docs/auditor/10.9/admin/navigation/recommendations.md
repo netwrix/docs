@@ -110,7 +110,7 @@ To manage recommendations:
 **Step 3 –** In the Manage recommendations dialog, do the following:
 
 - Keep completed recommendations: `<30>` days – Specify time period in days to keep the completed
-  recommendations visible. The default period is set to 30 days.
+  recommendations visible. The default period is 30 days.
 - Select the recommendations to fine-tune product configuration – Select the recommendation types
   you want to display. When you check a type, its recommendations appear once your Auditor
   configuration meets the recommendation conditions.

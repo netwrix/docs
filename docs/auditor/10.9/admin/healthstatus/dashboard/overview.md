@@ -26,15 +26,15 @@ The dashboard includes the following widgets:
 - The Health log chart—Shows statistics on the events Netwrix Auditor wrote to the health log in the
   last 24 hours. Click the link in this widget to view the log. See the
   [Netwrix Auditor Health Log](/docs/auditor/10.9/admin/healthstatus/dashboard/healthlog.md) topic for additional information.
-- The Database statistics widget—Helps you to estimate database capacity on the default SQL Server
+- The Database statistics widget—Helps you estimate database capacity on the default SQL Server
   instance that hosts the product databases. See the [Database Statistics](/docs/auditor/10.9/admin/healthstatus/dashboard/databasestatistics.md)
   topic for additional information.
-- The Long-Term Archive widget—Helps you to estimate the capacity of the Long-Term Archive
+- The Long-Term Archive widget—Helps you estimate the capacity of the Long-Term Archive
   file-based storage. To modify its settings, including location and retention, click the link in
   this widget. See the [System Health](/docs/auditor/10.9/requirements/longtermarchive.md#system-health) topic
   for additional information.
-- The Working Folder widget—Helps you to estimate the capacity of the Auditor working folder used to
-  keep operational information (configuration files of the product components, log files, and other
+- The Working Folder widget—Helps you estimate the capacity of the Auditor working folder, which
+  keeps operational information (configuration files of the product components, log files, and other
   data) on the Auditor Server. See the
   [System Health](/docs/auditor/10.9/requirements/longtermarchive.md#system-health) topic for additional
   information.
