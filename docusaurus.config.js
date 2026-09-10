@@ -8,6 +8,7 @@ import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
+import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -186,24 +187,27 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: redirectProducts.filter(product => {
-          // Only create redirects for products with multiple versions (not just 'current')
-          return !(product.versions.length === 1 && product.versions[0].version === 'current');
-        }).map(product => {
-          const latestVersion = getDefaultVersion(product);
-          const latestVersionUrl = versionToUrl(latestVersion.version);
+        redirects: [
+          ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...redirectProducts.filter(product => {
+            // Only create redirects for products with multiple versions (not just 'current')
+            return !(product.versions.length === 1 && product.versions[0].version === 'current');
+          }).map(product => {
+            const latestVersion = getDefaultVersion(product);
+            const latestVersionUrl = versionToUrl(latestVersion.version);
 
-          // Use explicit customRoutePath if specified (e.g., for multi-versioned products with 'current')
-          // Otherwise use standard path generation
-          const targetPath = latestVersion.customRoutePath
-            ? latestVersion.customRoutePath
-            : `${product.path}/${latestVersionUrl}`;
+            // Use explicit customRoutePath if specified (e.g., for multi-versioned products with 'current')
+            // Otherwise use standard path generation
+            const targetPath = latestVersion.customRoutePath
+              ? latestVersion.customRoutePath
+              : `${product.path}/${latestVersionUrl}`;
 
-          return {
-            from: `/${product.path}`,
-            to: `/${targetPath}`,
-          };
-        }),
+            return {
+              from: `/${product.path}`,
+              to: `/${targetPath}`,
+            };
+          }),
+        ],
         createRedirects(existingPath) {
           for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
             const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;

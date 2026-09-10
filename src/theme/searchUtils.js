@@ -37,8 +37,8 @@ export function versionLabel(version) {
 
 // A version-pinned KB source (kbSource override) publishes under its directory
 // basename instead of the product id — both as the standalone route segment and as
-// the copied landing page's slug (docs/kb/accessanalyzer-2601/index.md pins
-// slug: accessanalyzer-2601 while the default source pins slug: accessanalyzer).
+// the copied landing page's slug (docs/kb/accessanalyzer-26.1/index.md pins
+// slug: accessanalyzer-26.1 while the default source pins slug: accessanalyzer).
 // basename -> product id, so every shape of one article normalizes to one key.
 const PINNED_KB_SOURCES = new Map();
 PRODUCTS.forEach(p => (p.versions || []).forEach(v => {

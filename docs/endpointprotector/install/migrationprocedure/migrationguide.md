@@ -4,7 +4,7 @@ description: "Netwrix Endpoint Protector — Server Migration & Upgrade Guide"
 sidebar_position: 10
 ---
 
-<small><em>Document version: 3.0</em></small>
+<small><em>Document version: 3.1</em></small>
 
 ---
 
@@ -57,7 +57,7 @@ flowchart TD
     Trial --> Restore["Restore backup onto 2608<br/>Upload client packages<br/>→ imports your configuration backup"]
     Restore --> License["Import license on the restored server<br/>→ verify it imported successfully"]
     License --> Verify["Post-Migration Verification"]
-    Verify --> ClientUpgrade["Client Upgrade to 2608, then<br/>re-enable client communications"]
+    Verify --> ClientUpgrade["Client Upgrade to 2608, then<br/>restore client connectivity"]
     ClientUpgrade --> Done(["✅ Done — running on 2608"])
 
     classDef startPoint fill:#fdebd3,stroke:#d68910,color:#7e5109

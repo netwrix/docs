@@ -1,6 +1,6 @@
 ---
-title: "Windows Deployment"
-description: "Windows Deployment"
+title: "Intune Windows Deployment"
+description: "Microsoft Intune EPP Client Windows Deployment"
 sidebar_position: 10
 ---
 
@@ -15,23 +15,24 @@ Protector MSI package;
 
 ![Downloading the Windows Endpoint Protector MSI Package](msipackagedownload.webp)
 
-:::warning
-When deploying the .msi package, delete the information in the brackets as
-well as the underscore that precedes it - EPPClientSetup.5.6.3.1_x86_64.msi
+:::note
+`EPPClientSetup.2608.1.1.3_x86_64.msi` is an example filename. Always download and deploy the
+latest available EPP Client version.
 :::
 
+:::warning
+When deploying the .msi package, delete the information in the brackets as
+well as the underscore that precedes it - EPPClientSetup.2608.1.1.3_x86_64.msi
+:::
 
-![When deploying the .msi package, delete the information in the brackets as well as the underscore that precedes it - EPPClientSetup.5.6.3.1_x86_64.msi](msipackage.webp)
-
-
-**Step 3 –** Go to the Microsoft Endpoint Manager admin center and sign in;
+**Step 3 –** Go to the Microsoft Intune admin center (also known as Microsoft Endpoint Manager) and sign in;
 
 **Step 4 –** Go to Apps from the left-hand side menu, and on the Apps Overview page, select the
 Windows platform;
 
 ![Apps Overview Page](appsoverview.webp)
 
-**Step 5 –** On the Windows App page, click Add, select the Line of business app type, and then
+**Step 5 –** On the Windows App page, click Create, select the Line of business app type, and then
 click Select;
 
 ![Selecting the Line of business app type](apptype.webp)
@@ -46,7 +47,7 @@ Protector MSI file and click OK;
 - Name – add Endpoint Protector and optional, the package version (Endpoint Protector 5.7.3.6)
 - Description – click Edit Description and add installation details
 - Publisher – add NetwrixLtd.
-- Command-line argument – add the following command line in the text box
+- Command-line argument – add the following command line in the text box and complete it with the required information (server IP, port):
 
     - WSIP="EPP_server_IP" WSPORT="443" /q REBOOT=ReallySuppress
 
