@@ -6,47 +6,48 @@ sidebar_position: 30
 
 # Configure Video Recordings Playback Settings
 
-Video recordings of users' activity can be watched in any Netwrix Auditor client. Also, recordings
+You can watch video recordings of users' activity in any Netwrix Auditor client. Also, recordings
 are available as links in web-based reports and email-based Activity Summaries.
 
 You can use group Managed Service Accounts (gMSA) as data collecting accounts.
 
-To be able to watch video files captured by Netwrix Auditor via console, the following settings must
-be configured:
+To watch video files captured by Netwrix Auditor via console, configure the following settings:
 
 - The user must have read permissions (resultant set) to the **Netwrix_UAVR$** shared folder where
   video files are stored. By default, all members of the **Netwrix Auditor Client Users** group can
-  access this shared folder. Both the group and the folder are created automatically by Netwrix
-  Auditor. Ensure to grant sufficient permissions on folder or explicitly add user to the group
-  (regardless his or her role delegated in the product). See the To Add an Account to Netwrix
-  Auditor Client Users Group topic for additional information.
-- A dedicated codec must be installed. This codec is installed automatically on the computer where
-  Netwrix Auditor is deployed, and on the monitored computers. To install it on a different
+  access this shared folder. Netwrix Auditor creates both the group and the folder automatically.
+  Grant sufficient permissions on the folder or explicitly add the user to the group, regardless of
+  the role delegated to them in the product. See the
+  [To Add an Account to Netwrix Auditor Client Users Group](#to-add-an-account-to-netwrix-auditor-client-users-group)
+  topic for additional information.
+- A dedicated codec must be installed. Netwrix Auditor installs this codec automatically on the
+  computer where you deploy it, and on the monitored computers. To install it on a different
   computer, download it from
   [https://www.netwrix.com/download/ScreenPressorNetwrix.zip](https://www.netwrix.com/download/ScreenPressorNetwrix.zip).
 - The Ink and Handwriting Services, Media Foundation, and Desktop Experience Windows features must
   be installed on the computer where Netwrix Auditor Server is deployed. These features allow
-  enabling Windows Media Player and sharing video recordings via DLNA. See the To Enable Windows
-  Features topic for additional information.
+  enabling Windows Media Player and sharing video recordings via DLNA. See the
+  [To Enable Windows Features](#to-enable-windows-features) topic for additional information.
 
-To be able to watch video files captured by Netwrix Auditor via direct links, the following settings
-must be configured:
+To watch video files captured by Netwrix Auditor via direct links, configure the following settings:
 
 - Microsoft Internet Explorer 7.0 and above must be installed and ActiveX must be enabled.
-- Internet Explorer security settings must be configured properly. See the To Configure Internet
-  Explorer Security Settings topic for additional information.
-- JavaScript must be enabled. See the To Enable JavaScript topic for additional information.
-- Internet Explorer Enhanced Security Configuration (IE ESC) must be disabled. See the To Disable
-  Internet Explorer Enhanced Security Configuration (IE ESC) topic for additional information.
+- Internet Explorer security settings must be configured properly. See the
+  [To Configure Internet Explorer Security Settings](#to-configure-internet-explorer-security-settings)
+  topic for additional information.
+- JavaScript must be enabled. See the [To Enable JavaScript](#to-enable-javascript) topic for
+  additional information.
+- Internet Explorer Enhanced Security Configuration (IE ESC) must be disabled. See the
+  [To Disable Internet Explorer Enhanced Security Configuration (IE ESC)](#to-disable-internet-explorer-enhanced-security-configuration-ie-esc)
+  topic for additional information.
 
-All Internet Explorer-related settings are relevant only for those who watch videos not in Netwrix
-Auditor console.
+All Internet Explorer-related settings are relevant only for those who watch videos outside the
+Netwrix Auditor console.
 
-**NOTE:** Microsoft is in the process of deprecating Internet Explorer. However, if you are trying
-to access the video recordings from browser via direct links (reports on SSRS portal, subscriptions,
-activity summaries, search export results), IE engine should be present on the client machine. IE
-might be disabled with GPO, but it shouldn't be removed completely. Recommended option is to use
-Edge with "IE mode" option enabled.
+**NOTE:** Microsoft is deprecating Internet Explorer. However, if you access the video recordings
+from a browser via direct links (reports on SSRS portal, subscriptions, activity summaries, search
+export results), the IE engine must be present on the client machine. You can disable IE with GPO,
+but don't remove it completely. Netwrix recommends using Edge with the "IE mode" option enabled.
 
 ## To Configure Internet Explorer Security Settings
 
@@ -82,8 +83,8 @@ disable it.
 
 ## To Add an Account to Netwrix Auditor Client Users Group
 
-All members of the Netwrix Auditor Client Users group are granted the Global reviewer role in
-Netwrix Auditor and have access to all collected data.
+Netwrix Auditor grants all members of the Netwrix Auditor Client Users group the Global reviewer
+role and access to all collected data.
 
 **Step 1 –** On the computer where Netwrix Auditor Server is installed, start the Local Users and
 Computers snap-in.
@@ -92,11 +93,11 @@ Computers snap-in.
 
 **Step 3 –** In the Netwrix Auditor Client Users Properties dialog, click **Add**.
 
-**Step 4 –** Specify the users you want to be included in this group.
+**Step 4 –** Specify the users you want to add to this group.
 
 ## To Enable Windows Features
 
-Follow the steps if Netwrix Auditor Server is installed on the Windows Server 2012 and later.
+Follow these steps if Netwrix Auditor Server runs on Windows Server 2012 or later.
 
 **Step 1 –** Navigate to **Start** > **Server Manager**.
 
