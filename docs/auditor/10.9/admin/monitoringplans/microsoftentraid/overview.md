@@ -64,7 +64,7 @@ Ensure you have the following at hand:
 The type of data Netwrix Auditor can collect from the Microsoft 365 tenant depends on the
 authentication option you choose.
 
-To configure an Office 365 tenant as a monitored item, complete the following steps.
+## Configure Office 365 Tenant as a Monitored Item
 
 **Step 1 –** On the **General** page of the item properties, specify **Tenant name**:
 
