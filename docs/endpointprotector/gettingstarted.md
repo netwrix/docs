@@ -66,8 +66,8 @@ For more information, see [Device Control](/docs/endpointprotector/admin/dc_modu
 [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md) is Endpoint
 Protector's data loss prevention module for data in motion. It inspects file transfers, clipboard
 actions, print jobs, and network communications for sensitive content, combining content-aware
-detection (what the data contains) with context-aware detection (how and where it's being
-transferred) to block or report on policy violations before sensitive data leaves the
+detection (what the data contains) with context-aware detection (how and where users transfer
+it) to block or report on policy violations before sensitive data leaves the
 organization. Content Aware Protection and eDiscovery policies also recognize labels from
 third-party document classification tools, including
 [Netwrix Data Classification](/docs/endpointprotector/admin/denylistsallowlists/denylists.md#ndc-classification)
@@ -168,15 +168,15 @@ devices, and administrators can remotely reset a protected device to delete the 
 holds. Administrators can also control whether Enforced Encryption launches on computers where the
 Endpoint Protector Client isn't installed, and whether it runs in
 [read-only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode)
-on those unmanaged computers — for example, when a protected device is used outside the
+on those unmanaged computers — for example, when someone uses a protected device outside the
 organization.
 
 - Automatic Deployment:
 
     - Go to Device Control > Global Rights.
     - Enable Allow Access if Trusted Device™ Level 1+.
-    - Ensures automatic deployment of Enforced Encryption 2 on USB devices recognized as Trusted
-      Device™ Level 1.
+    - Ensures automatic deployment of Enforced Encryption 2 on USB devices that Endpoint Protector
+      recognizes as Trusted Device™ Level 1.
 
 - Manual Deployment:
 

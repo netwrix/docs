@@ -47,7 +47,7 @@ You can customize the session timeout and timeout counter in [System Configurati
 ## General Dashboard
 
 In this section, you can view general information as graphics and charts related to the most
-important activities logged by Endpoint Protector.
+important activities Endpoint Protector logs.
 
 You will view more speciﬁc dashboards on the Device Control, Content Aware Protection and eDiscovery
 sections.
@@ -69,7 +69,7 @@ modules (Device Control, Content Aware Protection, or eDiscovery).
 From the System Status subsection, you can enable the HDD Disk Space and Log Rotation.
 
 :::note
-If this setting is enabled, when the Server’s disk space reaches a certain percentage
+If you enable this setting, when the Server’s disk space reaches a certain percentage
 (starting from 50% up to 90%), new logs automatically overwrite the old ones.
 :::
 

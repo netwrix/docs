@@ -21,9 +21,10 @@ The Client doesn't inject kernel-level drivers or extensions on Windows, macOS, 
 avoids the stability and compatibility risks associated with kernel-mode components, such as system
 crashes from driver conflicts or extension issues after an OS update.
 
-On Linux specifically, this also means the Client isn't dependent on Dynamic Kernel Module Support
-(DKMS) or a rebuild each time the kernel is updated, removing the operational risk — common with
-kernel-module-based agents — of endpoint protection breaking after a routine kernel update.
+On Linux specifically, this also means the Client doesn't depend on Dynamic Kernel Module Support
+(DKMS) and doesn't require a rebuild each time you update the kernel, removing the operational
+risk — common with kernel-module-based agents — of endpoint protection breaking after a routine
+kernel update.
 
 ### Cross-OS Feature Parity
 
@@ -88,7 +89,9 @@ add exclusions for specific files, folders, and processes on Windows, macOS, and
 in the following sections.
 
 :::warning Important
-Before escalating any Endpoint Client performance issue, configure and deploy the security tool exclusions listed in the following sections for EPP on the affected endpoint, then reboot the computer.
+Before escalating any Endpoint Client performance issue, first configure and deploy the security tool
+exclusions listed in the following sections for EPP on the affected endpoint, then reboot the
+computer.
 :::
 
 ### Recommended Exclusions for Windows
