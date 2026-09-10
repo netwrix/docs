@@ -60,8 +60,11 @@ protection rules and logs activity for auditing purposes.
 
 **MySQL database**
 
-The Endpoint Protector server uses a lastest MySQL LTS database that stores configuration data, agent provisioning settings,
-user activity logs, and incident reports. MySQL handles agent registration, policy definitions, entity management, and other provisioning data.
+The Endpoint Protector server uses a lastest MySQL LTS database that stores configuration data, agent provisioning settings. MySQL handles agent registration, policy definitions, entity management, and other provisioning data.
+
+:::note
+Starting with the 2608 release, MySQL no longer stores user activity logs or incident reports — this data now lives in CrateDB instead. SaaS deployments are the exception: Netwrix retains historical data in MySQL to meet compliance requirements, while new logs go to CrateDB.
+:::
 
 **CrateDB**
 
