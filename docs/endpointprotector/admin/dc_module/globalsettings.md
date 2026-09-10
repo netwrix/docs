@@ -883,7 +883,7 @@ Use the Debug level mode, as it contains more than error and warning type inform
 
 ![Use this feature to collect logs for a specific issue](debuglogging.webp)
 
-### Debug Logging Usage
+### Debug Logging Activation
 
 To use the debug feature and collect logs, follow these steps:
 
@@ -935,7 +935,7 @@ logging option.
 Logs will be sent to the Endpoint Protector Server on the Logs Report page, Artifact Received events
 are registered when diagnostic data are received.
 
-### Debug Logging Actions
+### Getting Debug Logs via EPP Server
 
 To view the log actions, go to the **Device Control** module, on the **Computer**s page and click
 the **Actions** column.
@@ -964,6 +964,42 @@ the **Actions** column.
 
 ![Forced Restart Computer - this option sends a force reboot command to the computer](forcedrestarttwo.webp)
 
+### Getting Debug Logs locally on Endpoint
+
+If the EPP Client can't communicate with the Endpoint Protector Server, collect debug logs directly
+on the endpoint with the diagnostic collection script instead.
+
+:::note
+If Tamper Mode is enabled, the script only works on Windows.
+:::
+
+#### Windows
+
+**Step 1 –** Run the following script from PowerShell or Command Prompt:
+
+`"C:\Program Files\CoSoSys\Endpoint Protector\Resources\epp_collect_dpi_info.bat"`
+
+**Step 2 –** Wait for the script to finish. Some steps, such as listing installed apps and
+collecting console logs, can take a few minutes. Don't interrupt the script.
+
+**Step 3 –** Collect the generated files from the output folder the script prints at the end of the
+run, for example `C:\Users\<username>\AppData\Local\Temp\epp_logs`.
+
+
+#### macOS
+
+**Step 1 –** Run the following command as root:
+
+- With Deep Packet Inspection (DPI) on: `sudo /Applications/EndpointProtectorClient.app/Contents/Resources/epp_collect_dpi_info_mac.sh 1`
+- With DPI off: `sudo /Applications/EndpointProtectorClient.app/Contents/Resources/epp_collect_dpi_info_mac.sh`
+
+**Step 2 –** Enter the password when prompted. The script must run as root.
+
+**Step 3 –** Wait for the script to finish. Some steps, such as listing installed apps and
+collecting console logs, can take a few minutes. Don't interrupt the script.
+
+**Step 4 –** Collect the generated files from the output folder the script prints, `/tmp/epp_logs`.
+
 ### Data Obfuscation Rules
 
 Endpoint Protector obfuscates all data according to these rules:
@@ -973,7 +1009,7 @@ Endpoint Protector obfuscates all data according to these rules:
 
 Specific use cases:
 
-1. For credit cards, the PCI Security Standards were implemented
+1. For credit cards, the PCI Security Standards were implemented with full text obfuscation
 2. For SSNs, the last 4 characters are displayed
 3. For Brazil ID (CPF), the first 3 and the last 2 characters are obfuscated
 
@@ -994,6 +1030,10 @@ Endpoint Protector doesn't obfuscate file-type, file-size, and date threats.
 
 From this section you can allow EasyLock to be installed and run only on computers that have
 Endpoint Protector installed or in relation to a list of trusted Endpoint Protector Servers.
+
+:::note
+Before you use these settings, ensure that you configure a Master Password. See [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) for how to configure it.
+:::
 
 ![Allow EasyLock to be installed](easylocksettings.webp)
 

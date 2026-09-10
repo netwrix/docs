@@ -21,12 +21,11 @@ available configuration profiles, click **+New**.
 On the New macOS Configuration Profile section, you can manage profile settings and select the
 devices and users to which you want to deploy the profile.
 
-:::note
-Click **Save** after you have managed all settings and the profile scope.
-:::
-
-
 ## General Settings
+
+:::note
+Click **Save** only after you have managed all settings and the profile scope.
+:::
 
 On the default General section, enter the following information:
 
@@ -56,17 +55,20 @@ certifications.
 
 ![Enabling Deep Packet Inspection Certificate and then downloading Client CA Certificate](dpicertificate.webp)
 
-**Step 3 –** Go to Jamf, the Certificate section, and click **Configure**.
+**Step 3 –** Return to Jamf and go to the Certificate section of the profile you created earlier,
+and then click **Configure**.
 
 **Step 4 –** Enter a Certificate name and then select and upload the downloaded Client CA
 Certificate in .cer format.
+
+**Step 5 –** Save the changes.
 
 ![Entering the required information on New macOS Configuration Profile](macosconfiguration.webp)
 
 ## Privacy Preferences Policy Control Settings
 
-On the Privacy Preferences Policy Control section, click **Configure** and then enter the following
-information:
+Edit the profile you created earlier, go to the Privacy Preferences Policy Control section, click
+**Configure**, and then enter the following information:
 
 - Identifier - `com.cososys.eppclient`.
 - Identifier Type – go with the default Bundle ID type.
@@ -82,6 +84,12 @@ this command line.
 
 - Select the **Validate the Static Code Requirement** check-box.
 - Click **Add** and **Save** to allow access to SystemPolicyAllFiles and Accessibility services.
+
+:::note
+Jamf may list **Accessibility** as **(Deprecated)** in this dropdown. Apple has publicly earmarked
+this service for retirement, so Jamf flags it ahead of time. You can still select it — this is an
+advance notice, not a functional issue.
+:::
 
 ![Configuring Privacy Peferences Policy Control](privacypreferences.webp)
 
@@ -132,6 +140,12 @@ this command line.
 - Click **Add** and then **Save** to allow access to SystemPolicyAllFiles and Accessibility
   services.
 
+:::note
+Jamf may list **Accessibility** as **(Deprecated)** in this dropdown. Apple has publicly earmarked
+this service for retirement, so Jamf flags it ahead of time. You can still select it — this is an
+advance notice, not a functional issue.
+:::
+
 ![Configuring Enforced Encryption settings](enforcedencryption.webp)
 
 ## System Extension Settings
@@ -173,31 +187,6 @@ This setting applies starting with MacOS 12 (Monterey).
 
 ![Adding a new policy that will allow the removing of system extensions](removeableextensions.webp)
 
-### Managed Login Items
-
-Administrators can quickly disable Endpoint Protector Items in Jamf Configuration Profiles with
-Ventura's (macOS 13) new capability. This can be accomplished by taking the following steps:
-
-**Step 5 –** Log in to your Jamf account.
-
-**Step 6 –** Click **Computer** from the main navigation bar.
-
-**Step 7 –** Select **Configuration Profiles** from the sidebar menu on the left.
-
-**Step 8 –** Click **New** in the upper right-hand corner.
-
-**Step 9 –** On the left, under the Options box, select **Managed Logged In Items**.
-
-Disable Endpoint Protector Items in your Jamf Configuration Profiles. Uncheck the box next to the Endpoint ProtectorItems you want to disable, and then click
-**Save** to save your changes.
-
-:::note
-Disabling Endpoint Protector Items may have an impact on the security of your system. Only
-disable these items if you are positive it is essential and you have taken every precaution
-necessary to keep your system secure.
-:::
-
-
 ## VPN Settings
 
 :::note
@@ -230,7 +219,9 @@ this command line.
 
 ![First section to configuring VPN settings](vpnsettings.webp)
 
-![Second section to configuring VPN settings](vpnconfiguration.webp)
+![Second section to configuring VPN settings](vpnsettings2.webp)
+
+![Third section to configuring VPN settings](vpnconfiguration.webp)
 
 ## Notifications Settings
 
@@ -247,6 +238,40 @@ On the Notifications section, click **Configure** and then enter the following i
   option.
 
 ![Optional Notifiaction Settings](notificationsettings.webp)
+
+![Optional Notifiaction Settings continued](notificationsettings2.webp)
+
+## Managed Login Items
+
+Administrators can quickly disable Endpoint Protector Items in Jamf Configuration Profiles with
+Ventura's (macOS 13) new capability. This can be accomplished by taking the following steps:
+
+**Step 5 –** Log in to your Jamf account.
+
+**Step 6 –** Click **Computer** from the main navigation bar.
+
+**Step 7 –** Select **Configuration Profiles** from the sidebar menu on the left.
+
+**Step 8 –** Click **New** in the upper right-hand corner.
+
+**Step 9 –** On the left, under the Options box, select **Managed Logged In Items**.
+
+Disable Endpoint Protector Items in your Jamf Configuration Profiles. Uncheck the box next to the Endpoint ProtectorItems you want to disable, and then click
+**Save** to save your changes.
+
+:::note
+Disabling Endpoint Protector Items may have an impact on the security of your system. Only
+disable these items if you are positive it is essential and you have taken every precaution
+necessary to keep your system secure.
+:::
+
+On the Managed Login Items section, click **Configure** and then enter the following information:
+
+- Rule Type – select **Team Identifier**.
+- Rule Value – `TV3T7A76P4`.
+- Enable the **Include** toggle.
+
+![Configuring Managed Login Items](managedloginitems.webp)
 
 ## Scope
 

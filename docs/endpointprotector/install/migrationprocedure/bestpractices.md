@@ -49,7 +49,7 @@ The following best practices come from the complete migration workflow and apply
 |---|---|
 | 21 | Always reuse the same IP/FQDN for the new server. Changing it creates cascading certificate and Enforced Encryption (EE) trust failures. |
 | 22 | Fill both DNS fields only on unpatched 2509 or early 2510 environments. Patch 2604 fixed the DNS field-saving bug, so 2608 needs no workaround. |
-| 23 | Disable client communications on the new server before restoring a backup to prevent partial-state registrations. |
+| 23 | Block client connectivity to the new server (firewall rule, routing block, or disconnected network cable, depending on your environment) before restoring a backup, to prevent partial-state registrations. |
 | 24 | After migration, monitor SIEM connectivity — it may require reconfiguration and Netwrix Support may need to provide a restoration script. |
 
 ## Client Management
@@ -59,7 +59,7 @@ The following best practices come from the complete migration workflow and apply
 | 25 | The 2608 client requires no new bridge version — any client on 5.9.4.3 Hotfix 1 or on any 2511–2605 client version can upgrade directly. If you are using the EPP Server Client Upgrade feature and still have clients on 5.9.4.1 or older, upgrade them to 5.9.4.3 Hotfix 1 first as the signature bridge before proceeding to 2608. |
 | 26 | Use enterprise deployment tools (Intune, SCCM, Jamf) for client upgrades rather than relying solely on EPP's built-in client upgrade feature, which limits uploads to 50 machines per hour. |
 | 27 | Always run a pilot deployment of 10–20 endpoints before mass client rollout. |
-| 28 | For Enforced Encryption (EE) environments, upload both Windows and macOS EE clients to the server before enabling client communications — the server requires both packages regardless of which OS your endpoints use. |
+| 28 | For Enforced Encryption (EE) environments, upload both Windows and macOS EE clients to the server before restoring client connectivity — the server requires both packages regardless of which OS your endpoints use. |
 | 29 | Update EE clients to the latest version **immediately** after migration — don't leave them on an older version the way you might stage regular EPP client rollouts. Since the **2509** release, Enforced Encryption changed its communication logic with the server, so a delayed EE client update can cause EE-protected drives to lose synchronization or fail to communicate. |
 | 30 | Plan client updates for off-peak hours to minimize end-user disruption. |
 | 31 | If a Client Upgrade task is stuck, clean up all existing Client Upgrade tasks on the EPP Server and create a new task — stale tasks can block the upgrade queue. |
