@@ -31,7 +31,7 @@ The server side of Endpoint Protector has several parts working together:
 
 - **Endpoint Protector Hardware or Virtual Appliance**—contains the operating system, database, and supporting services
 - **MySQL Database**—stores configuration data, agent provisioning settings, information about users and groups, and policy definitions
-- **CrateDB**—a distributed SQL database, optimized for time-series data, that stores Device Control, Content Aware Protection, and eDiscovery logs, providing faster queries and horizontal scalability for environments with high log volumes
+- **CrateDB**—a distributed SQL database, optimized for time-series data, that stores Device Control, File Tracing, Content Aware Protection, and eDiscovery logs, providing faster queries and horizontal scalability for environments with high log volumes
 - **Web Service**—communicates with the Endpoint Protector Clients and stores the information they send
 - **Endpoint Protector User Interface**—manages the existing devices, computers, users, groups, and their behavior in the system
 
@@ -60,7 +60,7 @@ protection rules and logs activity for auditing purposes.
 
 **MySQL database**
 
-The Endpoint Protector server uses the latest MySQL LTS database to store configuration data and agent provisioning settings. MySQL handles agent registration, policy definitions, entity management, and other provisioning data.
+The Endpoint Protector server uses a lastest MySQL LTS database that stores configuration data, agent provisioning settings. MySQL handles agent registration, policy definitions, entity management, and other provisioning data.
 
 :::note
 Starting with the 2608 release, MySQL no longer stores user activity logs or incident reports — this data now lives in CrateDB instead. SaaS deployments are the exception: Netwrix retains historical data in MySQL to meet compliance requirements, while new logs go to CrateDB.
@@ -68,7 +68,7 @@ Starting with the 2608 release, MySQL no longer stores user activity logs or inc
 
 **CrateDB**
 
-CrateDB is a Relational Database Management System (RDBMS) — a distributed SQL database optimized for time-series log data. Endpoint Protector uses this RDBMS to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy the RDBMS as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. You can add cluster nodes with minimal downtime and availability impact.
+CrateDB is a distributed SQL database optimized for time-series log data. Endpoint Protector uses CrateDB to store Device Control, File Tracing, Content Aware Protection, and eDiscovery logs. 
 
 **Firewall/gateway device**
 
