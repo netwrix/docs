@@ -386,13 +386,9 @@ Auditor supports monitoring the following versions:
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
 
 - Windows 11
 - Windows 10 (32 and 64-bit)
-- Windows 8.1 (32 and 64-bit)
-- Windows 7 (32 and 64-bit)
 
 User Activity data source can support around 300 targets with one user session per target without
 scalability issues:
@@ -429,13 +425,9 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
 
 - Windows 11
 - Windows 10 (32 and 64-bit)
-- Windows 8.1 (32 and 64-bit)
-- Windows 7 (32 and 64-bit)
 
 DNS & DHCP
 
@@ -445,16 +437,6 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
-
-:::note
-Auditor supports DNS on Windows Server 2008 SP2 (32 and 64-bit) only.
-:::
-
-:::note
-Netwrix Auditor doesn't support DHCP on Windows Server 2008.
-:::
 
 Internet Information Services (IIS)
 

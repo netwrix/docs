@@ -21,8 +21,8 @@ set to _Automatic_ and click **Start**.
 ![Remote Registry Properties dialog box](/images/1secure/configuration/computer/manualconfig_genevents_remoteregistry_start2016.webp)
 
 **Step 4 –** In the Services window, ensure that the Remote Registry service has the _Running_
-status on Windows Server 2012 and above.
+status.
 
 **NOTE:** The Remote Registry service should be enabled on the target server.
 
-5. Locate the Windows Management Instrumentation service and repeat these steps.
+**Step 5 –** Locate the Windows Management Instrumentation service and repeat these steps.

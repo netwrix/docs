@@ -20,40 +20,7 @@ The following audit permissions must be set to _"Successful"_ for the
 - Write DAC
 - Write Owner
 
-Perform one of the following procedures depending on the OS version:
-
-- Configuring Windows registry audit settings on pre-Windows Server 2012 versions
-- Configuring Windows registry audit settings on Windows Server 2012 and above
-
-## Configuring Windows registry audit settings on pre-Windows Server 2012 versions
-
-**Step 1 –** On your target server, open **Registry Editor**: navigate to **Start → Run** and type
-_"regedit"_.
-
-**Step 2 –** In the registry tree, expand the **HKEY_LOCAL_MACHINE** key, right-click **SOFTWARE**
-and select **Permissions** from the pop-up menu.
-
-**Step 3 –** In the **Permissions for SOFTWARE** dialog, click **Advanced**.
-
-**Step 4 –** In the **Advanced Security Settings for SOFTWARE** dialog, select the **Auditing** tab
-and click **Add**.
-
-**Step 5 –** Select the **Everyone** group.
-
-**Step 6 –** In the **Auditing Entry for SOFTWARE** dialog, select _"Successful"_ for the following
-access types:
-
-- **Set Value**
-- **Create Subkey**
-- **Delete**
-- **Write DAC**
-- **Write Owner**
-
-![ManualConfig_WS_AuditingEntry2008](/images/auditor/10.7/configuration/windowsserver/manualconfig_ws_auditenrty2008.webp)
-
-Repeat the same steps for the `HKEY_LOCAL_MACHINE\SYSTEM` key.
-
-## Configuring Windows registry audit settings on Windows Server 2012 and above
+Follow the steps to configure Windows registry audit settings.
 
 **Step 1 –** On your target server, open **Registry Editor**: navigate to **Start → Run** and type
 _"regedit"_.
