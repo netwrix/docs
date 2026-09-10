@@ -6,6 +6,7 @@
  *
  * Features:
  * - Copies KB articles from central location to versioned docs folders
+ * - Skips versions that opt out of the KB (kb: false in products.js) and removes their stale copies
  * - Rewrites absolute KB links to relative paths during copy
  * - Removes .md extensions from links (Docusaurus best practice)
  * - Generates _category_.json files for proper category labeling
@@ -68,6 +69,11 @@ function buildConfig() {
       }
     });
 
+    // Versions that opt out of the KB entirely (kb: false on the version entry)
+    const noKbVersions = product.versions
+      .filter(v => v.kb === false)
+      .map(v => v.version);
+
     // Special handling: KB folder name mapping (for legacy naming)
     const kbFolderName =
       productId === 'recoveryforactivedirectory' ? 'recoveryad' :
@@ -84,6 +90,7 @@ function buildConfig() {
     config[productId] = {
       versions: versions,
       versionSources: versionSources,
+      noKbVersions: noKbVersions,
       source: `docs/kb/${kbFolderName}`,
       destinationPattern: destinationPattern
     };
@@ -650,6 +657,26 @@ function main() {
           validateDestinationPath(destination);
 
           console.log(`\n  📖 Version: ${version}`);
+
+          // A version can opt out of the KB (kb: false in products.js). Skip it
+          // and remove any copy left behind from before the opt-out, so a stale
+          // Knowledge Base section doesn't keep showing up in local builds.
+          if (config.noKbVersions?.includes(version)) {
+            console.log(`     ℹ️  KB disabled for this version (kb: false) — skipping`);
+            if (fs.existsSync(destination)) {
+              if (!isDryRun) {
+                if (!removeDirectorySync(destination)) {
+                  throw new Error('Failed to remove KB folder for a version with kb: false');
+                }
+                console.log(`     🗑️  Removed previously copied KB folder: ${destination}`);
+              } else {
+                console.log(`     🔍 [dry-run] Would remove previously copied KB folder: ${destination}`);
+              }
+            }
+            totalSkipped++;
+            continue;
+          }
+
           console.log(`     Source: ${versionSource}`);
           console.log(`     Dest:   ${destination}`);
 
