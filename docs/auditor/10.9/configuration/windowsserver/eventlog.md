@@ -26,8 +26,7 @@ Refer to the following Microsoft
 The procedure below provides a possible way to specify the event log settings manually. However, if
 you have multiple target computers, consider configuring these settings via Group Policy as
 described in
-[Configure the Event Log Size Using Group Policy](#configure-the-event-log-size-using-group-policy)
-below
+[Configure the Event Log Size Using Group Policy](#configure-the-event-log-size-using-group-policy).
 
 ## Configure the Event Log Size Manually
 

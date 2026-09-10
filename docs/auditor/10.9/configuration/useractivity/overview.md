@@ -40,7 +40,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
         - Remote **TCP Port 9004** must be opened for outbound connections.
         - The **User Activity Core Service** must be installed on the monitored computers.
           It is deployed automatically by Netwrix Auditor, provided that all required prerequisites are met. If necessary, you can install it manually.
-          For manual installation instructions, see the _Install Netwrix Auditor Agent to Audit User Activity_ topic below.
+          For manual installation instructions, see the [Install for User Activity Core Service](/docs/auditor/10.9/install/useractivitycoreservice.md) topic.
         - **.NET Framework 4.8** must be installed.
 
     - On the Netwrix Auditor host system/server:
@@ -56,6 +56,7 @@ See the following topics for additional information:
 
 - [Configure Data Collection Settings](/docs/auditor/10.9/configuration/useractivity/datacollection.md)
 - [Configure Video Recordings Playback Settings](/docs/auditor/10.9/configuration/useractivity/videorecordings.md)
+- [Install for User Activity Core Service](/docs/auditor/10.9/install/useractivitycoreservice.md)
 
 ## User Sessions
 
@@ -86,11 +87,3 @@ Review the table below to discover how different "run as" scenarios are reflecte
 | Window          | Application Run As: `<account_name>` | Standard user runs an application under credentials of another standard user.                                                       |
 | Elevated Window | Application Run As: `<account_name>` | User runs program through Run As Administrator or Accepts UAC (User Account Control) elevation prompts.                             |
 | Elevated Window | None                                 | Administrator needs to run the program with Run as Administrator enabled. Server Manager is one of the main examples for this case. |
-
-## Install Netwrix Auditor User Activity Core Service
-
-By default, the Netwrix Auditor User Activity Core Service is installed automatically on the audited
-computers when setting up auditing in Netwrix Auditor. If, for some reason, installation has failed,
-you must install it manually on each of the audited computers. See the
-[Install for User Activity Core Service](/docs/auditor/10.9/install/useractivitycoreservice.md) topic
-for additional information.

@@ -11,15 +11,15 @@ remotely.
 
 Review the following for additional information:
 
-- [Configure removable storage media monitoring on the local server](#configure-removable-storage-media-monitoring-on-the-local-server)
-- [Configure removable storage media monitoring remotely](#configure-removable-storage-media-monitoring-remotely)
-- [Review Event Trace Session object configuration](#review-event-trace-session-object-configuration)
+- [Configure Removable Storage Media Monitoring on the Local Server](#configure-removable-storage-media-monitoring-on-the-local-server)
+- [Configure Removable Storage Media Monitoring Remotely](#configure-removable-storage-media-monitoring-remotely)
+- [Review Event Trace Session Object Configuration](#review-event-trace-session-object-configuration)
 
 ## Configure Removable Storage Media Monitoring on the Local Server
 
 **Step 1 –** On the target server, create the following folder to store event logs:
 _"%ALLUSERSPROFILE%\Netwrix Auditor\Windows Server Audit\ETS\"_. For instructions on how to modify
-the root directory, see [Review Event Trace Session object configuration](#review-event-trace-session-object-configuration).
+the root directory, see [Review Event Trace Session Object Configuration](#review-event-trace-session-object-configuration).
 
 :::note
 If you do not want to use the Netwrix Auditor for Windows Server Compression Service for data
@@ -58,7 +58,7 @@ If your environment variable accesses another directory, update the path.
 
 **Step 1 –** On the target server, create the following folder to write data to:
 _"%ALLUSERSPROFILE%\Netwrix Auditor\Windows Server Audit\ETS\"_. For instructions on how to modify
-the root directory, see [Review Event Trace Session object configuration](#review-event-trace-session-object-configuration).
+the root directory, see [Review Event Trace Session Object Configuration](#review-event-trace-session-object-configuration).
 
 :::note
 If you do not want to use the Netwrix Auditor for Windows Server Compression Service for data

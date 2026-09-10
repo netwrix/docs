@@ -100,7 +100,7 @@ remember to do the following:
 2. Configure required protocols and ports, as described in the [Windows Server Ports](/docs/auditor/10.9/configuration/windowsserver/ports.md)
    topic.
 
-## Exclude Monitored Objects
+## Windows Server Monitoring Scope
 
 You can fine-tune Netwrix Auditor by specifying data that you want to exclude from the Windows
 Server monitoring scope. See the
@@ -116,10 +116,9 @@ When monitoring a Windows Server, Netwrix Auditor needs to audit some registry s
 want Netwrix Auditor to audit custom registry keys, see
 [Monitoring Custom Registry Keys](#monitoring-custom-registry-keys) for additional information.
 
-The table below is organized in three levels: a **Component** is a system component you enable for
-auditing in the monitoring plan (see
-[Monitor changes to system components](/docs/auditor/10.9/admin/monitoringplans/windows/overview.md)
-for a description of each component); each component contains one or more **Object types**, which
+The following table is organized in three levels: a **Component** is a system component you enable for
+auditing in the monitoring plan (see the Windows Server monitoring plan topic, Monitor changes to
+system components, for a description of each component); each component contains one or more **Object types**, which
 are the specific entities Netwrix Auditor tracks; and **Attributes** are the individual properties
 of that object type whose changes are reported.
 
@@ -192,7 +191,7 @@ reported as _“Not Applicable”_.
 |  | DNS HINFO\*\* | <ul><li>Container name</li><li>CPU type</li><li>Operating system</li><li>Owner name</li><li>Record class</li><li>TTL</li><li>Zone type</li></ul> |
 |  | DNS ISDN\*\* | <ul><li>Container name</li><li>ISDN phone number and DDI</li><li>ISDN subaddress</li><li>Owner name</li><li>Record class</li><li>TTL</li><li>Zone type</li></ul> |
 |  | DNS KEY\*\* | <ul><li>Algorithm</li><li>Container name</li><li>Key type</li><li>Key (base 64)</li><li>Name type</li><li>Owner name</li><li>Protocol</li><li>Record class</li><li>Signatory field</li><li>TTL</li><li>Zone type</li></ul> |
-|  | DNS MB\*\*\* | <ul><li>Container name</li><li>Mailbox host</li><li>Owner name</li><li>Record class</li><li>TTL</li><li>Zone type</li></ul> |
+|  | DNS MB\*\* | <ul><li>Container name</li><li>Mailbox host</li><li>Owner name</li><li>Record class</li><li>TTL</li><li>Zone type</li></ul> |
 |  | DNS MD\*\* | <ul><li>Container name</li><li>MD host</li><li>Owner name</li><li>Record class</li><li>TTL</li><li>Zone type</li></ul> |
 |  | DNS MF\*\* | <ul><li>Container name</li><li>MF host</li><li>Owner name</li><li>Record class</li><li>TTL</li><li>Zone type</li></ul> |
 |  | DNS MG\*\* | <ul><li>Container name</li><li>Member mailbox</li><li>Owner name</li><li>Record class</li><li>TTL</li><li>Zone type</li></ul> |

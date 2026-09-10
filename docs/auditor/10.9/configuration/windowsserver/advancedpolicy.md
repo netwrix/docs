@@ -38,7 +38,7 @@ Force audit policy subcategory settings policy.
 
 **Step 3 –** Double-click the policy and enable it.
 
-## Configure Advanced Audit Policy
+## Configure Advanced Audit Policy in Local Security Policy
 
 Advanced audit policies are integrated with Group Policies, so they can be applied via Group Policy
 Object or Local Security Policies. The procedure below describes how to apply Advanced policies via
