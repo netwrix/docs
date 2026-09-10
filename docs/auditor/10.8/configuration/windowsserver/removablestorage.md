@@ -49,7 +49,7 @@ If your environment variable accesses another directory, update the path.
     where:
 
     - `NetwrixAuditorForWindowsServer`—Fixed name the product uses to identify the Event Trace
-      Session object. The name can't be changed.
+      Session object. You can't change the name.
     - `<path to the EventTraceSessionTemplate.xml file>`—Path to the Event Trace Session
       template file that comes with Netwrix Auditor. The default path is _"C:\Program Files
       (x86)\Netwrix Auditor\Windows Server Auditing\EventTraceSessionTemplate.xml"_.
@@ -88,7 +88,7 @@ If your environment variable accesses another directory, update the path.
     where:
 
     - `NetwrixAuditorForWindowsServer`—Fixed name the product uses to identify the Event Trace
-      Session object. The name can't be changed.
+      Session object. You can't change the name.
     - `<path to the EventTraceSessionTemplate.xml file>`—Path to the Event Trace Session
       template file that comes with Netwrix Auditor. The default path is _"C:\Program Files
       (x86)\Netwrix Auditor\Windows Server Auditing\EventTraceSessionTemplate.xml"_.

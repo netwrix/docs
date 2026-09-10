@@ -15,13 +15,13 @@ To watch video files captured by Netwrix Auditor via console, configure the foll
 
 - The user must have read permissions (resultant set) to the **Netwrix_UAVR$** shared folder where
   video files are stored. By default, all members of the **Netwrix Auditor Client Users** group can
-  access this shared folder. Both the group and the folder are created automatically by Netwrix
-  Auditor. Ensure to grant sufficient permissions on folder or explicitly add user to the group
-  (regardless his or her role delegated in the product). See the
+  access this shared folder. Netwrix Auditor creates both the group and the folder automatically.
+  Grant sufficient permissions on the folder or explicitly add the user to the group, regardless of
+  the role delegated to them in the product. See the
   [To Add an Account to Netwrix Auditor Client Users Group](#to-add-an-account-to-netwrix-auditor-client-users-group)
   topic for additional information.
-- A dedicated codec must be installed. This codec is installed automatically on the computer where
-  Netwrix Auditor is deployed, and on the monitored computers. To install it on a different
+- A dedicated codec must be installed. Netwrix Auditor installs this codec automatically on the
+  computer where you deploy it, and on the monitored computers. To install it on a different
   computer, download it from
   [https://www.netwrix.com/download/ScreenPressorNetwrix.zip](https://www.netwrix.com/download/ScreenPressorNetwrix.zip).
 - The Ink and Handwriting Services, Media Foundation, and Desktop Experience Windows features must
@@ -44,11 +44,10 @@ To watch video files captured by Netwrix Auditor via direct links, configure the
 All Internet Explorer-related settings are relevant only for those who watch videos outside the
 Netwrix Auditor console.
 
-**NOTE:** Microsoft is in the process of deprecating Internet Explorer. However, if you are trying
-to access the video recordings from browser via direct links (reports on SSRS portal, subscriptions,
-activity summaries, search export results), IE engine should be present on the client machine. IE
-might be disabled with GPO, but it shouldn't be removed completely. Recommended option is to use
-Edge with "IE mode" option enabled.
+**NOTE:** Microsoft is deprecating Internet Explorer. However, if you access the video recordings
+from a browser via direct links (reports on SSRS portal, subscriptions, activity summaries, search
+export results), the IE engine must be present on the client machine. You can disable IE with GPO,
+but don't remove it completely. Netwrix recommends using Edge with the "IE mode" option enabled.
 
 ## To Configure Internet Explorer Security Settings
 
@@ -97,7 +96,7 @@ Computers snap-in.
 
 ## To Enable Windows Features
 
-Follow the steps if Netwrix Auditor Server is installed on the Windows Server 2012 and later.
+Follow these steps if Netwrix Auditor Server runs on Windows Server 2012 or later.
 
 **Step 1 –** Navigate to **Start** > **Server Manager**.
 

@@ -9,8 +9,8 @@ sidebar_position: 140
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration ensures audit data integrity.
+Without it, your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See
 the
@@ -19,7 +19,7 @@ knowledge base article for additional information.
 
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
-- Automatically through a monitoring plan – This is a recommended method. If you select to
+- Automatically through a monitoring plan – Netwrix recommends this method. If you select to
   automatically configure audit in the target environment, Auditor checks your current audit
   settings on each data collection and adjusts them if necessary.
 - Manually – You must adjust native audit settings manually to ensure collecting comprehensive and
@@ -43,8 +43,8 @@ You can configure your IT Infrastructure for monitoring in one of the following
 
     - The following legacy audit policies can be configured instead of advanced: Audit object
       access, Audit policy change, and **Audit account management** must be set to _"Success"_.
-    - The Enable Persistent Time Stamp local group policy must be enabled. This policy should be
-      configured manually since Auditor doesn't enable it automatically. See the
+    - The Enable Persistent Time Stamp local group policy must be enabled. You must configure this
+      policy manually because Auditor doesn't enable it automatically. See the
       [Configure Enable Persistent Time Stamp Policy](/docs/auditor/10.8/configuration/windowsserver/persistenttimestamp.md) topic for additional
       information.
     - The Application, Security, and System event log maximum size must be set to 4 GB. The
@@ -78,7 +78,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
         - Performance Logs and Alerts (TCP-In)
 
     - If the audited servers are behind the Firewall, review the list of protocols and ports
-      required for Netwrix Auditor and ensure that these ports are opened. See the
+      required for Netwrix Auditor and ensure that these ports are open. See the
       [Windows Server Ports](/docs/auditor/10.8/configuration/windowsserver/ports.md) topic for additional information.
     - For auditing removable storage media, two Event Trace Session objects must be created. See the
       [Configure Removable Storage Media for Monitoring](/docs/auditor/10.8/configuration/windowsserver/removablestorage.md) topic for additional
@@ -117,7 +117,7 @@ When monitoring a Windows Server, Netwrix Auditor needs to audit some registry s
 want Netwrix Auditor to audit custom registry keys, see
 [Monitoring Custom Registry Keys](#monitoring-custom-registry-keys) for additional information.
 
-The following table is organized in three levels: a **Component** is a system component you enable for
+The following table has three levels: a **Component** is a system component you enable for
 auditing in the monitoring plan (see the Windows Server monitoring plan topic, Monitor changes to
 system components, for a description of each component); each component contains one or more **Object types**, which
 are the specific entities Netwrix Auditor tracks; and **Attributes** are the individual properties
@@ -276,9 +276,9 @@ Record formation.
 
 - You can configure these settings automatically using Netwrix Auditor, as described in the
   [Settings for Data Collection](/docs/auditor/10.8/admin/monitoringplans/create.md#settings-for-data-collection)
-  topic. Corresponding audit settings will be also applied automatically after you select a checkbox
-  under **Monitor changes to system components** on the **General** tab in the Windows Server data
-  source properties.
+  topic. The product also applies the corresponding audit settings automatically after you select a
+  checkbox under **Monitor changes to system components** on the **General** tab in the Windows
+  Server data source properties.
 
 Netwrix Auditor automatically adjusts audit settings only for the keys/subkeys involved in the
 monitoring of selected components (granular adjustment). For example, if you selected **Services**,
@@ -309,7 +309,7 @@ For example:
 **Step 3 –** Consider the following:
 
 - Each entry must be a separate line.
-- Wildcards (\* and ?) are supported (except for the `registry key name` field). Put a backslash (\)
+- The product supports wildcards (\* and ?), except for the `registry key name` field. Put a backslash (\)
   in front of (\*), (?), (,), and (\) if they are a part of an entry value.
 - The product treats lines that start with the # sign as comments and ignores them.
 

@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # Microsoft Entra ID
 
-**NOTE:** Before configuring your monitoring plan, read and complete the instructions in
-the following topics:
+**NOTE:** Read and complete the instructions in the following topics before configuring
+your monitoring plan:
 
 - [Protocols and Ports Required](/docs/auditor/10.8/requirements/ports.md) – To ensure successful data
   collection and activity monitoring configure necessary protocols and ports for inbound and
@@ -26,14 +26,14 @@ You can use the following data collecting account options:
   Monitoring Plan Using Netwrix Privilege Secure topics for additional information.
 - Application and secret for Microsoft 365 with modern authentication.
 
-To add a new monitoring plan for Entra ID, you need to launch the New Monitoring Plan wizard, either
-from the Home screen, or from the Monitoring plans menu under the All Monitoring Plans section.
+To add a new monitoring plan for Entra ID, launch the New Monitoring Plan wizard, either from the
+Home screen, or from the Monitoring plans menu under the All Monitoring Plans section.
 
 ## Configure Data Source Settings
 
-Default data source settings will be configured during the completion of the New Monitoring Plan
-wizard. To customize the settings, you need to open your monitoring plan, and click **Edit data
-source** on the right side of the screen.
+The New Monitoring Plan wizard configures default data source settings when you complete it. To
+customize the settings, open your monitoring plan and click **Edit data source** on the right side
+of the screen.
 
 Complete the following fields:
 
@@ -61,18 +61,18 @@ Ensure you have the following at hand:
 - Application secret
 - For basic authentication: User name and password
 
-Types of data that can be collected by Netwrix Auditor from the Microsoft 365 tenant depend on the
+The types of data that Netwrix Auditor can collect from the Microsoft 365 tenant depend on the
 authentication option you choose.
 
 ## Configure Office 365 Tenant as a Monitored Item
 
 **Step 1 –** On the **General** page of the item properties, specify **Tenant name**:
 
-- If you are going to use **Basic authentication**, you can proceed to the next step – **Tenant
-  name** will be filled in automatically after it.
+- If you are going to use **Basic authentication**, you can proceed to the next step – the product
+  fills in **Tenant name** automatically after that.
 
 :::note
-Basic authentication is no longer possible for Exchange Online. For the already existing tenants it is still possible to use basic authentication for SharePoint Online and Microsoft Entra ID monitoring.
+Basic authentication is no longer possible for Exchange Online. For existing tenants, you can still use basic authentication for SharePoint Online and Microsoft Entra ID monitoring.
 :::
 
 - If you are going to use **Modern authentication**, paste the obtained name. See the
@@ -84,22 +84,23 @@ Basic authentication is no longer possible for Exchange Online. For the already 
 If you are using a government tenant, click the **Tenant Environment** tab and select the
 desired tenant environment.
 
-**Step 2 –** Select authentication method that will be used when accessing Office 365 services:
+**Step 2 –** Select the authentication method to use when accessing Office 365 services:
 
 - Basic authentication:
 
-    - Selected, Office 365 organization will be accessed on behalf of the user you specify.
+    - If selected, Netwrix Auditor accesses the Office 365 organization on behalf of the user you
+      specify.
     - Enter **User name** and **password**; use any of the following formats: _user@domain.com_ or
       _user@domain.onmicrosoft.com_.
-    - The **Tenant name** field then will be filled in automatically.
+    - The product then fills in the **Tenant name** field automatically.
     - Ensure this user account has sufficient access rights. See
       [Using Basic Authentication with Microsoft Entra ID](/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/permissions/basicauth.md)
       topic for additional information.
 
 - Modern authentication:
 
-    - Selected, Office 365 organization will be accessed using the Microsoft Entra ID (formerly
-      Azure AD) app you prepared. Enter:
+    - If selected, Netwrix Auditor accesses the Office 365 organization using the Microsoft Entra
+      ID (formerly Azure AD) app you prepared. Enter:
 
         - **Application ID**;
 
@@ -120,7 +121,7 @@ individual credentials for each of them.
 ## How to Add Microsoft Entra ID Monitoring Plan Using Netwrix Privilege Secure
 
 **NOTE:** Netwrix Privilege Secure resource-based integration works only with basic authentication.
-Ephemeral accounts will be created or elevated to be used as data collecting accounts. If you want
+Netwrix Privilege Secure creates or elevates ephemeral accounts to use as data collecting accounts. If you want
 to use modern authentication and the Netwrix Privilege Secure integration, you need to choose a
 credential-based access policy, save your application and secret in Netwrix Privilege Secure, and
 provide the Application ID instead of the user name.
@@ -128,8 +129,8 @@ provide the Application ID instead of the user name.
 Starting with version 10.7, you can use Netwrix Privilege Secure to manage the account for
 collecting data, after configuring the integration. See the
 [Netwrix Privilege Secure](/docs/auditor/10.8/admin/settings/privilegesecure.md) topic for additional information about
-integration and supported data sources. In this case, the credentials will not be stored by Netwrix
-Auditor. Instead, they will be managed by Netwrix Privilege Secure and provided on demand, ensuring
+integration and supported data sources. In this case, Netwrix Auditor doesn't store the credentials.
+Instead, Netwrix Privilege Secure manages them and provides them on demand, ensuring
 password rotation or using temporary accounts for data collection.
 
 To use Netwrix Privilege Secure as an account for data collection.
@@ -144,10 +145,10 @@ collection.
 **Step 3 –** Select the type of the Access Policy you want to use in Netwrix Privilege Secure.
 Credential-based is the default option. Refer to the
 [Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
-documentation to Access Policies documentation.
+documentation for details about Access Policies.
 
-In this case, you need to provide the username of the account managed by Netwrix Privilege Secure,
-and to which Netwrix Auditor has the access through a Credential-based access policy.
+In this case, provide the username of the account that Netwrix Privilege Secure manages and that
+Netwrix Auditor can access through a Credential-based access policy.
 
 **NOTE:** Netwrix recommends using different credentials for different monitoring plans and data
 sources.
@@ -158,8 +159,8 @@ The second option is Resource-based. To use this option, you need to provide the
 Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Ensure
 that you specified the same names as in Netwrix Privilege Secure.
 
-The Resource name in this case is where the activity will be performed. For example, if you grant
+The Resource name in this case is where the activity takes place. For example, if you grant
 the data collecting account the access to a local Administrators group - the resource is the server
-where the permission will be granted.
+where you grant the permission.
 
 Netwrix Privilege Secure is ready to use as an account for data collection.

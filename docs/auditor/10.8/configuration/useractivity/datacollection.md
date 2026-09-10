@@ -18,7 +18,7 @@ audited computers and on the computer where Netwrix Auditor Server is installed:
   [Windows Features Communication](#windows-features-communication) topic for additional
   information.
 - Local TCP Port 9004 is opened for inbound connections on the computer where Netwrix Auditor Server
-  is installed. This is done automatically on the product installation. See the
+  is installed. The product does this automatically during installation. See the
   [Open Local TCP Port 9004](#open-local-tcp-port-9004) topic for additional information.
 - Local TCP Port 9003 is opened for inbound connections on the audited computers. See the
   [Open Local TCP Port 9003](#open-local-tcp-port-9003) topic for additional information.

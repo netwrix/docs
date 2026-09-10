@@ -9,8 +9,8 @@ sidebar_position: 120
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration ensures audit data integrity.
+Without it, your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See
 the
@@ -21,7 +21,7 @@ You can use group Managed Service Accounts (gMSA) as data collecting accounts.
 
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
-- **Automatically through a monitoring plan** – This is a recommended method. If you select to
+- **Automatically through a monitoring plan** – Netwrix recommends this method. If you select to
   automatically configure audit in the target environment, Auditor checks your current audit
   settings on each data collection and adjusts them if necessary.
 - **Manually** – You must adjust native audit settings manually to ensure collecting comprehensive and

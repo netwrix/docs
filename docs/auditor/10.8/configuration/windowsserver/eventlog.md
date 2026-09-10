@@ -78,8 +78,7 @@ Configuration > Policies > Administrative Templates > Windows Components > Event
 
 **Step 2 –** Select the log you need.
 
-**Step 3 –** Edit Specify the maximum log file size setting; the value is usually set to _4194240
-KB_.
+**Step 3 –** Edit Specify the maximum log file size setting; the value is usually _4194240 KB_.
 
 **Step 4 –** Specify retention settings for the log; usually it is Overwrite as needed.
 
