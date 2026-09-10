@@ -4,7 +4,7 @@ description: The dspm-installer flags, environment variables, configuration file
 sidebar_position: 6
 ---
 
-`dspm-installer` takes its settings from four places. A flag wins over an environment variable, an environment variable wins over the configuration file, and the configuration file wins over the built-in default. When the installer runs in a terminal, it prompts for any required value still missing; without a terminal, a missing required value is an error.
+`dspm-installer` takes its settings from four places. A flag overrides an environment variable, an environment variable overrides the configuration file, and the configuration file overrides the built-in default. When the installer runs in a terminal, it prompts for any required value still missing; without a terminal, a missing required value is an error.
 
 ```bash
 dspm-installer [flags]
@@ -111,7 +111,7 @@ When the file supplies every required value and the installer runs in a terminal
 |---|---|
 | 0 | Success. |
 | 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or you canceled the prompts with Esc or Ctrl-C (`installation cancelled`). |
-| 10 | License key error. The key is expired, suspended, not found, or invalid. |
+| 10 | License key error. The key is expired, suspended, unknown, or invalid. |
 | 20 | The release version you requested with `--target-revision` isn't available for this license key. |
 | 50 | The installer couldn't install the platform, or the platform didn't become ready within 5 minutes. |
 | 60 | The installer couldn't install a platform component. |
