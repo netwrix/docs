@@ -337,7 +337,7 @@ Verify each active module:
 | Content Aware Protection | Content Aware Protection → Dashboard |
 | eDiscovery | eDiscovery → Dashboard |
 | Enforced Encryption | Check that EE-protected drives are accessible |
-| Reports & Analytics | Reports and Analytics → relevant sub-service |
+| Reports and Analysis | Reports and Analysis → relevant sub-service |
 | Alerts | Check that configured alerts are firing |
 
 :::tip
@@ -382,6 +382,33 @@ If using Deep Packet Inspection or Content Aware Protection:
 2. Verify that backups are configured and active.
 3. Run a test backup and confirm **"Ready to download"** status.
 
+### Log Retention Verification
+
+:::warning
+**This is a behavior change from earlier server versions.** Endpoint Protector 2608 introduces
+automatic, age-based log rotation for Device Control, Content Aware Protection, and eDiscovery
+logs. Earlier versions kept these logs indefinitely unless an administrator deleted them manually.
+After migration, Endpoint Protector enables this setting by default at three months and
+automatically deletes logs older than three months, together with their associated file shadows.
+Logs already older than the configured period are deleted on the first rotation cycle after the
+server starts.
+:::
+
+After migration, verify:
+1. Navigate to **System Configuration → System Settings → Log Settings**.
+2. Check the value configured for **Enable Log Rotate After**.
+3. Confirm the configured retention period matches your organization's operational and compliance
+   needs. Adjust the value if three months doesn't match your retention policy. The value is in
+   months; set it to 0 to disable log rotation entirely.
+
+For the full description of this setting, see [Log Settings](/docs/endpointprotector/admin/systemconfiguration/systemsettings#log-settings).
+
+:::tip
+If you need to retain log data for compliance beyond your configured retention period, export it
+regularly through **Reports and Analysis** → **Export Logs** and store the exports separately.
+Exports also keep the server's log tables smaller, which helps console and report performance.
+:::
+
 ### Third-Party Integration Reconfiguration
 
 After migration, manually re-import and reconfigure all 3rd-party integrations. While the backup includes configuration data, it doesn't always fully restore credentials and connection secrets, and integration endpoints may require re-registration against the new server.
@@ -421,29 +448,6 @@ AD Sync may appear to complete successfully but only import a partial set of use
 :::
 
 If an integration fails verification, see [Troubleshooting Failed Integrations](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x#troubleshooting-failed-integrations).
-
-### Log Retention Verification
-
-:::warning
-**This is a behavior change from earlier server versions.** Endpoint Protector 2608 introduces
-automatic, age-based log rotation for Device Control, Content Aware Protection, and eDiscovery
-logs. Earlier versions kept these logs indefinitely unless an administrator deleted them manually.
-After migration, Endpoint Protector enables this setting by default at three months and
-automatically deletes logs older than three months, together with their associated file shadows.
-:::
-
-After migration, verify:
-1. Navigate to **System Configuration → System Settings → Log Settings**.
-2. Check the value configured for **Enable Log Rotate After**.
-3. Confirm the configured retention period matches your organization's operational and compliance
-   needs. Adjust it if the default of three months is too short.
-
-:::tip
-If you need to retain log data for compliance beyond your configured retention period, export it
-regularly through **Reports and Analysis** > **Export Logs** and store the exports separately.
-Keeping compliance evidence in exports, rather than relying on indefinite server-side log storage,
-also keeps the server's log storage lean and performant.
-:::
 
 ### Audit Log Backup Verification
 

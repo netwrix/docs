@@ -153,20 +153,17 @@ You can set a number of reported threats between 100 and 1000.
   older. Set the value to 0 to disable log rotation.
 
 :::warning
-This setting is new starting with Endpoint Protector 2608. Earlier server versions didn't
-automatically delete Device Control, Content Aware Protection, or eDiscovery logs based on age —
-Endpoint Protector kept logs indefinitely unless an administrator removed them manually or through
-Audit Log Backup. After you migrate or upgrade to 2608, Endpoint Protector enables this setting by
-default at three months and automatically deletes logs older than three months going forward.
-Review this value as soon as you migrate and configure it to match your organization's retention
-needs. If you must retain log data for compliance beyond the configured period, export it regularly
-through **Reports and Analysis** > **Export Logs** and store the exports separately — don't rely on
-server-side log storage for long-term compliance evidence.
-:::
-
-:::warning
-Disabling log rotation means Endpoint Protector never removes logs automatically, and the server
-continues to consume storage until you intervene.
+Endpoint Protector 2608 enables this setting by default. Earlier server versions kept these logs
+indefinitely unless an administrator removed them manually or through Audit Log Backup, which
+archives logs off the server and clears them from the database. The first rotation cycle runs
+within five minutes of the server starting, so any logs already older than the configured period
+are deleted at that point — export anything you need to keep before you upgrade. Review this value
+as soon as you migrate and configure it to match your organization's retention needs. If you must
+retain log data for compliance beyond the configured period, export it regularly through
+**Reports and Analysis** > **Export Logs** and store the exports separately — don't rely on
+server-side log storage for long-term compliance evidence. Disabling log rotation means Endpoint
+Protector never removes logs automatically, and the server continues to consume storage until you
+intervene.
 :::
 
 
