@@ -7,7 +7,7 @@ sidebar_position: 45
 # Exchange Server (Graph)
 
 Use the Exchange Server (Graph) source configuration screen to crawl and classify
-multiple Exchange mailboxes in the same tenant. The Graph source type can only be used to connect to Exchange Online. To crawl mailboxes on an on-premises Exchange server, use Exchange Server (EWS).
+multiple Exchange mailboxes in the same tenant. The Graph source type connects only to Exchange Online. To crawl mailboxes on an on-premises Exchange server, use Exchange Server (EWS).
 
 You can use Match Rules to include or exclude specific mailboxes.
 
@@ -42,7 +42,7 @@ Specify the following settings:
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Cloud Environment | Select the Azure instance hosting the Exchange Online tenancy. |
 | Crawl Range      | Define which portions of data to retrieve from Exchange Online: <ul><li>Select **Date Range** to crawl a static set of data within the required interval.</li><li>Select **Since** if you want to periodically re-crawl content from the specified date, taking into account the last crawl date for each artifact.</li></ul>                                          |
-| Match Rules      | Define rules with wildcards to limit which mailboxes are crawled. Examples: 1. `.*@netwrix.com`— enter the wildcard (\*) and the domain (here `netwrix.com`) to restrict crawling to a set of domain mailboxes 2. `.*`—enter to crawl all mailboxes. You must define at least one match rule.                                                                                                   |
+| Match Rules      | Define rules with wildcards to limit which mailboxes the product crawls. Examples: 1. `.*@netwrix.com`— enter the wildcard (\*) and the domain (here `netwrix.com`) to restrict crawling to a set of domain mailboxes 2. `.*`—enter to crawl all mailboxes. You must define at least one match rule.                                                                                                   |
 | Detection Period | Specify how often to check the source for changes. Default period is 1 day.                                                                                                                                                                                                                                                                                              |
 
 

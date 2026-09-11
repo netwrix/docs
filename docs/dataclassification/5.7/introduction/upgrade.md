@@ -28,7 +28,7 @@ Classification resides. If not, download it from Microsoft website:
 
 - On the computer where Netwrix Data Classification is installed, start the Netwrix Data
   Classification Service Viewer tool. Select **Stop** next to each service.
-- If upgrading a Distributed Query Server (DQS) environment, stop all services on all instances before upgrading any instance. 
+- If you upgrade a Distributed Query Server (DQS) environment, stop all services on all instances before upgrading any instance. 
 
 :::warning
 If any services are running while the upgrade occurs, database schema updates may fail to apply correctly. If this occurs, Netwrix recommends contacting Netwrix Support for assistance with remediation.
@@ -38,7 +38,7 @@ If any services are running while the upgrade occurs, database schema updates ma
   Files\Netwrix\Data Classification\Index_) and back it up.
 
 :::note
-For versions of 5.7 before 5.7.10, all NDC services and the NDC IIS Application Pool had to run as the same service account. For 5.7.10 onwards this is no longer necessary, but if upgrading from an earlier version of 5.7, complete the upgrade to 5.7.10 _before_ changing the service account to avoid upgrade issues.
+For versions of 5.7 before 5.7.10, all NDC services and the NDC IIS Application Pool had to run as the same service account. For 5.7.10 onwards this is no longer necessary, but if you upgrade from an earlier version of 5.7, complete the upgrade to 5.7.10 _before_ changing the service account to avoid upgrade issues.
 :::
 
 ## Upgrade Process
@@ -53,7 +53,7 @@ upgrade to version 5.7.
 
 ## Upgrading a DQS Environment
 
-When upgrading an NDC environment which uses the **Distributed Query Server** (DQS) functionality to 5.7.10 or later, 
+When upgrading to 5.7.10 or later in an NDC environment that uses the **Distributed Query Server** (DQS) functionality, 
 upgrade the primary server before the secondary instances. Secondary instances 
 attempt to resynchronize with the primary instance during the upgrade process, and this resynchronization 
 fails if you haven't upgraded the primary instance.

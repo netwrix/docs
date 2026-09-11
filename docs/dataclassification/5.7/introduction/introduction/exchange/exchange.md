@@ -14,9 +14,9 @@ On-premise Exchange servers support Basic authentication for crawling accounts, 
 
 ## Basic Authentication
 
-This method is supported for on-premise Exchange servers. You should
-configure sufficient permissions that will allow the crawling account to impersonate the mailboxes
-that you want to crawl. This requires the setup of two permissions:
+On-premise Exchange servers support this method. Configure sufficient permissions that allow the
+crawling account to impersonate the mailboxes that you want to crawl. This requires two
+permissions:
 
 - ApplicationImpersonation—Allows the crawling account to impersonate each of the mailboxes / users
   configured for collection
@@ -62,8 +62,8 @@ this Role as well.
     ADMINUSERNAME
 
 :::note
-If crawling Microsoft Office 365 for Small Business or many hosted Exchange systems, then
-it isn't possible to set up Application Impersonation.
+If you crawl Microsoft Office 365 for Small Business or many hosted Exchange systems, you can't
+set up Application Impersonation.
 :::
 
 
@@ -71,30 +71,29 @@ it isn't possible to set up Application Impersonation.
 
 Starting with version 5.5.3, Netwrix Data Classification allows for crawling Microsoft Exchange
 Online organization mailboxes using Modern authentication. For that, it uses an Azure AD application
-which can use Microsoft API to connect to Exchange Online organization.
+that connects to the Exchange Online organization through the Microsoft API.
 
 :::note
 To access Exchange using Modern Authentication, you need to use an admin username.
 :::
 
-You should configure sufficient permissions that will allow the crawling account to access and read the
+Configure sufficient permissions that allow the crawling account to access and read the
 mailboxes that you want to crawl. The permissions required differ between the EWS and Graph implementations.
 
-To utilise the Graph implementation, you must grant the following permissions:
+To use the Graph implementation, you must grant the following permissions:
 
 - Mail.Read-Allows the application to read the full contents of all mailboxes
 - Mail.ReadWrite—Allows the application to move and delete mail in all mailboxes - necessary for the Exchange workflow actions
 - User.Read.All—Allows the application to discover all users associated with an Exchange Online server
 
-To utilise the EWS implementation, you must grant the following permissions:
+To use the EWS implementation, you must grant the following permissions:
 
 - ApplicationImpersonation—Allows the crawling account to impersonate each of the mailboxes / users
   configured for collection
 - Mailbox Search—Allows the crawling account to enumerate mailboxes (automatic discovery of
   mailboxes)
 
-If you plan to make us of modern authentication, you should do the
-following:
+If you plan to use modern authentication, do the following:
 
 1. [Create Azure AD app for Modern Authentication](/docs/dataclassification/5.7/introduction/introduction/exchange/azureappexchangeonlinemfa.md)
 2. Configure [Exchange Server (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeservergraph.md) 

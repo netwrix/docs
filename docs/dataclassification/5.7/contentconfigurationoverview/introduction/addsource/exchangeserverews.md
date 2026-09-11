@@ -11,7 +11,7 @@ multiple Exchange mailboxes from the same Exchange server, using the Exchange We
 
 :::note
 Automatic detection, crawling, and classification of multiple Exchange mailboxes from
-the same Exchange server (and, respectively, the _Exchange Server (EWS)_ content source configuration) works
+the same Exchange server—and therefore the _Exchange Server (EWS)_ content source—works
 only with Exchange Server 2013 or later, due to limitations in the Microsoft APIs. For earlier
 versions, consider using the _Exchange Mailbox (EWS)_ content source.
 :::
