@@ -17,7 +17,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Access | Root, either directly or through `sudo`. |
 | Free disk on `/var/lib` | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib`. |
 
-On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
+On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can continue at your own risk.
 
 ## Size
 
@@ -30,7 +30,7 @@ You pick a size when you install. The size sets the CPU and RAM the installer re
 | large | 24 | 96 GB | 3,000 GB | Up to about 800 million objects and 25,000 to 100,000 identities. |
 | enterprise | 32 | 128 GB | 8,000 GB | Up to about 3 billion objects and more than 100,000 identities. |
 
-CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine provisioned at exactly the stated figure passes even though the guest sees slightly less.
+CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine you provision at exactly the stated figure passes even though the guest sees slightly less.
 
 Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size is designed to hold. The 40 GB floor is different: below that, the preflight check fails.
 
