@@ -131,6 +131,10 @@ If you already have your license key, pass it to also test the real installer do
 LICENSE_KEY="your-key" bash aa26-connectivity-check.sh
 ```
 
+:::warning
+This passes the license key to `curl` as part of a URL, which makes it visible to other local users on the same server (for example, in `ps` output) while the command runs. Avoid this step on a shared server with untrusted local accounts.
+:::
+
 The script needs only `curl`. It installs nothing and changes nothing on the server. If you use an HTTPS proxy, export `https_proxy` before you run it; the installer honors the same variable.
 
 After you have the installer, `sudo dspm-installer --preflight` runs the same connectivity check along with the hardware, OS, and certificate checks.
