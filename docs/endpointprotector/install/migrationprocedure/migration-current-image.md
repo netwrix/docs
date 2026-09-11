@@ -9,7 +9,7 @@ sidebar_position: 13
 ---
 
 :::note
-This article covers on-premises EPP Servers already running the current image-based platform — any version from **2509 through 2604**. If your server is still on a legacy 5.x release (5.7.0.0–5.9.4.2), see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) instead. For the full picture and how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
+This article covers on-premises EPP Servers already running the current image-based platform — any version from **2509 through 2604**. If your server is still on a legacy 5.x release (5.7.0.0–5.9.4.2), see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) instead. For an overview of how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
 :::
 
 ## Overview
@@ -20,7 +20,7 @@ Since you're already on the image-based platform, migrating to 2608 doesn't requ
 
 | Your Current Version | Recommendation |
 |---|---|
-| 2509, 2510, 2601, 2602, or 2604 | Migrate directly to 2608 — no intermediate version is required |
+| 2509, 2510, 2601, 2602, or 2604 | Migrate directly to 2608 — you don't need an intermediate version |
 
 :::tip
 2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. It's still good practice to upgrade to 2604 before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs.
@@ -218,7 +218,7 @@ If using Enforced Encryption and you change the IP/FQDN, every user with an EE-p
 :::
 
 :::warning
-If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, reviewing your SSO configuration after the backup is restored is mandatory. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
+If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, you must review your SSO configuration after you restore the backup. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
 :::
 
 ### Deploying the 2608 Base Image
@@ -347,7 +347,7 @@ Generate deliberate test events on a known test machine for each active module. 
 ### eDiscovery Scan Locations Verification
 
 :::warning
-If an eDiscovery policy with configured **Scan Locations** is restored from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead — with no error reported anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
+If you restore an eDiscovery policy with configured **Scan Locations** from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead — with no error reported anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
 :::
 
 If you use eDiscovery with Scan Locations configured on any policy, this check is mandatory after restore:
@@ -365,7 +365,7 @@ In rare cases, a Content Aware Protection (CAP) policy restored from a System Co
 If you use Content Aware Protection, this check is recommended after restore:
 
 1. Test each active CAP policy against a known-blocked transfer to confirm it still triggers.
-2. If a policy doesn't trigger, open it, edit and save it — even without changing anything — to redistribute it to endpoints.
+2. If a policy doesn't trigger, open it, edit it, and save it — even without changing anything — to redistribute it to endpoints.
 3. Re-test to confirm the policy now triggers correctly.
 
 ### DPI / CAP Functionality Verification
@@ -411,7 +411,7 @@ After reconfiguration, verify each integration is functioning:
 | AWS / S3 / File Shadows | Generate a file shadow; confirm it reaches the S3 bucket |
 
 :::warning
-**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after the backup is restored. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until this is corrected. You have two options:
+**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after you restore the backup. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until you correct it. You have two options:
 1. Manually recreate the SSO configuration in **System Configuration → SSO / Single Sign-On** with the updated response/callback URL, and update the corresponding redirect URI in your identity provider.
 2. Raise a Netwrix Support case to have the SSO configuration updated on the backend.
 :::
@@ -428,7 +428,7 @@ If an integration fails verification, see [Troubleshooting Failed Integrations](
 **This is a behavior change from earlier server versions.** Endpoint Protector 2608 introduces
 automatic, age-based log rotation for Device Control, Content Aware Protection, and eDiscovery
 logs. Earlier versions kept these logs indefinitely unless an administrator deleted them manually.
-After migration, this setting is enabled by default at three months — Endpoint Protector
+After migration, Endpoint Protector enables this setting by default at three months and
 automatically deletes logs older than three months, together with their associated file shadows.
 :::
 

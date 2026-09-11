@@ -62,19 +62,19 @@ pattern.
 - Enable Smart Groups – when you disable this setting, Endpoint Protector converts Smart Groups to
   regular groups with no entities assigned and removes the Default Group for Computers and the
   Default Group for Users.
-- Enable Default Group for Computers – this will create a default group for computers containing all
+- Enable Default Group for Computers – creates a default group for computers containing all
   computers that aren't part of a Smart Group.
 
 :::note
-By disabling this setting, you will delete the Default Group for Computers.
+Disabling this setting deletes the Default Group for Computers.
 :::
 
 
-- Enable Default Group for Users – this will create a default group for users containing all users
+- Enable Default Group for Users – creates a default group for users containing all users
   that aren't part of a Smart Group.
 
 :::note
-By disabling this setting, you will delete the Default Group for Users.
+Disabling this setting deletes the Default Group for Users.
 :::
 
 :::note
@@ -119,8 +119,8 @@ Manage the following log settings:
 - Set the Maximum number of rows in millions to export the Logs Report in .csv format.
 
 :::note
-By setting the maximum number of rows to 1.0, you will export 1 million logs in the Logs
-Report .csv export as one row corresponds with one log.
+Setting the maximum number of rows to 1.0 exports 1 million logs in the Logs
+Report .csv export, since one row corresponds with one log.
 :::
 
 
@@ -131,8 +131,8 @@ export.
   structure and display information in Destination details, Email sender, and Email subject columns.
 
 :::note
-For Endpoint Protector Server versions older than 5.7.0.0, the Reporting V2 setting isn't
-enabled by default.
+For Endpoint Protector Server versions older than 5.7.0.0, Endpoint Protector doesn't enable
+the Reporting V2 setting by default.
 :::
 
 
@@ -156,8 +156,8 @@ You can set a number of reported threats between 100 and 1000.
 This setting is new starting with Endpoint Protector 2608. Earlier server versions didn't
 automatically delete Device Control, Content Aware Protection, or eDiscovery logs based on age —
 Endpoint Protector kept logs indefinitely unless an administrator removed them manually or through
-Audit Log Backup. After you migrate or upgrade to 2608, this setting is enabled by default at three
-months, so Endpoint Protector automatically deletes logs older than three months going forward.
+Audit Log Backup. After you migrate or upgrade to 2608, Endpoint Protector enables this setting by
+default at three months and automatically deletes logs older than three months going forward.
 Review this value as soon as you migrate and configure it to match your organization's retention
 needs. If you must retain log data for compliance beyond the configured period, export it regularly
 through **Reports and Analysis** > **Export Logs** and store the exports separately — don't rely on
@@ -234,16 +234,16 @@ Endpoint Protector automatically modiﬁes the maximum number of reported threat
 
 Limit Reporting Content Aware Protection refers to Report Only policies.
 
-- If enabled, the Endpoint Protector client will stop reporting threats for a Report Only policy
-  after it finds enough threats to conclude it is satisfied.
+- When you enable this setting, the Endpoint Protector client stops reporting threats for a Report
+  Only policy after it finds enough threats to satisfy the policy.
 
 The "Content Aware Protection - Ignore Thresholds" toggle refers to Block & Report policies.
 
-- When this toggle is On, scanning doesn't stop at a block verdict, but continues to report further
+- When this toggle is On, scanning continues past a block verdict and reports further
   threats found in a transfer.
 - To limit the number of reported threats in this case, set the "Maximum number of reported threats"
-  setting to a value greater than zero. The value you set is only indicative for the number of
-  reported threats, the actual number reported can be slightly larger.
+  setting to a value greater than zero. The value you set only indicates the number of
+  reported threats; the actual number reported can be slightly larger.
 
 The ‘Ignore Thresholds’ setting ignores and overrides the ‘Global/Threat Threshold’ values in
 Content Aware Protection policies when the Boolean logic of the Content Aware Protection policy
@@ -498,7 +498,7 @@ Enable the **Active Directory Authentication** setting to import an Active Direc
 administrators into Endpoint Protector as Super Administrators.
 
 :::note
-By enabling the Active Directory Authentication, you allow the administrators to use their
+Enabling Active Directory Authentication lets administrators use their
 Active Directory credentials to log into Endpoint Protector.
 :::
 
