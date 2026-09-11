@@ -36,7 +36,8 @@ function DocRootNotFound() {
   // on the first pass instead of flashing an empty render.
   const redirectTarget = findVersionlessRedirect(
     location.pathname,
-    siteConfig.customFields?.unversionedDocsBasePaths
+    siteConfig.customFields?.unversionedDocsBasePaths,
+    siteConfig.customFields?.rootOnlyUnversionedDocsBasePaths
   );
 
   useEffect(() => {

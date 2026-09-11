@@ -9,6 +9,7 @@ import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
+import { passwordPolicyEnforcerDeversionRedirects } from './src/config/redirects/passwordpolicyenforcer-deversion.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -63,10 +64,30 @@ const activeVersionsByProduct = Object.fromEntries(
 // DOCS_PRODUCT_LATEST_ONLY narrows the active list to one version, which would
 // make a genuinely multi-version product look collapsed and start rewriting its
 // valid versioned URLs in local single-product builds.
+// A version can opt into "root-only" stale-link handling (redirectStaleVersionsToRoot)
+// instead of the default "preserve the sub-path" handling below — see
+// rootOnlyUnversionedDocsBasePaths.
 const unversionedDocsBasePaths = redirectProducts
   .map(product => {
     if (product.versions.length !== 1) return null;
     const [version] = product.versions;
+    if (version.redirectStaleVersionsToRoot) return null;
+    const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
+    return routeBasePath === product.path ? `/${routeBasePath}` : null;
+  })
+  .filter(Boolean);
+
+// Same idea as unversionedDocsBasePaths, but for a product whose old versions'
+// page structure isn't guaranteed to line up with the new unversioned latest
+// (e.g. passwordpolicyenforcer, whose 10.2 layout was reorganized in 11.x/12.0).
+// Rather than guess at an equivalent sub-path, any stale versioned URL under
+// these base paths sends the reader to the docs root. Opt in per-version via
+// `redirectStaleVersionsToRoot: true` on the version object.
+const rootOnlyUnversionedDocsBasePaths = redirectProducts
+  .map(product => {
+    if (product.versions.length !== 1) return null;
+    const [version] = product.versions;
+    if (!version.redirectStaleVersionsToRoot) return null;
     const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
     return routeBasePath === product.path ? `/${routeBasePath}` : null;
   })
@@ -145,6 +166,7 @@ const config = {
     activeProductIds,
     activeVersionsByProduct,
     unversionedDocsBasePaths,
+    rootOnlyUnversionedDocsBasePaths,
   },
   clientModules: ['./src/clientModules/scrollBehavior.js'],
   presets: [
@@ -175,23 +197,34 @@ const config = {
         };
       },
 
-      // Google Analytics
-      [
-        '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-FZPWSDMTEX',
-        anonymizeIP: true,
-      },
-    ],
+      // Google Analytics — only loaded for production builds. In dev
+      // (npm run start), the gtag script often can't load (network, ad
+      // blockers), leaving window.gtag undefined and throwing a runtime error
+      // overlay on every route change.
+      ...(process.env.NODE_ENV === 'production' ? [
+        [
+          '@docusaurus/plugin-google-gtag',
+          {
+            trackingID: 'G-FZPWSDMTEX',
+            anonymizeIP: true,
+          },
+        ],
+      ] : []),
     // Client-side redirects - redirect base product URLs to latest version
     [
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...(activeProductIds.includes('passwordpolicyenforcer') ? passwordPolicyEnforcerDeversionRedirects : []),
           ...redirectProducts.filter(product => {
-            // Only create redirects for products with multiple versions (not just 'current')
-            return !(product.versions.length === 1 && product.versions[0].version === 'current');
+            // Only create redirects for products with multiple versions (not just 'current'),
+            // and skip products whose latest version already serves at the bare product
+            // path (e.g. passwordpolicyenforcer 12.0) — redirecting the base path to
+            // itself would be a no-op redirect loop.
+            if (product.versions.length === 1 && product.versions[0].version === 'current') return false;
+            const latestVersion = getDefaultVersion(product);
+            return latestVersion.customRoutePath !== product.path;
           }).map(product => {
             const latestVersion = getDefaultVersion(product);
             const latestVersionUrl = versionToUrl(latestVersion.version);
