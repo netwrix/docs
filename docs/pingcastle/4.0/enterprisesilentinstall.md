@@ -50,7 +50,7 @@ See [Remote Database Configuration](enterpriseinstall.md#remote-database-configu
 | `DB_SERVER_TYPE` | `LOCAL` \| `REMOTE` | Default `LOCAL`. `LOCAL` uses SQL Express on the local server (`.\SQLExpress`). `REMOTE` uses `DATABASE_SERVER` as the SQL host, along with `SQL_AUTH_TYPE` and any SQL authentication credentials it requires. |
 | `DATABASE_SERVER` | SQL Server instance (`AUTO` mode) | Used to build the connection string. |
 | `SQL_AUTH_TYPE` | `WINDOWS` \| `SQL` | Default `WINDOWS`. `SQL` requires `SQL_USERNAME`/`SQL_PASSWORD`. |
-| `SQL_USERNAME` / `SQL_PASSWORD` | SQL authentication credentials | Only used when `SQL_AUTH_TYPE=SQL`. |
+| `SQL_USERNAME` / `SQL_PASSWORD` | SQL authentication credentials | The installer uses these only when `SQL_AUTH_TYPE=SQL`. |
 | `USE_ENCRYPTION` | Appended to the built connection string | Default `Encrypt=True;`. Omit this property to set it to `False`. |
 | `TRUST_SERVER_CERTIFICATE` | Appended to the built connection string | Default `TrustServerCertificate=True;`. Omit this property to set it to `False`. |
 | `CONNECTIONSTRINGPROPERTY` | Full manual connection string | Required when `CONNECTIONSTRINGWAY=MANUAL`. |
@@ -74,7 +74,7 @@ You can enable multiple authentication methods at the same time by setting more 
 | Property | Purpose | Notes |
 |---|---|---|
 | `WINDOWSGROUP` | SID of the Windows group granted general access | Default `S-1-1-0` (`Everyone`). |
-| `WINDOWSGROUPADMIN` | SID of the Windows group granted admin access | No default. Must be set explicitly to grant admin rights to a specific group. |
+| `WINDOWSGROUPADMIN` | SID of the Windows group granted admin access | No default. Set this explicitly to grant admin rights to a specific group. |
 
 #### SAML Properties
 
@@ -85,7 +85,7 @@ You can enable multiple authentication methods at the same time by setting more 
 | `SAML_ISSUER` | This service provider's issuer/entity ID | — |
 | `SAML_DISPLAY_NAME` | Label shown on the sign-in page | — |
 | `SAML_METADATA_URL` | Identity provider metadata URL | Alternative to manual issuer/single sign-on URL entry. |
-| `SAML_CERTIFICATE_PATH` | Path to the identity provider's signing certificate | Optional. If supplied, the installer verifies the file exists. |
+| `SAML_CERTIFICATE_PATH` | Path to the identity provider's signing certificate | Optional. If you supply one, the installer verifies the file exists. |
 
 #### OpenID Connect Properties
 
@@ -95,7 +95,7 @@ See [OpenID Connect](enterpriseauthsetup.md#openid-connect) for background.
 |---|---|---|
 | `OIDC_AUTHORITY` | OpenID Connect authority/issuer URL | Required. Must be a valid absolute `http`/`https` URL. |
 | `OIDC_CLIENT_ID` | Application (client) ID registered with the identity provider | Required. |
-| `OIDC_CLIENT_SECRET` | Application client secret | Not echoed in the UI, and masked in the verbose log. |
+| `OIDC_CLIENT_SECRET` | Application client secret | The installer doesn't echo this in the UI and masks it in the verbose log. |
 | `OIDC_DISPLAY_NAME` | Label shown for this provider on the sign-in page | Optional. Defaults to `Entra ID` if omitted. |
 | `OIDC_GROUP_ID` | Group claim/ID used for role mapping | Optional. |
 
@@ -112,10 +112,10 @@ See [OpenID Connect](enterpriseauthsetup.md#openid-connect) for background.
 | Property | Purpose | Notes |
 |---|---|---|
 | `SCHEDULER_ACCOUNT_CHOICE` | `SAME_AS_APPPOOL` \| `CUSTOM` \| ... | Selects which account the Scheduler Windows service logs on as. |
-| `SCHEDULER_SERVICE_ACCOUNT` | Resolved service account | Default `LocalSystem`. Set to the app pool's account automatically when `SCHEDULER_ACCOUNT_CHOICE=SAME_AS_APPPOOL`. |
+| `SCHEDULER_SERVICE_ACCOUNT` | Resolved service account | Default `LocalSystem`. The installer sets this to the app pool's account automatically when `SCHEDULER_ACCOUNT_CHOICE=SAME_AS_APPPOOL`. |
 | `SCHEDULER_USERNAME` / `SCHEDULER_PASSWORD` | Custom account credentials | Used when `SCHEDULER_ACCOUNT_CHOICE=CUSTOM`. |
 | `SCHEDULER_ADD_TO_LOCAL_ADMINS` | Adds the scheduler account to local Administrators | Optional. |
-| `SCHEDULER_API_KEY` | API key the Scheduler service uses to call the Enterprise API | Auto-generated if not supplied. |
+| `SCHEDULER_API_KEY` | API key the Scheduler service uses to call the Enterprise API | The installer generates one if you don't supply it. |
 
 ### CloudAPI Properties
 
@@ -123,10 +123,10 @@ The CloudAPI component has its own database and secrets, separate from the main 
 
 | Property | Purpose | Notes |
 |---|---|---|
-| `CLOUDAPI_CONNECTIONSTRINGPROPERTY` | CloudAPI's own database connection string | If `CONNECTIONSTRINGWAY` is `AUTO`, the installer derives this from `DATABASE_SERVER`, `SQL_AUTH_TYPE`, and the other database properties when left empty. If `CONNECTIONSTRINGWAY` is `MANUAL`, you must pass this property explicitly. |
-| `CLOUDAPI_MICROSERVICE_API_KEY` | API key used to call the CloudAPI microservice | Auto-generated if empty. |
-| `CLOUDAPI_HMAC_KEY` | HMAC signing key for CloudAPI requests | Auto-generated if empty. |
-| `CLOUDAPI_ENCRYPTION_KEY` | Encryption key for CloudAPI stored data | Auto-generated if empty. |
+| `CLOUDAPI_CONNECTIONSTRINGPROPERTY` | CloudAPI's own database connection string | If `CONNECTIONSTRINGWAY` is `AUTO`, the installer derives this from `DATABASE_SERVER`, `SQL_AUTH_TYPE`, and the other database properties when you leave it empty. If `CONNECTIONSTRINGWAY` is `MANUAL`, you must pass this property explicitly. |
+| `CLOUDAPI_MICROSERVICE_API_KEY` | API key for calls to the CloudAPI microservice | The installer generates one if you leave it empty. |
+| `CLOUDAPI_HMAC_KEY` | HMAC signing key for CloudAPI requests | The installer generates one if you leave it empty. |
+| `CLOUDAPI_ENCRYPTION_KEY` | Encryption key for CloudAPI stored data | The installer generates one if you leave it empty. |
 
 ### Email and Notification Properties
 
@@ -137,8 +137,8 @@ Common to both `SMTP` and `Graph`:
 | Property | Purpose | Notes |
 |---|---|---|
 | `EMAIL_PROVIDER` | `None` \| `SMTP` \| `Graph` | Default `SMTP`. |
-| `EMAILFROM` | From address used to send email | Required for `SMTP`/`Graph`. Validated as a well-formed email address. |
-| `FULLHTTPFQDN` | URL of the PingCastle instance shown in email bodies | Validated as a well-formed URI. |
+| `EMAILFROM` | From address for outgoing email | Required for `SMTP`/`Graph`. The installer validates this as a well-formed email address. |
+| `FULLHTTPFQDN` | URL of the PingCastle instance that appears in email bodies | The installer validates this as a well-formed URI. |
 
 **`EMAIL_PROVIDER=SMTP`:**
 
@@ -174,9 +174,9 @@ See [Configuring HTTPS](enterprisehttpssetup.md#configuring-https) for backgroun
 | `SSL_PORT` | HTTPS port for the IIS binding | Default `443`. Must be an integer from `1`–`65535`. |
 | `SSL_CERT_TYPE` | `SELFSIGNED` \| `EXISTING` \| `STORE` | Default `SELFSIGNED` (installer generates a self-signed certificate). |
 | `SSL_CERT_PATH` | Path to a `.pfx`/certificate file | Required when `SSL_CERT_TYPE=EXISTING`. |
-| `SSL_CERT_PASSWORD` | Password for the certificate file | Used with `EXISTING`. |
+| `SSL_CERT_PASSWORD` | Password for the certificate file | Applies when `SSL_CERT_TYPE=EXISTING`. |
 | `SSL_CERT_THUMBPRINT` | Thumbprint of a certificate already in the Windows certificate store | Required when `SSL_CERT_TYPE=STORE`. |
-| `SSL_FORCE_REBIND` | Forces the IIS binding to be reconfigured even if unchanged | Optional. Used mainly for upgrade scenarios. |
+| `SSL_FORCE_REBIND` | Forces the installer to reconfigure the IIS binding even if it hasn't changed | Optional. Applies mainly to upgrade scenarios. |
 
 ## Example Installations
 

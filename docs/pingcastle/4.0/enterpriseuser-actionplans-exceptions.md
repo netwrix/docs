@@ -23,7 +23,7 @@ Pay attention to the following chart. It represents the evolution of the number 
 
 ## Exceptions management
 
-This part lets an administrator configure PingCastle Enterprise so that it adapts to the company's specific context. You can configure how PingCastle Enterprise handles exceptions specific to your perimeter.
+This part lets an administrator adapt PingCastle Enterprise to the company's specific context by configuring how it handles exceptions specific to your perimeter.
 
 ![](/images/pingcastle/enterpriseuser/image54.webp)
 

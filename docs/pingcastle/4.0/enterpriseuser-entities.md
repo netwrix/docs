@@ -25,15 +25,15 @@ You can also use entities to identify administrators for specific perimeters, me
 
 **Reorganize the tree view of entities**
 
-The PingCastle Enterprise solution provides an ergonomic view to reorganize the various entities that may compose your company. This view works through drag and drop to improve the user experience.
+PingCastle Enterprise provides a view for reorganizing the entities that make up your company. This view works through drag and drop.
 
-Example to show how to reorganize entities:
+Example of reorganizing entities:
 
 ![](/images/pingcastle/enterpriseuser/image49.webp)
 
 **Details of an Entity**
 
-Each entity has a dedicated "Details" page. On this page, you can access all the entity's information, including the Owner permissions. Here you can also edit these rights to establish which key people are accountable for a specified entity.
+Each entity has a dedicated "Details" page. On this page, you can access all the entity's information, including the Owner permissions. You can also edit these rights to set which people are accountable for the entity.
 
 For instance, the page for the PingCastle Enterprise entity:
 

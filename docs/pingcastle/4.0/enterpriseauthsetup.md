@@ -70,7 +70,7 @@ Windows Authentication uses Active Directory groups to provision access to PingC
 Add users to the appropriate groups based on the level of access they require.
 
 
-**Getting AD Group SIDs**
+**Getting Active Directory Group SIDs**
 
 PingCastle Enterprise needs the Security Identifiers (SIDs) of the groups for setup. Use the tabs to choose a method for retrieving them.
 
@@ -141,7 +141,7 @@ To hide the internal username/password login option, enable **Disable Password L
 :::warning API Access
 This setup affects all pages for authentication. When you enable **Disable Password Login** with Windows Authentication, API calls require both an API key and a calling account that belongs to the group you set in **Windows Group**.
 
-To restrict NTLM authentication to specific pages, edit the `web.config` file using the `<location>` directive to restrict authentication to the WindowsAuth page. See [IIS URL Authorization documentation](https://docs.microsoft.com/en-us/iis/manage/configuring-security/understanding-iis-url-authorization).
+To restrict NTLM authentication to specific pages, edit the `web.config` file and use the `<location>` directive to scope authentication to the WindowsAuth page. See [IIS URL Authorization documentation](https://docs.microsoft.com/en-us/iis/manage/configuring-security/understanding-iis-url-authorization).
 :::
 
 </details>
@@ -151,7 +151,7 @@ To restrict NTLM authentication to specific pages, edit the `web.config` file us
 
 ### OpenID Connect
 
-PingCastle Enterprise supports OpenID Connect authentication using the ASP.NET Core API. Configuration options are [documented here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.openidconnect.openidconnectoptions?view=aspnetcore-10.0).
+PingCastle Enterprise supports OpenID Connect authentication using the ASP.NET Core API. See [OpenIdConnectOptions](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.openidconnect.openidconnectoptions?view=aspnetcore-10.0) for the available configuration options.
 
 Proxy settings rely on the current user proxy configuration, which you can define [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
 
@@ -239,7 +239,7 @@ To hide the internal username/password login option, enable **Disable Password L
 
 ### SAML2 authentication
 
-PingCastle Enterprise supports SAML2 authentication using the [ITfoxtec Identity SAML 2.0](https://www.itfoxtec.com/IdentitySaml2) package. Advanced configuration settings are [documented here](https://github.com/ITfoxtec/ITfoxtec.Identity.Saml2/blob/master/src/ITfoxtec.Identity.Saml2/Configuration/Saml2Configuration.cs).
+PingCastle Enterprise supports SAML2 authentication using the [ITfoxtec Identity SAML 2.0](https://www.itfoxtec.com/IdentitySaml2) package. See [Saml2Configuration](https://github.com/ITfoxtec/ITfoxtec.Identity.Saml2/blob/master/src/ITfoxtec.Identity.Saml2/Configuration/Saml2Configuration.cs) for the advanced configuration settings.
 
 Proxy settings rely on the current user proxy configuration, which you can define [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
 
