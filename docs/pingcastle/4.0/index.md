@@ -6,11 +6,11 @@ sidebar_label: User guide
 
 ## About PingCastle
 
-PingCastle is a security assessment and auditing tool for CISOs, Security Auditors, and IT Professionals working with Active Directory and Entra ID.
+PingCastle is a security assessment and auditing tool for Chief Information Security Officers (CISOs), Security Auditors, and IT Professionals working with Active Directory and Entra ID.
 
-Netwrix offers various products to help protect your network infrastructure. PingCastle focuses specifically on assessment. It collects comprehensive information from your Active Directory and Entra ID environments, analyzes this data for security risks and misconfigurations, and generates detailed reports with actionable findings.
+Netwrix offers various products to help protect your network infrastructure. PingCastle focuses on assessment. It collects comprehensive information from your Active Directory and Entra ID environments, analyzes this data for security risks and misconfigurations, and generates detailed reports with actionable findings.
 
-These reports help you identify and prioritize security issues that need remediation, giving you clear visibility into your security posture and enabling data-driven decisions to improve your environment's security.
+These reports help you identify and prioritize security issues that need remediation, giving you clear visibility into your security posture and a basis for data-driven improvements.
 
 ## License
 
@@ -193,8 +193,8 @@ PingCastle.exe --healthcheck --server mydomain.com
 
 When a healthcheck scan completes, PingCastle generates two files:
 
-- **HTML Report**: Designed for human review, containing visualizations, detailed findings, and remediation guidance
-- **XML Report**: Machine-readable format used for consolidation of multiple reports, automation, and integration with other tools
+- **HTML Report**: Format for human review, containing visualizations, detailed findings, and remediation guidance
+- **XML Report**: Machine-readable format for consolidation of multiple reports, automation, and integration with other tools
 
 ### Risk Scoring
 
@@ -270,7 +270,7 @@ PingCastle.exe --hc-conso
 This consolidates all available XML reports and generates summary reports with trust relationship maps. You can combine XML reports generated from multiple locations to create a comprehensive view of your infrastructure.
 
 :::note
-PingCastle performs consolidation automatically when using `--server *` for automatic domain discovery.
+PingCastle performs consolidation automatically when you use `--server *` for automatic domain discovery.
 :::
 
 **Output Files**
@@ -283,7 +283,7 @@ Consolidation generates three HTML files:
 
 ### Option 3: Quick Domain Cartography
 
-For a fast network map without full healthcheck scores (under 5 minutes), use the cartography mode.
+For a fast network map (under 5 minutes) without full healthcheck scores, use the cartography mode.
 
 **Interactive Mode**: Select "carto" from the menu.
 
@@ -322,7 +322,7 @@ The simplified map presents a cleaner, hierarchical view where each domain appea
 
 **File**: `xxx_hilbert_map.html`
 
-The Hilbert map provides a visual representation of network IP address space using fractal functions to compress IP addresses into a 2D visualization. Each square represents a network, so you can identify unused address space or overlapping networks.
+The Hilbert map visualizes network IP address space, using fractal functions to compress IP addresses into a 2D view. Each square represents a network, so you can identify unused address space or overlapping networks.
 
 **Report Layout**:
 - **Network Overview**: High-level view of all networks
@@ -487,7 +487,7 @@ For authenticated SMTP, provide values for `UserName` and `Password`. For TLS/SS
 | `--sendXmlTo <emails>` | Send only the XML report. Accepts comma-separated email addresses |
 | `--sendHtmlTo <emails>` | Send only the HTML report. Accepts comma-separated email addresses |
 | `--sendAllTo <emails>` | Send both HTML and XML reports. Accepts comma-separated email addresses |
-| `--notifyMail <emails>` | Send notification when reports are received |
+| `--notifyMail <emails>` | Send a notification when reports arrive |
 | `--smtplogin <user>` | Specify SMTP username via command line (overrides config) |
 | `--smtppass <password>` | Specify SMTP password via command line (overrides config) |
 | `--smtptls` | Enable TLS/SSL for SMTP (for ports other than 465 and 587) |
@@ -507,7 +507,7 @@ PingCastle can send reports in XML format (encrypted or not) to an API endpoint 
 
 ![https://www.pingcastle.com/wp/wp-content/uploads/2018/09/pingcastle-swagger.webp](/images/pingcastle/basicuser/image26.webp)
 
-For custom integrations, the API specification is available in Swagger format via the [Swagger Editor](https://editor.swagger.io/?url=https://gist.githubusercontent.com/vletoux/c6c565c8af07b4df5df65ed01ffeb917/raw/fca7a288050b7b17ba6024f2a23ef8c4d46fd813/pingcastle-swagger.json) or as a [direct download](https://gist.githubusercontent.com/vletoux/c6c565c8af07b4df5df65ed01ffeb917/raw/fca7a288050b7b17ba6024f2a23ef8c4d46fd813/pingcastle-swagger.json).
+For custom integrations, the API specification is available in Swagger format via the [Swagger Editor](https://editor.swagger.io/?url=https://gist.githubusercontent.com/vletoux/c6c565c8af07b4df5df65ed01ffeb917/raw/fca7a288050b7b17ba6024f2a23ef8c4d46fd813/pingcastle-swagger.json) or as a [direct download](https://gist.githubusercontent.com/vletoux/c6c565c8af07b4df5df65ed01ffeb917/raw/fca7a288050b7b17ba6024f2a23ef8c4d46fd813/pingcastle-swagger.json). If you're using PingCastle Enterprise, see [Using the Swagger API for PingCastle Enterprise](enterpriseapiswagger.md) for a full walkthrough of authenticating and calling the API.
 
 ## Scanners
 
@@ -528,19 +528,19 @@ Scanning large numbers of workstations may trigger security alerts.
 | **computerversion** | Get the version of computers to detect obsolete operating systems | `PingCastle.exe --scanner computerversion --server <domain>` |
 | **foreignusers** | Enumerate users in denied domains (e.g., bastions) via trusts using MS-LSAT | `PingCastle.exe --scanner foreignusers --foreigndomain <domain\|sid> --server domain controller` |
 | **kerberoschecksumhotfix** | Check MS14-068 vulnerability by analyzing KB3011780 installation status | `PingCastle.exe --scanner kerberoschecksumhotfix --server <domain>` |
-| **laps_bitlocker** | Check if LAPS and/or BitLocker has been enabled for domain computers | `PingCastle.exe --scanner laps_bitlocker --server <domain>` |
+| **laps_bitlocker** | Check whether domain computers have LAPS and/or BitLocker enabled | `PingCastle.exe --scanner laps_bitlocker --server <domain>` |
 | **localadmin** | Enumerate local administrators on computers | `PingCastle.exe --scanner localadmin --server <domain>` |
 | **nullsession** | Check if null sessions are enabled and provide examples | `PingCastle.exe --scanner nullsession --server <server>` |
 | **nullsession-trust** | Dump domain trusts via null session if possible | `PingCastle.exe --scanner nullsession-trust --server <domain>` |
 | **oxidbindings** | List all IPs via OXID Resolver (DCOM) to find admin networks. No auth required | `PingCastle.exe --scanner oxidbindings --server <domain>` |
 | **remote** | Check if remote desktop solutions are installed | `PingCastle.exe --scanner remote --server <domain>` |
-| **share** | List all shares and determine if accessible by anyone | `PingCastle.exe --scanner share --server <domain>` |
+| **share** | List all shares and determine whether anyone can access them | `PingCastle.exe --scanner share --server <domain>` |
 | **smb** | Scan for SMB versions available and check if SMB signing is active | `PingCastle.exe --scanner smb --server <domain>` |
 | **smb3querynetwork** | List all IPs and interface speeds using SMB3 (auth required) | `PingCastle.exe --scanner smb3querynetwork --server <domain>` |
 | **smbhotfix** | Check MS17-010 (EternalBlue/WannaCry) vulnerability status | `PingCastle.exe --scanner smbhotfix --server <domain>` |
 | **spooler** | Check if the spooler service is remotely active (exploitable with unconstrained delegation) | `PingCastle.exe --scanner spooler --server <domain>` |
 | **startup** | Get last startup date to determine if patches have been applied (Legacy) | `PingCastle.exe --scanner startup --server <domain>` |
-| **zerologon** | Test for ZeroLogon vulnerability (must be run from inside the domain). *Note: This only performs the check and has no destructive actions* | `PingCastle.exe --scanner zerologon --server <domain>` |
+| **zerologon** | Test for ZeroLogon vulnerability (run this from inside the domain). *Note: This only performs the check and has no destructive actions* | `PingCastle.exe --scanner zerologon --server <domain>` |
 
 ### Scanner Options
 
@@ -674,7 +674,7 @@ The file size has grown significantly across recent versions due to enhanced cap
 - **Version 3.4** - Approx 20MB - Includes Microsoft Graph API DLLs for Entra ID integration
 - **Version 3.5** - Approx 250MB - Includes Microsoft Graph API DLLs plus embedded ASP.NET 8 Runtime
 
-The version 3.5 size increase is due to the migration from .NET Framework 4.7.2 to ASP.NET 8 with native packaging. This change eliminates the need for custom packaging tools (Fody Costura) and allows PingCastle to run without requiring users to install ASP.NET 8 prerequisites on their systems, providing a better deployment experience.
+The version 3.5 size increase is due to the migration from .NET Framework 4.7.2 to ASP.NET 8 with native packaging. This change eliminates the need for custom packaging tools (Fody Costura) and lets PingCastle run without users installing ASP.NET 8 prerequisites on their systems.
 
 ### pingcastle.exe.config File Location
 
@@ -686,7 +686,7 @@ This migration happened in version 3.5 and applies only if you're upgrading from
 
 1. **Run PingCastleAutoUpdater.exe** to download the update
 2. **Verify the version** of PingCastle.exe matches the expected version
-3. **Check the readme files** added or updated by the update
+3. **Check the readme files** the update adds or changes
 4. **Run PingCastleAutoUpdater.exe a second time** to trigger automatic migration
 
 During migration:
@@ -700,7 +700,7 @@ Visually review the migrated settings in `appsettings.console.json` to ensure th
 
 ### PingCastle AntiVirus Detections
 
-Attackers have used PingCastle as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and EDR products to flag it as malicious.
+Attackers have used PingCastle as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and Endpoint Detection and Response (EDR) products to flag it as malicious.
 
 **Recommended Action**: Whitelist PingCastle.exe on the specific systems and users your organization authorizes for security assessments. Normal end users shouldn't be running PingCastle.
 
@@ -740,9 +740,9 @@ Netwrix is actively working to reduce false positive detections:
 
 ## List of open source software used
 
-PingCastle uses a set of open source components to perform its job.
+PingCastle relies on a set of open source components.
 
-The list of components used by PingCastle, but not limited to, is:
+These components include, among others:
 
 - [Bootstrap](https://getbootstrap.com/) licensed under the [MIT
   license](https://tldrlegal.com/license/mit-license)
