@@ -390,8 +390,8 @@ automatic, age-based log rotation for Device Control, Content Aware Protection, 
 logs. Earlier versions kept these logs indefinitely unless an administrator deleted them manually.
 After migration, Endpoint Protector enables this setting by default at three months and
 automatically deletes logs older than three months, together with their associated file shadows.
-Logs already older than the configured period are deleted on the first rotation cycle after the
-server starts.
+Endpoint Protector deletes logs already older than the configured period on the first rotation
+cycle after the server starts, so export anything you want to keep before you migrate.
 :::
 
 After migration, verify:

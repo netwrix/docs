@@ -154,10 +154,10 @@ You can set a number of reported threats between 100 and 1000.
 
 :::warning
 Endpoint Protector 2608 enables this setting by default. Earlier server versions kept these logs
-indefinitely unless an administrator removed them manually or through Audit Log Backup, which
-archives logs off the server and clears them from the database. The first rotation cycle runs
-within five minutes of the server starting, so any logs already older than the configured period
-are deleted at that point — export anything you need to keep before you upgrade. Review this value
+indefinitely unless an administrator removed them manually or through Audit Log Backup, which can
+delete logs from the server as it archives them. The first rotation cycle runs within five minutes
+of the server starting, so Endpoint Protector deletes any logs already older than the configured
+period at that point — export anything you need to keep before you upgrade. Review this value
 as soon as you migrate and configure it to match your organization's retention needs. If you must
 retain log data for compliance beyond the configured period, export it regularly through
 **Reports and Analysis** > **Export Logs** and store the exports separately — don't rely on
