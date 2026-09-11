@@ -41,7 +41,7 @@ For SQL Express, visit [SQL Server Express Downloads](https://learn.microsoft.co
 Having trouble installing? See [Installer Logs](enterprisesupportlogs.md#installer-logs) in the Collecting Support Logs guide.
 :::
 
-The installer wizard walks you through prerequisite checks, licensing, and configuration screens in the following order.
+The installer wizard presents prerequisite checks, licensing, and configuration screens in the following order.
 
 1. **Prerequisite check**: the installer checks the server for IIS and the ASP.NET 10.0 Hosting Bundle. If either is missing, it offers to install them for you.
 
