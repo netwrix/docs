@@ -9,7 +9,7 @@ sidebar_position: 13
 ---
 
 :::note
-This article covers on-premises EPP Servers already running the current image-based platform — any version from **2509 through 2604**. If your server is still on a legacy 5.x release (5.7.0.0–5.9.4.2), see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) instead. For the full picture and how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
+This article covers on-premises Endpoint Protector (EPP) Servers already running the current image-based platform — any version from **2509 through 2604**. If your server is still on a legacy 5.x release (5.7.0.0–5.9.4.2), see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) instead. For an overview of how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
 :::
 
 ## Overview
@@ -20,10 +20,10 @@ Since you're already on the image-based platform, migrating to 2608 doesn't requ
 
 | Your Current Version | Recommendation |
 |---|---|
-| 2509, 2510, 2601, 2602, or 2604 | Migrate directly to 2608 — no intermediate version is required |
+| 2509, 2510, 2601, 2602, or 2604 | Migrate directly to 2608 — you don't need an intermediate version |
 
 :::tip
-2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. It's still good practice to upgrade to 2604 before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs.
+2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. It's still good practice to upgrade to 2604 before migrating, since Netwrix labs validate the 2604 → 2608 path most thoroughly.
 :::
 
 ---
@@ -46,7 +46,7 @@ If your current license includes the `php_els` field (used on the 2509–2604 im
 - Proxmox VE — not officially supported; see the following note
 
 :::note
-**Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after manually adjusting networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
+**Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after you manually adjust networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
 :::
 
 :::warning
@@ -82,7 +82,7 @@ The 2608 image adds CrateDB, which may raise the minimum disk, RAM, and CPU base
 :::
 
 :::tip
-If disk space is below 30%, perform database shrinking via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. To export logs, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
+If disk space is below 30%, shrink the database via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. To export logs, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
 :::
 
 ### Maintenance Window Planning
@@ -98,7 +98,7 @@ Plan a maintenance window that accounts for the following:
 These times reflect laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
 
 **During the upgrade window, you won't have:**
-- EPP/EE client communication with the server
+- EPP and Enforced Encryption (EE) client communication with the server
 - Email alerts and SIEM integrations
 - File Shadow and log generation
 
@@ -214,11 +214,11 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 | High server load | Certificate regeneration for all endpoints creates a burst load spike |
 
 :::warning
-If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
+If you use Enforced Encryption and change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
 :::
 
 :::warning
-If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, reviewing your SSO configuration after the backup is restored is mandatory. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
+If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, you must review your SSO configuration after you restore the backup. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
 :::
 
 ### Deploying the 2608 Base Image
@@ -337,7 +337,7 @@ Verify each active module:
 | Content Aware Protection | Content Aware Protection → Dashboard |
 | eDiscovery | eDiscovery → Dashboard |
 | Enforced Encryption | Check that EE-protected drives are accessible |
-| Reports & Analytics | Reports and Analytics → relevant sub-service |
+| Reports and Analysis | Reports and Analysis → relevant sub-service |
 | Alerts | Check that configured alerts are firing |
 
 :::tip
@@ -347,7 +347,7 @@ Generate deliberate test events on a known test machine for each active module. 
 ### eDiscovery Scan Locations Verification
 
 :::warning
-If an eDiscovery policy with configured **Scan Locations** is restored from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead — with no error reported anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
+If you restore an eDiscovery policy with configured **Scan Locations** from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead, without reporting an error anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
 :::
 
 If you use eDiscovery with Scan Locations configured on any policy, this check is mandatory after restore:
@@ -359,13 +359,13 @@ If you use eDiscovery with Scan Locations configured on any policy, this check i
 ### CAP Policy Verification
 
 :::note
-In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, with no error reported.
+In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, without reporting an error.
 :::
 
 If you use Content Aware Protection, this check is recommended after restore:
 
 1. Test each active CAP policy against a known-blocked transfer to confirm it still triggers.
-2. If a policy doesn't trigger, open it, edit and save it — even without changing anything — to redistribute it to endpoints.
+2. If a policy doesn't trigger, open it, edit it, and save it — even without changing anything — to redistribute it to endpoints.
 3. Re-test to confirm the policy now triggers correctly.
 
 ### DPI / CAP Functionality Verification
@@ -381,6 +381,33 @@ If using Deep Packet Inspection or Content Aware Protection:
 1. Navigate to **System Maintenance → System Backup**.
 2. Verify that backups are configured and active.
 3. Run a test backup and confirm **"Ready to download"** status.
+
+### Log Retention Verification
+
+:::warning
+**This is a behavior change from earlier server versions.** Endpoint Protector 2608 introduces
+automatic, age-based log rotation for Device Control, Content Aware Protection, and eDiscovery
+logs. Earlier versions kept these logs indefinitely unless an administrator deleted them manually.
+After migration, Endpoint Protector enables this setting by default at three months and
+automatically deletes logs older than three months, together with their associated file shadows.
+Endpoint Protector deletes logs already older than the configured period on the first rotation
+cycle after the server starts, so export anything you want to keep before you migrate.
+:::
+
+After migration, verify:
+1. Navigate to **System Configuration → System Settings → Log Settings**.
+2. Check the value configured for **Enable Log Rotate After**.
+3. Confirm the configured retention period matches your organization's operational and compliance
+   needs. Adjust the value if three months doesn't match your retention policy. The value is in
+   months, from 1 to 360 — there's no option to disable log rotation entirely.
+
+For the full description of this setting, see [Log Settings](/docs/endpointprotector/admin/systemconfiguration/systemsettings#log-settings).
+
+:::tip
+If you need to retain log data for compliance beyond your configured retention period, export it
+regularly through **Reports and Analysis** → **Export Logs** and store the exports separately.
+Exports also keep the server's log tables smaller, which helps console and report performance.
+:::
 
 ### Third-Party Integration Reconfiguration
 
@@ -411,7 +438,7 @@ After reconfiguration, verify each integration is functioning:
 | AWS / S3 / File Shadows | Generate a file shadow; confirm it reaches the S3 bucket |
 
 :::warning
-**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after the backup is restored. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until this is corrected. You have two options:
+**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after you restore the backup. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until you correct it. You have two options:
 1. Manually recreate the SSO configuration in **System Configuration → SSO / Single Sign-On** with the updated response/callback URL, and update the corresponding redirect URI in your identity provider.
 2. Raise a Netwrix Support case to have the SSO configuration updated on the backend.
 :::

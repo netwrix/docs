@@ -62,19 +62,19 @@ pattern.
 - Enable Smart Groups – when you disable this setting, Endpoint Protector converts Smart Groups to
   regular groups with no entities assigned and removes the Default Group for Computers and the
   Default Group for Users.
-- Enable Default Group for Computers – this will create a default group for computers containing all
+- Enable Default Group for Computers – creates a default group for computers containing all
   computers that aren't part of a Smart Group.
 
 :::note
-By disabling this setting, you will delete the Default Group for Computers.
+Disabling this setting deletes the Default Group for Computers.
 :::
 
 
-- Enable Default Group for Users – this will create a default group for users containing all users
+- Enable Default Group for Users – creates a default group for users containing all users
   that aren't part of a Smart Group.
 
 :::note
-By disabling this setting, you will delete the Default Group for Users.
+Disabling this setting deletes the Default Group for Users.
 :::
 
 :::note
@@ -88,7 +88,7 @@ Smart Group sync job interval: the default configured time is 60 min. You can co
 Configure the client update settings to optimize update performance by specifying a custom hostname
 and port.
 
-- Use custom hostname: Enter a custom hostname to tailor the client update URL as needed.
+- Use custom hostname: Enter a custom hostname to tailor the client update URL.
 - Use custom port: Specify a custom port for generating the client update download link, instead of
   using the default port 443.
 
@@ -119,8 +119,8 @@ Manage the following log settings:
 - Set the Maximum number of rows in millions to export the Logs Report in .csv format.
 
 :::note
-By setting the maximum number of rows to 1.0, you will export 1 million logs in the Logs
-Report .csv export as one row corresponds with one log.
+Setting the maximum number of rows to 1.0 exports 1 million logs in the Logs
+Report .csv export, since one row corresponds with one log.
 :::
 
 
@@ -131,8 +131,8 @@ export.
   structure and display information in Destination details, Email sender, and Email subject columns.
 
 :::note
-For Endpoint Protector Server versions older than 5.7.0.0, the Reporting V2 setting isn't
-enabled by default.
+For Endpoint Protector Server versions older than 5.7.0.0, Endpoint Protector doesn't enable
+the Reporting V2 setting by default.
 :::
 
 
@@ -150,11 +150,21 @@ You can set a number of reported threats between 100 and 1000.
   The default is three months. Log rotation runs every five minutes and deletes Device Control, Content Aware
   Protection, and eDiscovery logs older than the retention period, together with their associated
   file shadows. For example, setting this option to 6 keeps six months of logs and removes anything
-  older. Set the value to 0 to disable log rotation.
+  older. Enter a value between 1 and 360 months. There's no option to turn log rotation off once
+  it's active — 1 month is the shortest retention period you can configure, and Endpoint Protector
+  rejects a value of 0.
 
 :::warning
-Disabling log rotation means Endpoint Protector never removes logs automatically, and the server
-continues to consume storage until you intervene.
+Endpoint Protector 2608 enables this setting by default. Earlier server versions kept these logs
+indefinitely unless an administrator removed them manually or through Audit Log Backup, which can
+delete logs from the server as it archives them. The first rotation cycle runs within five minutes
+of the server starting, so Endpoint Protector deletes any logs already older than the configured
+period at that point — export anything you need to keep before you upgrade. Review this value
+as soon as you migrate and configure it to match your organization's retention needs. If you must
+retain log data for compliance beyond the configured period, export it regularly through
+**Reports and Analysis** > **Export Logs** and store the exports separately — don't rely on
+server-side log storage for long-term compliance evidence, since you can't disable log rotation
+to keep data on the server indefinitely.
 :::
 
 
@@ -222,21 +232,21 @@ Endpoint Protector automatically modiﬁes the maximum number of reported threat
 
 Limit Reporting Content Aware Protection refers to Report Only policies.
 
-- If enabled, the Endpoint Protector client will stop reporting threats for a Report Only policy
-  after it finds enough threats to conclude it is satisfied.
+- When you enable this setting, the Endpoint Protector client stops reporting threats for a Report
+  Only policy after it finds enough threats to satisfy the policy.
 
 The "Content Aware Protection - Ignore Thresholds" toggle refers to Block & Report policies.
 
-- When this toggle is On, scanning doesn't stop at a block verdict, but continues to report further
+- When this toggle is On, scanning continues past a block verdict and reports further
   threats found in a transfer.
 - To limit the number of reported threats in this case, set the "Maximum number of reported threats"
-  setting to a value greater than zero. The value you set is only indicative for the number of
-  reported threats, the actual number reported can be slightly larger.
+  setting to a value greater than zero. The value you set only indicates the number of
+  reported threats; the actual number reported can be slightly larger.
 
 The ‘Ignore Thresholds’ setting ignores and overrides the ‘Global/Threat Threshold’ values in
 Content Aware Protection policies when the Boolean logic of the Content Aware Protection policy
-contains at least one “AND” operator. A policy will be satisﬁed when the Boolean logic (see the
-following example) is met with one or more matches per identiﬁer.
+contains at least one “AND” operator. A policy triggers when one or more matches per identiﬁer
+satisfy the Boolean logic (see the following example).
 
 Eg. ( E-mail AND SSN US) OR CC Visa
 
@@ -278,20 +288,20 @@ Aware Protection policy.
 Generally, a Content Aware Protection policy (Block & Report) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
 the policy, the scan engine will ignore the ‘Threat Threshold’ setting and continue the scan until
-the total threat of 10 is reached, regardless of whether “Limit Reporting” (under DEVICE CONTROL -
-Global Settings) is enabled.
+it reaches a total of 10 threats, regardless of whether you enable “Limit Reporting” (under DEVICE
+CONTROL - Global Settings).
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is enabled, the scan continues until the total threat of 10 from
-setting ‘Maximum number of reported threats’ under ‘Ignore Thresholds’ is reached.
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you enable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan continues until it reaches the total
+threat of 10 from the ‘Maximum number of reported threats’ setting under ‘Ignore Thresholds’.
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is disabled, the scan engine will continue the scan until the
-entire ﬁle is scanned, but will only report 10 threats, set with ‘Maximum number of reported
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you disable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan engine will continue until it scans
+the entire ﬁle, but will only report 10 threats, as set with ‘Maximum number of reported
 threats’ under ‘Ignore Thresholds’.
 
 **Example - Scenario 2**
@@ -326,20 +336,20 @@ Protector Server
 Generally, a Content Aware Protection policy (Block & Report) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
 the policy, the scan engine will ignore the ‘Threat Threshold’ setting and continue the scan until
-the total threat of 4 from setting ‘Maximum number of reported threats’ is reached, regardless of
-whether “Limit Reporting” (under DEVICE CONTROL - Global Settings) is enabled.
+it reaches the total threat of 4 from the ‘Maximum number of reported threats’ setting, regardless
+of whether you enable “Limit Reporting” (under DEVICE CONTROL - Global Settings).
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is enabled, the scan continues until the total threat of 4 from
-setting ‘Maximum number of reported threats’ under ‘Ignore Thresholds’ is reached.
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you enable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan continues until it reaches the total
+threat of 4 from the ‘Maximum number of reported threats’ setting under ‘Ignore Thresholds’.
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is disabled, the scan engine will continue the scan until the
-entire ﬁle is scanned, but will only report 4 threats, set with ‘Maximum number of reported threats’
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you disable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan engine will continue until it scans
+the entire ﬁle, but will only report 4 threats, as set with ‘Maximum number of reported threats’
 under ‘Ignore Thresholds’.
 
 **Example - Scenario 3**
@@ -373,14 +383,14 @@ Endpoint Protector Client may report the single threats to Endpoint Protector Se
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed, meaning that all identiﬁers reach a ‘Threat Threshold’ of at least 1. The
 scan engine will ignore the ‘Maximum number of reported threats’ under ‘Ignore Thresholds’, when
-“Limit Reporting” (under DEVICE CONTROL - Global Settings) is enabled. Reporting stops as soon as
+you enable “Limit Reporting” (under DEVICE CONTROL - Global Settings). Reporting stops as soon as
 the policy is satisﬁed.
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed, meaning that all identiﬁers reach a ‘Threat Threshold’ of at least 1. The
 scan engine will consider the ‘Maximum number of reported threats’ under ‘Ignore Thresholds’, when
-“Limit Reporting” (under DEVICE CONTROL - Global Settings) is disabled. Reporting stops when 10
-threats are found.
+you disable “Limit Reporting” (under DEVICE CONTROL - Global Settings). Reporting stops when the
+scan ﬁnds 10 threats.
 
 **Example - Scenario 4**
 
@@ -414,8 +424,8 @@ Protector Client may report different 10 threats to Endpoint Protector Server
 
 Generally, a Content Aware Protection policy (Block & Report) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and no ‘AND’ operators in the
-policy, the scan engine will search until the total threat of 10 from setting ‘Maximum number of
-reported threats’ under ‘Ignore Thresholds’ is reached.
+policy, the scan engine will search until it reaches the total threat of 10 from the ‘Maximum number
+of reported threats’ setting under ‘Ignore Thresholds’.
 
 ## Virtual Desktop Clones
 
@@ -486,7 +496,7 @@ Enable the **Active Directory Authentication** setting to import an Active Direc
 administrators into Endpoint Protector as Super Administrators.
 
 :::note
-By enabling the Active Directory Authentication, you allow the administrators to use their
+Enabling Active Directory Authentication lets administrators use their
 Active Directory credentials to log into Endpoint Protector.
 :::
 
