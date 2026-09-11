@@ -13,7 +13,7 @@ PingCastle Enterprise supports multiple authentication methods that can work sim
 Set up each method's identity provider using the instructions on this page, then enter the resulting values on the **Login options**, **Windows authentication**, **Certificate authentication**, **Header authentication**, **OIDC Connect**, and **SAML** screens under **Configuration** > **Settings** in the PingCastle Enterprise web interface.
 
 :::note
-Most changes on these screens take effect within about 30 seconds, without a restart. Two setting groups — HTTPS redirection and allowed hosts settings, and database schema changes — restart PingCastle Enterprise automatically: it stops itself about 1 second after you save, then IIS restarts it. Six other restart-flagged settings — the three file logging settings, maximum concurrent scans, and both SCIM rate limit settings — require you to restart PingCastle Enterprise manually after saving.
+Most changes on these screens take effect within about 30 seconds, without a restart.
 :::
 
 :::tip

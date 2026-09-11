@@ -16,7 +16,7 @@ sidebar_label: Silent installation
 Because the wrapper forwards its arguments verbatim, `PingCastle-Enterprise-Installer-<version>.exe` passes every install option and every logging switch through to `msiexec` as an MSI switch or property. The wrapper also preserves quoting verbatim, so quote any property value that contains spaces exactly as you would for `msiexec` directly.
 
 :::warning
-The license key and any other secrets you pass as MSI properties appear in plain text in Task Manager and other process command-line auditing tools while the install runs. They also appear in a verbose install log unless PingCastle Enterprise scrubs them. See [Collecting Support Logs](enterprisesupportlogs.md#installer-logs) for how installer logging works.
+The license key and any other secrets you pass as MSI properties appear in plain text in Task Manager and other process command-line auditing tools while the install runs. See [Collecting Support Logs](enterprisesupportlogs.md#installer-logs) for how installer logging works.
 :::
 
 ## Installation Options
@@ -55,14 +55,49 @@ See [Remote Database Configuration](enterpriseinstall.md#remote-database-configu
 | `TRUST_SERVER_CERTIFICATE` | Appended to the built connection string | Default `TrustServerCertificate=True;`. Omit this property to set it to `False`. |
 | `CONNECTIONSTRINGPROPERTY` | Full manual connection string | Required when `CONNECTIONSTRINGWAY=MANUAL`. |
 
-### Windows Authentication Properties
+### Authentication
 
-These properties apply when `AUTH_WINDOWS=1`. See [Authentication](enterpriseauthsetup.md#authentication) for background.
+Enable one or more authentication providers by setting the corresponding `AUTH_*` property to `1`. See [Authentication](enterpriseauthsetup.md#authentication) for background on each method.
+
+| Authentication method | Enable with | Property details |
+|---|---|---|
+| Windows Authentication | `AUTH_WINDOWS=1` | [Windows Authentication Properties](#windows-authentication-properties) |
+| SAML | `AUTH_SAML=1` | [SAML Properties](#saml-properties) |
+| OpenID Connect | `AUTH_OIDC=1` | [OpenID Connect Properties](#openid-connect-properties) |
+
+:::note
+You can enable multiple authentication methods at the same time by setting more than one `AUTH_*` property.
+:::
+
+#### Windows Authentication Properties
 
 | Property | Purpose | Notes |
 |---|---|---|
 | `WINDOWSGROUP` | SID of the Windows group granted general access | Default `S-1-1-0` (`Everyone`). |
 | `WINDOWSGROUPADMIN` | SID of the Windows group granted admin access | No default. Must be set explicitly to grant admin rights to a specific group. |
+
+#### SAML Properties
+
+| Property | Purpose | Notes |
+|---|---|---|
+| `SAML_ALLOWED_ISSUER` | Expected issuer/entity ID from the identity provider | Required. |
+| `SAML_SSO_URL` | Identity provider single sign-on URL | Required. Must be a valid `http`/`https` URL. |
+| `SAML_ISSUER` | This service provider's issuer/entity ID | — |
+| `SAML_DISPLAY_NAME` | Label shown on the sign-in page | — |
+| `SAML_METADATA_URL` | Identity provider metadata URL | Alternative to manual issuer/single sign-on URL entry. |
+| `SAML_CERTIFICATE_PATH` | Path to the identity provider's signing certificate | Optional. If supplied, the installer verifies the file exists. |
+
+#### OpenID Connect Properties
+
+See [OpenID Connect](enterpriseauthsetup.md#openid-connect) for background.
+
+| Property | Purpose | Notes |
+|---|---|---|
+| `OIDC_AUTHORITY` | OpenID Connect authority/issuer URL | Required. Must be a valid absolute `http`/`https` URL. |
+| `OIDC_CLIENT_ID` | Application (client) ID registered with the identity provider | Required. |
+| `OIDC_CLIENT_SECRET` | Application client secret | Not echoed in the UI, and masked in the verbose log. |
+| `OIDC_DISPLAY_NAME` | Label shown for this provider on the sign-in page | Optional. Defaults to `Entra ID` if omitted. |
+| `OIDC_GROUP_ID` | Group claim/ID used for role mapping | Optional. |
 
 ### IIS Application Pool Identity Properties
 
@@ -82,39 +117,13 @@ These properties apply when `AUTH_WINDOWS=1`. See [Authentication](enterpriseaut
 | `SCHEDULER_ADD_TO_LOCAL_ADMINS` | Adds the scheduler account to local Administrators | Optional. |
 | `SCHEDULER_API_KEY` | API key the Scheduler service uses to call the Enterprise API | Auto-generated if not supplied. |
 
-### SAML Properties
-
-These properties apply when `AUTH_SAML=1`. See [Authentication](enterpriseauthsetup.md#authentication) for background.
-
-| Property | Purpose | Notes |
-|---|---|---|
-| `SAML_ALLOWED_ISSUER` | Expected issuer/entity ID from the identity provider | Required. |
-| `SAML_SSO_URL` | Identity provider single sign-on URL | Required. Must be a valid `http`/`https` URL. |
-| `SAML_ISSUER` | This service provider's issuer/entity ID | — |
-| `SAML_DISPLAY_NAME` | Label shown on the sign-in page | — |
-| `SAML_METADATA_URL` | Identity provider metadata URL | Alternative to manual issuer/single sign-on URL entry. |
-| `SAML_CERTIFICATE_PATH` | Path to the identity provider's signing certificate | Optional. If supplied, the installer verifies the file exists. |
-
-### OpenID Connect Properties
-
-Set `AUTH_OIDC=1` (alongside any other `AUTH_*` providers you want enabled) plus the following properties. See [OpenID Connect](enterpriseauthsetup.md#openid-connect) for background.
-
-| Property | Purpose | Notes |
-|---|---|---|
-| `OIDC_AUTHORITY` | OpenID Connect authority/issuer URL | Required. Must be a valid absolute `http`/`https` URL. |
-| `OIDC_CLIENT_ID` | Application (client) ID registered with the identity provider | Required. |
-| `OIDC_CLIENT_SECRET` | Application client secret | Not echoed in the UI, and masked in the verbose log. |
-| `OIDC_DISPLAY_NAME` | Label shown for this provider on the sign-in page | Optional. Defaults to `Entra ID` if omitted. |
-| `OIDC_GROUP_ID` | Group claim/ID used for role mapping | Optional. |
-
 ### CloudAPI Properties
 
 The CloudAPI component has its own database and secrets, separate from the main Enterprise application. You don't typically set these on a fresh install.
 
 | Property | Purpose | Notes |
 |---|---|---|
-| `CLOUDAPI_CONFIGURED` | Marks whether CloudAPI was previously configured | Used on upgrade to decide whether to reconfigure secrets or preserve them. |
-| `CLOUDAPI_CONNECTIONSTRINGPROPERTY` | CloudAPI's own database connection string | Built the same way as the main `CONNECTIONSTRINGPROPERTY` if not supplied directly. |
+| `CLOUDAPI_CONNECTIONSTRINGPROPERTY` | CloudAPI's own database connection string | If `CONNECTIONSTRINGWAY` is `AUTO`, the installer derives this from `DATABASE_SERVER`, `SQL_AUTH_TYPE`, and the other database properties when left empty. If `CONNECTIONSTRINGWAY` is `MANUAL`, you must pass this property explicitly. |
 | `CLOUDAPI_MICROSERVICE_API_KEY` | API key used to call the CloudAPI microservice | Auto-generated if empty. |
 | `CLOUDAPI_HMAC_KEY` | HMAC signing key for CloudAPI requests | Auto-generated if empty. |
 | `CLOUDAPI_ENCRYPTION_KEY` | Encryption key for CloudAPI stored data | Auto-generated if empty. |
@@ -210,11 +219,13 @@ Uses a manual connection string to connect to a database you've already provisio
 $installer = "C:\Temp\PingCastle-Enterprise-Installer-4.0.exe"
 $licenseKey = "<your-license-key>"
 $connectionString = "Server=sql01;Database=PingCastleEnterprise;User Id=svc_pc;Password=<pwd>;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True;"
+$cloudApiConnectionString = "Server=sql01;Database=PingCastleCloudAPI;User Id=svc_pc;Password=<pwd>;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True;"
 
 & $installer /quiet /norestart `
   SERIALNUMBERPROPERTY="$licenseKey" `
   CONNECTIONSTRINGWAY=MANUAL `
-  CONNECTIONSTRINGPROPERTY="$connectionString"
+  CONNECTIONSTRINGPROPERTY="$connectionString" `
+  CLOUDAPI_CONNECTIONSTRINGPROPERTY="$cloudApiConnectionString"
 ```
 
 ### Full Configuration
