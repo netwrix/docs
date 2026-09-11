@@ -1,5 +1,5 @@
 ---
-title: "Setting Up the AutoSpider and Alerts"
+title: "- Setting Up the AutoSpider and Alerts -"
 description: "Setting Up the AutoSpider and Alerts"
 sidebar_position: 30
 ---
