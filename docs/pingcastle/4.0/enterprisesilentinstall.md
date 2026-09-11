@@ -48,11 +48,11 @@ See [Remote Database Configuration](enterpriseinstall.md#remote-database-configu
 |---|---|---|
 | `CONNECTIONSTRINGWAY` | `AUTO` \| `MANUAL` | Default `AUTO`. `AUTO` builds a connection string from the other properties in this table; `MANUAL` uses `CONNECTIONSTRINGPROPERTY` as-is. |
 | `DB_SERVER_TYPE` | `LOCAL` \| `REMOTE` | Default `LOCAL`. `LOCAL` uses SQL Express on the local server (`.\SQLExpress`). `REMOTE` uses `DATABASE_SERVER` as the SQL host, along with `SQL_AUTH_TYPE` and any SQL authentication credentials it requires. |
-| `DATABASE_SERVER` | SQL Server instance (`AUTO` mode) | Used to build the connection string. |
+| `DATABASE_SERVER` | SQL Server instance (`AUTO` mode) | The installer uses this to build the connection string. |
 | `SQL_AUTH_TYPE` | `WINDOWS` \| `SQL` | Default `WINDOWS`. `SQL` requires `SQL_USERNAME`/`SQL_PASSWORD`. |
 | `SQL_USERNAME` / `SQL_PASSWORD` | SQL authentication credentials | The installer uses these only when `SQL_AUTH_TYPE=SQL`. |
-| `USE_ENCRYPTION` | Appended to the built connection string | Default `Encrypt=True;`. Omit this property to set it to `False`. |
-| `TRUST_SERVER_CERTIFICATE` | Appended to the built connection string | Default `TrustServerCertificate=True;`. Omit this property to set it to `False`. |
+| `USE_ENCRYPTION` | The installer appends this to the connection string it builds | Default `Encrypt=True;`. Omit this property to set it to `False`. |
+| `TRUST_SERVER_CERTIFICATE` | The installer appends this to the connection string it builds | Default `TrustServerCertificate=True;`. Omit this property to set it to `False`. |
 | `CONNECTIONSTRINGPROPERTY` | Full manual connection string | Required when `CONNECTIONSTRINGWAY=MANUAL`. |
 
 ### Authentication
@@ -113,7 +113,7 @@ See [OpenID Connect](enterpriseauthsetup.md#openid-connect) for background.
 |---|---|---|
 | `SCHEDULER_ACCOUNT_CHOICE` | `SAME_AS_APPPOOL` \| `CUSTOM` \| ... | Selects which account the Scheduler Windows service logs on as. |
 | `SCHEDULER_SERVICE_ACCOUNT` | Resolved service account | Default `LocalSystem`. The installer sets this to the app pool's account automatically when `SCHEDULER_ACCOUNT_CHOICE=SAME_AS_APPPOOL`. |
-| `SCHEDULER_USERNAME` / `SCHEDULER_PASSWORD` | Custom account credentials | Used when `SCHEDULER_ACCOUNT_CHOICE=CUSTOM`. |
+| `SCHEDULER_USERNAME` / `SCHEDULER_PASSWORD` | Custom account credentials | The installer uses these when `SCHEDULER_ACCOUNT_CHOICE=CUSTOM`. |
 | `SCHEDULER_ADD_TO_LOCAL_ADMINS` | Adds the scheduler account to local Administrators | Optional. |
 | `SCHEDULER_API_KEY` | API key the Scheduler service uses to call the Enterprise API | The installer generates one if you don't supply it. |
 
@@ -157,10 +157,10 @@ Common to both `SMTP` and `Graph`:
 | `EMAIL_CLIENT_ID` | App registration client ID | Required. |
 | `GRAPH_AUTH_METHOD` | `ClientSecret` \| `Certificate` | Default `ClientSecret`. |
 | `GRAPH_CLIENT_SECRET` | Client secret | Required when `GRAPH_AUTH_METHOD=ClientSecret`. |
-| `GRAPH_CERT_MODE` | `File` \| `Store` | Only used when `GRAPH_AUTH_METHOD=Certificate`. Default `File`. |
+| `GRAPH_CERT_MODE` | `File` \| `Store` | Applies only when `GRAPH_AUTH_METHOD=Certificate`. Default `File`. |
 | `GRAPH_CERT_PATH` | Path to certificate file | Required when `GRAPH_CERT_MODE=File`. |
 | `GRAPH_CERT_PASSWORD` | Certificate file password | — |
-| `GRAPH_CERT_STORE_LOCATION` | `CurrentUser` \| ... | Only used when `GRAPH_CERT_MODE=Store`. Default `CurrentUser`. |
+| `GRAPH_CERT_STORE_LOCATION` | `CurrentUser` \| ... | Applies only when `GRAPH_CERT_MODE=Store`. Default `CurrentUser`. |
 | `GRAPH_CERT_STORE_NAME` | Certificate store name | Required when `GRAPH_CERT_MODE=Store`. Default `Personal`. |
 | `GRAPH_CERT_THUMBPRINT` | Certificate thumbprint | Required when `GRAPH_CERT_MODE=Store`. |
 

@@ -31,7 +31,7 @@ This part lets an administrator adapt PingCastle Enterprise to the company's spe
 
 You can set "Rule exceptions" to completely disable a rule within a specific domain. The application then doesn't apply this rule for a period that you specify.
 
-Use this only for very specific reasons, such as when a rule doesn't apply in your organization.
+Use this only for specific reasons, such as when a rule doesn't apply in your organization.
 
 Contact Netwrix support if you have questions or need help with exception management.
 

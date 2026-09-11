@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 ## Authentication
 
-PingCastle Enterprise supports multiple authentication methods that can work simultaneously. You can configure any combination of Local Authentication, Windows Authentication, OpenID Connect, Entra ID Authentication, Header Authentication, SAML2, and Client Certificate authentication, allowing users to choose their preferred login method.
+PingCastle Enterprise supports multiple authentication methods that can work simultaneously. You can configure any combination of Local Authentication, Windows Authentication, OpenID Connect, Entra ID Authentication, Header Authentication, SAML2, and Client Certificate authentication, so users can choose their preferred login method.
 
 Set up each method's identity provider using the instructions on this page, then enter the resulting values on the **Login options**, **Windows authentication**, **Certificate authentication**, **Header authentication**, **OIDC Connect**, and **SAML** screens under **Configuration** > **Settings** in the PingCastle Enterprise web interface.
 
@@ -123,7 +123,7 @@ On **Configuration** > **Settings** > **Windows authentication**, enter the SIDs
 | Windows Group | SID of the Active Directory group that grants login access (e.g., PingCastle_Users) |
 | Windows Group Admin | SID of the Active Directory group that grants administrator privileges (e.g., PingCastle_Admins) |
 
-PingCastle Enterprise can also remove a user's access if they no longer belong to the group set in **Windows Group**. The `RemoveUserIfNotInWindowsGroupAnymore` configuration key controls this behavior; PingCastle Enterprise checks the key at every Windows login. The key is off by default and has no toggle on the **Settings** screens — enable it by adding it to the application configuration.
+PingCastle Enterprise can also remove a user's access if they no longer belong to the group you set in **Windows Group**. The `RemoveUserIfNotInWindowsGroupAnymore` configuration key controls this behavior; PingCastle Enterprise checks the key at every Windows login. The key is off by default and has no toggle on the **Settings** screens — enable it by adding it to the application configuration.
 
 :::note
 Windows Authentication doesn't provide an email address when PingCastle Enterprise creates accounts. PingCastle Enterprise sets email addresses to a default value that disables notifications.
@@ -308,15 +308,15 @@ On **Configuration** > **Settings** > **SAML**, enable SAML login and enter the 
 | Enabled | Turns on SAML login. |
 | Display Name | The text shown on the SAML login button. |
 | Issuer | The identifier PingCastle Enterprise presents to your identity provider as the SAML issuer. |
-| IdP Metadata | The URL of your identity provider's SAML metadata, used to fetch signing certificates and endpoint information automatically. |
-| Single Sign-On Destination | The SSO endpoint on your identity provider, used when you configure SAML manually instead of through IdP metadata. |
-| Certificate | The base64-encoded signing certificate from your identity provider, used when you configure SAML manually. |
+| IdP Metadata | The URL of your identity provider's SAML metadata. PingCastle Enterprise fetches signing certificates and endpoint information from it automatically. |
+| Single Sign-On Destination | The SSO endpoint on your identity provider. Set this when you configure SAML manually instead of through IdP metadata. |
+| Certificate | The base64-encoded signing certificate from your identity provider. Set this when you configure SAML manually. |
 | Ignore Certificate Validation | Skips validation of the identity provider's certificate. Use this only for testing, since it removes a security check. |
 
 Set **IdP Metadata** to fetch your identity provider's signing certificate and endpoints automatically, as with Okta or ADFS metadata URLs.
 
 :::warning Availability Requirement
-When using **IdP Metadata**, PingCastle Enterprise accesses the metadata URL at application startup. If the URL is unavailable, PingCastle Enterprise will be unavailable until the metadata becomes accessible again.
+When you use **IdP Metadata**, PingCastle Enterprise accesses the metadata URL at application startup. If the URL is unavailable, PingCastle Enterprise will be unavailable until the metadata becomes accessible again.
 :::
 
 To avoid a startup dependency on the metadata URL, leave **IdP Metadata** blank and set **Single Sign-On Destination** and **Certificate** instead, using the values from your identity provider's metadata:
@@ -375,7 +375,7 @@ Create a user account with a login matching the certificate subject (DNS form). 
 
 **Troubleshooting**
 
-If PingCastle can't recognize the certificate, it displays an error. Ensure the user account login matches one of the preceding certificate identifiers.
+If PingCastle can't recognize the certificate, it displays an error. Ensure the user account login matches one of the certificate mapping identifiers.
 
   </TabItem>
 </Tabs>

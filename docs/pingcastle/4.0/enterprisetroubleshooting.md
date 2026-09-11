@@ -196,7 +196,7 @@ If the Entra Scan Config or settings are still missing after the restart, collec
 <details>
 <summary>Installer Fails Before Setup Runs</summary>
 
-`PingCastle-Enterprise-Installer-<version>.exe` is a wrapper that extracts an embedded MSI and hands it to `msiexec`. If it fails before `msiexec` starts, no MSI log exists yet, because only `msiexec` writes install logs. Check for these symptoms:
+`PingCastle-Enterprise-Installer-<version>.exe` is a wrapper that extracts an embedded MSI and passes it to `msiexec`. If it fails before `msiexec` starts, no MSI log exists yet, because only `msiexec` writes install logs. Check for these symptoms:
 
 - **"Another installation is already running" dialog** — a prior `msiexec` process is still running, or a stale mutex or lock remains. Check Task Manager for a lingering `msiexec.exe` process.
 - **UAC prompt declined or dismissed** — `PingCastle-Enterprise-Installer-<version>.exe` requires elevation. Nothing runs until you accept the prompt.

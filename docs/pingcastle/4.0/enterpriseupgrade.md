@@ -39,7 +39,7 @@ Replace `D:\PingCastleEnterprise\` with your actual installation directory.
 To upgrade PingCastle Enterprise from 3.5.1 to 4.0:
 
 1. Download `PingCastleEnterpriseInstaller.exe` for version 4.0.
-2. Run `PingCastleEnterpriseInstaller.exe` on the server where PingCastle Enterprise 3.5.1 is installed.
+2. Run `PingCastleEnterpriseInstaller.exe` on the server running PingCastle Enterprise 3.5.1.
 3. The installer detects the existing 3.5.1 installation, checks for and applies any required prerequisite changes, and performs an in-place upgrade. Because this is an upgrade, it skips most configuration screens, preserves your existing settings, and shows only a minimal set of prompts.
 
    ![A screenshot of the installer installing the required ASP.NET Hosting Bundle version as part of the upgrade.](/images/pingcastle/enterpriseupgrade/prereq-install.webp)
