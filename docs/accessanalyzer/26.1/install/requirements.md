@@ -107,6 +107,34 @@ The installer downloads everything it needs during the install, and the running 
 | `d2glxqk2uabbnd.cloudfront.net` | Installer downloads. |
 | `storage.googleapis.com` | Installer downloads. |
 
+#### Checking Connectivity Before You Install
+
+Confirm the server can reach these hosts before you download the installer. The quickest check is the download host alone:
+
+```bash
+curl -sSI --max-time 10 https://raw.pkg.keygen.sh/ -o /dev/null && echo "download host reachable" || echo "BLOCKED: allow outbound TCP 443 to raw.pkg.keygen.sh"
+```
+
+If that prints `BLOCKED`, your network team needs to allow this connection before you can download the installer.
+
+To check every host at once, download [aa26-connectivity-check.sh](/files/accessanalyzer/aa26-connectivity-check.sh) and run it on the server:
+
+```bash
+bash aa26-connectivity-check.sh
+```
+
+The script asks each host for `https://<host>/`. Most of these hosts are APIs and storage buckets with no page at `/`, so an HTTP response of 400, 403, or 404 still counts as a pass: it proves DNS resolution, the TCP 443 connection, and the TLS handshake all worked. A FAIL line means DNS didn't resolve, the connection timed out or the host refused it, or TLS failed, usually because a proxy is intercepting HTTPS. The script ends with the exact list of hosts to ask your network team to unblock, and exits `0` only when every host is reachable.
+
+If you already have your license key, pass it to also test the real installer download:
+
+```bash
+LICENSE_KEY="your-key" bash aa26-connectivity-check.sh
+```
+
+The script needs only `curl`. It installs nothing and changes nothing on the server. If you use an HTTPS proxy, export `https_proxy` before you run it; the installer honors the same variable.
+
+After you have the installer, `sudo dspm-installer --preflight` runs the same connectivity check along with the hardware, OS, and certificate checks.
+
 Some features add outbound connections of their own after you configure them.
 
 | Host | Port | When it's needed |
