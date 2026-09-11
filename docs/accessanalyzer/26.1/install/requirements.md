@@ -32,7 +32,7 @@ You pick a size when you install. The size sets the CPU and RAM the installer re
 
 CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine you provision at exactly the stated figure passes even though the guest sees slightly less.
 
-Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size is designed to hold. The 40 GB floor is different: below that, the preflight check fails.
+Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the amount of data that size supports. The 40 GB floor is different: below that, the preflight check fails.
 
 For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on `/var/lib` installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
 
@@ -117,7 +117,7 @@ curl -sSI --max-time 10 https://raw.pkg.keygen.sh/ -o /dev/null && echo "downloa
 
 If that prints `BLOCKED`, your network team needs to allow this connection before you can download the installer.
 
-To check every host at once, expand the script below and copy it into a file on the server. For example, run `vim aa26-connectivity-check.sh`, press `i` to enter insert mode, paste the script, then press `Esc` and type `:wq` to save and exit.
+To check every host at once, expand the following script and copy it into a file on the server. For example, run `vim aa26-connectivity-check.sh`, press `i` to enter insert mode, paste the script, then press `Esc` and type `:wq` to save and exit.
 
 <details>
 <summary>aa26-connectivity-check.sh</summary>
