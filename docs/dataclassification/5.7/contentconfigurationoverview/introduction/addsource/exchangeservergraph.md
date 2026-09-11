@@ -7,7 +7,7 @@ sidebar_position: 45
 # Exchange Server (Graph)
 
 Use the Exchange Server (Graph) source configuration screen to crawl and classify
-multiple Exchange mailboxes from the same Exchange server. The Graph source type applies to Exchange Online only. To crawl mailboxes on an on-premises Exchange server, use Exchange Server (EWS).
+multiple Exchange mailboxes in the same tenant. The Graph source type can only be used to connect to Exchange Online. To crawl mailboxes on an on-premises Exchange server, use Exchange Server (EWS).
 
 You can use Match Rules to include or exclude specific mailboxes.
 
@@ -16,10 +16,10 @@ To configure an Exchange Server (Graph) source, follow these steps.
 **Step 1 –** In Netwrix Data Classification management console, open the **Sources** view and click
 **Add**.
 
-**Step 2 –** Select **Exchange (Graph)** source type and in the properties window specify the necessary
+**Step 2 –** Select **Exchange Server (Graph)** source type and in the properties window specify the necessary
 settings.
 
-**Step 3 –** To display all settings, click the 'wrench' icon next to Settings in the bottom-left corner.
+**Step 3 –** To display all settings, click the "wrench" icon next to Settings in the bottom-left corner.
 
 ## Authentication
 
@@ -36,13 +36,13 @@ You must specify the following:
 
 ## Other configuration settings
 
-The following settings are also required:
+Specify the following settings:
 
 | Option           | Description                                                                                                                                                                                                                                                                                                                                                                       |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Cloud Environment | Select the Azure instance hosting the Exchange Online server. |
-| Crawl Range      | Define which portions of data to retrieve from the Exchange server: <ul><li>Select **Date Range** to crawl a static set of data within the required interval.</li><li>Select **Since** if you want to periodically re-crawl content from the specified date, taking into account the last crawl date for each artifact.</li></ul>                                          |
-| Match Rules      | Define which mailboxes to crawl as part of an Exchange Server source. Examples: 1. `.*@netwrix.com`— enter the wildcard (\*) and the domain (here `netwrix.com`) to restrict crawling to a set of domain mailboxes 2. `.*`—enter to crawl all mailboxes                                                                                                   |
+| Cloud Environment | Select the Azure instance hosting the Exchange Online tenancy. |
+| Crawl Range      | Define which portions of data to retrieve from Exchange Online: <ul><li>Select **Date Range** to crawl a static set of data within the required interval.</li><li>Select **Since** if you want to periodically re-crawl content from the specified date, taking into account the last crawl date for each artifact.</li></ul>                                          |
+| Match Rules      | Define rules with wildcards to limit which mailboxes are crawled. Examples: 1. `.*@netwrix.com`— enter the wildcard (\*) and the domain (here `netwrix.com`) to restrict crawling to a set of domain mailboxes 2. `.*`—enter to crawl all mailboxes. You must define at least one match rule.                                                                                                   |
 | Detection Period | Specify how often to check the source for changes. Default period is 1 day.                                                                                                                                                                                                                                                                                              |
 
 

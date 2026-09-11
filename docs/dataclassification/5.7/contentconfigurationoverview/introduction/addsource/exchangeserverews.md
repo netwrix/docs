@@ -7,9 +7,9 @@ sidebar_position: 40
 # Exchange Server (EWS)
 
 Use the Exchange Server (EWS) source configuration screen to crawl and classify
-multiple Exchange mailboxes from the same Exchange server using the Exchange Web Services (EWS).
+multiple Exchange mailboxes from the same Exchange server, using the Exchange Web Services (EWS).
 
-:::warning
+:::note
 Automatic detection, crawling, and classification of multiple Exchange mailboxes from
 the same Exchange server (and, respectively, the _Exchange Server (EWS)_ content source configuration) works
 only with Exchange Server 2013 or later, due to limitations in the Microsoft APIs. For earlier
@@ -26,14 +26,10 @@ To configure an Exchange Server (EWS) source, follow these steps.
 **Step 2 –** Select the **Exchange Server (EWS)** source type and in the properties window specify the necessary
 settings.
 
-**Step 3 –**  To display all settings, click the 'wrench' icon next to Settings in the bottom-left corner.
+**Step 3 –**  To display all settings, click the "wrench" icon next to Settings in the bottom-left corner.
 
 ## Authentication type: Modern authentication
 
-:::note
-For Email Address / Password, use an Administrator account that has the Discovery Management
-role and the Mailbox Search and MailboxSearchApplication permissions.
-:::
 
 
 If you plan to use this authentication type, specify the following:
@@ -49,6 +45,11 @@ If you plan to use this authentication type, specify the following:
 ![exchangeonline_cfg_modern_auth_thumb_0_0](/images/dataclassification/5.7/admin/sources/exchangemailbox/exchangeonline_cfg_modern_auth_thumb_0_0.webp)
 
 ## Authentication type: Basic
+
+:::note
+For Email Address / Password, use an Administrator account that has the Discovery Management
+role and the Mailbox Search and MailboxSearchApplication permissions.
+:::
 
 To use this authentication type, specify the following:
 

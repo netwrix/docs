@@ -34,12 +34,8 @@ Classification resides. If not, download it from Microsoft website:
 If any services are running while the upgrade occurs, database schema updates may fail to apply correctly. If this occurs, Netwrix recommends contacting Netwrix Support for assistance with remediation.
 :::
 
-**Step 4 –** Back up the Index files. Netwrix recommends the following:
-
-- Locate the folder containing index files (the default location is _C:\Program
+**Step 4 –** Back up the Index files. Locate the folder containing the index files (the default location is _C:\Program
   Files\Netwrix\Data Classification\Index_) and back it up.
-
-**Step 4 -** Stop all NDC services. If upgrading a Distributed Query Server (DQS) environment, stop all services on all instances before upgrading any instance. If the services are running while the upgrade occurs, database schema updates may fail to apply correctly. If this occurs, Netwrix recommends contacting Netwrix Support for help.
 
 :::note
 For versions of 5.7 before 5.7.10, all NDC services and the NDC IIS Application Pool had to run as the same service account. For 5.7.10 onwards this is no longer necessary, but if upgrading from an earlier version of 5.7, complete the upgrade to 5.7.10 _before_ changing the service account to avoid upgrade issues.
