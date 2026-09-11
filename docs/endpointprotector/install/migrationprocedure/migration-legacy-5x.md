@@ -536,7 +536,7 @@ After migration, verify:
 2. Check the value configured for **Enable Log Rotate After**.
 3. Confirm the configured retention period matches your organization's operational and compliance
    needs. Adjust the value if three months doesn't match your retention policy. The value is in
-   months; set it to 0 to disable log rotation entirely.
+   months, from 1 to 360 — there's no option to disable log rotation entirely.
 
 For the full description of this setting, see [Log Settings](/docs/endpointprotector/admin/systemconfiguration/systemsettings#log-settings).
 

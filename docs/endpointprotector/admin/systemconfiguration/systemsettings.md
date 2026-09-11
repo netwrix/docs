@@ -150,7 +150,9 @@ You can set a number of reported threats between 100 and 1000.
   The default is three months. Log rotation runs every five minutes and deletes Device Control, Content Aware
   Protection, and eDiscovery logs older than the retention period, together with their associated
   file shadows. For example, setting this option to 6 keeps six months of logs and removes anything
-  older. Set the value to 0 to disable log rotation.
+  older. Enter a value between 1 and 360 months. There's no option to turn log rotation off once
+  it's active — 1 month is the shortest retention period you can configure, and Endpoint Protector
+  rejects a value of 0.
 
 :::warning
 Endpoint Protector 2608 enables this setting by default. Earlier server versions kept these logs
@@ -161,9 +163,8 @@ period at that point — export anything you need to keep before you upgrade. Re
 as soon as you migrate and configure it to match your organization's retention needs. If you must
 retain log data for compliance beyond the configured period, export it regularly through
 **Reports and Analysis** > **Export Logs** and store the exports separately — don't rely on
-server-side log storage for long-term compliance evidence. Disabling log rotation means Endpoint
-Protector never removes logs automatically, and the server continues to consume storage until you
-intervene.
+server-side log storage for long-term compliance evidence, since you can't disable log rotation
+to keep data on the server indefinitely.
 :::
 
 
