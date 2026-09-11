@@ -35,7 +35,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
 | `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen that appears when the configuration file already supplies every required value. |
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
-| `--log-level` | `LOG_LEVEL` | `info` | Detail written to the log file: `debug`, `info`, `warn`, or `error`. |
+| `--log-level` | `LOG_LEVEL` | `info` | Detail the installer writes to the log file: `debug`, `info`, `warn`, or `error`. |
 | `--log-path` | `LOG_PATH` | `/var/log/dspm-installer.log` | Path to the installer's log file. If you set this explicitly (flag, environment variable, or configuration file) and the path isn't writable or is a symlink, the installer stops with an error instead of falling back to the terminal. |
 | `--postgres-data-dir` | `POSTGRES_DATA_DIR` | none | Custom directory for the application database's data. |
 | `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |

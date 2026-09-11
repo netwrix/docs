@@ -63,7 +63,7 @@ The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/
 
 ## License Key
 
-You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download, and the installer validates it online during the install, so the server must reach the licensing endpoints listed under [Outbound](#outbound). An expired, suspended, or unknown key stops the install.
+You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download, and the installer validates it online during the install, so the server must reach the licensing endpoints that [Outbound](#outbound) lists. An expired, suspended, or unknown key stops the install.
 
 ## First Administrator
 
