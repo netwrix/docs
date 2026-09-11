@@ -239,6 +239,11 @@ The script asks each host for `https://<host>/`. Most of these hosts are APIs an
 
 The script needs only `curl`. It installs nothing and changes nothing on the server. If you use an HTTPS proxy, export `https_proxy` before you run it; the installer honors the same variable.
 
+```bash
+export https_proxy="http://proxy.corp.example.com:3128"
+bash aa26-connectivity-check.sh
+```
+
 After you have the installer, `sudo dspm-installer --preflight` runs the same connectivity check along with the hardware, OS, and certificate checks.
 
 Some features add outbound connections of their own after you configure them.
