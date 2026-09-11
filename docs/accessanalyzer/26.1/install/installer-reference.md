@@ -146,6 +146,48 @@ When the `antivirus` check finds a product, add these paths to that product's ex
 
 The [Requirements](requirements.md) page lists the 18 hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
 
+## RHEL and CentOS Preparation
+
+Complete these steps on a Red Hat Enterprise Linux (RHEL) or CentOS server before you run the installer.
+
+### RHEL 10
+
+RHEL 10 splits a kernel module the platform needs into a separate package. Install it first:
+
+```bash
+sudo dnf install -y kernel-modules-extra
+```
+
+Without it, the `kernel-modules` preflight check can't load `br_netfilter` or `overlay`.
+
+### Firewalld
+
+Turn off `firewalld`:
+
+```bash
+systemctl disable firewalld --now
+```
+
+To keep it enabled instead, add these rules before you install:
+
+```bash
+firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --permanent --zone=trusted --add-source=10.42.0.0/16
+firewall-cmd --permanent --zone=trusted --add-source=10.43.0.0/16
+firewall-cmd --reload
+```
+
+These open the platform's internal API port and trust its pod and service networks. Also open the ports that [Requirements](requirements.md#inbound) lists for Access Analyzer itself.
+
+### Older RHEL and CentOS Releases
+
+RHEL and CentOS releases before 8.4 ship a version of NetworkManager with a bug that interferes with the platform's networking. Disable `nm-cloud-setup` and reboot before you install:
+
+```bash
+systemctl disable nm-cloud-setup.service nm-cloud-setup.timer
+reboot
+```
+
 ## The `wait-for-apps` Command
 
 `wait-for-apps` repeats the readiness wait without reinstalling anything. Use it when an install stopped while waiting for the services, or to check whether they're all ready.
