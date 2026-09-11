@@ -17,12 +17,12 @@ This section covers frequently asked questions and basic troubleshooting for Pla
 3. Is it normal to see two (2) Netwrix NetSuite tabs in the issues panel when both Connect and Forge apps are installed?
     - **Yes**, it is normal. Two (2) separate apps have separate file descriptors that show separate tabs in the issue panel.
 
-4. Why did all the data in the Netwrix NetSuite Settings page in the Forge app disappear after you updated to a new version?
-    - Data in the Netwrix NetSuite Settings page will ONLY disapper if the instance Administrator has UNINSTALLED and RE-INSTALLED the app. This is Atlassian's way of securing data. Every installation starts with no data. However, there are 2 ways to retrieve the data: (1) Raise a ticket to Atlassian support to restore the data in the instance for when the Jira Forge app was installed or updated. (2) Manually re-enter the data.
+4. Why did all the data in the Netwrix NetSuite Settings page in the Forge app disappear after updating to a new version?
+    - Data in the Netwrix NetSuite Settings page will **only** disappear if the instance Administrator has uninstalled and re-installed the app. This is Atlassian's way of securing data. Every install is a fresh start. However, there are 2 ways to retrieve the data: (1) Raise a ticket to Atlassian support to restore the data in the instance for when the Jira Forge app was installed or updated. (2) Manually re-enter the data.
 
-    - For **MINOR** app updates, these changes are instantly available to the customers. Customers don't need to take any further action.
+    - For **major** app updates, the app's version is incremented (e.g., from 1.2.0 to 2.0.0). There is a specific increase/changed in scopes, and/or when you update licensing from free to paid. Customers receive major version updates via the Universal Plugin Manager(UPM) within 24 hours and must manually approve these updates.
 
-    - For **MAJOR** app updates, customers automatically receive major version updates via the Universal Plugin Manager (UPM) within 24 hours and must manually approve these updates.
+    - For **minor** app updates, the app's version is incremented (e.g., from 1.2.0 to 1.3.0) when you make any other changes not included above that do not require manual approval. These changes are instantly available to the customers. No further actions will be done by the customers.
 
 5. Is there impact to existing Connect tickets if you use Forge?
     - **No**. Because Jira Forge pulls the change request information from the NetSuite account it connects to, switching to the Forge app has no impact on existing tickets.
