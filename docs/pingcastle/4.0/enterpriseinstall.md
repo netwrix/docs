@@ -99,7 +99,7 @@ The installer wizard walks you through prerequisite checks, licensing, and confi
   </TabItem>
   <TabItem value="testpoc" label="Test/POC Installation">
 
-For testing and proof-of-concept environments, you can streamline the installation process using automation tools such as Chocolatey.
+For testing and proof-of-concept environments, you can streamline installation with automation tools such as Chocolatey.
 
 :::warning
 Use this simplified setup for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.

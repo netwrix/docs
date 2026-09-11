@@ -7,7 +7,7 @@ sidebar_label: Silent installation
 
 ## How It Works
 
-`PingCastle-Enterprise-Installer-<version>.exe` is a thin wrapper around an embedded Windows Installer (MSI) package, not an interactive-only installer. When you run it, the wrapper:
+`PingCastle-Enterprise-Installer-<version>.exe` is a thin wrapper around an embedded Windows Installer (MSI) package. When you run it, the wrapper:
 
 1. Extracts the embedded MSI to `%ProgramData%\PingCastle\Installer\<version>\`.
 2. Runs `msiexec.exe /i` against the extracted MSI, forwarding every command-line argument you passed to the wrapper unchanged.
@@ -46,7 +46,7 @@ See [Remote Database Configuration](enterpriseinstall.md#remote-database-configu
 
 | Property | Purpose | Notes |
 |---|---|---|
-| `CONNECTIONSTRINGWAY` | `AUTO` \| `MANUAL` | Default `AUTO`. `AUTO` builds a connection string from the properties below; `MANUAL` uses `CONNECTIONSTRINGPROPERTY` as-is. |
+| `CONNECTIONSTRINGWAY` | `AUTO` \| `MANUAL` | Default `AUTO`. `AUTO` builds a connection string from the other properties in this table; `MANUAL` uses `CONNECTIONSTRINGPROPERTY` as-is. |
 | `DB_SERVER_TYPE` | `LOCAL` \| `REMOTE` | Default `LOCAL`. `LOCAL` uses SQL Express on the local server (`.\SQLExpress`). `REMOTE` uses `DATABASE_SERVER` as the SQL host, along with `SQL_AUTH_TYPE` and any SQL authentication credentials it requires. |
 | `DATABASE_SERVER` | SQL Server instance (`AUTO` mode) | Used to build the connection string. |
 | `SQL_AUTH_TYPE` | `WINDOWS` \| `SQL` | Default `WINDOWS`. `SQL` requires `SQL_USERNAME`/`SQL_PASSWORD`. |
@@ -57,7 +57,7 @@ See [Remote Database Configuration](enterpriseinstall.md#remote-database-configu
 
 ### Windows Authentication Properties
 
-Used when `AUTH_WINDOWS=1`. See [Authentication](enterpriseauthsetup.md#authentication) for background.
+These properties apply when `AUTH_WINDOWS=1`. See [Authentication](enterpriseauthsetup.md#authentication) for background.
 
 | Property | Purpose | Notes |
 |---|---|---|
@@ -84,7 +84,7 @@ Used when `AUTH_WINDOWS=1`. See [Authentication](enterpriseauthsetup.md#authenti
 
 ### SAML Properties
 
-Used when `AUTH_SAML=1`. See [Authentication](enterpriseauthsetup.md#authentication) for background.
+These properties apply when `AUTH_SAML=1`. See [Authentication](enterpriseauthsetup.md#authentication) for background.
 
 | Property | Purpose | Notes |
 |---|---|---|
@@ -97,7 +97,7 @@ Used when `AUTH_SAML=1`. See [Authentication](enterpriseauthsetup.md#authenticat
 
 ### OpenID Connect Properties
 
-Set `AUTH_OIDC=1` (alongside any other `AUTH_*` providers you want enabled) plus the properties below. See [OpenID Connect](enterpriseauthsetup.md#openid-connect) for background.
+Set `AUTH_OIDC=1` (alongside any other `AUTH_*` providers you want enabled) plus the following properties. See [OpenID Connect](enterpriseauthsetup.md#openid-connect) for background.
 
 | Property | Purpose | Notes |
 |---|---|---|
@@ -109,7 +109,7 @@ Set `AUTH_OIDC=1` (alongside any other `AUTH_*` providers you want enabled) plus
 
 ### CloudAPI Properties
 
-The CloudAPI component has its own database and secrets, separate from the main Enterprise application. These aren't typically set on a fresh install.
+The CloudAPI component has its own database and secrets, separate from the main Enterprise application. You don't typically set these on a fresh install.
 
 | Property | Purpose | Notes |
 |---|---|---|
@@ -186,7 +186,7 @@ $licenseKey = "<your-license-key>"
 
 ### Secure Installation
 
-Adds HTTPS using a certificate that's already in the Windows certificate store, specified by its thumbprint.
+Adds HTTPS using a certificate that's already in the Windows certificate store, which you identify by its thumbprint.
 
 ```powershell
 $installer = "C:\Temp\PingCastle-Enterprise-Installer-4.0.exe"

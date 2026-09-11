@@ -33,7 +33,7 @@ Example to show how to reorganize entities:
 
 **Details of an Entity**
 
-Each entity has a dedicated "Details" page that contains information. On this page, you can access all the information of the entity, including the Owner permissions. Here you can also edit these rights to establish which key people are accountable for a specified entity.
+Each entity has a dedicated "Details" page. On this page, you can access all the entity's information, including the Owner permissions. Here you can also edit these rights to establish which key people are accountable for a specified entity.
 
 For instance, the page for the PingCastle Enterprise entity:
 

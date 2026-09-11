@@ -29,13 +29,13 @@ This part lets an administrator configure PingCastle Enterprise so that it adapt
 
 **Rule exceptions**
 
-You can set "Rule exceptions" to completely disable a rule within a specific domain. It means the application doesn't apply this rule for a period that you specify.
+You can set "Rule exceptions" to completely disable a rule within a specific domain. The application then doesn't apply this rule for a period that you specify.
 
 Use this only for very specific reasons, such as when a rule doesn't apply in your organization.
 
-Contact Netwrix support if you have doubts or need extra assistance about exception management.
+Contact Netwrix support if you have questions or need help with exception management.
 
-For clarity: if you define no start date and no end date, the exception applies to all reports. If you define a start date but no end date, the exception applies starting from the start date. The same holds for the opposite case. When you define both start and end dates, the exception applies only during a limited period.
+If you define no start date and no end date, the exception applies to all reports. If you define a start date but no end date, the exception applies starting from the start date. The same holds for the opposite case. When you define both start and end dates, the exception applies only during a limited period.
 
 **Excluding specific findings with wildcards**
 
@@ -44,7 +44,7 @@ Instead of disabling a rule entirely, you can exclude specific findings from it 
 From the report, click **No Action Plan** next to the specific finding you want to exclude. This pre-fills the **Rule Item to Handle** field with the data from that finding. Edit this pre-filled value to add wildcards.
 
 :::note
-Don't fill in the **Rule Item to Handle** field yourself, starting from nothing. This field is complex and easy to get wrong when written manually. Always start from the value PingCastle pre-fills after you click **No Action Plan** on a finding, then add wildcards to it.
+Don't fill in the **Rule Item to Handle** field yourself, starting from nothing. This field is complex and easy to get wrong if you write it manually. Always start from the value PingCastle pre-fills after you click **No Action Plan** on a finding, then add wildcards to it.
 :::
 
 Two wildcard characters are available:
@@ -62,7 +62,7 @@ Some output values change from scan to scan even though the underlying risk stay
 
 **Migration**
 
-In the same way you can set exceptions for a specific domain, you can inform the application when one of your domains is migrating. It automatically applies a set of exceptions during the timetable of the migration.
+In the same way you can set exceptions for a specific domain, you can inform the application when one of your domains is migrating. It automatically applies a set of exceptions during the migration timetable.
 
 **Bulk actions**
 

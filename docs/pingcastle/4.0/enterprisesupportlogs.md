@@ -35,7 +35,7 @@ PingCastle-Enterprise-Installer-<version>.exe /l*v "C:\Temp\PingCastleEnterprise
 ```
 
 - `/l*v` enables verbose logging for all message types.
-- msiexec forwards the log path unchanged from the wrapper, so the path must be writable by the elevated process running the install, not just by the account that launched `PingCastle-Enterprise-Installer-<version>.exe`. Avoid a path under a non-administrator user's profile unless that location also grants write access to `SYSTEM` or the administrator account.
+- msiexec forwards the log path unchanged from the wrapper, so the elevated process running the install needs write access to the path, not just the account that launched `PingCastle-Enterprise-Installer-<version>.exe`. Avoid a path under a non-administrator user's profile unless that location also grants write access to `SYSTEM` or the administrator account.
 
 If the installer never reaches `msiexec` — for example, you decline the UAC prompt, or the embedded MSI fails to extract — no log file appears at all. See [Common Errors and Solutions](enterprisetroubleshooting.md#common-errors-and-solutions) for those symptoms.
 
