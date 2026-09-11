@@ -35,7 +35,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
 | `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen that appears when the configuration file already supplies every required value. |
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
-| `--log-level` | `LOG_LEVEL` | `info` | Detail written to the log file: `debug`, `info`, `warn`, or `error`. |
+| `--log-level` | `LOG_LEVEL` | `info` | Detail the installer writes to the log file: `debug`, `info`, `warn`, or `error`. |
 | `--log-path` | `LOG_PATH` | `/var/log/dspm-installer.log` | Path to the installer's log file. If you set this explicitly (flag, environment variable, or configuration file) and the path isn't writable or is a symlink, the installer stops with an error instead of falling back to the terminal. |
 | `--postgres-data-dir` | `POSTGRES_DATA_DIR` | none | Custom directory for the application database's data. |
 | `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |
@@ -145,6 +145,48 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 When the `antivirus` check finds a product, add these paths to that product's exclusion list: `/var/lib/rancher/k3s/agent/containerd`, `/var/lib/rancher/k3s/data`, and `/run/k3s/containerd`. The hint in the message names the product's own command or console for adding exclusions.
 
 The [Requirements](requirements.md) page lists the 18 hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
+
+## RHEL and CentOS Preparation
+
+Complete these steps on a Red Hat Enterprise Linux (RHEL) or CentOS server before you run the installer.
+
+### RHEL 10
+
+RHEL 10 splits a kernel module the platform needs into a separate package. Install it first:
+
+```bash
+sudo dnf install -y kernel-modules-extra
+```
+
+Without it, the `kernel-modules` preflight check can't load `br_netfilter` or `overlay`.
+
+### Firewalld
+
+Turn off `firewalld`:
+
+```bash
+systemctl disable firewalld --now
+```
+
+To keep it enabled instead, add these rules before you install:
+
+```bash
+firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --permanent --zone=trusted --add-source=10.42.0.0/16
+firewall-cmd --permanent --zone=trusted --add-source=10.43.0.0/16
+firewall-cmd --reload
+```
+
+These open the platform's internal API port and trust its pod and service networks. Also open the ports that [Requirements](requirements.md#inbound) lists for Access Analyzer itself.
+
+### Older RHEL and CentOS Releases
+
+RHEL and CentOS releases before 8.4 ship a version of NetworkManager with a bug that interferes with the platform's networking. Disable `nm-cloud-setup` and reboot before you install:
+
+```bash
+systemctl disable nm-cloud-setup.service nm-cloud-setup.timer
+reboot
+```
 
 ## The `wait-for-apps` Command
 

@@ -12,7 +12,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 
 | Requirement | Details |
 |---|---|
-| Operating system | Ubuntu. Any Debian-based distribution should work. The installer doesn't check the release version. |
+| Operating system | Ubuntu or Red Hat Enterprise Linux (RHEL). Any Debian-based or RPM-based distribution should work. The installer doesn't check the release version. RHEL and CentOS need some [additional preparation](installer-reference.md#rhel-and-centos-preparation). |
 | Architecture | 64-bit x86 or Arm. |
 | Access | Root, either directly or through `sudo`. |
 | Free disk on `/var/lib` | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib`. |
@@ -63,7 +63,7 @@ The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/
 
 ## License Key
 
-You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download, and the installer validates it online during the install, so the server must reach the licensing endpoints listed under [Outbound](#outbound). An expired, suspended, or unknown key stops the install.
+You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download, and the installer validates it online during the install, so the server must reach the licensing endpoints that [Outbound](#outbound) lists. An expired, suspended, or unknown key stops the install.
 
 ## First Administrator
 
