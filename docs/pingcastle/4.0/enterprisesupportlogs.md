@@ -1,6 +1,9 @@
 ---
 sidebar_label: Collecting support logs
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Collecting Support Logs for PingCastle Enterprise
 
 Use this page to gather logs before opening a support ticket. It covers two kinds of logs:
@@ -10,21 +13,26 @@ Use this page to gather logs before opening a support ticket. It covers two kind
 
 ## Application and Service Logs
 
-PingCastle Enterprise, CloudAPI (which handles Entra ID scanning), and PingCastleSchedulerService all use Serilog for logging, each writing to its own `logs` folder:
+PingCastle Enterprise, CloudAPI (which handles Entra ID scanning), and PingCastleSchedulerService all use Serilog for logging, each writing to its own `logs` folder. See [Logging](enterprisesettings-logging.md) for how to configure log levels and file logging from the web portal.
+
+<Tabs>
+<TabItem value="portal" label="From Web App" default>
+
+Go to **Configuration** > **Settings** > **Logging** and click **Download Today's Logs** or **Download All Logs**. See [Logging](enterprisesettings-logging.md#downloading-logs) for what each download includes.
+
+</TabItem>
+<TabItem value="filesystem" label="From filesystem">
+
+Sign in to the server and collect the `logs` folder for each component directly:
 
 - PingCastle Enterprise: `logs` in the installation directory
 - CloudAPI: `CloudAPI\logs` in the installation directory
 - PingCastleSchedulerService: `Scheduler\logs` in the installation directory
 
-Configure logging from the web portal at **Configuration** > **Settings** > **Logging**:
+For PingCastleSchedulerService, you can also check the Windows Event Log on the server to troubleshoot the scheduler.
 
-- **Write log to file**: Enables or disables file logging
-- **Logging levels**: Control how much detail PingCastle Enterprise captures
-- This page includes additional logging settings
-
-To download PingCastle Enterprise and CloudAPI logs from the web portal, go to **Configuration** > **Settings** > **Logging** and click **Download Today's Logs** or **Download All Logs**.
-
-PingCastleSchedulerService has no web interface, so the portal download doesn't include its logs. Check `Scheduler\logs` directly, or the Windows Event Log on the server, to troubleshoot the scheduler.
+</TabItem>
+</Tabs>
 
 ## Installer Logs
 
