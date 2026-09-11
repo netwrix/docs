@@ -9,25 +9,9 @@ sidebar_label: Troubleshooting
 
 To diagnose problems with PingCastle Enterprise, view its error messages and logs.
 
-Configure logging from the web portal at **Configuration** > **Settings** > **Logging**:
-
-- **Write log to file**: Enables or disables file logging
-- **Logging levels**: Control how much detail PingCastle Enterprise captures
-- This page includes additional logging settings
-
-See [Log Files](#log-files) for how to download the generated logs.
-
-#### Log Files
-
-PingCastle Enterprise, CloudAPI (which handles Entra ID scanning), and PingCastleSchedulerService all use Serilog for logging, each writing to its own `logs` folder:
-
-- PingCastle Enterprise: `logs` in the installation directory
-- CloudAPI: `CloudAPI\logs` in the installation directory
-- PingCastleSchedulerService: `Scheduler\logs` in the installation directory
-
-To download PingCastle Enterprise and CloudAPI logs from the web portal, go to **Configuration** > **Settings** > **Logging** and click **Download Today's Logs** or **Download All Logs**.
-
-PingCastleSchedulerService has no web interface, so the portal download doesn't include its logs. Check `Scheduler\logs` directly, or the Windows Event Log on the server, to troubleshoot the scheduler.
+:::tip
+See [Collecting Support Logs](enterprisesupportlogs.md) for where to find and how to download application, CloudAPI, and scheduler logs, and how to capture installer logs.
+:::
 
 ### Editing the appsettings.Production.json File
 
@@ -206,6 +190,52 @@ Open PowerShell as Administrator and run `IISRESET`. This restarts both the Ente
 **Step 3: Collect logs and contact support**
 
 If the Entra Scan Config or settings are still missing after the restart, collect logs from both the Enterprise application and the CloudAPI service and send them to support for review.
+
+</details>
+
+<details>
+<summary>Installer Fails Before Setup Runs</summary>
+
+`PingCastle-Enterprise-Installer-<version>.exe` is a wrapper that extracts an embedded MSI and hands it to `msiexec`. If it fails before `msiexec` starts, no MSI log exists yet, because only `msiexec` writes install logs. Check for these symptoms:
+
+- **"Another installation is already running" dialog** — a prior `msiexec` process is still running, or a stale mutex or lock remains. Check Task Manager for a lingering `msiexec.exe` process.
+- **UAC prompt declined or dismissed** — `PingCastle-Enterprise-Installer-<version>.exe` requires elevation. Nothing runs until you accept the prompt.
+- **Embedded MSI missing or extraction failure** — verify `%ProgramData%\PingCastle\Installer\<version>\` exists and is writable. If it's a reparse point or symlink, the wrapper refuses to use it.
+- **msiexec failed to start** — verify `msiexec.exe` is present and confirm Group Policy or antivirus software doesn't block it.
+
+**Solution:**
+
+None of these failures produce a log file. They only appear as a message box at the time of the failure. If you run the installer with `/l*v` and no log file appears at all, the failure happened before `msiexec` launched. Capture a screenshot of the message box instead of a log, and use it to identify which of these causes applies.
+
+</details>
+
+<details>
+<summary>Diagnosing a Failed Installation with Verbose Logging</summary>
+
+If the installer reaches `msiexec` but the install still fails, a verbose log gives you the detail you need to diagnose it. See [Installer Logs](enterprisesupportlogs.md#installer-logs) for the exact syntax.
+
+**Custom actions to check:**
+
+Every custom action writes to the MSI session log, so search the log for these action names to find where the install failed:
+
+- `DetectServerOS`
+- `TestDbConnection`
+- `ValidateManualConnectionString`
+- `BuildAutoConnectionString`
+- `InstallIIS`
+- `InstallHostingBundleUI`
+- `ExtractHostingBundle`
+
+:::note
+PingCastle Enterprise scrubs sensitive values, such as connection strings and keys, before writing them to the log. Even so, review the log for other configuration details before sharing it outside your organization.
+:::
+
+**General troubleshooting checklist:**
+
+1. Re-run the install with `/quiet /l*v "<path>"` (or `/passive /l*v "<path>"` if you want to see progress) to capture full detail.
+2. If no log file appears at all, the failure occurred in the installer wrapper before `msiexec` started. See **Installer Fails Before Setup Runs**.
+3. If the log shows a custom action failure, check that action's logged exit code and output instead of treating the failure as a generic MSI error.
+4. Confirm the properties you passed, such as install path, connection string mode, and authentication providers, match what you expected. The installer wrapper doesn't validate these values itself, so a malformed property only surfaces when the corresponding custom action runs.
 
 </details>
 

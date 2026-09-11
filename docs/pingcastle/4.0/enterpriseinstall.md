@@ -8,6 +8,9 @@ import TabItem from '@theme/TabItem';
 
 ## Installation
 
+:::tip Scripted or Unattended Installs
+For automated deployments, see [Silent Installation of PingCastle Enterprise](enterprisesilentinstall.md).
+:::
 
 <Tabs>
   <TabItem value="production" label="Production Installation" default>
