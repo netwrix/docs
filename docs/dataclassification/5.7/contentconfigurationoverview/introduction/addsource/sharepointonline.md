@@ -6,8 +6,8 @@ sidebar_position: 100
 
 # SharePoint Online
 
-Office 365 customers can configure the collector service to automatically detect and queue their
-employees SharePoint Online sites hosted in Office 365. You must supply an account with Tenant
+If you are an Office 365 customer, you can configure the collector service to automatically detect and queue your
+employees' SharePoint Online sites hosted in Office 365. You must supply an account with Tenant
 administration rights and set how often the service detects new SharePoint Online sites. You can
 also provide a filter expression to include certain SharePoint Online paths and exclude others as
 required.
@@ -28,7 +28,7 @@ Complete the following fields:
 | Option                  | Description                                                                                                                                                                                                                                                 |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | SharePoint URL          | The root of the site collections to add. Click the “(Multiple Urls)” link to add multiple SharePoint Online Site Collections that use the same credentials for crawling.                                                                    |
-| Cloud Environment | Select the Azure instance hosting the SharePoint Online server. |
+| Cloud Environment | Select the Azure instance that hosts your SharePoint Online tenant. |
 | Username                | Enter username in the following formats: DOMAIN\USERNAME and USERNAME@DOMAIN.                                                                                                                                                                               |
 | Password                | Enter your password for SharePoint Online.                                                                                                                                                                                                                   |
 | Match Rules             | Enter the site collections' path for crawling the documents. You must include at least one match rule. Match rules are regular expressions, for example, https:\/\/example.sharepoint.com\/sites\/.                                                         |
