@@ -6,14 +6,14 @@ sidebar_position: 100
 
 # SharePoint Online
 
-Office 365 customers can configure the collector service to automatically detect and queue their
-employees SharePoint Online sites hosted in Office 365. An account with Tenant administration rights
-must be supplied, and the frequency of the detection of new SharePoint Online sites must be set. It
-is also possible to provide a filter expression to ensure that certain SharePoint Online paths are
-included and others excluded as required.
+If you are an Office 365 customer, you can configure the collector service to automatically detect and queue your
+employees' SharePoint Online sites hosted in Office 365. You must supply an account with Tenant
+administration rights and set how often the service detects new SharePoint Online sites. You can
+also provide a filter expression to include certain SharePoint Online paths and exclude others as
+required.
 
-Optionally, you can set up the resources necessary to ensure Netwrix Data
-Classification is enabled and configured on the detected SharePoint Online sites. Templating allows
+Optionally, you can set up the resources needed to enable and configure Netwrix Data
+Classification on the detected SharePoint Online sites. Templating allows
 an administrator to preconfigure classification settings for site collections. For more
 information, review the associated templating guide.
 
@@ -27,11 +27,12 @@ Complete the following fields:
 
 | Option                  | Description                                                                                                                                                                                                                                                 |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SharePoint URL          | The root of the site collections to be added, by clicking the “(Multiple Urls)” link you can add multiple SharePoint Online Site Collections to be crawled against the same credentials.                                                                    |
+| SharePoint URL          | The root of the site collections to add. Click the “(Multiple Urls)” link to add multiple SharePoint Online Site Collections that use the same credentials for crawling.                                                                    |
+| Cloud Environment | Select the Azure instance that hosts your SharePoint Online tenant. |
 | Username                | Enter username in the following formats: DOMAIN\USERNAME and USERNAME@DOMAIN.                                                                                                                                                                               |
 | Password                | Enter your password for SharePoint Online.                                                                                                                                                                                                                   |
-| Match Rules             | Enter the site collections' path for crawling the documents. At least one match rule must be included. Match rules are regular expressions, for example, https:\/\/example.sharepoint.com\/sites\/.                                                         |
+| Match Rules             | Enter the site collections' path for crawling the documents. You must include at least one match rule. Match rules are regular expressions, for example, https:\/\/example.sharepoint.com\/sites\/.                                                         |
 | Classification template | Specify the required Classification template for writing classifications. See the [Enable Write Classifications](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/enablewriteclassifications.md) and [Working with SharePoint templates](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/manage/introduction/workwithtemplates.md) topics for more information. |
-| Detection Period        | Specify how often you will detect new site collections. Default period is 1 day.                                                                                                                                                              |
+| Detection Period        | Specify how often to detect new site collections. Default period is 1 day.                                                                                                                                                              |
 
 After configuring the settings, click the **Save** button.

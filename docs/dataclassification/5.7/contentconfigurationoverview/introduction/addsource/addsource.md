@@ -23,8 +23,10 @@ the sources:
 - [Add Single Database](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsingledatabase/addsingledatabase.md) (Microsoft SQL Server, MySQL, PostgreSQL, or Oracle database)
 - [Add SQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md) (All Microsoft SQL Server, MySQL, PostgreSQL, or Oracle databases on a server)
 - [Dropbox](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/adddropbox.md)
-- [Exchange Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeserver.md) or
-  [Exchange Mailbox](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailbox.md)
+- [Exchange Server (EWS)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeserverews.md) or
+  [Exchange Mailbox (EWS)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailboxews.md)
+- [Exchange Server (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeservergraph.md) or
+  [Exchange Mailbox (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailboxgraph.md)
 - [File System](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/overview.md) (includes Folder and File)
 - [Google Drive Source](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addgdsource.md)
 - [Outlook Mail Archive](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/outlookmailarchive.md)
@@ -33,8 +35,8 @@ the sources:
 The **Sources** section lists all your content sources.
 
 :::note
-When adding a source or managing source configuration, the most commonly used source
-settings are displayed by default. However, some source types have additional configuration options
-that can be displayed by clicking the Advanced Settings ("wrench" icon). You can
+When adding a source or managing source configuration, the console displays the most commonly used
+source settings by default. However, some source types have additional configuration options
+that appear when you click the Advanced Settings ("wrench" icon). You can
 set the Advanced Settings to display by default in User Preferences, accessible by clicking on the username.
 :::
