@@ -173,7 +173,7 @@ jobs:
         id: phase2
         if: steps.vale-remaining.outputs.remaining > 0
         continue-on-error: true
-        uses: anthropics/claude-code-action@fa2b2666b747000bf42767d1f332065b375e3c8f # v1
+        uses: anthropics/claude-code-action@d75b94d5ad426cb8546e6628b6f5f19b84e5cce1 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -219,7 +219,7 @@ jobs:
         id: phase3
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
         continue-on-error: true
-        uses: anthropics/claude-code-action@fa2b2666b747000bf42767d1f332065b375e3c8f # v1
+        uses: anthropics/claude-code-action@d75b94d5ad426cb8546e6628b6f5f19b84e5cce1 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
