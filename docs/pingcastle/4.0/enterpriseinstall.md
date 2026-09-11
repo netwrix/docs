@@ -8,6 +8,9 @@ import TabItem from '@theme/TabItem';
 
 ## Installation
 
+:::tip Scripted or Unattended Installs
+For automated deployments, see [Silent Installation of PingCastle Enterprise](enterprisesilentinstall.md).
+:::
 
 <Tabs>
   <TabItem value="production" label="Production Installation" default>
@@ -34,7 +37,11 @@ For SQL Express, visit [SQL Server Express Downloads](https://learn.microsoft.co
 
 #### Step 2 - Run PingCastleEnterpriseInstaller.exe (production)
 
-The installer wizard walks you through prerequisite checks, licensing, and configuration screens in the following order.
+:::note
+Having trouble installing? See [Installer Logs](enterprisesupportlogs.md#installer-logs) in the Collecting Support Logs guide.
+:::
+
+The installer wizard presents prerequisite checks, licensing, and configuration screens in the following order.
 
 1. **Prerequisite check**: the installer checks the server for IIS and the ASP.NET 10.0 Hosting Bundle. If either is missing, it offers to install them for you.
 
@@ -65,7 +72,7 @@ The installer wizard walks you through prerequisite checks, licensing, and confi
    :::
 
    :::tip Remote SQL Server Setup
-   If you're configuring a remote SQL Server (not on the local machine), see the [Remote Database Configuration](#remote-database-configuration) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
+   If you're configuring a remote SQL Server (not on the local machine), see the [Remote Database Configuration](#remote-database-configuration) section for setup instructions covering SQL Authentication and Windows Authentication.
    :::
 7. **Authentication method**: enable **Windows Authentication**, **OpenID Connect**, **SAML2**, or a combination, and optionally disable local password login. See [Authentication](enterpriseauthsetup.md#authentication) for full configuration details for each method.
 
@@ -92,7 +99,7 @@ The installer wizard walks you through prerequisite checks, licensing, and confi
   </TabItem>
   <TabItem value="testpoc" label="Test/POC Installation">
 
-For testing and proof-of-concept environments, you can streamline the installation process using automation tools such as Chocolatey.
+For testing and proof-of-concept environments, you can streamline installation with automation tools such as Chocolatey.
 
 :::warning
 Use this simplified setup for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.
@@ -125,10 +132,14 @@ choco install sql-server-express
 
 #### Step 2 - Run PingCastleEnterpriseInstaller.exe (test/POC)
 
+:::note
+Having trouble installing? See [Installer Logs](enterprisesupportlogs.md#installer-logs) in the Collecting Support Logs guide.
+:::
+
 1. Run PingCastleEnterpriseInstaller.exe. The installer checks for IIS and the ASP.NET 10.0 Hosting Bundle and offers to install them if they're missing.
 
    :::warning
-   Installing missing prerequisites can require a server restart. If prompted, restart the server and run the installer again to continue.
+   Installing missing prerequisites can require a server restart. If the installer prompts you to restart, restart the server and run the installer again to continue.
    :::
 
 2. Accept the license agreement and enter your license key.
@@ -144,7 +155,7 @@ For a detailed description of each wizard screen, see the Production Installatio
 :::
 
 :::tip Remote SQL Server Setup
-If you're configuring a remote SQL Server instead of using the local instance, see the [Remote Database Configuration](#remote-database-configuration) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
+If you're configuring a remote SQL Server instead of using the local instance, see the [Remote Database Configuration](#remote-database-configuration) section for setup instructions covering SQL Authentication and Windows Authentication.
 :::
 
   </TabItem>
@@ -162,7 +173,7 @@ PingCastle Enterprise requires a database user account with database owner permi
 
 ### SQL Server Permissions
 
-When connecting to an existing database, the account PingCastle Enterprise uses requires database owner permissions. If PingCastle Enterprise runs under the IIS application pool's Windows account, grant permissions with the following SQL:
+When you connect to an existing database, the account PingCastle Enterprise uses requires database owner permissions. If PingCastle Enterprise runs under the IIS application pool's Windows account, grant permissions with the following SQL:
 
 ```sql
 IF NOT EXISTS (SELECT loginname FROM master.dbo.syslogins
