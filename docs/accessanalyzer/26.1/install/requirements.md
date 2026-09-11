@@ -30,9 +30,9 @@ You pick a size when you install. The size sets the CPU and RAM the installer re
 | large | 24 | 96 GB | 3,000 GB | Up to about 800 million objects and 25,000 to 100,000 identities. |
 | enterprise | 32 | 128 GB | 8,000 GB | Up to about 3 billion objects and more than 100,000 identities. |
 
-CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine you provision at exactly the stated figure passes even though the guest sees slightly less.
+CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine provisioned at exactly the stated figure passes even though the guest sees slightly less.
 
-Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the amount of data that size supports. The 40 GB floor is different: below that, the preflight check fails.
+Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size is designed to hold. The 40 GB floor is different: below that, the preflight check fails.
 
 For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on `/var/lib` installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
 
@@ -236,16 +236,6 @@ bash aa26-connectivity-check.sh
 ```
 
 The script asks each host for `https://<host>/`. Most of these hosts are APIs and storage buckets with no page at `/`, so an HTTP response of 400, 403, or 404 still counts as a pass: it proves DNS resolution, the TCP 443 connection, and the TLS handshake all worked. A FAIL line means DNS didn't resolve, the connection timed out or the host refused it, or TLS failed, usually because a proxy is intercepting HTTPS. The script ends with the exact list of hosts to ask your network team to unblock, and exits `0` only when every host is reachable.
-
-If you already have your license key, pass it to also test the real installer download:
-
-```bash
-LICENSE_KEY="your-key" bash aa26-connectivity-check.sh
-```
-
-:::warning
-This passes the license key to `curl` as part of a URL, which makes it visible to other local users on the same server (for example, in `ps` output) while the command runs. Avoid this step on a shared server with untrusted local accounts.
-:::
 
 The script needs only `curl`. It installs nothing and changes nothing on the server. If you use an HTTPS proxy, export `https_proxy` before you run it; the installer honors the same variable.
 
