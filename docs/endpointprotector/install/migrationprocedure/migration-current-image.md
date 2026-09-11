@@ -23,7 +23,7 @@ Since you're already on the image-based platform, migrating to 2608 doesn't requ
 | 2509, 2510, 2601, 2602, or 2604 | Migrate directly to 2608 — you don't need an intermediate version |
 
 :::tip
-2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. It's still good practice to upgrade to 2604 before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs.
+2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. It's still good practice to upgrade to 2604 before migrating, since Netwrix labs validate the 2604 → 2608 path most thoroughly.
 :::
 
 ---
@@ -46,7 +46,7 @@ If your current license includes the `php_els` field (used on the 2509–2604 im
 - Proxmox VE — not officially supported; see the following note
 
 :::note
-**Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after manually adjusting networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
+**Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after you manually adjust networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
 :::
 
 :::warning
@@ -82,7 +82,7 @@ The 2608 image adds CrateDB, which may raise the minimum disk, RAM, and CPU base
 :::
 
 :::tip
-If disk space is below 30%, perform database shrinking via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. To export logs, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
+If disk space is below 30%, shrink the database via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. To export logs, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
 :::
 
 ### Maintenance Window Planning
@@ -347,7 +347,7 @@ Generate deliberate test events on a known test machine for each active module. 
 ### eDiscovery Scan Locations Verification
 
 :::warning
-If you restore an eDiscovery policy with configured **Scan Locations** from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead — with no error reported anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
+If you restore an eDiscovery policy with configured **Scan Locations** from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead, without reporting an error anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
 :::
 
 If you use eDiscovery with Scan Locations configured on any policy, this check is mandatory after restore:
@@ -359,7 +359,7 @@ If you use eDiscovery with Scan Locations configured on any policy, this check i
 ### CAP Policy Verification
 
 :::note
-In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, with no error reported.
+In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, without reporting an error.
 :::
 
 If you use Content Aware Protection, this check is recommended after restore:

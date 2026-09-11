@@ -88,7 +88,7 @@ Smart Group sync job interval: the default configured time is 60 min. You can co
 Configure the client update settings to optimize update performance by specifying a custom hostname
 and port.
 
-- Use custom hostname: Enter a custom hostname to tailor the client update URL as needed.
+- Use custom hostname: Enter a custom hostname to tailor the client update URL.
 - Use custom port: Specify a custom port for generating the client update download link, instead of
   using the default port 443.
 
@@ -288,20 +288,20 @@ Aware Protection policy.
 Generally, a Content Aware Protection policy (Block & Report) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
 the policy, the scan engine will ignore the ‘Threat Threshold’ setting and continue the scan until
-the total threat of 10 is reached, regardless of whether “Limit Reporting” (under DEVICE CONTROL -
-Global Settings) is enabled.
+it reaches a total of 10 threats, regardless of whether you enable “Limit Reporting” (under DEVICE
+CONTROL - Global Settings).
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is enabled, the scan continues until the total threat of 10 from
-setting ‘Maximum number of reported threats’ under ‘Ignore Thresholds’ is reached.
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you enable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan continues until it reaches the total
+threat of 10 from the ‘Maximum number of reported threats’ setting under ‘Ignore Thresholds’.
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is disabled, the scan engine will continue the scan until the
-entire ﬁle is scanned, but will only report 10 threats, set with ‘Maximum number of reported
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you disable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan engine will continue until it scans
+the entire ﬁle, but will only report 10 threats, as set with ‘Maximum number of reported
 threats’ under ‘Ignore Thresholds’.
 
 **Example - Scenario 2**
@@ -336,20 +336,20 @@ Protector Server
 Generally, a Content Aware Protection policy (Block & Report) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
 the policy, the scan engine will ignore the ‘Threat Threshold’ setting and continue the scan until
-the total threat of 4 from setting ‘Maximum number of reported threats’ is reached, regardless of
-whether “Limit Reporting” (under DEVICE CONTROL - Global Settings) is enabled.
+it reaches the total threat of 4 from the ‘Maximum number of reported threats’ setting, regardless
+of whether you enable “Limit Reporting” (under DEVICE CONTROL - Global Settings).
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is enabled, the scan continues until the total threat of 4 from
-setting ‘Maximum number of reported threats’ under ‘Ignore Thresholds’ is reached.
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you enable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan continues until it reaches the total
+threat of 4 from the ‘Maximum number of reported threats’ setting under ‘Ignore Thresholds’.
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is disabled, the scan engine will continue the scan until the
-entire ﬁle is scanned, but will only report 4 threats, set with ‘Maximum number of reported threats’
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you disable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan engine will continue until it scans
+the entire ﬁle, but will only report 4 threats, as set with ‘Maximum number of reported threats’
 under ‘Ignore Thresholds’.
 
 **Example - Scenario 3**
@@ -383,14 +383,14 @@ Endpoint Protector Client may report the single threats to Endpoint Protector Se
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed, meaning that all identiﬁers reach a ‘Threat Threshold’ of at least 1. The
 scan engine will ignore the ‘Maximum number of reported threats’ under ‘Ignore Thresholds’, when
-“Limit Reporting” (under DEVICE CONTROL - Global Settings) is enabled. Reporting stops as soon as
+you enable “Limit Reporting” (under DEVICE CONTROL - Global Settings). Reporting stops as soon as
 the policy is satisﬁed.
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed, meaning that all identiﬁers reach a ‘Threat Threshold’ of at least 1. The
 scan engine will consider the ‘Maximum number of reported threats’ under ‘Ignore Thresholds’, when
-“Limit Reporting” (under DEVICE CONTROL - Global Settings) is disabled. Reporting stops when 10
-threats are found.
+you disable “Limit Reporting” (under DEVICE CONTROL - Global Settings). Reporting stops when the
+scan ﬁnds 10 threats.
 
 **Example - Scenario 4**
 
@@ -424,8 +424,8 @@ Protector Client may report different 10 threats to Endpoint Protector Server
 
 Generally, a Content Aware Protection policy (Block & Report) will trigger when the Boolean logic of
 the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and no ‘AND’ operators in the
-policy, the scan engine will search until the total threat of 10 from setting ‘Maximum number of
-reported threats’ under ‘Ignore Thresholds’ is reached.
+policy, the scan engine will search until it reaches the total threat of 10 from the ‘Maximum number
+of reported threats’ setting under ‘Ignore Thresholds’.
 
 ## Virtual Desktop Clones
 
