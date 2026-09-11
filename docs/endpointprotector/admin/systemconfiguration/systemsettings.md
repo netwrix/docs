@@ -244,8 +244,8 @@ The "Content Aware Protection - Ignore Thresholds" toggle refers to Block & Repo
 
 The ‘Ignore Thresholds’ setting ignores and overrides the ‘Global/Threat Threshold’ values in
 Content Aware Protection policies when the Boolean logic of the Content Aware Protection policy
-contains at least one “AND” operator. A policy will be satisﬁed when the Boolean logic (see the
-following example) is met with one or more matches per identiﬁer.
+contains at least one “AND” operator. A policy triggers when one or more matches per identiﬁer
+satisfy the Boolean logic (see the following example).
 
 Eg. ( E-mail AND SSN US) OR CC Visa
 

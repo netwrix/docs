@@ -9,7 +9,7 @@ sidebar_position: 12
 ---
 
 :::note
-This article covers on-premises EPP Servers running any version from **5.7.0.0 through 5.9.4.2** (5700, 5710, 5800, 5810, 5820, 5900, 5910, 5920, 5930, 5940, 5941, 5942). If your server is already on the current image-based platform (2509–2604), see [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image) instead. For an overview of how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
+This article covers on-premises Endpoint Protector (EPP) Servers running any version from **5.7.0.0 through 5.9.4.2** (5700, 5710, 5800, 5810, 5820, 5900, 5910, 5920, 5930, 5940, 5941, 5942). If your server is already on the current image-based platform (2509–2604), see [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image) instead. For an overview of how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
 :::
 
 ## Overview
@@ -114,7 +114,7 @@ Plan a maintenance window that accounts for the following:
 These times reflect laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
 
 **During the upgrade window, you won't have:**
-- EPP/EE client communication with the server
+- EPP and Enforced Encryption (EE) client communication with the server
 - Email alerts and SIEM integrations
 - File Shadow and log generation
 
@@ -282,7 +282,7 @@ If your 5.9.4.2 backup export is larger than 200 MB, follow these steps:
 This doesn't change the EPP Server version — it remains 5.9.4.2.
 :::
 
-4. If the new export attempt still returns more than 200 MB after successfully importing the offline patch, contact Netwrix Support for assistance with the manual procedure.
+4. If the new export attempt still returns more than 200 MB after you successfully import the offline patch, contact Netwrix Support for assistance with the manual procedure.
 
 ---
 
@@ -322,7 +322,7 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 | High server load | Certificate regeneration for all endpoints creates a burst load spike |
 
 :::warning
-If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
+If you use Enforced Encryption and change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
 :::
 
 :::warning
@@ -380,7 +380,7 @@ For air-gapped environments, follow the same procedure using the 2608 cumulative
 :::
 
 3. After each patch, refresh the browser and verify the version in **Appliance → Server Information** before applying the next.
-4. Once fully patched, confirm the server is stable and all services are running before proceeding to the backup restore.
+4. Once the server is fully patched, confirm it's stable and all services are running before proceeding to the backup restore.
 
 ### Restoring the 5.9.4.2 Backup onto 2608
 
