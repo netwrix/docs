@@ -589,6 +589,29 @@ AD Sync may appear to complete successfully but only import a partial set of use
 2. Re-enter the S3 bucket name, region, access key, and secret key.
 3. Run a test file shadow and confirm the file appears in the bucket.
 
+### Log Retention Verification
+
+:::warning
+**This is a behavior change from earlier server versions.** Endpoint Protector 2608 introduces
+automatic, age-based log rotation for Device Control, Content Aware Protection, and eDiscovery
+logs. Earlier versions kept these logs indefinitely unless an administrator deleted them manually.
+After migration, this setting is enabled by default at three months — Endpoint Protector
+automatically deletes logs older than three months, together with their associated file shadows.
+:::
+
+After migration, verify:
+1. Navigate to **System Configuration → System Settings → Log Settings**.
+2. Check the value configured for **Enable Log Rotate After**.
+3. Confirm the configured retention period matches your organization's operational and compliance
+   needs. Adjust it if the default of three months is too short.
+
+:::tip
+If you need to retain log data for compliance beyond your configured retention period, export it
+regularly through **Reports and Analysis** > **Export Logs** and store the exports separately.
+Keeping compliance evidence in exports, rather than relying on indefinite server-side log storage,
+also keeps the server's log storage lean and performant.
+:::
+
 ### Audit Log Backup Verification
 
 :::warning
