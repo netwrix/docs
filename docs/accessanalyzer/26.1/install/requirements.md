@@ -78,16 +78,11 @@ For a demo, lab, or other install where browser trust warnings are acceptable, g
 
 ```bash
 sudo mkdir -p /etc/dspm
-sudo openssl req -x509 -newkey rsa:2048 -nodes \
-  -keyout /etc/dspm/tls.key \
-  -out    /etc/dspm/tls.crt \
-  -days 397 \
-  -subj "/CN=access-analyzer.corp.example.com" \
-  -addext "subjectAltName=DNS:access-analyzer.corp.example.com"
+sudo openssl req -x509 -newkey rsa:2048 -nodes -keyout /etc/dspm/tls.key -out /etc/dspm/tls.crt -days 200 -subj "/CN=access-analyzer.corp.example.com" -addext "subjectAltName=DNS:access-analyzer.corp.example.com"
 sudo chmod 600 /etc/dspm/tls.key
 ```
 
-Placed at the default location, no certificate/key flags are needed at install time. You don't need to provide a CA bundle for a self-signed certificate — the installer detects that the certificate is self-signed and uses it as its own CA bundle automatically.
+This writes the certificate and key directly to the default paths from above, so no certificate/key flags are needed at install time. You don't need to provide a CA bundle for a self-signed certificate — the installer detects that the certificate is self-signed and uses it as its own CA bundle automatically.
 
 ## License Key
 
