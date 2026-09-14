@@ -65,11 +65,12 @@ The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/
 
 If you're not using a self-signed certificate, request one from your public or internal certificate authority before you install. Give them:
 
-- The hostname from [Hostname](#hostname) above, as the certificate's Subject Alternative Name (SAN). Common Name alone isn't enough — the installer checks the SAN.
-- A request for a standard server/TLS certificate (the same kind issued for any internal website).
-- A note that you need the **private key in unencrypted PEM format** — the installer can't accept a password-protected key.
-
-If the certificate is signed by an internal CA, also get that CA's certificate chain (root and any intermediates) as a separate PEM file — that's the CA bundle above.
+| Item | What to give them |
+|---|---|
+| Subject Alternative Name (SAN) | The hostname from [Hostname](#hostname) above. Common Name alone isn't enough — the installer checks the SAN. |
+| Certificate type | A standard server/TLS certificate (the same kind issued for any internal website). |
+| Private key format | Unencrypted PEM format — the installer can't accept a password-protected key. |
+| CA chain (internal CA only) | If the certificate is signed by an internal CA, also get that CA's certificate chain (root and any intermediates) as a separate PEM file — that's the CA bundle above. |
 
 ### Generating a self-signed certificate
 
