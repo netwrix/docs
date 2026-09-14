@@ -74,11 +74,11 @@ If you're not using a self-signed certificate, request one from your public or i
 
 ### Generating a self-signed certificate
 
-For a demo, lab, or other install where browser trust warnings are acceptable, generate a self-signed certificate with `openssl` on the server where you'll run the installer. Replace `YOUR-SERVER-HOSTNAME` below with the fully qualified hostname you set up under [Hostname](#hostname) above — both occurrences must match it exactly:
+For a demo, lab, or other install where browser trust warnings are acceptable, generate a self-signed certificate with `openssl` on the server where you'll run the installer. Replace `access-analyzer.corp.example.com` below with the fully qualified hostname you set up under [Hostname](#hostname) above — both occurrences must match it exactly:
 
 ```bash
 sudo mkdir -p /etc/dspm
-sudo openssl req -x509 -newkey rsa:2048 -nodes -keyout /etc/dspm/tls.key -out /etc/dspm/tls.crt -days 365 -subj "/CN=YOUR-SERVER-HOSTNAME" -addext "subjectAltName=DNS:YOUR-SERVER-HOSTNAME"
+sudo openssl req -x509 -newkey rsa:2048 -nodes -keyout /etc/dspm/tls.key -out /etc/dspm/tls.crt -days 365 -subj "/CN=access-analyzer.corp.example.com" -addext "subjectAltName=DNS:access-analyzer.corp.example.com"
 sudo chmod 600 /etc/dspm/tls.key
 ```
 
