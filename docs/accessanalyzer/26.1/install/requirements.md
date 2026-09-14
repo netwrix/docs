@@ -61,6 +61,33 @@ Access Analyzer serves the web application **only** over HTTPS, and the installe
 
 The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/etc/dspm/tls.key` unless you point it elsewhere. A self-signed certificate works, and the installer uses it as its own CA bundle, but browsers warn users about it.
 
+### Requesting a certificate from your own certificate authority
+
+If you're not using a self-signed certificate, request one from your public or internal certificate authority before you install. Give them:
+
+- The hostname from [Hostname](#hostname) above, as the certificate's Subject Alternative Name (SAN). Common Name alone isn't enough — the installer checks the SAN.
+- A request for a standard server/TLS certificate (the same kind issued for any internal website).
+- A note that you need the **private key in unencrypted PEM format** — the installer can't accept a password-protected key.
+
+If the certificate is signed by an internal CA, also get that CA's certificate chain (root and any intermediates) as a separate PEM file — that's the CA bundle above.
+
+### Generating a self-signed certificate
+
+For a demo, lab, or other install where browser trust warnings are acceptable, generate a self-signed certificate with `openssl` on the server where you'll run the installer. Replace the hostname with the one from [Hostname](#hostname) above:
+
+```bash
+sudo mkdir -p /etc/dspm
+sudo openssl req -x509 -newkey rsa:2048 -nodes \
+  -keyout /etc/dspm/tls.key \
+  -out    /etc/dspm/tls.crt \
+  -days 397 \
+  -subj "/CN=access-analyzer.corp.example.com" \
+  -addext "subjectAltName=DNS:access-analyzer.corp.example.com"
+sudo chmod 600 /etc/dspm/tls.key
+```
+
+Placed at the default location, no certificate/key flags are needed at install time. You don't need to provide a CA bundle for a self-signed certificate — the installer detects that the certificate is self-signed and uses it as its own CA bundle automatically.
+
 ## License Key
 
 You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download, and the installer validates it online during the install, so the server must reach the licensing endpoints that [Outbound](#outbound) lists. An expired, suspended, or unknown key stops the install.
