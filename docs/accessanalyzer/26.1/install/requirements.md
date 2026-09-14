@@ -67,14 +67,14 @@ If you're not using a self-signed certificate, request one from your public or i
 
 | Item | What to give them |
 |---|---|
-| Subject Alternative Name (SAN) | The hostname from [Hostname](#hostname) above. Common Name alone isn't enough — the installer checks the SAN. |
+| Subject Alternative Name (SAN) | The hostname from [Hostname](#hostname). Common Name alone isn't enough — the installer checks the SAN. |
 | Certificate type | A standard server/TLS certificate (the same kind issued for any internal website). |
 | Private key format | Unencrypted PEM format — the installer can't accept a password-protected key. |
-| CA chain (internal CA only) | If the certificate is signed by an internal CA, also get that CA's certificate chain (root and any intermediates) as a separate PEM file — that's the CA bundle above. |
+| CA chain (internal CA only) | If an internal CA signed the certificate, also get that CA's certificate chain (root and any intermediates) as a separate PEM file — that's the CA bundle from [TLS Certificate](#tls-certificate). |
 
 ### Generating a self-signed certificate
 
-For a demo, lab, or other install where browser trust warnings are acceptable, generate a self-signed certificate with `openssl` on the server where you'll run the installer. Replace the hostname with the one from [Hostname](#hostname) above:
+For a demo, lab, or other install where browser trust warnings are acceptable, generate a self-signed certificate with `openssl` on the server where you'll run the installer. Replace the hostname with the one from [Hostname](#hostname):
 
 ```bash
 sudo mkdir -p /etc/dspm
@@ -82,7 +82,7 @@ sudo openssl req -x509 -newkey rsa:2048 -nodes -keyout /etc/dspm/tls.key -out /e
 sudo chmod 600 /etc/dspm/tls.key
 ```
 
-This writes the certificate and key directly to the default paths from above, so no certificate/key flags are needed at install time. You don't need to provide a CA bundle for a self-signed certificate — the installer detects that the certificate is self-signed and uses it as its own CA bundle automatically.
+This writes the certificate and key directly to the installer's default paths, so you don't need certificate or key flags at install time. You don't need to provide a CA bundle for a self-signed certificate — the installer detects that the certificate is self-signed and uses it as its own CA bundle automatically.
 
 ## License Key
 
