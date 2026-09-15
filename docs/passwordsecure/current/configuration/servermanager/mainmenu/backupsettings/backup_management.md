@@ -85,7 +85,7 @@ databases. First, select the database you want to restore. You can now select In
 
 If necessary, first enter the login data for the user that logs in to the SQL server. Netwrix
 Password Secure generally uses the service user here instead. Now select the backup file. Netwrix
-Password Secure then displays all backups contained in the file. Now click Restore to restore the
+Password Secure then displays all backups in the file. Now click Restore to restore the
 backup to the existing database.
 
 ![Database restore](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_261-en.webp)

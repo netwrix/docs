@@ -5,9 +5,9 @@ sidebar_position: 4
 ---
 
 ## New
-This update adds the possibility to use **PostgreSQL** as a database for Netwrix Password Secure. You no longer need a Microsoft SQL Server or Azure SQL instance running.
+You can now use **PostgreSQL** as a database for Netwrix Password Secure. You no longer need a Microsoft SQL Server or Azure SQL instance running.
 :::tip
-If your database already migrated to ECC, you can automatically migrate it from MSSQL to Postgres.
+If your database already migrated to elliptic curve cryptography (ECC), you can automatically migrate it from MSSQL to Postgres.
 :::
 
 ## Fixed
