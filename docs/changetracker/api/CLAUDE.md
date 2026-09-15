@@ -10,6 +10,7 @@ api/
 ├── _category_.json        # Sidebar label and position for the API section
 ├── overview.md            # Hand-authored API overview
 ├── agents.md              # Hand-authored: agentsRanked endpoint guide
+├── api-keys.md            # Hand-authored: API key auth, single-session behavior, client library gotchas
 ├── authentication.md      # Hand-authored: auth flow and PowerShell example
 ├── credentials.md         # Hand-authored: credentials CRUD endpoints
 ├── register-agents.md     # Hand-authored: agent registration endpoint
