@@ -8,13 +8,13 @@ sidebar_position: 4
 
 This section covers frequently asked questions and basic troubleshooting for Platform Governance's Jira Forge app.
 
-1. The Strongpoint Connect app is already installed. Can you install the Forge app alongside it?
-    - **Yes**, you can install the Forge app even though the Connect app is installed. They shouldn't cause any conflicts during installation or while you use either app or both at the same time.
+1. You already have the Strongpoint Connect app installed. Can you install the Forge app alongside it?
+    - **Yes**, you can install the Forge app alongside the Connect app. They shouldn't cause any conflicts during installation or while you use either app or both at the same time.
 
 2. What happens to the data in the Netwrix Settings page in Connect app after you install the Forge app?
     - Data in the Netwrix Settings page in Connect app doesn't migrate to the Netwrix NetSuite Settings page in the Forge app. Since these are 2 different implementations/apps, you must manually migrate the Connect app data to the Forge app.
 
-3. Is it normal to see two (2) Netwrix NetSuite tabs in the issues panel when both Connect and Forge apps are installed?
+3. Is it normal to see two (2) Netwrix NetSuite tabs in the issues panel when you have both the Connect and Forge apps installed?
     - **Yes**, it is normal. Two (2) separate apps have separate file descriptors that show separate tabs in the issue panel.
 
 4. Why did all the data in the Netwrix NetSuite Settings page in the Forge app disappear after you updated to a new version?
