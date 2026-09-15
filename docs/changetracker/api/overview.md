@@ -28,6 +28,10 @@ The following API endpoints are available in Netwrix Change Tracker:
 
 - [Credentials](/docs/changetracker/api/credentials.md) – Manage authentication credentials that Change Tracker uses to connect to various systems and services. This API provides endpoints for creating, retrieving, updating, and deleting credentials for different credential types including Shell, Database, FTP, Cloud, ESX, ITSM, and Splunk.
 
+- [Authentication](/docs/changetracker/api/authentication.md) – Authenticate a script or automation client to the Hub API and start a session for subsequent requests.
+
+- [API Keys](/docs/changetracker/api/api-keys.md) – Create, use, and revoke Bearer-token API keys for automation, without affecting any user's active UI session.
+
 ## API Usage Best Practices
 
 When working with the Change Tracker API, consider the following best practices:
@@ -44,11 +48,18 @@ When working with the Change Tracker API, consider the following best practices:
 
 ## Example Usage
 
-The following example shows how to use the API with PowerShell:
+The following example shows how to use the API with PowerShell. It mints an API key over
+HTTP Basic auth (see [API Keys](/docs/changetracker/api/api-keys.md)) and uses that key as a
+Bearer token, rather than authenticating with `/auth/credentials` — a credentials login
+signs the account out of any other active session, while an API key doesn't.
 
 ```powershell
-# Set up a session variable for the Admin user
-$myWebSession = GetAdminUserSession
+# Mint an API key using HTTP Basic auth against /apikeys/create
+$basicHeader = "Basic " + [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("$AdminUser`:$AdminPwd"))
+$createResponse = Invoke-RestMethod -Method Post -Uri "https://changetracker.example.com/api/apikeys/create" `
+    -ContentType application/json -Headers @{ Authorization = $basicHeader } `
+    -Body (@{ Label = "overview-example" } | ConvertTo-Json)
+$apiKey = $createResponse.Key
 
 # Define the API endpoint
 $uri = "https://changetracker.example.com/api/agentsRanked"
@@ -66,8 +77,9 @@ $requestBody = @{
     GetRelatedTemplates = $true
 } | ConvertTo-Json
 
-# Make the API request
-$result = Invoke-RestMethod -Method Post -ContentType application/json -Uri $uri -WebSession $myWebSession -Body $requestBody
+# Make the API request using the key as a Bearer token
+$result = Invoke-RestMethod -Method Post -ContentType application/json -Uri $uri `
+    -Headers @{ Authorization = "Bearer $apiKey" } -Body $requestBody
 ```
 
 See the [Available Endpoints](#available-endpoints) section for documentation pages covering each API endpoint.
