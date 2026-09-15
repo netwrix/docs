@@ -301,28 +301,29 @@ After completing this section, you can:
 
 ### Change Request Status Bar Transitions
 
-The Change Request status transitions can be dynamic based on the current status of the Change Request record. The current status can transition to any of the statuses defined in the following status matrix:
+The Change Request Status field on the form shows the status of the Change Request record in NetSuite. On that record, the status bar controls which status the Change Request moves to next. Use this section as a reference to confirm which transitions the Change Request accepts. For a description of each status, see [Status Bar States](/docs/platgovnetsuite/changemanagement/creating_change_request#status-bar-states).
 
-- If the Change Request status is **Not Started**, it can transition to **In Progress, Pending Approval, Completed, Cancelled**
+The statuses a Change Request can transition to depend on its current status. The following table lists the transitions allowed from each status.
 
-- If the Change Request status is **In Progress**, it can transition to **Not Started, Pending Approval, Completed, Cancelled**
+| Current status | Can transition to |
+|---|---|
+| Not Started | In Progress, Pending Approval, Completed, Cancelled |
+| In Progress | Not Started, Pending Approval, Completed, Cancelled |
+| Pending Approval | Not Started, In Progress, Approved, Rejected, Completed, Cancelled |
+| Approved | Not Started, In Progress, Pending Approval, Completed, Cancelled |
+| Rejected | Not Started, In Progress, Pending Approval, Completed, Cancelled |
+| Completed | Not Started, In Progress, Pending Approval, Approved, Cancelled |
+| Cancelled | Not Started, In Progress, Pending Approval, Completed |
+| Approved (Override) | Not Started, In Progress, Pending Approval, Completed, Cancelled |
 
-- If the Change Request status is **Pending Approval**, it can transition to **Not Started, In Progress, Approved, Rejected, Completed, Cancelled**
-
-- If the Change Request status is **Approved**, it can transition to **Not Started, In Progress, Pending Approval, Completed, Cancelled**
-
-- If the Change Request status is **Rejected**, it can transition to **Not started, In Progress, Pending Approval, Complete, Cancelled**
-
-- If the Change Request status is **Completed**, it can transition to **Not Started, In Progress, Pending Approval, Approved, Cancelled**
-
-- If the Change Request status is **Cancelled**, it can transition to **Not Started, In Progress, Pending Approval, Completed**
-
-- If the Change Request status is **Approved Override**, it can transition to **Not Started, In Progress, Pending Approval, Completed, Cancelled**
+A Change Request reaches **Approved (Override)** when an administrator approves it directly instead of through the standard approval workflow, so no other status transitions to it. See [Approving a Change Request](/docs/platgovnetsuite/changemanagement/approving_change_request).
 
 :::note
-If you haven't mapped these statuses as defined in [Set up Jira Status Mapping](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-status-mapping), the transition can't proceed. Review the status mapping carefully.
+If a status in the table isn't mapped as described in [Set up Jira Status Mapping](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-status-mapping), the transition can't proceed. Review your status mapping before you change a Change Request status.
 :::
 
+After completing this section, you can:
+- Identify which statuses a Change Request can transition to from its current status.
 
 ### Other notable features
 
