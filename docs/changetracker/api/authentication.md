@@ -12,6 +12,14 @@ Netwrix recommends trusted certificates for all environments, but if you are usi
 
 The `$NctSession` variable stores the session information for use in subsequent API calls.
 
+:::warning
+This script logs in the same way a browser does, so it triggers the Hub's single-session
+enforcement — running it signs out any other active session for that account. For automation
+that shouldn't disrupt a live session, use an [API key](api-keys.md) instead. See
+[Older PowerShell helpers and the single-session gotcha](api-keys.md#older-powershell-helpers-and-the-single-session-gotcha)
+for more on this behavior.
+:::
+
 
 ```powershell
 $url = Read-Host "Enter URL (https://192.168.1.1/api)"
