@@ -542,6 +542,16 @@ Requires the `UserManage` permission.
 | `DELETE /admin/apikeys/{UserId}` | Revokes every active key for a user in one call. Already-revoked/expired keys are left untouched. | `UserId` (path) | `RevokedCount` |
 | `GET /admin/apikeys/usage`<br/>`GET /admin/apikeys/{UserId}/usage`<br/>`GET /admin/apikeys/{UserId}/{KeyId}/usage` | Lists usage audit records, scoped to one key, one user's keys, or every key in the system depending on which path is used. | `UserId`, `KeyId` (path, both optional — `KeyId` requires `UserId`), `Skip`, `Take` (query, both optional) | `Results[]` (`KeyId`, `UserId`, `Route`, `IpAddress`, `UserAgent`, `TimestampUtc`), `TotalCount` |
 
+### Other APIs referenced in this document
+
+Endpoints outside the API key feature itself that this article mentions, for context.
+
+| Endpoint | Description | Input | Output |
+|---|---|---|---|
+| `POST /auth/credentials` | The Hub's normal credentials-based session login — the same one the browser UI uses. Every older automation path this article warns about (`New-NctSession`, `GetAdminUserSession`, `NCTClient.login()`) authenticates here. Signs the account in to a real UI session, which triggers the Hub's single-session-per-user enforcement: it signs out any other active session for that account. This side effect is the whole reason this article exists — API keys are the alternative that avoids it. | `username`, `password` (form body) | `UserId`, `SessionId` |
+| `GET /groupsTree` | Returns the device group hierarchy. Used in [Using the API directly](#using-the-api-directly) only as an example of an arbitrary endpoint that accepts a Bearer token like any other — it isn't part of the API key feature. | *(none)* | Device group hierarchy |
+| `GET /status/system` | Returns Hub version and system/config details once authenticated. Used in the PowerShell examples only as an example authenticated call — it isn't part of the API key feature. | *(none)* | System version and config settings |
+
 ## Appendix B: Client library gotchas — PowerShell vs. Python
 
 If you're automating against the Hub with the `nct_api_client` Python package, use
