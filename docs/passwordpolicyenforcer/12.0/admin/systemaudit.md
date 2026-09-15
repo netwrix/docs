@@ -26,7 +26,7 @@ Click **Run test**. The audit reports the discovered domain controllers and vers
 :::note
 - If you don't see the **Configuration Timestamp**, contact your network administrator to
 set up the firewall to allow Password Policy Enforcer to communicate.
-- The PPE Version named in the System Audit and Support table is the version of the most recently signed PPE assembly,
+- The PPE Version in the System Audit and Support table is the version of the most recently signed PPE assembly,
 which may differ slightly from the version number of the PPE Configuration Console.
 :::
 
