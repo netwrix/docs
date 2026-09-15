@@ -1,3 +1,9 @@
+---
+title: "API Keys"
+description: "API Keys"
+sidebar_position: 25
+---
+
 # API Keys
 
 API keys let a script or automation client (a CI pipeline, a monitoring integration, a
