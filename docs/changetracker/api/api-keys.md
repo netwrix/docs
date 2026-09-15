@@ -444,6 +444,31 @@ def login_apikey(self, label: str = None):
     # ... otherwise mint a new one over HTTP Basic auth against /apikeys/create ...
 ```
 
+If the account this script runs as has 2FA required or enabled, `POST /apikeys/create` rejects
+the Basic-auth bootstrap outright (`403 Forbidden`, "This account requires two-factor
+authentication, which Basic authentication cannot satisfy") — there's nowhere for this flow to
+collect an OTP, so it can't mint a key on its own. Someone has to create one from the
+**My API Keys** page instead and hand it to the script. Checking an `API_KEY` environment
+variable before falling back to the keyring/Basic-auth flow covers that case:
+
+```python
+def login_apikey(self, label: str = None):
+    label = label or f"{self.username}-python-client"
+
+    # Prefer a key supplied via the environment — needed when the account has 2FA
+    # enabled, since a key can then only be created from the WebUI, not minted here.
+    env_api_key = os.environ.get("API_KEY")
+    if env_api_key:
+        self.api_key = env_api_key
+        return
+
+    api_key = keyring.get_password(API_KEY_KEYRING_SERVICE, label)
+    if api_key and self._jwt_ttl_seconds(api_key) > API_KEY_MIN_TTL_SECONDS:
+        self.api_key = api_key
+        return
+    # ... otherwise mint a new one over HTTP Basic auth against /apikeys/create ...
+```
+
 The client's `_authenticated_request()` method is worth borrowing for your own scripts even
 outside this library: it tries the API key as a Bearer token first, and only falls back to a
 credentials-based session if that fails — so a client can be written once and work whether or
