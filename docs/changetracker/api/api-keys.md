@@ -1,6 +1,6 @@
 ---
 title: "API Keys"
-description: "API Keys"
+description: "Create, use, and revoke API keys for Change Tracker Hub automation without affecting active UI sessions"
 sidebar_position: 25
 ---
 
@@ -48,8 +48,8 @@ touching any config file. Related settings, all under `security:apiKeys`:
 | `enabled` | `false` | Turns API key authentication on or off for the whole deployment. |
 | `expirySeconds` | `86400` (24 hours) | Time-to-Live (TTL) defines how long an API key remains valid before it expires and requires re-authorization. |
 | `usageLogDebounceSeconds` | `3600` | Minimum interval between usage-audit log entries for the same key, to avoid flooding the log on high-frequency callers. |
-| `revocationCacheSeconds` | `300` (5 minutes) | How long a confirmed-valid key's status is cached in Redis before being re-checked against Mongo. See *Security notes* below. |
-| `maxKeysPerUser` | `64` | Maximum number of keys (of any status) a single user may hold at once. See *Key limits* below. |
+| `revocationCacheSeconds` | `300` (5 minutes) | How long a confirmed-valid key's status is cached in Redis before being re-checked against Mongo. See [Security notes](#security-notes). |
+| `maxKeysPerUser` | `64` | Maximum number of keys (of any status) a single user may hold at once. See [Key limits](#key-limits). |
 | `basicAuthRateLimitMaxAttempts` | `10` | Maximum `POST /apikeys/create` Basic-auth attempts allowed per client IP within the rate-limit window, since that path bypasses the normal account lockout. |
 | `basicAuthRateLimitWindowSeconds` | `60` | Length of the sliding window (in seconds) `basicAuthRateLimitMaxAttempts` is enforced over. |
 
@@ -101,7 +101,7 @@ menu in the top-right corner of the Hub (click your username, then **My API Keys
 From here you can create a new key (giving it a label so you can tell it apart from your
 other keys later), see all your existing keys with their creation/expiry/last-used dates and a
 usage count, and revoke any key you no longer need. The usage count reflects debounced audit log
-entries (at most one per `usageLogDebounceSeconds` window — see *Review API key usage* below),
+entries (at most one per `usageLogDebounceSeconds` window — see [Review API key usage](#review-api-key-usage)),
 not literal request counts, so it undercounts for a key used more than once within the same
 window.
 
@@ -235,7 +235,7 @@ not available via `Authorization: Basic`, and there is no WebUI for them yet.
 
 Using the admin's own API key (rather than logging in for a session cookie) is the recommended
 way to call these from a script: an API key inherits the creating user's permissions (see
-*Security notes* below), so an admin's key already carries `UserManage` and works here exactly
+[Security notes](#security-notes)), so an admin's key already carries `UserManage` and works here exactly
 like a session would — with none of the session-invalidation risk of a fresh
 `POST /auth/credentials` login.
 
@@ -527,7 +527,7 @@ generated from the Hub's OpenAPI spec.
 
 | Endpoint | Description | Input | Output |
 |---|---|---|---|
-| `POST /apikeys/create` | Creates a new API key for the calling user. | `Label` (string, body). On-prem only, authenticated with `Authorization: Basic` rather than a session or existing key. | `Key`, `KeyId`, `Label`, `CreatedDate`, `ExpiryDate` |
+| `POST /apikeys/create` | Creates a new API key for the calling user. | `Label` (string, body). Accepts an authenticated session (both deployment modes, used by the WebUI) or `Authorization: Basic` (on-prem only). | `Key`, `KeyId`, `Label`, `CreatedDate`, `ExpiryDate` |
 | `GET /apikeys` | Lists the calling user's own API keys, newest first. | `Skip`, `Take`, `ActiveOnly` (query, all optional) | `Results[]` (`KeyId`, `UserId`, `Label`, `CreatedDate`, `ExpiryDate`, `CancelledDate`, `LastUsedDate`, `UsageCount`), `TotalCount` |
 | `DELETE /apikeys/{KeyId}` | Revokes one of the calling user's own keys immediately. | `KeyId` (path) | *(204 No Content)* |
 
