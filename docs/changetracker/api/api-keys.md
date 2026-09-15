@@ -334,6 +334,31 @@ belongs to that user (same ownership check as revoking a specific key), so `KeyI
 `usageLogDebounceSeconds`) and auto-expire after 90 days, so this reflects "which keys were
 active in which window," not literally every single request.
 
+## Client library gotchas: PowerShell vs. Python
+
+If you're automating against the Hub with the `nct_api_client` Python package, use
+`NCTClient.login_apikey()` — it already mints and uses an API key over HTTP Basic auth
+against `/apikeys/create` instead of starting a session, precisely to avoid the
+single-session-invalidation gotcha described in this article:
+
+```python
+client = NCTClient(base_url="https://localhost:5001", username="admin")
+client.login_apikey()          # safe: never creates a session
+```
+
+Avoid `NCTClient.login()` for automation — it posts to `/auth/credentials` and creates a
+real Hub session, which invalidates any other active session for that user the same as a
+browser login does:
+
+```python
+client = NCTClient(base_url="https://localhost:5001", username="admin")
+client.login()                 # avoid for automation: signs out other active sessions
+```
+
+The older PowerShell tools don't have an API-key option yet, so the equivalent guidance there
+is different: prefer minting a key directly over HTTP Basic auth, using the same approach as
+`demo-api-keys.ps1`, instead of calling `New-NctSession` or `GetAdminUserSession`.
+
 ## Older PowerShell helpers and the single-session gotcha
 
 Two older PowerShell tools predate API keys and still authenticate the same way a browser
