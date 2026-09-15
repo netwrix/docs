@@ -11,20 +11,23 @@ This section covers frequently asked questions and basic troubleshooting for Pla
 1. You already have the Strongpoint Connect app installed. Can you install the Forge app alongside it?
     - **Yes**, you can install the Forge app alongside the Connect app. They shouldn't cause any conflicts during installation or while you use either app or both at the same time.
 
-2. What happens to the data in the Netwrix Settings page in Connect app after you install the Forge app?
-    - Data in the Netwrix Settings page in Connect app doesn't migrate to the Netwrix NetSuite Settings page in the Forge app. Since these are 2 different implementations/apps, you must manually migrate the Connect app data to the Forge app.
+2. What happens to the data in the Netwrix Settings page in the Connect app after you install the Forge app?
+    - Data in the Netwrix Settings page in the Connect app doesn't migrate to the Netwrix NetSuite Settings page in the Forge app. Because the Connect app and the Forge app are two separate apps, you must migrate the Connect app data manually.
 
-3. Is it normal to see two (2) Netwrix NetSuite tabs in the issues panel when you have both the Connect and Forge apps installed?
-    - **Yes**, it is normal. Two (2) separate apps have separate file descriptors that show separate tabs in the issue panel.
+3. Is it normal to see two Netwrix NetSuite tabs in the issue panel when you have both the Connect and Forge apps installed?
+    - **Yes**, it is normal. The two apps have separate file descriptors, so each app shows its own tab in the issue panel.
 
 4. Why did all the data in the Netwrix NetSuite Settings page in the Forge app disappear after you updated to a new version?
-    - Data in the Netwrix NetSuite Settings page will **only** disappear if the instance Administrator has uninstalled and re-installed the app. This is Atlassian's way of securing data. Every install starts with no data. However, there are 2 ways to retrieve the data: (1) Raise a ticket with Atlassian support to restore the data in the instance from when you installed or updated the Jira Forge app. (2) Manually re-enter the data.
+    - Updating the app doesn't clear this data. Data in the Netwrix NetSuite Settings page disappears **only** if the instance administrator uninstalls and re-installs the app, because Atlassian treats every install as a fresh start with no data. If the data is already gone, you have two ways to retrieve it:
+        - Raise a ticket with Atlassian support to restore the data in the instance from before the re-install.
+        - Re-enter the data manually.
 
-    - For **major** app updates, Netwrix increments the app's version (e.g., from 1.2.0 to 2.0.0). There is a specific increase/changed in scopes, and/or when you update licensing from free to paid. Customers receive major version updates via the Universal Plugin Manager(UPM) within 24 hours and must manually approve these updates.
+5. How do major and minor updates to the Forge app differ?
+    - Netwrix releases a **major** update when the app's permission scopes change, when the app's licensing changes from free to paid, or both. Netwrix increments the first number in the app's version — for example, from 1.2.0 to 2.0.0. You receive major updates through the Universal Plugin Manager within 24 hours and must approve them manually.
+    - Netwrix releases a **minor** update for any change that doesn't affect permission scopes or licensing. Netwrix increments the second number in the app's version — for example, from 1.2.0 to 1.3.0. Minor updates reach you immediately and require no action.
+    - Neither type of update clears the data in the Netwrix NetSuite Settings page.
 
-    - For **minor** app updates, Netwrix increments the app's version (e.g., from 1.2.0 to 1.3.0) for any other changes that don't require manual approval. These changes are instantly available to the customers. Customers don't need to take any further action.
-
-5. Is there impact to existing Connect tickets if you use Forge?
+6. Is there impact to existing Connect tickets if you use Forge?
     - **No**. Because Jira Forge pulls the change request information from the NetSuite account it connects to, switching to the Forge app has no impact on existing tickets.
 
 **Back to:** [Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)
