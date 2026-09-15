@@ -367,6 +367,11 @@ is different: prefer minting a key directly over HTTP Basic auth, using the same
 
 ## Older PowerShell helpers and the single-session gotcha
 
+This section only applies if your automation already calls `New-NctSession` (from the
+`NctApiClientLibrary` module) or `GetAdminUserSession` (from `ApiKeysDemo/gen7-utilities.ps1`).
+If you're not using either of those, skip ahead to [Security notes](#security-notes) — you're
+not affected.
+
 Two older PowerShell tools predate API keys and still authenticate the same way a browser
 login does:
 
