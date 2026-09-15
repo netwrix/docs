@@ -54,7 +54,7 @@ To display the current settings of web services for SVM svm1, use the following 
 cluster1::> vserver services web show -vserver svm1
 ```
 
-**Step 4 –** Review the [Permissions for NetApp Auditing](/docs/auditor/10.9/configuration/fileservers/netappcmode/permissions.md) topic for additional
+**Step 4 –** Review the [Permissions for NetApp Auditing](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md) topic for additional
 information on how to create the role and enable AD user access.
 
 **Step 5 –** Enable HTTP/HTTPS access. For example:
@@ -87,7 +87,7 @@ cluster1::> vserver services web modify -vserver svm1 -name rest -enabled true -
 
 **Step 7 –** ensure that the custom role (e.g., netwrix_role for ONTAPI or netwrix_rest_role for
 RESTAPI) assigned to your account specified for data collection can access ONTAPI or RESTAPI. See
-[Permissions for NetApp Auditing](/docs/auditor/10.9/configuration/fileservers/netappcmode/permissions.md) topic for additional information.
+[Permissions for NetApp Auditing](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md) topic for additional information.
 
 ```
 cluster1::> vserver services web access show -name ontapi -vserver svm1

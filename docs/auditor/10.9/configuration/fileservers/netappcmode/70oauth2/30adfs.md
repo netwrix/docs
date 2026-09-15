@@ -85,7 +85,7 @@ cluster1::> security oauth2 client create -config-name Adfs -provider adfs \
 
 where `<adfs-host>` is your AD FS federation service name. For a full description of every
 parameter, see
-[Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/ontap.md).
+[Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md).
 This section uses authorization model C (local login by claim):
 
 - `-provider adfs` enables AD FS-specific token handling on ONTAP.
@@ -131,6 +131,6 @@ ver        : 1.0
 
 ## Related Topics
 
-- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/overview.md)
-- [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/ontap.md)
+- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
+- [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
 - [AD FS Deployment Guide](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/active-directory-federation-services-deployment-guide)

@@ -92,7 +92,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
 See the following topics for additional information:
 
 - Configure NetApp Clustered Data ONTAP 8 and ONTAP 9 for Monitoring
-- [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/cifs.md)
+- [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/80share.md)
 
 The following table lists the actions that can be performed on NetApp:
 
@@ -120,9 +120,9 @@ only.
 To configure Clustered Data ONTAP 8 and ONTAP 9 for monitoring, perform the following procedures:
 
 - Prerequisites
-- [Configure ONTAPI\RESTAPI Web Access](/docs/auditor/10.9/configuration/fileservers/netappcmode/webaccess.md)
-- [Configure Service Policy](/docs/auditor/10.9/configuration/fileservers/netappcmode/servicepolicy.md)
-- [Configure Event Categories and Log](/docs/auditor/10.9/configuration/fileservers/netappcmode/eventcategories.md)
+- [Configure ONTAPI\RESTAPI Web Access](/docs/auditor/10.9/configuration/fileservers/netappcmode/20webaccess.md)
+- [Configure Service Policy](/docs/auditor/10.9/configuration/fileservers/netappcmode/50servicepolicy.md)
+- [Configure Event Categories and Log](/docs/auditor/10.9/configuration/fileservers/netappcmode/30netappaudit.md)
 
 ### Prerequisites
 
@@ -143,7 +143,7 @@ Perform the following steps before proceeding with the audit configuration.
 **NOTE**: NFS file shares aren't supported.
 
 **Step 2 –** Configure System Access Control List (SACL) on your file share. See
-[Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/cifs.md) topic for additional information.
+[Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/80share.md) topic for additional information.
 
 **Step 3 –** Set the Security Style for Volume or Qtree where the audited file shares are located to
 the _"ntfs"_ or _"mixed"_.
