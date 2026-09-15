@@ -6,307 +6,271 @@ sidebar_position: 3
 
 # Jira Forge Walkthrough
 
-Complete all prerequisites in the Jira Forge Setup page before using this walkthrough.
+This walkthrough is one example based on a test account. Before you start, complete all prerequisites on the Jira Forge Setup page, install and configure the Jira integration, and set up the Jira Statuses.
 
-This walkthrough is one example based on a test account. You must install and configure the Jira integration, including setting up the Jira Statuses before using this walkthrough.
-
-### The walkthrough demonstrates these steps:
+The walkthrough covers these steps:
 
 - Create a Jira Ticket
-- Logging In and Connecting to a NetSuite Account
+- Log In and Connect to a NetSuite Account
 - Add or Remove Customizations
-- Importing Customizations
+- Import Customizations
 - Perform Risk Assessment
 - View Entity Relation Diagram
 - Ready for Development
 - Deploy Changes and Complete the Ticket
 - Change Request Status Bar Transitions
-- Other notable features
+- Other Notable Features
 
-### Create a Jira Ticket
+## Create a Jira Ticket
+
 1. Log in to your Jira account.
-2. Open a Project.
-3. Click Create (+).
-4. Fill the necessary fields and Click 'Create'
+2. Open a project.
+3. Click **Create (+)**.
+4. Fill in the necessary fields and click **Create**.
 
-### Logging In and Connecting to a NetSuite Account
-Before proceeding to this step, ensure you have already created a Token-based Authentication (TBA) record. If not, see [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) in Setup page.
+## Log In and Connect to a NetSuite Account
 
-1. In your issue ticket, click the **Netwrix NetSuite Forge** tab.
-    Two possible displays:
+Before you start this step, confirm that you have already created a Token-based Authentication (TBA) record. If not, see [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) on the Setup page.
 
-        1. If you have NOT executed [Set up Jira Project Keys](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-project-keys) in the Setup Page, this message displays: "Only projects defined in the Netwrix Settings page can use this integration." Complete the [Set up Jira Project Keys](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-project-keys) step first.
+1. In your issue ticket, click the **Netwrix NetSuite Forge** tab. One of two pages appears:
 
+    - If you haven't completed [Set up Jira Project Keys](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-project-keys) on the Setup page, this message appears: "Only projects defined in the Netwrix Settings page can use this integration." Complete the [Set up Jira Project Keys](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-project-keys) step first.
 
-        ![Jira Forge Issue No Project Key](/images/platgovnetsuite/integrations/jira_forge_issue_no_project_key.webp)
+      ![Jira Forge Issue No Project Key](/images/platgovnetsuite/integrations/jira_forge_issue_no_project_key.webp)
 
-        2. If you have, the connect page appears, where you can connect or log in to a NetSuite defined in [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) in Setup page.
+    - If you have completed that step, the connect page appears, where you can connect or log in to a NetSuite account defined in [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) on the Setup page.
 
-
-        ![Jira Forge Issue Connect Form](/images/platgovnetsuite/integrations/jira_forge_issue_connect_form.webp)
+      ![Jira Forge Issue Connect Form](/images/platgovnetsuite/integrations/jira_forge_issue_connect_form.webp)
 
 2. Select a NetSuite account to connect to.
-3. When you select an account, the app loads and establishes the initial connection. After it succeeds, the **Connect** button becomes enabled. If it doesn't, verify the TBA credentials in [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) in Setup page.
+3. After you select an account, the app loads and establishes the initial connection. When it succeeds, the **Connect** button becomes enabled. If it doesn't, verify the TBA credentials in [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) on the Setup page.
 
+    ![Jira Forge Issue Connect Form Successful](/images/platgovnetsuite/integrations/jira_forge_issue_connect_form_successful.webp)
 
-![Jira Forge Issue Connect Form Successful](/images/platgovnetsuite/integrations/jira_forge_issue_connect_form_successful.webp)
-
-4. Click "Connect" button.
+4. Click **Connect**.
 5. The ITGC Form for the Jira app appears. It loads the Change Request data and shows the account the app connects to.
 
+    ![Jira Forge Issue Connect Form Successful ITGC](/images/platgovnetsuite/integrations/jira_forge_connect_itgc_form.webp)
 
-![Jira Forge Issue Connect Form Successful ITGC](/images/platgovnetsuite/integrations/jira_forge_connect_itgc_form.webp)
-
-### Add or Remove Customizations
+## Add or Remove Customizations
 
 This section shows you how to add and remove customizations in the Forge app.
 
-To add or remove customizations, follow these steps:
+1. Click the **Lookup Customization** button to add existing customizations to the Jira ticket. A modal opens, letting you filter and select a customization to attach to the change request. You can filter by:
 
-1. Click the **Lookup Customization** button to add existing customizations to the Jira ticket. A modal opens, letting you filter and select a customization to attach to the change request.
+    - Name
+    - Script ID
+    - Type
+    - Bundle ID
+    - Modified By
+    - From
+    - To
 
+    ![Jira Forge Lookup Customization Modal](/images/platgovnetsuite/integrations/jira_forge_lookup_customization_modal.webp)
 
-Available filters:
-- Name
-- Script ID
-- Type
-- Bundle ID
-- Modified By
-- From
-- To
+2. Choose a filter to narrow the selection of customizations. This example uses the Name filter. Click **Lookup**.
 
+    ![Jira Forge Lookup Customization Modal Name Filter](/images/platgovnetsuite/integrations/jira_forge_lookup_name_filter.webp)
 
-![Jira Forge Lookup Customization Modal](/images/platgovnetsuite/integrations/jira_forge_lookup_customization_modal.webp)
+3. Select a customization to attach by ticking the checkbox beside its name, then click **Add Customizations** at the bottom of the modal.
 
-2. Choose a filter to narrow the selection of customizations. Use the Name filter. Click the "Lookup" button.
-
-
-![Jira Forge Lookup Customization Modal Name Filter](/images/platgovnetsuite/integrations/jira_forge_lookup_name_filter.webp)
-
-3. Select a customization to attach by ticking the checkbox beside the name. After ticking it, click the "Add Customizations" button at the bottom of the modal.
-    - The following image shows a flag indicating the action is in progress.
-
+    A flag shows that the action is in progress:
 
     ![Jira Forge Add Customization Flag In Progress](/images/platgovnetsuite/integrations/jira_forge_add_customization_in_progress.webp)
 
-    - The following image shows a flag indicating the action succeeded.
+    A second flag shows that the action succeeded:
 
+    ![Jira Forge Add Customization Flag Successful](/images/platgovnetsuite/integrations/jira_forge_successful_add_customization.webp)
 
-    ![Jira Forge Add Customization Flag In Progress](/images/platgovnetsuite/integrations/jira_forge_successful_add_customization.webp)
+4. You can also add a customization that is yet to be created. Click **Proposed Customization**. A modal opens with these fields:
 
-4. You can also add a customization that is yet to be created. To add one, click the "Proposed Customization" button. A modal opens with the following fields:
     - Type
     - ScriptID/Name
 
-
     ![Jira Forge Proposed Customization Modal](/images/platgovnetsuite/integrations/jira_forge_proposed_customization_modal.webp)
 
-5. Select the Type for your proposed customization. Select the "Body Field" type. Notice that the Script ID/Name field already contains the prefix of the script ID, which prevents accidentally entering the wrong script ID prefix for the type. Enter the script ID of your choice.
-
+5. Select the Type for your proposed customization. This example uses the **Body Field** type. The Script ID/Name field already contains the prefix of the script ID, which prevents you from accidentally entering the wrong script ID prefix for the type. Enter the script ID of your choice.
 
     ![Jira Forge Proposed Customization Input](/images/platgovnetsuite/integrations/jira_forge_add_proposed_wth_input.webp)
-6. Click the "Add Proposed Customization" button to add/attach it to the Jira ticket change request.
-    - The following image shows a flag indicating the action is in progress.
 
+6. Click **Add Proposed Customization** to attach it to the Jira ticket change request.
 
-    ![Jira Forge Proposed Customization Flag In Progress](/images/platgovnetsuite/integrations/jira_forge_add_proposed_in_progress.webp)    
+    A flag shows that the action is in progress:
 
-    - The following image shows a flag indicating the action succeeded.
+    ![Jira Forge Proposed Customization Flag In Progress](/images/platgovnetsuite/integrations/jira_forge_add_proposed_in_progress.webp)
 
+    A second flag shows that the action succeeded:
 
-    ![Jira Forge Proposed Customization Flag Successful](/images/platgovnetsuite/integrations/jira_forge_add_proposed_successful.webp) 
+    ![Jira Forge Proposed Customization Flag Successful](/images/platgovnetsuite/integrations/jira_forge_add_proposed_successful.webp)
 
-The following image shows the existing and proposed customizations you added in steps 1 through 6.
+    Steps 1 through 6 attach both existing and proposed customizations to the change request:
 
+    ![Jira Forge Existing and Proposed Customizations](/images/platgovnetsuite/integrations/jira_forge_existing_and_proposed_customizations_added.webp)
 
-![Jira Forge Existing and Proposed Customizations](/images/platgovnetsuite/integrations/jira_forge_existing_and_proposed_customizations_added.webp)       
+7. To remove an existing or proposed customization from the Jira ticket change request, click the trash icon at the right side of the customization's name.
 
-7. You can also remove existing and proposed customizations from the Jira ticket change request. Click the "trash" icon at the right side of the customization's name to trigger the remove process.
+    ![Jira Forge Remove Customizations Icon](/images/platgovnetsuite/integrations/jira_forge_remove_trash_icon.webp)
 
+    A flag shows that the action is in progress:
 
-![Jira Forge Remove Customizations Icon](/images/platgovnetsuite/integrations/jira_forge_remove_trash_icon.webp)   
+    ![Jira Forge Remove Customizations Flag In Progress](/images/platgovnetsuite/integrations/jira_forge_remove_customization_in_progress.webp)
 
-    - The following image shows a flag indicating the action is in progress.
+    A second flag shows that the action succeeded:
 
-
-    ![Jira Forge Remove Customizations Flag In Progress](/images/platgovnetsuite/integrations/jira_forge_remove_customization_in_progress.webp)  
-
-    - The following image shows a flag indicating the action succeeded.
-
-
-    ![Jira Forge Remove Customizations Flag Success](/images/platgovnetsuite/integrations/jira_forge_remove_customization_successful.webp)  
+    ![Jira Forge Remove Customizations Flag Success](/images/platgovnetsuite/integrations/jira_forge_remove_customization_successful.webp)
 
 After completing this section, you can:
-- Use the Lookup customization filter
+
+- Use the Lookup Customization filters
 - Add existing and proposed customizations
-- Delete/remove a customization
+- Remove a customization
 
-### Importing Customizations
+## Import Customizations
 
-This feature is similar to the add customization process, except that you can add customizations in bulk. Import customization accepts only XML files and a SuiteCloud Development Framework (SDF) project in ZIP format. 
+This feature works like the add customization process, except that you can add customizations in bulk. Import Customization accepts only XML files and a SuiteCloud Development Framework (SDF) project in ZIP format. Contact your company's NetSuite administrator for sample files.
 
-You may contact your company's NetSuite Administrator for a sample of this files.
+1. Click the **Import Customization** button in the form. A modal appears with the option to upload a file. The modal accepts only an SDF project in ZIP format or an XML file.
 
-To use the import feature, follow these steps:
-
-1. Click the **Import Customization** button in the form. A modal appears with the option to upload a file. The modal accepts only a SDF project in ZIP format or an XML file.
-
-
-![Jira Forge Import Customization](/images/platgovnetsuite/integrations/jira_forge_import_customization_modal.webp)
+    ![Jira Forge Import Customization](/images/platgovnetsuite/integrations/jira_forge_import_customization_modal.webp)
 
 2. Select a file to import.
-- Importing XML file format
 
+    XML file format:
 
-![Jira Forge Import Customization](/images/platgovnetsuite/integrations/jira_forge_import_xml_file.webp)  
+    ![Jira Forge Import Customization XML File](/images/platgovnetsuite/integrations/jira_forge_import_xml_file.webp)
 
-- Importing SDF ZIP file format
+    SDF ZIP file format:
 
-
-![Jira Forge Import Customization](/images/platgovnetsuite/integrations/jira_forge_import_sdf_zip.webp)  
+    ![Jira Forge Import Customization SDF ZIP File](/images/platgovnetsuite/integrations/jira_forge_import_sdf_zip.webp)
 
 3. Click the **Import Customizations** button. A flag message at the lower left of your screen indicates that the import is in progress.
-
-4. After the import succeeds, all valid objects populate the Customization and Proposed Customization tables. A flag message indicates the import succeeded.
+4. After the import succeeds, all valid objects populate the Customization and Proposed Customization tables. A flag message confirms that the import succeeded.
 
 After completing this section, you can:
-- Use the Import Customization feature and add customizations in bulk.
 
-### Perform Risk Assessment
+- Use the Import Customization feature to add customizations in bulk.
+
+## Perform Risk Assessment
 
 This feature uses Platform Governance's Impact Analysis tool to review your customizations for dependencies or risks.
 
-To use Impact Analysis, follow these steps:
+1. Click the **Impact Analysis** button at the bottom left of the form.
 
-1. Click the "Impact Analysis" button at the bottom left of the form.
+    ![Jira Forge Impact Analysis Button](/images/platgovnetsuite/integrations/jira_forge_impact_analysis_button.webp)
 
+2. A modal appears and starts the risk assessment.
 
-![Jira Forge Impact Analysis Button](/images/platgovnetsuite/integrations/jira_forge_impact_analysis_button.webp)  
-2. A modal appears to start the risk assessment process.
+    ![Jira Forge Impact Analysis Calculating](/images/platgovnetsuite/integrations/jira_forge_calculating_impact_analysis.webp)
 
+3. The modal populates with the impacted objects. The modal categorizes them as **Can Be Safely Deleted or Modified**, **Can't Be Safely Deleted or Modified**, and **Inactive Customizations (Already Deleted)**. Objects under **Can't Be Safely Deleted or Modified** also show the Impacted Customizations.
 
-![Jira Forge Impact Analysis Calculating](/images/platgovnetsuite/integrations/jira_forge_calculating_impact_analysis.webp) 
-
-3. The modal populates with the impacted objects. The modal categorizes them as **Can Be Safely Deleted or Modified**, **Can't Be Safely Deleted or Modified**, and **Inactive Customizations (Already Deleted)**. Objects under the **Can't Be Safely Deleted or Modified** will also show the Impacted Customizations.
-
-
-![Jira Forge Impact Analysis Data](/images/platgovnetsuite/integrations/jira_forge_impact_analysis.webp) 
+    ![Jira Forge Impact Analysis Data](/images/platgovnetsuite/integrations/jira_forge_impact_analysis.webp)
 
 After completing this section, you can:
+
 - Perform an impact analysis on the customizations attached to the Jira ticket change request.
 
-### View Entity Relation Diagram
+## View Entity Relation Diagram
 
-The Entity Relationship Diagram (ERD) tool graphically displays your Customizations and all dependencies.
+The Entity Relationship Diagram (ERD) tool graphically displays your customizations and all their dependencies.
 
-To use ERD, follow these steps:
+1. Click the **View ERD** button at the bottom left of the form, beside the **Impact Analysis** button.
 
-1. Click the "View ERD" button at the bottom left of the form, beside the "Impact Analysis" button.
+    ![Jira Forge View ERD Button](/images/platgovnetsuite/integrations/jira_forge_view_erd_button.webp)
 
+2. A modal appears and starts pulling ERD data.
 
-![Jira Forge View ERD Button](/images/platgovnetsuite/integrations/jira_forge_view_erd_button.webp) 
-
-2. A modal appears to start pulling ERD data.
-
-
-![Jira Forge Pulling ERD Data](/images/platgovnetsuite/integrations/jira_forge_pulling_erd_data.webp) 
+    ![Jira Forge Pulling ERD Data](/images/platgovnetsuite/integrations/jira_forge_pulling_erd_data.webp)
 
 3. The modal populates with the customization and its corresponding hyperlink to the ERD.
 
+    ![Jira Forge ERD Data](/images/platgovnetsuite/integrations/jira_forge_list_erd_data.webp)
 
-![Jira Forge ERD Data](/images/platgovnetsuite/integrations/jira_forge_list_erd_data.webp) 
+4. Click **View ERD** to open the customization ERD in a new browser tab.
 
-4. Click **View ERD** to view the customization ERD. It opens in a new browser tab.
-
-
-![Jira Forge ERD Data NetSuite](/images/platgovnetsuite/integrations/jira_forge_sample_erd.webp) 
+    ![Jira Forge ERD Data NetSuite](/images/platgovnetsuite/integrations/jira_forge_sample_erd.webp)
 
 After completing this section, you can:
+
 - View the entity relationship diagram of the customization attached to the Jira ticket change request.
 
-### Ready for Development
+## Ready for Development
 
 After you resolve any risks or conflicts, your changes are ready for development:
 
-1. Change the Jira status of your ticket to match the status set up for Jira Statuses for Pending Approval Status. For example, Selected for Development.
+1. Change the Jira status of your ticket to match the status you set up in Jira Statuses for the Pending Approval status. For example, Selected for Development.
+2. If you aren't using Automatic Synchronization to push status changes, click **Push**. A confirmation appears that your Change Request was Created/Updated.
 
-2. Click Push if you aren't using Automatic Synchronization to push status changes. A confirmation appears that your Change Request was Created/Updated.
+    ![Jira Forge Push Button](/images/platgovnetsuite/integrations/jira_forge_push_button.webp)
 
-- The following image shows the "Push" button.
+    A flag shows that the action is in progress:
 
+    ![Jira Forge Push In Progress](/images/platgovnetsuite/integrations/jira_forge_push_in_progress.webp)
 
-![Jira Forge Push Button](/images/platgovnetsuite/integrations/jira_forge_push_button.webp)
+    A second flag shows that the action succeeded:
 
-- The following image shows a flag indicating the action is in progress.
-
-
-![Jira Forge Push In Prgoress](/images/platgovnetsuite/integrations/jira_forge_push_in_progress.webp) 
-
-- The following image shows a flag indicating the action succeeded.
-
-
-![Jira Forge Push Successful](/images/platgovnetsuite/integrations/jira_forge_push_successful.webp) 
+    ![Jira Forge Push Successful](/images/platgovnetsuite/integrations/jira_forge_push_successful.webp)
 
 3. The Change Request Status field on the form shows the change request status in NetSuite. The status is now Pending Approval, with a link to open the Change Request in NetSuite.
 
-
-![Jira Forge Change Request Pending Approval](/images/platgovnetsuite/integrations/jira_forge_change_request_pending_approval_status.webp) 
+    ![Jira Forge Change Request Pending Approval](/images/platgovnetsuite/integrations/jira_forge_change_request_pending_approval_status.webp)
 
 After completing this section, you can:
+
 - Push a change request from a Jira ticket.
 - View the change request status from Jira.
 
-### Deploy Changes and Complete the Ticket
+## Deploy Changes and Complete the Ticket
 
 When development is done and the Change Request is approved according to your policy, you can update the Jira ticket.
 
 1. The Change Request Status field on the form shows the change request status in NetSuite. The status is now Approved.
 
+    ![Jira Forge Change Request Approved](/images/platgovnetsuite/integrations/jira_forge_approved_cr_status.webp)
 
-![Jira Forge Change Request Approved](/images/platgovnetsuite/integrations/jira_forge_approved_cr_status.webp) 
+2. Change the Jira status of your ticket to match the status you set up in Jira Statuses for the Approved status. This example has two possible statuses: Ready for Deployment and Done. Two statuses let you split the deployment and the ticket closure if you want to monitor the deployment task separately. Both statuses are valid for Deployment, but only Done closes the Jira ticket and updates the Change Request to Completed.
+3. If you aren't using Automatic Synchronization to push status changes, click **Push**. A confirmation appears that your Change Request was Created/Updated.
 
-2. Change the Jira status of your ticket to match the status set up for Jira Statuses for Approved Status. In this example, there are two possible statuses: Ready for Deployment and Done. Two statuses let you split the deployment and the ticket closure if you want to monitor the deployment task separately. Both statuses are valid for Deployment, but only Done closes the Jira ticket and updates the Change Request to Completed.
+    A flag shows that the action is in progress:
 
-3. Click Push if you aren't using Automatic Synchronization to push status changes. A confirmation appears that your Change Request was Created/Updated.
-- The following image shows a flag indicating the action is in progress.
+    ![Jira Forge Change Request Approved Flag In Progress](/images/platgovnetsuite/integrations/jira_forge_push_in_progress.webp)
 
+    A second flag shows that the action succeeded:
 
-![Jira Forge Change Request Approved Flag In Progress](/images/platgovnetsuite/integrations/jira_forge_push_in_progress.webp) 
+    ![Jira Forge Change Request Approved Flag Successful](/images/platgovnetsuite/integrations/jira_forge_push_successful.webp)
 
-- The following image shows a flag indicating the action succeeded.
+4. If you used Ready for Deployment, update your Jira status to Done after your deployment and verification activities are complete.
 
+### Review the Change Request in NetSuite
 
-![Jira Forge Change Request Approved Flag Sucessful](/images/platgovnetsuite/integrations/jira_forge_push_successful.webp) 
+When you open the Change Request in NetSuite, you see:
 
-4. If you used Ready for Deployment, update your Jira status to Done once your deployment and verification activities are complete.
+- All Customizations added from Jira.
+- The Affected Bundle ID, if used.
+- Change Overview set to the Jira ticket description.
+- The Change Request marked Approved and ready for deployment.
+
+![Jira Forge Change Request NetSuite 1](/images/platgovnetsuite/integrations/jira_forge_itgc_cr_1.webp)
+
+The Related Change Records tab shows Originated System, External Change Request Number, and External Link to the Jira ticket.
+
+![Jira Forge Change Request NetSuite 2](/images/platgovnetsuite/integrations/jira_forge_itgc_cr_2.webp)
+
+If the Jira status is Done, the Change Request shows as Completed.
 
 After completing this section, you can:
+
 - Push a change request from a Jira ticket.
 - View the Approved change request status from Jira.
 
-#### If you open the Change Request in NetSuite:
+## Change Request Status Bar Transitions
 
-- All Customizations added from Jira appear.
-- Affected Bundle ID appears (if used).
-- Change Overview matches the Jira ticket description.
-- Change Request is Approved and ready for deployment.
+The Change Request Status field on the form shows the status of the Change Request record in NetSuite. On that record, the status bar controls which status the Change Request moves to next, and the statuses it can move to depend on its current status. For a description of each status, see [Status Bar States](/docs/platgovnetsuite/changemanagement/creating_change_request#status-bar-states).
 
-
-![Jira Forge Change Request NetSuite 1](/images/platgovnetsuite/integrations/jira_forge_itgc_cr_1.webp) 
-- The Related Change Records tab shows Originated System, External Change Request Number, and External Link to the Jira ticket.
-
-
-![Jira Forge Change Request NetSuite 2](/images/platgovnetsuite/integrations/jira_forge_itgc_cr_2.webp) 
-- If the Jira status is Done, the Change Request shows as Completed.
-
-### Change Request Status Bar Transitions
-
-The Change Request Status field on the form shows the status of the Change Request record in NetSuite. On that record, the status bar controls which status the Change Request moves to next. Use this section as a reference to confirm which transitions the Change Request accepts. For a description of each status, see [Status Bar States](/docs/platgovnetsuite/changemanagement/creating_change_request#status-bar-states).
-
-The statuses a Change Request can transition to depend on its current status. The following table lists the transitions each status allows.
+The following table lists the transitions each status allows.
 
 | Current status | Can transition to |
-|---|---|
+| --- | --- |
 | Not Started | In Progress, Pending Approval, Completed, Cancelled |
 | In Progress | Not Started, Pending Approval, Completed, Cancelled |
 | Pending Approval | Not Started, In Progress, Approved, Rejected, Completed, Cancelled |
@@ -323,34 +287,28 @@ If you haven't mapped a status in the table as described in [Set up Jira Status 
 :::
 
 After completing this section, you can:
+
 - Identify which statuses a Change Request can transition to from its current status.
 
-### Other notable features
+## Other Notable Features
 
 The following features are less common but equally important in the integration app.
 
-1. **Add Bundle ID** - The **+** button beside the Affected Bundle ID field. Use it to add NetSuite bundle IDs to the change request. You can add one bundle ID at a time. To remove a bundle ID from the change request, contact a NetSuite Administrator.
+1. **Add Bundle ID** — The **+** button beside the Affected Bundle ID field. Use it to add NetSuite bundle IDs to the change request. You can add one bundle ID at a time. To remove a bundle ID from the change request, contact a NetSuite Administrator.
 
+    ![Jira Forge Add Bundle Button](/images/platgovnetsuite/integrations/jira_forge_add_bundle_button.webp)
 
-![Jira Forge Add Bundle Button](/images/platgovnetsuite/integrations/jira_forge_add_bundle_button.webp) 
+    ![Jira Forge Add Bundle Modal](/images/platgovnetsuite/integrations/jira_forge_add_bundle_modal.webp)
 
+2. **Push External** — Use this feature to push the Jira ticket change request and its objects to an external NetSuite account. Pushing to an external NetSuite account saves time when you create a change request with the same objects in another NetSuite account. To use Push External, click the **Push External** button. A modal appears to select the NetSuite account to push to. The modal lists the same accounts you defined on the Netwrix NetSuite TBA Credentials page.
 
+    ![Jira Forge Push External Button](/images/platgovnetsuite/integrations/jira_forge_push_external_button.webp)
 
-![Jira Forge Add Bundle Modal](/images/platgovnetsuite/integrations/jira_forge_add_bundle_modal.webp) 
+    ![Jira Forge Push External Modal](/images/platgovnetsuite/integrations/jira_forge_push_external_modal.webp)
 
-2. **Push External** - Use this feature to push the Jira ticket change request and its objects to an external NetSuite account. Pushing to an external NetSuite account saves time when you create a change request with the same objects in another NetSuite account. To use Push External, click the **Push External** button. A modal appears to select the NetSuite account to push to. The modal lists the same accounts you defined on the Netwrix NetSuite TBA Credentials page.
+3. **Settings** — The **Settings** dropdown button lets you switch the NetSuite account to connect to. When you click **Settings**, a **Change Account** option appears. When you click **Change Account**, the app disconnects the session and stops the connection to the NetSuite account. The connection form then appears so you can connect to another NetSuite account.
 
-
-![Jira Forge Push External Button](/images/platgovnetsuite/integrations/jira_forge_push_external_button.webp) 
-
-
-
-![Jira Forge Push External Modal](/images/platgovnetsuite/integrations/jira_forge_push_external_modal.webp) 
-
-3. **Settings** - The Settings dropdown button lets you switch the NetSuite account to connect to. When you click "Settings", a "Change Account" option appears. When you click "Change Account", the app disconnects the session and stops the connection to the NetSuite account. The connection form then appears so you can connect to another NetSuite account.
-
-
-![Jira Forge Settings Button](/images/platgovnetsuite/integrations/jira_forge_settings_change_account.webp) 
+    ![Jira Forge Settings Button](/images/platgovnetsuite/integrations/jira_forge_settings_change_account.webp)
 
 You have completed the Jira Forge Walkthrough.
 
