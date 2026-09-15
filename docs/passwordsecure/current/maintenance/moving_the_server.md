@@ -10,11 +10,11 @@ sidebar_position: 20
 
 You must make some preparations so that the move can be completed without any problems.
 
-#### 1. Installing the SQL server
+#### 1. Installing the database server
 
-If the SQL server and the application server are on the same machine, the SQL server should be
+If the database server and the application server are on the same machine, the database server should be
 installed on the new machine first. You must observe the
-[MSSQL Server](/docs/passwordsecure/current/installation/requirements/mssql_server.md) for this process.
+[database server](/docs/passwordsecure/current/installation/requirements/database/database.md) for this process.
 
 #### 2. Installing the server
 

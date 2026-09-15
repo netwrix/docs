@@ -6,9 +6,11 @@ sidebar_position: 20
 
 # MSSQL Server
 
-#### Required Version
+## Required Version
 
-RECOMMENDED: Using MS SQL Server Express can lead to significant performance issues because of the various limitations. Netwrix recommends MS SQL Server Standard as a minimum.
+:::tip
+RECOMMENDED: Using MSSQL Server Express can lead to significant performance issues because of the various limitations. Netwrix recommends MSSQL Server Standard as a minimum.
+:::
 
 Follow Microsoft recommendations for system requirements for SQL Server.
 
@@ -16,9 +18,11 @@ Follow Microsoft recommendations for system requirements for SQL Server.
 | --------------------- | ------- | ----------- |
 | MS SQL Server Version | 2019    | 2022        |
 
+:::warning
 **CAUTION:** If you plan to install the MS SQL Server on the machine with the Netwrix Password Secure application server, ensure to meet the combined minimum requirements for both systems.
+:::
 
-#### Required Configuration
+## Required Configuration
 
 1. Service User: dbCreator (only required if Netwrix Password Secure creates the databases
    (recommended)), dbOwner  

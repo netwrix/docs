@@ -1,7 +1,7 @@
 ---
 title: "Database server"
 description: "Database server"
-sidebar_position: 20
+sidebar_position: 10
 ---
 
 # Database server
