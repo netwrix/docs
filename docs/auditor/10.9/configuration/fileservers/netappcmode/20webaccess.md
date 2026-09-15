@@ -1,7 +1,7 @@
 ---
 title: "Configure ONTAPI/RESTAPI Web Access"
 description: "Configure ONTAPI/RESTAPI Web Access"
-sidebar_position: 10
+sidebar_position: 20
 ---
 
 # Configure ONTAPI\RESTAPI Web Access
