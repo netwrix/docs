@@ -8,96 +8,96 @@ sidebar_position: 20
 
 ## Preparations
 
-You must make some preparations so that the move can be completed without any problems.
+You must make some preparations so that you can complete the move without any problems.
 
 #### 1. Installing the database server
 
-If the database server and the application server are on the same machine, the database server should be
-installed on the new machine first. You must observe the
+If the database server and the application server are on the same machine, install the database
+server on the new machine first. You must observe the
 [database server](/docs/passwordsecure/current/installation/requirements/database/database.md) for this process.
 
 #### 2. Installing the server
 
-The Netwrix Password Secure application server is installed next (see
-[Application server](/docs/passwordsecure/current/installation/requirements/application_server.md)). The installation itself
-is described under
+Install the Netwrix Password Secure application server next (see
+[Application server](/docs/passwordsecure/current/installation/requirements/application_server.md)). For the installation
+steps themselves, see
 [Installation Server Manager](/docs/passwordsecure/current/installation/installation_server_manager.md).
 
 #### 3. Basic configuration
 
-After the server has been installed, the
-[Basic configuration](/docs/passwordsecure/current/configuration/servermanager/basic_configuration.md) is
-completed. A new configuration database will be created on the SQL server as a result. If you want
+After you install the server, complete the
+[Basic configuration](/docs/passwordsecure/current/configuration/servermanager/basic_configuration.md).
+This creates a new configuration database on the SQL server. If you want
 to retain the old SQL server, you must give the configuration database a new name.
 
 #### 4. Deactivating the old server
 
-The license first needs to be deactivated before it can be activated on the new server (see options
-under [License settings](/docs/passwordsecure/current/configuration/servermanager/mainmenu/license_settings.md). Now stop
-the server so that nothing more can be changed in the database.
+Deactivate the license first before you activate it on the new server (see options
+under [License settings](/docs/passwordsecure/current/configuration/servermanager/mainmenu/license_settings.md)). Now stop
+the server so that nothing else changes in the database.
 
 ## Backing up the data
 
-After making these preparations, the data from the old server can be backed up.
+After you make these preparations, back up the data from the old server.
 
 #### 1. Backing up the system
 
-If using a virtual machine, a backup of it should be created. The old version of the server can then
-be restored if there is problems.
+If you use a virtual machine, create a backup of it. You can then restore the old version of the
+server if problems occur.
 
 #### 2. Backing up the database
 
-To transfer the data to the new server, a backup of the database should be created.
+To transfer the data to the new server, create a backup of the database.
 Although this is also possible via the Server Manager, Netwrix recommends carrying out the backup at the
-SQL level: right click the database, then on Tasks and Backup. The desired target folder is
-selected in the following window.
+SQL level: right click the database, then on Tasks and Backup. Select the target folder in the
+following window.
 
 ![insert backup](/images/passwordsecure/9.2/maintenance/sql-backup-en.webp)
 
 #### 3. Backing up the server certificate
 
-It is essential that the all available
-[Certificates](/docs/passwordsecure/current/configuration/servermanager/certificates/certificates.md) are backed up.
-Depending on the installation, a different number of certificates are required here.
+You must back up all available
+[Certificates](/docs/passwordsecure/current/configuration/servermanager/certificates/certificates.md).
+The installation determines how many certificates you need.
 
 ## Configuring the new server
 
-After the backed up data (database and certificate) has been transferred to the new server, it still
-needs to be integrated.
+After you transfer the backed up data (database and certificate) to the new server, you must still
+integrate it.
 
 #### 1. Integrating the database at the SQL level
 
-Firstly, a new database is created on the SQL server. This option can be found in the SQL Management
-Studio after right clicking on Databases. It is usually sufficient to enter the database
+First, create a new database on the SQL server. You can find this option in the SQL Management
+Studio after right clicking on Databases. Usually, you only need to enter the database
 names.
 
 ![integrate the database](/images/passwordsecure/9.2/maintenance/sql-new-db-en.webp)
 
-As soon as the database has been created, the option Restore (under Tasks) can be selected by right
-clicking on the server. The Database is thus selected here. The backup now needs to be selected. It
-is also essential to check whether the correct database has been selected in the field "Target".
+As soon as the database exists, right click the server and select the option Restore (under Tasks).
+Select Database here. Now select the backup. You must also check whether the field "Target" shows
+the correct database.
 
 ![restore db](/images/passwordsecure/9.2/maintenance/sql-restore-en.webp)
 
 :::note
-This method can be also used to import backups that were directly created from the Server
+You can also use this method to import backups created directly from the Server
 Manager.
 :::
 
 #### 2. Setting up the server
 
-After the backup has been installed on the new database, you can be start the Server Manager and run
-the setup wizard. The [Setup wizard](/docs/passwordsecure/current/configuration/servermanager/setup_wizard.md) is
-used for (amongst other things) reactivating the license. It is now possible to enter all of the
+After you install the backup on the new database, start the Server Manager and run
+the setup wizard. The [Setup wizard](/docs/passwordsecure/current/configuration/servermanager/setup_wizard.md)
+reactivates the license, among other things. You can now enter all of the
 desired configurations for the server.
 
 #### 3. Importing the certificates
 
-The backed up certificates are imported via the certificate manager.
+Import the backed up certificates via the certificate manager.
 
 #### 4. Integrating the database
 
-Finally, the database is integrated onto the server via the database wizard.
+Finally, integrate the database onto the server via the database wizard.
 
 ## Modifications on the client
 
