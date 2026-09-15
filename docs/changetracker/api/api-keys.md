@@ -340,7 +340,27 @@ belongs to that user (same ownership check as revoking a specific key), so `KeyI
 `usageLogDebounceSeconds`) and auto-expire after 90 days, so this reflects "which keys were
 active in which window," not literally every single request.
 
-## Client library gotchas: PowerShell vs. Python
+## Security notes
+
+- The key value is shown exactly once, at creation time. There is no way to retrieve it again
+  — revoke and re-create if it's lost.
+- The label is not secret — it's included in the token's `label` claim so the credential is
+  self-describing, but never put sensitive information in a key's label.
+- Revoking a key takes effect immediately; the Hub checks revocation on every request that
+  presents an API-key token. Revocation status is cached in Redis for a few minutes (configurable
+  via `security:apiKeys:revocationCacheSeconds`, default 300s) to reduce load on Mongo — revoking
+  writes straight through to that cache, so revocation stays instant as long as Redis is reachable
+  at the moment of revoke. Only if Redis was down exactly then could a key that was already cached
+  as valid keep working for up to that window.
+- Keys inherit the exact permission set of the user who created them at the moment of
+  creation. If that user's permissions change later, existing keys keep whatever permissions
+  were baked in until they expire or are revoked and re-created.
+- API keys are only accepted via the `Authorization: Bearer` header — never via the browser's
+  session cookie. This is enforced by the Hub, not just a usage convention: presenting one via a
+  cookie is rejected with 401, since it would otherwise let a key bypass 2FA and the single-session
+  restriction the way a real login can't.
+
+## Appendix A: Client library gotchas — PowerShell vs. Python
 
 If you're automating against the Hub with the `nct_api_client` Python package, use
 `NCTClient.login_apikey()` — it already mints and uses an API key over HTTP Basic auth
@@ -364,30 +384,10 @@ client.login()                 # avoid for automation: signs out other active se
 The older PowerShell tools don't have an API-key option yet, so the equivalent guidance there
 is different: prefer minting a key directly over HTTP Basic auth, using the same approach as
 `demo-api-keys.ps1`, instead of calling `New-NctSession` or `GetAdminUserSession`. See
-[Appendix A](#appendix-a-older-powershell-helpers-and-the-single-session-gotcha) if you're
+[Appendix B](#appendix-b-older-powershell-helpers-and-the-single-session-gotcha) if you're
 using either of those tools.
 
-## Security notes
-
-- The key value is shown exactly once, at creation time. There is no way to retrieve it again
-  — revoke and re-create if it's lost.
-- The label is not secret — it's included in the token's `label` claim so the credential is
-  self-describing, but never put sensitive information in a key's label.
-- Revoking a key takes effect immediately; the Hub checks revocation on every request that
-  presents an API-key token. Revocation status is cached in Redis for a few minutes (configurable
-  via `security:apiKeys:revocationCacheSeconds`, default 300s) to reduce load on Mongo — revoking
-  writes straight through to that cache, so revocation stays instant as long as Redis is reachable
-  at the moment of revoke. Only if Redis was down exactly then could a key that was already cached
-  as valid keep working for up to that window.
-- Keys inherit the exact permission set of the user who created them at the moment of
-  creation. If that user's permissions change later, existing keys keep whatever permissions
-  were baked in until they expire or are revoked and re-created.
-- API keys are only accepted via the `Authorization: Bearer` header — never via the browser's
-  session cookie. This is enforced by the Hub, not just a usage convention: presenting one via a
-  cookie is rejected with 401, since it would otherwise let a key bypass 2FA and the single-session
-  restriction the way a real login can't.
-
-## Appendix A: Older PowerShell helpers and the single-session gotcha
+## Appendix B: Older PowerShell helpers and the single-session gotcha
 
 This appendix only applies if your automation already calls `New-NctSession` (from the
 `NctApiClientLibrary` module) or `GetAdminUserSession` (from `ApiKeysDemo/gen7-utilities.ps1`).
