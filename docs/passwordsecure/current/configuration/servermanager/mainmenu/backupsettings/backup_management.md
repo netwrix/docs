@@ -8,29 +8,35 @@ sidebar_position: 10
 
 #### Introduction
 
-Regular backups of the data should always be part of every security concept. To create
-backups directly on the SQL server, also include the Netwrix Password Secure databases.
-If no central backups are performed at the SQL level, you can create backup profiles using the
-Server Manager. The backups themselves will then be generated on the SQL Server.
+Regular backups of the data should always be part of every security concept. When you create
+backups directly on the SQL server, include the Netwrix Password Secure databases.
+If you don't perform central backups at the SQL level, you can create backup profiles using the
+Server Manager instead. The SQL Server then generates the backups.
+
+:::note
+Backup management is only available for Microsoft SQL Server (MSSQL) databases. If you use Azure SQL or PostgreSQL, set up an external backup strategy for your databases instead.
+:::
 
 #### Difference between an incremental and full backup
 
 A complete backup always saves all data in a database. An incremental backup also creates a complete
-image of the database as the first step. After that, only the changes since the initial backup are saved. This saves both time and memory capacity.
+image of the database as the first step, but each subsequent run saves only the changes since that
+initial backup. This approach saves both time and memory capacity.
 
 #### Backup concept
 
-Netwrix recommends that an incremental backup is run every hour. In addition, a full backup should be
-created once a week.
+Netwrix recommends running an incremental backup every hour. In addition, run a full backup
+once a week.
 
 #### Managing the backup schedule
 
 Creating a backup schedule
 
-You can create a new schedule via the ribbon. This is facilitated by a wizard. All the information
-entered under [Backup settings](/docs/passwordsecure/current/configuration/servermanager/mainmenu/backupsettings/backup_settings.md) will be used by default.
+You can create a new schedule via the ribbon. A wizard guides you through this process. By default,
+Netwrix Password Secure uses all the information you entered under
+[Backup settings](/docs/passwordsecure/current/configuration/servermanager/mainmenu/backupsettings/backup_settings.md).
 
-A profile name is entered first. The desired databases are also selected. You also need to specify
+First, enter a profile name. Then select the databases you want to back up. You also need to specify
 the directory for the backups.
 
 ![new backup profile - base settings](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_257-en.webp)
@@ -40,47 +46,46 @@ It must be a directory on the SQL server.
 :::
 
 Now set the time interval for creating the backups. A preview on the right shows when the
-backups are scheduled to run. An end date can be optionally entered.
+backups run. You can optionally enter an end date.
 
 ![new backup profile - interval](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_258-en.webp)
 
-In the advanced settings, you can configure whether the backup should be activated directly. It is
-also possible to specify whether to create incremental backups. If the date and time are added to
-the file name, a new backup is created with each run. If this isn't done, the last backup is always
-overwritten. Use the service user to create the backup, or specify a service user
+In the advanced settings, you can configure whether to activate the backup directly. You can also
+specify whether to create incremental backups. If you add the date and time to the file name,
+Netwrix Password Secure creates a new backup with each run. Otherwise, it always overwrites the
+last backup. Use the service user to create the backup, or specify a service user
 with a corresponding name and password.
 
-In addition, you can enter here whether the required certificates should be saved using a backup
-task. Further information can be found in the section
+You can also specify whether to save the required certificates using a backup task. For more
+information, see
 [Certificates](/docs/passwordsecure/current/configuration/servermanager/certificates/certificates.md).
 
 ![installation_with_parameters_259](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_259.webp)
 
 Backup run
 
-The backups are executed by the SQL server in the background. If an error occurs, this is indicated
-in “orange” in the backup list. Information about any errors issued by the SQL server is displayed
-under all backups. A backup will be automatically deactivated if it doesn't run 5x in a row. This
-will be marked in the list in red. The schedule can't be reactivated directly. You will need to
-open it and amend it.
+The SQL server executes the backups in the background. If an error occurs, the backup list shows it
+in orange. For each backup, the list also shows any error information from the SQL server. If a
+backup doesn't run five times in a row, Netwrix Password Secure automatically
+deactivates it and marks it in red in the list. You can't reactivate the schedule directly — open
+it and amend it instead.
 
 Other backup actions
 
-A selected schedule can be deleted via the ribbon. The wizard for a schedule can be opened by
-double-clicking on it to make any changes. In addition, a backup can be started directly via the
-ribbon at any time. The backup service must be running for this purpose. You can also display this
-in the history.
+You can delete a selected schedule via the ribbon. To make changes, double-click the schedule to
+open its wizard. You can also start a backup directly via the ribbon at any time; the backup
+service must be running for this. You can also view this in the history.
 
 #### Restoring data from a backup
 
-Restoring data from backups is performed using the database module. Data can only be restored to
-existing databases. Firstly, select the required database. You can now select Insert in the ribbon.
+Use the database module to restore data from backups. You can only restore data to existing
+databases. First, select the database you want to restore. You can now select Insert in the ribbon.
 
 ![restore backup](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_260-en.webp)
 
-If necessary, firstly enter login data for the user that logs in to the SQL server – although the
-service user is generally used here. Now select the backup file. All the backups contained in the
-file will then be displayed. Now click Restore to restore the backup to the existing
-database.
+If necessary, first enter the login data for the user that logs in to the SQL server. Netwrix
+Password Secure generally uses the service user here instead. Now select the backup file. Netwrix
+Password Secure then displays all backups contained in the file. Now click Restore to restore the
+backup to the existing database.
 
 ![Database restore](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/backup_management/installation_with_parameters_261-en.webp)
