@@ -419,7 +419,7 @@ finally {
 
 The `nct_api_client` package's `NCTClient` wraps this flow. Authenticate with
 `login_apikey()`, not `login()` — see
-[Appendix A](#appendix-a-client-library-gotchas--powershell-vs-python) for why:
+[Appendix B](#appendix-b-client-library-gotchas--powershell-vs-python) for why:
 
 ```python
 client = NCTClient(base_url="https://localhost:5001", username="admin", verify_ssl=False)
@@ -517,7 +517,32 @@ applies uniformly — callers never need to branch on which auth mode is in use.
   cookie is rejected with 401, since it would otherwise let a key bypass 2FA and the single-session
   restriction the way a real login can't.
 
-## Appendix A: Client library gotchas — PowerShell vs. Python
+## Appendix A: API Reference
+
+A summary of every endpoint this feature adds. For the full, always-current request/response
+schemas, see the [Netwrix Change Tracker Hub API Reference](/docs/changetracker/api/reference/),
+generated from the Hub's OpenAPI spec.
+
+### Self-service
+
+| Endpoint | Description | Input | Output |
+|---|---|---|---|
+| `POST /apikeys/create` | Creates a new API key for the calling user. | `Label` (string, body). On-prem only, authenticated with `Authorization: Basic` rather than a session or existing key. | `Key`, `KeyId`, `Label`, `CreatedDate`, `ExpiryDate` |
+| `GET /apikeys` | Lists the calling user's own API keys, newest first. | `Skip`, `Take`, `ActiveOnly` (query, all optional) | `Results[]` (`KeyId`, `UserId`, `Label`, `CreatedDate`, `ExpiryDate`, `CancelledDate`, `LastUsedDate`, `UsageCount`), `TotalCount` |
+| `DELETE /apikeys/{KeyId}` | Revokes one of the calling user's own keys immediately. | `KeyId` (path) | *(204 No Content)* |
+
+### Admin
+
+Requires the `UserManage` permission.
+
+| Endpoint | Description | Input | Output |
+|---|---|---|---|
+| `GET /admin/apikeys`<br/>`GET /admin/apikeys/{UserId}` | Lists API keys for one user, or across every user if `UserId` is omitted. | `UserId` (path, optional), `Skip`, `Take`, `ActiveOnly` (query, all optional) | Same shape as `GET /apikeys` |
+| `DELETE /admin/apikeys/{UserId}/{KeyId}` | Revokes a specific user's key. | `UserId`, `KeyId` (path) | *(204 No Content)* |
+| `DELETE /admin/apikeys/{UserId}` | Revokes every active key for a user in one call. Already-revoked/expired keys are left untouched. | `UserId` (path) | `RevokedCount` |
+| `GET /admin/apikeys/usage`<br/>`GET /admin/apikeys/{UserId}/usage`<br/>`GET /admin/apikeys/{UserId}/{KeyId}/usage` | Lists usage audit records, scoped to one key, one user's keys, or every key in the system depending on which path is used. | `UserId`, `KeyId` (path, both optional — `KeyId` requires `UserId`), `Skip`, `Take` (query, both optional) | `Results[]` (`KeyId`, `UserId`, `Route`, `IpAddress`, `UserAgent`, `TimestampUtc`), `TotalCount` |
+
+## Appendix B: Client library gotchas — PowerShell vs. Python
 
 If you're automating against the Hub with the `nct_api_client` Python package, use
 `NCTClient.login_apikey()` — it already mints and uses an API key over HTTP Basic auth
@@ -541,10 +566,10 @@ client.login()                 # avoid for automation: signs out other active se
 The older PowerShell tools don't have an API-key option yet, so the equivalent guidance there
 is different: prefer minting a key directly over HTTP Basic auth, using the same approach as
 `demo-api-keys.ps1`, instead of calling `New-NctSession` or `GetAdminUserSession`. See
-[Appendix B](#appendix-b-older-powershell-helpers-and-the-single-session-gotcha) if you're
+[Appendix C](#appendix-c-older-powershell-helpers-and-the-single-session-gotcha) if you're
 using either of those tools.
 
-## Appendix B: Older PowerShell helpers and the single-session gotcha
+## Appendix C: Older PowerShell helpers and the single-session gotcha
 
 This appendix only applies if your automation already calls `New-NctSession` (from the
 `NctApiClientLibrary` module) or `GetAdminUserSession` (from `ApiKeysDemo/gen7-utilities.ps1`).
