@@ -340,6 +340,138 @@ belongs to that user (same ownership check as revoking a specific key), so `KeyI
 `usageLogDebounceSeconds`) and auto-expire after 90 days, so this reflects "which keys were
 active in which window," not literally every single request.
 
+## PowerShell examples
+
+The examples below build a complete, working flow — mint a key, inspect it, call the API,
+list keys, and clean up — the same steps as [Using the API directly](#using-the-api-directly),
+but in PowerShell. They mirror the pattern in `Utils/Powershell/ApiKeysDemo/demo-api-keys.ps1`.
+
+Minting a key only ever needs HTTP Basic auth, never a session:
+
+```powershell
+function Get-BasicAuthHeader([string]$User, [string]$Pass) {
+    $bytes = [System.Text.Encoding]::UTF8.GetBytes($User + ':' + $Pass)
+    'Basic ' + [Convert]::ToBase64String($bytes)
+}
+
+$basicHeader = Get-BasicAuthHeader $CtUsername $CtPassword
+$createResponse = Invoke-RestMethod -Method Post -Uri "$HostUrl/apikeys/create" `
+    -ContentType 'application/json' -Headers @{ Authorization = $basicHeader } `
+    -Body (@{ Label = 'my-automation' } | ConvertTo-Json)
+
+$apiKey = $createResponse.Key
+$keyId = $createResponse.KeyId
+```
+
+A JWT's payload is base64url-encoded, not encrypted, so its claims can be inspected locally
+without a request to the Hub — useful for confirming a key's `label`, `exp`, or `jti` (`KeyId`)
+before using it:
+
+```powershell
+function ConvertFrom-JwtPayload([string]$Jwt) {
+    $payload = $Jwt.Split('.')[1].Replace('-', '+').Replace('_', '/')
+    switch ($payload.Length % 4) {
+        2 { $payload += '==' }
+        3 { $payload += '=' }
+    }
+    $bytes = [Convert]::FromBase64String($payload)
+    [System.Text.Encoding]::UTF8.GetString($bytes) | ConvertFrom-Json
+}
+
+ConvertFrom-JwtPayload $apiKey | ConvertTo-Json
+```
+
+Calling an endpoint and listing your own keys both just need the key as a Bearer token:
+
+```powershell
+$status = Invoke-RestMethod -Uri "$HostUrl/status/system" -Headers @{ Authorization = "Bearer $apiKey" }
+
+$list = Invoke-RestMethod -Uri "$HostUrl/apikeys?Skip=0&Take=20" -Headers @{ Authorization = "Bearer $apiKey" }
+$list.Results | Select-Object KeyId, Label, CreatedDate | Format-Table -AutoSize
+```
+
+Revoking is a `DELETE` by `KeyId`:
+
+```powershell
+Invoke-WebRequest -Method Delete -Uri "$HostUrl/apikeys/$keyId" `
+    -Headers @{ Authorization = "Bearer $apiKey" } -UseBasicParsing | Out-Null
+```
+
+For a script that mints its own throwaway keys (a CI job, a one-off report), wrap the whole
+thing in `try`/`finally` so the key is revoked whether the script succeeds or fails — the same
+pattern `demo-api-keys.ps1` uses, so nothing is left behind:
+
+```powershell
+$createdKeyIds = New-Object System.Collections.Generic.List[string]
+
+try {
+    # ... mint keys, add each KeyId to $createdKeyIds, do the work ...
+}
+finally {
+    foreach ($id in $createdKeyIds) {
+        Invoke-WebRequest -Method Delete -Uri "$HostUrl/apikeys/$id" `
+            -Headers @{ Authorization = "Bearer $apiKey" } -UseBasicParsing | Out-Null
+    }
+}
+```
+
+## Python examples
+
+The `nct_api_client` package's `NCTClient` wraps this flow. Authenticate with
+`login_apikey()`, not `login()` — see
+[Appendix A](#appendix-a-client-library-gotchas--powershell-vs-python) for why:
+
+```python
+client = NCTClient(base_url="https://localhost:5001", username="admin", verify_ssl=False)
+client.login_apikey()
+
+print(client.get_agents())
+```
+
+`login_apikey()` caches the minted key in the OS keyring (via the `keyring` package) and
+reuses it across runs as long as it still has more than an hour of time-to-live left,
+so a script called repeatedly (a scheduled job, a CI step) doesn't mint a fresh key — and
+create a fresh audit record — on every invocation:
+
+```python
+def login_apikey(self, label: str = None):
+    label = label or f"{self.username}-python-client"
+
+    api_key = keyring.get_password(API_KEY_KEYRING_SERVICE, label)
+    if api_key and self._jwt_ttl_seconds(api_key) > API_KEY_MIN_TTL_SECONDS:
+        self.api_key = api_key
+        return
+    # ... otherwise mint a new one over HTTP Basic auth against /apikeys/create ...
+```
+
+The client's `_authenticated_request()` method is worth borrowing for your own scripts even
+outside this library: it tries the API key as a Bearer token first, and only falls back to a
+credentials-based session if that fails — so a client can be written once and work whether or
+not `security:apiKeys:enabled` is turned on for a given Hub, without every call site having to
+know which auth mode is active:
+
+```python
+def _authenticated_request(self, method: str, path: str, **kwargs):
+    url = urljoin(self.base_url, path)
+
+    if self.api_key:
+        headers = {**kwargs.pop("headers", {}), "Authorization": f"Bearer {self.api_key}"}
+        response = requests.request(method, url, headers=headers, verify=self.verify_ssl, **kwargs)
+        if response.ok:
+            return response
+
+    if not self.session:
+        raise NCTError("Not authenticated. Call login() or login_apikey() first.")
+
+    response = self.session.request(method, url, **kwargs)
+    response.raise_for_status()
+    return response
+```
+
+Every data method on the client (`get_agents()`, `get_devices()`, `add_database_credential()`,
+and so on) calls `_authenticated_request()` rather than making its own request, so this fallback
+applies uniformly — callers never need to branch on which auth mode is in use.
+
 ## Security notes
 
 - The key value is shown exactly once, at creation time. There is no way to retrieve it again
