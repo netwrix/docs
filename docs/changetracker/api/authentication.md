@@ -10,8 +10,14 @@ The following PowerShell script shows how to authenticate to the Change Tracker 
 It prompts for the URL, asks whether to skip certificate validation, then collects the user's credentials and creates a new session.
 Netwrix recommends trusted certificates for all environments, but if you are using self-signed certificates in a lab environment, you can skip certificate validation.
 
-The `$NctSession` variable stores the session information for use in subsequent API calls.
+:::warning
+This script logs in the same way a browser does, so it triggers the Hub's single-session
+enforcement — running it signs out any other active session for that account. For automation
+that shouldn't disrupt a live session, use an [API key](api-keys.md) instead — see
+[Using the API directly](api-keys.md#using-the-api-directly) for the replacement procedure.
+:::
 
+The `$NctSession` variable stores the session information for use in subsequent API calls.
 
 ```powershell
 $url = Read-Host "Enter URL (https://192.168.1.1/api)"
