@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Jira Forge Walkthrough
 
-This walkthrough is one example based on a test account. Before you start, complete all prerequisites on the Jira Forge Setup page, install and configure the Jira integration, and set up the Jira Statuses.
+This walkthrough is one example based on a test account. Before you start, complete all prerequisites on the Jira Forge Setup page, then install and configure the Jira integration, and set up the Jira Statuses.
 
 The walkthrough covers these steps:
 
@@ -38,7 +38,7 @@ Before you start this step, confirm that you have already created a Token-based 
 
       ![Jira Forge Issue No Project Key](/images/platgovnetsuite/integrations/jira_forge_issue_no_project_key.webp)
 
-    - If you have completed that step, the connect page appears, where you can connect or log in to a NetSuite account defined in [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) on the Setup page.
+    - If you have completed that step, the connect page appears, where you can connect or log in to a NetSuite account that you defined in [Set up Jira TBA Credentials](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-tba-credentials) on the Setup page.
 
       ![Jira Forge Issue Connect Form](/images/platgovnetsuite/integrations/jira_forge_issue_connect_form.webp)
 
@@ -72,7 +72,7 @@ This section shows you how to add and remove customizations in the Forge app.
 
     ![Jira Forge Lookup Customization Modal Name Filter](/images/platgovnetsuite/integrations/jira_forge_lookup_name_filter.webp)
 
-3. Select a customization to attach by ticking the checkbox beside its name, then click **Add Customizations** at the bottom of the modal.
+3. To attach a customization, select the checkbox beside its name, then click **Add Customizations** at the bottom of the modal.
 
     A flag shows that the action is in progress:
 
@@ -82,14 +82,14 @@ This section shows you how to add and remove customizations in the Forge app.
 
     ![Jira Forge Add Customization Flag Successful](/images/platgovnetsuite/integrations/jira_forge_successful_add_customization.webp)
 
-4. You can also add a customization that is yet to be created. Click **Proposed Customization**. A modal opens with these fields:
+4. You can also add a customization that doesn't exist yet. Click **Proposed Customization**. A modal opens with these fields:
 
     - Type
     - ScriptID/Name
 
     ![Jira Forge Proposed Customization Modal](/images/platgovnetsuite/integrations/jira_forge_proposed_customization_modal.webp)
 
-5. Select the Type for your proposed customization. This example uses the **Body Field** type. The Script ID/Name field already contains the prefix of the script ID, which prevents you from accidentally entering the wrong script ID prefix for the type. Enter the script ID of your choice.
+5. Select the Type for your proposed customization. This example uses the **Body Field** type. The Script ID/Name field already contains the script ID prefix, which prevents you from entering the wrong prefix for the type. Enter the script ID of your choice.
 
     ![Jira Forge Proposed Customization Input](/images/platgovnetsuite/integrations/jira_forge_add_proposed_wth_input.webp)
 
@@ -300,7 +300,7 @@ The following features are less common but equally important in the integration 
 
     ![Jira Forge Add Bundle Modal](/images/platgovnetsuite/integrations/jira_forge_add_bundle_modal.webp)
 
-2. **Push External** — Use this feature to push the Jira ticket change request and its objects to an external NetSuite account. Pushing to an external NetSuite account saves time when you create a change request with the same objects in another NetSuite account. To use Push External, click the **Push External** button. A modal appears to select the NetSuite account to push to. The modal lists the same accounts you defined on the Netwrix NetSuite TBA Credentials page.
+2. **Push External** — Use this feature to push the Jira ticket change request and its objects to an external NetSuite account. Pushing to an external NetSuite account saves time when you create a change request with the same objects in another NetSuite account. To use Push External, click the **Push External** button. A modal appears where you select the NetSuite account to push to. The modal lists the same accounts you defined on the Netwrix NetSuite TBA Credentials page.
 
     ![Jira Forge Push External Button](/images/platgovnetsuite/integrations/jira_forge_push_external_button.webp)
 
