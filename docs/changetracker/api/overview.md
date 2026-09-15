@@ -38,7 +38,7 @@ When working with the Change Tracker API, consider the following best practices:
 
 1. **Rate Limiting**: Implement appropriate rate limiting in your applications to avoid overwhelming the API.
 
-2. **Error Handling**: Always implement proper error handling in your code to gracefully handle API errors.
+2. **Error Handling**: Always include error handling in your code so it responds to API errors gracefully.
 
 3. **Authentication**: Store API credentials securely and never expose them in client-side code.
 

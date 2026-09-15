@@ -7,27 +7,27 @@ sidebar_position: 25
 # API Keys
 
 API keys let a script or automation client (a CI pipeline, a monitoring integration, a
-scheduled job) call the Hub API without a human logging in through the browser. A key is
-created once, used as a Bearer token on every subsequent request, and can be revoked
-independently of any UI session.
+scheduled job) call the Hub API without a human logging in through the browser. You create a
+key once, use it as a Bearer token on every subsequent request, and revoke it independently of
+any UI session.
 
-Unlike a normal login, creating or using an API key **never invalidates a user's other active
+Creating or using an API key, unlike a normal login, **never invalidates a user's other active
 UI sessions**. The Hub normally enforces a single active session per user — logging in from a
 second browser signs the first one out. API keys are exempt from that restriction, so an
-automation client and a human user can be authenticated as the same account at the same time
-without either one kicking the other out.
+automation client and a human user can both authenticate as the same account at the same time
+without signing the other one out.
 
 ## How it works
 
 An API key is a self-issued JSON Web Token (JWT), signed with the same key the Hub already
-uses for UI session tokens. The token's signature and expiry (`exp` claim) are verified on
+uses for UI session tokens. The Hub verifies the token's signature and expiry (`exp` claim) on
 every request without a database lookup — the only thing the Hub stores server-side is a
-non-secret identifier (`KeyId`, the token's `jti` claim) used to check whether the key has
-been revoked and to record last-used timestamps. No raw secret is ever stored, logged, or
-displayed after the moment it's created.
+non-secret identifier (`KeyId`, the token's `jti` claim) that it uses to check whether the key
+is revoked and to record last-used timestamps. The Hub never stores, logs, or displays the raw
+secret after the moment it's created.
 
-Because the token carries no session identifier, it structurally cannot participate in
-single-session enforcement — there is no session for a competing login to invalidate.
+Because the token carries no session identifier, it structurally can't participate in
+single-session enforcement — there is no session for a competing log in to invalidate.
 
 ## Enabling API keys
 
@@ -38,8 +38,8 @@ box, so the `false` default comes implicitly from the Hub's own internal default
 
 An administrator enables it either by adding `security:apiKeys:enabled: "true"` under `security`
 in `Configs/appsettings.Production.json` (or the equivalent environment-specific file), or by
-setting the `security__apiKeys__enabled` environment variable — environment variables are applied
-last and override the JSON files, which is how the local Docker dev stack's
+setting the `security__apiKeys__enabled` environment variable — the Hub applies environment
+variables last, so they override the JSON files, which is how the local Docker dev stack's
 `security__apiKeys__enabled=true|false` (see the root `Makefile`) toggles this setting without
 touching any config file. Related settings, all under `security:apiKeys`:
 
@@ -48,14 +48,14 @@ touching any config file. Related settings, all under `security:apiKeys`:
 | `enabled` | `false` | Turns API key authentication on or off for the whole deployment. |
 | `expirySeconds` | `86400` (24 hours) | Time-to-Live (TTL) defines how long an API key remains valid before it expires and requires re-authorization. |
 | `usageLogDebounceSeconds` | `3600` | Minimum interval between usage-audit log entries for the same key, to avoid flooding the log on high-frequency callers. |
-| `revocationCacheSeconds` | `300` (5 minutes) | How long a confirmed-valid key's status is cached in Redis before being re-checked against Mongo. See [Security notes](#security-notes). |
+| `revocationCacheSeconds` | `300` (5 minutes) | How long the Hub caches a confirmed-valid key's status in Redis before re-checking it against Mongo. See [Security notes](#security-notes). |
 | `maxKeysPerUser` | `64` | Maximum number of keys (of any status) a single user may hold at once. See [Key limits](#key-limits). |
 | `basicAuthRateLimitMaxAttempts` | `10` | Maximum `POST /apikeys/create` Basic-auth attempts allowed per client IP within the rate-limit window, since that path bypasses the normal account lockout. |
-| `basicAuthRateLimitWindowSeconds` | `60` | Length of the sliding window (in seconds) `basicAuthRateLimitMaxAttempts` is enforced over. |
+| `basicAuthRateLimitWindowSeconds` | `60` | Length of the sliding window (in seconds) over which the Hub enforces `basicAuthRateLimitMaxAttempts`. |
 
 ### Who can create a key
 
-Even with API keys enabled system-wide, an individual account can only create keys for itself
+Even with API keys enabled system-wide, an individual account can create keys for itself only
 if it holds the **`ApiKeyManage`** permission. This is deliberately separate from `UserManage`
 (which gates the *admin* endpoints — viewing/revoking *other* users' keys): `ApiKeyManage` only
 controls whether an account may mint keys for itself at all.
@@ -77,8 +77,8 @@ already have.
 ### Key limits
 
 Each user may hold at most `maxKeysPerUser` keys at once (default 64), counting every status —
-active, revoked, and expired — since revoked/expired keys are kept around for their audit
-history rather than deleted immediately. When a user at the limit creates a new key, the Hub
+active, revoked, and expired — since the Hub keeps revoked and expired keys for their audit
+history rather than deleting them immediately. When a user at the limit creates a new key, the Hub
 automatically deletes their single oldest revoked or expired key to make room. If the user is at
 the limit and every one of their keys is still active (nothing revoked or expired to evict),
 creation fails with `409 Conflict` until they revoke one themselves.
@@ -86,7 +86,7 @@ creation fails with `409 Conflict` until they revoke one themselves.
 ## SaaS vs. on-prem
 
 API keys work the same way in both deployment modes — creating, listing, using, and revoking a
-key behaves identically once you have one. The only difference is which ways you can create one:
+key behaves identically after you have one. The only difference is how you can create one:
 
 | Works on | Acquisition method |
 |---|---|
@@ -105,20 +105,20 @@ entries (at most one per `usageLogDebounceSeconds` window — see [Review API ke
 not literal request counts, so it undercounts for a key used more than once within the same
 window.
 
-A key's full value is only ever shown once, at the moment it's created — copy it somewhere
+The Hub shows a key's full value only once, at the moment you create it — copy it somewhere
 safe immediately. If you lose it, revoke it and create a new one.
 
 ## Using the API directly
 
-The examples below assume you already have a key in the `API_KEY` environment variable — created
-via the WebUI (see above) or handed to you by whoever created it. `Hub/ApiScripts/Bash/` has a
-script (`purge-api-keys.sh`) that shows how to mint one from a username and password if you need
-to script that part too, but that's a separate concern from what's covered here and isn't repeated
-in this document.
+The following examples assume you already have a key in the `API_KEY` environment variable —
+created via the WebUI (see [Using the WebUI](#using-the-webui)) or handed to you by whoever
+created it. `Hub/ApiScripts/Bash/` has a script (`purge-api-keys.sh`) that shows how to mint one
+from a username and password if you need to script that part too, but that's a separate concern
+this document doesn't cover.
 
 The examples also use the local development Hub (`https://localhost:5001/api`) with a
-self-signed certificate, hence `curl -k`; drop that flag and substitute your own Hub URL against
-a Hub with a properly issued certificate.
+self-signed certificate, hence `curl -k`; against a Hub with a properly issued certificate, drop
+that flag and substitute your own Hub URL.
 
 ```bash
 export API_KEY="..."   # already have this from the WebUI or elsewhere
@@ -149,7 +149,7 @@ into the "Encoded" box. The decoded payload looks like:
 }
 ```
 
-`typ: "apikey"` and the absence of an `nnt_sid` claim are what distinguish this token from a
+`typ: "apikey"` and the absence of an `nnt_sid` claim distinguish this token from a
 UI session token and keep it exempt from single-session enforcement. `jti` matches the
 `KeyId` returned when the key was created — that's the non-secret identifier the Hub uses to
 check for revocation. `exp` is the expiry (24 hours after creation, by default).
@@ -212,8 +212,10 @@ Response:
 }
 ```
 
-Note that `KeyId` — not the key itself — is what's returned here. The Hub never stores or
-displays the raw key value again after creation.
+:::note
+The Hub returns `KeyId` here, not the key itself. It never stores or displays the
+raw key value again after creation.
+:::
 
 ### Revoking a key
 
@@ -224,25 +226,25 @@ curl -sk -X DELETE https://localhost:5001/api/apikeys/$KEY_ID \
 
 where `$KEY_ID` is the `KeyId` from the create/list response (not the key itself). A revoked
 key stops working immediately — the Hub checks revocation status on every request, so there's
-no waiting for the token to expire naturally.
+no waiting for the token to expire.
 
 ## Admin operations
 
 An administrator (any account with the `UserManage` permission) can view and revoke other users'
 API keys without needing that user's own key. These endpoints require an authenticated caller —
-either a UI session or, same as everywhere else in this doc, the admin's own API key. They are
-not available via `Authorization: Basic`, and there is no WebUI for them yet.
+either a UI session or, same as everywhere else in this document, the admin's own API key. They
+don't accept `Authorization: Basic`, and there is no WebUI for them yet.
 
-Using the admin's own API key (rather than logging in for a session cookie) is the recommended
-way to call these from a script: an API key inherits the creating user's permissions (see
+Netwrix recommends using the admin's own API key (rather than logging in for a session cookie)
+to call these from a script: an API key inherits the creating user's permissions (see
 [Security notes](#security-notes)), so an admin's key already carries `UserManage` and works here exactly
 like a session would — with none of the session-invalidation risk of a fresh
 `POST /auth/credentials` login.
 
 ### List a specific user's keys
 
-Same shape as the self-service list above, but takes the target user's `UserId` (their
-`UserAuthId`) in the path:
+Same shape as [the self-service list](#3-list-your-api-keys), but takes the target user's
+`UserId` (their `UserAuthId`) in the path:
 
 ```bash
 curl -sk "https://localhost:5001/api/admin/apikeys/$USER_ID?Skip=0&Take=20&ActiveOnly=false" \
@@ -273,7 +275,7 @@ curl -sk "https://localhost:5001/api/admin/apikeys?Skip=0&Take=20&ActiveOnly=tru
 
 ### Revoke another user's key
 
-Requires both the owning user's `UserId` and the key's `KeyId` — an admin cannot revoke a key by
+Requires both the owning user's `UserId` and the key's `KeyId` — an admin can't revoke a key by
 `KeyId` alone without confirming which user it belongs to:
 
 ```bash
@@ -286,9 +288,9 @@ specified — so a mistyped `UserId` can't accidentally revoke someone else's ke
 
 ### Revoke every active key for a user
 
-For incident response (e.g. a compromised account) — revokes every currently-active key for a
-user in one call, rather than one `KeyId` at a time. Already-revoked/expired keys are left
-untouched (they're kept for their audit history, same as elsewhere in this feature). There is no
+For incident response (e.g. a compromised account) — revokes every -active key for a
+user in one call, rather than one `KeyId` at a time. The Hub leaves already-revoked and expired
+keys untouched (it keeps them for their audit history, same as elsewhere in this feature). There is no
 system-wide "revoke every key for every user" variant — this always targets one `UserId`:
 
 ```bash
@@ -302,13 +304,13 @@ curl -sk -X DELETE "https://localhost:5001/api/admin/apikeys/$USER_ID" \
 
 `RevokedCount` is how many keys were active and got revoked — `0` if the user had none active
 (not an error). Revocation takes effect immediately for every key revoked this way, the same as
-the single-key revoke above — including for a key that was itself used to authenticate this
-call.
+[revoking a single key](#revoking-a-key) — including for a key that was itself used to
+authenticate this call.
 
 ### Review API key usage
 
-Usage records (route, IP address, User-Agent, timestamp) can be listed at three scopes,
-depending on which of `UserId`/`KeyId` are supplied — all newest first, paginated the same way as
+You can list usage records (route, IP address, User-Agent, timestamp) at three scopes,
+depending on which of `UserId`/`KeyId` you supply — all newest first, paginated the same way as
 the list endpoints:
 
 ```bash
@@ -334,15 +336,15 @@ curl -sk "https://localhost:5001/api/admin/apikeys/usage?Take=20" \
 }
 ```
 
-`KeyId` is only ever meaningful together with `UserId` — a key is looked up solely to confirm it
-belongs to that user (same ownership check as revoking a specific key), so `KeyId` without
-`UserId` is rejected. Records are debounced (at most one write per key per
-`usageLogDebounceSeconds`) and auto-expire after 90 days, so this reflects "which keys were
-active in which window," not literally every single request.
+`KeyId` is only ever meaningful together with `UserId` — the Hub looks up a key solely to confirm
+it belongs to that user (same ownership check as revoking a specific key), so it rejects `KeyId`
+without `UserId`. The Hub debounces these records (at most one write per key per
+`usageLogDebounceSeconds`) and expires them after 90 days, so this reflects "which keys were
+active in which window," not every single request.
 
 ## PowerShell examples
 
-The examples below build a complete, working flow — mint a key, inspect it, call the API,
+The following examples build a complete, working flow — mint a key, inspect it, call the API,
 list keys, and clean up — the same steps as [Using the API directly](#using-the-api-directly),
 but in PowerShell. They mirror the pattern in `Utils/Powershell/ApiKeysDemo/demo-api-keys.ps1`.
 
@@ -363,7 +365,7 @@ $apiKey = $createResponse.Key
 $keyId = $createResponse.KeyId
 ```
 
-A JWT's payload is base64url-encoded, not encrypted, so its claims can be inspected locally
+A JWT's payload is base64url-encoded, not encrypted, so you can inspect its claims locally
 without a request to the Hub — useful for confirming a key's `label`, `exp`, or `jti` (`KeyId`)
 before using it:
 
@@ -398,8 +400,8 @@ Invoke-WebRequest -Method Delete -Uri "$HostUrl/apikeys/$keyId" `
 ```
 
 For a script that mints its own throwaway keys (a CI job, a one-off report), wrap the whole
-thing in `try`/`finally` so the key is revoked whether the script succeeds or fails — the same
-pattern `demo-api-keys.ps1` uses, so nothing is left behind:
+thing in `try`/`finally` so the script revokes the key whether it succeeds or fails — the same
+pattern `demo-api-keys.ps1` uses, which leaves no stray keys:
 
 ```powershell
 $createdKeyIds = New-Object System.Collections.Generic.List[string]
@@ -446,8 +448,8 @@ def login_apikey(self, label: str = None):
 
 If the account this script runs as has 2FA required or enabled, `POST /apikeys/create` rejects
 the Basic-auth bootstrap outright (`403 Forbidden`, "This account requires two-factor
-authentication, which Basic authentication cannot satisfy") — there's nowhere for this flow to
-collect an OTP, so it can't mint a key on its own. Someone has to create one from the
+authentication, which Basic authentication can't satisfy") — there's nowhere for this flow to
+collect a one-time password, so it can't mint a key on its own. Someone has to create one from the
 **My API Keys** page instead and hand it to the script. Checking an `API_KEY` environment
 variable before falling back to the keyring/Basic-auth flow covers that case:
 
@@ -471,9 +473,9 @@ def login_apikey(self, label: str = None):
 
 The client's `_authenticated_request()` method is worth borrowing for your own scripts even
 outside this library: it tries the API key as a Bearer token first, and only falls back to a
-credentials-based session if that fails — so a client can be written once and work whether or
-not `security:apiKeys:enabled` is turned on for a given Hub, without every call site having to
-know which auth mode is active:
+credentials-based session if that fails — so you can write a client once and have it work
+whether or not `security:apiKeys:enabled` is turned on for a given Hub, without every call site
+having to know which auth mode is active:
 
 ```python
 def _authenticated_request(self, method: str, path: str, **kwargs):
@@ -499,23 +501,23 @@ applies uniformly — callers never need to branch on which auth mode is in use.
 
 ## Security notes
 
-- The key value is shown exactly once, at creation time. There is no way to retrieve it again
-  — revoke and re-create if it's lost.
-- The label is not secret — it's included in the token's `label` claim so the credential is
+- The Hub shows the key value exactly once, at creation time. There is no way to retrieve it
+  again — revoke and re-create if it's lost.
+- The label isn't secret — the token's `label` claim includes it so the credential is
   self-describing, but never put sensitive information in a key's label.
 - Revoking a key takes effect immediately; the Hub checks revocation on every request that
-  presents an API-key token. Revocation status is cached in Redis for a few minutes (configurable
+  presents an API-key token. The Hub caches revocation status in Redis for a few minutes (configurable
   via `security:apiKeys:revocationCacheSeconds`, default 300s) to reduce load on Mongo — revoking
   writes straight through to that cache, so revocation stays instant as long as Redis is reachable
   at the moment of revoke. Only if Redis was down exactly then could a key that was already cached
   as valid keep working for up to that window.
-- Keys inherit the exact permission set of the user who created them at the moment of
-  creation. If that user's permissions change later, existing keys keep whatever permissions
-  were baked in until they expire or are revoked and re-created.
-- API keys are only accepted via the `Authorization: Bearer` header — never via the browser's
-  session cookie. This is enforced by the Hub, not just a usage convention: presenting one via a
-  cookie is rejected with 401, since it would otherwise let a key bypass 2FA and the single-session
-  restriction the way a real login can't.
+- Keys inherit the exact permission set their creating user held at the moment of creation. If
+  that user's permissions change later, existing keys keep their original permissions until they
+  expire or someone revokes and re-creates them.
+- The Hub accepts API keys only via the `Authorization: Bearer` header — never via the browser's
+  session cookie. The Hub enforces this rather than merely recommending it: it rejects a key
+  presented via a cookie with 401, since a cookie-borne key would otherwise bypass 2FA and the
+  single-session restriction the way a real login can't.
 
 ## Appendix A: API Reference
 
@@ -537,10 +539,10 @@ Requires the `UserManage` permission.
 
 | Endpoint | Description | Input | Output |
 |---|---|---|---|
-| `GET /admin/apikeys`<br/>`GET /admin/apikeys/{UserId}` | Lists API keys for one user, or across every user if `UserId` is omitted. | `UserId` (path, optional), `Skip`, `Take`, `ActiveOnly` (query, all optional) | Same shape as `GET /apikeys` |
+| `GET /admin/apikeys`<br/>`GET /admin/apikeys/{UserId}` | Lists API keys for one user, or across every user if you omit `UserId`. | `UserId` (path, optional), `Skip`, `Take`, `ActiveOnly` (query, all optional) | Same shape as `GET /apikeys` |
 | `DELETE /admin/apikeys/{UserId}/{KeyId}` | Revokes a specific user's key. | `UserId`, `KeyId` (path) | *(204 No Content)* |
-| `DELETE /admin/apikeys/{UserId}` | Revokes every active key for a user in one call. Already-revoked/expired keys are left untouched. | `UserId` (path) | `RevokedCount` |
-| `GET /admin/apikeys/usage`<br/>`GET /admin/apikeys/{UserId}/usage`<br/>`GET /admin/apikeys/{UserId}/{KeyId}/usage` | Lists usage audit records, scoped to one key, one user's keys, or every key in the system depending on which path is used. | `UserId`, `KeyId` (path, both optional — `KeyId` requires `UserId`), `Skip`, `Take` (query, both optional) | `Results[]` (`KeyId`, `UserId`, `Route`, `IpAddress`, `UserAgent`, `TimestampUtc`), `TotalCount` |
+| `DELETE /admin/apikeys/{UserId}` | Revokes every active key for a user in one call. Leaves already-revoked and expired keys untouched. | `UserId` (path) | `RevokedCount` |
+| `GET /admin/apikeys/usage`<br/>`GET /admin/apikeys/{UserId}/usage`<br/>`GET /admin/apikeys/{UserId}/{KeyId}/usage` | Lists usage audit records, scoped to one key, one user's keys, or every key in the system depending on which path you use. | `UserId`, `KeyId` (path, both optional — `KeyId` requires `UserId`), `Skip`, `Take` (query, both optional) | `Results[]` (`KeyId`, `UserId`, `Route`, `IpAddress`, `UserAgent`, `TimestampUtc`), `TotalCount` |
 
 ### Other APIs referenced in this document
 
@@ -601,7 +603,7 @@ Because both tools log in with a username and password, they trigger the Hub's n
 single-session enforcement — the same restriction API keys are exempt from. Running either
 one signs out any other active session for that account, including a browser tab someone else
 has open. A scheduled job that calls `New-NctSession` every hour, or an admin script built on
-`GetAdminUserSession`, can silently kick a user out of a live UI session with no warning to
+`GetAdminUserSession`, can silently sign a user out of a live UI session with no warning to
 either party.
 
 For example, calling `New-NctSession` from the `NctApiClientLibrary` module authenticates
