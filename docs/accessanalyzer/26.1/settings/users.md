@@ -143,7 +143,7 @@ When a user signs in with **Require password change at next sign-in** set, a **C
 | **Password doesn't meet complexity requirements.** | The new password is under 12 characters. |
 | **New password can't be the same as your current password.** | The new password matches the current one. |
 
-The first Admin created by the installer goes through this step on their first sign-in; see [Sign in for the first time](../install/first-sign-in.md).
+The first Admin the installer creates goes through this step on their first sign-in; see [Sign in for the first time](../install/first-sign-in.md).
 
 ## Sessions
 

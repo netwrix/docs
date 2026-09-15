@@ -6,13 +6,13 @@ sidebar_position: 3.5
 
 If an Admin or User admin can still sign in, clear the lock from **Settings > Users** instead; see [Unlock a user](users.md#unlock-a-user). Use the steps on this page only when every Admin and User admin account has a lockout, or no one has those credentials, so nobody can reach the **Users** tab at all.
 
-This talks to Zitadel, the identity provider behind Access Analyzer sign-in, directly with `kubectl` and `curl` instead of through the product API. It needs `kubectl` access to the cluster Access Analyzer is installed on, but not a working Access Analyzer session.
+This talks to Zitadel, the identity provider behind Access Analyzer sign-in, directly with `kubectl` and `curl` instead of through the product API. It needs `kubectl` access to the cluster running Access Analyzer, but not a working Access Analyzer session.
 
 There's no bulk unlock. Repeat the lookup and unlock steps once per locked account.
 
 ## Before You Start
 
-You need the installed hostname to reach Zitadel—it validates the request's `Host` header against this value and rejects anything else with "Instance not found," even once the connection itself succeeds. This is the Fully Qualified Domain Name (FQDN) you chose during installation, so it applies the same whether or not the host is domain-joined. Read it from the install host:
+You need the installed hostname to reach Zitadel—it validates the request's `Host` header against this value and rejects anything else with "Instance not found," even when the connection itself succeeds. This is the Fully Qualified Domain Name (FQDN) you chose during installation, so it applies the same whether the host is domain-joined. Read it from the install host:
 
 ```bash
 grep hostname /etc/dspm/installer.yaml
@@ -71,7 +71,7 @@ This clears the lockout only. It doesn't reset the password. If the user has als
 
 ## Remove a Lost Authenticator App
 
-A user stuck on the two-factor verification step because they lost their authenticator app isn't locked out, but the **Users** tab has no action to remove another user's authenticator app either. Remove it the same way, using the `userId` from step 2 above:
+A user stuck on the two-factor verification step because they lost their authenticator app isn't locked out, but the **Users** tab has no action to remove another user's authenticator app either. Remove it the same way, using the `userId` from step 2:
 
 ```bash
 curl -s -X DELETE http://localhost:8085/v2/users/<userId>/totp \
