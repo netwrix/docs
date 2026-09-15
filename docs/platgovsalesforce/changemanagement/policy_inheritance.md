@@ -8,8 +8,8 @@ sidebar_position: 35
 
 Customization records for **Custom Object**, **Flow**, **Apex Trigger**, **Workflow Rule**, and **Apex
 Class** show a **Set Policy** action for their related customizations. The most common case is a
-Custom Object's Custom Fields, which inherit the object's Change and Approval Policy as described
-below.
+Custom Object's Custom Fields, which inherit the object's Change and Approval Policy as described in
+the following sections.
 
 Whether a related customization inherits the policy automatically or requires a manual step depends on
 when you create it relative to the policy assignment on the parent.
@@ -58,4 +58,4 @@ After you change the policy on a parent record:
   runs **Update All** (or **Update Selection** for specific items).
 
 As a result, two related customizations under the same parent can show different policies until you
-run **Update All** to bring the existing ones in line with the current policy.
+run **Update All** to update the existing ones to the current policy.

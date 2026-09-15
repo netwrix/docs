@@ -15,13 +15,13 @@ Change and Approval Policies define:
   vs. a report).
 - The level of approval required and the participants in that approval process.
 
-When Change Requests are created, Strongpoint analyzes the impacted customizations and processes. It
+When you create a Change Request, Strongpoint analyzes the impacted customizations and processes. It
 identifies the Change Policy that applies based on the IT risk from the Customization Record and the
 process risk from the Process Records.
 
 The Change and Approval Policy also determines the change level required for any detected changes to
-be compliant. This ensures that even changes that don't go through the planned change management
-process are analyzed against the policy for compliance.
+be compliant. This ensures that Strongpoint analyzes changes against the policy for compliance even
+when they don't go through the planned change management process.
 
 For example, a company may have multiple policies:
 
@@ -56,12 +56,12 @@ and displays an error.
 Strongpoint automatically detects any changes to the customizations in your system and logs them. The
 system finds the relevant Change/Approval Policy and determines the change level required for
 compliance. It then looks for the relevant change record. For example, if it determines that a script
-changed and a Full Software Development Lifecycle was required for compliance, it looks for an
+changed and that compliance requires a Full Software Development Lifecycle, it looks for an
 approved Deployment Record. If it doesn't find one, it flags the change as non-compliant. Strongpoint
 sends an alert to the Object owners notifying them of the non-compliant change.
 
-1. **Detect the Change**: [Automated Scanner](/docs/platgovsalesforce/installingstrongpoint/setting_up_initial_scan.md)
-   must be enabled for Strongpoint to detect a change.
+1. **Detect the Change**: you must enable the [Automated Scanner](/docs/platgovsalesforce/installingstrongpoint/setting_up_initial_scan.md)
+   for Strongpoint to detect a change.
 2. **Log the Change**: creates a Change Log.
 3. **Locate the Relevant Policy**: locates the correct policy for the object.
 4. **Locate the Relevant Change Record**: determines if the change needs a Change Request.
@@ -70,8 +70,8 @@ sends an alert to the Object owners notifying them of the non-compliant change.
     - If Strongpoint finds the appropriate Change Request or if the change is **Log Only**, it marks
       the change as compliant and attaches the Change Log to the Change Record.
     - If Strongpoint determines the change is non-compliant (doesn't fall under the relevant policy)
-      it sends an alert to IT and Object Owners to investigate the change and document what needs to
-      be done to make the change compliant.
+      it sends an alert to IT and Object Owners to investigate the change and document the steps
+      required to make the change compliant.
 
 6. **Change Reporting and Resolution**: Strongpoint provides predefined
    [reports](/docs/platgovsalesforce/changemanagement/change_management_reports.md) you can review as part of your regular Change Management
