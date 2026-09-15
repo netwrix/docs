@@ -24,8 +24,10 @@ configuration setting. System Audit and Support opens on the **Version Tracker**
 Click **Run test**. The audit reports the discovered domain controllers and versions.
 
 :::note
-If you don't see the **Configuration Timestamp**, contact your network administrator to
+- If you don't see the **Configuration Timestamp**, contact your network administrator to
 set up the firewall to allow Password Policy Enforcer to communicate.
+- The PPE Version in the System Audit and Support table is the version of the most recently signed PPE assembly,
+and it may differ slightly from the version number of the PPE Configuration Console.
 :::
 
 You can click the export icon to download your results. The file name is
@@ -50,7 +52,7 @@ and open the property editor.
     - **Export** exports the PPE settings to an xml file. Browse to the folder where you want the
       file. The default filename is **PPEExport.xml**.
     - Import imports the settings from an exported xml PPE Settings file. Browse to the location of
-      the **PPEExport.xml** file. Click **Open**. A status message appears when complete.
+      the **PPEExport.xml** file. Click **Open**. A status message appears when the import is complete.
 - **Open Property Editor** launches the Property Editor.
 
     :::note
