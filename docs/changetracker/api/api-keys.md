@@ -455,8 +455,8 @@ variable before falling back to the keyring/Basic-auth flow covers that case:
 def login_apikey(self, label: str = None):
     label = label or f"{self.username}-python-client"
 
-    # First check whether the key was set in the environment, which is required when
-    # 2FA is enabled.
+    # First check whether the key was set in the environment,
+    # which is required when 2FA is enabled.
     env_api_key = os.environ.get("API_KEY")
     if env_api_key:
         self.api_key = env_api_key
