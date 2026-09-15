@@ -7,9 +7,9 @@ sidebar_position: 25
 # API Keys
 
 API keys let a script or automation client (a CI pipeline, a monitoring integration, a
-scheduled job) call the Hub API without a human logging in through the browser. You create a
-key once, use it as a Bearer token on every subsequent request, and revoke it independently of
-any UI session.
+scheduled job) call the Netwrix Change Tracker Hub API (the central management server) without
+a human logging in through the browser. You create a key once, use it as a Bearer token on
+every subsequent request, and revoke it independently of any UI session.
 
 Creating or using an API key, unlike a normal login, **never invalidates a user's other active
 UI sessions**. The Hub normally enforces a single active session per user — logging in from a
@@ -27,30 +27,40 @@ is revoked and to record last-used timestamps. The Hub never stores, logs, or di
 secret after the moment it's created.
 
 Because the token carries no session identifier, it structurally can't participate in
-single-session enforcement — there is no session for a competing log in to invalidate.
+single-session enforcement — a competing login has no session to invalidate.
 
 ## Enabling API keys
 
-API key authentication is **disabled by default**. This default isn't spelled out in a shipped
-config file — `security:apiKeys:enabled` isn't present in `Configs/appsettings.*.json` out of the
-box, so the `false` default comes implicitly from the Hub's own internal default
-(`ConfigConstants.DefaultApiKeyAuthEnabled`) until an administrator adds the setting explicitly.
+API key authentication is **disabled by default**. The setting isn't present in the shipped
+`Configs/appsettings.*.json` files, so it stays off until an administrator adds it explicitly.
+Calling `POST /apikeys/create` while it's disabled returns `403 Forbidden` ("API key
+authentication is not enabled on this system.").
 
-An administrator enables it either by adding `security:apiKeys:enabled: "true"` under `security`
-in `Configs/appsettings.Production.json` (or the equivalent environment-specific file), or by
-setting the `security__apiKeys__enabled` environment variable — the Hub applies environment
-variables last, so they override the JSON files, which is how the local Docker dev stack's
-`security__apiKeys__enabled=true|false` (see the root `Makefile`) toggles this setting without
-touching any config file. Related settings, all under `security:apiKeys`:
+An administrator enables it by adding `security:apiKeys:enabled` under `security` in
+`Configs/appsettings.Production.json` (or the equivalent environment-specific file):
+
+```json
+{
+  "security": {
+    "apiKeys": {
+      "enabled": "true"
+    }
+  }
+}
+```
+
+Alternatively, set the `security__apiKeys__enabled` environment variable — the Hub applies
+environment variables last, so they override the JSON files. Related settings, all under
+`security:apiKeys`:
 
 | Setting | Default | Purpose |
 |---|---|---|
 | `enabled` | `false` | Turns API key authentication on or off for the whole deployment. |
-| `expirySeconds` | `86400` (24 hours) | Time-to-Live (TTL) defines how long an API key remains valid before it expires and requires re-authorization. |
+| `expirySeconds` | `86400` (24 hours) | How long an API key remains valid after creation. The Hub rejects expired keys, so create a new one to replace it. |
 | `usageLogDebounceSeconds` | `3600` | Minimum interval between usage-audit log entries for the same key, to avoid flooding the log on high-frequency callers. |
 | `revocationCacheSeconds` | `300` (5 minutes) | How long the Hub caches a confirmed-valid key's status in Redis before re-checking it against Mongo. See [Security notes](#security-notes). |
 | `maxKeysPerUser` | `64` | Maximum number of keys (of any status) a single user may hold at once. See [Key limits](#key-limits). |
-| `basicAuthRateLimitMaxAttempts` | `10` | Maximum `POST /apikeys/create` Basic-auth attempts allowed per client IP within the rate-limit window, since that path bypasses the normal account lockout. |
+| `basicAuthRateLimitMaxAttempts` | `10` | Maximum `POST /apikeys/create` Basic-auth attempts allowed per client IP within the rate-limit window, since that path bypasses the normal account lockout. Exceeding it returns `429 Too Many Requests`. |
 | `basicAuthRateLimitWindowSeconds` | `60` | Length of the sliding window (in seconds) over which the Hub enforces `basicAuthRateLimitMaxAttempts`. |
 
 ### Who can create a key
@@ -58,20 +68,21 @@ touching any config file. Related settings, all under `security:apiKeys`:
 Even with API keys enabled system-wide, an individual account can create keys for itself only
 if it holds the **`ApiKeyManage`** permission. This is deliberately separate from `UserManage`
 (which gates the *admin* endpoints — viewing/revoking *other* users' keys): `ApiKeyManage` only
-controls whether an account may mint keys for itself at all.
+controls whether an account may create keys for itself at all. An account without it gets
+`403 Forbidden` ("You do not have permission to create API keys...") from `POST /apikeys/create`.
 
-This exists because API-key usage never re-challenges 2FA — a key is a bearer credential, the
-same as a GitHub PAT or an AWS access key, so once minted it authenticates for its full lifetime
-(`expirySeconds`) without prompting for a one-time code again. Restricting creation to accounts
-an administrator has explicitly opted in limits how many standing, 2FA-free credentials exist at
-any time, rather than letting every authenticated account mint one. `Admin`-role accounts get
-`ApiKeyManage` automatically; anyone else needs it granted explicitly (Administration → Users →
-**Roles and Permissions** — `ApiKeyManage` appears there like any other permission, no separate
-setup needed).
+This exists because API-key usage never re-challenges two-factor authentication (2FA) — a key is
+a bearer credential, the same as a GitHub personal access token or an AWS access key, so once
+created it authenticates for its full lifetime (`expirySeconds`) without prompting for a
+one-time code again. Restricting creation to accounts an administrator has explicitly opted in
+limits how many standing, 2FA-free credentials exist at any time, rather than letting every
+authenticated account create one. `Admin`-role accounts get `ApiKeyManage` automatically; anyone
+else needs it granted explicitly (Administration → Users → **Roles and Permissions** —
+`ApiKeyManage` appears there like any other permission, no separate setup needed).
 
 Listing and revoking your *own* already-created keys (`GET /apikeys`, `DELETE /apikeys/{KeyId}`)
 does **not** require `ApiKeyManage` — only creating a new one does. That way, revoking someone's
-`ApiKeyManage` permission stops them minting new keys without stranding whatever keys they
+`ApiKeyManage` permission stops them creating new keys without stranding whatever keys they
 already have.
 
 ### Key limits
@@ -83,38 +94,42 @@ automatically deletes their single oldest revoked or expired key to make room. I
 the limit and every one of their keys is still active (nothing revoked or expired to evict),
 creation fails with `409 Conflict` until they revoke one themselves.
 
-## SaaS vs. on-prem
+## SaaS and on-premises deployments
 
 API keys work the same way in both deployment modes — creating, listing, using, and revoking a
 key behaves identically after you have one. The only difference is how you can create one:
 
 | Works on | Acquisition method |
 |---|---|
-| On-prem / SaaS | Authenticated WebUI session, **My API Keys** web page |
-| On-prem | `Authorization: Basic` with a username/password against `POST /apikeys/create` |
+| On-premises / SaaS | Authenticated WebUI session, **My API Keys** web page |
+| On-premises | `Authorization: Basic` with a username/password against `POST /apikeys/create` |
 
 ## Using the WebUI
 
-Each user manages their own API keys from the **My API Keys** page, reached from the user
-menu in the top-right corner of the Hub (click your username, then **My API Keys**).
+Each user manages their own API keys from the **My API Keys** page:
 
-From here you can create a new key (giving it a label so you can tell it apart from your
-other keys later), see all your existing keys with their creation/expiry/last-used dates and a
-usage count, and revoke any key you no longer need. The usage count reflects debounced audit log
-entries (at most one per `usageLogDebounceSeconds` window — see [Review API key usage](#review-api-key-usage)),
-not literal request counts, so it undercounts for a key used more than once within the same
-window.
+1. Click your username in the top-right corner of the Hub, then click **My API Keys**.
+2. Click **Create**.
+3. Enter a label that identifies where this key will be used (for example, "Jenkins CI"), so
+   you can tell it apart from your other keys later.
+4. Copy the key value shown — the Hub shows it only once, at the moment you create it. If you
+   lose it, revoke it and create a new one.
 
-The Hub shows a key's full value only once, at the moment you create it — copy it somewhere
-safe immediately. If you lose it, revoke it and create a new one.
+From the same page you can also see all your existing keys with their creation/expiry/last-used
+dates and a usage count, and revoke any key you no longer need.
+
+:::note
+The usage count reflects debounced audit log entries (at most one per
+`usageLogDebounceSeconds` window — see [Review API key usage](#review-api-key-usage)), not
+literal request counts, so it undercounts for a key used more than once within the same window.
+:::
 
 ## Using the API directly
 
 The following examples assume you already have a key in the `API_KEY` environment variable —
 created via the WebUI (see [Using the WebUI](#using-the-webui)) or handed to you by whoever
-created it. `Hub/ApiScripts/Bash/` has a script (`purge-api-keys.sh`) that shows how to mint one
-from a username and password if you need to script that part too, but that's a separate concern
-this document doesn't cover.
+created it. To create one from a script instead, see [PowerShell examples](#powershell-examples)
+or [Python examples](#python-examples).
 
 The examples also use the local development Hub (`https://localhost:5001/api`) with a
 self-signed certificate, hence `curl -k`; against a Hub with a properly issued certificate, drop
@@ -124,56 +139,7 @@ that flag and substitute your own Hub URL.
 export API_KEY="..."   # already have this from the WebUI or elsewhere
 ```
 
-### 1. Inspect the key's contents at jwt.io
-
-A JWT's payload is base64-encoded, not encrypted, so you can inspect its claims without any
-key material at all. Open [https://www.jwt.io](https://www.jwt.io) and paste the `Key` value
-into the "Encoded" box. The decoded payload looks like:
-
-```json
-{
-  "iss": "ssjwt",
-  "sub": 1,
-  "iat": 1787780736,
-  "exp": 1787867136,
-  "preferred_username": "admin",
-  "nnt_ver": 802010000,
-  "perms": "22440207668198477",
-  "jti": "c8303fd5fb984338b874c3ac90635104",
-  "nnt_org": 0,
-  "nnt_tfe": 0,
-  "zoneinfo": "Europe/London",
-  "auth_username": "admin",
-  "typ": "apikey",
-  "label": "Jenkins CI"
-}
-```
-
-`typ: "apikey"` and the absence of an `nnt_sid` claim distinguish this token from a
-UI session token and keep it exempt from single-session enforcement. `jti` matches the
-`KeyId` returned when the key was created — that's the non-secret identifier the Hub uses to
-check for revocation. `exp` is the expiry (24 hours after creation, by default).
-
-The token is signed (RS256 by default), not encrypted — verifying that signature requires the Hub's
-public key, which jwt.io doesn't have, so it will show the signature as "invalid". That's
-expected and not a problem: decoding the claims doesn't require verification, and the Hub
-itself verifies the signature on every request that presents the token.
-
-You don't need a browser for this — the payload is just the middle, base64url-encoded segment
-of the token, so it decodes with nothing but standard command-line tools:
-
-```bash
-decode_jwt_payload() {
-  echo "$1" | cut -d. -f2 | tr -- '-_' '+/' | \
-    awk '{ while (length($0) % 4) { $0 = $0 "=" } print }' | base64 -d 2>/dev/null | jq .
-}
-
-decode_jwt_payload "$API_KEY"
-```
-
-This prints the same JSON jwt.io shows, entirely offline.
-
-### 2. Use the key to call the API
+### 1. Use the key to call the API
 
 Any endpoint that accepts an authenticated session also accepts the API key as a Bearer
 token. For example, to list the device groups registered with the Hub:
@@ -186,7 +152,7 @@ curl -sk https://localhost:5001/api/groupsTree \
 This returns the same group/device hierarchy an authenticated UI session would see, and has no
 effect on any other session the user has open.
 
-### 3. List your API keys
+### 2. List your API keys
 
 ```bash
 curl -sk "https://localhost:5001/api/apikeys?Skip=0&Take=20" \
@@ -217,7 +183,7 @@ The Hub returns `KeyId` here, not the key itself. It never stores or displays th
 raw key value again after creation.
 :::
 
-### Revoking a key
+### 3. Revoke a key
 
 ```bash
 curl -sk -X DELETE https://localhost:5001/api/apikeys/$KEY_ID \
@@ -227,6 +193,52 @@ curl -sk -X DELETE https://localhost:5001/api/apikeys/$KEY_ID \
 where `$KEY_ID` is the `KeyId` from the create/list response (not the key itself). A revoked
 key stops working immediately — the Hub checks revocation status on every request, so there's
 no waiting for the token to expire.
+
+### Inspecting a key's contents
+
+A JWT's payload is base64-encoded, not encrypted, so you can inspect its claims without any
+key material at all. The payload is just the middle, base64url-encoded segment of the token,
+so it decodes with nothing but standard command-line tools:
+
+```bash
+decode_jwt_payload() {
+  echo "$1" | cut -d. -f2 | tr -- '-_' '+/' | \
+    awk '{ while (length($0) % 4) { $0 = $0 "=" } print }' | base64 -d 2>/dev/null | jq .
+}
+
+decode_jwt_payload "$API_KEY"
+```
+
+This decodes entirely offline. The output looks like:
+
+```json
+{
+  "iss": "ssjwt",
+  "sub": 1,
+  "iat": 1787780736,
+  "exp": 1787867136,
+  "preferred_username": "admin",
+  "nnt_ver": 802010000,
+  "perms": "22440207668198477",
+  "jti": "c8303fd5fb984338b874c3ac90635104",
+  "nnt_org": 0,
+  "nnt_tfe": 0,
+  "zoneinfo": "Europe/London",
+  "auth_username": "admin",
+  "typ": "apikey",
+  "label": "Jenkins CI"
+}
+```
+
+`typ: "apikey"` and the absence of an `nnt_sid` claim distinguish this token from a
+UI session token and keep it exempt from single-session enforcement. `jti` matches the
+`KeyId` returned when the key was created — that's the non-secret identifier the Hub uses to
+check for revocation. `exp` is the expiry (24 hours after creation, by default).
+
+:::warning
+An API key is a live bearer credential with its creating user's full permissions. Decode it
+locally with the method above rather than pasting it into a third-party website such as jwt.io.
+:::
 
 ## Admin operations
 
@@ -243,8 +255,9 @@ like a session would — with none of the session-invalidation risk of a fresh
 
 ### List a specific user's keys
 
-Same shape as [the self-service list](#3-list-your-api-keys), but takes the target user's
-`UserId` (their `UserAuthId`) in the path:
+Same shape as [the self-service list](#2-list-your-api-keys), but takes the target user's
+`UserId` in the path. Get this value from [listing every key in the system](#list-every-key-in-the-system)
+(each result includes the owner's `UserId`) if you don't already have it:
 
 ```bash
 curl -sk "https://localhost:5001/api/admin/apikeys/$USER_ID?Skip=0&Take=20&ActiveOnly=false" \
@@ -283,12 +296,13 @@ curl -sk -X DELETE "https://localhost:5001/api/admin/apikeys/$USER_ID/$KEY_ID" \
   -H "Authorization: Bearer $API_KEY"
 ```
 
-This 404s if the key doesn't exist, or if it exists but belongs to a different user than the one
-specified — so a mistyped `UserId` can't accidentally revoke someone else's key.
+This returns `404 Not Found` if the key doesn't exist, or if it exists but belongs to a
+different user than the one specified — so a mistyped `UserId` can't accidentally revoke
+someone else's key.
 
 ### Revoke every active key for a user
 
-For incident response (e.g. a compromised account) — revokes every -active key for a
+For incident response (e.g. a compromised account) — revokes every active key for a
 user in one call, rather than one `KeyId` at a time. The Hub leaves already-revoked and expired
 keys untouched (it keeps them for their audit history, same as elsewhere in this feature). There is no
 system-wide "revoke every key for every user" variant — this always targets one `UserId`:
@@ -304,7 +318,7 @@ curl -sk -X DELETE "https://localhost:5001/api/admin/apikeys/$USER_ID" \
 
 `RevokedCount` is how many keys were active and got revoked — `0` if the user had none active
 (not an error). Revocation takes effect immediately for every key revoked this way, the same as
-[revoking a single key](#revoking-a-key) — including for a key that was itself used to
+[revoking a single key](#3-revoke-a-key) — including for a key that was itself used to
 authenticate this call.
 
 ### Review API key usage
@@ -344,11 +358,11 @@ active in which window," not every single request.
 
 ## PowerShell examples
 
-The following examples build a complete, working flow — mint a key, inspect it, call the API,
+The following examples build a complete, working flow — create a key, inspect it, call the API,
 list keys, and clean up — the same steps as [Using the API directly](#using-the-api-directly),
-but in PowerShell. They mirror the pattern in `Utils/Powershell/ApiKeysDemo/demo-api-keys.ps1`.
+but in PowerShell.
 
-Minting a key only ever needs HTTP Basic auth, never a session:
+Creating a key only ever needs HTTP Basic auth, never a session:
 
 ```powershell
 function Get-BasicAuthHeader([string]$User, [string]$Pass) {
@@ -407,7 +421,7 @@ pattern `demo-api-keys.ps1` uses, which leaves no stray keys:
 $createdKeyIds = New-Object System.Collections.Generic.List[string]
 
 try {
-    # ... mint keys, add each KeyId to $createdKeyIds, do the work ...
+    # ... create keys, add each KeyId to $createdKeyIds, do the work ...
 }
 finally {
     foreach ($id in $createdKeyIds) {
@@ -420,8 +434,7 @@ finally {
 ## Python examples
 
 The `nct_api_client` package's `NCTClient` wraps this flow. Authenticate with
-`login_apikey()`, not `login()` — see
-[Appendix B](#appendix-b-client-library-gotchas--powershell-vs-python) for why:
+`login_apikey()`, not `login()`:
 
 ```python
 client = NCTClient(base_url="https://localhost:5001", username="admin", verify_ssl=False)
@@ -432,7 +445,7 @@ print(client.get_agents())
 
 `login_apikey()` caches the minted key in the OS keyring (via the `keyring` package) and
 reuses it across runs as long as it still has more than an hour of time-to-live left,
-so a script called repeatedly (a scheduled job, a CI step) doesn't mint a fresh key — and
+so a script called repeatedly (a scheduled job, a CI step) doesn't create a fresh key — and
 create a fresh audit record — on every invocation:
 
 ```python
@@ -443,15 +456,15 @@ def login_apikey(self, label: str = None):
     if api_key and self._jwt_ttl_seconds(api_key) > API_KEY_MIN_TTL_SECONDS:
         self.api_key = api_key
         return
-    # ... otherwise mint a new one over HTTP Basic auth against /apikeys/create ...
+    # ... otherwise create a new one over HTTP Basic auth against /apikeys/create ...
 ```
 
 If the account this script runs as has 2FA required or enabled, `POST /apikeys/create` rejects
 the Basic-auth bootstrap outright (`403 Forbidden`, "This account requires two-factor
 authentication, which Basic authentication can't satisfy") — there's nowhere for this flow to
-collect a one-time password, so it can't mint a key on its own. Someone has to create one from the
-**My API Keys** page instead and hand it to the script. Checking an `API_KEY` environment
-variable before falling back to the keyring/Basic-auth flow covers that case:
+collect a one-time password, so it can't create a key on its own. Someone has to create one from the
+**My API Keys** page instead and hand it to the script. If you maintain your own copy of this
+client, adding a check like this before the keyring lookup covers that case:
 
 ```python
 def login_apikey(self, label: str = None):
@@ -468,14 +481,14 @@ def login_apikey(self, label: str = None):
     if api_key and self._jwt_ttl_seconds(api_key) > API_KEY_MIN_TTL_SECONDS:
         self.api_key = api_key
         return
-    # ... otherwise mint a new one over HTTP Basic auth against /apikeys/create ...
+    # ... otherwise create a new one over HTTP Basic auth against /apikeys/create ...
 ```
 
-The client's `_authenticated_request()` method is worth borrowing for your own scripts even
+The client's `_authenticated_request()` method is worth reproducing in your own scripts even
 outside this library: it tries the API key as a Bearer token first, and only falls back to a
 credentials-based session if that fails — so you can write a client once and have it work
-whether or not `security:apiKeys:enabled` is turned on for a given Hub, without every call site
-having to know which auth mode is active:
+regardless of whether `security:apiKeys:enabled` is turned on for a given Hub, without every
+call site having to know which auth mode is active:
 
 ```python
 def _authenticated_request(self, method: str, path: str, **kwargs):
@@ -498,6 +511,10 @@ def _authenticated_request(self, method: str, path: str, **kwargs):
 Every data method on the client (`get_agents()`, `get_devices()`, `add_database_credential()`,
 and so on) calls `_authenticated_request()` rather than making its own request, so this fallback
 applies uniformly — callers never need to branch on which auth mode is in use.
+
+The older PowerShell tools don't have an API-key option yet. If your automation calls
+`New-NctSession` or `GetAdminUserSession` instead of the `nct_api_client` package, see
+[Appendix B](#appendix-b-older-powershell-helpers-and-single-session-enforcement).
 
 ## Security notes
 
@@ -529,7 +546,7 @@ generated from the Hub's OpenAPI spec.
 
 | Endpoint | Description | Input | Output |
 |---|---|---|---|
-| `POST /apikeys/create` | Creates a new API key for the calling user. | `Label` (string, body). Accepts an authenticated session (both deployment modes, used by the WebUI) or `Authorization: Basic` (on-prem only). | `Key`, `KeyId`, `Label`, `CreatedDate`, `ExpiryDate` |
+| `POST /apikeys/create` | Creates a new API key for the calling user. | `Label` (string, body). Accepts an authenticated session (both deployment modes, used by the WebUI) or `Authorization: Basic` (on-premises only). | `Key`, `KeyId`, `Label`, `CreatedDate`, `ExpiryDate` |
 | `GET /apikeys` | Lists the calling user's own API keys, newest first. | `Skip`, `Take`, `ActiveOnly` (query, all optional) | `Results[]` (`KeyId`, `UserId`, `Label`, `CreatedDate`, `ExpiryDate`, `CancelledDate`, `LastUsedDate`, `UsageCount`), `TotalCount` |
 | `DELETE /apikeys/{KeyId}` | Revokes one of the calling user's own keys immediately. | `KeyId` (path) | *(204 No Content)* |
 
@@ -546,45 +563,18 @@ Requires the `UserManage` permission.
 
 ### Other APIs referenced in this document
 
-Endpoints outside the API key feature itself that this article mentions, for context.
+Endpoints outside the API key feature itself that this document mentions, for context.
 
 | Endpoint | Description | Input | Output |
 |---|---|---|---|
-| `POST /auth/credentials` | The Hub's normal credentials-based session login — the same one the browser UI uses. Every older automation path this article warns about (`New-NctSession`, `GetAdminUserSession`, `NCTClient.login()`) authenticates here. Signs the account in to a real UI session, which triggers the Hub's single-session-per-user enforcement: it signs out any other active session for that account. This side effect is the whole reason this article exists — API keys are the alternative that avoids it. | `username`, `password` (form body) | `UserId`, `SessionId` |
+| `POST /auth/credentials` | The Hub's normal credentials-based session login — the same one the browser UI uses. Every older automation path this document warns about (`New-NctSession`, `GetAdminUserSession`, `NCTClient.login()`) authenticates here. Signs the account in to a real UI session, which triggers the Hub's single-session-per-user enforcement: it signs out any other active session for that account. This side effect is the whole reason this document exists — API keys are the alternative that avoids it. | `username`, `password` (form body) | `UserId`, `SessionId` |
 | `GET /groupsTree` | Returns the device group hierarchy. Used in [Using the API directly](#using-the-api-directly) only as an example of an arbitrary endpoint that accepts a Bearer token like any other — it isn't part of the API key feature. | *(none)* | Device group hierarchy |
 | `GET /status/system` | Returns Hub version and system/config details once authenticated. Used in the PowerShell examples only as an example authenticated call — it isn't part of the API key feature. | *(none)* | System version and config settings |
 
-## Appendix B: Client library gotchas — PowerShell vs. Python
-
-If you're automating against the Hub with the `nct_api_client` Python package, use
-`NCTClient.login_apikey()` — it already mints and uses an API key over HTTP Basic auth
-against `/apikeys/create` instead of starting a session, precisely to avoid the
-single-session-invalidation gotcha described in this article:
-
-```python
-client = NCTClient(base_url="https://localhost:5001", username="admin")
-client.login_apikey()          # safe: never creates a session
-```
-
-Avoid `NCTClient.login()` for automation — it posts to `/auth/credentials` and creates a
-real Hub session, which invalidates any other active session for that user the same as a
-browser login does:
-
-```python
-client = NCTClient(base_url="https://localhost:5001", username="admin")
-client.login()                 # avoid for automation: signs out other active sessions
-```
-
-The older PowerShell tools don't have an API-key option yet, so the equivalent guidance there
-is different: prefer minting a key directly over HTTP Basic auth, using the same approach as
-`demo-api-keys.ps1`, instead of calling `New-NctSession` or `GetAdminUserSession`. See
-[Appendix C](#appendix-c-older-powershell-helpers-and-the-single-session-gotcha) if you're
-using either of those tools.
-
-## Appendix C: Older PowerShell helpers and the single-session gotcha
+## Appendix B: Older PowerShell helpers and single-session enforcement
 
 This appendix only applies if your automation already calls `New-NctSession` (from the
-`NctApiClientLibrary` module) or `GetAdminUserSession` (from `ApiKeysDemo/gen7-utilities.ps1`).
+`NctApiClientLibrary` module) or `GetAdminUserSession` (from `gen7-utilities.ps1`).
 If you're not using either of those, you can skip it.
 
 Two older PowerShell tools predate API keys and still authenticate the same way a browser
@@ -593,7 +583,7 @@ login does:
 | Tool | Function | What it does |
 |---|---|---|
 | `NctApiClientLibrary` module | `New-NctSession` | Prompts for (or loads persisted) credentials and posts them to `/auth/credentials` to start a session. |
-| `ApiKeysDemo/gen7-utilities.ps1` | `GetAdminUserSession` | Posts a configured admin username and password to `/auth/credentials` to start a session. |
+| `gen7-utilities.ps1` | `GetAdminUserSession` | Posts a configured admin username and password to `/auth/credentials` to start a session. |
 
 Despite its folder name, `GetAdminUserSession` in `ApiKeysDemo/gen7-utilities.ps1`
 authenticates through the same credentials-login endpoint as `New-NctSession` and a browser
@@ -617,7 +607,7 @@ Import-Module NctApiClientLibrary
 $mySession = New-NctSession -url "https://localhost/api" -user "admin"
 ```
 
-`GetAdminUserSession` in `ApiKeysDemo/gen7-utilities.ps1` does the same thing directly,
+`GetAdminUserSession` in `gen7-utilities.ps1` does the same thing directly,
 without the client library:
 
 ```powershell
@@ -637,10 +627,10 @@ that account. For automation, prefer an API key instead — it authenticates wit
 any other session.
 :::
 
-`ApiKeysDemo/demo-api-keys.ps1` shows the safe alternative: it authenticates only by minting
+`demo-api-keys.ps1` shows the safe alternative: it authenticates only by creating
 an API key over HTTP Basic auth against `POST /apikeys/create` and never calls
 `POST /auth/credentials`, so it's safe to run alongside a live login session without signing
-it out. Minting the key:
+it out. Creating the key:
 
 ```powershell
 function Get-BasicAuthHeader([string]$User, [string]$Pass) {
@@ -663,6 +653,6 @@ created, nothing to invalidate:
 $status = Invoke-RestMethod -Uri "$HostUrl/status/system" -Headers @{ Authorization = "Bearer $ApiKey" }
 ```
 
-If you're automating against the Hub API today, mint an API key this way (or from the
+If you're automating against the Hub API today, create an API key this way (or from the
 **My API Keys** page) instead of adding a new call to `New-NctSession` or
 `GetAdminUserSession`.

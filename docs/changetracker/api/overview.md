@@ -10,7 +10,9 @@ Netwrix Change Tracker provides a comprehensive REST API that customers can use 
 
 ## Authentication
 
-All API endpoints require authentication. See [Authentication](/docs/changetracker/api/authentication.md) for an example script.
+All API endpoints require authentication. See [Authentication](/docs/changetracker/api/authentication.md)
+for a credentials-based example, or [API Keys](/docs/changetracker/api/api-keys.md) for
+automation that shouldn't disturb an active UI session.
 
 ## API Reference
 
@@ -28,10 +30,6 @@ The following API endpoints are available in Netwrix Change Tracker:
 
 - [Credentials](/docs/changetracker/api/credentials.md) – Manage authentication credentials that Change Tracker uses to connect to various systems and services. This API provides endpoints for creating, retrieving, updating, and deleting credentials for different credential types including Shell, Database, FTP, Cloud, ESX, ITSM, and Splunk.
 
-- [Authentication](/docs/changetracker/api/authentication.md) – Authenticate a script or automation client to the Hub API and start a session for subsequent requests.
-
-- [API Keys](/docs/changetracker/api/api-keys.md) – Create, use, and revoke Bearer-token API keys for automation, without affecting any user's active UI session.
-
 ## API Usage Best Practices
 
 When working with the Change Tracker API, consider the following best practices:
@@ -48,18 +46,14 @@ When working with the Change Tracker API, consider the following best practices:
 
 ## Example Usage
 
-The following example shows how to use the API with PowerShell. It mints an API key over
-HTTP Basic auth (see [API Keys](/docs/changetracker/api/api-keys.md)) and uses that key as a
-Bearer token, rather than authenticating with `/auth/credentials` — a credentials login
-signs the account out of any other active session, while an API key doesn't.
+The following example shows how to use the API with PowerShell, authenticating with an API
+key as a Bearer token rather than `/auth/credentials` — a credentials login signs the account
+out of any other active session, while an API key doesn't. See [API Keys](/docs/changetracker/api/api-keys.md)
+for how to create one; the example below assumes you already have one in the `API_KEY`
+environment variable.
 
 ```powershell
-# Mint an API key using HTTP Basic auth against /apikeys/create
-$basicHeader = "Basic " + [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("$AdminUser`:$AdminPwd"))
-$createResponse = Invoke-RestMethod -Method Post -Uri "https://changetracker.example.com/api/apikeys/create" `
-    -ContentType application/json -Headers @{ Authorization = $basicHeader } `
-    -Body (@{ Label = "overview-example" } | ConvertTo-Json)
-$apiKey = $createResponse.Key
+$apiKey = $env:API_KEY
 
 # Define the API endpoint
 $uri = "https://changetracker.example.com/api/agentsRanked"
