@@ -120,6 +120,8 @@ An account locks after three consecutive wrong passwords or five consecutive wro
 
 On the row, click **Actions > Unlock**. A message confirms **User "`<name>`" unlocked**. Unlocking doesn't change the password; if the user has forgotten it, also click **Actions > Reset password**.
 
+If every Admin and User admin account is locked out and nobody can reach this tab, see [Unlock a user without admin access](unlock-a-user-without-admin-access.md).
+
 ## Delete a User
 
 1. On the row, click **Actions > Delete**.
