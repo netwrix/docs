@@ -152,7 +152,8 @@ The scanner creates Change Logs when you add or remove customizations.
 ### Add or Remove Customizations
 
 You can add or remove customizations from the **Related** tab on the policy. Custom Fields inherit
-the CustomObject Policy when you add them.
+the CustomObject Policy when you add them. See [Policy Inheritance](/docs/platgovsalesforce/changemanagement/policy_inheritance.md)
+for how this works for new and existing fields.
 
 - Platform Governance automatically adds new Custom Fields to the parent **CustomObject** Policy if it exists.
 - Platform Governance adds existing Custom Fields to the parent **CustomObject** Policy from the Custom Object customization record.
