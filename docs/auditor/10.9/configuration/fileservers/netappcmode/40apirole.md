@@ -1,7 +1,7 @@
 ---
-title: "Permissions for NetApp Auditing"
-description: "Permissions for NetApp Auditing"
-sidebar_position: 60
+title: "Create NetApp API role"
+description: "PCreate NetApp API role"
+sidebar_position: 40
 ---
 
 # Permissions for NetApp Auditing
@@ -107,29 +107,6 @@ RESTAPI role:
 ```
 security login rest-role show -vserver svm1 -role netwrix_rest_role
 ```
-
-**Step 3 –** Create a login for the account that is going to authenticate and collect data from
-NetApp. If you want to use an AD account for collecting data, enable it to access SVM through
-ONTAPI. For example:
-
-**NOTE:** In ONTAP 9.10 and higher, it isn't possible to assign ONTAPI role (e.g. netwrix_role) and
-RESTAPI role (e.g. netwrix_rest_role) to one AD user. To allow a user access to both the ONTAPI and
-RESTAPI, you can use different AD groups by assigning roles to them and including the user in these
-groups.
-
-Create login for ONTAPI role:
-
-```
-security login create -vserver svm1 -user-or-group-name domain\user -application ontapi -authmethod domain -role netwrix_role
-```
-
-Create login for RESTAPI role:
-
-```
-security login create -vserver svm1 -user-or-group-name domain\user -application http -authmethod domain -role netwrix_rest_role
-```
-
-where `domain\user` is your data collecting account.
 
 _Remember,_ that to be able to add event policy for NetApp, the role you set up for working with
 ONTAPI must have the following attributes:

@@ -1,7 +1,7 @@
 ---
 title: "Configure Service Policy"
 description: "Configure Service Policy"
-sidebar_position: 30
+sidebar_position: 50
 ---
 
 # Configure Service Policy

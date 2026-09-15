@@ -1,7 +1,7 @@
 ---
 title: "NetApp Data ONTAP"
 description: "NetApp Data ONTAP"
-sidebar_position: 30
+sidebar_position: 10
 ---
 
 # NetApp Data ONTAP
