@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # API
 
-Netwrix Change Tracker provides a comprehensive REST API that customers can use to integrate with the platform programmatically. This is particularly useful for customers who run multiple instances of Netwrix Change Tracker in multiple regions, as they can use the API to pull data from each instance and build global reports.
+Netwrix Change Tracker provides a comprehensive REST API that customers can use to integrate with the platform programmatically. Customers who run multiple instances of Netwrix Change Tracker across regions can use the API to pull data from each instance and build global reports.
 
 ## Authentication
 
@@ -49,7 +49,7 @@ When working with the Change Tracker API, consider the following best practices:
 The following example shows how to use the API with PowerShell, authenticating with an API
 key as a Bearer token rather than `/auth/credentials` — a credentials login signs the account
 out of any other active session, while an API key doesn't. See [API Keys](/docs/changetracker/api/api-keys.md)
-for how to create one; the example below assumes you already have one in the `API_KEY`
+for how to create one; this example assumes you already have one in the `API_KEY`
 environment variable.
 
 ```powershell

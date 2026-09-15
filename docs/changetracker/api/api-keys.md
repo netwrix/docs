@@ -24,7 +24,7 @@ uses for UI session tokens. The Hub verifies the token's signature and expiry (`
 every request without a database lookup — the only thing the Hub stores server-side is a
 non-secret identifier (`KeyId`, the token's `jti` claim) that it uses to check whether the key
 is revoked and to record last-used timestamps. The Hub never stores, logs, or displays the raw
-secret after the moment it's created.
+secret after creating it.
 
 Because the token carries no session identifier, it structurally can't participate in
 single-session enforcement — a competing login has no session to invalidate.
@@ -34,7 +34,7 @@ single-session enforcement — a competing login has no session to invalidate.
 API key authentication is **disabled by default**. The setting isn't present in the shipped
 `Configs/appsettings.*.json` files, so it stays off until an administrator adds it explicitly.
 Calling `POST /apikeys/create` while it's disabled returns `403 Forbidden` ("API key
-authentication is not enabled on this system.").
+authentication isn't enabled on this system.").
 
 An administrator enables it by adding `security:apiKeys:enabled` under `security` in
 `Configs/appsettings.Production.json` (or the equivalent environment-specific file):
@@ -69,16 +69,17 @@ Even with API keys enabled system-wide, an individual account can create keys fo
 if it holds the **`ApiKeyManage`** permission. This is deliberately separate from `UserManage`
 (which gates the *admin* endpoints — viewing/revoking *other* users' keys): `ApiKeyManage` only
 controls whether an account may create keys for itself at all. An account without it gets
-`403 Forbidden` ("You do not have permission to create API keys...") from `POST /apikeys/create`.
+`403 Forbidden` ("You don't have permission to create API keys...") from `POST /apikeys/create`.
 
 This exists because API-key usage never re-challenges two-factor authentication (2FA) — a key is
 a bearer credential, the same as a GitHub personal access token or an AWS access key, so once
 created it authenticates for its full lifetime (`expirySeconds`) without prompting for a
 one-time code again. Restricting creation to accounts an administrator has explicitly opted in
 limits how many standing, 2FA-free credentials exist at any time, rather than letting every
-authenticated account create one. `Admin`-role accounts get `ApiKeyManage` automatically; anyone
-else needs it granted explicitly (Administration → Users → **Roles and Permissions** —
-`ApiKeyManage` appears there like any other permission, no separate setup needed).
+authenticated account create one. `Admin`-role accounts get `ApiKeyManage` automatically; for
+anyone else, an administrator must grant it explicitly (Administration → Users →
+**Roles and Permissions** — `ApiKeyManage` appears there like any other permission, with no
+separate setup).
 
 Listing and revoking your *own* already-created keys (`GET /apikeys`, `DELETE /apikeys/{KeyId}`)
 does **not** require `ApiKeyManage` — only creating a new one does. That way, revoking someone's
@@ -110,7 +111,7 @@ Each user manages their own API keys from the **My API Keys** page:
 
 1. Click your username in the top-right corner of the Hub, then click **My API Keys**.
 2. Click **Create**.
-3. Enter a label that identifies where this key will be used (for example, "Jenkins CI"), so
+3. Enter a label that identifies where you'll use this key (for example, "Jenkins CI"), so
    you can tell it apart from your other keys later.
 4. Copy the key value shown — the Hub shows it only once, at the moment you create it. If you
    lose it, revoke it and create a new one.
@@ -127,8 +128,8 @@ literal request counts, so it undercounts for a key used more than once within t
 ## Using the API directly
 
 The following examples assume you already have a key in the `API_KEY` environment variable —
-created via the WebUI (see [Using the WebUI](#using-the-webui)) or handed to you by whoever
-created it. To create one from a script instead, see [PowerShell examples](#powershell-examples)
+either one you created via the WebUI (see [Using the WebUI](#using-the-webui)) or one someone
+else created and handed to you. To create one from a script instead, see [PowerShell examples](#powershell-examples)
 or [Python examples](#python-examples).
 
 The examples also use the local development Hub (`https://localhost:5001/api`) with a
@@ -232,12 +233,12 @@ This decodes entirely offline. The output looks like:
 
 `typ: "apikey"` and the absence of an `nnt_sid` claim distinguish this token from a
 UI session token and keep it exempt from single-session enforcement. `jti` matches the
-`KeyId` returned when the key was created — that's the non-secret identifier the Hub uses to
-check for revocation. `exp` is the expiry (24 hours after creation, by default).
+`KeyId` the Hub returned when you created the key — that's the non-secret identifier the Hub
+uses to check for revocation. `exp` is the expiry (24 hours after creation, by default).
 
 :::warning
 An API key is a live bearer credential with its creating user's full permissions. Decode it
-locally with the method above rather than pasting it into a third-party website such as jwt.io.
+locally with the method shown here rather than pasting it into a third-party website such as jwt.io.
 :::
 
 ## Admin operations
@@ -297,7 +298,7 @@ curl -sk -X DELETE "https://localhost:5001/api/admin/apikeys/$USER_ID/$KEY_ID" \
 ```
 
 This returns `404 Not Found` if the key doesn't exist, or if it exists but belongs to a
-different user than the one specified — so a mistyped `UserId` can't accidentally revoke
+different user than the one you specified — so a mistyped `UserId` can't accidentally revoke
 someone else's key.
 
 ### Revoke every active key for a user
@@ -316,7 +317,7 @@ curl -sk -X DELETE "https://localhost:5001/api/admin/apikeys/$USER_ID" \
 { "RevokedCount": 3 }
 ```
 
-`RevokedCount` is how many keys were active and got revoked — `0` if the user had none active
+`RevokedCount` is how many active keys the call revoked — `0` if the user had none active
 (not an error). Revocation takes effect immediately for every key revoked this way, the same as
 [revoking a single key](#3-revoke-a-key) — including for a key that was itself used to
 authenticate this call.
@@ -487,7 +488,7 @@ def login_apikey(self, label: str = None):
 The client's `_authenticated_request()` method is worth reproducing in your own scripts even
 outside this library: it tries the API key as a Bearer token first, and only falls back to a
 credentials-based session if that fails — so you can write a client once and have it work
-regardless of whether `security:apiKeys:enabled` is turned on for a given Hub, without every
+regardless of whether a given Hub has `security:apiKeys:enabled` turned on, without every
 call site having to know which auth mode is active:
 
 ```python
