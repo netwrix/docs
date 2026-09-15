@@ -12,7 +12,7 @@ There's no bulk unlock. Repeat the lookup and unlock steps once per locked accou
 
 ## Before You Start
 
-You need the installed hostname to reach Zitadel—it validates the request's `Host` header against this value and rejects anything else with "Instance not found," even once the connection itself succeeds. This is the Fully Qualified Domain Name (FQDN) you chose during installation, not an Active Directory domain, so it applies the same whether or not the host is domain-joined. Read it from the install host:
+You need the installed hostname to reach Zitadel—it validates the request's `Host` header against this value and rejects anything else with "Instance not found," even once the connection itself succeeds. This is the Fully Qualified Domain Name (FQDN) you chose during installation, so it applies the same whether or not the host is domain-joined. Read it from the install host:
 
 ```bash
 grep hostname /etc/dspm/installer.yaml
