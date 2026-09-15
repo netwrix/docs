@@ -41,7 +41,7 @@ If your current license includes the `php_els` field (used on the 2509–2604 im
 **Verified compatible hypervisors:**
 - VMware vSphere
 - VMware ESXi
-- Microsoft Hyper-V
+- Microsoft Hyper-V (Windows Server 2019 or later)
 - AWS, Azure, GCP (cloud deployments — snapshot behavior differs per provider)
 - Proxmox VE — not officially supported; see the following note
 
