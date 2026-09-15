@@ -33,7 +33,7 @@ collection mode.
 | Claim | A single field inside a JWT — a name/value pair describing something about the token (who issued it, who it is for, what it allows). |
 | Issuer (`iss`) | A claim, and an identically named ONTAP parameter — who issued the token. |
 | Audience (`aud`) | A claim, and an identically named ONTAP parameter — who the token is intended for. |
-| Scope | The set of permissions claimed by the token; in this section, this includes the ONTAP-specific self-contained scope format (see [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/ontap.md#self-contained-scope-format)). |
+| Scope | The set of permissions claimed by the token; in this section, this includes the ONTAP-specific self-contained scope format (see [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md#self-contained-scope-format)). |
 | Bearer token | A token that is sufficient to present in the `Authorization: Bearer <token>` header — no additional proof of possession is required (unlike DPoP/mTLS). |
 | Client Credentials Grant | The OAuth 2.0 flow in which the client (the application) authenticates with its own Client ID/Secret and receives a token for itself — no human user is involved. This is the flow used throughout this section. |
 | Client ID / Client Secret | The public identifier and secret of the client application, used to authenticate to the IdP. |
@@ -77,15 +77,15 @@ the provider can put into the token:
 - ONTAPI does not support OAuth 2.0 — only REST API does.
 - DPoP and mutual-TLS-constrained (sender-constrained) tokens are not supported by ONTAP.
 - Okta is not on NetApp's officially tested provider list — see
-  [OKTA](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/okta.md)
+  [OKTA](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/40okta.md)
   for details.
 
 ## Related Topics
 
-- [Configure API Access](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/overview.md)
-- [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/ontap.md)
-- [ADFS](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/adfs.md)
-- [OKTA](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/okta.md)
+- [Configure API Access](/docs/auditor/10.9/configuration/fileservers/netappcmode/20webaccess.md)
+- [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
+- [ADFS](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/30adfs.md)
+- [OKTA](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/40okta.md)
 - [Overview of OAuth 2.0 in ONTAP](https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html)
 - [OAuth 2.0 deployment scenarios — Summary of configuration parameters](https://docs.netapp.com/us-en/ontap/authentication/oauth2-deployment-scenarios.html#summary-of-the-configuration-parameters)
 - [Self-contained OAuth 2.0 scopes](https://docs.netapp.com/us-en/ontap/authentication/oauth2-sc-scopes.html)

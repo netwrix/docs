@@ -8,7 +8,7 @@ slug: /configuration/fileservers/netappcmode/oauth2ontap
 # Configure OAuth 2.0 on the ONTAP
 
 **NOTE:** This section only applies to NetApp ONTAP version 9.16.1 and higher. See
-[OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/overview.md)
+[OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
 for prerequisites and concepts referenced below.
 
 Netwrix Auditor requires OAuth 2.0 to be enabled and configured on the ONTAP cluster before you
@@ -52,7 +52,7 @@ cluster1::> security login rest-role create -role full-access -api /api/protocol
 ```
 
 These are the same least-privilege API paths as `netwrix_rest_role` in
-[Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/ad/apirole.md).
+[Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md).
 
 **Step 3 –** Register the authorization server on the cluster with `security oauth2 client create`.
 The table below lists all supported parameters:
@@ -102,7 +102,7 @@ ontap:<SVM>:<role-name>:<access-level>:<cluster-UUID>:<API-path>
 | `<API-path>` | A path such as `/api/...`; if empty, applies to all API endpoints | (empty = all API) |
 
 A least-privilege example, scoped to the role Netwrix Auditor actually needs (see
-[Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/ad/apirole.md)
+[Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md)
 for the equivalent `netwrix_rest_role` API paths), is preferred over a blanket `full-access:all`
 grant in production. You do not have to build the string by hand — ONTAP provides a helper command:
 
@@ -134,9 +134,9 @@ before finalizing these values.
 
 ## Related Topics
 
-- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/overview.md)
-- [ADFS](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/adfs.md)
-- [OKTA](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/okta.md)
-- [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/ad/apirole.md)
+- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
+- [ADFS](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/30adfs.md)
+- [OKTA](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/40okta.md)
+- [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md)
 - [security oauth2 client create — CLI reference](https://docs.netapp.com/us-en/ontap-cli/security-oauth2-client-create.html)
 - [OAuth 2.0 deployment scenarios — Summary of configuration parameters](https://docs.netapp.com/us-en/ontap/authentication/oauth2-deployment-scenarios.html#summary-of-the-configuration-parameters)

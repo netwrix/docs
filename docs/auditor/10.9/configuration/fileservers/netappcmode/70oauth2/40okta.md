@@ -31,7 +31,7 @@ a **mandatory** step: Okta may require DPoP by default for some application type
 not support it and expects a plain bearer token — a DPoP-bound token will not pass validation.
 
 **Step 4 –** Deliver the self-contained scope (see
-[Self-Contained Scope Format](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/ontap.md#self-contained-scope-format))
+[Self-Contained Scope Format](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md#self-contained-scope-format))
 to the token. Okta scope names are subject to OAuth 2.0 spec restrictions, and it is not
 documented whether `/` is safe in a scope name, so there are two ways to deliver it:
 
@@ -67,7 +67,7 @@ documented whether `/` is safe in a scope name, so there are two ways to deliver
 
 **Step 5 –** Create the OAuth 2.0 client configuration, either with remote introspection or with
 local JWKS validation. For a full description of every parameter, see
-[Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/ontap.md).
+[Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md).
 This section uses authorization model A (self-contained scope) — no `security login` steps are
 required.
 
@@ -117,6 +117,6 @@ sub : <client-id>
 
 ## Related Topics
 
-- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/overview.md)
-- [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/ontap.md)
+- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
+- [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
 - [Okta Authorization Servers documentation](https://help.okta.com/en-us/content/topics/security/api/authorization-servers.htm)

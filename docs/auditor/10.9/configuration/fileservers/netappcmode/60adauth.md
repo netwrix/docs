@@ -11,7 +11,7 @@ NetApp. If you want to use an AD account for collecting data, enable it to acces
 ONTAP API.
 
 **IMPORTANT:** If you want to use OAuth 2.0 authetication insted of AD domain one skip this and
-follow [Configure OAUth 2.0](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/overview.md)
+follow [Configure OAUth 2.0](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
 
 **NOTE:** In ONTAP 9.10 and higher, it isn't possible to assign ONTAPI role (e.g. netwrix_role) and
 RESTAPI role (e.g. netwrix_rest_role) to one AD user. To allow a user access to both the ONTAPI and
