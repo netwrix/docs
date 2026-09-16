@@ -1,8 +1,8 @@
 ---
-title: "ADFS"
+title: "Configure AD FS"
 description: "Configure AD FS as an Authentication Provider"
 sidebar_position: 30
-slug: /configuration/fileservers/netappcmode/oauth2adfs
+slug: /configuration/fileservers/netappcmode/oauth2/30adfs
 ---
 
 # ADFS
@@ -69,19 +69,11 @@ this is the historical WS-Trust identifier that AD FS places in `iss` even for O
 
 ## Configure ONTAP
 
-**Step 7 –** Install the AD FS root CA certificate on ONTAP (if it is internal or self-signed) and
-create the OAuth 2.0 client configuration:
-
+Register the authorization server on the cluster (create provider configuration)
 ```
-cluster1::> security certificate install -type server-ca -vserver <admin-svm>
-
-cluster1::> security oauth2 client create -config-name Adfs -provider adfs \
-  -issuer http://<adfs-host>/adfs/services/trust \
-  -audience https://netapp \
-  -provider-jwks-uri https://<adfs-host>/adfs/discovery/keys \
-  -application http -use-mutual-tls none \
-  -use-local-roles-if-present true -remote-user-claim appid
+security oauth2 client create -config-name adfs -application http -issuer http://<adfs-host>/adfs/services/trust -audience api://netapp -provider-jwks-uri https://<adfs-host>/adfs/discovery/keys -use-local-roles-if-present true -provider adfs -use-mutual-tls none
 ```
+
 
 where `<adfs-host>` is your AD FS federation service name. For a full description of every
 parameter, see
@@ -110,8 +102,6 @@ prompts for a password twice, but the password itself is not used in the OAuth 2
 **Step 9 –** Enable OAuth 2.0 and verify:
 
 ```
-cluster1::> security oauth2 modify -enabled true
-cluster1::> security oauth2 show
 cluster1::> security oauth2 client show
 cluster1::> security login show
 ```

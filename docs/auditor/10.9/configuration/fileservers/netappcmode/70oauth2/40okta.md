@@ -1,8 +1,8 @@
 ---
-title: "OKTA"
+title: "Configure Okta"
 description: "Configure Okta as an Authentication Provider"
 sidebar_position: 40
-slug: /configuration/fileservers/netappcmode/oauth2okta
+slug: /configuration/fileservers/netappcmode/oauth2/40okta
 ---
 
 # OKTA
@@ -71,28 +71,11 @@ local JWKS validation. For a full description of every parameter, see
 This section uses authorization model A (self-contained scope) — no `security login` steps are
 required.
 
-Introspection:
-
-```
-cluster1::> security oauth2 client create -config-name Okta \
-  -issuer https://<okta-org>.okta.com/oauth2/default \
-  -audience api://default \
-  -client-id <client-id> \
-  -introspection-endpoint https://<okta-org>.okta.com/oauth2/default/v1/introspect \
-  -introspection-interval 0s \
-  -application http -use-mutual-tls none
-```
-
-**NOTE:** The CLI prompts `Enter the client secret for remote introspection:` twice.
-
 Local JWKS validation:
 
+Register the authorization server on the cluster (create provider configuration)
 ```
-cluster1::> security oauth2 client create -config-name Okta \
-  -issuer https://<okta-org>.okta.com/oauth2/default \
-  -audience api://default \
-  -provider-jwks-uri https://<okta-org>.okta.com/oauth2/default/v1/keys \
-  -application http -use-mutual-tls none
+security oauth2 client create -config-name okta -application http -issuer https://<your-domain>.okta.com/oauth2/default -provider-jwks-uri  https://<your-domain>.okta.com/oauth2/default/v1/keys -use-local-roles-if-present true -provider basic -use-mutual-tls none
 ```
 
 **Step 6 –** Enable OAuth 2.0 and verify:
