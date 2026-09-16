@@ -4,7 +4,7 @@ description: Let Access Analyzer obtain and renew its TLS certificate automatica
 sidebar_position: 4.6
 ---
 
-The `adcs` mode hands certificate issuance and renewal to your own Active Directory Certificate Services (AD CS) enterprise certificate authority (CA), instead of a manual certificate you rotate by hand or a public CA like Let's Encrypt. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the full list of automatic modes and how they compare.
+The `adcs` mode hands certificate issuance and renewal to your own Active Directory Certificate Services (AD CS) enterprise certificate authority (CA), instead of a certificate you rotate by hand or one from a public CA like Let's Encrypt. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the full list of automatic modes and how they compare.
 
 cert-manager submits enrollment requests to your AD CS server's `/certsrv` web enrollment endpoint using NT LAN Manager (NTLM) authentication. The certificate AD CS issues lands at the same location Access Analyzer already reads its TLS certificate from, and cert-manager renews it before it expires — no maintenance window, no `update-cert` runs.
 
@@ -58,7 +58,7 @@ sudo -E dspm-installer \
 - Setting the password through the environment variable instead of `--adcs-password` keeps it out of shell history and process listings.
 - `--generate-self-signed-cert` provides the bootstrap certificate.
 
-The install proceeds exactly as described in [Install Access Analyzer](run-the-installer.md). When the services are up, the cluster requests the certificate from your AD CS server; issuance typically completes within a minute or two. Browsers connecting during that window see the self-signed bootstrap certificate and show a trust warning — the warning stops when the AD CS certificate is in place.
+The install proceeds exactly as [Install Access Analyzer](run-the-installer.md) describes. When the services are up, the cluster requests the certificate from your AD CS server; issuance typically completes within a minute or two. Browsers connecting during that window see the self-signed bootstrap certificate and show a trust warning — the warning stops when the AD CS certificate is in place.
 
 :::note
 The installer doesn't save the issuance mode to `/etc/dspm/installer.yaml`. Every installer run uses exactly the `--cert-manager-issuer-mode` you pass it; omitting the flag means manual certificates. Upgrading never changes the mode.

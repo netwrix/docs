@@ -22,7 +22,7 @@ This page covers the `acme` mode. For `adcs`, see [AD CS TLS Certificates](adcs-
 
 The nonprofit Internet Security Research Group operates [Let's Encrypt](https://letsencrypt.org), a free, publicly trusted certificate authority (CA). There are no fees and no account to create ahead of time — you only provide an email address for expiry and incident notices. All mainstream browsers and operating systems trust its certificates, so users see no certificate warnings.
 
-Let's Encrypt issues certificates over ACME (Automatic Certificate Management Environment), an open protocol in which the certificate authority verifies that you control the domain before issuing. Access Analyzer uses the HTTP-01 challenge: the certificate authority connects to `http://<hostname>/.well-known/acme-challenge/<token>` on port 80 and checks for a response only your server could produce. The cluster answers this challenge automatically — you never handle the token.
+Let's Encrypt issues certificates over Automatic Certificate Management Environment (ACME), an open protocol in which the certificate authority verifies that you control the domain before issuing. Access Analyzer uses the HTTP-01 challenge: the certificate authority connects to `http://<hostname>/.well-known/acme-challenge/<token>` on port 80 and checks for a response only your server could produce. The cluster answers this challenge automatically — you never handle the token.
 
 Certificates are valid for 90 days and Access Analyzer renews them automatically 30 days before expiry, using the same challenge. As long as your DNS record and firewall rules stay in place, no one has to update the certificate again.
 
@@ -63,7 +63,7 @@ sudo -E dspm-installer \
 
 Each flag also has an environment variable (`CERT_MANAGER_ISSUER_MODE`, `ACME_EMAIL`, `ACME_SERVER`), listed in the [Installer reference](installer-reference.md).
 
-The install proceeds exactly as described in [Install Access Analyzer](run-the-installer.md). When the services are up, the cluster requests the certificate from Let's Encrypt; issuance typically completes within a minute or two. Browsers connecting during that window see the self-signed bootstrap certificate and show a trust warning — the warning stops when the Let's Encrypt certificate is in place.
+The install proceeds exactly as [Install Access Analyzer](run-the-installer.md) describes. When the services are up, the cluster requests the certificate from Let's Encrypt; issuance typically completes within a minute or two. Browsers connecting during that window see the self-signed bootstrap certificate and show a trust warning — the warning stops when the Let's Encrypt certificate is in place.
 
 :::note
 The installer doesn't save the issuance mode to `/etc/dspm/installer.yaml`. Every installer run uses exactly the `--cert-manager-issuer-mode` you pass it; omitting the flag means manual certificates. Upgrading never changes the mode.
@@ -78,7 +78,7 @@ openssl s_client -connect <hostname>:443 -servername <hostname> </dev/null 2>/de
   | openssl x509 -noout -subject -issuer -dates
 ```
 
-The issuer should name Let's Encrypt (for example `issuer=C=US, O=Let's Encrypt, CN=...`), and the dates should show a 90-day window. If the issuer is still your own hostname, the bootstrap certificate is still serving — see the next section.
+The issuer should name Let's Encrypt (for example `issuer=C=US, O=Let's Encrypt, CN=...`), and the dates should show a 90-day window. If the issuer is still your own hostname, the bootstrap certificate is still serving — see [If the certificate stays pending](#if-the-certificate-stays-pending).
 
 ## If the certificate stays pending
 
