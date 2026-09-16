@@ -148,6 +148,26 @@ This caching behavior is specific to the legacy communication flow. The 2608 ser
 
 ---
 
+### Can't Log In After Migration Due to Two-Factor Authentication
+
+**Symptom:** After restoring the backup on the new 2608 server, an administrator with Two-Factor Authentication (2FA) enabled can't log in.
+
+**Cause:** In some cases, a System Configuration Backup created while 2FA was enabled doesn't restore administrator access correctly on the new server.
+
+**Resolution:** Contact Netwrix Support to regain access. To avoid this on future migrations, disable 2FA for all administrator accounts before you create the System Configuration Backup, and re-enable it only after you confirm the new server works correctly.
+
+---
+
+### Denylists and Allowlists Not Working After Migration
+
+**Symptom:** After restoring the backup, one or more Denylists or Allowlists dictionaries don't display correctly, or policies that rely on them don't apply as expected.
+
+**Cause:** In some cases, a Denylists or Allowlists dictionary restored from a System Configuration Backup doesn't import correctly.
+
+**Resolution:** Review each dictionary under **Denylists and Allowlists** to confirm it imported correctly, and test any policy that relies on it. If a dictionary doesn't display or apply correctly, export it from the old server (if still available) and re-upload it to the new server, then re-test.
+
+---
+
 ### Recurring HTTP 500 Errors Resolved Only by a Full Reboot
 
 **Symptom:** The EPP Server UI intermittently returns HTTP 500 errors, recurring every 1–3 days. Server load average is very high (600+) even though CPU and RAM aren't fully used. Restarting individual services doesn't resolve the error — only a full server reboot restores UI access, until the issue recurs.
