@@ -48,48 +48,65 @@ The following permissions are required for the account on the Netwrix Auditor se
 See Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section for
 additional information.
 
-_Remember,_ that you can also assign the built-in vsadmin role instead of the permissions above.
+_Remember,_ that you can also assign the built-in admin\vsadmin role instead of the permissions above.
 
-## Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access
+
+## Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9
 
 **NOTE:** This article applies to NetApp 8.3.2 and later. You must be a **cluster administrator** to
 run the commands below.
 
-Follow the steps to create a role for enabling AD user access:
+**Step 1 –** Create a new role on SVM
 
-**Step 1 –** Create a new role (e.g., netwrix_role for ONTAPI and netwrix_rest_role for RESTAPI) on
-your SVM (e.g., svm1). For example:
+### Create the RESTAPI role
+The commands below create the REST API role 'newtrix_rest_role' on the SVM 'svm_name'
 
-Create ONTAPI role:
-
-```
-security login role create -role netwrix_role -cmddirname version -access readonly -vserver svm1
-security login role create -role netwrix_role -cmddirname volume -access readonly -vserver svm1
-security login role create -role netwrix_role -cmddirname "vserver audit" -access all -vserver svm1
-security login role create -role netwrix_role -cmddirname "vserver audit rotate-log" -access all -vserver svm1
-```
-
-**NOTE:** This option is required for auto audit configuration.
+**NOTE:** When AD domain authentication is used, 'svm_name' is the name of NetApp SVM with SMB shares, e.g. 'svm1'
+If OAuth 2.0 is used, 'svm_name' is the name of NetApp Management SVM, e.g. 'Cluster1'
 
 ```
-security login role create -role netwrix_role -cmddirname "vserver cifs" -access readonly -vserver svm1
+security login rest-role create -role netwrix_rest_role -api /api/svm/svms -access read_create_modify -vserver svm_name 
 ```
-
-Create RESTAPI role:
-
 ```
-security login rest-role create -role netwrix_rest_role -api /api/svm/svms -access read_create_modify -vserver svm1 
-security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access read_create_modify -vserver svm1 
-security login rest-role create -role netwrix_rest_role -api /api/storage/volumes -access readonly -vserver svm1 
-security login rest-role create -role netwrix_rest_role -api /api/protocols/cifs/shares -access readonly -vserver svm1
+security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access read_create_modify -vserver svm_name 
+```
+```
+security login rest-role create -role netwrix_rest_role -api /api/storage/volumes -access readonly -vserver svm_name
+```
+```
+security login rest-role create -role netwrix_rest_role -api /api/protocols/cifs/shares -access readonly -vserver svm_name
 ```
 
 **NOTE:** The commands in the first two lines above can be used on NetApp versions 9.11+. In earlier
 versions, use the following commands:
 
 ```
-security login rest-role create -role netwrix_rest_role -api /api/svm/svms -access all -vserver svm1
-security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access all -vserver svm1
+security login rest-role create -role netwrix_rest_role -api /api/svm/svms -access all -vserver svm_name
+```
+```
+security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access all -vserver svm_name
+```
+
+### Create the ONTAPI role
+The commands below create REST API role "newtrix_role" on SVM "svm_name"
+
+```
+security login role create -role netwrix_role -cmddirname version -access readonly -vserver svm_name
+```
+```
+security login role create -role netwrix_role -cmddirname volume -access readonly -vserver svm_name
+```
+```
+security login role create -role netwrix_role -cmddirname "vserver audit" -access all -vserver svm_name
+```
+```
+security login role create -role netwrix_role -cmddirname "vserver audit rotate-log" -access all -vserver svm_name
+```
+
+**NOTE:** This option is required for auto audit configuration.
+
+```
+security login role create -role netwrix_role -cmddirname "vserver cifs" -access readonly -vserver svm_name
 ```
 
 **Step 2 –** The capabilities must be assigned one by one. To review currently applied capabilities,
@@ -98,13 +115,13 @@ you can use the following command:
 ONTAPI role:
 
 ```
-security login role show -vserver svm1 -role netwrix_role
+security login role show -vserver svm_name -role netwrix_role
 ```
 
 RESTAPI role:
 
 ```
-security login rest-role show -vserver svm1 -role netwrix_rest_role
+security login rest-role show -vserver svm_name -role netwrix_rest_role
 ```
 
 _Remember,_ that to be able to add event policy for NetApp, the role you set up for working with
