@@ -34,9 +34,9 @@ For more details see [Overview of the ONTAP OAuth 2.0 implementation](https://do
 
 ## Related Topics
 
-- [Configure OAuth 2.0 on the ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/ontap.md)
-- [Configure AD FS](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/adfs.md)
-- [Configure Okta](/docs/auditor/10.9/configuration/fileservers/netappcmode/apiaccess/oauth2/okta.md)
+- [Configure OAuth 2.0 on the ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
+- [Configure AD FS](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/30adfs.md)
+- [Configure Okta](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/40okta.md)
 - [Overview of the ONTAP OAuth 2.0 implementation](https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html)
 - [OAuth 2.0 deployment scenarios](https://docs.netapp.com/us-en/ontap/authentication/oauth2-deployment-scenarios.html)
 - [Prepare to deploy OAuth 2.0](https://docs.netapp.com/us-en/ontap/authentication/oauth2-prepare.html)
