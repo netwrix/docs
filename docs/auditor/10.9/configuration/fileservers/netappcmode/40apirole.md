@@ -65,8 +65,8 @@ run the commands below.
 ### Create the RESTAPI role
 The commands below create the REST API role `netwrix_rest_role` on the SVM `svm_name`.
 
-**NOTE:** When AD domain authentication is used, 'svm_name' is the name of NetApp SVM with SMB shares, e.g. 'svm1'
-If OAuth 2.0 is used, 'svm_name' is the name of NetApp Management SVM, e.g. 'Cluster1'
+**NOTE:** When AD domain authentication is used, 'svm_name' is the name of NetApp SVM with SMB shares, e.g. 'svm1'.
+If OAuth 2.0 is used, 'svm_name' is the name of NetApp Management SVM, e.g. 'Cluster1'.
 
 ```
 security login rest-role create -role netwrix_rest_role -api /api/svm/svms -access read_create_modify -vserver svm_name 

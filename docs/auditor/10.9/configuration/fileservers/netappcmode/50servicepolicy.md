@@ -31,9 +31,9 @@ Example output:
     svm1 lif_svm1_126 default-data-files
     svm1 lif_svm1_349 default-data-files
 
-Where `svm1 `– is the name of your SVM,
+Where `svm1` is the name of your SVM.
 
-The `lif_svm1_126 and lif_svm1_349` parameter is the `svm1` logical interface.
+The `lif_svm1_126` and `lif_svm1_349` parameters are the `svm1` logical interfaces.
 The `default-data-files` parameter is the service-policy applied to lif-s.
 
 3. To display the services available through the '`default-data-files`' policy, run the following
@@ -55,7 +55,7 @@ following command:
 ```
 set -privilege advanced
 ```
-**Remember** The command prompt should be changed to “`cluster1::*>`”
+**Remember:** The command prompt should be changed to “`cluster1::*>`”
 
 5. Clone the existing '`default-data-files`' LIF policy to be able to use shares with a new
 service-policy. Run the following command:

@@ -112,7 +112,7 @@ The following table lists the actions that can be performed on NetApp:
 | Remove (failed attempt)  | +    | +      | –     |
 | Copied                   | –    | –      | –     |
 
-Actions marked with an asterisks (\*) are reported for NetApp Clustered Data ONTAP 8 and ONTAP 9
+Actions marked with an asterisk (\*) are reported for NetApp Clustered Data ONTAP 8 and ONTAP 9
 only.
 
 ## Configure NetApp Clustered Data ONTAP 8 and ONTAP 9 for Monitoring
@@ -137,7 +137,7 @@ the following administration and management guides.
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Clustered Data ONTAP 8.2         | <ul><li>[Clustered Data ONTAP® 8.2 File Access and Protocols Management Guide](https://library.netapp.com/ecm/ecm_download_file/ECMP1196891)</li><li>[Clustered Data ONTAP® 8.2 System Administration Guide for SVM Administrators](https://library.netapp.com/ecm/ecm_download_file/ECMP1368704)</li></ul> |
 | Clustered Data ONTAP 8.3         | <ul><li>[Clustered Data ONTAP® 8.3 System Administration Guide for Cluster Administrators](https://library.netapp.com/ecm/ecm_get_file/ECMP1636037)</li><li>[Clustered Data ONTAP® 8.3 File Access Management Guide for CIFS](https://library.netapp.com/ecm/ecm_download_file/ECMP1610207)</li></ul>       |
-| ONTAP 9.0 <ul><li>9.10</li></ul> | <ul><li>[ONTAP 9 Documentation Center](http://docs.netapp.com/ontap-9/index.jsp)</li></ul>                                                                                                                                                                                                                  |
+| ONTAP 9.0 – 9.10                 | <ul><li>[ONTAP 9 Documentation Center](http://docs.netapp.com/ontap-9/index.jsp)</li></ul>                                                                                                                                                                                                                  |
 
 
 Perform the following steps before proceeding with the audit configuration.

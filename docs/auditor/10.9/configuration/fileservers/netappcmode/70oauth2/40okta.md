@@ -49,8 +49,8 @@ app.clientId == "<app-id>" ? "ontap-role-netwrix_rest_role" : "ontap:*:no-access
 Replace `<app-id>` with the **Client ID** of the Netwrix Auditor application (Step 2). If the
 Client ID matches, the claim resolves to `ontap-role-netwrix_rest_role`, which maps to the local
 ONTAP role name `netwrix_rest_role` created on `Step 4` in
-[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
-For ONTAP details refer [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html)
+[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md).
+For ONTAP details, refer to [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html).
 For every other application, the claim resolves to `ontap:*:no-access:none:*:`, which grants no access.
 
 **NOTE:** The `ontap-role-<role-name>` format maps the claim to a local ONTAP role instead of a
