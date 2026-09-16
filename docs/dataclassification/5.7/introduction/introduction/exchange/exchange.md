@@ -69,7 +69,7 @@ set up Application Impersonation.
 
 ## Modern Authentication
 
-Starting with version 5.5.3, Netwrix Data Classification allows for crawling Microsoft Exchange
+Starting with version 5.5.3, Netwrix Data Classification can crawl Microsoft Exchange
 Online organization mailboxes using Modern authentication. For that, it uses an Azure AD application
 that connects to the Exchange Online organization through the Microsoft API.
 

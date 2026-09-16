@@ -31,7 +31,7 @@ Classification resides. If not, download it from Microsoft website:
 - If you upgrade a Distributed Query Server (DQS) environment, stop all services on all instances before upgrading any instance. 
 
 :::warning
-If any services are running while the upgrade occurs, database schema updates may fail to apply correctly. If this occurs, Netwrix recommends contacting Netwrix Support for assistance with remediation.
+If any services are running while the upgrade occurs, database schema updates may fail to apply correctly. If this occurs, Netwrix recommends contacting Netwrix Support for help.
 :::
 
 **Step 4 –** Back up the Index files. Locate the folder containing the index files (the default location is _C:\Program

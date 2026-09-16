@@ -57,7 +57,7 @@ To use this authentication type, specify the following:
 
 ## Other configuration settings
 
-The following settings are also required in both cases:
+Both authentication types also require the following settings:
 
 | Option           | Description                                                                                                                                                                                                                                                                                                                                                                       |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

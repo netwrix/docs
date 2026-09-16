@@ -6,7 +6,7 @@ sidebar_position: 35
 
 # Exchange Mailbox (Graph)
 
-Use the Exchange Mailbox (Graph) source to crawl and classify content stored in a single Exchange Online mailbox using the Microsoft Graph API. For on-premises Exchange mailboxes, [Exchange Mailbox (EWS)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailboxews.md).
+Use the Exchange Mailbox (Graph) source to crawl and classify content stored in a single Exchange Online mailbox using the Microsoft Graph API. For on-premises Exchange mailboxes, use [Exchange Mailbox (EWS)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailboxews.md) instead.
 
 **Step 1 –** In Netwrix Data Classification management console, open the **Sources** view and click
 **Add**.

@@ -36,5 +36,5 @@ The **Sources** section lists all your content sources.
 When adding a source or managing source configuration, the console displays the most commonly used
 source settings by default. However, some source types have additional configuration options
 that appear when you click the Advanced Settings ("wrench" icon). You can
-set the Advanced Settings to display by default in User Preferences, accessible by clicking on the username.
+set the Advanced Settings to display by default in User Preferences, which you open by clicking the username.
 :::

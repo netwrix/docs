@@ -9,18 +9,18 @@ sidebar_position: 40
 For the various Exchange sources, you can configure the list of folders/emails to exclude from
 processing. Do the following:
 
-1. In the management console, click **Sources** →**Exchange Mailbox (EWS)** or **Exchange Mailbox (Graph)**, then the Collection Exclusion page
-   will be displayed.
+1. In the management console, click **Sources** →**Exchange Mailbox (EWS)** or **Exchange Mailbox (Graph)**. The Collection Exclusion page
+   appears.
 2. To create an exclusion, click **Add**.
 3. ![boxexclusions](/images/dataclassification/5.7/admin/sources/database/boxexclusions.webp)
 4. In the **Details** window, on the **Filter** tab enter the name of the entity to exclude.
    Consider the following:
 
-    - If you specify a folder name (e.g. “Drafts”) with no wildcards, then any folders with
-      that specific name will be excluded.
+    - If you specify a folder name (e.g. “Drafts”) with no wildcards, then the product excludes
+      any folders with that specific name.
     
     :::note
-    Adding an exclusion of this type will match any folders with the name provided, wherever they are within any mailbox.
+    Adding an exclusion of this type will match any folders with the name you provide, wherever they are within any mailbox.
     :::
     
     - When you wrap the exclusion in wildcard indicators (e.g. “\*Deleted\*”), the system will match any folder/email
@@ -32,16 +32,16 @@ processing. Do the following:
     :::
 
 
-5. If needed, you can use metadata conditions to restrict when an exclusion filter should be
-   applied. For that, click **Condition** tab and click **Add**. Then select how the exclusion
+5. If needed, you can use metadata conditions to restrict when the product applies an exclusion
+   filter. For that, click **Condition** tab and click **Add**. Then select how the exclusion
    conditions will work: it can check if metadata field of the document has any value, isn't
    specified, or matches a specific metadata value.
 
     | Criteria      | Condition                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
     | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Comparison    | Compare a value in the document metadata field with the value set by condition. With this criteria selected, you will then need to specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
-    | Has any value | Exclude the document if its metadata field has any value. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
-    | Has no values | Exclude the document if metadata field value isn't specified. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
+    | Comparison    | Compare a value in the document metadata field with the value the condition sets. When you select this criteria, specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
+    | Has any value | Exclude the document if its metadata field has any value. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
+    | Has no values | Exclude the document if metadata field value isn't specified. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
 
     When finished, click **Add**.
 
