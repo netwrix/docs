@@ -97,3 +97,5 @@ The following best practices come from the complete migration workflow and apply
 | 48 | Don't assume a coinciding SIEM or Audit issue is the cause of a CPU spike without evidence — both operate independently of client check-in load. |
 | 49 | If migrating from an older server version, review your SIEM parser configuration against the current syslog export content — recent releases added new fields and data to the export, and an outdated parser may not capture them. |
 | 50 | If your environment uses eDiscovery with Scan Locations configured, edit, and re-save every such policy after migration — restored policies silently ignore Scan Locations and scan the full disk instead, with no error reported. |
+| 51 | Disable Two-Factor Authentication (2FA) for all administrator accounts before creating the System Configuration Backup, and re-enable it only after you confirm the new server works correctly. |
+| 52 | Review Denylists and Allowlists dictionaries after migration to confirm they imported correctly and that policies relying on them still apply as expected. |
