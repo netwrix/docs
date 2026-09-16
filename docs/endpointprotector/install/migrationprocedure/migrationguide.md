@@ -4,7 +4,7 @@ description: "Netwrix Endpoint Protector — Server Migration & Upgrade Guide"
 sidebar_position: 10
 ---
 
-<small><em>Document version: 3.1</em></small>
+<small><em>Document version: 3.2</em></small>
 
 ---
 

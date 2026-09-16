@@ -4,7 +4,7 @@ description: "Netwrix Endpoint Protector — migrating a 2509–2604 image-based
 sidebar_position: 13
 ---
 
-<small><em>Document version: 1.1</em></small>
+<small><em>Document version: 1.2</em></small>
 
 ---
 
@@ -130,6 +130,14 @@ In AWS, the system queues snapshots and doesn't take them instantly. Verify the 
 
 :::tip
 Keep the VM snapshot active until you have fully validated the new 2608 environment and are ready to decommission the old server. This is your rollback path.
+:::
+
+:::warning
+Disable Two-Factor Authentication (2FA) for all administrator accounts before you create the
+System Configuration Backup in Step 2. Re-enable 2FA only after you restore the backup and confirm
+the new 2608 server works correctly — see
+[Re-Enabling Two-Factor Authentication](#re-enabling-two-factor-authentication) in Post-Migration
+Verification.
 :::
 
 **Step 2 — Create a System Configuration Backup (in the EPP Console):**
@@ -311,6 +319,12 @@ Complete all items in this checklist after you finish the migration.
 | Server responds to browser access | `https://<server>:443` loads normally |
 | License imported successfully and active | System Configuration → System Licensing |
 
+### Re-Enabling Two-Factor Authentication
+
+After you confirm the new server works correctly (responds normally, license is active, and
+endpoints check in), re-enable Two-Factor Authentication (2FA) for each administrator account you
+disabled before migration.
+
 ### Restoring Client Connectivity
 
 After you verify the restore and upload the client packages (see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade)):
@@ -367,6 +381,17 @@ If you use Content Aware Protection, this check is recommended after restore:
 1. Test each active CAP policy against a known-blocked transfer to confirm it still triggers.
 2. If a policy doesn't trigger, open it, edit it, and save it — even without changing anything — to redistribute it to endpoints.
 3. Re-test to confirm the policy now triggers correctly.
+
+### Denylists and Allowlists Dictionary Verification
+
+After migration, verify that Denylists and Allowlists dictionaries imported correctly and that
+policies relying on them still work as expected.
+
+1. Navigate to **Denylists and Allowlists** and review each dictionary for correct content.
+2. Test each policy that relies on a Denylist or Allowlist dictionary to confirm it still applies
+   correctly.
+3. If a dictionary doesn't display or apply correctly, export it from the old server (if still
+   available) and re-upload it to the new server, then re-test.
 
 ### DPI / CAP Functionality Verification
 
