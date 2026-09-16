@@ -1,6 +1,6 @@
 ---
 title: "Create NetApp API role"
-description: "PCreate NetApp API role"
+description: "Create NetApp API role"
 sidebar_position: 40
 ---
 
@@ -10,7 +10,8 @@ Before you start creating a monitoring plan to audit your NetApp file storage sy
 account that will be used for data collection – it should meet the requirements listed below.
 
 If you want to authenticate with AD user account, you must enable it to access SVM through ONTAPI.
-See the Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section
+See [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9)
+below, and [Configure AD domain authentication](/docs/auditor/10.9/configuration/fileservers/netappcmode/60adauth.md)
 for additional information.
 
 The following permissions are required for the account on the target server:
@@ -35,7 +36,8 @@ The following permissions are required for the account on the target server:
     - Delete permission on the audit log folder content.
 
 - To connect to NetApp Clustered Data ONTAP 8 or ONTAP 9, an account must be assigned a custom role
-  (e.g., fsa_role) on SVM that has the following capabilities with access query levels:
+  (for example, `netwrix_role`) on the Storage Virtual Machine (SVM) that has the following
+  capabilities with access query levels:
 
     |                                                                              |                                    |
     | ---------------------------------------------------------------------------- | ---------------------------------- |
@@ -45,10 +47,12 @@ The following permissions are required for the account on the Netwrix Auditor se
 
 - The account must be a member of the Local Administrators group.
 
-See Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section for
-additional information.
+See [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9)
+below, and
+[Configure AD domain authentication](/docs/auditor/10.9/configuration/fileservers/netappcmode/60adauth.md)
+for additional information.
 
-_Remember,_ that you can also assign the built-in admin\vsadmin role instead of the permissions above.
+**NOTE:** You can also assign the built-in `admin\vsadmin` role instead of the permissions above.
 
 
 ## Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9
@@ -59,7 +63,7 @@ run the commands below.
 **Step 1 –** Create a new role on SVM
 
 ### Create the RESTAPI role
-The commands below create the REST API role 'newtrix_rest_role' on the SVM 'svm_name'
+The commands below create the REST API role `netwrix_rest_role` on the SVM `svm_name`.
 
 **NOTE:** When AD domain authentication is used, 'svm_name' is the name of NetApp SVM with SMB shares, e.g. 'svm1'
 If OAuth 2.0 is used, 'svm_name' is the name of NetApp Management SVM, e.g. 'Cluster1'
@@ -88,7 +92,7 @@ security login rest-role create -role netwrix_rest_role -api /api/protocols/audi
 ```
 
 ### Create the ONTAPI role
-The commands below create REST API role "newtrix_role" on SVM "svm_name"
+The commands below create the ONTAPI role `netwrix_role` on the SVM `svm_name`.
 
 ```
 security login role create -role netwrix_role -cmddirname version -access readonly -vserver svm_name
@@ -124,7 +128,7 @@ RESTAPI role:
 security login rest-role show -vserver svm_name -role netwrix_rest_role
 ```
 
-_Remember,_ that to be able to add event policy for NetApp, the role you set up for working with
+**NOTE:** To be able to add an event policy for NetApp, the role you set up for working with
 ONTAPI must have the following attributes:
 
 - version readonly

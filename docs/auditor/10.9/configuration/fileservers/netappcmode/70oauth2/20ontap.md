@@ -36,19 +36,7 @@ vserver show -type admin
 To create a role, please refer to [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md).
 
 
-**Step 5 –** Register the authorization server on the cluster (creat provider configuration)
-
-### AD FS
-```
-security oauth2 client create -config-name adfs -application http -issuer http://<adfs-host>/adfs/services/trust -audience api://netapp -provider-jwks-uri https://<adfs-host>/adfs/discovery/keys -use-local-roles-if-present true -provider adfs -use-mutual-tls none
-```
-
-### Okta
-```
-security oauth2 client create -config-name okta -application http -issuer https://<your-domain>.okta.com/oauth2/default -provider-jwks-uri  https://<your-domain>.okta.com/oauth2/default/v1/keys -use-local-roles-if-present true -provider basic -use-mutual-tls none
-```
-
-**Step 6 –** Verify the configuration:
+**Step 5 –** Verify the configuration:
 
 ```
 cluster1::> security oauth2 show
@@ -56,12 +44,7 @@ cluster1::> security oauth2 show
 ```
 cluster1::> security oauth2 client show
 ```
-```
-cluster1::> security login show
-```
-```
-cluster1::> security login external-role-mapping show
-```
+
 
 ## Related Topics
 

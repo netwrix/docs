@@ -5,11 +5,19 @@ sidebar_position: 40
 slug: /configuration/fileservers/netappcmode/oauth2/40okta
 ---
 
-# OKTA
+# Configure Okta as an Authentication Provider
 
 Netwrix Auditor can obtain an OAuth 2.0 access token from Okta and present it to NetApp ONTAP
 REST API. Therefore, register Netwrix Auditor as an application in Okta, then configure ONTAP to
 trust tokens issued by your Okta org.
+
+## Prerequisites
+
+- An Okta org with administrator access to **Security → API → Authorization Servers** and
+  **Applications**.
+- A dedicated custom Authorization Server for this integration, recommended so its claims, scopes,
+  and access policies don't affect other applications in the same Okta org.
+- Cluster administrator access to ONTAP, to register the OAuth 2.0 client configuration.
 
 **NOTE:** Okta is **not** on NetApp's officially tested provider list for OAuth 2.0. It is
 configured here as a generic OAuth 2.0/OIDC-compliant authorization server, without a NetApp
@@ -18,9 +26,7 @@ support guarantee.
 ## Register Netwrix Auditor as an Application in Okta
 
 **Step 1 –** In the Okta Admin Console, go to **Security → API → Authorization Servers**. Use the
-`default` org authorization server, or create a dedicated custom server. **_RECOMMENDED:_** Use a
-custom authorization server dedicated to this integration, so its claims, scopes, and access
-policies do not affect other applications in the same Okta org.
+`default` org authorization server, or the dedicated custom server from Prerequisites.
 
 **Step 2 –** Go to **Applications → Applications → Create App Integration → API Services**. This
 application type is built for machine-to-machine scenarios (no Redirect URI or login flow fields,
@@ -30,76 +36,59 @@ unlike interactive types) and returns a **Client ID** and **Client Secret**.
 a **mandatory** step: Okta may require DPoP by default for some application types, but ONTAP does
 not support it and expects a plain bearer token — a DPoP-bound token will not pass validation.
 
-**Step 4 –** Deliver the self-contained scope (see
-[Self-Contained Scope Format](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md#self-contained-scope-format))
-to the token. Okta scope names are subject to OAuth 2.0 spec restrictions, and it is not
-documented whether `/` is safe in a scope name, so there are two ways to deliver it:
+**Step 4 –** Deliver the self-contained scope to the token as a custom claim. On the authorization
+server, go to the **Claims** tab → **Add Claim**. Set **Name** (for example `NetApp`, or `scp` to
+merge it into the standard scope claim), **Include in token type: Access Token**, **Value type:
+Expression**, and **Value** to a conditional expression that checks the requesting application's
+**Client ID**, so only Netwrix Auditor receives access and every other application on this
+Authorization Server is denied:
+```
+app.clientId == "<app-id>" ? "ontap-role-netwrix_rest_role" : "ontap:*:no-access:none:*:"
+```
 
-- **Method 1 — custom claim.** On the authorization server, go to the **Claims** tab → **Add
-  Claim**. Set Name (for example `NetApp`, or `scp` to merge it into the standard scope claim),
-  **Include in token type: Access Token**, **Value type: Expression**, **Value:** the literal
-  string in quotes, for example `"ontap:*:full-access:all:*:"`. Then, on the **Access Policies**
-  tab, make sure the rule for this application has a **No user** condition and allows the
-  relevant scope — Access Policy rules assume an interactive user by default, and without an
-  explicit **No user** condition Okta will refuse to issue a token to this application at all.
-- **Method 2 — custom scope named after the scope string** (confirmed to work). On the **Scopes**
-  tab → **Add Scope**, set Name to the self-contained scope string itself, for example
-  `ontap:*:full-access:all:*:` (colons are confirmed to work in Okta scope names; slashes are not
-  documented as safe — verify the scope saves without a validation error). Clear **require
-  consent** — irrelevant for client credentials, since there is no consent screen. On **Access
-  Policies**, allow this scope for the application (same **No user** condition as Method 1). The
-  Netwrix Auditor token request must then explicitly request
-  `scope=ontap:*:full-access:all:*:` — unlike Method 1, Okta only copies a scope into the `scp`
-  claim if the client explicitly requested it.
+Replace `<app-id>` with the **Client ID** of the Netwrix Auditor application (Step 2). If the
+Client ID matches, the claim resolves to `ontap-role-netwrix_rest_role`, which maps to the local
+ONTAP role name `netwrix_rest_role` created on `Step 4` in
+[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
+For ONTAP details refer [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html)
+For every other application, the claim resolves to `ontap:*:no-access:none:*:`, which grants no access.
 
-**_RECOMMENDED:_** Method 2 is the confirmed working configuration; use Method 1 as a fallback.
+**NOTE:** The `ontap-role-<role-name>` format maps the claim to a local ONTAP role instead of a
+self-contained scope, and requires `-use-local-roles-if-present true` on the OAuth 2.0 client
+configuration (Step 5). The referenced role must already exist on the cluster.
 
-## Reference Values
+Then, on the **Access Policies** tab, make sure the rule for this application has a **No user**
+condition and allows the relevant scope — Access Policy rules assume an interactive user by
+default, and without an explicit **No user** condition Okta will refuse to issue a token to this
+application at all.
 
-| Value | Okta |
-| --- | --- |
-| Issuer | `https://<okta-org>.okta.com/oauth2/default` |
-| Token Endpoint | `https://<okta-org>.okta.com/oauth2/default/v1/token` |
-| JWKS URI | `https://<okta-org>.okta.com/oauth2/default/v1/keys` |
-| Introspection endpoint | `https://<okta-org>.okta.com/oauth2/default/v1/introspect` — **supported** |
-
-## Configure ONTAP
-
-**Step 5 –** Create the OAuth 2.0 client configuration, either with remote introspection or with
-local JWKS validation. For a full description of every parameter, see
-[Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md).
-This section uses authorization model A (self-contained scope) — no `security login` steps are
-required.
-
-Local JWKS validation:
-
-Register the authorization server on the cluster (create provider configuration)
+**Step 5 –** Create the OAuth 2.0 client configuration, with local JWKS validation.
 ```
 security oauth2 client create -config-name okta -application http -issuer https://<your-domain>.okta.com/oauth2/default -provider-jwks-uri  https://<your-domain>.okta.com/oauth2/default/v1/keys -use-local-roles-if-present true -provider basic -use-mutual-tls none
 ```
 
 **Step 6 –** Enable OAuth 2.0 and verify:
-
 ```
-cluster1::> security oauth2 modify -enabled true
-cluster1::> security oauth2 show
-cluster1::> security oauth2 client show
+security oauth2 client show
 ```
 
-## Example Token
+## Reference Values
 
-A decoded Okta access token contains claims similar to:
+| Name | Netwrix | NetApp | Value |
+| --- | --- | --- | --- |
+| Client ID | Client ID | not used | `Client ID` from Step 2 |
+| Client secret | Client secret | not used | `Client secret` from Step 2 |
+| Issuer | not used | issuer | `https://<okta-org>.okta.com/oauth2/default` |
+| Token Endpoint | not used | not used | `https://<okta-org>.okta.com/oauth2/default/v1/token` |
+| Scope claim | Scope | not used | ontap-role-netwrix_rest_role |
+| JWKS URI | not used | provider-jwks-uri | `https://<okta-org>.okta.com/oauth2/default/v1/keys` |
 
-```
-iss : https://<okta-org>.okta.com/oauth2/default
-aud : api://default
-cid : <client-id>
-scp : {ontap:*:full-access:all:*:}
-sub : <client-id>
-```
+Where `<okta-org>` is your Okta org name, and `default` is the Authorization Server ID — replace it
+if you created a dedicated custom Authorization Server (Step 1).
 
 ## Related Topics
 
+- [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html)
 - [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
-- [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
+- [Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
 - [Okta Authorization Servers documentation](https://help.okta.com/en-us/content/topics/security/api/authorization-servers.htm)

@@ -21,7 +21,7 @@ Netwrix Auditor, and access can be revoked centrally at the IdP.
 
 For more details see [The OAuth 2.0 Authorization Framework](https://www.rfc-editor.org/info/rfc6749)
 
-# Limitations
+## Limitations
 
 1. OAuth 2.0 for NetApp audit has been tested with the following IdP:
   - Active Directory Federation Service (ADFS)
