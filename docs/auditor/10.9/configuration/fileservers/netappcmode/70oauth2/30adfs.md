@@ -51,20 +51,20 @@ are designed to evaluate conditions of an interactive sign-in (MFA, group member
 credentials there is no user at all, so the policy must simply permit the request, or no token
 will ever be issued.
 
-**Step 6 –** In the **Issurence Transform Roles** add a new rule. In the wizard select the template
+**Step 6 –** In the **Issuance Transform Rules** add a new rule. In the wizard select the template
 `Send Claims Using a Custom Rule`. In the next window set the **claim rule name**, e.g. `NetApp scope rule`.
-In the **Custom role** field insert ` => issue(Type = "scope", Value = "ontap-role-netwrix_relst_role");`
+In the **Custom rule** field insert ` => issue(Type = "scope", Value = "ontap-role-netwrix_rest_role");`
 
-Where `netwrix_rest_role` - Rest API role anme created on `Step 4` in 
-[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
-For details refer [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html)
+Where `netwrix_rest_role` is the REST API role name created in `Step 4` of
+[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md).
+For details, refer to [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html).
 
 **Step 7 –** Under **Application Permissions**, select the Web API scope you need — typically
 `openid`, and `allatclaims` if you want all configured claims (including `appid`, which the
 authorization model below depends on) to be included in the access token.
 
 
-**Step 9 –** Register the authorization server on the cluster (create provider configuration)
+**Step 8 –** Register the authorization server on the cluster (create provider configuration)
 ```
 security oauth2 client create -config-name adfs -application http -issuer http://<adfs-host>/adfs/services/trust -audience ontap-role-netwrix_rest_role -provider-jwks-uri https://<adfs-host>/adfs/discovery/keys -use-local-roles-if-present true -provider adfs -use-mutual-tls none
 ```
@@ -77,9 +77,9 @@ cluster1::> security oauth2 client show
 ## Reference Values
 
 | Name | Netwrix | NetApp | Value |
-| --- | --- |--- |
-| Client ID | Cliet ID | not used | `Client identifier` from `Step 2` |
-| Client secret | Cliet secret | not used | `shared secret` from `Step 3` |
+| --- | --- | --- | --- |
+| Client ID | Client ID | not used | `Client identifier` from `Step 2` |
+| Client secret | Client secret | not used | `shared secret` from `Step 3` |
 | Issuer | not used | issuer | `http://<adfs-host>/adfs/services/trust` |
 | Token Endpoint | not used | not used | `https://<adfs-host>/adfs/oauth2/token` |
 | Scope claim | Scope | audience | `ontap-role-netwrix_rest_role` |

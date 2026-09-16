@@ -22,7 +22,7 @@ example:
 vserver audit create -destination /audit -vserver svm1
 ```
 
-In the example above, the creates audit configuration for `svm1` on the volume `/audit`
+In the example above, this creates the audit configuration for `svm1` on the volume `/audit`.
 Netwrix Auditor accesses audit logs via file shares. Ensure the volume you specified is
 mounted on SVM and shared (e.g., `audit$` or `c$\audit` and its path is `/audit`).
 
@@ -55,7 +55,7 @@ vserver audit modify -events file-ops -vserver svm1
 vserver audit modify -rotate-size 300MB -vserver svm1
 ```
 
-300MB is the recommended maximum log size proceeding from performance evaluations. Ensure
+300MB is the recommended maximum log size based on performance evaluations. Ensure
 there is enough disk space allocated for the security logs archives. Depending on the file
 access activity, audit data may grow rapidly, and the location specified for the security log
 (and security log auto archives) must be large enough to hold data until it is processed by
@@ -100,14 +100,14 @@ To configure logs retention period
 For the backup logs retention functionality to work properly, you need to specify the
 CleanAutoBackupLogs name for the newly created registry value.
 
-[manualconfig_fileserver_netapp_createregistryvalue_2016](/images/auditor/10.7/configuration/fileservers/netappcmode/manualconfig_fileserver_netapp_createregistryvalue_2016.webp)
+![manualconfig_fileserver_netapp_createregistryvalue_2016](/images/auditor/10.9/configuration/fileservers/netappcmode/manualconfig_fileserver_netapp_createregistryvalue_2016.webp)
 
 4. Double-click **CleanAutoBackupLogs**. The **Edit DWORD Value** dialog will open.
 5. This value defines the time period (in hours) after which security event logs archives will be
 automatically deleted. By default, it is set to _"0"_ (decimal). Modify this value, if necessary,
 and click **OK** to save the changes.
 
-![manualconfig_retentionperiodbackuplog_winserver2016](/images/auditor/10.7/configuration/fileservers/netappcmode/manualconfig_retentionperiodbackuplog_winserver2016.webp)
+![manualconfig_retentionperiodbackuplog_winserver2016](/images/auditor/10.9/configuration/fileservers/netappcmode/manualconfig_retentionperiodbackuplog_winserver2016.webp)
 
 6. :::note
    If the **CleanAutoBackupLogs** registry value is set to _"0"_, you must remove
