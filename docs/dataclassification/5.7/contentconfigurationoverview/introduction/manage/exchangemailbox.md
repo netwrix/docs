@@ -1,33 +1,33 @@
 ---
-title: "Exchange Mailbox"
-description: "Exchange Mailbox"
+title: "Exchange"
+description: "Exchange"
 sidebar_position: 40
 ---
 
-# Exchange Mailbox
+# Exchange
 
-For the Exchange Mailbox source, you can configure the list of folders/emails to exclude from
+For the various Exchange sources, you can configure the list of folders/emails to exclude from
 processing. Do the following:
 
-1. In the management console, click **Sources** →**Exchange Mailbox**, then Collection Exclusion
+1. In the management console, click **Sources** →**Exchange Mailbox (EWS)** or **Exchange Mailbox (Graph)**, then the Collection Exclusion page
    will be displayed.
 2. To create an exclusion, click **Add**.
 3. ![boxexclusions](/images/dataclassification/5.7/admin/sources/database/boxexclusions.webp)
 4. In the **Details** window, on the **Filter** tab enter the name of the entity to exclude.
    Consider the following:
 
-    - If you specify a folder name (e.g. “Drafts”) with no special characters, then any folders with
+    - If you specify a folder name (e.g. “Drafts”) with no wildcards, then any folders with
       that specific name will be excluded.
     
     :::note
-    Adding an exclusion of this type will match any folders with the name provided, wherever they are within the mailbox.
+    Adding an exclusion of this type will match any folders with the name provided, wherever they are within any mailbox.
     :::
     
     - When you wrap the exclusion in wildcard indicators (e.g. “\*Deleted\*”), the system will match any folder/email
       with “Deleted” somewhere in the title.
 
     :::note
-    You can optionally enter exclusion location in the **Test Path** field to verify the
+    You can optionally enter an example exclusion location or path in the **Test Path** field to verify the
     new filter, and click **Test**.
     :::
 

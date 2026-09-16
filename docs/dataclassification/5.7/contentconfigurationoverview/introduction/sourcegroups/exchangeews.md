@@ -1,18 +1,21 @@
 ---
-title: "Dynamic Source Groups — Exchange"
-description: "Dynamic Source Groups — Exchange"
+title: "Dynamic Source Groups — Exchange (EWS)"
+description: "Dynamic Source Groups — Exchange (EWS)"
 sidebar_position: 10
 ---
 
-# Dynamic Source Groups — Exchange
+# Dynamic Source Groups — Exchange (EWS)
 
 This section contains information on how to configure Exchange and Exchange Online dynamic source
 groups. Toggle between Basic and Advanced configuration settings by clicking the icons in the
 Settings button in the bottom left corner of the page.
 
-![dynamicsourcegroupex](/images/dataclassification/5.7/admin/sources/sourcegroups/dynamicsourcegroups/dynamicsourcegroupex.webp)
+:::warning
+The Exchange Web Services (EWS) are in the process of being deprecated and will be fully disabled in April 2027. 
+For all new Exchange Online dynamic source groups, you should use the Exchange (Graph) dynamic source group.
+:::
 
-The following options can be configured for Exchange Dynamic Source Groups:
+The following options can be configured for Exchange (EWS) Dynamic Source Groups:
 
 | Option                 | Description                                                                                                                                                                                                                                                       |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

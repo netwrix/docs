@@ -7,7 +7,7 @@ sidebar_position: 40
 # Exchange Server (EWS)
 
 Use the Exchange Server (EWS) source configuration screen to crawl and classify
-multiple Exchange mailboxes from the same Exchange server, using the Exchange Web Services (EWS).
+multiple Exchange mailboxes from the same Exchange server, using the Exchange Web Services (EWS). Due to the imminent deprecation of EWS for connecting to Exchange Online, Netwrix recommends using Exchange Server (Graph) for any new sources intended to crawl Exchange Online.
 
 :::note
 Automatic detection, crawling, and classification of multiple Exchange mailboxes from
@@ -41,8 +41,6 @@ If you plan to use this authentication type, specify the following:
 | Tenant ID              | Enter the **Tenant ID** you obtained at [Step 5: Obtain Tenant ID](/docs/dataclassification/5.7/introduction/introduction/exchange/azureappexchangeonlinemfa.md#step-5-obtain-tenant-id).                                                                                                                                  |
 | Certificate thumbprint | Enter the certificate thumbprint you prepared at [Step 4: Configure Certificates & secrets](/docs/dataclassification/5.7/introduction/introduction/exchange/azureappexchangeonlinemfa.md).                                                                                                                                 |
 | Application ID         | Enter the app ID you got at application registration at [Step 2: Create and Register a new app in Azure AD](/docs/dataclassification/5.7/introduction/introduction/exchange/azureappexchangeonlinemfa.md#step-2-create-and-register-a-new-app-in-azure-ad) (you can find it in the Azure AD app properties >**Overview**). |
-
-![exchangeonline_cfg_modern_auth_thumb_0_0](/images/dataclassification/5.7/admin/sources/exchangemailbox/exchangeonline_cfg_modern_auth_thumb_0_0.webp)
 
 ## Authentication type: Basic
 
