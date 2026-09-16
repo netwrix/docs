@@ -5,7 +5,7 @@ sidebar_position: 30
 slug: /configuration/fileservers/netappcmode/oauth2/30adfs
 ---
 
-# ADFS
+# Configure AD FS as an Authentication Provider
 
 Netwrix Auditor can obtain an OAuth 2.0 access token from Active Directory Federation Services
 (AD FS) and present it to NetApp ONTAP REST API. Therefore, register Netwrix Auditor as an
@@ -43,7 +43,7 @@ any placeholder value works.
 copy it immediately. **CAUTION:** The secret is shown only once.
 
 **Step 4 –** On **Configure Web API**, set **Identifier** to your audience value, for example
-`https://netapp`. This value becomes the `aud` claim of every issued token — ONTAP must be
+`ontap-role-netwrix_rest_role`. This value becomes the `aud` claim of every issued token — ONTAP must be
 configured with the same value through `-audience`.
 
 **Step 5 –** Set **Access Control Policy** to **Permit everyone**. AD FS access control policies
@@ -51,76 +51,48 @@ are designed to evaluate conditions of an interactive sign-in (MFA, group member
 credentials there is no user at all, so the policy must simply permit the request, or no token
 will ever be issued.
 
-**Step 6 –** Under **Application Permissions**, select the Web API scope you need — typically
+**Step 6 –** In the **Issurence Transform Roles** add a new rule. In the wizard select the template
+`Send Claims Using a Custom Rule`. In the next window set the **claim rule name**, e.g. `NetApp scope rule`.
+In the **Custom role** field insert ` => issue(Type = "scope", Value = "ontap-role-netwrix_relst_role");`
+
+Where `netwrix_rest_role` - Rest API role anme created on `Step 4` in 
+[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
+For details refer [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html)
+
+**Step 7 –** Under **Application Permissions**, select the Web API scope you need — typically
 `openid`, and `allatclaims` if you want all configured claims (including `appid`, which the
 authorization model below depends on) to be included in the access token.
 
+
+**Step 9 –** Register the authorization server on the cluster (create provider configuration)
+```
+security oauth2 client create -config-name adfs -application http -issuer http://<adfs-host>/adfs/services/trust -audience ontap-role-netwrix_rest_role -provider-jwks-uri https://<adfs-host>/adfs/discovery/keys -use-local-roles-if-present true -provider adfs -use-mutual-tls none
+```
+
+**Step 9 –** Enable OAuth 2.0 and verify:
+```
+cluster1::> security oauth2 client show
+```
+
 ## Reference Values
 
-| Value | AD FS |
-| --- | --- |
-| Issuer | `http://<adfs-host>/adfs/services/trust` |
-| Token Endpoint | `https://<adfs-host>/adfs/oauth2/token` |
-| JWKS URI | `https://<adfs-host>/adfs/discovery/keys` |
-| Introspection | Not supported |
+| Name | Netwrix | NetApp | Value |
+| --- | --- |--- |
+| Client ID | Cliet ID | not used | `Client identifier` from `Step 2` |
+| Client secret | Cliet secret | not used | `shared secret` from `Step 3` |
+| Issuer | not used | issuer | `http://<adfs-host>/adfs/services/trust` |
+| Token Endpoint | not used | not used | `https://<adfs-host>/adfs/oauth2/token` |
+| Scope claim | Scope | audience | `ontap-role-netwrix_rest_role` |
+| JWKS URI | not used | provider-jwks-uri | `https://<adfs-host>/adfs/discovery/keys` |
+
+Where `<adfs-host>` is your AD FS federation service name.
 
 **CAUTION:** The `http` scheme and the `/adfs/services/trust` path in the issuer are not a typo —
 this is the historical WS-Trust identifier that AD FS places in `iss` even for OAuth 2.0 tokens.
 
-## Configure ONTAP
-
-Register the authorization server on the cluster (create provider configuration)
-```
-security oauth2 client create -config-name adfs -application http -issuer http://<adfs-host>/adfs/services/trust -audience api://netapp -provider-jwks-uri https://<adfs-host>/adfs/discovery/keys -use-local-roles-if-present true -provider adfs -use-mutual-tls none
-```
-
-
-where `<adfs-host>` is your AD FS federation service name. For a full description of every
-parameter, see
-[Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md).
-This section uses authorization model C (local login by claim):
-
-- `-provider adfs` enables AD FS-specific token handling on ONTAP.
-- `-use-local-roles-if-present true` tells ONTAP to determine access through local roles/logins
-  instead of a self-contained scope.
-- `-remote-user-claim appid` tells ONTAP to read the `appid` claim from the token (the same GUID
-  as the AD FS Client Identifier from Step 2) and look up a local login with that exact name.
-
-**Step 8 –** Create the local role and a login matching the `appid` claim:
-
-```
-cluster1::> security login rest-role create -role full-access -api /api -access all -vserver <SVM>
-cluster1::> security login create -user-or-group-name <client-id> -application http -authmethod password -role full-access
-```
-
-where `<client-id>` is the Client Identifier from Step 2. `security login rest-role create`
-creates the local role with the actual permission set the client receives; `security login
-create -user-or-group-name <client-id>` creates a local login whose name matches the `appid` claim
-— this name match is what links the incoming token to the `full-access` role. The command still
-prompts for a password twice, but the password itself is not used in the OAuth 2.0 flow.
-
-**Step 9 –** Enable OAuth 2.0 and verify:
-
-```
-cluster1::> security oauth2 client show
-cluster1::> security login show
-```
-
-## Example Token
-
-A decoded AD FS access token contains claims similar to:
-
-```
-aud        : https://netapp
-iss        : http://<adfs-host>/adfs/services/trust
-apptype    : Confidential
-appid      : <client-id>
-authmethod : http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password
-ver        : 1.0
-```
-
 ## Related Topics
 
+- [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html)
 - [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
-- [Configure Cluster](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
+- [Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
 - [AD FS Deployment Guide](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/active-directory-federation-services-deployment-guide)
