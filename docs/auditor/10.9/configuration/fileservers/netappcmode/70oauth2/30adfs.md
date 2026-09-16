@@ -66,12 +66,12 @@ authorization model below depends on) to be included in the access token.
 
 **Step 8 –** Register the authorization server on the cluster (create provider configuration)
 ```
-security oauth2 client create -config-name adfs -application http -issuer http://<adfs-host>/adfs/services/trust -audience ontap-role-netwrix_rest_role -provider-jwks-uri https://<adfs-host>/adfs/discovery/keys -use-local-roles-if-present true -provider adfs -use-mutual-tls none
+security oauth2 client create -config-name adfs -application http -issuer http://<adfs-host>/adfs/services/trust  -remote-user-claim appid -provider-jwks-uri https://<adfs-host>/adfs/discovery/keys -use-local-roles-if-present true -provider adfs -use-mutual-tls none
 ```
 
 **Step 9 –** Enable OAuth 2.0 and verify:
 ```
-cluster1::> security oauth2 client show
+security oauth2 client show
 ```
 
 ## Reference Values
@@ -82,7 +82,7 @@ cluster1::> security oauth2 client show
 | Client secret | Client secret | not used | `shared secret` from `Step 3` |
 | Issuer | not used | issuer | `http://<adfs-host>/adfs/services/trust` |
 | Token Endpoint | not used | not used | `https://<adfs-host>/adfs/oauth2/token` |
-| Scope claim | Scope | audience | `ontap-role-netwrix_rest_role` |
+| Scope claim | Scope | not used | `ontap-role-netwrix_rest_role` |
 | JWKS URI | not used | provider-jwks-uri | `https://<adfs-host>/adfs/discovery/keys` |
 
 Where `<adfs-host>` is your AD FS federation service name.
