@@ -30,6 +30,9 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--tls-cert` | `TLS_CERT_FILE` | `/etc/dspm/tls.crt` | PEM TLS certificate file, full chain with the leaf certificate first. Requires `--tls-key`. |
 | `--tls-key` | `TLS_KEY_FILE` | `/etc/dspm/tls.key` | PEM TLS private key file. Requires `--tls-cert`. |
 | `--ca-bundle` | `TLS_CA_BUNDLE_FILE` | none | PEM certificate authority (CA) bundle. Needed when a private CA issued the certificate. |
+| `--generate-self-signed-cert` (alias `--self-signed`) | `DSPM_GENERATE_SELF_SIGNED_CERT` | `false` | Generate a one-time self-signed certificate and key pair at the resolved TLS paths instead of requiring one on disk. Requires `--hostname`. The installer only generates a certificate when none already exists at those paths — it never overwrites an existing one — and skips this under `--dry-run`. |
+| `--tls-cert-validity-days` (alias `--cert-days`) | `DSPM_TLS_CERT_VALIDITY_DAYS` | `365` | Validity period, in days, for a certificate `--generate-self-signed-cert` generates. Maximum `36500`. |
+| `--cert-manager-issuer-mode` (alias `--issuer-mode`) | `CERT_MANAGER_ISSUER_MODE` | `none` | Hand issuance and renewal of the `dspm-tls` certificate to cert-manager instead of managing it yourself: `none`, `selfsigned`, `adcs`, or `acme`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the `acme` mode. The installer doesn't save this to `/etc/dspm/installer.yaml` — see [Configuration File](#configuration-file). |
 | `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](requirements.md#size) for the CPU, RAM, and disk each size requires. |
 | `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. Also appears as **Target Revision** under **Show advanced settings?**. |
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
@@ -41,6 +44,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |
 | `--log-exports-storage` | `LOG_EXPORTS_STORAGE` | none | Persistent volume claim (PVC) size for log exports, such as `10Gi`. |
 | `--skip-preflight` | `SKIP_PREFLIGHT` | `false` | Skip the preflight checks. For testing only. |
+| `--preflight` | `DSPM_PREFLIGHT` | `false` | Run the preflight checks only, then exit without installing. See [Preflight-only mode](#preflight-only-mode). |
 | `--version` | — | — | Print the installer version and exit. |
 | `--help` | — | — | Print flag help and exit. |
 
@@ -73,6 +77,33 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 
+### Certificate Manager Flags
+
+The installer only reads the following flags when `--cert-manager-issuer-mode` selects the matching mode: the Automatic Certificate Management Environment (ACME) flags apply to `acme`, and the Active Directory Certificate Services (AD CS) flags apply to `adcs`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for `acme` and `selfsigned`, and [AD CS TLS Certificates](adcs-tls-certificates.md) for `adcs`.
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--acme-email` | `ACME_EMAIL` | none | Email address for the ACME account. Required in `acme` mode. |
+| `--acme-server` | `ACME_SERVER` | Let's Encrypt production | ACME directory URL. Point this at a private ACME certificate authority (CA) for internal issuance. |
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--adcs-url` | `ADCS_URL` | none | The Active Directory Certificate Services (AD CS) server's `/certsrv` web enrollment endpoint URL. Required in `adcs` mode. |
+| `--adcs-username` | `ADCS_USERNAME` | none | NT LAN Manager (NTLM) enrollment account for the AD CS server. Required in `adcs` mode. |
+| `--adcs-password` | `DSPM_ADCS_PASSWORD` | none | Password for `--adcs-username`. Required in `adcs` mode. The installer never persists it to the configuration file or logs it. |
+| `--adcs-template` | `ADCS_TEMPLATE` | `WebServer` | Certificate template to request from the AD CS server. |
+| `--adcs-ca-bundle` | `ADCS_CA_BUNDLE` | none | PEM bundle for TLS to the AD CS server itself. This is separate from `--ca-bundle`, which covers Access Analyzer's own certificate chain. |
+
+:::warning
+Set Extended Protection for Authentication (EPA) on the AD CS server's `/certsrv` endpoint to **Off** or **Allow**, not **Required**. The `adcs` issuer authenticates over NTLM without channel-binding tokens, so a `/certsrv` endpoint that requires EPA rejects every enrollment attempt with HTTP 401.
+:::
+
+:::note
+cert-manager's certificate signing request carries only Common Name and Organization in the subject. If the AD CS certificate template you name with `--adcs-template` requires Organizational Unit, Country, State, or Locality, AD CS rejects the enrollment.
+:::
+
+There's no interactive wizard step for `adcs` mode — configure it with flags only.
+
 ### Value Checks
 
 The installer rejects bad values before it changes anything on the server.
@@ -89,7 +120,7 @@ The installer rejects bad values before it changes anything on the server.
 
 The installer keeps its answers in `/etc/dspm/installer.yaml`. It writes the file itself: after every confirmed prompt in an interactive run, or once after license validation in a flag-driven run. On the first save it prints `Progress saved to /etc/dspm/installer.yaml — future runs will pre-fill these values.` A later run reads the file and asks only for what's still missing, so a canceled install resumes where it stopped.
 
-Keys are the flag names. The installer writes `license-key`, `hostname`, `first-admin-email`, `first-admin-name`, `tls-cert`, `tls-key`, and `ca-bundle`, plus `target-revision` when you pin a version other than `1.*`. It keeps any keys you add, and never saves operational flags such as `--accept-warnings`, `--assume-yes`, `--dry-run`, and `--skip-preflight`. You can also write the file by hand before the first run.
+Keys are the flag names. The installer writes `license-key`, `hostname`, `first-admin-email`, `first-admin-name`, `tls-cert`, `tls-key`, and `ca-bundle`, plus `target-revision` when you pin a version other than `1.*`. It keeps any keys you add, and never saves operational flags such as `--accept-warnings`, `--assume-yes`, `--dry-run`, `--skip-preflight`, `--preflight`, and `--cert-manager-issuer-mode`. You can also write the file by hand before the first run.
 
 ```yaml title="/etc/dspm/installer.yaml"
 license-key: XXXX-XXXX-XXXX-XXXX-XXXX-V3
@@ -145,6 +176,20 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 When the `antivirus` check finds a product, add these paths to that product's exclusion list: `/var/lib/rancher/k3s/agent/containerd`, `/var/lib/rancher/k3s/data`, and `/run/k3s/containerd`. The hint in the message names the product's own command or console for adding exclusions.
 
 The [Requirements](requirements.md) page lists the 18 hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
+
+### Preflight-only mode
+
+Pass `--preflight` to run the preflight checks and exit, without installing k3s, creating the cluster, or writing a configuration file. Use it to validate a server before you commit to an install.
+
+`--preflight` runs the same checks listed in this section, plus a certificate check: the PEM certificate and key at the resolved TLS paths must exist, match, and not be expired. A certificate expiring within 30 days still passes, because a real install would also proceed on it. Pass `--hostname` to also verify the certificate's Subject Alternative Names cover it, and `--size` to check RAM, CPU, and disk against the size you intend to install. Under `--dry-run`, the installer skips the certificate check, matching a dry-run install.
+
+You can't combine `--preflight` with `--uninstall` or `--skip-preflight`. It writes the same `/var/log/dspm-installer.log` and `/var/log/dspm-preflight.json` files a regular install writes, except under `--dry-run`, where the installer doesn't write the JSON report.
+
+| Code | Meaning |
+|---|---|
+| 0 | Every check passed, or the installer raised only warnings and you passed `--accept-warnings`. |
+| 80 | A check failed, or the installer raised warnings and you didn't pass `--accept-warnings`. |
+| 1 | You combined `--preflight` with `--uninstall` or `--skip-preflight`, or the checks themselves couldn't run. |
 
 ## RHEL and CentOS Preparation
 
