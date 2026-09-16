@@ -12,13 +12,19 @@ configure the authentication provider (AD FS, Okta, or Microsoft Entra ID).
 
 **Step 1 –** Enable OAuth 2.0 globally on the cluster:
 ```
-cluster1::> security oauth2 modify -enabled true
+security oauth2 modify -enabled true
 ```
 
-**Step 2 –** Install the IdP root CA certificate or self-signed certificate:
+**Step 2 –** Determine the Management SVM name
 ```
-cluster1::> security certificate install -type server-ca -vserver <admin-svm>
+vserver show -type admin
 ```
+
+**Step 3 –** Install the IdP root CA certificate or self-signed certificate
+```
+security certificate install -type server-ca -vserver <admin-svm>
+```
+where `<admin-svm>` is vserver name obtained on 'Step 2'
 
 Paste the PEM block (`-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----`) when prompted
 and press 'Enter'
@@ -27,22 +33,29 @@ and press 'Enter'
 certificates, starting with the root.
 
 
-**Step 3 –** Determine the Management SVM name
+**Step 4 –** Disable client certificate authentification
 ```
-vserver show -type admin
+security ssl modify -client-enabled false -vserver <admin-svm>
 ```
+where `<admin-svm>` is vserver name obtained on 'Step 2'
 
-**Step 4 –** Create the ONTAP Rest API role using vserver name obtained on 'Step 3'
+
+**Step 5 –** Create the ONTAP Rest API role using vserver name obtained on 'Step 2'
 To create a role, please refer to [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md).
 
 
-**Step 5 –** Verify the configuration:
-
+**Step 6 –** Verify the configuration:
 ```
-cluster1::> security oauth2 show
+security oauth2 show
 ```
 ```
-cluster1::> security oauth2 client show
+security oauth2 client show
+```
+```
+security ssl show -fields vserver,server-enabled ,client-enabled
+```
+```
+security certificate show -type server-ca -vserver <admin-svm>
 ```
 
 

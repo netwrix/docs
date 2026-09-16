@@ -24,7 +24,7 @@ For more details see [The OAuth 2.0 Authorization Framework](https://www.rfc-edi
 ## Limitations
 
 1. OAuth 2.0 for NetApp audit has been tested with the following IdP:
-  - Active Directory Federation Service (ADFS)
+  - AD FS (Federation Services)
   - Okta
 2. OAuth 2.0 can only be used with the ONTAP REST API.
 3. This section only applies to NetApp ONTAP version 9.14.1 and higher.

@@ -7,8 +7,8 @@ sidebar_position: 50
 # Configure Service Policy
 
 **IMPORTANT:** By default, ONTAP already has a service policy configured and applied to the managed
-SVM LIFs. If you want to use OAuth 2.0 authentication instead of AD domain authentication, skip the
-steps in this topic.
+SVM LIFs. If you want to use OAuth 2.0 authentication instead of AD domain authentication,
+skip this topic.
 
 **NOTE:** This section only applies to NetApp ONTAP version 9.10.1 and higher.
 For older NetApp ONTAP versions use [System Service Firewall Policies](#configure-system-service-firewall-policies) instead.
