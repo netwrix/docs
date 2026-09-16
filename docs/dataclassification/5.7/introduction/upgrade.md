@@ -26,7 +26,7 @@ Classification resides. If not, download it from Microsoft website:
 
 **Step 3 –** Stop all NDC services. Netwrix recommends the following:
 
-- On the computer where Netwrix Data Classification is installed, start the Netwrix Data
+- On the computer where Netwrix Data Classification resides, start the Netwrix Data
   Classification Service Viewer tool. Select **Stop** next to each service.
 - If you upgrade a Distributed Query Server (DQS) environment, stop all services on all instances before upgrading any instance. 
 

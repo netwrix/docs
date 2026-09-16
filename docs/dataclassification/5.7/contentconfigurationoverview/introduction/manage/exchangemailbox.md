@@ -34,14 +34,14 @@ processing. Do the following:
 
 5. If needed, you can use metadata conditions to restrict when the product applies an exclusion
    filter. For that, click **Condition** tab and click **Add**. Then select how the exclusion
-   conditions will work: it can check if metadata field of the document has any value, isn't
-   specified, or matches a specific metadata value.
+   conditions will work: it can check whether the document's metadata field has any value, has no
+   value, or matches a specific metadata value.
 
     | Criteria      | Condition                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
     | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | Comparison    | Compare a value in the document metadata field with the value the condition sets. When you select this criteria, specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
     | Has any value | Exclude the document if its metadata field has any value. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
-    | Has no values | Exclude the document if metadata field value isn't specified. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
+    | Has no values | Exclude the document if the metadata field has no value. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
 
     When finished, click **Add**.
 

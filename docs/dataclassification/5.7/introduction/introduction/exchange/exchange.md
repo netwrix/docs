@@ -78,7 +78,7 @@ To access Exchange using Modern Authentication, you need to use an admin usernam
 :::
 
 Configure sufficient permissions that allow the crawling account to access and read the
-mailboxes that you want to crawl. The permissions required differ between the EWS and Graph implementations.
+mailboxes that you want to crawl. The permissions required differ between the Exchange Web Services (EWS) and Graph implementations.
 
 To use the Graph implementation, you must grant the following permissions:
 
