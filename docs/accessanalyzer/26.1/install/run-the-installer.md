@@ -11,9 +11,9 @@ The installer is a single Linux binary, `dspm-installer`. Run it as root on the 
 
 Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, and the email address and name of the first administrator.
 
-## Download the Installer
+## Download the Installer and the Offline Install Media
 
-The Netwrix package registry hosts the installer, and your license key authenticates the download. Run these commands on the server.
+By default, Access Analyzer installs offline from local media, with no network access. The Netwrix package registry hosts both the installer and the offline install media, and your license key authenticates the download. Run these commands on the server.
 
 1. Export your license key.
 
@@ -21,18 +21,26 @@ The Netwrix package registry hosts the installer, and your license key authentic
    export LICENSE_KEY='<license-key>'
    ```
 
-2. Download the installer for the server's architecture and place it in `/usr/local/bin`.
+2. Download the installer and the offline install media for the server's architecture.
 
    ```bash
    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+   VERSION='<release-version>'  # the release you're installing, for example 1.5.0
    TMP_FILE=$(mktemp)
-   curl -sLf -o "$TMP_FILE" \
+   curl -Lf -o "$TMP_FILE" \
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
    sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
    rm -f "$TMP_FILE"
+
+   sudo mkdir -p /etc/dspm/dspm-media
+   curl -Lf \
+     "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable" \
+     | sudo tar -xzf - -C /etc/dspm/dspm-media
    ```
 
-3. Confirm it runs.
+   The installer binary lands in `/usr/local/bin`, and the offline install media extracts to `/etc/dspm/dspm-media`. The media is a large tarball, so the download takes a while; both commands print progress as they run.
+
+3. Confirm the installer runs.
 
    ```bash
    dspm-installer --version
@@ -40,8 +48,16 @@ The Netwrix package registry hosts the installer, and your license key authentic
 
    A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains listed under [Outbound](requirements.md#outbound).
 
+4. Confirm the media extracted correctly.
+
+   ```bash
+   ls /etc/dspm/dspm-media/manifest.json
+   ```
+
+   If this file is missing, the extraction failed or the tarball didn't download completely. Repeat step 2.
+
 :::note
-Keep the `channel=stable` parameter. Without it, the registry returns the newest artifact across all channels, which can be a pre-release or development build instead of the latest stable release.
+Keep the `channel=stable` parameter on both downloads. Without it, the registry returns the newest artifact across all channels, which can be a pre-release or development build instead of the latest stable release.
 :::
 
 ## Copy the TLS Certificate to the Server
@@ -85,13 +101,17 @@ Enter the exact hostname that appears in the output, for example `commonName=dsp
 
 ## Run the Installer
 
-Run the installer with `sudo`. The `-E` flag carries your environment through to root, so the installer reads the `LICENSE_KEY` you exported for the download instead of prompting for it.
+Run the installer with `sudo`. In airgap mode, the installer reads the software it needs from `--bundle-dir` instead of the network, so it needs no license key and makes no outbound calls.
 
 ```bash
-sudo -E dspm-installer
+sudo dspm-installer --airgap --bundle-dir /etc/dspm/dspm-media --size <size>
 ```
 
-If your `sudo` policy doesn't allow `-E`, pass the variable inline instead: `sudo LICENSE_KEY="$LICENSE_KEY" dspm-installer`.
+Replace `<size>` with `small`, `medium`, `large`, or `enterprise`. See [Size](requirements.md#size) to pick the one that matches your CPU, RAM, and expected data volume; the installer defaults to `medium` if you omit the flag.
+
+:::tip
+Airgap mode is the recommended way to install after you've downloaded the offline media. If the server has internet access, you can install online with a license key instead — see the **Pass flags** tab for an example. [Installer reference](installer-reference.md#flags) covers the full `--airgap` and `--bundle-dir` flag details.
+:::
 
 The installer runs its preflight checks first, then collects any value it doesn't have yet. You can let it ask, or supply everything in advance.
 
@@ -113,7 +133,7 @@ The installer saves each answer to `/etc/dspm/installer.yaml` as soon as you con
 </TabItem>
 <TabItem value="flags" label="Pass flags">
 
-Pass every value as a flag and the installer asks nothing. Use this form in scripts or over a connection without a terminal, where the installer can't prompt and exits with an error for any missing value.
+Pass every value as a flag and the installer asks nothing. Use this form in scripts or over a connection without a terminal, where the installer can't prompt and exits with an error for any missing value. This example installs online, with a license key; swap `--license-key` for `--airgap --bundle-dir /etc/dspm/dspm-media` to install offline instead.
 
 ```bash
 sudo dspm-installer \
