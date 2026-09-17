@@ -21,6 +21,9 @@ vserver show -type admin
 ```
 
 **Step 3 –** Install the IdP root CA certificate or self-signed certificate
+
+**NOTE:** This is not requered if Okta uses as IdP.
+
 ```
 security certificate install -type server-ca -vserver <admin-svm>
 ```

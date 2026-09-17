@@ -39,9 +39,13 @@ The following permissions are required for the account on the target server:
   (for example, `netwrix_role`) on the Storage Virtual Machine (SVM) that has the following
   capabilities with access query levels:
 
-    |                                                                              |                                    |
-    | ---------------------------------------------------------------------------- | ---------------------------------- |
-    | - version - volume - vserver audit - vserver audit rotate-log - vserver cifs | readonly readonly all all readonly |
+    |      API point            |  access   |
+    | --------------------------| ----------|
+    | version                   | readonly  |
+    | volume                    | readonly  |
+    | vserver audit             | all       |
+    | vserver audit rotate-log  | all       |
+    | vserver cifs              | readonly  |
 
 The following permissions are required for the account on the Netwrix Auditor server:
 

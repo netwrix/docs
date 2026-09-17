@@ -79,7 +79,7 @@ security oauth2 client show
 | Client ID | Client ID | not used | `Client ID` from Step 2 |
 | Client secret | Client secret | not used | `Client secret` from Step 2 |
 | Issuer | not used | issuer | `https://<okta-org>.okta.com/oauth2/default` |
-| Token Endpoint | not used | not used | `https://<okta-org>.okta.com/oauth2/default/v1/token` |
+| Token Endpoint | Token Endpoint| not used | `https://<okta-org>.okta.com/oauth2/default/v1/token` |
 | Scope claim | Scope | not used | ontap-role-netwrix_rest_role |
 | JWKS URI | not used | provider-jwks-uri | `https://<okta-org>.okta.com/oauth2/default/v1/keys` |
 

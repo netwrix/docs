@@ -81,7 +81,7 @@ security oauth2 client show
 | Client ID | Client ID | not used | `Client identifier` from `Step 2` |
 | Client secret | Client secret | not used | `shared secret` from `Step 3` |
 | Issuer | not used | issuer | `http://<adfs-host>/adfs/services/trust` |
-| Token Endpoint | not used | not used | `https://<adfs-host>/adfs/oauth2/token` |
+| Token Endpoint | Token Endpoint | not used | `https://<adfs-host>/adfs/oauth2/token` |
 | Scope claim | Scope | not used | `ontap-role-netwrix_rest_role` |
 | JWKS URI | not used | provider-jwks-uri | `https://<adfs-host>/adfs/discovery/keys` |
 
