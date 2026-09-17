@@ -53,7 +53,10 @@ will ever be issued.
 
 **Step 6 –** In the **Issuance Transform Rules** add a new rule. In the wizard select the template
 `Send Claims Using a Custom Rule`. In the next window set the **claim rule name**, e.g. `NetApp scope rule`.
-In the **Custom rule** field insert ` => issue(Type = "scope", Value = "ontap-role-netwrix_rest_role");`
+In the **Custom rule** field insert the following rule:
+```
+=> issue(Type = "scope", Value = "ontap-role-netwrix_rest_role");`
+```
 
 Where `netwrix_rest_role` is the REST API role name created in `Step 4` of
 [Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/ontap.md).
