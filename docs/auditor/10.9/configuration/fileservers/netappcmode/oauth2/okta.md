@@ -51,7 +51,8 @@ Replace `<app-id>` with the **Client ID** of the Netwrix Auditor application (St
 Client ID matches, the claim resolves to `ontap-role-netwrix_rest_role`, which maps to the local
 ONTAP role name `netwrix_rest_role` created on `Step 4` in
 [Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/ontap.md).
-For ONTAP details, refer to [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html).
+For ONTAP details, refer to 
+[Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html).
 For every other application, the claim resolves to `ontap:*:no-access:none:*:`, which grants no access.
 
 **NOTE:** The `ontap-role-<role-name>` format maps the claim to a local ONTAP role instead of a
@@ -65,8 +66,9 @@ application at all.
 
 **Step 5 –** Create the OAuth 2.0 client configuration, with local JWKS validation.
 ```
-security oauth2 client create -config-name okta -application http -issuer https://<your-domain>.okta.com/oauth2/default -provider-jwks-uri  https://<your-domain>.okta.com/oauth2/default/v1/keys -use-local-roles-if-present true -provider basic -use-mutual-tls none
+security oauth2 client create -config-name okta -application http -issuer https://<your-domain>.okta.com/oauth2/<api-server> -provider-jwks-uri  https://<your-domain>.okta.com/oauth2/<api-server>/v1/keys -use-local-roles-if-present true -provider basic -use-mutual-tls none
 ```
+Where `<api-server>` is the Authorization Servers name from `Step 1`
 
 **Step 6 –** Verify OAuth 2.0 configuration:
 ```
@@ -79,12 +81,12 @@ security oauth2 client show
 | --- | --- | --- | --- |
 | Client ID | Client ID | not used | `Client ID` from Step 2 |
 | Client secret | Client secret | not used | `Client secret` from Step 2 |
-| Issuer | not used | issuer | `https://<okta-org>.okta.com/oauth2/default` |
-| Token Endpoint | Token Endpoint| not used | `https://<okta-org>.okta.com/oauth2/default/v1/token` |
+| Issuer | not used | issuer | `https://<okta-org>.okta.com/oauth2/<api-server>` |
+| Token Endpoint | Token Endpoint| not used | `https://<okta-org>.okta.com/oauth2/<api-server>/v1/token` |
 | Scope claim | Scope | not used | ontap-role-netwrix_rest_role |
-| JWKS URI | not used | provider-jwks-uri | `https://<okta-org>.okta.com/oauth2/default/v1/keys` |
+| JWKS URI | not used | provider-jwks-uri | `https://<okta-org>.okta.com/oauth2/<api-server>/v1/keys` |
 
-Where `<okta-org>` is your Okta org name, and `default` is the Authorization Server ID — replace it
+Where `<okta-org>` is your Okta org name, and `<api-server>` is the Authorization Server ID, replace it
 if you created a dedicated custom Authorization Server (Step 1).
 
 ## Related Topics
