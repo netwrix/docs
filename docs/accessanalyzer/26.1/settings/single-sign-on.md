@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 Access Analyzer supports three kinds of sign-in. Local sign-in always stays available, and you can connect one directory provider alongside it:
 
 - **Local accounts** hold a password inside Access Analyzer. The first Admin that the installer creates is a local account.
-- **Active Directory (AD)** lets people sign in with their domain username and password. Access Analyzer checks them against a domain controller over Lightweight Directory Access Protocol (LDAP) secured with TLS, known as LDAPS.
+- **Active Directory (AD)** lets people sign in with their domain username and password. Access Analyzer checks them against a domain controller over Lightweight Directory Access Protocol (LDAP) secured with TLS, a combination known as LDAPS.
 - **Entra ID** lets people sign in with their Microsoft work account through a **Sign in with Microsoft** button.
 
 Connecting a directory is what the product calls single sign-on (SSO), and users who sign in that way are **Federated (SSO)** accounts in [Users and roles](users.md). You connect one provider, once, through the setup flow. After that, **Settings > System > Single sign-on** is where you rotate the AD service account password.
