@@ -17,7 +17,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Access | Root, either directly or through `sudo`. |
 | Free disk on `/var/lib` | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib`. |
 
-On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
+On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can continue at your own risk.
 
 ## Size
 
@@ -30,9 +30,9 @@ You pick a size when you install. The size sets the CPU and RAM the installer re
 | large | 24 | 96 GB | 3,000 GB | Up to about 800 million objects and 25,000 to 100,000 identities. |
 | enterprise | 32 | 128 GB | 8,000 GB | Up to about 3 billion objects and more than 100,000 identities. |
 
-CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine provisioned at exactly the stated figure passes even though the guest sees slightly less.
+CPU cores and RAM are hard minimums: the installer's preflight check fails below them, and the install doesn't proceed. The check allows a 5% tolerance on RAM and disk, so a virtual machine you provision at exactly the stated figure passes even though the guest sees slightly less.
 
-Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size is designed to hold. The 40 GB floor is different: below that, the preflight check fails.
+Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size supports. The 40 GB floor is different: below that, the preflight check fails.
 
 For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on `/var/lib` installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
 
@@ -106,6 +106,145 @@ The installer downloads everything it needs during the install, and the running 
 | `docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com` | Installer downloads. |
 | `d2glxqk2uabbnd.cloudfront.net` | Installer downloads. |
 | `storage.googleapis.com` | Installer downloads. |
+
+#### Checking Connectivity Before You Install
+
+Confirm the server can reach these hosts before you download the installer. The quickest check is the download host alone:
+
+```bash
+curl -sSI --max-time 10 https://raw.pkg.keygen.sh/ -o /dev/null && echo "download host reachable" || echo "BLOCKED: allow outbound TCP 443 to raw.pkg.keygen.sh"
+```
+
+If that prints `BLOCKED`, your network team needs to allow this connection before you can download the installer.
+
+To check every host at once, expand the following script and copy it into a file on the server. For example, run `vim aa26-connectivity-check.sh`, press `i` to enter insert mode, paste the script, then press `Esc` and type `:wq` to save and exit.
+
+<details>
+<summary>aa26-connectivity-check.sh</summary>
+
+```bash
+#!/usr/bin/env bash
+# Access Analyzer pre-download connectivity check.
+#
+# Run this on the Linux server that will host Access Analyzer, before you have
+# the installer. It needs only curl. It tells you which hosts are blocked and
+# why (DNS, firewall/proxy, TLS), so you know what to ask your network team to
+# unblock. Nothing is installed or changed.
+#
+#   bash aa26-connectivity-check.sh
+#   LICENSE_KEY=xxxx bash aa26-connectivity-check.sh   # also tries the real installer download
+
+set -u
+
+TIMEOUT=10
+
+# Needed before anything else: this is where the installer itself is downloaded.
+DOWNLOAD_HOSTS="raw.pkg.keygen.sh keygen-dist.c3c9112df8df715f42d1162cdce5dba1.r2.cloudflarestorage.com"
+
+# Needed by the installer once it runs.
+INSTALL_HOSTS="api.keygen.sh oci.pkg.keygen.sh get.k3s.io rpm.rancher.io github.com api.github.com raw.githubusercontent.com release-assets.githubusercontent.com ghcr.io pkg-containers.githubusercontent.com registry-1.docker.io auth.docker.io production.cloudflare.docker.com docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com d2glxqk2uabbnd.cloudfront.net storage.googleapis.com"
+
+if ! command -v curl >/dev/null 2>&1; then
+  echo "curl is required: install it (e.g. 'sudo dnf install curl' or 'sudo apt install curl') and re-run." >&2
+  exit 2
+fi
+
+blocked=0
+failed_hosts=""
+
+check_host() {
+  host=$1
+  # Connect only; any HTTP status means the connection worked.
+  out=$(curl -sS -o /dev/null -w '%{http_code}' --max-time "$TIMEOUT" "https://$host/" 2>&1)
+  rc=$?
+  if [ "$rc" -eq 0 ] && [ "$out" = "407" ]; then
+    rc=407
+  fi
+  case $rc in
+    0)  printf '  OK    %-75s connected, server answered HTTP %s\n' "$host" "$out" ;;
+    407) printf '  FAIL  %-75s proxy demands authentication (HTTP 407)\n' "$host" ;;
+    6)  printf '  FAIL  %-75s DNS: name does not resolve\n' "$host" ;;
+    7)  printf '  FAIL  %-75s connection refused (firewall or proxy)\n' "$host" ;;
+    28) printf '  FAIL  %-75s timed out after %ss (firewall dropping traffic)\n' "$host" "$TIMEOUT" ;;
+    35|60) printf '  FAIL  %-75s TLS failed (proxy intercepting TLS or missing CA)\n' "$host" ;;
+    *)  printf '  FAIL  %-75s curl exit %s: %s\n' "$host" "$rc" "$out" ;;
+  esac
+  if [ "$rc" -ne 0 ]; then
+    blocked=$((blocked + 1))
+    failed_hosts="$failed_hosts $host"
+  fi
+}
+
+echo "Access Analyzer connectivity check  ($(date -u +%Y-%m-%dT%H:%M:%SZ), $(hostname))"
+echo
+if [ -n "${https_proxy:-${HTTPS_PROXY:-}}" ]; then
+  echo "Using proxy: ${https_proxy:-$HTTPS_PROXY}  (the installer honours the same variables)"
+  echo
+fi
+
+echo "Each host is asked for https://<host>/ . Any HTTP answer, including 400, 403 or 404,"
+echo "means DNS, TCP 443 and TLS all worked and the real server replied. These hosts are"
+echo "APIs and storage buckets, so most of them have no page at / and answer 4xx. Only a"
+echo "DNS, connection, timeout or TLS failure is a block."
+echo
+echo "1. Installer download (needed first)"
+for h in $DOWNLOAD_HOSTS; do check_host "$h"; done
+echo
+echo "2. Installation (needed once the installer runs)"
+for h in $INSTALL_HOSTS; do check_host "$h"; done
+echo
+
+if [ -n "${LICENSE_KEY:-}" ]; then
+  echo "3. Real installer download with your license key"
+  arch=$(uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/')
+  tmp=$(mktemp)
+  code=$(curl -sS -L -o "$tmp" -w '%{http_code}' --max-time 120 \
+    "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$arch?auth=license:$LICENSE_KEY" 2>&1)
+  rc=$?
+  if [ "$rc" -eq 0 ] && [ "$code" = "200" ]; then
+    echo "  OK    downloaded dspm-installer-linux-$arch ($(wc -c <"$tmp" | tr -d ' ') bytes) to $tmp"
+  elif [ "$rc" -eq 0 ]; then
+    echo "  FAIL  HTTP $code from raw.pkg.keygen.sh (401/403 usually means the license key is wrong or expired)"
+    blocked=$((blocked + 1))
+    rm -f "$tmp"
+  else
+    echo "  FAIL  curl exit $rc: $code"
+    blocked=$((blocked + 1))
+    rm -f "$tmp"
+  fi
+  echo
+fi
+
+if [ "$blocked" -eq 0 ]; then
+  echo "All hosts reachable on TCP 443. This server can download and run the installer."
+  exit 0
+fi
+
+echo "$blocked check(s) failed. Ask your network team to allow outbound TCP 443 from this server to:"
+for h in $failed_hosts; do echo "  $h"; done
+echo
+echo "Then re-run this script. Send the full output to Netwrix if anything still fails."
+exit 1
+```
+
+</details>
+
+Then run it:
+
+```bash
+bash aa26-connectivity-check.sh
+```
+
+The script asks each host for `https://<host>/`. Most of these hosts are APIs and storage buckets with no page at `/`, so an HTTP response of 400, 403, or 404 still counts as a pass: it proves DNS resolution, the TCP 443 connection, and the TLS handshake all worked. A FAIL line means DNS didn't resolve, the connection timed out or the host refused it, or TLS failed, usually because a proxy is intercepting HTTPS. The script ends with the exact list of hosts to ask your network team to unblock, and exits `0` only when every host is reachable.
+
+The script needs only `curl`. It installs nothing and changes nothing on the server. If you use an HTTPS proxy, export `https_proxy` before you run it; the installer honors the same variable.
+
+```bash
+export https_proxy="http://proxy.corp.example.com:3128"
+bash aa26-connectivity-check.sh
+```
+
+After you have the installer, `sudo dspm-installer --preflight` runs the same connectivity check along with the hardware, OS, and certificate checks.
 
 Some features add outbound connections of their own after you configure them.
 
