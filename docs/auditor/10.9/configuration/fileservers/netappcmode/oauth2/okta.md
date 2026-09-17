@@ -30,7 +30,8 @@ support guarantee.
 
 **Step 2 –** Go to **Applications → Applications → Create App Integration → API Services**. This
 application type is built for machine-to-machine scenarios (no Redirect URI or login flow fields,
-unlike interactive types) and returns a **Client ID** and **Client Secret**.
+unlike interactive types) and returns a **Client ID** and **Client Secret**. Save the for the
+future usage.
 
 **Step 3 –** Disable **DPoP** (Demonstrating Proof-of-Possession) for the App Integration. This is
 a **mandatory** step: Okta may require DPoP by default for some application types, but ONTAP does
@@ -67,7 +68,7 @@ application at all.
 security oauth2 client create -config-name okta -application http -issuer https://<your-domain>.okta.com/oauth2/default -provider-jwks-uri  https://<your-domain>.okta.com/oauth2/default/v1/keys -use-local-roles-if-present true -provider basic -use-mutual-tls none
 ```
 
-**Step 6 –** Enable OAuth 2.0 and verify:
+**Step 6 –** Verify OAuth 2.0 configuration:
 ```
 security oauth2 client show
 ```

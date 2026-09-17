@@ -16,6 +16,8 @@ To configure auditing state, event categories and log
 Configure audit settings in the context of Cluster or Storage Virtual Machine (SVM). All examples in
 the procedure below apply to SVM.
 
+**NOTE:** The SVM name `svm1` is used as an example.
+
 **Step 1 –** Create audit. For more information on audit configuration, refer to NetApp documentation. For
 example:
 ```

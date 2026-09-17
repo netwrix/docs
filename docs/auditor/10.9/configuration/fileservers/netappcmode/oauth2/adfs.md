@@ -72,7 +72,7 @@ authorization model below depends on) to be included in the access token.
 security oauth2 client create -config-name adfs -application http -issuer http://<adfs-host>/adfs/services/trust  -remote-user-claim appid -provider-jwks-uri https://<adfs-host>/adfs/discovery/keys -use-local-roles-if-present true -provider adfs -use-mutual-tls none
 ```
 
-**Step 9 –** Enable OAuth 2.0 and verify:
+**Step 9 –** Verify OAuth 2.0 configuration:
 ```
 security oauth2 client show
 ```
