@@ -8,7 +8,7 @@ sidebar_position: 60
 
 **IMPORTANT:** If you want to use OAuth 2.0 authentication instead of AD domain authentication,
 skip the steps in this topic and follow
-[OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md).
+[OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/overview.md).
 
 Create a login for the AD domain account that is going to authenticate and collect data from
 NetApp. If you want to use an AD account for collecting data, enable it to access SVM through

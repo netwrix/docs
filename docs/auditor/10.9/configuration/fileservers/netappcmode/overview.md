@@ -92,7 +92,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
 See the following topics for additional information:
 
 - [Configure NetApp Clustered Data ONTAP 8 and ONTAP 9 for Monitoring](#configure-netapp-clustered-data-ontap-8-and-ontap-9-for-monitoring)
-- [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/80share.md)
+- [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/share.md)
 
 The following table lists the actions that can be performed on NetApp:
 
@@ -120,13 +120,13 @@ only.
 To configure Clustered Data ONTAP 8 and ONTAP 9 for monitoring, perform the following procedures:
 
 - [Prerequisites](#prerequisites)
-- [Configure ONTAPI\RESTAPI Web Access](/docs/auditor/10.9/configuration/fileservers/netappcmode/20webaccess.md)
-- [Configure Event Categories and Log](/docs/auditor/10.9/configuration/fileservers/netappcmode/30netappaudit.md)
-- [Permissions for NetApp Auditing](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md)
-- [Configure Service Policy](/docs/auditor/10.9/configuration/fileservers/netappcmode/50servicepolicy.md)
-- [Configure AD domain authentication](/docs/auditor/10.9/configuration/fileservers/netappcmode/60adauth.md), or
-  [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
-- [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/80share.md)
+- [Configure ONTAPI\RESTAPI Web Access](/docs/auditor/10.9/configuration/fileservers/netappcmode/webaccess.md)
+- [Configure Event Categories and Log](/docs/auditor/10.9/configuration/fileservers/netappcmode/netappaudit.md)
+- [Permissions for NetApp Auditing](/docs/auditor/10.9/configuration/fileservers/netappcmode/apirole.md)
+- [Configure Service Policy](/docs/auditor/10.9/configuration/fileservers/netappcmode/servicepolicy.md)
+- [Configure AD domain authentication](/docs/auditor/10.9/configuration/fileservers/netappcmode/adauth.md), or
+  [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/overview.md)
+- [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/share.md)
 
 ### Prerequisites
 
@@ -147,7 +147,7 @@ Perform the following steps before proceeding with the audit configuration.
 **NOTE**: NFS file shares aren't supported.
 
 **Step 2 –** Configure System Access Control List (SACL) on your file share. See
-[Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/80share.md) topic for additional information.
+[Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/share.md) topic for additional information.
 
 **Step 3 –** Set the Security Style for Volume or Qtree where the audited file shares are located to
 the _"ntfs"_ or _"mixed"_.

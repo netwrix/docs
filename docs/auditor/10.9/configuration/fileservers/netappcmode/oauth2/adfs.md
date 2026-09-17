@@ -2,7 +2,7 @@
 title: "Configure AD FS"
 description: "Configure AD FS as an Authentication Provider"
 sidebar_position: 30
-slug: /configuration/fileservers/netappcmode/oauth2/30adfs
+slug: /configuration/fileservers/netappcmode/oauth2/adfs
 ---
 
 # Configure AD FS as an Authentication Provider
@@ -56,7 +56,7 @@ will ever be issued.
 In the **Custom rule** field insert ` => issue(Type = "scope", Value = "ontap-role-netwrix_rest_role");`
 
 Where `netwrix_rest_role` is the REST API role name created in `Step 4` of
-[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md).
+[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/ontap.md).
 For details, refer to [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html).
 
 **Step 7 –** Under **Application Permissions**, select the Web API scope you need — typically
@@ -93,6 +93,6 @@ this is the historical WS-Trust identifier that AD FS places in `iss` even for O
 ## Related Topics
 
 - [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html)
-- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
-- [Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
+- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/overview.md)
+- [Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/ontap.md)
 - [AD FS Deployment Guide](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/active-directory-federation-services-deployment-guide)

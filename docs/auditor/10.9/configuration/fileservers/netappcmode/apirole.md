@@ -11,7 +11,7 @@ account that will be used for data collection – it should meet the requirement
 
 If you want to authenticate with AD user account, you must enable it to access SVM through ONTAPI.
 See [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9)
-below, and [Configure AD domain authentication](/docs/auditor/10.9/configuration/fileservers/netappcmode/60adauth.md)
+below, and [Configure AD domain authentication](/docs/auditor/10.9/configuration/fileservers/netappcmode/adauth.md)
 for additional information.
 
 The following permissions are required for the account on the target server:
@@ -51,7 +51,7 @@ The following permissions are required for the account on the Netwrix Auditor se
 
 See [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9)
 below, and
-[Configure AD domain authentication](/docs/auditor/10.9/configuration/fileservers/netappcmode/60adauth.md)
+[Configure AD domain authentication](/docs/auditor/10.9/configuration/fileservers/netappcmode/adauth.md)
 for additional information.
 
 **NOTE:** You can also assign the built-in `admin\vsadmin` role instead of the permissions above.

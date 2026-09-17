@@ -106,7 +106,7 @@ Auditor supports monitoring the following device versions:
 Netwrix Auditor supports only CIFS configuration.
 :::
 
-See the [NetApp Data ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/10overview.md) topic for
+See the [NetApp Data ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/overview.md) topic for
 additional information.
 
 #### Nutanix
