@@ -16,8 +16,8 @@ groups that support that source type appear in a dropdown in the source configur
 Netwrix Data Classification treats certain source types as source groups. See [Dynamic Source Groups](#dynamic-source-groups) for the available 
 group types and configuration options.
 
-Select the cog icon on the main sources grid screen for a source group to amend the
-group settings:
+To amend the group settings, select the cog icon for that source group on the main sources grid
+screen:
 
 ![editgroup](/images/dataclassification/5.7/admin/sources/sourcegroups/editgroup.webp)
 
@@ -46,7 +46,7 @@ remove specific sources from a group by selecting the source group in the grid a
 selecting Remove from Group for the required sources. You can create and assign source groups
 as part of the source creation process.
 
-By going to the Settings of the Source Group, you can:
+In the Source Group settings, you can:
 
 - Set the Re-index period, priority, and credentials for a single source in the group or configure
   these options for all sources in this group using the "Apply changes to all sources in Source

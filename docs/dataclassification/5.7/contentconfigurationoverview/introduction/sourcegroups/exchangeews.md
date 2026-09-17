@@ -11,7 +11,7 @@ Microsoft is deprecating Exchange Web Services (EWS) and will fully disable it i
 For all new Exchange Online dynamic source groups, Netwrix recommends using the [Exchange (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/sourcegroups/exchangegraph.md) dynamic source group.
 :::
 
-This section contains information on how to configure Exchange and Exchange Online dynamic source
+This section describes how to configure Exchange and Exchange Online dynamic source
 groups. Toggle between Basic and Advanced configuration settings by clicking the icons in the
 Settings button in the bottom left corner of the page.
 

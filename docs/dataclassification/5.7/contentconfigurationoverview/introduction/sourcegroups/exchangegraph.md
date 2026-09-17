@@ -6,7 +6,7 @@ sidebar_position: 15
 
 # Dynamic Source Groups — Exchange (Graph)
 
-This section contains information on how to configure Exchange Online dynamic source
+This section describes how to configure Exchange Online dynamic source
 groups. Toggle between Basic and Advanced configuration settings by clicking the icons in the
 Settings button in the bottom left corner of the page.
 
