@@ -11,15 +11,20 @@ The installer is a single Linux binary, `dspm-installer`. Run it as root on the 
 
 Before you start, work through [Requirements](requirements.md). You need the license key, the server's fully qualified hostname, the TLS certificate and private key files, and the email address and name of the first administrator.
 
-## Download the Installer and the Offline Install Media
+## Download the Installer
 
-By default, Access Analyzer installs offline from local media, with no network access. The Netwrix package registry hosts both the installer and the offline install media, and your license key authenticates the download. Run these commands on the server.
+Access Analyzer installs in one of two modes. An **airgap** install downloads the installer and an offline media bundle in advance, then installs with no network access and no license check on the server. An **online** install downloads only the installer, and the installer pulls everything else from the network as it runs. Pick one mode and use its tab in this section and in [Run the Installer](#run-the-installer).
+
+The Netwrix package registry hosts both artifacts, and your license key authenticates the download. Run these commands on the server.
 
 1. Export your license key.
 
    ```bash
    export LICENSE_KEY='<license-key>'
    ```
+
+<Tabs groupId="install-mode">
+<TabItem value="airgap" label="Airgap install">
 
 2. Download the installer and the offline install media for the server's architecture.
 
@@ -56,8 +61,33 @@ By default, Access Analyzer installs offline from local media, with no network a
 
    If this file is missing, the extraction failed or the tarball didn't download completely. Repeat step 2.
 
+</TabItem>
+<TabItem value="online" label="Online install">
+
+2. Download the installer for the server's architecture and place it in `/usr/local/bin`.
+
+   ```bash
+   ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+   TMP_FILE=$(mktemp)
+   curl -Lf -o "$TMP_FILE" \
+     "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
+   sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+   rm -f "$TMP_FILE"
+   ```
+
+3. Confirm it runs.
+
+   ```bash
+   dspm-installer --version
+   ```
+
+   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains listed under [Outbound](requirements.md#outbound).
+
+</TabItem>
+</Tabs>
+
 :::note
-Keep the `channel=stable` parameter on both downloads. Without it, the registry returns the newest artifact across all channels, which can be a pre-release or development build instead of the latest stable release.
+Keep the `channel=stable` parameter on every download. Without it, the registry returns the newest artifact across all channels, which can be a pre-release or development build instead of the latest stable release.
 :::
 
 ## Copy the TLS Certificate to the Server
@@ -101,17 +131,34 @@ Enter the exact hostname that appears in the output, for example `commonName=dsp
 
 ## Run the Installer
 
-Run the installer with `sudo`. In airgap mode, the installer reads the software it needs from `--bundle-dir` instead of the network, so it needs no license key and makes no outbound calls.
+Run the installer with `sudo`, using the command for the mode you chose when you downloaded it.
+
+<Tabs groupId="install-mode">
+<TabItem value="airgap" label="Airgap install">
+
+In airgap mode, the installer reads the software it needs from `--bundle-dir` instead of the network, so it needs no license key and makes no outbound calls.
 
 ```bash
 sudo dspm-installer --airgap --bundle-dir /etc/dspm/dspm-media --size <size>
 ```
 
-Replace `<size>` with `small`, `medium`, `large`, or `enterprise`. See [Size](requirements.md#size) to pick the one that matches your CPU, RAM, and expected data volume; the installer defaults to `medium` if you omit the flag.
+[Installer reference](installer-reference.md#flags) covers the full `--airgap` and `--bundle-dir` flag details.
 
-:::tip
-Netwrix recommends installing in airgap mode after you've downloaded the offline media. If the server has internet access, you can install online with a license key instead — see the **Pass flags** tab for an example. [Installer reference](installer-reference.md#flags) covers the full `--airgap` and `--bundle-dir` flag details.
-:::
+</TabItem>
+<TabItem value="online" label="Online install">
+
+The `-E` flag carries your environment through to root, so the installer reads the `LICENSE_KEY` you exported for the download instead of prompting for it.
+
+```bash
+sudo -E dspm-installer --size <size>
+```
+
+If your `sudo` policy doesn't allow `-E`, pass the variable inline instead: `sudo LICENSE_KEY="$LICENSE_KEY" dspm-installer --size <size>`.
+
+</TabItem>
+</Tabs>
+
+Replace `<size>` with `small`, `medium`, `large`, or `enterprise`. See [Size](requirements.md#size) to pick the one that matches your CPU, RAM, and expected data volume; the installer defaults to `medium` if you omit the flag.
 
 The installer runs its preflight checks first, then collects any value it doesn't have yet. You can let it ask, or supply everything in advance.
 
@@ -120,7 +167,7 @@ The installer runs its preflight checks first, then collects any value it doesn'
 
 When you run the installer with no flags in a terminal, it asks for each value it needs, one screen at a time. It asks only for values it doesn't already have, so a re-run skips what you answered before.
 
-1. **License Key** - paste your Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The installer validates it online before moving on.
+1. **License Key** - paste your Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The installer validates it online before moving on. An airgap install skips this prompt.
 2. **Hostname** - enter the fully qualified domain name users open in their browsers, for example `dspm.corp.example.com`. If the server's own name is a valid choice, the installer offers it as a suggestion.
 3. **First Admin Email** and **First Admin Name** - enter the email address of the first administrator, and optionally their full name. The address becomes their username.
 4. **TLS Certificate File**, **TLS Private Key File**, and **CA Bundle File (optional)** - press Enter to accept `/etc/dspm/tls.crt` and `/etc/dspm/tls.key`, or enter other paths. Fill in the CA bundle only if a private certificate authority issued the certificate. The installer checks that the certificate and key match, that the certificate hasn't expired, and that it covers the hostname you entered.
