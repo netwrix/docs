@@ -6,7 +6,7 @@ sidebar_position: 100
 
 # SharePoint Online
 
-If you are an Office 365 customer, you can configure the collector service to automatically detect and queue your
+If you're an Office 365 customer, you can configure the collector service to automatically detect and queue your
 employees' SharePoint Online sites hosted in Office 365. You must supply an account with Tenant
 administration rights and set how often the service detects new SharePoint Online sites. You can
 also provide a filter expression to include certain SharePoint Online paths and exclude others as

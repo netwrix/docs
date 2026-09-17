@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Exchange
 
-For the various Exchange sources, you can configure the list of folders/emails to exclude from
+For the Exchange sources, you can configure the list of folders/emails to exclude from
 processing. Do the following:
 
 1. In the management console, click **Sources** →**Exchange Mailbox (EWS)** or **Exchange Mailbox (Graph)**. The Collection Exclusion page
@@ -20,7 +20,7 @@ processing. Do the following:
       any folders with that specific name.
     
     :::note
-    Adding an exclusion of this type will match any folders with the name you provide, wherever they are within any mailbox.
+    Adding an exclusion of this type will match any folders with the name you provide in all configured sources.
     :::
     
     - When you wrap the exclusion in wildcard indicators (e.g. “\*Deleted\*”), the system will match any folder/email

@@ -7,7 +7,7 @@ sidebar_position: 40
 # Exchange Server (EWS)
 
 Use the Exchange Server (EWS) source configuration screen to crawl and classify
-multiple Exchange mailboxes from the same Exchange server, using the Exchange Web Services (EWS). Due to the imminent deprecation of EWS for connecting to Exchange Online, Netwrix recommends using Exchange Server (Graph) for any new sources intended to crawl Exchange Online.
+multiple Exchange mailboxes from the same Exchange server, using the Exchange Web Services (EWS). "Microsoft is deprecating EWS for Exchange Online and will fully disable it in April 2027. Netwrix recommends using [Exchange Server (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeservergraph.md) for any new sources intended to crawl Exchange Online.
 
 :::note
 Automatic detection, crawling, and classification of multiple Exchange mailboxes from
@@ -26,11 +26,9 @@ To configure an Exchange Server (EWS) source, follow these steps.
 **Step 2 –** Select the **Exchange Server (EWS)** source type and in the properties window specify the necessary
 settings.
 
-**Step 3 –**  To display all settings, click the "wrench" icon next to Settings in the bottom-left corner.
+**Step 3 –** To display all settings, click the "wrench" icon next to **Settings** in the bottom-left corner.
 
 ## Authentication type: Modern authentication
-
-
 
 If you plan to use this authentication type, specify the following:
 
@@ -63,7 +61,7 @@ Both authentication types also require the following settings:
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Exchange API URL | By default, the crawling engine uses the _Exchange AutoDiscover_ functionality to locate the Exchange Web Services API URL, so you can typically leave this field blank. If _Exchange AutoDiscover_ isn't available, specify the Exchange API URL explicitly: `https://<servername>/EWS/Exchange.asmx`. |
 | Crawl Range      | Define which portions of data to retrieve from the Exchange server: <ul><li>Select **Date Range** to crawl a static set of data within the required interval.</li><li>Select **Since** if you want to periodically re-crawl content from the specified date, taking into account the last crawl date for each artifact.</li></ul>                                          |
-| Match Rules      | Define which mailboxes to crawl as part of an Exchange Server source. Examples: 1. `.*@netwrix.com`— enter the wildcard (\*) and the domain (here `netwrix.com`) to restrict crawling to a set of domain mailboxes 2. `.*`—enter to crawl all mailboxes                                                                                                   |
+| Match Rules      | Define rules with regular expressions to limit which mailboxes the product crawls. You must define at least one match rule. Examples: 1. `.*@netwrix.com`— enter the wildcard (\*) and the domain (here `netwrix.com`) to restrict crawling to a set of domain mailboxes 2. `.*`—enter to crawl all mailboxes                                                                                                   |
 | Detection Period | Specify how often to check the source for changes. Default period is 1 day.                                                                                                                                                                                                                                                                                              |
 
 

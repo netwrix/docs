@@ -7,8 +7,8 @@ sidebar_position: 30
 # Exchange Mailbox (EWS)
 
 Use the **Exchange Mailbox (EWS)** source to crawl and classify content stored in a
-single Exchange mailbox on an on-premises Exchange server or in Exchange Online using the Exchange Web Services (EWS). 
-Due to the imminent deprecation of EWS for connecting to Exchange Online, Netwrix recommends using [Exchange Mailbox (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailboxgraph.md) 
+single Exchange mailbox on an on-premises Exchange server or in Exchange Online, using Exchange Web Services (EWS). 
+Microsoft is deprecating EWS for Exchange Online and will fully disable it in April 2027. Netwrix recommends using [Exchange Mailbox (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailboxgraph.md) 
 for any new sources intended to crawl Exchange Online mailboxes.
 
 **Step 1 –** In Netwrix Data Classification management console, open the **Sources** view and click

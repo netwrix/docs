@@ -23,33 +23,7 @@ permissions:
 - Mailbox Search—Allows the crawling account to enumerate mailboxes (automatic discovery of
   mailboxes)
 
-
-### Exchange Online
-
-**Step 1 –** Log in to the
-[Office 365 Exchange Admin Portal](https://admin.microsoft.com/Adminportal/Home?source=applauncher#office-365-exchange-admin-portal)[.](https://admin.microsoft.com/Adminportal/Home?source=applauncher#)
-
-**Step 2 –** Go to Roles > **Role Assignments** > **Exchange**.
-
-**Step 3 –** Select **Add new role**.
-
-**Step 4 –** In the Set up basics step, enter the Name and Description
-'_NetwrixCrawlerImpersonation_'. Click **Next**.
-
-**Step 5 –** On the **Add Permission** step, select the Microsoft.Graph Mail.Read, Mail.ReadWrite, and User.Read.All
-permissions. Click **Next**.
-
-**Step 6 –** Select the users to assign to this role group. They will have permissions to manage the
-roles that you assigned in the previous step.
-
-**Step 7 –** Finish adding the permissions by selecting \_**\_Add role group\_\_**.
-
-**Step 8 –** Go to the **DiscoveryManagement** Role.
-
-**Step 9 –** Add your user as a member and/or assign your user for Modern Authentication set up to
-this Role as well.
-
-## Exchange Server (On-Premise)
+### Exchange Server (On-Premise)
 
 1. Log in to one of the Exchange servers (RDP).
 2. Open a Powershell window.
@@ -60,12 +34,6 @@ this Role as well.
 
     New-ManagementRoleAssignment –Name "NetwrixCrawlerSearch" –Role "Mailbox Search" –User
     ADMINUSERNAME
-
-:::note
-If you crawl Microsoft Office 365 for Small Business or many hosted Exchange systems, you can't
-set up Application Impersonation.
-:::
-
 
 ## Modern Authentication
 
@@ -78,15 +46,15 @@ To access Exchange using Modern Authentication, you need to use an admin usernam
 :::
 
 Configure sufficient permissions that allow the crawling account to access and read the
-mailboxes that you want to crawl. The permissions required differ between the Exchange Web Services (EWS) and Graph implementations.
+mailboxes that you want to crawl. The permissions required depend on whether you are using the Exchange Web Services (EWS) or Graph source types.
 
-To use the Graph implementation, you must grant the following permissions:
+To use the Graph source types, you must grant the following permissions:
 
-- Mail.Read-Allows the application to read the full contents of all mailboxes
+- Mail.Read—Allows the application to read the full contents of all mailboxes
 - Mail.ReadWrite—Allows the application to move and delete mail in all mailboxes - necessary for the Exchange workflow actions
 - User.Read.All—Allows the application to discover all users associated with an Exchange Online server
 
-To use the EWS implementation, you must grant the following permissions:
+To use the EWS source types, you must grant the following permissions:
 
 - ApplicationImpersonation—Allows the crawling account to impersonate each of the mailboxes / users
   configured for collection
@@ -96,5 +64,8 @@ To use the EWS implementation, you must grant the following permissions:
 If you plan to use modern authentication, do the following:
 
 1. [Create Azure AD app for Modern Authentication](/docs/dataclassification/5.7/introduction/introduction/exchange/azureappexchangeonlinemfa.md)
-2. Configure [Exchange Server (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeservergraph.md) 
- or [Exchange Server (EWS)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeserverews.md) source settings.
+2. Configure source settings for one or more of the following:
+  - [Exchange Server (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeservergraph.md) 
+  - [Exchange Server (EWS)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeserverews.md)
+  - [Exchange Mailbox (Graph)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailboxgraph.md) 
+  - [Exchange Mailbox (EWS)](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailboxews.md)
