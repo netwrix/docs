@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 Access Analyzer supports three kinds of sign-in. Local sign-in always stays available, and you can connect one directory provider alongside it:
 
-- **Local accounts** hold a password inside Access Analyzer. The first Admin created by the installer is a local account.
+- **Local accounts** hold a password inside Access Analyzer. The first Admin that the installer creates is a local account.
 - **Active Directory (AD)** lets people sign in with their domain username and password. Access Analyzer checks them against a domain controller over Lightweight Directory Access Protocol (LDAP) secured with TLS, known as LDAPS.
 - **Entra ID** lets people sign in with their Microsoft work account through a **Sign in with Microsoft** button.
 
@@ -31,7 +31,7 @@ For **Entra ID**, gather:
 
 - Your tenant's ID as a globally unique identifier (GUID), from **Overview** in the Entra admin center.
 - An app registration in that tenant with a client secret. Access Analyzer doesn't support certificate credentials. Note its **Application (client) ID**.
-- Two redirect Uniform Resource Identifiers (URIs) added to the registration under **Authentication > Redirect URIs** before you start, both using your Access Analyzer hostname and both added under the **Web** platform type: `https://<your-access-analyzer-host>/setup/entra-consent-callback` and `https://<your-access-analyzer-host>/idps/callback`.
+- Two redirect Uniform Resource Identifiers (URIs) on the registration under **Authentication > Redirect URIs** before you start, both using your Access Analyzer hostname and the **Web** platform type: `https://<your-access-analyzer-host>/setup/entra-consent-callback` and `https://<your-access-analyzer-host>/idps/callback`.
 - Someone with the Global Administrator or Privileged Role Administrator role in the tenant to approve admin consent during setup.
 
 ## Open the Setup Flow
@@ -95,7 +95,7 @@ The **Authorize Access Analyzer** step asks you to sign in once as a tenant admi
 
 1. In **Tenant ID**, enter your tenant's GUID. Entering the primary domain instead shows the error "Enter the tenant's GUID, not its primary domain — find it in the Entra admin center under Overview."
 2. In **Application (client) ID**, enter the app registration's client ID.
-3. In **Client secret**, enter a secret generated under **Certificates & secrets** on the app registration.
+3. In **Client secret**, enter a secret you generated under **Certificates & secrets** on the app registration.
 4. Confirm that both URIs in the **Redirect URIs** block exist under **Authentication > Redirect URIs** on the app registration. Each URI has a copy button.
 5. Click **Sign in with Microsoft and continue**. A Microsoft window opens for admin consent, and the button reads **Waiting for Microsoft…** until it closes.
 6. In the Microsoft window, sign in as a Global Administrator or Privileged Role Administrator.
@@ -117,9 +117,9 @@ When Microsoft grants consent, the flow moves to the next step on its own. If it
 
 ## Add Administrators
 
-The **Add Access Analyzer admins** step creates or promotes Admin accounts so that at least one person can sign in through the new provider with full rights. People listed here can manage settings, integrations, and other administrators, and you can add or remove admins later from Settings.
+The **Add Access Analyzer admins** step creates or promotes Admin accounts so that at least one person can sign in through the new provider with full rights. The people you list here can manage settings, integrations, and other administrators, and you can add or remove admins later from Settings.
 
-The field under **Admin accounts** depends on the provider. With Active Directory, **Search your directory** matches name, username, or the detected sign-in attribute after you type at least three characters, and it also accepts an email address typed directly. With Entra ID, **Enter an email address** takes the address only.
+The field under **Admin accounts** depends on the provider. With Active Directory, **Search your directory** matches name, username, or the detected sign-in attribute after you type at least three characters, and it also accepts an email address you type directly. With Entra ID, **Enter an email address** takes the address only.
 
 1. Under **Admin accounts**, enter each administrator.
 2. Press Enter or comma to confirm each entry.
