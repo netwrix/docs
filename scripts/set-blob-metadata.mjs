@@ -112,6 +112,7 @@ function parseArgs(argv) {
     force: false,
     dryRun: false,
     concurrency: 64,
+    endpoint: process.env.AZURE_BLOB_ENDPOINT,
   };
   const flags = new Map([
     ['--account', 'account'],
@@ -119,6 +120,7 @@ function parseArgs(argv) {
     ['--container', 'container'],
     ['--base-url', 'baseUrl'],
     ['--concurrency', 'concurrency'],
+    ['--endpoint', 'endpoint'],
   ]);
 
   for (let i = 0; i < argv.length; i++) {
@@ -148,8 +150,9 @@ function parseArgs(argv) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
 
+  // --endpoint exists so the script can be pointed at the Azurite emulator.
   const client = new BlobServiceClient(
-    `https://${args.account}.blob.core.windows.net`,
+    args.endpoint ?? `https://${args.account}.blob.core.windows.net`,
     new StorageSharedKeyCredential(args.account, args.key),
     // The SDK's storage retry policy handles throttling (503) and transient
     // resets with Azure-aware backoff, so the pool below does not retry itself.
@@ -251,7 +254,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         console.error(`error: ${error.message}`);
         console.error(
           'usage: node scripts/set-blob-metadata.mjs --account NAME --key KEY ' +
-            "[--container '$web'] --base-url URL [--force] [--dry-run] [--concurrency N]",
+            "[--container '$web'] --base-url URL [--force] [--dry-run] [--concurrency N] [--endpoint URL]",
         );
       } else {
         console.error(error);
