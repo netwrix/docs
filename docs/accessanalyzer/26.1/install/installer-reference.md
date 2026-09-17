@@ -25,7 +25,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 |---|---|---|---|
 | `--license-key` | `LICENSE_KEY` | none | Netwrix license key. Required unless you pass `--airgap`. The installer validates it online before the install starts. |
 | `--airgap` | `DSPM_AIRGAP` | `false` | Install fully offline from the media at `--bundle-dir`, with no network calls and no license key needed at install time. Requires `--bundle-dir`. Mutually exclusive with `--license-key`, `--local-charts-dir`, and `--use-mirrored-images`, since airgap mode sources software and images from the bundle itself. |
-| `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the extracted offline install media. Required when you pass `--airgap`. Media is published for both `amd64` and `arm64`; download the bundle that matches the host's architecture, since the installer rejects a bundle built for the wrong one. |
+| `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the extracted offline install media. Required when you pass `--airgap`. Netwrix publishes media for both `amd64` and `arm64`; download the bundle that matches the host's architecture, since the installer rejects a bundle built for the wrong one. |
 | `--hostname` | `DSPM_HOSTNAME` | none | Fully qualified domain name users open in their browsers. The installer lowercases it before use. |
 | `--first-admin-email` | `FIRST_ADMIN_EMAIL` | none | Email address of the first administrator. Required. Becomes that person's username. |
 | `--first-admin-name` | `FIRST_ADMIN_NAME` | none | Full name of the first administrator. |
@@ -188,7 +188,7 @@ Pass `--preflight` to run the preflight checks and exit, without installing k3s,
 
 You can't combine `--preflight` with `--uninstall` or `--skip-preflight`. It writes the same `/var/log/dspm-installer.log` and `/var/log/dspm-preflight.json` files a regular install writes, except under `--dry-run`, where the installer doesn't write the JSON report.
 
-Pass `--airgap` and `--bundle-dir <path>` along with `--preflight` to check an offline host. The installer runs the same checks, except it skips the `network` check, since an airgapped host isn't expected to reach anything.
+Pass `--airgap` and `--bundle-dir <path>` along with `--preflight` to check an offline host. The installer runs the same checks, except it skips the `network` check, since an airgapped host can't reach anything.
 
 | Code | Meaning |
 |---|---|

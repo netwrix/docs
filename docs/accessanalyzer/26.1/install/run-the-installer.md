@@ -110,7 +110,7 @@ sudo dspm-installer --airgap --bundle-dir /etc/dspm/dspm-media --size <size>
 Replace `<size>` with `small`, `medium`, `large`, or `enterprise`. See [Size](requirements.md#size) to pick the one that matches your CPU, RAM, and expected data volume; the installer defaults to `medium` if you omit the flag.
 
 :::tip
-Airgap mode is the recommended way to install after you've downloaded the offline media. If the server has internet access, you can install online with a license key instead — see the **Pass flags** tab for an example. [Installer reference](installer-reference.md#flags) covers the full `--airgap` and `--bundle-dir` flag details.
+Netwrix recommends installing in airgap mode after you've downloaded the offline media. If the server has internet access, you can install online with a license key instead — see the **Pass flags** tab for an example. [Installer reference](installer-reference.md#flags) covers the full `--airgap` and `--bundle-dir` flag details.
 :::
 
 The installer runs its preflight checks first, then collects any value it doesn't have yet. You can let it ask, or supply everything in advance.
