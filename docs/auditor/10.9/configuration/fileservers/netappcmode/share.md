@@ -1,7 +1,7 @@
 ---
-title: "Configure Audit Settings for CIFS File Shares"
-description: "Configure Audit Settings for CIFS File Shares"
-sidebar_position: 50
+title: "Configure Audit Settings for File Shares"
+description: "Configure Audit Settings for File Shares"
+sidebar_position: 80
 ---
 
 # Configure Audit Settings for CIFS File Shares

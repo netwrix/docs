@@ -1,7 +1,7 @@
 ---
 title: "NetApp Data ONTAP"
 description: "NetApp Data ONTAP"
-sidebar_position: 30
+sidebar_position: 10
 ---
 
 # NetApp Data ONTAP
@@ -23,9 +23,9 @@ You can configure your IT Infrastructure for monitoring in one of the following
   automatically configure audit in the target environment, your current audit settings will be
   checked on each data collection and adjusted if necessary.
 
-    - To use this option for NetApp Clustered Data ONTAP 8 or ONTAP 9, make sure that audit
-      configuration has been created (with `vserver audit create` command) for the target system
-      enabling audit configuration is optional.
+    - To use this option for NetApp Clustered Data ONTAP 8 or ONTAP 9, ensure that audit
+      configuration has been created (with the `vserver audit create` command) for the target
+      system. Enabling audit configuration manually is optional.
 
 - Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
   reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
@@ -91,8 +91,8 @@ You can configure your IT Infrastructure for monitoring in one of the following
 
 See the following topics for additional information:
 
-- Configure NetApp Clustered Data ONTAP 8 and ONTAP 9 for Monitoring
-- [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/cifs.md)
+- [Configure NetApp Clustered Data ONTAP 8 and ONTAP 9 for Monitoring](#configure-netapp-clustered-data-ontap-8-and-ontap-9-for-monitoring)
+- [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/share.md)
 
 The following table lists the actions that can be performed on NetApp:
 
@@ -112,17 +112,21 @@ The following table lists the actions that can be performed on NetApp:
 | Remove (failed attempt)  | +    | +      | –     |
 | Copied                   | –    | –      | –     |
 
-Actions marked with an asterisks (\*) are reported for NetApp Clustered Data ONTAP 8 and ONTAP 9
+Actions marked with an asterisk (\*) are reported for NetApp Clustered Data ONTAP 8 and ONTAP 9
 only.
 
 ## Configure NetApp Clustered Data ONTAP 8 and ONTAP 9 for Monitoring
 
 To configure Clustered Data ONTAP 8 and ONTAP 9 for monitoring, perform the following procedures:
 
-- Prerequisites
+- [Prerequisites](#prerequisites)
 - [Configure ONTAPI\RESTAPI Web Access](/docs/auditor/10.9/configuration/fileservers/netappcmode/webaccess.md)
+- [Configure Event Categories and Log](/docs/auditor/10.9/configuration/fileservers/netappcmode/netappaudit.md)
+- [Permissions for NetApp Auditing](/docs/auditor/10.9/configuration/fileservers/netappcmode/apirole.md)
 - [Configure Service Policy](/docs/auditor/10.9/configuration/fileservers/netappcmode/servicepolicy.md)
-- [Configure Event Categories and Log](/docs/auditor/10.9/configuration/fileservers/netappcmode/eventcategories.md)
+- [Configure AD domain authentication](/docs/auditor/10.9/configuration/fileservers/netappcmode/adauth.md), or
+  [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/overview.md)
+- [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/share.md)
 
 ### Prerequisites
 
@@ -133,7 +137,7 @@ the following administration and management guides.
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Clustered Data ONTAP 8.2         | <ul><li>[Clustered Data ONTAP® 8.2 File Access and Protocols Management Guide](https://library.netapp.com/ecm/ecm_download_file/ECMP1196891)</li><li>[Clustered Data ONTAP® 8.2 System Administration Guide for SVM Administrators](https://library.netapp.com/ecm/ecm_download_file/ECMP1368704)</li></ul> |
 | Clustered Data ONTAP 8.3         | <ul><li>[Clustered Data ONTAP® 8.3 System Administration Guide for Cluster Administrators](https://library.netapp.com/ecm/ecm_get_file/ECMP1636037)</li><li>[Clustered Data ONTAP® 8.3 File Access Management Guide for CIFS](https://library.netapp.com/ecm/ecm_download_file/ECMP1610207)</li></ul>       |
-| ONTAP 9.0 <ul><li>9.10</li></ul> | <ul><li>[ONTAP 9 Documentation Center](http://docs.netapp.com/ontap-9/index.jsp)</li></ul>                                                                                                                                                                                                                  |
+| ONTAP 9.0 – 9.10                 | <ul><li>[ONTAP 9 Documentation Center](http://docs.netapp.com/ontap-9/index.jsp)</li></ul>                                                                                                                                                                                                                  |
 
 
 Perform the following steps before proceeding with the audit configuration.
@@ -143,7 +147,7 @@ Perform the following steps before proceeding with the audit configuration.
 **NOTE**: NFS file shares are not supported.
 
 **Step 2 –** Configure System Access Control List (SACL) on your file share. See
-[Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/cifs.md) topic for additional information.
+[Configure Audit Settings for CIFS File Shares](/docs/auditor/10.9/configuration/fileservers/netappcmode/share.md) topic for additional information.
 
 **Step 3 –** Set the Security Style for Volume or Qtree where the audited file shares are located to
 the _"ntfs"_ or _"mixed"_.
