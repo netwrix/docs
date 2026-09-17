@@ -2,7 +2,7 @@
 title: "Configure Okta"
 description: "Configure Okta as an Authentication Provider"
 sidebar_position: 40
-slug: /configuration/fileservers/netappcmode/oauth2/40okta
+slug: /configuration/fileservers/netappcmode/oauth2/okta
 ---
 
 # Configure Okta as an Authentication Provider
@@ -49,7 +49,7 @@ app.clientId == "<app-id>" ? "ontap-role-netwrix_rest_role" : "ontap:*:no-access
 Replace `<app-id>` with the **Client ID** of the Netwrix Auditor application (Step 2). If the
 Client ID matches, the claim resolves to `ontap-role-netwrix_rest_role`, which maps to the local
 ONTAP role name `netwrix_rest_role` created on `Step 4` in
-[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md).
+[Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/ontap.md).
 For ONTAP details, refer to [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html).
 For every other application, the claim resolves to `ontap:*:no-access:none:*:`, which grants no access.
 
@@ -89,6 +89,6 @@ if you created a dedicated custom Authorization Server (Step 1).
 ## Related Topics
 
 - [Overview and options for ONTAP client authorization](https://docs.netapp.com/us-en/ontap/authentication/oauth2-authorization.html)
-- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/10overview.md)
-- [Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/20ontap.md)
+- [OAuth 2.0 Authentication Overview](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/overview.md)
+- [Configure ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/ontap.md)
 - [Okta Authorization Servers documentation](https://help.okta.com/en-us/content/topics/security/api/authorization-servers.htm)

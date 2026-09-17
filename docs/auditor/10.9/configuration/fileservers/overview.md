@@ -22,7 +22,7 @@ by Auditor on these supported storage systems.:
 
 - [Dell Data Storage](/docs/auditor/10.9/configuration/fileservers/delldatastorage/overview.md)
 - [Dell Isilon/PowerScale](/docs/auditor/10.9/configuration/fileservers/dellisilon/overview.md)
-- [NetApp Data ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/10overview.md)
+- [NetApp Data ONTAP](/docs/auditor/10.9/configuration/fileservers/netappcmode/overview.md)
 - [Nutanix](/docs/auditor/10.9/configuration/fileservers/nutanix/overview.md)
 - [Qumulo](/docs/auditor/10.9/configuration/fileservers/qumulo/overview.md)
 - [Synology](/docs/auditor/10.9/configuration/fileservers/synology/overview.md)

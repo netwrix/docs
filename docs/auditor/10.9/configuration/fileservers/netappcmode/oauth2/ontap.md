@@ -2,7 +2,7 @@
 title: "Configure ONTAP"
 description: "Configure OAuth 2.0 on the ONTAP"
 sidebar_position: 20
-slug: /configuration/fileservers/netappcmode/oauth2/20ontap
+slug: /configuration/fileservers/netappcmode/oauth2/ontap
 ---
 
 # Configure OAuth 2.0 on the ONTAP
@@ -41,7 +41,7 @@ where `<admin-svm>` is vserver name obtained on 'Step 2'
 
 
 **Step 5 –** Create the ONTAP Rest API role using vserver name obtained on 'Step 2'
-To create a role, please refer to [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md).
+To create a role, please refer to [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/apirole.md).
 
 
 **Step 6 –** Verify the configuration:
@@ -61,8 +61,8 @@ security certificate show -type server-ca -vserver <admin-svm>
 
 ## Related Topics
 
-- [Configure AD FS](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/30adfs.md)
-- [Configure Okta](/docs/auditor/10.9/configuration/fileservers/netappcmode/70oauth2/40okta.md)
-- [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/40apirole.md)
+- [Configure AD FS](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/adfs.md)
+- [Configure Okta](/docs/auditor/10.9/configuration/fileservers/netappcmode/oauth2/okta.md)
+- [Configure Role](/docs/auditor/10.9/configuration/fileservers/netappcmode/apirole.md)
 - [security oauth2 client create — CLI reference](https://docs.netapp.com/us-en/ontap-cli/security-oauth2-client-create.html)
 - [OAuth 2.0 deployment scenarios](https://docs.netapp.com/us-en/ontap/authentication/oauth2-deployment-scenarios.html#summary-of-the-configuration-parameters)
