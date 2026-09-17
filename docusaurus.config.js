@@ -127,7 +127,9 @@ const config = {
       rspackBundler: true,
       rspackPersistentCache: true,
       mdxCrossCompilerCache: true,
-      ssgWorkerThreads: false,
+      // Renders the static pages across a worker pool instead of one thread.
+      // Requires future.v4.removeLegacyPostBuildHeadAttribute, set below.
+      ssgWorkerThreads: true,
     },
     v4: {
       removeLegacyPostBuildHeadAttribute: true,
