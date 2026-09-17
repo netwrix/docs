@@ -95,7 +95,7 @@ Keep the `channel=stable` parameter on every download. Without it, the registry 
 The installer expects the certificate at `/etc/dspm/tls.crt` and the private key at `/etc/dspm/tls.key`. If you keep them somewhere else, enter the paths when the installer prompts for them, or pass them with `--tls-cert` and `--tls-key`.
 
 :::tip
-Supplying your own certificate isn't the only option. `--generate-self-signed-cert` has the installer generate one for you, so you can skip this section. Or hand issuance and renewal to a certificate authority instead: see [Automatic TLS Certificates](automatic-tls-certificates.md) for Let's Encrypt or another Automatic Certificate Management Environment (ACME) certificate authority, and [AD CS TLS Certificates](adcs-tls-certificates.md) for an on-premises Active Directory Certificate Services (AD CS) CA.
+Supplying your own certificate isn't the only option. `--generate-self-signed-cert` has the installer generate one for you, so you can skip this section. Or hand issuance and renewal to a certificate authority instead: see [Automatic TLS Certificates](automatic-tls-certificates.md) for Let's Encrypt or another Automatic Certificate Management Environment (ACME) certificate authority, and [AD CS TLS Certificates](adcs-tls-certificates.md) for an on-premises Active Directory Certificate Services (AD CS) certificate authority.
 :::
 
 1. Create the directory.
