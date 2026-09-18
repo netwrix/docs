@@ -7,9 +7,9 @@ sidebar_position: 10
 # EPP REST API
 
 
-The EPP REST API provides programmatic access over HTTPS to Endpoint Protector device control management data (users, computers, devices, groups, and Offline Temporary Passwords) and to audit and activity logs. Responses are returned in JSON, and all endpoints are authenticated with OAuth 2.0.
+The EPP REST API provides programmatic access over HTTPS to Endpoint Protector device control management data (users, computers, devices, groups, and Offline Temporary Passwords) and to audit and activity logs. The API returns responses in JSON and authenticates every endpoint with OAuth 2.0.
 
-The API is organized into the following groups:
+The API organizes its endpoints into the following groups:
 
 | Group | Purpose | Access |
 |---|---|---|
@@ -72,7 +72,7 @@ Access tokens are short-lived and expire after 1 hour by default. Request a new 
 
 ### Security model
 
-- **Dedicated client credentials** — Netwrix Support provisions a `client_id` and `client_secret` specifically for API access. Console administrator credentials aren't used to authenticate to the API.
+- **Dedicated client credentials** — Netwrix Support provisions a `client_id` and `client_secret` specifically for API access. The API doesn't accept console administrator credentials.
 - **Signed, short-lived tokens** — access tokens are signed JSON Web Tokens (JWT) with a default lifetime of 1 hour. The server validates every request before it reaches an endpoint.
 - **Least exposure** — the token endpoint is the only endpoint that doesn't require a token. Every other endpoint rejects requests without a valid, unexpired token with a 401 response.
 - **Attributable writes** — create and update operations record the authenticating client identifier in the `created_by` and `modified_by` fields of the affected record.
@@ -121,7 +121,7 @@ The API follows consistent conventions for pagination, sorting, filtering, respo
 - **Management endpoints** — Users, Computers, Devices, Groups, and Offline Temporary Passwords.
 - **Log endpoints** — the read-only endpoints under `/api/logs/`.
 
-The differences are noted below and in the [specification](eppapispecification).
+The following sections and the [specification](eppapispecification) note these differences.
 
 ### Pagination
 
@@ -132,7 +132,7 @@ All list endpoints accept `page` and `per_page` and return a `meta` object along
 | `page` | integer | 1 | 1-based |
 | `per_page` | integer | 25 (management), 50 (logs) | Maximum 200 for all endpoints |
 
-The `meta` object contains `page`, `per_page`, `total`, and `total_pages`. On the high-volume log endpoints, `total` is capped at a server-side maximum for performance — when the cap is reached, `total` reflects that maximum rather than the exact count.
+The `meta` object contains `page`, `per_page`, `total`, and `total_pages`. On the high-volume log endpoints, `total` is capped at a server-side maximum for performance — when a query reaches the cap, `total` reflects that maximum rather than the exact count.
 
 ### Sorting
 
@@ -176,18 +176,18 @@ The API uses two error body shapes:
 { "errors": { "name": "Name must not be empty." } }
 ```
 
-The first form is returned for authentication failures, invalid IDs, and missing resources. The second form (a map of field names to messages) is returned for request-body validation failures.
+The API returns the first form for authentication failures, invalid IDs, and missing resources. It returns the second form (a map of field names to messages) for request-body validation failures.
 
 ### Creating and updating records
 
 - **Create** uses `POST` to the collection. For Users, Computers, and Devices, create is idempotent by identity: if a record with the same identity already exists, the API updates and returns it (HTTP 200) instead of creating a duplicate, and restores it if it had been deleted. A brand-new record returns HTTP 201.
-- **Update** uses `PATCH` to a single resource and is partial — only the fields present in the body are changed. Pass a field as `null` to clear an optional value such as `department_id`.
-- **Agent-managed fields** (for example a computer's `ip`, `mac`, and `os_version`, or a device's `vid`, `pid`, and `serial_no` after registration) are populated automatically by the EPP agent and can't be set through the API.
+- **Update** uses `PATCH` to a single resource and is partial — only the fields present in the body change. Pass a field as `null` to clear an optional value such as `department_id`.
+- **Agent-managed fields** (for example a computer's `ip`, `mac`, and `os_version`, or a device's `vid`, `pid`, and `serial_no` after registration) — the EPP agent populates these automatically, and you can't set them through the API.
 
 ### Deleting records
 
-- **Delete** uses `DELETE` on a single resource and performs a soft delete: the record is flagged deleted and excluded from future queries but retained for audit. A successful delete returns `{ "response": "allok" }`.
-- **Bulk delete** uses `DELETE` on the collection with a body of `{ "id": [ ... ] }`. Each ID is processed independently; the response is a `resources` map keyed by ID, where each entry has a `code` (200 = deleted, 404 = not found). If every ID succeeds, the status is 200; if any ID wasn't found, the status is 207 (Multi-Status).
+- **Delete** uses `DELETE` on a single resource and performs a soft delete: the API flags the record as deleted and excludes it from future queries but retains it for audit. A successful delete returns `{ "response": "allok" }`.
+- **Bulk delete** uses `DELETE` on the collection with a body of `{ "id": [ ... ] }`. The API processes each ID independently; the response is a `resources` map keyed by ID, where each entry has a `code` (200 = deleted, 404 = not found). If every ID succeeds, the status is 200; if any ID wasn't found, the status is 207 (Multi-Status).
 
 ## HTTP status codes
 
