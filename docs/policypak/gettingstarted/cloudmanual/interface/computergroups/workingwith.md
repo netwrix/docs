@@ -45,27 +45,29 @@ You can also perform other context-sensitive actions after you click on a compan
 
 The context-sensitive actions are described below:
 
-- Link XML here - This lets you select an XML file that has been previously uploaded and link it to
+- **Link XML here...** by selecting an XML file that has been previously uploaded and linking it to
   the currently selected group.
-- Upload and link a new XML here - Using this function, you don't necessarily need to upload the XML
-  data file using the XML Data Files tab. You can upload and link in one step.
-- Create and link a new policy -: Enables you to use the in-cloud editors to craft a new XML
-  directive and link it to the group you are currently focused on.
-- Policy Forecast / Modeling Report -(see separate section below)
-- Change Policy Link Order -(see separate section below)
-- Expand all subgroups and Collapse all subgroups: When a group is selected, it will expand or
-  collapse all subgroups which might make it easier to see other items.
-- Edit Group: Enables you to move a group, all computers, and all linked policies to another
+- **Upload and link a new XML here...** makes it possible to avoid having to upload the XML
+  data file using the XML Data Files tab and you can upload and link in one step instead.
+- **Create and link a new policy...** lets you use in-cloud editors to craft a new XML
+  policy and link it to the group you are currently focused on.
+- **Download All Policies linked to group (.zip)** and **Download All Policies linked to group (.msi )** enable you to simultaneously download all the group-affiliated policies in the selected format.
+- **Set group computers certificates expiration** enables you to enter/select the number of days to expire the certificates of computers in this group. Note that the certificates will be reisued automatically after the next successful sync if expiration is set to occur in 30 days or earlier.
+- **Revoke(void) all group computers certificates** for the policy-covered computers to stop syncing immediately.
+- **Policy Forecast / Modeling Report** is used to determine which policies to expect on an endpoint (see the "Policy Forecast/Modeling Report" section).
+- **Change Policy Link Order** allows you reshuffle the order in which policies are prioritized for enforcement (see the "Policy Link Order" section).
+- **Expand all subgroups** and **Collapse all subgroups** apply to the groups currently highlighted, improving user experience.
+- **Add company group** to a selected parent group.
+- **Edit group** to move a group, all computers, and all linked policies to another
   location (or parent group). You can move a group to any other company group, or out of all other
   company groups (thus making it a top-level node) if desired. You can also specify the client-side
   extension (CSE) version and also the PolicyPak Cloud client version for this group
-  as well as the refresh interval for the computers. (more information in "Company Groups" later in
-  this document.)
-- Delete group: Deletes a group. If a computer is a member of any other group, the computer stays in
-  those other groups. If a computer is no longer a member of any other group, it automatically gets
-  placed in the built-in group named "Unassigned."
-- Add/Remove Computers from Group: Enables you to add or remove computers to a company group. Note
-  that computers may be in multiple company groups.
+  as well as the refresh interval for the computers (see the "Company Groups" section).
+- **Delete group** while leaving the associated computers in the existing groups to which they belong. If a computer is no longer a member of any other group, it automatically gets
+  placed in the built-in group named "Unassigned".
+- **Add/Remove Computers from Group** allows you to manipulate compulet affiliation into company groups. Note
+  that computers may be in multiple company groups at the same time.
+- **Bulk add/move computer(s) to group** and **Bulk remove computer(s) from group** enable you to manipulate computer affiliation into company groups by means of a CSV file.
 
 ## Built-In Groups
 
