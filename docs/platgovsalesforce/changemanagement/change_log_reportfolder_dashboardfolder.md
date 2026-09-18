@@ -69,4 +69,4 @@ The Change Log is organized into two main panels:
 ![UI Examples](/images/platgovsalesforce/changelogs/changelog_reporfolder_dashboardfolder_3.webp)
 
 ## References
-- Additional Information: https://docs.netwrix.com/docs/platgovsalesforce/changemanagement/using_change_logs
+- For additional information, see [Using Change Logs](/docs/platgovsalesforce/changemanagement/using_change_logs.md).
