@@ -23,7 +23,9 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
-| `--license-key` | `LICENSE_KEY` | none | Netwrix license key. Required. The installer validates it online before the install starts. |
+| `--license-key` | `LICENSE_KEY` | none | Netwrix license key. Required unless you pass `--airgap`. The installer validates it online before the install starts. |
+| `--airgap` | `DSPM_AIRGAP` | `false` | Install fully offline from the media at `--bundle-dir`, with no network calls and no license key needed at install time. Requires `--bundle-dir`. Mutually exclusive with `--license-key`, `--local-charts-dir`, and `--use-mirrored-images`, since airgap mode sources software and images from the bundle itself. |
+| `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the extracted offline install media. Required when you pass `--airgap`. Netwrix publishes media for both `amd64` and `arm64`; download the bundle that matches the host's architecture, since the installer rejects a bundle built for the wrong one. |
 | `--hostname` | `DSPM_HOSTNAME` | none | Fully qualified domain name users open in their browsers. The installer lowercases it before use. |
 | `--first-admin-email` | `FIRST_ADMIN_EMAIL` | none | Email address of the first administrator. Required. Becomes that person's username. |
 | `--first-admin-name` | `FIRST_ADMIN_NAME` | none | Full name of the first administrator. |
@@ -143,6 +145,7 @@ When the file supplies every required value and the installer runs in a terminal
 | 0 | Success. |
 | 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or you canceled the prompts with Esc or Ctrl-C (`installation cancelled`). |
 | 10 | License key error. The key is expired, suspended, unknown, or invalid. |
+| 15 | The installer rejected the airgap flags, or couldn't load the bundle: `--airgap` without `--bundle-dir`, `--bundle-dir` without `--airgap`, or a bundle directory with no valid `manifest.json`. |
 | 20 | The release version you requested with `--target-revision` isn't available for this license key. |
 | 50 | The installer couldn't install the platform, or the platform didn't become ready within 5 minutes. |
 | 60 | The installer couldn't install a platform component. |
@@ -184,6 +187,8 @@ Pass `--preflight` to run the preflight checks and exit, without installing k3s,
 `--preflight` runs the same checks listed in this section, plus a certificate check: the PEM certificate and key at the resolved TLS paths must exist, match, and not be expired. A certificate expiring within 30 days still passes, because a real install would also proceed on it. Pass `--hostname` to also verify the certificate's Subject Alternative Names cover it, and `--size` to check RAM, CPU, and disk against the size you intend to install. Under `--dry-run`, the installer skips the certificate check, matching a dry-run install.
 
 You can't combine `--preflight` with `--uninstall` or `--skip-preflight`. It writes the same `/var/log/dspm-installer.log` and `/var/log/dspm-preflight.json` files a regular install writes, except under `--dry-run`, where the installer doesn't write the JSON report.
+
+Pass `--airgap` and `--bundle-dir <path>` along with `--preflight` to check an offline host. The installer runs the same checks, except it skips the `network` check, since an airgapped host can't reach anything.
 
 | Code | Meaning |
 |---|---|

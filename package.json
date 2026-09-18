@@ -20,13 +20,13 @@
     "write-heading-ids": "npx docusaurus write-heading-ids",
     "kb:clean": "node scripts/copy-kb-to-versions.mjs --clean",
     "kb:dry": "node scripts/copy-kb-to-versions.mjs --dry",
-    "audit:generate": "node scripts/generate-audit-list.mjs",
     "kb:test:aa": "npm run kb:clean && npm run prestart && npm run start",
     "kb:prodtest:aa": "npm run kb:clean && npm run prebuild && npm run build && npm run serve",
-    "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh",
+    "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh && node --test scripts/test-set-blob-metadata.mjs && node scripts/test-set-blob-metadata-integration.mjs",
     "prepare": "husky || true"
   },
   "dependencies": {
+    "@azure/storage-blob": "^12.33.0",
     "@docusaurus/babel": "^3.10.2",
     "@docusaurus/core": "^3.10.2",
     "@docusaurus/faster": "^3.10.2",
