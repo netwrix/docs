@@ -22,12 +22,12 @@ comma, or semicolon. You can import content using the sample ﬁle provided on t
 select the option based on the number of uploaded items.
 
 :::note
-Dictionaries of under 100 items can be edited, while larger dictionaries have to be
-uploaded again.
+You can edit dictionaries of under 100 items, but you must upload larger dictionaries
+again.
 :::
 
 
-After the denylist is created, it will be displayed on the Custom Content list and will be available
+After you create the denylist, it appears on the Custom Content list and is available
 when creating or editing a Content Aware Protection or eDiscovery policy.
 
 ![Creating a new denylist](newdenylist.webp)
@@ -92,7 +92,7 @@ Examples: Matching and Non-Matching for File Extensions like “.epp”:
 - Matching – test.epp, mail.epp, 123.epp
 - Non-Matching – 123.epp.zip, mail.epp.txt
 
-After the denylist is created, it will be displayed on the File Name list and will be available when
+After you create the denylist, it appears on the File Name list and is available when
 creating or editing a Content Aware Protection or eDiscovery policy.
 
 :::warning
@@ -154,8 +154,8 @@ a desktop folder on Windows, use the pattern "?:\Users\\\*\Desktop\".
 ## Scan Location
 
 Scan Location Denylists are custom-deﬁned lists of locations identiﬁed by the eDiscovery module.
-Data at rest within this location are automatically inspected for content, depending on the rules
-deﬁned in various Policies.
+The eDiscovery module automatically inspects data at rest within this location for content,
+depending on the rules deﬁned in various Policies.
 
 ![Scan Location Denylists are custom-deﬁned lists of locations identiﬁed by the eDiscovery module](scanlocation.webp)
 
@@ -178,7 +178,7 @@ When deﬁning a Scan Location, use these special characters to deﬁne the path
 Regular Expressions are sequences of characters that form a search pattern, mainly for use in
 pattern matching with strings.
 
-You can create a regular expression to ﬁnd a certain recurrence in the data that is transferred
+You can create a regular expression to ﬁnd a certain recurrence in the data transferred
 across the protected network. Regex Denylists are available for both the Content Aware Protection
 and eDiscovery modules.
 
@@ -204,9 +204,9 @@ Matched content box:
   `(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}`
 
 :::note
-This feature is provided “as is” and requires advanced knowledge of the Regular Expression
-syntax. No direct support is offered and it is the responsibility of the customers to learn and
-implement regular expressions and to thoroughly test.
+Netwrix provides this feature “as is”, and it requires advanced knowledge of the Regular
+Expression syntax. Netwrix offers no direct support, and customers are responsible for learning,
+implementing, and thoroughly testing regular expressions.
 :::
 
 
@@ -223,7 +223,7 @@ Regular expressions let you control how text matching handles letter casing. Dep
 **1. Case-Sensitive Matching (Default)**
 
 By default, Regex matching is case-sensitive.
-This means that only text with the exact same casing will be matched.
+This means Endpoint Protector matches only text with the exact same casing.
 
 **Example:**<br />
 **Pattern:** `test@example\\.com`<br />
@@ -241,7 +241,7 @@ This enables matching regardless of the case of letters in the input text.
 
 In the following example, the pattern '(?i)test' will match “test,” “Test,” “TEST,” and other variations, regardless of letter case, as follows:
 
-1. The Regex pattern is defined, added to the dictionary, and saved. Ensure that it is also included in the CAP Policy for proper application.<br />
+1. Define the Regex pattern, add it to the dictionary, and save it. Ensure the CAP Policy also includes it for proper application.<br />
    ![](Regexcaseinsensitivity1.png)
 2. The Content Aware Report confirms that the test has completed successfully and that case-insensitive matching is functioning as expected.<br />
    ![](Regexcaseinsensitivity2.png)
@@ -282,7 +282,7 @@ Doesn't **match:** `"CONFIDENTIAL DOCUMENT"`
 ## Domain and URL
 
 Domain and URL Denylists are custom-deﬁned lists of web addresses identiﬁed by Endpoint Protector.
-Access to domains and URLs from these lists will be denied.
+Endpoint Protector denies access to domains and URLs from these lists.
 
 :::note
 Domain and URL Denylists are available only for the Content Aware Protection module.
@@ -302,8 +302,8 @@ You can create or import up to 100 lists of dictionaries, each dictionary compri
 domains.
 
 :::note
-Dictionaries comprising up to 100 web domains can be edited, but for more extensive
-dictionaries, you will need to import them again.
+You can edit dictionaries comprising up to 100 web domains, but you must import more
+extensive dictionaries again.
 :::
 
 
@@ -311,7 +311,7 @@ You can deﬁne the content by adding the ﬁle name, ﬁle name and extension, 
 pdf, test1example.pdf. example.endpointprotector.com, \*example.com, \*example\*example,
 https://website.com
 
-After the denylist is created, it will be displayed on the Domain and URL list and will be available
+After you create the denylist, it appears on the Domain and URL list and is available
 when creating or editing a Content Aware Protection policy.
 
 ![Creating a New Domain URL denylists](domainurlnewdenylists.webp)
@@ -349,13 +349,13 @@ and **description**, add the items separated by a new line, comma, or semicolon 
 ## Applications
 
 This section introduces the documentation related to CLI (Command Line Interface) commands denylists
-usage. CLI commands denylists empower customers with greater control over application start events
-and offer the capability to scrutinize command line arguments used to launch speciﬁc applications.
+usage. CLI commands denylists give customers greater control over application start events
+and let them scrutinize the command line arguments used to launch speciﬁc applications.
 This functionality enhances the precision of CAP (Content Aware Protection) policies, enabling users
 to gain visibility and control over the usage of particular applications.
 
-Example: Consider the scenario of controlling the startup mode of an application, as illustrated by
-the example below for Google Chrome:
+Example: Consider controlling the startup mode of an application, as illustrated by
+the following example for Google Chrome:
 
 **chrome.exe --incognito**
 
@@ -365,9 +365,9 @@ ensuring that the launch and behavior of applications align with your security a
 requirements.
 
 :::note
-Certain native command line utilities such as `ls`, `md`, `cd`, which are embedded in the
-Operating System Core, may not be captured by CAP visibility. These commands are integral to the
-functioning of the operating system and are typically excluded from CAP policies, and aren't an
+CAP visibility may not capture certain native command line utilities such as `ls`, `md`, and
+`cd`, which are embedded in the Operating System Core. These commands are integral to the
+functioning of the operating system, typically fall outside CAP policies, and aren't an
 egress channel.
 :::
 
@@ -385,7 +385,7 @@ control and monitoring of application usage.
 ![Configuring Applications Denylists](applicationsdenylists.webp)
 
 Follow these steps and use CLI commands denylists to enhance your organization's security
-posture and ensure that applications are used in compliance with your policies and regulations.
+posture and ensure applications comply with your policies and regulations.
 
 :::note
 The Endpoint Protector Client has limited visibility into activity within PowerShell and
@@ -417,13 +417,13 @@ The Endpoint Protector Server offers three options for defining MIP labels:
 This flexibility allows administrators to avoid creating custom dictionaries to recognize
 MIP-labeled files.
 
-MIP labels can be used along other CAP conditions, including content-aware and label-aware data
-scanning. This enable granular control over data protection based on MPIP classifications.
+You can use MIP labels along with other CAP conditions, including content-aware and label-aware
+data scanning. This enables granular control over data protection based on MPIP classifications.
 
 :::note
 While Endpoint Protector can recognize MIP-encrypted files by their GUID (if
-they follow the latest MIP format used by office web tools labeling), content-aware scanning for
-these files isn't yet supported.
+they follow the latest MIP format used by office web tools labeling), Endpoint Protector doesn't
+yet support content-aware scanning for these files.
 :::
 
 
@@ -465,11 +465,11 @@ Each NDC entry is uniquely identified by the combination of **NDC name property 
 
 Use the **Look for** field to control how Endpoint Protector matches the classification on a scanned document:
 
-- **NDC name property value** — scans only after the NDC name property value is defined, and ignores all other properties. The **NDC label value** field can be left empty.
-- **NDC label value** — scans only after the NDC label value is defined, and ignores all other properties. The **NDC name property value** field can be left empty.
+- **NDC name property value** — scans only after you define the NDC name property value, and ignores all other properties. You can leave the **NDC label value** field empty.
+- **NDC label value** — scans only after you define the NDC label value, and ignores all other properties. You can leave the **NDC name property value** field empty.
 - **Both NDC name property + label value** — scans for both the NDC name property and the corresponding label value, as configured.
 - **Keywords** — scans only for the NDC label in the **Keywords** document property, which supports alternative NDC label detection.
 
 :::note
-The NDC labeling feature is supported only on Endpoint Protector Client version 2605.x.x.x and later.
+Only Endpoint Protector Client version 2605.x.x.x and later support the NDC labeling feature.
 :::

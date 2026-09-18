@@ -16,7 +16,7 @@ This functionality gives administrators precise control over information exchang
 
 -   Lets administrators control which users and endpoints can interact with AI prompts, across web applications, browser extensions, and native desktop clients.
 -   Inspects both ways sensitive data can enter a prompt: plain text a user types directly into the prompt, and the content of any file the user attaches to it.
--   Applies the same content-aware and context-aware detection engine already used for email, cloud storage, and removable media, so there's no separate AI-specific policy engine to learn or maintain.
+-   Applies the same content-aware and context-aware detection engine that already covers email, cloud storage, and removable media, so there's no separate AI-specific policy engine to learn or maintain.
 
 **Benefits**
 

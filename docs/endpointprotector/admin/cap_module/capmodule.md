@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Content Aware Protection
 
-Content Aware Protection is Endpoint Protector's full-blown Data Loss Prevention (DLP) module for
+Content Aware Protection is Endpoint Protector's complete Data Loss Prevention (DLP) module for
 data in motion. It lets administrators set up and enforce content-aware and context-aware
 filtering policies for selected users, computers, groups, or departments, taking control over the
 risk of accidental or intentional transfers of sensitive company data, such as:
@@ -15,7 +15,7 @@ risk of accidental or intentional transfers of sensitive company data, such as:
   phone numbers, addresses, tax IDs, VAT IDs, and health insurance numbers, with region-specific
   patterns covering dozens of countries.
 - Financial and payment card information: credit card numbers for Visa, Mastercard, American
-  Express, JCB, Discover, Diners Club, China UnionPay, Prostir and more, plus bank account and IBAN
+  Express, JCB, Discover, Diners Club, China UnionPay, Prostir, and more, plus bank account and IBAN
   numbers.
 - Source code and file types: dozens of programming languages (C, C++, Java, Python, JavaScript,
   Go, Swift, PowerShell, and more) plus extensive built-in detection across graphic, office,
@@ -59,11 +59,11 @@ points:
 ## Content Aware Protection Activation
 
 Content Aware Protection comes as the second level of data protection available in Endpoint
-Protector. The module is displayed but requires activation by pressing the Enable button.
+Protector. The module appears but requires activation by pressing the Enable button.
 Provide the Main Administrator's contact details if you haven't already.
 
 
-![The module is displayed but requires a simple activation by pressing the Enable button](activation.webp)
+![The module appears but requires activation by pressing the Enable button](activation.webp)
 
 :::note
 The Content Aware Protection module is separate from Device Control or eDiscovery modules,

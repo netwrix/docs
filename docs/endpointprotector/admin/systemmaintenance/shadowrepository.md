@@ -12,10 +12,9 @@ event log captures metadata about a transfer, a file shadow preserves the file i
 the evidence available for a forensic investigation and simplifying the forensics process.
 
 Because retaining full file copies increases storage volume and can affect data-minimization,
-access-control, and legal obligations, whether to enable File Shadowing — and for which
-departments, applications, or file types — is left to your own consideration, based on your
-organization's compliance requirements and the data protection regulations that apply in your
-country.
+access-control, and legal obligations, you decide whether to enable File Shadowing — and for which
+departments, applications, or file types — based on your organization's compliance requirements and
+the data protection regulations that apply in your country.
 
 From this section, you can enable the Endpoint Protector Client to send File Shadows directly and at
 a global level to an externalized location, the File Shadows Repositories.
@@ -28,8 +27,8 @@ In Endpoint Protector, the Department defines a collection of entities with the 
 attributes. It shouldn't be confused with the department from an organizational chart.
 :::
 
-Starting with Endpoint Protector Server version 5.8.0.0, file shadowing was made more reliable on
-macOS and Linux by first relying on OS features to transfer the files.
+Starting with Endpoint Protector Server version 5.8.0.0, file shadowing is more reliable on
+macOS and Linux because it first relies on OS features to transfer the files.
 
 On Mac/Linux:
 
@@ -64,12 +63,12 @@ You aren't required to define the port for Samba (smbv1) or Azure File Storage a
 (smbv2) repositories.
 :::
 
-- Folder Path – add the folder path where File Shadows will be saved
+- Folder Path – add the folder path where Endpoint Protector saves File Shadows
 - Username and Password – add the repository credentials
 
 :::note
-If you are using the Samba V1 protocol for File Shadows on Mac, ensure that NTLMv1
-authorization is set on the Samba server.
+If you are using the Samba V1 protocol for File Shadows on Mac, set NTLMv1
+authorization on the Samba server.
 :::
 
 ![Enable the Endpoint Protector Client to send File Shadows directly](fileshadowrepository.png)
@@ -84,8 +83,9 @@ executes a dummy file upload using the provided credentials.
   validates the bucket region and name if the authentication response was successful.
 
 :::note
-The Test Connection for Samba v1, Samba v2, and Azure File Storage repositories isn't
-supported due to additional third-party requirements, such as IP whitelisting and smbclient.
+Endpoint Protector doesn't support Test Connection for Samba v1, Samba v2, and Azure File
+Storage repositories, due to additional third-party requirements such as IP whitelisting and
+smbclient.
 :::
 
 ## S3 Bucket File Shadow Repository
@@ -96,11 +96,11 @@ The Amazon S3 bucket is a public cloud object storage resource available from Am
 S3 Bucket type File Shadow Repository supports large files up to 5TB (AWS specification).
 
 :::note
-Starting with Endpoint Protector Server version 5.9.6.0, the AWS SDK was upgraded. As a
-result, all AWS S3 regions are now supported when configuring an S3 Bucket repository, and the
-separate Direct and Indirect artifact retrieval methods are no longer required. Shadows are
-retrieved through the Endpoint Protector Server using the SDK, and no S3 bucket IP whitelisting or
-bucket policy configuration is needed.
+Endpoint Protector Server version 5.9.6.0 upgrades the AWS SDK. As a
+result, an S3 Bucket repository now supports all AWS S3 regions, and the
+separate Direct and Indirect artifact retrieval methods are no longer necessary. The Endpoint
+Protector Server retrieves shadows using the SDK, and S3 bucket IP whitelisting and bucket policy
+configuration aren't necessary.
 :::
 
 To create an S3 Bucket type File Shadow Repository on Endpoint Protector, provide the following
@@ -118,7 +118,7 @@ information:
   settings
 
 :::note
-ensure the Endpoint Protector Server time is synchronized (Appliance > Server
+Synchronize the Endpoint Protector Server time (Appliance > Server
 Maintenance) with a reliable time source before using an S3 bucket as a File Shadow repository.
 Amazon S3 may reject requests if the server time differs by more than 5 minutes from the S3 service
 time.
@@ -126,38 +126,38 @@ time.
 
 When a shadow is downloaded, Endpoint Protector sends a request to AWS to verify that the file is
 present in the bucket. If the file isn't found, the server responds with the message "The object
-object_name doesn't exist in the S3 Bucket Repository." If the file exists, the shadow is retrieved
-through the Endpoint Protector Server using the SDK.
+object_name doesn't exist in the S3 Bucket Repository." If the file exists, the Endpoint Protector
+Server retrieves the shadow using the SDK.
 
 You can download or delete file shadows from the Reports and Analysis section, the Logs Report page,
-and the Content Aware Report page using the Actions column. When a file is uploaded, an External
-Repository Upload log is displayed, which also provides the Download and Delete actions for the
-associated shadow.
+and the Content Aware Report page using the Actions column. After a file upload, Endpoint Protector
+displays an External Repository Upload log, which also provides the Download and Delete actions for
+the associated shadow.
 
-For Content Aware Protection Remediation Session events, the shadow is downloaded from the first
-block event associated with the remediated file.
+For Content Aware Protection Remediation Session events, Endpoint Protector downloads the shadow
+from the first block event associated with the remediated file.
 
 :::note
-When a file is copied to a USB device, both a File Copy and a File Write event are generated,
-and each may display the Download action. The shadow is stored once and retrieved from the File
-Copy event; the Download action on the File Write event doesn't return a shadow.
+When you copy a file to a USB device, Endpoint Protector generates both a File Copy and a File
+Write event, and each may display the Download action. Endpoint Protector stores the shadow once
+and retrieves it from the File Copy event; the Download action on the File Write event doesn't
+return a shadow.
 :::
 
 :::note
-To set up the S3 bucket repository, administrators are required to specify the bucket name
-and generate the Access Key ID and Secret Access Key through AWS administration.
+To set up the S3 bucket repository, specify the bucket name and generate the Access Key ID
+and Secret Access Key through AWS administration.
 :::
 
 :::warning
-File shadows contained in the S3 Bucket (File Shadow Repository) will not be included
-in the Audit.
+The Audit doesn't include file shadows stored in the S3 Bucket (File Shadow Repository).
 :::
 
 ![S3 Bucket File Shadow Repository](fileshadowrepositorytwo.png)
 
 :::note
-In the scenario where there may be an unreliable network, the Client will attempt to
-upload the artifact 10 times before the guard-rail will stop upload attempts. This will delete the
+On an unreliable network, the Client will attempt to
+upload the artifact 10 times before the guard-rail stops upload attempts. This will delete the
 File Shadow from the queue to ensure endpoint performance, disk space utilization, and mobile
 transfer limits aren't affected.
 :::
@@ -174,8 +174,8 @@ in the following situations:
 
 **File name convention**
 
-The file names will be uploaded to the S3 Bucket with URLs encoded to avoid issues with special
-characters. The Endpoint Protector Server will then decode them to display the original name.
+Endpoint Protector uploads file names to the S3 Bucket with URLs encoded to avoid issues with
+special characters. The Endpoint Protector Server then decodes them to display the original name.
 
 Example:
 
@@ -191,7 +191,8 @@ canada_&$@=;/+ ,?{^}%`]>[~<#|_山人é口ŏ刀ā木ù日ì月è女ǚ子ĭ馬/马
 ln4w7yuqax-dev-client-bucket/2022-11-23/ComputerName/canada_%26%24%40%3D%3B%3A%2B%20%2C%3F%5C%7B%5E%7D%25%60%5D%3E%5B~%3C%23%7C_%E5%B1%B1%E4%BA%BA...%20.txt
 ```
 
-File name and special characters from the computer name and location will also be encoded.
+Endpoint Protector also encodes the file name and special characters from the computer name and
+location.
 
 **File name structure**
 

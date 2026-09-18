@@ -36,7 +36,7 @@ You need customer portal access to download the EPP content*. See also announcem
 To ensure full configuration and functionality of the EPP Microsoft New Outlook add-in, you must address three dependencies collectively:
 
 1. Update EPP Clients\
-Ensure that all Endpoint Protector (EPP) Clients run at least version 5.9.4.3. or higher. This version is necessary to support the features of the new add-in.
+Ensure that all Endpoint Protector (EPP) Clients run version 5.9.4.3 or higher. This version is necessary to support the features of the new add-in.
 
 2. Download the latest New Outlook add-in from the [Netwrix My Products portal](https://customer.netwrix.com/sign_in.html?rf=my_products.html).\
 You need customer portal access to download the EPP content*.
@@ -145,7 +145,7 @@ Host these URLs correctly on your server and ensure they're accessible via the i
 
 The default behavior of the New Outlook add-in and EPP Client aligns with the EPP Content Aware Protection (CAP) policy defined for email and Outlook actions. This includes capabilities such as reporting, blocking, and other egress channel controls when specific conditions match.
 
-However, the add-in has a predefined, hardcoded behavior when it can't communicate with the EPP Client, assuming the EPP Client isn't present. In this scenario, it allows sending messages. For customers who want to enforce a restrictive policy that blocks the option to send out emails, this option is available.
+However, the add-in has a predefined, hardcoded behavior when it can't communicate with the EPP Client, assuming the EPP Client isn't present. In this scenario, it allows sending messages. This option is available for customers who want to enforce a restrictive policy that blocks sending emails.
 
 **To change that:**
 
@@ -189,7 +189,7 @@ Refer to official Microsoft KB article: [Use add-ins in Outlook](https://support
 **Steps:**
 
 1. Host validators and icon files.
-2. Preconfigure manifest.xml as described in previous chapter.
+2. Preconfigure manifest.xml as described in [Pre-configuring add-in (manifest.xml)](#pre-configuring-add-in-manifestxml).
 3. In your preferred browser, go to https://aka.ms/olksideload. This opens Outlook on the web and loads the **Add-Ins for Outlook** dialog after a few seconds.
 4. Select **My add-ins**.
 5. In the Custom Add-in's section, select **Add a custom add-in**, then choose **Add from file**.
@@ -205,7 +205,7 @@ The central deployment method allows administrators to deploy the EPP New Outloo
 **To deploy the add-in through the Microsoft Admin Center (https://admin.microsoft.com/):**
 
 1. Host validators and icon files.
-2. Preconfigure manifest.xml as described in the previous chapter.
+2. Preconfigure manifest.xml as described in [Pre-configuring add-in (manifest.xml)](#pre-configuring-add-in-manifestxml).
 3. Go to **Settings** → **Integrated apps** → **Add-ins**, select **Deploy Add-in**, and click **Next**.
 4. Choose **Upload custom apps**.\
  ![Choose Upload custom apps](msaddincustomappselect.webp "Choose Upload custom apps")
@@ -216,7 +216,7 @@ The central deployment method allows administrators to deploy the EPP New Outloo
 7. When the list appears under **To be added**, click **Next** and then click **Accept Permissions**. Review the needed permissions and click **Accept**.
 8. Keep **Deployment Method** as **Fixed (Default)**.
 9. Click **Next** and then **Finish deployment**.
-10. After making changes, allow some time for them to propagate. According to Microsoft, this process can take anywhere from a few minutes to up to 24 hours.
+10. After making changes, allow some time for them to propagate. According to Microsoft, this process can take anywhere from a few minutes to 24 hours.
 
 ## Upgrade scenario
 
@@ -225,5 +225,5 @@ If you need to apply an updated version of the New Outlook add-in provided by Ne
 Release notes for a given fix may indicate that only one of the component files has changed. In that case, repeat the configuration and hosting procedure only for that specific file. For example, [New Outlook add-in version 1.1](https://community.netwrix.com/t/netwrix-endpoint-protector-client-version-2605-release-notes-now-with-hotfix-1/130335) requires updating only `validator.js` — reconfigure and rehost it by replacing the previous file.
 
 :::warning
-After rehosting the updated New Outlook add-in, reboot the affected computers for the changes to take effect. Rebooting ensures that all cache and connections are refreshed.
+After rehosting the updated New Outlook add-in, reboot the affected computers for the changes to take effect. Rebooting refreshes all cache and connections.
 :::

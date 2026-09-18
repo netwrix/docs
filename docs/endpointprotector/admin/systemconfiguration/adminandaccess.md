@@ -24,8 +24,8 @@ provide the following information:
 
 **Administrator Details**
 
-- Add the username and password, email, ﬁrst and last name, phone number and then select the UI
-  language
+- Add the username, password, email, first name, last name, and phone number, and then select the
+  UI language
 
 **Account Settings**
 
@@ -38,8 +38,8 @@ provide the following information:
   this setting.
 
 :::warning
-The Require password change at next login setting is ignored in the following
-situations:
+Endpoint Protector ignores the Require password change at next login setting in the
+following situations:
 :::
 
 
@@ -91,10 +91,10 @@ Super Administrators have access to:
 - System parameters (manage)
 
 The Normal Administrator is a system user with normal privileges but some limitations. They can only
-manage entities belonging to the system departments for which they are responsible. Normal
-Administrators can be allocated to certain responsibilities inside Administrators Groups to further
-restrict access. They can, for example, be assigned to a Helpdesk group with speciﬁc duties such as
-Oﬄine Temporary Password and Enforced Encryption, or their permissions restricted to speciﬁc modules
+manage entities belonging to the system departments for which they are responsible. You can allocate
+Normal Administrators to certain responsibilities inside Administrators Groups to further
+restrict access. For example, you can assign them to a Helpdesk group with speciﬁc duties such as
+Oﬄine Temporary Password and Enforced Encryption, or restrict their permissions to speciﬁc modules
 such as Content Aware and Device Control.
 
 Despite these restrictions, Normal Administrators have access to:
@@ -121,10 +121,10 @@ they need to manage the system efficiently.
 From this section you can create and manage Administrators Groups, granting Normal Administrators
 with access to speciﬁc Endpoint Protector sections.
 
-The Administrators added to these groups will only be able to view and manage the sections assigned
-by the selected roles.
+Administrators added to these groups can only view and manage the sections the selected roles
+assign.
 
-By default, the following Administrators Groups are created:
+Endpoint Protector creates the following Administrators Groups by default:
 
 - Oﬄine Temporary Password Administrators – grants access only to the Oﬄine Temporary Password
   section
@@ -145,7 +145,7 @@ To create a new Administrators Group, click Create and then provide the followin
 - Roles – select one or more roles from the list
 
 :::warning
-The Read Only role can't be combined with any other roles.
+You can't combine the Read Only role with any other roles.
 :::
 
 
@@ -172,14 +172,14 @@ unintentional changes or data breaches.
 
 ![User Role Matrix](userrolematrix.webp)
 
-Within the Endpoint Protector, there are several different user roles, each with their own set of
+Endpoint Protector has several user roles, each with its own set of
 permissions. The Super Administrator role is the most powerful and has access to all features,
 whilst other roles have more restricted access based on their job tasks.
 
 :::note
-You can assign each role to a department. When in read-only mode,
-users are only given viewing options. This guarantees that they can obtain essential information but
-are unable to alter the system.
+You can assign each role to a department. In read-only mode,
+users have viewing options only. This guarantees that they can obtain essential information but
+can't alter the system.
 :::
 
 
@@ -210,7 +210,7 @@ and, where strict regulatory compliance rules are in place. Under these circumst
 only their own entities.
 
 :::warning
-This functionality shouldn't be confused with Groups of computers and users, nor with
+Don't confuse this functionality with Groups of computers and users, or with
 administrators’ roles.
 :::
 
@@ -228,16 +228,15 @@ department code invalid and assigns that computer to the default department (def
 ![Create a new department click Create and then provide a name, description, and unique code](newdepartment.webp)
 
 In Endpoint Protector terminology, a Department is similar to an Organization Unit in Active
-Directory (or any other directory service software). Of course,
-the Organization Unit isn't identical to the Department, and again Endpoint Protector leaves the
-power to the actual Super Administrator to virtually link one or more Organization Units to an
-Endpoint Protector Department.
+Directory (or any other directory service software). The Organization Unit isn't identical to the
+Department, and Endpoint Protector leaves the power to the Super Administrator to virtually link
+one or more Organization Units to an Endpoint Protector Department.
 
 Each entity (e.g.: computer) must belong to a department. When deploying the Endpoint Protector
 Client, if Endpoint Protector ﬁnds a department with the given code, the computer registers and
 belongs to that department.
 
-Example: Computer Test-PC is registered to the department “developers”. In this case, the user Test
+Example: Computer Test-PC registers to the department “developers”. In this case, the user Test
 logged on that computer belongs to the same department, together with the devices connected
 on the computer Test-PC.
 

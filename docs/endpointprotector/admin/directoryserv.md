@@ -32,7 +32,7 @@ When importing many entities, use Base Search Path to show only relevant informa
 :::
 
 
-To ensure the information is correct, click Test to test the new connection.
+To verify the information is correct, click Test.
 
 After you create a new connection, it appears in the synchronization list, where you can edit it
 to include the required entities.
@@ -44,7 +44,7 @@ can also change the connection credentials and synchronization interval.
 
 Use the Advanced Groups Filter to import and synchronize only specific groups, ignoring all other entities.
 
-From the Directory Browser section, you can select the entities that need to be synced.
+From the Directory Browser section, you can select the entities to sync.
 
 :::note
 You can view only Organizational units (OU) and Groups in the Directory Browser.
@@ -74,7 +74,7 @@ only Group 3 on the Endpoint Protector Server. It also imports User 5 and adds i
 Group 3. Endpoint Protector parses Group 2 and all subsequent groups, retrieves only the Users, and
 doesn't add the actual groups to the server.
 
-After the synchronization is done, it will look like that on the Endpoint Protector server:
+After synchronization, the Endpoint Protector Server shows:
 
 - Group 3 - User 5, User 4, User 3, User 2, User 1
 
@@ -133,11 +133,11 @@ application via Graph API.
 
 ![Create a Secret ID for the Application](certsecretsfour.webp)
 
-**Step 5 –** Take note of the Secret ID value and ensure to copy it to the clipboard and also to
-store it safely because you'll need it further on.
+**Step 5 –** Copy the Secret ID value to the clipboard and store it safely, because you'll need it
+later.
 
 :::note
-Notice that when navigating back, the secret ID will be hidden.
+When you navigate back, the secret ID is no longer visible.
 :::
 
 
@@ -203,7 +203,7 @@ ensure the created application is open then:
 
 ![Add Permissions to the Application](azureadapipermissionfour.webp)
 
-**Step 5 –** Search for the permissions mentioned above and check each of the permissions.
+**Step 5 –** Search for each of the required permissions and check it.
 (Directory.Read.All, Group.Read.All, User.Read.All)
 
 ![Add Permissions to the Application](azureadapipermissionfive.webp)

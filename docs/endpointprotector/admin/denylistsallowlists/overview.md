@@ -6,9 +6,9 @@ sidebar_position: 60
 
 # Denylists and Allowlists
 
-From this section, you can create Denylists and Allowlists that can be used in both the Content
-Aware Protection and eDiscovery modules. Once deﬁned, these lists can be enabled for a speciﬁc
-policy.
+From this section, you can create Denylists and Allowlists for use in both the Content
+Aware Protection and eDiscovery modules. After you deﬁne these lists, you can enable them for a
+speciﬁc policy.
 
 Denylists serve as the parameters for a Content Aware Protection or eDiscovery policy, defining
 inclusively what the policy detects and protects.

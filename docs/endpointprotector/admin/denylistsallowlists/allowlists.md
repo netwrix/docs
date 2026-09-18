@@ -19,7 +19,7 @@ Credit Cards, etc.), other ﬁles are highly unlikely to contain such data (e.g.
 
 MIME Type Allowlists prevent Endpoint Protector from inspecting redundant files for content and reduce false positives from file metadata where the risk of data loss is low.
 
-Example: As songs or video ﬁles can't contain lists of credit card numbers, there is no need to
+Example: As songs or video ﬁles can't contain lists of credit card numbers, you don't need to
 inspect them using content ﬁlters.
 
 MIME Type Allowlists are available for both the Content Aware Protection and eDiscovery modules and
@@ -45,16 +45,16 @@ To create a new allowlist, under the list of available allowlists, click **Add**
 and **description** and then select a ﬁle from the list or upload a new ﬁle you can use in multiple
 allowlists.
 
-After the allowlist is created, it will be displayed on the Allowed File list and will be available
+After you create the allowlist, it appears on the Allowed File list and is available
 when creating or editing a Content Aware Protection or eDiscovery policy.
 
 ![New Allowed Files Allowlists ](newallowedfilesallowlists.webp)
 
 ## File Location
 
-File Location Allowlists are custom-deﬁned lists of locations identiﬁed by Endpoint Protector. File
-transfers within this location are automatically allowed, regardless of the content inspection rules
-or permissions deﬁned in various Policies.
+File Location Allowlists are custom-deﬁned lists of locations identiﬁed by Endpoint Protector.
+Endpoint Protector automatically allows ﬁle transfers within this location, regardless of the
+content inspection rules or permissions deﬁned in various Policies.
 
 File Location Allowlists are available for both Content Aware Protection and eDiscovery modules
 
@@ -106,20 +106,20 @@ Groups behave the same way. You can create custom groups based on existing compu
 
 ## Network Share
 
-Network Share Allowlists are custom-deﬁned lists of network share addresses where transfers of
-conﬁdential information will be allowed by Endpoint Protector.
+Network Share Allowlists are custom-deﬁned lists of network share addresses where Endpoint
+Protector allows transfers of conﬁdential information.
 
 :::note
 Network Share Allowlists are available only for the Content Aware Protection module.
 :::
 
 
-You can use wildcard patterns in the Network Share Allowlist to specify wildcard matching. The
-Network Share Allowlist can perform matching the whole ﬁle name, not only on the directory name,
-when wildcard patterns are used.
+You can use wildcard patterns in the Network Share Allowlist to specify wildcard matching. When you
+use wildcard patterns, the Network Share Allowlist can match the whole ﬁle name, not only the
+directory name.
 
 :::warning
-The Network Share must be set to Allow Access and Scan Network Share must be checked
+Set the Network Share to Allow Access and check Scan Network Share
 inside a Content Aware Protection Policy.
 :::
 
@@ -145,8 +145,8 @@ Don't enter the network share path with backslashes (\\) 192.168.0.1\public\user
 
 ## E-mail Domain
 
-E-mail Domain Allowlists are custom-deﬁned e-mail addresses to which sending of conﬁdential
-information will be allowed by Endpoint Protector.
+E-mail Domain Allowlists are custom-deﬁned e-mail addresses to which Endpoint Protector allows
+sending conﬁdential information.
 
 :::note
 E-mail Domain Allowlists are available only for the Content Aware Protection module.
@@ -161,7 +161,7 @@ To create a new allowlist, under the list of available allowlists, click **Add**
 and **description** and then type or paste items at least three characters separated by a new line,
 comma, or semicolon. You can import content using the sample ﬁle provided on the form.
 
-After the allowlist is created, it will be displayed on the E-mail Domain list and will be available
+After you create the allowlist, it appears on the E-mail Domain list and is available
 when creating or editing a Content Aware Protection policy.
 
 ![New E-mail Domain Allowlists ](newemaildomainallowlists.webp)
@@ -189,8 +189,8 @@ You can create or import up to 100 lists of dictionaries, each dictionary compri
 domains.
 
 :::note
-Dictionaries comprising up to 100 web domains can be edited, but for more extensive
-dictionaries, you will need to import them again.
+You can edit dictionaries comprising up to 100 web domains, but you must import more
+extensive dictionaries again.
 :::
 
 
@@ -214,7 +214,7 @@ Due to Gmail usage, take the following into consideration:
   drop option
 - You need to allow **doc.google.com** to add images in the email body
 
-After the allowlist is created, it will be displayed on the Deep Packet Inspection list and will be
+After you create the allowlist, it appears on the Deep Packet Inspection list and is
 available when creating or editing a Content Aware Protection policy.
 
 ![New Deep Packet Inspection Allowlists](newdpiallowlists.webp)
