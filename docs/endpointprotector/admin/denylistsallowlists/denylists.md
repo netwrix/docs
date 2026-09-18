@@ -32,6 +32,42 @@ when creating or editing a Content Aware Protection or eDiscovery policy.
 
 ![Creating a new denylist](newdenylist.webp)
 
+### Detecting Custom Document Classification Labels
+
+Many third-party classification and labeling tools (such as Titus, Boldon James, Microsoft Purview
+Information Protection, or a custom in-house tool) write their classification labels as custom
+document properties in Office files (Word, Excel, PowerPoint). You can create a Custom Content
+dictionary that matches these labels, so Content Aware Protection detects and controls files based
+on their classification, even without native integration with the labeling tool.
+
+**To find the custom property value:**
+
+1. In the Office application, open the file, go to **File** → **Info** → **Properties** →
+   **Advanced Properties**, and select the **Custom** tab. Note the property **Name** and **Value**
+   you want to detect.
+
+   ![Custom document properties in the Advanced Properties dialog](customdocumentproperties.webp)
+
+2. Alternatively, for a more detailed view, copy the file, rename its extension to `.zip`, extract
+   it, and open `docProps/custom.xml`. The properties and their values appear as `<property>`
+   entries.
+
+   ![Custom property value in docProps/custom.xml](customxmlproperty.webp)
+
+**To create the Custom Content dictionary:**
+
+1. Navigate to **Denylists** → **Custom Content**.
+2. Click **Add**, provide a **name** and **description**, and enter the property value you
+   identified (for example, the classification label text) as a dictionary entry.
+3. Save the dictionary and assign it to your Content Aware Protection policy.
+
+:::note
+This method matches the classification label as plain text content. For structured, native
+classification support, see [Microsoft Information Protection](#microsoft-information-protection)
+or [NDC Classification](#ndc-classification), which match specific document property fields
+directly.
+:::
+
 ## File Name
 
 File Name Denylists are custom-deﬁned lists of ﬁle names detected by Endpoint Protector, available

@@ -6,6 +6,10 @@ sidebar_position: 20
 
 # Allowlists
 
+Allowlists configure Content Aware Protection or eDiscovery policy parameters that exclude
+specific content from scanning. This set of exclusions reduces false-positive noise events and
+lets you tailor policies more closely to your organization's use cases.
+
 ## MIME Type
 
 The content inspection functionally within Endpoint Protector identiﬁes multiple ﬁle types. While

@@ -7,6 +7,10 @@ sidebar_position: 40
 
 # Deep Packet Inspection
 
+Deep Packet Inspection (DPI) gives Endpoint Protector native network traffic visibility, covering embedded network Data Loss Prevention (DLP) needs without requiring external web proxy components or web traffic redirection. DPI inspects and protects sensitive content even when it's encrypted — over standard SSL/TLS or Post-Quantum Cryptography (PQC) web tunnels — so encryption doesn't prevent content inspection or block policy enforcement. Content inspection happens directly on the endpoint, so you can monitor and control web traffic without it physically leaving the endpoint, ensuring data is protected before it leaves the end user's computer and the organization. This provides comprehensive, full visibility over network egress channels, including web applications, web services, and protocols.
+
+Starting with EPP Client version 2605, DPI supports content inspection over PQC-encrypted tunnels.
+
 The Deep Packet Inspection functionality provides a certain degree of granularity, allowing you to
 ﬁne-tune the content inspection functionality to the network speciﬁcations.
 
@@ -28,7 +32,7 @@ alternative conﬁgurations for optimal functionality.
 
 :::warning
 To ensure consistent DPI behavior after enabling or disabling the feature or upgrading
-the Endpoint Protector, a restart of your computer is required.
+Endpoint Protector, restart your computer.
 :::
 
 :::note
@@ -109,8 +113,8 @@ If needed, this feature can be configured through the DPI Bypass option describe
 ### DPI on Windows
 
 :::note
-Issuing the Deep Packet Inspection Certificate on Windows is handled automatically and
-transparently by the Endpoint Protector Client. No additional steps are required.
+The Endpoint Protector Client issues the Deep Packet Inspection Certificate on Windows
+automatically and transparently. You don't need to take any additional steps.
 :::
 
 ### DPI Certiﬁcate on macOS
@@ -155,9 +159,9 @@ select **Always Trust**.
 **Step 6 –** **Save** the changes.
 
 :::warning
-be aware that regenerating the Server Certificate Stack will require macOS and
-Linux users to manually add the new certificate into the keychain. On Windows, the certificate will
-be updated automatically.
+Regenerating the Server Certificate Stack requires macOS and Linux users to manually
+add the new certificate to the keychain. On Windows, Endpoint Protector updates the certificate
+automatically.
 :::
 
 ### DPI Certificate on Linux
@@ -274,6 +278,8 @@ In this section you can also manage the following settings:
 - Monitor webmail – Enable this setting to scan the subject and body for Gmail, Outlook, and Yahoo on
   the browser. Attachments will be monitored regardless of this setting.
 
+    Thanks to Deep Packet Inspection, Endpoint Protector provides full Content Aware Protection and DLP coverage for webmail services without requiring external SMTP relays or web proxy services. All inspection happens at the Endpoint Protector Client level, so protected content never leaves the end user's computer before Endpoint Protector evaluates it.
+
     :::warning
     When using Yahoo, the email recipients whitelist for attachments will work only if
     the attachment is uploaded after the recipients are added. If the recipients are modiﬁed after
@@ -352,8 +358,8 @@ Endpoint Protector Server UI:
 ![Monitor Webmail JSON Format Parser Usage](webmailjson.webp)
 
 :::info
-It is advised, that due to recent changes applied by cloud providers, to not
-apply any changes in the JSON parser, unless Monitor Webmail isn't working
+Due to recent changes made by cloud providers, don't change the JSON parser unless
+Monitor Webmail stops working.
 :::
 
 
@@ -370,9 +376,9 @@ Only applications that support Deep Packet Inspection appear in this section.
 ![Deep Packet Inspection Applications](dpiapplications.webp)
 
 :::note
-The Deep Packet Inspection functionality needs to be ﬁrst enabled from **Device
-Control** > **Settings** (Global, Groups, Computers, etc.). For detailed information on, refer to
-the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic.
+First enable the Deep Packet Inspection functionality from **Device Control** >
+**Settings** (Global, Groups, Computers, etc.). For detailed information, see
+[Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md).
 :::
 
 ### Command-line tools

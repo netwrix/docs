@@ -6,6 +6,17 @@ sidebar_position: 20
 
 # File Shadow Repository
 
+File Shadowing is an optional feature that extends standard Content Aware Protection and Device
+Control event logging with an exact copy of the file involved in a policy event. Where a standard
+event log captures metadata about a transfer, a file shadow preserves the file itself, extending
+the evidence available for a forensic investigation and simplifying the forensics process.
+
+Because retaining full file copies increases storage volume and can affect data-minimization,
+access-control, and legal obligations, whether to enable File Shadowing — and for which
+departments, applications, or file types — is left to your own consideration, based on your
+organization's compliance requirements and the data protection regulations that apply in your
+country.
+
 From this section, you can enable the Endpoint Protector Client to send File Shadows directly and at
 a global level to an externalized location, the File Shadows Repositories.
 

@@ -4,9 +4,11 @@ description: "Content Aware Protection for New Outlook"
 sidebar_position: 50
 ---
 
-## Content Aware Protection for New Outlook
+# Content Aware Protection for New Outlook
 
-Starting from Endpoint Protector Clients version 5.9.4.3, you can fully manage New Outlook as a Content Aware Protection Exit Point via the Microsoft 365 Web Add-in. COM add-ins for classic Outlook install directly on individual endpoints. In contrast, you must deploy Microsoft Web Add-ins centrally using the Microsoft 365 Admin Center or manually within the user account in the Outlook application.
+Endpoint Protector extends Content Aware Protection to New Outlook without requiring a mail transfer agent (MTA), SMTP forwarder, or any other mail-flow infrastructure. The integration uses Microsoft's native Office Add-in framework, deployed at the Microsoft 365 account level rather than installed on individual devices. This reduces the infrastructure you need to roll out Data Loss Prevention (DLP) for New Outlook across your organization.
+
+With Endpoint Protector Clients, you can fully manage New Outlook as a Content Aware Protection Exit Point via the Microsoft 365 Web Add-in. COM add-ins for classic Outlook install directly on individual endpoints. In contrast, you must deploy Microsoft Web Add-ins centrally using the Microsoft 365 Admin Center or manually within the user account in the Outlook application.
 
 Microsoft 365 Web Add-ins associate with user accounts rather than computers or devices. After you deploy an add-in to a user account, every device the user employs to access that account has the add-in available. This means you can't restrict it to just one device, such as the user's Mac computer only.
 
@@ -34,7 +36,7 @@ You need customer portal access to download the EPP content*. See also announcem
 To ensure full configuration and functionality of the EPP Microsoft New Outlook add-in, you must address three dependencies collectively:
 
 1. Update EPP Clients\
-Ensure that all Endpoint Protector (EPP) Clients run at least version 5.9.4.3. This version is necessary to support the features of the new add-in.
+Ensure that all Endpoint Protector (EPP) Clients run at least version 5.9.4.3. or higher. This version is necessary to support the features of the new add-in.
 
 2. Download the latest New Outlook add-in from the [Netwrix My Products portal](https://customer.netwrix.com/sign_in.html?rf=my_products.html).\
 You need customer portal access to download the EPP content*.
@@ -73,12 +75,6 @@ Turn off the setting under Content Aware Protection → Deep Packet Inspection c
 :::note
 On macOS, an EPP certificate ensures secure communication between the add-in and the EppClient. Refer to the existing User Manual chapter for [detailed instructions](./deeppacket#dpi-certiﬁcate-on-macos). If you have configured the DPI certificate on macOS, you can ignore this note.
 :::
-
-### Pre-configuring add-in (manifest.xml)
-:::warning Important
-Host these URLs correctly on your server and ensure they're accessible via the internet to enable required functionalities for the add-in.
-:::
-
 
 ## Pre-configuring add-in (manifest.xml)
 
@@ -226,9 +222,8 @@ The central deployment method allows administrators to deploy the EPP New Outloo
 
 If you need to apply an updated version of the New Outlook add-in provided by Netwrix, follow the steps described in [Requirements](#requirements).
 
-Release notes for a given fix may indicate that only one of the component files has changed. In that case, repeat the configuration and hosting procedure only for that specific file. For example, New Outlook add-in version 1.1 requires updating only `validator.js` — reconfigure and rehost it by replacing the previous file.
+Release notes for a given fix may indicate that only one of the component files has changed. In that case, repeat the configuration and hosting procedure only for that specific file. For example, [New Outlook add-in version 1.1](https://community.netwrix.com/t/netwrix-endpoint-protector-client-version-2605-release-notes-now-with-hotfix-1/130335) requires updating only `validator.js` — reconfigure and rehost it by replacing the previous file.
 
 :::warning
 After rehosting the updated New Outlook add-in, reboot the affected computers for the changes to take effect. Rebooting ensures that all cache and connections are refreshed.
 :::
-10. After making changes, allow some time for them to propagate. According to Microsoft, this process can take anywhere from a few minutes to 24 hours.
