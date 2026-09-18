@@ -31,7 +31,7 @@ For **Entra ID**, gather:
 
 - Your tenant's ID as a globally unique identifier (GUID), from **Overview** in the Entra admin center.
 - An app registration in that tenant with a client secret. Access Analyzer doesn't support certificate credentials. Note its **Application (client) ID**.
-- Two redirect Uniform Resource Identifiers (URIs) added to the registration before you start, both using your Access Analyzer hostname: `https://<your-access-analyzer-host>/setup/entra-consent-callback` and `https://<your-access-analyzer-host>/idps/callback`.
+- Two redirect Uniform Resource Identifiers (URIs) that you add to the registration before you start, both using your Access Analyzer hostname: `https://<your-access-analyzer-host>/setup/entra-consent-callback` and `https://<your-access-analyzer-host>/idps/callback`.
 - Someone with the Global Administrator or Privileged Role Administrator role in the tenant to approve admin consent during setup.
 
 :::note
