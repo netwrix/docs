@@ -14,12 +14,12 @@ collected and classified with Netwrix Data Classification (NDC). For more inform
 
 The integration can be configured for the following Auditor data sources:
 
-**SharePoint**
+### SharePoint platforms
 
 - SharePoint
 - SharePoint Online
 
-**File Storage Systems**
+### File Storage Systems
 
 - Windows File Servers
 - EMC
@@ -28,7 +28,7 @@ The integration can be configured for the following Auditor data sources:
 - Qumulo
 - Synology
 
-**Databases**
+### Databases
 
 - SQL Server
 
@@ -162,21 +162,21 @@ Netwrix Auditor help center article for more information about these reports:
 
 For NDC Endpoint Provider:
 
-- Browse your data with Netwrix search.
+:::note
+Shortly after the data collection, Netwrix Auditor reports changes related to sensitive content
+without data categories. For example, if a user adds some sensitive data to the SharePoint Online
+document that initially doesn't contain sensitive data, Netwrix Auditor reports this as a document
+modification with an empty "_data categories_" field. Similarly, if a user creates a new document
+containing sensitive data on a file server, Netwrix Auditor reports this as a file add with an
+empty "data categories" field. In this case, you must wait until Netwrix Auditor processes
+information collected by NDC. This takes a while depending on the number of processed objects in
+your infrastructure and the reindexing settings configured in Netwrix Data Classification. See the Manage
+Sources and Control Data Processing topic in the
+[Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification)
+for additional information.
+:::
 
-  :::note
-  Shortly after the data collection, Netwrix Auditor reports changes related to sensitive content
-  without data categories. For example, if a user adds some sensitive data to the SharePoint Online
-  document that initially doesn't contain sensitive data, Netwrix Auditor reports this as a document
-  modification with an empty "_data categories_" field. Similarly, if a user creates a new document
-  containing sensitive data on a file server, Netwrix Auditor reports this as a file add with an
-  empty "data categories" field. In this case, you must wait until Netwrix Auditor processes
-  information collected by NDC. This takes a while depending on the number of processed objects in
-  your infrastructure and the reindexing settings configured in Netwrix Data Classification. See the Manage
-  Sources and Control Data Processing topic in the
-  [Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification)
-  for additional information.
-  :::
+- Browse your data with Netwrix search.
 - Click the **Select** column in the Tools menu and review data categories (taxonomies) of your
   sensitive documents.
 - Use filtering capabilities to narrow your search results. See the

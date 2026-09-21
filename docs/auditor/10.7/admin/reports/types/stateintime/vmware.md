@@ -37,7 +37,7 @@ topic for more information.
 You can narrow your reporting scope using multiple filters. Review the full list of available
 filters and values:
 
-- **Monitoring plan** — name of the monitoring plan set to collect data from the VMware ESX/ESXi/vCenter you need.
+- **Monitoring plan** — name of the monitoring plan set to collect data from the VMware ESX, ESXi, or vCenter server you need.
 - Time zone — Netwrix Auditor sets this automatically.
 - **Snapshot date** — select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
@@ -52,7 +52,7 @@ filters and values:
 ### Related Reports
 
 - Clicking an Object path link opens the Object Permissions in vCenter report.
-- Clicking a Role link opens the detailed report on privileges for the account report.
+- Clicking a Role link opens the Detailed Account Privileges in vCenter report.
 - Clicking the Defined in link opens the object permissions on vCenter level report.
 
 ## Detailed Account Privileges in vCenter
@@ -73,7 +73,7 @@ topic for more information.
 You can narrow your reporting scope using multiple filters. Review the full list of available
 filters and values:
 
-- **Monitoring plan** — name of the monitoring plan set to collect data from the VMware ESX/ESXi/vCenter you need.
+- **Monitoring plan** — name of the monitoring plan set to collect data from the VMware ESX, ESXi, or vCenter server you need.
 - Time zone — Netwrix Auditor sets this automatically.
 - **Snapshot date** — select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
@@ -106,7 +106,7 @@ topic for more information.
 You can narrow your reporting scope using multiple filters. Review the full list of available
 filters and values:
 
-- **Monitoring plan** — name of the monitoring plan set to collect data from the VMware ESX/ESXi/vCenter you need.
+- **Monitoring plan** — name of the monitoring plan set to collect data from the VMware ESX, ESXi, or vCenter server you need.
 - Time zone — Netwrix Auditor sets this automatically.
 - **Snapshot date** — select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
@@ -122,5 +122,5 @@ filters and values:
 ### Related Reports
 
 - Clicking a User account link opens the Account Permissions in vCenter report.
-- Clicking a Role link opens the detailed report on privileges for the account report.
+- Clicking a Role link opens the Detailed Account Privileges in vCenter report.
 - Clicking the Defined in link opens the object permissions on vCenter level report.

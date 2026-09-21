@@ -63,7 +63,8 @@ Netwrix Auditor monitors the following objects:
 | Group        | <ul><li>Added</li><li>Modified</li><li>Removed</li></ul> | <ul><li>Member</li><li>Description</li></ul>                                                       |
 
 Netwrix Auditor may report on several changes with _who_ reported as _system_ due to the native
-VMware audit peculiarities.
+VMware audit peculiarities. To exclude these changes from reports, see the [VMware Monitoring
+Scope](/docs/auditor/10.7/admin/monitoringplans/vmware/scope.md) topic.
 
 ## Considerations and Limitations
 

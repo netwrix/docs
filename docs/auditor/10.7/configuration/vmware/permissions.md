@@ -13,9 +13,12 @@ virtual infrastructure administrator if necessary.
 **On the target VMware hosts:**
 
 - To collect state-in-time data, and auditing SSO users, local users, and groups, the account must
-  belong to the **Administrators** group for the vCenter Single Sign-On (SSO) domain. (If
+  belong to the **Administrators** group for the **vCenter Single Sign-On (SSO)** domain. (If
   you have assigned the **Read-only** role to that account, remove it.)
 - To collect activity data, the account must have at least Read-only role on the audited hosts.
+- If the same account collects both activity and state-in-time data, add it to the
+  **Administrators** group for the vCenter SSO domain. That group membership already grants the
+  access needed for activity collection, so a separate **Read-only** role assignment isn't required.
 
 See the following VMware article for additional information:
 [Add Members to a vCenter Single Sign-On Group](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.authentication.doc/GUID-CDEA6F32-7581-4615-8572-E0B44C11D80D.html).

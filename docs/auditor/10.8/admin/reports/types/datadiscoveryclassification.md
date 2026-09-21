@@ -13,9 +13,9 @@ are interested in.
 
 **Step 2 –** Click **View**.
 
-Netwrix Auditor groups Data Discovery and Classification reports by data source.
+## Available Reports
 
-The following tables list the reports available for Data Discovery and Classification.
+The following tables list the reports available for Data Discovery and Classification, grouped by data source.
 
 :::note
 Some reports in the following tables are obsolete but remain available for backward compatibility. Renewed versions of these reports are available under **SharePoint Online** in the **Reports** section, and this article describes them later. All other reports remain current and fully supported.
@@ -56,7 +56,7 @@ Some reports in the following tables are obsolete but remain available for backw
 | State-in-time reports  | Most Exposed Sensitive Data Objects                | This report lists the SharePoint Online objects (sites, lists, and documents) with sensitive data that can be accessed by the most users (or even Everyone), based on effective permissions.                                                                                      |
 | State-in-time reports  | Sensitive Data External Sharing by Site Collection | For each SharePoint Online site collection listed, this report shows the categories of sensitive data shared with users via any level of external sharing. Clicking a link will open the "Sensitive Data Object Permissions" report for the selected site collection.            |
 
-#### Renewed SharePoint Online Reports
+### Renewed SharePoint Online Reports
 
 Renewed versions of certain obsolete reports are available under **SharePoint Online** in the **Reports** section.
 

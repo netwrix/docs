@@ -11,9 +11,9 @@ are interested in.
 
 **Step 2 –** Click View.
 
-Netwrix Auditor groups Data Discovery and Classification reports by data source.
+## Available Reports
 
-The following table lists the reports available for Data Discovery and Classification:
+The following tables list the reports available for Data Discovery and Classification, grouped by data source.
 
 ### File Servers
 
