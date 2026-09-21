@@ -6,9 +6,12 @@ sidebar_position: 60
 
 # Denylists and Allowlists
 
-From this section, you can create Denylists and Allowlists that can be used in both the Content
-Aware Protection and eDiscovery modules. Once deﬁned, these lists can be enabled for a speciﬁc
-policy.
+From this section, you can create Denylists and Allowlists for use in both the Content
+Aware Protection and eDiscovery modules. After you deﬁne these lists, you can enable them for a
+speciﬁc policy.
+
+Denylists serve as the parameters for a Content Aware Protection or eDiscovery policy, defining
+inclusively what the policy detects and protects.
 
 **Denylists and Allowlists Availability**
 
@@ -21,6 +24,9 @@ policy.
 | Denylists      | Regex                  | Yes                             | Yes            | Yes            | Yes                             | Yes               |
 | Denylists      | Domain and URL         | Yes                             | Yes            | Yes            | Yes                             | No                |
 | Denylists      | E-mail Domain          | Yes                             | Yes            | Yes            | Yes                             | NO                |
+| Denylists      | NDC Classification     | Yes                             | Yes            | Yes            | Yes                             | Yes               |
+| Denylists      | MIP Classification     | Yes                             | Yes            | Yes            | Yes                             | Yes               |
+| Denylists      | Applications           | Yes                             | Yes            | Yes            | Yes                             | No                |
 | Allowlists     | MIME Type              | Yes                             | Yes            | Yes            | Yes                             | Yes               |
 | Allowlists     | Allowed Files          | Yes                             | Yes            | Yes            | Yes                             | Yes               |
 | Allowlists     | File Location          | Yes                             | Yes            | Yes            | Yes                             | Yes               |
@@ -31,7 +37,7 @@ policy.
 | URL Categories | URL Categories         | Yes                             | Yes            | Yes            | Yes                             | No                |
 
 :::info
-Endpoint Protector 5.9.4+ supports larger lists, but extensive use can impact
+Endpoint Protector supports large lists, but extensive use can impact
 performance. Use the minimum number of lists with reasonable entries for optimal performance.
 :::
 
