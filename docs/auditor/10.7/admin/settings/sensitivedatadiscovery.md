@@ -12,7 +12,7 @@ collected and classified with Netwrix Data Classification (NDC). For more inform
 
 - [Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification)
 
-The integration can be configured for the following Auditor data sources:
+You can configure the integration for the following Auditor data sources:
 
 ### SharePoint platforms
 

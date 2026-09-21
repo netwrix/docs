@@ -9,16 +9,16 @@ sidebar_position: 130
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
+certain built-in Windows services, etc. You must configure auditing properly to ensure audit data
+integrity. Otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-You can configure your IT Infrastructure for monitoring automatically through a monitoring plan. No
-manual configurations are required.
+You can automatically configure your IT infrastructure for monitoring through a monitoring plan. You
+don't need to configure anything manually.
 
 Review a full list of object types and attributes Netwrix Auditor can collect on a VMware server
 (standalone host or vCenter server).
@@ -74,11 +74,11 @@ The following considerations refer to VMware infrastructure monitoring with Netw
   host) as _Modified_.
 - If you specified an ESXi host as a monitored item in the corresponding monitoring plan, but
   created a virtual machine using the vCenter Server (not this ESXi host) management facilities,
-  Netwrix Auditor does not collect information about this VM creation. To work around this, specify
+  Netwrix Auditor doesn't collect information about this VM creation. To work around this, specify
   the vCenter Server as a monitored item in the monitoring plan.
 - For ESXi host permission changes, the "What" field in the Activity Records (and, therefore,
   reports and search results) will report _\root_.
-- Netwrix Auditor will not collect data on _Failed Logon_ event in case of incorrect logon attempt
+- Netwrix Auditor doesn't collect data on the _Failed Logon_ event for incorrect logon attempts
   through VMware vCenter Single Sign-On.
-- Netwrix Auditor also does not collect data on the logon attempts performed using SSH.
+- Netwrix Auditor also doesn't collect data on the logon attempts performed using SSH.
 - For a custom role creation event, Netwrix Auditor reports the initiator as _System_.

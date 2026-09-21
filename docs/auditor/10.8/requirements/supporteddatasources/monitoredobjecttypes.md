@@ -72,5 +72,5 @@ Exchange Online.
 
 \*\* — Netwrix Auditor reports these actions for SharePoint Online only.
 
-\*\*\* — Auditor will not collect data on _Failed Logon_ event for VMware in case of incorrect logon
-attempt through VMware vCenter Single Sign-On; also, it will not collect logons using SSH.
+\*\*\* — Auditor doesn't collect data on the _Failed Logon_ event for VMware for incorrect logon
+attempts through VMware vCenter Single Sign-On, and it doesn't collect logons using SSH.

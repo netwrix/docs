@@ -17,8 +17,8 @@ your monitoring plan:
 - [Data Collecting Account](/docs/auditor/10.7/admin/monitoringplans/dataaccounts.md) – Configure data collecting accounts as required to
   audit your IT systems
 
-- [VMware](/docs/auditor/10.7/configuration/vmware/overview.md) – Configure data source as required to be
-  monitored
+- [VMware](/docs/auditor/10.7/configuration/vmware/overview.md) – Configure the data source as required for
+  monitoring
 
 For this data source, specify the options you need:
 
@@ -28,8 +28,8 @@ For this data source, specify the options you need:
 | Monitor VMware configuration changes                              | Auditor always monitors configuration changes for the VMware data source. See the [Data Collection from VMware Servers](#data-collection-from-vmware-servers) topic for additional information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | Monitor VMware logon activity                                     | Specify what types of logon events you want to monitor for VMware infrastructure.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | Monitor SSO users/groups on vCenter and Localos users on ESXi server | Select **Enable monitoring** if you want to audit the following users and groups: <ul><li>vCenter Single Sign-On (SSO) Users. The product collects data from vCenter.</li><li>Localos users. For these users, the product collects data from ESXi and vCenter.</li><li>VMware groups. The product collects data from vCenter.</li></ul> Auditing users and groups requires vCenter 6.5 or later. Check that your data collecting account has all required rights and permissions. See the [Permissions for VMware Server Auditing](/docs/auditor/10.7/configuration/vmware/permissions.md) topic for additional information.                                                                                                                                                                                                                                                                            |
-| Collect data for state-in-time reports                            | Configure Auditor to store daily snapshots of your VMware system configuration required for further state-in-time reports generation. The product updates the latest snapshot regularly to keep users up to date on the actual system state. Only the latest snapshot is available for reporting in Auditor. |
-| Manage historical snapshots                                       | If you want to generate reports based on different snapshots, you must import snapshots to the Audit Database. See the procedure below. |
+| Collect data for state-in-time reports                            | Configure Auditor to store daily snapshots of your VMware system configuration needed to generate state-in-time reports. The product updates the latest snapshot regularly to keep users up to date on the actual system state. Only the latest snapshot is available for reporting in Auditor. |
+| Manage historical snapshots                                       | If you want to generate reports based on different snapshots, you must import snapshots to the Audit Database. See the [Import Historical Snapshots](#import-historical-snapshots) procedure. |
 
 Review your data source settings and click **Add** to go back to your plan. The newly created data
 source will appear in the **Data source** list. As a next step, click **Add item** to specify an
@@ -51,7 +51,7 @@ To import snapshots and generate reports based on snapshots other than the lates
 
 ## Data Collection from VMware Servers
 
-On a high level, data collection process for VMware servers works as follows:
+In general, the data collection process for VMware servers works as follows:
 
 ![hiw_diagram_vma_thumb_0_0](/images/auditor/10.7/admin/monitoringplans/vmware/hiw_diagram_vma_thumb_0_0.webp)
 
@@ -92,13 +92,13 @@ Netwrix administrator does the following:
 - Netwrix Auditor Server then writes the Activity Records to the audit database (default retention –
   180 days) and long-term archive (default retention – 120 months).
 - Users can work with collected data in Netwrix Auditor client UI: run search, view reports, and so
-  on. If you have configured alerting in Netwrix Auditor, then the activities that match the certain
-  criteria will trigger the alerts. Netwrix Auditor notifies recipients by email and performs
+  on. If you have configured alerting in Netwrix Auditor, activities that match your criteria
+  trigger the alerts. Netwrix Auditor notifies recipients by email and performs
   response actions, if configured.
 
 Netwrix Auditor also generates an Activity Summary once a day (by default, at 3 AM) and sends it to
-the specified recipients. This email lists VMware infrastructure changes and activities collected by
-Netwrix Auditor during the last 24 hours.
+the specified recipients. This email lists the VMware infrastructure changes and activities that
+Netwrix Auditor collected during the last 24 hours.
 
 ## VMware ESX/ESXi/vCenter
 
