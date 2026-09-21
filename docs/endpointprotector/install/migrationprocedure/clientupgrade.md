@@ -9,14 +9,14 @@ sidebar_position: 14
 ---
 
 :::note
-This article is common to both migration paths — [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) and [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image). Complete your server migration first, then follow this article to bring EPP and Enforced Encryption (EE) clients up to the 2608 release.
+This article is common to both migration paths — [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) and [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image). Complete your server migration first, then follow this article to bring Endpoint Protector (EPP) and Enforced Encryption (EE) clients up to the 2608 release.
 :::
 
 ## Overview
 
 The 2608 server and its patches don't include client packages by default. You must upload EPP and EE client packages manually.
 
-If you are using an external tool to manage your packages, you can ignore this article unless you are a Netwrix Enforced Encryption (EasyLock) customer — in that case, follow the instructions in this article.
+If you use an external tool to manage your packages, you can ignore this article unless you are a Netwrix Enforced Encryption (EasyLock) customer — in that case, follow these instructions.
 
 Download the Endpoint Protector Clients from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html), or request them from your account team.
 
@@ -111,7 +111,7 @@ Starting with the **2509** release, Enforced Encryption changed its communicatio
 Don't leave EE clients on an older version after migrating the server. Delaying the EE client upgrade can cause EE-protected drives to lose synchronization with the server or fail to communicate correctly.
 :::
 
-Upload the latest EE client packages as part of the same upload batch as the EPP client packages (see [Required Packages](#required-packages)), or enable the **Update EasyLock** toggle so EE clients update automatically (see [Automatic Updates (Update EasyLock)](/docs/endpointprotector/admin/ee_module/eemodule#automatic-updates-update-easylock)), or prioritize manually re-deploying them to every endpoint using Enforced Encryption immediately after migration completes — don't treat this as a lower-priority, staged rollout the way you might for regular EPP clients.
+Upload the latest EE client packages as part of the same upload batch as the EPP client packages (see [Required Packages](#required-packages)), enable the **Update EasyLock** toggle so EE clients update automatically (see [Automatic Updates (Update EasyLock)](/docs/endpointprotector/admin/ee_module/eemodule#automatic-updates-update-easylock)), or prioritize manually re-deploying them to every endpoint using Enforced Encryption immediately after migration completes. Don't treat this as a lower-priority, staged rollout the way you might for regular EPP clients.
 
 For the full reference on Enforced Encryption configuration and modes, see [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule).
 
@@ -121,7 +121,7 @@ Starting with the Windows 2608 client, Endpoint Protector uses a custom bundled 
 
 ## Obsolete OS Limitations
 
-As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), the latest EPP Client versions don't support obsolete and discontinued operating systems. If you must continue using the EPP Client on an unsupported operating system, use the last available Client version compatible with that operating system. While such Client versions may retain the ability to communicate with the EPP Server, the standard support agreement no longer covers them. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Netwrix provides support in such cases on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000). Maintaining communication between such legacy clients and the latest EPP Server version might require enabling obsolete communication ciphers in the server's configuration. Contact Netwrix Support before making this change.
+The [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md) states that the latest EPP Client versions don't support obsolete and discontinued operating systems. If you must continue using the EPP Client on an unsupported operating system, use the last available Client version compatible with that operating system. While such Client versions may retain the ability to communicate with the EPP Server, the standard support agreement no longer covers them. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Netwrix provides support in such cases on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000). Maintaining communication between such legacy clients and the latest EPP Server version might require enabling obsolete communication ciphers in the server's configuration. Contact Netwrix Support before making this change.
 
 ## Deploying Client Upgrades
 
@@ -131,7 +131,7 @@ For a full overview of the Client Software Upgrade feature, including version ma
 Use your organization's existing software deployment infrastructure (Microsoft Intune, SCCM, Jamf, or equivalent) for client upgrades rather than relying solely on EPP's built-in upgrade function. Enterprise deployment tools provide better visibility, rollback capability, and bandwidth management.
 :::
 
-If using EPP's built-in upgrade:
+If you use EPP's built-in upgrade:
 
 1. Navigate to **System Configuration → Client Software Upgrade**.
 2. Select the target OS and agent version, click **Next**.
