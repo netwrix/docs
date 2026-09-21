@@ -5,29 +5,33 @@ keywords:
   - Endpoint Protector
   - Mac Client
   - log generation
-sidebar_label: Generate Logs for Mac EPP
+  - macOS
+  - EPP Client
+  - terminal commands
+  - launchctl
+  - Netwrix Endpoint Protector
+sidebar_label: Generating Logs for Mac EPP
 tags:
   - troubleshooting-and-errors
   - kb
-title: "How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal"
+title: "Manually Generating Logs for Mac Endpoint Protector Agents via Terminal"
 knowledge_article_id: kA0Qk0000002B6VKAU
 products:
   - endpointprotector
 ---
 
-# How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal
+# Manually Generating Logs for Mac Endpoint Protector Agents via Terminal
 
 ## Overview
 
-This article explains how to generate the log file and DPI log file for the Endpoint Protector (EPP) Mac Client using terminal commands.
+This article explains how to generate the log file and Deep Packet Inspection (DPI) log file for the Endpoint Protector (EPP) Mac Client using terminal commands.
 
-:::tip
-Collecting logs remotely from the server console — the **Automatic Logging** method — is the optimal approach, since it requires no action on the endpoint itself. See [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) for the full reference, or [How to Remotely Activate and Collect Client Logs from the Server Interface](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_remotely_activate_and_collect_client_logs_from_the_server_interface) for the automatic procedure. If the EPP Client can't communicate with the EPP Server at all, use the [diagnostic collection script](/docs/kb/endpointprotector/troubleshooting-and-errors/how-to-collect-debug-logs-locally-on-an-endpoint-using-the-diagnostic-script) instead, since it captures a more complete diagnostic package. Use this manual terminal method only when neither of those applies. For the equivalent manual procedure on Windows, see [How to Manually Activate Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows).
-:::
+> **NOTE:**
+> Collecting logs remotely from the server console — the **Automatic Logging** method — is the optimal approach, since it requires no action on the endpoint itself. See [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) for the full reference, or [Remotely Activating and Collecting Client Logs from the Server Interface](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_remotely_activate_and_collect_client_logs_from_the_server_interface) for the automatic procedure. If the EPP Client cannot communicate with the EPP Server at all, use the [diagnostic collection script](/docs/kb/endpointprotector/troubleshooting-and-errors/how-to-collect-debug-logs-locally-on-an-endpoint-using-the-diagnostic-script) instead, since it captures a more complete diagnostic package. Use this manual terminal method only when neither of those applies. For the equivalent manual procedure on Windows, see [Manually Activating Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows).
 
 ## Instructions
 
-Follow the steps below to complete this process:
+Complete the following steps:
 
 1. Terminate the EPP Client:
    ```bash

@@ -11,33 +11,37 @@ keywords:
   - troubleshooting
   - Windows
   - macOS
-sidebar_label: Collect Debug Logs via Diagnostic Script
+  - DPI
+  - Debug Logging
+  - Tamper Mode
+  - epp_collect_dpi_info
+sidebar_label: Collecting Debug Logs via Diagnostic Script
 tags:
   - troubleshooting-and-errors
   - kb
-title: "How to Collect Debug Logs Locally on an Endpoint Using the Diagnostic Script"
+title: "Collecting Debug Logs Locally on an Endpoint Using the Diagnostic Script"
 knowledge_article_id: kA0Qk0000000000AAA
 products:
   - endpointprotector
 ---
 
-# How to Collect Debug Logs Locally on an Endpoint Using the Diagnostic Script
+# Collecting Debug Logs Locally on an Endpoint Using the Diagnostic Script
 
 ## Overview
 
-If the Endpoint Protector (EPP) Client cannot communicate with the EPP Server, the **Automatic
-Logging** method isn't available, since it depends on that communication to enable debug logging
-and retrieve diagnostics remotely. Run the diagnostic collection script directly on the endpoint
-instead — it captures a complete diagnostic package in a single run. For the full Debug Logging
-reference, see [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging)
-in the Global Settings documentation.
+This article explains how to collect debug logs directly on an Endpoint Protector (EPP) endpoint
+using the diagnostic collection script, for cases when the EPP Client cannot communicate with the
+EPP Server. Since the **Automatic Logging** method depends on that communication, it is not
+available in this scenario. Running the script directly on the endpoint instead captures a
+complete diagnostic package in a single run. For the full Debug Logging reference, see
+[Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) in the
+Global Settings documentation.
 
-:::tip
-This script-based method captures a more complete diagnostic package (installed app listing,
-console logs, and more) than the older manual log-file methods. If it doesn't apply to your EPP
-Client version, fall back to [How to Manually Activate Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows)
-or [How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal).
-:::
+> **NOTE:**
+> This script-based method captures a more complete diagnostic package (installed app listing,
+> console logs, and more) than the older manual log-file methods. If it does not apply to your EPP
+> Client version, fall back to [Manually Activating Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows)
+> or [Manually Generating Logs for Mac Endpoint Protector Agents via Terminal](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal).
 
 ## Instructions
 
@@ -54,10 +58,9 @@ or [How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal
 
 ### macOS
 
-:::note
-If Tamper Mode is enabled, the script can't launch on macOS. Disable Tamper Mode before running the
-script. Tamper Mode doesn't affect the Windows script.
-:::
+> **NOTE:**
+> If Tamper Mode is enabled, the script cannot launch on macOS. Disable Tamper Mode before running
+> the script. Tamper Mode does not affect the Windows script.
 
 1. Run the following command as root:
 
@@ -93,4 +96,6 @@ already exists and recreates it, then prints the final path where it saves the c
 - First parameter — `1` also collects DPI information (network, proxy, certificates); `0` skips it.
 - Second parameter (optional) — sets the destination folder. Defaults to `/tmp/epp_logs`.
 
-Share the collected files with Netwrix Technical Support for further investigation.
+> **IMPORTANT:**
+> Share the collected files with [Netwrix Technical Support](https://netwrix.com/en/support/) for
+> further investigation.
