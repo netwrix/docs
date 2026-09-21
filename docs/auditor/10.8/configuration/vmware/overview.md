@@ -12,7 +12,7 @@ and on the Auditor console computer. Configuring your IT infrastructure may also
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
 integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
@@ -42,16 +42,16 @@ Review a full list of object types and attributes Netwrix Auditor can collect on
 
 Starting with version 10.5, Netwrix Auditor for VMware collects data on VMware users and groups.
 
-To audit users and groups, vCenter 6.5 or later is required.
+Auditing users and groups requires vCenter 6.5 or later.
 
-The following objects are monitored:
+Netwrix Auditor monitors the following objects:
 
 - vCenter Single Sign-On (SSO) Users. The product collects data from vCenter.
 - Localos users. For these users, the product collects data from ESXi and vCenter.
 
   :::note
-  The Who value is reported as _"Not Applicable"_ for localos users if the data was collected from
-  the entire vCenter.
+  Netwrix Auditor reports the Who value as _"Not Applicable"_ for localos users if it collected the
+  data from the entire vCenter.
   :::
 
 - VMware groups. The product collects data from vCenter.
@@ -69,15 +69,15 @@ VMware audit peculiarities.
 
 The following considerations refer to VMware infrastructure monitoring with Netwrix Auditor:
 
-- A VM that was moved from one resource pool to another (within the same VMware host) will be
-  reported as _Modified_.
-- If an ESXi host was specified as a monitored item in the corresponding monitoring plan, but a
-  virtual machine was created using the vCenter Server (not this ESXi host) management facilities,
-  information about this VM creation will not be collected. To work around, specify the vCenter
-  Server as a monitored item in the monitoring plan.
+- Netwrix Auditor reports a VM moved from one resource pool to another (within the same VMware
+  host) as _Modified_.
+- If you specified an ESXi host as a monitored item in the corresponding monitoring plan, but
+  created a virtual machine using the vCenter Server (not this ESXi host) management facilities,
+  Netwrix Auditor does not collect information about this VM creation. To work around this, specify
+  the vCenter Server as a monitored item in the monitoring plan.
 - For ESXi host permission changes, the "What" field in the Activity Records (and, therefore,
   reports and search results) will report _\root_.
 - Netwrix Auditor will not collect data on _Failed Logon_ event in case of incorrect logon attempt
   through VMware vCenter Single Sign-On.
-- Also, data on the logon attempts performed using SSH will not be collected.
-- For custom role creation event, initiator will be reported as _System_.
+- Netwrix Auditor also does not collect data on the logon attempts performed using SSH.
+- For a custom role creation event, Netwrix Auditor reports the initiator as _System_.

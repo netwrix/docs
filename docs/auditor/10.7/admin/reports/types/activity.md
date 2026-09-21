@@ -36,7 +36,7 @@ sources and items included in each plan, navigate to the Monitoring Plans sectio
 
 ![allactivedirectorychanges_thumb_0_0](/images/auditor/10.7/admin/reports/allactivedirectorychanges_thumb_0_0.webp)
 
-Each report has a set of filters which help organize audit data in the most convenient way. See the
+Each report has a set of filters that help you organize audit data. See the
 [View Reports](/docs/auditor/10.7/admin/reports/view.md) topic for additional information. You can also create a subscription to
-any report you want to receive on a regular basis. See the
+any report you want to receive regularly. See the
 [Subscriptions](/docs/auditor/10.7/admin/subscriptions/overview.md) topic for additional information.

@@ -7,7 +7,7 @@ sidebar_position: 80
 # Sensitive Data Discovery
 
 Sensitive Data Discovery is an integration module between Auditor and Netwrix Data Classification.
-It allows Auditor users to generate reports and configure alerts and search for the sensitive data
+Use it to generate reports, configure alerts, and search for the sensitive data
 collected and classified with Netwrix Data Classification (NDC). For more information about NDC, see the following resource:
 
 - [Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification)
@@ -37,7 +37,7 @@ The following integration options are available:
 - NDC SQL Database Provider – With this integration, you can generate State-in-Time reports
   showing data categories for the sensitive data classified with Netwrix Data Classification.
   Available for File storage systems, SharePoint, and SharePoint Online.
-- NDC Endpoint Provider – This integration triggers alerts triggered by specific
+- NDC Endpoint Provider – This integration sends alerts triggered by specific
   events related to the sensitive data classified with Netwrix Data Classification. When enabled,
   Netwrix users can also browse sensitive data with the search. Available for File storage systems
   (including Windows file server, EMC, NetApp, Nutanix File server, Synology, and Qumulo),
@@ -49,18 +49,18 @@ by Sensitive Data Discovery.
 
 ## Permissions for Integration with Netwrix Data Classification
 
-The account must be granted the following rights and permissions:
+The account must have the following rights and permissions:
 
-- The Database datareader server role must be assigned to the account on the SQL Server instance
-  where the NDC SQL database resides.
+- The Database datareader server role on the SQL Server instance where the NDC SQL database
+  resides.
 
 Netwrix recommends using different accounts to connect to the SQL Server instances where NDC SQL
 database and Categories database reside.
 
 :::note
 Netwrix Data Classification and Netwrix Auditor integration (NDC Provider) does
-not support Single Sign-On. Single Sign-on needs to be disabled in Netwrix Data Classification in
-order for the account used by the NDC Provider to authenticate.
+not support Single Sign-On. Disable Single Sign-On in Netwrix Data Classification so that the
+account used by the NDC Provider can authenticate.
 :::
 
 The account you are using for integration should have Rest API access in the Netwrix Data
@@ -100,7 +100,7 @@ For SQL Server:
 
 ## Enable and configure Sensitive Data Discovery
 
-This section contains instructions on how to enable and configure Sensitive Data Discovery to
+This section explains how to enable and configure Sensitive Data Discovery to
 include sensitive data in Netwrix Auditor reports, search, and alerts.
 
 Ensure that your account meets the requirements and has all server roles assigned. Follow these
@@ -123,7 +123,7 @@ steps to enable and configure Sensitive Data Discovery:
     - Windows authentication
     - SQL Server authentication
 
-- User name – Specify the account to be used to connect to the SQL Server instance. For example,
+- User name – Specify the account to use to connect to the SQL Server instance. For example,
   _WORKSTATIONNDC/integrator_.
 - Password – Provide a password for that account
 - Enable NDC Endpoint Provider – Select Enable in the Connect to NDC via API field and then click
@@ -131,8 +131,8 @@ steps to enable and configure Sensitive Data Discovery:
 
     - NDC Web Console address – Provide the URL of your Netwrix Data Classification web console. For
       example: _http://workstationndc/conceptQS_.
-    - User name – Provide the name of account that will be used to connect to NDC web console. For
-      example, _WORKSTATIONNDC/integrator_. A user must be granted both: the 'REST API User' and
+    - User name – Provide the name of the account to use to connect to the NDC web console. For
+      example, _WORKSTATIONNDC/integrator_. A user must have both the 'REST API User' and
       'Superuser' permissions in NDC. See the User Management topic in the
       [Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification)
       for additional information.
@@ -165,7 +165,7 @@ For NDC Endpoint Provider:
 - Browse your data with Netwrix search.
 
   :::note
-  Shortly after the data collection, changes related to sensitive content are reported without data categories. For example, if a user adds some sensitive data to the SharePoint Online document that initially doesn't contain sensitive data, this will be reported as document modification with empty "_data categories_" field. Similarly, if a user creates a new document containing sensitive data on a file server, this will be reported as a file add with empty "data categories" field. In this case, you must wait until Netwrix Auditor processes information collected by NDC. This takes a while depending on the number of processed objects in your infrastructure and reindexing settings configured in Netwrix Data Classification. See the Manage Sources and Control Data Processing topic in the [Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification) for additional information.
+  Shortly after the data collection, Netwrix Auditor reports changes related to sensitive content without data categories. For example, if a user adds some sensitive data to the SharePoint Online document that initially doesn't contain sensitive data, Netwrix Auditor reports this as a document modification with an empty "_data categories_" field. Similarly, if a user creates a new document containing sensitive data on a file server, Netwrix Auditor reports this as a file add with an empty "data categories" field. In this case, you must wait until Netwrix Auditor processes information collected by NDC. This takes a while depending on the number of processed objects in your infrastructure and reindexing settings configured in Netwrix Data Classification. See the Manage Sources and Control Data Processing topic in the [Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification) for additional information.
   :::
 - Click the **Select** column in the Tools menu and review data categories (taxonomies) of your
   sensitive documents.
@@ -174,8 +174,8 @@ For NDC Endpoint Provider:
 - Create an alert triggered by specific actions with your sensitive data.
 
 :::tip
-Netwrix recommends enabling a threshold to trigger the new alert. In this case, a
-single alert will be sent instead of many alerts. This can be helpful when Netwrix Auditor detects
+Netwrix recommends enabling a threshold to trigger the new alert. In this case, Netwrix Auditor
+sends a single alert instead of many. This can be helpful when Netwrix Auditor detects
 many activity records matching the filters you specified. See the
 [Alerts](/docs/auditor/10.7/admin/alertsettings/overview.md) topic for additional information.
 :::

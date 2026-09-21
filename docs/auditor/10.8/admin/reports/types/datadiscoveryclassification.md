@@ -13,12 +13,12 @@ are interested in.
 
 **Step 2 –** Click **View**.
 
-Data Discovery and Classification reports are grouped by data sources.
+Netwrix Auditor groups Data Discovery and Classification reports by data source.
 
-The table below lists the reports available for Data Discovery and Classification.
+The following tables list the reports available for Data Discovery and Classification.
 
 :::note
-Some reports listed below are marked as obsolete but remain available for backward compatibility. Renewed versions of these reports are available under **SharePoint Online** in the **Reports** section and are described later in this article. All other reports remain current and fully supported.
+Some reports in the following tables are obsolete but remain available for backward compatibility. Renewed versions of these reports are available under **SharePoint Online** in the **Reports** section, and this article describes them later. All other reports remain current and fully supported.
 :::
 
 ### File Servers
@@ -40,7 +40,7 @@ Some reports listed below are marked as obsolete but remain available for backwa
 | Activity reports       | Activity Related to Sensitive Data Objects | This report shows changes and read operations on SharePoint sites and documents that contain sensitive information. Use this report to detect suspicious activity around your sensitive data.                                                                                    |
 | State-in-time reports  | Sensitive Data Objects by Site Collection  | For each SharePoint site collection listed, this report shows the categories of sensitive data stored there and the number of documents in each category. Use this report to reveal the number of sensitive files stored in your SharePoint site collections.                   |
 | State-in-time reports  | Sensitive Data Objects                     | For each site collection listed, this report shows the SharePoint objects (sites, lists, and documents) that have been classified as containing sensitive information. Use this report to plan and control data protection measures for sensitive information stored on your SharePoint. |
-| State-in-time reports  | Sensitive Data Object Permissions          | For each SharePoint object (site, list or document) listed, this report shows the user accounts that have access to this object, their effective permissions and how those permissions were granted (for example, permissions can be granted directly, via group membership or using SharePoint policy). Use this report to control access to SharePoint objects that contain sensitive data. |
+| State-in-time reports  | Sensitive Data Object Permissions          | For each SharePoint object (site, list, or document) listed, this report shows the user accounts that have access to this object, their effective permissions and how those permissions were granted (for example, permissions can be granted directly, via group membership or using SharePoint policy). Use this report to control access to SharePoint objects that contain sensitive data. |
 | State-in-time reports  | Overexposed Sensitive Data Objects         | For each user account listed, this report shows the SharePoint objects (sites, lists, and documents) containing sensitive data that the user can access based on their effective permissions. Use this report to identify overexposed data and plan measures to mitigate your risk. |
 | State-in-time reports  | Most Exposed Sensitive Data Objects        | This report lists the SharePoint objects (sites, lists, and documents) containing sensitive data that can be accessed by the most users (or even Everyone), based on effective permissions. Use this report to identify data at high risk and plan corrective actions.            |
 
@@ -63,7 +63,7 @@ Renewed versions of certain obsolete reports are available under **SharePoint On
 - The Activity report is located under **SharePoint Online > SharePoint Online Activity**.
 - The State-in-time reports are located under **SharePoint Online > SharePoint Online — State-in-Time**.
 
-The renewed reports are listed below.
+The following table lists the renewed reports.
 
 | Type                  | Report                                    | Description                                                                                                                                                                                    |
 | ---------------------- | -------------------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -79,20 +79,20 @@ Data Discovery and Classification reports are available for the following data s
 - **SharePoint**
 - **SharePoint Online**
 
-To run these reports, ensure the following requirements are met for the corresponding data source:
+To run these reports, ensure that the corresponding data source meets the following requirements:
 
-- A monitoring plan must be configured in **Netwrix Auditor** for the selected data source.
-- For Activity reports, activity audit must be enabled.
-- For State-in-time reports, the **Collect data for state-in-time reports** feature must be enabled.
-- A **Netwrix Data Classification** instance must be configured to crawl from the same source (the source name must match exactly).
-- **Sensitive Data Discovery** must be correctly configured on the Netwrix Auditor Server. To configure it, navigate to **Settings > Sensitive Data Discovery** and ensure the appropriate connection method is enabled:
+- You must configure a monitoring plan in **Netwrix Auditor** for the selected data source.
+- For Activity reports, you must enable activity audit.
+- For State-in-time reports, you must enable the **Collect data for state-in-time reports** feature.
+- You must configure a **Netwrix Data Classification** instance to crawl from the same source (the source name must match exactly).
+- You must configure **Sensitive Data Discovery** correctly on the Netwrix Auditor Server. To configure it, navigate to **Settings > Sensitive Data Discovery** and enable the appropriate connection method:
     - For reports available under **Reports > Data Discovery and Classification**, enable **Connect to NDC SQL database**.
     - For renewed reports available under **SharePoint Online**, enable **Connect to NDC via API**.
-    - Both options can be configured simultaneously, if required.
+    - You can enable both options simultaneously, if required.
 
 These reports help reduce the risk of data leaks and non-compliance by ensuring that all
-sensitive data resides in safe locations, that it isn't overexposed and that user activity around it
-is in line with security policies.
+sensitive data resides in safe locations, that it isn't overexposed, and that user activity around
+it complies with security policies.
 
 ## Make Reports Handy
 

@@ -11,9 +11,9 @@ are interested in.
 
 **Step 2 –** Click View.
 
-Data Discovery and Classification reports grouped by data sources.
+Netwrix Auditor groups Data Discovery and Classification reports by data source.
 
-The table below lists the reports available for Data Discovery and Classification:
+The following table lists the reports available for Data Discovery and Classification:
 
 ### File Servers
 
@@ -40,10 +40,10 @@ The table below lists the reports available for Data Discovery and Classificatio
 
 ## Requirements for Data Discovery and Classification Reports
 
-The table below contains requirements to run Data Discovery and Classification reports. These are
-reports that help you to reduce the risk of data leaks and non-compliance by ensuring that all
-sensitive data resides in safe locations, that it isn't overexposed and that user activity around it
-is in line with security policies.
+The following table contains the requirements to run Data Discovery and Classification reports.
+These reports help you reduce the risk of data leaks and non-compliance by ensuring that all
+sensitive data resides in safe locations, that it isn't overexposed, and that user activity around
+it complies with security policies.
 
 Applicable for:
 
