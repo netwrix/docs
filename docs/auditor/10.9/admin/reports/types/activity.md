@@ -23,7 +23,7 @@ search field to look for the keywords you need:
 | SharePoint                           | SharePoint                                           |
 | SharePoint Online                    | SharePoint Online                                    |
 | SQL Server                           | SQL Server                                           |
-| VMware                               | VMware                                               |
+| VMware                               | VMware → VMware Changes                              |
 | Windows Server                       | Windows Server → Windows Server Changes              |
 | Event Log                            | Windows Server → Event Log                           |
 | IIS                                  | Windows Server→ Event Log                            |
