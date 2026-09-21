@@ -52,11 +52,12 @@ or [How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal
 3. Collect the generated files from the output folder the script prints at the end of the run. By
    default, this is `%TEMP%\epp_logs`.
 
-:::note
-If Tamper Mode is enabled, the script only works on Windows.
-:::
-
 ### macOS
+
+:::note
+If Tamper Mode is enabled, the script can't launch on macOS. Disable Tamper Mode before running the
+script. Tamper Mode doesn't affect the Windows script.
+:::
 
 1. Run the following command as root:
 
@@ -71,9 +72,10 @@ If Tamper Mode is enabled, the script only works on Windows.
 ### Advanced Options
 
 Both scripts accept optional parameters to also collect Deep Packet Inspection (DPI) diagnostics
-(network, proxy, and certificate information) and to change the output folder. Both scripts delete
-the destination folder if it already exists and recreate it, then print the final path where they
-save the collected files.
+(network, proxy, and certificate information) and to change the output folder. Include the DPI
+option when troubleshooting issues with the DPI network-monitoring module itself; for all other
+issues, the default collection is sufficient. Each script also deletes the destination folder if it
+already exists and recreates it, then prints the final path where it saves the collected files.
 
 **Windows:**
 
