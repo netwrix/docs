@@ -13,8 +13,8 @@ You primarily use data sources in Synchronize jobs, but you can also use them in
 for directory objects and in queries for group membership update.
 
 :::note
-If the file for a data source is hosted on OneDrive, the service account you enter in the Service
-Account box must have a OneDrive license.
+If a data source file resides on OneDrive, the service account you enter in the Service Account box
+must have a OneDrive license.
 :::
 
 ## Create a Data Source for MS Excel
@@ -274,12 +274,12 @@ Step 4 – Enter a name for the data source in the Name box.
 Step 5 – The SQL database for which you want to create a data source resides on an SQL server. Enter
 the name or IP address of this SQL server in the SQL Server Name box.
 
-Step 6 – By default, Directory Manager uses SQL authentication to connect to the SQL
-server. In this case, the Service Account and Service Account Password boxes are enabled. Enter the
+Step 6 – By default, Directory Manager uses SQL authentication to connect to the SQL server. In this
+case, Directory Manager enables the Service Account and Service Account Password boxes. Enter the
 username and password of an SQL server account to connect to the SQL server in the respective boxes.
 
 Step 7 – To use Windows authentication to connect to the SQL server using a Windows account, select
-the **Windows Authentication** checkbox. With Windows authentication, users are already logged onto
+the **Windows Authentication** checkbox. With Windows authentication, users have already logged onto
 Windows and don't have to log on separately to SQL Server.
 
 Step 8 – In the SQL Server Database Name box, specify the SQL database to create a data source for.
@@ -290,7 +290,7 @@ The data source is available on the MS SQL Server tab of the Data Sources page.
 ## Create a Data Source for a Text/CSV File
 
 You can create a data source for a comma-separated values (.csv) file or a text (.txt) file. You
-must also specify the delimiter used in the file to separate values.
+must also specify the delimiter that separates values in the file.
 
 You can use this data source in queries and only as a source in Synchronize jobs.
 
@@ -408,7 +408,7 @@ connecting to the data source.
 Step 7 – If the data source is password protected, provide a username and password in the
 **Service Account** and **Service Account Password** boxes to access it.
 Depending on the data source, you may not need to provide both a username and password.
-For example, an MS Access database may need a password only while an SQL server may require both
+For example, an MS Access database may need only a password, while an SQL server may require both a
 username and password.
 
 Step 8 – Click **Create Data Source**.
@@ -417,10 +417,10 @@ The data source is available on the ODBC tab of the Data Sources page.
 ## Create a Data Source for SCIM
 
 Directory Manager supports identity providers, namely Active Directory, Microsoft Entra ID, and
-Google Workspace, but it doesn't support Slack, AWS, JumpCloud, and GitHub. You can create a
-SCIM-based data source for these and other providers to use them in queries and as
-source/destinations in Synchronize jobs. As a prerequisite, the provider must support SCIM and
-expose an endpoint URL that Directory Manager can consume.
+Google Workspace, but it doesn't support Slack, AWS, JumpCloud, and GitHub. You can create a System
+for Cross-domain Identity Management (SCIM) data source for these and other providers to use them in
+queries and as source/destinations in Synchronize jobs. As a prerequisite, the provider must support
+SCIM and expose an endpoint URL that Directory Manager can consume.
 
 To create a data source:
 
