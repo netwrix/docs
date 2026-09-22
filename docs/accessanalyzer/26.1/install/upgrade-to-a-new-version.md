@@ -30,7 +30,7 @@ Compare the output with the latest release Netwrix has announced. If they match,
 
 An airgap upgrade loads the new release into the cluster from a newer offline media bundle. `dspm-installer upgrade` reads only the cluster and the media: it doesn't read or write `/etc/dspm/installer.yaml`, and the wizard, preflight checks, and platform setup never run. It upgrades the Access Analyzer services and ArgoCD. It doesn't upgrade the underlying k3s platform or the offline package manager; if the media targets a different version of either, the command prints a warning naming both versions and continues with the installed ones.
 
-Before it changes anything, the command checks that the server has an airgap install, that the media carries a newer version than the one installed, and that automated sync is on for the `netwrix` app. If any check fails, it exits with code `16` and the cluster is untouched.
+Before it changes anything, the command checks that the server has an airgap install, that the media carries a newer version than the one installed, and that automated sync is on for the `netwrix` app. If any check fails, it exits with code `16` and nothing in the cluster changes.
 
 ### Download the new release
 
@@ -182,7 +182,7 @@ sudo dspmctl sync netwrix.webapp
 <details>
 <summary>Troubleshooting: dspmctl hangs after a cancelled command</summary>
 
-If you press Ctrl-C during a `dspmctl` command part-way through (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. Even `argocd version --client`, which needs no network at all, hangs, so the cause is local to the pod. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod unresponsive.
+If you press Ctrl-C part-way through a `dspmctl` command (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. Even `argocd version --client`, which needs no network at all, hangs, so the cause is local to the pod. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod unresponsive.
 
 Restart that pod and re-run the upgrade:
 

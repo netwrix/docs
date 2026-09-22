@@ -185,7 +185,7 @@ The [Requirements](requirements.md) page lists the 18 hosts the `network` check 
 
 Pass `--preflight` to run the preflight checks and exit, without installing k3s, creating the cluster, or writing a configuration file. Use it to validate a server before you commit to an install.
 
-`--preflight` runs the same checks listed in this section, plus a certificate check: the PEM certificate and key at the resolved TLS paths must exist, match, and not be expired. A certificate expiring within 30 days still passes, because a real install would also proceed on it. Pass `--hostname` to also verify the certificate's Subject Alternative Names cover it, and `--size` to check RAM, CPU, and disk against the size you intend to install. Under `--dry-run`, the installer skips the certificate check, matching a dry-run install.
+`--preflight` runs the same checks this section lists, plus a certificate check: the PEM certificate and key at the resolved TLS paths must exist, match, and not be expired. A certificate expiring within 30 days still passes, because a real install would also proceed on it. Pass `--hostname` to also verify the certificate's Subject Alternative Names cover it, and `--size` to check RAM, CPU, and disk against the size you intend to install. Under `--dry-run`, the installer skips the certificate check, matching a dry-run install.
 
 You can't combine `--preflight` with `--uninstall` or `--skip-preflight`. It writes the same `/var/log/dspm-installer.log` and `/var/log/dspm-preflight.json` files a regular install writes, except under `--dry-run`, where the installer doesn't write the JSON report.
 
