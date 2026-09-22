@@ -28,8 +28,10 @@ Collecting logs remotely from the server console — the **Automatic Logging** m
 ## Instructions
 
 1. Open the **Command Prompt** as an administrator.
-2. Navigate to the root of your **C:** drive.
-3. Create the following log files in the root of the **C:** drive:
+2. Navigate to the log folder for your client version:
+   - **EPP Client 2608 and later:** `C:\ProgramData\Netwrix\EndpointProtector`
+   - **EPP Client versions before 2608:** the root of your **C:** drive
+3. Create the following log files in that folder:
    - `eppclient.log`
    - `eppsslsplit.log`
 4. Restart the Endpoint Protector process as an admin using **Services.msc**.
