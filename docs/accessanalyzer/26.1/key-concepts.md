@@ -62,3 +62,18 @@ The installer's size table measures capacity in two units:
 Objects are what an Access scan inventories: shares, folders, and files on a file server; sites, libraries, and documents in SharePoint Online. Each of these counts as an object, and the **Objects** column on the Scan executions page counts them _per run_.
 
 Identities are the users and groups an Identity Sync collects. A file server holding ~12 million objects, plus a domain with ~3,000 users & groups, would the **small** size in [Requirements](install/requirements.md).
+
+## Migrating from NAA Classic
+
+Administrators coming from NAA Classic will recognize most of Access Analyzer's concepts under a new name. The table maps each legacy concept to its AA26 equivalent and calls out what changed.
+
+| Legacy Concept | AA26 Equivalent | Key Difference |
+| --- | --- | --- |
+| Host | Source | A single target system in both products. |
+| Host List | Source (with labels) | Sources are organized using labels instead of static lists. Legacy host lists should be split into labels during migration. |
+| Connection Profile | Service Account | Passwords are write-only: they can't be exported and must be re-entered when creating service accounts in AA26. |
+| Job / Data Collector | Scan | Scans replace the job/query model. Each source can have an access scan, sensitive data scan, or sync scan (sync is used by identity connectors like Active Directory and Entra ID). |
+| Schedule / Trigger | Scan Schedule (cron) | AA26 uses standard five-field cron expressions. Windows Task Scheduler triggers must be translated to cron format. |
+| Proxy Server / Applet | Agent | AA26 agents are Linux-based K3s nodes deployed via SSH from the AA26 UI. File Server and Active Directory connectors use an agent; Entra ID and SharePoint Online connect directly. |
+| Storage Profile (SQL Server) | ClickHouse + PostgreSQL | AA26 uses a different database stack. Historical data in the legacy SQL Server database is not migrated. |
+| FSActivity table | Activity Monitor (NAM) integration | Real-time file system activity events are surfaced in AA26 through Netwrix Activity Monitor (NAM) integration. |
