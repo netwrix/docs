@@ -13,8 +13,8 @@ You primarily use data sources in Synchronize jobs, but you can also use them in
 for directory objects and in queries for group membership update.
 
 :::note
-For a data source hosted on OneDrive, the service account that accesses it must have a OneDrive
-license.
+If the file for a data source is hosted on OneDrive, the service account you enter in the Service
+Account box must have a OneDrive license.
 :::
 
 ## Create a Data Source for MS Excel
