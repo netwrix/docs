@@ -10,7 +10,7 @@ keywords:
   - eppsslsplit.log
   - services.msc
   - manual logging
-sidebar_label: Activating Debugging Logs
+sidebar_label: Manually Activating Debugging Logs on Windows
 tags:
   - troubleshooting-and-errors
   - kb
@@ -40,9 +40,9 @@ UI option or the SupportTool.
 3. Create the following log files in that folder:
    - `eppclient.log`
    - `eppsslsplit.log`
-4. Restart the Endpoint Protector process as an admin using `services.msc`.
+4. Restart the EPP process as an admin using `services.msc`.
 5. After completing these steps, reproduce the issue while debugging logs are active. The created files capture the log information.
 
 > **IMPORTANT:**
-> Share the log files with [Netwrix Technical Support](https://netwrix.com/en/support/) for further
+> Share the log files with [Netwrix Support](https://www.netwrix.com/support.html) for further
 > investigation.
