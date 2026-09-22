@@ -12,6 +12,11 @@ you must create data sources for those providers.
 Data sources are primarily used in Synchronize jobs, but you can also use them in queries to search
 for directory objects and in queries for group membership update.
 
+:::note
+If a data source is hosted on OneDrive, the service account used to access it must have a OneDrive
+license assigned.
+:::
+
 ## Create a Data Source for MS Excel
 
 Create a data source for an Excel file to establish a connection before using it as a source or
