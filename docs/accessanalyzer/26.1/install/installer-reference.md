@@ -9,6 +9,7 @@ sidebar_position: 6
 ```bash
 dspm-installer [flags]
 dspm-installer wait-for-apps [flags]
+dspm-installer upgrade --bundle-dir <path> [flags]
 dspm-installer update-cert [flags]
 dspm-installer rollback-cert [flags]
 dspm-installer --help
@@ -153,7 +154,7 @@ When the file supplies every required value and the installer runs in a terminal
 | 71 | A service stayed in a failed state for 5 minutes. Only `wait-for-apps` returns this code; during an install the same condition exits 70. |
 | 80 | Preflight checks failed (`preflight checks failed`), or you didn't accept warnings (`preflight warnings detected; use --accept-warnings to continue` or `installation stopped at preflight warnings`). |
 
-The `update-cert` and `rollback-cert` commands return their own codes. See [The `update-cert` command](#the-update-cert-command) and [The `rollback-cert` command](#the-rollback-cert-command).
+The `upgrade`, `update-cert`, and `rollback-cert` commands return their own codes. See [The `upgrade` command](#the-upgrade-command), [The `update-cert` command](#the-update-cert-command), and [The `rollback-cert` command](#the-rollback-cert-command).
 
 ## Preflight Checks
 
@@ -253,6 +254,38 @@ It prints `Waiting for applications to become Synced and Healthy…` and exits w
 | `--timeout` | `30m0s` | Maximum time to wait. |
 
 Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a service stays in a failed state for 5 minutes, and 1 for any other error. Ctrl-C exits 1.
+
+## The `upgrade` Command
+
+`upgrade` moves an airgap install to a newer release from newer offline media. It loads the new release's chart snapshot and container images into the cluster, applies the bundled ArgoCD manifest and the installer's ArgoCD overlay, re-seeds the registry pull secret into every application namespace, re-pins the `netwrix` ArgoCD application to the new version, and waits for every application to become Synced and Healthy. It records the previous version in the `dspm.netwrix.com/previous-target-revision` annotation on the `netwrix` application. See [Upgrade to a New Version](upgrade-to-a-new-version.md) for the full procedure, including the media download and rollback.
+
+```bash
+sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-media
+```
+
+Run it with the `dspm-installer` binary from the release you're upgrading to. It reads only the cluster and the media: it doesn't read or write `/etc/dspm/installer.yaml`, and the prompts, preflight checks, and platform setup don't run. It upgrades the Access Analyzer services and ArgoCD but not the k3s platform or the offline package manager; if the media targets a different version of either, it prints a warning naming both versions and continues with the installed ones.
+
+Before it changes anything, it checks that the kubeconfig reaches a cluster with a `netwrix` application installed in airgap mode, that automated sync is on for that application, and that the media carries a version newer than the installed one. Online installs use `dspmctl` instead.
+
+| Flag | Default | Description |
+|---|---|---|
+| `--bundle-dir` | (required) | Path to the extracted offline media of the release to upgrade to. |
+| `--dry-run` | `false` | Validate the media and preconditions and print the planned changes without changing the cluster. |
+| `--allow-downgrade` | `false` | Accept media whose version is equal to or older than the installed release, for a redeploy or an intentional downgrade. |
+| `--timeout` | `30m0s` | Maximum time to wait for applications to become healthy after the re-pin. |
+| `--cert-manager-issuer-mode` | none | Pass `adcs` to force re-seeding the registry pull secret into the `adcs-issuer` namespace. Usually unnecessary; the command detects that namespace on its own. |
+| `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
+
+| Code | Meaning |
+|---|---|
+| 0 | The cluster is running the new release, and every application is Synced and Healthy. |
+| 1 | Unexpected error. |
+| 15 | The command couldn't load the media, or the offline package manager failed to deploy it. Run it again after you fix the cause; the deploy is idempotent, and the cluster is still on the previous release. |
+| 16 | A precondition failed: no cluster or `netwrix` application, not an airgap install, automated sync is off (run `sudo dspmctl enable-auto netwrix`), or the media isn't a newer version (see `--allow-downgrade`). Nothing changed. |
+| 60 | The command couldn't re-apply the ArgoCD overlay, or the re-pin failed. |
+| 70 | The re-pin applied, but ArgoCD didn't acknowledge it or the new release didn't become healthy within `--timeout`. The new pin stays in place and ArgoCD keeps reconciling. Follow with `sudo dspm-installer wait-for-apps`, or roll back. |
+| 71 | A pod entered a terminal failure state. |
 
 ## The `update-cert` Command
 
