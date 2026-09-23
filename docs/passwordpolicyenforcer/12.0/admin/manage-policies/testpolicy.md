@@ -39,7 +39,7 @@ Turn on **Verbose Logging** to view the tests that Password Policy Enforcer perf
 
 ## Bulk Password Test
 
-The Bulk Password Test feature lets you check a large number of passwords against a selected policy and get a report of the accepted and rejected passwords.
+The Bulk Password Test feature lets you check many passwords against a selected policy and get a report of the accepted and rejected passwords.
 
 **Step 1 –** Click **Test policy** from the Configuration Console dashboard or when setting up a
 policy.
@@ -93,10 +93,10 @@ You can use the **Report settings** to customize the report:
 
 ## Installing and Deploying the Policy Tester Module
 
-You can install the Policy Tester .EXE to a moveable folder and distribute it to a location accessible by Helpdesk Engineers.
+You can install the Policy Tester .EXE to a moveable folder and distribute it to a location that Helpdesk Engineers can access.
 
 :::note
-Engineers must open the .EXE using a user account with Read access to the Active Directory object that stores the Password Policy Enforcer configuration. This object is named "Password Policy Enforcer X.0" (where X represents the major version number) and is located in Active Directory Users and Computers > System. To view it, enable Advanced Features under the View menu in Active Directory Users and Computers.
+Engineers must open the .EXE using a user account with Read access to the Active Directory object that stores the Password Policy Enforcer configuration. The object name is "Password Policy Enforcer X.0" (where X represents the major version number), and it resides in Active Directory Users and Computers > System. To view it, enable Advanced Features under the View menu in Active Directory Users and Computers.
 :::
 
 **Step 1 –** Navigate to the installation folder at Program Files > Netwrix > Password Policy Enforcer.
