@@ -90,3 +90,25 @@ You can use the **Report settings** to customize the report:
 - If the Configuration Console is connected to a domain configuration and you recently modified the Password Policy Enforcer
   configuration, then Active Directory may still be propagating the new
   configuration to the other domain controllers.
+
+## Installing and Deploying the Policy Tester Module
+
+You can install the Policy Tester .EXE to a moveable folder and distribute it to a location accessible by Helpdesk Engineers.
+
+:::note
+Engineers must open the .EXE using a user account with Read access to the Active Directory object that stores the Password Policy Enforcer configuration. This object is named "Password Policy Enforcer X.0" (where X represents the major version number) and is located in Active Directory Users and Computers > System. To view it, enable Advanced Features under the View menu in Active Directory Users and Computers.
+:::
+
+**Step 1 –** Navigate to the installation folder at Program Files > Netwrix > Password Policy Enforcer.
+
+**Step 2 –** Run PPEPolicyTestInst.exe and select an installation location.
+
+:::note
+This installation requires .NET, per the Server section of the installation documentation. The .NET requirement also applies to the machine that will run the Test Policy Module.
+:::
+
+**Step 3 –** If you install the module to a location other than where Engineers will access it, move the installed files to the accessible location.
+
+**Step 4 –** Engineers can then launch PPEPolicyTest.exe to run the module.
+
+Join the machine running the Test Policy Module to the same domain to retrieve the required information.
