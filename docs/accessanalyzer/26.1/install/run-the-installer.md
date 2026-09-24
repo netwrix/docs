@@ -51,7 +51,7 @@ The Netwrix package registry hosts both artifacts, and your license key authenti
    dspm-installer --version
    ```
 
-   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains listed under [Outbound](requirements.md#outbound).
+   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains that [Outbound](requirements.md#outbound) lists.
 
 4. Confirm the media extracted correctly.
 
@@ -81,7 +81,7 @@ The Netwrix package registry hosts both artifacts, and your license key authenti
    dspm-installer --version
    ```
 
-   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains listed under [Outbound](requirements.md#outbound).
+   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains that [Outbound](requirements.md#outbound) lists.
 
 </TabItem>
 </Tabs>
