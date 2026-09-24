@@ -116,8 +116,8 @@ What to look for, in the `Events` section at the bottom and in each container's 
 |---|---|
 | `OOMKilled` (exit code 137) | Container exceeded its memory limit |
 | `FailedScheduling ... Insufficient cpu/memory` | Host is too small for the deployment size |
-| `Failed to pull image` / `ErrImagePull` | Registry unreachable, proxy or firewall issue, or air-gap images missing |
-| `secret "<name>" not found` | An initialization Job didn't finish; check ArgoCD status below |
+| `Failed to pull image` / `ErrImagePull` | Registry unreachable, a proxy or firewall blocking the pull, or air-gap images missing |
+| `secret "<name>" not found` | An initialization Job didn't finish; see [Check ArgoCD Application Status](#check-argocd-application-status) |
 | `Liveness probe failed` | Container started but stopped responding |
 
 Collect recent events for the whole namespace:
@@ -153,7 +153,7 @@ kubectl logs -n access-analyzer job/<job-name> --all-containers --timestamps
 
 ## Query Historical Logs in ClickHouse
 
-An OpenTelemetry agent ships every `access-analyzer` pod's logs into ClickHouse, table `access_analyzer_logs.otel_logs`, kept for 30 days. Use this when the pod has been replaced and `kubectl logs --previous` no longer has what you need.
+An OpenTelemetry agent ships every `access-analyzer` pod's logs into the ClickHouse table `access_analyzer_logs.otel_logs`, which retains them for 30 days. Use this when Kubernetes has replaced the pod and `kubectl logs --previous` no longer has what you need.
 
 This only works while `clickhouse-0` is running.
 
