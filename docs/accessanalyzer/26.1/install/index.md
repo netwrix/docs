@@ -24,3 +24,5 @@ You also need someone who can issue a TLS certificate for the server's hostname 
 ## Scripting or Troubleshooting an Installation
 
 The [Installer reference](installer-reference.md) lists the flags, environment variables, exit codes, and preflight checks, for when you script an installation or need to find out why one stopped.
+
+If a pod is crash-looping or never starts, see [Collecting pod logs](collecting-pod-logs.md) for the `kubectl` commands to pull logs and bundle them for Netwrix Support.
