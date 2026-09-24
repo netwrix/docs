@@ -10,5 +10,5 @@ This product was formerly named Netwrix StealthINTERCEPT.
 
 :::
 
-* What's New in <NTP /> v8.0
+* What's New in <NTP /> v8.1
 * <NTP /> Reporting Powered by <NTM />
