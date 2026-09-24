@@ -23,7 +23,7 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 2. Select **Azure Files**
 3. Configure:
  - [Audit database (SQL)](/docs/auditor/10_9/admin/settings/auditdatabase)
- - [Notifications (SMTP or Exchange Online)](/docs/auditor/10_9/admin/settings/notifications)
+ - [Notifications (SMTP or Exchange Online)](/docs/auditor/10.9/admin/settings/notifications/notifications.md)
  - Plan name and description
  - Select **Add item now**
 

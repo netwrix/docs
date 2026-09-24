@@ -14,7 +14,7 @@ information about the product version and your licenses. See the following secti
 - [Audit Database](/docs/auditor/10.9/admin/settings/auditdatabase.md)
 - [Long-Term Archive](/docs/auditor/10.9/admin/settings/longtermarchive.md)
 - [Investigations](/docs/auditor/10.9/admin/settings/investigations.md)
-- [Notifications](/docs/auditor/10.9/admin/settings/notifications.md)
+- [Notifications](/docs/auditor/10.9/admin/settings/notifications/notifications.md)
 - [Integrations](/docs/auditor/10.9/admin/settings/integrations.md)
 - [Licenses](/docs/auditor/10.9/admin/settings/licenses.md)
 - [About Netwrix Auditor](/docs/auditor/10.9/admin/settings/about.md)
