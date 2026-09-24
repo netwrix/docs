@@ -4,7 +4,7 @@ description: Move Access Analyzer back to an earlier release with the Settings p
 sidebar_position: 4.1
 ---
 
-If an upgrade causes problems, you can move Access Analyzer back to an earlier release. There's no dedicated `down` or `downgrade` command. A rollback re-points ArgoCD at the older release, the same mechanism an upgrade uses, just aimed backwards.
+If an upgrade causes problems, you can move Access Analyzer back to an earlier release. There's no dedicated `down` or `downgrade` command. A rollback re-points ArgoCD at the older release, using the same mechanism as an upgrade.
 
 :::warning
 A rollback changes the application, not your data. Database schema changes made by the newer release stay in place. If the newer release changed the schema, the older release may fail to start against it. Read [Before you roll back](#before-you-roll-back) first.
@@ -20,7 +20,7 @@ A rollback changes the application, not your data. Database schema changes made 
    sudo kubectl get jobs -n access-analyzer -w
    ```
 
-   This backs up Postgres only. ClickHouse (scan results and reporting data) isn't included.
+   This backs up Postgres only. It doesn't include ClickHouse (scan results and reporting data).
 3. **Note the version you're rolling back to**, for example `1.1.2`.
 
 ## Choose a Method
@@ -118,13 +118,13 @@ sudo dspm-installer upgrade --bundle-dir /path/to/older-dspm-airgap-media --allo
 
 Without `--allow-downgrade`, `upgrade` refuses media that's the same as or older than the installed version, exits with code `16`, and changes nothing. The command also requires automated sync to be on. If a previous rollback left it off, run `sudo dspmctl enable-auto netwrix` first.
 
-`upgrade` doesn't downgrade k3s or the offline package manager. If the media was built for different versions, it prints a warning and keeps the installed ones.
+`upgrade` doesn't downgrade k3s or the offline package manager. If the media targets different versions, it prints a warning and keeps the installed ones.
 
 ## What a Rollback Does Not Do
 
 - **It doesn't reverse database schema changes.** The older release starts against the newer schema. If the newer release added Postgres migrations, expect the database setup job (`db-seeds`) to fail on the older release because it doesn't recognize the schema version. Contact Netwrix Support. Don't try to fix the schema by hand.
 - **It doesn't restore data.** Data created or changed on the newer release stays. To return to the data as it was before the upgrade, restore a backup taken before you upgraded. Support can help with that.
-- **It doesn't downgrade the host.** k3s, ArgoCD's own version on connected installs, and the installer binary are left as they are.
+- **It doesn't downgrade the host.** It leaves k3s, ArgoCD's own version on connected installs, and the installer binary as they are.
 
 ## Troubleshooting
 
@@ -135,6 +135,6 @@ sudo kubectl rollout restart deploy/dspmctl -n argocd
 sudo kubectl rollout status deploy/dspmctl -n argocd
 ```
 
-**The install upgraded itself again after a rollback.** Step 2 of the `dspmctl` rollback was skipped. Run it, then repeat steps 1, 3, and 4.
+**The install upgraded itself again after a rollback.** Step 2 of the `dspmctl` rollback didn't run. Run it, then repeat steps 1, 3, and 4.
 
 **`dspm-installer upgrade` exits with code 16 saying automated sync is off.** A previous rollback skipped `enable-auto`. Run `sudo dspmctl enable-auto netwrix` and retry.
