@@ -42,6 +42,7 @@ The following permissions are required:
 
         - AuditLog.Read.All – Read all audit log data
         - Directory.Read.All – Read directory data
+        - Policy.Read.ConditionalAccess – Read your organization's conditional access policies
         - User.Read.All – Read all users' full profiles
 
 ## Register a Microsoft Entra ID Application
@@ -103,6 +104,7 @@ tab. Select the following permissions:
 
     - AuditLog.Read.All – Read all audit log data
     - Directory.Read.All – Read directory data
+    - Policy.Read.ConditionalAccess – Read your organization's conditional access policies
     - User.Read.All – Read all users' full profiles
 
 **Step 5 –** At the bottom of the page, click **Add Permissions**.
