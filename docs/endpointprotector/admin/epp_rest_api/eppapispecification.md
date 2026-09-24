@@ -208,7 +208,7 @@ Manage endpoint users. Base path: `/api/device-control/users`.
 
 ### GET /device-control/users
 
-Lists endpoint users. Soft-deleted users are excluded.
+Lists endpoint users. The response excludes soft-deleted users.
 
 | Parameter | Type | Description |
 |---|---|---|
@@ -225,7 +225,7 @@ Returns a single user. Responds 404 if the user doesn't exist or has been delete
 
 ### POST /device-control/users
 
-Creates a user. Identity is `username` (plus `domain` when domain support is enabled). If a matching user already exists it is updated and returned (200), restoring it if it was deleted; a brand-new user returns 201.
+Creates a user. Identity is `username` (plus `domain` when domain support is enabled). If a matching user already exists, the API updates and returns it (200), restoring it if it was deleted; a brand-new user returns 201.
 
 Request body (`username` required):
 
@@ -280,7 +280,7 @@ Manage endpoint computers. Base path: `/api/device-control/computers`.
 
 ### GET /device-control/computers
 
-Lists endpoint computers. Soft-deleted computers are excluded.
+Lists endpoint computers. The response excludes soft-deleted computers.
 
 | Parameter | Type | Description |
 |---|---|---|
@@ -297,7 +297,7 @@ Returns a single computer, or 404 if absent or deleted.
 
 ### POST /device-control/computers
 
-Creates a computer. Identity is `name` (plus `domain` when domain support is enabled). A matching computer is updated and returned (200); a brand-new computer returns 201. Agent-managed fields populate automatically when the EPP agent connects.
+Creates a computer. Identity is `name` (plus `domain` when domain support is enabled). The API updates and returns a matching computer (200); a brand-new computer returns 201. Agent-managed fields populate automatically when the EPP agent connects.
 
 Request body (`name` required):
 
@@ -313,7 +313,7 @@ Request body (`name` required):
 
 ### PATCH /device-control/computers/`{id}`
 
-Partial update of admin-managed metadata. Agent-managed fields can't be changed. An identity collision returns 400 with `A computer with this identity already exists.`
+Partial update of admin-managed metadata. You can't change agent-managed fields. An identity collision returns 400 with `A computer with this identity already exists.`
 
 ### DELETE /device-control/computers/`{id}`
 
@@ -350,7 +350,7 @@ A device's identity is the combination of `device_type_id`, `vid`, `pid`, and `s
 
 ### GET /device-control/devices
 
-Lists endpoint devices. Soft-deleted devices are excluded.
+Lists endpoint devices. The response excludes soft-deleted devices.
 
 | Parameter | Type | Description |
 |---|---|---|
@@ -368,14 +368,14 @@ Returns a single device, or 404 if absent or deleted.
 
 ### POST /device-control/devices
 
-Creates a device. If a device with the same identity already exists, that existing device is returned (200); a brand-new device returns 201.
+Creates a device. If a device with the same identity already exists, the API returns that existing device (200); a brand-new device returns 201.
 
 Request body (`name` and `device_type_id` required):
 
 | Field | Type | Required | Validation |
 |---|---|---|---|
 | `name` | string | Yes | Non-empty; max 128 |
-| `device_type_id` | integer | Yes | Must reference an existing device type (see below) |
+| `device_type_id` | integer | Yes | Must reference an existing device type (see GET /device-control/device-types) |
 | `vid` | string | No | Max 16 |
 | `pid` | string | No | Max 16 |
 | `serial_no` | string | No | Max 1024 |
@@ -389,7 +389,7 @@ An unknown `device_type_id` returns 400 with `Unknown device type.`
 
 ### PATCH /device-control/devices/`{id}`
 
-Partial update of admin-managed metadata (`name`, `description`, `friendly_name`, `friendly_description`, `department_id`, `owner_id`). Identity fields (`device_type_id`, `vid`, `pid`, `serial_no`) and agent-managed fields can't be changed.
+Partial update of admin-managed metadata (`name`, `description`, `friendly_name`, `friendly_description`, `department_id`, `owner_id`). You can't change identity fields (`device_type_id`, `vid`, `pid`, `serial_no`) or agent-managed fields.
 
 ### DELETE /device-control/devices/`{id}`
 
@@ -434,12 +434,12 @@ Manage endpoint groups. Base path: `/api/device-control/groups`.
 | `created_by`, `modified_by` | string | Read-only (set to the OAuth client ID on write) |
 
 :::note
-Policy configuration for a group (file tracing, shadowing, deep packet inspection, scan settings, and so on) is managed in the Endpoint Protector console, not through this API.
+You manage policy configuration for a group (file tracing, shadowing, deep packet inspection, scan settings, and so on) in the Endpoint Protector console, not through this API.
 :::
 
 ### GET /device-control/groups
 
-Lists endpoint groups. Soft-deleted groups are excluded.
+Lists endpoint groups. The response excludes soft-deleted groups.
 
 | Parameter | Type | Description |
 |---|---|---|
@@ -475,7 +475,7 @@ Partial update. `name` must remain unique across active groups.
 
 ### DELETE /device-control/groups/`{id}`
 
-Soft-deletes a single group. The global group can't be deleted (returns 403).
+Soft-deletes a single group. You can't delete the global group (returns 403).
 
 ### DELETE /device-control/groups
 
@@ -500,7 +500,7 @@ An OTP grants time-limited offline access on an endpoint — for example, unlock
 
 **Duration**
 
-`duration` is a preset code: `0` = 15 minutes, `1` = 30 minutes, `2` = 1 hour, `3` = 2 hours, `4` = 4 hours, `5` = 8 hours, `6` = 1 day, `7` = 2 days, `8` = 5 days, `9` = 14 days, `A` = 30 days, `date` = custom range (requires `start_date` and `end_date`). Duration is ignored for type 4, which always uses a 30-minute window.
+`duration` is a preset code: `0` = 15 minutes, `1` = 30 minutes, `2` = 1 hour, `3` = 2 hours, `4` = 4 hours, `5` = 8 hours, `6` = 1 day, `7` = 2 days, `8` = 5 days, `9` = 14 days, `A` = 30 days, `date` = custom range (requires `start_date` and `end_date`). Type 4 ignores `duration` and always uses a 30-minute window.
 
 **Status** (`status`): 1 = Inactive (not yet active), 2 = Active, 3 = Expired.
 
