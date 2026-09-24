@@ -8,12 +8,12 @@ import TabItem from '@theme/TabItem';
 
 ## Authentication
 
-PingCastle Enterprise supports multiple authentication methods that can work simultaneously. You can configure any combination of Local Authentication, Windows Authentication, OpenID Connect, Entra ID Authentication, Header Authentication, SAML2, and Client Certificate authentication, allowing users to choose their preferred login method.
+PingCastle Enterprise supports multiple authentication methods that can work simultaneously. You can configure any combination of Local Authentication, Windows Authentication, OpenID Connect, Entra ID Authentication, Header Authentication, SAML2, and Client Certificate authentication, so users can choose their preferred login method.
 
 Set up each method's identity provider using the instructions on this page, then enter the resulting values on the **Login options**, **Windows authentication**, **Certificate authentication**, **Header authentication**, **OIDC Connect**, and **SAML** screens under **Configuration** > **Settings** in the PingCastle Enterprise web interface.
 
 :::note
-Most changes on these screens take effect within about 30 seconds, without a restart. Two setting groups — HTTPS redirection and allowed hosts settings, and database schema changes — restart PingCastle Enterprise automatically: it stops itself about 1 second after you save, then IIS restarts it. Six other restart-flagged settings — the three file logging settings, maximum concurrent scans, and both SCIM rate limit settings — require you to restart PingCastle Enterprise manually after saving.
+Most changes on these screens take effect within about 30 seconds, without a restart.
 :::
 
 :::tip
@@ -70,7 +70,7 @@ Windows Authentication uses Active Directory groups to provision access to PingC
 Add users to the appropriate groups based on the level of access they require.
 
 
-**Getting AD Group SIDs**
+**Getting Active Directory Group SIDs**
 
 PingCastle Enterprise needs the Security Identifiers (SIDs) of the groups for setup. Use the tabs to choose a method for retrieving them.
 
@@ -123,7 +123,7 @@ On **Configuration** > **Settings** > **Windows authentication**, enter the SIDs
 | Windows Group | SID of the Active Directory group that grants login access (e.g., PingCastle_Users) |
 | Windows Group Admin | SID of the Active Directory group that grants administrator privileges (e.g., PingCastle_Admins) |
 
-PingCastle Enterprise can also remove a user's access if they no longer belong to the group set in **Windows Group**. The `RemoveUserIfNotInWindowsGroupAnymore` configuration key controls this behavior; PingCastle Enterprise checks the key at every Windows login. The key is off by default and has no toggle on the **Settings** screens — enable it by adding it to the application configuration.
+PingCastle Enterprise can also remove a user's access if they no longer belong to the group you set in **Windows Group**. The `RemoveUserIfNotInWindowsGroupAnymore` configuration key controls this behavior; PingCastle Enterprise checks the key at every Windows login. The key is off by default and has no toggle on the **Settings** screens — enable it by adding it to the application configuration.
 
 :::note
 Windows Authentication doesn't provide an email address when PingCastle Enterprise creates accounts. PingCastle Enterprise sets email addresses to a default value that disables notifications.
@@ -141,7 +141,7 @@ To hide the internal username/password login option, enable **Disable Password L
 :::warning API Access
 This setup affects all pages for authentication. When you enable **Disable Password Login** with Windows Authentication, API calls require both an API key and a calling account that belongs to the group you set in **Windows Group**.
 
-To restrict NTLM authentication to specific pages, edit the `web.config` file using the `<location>` directive to restrict authentication to the WindowsAuth page. See [IIS URL Authorization documentation](https://docs.microsoft.com/en-us/iis/manage/configuring-security/understanding-iis-url-authorization).
+To restrict NTLM authentication to specific pages, edit the `web.config` file and use the `<location>` directive to scope authentication to the WindowsAuth page. See [IIS URL Authorization documentation](https://docs.microsoft.com/en-us/iis/manage/configuring-security/understanding-iis-url-authorization).
 :::
 
 </details>
@@ -151,7 +151,7 @@ To restrict NTLM authentication to specific pages, edit the `web.config` file us
 
 ### OpenID Connect
 
-PingCastle Enterprise supports OpenID Connect authentication using the ASP.NET Core API. Configuration options are [documented here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.openidconnect.openidconnectoptions?view=aspnetcore-10.0).
+PingCastle Enterprise supports OpenID Connect authentication using the ASP.NET Core API. See [OpenIdConnectOptions](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.openidconnect.openidconnectoptions?view=aspnetcore-10.0) for the available configuration options.
 
 Proxy settings rely on the current user proxy configuration, which you can define [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
 
@@ -239,7 +239,7 @@ To hide the internal username/password login option, enable **Disable Password L
 
 ### SAML2 authentication
 
-PingCastle Enterprise supports SAML2 authentication using the [ITfoxtec Identity SAML 2.0](https://www.itfoxtec.com/IdentitySaml2) package. Advanced configuration settings are [documented here](https://github.com/ITfoxtec/ITfoxtec.Identity.Saml2/blob/master/src/ITfoxtec.Identity.Saml2/Configuration/Saml2Configuration.cs).
+PingCastle Enterprise supports SAML2 authentication using the [ITfoxtec Identity SAML 2.0](https://www.itfoxtec.com/IdentitySaml2) package. See [Saml2Configuration](https://github.com/ITfoxtec/ITfoxtec.Identity.Saml2/blob/master/src/ITfoxtec.Identity.Saml2/Configuration/Saml2Configuration.cs) for the advanced configuration settings.
 
 Proxy settings rely on the current user proxy configuration, which you can define [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
 
@@ -308,15 +308,15 @@ On **Configuration** > **Settings** > **SAML**, enable SAML login and enter the 
 | Enabled | Turns on SAML login. |
 | Display Name | The text shown on the SAML login button. |
 | Issuer | The identifier PingCastle Enterprise presents to your identity provider as the SAML issuer. |
-| IdP Metadata | The URL of your identity provider's SAML metadata, used to fetch signing certificates and endpoint information automatically. |
-| Single Sign-On Destination | The SSO endpoint on your identity provider, used when you configure SAML manually instead of through IdP metadata. |
-| Certificate | The base64-encoded signing certificate from your identity provider, used when you configure SAML manually. |
+| IdP Metadata | The URL of your identity provider's SAML metadata. PingCastle Enterprise fetches signing certificates and endpoint information from it automatically. |
+| Single Sign-On Destination | The SSO endpoint on your identity provider. Set this when you configure SAML manually instead of through IdP metadata. |
+| Certificate | The base64-encoded signing certificate from your identity provider. Set this when you configure SAML manually. |
 | Ignore Certificate Validation | Skips validation of the identity provider's certificate. Use this only for testing, since it removes a security check. |
 
 Set **IdP Metadata** to fetch your identity provider's signing certificate and endpoints automatically, as with Okta or ADFS metadata URLs.
 
 :::warning Availability Requirement
-When using **IdP Metadata**, PingCastle Enterprise accesses the metadata URL at application startup. If the URL is unavailable, PingCastle Enterprise will be unavailable until the metadata becomes accessible again.
+When you use **IdP Metadata**, PingCastle Enterprise accesses the metadata URL at application startup. If the URL is unavailable, PingCastle Enterprise will be unavailable until the metadata becomes accessible again.
 :::
 
 To avoid a startup dependency on the metadata URL, leave **IdP Metadata** blank and set **Single Sign-On Destination** and **Certificate** instead, using the values from your identity provider's metadata:
@@ -375,7 +375,7 @@ Create a user account with a login matching the certificate subject (DNS form). 
 
 **Troubleshooting**
 
-If PingCastle can't recognize the certificate, it displays an error. Ensure the user account login matches one of the preceding certificate identifiers.
+If PingCastle can't recognize the certificate, it displays an error. Ensure the user account login matches one of the certificate mapping identifiers.
 
   </TabItem>
 </Tabs>
