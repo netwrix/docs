@@ -24,7 +24,8 @@ export default function Index() {
   // JS-disabled visitors.
   const redirectTarget = findVersionlessRedirect(
     location.pathname,
-    siteConfig.customFields?.unversionedDocsBasePaths
+    siteConfig.customFields?.unversionedDocsBasePaths,
+    siteConfig.customFields?.rootOnlyUnversionedDocsBasePaths
   );
 
   useEffect(() => {
