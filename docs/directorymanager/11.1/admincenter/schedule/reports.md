@@ -119,3 +119,23 @@ Step 13 – On the Schedules page, click **Save**.
 The schedule is displayed under **Reports**. See the
 [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store)topic
 for details.
+
+:::note 
+Configure Meaningful Report File Names in Email Notifications
+
+By default, report attachments included in email notifications may use a generic filename. To include a more descriptive filename with a timestamp, add the following configuration value to the Netwrix Directory Manager database.
+
+Run the following SQL script against the Netwrix Directory Manager database:
+
+IF NOT EXISTS (
+    SELECT 1 FROM [GroupID].[GlobalSystemConfiguration]
+    WHERE [Attribute] = N'IncludeLongDateTimeFormatInReportName'
+)
+BEGIN
+    INSERT INTO [GroupID].[GlobalSystemConfiguration] ([Attribute], [AttributeValue])
+    VALUES (N'IncludeLongDateTimeFormatInReportName', N'True')
+END
+GO
+
+After this setting is applied, newly generated report attachments included in email notifications will use a more meaningful filename that includes the report name and a timestamp. Existing reports are not affected.
+:::
