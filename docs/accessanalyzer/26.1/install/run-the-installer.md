@@ -26,7 +26,7 @@ The Netwrix package registry hosts both artifacts, and your license key authenti
 <Tabs groupId="install-mode">
 <TabItem value="airgap" label="Airgap install">
 
-2. Download the installer and the offline install media for the server's architecture.
+2. Confirm the server has at least 25 GB free on `/tmp` (see [Requirements](requirements.md#server)), then download the installer and the offline install media for the server's architecture.
 
    ```bash
    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
@@ -51,7 +51,7 @@ The Netwrix package registry hosts both artifacts, and your license key authenti
    dspm-installer --version
    ```
 
-   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains listed under [Outbound](requirements.md#outbound).
+   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains that [Outbound](requirements.md#outbound) lists.
 
 4. Confirm the media extracted correctly.
 
@@ -81,7 +81,7 @@ The Netwrix package registry hosts both artifacts, and your license key authenti
    dspm-installer --version
    ```
 
-   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains listed under [Outbound](requirements.md#outbound).
+   A version number means the binary is ready. An error means the download failed: check the license key and confirm the server can reach the domains that [Outbound](requirements.md#outbound) lists.
 
 </TabItem>
 </Tabs>
