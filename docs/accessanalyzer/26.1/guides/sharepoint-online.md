@@ -1,5 +1,5 @@
 ---
-title: Scan Microsoft 365
+title: Scan SharePoint Online
 description: Connect a SharePoint Online tenant with a certificate-based app registration, run an Access scan and a Sensitive data scan, and find the results in the SharePoint reports.
 sidebar_position: 4
 ---
