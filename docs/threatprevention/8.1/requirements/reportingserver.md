@@ -34,13 +34,13 @@ Minimum hardware requirements:
 
 **Additional Server Requirements**
 
-The following are additional requirements for the application server:
+The application server also requires:
 
-- .NET Framework 4.8+
-- .NET Desktop Runtime 8.0.11
-- ASP.NET Core 8.0.11
-- VC++ redist v14.28.29914
-- Python v3.10.8x64
+- .NET Framework 4.8+
+- .NET Desktop Runtime 10.0+ (the product installs this automatically)
+- ASP.NET Core 10.0+ (the product installs this automatically)
+- VC++ redist v14.50+ (the product installs this automatically)
+- PowerShell Script excision enabled
 
 **Permissions for Installation and Application Use**
 
@@ -61,7 +61,7 @@ following permissions:
 | User     | Retrieve all users         | Read all user objects from the domain      |
 | Computer    | Retrieve all deleted computer objects         | Read all computer objects under the Deleted Objects Container      |
 | Computer    | Retrieve all computer objects       | Read all computer objects in the domain     |
-| Group       | Used specifically for groups that have large memberships which the query automatically truncates | Read Access to memberof for all group objects in the domain    |
+| Group       | Applies specifically to groups that have large memberships which the query automatically truncates | Read Access to memberof for all group objects in the domain    |
 | GMSA        | Retrieve all Group Managed Service Accounts    | Read access to all msDS-groupmanagedserviceaccount objects in the domain |
 | Secret      | Retrieve all DPAPI master backup keys (Secret objects)       | Read access to all secret objects in Active Directory                    |
 

@@ -6,15 +6,15 @@ sidebar_position: 40
 
 # Action Service Requirements
 
-The Action Service can be installed on additional servers.
+You can install the Action Service on additional servers.
 
 :::tip
-Remember, the Action Service is installed on the Threat Manager Console server.
+The Threat Manager Console server installation includes the Action Service.
 :::
 
 
-The Windows server can be physical or virtual. The following Windows server operating systems are
-supported:
+The Windows server can be physical or virtual. Threat Manager supports the following Windows server
+operating systems:
 
 - Windows Server 2022
 - Windows Server 2019
@@ -22,7 +22,7 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 
 **RAM, CPU, and Disk Space**
 
@@ -34,9 +34,10 @@ Minimum hardware requirements:
 
 **Additional Server Requirements**
 
-The following are additional requirements for the application server:
+The application server also requires:
 
-- .NET 8.0.11
-- .NET Desktop Runtime 8.0.11
-- ASP.NET Core 8.0.11
-- PowerShell 5.1+ installed
+- .NET Framework 4.8+
+- .NET Desktop Runtime 10.0+ (the product installs this automatically)
+- ASP.NET Core 10.0+ (the product installs this automatically)
+- VC++ redist v14.50+ (the product installs this automatically)
+- PowerShell Script excision enabled
