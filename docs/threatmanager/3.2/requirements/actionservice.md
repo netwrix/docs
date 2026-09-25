@@ -36,7 +36,8 @@ Minimum hardware requirements:
 
 The following are additional requirements for the application server:
 
-- .NET 8.0.11
-- .NET Desktop Runtime 8.0.11
-- ASP.NET Core 8.0.11
+- .NET Framework 4.8+
+- .NET Desktop Runtime 10.0 (installed automatically if missing)
+- ASP.NET Core 10.0         (installed automatically if missing)
+- VC++ redist v14.28.29914  (installed automatically if missing)
 - PowerShell 5.1+ installed

@@ -36,11 +36,11 @@ Minimum hardware requirements:
 
 The following are additional requirements for the application server:
 
-- .NET Framework 4.8+
-- .NET Desktop Runtime 8.0.4
-- ASP.NET Core 8.0.4
-- VC++ redist v14.28.29914
-- Python v3.10.8x64
+- .NET Framework 4.8+
+- .NET Desktop Runtime 10.0 (installed automatically if missing)
+- ASP.NET Core 10.0         (installed automatically if missing)
+- VC++ redist v14.28.29914  (installed automatically if missing)
+- PowerShell 5.1+ installed
 
 **Permissions for Installation and Application Use**
 
