@@ -49,12 +49,12 @@ On a domain controller, both groups are domain groups in the **Builtin** contain
 
 #### Considerations
 
-- **Access Control Assistance Operators doesn't grant access to any share.** It only lets the account list the shares and read their share-level permissions. Every share still needs rights 1 and 2. A share the scan lists but can't open is skipped: the scan records its share-level permissions, scans the other shares, and finishes with the status **Completed with errors**. To get a clean result, grant the account access to the share or add it to **Exclude shares**.
-- **Grant access to new shares as you add them.** Rights 1 and 2 are per share, so a share created after setup isn't scanned until the account has access to it.
+- **Access Control Assistance Operators doesn't grant access to any share.** It only lets the account list the shares and read their share-level permissions. Every share still needs rights 1 and 2. The scan skips a share it lists but can't open: it records the share's share-level permissions, scans the other shares, and finishes with the status **Completed with errors**. To get a clean result, grant the account access to the share or add it to **Exclude shares**.
+- **Grant access to new shares as you add them.** Rights 1 and 2 are per share, so scans skip a share created after setup until the account has access to it.
 - **Access through a group counts.** Rights 1 and 2 describe the access the account ends up with, so access it already has through a group such as **Everyone**, **Users**, or **Authenticated Users** is enough. Explicit grants are more reliable, because they don't depend on group settings that can change.
 - **Backup Operators works only for a domain account.** For a local account, Windows removes the **Back up files and directories** right from network sign-ins, so the membership has no effect on a standalone server. Backup Operators also doesn't replace rights 1 through 3: no Windows right overrides a share permission, and Backup Operators can't list shares.
 - **Sensitive data scans need right 2 on every file they read.** Sensitive data scans don't open files in backup mode, so Backup Operators doesn't extend them. A folder the Access scan reached only through Backup Operators appears in Access scan results, but the Sensitive data scan can't read its files. To classify those files, give the account **Read & execute** on them.
-- **Check the result of a Sensitive data scan that finds nothing.** When the account can't read any of the files, the scan still reports **Completed**, with an error recorded for each file.
+- **Check the result of a Sensitive data scan that finds nothing.** When the account can't read any of the files, the scan still reports **Completed** and records an error for each file.
 - **Other groups don't let the account list shares.** On Windows Server 2025, membership in **Backup Operators** or **Power Users** doesn't let the account list shares or read share-level permissions. Membership in **Administrators** does, along with everything else here, but it grants far more access than the scans need.
 - **Keep the default user rights.** The scans rely on the **Access this computer from the network** and **Bypass traverse checking** user rights, which Windows grants to **Everyone** by default. If your server's security policy removes **Everyone** from either right, grant it to the account.
 - **NetApp, Dell PowerScale, and Nutanix Files handle share listing their own way.** Rights 3 and 4 are Windows groups. On other platforms, grant rights 1 and 2. If a scan finds no shares, list the shares to scan under **Include shares**.
@@ -78,7 +78,7 @@ You select the agent on the scan, not on the source; see [Agents](../agents/inde
 3. In **Source type**, select **File Server**.
 4. Under **Details**, enter a **Name**.
 5. Add a **Description** and **Labels** if you want them; see [Labels](labels.md).
-6. Under **Connection**, fill in the fields described in the following table.
+6. Under **Connection**, fill in the fields in the following table.
 7. Under **Access**, in **Service account**, select the account you set up for this server.
 8. Click **Test connection**. A **Connection successful** message confirms the account can reach the server and list its shares.
 9. Click **Add source**.
@@ -108,7 +108,7 @@ A successful test shows the message **Connection successful**. A failed test sho
 
 ### Access Scans
 
-Access scans enumerate the server's shares, then walk each share's folders down to the configured depth. For every share, folder, and file, they record the path, name, owner, size, timestamps, and attributes, plus, for shares and folders, the permission entries: which security identifier (SID) is allowed or denied which rights, and whether each entry is inherited or explicit. The results also flag conditions such as access granted to Everyone or Authenticated Users, explicit deny entries, and folders where inheritance is broken.
+Access scans enumerate the server's shares, then walk each share's folders down to the configured depth. For every share, folder, and file, they record the path, name, owner, size, timestamps, and attributes, plus, for shares and folders, the permission entries: which rights each entry allows or denies for which security identifier (SID), and whether the entry is inherited or explicit. The results also flag conditions such as access granted to Everyone or Authenticated Users, explicit deny entries, and folders with broken inheritance.
 
 Access scans collect file-level permission entries only when you turn on **Enable File-Level Permission Scanning** in the scan's settings; otherwise they record permissions for shares and folders.
 
