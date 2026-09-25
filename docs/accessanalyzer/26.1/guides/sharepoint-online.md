@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Connect one Microsoft 365 tenant's SharePoint Online sites and OneDrive drives to Access Analyzer and run two scans: an Access scan that collects sites, permissions, and sharing links, and a Sensitive data scan that classifies the documents the Access scan found. At the end you'll have data in the Data security dashboard and the SharePoint reports.
 
-Access Analyzer calls the source type **SharePoint Online**. It uses a certificate to sign in to the tenant as an application, so setup is a round trip between Access Analyzer and the Microsoft Entra app registration.
+Access Analyzer calls the source type **SharePoint Online**. It uses a certificate to sign in to the tenant as an application, so setup requires steps in both Access Analyzer and the Microsoft Entra app registration.
 
 ## Before You Start
 
