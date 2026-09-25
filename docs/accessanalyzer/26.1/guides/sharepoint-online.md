@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Connect one Microsoft 365 tenant's SharePoint Online sites and OneDrive drives to Access Analyzer and run two scans: an Access scan that collects sites, permissions, and sharing links, and a Sensitive data scan that classifies the documents the Access scan found. At the end you'll have data in the Data security dashboard and the SharePoint reports.
 
-Access Analyzer calls the source type **SharePoint Online**. It signs in to the tenant as an application with a certificate, so setup is a round trip between Access Analyzer and the Microsoft Entra app registration.
+Access Analyzer calls the source type **SharePoint Online**. It uses a certificate to sign in to the tenant as an application, so setup is a round trip between Access Analyzer and the Microsoft Entra app registration.
 
 ## Before You Start
 
@@ -29,7 +29,7 @@ SharePoint Online sources use a **Client ID/certificate** service account. Unlik
 5. In **Service account type**, select **Client ID/certificate**.
 6. In **Client (application) ID**, paste the **Application (client) ID**.
 7. In **Tenant ID**, paste the **Directory (tenant) ID**.
-8. Under **Certificate**, leave **Generate for me** selected. When you save the account, Access Analyzer creates a self-signed RSA-2048 certificate that is valid for one year.
+8. Under **Certificate**, leave **Generate for me** selected. When you save the account, Access Analyzer creates a self-signed RSA-2048 certificate valid for one year.
 9. Click **Add account**.
 10. In the **Account created and certificate generated** message, note the thumbprint and expiry date.
 11. Click **Download certificate (.pem)** and save the file.
