@@ -8,7 +8,7 @@ A **SharePoint Online** source points Access Analyzer at the SharePoint Online s
 
 Authentication uses an app registration with a certificate rather than a client secret, so the setup has one extra step: you upload the service account's public certificate to the app registration in the Microsoft Entra admin center.
 
-For an end-to-end walkthrough, see [Scan Microsoft 365](../guides/microsoft-365.md).
+For an end-to-end walkthrough, see [Scan SharePoint Online](../guides/sharepoint-online.md).
 
 ## Prerequisites
 

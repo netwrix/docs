@@ -27,9 +27,9 @@ const PAGE_MAP = {
   'gettingstarted/file-servers/scanning-options': 'guides/smb-file-servers',
   'gettingstarted/file-servers/schema-reference': 'sources/smb-file-servers',
   'gettingstarted/file-servers/reports': 'dashboards-reports/reports/data',
-  'gettingstarted/sharepoint-online/sharepoint-online': 'guides/microsoft-365',
-  'gettingstarted/sharepoint-online/set-up-source-group': 'guides/microsoft-365',
-  'gettingstarted/sharepoint-online/scanning-options': 'guides/microsoft-365',
+  'gettingstarted/sharepoint-online/sharepoint-online': 'guides/sharepoint-online',
+  'gettingstarted/sharepoint-online/set-up-source-group': 'guides/sharepoint-online',
+  'gettingstarted/sharepoint-online/scanning-options': 'guides/sharepoint-online',
   'gettingstarted/sharepoint-online/schema-reference': 'sources/microsoft-365',
   'gettingstarted/sharepoint-online/reports': 'dashboards-reports/reports/data',
 
