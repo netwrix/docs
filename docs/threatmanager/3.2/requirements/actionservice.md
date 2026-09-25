@@ -6,15 +6,15 @@ sidebar_position: 40
 
 # Action Service Requirements
 
-The Action Service can be installed on additional servers.
+You can install the Action Service on additional servers.
 
 :::tip
-Remember, the Action Service is installed on the Threat Manager Console server.
+The Threat Manager Console server installation includes the Action Service.
 :::
 
 
-The Windows server can be physical or virtual. The following Windows server operating systems are
-supported:
+The Windows server can be physical or virtual. Threat Manager supports the following Windows server
+operating systems:
 
 - Windows Server 2022
 - Windows Server 2019
@@ -22,7 +22,7 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 
 **RAM, CPU, and Disk Space**
 

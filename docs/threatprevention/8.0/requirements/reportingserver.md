@@ -7,13 +7,13 @@ sidebar_position: 50
 # Reporting Module Server Requirements
 
 :::warning
-Netwrix Threat Manager can't be installed on the same server as Netwrix Threat Manager
+You can't install Netwrix Threat Manager on the same server as Netwrix Threat Manager
 Reporting Module.
 :::
 
 
-The Windows server can be physical or virtual. The following Windows server operating systems are
-supported:
+The Windows server can be physical or virtual. Threat Prevention supports the following Windows
+server operating systems:
 
 - Windows Server 2022
 - Windows Server 2019
@@ -44,14 +44,14 @@ The following are additional requirements for the application server:
 
 **Permissions for Installation and Application Use**
 
-The following permissions are required to install and use the application:
+You need the following permissions to install and use the application:
 
 - Membership in the local Administrators group
 
 **Permissions for Active Directory Sync**
 
-The following permissions are required for the credentials used by Netwrix Threat Manager Reporting
-Module for Active Directory Sync:
+The credentials that Netwrix Threat Manager Reporting Module uses for Active Directory Sync need the
+following permissions:
 
 | Object Type | Function            | Access Requirements         |
 | ----------- | ---------------------- | ---------------- |
@@ -61,13 +61,13 @@ Module for Active Directory Sync:
 | User     | Retrieve all users         | Read all user objects from the domain      |
 | Computer    | Retrieve all deleted computer objects         | Read all computer objects under the Deleted Objects Container      |
 | Computer    | Retrieve all computer objects       | Read all computer objects in the domain     |
-| Group       | Used specifically for groups that have large memberships which get automatically truncated by the query | Read Access to memberof for all group objects in the domain    |
+| Group       | Used specifically for groups that have large memberships which the query automatically truncates | Read Access to memberof for all group objects in the domain    |
 | GMSA        | Retrieve all Group Managed Service Accounts    | Read access to all msDS-groupmanagedserviceaccount objects in the domain |
 | Secret      | Retrieve all DPAPI master backup keys (Secret objects)       | Read access to all secret objects in Active Directory                    |
 
 ## Client Requirements
 
-Netwrix Threat Manager Reporting Module is a web service that can be accessed locally or remotely if
+Netwrix Threat Manager Reporting Module is a web service that you can access locally or remotely if
 the server’s firewall permits. The supported browsers are:
 
 - Google Chrome
