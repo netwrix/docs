@@ -103,7 +103,7 @@ If the upload fails, the panel reads **Certificate upload failed** with the reas
 </TabItem>
 </Tabs>
 
-Then create or edit the SharePoint Online source, select this account in **Service account**, and click **Test connection**. For the source settings, see [Microsoft 365](../sources/microsoft-365.md); for the whole path from app registration to first scan, see [Scan Microsoft 365](../guides/microsoft-365.md).
+Then create or edit the SharePoint Online source, select this account in **Service account**, and click **Test connection**. For the source settings, see [Microsoft 365](../sources/microsoft-365.md); for the whole path from app registration to first scan, see [Scan SharePoint Online](../guides/sharepoint-online.md).
 
 ## Manage the Certificate
 
