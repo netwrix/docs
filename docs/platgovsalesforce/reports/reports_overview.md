@@ -57,19 +57,6 @@ Set and Profile.
 
 ![Access report by PermissionSet/Profile](/images/platgovsalesforce/reports/access_reports_permission_by_permset.webp)
 
-- **Users to Profiles/PermissionSets**: Displays the Profile, PermissionSet, and PermissionSet Group
-assigned to each user. You can filter the report information. For example, to list
-users with Admin profiles, set two filters:
-
-    - Customization Name Contains **Admin**
-    - Salesforce type Equals Profile
-
-- **Date Assigned** and **Expires on** are only relevant for PermissionSets. They are blank for
-Profiles. If the org doesn't use the **Expires on** feature, remove the column from the
-report.
-
-![Users to Profile/PermissionSets](/images/platgovsalesforce/reports/access_reports_users_to_profile.webp)
-
 - **Profiles to PermissionsSets Changes**: Displays the changes made to your Profiles,
 PermissionSets,and PermissionSet Groups. If there is an active policy, the **Compliance** column
 displays whether the change was Compliant or Non-Compliant. If no policy, all changes are

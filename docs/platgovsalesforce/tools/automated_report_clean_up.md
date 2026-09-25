@@ -114,6 +114,8 @@ matching reports.
    - **Save & Run**
    - **Delete**
 
+The **Rule Name** in the preview is a link. Click it to open the Report Clean Up Rule record directly.
+
 ![automated_report_cleanup_preview](/images/platgovsalesforce/tools/automated_report_cleanup_preview.webp)
 
 ### Run Now
