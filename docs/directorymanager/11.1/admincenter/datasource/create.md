@@ -9,29 +9,34 @@ sidebar_position: 10
 You can create Synchronize jobs to synchronize data across different providers. As a prerequisite,
 you must create data sources for those providers.
 
-Data sources are primarily used in Synchronize jobs, but you can also use them in queries to search
+You primarily use data sources in Synchronize jobs, but you can also use them in queries to search
 for directory objects and in queries for group membership update.
+
+:::note
+If a data source file resides on OneDrive, the service account you enter in the Service Account box
+must have a OneDrive license.
+:::
 
 ## Create a Data Source for MS Excel
 
 Create a data source for an Excel file to establish a connection before using it as a source or
 destination in Synchronize jobs, or in queries. With Directory Manager, you can connect to an Excel
-file that is placed on a local server or on OneDrive.
+file stored on a local server or on OneDrive.
 
 Synchronize supports Microsoft Excel (\*.xls | xlsx) to serve as both a source and destination
 provider. Use it as destination in a Synchronize job to export data from a source to a new Excel
-worksheet. The schema of the new Excel worksheet is automatically built according to fields that you
-select from the source to map to the destination.
+worksheet. Synchronize builds the schema of the new Excel worksheet automatically according to the
+fields that you select from the source to map to the destination.
 
 The Directory Manager Installer installs the required components for the MS Excel provider while
-installing Directory Manager. However, if you experience any issue, ensure the following are
-installed on the Directory Manager server:
+installing Directory Manager. However, if you experience any issue, confirm that the Directory
+Manager server has the following:
 
 - Microsoft Office 2007 or later
 - Data connectivity components found at
   [Microsoft Access Database Engine 2016 Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=54920).
 
-The Excel file for creating a data source can be placed on a local server or OneDrive. Follow the
+The Excel file for creating a data source can reside on a local server or OneDrive. Follow the
 steps in the respective section to create a data source.
 
 - When the Excel File is Located on a Local Server
@@ -42,7 +47,7 @@ steps in the respective section to create a data source.
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _Microsoft Excel_.
@@ -56,12 +61,12 @@ source for. This path should be complete with the file name and extension. For e
 D:\Employee Records\Sheets\EmployeeMedical Records.xlsx
 
 :::note
-The MS Excel file must be placed either on the machine that Data service is installed on, or a
-location that Data service can access.
+The MS Excel file must be either on the machine that runs Data service or in a location that Data
+service can access.
 :::
 
 
-Step 7 – In case the file is placed on a network path, enter the network domain or hostname in the
+Step 7 – If the file is on a network path, enter the network domain or hostname in the
 Domain/Hostname box.
 
 Step 8 – In the User Account and Password boxes, enter the username and password of an account to
@@ -75,7 +80,7 @@ The data source is available on the Excel tab of the Data Sources page.
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _Microsoft Excel_.
@@ -111,17 +116,17 @@ The data source is available on the Excel tab of the Data Sources page.
 
 Create a data source for an Access database to establish a connection before using it as a source or
 destination in Synchronize jobs, or in queries. Directory Manager lets you connect to an
-Access file that is placed on a local server or on OneDrive.
+Access file stored on a local server or on OneDrive.
 
 Synchronize supports Microsoft Access (.mdb | .accdb) to serve as both a source and destination
 provider.
 
 The MS Access provider supports automatic schema detection. For Synchronize to communicate with this
-provider, data connectivity components must be installed on the Directory Manager server. These
+provider, you must install data connectivity components on the Directory Manager server. These
 components are available at
 [Microsoft Access Database Engine 2016 Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=54920).
 
-The Access file for creating a data source can be placed on a local server or OneDrive. Follow the
+The Access file for creating a data source can reside on a local server or OneDrive. Follow the
 steps in the respective section to create a data source.
 
 - When the Access File is Located on a Local Server
@@ -132,7 +137,7 @@ steps in the respective section to create a data source.
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _Microsoft Access_.
@@ -146,14 +151,14 @@ data source for. This path should be complete with the file name and extension. 
 D:\Employee Records\Databases\Employee Medical Records.accdb
 
 :::note
-The Access database must be located either on the machine that Data service is installed on,
-or a location that Data service can access.
+The Access database must be either on the machine that runs Data service or in a location that
+Data service can access.
 :::
 
 
 Step 7 – If the database file is password protected, enter the password in the File Password box.
 
-Step 8 – In case the file is placed on a network path, enter the network domain or hostname in the
+Step 8 – If the file is on a network path, enter the network domain or hostname in the
 Domain/Hostname box.
 
 Step 9 – In the User Account and Password boxes, enter the username and password of an account to
@@ -167,7 +172,7 @@ The data source is available on the Access tab of the Data Sources page.
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _Microsoft Access_.
@@ -203,12 +208,12 @@ The data source is available on the Access tab of the Data Sources page.
 
 ## Create a Data Source for Oracle
 
-You can create a data source for an Oracle server or a specific database on a server. This data
-source can be used in queries and as source and destination provider in Synchronize jobs. This
+You can create a data source for an Oracle server or a specific database on a server. You can use
+this data source in queries and as a source and destination provider in Synchronize jobs. This
 provider supports dynamic schema detection.
 
 :::note
-Oracle client must be installed to use this provider. Ensure you reboot your computer after
+You must install the Oracle client to use this provider. Ensure you reboot your computer after
 installing the Oracle client.
 :::
 
@@ -218,7 +223,7 @@ To create a data source:
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _Oracle_.
@@ -230,29 +235,28 @@ server you want to create the data source for.
 
 Step 6 – In the Service Account and Service Account Password boxes, provide the username and
 password of a service account to connect to the Oracle server.
-When using this data source in a Synchronize job, the user will be able to select the databases that
-are accessible with these credentials.
+When you use this data source in a Synchronize job, you can select the databases that these
+credentials can access.
 
 Step 7 – In the Protocol box, specify the protocol to use for connecting to the databases on the
 Oracle server. For example, TCP, or TCP/IP.
 
 Step 8 – In the HostName box, enter the name of the machine that hosts the Oracle server.
 
-Step 9 – In the Port Number box, enter the port configured for the Oracle server. This port is used
-to communicate with the oracle server.
+Step 9 – In the Port Number box, enter the port configured for the Oracle server. Directory Manager
+uses this port to communicate with the Oracle server.
 
 Step 10 – In the Database or Schema (optional) box, specify the name of the database you want to
-create the data source for. You may also leave this field blank. In that case, all databases on the
-specified server will be displayed to the user in a Synchronize job. The user can select a database
-as needed.
+create the data source for. You may also leave this field blank. In that case, a Synchronize job
+displays all databases on the specified server, and the user can select a database as needed.
 
 Step 11 – Click **Create Data Source**.
 The data source is available on the Oracle tab of the Data Sources page.
 
 ## Create a Data Source for SQL Server
 
-Use Directory Manager to create a data source for an SQL database. This data source can be
-used in queries and as source and destination in Synchronize jobs. This provider supports dynamic
+Use Directory Manager to create a data source for an SQL database. You can use this data source
+in queries and as a source and destination in Synchronize jobs. This provider supports dynamic
 schema detection.
 
 To create a data source:
@@ -260,7 +264,7 @@ To create a data source:
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _SQL Server_.
@@ -270,12 +274,12 @@ Step 4 – Enter a name for the data source in the Name box.
 Step 5 – The SQL database for which you want to create a data source resides on an SQL server. Enter
 the name or IP address of this SQL server in the SQL Server Name box.
 
-Step 6 – By default, SQL authentication is used as an authentication mode to connect to the SQL
-server. In this case, the Service Account and Service Account Password boxes are enabled. Enter the
+Step 6 – By default, Directory Manager uses SQL authentication to connect to the SQL server. In this
+case, Directory Manager enables the Service Account and Service Account Password boxes. Enter the
 username and password of an SQL server account to connect to the SQL server in the respective boxes.
 
 Step 7 – To use Windows authentication to connect to the SQL server using a Windows account, select
-the **Windows Authentication** checkbox. With Windows authentication, users are already logged onto
+the **Windows Authentication** checkbox. With Windows authentication, users have already logged onto
 Windows and don't have to log on separately to SQL Server.
 
 Step 8 – In the SQL Server Database Name box, specify the SQL database to create a data source for.
@@ -286,11 +290,11 @@ The data source is available on the MS SQL Server tab of the Data Sources page.
 ## Create a Data Source for a Text/CSV File
 
 You can create a data source for a comma-separated values (.csv) file or a text (.txt) file. You
-must also specify the delimiter used in the file to separate values.
+must also specify the delimiter that separates values in the file.
 
-This data source can be used in queries and only as a source in Synchronize jobs.
+You can use this data source in queries and only as a source in Synchronize jobs.
 
-With Directory Manager, you can connect to a text file that is placed on a local server or on
+With Directory Manager, you can connect to a text file stored on a local server or on
 OneDrive. Follow the steps in the respective section to create a data source.
 
 - When the Text File is Located on a Local Server
@@ -301,7 +305,7 @@ OneDrive. Follow the steps in the respective section to create a data source.
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _Text/CSV_.
@@ -315,15 +319,15 @@ for. This path should be complete with the file name and extension. For example:
 D:\Employee Records\Sheets\Employee Medical Records.csv
 
 :::note
-The text file must be placed either on the machine that Data service is installed on, or a
-location that Data service can access.
+The text file must be either on the machine that runs Data service or in a location that Data
+service can access.
 :::
 
 
-Step 7 – In the Delimiter box, specify the character that is used to separate values in the file.
+Step 7 – In the Delimiter box, specify the character that separates values in the file.
 You can also enter a space as a character.
 
-Step 8 – In case the file is placed on a network path, enter the network domain or hostname in the
+Step 8 – If the file is on a network path, enter the network domain or hostname in the
 Domain/Hostname box.
 
 Step 9 – In the User Account and Password boxes, enter the username and password of an account to
@@ -337,7 +341,7 @@ The data source is available on the Text/CSV tab of the Data Sources page.
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _Text/CSV_.
@@ -349,7 +353,7 @@ Step 5 – From the File Server dropdown list, select _OneDrive_.
 Step 6 – In the Service Account and Service Account Password boxes, enter the username and password
 of a service account to access the file on OneDrive.
 
-Step 7 – In the Delimiter box, specify the character that is used to separate values in the file.
+Step 7 – In the Delimiter box, specify the character that separates values in the file.
 You can also enter a space as a character.
 
 Step 8 – In the Registered Application ID on Azure Active Directory box, enter the application ID
@@ -377,7 +381,7 @@ The data source is available on the Text/CSV tab of the Data Sources page.
 Use an ODBC data source to connect to an ODBC-compatible provider, such as databases, directories,
 or even files. Examples include SQL server, MS Access files, and Oracle.
 
-A separate data source should be created for each ODBC-compatible file, database, or directory you
+Create a separate data source for each ODBC-compatible file, database, or directory you
 want to use in queries or as source/destination in Synchronize jobs.
 
 To create a data source:
@@ -385,7 +389,7 @@ To create a data source:
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _ODBC_.
@@ -401,10 +405,10 @@ to the ODBC data source. Note the following:
 Step 6 – Select the **System DSN** or **File DSN** option button to specify the DSN type to use for
 connecting to the data source.
 
-Step 7 – In case the data source is password protected, provide a username and password in the
+Step 7 – If the data source is password protected, provide a username and password in the
 **Service Account** and **Service Account Password** boxes to access it.
-Depending on the data source, you may not necessarily have to provide both a username and password.
-For example, an MS Access database may need a password only while an SQL server may require both
+Depending on the data source, you may not need to provide both a username and password.
+For example, an MS Access database may need only a password, while an SQL server may require both a
 username and password.
 
 Step 8 – Click **Create Data Source**.
@@ -413,17 +417,17 @@ The data source is available on the ODBC tab of the Data Sources page.
 ## Create a Data Source for SCIM
 
 Directory Manager supports identity providers, namely Active Directory, Microsoft Entra ID, and
-Google Workspace, but it doesn't support Slack, AWS, JumpCloud, and GitHub. You can create a
-SCIM-based data source for these and other providers to use them in queries and as
-source/destinations in Synchronize jobs. As a prerequisite, the provider must support SCIM and
-expose an endpoint URL that Directory Manager can consume.
+Google Workspace, but it doesn't support Slack, AWS, JumpCloud, and GitHub. You can create a System
+for Cross-domain Identity Management (SCIM) data source for these and other providers to use them in
+queries and as source/destinations in Synchronize jobs. As a prerequisite, the provider must support
+SCIM and expose an endpoint URL that Directory Manager can consume.
 
 To create a data source:
 
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
-Data Source page is displayed.
+Data Source page appears.
 
 Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
 This list displays the supported providers. Select _SCIM_.
