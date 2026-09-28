@@ -46,6 +46,10 @@ Do one of the following:
         {
             "id": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
             "type": "Role"
+        },
+        {
+            "id": "332a536c-c7ef-4017-ab91-336970924f0d",
+            "type": "Role"
         }
     ]
 },
@@ -59,3 +63,8 @@ Do one of the following:
     ]
 }
 ```
+
+**NOTE:** The **Sites.Read.All** role (`332a536c-c7ef-4017-ab91-336970924f0d`) included above
+is optional and is not required for data collection. See the
+[Using Modern Authentication with SharePoint Online](/docs/auditor/10.9/configuration/microsoft365/sharepointonline/permissions/modernauth/modernauth.md)
+topic for additional information.
