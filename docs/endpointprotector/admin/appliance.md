@@ -325,6 +325,10 @@ Example field values include:
 
 This section presents the field names for the Endpoint Protector Server's "Standard format," available since the Endpoint Protector 5.9.4 release. Endpoint Protector Server exports logs to SIEM solutions with a maximum of 2,100 characters. Starting with Endpoint Protector 5.9.1, the message limit increased to 10,000 characters.
 
+:::warning
+From Endpoint Protector 2608 onward, Device Control and Content Aware Protection SIEM log entries use internal database field names as keys (for example, `machine_name`, `destination_type`) instead of the readable field names listed below (for example, `[Client Computer]`, `[Destination Type]`). This is a side effect of the underlying log platform migration to CrateDB, not an intentional change to the SIEM export format. There is no setting to restore the readable field names. If your SIEM parser or field mappings rely on the readable names below, update them using the [SIEM Field Name Mapping (2608+)](#siem-field-name-mapping-2608) table.
+:::
+
 #### Device Control
 
 The standard format for the Device Control fields is as follows:
@@ -410,6 +414,70 @@ The standard format for the E-Discovery fields is as follows:
 - [Path]
 - [Discovered at]
 - [Discovered at (UTC)]
+
+### SIEM Field Name Mapping (2608+) {#siem-field-name-mapping-2608}
+
+From Endpoint Protector 2608 onward, Device Control and Content Aware Protection SIEM log entries use the internal database field name as the key instead of the readable field name. Use the tables below to update your SIEM parser or field mappings.
+
+:::note
+This mapping covers the fields shared with the Reporting module's export field list. A small number of internal ID fields (for example, `device_id`, `client_id`) may also appear in the live SIEM stream. Validate the mapping against a captured log sample from your environment before finalizing your SIEM parser configuration.
+:::
+
+#### Device Control field name mapping
+
+| Readable name (pre-2608) | Database field name (2608+) |
+| --- | --- |
+| Client Computer | `machine_name` |
+| IP Address | `ip` |
+| Domain | `domain` |
+| Client User | `client_name` |
+| Department | `department_name` |
+| Device Type | `device_type_name` |
+| Device | `device_name` |
+| Device VID | `vid` |
+| Device PID | `pid` |
+| Device Serial | `serial_no` |
+| File Name | `file_name` |
+| File Type | `file_type` |
+| File Size | `file_size` |
+| File Hash | `file_hash` |
+| Justification | `ur_justification` |
+| Time Interval | `ur_time_interval` |
+| OS | `os_version` |
+| Event Name | `event_name` |
+| Shadow Exists | `shadow_exists` |
+| Repository Type | `repository_type` |
+| Date/Time(Server) | `timestamp` |
+| Date/Time(Client) | `event_time_local` |
+| EPP Client Version | `epp_client_version` |
+
+#### Content Aware Protection field name mapping
+
+| Readable name (pre-2608) | Database field name (2608+) |
+| --- | --- |
+| Content Policy | `content_policy` |
+| Destination Type | `destination_type` |
+| Destination | `destination` |
+| Destination Details | `destination_details` |
+| Email Sender | `email_sender` |
+| Email Subject | `email_subject` |
+| File Name | `file_name` |
+| File Hash | `file_hash` |
+| File Type | `file_type` |
+| File Size | `file_size` |
+| Matched Item | `matched_item` |
+| Item Details | `item_details` |
+| Client Computer | `machine_name` |
+| Client User | `client_name` |
+| IP Address | `ip` |
+| OS | `os_type_name` |
+| Event Name | `event_name` |
+| Shadow Exists | `shadow_exists` |
+| Repository Type | `repository_type` |
+| Date/Time(Server) | `timestamp` |
+| Date/Time(Client) | `event_time_local` |
+| Date/Time(Client UTC) | `client_time_utc` |
+| EPP Client Version | `epp_client_version` |
 
 #### Other SIEM Logs
 
