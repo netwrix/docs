@@ -2,7 +2,7 @@ export { default as N1SIntro } from './1600.md';
 export { default as N1SConcepts } from './2600.md';
 export { default as N1SGettingStarted } from './3600.md';
 export { default as N1SManagedOrg } from './3601.md';
-export { default as N1SIntroConf } from './3600-3.md';
+export { default as N1SConfig } from './3602.md';
 export { default as N1SIntroData } from './3600-4.md';
 export { default as N1SIntroReport } from './3600-5.md';
 export { default as N1SIntroAlertRisk } from './3600-6.md';
