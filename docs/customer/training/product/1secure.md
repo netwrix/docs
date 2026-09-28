@@ -12,7 +12,7 @@ import { N1S } from '@site/src/training/products';
 
 Estimated length: 2 hours 40 minutes
 
-This learning path teaches you how to use <N1S />. It contains the following course:
+This learning path teaches you how to use <N1S />. It contains the following courses:
 
 * 1600 Introduction to <N1S />
 * 2600 <N1S /> – Components & Architecture
