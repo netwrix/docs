@@ -15,7 +15,7 @@ Estimated length: 4 hours 10 minutes
 This learning path grants <Company /> certification as a Presales Engineer for this product. It contains the following courses:
 
 
-* 1600 <N1S /> – Valuable Features
+* 1600 Introduction to <N1S />
 * 2600 <N1S /> – Components & Architecture
 * 3600.1 Introduction to <N1S /> – Getting Started
 * 3600.2 Introduction to <N1S /> – Manage Organizations

@@ -14,7 +14,7 @@ Estimated length: 2 hours 40 minutes
 
 In this learning path, you will learn how to use <N1S />. It contains the following course:
 
-* 1600 <N1S /> – Valuable Features
+* 1600 Introduction to <N1S />
 * 2600 <N1S /> – Components & Architecture
 * 3600.1 Introduction to <N1S /> – Getting Started
 * 3600.2 Introduction to <N1S /> – Manage Organizations

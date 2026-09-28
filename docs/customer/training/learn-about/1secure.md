@@ -14,7 +14,7 @@ Estimated length: 1 hour 40 minutes
 
 This learning path introduces you to <N1S />. It contains the following courses:
 
-* 1600 <N1S /> – Valuable Features
+* 1600 Introduction to <N1S />
 * 2600 <N1S /> – Components & Architecture
 * 3600.1 Introduction to <N1S /> – Getting Started
 * 3600.5 Introduction to <N1S /> – Reports
