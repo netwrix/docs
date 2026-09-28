@@ -6,7 +6,7 @@ keywords: [training, course, certification, partners, presales, 1secure]
 description: "Become a certified Presales Engineer for Netwrix 1Secure Pro"
 ---
 
-import { N1SIntro, N1SConcepts, N1SIntroGS, N1SIntroMO, N1SIntroConf, N1SIntroData, N1SIntroReport, N1SIntroAlertRisk, N1SDemo, N1SAdditional } from '@site/src/training/1secure';
+import { N1SIntro, N1SConcepts, N1SGettingStarted, N1SIntroMO, N1SIntroConf, N1SIntroData, N1SIntroReport, N1SIntroAlertRisk, N1SDemo, N1SAdditional } from '@site/src/training/1secure';
 import { Company, N1S } from '@site/src/training/products';
 
 
@@ -17,7 +17,7 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 
 * 1600 Introduction to <N1S />
 * 2600 <N1S /> – Components & Architecture
-* 3600.1 Introduction to <N1S /> – Getting Started
+* 3600 <N1S /> – Getting Started
 * 3600.2 Introduction to <N1S /> – Manage Organizations
 * 3600.3 Introduction to <N1S /> – Configuration
 * 3600.4 Introduction to <N1S /> – Data Sources
@@ -29,7 +29,7 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 
 <N1SConcepts />
 
-<N1SIntroGS />
+<N1SGettingStarted />
 
 <N1SIntroMO />
 
