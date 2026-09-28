@@ -5,6 +5,6 @@ export { default as N1SManagedOrg } from './3601.md';
 export { default as N1SConfig } from './3602.md';
 export { default as N1SData } from './3603.md';
 export { default as N1SReport } from './3604.md';
-export { default as N1SIntroAlertRisk } from './3600-6.md';
+export { default as N1SAlertRisk } from './3605.md';
 export { default as N1SDemo } from './5600.md';
 export { default as N1SAdditional } from './additional.md';
