@@ -1,14 +1,19 @@
 ---
 title: Upgrade to a New Version
-description: How dspmctl upgrades Access Analyzer, when you need to run it, and how to check that an upgrade finished.
+description: How to upgrade an airgap install with new offline media and dspm-installer upgrade, or an online install with dspmctl, and how to check that the upgrade finished.
 sidebar_position: 4
 ---
 
-You upgrade Access Analyzer with `dspmctl` on the install host. `dspmctl` is a small shell wrapper the installer drops at `/usr/local/bin/dspmctl`. It runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace, and that pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Run it with `sudo`. The default kubeconfig at `/etc/rancher/k3s/k3s.yaml` is readable only by root, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
+How you upgrade Access Analyzer depends on the mode you installed it in. An **airgap** install has no network access, so you download the new release's offline media on a connected machine, move it to the server, and run `dspm-installer upgrade` to load it into the cluster. An **online** install pulls new releases from the network, so you only tell ArgoCD which version to run, using `dspmctl`. Pick the tab that matches your install.
 
-## Check Whether You Need to Act
+Both modes use `dspmctl`, a small shell wrapper the installer drops at `/usr/local/bin/dspmctl`. It runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace, and that pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
+
+Run `dspmctl` and `dspm-installer` with `sudo`. The default kubeconfig at `/etc/rancher/k3s/k3s.yaml` is readable only by root, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
+
+## Check Which Version Is Running
 
 Start by checking which version is running:
 
@@ -18,11 +23,114 @@ sudo dspmctl version
 
 Compare the output with the latest release Netwrix has announced. If they match, Access Analyzer is already up to date.
 
-If they don't match, check how you installed the app. The installer's default `--target-revision` is `1.*`, a wildcard. If nobody pinned a specific version at install time, ArgoCD already tracks the newest stable 1.x tag and picks up new releases on its next sync. You don't need any `dspmctl` steps.
+## Upgrade
+
+<Tabs groupId="install-mode">
+<TabItem value="airgap" label="Airgap upgrade">
+
+An airgap upgrade loads the new release into the cluster from a newer offline media bundle. `dspm-installer upgrade` reads only the cluster and the media: it doesn't read or write `/etc/dspm/installer.yaml`, and the wizard, preflight checks, and platform setup never run. It upgrades the Access Analyzer services and ArgoCD. It doesn't upgrade the underlying k3s platform or the offline package manager; if the media targets a different version of either, the command prints a warning naming both versions and continues with the installed ones.
+
+Before it changes anything, the command checks that the server has an airgap install, that the media carries a newer version than the one installed, and that automated sync is on for the `netwrix` app. If any check fails, it exits with code `16` and nothing in the cluster changes.
+
+### Download the new release
+
+Download the new installer and the new media the same way you did for the install, with the new release's version number.
+
+:::warning
+Download the latest `dspm-installer` binary along with the media, and run the upgrade with that binary. The `upgrade` command only exists in newer installers, and an installer from an older release can reject newer media. Confirm with `dspm-installer --version` after the download.
+:::
+
+1. Export your license key.
+
+   ```bash
+   export LICENSE_KEY='<license-key>'
+   ```
+
+2. Download the installer and the offline media for the new release. Clear `/etc/dspm/dspm-media` first so files from the release you installed don't mix with the new ones.
+
+   ```bash
+   ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+   VERSION='<release-version>'  # the release you're upgrading to, for example 1.6.0
+   TMP_FILE=$(mktemp)
+   curl -Lf -o "$TMP_FILE" \
+     "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
+   sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
+   rm -f "$TMP_FILE"
+   dspm-installer --version
+
+   sudo rm -rf /etc/dspm/dspm-media
+   sudo mkdir -p /etc/dspm/dspm-media
+   curl -Lf \
+     "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable" \
+     | sudo tar -xzf - -C /etc/dspm/dspm-media
+   ```
+
+   If the server has no network access, run these commands on a connected machine with the same architecture, then copy `/usr/local/bin/dspm-installer` and `/etc/dspm/dspm-media` to the server with `scp` or removable media. Keep the `channel=stable` parameter on every download; without it, the registry can return a pre-release build.
+
+3. Confirm the media extracted correctly.
+
+   ```bash
+   ls /etc/dspm/dspm-media/manifest.json
+   ```
+
+   If this file is missing, the extraction failed or the tarball didn't download completely. Repeat step 2.
+
+### Run the upgrade
+
+1. Preview the upgrade. `--dry-run` validates the media and the preconditions and prints the planned changes without touching the cluster.
+
+   ```bash
+   sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-media --dry-run
+   ```
+
+   The summary shows the installed version, the version in the media, and the k3s, offline package manager, and ArgoCD versions on each side. Fix anything it reports before you continue.
+
+2. Run the upgrade.
+
+   ```bash
+   sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-media
+   ```
+
+   The command loads the chart snapshot and container images into the cluster, applies the bundled ArgoCD manifest, re-seeds the registry pull secret into every application namespace, then re-pins the `netwrix` app to the new version and records the previous version in the `dspm.netwrix.com/previous-target-revision` annotation. It then waits for every application to become Synced and Healthy. The wait defaults to 30 minutes; pass `--timeout` with a duration such as `45m` to change it.
+
+   Exit code `0` means the cluster is running the new release with every application healthy. For any other code, see [Upgrade exit codes](#upgrade-exit-codes).
+
+`--allow-downgrade` lifts the "newer version" check for an intentional redeploy of the same version or a downgrade. `--kubeconfig` and `--argocd-namespace` override the defaults if you installed with non-default values. See [The `upgrade` command](installer-reference.md#the-upgrade-command) for every flag.
+
+### Roll back an airgap upgrade
+
+A rollback is a re-pin. The previous chart tag and images stay in the cluster, so you don't need the old media. Read the previous version from the annotation, then run all three `dspmctl` commands: `set-revision` turns off automated sync so self-heal doesn't immediately re-sync the new version, `sync` applies it, and `enable-auto` turns automated sync back on. Skip `enable-auto` and the `netwrix` app never syncs again, and the next `dspm-installer upgrade` refuses to run.
+
+```bash
+sudo kubectl -n argocd get application netwrix \
+  -o jsonpath='{.metadata.annotations.dspm\.netwrix\.com/previous-target-revision}'
+sudo dspmctl set-revision netwrix v<previous>
+sudo dspmctl sync netwrix
+sudo dspmctl enable-auto netwrix
+sudo dspm-installer wait-for-apps
+```
+
+:::warning
+A re-pin doesn't roll back database schema changes the new release made. This is the same limitation an online rollback has.
+:::
+
+### Upgrade exit codes
+
+| Code | Meaning | What to do |
+|---|---|---|
+| `0` | The cluster is running the new release, and every application is Synced and Healthy. | Nothing. |
+| `15` | The command couldn't load the media, or the offline package manager failed to deploy it. | Fix the cause and run the command again. The deploy is idempotent, and the cluster is still on the previous release. |
+| `16` | A precondition failed: no cluster or root application, not an airgap install, the media isn't a newer version, or automated sync is off. Nothing changed. | Read the message. For automated sync, run `sudo dspmctl enable-auto netwrix` first. For a same-version redeploy, add `--allow-downgrade`. |
+| `60` | The command couldn't re-apply the ArgoCD overlay, or the re-pin failed. | Check `/var/log/dspm-installer.log` and run the command again. |
+| `70` | The re-pin applied, but ArgoCD didn't acknowledge it or the new release didn't become healthy within `--timeout`. The new pin stays in place and ArgoCD keeps reconciling. | Run `sudo dspm-installer wait-for-apps` to keep waiting, or follow [Roll back an airgap upgrade](#roll-back-an-airgap-upgrade). |
+| `71` | A pod entered a terminal failure state. | Check the failing pod with `sudo kubectl get pods -A`, then roll back or fix the cause and run the command again. |
+
+</TabItem>
+<TabItem value="online" label="Online upgrade">
+
+If the installed version doesn't match the latest release, check how you installed the app. The installer's default `--target-revision` is `1.*`, a wildcard. If nobody pinned a specific version at install time, ArgoCD already tracks the newest stable 1.x tag and picks up new releases on its next sync. You don't need any `dspmctl` steps.
 
 If you pinned a specific version at install time, or want to pin one now, follow these steps.
-
-## Steps
 
 1. Point the umbrella app at the new version.
 
@@ -45,6 +153,9 @@ If you pinned a specific version at install time, or want to pin one now, follow
    ```
 
    `enable-auto` only changes the sync policy. It doesn't force a reconcile, and the ArgoCD controller polls roughly every 3 minutes. If you ran only `enable-auto` and nothing changed yet, run `sync`.
+
+</TabItem>
+</Tabs>
 
 ## Checking the Result
 
@@ -71,7 +182,7 @@ sudo dspmctl sync netwrix.webapp
 <details>
 <summary>Troubleshooting: dspmctl hangs after a cancelled command</summary>
 
-If you press Ctrl-C during a `dspmctl` command part-way through (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. Even `argocd version --client`, which needs no network at all, hangs, so the cause is local to the pod. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod unresponsive.
+If you press Ctrl-C part-way through a `dspmctl` command (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. Even `argocd version --client`, which needs no network at all, hangs, so the cause is local to the pod. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod unresponsive.
 
 Restart that pod and re-run the upgrade:
 
