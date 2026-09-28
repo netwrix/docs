@@ -82,12 +82,12 @@ You can use the **Report settings** to customize the report:
 - Policy testing enforces the password policy even if you disable Password Policy Enforcer or the
   assigned policy. Use this to test your configuration before enabling Password Policy
   Enforcer, or a new password policy.
-- Policy testing occurs on the computer that the Configuration Console is running on. If the Configuration Console
-  is connected to a remote domain configuration, then it may not find the dictionary file on
+- Policy testing occurs on the computer running the Configuration Console. If the Configuration Console
+  connects to a remote domain configuration, then it may not find the dictionary file on
   the local computer, or the local dictionary file may be different to the one on the domain
   controller. Copy the dictionary file onto the local computer (in the same path) to avoid this
   problem.
-- If the Configuration Console is connected to a domain configuration and you recently modified the Password Policy Enforcer
+- If the Configuration Console connects to a domain configuration and you recently modified the Password Policy Enforcer
   configuration, then Active Directory may still be propagating the new
   configuration to the other domain controllers.
 
