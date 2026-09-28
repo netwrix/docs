@@ -13,7 +13,7 @@ import { NSS, NPGS } from '@site/src/training/products';
 
 Estimated length: 2 hours 26 minutes
 
-In this learning path, you will learn how to use <NSS />, formerly <NPGS />. It contains the following courses:
+This learning path teaches you how to use <NSS />, formerly <NPGS />. It contains the following courses:
 
 * 1460 <NSS /> – Valuable Features
 * 2460 <NSS /> – Concepts
