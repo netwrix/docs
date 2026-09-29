@@ -30,7 +30,7 @@ This solution employs the following data collector to scan the target environmen
 
 **Permissions and Ports for ADInventory Data Collector Prerequisite**
 
-The following permissions are needed:
+The ADInventory Data Collector requires the following permissions:
 
 - Read access to directory tree
 - List Contents & Read Property on the Deleted Objects Container
@@ -44,7 +44,7 @@ The following permissions are needed:
     :::
 
 
-The following firewall ports are needed:
+The ADInventory Data Collector requires the following firewall ports:
 
 - TCP 389
 - TCP 135-139
@@ -81,8 +81,8 @@ See the topic for target environment requirements.
 
 ## Azure Files Support
 
-Azure Files is a fully managed, cloud-based file sharing service from Microsoft. With Azure Files,
-users can access file shares from anywhere as a virtual network drive. Access Analyzer supports Access
+Azure Files is a fully managed, cloud-based file sharing service from Microsoft. Users can access
+Azure Files shares from anywhere as a virtual network drive. Access Analyzer supports Access
 Auditing (FSAA) and Sensitive Data Discovery Auditing scans of Azure Files.
 
 See the [Azure Files Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/azurefiles.md) topic for additional information.
