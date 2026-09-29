@@ -67,6 +67,10 @@ The following are supported Microsoft® Windows® operating systems:
 See the [Windows File Server Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/windowsfile/overview.md) topic for
 target environment requirements.
 
+:::note
+Access Auditing and Sensitive Data Discovery Auditing support CIFS and NFSv3.
+:::
+
 **Windows File System Clusters**
 
 See the topic for target environment requirements.
