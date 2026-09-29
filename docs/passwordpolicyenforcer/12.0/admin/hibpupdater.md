@@ -14,9 +14,8 @@ Enforcer [Password Scanner](/docs/passwordpolicyenforcer/12.0/admin/compromisedp
 information and configuration options.
 
 You must initially deploy the HIBP database to a server or workstation that has an internet
-connection and can retrieve and format the file. After you format the database, you can distribute the HIBP
-database to your domain controllers so the Password Policy Enforcer server can check passwords
-against the HIBP database.
+connection and can retrieve and format the file. After you format the database, you can distribute it
+to your domain controllers so the Password Policy Enforcer server can check passwords against it.
 
 ## Considerations When Deploying the HIBP Database
 
@@ -110,13 +109,13 @@ size of the hash file, this download requires significant CPU and download time.
 ### Hash File Replication
 
 Password Policy Enforcer doesn't distribute hash file updates to other computers, but you can use a Windows Distributed File System 
-(DFS) replication group to ensure that all domain controllers have the latest hash files. Because of the size of the database we do 
-**not** recommend that you utilize a Sysvol share for this purpose.
+(DFS) replication group to ensure that all domain controllers have the latest hash files. Because of the size of the database, Netwrix does 
+**not** recommend using a Sysvol share for this purpose.
 
-Copy the database folder (\HIBP\DB) into a replication group's share on one domain controller so the files are made accessible by 
-all other group members. Then access your policy in Password Policy Enforcer, enable the Compromised rule and set it so it links 
-to the database directory within the replication group. Read more about Windows DFS replication in 
-<a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)?redirectedfrom=MSDN">Microsoft documentation</a>.
+Copy the database folder (\HIBP\DB) into a replication group's share on one domain controller so that all other group members can 
+access the files. Then access your policy in Password Policy Enforcer, enable the Compromised rule, and point it 
+to the database directory within the replication group. For more information about Windows DFS replication, see the 
+<a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)?redirectedfrom=MSDN">Microsoft DFS Replication documentation</a>.
 
 See the [Compromised Rule](/docs/passwordpolicyenforcer/12.0/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
 

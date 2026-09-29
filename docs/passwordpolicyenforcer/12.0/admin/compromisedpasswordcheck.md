@@ -29,7 +29,7 @@ Click the **Password Scanner** toggle to enable/disable the feature.
 
 - **Compromised Passwords Base** specify the database to use when checking for compromised
   passwords. Netwrix recommends using the [HIBP Updater](/docs/passwordpolicyenforcer/12.0/admin/hibpupdater.md) to create this database.
-  Click **Browse** to navigate to the folder. Default is **C:\HIBP\DB**, but you can alternatively link a database stored within a DFS 
+  Click **Browse** to navigate to the folder. Default is **C:\HIBP\DB**, but you can alternatively link a database stored within a Distributed File System (DFS) 
   replication group (details <a href="https://docs.netwrix.com/docs/passwordpolicyenforcer/12_0/admin/hibpupdater#hash-file-replication">here</a>).
 - **Domain Controller (FQDN)** specify the fully qualified domain controller name where you want to
   run the password check. Click **Browse** and select from the list.
@@ -52,7 +52,7 @@ Click **Save** to save your settings before running the check or setting up a sc
 Click **Run now** to run the check. Depending on your network, the check can take a long time to
 complete. You can schedule it for off hours instead of running it now.
 
-Here is an example of the compromised passwords report:
+The following example shows the compromised passwords report:
 
 ---
 **List of compromised passwords**
