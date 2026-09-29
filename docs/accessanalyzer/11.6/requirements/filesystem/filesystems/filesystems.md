@@ -68,6 +68,10 @@ See the
 [Windows File Server Target Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/windowsfile/overview.md)
 topic for target environment requirements.
 
+:::info
+Workstations are not recommended for scanning, nor supported as a scan source.
+:::
+
 **Windows File System Clusters**
 
 See the topic for target environment requirements.
