@@ -114,12 +114,12 @@ for optimal performance.
 :::
 
 
-Due to the performance limitations of the SQL database back end, the maximum capacity of clustered
-setup with 4 Data Classification servers is limited to 64 million files with supported content
-types. Environments that exceed this number can be supported by implementing the following:
+Due to the performance limitations of the SQL database back end, a clustered setup with 4 Data
+Classification servers supports a maximum of 64 million files with supported content
+types. To support environments that exceed this number, implement one of the following:
 
-- Multiple separate installations of clustered setup with 4 Data Classification servers. Where each
-  installation is pointed at its own subset of data. Each installation requires its own SQL
+- Multiple separate installations of clustered setup with 4 Data Classification servers, where you
+  point each installation at its own subset of data. Each installation requires its own SQL
   instance.
 - Phased data processing with one installation of clustered setup with 4 Data Classification
   servers. With phased data processing, you divide the dataset into subsets and process them in chunks.

@@ -34,7 +34,7 @@ sidebar_position: 40
     :::
 
     :::note
-    When installing a secondary instance as part of a DQS environment, you may see an extra step here for synchronising the new instance with the primary instance. 
+    When installing a secondary instance as part of a Distributed Query Server (DQS) environment, you may see an extra step here for synchronising the new instance with the primary instance. 
     For instructions on adding instances to a DQS environment, see [NDC Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md).
     :::
 
@@ -66,4 +66,4 @@ sidebar_position: 40
 10. On the Pre-Installation Tasks and Checks step, review your configuration and select Install.
 11. After the installation completes, open a web browser and navigate to the following URL:
     _http://SITENAME/NDC_ where SITENAME is the name or IP address of the computer where
-    Netwrix Data Classification is installed. For example, _http://workstationndc/NDC_.
+    you installed Netwrix Data Classification. For example, _http://workstationndc/NDC_.

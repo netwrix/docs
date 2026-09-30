@@ -7,13 +7,13 @@ sidebar_position: 1
 # Features and Benefits
 
 Netwrix Data Classification is a platform that identifies data that’s important for your
-organization, helping you reduce risk and unleash the true value of this data.
+organization, helping you reduce risk and realize the full value of this data.
 
 Powered by unique compound term processing technology, it enriches your enterprise content with
 accurate and consistent metadata empowering you to work with data more confidently. By seeing which
 data is valuable, you can organize it in a way that promotes productivity and collaboration. By
 knowing where sensitive or regulated data is, you can reduce the risk of breaches and satisfy
-security and privacy requirements with less effort and expense. And by locating and getting rid of
+security and privacy requirements with less effort and expense. And by locating and removing
 redundant and obsolete data, you can reduce storage and management costs.
 
 Netwrix Data Classification includes applications for Windows File Servers, Nutanix Files, Dell EMC,
@@ -25,9 +25,9 @@ Major benefits:
 
 - Identify sensitive information and reduce its exposure
 - Improve employee productivity and decision making
-- Reduce costs and risks by getting rid of unneeded data
+- Reduce costs and risks by removing unneeded data
 - Meet privacy and compliance requirements for information governance
-- Respond to legal requests without putting your business on hold
+- Respond to legal requests without disrupting your business
 
 # How It Works
 
@@ -60,8 +60,8 @@ The following figure shows the app architecture and components.
 All interaction between the application and Netwrix Data Classification is via the QueryServer and
 consists of high-level XML transactions over a Web Services interface.
 
-The primary purpose of the QueryServer is to satisfy retrieval requests from the proprietary
-probabilistic index (aka NDC Index Database). However, the QueryServer also handles all indexing
+The QueryServer primarily satisfies retrieval requests from the proprietary
+probabilistic index (also known as the NDC Index Database). However, the QueryServer also handles all indexing
 requests and stores these in the SQL Database for processing by the conceptCollector and Indexer.
 
 ## NDC Collector
@@ -73,8 +73,8 @@ In addition to collecting documents the NDC Collector also performs the followin
 - conversion of documents to text format
 - automatic language detection
 
-The NDC Collector manages the queue of documents to be indexed, and outputs its results, via the SQL
-database.
+The NDC Collector manages the queue of documents awaiting indexing and outputs its results via the
+SQL database.
 
 The NDC Collector runs as a Microsoft Windows Service.
 
@@ -95,7 +95,7 @@ The Indexer runs as a Microsoft Windows Service.
 
 :::note
 For file system and SharePoint/OneDrive sources, event handlers/file watchers dynamically
-schedule documents for crawling when they are created/modified. You only need to set up reindexing
+schedule documents for crawling on creation or modification. You only need to set up reindexing
 for those sources to catch documents that the event handlers miss.
 :::
 
@@ -116,8 +116,8 @@ Classification.
 
 The QueryServer will also retrieve selected information for the current hitlist from the SQL
 Database such as: the document title, body text, etc. However, the QueryServer always requests this
-information using a primary key, which makes it very efficient. The hitlist itself is always constructed and ranked
-using information contained in the proprietary conceptDatabase.
+information using a primary key, which makes it very efficient. The QueryServer always constructs and ranks the
+hitlist using information contained in the proprietary conceptDatabase.
 
 The current release of Netwrix Data Classification supports SQL Server 2008 R2 or later and PostgreSQL 18 or later.
 

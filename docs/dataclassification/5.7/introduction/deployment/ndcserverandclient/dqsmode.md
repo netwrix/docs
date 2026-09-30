@@ -30,8 +30,8 @@ The _Query Server_ application implements this functionality.
 
 You configure DQS mode in the administrative web console and, from version 5.7.10 onwards, the installer.
 
-If you want to implement DQS configuration for your NDC deployment, be aware that you can't
-undo it. Netwrix strongly recommends taking a full backup of your environment before enabling DQS.
+You can't undo DQS configuration once you apply it to your NDC deployment. Netwrix strongly
+recommends taking a full backup of your environment before enabling DQS.
 Also, read the DQS documentation sections thoroughly before you start.
 
 Ensure all servers you plan to add to the DQS cluster have a network connection and are
@@ -93,11 +93,11 @@ Only users with the **Superuser** role can configure DQS mode.
    will add the new install to the existing DQS environment. Click OK.
 
    :::note
-   When upgrading an existing NDC instance the installer will attempt to resynchronize the DQS instances in the
-   background and, if successful, will skip the DQS Synchronization step. You can then skip ahead in these instructions
+   When you upgrade an existing NDC instance, the installer attempts to resynchronize the DQS instances in the
+   background and, if successful, skips the DQS Synchronization step. You can then skip ahead in these instructions
    to step 13. 
 
-   The DQS Synchronization step will only display for an upgrade if this process fails. Follow these steps to 
+   The DQS Synchronization step will only display for an upgrade if this process fails. The remaining steps
    resynchronize the NDC instance with the primary NDC server.
    :::
 

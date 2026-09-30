@@ -10,7 +10,7 @@ Netwrix Data Classification uses either a Microsoft SQL Server database or a Po
 installation, the setup wizard prompts you to create a dedicated NDC SQL database on your SQL Server or PostgreSQL
 instance. After installation completes, configure it as described in this topic for the product to
 function properly. You can create the database manually before the product installation using an appropriate tool such as SQL Server Management Studio or pgAdmin. See the Microsoft article
-[Create a Database](https://docs.microsoft.com/en-us/sql/relational-databases/databases/create-a-database) for detailed instructions on creating a new SQL Server database. See the pgAdmin article [Database Dialog](https://www.pgadmin.org/docs/pgadmin4/9.17/database_dialog.html) for details instruction on creating a new PostgreSQL database.
+[Create a Database](https://docs.microsoft.com/en-us/sql/relational-databases/databases/create-a-database) for detailed instructions on creating a new SQL Server database. See the pgAdmin article [Database Dialog](https://www.pgadmin.org/docs/pgadmin4/9.17/database_dialog.html) for instructions on creating a new PostgreSQL database.
 
 :::note
 Netwrix recommends installing NDC and its database on separate servers for better performance.
