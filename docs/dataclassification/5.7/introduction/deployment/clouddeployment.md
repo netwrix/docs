@@ -8,37 +8,37 @@ sidebar_position: 40
 
 Netwrix Data Classification uses two forms of data storage:
 
-- NDC SQL database — SQL Server or PostgreSQL database that stores product configuration and metadata for the data
+- NDC SQL database — SQL Server database that stores product configuration and metadata for the data
   sources.
 - NDC Index — a full-text search index that comprises a set of files in the proprietary format
   (.CSE).
 
 ### NDC SQL database
 
-Deploy the NDC Server and the **NDC SQL database** on different machines.
-Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server or PostgreSQL instance. 
+Ensure you have NDC Server and **NDC SQL database** deployed on different machines.
 
-- The minimum required version of SQL Server is SQL Server 2008 R2 Standard Edition.
-- The minimum required version of PostgreSQL is PostgreSQL 16. 
- 
+Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server instance.
 
-For all databases:
-
+- Minimal requirement is SQL Server 2008 R2 Standard Edition.
 - Estimate required disk space assuming _10 - 12 KB_ per indexed object. For example, for _5, 000,
   000_ objects, the database size will be approximately _50 GB_.
-  Due to built-in limitations of size and capacity, SQL Server Express edition is only suitable for evaluation and proof-of-concept (PoC) environments
+  Due to built-in limitations of size and capacity, SQL Server Express edition is only suitable for evaluation and PoC environments
   (processing up to 1,000,000 documents).
 
-:::note
-Netwrix strongly recommends using SSD storage for both the database and Netwrix Data Classification
-servers.
-:::
+    **TIP:** Netwrix strongly recommends using SSD storage for both the database and Netwrix Data Classification
+    servers.
 
-See [Configure NDC SQL database](/docs/dataclassification/5.7/introduction/install/ndcsqldatabase.md) for full configuration details.
+- If configuring database settings via SQL Server Management Studio, you will need to set
+  **Autogrowth / Maxsize** values for the PRIMARY database files as follows:
+    - **File growth**: _128 MB_ - recommended value for small to medium environment, _512 MB_ - for
+      large environment, i.e. if planning to index data sources containing 16, 000, 000+ objects.
+    - **Maximum File Size** - select _Unlimited_.
+- Ensure that the **Recovery model** for this database is set to _Simple_. To prevent log files from 
+  growing excessively, don't change the recovery model.
 
 ### NDC Index
 
-Required disk space for the NDC Index file storage depends on the data
+Required disk space for the NDC Index file storage will depend, in particular, on the data
 processing mode you plan to use (_No Index_, _Keyword_ or _Compound Term_).
 
 As a general estimate, calculate required space as 35% of the total data size you
@@ -47,15 +47,15 @@ the NDC Index files.
 
 ## Scalability and Performance
 
-Scalability and performance testing groups environments by the number of objects to classify, as
-follows:
+Scalability and performance testing revealed that based on the number of objects to classify, the
+environments can be ranged as follows:
 
 | Number of objects to classify | Environment                                 | Comment                                                                    |
 | ----------------------------- | ------------------------------------------- | -------------------------------------------------------------------------- |
 | Up to 1, 000, 000             | Proof-of-concept and small-size environment |                                                                            |
 | Up to 16, 000, 000            | Mid-size environment                        |                                                                            |
 | Up to 64, 000, 000            | Large-size environment                      |                                                                            |
-| More than 64, 000, 000        | Extra-large environment                     | Deployment planning requires a system architect's assistance.              |
+| More than 64, 000, 000        | Extra-large environment                     | System architect's assistance is required for deployment planning requires |
 
 For large-size and extra-large environments, Netwrix recommends
 configuring a cluster of several NDC Servers and applying Distributed Query Server (DQS) mode. See

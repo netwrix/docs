@@ -1,0 +1,62 @@
+---
+title: "Software Requirements"
+description: "Software Requirements"
+sidebar_position: 20
+---
+
+# Software Requirements
+
+Netwrix Data Classification installation requires the following software:
+
+1. **Operating System**
+   - Windows 2012 R2 and above Server Operating System Software.
+
+2. **Windows Features**
+
+   **.NET Framework Features**
+   - .NET Framework 4.7.2
+   - ASP.NET
+
+   **WCF Services**
+   - HTTP Activation
+   - Named Pipe Activation
+
+   :::note
+   To activate these features, select them in **Windows Features** under **.Net Framework Advanced Services** → **WCF Services**.
+   :::
+
+   **Web Server Role (IIS)**
+   - **Common HTTP Features:**
+     - Default Document
+     - HTTP Errors
+     - Static Content
+     - HTTP Redirection
+   - **Security:**
+     - Windows Authentication
+     - Anonymous Authentication
+
+       :::note
+       The default installation of IIS 7 includes the Anonymous Authentication element. Ensure you use IIS 7 and above.
+       :::
+   - **Application Development:**
+     - ISAPI Extensions
+     - ISAPI Filters
+
+3. **Database**
+   **SQL Server**
+   - SQL Server 2008 R2 Standard Edition (or later).
+   - SQL Server 2016 SP2 recommended (for better performance).
+
+   **PostgreSQL**
+   - PostgreSQL 16 (or later).
+
+   :::note
+   Large environments may require SQL Server Enterprise edition; see [Deployment Planning](/docs/dataclassification/5.8/introduction/deployment/overview.md).
+   :::
+
+4. **Visual Studio**
+   - Visual C++ Redistributable Packages for Visual Studio 2015 and above.
+
+5. **Other software**
+   - **Antivirus:** Netwrix recommends adding NDC Index files to the list of exclusions (white list) of any installed antivirus. These files have `.CSE` extension.
+

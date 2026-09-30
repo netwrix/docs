@@ -213,9 +213,15 @@ export const PRODUCTS = [
     icon: '🏷️',
     versions: [
       {
+        version: '5.8',
+        label: '5.8',
+        isLatest: true,
+        sidebarFile: './sidebars/dataclassification/5.8.js',
+      },
+      {
         version: '5.7',
         label: '5.7',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/dataclassification/5.7.js',
       },
       {
@@ -225,7 +231,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/dataclassification/5.6.2.js',
       },
     ],
-    defaultVersion: '5.7',
+    defaultVersion: '5.8',
   },
   {
     id: 'directorymanager',
