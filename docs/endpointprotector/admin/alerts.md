@@ -7,17 +7,17 @@ sidebar_position: 100
 
 # Alerts
 
-From this section, you can define email alerts for the main events detected by Endpoint Protector:
+From this section, you can define email alerts for the main events Endpoint Protector detects:
 System Alerts, Device Control Alerts, Content Aware Alerts, Enforced Encryption Alerts, and Log Alerts.
 
 :::note
-Before creating alerts, ensure the Endpoint Protector email server settings have been
-configured from **System Configuration** > **System Settings**. You can verify
+Before creating alerts, ensure you've configured the Endpoint Protector email server
+settings from **System Configuration** > **System Settings**. You can verify
 these settings by sending a test email.
 :::
 
 
-For each administrator to appear in the list of recipients for alerts, an email address must be provided
+For each administrator to appear in the list of recipients for alerts, you must provide an email address
 under the administrator details from **System Configuration** > **System Administrators**.
 
 ![Endpoint Protector E-mail Server Settings](emailserversettings.webp)
@@ -34,9 +34,9 @@ From this section, you can create system alerts, including APNS certificate expi
 
    - **Event**—select the type of event that generates the alert:
      - **Updates and Support**—set an alert regarding each module's maintenance status (Device Control, Content Aware Protection, and eDiscovery)
-     - **Endpoint Licenses**—set an alert to be notified when the percentage of used Endpoint Licenses reaches 70%, 80%, or 90%
+     - **Endpoint Licenses**—set an alert for when the percentage of used Endpoint Licenses reaches 70%, 80%, or 90%
      - **Client Uninstall**—set an alert each time an Endpoint Protector Client is uninstalled
-     - **Server Disk Space**—set an alert to be notified when disk space reaches 70%, 80%, or 90%. Select the monitored partitions from the available root, epp, and boot options
+     - **Server Disk Space**—set an alert for when disk space reaches 70%, 80%, or 90%. Select the monitored partitions from the available root, epp, and boot options
      - **Device Control – Logs Amount**—set an alert when the number of Device Control logs stored reaches a specific amount
      - **Content Aware – Logs Amount**—set an alert when the number of Content Aware logs stored reaches a specific amount
      - **Password Expiration**—set an alert when a password is about to expire (10, 5, or 1 day before expiration)
@@ -55,7 +55,7 @@ From this section, you can create system alerts, including APNS certificate expi
 
 ### System alerts history
 
-From this section, you can view a history of the system alerts. Delete alerts that are no longer needed for
+From this section, you can view a history of the system alerts. Delete alerts you no longer need for
 auditing purposes.
 
 ![System Alerts History](systemalertshistory.webp)
@@ -82,8 +82,8 @@ File Write, and Enforced Encryption successfully deployed.
 
 ### Device Control alerts history
 
-From this section, you can view a history of the Device Control alerts. Delete alerts that are no longer
-needed for auditing purposes.
+From this section, you can view a history of the Device Control alerts. Delete alerts you no longer
+need for auditing purposes.
 
 ![Device Control Alerts History](dcalertshistory.webp)
 
@@ -107,7 +107,7 @@ or Content Threat Blocked.
 The alert email includes a CSV file with a report of the threats found.
 
 :::note
-Before creating the alert, ensure the selected Content Aware policy is enabled on the
+Before creating the alert, ensure you've enabled the selected Content Aware policy on the
 chosen computer, user, group, or department.
 :::
 
@@ -118,18 +118,19 @@ chosen computer, user, group, or department.
 
 ### Content Aware alerts history
 
-From this section, you can view a history of the Content Aware alerts. Delete alerts that are no longer
-needed for auditing purposes.
+From this section, you can view a history of the Content Aware alerts. Delete alerts you no longer
+need for auditing purposes.
 
 ![Content Aware Alerts History](contentawarealertshistory.webp)
 
 ## Log alerts
 
 Log alerts provide event-driven alerting based on Device Control and Content Aware Protection logs stored in CrateDB. Log alerts replace and extend the legacy per-module alert types with a unified, priority-based alerting system.
+Priority applies at the event type and event level, not at the alert level. The system assigns priority automatically based on the event type.
 
 ### How log alerts work
 
-Log alerts are evaluated on a scheduled basis at three priority levels:
+The system evaluates log alerts on a schedule at three priority levels:
 
 | Priority | Evaluation frequency | Use case |
 |----------|---------------------|----------|
@@ -137,14 +138,13 @@ Log alerts are evaluated on a scheduled basis at three priority levels:
 | Medium | Every 12 hours | Important events that don't require real-time alerting |
 | Low | Daily at midnight | Informational events for periodic review |
 
-When a log alert condition is met, the system sends an email notification to the selected administrators with a CSV attachment containing the matching log entries.
+When an event meets a log alert condition, the system sends an email notification to the selected administrators with a CSV attachment containing the matching log entries.
 
 ### Create a log alert
 
 1. Navigate to **Alerts** > **Log Alerts**.
 2. Click **Create** and provide the required information:
    - **Alert Name**—enter a descriptive name for the alert
-   - **Priority**—select the evaluation frequency (High, Medium, or Low)
    - **Log Type**—select whether the alert applies to Device Control or Content Aware Protection logs
    - **Monitored Entities**—filter the alert by specific machine names, user names, or groups
    - **Administrators**—select the administrators who will receive the alert notifications
@@ -162,16 +162,16 @@ You can scope log alerts to specific entities:
 
 The Log Alerts History section provides a full audit trail of triggered alerts. From this section, you can:
 
-- View the date and time each alert was triggered
+- View the date and time of each triggered alert
 - View the alert details and the matching log entries
 - Download the alert attachment (CSV report)
-- Delete alert history entries that are no longer needed
+- Delete alert history entries you no longer need
 
-Alert history entries are automatically cleaned up after the configured retention period (default: 29 days).
+The system automatically cleans up alert history entries after the configured retention period (default: 29 days).
 
 ### Migration from legacy alerts
 
-When the scalability architecture is active, existing Device Control and Content Aware alerts are automatically migrated to the Log Alerts framework. The migration process runs in the background and preserves the original alert configurations.
+When the scalability architecture is active, Endpoint Protector automatically migrates existing Device Control and Content Aware alerts to the Log Alerts framework. The migration process runs in the background and preserves the original alert configurations.
 
 ## Enforced Encryption alert
 
@@ -201,7 +201,7 @@ and messages sent.
 
 ### Enforced Encryption alert history
 
-From this section, you can view the history of the Enforced Encryption alerts. Delete alerts that are no
-longer needed for auditing purposes.
+From this section, you can view the history of the Enforced Encryption alerts. Delete alerts you no
+longer need for auditing purposes.
 
 ![Enforced Encryption Alert History](eealerthistory.webp)
