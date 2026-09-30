@@ -72,6 +72,20 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
 
 4. Open the chosen ports on the server's firewall.
 
+## Get the credentials
+
+Opening access creates a dedicated analytics store user, `access_analyzer_external`, with a generated password. The user has read-only access to the `access_analyzer` and `access_analyzer_sample` databases, the same as the user Access Analyzer's own reports use.
+
+1. On the Access Analyzer server, print the password:
+
+   ```bash
+   sudo dspmctl get-secret clickhouse-external-secret password
+   ```
+
+   Omit `password` to print the username and password together. The command doesn't end the output with a newline, so copy the value from the terminal instead of piping it to another command.
+
+2. In the external tool, connect with the username `access_analyzer_external`, this password, and the `access_analyzer` database.
+
 ## Verify access
 
 1. On the server, list the assigned ports and address:
@@ -95,7 +109,7 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
 
 ## Close access
 
-1. Turn the ports off:
+1. Turn the ports off. This also stops `dspmctl get-secret` from reading the password, but it doesn't delete the `access_analyzer_external` user. If you shared the credentials, change the password or remove the user in the analytics store:
 
    ```bash
    sudo dspmctl set-helm-param netwrix config.clickhouse.externalAccess.enabled=false
