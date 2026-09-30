@@ -14,8 +14,8 @@ keywords:
   - Netwrix Access Analyzer
   - Access Information Center
 products:
-  - access-analyzer
-  - access_info_center
+  - accessanalyzer
+  - accessinformationcenter
 visibility: public
 sidebar_label: 'Error: Cannot Create a File When That File Already'
 tags:
