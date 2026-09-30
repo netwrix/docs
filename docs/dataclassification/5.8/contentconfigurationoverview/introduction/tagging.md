@@ -19,15 +19,15 @@ purposes, for example:
 - Applying IT policies to the classified objects
 
 Tagging is designed to work as natively as possible with each source type. Therefore, each
-integration varies in the way that classifications can be written, with some overlaps.
+integration varies in the way it writes classifications, with some overlaps.
 
 Typically, to use tagging, you need to take the following steps:
 
-1. Ensure that an appropriate license has been loaded to enable document tagging. For that, go to
+1. Ensure you loaded an appropriate license to enable document tagging. For that, go to
    **System Configuration** →**Config → Licensing → Licensing Summary**.
-2. Ensure that the credentials you plan to use for accessing the source system have been granted the
+2. Ensure that the credentials you plan to use for accessing the source system have the
    appropriate **Modify** permissions.
-3. Ensure that tagging has been enabled for the source objects— for that, select the **Write
+3. Ensure that you enabled tagging for the source objects— for that, select the **Write
    Classifications** option in the source settings.
 4. Configure the source-specific settings to map the classifications results back to the source
    properties, as described in the related section.
@@ -38,7 +38,7 @@ If you are unsure of the correct source-specific settings to use, consider initi
 
 
 You can **Pause** source processing while you are configuring the correct settings to ensure that no
-tagging will occur with partial/incorrect configuration settings.
+tagging occurs with partial/incorrect configuration settings.
 
 ## Configure tagging for content sources
 

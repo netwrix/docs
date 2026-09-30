@@ -6,9 +6,9 @@ sidebar_position: 5
 
 # Classification Rules (Clues)
 
-Each taxonomy contains a set of terms. **Terms** are defined by set of configuration **rules** (also
-called **clues**). Clues are used to describe the language found in documents, making these
-documents belong to a particular topic.
+Each taxonomy contains a set of terms. A set of configuration **rules** (also called **clues**)
+defines **terms**. Clues describe the language found in documents that makes these documents belong
+to a particular topic.
 
 ## Predefined Classification Rules
 
@@ -32,7 +32,7 @@ for better classification precision.
 
 ![clues_1](/images/dataclassification/5.8/admin/taxonomies/clues_1.webp)
 
-These rules are provided for the following countries (coverage varies):
+The product provides these rules for the following countries (coverage varies):
 
 - Australia
 - Brazil

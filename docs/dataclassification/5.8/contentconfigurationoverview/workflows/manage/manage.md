@@ -13,15 +13,15 @@ For that, in the administrative web console select Content from the top menu and
 ![workflows_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflows_thumb_0_0.webp)
 
 :::note
-To manage the automated workflows, users require sufficient access rights that are
-assigned based on either their Windows identity or using non-Windows based access controls. See
+To manage the automated workflows, users require sufficient access rights, which the product
+assigns based on either their Windows identity or non-Windows based access controls. See
 "Users" for details on rights and permissions.
 :::
 
 
 - Click **Copy** if you want to copy the list content to the clipboard.
 - You can also export the list to **CSV** or **XLSX** file.
-- By default, the number of list items displayed (**Page Size**) is set to **10**. Modify this
+- By default, the number of list items displayed (**Page Size**) is **10**. Modify this
   setting as necessary.
 - To delete all workflows from a certain scope, select the corresponding list item and click
   **Delete**.
@@ -50,17 +50,17 @@ To delete a workflow, follow the steps described in the [Delete Workflow](/docs/
 
 ![workflow_delete_single_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_delete_single_thumb_0_0.webp)
 
-2. This will open the list of workflows for selected scope. You can sort the list by **Details**
+2. This opens the list of workflows for the selected scope. You can sort the list by **Details**
    (workflow action) or by **Active** (workflow state) field.
 3. Select one or several workflows you need.
 4. To **Disable** or **Enable** the workflow, use the corresponding button above or link on the
-   right. Workflow state (**Active** field) will change accordingly.
+   right. Workflow state (**Active** field) changes accordingly.
 5. If you want to create a copy of selected workflow, with all associated actions and conditions,
    click **Clone**, then enter the scope (group) and name for the new workflow.
 
 :::note
-Workflows within a generic group (scope) are cloned within the same group, source-specific
-workflows can be copied within any groups of the same type. The clone workflow will be disabled by
+The product clones workflows within a generic group (scope) inside the same group; you can copy
+source-specific workflows within any groups of the same type. The clone workflow is disabled by
 default.
 :::
 

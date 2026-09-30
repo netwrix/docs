@@ -30,5 +30,5 @@ After you create the workflow, you can modify it using the **Advanced** dialog.
 :::
 
 
-Alternatively, take steps 1-3 from the procedure above, then in the **Add Workflow** dialog click
+Alternatively, take steps 1-3 from the preceding procedure, then in the **Add Workflow** dialog click
 **Advanced**. See [Configure a Workflow using Advanced dialog](/docs/dataclassification/5.8/contentconfigurationoverview/workflows/actions/availableactions/createworkflow.md)

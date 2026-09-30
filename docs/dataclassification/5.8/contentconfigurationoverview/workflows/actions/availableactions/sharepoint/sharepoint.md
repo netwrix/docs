@@ -12,17 +12,17 @@ following actions are available for the **SharePoint** content source type:
 - [Migrate Document](/docs/dataclassification/5.8/contentconfigurationoverview/workflows/actions/availableactions/migratedocument/migratedocument.md) including copy and move operations
 - Document property field (metadata) update, including:
 
-    - **Send fixed value**, **send crawled value** — these actions apply new metadata value entered
-      by user or retrieved from the related NDC database field, respectively.
+    - **Send fixed value**, **send crawled value** — these actions apply a new metadata value that
+      the user enters or that the product retrieves from the related NDC database field, respectively.
     - **Send classification value** — this action writes classification metadata (**Taxonomy**) into
-      the selected property field (**Field Name**). If multiple classification values are applied,
-      the system writes them using delimiters.
+      the selected property field (**Field Name**). If the product applies multiple classification
+      values, the system writes them using delimiters.
     - **Write O365 Label**, **Remove O365 Label** — use these actions to write or remove Office 365
-      retention label as document metadata. These labels are typically used to automatically apply
+      retention label as document metadata. You typically use these labels to automatically apply
       data protection policies to your documents.
 
     :::note
-    These actions require Microsoft Office 365 retention labels to be configured. See
+    These actions require you to configure Microsoft Office 365 retention labels. See
     [this Microsoft article](https://docs.microsoft.com/en-us/microsoft-365/compliance/labels) for
     details.
     :::

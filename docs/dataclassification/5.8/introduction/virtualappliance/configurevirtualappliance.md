@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Configure your virtual appliance with Netwrix Data Classification:
 
-1. For Windows Server, the EULA will be displayed in the License terms page; read and accept the
+1. For Windows Server, the EULA appears on the License terms page; read and accept the
    agreement.
 2. Next, specify a password for the built-in administrator account. Then re-enter your password.
    Click Finish.
@@ -21,11 +21,11 @@ Configure your virtual appliance with Netwrix Data Classification:
     | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
     | Rename virtual machine                   | Specify a new name for the virtual machine (e.g., _`NDC-Server`_). **NOTE:** Format the computer name correctly. It may contain letters (a-z, A-Z), numbers (0-9), and hyphens (-), but no spaces and periods (.). The name may not consist entirely of digits and may not be longer than 15 characters. |
     | Add additional input languages           | - Select `Y` if you want to specify additional input languages. - Select `N` to proceed with English.                                                                                                                                                                                                              |
-    | Configure network                        | - Select `Y` to use DHCP server to configure network settings automatically. - Select `N` to configure required parameters manually. In this case, you will be prompted to set up IP settings manually.                                                                                                            |
+    | Configure network                        | - Select `Y` to use DHCP server to configure network settings automatically. - Select `N` to configure required parameters manually. In this case, the wizard prompts you to set up IP settings manually.                                                                                                            |
     | Join computer to the domain or workgroup | - Select `Y`. Specify the fully qualified domain name to join (e.g., `corp.local`). Then specify domain administrator name and password. - Select `N`. Specify the local administrator name and credentials.                                                                                                       |
 
-5. When the script execution completes, you will be prompted to reboot the virtual machine for the
-   changes to take effect.
+5. When the script execution completes, the script prompts you to reboot the virtual machine for
+   the changes to take effect.
 6. After reboot, log in to the virtual machine using the domain administrator credentials (for
    appliances joined to domain) or local administrator credentials (for appliances joined to
    workgroup).

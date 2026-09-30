@@ -17,7 +17,7 @@ The product supports migration for the following sources:
 - Google Drive
 - SharePoint (2010+)
 
-The following targets are supported as destinations:
+The product supports the following targets as destinations:
 
 - Box
 - CMIS
@@ -48,8 +48,8 @@ Add the migration location as a source.
 
 Under the **Workflows** menu click **Configs**, then click **Migration Configs** on the right.
 
-Migration providers that already have configured destinations are indicated with the
-three-gears icon in the tab header:
+The three-gears icon in the tab header indicates migration providers that already have configured
+destinations:
 
 ![migration_destination_ready_thumb_0_48](/images/dataclassification/5.8/admin/workflows/migration_destination_ready_thumb_0_48.webp)
 

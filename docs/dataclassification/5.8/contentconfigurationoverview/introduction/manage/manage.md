@@ -16,15 +16,15 @@ This doesn't delete content from the external system
 
 
 - Re-Collect—Queues the source for re-processing. The system deletes crawled items and re-crawls the entire source.
-- Re-Index—Queues a source or item to be re-indexed regardless of if the documents were changed or
-  not. You can select Re-Index scope:
+- Re-Index—Queues a source or item for re-indexing regardless of whether the documents changed.
+  You can select Re-Index scope:
 
     - Selected Items and All Descendants — select to Re-Index an Item and child of a child of so
       forth child element.
     - Selected Items and Children — select to Re-Index an Item and its direct child elements.
     - Selected Items Only — select to Re-Index only current item and ignore its child elements.
 
-- Re-Classify—Queues a source or item to be re-classified against the latest configured
+- Re-Classify—Queues a source or item for re-classification against the latest configured
   classification rules
 
 :::note
@@ -49,10 +49,10 @@ In the source list on the **General** tab you can also do the following for sele
 ![sources](/images/dataclassification/5.8/admin/sources/sources.webp)
 
 :::note
-When adding a source or managing source configuration, the most commonly used source
-settings are displayed by default. However, some source types have additional configuration options
-that can be displayed by clicking the Advanced Settings ("wrench" icon). You can allow these
-advanced settings to be always shown to authorized users.
+When adding a source or managing source configuration, the console displays the most commonly used
+source settings by default. However, some source types have additional configuration options
+that appear when you click the Advanced Settings ("wrench" icon). You can always show these
+advanced settings to authorized users.
 [See Users and Security Settings for more information.](/docs/dataclassification/5.8/systemconfigurationoverview/users/users.md)
 :::
 

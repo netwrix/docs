@@ -11,7 +11,7 @@ specific Site Collections by including the source URL with no wildcard indicator
 “http://test.sharepoint.com/sites/Test”). You can also deploy receivers to all Site Collections by
 including a wildcard indicator (e.g. “http://test.sharepoint.com\*”).
 
-For event receivers you must configure a URL that is accessible to the SharePoint environment and uses a verifiable SSL certificate. The URL should be set here: Configuration → Core →
+For event receivers you must configure a URL that is accessible to the SharePoint environment and uses a verifiable SSL certificate. Set the URL here: Configuration → Core →
 Administration → Administration URL (note, advanced setting).
 
 To deploy Remote Event Receivers:

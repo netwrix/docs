@@ -9,13 +9,13 @@ sidebar_position: 10
 Microsoft Information Protection (MIP) is the unification of Microsoft's classification, labeling,
 and protection services:
 
-- Unified administration is provided across Office 365, Azure Information Protection, Windows
+- MIP provides unified administration across Office 365, Azure Information Protection, Windows
   Information Protection, and other Microsoft services.
 - Third parties can use the MIP SDK to integrate with applications, using a standard, consistent
   data labeling schema and protection service.
 
-MIP technology integration allows adding labels to documents. The label may have any security policy
-assigned, for example, the policy to restrict access to sensitive documents.
+MIP technology integration allows adding labels to documents. You can assign any security policy to the
+label, for example, the policy to restrict access to sensitive documents.
 
 Netwrix Data Classification for Files and Folders supports MIP labels as a Workflow action. After
 you run the classification procedure, you can mark your documents with labels. For example, you can

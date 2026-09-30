@@ -16,12 +16,12 @@ A cluster of 4 servers supports up to 64M objects.
 A cluster of 4 servers supports up to 32M objects.
 
 To use Distributed Query Server mode, arrange your NDC Servers in a 'cluster' for load
-distribution. Each clustered NDC Server will store its own set of .CSE index files,
+distribution. Each clustered NDC Server stores its own set of .CSE index files,
 thus distributing the **NDC Index** over the clustered servers. To assemble and combine data required for the
-search results, each NDC Server will automatically communicate with the other clustered servers.
+search results, each NDC Server automatically communicates with the other clustered servers.
 
 :::note
-All NDC Servers in the cluster will share a single NDC SQL database.
+All NDC Servers in the cluster share a single NDC SQL database.
 :::
 
 The _Query Server_ application implements this functionality.
@@ -89,7 +89,7 @@ Only users with the **Superuser** role can configure DQS mode.
    configuration step.
 7. On the SQL Database step, provide the details of the SQL Server or PostgreSQL instance that hosts the NDC SQL database
    you configured for the first NDC Server.
-8. When you click **Next**, a message box should appear stating that the installer detected an NDC configuration and
+8. When you click **Next**, a message box appears stating that the installer detected an NDC configuration and
    will add the new install to the existing DQS environment. Click OK.
 
    :::note
@@ -97,25 +97,25 @@ Only users with the **Superuser** role can configure DQS mode.
    background and, if successful, skips the DQS Synchronization step. You can then skip ahead in these instructions
    to step 13. 
 
-   The DQS Synchronization step will only display for an upgrade if this process fails. The remaining steps
+   The DQS Synchronization step displays for an upgrade only if this process fails. The remaining steps
    resynchronize the NDC instance with the primary NDC server.
    :::
 
-9. The Primary NDC Server URL field should automatically contain the server URL of the primary NDC server (i.e. the first row in the DQS table).
+9. The Primary NDC Server URL field automatically contains the server URL of the primary NDC server (i.e. the first row in the DQS table).
    If it isn't present or is incorrect, enter the address from the QS Path column of the corresponding row of
    the DQS table. Then click Connect to connect the installer to that server.
-10. After the installer has successfully connected to the primary NDC server, it will generate an authentication
-    code and display it in the Authentication Code field. Click Sync to open the NDC DQS settings page in a web browser.
-11. On the web page, click Register/Resync. This will open the authentication code entry tab - the authentication code the installer generated
-    should be present in the input field. Click Submit to submit the authentication code.
+10. After the installer successfully connects to the primary NDC server, it generates an authentication
+    code and displays it in the Authentication Code field. Click Sync to open the NDC DQS settings page in a web browser.
+11. On the web page, click Register/Resync. This opens the authentication code entry tab - the authentication code the installer generated
+    appears in the input field. Click Submit to submit the authentication code.
 
 :::note
 If the authentication code isn't autofilled, click the Authentication Code field in the installer to copy the
 value to your clipboard, then paste it in the Authentication Code field in the NDC UI.
 :::
 
-12. The Register/Resync tab should now display an 8-digit verification code. Copy this, paste it into
-    the Verification Code field in the installer, then click Join. The NDC installer will then perform
+12. The Register/Resync tab now displays an 8-digit verification code. Copy this, paste it into
+    the Verification Code field in the installer, then click Join. The NDC installer then performs
     the resynchronisation.
 13. Complete the installation.
 14. Repeat steps 6 - 13 for each additional NDC Server you want to add, then review the list of servers to confirm all new
@@ -126,7 +126,7 @@ value to your clipboard, then paste it in the Authentication Code field in the N
 
 If you configured DQS mode for an existing NDC deployment, the product prompts you to
 re-collect data from the data sources to re-distribute the content index across all
-NDC Servers in the cluster. **The system will recollect all data sources**, which may
+NDC Servers in the cluster. **The system recollects all data sources**, which may
 take a significant amount of time.
 
 :::note

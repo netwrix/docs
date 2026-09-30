@@ -176,7 +176,7 @@ While creating your own reports, you can specify whether a taxonomy is sensitive
 credentials) or non-sensitive (e.g. file size, language).
 
 :::note
-This applies only to customized taxonomies, which you add by yourself. You can't change
+This applies only to customized taxonomies, which you add yourself. You can't change
 the sensitivity settings for the pre-defined taxonomies.
 :::
 

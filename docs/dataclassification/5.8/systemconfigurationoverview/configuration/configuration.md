@@ -11,7 +11,7 @@ default screen shows the most commonly amended settings.
 
 ![core_thumb_0_0](/images/dataclassification/5.8/configuration/core_thumb_0_0.webp)
 
-The most frequently used settings are displayed by default. Select the Advanced Settings ("wrench" icon) to show
+The console displays the most frequently used settings by default. Select the Advanced Settings ("wrench" icon) to show
 hidden configuration options. Some options are available only to specific user roles. [See Users and Security Settings for more information.](/docs/dataclassification/5.8/systemconfigurationoverview/users/users.md)
 
 See next:

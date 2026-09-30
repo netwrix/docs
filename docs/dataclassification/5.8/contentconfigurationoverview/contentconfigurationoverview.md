@@ -11,7 +11,7 @@ following areas
 
 - To add and manage the content systems you want to index, click Sources .
 - To work with the data classification taxonomies, click **Taxonomies**.
-- To configure automated workflows that will be triggered upon classification results, click
+- To configure automated workflows that run in response to classification results, click
   **Workflows**.
 
 **IMPORTANT** To access the **Sources** area, users require sufficient rights. See the

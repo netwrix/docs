@@ -12,7 +12,7 @@ tab and configure search settings.
 
 ![searchtab](/images/dataclassification/5.8/admin/taxonomies/searchtab.webp)
 
-1. Set up the following properties that will be considered a basis for the search:
+1. Set up the following properties that form the basis for the search:
 
     - Clue type - select the required value from the **Type** list.
     - Clue itself (clue body) - enter the required keyword or phrase in the **Find** field.

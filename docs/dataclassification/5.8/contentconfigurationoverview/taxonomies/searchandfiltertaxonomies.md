@@ -6,11 +6,11 @@ sidebar_position: 80
 
 # Search and Filter Taxonomies
 
-The taxonomies are displayed in a hierarchical structure on the left hand side of the page, allowing
-for specific terms to be selected and managed. The dropdown list shows all available taxonomies.
+The page displays the taxonomies in a hierarchical structure on the left hand side, where you can
+select and manage specific terms. The dropdown list shows all available taxonomies.
 
 :::note
-For the SharePoint Terms, they will be grouped by the SharePoint Term Group.
+The console groups SharePoint Terms by the SharePoint Term Group.
 :::
 
 
@@ -32,7 +32,7 @@ You can also drag-and-drop a node from one location on the tree view to another.
 
 Browser rendering restrictions limit the maximum suitable size per level within the tree view at
 10,000 terms. Structure the tree view across multiple branches for both performance and usability. Once a branch within the taxonomy reaches 10,000 terms the tree view
-will cap the returned nodes and log a warning to the event logs.
+caps the returned nodes and logs a warning to the event logs.
 
 Review the following for additional information:
 
@@ -62,9 +62,9 @@ This setting is session specific and applicable only to the current user:
 
 [](#)Source Filter
 
-A filter facility is also provided to restrict all search/browse results to a specific source. Click
+The system also provides a filter facility to restrict all search/browse results to a specific source. Click
 the source filter link in the top right of the display, then, select a source:
 
 ![sourcefilter](/images/dataclassification/5.8/admin/taxonomies/sourcefilter.webp)
 
-The filter setting can be stored for the session, or just maintained for the browser window.
+You can store the filter setting for the session, or maintain it only for the browser window.

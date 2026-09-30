@@ -6,16 +6,16 @@ sidebar_position: 10
 
 # NDC Server
 
-Netwrix Data Classification **Server** can be deployed on a physical server or on a virtual machine via software such as
+You can deploy Netwrix Data Classification **Server** on a physical server or on a virtual machine via software such as
 VMware or the Microsoft Hyper-V platform.
 
-Installing NDC Server on a highly-loaded production machine isn't recommended - NDC data
+Netwrix doesn't recommend installing NDC Server on a highly-loaded production machine - NDC data
 processing is highly resource intensive, and sharing resources with other programs and
-processes will decrease the performance of both NDC and the other processes. See
+processes decreases the performance of both NDC and the other processes. See
 [Hardware Requirements](/docs/dataclassification/5.8/introduction/requirements/hardwarerequirements.md) for the recommended NDC Server specifications.
 
-A **web-based client** (management console) is always installed together with the NDC Server, so the
-IIS server role must be enabled on the target machine. See
+The installer always installs a **web-based client** (management console) together with the NDC
+Server, so you must enable the IIS server role on the target machine. See
 [Software Requirements](/docs/dataclassification/5.8/introduction/requirements/softwarerequirements.md) for supported operating systems and prerequisites.
 
 :::note
@@ -27,7 +27,7 @@ machine image with pre-installed Netwrix Data Classification on Generalized Wind
 
 Remember that for production environments, your NDC Server and database server must meet the
 [Requirements to Install Netwrix Data Classification](/docs/dataclassification/5.8/introduction/requirements/overview.md). 
-The virtual appliance configuration is insufficient for production and isn't recommended for that purpose.
+The virtual appliance configuration is insufficient for production; Netwrix doesn't recommend it for that purpose.
 
 To balance processing load in large-size and extra-large environments (16m+ objects), Netwrix strongly recommends deploying
 multiple NDC Servers in **Distributed Query Server** mode.

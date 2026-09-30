@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Top Reports and Charts
 
-Several reports and charts are listed at the top of the list because they provide
+Several reports and charts appear at the top of the list because they provide
 the most frequently requested information:
 
 - **Dashboard**—Shows a high level overview of Netwrix Data Classification operations statistics.
@@ -17,7 +17,7 @@ the most frequently requested information:
   grouping by source, grouping by taxonomy, or grouping by term. See
   [Content Distribution Map](/docs/dataclassification/5.8/dataanalysisoverview/reportingintroduction/contentdistributionmap.md) for details.
 - **Recent Tagging**—Displays statistics on the tagging results according to the specified filters.
-  To view this data, ensure the "**Auto-Classification Change Log**" feature is enabled. See the preceding section for more details.
+  To view this data, ensure you enabled the "**Auto-Classification Change Log**" feature. See the preceding section for more details.
 - **Recent Document Processing**—Displays statistics on the document processing results for the last
   7 days. This includes collection, indexing, and classification of data in the content sources.
 

@@ -13,18 +13,18 @@ the subsites/lists to configure their settings.
 
 - The Include column for each entity contains an indicator (tick or cross) showing whether the
   container is configured for crawling.
-- The **Has Config?** column contains an indicator showing whether custom metadata mappings have
-  been defined for the entity.
+- The **Has Config?** column contains an indicator showing whether the entity has custom metadata
+  mappings.
 - Use the **Exclude** link in the last column to exclude the selected list / subsite from
   crawling. For excluded entities, this column contains the **Include** link.
 
 :::note
-Excluding the entity will not automatically remove content from the index. If content has
-already been crawled, manually delete it via the QS, or re-collect the content source data.
+Excluding the entity will not automatically remove content from the index. If the product has
+already crawled the content, manually delete it via the QS, or re-collect the content source data.
 :::
 
 
-When new content is defined for crawling (i.e. included), perform a re-index operation.
+When you define new content for crawling (that is, include it), perform a re-index operation.
 
 - Use the **Edit** link to modify settings for the selected list or subsite. See the following
   sections for details.
@@ -40,8 +40,8 @@ Consider the following:
 
 - In the absence of a list level configuration the collector will automatically use the subsite
   level mapping (on a field by field basis).
-- In the absence of a list level configuration the appropriate source defaults will automatically be
-  used.
+- In the absence of a list level configuration the collector automatically uses the appropriate
+  source defaults.
 
 **Subsite Configuration**
 
@@ -54,4 +54,4 @@ Consider the following:
 
 - In the absence of a subsite level configuration the collector will automatically use the source
   level mappings (on a field by field basis).
-- Content fields can't be configured at the subsite level.
+- You can't configure content fields at the subsite level.

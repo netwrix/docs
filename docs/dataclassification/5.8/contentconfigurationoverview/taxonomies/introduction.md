@@ -10,8 +10,8 @@ sidebar_position: 5
 
 Netwrix Data Classification comes with several built-in **taxonomies** with hundreds of
 classification rules by default. The taxonomies cover a broad range of sensitive personal,
-financial, and health-related information. Each taxonomy contains a set of terms. **Terms** are
-defined by set of configuration **rules** (also called **clues**). See
+financial, and health-related information. Each taxonomy contains a set of terms. A set of
+configuration **rules** (also called **clues**) defines **terms**. See
 [Classification Rules (Clues)](/docs/dataclassification/5.8/contentconfigurationoverview/taxonomies/clues/clues.md) for details.
 
 - To create a taxonomy, go to the **Taxonomies** area of the web-based management console and follow

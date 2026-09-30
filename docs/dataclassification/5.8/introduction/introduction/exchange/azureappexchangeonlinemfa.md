@@ -16,8 +16,8 @@ Prepare application certificate as follows:
 1. Create (or load) an IIS certificate on NDC Server (recommended).
 
 :::note
-This certificate should be installed for the local machine so that it can be accessed by
-Netwrix Data Classification and other services.
+Install this certificate for the local machine so that Netwrix Data Classification and
+other services can access it.
 :::
 
 
@@ -66,14 +66,14 @@ Next, you need to grant your new application the required API permissions.
 Azure AD applications can be assigned _Delegated_ or _Application_ permissions:
 
 - _Delegated_ permissions require a signed-in user present who consents to the permissions every
-  time an API call is sent.
-- _Application_ permissions are consented by an administrator once granted.
+  time the app sends an API call.
+- _Application_ permissions require one-time consent from an administrator.
 
-For the newly created app, you should use _Application_ permissions.
+For the newly created app, use _Application_ permissions.
 
 :::note
-By default, a new application is granted one delegated permission for **Microsoft Graph
-API** – **User.Read**. It isn't required and can be removed.
+By default, a new application has one delegated permission for **Microsoft Graph
+API** – **User.Read**. It isn't required, and you can remove it.
 :::
 
 
@@ -88,8 +88,8 @@ Do the following:
    select **full_access_as_app**.
 6. Click **Add a permission**.
 
-Finally, you need to grant admin consent to the tenant (that is, for Exchange organization whose
-audit data will be collected by the newly registered app).
+Finally, you need to grant admin consent to the tenant (that is, for the Exchange organization
+whose audit data the newly registered app collects).
 
 Do the following:
 

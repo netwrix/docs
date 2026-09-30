@@ -15,4 +15,4 @@ You can also:
 - Start Product Tour—Runs a product tour, taking you around the key areas of the product.
 - Run Cleaner—Runs built-in tool to automate maintenance operations.
   See [Index Maintenance](/docs/dataclassification/5.8/systemconfigurationoverview/administration/indexmaintenance/indexmaintenance.md) for instructions on using the Index Cleaner tool.
-- Reset Cache—Force the QS caches to be reset.
+- Reset Cache—Force a reset of the QS caches.

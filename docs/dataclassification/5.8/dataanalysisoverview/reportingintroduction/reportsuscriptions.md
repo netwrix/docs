@@ -16,17 +16,17 @@ and click **View Subscriptions** next to an existing template to view and edit s
 
 ![managesubscription](/images/dataclassification/5.8/admin/reporting/managesubscription.webp)
 
-Checking the **Create a Subscription** box when saving a new report configuration will enable users
-to create a new subscription. The following options are configured on the **Manage Subscriptions**
+Checking the **Create a Subscription** box when saving a new report configuration lets users
+create a new subscription. Configure the following options on the **Manage Subscriptions**
 page:
 
 | Option                              | Description                                                                                                                                  |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Subscription Name                   | Create a name for the report subscription                                                                                                    |
-| Email Group                         | Enter the email groups that will receive the reports. If no email groups are configured, click the **(+)**icon to create new email groups. |
+| Email Group                         | Enter the email groups to receive the reports. If no email groups exist, click the **(+)**icon to create new email groups. |
 | Send email when no data is reported | Check this box to send an email with the report even when there is no data. Leave this box unchecked to disable this option.                 |
 | Export Format                       | Select whether to export the report as a **CSV** or **XLSX**.                                                                                |
-| Run Every:                          | Set how often email reports are sent out. Users can choose to send reports in a period of **days**, **weeks**, or **months**.                |
-| Starting On:                        | Set the date that reports will start being sent out.                                                                                         |
+| Run Every:                          | Set how often the system sends out email reports. Users can choose to send reports in a period of **days**, **weeks**, or **months**.                |
+| Starting On:                        | Set the date when the system starts sending out reports.                                                                                         |
 
 Click **Save** to complete configuration.

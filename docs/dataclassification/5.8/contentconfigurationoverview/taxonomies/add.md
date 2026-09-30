@@ -22,6 +22,6 @@ For the full list of supported taxonomies, refer to
 1. In administrative web console, navigate to Taxonomies → Global Settings.
 2. Navigate to Loaded Taxonomies, select Add Taxonomies.
 3. Select the Load XML file to SQL option to import an XML file directly into the administrative web
-   console; large taxonomies will be imported by the background services.
+   console; the background services import large taxonomies.
 4. Browse for your custom taxonomy file.
 5. Select Upload.

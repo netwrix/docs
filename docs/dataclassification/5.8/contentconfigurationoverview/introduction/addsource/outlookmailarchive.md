@@ -10,23 +10,23 @@ Use the Outlook Mail Archive source configuration screen to enable the crawling 
 classification of content stored in PST files:
 
 :::note
-If you want to make other configuration changes before collection of the source occurs
-ensure you tick the checkbox Pause source on creation.
+To make other configuration changes before collection of the source occurs, select the
+**Pause source on creation** checkbox.
 :::
 
 
 ![add_outlook](/images/dataclassification/5.8/admin/sources/exchangemailbox/add_outlook.webp)
 
-Multiple mailboxes can be added at one time via the "+" button. Collection will process all folders
+You can add multiple mailboxes at one time via the "+" button. Collection processes all folders
 / emails / attachments within the mailbox - associating the attachment text with the respective
 email.
 
 Select documents' images processing mode:
 
-- Disabled – documents' images will not be processed.
+- Disabled – the program doesn't process documents' images.
 - Default – defaults to the source settings if configuring a path or the global setting if
   configured on a source.
-- Normal – images are processed with normal quality settings.
+- Normal – the program processes images with normal quality settings.
 - Enhanced – upscale images further to allow more.
 
-Folders / Items can be excluded from processing via the Exchange Exclusions management screen.
+You can exclude folders and items from processing via the Exchange Exclusions management screen.

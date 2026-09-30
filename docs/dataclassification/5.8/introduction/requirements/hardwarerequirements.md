@@ -40,7 +40,7 @@ See [Deployment Planning](/docs/dataclassification/5.8/introduction/deployment/o
 
 ## SQL Server
 
-The requirements in this section are for an SQL database supporting up to 4 NDC Server instances in a Distributed Query Server (DQS) cluster. Deploy the NDC database server only on a dedicated machine, as sharing resources with additional databases on the same server will degrade performance.
+The requirements in this section are for an SQL database supporting up to 4 NDC Server instances in a Distributed Query Server (DQS) cluster. Deploy the NDC database server only on a dedicated machine, as sharing resources with additional databases on the same server degrades performance.
 
 | Hardware Component | Up to 16 M objects                                                                                                                                                                                                                                                                | Up to 32 M objects and up to 8 M objects for SharePoint | Up to 64 M objects and up to 16 M objects for SharePoint |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
@@ -54,12 +54,12 @@ The requirements in this section are for an SQL database supporting up to 4 NDC 
 
 | Specification  | Requirement                                                                                                                                                                              |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Network access | Ensure that your Netwrix Data Classification servers are available over the network on a HTTP compliant port from all machines where the client interface (management console) will run. |
+| Network access | Ensure that your Netwrix Data Classification servers are available over the network on a HTTP compliant port from all machines where the client interface (management console) runs. |
 
 ## Object and Scope Estimations
 
-Provide the total amount of data and total file count from all file shares that will be in the
-scope. Supported file shares types:
+Provide the total amount of data and total file count from all file shares in scope. Supported
+file shares types:
 
 - CIFS\SMB (a normal Windows-like share)
 - NFS

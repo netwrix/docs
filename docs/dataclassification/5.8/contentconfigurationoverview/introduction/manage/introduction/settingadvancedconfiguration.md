@@ -7,7 +7,7 @@ sidebar_position: 20
 # Setting advanced configuration
 
 Use **Advanced SharePoint Configuration** to define which content within the SharePoint site
-collection will be crawled and to specify metadata mapping settings.
+collection to crawl and to specify metadata mapping settings.
 
 To open the Advanced SharePoint Configuration window:
 
@@ -29,16 +29,16 @@ The following option tabs are available:
 Custom metadata mappings let you map specific SharePoint fields to internal indexed
 fields. There are two types of mapping:
 
-- **Content Field Mappings** - The fields which listed as **Content Fields** will be extracted and
-  indexed when the site collection is crawled.
+- **Content Field Mappings** - The product extracts and indexes the fields listed as
+  **Content Fields** when it crawls the site collection.
 - **Special Field Mappings** (Including _Date_ fields) - These mappings let you use the
   advanced filtering options available in the core search index. You can map any of the available
   SharePoint fields to some of the internal fields. For example, you can configure a SharePoint date
-  field to map to the "_Last Modified_" value so that results are returned only if they
+  field to map to the "_Last Modified_" value so that the search returns results only if they
   are within a certain date range.
 
-Mappings will be applied first as configured on the list-level settings, then the subsite-level
-settings, and finally, the source-level settings. Thus, in the absence of a list level
+The product applies mappings first from the list-level settings, then the subsite-level
+settings, and finally the source-level settings. Thus, in the absence of a list level
 configuration, the collector service will automatically use the mappings configured at the subsite
 level (or global level, if there is no subsite configuration).
 

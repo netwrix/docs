@@ -26,7 +26,7 @@ select **File\_\_**>\_**\_Deploy OVF Template**.
 | Name and Location    | Select a unique name for the new virtual machine (or use the default "Netwrix Data Classification"). The name can contain up to 80 characters including spaces. |
 | Resource Pool        | Select a resource pool to deploy Netwrix Data Classification virtual appliance.                                                                                                                                               |
 | Storage              | Select destination storage.                                                                                                                                                                                                   |
-| Disk Format          | Netwrix recommends to select the Thin Provision option to save your disk space.                                                                                                                                               |
+| Disk Format          | Netwrix recommends selecting the Thin Provision option to save your disk space.                                                                                                                                               |
 | Network Mapping      | If you have multiple networks on your ESXi Server, select the Destination network for a new virtual machine.                                                                                                                  |
 | Ready to Complete    | Review your virtual machine settings. Click Finish to exit the wizard.                                                                                                                                                        |
 

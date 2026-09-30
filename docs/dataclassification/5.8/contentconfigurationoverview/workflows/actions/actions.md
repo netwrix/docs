@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Workflow Actions
 
-Actions are automated operations performed on documents when rule conditions are triggered. There are two types of workflow actions:
+Actions are automated operations that the product performs on documents when rule conditions match. There are two types of workflow actions:
 
 - Generic actions available for any type of document. These are:
 
@@ -16,7 +16,7 @@ Actions are automated operations performed on documents when rule conditions are
 
 - Source-specific actions
 
-Workflow actions are executed at the final stage of the document processing.
+The product executes workflow actions at the final stage of the document processing.
 
 ## Available Actions by Source
 

@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The product provides the following reports, which you can run in a browser or export to Excel:
 
-- Classification Coverage – Provides a list of documents that have been tagged with X or fewer
+- Classification Coverage – Provides a list of documents tagged with X or fewer
   classifications. Assists in locating documents that have a low number of auto classifications and
   highlights the nearest missed classification. Supports filtering by URL and source group.
 - Classification Misses – Reports on documents that almost reached the threshold for classification,
@@ -25,20 +25,20 @@ The product provides the following reports, which you can run in a browser or ex
 - Failed Write Classifications – Provides a list of documents in the core index that failed to have
   their classifications written to the source system (such as SharePoint Managed Metadata Columns).
   Supports filtering by URL and source group.
-- Files Skipped – Provides a list of documents that have been excluded from processing because they
-  weren't explicitly included, or were specifically excluded. See Files Included and Files Excluded
+- Files Skipped – Provides a list of documents that the product excluded from processing because
+  they weren't explicitly included, or were specifically excluded. See Files Included and Files Excluded
   for more information on file inclusion/exclusion. Supports filtering by URL.
 - iFilters Detected – Provides a list of detected iFilters per server. iFilters are the Microsoft
-  standard for implementing text extraction from binary files. They are used by many search engines
-  (including Microsoft Search) to obtain the plain text required to build a search index. Supports
+  standard for implementing text extraction from binary files. Many search engines
+  (including Microsoft Search) use them to obtain the plain text required to build a search index. Supports
   filtering by server.
 - Index Analysis – Lets you manually queue items for background index analysis,
   initially scoped to assist in identifying fuzzy matched duplicate documents.
 - Manual Tagging – Provides a report on the manual and automatically assigned document
   classifications – filtered specifically to manually classified documents. Supports filtering by
   URL and source group.
-- Near Duplicate Detection – Details near duplicate documents across the index. Near duplicates are
-  detected as a background process. To enable background processing, select the
+- Near Duplicate Detection – Details near duplicate documents across the index. The product detects
+  near duplicates as a background process. To enable background processing, select the
   ‘Near Duplicate Detection’ option within the NDC Indexer Settings and rebuild the necessary sources. See
   Core Configuration for the configuration details. Supports filtering by URL, source group and
   excluding content types (comma delimited list of content types such as: “css,pdf”).
@@ -46,7 +46,7 @@ The product provides the following reports, which you can run in a browser or ex
   filtering by URL and source group.
 - Term Cloud – Displays the top 50 key terms/phrases across the index, selecting a term expands the
   cloud into the related terms.
-- Term History – Displays a history of changes made to a taxonomy (clues added/deleted etc).
+- Term History – Displays a history of changes to a taxonomy (clues added/deleted etc).
   Supports filtering by term name.
 - Text Extraction Failures – Provides a list of documents in the core index that failed text
   extraction (granular iFilter error codes). Supports filtering by URL, title, and source group.

@@ -61,13 +61,12 @@ mode, add one further appSetting entry into the web.config file:
 
 - `<add key="ida:AzureTenant" value="Tenant Name such as: netwrix.com" />`
 
-In the QS, settings are split between Basic and Advanced. Users wishing to always
-see Advanced options can enable this by:
+In the QS, settings are split between Basic and Advanced. To always see Advanced options:
 
-- Selecting their username from the footer of the application
-- Clicking **User Preferences**
-- Ticking **Always Show Advanced Settings**
-- Clicking **Save**
+- Select your username from the footer of the application
+- Click **User Preferences**
+- Tick **Always Show Advanced Settings**
+- Click **Save**
 
 See the following Knowledge Base article to learn how to set up single sign-on for Netwrix Data
 Classification via Microsoft Entra ID authentication:
@@ -83,21 +82,20 @@ You can validate additional Windows users using Integrated Windows Authenticatio
 
 If you delete the only Super User, the system removes all security and reverts the QS administrative functions to unrestricted access.
 
-User accounts with REST API access are still restricted by their specific permissions. A Super User with REST API access will be able to run any API method. Any normal user
-will be restricted by the same rules that govern the UI. Further API samples and documentation can
-be found at: /NDC/\_api
+User accounts with REST API access are still restricted by their specific permissions. A Super User with REST API access can run any API method. The same rules that govern the UI restrict any
+normal user. You can find further API samples and documentation at: /NDC/\_api
 
 ## Permission Management
 
 To allocate granular permissions to a user (non-Super Users), click Edit on their row in the Users table. The
-permissions for each section of the administrative web interface will be displayed as tabs. Each tab contains a top-level
+permissions for each section of the administrative web interface appear as tabs. Each tab contains a top-level
 checkbox of the form "Access [Area Name]” (e.g. Access Sources) which defines whether a user has access to each of the top level administrative areas.
 
-When an area is enabled there are typically more granular permissions that can be enabled, such as:
+When you enable an area, you can typically enable more granular permissions, such as:
 
 - Within the Taxonomies area, you can also assign permissions at a specific Term Set or
-  Term branch level. A full user permission summary (for all Term/Set level permissions) can be
-  viewed by selecting the View Taxonomy Permissions button.
+  Term branch level. To view a full user permission summary (for all Term/Set level permissions),
+  select the View Taxonomy Permissions button.
 - Within the Sources area, you can restrict a user’s access to specific source groups, as
   shown in the following image.
 
@@ -126,14 +124,14 @@ You can restrict permissions for a user to the following areas:
 
 Super Users have access to all Query Server administrative functions.
 
-Non-Super Users must have their access rights specifically configured and all rights are disabled by
+You must specifically configure access rights for non-Super Users; all rights are disabled by
 default. See User Management section for details about configuring the access rights for non-Super
 Users.
 
-Regardless of the authentication mode selected the usage of the QS administrative functions will
-continue to be unrestricted until at least one user is added. The first user must be a Super User.
-If Windows or ADFS Authentication are being used then the first user will default to the 
-logged-in user, although this can be changed if required.
+Regardless of the authentication mode you select, usage of the QS administrative functions remains
+unrestricted until you add at least one user. The first user must be a Super User.
+If you use Windows or ADFS Authentication, the first user defaults to the 
+logged-in user, although you can change this if required.
 
-If Non-Windows Authentication is enabled then additional information must be entered to define the
+If you enable Non-Windows Authentication, you must enter additional information to define the
 non-Windows user.

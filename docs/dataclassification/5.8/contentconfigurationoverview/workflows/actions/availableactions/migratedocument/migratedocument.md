@@ -23,12 +23,12 @@ listed in the following table.
 migration destinations. See
 [Configure destinations for Migration action](/docs/dataclassification/5.8/contentconfigurationoverview/workflows/actions/availableactions/migratedocument/migrationdestinations.md).
 
-When running the Workflow wizard and having selected **Migration** as action, you will be prompted
+When you run the Workflow wizard and select **Migration** as an action, the wizard prompts you
 to configure related settings.
 
 [](#)To configure migration using Workflow wizard:
 
-On the What do you want to do step, select Migrate Document action. do the following:
+On the What do you want to do step, select the Migrate Document action, then do the following:
 
 1. Specify migration source and folder:
 
@@ -36,7 +36,7 @@ On the What do you want to do step, select Migrate Document action. do the follo
 
         ![migration_destination_thumb_0_0](/images/dataclassification/5.8/admin/workflows/actions/migration_destination_thumb_0_0.webp)
 
-    - If you created several sources for migration destinations, select on one in the under Where
+    - If you created several sources for migration destinations, select one under Where
       should the document be migrated to?
     - For Google Drive, you need to specify subfolder to save your files in the Where in the
       destination should the files be saved? field.
@@ -45,9 +45,9 @@ On the What do you want to do step, select Migrate Document action. do the follo
 
     | Option                                                                        | Description                                                                                                                                                                                                                                                               |
     | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Replicate folder structure                                                    | If supported by the source system, subfolders will be created in the migration destination to match the relative path in the source. In the case of Exchange this will also include a folder for the mailbox name (i.e., \\MigrationDestination\User@domain.com\Inbox\HR). |
+    | Replicate folder structure                                                    | If the source system supports it, the product creates subfolders in the migration destination to match the relative path in the source. For Exchange, this also includes a folder for the mailbox name (i.e., \\MigrationDestination\User@domain.com\Inbox\HR). |
     | Copy or Move the document                                                     | Select one of the following: - Copy - Move                                                                                                                                                                                                                                |
-    | Mark Source as Read-only                                                      | The original item can be marked as read only.                                                                                                                                                                                                                             |
+    | Mark Source as Read-only                                                      | You can mark the original item as read only.                                                                                                                                                                                                                             |
     | What action should be taken if the document already exists at the destination | Select action to perform: - Replace - Append Counter - Append Migration Date                                                                                                                                                                                              |
     | Create a stub file?                                                           | - Don't create - Create a stub file                                                                                                                                                                                                                                      |
     | What should the stub file contain?                                            | When you move a file, you can optionally create a stub file in its original location showing the file's new location. You can configure the content of that file.                                                                                         |
@@ -55,8 +55,9 @@ On the What do you want to do step, select Migrate Document action. do the follo
 
 ## Creating a stub file
 
-In NDC, when moving a file from one storage to another a stub file is created in .txt format. It
-would have a note, that a file has been transferred to a certain location.
+In Netwrix Data Classification (NDC), when you move a file from one storage to another, the product
+creates a stub file in .txt format. The stub file notes that the product transferred the file to a
+certain location.
 
 While creating a stub file, you can leave a message where the document is migrated to and the
 reasons. You can use the dropdown list to add metadata from the document to the stub file message,
@@ -76,8 +77,8 @@ screenshot, or create custom groups of entities first.
 
 ![workflow_redaction](/images/dataclassification/5.8/admin/workflows/actions/workflow_redaction.webp)
 
-If the redaction has failed for such files as PDF, that had OCR with images and can't be fully
-recognized, these files will get quarantined, leaving a stub file, instead of a redacted file.
+If redaction fails for files such as PDFs that had OCR with images and that the product can't fully
+recognize, the product quarantines these files, leaving a stub file instead of a redacted file.
 
 To modify action settings for the certain workflow, select the workflow and use the Advanced UI
 window. See [Modify Migration action settings](/docs/dataclassification/5.8/contentconfigurationoverview/workflows/actions/availableactions/migratedocument/migration.md) for more information.

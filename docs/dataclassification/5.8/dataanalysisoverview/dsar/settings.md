@@ -21,13 +21,13 @@ Only users with 'Super User' permissions can configure DSAR.
 
     | Option                   | Description                                                                                                                                                                                                                                                                                                                                                                                                           |
     | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Batch Start Time         | Review and modify batch run schedule to optimize the timing for your environment. **NOTE:** This setting affects the batches of all users; there is one batch-run per instance of the DSAR tool. By default, the DSAR batch will only automatically run once a day; to force another batch run within a 24 hour period, use the **Run now** button, as described later in this topic.                              |
-    | Output Location          | Specify a desired file share to export results of DSAR searches. Items are grouped by Case ID. **NOTE:** There is one output location per instance of the DSAR tool. Changing the Output Location setting doesn't impact files that have already been placed in their location - i.e., any existing output doesn't get moved when the setting is changed.                                          |
+    | Batch Start Time         | Review and modify batch run schedule to optimize the timing for your environment. **NOTE:** This setting affects the batches of all users; there is one batch-run per instance of the DSAR tool. By default, the DSAR batch runs automatically only once a day; to force another batch run within a 24 hour period, use the **Run now** button, as described later in this topic.                              |
+    | Output Location          | Specify a desired file share to export results of DSAR searches. Items are grouped by Case ID. **NOTE:** There is one output location per instance of the DSAR tool. Changing the Output Location setting doesn't impact files already in their location - i.e., the product doesn't move any existing output when you change the setting.                                          |
     | Email Notification Group | Specify an email group to send notifications to. Click + to create a new group or select existing one. In the Add dialog, configure Email group as follows: - Group Name – provide a name for the new group. - Email Addresses – select as many addresses as needed. The email group must contain at least one email address. - Email Server – select the email server. See Email Configuration for more information. |
 
 ## Run now
 
-All search requests are run by the scheduled time set by a Super User. If you have one or more
+The product runs all search requests at the scheduled time that a Super User sets. If you have one or more
 pending searches and for some reason want to run them immediately, use Run now option.
 
 :::note
@@ -43,8 +43,7 @@ in progress to prevent conflicting processes.
 3. Confirm that you want to run all requests immediately.
 
 :::note
-When forcing a search request run, consider that this operation may lead to performance
-degrading.
+When forcing a search request run, consider that this operation may degrade performance.
 :::
 
 

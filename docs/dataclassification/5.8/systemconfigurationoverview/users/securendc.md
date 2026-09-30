@@ -12,8 +12,8 @@ and access to, the Classification interfaces.
 
 ## Configure Administration Console Access
 
-By default, post installation, all users will be considered Superusers with access to all areas of
-the product. To begin the process of securing the product, follow these steps:
+By default, post installation, the product considers all users Superusers with access to all areas
+of the product. To begin the process of securing the product, follow these steps:
 
 1. Access the Administration Console.
 2. Select Settings > Users from the top navigation bar.
@@ -55,15 +55,15 @@ groupings to this engine:
 
 - Text.cse—Stores the raw text of each document in a compressed and obfuscated format.
 - All other files—Stores the compound term processing search index, identifying which documents
-  should be returned for a given query
+  to return for a given query
 
 You can optionally encrypt Text.cse using AES/SHA256 to improve the security of the full text at rest. To enable this:
 
-1. Accessing the Administration Console.
-2. Selecting **Config** from the top navigation bar.
-3. On the Collector tab, enabling the **Encrypt Text** (Text.cse) option (this is an advanced setting - 
+1. Access the Administration Console.
+2. Select **Config** from the top navigation bar.
+3. On the Collector tab, enable the **Encrypt Text** (Text.cse) option (this is an advanced setting - 
 select the wrench icon in the bottom left to display it).
-4. Selecting **Save**.
+4. Select **Save**.
 
 The other index files don't expose the full document text—however, they do
 contain the weightings and terms within the text. Netwrix recommends restricting access to all files at
@@ -75,12 +75,12 @@ Several web service endpoints provide access to various levels of information wi
 you may want to fully restrict access to these endpoints via your firewall or IIS Configuration
 (potentially removing all external access).
 
-The following paths should be considered as part of this process:
+Consider the following paths as part of this process:
 
 - /\_api/\*
 - \*.asmx
 - \*.svc
 
-When using Netwrix Data Classification for SharePoint Online, certain
-endpoints are required. Each of these endpoints is located within the folder
+Netwrix Data Classification for SharePoint Online requires certain
+endpoints. Each of these endpoints is located within the folder
 "_/ConceptClassifierApp/_".

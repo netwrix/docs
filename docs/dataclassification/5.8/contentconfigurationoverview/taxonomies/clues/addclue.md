@@ -31,8 +31,8 @@ Use double quotes around phrases to invoke exact phrase matching.
 ### Stemming
 
 Word stemming simplifies classification rules by automatically matching inflected word forms using a
-single keyword clue. This can be useful to identify how a clue will be implemented by the
-classification engine. Stemming is supported for the following languages:
+single keyword clue. This can be useful to identify how the classification engine implements a
+clue. The product supports stemming for the following languages:
 
 - Dutch
 - English
@@ -42,7 +42,7 @@ classification engine. Stemming is supported for the following languages:
 - Spanish
 - Portuguese
 
-Hovering over a standard clue will show the stemmed version of the word / compound term.
+Hovering over a standard clue shows the stemmed version of the word / compound term.
 
 Example: A class called _Global Warming_ may have the following clues:
 
@@ -57,41 +57,41 @@ To disable stemming, use double quotes around single words.
 
 ## Score
 
-Scores are expressed as percentages of the threshold. For example, if the threshold is 50 then:
+Scores are percentages of the threshold. For example, if the threshold is 50 then:
 
-- 50 = guarantees that this term alone will be sufficient to classify the document
+- 50 = guarantees that this term alone suffices to classify the document
 - 25 = this term will get half way to the target
 - 10 = this term is of low importance but its presence should boost a document score
 - 0 = zero weight – use to disable a clue
 - -10 = this term is a small negative indicator
 - -50 = this term is a strong negative indicator
-- -1000 = the presence of this term should force the document to not be classified
+- -1000 = the presence of this term prevents classification of the document
 
 Higher scores indicate a stronger association with the topic.
 
-- Example 1: _Global Warming_ with a score of 50 will cause a document with this concept to be
-  matched.
-- Example 2: _Pollution_ with a score of 20 (on its own) will not be sufficient to cause the
+- Example 1: _Global Warming_ with a score of 50 causes the product to match a document with this
+  concept.
+- Example 2: _Pollution_ with a score of 20 (on its own) isn't sufficient to classify the
   document as being about global warming.
 
-Consider that clues can also be assigned a negative value, which will prevent incorrect
+Consider that you can also assign a negative value to clues, which prevents incorrect
 associations.
 
-- Example 3: _Noise pollution_ shouldn't be associated with _Global Warming_. So _Noise pollution_
-  would be added with a negative value.
+- Example 3: _Noise pollution_ shouldn't be associated with _Global Warming_. So add _Noise
+  pollution_ with a negative value.
 
 ## Mandatory Clues
 
-You can use the Mandatory checkbox to indicate that a clue is required, i.e. a document can't be
-classified against a category unless it matches all of the mandatory clues.
+You can use the Mandatory checkbox to indicate that a clue is required, i.e. the product can't
+classify a document against a category unless it matches all of the mandatory clues.
 
-The mandatory clue selector is denoted by the \* icon:
+The \* icon denotes the mandatory clue selector:
 
 ![mandatoryclue](/images/dataclassification/5.8/admin/taxonomies/mandatoryclue.webp)
 
 ## Using the Local Option
 
-In some cases, a further option will be available per clue: “**Is Local?**”. This option allows the
+In some cases, a further option is available per clue: “**Is Local?**”. This option allows the
 user to restrict a clue purely to the current Term Set.
 
 :::note
@@ -104,7 +104,7 @@ This option is only available for reused terms (SharePoint Term Sets).
 - When this option is selected, you can't amend the clue from any other Term Set
   that contains the re-used Term.
 - If you want to share the Term across all Term Sets again, clear the option from the Term Set in
-  which it was originally enabled.
+  which you originally enabled it.
 
 ## Using Synonyms (SQL taxonomies only)
 
@@ -115,6 +115,6 @@ The **Synonyms** link is only available for the clues in SQL taxonomies.
 
 Use the Synonyms link to enter synonym definitions.
 
-In general, the use of this facility isn't recommended. The preferred approach is to enter each
-synonym as separate clues. Entering each synonym as separate clues will generally result in more
-accurate scoring and therefore to better classification results.
+In general, Netwrix doesn't recommend using this facility. Instead, enter each synonym as separate
+clues, which generally results in more accurate scoring and therefore better classification
+results.

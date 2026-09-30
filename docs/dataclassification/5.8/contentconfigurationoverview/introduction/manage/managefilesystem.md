@@ -6,28 +6,29 @@ sidebar_position: 50
 
 # Manage File System
 
-This section contains information on how to include or exclude files or folders from being crawled,
+This section contains information on how to include or exclude files or folders from crawling,
 and how to configure writing classification attributes back to the content files (i.e. "tagging").
 
 ## Configure Tagging
 
 You can instruct the program to write classification attributes back to processed files. This
-operation is also called "tagging". Tagging is supported for the following file types:
+operation is also called "tagging". The product supports tagging for the following file types:
 
 - DOC/DOCX
 - PPT/PPTX
 - XLS/XLSX
 - PDF
 
-For Microsoft Office documents, each classification taxonomy is mapped to an advanced (custom)
-property in the document’s metadata. See
+For Microsoft Office documents, the product maps each classification taxonomy to an advanced
+(custom) property in the document’s metadata. See
 [this article](https://support.office.com/en-gb/article/view-or-change-the-properties-for-an-office-file-21d604c2-481e-4379-8e54-1dd4622c6b75)
 for details.
 
-For Adobe PDF documents, each taxonomy is mapped to custom properties in the document’s metadata.
+For Adobe PDF documents, the product maps each taxonomy to custom properties in the document’s
+metadata.
 See [this article](https://helpx.adobe.com/acrobat/using/pdf-properties-metadata.html) for details.
 
-Related content source settings can be configured at a global level (default), or at a source level.
+You can configure related content source settings at a global level (default), or at a source level.
 
 **To configure tagging on a global level**
 
@@ -42,10 +43,10 @@ Related content source settings can be configured at a global level (default), o
 | Setting                  | Description                                                                                        | Note                                                                                    |
 | ------------------------ | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | **Enabled**              | Use this option to enable / disable tagging with attributes included in this taxonomy.             | Cleared by default.                                                                     |
-| **Field Name**           | Define the attribute name to be used when persisting the classifications (metadata property name). |                                                                                         |
-| **Format**               | How the classifications should be formatted.                                                       | You can create a custom delimited combination of the labels / GUIDs.                    |
+| **Field Name**           | Define the attribute name to use when persisting the classifications (metadata property name). |                                                                                         |
+| **Format**               | How to format the classifications.                                                       | You can create a custom delimited combination of the labels / GUIDs.                    |
 | **Name/ID** or **Class** | Depending on the format, take the term labels, IDs, or a combination of both                       | The corresponding Delimiter must be a string or array type, with a maximum length of 3. |
-| **Prefix/** **Suffix**   | Will be appended to the formatted string of classifications.                                       |                                                                                         |
+| **Prefix/** **Suffix**   | The product appends this to the formatted string of classifications.                                       |                                                                                         |
 
 **Example**
 
@@ -62,9 +63,9 @@ classification attributes to the classified documents:
 
 1. Go to the **Sources** view, select the source you want to enable classifications for and click the "pencil" symbol on
    the right side of the table.
-2. The list of global taxonomy configurations will be displayed. To use the global taxonomy writing settings,
-   select the **Use Global Configuration** checkbox at the top of the page. To configure settings for the selected source specifically, ensure
-   this checkbox is unchecked.
+2. The list of global taxonomy configurations appears. To use the global taxonomy writing settings,
+   select the **Use Global Configuration** checkbox at the top of the page. To configure settings for the selected source specifically, clear
+   this checkbox.
 3. Select the taxonomy you want and click **Edit**.
 4. In the taxonomy properties, select the **Enabled** checkbox and specify the settings described in
    the preceding table.
@@ -73,8 +74,8 @@ classification attributes to the classified documents:
 
 ## Configure Inclusions
 
-**File inclusions** tab contains the list of file types that will be included in the indexing
-process. Any file with a file extension not specified in this list will be ignored.
+**File inclusions** tab contains the list of file types that the indexing process includes. The
+product ignores any file with a file extension not specified in this list.
 
 You can delete, modify, or add inclusions.
 
@@ -82,10 +83,10 @@ To specify inclusions, do the following:
 
 1. In the management console, click **Sources** →**File**, then in the left pane click Files
    Included.
-2. Select the necessary extensions to be used as including filter when processing files.
+2. Select the necessary extensions to use as an including filter when processing files.
 3. To modify an extension (for example, add a wildcard), click **Edit**. To add a new one, click
-   **Add**. The "\*" wildcard can be added to an inclusion filter to match one or more characters. 
-   Files without extensions can be included by adding "." as an inclusion filter.
+   **Add**. You can add the "\*" wildcard to an inclusion filter to match one or more characters. 
+   To include files without extensions, add "." as an inclusion filter.
 
 :::note
 Inclusions are case-insensitive.
@@ -105,7 +106,7 @@ You can also configure the list of file locations to exclude from processing.
 
     To exclude a specific file, enter its full path. For example: _C:\Test Folder\Test Document.docx_
 
-    Wildcards can be used anywhere in the exclusion pattern definition as follows:
+    You can use wildcards anywhere in the exclusion pattern definition as follows:
 
     - The asterisk character (\*) matching any sequence of characters
     - The question mark character (?) matching any single character
@@ -122,16 +123,16 @@ Exclusions are case-insensitive.
 ![file_exclusion_filter_thumb_0_0](/images/dataclassification/5.8/admin/sources/filesystem/file_exclusion_filter_thumb_0_0.webp)
 
 3. Optionally, enter a test path to verify the settings and click **Test**.
-4. If needed, you can use metadata conditions to restrict when an exclusion filter should be
-   applied. For that, click **Condition** tab and click **Add**. Then select how the exclusion
-   conditions will work: it can check if metadata field of the document has any value, isn't
-   specified, or matches a specific metadata value.
+4. If needed, you can use metadata conditions to restrict when the product applies an exclusion
+   filter. For that, click **Condition** tab and click **Add**. Then select how the exclusion
+   conditions work: they can check whether the document's metadata field has any value, has no
+   value, or matches a specific metadata value.
 
     | Criteria      | Condition                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
     | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Comparison    | Compare a value in the document metadata field with the value set by condition. With this criteria selected, you will then need to specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
-    | Has any value | Exclude the document if its metadata field has any value. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
-    | Has no values | Exclude the document if metadata field value is unspecified. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
+    | Comparison    | Compare a value in the document metadata field with the value the condition sets. When you select this criteria, specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
+    | Has any value | Exclude the document if its metadata field has any value. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
+    | Has no values | Exclude the document if the metadata field has no value. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
 
 5. When finished, click **Add**.
 6. Finally, click **Save** and close the window.

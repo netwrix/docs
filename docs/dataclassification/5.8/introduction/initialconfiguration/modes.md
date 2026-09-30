@@ -12,27 +12,27 @@ At this step of the wizard, select processing (indexing) mode for your environme
 
 For starter and evaluation purposes, select Keyword mode.
 
-Review the short description below and select mode:
+Review the following descriptions and select a mode:
 
 ## No Index
 
-In this mode, the core search index will be disabled, heavily reducing the disk space requirements
+In this mode, the core search index is disabled, heavily reducing the disk space requirements
 for the CSE files and improving overall document throughput for classification. Under this mode
-Search isn't available and Browse functionality isn't subject to security trimming. Recommended
-for data discovery, data security governance and compliance use cases.
+Search isn't available and Browse functionality isn't subject to security trimming. Netwrix
+recommends this mode for data discovery, data security governance and compliance use cases.
 
 ## Keyword
 
-In this mode the search index will be created; however, disk space required for the core search
-index will be of medium size. Both **Browse** and **Search** by keyword are supported. Overall
-throughput is capable of supporting large number of documents (> 1M). Recommended for compliance,
-data discovery and classification rules tuning.
+In this mode the product creates the search index; however, the disk space required for the core
+search index is medium. The product supports both **Browse** and **Search** by keyword. Overall
+throughput can support a large number of documents (> 1M). Netwrix recommends this mode for
+compliance, data discovery and classification rules tuning.
 
 ## Compound Term
 
-In this mode you will get a fully featured index, supporting **Search** by compound term. Note
-that data storage for compound term processing will require significantly more space, and overall throughput 
-may decrease (compared to the Keyword mode). Recommended for knowledge management, data storage optimization, 
+In this mode you get a fully featured index, supporting **Search** by compound term. Data storage
+for compound term processing requires significantly more space, and overall throughput 
+may decrease (compared to the Keyword mode). Netwrix recommends this mode for knowledge management, data storage optimization, 
 legal search, and other content services.
 
 Proceed with configuring processing settings. See [Processing Settings](/docs/dataclassification/5.8/introduction/initialconfiguration/processingsettings.md) next.

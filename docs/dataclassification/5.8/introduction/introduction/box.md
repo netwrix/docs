@@ -45,7 +45,7 @@ This section covers the steps you perform on the Box side. You perform steps 3 a
 
 1. Log into your Box cloud-based storage facility using your _Box Developer Account_.
 2. Open the Box developer's console endpoint: `https://app.box.com/developers/console`.
-3. If you have not created an app before, you will see a screen similar to the following:
+3. If you haven't created an app before, a screen similar to the following appears:
 
     ![box_app](/images/dataclassification/5.8/configuration/configinfrastructure/box_app.webp)
 
@@ -61,12 +61,12 @@ This section covers the steps you perform on the Box side. You perform steps 3 a
 
 10. Navigate to **Advanced Features** and turn ON both switches: **Perform Actions as User** and
     **Create User Access Token**.
-11. Then you should create a public/private key pair to authenticate the JWT requests made by your
-    app. Navigate to Add and Manage Public Keys and select Generate a Public/Private Keypair.
+11. Then create a public/private key pair to authenticate the JWT requests your
+    app makes. Navigate to Add and Manage Public Keys and select Generate a Public/Private Keypair.
 
     :::note
-    If you have not enabled two-factor authentication for the app account in advance, you
-    will be prompted to do it. Click **Settings**, then in the **Account Settings**, navigate to
+    If you haven't enabled two-factor authentication for the app account in advance, Box
+    prompts you to do it. Click **Settings**, then in the **Account Settings**, navigate to
     **Authentication**. Select **Require 2-step verification to protect your account**, then provide
     the necessary information in the **Enable Login Verification** dialog and complete the
     verification. When finished, get back to the **Configuration** section, clicking the related
@@ -76,7 +76,7 @@ This section covers the steps you perform on the Box side. You perform steps 3 a
 
     ![box_keys](/images/dataclassification/5.8/configuration/configinfrastructure/box_keys.webp)
 
-12. You will be notified about downloading a JSON file with all configuration settings of your app.
+12. Box notifies you about downloading a JSON file with all configuration settings of your app.
 
     **IMPORTANT!** Since Box doesn't store any private keys, this file contains the only copy of
     your private key, so store it securely.
@@ -96,8 +96,8 @@ If you are a Box administrator, copy the **Client ID** and store it to a safe lo
 
 **IMPORTANT!** If you change the app configuration later, you must re-authorize the app.
 
-If you are a Box administrator, you will receive an email with submitted request. Authorize it, as
-decribed in Box documentation. For instance, you can take these steps:
+If you are a Box administrator, you receive an email with the submitted request. Authorize it, as
+described in Box documentation. For instance, you can take these steps:
 
 1. Navigate to [box.com](https://www.box.com/en-gb/home) and open the **Admin Console**.
 2. Click **Apps** on the left.

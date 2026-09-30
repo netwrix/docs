@@ -6,18 +6,18 @@ sidebar_position: 20
 
 # SharePoint Content Type Hubs
 
-SharePoint 2010+ supports Enterprise Content Types allowing Content Types to be defined on a
+SharePoint 2010+ supports Enterprise Content Types, which let you define Content Types on a
 Publishing SharePoint site with one or more secondary sites consuming the Enterprise Content Types.
 
-Once Netwrix Data Classification for SharePoint is installed on the SharePoint Farm, it is possible
-to define SharePoint workflow actions at the SharePoint Content Type Hub site. Any actions of type
-Content Type Update may be run on the site collection itself however they may also be run on
+Once you install Netwrix Data Classification for SharePoint on the SharePoint Farm, you can
+define SharePoint workflow actions at the SharePoint Content Type Hub site. You can run any actions
+of type Content Type Update on the site collection itself, and you can also run them on
 consuming SharePoint Site collections.
 
 ![content_type_hubs_thumb_0_0](/images/dataclassification/5.8/admin/workflows/content_type_hubs_thumb_0_0.webp)
 
-To configure a Workflow to run against all sites that consume a Content Type Hub, follow the
-following steps:
+To configure a Workflow to run against all sites that consume a Content Type Hub, follow these
+steps:
 
 1. Navigate to Workflows → Configs → Content Type Hubs
 2. Select Add

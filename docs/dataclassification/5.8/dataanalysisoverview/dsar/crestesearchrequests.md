@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Create Search Requests
 
-Search requests are generally batched and run as one (with the scheduled time set by the Super
-User/s), as this will deliver maximum performance, minimize impact across the estate and prevent
-delays caused by queuing. You can create as many search requests as needed.
+The product generally batches search requests and runs them as one (with the scheduled time set by
+the Super User/s), as this delivers maximum performance, minimizes impact across the estate, and
+prevents delays caused by queuing. You can create as many search requests as needed.
 
 To create a search request:
 
@@ -19,24 +19,23 @@ To create a search request:
 
     | Option             | Description                                                                                                                                                                                                                                                                                                                             |
     | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Case ID            | Enter Case ID. The Case ID is the unique ID given to the request, to allow tracking throughout the process. **NOTE:** If you choose an existing Case ID, you will be prompted to confirm that you want to run another search for the same ID. This will prevent multiple identical searches from being run for the same search request. |
-    | Last Name\*        | Enter the last name to associate search results with a particular individual. **NOTE:** The last name alone will be passed as a clue – the first name/s alone will not. The field isn't case sensitive.                                                                                                                                |
-    | First Name\*       | Enter the first name to associate search results with a particular individual. **NOTE:** The field can be used only in conjunction with the last name.                                                                                                                                                                                  |
-    | Email Address      | Enter email address. Email addresses are unique, so if they are identified within a file, it should be deemed relevant to the request. **NOTE:** The field is case-sensitive.                                                                                                                                                           |
+    | Case ID            | Enter Case ID. The Case ID is the unique ID given to the request, to allow tracking throughout the process. **NOTE:** If you choose an existing Case ID, the system prompts you to confirm that you want to run another search for the same ID. This prevents multiple identical searches for the same search request. |
+    | Last Name\*        | Enter the last name to associate search results with a particular individual. **NOTE:** The system passes the last name alone as a clue – it doesn't pass the first name/s alone. The field isn't case sensitive.                                                                                                                                |
+    | First Name\*       | Enter the first name to associate search results with a particular individual. **NOTE:** You can use the field only in conjunction with the last name.                                                                                                                                                                                  |
+    | Email Address      | Enter email address. Email addresses are unique, so if the system identifies one within a file, consider the file relevant to the request. **NOTE:** The field is case-sensitive.                                                                                                                                                           |
     | Reference          | Specify additional references to identify an individual. You can add as many additional parameters as needed. For example: Customer reference, Account reference, Claim reference, Account number, etc.                                                                                                                                 |
     | Enable Date Search | Limit your search by specific date range.                                                                                                                                                                                                                                                                                               |
 
 **\* - see Example**
 
-**TIP:** After discussion with stakeholders and customers, it has become clear that many subject
-access requests (SARs) are initiated as a means of finding specific information (e.g. former
+**TIP:** Many subject access requests (SARs) aim to find specific information (e.g. former
 employees looking for a particular email trail, etc.). In this scenario, restricting data retrieval to a specified date range rather than ALL data makes the data more manageable to find and collate.
 
 ## Example
 
 This example describes the search mechanism for **First name** and **Last name** combination.
 
-A search for first names _John Richard_ with the last name _Smith_ will be searched for as:
+A search for first names _John Richard_ with the last name _Smith_ matches the following:
 
 - John R Smith
 - John Smith

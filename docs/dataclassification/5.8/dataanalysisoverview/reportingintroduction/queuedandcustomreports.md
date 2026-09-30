@@ -19,7 +19,7 @@ as necessary.
 
 While the product includes many reports by default, specific business needs may also arise that require reporting the default reports don't cover. With
 this in mind, you can create a custom report using Plugins. After you deploy the custom report plugin,
-the report will appear in the main reports list (with the built-in reports). A sample plugin
+the report appears in the main reports list (with the built-in reports). A sample plugin
 incorporates:
 
 - Custom Parameters
@@ -28,5 +28,5 @@ incorporates:
 - Paging
 
 Usually, the application communicates with a server running the administration Web console. To
-assemble and combine the search results required for reporting, the NDC server will automatically
-communicate with the other servers in the cluster.
+assemble and combine the search results required for reporting, the NDC server automatically
+communicates with the other servers in the cluster.

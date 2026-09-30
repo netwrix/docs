@@ -26,17 +26,17 @@ Auto-Classification.
 
 ![reports_doctagging_thumb_0_0](/images/dataclassification/5.8/admin/reporting/reports_doctagging_thumb_0_0.webp)
 
-The report will be displayed in the preview pane.
+The report appears in the preview pane.
 
 You can export document-specific report data along with any associated document metadata. For that,
-in the bottom of the pane select the export option you need (_CSV/XLSX_). The file will be
-downloaded to your default downloads folder.
+in the bottom of the pane select the export option you need (_CSV/XLSX_). Your browser downloads
+the file to your default downloads folder.
 
 ## Save Report Configuration
 
 Netwrix Data Classification lets you save report configuration settings as a template for the
-future use. Then if you need to run the report with the specified parameters more than once, you can
-just load its configuration from the template you have saved.
+future use. Then if you need to run the report with the specified parameters more than once, load
+its configuration from the template you saved.
 
 :::note
 Built-in reports (Classification, Clue Building, Document,
@@ -88,17 +88,17 @@ and click **View Subscriptions** next to an existing template to view and edit s
 
 ![managesubscription](/images/dataclassification/5.8/admin/reporting/managesubscription.webp)
 
-Checking the **Create a Subscription** box when saving a new report configuration will enable users
-to create a new subscription. The following options are configured on the **Manage Subscriptions**
+Checking the **Create a Subscription** box when saving a new report configuration lets users
+create a new subscription. Configure the following options on the **Manage Subscriptions**
 page:
 
 | Option                              | Description                                                                                                                                  |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Subscription Name                   | Create a name for the report subscription                                                                                                    |
-| Email Group                         | Enter the one or more email groups that will receive the reports. If no email groups are configured, click the **(+)**icon to create new email groups. |
+| Email Group                         | Enter one or more email groups to receive the reports. If no email groups exist, click the **(+)**icon to create new email groups. |
 | Send email when no data is reported | Check this box to send an email with the report even when there is no data. Leave this box unchecked to disable this option.                 |
 | Export Format                       | Select whether to export the report as a **CSV** or **XLSX**.                                                                                |
-| Run Every:                          | Set how often email reports are sent out. Users can choose to send reports in a period of **days**, **weeks**, or **months**.                |
-| Starting On:                        | Set the date that reports will start being sent out.                                                                                         |
+| Run Every:                          | Set how often the system sends out email reports. Users can choose to send reports in a period of **days**, **weeks**, or **months**.                |
+| Starting On:                        | Set the date when the system starts sending out reports.                                                                                         |
 
 Click **Save** to complete configuration.

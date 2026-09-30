@@ -24,5 +24,5 @@ instructions of the wizard. Review the following table for more information.
 | Choose Network Type    | Select a virtual switch.                                               |
 | Summary                | Review your virtual machine settings. Click Finish to exit the wizard. |
 
-The newly created virtual machine named Netwrix Data Classification will appear in the list of
+The newly created virtual machine named Netwrix Data Classification appears in the list of
 virtual machines. Right-click and select Start.

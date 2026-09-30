@@ -13,5 +13,5 @@ To see the current classifications for a selected document click the Classificat
 
 ![classifications_thumb_0_0](/images/dataclassification/5.8/admin/taxonomies/classifications_thumb_0_0.webp)
 
-Classifications are clickable – clicking the link will select the relevant term in the taxonomy tree
+Classifications are clickable – clicking the link selects the relevant term in the taxonomy tree
 view.

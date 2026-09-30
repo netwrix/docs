@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Understanding Workflows
 
-A workflow lets you configure an automated action that will be performed on a document,
+A workflow lets you configure an automated action that the product performs on a document,
 following a classification decision. For example:
 
 - Send an email message to personnel in charge
@@ -14,10 +14,10 @@ following a classification decision. For example:
 
 To set up a workflow, you need to do the following:
 
-- Specify conditions, defining the classification decisions that this workflow will act upon.
-- Configure rules that will trigger your workflow actions.
+- Specify conditions, defining the classification decisions that this workflow acts upon.
+- Configure rules that trigger your workflow actions.
 
-- Select actions that will take place when one or more rule conditions are met.
+- Select actions that take place when one or more rule conditions match.
 
 Looking for real-life use cases and walk through examples? Check out Netwrix training materials. Go
 the[ Netwrix website](https://www.netwrix.com/data_remediation_workflows.html) to find out how you

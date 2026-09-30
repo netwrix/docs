@@ -9,7 +9,7 @@ sidebar_position: 10
 This feature is only available for ‘Superusers’.
 
 You may need to reprocess content or even clean the environment on a large scale — for example,
-after a large amount of content has been deleted, or after setting up Data Quality Services (DQS). In such
+after you delete a large amount of content, or after setting up Data Quality Services (DQS). In such
 scenarios, maintain the index to ensure data consistency. To automate maintenance
 operations, use the built-in Index Cleaner tool.
 

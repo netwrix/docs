@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Workflow Operations Log
 
-When workflow actions are performed, the corresponding operations are logged to the web-based log
-file. Click the Logs tab to view the corresponding audit trails.
+When the product performs workflow actions, it logs the corresponding operations to the web-based
+log file. Click the Logs tab to view the corresponding audit trails.
 
 Here you can change the display period or the number of logs displayed, sort the list or copy its
 content, or clear the logs you don't need.
@@ -16,15 +16,14 @@ content, or clear the logs you don't need.
 
 # Workflow Plugins
 
-A range of Workflow actions are provided with the product, but the product can also be extended by
-writing additional actions using the plugin interfaces.
+The product provides a range of Workflow actions, and you can also extend it by writing additional
+actions using the plugin interfaces.
 
-Plugins are implemented as DLLs and are placed in the plugins folder, which is typically located
-here:
+Plugins are DLLs that you place in the plugins folder, typically located here:
 
 **C:\Program Files\ConceptSearching\Plugins\**
 
-The following sample plugins are provided with the product (complete with code):
+The product provides the following sample plugins (complete with code):
 
 - FTP Migration action
 - Http Save Files action

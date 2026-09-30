@@ -6,11 +6,11 @@ sidebar_position: 80
 
 # Initial Product Configuration
 
-The Product Configuration Wizard allows you quickly configure basic Netwrix Data Classification
+The Product Configuration Wizard lets you quickly configure basic Netwrix Data Classification
 settings such as processing mode, taxonomies, etc.
 
 In your web browser, navigate to the following URL: http://hostname/NDC where hostname is the
-name or IP address of the computer where Netwrix Data Classification is installed and perform
+name or IP address of the computer where you installed Netwrix Data Classification, then perform
 initial configuration steps.
 
 On the Instance step, provide the unique name for your Netwrix Data Classification instance. For

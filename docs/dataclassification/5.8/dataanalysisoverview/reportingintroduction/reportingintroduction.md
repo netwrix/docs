@@ -12,15 +12,15 @@ The main dashboard has three high level graphs highlighting the current state of
 
 - Document Progress – A graphical display of the main stats display; once processing completes,
   documents are either “Fully Processed” or in “Errors”
-- Index Size – Shows the percentage of each source type being processed: Files, SharePoint, SQL, and
+- Index Size – Shows the percentage of each source type in processing: Files, SharePoint, SQL, and
   Web sources
 - Classification Coverage – Shows the percentage of classified content, broken down by type, and the
-  percentage of content that has not received any auto-classifications:
+  percentage of content that hasn't received any auto-classifications:
 
 ![reportsdashboard](/images/dataclassification/5.8/admin/reporting/reportsdashboard.webp)
 
 The Classification Distribution graph highlights areas of classification overlap. In the preceding
-example the classification “Communications” has been found to be the most highly scoring term that
+example, the classification “Communications” is the most highly scoring term that
 overlaps on all 3 of the site collections displayed. However, the classification “Data” applies very
 strongly to the “2013” site collection.
 

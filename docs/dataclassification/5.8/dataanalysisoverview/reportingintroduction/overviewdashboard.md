@@ -40,7 +40,7 @@ console, do the following:
 **IMPORTANT!** The data for the dashboard automatically updates every 15 minutes.
 
 :::note
-Refreshing the page will not update the data.
+Refreshing the page doesn't update the data.
 :::
 
 ## Review Sensitive Documents Dashboard
@@ -54,7 +54,7 @@ The dashboard includes the following sections:
     :::
 
 
-- Sensitive Files – helps you identify how many files have been tagged at least once in any of
+- Sensitive Files – helps you identify how many files carry a tag from at least one of the
   Netwrix built-in sensitive taxonomies except for the following: File Type, File Size, Language.
   Review the [Built-in Taxonomies Overview ](/docs/dataclassification/5.8/contentconfigurationoverview/taxonomies/builtintaxonomies.md) section for the
   full list of predefined taxonomies.
@@ -70,17 +70,17 @@ The dashboard includes the following sections:
   contains all sources in the environment, instead of the previous one.
 - Sensitive Files by Taxonomy (Top 5) – shows the top 5 taxonomies that contain most of your
   sensitive data. Use this graph to discover why your data is sensitive. When you hover a taxonomy,
-  the number of sensitive files is shown.
-- Sensitive Files by Term (Top 10) – shows the top 10 terms that have been tagged. Use this graph to
-  see what sensitive data you have in more detail. When you hover a term, the number of sensitive
-  files is shown.
-- Sensitive Files by Age – this graph is based on the last modified date of a file and can be used
-  to see how old your sensitive documents are and how recently files are being changed.
+  the graph shows the number of sensitive files.
+- Sensitive Files by Term (Top 10) – shows the top 10 tagged terms. Use this graph to
+  see what sensitive data you have in more detail. When you hover a term, the graph shows the
+  number of sensitive files.
+- Sensitive Files by Age – this graph is based on the last modified date of a file, and you can use
+  it to see how old your sensitive documents are and how recently files change.
 
 **TIP:** Clicking any dashboard element opens a new tab with the Sensitive Documents report with the
 required filters. For example, clicking the Sensitive Files by Age graph opens the report with your
-sensitive files ordered with the oldest at the top. Use this report to discover where are your
-legacy documents reside. Besides, you can apply filters to narrow the reporting scope.
+sensitive files ordered with the oldest at the top. Use this report to discover where your
+legacy documents reside. You can also apply filters to narrow the reporting scope.
 
 ## Customize Dashboard
 
@@ -116,4 +116,4 @@ later.
 1. Switch to Saved view in the upper left corner of the dashboard.
 2. In the Load Saved Configurations list, select the required configuration.
 
-This will then load you the latest version of that dashboard.
+This loads the latest version of that dashboard.

@@ -26,8 +26,8 @@ following:
     | Results   | This tab contains all records that meet search criteria with the ability to filter by: - Page ID - File location - Modification date - File size In addition, you can export your results to .CSV and XLSX format and copy records to a clipboard. |
     | Audit Log | On this tab you can see all events related to this search request: when the search was run, who, and when reviewed search request results and log.                                                                                                         |
 
-4. After reviewing the request, user can complete it clicking Close Request on the Results tab or
-   export the results.
+4. After reviewing the request, the user can complete it by clicking Close Request on the Results
+   tab, or export the results.
 
 See also:
 

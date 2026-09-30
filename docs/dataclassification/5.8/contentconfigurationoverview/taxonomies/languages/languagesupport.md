@@ -7,12 +7,12 @@ sidebar_position: 20
 # Language Support
 
 This section explains various aspects of multi-language support in administrative web console. In
-general, the application is capable of indexing and classifying information in any language through
+general, the application can index and classify information in any language through
 native Unicode support. However, the support level for some advanced product capabilities and
 built-in classification rules varies for different languages.
 
-Each clue can be restricted to documents written in a subset of the available languages. This is
-useful is a word in one language also appears in another language but has a different meaning. In
+You can restrict each clue to documents written in a subset of the available languages. This is
+useful if a word in one language also appears in another language but has a different meaning. In
 this case you can click the Languages link beside each clue and select any subset of the available
 languages:
 
@@ -20,14 +20,14 @@ languages:
 
 ## Indexing and Classification
 
-Documents in any language can be indexed and classified thanks to Unicode support and statistical
-content analysis techniques. This includes Chinese, Greek, Japanese, Russian, and other non-Latin
+The product can index and classify documents in any language thanks to Unicode support and
+statistical content analysis techniques. This includes Chinese, Greek, Japanese, Russian, and other non-Latin
 based languages.
 
 ## Stemming
 
 Word stemming simplifies classification rules by automatically matching inflected word forms using a
-single keyword clue. Stemming is supported for the following languages:
+single keyword clue. The product supports stemming for the following languages:
 
 - Dutch
 - English
@@ -82,7 +82,7 @@ for better classification precision.
 
 ![clues_1_thumb_0_0](/images/dataclassification/5.8/admin/taxonomies/clues_1_thumb_0_0.webp)
 
-The rules are provided for the following countries (coverage varies):
+The product provides these rules for the following countries (coverage varies):
 
 - Australia
 - Brazil

@@ -17,7 +17,7 @@ types.
 
 [](#)AD Domains Excluded
 
-The AD Domains Excluded list is used to disable Active Directory expansion for certain domain names.
+Use the AD Domains Excluded list to disable Active Directory expansion for certain domain names.
 This is useful in a multi-Domain forest, where the Netwrix Data Classification server doesn't have
 access to all domains within the forest.
 
@@ -30,7 +30,7 @@ this list via the Attachments Excluded form:
 
 ![configattachementsexcluded](/images/dataclassification/5.8/configuration/configattachementsexcluded.webp)
 
-Any file with a path that matches one of these patterns will be ignored. Wildcards may be used
+The product ignores any file with a path that matches one of these patterns. You can use wildcards
 anywhere in the pattern definition, with:
 
 - The asterisk character (\*) matching any sequence of characters
@@ -38,27 +38,27 @@ anywhere in the pattern definition, with:
 
 **No Index**
 
-Sometimes an application may want to remove selected documents from all search results. This may be
-implemented by specifying No Index entries.
+Sometimes an application may want to remove selected documents from all search results. To do this,
+specify No Index entries.
 
 ![confignoindex](/images/dataclassification/5.8/configuration/confignoindex.webp)
 
-Any number of URLs (or Filenames) may be entered and none of these will ever appear in search
-results. Wildcards may be used anywhere in the pattern definition, with:
+You can enter any number of URLs (or Filenames), and none of these ever appear in search
+results. You can use wildcards anywhere in the pattern definition, with:
 
 - The asterisk character (\*) matching any sequence of characters
 - The Question mark character (?) matching any single character
 
 **Proxy Server**
 
-The Proxy Server form may be used to define a proxy server to be used when crawling websites, the
-proxy server isn't used for SharePoint crawling.
+Use the Proxy Server form to define a proxy server for crawling websites. The product doesn't use
+the proxy server for SharePoint crawling.
 
 ![configproxyserver](/images/dataclassification/5.8/configuration/configproxyserver.webp)
 
 Set Bypass Local to Yes to bypass the proxy server for local addresses (localhost etc).
 
-Any other exclusions that shouldn't go through the proxy server should be defined in the Exceptions
+Define any other exclusions that shouldn't go through the proxy server in the Exceptions
 list.
 
 **Suspend Services (Scheduler)**
@@ -72,10 +72,10 @@ some lower priority sources but have them continue to process higher priority so
 
 ![configsuspendservices](/images/dataclassification/5.8/configuration/configsuspendservices.webp)
 
-Service suspensions can be configured in the following ways:
+You can configure service suspensions in the following ways:
 
 - Source—Which source types the suspension is in place for: all source types, specific source types
   (SharePoint, Web etc) or specifically against Re-Indexing operations.
-- Service—Which services are affected by the suspension: All Services, or, a choice of: NDC
+- Service—Which services the suspension affects: All Services, or, a choice of: NDC
   Collector, NDC Indexer, NDC Classifier.
-- Day/Times—Allows the configuration of which days and times the suspension will be in place.
+- Day/Times—Lets you configure which days and times the suspension is in place.

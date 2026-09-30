@@ -8,10 +8,10 @@ sidebar_position: 20
 
 In addition to the common workflow actions provided with the product, you can set up additional
 actions using the plugins. Either use sample plugins from the vendor, or create your own custom
-plugins. Plugins should be stored in the dedicated folder, under _C:\Program
+plugins. Store plugins in the dedicated folder, under _C:\Program
 Files\ConceptSearching\Plugins_.
 
-The following sample plugins (implemented as DLLs) can be provided upon request:
+Netwrix can provide the following sample plugins (implemented as DLLs) upon request:
 
 - FTP Migration action
 - Http Save Files action
@@ -24,5 +24,5 @@ Click the Enable link to enable selected plugins.
 
 ![workflowplugins_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflowplugins_thumb_0_0.webp)
 
-To modify workflow action implemented by a plugin, go to the **Configs** tab and click **Action
+To modify a workflow action that a plugin implements, go to the **Configs** tab and click **Action
 Configs** on the left.

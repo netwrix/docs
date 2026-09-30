@@ -15,15 +15,15 @@ workflow (to start immediate processing). Do the following:
    **Enabled**. Otherwise, select **Disabled** and change this setting later in the UI.
 
     :::note
-    Documents that have already been classified will be re-classified before applying this
+    The product re-classifies already-classified documents before applying this
     automated workflow.
     :::
 
 
     ![workflow_step4_name_settings_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_step4_name_settings_thumb_0_0.webp)
 
-4. When finished, click **Add** to close the wizard. Your new workflow will be added to the list on
-   the **Workflows** tab:
+4. When finished, click **Add** to close the wizard. The product adds your new workflow to the list
+   on the **Workflows** tab:
 
     ![workflow_list_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_list_thumb_0_0.webp)
 

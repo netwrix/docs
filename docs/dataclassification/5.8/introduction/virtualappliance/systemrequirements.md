@@ -7,7 +7,7 @@ sidebar_position: 10
 # Requirements to Deploy Virtual Appliance
 
 This section lists the software requirements and default hardware configuration for the virtual machine
-that will host the Netwrix Data Classification virtual appliance.
+that hosts the Netwrix Data Classification virtual appliance.
 See the following sections for detailed information:
 
 - Software Requirements
@@ -33,9 +33,9 @@ The following table lists the minimum software requirements for the virtual appl
 
 ## Hardware Configuration
 
-When deploying Netwrix Data Classification virtual appliance, a pre-configured virtual machine is
-created. The following table contains the default hardware configuration of the VM where Netwrix Data
-Classification virtual appliance is going to be deployed:
+When you deploy the Netwrix Data Classification virtual appliance, the process creates a
+pre-configured virtual machine. The following table contains the default hardware configuration of
+the VM that hosts the Netwrix Data Classification virtual appliance:
 
 | Parameter          | Value                                              |
 | ------------------ | -------------------------------------------------- |

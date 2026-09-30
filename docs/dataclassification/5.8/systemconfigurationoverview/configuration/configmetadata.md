@@ -16,7 +16,7 @@ following for additional information:
 
 ## Document Metadata Fields
 
-This list specifies which internally generated fields are to be used:
+This list specifies which internally generated fields to use:
 
 ![configdocumentmetadatafields_thumb_0_0](/images/dataclassification/5.8/configuration/configdocumentmetadatafields_thumb_0_0.webp)
 
@@ -38,7 +38,7 @@ Target=”Cheryl Cole”, then a document with this metadata:
 
 `“Modified By: Cheryl Tweedy;”`
 
-Will generate an index with this metadata:
+The product generates an index with this metadata:
 
 `“Modified By: Cheryl Cole;”`
 
@@ -56,7 +56,7 @@ or
 ![arrowadown](/images/dataclassification/5.8/configuration/arrowadown.webp)
 arrows.
 
-For example, if your document is owned or authored by you, but not modified or created, you may
+For example, if you own or authored the document but didn't modify or create it, you may
 choose this priority:
 
 ![owner_mapping_priorities_thumb_0_0](/images/dataclassification/5.8/configuration/owner_mapping_priorities_thumb_0_0.webp)

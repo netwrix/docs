@@ -6,14 +6,14 @@ sidebar_position: 30
 
 # Users and Security Settings
 
-The Users area helps to create and manage users who will be authorized to carry out various
+The Users area helps to create and manage users authorized to carry out various
 administrative functions. It also provides a central mechanism to manage passwords used by the core
 services to crawl content, as well as the ability to restrict access to the available APIs.
 
 By default, no user roles exist, and the administrative functions are unrestricted.
 You must add at least one user to restrict access to the administrative functions.
 
-The following types of authentication mechanisms are supported: Windows, ADFS, Azure AD and Forms.
+The product supports the following types of authentication mechanisms: Windows, ADFS, Azure AD, and Forms.
 
 ![users_main_page_thumb_0_0](/images/dataclassification/5.8/security/users_main_page_thumb_0_0.webp)
 

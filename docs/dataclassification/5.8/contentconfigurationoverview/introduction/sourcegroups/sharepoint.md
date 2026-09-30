@@ -12,13 +12,13 @@ button in the bottom left corner of the page.
 
 ![dynamicsourcegroupspo](/images/dataclassification/5.8/admin/sources/sourcegroups/dynamicsourcegroups/dynamicsourcegroupspo.webp)
 
-The following options can be configured for SharePoint Online Dynamic Source Groups:
+You can configure the following options for SharePoint Online Dynamic Source Groups:
 
 | Option                  | Description                                                                                                                                                                                                                                            |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| URL                     | Enter the URL for the SharePoint Online tenant. Entering a tenant here will apply the configurations on the Source Configuration page to all source groups that are created under the tenant.                                                          |
+| URL                     | Enter the URL for the SharePoint Online tenant. Entering a tenant here applies the configurations on the Source Configuration page to all source groups you create under the tenant.                                                          |
 | Authentication Type     | Credentials — With **Credentials**, users authenticate using username and password credentials Modern (O365) — With **Modern (O365)**, users authenticate using Tenant ID                                                                                   |
-| Match Rules             | At least one match rule must be included, match rules are Regular expressions, such as: <ul><li>`https:\/\/example.sharepoint.com\/sites\/.*`</li><li>`.*\/Personal\/.*`</li><li>`https:\/\/example-my.sharepoint.com\/.*`</li></ul>                   |
+| Match Rules             | You must include at least one match rule. Match rules are regular expressions, such as: <ul><li>`https:\/\/example.sharepoint.com\/sites\/.*`</li><li>`.*\/Personal\/.*`</li><li>`https:\/\/example-my.sharepoint.com\/.*`</li></ul>                   |
 | Classification Template | Search for a Classification Template to apply to Dynamic Source Groups                                                                                                                                                                                 |
-| Detection Period        | The Detection Period set here will apply to all SharePoint Online source groups configured under the URL set in the URL text field. Use the slider to change the Detection Period. To disable detection, set the period to **0** days and **0** hours. |
-| Re-Index Period         | The Re-Index Period set here will apply to all SharePoint Online source groups configured under the URL set in the URL text field. Use the slider to change the Re-Index Period. To disable re-indexing, set the period to **0**.                      |
+| Detection Period        | The Detection Period you set here applies to all SharePoint Online source groups configured under the URL set in the URL text field. Use the slider to change the Detection Period. To disable detection, set the period to **0** days and **0** hours. |
+| Re-Index Period         | The Re-Index Period you set here applies to all SharePoint Online source groups configured under the URL set in the URL text field. Use the slider to change the Re-Index Period. To disable re-indexing, set the period to **0**.                      |

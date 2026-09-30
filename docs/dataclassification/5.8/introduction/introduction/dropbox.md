@@ -9,14 +9,14 @@ sidebar_position: 20
 Netwrix Data Classification connects to and crawls a Dropbox source via a custom Dropbox app,
 created within Dropbox management console.
 
-You will need to create a Dropbox App and authorize it. Do the following:
+You need to create a Dropbox App and authorize it. Do the following:
 
 1. Select Create apps.
 2. Generate Access token
 
 **To create a new app**
 
-To create a new app, you should sign in to Dropbox cloud using a Dropbox Business account with
+To create a new app, sign in to Dropbox cloud using a Dropbox Business account with
 administrative rights. Refer to
 [Dropbox documentation](https://developer.box.com/guides/authentication/#dropbox-documentation) for
 more information on the accounts and rights.
@@ -37,7 +37,7 @@ more information on the accounts and rights.
 
 **To authorize your app**
 
-1. Once your App has been created, navigate to the Permissions tab.
+1. Once you create your App, navigate to the Permissions tab.
 2. Select the following permissions and click submit.
 
     - account_info.read

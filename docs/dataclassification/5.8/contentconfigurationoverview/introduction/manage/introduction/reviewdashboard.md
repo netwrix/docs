@@ -18,7 +18,7 @@ To open the SharePoint dashboard:
 Here you can examine:
 
 - **Index size** diagram that shows index size for various entities (subsites, libraries, etc.)
-- **Classification coverage** diagram that identifies the percentage of content that has had
-  classifications applied, and the percentage that has not.
+- **Classification coverage** diagram that identifies the percentage of classified content and the
+  percentage of unclassified content.
 
 ![sharepointdashboard_thumb_0_0](/images/dataclassification/5.8/admin/sources/sharepoint/sharepointdashboard_thumb_0_0.webp)

@@ -42,6 +42,6 @@ following for additional information:
 3. Click Generate and review results.
 4. You can also export displayed page to .csv and .xlsx table or download the whole results.
 
-    **TIP:** Upon export, you will be prompted to include any associated document metadata to the
+    **TIP:** Upon export, the system prompts you to include any associated document metadata in the
     report. It can be useful if you want to generate custom security reports. Specify metadata
     fields and click Export to download report.

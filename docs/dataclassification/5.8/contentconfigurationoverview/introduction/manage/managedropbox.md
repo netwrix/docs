@@ -6,12 +6,12 @@ sidebar_position: 30
 
 # Dropbox
 
-This section contains information on how to exclude Dropbox files or folders from being crawled.
+This section contains information on how to exclude Dropbox files or folders from crawling.
 
 ## Configure Exclusions
 
-You can define the list of file locations that will be ignored when indexing files in Dropbox, i.e.
-excluded from processing. All Dropbox documents start with _https://www.dropbox.com/home/_ followed
+You can define the list of file locations that the product ignores when indexing files in Dropbox,
+that is, excludes from processing. All Dropbox documents start with _https://www.dropbox.com/home/_ followed
 by the full path to the file. So, to exclude specific document, enter the full document URL. You can
 exclude all pages within a folder - for that, use a wildcard indicator (e.g.
 “_https://www.dropbox.com/home/Test Folder/\*_”).
@@ -29,7 +29,7 @@ To configure exclusions, do the following:
     To exclude a certain file, enter `https://www.dropbox.com/home/<full_path_to_file>`. For
     example: _https://www.dropbox.com/home/Reports__/Test Document.docx_
 
-    Wildcards can be used anywhere in the exclusion pattern definition as follows:
+    You can use wildcards anywhere in the exclusion pattern definition as follows:
 
     - The asterisk character (\*) matching any sequence of characters
     - The question mark character (?) matching any single character
@@ -46,16 +46,16 @@ Exclusions are case-insensitive.
 
 4. Optionally, enter a test path to verify the settings and click **Test**.
 
-    If needed, you can use metadata conditions to restrict when an exclusion filter should be
-    applied. For that, click **Condition** tab and click **Add**. Then select how the exclusion
-    conditions will work: it can check if metadata field of the document has any value, isn't
-    specified, or matches a specific metadata value.
+    If needed, you can use metadata conditions to restrict when the product applies an exclusion
+    filter. For that, click **Condition** tab and click **Add**. Then select how the exclusion
+    conditions work: they can check whether the document's metadata field has any value, has no
+    value, or matches a specific metadata value.
 
     | Criteria      | Condition                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
     | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Comparison    | Compare a value in the document metadata field with the value set by condition. With this criteria selected, you will then need to specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
-    | Has any value | Exclude the document if its metadata field has any value. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
-    | Has no values | Exclude the document if metadata field value isn't specified. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
+    | Comparison    | Compare a value in the document metadata field with the value the condition sets. When you select this criteria, specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
+    | Has any value | Exclude the document if its metadata field has any value. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
+    | Has no values | Exclude the document if the metadata field has no value. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
 
     When finished, click **Add**.
 

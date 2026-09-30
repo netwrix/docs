@@ -10,8 +10,8 @@ The **Searches** interface may contain multiple requests. This section contains 
 to work with searches to address specific tasks.
 
 :::note
-To manage the search requests, users require sufficient access rights that are assigned by
-the **Super User** (DSAR Administrator). See [DSAR Roles](/docs/dataclassification/5.8/dataanalysisoverview/dsar/roles.md) for details on the available
+To manage the search requests, users require sufficient access rights, which the
+**Super User** (DSAR Administrator) assigns. See [DSAR Roles](/docs/dataclassification/5.8/dataanalysisoverview/dsar/roles.md) for details on the available
 roles, their rights and permissions.
 :::
 
@@ -38,8 +38,8 @@ Complete_, _Updated Date_, etc.
 
 ## Cancel Search
 
-If a search request is pending, you can cancel it — this will prevent the search terms from being
-included in the search when it runs.
+If a search request is pending, you can cancel it — this prevents the search from including the
+search terms when it runs.
 
 To cancel a search request, do the following:
 
@@ -49,8 +49,8 @@ To cancel a search request, do the following:
 
 ## Template Search
 
-You can use previous searches as a template i.e., clone the parameters of a previous search in order
-to minimize the time required to initiate a similar (or identical) search.
+You can use previous searches as a template i.e., clone the parameters of a previous search to
+minimize the time required to initiate a similar (or identical) search.
 
 To template search request, do the following:
 
@@ -58,4 +58,4 @@ To template search request, do the following:
 2. Locate the Searches tab.
 3. Select search and click Template on the right.
 
-A new search window will appear, pre-populated with exactly the same criteria as the original search.
+A new search window appears, pre-populated with exactly the same criteria as the original search.

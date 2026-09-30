@@ -11,14 +11,14 @@ Only available for ‘Superusers’
 :::
 
 
-The Backup utility allows for the migration of complex Netwrix Data Classification instance
+The Backup utility lets you migrate complex Netwrix Data Classification instance
 configurations.
 
 Use this feature to safely design and test a Netwrix Data Classification configuration in a
 development environment, then copy the configuration, or specific parts of it, to a different
 environment (for example, production).
 
-The tool supports text replacement to allow user defined URL's to be replaced by the equivalent
+The tool supports text replacement so you can replace user-defined URLs with the equivalent
 destination URL. The following configuration options are available for import / export:
 
 - Source Registrations
@@ -48,7 +48,7 @@ To create configuration backup:
 SharePoint taxonomies, or workflows).
 
 :::note
-The backup password will be required if you export a backup to XML and re-import to a
+You need the backup password if you export a backup to XML and re-import to a
 different environment. This option is required on **Upload Backup** step.
 :::
 

@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Browse
 
-To view the documents classified for each term, click the Browse tab. This will display a list of
+To view the documents classified for each term, click the Browse tab. This displays a list of
 documents achieving the minimum score set for classification in the term.
 See [Classification Rules (Clues)](/docs/dataclassification/5.8/contentconfigurationoverview/taxonomies/clues/clues.md) for details on how clues control classification scoring.
 
@@ -15,7 +15,7 @@ This list shows the current classification status of each document. The system d
 :::
 
 To see how the classification of each document would change based on the current term configuration, 
-tick the Show Movements checkbox. When selected, the results will display any change 
+tick the Show Movements checkbox. When selected, the results display any change 
 in document scoring between the current stored document score and the score it would receive 
 against the current classification clues.
 
@@ -31,8 +31,8 @@ shows the documents for that class.
 
 You can use the Browse function to:
 
-- Identify documents that are receiving a score, but are "missing" being classified because they do
-  not quite reach the terms threshold. For example, changing the mode to "Near Misses `<20%`" for a
+- Identify documents that are receiving a score, but that "miss" classification because they don't
+  quite reach the term's threshold. For example, changing the mode to "Near Misses `<20%`" for a
   term with a threshold of 50, will find any documents that scored 40 or more, but didn't reach the
   threshold.
 - Identify low scoring documents that are only just reaching the classification threshold. For
@@ -48,5 +48,5 @@ To include results from these sources, tick the Show Unindexed Documents checkbo
 
 
 To restrict the browsing scope, you can either add a URL filter, or add a custom filter, as well as
-select to show document movements and include unindexed documents. These options are configured in the same way as for
+select to show document movements and include unindexed documents. You configure these options in the same way as for
 [Search Documents by Clue](/docs/dataclassification/5.8/contentconfigurationoverview/taxonomies/clues/search.md).

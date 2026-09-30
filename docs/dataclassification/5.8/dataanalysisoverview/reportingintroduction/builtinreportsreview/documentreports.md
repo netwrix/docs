@@ -25,8 +25,8 @@ Review the list of the built-in document reports:
 - Manual Tagging—Provides a report on the manual and automatically assigned document
   classifications—filtered specifically to manually classified documents. Supports filtering by URL
   and source group.
-- Near Duplicate Detection—Details near duplicate documents across the index. Near duplicates are
-  detected as a background process. To enable background processing, select the
+- Near Duplicate Detection—Details near duplicate documents across the index. The product detects
+  near duplicates as a background process. To enable background processing, select the
   ‘Near Duplicate Detection’ option within the NDC Indexer Settings and rebuild the necessary sources. See
   the [Core Configuration](/docs/dataclassification/5.8/systemconfigurationoverview/configuration/coreconfiguration/coreconfiguration.md) topic for configuration
   information. Supports filtering by URL, source group and excluding content types (comma delimited

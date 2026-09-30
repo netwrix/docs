@@ -21,7 +21,7 @@ You can delete a single workflow or a group of workflows within the scope (Globa
 
     ![workflow_delete_single_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_delete_single_thumb_0_0.webp)
 
-    3. This will open the list of workflows for selected scope. Select the workflow you need and
+    3. This opens the list of workflows for the selected scope. Select the workflow you need and
        click **Delete**.
 
     ![workflows_category_list_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflows_category_list_thumb_0_0.webp)

@@ -12,23 +12,23 @@ the bottom left corner of the page.
 
 ![dynamicsourcegroupgd](/images/dataclassification/5.8/admin/sources/sourcegroups/dynamicsourcegroups/dynamicsourcegroupgd.webp)
 
-The following options can be configured for Google Drive Dynamic Source Groups:
+You can configure the following options for Google Drive Dynamic Source Groups:
 
 | Option              | Description                                                                                                                                                                                                                                                                  |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Administrator Email | Enter the email for a Google Drive administrator account. The information entered here can't be edited after the configurations for this dynamic source group are saved.                                                                                                   |
+| Administrator Email | Enter the email for a Google Drive administrator account. You can't edit the information you enter here after you save the configurations for this dynamic source group.                                                                                                   |
 | Crawl Shared Drives | Check the box to enable data collection from shared drives. Uncheck the box to disable this option.                                                                                                                                                                          |
 | Crawl User Drives   | Check the box to enable data collection from user drives. Uncheck the box to disable this option.                                                                                                                                                                            |
-| Match Rules         | At least one match rule must be included, match rules are Regular expressions, such as: <ul><li>`.*\/mySharedDrive.*`</li></ul>                                                                                                                                              |
-| Detection Period    | The Detection Period set here will apply to all Google Drive source groups configured under the URL set in the URL text field. Use the slider to change the Detection Period. To disable detection, set the period to **0** days and **0** hours.                            |
+| Match Rules         | You must include at least one match rule. Match rules are regular expressions, such as: <ul><li>`.*\/mySharedDrive.*`</li></ul>                                                                                                                                              |
+| Detection Period    | The Detection Period you set here applies to all Google Drive source groups configured under the URL set in the URL text field. Use the slider to change the Detection Period. To disable detection, set the period to **0** days and **0** hours.                            |
 | JSON Import         | Drag and drop a JSON file containing the service account credentials here, or copy the JSON text to the 'Project ID' field to automatically import the connection settings. If manually configuring Connection Settings, click the **Show All Configuration Fields** button. |
 | Project ID          | If applicable, paste the copied JSON text into the Project ID field to automatically import connection settings.                                                                                                                                                             |
-| Re-Index Period     | The Re-Index Period set here will apply to all Google Drive source groups configured under the URL set in the URL text field. Use the slider to change the Re-Index Period. To disable re-indexing, set the period to **0**.                                                 |
+| Re-Index Period     | The Re-Index Period you set here applies to all Google Drive source groups configured under the URL set in the URL text field. Use the slider to change the Re-Index Period. To disable re-indexing, set the period to **0**.                                                 |
 
 
 ## Connection Fields
 
-The following information must be provided if manually configuring connection settings:
+You must provide the following information if manually configuring connection settings:
 
 | Option                     |
 | -------------------------- |

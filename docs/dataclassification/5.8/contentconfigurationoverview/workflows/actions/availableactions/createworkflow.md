@@ -13,19 +13,19 @@ To configure a workflow:
 
 1. On the **Workflow** tab, click **Add** and in the dialog displayed click **Advanced**.
 2. Specify **Name** for the workflow.
-3. From the **Type** dropdown list, select the type of content your workflow will apply to.
+3. From the **Type** dropdown list, select the type of content your workflow applies to.
 4. Click **Add**.
 
     ![add_workflows_advanced_name_thumb_0_0](/images/dataclassification/5.8/admin/workflows/advancedwindow/add_workflows_advanced_name_thumb_0_0.webp)
 
 5. Configure document processing rules. For each rule, set up rule
-   conditions and rule actions. Also, specify how the workflow should process rules.
+   conditions and rule actions. Also, specify how the workflow processes rules.
 
     - Specifying Rule Conditions
     - Specifying Rule Actions
     - Other Rule Settings
 
-    To apply pre-conditions (they will be used before rule processing starts), see Specifying
+    To apply pre-conditions (the workflow uses them before rule processing starts), see Specifying
     Workflow Conditions
 
 6. Navigate to Content → Sources and select Re-classify for the selected sources in the workflow.
@@ -34,25 +34,25 @@ To configure a workflow:
 
 1. In the corresponding section on the **Rule** tab, click **Edit** on the right. The **Edit Rule
    Conditions** dialog opens.
-2. From the **Mode** list, select how the conditions should be applied.
+2. From the **Mode** list, select how the product applies the conditions.
 
 ![add_workflows_rule_conditions_thumb_0_0](/images/dataclassification/5.8/admin/workflows/advancedwindow/add_workflows_rule_conditions_thumb_0_0.webp)
 
 The following options are available:
 
-- **Any Document** — with this option selected, the workflow will be applied to all documents in the
+- **Any Document** — with this option selected, the workflow applies to all documents in the
   specified content source
-- **Any Classified Document** — with this option selected, the workflow will be applied to the
-  documents in the specified source if they were tagged by any classification
+- **Any Classified Document** — with this option selected, the workflow applies to the
+  documents in the specified source if any classification tagged them
 - **Specific Classification** — with this option selected, you need to specify whether to apply the
   workflow to the classified or non-classified documents
 
     - To process only documents classified by specific classification, select **Classified** (this
-      will act as including filter)
+      acts as an including filter)
     - To process only non-classified documents, select **Not Classified**.
 
-    If you have selected any of the **Specific Classification** variants, you should then specify
-    taxonomy terms that will be applied to filter out the documents for your workflow.
+    If you selected any of the **Specific Classification** variants, then specify
+    taxonomy terms to filter the documents for your workflow.
 
 **To configure terms**
 
@@ -64,7 +64,7 @@ The following options are available:
        you don't select this option, the system displays the list of terms after you select the taxonomy. Select the one you plan to use for filtering.
 
     :::note
-    Multiple selection isn't supported: to configure several filter values, you should
+    The product doesn't support multiple selection: to configure several filter values,
     repeat this procedure for each filter value you need.
     :::
 
@@ -77,7 +77,7 @@ The following options are available:
 
 - To apply AND logic (i.e. the document must match all filters), select **Require all conditions be
   met**.
-- Otherwise, OR logic will be used (i.e. the document must meet any of the filtering conditions).
+- Otherwise, the product uses OR logic (i.e. the document must meet any of the filtering conditions).
 
 4. Verify the filtering term appears in the **Edit Rule Conditions** window in blue.
    Click **Save**.
@@ -99,10 +99,10 @@ taxonomy, configure the rule condition as follows:
 
 ![add_workflows_advanced_details_thumb_0_0](/images/dataclassification/5.8/admin/workflows/advancedwindow/add_workflows_advanced_details_thumb_0_0.webp)
 
-Ensure the filtering term is displayed in the Edit Rule Conditions window with blue color. Click
+Ensure the filtering term appears in the Edit Rule Conditions window in blue. Click
 **Save**.
 
-The configured rule condition will appear in the **Rule Condtions** section on the **Rule** tab.
+The configured rule condition appears in the **Rule Condtions** section on the **Rule** tab.
 
 ## Specifying Rule Actions
 
@@ -120,7 +120,7 @@ On the **Rule** tab, you can also manage the rule, as follows:
 - Add another rule by clicking the '+' sign.
 - Enable or disable the rule by selecting or clearing the **Enabled** checkbox in the top right
   corner.
-- Specify how rule application will affect workflow processing. Possible options are:
+- Specify how rule application affects workflow processing. Possible options are:
     - **Processing stops if this rule is run**
     - **Processing stops if any action fails**
 - **Edit** rule conditions.

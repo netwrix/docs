@@ -11,7 +11,7 @@ term.
 
 ![bulkedit](/images/dataclassification/5.8/admin/taxonomies/bulkedit.webp)
 
-Clues can be suggested for a term via the following methods:
+The product can suggest clues for a term via the following methods:
 
 - Suggest Clues for whole term: Click the Suggest Clues for class link under the class heading to
   produce a list of suggestions, based on all existing clues in the class.
@@ -20,15 +20,15 @@ Clues can be suggested for a term via the following methods:
 - Class Document: Click the Suggest link against each class document to produce a list of
   suggestions, based on the document.
 
-After the list of suggested clues is generated, you can select and add them to the term
+After the product generates the list of suggested clues, you can select and add them to the term
 clues:
 
 :::note
-Changes made to a class will have no effect unless documents are re-classified.
+Changes to a class have no effect unless you re-classify documents.
 :::
 
 
-The clue type can be set to one of the following:
+You can set the clue type to one of the following:
 
 - Standard
 - Case-Sensitive
@@ -36,7 +36,7 @@ The clue type can be set to one of the following:
 - Create Tree Node
 
 :::note
-If you select Create Tree Node, these topics are added as children of the
+If you select Create Tree Node, the product adds these topics as children of the
 selected node in the taxonomy structure.
 
 :::

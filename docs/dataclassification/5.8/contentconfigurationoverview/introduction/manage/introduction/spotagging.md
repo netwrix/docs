@@ -11,9 +11,8 @@ For a SharePoint source, tagging means automatically populating
 classification attributes from **SharePoint Term Sets** that you registered as taxonomies within
 Netwrix Data Classification.
 
-To configure tagging for your SharePoint source, you should first check the prerequisites and take
-the following preparatory steps. Then you will be able to launch a specially designed SharePoint
-Tagging Wizard.
+To configure tagging for your SharePoint source, first check the prerequisites and take the
+following preparatory steps. You can then launch the specially designed SharePoint Tagging Wizard.
 
 **To check the prerequisites**
 
@@ -24,7 +23,7 @@ Tagging Wizard.
    [this Microsoft article](https://support.office.com/en-gb/article/create-a-managed-metadata-column-8fad9e35-a618-4400-b3c7-46f02785d27f)
    for details.
 3. Ensure that the term sets you want are registered as taxonomies within the Netwrix Data
-   Classification console. See **Importing Taxonomies - SharePoint** section in for details.
+   Classification console. See the **Importing Taxonomies - SharePoint** section for details.
 4. Install the appropriate SharePoint product in your SharePoint environment
    (typically, the provider-hosted add-In named _conceptClassifierApp_; see the following procedure
    for details).

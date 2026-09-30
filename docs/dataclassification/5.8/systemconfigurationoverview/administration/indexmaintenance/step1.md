@@ -18,7 +18,7 @@ Select the operation you want to perform:
   (during that process, search results become unavailable).
 
 :::note
-This option is recommended after setting up Data Quality Services (DQS) configuration.
+Netwrix recommends this option after setting up Data Quality Services (DQS) configuration.
 :::
 
 

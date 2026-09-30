@@ -16,7 +16,7 @@ When an NDC instance detects that the encryption key is missing, NDC logs and di
 
 The primary instance recovers automatically on collector startup if the encryption key exists in the database. 
 
-If the database key is also no longer present or accessible but the key still exists on at least one secondary instance, the services on the primary instance will halt. If this occurs, contact Netwrix support for assistance with recovering the encryption key from a secondary instance to the primary instance.
+If the database key is also no longer present or accessible but the key still exists on at least one secondary instance, the services on the primary instance halt. If this occurs, contact Netwrix support for assistance with recovering the encryption key from a secondary instance to the primary instance.
 
 ## Recovering the Encryption Key
 
@@ -27,4 +27,4 @@ To recover the encryption key on a secondary instance:
 3. Continue through to the DQS sync step.
 4. Follow the instructions listed in steps 9 through 12 of the [Enabling DQS Mode (5.7.10 and later versions) section of Configuring an NDC Server Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.8/introduction/deployment/ndcserverandclient/dqsmode.md#enabling-dqs-mode-5710-and-later-versions).
 
-After you complete all steps, the key is restored to the secondary instance. Start the services again and they should load the key and function correctly. It may take a minute for all 3 services to pick up the new key. If the issue persists, contact Netwrix support for assistance with diagnosis and remediation.
+After you complete all steps, the secondary instance holds the recovered key. Start the services again; they load the key and function correctly. It may take a minute for all 3 services to pick up the new key. If the issue persists, contact Netwrix support for assistance with diagnosis and remediation.

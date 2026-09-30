@@ -14,7 +14,7 @@ Virtual appliance — If you run a Microsoft Hyper-V or VMware vSphere, you can 
 Classification as a virtual appliance. Virtual appliance is a VM image file with installed Netwrix
 Data Classification. The image is also configured to use Microsoft Edge as a default web browser.
 
-The following configuration options available:
+The following configuration options are available:
 
 - Generalized Windows Server 2022, 180-day evaluation version.
 - Generalized Windows Server 2019, 180-day evaluation version.

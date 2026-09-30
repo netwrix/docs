@@ -24,7 +24,7 @@ Auto-Classification.
 
 ![reports_doctagging_thumb_0_48](/images/dataclassification/5.8/admin/reporting/reports_doctagging_thumb_0_0.webp)
 
-The report will be displayed in the preview pane.
+The report appears in the preview pane.
 
 You can export document-specific report data along with any associated document metadata. For that,
 in the bottom of the pane select the export option you need (_CSV/XLSX_). Your browser downloads the file to your default downloads folder.
@@ -32,11 +32,11 @@ in the bottom of the pane select the export option you need (_CSV/XLSX_). Your b
 ## Save Report Configuration
 
 Netwrix Data Classification lets you save report configuration settings as a template for the
-future use. Then if you need to run the report with the specified parameters more than once, you can
-just load its configuration from the template you have saved.
+future use. Then if you need to run the report with the specified parameters more than once, load
+its configuration from the template you saved.
 
 :::note
-This capability is supported for built-in reports (Classification, Clue Building,
+The product supports this capability for built-in reports (Classification, Clue Building,
 Document, and System reports).
 :::
 
@@ -56,7 +56,7 @@ left.
 ![save_report_config](/images/dataclassification/5.8/admin/reporting/report_template.webp)
 
 :::note
-Report configuration templates are saved per user.
+The product saves report configuration templates per user.
 :::
 
 

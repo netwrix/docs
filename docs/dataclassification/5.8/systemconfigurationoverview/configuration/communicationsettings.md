@@ -15,7 +15,7 @@ configuring email groups and health service notifications. Review the following 
 
 [](#)Email Servers
 
-Email servers can be configured to enable external communication. Use email servers to send report
+You can configure email servers to enable external communication. Use email servers to send report
 subscriptions and health errors to users automatically.
 
 You can modify servers after initial configuration by selecting Edit, and add new SMTP servers by
@@ -24,7 +24,7 @@ selecting Add Email Server Configuration.
 ![configemailservers](/images/dataclassification/5.8/configuration/configemailservers.webp)
 
 Enter the SMTP details using the values from your network team. 
-NDC supports SMTP servers with and without SSL configured. Anonymous SMTP server authentication is also supported.
+NDC supports SMTP servers with and without SSL configured. NDC also supports anonymous SMTP server authentication.
 
 You can supply a test email address to test the configuration settings
 
@@ -34,7 +34,7 @@ You can supply a test email address to test the configuration settings
 
 You use email groups to define a logical group of people to email—essentially, a mailing list.
 
-Each email group is linked to an SMTP server, so, before configuring an email group, you must
+Each email group links to an SMTP server, so, before configuring an email group, you must
 configure your Email Servers.
 
 To add a new group, select Add Email Server Group, or select Edit on each row to configure the group
@@ -48,7 +48,7 @@ select an email group.
 [](#)Health Service Notifications
 
 Configure Health Service Notifications to email a specific group of people when something
-goes wrong within the product. Each notification configuration is linked to an email group, so,
+goes wrong within the product. Each notification configuration links to an email group, so,
 before configuring notifications, you must configure your Email Groups.
 
 To add a new notification configuration select Add Notification Configuration, or select Edit on

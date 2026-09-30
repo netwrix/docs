@@ -6,19 +6,19 @@ sidebar_position: 40
 
 # Configure NFS File Share for Crawling
 
-To process Network File System (NFS) file shares, you must enable specific Windows features. The steps to enable these features differ depending on the operating system of the computer where Netwrix Data Classification is installed.
+To process Network File System (NFS) file shares, you must enable specific Windows features. The steps to enable these features differ depending on the operating system of the computer where you installed Netwrix Data Classification.
 
 :::note
 Before configuration, consider the following:
 :::
 
 
-- NFS File shares are only supported from servers running Windows Server 2012 or later (or
+- The product supports NFS File shares only from servers running Windows Server 2012 or later (or
   Windows 10)
-- Writing classifications to NFS file shares is only supported from Netwrix Data Classification
-  5.4.8 onwards
-- Changes made to files (including adding new files) will not be automatically detected until the
-  source is re-indexed—Netwrix recommends setting the re-index period for NFS file shares to 1 day.
+- Netwrix Data Classification supports writing classifications to NFS file shares only from
+  version 5.4.8 onwards
+- The product doesn't automatically detect changes to files (including new files) until you
+  re-index the source—Netwrix recommends setting the re-index period for NFS file shares to 1 day.
 
 Add the Folder source as described in the [File System](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/overview.md)
 topic.
@@ -33,7 +33,7 @@ Don't specify username and password while adding data source.
 1. On the Windows desktop, start Server Manager.
 2. On the Manage menu, click Add Roles and Features.
 3. Progress to the Features step.
-4. Ensure that Client for NFS option enabled.
+4. Ensure the Client for NFS option is enabled.
 5. Complete the wizard.
 
 ## To configure Windows 10:

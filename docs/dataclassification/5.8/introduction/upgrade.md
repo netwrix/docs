@@ -60,7 +60,7 @@ upgrade the primary server before the secondary instances. Secondary instances
 attempt to resynchronize with the primary instance during the upgrade process, and this resynchronization 
 fails if you haven't upgraded the primary instance.
 
-When upgrading to 5.7.10 or later from an earlier version of 5.7, you should
+When upgrading to 5.7.10 or later from an earlier version of 5.7,
 run the installer as the NDC service account if possible so that the installer can synchronize the DQS instances automatically. 
 If you don't, you must resynchronize DQS when upgrading each secondary DQS instance. For further details on this process,
 see the [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.8/introduction/deployment/ndcserverandclient/dqsmode.md) page.

@@ -10,13 +10,13 @@ This topic contains information on configuring redaction plans and entities.
 
 ## Redaction Plans
 
-Redaction plans can be used as an optional migration step to remove specific entities from supported
-content types. During the migration of a document a migration plan will remove the following entity
+You can use redaction plans as an optional migration step to remove specific entities from supported
+content types. During the migration of a document, a migration plan removes the following entity
 types (depending on the configuration):
 
 - NLP Entities—Items that the NLP entity extraction identifies, such as names or locations. NLP stands
-  for Natural Language Processing, which is a subfield of artificial intelligence and allows to
-  classify and identify such entities in text as places, organizations, dates, names, monetary
+  for Natural Language Processing, which is a subfield of artificial intelligence that classifies
+  and identifies such entities in text as places, organizations, dates, names, monetary
   values, and others
 - Regex Entities—Items that the Regex classification clues identify, such as credit card numbers or
   social security numbers
@@ -38,6 +38,6 @@ Use Entity Groups to add redaction entities to specific groups.
 
 ## Redaction Entities
 
-Use Entities to specify any custom words or phrases that should be removed by a redaction plan.
+Use Entities to specify any custom words or phrases for a redaction plan to remove.
 
 ![configredactionentities](/images/dataclassification/5.8/configuration/configredactionentities.webp)

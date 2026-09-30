@@ -7,7 +7,7 @@ sidebar_position: 70
 # SharePoint
 
 This section contains information on how to configure tagging of your SharePoint content, exclude a
-site from being processed, define custom configuration to your subsite, and other configuration
+site from processing, define custom configuration to your subsite, and other configuration
 procedures.
 
 This article covers:
