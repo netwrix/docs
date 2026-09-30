@@ -2,7 +2,7 @@
 description: >-
   Explains how to resolve the "Cannot create a file when that file already
   exists" (Error 183) when creating an SSL binding for Netwrix Access Analyzer
-  Access Reports or Access Info Center by unbinding the prior certificate and
+  Access Reports or Access Information Center by unbinding the prior certificate and
   binding a new one.
 keywords:
   - SSL
@@ -12,7 +12,7 @@ keywords:
   - Error 183
   - Cannot create a file when that file already exists
   - Netwrix Access Analyzer
-  - Access Info Center
+  - Access Information Center
 products:
   - access-analyzer
   - access_info_center
@@ -28,7 +28,7 @@ knowledge_article_id: kA0Qk0000001JBtKAM
 
 ## Symptom
 
-When you attempt to create an SSL binding for Netwrix Access Analyzer Access Reports or Access Info Center, your PowerShell instance prompts the following error:
+When you attempt to create an SSL binding for Netwrix Access Analyzer Access Reports or Access Information Center, your PowerShell instance prompts the following error:
 
 ```
 SSL Certificate add failed, Error: 183
@@ -57,8 +57,8 @@ Refer to the following steps to verify that the target port has a bound SSL cert
 
    Replace `481` with the target port.
 
-3. Bind a new certificate—refer to the following article for additional information: Secure Console Access—Create an SSL Binding · v10.7 https://docs.netwrix.com/docs/auditor/10_8).
+3. Bind a new certificate. For more information, see: [Enable SSL for the Web Console](https://docs.netwrix.com/docs/accessanalyzer/12_0/install/application/reports/secure#enable-ssl-for-the-web-console).
 
 ## Related Articles
 
-- Secure Console Access—Create an SSL Binding · v10.7 https://docs.netwrix.com/docs/auditor/10_8)
+- [Securing the Web Console](https://docs.netwrix.com/docs/accessanalyzer/12_0/install/application/reports/secure)
