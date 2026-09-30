@@ -30,7 +30,7 @@ The _Query Server_ application implements this functionality.
 
 You configure DQS mode in the administrative web console and, from version 5.7.10 onwards, the installer.
 
-You can't undo DQS configuration once you apply it to your NDC deployment. Netwrix strongly
+You can't undo DQS configuration after you apply it to your NDC deployment. Netwrix strongly
 recommends taking a full backup of your environment before enabling DQS.
 Also, read the DQS documentation sections thoroughly before you start.
 
@@ -130,8 +130,8 @@ NDC Servers in the cluster. **The system will recollect all data sources**, whic
 take a significant amount of time.
 
 :::note
-To force re-distribution when necessary, you can use the Re-Collect command available
-after clicking **Run Cleaner** button on the **Settings > Core > Collector** tab.
+To force re-distribution, use the Re-Collect command, which becomes available after you click
+the **Run Cleaner** button on the **Settings > Core > Collector** tab.
 :::
 
 

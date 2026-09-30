@@ -67,7 +67,7 @@ SQL Database.
     | checkpoint_timeout | 15min | 15min |
     | checkpoint_completion_target | 0.9 | 0.9 |
 
-Netwrix recommends these values for a fully loaded instance of the given size, i.e. up to 16 million files processed by a single instance. 
+Netwrix recommends these values for a fully loaded instance of the given size, i.e. up to 16 million files per instance. 
 
 3. Reload the configuration in your PostgreSQL instance by restarting the service.
 

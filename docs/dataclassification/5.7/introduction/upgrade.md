@@ -47,7 +47,7 @@ For versions of 5.7 before 5.7.10, all NDC services and the NDC IIS Application 
 
 You can upgrade directly to Netwrix Data Classification 5.7 only from versions 5.5 and newer.
 
-After taking the preceding preparatory steps, run the product setup and follow the wizard
+After completing the preparatory steps, run the product setup and follow the wizard
 steps. When the upgrade finishes, all solution components are running.
 
 To upgrade from an earlier version, perform a staged upgrade: first upgrade to version 5.5, then

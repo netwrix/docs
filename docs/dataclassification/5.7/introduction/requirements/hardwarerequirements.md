@@ -105,7 +105,7 @@ Provide the total file count and storage usage from the BOX Admin Dashboard
 
 **Plan the Production Deployment**
 
-To size servers for your Netwrix Data Classification setup, use the metrics produced during the
+To size servers for your Netwrix Data Classification setup, use the metrics you produced during the
 scoping stage. Apply the total number of files, documents, emails from all data sources to the following table to obtain corresponding hardware requirements.
 
 :::warning

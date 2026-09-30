@@ -9,8 +9,8 @@ sidebar_position: 1
 Netwrix Data Classification is a platform that identifies data that’s important for your
 organization, helping you reduce risk and realize the full value of this data.
 
-Powered by unique compound term processing technology, it enriches your enterprise content with
-accurate and consistent metadata empowering you to work with data more confidently. By seeing which
+Using unique compound term processing technology, it enriches your enterprise content with
+accurate and consistent metadata, empowering you to work with data more confidently. By seeing which
 data is valuable, you can organize it in a way that promotes productivity and collaboration. By
 knowing where sensitive or regulated data is, you can reduce the risk of breaches and satisfy
 security and privacy requirements with less effort and expense. And by locating and removing
@@ -114,8 +114,8 @@ The NDC SQL Database manages the queue of documents being indexed. The applicat
 to store any application-specific information independently from Netwrix Data
 Classification.
 
-The QueryServer will also retrieve selected information for the current hitlist from the SQL
-Database such as: the document title, body text, etc. However, the QueryServer always requests this
+The QueryServer also retrieves selected information for the current hitlist, such as the document
+title and body text, from the SQL Database. However, the QueryServer always requests this
 information using a primary key, which makes it very efficient. The QueryServer always constructs and ranks the
 hitlist using information contained in the proprietary conceptDatabase.
 

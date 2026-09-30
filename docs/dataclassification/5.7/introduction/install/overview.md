@@ -20,7 +20,7 @@ sidebar_position: 40
     | Option                | Description                                                                                                              |
     | --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
     | Server Name           | Provide the name of the instance that will host the NDC SQL database. For example, _"WORKSTATIONSQL\SQLSERVER"_.  |
-    | Authentication Method | Select the authentication method. For SQL Server, choose between Windows and Database authentication. For PostgreSQL, only Database authentication is possible.                                                        |
+    | Authentication Method | Select the authentication method. For SQL Server, choose between Windows and Database authentication. PostgreSQL supports only Database authentication.                                                        |
     | Username              | Specify the account name.                                                                                                |
     | Password              | Provide the account password.                                                                                                   |
     | Database Name         | Enter the name of the NDC database. Netwrix recommends using NDC as the database name.                                   |
