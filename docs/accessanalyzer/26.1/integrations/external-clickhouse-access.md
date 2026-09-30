@@ -28,7 +28,7 @@ These ports are unencrypted. Credentials and query results cross the network in 
 
 Access Analyzer's bundled k3s cluster includes ServiceLB, its built-in load balancer. Use `LoadBalancer` with a list of allowed client address ranges in Classless Inter-Domain Routing (CIDR) notation. ServiceLB binds ports 9000 and 8123 on the server, so those ports must be free.
 
-`NodePort` has no access control in Access Analyzer, so restrict it with the server's firewall. Use it only if you disabled ServiceLB or ports 9000 and 8123 are taken.
+`NodePort` has no access control in Access Analyzer, so restrict it with the server's firewall. Use it only if you disabled ServiceLB or ports 9000 and 8123 are already in use.
 
 A list of allowed address ranges works only with `LoadBalancer`. Setting it with `NodePort` fails.
 
@@ -75,7 +75,7 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
 
 Opening access creates a dedicated analytics store user, `access_analyzer_external`, with a generated password. The user has read-only access to the `access_analyzer` and `access_analyzer_sample` databases, with the same per-query memory limits as the user Access Analyzer's own reports use.
 
-Give external tools only this user. Don't hand out the analytics store's administrator credentials: the exposed port reaches the administrator like any other user, so its password is the only thing protecting it.
+Give external tools only this user. Don't share the analytics store's administrator credentials: the exposed port reaches the administrator like any other user, so its password is the only thing protecting it.
 
 1. On the Access Analyzer server, print the password:
 
