@@ -13,14 +13,14 @@ sidebar_position: 40
    _D:\Data\NDC\Index._
 5. On the Configuration step, specify the directory in which the Index files will be stored. For example,
    _C:\Program Files\NDC\Index_.
-6. On the SQL Database step, provide the SQL Server database connection details.
+6. On the SQL Database step, select either SQL Server or Postgres and provide the database connection details.
 
     Complete the following fields:
 
     | Option                | Description                                                                                                              |
     | --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-    | Server Name           | Provide the name of the SQL Server instance that will host the NDC SQL database. For example, _"WORKSTATIONSQL\SQLSERVER"_. |
-    | Authentication Method | Select Windows or SQL Server authentication method.                                                                      |
+    | Server Name           | Provide the name of the instance that will host the NDC SQL database. For Postgres installations, you will need to provide the port number. For example, _"WORKSTATIONSQL\SQLSERVER:5432"_.  |
+    | Authentication Method | Select the authentication method. For SQL Server, choose between Windows and Database authentication. For Postgres, only Database authentication is possible.                                                        |
     | Username              | Specify the account name.                                                                                                |
     | Password              | Provide the account password.                                                                                                   |
     | Database Name         | Enter the name of the NDC database. Netwrix recommends using NDC as the database name.                                   |

@@ -45,6 +45,7 @@ The following are the software requirements for Netwrix Data Classification inst
 3. **SQL Server**
    - SQL Server 2008 R2 Standard Edition (or later).
    - SQL Server 2016 SP2 recommended (for better performance).
+   - PostgreSQL 18 (or later).
 
    :::note
    For large environments, SQL Server Enterprise edition may be needed; see [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/overview.md).

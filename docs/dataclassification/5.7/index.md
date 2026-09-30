@@ -119,7 +119,7 @@ Database such as: the document title, body text, etc. However, this information 
 using a primary key and so is very efficient. The hitlist itself is always constructed and ranked
 using information contained in the proprietary conceptDatabase.
 
-The current release of Netwrix Data Classification supports SQL Server 2008 R2 or later.
+The current release of Netwrix Data Classification supports SQL Server 2008 R2 or later and PostgreSQL 18 or later.
 
 ## NDC Index
 

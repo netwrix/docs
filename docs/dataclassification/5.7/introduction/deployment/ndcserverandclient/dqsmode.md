@@ -67,7 +67,7 @@ Only users with the **Superuser** role can configure DQS mode.
 8. On each server, follow the installation steps as described in the
    [Install Netwrix Data Classification](/docs/dataclassification/5.7/introduction/install/overview.md) section up to the SQL Database
    configuration step.
-9. On the SQL Database step, provide connection details for the SQL Server instance that hosts the NDC SQL database
+9. On the SQL Database step, provide connection details for the SQL Server or PostgreSQL instance that hosts the NDC SQL database
    you configured for the first NDC Server. A popup will inform you that an existing NDC schema exists in the database. Ignore this and continue.
 10. Complete the installation.
 11. Repeat steps 7 - 10 for each NDC Server to be added.
@@ -87,7 +87,7 @@ Only users with the **Superuser** role can configure DQS mode.
 6. On each server, follow the installation steps as described in the
    [Install Netwrix Data Classification](/docs/dataclassification/5.7/introduction/install/overview.md) section up to the SQL Database
    configuration step.
-7. On the SQL Database step, provide the details of the SQL Server instance that hosts the NDC SQL database
+7. On the SQL Database step, provide the details of the SQL Server or PostgreSQL instance that hosts the NDC SQL database
    you configured for the first NDC Server.
 8. When you click **Next**, a message box should appear stating that an NDC configuration was detected and
    that the new install will be added to the existing DQS environment. Click OK.

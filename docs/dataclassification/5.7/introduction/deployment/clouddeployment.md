@@ -8,18 +8,17 @@ sidebar_position: 40
 
 Netwrix Data Classification uses two forms of data storage:
 
-- NDC SQL database — SQL Server database that stores product configuration and metadata for the data
+- NDC SQL database — SQL Server or Postgres database that stores product configuration and metadata for the data
   sources.
 - NDC Index — a full-text search index that comprises a set of files in the proprietary format
   (.CSE).
 
 ### NDC SQL database
 
-Ensure you have NDC Server and **NDC SQL database** deployed on different machines.
+Ensure you have the NDC Server and the **NDC SQL database** deployed on different machines.
 
-Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server instance.
+For all databases:
 
-- Minimal requirement is SQL Server 2008 R2 Standard Edition.
 - Estimate required disk space assuming _10 - 12 KB_ per indexed object. For example, for _5, 000,
   000_ objects, the database size will be approximately _50 GB_.
   Due to built-in limitations of size and capacity, SQL Server Express edition is only suitable for evaluation and PoC environments
@@ -28,13 +27,12 @@ Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server instan
     **TIP:** Netwrix strongly recommends using SSD storage for both the database and Netwrix Data Classification
     servers.
 
-- If configuring database settings via SQL Server Management Studio, you will need to set
-  **Autogrowth / Maxsize** values for the PRIMARY database files as follows:
-    - **File growth**: _128 MB_ - recommended value for small to medium environment, _512 MB_ - for
-      large environment, i.e. if planning to index data sources containing 16, 000, 000+ objects.
-    - **Maximum File Size** - select _Unlimited_.
-- Ensure that the **Recovery model** for this database is set to _Simple_. To prevent log files from 
-  growing excessively, don't change the recovery model.
+Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server instance. It can also be hosted on a PostgreSQL instance. 
+
+- The minimum required version of SQL Server is SQL Server 2008 R2 Standard Edition.
+- The minimum required version of PostgreSQL is PostgreSQL 18. 
+ 
+See [Configure NDC SQL database](/docs/dataclassification/5.7/introduction/install/ndcsqldatabase.md) for full configuration details.
 
 ### NDC Index
 
