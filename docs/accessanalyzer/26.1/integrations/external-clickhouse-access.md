@@ -73,7 +73,7 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
 
 ## Get the credentials
 
-Opening access creates a dedicated analytics store user, `access_analyzer_external`, with a generated password. The user has read-only access to the `access_analyzer` and `access_analyzer_sample` databases, with the same per-query memory limits as the user Access Analyzer's own reports use. It can run at most four queries at once.
+Opening access creates a dedicated analytics store user, `access_analyzer_external`, with a generated password. The user has read-only access to the `access_analyzer` and `access_analyzer_sample` databases, with the same per-query memory limits as the user Access Analyzer's own reports use. It can run at most four queries at once, and its total memory across them is capped. Clients can't override these limits.
 
 Give external tools only this user. Don't share the analytics store's administrator credentials: the exposed port reaches the administrator like any other user, so its password is the only thing protecting it.
 
@@ -95,7 +95,7 @@ Give external tools only this user. Don't share the analytics store's administra
    kubectl get svc clickhouse-external -n access-analyzer
    ```
 
-2. From the external host, check the HTTP port:
+2. From the external host, check the HTTP port. With `LoadBalancer` that is `8123`. With `NodePort`, use the assigned node port from the `PORT(S)` column:
 
    ```bash
    curl http://<server-address>:<http-port>/ping
@@ -113,9 +113,21 @@ Give external tools only this user. Don't share the analytics store's administra
 
 - Access Analyzer runs one analytics store. With `NodePort`, connections reach it through any node in the cluster. To change how the cluster routes traffic, set `config.clickhouse.externalAccess.externalTrafficPolicy` to `Cluster` or `Local`.
 
+## Rotate the password
+
+Access Analyzer creates the password once and resets the `access_analyzer_external` user's password from it on every sync. A password changed inside the analytics store is overwritten at the next sync, so rotate through the stored secret:
+
+```bash
+kubectl delete secret clickhouse-external-secret -n access-analyzer
+sudo dspmctl sync netwrix
+sudo dspmctl enable-auto netwrix
+```
+
+The sync generates a new password. Print it with `dspmctl get-secret`.
+
 ## Close access
 
-1. Turn the ports off. This also stops `dspmctl get-secret` from reading the password, but it doesn't delete the `access_analyzer_external` user. If you shared the credentials, change the password or remove the user in the analytics store:
+1. Turn the ports off. This also stops `dspmctl get-secret` from reading the password, but it doesn't delete the password or the `access_analyzer_external` user, and turning access on again reuses the old password:
 
    ```bash
    sudo dspmctl set-helm-param netwrix config.clickhouse.externalAccess.enabled=false
@@ -123,4 +135,10 @@ Give external tools only this user. Don't share the analytics store's administra
    sudo dspmctl enable-auto netwrix
    ```
 
-2. Remove the firewall rules you added.
+2. Delete the stored password so the next time you turn access on it generates a new one:
+
+   ```bash
+   kubectl delete secret clickhouse-external-secret -n access-analyzer
+   ```
+
+3. Remove the firewall rules you added.
