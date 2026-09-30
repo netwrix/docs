@@ -29,7 +29,7 @@ These ports are unencrypted. Credentials and query results cross the network in 
 | Type | Use when | Access control |
 |---|---|---|
 | `LoadBalancer` | A load balancer is available: one from your cloud provider, or the ServiceLB that the installer leaves enabled in the bundled k3s cluster. | A list of allowed client address ranges in Classless Inter-Domain Routing (CIDR) notation. |
-| `NodePort` | No load balancer is available, for example because ServiceLB was disabled. | None in Access Analyzer. Restrict access with the server's firewall. |
+| `NodePort` | No load balancer is available, for example because you disabled ServiceLB. | None in Access Analyzer. Restrict access with the server's firewall. |
 
 The bundled k3s cluster includes ServiceLB, so use `LoadBalancer` with an allowed address list on a standard installation. ServiceLB binds ports 9000 and 8123 on the server, so those ports must be free.
 
@@ -123,7 +123,7 @@ Give external tools only this user. Don't hand out the analytics store's adminis
   sudo dspmctl set-helm-param netwrix config.clickhouse.externalAccess.allocateLoadBalancerNodePorts=false
   ```
 
-- Access Analyzer runs one analytics store. With `NodePort`, connections reach it through any node in the cluster. To change how traffic is routed, set `config.clickhouse.externalAccess.externalTrafficPolicy` to `Cluster` or `Local`.
+- Access Analyzer runs one analytics store. With `NodePort`, connections reach it through any node in the cluster. To change how the cluster routes traffic, set `config.clickhouse.externalAccess.externalTrafficPolicy` to `Cluster` or `Local`.
 
 ## Close access
 
