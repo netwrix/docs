@@ -11,7 +11,7 @@ keywords:
   - domain controllers
   - policy rule
   - dictionary rule
-  - complexity rule
+  - Password Policy Console
   - policy testing
 products:
   - passwordpolicyenforcer
@@ -27,26 +27,25 @@ knowledge_article_id: kA0Qk000000JiN7IAK
 
 ## Related Queries
 
-- "Updating PPE dictionary does not work"
-- "Could someone validate our configuration? I updated dictionary words but they do not appear to be updating when I test against them in the console."
+- "Updating PPE dictionary does not work."
+- "Could someone validate the configuration? I updated dictionary words but they do not appear to be updating when I test against them in the console."
+- "I updated the dictionary on one server but tests still pass. Why?"
 
 ## Overview
 
-This article explains how to prepare, deploy, and verify dictionary files. It covers the required file format, how the product reads files during testing, and deployment guidance for environments with multiple domain controllers.
+This article explains how to prepare, deploy, and verify dictionary files for the [Dictionary rule](/docs/passwordpolicyenforcer/12_0/admin/manage-policies/rules/dictionary_rule) in Netwrix Password Policy Enforcer (PPE). It covers the required file format, how the product reads files during testing, and deployment guidance for environments with multiple domain controllers. The console or the domain controller performing a check must have the updated file at the configured path, so copy the file to every server that enforces the rule.
 
 ## Instructions
 
 ### Preparing and Deploying the Dictionary File
 
-1. **Open the Policy Rule Settings.** In the **Password Policy Console**, edit the rule that uses the dictionary (for example, the **Dictionary** rule).
+1. In the **Password Policy Console**, edit the rule that uses the dictionary (for example, the **Dictionary** rule).
 
-2. **Format the Dictionary File.** The dictionary must follow the expected format before the product will use it. Ensure the following:
+2. Format the dictionary file. The dictionary must follow the expected format before PPE uses it. Click **Sort** in the rule editor to reformat the file and ensure the file meets these requirements:
 
    - All entries are in uppercase.
    - The file contains a blank line at the beginning and a blank line at the end.
    - Entries appear in ascending order.
-
-   Use the rule editor **Sort** button to apply the correct ordering and formatting. The Sort operation will reformat the file to meet these formatting requirements.
 
    Example formatted dictionary (synthetic values):
 
@@ -55,26 +54,29 @@ This article explains how to prepare, deploy, and verify dictionary files. It co
    APPLE
    BANANA
    ORANGE
+
    ```
 
-3. **Place the File Where the Rule Expects It.** If you configure the rule to use a local file path, the dictionary file must exist on the same machine where the product evaluates the rule. If the rule points to a network location, place the file at that network path. Example path format:
+3. Place the dictionary file on a local disk of each machine that evaluates the rule. Example path:
 
    ```text
    C:\ProgramData\PasswordPolicyEnforcer\Dictionary\dictionary.txt
    ```
 
-4. **Copy Files to All Domain Controllers That Enforce the Rule.** Netwrix Password Policy Enforcer does not replicate physical dictionary files between machines. If multiple domain controllers enforce password rules, copy the dictionary file to the same path on every domain controller used for password evaluation.
+    > **IMPORTANT:** Keep dictionary files on a local disk. Shared or network-hosted dictionary files can degrade performance and might jeopardize security.
+
+4. Copy the file to the same path on every domain controller that enforces the rule. 
+
+PPE replicates settings automatically but does not replicate dictionary files. Windows replicates a file that you place in Sysvol (see [Dictionary file replication](/docs/passwordpolicyenforcer/12_0/admin/manage-policies/rules/dictionary_rule#dictionary-file-replication)), but Netwrix recommends keeping a separate local copy on each domain controller to reduce troubleshooting and avoid performance degradation.
 
 ### Testing and Validating the Configuration
 
-1. **Understand How Test Policies Work.** When you run a test policy from the console, the console uses file locations configured locally on the machine running it. If you have local settings selected for dictionary, confirm the files exist on the test machine in the specified locations before testing.
+1. Confirm the dictionary file exists on the test machine. When you run a test policy from the console, the console uses the file locations that you set locally on the machine running it. If the rule uses a local dictionary path, confirm the file exists at that path before testing.
 
-2. **Test and Validate Changes.** After formatting and deploying files, run policy tests on each machine that evaluates passwords. Confirm that the rule detects dictionary entries.
+2. After formatting and deploying the files, run [policy tests](/docs/passwordpolicyenforcer/12_0/admin/manage-policies/testpolicy) on each machine that evaluates passwords. Confirm that the rule detects dictionary entries.
 
-> **NOTE:** The product replicates settings automatically, but you must manually copy dictionary files to every machine that enforces password rules.
+## Related Links
 
-## Example Queries and Answers
-
-**Q:** "I updated the dictionary on one server but tests still pass. Why?"
-
-**A:** The console or the domain controller performing the check must have the updated file at the configured path. Ensure the file uses the correct format, run the **Sort** operation in the rule editor, and copy the file to every enforcing server.
+- [Dictionary rule](/docs/passwordpolicyenforcer/12_0/admin/manage-policies/rules/dictionary_rule)
+- [Dictionary file replication](/docs/passwordpolicyenforcer/12_0/admin/manage-policies/rules/dictionary_rule#dictionary-file-replication)
+- [Test Policy](/docs/passwordpolicyenforcer/12_0/admin/manage-policies/testpolicy)
