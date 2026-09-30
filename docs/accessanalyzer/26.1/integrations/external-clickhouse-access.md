@@ -29,7 +29,7 @@ These ports are unencrypted. Credentials and query results cross the network in 
 | Type | Use when | Access control |
 |---|---|---|
 | `NodePort` | The server is a single host with no load balancer. | None in Access Analyzer. Restrict access with the server's firewall. |
-| `LoadBalancer` | A load balancer is available, such as one from your cloud provider. | A list of allowed client address ranges in Classless Inter-Domain Routing (CIDR) notation. |
+| `LoadBalancer` | A load balancer, such as one from your cloud provider, is available. | A list of allowed client address ranges in Classless Inter-Domain Routing (CIDR) notation. |
 
 A list of allowed address ranges works only with `LoadBalancer`. Setting it with `NodePort` fails.
 
@@ -47,7 +47,7 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
      config.clickhouse.externalAccess.nodePorts.http=30823
    ```
 
-   Choose ports from 30000 through 32767, or omit the `nodePorts` lines to have Kubernetes assign them. For `LoadBalancer`, restricted to one address range:
+   Choose ports from 30000 through 32767, or omit the `nodePorts` lines to have Kubernetes assign them. For `LoadBalancer`, restricting access to one address range:
 
    ```bash
    sudo dspmctl set-helm-param netwrix \
