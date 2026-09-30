@@ -19,7 +19,7 @@ sidebar_position: 40
 
     | Option                | Description                                                                                                              |
     | --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-    | Server Name           | Provide the name of the instance that will host the NDC SQL database. For PostgreSQL installations, you will need to provide the port number. For example, _"WORKSTATIONSQL\SQLSERVER:5432"_.  |
+    | Server Name           | Provide the name of the instance that will host the NDC SQL database. For example, _"WORKSTATIONSQL\SQLSERVER"_.  |
     | Authentication Method | Select the authentication method. For SQL Server, choose between Windows and Database authentication. For PostgreSQL, only Database authentication is possible.                                                        |
     | Username              | Specify the account name.                                                                                                |
     | Password              | Provide the account password.                                                                                                   |

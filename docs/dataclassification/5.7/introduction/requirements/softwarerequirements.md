@@ -42,9 +42,12 @@ Netwrix Data Classification installation requires the following software:
      - ISAPI Extensions
      - ISAPI Filters
 
-3. **SQL Server**
+3. **Database**
+   **SQL Server**
    - SQL Server 2008 R2 Standard Edition (or later).
    - SQL Server 2016 SP2 recommended (for better performance).
+
+   **PostgreSQL**
    - PostgreSQL 18 (or later).
 
    :::note

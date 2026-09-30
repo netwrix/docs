@@ -20,6 +20,7 @@ Classification resides. If not, download it from Microsoft website:
 **Step 2 –** Back up NDC SQL database. Netwrix recommends the following:
 
 For SQL Server:
+
 - Start Microsoft SQL Server Management Studio and connect to SQL Server instance hosting this
   database.
 - In the Object Explorer, right-click the database and select **Tasks** > **Back Up**.

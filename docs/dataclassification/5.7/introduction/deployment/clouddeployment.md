@@ -15,7 +15,12 @@ Netwrix Data Classification uses two forms of data storage:
 
 ### NDC SQL database
 
-Deploy the NDC Server and the **NDC SQL database** on different machines.
+Ensure you have the NDC Server and the **NDC SQL database** deployed on different machines.
+Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server or PostgreSQL instance. 
+
+- The minimum required version of SQL Server is SQL Server 2008 R2 Standard Edition.
+- The minimum required version of PostgreSQL is PostgreSQL 18. 
+ 
 
 For all databases:
 
@@ -24,14 +29,11 @@ For all databases:
   Due to built-in limitations of size and capacity, SQL Server Express edition is only suitable for evaluation and proof-of-concept (PoC) environments
   (processing up to 1,000,000 documents).
 
-    **TIP:** Netwrix strongly recommends using SSD storage for both the database and Netwrix Data Classification
-    servers.
+:::note
+Netwrix strongly recommends using SSD storage for both the database and Netwrix Data Classification
+servers.
+:::
 
-Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server instance. You can also host it on a PostgreSQL instance. 
-
-- The minimum required version of SQL Server is SQL Server 2008 R2 Standard Edition.
-- The minimum required version of PostgreSQL is PostgreSQL 18. 
- 
 See [Configure NDC SQL database](/docs/dataclassification/5.7/introduction/install/ndcsqldatabase.md) for full configuration details.
 
 ### NDC Index
