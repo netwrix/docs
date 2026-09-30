@@ -48,7 +48,7 @@ Netwrix Data Classification installation requires the following software:
    - SQL Server 2016 SP2 recommended (for better performance).
 
    **PostgreSQL**
-   - PostgreSQL 18 (or later).
+   - PostgreSQL 16 (or later).
 
    :::note
    Large environments may require SQL Server Enterprise edition; see [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/overview.md).

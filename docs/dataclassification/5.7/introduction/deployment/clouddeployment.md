@@ -19,7 +19,7 @@ Deploy the NDC Server and the **NDC SQL database** on different machines.
 Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server or PostgreSQL instance. 
 
 - The minimum required version of SQL Server is SQL Server 2008 R2 Standard Edition.
-- The minimum required version of PostgreSQL is PostgreSQL 18. 
+- The minimum required version of PostgreSQL is PostgreSQL 16. 
  
 
 For all databases:

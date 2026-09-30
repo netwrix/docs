@@ -119,7 +119,7 @@ Database such as: the document title, body text, etc. However, the QueryServer a
 information using a primary key, which makes it very efficient. The QueryServer always constructs and ranks the
 hitlist using information contained in the proprietary conceptDatabase.
 
-The current release of Netwrix Data Classification supports SQL Server 2008 R2 or later and PostgreSQL 18 or later.
+The current release of Netwrix Data Classification supports SQL Server 2008 R2 or later and PostgreSQL 16 or later.
 
 ## NDC Index
 
