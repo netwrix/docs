@@ -26,12 +26,9 @@ These ports are unencrypted. Credentials and query results cross the network in 
 
 ## Choose an access type
 
-| Type | Use when | Access control |
-|---|---|---|
-| `LoadBalancer` | A load balancer is available: one from your cloud provider, or the ServiceLB that the installer leaves enabled in the bundled k3s cluster. | A list of allowed client address ranges in Classless Inter-Domain Routing (CIDR) notation. |
-| `NodePort` | No load balancer is available, for example because you disabled ServiceLB. | None in Access Analyzer. Restrict access with the server's firewall. |
+Access Analyzer's bundled k3s cluster includes ServiceLB, its built-in load balancer. Use `LoadBalancer` with a list of allowed client address ranges in Classless Inter-Domain Routing (CIDR) notation. ServiceLB binds ports 9000 and 8123 on the server, so those ports must be free.
 
-The bundled k3s cluster includes ServiceLB, so use `LoadBalancer` with an allowed address list on a standard installation. ServiceLB binds ports 9000 and 8123 on the server, so those ports must be free.
+`NodePort` has no access control in Access Analyzer, so restrict it with the server's firewall. Use it only if you disabled ServiceLB or ports 9000 and 8123 are taken.
 
 A list of allowed address ranges works only with `LoadBalancer`. Setting it with `NodePort` fails.
 
@@ -39,7 +36,16 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
 
 `dspmctl set-helm-param` turns automated sync off for the application. The last step turns it back on.
 
-1. On the Access Analyzer server, set the access parameters. For `NodePort`:
+1. On the Access Analyzer server, set the access parameters. For `LoadBalancer`, restricting access to one address range:
+
+   ```bash
+   sudo dspmctl set-helm-param netwrix \
+     config.clickhouse.externalAccess.enabled=true \
+     config.clickhouse.externalAccess.type=LoadBalancer \
+     'config.clickhouse.externalAccess.loadBalancerSourceRanges[0]=<cidr>'
+   ```
+
+   Add `[1]`, `[2]`, and so on for more ranges. For `NodePort`:
 
    ```bash
    sudo dspmctl set-helm-param netwrix \
@@ -49,25 +55,7 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
      config.clickhouse.externalAccess.nodePorts.http=30823
    ```
 
-   Choose ports from 30000 through 32767, or omit the `nodePorts` lines to have Kubernetes assign them. For `LoadBalancer`, restricting access to one address range:
-
-   ```bash
-   sudo dspmctl set-helm-param netwrix \
-     config.clickhouse.externalAccess.enabled=true \
-     config.clickhouse.externalAccess.type=LoadBalancer \
-     'config.clickhouse.externalAccess.loadBalancerSourceRanges[0]=<cidr>'
-   ```
-
-   Add `[1]`, `[2]`, and so on for more ranges.
-
-   On a cloud provider, request an internal load balancer so the database never gets a public address. The annotation key contains dots, so escape them and quote the argument:
-
-   ```bash
-   sudo dspmctl set-helm-param netwrix \
-     'config.clickhouse.externalAccess.annotations.service\.beta\.kubernetes\.io/aws-load-balancer-internal=true'
-   ```
-
-   The annotation name is provider-specific. Use the one your provider documents.
+   Choose ports from 30000 through 32767, or omit the `nodePorts` lines to have Kubernetes assign them.
 
 2. Apply the change:
 
