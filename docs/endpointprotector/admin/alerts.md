@@ -126,6 +126,7 @@ needed for auditing purposes.
 ## Log alerts
 
 Log alerts provide event-driven alerting based on Device Control and Content Aware Protection logs stored in CrateDB. Log alerts replace and extend the legacy per-module alert types with a unified, priority-based alerting system.
+The priority is at the event type and at the event level and not at the alert level. Priority is handled automatically by the system, based on the type of the event. 
 
 ### How log alerts work
 
@@ -144,7 +145,6 @@ When a log alert condition is met, the system sends an email notification to the
 1. Navigate to **Alerts** > **Log Alerts**.
 2. Click **Create** and provide the required information:
    - **Alert Name**—enter a descriptive name for the alert
-   - **Priority**—select the evaluation frequency (High, Medium, or Low)
    - **Log Type**—select whether the alert applies to Device Control or Content Aware Protection logs
    - **Monitored Entities**—filter the alert by specific machine names, user names, or groups
    - **Administrators**—select the administrators who will receive the alert notifications
