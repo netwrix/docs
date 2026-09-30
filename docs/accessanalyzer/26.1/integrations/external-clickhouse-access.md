@@ -13,7 +13,7 @@ Opening access exposes two ports:
 | 9000 | TCP | ClickHouse native protocol. |
 | 8123 | TCP | ClickHouse HTTP interface. |
 
-The metrics port is never exposed.
+Access Analyzer never exposes the metrics port.
 
 :::warning
 These ports are unencrypted. Credentials and query results cross the network in clear text. Restrict access to a trusted network, or put a TLS-terminating proxy in front of the ports.
