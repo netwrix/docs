@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Netwrix Data Classification uses two forms of data storage:
 
-- NDC SQL database — SQL Server or Postgres database that stores product configuration and metadata for the data
+- NDC SQL database — SQL Server or PostgreSQL database that stores product configuration and metadata for the data
   sources.
 - NDC Index — a full-text search index that comprises a set of files in the proprietary format
   (.CSE).

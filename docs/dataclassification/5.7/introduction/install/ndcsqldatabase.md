@@ -72,5 +72,5 @@ These values are recommended settings for a fully loaded instance of the given s
 4. Allow for a pg_wal size of at least 32GB for a single instance, or 128GB for a distributed instance, for periods of high load. 
 
 :::note 
-These recommendations are calculated estimates and subject to change. The configuration of the postgres database should be adjusted according to your needs and limits.
+These recommendations are calculated estimates and subject to change. The configuration of the PostgreSQL database should be adjusted according to your needs and limits.
 :::
