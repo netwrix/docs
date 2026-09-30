@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Software Requirements
 
-The following are the software requirements for Netwrix Data Classification installation:
+Netwrix Data Classification installation requires the following software:
 
 1. **Operating System**
    - Windows 2012 R2 and above Server Operating System Software.
@@ -36,7 +36,7 @@ The following are the software requirements for Netwrix Data Classification inst
      - Anonymous Authentication
 
        :::note
-       The Anonymous Authentication element is included in the default installation of IIS 7. Ensure you use IIS 7 and above.
+       The default installation of IIS 7 includes the Anonymous Authentication element. Ensure you use IIS 7 and above.
        :::
    - **Application Development:**
      - ISAPI Extensions
@@ -48,7 +48,7 @@ The following are the software requirements for Netwrix Data Classification inst
    - PostgreSQL 18 (or later).
 
    :::note
-   For large environments, SQL Server Enterprise edition may be needed; see [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/overview.md).
+   Large environments may require SQL Server Enterprise edition; see [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/overview.md).
    :::
 
 4. **Visual Studio**

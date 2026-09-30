@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Hardware Requirements
 
-Review the hardware requirements for the computer where Netwrix Data Classification will be
-installed.
+Review the hardware requirements for the computer where you plan to install Netwrix Data
+Classification.
 
 You can deploy Netwrix Data Classification on a virtual machine running Microsoft Windows guest OS
 on the corresponding virtualization platform, in particular:
@@ -40,7 +40,7 @@ See [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/o
 
 ## SQL Server
 
-The requirements in this section are for an SQL database supporting up to 4 NDC Server instances in a Distributed Query Server (DQS) cluster. The NDC database server should only be deployed on a dedicated machine, as sharing resources with additional databases on the same server will degrade performance.
+The requirements in this section are for an SQL database supporting up to 4 NDC Server instances in a Distributed Query Server (DQS) cluster. Deploy the NDC database server only on a dedicated machine, as sharing resources with additional databases on the same server will degrade performance.
 
 | Hardware Component | Up to 16 M objects                                                                                                                                                                                                                                                                | Up to 32 M objects and up to 8 M objects for SharePoint | Up to 64 M objects and up to 16 M objects for SharePoint |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
@@ -65,15 +65,15 @@ scope. Supported file shares types:
 - NFS
 
 Administration Dashboards for most Network Attached Storages include storage usage such as the
-amount of data and files count. In case you need a tool to calculate file count and size, you can
-use the NDC script-based [file scanning tool](https://www.netwrix.com/download/products/DDC/ScanDirs.zip).
+amount of data and files count. If you need a tool to calculate file count and size, use the NDC
+script-based [file scanning tool](https://www.netwrix.com/download/products/DDC/ScanDirs.zip).
 
 **Exchange Mailboxes**
 
 If you plan on using NDC to crawl an on-premises Exchange server, you need to know the following:
 
 - Number of Mailboxes
-- Mailbox retention policy (for how long users keep their emails before they are archived)
+- Mailbox retention policy (how long users keep their emails before archiving them)
 - The average number of emails per Mailbox or total number in all mailboxes.
 
 Run the following PowerShell script for the Exchange Management Shell to obtain the number of emails in all mailboxes. The script returns email stats for every mailbox. Use the script
@@ -89,14 +89,14 @@ Provide the total amount of data and total number of files stored on Office 365.
 
 **Databases**
 
-In case your scope includes databases, the following details are required:
+If your scope includes databases, provide the following details:
 
 - Database type (MS SQL, Oracle, MySQL, PostgreSQL)
 - What applications and systems those databases support
-- How many databases the data needs to be classified in
+- How many databases contain data you need to classify
 
-Netwrix Data Classification will need to be pointed at certain tables in the specified databases,
-the customer is expected to know which tables within a database may potentially contain sensitive
+You must point Netwrix Data Classification at certain tables in the specified databases, so you
+need to know which tables within a database may contain sensitive
 data.
 
 **Box**
@@ -114,15 +114,15 @@ for optimal performance.
 :::
 
 
-Due to the performance limitations of the SQL database back end, the maximum capacity of clustered
-setup with 4 Data Classification servers is limited to 64 million files with supported content
-types. Environments that exceeds this number can be supported by implementing the following:
+Due to the performance limitations of the SQL database back end, a clustered setup with 4 Data
+Classification servers has a maximum capacity of 64 million files with supported content
+types. To support environments that exceed this number, implement one of the following:
 
 - Multiple separate installations of clustered setup with 4 Data Classification servers. Where each
   installation is pointed at its own subset of data. Each installation requires its own SQL
   instance.
 - Phased data processing with one installation of clustered setup with 4 Data Classification
-  servers. With phased data processing, the dataset is divided into subsets and processed by chunks.
+  servers. With phased data processing, you divide the dataset into subsets and process them in chunks.
 
 See the hardware sizing for Netwrix Data Classification setup in the following table:
 

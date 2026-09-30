@@ -15,19 +15,19 @@ Netwrix Data Classification uses two forms of data storage:
 
 ### NDC SQL database
 
-Ensure you have the NDC Server and the **NDC SQL database** deployed on different machines.
+Deploy the NDC Server and the **NDC SQL database** on different machines.
 
 For all databases:
 
 - Estimate required disk space assuming _10 - 12 KB_ per indexed object. For example, for _5, 000,
   000_ objects, the database size will be approximately _50 GB_.
-  Due to built-in limitations of size and capacity, SQL Server Express edition is only suitable for evaluation and PoC environments
+  Due to built-in limitations of size and capacity, SQL Server Express edition is only suitable for evaluation and proof-of-concept (PoC) environments
   (processing up to 1,000,000 documents).
 
     **TIP:** Netwrix strongly recommends using SSD storage for both the database and Netwrix Data Classification
     servers.
 
-Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server instance. It can also be hosted on a PostgreSQL instance. 
+Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server instance. You can also host it on a PostgreSQL instance. 
 
 - The minimum required version of SQL Server is SQL Server 2008 R2 Standard Edition.
 - The minimum required version of PostgreSQL is PostgreSQL 18. 
@@ -36,7 +36,7 @@ See [Configure NDC SQL database](/docs/dataclassification/5.7/introduction/inst
 
 ### NDC Index
 
-Required disk space for the NDC Index file storage will depend, in particular, on the data
+Required disk space for the NDC Index file storage depends on the data
 processing mode you plan to use (_No Index_, _Keyword_ or _Compound Term_).
 
 As a general estimate, calculate required space as 35% of the total data size you
@@ -45,15 +45,15 @@ the NDC Index files.
 
 ## Scalability and Performance
 
-Scalability and performance testing revealed that based on the number of objects to classify, the
-environments can be ranged as follows:
+Scalability and performance testing groups environments by the number of objects to classify, as
+follows:
 
 | Number of objects to classify | Environment                                 | Comment                                                                    |
 | ----------------------------- | ------------------------------------------- | -------------------------------------------------------------------------- |
 | Up to 1, 000, 000             | Proof-of-concept and small-size environment |                                                                            |
 | Up to 16, 000, 000            | Mid-size environment                        |                                                                            |
 | Up to 64, 000, 000            | Large-size environment                      |                                                                            |
-| More than 64, 000, 000        | Extra-large environment                     | System architect's assistance is required for deployment planning requires |
+| More than 64, 000, 000        | Extra-large environment                     | Deployment planning requires a system architect's assistance.              |
 
 For large-size and extra-large environments, Netwrix recommends
 configuring a cluster of several NDC Servers and applying Distributed Query Server (DQS) mode. See

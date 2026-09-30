@@ -44,15 +44,15 @@ The following figure shows the app architecture and components.
 
 ![addsource](/images/dataclassification/5.7/admin/addsource.webp)
 
-2. The configured data sources are saved to the NDC SQL database.
+2. Netwrix Data Classification saves the configured data sources to the NDC SQL database.
 3. The NDC Collector service crawls the data files in each data source, converting documents into plain
    text and populating file metadata in the NDC SQL database.
 4. The NDC Indexer service builds and maintains a full-text search index (NDC Index) based on the
    content and metadata of the collected files.
 5. The NDC Classifier service performs data classification by matching collected files against
    pre-built taxonomies (the Netwrix compliance taxonomies) and customer-created taxonomies.
-6. If [Classification Writing](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/enablewriteclassifications.md) is enabled, the assigned classification labels are written to the custom metadata columns for supported document types.
-7. If [Workflows](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/overview.md) have been defined and are enabled, they are run on documents that meet the
+6. If you enable [Classification Writing](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/enablewriteclassifications.md), the Classifier writes the assigned classification labels to the custom metadata columns for supported document types.
+7. If you define and enable [Workflows](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/overview.md), the Classifier runs them on documents that meet the
    workflow conditions.
 
 ## QueryServer
@@ -66,7 +66,7 @@ requests and stores these in the SQL Database for processing by the conceptColle
 
 ## NDC Collector
 
-The NDC Collector is responsible for importing new documents into the system.
+The NDC Collector imports new documents into the system.
 
 In addition to collecting documents the NDC Collector also performs the following:
 
@@ -76,14 +76,14 @@ In addition to collecting documents the NDC Collector also performs the followin
 The NDC Collector manages the queue of documents to be indexed, and outputs its results, via the SQL
 database.
 
-The NDC Collector is implemented as a Microsoft Windows Service.
+The NDC Collector runs as a Microsoft Windows Service.
 
 ## Indexer
 
 The Indexer takes each new document the NDC Collector collected and indexes terms from 
 the extracted text within the NDC Index.
 
-The index can be read from concurrently with the indexing process. However, significant indexing
+The index supports concurrent reads during the indexing process. However, significant indexing
 activity can lead to a corresponding drop in index performance. In this case, run the Indexer
 during quiet periods (e.g. overnight) or perform indexing separately
 with a batch process updating the live index periodically.
@@ -91,7 +91,7 @@ with a batch process updating the live index periodically.
 If you want the Indexer to update the live index as a background task, run it on the same server
 where you store the NDC Index Database.
 
-The Indexer is implemented as a Microsoft Windows Service.
+The Indexer runs as a Microsoft Windows Service.
 
 :::note
 For file system and SharePoint/OneDrive sources, event handlers/file watchers dynamically
@@ -110,35 +110,35 @@ Watcher Exclusions.
 
 ## NDC SQL Database
 
-The NDC SQL Database is used to manage the queue of documents being indexed. It may also be used by
-the application to store any application-specific information independently from Netwrix Data
+The NDC SQL Database manages the queue of documents being indexed. The application can also use it
+to store any application-specific information independently from Netwrix Data
 Classification.
 
 The QueryServer will also retrieve selected information for the current hitlist from the SQL
-Database such as: the document title, body text, etc. However, this information is always requested
-using a primary key and so is very efficient. The hitlist itself is always constructed and ranked
+Database such as: the document title, body text, etc. However, the QueryServer always requests this
+information using a primary key, which makes it very efficient. The hitlist itself is always constructed and ranked
 using information contained in the proprietary conceptDatabase.
 
 The current release of Netwrix Data Classification supports SQL Server 2008 R2 or later and PostgreSQL 18 or later.
 
 ## NDC Index
 
-The NDC Index contains a probabilistic index for all documents that have been indexed by the system. The index files
-use the extension “.cse”, but temporary files (extension “.tmp”) are used when merging changes into the index.
+The NDC Index contains a probabilistic index for all documents the system has indexed. The index files
+use the extension “.cse”, but the system uses temporary files (extension “.tmp”) when merging changes into the index.
 
-The NDC Index files should be located on the same server as the Netwrix Data
+Store the NDC Index files on the same server as the Netwrix Data
 Classification server because the query and indexing processes can be highly disk-intensive.
 
 :::note
-"text.cse" isn't supplied since it will be created automatically when the first documents
-are collected.
+Netwrix Data Classification doesn't supply "text.cse" — it creates the file automatically when
+the Collector collects the first documents.
 :::
 
 ## Classifier
 
-The Classifier classifies collected documents against NDC taxonomies. It can make use of the built-in
-taxonomies and any custom taxonomies created by the user, and can be linked to SharePoint termsets to classify
+The Classifier classifies collected documents against NDC taxonomies. It can use the built-in
+taxonomies and any custom taxonomies you create, and you can link it to SharePoint termsets to classify
 against them as well. It also runs user-configured workflows against any documents that meet the conditions
-of the workflow, and is used to perform [Data Subject Access Requests](/docs/dataclassification/5.7/dataanalysisoverview/dsar/overview.md).
+of the workflow, and it performs [Data Subject Access Requests](/docs/dataclassification/5.7/dataanalysisoverview/dsar/overview.md).
 
-The Classifier is implemented as a Microsoft Windows Service.
+The Classifier runs as a Microsoft Windows Service.
