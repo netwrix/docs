@@ -120,6 +120,8 @@ An account locks after three consecutive wrong passwords or five consecutive wro
 
 On the row, click **Actions > Unlock**. A message confirms **User "`<name>`" unlocked**. Unlocking doesn't change the password; if the user has forgotten it, also click **Actions > Reset password**.
 
+If every Admin and User admin account is locked out and nobody can reach this tab, see [Unlock a user without admin access](unlock-a-user-without-admin-access.md).
+
 ## Delete a User
 
 1. On the row, click **Actions > Delete**.
@@ -141,7 +143,7 @@ When a user signs in with **Require password change at next sign-in** set, a **C
 | **Password doesn't meet complexity requirements.** | The new password is under 12 characters. |
 | **New password can't be the same as your current password.** | The new password matches the current one. |
 
-The first Admin created by the installer goes through this step on their first sign-in; see [Sign in for the first time](../install/first-sign-in.md).
+The first Admin the installer creates goes through this step on their first sign-in; see [Sign in for the first time](../install/first-sign-in.md).
 
 ## Sessions
 
