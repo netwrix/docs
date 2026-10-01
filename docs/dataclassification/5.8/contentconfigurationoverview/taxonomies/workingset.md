@@ -1,0 +1,24 @@
+---
+title: "Working Set"
+description: "Working Set"
+sidebar_position: 140
+---
+
+# Working Set
+
+You can define a Working Set of documents and use it to test the accuracy of classification rules
+against a controlled set of documents. You select the Working Set mode in the Core
+Configuration.
+
+If you select Class Level, you can define a different Working Set for each class. If you select Taxonomy
+Level, the same Working Set applies to all classes.
+
+You can add documents to the Working Set from the Search or Browse tabs by using the Add to Working
+Set links:
+
+![browsetab_thumb_0_0](/images/dataclassification/5.8/admin/reporting/browsetab_thumb_0_0.webp)
+
+The following facilities are available:
+
+- [Classifications](/docs/dataclassification/5.8/contentconfigurationoverview/taxonomies/classifications.md)
+- [Calculations](/docs/dataclassification/5.8/contentconfigurationoverview/taxonomies/calculations.md)
