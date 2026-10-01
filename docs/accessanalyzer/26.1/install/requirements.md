@@ -103,6 +103,7 @@ The installer downloads everything it needs during the install, and the running 
 | `registry-1.docker.io` | Platform component downloads. |
 | `auth.docker.io` | Platform component downloads. |
 | `production.cloudflare.docker.com` | Platform component downloads. |
+| `production.cloudfront.docker.com` | Platform component downloads. |
 | `docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com` | Installer downloads. |
 | `d2glxqk2uabbnd.cloudfront.net` | Installer downloads. |
 | `storage.googleapis.com` | Installer downloads. |
