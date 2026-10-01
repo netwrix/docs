@@ -7,7 +7,7 @@ sidebar_position: 20
 # Reporting Capabilities
 
 Selecting **Analysis** → Reports in the management console helps a user extract a wealth of
-information from the NDC index.
+information from the Netwrix Data Classification (NDC) index.
 
 The main **Dashboard** has three high level graphs highlighting the current state of processing:
 

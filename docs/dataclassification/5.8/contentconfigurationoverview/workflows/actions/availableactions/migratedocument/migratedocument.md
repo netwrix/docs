@@ -8,8 +8,8 @@ sidebar_position: 20
 
 This action copies or moves a document between content sources (from 'source' to
 'destination'). Simple migration copies the file and any document properties. All
-content source types support simple migration. Migration action properties specific for different content source types are
-listed in the following table.
+content source types support simple migration. The following table lists the migration action
+properties specific to different content source types.
 
 | Type                    | As 'source' | As 'destination' | Migration Config Type              | Supports structured migration? | Move? | Update source item? | Mark source 'read-only'? |
 | ----------------------- | ----------- | ---------------- | ---------------------------------- | ------------------------------ | ----- | ------------------- | ------------------------ |
@@ -59,8 +59,8 @@ In Netwrix Data Classification (NDC), when you move a file from one storage to a
 creates a stub file in .txt format. The stub file notes that the product transferred the file to a
 certain location.
 
-While creating a stub file, you can leave a message where the document is migrated to and the
-reasons. You can use the dropdown list to add metadata from the document to the stub file message,
+While creating a stub file, you can leave a message describing where the product migrated the
+document and why. You can use the dropdown list to add metadata from the document to the stub file message,
 as shown in the following image:
 
 ![workflow_stubfile](/images/dataclassification/5.8/admin/workflows/actions/workflow_stubfile.webp)
@@ -68,8 +68,8 @@ as shown in the following image:
 ## Applying the redaction
 
 When you configure a workflow to migrate content from one location to another, you can opt to redact
-specific content from those documents. Redaction might be required by your security policy or a
-compliance regulation. For example, you may need to remove SSN from your file.
+specific content from those documents. Your security policy or a compliance regulation might
+require redaction. For example, you may need to remove SSN from your file.
 
 To use redaction in a workflow, you need to set up one or more redaction plans. You can choose to
 redact the predefined entities by selecting the plans from the dropdown list on the following

@@ -24,7 +24,7 @@ selecting Add Email Server Configuration.
 ![configemailservers](/images/dataclassification/5.8/configuration/configemailservers.webp)
 
 Enter the SMTP details using the values from your network team. 
-NDC supports SMTP servers with and without SSL configured. NDC also supports anonymous SMTP server authentication.
+Netwrix Data Classification (NDC) supports SMTP servers with and without SSL configured. NDC also supports anonymous SMTP server authentication.
 
 You can supply a test email address to test the configuration settings
 

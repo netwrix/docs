@@ -15,7 +15,7 @@ generates for a variety of business purposes, such as:
 - Enabling external applications workflow;
 - Applying IT policies to classified data;
 
-Tagging is designed to work as natively as possible with each source type. Therefore, the way the
+Tagging works as natively as possible with each source type. Therefore, the way the
 product writes classifications varies by source type, with some overlaps.
 
 You can instruct the program to write classification attributes back to processed files. This

@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Deploying Remote Event Receivers for SharePoint
 
-SharePoint remote event receivers are processed based on the source URL. You can deploy receivers to
+The product processes SharePoint remote event receivers based on the source URL. You can deploy receivers to
 specific Site Collections by including the source URL with no wildcard indicators (e.g.
 “http://test.sharepoint.com/sites/Test”). You can also deploy receivers to all Site Collections by
 including a wildcard indicator (e.g. “http://test.sharepoint.com\*”).

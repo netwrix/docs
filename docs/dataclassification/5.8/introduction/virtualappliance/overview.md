@@ -12,7 +12,7 @@ minutes.
 
 Virtual appliance — If you run a Microsoft Hyper-V or VMware vSphere, you can deploy Netwrix Data
 Classification as a virtual appliance. Virtual appliance is a VM image file with installed Netwrix
-Data Classification. The image is also configured to use Microsoft Edge as a default web browser.
+Data Classification. The image also uses Microsoft Edge as the default web browser.
 
 The following configuration options are available:
 

@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Licensing
 
-The licenses you load into the product determine what functionality is available. This is broken
-into:
+The licenses you load into the product determine what functionality is available. The product
+offers the following licenses:
 
 - Netwrix Data Classification for Box
 - Netwrix Data Classification for Dropbox

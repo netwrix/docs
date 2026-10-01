@@ -18,7 +18,7 @@ purposes, for example:
 - Enabling external workflow applications
 - Applying IT policies to the classified objects
 
-Tagging is designed to work as natively as possible with each source type. Therefore, each
+Tagging works as natively as possible with each source type. Therefore, each
 integration varies in the way it writes classifications, with some overlaps.
 
 Typically, to use tagging, you need to take the following steps:

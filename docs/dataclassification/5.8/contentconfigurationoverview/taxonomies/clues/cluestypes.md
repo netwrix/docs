@@ -15,8 +15,8 @@ case-insensitive exact match on entered text, including any punctuation.
 
 Examples:
 
-A standard clue matched on a fuzzy basis with word stemming enabled: training will match against:
-train, training, trains.
+With word stemming enabled, the product matches a standard clue on a fuzzy basis: training will
+match against: train, training, trains.
 
 The product matches a standard clue enclosed in double quotes on an exact match basis: "Train timetables
 in the U.K." will match only against: Train timetables in the U.K. (Case-insensitive)
@@ -118,7 +118,7 @@ You can use the following special metadata fields:
 - **CSE-LANG** - The dominant language of the document, using ISO 639-1 two-letter codes. See
   Language Detection settings for more information.
 - **CSE-METADATACOLLECTIONONLY** - The product sets this value to “1” if the document was too large
-  for the NDC index (max 500MB) and it processed metadata only.
+  for the Netwrix Data Classification (NDC) index (max 500MB) and it processed metadata only.
 - **CSE-PAGETITLE** - The Title extracted from the document itself.
 - **CSE-TEXTLENGTH** - The length of the plain text extracted from the document, in characters. You
   can match this field only using the equals, greater than or less than operators, for example:

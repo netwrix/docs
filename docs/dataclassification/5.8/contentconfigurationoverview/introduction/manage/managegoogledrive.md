@@ -30,7 +30,7 @@ See [this article](https://developers.google.com/drive/api/v3/properties) for de
 :::
 
 
-To overcome these limitations, Google Drive tagging implemented in the solution supports appending a
+To overcome these limitations, Google Drive tagging supports appending a
 counter to the field name. So, split classifications across multiple fields if the source system
 hits a text limit. For example, the product may write classifications to the
 fields “_Agriculture_” and “_Agriculture_1_”.

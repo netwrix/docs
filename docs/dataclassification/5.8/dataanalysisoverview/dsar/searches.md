@@ -30,8 +30,8 @@ You can filter your requests by status. Select one of the following under Displa
 In addition to status, a DSAR Manager can filter search requests by owner. Select one of the
 following under Owner:
 
-- All – shows search requests submitted by anyone.
-- Me – shows all requests submitted by current user.
+- All – shows search requests from any user.
+- Me – shows all requests you submitted.
 
 In addition to filtering capabilities, you can sort search request by any column, e.g., _Percentage
 Complete_, _Updated Date_, etc.

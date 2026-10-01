@@ -11,10 +11,10 @@ control ensures that only appropriate users can modify DSAR configuration or vie
 your company policies and the user's job responsibilities.
 
 - DSAR User – basic user role, which allows access to the tool itself and lets the user run search
-  requests. This user can view only requests submitted by themselves (they can't view searches submitted by other users). This role can't access system settings or sensitive data identified, including
+  requests. This user can view only the requests they submitted (they can't view searches that other users submitted). This role can't access system settings or sensitive data identified, including
   filenames/locations.
 - DSAR Manager – has all the permissions of the DSAR User role, plus the ability to see and
-  pause/cancel searches submitted by other users.
+  pause/cancel searches that other users submitted.
 - Super User – has all the permissions of the DSAR Manager role, with the addition of being able to
   see and amend the DSAR settings (user management, output path, batch run-time).
 
@@ -30,5 +30,5 @@ The following table briefly describes the DSAR roles:
 \* Administrative area includes user maintenance, batch maintenance, and an option to ‘Run Now’ –
 which runs the queued batch.
 
-DSAR Roles can be configured under Users → Permissions Management. For more information on how to
+You can configure DSAR roles under Users → Permissions Management. For more information on how to
 configure roles, refer to [User Management](/docs/dataclassification/5.8/systemconfigurationoverview/users/usermanagement.md) section.

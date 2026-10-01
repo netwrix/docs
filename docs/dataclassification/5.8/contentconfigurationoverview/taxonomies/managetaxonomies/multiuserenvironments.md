@@ -26,12 +26,12 @@ menu for all classes:
 
 ![lockterm](/images/dataclassification/5.8/admin/taxonomies/lockterm.webp)
 
-You can also optionally lock all of its children in a single operation. Once you lock a term, the
+You can also optionally lock all of its children in a single operation. After you lock a term, the
 context menu items change to allow unlocking the selected term and its children.
 
 ![unlockterm](/images/dataclassification/5.8/admin/taxonomies/unlockterm.webp)
 
 Other users will see a closed padlock symbol to indicate the status of the term.
 
-Other users can't alter or unlock a term that another user locked. However
-super-users are also able to Unlock a term.
+Other users can't alter or unlock a term that another user locked. However,
+super-users can unlock a term.

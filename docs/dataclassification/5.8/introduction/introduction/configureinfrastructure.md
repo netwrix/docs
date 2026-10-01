@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Set Up MIP Integration
 
-To integrate Netwrix Data Classification with MIP technology, perform the following steps:
+To integrate Netwrix Data Classification with Microsoft Information Protection (MIP) technology, perform the following steps:
 
 - Set up application registration in Microsoft Azure
 - Load your certificate to Internet Information Services (IIS) Manager

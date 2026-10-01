@@ -91,8 +91,8 @@ The \* icon denotes the mandatory clue selector:
 
 ## Using the Local Option
 
-In some cases, a further option is available per clue: “**Is Local?**”. This option allows the
-user to restrict a clue purely to the current Term Set.
+In some cases, a further option is available per clue: “**Is Local?**”. This option lets you
+restrict a clue to the current Term Set only.
 
 :::note
 This option is only available for reused terms (SharePoint Term Sets).

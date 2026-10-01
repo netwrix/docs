@@ -9,7 +9,7 @@ sidebar_position: 20
 SharePoint 2010+ supports Enterprise Content Types, which let you define Content Types on a
 Publishing SharePoint site with one or more secondary sites consuming the Enterprise Content Types.
 
-Once you install Netwrix Data Classification for SharePoint on the SharePoint Farm, you can
+After you install Netwrix Data Classification for SharePoint on the SharePoint Farm, you can
 define SharePoint workflow actions at the SharePoint Content Type Hub site. You can run any actions
 of type Content Type Update on the site collection itself, and you can also run them on
 consuming SharePoint Site collections.

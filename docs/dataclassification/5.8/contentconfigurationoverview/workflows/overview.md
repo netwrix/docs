@@ -19,7 +19,7 @@ To set up a workflow, you need to do the following:
 
 - Select actions that take place when one or more rule conditions match.
 
-Looking for real-life use cases and walk through examples? Check out Netwrix training materials. Go
+For real-life use cases and walkthrough examples, see the Netwrix training materials. Go to
 the[ Netwrix website](https://www.netwrix.com/data_remediation_workflows.html) to find out how you
 can reduce the exposure of your sensitive data.
 

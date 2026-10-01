@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Configure IT Infrastructure
 
-With NDC, you can crawl sources such as GDrive, Microsoft Exchange, SharePoint, Dropbox, GSuite,
+With Netwrix Data Classification (NDC), you can crawl sources such as GDrive, Microsoft Exchange, SharePoint, Dropbox, GSuite,
 Google Drive, Box, and NFS File Share. The topics of this section guide you through configuration
 of infrastructure for crawling these sources.
 

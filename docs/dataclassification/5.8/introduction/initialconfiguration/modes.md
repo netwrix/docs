@@ -16,7 +16,7 @@ Review the following descriptions and select a mode:
 
 ## No Index
 
-In this mode, the core search index is disabled, heavily reducing the disk space requirements
+In this mode, the product disables the core search index, heavily reducing the disk space requirements
 for the CSE files and improving overall document throughput for classification. Under this mode
 Search isn't available and Browse functionality isn't subject to security trimming. Netwrix
 recommends this mode for data discovery, data security governance and compliance use cases.

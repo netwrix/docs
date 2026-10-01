@@ -19,8 +19,8 @@ This doesn't delete content from the external system
 - Re-Index—Queues a source or item for re-indexing regardless of whether the documents changed.
   You can select Re-Index scope:
 
-    - Selected Items and All Descendants — select to Re-Index an Item and child of a child of so
-      forth child element.
+    - Selected Items and All Descendants — select to Re-Index an item and all of its descendant
+      elements.
     - Selected Items and Children — select to Re-Index an Item and its direct child elements.
     - Selected Items Only — select to Re-Index only current item and ignore its child elements.
 

@@ -78,8 +78,8 @@ the left.
 ## Manage Subscriptions
 
 Subscriptions for report templates let you schedule email delivery of a variety of reports or
-set of specific search criteria. Subscriptions are helpful if you are a rare guest of Netwrix Data
-Classification and you only need to get statistics based on individual criteria. For example, an IT
+set of specific search criteria. Subscriptions are helpful if you use Netwrix Data
+Classification infrequently and you only need statistics based on individual criteria. For example, an IT
 manager can provide auditors with weekly reports to prove compliance with regulations.
 [See Report Subscriptions for more information.](/docs/dataclassification/5.8/dataanalysisoverview/reportingintroduction/reportsuscriptions.md)
 

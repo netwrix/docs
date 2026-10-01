@@ -133,8 +133,8 @@ for different languages are always held with appropriate diacritics.
 It can be useful to search for concepts using a degree of fuzzy matching so that words match
 even if the query or documents contain typing errors or variant spelling.
 
-In general, fuzzy matching improves recall but at the expense of precision. In other words, more
-documents should be located but some of these may not be relevant to the query. Netwrix Data
+In general, fuzzy matching improves recall but at the expense of precision. In other words, the
+product locates more documents, but some of these may not be relevant to the query. Netwrix Data
 Classification offers several options for fuzzy matching so that an application can balance the
 needs of precision and recall.
 

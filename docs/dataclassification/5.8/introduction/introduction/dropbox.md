@@ -37,7 +37,7 @@ more information on the accounts and rights.
 
 **To authorize your app**
 
-1. Once you create your App, navigate to the Permissions tab.
+1. After you create your App, navigate to the Permissions tab.
 2. Select the following permissions and click submit.
 
     - account_info.read

@@ -49,7 +49,7 @@ The following options are available:
 
     1. **Taxonomy** - select which of the existing classification taxonomies to use.
     2. **All Terms** - select this option if you want to filter by all terms in the taxonomy. If
-       this option is cleared, the system displays the list of available terms after you select the taxonomy. Select the one you plan to use for filtering.
+       you clear this option, the system displays the list of available terms after you select the taxonomy. Select the one you plan to use for filtering.
 
     :::note
     The product doesn't support multiple selection: to configure several filter values,
@@ -63,13 +63,13 @@ The following options are available:
 
 Then verify that the configured filters appear properly:
 
-- Including filters (i.e. instructing to include documents with classification tag you selected) are
-  colored blue:
+- Including filters (i.e. instructing to include documents with classification tag you selected)
+  appear in blue:
 
 ![workflow_step3_filter_blue_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_step3_filter_blue_thumb_0_0.webp)
 
 - Excluding filters (i.e. instructing to include documents without classification tag you selected)
-  are colored red:
+  appear in red:
 
 ![workflow_step3_filter_red_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_step3_filter_red_thumb_0_0.webp)
 

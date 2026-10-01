@@ -64,7 +64,7 @@ To register a new Azure AD application, do the following:
 
 Next, you need to grant your new application the required API permissions.
 
-Azure AD applications can be assigned _Delegated_ or _Application_ permissions:
+You can assign Azure AD applications either _Delegated_ or _Application_ permissions:
 
 - _Delegated_ permissions require a signed-in user present who consents to the permissions every
   time the app sends an API call.
@@ -84,7 +84,7 @@ When found, click the entry and proceed with adding the necessary permissions. T
 here on remain the same, so in most cases you would need the Application permissions entry, and the
 relevant set of permissions therein.
 
-1. Select the relevant entries, hit the Add permissions.
+1. Select the relevant entries, then click **Add permissions**.
 2. On the **Request API permissions**→Microsoft APIs pane, scroll down and select SharePoint.
 3. Select Application Permissions.
 4. Apply the following permissions:

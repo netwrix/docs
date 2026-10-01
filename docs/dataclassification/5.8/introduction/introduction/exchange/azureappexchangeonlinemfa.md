@@ -63,7 +63,7 @@ Application redirect URl is optional, you can leave it blank on this step.
 
 Next, you need to grant your new application the required API permissions.
 
-Azure AD applications can be assigned _Delegated_ or _Application_ permissions:
+You can assign Azure AD applications either _Delegated_ or _Application_ permissions:
 
 - _Delegated_ permissions require a signed-in user present who consents to the permissions every
   time the app sends an API call.

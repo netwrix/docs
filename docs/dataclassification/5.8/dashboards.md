@@ -42,7 +42,7 @@ following meanings:
 - Deleted Manually—Items removed manually by an end-user via the administration console
 
 :::note
-Deleted documents are retained as a safeguard against accidental deletion. Click the Expunge option located on the Deleted Automatically and Deleted Manually rows to fully remove those documents from the system. You can enable automatic expunging via the [Administration configuration settings](/docs/dataclassification/5.8/systemconfigurationoverview/configuration/coreconfiguration/administration.md). The Expunge option appears only if there are documents to expunge.
+The product retains deleted documents as a safeguard against accidental deletion. Click the Expunge option located on the Deleted Automatically and Deleted Manually rows to fully remove those documents from the system. You can enable automatic expunging via the [Administration configuration settings](/docs/dataclassification/5.8/systemconfigurationoverview/configuration/coreconfiguration/administration.md). The Expunge option appears only if there are documents to expunge.
 :::
 
     ![dashboard_thumb_0_0](/images/dataclassification/5.8/admin/reporting/dashboard_thumb_0_0.webp)
@@ -63,8 +63,8 @@ outstanding system issues.
 
     ![health_config_notifications](/images/dataclassification/5.8/admin/reporting/health_config_notifications.webp)
 
-2. Select Only dismiss health notifications that are older than one week, if you don't want to be
-   notified on outdated issues.
+2. Select Only dismiss health notifications that are older than one week, if you don't want
+   notifications about outdated issues.
 3. Select what you want to dismiss – warnings and all security notifications.
 
 ## Netwrix Data Classification Service Viewer

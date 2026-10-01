@@ -42,7 +42,7 @@ You can use the Browse function to:
 ![browsetab_thumb_0_0](/images/dataclassification/5.8/admin/reporting/browsetab_thumb_0_0.webp)
 
 :::note
-By default, the Browse results don't include sources that haven't been indexed yet or that aren't configured for indexing. 
+By default, the Browse results don't include sources that the product hasn't indexed yet or that you haven't configured for indexing. 
 To include results from these sources, tick the Show Unindexed Documents checkbox.
 :::
 

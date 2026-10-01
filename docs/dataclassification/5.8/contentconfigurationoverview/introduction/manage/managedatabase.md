@@ -98,8 +98,8 @@ Stored procedures aren't supported.
 
 
 Adding the query will take you to the custom query configuration. Here you can update the primary
-key query and the content query, all other configuration options are described in the Table
-Configuration section:
+key query and the content query; the Table Configuration section describes all other configuration
+options:
 
 ![setsqlquery](/images/dataclassification/5.8/admin/sources/database/setsqlquery.webp)
 

@@ -50,7 +50,7 @@ The dashboard includes the following sections:
 - Total processed files – shows the actual number of the classified files.
 
     :::note
-    Folders aren't counted.
+    The dashboard doesn't count folders.
     :::
 
 
@@ -60,7 +60,7 @@ The dashboard includes the following sections:
   full list of predefined taxonomies.
 
     :::note
-    Custom taxonomies aren't counted.
+    The dashboard doesn't count custom taxonomies.
     :::
 
 

@@ -10,8 +10,8 @@ This section contains information on how to configure SharePoint and Office 365 
 
 ## SharePoint Labels
 
-SharePoint labels (Alternate Term Labels) are alternate labels configured in SharePoint against the
-English language. Through the administration interface you can add and remove alternate
+SharePoint labels (Alternate Term Labels) are alternate labels that you configure in SharePoint
+against the English language. Through the administration interface you can add and remove alternate
 labels. You can't change the default label (instead, rename the node via the treeview right click
 menu).
 

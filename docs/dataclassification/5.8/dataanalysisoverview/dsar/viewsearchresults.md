@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # View Search Query Results
 
-Depending on assigned DSAR role, a user can view their searches or searches submitted by other
-users even when its status is "_queued_" or "_in progress_". To view a search query results, do the
+Depending on assigned DSAR role, a user can view their searches or searches that other users
+submitted, even when the status is "_queued_" or "_in progress_". To view a search query results, do the
 following:
 
 1. In administrative web console , navigate to Data Analysis → DSAR.
