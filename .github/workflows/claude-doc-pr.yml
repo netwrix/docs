@@ -93,7 +93,7 @@ jobs:
 
       - name: Run editorial review
         if: steps.changed-files.outputs.count > 0
-        uses: anthropics/claude-code-action@51db78a4b844e144f8d02425cb280435c04a3474 # v1
+        uses: anthropics/claude-code-action@9171db3e57d6a3140a37ddc2ba92788584e0ead6 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOC_PR_FILES: ${{ steps.changed-files.outputs.files }}
@@ -189,7 +189,7 @@ jobs:
 
       - name: Handle @claude request
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        uses: anthropics/claude-code-action@51db78a4b844e144f8d02425cb280435c04a3474 # v1
+        uses: anthropics/claude-code-action@9171db3e57d6a3140a37ddc2ba92788584e0ead6 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
