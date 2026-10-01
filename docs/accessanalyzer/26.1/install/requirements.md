@@ -110,7 +110,7 @@ The installer downloads everything it needs during the install, and the running 
 
 Some features add outbound connections of their own after you configure them.
 
-| Host | Port | When it's needed |
+| Host | Port | When you need it |
 |---|---|---|
 | `login.microsoftonline.com`, `sts.windows.net` | TCP 443 | You use Entra ID as the identity provider. |
 | `graph.microsoft.com` | TCP 443 | You add an Entra ID or SharePoint Online source. |

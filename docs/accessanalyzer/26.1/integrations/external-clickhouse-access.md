@@ -73,7 +73,7 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
 
 ## Get the credentials
 
-Opening access creates a dedicated analytics store user, `access_analyzer_external`, with a generated password. The user has read-only access to the `access_analyzer` and `access_analyzer_sample` databases, with the same per-query memory limits as the user Access Analyzer's own reports use. It can run at most four queries at once, and its total memory across them is capped. Clients can't override these limits.
+Opening access creates a dedicated analytics store user, `access_analyzer_external`, with a generated password. The user has read-only access to the `access_analyzer` and `access_analyzer_sample` databases, with the same per-query memory limits as the user Access Analyzer's own reports use. It can run at most four queries at once, and Access Analyzer caps its total memory across them. Clients can't override these limits.
 
 Give external tools only this user. Don't share the analytics store's administrator credentials: the exposed port reaches the administrator like any other user, so its password is the only thing protecting it.
 
@@ -115,7 +115,7 @@ Give external tools only this user. Don't share the analytics store's administra
 
 ## Rotate the password
 
-Access Analyzer creates the password once and resets the `access_analyzer_external` user's password from it on every sync. A password changed inside the analytics store is overwritten at the next sync, so rotate through the stored secret:
+Access Analyzer creates the password once and resets the `access_analyzer_external` user's password from it on every sync. If you change the password inside the analytics store, the next sync overwrites it, so rotate through the stored secret:
 
 ```bash
 kubectl delete secret clickhouse-external-secret -n access-analyzer
