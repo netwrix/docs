@@ -247,12 +247,6 @@ export const PRODUCTS = [
         isLatest: true,
         sidebarFile: './sidebars/directorymanager/11.1.js',
       },
-      {
-        version: '11.0',
-        label: '11.0',
-        isLatest: false,
-        sidebarFile: './sidebars/directorymanager/11.0.js',
-      },
     ],
     defaultVersion: '11.1',
   },
