@@ -83,7 +83,7 @@ You can enable multiple authentication methods at the same time by setting more 
 | `SAML_ALLOWED_ISSUER` | Expected issuer/entity ID from the identity provider | Required. |
 | `SAML_SSO_URL` | Identity provider single sign-on URL | Required. Must be a valid `http`/`https` URL. |
 | `SAML_ISSUER` | This service provider's issuer/entity ID | — |
-| `SAML_DISPLAY_NAME` | Label shown on the sign-in page | — |
+| `SAML_DISPLAY_NAME` | Label that appears on the sign-in page | — |
 | `SAML_METADATA_URL` | Identity provider metadata URL | Alternative to manual issuer/single sign-on URL entry. |
 | `SAML_CERTIFICATE_PATH` | Path to the identity provider's signing certificate | Optional. If you supply one, the installer verifies the file exists. |
 
@@ -96,7 +96,7 @@ See [OpenID Connect](enterpriseauthsetup.md#openid-connect) for background.
 | `OIDC_AUTHORITY` | OpenID Connect authority/issuer URL | Required. Must be a valid absolute `http`/`https` URL. |
 | `OIDC_CLIENT_ID` | Application (client) ID registered with the identity provider | Required. |
 | `OIDC_CLIENT_SECRET` | Application client secret | The installer doesn't echo this in the UI and masks it in the verbose log. |
-| `OIDC_DISPLAY_NAME` | Label shown for this provider on the sign-in page | Optional. Defaults to `Entra ID` if omitted. |
+| `OIDC_DISPLAY_NAME` | Label that appears for this provider on the sign-in page | Optional. Defaults to `Entra ID` if you omit it. |
 | `OIDC_GROUP_ID` | Group claim/ID used for role mapping | Optional. |
 
 ### IIS Application Pool Identity Properties

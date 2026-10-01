@@ -25,7 +25,7 @@ You can enable OpenID Connect, SAML2, Windows Authentication, and Disable Passwo
 
 ### Local authentication
 
-PingCastle Enterprise enables local authentication by default, using a username and password stored in the PingCastle Enterprise database. It needs no additional configuration.
+PingCastle Enterprise enables local authentication by default, using a username and password it stores in its own database. It needs no additional configuration.
 
 To hide the local authentication option when you configure other authentication methods, enable **Disable Password Login** on **Configuration** > **Settings** > **Login options**.
 
@@ -202,10 +202,10 @@ On **Configuration** > **Settings** > **OIDC Connect**, enable OIDC login and en
 | Setting | Description |
 |---------|-------------|
 | Enabled | Turns on OIDC login. |
-| Display Name | The text shown on the OIDC login button. |
+| Display Name | The text that appears on the OIDC login button. |
 | Client ID | The application (client) ID your identity provider assigned when you registered PingCastle Enterprise. |
 | Client Secret | The client secret your identity provider issued for the application. |
-| Authority | The base URL of your identity provider, used to discover its OIDC endpoints. |
+| Authority | The base URL of your identity provider, which PingCastle Enterprise uses to discover its OIDC endpoints. |
 | Callback Path | The path on PingCastle Enterprise where your identity provider redirects users after they sign in. |
 | Response Type | The OIDC response type PingCastle Enterprise uses during the authentication flow, such as `code`. |
 | Use PKCE | Enables Proof Key for Code Exchange (PKCE), which adds a layer of protection to the authorization code exchange. |
@@ -306,7 +306,7 @@ On **Configuration** > **Settings** > **SAML**, enable SAML login and enter the 
 | Setting | Description |
 |---------|-------------|
 | Enabled | Turns on SAML login. |
-| Display Name | The text shown on the SAML login button. |
+| Display Name | The text that appears on the SAML login button. |
 | Issuer | The identifier PingCastle Enterprise presents to your identity provider as the SAML issuer. |
 | IdP Metadata | The URL of your identity provider's SAML metadata. PingCastle Enterprise fetches signing certificates and endpoint information from it automatically. |
 | Single Sign-On Destination | The SSO endpoint on your identity provider. Set this when you configure SAML manually instead of through IdP metadata. |

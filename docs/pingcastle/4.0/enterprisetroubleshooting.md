@@ -15,7 +15,7 @@ See [Collecting Support Logs](enterprisesupportlogs.md) for where to find and ho
 
 ### Editing the appsettings.Production.json File
 
-Some troubleshooting steps require editing the `appsettings.Production.json` file directly. This file is in the PingCastle Enterprise installation directory. The CloudAPI service has its own separate copy in its `CloudAPI` subfolder.
+Some troubleshooting steps require editing the `appsettings.Production.json` file directly. This file is in the PingCastle Enterprise installation directory. The CloudAPI service has its own copy in its `CloudAPI` subfolder.
 
 Open the file with a plain text or code editor, such as Notepad or Visual Studio Code. Don't use Word or another rich-text editor, since these can introduce hidden formatting that breaks the JSON syntax.
 

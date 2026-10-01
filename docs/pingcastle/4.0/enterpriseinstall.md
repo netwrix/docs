@@ -119,7 +119,7 @@ PingCastleEnterpriseInstaller.exe installs and configures IIS, Windows Authentic
 
 #### Step 1 - Install SQL Server Express with Chocolatey
 
-For test and POC systems, you can use [Chocolatey](https://chocolatey.org/) to automate SQL Server Express installation:
+For test and proof-of-concept systems, you can use [Chocolatey](https://chocolatey.org/) to automate SQL Server Express installation:
 
 ```powershell
 # REQUIRES Administrative PowerShell
