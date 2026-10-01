@@ -99,20 +99,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
 
 ### Roll back an airgap upgrade
 
-A rollback is a re-pin. The previous chart tag and images stay in the cluster, so you don't need the old media. Read the previous version from the annotation, then run all three `dspmctl` commands: `set-revision` turns off automated sync so self-heal doesn't immediately re-sync the new version, `sync` applies it, and `enable-auto` turns automated sync back on. Skip `enable-auto` and the `netwrix` app never syncs again, and the next `dspm-installer upgrade` refuses to run.
-
-```bash
-sudo kubectl -n argocd get application netwrix \
-  -o jsonpath='{.metadata.annotations.dspm\.netwrix\.com/previous-target-revision}'
-sudo dspmctl set-revision netwrix v<previous>
-sudo dspmctl sync netwrix
-sudo dspmctl enable-auto netwrix
-sudo dspm-installer wait-for-apps
-```
-
-:::warning
-A re-pin doesn't roll back database schema changes the new release made. This is the same limitation an online rollback has.
-:::
+A rollback is a re-pin: the previous chart tag and images stay in the cluster, so you don't need the old media. See [Rolling back to a previous version](roll-back-to-a-previous-version.md) for the precautions to take first and the full `dspmctl` procedure, including finding the previous version from the `previous-target-revision` annotation.
 
 ### Upgrade exit codes
 
