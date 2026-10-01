@@ -1,0 +1,10 @@
+{
+  "label": "Add Single Database",
+  "position": 120,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "addsingledatabase"
+  }
+}

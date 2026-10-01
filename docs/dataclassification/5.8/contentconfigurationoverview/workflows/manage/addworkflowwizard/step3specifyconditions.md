@@ -1,0 +1,116 @@
+---
+title: "Step 3. Specify Conditions for Processing"
+description: "Step 3. Specify Conditions for Processing"
+sidebar_position: 30
+---
+
+# Step 3. Specify Conditions for Processing
+
+At this step, you can specify whether the product performs workflow actions with the classified
+documents only, or with any documents from the content source, etc.
+
+![workflow_step3_condition](/images/dataclassification/5.8/admin/workflows/workflow_step3_condition.webp)
+
+The following options are available:
+
+- **Any Document** — with this option selected, the system applies the workflow to all documents in the
+  specified content source
+- **Any Classified Document** — with this option selected, the system applies the workflow to the
+  documents in the specified source if any classification tagged them
+- **Specific Classification** — with this option selected, you need to specify whether to apply the
+  workflow to the classified or non-classified documents
+
+    - To process only documents classified by specific classification, select **Classified** (this
+      acts as an including filter)
+    - To process only non-classified documents, select **Not Classified**.
+
+    If you selected any of the **Specific Classification** variants, specify
+    taxonomy terms to filter documents for your workflow.
+
+- Document Age - with this option selected, the system applies the workflow to the documents with a
+  certain age requirement.
+
+    You can select property to determine the file age:
+
+    - Last modified date;
+    - Last accessed date;
+
+    You can also select the documents to target:
+
+    - Old;
+    - New;
+
+    You can also specify what age this workflow targets by populating the field.
+
+**To configure terms**
+
+1. In the **Select Term** field, click the tag icon.
+2. In the **Details** dialog, specify filter settings to use when filtering out the documents:
+
+    1. **Taxonomy** - select which of the existing classification taxonomies to use.
+    2. **All Terms** - select this option if you want to filter by all terms in the taxonomy. If
+       you clear this option, the system displays the list of available terms after you select the taxonomy. Select the one you plan to use for filtering.
+
+    :::note
+    The product doesn't support multiple selection: to configure several filter values,
+    repeat this procedure for each filter value you need.
+    :::
+
+
+    3. **Include Children** - select this option if needed.
+
+3. Finally, click **OK** to save the settings and close the dialog.
+
+Then verify that the configured filters appear properly:
+
+- Including filters (i.e. instructing to include documents with classification tag you selected)
+  appear in blue:
+
+![workflow_step3_filter_blue_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_step3_filter_blue_thumb_0_0.webp)
+
+- Excluding filters (i.e. instructing to include documents without classification tag you selected)
+  appear in red:
+
+![workflow_step3_filter_red_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_step3_filter_red_thumb_0_0.webp)
+
+If you selected more than one filter, the wizard prompts you for the logic to use when
+applying the filters:
+
+- To apply AND logic (i.e. the document must meet all filtering conditions), select **All**.
+- To apply OR logic (i.e. the document must meet any of the filtering conditions), select **Any**.
+
+## Example 1. Include All Files Classified as PDF
+
+For example, you want your workflow to process all PDF files from the selected content source. Do
+the following:
+
+1. Select **Specific Classification** option.
+2. Select **Classified**.
+3. Click the tags icon in the **Select Term** field on the right.
+4. In the **Details** dialog, from the **Taxonomy** list select **File Type**.
+5. Then from the list of file types select **PDF** and click **OK**.
+
+![workflow_step3_example_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_step3_example_thumb_0_0.webp)
+
+After you get back to the wizard, the PDF filter appears under the **Classified** option,
+colored blue (indicating this filter is including).
+
+## Example 2. Exclude HTML and XML Files
+
+For example, you want your workflow to process all classified documents from the selected content
+source, except HTML and XML files. Do the following:
+
+1. Select **Specific Classification** option.
+2. Select **Not Classified**.
+3. Click the tags icon in the **Select Term** field.
+4. In the **Details** dialog, from the **Taxonomy** list select **File Type**.
+5. Then from the list of file types select **HTML** and click **OK**.
+6. After you get back to the wizard, check that the PDF filter appears colored red (indicating this
+   filter is excluding).
+7. Repeat steps 3-5 for the XML file type.
+8. Under the **Require all conditions?** prompt select **Any** — to apply OR logic, so that
+   the product excludes any HTML or XML file (in other words, the workflow applies only to the
+   files not classified as HTML or XML).
+9. Finally, click **Next** to proceed.
+
+![workflow_step3_example2_thumb_0_0](/images/dataclassification/5.8/admin/workflows/workflow_step3_example2_thumb_0_0.webp)

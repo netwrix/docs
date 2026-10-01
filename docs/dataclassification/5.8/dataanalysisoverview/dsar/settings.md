@@ -1,0 +1,53 @@
+---
+title: "DSAR Settings"
+description: "DSAR Settings"
+sidebar_position: 20
+---
+
+# DSAR Settings
+
+This section describes Netwrix Data Classification configuration required to run Data Subject Access
+Requests (DSAR).
+
+:::note
+Only users with 'Super User' permissions can configure DSAR.
+[See DSAR Roles for more information.](/docs/dataclassification/5.8/dataanalysisoverview/dsar/roles.md)
+:::
+
+
+1. In administrative web console , navigate to Data Analysis → DSAR.
+2. Locate the Settings tab.
+3. Configure DSAR as follows:
+
+    | Option                   | Description                                                                                                                                                                                                                                                                                                                                                                                                           |
+    | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | Batch Start Time         | Review and modify batch run schedule to optimize the timing for your environment. **NOTE:** This setting affects the batches of all users; there is one batch-run per instance of the DSAR tool. By default, the DSAR batch runs automatically only once a day; to force another batch run within a 24 hour period, use the **Run now** button, as described later in this topic.                              |
+    | Output Location          | Specify a desired file share to export results of DSAR searches. Items are grouped by Case ID. **NOTE:** There is one output location per instance of the DSAR tool. Changing the Output Location setting doesn't impact files already in their location - i.e., the product doesn't move any existing output when you change the setting.                                          |
+    | Email Notification Group | Specify an email group to send notifications to. Click + to create a new group or select existing one. In the Add dialog, configure Email group as follows: - Group Name – provide a name for the new group. - Email Addresses – select as many addresses as needed. The email group must contain at least one email address. - Email Server – select the email server. See Email Configuration for more information. |
+
+## Run now
+
+The product runs all search requests at the scheduled time that a Super User sets. If you have one or more
+pending searches and for some reason want to run them immediately, use Run now option.
+
+:::note
+This option is only available when there are queued requests and a search isn't
+in progress to prevent conflicting processes.
+:::
+
+
+**To run queued search requests immediately**
+
+1. In administrative web console, navigate to Data Analysis → DSAR.
+2. Click Run now under System Configuration.
+3. Confirm that you want to run all requests immediately.
+
+:::note
+When forcing a search request run, consider that this operation may degrade performance.
+:::
+
+
+See also:
+
+- [DSAR Roles](/docs/dataclassification/5.8/dataanalysisoverview/dsar/roles.md)
+- [Create Search Requests](/docs/dataclassification/5.8/dataanalysisoverview/dsar/crestesearchrequests.md)

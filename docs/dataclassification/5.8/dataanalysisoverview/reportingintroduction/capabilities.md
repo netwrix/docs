@@ -1,0 +1,26 @@
+---
+title: "Reporting Capabilities"
+description: "Reporting Capabilities"
+sidebar_position: 20
+---
+
+# Reporting Capabilities
+
+Selecting **Analysis** → Reports in the management console helps a user extract a wealth of
+information from the Netwrix Data Classification (NDC) index.
+
+The main **Dashboard** has three high level graphs highlighting the current state of processing:
+
+- Document Progress—A graphical display of the main stats display; once processing is complete,
+  the product allocates documents to either Fully Processed or Errors
+- Index Size—Shows the percentage of each source type in processing
+- Classification Coverage—Shows the percentage of classified content, broken down by type, and the
+  percentage of content that hasn't received any auto-classifications
+
+Filter and refine data presentation to look for the areas that contain the largest
+amount of documents tagged with a particular term, or to only review specific content.
+
+Reporting capabilities also include the following:
+
+- [Content Distribution Map](/docs/dataclassification/5.8/dataanalysisoverview/reportingintroduction/contentdistributionmap.md)
+- [Built-in Reports](/docs/dataclassification/5.8/dataanalysisoverview/reportingintroduction/builtinreportsreview/builtinreportsoverview.md)
