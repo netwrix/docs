@@ -61,6 +61,8 @@ Access Analyzer serves the web application **only** over HTTPS, and the installe
 
 The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/etc/dspm/tls.key` unless you point it elsewhere. A self-signed certificate works, and the installer uses it as its own CA bundle, but browsers warn users about it.
 
+See [TLS certificate requirements](tls-certificate-requirements.md) to prepare and check a CA-issued certificate before install day.
+
 ## License Key
 
 You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download, and the installer validates it online during the install, so the server must reach the licensing endpoints that [Outbound](#outbound) lists. An expired, suspended, or unknown key stops the install.
