@@ -271,8 +271,8 @@ This list displays the supported providers. Select _SQL Server_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
-Step 5 – The SQL database for which you want to create a data source resides on an SQL server. Enter
-the name or IP address of this SQL server in the SQL Server Name box.
+Step 5 – In the SQL Server Name box, enter the name or IP address of the SQL server that hosts the
+database you want to create a data source for.
 
 Step 6 – By default, Directory Manager uses SQL authentication to connect to the SQL server. In this
 case, Directory Manager enables the Service Account and Service Account Password boxes. Enter the
@@ -379,7 +379,7 @@ The data source is available on the Text/CSV tab of the Data Sources page.
 ## Create a Data Source for ODBC
 
 Use an ODBC data source to connect to an ODBC-compatible provider, such as databases, directories,
-or even files. Examples include SQL server, MS Access files, and Oracle.
+and files. Examples include SQL server, MS Access files, and Oracle.
 
 Create a separate data source for each ODBC-compatible file, database, or directory you
 want to use in queries or as source/destination in Synchronize jobs.
@@ -396,8 +396,8 @@ This list displays the supported providers. Select _ODBC_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
-Step 5 – Enter the DSN name in the DSN box. Directory Manager uses this name to request a connection
-to the ODBC data source. Note the following:
+Step 5 – Enter the data source name (DSN) in the DSN box. Directory Manager uses this name to
+request a connection to the ODBC data source. Note the following:
 
 - For a system DSN, provide the name of the DSN.
 - For a file DSN, provide the file path with file name and extension.
@@ -405,8 +405,8 @@ to the ODBC data source. Note the following:
 Step 6 – Select the **System DSN** or **File DSN** option button to specify the DSN type to use for
 connecting to the data source.
 
-Step 7 – If the data source is password protected, provide a username and password in the
-**Service Account** and **Service Account Password** boxes to access it.
+Step 7 – If the data source is password protected, use the **Service Account** and
+**Service Account Password** boxes to provide a username and password that can access it.
 Depending on the data source, you may not need to provide both a username and password.
 For example, an MS Access database may need only a password, while an SQL server may require both a
 username and password.
