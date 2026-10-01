@@ -16,6 +16,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Architecture | 64-bit x86 or Arm. |
 | Access | Root, either directly or through `sudo`. |
 | Free disk on `/var/lib` | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib`. |
+| Free disk on `/tmp` (airgap installs only) | 25 GB. |
 
 On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
 
