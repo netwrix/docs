@@ -261,6 +261,15 @@ Auditor supports monitoring the following device versions:
 See the [Configure Cisco IOS Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoios.md) topic for
 additional information.
 
+Cisco NX-OS (Nexus) Devices
+
+Auditor supports monitoring the following device versions:
+
+- NX-OS 10.x
+
+See the [Configure Cisco NX-OS (Nexus) Devices](/docs/auditor/10.9/configuration/networkdevices/cisconxos.md) topic
+for additional information.
+
 Cisco Meraki Dashboard
 
 Auditor supports monitoring the following device versions:
