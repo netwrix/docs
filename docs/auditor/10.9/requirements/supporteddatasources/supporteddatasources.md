@@ -333,6 +333,15 @@ Auditor supports monitoring the following device versions:
 See the [Configure SonicWall Devices](/docs/auditor/10.9/configuration/networkdevices/sonicwall.md) topic for
 additional information.
 
+WatchGuard Firebox Devices
+
+Auditor supports monitoring the following device versions:
+
+- Fireware OS 12.x and above
+
+See the [Configure WatchGuard Firebox Devices](/docs/auditor/10.9/configuration/networkdevices/watchguard.md) topic
+for additional information.
+
 ## Oracle
 
 Auditor supports monitoring the following versions:

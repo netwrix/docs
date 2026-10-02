@@ -20,6 +20,7 @@ device:
 - [Configure SonicWall Devices](/docs/auditor/10.9/configuration/networkdevices/sonicwall.md)
 - [Configure HPE Aruba Devices](/docs/auditor/10.9/configuration/networkdevices/hpearuba.md)
 - [Configure Pulse Secure Devices](/docs/auditor/10.9/configuration/networkdevices/pulsesecure.md)
+- [Configure WatchGuard Firebox Devices](/docs/auditor/10.9/configuration/networkdevices/watchguard.md)
 
 **CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
