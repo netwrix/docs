@@ -261,6 +261,15 @@ Auditor supports monitoring the following device versions:
 See the [Configure Cisco IOS Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoios.md) topic for
 additional information.
 
+Cisco IOS XE Devices
+
+Auditor supports monitoring the following device versions:
+
+- IOS XE 17.3 (Amsterdam)
+
+See the [Configure Cisco IOS XE Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoiosxe.md) topic for
+additional information.
+
 Cisco NX-OS (Nexus) Devices
 
 Auditor supports monitoring the following device versions:
