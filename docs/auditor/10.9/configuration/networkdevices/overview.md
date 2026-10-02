@@ -12,6 +12,7 @@ device:
 - [Configure Cisco ASA Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoasa.md)
 - [Configure Cisco IOS Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoios.md)
 - [Configure Cisco IOS XE Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoiosxe.md)
+- [Configure Cisco NX-OS (Nexus) Devices](/docs/auditor/10.9/configuration/networkdevices/cisconxos.md)
 - [Configure Cisco FTD Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoftd.md)
 - [Cisco Meraki Dashboard ](/docs/auditor/10.9/configuration/networkdevices/ciscomerakidashboard.md)
 - [Configure Cisco Meraki Devices](/docs/auditor/10.9/configuration/networkdevices/ciscomerakidevices.md)
