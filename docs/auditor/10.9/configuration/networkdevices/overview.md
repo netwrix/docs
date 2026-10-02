@@ -12,6 +12,7 @@ device:
 - [Configure Cisco ASA Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoasa.md)
 - [Configure Cisco IOS Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoios.md)
 - [Configure Cisco IOS XE Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoiosxe.md)
+- [Configure Cisco NX-OS (Nexus) Devices](/docs/auditor/10.9/configuration/networkdevices/cisconxos.md)
 - [Configure Cisco FTD Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoftd.md)
 - [Cisco Meraki Dashboard ](/docs/auditor/10.9/configuration/networkdevices/ciscomerakidashboard.md)
 - [Configure Cisco Meraki Devices](/docs/auditor/10.9/configuration/networkdevices/ciscomerakidevices.md)
@@ -21,6 +22,7 @@ device:
 - [Configure SonicWall Devices](/docs/auditor/10.9/configuration/networkdevices/sonicwall.md)
 - [Configure HPE Aruba Devices](/docs/auditor/10.9/configuration/networkdevices/hpearuba.md)
 - [Configure Pulse Secure Devices](/docs/auditor/10.9/configuration/networkdevices/pulsesecure.md)
+- [Configure WatchGuard Firebox Devices](/docs/auditor/10.9/configuration/networkdevices/watchguard.md)
 
 **CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)

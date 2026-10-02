@@ -270,6 +270,15 @@ Auditor supports monitoring the following device versions:
 See the [Configure Cisco IOS XE Devices](/docs/auditor/10.9/configuration/networkdevices/ciscoiosxe.md) topic for
 additional information.
 
+Cisco NX-OS (Nexus) Devices
+
+Auditor supports monitoring the following device versions:
+
+- NX-OS 10.x
+
+See the [Configure Cisco NX-OS (Nexus) Devices](/docs/auditor/10.9/configuration/networkdevices/cisconxos.md) topic
+for additional information.
+
 Cisco Meraki Dashboard
 
 Auditor supports monitoring the following device versions:
@@ -342,6 +351,15 @@ Auditor supports monitoring the following device versions:
 See the [Configure SonicWall Devices](/docs/auditor/10.9/configuration/networkdevices/sonicwall.md) topic for
 additional information.
 
+WatchGuard Firebox Devices
+
+Auditor supports monitoring the following device versions:
+
+- Fireware OS 12.x and above
+
+See the [Configure WatchGuard Firebox Devices](/docs/auditor/10.9/configuration/networkdevices/watchguard.md) topic
+for additional information.
+
 ## Oracle
 
 Auditor supports monitoring the following versions:
@@ -393,13 +411,9 @@ Auditor supports monitoring the following versions:
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
 
 - Windows 11
 - Windows 10 (32 and 64-bit)
-- Windows 8.1 (32 and 64-bit)
-- Windows 7 (32 and 64-bit)
 
 User Activity data source can support around 300 targets with one user session per target without
 scalability issues:
@@ -436,13 +450,9 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
 
 - Windows 11
 - Windows 10 (32 and 64-bit)
-- Windows 8.1 (32 and 64-bit)
-- Windows 7 (32 and 64-bit)
 
 DNS & DHCP
 
@@ -452,16 +462,6 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2012
-
-:::note
-Auditor supports DNS on Windows Server 2008 SP2 (32 and 64-bit) only.
-:::
-
-:::note
-Netwrix Auditor doesn't support DHCP on Windows Server 2008.
-:::
 
 Internet Information Services (IIS)
 
