@@ -50,7 +50,7 @@ Click **Set priorities** to view or modify policy priorities. This button is onl
 
 Select the policy you want to reprioritize, then click **Higher** or **Lower** to move the policy up or down. Click **Apply priorities** to accept the new priority order.
 
-The [Assign Policies to Users](usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also use the [**Test Policy by User** feature](testpolicy.md#by-user) to see which policy PPE enforces for a particular user.
+The [Assign Policies to Users](usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also use the [**By user**](testpolicy.md#by-user) test to see which policy PPE enforces for a particular user.
 
 ## Export configuration
 
