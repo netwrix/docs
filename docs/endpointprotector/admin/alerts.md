@@ -24,7 +24,7 @@ under the administrator details from **System Configuration** > **System Adminis
 
 ## System alerts
 
-From this section, you can create system alerts, including APNS certificate expiry, updates, and support expiry, endpoint licenses used, and others.
+From this section, you can create system alerts, including Apple Push Notification Service (APNS) certificate expiry, updates, and support expiry, endpoint licenses used, and others.
 
 ![System Alerts Settings](systemalerts.webp)
 
@@ -35,12 +35,12 @@ From this section, you can create system alerts, including APNS certificate expi
    - **Event**—select the type of event that generates the alert:
      - **Updates and Support**—set an alert regarding each module's maintenance status (Device Control, Content Aware Protection, and eDiscovery)
      - **Endpoint Licenses**—set an alert for when the percentage of used Endpoint Licenses reaches 70%, 80%, or 90%
-     - **Client Uninstall**—set an alert each time an Endpoint Protector Client is uninstalled
+     - **Client Uninstall**—set an alert each time someone uninstalls an Endpoint Protector Client
      - **Server Disk Space**—set an alert for when disk space reaches 70%, 80%, or 90%. Select the monitored partitions from the available root, epp, and boot options
      - **Device Control – Logs Amount**—set an alert when the number of Device Control logs stored reaches a specific amount
      - **Content Aware – Logs Amount**—set an alert when the number of Content Aware logs stored reaches a specific amount
      - **Password Expiration**—set an alert when a password is about to expire (10, 5, or 1 day before expiration)
-     - **Not Seen Online**—set an alert when a protected endpoint hasn't been seen online within the specified timeframe
+     - **Not Seen Online**—set an alert when a protected endpoint hasn't come online within the specified timeframe
      - **Unplanned Client Termination**—set an alert when a user tries to terminate the Endpoint Protector process
 
    :::note
@@ -130,15 +130,26 @@ Priority applies at the event type and event level, not at the alert level. The 
 
 ### How log alerts work
 
-The system evaluates log alerts on a schedule at three priority levels:
+Endpoint Protector evaluates log alerts on a schedule. The evaluation frequency depends on the alert's **priority**, which the system assigns automatically based on the events you select in the alert — you can't set the priority manually.
 
-| Priority | Evaluation frequency | Use case |
-|----------|---------------------|----------|
-| High | Every two minutes | Critical security events that require immediate notification |
-| Medium | Every 12 hours | Important events that don't require real-time alerting |
-| Low | Daily at midnight | Informational events for periodic review |
+| Priority | Evaluation frequency | Assigned when |
+|---|---|---|
+| High | Every two minutes | The alert includes the **Uninstall Attempt** event (Device Control alerts only) |
+| Medium | Every 12 hours (00:00 and 12:00 server time) | The alert includes any other events, including every Content Aware Protection event |
+| Low | Daily at midnight | **Placeholder priority level, reserved for future use.** No event carries Low priority. |
 
-When an event meets a log alert condition, the system sends an email notification to the selected administrators with a CSV attachment containing the matching log entries.
+If an alert includes several events, the highest priority among them applies to the whole alert—for example, including the **Uninstall Attempt** event alongside any other event makes the entire alert High priority.
+
+On each evaluation, if new log entries match the alert since the last notification, Endpoint Protector emails the selected administrators a ZIP attachment containing a CSV of the matching log entries. If no new entries match, the system doesn't send an email.
+
+#### Priority by event type
+
+| Log type | Event | Priority |
+|---|---|---|
+| Device Control | Uninstall Attempt | High |
+| Device Control | All other events—for example, Connected, Disconnected, Enabled, Disabled, Blocked, Device TD, Forced Uninstall Attempt, Client Integrity Fail, Transfer Limit Reached, Offline Temporary Password Used | Medium |
+| Content Aware Protection | Content Threat Detected, Content Threat Blocked, Content Remediation Session Active, Content Remediation Request Canceled by User, DPI Bypassed Traffic, Application Start | Medium |
+| — | None assigned | Low (placeholder) |
 
 ### Create a log alert
 
