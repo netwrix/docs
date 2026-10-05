@@ -1,5 +1,5 @@
-// Redirects from the Access Analyzer 26.1 pages that existed under the old
-// `2601` version folder to their replacements in the reorganized 26.1 docs.
+// Redirects from retired Access Analyzer 26.1 pages, including those under the
+// old `2601` version folder, to their replacements in the reorganized 26.1 docs.
 // The product's in-app help links and older bookmarks still point at the old
 // paths, so every old page maps somewhere.
 
@@ -16,22 +16,22 @@ const PAGE_MAP = {
   'gettingstarted/active-directory/set-up-source-group': 'guides/active-directory',
   'gettingstarted/active-directory/scanning-options': 'guides/active-directory',
   'gettingstarted/active-directory/schema-reference': 'sources/active-directory',
-  'gettingstarted/active-directory/reports': 'dashboards-reports/reports/identity',
+  'gettingstarted/active-directory/reports': 'reporting/netwrix-reports',
   'gettingstarted/entra-id/entra-id': 'guides/entra-id',
   'gettingstarted/entra-id/set-up-source-group': 'guides/entra-id',
   'gettingstarted/entra-id/scanning-options': 'guides/entra-id',
   'gettingstarted/entra-id/schema-reference': 'sources/entra-id',
-  'gettingstarted/entra-id/reports': 'dashboards-reports/reports/identity',
+  'gettingstarted/entra-id/reports': 'reporting/netwrix-reports',
   'gettingstarted/file-servers/file-servers': 'guides/smb-file-servers',
   'gettingstarted/file-servers/set-up-source-group': 'guides/smb-file-servers',
   'gettingstarted/file-servers/scanning-options': 'guides/smb-file-servers',
   'gettingstarted/file-servers/schema-reference': 'sources/smb-file-servers',
-  'gettingstarted/file-servers/reports': 'dashboards-reports/reports/data',
+  'gettingstarted/file-servers/reports': 'reporting/netwrix-reports',
   'gettingstarted/sharepoint-online/sharepoint-online': 'guides/microsoft-365',
   'gettingstarted/sharepoint-online/set-up-source-group': 'guides/microsoft-365',
   'gettingstarted/sharepoint-online/scanning-options': 'guides/microsoft-365',
   'gettingstarted/sharepoint-online/schema-reference': 'sources/microsoft-365',
-  'gettingstarted/sharepoint-online/reports': 'dashboards-reports/reports/data',
+  'gettingstarted/sharepoint-online/reports': 'reporting/netwrix-reports',
 
   'install/prerequisites': 'install/requirements',
   'install/system/requirements': 'install/requirements',
@@ -79,14 +79,25 @@ const PAGE_MAP = {
   'configurations/source-groups/scanners/manage-scanners': 'agents',
   'configurations/source-groups/scanners/best-practices': 'agents',
 
-  'dashboards-reports/my-reports': 'dashboards-reports',
-  'dashboards-reports/reports': 'dashboards-reports/reports',
+  'dashboards-reports/my-reports': 'reporting',
+  'dashboards-reports/reports': 'reporting/netwrix-reports',
+};
+
+const MOVED_26_1_PAGES = {
+  'dashboards-reports': 'reporting',
+  'dashboards-reports/dashboards': 'reporting/netwrix-reports',
+  'dashboards-reports/dashboards/data-security': 'reporting/netwrix-reports',
+  'dashboards-reports/dashboards/active-directory': 'reporting/netwrix-reports',
+  'dashboards-reports/reports': 'reporting/netwrix-reports',
+  'dashboards-reports/reports/data': 'reporting/netwrix-reports',
+  'dashboards-reports/reports/identity': 'reporting/netwrix-reports',
+  'dashboards-reports/reports/compliance': 'reporting/netwrix-reports',
 };
 
 // Section index pages (index.md or a generated index) are served with a trailing slash.
 const SECTION_INDEXES = new Set([
   'agents',
-  'dashboards-reports',
+  'reporting',
   'scans',
   'sensitive-data-patterns',
   'service-accounts',
@@ -105,11 +116,24 @@ function target(newPath) {
 // new page, which createRedirects() already generates.
 const UNVERSIONED_COLLISIONS = new Set(Object.values(PAGE_MAP));
 
-export const accessAnalyzer261Redirects = Object.entries(PAGE_MAP).flatMap(([oldPath, newPath]) => {
+const oldVersionRedirects = Object.entries(PAGE_MAP).flatMap(([oldPath, newPath]) => {
   const to = target(newPath);
   const entries = [{ from: join(OLD_VERSION_PREFIX, oldPath), to }];
   if (oldPath && !UNVERSIONED_COLLISIONS.has(oldPath)) {
     entries.push({ from: join(UNVERSIONED_PREFIX, oldPath), to });
   }
   return entries;
+});
+
+const movedPageRedirects = Object.entries(MOVED_26_1_PAGES).flatMap(([oldPath, newPath]) => {
+  const to = target(newPath);
+  return [join(NEW_VERSION_PREFIX, oldPath), join(UNVERSIONED_PREFIX, oldPath)].map(from => ({ from, to }));
+});
+
+const seenFromPaths = new Set();
+
+export const accessAnalyzer261Redirects = [...oldVersionRedirects, ...movedPageRedirects].filter(({ from }) => {
+  if (seenFromPaths.has(from)) return false;
+  seenFromPaths.add(from);
+  return true;
 });

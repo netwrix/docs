@@ -118,4 +118,4 @@ See [Scan types](../scans/scan-types.md) for how these options appear when you c
 
 Sensitive data scans read the contents of the documents an Access scan found and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). The scan skips documents larger than `sharepoint_file_size_max_mb` (10 MB by default) and documents whose extension appears in `sharepoint_excluded_extensions`; you set both in [Application settings](../settings/application.md). When the tenant throttles requests, the scan backs off and retries.
 
-The collected data drives the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) and the SharePoint [Data reports](../dashboards-reports/reports/data.md).
+The collected data drives the dashboards in **Top SharePoint Reports** and the **DSPM Scan Overview** dashboard, described in [Netwrix reports](../reporting/netwrix-reports.md).

@@ -4,7 +4,7 @@ description: Add an Active Directory source to sync the users, groups, and membe
 sidebar_position: 2
 ---
 
-An **Active Directory** source points Access Analyzer at one Active Directory domain. Identity syncs read the domain's users, groups, group memberships, and organizational units over the Lightweight Directory Access Protocol (LDAP) and store them for the [Identity reports](../dashboards-reports/reports/identity.md) and the [Active Directory dashboard](../dashboards-reports/dashboards/active-directory.md).
+An **Active Directory** source points Access Analyzer at one Active Directory domain. Identity syncs read the domain's users, groups, group memberships, and organizational units over the Lightweight Directory Access Protocol (LDAP) and store them for the dashboards in **Top AD Reports**, described in [Netwrix reports](../reporting/netwrix-reports.md).
 
 An Active Directory source also completes your file server data. Access scans of File Server sources record who has access as security identifiers (SIDs); syncing the domain those accounts belong to turns the SIDs into names in the reports. See [SMB file servers](smb-file-servers.md).
 

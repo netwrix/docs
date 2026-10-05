@@ -12,7 +12,7 @@ flowchart LR
     B -- targeted by --> C[Scan]
     C -- routed to --> D[Agent]
     D -- runs --> E[Scan Execution]
-    E -- fills --> F[Dashboards and Reports]
+    E -- fills --> F[Reporting]
 ```
 
 ## Source and Source Type
@@ -47,13 +47,13 @@ The scan target is the set of sources a scan covers: a fixed list (**Specific So
 
 A sensitive data pattern is a regular expression with a name and a description. A pattern group collects related patterns under a name such as **PCI DSS** (Payment Card Industry Data Security Standard) or **Credentials**. Scans work at the group level: pick the groups, and every pattern in them runs. Access Analyzer ships 139 built-in patterns in 11 built-in groups. A custom employee ID pattern placed in the built-in **PII** (personally identifiable information) group runs in every scan that classifies PII. See [Sensitive data patterns](sensitive-data-patterns/index.md).
 
-## Dashboard and Report
+## Reporting and Dashboard
 
-Dashboards and reports are where scan results appear. A dashboard gives the wide view of one area: counts, charts, and a detail table. A report answers one question, with filters tuned to it. Both refresh only when you click **Refresh**. After "Finance access" completes, the Data security dashboard counts the objects and permissions it collected, and the **Open Access** report lists the finance folders that Everyone or Domain Users can reach. [Dashboards and reports](dashboards-reports/index.md) maps each to the scan that feeds it.
+Reporting is where scan results appear. A dashboard gathers counts, charts, and detail tables about one subject, with filters at the top. The dashboards that ship with Access Analyzer sit in the read-only Netwrix reports collection, and you can build your own questions and dashboards next to them. After "Finance access" completes, the **Open Access** dashboard lists the finance folders that Everyone or Domain Users can reach. [Reporting](reporting/index.md) covers the dashboards, the scans that feed them, and building your own.
 
 ## Role
 
-A role decides what a user can do; every user holds exactly one of three. **Admin** can do everything, including changing sources, scans, agents, service accounts, patterns, and settings. **User admin** manages user accounts and single sign-on only, with no access to dashboards, sources, or scans. **Viewer** has read-only access and can pause, resume, and stop scan executions. Give the storage team's on-call engineer the Viewer role: they can follow executions and read reports without changing a scan. See [Users and roles](settings/users.md).
+A role decides what a user can do; every user holds exactly one of three. **Admin** can do everything, including changing sources, scans, agents, service accounts, patterns, and settings. **User admin** manages user accounts and single sign-on only, with no access to Reporting, sources, or scans. **Viewer** has read-only access and can pause, resume, and stop scan executions. Give the storage team's on-call engineer the Viewer role: they can follow executions and read reports without changing a scan. See [Users and roles](settings/users.md).
 
 ## Objects and Identities
 

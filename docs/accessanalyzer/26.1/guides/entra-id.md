@@ -1,10 +1,10 @@
 ---
 title: Scan Entra ID
-description: Register an application for Access Analyzer, add the tenant as an Entra ID source, run an Identity sync, and open the Entra ID identity reports.
+description: Register an application for Access Analyzer, add the tenant as an Entra ID source, run an Identity sync, and open the Entra ID dashboards in Reporting.
 sidebar_position: 3
 ---
 
-Connect a Microsoft Entra ID tenant to Access Analyzer and run an Identity sync. The sync reads the tenant's users, groups (including dynamic membership rules), directory roles, and memberships. The results appear in the **Entra Users** and **Entra Groups** reports, and they let SharePoint Online scans of the same tenant calculate effective permissions.
+Connect a Microsoft Entra ID tenant to Access Analyzer and run an Identity sync. The sync reads the tenant's users, groups (including dynamic membership rules), directory roles, and memberships. The results appear in the **Entra Users** and **Entra Groups** dashboards, and they let SharePoint Online scans of the same tenant calculate effective permissions.
 
 Access Analyzer signs in to the tenant as an application, not as a user, so the first job is an app registration with a client secret.
 
@@ -88,17 +88,15 @@ Go to **Configuration > Scan executions** and find the new scan in the list. The
 
 If the status is **Failed**, open the row's actions menu and click **View logs**, then check the **Detailed logs** tab. A sign-in error points at the client ID, secret, or tenant ID; a permission error means the app registration is missing a Graph permission or its admin consent. [Scan executions](../scans/scan-executions.md) lists every status.
 
-## 6. Check the Reports
+## 6. Check the Results in Reporting
 
-Go to **Reports > Identity** and open the **Entra ID** tab.
+Click **Reporting** in the sidebar, then open **Top Entra ID Reports** in the **Netwrix reports** collection.
 
-![Identity reports page on the Entra ID tab](/images/accessanalyzer/26.1/dashboards-reports/reports-identity-entra-id.webp)
-
-| Report | What it shows |
+| Dashboard | What it shows |
 |--------|---------------|
 | **Entra Users** | User accounts with multi-factor authentication (MFA) status, licenses, and sign-in activity |
 | **Entra Groups** | Groups with their membership, type, and assigned licenses |
 
-Neither report has filters; open one and click **Refresh** to load the latest sync. Entra ID data has no dashboard of its own, and the Active Directory dashboard covers on-premises domains only.
+Neither dashboard has filters. Results from a sync that just finished can take up to 15 minutes to appear. Entra ID has no summary dashboard; **AD Scan Summary** covers on-premises domains only.
 
-If you plan to scan SharePoint Online, do it after this sync has completed at least once. The [Scan Microsoft 365](./microsoft-365.md) guide explains how the two fit together. [Identity reports](../dashboards-reports/reports/identity.md) describes each report's columns.
+If you plan to scan SharePoint Online, do it after this sync has completed at least once. The [Scan Microsoft 365](./microsoft-365.md) guide explains how the two fit together. [Netwrix reports](../reporting/netwrix-reports.md) lists what each dashboard needs.

@@ -48,7 +48,7 @@ Exclude rules always win over include rules. A bare URL in **Exclude object URLs
 
 ### Reports Fed by Access Scans
 
-Access scans feed the reports in the **Permissions** category on **Reports > Data**: for File Server, **Broken Inheritance**, **High Risk ACLs**, **Open Access**, and **Share Audit**; for SharePoint Online, **Shared Links**, **High-Risk ACLs**, and **Open Access**. Both feed the [Data security dashboard](../dashboards-reports/dashboards/data-security.md), and [Data reports](../dashboards-reports/reports/data.md) describes each report.
+Access scans feed the permission dashboards in Reporting: for File Server, **Broken Inheritance**, **High Risk ACLs**, **Open Access**, and **Share Audit**; for SharePoint Online, **Shared Links Report**, **SharePoint High-Risk ACLs**, and **SharePoint Open Access**. Both also feed the **Scan Overview** tab of **DSPM Scan Overview**. [Netwrix reports](../reporting/netwrix-reports.md) shows where each dashboard is.
 
 ## Sensitive Data Scan
 
@@ -102,7 +102,7 @@ An empty selection doesn't mean "classify nothing". If the scan inherits the glo
 
 ### Reports Fed by Sensitive Data Scans
 
-Sensitive data scans feed both **Sensitive Data Overview** reports, one for file systems and one for SharePoint, and the sensitive-data variant of **Share Audit**, all listed in [Data reports](../dashboards-reports/reports/data.md). Findings also appear on the [Data security dashboard](../dashboards-reports/dashboards/data-security.md).
+Sensitive data scans feed **Sensitive Data Overview** for file servers, **SharePoint Sensitive Data Overview**, and the **Sensitive Data** tab of **Share Audit**, all described in [Netwrix reports](../reporting/netwrix-reports.md). Findings also appear on **DSPM Scan Overview**.
 
 ## Identity Sync
 
@@ -120,4 +120,4 @@ Entra ID has no per-type settings. The **Configure** step tells you so and the s
 
 ### Reports Fed by Identity Sync
 
-Active Directory syncs feed the **AD Users** report and the [Active Directory dashboard](../dashboards-reports/dashboards/active-directory.md). Entra ID syncs feed the **Entra Users** and **Entra Groups** reports. [Identity reports](../dashboards-reports/reports/identity.md) describes all three.
+Active Directory syncs feed the **AD Users** and **AD Scan Summary** dashboards. Entra ID syncs feed the **Entra Users** and **Entra Groups** dashboards. [Netwrix reports](../reporting/netwrix-reports.md) shows where all four are.

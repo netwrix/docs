@@ -1,6 +1,6 @@
 ---
 title: What's New in 26.1
-description: A tour of what you can do in Access Analyzer 26.1, from installation to dashboards, reports, and the Netwrix Activity Monitor integration.
+description: A tour of what you can do in Access Analyzer 26.1, from installation to Reporting and the Netwrix Activity Monitor integration.
 sidebar_position: 2
 ---
 
@@ -38,9 +38,9 @@ An Access Scan inventories shares, folders, files (and their metadata), sites, a
 
 Sensitive Data Patterns are regular expressions that you can group by compliance program, data category, or any other system you choose. Add your own patterns and groups, place custom patterns in built-in groups, and test any pattern against sample text before saving. See [Sensitive data patterns](sensitive-data-patterns/index.md).
 
-## Dashboards and Reports
+## Reporting
 
-Two dashboards give the wide view: Data security for File Server and SharePoint Online sources, and Active Directory for your domain. Reports answer one question at a time on three pages: Data, Identity, and Compliance. Both open in a single view with filters. See [Dashboards and reports](dashboards-reports/index.md).
+Reporting opens on the Netwrix reports collection: ready-made dashboards for file servers, SharePoint Online, Active Directory, and Entra ID. Build your own questions with the query builder, keep them in personal and shared collections, download results, and get dashboards and alerts by email. See [Reporting](reporting/index.md).
 
 ## Settings
 

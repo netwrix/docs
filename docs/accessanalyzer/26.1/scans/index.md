@@ -6,7 +6,7 @@ description: A scan is a saved definition of what to collect, from which sources
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A scan is a saved definition: a name, one scan type, a target, settings per source type, an agent, and a schedule. The scan collects nothing until it runs. Each run creates one scan execution per target source, and those executions are what fill the dashboards and reports.
+A scan is a saved definition: a name, one scan type, a target, settings per source type, an agent, and a schedule. The scan collects nothing until it runs. Each run creates one scan execution per target source, and those executions are what fill the dashboards in Reporting.
 
 Three scan types exist. An **Access scan** inventories shares, folders, files, sites, and their permissions. A **Sensitive data scan** reads file content and classifies it against sensitive data patterns. An **Identity sync** pulls users, groups, and memberships from a directory. [Scan types](scan-types.md) explains what each one collects, which source types support it, and every setting. [Schedules](schedules.md) covers when scans run, and [Scan executions](scan-executions.md) covers following a run after it has started.
 
@@ -19,7 +19,7 @@ flowchart LR
     A[Scan] --> B[Resolve the target sources]
     B --> C[One execution per source]
     C --> D[Agent collects the data]
-    D --> E[Dashboards and reports]
+    D --> E[Reporting]
 ```
 
 Access Analyzer resolves the target first. For a scan that targets specific sources, that's the list you picked. For a scan that targets sources by label, Access Analyzer looks up which sources carry the labels at that moment, so it picks up a source you labeled yesterday without any change to the scan. Each source then gets its own execution, and each execution runs on the agent the scan (or a per-source override) points at. Access Analyzer skips a source that already has an execution in progress for this scan rather than starting it twice, and resumes a source whose execution is paused.

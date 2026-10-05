@@ -42,10 +42,13 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 2. An empty [group selection](sensitive-data-patterns/pattern-groups.md) doesn't turn classification off; the scan classifies against every group, built-in and custom.
 3. [Sensitive data scans](sensitive-data-patterns/index.md) extract text from Excel, Word, Portable Document Format (PDF), and plain text files. They don't read text in images or open encrypted documents.
 
-## Dashboards and Reports
+## Reporting
 
-1. User admins don't see **Dashboards**, and [report](dashboards-reports/index.md) content doesn't load for them; give people who need reports the Viewer or Admin role.
-2. File system permission reports show account and group names only after an Active Directory Identity Sync has run for the domain, so pair a File Server scan with an Identity Sync. The [Guides](guides/index.md) walk through both.
+1. User admins can't open [Reporting](reporting/index.md); give people who need reports the Viewer or Admin role.
+2. File system permission dashboards show account and group names only after an Active Directory Identity Sync has run for the domain, so pair a File Server scan with an Identity Sync. The [Guides](guides/index.md) walk through both.
+3. Reporting has no SQL editor, drill-through doesn't work on the Netwrix dashboards, and nobody can change the Netwrix reports. [What's turned off](reporting/index.md#whats-turned-off) lists everything that's off.
+4. The Compliance reports page is gone, with no replacement.
+5. Subscriptions and alerts go by email only, to approved domains, and only after Netwrix support sets up email. See [Downloads, subscriptions, and alerts](reporting/downloads-subscriptions-alerts.md).
 
 ## Users and Sign-in
 

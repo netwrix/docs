@@ -1,10 +1,10 @@
 ---
 title: Scan Active Directory
-description: Add a domain as an Active Directory source, run an Identity sync, and use the results in the Active Directory dashboard and in file server permission reports.
+description: Add a domain as an Active Directory source, run an Identity sync, and use the results in Reporting and in file server permission dashboards.
 sidebar_position: 2
 ---
 
-Add one Active Directory domain as a source and run an Identity sync, which reads the domain's users, groups, organizational units, and memberships. The results feed the Active Directory dashboard and the AD Users report, and they let file server permission reports show account and group names instead of security identifiers (SIDs).
+Add one Active Directory domain as a source and run an Identity sync, which reads the domain's users, groups, organizational units, and memberships. The results feed the **AD Scan Summary** and **AD Users** dashboards, and they let file server permission dashboards show account and group names instead of security identifiers (SIDs).
 
 One source covers one domain. If you have several domains, repeat the guide for each.
 
@@ -95,14 +95,10 @@ When the sync itself finishes, the execution moves to **Post processing** while 
 
 If the status is **Failed**, open the row's **Actions** menu and click **View logs**. Authentication problems appear in the **Detailed logs** tab. If the message asks for an FQDN, **Host** holds an IP address and the port is 389; enter the domain controller's name instead.
 
-## 5. Check the Dashboard and Reports
+## 5. Check the Results in Reporting
 
-Go to **Dashboards > Active Directory** and click **Refresh**. In the **Domain** filter, select the domain you synced. The dashboard opens with counts for **Domains**, **Users**, **Enabled Users**, **Groups**, and **Direct Memberships**, followed by **Users**, **Groups**, and **All Risks** sections that end in the **Active Directory Risks** table. The [Active Directory dashboard](../dashboards-reports/dashboards/active-directory.md) page describes each card.
+Click **Reporting** in the sidebar, open **Top AD Reports** in the **Netwrix reports** collection, and open **AD Scan Summary**. In the **Domain** filter, select the domain you synced. The dashboard opens with counts for **Domains**, **Users**, **Enabled Users**, **Groups**, and **Direct Memberships**, followed by **Users**, **Groups**, and **All Risks** sections that end in the **Active Directory Risks** table. Results from a sync that just finished can take up to 15 minutes to appear.
 
-![Active Directory dashboard with Domains, Users, Groups, and risk tiles](/images/accessanalyzer/26.1/dashboards-reports/active-directory-dashboard.webp)
+**AD Users**, in the same collection, lists every user account with its status, password age, and last logon. [Netwrix reports](../reporting/netwrix-reports.md) lists what each dashboard needs.
 
-Under **Reports > Identity**, the **Active Directory** tab has the **AD Users** report: every user account with its status, password age, and last logon. The [Identity reports](../dashboards-reports/reports/identity.md) page describes each column.
-
-![AD Users report](/images/accessanalyzer/26.1/dashboards-reports/report-ad-users.webp)
-
-The sync also improves reports you may already be using. After it completes, the reports on the **File system** tab under **Reports > Data** resolve SIDs to names, expand group membership, and recognize open access granted through groups such as Domain Users. If you haven't scanned a file server yet, [Scan SMB file servers](./smb-file-servers.md) is the next guide.
+The sync also improves reports you may already be using. After it completes, the file server dashboards in **Top File System Reports** resolve SIDs to names, expand group membership, and recognize open access granted through groups such as Domain Users. If you haven't scanned a file server yet, [Scan SMB file servers](./smb-file-servers.md) is the next guide.

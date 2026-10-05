@@ -11,7 +11,7 @@ Access Analyzer has exactly three roles. Every user holds one of them, and there
 | Role | What it can do |
 |---|---|
 | **Admin** | Everything. Only Admins can change **Application** settings, feature flags, sources, scans, sensitive data patterns, agents, service accounts, backups, and enrollment tokens, and only Admins can open the **System logs** tab. |
-| **User admin** | User management only: the **Users** tab, the **Single sign-on** card on the **System** tab, and the identity provider setup flow. A User admin can't grant the Admin role and can't edit, deactivate, delete, or reset the password of an existing Admin. User admins have no access to dashboards, sources, or scans, and land on **Settings > Users** after signing in. |
+| **User admin** | User management only: the **Users** tab, the **Single sign-on** card on the **System** tab, and the identity provider setup flow. A User admin can't grant the Admin role and can't edit, deactivate, delete, or reset the password of an existing Admin. User admins have no access to Reporting, sources, or scans, and land on **Settings > Users** after signing in. |
 | **Viewer** | Read-only access across the product, including the **Application** and **Feature flags** tabs. Viewers can stop, pause, and resume scan executions. They can't see the **Users**, **System**, or **System logs** tabs, and can't open **Sensitive data patterns**. |
 
 If someone opens a page their role doesn't allow, Access Analyzer redirects them away without an error message.

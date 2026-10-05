@@ -101,4 +101,4 @@ At scan time, a custom pattern records at most 10 matches per file. Built-in pat
 
 For each file, a scan stores the group name, the pattern name, and the number of matches. It never stores the matched text itself, so reports show which files contain which kinds of sensitive data, not the values.
 
-The **Sensitive Data Overview** report under **File system** lists shares, hosts, and files with sensitive data and lets you filter by **Pattern Group** and **Pattern**. The SharePoint report of the same name summarizes sensitive data found across SharePoint sites: files with sensitive data, the types of sensitive data found, and links with sensitive data. See [Dashboards and reports](../dashboards-reports/index.md).
+In Reporting, the **Sensitive Data Overview** dashboard for file servers lists shares, hosts, and files with sensitive data and lets you filter by **Pattern Group** and **Pattern**. **SharePoint Sensitive Data Overview** summarizes sensitive data found across SharePoint sites: files with sensitive data and the types of sensitive data found. See [Netwrix reports](../reporting/netwrix-reports.md).

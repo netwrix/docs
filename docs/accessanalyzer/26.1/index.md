@@ -29,13 +29,13 @@ An Access Scan inventories shares, folders, files (and their metadata), and site
 
 Sensitive Data Patterns are regular expressions that you can group by compliance program, data category, or any other system you choose. Access Analyzer ships 139 built-in patterns in 11 groups, and you can add your own. A scan records which patterns matched in a file and how many times, but never the matched text. See [Sensitive data patterns](sensitive-data-patterns/index.md).
 
-### Dashboards and Reports
+### Reporting
 
-Two dashboards, Data security and Active Directory, summarize what your scans have found. Reports under **Data**, **Identity**, and **Compliance** each answer one question, such as which folders have broken permission inheritance or which files contain sensitive data. See [Dashboards and reports](dashboards-reports/index.md).
+Reporting shows what your scans have found. It opens on the Netwrix reports collection, where each dashboard answers one question, such as which folders have broken permission inheritance or which files contain sensitive data. You can also build your own questions, keep them in shared collections, download results, and get dashboards by email. See [Reporting](reporting/index.md).
 
 ### Activity Data
 
-Scans show _who_ can reach _what_ data. To see who used that access, you can connect [Netwrix Activity Monitor](integrations/netwrix-activity-monitor.md), which streams the events it records on file servers, SharePoint Online, Microsoft 365 Copilot, and other systems to Access Analyzer. They fill the **Activity** tab of the Data security dashboard and the Activity Investigation report. See [Integrations](integrations/index.md).
+Scans show _who_ can reach _what_ data. To see who used that access, you can connect [Netwrix Activity Monitor](integrations/netwrix-activity-monitor.md), which streams the events it records on file servers, SharePoint Online, Microsoft 365 Copilot, and other systems to Access Analyzer. They fill the **Activity** tab of the DSPM Scan Overview dashboard and the Activity Investigation dashboard. See [Integrations](integrations/index.md).
 
 ### Users and Sign-in
 

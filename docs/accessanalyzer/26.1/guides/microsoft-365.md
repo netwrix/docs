@@ -4,7 +4,7 @@ description: Connect a SharePoint Online tenant with a certificate-based app reg
 sidebar_position: 4
 ---
 
-Connect one Microsoft 365 tenant's SharePoint Online sites and OneDrive drives to Access Analyzer and run two scans: an Access scan that collects sites, permissions, and sharing links, and a Sensitive data scan that classifies the documents the Access scan found. At the end you'll have data in the Data security dashboard and the SharePoint reports.
+Connect one Microsoft 365 tenant's SharePoint Online sites and OneDrive drives to Access Analyzer and run two scans: an Access scan that collects sites, permissions, and sharing links, and a Sensitive data scan that classifies the documents the Access scan found. At the end you'll have data in the **Top SharePoint Reports** dashboards in Reporting.
 
 Access Analyzer calls the source type **SharePoint Online**. It signs in to the tenant as an application with a certificate, so setup is a round trip between Access Analyzer and the Microsoft Entra app registration.
 
@@ -118,21 +118,19 @@ On a fresh install, no pattern group carries **Scanned by default**, and a scan 
 
 [Sensitive data patterns](../sensitive-data-patterns/index.md) describes the built-in groups and confidence levels.
 
-## 7. Check the Dashboards and Reports
+## 7. Check the Results in Reporting
 
-Dashboards and reports don't refresh on their own. Open one and click **Refresh** to reload it; results from a scan that has just finished can take some time to appear.
+Click **Reporting** in the sidebar to open the **Netwrix reports** collection. Results from a scan that just finished can take up to 15 minutes to appear.
 
-**Dashboards > Data security** shows the tenant in **Total Data Repositories**, **Total Objects Scanned**, **Permissions Analyzed**, **SharePoint Sites by Type**, and **Data Source Inventory**. After the Sensitive data scan, **Sensitive Data Findings** and **Sensitive Data by Source** include SharePoint too.
+**DSPM Scan Overview**, in **Top File System Reports**, shows the tenant in **Total Data Repositories**, **Total Objects Scanned**, **Permissions Analyzed**, **SharePoint Sites by Type**, and **Data Source Inventory**. After the Sensitive data scan, **Sensitive Data Findings** and **Sensitive Data by Source** include SharePoint too.
 
-**Reports > Data**, on the **SharePoint** tab, has four reports.
+**Top SharePoint Reports** has four dashboards.
 
-![Data reports page on the SharePoint tab](/images/accessanalyzer/26.1/dashboards-reports/reports-data-sharepoint.webp)
-
-| Report | Needs | What it shows |
+| Dashboard | Needs | What it shows |
 |--------|-------|---------------|
-| **Shared Links** | Access scan | Anonymous and company-wide sharing links that expose content externally |
-| **High-Risk ACLs** | Access scan | Sites and libraries with overly permissive access control entries |
-| **Open Access** | Access scan | Content that all authenticated users can reach without restriction |
-| **Sensitive Data Overview** | Sensitive data scan | Sensitive data classifications across SharePoint sites |
+| **Shared Links Report** | Access scan | Anonymous and company-wide sharing links that expose content externally |
+| **SharePoint High-Risk ACLs** | Access scan | Sites and libraries with overly permissive access control entries |
+| **SharePoint Open Access** | Access scan | Content that all authenticated users can reach without restriction |
+| **SharePoint Sensitive Data Overview** | Sensitive data scan | Sensitive data classifications across SharePoint sites |
 
-**Shared Links** also appears under **Reports > Compliance** for each framework. The other three SharePoint reports live only on the **Data** page. [Data reports](../dashboards-reports/reports/data.md) describes every report and its filters, and the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) page covers each card.
+[Netwrix reports](../reporting/netwrix-reports.md) lists what each dashboard needs.

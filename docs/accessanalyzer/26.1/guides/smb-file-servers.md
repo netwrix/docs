@@ -4,7 +4,7 @@ description: Connect a Windows, NetApp, Dell PowerScale, or Nutanix Files server
 sidebar_position: 1
 ---
 
-Connect one SMB file server to Access Analyzer and run the two scans that matter for file data: an Access scan that inventories shares, folders, and permissions, and a Sensitive data scan that classifies the files the Access scan found. At the end you'll have data in the Data security dashboard and the File system reports.
+Connect one SMB file server to Access Analyzer and run the two scans that matter for file data: an Access scan that inventories shares, folders, and permissions, and a Sensitive data scan that classifies the files the Access scan found. At the end you'll have data in the **Top File System Reports** dashboards in Reporting.
 
 In the UI the source type is called **File Server**. It covers Windows file servers, NetApp, Dell PowerScale (formerly Isilon), and Nutanix Files over SMB 2 or SMB 3.
 
@@ -128,17 +128,15 @@ On a fresh install no pattern group is marked **Scanned by default**. A scan tha
 
 Follow the run in **Configuration > Scan executions**, as described in [Watch the execution](#4-watch-the-execution). [Sensitive data patterns](../sensitive-data-patterns/index.md) describes the built-in groups and how to add your own patterns.
 
-## 6. Check the Dashboards and Reports
+## 6. Check the Results in Reporting
 
-Dashboards and reports don't refresh on their own. Open one and click **Refresh** after a scan completes.
+Click **Reporting** in the sidebar, then open **Top File System Reports** in the **Netwrix reports** collection. Results from a scan that just finished can take up to 15 minutes to appear.
 
-**Dashboards > Data security** fills in after the Access scan: **Total Data Repositories**, **Total Objects Scanned**, **Permissions Analyzed**, **File Server Objects by Host**, and **Data Source Inventory**. After the Sensitive data scan, **Sensitive Data Findings** and **Sensitive Data by Source** show counts too. The **Data Source** filter narrows the view by source type, **File Servers** or **SharePoint Online**, not to a single server.
+**DSPM Scan Overview** fills in after the Access scan: **Total Data Repositories**, **Total Objects Scanned**, **Permissions Analyzed**, **File Server Objects by Host**, and **Data Source Inventory**. After the Sensitive data scan, **Sensitive Data Findings** and **Sensitive Data by Source** show counts too. The **Data Source** filter narrows the view by source type, **File Servers** or **SharePoint Online**, not to a single server.
 
-![Data security dashboard with file server data](/images/accessanalyzer/26.1/dashboards-reports/data-security-dashboard.webp)
+The other dashboards in the collection cover file servers in depth:
 
-**Reports > Data**, on the **File system** tab, has the reports that matter for file servers:
-
-| Report | Needs | What it shows |
+| Dashboard | Needs | What it shows |
 |--------|-------|---------------|
 | **Open Access** | Access scan | Shares that Everyone or Domain Users can reach without restriction |
 | **High Risk ACLs** | Access scan | Shares and folders with overly permissive ACLs |
@@ -146,6 +144,6 @@ Dashboards and reports don't refresh on their own. Open one and click **Refresh*
 | **Share Audit** | Access scan | Effective permissions on one share; select a **Share** in the filters first |
 | **Sensitive Data Overview** | Sensitive data scan | Findings across the scanned locations, filtered by host, share, pattern group, or pattern |
 
-**Activity Investigation** appears in the same tab but stays empty until you connect [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md). **Reports > Compliance** arranges the same reports by framework, so the **GDPR** or **PCI DSS** tabs populate from these two scans as well.
+**Activity Investigation** is in the same collection but stays empty until you connect [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md).
 
-If the permission reports show SIDs instead of names, follow [Scan Active Directory](./active-directory.md) and run an Identity sync for the domain. [Data reports](../dashboards-reports/reports/data.md) describes every report and its filters.
+If the permission dashboards show SIDs instead of names, follow [Scan Active Directory](./active-directory.md) and run an Identity sync for the domain. [Netwrix reports](../reporting/netwrix-reports.md) lists what each dashboard needs.

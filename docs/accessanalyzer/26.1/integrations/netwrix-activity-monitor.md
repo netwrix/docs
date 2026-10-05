@@ -1,6 +1,6 @@
 ---
 title: Netwrix Activity Monitor
-description: Enroll a Netwrix Activity Monitor agent with Access Analyzer so file, SharePoint Online, and Copilot activity appears in the Data security dashboard, and file server activity in the Activity Investigation and Share Audit reports.
+description: Enroll a Netwrix Activity Monitor agent with Access Analyzer so file, SharePoint Online, and Copilot activity appears in Reporting.
 sidebar_position: 1
 ---
 
@@ -34,15 +34,13 @@ The Activity Monitor output sends three kinds of events: File System, SharePoint
 
 ## Where the Data Appears
 
-Activity data shows up in three places. Only the dashboard includes SharePoint Online and Copilot events; the two reports cover file server activity.
+Activity data shows up in three dashboards in [Reporting](../reporting/netwrix-reports.md). Only **DSPM Scan Overview** includes SharePoint Online and Copilot events; the other two cover file server activity.
 
-- The [Data security dashboard](../dashboards-reports/dashboards/data-security.md) has an **Activity** tab with the tiles **Total Events**, **Failed Events**, **Active Users**, and **Data Sources with Activity**; the charts **Events by Type**, **Activity Over Time**, **Events by Data Source**, and **Top Users by Activity**; and an **Activity Detail** table. Filter it by **Start Date**, **End Date**, **Event Type**, **Activity Source**, **User**, and **Event Status**.
-- The **Activity Investigation** report under [Data reports](../dashboards-reports/reports/data.md). Every framework under [Compliance reports](../dashboards-reports/reports/compliance.md) includes it too.
-- The **Share Audit** report, also under Data reports, draws on file server activity in its **Activity** tab, in the **Probable Owner** card on the **Overview** tab, and in the **Users by Activity on Sensitive Files** chart on the **Sensitive Data** tab.
+- **DSPM Scan Overview** has an **Activity** tab with the tiles **Total Events**, **Failed Events**, **Active Users**, and **Data Sources with Activity**; the charts **Events by Type**, **Activity Over Time**, **Events by Data Source**, and **Top Users by Activity**; and an **Activity Detail** table. Filter it by **Start Date**, **End Date**, **Event Type**, **Activity Source**, **User**, and **Event Status**.
+- **Activity Investigation** lists file server events and filters them by user, path, and event type.
+- **Share Audit** draws on file server activity in its **Activity** tab, in the **Probable Owner** card on the **Overview** tab, and in the **Users by Activity on Sensitive Files** chart on the **Sensitive Data** tab.
 
 Until an enrolled agent sends events, every card on the **Activity** tab reads **No results!**.
-
-![Data security dashboard, Activity tab, with date, event type, source, user, and status filters](/images/accessanalyzer/26.1/dashboards-reports/data-security-dashboard-activity.webp)
 
 ## Prerequisites
 

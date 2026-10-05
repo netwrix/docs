@@ -120,4 +120,4 @@ Access scans record each trustee (the account or group named in a permission ent
 
 Sensitive data scans read the contents of the files a completed Access scan inventoried and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). Run an Access scan on the source first. The scan skips files larger than the maximum file size set in [Application settings](../settings/application.md). With **Differential scan** turned on, the scan reads only files added or changed since the last Sensitive data scan.
 
-The collected data drives the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) and the file system [Data reports](../dashboards-reports/reports/data.md).
+The collected data drives the dashboards in **Top File System Reports**, described in [Netwrix reports](../reporting/netwrix-reports.md).

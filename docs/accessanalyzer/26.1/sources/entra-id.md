@@ -91,4 +91,4 @@ An **Identity sync** has no options for this source type.
 | Directory roles | Display name, role template ID, whether the role is built in, enabled, and privileged, and the principal types you can assign it to |
 | Memberships | Which users and groups belong to which group or hold which role, and, for nested groups, the group Access Analyzer expanded the membership from |
 
-The synced data drives the [Identity reports](../dashboards-reports/reports/identity.md).
+The synced data drives the dashboards in **Top Entra ID Reports**, described in [Netwrix reports](../reporting/netwrix-reports.md).
