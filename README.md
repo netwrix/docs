@@ -180,6 +180,8 @@ Add `DOCS_PRODUCT_LATEST_ONLY=true` to also restrict the build to that product's
 DOCS_PRODUCT=pingcastle DOCS_PRODUCT_LATEST_ONLY=true npm run build
 ```
 
+In Claude Code, `/docs-build` builds one product or the whole site and summarizes broken links and errors. `/docs-preview` starts, stops, or checks a local dev server or production preview. Both ask which product and scope to use.
+
 ### Development Workflow
 
 The centralized system makes development simple:
