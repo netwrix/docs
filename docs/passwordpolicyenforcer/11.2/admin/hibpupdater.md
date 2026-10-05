@@ -10,7 +10,7 @@ You can configure Password Policy Enforcer to use the Have I Been Pwnd (HIBP) da
 a copy of this database on its website. The HIBP database contains a list of the hashes of
 known compromised passwords. During password change operations, you can configure the application to
 reject passwords with a hash that matches a hash in the HIBP database. See the Password Policy
-Enforcer [Password Scanner](/docs/passwordpolicyenforcer/11.2/admin/compromisedpasswordcheck.md) topic for HIBP database
+Enforcer [Password Scanner](compromisedpasswordcheck.md) topic for HIBP database
 information and configuration options.
 
 You must initially deploy the HIBP database to a server or workstation that has an internet
@@ -118,21 +118,16 @@ size of the hash file, this download requires significant CPU and download time.
 
 ### Hash File Replication
 
-Password Policy Enforcer doesn't distribute hash file updates to other computers, but you can use
-the Windows Distributed File System to ensure that all domain controllers have the latest hash
-files. Copy the hash files into the Sysvol share on one domain controller, and the Distributed File
-System will copy the files into the Sysvol share of all other domain controllers. Configure the
-Compromised rule to read the files from:
+Password Policy Enforcer doesn't distribute hash file updates to other computers, but you can use a Windows Distributed File System 
+(DFS) replication group to ensure that all domain controllers have the latest hash files. Because of the size of the database we do 
+**not** recommend that you utilize a Sysvol share for this purpose.
 
-**\\127.0.0.1\sysvol\your.domain\filename.db**
+Copy the database folder (\HIBP\DB) into a replication group's share on one domain controller so the files are made accessible by 
+all other group members. Then access your policy in Password Policy Enforcer, enable the Compromised rule and set it so it links 
+to the database directory within the replication group. Read more about Windows DFS replication in 
+<a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)?redirectedfrom=MSDN">Microsoft documentation</a>.
 
-See the [Compromised Rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
-
-The preceding path only works if the computer has a Sysvol share. This won't be the case if you are
-using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
-local policies. If you are using Password Policy Enforcer for local policies and want all computers
-to receive hash file updates, then use the Sysvol share for file replication and a script or
-scheduled task to copy the file to a local folder.
+See the [Compromised Rule](./manage-policies/rules/compromised_rule.md) topic for additional information.
 
 :::warning
 Read hash files only from a local disk. Using shared hash files

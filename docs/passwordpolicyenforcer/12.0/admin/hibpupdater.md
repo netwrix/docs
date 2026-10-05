@@ -10,7 +10,7 @@ You can configure Password Policy Enforcer to use the Have I Been Pwnd (HIBP) da
 a copy of this database on its website. The HIBP database contains a list of the hashes of
 known compromised passwords. During password change operations, you can configure the application to
 reject passwords with a hash that matches a hash in the HIBP database. See the Password Policy
-Enforcer [Password Scanner](/docs/passwordpolicyenforcer/12.0/admin/compromisedpasswordcheck.md) topic for HIBP database
+Enforcer [Password Scanner](compromisedpasswordcheck.md) topic for HIBP database
 information and configuration options.
 
 You must initially deploy the HIBP database to a server or workstation that has an internet
@@ -118,7 +118,7 @@ all other group members. Then access your policy in Password Policy Enforcer, en
 to the database directory within the replication group. Read more about Windows DFS replication in 
 <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)?redirectedfrom=MSDN">Microsoft documentation</a>.
 
-See the [Compromised Rule](/docs/passwordpolicyenforcer/12.0/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
+See the [Compromised Rule](./manage-policies/rules/compromised_rule.md) topic for additional information.
 
 :::warning
 Read hash files only from a local disk. Using shared hash files
