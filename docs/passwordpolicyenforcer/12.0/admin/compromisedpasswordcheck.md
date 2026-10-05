@@ -10,8 +10,8 @@ The Password Scanner identifies weak or unsafe passwords, including compromised,
 or empty ones. It can notify users via email and advise or force them to change their password. 
 You can schedule the check to run at any time to verify existing passwords against security rules.
 
-Password Policy Enforcer (PPE) enforces its [rules](./manage-policies/rules/rules.md) at the time of 
-password change. This lets PPE block non-compliant passwords, but real-time checking doesn't protect 
+Password Policy Enforcer (PPE) enforces its [rules](./manage-policies/rules/rules.md) during 
+password changes. This lets PPE block non-compliant passwords, but real-time checking doesn't protect 
 against three scenarios:
 
 - Passwords that weren't known to be compromised at the time of password change, but appear in a 
@@ -21,8 +21,8 @@ password change, it doesn't because it would slow down password changes signific
 - Blank passwords used by accounts whose passwords never change.
 
 PPE's Password Scanner addresses these scenarios by regularly scanning domain password hashes and 
-executing one or more actions when it finds weak or unsafe passwords——characterized by compromised, duplicate, 
-or blank hashes.
+executing one or more actions when it finds weak or unsafe passwords (compromised, duplicate, 
+or blank hashes).
 
 :::note
 You must configure [Notifications](./settings.md#notifications) before you can use the Password Scanner. 
