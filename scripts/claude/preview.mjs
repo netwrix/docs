@@ -41,15 +41,20 @@ function portOwner(port) {
   }
 }
 
-// preview.pid is a file on disk, so validate it before using it: only our two ports, integer PIDs.
+// preview.pid is a file on disk, so don't trust it: build the state from validated pieces only.
+// The port is derived from the mode (our own constants), never copied from the file.
 function readState() {
   try {
-    const state = JSON.parse(readFileSync(pidFile, 'utf8'));
-    if (!Number.isInteger(state.pid) || state.pid <= 1) return null;
-    // Map back to our own constants rather than trusting the file's value.
-    const port = Object.values(PORTS).find((p) => p === state.port);
-    if (!port) return null;
-    return { ...state, port };
+    const raw = JSON.parse(readFileSync(pidFile, 'utf8'));
+    if (!Number.isInteger(raw.pid) || raw.pid <= 1) return null;
+    const mode = raw.mode === 'prod' ? 'prod' : 'dev';
+    return {
+      pid: raw.pid,
+      mode,
+      port: mode === 'prod' ? PORTS.prod : PORTS.dev,
+      product: String(raw.product),
+      logPath: String(raw.logPath),
+    };
   } catch {
     return null;
   }
