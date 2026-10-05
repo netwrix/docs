@@ -26,7 +26,7 @@ Enter a username in the first text box, or click **Select** to display a user se
 
 Enter a test password in the second text box. PPE tests the password when you stop typing. An icon in the text box indicates whether the password complies with the [policy assigned to](./usersgroups.md) the chosen user.
 
-Additional information is displayed in the right pane. The policy assigned to the user is shown first, followed by the rules for the policy and their test pass/fail status.
+The right pane shows additional information, starting with the policy assigned to the user, followed by the rules for the policy and their test pass/fail status.
 
 If you're not sure why PPE accepted or rejected the password, then click **View log** in the right pane to show additional troubleshooting information, including:
 - The computer the Configuration Console read the configuration from.

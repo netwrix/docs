@@ -11,27 +11,26 @@ or empty ones. It can notify users via email and advise or force them to change 
 You can schedule the check to run at any time to verify existing passwords against security rules.
 
 Password Policy Enforcer (PPE) enforces its [rules](./manage-policies/rules/rules.md) at the time of 
-password change. This allows PPE to stop non-compliant passwords from being used, but there are three 
-scenarios that real-time checking doesn't protect against:
+password change. This lets PPE block non-compliant passwords, but real-time checking doesn't protect 
+against three scenarios:
 
-- Passwords that weren't known to be compromised at the time of password change, but are found in a 
+- Passwords that weren't known to be compromised at the time of password change, but appear in a 
 later breach.
-- Identical passwords used by different users. While this requirement could be enforced during a 
-password change, PPE doesn't enforce it because it would slow down password changes significantly.
+- Identical passwords used by different users. While PPE could enforce this requirement during a 
+password change, it doesn't because it would slow down password changes significantly.
 - Blank passwords used by accounts whose passwords never change.
 
 PPE's Password Scanner addresses these scenarios by regularly scanning domain password hashes and 
-executing one or more actions when weak or unsafe password——characterized by compromised, duplicate 
-or blank hashes——are found. It can notify users via email and advise or force them to change their 
-password. You can schedule the check to run at any time to verify existing passwords against security rules.
+executing one or more actions when it finds weak or unsafe passwords——characterized by compromised, duplicate, 
+or blank hashes.
 
 :::note
 You must configure [Notifications](./settings.md#notifications) before you can use the Password Scanner. 
 If you don't want PPE to send notification emails while you are configuring and testing the scanner, then 
-temporarily configure PPE to **Save emails to a pickup folder** that isn't monitored by your mail server. 
+temporarily configure PPE to **Save emails to a pickup folder** that your mail server doesn't monitor. 
 You can read the content of the emails in the pickup folder with a mail application or text editor.
 
-You must also download the compromised password database before you can use the Password Scanner. The 
+You must also download the Have I Been Pwned (HIBP) compromised password database before you can use the Password Scanner. The 
 [HIBP Updater](./hibpupdater.md) page explains how to configure and use the database downloader.
 
 The Password Scanner only works with [domain policies](../installation/domain_and_local_policies.md).
@@ -51,20 +50,20 @@ Click the **Password Scanner** toggle to enable/disable the feature.
 
 - **Compromised Passwords Base**. Enter the path to the database to use when checking for compromised
   passwords. Netwrix recommends using the [HIBP Updater](./hibpupdater.md) to configure this database.
-  Click **Browse** to navigate to the folder. Default is **C:\HIBP\DB**, but you can alternatively link a database stored within a DFS 
+  Click **Browse** to navigate to the folder. Default is **C:\HIBP\DB**, but you can alternatively link a database stored within a Distributed File System (DFS) 
   replication group (details <a href="https://docs.netwrix.com/docs/passwordpolicyenforcer/12_0/admin/hibpupdater#hash-file-replication">here</a>).
 - **Domain Controller (FQDN)**. Enter the fully qualified name of the domain controller that will run the password check or click **Browse** to select it.
 - **Log events in Windows Application Event Viewer**. Select this checkbox to log Password Scanner's progress and findings to the Windows Application Event Log.
 - **Force users to change password**. Select this checkbox to set "User must change password at next logon" for any account with a 
-compromised password. This action is not be performed for accounts with "Password never expires" set.
+compromised password. The Password Scanner doesn't perform this action for accounts with "Password never expires" set.
 - **Report password reuse by another account**. Select this checkbox to scan for accounts with the same password. You can also select 
 **Force users to change password at next logon** if you want the Password Scanner to set "User must change password at next logon" 
-for any accounts with identical passwords. This action is not be performed for accounts with "Password never expires" set.
+for any accounts with identical passwords. The Password Scanner doesn't perform this action for accounts with "Password never expires" set.
 - **Recipient of the full report on the found compromised passwords**. Enter the email address of a person or distribution list 
   into this text box. The Password Scanner sends a report to this address after every scan. This is a report for administrators, not users.
 - **From**. Enter the sender's email address for the full report. The correct format is `"Display Name" <mailbox@domain.com>`.
 - **Notify users whose passwords are compromised by email**. Select this checkbox to send an email to users whose passwords are compromised.
-- **Set up email** enables you to edit the email template for the compromised password email. The correct format for the **From** text box is 
+- Use **Set up email** to edit the email template for the compromised password email. The correct format for the **From** text box is 
 `"Display Name" <mailbox@domain.com>`. You can edit the email body with a visual editor or raw HTML editor by clicking **Visual** or **HTML**. 
 Enter the **From** address and edit the subject and body template as needed. Click **Apply** to save changes.
 

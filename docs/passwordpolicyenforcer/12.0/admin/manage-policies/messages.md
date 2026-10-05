@@ -26,7 +26,7 @@ The [Password Policy Client](../password-policy-client/password_policy_client.md
 
 - PPE uses the **[Password policy](#password-policy-template)** template for the message that users see while they change their password. This message explains the password policy. It can also display a "live" policy to show users which rules their password complies with as they type.
 - PPE uses the **[Rejection reason](#rejection-reason-template)** template for the message it shows when it rejects a password. This message tells users which rules their password doesn't comply with.
-- PPE also uses the **[Generic rejection](#generic-rejection-template)** template when a password is rejected, but only if it doesn't know the rejection reason. This most commonly happens when a [Windows password policy](../../installation/disable_windows_rules.md) rejects the password. This message doesn't tell users which rules their password doesn't comply with.
+- PPE also uses the **[Generic rejection](#generic-rejection-template)** template when it rejects a password, but only if it doesn't know the rejection reason. This most commonly happens when a [Windows password policy](../../installation/disable_windows_rules.md) rejects the password. This message doesn't tell users which rules their password doesn't comply with.
 
 ### Password policy template
 
@@ -57,7 +57,7 @@ The **Generic rejection** template editor has only a multiline text box for the 
 Select **[POLICY]** or **[LIVE_POLICY]** in the left pane to edit the rule inserts for these macros. In the right pane, enter the text you want the respective rules to insert. The **[LIVE_POLICY]** editor has three additional text boxes below the rule inserts. Use these text boxes to define the legend text for the three icons in the live policy.
 
 :::tip
-Rule inserts should generally begin with two spaces, a hyphen, and a space. While not mandatory, PPE recognizes this sequence and displays it as either a bullet point or a compliance icon. If the insert doesn't begin with this character sequence, then PPE adds the text to the macro without any decoration.
+Rule inserts should generally begin with two spaces, a hyphen, and a space. This sequence isn't mandatory, but PPE recognizes it and displays it as either a bullet point or a compliance icon. If the insert doesn't begin with this character sequence, then PPE adds the text to the macro without any decoration.
 
 You can insert a line break in a rule insert with `\n`.
 :::

@@ -19,7 +19,7 @@ PPE adds the policies you create to the policy list. Use the buttons above the p
 3. Select a **Policy template** from the list if you want the default settings in the policy to match a standard password policy like HIPAA, PCI, NIST, and others. Select **None** to start with a blank policy.
 4. Click **Create policy**.
 
-The policy editor opens. The policy editor has many settings. The following pages explain the settings in each tab:
+The policy editor opens. The following pages explain the settings in each tab:
 
 - [Rules](rules/rules.md)
 - [Users & Groups](usersgroups.md)
