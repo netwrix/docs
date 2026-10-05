@@ -1,92 +1,55 @@
 ---
 title: "Test Policy"
-description: "Test Policy"
+description: "Test individual passwords or a batch of passwords against your policies, and troubleshoot unexpected results, in Netwrix Password Policy Enforcer."
 sidebar_position: 60
 ---
 
 # Test Policy
 
-You can test your Password Policy Enforcer configuration by simulating a password change.
-Click **Test Policy** from the Configuration Console dashboard or when setting up a policy.
-Test policy opens in a separate window. Remember to **Save** your rules and changes before
-testing.
+You can check if your Password Policy Enforcer (PPE) policies meet your requirements by clicking **Test policy** in the [home page](../configconsole.md) above the policy list, or in the upper-right of the [policy editor](./manage_policies.md).
 
-Test policy opens on the **By user** tab.
+:::warning
+You must save any pending configuration changes before clicking **Test policy** in the policy editor, otherwise the Configuration Console discards your unsaved changes.
+:::
 
-## By User
+Use the two tabs at the top of the Test Policy dialog to select the type of test. Select [**By user**](#by-user) to test individual passwords for a specific user. Select [**Password bulk test**](#password-bulk-test) to test passwords in a file against a specific policy.
 
-Policy testing simulates a password change, but it doesn't change the password.
+## By user
 
-**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when setting up a
-policy.
+Use the **By user** test to quickly check policy changes, or to help understand why PPE accepts or rejects a particular password. This test simulates a password change, but it doesn't change the password.
 
-**Step 2 –** Select a **user**.
+Enter a username in the first text box, or click **Select** to display a user search and selection dialog.
 
-**Step 3 –** **Type in a password to simulate its change**.
+Enter a test password in the second text box. PPE tests the password when you stop typing. An icon in the text box indicates whether the password complies with the [policy assigned to](./usersgroups.md) the chosen user.
 
-As you type, Password Policy Enforcer evaluates the password against the policy in real time. For example, typing a short password like ThisIs causes the password to fail the policy overall. The requirements list shows that the password doesn't meet the minimum length. Hovering over a requirement gives you the rule name.
+Additional information is displayed in the right pane. The policy assigned to the user is shown first, followed by the rules for the policy and their test pass/fail status.
 
-When you enter a password that addresses the minimum length requirement — for example, ThisIsNewSecurityCode — it passes the check.
+If you're not sure why PPE accepted or rejected the password, then click **View log** in the right pane to show additional troubleshooting information, including:
+- The computer the Configuration Console read the configuration from.
+- Any [dictionary](./rules/dictionary_rule.md) word or [keyboard pattern](./rules/patterns.md#keyboard-patterns) matched with the password.
+- Any errors or warnings that occurred during testing.
 
-Expand the **View log** for details:
+If the information in the log doesn't explain why PPE accepted or rejected the password, then enable the **Verbose logging** toggle switch at the bottom of the dialog box. This opens a second pane with additional troubleshooting information from every enabled rule. You can click the name of any rule with a **>** beside its name to show all the events logged by that rule.
 
-- The computer from which Password Policy Enforcer read the configuration.
-- The policy Password Policy Enforcer assigned to the user, and why.
-- Dictionary word or keyboard pattern matched with the password.
-- Errors or warnings occurred during testing.
+## Password bulk test
 
-Turn on **Verbose Logging** to view the tests that Password Policy Enforcer performed and their results.
+Use the **Password bulk test** to test a password policy against a list of passwords in a text file. You can use this feature to fine-tune your policy and to see how effective it is against a list of compromised passwords or cracking dictionaries.
 
-## Bulk Password Test
+Select a policy to test from the dropdown, then click **Browse** to select the text file. The file should have one password on every line.
 
-The Bulk Password Test feature lets you check a large number of passwords against a selected policy and get a report of the accepted and rejected passwords.
+The default test report includes all accepted and rejected passwords, and PPE saves the report to the `%ProgramFiles%\Netwrix\Password Policy Enforcer\` folder. Click **Report settings** if you want to change the defaults.
 
-**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when setting up a
-policy.
+Click **Test passwords** to begin the test. The Configuration Console shows a progress bar along with some statistics in the right pane. You can click **Cancel** to terminate the test.
 
-**Step 2 –** Open the **Password bulk test** tab.
+When the test completes, click **Show full report** in the right pane to view the report in a web browser. The report contains some summary statistics along with the rejected and accepted password lists, if you chose to show them in the report settings. Click **Copy** above a list to copy it to the clipboard, or click **Save** to save it to a text file.
 
-**Step 3 –** Select a policy for the test.
+## Policy testing vs. password changes
 
-**Step 4 –** **Browse** to the text file containing the passwords to test. Processing is faster if
-the file isn't on a shared drive.
+Policy testing simulates a password change, but it may not always reflect what happens when a user changes their password. A password change may yield different results to a policy test because:
 
-**Step 5 –** Click **Test passwords**. The **Statistics** appear.
-
-| Statistics of the Bulk Password Testing |                                                                                         |
-| --------------------------------------- | --------------------------------------------------------------------------------------- |
-| Status                                  | Shows whether the operation is ready for scanning, processing, terminated, or finished. |
-| Tested                                  | Number of tested passwords.                                                             |
-| Accepted                                | Number of accepted passwords.                                                           |
-| Rejected                                | Number of rejected passwords.                                                           |
-| Number of lines                         | Number of lines within the file.                                                        |
-| Lines processed                         | Number of processed lines.                                                              |
-
-Click **Show full report** to view the test details.
-
-You can use the **Report settings** to customize the report:
-
-- Result report folder. Processing is faster if this isn't a shared drive.
-- Show accepted passwords
-- Show rejected passwords
-
-## Policy Testing vs. Password Changes
-
-- Policy testing simulates a password change, but it may not always reflect what happens when a user
-  changes their password. A password change may yield different results to a policy test because:
-- Policy testing doesn't simulate the Windows password policy rules. If you enable the Windows
-  password rules, then Windows may reject a password even though it complies with all the Password
-  Policy Enforcer rules.
-- Policy testing doesn't enforce the Minimum Age rule.
-- Policy testing doesn't enforce the History rule.
-- Policy testing enforces the password policy even if you disable Password Policy Enforcer or the
-  assigned policy. Use this to test your configuration before enabling Password Policy
-  Enforcer, or a new password policy.
-- Policy testing occurs on the computer that the Configuration Console is running on. If the Configuration Console
-  is connected to a remote domain configuration, then it may not find the dictionary file on
-  the local computer, or the local dictionary file may be different to the one on the domain
-  controller. Copy the dictionary file onto the local computer (in the same path) to avoid this
-  problem.
-- If the Configuration Console is connected to a domain configuration and you recently modified the Password Policy Enforcer
-  configuration, then Active Directory may still be propagating the new
-  configuration to the other domain controllers.
+- Policy testing doesn't simulate the [Windows password policy rules](../../installation/disable_windows_rules.md). If you enable the Windows rules, then Windows may reject a password even though it complies with the PPE policy.
+- Policy testing doesn't simulate the [Minimum Age rule](rules/minimum_age_rule.md).
+- Policy testing doesn't simulate the [History rule](rules/history_rule.md).
+- Policy testing simulates the policy even if PPE or the policy are disabled. Use this behavior to test your configuration before enabling PPE or a new password policy.
+- Policy testing occurs on the computer that the Configuration Console is running on. If the Configuration Console is [connected to a domain configuration](../configconsole.md#connect-to-a-configuration), then it may not find the [dictionary](./rules/dictionary_rule.md) file or [compromised](./rules/compromised_rule.md) database on the local computer, or they may be different from the ones on the domain controller. Copy the files onto the local computer (in the same paths as the domain controller) to avoid this problem.
+- If the Configuration Console is [connected to a domain configuration](../configconsole.md#connect-to-a-configuration) and you recently modified the PPE configuration, then Active Directory may still be replicating the new configuration to the other domain controllers.
