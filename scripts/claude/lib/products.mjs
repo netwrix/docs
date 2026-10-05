@@ -20,13 +20,15 @@ export async function loadProducts() {
   return (await importConfig()).PRODUCTS;
 }
 
-/** Returns the product, 'kb', or throws with the list of valid ids. */
+/** Returns the product, or throws with the list of valid ids. */
 export async function validateProduct(id) {
   const products = await loadProducts();
-  if (id === 'kb') return 'kb';
+  if (id === 'kb') {
+    throw new Error('"kb" is not a build scope: a kb-only build contains no pages. KB articles are copied into product folders at build time, so build the product the article belongs to (docs/kb/<product>/...) or "all".');
+  }
   const match = products.find((p) => p.id === id);
   if (!match) {
-    throw new Error(`Unknown product "${id}". Valid ids: kb, ${products.map((p) => p.id).join(', ')}`);
+    throw new Error(`Unknown product "${id}". Valid ids: ${products.map((p) => p.id).join(', ')}`);
   }
   return match;
 }
@@ -37,9 +39,9 @@ export async function productsFromPaths(paths) {
   const ids = new Set();
   for (const p of paths) {
     const file = p.replace(/\\/g, '/');
-    if (file.startsWith('docs/kb/')) ids.add('kb');
     for (const prod of products) {
-      if (file.startsWith(`${prod.path}/`)) ids.add(prod.id);
+      // docs/<product>/... or a KB article at docs/kb/<product>/..., which builds into that product
+      if (file.startsWith(`${prod.path}/`) || file.startsWith(`docs/kb/${prod.id}/`)) ids.add(prod.id);
     }
   }
   return [...ids].sort();
@@ -48,10 +50,9 @@ export async function productsFromPaths(paths) {
 /** Landing URL path for a product's default version, e.g. /docs/pingcastle/4_0/ */
 export async function landingPath(id) {
   if (!id || id === 'all') return '/';
-  if (id === 'kb') return '/docs/kb/';
   const mod = await importConfig();
   const product = mod.PRODUCTS.find((p) => p.id === id);
   if (!product) return '/';
   const v = mod.getDefaultVersion(product);
-  return `/${mod.generateRouteBasePath(product.path, v.version)}/`;
+  return `/${v.customRoutePath || mod.generateRouteBasePath(product.path, v.version)}/`;
 }

@@ -34,7 +34,7 @@ export function summarize(text, { exitCode = 0, durationMs = 0, product = 'all',
       (mode === 'anchors' ? brokenAnchors : brokenLinks).push(entry);
     }
 
-    const md = line.match(/Markdown link with URL `([^`]+)` in source file "([^"]+)"(?: \(line (\d+)\))?/);
+    const md = line.match(/Markdown link with URL `([^`]+)` in source file "([^"]+)"(?: \((?:line )?(\d+)(?::\d+)?\))?/);
     if (md) mdLinks.push(`${md[2]}${md[3] ? `:${md[3]}` : ''} -> ${md[1]}`);
 
     const mdxm = line.match(/MDX compilation failed for file "([^"]+)"/);
@@ -52,7 +52,7 @@ export function summarize(text, { exitCode = 0, durationMs = 0, product = 'all',
   let outOfScope = 0;
   const scoped = (items) => {
     if (product === 'all') return items;
-    const keep = items.filter((i) => i.split(' -> ')[0].includes(`/${product}/`));
+    const keep = items.filter((i) => i.split(' -> ')[0].startsWith(`/docs/${product}/`));
     outOfScope += items.length - keep.length;
     return keep;
   };
@@ -74,7 +74,7 @@ export function summarize(text, { exitCode = 0, durationMs = 0, product = 'all',
     out.push('Last output lines:', ...tail);
   }
   if (product !== 'all' && outOfScope) {
-    out.push(`Ignored ${outOfScope} broken link(s) from other products' pages: single-product builds leave those out by design. Run a full build to check them.`);
+    out.push(`Ignored ${outOfScope} broken link(s) or anchor(s) from other products' pages: single-product builds leave those out by design. Run a full build to check them.`);
   }
   if (logPath) out.push(`Full log: ${logPath}`);
   return out.join('\n');

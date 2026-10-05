@@ -7,7 +7,7 @@ import { REPO_ROOT, productsFromPaths, loadProducts } from './lib/products.mjs';
 
 const git = (...args) => {
   try {
-    return execFileSync('git', args, { cwd: REPO_ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    return execFileSync('git', args, { cwd: REPO_ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).replace(/\n$/, '');
   } catch {
     return '';
   }
@@ -21,17 +21,22 @@ console.log(`NODE: ${process.versions.node}${nodeMajor < 22 ? ' (STOP: Node >=22
 console.log(`NODE_MODULES: ${existsSync(join(REPO_ROOT, 'node_modules')) ? 'present' : 'MISSING (STOP: run `npm install`)'}`);
 
 const base = git('rev-parse', '--verify', '--quiet', 'origin/dev') ? 'origin/dev' : '';
+// -z keeps paths with spaces or renames intact
 const changed = [
-  ...git('diff', '--name-only', base ? `${base}...HEAD` : 'HEAD').split('\n'),
-  ...git('status', '--porcelain').split('\n').map((l) => l.slice(3)),
+  ...git('diff', '--name-only', '-z', base ? `${base}...HEAD` : 'HEAD').split('\0'),
+  ...git('diff', '--name-only', '-z', 'HEAD').split('\0'),
+  ...git('ls-files', '-z', '--others', '--exclude-standard').split('\0'),
 ].filter(Boolean);
 console.log(`CHANGED_PRODUCTS: ${(await productsFromPaths(changed)).join(', ') || 'none'}`);
 console.log(`VALID_PRODUCTS: kb, ${(await loadProducts()).map((p) => p.id).join(', ')}`);
 
-// Untracked src/ files that tracked code references: CI would fail on these.
-const untracked = git('ls-files', '--others', '--exclude-standard', 'src').split('\n').filter(Boolean);
+// Untracked src/ files that tracked code imports: CI would fail on these.
+// Imports are usually relative or @site/..., so match the file's name as the last import segment.
+const untracked = git('ls-files', '-z', '--others', '--exclude-standard', 'src').split('\0').filter(Boolean);
 const orphaned = untracked.filter((f) => {
-  const stem = f.replace(/\.[^.]+$/, '');
-  return git('grep', '-lF', stem, '--', 'docusaurus.config.js', 'src', 'sidebars') !== '';
+  const parts = f.replace(/\.[^./]+$/, '').split('/');
+  const name = parts.at(-1) === 'index' ? parts.at(-2) : parts.at(-1);
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return git('grep', '-lE', `['"][^'"]*/${escaped}(\\.[a-z]+)?['"]`, '--', 'docusaurus.config.js', 'src', 'sidebars') !== '';
 });
-console.log(`UNTRACKED_IMPORTS: ${orphaned.join(', ') || 'none'}${orphaned.length ? ' (WARN: referenced by tracked code but not committed; CI build will fail)' : ''}`);
+console.log(`UNTRACKED_IMPORTS: ${orphaned.join(', ') || 'none'}${orphaned.length ? ' (WARN: probably imported by tracked code but not committed; CI build will fail)' : ''}`);

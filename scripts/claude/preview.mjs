@@ -2,7 +2,7 @@
 // Usage: node scripts/claude/preview.mjs start [<product>|all] [--dev|--prod] [--latest-only] [--poll]
 //        node scripts/claude/preview.mjs stop | status
 import { spawn, spawnSync, execFileSync } from 'node:child_process';
-import { mkdirSync, openSync, existsSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdirSync, openSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { REPO_ROOT, validateProduct, landingPath } from './lib/products.mjs';
 import { summarize } from './lib/log-summary.mjs';
@@ -41,11 +41,54 @@ function portOwner(port) {
   }
 }
 
+// preview.pid is a file on disk, so validate it before using it: only our two ports, integer PIDs.
 function readState() {
   try {
-    return JSON.parse(readFileSync(pidFile, 'utf8'));
+    const state = JSON.parse(readFileSync(pidFile, 'utf8'));
+    if (!Number.isInteger(state.pid) || state.pid <= 1) return null;
+    // Map back to our own constants rather than trusting the file's value.
+    const port = Object.values(PORTS).find((p) => p === state.port);
+    if (!port) return null;
+    return { ...state, port };
   } catch {
     return null;
+  }
+}
+
+function readLog(path) {
+  try {
+    return readFileSync(path, 'utf8');
+  } catch {
+    return '';
+  }
+}
+
+function pidAlive(pid) {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch (e) {
+    return e.code === 'EPERM';
+  }
+}
+
+// Guard against PID reuse: on Unix, the saved PID must still be one of our npm shells.
+function isOurProcess(pid) {
+  if (!pidAlive(pid)) return false;
+  if (isWin) return true;
+  try {
+    const args = execFileSync('ps', ['-p', String(pid), '-o', 'args='], { encoding: 'utf8' });
+    return /npm run/.test(args);
+  } catch {
+    return false;
+  }
+}
+
+function processGroup(pid) {
+  try {
+    return Number(execFileSync('ps', ['-p', String(pid), '-o', 'pgid='], { encoding: 'utf8' }).trim());
+  } catch {
+    return NaN;
   }
 }
 
@@ -67,10 +110,11 @@ async function start() {
   const mode = flags.has('--prod') ? 'prod' : 'dev';
   const port = PORTS[mode];
   const state = readState();
-  if (state && (await responds(state.port))) {
-    console.error(`A ${state.mode} preview is already running on port ${state.port} (PID ${state.pid}). Run "stop" first.`);
+  if (state && isOurProcess(state.pid)) {
+    console.error(`A ${state.mode} preview is already ${(await responds(state.port)) ? 'running' : 'starting or building'} (PID ${state.pid}). Run "stop" first.`);
     process.exit(1);
   }
+  if (state) rmSync(pidFile, { force: true }); // stale file from a server that already exited
   if (await responds(port)) {
     console.error(`Port ${port} is already in use (PID ${portOwner(port) || 'unknown'}). Stop that process or run "stop".`);
     process.exit(1);
@@ -102,7 +146,7 @@ async function start() {
     if (child.exitCode !== null) break;
     await sleep(3000);
   }
-  const text = existsSync(logPath) ? readFileSync(logPath, 'utf8') : '';
+  const text = readLog(logPath);
   if (child.exitCode !== null) {
     // The build or server exited: reuse the build summary so broken links and MDX errors are listed.
     rmSync(pidFile, { force: true });
@@ -116,11 +160,14 @@ async function start() {
 
 async function stop() {
   const state = readState();
-  if (state) killTree(state.pid);
-  // The npm shell can exit while the server child lives on; clean up only the port this skill started.
-  if (state) {
-    const pid = portOwner(state.port);
-    if (pid) killTree(Number(pid));
+  // Only signal a process that is still ours; a stale PID file may name a reused PID.
+  if (state && isOurProcess(state.pid)) {
+    killTree(state.pid);
+    // The npm shell can exit while the server child lives on in the same process group.
+    if (!isWin) {
+      const owner = Number(portOwner(state.port));
+      if (owner && processGroup(owner) === state.pid) killTree(owner);
+    }
   }
   rmSync(pidFile, { force: true });
   await sleep(1500);
@@ -135,7 +182,7 @@ async function status() {
   if (!state) lines.push('No preview started by this skill.');
   else {
     const up = await responds(state.port);
-    lines.push(`${state.mode} server, scope ${state.product}, PID ${state.pid}: ${up ? 'RUNNING' : 'NOT RESPONDING (still building, or exited)'}`);
+    lines.push(`${state.mode} server, scope ${state.product}, PID ${state.pid}: ${up ? 'RUNNING' : isOurProcess(state.pid) ? 'STARTING (still building)' : 'EXITED (stale record; run stop to clear)'}`);
     if (up) lines.push(`URL: http://localhost:${state.port}${await landingPath(state.product)}`);
     lines.push(`Log: ${state.logPath}`);
   }

@@ -44,3 +44,12 @@ test('single-product build ignores links from other products', () => {
   assert.match(s, /Broken links \(1\)[\s\S]*4_0\/p -> .*gone/);
   assert.match(s, /Ignored 1 broken link/);
 });
+
+test('kb articles for the product are not treated as in scope', () => {
+  const log = [
+    'Exhaustive list of all broken links found:',
+    '- On source page path = /docs/kb/pingcastle/article:',
+    '   -> linking to /docs/gone',
+  ].join('\n');
+  assert.doesNotMatch(summarize(log, { exitCode: 0, product: 'pingcastle' }), /Broken links \(/);
+});
