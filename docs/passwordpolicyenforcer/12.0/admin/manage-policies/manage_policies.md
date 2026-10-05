@@ -61,7 +61,7 @@ Click **Make copy** in the policy options menu to create a new policy with the s
 
 Password Policy Enforcer enforces the default policy for users who don't have an assigned password policy. Click **Make default** or **Remove default** in the policy options menu to toggle the default state of a policy. There can only be one default policy. 
 
-Netwrix doesn't recommend using PPE without a default policy because it might leave some passwords unchecked. If you want to have a default policy, but still exempt some users from having to comply with PPE's rules:
+Netwrix doesn't recommend using PPE without a default policy because it might leave some passwords unchecked. To keep a default policy but exempt some users from PPE's rules:
 1. Create a new policy for the exempted users.
 2. Leave all the rules disabled for this policy.
 3. [Assign the policy](usersgroups.md) to the users who don't have to comply with any PPE rules.

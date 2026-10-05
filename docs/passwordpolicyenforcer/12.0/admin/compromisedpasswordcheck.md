@@ -14,7 +14,7 @@ Password Policy Enforcer (PPE) enforces its [rules](./manage-policies/rules/rule
 password changes. This lets PPE block non-compliant passwords, but real-time checking doesn't protect 
 against three scenarios:
 
-- Passwords that weren't known to be compromised at the time of password change, but appear in a 
+- Passwords that didn't appear in any known breach at the time of password change, but appear in a 
 later breach.
 - Identical passwords used by different users. While PPE could enforce this requirement during a 
 password change, it doesn't because it would slow down password changes significantly.
