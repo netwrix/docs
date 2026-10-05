@@ -12,7 +12,7 @@ PPE doesn't enforce any policies when you first install it, so the policy list i
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-PPE adds the policies you create to the policy list. Use the buttons above the policy list to [test policies](testpolicy.md), set policy priorities, and export the configuration. Use the options menu (**⋮**) to the right of each policy to perform actions on that policy.
+PPE adds the policies you create to the policy list. Use the buttons above the policy list to [test policies](testpolicy.md), [set policy priorities](#set-policy-priorities), and [export the configuration](#export-configuration). Use the [options menu](#policy-options-menu) (**⋮**) to the right of each policy to perform actions on that policy.
 
 ![Dashboard with Policies](/images/passwordpolicyenforcer/11.2/administration/ppedashboardpolicies.webp)
 
