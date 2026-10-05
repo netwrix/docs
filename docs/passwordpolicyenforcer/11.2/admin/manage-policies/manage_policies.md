@@ -12,7 +12,7 @@ PPE doesn't enforce any policies when you first install it, so the policy list i
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-PPE adds the policies you create to the policy list. Use the buttons above the policy list to [test policies](testpolicy.md), set policy priorities, and export the configuration. Use the options menu (**⋮**) to the right of each policy to perform actions on that policy.
+PPE adds the policies you create to the policy list. Use the buttons above the policy list to [test policies](testpolicy.md), [set policy priorities](#set-policy-priorities), and [export the configuration](#export-configuration). Use the [options menu](#policy-options-menu) (**⋮**) to the right of each policy to perform actions on that policy.
 
 ![Dashboard with Policies](/images/passwordpolicyenforcer/11.2/administration/ppedashboardpolicies.webp)
 
@@ -23,7 +23,7 @@ PPE adds the policies you create to the policy list. Use the buttons above the p
 3. Select a **Policy template** from the list if you want the default settings in the policy to match a standard password policy like HIPAA, PCI, NIST, and others. Select **None** to start with a blank policy.
 4. Click **Create policy**.
 
-The policy editor opens. The policy editor has many settings. The following pages explain the settings in each tab:
+The policy editor opens. The following pages explain the settings in each tab:
 
 - [Rules](rules/rules.md)
 - [Users & Groups](usersgroups.md)
@@ -50,7 +50,7 @@ Click **Set priorities** to view or modify policy priorities. This button is onl
 
 Select the policy you want to reprioritize, then click **Higher** or **Lower** to move the policy up or down. Click **Apply priorities** to accept the new priority order.
 
-The [Assign Policies to Users](usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also use the [**Test Policy by User** feature](testpolicy.md#by-user) to see which policy PPE enforces for a particular user.
+The [Assign Policies to Users](usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also use the [**By user**](testpolicy.md#by-user) test to see which policy PPE enforces for a particular user.
 
 ## Export configuration
 
