@@ -62,6 +62,7 @@ The four core qualities:
 - Concept/overview headings: noun phrase or gerund — "Configuring the monitoring plan"
 - An example immediately follows the procedure or concept it illustrates
 - Never skip heading levels
+- Every new page needs a `description` in its frontmatter: one sentence, under 160 characters, saying what the reader can do or learn on the page. The pre-commit check blocks a new page without one
 
 ## Linting
 
@@ -98,6 +99,7 @@ Every docs contribution is linted before it reaches a PR: Vale, Dale, and a chec
 - **Scope:** a new page is checked whole. An existing page is checked only on the lines the change adds or rewrites; text it already had is never flagged. A page git detects as a copy or rename (50% or more similar) counts as existing, so cloning a version directory only checks what differs. `docs/kb/` is out of scope.
 - **Vale:** the repo's Vale rules, from the page text (so the staged version is checked). Vale must be installed, or the commit is blocked with install steps. The Stop hook runs without that requirement.
 - **Dale:** a model applies the 10 rules in `.claude/skills/dale/rules/` in one call per page. Like the judge, it runs 3 times, keeps findings that 2 runs report at the same spot, and counts only findings whose quote appears verbatim on a changed line. Verdicts are cached.
+- **Frontmatter:** a new page needs a non-empty `description:` in its frontmatter. Existing pages and partials (a leading underscore) are not checked.
 - **Deterministic AI-isms:** `scripts/doc-draft/slop.mjs` (catalog in `scripts/doc-draft/ai-isms.yml`). Structural signals such as sentence-length variance apply only to new pages.
 - **Judged:** a Haiku 4.5 judge applies the 16 patterns in `.claude/references/humanizer-rules.md`. It runs 3 times per page and keeps findings that at least 2 runs report at the same spot. A finding counts only if its quote appears verbatim on a changed line. Verdicts are cached by content hash in `.cache/quality`.
 - **Draft markers:** write unresolved gaps as `{/* TODO: ... */}` so they never render. `scripts/quality/todo-check.mjs` warns (never blocks) about leftovers at commit and in the Stop hook.

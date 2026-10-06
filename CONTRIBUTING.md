@@ -83,6 +83,8 @@ description: 'SEO description'
 ---
 ```
 
+The `description` is required on a new page: one sentence, under 160 characters, saying what the reader can do or learn there. The pre-commit check blocks a new page without one.
+
 ## Linting with Vale
 
 Vale enforces the Netwrix style rules covering word choice, punctuation, formatting, and common writing issues. Git hooks run it on the `docs/` markdown files you change (KB articles excluded):
