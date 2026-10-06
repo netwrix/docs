@@ -40,7 +40,7 @@ If you have questions, contact your Customer Success Manager (CSM) or Salesforce
 These reports are available from **Netwrix Dashboard**  **Reports**  **Access Reports**.
 
 You can use filters on this report. Use **Save As** for a new version following your company naming
-conventions. An elevated access example is to filter **Permissionset/Profile** by the name of the
+conventions. For example, to review elevated access, filter **Permissionset/Profile** by the name of the
 elevated access profile or permission set, such as **Admin**.
 
 You can focus on sensitive objects by filtering by object name: use the **contains** keyword plus
@@ -131,7 +131,7 @@ security option selected.
     - Require identity verification during multi-factor authentication (MFA) registration
     - Allow redirection to untrusted external URLs without warning
 
-- **Health Check Certificates**: tracks CKM Certificate name, Expiration date, expiration status,
+- **Health Check Certificates**: tracks Certificate and Key Management (CKM) Certificate name, Expiration date, expiration status,
 CKM Key Size and related Policy if applicable.
 - **Health Check Changes**: tracks the changes to the items related to the health check settings.
 
@@ -168,7 +168,6 @@ These reports are available from **Netwrix Dashboard**  **Reports**  **Clean Up*
 - [Unused Apex Code](/docs/platgovsalesforce/cleanup/cleanup_reports.md#unused-apex-code)
 - [Unused Reports](/docs/platgovsalesforce/cleanup/cleanup_reports.md#unused-reports)
 - [Customizations with Inactive Owners](/docs/platgovsalesforce/cleanup/cleanup_reports.md#customizations-with-inactive-owners)
-- [Customizations without Related Processes](/docs/platgovsalesforce/cleanup/cleanup_reports.md#customizations-without-related-processes)
 - [Custom Fields without Help Text](/docs/platgovsalesforce/cleanup/cleanup_reports.md#custom-fields-without-help-text)
 - [Custom Fields without Description](/docs/platgovsalesforce/cleanup/cleanup_reports.md#custom-fields-without-description)
 
@@ -186,10 +185,10 @@ overview and the difference summary.
 -  **Compliant Changes**: displays all compliant changes. The system automatically marks compliant
 changes as closed. Use this report to review the changes the system automatically cleared.
 -  **Consolidated Change By Type**: displays changes summarized and grouped by Salesforce Type.
--  **Deployed Changes**: displays an end to end summary of deployed changes to enable tracking and
-reporting of changes to the system.
+-  **Deployed Changes**: displays an end-to-end summary of deployed changes for tracking and
+reporting.
 -  **Data Tracking Change Logs**: displays changes on objects set for data tracking.
--  **Change/Approval Policy Changes**: this report is based on Field History Tracking. You can track
+-  **Change/Approval Policy Changes**: this report uses Field History Tracking. You can track
 up to 20 fields from the Policy Record. Salesforce tracks field history from the date and
 time you enable it on a field.
 -  **Fast Scan for Permissions Changes**: displays all changes the Fast Scan detects in
@@ -214,8 +213,8 @@ indicates that a change occurred without the required approvals. Use this report
 changes as closed. Use this report to review the changes the system automatically cleared.
 -  **Platform Changes**: displays any platform changes that have occurred.
 -  **Consolidated Changes By Type**: displays changes summarized and grouped by Salesforce Type.
--  **Deployed Changes**: displays an end to end summary of deployed changes to enable tracking and
-reporting of changes to the system.
+-  **Deployed Changes**: displays an end-to-end summary of deployed changes for tracking and
+reporting.
 -  **Unresolved Control Incidents**: Deprecated item
 -  **Resolved Control Incidents**: Deprecated item
 -  **Pre-Approved Control Incidents**: Deprecated item
