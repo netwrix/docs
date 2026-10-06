@@ -1,0 +1,256 @@
+# ai-isms.yml — single hand-maintained source of AI-slop rules for the
+# `slop` gate (scripts/doc-draft/slop.mjs).
+#
+# Two sections:
+#   lexical    — word/phrase catalog. See doc-draft-conventions.md §3.1.
+#                 Consumed by slop.mjs only. It is not generated into a
+#                 Vale style; Vale's own wording rules live separately in
+#                 .vale/styles/Netwrix/ and are edited there.
+#   structural — numeric floors/ceilings for page-level AI-slop signals
+#                 (sentence-length variance, tricolon rate, repeated
+#                 paragraph openers, bullet density, heading-to-prose
+#                 ratio, em-dash rate). See doc-draft-conventions.md §3.2,
+#                 and §3.3 specifically for em-dash density.
+#
+# Every structural threshold below is calibrated against the 56 shipped,
+# accepted pages at docs/accessanalyzer/26.1/ (excluding docs/kb/):
+#   git ls-files docs/accessanalyzer/26.1 | grep '\.md$' | grep -v '/kb/'
+# All 56 must score zero findings against these thresholds. Each threshold
+# comment below cites the actual max/min metric observed in that corpus at
+# calibration time. If a threshold ever needs loosening to keep the corpus
+# clean, loosen it here (with a fresh citation) — never hand-tune slop.mjs
+# to special-case a page.
+
+lexical:
+  # --- Seed: .vale/styles/Netwrix/Idioms.yml — full token list (70
+  # tokens across 8 groups). Patterns copied verbatim from Idioms.yml so
+  # the two lists can't drift in spirit even though they're separate
+  # files serving separate tools (Vale vs. this gate). Corpus check
+  # (all 56 pages of docs/accessanalyzer/26.1, prose-extracted) found
+  # zero hits for any of the 58 tokens below that weren't already present
+  # here, so no exceptions were needed the way 'unlock'/'underscores'
+  # needed them further down.
+
+  # Overarching / scope idioms
+  'tip of the iceberg': 'tip of the iceberg'
+  'at the end of the day': 'at the end of the day'
+  'out of the box': '\bout of the box\b'
+  'out-of-the-box': '\bout-of-the-box\b'
+  'in-the-box': '\bin-the-box\b'
+  'under the hood': '\bunder the hood\b'
+  'in a nutshell': '\bin a nutshell\b'
+  'on the same page': '\bon the same page\b'
+  'from the ground up': '\bfrom the ground up\b'
+  'behind the scenes': '\bbehind the scenes\b'
+  'out of the gate': '\bout of the gate\b'
+  'off the beaten path': '\boff the beaten path\b'
+  'the big picture': '\bthe big picture\b'
+  'the bottom line': '\bthe bottom line\b'
+
+  # Status / momentum idioms
+  'up and running': '\bup and running\b'
+  'hit the ground running': '\bhit the ground running\b'
+  'ramp up': '\bramp(?:s|ed|ing)? up\b'
+  'spin up': '\bspin(?:s|ning)? up\b'
+  'stand up (idiom)': '\bstand(?:s|ing)? up\b'
+  'tear down (idiom)': '\btear(?:s|ing)? down\b'
+  'tore down': '\btore? down\b'
+
+  # Business/strategy jargon
+  'low-hanging fruit': '\blow.hanging fruit\b'
+  'moves the needle': '\bmoves? the needle\b'
+  'boil the ocean': '\bboil(?:s|ed|ing)? the ocean\b'
+  'levels the playing field': '\blevels? the playing field\b'
+  'raises the bar': '\braises? the bar\b'
+  'sets the stage': '\bsets? the stage\b'
+  'paves the way': '\bpaves? the way\b'
+  'bridges the gap': '\bbridges? the gap\b'
+  'fills the gap': '\bfills? the gap\b'
+  'cut corners': '\bcut(?:s|ting)? corners\b'
+  'rule of thumb': '\brule of thumb\b'
+  'across the board': '\bacross the board\b'
+  'in the long run': '\bin the long run\b'
+  'in the same boat': '\bin the same boat\b'
+
+  # Attention/awareness idioms
+  'keep in mind': '\bkeep in mind\b'
+  'bear in mind': '\bbear in mind\b'
+  'at your fingertips': '\bat your fingertips\b'
+  'on the radar': '\bon the radar\b'
+  'in the weeds': '\bin the weeds\b'
+  'at first glance': '\bat first glance\b'
+  'by the same token': '\bby the same token\b'
+  'on the fly': '\bon the fly\b'
+
+  # Collaboration/process jargon
+  'touch base': '\btouch(?:es|ing|ed)? base\b'
+  'circle back': '\bcircle(?:s|d|ing)? back\b'
+  'loop in': '\bloop(?:s|ed|ing)? in\b'
+  'flesh out': '\bflesh(?:es|ed|ing)? out\b'
+  'iron out': '\biron(?:s|ed|ing)? out\b'
+  'hammer out': '\bhammer(?:s|ed|ing)? out\b'
+  'drill down': '\bdrill(?:s|ed|ing)? down\b'
+  'zero in on': '\bzero(?:s|ed|ing)? in on\b'
+  'hone in on': '\bhone(?:s|d|ing)? in on\b'
+
+  # Deep dive variants
+  'a deep dive': '\ba deep dive\b'
+  'deep dive': '\bdeep dive\b'
+  'take a deep dive': '\btake a deep dive\b'
+
+  # Work idioms
+  'from scratch': '\bfrom scratch\b'
+  'heavy lifting': '\bheavy lifting\b'
+  'pain points': '\bpain points?\b'
+
+  # Tech marketing buzzwords
+  'game-changer': '\bgame.changer\b'
+  'silver bullet': '\bsilver bullet\b'
+  'magic bullet': '\bmagic bullet\b'
+  'one-stop-shop': '\bone.stop.shop\b'
+  'best of breed': '\bbest of breed\b'
+  'bleeding-edge': '\bbleeding.?edge\b'
+  'cutting-edge': '\bcutting.?edge\b'
+  'mission-critical': '\bmission.critical\b'
+  'world-class': '\bworld.class\b'
+  'turnkey': '\bturnkey\b'
+  'synergy': '\bsynergy\b'
+  'leverage': '\bleverage(?:s|d|ing)?\b'
+
+  # --- Seed: .vale/styles/Netwrix/ImpersonalFiller.yml (full token list).
+  'it should be noted that': '\bit should be noted that\b'
+  'it is important to note that': '\bit is important to note that\b'
+  'it is important to ensure that': '\bit is important to ensure that\b'
+  'it is important to': '\bit is important to\b'
+  'it is recommended that': '\bit is recommended that\b'
+  'it is necessary to': '\bit is necessary to\b'
+  'it is possible to': '\bit is possible to\b'
+  'it is worth noting that': '\bit is worth noting that\b'
+  'it must be noted that': '\bit must be noted that\b'
+  'as mentioned previously': '\bas mentioned previously\b'
+  'as previously mentioned': '\bas previously mentioned\b'
+  'needless to say': '\bneedless to say\b'
+
+  # --- Seed: .vale/styles/Netwrix/FormalHedging.yml (swap keys — the
+  # phrases the rule tells writers to replace).
+  'prior to': '\bprior to\b'
+  'subsequent to': '\bsubsequent to\b'
+  'in the event that': '\bin the event that\b'
+  'in the event of': '\bin the event of\b'
+  'for the purpose of': '\bfor the purpose of\b'
+  'with the intention of': '\bwith the intention of\b'
+  'at this point in time': '\bat this point in time\b'
+
+  # --- Seed: .vale/styles/Netwrix/TemporalHedges.yml (full token list).
+  'currently': '\bcurrently\b'
+  'presently': '\bpresently\b'
+  'as of this writing': '\bas of this writing\b'
+
+  # --- Seed: .vale/styles/Netwrix/NaturallyFiller.yml (full token list).
+  'naturally': '\bnaturally\b'
+
+  # --- .claude/skills/dale/rules/xy-slop.yml and minimizing-difficulty.yml
+  # are prose-*pattern* descriptions ("x is not y, x is z"; minimizing task
+  # difficulty), not word lists — per the brief, no literal tokens are
+  # pulled from them. They inform how a future gate might catch those
+  # patterns structurally, not the lexical catalog here.
+
+  # --- Explicit AI-isms additions (not covered by the seed corpus above).
+  'delve': '\bdelve(?:s|d|ing)?\b'
+  'seamless': '\bseamless(?:ly)?\b'
+  'robust': '\brobust(?:ly|ness)?\b'
+  'comprehensive': '\bcomprehensive(?:ly)?\b'
+  'landscape': '\blandscape\b'
+  'realm': '\brealm\b'
+  'testament to': '\btestament to\b'
+  # 'unlock' is a real UI/security verb in this domain (unlock a locked
+  # account, click **Unlock**) — corpus check found it constantly, in
+  # known-limitations.md, settings/users.md (heading "Unlock a User", "clicks
+  # **Unlock**", "click **Actions > Unlock**", "Unlocking doesn't change..."),
+  # and first-sign-in.md ("unlock it"). A negative-lookaround exclusion list
+  # couldn't keep up with that many legitimate phrasings, so this is a
+  # positive match instead: only trips when "unlock" is paired with an
+  # abstract/marketing noun AI-isms actually pair it with (power, potential,
+  # value, insights, workflow, etc.) — never for the literal
+  # account/session/UI sense.
+  'unlock': '\bunlocks?\s+(?:the\s+|a\s+|an\s+|its\s+|your\s+|their\s+)?(?:[a-z][\w-]*,?\s+){0,3}(?:power|potential|value|insight\w*|possibilit\w*|opportunit\w*|capabilit\w*|secret\w*|productivity|efficienc\w*|growth|success|innovation\w*|workflow\w*|benefit\w*)\b'
+  'empower': '\bempower(?:s|ed|ing|ment)?\b'
+  'elevate': '\belevate(?:s|d|ing)?\b'
+  'streamline': '\bstreamline(?:s|d|ing)?\b'
+  'pivotal': '\bpivotal\b'
+  # 'underscores' is also a punctuation character (hyphens, underscores,
+  # and dots). Corpus check (scans/scan-types.md) found the literal
+  # character-set sense — narrowed to the verb-of-emphasis sense
+  # ("underscores the/its/a ...") that AI-isms actually use.
+  'underscores': '\bunderscores?\s+(?:the|its|their|his|her|a|an|how|that|this)\b'
+  'showcase': '\bshowcase(?:s|d|ing)?\b'
+  'plethora': '\bplethora\b'
+  'myriad': '\bmyriad\b'
+  'foster': '\bfoster(?:s|ed|ing)?\b'
+  'harness': '\bharness(?:es|ed|ing)?\b'
+  'ever-evolving': '\bever.evolving\b'
+  "in today's": "\\bin today's\\b"
+  "it's worth noting": "\\bit'?s worth noting\\b"
+  'rest assured': '\brest assured\b'
+  'at its core': '\bat its core\b'
+  'when it comes to': '\bwhen it comes to\b'
+  'dive into': '\bdive into\b'
+
+structural:
+  # Sentence-length variance: uniform rhythm is the strongest AI tell.
+  # stddev of per-sentence word counts. Flag when stddev falls BELOW the
+  # floor (too uniform) — never above. Skipped entirely below
+  # min_sentences, to avoid false positives on short pages/sections.
+  # Corpus: minimum stddev observed across all 56 pages was 6.51
+  # (docs/accessanalyzer/26.1/integrations/index.md). Floor set to 2.5 to
+  # sit safely below that with margin.
+  sentence_length_stddev:
+    floor: 2.5
+    min_sentences: 5
+
+  # Tricolon rate: "X, Y, and Z" clause-level parallel constructions, per
+  # 100 sentences. Netwrix house style itself models this pattern (see
+  # netwrix_style_guide.md's own colon example, "authenticate to the
+  # system, send an initial request, and validate the response") so real
+  # technical docs use tricolons often — corpus max observed: 33.33 per 100
+  # sentences (docs/accessanalyzer/26.1/dashboards-reports/reports/identity.md
+  # and docs/accessanalyzer/26.1/integrations/index.md, both short pages
+  # where 1 in 3 sentences is a legitimate enumeration). Ceiling set to 45
+  # to clear that with margin; only relentless, near-every-sentence
+  # tricolon use (well past any real page here) trips it.
+  tricolon_rate_per_100_sentences:
+    ceiling: 45
+    min_sentences: 5
+
+  # Repeated paragraph openers: same first word starting >= 2 paragraphs,
+  # as a share of total paragraphs. Corpus max observed: 0.5 (docs/accessanalyzer/26.1/integrations/index.md).
+  # Ceiling set to 0.6 with a paragraph-count floor so tiny pages (few
+  # paragraphs, where any repeat looks huge as a ratio) aren't flagged.
+  repeated_paragraph_openers_rate:
+    ceiling: 0.6
+    min_paragraphs: 4
+
+  # Bullet density: bullet/numbered-list lines as a share of non-blank body
+  # lines. Corpus max observed: 0.67 (docs/accessanalyzer/26.1/known-limitations.md).
+  # Ceiling set to 0.85 — reference docs are legitimately bullet-heavy;
+  # this only catches pages that are *almost nothing but* fragmented bullets.
+  bullet_density:
+    ceiling: 0.85
+
+  # Heading-to-prose ratio: heading lines as a share of non-blank body
+  # lines. Corpus max observed: 0.44 (docs/accessanalyzer/26.1/key-concepts.md,
+  # a glossary-style page that's mostly short defined-term headings).
+  # Ceiling set to 0.7.
+  heading_to_prose_ratio:
+    ceiling: 0.7
+
+  # Em-dash rate per 100 words. Netwrix house style *prescribes* em dashes
+  # for emphasis/interruption (netwrix_style_guide.md line ~409-411) — this
+  # must never fire on ordinary house-style use, only on abnormally dense,
+  # mechanically uniform em-dash use. Corpus max observed: 1.34 per 100
+  # words (docs/accessanalyzer/26.1/install/automatic-tls-certificates.md).
+  # Ceiling set to 8.0 — roughly 6x the real max, so genuine house style
+  # (even a page written with much heavier em-dash use than anything
+  # shipped today) still passes; only mechanical AI-pattern overuse trips it.
+  em_dash_rate_per_100_words:
+    ceiling: 8.0
