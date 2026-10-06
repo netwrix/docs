@@ -168,9 +168,9 @@ Run Dale locally on any markdown file to preview context-dependent issues:
 
 Ask Claude Code for help with your writing — brainstorming document structure, drafting a section, editing existing content, or understanding a style rule. Claude automatically uses the `doc-help` skill when you ask for writing assistance. You can also invoke it directly with `/doc-help`, followed by your request.
 
-### Run autonomous documentation tasks
+### Draft new pages
 
-For well-defined drafting tasks that don't need back-and-forth, Claude automatically uses the `tech-writer` agent. It drafts new pages from a pull request, a GitHub issue, a Jira ticket or Azure DevOps item, specs, notes, or a detailed prompt, and it can structure a new docs directory following the section guide (`.claude/references/documentation-section-guide.md`). It doesn't edit existing pages; use `doc-help` for that. Before it finishes, it lints its own draft (Vale, Dale, and the AI-writing check) and fixes what is flagged.
+For well-defined drafting tasks, Claude uses the `doc-draft` skill in your session, or you can run `/doc-draft`. It drafts new pages from a pull request, a GitHub issue, a Jira ticket or Azure DevOps item, specs, notes, or a detailed prompt, and it can structure a new docs directory following the section guide (`.claude/references/documentation-section-guide.md`). It doesn't edit existing pages; use `doc-help` for that. Before it finishes, it lints its draft (Vale, Dale, and the AI-writing check) and fixes what is flagged.
 
 Examples:
 - "Look at PR 1040 in itdr-pingcastle-core and document it".
@@ -178,7 +178,7 @@ Examples:
 - "Draft the installation steps based on this outline: [outline]"
 - "Create the docs directory for this new product from these specs: [specs]"
 
-For tasks that need design decisions first — like planning a new guide from scratch — Claude uses doc-help to brainstorm the structure with you, then hands the drafting off to the tech-writer agent.
+For tasks that need design decisions first — like planning a new guide from scratch — Claude uses doc-help to brainstorm the structure with you, then moves to `doc-draft` for the drafting.
 
 ### Quick reference
 
@@ -186,8 +186,8 @@ For tasks that need design decisions first — like planning a new guide from sc
 |---|---|
 | Quick lint check on a file | `/dale docs/path/to/file.md` |
 | Check your changes before committing | `npm run quality:score` |
-| Plan structure for a new document | `doc-help` then `tech-writer` agent |
-| Draft a new page from a PR, issue, ticket, or specs | `tech-writer` agent |
+| Plan structure for a new document | `doc-help` then `doc-draft` |
+| Draft a new page from a PR, issue, ticket, or specs | `doc-draft` |
 | Review or improve existing content | `doc-help` |
 | Fix Vale errors in a file | `doc-help`, or fix by hand and run `npm run quality:score` |
 | Edit a file for style and clarity | `doc-help` |

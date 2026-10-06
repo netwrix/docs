@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * gen-lint-digest.mjs - writes .claude/references/lint-rules.md: every rule Vale, Dale, and the
- * AI-isms check enforce, in plain language, so a writer (or the tech-writer agent) can draft
+ * AI-isms check enforce, in plain language, so a writer (or the doc-draft skill) can draft
  * wording that passes the first time. Generated from the rule files, so it cannot drift.
  *
  *   node scripts/quality/gen-lint-digest.mjs           # write the file

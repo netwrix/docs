@@ -97,7 +97,7 @@ Skills (`.claude/skills/`) are invoked with `/skill-name`. Agents (`.claude/agen
 
 When a user asks for help with documentation, always use the appropriate tool:
 - **`/doc-help` skill** — Interactive tasks: reviewing content, suggesting improvements, discussing structure or flow, brainstorming, explaining style rules, incorporating external documents (e.g., `.docx` files) into existing markdown files, or any back-and-forth conversation about writing.
-- **`tech-writer` agent** — Drafts documentation from source material (Sonnet by default; pass `model: "opus"` if a PR draft comes back thin): a PR to document ("look at PR X in repo Y"), a GitHub issue, Jira ticket, or Azure DevOps item to document ("look at PLAT-1234"), specs for a feature, notes to turn into a document, or a prompt detailed enough to draft from. Product context for PR drafting lives in `.claude/references/products/<product>.md`; add a brief there for any product you want it to understand. It does not edit existing docs; use `/doc-help`, `/dale`, or Vale for that.
+- **`/doc-draft` skill** — Drafts documentation from source material, in your session: a PR to document ("look at PR X in repo Y"), a GitHub issue, Jira ticket, or Azure DevOps item to document ("look at PLAT-1234"), specs for a feature, notes to turn into a document, or a prompt detailed enough to draft from. Product context for PR drafting lives in `.claude/references/products/<product>.md`; add a brief there for any product you want it to understand. It does not edit existing docs; use `/doc-help`, `/dale`, or Vale for that.
 
 | Component | Type | Purpose |
 |---|---|---|
@@ -105,6 +105,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/docs-preview` | Skill | Start, stop, or check a local dev server or production preview |
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
+| `/doc-draft` | Skill | Drafts new pages from a PR, a work item (GitHub issue, Jira ticket, Azure DevOps item), specs, notes, or a detailed prompt, and structures new docs directories |
 | `/doc-pr` | Skill | Automated PR editorial review |
 | `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
@@ -113,7 +114,6 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/kb-pr-open` | Skill | Last-mile KB submission helper for TSEs — lints and opens a PR to `dev` |
 | `/kb-pr-review` | Skill | Reviews a KB PR (Vale + Dale + Derek) and drafts a review comment |
 | `/audit-fix` | Skill | Applies a docs-audit correction to a page and its duplicate versions |
-| `tech-writer` | Agent | Autonomous drafting from a PR, a work item (GitHub issue, Jira ticket, Azure DevOps item), specs, notes, or a detailed prompt (Sonnet) |
 | `vale-rule-writer` | Agent | Creates new Vale rules |
 | `vale-auditor` | Agent | Audits Vale rule set for conflicts |
 | `github-issue-manager` | Agent | Issue intake pipeline orchestrator |
