@@ -22,8 +22,11 @@
     "kb:dry": "node scripts/copy-kb-to-versions.mjs --dry",
     "kb:test:aa": "npm run kb:clean && npm run prestart && npm run start",
     "kb:prodtest:aa": "npm run kb:clean && npm run prebuild && npm run build && npm run serve",
-    "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh && node --test scripts/test-set-blob-metadata.mjs && node scripts/test-set-blob-metadata-integration.mjs && node --test scripts/claude/test-log-summary.mjs",
-    "prepare": "husky || true"
+    "quality:score": "node scripts/quality/score.mjs --table",
+    "quality:readability": "node scripts/quality/readability.mjs",
+    "quality:fix": "node scripts/quality/fix-loop.mjs",
+    "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh && node --test scripts/test-set-blob-metadata.mjs && node scripts/test-set-blob-metadata-integration.mjs && node --test scripts/claude/test-log-summary.mjs && node scripts/quality/gen-lint-digest.mjs --check",
+    "prepare": "husky || echo \"warning: could not install the pre-commit hook; run npx husky\""
   },
   "dependencies": {
     "@azure/storage-blob": "^12.34.0",
@@ -47,6 +50,7 @@
     "serve": "^14.2.6"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.129.0",
     "@docusaurus/module-type-aliases": "^3.10.0",
     "@docusaurus/types": "^3.10.0",
     "@mdx-js/mdx": "^3.1.1",

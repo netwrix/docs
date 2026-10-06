@@ -28,11 +28,11 @@ This documentation site serves all Netwrix product documentation.
 - **Node.js 22+**
 - **npm**
 - **Git**
-- **Vale** (style linter — optional for local use; issues are auto-fixed on PRs)
+- **Vale** (style linter — required: the pre-commit check runs it, and a commit is blocked if it isn't installed)
 
 ### Install Vale
 
-[Vale](https://vale.sh/) is a command-line linter for prose. A linter checks your writing against a set of style rules — like a spell checker, but for grammar, word choice, and tone. Vale issues are auto-fixed on PRs, but you can install it locally to preview issues before pushing.
+[Vale](https://vale.sh/) is a command-line linter for prose. A linter checks your writing against a set of style rules — like a spell checker, but for grammar, word choice, and tone. The pre-commit check runs Vale on your docs before each commit, so it needs to be installed. You can also run it yourself to preview issues before pushing.
 
 **macOS:**
 ```bash
@@ -74,7 +74,7 @@ npm run start
 
 ### Run Vale Locally
 
-Vale issues are auto-fixed on PRs, but you can run Vale locally to preview:
+The pre-commit hook (installed by `npm install`) runs Vale, Dale, and a check for signs of AI writing on new pages and on the lines you change, and blocks the commit if it finds anything. Nothing lints on the PR. Preview Vale yourself with:
 
 ```bash
 vale docs/path/to/file.md

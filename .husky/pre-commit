@@ -4,4 +4,21 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 # bash is 3.2; prefer Homebrew bash if present.
 BASH_EXEC="${HOMEBREW_PREFIX:-/opt/homebrew}/bin/bash"
 [ ! -x "$BASH_EXEC" ] && BASH_EXEC=bash
-"$BASH_EXEC" "$REPO_ROOT/scripts/check-anchors.sh" --staged
+"$BASH_EXEC" "$REPO_ROOT/scripts/check-anchors.sh" --staged || exit 1
+
+# Style and AI-isms check (Vale, Dale, and the AI-isms checks): new pages whole, existing
+# pages on the lines this commit adds or rewrites. Fix what it flags, re-stage, and commit
+# again. Vale must be installed; the model checks use ANTHROPIC_API_KEY or the claude CLI.
+if git diff --cached --name-only -- docs | grep -Eq '\.mdx?$'; then
+  if [ -z "$ANTHROPIC_API_KEY" ] && ! command -v claude >/dev/null 2>&1; then
+    echo "quality: no model access (no ANTHROPIC_API_KEY and no claude CLI); running the deterministic checks only." >&2
+  fi
+  node "$REPO_ROOT/scripts/quality/score.mjs" --staged --table || {
+    echo "" >&2
+    echo "quality: commit blocked. Rewrite the flagged lines, git add, and commit again." >&2
+    exit 1
+  }
+fi
+
+# Warn (never block) about unresolved draft markers such as {/* TODO: ... */}.
+node "$REPO_ROOT/scripts/quality/todo-check.mjs" --staged

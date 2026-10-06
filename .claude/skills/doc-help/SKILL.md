@@ -1,6 +1,6 @@
 ---
 name: doc-help
-description: "Interactive writing assistant for Netwrix documentation. Use when a writer wants hands-on, conversational help: brainstorming structure, drafting a section, editing existing content, incorporating external documents (e.g., .docx files) into existing markdown files, or understanding a style or Vale rule. For fully autonomous tasks (write this entire doc, fix all Vale errors end-to-end), use the tech-writer agent instead."
+description: "Interactive help with Netwrix documentation already in progress or already written. Use whenever the user wants to review, edit, tighten, restructure, or improve an existing doc, section, or paragraph ('review this page', 'does this read well', 'make this clearer', 'how should I structure this', 'fix this section'); asks why Vale or Dale flagged something or what a style rule means; wants to brainstorm or outline before writing; wants a section drafted with their input; or wants an external document (.docx) merged into an existing markdown file. Applies to any file under docs/ or any pasted doc text. When the user hands over source material to write from (a PR, a GitHub issue, Jira ticket, or Azure DevOps item, specs, notes, a detailed prompt), use tech-writer instead."
 argument-hint: "[topic, file path, content to edit, or question]"
 ---
 
@@ -13,7 +13,7 @@ Read `docs/CLAUDE.md` before starting any session. It contains the Netwrix style
 ## Trigger Conditions
 
 - User invokes `/doc-help` with or without arguments
-- User asks for help writing, editing, or reviewing Netwrix documentation
+- User asks for interactive help writing, editing, or reviewing Netwrix documentation, with no source material to draft from
 - User asks to incorporate, merge, or integrate content from an external document (e.g., `.docx`) into an existing markdown file
 - User has a question about a style rule, Vale error, or Netwrix writing convention
 
@@ -81,7 +81,7 @@ For each section, in order:
 Continue iterating until they are satisfied, then move to the next section.
 
 **Always:**
-- Provide an example for every concept introduced
+- Give every procedure an example. For a concept, add one only if it helps the reader; if one would help and you can't confirm it, ask the writer or leave `{/* TODO: add an example */}`
 - Anticipate the question the reader is about to ask and answer it inline
 - Write for the newer user without condescending to the experienced one
 
@@ -109,6 +109,8 @@ Re-read the full document and check for:
 - Flow and consistency across sections
 - Redundancy or contradictions
 - Any sentence that doesn't earn its place
+- Style check: before you hand back, run `npm run quality:score -- --table` (Vale, Dale, and the AI-isms check on what changed since `origin/dev`) and fix what it flags without changing any fact. `.claude/references/lint-rules.md` lists the rules.
+- Readability: write plainly the first time, and do not shorten sentences at the cost of a fact, condition, or qualifier. `npm run quality:readability -- <file>` is an optional report; run it only if the writer asks, and report the numbers without revising to meet them. The AI-isms check runs later at commit, so avoid filler, promotional wording, and stock AI phrasing as you write.
 
 Provide a short summary of any final suggestions. Ask if the writer wants to refine anything or if the doc is ready.
 

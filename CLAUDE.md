@@ -20,6 +20,8 @@ npm run clear            # Clear Docusaurus cache (fixes stale build issues)
 # Linting
 vale <file>              # Run Vale style checker on a markdown file
 /dale <file>             # Run Dale linter (Claude skill) on a markdown file
+npm run quality:score    # Vale + Dale + AI-isms check on your staged or branch docs (what the pre-commit hook runs)
+npm run quality:score -- --file <path>   # the same check on one page, whole
 
 # Install Vale (if not already installed)
 # macOS:
@@ -76,14 +78,18 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 
 | Workflow | Trigger | Purpose |
 |---|---|---|
-| `build-and-deploy.yml` | Push to main/dev, PRs to dev | Build and deploy to Azure |
-| `vale-autofix.yml` | PRs with `.md` changes | Auto-fix Vale + Dale issues (script + AI), post summary comment |
-| `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Editorial review; `@claude` follow-up |
-| `claude-documentation-reviewer.yml` | PRs with `.md` changes | AI review with inline suggestions |
-| `claude-documentation-fixer.yml` | `@claude` comment on PR | Apply fixes and push |
-| `claude-issue-labeler.yml` | Issues opened/edited | Security screening, CoC check, auto-labeling, content fix automation |
-| `sync-dev-to-main.yml` | Daily 8 AM PST | Auto-merge dev to main |
-| `reindex-algolia.yml` | After main deploy | Refresh search index |
+| `build-and-deploy.yml` | Push to main/dev, PRs to dev, manual | Build the site. Pushes deploy to Azure (`dev` to development, `main` to production); PRs build only |
+| `script-tests.yml` | PRs that change `scripts/` or `package.json` | Runs the repo's script tests. Docs are linted before the PR (pre-commit: Vale, Dale, AI-isms); nothing lints on the PR |
+| `md-extension-autofix.yml` | PRs to dev | Adds missing `.md` extensions and frontmatter, and commits the fix |
+| `claude-code-review.yml` | PRs to dev that change non-doc files | Code review comment |
+| `claude-code-followup.yml` | `@claude` comment on a code PR (owners, members, collaborators) | Answers or applies a fix |
+| `claude-doc-pr.yml` | PRs to dev with `docs/` changes; `@claude` comments | Editorial review (`doc-review` job) and `@claude` follow-up (`doc-followup` job) |
+| `claude-issue-labeler.yml` | Issues opened/edited, comments | Security screening, CoC check, auto-labeling, content fix automation |
+| `auto-create-pr-tracking-issues.yml` | Review requested on a PR | Creates the admin or KB tracking issue |
+| `slack-notify-pr.yml` | PR opened, review requested, PR comment | Posts to #docs-gh and @-mentions the CODEOWNERS teams for the changed files |
+| `slack-notify-issue.yml` | Issue opened or commented | Posts to #docs-gh and @-mentions the relevant CODEOWNERS members |
+| `update-project-board-on-pr-merge.yml` | PR closed | Sets the linked tracking issue's status on the project board |
+| `sync-dev-to-main.yml` | Daily 8 AM PST (16:00 UTC), manual | Auto-merge dev to main if the build passes |
 
 ## Skills and Agents
 
@@ -91,7 +97,7 @@ Skills (`.claude/skills/`) are invoked with `/skill-name`. Agents (`.claude/agen
 
 When a user asks for help with documentation, always use the appropriate tool:
 - **`/doc-help` skill** — Interactive tasks: reviewing content, suggesting improvements, discussing structure or flow, brainstorming, explaining style rules, incorporating external documents (e.g., `.docx` files) into existing markdown files, or any back-and-forth conversation about writing.
-- **`tech-writer` agent** — Autonomous end-to-end tasks: drafting new documents, rewriting files, fixing all Vale errors, or editing for style and clarity.
+- **`tech-writer` agent** — Drafts documentation from source material (Sonnet by default; pass `model: "opus"` if a PR draft comes back thin): a PR to document ("look at PR X in repo Y"), a GitHub issue, Jira ticket, or Azure DevOps item to document ("look at PLAT-1234"), specs for a feature, notes to turn into a document, or a prompt detailed enough to draft from. Product context for PR drafting lives in `.claude/references/products/<product>.md`; add a brief there for any product you want it to understand. It does not edit existing docs; use `/doc-help`, `/dale`, or Vale for that.
 
 | Component | Type | Purpose |
 |---|---|---|
@@ -107,7 +113,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/kb-pr-open` | Skill | Last-mile KB submission helper for TSEs — lints and opens a PR to `dev` |
 | `/kb-pr-review` | Skill | Reviews a KB PR (Vale + Dale + Derek) and drafts a review comment |
 | `/audit-fix` | Skill | Applies a docs-audit correction to a page and its duplicate versions |
-| `tech-writer` | Agent | Autonomous end-to-end doc writing/editing |
+| `tech-writer` | Agent | Autonomous drafting from a PR, a work item (GitHub issue, Jira ticket, Azure DevOps item), specs, notes, or a detailed prompt (Sonnet) |
 | `vale-rule-writer` | Agent | Creates new Vale rules |
 | `vale-auditor` | Agent | Audits Vale rule set for conflicts |
 | `github-issue-manager` | Agent | Issue intake pipeline orchestrator |
@@ -115,7 +121,10 @@ When a user asks for help with documentation, always use the appropriate tool:
 ## Hooks
 
 Project hooks are in `.claude/settings.json`:
-- **PostToolUse (Edit|Write)**: After editing a `docs/*.md` file, reminds to run `/dale`
+- **PostToolUse (Edit|Write)**: After editing a `docs/*.md` file, reminds to run `/dale`; a second hook records the file so the Stop hook knows which docs this session edited
 - **PostToolUse (Bash)**: After running `vale`, reminds to fix and re-run until clean
+- **Stop**: When Claude finishes a turn, runs the style check (Vale, Dale, AI-isms) on the docs this session edited and hands any findings back to Claude, up to 3 rounds
+
+Git hook (`.husky/pre-commit`, installed by `npm install`): runs the same style check on staged docs and blocks the commit, plus the anchor-link check and a draft-marker warning.
 
 Hook scripts live in `.claude/hooks/`.

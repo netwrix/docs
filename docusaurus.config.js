@@ -8,6 +8,7 @@ import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
+import llmsTxtPlugin from './src/plugins/llms-txt.js';
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
@@ -176,6 +177,9 @@ const config = {
           },
         };
       },
+
+      // llms.txt index (site root) and per-product-version page listings
+      llmsTxtPlugin,
 
       // Google Analytics
       [
