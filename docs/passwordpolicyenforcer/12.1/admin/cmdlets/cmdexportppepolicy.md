@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Export-PPEPolicy
 
-The **Export-PPEPolicy** exports a Password Policy Enforcer policy to a file.
+The **Export-PPEPolicy** exports a Password Policy Enforcer (PPE) policy to a file.
 
 :::note
 This cmdlet calls the **PPE Tool**. You must be an administrator to run this cmdlet. Start

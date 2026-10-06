@@ -28,8 +28,8 @@ Use the [Test Policy by User](manage-policies/testpolicy.md) feature to see whic
 
 - PPE is disabled.
 - The policy [assigned](manage-policies/usersgroups.md) to a user is disabled.
-- No policy is assigned to a user, or an error occurs when determining the assigned policy, and a default policy isn't specified.
-- Someone resets a password, and **Enforce policy when password is reset** isn't selected.
+- You haven't assigned a policy to a user, or an error occurs when determining the assigned policy, and you haven't specified a default policy.
+- Someone resets a password, and you haven't selected **Enforce policy when password is reset**.
 
 **Log event when password rejected by service**. Select this option to log an event to the Windows Application Event Log whenever PPE rejects a password. The logged event includes the username, event source (client or server), and the rules the password doesn't comply with. This option doesn't log an event when Windows rejects a password.
 

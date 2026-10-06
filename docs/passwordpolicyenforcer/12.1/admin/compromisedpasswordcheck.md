@@ -59,7 +59,7 @@ compromised password. The Password Scanner doesn't perform this action for accou
 **Force users to change password at next logon** if you want the Password Scanner to set "User must change password at next logon" 
 for any accounts with identical passwords. The Password Scanner doesn't perform this action for accounts with "Password never expires" set.
 - **Recipient of the full report on the found compromised passwords**. Enter the email address of a person or distribution list 
-  into this text box. The Password Scanner sends a report to this address after every scan. This is a report for administrators, not users.
+  into this text box. The Password Scanner sends a report to this address after every scan. This report is intended for administrators only.
 - **From**. Enter the sender's email address for the full report. The correct format is `"Display Name" <mailbox@domain.com>`.
 - **Notify users whose passwords are compromised by email**. Select this checkbox to send an email to users whose passwords are compromised.
 - Use **Set up email** to edit the email template for the compromised password email. The correct format for the **From** text box is 
