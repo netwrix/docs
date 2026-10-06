@@ -36,7 +36,7 @@ The results list all customizations of Record type **Objects & Fields**, startin
 
 ### Open Clean Up Status
 
-Use this report to find customizations that have been identified and noted for clean up.
+Use this report to find customizations that users have identified and noted for clean up.
 
 ### Clean Up Waiting for Info
 
@@ -48,7 +48,7 @@ The results list active customizations flagged with clean up status **Ignore**.
 
 ### Unused Fields
 
-The results list all of the unused custom fields.
+The results list all unused custom fields.
 
 ### Unused Apex Code
 
@@ -56,7 +56,7 @@ The results list Apex code not used in the past 6 months.
 
 ### Unused Reports
 
-The results list all of the unused reports.
+The results list all unused reports.
 
 ### Customizations with Inactive Owners
 
