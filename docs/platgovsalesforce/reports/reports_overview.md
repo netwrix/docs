@@ -168,7 +168,6 @@ These reports are available from **Netwrix Dashboard**  **Reports**  **Clean Up*
 - [Unused Apex Code](/docs/platgovsalesforce/cleanup/cleanup_reports.md#unused-apex-code)
 - [Unused Reports](/docs/platgovsalesforce/cleanup/cleanup_reports.md#unused-reports)
 - [Customizations with Inactive Owners](/docs/platgovsalesforce/cleanup/cleanup_reports.md#customizations-with-inactive-owners)
-- [Customizations without Related Processes](/docs/platgovsalesforce/cleanup/cleanup_reports.md#customizations-without-related-processes)
 - [Custom Fields without Help Text](/docs/platgovsalesforce/cleanup/cleanup_reports.md#custom-fields-without-help-text)
 - [Custom Fields without Description](/docs/platgovsalesforce/cleanup/cleanup_reports.md#custom-fields-without-description)
 
