@@ -18,7 +18,6 @@ and selecting a report:
 - Unused Apex Code
 - Unused Reports
 - Customizations with Inactive Owners
-- Customizations without Related Processes
 - Custom Fields without Help Text
 - Custom Fields without Description
 
@@ -67,10 +66,6 @@ The results list customizations with owners who are either:
 
 - Not active in Salesforce
 - Don't have access to Platform Governance for Salesforce
-
-### Customizations without Related Processes
-
-The results list all customizations with no process assigned.
 
 ### Custom Fields without Help Text
 
