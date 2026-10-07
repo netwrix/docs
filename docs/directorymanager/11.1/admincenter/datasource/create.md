@@ -406,9 +406,8 @@ Step 9 – In the Port Number box, enter the port configured for the Oracle serv
 to communicate with the Oracle server.
 
 Step 10 – In the Database or Schema (optional) box, specify the name of the database you want to
-create the data source for. You may also leave this field blank. In that case, a Synchronize job
-displays all databases on the specified server to the user. The user can select a database
-as needed.
+create the data source for. If you leave this box blank, a Synchronize job displays all databases
+on the specified server, and the user can select one.
 
 Step 11 – Click **Create Data Source**.
 The data source is available on the Oracle tab of the Data Sources page.
@@ -438,8 +437,8 @@ Step 6 – By default, Directory Manager uses SQL authentication to connect to t
 server. In this case, the Service Account and Service Account Password boxes are active. Enter the
 username and password of an SQL server account to connect to the SQL server in the respective boxes.
 
-Step 7 – To use Windows authentication to connect to the SQL server using a Windows account, select
-the **Windows Authentication** checkbox. With Windows authentication, users have already logged on to
+Step 7 – To connect to the SQL server with a Windows account, select the **Windows Authentication**
+checkbox. With Windows authentication, users have already logged on to
 Windows and don't have to log on separately to SQL Server.
 
 Step 8 – In the SQL Server Database Name box, specify the SQL database to create a data source for.
@@ -505,8 +504,7 @@ This list displays the supported providers. Select _SCIM_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
-Step 5 – In the SCIM Endpoint box, enter the SCIM endpoint URL exposed by the provider for which you
-want to create a data source.
+Step 5 – In the SCIM Endpoint box, enter the SCIM endpoint URL that the provider exposes.
 
 Step 6 – In the Bearer Token box, enter the authentication token you generated in the provider.
 
