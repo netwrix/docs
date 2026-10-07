@@ -17,7 +17,7 @@ How you upgrade Access Analyzer depends on how you installed it.
 
 Pick the tab that matches your install.
 
-The installer drops `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell wrapper that runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace. That pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
+The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell wrapper that runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace. That pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
 
 Run `dspmctl` and `dspm-installer` with `sudo`. The default kubeconfig at `/etc/rancher/k3s/k3s.yaml` is readable only by root, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
@@ -52,9 +52,9 @@ If the upgrade fails, the page shows the reason and what to do next.
 | What you see | What it means |
 |---|---|
 | **Check the license** | Netwrix rejected the license. Nothing changed. |
-| **The upgrade could not start**, **No release available**, or **Download failed** | Nothing changed. For a download failure, free some disk space and click **Retry**. |
+| **The upgrade couldn't start**, **No release available**, or **Download failed** | Nothing changed. For a download failure, free some disk space and click **Retry**. |
 | **Retry or contact support** | The installer couldn't load the media. Nothing changed. |
-| **The upgrade failed while applying**, **The new version did not become healthy**, or **The new version failed to start** | The cluster may have changed. Click **Roll back** to return to the previous version. |
+| **The upgrade failed while applying**, **The new version didn't become healthy**, or **The new version failed to start** | The cluster may have changed. Click **Roll back** to return to the previous version. |
 | **Contact support** | The installer couldn't apply the new version. |
 
 If another upgrade is already running, the page says so.
@@ -148,7 +148,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
    ls -lh "/etc/dspm/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz"
    ```
 
-   The file should be about 3.5 GB. If it's much smaller, the download was interrupted. Repeat step 2.
+   The file should be about 3.5 GB. If it's much smaller, the download didn't finish. Repeat step 2.
 
 ### Run the upgrade
 

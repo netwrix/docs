@@ -82,7 +82,7 @@ When deployment finishes, the panel closes, a notification reads `Agent "<name>"
 | **SSH host key** | The host's public key as `<key-type> <key>` | Required; must match the key the host presents |
 | **SSH port** | The SSH port | Optional; 1 to 65535; defaults to 22 |
 | **Service account** | An account of type SSH username/key | Required; the list shows only SSH accounts; **Edit credentials** opens the selected account |
-| **Labels** | One or more `key=value` pairs | At least one required; keys and values are lowercased and spaces become hyphens |
+| **Labels** | One or more `key=value` pairs | At least one required; Access Analyzer lowercases keys and values and replaces spaces with hyphens |
 
 If you close the panel with unsaved changes, Access Analyzer asks you to confirm.
 

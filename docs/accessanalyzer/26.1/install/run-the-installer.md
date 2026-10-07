@@ -87,7 +87,7 @@ The Netwrix package registry hosts the installer binary and the media archive, a
    ls -lh "/etc/dspm/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz"
    ```
 
-   The file should be about 3.5 GB. If it's much smaller, the download was interrupted. Repeat step 2.
+   The file should be about 3.5 GB. If it's much smaller, the download didn't finish. Repeat step 2.
 
 </TabItem>
 </Tabs>

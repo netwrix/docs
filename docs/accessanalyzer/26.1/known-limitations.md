@@ -51,8 +51,8 @@ A server installed from offline media, which is the default for connected and ai
 
 ## Users and Sign-in
 
-1. There is no self-service password reset. An Admin or User admin resets a local account's password from [**Settings > Users**](settings/users.md) if using a local account.
-2. [Local accounts](settings/users.md) lock after three consecutive wrong passwords and stay locked until an Admin or User admin clicks **Unlock**. A session ends after 4 hours of inactivity or 8 hours after signing in. An account's type, local or federated, can't change after creation.
+1. There is no self-service password reset. An Admin or User admin resets a local account's password from [**Settings > Users**](settings/users.md).
+2. [Local accounts](settings/users.md) lock after three consecutive wrong passwords and stay locked until an Admin or User admin clicks **Unlock**. A session ends after 4 hours of inactivity or 8 hours after signing in. An account's type (local or federated) can't change after creation.
 3. After you connect a [single sign-on (SSO)](settings/single-sign-on.md) provider, the web application has no control to disconnect it, replace it, connect a second one, or upload a new certificate authority (CA) certificate; keep a record of your configuration and contact Netwrix support for any of those.
 4. Access Analyzer never creates users on its own: a directory user can sign in only after an Admin or User admin adds them as a **[Federated (SSO)](settings/single-sign-on.md)** account with the email address the directory reports. Directory groups don't map to roles.
 
@@ -65,4 +65,4 @@ A server installed from offline media, which is the default for connected and ai
 ## Netwrix Activity Monitor
 
 1. An [enrollment token](integrations/netwrix-activity-monitor.md) is valid for one hour, and generating a new token invalidates the previous one. One token can enroll several agents, so finish enrolling within the hour to avoid having to generate a new token.
-2. The [listener](integrations/netwrix-activity-monitor.md) on port 4504 uses the Access Analyzer TLS certificate and doesn't start when it has expired. If you replace the certificate with one that uses a different key pair, enrolled agents stop trusting the server; generate a new token and enroll each agent again.
+2. The [listener](integrations/netwrix-activity-monitor.md) on port 4504 uses the Access Analyzer TLS certificate and doesn't start when that certificate has expired. If you replace the certificate with one that uses a different key pair, enrolled agents stop trusting the server; generate a new token and enroll each agent again.

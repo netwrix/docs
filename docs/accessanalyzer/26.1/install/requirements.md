@@ -55,7 +55,7 @@ The installer stores the media in one of these directories:
 
 For example, `--storage-dir /data` puts the media in `/data/dspm/media`.
 
-Every parent of the media directory must be owned by root and must not be writable by group or other users, unless the parent is sticky like `/tmp`. Otherwise, the install refuses to start.
+Root must own every parent of the media directory, and group and other users must not have write permission on it, unless the parent is sticky like `/tmp`. Otherwise, the install refuses to start.
 
 A connected media install doesn't support these:
 
@@ -120,7 +120,7 @@ A connected install or upgrade needs three hosts. Allow TCP 443 from the server 
 
 A connected install no longer needs `get.k3s.io`, Docker Hub, or GitHub, except on an SELinux-enforcing host.
 
-An **SELinux-enforcing** host also needs `api.github.com`, `rpm.rancher.io`, and its distribution's own package repositories. k3s installs its SELinux policy package from them. The preflight check fails if `rpm.rancher.io` can't be resolved and warns if `api.github.com` can't. A host with SELinux in permissive mode or disabled needs neither.
+An **SELinux-enforcing** host also needs `api.github.com`, `rpm.rancher.io`, and its distribution's own package repositories. k3s installs its SELinux policy package from them. The preflight check fails if DNS can't resolve `rpm.rancher.io` and warns if it can't resolve `api.github.com`. A host with SELinux in permissive mode or disabled needs neither.
 
 An air-gapped install needs no outbound access at install time.
 
