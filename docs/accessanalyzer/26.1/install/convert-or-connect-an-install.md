@@ -72,10 +72,10 @@ sudo --preserve-env=LICENSE_KEY dspm-installer upgrade --connect
 
 Afterwards, upgrade from the **Settings** page, automatically, or with `upgrade --download`. See [Upgrade to a new version](upgrade-to-a-new-version.md).
 
-`--connect` refuses a cluster installed from the registry, because that cluster needs [`--migrate`](#convert-a-registry-install), and a cluster that's already connected.
+`--connect` refuses a cluster that's already connected, and a cluster installed from the registry, because that cluster needs [`--migrate`](#convert-a-registry-install).
 
 :::warning
-Connecting has no way back to air-gapped short of a reinstall.
+Only a reinstall can return a connected install to air-gapped.
 :::
 
 ## Troubleshooting

@@ -6,7 +6,7 @@ sidebar_position: 4.6
 
 The `adcs` mode hands certificate issuance and renewal to your own Active Directory Certificate Services (AD CS) enterprise certificate authority (CA), instead of a certificate you rotate by hand or one from a public CA like Let's Encrypt. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the full list of automatic modes and how they compare.
 
-cert-manager submits enrollment requests to your AD CS server's `/certsrv` web enrollment endpoint using NT LAN Manager (NTLM) authentication. The certificate AD CS issues lands at the same location Access Analyzer already reads its TLS certificate from, and cert-manager renews it before it expires — no maintenance window, no `update-cert` runs.
+cert-manager submits enrollment requests to your AD CS server's `/certsrv` web enrollment endpoint using NT LAN Manager (NTLM) authentication. cert-manager stores the certificate AD CS issues in the same location Access Analyzer already reads its TLS certificate from, and cert-manager renews it before it expires — no maintenance window, no `update-cert` runs.
 
 This mode fits enterprises that already run a Microsoft public key infrastructure (PKI) and want Access Analyzer's certificate to come from it rather than from a public CA.
 

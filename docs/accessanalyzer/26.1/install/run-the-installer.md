@@ -69,7 +69,7 @@ The Netwrix package registry hosts the installer binary and the media archive, a
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable"
    ```
 
-   The installer binary lands in `/usr/local/bin`, and the media archive lands in `/etc/dspm`. The media is about 3.5 GB, so the download takes a while.
+   The commands save the installer binary to `/usr/local/bin` and the media archive to `/etc/dspm`. The media is about 3.5 GB, so the download takes a while.
 
    Don't extract the archive, and keep its name as downloaded. The installer reads the version and architecture from the file name. If the server has no network access, run these commands on a connected machine, then copy `/usr/local/bin/dspm-installer` and the archive to the server with `scp` or removable media.
 
