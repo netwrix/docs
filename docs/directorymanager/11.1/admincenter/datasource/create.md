@@ -87,7 +87,7 @@ Create a data source for an Excel file to establish a connection before using it
 destination in Synchronize jobs, or in queries. With Directory Manager, you can connect to an Excel
 file located on a local server or on OneDrive.
 
-Synchronize supports Microsoft Excel (\*.xls | xlsx) to serve as both a source and destination
+Synchronize supports Microsoft Excel (\*.xls | xlsx) as both a source and destination
 provider. Use it as destination in a Synchronize job to export data from a source to a new Excel
 worksheet. Synchronize automatically builds the schema of the new Excel worksheet from the fields
 that you select from the source to map to the destination.
@@ -121,7 +121,7 @@ Step 4 – Enter a name for the data source in the Name box.
 Step 5 – From the File Server dropdown list, select _Local Server_.
 
 Step 6 – In the File Path box, provide the path to the MS Excel file you want to create the data
-source for. This path should be complete with the file name and extension. For example:
+source for. Include the file name and extension in the path. For example:
 D:\Employee Records\Sheets\EmployeeMedical Records.xlsx
 
 :::note
@@ -168,8 +168,8 @@ Step 8 – In the Secret box, enter the client secret you generated for the app 
 Step 9 – In the Registered Tenant ID on Azure Active Directory box, enter the tenant ID assigned to
 the Directory Manager application when you registered it in Microsoft Entra Admin Center.
 
-Step 10 – Enter the name of the file in the **File Name** box. This name should be complete with the
-file extension, for example, Employee Contact Details.xlsx
+Step 10 – Enter the name of the file in the **File Name** box. Include the file extension in the
+name, for example, Employee Contact Details.xlsx
 
 Step 11 – Click **Create Data Source**.
 The data source is available on the Excel tab of the Data Sources page.
@@ -180,7 +180,7 @@ Create a data source for an Access database to establish a connection before usi
 destination in Synchronize jobs, or in queries. Directory Manager lets you connect to an
 Access file located on a local server or on OneDrive.
 
-Synchronize supports Microsoft Access (.mdb | .accdb) to serve as both a source and destination
+Synchronize supports Microsoft Access (.mdb | .accdb) as both a source and destination
 provider.
 
 The MS Access provider supports automatic schema detection. For Synchronize to communicate with this
@@ -209,7 +209,7 @@ Step 4 – Enter a name for the data source in the Name box.
 Step 5 – From the File Server dropdown list, select _Local Server_.
 
 Step 6 – In the File Path box, provide the path to the MS Access database you want to create the
-data source for. This path should be complete with the file name and extension. For example:
+data source for. Include the file name and extension in the path. For example:
 D:\Employee Records\Databases\Employee Medical Records.accdb
 
 :::note
@@ -260,8 +260,8 @@ Step 9 – In the Secret box, enter the client secret you generated for the app 
 Step 10 – In the Registered Tenant ID on Azure Active Directory box, enter the tenant ID assigned to
 the Directory Manager application when you registered it in Microsoft Entra Admin Center.
 
-Step 11 – Enter the name of the file in the File Name box. This name should be complete with the
-file extension, for example, Employee Medical Records.accdb.
+Step 11 – Enter the name of the file in the File Name box. Include the file extension in the name,
+for example, Employee Medical Records.accdb.
 
 Step 12 – Click **Create Data Source**.
 The data source is available on the Access tab of the Data Sources page.
@@ -294,7 +294,7 @@ Step 4 – Enter a name for the data source in the Name box.
 Step 5 – From the File Server dropdown list, select _Local Server_.
 
 Step 6 – In the File Path box, provide the path to the text file you want to create the data source
-for. This path should be complete with the file name and extension. For example:
+for. Include the file name and extension in the path. For example:
 D:\Employee Records\Sheets\Employee Medical Records.csv
 
 :::note
@@ -347,8 +347,8 @@ Step 9 – In the Secret box, enter the client secret you generated for the app 
 Step 10 – In the Registered Tenant ID on Azure Active Directory box, enter the tenant ID assigned to
 the Directory Manager application when you registered it in Microsoft Entra Admin Center.
 
-Step 11 – Enter the name of the file in the File Name box. This name should be complete with the
-file extension, for example, “Employee Contact Details.csv”.
+Step 11 – Enter the name of the file in the File Name box. Include the file extension in the name,
+for example, “Employee Contact Details.csv”.
 
 Step 12 – Click **Create Data Source**.
 The data source is available on the Text/CSV tab of the Data Sources page.
@@ -382,8 +382,8 @@ server you want to create the data source for.
 
 Step 6 – In the Service Account and Service Account Password boxes, provide the username and
 password of a service account to connect to the Oracle server.
-When using this data source in a Synchronize job, the user will be able to select the databases that
-are accessible with these credentials.
+When you use this data source in a Synchronize job, you can select the databases that these
+credentials can access.
 
 Step 7 – In the Protocol box, specify the protocol to use for connecting to the databases on the
 Oracle server. For example, TCP, or TCP/IP.
@@ -403,8 +403,8 @@ The data source is available on the Oracle tab of the Data Sources page.
 
 ## Create a Data Source for SQL Server
 
-Use Directory Manager to create a data source for an SQL database. This data source can be
-used in queries and as source and destination in Synchronize jobs. This provider supports dynamic
+Use Directory Manager to create a data source for an SQL database. You can use this data source
+in queries and as source and destination in Synchronize jobs. This provider supports dynamic
 schema detection.
 
 To create a data source:
@@ -419,8 +419,8 @@ This list displays the supported providers. Select _SQL Server_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
-Step 5 – The SQL database for which you want to create a data source resides on an SQL server. Enter
-the name or IP address of this SQL server in the SQL Server Name box.
+Step 5 – In the SQL Server Name box, enter the name or IP address of the SQL server that hosts the
+SQL database.
 
 Step 6 – By default, Directory Manager uses SQL authentication to connect to the SQL
 server. In this case, the Service Account and Service Account Password boxes are active. Enter the
@@ -437,7 +437,7 @@ The data source is available on the MS SQL Server tab of the Data Sources page.
 
 ## Create a Data Source for ODBC
 
-Use an ODBC data source to connect to an ODBC-compatible provider, such as databases, directories,
+Use an Open Database Connectivity (ODBC) data source to connect to an ODBC-compatible provider, such as databases, directories,
 or even files. Examples include SQL server, MS Access files, and Oracle.
 
 Create a separate data source for each ODBC-compatible file, database, or directory you
@@ -455,7 +455,7 @@ This list displays the supported providers. Select _ODBC_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
-Step 5 – Enter the DSN name in the DSN box. Directory Manager uses this name to request a connection
+Step 5 – Enter the data source name (DSN) in the DSN box. Directory Manager uses this name to request a connection
 to the ODBC data source. Note the following:
 
 - For a system DSN, provide the name of the DSN.
@@ -464,9 +464,9 @@ to the ODBC data source. Note the following:
 Step 6 – Select the **System DSN** or **File DSN** option button to specify the DSN type to use for
 connecting to the data source.
 
-Step 7 – In case the data source is password protected, provide a username and password in the
+Step 7 – If the data source is password protected, provide a username and password in the
 **Service Account** and **Service Account Password** boxes to access it.
-Depending on the data source, you may not necessarily have to provide both a username and password.
+Depending on the data source, you might not need to provide both a username and password.
 For example, an MS Access database may need a password only while an SQL server may require both
 username and password.
 
@@ -476,8 +476,8 @@ The data source is available on the ODBC tab of the Data Sources page.
 ## Create a Data Source for SCIM
 
 Directory Manager supports identity providers, namely Active Directory, Microsoft Entra ID, and
-Google Workspace, but it doesn't support Slack, AWS, JumpCloud, and GitHub. You can create a
-SCIM-based data source for these and other providers to use them in queries and as
+Google Workspace, but it doesn't support Slack, AWS, JumpCloud, and GitHub. You can create a System
+for Cross-domain Identity Management (SCIM) data source for these and other providers to use them in queries and as
 source/destinations in Synchronize jobs. As a prerequisite, the provider must support SCIM and
 expose an endpoint URL that Directory Manager can consume.
 
