@@ -12,6 +12,8 @@ The [installer](install/index.md) **must** run as root or through `sudo`; _a non
 
 Access Analyzer serves the web application only over HTTPS, and the installer never generates a certificate, so **you must have one ready** for the server's hostname, _which must be a DNS name rather than an IP address_. See [Requirements](install/requirements.md).
 
+A server installed from offline media, which is the default for connected and air-gapped installs, doesn't support remote scanner nodes. See [Deploy an agent](agents/deploy-agent.md).
+
 ## Sources
 
 1. Sensitive data scans read [File Server](sources/smb-file-servers.md) content only over port 445; a source on another port can run Access scans but not Sensitive data scans.

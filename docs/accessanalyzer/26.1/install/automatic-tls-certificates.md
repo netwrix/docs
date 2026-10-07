@@ -49,7 +49,7 @@ The installer checks that the ACME flags are present, but it can't check that Le
 Follow [Install Access Analyzer](run-the-installer.md) as usual, adding the ACME flags. You can skip the "Copy the TLS Certificate to the Server" step — `--generate-self-signed-cert` replaces it.
 
 ```bash
-sudo -E dspm-installer \
+sudo --preserve-env=LICENSE_KEY dspm-installer \
   --hostname dspm.example.com \
   --first-admin-email admin@example.com \
   --cert-manager-issuer-mode acme \
@@ -102,7 +102,7 @@ Fix the cause and the cluster retries automatically — no reinstall needed.
 If your organization runs its own ACME-compatible certificate authority (for example smallstep `step-ca`), point `--acme-server` at its directory URL and supply that CA's root chain with `--ca-bundle` so Access Analyzer's own services trust the certificates it issues:
 
 ```bash
-sudo -E dspm-installer \
+sudo --preserve-env=LICENSE_KEY dspm-installer \
   --hostname dspm.corp.example.com \
   --cert-manager-issuer-mode acme \
   --acme-server https://ca.corp.example.com/acme/acme/directory \

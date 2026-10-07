@@ -43,7 +43,7 @@ Follow [Install Access Analyzer](run-the-installer.md) as usual, adding the AD C
 ```bash
 export DSPM_ADCS_PASSWORD='<password>'
 
-sudo -E dspm-installer \
+sudo --preserve-env=LICENSE_KEY,DSPM_ADCS_PASSWORD dspm-installer \
   --hostname dspm.corp.example.com \
   --first-admin-email admin@corp.example.com \
   --cert-manager-issuer-mode adcs \

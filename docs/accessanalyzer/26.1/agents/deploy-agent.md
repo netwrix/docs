@@ -8,6 +8,10 @@ Access Analyzer installs agents for you. You point it at a Linux host it can rea
 
 You need the Admin role for everything on this page. Viewers can see the Agents page but can't deploy, edit, or remove agents.
 
+:::note
+A server installed from offline media doesn't support remote scanner nodes. This covers connected installs, which download media by default, and air-gapped installs. A registry install (`DSPM_MEDIA_INSTALL=false`) supports them. [Converting a registry install to media](../install/convert-or-connect-an-install.md#before-you-start) requires you to remove joined scanner nodes first.
+:::
+
 ## Prepare the Host
 
 The host needs a Linux operating system with `bash`, `curl`, and `sudo` installed, an SSH user the server can sign in as, and enough headroom to run scans. Access Analyzer checks every requirement in this table before it installs anything, both when you click **Test connection** and again at the start of a real deployment.

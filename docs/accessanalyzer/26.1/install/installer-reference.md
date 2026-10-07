@@ -1,6 +1,6 @@
 ---
 title: Installer Reference
-description: The dspm-installer flags, environment variables, configuration file keys, exit codes, preflight checks, and log locations.
+description: The dspm-installer flags, environment variables, configuration file keys, exit codes, preflight checks, upgrade command, and log locations.
 sidebar_position: 6
 ---
 
@@ -10,6 +10,9 @@ sidebar_position: 6
 dspm-installer [flags]
 dspm-installer wait-for-apps [flags]
 dspm-installer upgrade --bundle-dir <path> [flags]
+dspm-installer upgrade --download [flags]
+dspm-installer upgrade --download --migrate [flags]
+dspm-installer upgrade --connect [flags]
 dspm-installer update-cert [flags]
 dspm-installer rollback-cert [flags]
 dspm-installer --help
@@ -24,9 +27,9 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 
 | Flag | Environment variable | Default | Description |
 |---|---|---|---|
-| `--license-key` | `LICENSE_KEY` | none | Netwrix license key. Required unless you pass `--airgap`. The installer validates it online before the install starts. |
-| `--airgap` | `DSPM_AIRGAP` | `false` | Install fully offline from the media at `--bundle-dir`, with no network calls and no license key needed at install time. Requires `--bundle-dir`. Mutually exclusive with `--license-key`, `--local-charts-dir`, and `--use-mirrored-images`, since airgap mode sources software and images from the bundle itself. |
-| `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the extracted offline install media. Required when you pass `--airgap`. Netwrix publishes media for both `amd64` and `arm64`; download the bundle that matches the host's architecture, since the installer rejects a bundle built for the wrong one. |
+| `--license-key` | `LICENSE_KEY` | none | Netwrix license key. Required unless you pass `--airgap`. The installer validates it online before the install starts. Prefer the `LICENSE_KEY` environment variable: a flag value is visible in the process list. |
+| `--airgap` | `DSPM_AIRGAP` | `false` | Install fully offline from the media at `--bundle-dir`, with no network calls and no license key needed at install time. Requires `--bundle-dir`. Mutually exclusive with `--license-key`, `--local-charts-dir`, and `--use-mirrored-images`, since air-gapped mode sources software and images from the media itself. |
+| `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the offline install media: the downloaded `.tar.gz` archive or an extracted directory. Required when you pass `--airgap`. Netwrix publishes media for both `amd64` and `arm64`; download the media that matches the host's architecture, since the installer rejects media built for the wrong one. The installer reads the version and architecture from the archive's file name, so keep the name as downloaded. |
 | `--hostname` | `DSPM_HOSTNAME` | none | Fully qualified domain name users open in their browsers. The installer lowercases it before use. |
 | `--first-admin-email` | `FIRST_ADMIN_EMAIL` | none | Email address of the first administrator. Required. Becomes that person's username. |
 | `--first-admin-name` | `FIRST_ADMIN_NAME` | none | Full name of the first administrator. |
@@ -37,7 +40,10 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--tls-cert-validity-days` (alias `--cert-days`) | `DSPM_TLS_CERT_VALIDITY_DAYS` | `365` | Validity period, in days, for a certificate `--generate-self-signed-cert` generates. Maximum `36500`. |
 | `--cert-manager-issuer-mode` (alias `--issuer-mode`) | `CERT_MANAGER_ISSUER_MODE` | `none` | Hand issuance and renewal of the `dspm-tls` certificate to cert-manager instead of managing it yourself: `none`, `selfsigned`, `adcs`, or `acme`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the `acme` mode. The installer doesn't save this to `/etc/dspm/installer.yaml` — see [Configuration File](#configuration-file). |
 | `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](requirements.md#size) for the CPU, RAM, and disk each size requires. |
-| `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. Also appears as **Target Revision** under **Show advanced settings?**. |
+| `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. The installer refuses a release older than itself and exits with code `16`. Also appears as **Target Revision** under **Show advanced settings?**. |
+| `--progress` | `DSPM_PROGRESS` | `auto` | Download progress style: `auto`, `bar`, `ascii`, or `lines`. Also applies to `upgrade`. See [Download progress](run-the-installer.md#download-progress). |
+| `--storage-dir` | none | none | Parent directory for the install media. The media goes in `<dir>/dspm/media`. See [Install media](requirements.md#install-media). |
+| `--tmp-dir` | none | none | Parent directory for the install media. The media goes in `<dir>/dspm/media`, and `--tmp-dir` wins over `--storage-dir`. See [Install media](requirements.md#install-media). |
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
 | `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen that appears when the configuration file already supplies every required value. |
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
@@ -47,6 +53,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |
 | `--log-exports-storage` | `LOG_EXPORTS_STORAGE` | none | Persistent volume claim (PVC) size for log exports, such as `10Gi`. |
 | `--skip-preflight` | `SKIP_PREFLIGHT` | `false` | Skip the preflight checks. For testing only. |
+| — | `DSPM_MEDIA_INSTALL` | on | Set to `false` to install from the Netwrix registry instead of downloaded media. |
 | `--preflight` | `DSPM_PREFLIGHT` | `false` | Run the preflight checks only, then exit without installing. See [Preflight-only mode](#preflight-only-mode). |
 | `--version` | — | — | Print the installer version and exit. |
 | `--help` | — | — | Print flag help and exit. |
@@ -63,7 +70,7 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 | `--k3s-name` | none | `dspm` | K3s service and instance name. |
 | `--kubeconfig` | `KUBECONFIG` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
 | `--argocd-version` | none | `3.2.0` | ArgoCD image tag. |
-| `--argocd-namespace` | none | `argocd` | Kubernetes namespace for ArgoCD. |
+| `--argocd-namespace` | none | `argocd` | Kubernetes namespace for ArgoCD. A media install doesn't support a non-default value. |
 | `--argocd-reconciliation-timeout` | none | `1h` | How often ArgoCD self-heals configuration drift. The version-poller CronJob detects new releases separately. |
 | `--disable-dex` | none | `true` | Disable the Dex identity provider. |
 | `--disable-notifications` | none | `true` | Disable the ArgoCD notifications controller. |
@@ -73,7 +80,7 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 | `--repo` | none | none | Helm repository URL, for custom chart sources. |
 | `--release` | none | none | Helm release name, for custom chart sources. |
 | `--local-charts-dir` | `LOCAL_CHARTS_DIR` | none | Mount a local Helm chart directory into `argocd-repo-server` and install from it with a `file://` source, instead of a remote repository. |
-| `--use-mirrored-images` | none | `true` | Pull container images from the Netwrix mirror registry. |
+| `--use-mirrored-images` | none | `true` | Pull container images from the Netwrix mirror registry. A media install rejects this flag. |
 | `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
 | `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all Access Analyzer data. Prompts for confirmation unless you pass `--force`. |
 | `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
@@ -146,8 +153,10 @@ When the file supplies every required value and the installer runs in a terminal
 | 0 | Success. |
 | 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or you canceled the prompts with Esc or Ctrl-C (`installation cancelled`). |
 | 10 | License key error. The key is expired, suspended, unknown, or invalid. |
-| 15 | The installer rejected the airgap flags, or couldn't load the bundle: `--airgap` without `--bundle-dir`, `--bundle-dir` without `--airgap`, or a bundle directory with no valid `manifest.json`. |
-| 20 | The release version you requested with `--target-revision` isn't available for this license key. |
+| 15 | The installer rejected the air-gapped flags, or couldn't load the media: `--airgap` without `--bundle-dir`, `--bundle-dir` without `--airgap`, or media with no valid `manifest.json`. Also, this host already has a registry install. Use `sudo dspm-installer upgrade --download --migrate` instead. |
+| 16 | A precondition failed and nothing changed, such as too little free space for the media, or a release older than the installer. |
+| 17 | Connected installs only. The installer couldn't download, verify, or unpack the media. Run the command again to resume. |
+| 20 | Connected installs only. The release version you requested with `--target-revision` isn't available for this license key, or the release has no media for this architecture. |
 | 50 | The installer couldn't install the platform, or the platform didn't become ready within 5 minutes. |
 | 60 | The installer couldn't install a platform component. |
 | 70 | The Access Analyzer services didn't all become healthy within 30 minutes, or you pressed Ctrl-C while waiting for them. |
@@ -158,7 +167,7 @@ The `upgrade`, `update-cert`, and `rollback-cert` commands return their own code
 
 ## Preflight Checks
 
-Eleven checks run before the installer changes anything on the server, in the order the following table lists them. Each ends as PASS, WARN, or FAIL. The installer prints only WARN and FAIL results, as `  [FAIL] <check> <message>` or `  [WARN] <check> <message>`. Any FAIL stops the install; `--accept-warnings` doesn't override it. Any WARN stops it too unless you answer **Yes** to **Continue despite these warnings?** or pass `--accept-warnings`.
+Twelve checks run before the installer changes anything on the server, in the order the following table lists them. Each ends as PASS, WARN, or FAIL. The installer prints only WARN and FAIL results, as `  [FAIL] <check> <message>` or `  [WARN] <check> <message>`. Any FAIL stops the install; `--accept-warnings` doesn't override it. Any WARN stops it too unless you answer **Yes** to **Continue despite these warnings?** or pass `--accept-warnings`.
 
 The installer compares RAM and disk against their thresholds with a 5% tolerance, so a virtual machine provisioned at exactly the stated figure passes. It compares CPU cores exactly.
 
@@ -171,15 +180,16 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 | `cgroups` | The kernel exposes cgroups at `/sys/fs/cgroup`. | FAIL | `cgroups not available at /sys/fs/cgroup` |
 | `kernel-modules` | The kernel has the `br_netfilter` and `overlay` modules loaded or built in. The install loads missing modules itself, so this check warns only when it can't inspect a module, or during a dry run when a module isn't loaded. | WARN | `kernel module issues: <module>: could not check module: <error>` or `kernel module issues: <module>: not loaded (dry run; will not be modprobed)` |
 | `os` | The Linux distribution belongs to a recognized family. | WARN | `unrecognised Linux distribution; installation may not be supported` |
+| `media-disk` | Free space for the install media, about 16 GB, on the volume that holds the [media directory](requirements.md#install-media). | WARN | A message that the volume has too little free space for the media. |
 | `selinux` | SELinux isn't in enforcing mode. | WARN | The message says SELinux is enforcing and asks you to allow the platform's container policy or set SELinux to permissive. |
 | `antivirus` | The server has no known antivirus product installed or running: `mdatp`, CrowdStrike, ClamAV, Sophos, Carbon Black, or Trend Micro. | WARN | `antivirus software detected: <product> (exclusion hint: <hint>)` |
-| `network` | Each of the 18 required hosts resolves in DNS and accepts a connection on port 443 within 5 seconds. | FAIL when a name doesn't resolve; WARN when a connection times out or the host refuses it | `DNS resolution failed for: <hosts>` or `connection failed (timeout/refused) for: <hosts>` |
+| `network` | Each required host resolves in DNS and accepts a connection on port 443 within 5 seconds. The hosts are `api.keygen.sh` and the media download host. On an SELinux-enforcing host, the check also tests `api.github.com` and `rpm.rancher.io`. | FAIL when a name doesn't resolve; WARN when a connection times out or the host refuses it | `DNS resolution failed for: <hosts>` or `connection failed (timeout/refused) for: <hosts>` |
 | `domain-join` | Whether the server belongs to an Active Directory domain. Informational only. | — | `no AD domain detected`, or a message naming the detected domain |
 | `clock-sync` | A time-sync service (`chronyd`, `ntpd`, or `systemd-timesyncd`) is running. | WARN | `no clock sync daemon detected; Kerberos authentication requires clocks within 5 minutes of the AD domain controller — install chronyd, ntpd, or systemd-timesyncd to eliminate clock-skew risk` |
 
 When the `antivirus` check finds a product, add these paths to that product's exclusion list: `/var/lib/rancher/k3s/agent/containerd`, `/var/lib/rancher/k3s/data`, and `/run/k3s/containerd`. The hint in the message names the product's own command or console for adding exclusions.
 
-The [Requirements](requirements.md) page lists the 18 hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
+The [Requirements](requirements.md) page lists the hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
 
 ### Preflight-only mode
 
@@ -189,7 +199,7 @@ Pass `--preflight` to run the preflight checks and exit, without installing k3s,
 
 You can't combine `--preflight` with `--uninstall` or `--skip-preflight`. It writes the same `/var/log/dspm-installer.log` and `/var/log/dspm-preflight.json` files a regular install writes, except under `--dry-run`, where the installer doesn't write the JSON report.
 
-Pass `--airgap` and `--bundle-dir <path>` along with `--preflight` to check an offline host. The installer runs the same checks, except it skips the `network` check, since an airgapped host can't reach anything.
+Pass `--airgap` and `--bundle-dir <path>` along with `--preflight` to check an offline host. The installer runs the same checks, except it skips the `network` check, since an air-gapped host can't reach anything.
 
 | Code | Meaning |
 |---|---|
@@ -257,35 +267,70 @@ Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a 
 
 ## The `upgrade` Command
 
-`upgrade` moves an airgap install to a newer release from newer offline media. It loads the new release's chart snapshot and container images into the cluster, applies the bundled ArgoCD manifest and the installer's ArgoCD overlay, re-seeds the registry pull secret into every application namespace, re-pins the `netwrix` ArgoCD application to the new version, and waits for every application to become Synced and Healthy. It records the previous version in the `dspm.netwrix.com/previous-target-revision` annotation on the `netwrix` application. See [Upgrade to a New Version](upgrade-to-a-new-version.md) for the full procedure, including the media download and rollback.
+`upgrade` moves an install to a newer release. It has four forms.
+
+| Form | Use it to |
+|---|---|
+| `upgrade --download` | Download the release's media from Netwrix and upgrade a connected install. |
+| `upgrade --bundle-dir <path>` | Upgrade from media you downloaded, such as on an air-gapped install. |
+| `upgrade --download --migrate` | Convert a registry install onto downloaded media. |
+| `upgrade --connect` | Connect an air-gapped install so it can download upgrades. |
+
+Pass exactly one of `--bundle-dir` or `--download`, except for `--connect`. A bare `upgrade` exits with code `16`.
+
+An upgrade loads the new release's charts and container images into the cluster, applies the bundled ArgoCD manifest and the installer's ArgoCD overlay, re-seeds the registry pull secret into every application namespace, re-pins the `netwrix` ArgoCD application to the new version, and waits for every application to become Synced and Healthy. It records the previous version in the `dspm.netwrix.com/previous-target-revision` annotation on the `netwrix` application. See [Upgrade to a New Version](upgrade-to-a-new-version.md) for the full procedure, including the media download and rollback, and [Convert or Connect an Install](convert-or-connect-an-install.md) for `--migrate` and `--connect`.
 
 ```bash
-sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-media
+sudo dspm-installer upgrade --download
+sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-airgap-media-v<version>-<arch>.tar.gz
 ```
 
-Run it with the `dspm-installer` binary from the release you're upgrading to. It reads only the cluster and the media: it doesn't read or write `/etc/dspm/installer.yaml`, and the prompts, preflight checks, and platform setup don't run. It upgrades the Access Analyzer services and ArgoCD but not the k3s platform or the offline package manager; if the media targets a different version of either, it prints a warning naming both versions and continues with the installed ones.
+Run it with the `dspm-installer` binary from the release you're upgrading to. It doesn't run the prompts, preflight checks, or platform setup. It upgrades the Access Analyzer services and ArgoCD but not the k3s platform or the offline package manager. If the media targets a different version of either, it prints a warning that names both versions and continues with the installed ones.
 
-Before it changes anything, it checks that the kubeconfig reaches a cluster with a `netwrix` application installed in airgap mode, that automated sync is on for that application, and that the media carries a version newer than the installed one. Online installs use `dspmctl` instead.
+Before it changes anything, it checks that the kubeconfig reaches a cluster with a `netwrix` application installed from offline media, that automated sync is on for that application, and that the release is newer than the installed one. A registry install needs `--migrate` first, or `dspmctl` as [Upgrade to a New Version](upgrade-to-a-new-version.md) describes.
 
-| Flag | Default | Description |
-|---|---|---|
-| `--bundle-dir` | (required) | Path to the extracted offline media of the release to upgrade to. |
-| `--dry-run` | `false` | Validate the media and preconditions and print the planned changes without changing the cluster. |
-| `--allow-downgrade` | `false` | Accept media whose version is equal to or older than the installed release, for a redeploy or an intentional downgrade. |
-| `--timeout` | `30m0s` | Maximum time to wait for applications to become healthy after the re-pin. |
-| `--cert-manager-issuer-mode` | none | Pass `adcs` to force re-seeding the registry pull secret into the `adcs-issuer` namespace. Usually unnecessary; the command detects that namespace on its own. |
-| `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
-| `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--download` | none | `false` | Download the release's media instead of reading `--bundle-dir`. Needs a license key. |
+| `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the offline media of the release to upgrade to: the `.tar.gz` archive or an extracted directory. |
+| `--target-revision` | `TARGET_REVISION`* | newest stable | Release to upgrade to. Needs `--download`. |
+| `--license-key` | `LICENSE_KEY` | the saved key | License key. Needs `--download`. |
+| `--migrate` | `DSPM_UPGRADE_MODE=migrate` | `false` | Convert a registry install onto downloaded media. Needs `--download`. |
+| `--connect` | none | `false` | Connect an air-gapped install. Takes only the license key, `--dry-run`, `--kubeconfig`, and `--timeout`. |
+| `--in-cluster` | `DSPM_IN_CLUSTER` | `false` | Run as the in-cluster upgrade Job. The app uses this flag. Don't run it on the host. |
+| `--tmp-dir` | `DSPM_TMP_DIR`* | none | Where to keep the media. |
+| `--allow-downgrade` | `DSPM_ALLOW_DOWNGRADE`* | `false` | Accept a release equal to or older than the installed release, for a redeploy or an intentional downgrade. |
+| `--progress` | `DSPM_PROGRESS` | `auto` | Download progress style: `auto`, `bar`, `ascii`, or `lines`. |
+| `--dry-run` | none | `false` | Validate the media and preconditions, check free space, and print the planned changes without changing the cluster or downloading anything. |
+| `--timeout` | none | `30m0s` | Maximum time to wait for applications to become healthy after the re-pin. |
+| `--cert-manager-issuer-mode` | none | none | Pass `adcs` to force re-seeding the registry pull secret into the `adcs-issuer` namespace. Usually unnecessary, because the command detects that namespace on its own. |
+| `--kubeconfig` | `KUBECONFIG` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-namespace` | none | `argocd` | Kubernetes namespace for ArgoCD. |
+
+\* Only the in-cluster Job reads this variable. On the host, pass the flag.
 
 | Code | Meaning |
 |---|---|
-| 0 | The cluster is running the new release, and every application is Synced and Healthy. |
+| 0 | The cluster runs the new release and every application is Synced and Healthy, or the cluster already runs the newest release. |
 | 1 | Unexpected error. |
-| 15 | The command couldn't load the media, or the offline package manager failed to deploy it. Run it again after you fix the cause; the deploy is idempotent, and the cluster is still on the previous release. |
-| 16 | A precondition failed: no cluster or `netwrix` application, not an airgap install, automated sync is off (run `sudo dspmctl enable-auto netwrix`), or the media isn't a newer version (see `--allow-downgrade`). Nothing changed. |
-| 60 | The command couldn't re-apply the ArgoCD overlay, or the re-pin failed. |
-| 70 | The re-pin applied, but ArgoCD didn't acknowledge it or the new release didn't become healthy within `--timeout`. The new pin stays in place and ArgoCD keeps reconciling. Follow with `sudo dspm-installer wait-for-apps`, or roll back. |
-| 71 | A pod entered a terminal failure state. |
+| 10 | Netwrix rejected the license key. |
+| 15 | The command couldn't load or deploy the media. The cluster is still on the previous release. Run the command again after you fix the cause. |
+| 16 | A precondition failed. Nothing changed. |
+| 17 | The command couldn't download, verify, or unpack the media. Nothing changed. Run the command again to resume. |
+| 20 | No release matches `--target-revision`, or the release has no media for this architecture. |
+| 60 | The command couldn't apply the new version or the switch to the in-cluster source, or couldn't turn automated sync back on. Run `sudo dspmctl enable-auto netwrix`. |
+| 70 | The new version applied but didn't become healthy in time. Run `sudo dspm-installer wait-for-apps`, or roll back. |
+| 71 | A pod failed to start. |
+
+### Check Upgrade Status
+
+Each upgrade records its progress in the `media-upgrade-status` ConfigMap in the `argocd` namespace:
+
+```bash
+sudo kubectl -n argocd get configmap media-upgrade-status -o jsonpath='{.data.status}' | jq
+```
+
+The output shows the state (`running`, `succeeded`, or `failed`), the phase, the target and previous versions, the exit code, a one-line message, and the start and finish times.
 
 ## The `update-cert` Command
 
