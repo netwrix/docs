@@ -75,8 +75,10 @@ Run these commands on the install host. `dspmctl` needs `sudo` because the k3s k
 3. Apply the change:
 
    ```bash
-   sudo dspmctl sync netwrix
+   sudo dspmctl sync netwrix --prune
    ```
+
+   `--prune` deletes resources the older release doesn't include. Without it, those leftover resources can keep the app showing as not healthy after the rollback completes.
 
 4. Turn automated sync back on:
 
