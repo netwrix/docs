@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 How you upgrade Access Analyzer depends on the mode you installed it in. An **airgap** install has no network access, so you download the new release's offline media on a connected machine, move it to the server, and run `dspm-installer upgrade` to load it into the cluster. An **online** install pulls new releases from the network, so you only tell ArgoCD which version to run, using `dspmctl`. Pick the tab that matches your install.
 
-Both modes use `dspmctl`, a small shell wrapper the installer drops at `/usr/local/bin/dspmctl`. It runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace, and that pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
+Both modes use `dspmctl`, a small shell wrapper the installer places at `/usr/local/bin/dspmctl`. It runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace, and that pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
 
 Run `dspmctl` and `dspm-installer` with `sudo`. The default kubeconfig at `/etc/rancher/k3s/k3s.yaml` is readable only by root, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
@@ -95,7 +95,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
 
    Exit code `0` means the cluster is running the new release with every application healthy. For any other code, see [Upgrade exit codes](#upgrade-exit-codes).
 
-`--allow-downgrade` lifts the "newer version" check for an intentional redeploy of the same version or a downgrade. `--kubeconfig` and `--argocd-namespace` override the defaults if you installed with non-default values. See [The `upgrade` command](installer-reference.md#the-upgrade-command) for every flag.
+`--allow-downgrade` skips the "newer version" check for an intentional redeploy of the same version or a downgrade. `--kubeconfig` and `--argocd-namespace` override the defaults if you installed with non-default values. See [The `upgrade` command](installer-reference.md#the-upgrade-command) for every flag.
 
 ### Roll back an airgap upgrade
 

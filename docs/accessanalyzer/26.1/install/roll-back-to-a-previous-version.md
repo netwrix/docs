@@ -7,7 +7,7 @@ sidebar_position: 4.1
 If an upgrade causes problems, you can move Access Analyzer back to an earlier release. There's no dedicated `down` or `downgrade` command. A rollback re-points ArgoCD at the older release, using the same mechanism as an upgrade.
 
 :::warning
-A rollback changes only the application. Database schema changes made by the newer release stay in place. If the newer release changed the schema, the older release may fail to start against it. Read [Before you roll back](#before-you-roll-back) first.
+A rollback changes only the application. Any database schema changes that the newer release made stay in place. If the newer release changed the schema, the older release may fail to start against it. Read [Before you roll back](#before-you-roll-back) first.
 :::
 
 ## Before You Roll Back
