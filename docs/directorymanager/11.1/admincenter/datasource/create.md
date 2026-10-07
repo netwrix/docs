@@ -22,8 +22,7 @@ You can create data sources for the following providers:
 - [ODBC](#create-a-data-source-for-odbc)
 - [SCIM](#create-a-data-source-for-scim)
 
-You can host Excel, Access, and Text/CSV files on a local server or on OneDrive. For OneDrive files,
-see [OneDrive Configuration](#onedrive-configuration) first.
+You can host Excel, Access, and Text/CSV files on a local server or on OneDrive.
 
 ## OneDrive Configuration
 
@@ -32,15 +31,26 @@ data source for a OneDrive file, complete the following requirements.
 
 ### App registration permissions
 
-The application you registered in Microsoft Entra Admin Center for Directory Manager must have the
-following application API permission:
+The application you registered in Microsoft Entra Admin Center for Directory Manager (see
+[Registration and Permissions Assignment](../../configureentraid/register/appregister.md)) must have
+the following application API permission:
 
 | API | Permission | Type | Description |
 | --- | --- | --- | --- |
 | Microsoft Graph | `Files.Read.All` | Application | Read files in all site collections |
 
-After you add the permission, click **Grant admin consent** on the **API permissions** page of the
-app registration. The permission isn't valid until an administrator grants consent.
+To add the permission:
+
+Step 1 – In Microsoft Entra Admin Center, go to **Identity** > **Applications** > **App
+registrations** and select the Directory Manager application.
+
+Step 2 – On the **API permissions** page, click **Add a permission** > **Microsoft Graph** >
+**Application permissions**.
+
+Step 3 – Select `Files.Read.All` and click **Add permissions**.
+
+Step 4 – Click **Grant admin consent**. The permission isn't valid until an administrator grants
+consent.
 
 ### Find the application ID and tenant ID
 
@@ -67,13 +77,14 @@ Step 4 – Copy the secret **Value**.
 
 :::warning
 Entra displays the secret value only once. Copy it before you leave the page. When the secret
-expires, generate a new one and update each OneDrive data source with it.
+expires, generate a new one and update each OneDrive data source with it. See
+[Update a Data Source](manage.md#update-a-data-source).
 :::
 
 ### Service account license
 
-The service account that Directory Manager uses to access OneDrive must have a Microsoft license
-that includes OneDrive, such as a Microsoft 365 license.
+The account you enter in the Service Account box when you create the data source must have a
+Microsoft license that includes OneDrive, such as a Microsoft 365 license.
 
 ### File location
 
@@ -271,7 +282,8 @@ The data source is available on the Access tab of the Data Sources page.
 You can create a data source for a comma-separated values (.csv) file or a text (.txt) file. You
 must also specify the delimiter used in the file to separate values.
 
-You can use this data source in queries and only as a source in Synchronize jobs.
+You can use this data source in queries and as a source in Synchronize jobs. You can't use it as a
+destination.
 
 With Directory Manager, you can connect to a text file located on a local server or on
 OneDrive. Follow the steps in the respective section to create a data source.
