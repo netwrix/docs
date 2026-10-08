@@ -282,7 +282,7 @@ An upgrade loads the new release's charts and container images into the cluster,
 
 ```bash
 sudo dspm-installer upgrade --download
-sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-airgap-media-v<version>-<arch>.tar.gz
+sudo dspm-installer upgrade --bundle-dir /etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz
 ```
 
 Run it with the `dspm-installer` binary from the release you're upgrading to. It doesn't run the prompts, preflight checks, or platform setup. It upgrades the Access Analyzer services and ArgoCD but not the k3s platform or the offline package manager. If the media targets a different version of either, it prints a warning that names both versions and continues with the installed ones.

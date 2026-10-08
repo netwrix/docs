@@ -21,6 +21,10 @@ The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell
 
 Run `dspmctl` and `dspm-installer` with `sudo`. The default kubeconfig at `/etc/rancher/k3s/k3s.yaml` is readable only by root, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
+:::note
+On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` and `dspmctl` can fail with `command not found`. Run them by their full paths instead, for example `sudo /usr/local/bin/dspm-installer` or `sudo /usr/local/bin/dspmctl`.
+:::
+
 ## Check Which Version Is Running
 
 Start by checking which version is running:
@@ -135,8 +139,8 @@ Download the latest `dspm-installer` binary along with the media, and run the up
    rm -f "$TMP_FILE"
    dspm-installer --version
 
-   sudo mkdir -p /etc/dspm
-   sudo curl -Lf -o "/etc/dspm/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz" \
+   sudo mkdir -p /etc/dspm/media
+   sudo curl -Lf -o "/etc/dspm/media/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz" \
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable"
    ```
 
@@ -145,7 +149,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
 3. Confirm the archive downloaded completely.
 
    ```bash
-   ls -lh "/etc/dspm/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz"
+   ls -lh "/etc/dspm/media/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz"
    ```
 
    The file should be about 3.5 GB. If it's much smaller, the download didn't finish. Repeat step 2.
@@ -155,7 +159,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
 1. Preview the upgrade. `--dry-run` validates the media and the preconditions and prints the planned changes without touching the cluster.
 
    ```bash
-   sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-airgap-media-v<version>-<arch>.tar.gz --dry-run
+   sudo dspm-installer upgrade --bundle-dir /etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz --dry-run
    ```
 
    The summary shows the installed version, the version in the media, and the k3s, offline package manager, and ArgoCD versions on each side. Fix anything it reports before you continue.
@@ -163,7 +167,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
 2. Run the upgrade.
 
    ```bash
-   sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-airgap-media-v<version>-<arch>.tar.gz
+   sudo dspm-installer upgrade --bundle-dir /etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz
    ```
 
    The command loads the chart snapshot and container images into the cluster, applies the bundled ArgoCD manifest, and re-seeds the registry pull secret into every application namespace. It then re-pins the `netwrix` app to the new version and records the previous version in the `dspm.netwrix.com/previous-target-revision` annotation. Finally, it waits for every application to become Synced and Healthy. The wait defaults to 30 minutes. Pass `--timeout` with a duration such as `45m` to change it.

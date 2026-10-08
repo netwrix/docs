@@ -28,6 +28,10 @@ The Netwrix package registry hosts the installer binary and the media archive, a
    read -rs LICENSE_KEY && export LICENSE_KEY
    ```
 
+:::note
+On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` can fail with `command not found`. Run it by its full path instead, for example `sudo /usr/local/bin/dspm-installer`.
+:::
+
 <Tabs groupId="install-mode">
 <TabItem value="connected" label="Connected install">
 
@@ -64,12 +68,12 @@ The Netwrix package registry hosts the installer binary and the media archive, a
    sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
    rm -f "$TMP_FILE"
 
-   sudo mkdir -p /etc/dspm
-   sudo curl -Lf -o "/etc/dspm/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz" \
+   sudo mkdir -p /etc/dspm/media
+   sudo curl -Lf -o "/etc/dspm/media/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz" \
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable"
    ```
 
-   The commands save the installer binary to `/usr/local/bin` and the media archive to `/etc/dspm`. The media is about 3.5 GB, so the download takes a while.
+   The commands save the installer binary to `/usr/local/bin` and the media archive to `/etc/dspm/media`. The media is about 3.5 GB, so the download takes a while.
 
    Don't extract the archive, and keep its name as downloaded. The installer reads the version and architecture from the file name. If the server has no network access, run these commands on a connected machine, then copy `/usr/local/bin/dspm-installer` and the archive to the server with `scp` or removable media.
 
@@ -84,7 +88,7 @@ The Netwrix package registry hosts the installer binary and the media archive, a
 4. Confirm the archive downloaded completely.
 
    ```bash
-   ls -lh "/etc/dspm/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz"
+   ls -lh "/etc/dspm/media/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz"
    ```
 
    The file should be about 3.5 GB. If it's much smaller, the download didn't finish. Repeat step 2.
@@ -107,7 +111,7 @@ Supplying your own certificate isn't the only option. `--generate-self-signed-ce
 1. Create the directory.
 
    ```bash
-   sudo mkdir -p /etc/dspm
+   sudo mkdir -p /etc/dspm/media
    ```
 
 2. Move the certificate and key into place.
@@ -193,7 +197,7 @@ This option exists only while connected media installs roll out. A registry inst
 In air-gapped mode, the installer reads the software it needs from `--bundle-dir` instead of the network, so it needs no license key and makes no outbound calls.
 
 ```bash
-sudo dspm-installer --airgap --bundle-dir /etc/dspm/dspm-airgap-media-v<version>-<arch>.tar.gz --size <size>
+sudo dspm-installer --airgap --bundle-dir /etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz --size <size>
 ```
 
 `--bundle-dir` takes the downloaded archive directly. You don't need to extract it first. The installer reads the version and architecture from the file name, unpacks the archive into the [media directory](requirements.md#install-media), and removes the unpacked copy when the install finishes. It leaves your archive where it is. Keep the archive outside the media directory, because the installer cleans that directory.
