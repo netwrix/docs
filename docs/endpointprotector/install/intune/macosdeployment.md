@@ -45,8 +45,8 @@ and configure Category, Information URL, Privacy URL, Developer, Owner, Notes, a
 
 ![Completing the App information page, including the featured app option](appinformation.webp)
 
-**Step 8 –** On the Assignments page, in the Required section, select the group for which you want
-to deploy the Endpoint Protector client and then click **Next**.
+**Step 8 –** On the Assignments page, in the Required section, select the group to deploy the Endpoint
+Protector client to, and then click **Next**.
 
 ![Selecting the group for which you want to deploy the Endpoint Protector client](macassignments.webp)
 
@@ -59,7 +59,7 @@ Endpoint Protector package upload.
 **Add**.
 
 :::note
-contact the Customer Support department to provide the script.
+Contact Customer Support to get the script.
 :::
 
 
@@ -84,6 +84,6 @@ devices) and then click **Next**.
 
 ![Including the groups you prefer](includegroups.webp)
 
-**Step 14 –** On the Review + add tab, you can view the script information and click **Add**.
+**Step 14 –** On the Review + add tab, review the script information and click **Add**.
 
 ![Viewing the script information](scriptinformation.webp)
