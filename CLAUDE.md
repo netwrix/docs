@@ -31,6 +31,8 @@ choco install vale
 # Manual (any platform) — download binary from GitHub releases:
 # https://github.com/errata-ai/vale/releases
 
+# In Claude Code, prefer /docs-build and /docs-preview over running these by hand
+
 # KB management
 npm run kb:clean         # Remove copied KB files from versioned folders
 npm run kb:dry           # Dry run of KB copy script
@@ -68,7 +70,7 @@ Images go in `static/images/<product>/` as `.webp` files, organized by version a
 
 ## Branch Workflow
 
-PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-main` workflow merges `dev` to `main` daily at 8 AM PST if the build passes. Production deploys from `main` to Azure Blob Storage.
+PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-main` workflow merges `dev` to `main` daily at 8 AM PST if the build passes. Production deploys from `main` to Azure Blob Storage. Writers don't deploy: merging to `dev` deploys the dev site, and the daily sync deploys production.
 
 ## CI/CD Workflows
 
@@ -93,6 +95,8 @@ When a user asks for help with documentation, always use the appropriate tool:
 
 | Component | Type | Purpose |
 |---|---|---|
+| `/docs-build` | Skill | Build one product or the whole site locally; summarizes broken links and MDX errors |
+| `/docs-preview` | Skill | Start, stop, or check a local dev server or production preview |
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
 | `/doc-pr` | Skill | Automated PR editorial review |

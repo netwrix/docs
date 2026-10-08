@@ -23,6 +23,10 @@ The Netwrix package registry hosts both artifacts, and your license key authenti
    export LICENSE_KEY='<license-key>'
    ```
 
+:::note
+On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` can fail with `command not found`. Run it by its full path instead, for example `sudo /usr/local/bin/dspm-installer`.
+:::
+
 <Tabs groupId="install-mode">
 <TabItem value="airgap" label="Airgap install">
 
@@ -37,13 +41,13 @@ The Netwrix package registry hosts both artifacts, and your license key authenti
    sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
    rm -f "$TMP_FILE"
 
-   sudo mkdir -p /etc/dspm/dspm-media
+   sudo mkdir -p /etc/dspm/media
    curl -Lf \
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable" \
-     | sudo tar -xzf - -C /etc/dspm/dspm-media
+     | sudo tar -xzf - -C /etc/dspm/media
    ```
 
-   The installer binary lands in `/usr/local/bin`, and the offline install media extracts to `/etc/dspm/dspm-media`. The media is a large tarball, so the download takes a while; both commands print progress as they run.
+   The installer binary lands in `/usr/local/bin`, and the offline install media extracts to `/etc/dspm/media`. The media is a large tarball, so the download takes a while; both commands print progress as they run.
 
 3. Confirm the installer runs.
 
@@ -56,7 +60,7 @@ The Netwrix package registry hosts both artifacts, and your license key authenti
 4. Confirm the media extracted correctly.
 
    ```bash
-   ls /etc/dspm/dspm-media/manifest.json
+   ls /etc/dspm/media/manifest.json
    ```
 
    If this file is missing, the extraction failed or the tarball didn't download completely. Repeat step 2.
@@ -139,7 +143,7 @@ Run the installer with `sudo`, using the command for the mode you chose when you
 In airgap mode, the installer reads the software it needs from `--bundle-dir` instead of the network, so it needs no license key and makes no outbound calls.
 
 ```bash
-sudo dspm-installer --airgap --bundle-dir /etc/dspm/dspm-media --size <size>
+sudo dspm-installer --airgap --bundle-dir /etc/dspm/media --size <size>
 ```
 
 [Installer reference](installer-reference.md#flags) covers the full `--airgap` and `--bundle-dir` flag details.
@@ -180,7 +184,7 @@ The installer saves each answer to `/etc/dspm/installer.yaml` as soon as you con
 </TabItem>
 <TabItem value="flags" label="Pass flags">
 
-Pass every value as a flag and the installer asks nothing. Use this form in scripts or over a connection without a terminal, where the installer can't prompt and exits with an error for any missing value. This example installs online, with a license key; swap `--license-key` for `--airgap --bundle-dir /etc/dspm/dspm-media` to install offline instead.
+Pass every value as a flag and the installer asks nothing. Use this form in scripts or over a connection without a terminal, where the installer can't prompt and exits with an error for any missing value. This example installs online, with a license key; swap `--license-key` for `--airgap --bundle-dir /etc/dspm/media` to install offline instead.
 
 ```bash
 sudo dspm-installer \

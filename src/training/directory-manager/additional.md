@@ -10,4 +10,4 @@ This product was formerly named Netwrix GroupID.
 
 :::
 
-* What's New in <NDM /> 11.1
+* What's New in <NDM /> 11.2
