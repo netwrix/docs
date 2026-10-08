@@ -6,6 +6,7 @@ keywords:
   - upgrade
   - LOGLEVEL
   - Netwrix Access Analyzer
+  - error
   - console
   - '%sainstalldir%'
   - debug mode
