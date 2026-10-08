@@ -29,17 +29,17 @@ grep hostname /etc/dspm/installer.yaml
 
    The tunnel answers only on `localhost` on the machine that opened it. To close it when you finish, run `kill %1`.
 
-2. Look up the locked account by sign-in name. Substitute your hostname for `<hostname>` and the account's sign-in name for `<login-name>`.
+2. Look up the locked account by username. Substitute your hostname for `<hostname>` and the account's username for `<username>`.
 
    ```bash
    curl -s -X POST http://localhost:8085/v2/users \
      -H "Host: <hostname>" \
      -H "Authorization: Bearer $PAT" \
      -H "Content-Type: application/json" \
-     -d '{"query": {"offset": "0", "limit": 100}, "queries": [{"userNameQuery": {"userName": "<login-name>"}}]}'
+     -d '{"query": {"offset": "0", "limit": 100}, "queries": [{"userNameQuery": {"userName": "<username>"}}]}'
    ```
 
-   If this returns no results, the sign-in name doesn't match what Zitadel has on record. Drop the `queries` filter to list every account instead, and find the one you need in the output:
+   If this returns no results, the username doesn't match what Zitadel has on record. Drop the `queries` filter to list every account instead, and find the one you need in the output:
 
    ```bash
    curl -s -X POST http://localhost:8085/v2/users \
