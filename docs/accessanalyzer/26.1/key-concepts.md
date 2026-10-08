@@ -4,7 +4,7 @@ description: The terms Access Analyzer uses for what it scans, how it signs in, 
 sidebar_position: 3
 ---
 
-Most of Access Analyzer's vocabulary sits in the sidebar under **Configuration**. The following terms come in the order a new administrator meets them.
+Most of Access Analyzer's vocabulary sits in the sidebar under **Configuration**. The following terms come in the order a new administrator meets them. If you're coming from Access Analyzer Classic, [Coming From Access Analyzer Classic](coming-from-access-analyzer-classic.md) maps its concepts to these.
 
 ```mermaid
 flowchart LR
