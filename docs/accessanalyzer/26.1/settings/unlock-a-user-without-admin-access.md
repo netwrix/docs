@@ -29,7 +29,7 @@ grep hostname /etc/dspm/installer.yaml
 
    The tunnel answers only on `localhost` on the machine that opened it. To close it when you finish, run `kill %1`.
 
-2. Look up the locked account by username. Substitute your hostname for `<hostname>` and the account's username for `<username>`.
+2. Look up the locked account by username. Substitute your hostname for `<hostname>` and the account's username for `<username>`. The username is the full email address the user types at sign-in, such as `jsmith@example.com`.
 
    ```bash
    curl -s -X POST http://localhost:8085/v2/users \
