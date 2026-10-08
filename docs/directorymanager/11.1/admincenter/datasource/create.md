@@ -436,8 +436,8 @@ Step 5 – In the SQL Server Name box, enter the name or IP address of the SQL s
 SQL database.
 
 Step 6 – By default, Directory Manager uses SQL authentication to connect to the SQL
-server. In this case, the Service Account and Service Account Password boxes are active. Enter the
-username and password of an SQL server account to connect to the SQL server in the respective boxes.
+server. In this case, the Service Account and Service Account Password boxes are active. In these
+boxes, enter the username and password of an SQL server account to connect to the SQL server.
 
 Step 7 – To connect to the SQL server with a Windows account, select the **Windows Authentication**
 checkbox. With Windows authentication, users have already logged on to
