@@ -7,7 +7,7 @@ sidebar_position: 4.1
 If an upgrade causes problems, you can move Access Analyzer back to an earlier release. There's no dedicated `down` or `downgrade` command. A rollback re-points ArgoCD at the older release, using the same mechanism as an upgrade.
 
 :::warning
-A rollback changes your database schema. The database setup job (`db-seeds`) runs the newer release's stored down migrations against both Postgres and ClickHouse, and those migrations can drop columns and tables. The backup in [Before you roll back](#before-you-roll-back) covers Postgres only, so ClickHouse (scan results and reporting data) has no backup behind it. Read that section first.
+A rollback changes your database schema. The database setup job (`db-seeds`) runs the newer release's stored down migrations against both Postgres and ClickHouse, and those migrations can drop columns and tables. The backup in [Before you roll back](#before-you-roll-back) covers Postgres only, so ClickHouse (scan results and reporting data) has no backup. Read that section first.
 :::
 
 ## Before You Roll Back
@@ -47,7 +47,7 @@ Air-gapped installs don't show a version picker. Use `dspmctl` instead.
 
 ## Roll Back With dspmctl
 
-Run these commands on the install host. `dspmctl` needs `sudo` because the k3s kubeconfig is readable only by root.
+Run these commands on the install host. `dspmctl` needs `sudo` because only root can read the k3s kubeconfig.
 
 1. Pin the root application to the older version:
 

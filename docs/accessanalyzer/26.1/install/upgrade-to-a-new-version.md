@@ -103,7 +103,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
 
 ### Roll back an airgap upgrade
 
-A rollback is a re-pin: the previous chart tag and images stay in the cluster, so you don't need the old media. See [Rolling back to a previous version](roll-back-to-a-previous-version.md) for the precautions to take first and the full `dspmctl` procedure, including finding the previous version from the `previous-target-revision` annotation. The `dspmctl sync` step uses `--prune` so resources the older release doesn't include are removed.
+A rollback is a re-pin: the previous chart tag and images stay in the cluster, so you don't need the old media. See [Rolling back to a previous version](roll-back-to-a-previous-version.md) for the precautions to take first and the full `dspmctl` procedure, including finding the previous version from the `previous-target-revision` annotation. The `dspmctl sync` step uses `--prune` to remove resources the older release doesn't include.
 
 ### Upgrade exit codes
 
