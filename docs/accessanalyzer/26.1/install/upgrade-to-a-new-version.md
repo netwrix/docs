@@ -90,7 +90,7 @@ read -rs LICENSE_KEY && export LICENSE_KEY
 sudo --preserve-env=LICENSE_KEY dspm-installer upgrade --download
 ```
 
-If the cluster already runs the newest release, the command prints `The cluster is already on the newest release (v<version>); nothing was changed.` and exits `0`. A scheduled run can use this to tell "nothing to do" apart from a failure.
+If the cluster already runs the newest release, the command prints `The cluster is already on the newest release (v<version>); nothing was changed.` and exits `0`. A scheduled run can use this to distinguish "nothing to do" from a failure.
 
 Add `--dry-run` to check the preconditions and free space and print the upgrade plan without downloading anything.
 

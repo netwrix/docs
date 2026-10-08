@@ -51,7 +51,7 @@ The installer stores the media in one of these directories:
 |---|---|
 | Neither `--storage-dir` nor `--tmp-dir` | `/var/lib/dspm/media` |
 | `--storage-dir <dir>` | `<dir>/dspm/media` |
-| `--tmp-dir <dir>` | `<dir>/dspm/media` (`--tmp-dir` wins over `--storage-dir`) |
+| `--tmp-dir <dir>` | `<dir>/dspm/media` (`--tmp-dir` takes precedence over `--storage-dir`) |
 
 For example, `--storage-dir /data` puts the media in `/data/dspm/media`.
 
