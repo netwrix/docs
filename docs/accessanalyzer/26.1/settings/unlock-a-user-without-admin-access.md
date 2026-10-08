@@ -12,7 +12,7 @@ There's no bulk unlock. Repeat the lookup and unlock steps once per locked accou
 
 ## Before You Start
 
-You need the installed hostname to reach Zitadel—it validates the request's `Host` header against this value and rejects anything else with "Instance not found," even when the connection itself succeeds. This is the Fully Qualified Domain Name (FQDN) you chose during installation, so it applies the same whether the host is domain-joined. Read it from the install host:
+You need the installed hostname to reach Zitadel. Zitadel checks the request's `Host` header against the hostname you chose at install and rejects anything else with "Instance not found," even when the connection succeeds. Read it from the install host:
 
 ```bash
 grep hostname /etc/dspm/installer.yaml
@@ -20,14 +20,14 @@ grep hostname /etc/dspm/installer.yaml
 
 ## Unlock the Account
 
-1. Get the Zitadel admin token and open a tunnel to Zitadel. Run both in the same terminal session, and leave the second one running.
+1. Get the Zitadel admin token and open a tunnel to Zitadel in the background. Run both in the same terminal session, and run the remaining steps in that session too.
 
    ```bash
    PAT=$(kubectl get secret iam-admin-pat -n access-analyzer -o jsonpath='{.data.pat}' | base64 -d)
-   kubectl port-forward svc/zitadel 8085:8080 -n access-analyzer
+   kubectl port-forward svc/zitadel 8085:8080 -n access-analyzer &
    ```
 
-   Run the remaining steps from the same machine, in a second terminal. The tunnel only answers on `localhost` on the machine that opened it.
+   The tunnel only answers on `localhost` on the machine that opened it. To close it when you finish, run `kill %1`.
 
 2. Look up the locked account by sign-in name. Substitute your hostname for `<hostname>` and the account's sign-in name for `<login-name>`.
 
@@ -61,12 +61,12 @@ grep hostname /etc/dspm/installer.yaml
      -d '{}'
    ```
 
-   A response with no error means the unlock succeeded.
+   A successful unlock returns `{}`. If the user wasn't locked, Zitadel returns "User is not locked", which is harmless.
 
 4. Repeat step 2's lookup. The account's `state` should now read `USER_STATE_ACTIVE`. Have the user sign in again.
 
 :::note
-This clears the lockout only. It doesn't reset the password. If the user has also forgotten their password, an Admin or User admin still needs to run **Actions > Reset password** from the **Users** tab once someone can sign in—see [Reset a password](users.md#reset-a-password).
+This clears the lockout only. It doesn't reset the password. If the user has also forgotten their password, an Admin or User admin still needs to run **Actions > Reset password** from the **Users** tab once someone can sign in. See [Reset a password](users.md#reset-a-password).
 :::
 
 ## Remove a Lost Authenticator App
