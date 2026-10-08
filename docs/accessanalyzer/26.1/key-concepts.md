@@ -57,8 +57,6 @@ A role decides what a user can do; every user holds exactly one of three. **Admi
 
 ## Objects and Identities
 
-The installer's size table measures capacity in two units:
+An object is one item a scan counts, and what counts depends on the scan type. An Access scan counts every share, folder, and file it inventories on a file server, and every site collection, site, list, library, folder, file, and list item in SharePoint Online. A Sensitive data scan counts the files it classifies. An Identity sync counts the users and groups it reads. A share that holds 4 folders and 9 files is 14 objects to an Access scan: the share itself, the 4 folders, and the 9 files. The **Progress** column on the Scan executions page shows the count for each run; [Scan executions](scans/scan-executions.md#what-counts-as-an-object) lists what each scan type counts.
 
-Objects are what an Access scan inventories: shares, folders, and files on a file server; sites, libraries, and documents in SharePoint Online. Each of these counts as an object, and the **Objects** column on the Scan executions page counts them _per run_.
-
-Identities are the users and groups an Identity Sync collects. A file server holding ~12 million objects, plus a domain with ~3,000 users & groups, would the **small** size in [Requirements](install/requirements.md).
+Identities are the users and groups an Identity sync collects. [Requirements](install/requirements.md#size) states its sizes in objects and identities: a file server holding about 12 million objects, plus a domain with about 3,000 users and groups, fits the **small** size.
