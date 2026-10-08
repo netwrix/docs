@@ -92,7 +92,7 @@ sudo kubectl get challenges -A
 The certificate's events and the challenge's status show what Let's Encrypt saw. The common causes:
 
 - **The hostname doesn't resolve publicly**, or resolves to a different address. Check with a resolver outside your network: `dig +short <hostname> @1.1.1.1`.
-- **Port 80 is blocked.** The challenge always arrives on port 80, even though the application serves on 443. Test from outside your network: `curl -I http://<hostname>/.well-known/acme-challenge/test` should return an HTTP response (a 404 is fine — a timeout is the problem).
+- **Port 80 is blocked.** The challenge always arrives on port 80, even though the application serves on 443. Test from outside your network: `curl -I http://<hostname>/.well-known/acme-challenge/test` should return an HTTP response, even a 404. A timeout means port 80 is blocked.
 - **Rate limits.** Let's Encrypt limits how many certificates it issues per domain per week. Repeated reinstalls against the same hostname can hit them; the challenge status names the limit explicitly. Wait, or test against the [staging environment](#use-a-private-acme-certificate-authority) instead.
 
 Fix the cause and the cluster retries automatically — no reinstall needed.
