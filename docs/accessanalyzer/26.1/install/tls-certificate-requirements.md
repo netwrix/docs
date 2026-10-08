@@ -6,7 +6,7 @@ sidebar_position: 1.5
 
 Access Analyzer serves its web console over HTTPS on a single hostname, the fully qualified domain name (FQDN) you pass to the installer as `--hostname`. You can bring a certificate from your own certificate authority (CA), or let the installer generate a self-signed one.
 
-Use this page to prepare a CA-issued certificate and check it **before** install day. Most failed installs with a customer certificate come from a certificate that is correct for the CA but not in the form the installer expects: missing SAN, wrong chain order, encrypted key, or missing root CA.
+Use this page to prepare a CA-issued certificate and check it **before** install day. Most failed installs with a customer certificate come from a certificate that is correct for the CA but not in the form the installer expects: missing Subject Alternative Name (SAN), wrong chain order, encrypted key, or missing root CA.
 
 ## What the Installer Needs
 
@@ -18,7 +18,7 @@ Use this page to prepare a CA-issued certificate and check it **before** install
 
 If you have a PFX/P12 file, pass it with `--tls-pfx` instead of `--tls-cert` and `--tls-key`. The installer splits it into the certificate, key, and CA bundle itself. Supply the PFX password with `--tls-pfx-password-file`, the `DSPM_TLS_PFX_PASSWORD` environment variable, or the terminal prompt. `dspm-installer update-cert` accepts the same two flags.
 
-If the PFX ends at an intermediate CA rather than the root, the CA bundle the installer derives also ends at the intermediate. Services in the cluster built with Go accept that, but Node and older Python clients may reject the certificate. Include the root in the PFX, or pass `--ca-bundle` alongside `--tls-pfx`.
+If the PFX ends at an intermediate CA rather than the root, the CA bundle the installer derives also ends at the intermediate. Go-based services in the cluster accept that, but Node and older Python clients may reject the certificate. Include the root in the PFX, or pass `--ca-bundle` alongside `--tls-pfx`.
 
 ### Certificate File
 
@@ -29,7 +29,7 @@ If the PFX ends at an intermediate CA rather than the root, the CA bundle the in
 
 ### Private Key File
 
-- **PEM format.** The installer accepts PKCS#1 (`BEGIN RSA PRIVATE KEY`), PKCS#8 (`BEGIN PRIVATE KEY`), and EC (`BEGIN EC PRIVATE KEY`). RSA 2048-bit or larger, or ECDSA P-256 or P-384, is recommended; the installer doesn't enforce key size or curve.
+- **PEM format.** The installer accepts PKCS#1 (`BEGIN RSA PRIVATE KEY`), PKCS#8 (`BEGIN PRIVATE KEY`), and EC (`BEGIN EC PRIVATE KEY`). Netwrix recommends RSA 2048-bit or larger, or ECDSA P-256 or P-384; the installer doesn't enforce key size or curve.
 - **Unencrypted.** The installer rejects a key that begins `BEGIN ENCRYPTED PRIVATE KEY` or has a `Proc-Type: 4,ENCRYPTED` header. See [Remove a key passphrase](#remove-a-key-passphrase).
 - **Must match the certificate.**
 
@@ -43,7 +43,7 @@ Skip the CA bundle only if the certificate comes from a publicly trusted CA or i
 
 ## Recommended Certificate Fields
 
-These are the fields a certificate should have for Access Analyzer. Most CA "Web Server" templates produce them already.
+A certificate for Access Analyzer should have the following fields. Most CA "Web Server" templates produce them already.
 
 | Field | Recommended value | Why |
 |---|---|---|
@@ -63,7 +63,7 @@ These are the fields a certificate should have for Access Analyzer. Most CA "Web
 
 Every organization's CA templates differ. Your certificate may carry extensions this page doesn't list, such as certificate revocation list (CRL) distribution points, Authority Information Access (AIA/OCSP) URLs, certificate policies, a template name, or extra SANs. Access Analyzer ignores these and they don't cause a problem.
 
-What matters is that the required items are present. If your CA team can't issue a certificate with a SAN and the serverAuth EKU, ask them for their "Web Server" template, or plan to use a self-signed certificate.
+The required items must be present. If your CA team can't issue a certificate with a SAN and the serverAuth EKU, ask them for their "Web Server" template, or plan to use a self-signed certificate.
 
 ## Example Certificate
 
@@ -201,7 +201,7 @@ You can run these checks on any machine with OpenSSL, before the files reach the
 | Installer message | Cause | Fix |
 |---|---|---|
 | `TLS certificate SANs do not include the configured hostname` | The hostname is only in the CN, or the SAN has a different name. | Reissue with `DNS:<hostname>` in the SAN. |
-| `TLS certificate and private key do not match` | The wrong key, the CA certificate listed first in the chain, or an encrypted key. | Put the server certificate first. Use the key generated with the CSR. Remove the passphrase. |
+| `TLS certificate and private key do not match` | The wrong key, the CA certificate listed first in the chain, or an encrypted key. | Put the server certificate first. Use the key generated with the certificate signing request (CSR). Remove the passphrase. |
 | `TLS certificate has expired` | The certificate is past its end date. | Obtain a new certificate. |
 | `TLS certificate does not chain to the provided CA bundle` | The CA bundle holds the wrong root, an intermediate is missing from `tls.crt`, or the EKU lacks serverAuth. | Supply the root that issued the chain, add missing intermediates to `tls.crt`, or reissue from a Web Server template. |
 | `TLS CA bundle file contains no valid PEM certificates` | The bundle is DER, empty, or holds only non-certificate PEM blocks. | Supply the root CA certificate in PEM format. |
@@ -209,7 +209,7 @@ You can run these checks on any machine with OpenSSL, before the files reach the
 
 ## Request a Certificate From Your CA
 
-If you generate the key and certificate signing request (CSR) yourself, include the SAN in the request:
+If you generate the key and CSR yourself, include the SAN in the request:
 
 ```bash
 openssl req -new -newkey rsa:2048 -nodes \
