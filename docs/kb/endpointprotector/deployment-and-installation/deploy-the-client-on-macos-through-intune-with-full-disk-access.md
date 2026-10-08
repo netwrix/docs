@@ -30,7 +30,7 @@ This article explains how to deploy the Netwrix Endpoint Protector client on mac
 For the full reference, see [Microsoft Intune](/docs/endpointprotector/install/intune/overview) and [macOS Deployment](/docs/endpointprotector/install/intune/macosdeployment).
 
 :::note
-This document serves as an optional reference for Microsoft Intune (currently known as Microsoft Endpoint Manager). It is not regularly updated and may not align with the current version of the product. Please refer to the official resources for the most up-to-date information.
+This document serves as an optional reference for Microsoft Intune (also known as Microsoft Endpoint Manager). It is not regularly updated and may not align with the current version of the product. Please refer to the official resources for the most up-to-date information.
 :::
 
 ## Instructions
