@@ -1,0 +1,33 @@
+---
+title: "Search Index"
+description: "Search Index"
+sidebar_position: 150
+---
+
+# Search Index
+
+Netwrix Data Classification uses two mathematical principles to achieve its results:
+
+- Bayesian inference
+- Shannon’s information theory
+
+The product uses Bayesian inference to determine the weightings to apply to individual words in the
+query so that the words that are most useful in identifying the required concepts receive the
+highest weightings. Initially, these weightings are based on the relative frequency of query terms
+as distributed across the entire index. Where relevance feedback information is available, the
+product adjusts these weightings to tune the behaviour in favour of documents known to be relevant.
+
+Shannon’s information theory is necessary when identifying concepts because the order in which words
+appear has a great effect on meaning.
+
+Nevertheless, most retrieval systems would regard a document
+containing all words from a user’s query as 100% relevant – especially if all of the words are in
+close proximity. However, this is much too simplistic an approach for effective concept
+identification. For example, just because a sentence contains the words “money” and “order” doesn't
+necessarily mean that the topic is about “money orders”.
+
+Shannon’s information theory states that the more frequently a sequence appears the less
+information, or entropy, it contains. Netwrix Data Classification uses this model to compute the
+incremental value of compound terms over their lower order components. In this way the system identifies
+the word sequences that convey the most meaning and adjusts the standard weightings
+accordingly.

@@ -1,0 +1,18 @@
+---
+title: "Additional Configuration"
+description: "Additional Configuration"
+sidebar_position: 170
+---
+
+# Additional Configuration
+
+This section contains information on additional and / or optional tabs. Review the following for
+additional information:
+
+| Tab              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Graph            | The Graph tab shows a graphical representation of classification intersection points. ![taxonomygraph_thumb_0_0](/images/dataclassification/5.8/admin/taxonomies/taxonomygraph_thumb_0_0.webp) In this example, 6721 documents are tagged with "Medium (100kb-1Mb)", 1254 of these documents are also tagged with "HTML". You can also see 3517 documents tagged with both "HTML" and "English" (highlighted by the dashed links). |
+| Info             | The Info tab displays the term description (aka Scope Notes) for each preferred term. The system populates the Description field automatically when you import an external taxonomy using the Scope Notes.                                                                                                                                                                                                                                                                                |
+| Logs             | The system records all changes to a term. You can view the change history from the Logs Tab: ![termlogs](/images/dataclassification/5.8/admin/taxonomies/termlogs.webp)                                                                                                                                                                                                                                                                                                 |
+| User Edits       | When users amend auto-classifications in SharePoint, the system records the user edits in the SQL database. You can review these later to identify terms that require review: ![useredits](/images/dataclassification/5.8/admin/taxonomies/useredits.webp)                                                                                                                                                                                                                    |
+| User Suggestions | You can enable an optional interface so users can suggest new terms for the termset hierarchy (http://netwrixdataclassificationserver/NDC/Taxonomies/TermSuggest.aspx). Suggestions can trigger automatic notifications to taxonomy administrators, and the database records them for later review on the "User Suggestions" tab: ![usersuggestions_thumb_0_0](/images/dataclassification/5.8/admin/taxonomies/usersuggestions_thumb_0_0.webp)        |

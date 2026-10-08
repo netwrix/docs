@@ -58,3 +58,6 @@ git_status.txt
 touch_all_modified.py
 touch_files.py
 .gstack/
+
+# Claude build/preview skill logs
+.docs-logs/

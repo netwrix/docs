@@ -1,0 +1,56 @@
+---
+title: "Apply Additional Classification"
+description: "Apply Additional Classification"
+sidebar_position: 40
+---
+
+# Apply Additional Classification
+
+You can instruct the program to apply one or more additional classifications to the processed
+document. This workflow action is called **Manual Classification**, and you can configure it via
+the **Advanced** UI window.
+
+Alternatively, you can configure a workflow action that permanently removes all existing
+classifications on a document and disables future auto-classification for it.
+
+![workflow_actions_man_classify_thumb_0_0](/images/dataclassification/5.8/admin/workflows/advancedwindow/workflow_actions_man_classify_thumb_0_0.webp)
+
+To apply additional classification:
+
+In the **Add Action** dialog, from the **Action Type** list select **Manually Classify** under
+**Classification**, then configure the necessary terms as described in the following steps.
+
+:::note
+The terms you select must belong to a single taxonomy / termset.
+:::
+
+
+To remove all classifications:
+
+In the **Add Action** dialog, from the **Action Type** list select **Remove Classifications** under
+**Classification**.
+
+**To configure terms**
+
+1. In the **Select Term** field, click the tag icon.
+2. In the **Details** dialog, specify filter settings to use when filtering out the documents:
+
+    1. **Taxonomy** - select which of the existing classification taxonomies to use.
+    2. **All Terms** - select this option if you want to filter by all terms in the taxonomy. If
+       you don't select this option, the system displays the list of terms after you select the taxonomy. Select the one you plan to use for filtering.
+
+    :::note
+    The product doesn't support multiple selection: to configure several filter values,
+    repeat this procedure for each filter value you need.
+    :::
+
+
+    3. **Include Children** - select this option if needed.
+
+3. Finally, click **OK** to save the settings and close the dialog.
+
+:::note
+The additional classification doesn't trigger other workflows or affect the source
+item[See Classifications for more information.](/docs/dataclassification/5.8/contentconfigurationoverview/taxonomies/classifications.md)
+
+:::

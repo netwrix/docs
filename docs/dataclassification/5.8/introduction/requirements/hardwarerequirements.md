@@ -1,0 +1,135 @@
+---
+title: "Hardware Requirements"
+description: "Hardware Requirements"
+sidebar_position: 10
+---
+
+# Hardware Requirements
+
+Review the hardware requirements for the computer where you plan to install Netwrix Data
+Classification.
+
+You can deploy Netwrix Data Classification on a virtual machine running Microsoft Windows guest OS
+on the corresponding virtualization platform, in particular:
+
+- VMware vSphere
+- Microsoft Hyper-V
+- Nutanix AHV
+
+:::note
+Netwrix Data Classification supports only Windows OS versions listed in the
+[Software Requirements](/docs/dataclassification/5.8/introduction/requirements/softwarerequirements.md) section.
+:::
+
+## Netwrix Data Classification Server
+
+The requirements in this section apply to a single Netwrix Data Classification server.
+
+To deploy a server cluster, ensure all planned cluster nodes meet the following requirements.
+Consider deploying 1 Netwrix Data Classification Server per approximately 16,000,000 objects to process.
+
+See [Deployment Planning](/docs/dataclassification/5.8/introduction/deployment/overview.md) and
+[Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.8/introduction/deployment/ndcserverandclient/dqsmode.md) for cluster sizing guidance.
+
+| Hardware Component | 1 Server per 16 M objects      |
+| ------------------ | ------------------------------ |
+| Cores              | 8 Cores                        |
+| RAM                | 32 GB                          |
+| Hard disk          | UP TO 35% of all data in scope |
+| Hard drive type    | SSD storage                    |
+
+## SQL Server
+
+The requirements in this section are for an SQL database supporting up to 4 NDC Server instances in a Distributed Query Server (DQS) cluster. Deploy the NDC database server only on a dedicated machine, as sharing resources with additional databases on the same server degrades performance.
+
+| Hardware Component | Up to 16 M objects                                                                                                                                                                                                                                                                | Up to 32 M objects and up to 8 M objects for SharePoint | Up to 64 M objects and up to 16 M objects for SharePoint |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
+| Processor          | 8 cores                                                                                                                                                                                                                                                                           | 8 cores                                                 | 8 cores                                                  |
+| RAM                | 32 GB                                                                                                                                                                                                                                                                             | 64 GB                                                   | 128 GB                                                   |
+| Hard disk          | Estimate required disk space assuming _10 to 12KB_ per indexed object. For example, for _5,000,000_ objects, the database size will be approximately _50GB_. See also [Deployment Planning](/docs/dataclassification/5.8/introduction/deployment/overview.md). |                                                         |                                                          |
+| Hard disk type     | SSD storage                                                                                                                                                                                                                                                        |                                                         |                                                          |
+
+
+## Network Access
+
+| Specification  | Requirement                                                                                                                                                                              |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Network access | Ensure that your Netwrix Data Classification servers are available over the network on a HTTP compliant port from all machines where the client interface (management console) runs. |
+
+## Object and Scope Estimations
+
+Provide the total amount of data and total file count from all file shares in scope. Supported
+file shares types:
+
+- CIFS\SMB (a normal Windows-like share)
+- NFS
+
+Administration Dashboards for most Network Attached Storages include storage usage such as the
+amount of data and files count. If you need a tool to calculate file count and size, use the NDC
+script-based [file scanning tool](https://www.netwrix.com/download/products/DDC/ScanDirs.zip).
+
+**Exchange Mailboxes**
+
+If you plan on using NDC to crawl an on-premises Exchange server, you need to know the following:
+
+- Number of Mailboxes
+- Mailbox retention policy (how long users keep their emails before archiving them)
+- The average number of emails per Mailbox or total number in all mailboxes.
+
+Run the following PowerShell script for the Exchange Management Shell to obtain the number of emails in all mailboxes. The script returns email stats for every mailbox. Use the script
+results to calculate the average number of emails per mailbox or provide the total number.
+
+```
+Get-Mailbox -ResultSize Unlimited | Get-MailboxStatistics | Select-Object ItemCount | ForEach-Object {$totalItems+=$_.ItemCount}
+```
+
+**Office 365: Exchange Online, SharePoint Online and OneDrive**
+
+Provide the total amount of data and total number of files stored on Office 365. You can use the usage statistics numbers for 180 days period from the O365 Admin Center dashboard. See the Microsoft article [Microsoft 365 Reports in the admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports?view=o365-worldwide) for additional information.
+
+**Databases**
+
+If your scope includes databases, provide the following details:
+
+- Database type (MS SQL, Oracle, MySQL, PostgreSQL)
+- What applications and systems those databases support
+- How many databases contain data you need to classify
+
+You must point Netwrix Data Classification at certain tables in the specified databases, so you
+need to know which tables within a database may contain sensitive
+data.
+
+**Box**
+
+Provide the total file count and storage usage from the BOX Admin Dashboard
+
+**Plan the Production Deployment**
+
+To size servers for your Netwrix Data Classification setup, use the metrics you produced during the
+scoping stage. Apply the total number of files, documents, emails from all data sources to the following table to obtain corresponding hardware requirements.
+
+:::warning
+Netwrix Data Classification servers and SQL servers require high-performance SSD drives
+for optimal performance.
+:::
+
+
+Due to the performance limitations of the SQL database back end, a clustered setup with 4 Data
+Classification servers supports a maximum of 64 million files with supported content
+types. To support environments that exceed this number, implement one of the following:
+
+- Multiple separate installations of clustered setup with 4 Data Classification servers, where you
+  point each installation at its own subset of data. Each installation requires its own SQL
+  instance.
+- Phased data processing with one installation of clustered setup with 4 Data Classification
+  servers. With phased data processing, you divide the dataset into subsets and process them in chunks.
+
+See the hardware sizing for Netwrix Data Classification setup in the following table:
+
+| Sizing | Small Environment | Medium Environment | Large Environment |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Scope                   | Up to 10 TB of data or 1,000,000 <ul><li>16,000,000 files</li></ul>                                                                               | Up to 25 TB of data or 16,000,000 <ul><li>32,000,000 files</li></ul>                                                                                                                                                                                                         | Up to 45 TB of data or 32,000,000 <ul><li>64,000,000 files</li></ul>                                                                                                                                                                                                                                                                                                                     |
+| Setup                   | 2 Servers total: SQL Instance + NDC Server                                                                                                 | 3 servers total: SQL Instances + 2 Clustered NDC Servers                                                                                                                                                                                                              | 5 servers total: SQL Instances + 4 Clustered NDC Servers                                                                                                                                                                                                                                                                                                                          |
+| Database Requirements | Standard or Enterprise SQL Server, or PostgreSQL. 8 cores CPU, 32 GB RAM Disk Space Consumption: 10 <ul><li>12 KB per indexed object SSD storage</li></ul>        | Standard or Enterprise SQL Server or PostgreSQL 8 cores CPU, 64 GB RAM Disk Space Consumption: 10 <ul><li>12 KB per indexed object SSD storage</li></ul>                                                                                                                                   | Standard or Enterprise SQL Server, or PostgreSQL. 8 cores CPU, 128 GB RAM Disk Space Consumption: 10 <ul><li>12 KB per indexed object SSD storage</li></ul>                                                                                                                                                                                                                                              |
+| NDC Server Requirements | Single Server Setup Netwrix Data Classification 8 cores CPU, 32 GB RAM **Disk Space Consumption:** up to 35% of all data in the scope SSD storage | Clustered Setup: 2 Servers Netwrix Data Classification #1 8 cores CPU, 32 GB RAM Netwrix Data Classification #2 8 cores CPU, 32 GB RAM **Disk Space Consumption:** up to 35% of all data in the scope distributed across 2 clustered Data Classification servers SSD storage | Clustered Setup: 4 Servers Netwrix Data Classification #1 8 cores CPU, 32 GB RAM Netwrix Data Classification #2 8 cores CPU, 32 GB RAM Netwrix Data Classification #3 8 cores CPU, 32 GB RAM Netwrix Data Classification #4 8 cores CPU, 32 GB RAM **Disk Space Consumption:** up to 35% of all data in the scope distributed across 4 clustered Data Classification servers SSD storage |
+
