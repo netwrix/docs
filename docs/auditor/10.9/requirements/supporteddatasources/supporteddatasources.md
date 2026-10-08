@@ -113,7 +113,7 @@ additional information.
 
 Auditor supports monitoring the following device versions:
 
-- Files 3.6 - 5.3
+- Files 3.6 - 5.4
 
 See the [Nutanix](/docs/auditor/10.9/configuration/fileservers/nutanix/overview.md) topic for additional
 information.

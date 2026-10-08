@@ -25,6 +25,7 @@ information:
 - Log
 - Remote Event
 - RPC
+- NTLM (server-side applet only)
 
 **Ports**
 

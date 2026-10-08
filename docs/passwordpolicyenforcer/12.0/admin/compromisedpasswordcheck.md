@@ -10,15 +10,35 @@ The Password Scanner identifies weak or unsafe passwords, including compromised,
 or empty ones. It can notify users via email and advise or force them to change their password. 
 You can schedule the check to run at any time to verify existing passwords against security rules.
 
+Password Policy Enforcer (PPE) enforces its [rules](./manage-policies/rules/rules.md) during 
+password changes. This lets PPE block non-compliant passwords, but real-time checking doesn't protect 
+against three scenarios:
+
+- Passwords that didn't appear in any known breach at the time of password change, but appear in a 
+later breach.
+- Identical passwords used by different users. While PPE could enforce this requirement during a 
+password change, it doesn't because it would slow down password changes significantly.
+- Blank passwords used by accounts whose passwords never change.
+
+PPE's Password Scanner addresses these scenarios by regularly scanning domain password hashes and 
+executing one or more actions when it finds weak or unsafe passwords (compromised, duplicate, 
+or blank hashes).
+
 :::note
-Create the **Compromised Passwords Base** file before enabling the Password Scanner. See the [HIBP Updater](/docs/passwordpolicyenforcer/12.0/admin/hibpupdater.md) topic for instructions.
+You must configure [Notifications](./settings.md#notifications) before you can use the Password Scanner. 
+If you don't want PPE to send notification emails while you are configuring and testing the scanner, then 
+temporarily configure PPE to **Save emails to a pickup folder** that your mail server doesn't monitor. 
+You can read the content of the emails in the pickup folder with a mail application or text editor.
+
+You must also download the Have I Been Pwned (HIBP) compromised password database before you can use the Password Scanner. The 
+[HIBP Updater](./hibpupdater.md) page explains how to configure and use the database downloader.
+
+The Password Scanner only works with [domain policies](../installation/domain_and_local_policies.md).
 :::
 
-Launch the Password Scanner from the Configuration Console:
-
-Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
-or
-Double click the **PPE Configuration** desktop shortcut.
+The Password Scanner is disabled by default. To enable and configure it:
+1. Open the [PPE configuration console](./configconsole.md).
+2. Click the **Password Scanner** tile on the right.
 
 Click the **Compromised Passwords** tile on the Configuration Console dashboard. This feature is
 only available when you select **domain** with the [Connect To a Configuration](configconsole.md#connect-to-a-configuration)
@@ -27,29 +47,29 @@ defaults to **None**.
 
 Click the **Password Scanner** toggle to enable/disable the feature.
 
-- **Compromised Passwords Base** specify the database to use when checking for compromised
-  passwords. Netwrix recommends using the [HIBP Updater](/docs/passwordpolicyenforcer/12.0/admin/hibpupdater.md) to create this database.
-  Click **Browse** to navigate to the folder. Default is **C:\HIBP\DB**
-- **Domain Controller (FQDN)** specify the fully qualified domain controller name where you want to
-  run the password check. Click **Browse** and select from the list.
-- **Log events in Windows Application Event Viewer** select this option to log events.
-- **Force users to change password** select this option to force users to change compromised
-  passwords.
-- **Report password reuse by another account** select this option to generate password reuse report.
-- **Force users to change password** select this option to force users to change reused
-  passwords.
-- **Recipient of the full report on the found compromised passwords** specify the email address of
-  the administrator who should receive the full report.
-- **From** specify the email sender.
-- **Notify users whose passwords are compromised by email** select this option to send email
-  notification to users their password appears in the compromised list.
-- **Set up email** click to set up the email message for users. Enter the **From** address and edit
-  the subject and body template as needed. Click **Apply** to save changes.
+- **Compromised Passwords Base**. Enter the path to the database to use when checking for compromised
+  passwords. Netwrix recommends using the [HIBP Updater](./hibpupdater.md) to configure this database.
+  Click **Browse** to navigate to the folder. Default is **C:\HIBP\DB**, but you can alternatively link a database stored within a Distributed File System (DFS) 
+  replication group (details <a href="https://docs.netwrix.com/docs/passwordpolicyenforcer/12_0/admin/hibpupdater#hash-file-replication">here</a>).
+- **Domain Controller (FQDN)**. Enter the fully qualified name of the domain controller that will run the password check or click **Browse** to select it.
+- **Log events in Windows Application Event Viewer**. Select this checkbox to log Password Scanner's progress and findings to the Windows Application Event Log.
+- **Force users to change password**. Select this checkbox to set "User must change password at next logon" for any account with a 
+compromised password. The Password Scanner doesn't perform this action for accounts with "Password never expires" set.
+- **Report password reuse by another account**. Select this checkbox to scan for accounts with the same password. You can also select 
+**Force users to change password at next logon** if you want the Password Scanner to set "User must change password at next logon" 
+for any accounts with identical passwords. The Password Scanner doesn't perform this action for accounts with "Password never expires" set.
+- **Recipient of the full report on the found compromised passwords**. Enter the email address of a person or distribution list 
+  into this text box. The Password Scanner sends a report to this address after every scan. This is a report for administrators, not users.
+- **From**. Enter the sender's email address for the full report. The correct format is `"Display Name" <mailbox@domain.com>`.
+- **Notify users whose passwords are compromised by email**. Select this checkbox to send an email to users whose passwords are compromised.
+- Use **Set up email** to edit the email template for the compromised password email. The correct format for the **From** text box is 
+`"Display Name" <mailbox@domain.com>`. You can edit the email body with a visual editor or raw HTML editor by clicking **Visual** or **HTML**. 
+Enter the **From** address and edit the subject and body template as needed. Click **Apply** to save changes.
 
 Click **Save** to save your settings before running the check or setting up a schedule.
 
-Click **Run now** to run the check. Depending on your network, the check can take a long time to
-complete. You can schedule it for off hours instead of running it now.
+Click **Run now** to run the check. Depending on your network, the check can take a long time to complete. You can schedule it for 
+off hours instead of running it now.
 
 Here is an example of the compromised passwords report:
 
@@ -71,9 +91,9 @@ Guest (S-1-5-21-1006207104-1546379664-2458629591-501)
 
 ---
 
-#### Schedule the Password Scanner
+#### Schedule Password Scanner
 
-Click **Schedule** to set up a schedule to run the Password Scanner.
+Click **Schedule** to set up a schedule to run Password Scanner.
 
 Select the **Frequency**:
 
