@@ -6,7 +6,7 @@ sidebar_position: 3.5
 
 If an Admin or User admin can still sign in, clear the lock from **Settings > Users** instead; see [Unlock a user](users.md#unlock-a-user). Use the steps on this page only when every Admin and User admin account has a lockout, or no one has those credentials, so nobody can reach the **Users** tab at all.
 
-This talks to Zitadel, the identity provider behind Access Analyzer sign-in, directly with `kubectl` and `curl` instead of through the product API. It needs `kubectl` access to the cluster running Access Analyzer, but not a working Access Analyzer session.
+This procedure talks directly to Zitadel, the identity provider behind Access Analyzer sign-in, with `kubectl` and `curl` instead of through the product API. It needs `kubectl` access to the cluster running Access Analyzer, but not a working Access Analyzer session.
 
 There's no bulk unlock. Repeat the lookup and unlock steps once per locked account.
 
@@ -27,7 +27,7 @@ grep hostname /etc/dspm/installer.yaml
    kubectl port-forward svc/zitadel 8085:8080 -n access-analyzer &
    ```
 
-   The tunnel only answers on `localhost` on the machine that opened it. To close it when you finish, run `kill %1`.
+   The tunnel answers only on `localhost` on the machine that opened it. To close it when you finish, run `kill %1`.
 
 2. Look up the locked account by sign-in name. Substitute your hostname for `<hostname>` and the account's sign-in name for `<login-name>`.
 
@@ -61,7 +61,7 @@ grep hostname /etc/dspm/installer.yaml
      -d '{}'
    ```
 
-   A successful unlock returns `{}`. If the user wasn't locked, Zitadel returns "User is not locked", which is harmless.
+   A successful unlock returns `{}`. If the user wasn't locked, Zitadel returns "User isn't locked", which is harmless.
 
 4. Repeat step 2's lookup. The account's `state` should now read `USER_STATE_ACTIVE`. Have the user sign in again.
 
