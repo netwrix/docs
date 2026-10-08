@@ -121,7 +121,7 @@ The updater adopts the constraint and restores its annotation itself. You don't 
 
 ## Air-Gapped: Redeploy Older Offline Media
 
-A `dspmctl` rollback works only while the older release's charts and images are still in the cluster. They stay there after an upgrade, so this is normally the case. If they're gone, redeploy the older release's offline media:
+A `dspmctl` rollback works only while the older release's charts and images are still in the cluster. They normally stay there after an upgrade. If they're gone, redeploy the older release's offline media:
 
 ```bash
 sudo dspm-installer upgrade --bundle-dir /path/to/older-dspm-airgap-media --allow-downgrade --dry-run
