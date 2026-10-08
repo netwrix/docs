@@ -85,7 +85,7 @@ A federated user doesn't get a password. They sign in through Active Directory o
 | **Name must be at least 2 characters** | The name is too short. |
 | **Name is too long** | The name is over 100 characters. |
 | **Invalid email format** | The email isn't a valid address. |
-| **Password is required when setting it explicitly** | **Set explicitly** is selected and the password is empty. |
+| **Password is required when setting it explicitly** | You selected **Set explicitly** and left the password empty. |
 | **Password must be at least 12 characters** | The typed password is too short. |
 
 ## Edit a User
