@@ -4,7 +4,7 @@ description: Server sizing, hostname, network ports, TLS certificate, license ke
 sidebar_position: 1
 ---
 
-Gather everything on this page before you run the installer. The installer runs a preflight check on the server first and stops if the server doesn't meet the hard requirements, so a few minutes here saves a failed installation later.
+Gather everything on this page before you run the installer. The installer runs a preflight check on the server first and stops if the server doesn't meet the hard requirements, so checking these requirements first helps prevent a failed installation.
 
 ## Server
 
