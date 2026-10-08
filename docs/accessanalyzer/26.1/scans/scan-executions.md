@@ -19,7 +19,7 @@ Go to **Configuration > Scan executions**. The page refreshes itself every 3 sec
 | **Source** | The source this execution ran against. |
 | **Source Type** | The source's type, such as **File Server**. |
 | **Status** | The execution's status; see [Execution statuses](#execution-statuses). |
-| **Progress** | How many objects the execution has processed so far, or in total after it has finished. A Sensitive data scan shows a bar and a count of files, such as **6 / 7 files**, against an estimated total. See [What counts as an object](#what-counts-as-an-object). |
+| **Progress** | How many objects the execution has processed so far, or in total after it has finished. A Sensitive data scan shows a bar and a count of files, such as **6 / 7 files (est.)**, against an estimated total. See [What counts as an object](#what-counts-as-an-object). |
 | **Duration** | How long the execution ran, or has been running. |
 | **Started** | When Access Analyzer created the execution. |
 | **Actions** | The row menu with **View logs** and, while the run is active, **Pause**, **Resume**, or **Stop**. |
@@ -40,7 +40,7 @@ An object is one item the execution counted. What counts depends on the scan typ
 |---|---|---|
 | **Access** | **File Server** | A share, a folder, or a file. The share also stands for its top-level folder, so that folder doesn't count a second time. |
 | **Access** | **SharePoint Online** | A site collection, a site, a list or library, a folder, or a file or list item. |
-| **Sensitive data** | **File Server** | A file the scan classified, whether it had findings or not. Empty files, and files that the [classification settings](scan-types.md#prerequisites) leave out for size or extension, aren't part of the scan, so they don't count. |
+| **Sensitive data** | **File Server** | A file the scan processed, whether it was clean, had findings, or couldn't be read. Empty files, and files that the [classification settings](scan-types.md#prerequisites) leave out for size or extension, aren't part of the scan, so they don't count. |
 | **Sensitive data** | **SharePoint Online** | A document the scan checked. Documents it skips because they're empty, or because the [classification settings](scan-types.md#prerequisites) leave them out for size or extension, still count. |
 | **Identity sync** | **Active Directory** | A user or a group. Group memberships don't count separately. |
 | **Identity sync** | **Entra ID** | A user, a group, or another directory object the sync reads. |
@@ -53,9 +53,9 @@ The count belongs to one run and starts from zero each time:
 - A Sensitive data scan with **Differential scan** on counts only the files that are new or changed since the last run, so a later run on a quiet File Server source can show a handful of files, or none.
 - An Active Directory Identity sync with **Enable differential scan** on counts only the users and groups that changed since the previous sync, including deleted ones.
 
-For example, a share with 4 folders and 6 text files shows 11 for an Access scan and **6 / 6 files** for a Sensitive data scan. Add an empty file, a `.jpg` image, and one more text file, and run both scans again: the Access scan shows 14, a full Sensitive data scan shows **7 / 7 files**, and a Sensitive data scan with **Differential scan** on shows **1 / 1 files**.
+For example, a share with 4 folders and 6 text files shows 11 for an Access scan and **6 / 6 files (est.)** for a Sensitive data scan. Add an empty file, a `.jpg` image, and one more text file, and run both scans again: the Access scan shows 14, a full Sensitive data scan shows **7 / 7 files (est.)**, and a Sensitive data scan with **Differential scan** on shows **1 / 1 files (est.)**.
 
-While a run is active, the count rises in steps rather than one object at a time, because Access Analyzer records objects in batches. SharePoint Online Access scans and Entra ID Identity syncs report their progress about every 5 minutes. The final count appears when the run finishes. A folder the scan can't open still counts as one object, but its contents don't; the run then ends as **Completed with errors**.
+While a run is active, the count rises in steps rather than one object at a time, because Access Analyzer records objects in batches. SharePoint Online Access scans and Entra ID Identity syncs report their progress about every 5 minutes. The final count appears when the run finishes. On a File Server Access scan, a folder the scan can't open still counts as one object, but its contents don't; the run then ends as **Completed with errors**.
 
 Child rows for follow-up steps don't show a count; the parent row carries it.
 
