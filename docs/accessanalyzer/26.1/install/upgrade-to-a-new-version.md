@@ -11,7 +11,7 @@ How you upgrade Access Analyzer depends on the mode you installed it in. An **ai
 
 Both modes use `dspmctl`, a small shell wrapper the installer drops at `/usr/local/bin/dspmctl`. It runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace, and that pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
 
-Run `dspmctl` and `dspm-installer` with `sudo`. The default kubeconfig at `/etc/rancher/k3s/k3s.yaml` is readable only by root, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
+Run `dspmctl` and `dspm-installer` with `sudo`. Only root can read the default kubeconfig at `/etc/rancher/k3s/k3s.yaml`, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
 :::note
 On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` and `dspmctl` can fail with `command not found`. Run them by their full paths instead, for example `sudo /usr/local/bin/dspm-installer` or `sudo /usr/local/bin/dspmctl`.
@@ -109,7 +109,7 @@ A rollback is a re-pin. The previous chart tag and images stay in the cluster, s
 sudo kubectl -n argocd get application netwrix \
   -o jsonpath='{.metadata.annotations.dspm\.netwrix\.com/previous-target-revision}'
 sudo dspmctl set-revision netwrix v<previous>
-sudo dspmctl sync netwrix
+sudo dspmctl sync netwrix --prune
 sudo dspmctl enable-auto netwrix
 sudo dspm-installer wait-for-apps
 ```
@@ -147,8 +147,10 @@ If you pinned a specific version at install time, or want to pin one now, follow
 2. Trigger the sync. `set-revision` disables auto-sync, so nothing deploys until you run this command.
 
    ```bash
-   sudo dspmctl sync netwrix
+   sudo dspmctl sync netwrix --prune
    ```
+
+   `--prune` deletes resources the new release no longer includes. Without it, those leftover resources can keep the app showing as not healthy even after the upgrade completes.
 
 3. Turn auto-sync back on so later releases in the pinned range deploy without manual steps.
 
@@ -195,7 +197,7 @@ sudo kubectl rollout restart deploy/dspmctl -n argocd
 sudo kubectl rollout status deploy/dspmctl -n argocd
 sudo kubectl exec -n argocd deploy/dspmctl -- argocd version --client   # should print instantly now
 sudo dspmctl set-revision netwrix 1.1.2
-sudo dspmctl sync netwrix
+sudo dspmctl sync netwrix --prune
 ```
 
 If `argocd version --client` still hangs after the restart, `dspmctl` isn't usable in that environment. Everything `dspmctl` does is an edit to the `netwrix` ArgoCD `Application` object, so make the same changes directly with `kubectl` from the host.
