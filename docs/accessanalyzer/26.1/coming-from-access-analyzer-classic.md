@@ -10,7 +10,7 @@ Access Analyzer doesn't convert an Access Analyzer Classic installation. Data th
 
 ## Concept Mapping
 
-| Access Analyzer Classic | Access Analyzer | What's different |
+| Access Analyzer Classic (Windows) | Access Analyzer (Linux) | What's different |
 |---|---|---|
 | Host | [Source](sources/index.md) | A source is one system that Access Analyzer scans, and its source type is **File Server**, **Active Directory**, **Entra ID**, or **SharePoint Online**. A File Server source covers a Windows, NetApp, Dell PowerScale, or Nutanix Files server. |
 | Host List | [Labels](sources/labels.md) on sources, or a scan's list of **Specific sources** | There are no host lists. A scan targets either a fixed list of sources (**Specific sources**) or every source that carries a set of `key=value` labels (**Sources matching labels**). A label rule picks up sources labeled later, much like a dynamic host list. |
