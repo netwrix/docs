@@ -85,7 +85,7 @@ A federated user doesn't get a password. They sign in through Active Directory o
 | **Name must be at least 2 characters** | The name is too short. |
 | **Name is too long** | The name is over 100 characters. |
 | **Invalid email format** | The email isn't a valid address. |
-| **Password is required when setting it explicitly** | **Set explicitly** is selected and the password is empty. |
+| **Password is required when setting it explicitly** | You selected **Set explicitly** and left the password empty. |
 | **Password must be at least 12 characters** | The typed password is too short. |
 
 ## Edit a User
@@ -119,6 +119,8 @@ If you chose **Generate**, the **Password generated** dialog appears as it does 
 An account locks after three consecutive wrong passwords or five consecutive wrong two-factor verification codes. The sign-in page then shows "Account locked. Contact your administrator." An Admin or User admin clears the lock with **Unlock**.
 
 On the row, click **Actions > Unlock**. A message confirms **User "`<name>`" unlocked**. Unlocking doesn't change the password; if the user has forgotten it, also click **Actions > Reset password**.
+
+If every Admin and User admin account is locked out and nobody can reach this tab, see [Unlock a user without admin access](unlock-a-user-without-admin-access.md).
 
 ## Delete a User
 
