@@ -13,6 +13,10 @@ Both modes use `dspmctl`, a small shell wrapper the installer drops at `/usr/loc
 
 Run `dspmctl` and `dspm-installer` with `sudo`. Only root can read the default kubeconfig at `/etc/rancher/k3s/k3s.yaml`, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
+:::note
+On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` and `dspmctl` can fail with `command not found`. Run them by their full paths instead, for example `sudo /usr/local/bin/dspm-installer` or `sudo /usr/local/bin/dspmctl`.
+:::
+
 ## Check Which Version Is Running
 
 Start by checking which version is running:
@@ -46,7 +50,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
    export LICENSE_KEY='<license-key>'
    ```
 
-2. Download the installer and the offline media for the new release. Clear `/etc/dspm/dspm-media` first so files from the release you installed don't mix with the new ones.
+2. Download the installer and the offline media for the new release. Clear `/etc/dspm/media` first so files from the release you installed don't mix with the new ones.
 
    ```bash
    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
@@ -58,19 +62,19 @@ Download the latest `dspm-installer` binary along with the media, and run the up
    rm -f "$TMP_FILE"
    dspm-installer --version
 
-   sudo rm -rf /etc/dspm/dspm-media
-   sudo mkdir -p /etc/dspm/dspm-media
+   sudo rm -rf /etc/dspm/media
+   sudo mkdir -p /etc/dspm/media
    curl -Lf \
      "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-airgap-media-v${VERSION}-${ARCH}.tar.gz?auth=license:${LICENSE_KEY}&channel=stable" \
-     | sudo tar -xzf - -C /etc/dspm/dspm-media
+     | sudo tar -xzf - -C /etc/dspm/media
    ```
 
-   If the server has no network access, run these commands on a connected machine with the same architecture, then copy `/usr/local/bin/dspm-installer` and `/etc/dspm/dspm-media` to the server with `scp` or removable media. Keep the `channel=stable` parameter on every download; without it, the registry can return a pre-release build.
+   If the server has no network access, run these commands on a connected machine with the same architecture, then copy `/usr/local/bin/dspm-installer` and `/etc/dspm/media` to the server with `scp` or removable media. Keep the `channel=stable` parameter on every download; without it, the registry can return a pre-release build.
 
 3. Confirm the media extracted correctly.
 
    ```bash
-   ls /etc/dspm/dspm-media/manifest.json
+   ls /etc/dspm/media/manifest.json
    ```
 
    If this file is missing, the extraction failed or the tarball didn't download completely. Repeat step 2.
@@ -80,7 +84,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
 1. Preview the upgrade. `--dry-run` validates the media and the preconditions and prints the planned changes without touching the cluster.
 
    ```bash
-   sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-media --dry-run
+   sudo dspm-installer upgrade --bundle-dir /etc/dspm/media --dry-run
    ```
 
    The summary shows the installed version, the version in the media, and the k3s, offline package manager, and ArgoCD versions on each side. Fix anything it reports before you continue.
@@ -88,7 +92,7 @@ Download the latest `dspm-installer` binary along with the media, and run the up
 2. Run the upgrade.
 
    ```bash
-   sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-media
+   sudo dspm-installer upgrade --bundle-dir /etc/dspm/media
    ```
 
    The command loads the chart snapshot and container images into the cluster, applies the bundled ArgoCD manifest, re-seeds the registry pull secret into every application namespace, then re-pins the `netwrix` app to the new version and records the previous version in the `dspm.netwrix.com/previous-target-revision` annotation. It then waits for every application to become Synced and Healthy. The wait defaults to 30 minutes; pass `--timeout` with a duration such as `45m` to change it.
