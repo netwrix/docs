@@ -61,7 +61,7 @@ grep hostname /etc/dspm/installer.yaml
      -d '{}'
    ```
 
-   A successful unlock returns `{}`. If the user wasn't locked, Zitadel returns "User isn't locked", which is harmless.
+   A successful unlock returns `{}`. If the user wasn't locked, Zitadel returns `User is not locked`, which is harmless.
 
 4. Repeat step 2's lookup. The account's `state` should now read `USER_STATE_ACTIVE`. Have the user sign in again.
 
