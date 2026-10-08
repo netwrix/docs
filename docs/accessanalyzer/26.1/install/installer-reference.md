@@ -260,7 +260,7 @@ Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a 
 `upgrade` moves an airgap install to a newer release from newer offline media. It loads the new release's chart snapshot and container images into the cluster, applies the bundled ArgoCD manifest and the installer's ArgoCD overlay, re-seeds the registry pull secret into every application namespace, re-pins the `netwrix` ArgoCD application to the new version, and waits for every application to become Synced and Healthy. It records the previous version in the `dspm.netwrix.com/previous-target-revision` annotation on the `netwrix` application. See [Upgrade to a New Version](upgrade-to-a-new-version.md) for the full procedure, including the media download and rollback.
 
 ```bash
-sudo dspm-installer upgrade --bundle-dir /etc/dspm/dspm-media
+sudo dspm-installer upgrade --bundle-dir /etc/dspm/media
 ```
 
 Run it with the `dspm-installer` binary from the release you're upgrading to. It reads only the cluster and the media: it doesn't read or write `/etc/dspm/installer.yaml`, and the prompts, preflight checks, and platform setup don't run. It upgrades the Access Analyzer services and ArgoCD but not the k3s platform or the offline package manager; if the media targets a different version of either, it prints a warning naming both versions and continues with the installed ones.

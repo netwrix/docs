@@ -7,12 +7,12 @@ sidebar_position: 4.1
 If an upgrade causes problems, you can move Access Analyzer back to an earlier release. There's no dedicated `down` or `downgrade` command. A rollback re-points ArgoCD at the older release, using the same mechanism as an upgrade.
 
 :::warning
-A rollback changes only the application. Any database schema changes that the newer release made stay in place. If the newer release changed the schema, the older release may fail to start against it. Read [Before you roll back](#before-you-roll-back) first.
+A rollback changes your database schema. The database setup job (`db-seeds`) runs the newer release's stored down migrations against both Postgres and ClickHouse, and those migrations can drop columns and tables. The backup in [Before you roll back](#before-you-roll-back) covers Postgres only, so ClickHouse (scan results and reporting data) has no backup behind it. Read that section first.
 :::
 
 ## Before You Roll Back
 
-1. **Find out whether the upgrade changed the database schema.** Check the release notes for every version between the one you're on and the one you want to go back to, or ask Netwrix Support. If any of them changed the schema, don't roll back on your own. Contact Netwrix Support.
+1. **Confirm the last upgrade finished cleanly.** If an earlier upgrade failed partway through its database migrations, the schema is marked dirty and `db-seeds` refuses to roll back. Fix that failure first, or contact Netwrix Support.
 2. **Take a database backup.** Trigger an on-demand Postgres backup and wait for it to finish:
 
    ```bash
@@ -20,7 +20,7 @@ A rollback changes only the application. Any database schema changes that the ne
    sudo kubectl get jobs -n access-analyzer -w
    ```
 
-   This backs up Postgres only. It doesn't include ClickHouse (scan results and reporting data).
+   This backs up Postgres only. It doesn't include ClickHouse (scan results and reporting data), and a rollback can change the ClickHouse schema too.
 3. **Note the version you're rolling back to**, for example `1.1.2`.
 
 ## Choose a Method
@@ -41,7 +41,7 @@ You need the **Administrator** role.
 
 The app is unavailable for a short time while it redeploys. Reload the page when it finishes.
 
-This pins the install to the version you chose. Automatic updates stop until you select a version again.
+This pins the install to the version you chose. Selecting a version also clears the annotation that lets the automatic updater move the install, so you don't need the extra step the `dspmctl` method requires. Automatic updates stop until you [resume them](#resume-automatic-updates).
 
 Air-gapped installs don't show a version picker. Use `dspmctl` instead.
 
@@ -70,7 +70,7 @@ Run these commands on the install host. `dspmctl` needs `sudo` because the k3s k
    sudo kubectl annotate application netwrix -n argocd dspm.netwrix.com/target-revision-managed-by-
    ```
 
-   Skip this step and the updater upgrades the install back to the newest release within 12 hours. The command prints `annotation ... unannotated` on success, or `not found` if the annotation was already absent. Both are fine.
+   Skip this step and the updater upgrades the install back to the newest release within 12 hours. Removing the annotation takes the install off automatic updates until you [resume them](#resume-automatic-updates).
 
 3. Apply the change:
 
@@ -105,9 +105,19 @@ sudo kubectl -n argocd get application netwrix \
   -o jsonpath='{.metadata.annotations.dspm\.netwrix\.com/previous-target-revision}'
 ```
 
-It also prints the exact rollback command when it finishes, and when it fails after switching versions.
+It also prints a rollback command when it finishes, and when it fails after switching versions. That command is the short form: it runs `sync` without `--prune`. Add `--prune` as in step 3 of the `dspmctl` procedure.
 
 Online upgrades don't record this. Check the release notes or your change records.
+
+## Resume Automatic Updates
+
+Connected installs only. After a rollback, the install stays on the version you chose. To return to automatic updates, set the revision to a version constraint again:
+
+```bash
+sudo dspmctl set-revision netwrix '1.*'
+```
+
+The updater adopts the constraint and restores its annotation itself. You don't add it back by hand.
 
 ## Air-Gapped: Redeploy Older Offline Media
 
@@ -124,8 +134,7 @@ Without `--allow-downgrade`, `upgrade` refuses media that's the same as or older
 
 ## What a Rollback Doesn't Do
 
-- **It doesn't reverse database schema changes.** The older release starts against the newer schema. If the newer release added Postgres migrations, expect the database setup job (`db-seeds`) to fail on the older release because it doesn't recognize the schema version. Contact Netwrix Support. Don't try to fix the schema by hand.
-- **It doesn't restore data.** Data created or changed on the newer release stays. To return to the data as it was before the upgrade, restore a backup taken before you upgraded. Support can help with that.
+- **It doesn't restore dropped data.** `db-seeds` rolls the Postgres and ClickHouse schemas back to match the older release by running the down migrations that each release stores in the database. Those migrations can drop columns and tables, and the data in them is gone. Data created or changed on the newer release stays. To return to the data as it was before the upgrade, restore a backup taken before you upgraded. Support can help with that.
 - **It doesn't downgrade the host.** It leaves k3s, ArgoCD's own version on connected installs, and the installer binary as they are.
 
 ## Troubleshooting
@@ -136,6 +145,8 @@ Without `--allow-downgrade`, `upgrade` refuses media that's the same as or older
 sudo kubectl rollout restart deploy/dspmctl -n argocd
 sudo kubectl rollout status deploy/dspmctl -n argocd
 ```
+
+**`db-seeds` fails with "database schema is ahead of this release's newest migration."** The stored down migrations are missing or the chain between the current schema and the older release is broken, so `db-seeds` can't roll back safely. Contact Netwrix Support. Don't edit the schema by hand: the stored down migrations are the source of truth for the rollback, and manual changes break the chain `db-seeds` validates.
 
 **The install upgraded itself again after a rollback.** You skipped step 2 of the `dspmctl` rollback. Run it, then repeat steps 1, 3, and 4.
 
