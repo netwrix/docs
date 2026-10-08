@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Connect one Microsoft 365 tenant's SharePoint Online sites and OneDrive drives to Access Analyzer and run two scans: an Access scan that collects sites, permissions, and sharing links, and a Sensitive data scan that classifies the documents the Access scan found. At the end you'll have data in the Data security dashboard and the SharePoint reports.
 
-Access Analyzer calls the source type **SharePoint Online**. It signs in to the tenant as an application with a certificate, so setup is a round trip between Access Analyzer and the Microsoft Entra app registration.
+Access Analyzer calls the source type **SharePoint Online**. It signs in to the tenant as an application with a certificate, so setup moves back and forth between Access Analyzer and the Microsoft Entra app registration.
 
 ## Before You Start
 
@@ -85,7 +85,7 @@ Run the Access scan first. The Sensitive data scan in step 6 classifies document
 
 ![Create scan Review step with the scan named and the summary shown](/images/accessanalyzer/26.1/scans/create-scan-5-review-named.webp)
 
-When you're ready to narrow the scan, edit it and select **Customize this source** on the **Configure** step. **Include site collections** limits the scan to the site collections you list and takes no wildcards; **Exclude site collections** and **Exclude object URLs** accept the `*` wildcard. Keep **Workers** at 4 unless the tenant has SharePoint Online prioritization (adaptive throttling) turned on; even then, 32 is the practical maximum before throttling cancels out the gain. Every Access scan is a full crawl of the sites in scope; there is no differential option. [Scan types](../scans/scan-types.md) describes each setting.
+When you're ready to narrow the scan, edit it and select **Customize this source** on the **Configure** step. **Include site collections** limits the scan to the site collections you list and takes no wildcards; **Exclude site collections** and **Exclude object URLs** accept the `*` wildcard. Keep **Workers** at 4 unless the tenant has SharePoint Online prioritization (adaptive throttling) turned on; even then, 32 is the practical maximum, because beyond that throttling offsets any speed gained from more workers. Every Access scan is a full crawl of the sites in scope; there is no differential option. [Scan types](../scans/scan-types.md) describes each setting.
 
 ## 5. Watch the Execution
 
