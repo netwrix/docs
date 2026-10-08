@@ -25,7 +25,7 @@ A Service Account is a saved credential that Access Analyzer uses to authenticat
 
 ## Agent and the System Agent
 
-An Agent is a Linux machine that runs Access Scans. Every installation has the System agent, which runs on the Access Analyzer server and appears as **Default Agent** on the agents page; every scan runs there unless you route it elsewhere. Deploy more agents to reach segmented networks, keep scan traffic near the data, or take load off the server. An agent named `agent-london` in the London office scans the file servers there, so the traffic stays local. [Agents](agents/index.md) explains when and how to add one.
+An Agent is a Linux machine that runs Access Scans. Every installation has the System agent, which runs on the Access Analyzer server and appears as **Default Agent** on the agents page; every scan runs there unless you route it elsewhere. Deploy more agents to reach segmented networks, keep scan traffic near the data, or reduce the load on the server. An agent named `agent-london` in the London office scans the file servers there, so the traffic stays local. [Agents](agents/index.md) explains when and how to add one.
 
 ## Label
 
