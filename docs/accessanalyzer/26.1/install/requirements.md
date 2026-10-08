@@ -15,7 +15,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Operating system | Ubuntu or Red Hat Enterprise Linux (RHEL). Any Debian-based or RPM-based distribution should work. The installer doesn't check the release version. RHEL and CentOS need some [additional preparation](installer-reference.md#rhel-and-centos-preparation). |
 | Architecture | 64-bit x86 or Arm. |
 | Access | Root, either directly or through `sudo`. |
-| Free disk on `/var/lib` | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib`. |
+| Free disk on the storage volume | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib` by default. To put it on a different mount, pass `--storage-dir` at install time. See [Installer reference](installer-reference.md#flags). Keep about 10 GB free on `/var/lib` either way, because the platform keeps pod-local storage there. |
 | Free disk for the install media | About 16 GB free on the volume that holds the media. See [Install media](#install-media). |
 
 On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
@@ -43,7 +43,7 @@ If you want the data on a different volume, the installer accepts custom data di
 
 A connected install works the way an air-gapped install does. The installer downloads the release's offline media from Netwrix, verifies it, and installs from it. The cluster stays connected to the internet, but it doesn't pull charts and images from the Netwrix registry. They come from a registry and a git server inside the cluster.
 
-The media needs disk space while the installer works with it. Allow about **16 GB free** on the volume that holds the media. The preflight check warns (`media-disk`) when there is less. Before it downloads, the installer also checks for room for four times the media's size, about 13 GB, and stops with exit code `16` if there isn't enough.
+The media needs disk space while the installer works with it. Allow about **16 GB free** on the volume that holds the media. The preflight check warns (`media-disk`) when there is less. Before it downloads, the installer also checks for room for four times the media archive's size, less any part of the archive already downloaded, and stops with exit code `16` if there isn't enough. Because a partial download counts toward that total, running the command again after an interrupted download needs less free space than the first attempt.
 
 The installer stores the media in one of these directories:
 

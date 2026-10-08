@@ -42,8 +42,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](requirements.md#size) for the CPU, RAM, and disk each size requires. |
 | `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. The installer refuses a release older than itself and exits with code `16`. Also appears as **Target Revision** under **Show advanced settings?**. |
 | `--progress` | `DSPM_PROGRESS` | `auto` | Download progress style: `auto`, `bar`, `ascii`, or `lines`. Also applies to `upgrade`. See [Download progress](run-the-installer.md#download-progress). |
-| `--storage-dir` | none | none | Parent directory for the install media. The media goes in `<dir>/dspm/media`. See [Install media](requirements.md#install-media). |
-| `--tmp-dir` | none | none | Parent directory for the install media. The media goes in `<dir>/dspm/media`, and `--tmp-dir` wins over `--storage-dir`. See [Install media](requirements.md#install-media). |
+| `--storage-dir` | `DSPM_STORAGE_DIR` | `/var/lib` | Directory holding everything the Kubernetes platform writes: container image layers, the server datastore, and every persistent volume. Set it at install time only. It also moves the install media to `<dir>/dspm/media`. Also appears as **Storage Directory** under **Show advanced settings?**. See [Install media](requirements.md#install-media). |
 | `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
 | `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen that appears when the configuration file already supplies every required value. |
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
@@ -84,6 +83,7 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 | `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
 | `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all Access Analyzer data. Prompts for confirmation unless you pass `--force`. |
 | `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
+| `--tmp-dir` | `DSPM_TMP_DIR` | none | Hidden from `--help`. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](requirements.md#install-media). |
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 
@@ -167,7 +167,7 @@ The `upgrade`, `update-cert`, and `rollback-cert` commands return their own code
 
 ## Preflight Checks
 
-Twelve checks run before the installer changes anything on the server, in the order the following table lists them. Each ends as PASS, WARN, or FAIL. The installer prints only WARN and FAIL results, as `  [FAIL] <check> <message>` or `  [WARN] <check> <message>`. Any FAIL stops the install; `--accept-warnings` doesn't override it. Any WARN stops it too unless you answer **Yes** to **Continue despite these warnings?** or pass `--accept-warnings`.
+The following checks run before the installer changes anything on the server, in the order the table lists them. Which disk checks run depends on the install mode. Each ends as PASS, WARN, or FAIL. The installer prints only WARN and FAIL results, as `  [FAIL] <check> <message>` or `  [WARN] <check> <message>`. Any FAIL stops the install; `--accept-warnings` doesn't override it. Any WARN stops it too unless you answer **Yes** to **Continue despite these warnings?** or pass `--accept-warnings`.
 
 The installer compares RAM and disk against their thresholds with a 5% tolerance, so a virtual machine provisioned at exactly the stated figure passes. It compares CPU cores exactly.
 
@@ -177,10 +177,10 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 | `cpu` | CPU cores against the minimum for the chosen size. | FAIL | `<n> CPU cores; the <size> size requires <n>` |
 | `disk` | Free space on `/var/lib` against the 40 GB floor. | FAIL | `<n> GB free on /var/lib; at least 40 GB is needed to install` |
 | `disk` | Free space on `/var/lib` against the size's recommended disk. | WARN | `<n> GB free on /var/lib; the <size> size is designed to hold <n> GB, so it will run out as data accumulates` |
+| `media-disk` | Connected installs only. Free space for the install media, about 16 GB, on the volume that holds the [media directory](requirements.md#install-media). | WARN | `<n> GB free on <path>; the install media is downloaded and expanded there and wants about 16 GB, checked exactly before the download — point --tmp-dir or --storage-dir at a larger volume` |
 | `cgroups` | The kernel exposes cgroups at `/sys/fs/cgroup`. | FAIL | `cgroups not available at /sys/fs/cgroup` |
 | `kernel-modules` | The kernel has the `br_netfilter` and `overlay` modules loaded or built in. The install loads missing modules itself, so this check warns only when it can't inspect a module, or during a dry run when a module isn't loaded. | WARN | `kernel module issues: <module>: could not check module: <error>` or `kernel module issues: <module>: not loaded (dry run; will not be modprobed)` |
 | `os` | The Linux distribution belongs to a recognized family. | WARN | `unrecognised Linux distribution; installation may not be supported` |
-| `media-disk` | Free space for the install media, about 16 GB, on the volume that holds the [media directory](requirements.md#install-media). | WARN | A message that the volume has too little free space for the media. |
 | `selinux` | SELinux isn't in enforcing mode. | WARN | The message says SELinux is enforcing and asks you to allow the platform's container policy or set SELinux to permissive. |
 | `antivirus` | The server has no known antivirus product installed or running: `mdatp`, CrowdStrike, ClamAV, Sophos, Carbon Black, or Trend Micro. | WARN | `antivirus software detected: <product> (exclusion hint: <hint>)` |
 | `network` | Each required host resolves in DNS and accepts a connection on port 443 within 5 seconds. The hosts are `api.keygen.sh` and the media download host. On an SELinux-enforcing host, the check also tests `api.github.com` and `rpm.rancher.io`. | FAIL when a name doesn't resolve; WARN when a connection times out or the host refuses it | `DNS resolution failed for: <hosts>` or `connection failed (timeout/refused) for: <hosts>` |
