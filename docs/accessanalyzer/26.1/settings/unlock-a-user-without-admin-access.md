@@ -36,7 +36,7 @@ grep hostname /etc/dspm/installer.yaml
      -H "Host: <hostname>" \
      -H "Authorization: Bearer $PAT" \
      -H "Content-Type: application/json" \
-     -d '{"query": {"offset": "0", "limit": 100}, "queries": [{"loginNameQuery": {"loginName": "<login-name>"}}]}'
+     -d '{"query": {"offset": "0", "limit": 100}, "queries": [{"userNameQuery": {"userName": "<login-name>"}}]}'
    ```
 
    If this returns no results, the sign-in name doesn't match what Zitadel has on record. Drop the `queries` filter to list every account instead, and find the one you need in the output:
