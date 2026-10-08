@@ -89,7 +89,7 @@ When you're ready to narrow the scan, edit it and select **Customize this source
 
 ## 5. Watch the Execution
 
-Go to **Configuration > Scan executions**. The list refreshes on its own, and the **Objects** column grows as the scan reads the tenant. A first scan of a large tenant takes a while.
+Go to **Configuration > Scan executions**. The list refreshes on its own, and the **Progress** column grows as the scan reads the tenant, about every 5 minutes. A first scan of a large tenant takes a while.
 
 ![Scan executions list](/images/accessanalyzer/26.1/scans/executions-list.webp)
 

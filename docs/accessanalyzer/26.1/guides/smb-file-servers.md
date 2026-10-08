@@ -96,7 +96,7 @@ Go to **Configuration > Scan executions** and find the row for your scan. The li
 
 ![Scan executions list showing a completed File Server Access scan](/images/accessanalyzer/26.1/scans/executions-list.webp)
 
-The status moves from **Pending** to **Running** and ends at **Completed**, **Completed with errors**, or **Failed**. The **Objects** and **Duration** columns fill in as the scan works. To follow along, open the row's actions menu and click **View logs**: the **Overview** tab shows milestones such as when the scan started and how long it took, and the **Detailed logs** tab shows every message.
+The status moves from **Pending** to **Running** and ends at **Completed**, **Completed with errors**, or **Failed**. The **Progress** and **Duration** columns fill in as the scan works. To follow along, open the row's actions menu and click **View logs**: the **Overview** tab shows milestones such as when the scan started and how long it took, and the **Detailed logs** tab shows every message.
 
 ![Execution logs dialog on the Overview tab](/images/accessanalyzer/26.1/scans/execution-logs-overview.webp)
 
