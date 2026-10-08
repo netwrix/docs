@@ -22,18 +22,16 @@ You can create data sources for the following providers:
 - [ODBC](#create-a-data-source-for-odbc)
 - [SCIM](#create-a-data-source-for-scim)
 
-You can host Excel, Access, and Text/CSV files on a local server or on OneDrive.
-
-## OneDrive Configuration
+## OneDrive configuration
 
 Excel, Access, and Text/CSV data sources can use a file hosted on OneDrive. Before you create a
 data source for a OneDrive file, complete the following requirements.
 
 ### App registration permissions
 
-The application you registered in Microsoft Entra Admin Center for Directory Manager (see
-[Registration and Permissions Assignment](../../configureentraid/register/appregister.md)) must have
-the following application API permission:
+The application you registered for Directory Manager in Microsoft Entra Admin Center must have the
+following application API permission. For registration steps, see
+[Registration and Permissions Assignment](../../configureentraid/register/appregister.md).
 
 | API | Permission | Type | Description |
 | --- | --- | --- | --- |
@@ -67,13 +65,14 @@ appear on the **Overview** page of the app registration:
 Directory Manager authenticates to OneDrive through the app registration, so the Create Data Source
 page requires a client secret for it. To generate the secret:
 
-Step 1 – On the app registration, click **Certificates & secrets** in the left pane.
+Step 1 – In Microsoft Entra Admin Center, open the Directory Manager app registration and click
+**Certificates & secrets** in the left pane.
 
 Step 2 – On the **Client secrets** tab, click **New client secret**.
 
 Step 3 – Enter a description and select an expiration period, then click **Add**.
 
-Step 4 – Copy the secret **Value**.
+Step 4 – Copy the value in the **Value** column. Don't copy the **Secret ID**.
 
 :::warning
 Entra displays the secret value only once. Copy it before you leave the page. When the secret
@@ -91,6 +90,9 @@ Microsoft license that includes OneDrive, such as a Microsoft 365 license.
 The service account must own the file, and the file must reside in the service account's
 **My files** folder in OneDrive. Directory Manager can't access files that other users share with the
 service account or files that reside in another user's OneDrive.
+
+{/* TODO: Confirm whether the file can reside in a subfolder of My files, and if so, how to enter
+   the path in the File Name box. Until testing confirms it, the docs state only the My files folder. */}
 
 ## Create a Data Source for MS Excel
 
@@ -152,7 +154,7 @@ The data source is available on the Excel tab of the Data Sources page.
 
 ### When the Excel file is located on OneDrive
 
-Before you begin, complete the [OneDrive Configuration](#onedrive-configuration) requirements.
+Before you begin, complete the [OneDrive configuration](#onedrive-configuration) requirements.
 
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
@@ -180,7 +182,7 @@ Step 9 – In the Registered Tenant ID on Azure Active Directory box, enter the 
 the Directory Manager application when you registered it in Microsoft Entra Admin Center.
 
 Step 10 – Enter the name of the file in the **File Name** box. Include the file extension in the
-name, for example, Employee Contact Details.xlsx
+name, for example, `Employee Contact Details.xlsx`.
 
 Step 11 – Click **Create Data Source**.
 The data source is available on the Excel tab of the Data Sources page.
@@ -242,7 +244,7 @@ The data source is available on the Access tab of the Data Sources page.
 
 ### When the Access File is Located on OneDrive
 
-Before you begin, complete the [OneDrive Configuration](#onedrive-configuration) requirements.
+Before you begin, complete the [OneDrive configuration](#onedrive-configuration) requirements.
 
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
@@ -272,7 +274,7 @@ Step 10 – In the Registered Tenant ID on Azure Active Directory box, enter the
 the Directory Manager application when you registered it in Microsoft Entra Admin Center.
 
 Step 11 – Enter the name of the file in the File Name box. Include the file extension in the name,
-for example, Employee Medical Records.accdb.
+for example, `Employee Medical Records.accdb`.
 
 Step 12 – Click **Create Data Source**.
 The data source is available on the Access tab of the Data Sources page.
@@ -329,7 +331,7 @@ The data source is available on the Text/CSV tab of the Data Sources page.
 
 ### When the Text File is Located on OneDrive
 
-Before you begin, complete the [OneDrive Configuration](#onedrive-configuration) requirements.
+Before you begin, complete the [OneDrive configuration](#onedrive-configuration) requirements.
 
 Step 1 – In Admin Center, click **Data Sources** in the left pane.
 
@@ -360,7 +362,7 @@ Step 10 – In the Registered Tenant ID on Azure Active Directory box, enter the
 the Directory Manager application when you registered it in Microsoft Entra Admin Center.
 
 Step 11 – Enter the name of the file in the File Name box. Include the file extension in the name,
-for example, “Employee Contact Details.csv”.
+for example, `Employee Contact Details.csv`.
 
 Step 12 – Click **Create Data Source**.
 The data source is available on the Text/CSV tab of the Data Sources page.
