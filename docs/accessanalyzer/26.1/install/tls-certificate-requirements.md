@@ -14,24 +14,28 @@ Use this page to prepare a CA-issued certificate and check it **before** install
 |---|---|---|---|
 | Certificate, full chain | `/etc/dspm/tls.crt` | `--tls-cert` | Yes |
 | Private key | `/etc/dspm/tls.key` | `--tls-key` | Yes |
-| Issuing root CA | `/etc/dspm/ca-bundle.pem` | `--ca-bundle` | Yes, if an internal/private CA issued the certificate |
+| Issuing root CA | None. The interactive wizard pre-fills `/etc/dspm/ca-bundle.pem`. | `--ca-bundle` | Yes, if an internal/private CA issued the certificate |
+
+If you have a PFX/P12 file, pass it with `--tls-pfx` instead of `--tls-cert` and `--tls-key`. The installer splits it into the certificate, key, and CA bundle itself. Supply the PFX password with `--tls-pfx-password-file`, the `DSPM_TLS_PFX_PASSWORD` environment variable, or the terminal prompt. `dspm-installer update-cert` accepts the same two flags.
+
+If the PFX ends at an intermediate CA rather than the root, the CA bundle the installer derives also ends at the intermediate. Services in the cluster built with Go accept that, but Node and older Python clients may reject the certificate. Include the root in the PFX, or pass `--ca-bundle` alongside `--tls-pfx`.
 
 ### Certificate File
 
-- **PEM format.** The file starts with `-----BEGIN CERTIFICATE-----`. Convert DER (binary `.cer`/`.crt`) and PFX/P12 files first. See [Convert other formats](#convert-other-formats).
+- **PEM format.** The file starts with `-----BEGIN CERTIFICATE-----`. Convert DER (binary `.cer`/`.crt`) files first. Pass a PFX/P12 file to the installer with `--tls-pfx`, or convert it. See [Convert other formats](#convert-other-formats).
 - **Full chain, leaf first.** Put the server certificate first, then each intermediate CA, in order. The installer treats the first certificate in the file as the server certificate. If the CA certificate comes first, the installer reports that the certificate and key don't match.
 - **Subject Alternative Name (SAN) must include the hostname.** The installer ignores the Common Name (CN). A certificate with the hostname only in the CN fails validation.
-- **Not expired.** The installer warns if the certificate expires within 30 days.
+- **Not expired.** The installer notes it in the preflight output when the certificate expires within 30 days, but doesn't warn or block.
 
 ### Private Key File
 
-- **PEM format**, RSA (2048-bit or larger) or ECDSA (P-256 or P-384). The installer accepts PKCS#1 (`BEGIN RSA PRIVATE KEY`), PKCS#8 (`BEGIN PRIVATE KEY`), and EC (`BEGIN EC PRIVATE KEY`).
+- **PEM format.** The installer accepts PKCS#1 (`BEGIN RSA PRIVATE KEY`), PKCS#8 (`BEGIN PRIVATE KEY`), and EC (`BEGIN EC PRIVATE KEY`). RSA 2048-bit or larger, or ECDSA P-256 or P-384, is recommended; the installer doesn't enforce key size or curve.
 - **Unencrypted.** The installer rejects a key that begins `BEGIN ENCRYPTED PRIVATE KEY` or has a `Proc-Type: 4,ENCRYPTED` header. See [Remove a key passphrase](#remove-a-key-passphrase).
 - **Must match the certificate.**
 
 ### CA Bundle File
 
-If your organization's internal CA issued the certificate (for example, Active Directory Certificate Services), supply the **root CA certificate** in PEM format with `--ca-bundle`. Access Analyzer's own services call each other through the HTTPS hostname and must trust your CA to do so. A full-chain file leaves out the root by convention, so the installer can't find the root there.
+If your organization's internal CA issued the certificate (for example, Active Directory Certificate Services), supply the **root CA certificate** in PEM format with `--ca-bundle`. The flag is required even when the file is at `/etc/dspm/ca-bundle.pem`; the installer doesn't pick it up automatically. Access Analyzer's own services call each other through the HTTPS hostname and must trust your CA to do so. A full-chain file leaves out the root by convention, so the installer can't find the root there.
 
 Without the CA bundle, the install can finish, but the application never becomes healthy: its services can't verify the certificate and restart repeatedly.
 
@@ -139,7 +143,9 @@ sudo dspm-installer --preflight \
   --ca-bundle /etc/dspm/ca-bundle.pem
 ```
 
-Leave out `--ca-bundle` for a publicly trusted or self-signed certificate. Look for the TLS line in the output. A pass reads `certificate ... and key ... are valid; SANs cover dspm.example.com`.
+Leave out `--ca-bundle` for a publicly trusted or self-signed certificate. Look for the TLS line in the output. A pass reads `certificate ... and key ... are valid; SANs cover dspm.example.com`. If the certificate expires within 30 days, the line also includes `, expires in <n> days so renew it before install day` before the SANs clause.
+
+Always pass `--hostname`. Without it the installer skips the SAN comparison and the check still passes, with the message `; hostname not checked, pass --hostname to verify the SANs`.
 
 ### With OpenSSL
 
@@ -197,7 +203,8 @@ You can run these checks on any machine with OpenSSL, before the files reach the
 | `TLS certificate SANs do not include the configured hostname` | The hostname is only in the CN, or the SAN has a different name. | Reissue with `DNS:<hostname>` in the SAN. |
 | `TLS certificate and private key do not match` | The wrong key, the CA certificate listed first in the chain, or an encrypted key. | Put the server certificate first. Use the key generated with the CSR. Remove the passphrase. |
 | `TLS certificate has expired` | The certificate is past its end date. | Obtain a new certificate. |
-| Chain or CA bundle error | The CA bundle holds the wrong root, an intermediate is missing from the chain, or the EKU lacks serverAuth. | Supply the root that issued the chain, add missing intermediates to `tls.crt`, or reissue from a Web Server template. |
+| `TLS certificate does not chain to the provided CA bundle` | The CA bundle holds the wrong root, an intermediate is missing from `tls.crt`, or the EKU lacks serverAuth. | Supply the root that issued the chain, add missing intermediates to `tls.crt`, or reissue from a Web Server template. |
+| `TLS CA bundle file contains no valid PEM certificates` | The bundle is DER, empty, or holds only non-certificate PEM blocks. | Supply the root CA certificate in PEM format. |
 | Install finishes but the app never becomes healthy | You installed a private-CA certificate without `--ca-bundle`. | Run `dspm-installer update-cert` with `--ca-bundle`. |
 
 ## Request a Certificate From Your CA
@@ -220,6 +227,8 @@ Some CAs ignore the extensions in a CSR and apply their template instead. Check 
 ## Convert Other Formats
 
 ### PFX / P12 to PEM
+
+The installer reads a PFX directly with `--tls-pfx`, so you only need these steps to inspect or split the file yourself.
 
 ```bash
 openssl pkcs12 -in cert.pfx -clcerts -nokeys -out leaf.crt
