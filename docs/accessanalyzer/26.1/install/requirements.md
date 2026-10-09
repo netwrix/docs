@@ -59,7 +59,6 @@ Root must own every parent of the media directory, and group and other users mus
 
 A connected media install doesn't support these:
 
-- Remote scanner nodes. See [Deploy an agent](../agents/deploy-agent.md).
 - `--use-mirrored-images` or a non-default `--argocd-namespace`. The installer rejects both.
 
 ## Hostname

@@ -314,7 +314,7 @@ Before it changes anything, it checks that the kubeconfig reaches a cluster with
 | 0 | The cluster runs the new release and every application is Synced and Healthy, or the cluster already runs the newest release. |
 | 1 | Unexpected error. |
 | 10 | Netwrix rejected the license key. |
-| 15 | The command couldn't load or deploy the media. The cluster is still on the previous release. Run the command again after you fix the cause. |
+| 15 | The command couldn't load or deploy the media, and the cluster is still on the previous release. With `--migrate`, the command also exits with this code when an agent node runs on a different CPU architecture from the server. Run the command again after you fix the cause. |
 | 16 | A precondition failed. Nothing changed. |
 | 17 | The command couldn't download, verify, or unpack the media. Nothing changed. Run the command again to resume. |
 | 20 | No release matches `--target-revision`, or the release has no media for this architecture. |

@@ -21,11 +21,19 @@ A cluster installed from the registry can move onto downloaded media without a r
 sudo dspm-installer upgrade --download --migrate
 ```
 
-To convert to a specific release, add `--target-revision`. You can also convert without changing release.
+To convert and upgrade to a specific release in the same run, add `--target-revision`:
 
 ```bash
-sudo dspm-installer upgrade --download --migrate --target-revision 1.5.0
+sudo dspm-installer upgrade --download --migrate --target-revision <version>
 ```
+
+To convert without changing release, pass the installed release. Run `sudo dspmctl version` to find it.
+
+```bash
+sudo dspm-installer upgrade --download --migrate --target-revision <installed-version>
+```
+
+`--migrate` requires `--download`, so a registry install can't convert straight to air-gapped media. Convert it while it's online.
 
 `--download` reads the license key from `/etc/dspm/installer.yaml`. If the host has no saved key, pass the key through the environment, as [Upgrade from the host](upgrade-to-a-new-version.md#upgrade-from-the-host) shows.
 
@@ -34,10 +42,11 @@ sudo dspm-installer upgrade --download --migrate --target-revision 1.5.0
 The command checks these conditions. If any fail, it exits with code `16` and changes nothing.
 
 - The root application is healthy.
-- No remote scanner nodes have joined. Remove them first.
 - Automated sync is on.
 - The `access-analyzer/dspm-license` Secret exists.
 - The target release isn't older than the installed release or the installer.
+
+The conversion also refuses, with exit code `15`, while any agent node runs on a different CPU architecture from the server. The in-cluster registry holds images only for the server's architecture. The message names the nodes. A conversion that's already under way can still finish when you run it again.
 
 ### What the Conversion Does
 
@@ -72,6 +81,15 @@ sudo --preserve-env=LICENSE_KEY dspm-installer upgrade --connect
 
 Afterwards, upgrade from the **Settings** page, automatically, or with `upgrade --download`. See [Upgrade to a new version](upgrade-to-a-new-version.md).
 
+`--connect` doesn't change the release, so connecting and upgrading takes two commands:
+
+```bash
+sudo --preserve-env=LICENSE_KEY dspm-installer upgrade --connect
+sudo dspm-installer upgrade --download --target-revision <version>
+```
+
+Run `upgrade --connect` first. On an air-gapped install, `upgrade --download` refuses and exits with code `16`.
+
 `--connect` refuses a cluster that's already connected, and a cluster installed from the registry, because that cluster needs [`--migrate`](#convert-a-registry-install).
 
 :::warning
@@ -83,3 +101,5 @@ Only a reinstall can return a connected install to air-gapped.
 **The command exits with code `16`.** A precondition failed and nothing changed. Read the message, fix the condition, and run the command again.
 
 **The command exits with code `10`.** Netwrix rejected the license key. Check the key and try again.
+
+**`--migrate` exits with code `15`.** The command couldn't load the media, or an agent node runs on a different CPU architecture from the server. Read the message, fix the cause, and run the command again.

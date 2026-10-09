@@ -167,6 +167,12 @@ The installer:
 3. Unpacks the media and installs from it.
 4. Deletes the media once every application is healthy, along with media from any other release in the same directory. If the install fails, the installer keeps the media, so the next run doesn't download it again.
 
+To install a specific release instead of the newest stable one, add `--target-revision`:
+
+```bash
+sudo --preserve-env=LICENSE_KEY dspm-installer --size <size> --target-revision <version>
+```
+
 To preview the install without changing anything, add `--dry-run`. It shows what the installer would download and runs the free-space check. It never downloads or deletes media.
 
 #### Download Progress
