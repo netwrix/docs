@@ -13,6 +13,7 @@ dspm-installer upgrade --bundle-dir <path> [flags]
 dspm-installer upgrade --download [flags]
 dspm-installer upgrade --download --migrate [flags]
 dspm-installer upgrade --connect [flags]
+dspm-installer install-agent --server <url> --token <bundle> --name <name> [flags]
 dspm-installer update-cert [flags]
 dspm-installer rollback-cert [flags]
 dspm-installer --help
@@ -331,6 +332,47 @@ sudo kubectl -n argocd get configmap media-upgrade-status -o jsonpath='{.data.st
 ```
 
 The output shows the state (`running`, `succeeded`, or `failed`), the phase, the target and previous versions, the exit code, a one-line message, and the start and finish times.
+
+## The `install-agent` Command
+
+`install-agent` joins the host you run it on to an existing installation as an agent node. You don't write the command by hand: the **Deploy agent** panel generates it with a registration bundle, as [Deploy an agent](../agents/deploy-agent.md) describes. Run it as root on a separate Linux host, not on the Access Analyzer server.
+
+```bash
+sudo dspm-installer install-agent \
+  --server=https://aa.corp.example.com:6443 \
+  --token=<registration-bundle> \
+  --name='Edge agent' \
+  --label=region=eu
+```
+
+The bundle expires 30 minutes after the panel generates it, and `install-agent` refuses a bundle with less than 10 minutes left. The `--token` value is visible in the process list while the command runs, and a bundle for a server that isn't air-gapped contains the license key. Treat the command as a credential.
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--server` | none | none | Required. The Kubernetes API server URL that the host joins, such as `https://aa.corp.example.com:6443`. It overrides the address in the bundle. It isn't the URL of the web application. |
+| `--token` | none | none | Required. The registration bundle from the **Deploy agent** panel. |
+| `--name` | none | none | Required. The agent's display name. |
+| `--label` | none | none | An agent label as `key=value`. Repeat the flag for more labels. |
+| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. Refused for a server that pulls from the registry. Without it, an agent for a connected media install downloads the media. |
+| `--accept-warnings` | none | `false` | Continue past preflight warnings without the prompt. |
+
+Before it changes the host, `install-agent` stops if the host runs the Access Analyzer server, if you don't run it as root, if the host's CPU architecture differs from the server's on a media install, or if the server's certificate doesn't cover the address in `--server`. It then runs the agent preflight, opens the firewall ports on a host that runs firewalld or ufw, and joins the host. On a media install, it downloads or unpacks the release's media first, keeps it in `/var/lib/dspm/media`, and deletes the media it unpacked or downloaded after the agent joins.
+
+| Check | Minimum |
+|---|---|
+| Memory | 4 GB |
+| CPU cores | 2 |
+| Free disk | 5 GB. A media install needs about 7 GB for the media and its unpacked copy, and preflight warns below 8 GB. |
+
+| Code | Meaning |
+|---|---|
+| 0 | The agent joined and registered under its name. |
+| 1 | General failure, such as an invalid flag or bundle, an expired bundle, or a refusal listed in [Deploy an agent](../agents/deploy-agent.md#the-command-refuses-to-run). |
+| 10 | License key error while downloading the media. |
+| 16 | A precondition failed and nothing changed: too little free space for the media, or the media's k3s is newer than the server's. |
+| 17 | The installer couldn't download, verify, or unpack the media. Run the command again to resume. |
+| 20 | The release's media isn't available for this license key or this architecture. |
+| 80 | Preflight failed, you didn't accept its warnings, or the installer couldn't open the host firewall for firewalld or ufw. |
 
 ## The `update-cert` Command
 

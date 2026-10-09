@@ -105,7 +105,7 @@ Open these ports on the server's firewall.
 | 443 | TCP | Users' browsers and agent hosts | The Access Analyzer web application. |
 | 80 | TCP | Users' browsers | Redirects HTTP requests to HTTPS. |
 | 4504 | TCP | Netwrix Activity Monitor | Receives activity data. Open it only if you use [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md). |
-| 6443 | TCP | Agent hosts | Lets [agents](../agents/index.md) connect back to the server. Open it only to the hosts you deploy agents on. |
+| 6443 | TCP | Agent hosts | Lets [agents](../agents/index.md) join and connect back to the server. Open it only to the hosts you deploy agents on. [Deploy an agent](../agents/deploy-agent.md#prepare-the-host) lists the other ports an agent host needs. |
 
 ### Outbound
 
@@ -132,7 +132,6 @@ Some features add outbound connections of their own after you configure them.
 | Domain controllers | TCP 636 | You use Active Directory as the identity provider. The connection uses Lightweight Directory Access Protocol (LDAP) over TLS (LDAPS). |
 | Domain controllers | TCP 389 | You scan an Active Directory source. The connection uses LDAP (default port). |
 | File servers | TCP 445 | You scan an SMB file server source (default port). |
-| Agent hosts | TCP 22 | You deploy an agent over SSH (default port, configurable). |
 
 ## Browser
 
