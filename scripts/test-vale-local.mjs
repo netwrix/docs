@@ -206,6 +206,16 @@ test('guardHookCommand keeps hk\'s command and is idempotent', () => {
   }
 });
 
+// Git for Windows defaults to core.autocrlf=true, and bash fails on CRLF
+// scripts ($'\r': command not found), which aborts the anchors hook.
+test('every tracked shell script checks out with LF endings', () => {
+  const scripts = spawnSync('git', ['ls-files', '*.sh'], { cwd: REPO_ROOT, encoding: 'utf8' }).stdout.split('\n').filter(Boolean);
+  const attrs = spawnSync('git', ['check-attr', 'eol', '--', ...scripts], { cwd: REPO_ROOT, encoding: 'utf8' }).stdout;
+  for (const script of scripts) {
+    assert.match(attrs, new RegExp(`^${script.replaceAll('.', '\\.')}: eol: lf$`, 'm'), script);
+  }
+});
+
 test('guardShimFile guards hk shims in place and ignores other or missing hooks', () => {
   const dir = mkdtempSync(join(tmpdir(), 'shim-'));
   try {
