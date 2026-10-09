@@ -178,7 +178,7 @@ The installer deletes the media it unpacked after the agent joins. An extracted 
 
 2. Paste the command from the panel and press Enter.
 
-   `install-agent` downloads k3s, then writes `/etc/rancher/k3s/registries.yaml`, which points the host at the Netwrix registry with your license key. The file is readable by root only. Don't pass `--bundle-dir`; a server installed from the registry refuses it.
+   `install-agent` downloads k3s, then writes `/etc/rancher/k3s/registries.yaml`, which points the host at the Netwrix registry with your license key. Only root can read the file. Don't pass `--bundle-dir`; a server installed from the registry refuses it.
 
 3. Wait for the line `✓ Agent node "<name>" registered as <registration-ID>`.
 
@@ -229,7 +229,7 @@ The agent checks the server's certificate against the address in `--server`, as 
 
 ### The Firewall Blocks the Agent
 
-Exit code `80` means preflight failed, you didn't accept its warnings, or `install-agent` couldn't open the host firewall rules for firewalld or ufw. Read the message above the exit. Open the pod and service networks (`10.42.0.0/16` and `10.43.0.0/16`) and the ports `10250/tcp`, `8472/udp`, and `51820/udp` yourself, or fix the cause the message names, and run the command again. If a network firewall sits between the hosts, open TCP 6443, TCP 10250, and UDP 8472 on it too.
+Exit code `80` means preflight failed, you didn't accept its warnings, or `install-agent` couldn't open the host firewall rules for firewalld or ufw. Read the message that `install-agent` prints before it exits. Open the pod and service networks (`10.42.0.0/16` and `10.43.0.0/16`) and the ports `10250/tcp`, `8472/udp`, and `51820/udp` yourself, or fix the cause the message names, and run the command again. If a network firewall sits between the hosts, open TCP 6443, TCP 10250, and UDP 8472 on it too.
 
 ### The Command Refuses to Run
 
@@ -266,7 +266,7 @@ The pod network between the server and the agent host is blocked. Open UDP 8472 
 
 ### Agents Can't Join After a k3s Change
 
-`dspm-installer upgrade` leaves the server's k3s as it was installed and has no k3s upgrade. A node can't run a newer kubelet than its API server. After a release that moves k3s forward, agents can't join a media cluster that you installed from an earlier release, and `install-agent` exits with code `16`. This check doesn't affect an agent that already joined. Agents that use an older k3s than the server's are accepted.
+`dspm-installer upgrade` leaves the server's k3s as it was installed and has no k3s upgrade. A node can't run a newer kubelet than its API server. After a release that moves k3s forward, agents can't join a media cluster that you installed from an earlier release, and `install-agent` exits with code `16`. This check doesn't affect an agent that already joined. The server accepts agents that use an older k3s than its own.
 
 ### Servers Installed Before the Hostname Change
 
@@ -283,7 +283,7 @@ A server installed before the installer added the hostname to the server's certi
 3. Change the **Name** or the **Labels**. A deployed agent must keep at least one label.
 4. Click **Save changes**.
 
-**Test connection** sends a short test task through the agent and confirms it runs. It's a quick way to prove a deployed agent can accept work. Success shows **Connection successful**; a failure shows the server's message.
+**Test connection** sends a short test task through the agent and confirms it runs. Use it to confirm that a deployed agent can accept work. Success shows **Connection successful**; a failure shows the server's message.
 
 You can't rename or relabel the System agent, listed as **Default Agent**; opening **Edit** on it shows **Name** and **Labels** locked.
 
