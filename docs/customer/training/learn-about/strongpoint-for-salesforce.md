@@ -6,7 +6,7 @@ keywords: [training, course, strongpoint for salesforce]
 description: "Learn about Netwrix Strongpoint for Salesforce through introductory courses"
 ---
 
-import { NSSValue, NSSConcepts } from '@site/src/training/strongpoint-for-salesforce';
+import { NSSIntro, NSSConcepts } from '@site/src/training/strongpoint-for-salesforce';
 import { NSS } from '@site/src/training/products';
 
 
@@ -14,9 +14,9 @@ Estimated length: 26 minutes
 
 This learning path introduces you to <NSS />. It contains the following courses:
 
-* 1460 <NSS /> – Valuable Features
+* 1460 Introduction to <NSS />
 * 2460 <NSS /> – Concepts
 
-<NSSValue />
+<NSSIntro />
 
 <NSSConcepts />

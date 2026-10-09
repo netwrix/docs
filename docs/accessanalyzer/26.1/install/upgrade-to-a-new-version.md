@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 How you upgrade Access Analyzer depends on the mode you installed it in. An **airgap** install has no network access, so you download the new release's offline media on a connected machine, move it to the server, and run `dspm-installer upgrade` to load it into the cluster. An **online** install pulls new releases from the network, so you only tell ArgoCD which version to run, using `dspmctl`. Pick the tab that matches your install.
 
-Both modes use `dspmctl`, a small shell wrapper the installer drops at `/usr/local/bin/dspmctl`. It runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace, and that pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
+Both modes use `dspmctl`, a small shell wrapper the installer places at `/usr/local/bin/dspmctl`. It runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace, and that pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
 
 Run `dspmctl` and `dspm-installer` with `sudo`. Only root can read the default kubeconfig at `/etc/rancher/k3s/k3s.yaml`, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
@@ -99,24 +99,11 @@ Download the latest `dspm-installer` binary along with the media, and run the up
 
    Exit code `0` means the cluster is running the new release with every application healthy. For any other code, see [Upgrade exit codes](#upgrade-exit-codes).
 
-`--allow-downgrade` lifts the "newer version" check for an intentional redeploy of the same version or a downgrade. `--kubeconfig` and `--argocd-namespace` override the defaults if you installed with non-default values. See [The `upgrade` command](installer-reference.md#the-upgrade-command) for every flag.
+`--allow-downgrade` skips the "newer version" check for an intentional redeploy of the same version or a downgrade. `--kubeconfig` and `--argocd-namespace` override the defaults if you installed with non-default values. See [The `upgrade` command](installer-reference.md#the-upgrade-command) for every flag.
 
 ### Roll back an airgap upgrade
 
-A rollback is a re-pin. The previous chart tag and images stay in the cluster, so you don't need the old media. Read the previous version from the annotation, then run all three `dspmctl` commands: `set-revision` turns off automated sync so self-heal doesn't immediately re-sync the new version, `sync` applies it, and `enable-auto` turns automated sync back on. Skip `enable-auto` and the `netwrix` app never syncs again, and the next `dspm-installer upgrade` refuses to run.
-
-```bash
-sudo kubectl -n argocd get application netwrix \
-  -o jsonpath='{.metadata.annotations.dspm\.netwrix\.com/previous-target-revision}'
-sudo dspmctl set-revision netwrix v<previous>
-sudo dspmctl sync netwrix --prune
-sudo dspmctl enable-auto netwrix
-sudo dspm-installer wait-for-apps
-```
-
-:::warning
-A re-pin doesn't roll back database schema changes the new release made. This is the same limitation an online rollback has.
-:::
+A rollback is a re-pin: the previous chart tag and images stay in the cluster, so you don't need the old media. See [Rolling back to a previous version](roll-back-to-a-previous-version.md) for the precautions to take first and the full `dspmctl` procedure, including finding the previous version from the `previous-target-revision` annotation. The `dspmctl sync` step uses `--prune` to remove resources the older release doesn't include.
 
 ### Upgrade exit codes
 
