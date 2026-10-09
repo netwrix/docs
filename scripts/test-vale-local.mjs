@@ -19,7 +19,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
 import { applyFixes, FIXERS } from './lib/vale-autofix-rules.mjs';
-import { guardHookCommand } from './hooks/install.mjs';
+import { guardHookCommand, hasUntrustedConfig } from './hooks/install.mjs';
 import { blockingAlerts, parseChangedLines, splitByChangedLines, toViolations } from './vale-local.mjs';
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
@@ -204,6 +204,12 @@ test('guardHookCommand keeps hk\'s command and is idempotent', () => {
     assert.ok(guarded.includes(original.split('|| ')[1]), guarded);
     assert.equal(guardHookCommand(guarded), guarded);
   }
+});
+
+test('hasUntrustedConfig reads `mise trust --show` output', () => {
+  assert.equal(hasUntrustedConfig('~/Documents/docs: trusted\n'), false);
+  assert.equal(hasUntrustedConfig('/tmp/clone: untrusted\n'), true);
+  assert.equal(hasUntrustedConfig('~/Documents: trusted\n~/Documents/docs: untrusted\n'), true);
 });
 
 test('guarded hook skips branches without hk.pkl and machines without mise', { skip: process.platform === 'win32' && 'POSIX sh test' }, () => {

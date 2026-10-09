@@ -23,7 +23,7 @@ vale <file>              # Run Vale style checker on a markdown file
 
 # Vale and the git hooks (hk) are pinned in .config/mise.toml
 # macOS: brew install mise    Windows: winget install jdx.mise
-mise install             # installs Vale + hk and the pre-commit/pre-push hooks
+mise install             # installs Vale + hk and the hooks (accept the trust prompt)
 mise x -- hk check --pr  # run the hook checks on the branch's changed files
 
 # In Claude Code, prefer /docs-build and /docs-preview over running these by hand
@@ -115,4 +115,4 @@ Project hooks are in `.claude/settings.json`:
 
 Hook scripts live in `.claude/hooks/`.
 
-Git hooks are defined in `.config/hk.pkl` and installed by `mise install` or `npm install`. Pre-commit applies the mechanical Vale fixes (`scripts/vale-local.mjs`) and the anchor check. Pre-push blocks on Vale warnings on lines the branch changed since it left `dev`. The hooks use `.vale-local.ini`, which adds the local-only `DaleLocal` style; CI keeps `.vale.ini`.
+Git hooks are defined in `.config/hk.pkl` and installed by `mise install` once the user accepts mise's trust prompt for `.config/mise.toml` (`npm install` reinstalls them after that; it never trusts the config itself). Pre-commit applies the mechanical Vale fixes (`scripts/vale-local.mjs`) and the anchor check. Pre-push blocks on Vale warnings on lines the branch changed since it left `dev`. The hooks use `.vale-local.ini`, which adds the local-only `DaleLocal` style; CI keeps `.vale.ini`.

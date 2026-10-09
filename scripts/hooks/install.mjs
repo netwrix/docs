@@ -29,6 +29,9 @@ export function guardHookCommand(command) {
   return at === -1 ? command : command.slice(0, at + 3) + GUARD + command.slice(at + 3);
 }
 
+/** True when `mise trust --show` lists any config as untrusted. */
+export const hasUntrustedConfig = (showOutput) => /: untrusted\s*$/m.test(showOutput);
+
 const run = (cmd, args, opts = {}) => spawnSync(cmd, args, { cwd: REPO_ROOT, encoding: 'utf8', ...opts });
 
 // hk rewrites its hooks on every install, so re-apply the guard each time.
@@ -72,8 +75,14 @@ Then run \`mise install\` in this repo.
     return;
   }
 
+  // Trusting is left to the user: mise remembers trust per path, so trusting
+  // here would also silently trust any branch checked out at this path later.
+  if (hasUntrustedConfig(run('mise', ['trust', '--show']).stdout)) {
+    console.warn("hooks: run `mise install` in this repo and accept mise's trust prompt to turn on the Vale hooks.");
+    return;
+  }
+
   const env = { ...process.env, DOCS_HOOKS_INSTALLING: '1' };
-  run('mise', ['trust', '--quiet', join(REPO_ROOT, '.config', 'mise.toml')], { env });
   const install = run('mise', ['x', '--', 'hk', 'install', '--mise'], { env, stdio: 'inherit' });
   if (install.status !== 0) {
     console.warn('hooks: `hk install` failed; run `mise install` in this repo to retry.');

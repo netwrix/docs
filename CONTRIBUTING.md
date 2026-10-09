@@ -36,7 +36,7 @@ cd docs
 
 # Install dependencies and the git hooks
 npm install
-mise install
+mise install   # answer yes when mise asks to trust .config/mise.toml
 
 # Start development server
 npm run start
