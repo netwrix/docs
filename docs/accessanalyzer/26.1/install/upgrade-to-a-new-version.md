@@ -250,13 +250,11 @@ If you pinned a specific version at install time, or want to pin one now, follow
 
 ## Roll Back an Upgrade
 
-<!-- TODO: link to roll-back-to-a-previous-version once #1589 merges -->
-
 On a connected install, when an upgrade fails after it starts applying the new version, the **Settings** page offers **Roll back**. The button points the install back at the version the upgrade started from.
 
 From the host, a rollback is a re-pin. The previous chart tag and images stay in the cluster, so you don't need the old media. The in-cluster registry keeps only the previous release's images, so a rollback works one release back. To roll back further, you need that release's media again.
 
-Read the previous version from the annotation, then run all three `dspmctl` commands. `set-revision` turns off automated sync so self-heal doesn't immediately re-sync the new version, `sync` applies it, and `enable-auto` turns automated sync back on. If you skip `enable-auto`, the `netwrix` app never syncs again, and the next `dspm-installer upgrade` refuses to run.
+For the precautions to take first and the full procedure, see [Rolling back to a previous version](roll-back-to-a-previous-version.md). In short, read the previous version from the annotation, then run all three `dspmctl` commands. `set-revision` turns off automated sync so self-heal doesn't immediately re-sync the new version, `sync` applies it, and `enable-auto` turns automated sync back on. If you skip `enable-auto`, the `netwrix` app never syncs again, and the next `dspm-installer upgrade` refuses to run.
 
 ```bash
 sudo kubectl -n argocd get application netwrix \

@@ -13,7 +13,7 @@ An installation takes three steps, each on its own page.
 
 After the first sign-in, the [Guides](../guides/index.md) show you how to scan your first source.
 
-Once Access Analyzer is running, see [Upgrade to a new version](upgrade-to-a-new-version.md) for how new releases roll out and when you need to act. To move a registry install onto downloaded media, or to connect an air-gapped install, see [Convert or connect an install](convert-or-connect-an-install.md). To replace the TLS certificate without reinstalling, see [Rotate the TLS certificate](rotate-the-tls-certificate.md).
+Once Access Analyzer is running, see [Upgrade to a new version](upgrade-to-a-new-version.md) for how new releases roll out and when you need to act, or [Rolling back to a previous version](roll-back-to-a-previous-version.md) if an upgrade causes problems. To move a registry install onto downloaded media, or to connect an air-gapped install, see [Convert or connect an install](convert-or-connect-an-install.md). To replace the TLS certificate without reinstalling, see [Rotate the TLS certificate](rotate-the-tls-certificate.md).
 
 ## People You Need
 

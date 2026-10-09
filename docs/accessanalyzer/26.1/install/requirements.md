@@ -4,7 +4,7 @@ description: Server sizing, install media disk space, hostname, network ports, T
 sidebar_position: 1
 ---
 
-Gather everything on this page before you run the installer. The installer runs a preflight check on the server first and stops if the server doesn't meet the hard requirements, so checking these requirements first prevents a failed installation.
+Gather everything on this page before you run the installer. The installer runs a preflight check on the server first and stops if the server doesn't meet the hard requirements, so checking these requirements first helps prevent a failed installation.
 
 ## Server
 
@@ -15,7 +15,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Operating system | Ubuntu or Red Hat Enterprise Linux (RHEL). Any Debian-based or RPM-based distribution should work. The installer doesn't check the release version. RHEL and CentOS need some [additional preparation](installer-reference.md#rhel-and-centos-preparation). |
 | Architecture | 64-bit x86 or Arm. |
 | Access | Root, either directly or through `sudo`. |
-| Free disk on the storage volume | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib` by default. To put it on a different mount, pass `--storage-dir` at install time. See [Installer reference](installer-reference.md#flags). Keep about 10 GB free on `/var/lib` either way, because the platform keeps pod-local storage there. |
+| Free disk on the storage volume | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib` by default. To put it on a different mount, pass `--storage-dir` at install time. See [Storage Location](installer-reference.md#storage-location). Keep about 10 GB free on `/var/lib` either way, because the platform keeps pod-local storage there. |
 | Free disk for the install media | About 16 GB free on the volume that holds the media. See [Install media](#install-media). |
 
 On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
@@ -24,7 +24,7 @@ On a distribution the installer doesn't recognize, the preflight check reports a
 
 You pick a size when you install. The size sets the CPU and RAM the installer requires, the disk it recommends, and how much capacity Access Analyzer reserves for itself. _The default is **medium**_.
 
-| Size | CPU cores | RAM | Disk <br/> (/var/lib) | Designed for |
+| Size | CPU cores | RAM | Disk <br/> (storage volume) | Designed for |
 |---|---|---|---|---|
 | small | 8 | 32 GB | 400 GB | Up to about 25 million objects and fewer than 5,000 identities. |
 | medium | 16 | 64 GB | 1,000 GB | Up to about 200 million objects and 5,000 to 25,000 identities. |
@@ -35,7 +35,7 @@ CPU cores and RAM are hard minimums: the installer's preflight check fails below
 
 Disk is a recommendation. A server with less free space than the size recommends still installs and runs, but the preflight check warns that the disk is too small for the data that size is designed to hold. The 40 GB floor is different: below that, the preflight check fails.
 
-For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on `/var/lib` installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
+For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on the storage volume (`/var/lib` by default) installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
 
 If you want the data on a different volume, the installer accepts custom data directories. They must be absolute paths to existing, writable directories, and can't be `/` or sit under a reserved system path such as `/etc`, `/usr`, or `/var/log`. See [Installer reference](installer-reference.md) for the flags.
 
@@ -84,6 +84,8 @@ Access Analyzer serves the web application **only** over HTTPS, and the installe
 
 The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/etc/dspm/tls.key` unless you point it elsewhere. A self-signed certificate works, and the installer uses it as its own CA bundle, but browsers warn users about it.
 
+See [TLS certificate requirements](tls-certificate-requirements.md) to prepare and check a CA-issued certificate before install day.
+
 ## License Key
 
 You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download and the media download, and the installer validates it online during the install, so the server must reach the licensing endpoint that [Outbound](#outbound) lists. An expired, suspended, or unknown key stops the install. An air-gapped install needs no license key on the server.
@@ -125,7 +127,7 @@ An air-gapped install needs no outbound access at install time.
 
 Some features add outbound connections of their own after you configure them.
 
-| Host | Port | When it's needed |
+| Host | Port | When you need it |
 |---|---|---|
 | `login.microsoftonline.com`, `sts.windows.net` | TCP 443 | You use Entra ID as the identity provider. |
 | `graph.microsoft.com` | TCP 443 | You add an Entra ID or SharePoint Online source. |

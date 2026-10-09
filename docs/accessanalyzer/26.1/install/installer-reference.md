@@ -49,6 +49,7 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
 | `--log-level` | `LOG_LEVEL` | `info` | Detail the installer writes to the log file: `debug`, `info`, `warn`, or `error`. |
 | `--log-path` | `LOG_PATH` | `/var/log/dspm-installer.log` | Path to the installer's log file. If you set this explicitly (flag, environment variable, or configuration file) and the path isn't writable or is a symlink, the installer stops with an error instead of falling back to the terminal. |
+| `--storage-dir` | `DSPM_STORAGE_DIR` | `/var/lib` | Directory holding everything the Kubernetes platform writes: container image layers, the server datastore, and every persistent volume. Set it at install time only. Also appears as **Storage Directory** under **Show advanced settings?**. See [Storage Location](#storage-location). |
 | `--postgres-data-dir` | `POSTGRES_DATA_DIR` | none | Custom directory for the application database's data. |
 | `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |
 | `--log-exports-storage` | `LOG_EXPORTS_STORAGE` | none | Persistent volume claim (PVC) size for log exports, such as `10Gi`. |
@@ -59,6 +60,30 @@ Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, no
 | `--help` | — | — | Print flag help and exit. |
 
 The defaults for `--tls-cert` and `--tls-key` apply only when you omit both flags. Supplying one without the other is an error: `--tls-cert and --tls-key must both be provided together`.
+
+### Storage Location
+
+By default, everything the Kubernetes platform writes lands under `/var/lib/rancher/k3s`: extracted container image layers and every container's writable layer, the server datastore, and, under `storage/`, every persistent volume in the cluster (PostgreSQL, ClickHouse, NATS, Redis, Prometheus, Metabase, log exports, and PostgreSQL backups). The image layers alone take about 13 GB, and the volumes then grow toward the disk figure for the chosen `--size`.
+
+`--storage-dir` replaces `/var/lib`, so the whole tree moves to a mount you choose and you don't have to add space to `/var/lib`:
+
+```bash
+sudo dspm-installer \
+  --license-key "$LICENSE_KEY" \
+  --hostname dspm.corp.example.com \
+  --storage-dir /data
+```
+
+This puts the platform's data directory at `/data/rancher/k3s` and the volumes at `/data/rancher/k3s/storage`. The `rancher/k3s` tail mirrors the default layout and means the installer owns a subdirectory of your mount rather than the mount itself, so `--uninstall` can clean up completely without touching anything else you keep on `/data`.
+
+- **The directory doesn't need to exist, but some ancestor of it must.** The installer accepts `--storage-dir /data/dspm/storage` when only `/data` exists and rejects the path when nothing above it does. A mistyped path whose volume isn't mounted would otherwise fill the root filesystem, which is the problem this flag exists to avoid.
+- **The installer rejects some paths.** The path must be absolute and can't be `/`. It can't be, or sit under, `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, so `/usr/local/dspm` and `/root/dspm` both fail. It can't contain quotes, backslashes, `$`, spaces, tabs, newlines, or the characters `*`, `?`, `[`, and `]`. The nearest existing ancestor must be a directory the installer can write to.
+- **A small residual stays on `/var/lib`.** The platform hardcodes the kubelet root at `/var/lib/kubelet`, so pod-local `emptyDir` volumes and rotated container logs under `/var/log` don't move. The charts cap each workload's ephemeral storage at 2 GiB, so preflight only warns when `/var/lib` has less than 10 GB free, while free space on the storage mount is a hard requirement.
+- **Set it at install time.** On a server that already has a cluster, the installer compares `--storage-dir` with the directory the cluster uses. If they differ, it exits with code 21 and changes nothing. That includes re-running a relocated install without `--storage-dir`, because the default `/var/lib` no longer matches. The check is best-effort and doesn't run when the installer can't read the installed data directory. Without it, pointing an existing install at a new directory wouldn't migrate anything: the platform would come up as a new, empty cluster and leave every volume, secret, and database stranded at the old path. To move deliberately, run `--uninstall` first, then install again with the new `--storage-dir`.
+- **`--uninstall` deletes it.** The uninstall removes the relocated data directory and its volumes but leaves the `--storage-dir` parent itself in place. It preserves any directory that's a mountpoint, so it can leave the tree behind; the installer checks afterward and names the path if it survived instead of reporting a clean uninstall.
+- **`--postgres-data-dir` and `--clickhouse-data-dir` are independent.** Each replaces one service's volume with a static host-path volume, so a service with its own directory doesn't use the storage directory at all. `--uninstall` leaves those directories behind and says so.
+
+The interactive wizard asks for the value under **Show advanced settings?** as **Storage Directory**, and the installer saves it to the [configuration file](#configuration-file) as `storage-dir`, so re-runs keep it.
 
 ### Advanced Flags
 
@@ -131,7 +156,7 @@ The installer rejects bad values before it changes anything on the server.
 
 The installer keeps its answers in `/etc/dspm/installer.yaml`. It writes the file itself: after every confirmed prompt in an interactive run, or once after license validation in a flag-driven run. On the first save it prints `Progress saved to /etc/dspm/installer.yaml — future runs will pre-fill these values.` A later run reads the file and asks only for what's still missing, so a canceled install resumes where it stopped.
 
-Keys are the flag names. The installer writes `license-key`, `hostname`, `first-admin-email`, `first-admin-name`, `tls-cert`, `tls-key`, and `ca-bundle`, plus `target-revision` when you pin a version other than `1.*`. It keeps any keys you add, and never saves operational flags such as `--accept-warnings`, `--assume-yes`, `--dry-run`, `--skip-preflight`, `--preflight`, and `--cert-manager-issuer-mode`. You can also write the file by hand before the first run.
+Keys are the flag names. The installer writes `license-key`, `hostname`, `first-admin-email`, `first-admin-name`, `tls-cert`, `tls-key`, and `ca-bundle`, plus `target-revision` when you pin a version other than `1.*` and `storage-dir` when you set one other than `/var/lib`. It keeps any keys you add, and never saves operational flags such as `--accept-warnings`, `--assume-yes`, `--dry-run`, `--skip-preflight`, `--preflight`, and `--cert-manager-issuer-mode`. You can also write the file by hand before the first run.
 
 ```yaml title="/etc/dspm/installer.yaml"
 license-key: XXXX-XXXX-XXXX-XXXX-XXXX-V3
@@ -158,6 +183,7 @@ When the file supplies every required value and the installer runs in a terminal
 | 16 | A precondition failed and nothing changed, such as too little free space for the media, or a release older than the installer. |
 | 17 | Connected installs only. The installer couldn't download, verify, or unpack the media. Run the command again to resume. |
 | 20 | Connected installs only. The release version you requested with `--target-revision` isn't available for this license key, or the release has no media for this architecture. |
+| 21 | This server already has a cluster, and `--storage-dir` differs from the directory it uses. That includes re-running a relocated install without passing `--storage-dir` again. The installer changed nothing. See [Storage Location](#storage-location). |
 | 50 | The installer couldn't install the platform, or the platform didn't become ready within 5 minutes. |
 | 60 | The installer couldn't install a platform component. |
 | 70 | The Access Analyzer services didn't all become healthy within 30 minutes, or you pressed Ctrl-C while waiting for them. |
@@ -168,7 +194,7 @@ The `upgrade`, `update-cert`, and `rollback-cert` commands return their own code
 
 ## Preflight Checks
 
-The following checks run before the installer changes anything on the server, in the order the table lists them. Which disk checks run depends on the install mode. Each ends as PASS, WARN, or FAIL. The installer prints only WARN and FAIL results, as `  [FAIL] <check> <message>` or `  [WARN] <check> <message>`. Any FAIL stops the install; `--accept-warnings` doesn't override it. Any WARN stops it too unless you answer **Yes** to **Continue despite these warnings?** or pass `--accept-warnings`.
+The following checks run before the installer changes anything on the server, in the order the table lists them. Which disk checks run depends on the install: a connected install adds `media-disk`, and setting `--storage-dir` adds `kubelet-disk`. Each ends as PASS, WARN, or FAIL. The installer prints only WARN and FAIL results, as `  [FAIL] <check> <message>` or `  [WARN] <check> <message>`. Any FAIL stops the install; `--accept-warnings` doesn't override it. Any WARN stops it too unless you answer **Yes** to **Continue despite these warnings?** or pass `--accept-warnings`.
 
 The installer compares RAM and disk against their thresholds with a 5% tolerance, so a virtual machine provisioned at exactly the stated figure passes. It compares CPU cores exactly.
 
@@ -176,8 +202,9 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 |---|---|---|---|
 | `ram` | Total RAM against the minimum for the chosen size. | FAIL | `<n> GB RAM; the <size> size requires <n> GB` |
 | `cpu` | CPU cores against the minimum for the chosen size. | FAIL | `<n> CPU cores; the <size> size requires <n>` |
-| `disk` | Free space on `/var/lib` against the 40 GB floor. | FAIL | `<n> GB free on /var/lib; at least 40 GB is needed to install` |
-| `disk` | Free space on `/var/lib` against the size's recommended disk. | WARN | `<n> GB free on /var/lib; the <size> size is designed to hold <n> GB, so it will run out as data accumulates` |
+| `disk` | Free space on the storage volume (`--storage-dir`, or `/var/lib` by default) against the 40 GB floor. The installer measures the nearest existing parent, since it creates the directory itself during install. | FAIL | `<n> GB free on <path>; at least 40 GB is needed to install` |
+| `disk` | Free space on the storage volume against the size's recommended disk. | WARN | `<n> GB free on <path>; the <size> size is designed to hold <n> GB, so it will run out as data accumulates` |
+| `kubelet-disk` | Runs only with `--storage-dir`. Free space on `/var/lib` against 10 GB, because the platform keeps pod-local storage there wherever the storage directory points. | WARN | `<n> GB free on /var/lib; kubelet keeps pod-local storage there whatever --storage-dir is set to…` |
 | `media-disk` | Connected installs only. Free space for the install media, about 16 GB, on the volume that holds the [media directory](requirements.md#install-media). | WARN | `<n> GB free on <path>; the install media is downloaded and expanded there and wants about 16 GB, checked exactly before the download — point --tmp-dir or --storage-dir at a larger volume` |
 | `cgroups` | The kernel exposes cgroups at `/sys/fs/cgroup`. | FAIL | `cgroups not available at /sys/fs/cgroup` |
 | `kernel-modules` | The kernel has the `br_netfilter` and `overlay` modules loaded or built in. The install loads missing modules itself, so this check warns only when it can't inspect a module, or during a dry run when a module isn't loaded. | WARN | `kernel module issues: <module>: could not check module: <error>` or `kernel module issues: <module>: not loaded (dry run; will not be modprobed)` |
@@ -188,7 +215,7 @@ The installer compares RAM and disk against their thresholds with a 5% tolerance
 | `domain-join` | Whether the server belongs to an Active Directory domain. Informational only. | — | `no AD domain detected`, or a message naming the detected domain |
 | `clock-sync` | A time-sync service (`chronyd`, `ntpd`, or `systemd-timesyncd`) is running. | WARN | `no clock sync daemon detected; Kerberos authentication requires clocks within 5 minutes of the AD domain controller — install chronyd, ntpd, or systemd-timesyncd to eliminate clock-skew risk` |
 
-When the `antivirus` check finds a product, add these paths to that product's exclusion list: `/var/lib/rancher/k3s/agent/containerd`, `/var/lib/rancher/k3s/data`, and `/run/k3s/containerd`. The hint in the message names the product's own command or console for adding exclusions.
+When the `antivirus` check finds a product, add these paths to that product's exclusion list: `<storage-dir>/rancher/k3s/agent/containerd`, `<storage-dir>/rancher/k3s/data`, and `/run/k3s/containerd`. `<storage-dir>` is `/var/lib` unless you set `--storage-dir`. See [Storage Location](#storage-location). The hint in the message names the product's own command or console for adding exclusions.
 
 The [Requirements](requirements.md) page lists the hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
 
