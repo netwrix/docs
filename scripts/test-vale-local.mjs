@@ -19,7 +19,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
 import { applyFixes, FIXERS } from './lib/vale-autofix-rules.mjs';
-import { guardHookCommand, hasUntrustedConfig } from './hooks/install.mjs';
+import { guardHookCommand, guardShimFile, hasUntrustedConfig } from './hooks/install.mjs';
 import { blockingAlerts, parseChangedLines, splitByChangedLines, toViolations } from './vale-local.mjs';
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
@@ -203,6 +203,25 @@ test('guardHookCommand keeps hk\'s command and is idempotent', () => {
     assert.match(guarded, /test ! -f \.config\/hk\.pkl/);
     assert.ok(guarded.includes(original.split('|| ')[1]), guarded);
     assert.equal(guardHookCommand(guarded), guarded);
+  }
+});
+
+test('guardShimFile guards hk shims in place and ignores other or missing hooks', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'shim-'));
+  try {
+    const shim = join(dir, 'pre-push');
+    writeFileSync(shim, HK_LEGACY_SHIM, { mode: 0o755 });
+    guardShimFile(shim);
+    assert.equal(readFileSync(shim, 'utf8'), guardHookCommand(HK_LEGACY_SHIM));
+
+    const other = join(dir, 'pre-commit');
+    writeFileSync(other, '#!/bin/sh\necho custom\n');
+    guardShimFile(other);
+    assert.equal(readFileSync(other, 'utf8'), '#!/bin/sh\necho custom\n');
+
+    assert.doesNotThrow(() => guardShimFile(join(dir, 'missing')));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
   }
 });
 

@@ -8,7 +8,7 @@
  */
 
 import { spawnSync } from 'node:child_process';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { closeSync, ftruncateSync, openSync, readFileSync, writeSync } from 'node:fs';
 import { dirname, isAbsolute, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -43,10 +43,28 @@ function guardInstalledHooks() {
 
     let shim = run('git', ['rev-parse', '--git-path', `hooks/${hook}`]).stdout.trim();
     if (shim && !isAbsolute(shim)) shim = join(REPO_ROOT, shim);
-    if (shim && existsSync(shim)) {
-      const content = readFileSync(shim, 'utf8');
-      if (content.includes('hk run')) writeFileSync(shim, guardHookCommand(content));
+    if (shim) guardShimFile(shim);
+  }
+}
+
+/** Guards a legacy .git/hooks shim that hk wrote; reads and writes through one fd. */
+export function guardShimFile(path) {
+  let fd;
+  try {
+    fd = openSync(path, 'r+');
+  } catch (err) {
+    if (err.code === 'ENOENT') return;
+    throw err;
+  }
+  try {
+    const content = readFileSync(fd, 'utf8');
+    const guarded = guardHookCommand(content);
+    if (content.includes('hk run') && guarded !== content) {
+      ftruncateSync(fd, 0);
+      writeSync(fd, guarded, 0);
     }
+  } finally {
+    closeSync(fd);
   }
 }
 
