@@ -1,0 +1,13 @@
+# Older mise silently skips the hk hook install.
+min_version = "2026.6.6"
+
+[tools]
+hk = "2.5.0"
+# vale-autofix.yml installs Vale from this pin, so local and CI results match.
+vale = "3.9.5"
+
+[env]
+HK_MISE = "1"
+
+[hooks]
+postinstall = "node scripts/hooks/install.mjs"

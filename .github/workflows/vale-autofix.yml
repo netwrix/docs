@@ -115,13 +115,16 @@ jobs:
             echo "$CHANGED_MD_FILES" > /tmp/changed-files.txt
           fi
 
+      # Same Vale version the local git hooks use (.config/mise.toml).
       - name: Install Vale
         if: steps.changed-files.outputs.count > 0
-        run: |
-          wget -q https://github.com/errata-ai/vale/releases/download/v3.9.5/vale_3.9.5_Linux_64-bit.tar.gz -O /tmp/vale.tar.gz
-          tar -xzf /tmp/vale.tar.gz -C /tmp
-          chmod +x /tmp/vale
-          /tmp/vale --version
+        uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
+        with:
+          install_args: vale
+
+      - name: Show Vale version
+        if: steps.changed-files.outputs.count > 0
+        run: vale --version
 
       - name: Run Vale on changed files
         id: vale-initial
@@ -131,7 +134,7 @@ jobs:
 
           while IFS= read -r file; do
             if [ -f "$file" ]; then
-              RESULT=$(/tmp/vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
+              RESULT=$(vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
               if [ -n "$RESULT" ] && [ "$RESULT" != "{}" ]; then
                 echo "$RESULT" | jq --arg f "$file" '
                   [to_entries[] | .value[] | {path: $f, line: .Line, check: .Check, message: .Message}]
@@ -165,7 +168,7 @@ jobs:
 
           while IFS= read -r file; do
             if [ -f "$file" ]; then
-              RESULT=$(/tmp/vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
+              RESULT=$(vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
               if [ -n "$RESULT" ] && [ "$RESULT" != "{}" ]; then
                 echo "$RESULT" | jq --arg f "$file" '
                   [to_entries[] | .value[] | {path: $f, line: .Line, check: .Check, message: .Message}]
