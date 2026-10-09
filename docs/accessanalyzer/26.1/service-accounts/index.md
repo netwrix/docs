@@ -3,7 +3,7 @@ title: Service Accounts
 description: Store the credentials Access Analyzer uses to read your sources and deploy agents, and manage them from one page.
 ---
 
-A service account is a saved credential that Access Analyzer uses on your behalf: a Windows account that can read a file server, an app registration that can query Entra ID or SharePoint Online, or an SSH key that can sign in to a Linux machine. You create the account once, attach it to the sources that need it, and every scan of those sources authenticates with it. Rotate a password in one place and every source that uses it picks up the change.
+A service account is a saved credential that Access Analyzer uses on your behalf: a Windows account that can read a file server, an app registration that can query Entra ID or SharePoint Online, or an SSH username and key. You create the account once, attach it to the sources that need it, and every scan of those sources authenticates with it. Rotate a password in one place and every source that uses it picks up the change.
 
 Service accounts that read a source need read-only permissions. Access Analyzer collects metadata and permissions from your systems; it doesn't need to change anything there. The exception is the SSH username/key account used to deploy an agent: Access Analyzer signs in with it to install the agent software, so that user needs passwordless `sudo` on the target machine. See [Deploy an agent](../agents/deploy-agent.md).
 
@@ -36,7 +36,7 @@ Each account has one type. You choose it when you create the account, and it sta
 | **Username/password** | File Server sources and Active Directory sources | [Username and password](username-password.md) |
 | **Client ID/secret** | Entra ID sources | [Client ID and secret](client-id-secret.md) |
 | **Client ID/certificate** | SharePoint Online sources | [Client ID and certificate](client-id-certificate.md) |
-| **SSH username/key** | Deploying agents | [SSH username and key](ssh-key.md) |
+| **SSH username/key** | A Linux username and an SSH private key. Agent deployment doesn't use it. | [SSH username and key](ssh-key.md) |
 
 For example, a File Server source pointing at `fs01.corp.example.com` needs a Username/password account for a domain user that can read the shares you want to scan. A SharePoint Online source needs a Client ID/certificate account for an app registration in the same tenant.
 
