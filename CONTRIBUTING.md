@@ -7,35 +7,25 @@ Thank you for contributing to Netwrix product documentation. This guide covers e
 - **Node.js 22+**
 - **npm**
 - **Git**
-- **Vale** (style linter — optional for local use; issues are auto-fixed on PRs)
+- **mise** (installs Vale and the git hooks that run it before you push)
 
-### Install Vale
+### Install mise
 
-[Vale](https://vale.sh/) is a command-line linter for prose. It checks your writing against a set of style rules — like a spell checker, but for grammar, word choice, and tone. Vale issues are auto-fixed on PRs, but you can install it locally to preview issues before pushing.
+[mise](https://mise.jdx.dev/) installs the tools this repository pins, including [Vale](https://vale.sh/), a command-line linter for prose, and [hk](https://hk.jdx.dev/), which runs Vale as a git hook.
 
 **macOS:**
 ```bash
-brew install vale
+brew install mise
 ```
 
-**Linux:**
-```bash
-sudo snap install vale
+**Windows (PowerShell):**
+```powershell
+winget install jdx.mise
 ```
 
-**Windows:**
-```bash
-choco install vale
-```
+On Windows, the hooks also need [Git for Windows](https://gitforwindows.org/), which provides the `bash` the anchor check uses.
 
-**Manual install for any platform:**
-
-Download the latest release from [github.com/errata-ai/vale/releases](https://github.com/errata-ai/vale/releases), extract the binary, and add it to your PATH.
-
-Verify the installation:
-```bash
-vale --version
-```
+**Linux:** see [Installing mise](https://mise.jdx.dev/installing-mise.html).
 
 ## Getting started
 
@@ -44,8 +34,9 @@ vale --version
 git clone https://github.com/netwrix/docs.git
 cd docs
 
-# Install dependencies
+# Install dependencies and the git hooks
 npm install
+mise install
 
 # Start development server
 npm run start
@@ -57,9 +48,9 @@ The dev server runs on port 4500 with hot reload — changes you make to documen
 
 1. Create a branch from `dev` (never commit directly to `dev` or `main`).
 2. Make your changes to documentation files in `docs/`.
-3. Optionally run Vale on your changed files to preview issues (they'll be auto-fixed on the PR).
+3. Commit your changes. The pre-commit hook fixes mechanical Vale issues in the files you commit and stages the fixes.
 4. Test the build with `npm run build`.
-5. Push your branch.
+5. Push your branch. The pre-push hook blocks the push while any Vale warning remains on a line you changed.
 6. Create a pull request (PR) targeting `dev`.
 
 After you open a PR, Vale and Dale issues are auto-fixed and a summary is posted. An editorial review also runs and posts results as a PR comment. To get help with editorial suggestions, comment `@claude` on the PR followed by your request.
@@ -92,16 +83,24 @@ description: 'SEO description'
 
 ## Linting with Vale
 
-Vale enforces 43 Netwrix-specific rules covering word choice, punctuation, formatting, and common writing issues. Vale issues are auto-fixed on PRs, but you can run it locally to preview:
+Vale enforces the Netwrix style rules covering word choice, punctuation, formatting, and common writing issues. Git hooks run it on the `docs/` markdown files you change (KB articles excluded):
+
+- **On commit:** mechanical issues such as contractions, "click on", and "check box" are fixed and staged automatically.
+- **On push:** a Vale warning on any line your branch added or changed blocks the push. The output lists each issue with its file and line. Older warnings elsewhere in the file are counted but don't block.
+
+Locally, the hooks also check three Dale rules that a pattern can catch: exclamatory sentences, positional references such as "below", and words that minimize difficulty such as "simply". The full Dale review still runs on the PR.
+
+To run the same checks by hand:
 
 ```bash
-vale docs/path/to/file.md
+mise x -- hk check --pr   # check the files changed on your branch
+mise x -- hk fix --pr     # apply the mechanical fixes to them
 ```
 
-Run Vale on all changed files compared to dev:
+To check every line of one file:
 
 ```bash
-git diff --name-only dev | grep '^docs/.*\.md$' | xargs vale
+mise x -- node scripts/vale-local.mjs --check docs/path/to/file.md
 ```
 
 ## File structure
@@ -189,7 +188,7 @@ For tasks that need design decisions first — like writing a new guide from scr
 ## Common Mistakes
 
 - Don't manually copy KB content into versioned product folders — it's managed by the KB script.
-- Vale issues are auto-fixed on PRs, but running Vale locally helps catch issues early.
+- If `git push` reports that Vale or the hooks aren't installed, run `mise install` in the repository root.
 - Don't commit directly to `dev` or `main` — create a branch from `dev` first.
 - Don't target `main` in PRs — always use `dev`.
 - Don't use first person anywhere in documentation content.

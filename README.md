@@ -28,35 +28,15 @@ This documentation site serves all Netwrix product documentation.
 - **Node.js 22+**
 - **npm**
 - **Git**
-- **Vale** (style linter — optional for local use; issues are auto-fixed on PRs)
+- **mise** (installs Vale and the git hooks that run it before you push)
 
-### Install Vale
+### Install mise
 
-[Vale](https://vale.sh/) is a command-line linter for prose. A linter checks your writing against a set of style rules — like a spell checker, but for grammar, word choice, and tone. Vale issues are auto-fixed on PRs, but you can install it locally to preview issues before pushing.
+[mise](https://mise.jdx.dev/) installs the pinned [Vale](https://vale.sh/) linter and [hk](https://hk.jdx.dev/), which runs Vale as a git hook.
 
-**macOS:**
-```bash
-brew install vale
-```
-
-**Linux:**
-```bash
-sudo snap install vale
-```
-
-**Windows:**
-```bash
-choco install vale
-```
-
-**Manual install (any platform):**
-
-Download the latest release from [github.com/errata-ai/vale/releases](https://github.com/errata-ai/vale/releases), extract the binary, and add it to your PATH.
-
-Verify the installation:
-```bash
-vale --version
-```
+- **macOS:** `brew install mise`
+- **Windows (PowerShell):** `winget install jdx.mise` (the hooks also need [Git for Windows](https://gitforwindows.org/))
+- **Linux:** see [Installing mise](https://mise.jdx.dev/installing-mise.html)
 
 ### Installation
 
@@ -65,25 +45,22 @@ vale --version
 git clone https://github.com/netwrix/docs.git
 cd docs
 
-# Install dependencies
+# Install dependencies and the git hooks
 npm install
+mise install
 
 # Start development server
 npm run start
 ```
 
-### Run Vale Locally
+### Vale git hooks
 
-Vale issues are auto-fixed on PRs, but you can run Vale locally to preview:
+Git hooks run Vale on the `docs/` markdown files you change (KB articles excluded). On commit, mechanical issues are fixed and staged. On push, a Vale warning on a line your branch changed blocks the push. See [CONTRIBUTING.md](CONTRIBUTING.md#linting-with-vale) for details.
 
-```bash
-vale docs/path/to/file.md
-```
-
-Run Vale on all changed docs files:
+To run the checks by hand:
 
 ```bash
-git diff --name-only dev | grep '^docs/.*\.md$' | xargs vale
+mise x -- hk check --pr
 ```
 
 ## Project Structure
@@ -97,7 +74,7 @@ git diff --name-only dev | grep '^docs/.*\.md$' | xargs vale
 │   │   ├── doc-pr-fix/          # Autonomous PR fixer (@claude)
 │   │   └── doc-help/            # Interactive writing assistant
 │   └── agents/                  # Autonomous worker agents
-├── .husky/                        # Git hooks (managed by Husky)
+├── .config/                       # mise.toml pins Vale and hk; hk.pkl defines the git hooks
 ├── .vale/
 │   └── styles/
 │       └── Netwrix/             # 30 Vale linting rules (YAML)
