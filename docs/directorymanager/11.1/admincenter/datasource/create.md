@@ -113,7 +113,7 @@ the Directory Manager server:
 - Data connectivity components found at
   [Microsoft Access Database Engine 2016 Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=54920).
 
-You can place the Excel file for creating a data source on a local server or OneDrive. Follow the
+You can place the Excel file on a local server or on OneDrive. Follow the
 steps in the respective section to create a data source.
 
 - [When the Excel File is Located on a Local Server](#when-the-excel-file-is-located-on-a-local-server)
@@ -126,8 +126,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _Microsoft Excel_.
+Step 3 – In the Data Source Type dropdown list, select _Microsoft Excel_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
@@ -161,8 +160,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _Microsoft Excel_.
+Step 3 – In the Data Source Type dropdown list, select _Microsoft Excel_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
@@ -201,7 +199,7 @@ provider, you must install data connectivity components on the Directory Manager
 components are available at
 [Microsoft Access Database Engine 2016 Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=54920).
 
-You can place the Access file for creating a data source on a local server or OneDrive. Follow the
+You can place the Access file on a local server or on OneDrive. Follow the
 steps in the respective section to create a data source.
 
 - [When the Access File is Located on a Local Server](#when-the-access-file-is-located-on-a-local-server)
@@ -214,8 +212,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _Microsoft Access_.
+Step 3 – In the Data Source Type dropdown list, select _Microsoft Access_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
@@ -251,8 +248,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _Microsoft Access_.
+Step 3 – In the Data Source Type dropdown list, select _Microsoft Access_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
@@ -300,8 +296,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _Text/CSV_.
+Step 3 – In the Data Source Type dropdown list, select _Text/CSV_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
@@ -338,8 +333,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _Text/CSV_.
+Step 3 – In the Data Source Type dropdown list, select _Text/CSV_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
@@ -386,8 +380,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _Oracle_.
+Step 3 – In the Data Source Type dropdown list, select _Oracle_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
@@ -427,8 +420,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _SQL Server_.
+Step 3 – In the Data Source Type dropdown list, select _SQL Server_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
@@ -463,8 +455,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _ODBC_.
+Step 3 – In the Data Source Type dropdown list, select _ODBC_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
@@ -501,8 +492,7 @@ Step 1 – In Admin Center, click **Data Sources** in the left pane.
 Step 2 – On the Data Sources page, click **Create Data Source** in the top right corner. The Create
 Data Source page opens.
 
-Step 3 – In the Data Source Type dropdown list, select a provider type to create a data source for.
-This list displays the supported providers. Select _SCIM_.
+Step 3 – In the Data Source Type dropdown list, select _SCIM_.
 
 Step 4 – Enter a name for the data source in the Name box.
 
