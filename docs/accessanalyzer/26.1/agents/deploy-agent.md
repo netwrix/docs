@@ -280,13 +280,7 @@ A server installed before the installer added the hostname to the server's certi
 
 1. Go to **Configuration > Agents**.
 2. In the agent's **Actions** menu, click **Edit**.
-
-   ![Agent row menu with Edit](/images/accessanalyzer/26.1/agents/row-actions.webp)
-
 3. Change the **Name** or the **Labels**. A deployed agent must keep at least one label.
-
-   ![Edit agent panel with Name and Labels](/images/accessanalyzer/26.1/agents/edit-agent.webp)
-
 4. Click **Save changes**.
 
 **Test connection** sends a short test task through the agent and confirms it runs. It's a quick way to prove a deployed agent can accept work. Success shows **Connection successful**; a failure shows the server's message.

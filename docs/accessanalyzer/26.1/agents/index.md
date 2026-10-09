@@ -35,8 +35,6 @@ Deploying, editing, and deleting agents requires the Admin role. Viewers can ope
 
 Go to **Configuration > Agents**.
 
-![Agents list with Name, Health Status, Last Heartbeat, and Labels columns](/images/accessanalyzer/26.1/agents/list.webp)
-
 | Column | Meaning |
 |---|---|
 | **Name / IP** | The agent's name, with its hostname or IP address underneath |
