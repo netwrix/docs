@@ -4,7 +4,7 @@ description: The terms Access Analyzer uses for what it scans, how it signs in, 
 sidebar_position: 3
 ---
 
-Most of Access Analyzer's vocabulary sits in the sidebar under **Configuration**. The following terms come in the order a new administrator meets them.
+Most of Access Analyzer's vocabulary sits in the sidebar under **Configuration**. The following terms come in the order a new administrator meets them. If you're coming from Access Analyzer Classic, [Coming from Access Analyzer Classic](coming-from-access-analyzer-classic.md) maps its concepts to these.
 
 ```mermaid
 flowchart LR
@@ -21,11 +21,11 @@ A source is a system that Access Analyzer connects to and scans. Its source type
 
 ## Service Account
 
-A Service Account is a saved credential that Access Analyzer uses to authenticate to a source. Attach it to every source that needs it, and you can rotate the secret in one place. Its type must match the source: Username/password for File Server and Active Directory, Client ID/secret for Entra ID, Client ID/certificate for SharePoint Online, and SSH username/key for deploying agents. A `corp-file-servers` account holding a domain user that can read the shares serves every File Server source in that domain. [Service accounts](service-accounts/index.md) covers each type.
+A Service Account is a saved credential that Access Analyzer uses to authenticate to a source. Attach it to every source that needs it, and you can rotate the secret in one place. Its type must match the source: Username/password for File Server and Active Directory, Client ID/secret for Entra ID, and Client ID/certificate for SharePoint Online. A `corp-file-servers` account holding a domain user that can read the shares serves every File Server source in that domain. [Service accounts](service-accounts/index.md) covers each type.
 
 ## Agent and the System Agent
 
-An Agent is a Linux machine that runs Access Scans. Every installation has the System agent, which runs on the Access Analyzer server and appears as **Default Agent** on the agents page; every scan runs there unless you route it elsewhere. Deploy more agents to reach segmented networks, keep scan traffic near the data, or take load off the server. An agent named `agent-london` in the London office scans the file servers there, so the traffic stays local. [Agents](agents/index.md) explains when and how to add one.
+An Agent is a Linux machine that runs Access Scans. Every installation has the System agent, which runs on the Access Analyzer server and appears as **Default Agent** on the agents page; every scan runs there unless you route it elsewhere. Deploy more agents to reach segmented networks, keep scan traffic near the data, or reduce the load on the server. An agent named `agent-london` in the London office scans the file servers there, so the traffic stays local. [Agents](agents/index.md) explains when and how to add one.
 
 ## Label
 
@@ -57,8 +57,6 @@ A role decides what a user can do; every user holds exactly one of three. **Admi
 
 ## Objects and Identities
 
-The installer's size table measures capacity in two units:
+An object is one item a scan counts, and what counts depends on the scan type. An Access scan counts every share, folder, and file it inventories on a file server, and every site collection, site, list, library, folder, file, and list item in SharePoint Online. A Sensitive data scan counts the files it classifies. An Identity sync counts the users and groups it reads. A share that holds 4 folders and 9 files is 14 objects to an Access scan: the share itself, the 4 folders, and the 9 files. The **Progress** column on the Scan executions page shows the count for each run; [Scan executions](scans/scan-executions.md#what-counts-as-an-object) lists what each scan type counts.
 
-Objects are what an Access scan inventories: shares, folders, and files on a file server; sites, libraries, and documents in SharePoint Online. Each of these counts as an object, and the **Objects** column on the Scan executions page counts them _per run_.
-
-Identities are the users and groups an Identity Sync collects. A file server holding ~12 million objects, plus a domain with ~3,000 users & groups, would the **small** size in [Requirements](install/requirements.md).
+Identities are the users and groups an Identity sync collects. [Requirements](install/requirements.md#size) states its sizes in objects and identities: a file server holding about 12 million objects, plus a domain with about 3,000 users and groups, fits the **small** size.
