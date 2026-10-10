@@ -22,13 +22,15 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 ## Service Accounts
 
 1. You can't change a [service account's](service-accounts/index.md) _type_ after you save it, and you can't delete an account while it is connected to a source. Create a new account for a different type, and point sources elsewhere before deleting.
-2. Access Analyzer doesn't support passphrase-protected [SSH private keys](service-accounts/ssh-key.md). Create a key without a passphrase for agent deployment.
+2. Access Analyzer doesn't support passphrase-protected [SSH private keys](service-accounts/ssh-key.md). Create a key without a passphrase.
 
 ## Agents
 
 1. You can't delete, rename, or label the [System agent](agents/index.md), and it shares the server with Access Analyzer itself, so deploy a dedicated agent for heavy scans.
-2. You can't [remove an agent](agents/deploy-agent.md) while a scan is running on it, and removal leaves the agent software on the host until you uninstall it.
+2. You can't [remove an agent](agents/deploy-agent.md#remove-an-agent) while a scan is running on it, and removal leaves the agent software on the host until you uninstall it.
 3. A scan [routed by label](agents/agent-labels.md) never falls back to the System agent. If no online agent carries the label, the execution waits, and Access Analyzer marks it Failed after about two hours.
+4. After a release moves k3s forward, [agents can't join](agents/deploy-agent.md#agents-cant-join-after-a-k3s-change) a media install that you set up from an earlier release, because `dspm-installer upgrade` doesn't upgrade k3s. `install-agent` exits with code 16.
+5. While `install-agent` runs, its `--token` value is visible in the host's process list and in `sudo` logs. Run it only on a host where you trust everyone who can see them.
 
 ## Scans
 
@@ -49,8 +51,8 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 
 ## Users and Sign-in
 
-1. There is no self-service password reset. An Admin or User admin resets a local account's password from [**Settings > Users**](settings/users.md) if using a local account.
-2. [Local accounts](settings/users.md) lock after three consecutive wrong passwords and stay locked until an Admin or User admin clicks **Unlock**. A session ends after 4 hours of inactivity or 8 hours after signing in. An account's type, local or federated, can't change after creation.
+1. There is no self-service password reset. An Admin or User admin resets a local account's password from [**Settings > Users**](settings/users.md).
+2. [Local accounts](settings/users.md) lock after three consecutive wrong passwords and stay locked until an Admin or User admin clicks **Unlock**. A session ends after 4 hours of inactivity or 8 hours after signing in. An account's type (local or federated) can't change after creation.
 3. After you connect a [single sign-on (SSO)](settings/single-sign-on.md) provider, the web application has no control to disconnect it, replace it, connect a second one, or upload a new certificate authority (CA) certificate; keep a record of your configuration and contact Netwrix support for any of those.
 4. Access Analyzer never creates users on its own: a directory user can sign in only after an Admin or User admin adds them as a **[Federated (SSO)](settings/single-sign-on.md)** account with the email address the directory reports. Directory groups don't map to roles.
 
@@ -63,4 +65,4 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 ## Netwrix Activity Monitor
 
 1. An [enrollment token](integrations/netwrix-activity-monitor.md) is valid for one hour, and generating a new token invalidates the previous one. One token can enroll several agents, so finish enrolling within the hour to avoid having to generate a new token.
-2. The [listener](integrations/netwrix-activity-monitor.md) on port 4504 uses the Access Analyzer TLS certificate and doesn't start when it has expired. If you replace the certificate with one that uses a different key pair, enrolled agents stop trusting the server; generate a new token and enroll each agent again.
+2. The [listener](integrations/netwrix-activity-monitor.md) on port 4504 uses the Access Analyzer TLS certificate and doesn't start when that certificate has expired. If you replace the certificate with one that uses a different key pair, enrolled agents stop trusting the server; generate a new token and enroll each agent again.

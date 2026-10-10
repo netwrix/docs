@@ -1,6 +1,6 @@
 ---
 title: Requirements
-description: Server sizing, hostname, network ports, TLS certificate, license key, first administrator, and browser requirements for installing Access Analyzer.
+description: Server sizing, install media disk space, hostname, network ports, TLS certificate, license key, first administrator, and browser requirements for installing Access Analyzer.
 sidebar_position: 1
 ---
 
@@ -16,6 +16,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Architecture | 64-bit x86 or Arm. |
 | Access | Root, either directly or through `sudo`. |
 | Free disk on the storage volume | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib` by default. To put it on a different mount, pass `--storage-dir` at install time. See [Storage Location](installer-reference.md#storage-location). Keep about 10 GB free on `/var/lib` either way, because the platform keeps pod-local storage there. |
+| Free disk for the install media | About 16 GB free on the volume that holds the media. See [Install media](#install-media). |
 
 On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
 
@@ -37,6 +38,28 @@ Disk is a recommendation. A server with less free space than the size recommends
 For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on the storage volume (`/var/lib` by default) installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
 
 If you want the data on a different volume, the installer accepts custom data directories. They must be absolute paths to existing, writable directories, and can't be `/` or sit under a reserved system path such as `/etc`, `/usr`, or `/var/log`. See [Installer reference](installer-reference.md) for the flags.
+
+## Install Media
+
+A connected install works the way an air-gapped install does. The installer downloads the release's offline media from Netwrix, verifies it, and installs from it. The cluster stays connected to the internet, but it doesn't pull charts and images from the Netwrix registry. They come from a registry and a git server inside the cluster.
+
+The media needs disk space while the installer works with it. Allow about **16 GB free** on the volume that holds the media. The preflight check warns (`media-disk`) when there is less. Before it downloads, the installer also checks for room for four times the media archive's size, less any part of the archive already downloaded, and stops with exit code `16` if there isn't enough. Because a partial download counts toward that total, running the command again after an interrupted download needs less free space than the first attempt.
+
+The installer stores the media in one of these directories:
+
+| Flags given | Media directory |
+|---|---|
+| Neither `--storage-dir` nor `--tmp-dir` | `/var/lib/dspm/media` |
+| `--storage-dir <dir>` | `<dir>/dspm/media` |
+| `--tmp-dir <dir>` | `<dir>/dspm/media` (`--tmp-dir` takes precedence over `--storage-dir`) |
+
+For example, `--storage-dir /data` puts the media in `/data/dspm/media`.
+
+Root must own every parent of the media directory, and group and other users must not have write permission on it, unless the parent is sticky like `/tmp`. Otherwise, the install refuses to start.
+
+A connected media install doesn't support these:
+
+- `--use-mirrored-images` or a non-default `--argocd-namespace`. The installer rejects both.
 
 ## Hostname
 
@@ -65,7 +88,9 @@ See [TLS certificate requirements](tls-certificate-requirements.md) to prepare a
 
 ## License Key
 
-You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download, and the installer validates it online during the install, so the server must reach the licensing endpoints that [Outbound](#outbound) lists. An expired, suspended, or unknown key stops the install.
+You need a Netwrix license key in the form `XXXX-XXXX-XXXX-XXXX-XXXX-V3`. The key authenticates the installer download and the media download, and the installer validates it online during the install, so the server must reach the licensing endpoint that [Outbound](#outbound) lists. An expired, suspended, or unknown key stops the install. An air-gapped install needs no license key on the server.
+
+Keep the key off the command line. The installer reads it from the `LICENSE_KEY` environment variable, as [Install Access Analyzer](run-the-installer.md) shows.
 
 ## First Administrator
 
@@ -82,32 +107,23 @@ Open these ports on the server's firewall.
 | 443 | TCP | Users' browsers and agent hosts | The Access Analyzer web application. |
 | 80 | TCP | Users' browsers | Redirects HTTP requests to HTTPS. |
 | 4504 | TCP | Netwrix Activity Monitor | Receives activity data. Open it only if you use [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md). |
-| 6443 | TCP | Agent hosts | Lets [agents](../agents/index.md) connect back to the server. Open it only to the hosts you deploy agents on. |
+| 6443 | TCP | Agent hosts | Lets [agents](../agents/index.md) join and connect back to the server. Open it only to the hosts you deploy agents on. [Deploy an agent](../agents/deploy-agent.md#prepare-the-host) lists the other ports an agent host needs. |
 
 ### Outbound
 
-The installer downloads everything it needs during the install, and the running product keeps a small number of outbound connections afterwards. Allow TCP 443 from the server to each of these hosts. The preflight check tests every one of them: it fails if a name doesn't resolve in DNS and warns if a connection times out or the host refuses it.
+A connected install or upgrade needs three hosts. Allow TCP 443 from the server to each of these hosts. The machine you download the installer binary on also needs `raw.pkg.keygen.sh`. The preflight check tests `api.keygen.sh` and the media download host: it fails if a name doesn't resolve in DNS and warns if a connection times out or the host refuses it.
 
 | Host | Purpose |
 |---|---|
-| `api.keygen.sh` | License validation and release lookups. |
-| `oci.pkg.keygen.sh` | Software distribution. |
-| `raw.pkg.keygen.sh` | Software distribution. |
-| `keygen-dist.c3c9112df8df715f42d1162cdce5dba1.r2.cloudflarestorage.com` | Software distribution. |
-| `get.k3s.io` | Platform component downloads. |
-| `rpm.rancher.io` | Installer downloads. |
-| `github.com` | Platform component downloads. |
-| `api.github.com` | Platform component downloads. |
-| `raw.githubusercontent.com` | Platform component downloads. |
-| `release-assets.githubusercontent.com` | Platform component downloads. |
-| `ghcr.io` | Platform component downloads. |
-| `pkg-containers.githubusercontent.com` | Platform component downloads. |
-| `registry-1.docker.io` | Platform component downloads. |
-| `auth.docker.io` | Platform component downloads. |
-| `production.cloudflare.docker.com` | Platform component downloads. |
-| `docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com` | Installer downloads. |
-| `d2glxqk2uabbnd.cloudfront.net` | Installer downloads. |
-| `storage.googleapis.com` | Installer downloads. |
+| `api.keygen.sh` | License check, release lookup, and download link. |
+| `raw.pkg.keygen.sh` | The installer binary download. |
+| `keygen-dist.c3c9112df8df715f42d1162cdce5dba1.r2.cloudflarestorage.com` | The media download. |
+
+A connected install no longer needs `get.k3s.io`, Docker Hub, or GitHub, except on an SELinux-enforcing host.
+
+An **SELinux-enforcing** host also needs `api.github.com`, `rpm.rancher.io`, and its distribution's own package repositories. k3s installs its SELinux policy package from them. The preflight check fails if DNS can't resolve `rpm.rancher.io` and warns if it can't resolve `api.github.com`. A host with SELinux in permissive mode or disabled needs neither.
+
+An air-gapped install needs no outbound access at install time.
 
 Some features add outbound connections of their own after you configure them.
 
@@ -118,7 +134,6 @@ Some features add outbound connections of their own after you configure them.
 | Domain controllers | TCP 636 | You use Active Directory as the identity provider. The connection uses Lightweight Directory Access Protocol (LDAP) over TLS (LDAPS). |
 | Domain controllers | TCP 389 | You scan an Active Directory source. The connection uses LDAP (default port). |
 | File servers | TCP 445 | You scan an SMB file server source (default port). |
-| Agent hosts | TCP 22 | You deploy an agent over SSH (default port, configurable). |
 
 ## Browser
 
