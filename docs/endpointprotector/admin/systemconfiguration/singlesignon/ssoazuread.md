@@ -16,8 +16,8 @@ applications.
 Setting up Single Sign-On (SSO) with Azure AD integrates your server with Azure's authentication
 services. By configuring system settings, activating SSO, and choosing a login user, you prepare
 your server for seamless integration. This guide covers setting up a new enterprise application in
-Azure, configuring SAML settings, and syncing data between your server and Azure AD. Follow the
-following steps to activate Single Sign-On with Azure AD.
+Azure, configuring SAML settings, and syncing data between your server and Azure AD. Follow these
+steps to activate Single Sign-On with Azure AD.
 
 **Step 1 –** Navigate to **System Conﬁguration** > **System Settings** > **Single Sign On**.
 

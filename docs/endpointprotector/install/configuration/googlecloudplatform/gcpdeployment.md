@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Launching on Google Cloud Platform
 
-After the Endpoint Protector Image becomes accessible in the Google Cloud Platform images list,
-proceed to create a new Virtual Machine Instance:
+After the Endpoint Protector Image appears in the Google Cloud Platform images list, create a new
+Virtual Machine Instance:
 
 **Step 1 –** In the Google Cloud Platform Console, go to the VM Instances page and click Create
 instance.

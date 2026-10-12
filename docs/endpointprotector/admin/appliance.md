@@ -25,10 +25,10 @@ operations and manage the SSH access.
 
 In this section you can set a preferential time zone and/or sync the appliance to an NTP source.
 
-- Time zone – select from the dropdown lists the zone and location
+- Time zone – select the zone and location from the dropdown lists
 - NTP Server – enter the server or go with the default entry
-- How often to synchronize – select from the dropdown a time interval when to synchronize of go
-  with the default selection
+- How often to synchronize – select a synchronization interval from the dropdown or go with the
+  default selection
 
 :::note
 By default, the appliances sync once a week with pool.ntp.org.
@@ -246,7 +246,7 @@ To create a SIEM Server, click **Add New** and provide the following information
     :::
 
 
-- Log Types – select from the available options the logs to send to the SIEM Server
+- Log Types – select the logs to send to the SIEM Server from the available options
 
 ![SIEM Intergration - Adding a New Server](siemintegrationnewserver.webp)
 

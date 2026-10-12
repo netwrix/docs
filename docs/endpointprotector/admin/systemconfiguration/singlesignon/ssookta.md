@@ -18,7 +18,7 @@ Okta’s authentication framework. Begin by activating SSO within your system’
 settings, selecting a failover user, and preparing for provider selection. This section guides you
 through the precise steps required to establish a secure and efficient SSO connection, including
 application integration in Okta, SAML settings configuration, and the necessary data synchronization
-between your server and Okta. Follow the following steps to ensure a successful setup.
+between your server and Okta. Follow these steps to complete the setup.
 
 **Step 1 –** To activate Single Sign-On, navigate to **System Configuration** > **System
 Settings** > **Single Sign-On**. After you activate it, select a Failover Login User from the dropdown

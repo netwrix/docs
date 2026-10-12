@@ -14,8 +14,8 @@ address every time it restarts, and you must reinstall the Endpoint Protector Cl
 An Elastic IP keeps the address stable when the instance restarts, but not when you migrate to a new instance. Create a DNS record for a fully qualified domain name (FQDN) that points to the Elastic IP, and configure clients and integrations with the FQDN. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
 :::
 
-To request an Elastic IP, go in the AWS Management Console to the option Network & Security, Elastic
-IPs, and click Allocate New Address.
+To request an Elastic IP, in the AWS Management Console, go to Network & Security > Elastic IPs and
+click Allocate New Address.
 
 ![ Allocate Elastic IP Address](allocateelasticip.webp)
 

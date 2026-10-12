@@ -270,8 +270,8 @@ Eg. ( E-mail AND SSN US) OR CC Visa
     - CC Visa: 6
     - IBAN: 22
 
-In this example, the policy will trigger when the policy is satisfied (Boolean logic), no matter if
-the ‘Threat Threshold’ is met or not due to the ‘AND’ operator in the policy. Depending on the data
+In this example, the policy will trigger when the policy is satisfied (Boolean logic), regardless
+of the ‘Threat Threshold’, due to the ‘AND’ operator in the policy. Depending on the data
 structure in the test file, Endpoint Protector Client may report different 10 threats to Endpoint
 Protector Server
 
@@ -324,8 +324,8 @@ threats’ under ‘Ignore Thresholds’.
     - CC Visa: 6
     - IBAN: 22
 
-In this example, the policy will trigger when the policy is satisfied (Boolean logic), no matter if
-the ‘Threat Threshold’ is met or not due to the ‘AND’ operator in the policy. Depending on the data
+In this example, the policy will trigger when the policy is satisfied (Boolean logic), regardless
+of the ‘Threat Threshold’, due to the ‘AND’ operator in the policy. Depending on the data
 structure in the test file, Endpoint Protector Client may report different 4 threats to Endpoint
 Protector Server
 

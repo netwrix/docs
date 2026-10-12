@@ -29,6 +29,6 @@ users as super administrators setting.
 - Identity Provider represents Azure side. It includes the fields where you paste the data that Azure
   generates so you can log in to the Endpoint Protector Server.
 
-:::warning Use a domain, not an IP address
+:::warning Use a domain instead of an IP address
 Set the Service Provider log in to **Domain** and use the server's fully qualified domain name (FQDN). Endpoint Protector generates the Entity ID, Login URL, and Logout URL from this setting, and you register them with your identity provider. If you base them on an IP address, SSO logins fail after the server address changes, for example after a migration, until you update the identity provider configuration. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
 :::

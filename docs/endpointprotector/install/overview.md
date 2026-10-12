@@ -31,7 +31,7 @@ Endpoint Protector agent to endpoint systems. There are two principal options fo
 Customer-Managed or Provider- Managed. If Customer-Managed is a desired option, you can install the server On-Premise or in a Hosted-Cloud Environment.
 
 With the On-Premise option for a Customer-Managed instance, you can set up a virtualized image in your LAN. Virtualization options include, but aren’t limited to: VMware and
-Hyper-V. The Hosted-Cloud method of deployment allows for use of a customer’s Amazon Web Services
+Hyper-V. The Hosted-Cloud deployment method uses a customer’s Amazon Web Services
 (AWS), Azure, or Google Cloud Platform (GCP) instance. See [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) for supported VM formats including VMware and Hyper-V, and [Cloud Services](/docs/endpointprotector/install/configuration/overview.md) for AWS, Azure, and GCP deployment details.
 
 Alternatively, if you require a Provider-Managed setup, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
@@ -52,8 +52,8 @@ Always address the Endpoint Protector Server by a fully qualified domain name (F
 
 With an FQDN, you can move the server to a new IP address, for example during a migration, by updating a single DNS record. You don't need to reconfigure every client and integration.
 
-:::tip 
-Netwrix-hosted (SaaS) deployments Netwrix assigns an FQDN to every SaaS deployment by default. Bind your clients and integrations to that FQDN so that service migrations don't require changes on your side.
+:::tip Netwrix-hosted (SaaS) deployments
+Netwrix assigns an FQDN to every SaaS deployment by default. Bind your clients and integrations to that FQDN so that service migrations don't require changes on your side.
 :::
 
 ## Communication Between Endpoint Protector Server and Netwrix Servers

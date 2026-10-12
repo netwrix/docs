@@ -38,7 +38,7 @@ You can't apply 2608 as a cumulative or offline patch on top of an existing 2509
 CrateDB ships empty on a freshly deployed 2608 server. The migration doesn't move any historical log data into it — this matches today's behavior, where System Configuration Backup carries over policies, users, groups, and device rules, but never log data or file shadows. If you need historical logs for compliance or forensics, export them separately (see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup)) or retain your old server VM, exactly as described in each migration article's prerequisites.
 :::
 
-:::warning Use an FQDN, Not an IP Address
+:::warning Use an FQDN Instead of an IP Address
 Always address the EPP Server by a fully qualified domain name (FQDN), and configure your EPP Clients and single sign-on (SSO) integrations to use it. When you bind clients or SSO response URLs to an IP address, any migration that changes the server address, including this one, breaks them: SSO logins fail until you correct the response URL, and clients can't reach the new server until you reconfigure them. With an FQDN, you repoint a single DNS record to the new server. Netwrix-hosted SaaS deployments receive an FQDN by default. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
 :::
 

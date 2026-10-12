@@ -29,7 +29,7 @@ Starting with version 2509, only the manual configuration option is available. A
 ![Networking configuration options](networkingconfig.png)
 
 :::warning
-Modifying network configuration creates certificate a regeneration operation which temporarily stops communication between server and client.
+Modifying the network configuration triggers a certificate regeneration, which temporarily stops communication between the server and client.
 When you change from one IP version to another, always press the Apply button to save and apply the configuration.
 :::
 
