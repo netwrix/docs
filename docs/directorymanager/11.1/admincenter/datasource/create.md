@@ -471,7 +471,7 @@ connecting to the data source.
 Step 7 – If the data source is password protected, provide a username and password in the
 **Service Account** and **Service Account Password** boxes to access it.
 Depending on the data source, you might not need to provide both a username and password.
-For example, an MS Access database may need a password only while an SQL server may require both
+For example, an MS Access database may need only a password, while an SQL server may require both
 username and password.
 
 Step 8 – Click **Create Data Source**.
