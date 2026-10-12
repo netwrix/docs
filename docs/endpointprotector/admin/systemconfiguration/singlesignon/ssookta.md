@@ -52,7 +52,7 @@ Integration**.
 ![Endpoint Protector Server Single Sign On coffiguration ](ssoconfiguration.webp)
 
 :::tip
-Before you copy the values in the next step, ensure you set the Service Provider to **Domain** (see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon)). Values based on an IP address stop working when the server address changes.
+Before you copy the values in the next step, ensure you set the Service Provider to **Domain** (see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon.md)). Values based on an IP address stop working when the server address changes.
 :::
 
 **Step 8 –** Copy the information from:
