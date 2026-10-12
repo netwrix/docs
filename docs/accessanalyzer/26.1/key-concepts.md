@@ -21,7 +21,7 @@ A source is a system that Access Analyzer connects to and scans. Its source type
 
 ## Service Account
 
-A Service Account is a saved credential that Access Analyzer uses to authenticate to a source. Attach it to every source that needs it, and you can rotate the secret in one place. Its type must match the source: Username/password for File Server and Active Directory, Client ID/secret for Entra ID, Client ID/certificate for SharePoint Online, and SSH username/key for deploying agents. A `corp-file-servers` account holding a domain user that can read the shares serves every File Server source in that domain. [Service accounts](service-accounts/index.md) covers each type.
+A Service Account is a saved credential that Access Analyzer uses to authenticate to a source. Attach it to every source that needs it, and you can rotate the secret in one place. Its type must match the source: Username/password for File Server and Active Directory, Client ID/secret for Entra ID, and Client ID/certificate for SharePoint Online. A `corp-file-servers` account holding a domain user that can read the shares serves every File Server source in that domain. [Service accounts](service-accounts/index.md) covers each type.
 
 ## Agent and the System Agent
 
