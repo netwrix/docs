@@ -447,7 +447,7 @@ Use this section to regenerate a custom server certiﬁcate. Enable the option a
 following information:
 
 - FQDN (Fully Qualiﬁed Domain Name) – used in certiﬁcates and Regenerate Server Certiﬁcate Stack and
-  CA Certiﬁcate used for Deep Packet Inspection on macOS
+  CA Certiﬁcate used for Deep Packet Inspection on macOS. Set it to the FQDN that your EPP Clients and single sign-on (SSO) integrations use to reach the server.
 - Country name – add the ﬁrst two letters of the country
 - State or Province name – add the state or province name
 - Locality Name – add locality name

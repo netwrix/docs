@@ -36,6 +36,10 @@ IP Address in case of an instance restart.
 
 Without a Static IP (Elastic IP), the instance will assign a new IP address every time it restarts, and you must reinstall the Endpoint Protector Clients.
 
+:::tip
+A static IP keeps the address stable when the instance restarts, but not when you migrate to a new instance. Create a DNS record for a fully qualified domain name (FQDN) that points to the static IP, and configure clients and integrations with the FQDN. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
+
 To request a Static IP, go to IP addresses and select the External IP addresses tab.
 
 ![Requesting a static IP](externalip.webp)

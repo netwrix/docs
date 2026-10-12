@@ -51,6 +51,10 @@ Integration**.
 
 ![Endpoint Protector Server Single Sign On coffiguration ](ssoconfiguration.webp)
 
+:::tip
+Before you copy the values in the next step, make sure the Service Provider is set to **Domain** (see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon)). Values based on an IP address stop working when the server address changes.
+:::
+
 **Step 8 –** Copy the information from:
 
 - Audience URI (SP Entity ID) and paste it on the ﬁeld with the same name from OKTA, Conﬁgure SAML.

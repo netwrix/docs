@@ -42,6 +42,20 @@ To use the Endpoint Protector Server in a production environment, you need a Lic
 
 The following sections describe the different methods for deploying Endpoint Protector, with step-by-step instructions and best practices.
 
+## Use an FQDN Instead of an IP Address
+
+Always address the Endpoint Protector Server by a fully qualified domain name (FQDN), such as `epp.example.com`, instead of a static IP address. Use the FQDN everywhere the server address appears:
+
+- **EPP Clients** – configure each client to reach the server through the FQDN.
+- **Single sign-on (SSO) integrations** – register the SSO response (callback) URL with the FQDN. An SSO configuration bound to an IP address stops working when the server address changes, for example after a migration.
+- **Other integrations** – use the FQDN in any other configuration that stores the server address.
+
+With an FQDN, you can move the server to a new IP address, for example during a migration, by updating a single DNS record. You don't need to reconfigure every client and integration.
+
+:::tip 
+Netwrix-hosted (SaaS) deployments Netwrix assigns an FQDN to every SaaS deployment by default. Bind your clients and integrations to that FQDN so that service migrations don't require changes on your side.
+:::
+
 ## Communication Between Endpoint Protector Server and Netwrix Servers
 
 Your Endpoint Protector Server can communicate with Netwrix servers only when you connect it to the internet.

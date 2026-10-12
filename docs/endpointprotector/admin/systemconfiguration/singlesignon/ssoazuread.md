@@ -70,6 +70,10 @@ Conﬁguration** page.
 
 ![Basic SAML Conﬁguration page](entraidbasicsamlconf.webp)
 
+:::tip
+Before you copy the values in the next step, make sure the Service Provider is set to **Domain** (see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon)). Values based on an IP address stop working when the server address changes.
+:::
+
 **Step 10 –** From the Single Sign On page on the Endpoint Protector Server:
 
 - Copy the data from the Service Provider's Entity ID field and paste it into both the Identifier

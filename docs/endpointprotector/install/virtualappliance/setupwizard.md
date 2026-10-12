@@ -54,6 +54,10 @@ As mentioned before, starting with version 2509, only the manual configuration o
 **Step 4 –** Select **Apply**. The virtual appliance is now accessible from the conﬁgured IP
 Address. (e.g., https:// 192.168.7.94).
 
+:::tip
+Create a DNS record for the appliance's fully qualified domain name (FQDN), for example `epp.example.com`, that points to this IP address. Use the FQDN to access the server and to configure clients and integrations. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
+
 :::note
 E-mail Server Settings are no longer configured in the setup wizard. To configure email server settings and authentication, go to **System Configuration** > **[Mail Settings](/docs/endpointprotector/admin/systemconfiguration/mailsettings.md)** after completing the initial setup.
 :::

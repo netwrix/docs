@@ -107,6 +107,10 @@ copy the following details from this screen using the Copy button:
 - Endpoint Protector Server port
 - Department Code
 
+:::tip
+When you install a client, use the server's fully qualified domain name (FQDN) as the server address instead of the IP address. Clients configured with an FQDN keep working when the server moves to a new IP address, for example after a migration. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
+
 
 ![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.webp)
 

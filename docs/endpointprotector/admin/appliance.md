@@ -58,6 +58,10 @@ After you change the IP address, close the Internet browser and open it again, t
 the Endpoint Protector Administration and Reporting Tool with the new IP address.
 :::
 
+:::warning
+Changing the server IP address affects every client and integration that uses the IP address to reach the server, including single sign-on (SSO) response URLs. Address the server by a fully qualified domain name (FQDN) instead, so that you update one DNS record rather than reconfigure each client and integration. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
+
 ![ Change the network settings for the appliance to communicate correctly in your network using IPV4](ipconfg.webp)
 
 Additionally, if you want to switch to using IPV6 exclusively, starting with version 2512, you can do so by turning on the IPV6 option.

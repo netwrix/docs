@@ -9,8 +9,13 @@ sidebar_position: 10
 After provisioning the Endpoint Protector Server, you can configure the feature modules. To manage
 policies in preparation for agent deployment, access the web user interface set up during the server installation by following these steps:
 
-**Step 1 –** Access the Web Interface: Enter the server's address in your web browser's address bar.
-This address may be a static IP or a namespace.
+**Step 1 –** Access the Web Interface: Enter the server's fully qualified domain name (FQDN), for
+example `https://epp.example.com`, in your web browser's address bar.
+
+:::tip
+Netwrix recommends against using a static IP address. Clients and single sign-on (SSO) response URLs
+bound to an IP address break when the server address changes. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
 
 **Step 2 –** Log In: Enter your credentials. Use your assigned username and password. If you are
 logging in for the first time, use the default credentials:

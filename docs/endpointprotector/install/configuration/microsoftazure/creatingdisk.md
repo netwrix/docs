@@ -92,3 +92,7 @@ the Endpoint Protector image.
 
 **Step 10 –** Open a web browser and connect to the Public IP address assigned to the Endpoint
 Protector image.
+
+:::tip
+A static public IP keeps the address stable when the virtual machine restarts, but not when you migrate to a new virtual machine. Create a DNS record for a fully qualified domain name (FQDN) that points to the public IP, and configure clients and integrations with the FQDN. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::

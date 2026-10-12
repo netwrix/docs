@@ -52,7 +52,7 @@ This application will represent Endpoint Protector on the Auth0 side.
 2.  Go to the Add-ons tab.
 3.  Enable the **SAML2 Web App** add-on.
 4.  Click **Settings** on the SAML2 Web App tile.
-5.  Add **the Callback URL** displayed in Endpoint Protector at Step 2 when opening the Auth0 provider settings.
+5.  Add **the Callback URL** displayed in Endpoint Protector at Step 2 when opening the Auth0 provider settings. Make sure the URL uses the server's fully qualified domain name (FQDN), not an IP address. A callback URL based on an IP address stops working when the server address changes.
 6.  Scroll down and click **Enable** to activate the add-on for the application.
 
 ![Add the Callback URL displayed in Endpoint Protector](2AddonCallbackURL.png)
