@@ -16,12 +16,16 @@ Only EPP Client 2511.x.x.x and higher are available for the migration operation.
 This feature requires EPP Server 2601 or later. It can't be used to migrate clients between EPP Server 5.9.4.2 and image-based releases earlier than 2601, such as 2510.
 :::
 
+:::tip
+Migrate clients to an FQDN instead of an IP address. Clients bound to an FQDN keep working when the server later moves to a new IP address, so you don't need to run another client migration.
+:::
+
 ## Configuring the **EPP Clients Migration** page
 
 ![](EPPClientMigration.png)
 
 1.  Go to **System Maintenance -\>EPP Clients migration** page
-2.  Add **New EPP Server** details. Here, you can specify the domain (eg. example.netwrix.com) or IP address (eg. 192.168.0.2) of the new target EPP server
+2.  Add **New EPP Server** details. Specify the fully qualified domain name (FQDN) of the new target EPP Server, for example example.netwrix.com. You can also specify an IP address, for example 192.168.0.2, but Netwrix recommends an FQDN.
 3.  Add the **New EPP Port** details. Here you can specify Server - Client communication port (eg. 443) of new target EPP server
 
 Optionally, preserve EE Client communication details. When enabled, this option preserves existing EE communication details and doesn't migrate the EE client to the new EPP server. This is useful for complex migration plans and edge cases.
