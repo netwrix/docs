@@ -68,7 +68,7 @@ The four core qualities:
 
 ### Vale
 
-Vale enforces 43 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word choice, punctuation, formatting, and common writing issues. Vale runs before the PR: the pre-commit hook blocks a commit while Vale flags a new page, or the lines you changed on an existing page. Nothing lints on the PR, so fix findings before you push. Vale must be installed. Vale and Dale skip bold text (UI labels) and double-quoted text (verbatim product messages), so write each label exactly as the product shows it, in bold, and never reword either to clear a finding. If a UI label is flagged because it isn't bold, bold it. For exact product text that is neither, wrap the line in `<!-- vale Netwrix.<Rule> = NO -->` and `<!-- vale Netwrix.<Rule> = YES -->` for that one rule. Preview issues with:
+Vale enforces 43 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word choice, punctuation, formatting, and common writing issues. Vale runs before the PR: the pre-commit hook blocks a commit while Vale flags a new page, or the lines you changed on an existing page. CI (`vale-autofix.yml`) lints again on the PR as a backstop, but fix findings before you push. Vale must be installed. Vale and Dale skip bold text (UI labels) and double-quoted text (verbatim product messages), so write each label exactly as the product shows it, in bold, and never reword either to clear a finding. If a UI label is flagged because it isn't bold, bold it. For exact product text that is neither, wrap the line in `<!-- vale Netwrix.<Rule> = NO -->` and `<!-- vale Netwrix.<Rule> = YES -->` for that one rule. Preview issues with:
 
 ```bash
 vale <file>
@@ -94,23 +94,23 @@ Run Dale locally with `/dale <file>`.
 
 ### Pre-PR style check (local, required)
 
-Every docs contribution is linted before it reaches a PR: Vale, Dale, and a check for signs of AI writing. There is no CI job for this; it runs on your machine. Run it on a page with `npm run quality:score -- --file <path>`. The hook is installed by `npm install`. Skipping it on purpose (`git commit --no-verify`) is allowed.
+Every docs contribution is linted before it reaches a PR: Vale, Dale, and a check for signs of AI writing. It runs on your machine; if a change skips it, `vale-autofix.yml` still runs Vale and Dale on the PR. Run it on a page with `npm run quality:check -- --file <path>`. The hook is installed by `npm install`. Skipping it on purpose (`git commit --no-verify`) is allowed.
 
 - **Scope:** a new page is checked whole. An existing page is checked only on the lines the change adds or rewrites; text it already had is never flagged. A page git detects as a copy or rename (50% or more similar) counts as existing, so cloning a version directory only checks what differs. `docs/kb/` is out of scope.
 - **Vale:** the repo's Vale rules, from the page text (so the staged version is checked). Vale must be installed, or the commit is blocked with install steps. The Stop hook runs without that requirement.
-- **Dale:** a model applies the 10 rules in `.claude/skills/dale/rules/` in one call per page. Like the judge, it runs 3 times, keeps findings that 2 runs report at the same spot, and counts only findings whose quote appears verbatim on a changed line. Verdicts are cached.
+- **Dale:** a model applies the rules in `.claude/skills/dale/rules/` in one call per page. They cover style (passive voice, wordiness) and AI-writing patterns that need judgment (inflated significance, tacked-on "-ing" clauses, vague attribution, negative parallelism). It runs 3 times, keeps findings that 2 runs report at the same spot, and counts only findings whose quote appears verbatim on a changed line. Verdicts are cached.
 - **Frontmatter:** a new page needs a non-empty `description:` in its frontmatter. Existing pages and partials (a leading underscore) are not checked.
 - **Deterministic AI-isms:** `scripts/doc-draft/slop.mjs` (catalog in `scripts/doc-draft/ai-isms.yml`). Structural signals such as sentence-length variance apply only to new pages.
-- **Judged:** a Haiku 4.5 judge applies the 16 patterns in `.claude/references/humanizer-rules.md`. It runs 3 times per page and keeps findings that at least 2 runs report at the same spot. A finding counts only if its quote appears verbatim on a changed line. Verdicts are cached by content hash in `.cache/quality`.
+- **Fixed AI phrases:** Vale rules catch the AI-writing patterns that are fixed phrases (promotional adjectives, "serves as", and similar). Dale catches the paraphrased versions.
 - **Draft markers:** write unresolved gaps as `{/* TODO: ... */}` so they never render. `scripts/quality/todo-check.mjs` warns (never blocks) about leftovers at commit and in the Stop hook.
-- **Approved phrases:** `judge.ignoreQuotes`, `judge.ignoreReasons`, `dale.ignoreQuotes`, and `vale.ignore` (a Vale rule name) in `scripts/quality/config.json`.
+- **Approved phrases:** `dale.ignoreQuotes`, and `vale.ignore` (a Vale rule name) in `scripts/quality/config.json`.
 
 Where it runs:
 
-- **Pre-commit (husky):** `scripts/quality/score.mjs --staged` blocks the commit while anything is flagged. The judge uses `ANTHROPIC_API_KEY` if set, and otherwise your Claude Code login (`claude -p`). With neither, it runs the deterministic checks only and says so.
+- **Pre-commit (hk, `.config/hk.pkl`):** `scripts/quality/check.mjs --staged` blocks the commit while anything is flagged. Dale uses `ANTHROPIC_API_KEY` if set, and otherwise your Claude Code login (`claude -p`). With neither, it runs the deterministic and Vale checks only and says so.
 - **Claude Code Stop hook:** `.claude/hooks/stop-quality-check.sh` runs the same check when Claude finishes, but only on the docs that session edited (`post-edit-record.sh` records each file written with Edit or Write, so a file changed through a shell command is not recorded). It hands the findings back to Claude to rewrite, up to 3 rounds, and never touches other drafts on the branch. Pre-commit is the hard gate and checks everything staged.
 
-Run it by hand with `npm run quality:score` (`-- --staged` for the index). `npm run quality:fix -- --staged` is an optional helper (same model access as the judge) that drops flagged filler, swaps plain words, and rewords flagged sentences. Each edit is validated, drops and rewords get a meaning check, and a reword may not lose a number, negation, or requirement word. A reword the meaning check doubts is still applied but printed as `review`; read those in `git diff`. A drop the check doubts goes to a patch instead.
+Run it by hand with `npm run quality:check` (`-- --staged` for the index). `npm run quality:fix -- --staged` is an optional helper (same model access as Dale) that drops flagged filler, swaps plain words, and rewords flagged sentences. Each edit is validated, drops and rewords get a meaning check, and a reword may not lose a number, negation, or requirement word. A reword the meaning check doubts is still applied but printed as `review`; read those in `git diff`. A drop the check doubts goes to a patch instead.
 
 ### Readability (optional report)
 

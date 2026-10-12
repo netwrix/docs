@@ -67,10 +67,6 @@ export function build() {
     '',
     aiisms().join(', ') + '.',
     '',
-    '## AI-writing patterns the judge looks for',
-    '',
-    'See `.claude/references/humanizer-rules.md`. In short: no inflated significance, no tacked-on "-ing" clauses, no promotional language, no unsourced attributions, no "not just X, but Y", no false ranges, and no synonym cycling.',
-    '',
   ].join('\n');
 }
 

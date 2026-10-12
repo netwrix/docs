@@ -1,14 +1,14 @@
 /**
  * Dale: the model-checked style rules in .claude/skills/dale/rules/*.yml (passive voice, wordiness, idioms,
  * misplaced modifiers, undefined acronyms, ...). A model reads the page against all the rules in one call.
- * Like the AI-isms judge, it runs a few times and keeps findings that enough runs agree on; every finding
+ * It runs a few times and keeps findings that enough runs agree on; every finding
  * must quote the page verbatim and sit on a changed line. Verdicts are cached by page content and rules.
  */
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
 import { getClient, textOf } from './llm.mjs';
-import { verdictKey, readCachedVerdict, writeVerdict, verifyFindings, consensus } from './judge.mjs';
+import { verdictKey, readCachedVerdict, writeVerdict, verifyFindings, consensus } from './consensus.mjs';
 import { inRanges } from './scope.mjs';
 
 const RULES_DIR = '.claude/skills/dale/rules';

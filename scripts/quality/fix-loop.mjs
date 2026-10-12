@@ -15,7 +15,7 @@
  * applied: it goes to one patch file. A reword the check doubts is applied and
  * printed as "review", because the writer sees the diff before committing.
  *
- * A page that passes has its judge verdict cached so the hooks accept it
+ * A page that passes has its Dale verdict cached so the hooks accept it
  * without a second model call. Never runs git commit or push.
  *
  * Summary shape (formerly read by the vale-autofix workflow, now removed):
@@ -28,7 +28,7 @@ import path from 'path';
 import { execFileSync } from 'child_process';
 import { fileURLToPath } from 'url';
 import { discoverChanges, rangesFor, inRanges } from './lib/scope.mjs';
-import { scorePage } from './score.mjs';
+import { checkPage } from './check.mjs';
 import { checkPreserved } from './lib/preserve.mjs';
 import { prepare, promptView, validateEdit, applyEdits, readable, flaggedMatchers, fillerEdits } from './lib/edits.mjs';
 import { mapPool } from './lib/pool.mjs';
@@ -73,12 +73,14 @@ const EDIT_SCHEMA = {
   additionalProperties: false,
 };
 
-const problemCount = r => r.deterministic.findings.length + r.judge.findings.length;
+// Dale findings carry the offending text as `text`; the edit validators read it as `quote`.
+const daleFindings = r => r.dale.findings.map(f => ({ ...f, quote: f.text }));
+const problemCount = r => r.deterministic.findings.length + r.dale.findings.length;
 
 function findingsText(r) {
   const parts = [];
   if (r.deterministic.findings.length) parts.push(renderFindingsTable(r.deterministic.findings));
-  for (const f of r.judge.findings) parts.push(`Line ${f.line}: pattern ${f.pattern} - ${f.reason}\n> ${f.quote}`);
+  for (const f of r.dale.findings) parts.push(`Line ${f.line}: ${f.rule} - ${f.message}\n> ${f.text}`);
   return parts.join('\n\n');
 }
 
@@ -125,12 +127,12 @@ function restrict(ctx, ranges) {
  * `where` is { mode, base } for a page that existed before the change: only the
  * lines the change adds or rewrites are checked and edited. Omit it for a new page.
  */
-export async function fixPage(file, { where = null, maxPasses = config.loop.maxPasses, dryRun = false, proposeFn = propose, verifyFn = verify, judgeFn } = {}) {
+export async function fixPage(file, { where = null, maxPasses = config.loop.maxPasses, dryRun = false, proposeFn = propose, verifyFn = verify, daleFn } = {}) {
   const rangesNow = () => (where ? rangesFor(file, where) : null);
   const original = fs.readFileSync(file, 'utf8');
   const valeBefore = valeGate(file).findings.length;
-  const score = () => scorePage(file, { ranges: rangesNow(), judgeFn });
-  let current = await score();
+  const check = () => checkPage(file, { ranges: rangesNow(), lint: true, valeOptional: true, daleFn });
+  let current = await check();
   const before = problemCount(current);
   if (current.pass) return { path: file, passes: 0, status: 'unchanged', findings_before: before, findings_after: 0, applied: 0, rejected: 0, suggestions: 0, review: [], patch: '' };
 
@@ -145,7 +147,7 @@ export async function fixPage(file, { where = null, maxPasses = config.loop.maxP
     passes++;
     const markdown = fs.readFileSync(file, 'utf8');
     const ctx = restrict(prepare(markdown), rangesNow());
-    const matchers = flaggedMatchers([...current.deterministic.findings, ...current.judge.findings]);
+    const matchers = flaggedMatchers([...current.deterministic.findings, ...daleFindings(current)]);
 
     const proposed = [...fillerEdits(ctx), ...(await proposeFn(ctx, current, feedback))];
     const reasons = [];
@@ -190,7 +192,7 @@ export async function fixPage(file, { where = null, maxPasses = config.loop.maxP
       continue;
     }
     fs.writeFileSync(file, candidate);
-    const next = await score();
+    const next = await check();
     const valeAfter = valeGate(file).findings.length;
     if (valeAfter > valeBefore) {
       fs.writeFileSync(file, markdown);

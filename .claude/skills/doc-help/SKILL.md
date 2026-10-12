@@ -109,7 +109,7 @@ Re-read the full document and check for:
 - Flow and consistency across sections
 - Redundancy or contradictions
 - Any sentence that doesn't earn its place
-- Style check: before you hand back, run `npm run quality:score -- --table` (Vale, Dale, and the AI-isms check on what changed since `origin/dev`) and fix what it flags without changing any fact. `.claude/references/lint-rules.md` lists the rules.
+- Style check: before you hand back, run `npm run quality:check -- --table` (Vale, Dale, and the AI-isms check on what changed since `origin/dev`) and fix what it flags without changing any fact. `.claude/references/lint-rules.md` lists the rules.
 - Readability: write plainly the first time, and do not shorten sentences at the cost of a fact, condition, or qualifier. `npm run quality:readability -- <file>` is an optional report; run it only if the writer asks, and report the numbers without revising to meet them. The AI-isms check runs later at commit, so avoid filler, promotional wording, and stock AI phrasing as you write.
 
 Provide a short summary of any final suggestions. Ask if the writer wants to refine anything or if the doc is ready.

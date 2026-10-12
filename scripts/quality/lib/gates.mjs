@@ -26,7 +26,7 @@ export function missingDescription(file, markdown) {
  * and page-wide structural signals are skipped because they describe text
  * the author didn't write. A new page (`ranges` null) gets everything.
  */
-export function scoreDeterministic(file, _config, markdown = fs.readFileSync(file, 'utf8'), ranges = null) {
+export function checkDeterministic(file, _config, markdown = fs.readFileSync(file, 'utf8'), ranges = null) {
   const slop = runSlopGate(file, markdown);
   const findings = ranges === null
     ? [...missingDescription(file, markdown), ...slop.findings]

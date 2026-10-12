@@ -20,8 +20,8 @@ npm run clear            # Clear Docusaurus cache (fixes stale build issues)
 # Linting
 vale <file>              # Run Vale style checker on a markdown file
 /dale <file>             # Run Dale linter (Claude skill) on a markdown file
-npm run quality:score    # Vale + Dale + AI-isms check on your staged or branch docs (what the pre-commit hook runs)
-npm run quality:score -- --file <path>   # the same check on one page, whole
+npm run quality:check    # Vale + Dale + AI-isms check on your staged or branch docs (what the pre-commit hook runs)
+npm run quality:check -- --file <path>   # the same check on one page, whole
 
 # Vale and the git hooks (hk) are pinned in .config/mise.toml
 # macOS: brew install mise    Windows: winget install jdx.mise
@@ -74,7 +74,7 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 | Workflow | Trigger | Purpose |
 |---|---|---|
 | `build-and-deploy.yml` | Push to main/dev, PRs to dev, manual | Build the site. Pushes deploy to Azure (`dev` to development, `main` to production); PRs build only |
-| `script-tests.yml` | PRs that change `scripts/` or `package.json` | Runs the repo's script tests. Docs are linted before the PR (pre-commit: Vale, Dale, AI-isms); nothing lints on the PR |
+| `script-tests.yml` | PRs that change `scripts/` or `package.json` | Runs the repo's script tests. Docs are linted before the PR (pre-commit: Vale, Dale, AI-isms); `vale-autofix.yml` still lints on the PR as a backstop |
 | `md-extension-autofix.yml` | PRs to dev | Adds missing `.md` extensions and frontmatter, and commits the fix |
 | `claude-code-review.yml` | PRs to dev that change non-doc files | Code review comment |
 | `claude-code-followup.yml` | `@claude` comment on a code PR (owners, members, collaborators) | Answers or applies a fix |
@@ -120,8 +120,6 @@ Project hooks are in `.claude/settings.json`:
 - **PostToolUse (Bash)**: After running `vale`, reminds to fix and re-run until clean
 - **Stop**: When Claude finishes a turn, runs the style check (Vale, Dale, AI-isms) on the docs this session edited and hands any findings back to Claude, up to 3 rounds
 
-Git hook (`.husky/pre-commit`, installed by `npm install`): runs the same style check on staged docs and blocks the commit, plus the anchor-link check and a draft-marker warning.
-
 Hook scripts live in `.claude/hooks/`.
 
-Git hooks are defined in `.config/hk.pkl` and installed by `mise install` once the user accepts mise's trust prompt for `.config/mise.toml` (`npm install` reinstalls them after that; it never trusts the config itself). Pre-commit applies the mechanical Vale fixes (`scripts/vale-local.mjs`) and the anchor check. Pre-push blocks on Vale warnings on lines the branch changed since it left `dev`. The hooks use `.vale-local.ini`, which adds the local-only `DaleLocal` style; CI keeps `.vale.ini`.
+Git hooks are defined in `.config/hk.pkl` and installed by `mise install` once the user accepts mise's trust prompt for `.config/mise.toml` (`npm install` reinstalls them after that; it never trusts the config itself). Pre-commit applies the mechanical Vale fixes (`scripts/vale-local.mjs`), runs the anchor check, blocks on the style check (Vale, Dale, AI-isms: `scripts/quality/check.mjs --staged`), and warns about draft markers. Pre-push blocks on Vale warnings on lines the branch changed since it left `dev`. The hooks use `.vale-local.ini`, which adds the local-only `DaleLocal` style; CI keeps `.vale.ini`.

@@ -14,7 +14,7 @@ COUNTER="${TMPDIR:-/tmp}/nwx-quality-$SESSION"
 ROUNDS=$(cat "$COUNTER" 2>/dev/null || echo 0)
 
 cd "${CLAUDE_PROJECT_DIR:-.}" || exit 0
-[ -f scripts/quality/score.mjs ] || exit 0
+[ -f scripts/quality/check.mjs ] || exit 0
 
 # Only the files this session edited. None edited, nothing to check.
 LIST="${TMPDIR:-/tmp}/nwx-quality-files-$SESSION"
@@ -26,7 +26,7 @@ fi
 # Unresolved draft markers in those files: tell the user, never block.
 node scripts/quality/todo-check.mjs --files $(cat "$LIST") >&2 || true
 
-if OUTPUT=$(node scripts/quality/score.mjs --base origin/dev --only "$LIST" --vale-optional --table 2>&1); then
+if OUTPUT=$(node scripts/quality/check.mjs --base origin/dev --only "$LIST" --vale-optional --table 2>&1); then
   rm -f "$COUNTER"
   exit 0
 fi

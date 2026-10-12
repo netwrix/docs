@@ -42,7 +42,7 @@ mise install   # answer yes when mise asks to trust .config/mise.toml
 npm run start
 ```
 
-`npm install` also installs a git pre-commit hook that lints your docs before each commit, so run it even if you only edit markdown.
+The git hooks lint your docs before each commit and push, so install them even if you only edit markdown (`mise install`, then `npm install`).
 
 The dev server runs on port 4500 with hot reload — changes you make to documentation files appear immediately in the browser.
 
@@ -50,12 +50,12 @@ The dev server runs on port 4500 with hot reload — changes you make to documen
 
 1. Create a branch from `dev` (never commit directly to `dev` or `main`).
 2. Make your changes to documentation files in `docs/`.
-3. Commit your changes. The pre-commit hook fixes mechanical Vale issues in the files you commit and stages the fixes.
+3. Commit your changes. The pre-commit hook fixes mechanical Vale issues in the files you commit and stages the fixes. It then blocks the commit if Vale, Dale, or the AI-writing check flags a new or changed line. Fix what it flags, `git add`, and commit again. Preview it any time with `npm run quality:check`.
 4. Test the build with `npm run build`.
 5. Push your branch. The pre-push hook blocks the push while any Vale warning remains on a line you changed.
 6. Create a pull request (PR) targeting `dev`.
 
-Nothing lints on the PR: that happens at commit. After you open a PR, an editorial review runs and posts results as a PR comment. To get help with editorial suggestions, comment `@claude` on the PR followed by your request.
+Linting happens at commit through the hooks (or through the `doc-draft` skill). If changes skip that, CI still runs Vale and Dale on the PR and auto-fixes what it can. An editorial review also runs and posts results as a PR comment. To get help with editorial suggestions, comment `@claude` on the PR followed by your request.
 
 ## Writing standards
 
@@ -184,11 +184,11 @@ For tasks that need design decisions first — like planning a new guide from sc
 | Task | Tool |
 |---|---|
 | Quick lint check on a file | `/dale docs/path/to/file.md` |
-| Check your changes before committing | `npm run quality:score` |
+| Check your changes before committing | `npm run quality:check` |
 | Plan structure for a new document | `doc-help` then `doc-draft` |
 | Draft a new page from a PR, issue, ticket, or specs | `doc-draft` |
 | Review or improve existing content | `doc-help` |
-| Fix Vale errors in a file | `doc-help`, or fix by hand and run `npm run quality:score` |
+| Fix Vale errors in a file | `doc-help`, or fix by hand and run `npm run quality:check` |
 | Edit a file for style and clarity | `doc-help` |
 | Understand a style rule or convention | `doc-help` |
 

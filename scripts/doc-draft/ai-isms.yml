@@ -162,7 +162,6 @@ lexical:
   'comprehensive': '\bcomprehensive(?:ly)?\b'
   'landscape': '\blandscape\b'
   'realm': '\brealm\b'
-  'testament to': '\btestament to\b'
   # 'unlock' is a real UI/security verb in this domain (unlock a locked
   # account, click **Unlock**) — corpus check found it constantly, in
   # known-limitations.md, settings/users.md (heading "Unlock a User", "clicks
@@ -188,13 +187,8 @@ lexical:
   'myriad': '\bmyriad\b'
   'foster': '\bfoster(?:s|ed|ing)?\b'
   'harness': '\bharness(?:es|ed|ing)?\b'
-  'ever-evolving': '\bever.evolving\b'
-  "in today's": "\\bin today's\\b"
   "it's worth noting": "\\bit'?s worth noting\\b"
   'rest assured': '\brest assured\b'
-  'at its core': '\bat its core\b'
-  'when it comes to': '\bwhen it comes to\b'
-  'dive into': '\bdive into\b'
 
 structural:
   # Sentence-length variance: uniform rhythm is the strongest AI tell.

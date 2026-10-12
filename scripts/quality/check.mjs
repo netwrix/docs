@@ -1,23 +1,22 @@
 #!/usr/bin/env node
 /**
- * score.mjs - the pre-PR check for documentation a change adds or edits: AI-isms, Vale, and Dale.
+ * check.mjs - the pre-PR check for documentation a change adds or edits: AI-isms, Vale, and Dale.
  *
- *   node scripts/quality/score.mjs [--staged | --base origin/dev] [--files list.txt]
- *                                  [--file <path> ...] [--no-judge | --require-judge]
+ *   node scripts/quality/check.mjs [--staged | --base origin/dev] [--files list.txt]
+ *                                  [--file <path> ...] [--no-model | --require-model]
  *                                  [--no-lint] [--vale-optional] [--only list.txt] [--table]
  *
  * A new page is checked whole. An existing page is checked only on the lines
  * the change adds or rewrites; text it already had is left alone. slop.mjs
- * runs first; the model judge runs only on a page that passes it, and its
+ * and Vale run first; Dale (a model) runs only on a page that passes them, and its
  * verdict is cached by page content. Exit 0 = pass, 1 = fail.
  */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
-import { discoverChanges, inRanges, onlyListed } from './lib/scope.mjs';
-import { scoreDeterministic } from './lib/gates.mjs';
-import { judgePage } from './lib/judge.mjs';
+import { discoverChanges, onlyListed } from './lib/scope.mjs';
+import { checkDeterministic } from './lib/gates.mjs';
 import { daleCheck } from './lib/dale.mjs';
 import { runVale, VALE_INSTALL } from './lib/vale.mjs';
 import { hasApiKey } from './lib/llm.mjs';
@@ -25,13 +24,12 @@ import { mapPool } from './lib/pool.mjs';
 
 const config = JSON.parse(fs.readFileSync(new URL('./config.json', import.meta.url), 'utf8'));
 
-export async function scorePage(file, { ranges = null, judge = true, requireJudge = false, judgeFn, daleFn, lint = false, valeOptional = false, markdown = fs.readFileSync(file, 'utf8') } = {}) {
-  const det = scoreDeterministic(file, config, markdown, ranges);
+export async function checkPage(file, { ranges = null, model = true, requireModel = false, daleFn, lint = false, valeOptional = false, markdown = fs.readFileSync(file, 'utf8') } = {}) {
+  const det = checkDeterministic(file, config, markdown, ranges);
   const result = {
     path: file,
     deterministic: det,
     vale: { status: 'skipped', findings: [] },
-    judge: { status: 'skipped', findings: [] },
     dale: { status: 'skipped', findings: [] },
   };
   let pass = det.pass;
@@ -54,22 +52,14 @@ export async function scorePage(file, { ranges = null, judge = true, requireJudg
   }
   if (!pass) return { ...result, pass: false };
 
-  if (!judge) return { ...result, pass: true };
+  if (!model || !lint) return { ...result, pass: true };
   if (!hasApiKey()) {
-    result.judge.status = requireJudge ? 'unavailable' : 'skipped';
-    if (lint) result.dale.status = result.judge.status;
-    return { ...result, pass: !requireJudge };
+    result.dale.status = requireModel ? 'unavailable' : 'skipped';
+    return { ...result, pass: !requireModel };
   }
-  // The two model checks are independent, so they run together.
-  const [v, d] = await Promise.all([
-    (judgeFn || judgePage)(markdown, { model: config.models.judge }),
-    lint ? (daleFn || daleCheck)(markdown, ranges, { model: config.models.dale }) : Promise.resolve(null),
-  ]);
-  // The judge reads the whole page for context; only findings on changed lines count.
-  const findings = v.findings.filter(f => inRanges(f.line, ranges));
-  result.judge = { status: findings.length === 0 ? (v.cached ? 'cached-pass' : 'pass') : 'fail', findings };
-  if (d) result.dale = { status: d.findings.length === 0 ? (d.cached ? 'cached-pass' : 'pass') : 'fail', findings: d.findings };
-  return { ...result, pass: result.judge.findings.length === 0 && result.dale.findings.length === 0 };
+  const d = await (daleFn || daleCheck)(markdown, ranges, { model: config.models.dale });
+  result.dale = { status: d.findings.length === 0 ? (d.cached ? 'cached-pass' : 'pass') : 'fail', findings: d.findings };
+  return { ...result, pass: d.findings.length === 0 };
 }
 
 /** The version of a file in the index. */
@@ -97,10 +87,10 @@ async function main() {
     files = onlyListed(files, list);
   }
 
-  // Every file is checked. The word-list check is instant; the judge, which is slow, runs a few pages at a time.
+  // Every file is checked. The word-list check is instant; Dale, which is slow, runs a few pages at a time.
   let done = 0;
   const results = await mapPool(files, config.scope.concurrency ?? 3, async ({ file: f, ranges }) => {
-    const r = await scorePage(f, { ranges, judge: !flag('--no-judge'), requireJudge: flag('--require-judge'), lint: !flag('--no-lint'), valeOptional: flag('--vale-optional'), ...(staged ? { markdown: stagedText(f) } : {}) });
+    const r = await checkPage(f, { ranges, model: !flag('--no-model'), requireModel: flag('--require-model'), lint: !flag('--no-lint'), valeOptional: flag('--vale-optional'), ...(staged ? { markdown: stagedText(f) } : {}) });
     if (files.length > 3 && process.stderr.isTTY) console.error(`quality: checked ${++done}/${files.length}  ${f}`);
     return r;
   });
@@ -109,9 +99,9 @@ async function main() {
 
   if (flag('--table')) {
     for (const r of results) {
-      console.log(`${r.pass ? 'PASS' : 'FAIL'}  ${r.path}  (vale: ${r.vale.status}, judge: ${r.judge.status}, dale: ${r.dale.status})`);
-      for (const f of [...r.deterministic.findings, ...r.vale.findings, ...r.judge.findings, ...r.dale.findings].slice(0, 20))
-        console.log(`   ${f.line || '-'}  ${f.rule || `pattern ${f.pattern}`}  ${f.message || f.reason}`);
+      console.log(`${r.pass ? 'PASS' : 'FAIL'}  ${r.path}  (vale: ${r.vale.status}, dale: ${r.dale.status})`);
+      for (const f of [...r.deterministic.findings, ...r.vale.findings, ...r.dale.findings].slice(0, 20))
+        console.log(`   ${f.line || '-'}  ${f.rule}  ${f.message}`);
     }
     if (results.length === 0) console.log('No documentation changes to check.');
   } else {
