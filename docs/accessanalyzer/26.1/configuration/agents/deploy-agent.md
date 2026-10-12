@@ -113,7 +113,7 @@ The panel quotes the name for the shell and adds one `--label` for each label. R
 | Field | What to enter | Rules |
 |---|---|---|
 | **Name** | A display name, for example `Production Agent` | Required; up to 255 characters |
-| **Labels** | One or more `key=value` pairs | At least one required; Access Analyzer lowercases keys and values and replaces spaces with hyphens. The keys `name` and `default` are reserved. |
+| **Labels** | One or more `key=value` pairs | At least one required; Access Analyzer lowercases keys and values and replaces spaces with hyphens. Access Analyzer reserves the keys `name` and `default`. |
 
 If you close the panel with unsaved changes, Access Analyzer asks you to confirm. After you generate the command, closing the panel needs no confirmation.
 
