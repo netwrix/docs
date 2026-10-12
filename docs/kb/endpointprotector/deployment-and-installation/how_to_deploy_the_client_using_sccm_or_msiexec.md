@@ -25,16 +25,18 @@ This article explains how to deploy the Endpoint Protector client to Windows end
 This document is provided as an optional reference for SCCM deployment method configuration. It is not regularly updated and may not reflect the current state of the product or its interface. For the most current information, please refer to the official resources provided by the product vendor.
 :::
 
+> **IMPORTANT:** Netwrix recommends using the FQDN of the Endpoint Protector server in `WSIP` instead of an IP address. Clients configured with an FQDN keep working when the server moves to a new IP address, for example after a migration.
+
 ## Instructions
 
 1. Use the following command structure:
 
    ```plaintext
-   msiexec.exe /i "msiPath" WSIP="EPP_server_IP" WSPORT="443" /qn /norestart
+   msiexec.exe /i "msiPath" WSIP="EPP_server_FQDN" WSPORT="443" /qn /norestart
    ```
 
    - Replace `“msiPath”` with the full path to the Endpoint Protector client MSI installer.
-   - Replace `“EPP_server_IP”` with the IP address or FQDN of the Endpoint Protector server the client will connect to.
+   - Replace `“EPP_server_FQDN”` with the FQDN (recommended) or IP address of the Endpoint Protector server the client will connect to.
 
    :::note
    `/norestart` is optional.

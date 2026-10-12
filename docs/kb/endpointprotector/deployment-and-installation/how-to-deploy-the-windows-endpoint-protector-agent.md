@@ -26,9 +26,11 @@ knowledge_article_id: kA0Qk0000001FTFKA2
 
 For the full reference, see [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation) and [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters) in the Agent documentation. For deploying via Active Directory Group Policy without an MSI transform, see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#upload-procedure) and [Active Directory](/docs/endpointprotector/install/activedirectory/overview).
 
+> **IMPORTANT:** Netwrix recommends setting `WSIP` to the server's fully qualified domain name (FQDN) instead of an IP address. Clients configured with an FQDN keep working when the server moves to a new IP address, for example after a migration.
+
 ## Manual Installation
 
-If installing the Netwrix Endpoint Protector Agent on a small number of clients or for testing, the agent can simply be installed by downloading the MSI Package from the Netwrix Endpoint Protector Console and executed. When downloaded from the console, the installer will have a name that follows the below convention, where `\<VERSION_INFO\>` is replaced with the agent version and `\<ENDPOINT_PROTECTOR_SERVER_ADDRESS\>` is replaced with the Netwrix Endpoint Protector server IP or URL:
+If installing the Netwrix Endpoint Protector Agent on a small number of clients or for testing, the agent can simply be installed by downloading the MSI Package from the Netwrix Endpoint Protector Console and executed. When downloaded from the console, the installer will have a name that follows the below convention, where `\<VERSION_INFO\>` is replaced with the agent version and `\<ENDPOINT_PROTECTOR_SERVER_ADDRESS\>` is replaced with the Netwrix Endpoint Protector server FQDN (recommended) or IP address:
 
 `EPPClientSetup.<VERSION_INFO>._x86_64_[a=<ENDPOINT_PROTECTOR_SERVER_ADDRESS>].msi`
 
@@ -48,10 +50,10 @@ In all the below examples, replace `EPPClient.msi` with the name of the MSI bein
 
 ### Basic Installation
 
-To install the Netwrix Endpoint Protector Agent with the defaults and the EPP server located at `192.168.1.50`, use the following:
+To install the Netwrix Endpoint Protector Agent with the defaults and the EPP server at `epp.example.com`, use the following:
 
 ```batch
-msiexec /i "C:\EPPClient.msi" /qn WSIP=192.168.1.50
+msiexec /i "C:\EPPClient.msi" /qn WSIP=epp.example.com
 ```
 
 ### Installation with Non-Default Department
@@ -59,7 +61,7 @@ msiexec /i "C:\EPPClient.msi" /qn WSIP=192.168.1.50
 Use the same as the basic installation and specify your department code using the `DEPT_CODE` property:
 
 ```batch
-msiexec /i "C:\EPPClient.msi" /qn WSIP=192.168.1.50 DEPT_CODE=depfin
+msiexec /i "C:\EPPClient.msi" /qn WSIP=epp.example.com DEPT_CODE=depfin
 ```
 
 ### Installation with Agent-Specific Proxy Settings
@@ -67,7 +69,7 @@ msiexec /i "C:\EPPClient.msi" /qn WSIP=192.168.1.50 DEPT_CODE=depfin
 To install the agent with a proxy that doesn’t require authentication, use the `PROXYSETTINGSRBGPROP`, `PROXYIP`, and `PROXYPORT` options along with the basic installation. The following will set the agent's proxy to `10.0.0.10:8080`:
 
 ```batch
-msiexec /i "C:\EPPClient.msi" WSIP=192.168.1.50 PROXYSETTINGSRBGPROP=ManualProxy PROXYIP=10.0.0.10 PROXYPORT=8080
+msiexec /i "C:\EPPClient.msi" WSIP=epp.example.com PROXYSETTINGSRBGPROP=ManualProxy PROXYIP=10.0.0.10 PROXYPORT=8080
 ```
 
 Advanced Installations customers requiring further options should see the Appendix for the full list of properties that can be specified.
@@ -89,7 +91,7 @@ Deploying the agent via Group Policy requires editing the MSI either directly or
 4. Add the required properties to the Property Table.
    1. Find and open the Property table.
    2. Right click in the table and select **Add Row**.
-   3. In the popup box, input **WSIP** as the property, and then add your Netwrix Endpoint Protector Server IP Address or FQDN as the value.
+   3. In the popup box, input **WSIP** as the property, and then add your Netwrix Endpoint Protector Server FQDN (recommended) or IP Address as the value.
    4. Click **Ok**.
    5. Optional: If there are more properties that need changing or adding, such as not using the default department code, refer to the Appendix for the list of properties and change them all in the Properties table.
 
@@ -131,7 +133,7 @@ A full list of properties that can be specified in the installer can be found in
 
 | Property | Example Values | Description |
 |---|---|---|
-| **WSIP** | `EPPServer.domain.local` | The name or IP address of your Netwrix Endpoint Protector Server. If this is not specified, then the value of `[a=XXX]` from the name of the installer is used for new installations. For existing installations, the registry is used. |
+| **WSIP** | `EPPServer.domain.local` | The FQDN (recommended) or IP address of your Netwrix Endpoint Protector Server. If this is not specified, then the value of `[a=XXX]` from the name of the installer is used for new installations. For existing installations, the registry is used. |
 | **WSPORT** | `443` | The port on which the Netwrix Endpoint Protector Server is listening for agents. Default value: 443 |
 | **DEPT_CODE** | `Defdep` | The department code to assign the computers. Default value: defep |
 | **PROXYSETTINGSRBGPROP** | `SystemProxy` | Whether to use the System settings for proxy or to use the agent's own proxy configuration. Default: SystemProxy Allowed values: ManualProxy, SystemProxy |

@@ -43,7 +43,7 @@ sudo bash uninstall.sh
 ```bash
 sudo nano options.sh
 ```
-4. Edit the file to set the correct server IP address, then save and exit.
+4. Edit the file to set the correct server address, then save and exit. Use the server's fully qualified domain name (FQDN) instead of an IP address, so the client keeps working when the server address changes.
 5. Reinstall the client:
 ```bash
 sudo bash install.sh

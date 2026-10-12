@@ -49,4 +49,5 @@ Yes, this is possible. Follow these steps to set the FQDN in the server certific
 - If you are using FQDN in the subject and a self-signed certificate, you must reimport the self-signed certificate after regenerating the server certificate stack.
 - If the server certificate is regenerated, the DPI certificate will also be regenerated. The new DPI certificate must be reimported on all Mac machines.
 - MacOS users must proceed with caution when performing these steps. If you regenerate the server certificate stack and do not upload the new DPI certificate, Mac machines may lose internet access.
+- Use the same FQDN that your Endpoint Protector clients and single sign-on (SSO) integrations use to reach the server.
 - If you are still experiencing issues, please reach out to [Netwrix Support](https://www.netwrix.com/support.html).

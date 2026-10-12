@@ -40,7 +40,7 @@ This issue may be due to insufficient licenses, incorrect client-server configur
 3. Check Client Connection
    - Ensure the Netwrix Endpoint Protector Client is correctly configured to connect with the Netwrix Endpoint Protector Server:
      - Navigate to the **Settings** tab and press `CTRL + ALT + I`.
-     - Verify that the Server IP and Port are correct.
+     - Verify that the server address and port are correct. Netwrix recommends a fully qualified domain name (FQDN) over an IP address.
 
 4. Possible Solutions
    - Restart the computer if the EPP Client was recently deployed.

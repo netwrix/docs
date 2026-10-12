@@ -42,7 +42,7 @@ To install the Endpoint Protector Linux Client, follow the steps below:
    #export EPPCLIENT_DEPARTMENT_CODE
    ```
 
-4. Additionally, replace `set.this.to.the.endpointprotector.server.com` with the Endpoint Protector Server IP address or FQDN/DNS.
+4. Additionally, replace `set.this.to.the.endpointprotector.server.com` with the Endpoint Protector Server fully qualified domain name (FQDN). Netwrix recommends an FQDN over an IP address, so clients keep working when the server address changes.
 5. Save the modified **options.sh** file.
 6. Install the client by running the **install.sh** file.
 

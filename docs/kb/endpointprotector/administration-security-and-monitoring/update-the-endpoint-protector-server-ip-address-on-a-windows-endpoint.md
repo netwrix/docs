@@ -28,6 +28,8 @@ knowledge_article_id: kA0Qk0000002B6EKAU
 
 This article explains how to review and change the Netwrix Endpoint Protector (EPP) server IP address, communication port number, or department code on a Windows endpoint machine without uninstalling and reinstalling the Netwrix Endpoint Protector Client. These steps allow you to redirect communication from an old EPP server to a new one or update connection details as needed.
 
+> **IMPORTANT:** Netwrix recommends addressing the EPP server by its fully qualified domain name (FQDN) instead of an IP address. When clients use an FQDN, moving the server to a new IP address requires only a DNS record update, and you do not need to run this procedure on every endpoint.
+
 ## Instructions
 
 ### Configure Settings via EPP Console
