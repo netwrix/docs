@@ -1,0 +1,44 @@
+amends "package://github.com/jdx/hk/releases/download/v2.5.0/hk@2.5.0#/Config.pkl"
+
+// Same file filter as vale-autofix.yml, so local and CI lint the same files.
+local docsMarkdown = List("docs/**/*.md")
+local notLinted = List("docs/kb/**", "**/CLAUDE.md", "**/SKILL.md")
+
+local docsSteps = new Mapping<String, Step> {
+  ["vale"] {
+    glob = docsMarkdown
+    exclude = notLinted
+    fix = "node scripts/vale-local.mjs --fix {{files}}"
+    check = "node scripts/vale-local.mjs --check --changed-only {{files}}"
+  }
+  // Bash ships with macOS and with Git for Windows, which puts it on PATH
+  // for hooks; the script is bash 3 compatible.
+  ["anchors"] {
+    glob = List("docs/**/*.md", "docs/**/*.mdx")
+    check = "bash scripts/check-anchors.sh {{files}}"
+  }
+}
+
+hooks {
+  // Applies the mechanical Vale fixes and restages; leftovers are reported,
+  // not blocked, so work-in-progress commits stay fast.
+  ["pre-commit"] {
+    fix = true
+    stash = "git"
+    steps = docsSteps
+  }
+  // Blocks the push while a Vale warning remains on a line the branch changed.
+  // Check-only, so hk doesn't suggest a --fix that can't clear what's left.
+  ["pre-push"] {
+    steps = (docsSteps) {
+      ["vale"] { fix = null }
+    }
+  }
+  ["fix"] {
+    fix = true
+    steps = docsSteps
+  }
+  ["check"] {
+    steps = docsSteps
+  }
+}

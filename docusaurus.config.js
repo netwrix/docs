@@ -191,6 +191,9 @@ const config = {
       {
         redirects: [
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...(activeProductIds.includes('changetracker')
+            ? [{ from: '/docs/changetracker/componentreleases', to: '/docs/changetracker' }]
+            : []),
           ...redirectProducts.filter(product => {
             // Only create redirects for products with multiple versions (not just 'current')
             return !(product.versions.length === 1 && product.versions[0].version === 'current');

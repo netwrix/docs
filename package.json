@@ -22,8 +22,8 @@
     "kb:dry": "node scripts/copy-kb-to-versions.mjs --dry",
     "kb:test:aa": "npm run kb:clean && npm run prestart && npm run start",
     "kb:prodtest:aa": "npm run kb:clean && npm run prebuild && npm run build && npm run serve",
-    "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh && node --test scripts/test-set-blob-metadata.mjs && node scripts/test-set-blob-metadata-integration.mjs && node --test scripts/claude/test-log-summary.mjs",
-    "prepare": "husky || true"
+    "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh && node --test scripts/test-set-blob-metadata.mjs && node scripts/test-set-blob-metadata-integration.mjs && node --test scripts/claude/test-log-summary.mjs && node --test scripts/test-vale-local.mjs",
+    "prepare": "node scripts/hooks/install.mjs"
   },
   "dependencies": {
     "@azure/storage-blob": "^12.34.0",
@@ -50,7 +50,6 @@
     "@docusaurus/module-type-aliases": "^3.10.0",
     "@docusaurus/types": "^3.10.0",
     "@mdx-js/mdx": "^3.1.1",
-    "husky": "^9.1.7",
     "ora": "^9.4.1",
     "table": "^6.9.0",
     "to-vfile": "^8.0.0",
