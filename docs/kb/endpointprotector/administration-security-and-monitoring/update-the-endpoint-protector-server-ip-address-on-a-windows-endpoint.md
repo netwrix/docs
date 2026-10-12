@@ -38,9 +38,9 @@ This article explains how to review and change the Netwrix Endpoint Protector (E
    [SetServerIP.7z ⸱ Netwrix 🡥](https://download.endpointprotector.com/Support_files/SetServerIP.7z)
 2. Extract the contents from the `SetServerIP.7z` archive into a new folder.
 3. Check the current EPP Client details:
-   - Open the notifier.
-   - Click the **Settings** tab.
-   - Press `ALT + CTRL + I`.  
+   1. Open the notifier.
+   2. Click the **Settings** tab.
+   3. Press `ALT + CTRL + I`.  
 
    The notifier displays the current configuration details:
 

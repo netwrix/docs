@@ -79,7 +79,8 @@ Advanced Installations customers requiring further options should see the Append
 To deploy the agent through Group Policy, edit the MSI directly, or create an MSI transform file and update the specific properties in the transform. The following steps use a transform:
 
 1. Download the Orca MSI (or your preferred MSI editing software; these instructions use Orca).
-   - Orca can be installed from the Windows SDK and selecting the MSI options.
+
+    > **NOTE:** Orca can be installed from the Windows SDK and selecting the MSI options.
 
    ![File Explorer context menu with Edit with Orca highlighted for the EPPClientSetup MSI file](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lsoU.png)
 
@@ -89,37 +90,37 @@ To deploy the agent through Group Policy, edit the MSI directly, or create an MS
 
 3. Click on **Transform** > **New Transform**.
 4. Add the required properties to the Property Table.
-   - Find and open the Property table.
-   - Right click in the table and select **Add Row**.
-   - In the popup box, input **WSIP** as the property, and then add your Endpoint Protector server's FQDN (recommended) or IP address as the value.
-   - Click **Ok**.
-   - Optional: If there are more properties that need changing or adding, such as not using the default department code, refer to the Appendix for the list of properties and change them all in the Properties table.
+   1. Find and open the Property table.
+   2. Right click in the table and select **Add Row**.
+   3. In the popup box, input **WSIP** as the property, and then add your Endpoint Protector server's FQDN (recommended) or IP address as the value.
+   4. Click **Ok**.
+   5. Optional: If there are more properties that need changing or adding, such as not using the default department code, refer to the Appendix for the list of properties and change them all in the Properties table.
 
    ![Orca Property table with the Add Row option highlighted in the right-click menu](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005ls6y.png)
 
    ![Orca Add Row dialog with the WSIP property and the server address value highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lxoA.png)
 
 5. Generate the Transform.
-   - Click on **Transform**.
-   - Click on **Generate Transform**.
-   - In the open box, save your transform.
-   - Ensure the packages are placed on a network share that is accessible to all clients that need to install it.
+   1. Click on **Transform**.
+   2. Click on **Generate Transform**.
+   3. In the open box, save your transform.
+   4. Ensure the packages are placed on a network share that is accessible to all clients that need to install it.
 
    ![Orca Transform menu with Generate Transform highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3Ov.png)
 
 6. Deploy the MSI with the Transform file via Group Policy.
-   - Open Group Policy Management Console.
-   - Find or create a new group policy for the deployment.
-   - Right click on the group policy object and select **Edit…**
-   - Expand **Computer Configuration** / **Policies** / **Software Settings**.
-   - Right-click **Software Installation** and select **New** > **Package**.
-   - Select the Advanced option on the Deploy Software dialog box.
-   - Browse to the network share where the installer and transform were placed in step 5.
-   - Select the `EPPClientSetup` MSI file and click **Open**.
-   - In the new window, select the **Modifications** tab.
-   - Click **Add** and browse to your saved transform file on the network share.
-   - Select the transform file and click **Ok**.
-   - Click **Ok**.
+   1. Open Group Policy Management Console.
+   2. Find or create a new group policy for the deployment.
+   3. Right click on the group policy object and select **Edit…**
+   4. Expand **Computer Configuration** / **Policies** / **Software Settings**.
+   5. Right-click **Software Installation** and select **New** > **Package**.
+   6. Select the Advanced option on the Deploy Software dialog box.
+   7. Browse to the network share where the installer and transform were placed in step 5.
+   8. Select the `EPPClientSetup` MSI file and click **Open**.
+   9. In the new window, select the **Modifications** tab.
+   10. Click **Add** and browse to your saved transform file on the network share.
+   11. Select the transform file and click **Ok**.
+   12. Click **Ok**.
 
    ![Group Policy Management Software installation node with New and Package highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3VN.png)
    ![Open dialog with the EPPClientSetup MSI file and the Open button highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lwId.png)

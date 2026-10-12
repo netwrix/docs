@@ -33,21 +33,22 @@ This article explains how to deploy the Endpoint Protector client to Windows end
 
 ## Instructions
 
-Use the following command structure:
+1. Use the following command structure:
 
-```plaintext
-msiexec.exe /i "msiPath" WSIP="EPP_server_FQDN" WSPORT="443" /qn /norestart
-```
+   ```plaintext
+   msiexec.exe /i "msiPath" WSIP="EPP_server_FQDN" WSPORT="443" /qn /norestart
+   ```
 
-- Replace `msiPath` with the full path to the Endpoint Protector client MSI installer.
-- Replace `EPP_server_FQDN` with the FQDN (recommended) or IP address of the Endpoint Protector server the client will connect to.
+   - Replace `msiPath` with the full path to the Endpoint Protector client MSI installer.
+   - Replace `EPP_server_FQDN` with the FQDN (recommended) or IP address of the Endpoint Protector server the client will connect to.
 
-> **NOTE:** `/norestart` is optional.
+    > **NOTE:** `/norestart` is optional.
 
-For example, the following command uses an FQDN and writes a verbose installation log:
+2. If you are using an FQDN, adapt the template as follows:
 
-```plaintext
-msiexec.exe /i "EPPClientSetup.2607.1.1.0_x86_64.msi" /qn /l*v "c:\temp\EPP_inst.log" WSIP="mycompany.endpointprotector.server.com" WSPORT="443"
-```
+   ```plaintext
+   msiexec.exe /i "EPPClientSetup.2607.1.1.0_x86_64.msi" /qn /l*v "c:\temp\EPP_inst.log" WSIP="mycompany.endpointprotector.server.com" WSPORT="443"
+   ```
 
-Replace `EPPClientSetup.2607.1.1.0_x86_64.msi` with the name of your installer. If the installer name contains an IP address, remove the IP address from the name.
+   - Replace `EPPClientSetup.2607.1.1.0_x86_64.msi` with the name of your installer. If the installer name contains an IP, remove the IP from the name.
+   - Replace `mycompany.endpointprotector.server.com` with the IP address or FQDN of your Endpoint Protector server.
