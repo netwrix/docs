@@ -1,6 +1,6 @@
 ---
 title: Requirements
-description: Server sizing, install media disk space, hostname, network ports, TLS certificate, license key, first administrator, and browser requirements for installing Access Analyzer.
+description: Server sizing, install media disk space, hostname, network ports, TLS certificate, license key, first administrator, antivirus exclusions, and browser requirements for installing Access Analyzer.
 sidebar_position: 1
 ---
 
@@ -134,6 +134,18 @@ Some features add outbound connections of their own after you configure them.
 | Domain controllers | TCP 636 | You use Active Directory as the identity provider. The connection uses Lightweight Directory Access Protocol (LDAP) over TLS (LDAPS). |
 | Domain controllers | TCP 389 | You scan an Active Directory source. The connection uses LDAP (default port). |
 | File servers | TCP 445 | You scan an SMB file server source (default port). |
+
+## Antivirus Exclusions
+
+Real-time scanning by antivirus or endpoint protection software can interfere with the container runtime that Access Analyzer runs on. Exclude these directories from real-time scanning on the Access Analyzer server and on every [agent](../agents/index.md) host:
+
+- `/var/lib/rancher/k3s/agent/containerd`
+- `/var/lib/rancher/k3s/data`
+- `/run/k3s/containerd`
+
+If you install the server with `--storage-dir`, the first two directories move under it. For example, `--storage-dir /data` puts them at `/data/rancher/k3s/agent/containerd` and `/data/rancher/k3s/data`. Agent hosts always use the default directories.
+
+The preflight check warns when it detects a known antivirus product and names the product's command or console for adding the exclusions. See [Preflight Checks](installer-reference.md#preflight-checks).
 
 ## Browser
 

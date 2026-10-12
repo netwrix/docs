@@ -41,6 +41,7 @@ The agent host needs a Linux server of its own. You can't run `install-agent` on
 | Disk | 5 GB free. A server that runs from offline media also needs room for the media and its unpacked copy, about 7 GB. The panel says about 8 GB of free disk, and preflight warns below 8 GB. |
 | Installer | The `dspm-installer` binary for the host's architecture. See [Download the installer](../install/run-the-installer.md#download-the-installer). |
 | Not the server | The host can't be the Access Analyzer server. `install-agent` refuses to run where `/etc/rancher/k3s/k3s.yaml` exists. |
+| Antivirus | The same real-time scanning exclusions as the server. See [Antivirus Exclusions](../install/requirements.md#antivirus-exclusions). |
 
 For example, an arm64 host can't join a server that runs from offline media on an x86 machine. Use an x86 host, or build the server on matching hardware.
 
