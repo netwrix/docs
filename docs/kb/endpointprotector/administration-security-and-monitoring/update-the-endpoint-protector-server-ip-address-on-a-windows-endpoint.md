@@ -6,7 +6,7 @@ description: >-
 keywords:
   - endpoint protector
   - set server ip
-  - EPPSetServer.exe
+  - EppSetServer.exe
   - SetServerIP.7z
   - server IP
   - communication port
@@ -14,7 +14,7 @@ keywords:
   - Windows endpoint
 products:
   - endpointprotector
-sidebar_label: Update the Endpoint Protector Server IP Address on
+sidebar_label: Update the Endpoint Protector Server IP Address on a Windows Endpoint
 tags:
   - administration-security-and-monitoring
   - kb
@@ -35,33 +35,33 @@ This article explains how to review and change the Netwrix Endpoint Protector (E
 ### Configure Settings via EPP Console
 
 1. Download the Endpoint Protector Set Server IP application:  
-   https://download.endpointprotector.com/Support_files/SetServerIP.7z
+   [SetServerIP.7z ⸱ Netwrix 🡥](https://download.endpointprotector.com/Support_files/SetServerIP.7z)
 2. Extract the contents from the `SetServerIP.7z` archive into a new folder.
 3. Check the current EPP Client details:
-   1. Open the notifier.
-   2. Click the **Settings** tab.
-   3. Press `ALT + CTRL + I`.  
+   - Open the notifier.
+   - Click the **Settings** tab.
+   - Press `ALT + CTRL + I`.  
 
-   The current configuration details will be displayed as shown below.
+   The notifier displays the current configuration details:
 
    ![Current configuration details in Netwrix Endpoint Protector Notifier](./../0-images/ka0Qk000000EcJx_0EMQk00000C91kM.png)
 
 4. Open the folder containing the `SetServerIP` application and run `EppSetServer.exe`.
 5. Enter the new EPP server IP address, communication port number, or department code.
 6. Click **Update** to apply the new settings.
-7. Once a message populates stating the update was successful, restart the Windows endpoint machine for the changes to take effect.
-8. Repeat step 3 to confirm that the new details have been applied to the Netwrix Endpoint Protector Client.
+7. After a message confirms the update was successful, restart the Windows endpoint machine for the changes to take effect.
+8. Repeat step 3 to confirm that the Netwrix Endpoint Protector Client shows the new details.
 
 ### Configure Settings via Script
 
 1. Download the Endpoint Protector Set Server IP application:  
-   https://download.endpointprotector.com/Support_files/SetServerIP.7z
+   [SetServerIP.7z ⸱ Netwrix 🡥](https://download.endpointprotector.com/Support_files/SetServerIP.7z)
 2. Extract the contents from the `SetServerIP.7z` archive into a new folder.
 3. Create a new note using Windows Notepad and save the file as `EPPSetServer.bat`. You must change the file extension from `.txt` to `.bat`.
 4. Edit the batch file in Notepad and insert the following command, updating the details as needed:
 
-```bat
-EPPSetServer.exe -ip 192.168.43.113 -port 443 -dept "ITDEP"
-```
+   ```bat
+   EppSetServer.exe -ip 192.168.43.113 -port 443 -dept "ITDEP"
+   ```
 
-5. Run the script and then restart the Windows endpoint machine for the new details to be applied.
+5. Run the script, and then restart the Windows endpoint machine to apply the new details.

@@ -34,13 +34,11 @@ For the full reference, see [Agent Installation](/docs/endpointprotector/admin/a
 Run the following command:
 
 ```batch
-msiexec /i "C:\Users\eppuser1\Desktop\EPP Client\EPPClientSetup.6.2.4.2000_x86_64_[a=192.168.43.115].msi" /norestart /qn /l*v "C:\EPP_inst.log"
+msiexec /i "C:\Users\eppuser1\Desktop\EPP Client\EPPClientSetup.6.2.4.2000_x86_64_[a=epp.example.com].msi" /norestart /qn /l*v "C:\EPP_inst.log"
 ```
 
-- ` /qn` performs a silent installation.
-- ` /norestart` prevents a computer restart after installation is complete.
-- ` /l*v "C:\EPP_inst.log"` writes a verbose installation log to the specified path — useful for troubleshooting a failed silent install.
+- `/qn` performs a silent installation.
+- `/norestart` prevents a computer restart after installation is complete.
+- `/l*v "C:\EPP_inst.log"` writes a verbose installation log to the specified path — useful for troubleshooting a failed silent install.
 
-:::tip
-To customize the installation (server address, department code, proxy settings, and more), add the relevant MSI properties to the command. Use the server's fully qualified domain name (FQDN) as the server address instead of an IP address. See the Appendix in [How to Deploy the Windows Endpoint Protector Agent](/docs/kb/endpointprotector/deployment-and-installation/how-to-deploy-the-windows-endpoint-protector-agent) for the full property list.
-:::
+> **NOTE:** To customize the installation (server address, department code, proxy settings, and more), add the relevant MSI properties to the command. Use the server's fully qualified domain name (FQDN) as the server address instead of an IP address. See the Appendix in [How to Deploy the Windows Endpoint Protector Agent](/docs/kb/endpointprotector/deployment-and-installation/how-to-deploy-the-windows-endpoint-protector-agent) for the full property list.
