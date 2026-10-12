@@ -77,13 +77,13 @@ Create the DNS record before you install. The TLS certificate's Subject Alternat
 
 ## TLS Certificate
 
-Access Analyzer serves the web application **only** over HTTPS, and the installer never generates a certificate. You supply one.
+Access Analyzer serves the web application **only** over HTTPS. Supply a certificate from your certificate authority (CA). For a lab or demo install, the installer can generate a self-signed certificate instead with `--generate-self-signed-cert`.
 
 | Item | Requirement |
 |---|---|
 | Certificate | PEM format, full chain, leaf certificate first. Its Subject Alternative Names must include the hostname; the Common Name alone isn't enough. It must not be expired. |
 | Private key | PEM format, unencrypted, and the key that matches the certificate. |
-| CA bundle | Optional. PEM format. Needed only when a private certificate authority (CA) issued the certificate, so that the certificate chains to it. |
+| CA bundle | Optional. PEM format. Needed only when a private CA issued the certificate, so that the certificate chains to it. |
 
 The installer looks for the certificate at `/etc/dspm/tls.crt` and the key at `/etc/dspm/tls.key` unless you point it elsewhere. A self-signed certificate works, and the installer uses it as its own CA bundle, but browsers warn users about it.
 
