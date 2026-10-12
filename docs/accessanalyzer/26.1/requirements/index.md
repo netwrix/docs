@@ -133,10 +133,13 @@ Some features add outbound connections of their own after you configure them.
 | Host | Port | When you need it |
 |---|---|---|
 | `login.microsoftonline.com`, `sts.windows.net` | TCP 443 | You use Entra ID as the identity provider. |
-| `graph.microsoft.com` | TCP 443 | You add an Entra ID or SharePoint Online source. |
+| `login.microsoftonline.com`, `graph.microsoft.com` | TCP 443 | You add an Entra ID or SharePoint Online source. |
+| `*.sharepoint.com` | TCP 443 | You add a SharePoint Online source. The scan connects to your tenant's SharePoint and OneDrive hosts, such as `contoso.sharepoint.com` and `contoso-my.sharepoint.com`. |
 | Domain controllers | TCP 636 | You use Active Directory as the identity provider. The connection uses Lightweight Directory Access Protocol (LDAP) over TLS (LDAPS). |
 | Domain controllers | TCP 389 | You scan an Active Directory source. The connection uses LDAP (default port). |
 | File servers | TCP 445 | You scan an SMB file server source (default port). |
+
+The Microsoft hosts are for the commercial Microsoft 365 cloud. Government and sovereign clouds use different hosts.
 
 ## Browser
 
