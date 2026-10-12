@@ -323,5 +323,4 @@ A: Navigate to Settings > Agents & Devices. The version is displayed in the Devi
 - [Agent Updates (Official Documentation)](/docs/changetracker/admin/settingstab/agentsanddevices/agentupdates)
 - [Device Groups](/docs/changetracker/admin/settingstab/devicegroups)
 - [Agent and Device Ports](/docs/changetracker/requirements/agentdeviceports)
-- [Component Release History](/docs/changetracker/componentreleases)
 - [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command)
