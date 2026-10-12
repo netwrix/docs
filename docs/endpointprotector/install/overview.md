@@ -28,7 +28,7 @@ This section of the documentation provides best-effort guidance on deployment. I
 
 To start using Endpoint Protector, you need to deploy a server instance. The server hosts all endpoint controls and behavior configuration and delivers the
 Endpoint Protector agent to endpoint systems. There are two principal options for server management;
-Customer-Managed or Provider- Managed. If Customer-Managed is a desired option, you can install the server On-Premise or in a Hosted-Cloud Environment.
+Customer-Managed or Provider- Managed. If you choose Customer-Managed, you can install the server On-Premise or in a Hosted-Cloud Environment.
 
 With the On-Premise option for a Customer-Managed instance, you can set up a virtualized image in your LAN. Virtualization options include, but aren’t limited to: VMware and
 Hyper-V. The Hosted-Cloud deployment method uses a customer’s Amazon Web Services
@@ -37,7 +37,7 @@ Hyper-V. The Hosted-Cloud deployment method uses a customer’s Amazon Web Servi
 Alternatively, if you require a Provider-Managed setup, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
 
 :::note
-To use the Endpoint Protector Server in a production environment, you need a License Key. After purchasing Endpoint Protector with the necessary modules, your Account Manager will assign a license that you can install in the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
+To use the Endpoint Protector Server in a production environment, you need a License Key. After you purchase Endpoint Protector with the necessary modules, your Account Manager will assign a license that you can install in the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
 :::
 
 The following sections describe the different methods for deploying Endpoint Protector, with step-by-step instructions and best practices.
@@ -60,7 +60,7 @@ Netwrix assigns an FQDN to every SaaS deployment by default. Bind your clients a
 
 Your Endpoint Protector Server can communicate with Netwrix servers only when you connect it to the internet.
 
-When connected, Netwrix may access the following metadata information:
+When the server has an internet connection, Netwrix may access the following metadata information:
 
 - **Server metrics:**  
   - RAM  

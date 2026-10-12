@@ -24,7 +24,7 @@ logging in for the first time, use the default credentials:
 - Password: epp2011
 
 :::note
-ensure to update your login credentials after the first log in to enhance security.
+Update your login credentials after the first log in to enhance security.
 :::
 
 
@@ -41,6 +41,6 @@ disallowed on the endpoint.
 ![High-level overview of endpoints under management as well as activity](dashboard.webp)
 
 Before deploying any agents, review each module’s policy. If you've already deployed agents to
-systems, verify the configuration by checking active policy mappings. To clarify, after you build or
+systems, verify the configuration by checking active policy mappings. After you build or
 edit a policy, you map it to a defined target or group of targets. Later sections for each module
 discuss this process.

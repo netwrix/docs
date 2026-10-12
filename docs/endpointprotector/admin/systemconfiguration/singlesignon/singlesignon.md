@@ -24,8 +24,8 @@ users as super administrators setting.
 
 
 - Service Provider represents the identity of the Endpoint Protector Server. You need this
-  information when you conﬁgure the Endpoint Protector application in Azure. Select if the login is based
-  on IP or Domain, provide an Entity ID as well as Login and Logout URL.
+  information when you conﬁgure the Endpoint Protector application in Azure. Select whether the login uses
+  IP or Domain, provide an Entity ID as well as Login and Logout URL.
 - Identity Provider represents Azure side. It includes the fields where you paste the data that Azure
   generates so you can log in to the Endpoint Protector Server.
 

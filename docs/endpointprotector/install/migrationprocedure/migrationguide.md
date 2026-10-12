@@ -91,7 +91,7 @@ Both articles converge on the same two final phases, common to every migration r
 
 ### Why an Intermediate Version Is Required for Legacy 5.x Servers
 
-The 2608 base image accepts configuration backups from a fixed set of source versions only — it doesn't accept a backup from an arbitrary 5.x release. If you're on any version older than 5.9.4.2, you must reach 5.9.4.2 first. This is because:
+The 2608 base image accepts configuration backups only from a fixed set of source versions. If you're on any version older than 5.9.4.2, you must reach 5.9.4.2 first. This is because:
 
 - The internal database schema at 5.9.4.2 is the last known-compatible schema for import into the new image platform.
 - The migration process validates the backup format and version checksum before restoring.

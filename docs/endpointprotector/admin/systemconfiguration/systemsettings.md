@@ -26,19 +26,19 @@ For more information, see the System Settings topic.
 
 You can modify the following session timeout settings:
 
-- Session Timeout – set the amount of time the user is inactive until the session expires between 5
-  and 60 minutes
-- Timeout counter – set the amount of time for the session timeout countdown between 5 seconds and
+- Session Timeout – set the amount of time, between 5 and 60 minutes, that the user can remain
+  inactive before the session expires
+- Timeout counter – set the length of the session timeout countdown, between 5 seconds and
   Session Timeout minus one minute
 
-Example: If you set the Session Timeout to 5 minutes and the Timeout counter to 60 seconds, a pop-up window will notify you after 4 minutes of inactivity that Endpoint Protector will log you out in 60 seconds.
+Example: If you set the Session Timeout to 5 minutes and the Timeout counter to 60 seconds, after 4 minutes of inactivity a pop-up window notifies you that Endpoint Protector will log you out in 60 seconds.
 
 ![Session Settings](sessionsettings.webp)
 
 After you remain idle for the defined amount of time, Endpoint Protector stops responding and
 displays a message that indicates the session will expire in the predefined countdown.
 
-You can choose to log out or continue your session, resetting the session timeout interval.
+You can log out, or continue your session to reset the session timeout interval.
 
 ![Session timeout interval](sessiontimeout.webp)
 

@@ -15,7 +15,7 @@ Auth0’s authentication framework. Begin by activating SSO within your system�
 settings, selecting a failover user, and preparing for provider selection. This section guides you
 through the precise steps required to establish a secure and efficient SSO connection, including
 application integration in Auth0, SAML settings configuration, and the necessary data synchronization
-between your server and Auth0. Follow these steps to complete the setup.
+between your server and Auth0.
 
 **Step 1 –** To activate Single Sign-On, navigate to **System Configuration** > **System
 Settings** > **Single Sign-On**. After you activate it, select a Failover Login User from the dropdown
@@ -23,7 +23,7 @@ menu. The Root user is the default selection.
 
 ![Single Sign On Conﬁguration with Auth0](ssookta.webp)
 
-After completing these steps, a Single Sign-On subsection appears in the System Configuration section.
+After you complete these steps, a Single Sign-On subsection appears in the System Configuration section.
 
 **Step 2 –** Select the **Provider** to display the Single Sign On subsection.
 
@@ -39,7 +39,7 @@ After completing these steps, a Single Sign-On subsection appears in the System 
 6.  Click **Create**.
 7.  Go to **Login Experience** tab and verify that you selected “Both” (Individuals or Business Users) for the Types of Users, with either “Prompt for Credentials” or “Prompt for Organization” as options. 
 
-**Note:** “Prompt for Organization” will require you to have an organization created with your connections enabled for it. It will prompt for an organizational email, then redirect you to the password field.
+**Note:** “Prompt for Organization” requires an organization with your connections enabled for it. It will prompt for an organizational email, then redirect you to the password field.
 “Prompt for Credentials” will prompt for a email and password and then redirect you to the application.
 
 This application will represent Endpoint Protector on the Auth0 side.
@@ -67,7 +67,7 @@ You now need three pieces of information from Auth0 to complete the configuratio
 
 •X.509 certificate
 
-To obtain them, after enabling the add-on go to the Usage tab to copy these details and paste them to EPP.
+To obtain them, go to the Usage tab after you enable the add-on, and copy these details into EPP.
 
 1.  **Issuer** matches the Entity ID from Endpoint Protector.
 2.  **Identity Provider Login URL** matches the Login URL from Endpoint Protector.
@@ -100,13 +100,13 @@ For further restriction, use Endpoint Protector’s own user and role management
 2.  Add the individual users you need to give access to (verify that they have access to the connection created at Step 6, **Username-Password-Authentication**).
 
 Note
-This is a way to grant direct user access to the application, for enterprise level access based on organizational context see the next step.
+This step grants direct user access to the application. For enterprise level access based on organizational context, see Step 8.
 
 ![Add Users](4AddUsersIndividually.png)
 
 **Step 8 –** (Optional) Create a SAML Connection under Authentication → Enterprise
 
-To have Auth0 act as a broker IdP and authenticate users through an external SAML Identity Provider (such as Azure AD, Okta, ADFS, Ping, or Shibboleth), you must create an Enterprise SAML Connection.
+To have Auth0 act as a broker identity provider (IdP) and authenticate users through an external SAML Identity Provider (such as Azure AD, Okta, ADFS, Ping, or Shibboleth), you must create an Enterprise SAML Connection.
 
 You need this step only if Auth0 isn't the original IdP, and instead you want EPP → Auth0 → external IdP.
 
@@ -150,7 +150,7 @@ This step allows Auth0 to accept SAML assertions from another IdP and pass them 
 
 **Disclaimer**
 
-The integration steps described in this document are based on the Auth0 platform and user interface as available at the time of writing. Auth0 is a third-party service that is fully independent from Netwrix. Because Auth0 may update or modify its features, user interface, configuration flow, roadmap, service ownership, or platform behavior at any time, Netwrix can't guarantee that these instructions will remain accurate in future versions of Auth0.
+The integration steps in this document reflect the Auth0 platform and user interface as available at the time of writing. Auth0 is a third-party service that is fully independent from Netwrix. Because Auth0 may update or modify its features, user interface, configuration flow, roadmap, service ownership, or platform behavior at any time, Netwrix can't guarantee that these instructions will remain accurate in future versions of Auth0.
 
 Netwrix isn't responsible for any changes Auth0 makes to its portal, APIs, configuration settings, authentication methods, or service availability. If discrepancies arise between this document and the current Auth0 platform, refer to Auth0’s official documentation or contact Auth0 Support for the most up-to-date guidance.
 

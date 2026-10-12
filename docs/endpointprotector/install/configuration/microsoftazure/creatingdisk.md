@@ -31,7 +31,7 @@ Machine. To create a disk, follow these steps.
 - Availability Zone
 - Source type - select Storage Blob
 - Source subscription - select Pay-As-You-Go
-- Source blob – enter the URL received from Netwrix after providing the key and URL mentioned above.
+- Source blob – enter the URL you received from Netwrix after you provided the key and URL.
 - OS type - select Linux
 - Security type – select Standard
 - VM generation – select Generation 1
@@ -59,8 +59,8 @@ To start the Endpoint Protector Virtual Machine in Azure, follow these steps:
     - Subscription – select Pay-As-You-Go
     - Resource group – select the group used when creating the disk
     - Virtual Machine Name – enter a name for the Virtual Machine
-    - Size - select a virtual machine profile based closest to the recommended requirements for the
-      disk file used
+    - Size - select the virtual machine profile closest to the recommended requirements for the
+      disk file
 
 ![A screenshot of a computer
 
