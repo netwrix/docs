@@ -31,7 +31,7 @@ In this section you can set a preferential time zone and/or sync the appliance t
   with the default selection
 
 :::note
-The appliances are preﬁgured to sync once a week with pool.ntp.org.
+By default, the appliances sync once a week with pool.ntp.org.
 :::
 
 
@@ -50,7 +50,7 @@ In this section you can change the network settings for the appliance to communi
 your network.
 
 :::note
-Starting with the 2509 Endpoint Protector (EPP) Server release, the EPP Server no longer supports the DHCP client option. This means that administrators must assign a fixed IP address to the EPP Server.
+Starting with the 2509 Endpoint Protector (EPP) Server release, the EPP Server no longer supports the DHCP client option, so administrators must assign a fixed IP address to the EPP Server.
 :::
 
 :::note
@@ -76,8 +76,8 @@ For appliances hosted on the following types of images, IP change options will n
 
 :::note
 When transitioning from IPv4 to IPv6 or vice versa, changes to the Nginx configuration may be necessary:
-- If you are using IPv4 and transitioning to IPv6, ensure that the Nginx configuration is updated to listen on the IPv6 address.
-- If you are using IPv6 and transitioning to IPv4, ensure that the Nginx configuration is updated to listen on the IPv4 address.
+- If you are using IPv4 and transitioning to IPv6, update the Nginx configuration to listen on the IPv6 address.
+- If you are using IPv6 and transitioning to IPv4, update the Nginx configuration to listen on the IPv4 address.
 For customers using the standard Nginx configuration (most users), Endpoint Protector applies these adjustments automatically. Always click Save after changing from one IP version to another to apply the configuration.
 
 For customers with custom Nginx configurations (such as those using a different port for client communication), these changes might impact the communication between the agent and server.
@@ -95,8 +95,8 @@ In this section you can modify or add a DNS server address and then Save your ch
 
 By default, Endpoint Protector encrypts all communication between Endpoint Protector Clients and the Endpoint Protector Server using mutual TLS (mTLS). Both sides present certificates during the TLS handshake, which protects data in transit against interception.
 
-To further harden the registration and communication process, Endpoint Protector provides two additional, optional security features that build on this foundation: **Client Registration Certificate** and **Server Certificate Validation**. When enabled, these options introduce certificate pinning into the client lifecycle — verifying not just that communication is encrypted, but
-that both endpoints are who they claim to be. 
+To further harden the registration and communication process, Endpoint Protector provides two additional, optional security features that build on this foundation: **Client Registration Certificate** and **Server Certificate Validation**. When enabled, these options introduce certificate pinning into the client lifecycle — verifying that communication is encrypted and
+that both endpoints are who they claim to be.
 
 :::warning
 The Client Registration Certificate feature isn't available for Linux.
@@ -148,9 +148,9 @@ endpoints.
 
 ### Server Certiﬁcate Validation
 
-While Client Registration Certificate secures the registration phase, Server Certificate Validation extends certificate verification to all ongoing communication. When enabled, the Endpoint Protector Client validates the server's SSL certificate on every outbound request — ensuring that clients only communicate with a trusted, legitimate Endpoint Protector Server and can't be redirected to a rogue or impersonated instance.
+While Client Registration Certificate secures the registration phase, Server Certificate Validation extends certificate verification to all ongoing communication. When enabled, the Endpoint Protector Client validates the server's SSL certificate on every outbound request — ensuring that clients only communicate with a trusted, legitimate Endpoint Protector Server and that attackers can't redirect them to a rogue or impersonated instance.
 When enabled, the EPP Client validates the server's SSL certificate on every outbound request, verifying three key properties:
-- **Certificate trust** — the server certificate must be issued by a trusted Certificate Authority recognized by the endpoint.
+- **Certificate trust** — a Certificate Authority that the endpoint trusts must issue the server certificate.
 - **Expiration date** — the server certificate must be valid and not expired.
 - **Hostname matching** — the server certificate's Common Name (CN) or Subject Alternative Name (SAN) must match the hostname the client is connecting to.
 
@@ -167,7 +167,7 @@ From this section, you can conﬁgure Server Certiﬁcate Validation, which ensu
 
 Before enabling, verify that:
 - The EPP Server certificate is valid and not expired.
-- The EPP Server certificate is issued by a CA trusted by all managed endpoints.
+- A CA that all managed endpoints trust issued the EPP Server certificate.
 - The EPP Server hostname matches the certificate's CN or SAN exactly.
 
 **Client-Side Configuration**
@@ -251,7 +251,7 @@ To create a SIEM Server, click **Add New** and provide the following information
 ![SIEM Intergration - Adding a New Server](siemintegrationnewserver.webp)
 
 :::warning
-The SIEM integration feature in Endpoint Protector comes with certain limitations. To use the latest features, your environment must meet specific criteria: you must have installed it from image version 5.6.0.0 or later, and it must maintain an active HTTPS connection. SIEM integration is only accessible in environments that meet these prerequisites.
+To use the latest SIEM integration features, you must have installed Endpoint Protector from image version 5.6.0.0 or later, and your environment must maintain an active HTTPS connection.
 :::
 
 

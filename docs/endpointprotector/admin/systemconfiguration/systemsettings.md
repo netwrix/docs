@@ -414,8 +414,8 @@ scan ﬁnds 10 threats.
 
 In this example, the policy will trigger when the policy is satisfied (Boolean logic), meaning when at
 least one identifier (eg. E-mail) reaches a ‘Threat Threshold’ of 4, but the scan engine will
-continue to scan until the total threat of 10 from setting ‘Maximum number of reported threats’
-under ‘Ignore Thresholds’ is reached. Depending on the data structure in the test file, Endpoint
+continue to scan until it reaches the total threat of 10 from setting ‘Maximum number of reported
+threats’ under ‘Ignore Thresholds’. Depending on the data structure in the test file, Endpoint
 Protector Client may report different 10 threats to Endpoint Protector Server
 
 - 2 E-mails + 2 SSN US + 6 CC Visa
@@ -471,8 +471,8 @@ systems.
 
 
 :::warning
-Don't use this setting if no instance of macOS 12.0 (or higher) is registered on the
-Endpoint Protector server.
+Don't use this setting if the Endpoint Protector server has no registered instance of
+macOS 12.0 (or higher).
 :::
 
 

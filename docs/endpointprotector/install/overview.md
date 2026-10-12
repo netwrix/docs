@@ -34,7 +34,7 @@ With the On-Premise option for a Customer-Managed instance, you can set up a vir
 Hyper-V. The Hosted-Cloud method of deployment allows for use of a customer’s Amazon Web Services
 (AWS), Azure, or Google Cloud Platform (GCP) instance. See [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) for supported VM formats including VMware and Hyper-V, and [Cloud Services](/docs/endpointprotector/install/configuration/overview.md) for AWS, Azure, and GCP deployment details.
 
-Alternatively, if a Provider-Managed setup is required, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
+Alternatively, if you require a Provider-Managed setup, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
 
 :::note
 To use the Endpoint Protector Server in a production environment, you need a License Key. After purchasing Endpoint Protector with the necessary modules, your Account Manager will assign a license that you can install in the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
@@ -124,7 +124,7 @@ Starting with version 2509, Netwrix standardizes EPP product versioning. The ver
 
 **`B`** — Optional build number for internal tracking
 
-**Consistency across interfaces:** This versioning format is applied across all UI pages where version numbers appear, including dashboards, reports, maintenance tools, and the EPP Client Notifier.
+**Consistency across interfaces:** Endpoint Protector uses this versioning format across all UI pages where version numbers appear, including dashboards, reports, maintenance tools, and the EPP Client Notifier.
 
 
 **Examples of the New Versioning**

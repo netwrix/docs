@@ -26,8 +26,8 @@ Machine. To create a disk, follow these steps.
 - Subscription - select Pay-As-You-Go
 - Resource group – select the previously created one
 - Disk name – add a name for the storage account
-- Region – select the nearest the location of the computers that will be protected by Endpoint
-  Protector
+- Region – select the region nearest the location of the computers that Endpoint Protector will
+  protect
 - Availability Zone
 - Source type - select Storage Blob
 - Source subscription - select Pay-As-You-Go

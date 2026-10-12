@@ -18,7 +18,7 @@ application integration in Auth0, SAML settings configuration, and the necessary
 between your server and Auth0. Follow the following steps to ensure a successful setup.
 
 **Step 1 –** To activate Single Sign-On, navigate to **System Configuration** > **System
-Settings** > **Single Sign-On**. Once activated, select a Failover Login User from the dropdown
+Settings** > **Single Sign-On**. After you activate it, select a Failover Login User from the dropdown
 menu. The Root user is the default selection.
 
 ![Single Sign On Conﬁguration with Auth0](ssookta.webp)
@@ -37,7 +37,7 @@ After completing these steps, a Single Sign-On subsection appears in the System 
 4.  Enter a name such as EndpointProtector or MyEPPApp.
 5.  Select **Regular Web Application**.
 6.  Click **Create**.
-7.  Go to **Login Experience** tab and verify that for the Types of Users, “Both” is checked (Individuals or Business Users), with either “Prompt for Credentials” or “Prompt for Organization” as options. 
+7.  Go to **Login Experience** tab and verify that you selected “Both” (Individuals or Business Users) for the Types of Users, with either “Prompt for Credentials” or “Prompt for Organization” as options. 
 
 **Note:** “Prompt for Organization” will require you to have an organization created with your connections enabled for it. It will prompt for an organizational email, then redirect you to the password field.
 “Prompt for Credentials” will prompt for a email and password and then redirect you to the application.
@@ -52,7 +52,7 @@ This application will represent Endpoint Protector on the Auth0 side.
 2.  Go to the Add-ons tab.
 3.  Enable the **SAML2 Web App** add-on.
 4.  Click **Settings** on the SAML2 Web App tile.
-5.  Add **the Callback URL** displayed in Endpoint Protector at Step 2 when opening the Auth0 provider settings. Make sure the URL uses the server's fully qualified domain name (FQDN), not an IP address. A callback URL based on an IP address stops working when the server address changes.
+5.  Add **the Callback URL** displayed in Endpoint Protector at Step 2 when opening the Auth0 provider settings. ensure the URL uses the server's fully qualified domain name (FQDN), not an IP address. A callback URL based on an IP address stops working when the server address changes.
 6.  Scroll down and click **Enable** to activate the add-on for the application.
 
 ![Add the Callback URL displayed in Endpoint Protector](2AddonCallbackURL.png)
@@ -108,7 +108,7 @@ This is a way to grant direct user access to the application, for enterprise lev
 
 To have Auth0 act as a broker IdP and authenticate users through an external SAML Identity Provider (such as Azure AD, Okta, ADFS, Ping, or Shibboleth), you must create an Enterprise SAML Connection.
 
-This step is only needed if Auth0 isn't the original IdP, and instead you want EPP → Auth0 → external IdP.
+You need this step only if Auth0 isn't the original IdP, and instead you want EPP → Auth0 → external IdP.
 
 To create a SAML Enterprise connection:
 
@@ -142,8 +142,8 @@ This step allows Auth0 to accept SAML assertions from another IdP and pass them 
 **Step 9 –** Test the Configuration
 
 1.  In Endpoint Protector, click Test to validate the configuration.
-2.  You should be redirected to Auth0 for authentication.
-3.  After entering valid credentials, you should be redirected back to Endpoint Protector and logged in as the corresponding user or redirected to the respective IdP if an enterprise connection is active on Auth0.
+2.  Endpoint Protector redirects you to Auth0 for authentication.
+3.  After you enter valid credentials, Auth0 redirects you back to Endpoint Protector and logs you in as the corresponding user, or redirects you to the respective IdP if an enterprise connection is active on Auth0.
 
 
 ![Test SAML Configuration](6TestConnection.png)
@@ -152,6 +152,6 @@ This step allows Auth0 to accept SAML assertions from another IdP and pass them 
 
 The integration steps described in this document are based on the Auth0 platform and user interface as available at the time of writing. Auth0 is a third-party service that is fully independent from Netwrix. Because Auth0 may update or modify its features, user interface, configuration flow, roadmap, service ownership, or platform behavior at any time, Netwrix can't guarantee that these instructions will remain accurate in future versions of Auth0.
 
-Netwrix isn't responsible for any changes made by Auth0 to its portal, APIs, configuration settings, authentication methods, or service availability. If discrepancies arise between this document and the current Auth0 platform, refer to Auth0’s official documentation or contact Auth0 Support for the most up-to-date guidance.
+Netwrix isn't responsible for any changes Auth0 makes to its portal, APIs, configuration settings, authentication methods, or service availability. If discrepancies arise between this document and the current Auth0 platform, refer to Auth0’s official documentation or contact Auth0 Support for the most up-to-date guidance.
 
 Netwrix continues to ensure that Endpoint Protector adheres to SAML 2.0 standards and remains compatible with identity providers that follow these protocols.

@@ -31,7 +31,7 @@ click Create.
 
 ## Requesting a Static IP
 
-You will need to request a static IP so the Endpoint Protector Clients can communicate with the same
+Request a static IP so the Endpoint Protector Clients can communicate with the same
 IP Address in case of an instance restart.
 
 Without a Static IP (Elastic IP), the instance will assign a new IP address every time it restarts, and you must reinstall the Endpoint Protector Clients.

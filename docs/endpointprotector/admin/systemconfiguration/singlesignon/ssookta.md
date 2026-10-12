@@ -21,7 +21,7 @@ application integration in Okta, SAML settings configuration, and the necessary 
 between your server and Okta. Follow the following steps to ensure a successful setup.
 
 **Step 1 –** To activate Single Sign-On, navigate to **System Configuration** > **System
-Settings** > **Single Sign-On**. Once activated, select a Failover Login User from the dropdown
+Settings** > **Single Sign-On**. After you activate it, select a Failover Login User from the dropdown
 menu. The Root user is the default selection.
 
 ![Single Sign On Conﬁguration with OKTA](ssookta.webp)
@@ -52,7 +52,7 @@ Integration**.
 ![Endpoint Protector Server Single Sign On coffiguration ](ssoconfiguration.webp)
 
 :::tip
-Before you copy the values in the next step, make sure the Service Provider is set to **Domain** (see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon)). Values based on an IP address stop working when the server address changes.
+Before you copy the values in the next step, ensure you set the Service Provider to **Domain** (see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon)). Values based on an IP address stop working when the server address changes.
 :::
 
 **Step 8 –** Copy the information from:

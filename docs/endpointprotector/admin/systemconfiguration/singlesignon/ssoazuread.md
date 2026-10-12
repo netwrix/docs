@@ -21,16 +21,16 @@ following steps to activate Single Sign-On with Azure AD.
 
 **Step 1 –** Navigate to **System Conﬁguration** > **System Settings** > **Single Sign On**.
 
-**Step 2 –** Upon the activation, select a **Failover Login User** from the dropdown; root user
-will be selected by default.
+**Step 2 –** After you activate Single Sign On, select a **Failover Login User** from the dropdown.
+Endpoint Protector selects the root user by default.
 
 ![Single Sign On Conﬁguration with Microsoft Entra ID ](ssomicrosoftentraid.webp)
 
 After these steps are complete, a Single Sign On subsection appears in the System Configuration section.
 
 :::note
-The Failover Login User you selected can't be deleted from Endpoint Protector Server
-while it is selected. Single Sign On can't be activated without a Failover Login User.
+You can't delete the Failover Login User you selected from Endpoint Protector Server
+while it is selected. You can't activate Single Sign On without a Failover Login User.
 :::
 
 
@@ -71,7 +71,7 @@ Conﬁguration** page.
 ![Basic SAML Conﬁguration page](entraidbasicsamlconf.webp)
 
 :::tip
-Before you copy the values in the next step, make sure the Service Provider is set to **Domain** (see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon)). Values based on an IP address stop working when the server address changes.
+Before you copy the values in the next step, ensure you set the Service Provider to **Domain** (see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon)). Values based on an IP address stop working when the server address changes.
 :::
 
 **Step 10 –** From the Single Sign On page on the Endpoint Protector Server:
@@ -155,5 +155,5 @@ Configuration** > **Single Sign-On** > **Failover Login URL** and **Save** it.
 
 **Step 25 –** Assign the user to the application. You can now log into Endpoint Protector with Azure.
 
-**Step 26 –** Log out of the Endpoint Protector Server and log back in. The administrator should be
-redirected to http://login.microsoftonline.com/ for the Azure login process.
+**Step 26 –** Log out of the Endpoint Protector Server and log back in. Endpoint Protector redirects the administrator to
+http://login.microsoftonline.com/ for the Azure login process.
