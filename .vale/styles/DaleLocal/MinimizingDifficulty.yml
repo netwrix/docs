@@ -1,0 +1,13 @@
+extends: existence
+message: "Don't minimize the difficulty of a task ('%s')."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  # Only user-task phrasing, so "the attack is easily automated" passes.
+  - '\b(?:you|users|administrators|admins|it) (?:can|could|will) (?:easily|simply)\b'
+  - '\b(?:easily|simply) (?:configure|create|add|set|change|manage|export|import|install|deploy|find|view|access|update|modify|remove|delete|enable|disable|select|click|drag|copy|run|open|connect|generate|apply|restore|move)\b'
+  - '(?:^|[.!?]\s+)simply\b'
+  - '\beffortless(?:ly)?\b'
+  - '\btrivially\b'
+  - "\\b(?:it's|it is|is|are) (?:easy|simple|trivial) to\\b"
