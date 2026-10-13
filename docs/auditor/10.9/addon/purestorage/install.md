@@ -52,7 +52,7 @@ FlashArray supports both SMB and NFS. Create a remote syslog log target pointing
 installation server and the port you plan to use, for example:
 
 ```
-purelog syslog create --uri tls://<add-on-host>:<port> --services data-audit fa-remote-syslog
+purelog syslog create --uri tcp://<add-on-host>:<port> --services data-audit fa-remote-syslog
 ```
 
 You can also create the syslog target from the FlashArray web console: **Settings → Monitoring**,
