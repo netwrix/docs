@@ -13,7 +13,7 @@ keywords:
   - 6187
   - access denied
   - auditing not enabled
-  - OAuth 2.0
+  - OAuth
 products:
   - auditor
 sidebar_label: NetApp Clustered Data ONTAP Error Resolution Guide
