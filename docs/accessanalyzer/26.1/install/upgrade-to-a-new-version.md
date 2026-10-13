@@ -138,7 +138,7 @@ Add `--dry-run` to check the preconditions and free space and print the upgrade 
 6. Turns automated sync back on and waits for every application to become healthy.
 7. Deletes the downloaded media.
 
-If something interrupts the upgrade (Ctrl-C, a dropped SSH session, or a stopped pod), it turns automated sync back on before it exits. Run the same command again to finish the upgrade.
+If something interrupts the upgrade (Ctrl-C, a dropped SSH session, or a stopped pod), the upgrade turns automated sync back on before it exits. Run the same command again to finish the upgrade.
 
 </TabItem>
 <TabItem value="airgap" label="Air-gapped upgrade">
