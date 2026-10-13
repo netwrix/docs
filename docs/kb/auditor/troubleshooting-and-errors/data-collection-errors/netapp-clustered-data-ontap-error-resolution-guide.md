@@ -169,10 +169,12 @@ OAuth 2.0 token endpoint <identity provider URL>: HTTP 400 Bad Request, error="i
 
 **Cause:**
 The Client ID specified for the monitored item is not registered in the identity provider (for example, AD FS).
+The Client secret is wrong or expired.
 
 **Resolution:**
 1. Compare the Client ID in the monitored item settings with the client identifier registered in the identity provider.
-2. Correct the Client ID or register the client in the identity provider.
+2. Check the Client secret or recreate it if needed.
+3. Correct the Client ID or register the client in the identity provider.
 
 #### Scenario 4: OAuth 2.0 Token Endpoint Name Not Resolved (WinHttpSendRequest 12007)
 
@@ -204,7 +206,7 @@ The identity provider issued a token, but ONTAP could not validate it. The OAuth
 **Documentation:**
 [Configure ONTAP](/docs/auditor/10_9/configuration/fileservers/netappcmode/oauth2/ontap)
 
-#### Scenario 6: Remote User Not Set (AD FS, HTTP 401)
+#### Scenario 6: Remote User Claim Not Set (AD FS, HTTP 401)
 
 **Error Description:**
 
@@ -271,6 +273,53 @@ The path to the log folder is wrong or has been changed.
 
 **Documentation:**
 [Configure Events and Log](/docs/auditor/10_9/configuration/fileservers/netappcmode/netappaudit)
+
+#### Scenario 7: Connection Timed Out (WinHttpSendRequest 12002)
+
+**Error Description:**
+Request to `https://<SVM IP address>/api/svm/svms?...` failed: WinHttpSendRequest: 12002: The operation timed out. The request to `<SVM IP address>` timed out.
+
+**Cause:**
+The Netwrix Auditor server sent the request, but the SVM did not respond in time. The SVM address is not reachable from the Netwrix Auditor server, a firewall silently drops the traffic, or the SVM is overloaded or unresponsive.
+
+**Resolution:**
+1. Verify the IP address or name specified for the monitored item.
+2. Check that the Netwrix Auditor server can reach the SVM over HTTPS: `Test-NetConnection -ComputerName <SVM IP address> -Port 443`
+3. Check that no firewall or network device between the Netwrix Auditor server and the SVM drops traffic on port 443.
+4. Verify that the SVM LIF is `up` and has the `management-https` service: `network interface show -vserver <SVM>`
+5. Open `https://<SVM IP address>/api/svm/svms` in a browser on the Netwrix Auditor server. If the page does not respond, investigate the network path and the load on the ONTAP cluster.
+
+#### Scenario 8: Identity Provider Certificate Not Trusted (WinHttpSendRequest 12175)
+
+**Error Description:**
+OAuth 2.0 token endpoint `https://<identity provider FQDN>/adfs/oauth2/token`: WinHttpSendRequest: 12175: A security error occurred. The TLS handshake with `<identity provider FQDN>` failed: the certificate was issued by a certification authority that is not trusted.
+
+**Cause:**
+The Netwrix Auditor server does not trust the certificate authority (CA) that issued the TLS certificate of the identity provider (for example, AD FS). The CA certificate is missing from the Trusted Root Certification Authorities store.
+
+**Resolution:**
+1. Export the root CA certificate (and any intermediate CA certificates) that issued the identity provider certificate.
+2. On the Netwrix Auditor server, open the Certificates console for the local computer (`certlm.msc`).
+3. Import the root CA certificate into **Trusted Root Certification Authorities** > **Certificates**. Import intermediate CA certificates into **Intermediate Certification Authorities**.
+4. Verify that the identity provider FQDN matches the subject or a subject alternative name (SAN) of the certificate.
+5. Restart the **Netwrix Auditor File Storage Audit** service.
+
+**Documentation:**
+[Configure AD FS as an Authentication Provider](/docs/auditor/10_9/configuration/fileservers/netappcmode/oauth2/adfs)
+
+#### Scenario 9: Client Certificate Required (WinHttpSendRequest 12044)
+
+**Error Description:**
+Request to `https://<SVM IP address>/api/svm/svms?...` failed: WinHttpSendRequest: 12044: A certificate is required to complete client authentication. The server requested a TLS client certificate, but client certificate authentication is not supported.
+
+**Cause:**
+The SVM requires a TLS client certificate (mutual TLS). Netwrix Auditor does not support client certificate authentication for ONTAP connections.
+
+**Resolution:**
+1. Check whether client certificate authentication is enabled for the SVM: `security ssl show -vserver <SVM>`
+2. If the `Client Authentication Enabled` value is `true`, disable it: `security ssl modify -vserver <SVM> -client-enabled false -server-enabled true`
+3. If the address you specified is a LIF that belongs to a different SVM, such as the admin SVM, or to a cluster with a different TLS policy, use the address of a LIF that does not require client certificates.
+4. Restart data collection for the monitored item.
 
 ### Error 6187: Audit Disabled
 
