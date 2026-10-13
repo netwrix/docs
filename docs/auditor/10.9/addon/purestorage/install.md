@@ -126,6 +126,6 @@ The wizard covers the settings needed to get the add-on running. Advanced tuning
 which shares or protocols a source should collect, excluding specific users or paths, or turning ACL
 enrichment on or off — is available in the add-on's configuration file (`addonconfiguration.json`).
 
-The following behaviors are expected: the add-on reports NFS paths as native Unix paths rather than
+Expect the following behaviors: the add-on reports NFS paths as native Unix paths rather than
 converting them to Windows UNC paths, and ACL/owner "after" value enrichment is available only for
 SMB shares, since NFS has no equivalent concept to query.
