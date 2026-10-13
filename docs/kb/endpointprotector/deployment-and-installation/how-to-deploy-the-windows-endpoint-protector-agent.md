@@ -28,6 +28,14 @@ For the full reference, see [Agent Installation](/docs/endpointprotector/admin/a
 
 > **IMPORTANT:** Netwrix recommends setting `WSIP` to the server's fully qualified domain name (FQDN) instead of an IP address. Clients configured with an FQDN keep working when the server moves to a new IP address, for example after a migration.
 
+## Choosing a Deployment Method
+
+All three methods install the same agent. Choose the method that fits the size of your environment and the deployment tools you already use:
+
+- Manual installation: suits a small number of clients or testing.
+- Silent installation with `msiexec`: installs without user interaction, so you can use it in scripts or in any deployment tool that can run a command line.
+- Group Policy: installs the agent on every computer in the scope of a Group Policy Object, so you can use it when you manage endpoints through Active Directory.
+
 ## Manual Installation
 
 To install the Netwrix Endpoint Protector Agent on a small number of clients or for testing, download the MSI package from the Netwrix Endpoint Protector Console and run it. The installer name follows this convention, where `\<VERSION_INFO\>` is the agent version and `\<ENDPOINT_PROTECTOR_SERVER_ADDRESS\>` is the server FQDN (recommended) or IP address:
@@ -69,10 +77,32 @@ msiexec /i "C:\EPPClient.msi" /qn WSIP=epp.example.com DEPT_CODE=depfin
 To install the agent with a proxy that does not require authentication, use the `PROXYSETTINGSRBGPROP`, `PROXYIP`, and `PROXYPORT` options along with the basic installation. The following will set the agent's proxy to `10.0.0.10:8080`:
 
 ```batch
-msiexec /i "C:\EPPClient.msi" WSIP=epp.example.com PROXYSETTINGSRBGPROP=ManualProxy PROXYIP=10.0.0.10 PROXYPORT=8080
+msiexec /i "C:\EPPClient.msi" /qn WSIP=epp.example.com PROXYSETTINGSRBGPROP=ManualProxy PROXYIP=10.0.0.10 PROXYPORT=8080
 ```
 
-Advanced Installations customers requiring further options should see the Appendix for the full list of properties that can be specified.
+### msiexec Options and Installer Properties
+
+The examples combine standard Windows `msiexec` options with Endpoint Protector installer properties.
+
+The following options are standard `msiexec` options that work with any MSI package:
+
+| Option | Description |
+|---|---|
+| `/i` | Installs the specified MSI package |
+| `/qn` | Runs the installation silently, with no user interface |
+
+To suppress a restart or write an installation log, you can also add the standard options `/norestart` or `/l*v "<log-path>"`. See [How to Deploy the Client Using SCCM or msiexec](/docs/kb/endpointprotector/deployment-and-installation/how_to_deploy_the_client_using_sccm_or_msiexec) for an example.
+
+The following properties are specific to the Endpoint Protector agent. Set them as `PROPERTY=value` after the `msiexec` options:
+
+| Property | Description |
+|---|---|
+| `WSIP` | The Endpoint Protector server FQDN (recommended) or IP address |
+| `DEPT_CODE` | The department code to assign to the computer |
+| `PROXYSETTINGSRBGPROP` | Selects the proxy mode; `ManualProxy` uses the agent's own proxy settings |
+| `PROXYIP`, `PROXYPORT` | The IP address and port of the proxy server |
+
+Advanced Installations customers requiring further options should see the [Appendix](#appendix) for the full list of properties that can be specified.
 
 ## Deploying the Agent via Group Policy
 
