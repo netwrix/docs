@@ -6,14 +6,16 @@ sidebar_position: 10
 
 # FS_MIPLabels Job
 
-The FS_MIPLabels job is designed to report on resources classified by Microsoft Purview Information
-Protection sensitivity labels (Microsoft Information Protection, MIP) from targeted file servers.
+The FS_MIPLabels job reports on resources classified by Microsoft Information Protection (MIP)
+sensitivity labels from targeted file servers.
 
 :::note
 The FSAA Data Collector collects label data by using the Microsoft Information Protection (MIP)
 File SDK. See the
 [Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)
-topic for the prerequisites required to scan for labels.
+topic for the prerequisites required to scan for labels. To apply sensitivity labels to files that
+contain sensitive data, see the
+[FS_MIPLabeling Job](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/fs_miplabeling.md) topic.
 :::
 
 ## Analysis Tasks for the FS_MIPLabels Job
