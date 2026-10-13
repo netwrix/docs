@@ -26,7 +26,7 @@ The difference:
 
 ## Style reference
 
-Vale and Dale run when you run the style check (step 9 of the skill) and again in the pre-commit hook. Nothing lints on the PR. The self-review step in each task type covers the same issues Dale checks (passive voice, wordiness, idioms, hedging, future tense). The rules below cover what linters don't catch. Apply these while writing.
+Vale and Dale run when you run the style check (step 10 of the skill) and again in the pre-commit hook. Nothing lints on the PR. The self-review step in each task type covers the same issues Dale checks (passive voice, wordiness, idioms, hedging, future tense). The rules below cover what linters don't catch. Apply these while writing.
 
 ### Grammar
 
