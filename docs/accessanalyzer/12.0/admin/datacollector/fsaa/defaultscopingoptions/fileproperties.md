@@ -25,8 +25,8 @@ the scan.
     - Include offline files – Scans network files that have the offline files feature enabled
     - Include MIP Protected Files – Scans for files protected by Microsoft Information Protection
       (MIP) that have sensitivity labels
-        - This option is only available when the Enable scanning of files protected by Microsoft
-          Information Protection checkbox is enabled on the Scan Settings page
+        - This option is only available when you select the Enable scanning of files protected by
+          Microsoft Information Protection checkbox on the Scan Settings page
     - Only collect tags/keywords with these comma-separated values (case-insensitive) – scopes the
       scan to only collect tags from the files with the tags specified by comma-separated values
 

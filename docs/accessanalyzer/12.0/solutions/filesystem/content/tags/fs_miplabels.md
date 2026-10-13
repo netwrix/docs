@@ -10,7 +10,7 @@ The FS_MIPLabels job is designed to report on resources classified by Microsoft 
 Protection sensitivity labels (Microsoft Information Protection, MIP) from targeted file servers.
 
 :::note
-Label data is collected by the FSAA Data Collector using the Microsoft Information Protection (MIP)
+The FSAA Data Collector collects label data by using the Microsoft Information Protection (MIP)
 File SDK. See the
 [Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)
 topic for the prerequisites required to scan for labels.

@@ -12,7 +12,7 @@ the File System library. See the
 [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for
 instructions to add this instant job into the Jobs tree.
 
-For installing the job, select **Local host** on the Hosts page of the Instant Job Wizard.
+To install the job, select **Local host** on the Hosts page of the Instant Job Wizard.
 
 Runtime Details:
 
@@ -67,7 +67,7 @@ job's **Configure** node, on each query's **Properties** > **PowerShell** page.
 | Clear Authentication          | Clears the session authentication after labeling is complete                                 | `modulePath` – Optional                                                                                                                                |
 
 :::warning
-The client secret is stored in the job configuration. Restrict access to the job, and don't copy
+The job configuration stores the client secret. Restrict access to the job, and don't copy
 the configured job to shared locations.
 :::
 
@@ -106,4 +106,4 @@ by the Purview client's child processes. Large file lists take proportionally lo
 **Step 5 –** Run the job with **Local host** selected.
 
 **Step 6 –** Review the Apply MIP Sensitive Data Label results. Rescan the target files and run the
-FS_MIPLabels job to confirm the labels were applied.
+FS_MIPLabels job to confirm that the job applied the labels.

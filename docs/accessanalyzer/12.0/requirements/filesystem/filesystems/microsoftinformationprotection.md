@@ -12,7 +12,7 @@ This document explains how to configure the access Access Analyzer needs to scan
 
 ## Workflow for Scanning MIP Labels
 
-Before the Access Analyzer File System solution can scan for Microsoft Information Protection (MIP) labels, certain prerequisites are required both in Access Analyzer and Microsoft Entra ID and Microsoft Purview environments.
+Before the Access Analyzer File System solution can scan for Microsoft Information Protection (MIP) labels, complete the following prerequisites in Access Analyzer, Microsoft Entra ID, and Microsoft Purview.
 
 1. [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account)
 2. [Enable the Account as a Super User using PowerShell](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#enable-the-account-as-a-super-user-using-powershell)
@@ -21,19 +21,19 @@ Before the Access Analyzer File System solution can scan for Microsoft Informati
 
 ## Prerequisites
 
-Ensure the following prerequisites are met before configuring MIP scanning:
+Meet the following prerequisites before you configure MIP scanning:
 
 - Microsoft Entra ID Global Administrator credentials, or an account holding the **Azure Information Protection Administrator**, **Compliance Administrator**, or **Compliance Data Administrator** role
 - Windows PowerShell 5.1 (run as Administrator) and the ability to run `Install-Module`
-- The [Microsoft Purview Information Protection client](https://www.microsoft.com/en-us/download/details.aspx?id=53018), downloaded and installed on the Access Analyzer console server. It is required to apply labels with the FS_MIPLabeling instant job
-- Network access from the server where the FSAA applet or proxy runs to the following Microsoft endpoints. These must be allowed for non-browser application traffic:
+- The [Microsoft Purview Information Protection client](https://www.microsoft.com/en-us/download/details.aspx?id=53018), downloaded and installed on the Access Analyzer console server. The FS_MIPLabeling instant job requires it to apply labels
+- Network access from the server where the FSAA applet or proxy runs to the following Microsoft endpoints. Allow these endpoints for non-browser application traffic:
   - `login.microsoftonline.com`
   - `dataservice.protection.outlook.com`
   - `*.aadrm.com`
   - `*.informationprotection.azure.com`
 
 :::warning
-The MIP File SDK uses the machine-wide WinHTTP proxy settings (`netsh winhttp show proxy`). If a static proxy is configured and it's unreachable, MIP initialization can stall or fail and MIP scanning is turned off for the scan. Confirm the proxy is reachable, or reset it with `netsh winhttp reset proxy`.
+The MIP File SDK uses the machine-wide WinHTTP proxy settings (`netsh winhttp show proxy`). If the configured static proxy is unreachable, MIP initialization can stall or fail, and the scan turns off MIP scanning. Confirm the proxy is reachable, or reset it with `netsh winhttp reset proxy`.
 
 :::
 
@@ -57,7 +57,7 @@ The MIP File SDK uses the machine-wide WinHTTP proxy settings (`netsh winhttp sh
    5. Record the **Value** immediately (not the **Secret ID**)
 
    :::warning
-   The secret value is displayed only once. It disappears when you leave the page.
+   The portal displays the secret value only once. It disappears when you leave the page.
 
    :::
 
@@ -90,7 +90,7 @@ The MIP File SDK uses the machine-wide WinHTTP proxy settings (`netsh winhttp sh
 
 ## Enable the Account as a Super User using PowerShell
 
-The `Content.SuperUser` permission takes effect only after the service principal is added as an Azure Rights Management super user. This is a separate step from the app registration and requires an administrator account in the tenant.
+The `Content.SuperUser` permission takes effect only after you add the service principal as an Azure Rights Management super user. This is a separate step from the app registration and requires an administrator account in the tenant.
 
 :::info
 **NOTE**
@@ -136,9 +136,9 @@ Complete two configurations before Access Analyzer can scan for MIP labels.
 
 ### **Azure Connection Profile**
 
-To collect labels for files protected with Microsoft Information Protection, an Azure connection profile must be configured in Access Analyzer before an FSAA scan runs. See the [Global Settings](/docs/accessanalyzer/12.0/admin/settings/overview.md) topic for additional information on how to set up a connection profile at the global level.
+To collect labels for files protected with Microsoft Information Protection, configure an Azure connection profile in Access Analyzer before an FSAA scan runs. See the [Global Settings](/docs/accessanalyzer/12.0/admin/settings/overview.md) topic for additional information on how to set up a connection profile at the global level.
 
-1. In Access Analyzer, add a credential for an Azure Active Directory account type to the existing Connection Profile used for File System scanning. Supply the Client ID field with the **Application (client) ID** and the Key field with the **Secret Value** created upon creation of the new service principal.
+1. In Access Analyzer, add a credential for an Azure Active Directory account type to the existing Connection Profile used for File System scanning. Supply the Client ID field with the **Application (client) ID** and the Key field with the **Secret Value** you recorded when you created the service principal.
 2. At the job level, apply the connection profile that contains both the Microsoft Entra ID credential and credentials required for File System scanning under the **Jobs** > \[**Job**\] > **Settings** > **Connection** node.
 3. Ensure that the job is configured correctly before running a scan. See the [Configure FSAA Data Collector](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#configure-fsaa-data-collector) topic for additional information.
 
@@ -146,11 +146,11 @@ An Azure Connection Profile has now been successfully created for an FSAA scan.
 
 ### **Configure FSAA Data Collector**
 
-In Access Analyzer, configure the FSAA Data Collector wizard pages to scan files protected by Microsoft Information Protection. This can be done for both FSAA System Scans and SEEK System Scans. In the FSAA Data Collector Wizard, configure the following menus to scan for MIP labels:
+In Access Analyzer, configure the FSAA Data Collector wizard pages to scan files protected by Microsoft Information Protection. You can do this for both FSAA System Scans and SEEK System Scans. In the FSAA Data Collector Wizard, configure the following menus to scan for MIP labels:
 
 For FSAA System Scans:
 
-- Scan Server Selection – Choose the server that scanning is executed on. This may be a proxy server, file server (applet mode), or the local Access Analyzer console depending on scan configuration. The server must meet the network requirements listed in the [Prerequisites](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#prerequisites) section.
+- Scan Server Selection – Choose the server that runs the scan. This may be a proxy server, file server (applet mode), or the local Access Analyzer console depending on scan configuration. The server must meet the network requirements listed in the [Prerequisites](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#prerequisites) section.
 - Scan Settings – Select the **Enable scanning of files protected by Microsoft Information Protection** checkbox to add MIP files to the scan criteria
 - Azure Tenant Mapping page – Add the **Application (client) ID** and the **Domain Name** or **Tenant ID**
 
@@ -168,7 +168,7 @@ For FSAA System Scans:
 
 For SEEK System Scans:
 
-- Scan Server Selection – Choose the server that scanning is executed on. This may be a proxy server, file server (applet mode), or the local Access Analyzer console depending on scan configuration. The server must meet the network requirements listed in the [Prerequisites](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#prerequisites) section.
+- Scan Server Selection – Choose the server that runs the scan. This may be a proxy server, file server (applet mode), or the local Access Analyzer console depending on scan configuration. The server must meet the network requirements listed in the [Prerequisites](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#prerequisites) section.
 - Scan Settings – Select the **Enable scanning of files protected by Microsoft Information Protection** checkbox to add MIP files to the scan criteria
 - Azure Tenant Mapping page – Add the **Application (client) ID** and the **Domain Name** or **Tenant ID**
 
