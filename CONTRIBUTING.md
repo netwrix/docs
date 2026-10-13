@@ -42,18 +42,20 @@ mise install   # answer yes when mise asks to trust .config/mise.toml
 npm run start
 ```
 
+The git hooks lint your docs before each commit and push, so install them even if you only edit markdown (`mise install`, then `npm install`).
+
 The dev server runs on port 4500 with hot reload — changes you make to documentation files appear immediately in the browser.
 
 ## Workflow
 
 1. Create a branch from `dev` (never commit directly to `dev` or `main`).
 2. Make your changes to documentation files in `docs/`.
-3. Commit your changes. The pre-commit hook fixes mechanical Vale issues in the files you commit and stages the fixes.
+3. Commit your changes. The pre-commit hook fixes mechanical Vale issues in the files you commit and stages the fixes. It then blocks the commit if Vale, Dale, or the AI-writing check flags a new or changed line. Fix what it flags, `git add`, and commit again. Preview it any time with `npm run quality:check`.
 4. Test the build with `npm run build`.
 5. Push your branch. The pre-push hook blocks the push while any Vale warning remains on a line you changed.
 6. Create a pull request (PR) targeting `dev`.
 
-After you open a PR, Vale and Dale issues are auto-fixed and a summary is posted. An editorial review also runs and posts results as a PR comment. To get help with editorial suggestions, comment `@claude` on the PR followed by your request.
+Linting happens at commit through the hooks (or through the `doc-draft` skill). If changes skip that, CI still runs Vale and Dale on the PR and auto-fixes what it can. An editorial review also runs and posts results as a PR comment. To get help with editorial suggestions, comment `@claude` on the PR followed by your request.
 
 ## Writing standards
 
@@ -80,6 +82,8 @@ sidebar_label: 'Sidebar Label'
 description: 'SEO description'
 ---
 ```
+
+The `description` is required on a new page: one sentence, under 160 characters, saying what the reader can do or learn there. The pre-commit check blocks a new page without one.
 
 ## Linting with Vale
 
@@ -151,7 +155,7 @@ If you have [Claude Code](https://claude.ai/code) installed, this repository inc
 
 ### Linting with Dale
 
-Dale is an AI linter that catches context-dependent issues that regex-based Vale can't — passive voice, misplaced modifiers, idioms, wordiness, and other patterns. Dale issues are auto-fixed on PRs alongside Vale.
+Dale is an AI linter that catches context-dependent issues that regex-based Vale can't — passive voice, misplaced modifiers, idioms, wordiness, and other patterns. The pre-commit hook also runs Dale (a model applies the rules) on new pages and on the lines you changed.
 
 Run Dale locally on any markdown file to preview context-dependent issues:
 
@@ -163,26 +167,29 @@ Run Dale locally on any markdown file to preview context-dependent issues:
 
 Ask Claude Code for help with your writing — brainstorming document structure, drafting a section, editing existing content, or understanding a style rule. Claude automatically uses the `doc-help` skill when you ask for writing assistance. You can also invoke it directly with `/doc-help`, followed by your request.
 
-### Run autonomous documentation tasks
+### Draft new pages
 
-For well-defined tasks where the work is clear and doesn't need back-and-forth, Claude automatically uses the `tech-writer` agent to handle the work end-to-end.
+For well-defined drafting tasks, Claude uses the `doc-draft` skill in your session, or you can run `/doc-draft`. It drafts new pages from a pull request, a GitHub issue, a Jira ticket or Azure DevOps item, specs, notes, or a detailed prompt, and it can structure a new docs directory following the section guide (`.claude/references/documentation-section-guide.md`). It doesn't edit existing pages; use `doc-help` for that. Before it finishes, it lints its draft (Vale, Dale, and the AI-writing check) and fixes what is flagged.
 
 Examples:
-- "Fix all the Vale errors in `docs/accessanalyzer/12.0/install.md`".
-- "Edit this procedure for clarity and Netwrix style".
+- "Look at PR 1040 in itdr-pingcastle-core and document it".
+- "Look at Jira ticket PLAT-1234 and write the doc".
 - "Draft the installation steps based on this outline: [outline]"
+- "Create the docs directory for this new product from these specs: [specs]"
 
-For tasks that need design decisions first — like writing a new guide from scratch — Claude uses doc-help to brainstorm the structure with you, then hands the drafting off to the tech-writer agent.
+For tasks that need design decisions first — like planning a new guide from scratch — Claude uses doc-help to brainstorm the structure with you, then moves to `doc-draft` for the drafting.
 
 ### Quick reference
 
 | Task | Tool |
 |---|---|
 | Quick lint check on a file | `/dale docs/path/to/file.md` |
-| Plan structure for a new document | `doc-help` then `tech-writer` agent |
+| Check your changes before committing | `npm run quality:check` |
+| Plan structure for a new document | `doc-help` then `doc-draft` |
+| Draft a new page from a PR, issue, ticket, or specs | `doc-draft` |
 | Review or improve existing content | `doc-help` |
-| Fix Vale errors across a file | `tech-writer` agent |
-| Edit a file for style and clarity | `tech-writer` agent |
+| Fix Vale errors in a file | `doc-help`, or fix by hand and run `npm run quality:check` |
+| Edit a file for style and clarity | `doc-help` |
 | Understand a style rule or convention | `doc-help` |
 
 ## Common Mistakes
@@ -192,4 +199,4 @@ For tasks that need design decisions first — like writing a new guide from scr
 - Don't commit directly to `dev` or `main` — create a branch from `dev` first.
 - Don't target `main` in PRs — always use `dev`.
 - Don't use first person anywhere in documentation content.
-- Don't omit examples — every concept introduced needs one.
+- Don't omit the example from a procedure. Don't pad a concept with an example it doesn't need; if one would help and you can't confirm it, leave a `{/* TODO: add an example */}`.
