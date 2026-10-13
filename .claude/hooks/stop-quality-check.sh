@@ -6,6 +6,8 @@
 # rounds it lets go; the pre-commit hook is the hard gate and checks everything that is staged.
 
 [ -n "$NWX_QUALITY_CHILD" ] && exit 0
+# CI has its own backstop (Vale Auto-Fix), and its jobs would run model calls beyond their scope.
+[ -n "$GITHUB_ACTIONS" ] && exit 0
 INPUT=$(cat)
 # Parse with node, which the repo already requires; jq is not installed everywhere.
 SESSION=$(echo "$INPUT" | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{try{process.stdout.write(String(JSON.parse(d).session_id||""))}catch{}})' 2>/dev/null)
@@ -15,6 +17,8 @@ ROUNDS=$(cat "$COUNTER" 2>/dev/null || echo 0)
 
 cd "${CLAUDE_PROJECT_DIR:-.}" || exit 0
 [ -f scripts/quality/check.mjs ] || exit 0
+# Without installed dependencies the check cannot load, so there is nothing to run.
+[ -d node_modules/js-yaml ] || exit 0
 
 # Only the files this session edited. None edited, nothing to check.
 LIST="${TMPDIR:-/tmp}/nwx-quality-files-$SESSION"

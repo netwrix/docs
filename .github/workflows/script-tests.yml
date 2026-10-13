@@ -1,17 +1,21 @@
 name: Script Tests
 
-# Runs the repo's own script tests when a PR changes scripts or package.json.
+# Runs the repo's own script tests when a PR changes scripts, package.json, or the
+# Vale and Dale rule files that lint-rules.md is generated from.
 # Docs are linted before the PR (Vale, Dale, and the AI-isms check run in the
 # pre-commit hook); nothing here lints documentation.
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, reopened]
     branches:
       - dev
     paths:
       - 'scripts/**'
       - 'package.json'
+      - '.vale/styles/**'
+      - '.claude/skills/dale/rules/**'
+      - '.claude/references/lint-rules.md'
 
 concurrency:
   group: script-tests-${{ github.event.pull_request.number }}
