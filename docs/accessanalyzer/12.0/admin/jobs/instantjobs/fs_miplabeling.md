@@ -45,7 +45,7 @@ Complete the following before running the job:
 - Register an application in Microsoft Entra ID for use with the `Set-Authentication` cmdlet. The
   application created in the
   [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account)
-  section already has the required permissions and can be reused. See the
+  section already has the required permissions, and you can reuse it. See the
   [Microsoft documentation](https://learn.microsoft.com/en-us/powershell/azure/aip/setup-information-protection-client-powershell#create-and-configure-microsoft-entra-applications-for-set-authentication)
   for the required configuration.
   - Record the Application (client) ID, Directory (tenant) ID, and a client secret

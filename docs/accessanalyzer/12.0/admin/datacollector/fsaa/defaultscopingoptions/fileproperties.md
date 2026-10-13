@@ -27,8 +27,8 @@ the scan.
       (MIP) that have sensitivity labels
         - This option is only available when you select the Enable scanning of files protected by
           Microsoft Information Protection checkbox on the Scan Settings page
-    - Only collect tags/keywords with these comma-separated values (case-insensitive) – scopes the
-      scan to only collect tags from the files with the tags specified by comma-separated values
+    - Only collect tags/keywords with these comma-separated values (case-insensitive) – Limits the
+      scan to the tags listed as comma-separated values
 
 The FSAA scan collects the tags from the files and stores the information at the folder level, which
 provides a count for the number of occurrences of each tag.

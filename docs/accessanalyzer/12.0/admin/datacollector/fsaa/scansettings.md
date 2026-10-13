@@ -65,8 +65,8 @@ Sensitive Data Scan categories and contains the following options:
 - Rescan unimported hosts after (0 always rescans) [number] days – Controls when to rescan the
   host even if Access Analyzer hasn't imported its data yet
 
-    - When this option is enabled, set to a value higher than zero, and results in a host not being
-      scanned, a warning message is logged
+    - When you set this option to a value higher than zero and it causes Access Analyzer to skip a
+      host, Access Analyzer logs a warning message
     - The Messages table records the
       `No need to scan, Tier 2 DB USN > Tier 1 DB USN, needs to bulk import` warning
 

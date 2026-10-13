@@ -67,8 +67,7 @@ opens.
 Data Collector Wizard opens.
 
 :::warning
-Don't make changes to other wizard pages as they have been pre-configured for the
-purpose of this job.
+Don't change the other wizard pages. Netwrix preconfigured them for this job.
 :::
 
 
@@ -196,8 +195,8 @@ additional information.
 - Enable Optical Character Recognition (OCR) scans
 
     :::note
-    The OCR option is intended to work for clear scanned physical documents or documents
-    directly converted to images, with standard fonts. It will not work for scanning photos of
+    The OCR option works with clear scanned physical documents or documents converted
+    directly to images, with standard fonts. It will not work for scanning photos of
     documents and may not be able to recognize text on images of credit cards, driver's licenses, or
     other identity cards.
     :::

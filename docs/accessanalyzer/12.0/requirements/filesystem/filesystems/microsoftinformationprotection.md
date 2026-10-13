@@ -30,7 +30,7 @@ Meet the following prerequisites before you configure MIP scanning:
 
 - Microsoft Entra ID Global Administrator credentials, or an account holding the **Azure Information Protection Administrator**, **Compliance Administrator**, or **Compliance Data Administrator** role
 - Windows PowerShell 5.1 (run as Administrator) and the ability to run `Install-Module`
-- No client installation is required on the server where the FSAA applet runs, because the MIP File SDK is included with Access Analyzer. The Rights Management Service Client is no longer required
+- The server where the FSAA applet runs doesn't need a client installation, because Access Analyzer includes the MIP File SDK. Access Analyzer no longer requires the Rights Management Service Client
 - Optional: The [Microsoft Purview Information Protection client](https://www.microsoft.com/en-us/download/details.aspx?id=53018), installed on the Access Analyzer console server. It's required only to apply labels with the [FS_MIPLabeling Job](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/fs_miplabeling.md)
 - Allow outbound HTTPS (port 443) traffic from the server where the FSAA applet or proxy runs to the following Microsoft endpoints. Firewall or proxy rules must allow this traffic for applications, not only for web browsers:
   - `login.microsoftonline.com`
