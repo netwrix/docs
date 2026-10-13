@@ -1,20 +1,23 @@
 name: Slack notify PR activity
 
-# Posts a Slack message to #docs-gh whenever a PR is created, has a review
-# requested, or is commented on — @-mentioning the CODEOWNERS team(s) that
-# own the changed files. Fork PRs also get a PR comment tagging codeowners,
-# since they otherwise have no other reviewer visibility into who owns the
-# changed area.
+# Posts a Slack message to #docs-gh once a PR has been labeled (by
+# label-pr.yml, based on CODEOWNERS), has a review requested, or is
+# commented on — @-mentioning the CODEOWNERS team(s) that own the changed
+# files. Fork PRs also get a PR comment tagging codeowners, since they
+# otherwise have no other reviewer visibility into who owns the changed
+# area. Triggering on `labeled` (rather than `opened`) avoids racing
+# label-pr.yml — by the time a PR is labeled, CODEOWNERS teams are known.
+#
+# pull_request_target (not pull_request) so this job has repo secrets and
+# a write-scoped token even for fork PRs. SAFETY: this workflow must never
+# check out or execute the PR's head content — only read PR metadata via
+# the GitHub API (gh pr view) and run code from the pinned base ref below.
+# Adding a checkout of the fork's head ref here would reintroduce the
+# exact secret-exfiltration risk pull_request_target is meant to avoid.
 
 on:
-  # pull_request_target (not pull_request) so this job has repo secrets and
-  # a write-scoped token even for fork PRs. SAFETY: this workflow must never
-  # check out or execute the PR's head content — only read PR metadata via
-  # the GitHub API (gh pr view) and run code from the pinned base ref below.
-  # Adding a checkout of the fork's head ref here would reintroduce the
-  # exact secret-exfiltration risk pull_request_target is meant to avoid.
   pull_request_target:
-    types: [opened, review_requested]
+    types: [labeled, review_requested]
   issue_comment:
     types: [created]
 
@@ -54,25 +57,39 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "pull_request_target" ]; then
             echo "number=${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
+            # Used to fire the "PR created" message/fork comment only once,
+            # on the first label landing — later relabels (e.g. after a
+            # synchronize adds another product label) shouldn't re-notify.
+            LABEL_COUNT=$(jq '.pull_request.labels | length' "$GITHUB_EVENT_PATH")
+            echo "label_count=$LABEL_COUNT" >> "$GITHUB_OUTPUT"
           else
             echo "number=${{ github.event.issue.number }}" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Resolve CODEOWNERS teams for changed files
+      - name: Resolve CODEOWNERS teams from PR labels
         id: resolve-teams
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          FILES=$(gh pr view ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} --json files --jq '.files[].path')
-          mapfile -t FILE_ARRAY <<< "$FILES"
-          TEAMS=$(node scripts/resolve-codeowners-teams.mjs "${FILE_ARRAY[@]}")
+          LABELS=$(gh pr view ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} --json labels --jq '.labels[].name')
+          MAPPING=$(cat .github/label-codeowners.json)
+
+          TEAMS=""
+          while IFS= read -r label; do
+            [ -z "$label" ] && continue
+            team=$(echo "$MAPPING" | jq -r --arg l "$label" '.[$l] // empty')
+            if [ -n "$team" ] && [[ ",$TEAMS," != *",$team,"* ]]; then
+              TEAMS="${TEAMS:+$TEAMS,}$team"
+            fi
+          done <<< "$LABELS"
+
           echo "teams=$TEAMS" >> "$GITHUB_OUTPUT"
 
       - name: Build message
         id: build-message
         run: |
           # Build the notification text based on which event/action fired.
-          if [ "${{ github.event_name }}" = "pull_request_target" ] && [ "${{ github.event.action }}" = "opened" ]; then
+          if [ "${{ github.event_name }}" = "pull_request_target" ] && [ "${{ github.event.action }}" = "labeled" ]; then
             MESSAGE="PR created: ${{ github.event.pull_request.html_url }}"
           elif [ "${{ github.event_name }}" = "pull_request_target" ] && [ "${{ github.event.action }}" = "review_requested" ]; then
             MESSAGE="Review requested on PR #${{ steps.pr-info.outputs.number }}: ${{ github.event.pull_request.html_url }}"
@@ -84,10 +101,12 @@ jobs:
       - name: Comment on fork PRs tagging codeowners
         # Fork contributors and reviewers may not be in the Slack channel,
         # so give them a visible, on-PR codeowners tag too. Only needed
-        # once, on open — review_requested/comments already notify Slack.
+        # once, on the first label landing — review_requested/comments
+        # already notify Slack.
         if: >-
           github.event_name == 'pull_request_target' &&
-          github.event.action == 'opened' &&
+          github.event.action == 'labeled' &&
+          steps.pr-info.outputs.label_count == '1' &&
           github.event.pull_request.head.repo.full_name != github.repository &&
           steps.resolve-teams.outputs.teams != ''
         env:
@@ -98,6 +117,9 @@ jobs:
           gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} --body "Thanks for the contribution! Tagging codeowners for review: $MENTIONS"
 
       - name: Send Slack notification
+        # Only fire once for a `labeled` event — the first label landing.
+        # review_requested/comment events always notify.
+        if: github.event_name != 'pull_request_target' || github.event.action != 'labeled' || steps.pr-info.outputs.label_count == '1'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           NOTIFY_MESSAGE: ${{ steps.build-message.outputs.message }}

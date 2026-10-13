@@ -19,8 +19,6 @@ permissions:
 env:
   SOURCE_BRANCH: dev
   TARGET_BRANCH: main
-  # Teams webhook URL stored in GitHub Secrets for security
-  TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
   # Slack webhook URL stored in GitHub Secrets for security
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
@@ -173,40 +171,6 @@ jobs:
           echo "commit_count=$COMMIT_COUNT" >> $GITHUB_OUTPUT
           echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
 
-      - name: Send success notification to Teams
-        if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'false'
-        run: |
-          # Get commit messages (truncate if too long)
-          COMMITS=$(cat commits.txt | head -5 | sed 's/^/  - /')
-
-          curl -H "Content-Type: application/json" -d '{
-            "@type": "MessageCard",
-            "@context": "https://schema.org/extensions",
-            "summary": "Dev → Main Sync Successful",
-            "themeColor": "28a745",
-            "title": "✅ Automated Sync: dev → main",
-            "sections": [{
-              "activityTitle": "Successfully merged '${{ steps.check-new-commits.outputs.commits_ahead }}' commits",
-              "activitySubtitle": "Repository: netwrix/docs",
-              "facts": [
-                {"name": "Commits merged:", "value": "${{ steps.merge-details.outputs.commit_count }}"},
-                {"name": "Latest commit:", "value": "${{ steps.merge-details.outputs.commit_sha }}"},
-                {"name": "Triggered by:", "value": "${{ github.event_name }}"},
-                {"name": "Workflow:", "value": "${{ github.workflow }}"}
-              ],
-              "text": "**Recent commits:**\n\n'"$(echo "$COMMITS" | sed 's/$/\\n/' | tr -d '\n')"'"
-            }],
-            "potentialAction": [{
-              "@type": "OpenUri",
-              "name": "View Workflow Run",
-              "targets": [{"os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}]
-            }, {
-              "@type": "OpenUri",
-              "name": "View Repository",
-              "targets": [{"os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}"}]
-            }]
-          }' "${{ env.TEAMS_WEBHOOK_URL }}" || echo "Failed to send Teams notification"
-
       - name: Send success notification to Slack
         if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'false'
         run: |
@@ -257,57 +221,15 @@ jobs:
 
             console.log('Created issue #' + issue.data.number);
 
-      - name: Send conflict notification to Teams
-        if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'true'
-        run: |
-          curl -H "Content-Type: application/json" -d '{
-            "@type": "MessageCard",
-            "@context": "https://schema.org/extensions",
-            "summary": "Dev → Main Sync Blocked by Conflict",
-            "themeColor": "ff9800",
-            "title": "⚠️ Automated Sync Blocked: Merge Conflict",
-            "sections": [{
-              "activityTitle": "Manual intervention required",
-              "activitySubtitle": "Repository: netwrix/docs",
-              "facts": [
-                {"name": "Source branch:", "value": "${{ env.SOURCE_BRANCH }}"},
-                {"name": "Target branch:", "value": "${{ env.TARGET_BRANCH }}"},
-                {"name": "Commits waiting:", "value": "${{ steps.check-new-commits.outputs.commits_ahead }}"},
-                {"name": "Status:", "value": "Merge conflict detected"}
-              ],
-              "text": "The automated sync encountered merge conflicts. A GitHub issue has been created with details. Please resolve the conflicts manually."
-            }],
-            "potentialAction": [{
-              "@type": "OpenUri",
-              "name": "View Workflow Run",
-              "targets": [{"os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}]
-            }, {
-              "@type": "OpenUri",
-              "name": "View Issues",
-              "targets": [{"os": "default", "uri": "${{ github.server_url }}/${{ github.repository }}/issues?q=is:issue+is:open+label:merge-conflict"}]
-            }]
-          }' "${{ env.TEAMS_WEBHOOK_URL }}" || echo "Failed to send Teams notification"
-
       - name: Send conflict notification to Slack
         if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'true'
         run: |
           node scripts/notify-slack.mjs --message "⚠️ dev→main sync blocked by merge conflict: ${{ steps.check-new-commits.outputs.commits_ahead }} commits waiting. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || echo "Failed to send Slack notification"
 
-      - name: Send skip notification to Teams
+      - name: Send skip notification to Slack
         if: steps.check-new-commits.outputs.has_new_commits == 'false'
         run: |
-          curl -H "Content-Type: application/json" -d '{
-            "@type": "MessageCard",
-            "@context": "https://schema.org/extensions",
-            "summary": "No Changes to Sync",
-            "themeColor": "0078D4",
-            "title": "ℹ️ No Changes to Sync",
-            "sections": [{
-              "activityTitle": "Branches are already in sync",
-              "activitySubtitle": "Repository: netwrix/docs",
-              "text": "No new commits found in dev branch. Nothing to sync."
-            }]
-          }' "${{ env.TEAMS_WEBHOOK_URL }}" || echo "Failed to send Teams notification"
+          node scripts/notify-slack.mjs --message "ℹ️ dev→main sync: no changes to sync. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || echo "Failed to send Slack notification"
 
       - name: Send failure notification to Slack
         if: failure()
