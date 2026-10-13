@@ -18,7 +18,7 @@ ROUNDS=$(cat "$COUNTER" 2>/dev/null || echo 0)
 cd "${CLAUDE_PROJECT_DIR:-.}" || exit 0
 [ -f scripts/quality/check.mjs ] || exit 0
 # Without installed dependencies the check cannot load, so there is nothing to run.
-[ -d node_modules/js-yaml ] || exit 0
+[ -d node_modules/js-yaml ] && [ -d node_modules/@anthropic-ai/sdk ] || exit 0
 
 # Only the files this session edited. None edited, nothing to check.
 LIST="${TMPDIR:-/tmp}/nwx-quality-files-$SESSION"
