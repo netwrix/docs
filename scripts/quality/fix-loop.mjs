@@ -104,7 +104,8 @@ const verify = pairs => verifyMeaning(pairs, { model: config.models.verify });
 
 /** Unified diff of `content` against the file on disk, applicable with `git apply`. */
 function patchFor(file, content) {
-  const tmp = path.join(os.tmpdir(), `q-${process.pid}-${path.basename(file)}`);
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'q-'));
+  const tmp = path.join(dir, path.basename(file));
   fs.writeFileSync(tmp, content);
   let out = '';
   try {
@@ -112,7 +113,7 @@ function patchFor(file, content) {
   } catch (e) {
     out = e.stdout || ''; // exit 1 means "differences found"
   } finally {
-    fs.rmSync(tmp, { force: true });
+    fs.rmSync(dir, { recursive: true, force: true });
   }
   return out.split(tmp.replace(/^\//, '')).join(file).replace(/^(diff --git a\/.+ b\/).+$/m, `$1${file}`);
 }
