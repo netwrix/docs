@@ -23,9 +23,9 @@ the scan.
 - Collect tags/keywords from file metadata properties (this may significantly increase scan times) –
   Scans the files and collects metadata tags from Microsoft Office files
     - Include offline files – Scans network files that have the offline files feature enabled
-    - Include AIP Protected Files – Scans for files protected by Azure Information Protection (AIP)
-      that have protection labels
-        - This option is only available when the Enable scanning of files protected by Azure
+    - Include MIP Protected Files – Scans for files protected by Microsoft Information Protection
+      (MIP) that have sensitivity labels
+        - This option is only available when the Enable scanning of files protected by Microsoft
           Information Protection checkbox is enabled on the Scan Settings page
     - Only collect tags/keywords with these comma-separated values (case-insensitive) – scopes the
       scan to only collect tags from the files with the tags specified by comma-separated values

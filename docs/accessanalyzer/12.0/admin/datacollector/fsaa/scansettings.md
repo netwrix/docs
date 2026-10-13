@@ -24,11 +24,11 @@ In the middle section, select the checkboxes you want for additional settings:
 
 - Enable file system scan streaming – Sends the streamed data directly to the Access Analyzer
   database. A bulk import query isn't required when this option is selected
-- Enable scanning of files protected by Azure Information Protection – Adds additional options to
-  this wizard to scan for protection labels and encrypted files for sensitive data
+- Enable scanning of files protected by Microsoft Information Protection – Adds additional options
+  to this wizard to scan for sensitivity labels and encrypted files for sensitive data
 
     - See the
-      [Azure Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/azureinformationprotection.md)
+      [Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)
       for additional information.
 
 - Use SQL query to manually specify shares – For advanced SQL users. This option provides a least

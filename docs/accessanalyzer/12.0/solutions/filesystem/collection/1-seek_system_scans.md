@@ -102,7 +102,7 @@ If you enable streaming, you no longer need the **2-SEEK Bulk Import** job as pa
 
 ![Azure Tenant Mapping](/images/accessanalyzer/12.0/solutions/filesystem/collection/fsaaseekazuretenantmapping.webp)
 
-**Step 7 –** On the Azure Tenant Mapping page, enable Azure Information Protection (AIP). See the
+**Step 7 –** On the Azure Tenant Mapping page, enable Microsoft Information Protection (MIP). See the
 [FSAA: Azure Tenant Mapping](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/azuretenantmapping.md) topic for
 additional information.
 

@@ -145,7 +145,7 @@ Distinct file tag values per host. Used in a two-level dedup pattern: `Tags` hol
 |---|---|---|---|---|---|---|---|
 | HOST | int | | No | PK | FK → SA_FSAA_Hosts.ID | | Host partition |
 | TagID | int | | No | PK | | | Per-host tag ID |
-| Tag | nvarchar | MAX | No | | | | Tag string (e.g. an Azure Information Protection label or custom tag) |
+| Tag | nvarchar | MAX | No | | | | Tag string (e.g. a Microsoft Information Protection sensitivity label or custom tag) |
 | Source | tinyint | | No | | | `0` | Tag source |
 
 **Primary Key:** `PK_SA_FSAA_Tags` — clustered on `(HOST, TagID)`
@@ -422,7 +422,7 @@ Histogram of file age buckets within each resource subtree. The eleven `FileCoun
 
 ### SA_FSAA_FileTags {#sa_fsaa_filetags}
 
-Aggregated file count and size per `(resource, tag-set)`. Populated when Azure Information Protection (AIP) or sensitive-data tags are collected.
+Aggregated file count and size per `(resource, tag-set)`. Populated when Microsoft Information Protection (MIP) or sensitive-data tags are collected.
 
 | Column | Type | Size | Nullable | PK | FK | Default | Description |
 |---|---|---|---|---|---|---|---|
