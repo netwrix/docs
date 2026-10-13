@@ -14,12 +14,12 @@ the scan.
 - Scan for probable owners – Gathers file ownership information to determine the most probable owner
   of every resource
     - Limit maximum number of probable owners to return per folder [number] – Stops the collection
-      of probable owners when the number provided is reached
+      of probable owners when it reaches the number provided
 - Scan for File Types – Gathers file type information within the audited folders
     - Limit maximum number of file types to return per folder [number] – Stops the collection of
-      file types when the number provided is reached per folder
+      file types when it reaches the number provided per folder
     - Only return file types with these comma-separated values (without leading dots) – Enter the
-      file types that will be returned from the scan. Any types not provided are ignored.
+      file types for the scan to return. The scan ignores any types not provided.
 - Collect tags/keywords from file metadata properties (this may significantly increase scan times) –
   Scans the files and collects metadata tags from Microsoft Office files
     - Include offline files – Scans network files that have the offline files feature enabled

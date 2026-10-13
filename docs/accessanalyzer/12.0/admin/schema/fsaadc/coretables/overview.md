@@ -422,7 +422,7 @@ Histogram of file age buckets within each resource subtree. The eleven `FileCoun
 
 ### SA_FSAA_FileTags {#sa_fsaa_filetags}
 
-Aggregated file count and size per `(resource, tag-set)`. Populated when Microsoft Information Protection (MIP) or sensitive-data tags are collected.
+Aggregated file count and size per `(resource, tag-set)`. The FSAA scan populates this table when it collects Microsoft Information Protection (MIP) or sensitive-data tags.
 
 | Column | Type | Size | Nullable | PK | FK | Default | Description |
 |---|---|---|---|---|---|---|---|

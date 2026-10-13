@@ -23,7 +23,7 @@ folders:
 In the middle section, select the checkboxes you want for additional settings:
 
 - Enable file system scan streaming – Sends the streamed data directly to the Access Analyzer
-  database. A bulk import query isn't required when this option is selected
+  database. A bulk import query isn't required when you select this option
 - Enable scanning of files protected by Microsoft Information Protection – Adds options
   to this wizard to scan for sensitivity labels and encrypted files for sensitive data
 
@@ -45,9 +45,8 @@ In the middle section, select the checkboxes you want for additional settings:
     - HTTPS – Encrypts communication and verifies the targeted server’s SSL certificate
     - HTTPS, Ignore Certificate Errors – Encrypts communication but ignores certificate errors
 
-        - This option is primarily used for troubleshooting
-        - Alternative use for this option would be for access scans within a trusted and secured
-          network
+        - This option is primarily for troubleshooting
+        - You can also use this option for access scans within a trusted and secured network
 
     - HTTP – Applies no encryption or authentication of communication
 
@@ -61,10 +60,10 @@ In the middle section, select the checkboxes you want for additional settings:
 The bottom section is only available for the File System Access/Permission Auditing Scan and
 Sensitive Data Scan categories and contains the following options:
 
-- Restart incomplete scans after (0 always restarts) [number] days – Determines when the saved
-  progress should be discarded and the scan restarted
-- Rescan unimported hosts after (0 always rescans) [number] days – Controls when the host is
-  rescanned even if its data has not been imported yet
+- Restart incomplete scans after (0 always restarts) [number] days – Determines when to discard
+  the saved progress and restart the scan
+- Rescan unimported hosts after (0 always rescans) [number] days – Controls when to rescan the
+  host even if Access Analyzer hasn't imported its data yet
 
     - When this option is enabled, set to a value higher than zero, and results in a host not being
       scanned, a warning message is logged
@@ -77,7 +76,7 @@ If desired, enable this feature and click **Configure Query** to open the Manual
 
 ![Maual Shares Query window](/images/accessanalyzer/12.0/admin/datacollector/fsaa/maualsharesquery.webp)
 
-The SQL query provided by a user should return a list of all shares in the target environment. The
+The SQL query you provide should return a list of all shares in the target environment. The
 target tables must reside within the Access Analyzer database and contain at least the following
 columns for all shares in the target environment:
 
@@ -116,7 +115,7 @@ _(Optional)_ Enter a host in the Host parameter value (@host) textbox to test th
 the data for that host.
 
 Select **Test Query** to open a preview of the results in the Query Results window. Ensure that the
-data being retrieved by the query is expected.
+query retrieves the expected data.
 
 When you select this option, the data collector runs against the target table to enumerate shares
 in the environment.
@@ -134,7 +133,7 @@ Collection Configuration page in the File System Access Auditor Data Collector W
 certificate. If the organization uses a self-signed certificate, add this
 certificate to enable HTTPS encryption of Access Analyzer communications.
 
-The certificate (`cacert.pem`) which is shipped with Access Analyzer is in the DC folder of the
+The certificate (`cacert.pem`) that ships with Access Analyzer is in the DC folder of the
 installation directory. The default location is:
 
 **…\STEALTHbits\StealthAUDIT\DC**
@@ -156,4 +155,4 @@ certificate to this location with the name `cacert.pem`.
 
 There is another `cacert.perm` file within the Access Analyzer installation directory used by the
 Notification SSL encryption options. While these files have the same name, they serve different
-purposes and are stored in different locations.
+purposes and reside in different locations.

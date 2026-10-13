@@ -20,7 +20,7 @@ contain sensitive data, see the
 
 ## Analysis Tasks for the FS_MIPLabels Job
 
-View the analysis tasks by navigating to the **FileSystem** > **4.Content** > **Tags** >
+To view the analysis tasks, navigate to the **FileSystem** > **4.Content** > **Tags** >
 **FS_MIPLabels** > **Configure** node and select **Analysis**.
 
 :::warning
@@ -41,4 +41,4 @@ following pre-configured report:
 
 | Report     | Description                                                                                                                               | Default Tags | Report Elements                                                                                                                                                                                                               |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MIP Labels | This report provides details on labels applied to files. This information is rolled up by folder, and summarized at the enterprise level. | None         | This report is comprised of three elements: <ul><li>Pie Chart – Displays enterprise sensitivity label summary</li><li>Table– Provides details on label details by folder</li><li>Table – Provides details on labels by file count</li></ul> |
+| MIP Labels | This report provides details on labels applied to files. The report rolls up this information by folder and summarizes it at the enterprise level. | None         | This report has three elements: <ul><li>Pie Chart – Displays enterprise sensitivity label summary</li><li>Table– Provides details on label details by folder</li><li>Table – Provides details on labels by file count</li></ul> |

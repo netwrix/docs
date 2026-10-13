@@ -10,8 +10,8 @@ The 1-SEEK System Scans job collects sensitive data from the targeted file serve
 
 ## Query for the 1-SEEK System Scans Job
 
-The File System Scan query uses the FSAA Data Collector and has been preconfigured to use the
-Sensitive data Scan category.
+The File System Scan query uses the FSAA Data Collector with the Sensitive data Scan category by
+default.
 
 ![Query for the 1-SEEK System Scans Job](/images/accessanalyzer/12.0/solutions/filesystem/collection/seeksystemscansquery.webp)
 
@@ -55,8 +55,7 @@ instructions.
 
 ### Configure the (SEEK) File System Scan Query
 
-The 1-SEEK System Scans job has been preconfigured to run with the default settings with the
-category of Sensitive data Scan. To customize the configuration, complete the following steps.
+By default, the 1-SEEK System Scans job runs with the Sensitive data Scan category. To customize the configuration, complete the following steps.
 
 **Step 1 –** Navigate to the **FileSystem** > **0.Collection** > **1-SEEK System Scans** >
 **Configure** node and select the **Queries** node.
@@ -76,7 +75,7 @@ purpose of this job.
 ![Applet Settings](/images/accessanalyzer/12.0/solutions/filesystem/collection/fsaaseekappletsettings.webp)
 
 **Step 4 –** The Applet Settings page applies to the applet and proxy mode scans which you select
-on the Scan Server Selection page. If employing proxy servers, see the
+on the Scan Server Selection page. If you use proxy servers, see the
 [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/appletsettings.md) topic for configuration
 instructions.
 
@@ -122,36 +121,36 @@ additional information.
 
     - Action on failure to enable LAT Preservation – Before scanning each file, FSAA attempts to
       enable an operating system feature to preserve the LAT when accessing the file. This operation
-      may fail for a variety of reasons, which include but aren't limited to: the operating system
+      can fail for several reasons, including: the operating system
       or file system where the file is located doesn't support LAT preservation, or insufficient
       permissions from the service account trying to access the file. The following configuration
       addresses a failure to enable the LAT preservation mode:
 
         - Continue to scan file silently – FSAA scans the file with the possibility that LAT
           preservation isn't possible. No warning appears.
-        - Continue to scan file with warning – FSAA scans the file with the possibility that LAT
-          will not be preserved. A warning appears for this file.
+        - Continue to scan file with warning – FSAA scans the file with the possibility that it
+          can't preserve the LAT. A warning appears for this file.
         - Skip file silently – FSAA will not scan the file. No warning appears.
         - Skip file with warning – FSAA will not scan the file. A warning appears indicating
-          the file was skipped.
-        - Abort the scan – FSAA will abort the scan. No further files will be processed.
+          that FSAA skipped the file.
+        - Abort the scan – FSAA will abort the scan. FSAA doesn't process any further files.
 
-    - Action on changed LAT After scan – Before scanning each file, the LAT of the current file is
-      recorded. After scanning, FSAA verifies whether the LAT has changed since then (likely
+    - Action on changed LAT After scan – Before scanning each file, FSAA records the LAT of the current
+      file. After scanning, FSAA verifies whether the LAT has changed since then (likely
       scenarios are either that the LAT preservation mechanism failed to function as intended, or
-      that the file was accessed by someone while the scan was occurring). The following
+      that someone accessed the file during the scan). The following
       configuration addresses a changed LAT:
 
         - Continue scan silently – The scan will move on to the next file while updating the LAT for
           the processed file. No warning appears.
-        - Continue scan with warning – The scan will continue on to the next file. LAT will be
-          updated for the processed file. A warning appears.
+        - Continue scan with warning – The scan will continue on to the next file and update the
+          LAT for the processed file. A warning appears.
         - Force-reset file LAT silently – The scan will reset the file's LAT to its original state
           before processing. No warning appears. The scan will proceed to the next file.
         - Force-reset file LAT with warning – The scan will Reset the file's LAT to its original
           state before processing. A warning appears. The scan will proceed to the next file.
-        - Abort the scan – FSAA will abort the scan. LAT will be updated for the processed file. No
-          other files will be processed
+        - Abort the scan – FSAA will abort the scan and update the LAT for the processed file. FSAA
+          doesn't process any other files
 
 See the [Scan Settings Tab](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/defaultscopingoptions/scansettings.md)
 topic for additional information.
@@ -182,9 +181,9 @@ additional information.
 
 **Step 11 –** On the Sensitive Data Settings page:
 
-- Modify maximum file size to be scanned
+- Modify the maximum file size to scan
 - Add scanning offline files
-- Modify file types to be scanned
+- Modify the file types to scan
 - Enable differential scanning
 - Modify the number of SDD scan processes
 
@@ -218,7 +217,7 @@ information.
   for additional information
 
 :::note
-By default, discovered sensitive data strings aren't stored in the Access Analyzer
+By default, Access Analyzer doesn't store discovered sensitive data strings in its
 database.
 :::
 

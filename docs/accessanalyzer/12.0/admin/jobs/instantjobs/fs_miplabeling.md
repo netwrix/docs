@@ -43,7 +43,7 @@ Complete the following before running the job:
   [Microsoft Purview Information Protection client](https://www.microsoft.com/en-us/download/details.aspx?id=53018)
   on the Access Analyzer console server. It installs the PurviewInformationProtection PowerShell
   module
-- Register an application in Microsoft Entra ID for use with the `Set-Authentication` cmdlet. You can reuse the application created in the [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account) section if it has the permissions below. Record the Application (client) ID, Directory (tenant) ID, and a client secret. See the
+- Register an application in Microsoft Entra ID for use with the `Set-Authentication` cmdlet. You can reuse the application created in the [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account) section if it has the permissions listed in this step. Record the Application (client) ID, Directory (tenant) ID, and a client secret. See the
   [Microsoft documentation](https://learn.microsoft.com/en-us/powershell/azure/aip/setup-information-protection-client-powershell#create-and-configure-microsoft-entra-applications-for-set-authentication)
   for the required configuration. The application needs the `Content.DelegatedReader` and
   `Content.DelegatedWriter` permissions for Azure Rights Management Services and the
@@ -111,4 +111,4 @@ expected files.
 **Step 6 –** Review the Apply MIP Sensitive Data Label results. Run an FSAA scan with **Enable scanning of
 files protected by Microsoft Information Protection** selected, then run the
 [FS_MIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_miplabels.md) to
-confirm the labels were applied.
+confirm that the job applied the labels.

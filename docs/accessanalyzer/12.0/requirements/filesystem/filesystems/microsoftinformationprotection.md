@@ -6,15 +6,15 @@ sidebar_position: 20
 
 # **Microsoft Information Protection Target Requirements**
 
-Microsoft Purview Information Protection (formerly Azure Information Protection, and referred to in this topic as Microsoft Information Protection, or MIP) is a Microsoft service that classifies and protects stored files with sensitivity labels. Access Analyzer employs the File System Solution to execute Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans to find sensitivity labels and scan protected (i.e. encrypted) files for sensitive data. Access Analyzer uses the MIP File SDK to read labels and decrypt protected files.
+Microsoft Purview Information Protection (formerly Azure Information Protection, and referred to in this topic as Microsoft Information Protection, or MIP) is a Microsoft service that classifies and protects stored files with sensitivity labels. Access Analyzer uses the File System Solution to run Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans to find sensitivity labels and scan protected (i.e. encrypted) files for sensitive data. Access Analyzer uses the MIP File SDK to read labels and decrypt protected files.
 
 This document explains how to configure the access Access Analyzer needs to scan for Microsoft Information Protection labels in a target environment.
 
 ## Workflow for Scanning MIP Labels
 
-Before the Access Analyzer File System solution can scan for MIP labels, certain prerequisites are required in Access Analyzer, Microsoft Entra ID, and Microsoft Purview.
+Before the Access Analyzer File System solution can scan for MIP labels, complete the following prerequisites in Access Analyzer, Microsoft Entra ID, and Microsoft Purview.
 
-The MIP File SDK is included with Access Analyzer, so no client installation is required on the server where the FSAA applet runs. The Rights Management Service Client is no longer required.
+Access Analyzer includes the MIP File SDK, so the server where the FSAA applet runs doesn't need a client installation. Access Analyzer no longer requires the Rights Management Service Client.
 
 1. [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account)
 2. [Enable the Account as a Super User using PowerShell](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#enable-the-account-as-a-super-user-using-powershell)
@@ -109,13 +109,13 @@ The module and cmdlet names in this section contain "AIP" because Microsoft hasn
 
 :::
 
-1. In PowerShell, install and import the AIPService module:
+1. Install and import the AIPService module in PowerShell:
 
    `Install-Module -Name AIPService`
 
    `Import-Module AIPService`
 
-2. Connect to the service using the `Connect-AipService` command and supply the administrator credentials in the **Sign in to your account** window that displays from Microsoft.
+2. Connect to the service using the `Connect-AipService` command and supply the administrator credentials in the Microsoft **Sign in to your account** window.
 3. Enable the super user feature:
 
    `Enable-AipServiceSuperUserFeature`
@@ -124,11 +124,11 @@ The module and cmdlet names in this section contain "AIP" because Microsoft hasn
 
    `Add-AipServiceSuperUser -ServicePrincipalId <AppID>`
 
-5. Verify that the service principal is listed:
+5. Verify that the output lists the service principal:
 
    `Get-AipServiceSuperUser`
 
-The service principal is now added to the Rights Management service as a super user, and the super user feature is enabled.
+The service principal is now a super user in the Rights Management service, and the super user feature is enabled.
 
 ## Access Analyzer Configurations
 
@@ -141,11 +141,11 @@ Complete two configurations before Access Analyzer can scan for MIP labels.
 
 To collect labels for files protected with Microsoft Information Protection, configure an Azure connection profile in Access Analyzer before an FSAA scan runs. See the [Global Settings](/docs/accessanalyzer/12.0/admin/settings/overview.md) topic for additional information on how to set up a connection profile at the global level.
 
-1. In Access Analyzer, add a credential with the Azure Active Directory account type (Microsoft Entra ID) to the existing Connection Profile used for File System scanning. Supply the Client ID field with the **Application (client) ID** and the Key field with the client secret **Value** created upon creation of the new service principal.
+1. In Access Analyzer, add a credential with the Azure Active Directory account type (Microsoft Entra ID) to the existing Connection Profile used for File System scanning. Enter the **Application (client) ID** in the Client ID field and the client secret **Value** of the new service principal in the Key field.
 2. At the job level, apply the connection profile that contains both the Microsoft Entra ID credential and credentials required for File System scanning under the **Jobs** > \[**Job**\] > **Settings** > **Connection** node.
-3. Ensure that the job is configured correctly before running a scan. See the [Configure FSAA Data Collector](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#configure-fsaa-data-collector) topic for additional information.
+3. Confirm the job configuration before running a scan. See the [Configure FSAA Data Collector](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#configure-fsaa-data-collector) topic for additional information.
 
-An Azure Connection Profile has now been successfully created for an FSAA scan.
+The Azure Connection Profile is now ready for an FSAA scan.
 
 ### **Configure FSAA Data Collector**
 
@@ -160,7 +160,7 @@ For FSAA System Scans:
   :::tip
   **TIP**
 
-  Remember, the Azure Tenant Mapping page is only visible when the **Enable scanning of files protected by Microsoft Information Protection** checkbox is selected on the Scan Settings page.
+  Remember, the Azure Tenant Mapping page is only visible when you select the **Enable scanning of files protected by Microsoft Information Protection** checkbox on the Scan Settings page.
 
   :::
 
@@ -178,7 +178,7 @@ For SEEK System Scans:
   :::tip
   **TIP**
 
-  Remember, the Azure Tenant Mapping page is only visible when the **Enable scanning of files protected by Microsoft Information Protection** checkbox is selected on the Scan Settings page.
+  Remember, the Azure Tenant Mapping page is only visible when you select the **Enable scanning of files protected by Microsoft Information Protection** checkbox on the Scan Settings page.
 
   :::
 
