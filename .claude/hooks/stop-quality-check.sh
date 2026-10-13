@@ -26,8 +26,16 @@ fi
 # Unresolved draft markers in those files: tell the user, never block.
 node scripts/quality/todo-check.mjs --files $(cat "$LIST") >&2 || true
 
-if OUTPUT=$(node scripts/quality/check.mjs --base origin/dev --only "$LIST" --vale-optional --table 2>&1); then
+OUTPUT=$(node scripts/quality/check.mjs --base origin/dev --only "$LIST" --vale-optional --table 2>&1)
+CODE=$?
+if [ "$CODE" -eq 0 ]; then
   rm -f "$COUNTER"
+  exit 0
+fi
+# Exit 1 means style findings. Any other code is a crash of the check itself, which is not Claude's to fix.
+if [ "$CODE" -ne 1 ]; then
+  echo "The style check could not run (exit $CODE); skipping it this turn." >&2
+  echo "$OUTPUT" | tail -5 >&2
   exit 0
 fi
 

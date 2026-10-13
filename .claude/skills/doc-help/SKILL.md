@@ -1,6 +1,6 @@
 ---
 name: doc-help
-description: "Interactive help with Netwrix documentation already in progress or already written. Use whenever the user wants to review, edit, tighten, restructure, or improve an existing doc, section, or paragraph ('review this page', 'does this read well', 'make this clearer', 'how should I structure this', 'fix this section'); asks why Vale or Dale flagged something or what a style rule means; wants to brainstorm or outline before writing; wants a section drafted with their input; or wants an external document (.docx) merged into an existing markdown file. Applies to any file under docs/ or any pasted doc text. When the user hands over source material to write from (a PR, a GitHub issue, Jira ticket, or Azure DevOps item, specs, notes, a detailed prompt), use tech-writer instead."
+description: "Interactive help with Netwrix documentation already in progress or already written. Use whenever the user wants to review, edit, tighten, restructure, or improve an existing doc, section, or paragraph ('review this page', 'does this read well', 'make this clearer', 'how should I structure this', 'fix this section'); asks why Vale or Dale flagged something or what a style rule means; wants to brainstorm or outline before writing; wants a section drafted with their input; or wants an external document (.docx) merged into an existing markdown file. Applies to any file under docs/ or any pasted doc text. When the user hands over source material to write from (a PR, a GitHub issue, Jira ticket, or Azure DevOps item, specs, notes, a detailed prompt), use doc-draft instead."
 argument-hint: "[topic, file path, content to edit, or question]"
 ---
 
@@ -114,7 +114,7 @@ Re-read the full document and check for:
 
 Provide a short summary of any final suggestions. Ask if the writer wants to refine anything or if the doc is ready.
 
-**If the task has grown large enough to hand off entirely**, suggest: "This is substantial enough to give to the tech-writer agent — it can draft the remaining sections and run Vale end-to-end without needing your input at each step."
+**If the task has grown large enough to hand off entirely**, suggest: "This is substantial enough to give to the doc-draft skill — it can draft the remaining sections and lint them end-to-end without needing your input at each step."
 
 ---
 
@@ -208,6 +208,6 @@ If they say yes, transition to the Editing workflow starting at Step 2.
 
 **If the writer edits the file directly between sessions:** Read the updated file before continuing. Note what changed and incorporate their preferences going forward.
 
-**If a task grows large:** Suggest the tech-writer agent rather than attempting to do everything in a single interactive session.
+**If a task grows large:** Suggest the doc-draft skill rather than attempting to do everything in a single interactive session.
 
 **If a Vale rule is unclear or seems wrong:** Say so. Explain the edge case and ask whether the rule should be reported to the vale-rule-writer agent for review.

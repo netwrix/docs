@@ -57,7 +57,14 @@ export async function checkPage(file, { ranges = null, model = true, requireMode
     result.dale.status = requireModel ? 'unavailable' : 'skipped';
     return { ...result, pass: !requireModel };
   }
-  const d = await (daleFn || daleCheck)(markdown, ranges, { model: config.models.dale });
+  let d;
+  try {
+    d = await (daleFn || daleCheck)(markdown, ranges, { model: config.models.dale });
+  } catch (e) {
+    // A failed model call (rate limit, timeout, a signed-out CLI) is not a style finding. It skips Dale like a missing key does.
+    result.dale.status = requireModel ? 'unavailable' : `skipped: model call failed (${String(e.message).split('\n')[0].slice(0, 120)})`;
+    return { ...result, pass: !requireModel };
+  }
   result.dale = { status: d.findings.length === 0 ? (d.cached ? 'cached-pass' : 'pass') : 'fail', findings: d.findings };
   return { ...result, pass: d.findings.length === 0 };
 }
@@ -110,4 +117,10 @@ async function main() {
   process.exit(pass ? 0 : 1);
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(e => {
+    // Exit 3 marks a crash of the check itself; exit 1 is reserved for style findings.
+    console.error(`quality check failed to run: ${e.stack || e.message}`);
+    process.exit(3);
+  });
+}

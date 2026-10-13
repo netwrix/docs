@@ -75,7 +75,13 @@ function isAdmonitionMarkerLine(line) {
  * (it carries no reader-facing prose), but `Some <strong>text</strong>.`
  * keeps "Some text." */
 function stripJsxTags(line) {
-  return line.replace(/<\/?[A-Za-z][\w.]*(\s[^<>]*)?\/?>/g, '');
+  // Repeat until nothing changes, so a tag rebuilt by removing a nested one is removed too.
+  let prev;
+  do {
+    prev = line;
+    line = line.replace(/<\/?[A-Za-z][\w.]*(\s[^<>]*)?\/?>/g, '');
+  } while (line !== prev);
+  return line;
 }
 
 function stripHeadingMarker(line) {
