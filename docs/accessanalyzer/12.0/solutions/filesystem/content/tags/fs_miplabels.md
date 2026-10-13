@@ -1,6 +1,6 @@
 ---
 title: "FS_MIPLabels Job"
-description: "FS_MIPLabels Job"
+description: "Report on files classified with Microsoft Information Protection sensitivity labels by using the FS_MIPLabels job."
 sidebar_position: 10
 ---
 
@@ -33,8 +33,8 @@ preconfigured for this job.
 
 The following analysis task is selected by default:
 
-- MIP Label Details – Creates the SA_FS_FileLabel_Details table, which lists the sensitivity labels
-  applied to files, accessible under the job’s Results node
+- MIP Label Details – Creates the SA_FS_FileLabel_Details table, accessible under the job’s Results
+  node, which lists the sensitivity labels applied to files
 
 In addition to the tables and views created by the analysis task, the FS_MIPLabels job produces the
 following pre-configured report:

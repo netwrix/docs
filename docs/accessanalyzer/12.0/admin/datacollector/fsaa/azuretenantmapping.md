@@ -6,8 +6,8 @@ sidebar_position: 70
 
 # FSAA: Azure Tenant Mapping
 
-Use the Azure Tenant Mapping page to configure the target domain or Tenant ID for Microsoft Information
-Protection (MIP) scanning. It is a wizard page for the categories of:
+Use the Azure Tenant Mapping page to configure the Application (client) ID and the target domain or Tenant ID
+for Microsoft Information Protection (MIP) scanning. It is a wizard page for the categories of:
 
 - File System Access/Permission Auditing Scan
 - File System SDD Scan

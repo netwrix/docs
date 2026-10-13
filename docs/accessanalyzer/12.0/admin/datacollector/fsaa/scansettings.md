@@ -25,7 +25,7 @@ In the middle section, select the checkboxes you want for additional settings:
 - Enable file system scan streaming – Sends the streamed data directly to the Access Analyzer
   database. A bulk import query isn't required when you select this option
 - Enable scanning of files protected by Microsoft Information Protection – Adds options
-  to this wizard to scan for sensitivity labels and encrypted files for sensitive data
+  to this wizard to scan for sensitivity labels and to scan encrypted files for sensitive data
 
     - See the
       [Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)

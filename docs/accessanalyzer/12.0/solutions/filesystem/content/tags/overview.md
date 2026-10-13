@@ -13,7 +13,7 @@ servers.
 
 The Tags job group contains:
 
-- [FS_MIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_miplabels.md) – Reports on resources classified by Microsoft Purview Information
+- [FS_MIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_miplabels.md) – Reports on resources classified by Microsoft Information
   Protection (MIP) sensitivity labels from targeted file servers
 - [FS_FileTags Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_filetags.md) – Reports on resources classified with metadata file
   tags from targeted file servers

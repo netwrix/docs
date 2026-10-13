@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Information Protection Target Requirements"
-description: "Microsoft Information Protection Target Requirements"
+description: "Configure Microsoft Entra ID, Microsoft Purview, and Access Analyzer so the File System solution can scan for MIP sensitivity labels."
 sidebar_position: 20
 ---
 
@@ -14,7 +14,10 @@ This document explains how to configure the access Access Analyzer needs to scan
 
 Before the Access Analyzer File System solution can scan for MIP labels, complete the following prerequisites in Access Analyzer, Microsoft Entra ID, and Microsoft Purview.
 
-Access Analyzer includes the MIP File SDK, so the server where the FSAA applet runs doesn't need a client installation. Access Analyzer no longer requires the Rights Management Service Client.
+:::note
+If you configured AIP scanning in an earlier release, add the permissions in [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account) to your existing app registration, grant admin consent again, and complete the super user steps. You can uninstall the Rights Management Service Client.
+
+:::
 
 1. [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account)
 2. [Enable the Account as a Super User using PowerShell](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#enable-the-account-as-a-super-user-using-powershell)
@@ -27,6 +30,7 @@ Meet the following prerequisites before you configure MIP scanning:
 
 - Microsoft Entra ID Global Administrator credentials, or an account holding the **Azure Information Protection Administrator**, **Compliance Administrator**, or **Compliance Data Administrator** role
 - Windows PowerShell 5.1 (run as Administrator) and the ability to run `Install-Module`
+- No client installation is required on the server where the FSAA applet runs, because the MIP File SDK is included with Access Analyzer. The Rights Management Service Client is no longer required
 - Optional: The [Microsoft Purview Information Protection client](https://www.microsoft.com/en-us/download/details.aspx?id=53018), installed on the Access Analyzer console server. It's required only to apply labels with the [FS_MIPLabeling Job](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/fs_miplabeling.md)
 - Allow outbound HTTPS (port 443) traffic from the server where the FSAA applet or proxy runs to the following Microsoft endpoints. Firewall or proxy rules must allow this traffic for applications, not only for web browsers:
   - `login.microsoftonline.com`
@@ -70,7 +74,7 @@ The MIP File SDK uses the machine-wide WinHTTP proxy settings (`netsh winhttp sh
    3. Search for **Microsoft Rights Management Services**, select **Application permissions**, and add `Content.DelegatedReader`, `Content.DelegatedWriter`, and `Content.SuperUser`
 
       :::info
-      When searching for the Rights Management API under **App registrations**, search for **Microsoft Rights Management Services**. After you add it, the portal lists the API as Azure Rights Management Services.
+      After you add it, the portal lists the API as Azure Rights Management Services.
 
       :::
 
@@ -81,7 +85,7 @@ The MIP File SDK uses the machine-wide WinHTTP proxy settings (`netsh winhttp sh
    | API                                           | Permission type | Permission                  | Purpose                                                |
    | --------------------------------------------- | --------------- | --------------------------- | ------------------------------------------------------ |
    | Azure Rights Management Services              | Application     | `Content.DelegatedReader`   | Read protected content on behalf of a user             |
-   | Azure Rights Management Services              | Application     | `Content.DelegatedWriter`   | Create protected content on behalf of a user           |
+   | Azure Rights Management Services              | Application     | `Content.DelegatedWriter`   | Required to apply labels with the FS_MIPLabeling Job   |
    | Azure Rights Management Services              | Application     | `Content.SuperUser`         | Read all protected content for the tenant              |
    | Microsoft Graph                               | Delegated       | `User.Read`                 | Sign in and read user profile                          |
    | Microsoft Information Protection Sync Service | Application     | `UnifiedPolicy.Tenant.Read` | Read the tenant's sensitivity label policy             |
@@ -93,23 +97,21 @@ The MIP File SDK uses the machine-wide WinHTTP proxy settings (`netsh winhttp sh
 
 ## Enable the Account as a Super User using PowerShell
 
-The `Content.SuperUser` permission takes effect only after you add the service principal as an Azure Rights Management super user. This is a separate step from the app registration and requires an administrator account in the tenant.
+The `Content.SuperUser` permission takes effect only after you add the service principal as an Azure Rights Management super user. This is a separate step from the app registration and requires an account with the Global Administrator or Azure Information Protection Administrator role.
 
 :::warning
 Super users can decrypt all protected content in the tenant. Enable the super user feature only for accounts that require it, and review this step with your security team.
 
 :::
 
-:::info
-**NOTE**
-
+:::note
 Run all PowerShell commands in order through Windows PowerShell 5.1 (`powershell.exe`) as an Administrator. Connecting with `Connect-AipService` can fail in PowerShell 7 (`pwsh.exe`). Modules installed under one PowerShell host aren't available in the other.
 
 The module and cmdlet names in this section contain "AIP" because Microsoft hasn't renamed the `AIPService` module that manages super users for Microsoft Purview Information Protection. Use the names exactly as shown.
 
 :::
 
-1. Install and import the AIPService module in PowerShell:
+1. Install the AIPService module and import it into PowerShell:
 
    `Install-Module -Name AIPService`
 
@@ -141,7 +143,7 @@ Complete two configurations before Access Analyzer can scan for MIP labels.
 
 To collect labels for files protected with Microsoft Information Protection, configure an Azure connection profile in Access Analyzer before an FSAA scan runs. See the [Global Settings](/docs/accessanalyzer/12.0/admin/settings/overview.md) topic for additional information on how to set up a connection profile at the global level.
 
-1. In Access Analyzer, add a credential with the Azure Active Directory account type (Microsoft Entra ID) to the existing Connection Profile used for File System scanning. Enter the **Application (client) ID** in the Client ID field and the client secret **Value** of the new service principal in the Key field.
+1. In Access Analyzer, add a credential with the Azure Active Directory account type (Microsoft Entra ID) to the existing Connection Profile used for File System scanning. Enter the **Application (client) ID** in the Client ID field. In the Key field, enter the client secret **Value** you recorded in [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account).
 2. At the job level, apply the connection profile that contains both the Microsoft Entra ID credential and credentials required for File System scanning under the **Jobs** > \[**Job**\] > **Settings** > **Connection** node.
 3. Confirm the job configuration before running a scan. See the [Configure FSAA Data Collector](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#configure-fsaa-data-collector) topic for additional information.
 
@@ -158,8 +160,6 @@ For FSAA System Scans:
 - Azure Tenant Mapping page – Add the **Application (client) ID** and the **Domain Name** or **Tenant ID**
 
   :::tip
-  **TIP**
-
   Remember, the Azure Tenant Mapping page is only visible when you select the **Enable scanning of files protected by Microsoft Information Protection** checkbox on the Scan Settings page.
 
   :::
@@ -176,8 +176,6 @@ For SEEK System Scans:
 - Azure Tenant Mapping page – Add the **Application (client) ID** and the **Domain Name** or **Tenant ID**
 
   :::tip
-  **TIP**
-
   Remember, the Azure Tenant Mapping page is only visible when you select the **Enable scanning of files protected by Microsoft Information Protection** checkbox on the Scan Settings page.
 
   :::

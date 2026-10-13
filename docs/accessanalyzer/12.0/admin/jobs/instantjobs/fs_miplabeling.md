@@ -1,18 +1,17 @@
 ---
 title: "FS_MIPLabeling Job"
-description: "FS_MIPLabeling Job"
+description: "Apply a Microsoft Information Protection sensitivity label to files that contain sensitive data by using the FS_MIPLabeling instant job."
 sidebar_position: 42
 ---
 
 # FS_MIPLabeling Job
 
-The FS_MIPLabeling instant job applies a Microsoft Purview Information Protection sensitivity
-label (Microsoft Information Protection, or MIP) to files that contain sensitive data. It is available through the Instant Job Library under
-the File System library. See the
+The FS_MIPLabeling instant job applies a sensitivity label from Microsoft Purview Information
+Protection (referred to in this topic as Microsoft Information Protection, or MIP) to files that
+contain sensitive data. It is available through the Instant Job Library under the File System
+library. See the
 [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for
 instructions to add this instant job into the Jobs tree.
-
-To install the job, select **Local host** on the Hosts page of the Instant Job Wizard.
 
 Runtime Details:
 
@@ -43,19 +42,25 @@ Complete the following before running the job:
   [Microsoft Purview Information Protection client](https://www.microsoft.com/en-us/download/details.aspx?id=53018)
   on the Access Analyzer console server. It installs the PurviewInformationProtection PowerShell
   module
-- Register an application in Microsoft Entra ID for use with the `Set-Authentication` cmdlet. You can reuse the application created in the [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account) section if it has the permissions listed in this step. Record the Application (client) ID, Directory (tenant) ID, and a client secret. See the
+- Register an application in Microsoft Entra ID for use with the `Set-Authentication` cmdlet. The
+  application created in the
+  [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account)
+  section already has the required permissions and can be reused. See the
   [Microsoft documentation](https://learn.microsoft.com/en-us/powershell/azure/aip/setup-information-protection-client-powershell#create-and-configure-microsoft-entra-applications-for-set-authentication)
-  for the required configuration. The application needs the `Content.DelegatedReader` and
-  `Content.DelegatedWriter` permissions for Azure Rights Management Services and the
-  `UnifiedPolicy.Tenant.Read` permission for Microsoft Information Protection Sync Service (all
-  Application permissions), with admin consent granted
+  for the required configuration.
+  - Record the Application (client) ID, Directory (tenant) ID, and a client secret
+  - The application needs the `Content.DelegatedReader` and `Content.DelegatedWriter` permissions
+    for Azure Rights Management Services and the `UnifiedPolicy.Tenant.Read` permission for
+    Microsoft Information Protection Sync Service (all Application permissions)
+  - Grant admin consent for the permissions
 - Provision a service account in Microsoft Entra ID. The job uses its user name as the delegated
   user. In the Microsoft Purview portal, assign the account a label policy that publishes the label to apply. See the [Microsoft documentation](https://learn.microsoft.com/en-us/purview/create-sensitivity-labels) for publishing sensitivity labels
 - Know the ID of the sensitivity label to apply. To find it, authenticate with `Set-Authentication`,
   run the `Get-FileStatus` cmdlet against a file that already has the label, and read the
-  `MainLabelId` value
+  `MainLabelId` value. Alternatively, copy the label ID (GUID) from the label's details in the
+  Microsoft Purview portal, or run `Get-Label` in Security & Compliance PowerShell
 
-## Analysis Tasks for the FS_MIPLabeling Job
+## Queries for the FS_MIPLabeling Job
 
 The job runs the following three queries in order. Configure the query parameters under the job's
 **Configure** > **Queries** node, on each query's **Properties** > **PowerShell** page.
@@ -68,19 +73,20 @@ The job runs the following three queries in order. Configure the query parameter
 
 :::warning
 The job configuration stores the client secret. Restrict access to the job, and don't copy
-the configured job to shared locations.
+the configured job to shared locations. When the client secret expires, create a new one and update
+the `appSecret` parameter.
 :::
 
 ### Results
 
-The Apply MIP Sensitive Data Label query writes one row per file with these columns:
+The Apply MIP Sensitive Data Label query writes one row per file to the job's **Results** node with these columns:
 
 | Column   | Description                                                      |
 | -------- | ---------------------------------------------------------------- |
 | FileName | Full path of the file                                            |
 | Status   | `Success` or `Failure`                                           |
 | Label    | ID of the label applied, or of the label already on the file     |
-| Details  | Outcome of the file, for example `File is already labeled`       |
+| Details  | Outcome for the file, for example `File is already labeled`       |
 
 The query handles each file as follows:
 
@@ -94,19 +100,22 @@ by the Purview client's child processes. Large file lists take proportionally lo
 
 ## Run the Job
 
-**Step 1 –** In the Access Analyzer console, navigate to **Jobs** > **Instant Job Library** >
-**File System** and add the FS_MIPLabeling job to the Jobs tree.
-
-**Step 2 –** Configure the parameters for the MIP Authentication query on its **Properties** >
-**PowerShell** page. See the table in the Analysis Tasks section for parameter values.
-
-**Step 3 –** Configure the `labelId` parameter for the Apply MIP Sensitive Data Label query.
-
-**Step 4 –** Review the FS_DLPResults job's **Results** node, or query the
+**Step 1 –** Review the FS_DLPResults job's **Results** node, or query the
 `SA_FS_DLPResults_ShareDetails` table in the Access Analyzer database, to confirm it contains the
 expected files.
 
-**Step 5 –** Run the job with **Local host** selected.
+**Step 2 –** In the Access Analyzer console, navigate to **Jobs** > **Instant Job Library** >
+**File System**. In the Instant Job Wizard, add the FS_MIPLabeling job to the Jobs tree, and select
+**Local host** on the Hosts page.
+
+**Step 3 –** Configure the parameters for the MIP Authentication query on its **Properties** >
+**PowerShell** page. See the table in the
+[Queries for the FS_MIPLabeling Job](#queries-for-the-fs_miplabeling-job) section for parameter
+values.
+
+**Step 4 –** Configure the `labelId` parameter for the Apply MIP Sensitive Data Label query.
+
+**Step 5 –** Run the job.
 
 **Step 6 –** Review the Apply MIP Sensitive Data Label results. Run an FSAA scan with **Enable scanning of
 files protected by Microsoft Information Protection** selected, then run the
