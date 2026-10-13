@@ -26,12 +26,12 @@ Machine. To create a disk, follow these steps.
 - Subscription - select Pay-As-You-Go
 - Resource group – select the previously created one
 - Disk name – add a name for the storage account
-- Region – select the nearest the location of the computers that will be protected by Endpoint
-  Protector
+- Region – select the region nearest the location of the computers that Endpoint Protector will
+  protect
 - Availability Zone
 - Source type - select Storage Blob
 - Source subscription - select Pay-As-You-Go
-- Source blob – enter the URL received from Netwrix after providing the key and URL mentioned above.
+- Source blob – enter the URL you received from Netwrix after you provided the key and URL.
 - OS type - select Linux
 - Security type – select Standard
 - VM generation – select Generation 1
@@ -59,8 +59,8 @@ To start the Endpoint Protector Virtual Machine in Azure, follow these steps:
     - Subscription – select Pay-As-You-Go
     - Resource group – select the group used when creating the disk
     - Virtual Machine Name – enter a name for the Virtual Machine
-    - Size - select a virtual machine profile based closest to the recommended requirements for the
-      disk file used
+    - Size - select the virtual machine profile closest to the recommended requirements for the
+      disk file
 
 ![A screenshot of a computer
 
@@ -92,3 +92,7 @@ the Endpoint Protector image.
 
 **Step 10 –** Open a web browser and connect to the Public IP address assigned to the Endpoint
 Protector image.
+
+:::tip
+A static public IP keeps the address stable when the virtual machine restarts, but not when you migrate to a new virtual machine. Create a DNS record for a fully qualified domain name (FQDN) that points to the public IP, and configure clients and integrations with the FQDN. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::

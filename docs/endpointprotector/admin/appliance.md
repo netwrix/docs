@@ -25,13 +25,13 @@ operations and manage the SSH access.
 
 In this section you can set a preferential time zone and/or sync the appliance to an NTP source.
 
-- Time zone – select from the dropdown lists the zone and location
-- NTP Server – enter the server or go with the default entry
-- How often to synchronize – select from the dropdown a time interval when to synchronize of go
-  with the default selection
+- Time zone – select the zone and location from the dropdown lists
+- NTP Server – enter the server or keep the default entry
+- How often to synchronize – select a synchronization interval from the dropdown or keep the
+  default selection
 
 :::note
-The appliances are preﬁgured to sync once a week with pool.ntp.org.
+By default, the appliances sync once a week with pool.ntp.org.
 :::
 
 
@@ -50,7 +50,7 @@ In this section you can change the network settings for the appliance to communi
 your network.
 
 :::note
-Starting with the 2509 Endpoint Protector (EPP) Server release, the EPP Server no longer supports the DHCP client option. This means that administrators must assign a fixed IP address to the EPP Server.
+Starting with the 2509 Endpoint Protector (EPP) Server release, the EPP Server no longer supports the DHCP client option, so administrators must assign a fixed IP address to the EPP Server.
 :::
 
 :::note
@@ -58,9 +58,13 @@ After you change the IP address, close the Internet browser and open it again, t
 the Endpoint Protector Administration and Reporting Tool with the new IP address.
 :::
 
+:::warning
+Changing the server IP address affects every client and integration that uses the IP address to reach the server, including single sign-on (SSO) response URLs. Address the server by a fully qualified domain name (FQDN) instead, so that you update one DNS record rather than reconfigure each client and integration. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
+
 ![ Change the network settings for the appliance to communicate correctly in your network using IPV4](ipconfg.webp)
 
-Additionally, if you want to switch to using IPV6 exclusively, starting with version 2512, you can do so by turning on the IPV6 option.
+Starting with version 2512, you can switch to IPV6 exclusively by turning on the IPV6 option.
 Doing so will disable the IPV4 option and vice versa.
 Always click Save after changing from one IP version to another to apply the configuration.
 
@@ -72,8 +76,8 @@ For appliances hosted on the following types of images, IP change options will n
 
 :::note
 When transitioning from IPv4 to IPv6 or vice versa, changes to the Nginx configuration may be necessary:
-- If you are using IPv4 and transitioning to IPv6, ensure that the Nginx configuration is updated to listen on the IPv6 address.
-- If you are using IPv6 and transitioning to IPv4, ensure that the Nginx configuration is updated to listen on the IPv4 address.
+- If you are using IPv4 and transitioning to IPv6, update the Nginx configuration to listen on the IPv6 address.
+- If you are using IPv6 and transitioning to IPv4, update the Nginx configuration to listen on the IPv4 address.
 For customers using the standard Nginx configuration (most users), Endpoint Protector applies these adjustments automatically. Always click Save after changing from one IP version to another to apply the configuration.
 
 For customers with custom Nginx configurations (such as those using a different port for client communication), these changes might impact the communication between the agent and server.
@@ -91,8 +95,8 @@ In this section you can modify or add a DNS server address and then Save your ch
 
 By default, Endpoint Protector encrypts all communication between Endpoint Protector Clients and the Endpoint Protector Server using mutual TLS (mTLS). Both sides present certificates during the TLS handshake, which protects data in transit against interception.
 
-To further harden the registration and communication process, Endpoint Protector provides two additional, optional security features that build on this foundation: **Client Registration Certificate** and **Server Certificate Validation**. When enabled, these options introduce certificate pinning into the client lifecycle — verifying not just that communication is encrypted, but
-that both endpoints are who they claim to be. 
+To further harden the registration and communication process, Endpoint Protector provides two additional, optional security features that build on this foundation: **Client Registration Certificate** and **Server Certificate Validation**. When enabled, these options introduce certificate pinning into the client lifecycle — verifying that communication is encrypted and
+that both endpoints are who they claim to be.
 
 :::warning
 The Client Registration Certificate feature isn't available for Linux.
@@ -144,9 +148,9 @@ endpoints.
 
 ### Server Certiﬁcate Validation
 
-While Client Registration Certificate secures the registration phase, Server Certificate Validation extends certificate verification to all ongoing communication. When enabled, the Endpoint Protector Client validates the server's SSL certificate on every outbound request — ensuring that clients only communicate with a trusted, legitimate Endpoint Protector Server and can't be redirected to a rogue or impersonated instance.
-When enabled, the EPP Client validates the server's SSL certificate on every outbound request, verifying three key properties:
-- **Certificate trust** — the server certificate must be issued by a trusted Certificate Authority recognized by the endpoint.
+While Client Registration Certificate secures the registration phase, Server Certificate Validation extends certificate verification to all ongoing communication. When you enable it, the Endpoint Protector Client validates the server's SSL certificate on every outbound request — ensuring that clients only communicate with a trusted, legitimate Endpoint Protector Server and that attackers can't redirect them to a rogue or impersonated instance.
+The EPP Client verifies three key properties:
+- **Certificate trust** — a Certificate Authority that the endpoint trusts must issue the server certificate.
 - **Expiration date** — the server certificate must be valid and not expired.
 - **Hostname matching** — the server certificate's Common Name (CN) or Subject Alternative Name (SAN) must match the hostname the client is connecting to.
 
@@ -163,7 +167,7 @@ From this section, you can conﬁgure Server Certiﬁcate Validation, which ensu
 
 Before enabling, verify that:
 - The EPP Server certificate is valid and not expired.
-- The EPP Server certificate is issued by a CA trusted by all managed endpoints.
+- A CA that all managed endpoints trust issued the EPP Server certificate.
 - The EPP Server hostname matches the certificate's CN or SAN exactly.
 
 **Client-Side Configuration**
@@ -204,7 +208,7 @@ analyze the logs generated by network devices and software. The integration with
 enables Endpoint Protector to transfer activity events to a SIEM server for analysis and reporting.
 
 In this section, you can add, edit, or delete an existing SIEM Server integration. To edit or delete
-a SIEM Server you need to select an available SIEM server integration.
+a SIEM Server, select an available SIEM server integration.
 
 :::warning
 You can conﬁgure a maximum of four SIEM Server integrations.
@@ -242,12 +246,12 @@ To create a SIEM Server, click **Add New** and provide the following information
     :::
 
 
-- Log Types – select from the available options the logs to send to the SIEM Server
+- Log Types – select the logs to send to the SIEM Server from the available options
 
 ![SIEM Intergration - Adding a New Server](siemintegrationnewserver.webp)
 
 :::warning
-The SIEM integration feature in Endpoint Protector comes with certain limitations. To use the latest features, your environment must meet specific criteria: you must have installed it from image version 5.6.0.0 or later, and it must maintain an active HTTPS connection. SIEM integration is only accessible in environments that meet these prerequisites.
+To use the latest SIEM integration features, you must have installed Endpoint Protector from image version 5.6.0.0 or later, and your environment must maintain an active HTTPS connection.
 :::
 
 
@@ -328,7 +332,7 @@ Example field values include:
 This section presents the field names for the Endpoint Protector Server's "Standard format," available since the Endpoint Protector 5.9.4 release. Endpoint Protector Server exports logs to SIEM solutions with a maximum of 2,100 characters. Starting with Endpoint Protector 5.9.1, the message limit increased to 10,000 characters.
 
 :::warning
-From Endpoint Protector 2608 onward, Device Control and Content Aware Protection SIEM log entries use internal database field names as keys (for example, `machine_name`, `destination_type`) instead of the readable field names listed in this section (for example, `[Client Computer]`, `[Destination Type]`). This is a side effect of the underlying log platform migration to CrateDB, not an intentional change to the SIEM export format. There is no setting to restore the readable field names. If your SIEM parser or field mappings rely on those readable names, update them using the [SIEM Field Name Mapping (2608+)](#siem-field-name-mapping-2608) table.
+From Endpoint Protector 2608 onward, Device Control and Content Aware Protection SIEM log entries use internal database field names as keys (for example, `machine_name`, `destination_type`) instead of the readable field names listed in this section (for example, `[Client Computer]`, `[Destination Type]`). This change is an unintended side effect of the underlying log platform migration to CrateDB. There is no setting to restore the readable field names. If your SIEM parser or field mappings rely on those readable names, update them using the [SIEM Field Name Mapping (2608+)](#siem-field-name-mapping-2608) table.
 :::
 
 #### Device Control
