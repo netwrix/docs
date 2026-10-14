@@ -73,13 +73,13 @@ The **Values** tab shows the details of the role changes.
 2. Enter a descriptive **Name** and **Change Overview**.
 3. Select **Role / Global Reductions** for **Access type**. The Offboarding detail fields are now visible.
 4. Check **Inactivate After Removal** if the affected employees should be inactivated. Only check this if you are removing all of the employee's Roles and Global Permissions.
-5. Enter one or more **Affected Employees**. The **Get Roles for Affected Employees** button is now
+5. Enter one or more **Affected Employees**. The **Get Roles / Permissions for Affected Employee(s)** button is now
    visible.
 
     ![Provisioning role reductions](/images/platgovnetsuite/change_management/provisioning_role_reductions.webp)
 
-6. Enter one or more **Affected Roles**. Or, click **Get Roles for Affected Employees** to select
-   from the current roles.
+6. Enter one or more **Affected Roles** / **Global Permissions**. Or, click **Get Roles / Permissions for Affected Employee(s)** to select
+   from the current roles / permissions.
 
     ![Select the roles to remove](/images/platgovnetsuite/change_management/provisioning_role_reductions_selector.webp)
 
