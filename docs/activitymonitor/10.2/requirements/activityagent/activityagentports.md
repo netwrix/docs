@@ -232,3 +232,17 @@ settings are required for communication between the agent server and the Access 
 | ------------------------------- | -------- | ---------- | ------------------------------ |
 | Access Analyzer to Agent Server | TCP      | 445        | SMB, used for Agent Deployment |
 | Access Analyzer to Agent Server | TCP      | Predefined | WMI, used for Agent Deployment |
+
+## Integration with Netwrix 1Secure Additional Firewall Rules
+
+The following firewall settings are required for communication between the Activity Monitor Activity
+Agent server and the Netwrix Cloud Agent server:
+
+| Communication Direction                | Protocol | Ports | Description                    |
+| -------------------------------------- | -------- | ----- | ------------------------------ |
+| Activity Agent Server to Cloud Agent   | TCP      | 4507  | Activity Monitor Agent events  |
+
+The Cloud Agent adds this port to the Windows Firewall exclusions automatically. If the Activity
+Agent runs on a different server than the Cloud Agent, ensure the Activity Agent server can reach
+this port. See the [1Secure Integration](/docs/activitymonitor/10.2/requirements/activityagent/1secure-integration.md)
+topic for additional information.
