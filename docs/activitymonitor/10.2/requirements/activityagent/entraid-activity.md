@@ -1,0 +1,222 @@
+---
+title: "Microsoft Entra ID Activity Auditing Configuration"
+description: "Microsoft Entra ID Activity Auditing Configuration"
+sidebar_position: 30
+---
+
+# Microsoft Entra ID Activity Auditing Configuration
+
+Register Activity Monitor as a web application to the targeted Microsoft Entra ID
+(formerly Azure AD) so Activity Monitor can monitor the environment. This generates the
+Client ID and Client Secret that the Activity Agent requires. See
+[Microsoft Support](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-api-prerequisites-azure-portal)
+for assistance in configuring the Microsoft Entra ID web application.
+
+:::note
+You need a user account with the Global Administrator role to register an app with
+Microsoft Entra ID.
+:::
+
+
+**Configuration Settings from the Registered Application**
+
+You need the following settings from your tenant after you register the application:
+
+- Tenant ID – This is the Tenant ID for Microsoft Entra ID
+- Client ID – This is the Application (client) ID for the registered application
+- Client Secret – This is the Client Secret Value generated when you create a new secret
+
+    :::warning
+    You can't retrieve the value after saving the new key. Copy it first.
+    :::
+
+
+## Permissions
+
+Activity Monitor requires the following permissions:
+
+- Microsoft Graph API
+
+    - Application Permissions:
+
+        - AuditLog.Read.All – Read all audit log data
+        - Directory.Read.All – Read directory data
+        - Policy.Read.ConditionalAccess – Read your organization's conditional access policies
+        - User.Read.All – Read all users' full profiles
+
+## Register a Microsoft Entra ID Application
+
+To register Activity Monitor with Microsoft Entra ID:
+
+:::note
+The following steps are for registering an app through the Microsoft Entra admin center. These
+steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
+documentation for additional information.
+:::
+
+
+**Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
+
+**Step 2 –** On the left navigation menu, navigate to **Identity** > **Applications** and click App
+registrations.
+
+**Step 3 –** In the top toolbar, click **New registration**.
+
+**Step 4 –** Enter the following information in the Register an application page:
+
+- Name – Enter a user-facing display name for the application, for example Netwrix Activity Monitor
+  Entra ID
+- Supported account types – Select **Accounts in this organizational directory only**
+- Redirect URI – Set the Redirect URI to **Public client/native** (Mobile and desktop) from the drop
+  down menu. In the text box, enter the following:
+
+**Urn:ietf:wg:oauth:2.0:oob**
+
+**Step 5 –** Click **Register**.
+
+The Overview page for the newly registered app opens. Review the newly created registered
+application. Now that you have registered the application, grant permissions to it.
+
+## Grant Permissions to the Registered Application
+
+To set up permissions to enable Activity Monitor to monitor data and collect logs from Microsoft Entra ID:
+
+:::note
+The following steps are for registering an app through the Microsoft Entra admin center. These
+steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
+documentation for additional information.
+:::
+
+
+**Step 1 –** Select the newly-created, registered application. If you left the Overview page, you
+can find it in the **Identity** > **Applications** > **App registrations** > **All applications**
+list.
+
+**Step 2 –** On the registered app blade, click **API permissions** in the Manage section.
+
+**Step 3 –** In the top toolbar, click **Add a permission**.
+
+**Step 4 –** On the Request API permissions blade, select **Microsoft Graph** on the Microsoft APIs
+tab. Select the following permissions:
+
+- Under Application Permissions, select:
+
+    - AuditLog.Read.All – Read all audit log data
+    - Directory.Read.All – Read directory data
+    - Policy.Read.ConditionalAccess – Read your organization's conditional access policies
+    - User.Read.All – Read all users' full profiles
+
+**Step 5 –** At the bottom of the page, click **Add Permissions**.
+
+**Step 6 –** Click **Grant Admin Consent for [tenant]**. Then click **Yes** in the confirmation
+window.
+
+Now that you have granted the permissions, collect the settings that Activity Monitor requires.
+
+## Identify the Client ID
+
+To find the registered application's Client ID:
+
+:::note
+The following steps are for registering an app through the Microsoft Entra admin center. These
+steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
+documentation for additional information.
+:::
+
+
+**Step 1 –** Select the newly-created, registered application. If you left the Overview page, you
+can find it in the **Identity** > **Applications** > **App registrations** > **All applications**
+list.
+
+**Step 2 –** Copy the **Application (client) ID** value.
+
+**Step 3 –** Save this value in a text file.
+
+You need this value when adding a Microsoft Entra ID host in Activity Monitor. Next, identify the
+Tenant ID.
+
+## Identify the Tenant ID
+
+The Tenant ID is available in two locations within Microsoft Entra ID.
+
+**Registered Application Overview Blade**
+
+You can copy the Tenant ID from the same page where you just copied the Client ID. Follow the steps
+to copy the Tenant ID from the registered application Overview blade.
+
+**Step 1 –** Copy the Directory (tenant) ID value.
+
+**Step 2 –** Save this value in a text file.
+
+You need this value when adding a Microsoft Entra ID host in Activity Monitor. Next, generate the
+application’s Client Secret Key.
+
+**Overview Page**
+
+To find the tenant name where the registered application resides:
+
+:::note
+The following steps are for registering an app through the Microsoft Entra admin center. These
+steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
+documentation for additional information.
+:::
+
+
+**Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
+
+**Step 2 –** Copy the Tenant ID value.
+
+**Step 3 –** Save this value in a text file.
+
+You need this value when adding a Microsoft Entra ID host in Activity Monitor. Next, generate the
+application’s Client Secret Key.
+
+## Generate the Client Secret Key
+
+To find the registered application's Client Secret, create a new key and save its value:
+
+:::note
+The following steps are for registering an app through the Microsoft Entra admin center. These
+steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
+documentation for additional information.
+:::
+
+
+:::warning
+You can't retrieve the value after saving the new key. Copy it first.
+:::
+
+
+**Step 1 –** Select the newly-created, registered application. If you left the Overview page, you
+can find it in the **Identity** > **Applications** > **App registrations** > **All applications**
+list.
+
+**Step 2 –** On the registered app blade, click **Certificates & secrets** in the Manage section.
+
+**Step 3 –** In the top toolbar, click **New client secret**.
+
+**Step 4 –** On the Add a client secret blade, complete the following:
+
+- Description – Enter a unique description for this secret
+- Expires – Select the duration.
+
+    :::note
+    Setting the duration on the key to expire requires reconfiguration at the time of
+    expiration. It is best to configure it to expire in 1 or 2 years.
+    :::
+
+
+**Step 5 –** Click **Add** to generate the key.
+
+:::warning
+If you leave this page before copying the key, you can't retrieve it later, and you'll have to
+repeat this process.
+:::
+
+
+**Step 6 –** The Client Secret appears in the Value column of the table. You can use the
+Copy to clipboard button to copy the Client Secret.
+
+**Step 7 –** Save this value in a text file.
+
+You need this value when adding a Microsoft Entra ID host in Activity Monitor.

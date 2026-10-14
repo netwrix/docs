@@ -1,0 +1,10 @@
+{
+  "label": "Dell PowerStore Activity Auditing Configuration",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "powerstore-activity"
+  }
+}
