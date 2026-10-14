@@ -1,0 +1,8 @@
+extends: existence
+message: "Avoid the 'not just X, but Y' construction ('%s'). State the point directly."
+level: warning
+ignorecase: true
+scope: sentence
+tokens:
+  - '\bnot (?:just|only|merely|simply)\b[^.!?\n]{0,80}\bbut (?:also )?\b'
+  - '\b(?:isn''t|is not|aren''t|are not|doesn''t|does not) (?:just|merely|simply) [^.!?\n]{0,60}(?:—|--|;|,) (?:it|they|it''s|it is|they''re)\b'

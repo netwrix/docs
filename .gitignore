@@ -61,3 +61,6 @@ touch_files.py
 
 # Claude build/preview skill logs
 .docs-logs/
+
+# local caches (quality-check verdicts, pilot runs)
+.cache/

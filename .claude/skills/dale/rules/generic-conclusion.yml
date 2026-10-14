@@ -1,0 +1,3 @@
+message: End on the last concrete instruction or fact.
+level: warning
+reason: Fires when a closing paragraph or section restates the page's value in vague, feel-good terms (for example 'By following these steps, you can ensure a smooth and efficient experience') instead of ending on the last concrete instruction or fact. Does not fire on a sentence that states the concrete expected result of a step, such as 'The service should now start.'

@@ -1,0 +1,8 @@
+extends: existence
+message: "Use 'is' or 'are' instead of '%s'."
+level: warning
+ignorecase: true
+tokens:
+  - '\bserv(?:es|ed|ing) as (?:a|an|the)\b'
+  - '\bstand(?:s|ing) as (?:a|an|the)\b'
+  - '\bboasts?\b'

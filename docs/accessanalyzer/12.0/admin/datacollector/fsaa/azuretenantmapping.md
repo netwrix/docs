@@ -6,18 +6,18 @@ sidebar_position: 70
 
 # FSAA: Azure Tenant Mapping
 
-Use the Azure Tenant Mapping page to configure the target domain or Tenant ID for Azure Information
-Protection (AIP) scanning. It is a wizard page for the categories of:
+Use the Azure Tenant Mapping page to configure the Application (client) ID and the target domain or Tenant ID
+for Microsoft Information Protection (MIP) scanning. It is a wizard page for the categories of:
 
 - File System Access/Permission Auditing Scan
 - File System SDD Scan
 
-Remember, select the **Enable scanning of files protected by Azure Information Protection** checkbox
+Remember, select the **Enable scanning of files protected by Microsoft Information Protection** checkbox
 on the [FSAA: Scan Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/scansettings.md) page to enable this page in the data collector wizard.
-For FSAA to scan files protected by AIP, meet the prerequisites and successfully create an Azure
+For FSAA to scan files protected by MIP, meet the prerequisites and successfully create an Azure
 Connection Profile. See the
-[Azure Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/azureinformationprotection.md)
-topic for additional information on configuring the File System solution to scan for AIP labels.
+[Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)
+topic for additional information on configuring the File System solution to scan for MIP labels.
 
 ![FSAA Data Collector Wizard Azure Tenant Mapping page](/images/accessanalyzer/12.0/admin/datacollector/fsaa/azuretenantmapping.webp)
 

@@ -1,0 +1,8 @@
+extends: existence
+message: "Cut the tacked-on clause '%s' or replace it with a specific consequence."
+level: warning
+ignorecase: true
+nonword: true
+scope: sentence
+tokens:
+  - ',\s+(?:thereby |thus )?(?:ensuring|underscoring|reflecting|showcasing|fostering|emphasizing|cementing|solidifying|reinforcing|demonstrating)\b'

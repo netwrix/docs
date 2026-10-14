@@ -6,8 +6,12 @@
 # Input: JSON on stdin with tool_name and tool_input fields
 
 INPUT=$(cat)
-TOOL_NAME=$(echo "$INPUT" | jq -r '.tool_name')
-COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command // empty')
+# Read one field from the hook's JSON input. Uses node (always present in this repo); jq is not installed everywhere.
+read_field() {
+  echo "$INPUT" | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{try{const v=process.argv[1].split(".").reduce((o,k)=>o?.[k],JSON.parse(d));process.stdout.write(v==null?"":String(v))}catch{}})' "$1"
+}
+TOOL_NAME=$(read_field tool_name)
+COMMAND=$(read_field tool_input.command)
 
 # Only act on Bash tool
 if [ "$TOOL_NAME" != "Bash" ]; then
@@ -20,9 +24,4 @@ if ! echo "$COMMAND" | grep -q "^vale "; then
 fi
 
 # Remind to check if issues remain
-jq -n '{
-  hookSpecificOutput: {
-    hookEventName: "PostToolUse",
-    message: "Vale run complete. If issues were found, fix them and re-run vale until zero errors remain."
-  }
-}'
+node -e 'console.log(JSON.stringify({hookSpecificOutput:{hookEventName:"PostToolUse",message:"Vale run complete. If issues were found, fix them and re-run vale until zero errors remain."}}))'

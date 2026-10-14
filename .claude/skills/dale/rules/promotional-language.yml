@@ -1,0 +1,3 @@
+message: Replace unsupported praise with a specific, checkable claim.
+level: warning
+reason: Fires when marketing praise such as powerful, robust, seamless, cutting-edge, industry-leading, game-changing, best-in-class, comprehensive solution is used as unsupported praise rather than a specific, checkable claim.

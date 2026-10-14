@@ -1,0 +1,3 @@
+message: Remove stacked qualifiers on documented behavior.
+level: warning
+reason: Fires when qualifiers are stacked past what a documented, tested behavior warrants, such as 'may potentially', 'could possibly in some cases', 'might in certain circumstances be able to'.

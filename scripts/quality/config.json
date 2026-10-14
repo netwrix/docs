@@ -1,0 +1,35 @@
+{
+  "scope": {
+    "include": [
+      "docs/**/*.md",
+      "docs/**/*.mdx"
+    ],
+    "exclude": [
+      "docs/kb/",
+      "/CLAUDE.md",
+      "/SKILL.md"
+    ],
+    "concurrency": 3
+  },
+  "readability": {
+    "fleschMin": 45,
+    "meanSentenceWordsMax": 16,
+    "longSentenceSharePctMax": 10
+  },
+  "models": {
+    "rewrite": "claude-sonnet-5-5",
+    "verify": "claude-opus-5-5",
+    "dale": "claude-haiku-4-5"
+  },
+  "loop": {
+    "maxPasses": 3
+  },
+  "dale": {
+    "runs": 3,
+    "agree": 2,
+    "ignoreQuotes": []
+  },
+  "vale": {
+    "ignore": []
+  }
+}

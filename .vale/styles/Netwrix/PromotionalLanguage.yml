@@ -1,0 +1,16 @@
+extends: existence
+message: "Avoid promotional wording ('%s'). Describe the specific capability instead."
+level: warning
+ignorecase: true
+tokens:
+  - '\bpowerful\b'
+  - '\bindustry.leading\b'
+  - '\bbest.in.class\b'
+  - '\bstate.of.the.art\b'
+  - '\brevolutionary\b'
+  - '\bgroundbreaking\b'
+  - '\bnext.generation\b'
+  - '\bunparalleled\b'
+  - '\bunmatched\b'
+  - '\beffortless(?:ly)?\b'
+  - '\bgame.chang(?:ing|er)\b'

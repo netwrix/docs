@@ -1,0 +1,3 @@
+message: Do not frame a routine feature or step as uniquely important ('plays a crucial role', 'serves as a cornerstone', 'is essential to ensuring'). State what it does.
+level: warning
+reason: Fires when a sentence inflates the significance of a routine feature or step with phrases like 'plays a crucial/vital/key role', 'serves as a cornerstone', 'is essential to ensuring', 'a testament to'. Does not fire on plain factual statements that something is required (for example 'You must have Domain Admin rights').

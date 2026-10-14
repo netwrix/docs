@@ -1,0 +1,3 @@
+message: Cut the throat-clearing; it adds words, not information.
+level: warning
+reason: Fires on throat-clearing and filler such as 'It is important to note that', 'It is worth mentioning', 'In today's fast-paced environment', 'needless to say', 'at the end of the day', 'it should be noted that', when the sentence works without it. Does not fire on 'in order to' (a separate wordiness rule covers it).
