@@ -3,8 +3,8 @@
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
 - Automatically when creating an organization. This is a recommended method.
-- Manually. The following table lists the native audit settings that must be adjusted manually to ensure
-  collecting comprehensive and reliable audit data. You can enable Netwrix 1Secure to continually
+- Manually. The following table lists the native audit settings that you must adjust manually to
+  collect comprehensive and reliable audit data. You can enable Netwrix 1Secure to continually
   enforce the relevant audit policies or configure them manually.
 
 <!-- vale off -->
