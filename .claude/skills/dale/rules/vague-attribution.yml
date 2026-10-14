@@ -1,0 +1,3 @@
+message: Name the source or drop the claim.
+level: warning
+reason: Fires when a claim is attributed to unnamed people or sources with no citation, such as 'users report', 'many organizations find', 'it is widely recognized', 'experts agree', 'studies show'.
