@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Prerequisites for Data Sources
 
-This section lists platforms and systems that can be monitored with Netwrix 1Secure.
+This section lists platforms and systems that Netwrix 1Secure can monitor.
 
 | Data source | Supported Versions |
 | --- | ---|

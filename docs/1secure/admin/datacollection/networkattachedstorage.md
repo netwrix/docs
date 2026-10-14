@@ -93,7 +93,7 @@ After you add the 1Secure output, you can disable the Log File output. Netwrix r
 1. Log in to 1Secure.
 2. Open your organization configuration and go to the **Sources** section.
 3. Click **Add**, then select **Network Attached Storage**.
-4. Select the site where the Cloud Agent is installed.
+4. Select the site where you installed the Cloud Agent.
 5. Enter a name for the source group, for example, `NAS`.
 6. For the **Network Attached Storage Activity (NAM)** connector, select **Monitor this connector and collect activity data**, then complete the wizard.
 
