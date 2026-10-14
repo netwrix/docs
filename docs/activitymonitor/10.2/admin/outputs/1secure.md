@@ -31,7 +31,7 @@ The tab contains the following settings:
 Click **Enroll** to establish a connection to 1Secure Cloud Agent. The Activity Monitor agent connects to the server, 
 compares the server's certificate to the expected one embedded in the enrollment code, and sends the code to 1Secure Cloud Agent. 
 If Cloud Agent confirms the enrollment, both products store the peer certificate's Subject Public Key Info (SPKI) SHA-256 hash and 
-use mTLS with SPKI hash pinning for mutual authentication. You no longer need the enrollment code after this step.
+use mutual TLS (mTLS) with SPKI hash pinning for mutual authentication. You no longer need the enrollment code after this step.
 
 If a certificate changes so that its SPKI hash changes — for example, when the agent generates a new key pair — you must re-enroll. 
 Generate a new code and click **Enroll** again.
