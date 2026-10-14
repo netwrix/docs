@@ -8,7 +8,7 @@ This section introduces how to manage your own account in PingCastle Enterprise.
 
 ## Manage My Account
 
-The Manage My Account menu opens the Manage Your Account window. This window serves as a centralized hub for managing your user profile, security settings, notifications, and account information.
+The Manage My Account menu opens the Manage Your Account window. This window is where you manage your user profile, security settings, notifications, and account information.
 
 To access the Manage My Account window:
 

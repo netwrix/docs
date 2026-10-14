@@ -49,7 +49,7 @@ PingCastle Enterprise uses Entity Framework Core 2 for database operations and p
 PingCastle Enterprise requires:
 
 - **ASP.NET 8.0 Hosting Bundle**: Required for hosting the web application
-- **IIS (Internet Information Services)**: Serves as the web server, with Windows Authentication enabled by default
+- **IIS (Internet Information Services)**: The web server, with Windows Authentication enabled by default
 
 :::info
 Install the ASP.NET 8.0 Hosting Bundle before configuring IIS to ensure proper module registration. If you install them in the wrong order, run a repair on the ASP.NET 8.0 Hosting Bundle to resolve any issues.

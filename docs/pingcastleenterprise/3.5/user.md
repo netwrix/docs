@@ -906,7 +906,7 @@ account as well as how administrators can manage other accounts.
 ## Manage My Account
 
 The Manage My Account menu opens the Manage Your Account window. This
-window serves as a centralized hub for managing your user profile,
+window is where you manage your user profile,
 security settings, notifications, and account information.
 
 Follow the instructions to access the Manage My Account window.
