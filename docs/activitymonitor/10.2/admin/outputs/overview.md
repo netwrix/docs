@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Output Types
 
-Once a domain or a host/service is being monitored the event stream can be sent to multiple outputs. There
+After you start monitoring a domain or a host/service, you can send its event stream to multiple outputs. There
 are five types of outputs:
 
 

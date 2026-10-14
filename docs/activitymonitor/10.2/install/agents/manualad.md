@@ -137,10 +137,10 @@ domain. Click **Next**.
 **Step 8 –** Select the domain controllers where the agent is installed. Click **Test**.
 
 :::note
-When clicking Test while adding the Agent to the Console, the connection may fail. When
-clicking Test, the Activity Monitor verifies not only its ability to manage the agent but the
-console's ability to deploy the agent as well. Errors can be ignored if the agent was manually
-installed.
+When you click Test while adding the Agent to the Console, the connection may fail. When
+you click Test, the Activity Monitor verifies both its ability to manage the agent and the
+console's ability to deploy the agent. You can ignore errors if you installed the agent
+manually.
 :::
 
 
