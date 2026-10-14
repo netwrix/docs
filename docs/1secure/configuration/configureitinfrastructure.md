@@ -338,6 +338,17 @@ You can configure your IT Infrastructure for monitoring in one of the following
                 </tr>
                 <tr>
                     <td>
+                        <p>Network Attached Storage</p>
+                    </td>
+                    <td>
+                        <p>Network Attached Storage Activity (NAM)</p>
+                    </td>
+                    <td>
+                        <p>Configure monitoring of the storage devices in the Netwrix Activity Monitor Console, and connect Activity Monitor to the Netwrix Cloud Agent. See <a href="/docs/1secure/admin/datacollection/networkattachedstorage">Network Attached Storage</a> for related settings and procedures.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <p>SharePoint Online</p>
                     </td>
                     <td>
