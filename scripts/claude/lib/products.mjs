@@ -47,7 +47,7 @@ export async function productsFromPaths(paths) {
   return [...ids].sort();
 }
 
-/** Landing URL path for a product's default version, e.g. /docs/pingcastle/4_0/ */
+/** Landing URL path for a product's default version, e.g. /docs/pingcastleenterprise/4_0/ */
 export async function landingPath(id) {
   if (!id || id === 'all') return '/';
   const mod = await importConfig();

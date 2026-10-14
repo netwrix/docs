@@ -133,13 +133,13 @@ You can build or run documentation for a single product using the `DOCS_PRODUCT`
 
 **Windows (PowerShell):**
 ```powershell
-$ENV:DOCS_PRODUCT="pingcastle"
+$ENV:DOCS_PRODUCT="pingcastleenterprise"
 npm run start
 ```
 
 **Unix/Linux/macOS:**
 ```bash
-export DOCS_PRODUCT="pingcastle"
+export DOCS_PRODUCT="pingcastleenterprise"
 npm run start
 ```
 

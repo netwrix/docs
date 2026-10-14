@@ -94,10 +94,18 @@
 /static/images/passwordsecure/ @netwrix/passwordsecure-docs
 
 # PingCastle team
-/docs/pingcastle/ @netwrix/pingcastle-docs
-/sidebars/pingcastle/ @netwrix/pingcastle-docs
-/static/files/pingcastle/ @netwrix/pingcastle-docs
-/static/images/pingcastle/ @netwrix/pingcastle-docs
+/docs/pingcastleenterprise/ @netwrix/pingcastle-docs
+/sidebars/pingcastleenterprise/ @netwrix/pingcastle-docs
+/static/files/pingcastleenterprise/ @netwrix/pingcastle-docs
+/static/images/pingcastleenterprise/ @netwrix/pingcastle-docs
+/docs/pingcastlepro/ @netwrix/pingcastle-docs
+/sidebars/pingcastlepro/ @netwrix/pingcastle-docs
+/static/files/pingcastlepro/ @netwrix/pingcastle-docs
+/static/images/pingcastlepro/ @netwrix/pingcastle-docs
+/docs/pingcastlecommunity/ @netwrix/pingcastle-docs
+/sidebars/pingcastlecommunity/ @netwrix/pingcastle-docs
+/static/files/pingcastlecommunity/ @netwrix/pingcastle-docs
+/static/images/pingcastlecommunity/ @netwrix/pingcastle-docs
 
 # Platform Governor NetSuite team
 /docs/platgovnetsuite/ @netwrix/platgovnetsuite-docs
