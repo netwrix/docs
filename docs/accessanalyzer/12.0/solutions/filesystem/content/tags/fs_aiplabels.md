@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # FS_AIPLabels Job
 
-The FS_AIPLabels job is designed to report on resources classified by Azure Information Protection
+The FS_AIPLabels job reports on resources classified by Azure Information Protection
 (AIP) labels from targeted file servers.
 
 ## Analysis Tasks for the FS_AIPLabels Job
@@ -32,4 +32,4 @@ following pre-configured report:
 
 | Report     | Description                                                                                                                               | Default Tags | Report Elements                                                                                                                                                                                                               |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| AIP Labels | This report provides details on labels applied to files. This information is rolled up by folder, and summarized at the enterprise level. | None         | This report is comprised of three elements: <ul><li>Pie Chart – Displays enterprise AIP summary</li><li>Table– Provides details on label details by folder</li><li>Table – Provides details on labels by file count</li></ul> |
+| AIP Labels | This report provides details on labels applied to files. The report rolls up this information by folder and summarizes it at the enterprise level. | None         | This report has three elements: <ul><li>Pie Chart – Displays enterprise AIP summary</li><li>Table– Provides details on label details by folder</li><li>Table – Provides details on labels by file count</li></ul> |

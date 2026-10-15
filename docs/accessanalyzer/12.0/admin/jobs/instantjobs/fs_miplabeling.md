@@ -43,7 +43,7 @@ Complete the following before running the job:
   on the Access Analyzer console server. It installs the PurviewInformationProtection PowerShell
   module
 - Register an application in Microsoft Entra ID for use with the `Set-Authentication` cmdlet. The
-  application created in the
+  application you created in the
   [Create a Service Principal Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md#create-a-service-principal-account)
   section already has the required permissions, and you can reuse it. See the
   [Microsoft documentation](https://learn.microsoft.com/en-us/powershell/azure/aip/setup-information-protection-client-powershell#create-and-configure-microsoft-entra-applications-for-set-authentication)
@@ -117,7 +117,7 @@ values.
 
 **Step 5 –** Run the job.
 
-**Step 6 –** Review the Apply MIP Sensitive Data Label results. Run an FSAA scan with **Enable scanning of
+**Step 6 –** Review the Apply MIP Sensitive Data Label results. Run a File System Access Auditing (FSAA) scan with **Enable scanning of
 files protected by Microsoft Information Protection** selected, then run the
 [FS_AIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_aiplabels.md) to
 confirm that the job applied the labels.
