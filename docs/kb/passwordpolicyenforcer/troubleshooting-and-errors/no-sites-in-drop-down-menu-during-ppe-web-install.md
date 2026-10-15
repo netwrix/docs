@@ -12,21 +12,21 @@ keywords:
   - sites drop-down
   - elevated Command Prompt
   - Run as administrator
-  - permissions
+  - msiexec
   - upgrade
   - UAC
 
 products:
   - passwordpolicyenforcer
-sidebar_label: No Sites in Drop-Down Menu During PPE Web Installation
+sidebar_label: No Sites in the Drop-Down Menu During PPE Web Installation
 tags:
   - kb
   - troubleshooting-and-errors
-title: "No Sites in Drop-Down Menu During PPE Web Installation"
+title: "No Sites in the Drop-Down Menu During PPE Web Installation"
 knowledge_article_id: ""
 ---
 
-# No Sites in Drop-Down Menu During PPE Web Installation
+# No Sites in the Drop-Down Menu During PPE Web Installation
 
 ## Symptom
 
@@ -38,16 +38,15 @@ The user account running the installation wizard does not have sufficient permis
 
 ## Resolution
 
-Run the MSI installer from an elevated **Command Prompt**.
+Run the MSI installer from an elevated **Command Prompt** as an administrator.
 
-1. Open **Command Prompt** as an administrator:
-   - Click **Start**, then type `cmd`.
-   - Right-click **Command Prompt** and select **Run as administrator**.
-2. In the elevated **Command Prompt**, run the PPE Web MSI installer:
+1. Click **Start**, then type `cmd`.
+2. Right-click **Command Prompt** and select **Run as administrator**.
+3. In the elevated **Command Prompt**, run the PPE Web MSI installer:
 
    ```
    msiexec /i "<path-to-installer>\<installer-name>.msi"
    ```
 
-3. In the installation wizard, verify that the sites appear in the drop-down menu.
-4. Proceed with the installation wizard steps as normal to install or upgrade PPE Web.
+4. In the installation wizard, verify that the sites appear in the drop-down menu.
+5. Proceed with the installation wizard steps as normal to install or upgrade PPE Web.
