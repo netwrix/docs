@@ -10,7 +10,7 @@ The product was formerly named **StealthDEFEND** (the legacy install path is `C:
 
 ## Versions
 
-Documented versions: **3.0**, **3.1**, **3.2**, and **3.3** (latest). The structures are nearly identical. Edits to one version do **not** propagate to the others. Update each version the change applies to.
+Documented versions: **3.0** (hidden), **3.1**, **3.2**, **3.3**, and **3.4** (latest). The structures are nearly identical. Edits to one version do **not** propagate to the others. Update each version the change applies to.
 
 3.1 added:
 
