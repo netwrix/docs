@@ -43,6 +43,16 @@ takes an action within your Microsoft Entra ID tenant.
 | Example                   | A confirmed compromised user grants another user the "global administrator" role.                                                                                                                                                                         |
 | Trigger                   | A confirmed compromised user performs any action in your Microsoft Entra ID tenant.                                                                                                                                                                       |
 
+## First-Time Location
+
+If a user signs in from a country or region they have never signed in from before, a threat is created.
+
+| First-Time Location |                                                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Definition          | The First-Time Location threat detects when a user successfully signs in from a country or region that Threat Manager has not seen for that user before.                                                                                                                                                                                                                                  |
+| Example             | A user normally signs in from the United States. One day, the account signs in from a country the user has never signed in from, indicating the account may be compromised. If the user signs in from several new locations during the rollup period, Threat Manager rolls them up into one threat for that user.                                                                                                          |
+| Trigger             | Threat Manager learns the locations each user signs in from. After a 30-day learning period for the user, Threat Manager creates a threat the first time that user signs in successfully from a new location. Failed sign-in attempts don't count toward learned locations. Threat Manager doesn't create a threat for anonymous logons or for locations excluded in the threat settings. |
+
 ## Impossible Travel
 
 The Impossible Travel is when a user logs in from one geographical location and then quickly (and
