@@ -22,7 +22,7 @@ Runtime Details:
 - History Retention: Not supported
 - Multi-console Support: Not supported
 - Additional Notes: The job labels files in place on the file server. Access Analyzer doesn't
-  overwrite a different label that is already on a file
+  overwrite a different label already on a file
 
 :::note
 This job applies labels by using the PurviewInformationProtection PowerShell module. The File System
