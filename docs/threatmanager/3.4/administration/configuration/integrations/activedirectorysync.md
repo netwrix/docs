@@ -220,7 +220,7 @@ To add a service account rule:
 
 **Step 2 –** For Attribute, select **Organizational Unit** or **SAM Account Name**.
 
-**Step 3 –** For Operator, select **Equals**, **Not Equal To**, **Contains**, **Does Not
+**Step 3 –** For Operator, select **Equals**, **Not Equal To**, **Contains**, **Doesn't
 Contain**, **Starts With**, or **Ends With**.
 
 **Step 4 –** For Value, enter or select the value to match.
