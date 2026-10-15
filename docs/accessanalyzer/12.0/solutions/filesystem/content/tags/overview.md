@@ -11,9 +11,9 @@ servers.
 
 ![Tags Job Group in the Jobs Tree](/images/accessanalyzer/12.0/solutions/filesystem/content/tags/tagsjobstree.webp)
 
-The Tags job group includes:
+The Tags job group contains:
 
-- [FS_AIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_aiplabels.md) – Reports on resources classified by Azure Information Protection (AIP) labels
-  from targeted file servers
+- [FS_AIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_aiplabels.md) – Reports on resources classified by Microsoft Information
+  Protection (MIP) sensitivity labels from targeted file servers
 - [FS_FileTags Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_filetags.md) – Reports on resources classified with metadata file
   tags from targeted file servers
