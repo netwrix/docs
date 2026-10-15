@@ -221,6 +221,29 @@ Step 2 – Select the **Display Additional Manager Direct Reports** checkbox.
 
 Step 3 – Click **Save**.
 
+## Display exchange co-managed groups
+
+By default, the **My Groups** page displays the groups that you are the primary owner for. You can,
+however, set this page to display those groups too for which you are an Exchange co-managed owner.
+A co-managed owner is an additional owner added in Microsoft Exchange. Exchange lists such owners in
+the `msExchCoManagedByLink` attribute of the group.
+
+Step 1 – Click the **Settings** icon at the top of the page.
+
+Step 2 – Select the **Display exchange co-managed groups** checkbox.
+
+Step 3 – Click **Save**.
+
+:::note
+This option is available only for Active Directory identity stores, and it works only if the
+identity store's messaging provider supports Exchange additional owners.
+
+The administrator can also enable **Display Co-Managed Groups in My Groups** in the portal's
+[advanced settings](/docs/directorymanager/11.1/admincenter/applications/portal/server/advanced.md#listings-display).
+When the administrator enables it, co-managed groups are displayed for all users, whether or not
+this checkbox is selected. Co-managed groups are displayed if either setting is enabled.
+:::
+
 ## Reset default user options
 
 You can reset the settings on the **User Settings** panel to their default values.
