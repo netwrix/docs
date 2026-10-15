@@ -28,7 +28,7 @@ Runtime Details:
 This job applies labels by using the PurviewInformationProtection PowerShell module. The File System
 solution scans for labels separately, using the MIP File SDK. See the
 [Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)
-topic for scan prerequisites. Use the [FS_MIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_miplabels.md)
+topic for scan prerequisites. Use the [FS_AIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_aiplabels.md)
 to report on the labels after a scan.
 :::
 
@@ -119,5 +119,5 @@ values.
 
 **Step 6 –** Review the Apply MIP Sensitive Data Label results. Run an FSAA scan with **Enable scanning of
 files protected by Microsoft Information Protection** selected, then run the
-[FS_MIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_miplabels.md) to
+[FS_AIPLabels Job](/docs/accessanalyzer/12.0/solutions/filesystem/content/tags/fs_aiplabels.md) to
 confirm that the job applied the labels.
