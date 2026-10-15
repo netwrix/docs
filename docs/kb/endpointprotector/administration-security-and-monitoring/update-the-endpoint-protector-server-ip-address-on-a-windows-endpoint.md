@@ -34,23 +34,29 @@ This article explains how to review and change the Netwrix Endpoint Protector (E
 
 ### Configure Settings via EPP Console
 
+#### Download the Application
+
 1. Download the Endpoint Protector Set Server IP application:  
    [SetServerIP.7z ⸱ Netwrix 🡥](https://download.endpointprotector.com/Support_files/SetServerIP.7z)
 2. Extract the contents from the `SetServerIP.7z` archive into a new folder.
-3. Check the current EPP Client details:
-   1. Open the notifier.
-   2. Click the **Settings** tab.
-   3. Press `ALT + CTRL + I`.  
 
-   The notifier displays the current configuration details:
+#### Check the Current Client Details
 
-   ![Current configuration details in Netwrix Endpoint Protector Notifier](./../0-images/ka0Qk000000EcJx_0EMQk00000C91kM.png)
+1. Open the notifier.
+2. Click the **Settings** tab.
+3. Press `ALT + CTRL + I`.
 
-4. Open the folder containing the `SetServerIP` application and run `EppSetServer.exe`.
-5. Enter the new EPP server IP address, communication port number, or department code.
-6. Click **Update** to apply the new settings.
-7. After a message confirms the update was successful, restart the Windows endpoint machine for the changes to take effect.
-8. Repeat step 3 to confirm that the Netwrix Endpoint Protector Client shows the new details.
+The notifier displays the current configuration details:
+
+![Current configuration details in Netwrix Endpoint Protector Notifier](./../0-images/ka0Qk000000EcJx_0EMQk00000C91kM.png)
+
+#### Apply the New Settings
+
+1. Open the folder containing the `SetServerIP` application and run `EppSetServer.exe`.
+2. Enter the new EPP server IP address, communication port number, or department code.
+3. Click **Update** to apply the new settings.
+4. After a message confirms the update was successful, restart the Windows endpoint machine for the changes to take effect.
+5. Repeat the steps in [Check the Current Client Details](#check-the-current-client-details) to confirm that the Netwrix Endpoint Protector Client shows the new details.
 
 ### Configure Settings via Script
 
