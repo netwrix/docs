@@ -10,10 +10,10 @@ The FS_AIPLabels job reports on resources classified by Microsoft Information Pr
 sensitivity labels from targeted file servers.
 
 :::note
-The FSAA Data Collector collects label data by using the Microsoft Information Protection (MIP)
+The File System Access Auditing (FSAA) Data Collector collects label data by using the Microsoft Information Protection (MIP)
 File SDK. See the
 [Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)
-topic for the prerequisites required to scan for labels. To apply sensitivity labels to files that
+topic for the prerequisites to scan for labels. To apply sensitivity labels to files that
 contain sensitive data, see the
 [FS_MIPLabeling Job](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/fs_miplabeling.md) topic.
 

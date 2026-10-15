@@ -93,7 +93,7 @@ The query handles each file as follows:
 - File has no label – applies the label from `labelId`
 - File already has the label from `labelId` – takes no action and reports `Success`
 - File has a different label – doesn't change it, and reports `Failure` with the existing label
-- The label status can't be read, or the label can't be applied – reports `Failure`
+- The query can't read the label status or can't apply the label – reports `Failure`
 
 The query processes files in batches and pauses briefly after every tenth batch to limit memory use
 by the Purview client's child processes. Large file lists take proportionally longer.
