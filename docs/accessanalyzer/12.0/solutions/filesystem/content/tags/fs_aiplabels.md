@@ -1,6 +1,6 @@
 ---
 title: "FS_AIPLabels Job"
-description: "FS_AIPLabels Job"
+description: "Report on files classified with Azure Information Protection (AIP) labels by using the FS_AIPLabels job."
 sidebar_position: 10
 ---
 
@@ -8,6 +8,11 @@ sidebar_position: 10
 
 The FS_AIPLabels job reports on resources classified by Azure Information Protection
 (AIP) labels from targeted file servers.
+
+:::note
+This job collects Microsoft Information Protection (MIP) labels. A future release will rename it to
+FS_MIPLabels.
+:::
 
 ## Analysis Tasks for the FS_AIPLabels Job
 
