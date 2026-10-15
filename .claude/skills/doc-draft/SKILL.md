@@ -14,6 +14,12 @@ If the task is ambiguous, ask one clarifying question before you start. Otherwis
 
 You lint your own drafts: run the style check in step 11 of "Draft new documentation" before you finish. It is the same check that blocks the commit, and nothing lints on the PR.
 
+Usage tracking: end your report with this line, so the writer can include it when they commit or open the PR:
+
+> Add this trailer to the commit message and a line to the PR body: `Drafted-With: /doc-draft`
+
+If you commit or open the PR yourself, add the trailer as the last line of the commit message and as a line in the PR body. Don't add it for pages you only edited by hand. The trailer lets the docs team count `/doc-draft` use with `git log --grep "Drafted-With: /doc-draft"`.
+
 ## Write for the customer
 
 Document what a customer sees and does: UI labels, settings and their values, behavior they observe, and the requirements and limits Netwrix supports. The code tells you what is true, not what the customer needs. Do not describe how the product works behind its interface: services, schemas, queries, algorithms, background jobs the customer doesn't control, how the installer or maintenance works internally, or differences between database engines. Include a back-end fact only when the customer must act on it to avoid a mistake or to recover, and write it as an instruction, not an explanation.
