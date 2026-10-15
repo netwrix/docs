@@ -19,6 +19,19 @@ application.
 | Example                       | An application is given the "Directory.ReadWrite.All" permission or any permission that requires admin consent.                                                                                                                                                                                                                          |
 | Trigger                       | A threat is created when an application is granted admin consent to a permission.                                                                                                                                                                                                                                                        |
 
+## Authentication Methods Policy Weakening
+
+{/* TODO: confirm this threat ships in 3.3. The tracker lists no fix version for it. */}
+
+The Authentication Methods Policy Weakening is when the tenant-wide authentication methods policy is
+changed to lower the bar for signing in.
+
+| Authentication Methods Policy Weakening |                                                                                                                                                                                                                                                                                                                                                                        |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Definition                              | The authentication methods policy controls which sign-in methods every user in your Microsoft Entra ID tenant can use. An attacker with administrator rights can weaken it in a single change that affects the whole tenant and touches no individual account. This lowers the authentication bar ahead of a later credential attack and doesn't trigger role or account detections. |
+| Example                                 | An attacker enables the Voice call method, which a SIM swap can defeat, for the whole tenant.                                                                                                                                                                                                                                                                          |
+| Trigger                                 | The authentication methods policy is changed to enable a weak method such as SMS or Voice, disable a strong method such as FIDO2 or Microsoft Authenticator, or apply a method to all users instead of a scoped group.                                                                                                                                                  |
+
 ## Compromised User Activity
 
 The Compromised User Activity is when a user is marked as "Confirmed Compromised" and that user
