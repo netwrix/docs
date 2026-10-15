@@ -7,7 +7,7 @@ sidebar_position: 10
 
 # Welcome
 
-Platform Governance for NetSuite is a SuiteApp integrated into the NetSuite backend. All your data stays within your NetSuite account. Documentation is automatically maintained and always up to date.
+Strongpoint for NetSuite is a SuiteApp integrated into the NetSuite backend. All your data stays within your NetSuite account. Documentation is automatically maintained and always up to date.
 
 By implementing Platform Governance for NetSuite you can:
 
