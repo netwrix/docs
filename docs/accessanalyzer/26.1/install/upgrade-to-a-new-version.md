@@ -138,7 +138,7 @@ Add `--dry-run` to check the preconditions and free space and print the upgrade 
 6. Turns automated sync back on and waits for every application to become healthy.
 7. Deletes the downloaded media.
 
-If something interrupts the upgrade (Ctrl-C, a dropped SSH session, or a stopped pod), it turns automated sync back on before it exits. Run the same command again to finish the upgrade.
+If something interrupts the upgrade (Ctrl-C, a dropped SSH session, or a stopped pod), the upgrade turns automated sync back on before it exits. Run the same command again to finish the upgrade.
 
 </TabItem>
 <TabItem value="airgap" label="Air-gapped upgrade">
@@ -232,10 +232,17 @@ If you pinned a specific version at install time, or want to pin one now, follow
 2. Trigger the sync. `set-revision` disables auto-sync, so nothing deploys until you run this command.
 
    ```bash
-   sudo dspmctl sync netwrix --prune
+   sudo dspmctl sync netwrix
    ```
 
-   `--prune` deletes resources the new release no longer includes. Without it, those leftover resources can keep the app showing as not healthy even after the upgrade completes.
+   :::note
+   If you're upgrading from a version earlier than 1.1.7, the Apache Tika resources from the older release remain in the cluster after the sync and can keep the app showing as not healthy. Preview what the sync removes, confirm that the output lists only the Tika resources, and then run the sync with `--prune`:
+
+   ```bash
+   sudo dspmctl sync netwrix --prune --dry-run
+   sudo dspmctl sync netwrix --prune
+   ```
+   :::
 
 3. Turn auto-sync back on so later releases in the pinned range deploy without manual steps.
 
@@ -260,7 +267,7 @@ For the precautions to take first and the full procedure, see [Rolling back to a
 sudo kubectl -n argocd get application netwrix \
   -o jsonpath='{.metadata.annotations.dspm\.netwrix\.com/previous-target-revision}'
 sudo dspmctl set-revision netwrix v<previous>
-sudo dspmctl sync netwrix --prune
+sudo dspmctl sync netwrix
 sudo dspmctl enable-auto netwrix
 sudo dspm-installer wait-for-apps
 ```
@@ -327,7 +334,7 @@ sudo kubectl rollout restart deploy/dspmctl -n argocd
 sudo kubectl rollout status deploy/dspmctl -n argocd
 sudo kubectl exec -n argocd deploy/dspmctl -- argocd version --client   # should print instantly now
 sudo dspmctl set-revision netwrix 1.1.2
-sudo dspmctl sync netwrix --prune
+sudo dspmctl sync netwrix
 ```
 
 If `argocd version --client` still hangs after the restart, `dspmctl` isn't usable in that environment. Everything `dspmctl` does is an edit to the `netwrix` ArgoCD `Application` object, so make the same changes directly with `kubectl` from the host.
