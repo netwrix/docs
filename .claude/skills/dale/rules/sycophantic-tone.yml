@@ -1,0 +1,3 @@
+message: Remove servile or flattering phrasing.
+level: warning
+reason: Fires on sycophantic phrasing aimed at a requester, such as 'Great question', 'You are absolutely right to ask', 'Excellent choice', 'Good thinking'.
