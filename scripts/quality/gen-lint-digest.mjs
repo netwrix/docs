@@ -10,7 +10,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 
 const OUT = '.claude/references/lint-rules.md';
 const readYml = f => yaml.load(fs.readFileSync(f, 'utf8'));
