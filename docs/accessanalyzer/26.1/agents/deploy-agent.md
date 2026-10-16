@@ -41,6 +41,7 @@ The agent host needs a Linux server of its own. You can't run `install-agent` on
 | Disk | 5 GB free. A server that runs from offline media also needs room for the media and its unpacked copy, about 7 GB. The panel says about 8 GB of free disk, and preflight warns below 8 GB. |
 | Installer | The `dspm-installer` binary for the host's architecture. See [Download the installer](../install/run-the-installer.md#download-the-installer). |
 | Not the server | The host can't be the Access Analyzer server. `install-agent` refuses to run where `/etc/rancher/k3s/k3s.yaml` exists. |
+| Antivirus | The same real-time scanning exclusions as the server. See [Antivirus Exclusions](../install/requirements.md#antivirus-exclusions). |
 
 For example, an arm64 host can't join a server that runs from offline media on an x86 machine. Use an x86 host, or build the server on matching hardware.
 
@@ -112,7 +113,7 @@ The panel quotes the name for the shell and adds one `--label` for each label. R
 | Field | What to enter | Rules |
 |---|---|---|
 | **Name** | A display name, for example `Production Agent` | Required; up to 255 characters |
-| **Labels** | One or more `key=value` pairs | At least one required; Access Analyzer lowercases keys and values and replaces spaces with hyphens. The keys `name` and `default` are reserved. |
+| **Labels** | One or more `key=value` pairs | At least one required; Access Analyzer lowercases keys and values and replaces spaces with hyphens. Access Analyzer reserves the keys `name` and `default`. |
 
 If you close the panel with unsaved changes, Access Analyzer asks you to confirm. After you generate the command, closing the panel needs no confirmation.
 
@@ -141,7 +142,7 @@ On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`,
 
 2. Paste the command from the panel and press Enter.
 
-   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes if it's interrupted, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command right away.
+   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes after an interruption, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command right away.
 
    To use media that's already on the host, add `--bundle-dir=<path>` to the command. The path is the archive, such as `/etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz`, or the extracted directory.
 
@@ -191,7 +192,7 @@ If the command stops at a preflight warning, it asks whether to continue. Add `-
 
 1. Checks the bundle, the name, and the labels.
 2. Stops if the host is the Access Analyzer server, if the command isn't running as root, or if the `--bundle-dir` setting doesn't match the server.
-3. Runs the agent preflight: the sizing, operating system, disk, and network checks that the previous sections list.
+3. Runs the agent preflight: the sizing, operating system, disk, and network checks that [Prepare the host](#prepare-the-host) lists.
 4. Checks that the server's certificate covers the address that the host joins. See [The certificate doesn't cover the join address](#the-certificate-doesnt-cover-the-join-address).
 5. On a server that runs from offline media, either downloads or unpacks the media, and stops if the media's k3s is newer than the server's.
 6. Opens the host firewall if firewalld or ufw is active.
@@ -299,6 +300,6 @@ Removal takes the agent out of Access Analyzer. The server doesn't connect to th
 
 You can't remove an agent while a scan is running on it; the attempt fails with **Failed to delete agent**. Wait for the execution to finish, or stop it from [Scan executions](../scans/scan-executions.md), then try again.
 
-Scans whose agent label pointed at the removed agent keep that label. Their next execution waits until another agent with matching labels is available, as described in [Agent labels and scan routing](agent-labels.md#when-no-agent-matches). Edit those scans, or deploy a replacement agent with the same labels, before their next scheduled run.
+Scans whose agent label pointed at the removed agent keep that label. Their next execution waits until another agent with matching labels is available, as [Agent labels and scan routing](agent-labels.md#when-no-agent-matches) describes. Edit those scans, or deploy a replacement agent with the same labels, before their next scheduled run.
 
 The System agent has no **Delete** action.
