@@ -75,3 +75,95 @@ export function checkPreserved(original, rewritten) {
   missing(y.numbers, x.numbers, 'number added', violations);
   return violations;
 }
+
+/**
+ * Content-integrity check for a restyle. Unlike checkPreserved, it lets headings,
+ * tables, and prose move, and it compares the whole set of files, so a split or
+ * merge still balances. `originals` and `rewrittens` are lists of { path, text };
+ * a file missing on one side has empty text. `allow` is a list of { from, to }
+ * pairs a writer confirmed (a typo fix, a renamed link): `from` is replaced by
+ * `to` in the originals before comparing.
+ */
+const FREE_FRONTMATTER = new Set(['description', 'sidebar_label', 'title']);
+const IGNORED_NUMBER_KEYS = new Set(['sidebar_position']);
+
+function parseDoc(text) {
+  const lines = text.split('\n');
+  const front = {};
+  let start = 0;
+  if (lines[0]?.trim() === '---') {
+    let j = 1;
+    while (j < lines.length && lines[j].trim() !== '---') {
+      const m = lines[j].match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
+      if (m) front[m[1]] = m[2].trim();
+      j++;
+    }
+    start = j + 1;
+  }
+  const fences = [];
+  const prose = [];
+  let block = null;
+  for (const line of lines.slice(start)) {
+    if (FENCE.test(line)) {
+      if (block) {
+        block.push(line);
+        fences.push(block.join('\n'));
+        block = null;
+      } else {
+        block = [line];
+      }
+    } else if (block) {
+      block.push(line);
+    } else {
+      prose.push(line);
+    }
+  }
+  if (block) fences.push(block.join('\n'));
+  // "**Step 3 –**" is a list marker written by hand, so a numbered list may replace it.
+  return { front, fences, prose: prose.join('\n').replace(/^\s*\*\*Step \d+\s*[–—-]\s*\*\*\s*/gm, '') };
+}
+
+function contentFacts(docs) {
+  const fences = docs.flatMap(d => d.fences);
+  const prose = docs.map(d => d.prose).join('\n');
+  const frontNumbers = docs.flatMap(d =>
+    Object.entries(d.front)
+      .filter(([k]) => !IGNORED_NUMBER_KEYS.has(k) && !FREE_FRONTMATTER.has(k))
+      .map(([, v]) => v),
+  );
+  const x = extract(prose);
+  const admonitions = [...prose.matchAll(/^\s*:::(\w+)/gm)].map(m => m[1]);
+  // Count numbers inside inline code too, so wrapping `PPE10.2.exe` in backticks does not hide the 10.2.
+  const proseNumbers = prose
+    .replace(/\]\([^)]*\)/g, ']')
+    .replace(/^\s*\d+\.\s/gm, '')
+    .match(/\d+(?:[.,]\d+)*/g) || [];
+  const numbers = [...proseNumbers, ...(frontNumbers.join(' ').match(/\d+(?:[.,]\d+)*/g) || [])];
+  return { fences, inlineCode: x.inlineCode, linkTargets: x.linkTargets, bold: x.bold, numbers, admonitions };
+}
+
+export function checkContent(originals, rewrittens, allow = []) {
+  const violations = [];
+  const fix = text => allow.reduce((t, { from, to }) => t.split(from).join(to), text);
+  const before = originals.map(f => parseDoc(fix(f.text)));
+  const after = rewrittens.map(f => parseDoc(f.text));
+  const a = contentFacts(before);
+  const b = contentFacts(after);
+  missing(a.fences, b.fences, 'code block', violations);
+  missing(b.fences, a.fences, 'code block added', violations);
+  missing(a.inlineCode, b.inlineCode, 'inline code', violations);
+  missing(a.linkTargets, b.linkTargets, 'link or image target', violations);
+  missing(a.bold, b.bold, 'bold text (UI label)', violations);
+  missing(a.numbers, b.numbers, 'number', violations);
+  missing(b.numbers, a.numbers, 'number added', violations);
+  missing(a.admonitions, b.admonitions, 'admonition', violations);
+  rewrittens.forEach((f, i) => {
+    const o = originals.find(x => x.path === f.path);
+    if (!o || !o.text) return;
+    const of = parseDoc(fix(o.text)).front;
+    for (const [k, v] of Object.entries(of)) {
+      if (!FREE_FRONTMATTER.has(k) && after[i].front[k] !== v) violations.push(`frontmatter ${k} changed in ${f.path}`);
+    }
+  });
+  return violations;
+}

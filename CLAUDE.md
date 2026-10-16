@@ -93,6 +93,7 @@ Skills (`.claude/skills/`) are invoked with `/skill-name`. Agents (`.claude/agen
 When a user asks for help with documentation, always use the appropriate tool:
 - **`/doc-help` skill** — Interactive tasks: reviewing content, suggesting improvements, discussing structure or flow, brainstorming, explaining style rules, incorporating external documents (e.g., `.docx` files) into existing markdown files, or any back-and-forth conversation about writing.
 - **`/doc-draft` skill** — Drafts documentation from source material, in your session: a PR to document ("look at PR X in repo Y"), a GitHub issue, Jira ticket, or Azure DevOps item to document ("look at PLAT-1234"), specs for a feature, notes to turn into a document, or a prompt detailed enough to draft from. Product context for PR drafting lives in `.claude/references/products/<product>.md`; add a brief there for any product you want it to understand. It does not edit existing docs; use `/doc-help`, `/dale`, or Vale for that.
+- **`/doc-restyle` skill** — Rewrites existing pages, one or a batch, into `/doc-draft`'s style and structure without changing their content. The original page is the source of truth: it reads no code or PRs. It runs the style check and a content-integrity check (`scripts/doc-restyle/integrity.mjs`).
 
 | Component | Type | Purpose |
 |---|---|---|
@@ -101,6 +102,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
 | `/doc-draft` | Skill | Drafts new pages from a PR, a work item (GitHub issue, Jira ticket, Azure DevOps item), specs, notes, or a detailed prompt, and structures new docs directories |
+| `/doc-restyle` | Skill | Rewrites existing pages into the style and structure `/doc-draft` produces, keeping their content as the source of truth |
 | `/doc-pr` | Skill | Automated PR editorial review |
 | `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
