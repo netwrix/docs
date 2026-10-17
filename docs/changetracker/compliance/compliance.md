@@ -330,6 +330,10 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
     <tr><td>NNT CIS Oracle Linux 8 Server Benchmark - Level 2</td><td>3.0.0</td></tr>
     <tr><td rowspan="2">Oracle Linux Workstation 8</td><td>NNT CIS Oracle Linux 8 Workstation Benchmark - Level 1</td><td>3.0.0</td></tr>
     <tr><td>NNT CIS Oracle Linux 8 Workstation Benchmark - Level 2</td><td>3.0.0</td></tr>
+    <tr><td rowspan="2">Oracle Linux Server 9</td><td>NNT CIS Oracle Linux 9 Server Benchmark - Level 1</td><td>3.0.0</td></tr>
+    <tr><td>NNT CIS Oracle Linux 9 Server Benchmark - Level 2</td><td>3.0.0</td></tr>
+    <tr><td rowspan="2">Oracle Linux Workstation 9</td><td>NNT CIS Oracle Linux 9 Workstation Benchmark - Level 1</td><td>3.0.0</td></tr>
+    <tr><td>NNT CIS Oracle Linux 9 Workstation Benchmark - Level 2</td><td>3.0.0</td></tr>
     <tr><td rowspan="2">Oracle Solaris 10</td><td>NNT CIS Oracle Solaris 10 Benchmark - Level 1</td><td>5.1.0.5</td></tr>
     <tr><td>NNT CIS Oracle Solaris 10 Benchmark - Level 2</td><td>5.1.0.5</td></tr>
     <tr><td rowspan="2">Oracle Solaris 11</td><td>NNT CIS Oracle Solaris 11 Benchmark - Level 1</td><td>1.1.0.5</td></tr>
