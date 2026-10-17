@@ -6,7 +6,7 @@
  */
 import fs from 'fs';
 import path from 'path';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { getClient, textOf } from './llm.mjs';
 import { verdictKey, readCachedVerdict, writeVerdict, verifyFindings, consensus } from './consensus.mjs';
 import { inRanges } from './scope.mjs';
