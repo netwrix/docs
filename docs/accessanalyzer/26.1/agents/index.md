@@ -44,9 +44,9 @@ Go to **Configuration > Agents**.
 | **Last Updated** | When the agent's record last changed |
 | **Actions** | **Edit** for every agent; **Delete** for deployed agents only |
 
-The list sorts by **Last Updated**, newest first, and you can sort by **Name** and **Health Status** as well. It shows 25 agents per page (you can pick 10, 25, or 50) and refreshes every 60 seconds on its own, pausing while the **Deploy agent** or **Edit agent** panel is open.
+The list sorts by **Last Updated**, newest first, and you can sort by **Name** and **Health Status** as well. It shows 25 agents per page (you can pick 10, 25, or 50) and refreshes every 60 seconds on its own, pausing while the **Add agent** or **Edit agent** panel is open.
 
-The **Search agents…** field matches an agent's name, a label key, a label value, or a `key:value` pair, so `region:us-east` finds every agent carrying that label. **Clear filters** resets the search. **Deploy agent** starts the deployment flow.
+The **Search agents…** field matches an agent's name, a label key, a label value, or a `key:value` pair, so `region:us-east` finds every agent carrying that label. **Clear filters** resets the search. **Add agent** opens the panel that generates an install command.
 
 ### Health Status
 

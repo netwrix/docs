@@ -1,13 +1,13 @@
 ---
 title: Deploy an Agent
-description: Prepare a Linux host, generate an install command in the Deploy agent panel, run it on the host, and edit or remove the agent later.
+description: Prepare a Linux host, generate an install command in the Add agent panel, run it on the host, and edit or remove the agent later.
 sidebar_position: 1
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-You deploy an agent by running one command on the Linux host that becomes the agent. The **Deploy agent** panel generates the command. When you run it, the host joins the installation and registers itself under the name and labels you chose. The Access Analyzer server never connects to the host, so you don't give Access Analyzer a username, password, or SSH key for it.
+You deploy an agent by running one command on the Linux host that becomes the agent. The **Add agent** panel generates the command. When you run it, the host joins the installation and registers itself under the name and labels you chose. The Access Analyzer server never connects to the host, so you don't give Access Analyzer a username, password, or SSH key for it.
 
 You need the Admin role for everything on this page. Viewers can see the Agents page but can't deploy, edit, or remove agents.
 
@@ -93,10 +93,10 @@ The host needs TCP 443 to these hosts:
 ## Generate the Command
 
 1. Go to **Configuration > Agents**.
-2. Click **Deploy agent**.
+2. Click **Add agent**.
 3. In **Name**, enter a name for the agent, such as `Production Agent`.
 4. Under **Labels**, add at least one label, such as `env=production` or `region=us-east`. Labels are how scans find this agent; see [Agent labels and scan routing](agent-labels.md).
-5. Click **Deploy**. The panel reads **Generating install command…** and then shows the command under **Install command**.
+5. Click **Generate command**. The panel reads **Generating install command…** and then shows the command under **Install command**.
 6. Click the **Copy install command** icon. A notification reads `Command copied to clipboard`.
 
 The panel stays open. Leave it open until you have pasted the command into a terminal on the host, because **Regenerate command** is the only way to get the command again.
