@@ -6,38 +6,41 @@ sidebar_position: 110
 
 # SQL Server
 
-Netwrix Auditor configures SQL Server for monitoring automatically. Unlike Windows-based data
-sources, SQL Server doesn't require native audit policies: on each data collection, Auditor checks
-the monitored SQL Server instances and creates or repairs the objects it needs. Don't change or
-delete these objects manually.
+Netwrix Auditor relies on SQL Server traces and, optionally, triggers for collecting audit data.
+Auditor configures SQL Server for monitoring automatically: on each data collection, it checks the
+audit settings on the monitored instances and adjusts them if necessary. Don't change or delete the
+objects that Auditor creates.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-## Audit configuration
+Auditor configures the following automatically:
 
-### What Auditor configures automatically
+- SQL Server traces for configuration changes, logons, and, in the **Don't use triggers** mode,
+  data changes and SELECT statements. The `nwxsqlcr_tracestartup` startup procedure in the _master_
+  database restarts the traces after SQL Server restarts. See the
+  [Configuring Trace Logging](/docs/auditor/10.7/configuration/sqlserver/configuringtracelogging.md)
+  topic for additional information.
+- In the **Use triggers for detailed monitoring** mode, the _NetwrixSQLCRAudit_ database, DML
+  triggers on the audited tables, and database-level and server-level triggers. Auditor also sets
+  the TRUSTWORTHY option to ON for the audited databases.
 
-- **SQL Server traces** — Auditor creates its own traces to capture configuration changes, logons,
-  and, in the **Don't use triggers** mode, data changes and SELECT statements. To restart the traces
-  after SQL Server restarts, Auditor registers the `nwxsqlcr_tracestartup` startup procedure in the
-  _master_ database. You can exclude instances from tracing or change the trace file location. See
-  [Configuring Trace Logging](/docs/auditor/10.7/configuration/sqlserver/configuringtracelogging.md).
-- **Data change auditing objects** — In the **Use triggers for detailed monitoring** mode, Auditor
-  creates the _NetwrixSQLCRAudit_ database, DML triggers on the audited tables, and database-level
-  and server-level triggers that keep the auditing consistent. Auditor also sets the TRUSTWORTHY
-  option to ON for the audited databases.
+To exclude data from monitoring, see the
+[SQL Server Monitoring Scope](/docs/auditor/10.7/configuration/sqlserver/scope.md) topic.
 
-### What you configure
+Also remember to do the following:
 
-- **Data collecting account** — Windows account with the **sysadmin** server role. See
-  [Permissions for SQL Server Auditing](/docs/auditor/10.7/configuration/sqlserver/permissions.md).
-- **Network ports** — See [SQL Server Ports](/docs/auditor/10.7/configuration/sqlserver/ports.md).
-- **SQL Server service account** — If you monitor data changes, the account that runs the SQL
-  Server service must have at least read permissions in Active Directory. See
-  [SQL Server](/docs/auditor/10.7/admin/monitoringplans/sqlserver/overview.md#monitor-changes-to-data-in-the-database-tables).
+1. Configure Data Collecting Account, as described in the
+   [Permissions for SQL Server Auditing](/docs/auditor/10.7/configuration/sqlserver/permissions.md)
+   topic.
+2. Configure required protocols and ports, as described in the
+   [SQL Server Ports](/docs/auditor/10.7/configuration/sqlserver/ports.md) topic.
+3. If you monitor data changes, ensure the account that runs the SQL Server service has at least
+   read permissions in Active Directory. See the
+   [SQL Server](/docs/auditor/10.7/admin/monitoringplans/sqlserver/overview.md#monitor-changes-to-data-in-the-database-tables)
+   topic for additional information.
 ## Before and after values for data changes
 
 When you monitor data changes in the **Use triggers for detailed monitoring** mode, Auditor reports
