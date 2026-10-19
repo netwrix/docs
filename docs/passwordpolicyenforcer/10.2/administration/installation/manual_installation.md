@@ -1,6 +1,6 @@
 ---
 title: "Install Password Policy Enforcer manually (Express setup)"
-description: "Install Password Policy Enforcer on a computer with the installer's Express option, and repeat the steps on every computer that enforces the password policy."
+description: "Install Password Policy Enforcer on a computer with the Express setup, and repeat on every computer that enforces the policy."
 sidebar_position: 20
 ---
 

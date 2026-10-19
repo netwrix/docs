@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting"
-description: "Resolve common Password Policy Enforcer problems, such as policies applied to the wrong users and passwords that are accepted or rejected unexpectedly."
+description: "Fix common Password Policy Enforcer problems, such as policies applied to the wrong users or unexpected password results."
 sidebar_position: 150
 ---
 
