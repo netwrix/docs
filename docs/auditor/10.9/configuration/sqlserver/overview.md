@@ -54,27 +54,6 @@ automatically during data collection.
 
 In the **Don't use triggers** mode, Auditor doesn't report column values, so the primary key
 doesn't affect the results.
-## Exclude monitored objects
-
-To narrow the SQL Server monitoring scope, edit the omit list files in the
-_%Netwrix Auditor install folder%\SQL Server Auditing_ folder. The following table lists the files
-and their purpose. For the syntax and examples, see
-[SQL Server Monitoring Scope](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md).
-
-| File | Purpose |
-| ---- | ------- |
-| [omitarlist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omitarlisttxt) | Hide activity records from reports, search, and Activity Summaries |
-| [omitdcpathlist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omitdcpathlisttxt) | Hide data categories for SQL Server objects in search and reports |
-| [omiterrorlist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omiterrorlisttxt) | Exclude errors and warnings from the Netwrix Auditor System Health log |
-| [omitlogonlist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omitlogonlisttxt) | Exclude logons from monitoring |
-| [omitobjlist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omitobjlisttxt) | Hide object types from reports, search, and Activity Summaries |
-| [omitpathlist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omitpathlisttxt) | Hide objects by path from reports, search, and Activity Summaries |
-| [omitproplist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omitproplisttxt) | Exclude attributes from monitoring and from the Long-Term Archive |
-| [omitreadaccesslist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omitreadaccesslisttxt) | Exclude SELECT statements from auditing |
-| [omitsitpathlist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omitsitpathlisttxt) | Exclude objects from state-in-time data collection |
-| [omitstorelist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omitstorelisttxt) | Exclude objects from data collection and reporting |
-| [omittracelist.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#omittracelisttxt) | Prevent Auditor from enabling SQL tracing on specific instances |
-| [propnames.txt](/docs/auditor/10.9/admin/monitoringplans/sqlserver/scope.md#propnamestxt) | Set friendly names for object types and properties in change reports |
 ## SQL Server Objects
 
 Review a full list of all object and data types Netwrix Auditor can collect on SQL Server.
