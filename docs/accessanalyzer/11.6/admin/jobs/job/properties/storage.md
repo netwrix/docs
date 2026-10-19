@@ -12,12 +12,12 @@ group level, or to configure settings just for this job.
 
 ![Storage tab of the Job Properties](/images/accessanalyzer/11.6/admin/jobs/job/properties/storage.webp)
 
-By default, all jobs are set to inherit the storage setting, the **Use Default** option. To
+By default, all jobs inherit the storage setting through the **Use Default** option. To
 configure a different profile for the job, select the **Use This Profile** option and select the
-desired Storage Profile from the drop-down menu. Storage Profiles can only be configured at the
+desired Storage Profile from the dropdown menu. You can only configure Storage Profiles at the
 **Settings** > **Storage** node. See the
 [Storage](/docs/accessanalyzer/11.6/admin/settings/storage/overview.md)
 topic for additional information.
 
 Click **OK** to save configuration changes and close the Job Properties window. Click **Cancel** if
-no changes were made.
+you didn't make changes.

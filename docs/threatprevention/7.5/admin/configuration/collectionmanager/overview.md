@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Collection Manager Window
 
-The Collection Manager window enables you to manage all Microsoft Collections. Click
+Use the Collection Manager window to manage all Microsoft Collections. Click
 **Configuration** > **Collections** on the menu to launch it. This window is only available to
 Threat Prevention administrators.
 
@@ -23,7 +23,7 @@ deployed to populate Collections.
 
 To use policy templates to create new policies, Collections must be configured. Several templates
 are configured using Collections as a policy filter. If the Collection is empty, then the policy
-does not monitor what it was designed to monitor.
+doesn't monitor what it was designed to monitor.
 
 Collections are organized into the following categories for Microsoft Collections:
 

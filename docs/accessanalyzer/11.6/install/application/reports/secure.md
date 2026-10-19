@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Securing the Web Console
 
-Published reports can be accessed in the Web Console. There are several options for enhancing
+You can access published reports in the Web Console. There are several options for enhancing
 security.
 
 Additional configuration options for enhanced security include:
@@ -29,13 +29,13 @@ Additional configuration options for enhanced security include:
     :::
 
 
-These parameters can be configured within the **WebServer.exe.config** file in the Web folder of the
-Enterprise Auditor installation directory `…\STEALTHbits\StealthAUDIT\Web`.
+You can configure these parameters within the **WebServer.exe.config** file in the Web folder of
+the Enterprise Auditor installation directory `…\STEALTHbits\StealthAUDIT\Web`.
 
 ## Enable SSL for the Web Console
 
-To enable Secure Sockets Layer (SSL) for secure, remote connections to the Web Console it is
-necessary to bind a certificate to the port. See the
+To enable Secure Sockets Layer (SSL) for secure, remote connections to the Web Console, bind a
+certificate to the port. See the
 [Use a Self-Signed Certificate for SSL](#use-a-self-signed-certificate-for-ssl) topic for more
 information. Follow the steps on the server where Enterprise Auditor is installed to enable SSL for
 the Web Console.
@@ -43,7 +43,7 @@ the Web Console.
 :::note
 The following steps require a certificate to be available. Organizations typically have
 one or more system administrators responsible for Public Key Infrastructure (PKI) and certificates.
-To continue with this configuration it will first be necessary to confer with the PKI administrator
+Before continuing with this configuration, confer with the PKI administrator
 to determine which certificate method will conform to the organization’s security policies.
 Optionally, see [Use a Self-Signed Certificate for SSL](#use-a-self-signed-certificate-for-ssl) for
 an Administrator PowerShell command which will both create and import a self-signed certificate.
@@ -54,16 +54,16 @@ an Administrator PowerShell command which will both create and import a self-sig
 snap-in.
 
 :::note
-If using a self-signed certificate, it will also need to be imported.
+If you use a self-signed certificate, you'll also need to import it.
 :::
 
 
-**Step 2 –** Create an SSL binding. It is necessary to use the certificate’s **Hash** value for the
+**Step 2 –** Create an SSL binding. Use the certificate's **Hash** value for the
 `$certHash` value:
 
 :::note
-The following Administrator PowerShell dir command can be run on the certificate's “drive”
-to find the **Hash** value of a certificate which was already created and the output will include
+You can run the following Administrator PowerShell dir command on the certificate's “drive”
+to find the **Hash** value of a certificate that you already created; the output includes
 the Thumbprint (**Hash**) value and the certificate name:
 :::
 
@@ -94,8 +94,8 @@ located within the Web folder of the Enterprise Auditor installation directory.
 <add key="BindingUrl" value="https://+:8082" />
 ```
 
-- After changing the `BindingUrl` value in the **WebServer.exe.config** file, the Website URL must
-  be updated to match the new value in the following places:
+- After changing the `BindingUrl` value in the **WebServer.exe.config** file, you must update the
+  Website URL to match the new value in the following places:
     - Enterprise Auditor's **Settings** > **Reporting** node
     - Enterprise Auditor's Published Reports Desktop icon properties
     - See the [Update Website URLs](#update-website-urls) topic for additional information.
@@ -106,30 +106,30 @@ located within the Web folder of the Enterprise Auditor installation directory.
 Server service.
 
 :::note
-If also using the AIC, then SSL needs to be enabled for the AIC using this certificate.
+If you also use the AIC, you need to enable SSL for the AIC using this certificate.
 See the Securing the AIC section of the
 [Netwrix Access Information Center Documentation](https://helpcenter.netwrix.com/category/accessinformationcenter)
 for additional information.
 :::
 
 
-The Web Console has been enabled for SSL communication. Access it using the server’s fully qualified
-domain name and the HTTPS port (`https://[hostname.domain.com]:8082`). If a self-signed certificate
-was used, then the client-side access to the Web Console will generate a Certificate error. See the
+You have now enabled the Web Console for SSL communication. Access it using the server’s fully
+qualified domain name and the HTTPS port (`https://[hostname.domain.com]:8082`). If you used a
+self-signed certificate, client-side access to the Web Console will generate a Certificate error. See the
 [Add the Certificate for Client-Side Access](#add-the-certificate-for-client-side-access) topic for
 additional information.
 
 ### Update Website URLs
 
-If the Binding URL value is updated in Enterprise Auditor's **WebServer.exe.config** file, the
-Website URL must be updated to match the new value in the following places:
+If you update the Binding URL value in Enterprise Auditor's **WebServer.exe.config** file, you must
+update the Website URL to match the new value in the following places:
 
 - Enterprise Auditor's Reporting node (**Settings** > **Reporting**)
 - Enterprise Auditor's Published Reports Desktop icon properties
 
 **Update the Website URL in the Reporting Node**
 
-Follow the steps to update the Website URL in the **Settings** > **Reporting** node.
+To update the Website URL in the **Settings** > **Reporting** node:
 
 **Step 1 –** Expand **Settings** and select the **Reporting** node.
 
@@ -139,14 +139,14 @@ Follow the steps to update the Website URL in the **Settings** > **Reporting** n
 
 **Step 3 –** Click **Save**.
 
-The Website URL is now updated.
+You have now updated the Website URL.
 
 Update the URL in the Published Reports Desktop Icon Properties
 
-Follow the steps to update the URL in the Published Reports desktop icon's Published Report's
-Properties window.
+To update the URL in the Published Reports desktop icon's Published Report's
+Properties window:
 
-**Step 1 –** Right click on the **Published Reports** desktop shortcut and click **Properties**.
+**Step 1 –** Right click the **Published Reports** desktop shortcut and click **Properties**.
 
 ![Published Reports desktop icon properties](/images/accessanalyzer/11.6/install/application/reports/publishedreportsproperties.webp)
 
@@ -155,7 +155,7 @@ Properties window.
 
 **Step 3 –** Click **Apply** and then **OK** to exit.
 
-The URL is now updated.
+You have now updated the URL.
 
 ### Remove Certificate from the Port
 
@@ -196,8 +196,8 @@ The Thumbprint value is the certificate **Hash** value to be used when binding t
 can be the same as in HTTP (8082). Use this **Hash** value for Step 2 of the
 [Enable SSL for the Web Console](#enable-ssl-for-the-web-console) instructions.
 
-Creation and import of the self-signed certificate can be validated in Microsoft Management Console.
-Follow these steps to confirm the certificate is in Microsoft Management Console.
+You can validate creation and import of the self-signed certificate in Microsoft Management Console.
+To confirm the certificate is in Microsoft Management Console:
 
 **Step 1 –** Open Microsoft Management Console (`mmc.exe`).
 
@@ -219,14 +219,14 @@ window. Click **OK** to close the window.
 **Step 5 –** Navigate to **Certificates** > **Personal** > **Certificates**. The certificate should
 show in the pane on the right.
 
-The self-signed certificate was created and imported. Repeat these steps for each client-side host.
+You created and imported the self-signed certificate. Repeat these steps for each client-side host.
 
 ### Add the Certificate for Client-Side Access
 
 When you open the Web Console with SSL enabled, the web browser shows a Your connection isn't
-private warning message. This can be removed by importing the certificate onto the client server.
+private warning message. You can remove this by importing the certificate onto the client server.
 
-Follow the steps to remove the certificate error.
+To remove the certificate error:
 
 **Step 1 –** Open the Web Console in your browser.
 
@@ -242,7 +242,7 @@ Viewer from the warning details.
 
 - In Microsoft Edge, click the **Your Connection to this site isn't secure** section, and then click
   the certificate icon.
-- In Google Chrome, click **Certificate is not valid**.
+- In Google Chrome, click **Certificate isn't valid**.
 
 ![Web browser Certificate Viewer window](/images/accessanalyzer/11.6/install/application/reports/certificateviewer.webp)
 

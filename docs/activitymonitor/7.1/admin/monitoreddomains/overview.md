@@ -17,12 +17,12 @@ The Activity Monitor can be configured to monitor the following Active Directory
 - Success and Failure on Logon
 - LDAP Activity Monitoring
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Enterprise Auditor
 - Netwrix Threat Manager
 
-It also provides the ability to feed activity data to SIEM products.
+It also lets you feed activity data to SIEM products.
 
 **Agents**
 
@@ -31,8 +31,8 @@ within the domain to be monitored.
 
 **Tab**
 
-Once the AD Agent(s) installation is complete on a domain controller, the domain appear on the
-Monitored Domains tab. The tab is not visible within the console until at least one AD Agent has
+After the AD Agents installation is complete on a domain controller, the domain appear on the
+Monitored Domains tab. The tab isn't visible within the console until at least one AD Agent has
 been deployed.
 
 This tab is comprised of a button bar and a table of domains being monitored. The events stream
@@ -40,7 +40,7 @@ output needs to be designated to view data after an activity search has been per
 
 ## Button Bar
 
-The button bar allows users to take the following actions:
+Use the button bar to take the following actions:
 
 ![Monitored Domains Tab in the Activiy Monitor](/images/activitymonitor/7.1/admin/monitoreddomains/activtymonitorblank.webp)
 
@@ -81,4 +81,4 @@ view more information on various status conditions.
 ![Error Propagation](/images/activitymonitor/7.1/admin/monitoreddomains/errorpropagation.webp)
 
 Click the **Down Arrow** to expand the Error Propagation section. The information listed is
-dependent on which domain is currently selected in the Monitored Domains table.
+dependent on which domain is selected in the Monitored Domains table.

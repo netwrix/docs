@@ -13,7 +13,7 @@ The Dashboard administration area provides a selection of tools to review applic
 The default screen shows a high-level overview of Netwrix Data Classification statistics, displaying
 the last active times of each service (with inactive services shown in red). Select the "i" icon
 next to each date to view the name of the active server as well as batch processing statistics.
-You will also be able to view the average processing throughput.
+You can also view the average processing throughput.
 
 If you have the [Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) functionality enabled, any instances that are missing their copy of the NDC encryption key will also be displayed here. See [Recovering the Encryption Key in Secondary NDC Instances](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/recoveringencryptionkeyindqsenvironment.md) for instructions on remediating missing encryption keys. 
 
@@ -53,7 +53,7 @@ The health service provides a traffic light based reporting system. Colour-coded
 appear in the top menu bar when issues are detected. The traffic lights provide a quick link to this
 page to display more detailed information.
 
-You will then see the list of reported issues, with the ability to view a detailed description of
+A list of reported issues appears, with the ability to view a detailed description of
 the problem and suggested resolution steps.
 
 You can also configure notifications of system issues, along with daily reports of

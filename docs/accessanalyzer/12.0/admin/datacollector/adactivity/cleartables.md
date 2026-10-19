@@ -6,8 +6,8 @@ sidebar_position: 80
 
 # Clear ADActivity Tables
 
-Sometimes when troubleshooting an ADActivity issue, it becomes necessary to clear the standard
-reference tables. Follow the steps.
+When troubleshooting an ADActivity issue, you sometimes need to clear the standard reference
+tables. Follow these steps.
 
 **Step 1 –** Create a new job and assign a query using the ADActivity Data Collector.
 
@@ -19,13 +19,13 @@ Tables** category task.
 ![Active Directory Activity DC wizard Results page for Remove Tables category](/images/accessanalyzer/12.0/admin/datacollector/adactivity/resultsremovetables.webp)
 
 **Step 3 –** Click **Next** to go to the Results page. Optionally, select the **Success** checkbox
-to display a confirmation of successful removal in the results after the job is run.
+to display a confirmation of successful removal in the results after the job runs.
 
 **Step 4 –** Click **Next** and then Click **Finish** to close the Active Directory Activity DC
 Wizard. Click **OK** to close the Query Properties window.
 
 :::warning
-When the job is run, all of the ADActivity standard reference tables are removed from
+When you run the job, it removes all ADActivity standard reference tables from
 the database.
 
 :::

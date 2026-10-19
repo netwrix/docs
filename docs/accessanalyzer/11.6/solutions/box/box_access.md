@@ -7,7 +7,7 @@ sidebar_position: 50
 # Box_Access Job
 
 The Box_Access Job analyzes access granted to users and groups in an organization's Box environment
-in order to report on effective access rights, file-level permissions, and inactive access rights
+to report on effective access rights, file-level permissions, and inactive access rights
 that can be revoked.
 
 ## Analysis Tasks for the Box_Access Job
@@ -16,7 +16,7 @@ Navigate to **Box** > **Box_Access** > **Configure** node and select **Analysis*
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

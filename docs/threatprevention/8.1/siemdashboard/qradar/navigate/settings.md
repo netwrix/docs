@@ -1,0 +1,29 @@
+---
+title: "Settings"
+description: "Settings"
+sidebar_position: 110
+---
+
+# Settings
+
+You must save the QRadar SEC token to the Settings interface of the Active Directory App for QRadar.
+
+Click the gear icon next to the Search box to open the Settings interface.
+
+![Settings interface](/images/threatprevention/8.1/siemdashboard/qradar/settings.webp)
+
+The More information link opens the IBM Knowledge Center with information on generating the QRadar
+SEC token. After you generate the token, copy it, paste it here, and click Save.
+
+**Honey Accounts**
+
+An additional feature lets you add Honey Accounts to monitor.
+
+- Use the Add New Account button to enter a honey account [domain\username] in the pop-up window.
+  There is no limit on the number of honey accounts you can monitor.
+- The Remove Selected button removes the selected account from the Honey Accounts monitored
+  list.
+- After making changes to the list, click **Save**.
+
+Authentication activity by a honey account generates an INTERCEPT: Honey Accounts Offense. See
+the [INTERCEPT Offenses in QRadar](/docs/threatprevention/8.1/siemdashboard/qradar/offenses.md) topic for additional information.

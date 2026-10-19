@@ -78,7 +78,7 @@ Run this job group on Fridays at 8:00 PM.
 
 **History Retention**
 
-History retention should not be enabled on this job group. History is kept through analysis tasks.
+History retention shouldn't be enabled on this job group. History is kept through analysis tasks.
 Modify the following analysis task to customize the amount of history which is kept:
 
 | Job Name      | Analysis Task Name    | Default History |
@@ -109,7 +109,7 @@ deselected. There are some that are deselected by default, as they are for troub
 :::
 
 
-The following analysis tasks should not be deselected, but their parameters can be modified:
+The following analysis tasks shouldn't be deselected, but their parameters can be modified:
 
 - **Growth and Size** > **PF_FolderSize** Job – **02.SET HISTORY RETENTION** Analysis Task
 

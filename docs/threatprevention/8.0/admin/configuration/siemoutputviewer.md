@@ -9,21 +9,19 @@ sidebar_position: 70
 The SIEM Output Viewer window displays the event data (messages) that Threat Prevention writes to
 syslog (SIEM) in real time.
 
-- Event data generated for a policy is sent to SIEM if the 'Send to SIEM' option is selected for
-  that policy on the Actions tab. See the
+- Threat Prevention sends event data generated for a policy to SIEM if you select the 'Send to
+  SIEM' option for that policy on the Actions tab. See the
   [Send to SIEM](/docs/threatprevention/8.0/admin/policies/configuration/actions/overview.md#send-to-siem) topic for additional information.
-- Event data generated for an analytic is sent to SIEM if the 'Send Raw Data to SIEM' option is
-  selected for that analytic on the Actions tab. See the
+- Threat Prevention sends event data generated for an analytic to SIEM if you select the 'Send Raw
+  Data to SIEM' option for that analytic on the Actions tab. See the
   [Send to SIEM](/docs/threatprevention/8.0/admin/policies/configuration/actions/overview.md#send-to-siem) topic for additional information.
-- Event data generated for an event/incident/policy is sent to SIEM if a SIEM profile has been
-  assigned to it on the [SIEM Tab](/docs/threatprevention/8.0/admin/configuration/systemalerting/siem.md) of the System Alerting Window.
+- Threat Prevention sends event data generated for an event/incident/policy to SIEM if you assign a
+  SIEM profile to it on the [SIEM Tab](/docs/threatprevention/8.0/admin/configuration/systemalerting/siem.md) of the System Alerting Window.
 
 While you can also use third-party tools like
 [Kiwi Syslog Server](https://www.solarwinds.com/free-tools/kiwi-free-syslog-server) to view the
 output, the SIEM Output Viewer window may serve as a troubleshooting tool to view and verify the
 actual data Threat Prevention sends to syslog (SIEM) in real time.
-
-Follow the steps to view real time data (messages) that Threat Prevention sends to SIEM.
 
 **Step 1 –** Click **Configuration** > **SIEM Output Viewer** on the menu; the SIEM Output Viewer
 window opens. This window is only available to Threat Prevention administrators.
@@ -31,7 +29,7 @@ window opens. This window is only available to Threat Prevention administrators.
 ![SIEM Output Viewer window](/images/threatprevention/8.0/admin/configuration/siemoutputviewer.webp)
 
 **Step 2 –** Click **Start**. As events occur and Threat Prevention writes to syslog (sends
-event/policy/analytics data to SIEM) in real time, they are displayed on the window.
+event/policy/analytics data to SIEM) in real time, the window displays them.
 
 **Step 3 –** The **Autoscroll** checkbox enables or disables automatic scrolling of the log display.
 
@@ -40,18 +38,18 @@ event/policy/analytics data to SIEM) in real time, they are displayed on the win
 - When disabled, you will have to manually scroll and review log entries without the display
   automatically jumping to the newest message.
 
-**Step 4 –** For each message, the following is displayed:
+**Step 4 –** For each message, the SIEM Output Viewer window displays the following:
 
-- Event: Time Logged – Timestamp for when the event was monitored/blocked. The specified time is the
-  local time for the server where the Agent is deployed.Hover over the data in this column to view
-  the local time (of the Enterprise Manager) and UTC time simultaneously.
+- Event: Time Logged – Timestamp for when Threat Prevention monitored or blocked the event. The
+  specified time is the local time for the server where the Agent is deployed. Hover over the data
+  in this column to view the local time (of the Enterprise Manager) and UTC time simultaneously.
 - Host – The IP address or name of the SIEM server, configured in the SIEM server settings
 - Port – The port number to communicate with the SIEM server, configured in the SIEM server settings
 - Protocol – The protocol set when configuring the SIEM server, i.e., TCP or UDP
 - SSL – Shows whether SSL is used when sending data to SIEM (applies if TCP is set as the protocol)
 - Message – The actual data sent to syslog
-- Status – This field is empty if the message is successfully sent. Otherwise, it will contain the
-  text of the received error, for example, 'Connection timeout'
+- Status – This field is empty if Threat Prevention successfully sends the message. Otherwise, it
+  contains the text of the error it received, for example, 'Connection timeout'
 
 You can select a row and use Ctrl+C to copy the data displayed in it. Then paste it to another
 application like Notepad to examine it in detail.
@@ -81,5 +79,5 @@ This data grid employs features for sorting, filtering, searching, and more.
 **Step 5 –** Click **Save** to save the displayed data to a text file or **Clear** to clear the
 data.
 
-On clicking **Save**, the Safe As dialog box is displayed, where you can select a location to save
-the text file.
+When you click **Save**, the Save As dialog box opens, where you can select a location to save the
+text file.

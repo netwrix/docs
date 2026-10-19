@@ -9,8 +9,6 @@ sidebar_position: 30
 The Administration Console prevents you from deleting the last user with Administrator rights. There
 must always be at least one active administrator.
 
-Follow the steps to delete a user.
-
 **Step 1 –** Click **Configuration** > **Users** on the menu to open the Users and Roles window.
 
 ![Remove User button on the Users and Groups window](/images/threatprevention/8.0/admin/configuration/userroles/removeuser.webp)
@@ -22,4 +20,4 @@ it.
 
 **Step 4 –** Click **OK** to save changes on this window.
 
-The deleted user(s) have no access to the Administration Console.
+Deleted users have no access to the Administration Console.

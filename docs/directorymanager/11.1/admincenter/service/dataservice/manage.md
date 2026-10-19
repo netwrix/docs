@@ -18,8 +18,6 @@ You can manage several settings for a service, such as:
 
 ## View Data Service Details
 
-Follow the steps to vew Data Service details.
-
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
 Step 2 – On the Applications page, click the **Data Service** tab. The Data Service tab page is
@@ -37,20 +35,20 @@ Step 3 – The card for a Data service displays the following information:
 | --- | --- |
 | Name  | The name given to the service. |
 | Deployment Instances | Displays the deployment name of the service and the web server where it is deployed. |
-| Status | A service has one of the following statuses: <br /><ul><li>Running – Indicates that the service is up and running.</li><li>Stopped – Indicates that Directory Manager is unable to communicate with the service. To troubleshoot, go to the web server where the service is deployed (IIS, remote IIS, or Docker) and make sure the service is running.</li><li>Error – Any issue other than _stopped_ is categorized as _error_. Contact your system administrator to resolve it.</li></ul> |
-| Launch Application | Click it to launch the service page. <br /><ul><li>For a Data service, Replication service, Email service, and Scheduler service, a page is displayed that simply shows the status of the service as _running_, _stopped_, or _error_.</li><li>For a Security service, the **GroupID Applications** page is displayed. Performing an action on this page will be carried out through the respective Security service. See the [Access your Applications](/docs/directorymanager/11.1/admincenter/general/accessapplications.md) topic. </li><li>For Admin Center, this link launches the Admin Center application.</li></ul> |
-| Ellipsis | Click it to launch a shortcut menu with the following options: <br /><ul><li>Settings – launches the service settings page, where you can manage deployment settings and log settings.</li><li>Delete – deletes the service. This option is not available for the default services.</li></ul> |
+| Status | A service has one of the following statuses: <br /><ul><li>Running – Indicates that the service is running.</li><li>Stopped – Indicates that Directory Manager is unable to communicate with the service. To troubleshoot, go to the web server where the service is deployed (IIS, remote IIS, or Docker) and ensure the service is running.</li><li>Error – Any issue other than _stopped_ is categorized as _error_. Contact your system administrator to resolve it.</li></ul> |
+| Launch Application | Click it to launch the service page. <br /><ul><li>For a Data service, Replication service, Email service, and Scheduler service, a page is displayed that shows the status of the service as _running_, _stopped_, or _error_.</li><li>For a Security service, the **GroupID Applications** page is displayed. The respective Security service performs any action on this page. See [Access your Applications](/docs/directorymanager/11.1/admincenter/general/accessapplications.md). </li><li>For Admin Center, this launches the Admin Center application.</li></ul> |
+| Ellipsis | Click it to launch a shortcut menu with the following options: <br /><ul><li>Settings – launches the service settings page, where you can manage deployment settings and log settings.</li><li>Delete – deletes the service. This option isn't available for the default services.</li></ul> |
 
 ## Change a Service’s Display Name
 
-A service is assigned an application name during creation, which is used as it's display name in
-Directory Manager. On changing it, the service is displayed with the new name.
+A service is assigned an application name during creation, which is used as its display name in
+Directory Manager. When you change it, Directory Manager displays the service with the new name.
 
-Follow the steps to change the display name.
+change the display name.
 
 Step 1 – In Admin Center, select **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the tab for the desired service. For example, click the
+Step 2 – On the Applications page, click the tab for the service you want. For example, click the
 **Data Service** tab.
 
 Step 3 – Click the ellipsis button for a service and select **Settings**.
@@ -68,11 +66,11 @@ service, the following happens:
 - For a remote IIS deployment, Directory Manager stops the site that hosts the service.
 - For a Docker deployment, Directory Manager stops the container where the service is deployed.
 
-Follow the steps to start or stop a service.
+start or stop a service.
 
 Step 1 – In Admin Center, select **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the tab for the desired service. For example, click the
+Step 2 – On the Applications page, click the tab for the service you want. For example, click the
 **Data Service** tab.
 
 Step 3 – Click the ellipsis button for a service and select **Settings**.
@@ -81,7 +79,7 @@ Step 4 – Click **Deployments** under Server Settings.
 The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
 is deployed.
 
-Step 5 – The Select Application Deployment drop-down list displays the deployment name of the
+Step 5 – The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
 - When the service is running, Stop is displayed next to it. Click it to stop the service.
@@ -89,18 +87,18 @@ service.
 
 ## View the Launch URL for a Service
 
-Follow the steps to view the launch URL for a service.
+view the launch URL for a service.
 
 Step 1 – In Admin Center, select **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the tab for the desired service. For example, click the
+Step 2 – On the Applications page, click the tab for the service you want. For example, click the
 **Data Service** tab.
 
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
 The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
-is deployed. The Select Application Deployment drop-down list displays the deployment name of the
+is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
 Step 5 – The Launch URL box on the Deployment Configurations tab displays the URL. Copy and paste it
@@ -109,18 +107,18 @@ understand what is displayed with this URL.
 
 ## View the Deployment Settings for a Service
 
-Follow the steps to view the deployment settings for a service.
+view the deployment settings for a service.
 
 Step 1 – In Admin Center, select **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the tab for the desired service. For example, click the
+Step 2 – On the Applications page, click the tab for the service you want. For example, click the
 **Data Service** tab.
 
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
 The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
-is deployed. The Select Application Deployment drop-down list displays the deployment name of the
+is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
 Step 5 – On the Deployment Configurations tab:
@@ -147,30 +145,30 @@ For details on file logging and Windows logging, see the
 portal with the respective service.
 
 :::note
-Windows logging is not available for Data service and Security service.
+Windows logging isn't available for Data service and Security service.
 :::
 
 
 ### Change the File Logging Level for a Service
 
-Follow the steps to change the file logging level for a service.
+change the file logging level for a service.
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the tab for the desired service. For example, click the
+Step 2 – On the Applications page, click the tab for the service you want. For example, click the
 **Data Service** tab.
 
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
 The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
-is deployed. The Select Application Deployment drop-down list displays the deployment name of the
+is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
 Step 5 – Click the **Logging** tab.
 
 Step 6 – In the File Logging area, select a logging level for the service in the Log Events
-drop-down list.  
+dropdown list.  
 File logging groups events into different levels, based on the type of information captured. See the
 table in the
 [Change the File Logging Level for a Portal Instance](/docs/directorymanager/11.1/admincenter/applications/portal/server/log.md#change-the-file-logging-level-for-a-portal-instance)topic
@@ -180,46 +178,46 @@ Step 7 – Click **Save**.
 
 ### Turn off File Logging for a Service
 
-Follow the steps to turn off file logging for a service.
+turn off file logging for a service.
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the tab for the desired service. For example, click the
+Step 2 – On the Applications page, click the tab for the service you want. For example, click the
 **Data Service** tab.
 
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
 The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
-is deployed. The Select Application Deployment drop-down list displays the deployment name of the
+is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
 Step 5 – Click the **Logging** tab.
 
-Step 6 – In the File Logging area, select _Off_ in the Log Events drop-down list.
+Step 6 – In the File Logging area, select _Off_ in the Log Events dropdown list.
 
 Step 7 – Click **Save**.
 
 ### Change the Windows Logging Level for a Service
 
-Follow the steps to change the Windows logging level for a service.
+change the Windows logging level for a service.
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the tab for the desired service. For example, click the
+Step 2 – On the Applications page, click the tab for the service you want. For example, click the
 **Replication Service** tab.
 
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
 The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
-is deployed. The Select Application Deployment drop-down list displays the deployment name of the
+is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
 Step 5 – Click the **Logging** tab.
 
 Step 6 – In the Windows Logging area, select a logging level for the service in the **Log Events**
-drop-down list.  
+dropdown list.  
 Windows logging groups events into different levels, based on the type of information captured. See
 the table in the
 [Change the File Logging Level for a Portal Instance](/docs/directorymanager/11.1/admincenter/applications/portal/server/log.md#change-the-file-logging-level-for-a-portal-instance)topic
@@ -229,23 +227,23 @@ Step 7 – Click **Save**.
 
 ### Turn Off Windows Logging for a Service
 
-Follow the steps to turn off Windows logging for a service.
+turn off Windows logging for a service.
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the tab for the desired service. For example, click the
+Step 2 – On the Applications page, click the tab for the service you want. For example, click the
 **Replication Service** tab.
 
 Step 3 – Click the ellipsis button for a service and select **Settings**.
 
 Step 4 – Click **Deployments** under Server Settings.  
 The Deployment Settings page displays the web server (IIS, remote IIS, or Docker) where the service
-is deployed. The Select Application Deployment drop-down list displays the deployment name of the
+is deployed. The Select Application Deployment dropdown list displays the deployment name of the
 service.
 
 Step 5 – Click the **Logging** tab.
 
-Step 6 – In the Windows Logging area, select _Off_ in the Log Events drop-down list.
+Step 6 – In the Windows Logging area, select _Off_ in the Log Events dropdown list.
 
 Step 7 – Click **Save**.
 
@@ -269,7 +267,7 @@ Deleting a Data service removes the following:
 
     The container created in Docker Engine for the Data service
 
-Follow the steps to delete a Data service.
+delete a Data service.
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
@@ -279,7 +277,7 @@ Step 3 – On the **Data Service** tab page, click the ellipsis button for a Dat
 **Delete**.
 
 :::note
-You cannot delete the default Data service. You cannot also delete a Data service that has
+You can't delete the default Data service. You can't also delete a Data service that has
 been linked with a Directory Manager client, such as the Directory Manager portal.
 
 :::

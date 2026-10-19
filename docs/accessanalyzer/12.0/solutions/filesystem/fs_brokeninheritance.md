@@ -15,7 +15,7 @@ The FS_BrokenInheritance job is located in the 3.Broken Inheritance job group.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
@@ -38,7 +38,7 @@ View the analysis tasks by navigating to the **FileSystem** > **3.Broken Inherit
 **FS_BrokenInheritance** > **Configure** node and select **Analysis**.
 
 :::warning
-Most of these analysis tasks are preconfigured and should not be modified and or
+Most of these analysis tasks are preconfigured and shouldn't be modified and or
 deselected. There are some that are deselected by default, as they are for troubleshooting purposes.
 :::
 

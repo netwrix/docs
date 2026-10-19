@@ -28,8 +28,8 @@ The domains in the configured forests are shown in a hierarchal tree. The domain
 selected forest are shown in the adjacent pane, with information such as backup status and last
 backup times.
 
-Expand a forest to view the domains under it. On selecting a domain, the domain controllers in the
-domain are displayed in the adjacent pane.
+Expand a forest to view the domains under it. When you select a domain, the adjacent pane displays
+the domain controllers in that domain.
 
 The following information is displayed for a domain controller:
 
@@ -67,8 +67,6 @@ backup settings for it. See the
 information.
 :::
 
-Follow the steps to specify backup settings for a domain controller.
-
 **Step 1 –** On the Forest page, select a forest to view the domain controllers in it. To locate a
 domain controller in a specific domain, expand the forest in the left pane and select a domain. The
 adjacent pane displays the domain controllers in that domain.
@@ -99,8 +97,8 @@ using this account.
 
 ![Server Backup Configuration wizard - Schedule page](/images/identityrecovery/3.1/product/forest/backup/forest_backup_page2.png)
 
-**Step 5 –** Select the days of the week in the Run the backup on section to indicate the days when
-backups will be run.
+**Step 5 –** Select the days of the week in the Run the backup on section to indicate when
+the system will run backups.
 
 **Step 6 –** Select a start time (UTC) in the Start the backup at field to begin the backup. The
 default time is 12:00 AM.
@@ -113,7 +111,7 @@ default time is 12:00 AM.
 network share on the domain controller to store the backup data.
 
 :::note
-The path must be a network share. Do not provide the path to a local drive for storing the
+The path must be a network share. Don't provide the path to a local drive for storing the
 backup. Doing so will prevent the system from restoring the domain using the playbook mechanism.
 :::
 
@@ -137,7 +135,7 @@ to finish the wizard.
 
 ![Server Backup Configuration Saved](/images/identityrecovery/3.1/product/forest/backup/forest_backup_finished.png)
 
-**Step 15 –** The Server backup configuration has been saved. Click **OK**.
+**Step 15 –** The system has saved the Server backup configuration. Click **OK**.
 
 The domain controller will now be backed up according to the configured schedule. A backup can also
 be initiated on demand from the Recovery Console.
@@ -155,7 +153,7 @@ event of a disaster. The backup includes:
 
 ## Disable Server Backup for a Domain Controller
 
-If you do not want a domain controller to be backed up, simply disable the backup for it.
+If you don't want a domain controller to be backed up, disable the backup for it.
 
 **Step 1 –** On the Forest page, select a forest to view the domain controllers in it. To locate a
 domain controller in a specific domain, expand the forest in the left pane and select a domain. The
@@ -163,8 +161,8 @@ adjacent pane displays the domain controllers in that domain.
 
 **Step 2 –** Disable the Backup toggle button for a domain controller to disable its backup.
 
-On disabling the backup for a domain controller, all backup configuration saved earlier are lost.
-However, any older backups are not deleted.
+When you disable the backup for a domain controller, the system discards all previously saved backup configurations.
+However, any older backups remain.
 
 To re-enable the backup for a domain controller, you have to perform all steps of the Server Backup
 Configuration wizard again.
@@ -174,8 +172,6 @@ Configuration wizard again.
 You can view the backup history for a domain controller, which includes information on all previous
 domain controller backups.
 
-Follow the steps to view the backup history for a domain controller.
-
 **Step 1 –** On the Forest page, select a forest to view the domain controllers in it. To locate a
 domain controller in a specific domain, expand the forest in the left pane and select a domain. The
 adjacent pane displays the domain controllers in that domain.
@@ -184,8 +180,8 @@ adjacent pane displays the domain controllers in that domain.
 
 ![Forest Server Backup History](/images/identityrecovery/3.1/product/forest/backup_history.png)
 
-On expanding a domain controller, you can view a list of backups for it. The following information
-is displayed for each backup:
+When you expand a domain controller, you can view a list of backups for it. Each backup displays
+the following information:
 
 - Backup Time – Date and time the backup was created
 - Location – The network share path where the backup file is stored on the domain controller

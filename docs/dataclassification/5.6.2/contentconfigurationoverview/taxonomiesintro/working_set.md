@@ -7,7 +7,7 @@ sidebar_position: 80
 # Working Set
 
 A Working Set of documents can be defined and used to test the accuracy of classification rules
-against a controlled set of documents. The Working Set is mode can be selected in the Core
+against a controlled set of documents. You can select the Working Set mode in the Core
 Configuration.
 
 If Class Level is selected then a different Working Set can be defined for every class. If Taxonomy

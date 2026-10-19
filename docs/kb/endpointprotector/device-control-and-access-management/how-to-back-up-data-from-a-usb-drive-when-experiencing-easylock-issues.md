@@ -13,11 +13,12 @@ keywords:
   - Easylock.exe
   - data recovery
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: How to Back Up Data from a USB Drive When Experien
 tags:
   - device-control-and-access-management
+  - kb
 title: "How to Back Up Data from a USB Drive When Experiencing Easylock Issues"
 knowledge_article_id: kA0Qk0000002B2sKAE
 ---

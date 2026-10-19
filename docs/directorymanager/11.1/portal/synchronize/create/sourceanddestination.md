@@ -10,7 +10,7 @@ You must create required identity providers and data sources before creating a j
 in Admin Center under Identity Stores and Data Sources tab respectively. After creating the
 providers, you need to specify the providers in **Select Your Source and Destination** page.
 
-Follow these steps to configure the settings for the providers:
+To configure the settings for the providers:
 
 1. On the **Select Your Source and Destination** page, do the following:
 
@@ -37,7 +37,7 @@ Follow these steps to configure the settings for the providers:
 
     - Generic LDAP
 
-        You do not need to provide any additional information for this provider.
+        You don't need to provide any additional information for this provider.
 
     - Google Workspace
 
@@ -49,13 +49,13 @@ Follow these steps to configure the settings for the providers:
 
     - Microsoft Access
 
-        In the **Table Name** drop-down list, select the table you want to use.
+        In the **Table Name** dropdown list, select the table you want to use.
 
         The list displays the tables in the selected Microsoft Access database.
 
     - Microsoft Excel
 
-        In the **Select Sheet Name** drop-down list, select the sheet you want to use.
+        In the **Select Sheet Name** dropdown list, select the sheet you want to use.
 
         The list displays the sheets in the selected Microsoft Excel file.
 
@@ -69,28 +69,26 @@ Follow these steps to configure the settings for the providers:
 
     - Oracle
 
-        In the **Table or View** drop-down list, select the database table you want to use.
+        In the **Table or View** dropdown list, select the database table you want to use.
 
         The list displays the tables in the Oracle database.
 
-        In case the type column of Oracle database is not set as Datetime then time stamp
-        functionality of Synchronize do not work. The given type needs to be converted into Datetime
+        In case the type column of Oracle database isn't set as Datetime then time stamp
+        functionality of Synchronize don't work. The given type needs to be converted into Datetime
         explicitly while configuring the Synchronize job.
 
     - ODBC
 
         In **Table Name** box, enter the name of the table you want to use.
 
-**Souldn't user select instead of entering the name?**
-
     - Microsoft SQL Server
 
-        In the **Table or View** drop-down list, select the database table you want to use.
+        In the **Table or View** dropdown list, select the database table you want to use.
 
         The list displays the tables in the Microsoft SQL Server database.
 
     - Text Driver/CSV
 
-        You do not need to provide any additional information for this provider.
+        You don't need to provide any additional information for this provider.
 
 2. Click **Next Step**.

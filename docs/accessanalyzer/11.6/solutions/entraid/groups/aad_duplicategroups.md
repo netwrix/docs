@@ -15,7 +15,7 @@ Navigate to the **Jobs** > **Entra ID** > **1.Groups** > **AAD_DuplicateGroups**
 node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -32,4 +32,4 @@ following pre-configured report.
 
 | Report           | Description                                                         | Default Tags | Report Elements                                                                                                                                                                                                                                                |
 | ---------------- | ------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Duplicate Groups | This report identifies duplicate groups within the audited domains. | None         | This report is comprised of one elements: <ul><li>Bar Chart – Displays domains by number of groups with duplicates</li><li>Table – Provides duplicate groups details</li><li>Table – Provides details on domains by number of groups with duplicates</li></ul> |
+| Duplicate Groups | This report identifies duplicate groups within the audited domains. | None         | This report is comprised of one element: <ul><li>Bar Chart – Displays domains by number of groups with duplicates</li><li>Table – Provides duplicate groups details</li><li>Table – Provides details on domains by number of groups with duplicates</li></ul> |

@@ -11,7 +11,7 @@ The Deletions dashboard contains the following cards:
 ![Deletions Dashboard for Stealthbits Activivty Monitor App for QRadar](/images/activitymonitor/7.1/siem/qradar/dashboard/deletionsdashboard.webp)
 
 - Activity – Timeline of all deletion events over the specified time interval
-- Top Users – Displays up-to the top five users associated with deletion events over the specified
+- Top Users – Displays the top five users associated with deletion events over the specified
   time interval
 - Latest Events – Tabular format of all deletion events which occurred over the specified time
   interval
@@ -22,5 +22,5 @@ The Deletions dashboard contains the following cards:
 
 The time interval is identified in the upper-right corner with the Start and End boxes. This is set
 by default to the “past day,” or 24 hours. To search within a different interval, either manually
-type the desired date and time or use the calendar buttons to set the desired date and time
-interval. Then click Search to refresh the card data.
+enter the date and time you want or use the calendar buttons to set the date and time interval.
+Then click Search to refresh the card data.

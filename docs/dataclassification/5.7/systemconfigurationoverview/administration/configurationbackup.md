@@ -14,9 +14,9 @@ Only available for ‘Superusers’
 The Backup utility allows for the migration of complex Netwrix Data Classification instance
 configurations.
 
-This allows a user to safely design and test a Netwrix Data Classification configuration within a
-development environment and then copy the configuration, or specific parts of the configuration, to
-a different environment (I.E production).
+Use this feature to safely design and test a Netwrix Data Classification configuration in a
+development environment, then copy the configuration, or specific parts of it, to a different
+environment (for example, production).
 
 The tool supports text replacement to allow user defined URL's to be replaced by the equivalent
 destination URL. The following configuration options are available for import / export:
@@ -36,7 +36,7 @@ destination URL. The following configuration options are available for import / 
     - SharePoint Excluded
     - Text Patterns
 
-Follow the steps to create configuration backup.
+To create configuration backup:
 
 **Step 1 –** Go to **Settings** > **Config** > **Utilities**.
 
@@ -44,7 +44,7 @@ Follow the steps to create configuration backup.
 
 **Step 2 –** From the navigation menu on the left, click **Backup/Restore.**
 
-**Step 3 –** Click **Create Backup** and select the elements that you wish to include (sources,
+**Step 3 –** Click **Create Backup** and select the elements that you want to include (sources,
 SharePoint taxonomies, or workflows).
 
 :::note
@@ -55,4 +55,4 @@ different environment. This option is required on **Upload Backup** step.
 
 **Step 4 –** Click **Save**.
 
-Upon import any items that already exist will be skipped.
+Upon import, the system skips any items that already exist.

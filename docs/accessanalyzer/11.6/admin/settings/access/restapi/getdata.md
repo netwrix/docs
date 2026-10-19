@@ -27,15 +27,15 @@ GET, POST
 **PARAMETERS**
 - **object-name** – Required value that specifies the unique object name. 
 - **alias-name** – Required value that specifies the unique alias associated with the table, available as a more thoughtfully designed namespace. 
-- **jobRuntimeKey**(Optional) – The execution to retrieve information for. If this is omitted the latest report is provided. 
-- **filters** (Optional) – A filter to be applied prior to returning data, multiple filters are applied with `and` operators. If an array is specified for the value field for a filter, the filter returns any successful match from the array of values. String comparisons are case insensitive. A list of the available functions is below. Filter functions: 
+- **jobRuntimeKey**(Optional) – The execution to retrieve information for. If you omit this parameter, the endpoint returns the latest report. 
+- **filters** (Optional) – A filter to apply before returning data. Multiple filters are applied with `and` operators. If an array is specified for the value field for a filter, the filter returns any successful match from the array of values. String comparisons are case insensitive. The following filter functions are available: 
   - equals
   - not_equals
   - greater (greater_equal)
   - less (less_equal)
   - contains
   - starts_with 
-- **columns** (Optional) – A list of columns to be returned. When not specified all columns are returned. The columns specified by the **groupby** parameter should be omitted from this array. 
+- **columns** (Optional) – A list of columns to return. If you don't specify this parameter, the endpoint returns all columns. Omit the columns specified by the **groupby** parameter from this array. 
 - **groupby** (Optional) – A list of columns to group each row by, resulting in a JSON object that contains those keys followed by an array of entries. 
 
 Sample JSON request:
@@ -81,7 +81,7 @@ Sample JSON response:
 
 **ERRORS** 
 - 400 One or more the parameters passed in are invalid. 
-- 404 The object requested does not exist.
+- 404 The object requested doesn't exist.
 
 
 ## PROC
@@ -100,7 +100,7 @@ POST
 
 **PARAMETERS**  
 - **object-name** – Required value that specifies the unique object name. 
-- **groupby**(Optional) – A list of columns to group each row by, resulting in a JSON object that contains those keys followed by an array of entries. The parameters passed in here are passed to the stored procedure untouched. Arrays are mapped to a user defined table type, currently only single value arrays are supported. 
+- **groupby**(Optional) – A list of columns to group each row by, resulting in a JSON object that contains those keys followed by an array of entries. The endpoint passes the parameters you provide here to the stored procedure untouched. It maps arrays to a user-defined table type and supports only single-value arrays. 
 
 Sample JSON request:
 
@@ -139,4 +139,4 @@ Sample JSON request:
 
 **ERRORS**        
 - 400 One or more the parameters passed in are invalid. 
-- 404 The object requested does not exist.
+- 404 The object requested doesn't exist.

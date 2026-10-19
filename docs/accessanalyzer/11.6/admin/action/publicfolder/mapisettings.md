@@ -16,6 +16,6 @@ Use the following options to configure the action:
 - System Attendant (2003 & 2007)
 - Use the mailbox associated with the Windows account on which Enterprise Auditor is run
 - Exchange Mailbox (2010 and newer) – If targeting a 2010 Exchange Server, specify the CAS server.
-  This is also where the MAPI setting is selected.
+  This is also where you select the MAPI setting.
 
     - Client Access Server – Enter the Domain Name in this field

@@ -6,10 +6,10 @@ sidebar_position: 10
 
 # Recommended Configuration
 
-The Oracle Solution has been configured to inherit down from the Oracle > Settings node. However, it
-is best practice to assign the host list and the Connection Profile at the data collection level,
-0.Collection Job Group. Once these are assigned to the job group, it can be run directly or
-scheduled.
+By default, the Oracle Solution inherits from the Oracle > Settings node. However, it's best
+practice to assign the host list and the Connection Profile at the data collection level,
+0.Collection Job Group. After you assign these to the job group, you can run it directly or
+schedule it.
 
 **Dependencies**
 
@@ -18,19 +18,18 @@ scheduled.
   databases
 
 Some of the queries in the **Jobs** > **Databases** > **0.Collection** > **Oracle Job Group** can be
-scoped to target specific databases and/or instances. However, it is necessary for the
-SA_SQL_Instances table to be populated before attempting to scope the queries. Therefore, the
-0-Oracle_Servers job must be executed before attempting to scope the rest of the 0.Collection Job
-Group queries.
+scoped to target specific databases and/or instances. However, you must populate the
+SA_SQL_Instances table before you scope the queries. Therefore, run the 0-Oracle_Servers job before
+you scope the rest of the 0.Collection Job Group queries.
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
 The 0.Collection Job Group must be set to run against the following dynamic host list:
 
 - Oracle Servers
 
 Default dynamic host lists are populated from hosts in the Host Master Table which meet the host
-inventory criteria for the list. Ensure the appropriate host list(s) have been populated through
+inventory criteria for the list. Ensure the appropriate host lists have been populated through
 host inventory results.
 
 **Connection Profile**
@@ -38,20 +37,19 @@ host inventory results.
 The SQL Data Collector requires a specific set of permissions. The account used can be either an
 Active Directory account or an Oracle account.
 
-For a Windows-integrated Oracle instance it is possible to use one Active Directory credential that
+For a Windows-integrated Oracle instance, you can use one Active Directory credential that
 has permissions on both the Oracle database and the server. This will not generally be the case in
 most customer environments, but it is possible.
 
-If the required permissions are assigned to one Active Directory credential, once the account has
-been provisioned, create a custom Connection Profile containing the credentials for the targeted
-environment. See the [SQL Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/sql/overview.md) topic for
+After you provision an Active Directory account with the required permissions, create a custom
+Connection Profile containing the credentials for the targeted environment. See the [SQL Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/sql/overview.md) topic for
 additional information on permissions and creating a SQL custom connection profile.
 
 Alternatively, create a connection profile with both the Oracle database credentials and the server
 credentials for the targeted host.
 
-A Connection Profile with the applicable permissions should be assigned under each jobs Connection
-node as follows:
+Assign a Connection Profile with the applicable permissions under each job's Connection node as
+follows:
 
 - Both the Oracle database credentials and the Server credentials for the targeted host (or the
   previously provisioned AD credentials) for:
@@ -66,7 +64,7 @@ node as follows:
 The Connection Profile is set to Use the Default Profile, as configured at the global settings
 level. However, since this may not be the Connection Profile with the necessary permissions for the
 assigned hosts, click the radio button for the Select one of the following user defined profiles
-option and select the appropriate Connection Profile drop-down menu.
+option and select the appropriate Connection Profile dropdown menu.
 
 See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
@@ -121,13 +119,13 @@ SQL Data Collector configurations can be modified if desired:
 **Analysis Configuration**
 
 This solution should be run with the default analysis configurations. These analysis tasks are
-preconfigured and should not be modified or deselected!
+preconfigured and shouldn't be modified or deselected.
 
 Remember, disabling obsolete or un-desired jobs allows the solution to run more efficiently. To
-disable a job or job group, right-click on the item and select Disable Job.
+disable a job or job group, right-click the item and select Disable Job.
 
 :::info
-Do not delete any jobs. Instead, jobs should be disabled.
+Don't delete jobs. Instead, disable them.
 :::
 
 

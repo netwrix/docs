@@ -39,10 +39,8 @@ See the section below for the instructions on user role assignment.
 
 ## Role Assignment Procedure
 
-Before starting the role assignment, make sure your Nutanix File Server is included in the AD
+Before starting the role assignment, ensure your Nutanix File Server is included in the AD
 domain.
-
-Follow the steps to assign the required roles to the corresponding accounts using Nutanix Prism.
 
 **Step 1 –** Open Nutanix Prism web portal.
 

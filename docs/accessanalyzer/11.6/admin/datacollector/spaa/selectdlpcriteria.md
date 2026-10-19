@@ -6,19 +6,19 @@ sidebar_position: 100
 
 # SPAA: Select DLP Criteria
 
-The Select Criteria page is where criteria to be used for discovering sensitive data are configured.
-It is a wizard page for the category of Scan For Sensitive Content. This page requires the Sensitive
-Data Discovery Add-On to be been installed on the Enterprise Auditor Console to define the criteria
-and enable the Criteria Editor. If the SharePoint Agent is used, then it must also be installed on
+Use the Select Criteria page to configure the criteria for discovering sensitive data.
+It's a wizard page for the category of Scan For Sensitive Content. This page requires you to
+install the Sensitive Data Discovery Add-On on the Enterprise Auditor Console to define the criteria
+and enable the Criteria Editor. If you use the SharePoint Agent, you must also install it on
 the application server that hosts the Central Administration component. See the
 [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
 topic for additional information.
 
 :::warning
-Users should not change scans in a way that would result in less data being returned on
-a subsequent scan (i.e. scanning fewer web applications, scanning fewer site collections, or a
-shallower depth scan). Those resources not included in a subsequent scan are marked as deleted in
-the Tier 2 database and subsequently removed from the Tier 1 database.
+Don't change scans in a way that results in a subsequent scan returning less data (for example,
+scanning fewer web applications, scanning fewer site collections, or using a shallower depth scan).
+Enterprise Auditor marks resources not included in a subsequent scan as deleted in the Tier 2
+database and subsequently removes them from the Tier 1 database.
 :::
 
 
@@ -34,8 +34,8 @@ The options on the Select DLP Criteria page are:
   data criteria to scan for
 - Select All - Click **Select All** to enable all sensitive data criteria for scanning
 - Clear All - Click **Clear All** to remove all selections from the table
-- Check the boxes next to the sensitive data criteria options to enable it to be scanned for during
-  job execution
+- Check the boxes next to the sensitive data criteria options to enable the query to scan for them
+  during job execution
 
 The table contains the following types of criteria:
 

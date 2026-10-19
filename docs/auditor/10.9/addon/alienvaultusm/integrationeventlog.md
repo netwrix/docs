@@ -9,8 +9,8 @@ sidebar_position: 60
 This section describes how the add-on fills in the Netwrix Auditor **Integration** event log fields
 with data retrieved from Activity Records.
 
-The Activity Record structure is described in the
-[Reference for Creating Activity Records](/docs/auditor/10.9/api/activityrecordreference.md)topic.
+The [Reference for Creating Activity Records](/docs/auditor/10.9/api/activityrecordreference.md)
+topic describes the Activity Record structure.
 
 | Event log field name | Filled in with value                                                        | Details                                                                                                                                                             |
 | -------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,6 +35,6 @@ EventData is filled in with data from the Activity Record fields as follows:
 | Workstation        | `{Workstation}`       |
 | Details            | `{Details}`           |
 
-Details are filled in only if this Activity Record field is not empty.
+The add-on fills in Details only if this Activity Record field isn't empty.
 
 ![eventlogexample_thumb_0_0](/images/auditor/10.7/addon/solarwinds/eventlogexample_thumb_0_0.webp)

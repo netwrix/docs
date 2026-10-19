@@ -87,8 +87,7 @@ The tab contains the following settings:
       server activity from Activity Monitor.
 
 - Report account names – Indicates if an Account Name column is added in the activity log files
-- Add header to Log files – Indicates if headers are added in the activity log filesAdd header to
-  Log files – Indicates if headers are added in the activity log files
+- Add header to Log files – Indicates if headers are added in the activity log files
 
     :::note
     This is needed to feed data into Splunk in a Syslog output. However, Netwrix Access
@@ -153,8 +152,7 @@ The tab contains the following settings:
     :::
 
 
-- Add header to Log files – Indicates if headers are added in the activity log filesAdd header to
-  Log files – Indicates if headers are added in the activity log files
+- Add header to Log files – Indicates if headers are added in the activity log files
 
     :::note
     This is needed to feed data into Splunk in a Syslog output. However, Netwrix Access

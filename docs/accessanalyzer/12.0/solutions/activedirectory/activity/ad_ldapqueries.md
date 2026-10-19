@@ -7,8 +7,8 @@ sidebar_position: 50
 # LDAP > AD_LDAPQueries Job
 
 The **LDAP** > **AD_LDAPQueries** Job analyzes LDAP traffic to determine trends such as most
-expensive queries, most active servers and users, successful/failed and signing status. This data
-can be used to troubleshoot performance issues, load balancing, and poorly configured services.
+expensive queries, most active servers and users, successful/failed and signing status. Use this data
+to troubleshoot performance issues, load balancing, and poorly configured services.
 
 ![AD_LDAPQueries Job in the Jobs Tree](/images/accessanalyzer/12.0/solutions/activedirectory/activity/ldapjobstree.webp)
 
@@ -23,7 +23,7 @@ Navigate to the **Active Directory** > **6.Activity** > **LDAP** > **AD_LDAPQuer
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Except for the **Largest Queries** task, do not modify or deselect the remaining
+Except for the **Largest Queries** task, don't modify or deselect the remaining
 selected analysis tasks. The remaining analysis tasks are preconfigured for this job.
 :::
 
@@ -38,7 +38,7 @@ The following non-configurable analysis tasks are selected by default:
 - User Summary – Creates the SA_AD_LDAPQueries_UserSummary table accessible under the job’s Results
   node
 
-The following configurable analysis task can be optionally enabled:
+The following analysis task is optional:
 
 - Largest Queries – Creates the SA_AD_LDAPQueries_ExpensiveQueries table accessible under the job’s
   Results node
@@ -54,10 +54,10 @@ pre-configured reports:
 
 ### Configure the Largest Queries Analysis Task
 
-Customizable parameters enable you to set the values used to control the minimum objects returned
+Use the customizable parameters to set the values that control the minimum objects returned
 and the days of traffic to analyze during this job’s analysis. The parameters can be customized and
-are listed in a section at the bottom of the SQL Script Editor. Follow the steps to customize an
-analysis task’s parameters.
+are listed in a section at the bottom of the SQL Script Editor. Complete the following steps to
+customize an analysis task’s parameters.
 
 **Step 1 –** Navigate to the **Active Directory** > **6.Activity** > **LDAP** > **AD_LDAPQueries** >
 **Configure** node and select **Analysis**.
@@ -68,14 +68,14 @@ analysis task’s parameters.
 **Analysis Configuration**. The SQL Script Editor opens.
 
 :::warning
-Do not change any parameters where the Value states `Created during execution`.
+Don't change any parameters where the Value states `Created during execution`.
 :::
 
 
 ![Largest Queries analysis task in the SQL Script Editor](/images/accessanalyzer/12.0/solutions/activedirectory/activity/ldapsqlscripteditor.webp)
 
 **Step 3 –** In the parameters section at the bottom of the editor, find the Value column. There are
-two integer variables that can be modified. Double-click on the current **value** and change as
+two integer variables that can be modified. Double-click the current **value** and change as
 desired:
 
 - @objects_returned – Controls the minimum number of objects returned for the queries to be

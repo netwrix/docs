@@ -21,6 +21,6 @@ The License Info section displays the following:
 - Type – Type of license
 - Expires – Expiration date
 
-The License section provides a method for importing a new license, which is not applicable to the
+The License section provides a method for importing a new license, which isn't applicable to the
 Netwrix Threat Manager Reporting Module application. The application comes with a Report Only
-license that does not expire.
+license that doesn't expire.

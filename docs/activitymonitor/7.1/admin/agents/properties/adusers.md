@@ -19,12 +19,12 @@ The configurable options are:
   milliseconds. If a query fails to complete in the specified interval then the product reports an
   empty username or a previous result from the cache. The product continues to wait for a response
   in the background so that further events can use the resolution result.
-- Cache TTL for successful results –Specify the caching interval (time-to-live) for successful AD
-  responses.The default is 10 hours. When an AD query returns a valid username or SID, the response
-  is cached for the specified time. It is recommended to use large TTL values as the user
-  information does not often change.
+- Cache TTL for successful results – Specify the caching interval (time-to-live) for successful AD
+  responses. The default is 10 hours. When an AD query returns a valid username or SID, the response
+  is cached for the specified time. Use large TTL values, as the user
+  information doesn't often change.
 - Cache TTL for failed results – Specify the caching interval (time-to-live) for failed AD
-  responses. The default is 1 minute. When an AD query cannot resolve a SID or username, the failed
+  responses. The default is 1 minute. When an AD query can't resolve a SID or username, the failed
   result is cached for the specified time. Caching of failed responses helps to reduce the load on
   domain controllers and improve performance of event processing. Short TTL values are recommended
   to make the product report accurate user information.

@@ -14,8 +14,8 @@ and click **Begin Review**. The Resource Review page opens to the 1 Make Changes
 
 ![Sensitive Data Resource Review Make changes page](/images/accessinformationcenter/12.0/resourcereviews/review/reviewpagesensitivedata.webp)
 
-The table displays files where potentially sensitive data has been found on the resource being
-reviewed:
+The table displays files where the system detected potentially sensitive data on the resource
+being reviewed:
 
 - File Name – Name of file with extension
 - Size – Size of the file
@@ -28,9 +28,9 @@ reviewed:
 **Step 2 –** For each file listed, make a recommendation by clicking on the icon in either the Keep,
 Remove, or Not Sensitive column. Your selection is indicated by a yellow checkmark.
 
-- Keep – Recommend no action should be taken
-- Remove – Recommend that the file should be removed from the resource
-- Not Sensitive – Recommend that the file does not contain sensitive data for the designated
+- Keep – Recommend no action
+- Remove – Recommend removing the file from the resource
+- Not Sensitive – Recommend that the file doesn't contain sensitive data for the designated
   criteria
 
 :::tip

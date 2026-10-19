@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **Exchange** > **4. Mailboxes** > *
 **EX_MailboxLogons** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -45,7 +45,7 @@ The following analysis task deletes table data from data collection and analysis
 task should remain cleared unless specifically needed:
 
 :::warning
-Do not select the **00. Delete All Historical Data** option. This analysis task is for
+Don't select the **00. Delete All Historical Data** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database.
 :::
 

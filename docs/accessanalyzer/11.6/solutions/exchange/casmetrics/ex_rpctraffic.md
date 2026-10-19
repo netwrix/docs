@@ -19,7 +19,7 @@ View the analysis tasks by navigating to the **Exchange** > **2. CAS Metrics** >
 Anywhere** > **EX_RPCTraffic** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -43,11 +43,11 @@ The following analysis tasks are selected by default:
       [Exchange History Retention](/docs/accessanalyzer/11.6/solutions/exchange/hubmetrics/collection/ex_metricscollection.md#exchange-history-retention)
       topic for additional information
 
-The following analysis tasks deletes table data from data collection and analysis jobs. These
+The following analysis tasks delete table data from data collection and analysis jobs. These
 analysis tasks should remain cleared unless specifically needed:
 
 :::warning
-Do not select the **00. Delete all History** option. This analysis task is for
+Don't select the **00. Delete all History** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database.
 :::
 
@@ -63,5 +63,5 @@ the following pre-configured reports:
 
 | Report                                                                 | Description                                              | Default Tags | Report Elements                                                                                                                                                                                              |
 | ---------------------------------------------------------------------- | -------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Top Servers by Average Load ( Top Servers by Average Daily User Count) | This report shows servers with the highest average load. | None         | This report is comprised of two elements: <ul><li>Stacked Bar Chart – Displays top servers by average daily user count</li><li>Table – Provides details on top servers by average daily user count</li></ul> |
+| Top Servers by Average Load (Top Servers by Average Daily User Count) | This report shows servers with the highest average load. | None         | This report is comprised of two elements: <ul><li>Stacked Bar Chart – Displays top servers by average daily user count</li><li>Table – Provides details on top servers by average daily user count</li></ul> |
 | Top Users (Outlook Anywhere Traffic)                                   | This report identifies top users of Outlook Anywhere.    | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays top users</li><li>Table – Provides details on top users</li></ul>                                                                     |

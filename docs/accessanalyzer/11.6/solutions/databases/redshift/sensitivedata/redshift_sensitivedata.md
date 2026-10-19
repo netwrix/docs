@@ -15,7 +15,7 @@ Navigate to the **Jobs** > **Databases** > **Redshift** >  **Sensitive Data** >
 **Redshift_SensitiveData** > **Configure** node and select **Analysis** to view the Analysis Tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

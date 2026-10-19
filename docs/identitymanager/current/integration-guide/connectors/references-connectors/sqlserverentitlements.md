@@ -1,7 +1,7 @@
 ---
 title: "Sql Server Entitlements"
 description: "Sql Server Entitlements"
-sidebar_position: 310
+sidebar_position: 320
 ---
 
 # Sql Server Entitlements

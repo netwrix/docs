@@ -1,0 +1,12 @@
+extends: existence
+message: "Avoid the positional reference '%s'. Use 'the following' or link to a named section instead."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  # The lookaheads skip UI layout ("the options above the Filters section").
+  - '\b(?:as )?(?:shown|described|listed|mentioned|noted|explained|outlined|illustrated|detailed|displayed) (?:above|below)\b(?! (?:the|its|a|an|each)\b)'
+  - '\b(?:see|refer to) (?:above|below)\b'
+  - '\bthe (?:above|below)\b'
+  - '\b(?:steps|table|image|screenshot|example|list|section|options|settings|fields|figure|procedure|instructions) (?:above|below)\b(?! (?:the|its|a|an|each)\b)'
+  - '\b(?:above|below):'

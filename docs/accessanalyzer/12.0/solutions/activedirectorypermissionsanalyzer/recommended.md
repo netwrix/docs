@@ -8,11 +8,11 @@ sidebar_position: 10
 
 **Dependencies**
 
-The following Access Analyzer job groups need to be successfully run:
+Successfully run the following Access Analyzer job groups:
 
 - .Active Directory Inventory Job Group
 
-The following jobs need to be run prior to running the [AD_ShadowAccess Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ad_shadowaccess.md):
+Run the following jobs before running the [AD_ShadowAccess Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ad_shadowaccess.md):
 
 - .Active Directory Inventory >1-AD_Scan > ADInventory
 - Active Directory > 1.Groups > AD_SensitiveSecurityGroups
@@ -21,7 +21,7 @@ The following jobs need to be run prior to running the [AD_ShadowAccess Job](/do
 - Active Directory Permissions Analyzer > 1.Users > AD_ResetPasswordPermissions
 - Active Directory Permissions Analyzer > 2.Groups > AD_GroupMembershipPermissions
 
-The following jobs can be optionally run to enhance reporting in the
+You can optionally run the following jobs to enhance reporting in the
 [AD_ShadowAccess Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ad_shadowaccess.md):
 
 - Active Directory > 2.Users > AD_WeakPasswords
@@ -51,7 +51,7 @@ This job group can be scheduled to run as desired.
 
 **Workflow**
 
-**Step 1 –** Prerequisite: Successful execution of the .Active Directory Inventory Job Group.
+**Step 1 –** Prerequisite: Successfully run the .Active Directory Inventory Job Group.
 
 **Step 2 –** Schedule the Active Directory Permissions Analyzer Job Group to run as desired.
 

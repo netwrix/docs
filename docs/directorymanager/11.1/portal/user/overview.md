@@ -26,7 +26,7 @@ With Directory Manager, you can:
 - Link identical users in different directory services, such as Active Directory and Microsoft Entra
   ID. See the [Linked Accounts](/docs/directorymanager/11.1/portal/user/linkedaccounts.md) topic.
 
-The table below displays the major functions that users can perform in Directory Manager portal.
+The following table displays the major functions that users can perform in Directory Manager portal.
 
 | Functions                     | Description                                                                                                                                                                        |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -39,10 +39,10 @@ The table below displays the major functions that users can perform in Directory
 | Reset Password                | Reset your forgotten or lost passwords. Unenrolled users can reset passwords if Second Way Authentication is enabled.                                                              |
 | Unlock Account                | Unlock your accounts yourself without contacting the Administrator.                                                                                                                |
 | Change Password               | Change your password according to the Password Policy set by the administrator.                                                                                                    |
-| Validate Your Profile         | Validate your profile after a particular time in order to ensure the user information in the directory.                                                                            |
+| Validate Your Profile         | Validate your profile after a particular time to ensure the user information in the directory.                                                                            |
 | User Account Settings         | Modify your profile information. Administrators can manage the user information, enable/disable the user, or expire a user.                                                        |
 
 :::note
-The contact object type is not supported in a Microsoft Entra ID based identity store.
+The contact object type isn't supported in a Microsoft Entra ID based identity store.
 
 :::

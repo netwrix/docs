@@ -76,7 +76,6 @@ tokens:
   - '\bpain points?\b'
 
   # Tech marketing buzzwords
-  - '\bgame.changer\b'
   - '\bsilver bullet\b'
   - '\bmagic bullet\b'
   - '\bone.stop.shop\b'

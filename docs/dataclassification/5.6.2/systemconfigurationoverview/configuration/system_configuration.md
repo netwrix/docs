@@ -17,66 +17,59 @@ types.
 
 ## AD Domains Excluded
 
-The AD Domains Excluded list is used to disable Active Directory expansion for certain domain names.
-This is useful in a multi-Domain forest, where the Netwrix Data Classification server does not have
+Use the AD Domains Excluded list to prevent Active Directory expansion for certain domain names.
+This is useful in multi-domain forests, where the Netwrix Data Classification server doesn't have
 access to all domains within the forest.
 
 ![configaddomainsexcluded](/images/dataclassification/5.6.2/configuration/configaddomainsexcluded.webp)
 
 ## Attachments Excluded
 
-When indexing files from that potentially contain attachments (SharePoint List Items) the list of
-file locations that will be ignored is defined by the Attachments Excluded list. The definitions in
-this list may be viewed and modified via the Attachments Excluded form:
+When indexing files that potentially contain attachments (SharePoint List Items), use the Attachments Excluded list to define which file locations to ignore. View and modify these definitions in the Attachments Excluded form:
 
 ![configattachementsexcluded](/images/dataclassification/5.6.2/configuration/configattachementsexcluded.webp)
 
-Any file with a path that matches one of these patterns will be ignored. Wildcards may be used
-anywhere in the pattern definition, with:
+The system ignores any file with a path matching one of these patterns. Use wildcards anywhere in the pattern definition:
 
 - The asterisk character (\*) matching any sequence of characters
 - The question mark character (?) matching any single character
 
 ## No Index
 
-Sometimes an application may wish to remove selected documents from all search results. This may be
-implemented by specifying No Index entries.
+To remove selected documents from all search results, specify No Index entries.
 
 ![confignoindex](/images/dataclassification/5.6.2/configuration/confignoindex.webp)
 
-Any number of URLs (or Filenames) may be entered and none of these will ever appear in search
-results. Wildcards may be used anywhere in the pattern definition, with:
+Enter any number of URLs or filenames, and the system will never display them in search
+results. Use wildcards anywhere in the pattern definition:
 
 - The asterisk character (\*) matching any sequence of characters
 - The Question mark character (?) matching any single character
 
 ## Proxy Server
 
-The Proxy Server form may be used to define a proxy server to be used when crawling websites, the
-proxy server is not used for SharePoint crawling.
+Use the Proxy Server form to define a proxy server for crawling websites. The proxy server isn't used for SharePoint crawling.
 
 ![configproxyserver](/images/dataclassification/5.6.2/configuration/configproxyserver.webp)
 
-Set Bypass Local to Yes to bypass the proxy server for local addresses (localhost etc).
+Set **Bypass Local** to **Yes** to bypass the proxy server for local addresses (such as localhost).
 
-Any other exclusions that should not go through the proxy server should be defined in the Exceptions
-list.
+Define any other exclusions in the **Exceptions** list — URLs that shouldn't go through the proxy server.
 
 ## Suspend Services (Scheduler)
 
 All Netwrix Data Classification services run as Windows services. They are responsible for building
 the search index and classifying documents against the registered taxonomies.
 
-It can be useful to suspend these services from running so that they do not impact query performance
-during the peak hours of the working day. Sometimes it may be useful to suspend these services for
-some lower priority sources but have them continue to process higher priority sources.
+Suspending services prevents them from impacting query performance
+during peak hours. You can suspend services for lower-priority sources while allowing them to continue processing higher-priority sources.
 
 ![configsuspendservices](/images/dataclassification/5.6.2/configuration/configsuspendservices.webp)
 
-Service suspensions can be configured in the following ways:
+Configure service suspensions by specifying:
 
 - Source—Which source types the suspension is in place for: all source types, specific source types
   (SharePoint, Web etc) or specifically against Re-Indexing operations.
-- Service—Which services are affected by the suspension: All Services, or, a choice of: NDC
+- Service—Which services are affected by the suspension: **All Services** or a choice of: **NDC**
   Collector, NDC Indexer, NDC Classifier.
 - Day/Times—Allows the configuration of which days and times the suspension will be in place.

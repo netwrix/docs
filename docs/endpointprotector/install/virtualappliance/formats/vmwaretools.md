@@ -6,20 +6,16 @@ sidebar_position: 10
 
 # VMware
 
-VMware Tools support a variety of formats such as OVF, OVA, and VMX for deploying the Endpoint
-Protector Virtual Appliance. This section provides the necessary guidance to implement the solution
+VMware Tools support multiple formats for deploying the Endpoint Protector Virtual Appliance: Open Virtualization Format (OVF), OVA, and Virtual Machine Exchange (VMX). This section provides the necessary guidance to implement the solution
 using different virtualization tools available within the VMware suite.
 
 ## Implement Using OVF Format
 
-Leverage the OVF format to efficiently deploy your Endpoint Protector Virtual Appliance across
-supported platforms.
+Deploy your Endpoint Protector Virtual Appliance across supported platforms using the OVF format.
 
 ### VMware vSphere
 
-VMware vSphere allows you to deploy virtual appliances efficiently using the OVF format.
-
-Follow the steps to set up your virtual machine.
+Deploy virtual appliances efficiently using the OVF format with VMware vSphere.
 
 **Step 1 –** Unzip the downloaded package.
 
@@ -61,10 +57,7 @@ Follow the steps to set up your virtual machine.
 
 ### VMware Workstation
 
-VMware Workstation provides strong virtualization capabilities for deploying Endpoint Protector
-using the OVF format.
-
-Follow the steps to get started with setting up your appliance.
+Deploy Endpoint Protector using the OVF format with VMware Workstation, which provides strong virtualization capabilities.
 
 **Step 1 –** Extract the downloaded Endpoint Protector Virtual Appliance package and move the ﬁles
 to the path where your virtual machines are stored.
@@ -90,7 +83,7 @@ The Virtual Machine is started and ready for use.
 
 ## Implement Using VMX Format
 
-Utilize the VMX format to integrate existing virtual machines into your VMware environment.
+use the VMX format to integrate existing virtual machines into your VMware environment.
 
 ### VMware Server
 
@@ -117,8 +110,8 @@ At this point, the Virtual Machine is ready to be started.
 
 ### VMware Player
 
-VMware Player supports legacy VMX formats, enabling straightforward virtual machine setup. Follow
-the steps below to get started on integrating your appliance.
+VMware Player supports legacy VMX formats for virtual machine setup. Follow
+the steps below to integrate your appliance.
 
 **Step 1 –** Extract the downloaded Endpoint Protector Virtual Appliance package and move the ﬁles
 to the path where your virtual machines are stored.
@@ -144,11 +137,11 @@ the only Endpoint Protector Virtual Appliance in your network).
 At this point, the Virtual Machine is ready to be started.
 
 :::warning
-Do not suspend the VMware Player while Endpoint Protector Virtual Appliance is running.
+Don't suspend the VMware Player while Endpoint Protector Virtual Appliance is running.
 :::
 
 
 :::warning
-Do not shut down your computer while VMware Player is running.
+Don't shut down your computer while VMware Player is running.
 
 :::

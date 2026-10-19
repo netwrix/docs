@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # MongoDB_Configuration Job
 
-The MongoDB_Configuration job is designed to collect MongoDB server instance and database
+The MongoDB_Configuration job collects MongoDB server instance and database
 configuration settings for use in the following analysis jobs and respective reports.
 
 ## Queries for the MongoDB_Configuration Job
@@ -14,7 +14,7 @@ configuration settings for use in the following analysis jobs and respective rep
 The MongoDB_Configuration Job uses the NoSQL Data Collector for queries.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 

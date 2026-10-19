@@ -6,13 +6,13 @@ sidebar_position: 30
 
 # 0-FS_Nasuni Job
 
-The 0-FS_Nasuni job is required in order to target Nasuni Edge Appliances. The job can be added from
+The 0-FS_Nasuni job is required to target Nasuni Edge Appliances. The job can be added from
 the Access Analyzer Instant Job Library. See the
 [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic to add this instant job to
 the 0.Collection job group.
 
 :::warning
-It is necessary to rename the job after it has been added to the 0.Collection job group
+Rename the job after it has been added to the 0.Collection job group
 from **FS_Nasuni** to **0-FS_Nasuni**, so that it runs immediately after the 0-Create Schema job.
 :::
 
@@ -32,7 +32,7 @@ The queries for the 0-FS_Nasuni job use the PowerShell Data collector to gather 
 volume data, and share data from the Nasuni environment.
 
 :::warning
-Do not modify the queries. The queries are preconfigured for this job.
+Don't modify the queries. The queries are preconfigured for this job.
 :::
 
 

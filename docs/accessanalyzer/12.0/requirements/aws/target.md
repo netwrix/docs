@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Target Amazon Web Service Requirements, Permissions, and Ports
 
-The Access Analyzer for AWS Solution provides the ability to audit Amazon Web Services (AWS) to
+The Access Analyzer for AWS Solution lets you audit Amazon Web Services (AWS) to
 collect IAM users, groups, roles, and policies, as well as S3 permissions, content, and sensitive
 data from target AWS accounts. It scans:
 

@@ -21,7 +21,7 @@ columns:
 - Description – Description of the exception type
 - Count – Number of this type of exception found on the farm/instance
 
-There is one table at the bottom displaying Details for the selected exception:
+One table displays Details for the selected exception:
 
 - Trustee Name – Owner of the trustee account
 - Path – Location of the resource where the exception exists

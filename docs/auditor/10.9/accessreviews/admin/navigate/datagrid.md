@@ -10,7 +10,7 @@ The data grids within various tables have several features to improve your exper
 
 ## Search & Filter
 
-There is a Search box above a table's header row that can be used to filter the table data.
+Use the Search box above a table's header row to filter the table data.
 
 ![Search box above a table header row](/images/accessinformationcenter/12.0/general/tablesearch.webp)
 
@@ -18,8 +18,7 @@ Begin typing in the Search box. The filter acts as a wildcard, filtering the tab
 
 ## Column Filters
 
-There is a filter icon to the right of each column name that can be used to apply a column specific
-filter. You can apply filters to multiple columns simultaneously.
+Use the filter icon to the right of each column name to apply a column-specific filter. You can apply filters to multiple columns simultaneously.
 
 ![tablecolumnfilter](/images/accessinformationcenter/12.0/general/tablecolumnfilter.webp)
 
@@ -36,25 +35,25 @@ filter, click the filter icon and click **Clear**.
 
 ## Resize Columns
 
-Table column widths can be resized to change the width.
+You can resize table column widths.
 
 ![Table header showing column line to be used to resize the column](/images/accessinformationcenter/12.0/general/tableresize.webp)
 
-Simply select the edges of the column headers and drag to the desired width.
+Select the edges of the column headers and drag to the width you want.
 
 ## Sort
 
-Data within a table can be sorted alphanumerically for a column.
+You can sort data within a table alphanumerically by column.
 
 ![Table column header showing arrow indicating ascending sort](/images/accessinformationcenter/12.0/general/tablesort.webp)
 
-Click on any column header. An arrow will appear next to the column name indicating the sort to be
+Click any column header. An arrow will appear next to the column name indicating the sort to be
 ascending or descending order.
 
 ## Columns Selector
 
-Columns can be hidden or unhidden. Available columns for a table are listed in the column selector
-menu that appears when you right-click on a column header.
+You can hide or unhide columns. Available columns for a table are listed in the column selector
+menu that appears when you right-click a column header.
 
 ![Column selector menu showing a hidden column](/images/accessinformationcenter/12.0/general/tablecolumns.webp)
 
@@ -63,8 +62,8 @@ Unchecked columns are hidden.
 
 ## Exports
 
-There are two export buttons above a table's header row that can be used to export the data
-currently displayed within the table.
+Use the two export buttons above a table's header row to export the data
+displayed within the table.
 
 ![Export buttons at the top of a table](/images/accessinformationcenter/12.0/general/tableexports.webp)
 

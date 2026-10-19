@@ -9,8 +9,8 @@ sidebar_position: 20
 Access Analyzer for Azure SQL relies on the native Azure SQL auditing capabilities to collect and
 report on user activity, as well as successful or unsuccessful server or database logon activity.
 Azure SQL Auditing supports three different audit log destinations. At present Access Analyzer only
-supports storage as the audit log destination. This document describes the necessary permissions
-required to configure the Access Analyzer Azure SQL Job Group.
+supports storage as the audit log destination. This document describes the permissions required to
+configure the Access Analyzer Azure SQL Job Group.
 
 With Access Analyzer for Azure SQL, you can create custom roles for differential access to Access Analyzer.
 
@@ -22,8 +22,8 @@ Access Analyzer for Azure SQL creates roles specifically to target Azure SQL Dat
 
 The scope of a particular role largely defines that role. A scope-defined role has
 access to, or is limited to all resources in a Management Group, Subscription, Resource Group or
-Resource. For example, if all SQL databases reside within a resource group, then the scope can be
-restricted to that resource group. If databases reside in different resource groups, then the scope
+Resource. For example, if all SQL databases reside within a resource group, you can restrict the
+scope to that resource group. If databases reside in different resource groups, then the scope
 for the custom role should be at the subscription level.
 
 This enables Access Analyzer to discover all SQL databases in the subscription.
@@ -114,8 +114,8 @@ following example) and save it to a local directory.
 it. Selecting that file enables the Review + Create button.
 
 Click **Review + Create** to create the role or click **Next** to review and edit the permissions.
-When you open the JSON file, the Custom Role Name and Description boxes are populated
-automatically. You can customize the name and description of the custom role in this step.
+Opening the JSON file automatically populates the Custom Role Name and Description boxes.
+You can customize the name and description of the custom role in this step.
 
 ![Azure SQL Configuration - Create a Cusotm Role window](/images/accessanalyzer/12.0/requirements/target/config/azuresqlperm_customrolecreation_4.webp)
 

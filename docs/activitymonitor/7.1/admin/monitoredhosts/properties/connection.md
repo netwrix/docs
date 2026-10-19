@@ -10,7 +10,7 @@ Once a host is added to the monitored hosts table, the configuration settings ar
 tabs in the host’s Properties window. The Connection tab on a host’s Properties window is specific
 to Microsoft Entra ID (formerly Azure AD), Exchange Online, and SharePoint Online hosts.
 
-![Conneciton Tab](/images/activitymonitor/7.1/admin/monitoredhosts/properties/azure.webp)
+![Connection Tab](/images/activitymonitor/7.1/admin/monitoredhosts/properties/azure.webp)
 
 Configure App Registration information for a Microsoft Entra ID host in the Connection Tab of the
 host's Properties window. Click **Open instructions...** for steps on registering the

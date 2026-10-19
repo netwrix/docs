@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Notification: SMTP
 
-The SMTP properties page is available when the Email notification type is selected on the Type page.
+The SMTP properties page is available when you select the Email notification type on the Type page.
 Use this page to specify SMTP notification properties, including recipients, subject line, and email
 body.
 
@@ -24,13 +24,13 @@ The following options are available:
 - Subject – Specify a subject for the email. The subject can include field variables.
 
     :::info
-    If configuring a Notification analysis module for a pre-configured job, it is
-    recommended not to change the existing field variables.
+    If you're configuring a Notification analysis module for a pre-configured job, avoid
+    changing the existing field variables.
     :::
 
 
 - Insert Field – Select a source data column to add to the message body or subject line. Click the
-  drop-down to see a list of columns. Once the column displays in the field, click an arrow to
+  dropdown to see a list of columns. After the column displays in the field, click an arrow to
   insert the field.
 
     - Down arrow – Adds the selected source column to the message text
@@ -39,9 +39,9 @@ The following options are available:
 - Embed HTML Report – Embed a HTML report in the notification email. Click the Embed HTML Report
   button to navigate to the HTML file.
 - Show sample input source data – Opens the Sample Source Data window, containing sample input
-  source data as it currently exists in the database
-- Show dialog to set SMTP options – Opens the SMTP Options window, where SMTP global settings can be
-  overwritten through manual configuration
+ source data as it exists in the database
+- Show dialog to set SMTP options – Opens the SMTP Options window, where you can manually overwrite
+  SMTP global settings
 - Preview – Displays a preview of the email.
 
     :::note
@@ -49,9 +49,9 @@ The following options are available:
     :::
 
 
-- Clear Template – Clears all data from the subject and message boxes. Does not clear e-mail
+- Clear Template – Clears all data from the subject and message boxes. Doesn't clear e-mail
   addresses.
 - Text Box – Specify the text of the email message. The toolbar above the text box contains various
   icons providing access to text editing and formatting tools. To insert fields from Enterprise
-  Auditor, choose a field from the drop-down menu and click the Down arrow. Block tag formatting is
+  Auditor, choose a field from the dropdown menu and click the Down arrow. Block tag formatting is
   supported.

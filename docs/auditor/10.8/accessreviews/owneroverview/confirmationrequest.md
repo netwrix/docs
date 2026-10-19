@@ -33,7 +33,7 @@ message after authentication:
 
 ![Ownership declined browser message](/images/auditor/10.7/access/reviews/resourceowners/email/confirmemaildecline.webp)
 
-"Before we update ownership can you suggest another owner?" Enter possible owners in the textbox.
+"Before updating ownership, can you suggest another owner?" Enter possible owners in the textbox.
 Click **Submit** to complete the process.
 
 ![Ownership declined browser message after an alternative owner is submitted](/images/auditor/10.7/access/reviews/resourceowners/email/confirmemaildecline2.webp)

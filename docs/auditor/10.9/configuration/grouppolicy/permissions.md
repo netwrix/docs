@@ -7,7 +7,7 @@ sidebar_position: 30
 # Permissions for Group Policy Auditing
 
 Before you start creating a monitoring plan to audit the group policy in the domain, plan for the
-account that will be used for data collection – it should meet the requirements listed in this topic. Then
+account you'll use for data collection – it should meet the requirements listed in this topic. Then
 you will provide this account in the monitoring plan wizard (or in the monitored item settings).
 
 You can use group Managed Service Accounts (gMSA) as data collecting accounts.
@@ -33,8 +33,8 @@ The account used for data collection must meet the following requirements:
 
 - Member of the **Domain Admins** group on the target server.
 
-    **NOTE:** This covers all the required permissions above and is a mandatory setting if you want
-    to use network traffic compression for data collection.
+    **NOTE:** Domain Admins membership covers all the permissions described in this section and is a
+    mandatory setting if you want to use network traffic compression for data collection.
 
 If you use a group Managed Service Account (gMSA) for data collection, the account must also be a
 member of the local Administrators group on the target server. See the
@@ -54,20 +54,18 @@ The following is required if auto-backup is _enabled_ for the domain controller 
 
 ## Assign Permission to Read the Registry Key
 
-This permission is required only if the account selected for data collection is not a member of the
+This permission is required only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
-This permission should be assigned on each domain controller in the audited domain, so if your
-domain contains multiple domain controllers, it is recommended to assign permissions through Group
-Policy, or automatically using
+Assign this permission on each domain controller in the audited domain. If your domain contains
+multiple domain controllers, Netwrix recommends assigning permissions through Group Policy, or
+automatically using
 [Audit Configuration Assistant](/docs/auditor/10.9/tools/auditconfigurationassistant.md).
 
 To assign permissions manually, use the Registry Editor snap-in or the Group Policy Management
 console.
 
-Assign Permission Via the Registry Editor Snap-in
-
-Follow the steps to assign permission via the Registry Editor snap-in:
+### Assign Permission via the Registry Editor Snap-in
 
 **Step 1 –** On your target server, open Registry Editor: navigate to **Start > Run** and type
 _"regedit"_.
@@ -84,11 +82,7 @@ Set\Services\EventLog\Security_.
 **Step 6 –** For auditing Logon Activity, you also need to assign the Read permission to the
 _HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv_ registry key.
 
-To assign permission using the Group Policy Management console
-
-Assign Permission Using the Group Policy Management Console
-
-Follow the steps to assign permission using the Group Policy Management console:
+### Assign Permission Using the Group Policy Management Console
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools
@@ -113,7 +107,7 @@ press Enter.
 **Step 8 –** In the pop-up window, select Propagate inheritable permissions to all subkeys and click
 OK.
 
-**Step 9 –** Repeat the steps 4-8 for keys below:
+**Step 9 –** Repeat steps 4-8 for the following keys:
 
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg`;
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security`.
@@ -121,7 +115,7 @@ OK.
 **Step 10 –** Close Group Policy Management console.
 
 **Step 11 –** Navigate to Start > Run and type "_cmd_". Input the `gpupdate /force` command and
-press Enter. The group policy will be updated.
+press Enter to update the group policy.
 
 **Step 12 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
 domain controllers.
@@ -133,13 +127,13 @@ domain controllers.
 Starting with version 10.7, you can use Netwrix Privilege Secure to manage the account for
 collecting data, after configuring the integration. See the
 [Netwrix Privilege Secure](/docs/auditor/10.9/admin/settings/privilegesecure.md) topic for additional information
-about integration and supported data sources. In this case, the credentials will not be stored by
-Netwrix Auditor. Instead, they will be managed by Netwrix Privilege Secure and provided on demand,
-ensuring password rotation or using temporary accounts for data collection.
+about integration and supported data sources. In this case, Netwrix Auditor doesn't store the
+credentials. Instead, Netwrix Privilege Secure manages them and provides them on demand, ensuring
+password rotation or using temporary accounts for data collection.
 
-Follow the steps to use Netwrix Privilege Secure as an account for data collection.
+### Use Netwrix Privilege Secure as an Account for Data Collection
 
-**Step 1 –** Select the desired item.
+**Step 1 –** Select the item you want to configure.
 
 **Step 2 –** In the item configuration menu, select Netwrix Privilege Secure as an option for data
 collection.
@@ -147,9 +141,8 @@ collection.
 ![npsdatacollectingaccount](/images/auditor/10.9/configuration/grouppolicy/npsdatacollectingaccount.webp)
 
 **Step 3 –** Select the type of the Access Policy you want to use in Netwrix Privilege Secure.
-Credential-based is the default option. Refer to the
-[Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
-documentation to learn more about Access Policies.
+Credential-based is the default option. For details about Access Policies, see the
+[Netwrix Privilege Secure documentation](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement).
 
 In this case, you need to provide the username of the account managed by Netwrix Privilege Secure,
 and to which Netwrix Auditor has the access through a Credential-based access policy.
@@ -160,7 +153,7 @@ sources.
 ![npsdatacollectingaccountresourced](/images/auditor/10.9/configuration/grouppolicy/npsdatacollectingaccountresourced.webp)
 
 The second option is Resource-based. To use this option, you need to provide the Activity and
-Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Make sure
+Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Ensure
 that you specified the same names as in Netwrix Privilege Secure.
 
 The Resource name in this case is where the activity will be performed. For example, if you grant

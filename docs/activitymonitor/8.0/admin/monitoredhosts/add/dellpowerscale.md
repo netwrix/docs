@@ -169,7 +169,7 @@ Click **Next**.
 
 ![File Output Page](/images/activitymonitor/8.0/admin/monitoredhosts/add/fileoutputpage.webp)
 
-**Step 9 –** If **Log File)** is selected on the **Where To Log The Activity** page, the **File
+**Step 9 –** If **Log File** is selected on the **Where To Log The Activity** page, the **File
 Output** page can be configured.
 
 - Specify output file path – Specify the file path where log files are saved. Click the ellipses
@@ -228,9 +228,9 @@ Output page can be configured.
       template for Threat Manager. See the
       [Netwrix Threat Manager Documentation](https://helpcenter.netwrix.com/category/stealthdefend)
       for additional information.
-    - Custom templates can be created. Select the template you want or create a new template by
-      modifying an existing template within the Syslog Message Template window. The new message
-      template will be named Custom.
+    - You can create custom templates. Select the template you want or create a new template by
+      modifying an existing template within the Syslog Message Template window. Activity Monitor names the new message
+      template Custom.
 - Add C:\ to the beginning of the reported file paths – Adds ‘C:\” to file paths to be displayed
   like a Windows file path:
     - Display example if checked – C:\Folder\file.txt

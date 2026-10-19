@@ -27,7 +27,7 @@ the application in their default browser. Alternatively, the localhost URL can b
 
 **Enterprise Auditor Web Console**
 
-On the server hosting Netwrix Enterprise Auditor, the Published Reports icon can be used to launch
+On the server hosting Netwrix Enterprise Auditor, use the Published Reports icon to launch
 the Web Console. This provides access to both Netwrix Enterprise Auditor published reports and the
 Access Information Center in a browser with a default port of 8082, which can also be customized.
 Alternatively, the URL can be used:
@@ -41,7 +41,7 @@ Alternatively, the URL can be used:
 
 **Remote Access**
 
-Since the Access Information Center is a browser-based application, it is possible to access the web
+Since the Access Information Center is a browser-based application, you can access the web
 interface remotely. It is up to the Administrator to provide users with the correct URL for access.
 
 Depending on your network environment, you may need to use the NetBIOS name, FQDN, or IP Address of
@@ -82,7 +82,7 @@ top and the browser tab is named Netwrix Enterprise Auditor. In order for a user
 Console, the user’s account must have the User Principal Name (UPN) attribute populated within
 Active Directory. Logging in here will take all users to the Enterprise Auditor Reports home page.
 
-Follow the steps to open the Access Information Center.
+To open the Access Information Center:
 
 ![Menu icon on Web Console home page](/images/accessinformationcenter/11.6/admin/accessfromwebconsole.webp)
 

@@ -11,7 +11,7 @@ environment, as described in this section.
 
 ## System requirements
 
-Make sure that the machine where you plan install the solution meets the system requirements listed
+Ensure that the machine where you plan install the solution meets the system requirements listed
 below.
 
 **Hardware:**
@@ -73,7 +73,7 @@ lockout reason detection:
 
 ### Inbound firewall rules
 
-Make sure the following **Inbound** firewall rules are enabled on the Domain Controllers and domain
+Ensure the following **Inbound** firewall rules are enabled on the Domain Controllers and domain
 computers:
 
 - File and Printer Sharing (Echo Request - ICMPv4-In)

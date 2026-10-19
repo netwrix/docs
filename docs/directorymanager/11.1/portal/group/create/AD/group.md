@@ -18,7 +18,7 @@ new group will be created after it is verified by an approver. See the
 
 ## Create a Static Group
 
-Follow the steps to create a static group.
+To create a static group.
 
 1. In the Directory Manager portal, click the **Create New** button in the left pane and select
    **Group**.
@@ -42,10 +42,10 @@ A Smart Group is one that dynamically maintains its membership based on the rule
 user-defined query, such as an LDAP query.
 
 Rather than specifying static user memberships, you can use a query (for example, "All full-time
-employees in my company") to dynamically build membership in a Smart Group. Managing memberships
+employees in the company") to dynamically build membership in a Smart Group. Managing memberships
 with queries significantly reduces administrative costs.
 
-Follow the steps to create a Smart Group:
+To create a Smart Group:
 
 1. In the Directory Manager portal, click the **Create New** button in the left pane and select
    **Group**.
@@ -63,7 +63,7 @@ Follow the steps to create a Smart Group:
 5. On the [Owners page](/docs/directorymanager/11.1/portal/group/create/AD/owners.md), specify primary and additional owners for the group.
 
     When a Smart Group Update job runs on a group, the notification behavior is as follows:  
-     Even when the **Do not Notify** check box is selected, the additional owner will receive the
+     Even when the **Don't Notify** checkbox is selected, the additional owner will receive the
     notifications if the administrator has included its email address for job-specific
     notifications.
 
@@ -73,15 +73,15 @@ Follow the steps to create a Smart Group:
 ## Create a Password Expiry Group
 
 A password expiry group is a Smart Group whose membership contains users whose identity store
-account passwords are approaching their expiry dates. Members of this group are notified by email to
+account passwords are approaching their expiry dates. Members of this group aren'tified by email to
 reset their passwords. When they do so, they are automatically removed from the group membership.
 
 :::note
-Password Expiry group is not supported in Microsoft Entra ID.
+Password Expiry group isn't supported in Microsoft Entra ID.
 :::
 
 
-Follow the steps to create a Password Expiry Group:
+To create a Password Expiry Group:
 
 1. In the Directory Manager portal, click the **Create New** button in the left pane and select
    **Group**.
@@ -99,7 +99,7 @@ Follow the steps to create a Password Expiry Group:
 5. On the [Owners page](/docs/directorymanager/11.1/portal/group/create/AD/owners.md), specify primary and additional owners for the group.
 
     When a Smart Group Update job runs on a group, the notification behavior is as follows:  
-     Even when the **Do not Notify** check box is selected, the additional owner will receive the
+     Even when the **Don't Notify** checkbox is selected, the additional owner will receive the
     notifications if the administrator has included its email address for job-specific
     notifications.
 

@@ -9,7 +9,7 @@ sidebar_position: 10
 When a search has been started, the Search Status table at the bottom displays the percentage
 complete according to the size and quantity of the activity log files being searched per activity
 agent. You can [Filter](/docs/activitymonitor/8.0/admin/search/overview.md#filter) and [Sort](/docs/activitymonitor/8.0/admin/search/overview.md#sort) the results using the
-column headers. Below the Search button is the [Export](/docs/activitymonitor/8.0/admin/search/overview.md#export) option.
+column headers. You can also [Export](/docs/activitymonitor/8.0/admin/search/overview.md#export) the search results.
 
 ![File Search Results UI](/images/activitymonitor/8.0/admin/search/results/filesearchresults.webp)
 
@@ -33,7 +33,7 @@ The results data grid columns display the following information for each event:
   remote user
 - Source – Indicates the source of the activity event
 
-    - For local Windows activity – Process name (e.g. notepad.exe)
+    - For local Windows activity – Process name (e.g., notepad.exe)
     - For network Windows activity – IP Address of the user
     - For NAS device activity – IP Address for the NAS device of the user
 

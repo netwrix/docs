@@ -43,7 +43,7 @@ Available options vary depending on Category selected.
 - Applet Logging
 
     - Enable Logging – Enables the applet to log
-    - Applet log level – Select the desired log level using the dropdown list:
+    - Applet log level – Select the log level using the dropdown list:
 
         - None
         - Debug

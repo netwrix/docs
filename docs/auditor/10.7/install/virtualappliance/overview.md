@@ -6,8 +6,7 @@ sidebar_position: 70
 
 # Virtual Deployment Overview
 
-In addition to on-premises deployment, Netwrix Auditor offers the deployment option that can speed
-time-to-value by getting you up and running in less than 15 minutes.
+In addition to on-premises deployment, Netwrix Auditor offers a deployment option that gets you operational in less than 15 minutes.
 
 Virtual appliance — If you run a Microsoft Hyper-V or VMware vSphere, you can deploy Auditor as a
 virtual appliance. Virtual appliance is a VM image file with installed Netwrix Auditor. The image is
@@ -62,7 +61,7 @@ The virtual appliance also contains Access Information Center for Auditor versio
     [Microsoft Licensing Activation Centers worldwide telephone numbers](https://www.microsoft.com/en-us/licensing/existing-customer/activation-centers)
     for additional information.
 
-- Microsoft SQL Server Express Edition is only recommended for evaluation, PoC or small deployments.
+- Microsoft SQL Server Express Edition is only recommended for evaluation, PoC, or small deployments.
   For production deployment planning in bigger environments, refer to requirements and
   recommendations listed in the
   [Requirements for SQL Server to Store Audit Data](/docs/auditor/10.7/requirements/sqlserver.md) section.

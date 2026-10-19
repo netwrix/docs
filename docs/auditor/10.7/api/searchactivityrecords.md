@@ -12,7 +12,7 @@ available in the Netwrix Auditor client. See the
 and [View and Search Collected Data](/docs/auditor/10.7/admin/search/overview.md) topic for detailed instruction on
 how to search and filter audit data.
 
-As the interactive search in the Netwrix Auditor client, this REST API endpoint allows you to
+As the interactive search in the Netwrix Auditor client, this REST API endpoint lets you
 retrieve Activity Records matching a certain criteria. You can create your own set of filters in the
 Search parameters file. See the [Search Parameters](/docs/auditor/10.7/api/postdata/searchparameters.md) topic for more
 information. Activity Records are retrieved according to the account's delegated scope.
@@ -69,8 +69,8 @@ Follow the steps- to retrieve all Activity Records matching search criteria.
 [Search Parameters](/docs/auditor/10.7/api/postdata/searchparameters.md) topic for more information.
 
 As an example, this request retrieves Activity Records where administrator added new objects to the
-Active Directory domain. Groups and group policies are not taken into account. Changes could only
-occur between September 16, 2016 and March 16, 2017.
+Active Directory domain. Groups and group policies aren't taken into account. Changes could only
+occur between September 16, 2016, and March 16, 2017.
 
 Ensure to pass information about transferred data, including `Content-Type:application/xml` or
 `application/json `and encoding. The syntax greatly depends on the tool you use.

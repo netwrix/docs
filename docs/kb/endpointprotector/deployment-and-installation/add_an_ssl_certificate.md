@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Add SSL Certificate
 tags:
   - deployment-and-installation
+  - kb
 title: "How to Add an SSL Certificate to Endpoint Protector"
 knowledge_article_id: kA0Qk0000002B6wKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Add an SSL Certificate to Endpoint Protector

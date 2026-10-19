@@ -12,14 +12,14 @@ Most Password Policy Enforcer (PPE) settings are policy-specific, but there are 
 
 ![General Settings PPE](/images/passwordpolicyenforcer/11.2/administration/settingsgeneral.webp)
 
-**Default policy**. Users must comply with the default password policy if you haven't assigned another policy to them. You can use PPE without a default policy, but Netwrix doesn't recommend this because it might leave some passwords unchecked. If you need to exclude some users from PPE's checking, then it's better to set a default policy and explicitly exclude some users:
+**Default policy**. Select the policy to use as the default from the dropdown. Users must comply with the default password policy if you haven't assigned another policy to them. See [Set the default policy](manage-policies/manage_policies.md#set-the-default-policy) to learn how PPE uses the default policy and how to exempt specific users from it.
 
-1. [Add a policy](manage-policies/manage_policies.md#add-a-policy) for the excluded users.
-2. Leave all the rules disabled for the new policy.
-3. [Assign the policy](manage-policies/usersgroups.md) to the users who don't have to comply with any PPE rules.
+:::warning
+If Password Policy Enforcer has only one policy, and that policy is also the default policy, then PPE enforces the policy for all users. If you want to deploy a single policy gradually, don't make it the default until the deployment is complete.
+:::
 
 :::tip
-Use the [Test Policy by User](manage-policies/testpolicy.md) feature to see which policy PPE enforces for a particular user. You can also review the [Policy Selection Flowchart](manage-policies/usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
+Use the [Test Policy by User](manage-policies/testpolicy.md) feature to see which policy PPE enforces for a particular user. You can also review the [Policy selection flowchart](manage-policies/usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
 :::
 
 **Enforce policy when password is reset**. Select this option to enforce the assigned password policy whenever someone resets a password or creates a new user account. This option doesn't change the behavior of the [Minimum Age rule](manage-policies/rules/minimum_age_rule.md), as PPE never enforces this rule during a reset. PPE only enforces the [History rule](manage-policies/rules/history_rule.md) during a reset if you select this checkbox, and also select the History Rule's **Enforce this rule when a password is reset** checkbox.

@@ -6,18 +6,18 @@ sidebar_position: 10
 
 # Job Groups
 
-Job groups are designed to manage related jobs and can contain sub-job groups to ensure that related
-jobs are executed in the correct order. To create a new job group, right-click on the desired
+Job groups manage related jobs and can contain sub-job groups to ensure related
+jobs execute in the correct order. To create a new job group, right-click the desired
 location (Jobs tree or another job group) and select **Create Group**. Then provide a unique,
 descriptive name taking into consideration the alphanumeric ordering of the Jobs tree.
 
 ![Example of Job Group Structure](/images/accessanalyzer/12.0/admin/jobs/group/jobgroupstructure.webp)
 
-Job groups are organized similar to the Jobs tree, with the Settings node at the top, followed by
-sub-job groups (job group for collection first, if applicable), then followed by analysis and
-reporting jobs. Both are sorted in alphanumeric order. This is necessary because data collection
-jobs must run prior to the analysis and reporting jobs that rely on the collected data without
-consideration to the job’s name (alphanumeric order).
+Access Analyzer organizes job groups similar to the Jobs tree, with the Settings node at the top,
+followed by sub-job groups (job group for collection first, if applicable), then followed by
+analysis and reporting jobs. It sorts both in alphanumeric order. This is necessary because data
+collection jobs must run before the analysis and reporting jobs that rely on the collected data,
+regardless of alphanumeric naming order.
 
 ## Job Group Description Page
 
@@ -43,13 +43,13 @@ Job Library, and creating a job.
 
 
 Pre-configured job group description pages provide users with shortcuts and links to many of the
-functions that can be accessed in the Jobs Tree in the Navigation Pane.
+functions available in the Jobs Tree in the Navigation Pane.
 
 ![Job Group Description page](/images/accessanalyzer/12.0/admin/jobs/group/descriptionpage.webp)
 
 The sections of the job group description page are:
 
-- Job Group Settings Shortcuts – These pages can also be accessed through the job group Settings
+- Job Group Settings Shortcuts – You can also access these pages through the job group Settings
   Nodes in the Navigation Pane. See the [Job Groups Settings Node](/docs/accessanalyzer/12.0/admin/jobs/group/settings/settings.md) topic for additional
   information.
 
@@ -61,11 +61,11 @@ The sections of the job group description page are:
 
 - Help – Opens the [Netwrix Technical Knowledge Center](https://helpcenter.netwrix.com/) in a
   browser to a relevant landing page for the job group
-- Run Now – Runs the currently selected job group
+- Run Now – Runs the selected job group
 - Schedule – Opens the Schedule page to schedule the job group
 - Open Folder – Opens the job group’s folder location with supporting files in the Windows Explorer
-- Create Group – Creates a job group within the currently selected job group
-- Create Job – Creates a job within the currently selected Job
+- Create Group – Creates a job group within the selected job group
+- Create Job – Creates a job within the selected Job
 - Add Instant Job – Add an Instant Job using the Instant Job Wizard. See the
   [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for additional information.
 
@@ -75,12 +75,12 @@ The Overview section provides summary information about the job group. This sect
 following information:
 
 - Assigned Host List – Hovering over the **Assigned Host List** button shows a tool-tip with
-  information on the hosts lists are assigned to the job group
+  information on which host lists you've assigned to the job group
 
-    - Click on the **Assigned Host List** button to go to the Job Group's Host List Assignment node.
+    - Click the **Assigned Host List** button to go to the Job Group's Host List Assignment node.
       See the [Host Lists Assignment](/docs/accessanalyzer/12.0/admin/jobs/group/settings/hostlistsassignment.md) topic for additional information.
 
-- Show Inherited Settings – Click on the **Show Inherited Settings** button to view information on
+- Show Inherited Settings – Click the **Show Inherited Settings** button to view information on
   the following:
 
     - Connection Profile
@@ -89,18 +89,18 @@ following information:
     - Reporting Settings
     - Storage Account
 
-- Contents – Shows the job groups and jobs contained within the currently selected job group
+- Contents – Shows the job groups and jobs contained within the selected job group
 
 :::note
-If applicable, the page shows special instructions for which hosts need to be targeted for
+If applicable, the page shows special instructions for which hosts you need to target for
 proper job group execution.
 :::
 
 
 ### Job Settings: Inherited and Directly Applied
 
-Job group settings can be applied directly or inherited. On the job group level, it is considered
-that all settings are applied directly.
+Job group settings can be applied directly or inherited. At the job group level, all settings apply
+directly.
 
 ![Show Inherited Settings on Job Overview page](/images/accessanalyzer/12.0/admin/jobs/group/showinheritedsettings.webp)
 

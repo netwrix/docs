@@ -16,8 +16,7 @@ download the archive of all application logs.
 
 ## Debug Logs
 
-When requested by [Netwrix Support](https://www.netwrix.com/support.html) , follow the steps to
-provide debug logs.
+When requested by [Netwrix Support](https://www.netwrix.com/support.html), provide debug logs:
 
 **Step 1 –** On the Diagnostics page, check the Enable debug logging box.
 
@@ -27,6 +26,5 @@ provide debug logs.
 
 **Step 4 –** On the Diagnostics page, click **Download Logs**.
 
-The downloaded logs have the debug logging information and can be sent to
-[Netwrix Support](https://www.netwrix.com/support.html). When your issue is resolved, do not forget
-to turn off Debug logs.
+The downloaded logs contain the debug logging information. Send them to
+[Netwrix Support](https://www.netwrix.com/support.html). When your issue is resolved, turn off Debug logs.

@@ -9,22 +9,22 @@ sidebar_position: 110
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+certain built-in Windows services, etc. Configure auditing properly to ensure audit data
+integrity; otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-The IT Infrastructure for monitoring is configured automatically. Your current audit settings will
-be checked on each data collection and adjusted if necessary.
+Netwrix Auditor configures your IT infrastructure for monitoring automatically. It checks your
+current audit settings on each data collection and adjusts them if necessary.
 
 ## Checking for Primary Key
 
 If you plan to audit an SQL Server for data changes and browse the results using '_Before_' and
-'_After_' filter values, make sure that the audited SQL database tables have a primary key (or a
-unique column). Otherwise, '_Before_' and '_After_' values will not be reported.
+'_After_' filter values, ensure that the audited SQL database tables have a primary key (or a
+unique column). Otherwise, Netwrix Auditor doesn't report '_Before_' and '_After_' values.
 
 ## SQL Server Objects
 
@@ -32,9 +32,9 @@ Review a full list of all object and data types Netwrix Auditor can collect on S
 
 Monitored Object Types
 
-The table below contains the full list of object types that Netwrix Auditor monitors on SQL Servers.
-The product reports on adding and removing of object types below (Application Roles, Database, Jobs,
-etc.) and modifying attributes of these objects (listed in the "_Attributes_" column).
+The following table contains the full list of object types that Netwrix Auditor monitors on SQL
+Servers. The product reports on adding and removing these object types (Application Roles, Database,
+Jobs, etc.) and modifying their attributes (listed in the "_Attributes_" column).
 
 As for logons, the product collects successful and failed logon attempts for Windows and SQL logons:
 

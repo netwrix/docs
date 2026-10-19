@@ -6,10 +6,10 @@ sidebar_position: 40
 
 # Work with Collected Data
 
-To leverage data collected with the add-on, you can do the following in Auditor:
+To use data collected with the add-on, you can do the following in Auditor:
 
 - Search for required data. For that, start Auditor client and navigate to **Search**. After
-  specifying the criteria you need, click **Search**. You will get a list of activity records with
+  specifying the criteria you need, click **Search**. You get a list of activity records with
   detailed information on who did what in the reported time period.
 
 You might want to apply a filter to narrow down your search results to the Netwrix API data source

@@ -11,12 +11,11 @@ large-scale deployments exceeding 5,000 endpoints. It addresses the solution sca
 administration server, etc.) and not the specific endpoints it protects or the policies and settings
 it can enforce.
 
-Endpoint Protector with its different modules - consisting of Device Control, Content Aware
-Protection, eDiscovery, and Enforced Encryption - applies its policies at the endpoint level. The
-number of endpoints, their geographical distribution, network bandwidth, etc., impacts the Endpoint
-Protector system requirements and will need to be addressed and planned for.
+Endpoint Protector's different modules—Device Control, Content Aware Protection, eDiscovery, and Enforced Encryption—apply policies at the endpoint level. The
+number of endpoints, their geographical distribution, and network bandwidth impact the Endpoint
+Protector system requirements and must be addressed during planning.
 
-Deployed as a Virtual Appliance, Endpoint Protector works out of the box for approximately 1,000
-endpoints. As a Hardware Appliance, different configurations are available, scaling up to 5,000
-endpoints from a single appliance. All out-of-the-box versions of Endpoint Protector use MySQL as a
+Deployed as a Virtual Appliance, Endpoint Protector supports approximately 1,000
+endpoints without additional configuration. As a Hardware Appliance, different configurations are available, scaling up to 5,000
+endpoints from a single appliance. All default versions of Endpoint Protector use MySQL as a
 database.

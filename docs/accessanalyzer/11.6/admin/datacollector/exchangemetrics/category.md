@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # ExchangeMetrics: Category
 
-The Category page is used to identify the type of Exchange Metrics information to retrieve.
+Use the Category page to identify the type of Exchange Metrics information to retrieve.
 
 ![Exchange Metrics Data Collector Wizard Category page](/images/accessanalyzer/11.6/admin/datacollector/exchangemetrics/category.webp)
 

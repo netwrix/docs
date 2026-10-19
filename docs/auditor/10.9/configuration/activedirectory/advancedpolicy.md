@@ -7,8 +7,8 @@ sidebar_position: 60
 # Configure Advanced Audit Policies
 
 You can configure advanced audit policies instead of basic domain policies to collect Active
-Directory changes with more granularity. Either basic or advanced audit policies must be configured
-to track changes to accounts and groups, and to identify workstations where changes were made.
+Directory changes with more granularity. You must configure either basic or advanced audit policies
+to track changes to accounts and groups and to identify workstations where changes occurred.
 
 Perform the following procedures:
 
@@ -18,8 +18,8 @@ Perform the following procedures:
 ## To configure security options
 
 Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To force
-basic audit policies to be ignored and prevent conflicts, enable the _Audit: Force audit policy
-subcategory settings_ policy.
+the system to ignore basic audit policies and prevent conflicts, enable the _Audit: Force audit
+policy subcategory settings_ policy.
 
 To do it, perform the following steps:
 
@@ -33,7 +33,7 @@ To do it, perform the following steps:
    and navigate to Policies → Windows Settings → Security Settings → Local Policies → Security
    Options.
 4. Locate the Audit: Force audit policy subcategory settings to override audit policy category
-   settings and make sure that policy setting is set to _"Enabled"_.
+   settings and ensure that policy setting is set to _"Enabled"_.
 
     ![manualconfig_ad_nla_audit_force_winserver2016](/images/1secure/configuration/ad/manualconfig_ad_nla_audit_force_winserver2016.webp)
 
@@ -58,7 +58,7 @@ To do it, perform the following steps:
     | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
     | Account Management | - Audit Computer Account Management - Audit Distribution Group Management - Audit Security Group Management - Audit User Account Management                               | _"Success"_  |
     | DS Access          | Audit Directory Service Access                                                                                                                                            | _"Success"_  |
-    | Logon/Logoff       | - Audit Logoff - Audit Logon These policies are only required to collect the information on the originating workstation, i.e., the computer from which a change was made. | _"Success"_  |
+    | Logon/Logoff       | - Audit Logoff - Audit Logon You only need these policies to collect the information on the originating workstation, i.e., the computer where a change occurred. | _"Success"_  |
 
     ![manualconfig_ad_advpol_winserver2016](/images/1secure/configuration/ad/manualconfig_ad_advpol_winserver2016.webp)
 

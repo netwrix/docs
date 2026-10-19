@@ -11,5 +11,5 @@ in addition to the group icon displayed in front of the name.
 
 ![Resource Reviews page showing the Group Membership window](/images/accessanalyzer/12.0/admin/action/activedirectory/operations/groupmembership.webp)
 
-Click the hyperlink to open the Group Membership window. The group’s direct membership is listed for
-review. Click **Close** to return to the review.
+Click the hyperlink to open the Group Membership window. The window lists the group’s direct
+membership for review. Click **Close** to return to the review.

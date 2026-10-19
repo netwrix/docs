@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Validate Setup
 
-Once the Activity Monitor agent is configured to monitor the Dell device, the automated
-configuration must be validated to ensure events are being monitored.
+After the Activity Monitor agent is configured to monitor the Dell device, validate the automated
+configuration to ensure events are being monitored.
 
 ## Validate Dell CEE Registry Key Settings
 
@@ -19,12 +19,9 @@ topic for information on manually setting the registry key.
 
 
 After the Activity Monitor activity agent has been configured to monitor the Dell device, it will
-configure the Dell CEE automatically if it is installed on the same server as the agent. This needs
-to be set manually in the rare situations where it is necessary for the Dell CEE to be installed on
-a different server than the Windows proxy server(s) where the Activity Monitor activity agent is
-deployed.
+configure the Dell CEE automatically if it is installed on the same server as the agent. In rare situations where the Dell CEE is installed on a different server than the Windows proxy servers where the Activity Monitor activity agent is deployed, you must configure it manually.
 
-If the monitoring agent is not registering events, validate that the EndPoint is accurately set.
+If the monitoring agent isn't registering events, validate that the EndPoint is accurately set.
 Open the Registry Editor (run regedit). For the synchronous real-time delivery mode (AUDIT), use the
 following steps.
 
@@ -90,7 +87,7 @@ Dell CEE Services are Running topic for additional information.
 ## Validate Dell CEE Services are Running
 
 After the Activity Monitor Activity Agent has been configured to monitor the Dell device, the Dell
-CEE services should be running. If the Activity Agent is not registering events and the EndPoint is
+CEE services should be running. If the Activity Agent isn't registering events and the EndPoint is
 set accurately, validate that the Dell CEE services are running. Open the Services (run
 `services.msc`).
 
@@ -103,8 +100,7 @@ The following services laid down by the Dell CEE installer should have Running a
 
 ## Dell CEE Debug Logs
 
-If an issue arises with communication between the Dell CEE and the Activity Monitor, the debug logs
-need to be enabled for troubleshooting purposes. Follow the steps.
+If communication between the Dell CEE and the Activity Monitor fails, enable the debug logs for troubleshooting purposes. Follow the steps.
 
 **Step 6 –** In the Activity Monitor Console, change the **Trace level** value in the lower right
 corner to Trace.
@@ -120,19 +116,19 @@ and Disable monitoring.
 
 **HKEY_LOCAL_MACHINE\SOFTWARE\EMC\CEE\Configuration**
 
-**Step 10 –** Right-click on **Debug** and select Modify. The Edit DWORD Value window opens. In the
+**Step 10 –** Right-click **Debug** and select Modify. The Edit DWORD Value window opens. In the
 Value data field, enter the value of 3F. Click OK, and the Edit DWORD Value window closes.
 
 :::note
-If the Debug DWORD Value does not exist, it needs to be added.
+If the Debug DWORD Value doesn't exist, add it.
 :::
 
 
-**Step 11 –** Right-click on **Verbose** and select Modify. The Edit DWORD Value window opens. In
+**Step 11 –** Right-click **Verbose** and select Modify. The Edit DWORD Value window opens. In
 the Value data field, enter the value of 3F. Click OK, and the Edit DWORD Value window closes.
 
 :::note
-If the Verbose DWORD Value does not exist, it needs to be added.
+If the Verbose DWORD Value doesn't exist, add it.
 :::
 
 

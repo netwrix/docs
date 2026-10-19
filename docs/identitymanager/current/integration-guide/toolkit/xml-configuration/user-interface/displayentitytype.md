@@ -9,7 +9,7 @@ The `<DisplayEntityType>` element sets information about how an entity type is t
 
 ## Examples
 ```xml
-    <DisplayEntityType PluralDisplayName_L1="Companies" IconCode="Suitcase" Identifier="Directory_Company">
+    <DisplayEntityType PluralDisplayName_L1="Companies" IconCode="suitcase" Identifier="Directory_Company">
         <Property DisplayOrder="-1" IsRequired="true" Identifier="Identifier" />
         <Property IsRequired="true" Identifier="DisplayName" />
         <Property OutputType="BasicCollection" Identifier="UserRecords" NavigationBinding="Directory_UserRecord:User" />
@@ -105,7 +105,7 @@ When a property uses the `DateOnly` type, any `AddedMinutes` configuration will 
 | Color optional | **Type:** String **Description:** Defines the color used when displaying this entity type (it must be a 6 digit hexadecimal value, preceded by a '#'). |
 | D0IsActive <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is dimension0 active for this entity type (D0IsActive to D3VIsActive following the [base32hex convention](/docs/identitymanager/current/integration-guide/toolkit/parameter-names). |
 | HideRoles <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to skip the **Access Permissions** step (the one containing the roles) in the default forms for this entity type. |
-| IconCode optional | **Type:** String **Description:** Defines the icode code ("People", "MapPin", "Suitcase"...). |
+| IconCode optional | **Type:** String **Description:** Code of one of [Font Awesome's icons](https://fontawesome.com/v7/search?s=regular) to be displayed for the entity type. |
 | IsHierarchical <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is hierarchical entity type. |
 | MinSearchLength optional | **Type:** Int32 **Description:** Defines the minimum number of characters from which the search in the auto complete picker starts - 4 if it is not defined (the AutocompleteBinding must be defined). |
 | PluralDisplayName_L1 optional | **Type:** String **Description:** Display name of the entity type in plural in language 1 (up to 16). |
@@ -124,7 +124,7 @@ Entity referencing the Entity properties (with which it share the same ID) that 
 | DisplayTable optional | **Type:** Int64 **Description:** Identifier of the display table. |
 | Format optional | **Type:** String **Description:** Defines a formating method on the property values ("ParseSince1601Date", "ToStringUserAccountControl", "FormatDate" and "ParseBoolean"). |
 | Group optional | **Type:** Int64 **Description:** Identifier of the display property group, i.e. the fieldset, that the property is part of in the default UI form. |
-| IconCode optional | **Type:** String **Description:** Defines the icode code. |
+| IconCode optional | **Type:** String **Description:** Code of one of [Font Awesome's icons](https://fontawesome.com/v7/search?s=regular) to be displayed for the entity type. |
 | InputType <span class="optionalAttribute">default value: Auto</span> | **Type:** Enumeration **Description:** Identifier of the input type. |
 | IsHidden <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Property is hidden. |
 | IsReadOnly <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Property is readOnly. |

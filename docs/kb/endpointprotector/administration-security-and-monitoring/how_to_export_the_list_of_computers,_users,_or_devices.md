@@ -10,10 +10,11 @@ keywords:
 sidebar_label: Exporting Lists
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "How to Export the List of Computers, Users, or Devices"
 knowledge_article_id: kA0Qk0000002B6lKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Export the List of Computers, Users, or Devices
@@ -21,6 +22,10 @@ products:
 ## Overview
 
 This article explains how to export the list of computers, users, or devices from the console. You can perform a manual export or schedule an export, and the exported lists are accessible from the **Exported Entities** section.
+
+:::note
+For large exports, Endpoint Protector schedules the export as a backend task to improve performance. The console reports the results when the task completes. Large exports can take significant time to complete — plan accordingly.
+:::
 
 ## Instructions
 

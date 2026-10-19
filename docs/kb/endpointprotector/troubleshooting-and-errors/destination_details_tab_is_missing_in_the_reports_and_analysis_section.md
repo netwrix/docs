@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Missing Destination Details Tab
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "Destination Details Tab Is Missing in the Reports and Analysis Section"
 knowledge_article_id: kA0Qk0000002B4HKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Destination Details Tab Is Missing in the Reports and Analysis Section

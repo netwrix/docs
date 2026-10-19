@@ -27,18 +27,18 @@ The table data grid functions the same way as other table grids. See the
 ## Review Details Window
 
 The View Details button at the bottom of the Review History page opens the Review Details window for
-a resource where changes were recommended.
+a resource with recommended changes.
 
 ![Review Details Window](/images/accessinformationcenter/12.0/resourcereviews/reviewdetails.webp)
 
 The information displayed in the table includes:
 
-- Item Reviewed – Item upon which changes were suggested by the owner
+- Item Reviewed – The item for which the owner suggested changes
 - Current – Current state of the item at the time of the review. It could be the type of access (for
   Access reviews) or being a member (for Membership reviews).
 - Desired – Change suggested by the owner. It could be the new type of access (for Access reviews)
   or removing membership (for Membership reviews).
-- Notes – An icon here indicates notes were entered by the owner. Select the item and click the
+- Notes – An icon here indicates that the owner entered notes. Select the item and click the
   **View Notes** button to open the View Notes window.
 - Status – Icon indicates the decision provided by the Review Administrator: Accept, Decline, Defer,
   or Waiting. Hover over a status icon to display its tooltip.

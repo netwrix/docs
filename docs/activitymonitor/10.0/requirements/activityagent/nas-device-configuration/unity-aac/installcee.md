@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Install Dell CEE
 
-Dell CEE should be installed on a Windows or a Linux server. The Dell CEE software is not a Netwrix
+Dell CEE should be installed on a Windows or a Linux server. The Dell CEE software isn't a Netwrix
 product. Dell customers have a support account with Dell to access the download.
 
 :::tip
@@ -20,7 +20,7 @@ Monitor agent will be deployed (recommended) or on any other Windows or Linux se
 :::
 
 
-Follow the steps to install the Dell CEE.
+To install the Dell CEE, complete the following steps:
 
 **Step 1 –** Obtain the latest CEE install package from Dell and any additional license required for
 this component. It is recommended to use the most current version.
@@ -38,14 +38,13 @@ asynchronous bulk delivery (VCAPS) feature.
 :::
 
 
-After Dell CEE installation is complete, it is necessary to complete the
+After Dell CEE installation is complete, complete the
 [Unity Initial Setup with Unisphere](/docs/activitymonitor/10.0/requirements/activityagent/nas-device-configuration/unity-aac/setupunisphere.md).
 
 ## Configure Dell Registry Key Settings
 
 There may be situations when Dell CEE needs to be installed on a different Windows server than the
-one where the Activity Monitor activity agent is deployed. In those cases it is necessary to
-manually set the Dell CEE registry key to forward events.
+one where the Activity Monitor activity agent is deployed. In those cases, manually set the Dell CEE registry key to forward events.
 
 **Step 1 –** Open the Registry Editor (run regedit).
 
@@ -55,12 +54,12 @@ manually set the Dell CEE registry key to forward events.
 
 **HKEY_LOCAL_MACHINE\SOFTWARE\EMC\CEE\CEPP\AUDIT\Configuration**
 
-**Step 3 –** Right-click on **Enabled** and select Modify. The Edit DWORD Value window opens.
+**Step 3 –** Right-click **Enabled** and select Modify. The Edit DWORD Value window opens.
 
 **Step 4 –** In the Value data field, enter the value of 1. Click OK, and the Edit DWORD Value
 window closes.
 
-**Step 5 –** Right-click on **EndPoint** and select Modify. The Edit String window opens.
+**Step 5 –** Right-click **EndPoint** and select Modify. The Edit String window opens.
 
 **Step 6 –** In the Value data field, enter the StealthAUDIT value with the IP Address for the
 Windows proxy server hosting the Activity Monitor activity agent. Use the following format:

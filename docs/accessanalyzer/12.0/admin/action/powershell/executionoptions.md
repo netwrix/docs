@@ -21,8 +21,8 @@ The options on the Execution Options page are:
 - Execute script remotely on a target server – Enable this to execute the PowerShell script on a
   remote target server
 
-    - Use the **Remote host** dropdown to select the database column that will be used as the target
-      server name or type in a network host name
+    - Use the **Remote host** dropdown to select the database column to use as the target
+      server name, or type in a network host name
     - Select the **Fall back to the local Access Analyzer server if the remote execution fails**
       option to use the Access Analyzer server if remote execution fails
 

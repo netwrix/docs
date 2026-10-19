@@ -31,7 +31,7 @@ Navigate to the **Windows** > **Privileged Accounts** > **Local Administrators**
 **SG_LocalAdmins** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

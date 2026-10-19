@@ -6,21 +6,21 @@ sidebar_position: 100
 
 # Suggestions
 
-Clues can be used to statistically produce a list of suggested clues that can be assigned to the
+Clues statistically produce a list of suggested clues that you can assign to the
 term.
 
 ![bulkedit](/images/dataclassification/5.7/admin/taxonomies/bulkedit.webp)
 
 Clues can be suggested for a term via the following methods:
 
-- Suggest Clues for whole term: Click on the Suggest Clues for class link under the class heading to
+- Suggest Clues for whole term: Click the Suggest Clues for class link under the class heading to
   produce a list of suggestions, based on all existing clues in the class.
-- Single Clue: Click on the Suggest link against each clue to produce a list of suggestions, based
+- Single Clue: Click the Suggest link against each clue to produce a list of suggestions, based
   on only this clue.
-- Class Document: Click on the Suggest link against each class document to produce a list of
+- Class Document: Click the Suggest link against each class document to produce a list of
   suggestions, based on the document.
 
-Once the list of suggested clues has been generated they can be selected and added to the term
+After the list of suggested clues is generated, you can select and add them to the term
 clues:
 
 :::note
@@ -36,7 +36,7 @@ The clue type can be set to one of the following:
 - Create Tree Node
 
 :::note
-If Create Tree Node is selected then these topics shall be added as children of the
-currently selected node in the taxonomy structure.
+If you select Create Tree Node, these topics are added as children of the
+selected node in the taxonomy structure.
 
 :::

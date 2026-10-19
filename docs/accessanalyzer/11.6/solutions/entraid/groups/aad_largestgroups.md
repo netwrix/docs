@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # AAD_LargestGroups Job
 
-The AAD_LargestGroups Job identifies groups with large effective member counts. These groups may
-cause administrative overhead and burden in being able to easily understand who is getting access to
-resources, or how much access is being granted to resources through these groups.
+The AAD_LargestGroups Job identifies groups with large effective member counts. These groups can
+make it difficult to determine who has access to resources through them, or how much access they
+grant.
 
 ## Analysis Tasks for the AAD_LargestGroups Job
 
@@ -16,7 +16,7 @@ Navigate to the **Jobs** > **Entra ID** > **1.Groups** > **AAD_LargestGroups** >
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -33,4 +33,4 @@ following pre-configured report.
 
 | Report         | Description                                                              | Default Tags | Report Elements                                                                                                                        |
 | -------------- | ------------------------------------------------------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Largest Groups | This report identifies the largest groups within the audited environment | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays largest groups</li><li>Table – Provides group details</li></ul> |
+| Largest Groups | This report identifies the largest groups within the audited environment. | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays largest groups</li><li>Table – Provides group details</li></ul> |

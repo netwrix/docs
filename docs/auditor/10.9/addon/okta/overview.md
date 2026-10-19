@@ -8,10 +8,10 @@ sidebar_position: 160
 
 The add-on works in collaboration with Netwrix Auditor, supplying data about activity on your
 Okta-based devices. Aggregating data into a single audit trail simplifies analysis, makes activity
-monitoring more cost effective, and helps you keep tabs on your IT infrastructure.
+monitoring more cost effective, and helps you monitor your IT infrastructure.
 
 Implemented as a service, this add-on facilitates the data transition from Okta-based systems to
-Netwrix Auditor. All you have to do is provide connect ion details and specify parsing rules.
+Netwrix Auditor. Provide connection details and specify parsing rules.
 
 On a high level, the add-on works as follows:
 
@@ -31,26 +31,25 @@ follows:
 
 | On...                   | Ensure that...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The Auditor Server side | - .NET Framework [4.5](https://www.microsoft.com/en-us/download/details.aspx?id=30653) or later is installed. - The Audit Database settings are configured in Auditor Server. See the [Prerequisites](/docs/auditor/10.9/api/prerequisites.md) and [Audit Database](/docs/auditor/10.9/admin/settings/auditdatabase.md) topics for additional information. - The TCP **9699** port (default Integration API port) is open for inbound connections. - The user writing data to the Audit Database is granted the **Contributor** role in Auditor. See the [Role-Based Access and Delegation](/docs/auditor/10.9/admin/monitoringplans/delegation.md) topic for additional information. Alternatively, you can grant the **Global administrator** role or add the user to the **Netwrix Auditor Administrators** group. In this case, this user will have the most extended permissions in the product. |
+| The Auditor Server side | - .NET Framework [4.5](https://www.microsoft.com/en-us/download/details.aspx?id=30653) or later is installed. - The Audit Database settings are configured in Auditor Server. See the [Prerequisites](/docs/auditor/10.9/api/prerequisites.md) and [Audit Database](/docs/auditor/10.9/admin/settings/auditdatabase.md) topics for additional information. - The TCP **9699** port (default Integration API port) is open for inbound connections. - The user writing data to the Audit Database is granted the **Contributor** role in Auditor. See the [Role-Based Access and Delegation](/docs/auditor/10.9/admin/monitoringplans/delegation.md) topic for additional information. Alternatively, you can grant the **Global administrator** role or add the user to the **Netwrix Auditor Administrators** group. In this case, this user has the most extended permissions in the product. |
 
 ### Accounts and Rights
 
-By default, the add-on will run under the _Local System_ account. So, if the add-on and Auditor will
-be running on different machines, the corresponding computer account will require at least the
+By default, the add-on runs under the _Local System_ account. If the add-on and Auditor
+run on different machines, the corresponding computer account requires at least the
 **Contributor** role in Auditor. See the
 [Role-Based Access and Delegation](/docs/auditor/10.9/admin/monitoringplans/delegation.md) topic for additional
 information.
 
-In case the add-on and Auditor are installed on the same server, no special settings are needed.
+If the add-on and Auditor are installed on the same server, you don't need any special settings.
 
 ### Considerations and Limitations
 
 - The Add-On must be deployed in the same subnet as Okta and Auditor.
-- If the monitoring plan name in the _`<NetwrixAuditorPlan>`_ add-on configuration parameter is
-  specified incorrectly, this may lead to temp files generation and, therefore, to inefficient disk
-  space usage.
+- If you specify the monitoring plan name in the _`<NetwrixAuditorPlan>`_ add-on configuration
+  parameter incorrectly, the add-on generates temp files and uses disk space inefficiently.
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
-leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
+Ensure to check your product version, and then review and update your add-ons and scripts
+that use the Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

@@ -6,14 +6,13 @@ sidebar_position: 20
 
 # Configuration Options
 
-The Config administration area allows you to specify global system configuration settings. The
+The Config administration area lets you specify global system configuration settings. The
 default screen shows the most commonly amended settings.
 
 ![core_thumb_0_0](/images/dataclassification/5.7/configuration/core_thumb_0_0.webp)
 
-The most frequently used settings are displayed by default. Some configuration options are hidden
-and can be shown by selecting the Advanced Settings ("wrench" icon). Note that they will be only
-available [See Users and Security Settings for more information.](/docs/dataclassification/5.7/systemconfigurationoverview/users/users.md)
+The most frequently used settings are displayed by default. Select the Advanced Settings ("wrench" icon) to show
+hidden configuration options. Some options are available only to specific user roles. [See Users and Security Settings for more information.](/docs/dataclassification/5.7/systemconfigurationoverview/users/users.md)
 
 See next:
 

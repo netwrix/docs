@@ -9,8 +9,7 @@ sidebar_position: 30
 The Splunk Common Information Model (CIM) is installed with an add-on and adds a set of data models
 that allow data normalization to simplify search.
 
-The CIM contains a number of standard data models that can be used for search. Each of them has
-predefined set of standard fields common for different data sources.
+The CIM contains a number of standard data models you can use to search. Each has a predefined set of standard fields common for different data sources.
 
 Netwrix Auditor Add-on for Splunk will map some of the Activity Records that match certain scenario
 to the respective CIM data models.

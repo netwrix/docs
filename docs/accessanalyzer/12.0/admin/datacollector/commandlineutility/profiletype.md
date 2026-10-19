@@ -12,10 +12,10 @@ The Profile Type page contains options to select a new or existing profile.
 
 The options on the Profile Type page are:
 
-- Select Profile – Allows you to change the properties of a profile from the results page
-- Edit Profile – Allows you to edit a profile's execution options and properties. Enables the Define
+- Select Profile – Change the properties of a profile from the results page
+- Edit Profile – Edit a profile's execution options and properties. Enables the Define
   Fields and Script Editor pages.
-- Create a New Profile – Allows you to create a new profile. Enables the Define Fields and Script
+- Create a New Profile – Create a new profile. Enables the Define Fields and Script
   Editor pages.
 
-The profile type selected may alter the availability of the subsequent wizard steps.
+The profile type you select may affect the availability of the subsequent wizard steps.

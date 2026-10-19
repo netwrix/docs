@@ -20,7 +20,7 @@ Navigate to **Box** > **2.Content** > **Box_FileMetrics** > **Configure** node a
 **Analysis** to view analysis tasks.
 
 :::warning
-Most of these analysis tasks should never be modified and never be deselected.
+Don't modify or deselect most of these analysis tasks.
 :::
 
 

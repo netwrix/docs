@@ -6,17 +6,17 @@ sidebar_position: 50
 
 # FSAA: Activity Settings
 
-The File System Activity Auditor Scan Filter Settings page is where activity scan filter settings
-are configured. It is a wizard page for the category of File System Activity Scan.
+Use the File System Activity Auditor Scan Filter Settings page to configure activity scan filter
+settings. It is a wizard page for the category of File System Activity Scan.
 
 ![FSAA Data Collector Wizard Activity Settings page](/images/accessanalyzer/12.0/admin/datacollector/fsaa/activitysettings.webp)
 
 In the Scan Filters section, choose from the following options:
 
 - Set Scan Filter for Detailed Activity – Enables the **Days** number box. Select the number of past
-  days for activity details to be collected.
+  days to collect activity details.
 - Set Filter for Statistics of Activity – Enables the **Days** number box. Select the number of past
-  days for activity statistics to be collected.
+  days to collect activity statistics.
 
 In the Log Parsing Limits section, choose from the following option:
 
@@ -28,16 +28,16 @@ In the Scan Limit section, configure the following:
 - Set Log Processing Limit – Stops the scan after the set number of MB or GB of log files are
   processed and the threshold number is reached
 
-These filters affect what data is collected from the activity logs. However, enabling these filters
+These filters affect what data the scan collects from the activity logs. However, enabling these filters
 also causes the corresponding bulk import query to purge the database of selected activity
 information older than the time filter specified here.
 
-If either is left deselected, all available log files are collected and stored. This has a direct
-impact on both scan time and database size.
+If you leave either deselected, the scan collects and stores all available log files, which directly
+affects both scan time and database size.
 
 :::tip
-Remember, the file activity options require the Activity Monitor to be deployed, configured, and
-services running.
+Remember, the file activity options require you to deploy and configure the Activity Monitor and run
+its services.
 :::
 
 
@@ -55,7 +55,7 @@ Query window.
 
 ![Host Mapping Query window](/images/accessanalyzer/12.0/admin/datacollector/fsaa/hostmappingquery.webp)
 
-When the Enable host mapping checkbox is selected, the query textbox is enabled. The SQL query
+Selecting the Enable host mapping checkbox enables the query textbox. The SQL query
 provided by a user should return a set of log locations, target hosts, and host names of the
 Monitored Hosts in the Activity Monitor. The target tables must reside within the Access Analyzer
 database and contain at least the following columns:
@@ -72,20 +72,19 @@ database and contain at least the following columns:
   will be mapped to
 
 Enter the SQL query by clicking Sample Query then replacing the sample text in the textbox, as shown
-above. The SQL query must target tables that have the required columns populated with the host
+in the Host Mapping Query window. The SQL query must target tables that have the required columns populated with the host
 mapping.
 
 (Optional) Enter a host in the **Host parameter value (@host)** textbox to test the query to
 retrieve the data for that host.
 
-Select **Test Query** to open a preview of the results in the Query Results window. Ensure that the
-data being retrieved by the query is expected. When this option is selected, the data collector runs
-against the target table.
+Select **Test Query** to open a preview of the results in the Query Results window. Ensure the query
+retrieves the expected data. Selecting this option runs the data collector against the target table.
 
 ### Host-Agent Mapping
 
-Access Analyzer can be configured via the Host Mapping feature to support the use of Multiple
-Activity Monitor Agents for a single targeted Host. See the examples below:
+You can configure Access Analyzer via the Host Mapping feature to support the use of Multiple
+Activity Monitor Agents for a single targeted Host. See the following examples:
 
 Single-Host Single-Agent Example:
 

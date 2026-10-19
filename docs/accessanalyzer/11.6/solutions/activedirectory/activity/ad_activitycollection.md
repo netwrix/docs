@@ -7,23 +7,23 @@ sidebar_position: 20
 # 0.Collection > AD_ActivityCollection Job
 
 The AD_ActivityCollection Job located in the 0.Collection Job Group, imports data from the Netwrix
-Activity Monitor logs into the Enterprise Auditor Database. Retention can be modified in the query
+Activity Monitor logs into the Enterprise Auditor Database. You can modify retention in the query
 (120 days default).
 
 ![AD_ActivityCollection Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/activedirectory/activity/jobstree_1.webp)
 
-There are two ways AD Activity data can be retrieved by Enterprise Auditor:
+Enterprise Auditor can retrieve AD Activity data in two ways:
 
 - Network share containing the archive logs
 - API Server connected to the archive logs
 
-This is configured in the query. See the
+You configure this in the query. See the
 [Queries for the AD_ActivityCollection Job](#queries-for-the-ad_activitycollection-job) topic for
 additional information.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+With the Configuration section on a job's overview page, you can modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -57,8 +57,8 @@ The AD Activity Collection query uses the ADActivity Data Collector to target th
 archive logs for AD Activity.
 
 :::note
-The query can be configured to connect directly to the network share where the archive
-logs are stored or the API Server.
+You can configure the query to connect directly to the network share where the archive
+logs are stored, or to the API Server.
 :::
 
 
@@ -70,9 +70,8 @@ The AD_ActivityCollection Job uses the ADActivity Data Collector for the followi
 
 ### Configure the Query to Import from the Activity Monitor
 
-The AD_ActivityCollection Job requires configuration to collect data. Follow the steps to modify the
-query configuration when Netwrix Activity Monitor is configured to host domain activity logs on an
-API server.
+The AD_ActivityCollection Job requires configuration to collect data. Modify the query configuration
+when Netwrix Activity Monitor is configured to host domain activity logs on an API server.
 
 :::note
 Ensure the Activity Monitor API Server and the required Connection Profile are
@@ -116,10 +115,10 @@ last step.
 - Absolute Timespan – Set the date range for activity logs to collect when the scan is run
 
 :::info
-The threshold should be set to ensure the logs are collected before the Activity
+Set the threshold to ensure the logs are collected before the Activity
 Monitor domain output log retention expires. For example, if Enterprise Auditor runs the
-**AD_ActivityCollection** Job once a week (every 7 days), then the Activity Monitor output should be
-configured to retain at least 10 days of log files.
+**AD_ActivityCollection** Job once a week (every 7 days), configure the Activity Monitor output to
+retain at least 10 days of log files.
 :::
 
 
@@ -139,14 +138,12 @@ Credential with the Refresh token:
 - Click **OK** to save and close the User Credentials window.
 - Click **Save** and then **OK** to confirm the changes to the Connection Profile.
 
-The query is now configured to target the Activity Monitor API Server to collect domain activity
-logs.
+The query now targets the Activity Monitor API Server to collect domain activity logs.
 
 ### Configure the Query to Import from a Share
 
-The AD_ActivityCollection Job requires configuration to collect data. Follow the steps to modify the
-query configuration when Netwrix Activity Monitor is configured to store activity logs on a network
-share.
+The AD_ActivityCollection Job requires configuration to collect data. Modify the query configuration
+when Netwrix Activity Monitor is configured to store activity logs on a network share.
 
 :::note
 Ensure the Activity Monitor domain output and the required Connection Profile are
@@ -182,10 +179,10 @@ Click **Next**.
 - Absolute Timespan – Set the date range for activity logs to collect when the scan is run
 
 :::info
-The threshold should be set to ensure the logs are collected before the Activity
+Set the threshold to ensure the logs are collected before the Activity
 Monitor domain output log retention expires. For example, if Enterprise Auditor runs the
-**AD_ActivityCollection** Job once a week (every 7 days), then the Activity Monitor output should be
-configured to retain at least 10 days of log files.
+**AD_ActivityCollection** Job once a week (every 7 days), configure the Activity Monitor output to
+retain at least 10 days of log files.
 :::
 
 
@@ -196,8 +193,8 @@ keeps the collected data in the SQL Server database.
 
 **Step 9 –** Click **OK** to save the changes and close the Query Properties page.
 
-The query is now configured to target the network share where the Activity Monitor domain activity
-logs are archived.
+The query now targets the network share where the Activity Monitor domain activity logs are
+archived.
 
 ## Analysis Tasks for the AD_ActivityCollection Job
 
@@ -205,7 +202,7 @@ Navigate to the **Jobs** > **Active Directory** > **6.Activity** > **0.Collecti
 **AD_ActivityCollection** Job. Select the **Configure** > **Analysis** node.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -218,9 +215,9 @@ The following analysis tasks are selected by default:
 - AIC Import - AD Activity Events – Imports AD events to the Access Information Center for domain
   objects
 
-    - The `@ADEvents` and `@AuthEvents` parameters must be enabled for AD events and authentication
-      events to be imported into the Access Information Center
-    - The list of attributes to track for Object Modified changes can be customized by the
+    - You must enable the `@ADEvents` and `@AuthEvents` parameters to import AD events and
+      authentication events into the Access Information Center
+    - You can customize the list of attributes to track for Object Modified changes using the
       `#modifiedAttributeList` parameter
 
 - AIC Import - Activity Retention – Deletes older activity data from the Access Information Center
@@ -229,7 +226,7 @@ The following analysis tasks are selected by default:
 
 ### Customize Analysis Parameters for the AD_ActivityCollection Job
 
-The customizable parameters for this job allow you to configure importing of AD activity data into
+Use the customizable parameters for this job to configure how the job imports AD activity data into
 the Netwrix Access Information Center.
 
 | Analysis Task                                   | Customizable Parameter Name | Default Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Value Indicates                                         |

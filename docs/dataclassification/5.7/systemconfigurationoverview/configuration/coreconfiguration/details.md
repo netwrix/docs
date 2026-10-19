@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Details
 
-This **Details** tab provides a complete list of the Config settings, as well as an indication of
-the values that have been changed from the default settings. The list of properties is provided from
+The **Details** tab provides a complete list of the Config settings, as well as an indication of
+the values that differ from the default settings. The SQL database provides the list of
 the SQL database.
 
 ![core_details_thumb_0_0](/images/dataclassification/5.7/configuration/core/core_details_thumb_0_0.webp)

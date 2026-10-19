@@ -8,10 +8,11 @@ keywords:
 sidebar_label: eDiscovery Scanning Status Progress Bar
 tags:
   - features-and-operations
+  - kb
 title: "Why Does the eDiscovery Scanning Status Progress Bar Drop to a Lower Percentage?"
 knowledge_article_id: kA0Qk0000002BIlKAM
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Why Does the eDiscovery Scanning Status Progress Bar Drop to a Lower Percentage?

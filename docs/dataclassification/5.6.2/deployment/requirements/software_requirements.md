@@ -21,7 +21,10 @@ The following are the software requirements for Netwrix Data Classification inst
 - Security:
   - Windows Authentication
   - Anonymous Authentication
-    - **NOTE:** The Anonymous Authentication element is included in the default installation of IIS 7. Make sure you use IIS 7 and above.
+
+:::note
+The Anonymous Authentication element is included in the default installation of IIS 7. Ensure you use IIS 7 and above.
+:::
 - Application Development:
   - ISAPI Extensions
   - ISAPI Filters
@@ -32,12 +35,18 @@ The following are the software requirements for Netwrix Data Classification inst
   - WCF Services:
     - HTTP Activation
     - Named Pipe Activation
-    - **NOTE:** To activate these features, select them under **.Net Framework Advanced Services** - **WCF Services** from **Windows Features**.
+
+:::note
+To activate these features, select them under **.Net Framework Advanced Services** - **WCF Services** from **Windows Features**.
+:::
 
 **SQL Server**
 - [SQL Server 2008 R2 Standard Edition](https://www.microsoft.com/en-us/download/details.aspx?id=26113) (or later).
 - SQL Server 2016 SP2 recommended (for better performance).
-- **NOTE:** For large environments, SQL Server Enterprise edition may be needed; see [Deployment Planning](/docs/dataclassification/5.6.2/deployment/deploymentplan/overview.md).
+
+:::note
+For large environments, SQL Server Enterprise edition may be needed; see [Deployment Planning](/docs/dataclassification/5.6.2/deployment/deploymentplan/overview.md).
+:::
 
 **Visual Studio**
 - [Visual C++ Redistributable Packages for Visual Studio 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48145) and above.

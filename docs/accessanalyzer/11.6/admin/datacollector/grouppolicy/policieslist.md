@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # GroupPolicy: Policies List
 
-The Policies List page is where the policies from the desired GPOs to be queried are selected. It is
+The Policies List page is where you select the policies from the GPOs you want to query. It is
 a wizard page for the categories of:
 
 - Policies State
@@ -15,10 +15,10 @@ a wizard page for the categories of:
 
 ![Group Policy Data Collector Wizard Policies List page](/images/accessanalyzer/11.6/admin/datacollector/grouppolicy/policieslist.webp)
 
-Select the policies or policy parts to be audited. The category dictates how this selection is
-applied across the domain or local host.
+Select the policies or policy parts to audit. The category dictates how the query applies this
+selection across the domain or local host.
 
-To search parts of a policy, drill into the policy and select the desired policy parts. Click
+To search parts of a policy, drill into the policy and select the policy parts you want. Click
 **Check all** to select all properties, and click **Uncheck all** to deselect all properties. Search
 for a policy by entering a policy name in the Search box and clicking **Search**.
 
@@ -27,4 +27,4 @@ The policy parts returned may have multiple values.
 :::
 
 
-At least one policy or policy part must be selected in order to proceed to the next wizard page.
+Select at least one policy or policy part to proceed to the next wizard page.

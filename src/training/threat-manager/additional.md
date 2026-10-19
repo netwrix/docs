@@ -10,5 +10,5 @@ This product was formerly named Netwrix StealthDEFEND.
 
 :::
 
-* What's New in <NTM /> v3.2
+* What's New in <NTM /> v3.3
 * New MCP Server for <NTM />

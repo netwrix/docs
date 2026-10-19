@@ -13,7 +13,7 @@ based on folder ownership, content posted, and size of content posted.
 
 ![Ownership Job Group](/images/accessanalyzer/11.6/solutions/exchange/publicfolders/ownership/jobstree.webp)
 
-The obs in the Ownership job group are:
+The jobs in the Ownership job group are:
 
 - [Collection > PF_FolderOwnership Job](/docs/accessanalyzer/11.6/solutions/exchange/publicfolders/ownership/pf_folderownership.md)
   – Focuses on public folder sizing, content aging, entitlement, ownership, and most importantly the

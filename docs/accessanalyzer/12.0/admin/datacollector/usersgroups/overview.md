@@ -9,7 +9,7 @@ sidebar_position: 400
 The UsersGroups Data Collector audits user and group accounts for both local and domain, extracting
 system policies.
 
-The UsersGroups Data Collector has been preconfigured within the Windows Solution. Both this data
+Access Analyzer preconfigures the UsersGroups Data Collector within the Windows Solution. Both this data
 collector and the solution are available with a special Access Analyzer license. See the
 [Windows Solution](/docs/accessanalyzer/12.0/solutions/windows/overview.md) topic for additional information.
 
@@ -29,7 +29,7 @@ collector and the solution are available with a special Access Analyzer license.
 
 - Member of the Local Administrators group
 
-    - If a less-privileged option is required, you can use a regular domain user that has been added
+    - If a less-privileged option is required, you can use a regular domain user added
       to the **Network access: Restrict clients allowed to make remote calls to SAM** Local Security
       Policy
 
@@ -37,7 +37,7 @@ collector and the solution are available with a special Access Analyzer license.
 
 ## UsersGroups Query Configuration
 
-The UsersGroups Data Collector is configured through the Users and Groups Browser wizard, which
+You configure the UsersGroups Data Collector through the Users and Groups Browser wizard, which
 contains the following wizard pages:
 
 - Welcome
@@ -46,5 +46,5 @@ contains the following wizard pages:
 
 ![Users and Groups Browser wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/usersgroups/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** box when
-the wizard is open and configuration settings are saved.
+You can hide the Welcome page by selecting the **Don't display this page the next time** box when
+the wizard is open and you save configuration settings.

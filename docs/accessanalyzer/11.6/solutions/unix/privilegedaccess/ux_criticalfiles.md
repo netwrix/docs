@@ -11,7 +11,7 @@ Linux environments such as passwd, shadow, sudoers, hosts.deny, and more.
 
 ## Queries for the UX_CriticalFiles Job
 
-The UX_CriticalFIles job uses the Unix Data Collector for the following query:
+The UX_CriticalFiles job uses the Unix Data Collector for the following query:
 
 :::warning
 The query is preconfigured for this job. Never modify the query.
@@ -30,7 +30,7 @@ Navigate to the **Unix** > **2.Privileged Access** > **UX_CriticalFiles** > **Co
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

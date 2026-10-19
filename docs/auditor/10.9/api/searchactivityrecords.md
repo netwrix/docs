@@ -12,10 +12,10 @@ available in the Netwrix Auditor client. See the
 and [View and Search Collected Data](/docs/auditor/10.9/admin/search/overview.md) topic for detailed instruction on
 how to search and filter audit data.
 
-As the interactive search in the Netwrix Auditor client, this REST API endpoint allows you to
-retrieve Activity Records matching a certain criteria. You can create your own set of filters in the
+Use this REST API endpoint to retrieve Activity Records matching a certain criteria, as with the
+interactive search in the Netwrix Auditor client. You can create your own set of filters in the
 Search parameters file. See the [Search Parameters](/docs/auditor/10.9/api/postdata/searchparameters.md) topic for more
-information. Activity Records are retrieved according to the account's delegated scope.
+information. Auditor retrieves Activity Records according to the account's delegated scope.
 
 ## Endpoint
 
@@ -32,10 +32,10 @@ parameters (also may include a Continuation mark). See the
 | Parameter      | Mandatory | Description                                                                                                                                                                                                                                                    |
 | -------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `host:port`    | Yes       | Replace with the IP address or a name of your Netwrix Auditor Server host and port (e.g., _172.28.6.15:9699_, _stationwin12:9699_, _WKSWin2012.enterprise.local:9699_). With enabled HTTPS, provide the computer name as it appears in certificate properties. |
-| `format=json`  | No        | Add this parameter to retrieve data in JSON format. Otherwise, XML-formatted Activity Records will be returned.                                                                                                                                                |
-| `count=Number` | No        | Add this parameter to define the number of Activity Records to be exported. Replace `Number` with a number (e.g.,` ?count=1500`).                                                                                                                              |
+| `format=json`  | No        | Add this parameter to retrieve data in JSON format. Otherwise, the response returns XML-formatted Activity Records.                                                                                                                                                |
+| `count=Number` | No        | Add this parameter to define the number of Activity Records to export. Replace `Number` with a number (e.g.,` ?count=1500`).                                                                                                                              |
 
-Optional parameters (format and count) can be provided in any order. The first parameter must start
+You can provide optional parameters (format and count) in any order. The first parameter must start
 with ?, others are joined with &, no spaces required (e.g., `?format=json&count=1500`).
 
 ## Response
@@ -63,20 +63,20 @@ with ?, others are joined with &, no spaces required (e.g., `?format=json&count=
 
 ## Usage Example—Retrieve All Activity Records Matching Search Criteria
 
-Follow the steps- to retrieve all Activity Records matching search criteria.
+To retrieve all Activity Records matching search criteria:
 
 **Step 1 –** Send a POST request containing search parameters. See the
 [Search Parameters](/docs/auditor/10.9/api/postdata/searchparameters.md) topic for more information.
 
 As an example, this request retrieves Activity Records where administrator added new objects to the
-Active Directory domain. Groups and group policies are not taken into account. Changes could only
-occur between September 16, 2016 and March 16, 2017.
+Active Directory domain. This request doesn't include groups and group policies. Changes could only
+occur between September 16, 2016, and March 16, 2017.
 
 Ensure to pass information about transferred data, including `Content-Type:application/xml` or
 `application/json `and encoding. The syntax greatly depends on the tool you use.
 
-**Step 2 –** Receive the response. Activity Records are retrieved according to the account's
-delegated scope. Below is an example of a successful search request. The status is 200 OK. For XML,
+**Step 2 –** Receive the response. Auditor retrieves Activity Records according to the account's
+delegated scope. The following is an example of a successful search request. The status is 200 OK. For XML,
 a response body contains the `ActivityRecordList` root element with Activity Records matching filter
 criteria and a Continuation mark inside. For JSON, a response body contains the `ActivityRecordList`
 array with Activity Records matching filter criteria and collected in braces {}, and a Continuation

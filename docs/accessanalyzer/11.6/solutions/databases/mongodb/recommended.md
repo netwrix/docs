@@ -18,9 +18,9 @@ scheduled.
   StealthAUDIT Console server
 
 Some of the 0.Collection Job Group queries can be scoped to target specific databases/instances.
-However, it is necessary to add the databases to the query first.
+However, add the databases to the query first.
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
 The 0.Collection Job Group must be set to run against a custom host list containing the MongoDB
 database instances / clusters.
@@ -29,7 +29,7 @@ database instances / clusters.
 
 The NoSQL Data Collector requires a specific set of permission. See the Permissions section for
 necessary permissions. The account used can be either an Active Directory account or a SQL account.
-Once the account has been provisioned, create a custom Connection Profile containing the credentials
+After the account has been provisioned, create a custom Connection Profile containing the credentials
 for the targeted environment. See the
 [NoSQL Custom Connection Profile & Host List](/docs/accessanalyzer/11.6/admin/datacollector/nosql/configurejob.md)
 topic for additional information.
@@ -38,7 +38,7 @@ The Connection Profile should be assigned under the MongoDB > 0.Collection > Set
 node. It is set to Use the Default Profile, as configured at the global settings level. However,
 since this may not be the Connection Profile with the necessary permissions for the assigned hosts,
 click the radio button for the Select one of the following user defined profiles option and select
-the appropriate Connection Profile drop-down menu.
+the appropriate Connection Profile dropdown menu.
 
 See the
 [Connection](/docs/accessanalyzer/11.6/admin/settings/connection/overview.md)
@@ -48,8 +48,7 @@ topic for additional information.
 
 One of the most important decisions to make is how frequently to collect this data. The MongoDB Job
 Group can be scheduled to run as desired depending on the types of auditing being conducted and the
-scope of the target environment. The general recommendation is to schedule the solution to run
-daily.
+scope of the target environment. Schedule the solution to run daily.
 
 **Run Order**
 

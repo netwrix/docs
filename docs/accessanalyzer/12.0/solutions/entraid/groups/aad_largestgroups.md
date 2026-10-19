@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # AAD_LargestGroups Job
 
-The AAD_LargestGroups Job identifies groups with large effective member counts. These groups may
-cause administrative overhead and burden in being able to easily understand who is getting access to
-resources, or how much access is being granted to resources through these groups.
+The AAD_LargestGroups Job identifies groups with large effective member counts. These groups can
+create administrative overhead, making it hard to see who has access to resources and how much
+access these groups grant.
 
 ## Analysis Tasks for the AAD_LargestGroups Job
 
@@ -16,7 +16,7 @@ Navigate to the **Jobs** > **Entra ID** > **1.Groups** > **AAD_LargestGroups** >
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

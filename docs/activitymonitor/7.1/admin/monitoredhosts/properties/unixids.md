@@ -24,7 +24,7 @@ The options are:
     - This container and its descendants
     - This container only
 - Search - Search using the following specifications:
-    - by an attribute – Specify an LDAP filter. This attribute cannot be empty.
+    - by an attribute – Specify an LDAP filter. This attribute can't be empty.
     - with a custom filter – Use the %UID% macro for a Unix ID value
     - Provide UID for test/Test – Test button performs a search in the specified container with the
       scope and the filter, replacing %UID% with 0 for the test

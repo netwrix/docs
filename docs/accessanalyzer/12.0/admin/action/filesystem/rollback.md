@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # File System Action: Rollback
 
-Use the Rollback page to apply rollback support to the action. This option provides the ability to
+Use the Rollback page to apply rollback support to the action. This option lets you
 undo failed actions and reapply the original action settings when the action continues from where it
 left off.
 

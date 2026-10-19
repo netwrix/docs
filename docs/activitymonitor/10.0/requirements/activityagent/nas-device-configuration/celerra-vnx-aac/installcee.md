@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Install & Configure Dell CEE
 
-Dell CEE should be installed on a Windows or a Linux server. The Dell CEE software is not a Netwrix
+Dell CEE should be installed on a Windows or a Linux server. The Dell CEE software isn't a Netwrix
 product. Dell customers have a support account with Dell to access the download.
 
 :::tip
@@ -15,12 +15,10 @@ Remember, the latest version is the recommended version of Dell CEE.
 
 
 :::info
-The Dell CEE package can be installed on the Windows server where the Activity
+Install the Dell CEE package on the Windows server where the Activity
 Monitor agent will be deployed (recommended) or on any other Windows or Linux server.
 :::
 
-
-Follow the steps to install the Dell CEE.
 
 **Step 1 –** Obtain the latest CEE install package from Dell and any additional license required for
 this component. It is recommended to use the most current version.
@@ -41,14 +39,13 @@ asynchronous bulk delivery (VCAPS) feature.
 See the [CEE Debug Logs](/docs/activitymonitor/10.0/requirements/activityagent/nas-device-configuration/unity-aac/validate.md#cee-debug-logs) section for information on
 troubleshooting issues related to Dell CEE.
 
-After Dell CEE installation is complete, it is necessary to Connect Data Movers to the Dell CEE
+After Dell CEE installation is complete, connect Data Movers to the Dell CEE
 Server.
 
 ## Configure Dell Registry Key Settings
 
-There may be situations when Dell CEE needs to be installed on a different Windows server than the
-one where the Activity Monitor activity agent is deployed. In those cases it is necessary to
-manually set the Dell CEE registry key to forward events.
+In some cases, install Dell CEE on a different Windows server than the
+one where the Activity Monitor activity agent is deployed. In those cases, manually set the Dell CEE registry key to forward events.
 
 **Step 1 –** Open the Registry Editor (run regedit).
 
@@ -58,12 +55,12 @@ manually set the Dell CEE registry key to forward events.
 
 **HKEY_LOCAL_MACHINE\SOFTWARE\EMC\CEE\CEPP\AUDIT\Configuration**
 
-**Step 3 –** Right-click on **Enabled** and select Modify. The Edit DWORD Value window opens.
+**Step 3 –** Right-click **Enabled** and select Modify. The Edit DWORD Value window opens.
 
 **Step 4 –** In the Value data field, enter the value of 1. Click OK, and the Edit DWORD Value
 window closes.
 
-**Step 5 –** Right-click on **EndPoint** and select Modify. The Edit String window opens.
+**Step 5 –** Right-click **EndPoint** and select Modify. The Edit String window opens.
 
 **Step 6 –** In the Value data field, enter the StealthAUDIT value with the IP Address for the
 Windows proxy server hosting the Activity Monitor activity agent. Use the following format:
@@ -94,19 +91,19 @@ Mover.
 administrative account should have a $ character in the terminal.
 
 :::note
-Do not use a # charter.
+Don't use a # charter.
 :::
 
 
 **Step 2 –** Create or retrieve the `cepp.conf` file.
 
-If there is not a `cepp.conf` file on the Data Mover(s), use a text editor to create a new blank
+If there isn't a `cepp.conf` file on the Data Movers, use a text editor to create a new blank
 file in the home directory named `cepp.conf`. The following is an example command if using the text
 editor 'vi' to create a new blank file:
 
 **$ vi cepp.conf**
 
-> If a `cepp.conf` file already exists, it can be retrieved from the Data Movers for modification
+> If a `cepp.conf` file already exists, retrieve it from the Data Movers for modification
 > with the following command:
 
 **$ server_file [DATA_MOVER_NAME] -get cepp.conf cepp.conf**
@@ -116,31 +113,31 @@ editor 'vi' to create a new blank file:
 guide instructions on how to add parameters or edit the values or existing parameters.
 
 :::note
-The information can be added to the file on one line or separate lines by using a space
+Add the information to the file on one line or separate lines by using a space
 and a "\"" at the end of each line, except for the last line and the lines that contain global
 options: `cifsserver`, `surveytime`, `ft`, and `msrpcuser`.
 :::
 
 
-The Activity Monitor requires the following parameters to be set in the `cepp.conf` file:
+Set the following parameters in the `cepp.conf` file for the Activity Monitor:
 
 - `pool name= `
-    - This should equal the name assigned to the configuration container. This container is composed
-      of the server(s) IP Address or FQDN where the Dell CEE is installed and where the list of
-      events to be monitored is located. It can be named as desired but must be a pool name.
+    - Assign the name of the configuration container. This container is composed
+      of the servers IP Address or FQDN where the Dell CEE is installed and where the list of
+      events to be monitored is located. Name it as desired, but it must function as a pool name.
 - `servers= `
     - This should equal the IP Address or FQDN of the Windows server where the Dell CEE is
       installed. If several servers are specified, separate them with the vertical bar (|) or a
       colon (:).
 - `postevents= `
-    - The following events are required (separated with the vertical bar):
+    - Include the following events (separated with the vertical bar):
       `CloseModified|CloseUnmodified|CreateDir|CreateFile|DeleteDir|DeleteFile|RenameDir|RenameFile|SetAclDir|SetAclFile `
-    - If "Directory Read/List" operations are needed, append `OpenDir` to the list.
+    - To monitor "Directory Read/List" operations, append `OpenDir` to the list.
 - `msrpcuser= `
 
-    - This should equal the domain account used to run the Dell CEE Monitor and Dell CAVA services
-      on the Windows server. This parameter is a security measure used to ensure events are only
-      sent to the appropriate servers.
+    - Specify the domain account that runs the Dell CEE Monitor and Dell CAVA services
+      on the Windows server. This parameter ensures that events are sent only
+      to the appropriate servers.
 
         All unspecified parameters use the default setting. For most configurations, the default
         setting is sufficient.
@@ -175,7 +172,7 @@ The Activity Monitor requires the following parameters to be set in the `cepp.co
 
     postevents=CloseModified|CloseUnmodified|CreateDir|CreateFile|DeleteDir|DeleteFile|RenameDir|RenameFile|SetAclDir|SetAclFile
 
-**Step 4 –** Move the `cepp.conf` file to the Data Mover(s) root file system. Run the following
+**Step 4 –** Move the `cepp.conf` file to the Data Movers root file system. Run the following
 command:
 
 **$ server_file [DATA_MOVER_NAME]-put cepp.conf cepp.conf**
@@ -186,7 +183,7 @@ file, but each configuration file can specify different events.
 :::
 
 
-**Step 5 –** (This step is required only if using the `msrpcuser` parameter) Register the MSRPC user
+**Step 5 –** (Perform this step only if using the `msrpcuser` parameter) Register the MSRPC user
 (see Step 3 for additional information on this parameter). Before starting CEPA for the first time,
 the administrator must issue the following command from the Control Station and follow the prompts
 for entering information:
@@ -201,7 +198,7 @@ Then verify the CEPA status using the following command:
 
 **server_cepp [DATA_MOVER_NAME] -service –status**
 
-Once the `cepp.config` file has been configured, it is time to configure and enable monitoring with
+After the `cepp.config` file has been configured, you can configure and enable monitoring with
 the Activity Monitor. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
 for additional information.

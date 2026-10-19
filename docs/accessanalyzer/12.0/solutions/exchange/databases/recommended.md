@@ -56,7 +56,7 @@ Run this Job Group at 3:00 AM.
 
 **History Retention**
 
-History retention should not be enabled on this job group. History is kept through analysis tasks.
+History retention shouldn't be enabled on this job group. History is kept through analysis tasks.
 Modify the following analysis tasks to customize the amount of history which is kept:
 
 | Job Name    | Analysis Task Name    | Default History |
@@ -82,7 +82,7 @@ deselected. There are some that are deselected by default, as they are for troub
 :::
 
 
-The following analysis task should not be deselected, but the parameters can be modified:
+The following analysis task shouldn't be deselected, but the parameters can be modified:
 
 - **EX_DBSizing** Job – **SET HISTORY RETENTION** Analysis Task
 

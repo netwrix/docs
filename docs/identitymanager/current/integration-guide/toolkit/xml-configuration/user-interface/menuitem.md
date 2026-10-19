@@ -10,7 +10,7 @@ A menu item displays grouped navigation actions.
 ## Examples
 ```xml
     <MenuItem Identifier="View_AD_Entry" DisplayName_L1="AD Entry">
-        <MenuItem Identifier="View_AD_Entry_ResetPassword" DisplayName_L1="Reset Password" IconCode="Edit" Workflow="AD_Entry_ResetPassword" />
+        <MenuItem Identifier="View_AD_Entry_ResetPassword" DisplayName_L1="Reset Password" IconCode="pen" Workflow="AD_Entry_ResetPassword" />
     </MenuItem>
 ```
 
@@ -21,7 +21,7 @@ A menu item displays grouped navigation actions.
 |---|---|
 | DisplayName_L1 optional | **Type:** String **Description:** Display name of the menu item in language 1 (up to 16). |
 | EntityType optional | **Type:** Int64 **Description:** Represents the linked entity type. |
-| IconCode optional | **Type:** String **Description:** Code of one of [Microsoft's fabric icons](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons#available-icons) to be displayed with the menu item. **Note:** on Microsoft page, see the icons' codes by moving the mouse over the icons, or using the detailed view. |
+| IconCode optional | **Type:** String **Description:** Code of one of [Font Awesome's icons](https://fontawesome.com/v7/search?s=regular) to be displayed with the menu item. |
 | Identifier required | **Type:** String **Description:** Unique identifier of the item. |
 | IsExpandedByDefault <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** Is an expanded by default menu item. |
 | IsSelfForm <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is a self form menu item. |

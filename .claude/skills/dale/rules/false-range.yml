@@ -1,0 +1,3 @@
+message: Name the actual items instead of a rhetorical span.
+level: warning
+reason: Fires when a rhetorical 'from X to Y' or 'ranging from X to Y' span stands in for a real list, such as 'from basic reporting to advanced analytics' or 'ranging from simple fixes to complex overhauls'. Does not fire on real numeric, date, or version ranges.

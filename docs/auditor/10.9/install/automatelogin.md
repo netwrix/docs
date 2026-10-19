@@ -6,10 +6,10 @@ sidebar_position: 40
 
 # Automate Sign-in to the Client
 
-When you launch Netwrix Auditor client installed on the same machine as Netwrix Auditor server,
-connection to that server is established automatically using your current account. However, if you
-want to connect to Netwrix Auditor Server installed on another computer, you will be prompted to
-specify connection parameters: server name and user credentials.
+When you launch the Netwrix Auditor client installed on the same machine as the Netwrix Auditor
+server, the client connects to that server automatically using your current account. However, if
+you want to connect to a Netwrix Auditor Server installed on another computer, the client prompts
+you to specify connection parameters: server name and user credentials.
 
 To automate the sign-in process, users who need to frequently connect to different Netwrix Auditor
 Servers (for example, Managed Service Providers) may configure the product shortcut: when you click
@@ -23,7 +23,7 @@ To create a shortcut for automated sign-in:
    Intelligence\AuditIntelligence.exe)._
 2. Create a shortcut for this executable file.
 3. Right-click the created shortcut and select Properties.
-4. In the Target field, a path to the executable file will be shown. Add the following parameters to
+4. In the Target field, the path to the executable file appears. Add the following parameters to
    the end:
 
     `/s:server_name /u:user_name /specify_creds`

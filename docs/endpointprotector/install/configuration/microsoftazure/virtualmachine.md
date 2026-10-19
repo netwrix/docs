@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Creating the Virtual Machine
 
-To start the Endpoint Protector Virtual Machine in Azure, follow these steps:
+To start the Endpoint Protector Virtual Machine in Azure, complete the following steps:
 
 **Step 1 –** Go to the All resources page, select the newly created disks and then click Create VM
 
@@ -32,17 +32,17 @@ To start the Endpoint Protector Virtual Machine in Azure, follow these steps:
 **Step 3 –** Click Review + create and then Create.
 
 :::note
-For Additional Features, we recommend selecting HDD instead of SSD to avoid unnecessary
+For Additional Features, select HDD instead of SSD to avoid unnecessary
 payments for an unused SSD attached to the Virtual Machine.
 :::
 
 
 ![Information tab for creating a public IP](publicip.webp)
 
-**Step 4 –** Once the deployment has finished, go to Virtual Machines on the right side and select
+**Step 4 –** After the deployment has finished, go to Virtual Machines on the right side and select
 the Endpoint Protector image.
 
 ![Connecting the IP to the Endpoint Protector Image](connetctip.webp)
 
-**Step 5 –** Open a web browser and connect to the Public IP address assigned to the Endpoint
+**Step 5 –** Open a web browser and connect to the Public IP address for your Endpoint
 Protector image.

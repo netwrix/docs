@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # Recent Events Tab
 
-The Recent Events tab provides information on the events that have been recently monitored or
-blocked by the selected policy. See the [Investigate Interface](/docs/threatprevention/7.5/admin/investigate/overview.md) for
+The Recent Events tab shows events that the selected policy has recently monitored or blocked. See the [Investigate Interface](/docs/threatprevention/7.5/admin/investigate/overview.md) for
 recent events monitored or blocked by all policies. You can also view event data configured to be
 sent to syslog (SIEM) on the [SIEM Output Viewer](/docs/threatprevention/7.5/admin/configuration/siemoutputviewer.md) window.
 
@@ -16,7 +15,7 @@ sent to syslog (SIEM) on the [SIEM Output Viewer](/docs/threatprevention/7.5/adm
 The Recent Events tab has the following options on the toolbar:
 
 - Recent [number] Events – Populates the data grid with the most recent events from the active
-  policy. Use the textbox to change the default number, i.e., 100.
+  policy. Use the textbox to set the number (default: 100).
 - Events for Last [number] Hours –  Populates the data grid with hourly events. Use the textbox to
   change the default number of hours, i.e., 3.
 - Range From/To – Displays the events that occurred within the given timeframe
@@ -27,7 +26,7 @@ The Recent Events tab has the following options on the toolbar:
 
 Example for the Events for Last [number] Hours Option
 
-Below is an example of how to use the Events for Last [number] Hours option:
+The following example shows how to use the Events for Last [number] Hours option:
 
 The number of hours set is based on UTC and is adjusted for the time zones of the Administration
 Console server and the Agent that is monitoring the events. Let's assume the following:
@@ -36,8 +35,7 @@ Console server and the Agent that is monitoring the events. Let's assume the fol
 - The option is set to display events for Last 4 Hours
 - The Agent that is monitoring the events is in London, UK (UTC +0)
 
-If you click the Refresh button at noon New York time, then the events displayed would have been
-generated between 8 A.M. and 12 P.M. New York time, or between 1 P.M. and 5 P.M. London time.
+If you click the Refresh button at noon New York time, the system displays events that occurred between 8 A.M. and 12 P.M. New York time, or between 1 P.M. and 5 P.M. London time.
 
 The data grid can be filtered according to the Event Tracker Status:
 
@@ -70,7 +68,7 @@ below in the default order of the data grid columns:
   - Authenticate – DN of the user object making the request
 
   :::note
-  For LDAP bind/monitoring/blocking, Affected Object Path is not used
+  For LDAP bind/monitoring/blocking, Affected Object Path isn't used.
   :::
 
 
@@ -121,20 +119,19 @@ The following information (as applicable to the event) is displayed:
 
 - Attribute Name – The name of the object attribute that is affected
 - Operation – The operation performed on the attribute
-- Old Value – Value prior to the monitored change
+- Old Value – Value before the monitored change
 - New Value – Value after the monitored change
 
-This data grid employs features for sorting, filtering, searching, and more. See the
-[ Data Grid Functionality](/docs/threatprevention/7.5/admin/navigation/datagrid.md) topic for additional information.
+This data grid supports sorting, filtering, searching, and more. See the
+[Data Grid Functionality](/docs/threatprevention/7.5/admin/navigation/datagrid.md) topic for additional information.
 
 ## Recent Events Right-Click Menu
 
-Right-click on a row in the data grid to open the right-click menu.
+Right-click a row in the data grid to open the right-click menu.
 
 ![Recent Events tab - Right-Click menu](/images/threatprevention/7.5/admin/policies/recentevents/rightclickmenu.webp)
 
 - Copy – Copies the selected data cell to clipboard
 - Event Viewer – Opens the [Event Viewer Window](/docs/threatprevention/7.5/admin/policies/configuration/recentevents/eventviewer.md) for the selected event/data row
 - Event Tracker – Opens the [Event Tracker Window](/docs/threatprevention/7.5/admin/policies/configuration/recentevents/eventtracker.md) for the selected event/data row
-- [Execute PS Script](/docs/threatprevention/7.5/admin/policies/configuration/recentevents/executepsscript.md) – Opens a Windows Explorer window to the scripts folder.
-  Enables users to run a PowerShell script for the selected event/data row.
+- [Execute PS Script](/docs/threatprevention/7.5/admin/policies/configuration/recentevents/executepsscript.md) – Opens a Windows Explorer window to the scripts folder where you can run a PowerShell script for the selected event/data row.

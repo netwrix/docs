@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Audit Configuration Assistant
 
-Auditor Audit Configuration Assistant utility helps you to assess your environment readiness to
-being monitored with the product and automatically adjust the audit settings with the requirements.
+The Netwrix Auditor Audit Configuration Assistant utility helps you assess your environment's
+readiness for monitoring and automatically adjusts audit settings to meet the requirements.
 
 It checks current settings of your Active Directory and Group Policies against those required for
 monitoring of selected data sources: Group Policy settings, auditing entries for directory
@@ -19,13 +19,13 @@ You can instruct the utility to automatically apply the required settings.
 For that, you should ensure that the account you plan to use for accessing the target domain has the
 necessary rights.
 
-**Audit Configuration Assistant** is a part of Netwrix Auditor product setup. It is installed
+**Audit Configuration Assistant** is a part of Netwrix Auditor product setup. It installs
 together with the Auditor client and can be launched from the **Start** **menu** **>\_\_**Netwrix
 Auditor\*\*\*\*>**\*\*Netwrix Auditor Audit Configuration Assistant**. Alternatively, you can launch
 this utility from the monitoring plan wizard for Active Directory data source. See the Launch Audit
 Configuration Assistant section for additional information.
 
-Currently, the utility supports Active Directory and Logon Activity data sources.
+the utility supports Active Directory and Logon Activity data sources.
 
 ## Prerequisites
 
@@ -53,16 +53,16 @@ steps:
 
 ## Launch Audit Configuration Assistant
 
-Audit Configuration Assistant is a part of Netwrix Auditor product setup. It is installed together
+Audit Configuration Assistant is a part of Netwrix Auditor product setup. It installs together
 with Netwrix Auditor client and can be launched from the **Start** menu.
 
 Select **Netwrix Auditor**→**Netwrix Auditor Audit Configuration Assistant**.
 
-- If the utility is installed on the same machine as Netwrix Auditor server, you will be taken to
+- If the utility is installed on the same machine as Netwrix Auditor server, it opens directly to
   the **Welcome** step.
 - If the utility is installed on the remote machine together with Netwrix Auditor client, the
-  initial window will allow you to enter the settings to connect to Netwrix Auditor Server. Specify
-  the following:
+  initial window prompts you to specify the following settings to connect to Netwrix Auditor
+  Server:
 
 | Setting                   | Description                                                                                                                                                   |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -71,8 +71,8 @@ Select **Netwrix Auditor**→**Netwrix Auditor Audit Configuration Assistant**.
 | User                      | Enter user account in the _domain\name_ format.                                                                                                               |
 | Password                  | Enter account password.                                                                                                                                       |
 
-After you click **Connect**, the connection with Netwrix Auditor Server will be established, and you
-will be taken to the **Welcome** step.
+After you click **Connect**, the utility establishes the connection with Netwrix Auditor Server and
+takes you to the **Welcome** step.
 
 Alternatively, you can launch this utility by clicking the corresponding link:
 
@@ -83,7 +83,7 @@ Alternatively, you can launch this utility by clicking the corresponding link:
 
 ## Start Assessment
 
-Follow the steps to start assessment.
+To start the assessment:
 
 **Step 1 –** Specify the monitoring scope —select what you plan to monitor with Netwrix Auditor. You
 can select both **Active Directory** and **Logon Activity**, or any of them.
@@ -105,14 +105,15 @@ account must be included in the following groups:
 
 ## View Results
 
-At this step, you will be presented the results of the environment readiness assessment, including:
+At this step, Audit Configuration Assistant presents the results of the environment readiness
+assessment, including:
 
 - the list of current and required settings for each entity
 - the list of issues (if any) that occurred during the assessment
 
 ![assessment_results_thumb_0_0](/images/auditor/10.9/tools/assessment_results_thumb_0_0.webp)
 
-Follow the steps to view results.
+To view the results:
 
 **Step 1 –** Examine the report.
 
@@ -127,13 +128,13 @@ that, click **Apply required settings**.
 
 ## Complete the process
 
-After you click **Apply required settings**, the utility will proceed with modifying your current
-audit settings. Operation progress will be reported in the bottom of the window.
+After you click **Apply required settings**, the utility modifies your current audit settings and
+reports operation progress at the bottom of the window.
 
 **Step 1 –** Wait for the process to complete.
 
-**Step 2 –** Review the results. Successfully applied settings will be reported with a green tick;
-those that did not manage to apply will be with the yellow warning sign and explanatory text.
+**Step 2 –** Review the results. The utility reports successfully applied settings with a green
+tick, and marks settings that didn't apply with a yellow warning sign and explanatory text.
 
 **Step 3 –** You can click **Start over** to get to the Start Assessment, fix the issues and perform
 the procedure again, or click **Finish**.

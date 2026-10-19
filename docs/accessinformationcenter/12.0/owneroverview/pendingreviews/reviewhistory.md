@@ -10,7 +10,7 @@ The Review History page lists all completed review instances for your resources.
 
 ![Review History Tab](/images/accessinformationcenter/12.0/resourcereviews/reviewhistory.webp)
 
-The information displayed in the table includes:
+The table displays the following information:
 
 - Response Time – Date timestamp when the last review took place for the resource.
 - Review Type – Type of review
@@ -38,7 +38,7 @@ a resource where changes were recommended.
 
 ![Review Details Window](/images/accessinformationcenter/12.0/resourcereviews/reviewdetails_1.webp)
 
-The information displayed in the table includes:
+The table displays the following information:
 
 - Item Reviewed – Item upon which changes were suggested by the owner
 - Current – Current state of the item at the time of the review. It could be the type of access (for

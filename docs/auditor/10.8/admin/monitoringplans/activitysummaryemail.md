@@ -12,7 +12,7 @@ data sources an Activity Summary is generated daily at 3:00 AM and delivered to
 recipients. You can also launch data collection and Activity Summary generation manually.
 
 Notifications on user activity and event log collection (Event Log Collection Status) are a bit
-different and do not show changes.
+different and don't show changes.
 
 The following Activity Summary example applies to Active Directory. Other Activity Summaries
 generated and delivered by Netwrix Auditor will vary slightly depending on the data source.

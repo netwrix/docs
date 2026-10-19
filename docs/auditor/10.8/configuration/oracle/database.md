@@ -31,10 +31,10 @@ The following auditing modes are available for Oracle Database 12c, 18c, 19c:
        changes, user actions, component actions, etc.
 
 - Mixed Mode—Default auditing in a newly installed database. It enables both traditional and the new
-  **Unified Auditing** facilities. Netwrix recommends using **Unified Auditing** mode if you do not
+  **Unified Auditing** facilities. Netwrix recommends using **Unified Auditing** mode if you don't
   have any trail audit facilities in your infrastructure.
 
-    The product does not log any errors on these events to the Netwrix Auditor System Health log.
+    The product doesn't log any errors on these events to the Netwrix Auditor System Health log.
 
 To configure Oracle Database 12c, 18c, 19c Unified Auditing
 
@@ -81,7 +81,7 @@ Oracle Database administration documents:
 - `[CREATE AUDIT POLICY](https://docs.oracle.com/database/121/SQLRF/statements_5001.htm#create-audit-policy)`
 - `[AUDIT POLICY](http://docs.oracle.com/database/121/SQLRF/statements_4008.htm#audit-policy)`
 
-Currently, Netwrix Auditor checks audit settings for Unified Auditing when compatibility is enabled
+Netwrix Auditor checks audit settings for Unified Auditing when compatibility is enabled
 for `ACTIONS`. If any of your current settings conflict with the audit configuration required for
 Netwrix Auditor, these conflicts will be listed in the Netwrix Auditor System Health event log.
 
@@ -106,10 +106,10 @@ Starting with version 10.5, Auditor provides limited support of Oracle Database 
 for additional information.
 
 Verify that Oracle Data Provider for .NET and Oracle Instant Client are installed and properly
-configured on the computer where Auditor Server is installed. The product does not provide any
+configured on the computer where Auditor Server is installed. The product doesn't provide any
 special notification for that.
 
-Follow the steps to configure **Standard Auditing** on your Oracle Database 11g:
+To configure **Standard Auditing** on your Oracle Database 11gcomplete these steps:
 
 **Step 1 –** Select the audit trail to store audit records. Oracle Database has the following
 options:
@@ -122,7 +122,7 @@ options:
 
 ### Store Oracle Audit Records
 
-Follow the steps to select Audit Trail to store Oracle Audit Records:
+To select Audit Trail to store Oracle Audit Recordscomplete these steps:
 
 **Step 1 –** On the computer where your database is deployed, run the sqlplus tool.
 
@@ -148,7 +148,7 @@ the following:
 
 `STARTUP`
 
-If you only changed auditing settings, database restart is not required.
+If you only changed auditing settings, database restart isn't required.
 
 If you are using Oracle Real Application Clusters (RAC), see the
 [Starting and Stopping Instances and Oracle RAC Databases](https://docs.oracle.com/cd/E11882_01/rac.112/e41960/admin.htm#starting-and-stopping-instances-and-oracle-rac-databases)
@@ -157,7 +157,7 @@ on restarting your instances.
 
 ### Enable Auditing of Oracle Database Changes
 
-Follow the steps to enable auditing of Oracle Database changes:
+To enable auditing of Oracle Database changescomplete these steps:
 
 **Step 1 –** On the computer where your database is deployed, run the sqlplus tool.
 

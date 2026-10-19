@@ -21,17 +21,16 @@ dedicated servers:
 - Netwrix Data Classification server
 - SQL server with 2 instances: for Netwrix Auditor databases and for NDC SQL Database
 
-Also, ensure these servers have enough RAM to prevent from performance loss - minimum 12 GB
+Also, ensure these servers have enough RAM to prevent performance loss—minimum 12 GB
 required, 16+ GB recommended.
 
-To learn more, see the How It Works and Deployment Planning topics in the Netwrix Data
-Classification Knowledge center:
-[Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification)..
+For information on How It Works and Deployment Planning topics, see the
+[Netwrix Data Classification Documentation](https://helpcenter.netwrix.com/category/dataclassification).
 
 When planning for hardware resources, consider that insufficient CPU and RAM may lead to performance
-bottlenecks. Thus, try to provide not minimal but recommended configuration. Same recommendations
-refer to planning for storage capacity, especially if you plan to keep historical data for longer
-periods (e.g., to provide for investigations, compliance audit, etc.) - SSD
+bottlenecks. Provide the recommended configuration, not the minimal one. The same applies to storage capacity,
+especially if you plan to keep historical data for longer periods (for example, to support investigations
+or compliance audits)—use SSD storage.
 
 ## Small Environment
 
@@ -61,10 +60,10 @@ Hyper-V virtualization server. For more information on this deployment option, r
 
 - If you are implementing a PoC project, it is strongly recommended that after its completion you
   create a new Netwrix Auditor server VM dedicated for use in production. Migrating the VM that
-  hosted Netwrix Auditor server during the PoC into production environment is not recommended, as it
+  hosted Netwrix Auditor server during the PoC into production environment isn't recommended, as it
   may lead to performance problems.
 - Consider using a dedicated SQL Server for the PoC project. Production database servers are often
-  configured with the features that are not necessary for Netwrix Auditor (like cluster support,
+  configured with the features that aren't necessary for Netwrix Auditor (like cluster support,
   frequent backup, and so on). If you have no opportunity to use a dedicated SQL Server, then create
   an dedicated instance for Netwrix Auditor databases on your existing server.
 
@@ -129,7 +128,7 @@ approximately 1+ million of activity records generated per day):
 
 | Software Component                    | Requirement                                                                                 |
 |---------------------------------------|---------------------------------------------------------------------------------------------|
-| Microsoft SQL Server 2012 or later    | Standard or Enterprise edition (Express cannot be used due to its database size limitation) |
+| Microsoft SQL Server 2012 or later    | Standard or Enterprise edition (Express can't be used due to its database size limitation) |
 | Dedicated SQL Server instance or cluster is recommended |                                                                                   |
 | SQL Server Reporting Services for reporting |                                                                                   |
    
@@ -168,7 +167,7 @@ more than 20 000 users (10+ million of activity records generated per day):
 
 | Software Component                      | Requirement                                                                                          |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------|
-| Microsoft SQL Server 2012 or later      | Standard or Enterprise edition (Express cannot be used due to its database size limitation)          |
+| Microsoft SQL Server 2012 or later      | Standard or Enterprise edition (Express can't be used due to its database size limitation)          |
 | Dedicated SQL Server instance or cluster| Recommended                                                                                         |
 | SQL Server Reporting Services           | For reporting                                                                                       |
 

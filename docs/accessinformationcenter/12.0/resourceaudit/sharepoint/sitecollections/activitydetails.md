@@ -16,7 +16,7 @@ option.
 
 ![Activity Details report at the site collection, site, list, library, and folder levels](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/sitecollections/siteactivitydetails.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Access Time – Date and timestamp for when the operation occurred
 - Trustee Name – Owner of the trustee account
@@ -35,19 +35,18 @@ This report is comprised of the following columns:
 - Access – Whether the trustee was granted access to execute the operation: **Allowed** or
   **Denied**
 - Path – Original location where the operation occurred
-- Target Path – New location if changed by the operation. Blank if the operation does not result in
+- Target Path – New location if changed by the operation. Blank if the operation doesn't result in
   a new path.
 - Process Name – Name of the process which performed the operation
 
 The table data grid functions the same way as other table grids. See the
 [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.
 
-There is one line graph at the bottom displaying the Active Users Trend for the selected event.
+One line graph displays the Active Users Trend for the selected event.
 
 ![Active Users Trend graph](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/sitecollections/siteactivitydetailstrendgraph.webp)
 
-The line graph provides a visual representation of the number of active users over the selected date
-range. It indicates how many users are performing activity per day.
+The line graph shows the number of active users over the selected date range, indicating how many users are performing activity per day.
 
 See the
 [Activity Report Results Pane Features](/docs/accessinformationcenter/12.0/resourceaudit/navigate/overview.md#activity-report-results-pane-features)

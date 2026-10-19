@@ -16,12 +16,12 @@ number of days.
 - Select one of the options:
 
 - One of the last `<_number_>` of password – stop passwords from being reused for a specified number
-  of password changes. Choose the number of password changes from the drop-down list.
+  of password changes. Choose the number of password changes from the dropdown list.
 
 - A password used in the last `<_number_>` of days – stop passwords from being reused for a
-  specified number of days. Type the number of days in the text box.
+  specified number of days. Enter the number of days in the text box.
 
-- Hash function – Choose an item from the drop-down list.
+- Hash function – Choose an item from the dropdown list.
 
     Argon2 is recommended for best security. The Argon2 option uses 100,000 times more computing
     power to create a hash, so an attacker needs 100,000 more computing power to crack Argon2
@@ -31,12 +31,12 @@ number of days.
     handle the load.
 
     :::note
-    Changing the **Hash function** does not modify existing history records. It sets the
+    Changing the **Hash function** doesn't modify existing history records. It sets the
     function to be used for new password history records. If a user has Argon2 and SHA-256 hashes in
     their password history, then Password Policy Enforcer calculates both the Argon2 and SHA-256
-    hashes during a password change to ensure the new password is not in the password history.
+    hashes during a password change to ensure the new password isn't in the password history.
     :::
 
 
 - Enforce this rule when a password is reset – The History rule is normally not enforced when a
-  password is reset. Select the check box to override the default behavior.
+  password is reset. Select the checkbox to override the default behavior.

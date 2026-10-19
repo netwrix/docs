@@ -17,7 +17,7 @@ If desired, the analytic can be configured to lockdown the monitored file system
 | File System Attacks (by user) |                     |
 | ----------------------------- | ------------------------ |
 | Definition                    | Significant number of file changes made by an account in a short time period. Optionally block the perpetrator that triggers an incident by selecting the Enable Automatic Lockdown option.        |
-| Example                       | Malware or a bad actor is attempting to delete/modify (such as encrypt) or copy large numbers of files residing locally or on the network, in order to prevent access to or steal file system data. In the case of a ransomware attack, end user files are typically targeted (such as documents, spreadsheets, presentations, etc.), which is followed by a warning to pay a ransom or the files will be erased. This analytic will identify unusual/abnormally high levels of file activity in a short timeframe, and trigger a file system attack alert as a result. |
+| Example                       | Malware or a bad actor is attempting to delete/modify (such as encrypt) or copy large numbers of files residing locally or on the network, to prevent access to or steal file system data. In the case of a ransomware attack, end user files are typically targeted (such as documents, spreadsheets, presentations, etc.), which is followed by a warning to pay a ransom or the files will be erased. This analytic will identify unusual/abnormally high levels of file activity in a short timeframe, and trigger a file system attack alert as a result. |
 | Trigger                       | X number of files changed by an account in Y minutes     |
 | Recommended Settings          | Netwrix recommends configuring this analytic to trigger a hit if Threat Prevention monitors 500 files affected in 3 minutes.       |
 
@@ -37,7 +37,7 @@ Open the File System Attacks (by user) Analytic Policy in any of the following w
 
 - Click Analytics in the left pane to launch the Analytics interface. Then click the gear icon for
   the analytic.
-- Expand the Analytics node and click the desired analytic. On the analytic window, click the gear
+- Expand the Analytics node and click the analytic. On the analytic window, click the gear
   icon available in the top right corner.
 
 The Configure Analytics window has two tabs:
@@ -57,7 +57,7 @@ trigger an incident record.
 
 By default, file event data is cached in memory for 1 hour. When an incident is triggered, an
 incident record is saved to the database along with the events that triggered the incident. Raw file
-event data that did not contribute to an incident are purged from memory once they are more than 1
+event data that didn't contribute to an incident are purged from memory once they are more than 1
 hour old.
 
 After an incident has been triggered, the next event will reset the interval timer. The event data
@@ -79,11 +79,11 @@ list and blocked from initiating future events.
 The **Policy** tab for configuring analytics consists of the following sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/7.5/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can’t be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/overview.md) is configured. For monitoring only, it
-  contains the File System Changes event type. The only exception is that the Success filter cannot
+  contains the File System Changes event type. The only exception is that the Success filter can’t
   be modified.
 
   - **Required:** Configure the File System Paths filter for Paths and Path Collections. This
@@ -101,7 +101,7 @@ The **Policy** tab for configuring analytics consists of the following sub-tabs:
     monitor Write and Rename operations.
 
     :::info
-    Do not scope to include Read operations due to the quantity of files read
+    Don't scope to include Read operations due to the quantity of files read
     within an organization.
     :::
 
@@ -130,7 +130,7 @@ Changes Event Type.
 The **Policy** tab for configuring analytics consists of the following sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/7.5/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can’t be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/overview.md) is configured. It contains both the
@@ -194,15 +194,15 @@ The top data grid includes the following information for each incident:
 - Attacked Share Count – Number of affected shares monitored, sum of both the events which triggered
   the incident and the events that have occurred before the incident closes
 - Primary Attacked Host – Name of the target host with the highest number of events at the time the
-  incident was triggered. It does not update after the incident is triggered.
+  incident was triggered. It doesn't update after the incident is triggered.
 - Primary Attacked Share – Name of the affected share on the primary attacked host with the highest
-  number of events at the time the incident was triggered. It does not update after the incident is
+  number of events at the time the incident was triggered. It doesn't update after the incident is
   triggered.
 - Primary Attacked Folder – Name of the affected folder on the primary attacked share with the
-  highest number of events at the time the incident was triggered. It does not update after the
+  highest number of events at the time the incident was triggered. It doesn't update after the
   incident is triggered.
 
-Select an incident in the top data grid to view information on the events that triggered the :
+Select an incident in the top data grid to view information on the events that triggered the incident:
 
 - Agent: Domain – Active Directory domain where the Agent that monitored/blocked the event is
   deployed

@@ -7,12 +7,12 @@ sidebar_position: 10
 # Exceptions by Type Report
 
 The Exceptions report at the exception type level provides details on the selected exception type.
-An exception is defined as a problem or risk to Active Directory security. Each of these reports
+An exception is a problem or risk to Active Directory security. Each of these reports
 includes a Member Of table. Certain exception types also include a Members table.
 
 ![Exceptions report at the Exception Type level](/images/accessinformationcenter/12.0/resourceaudit/activedirectory/exceptions/exceptionsbytype.webp)
 
-This report is comprised of the following columns:
+This report contains the following columns:
 
 - Trustee Name – Owner of the trustee account
 - Trustee Account – Active Directory account associated with the trustee

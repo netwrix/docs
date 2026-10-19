@@ -6,11 +6,7 @@ sidebar_position: 30
 
 # Configuring Trace Logging
 
-If trace logging is disabled in SQL Server, then changes will be reported in Netwrix Auditor as made
-by _system_. To detect actual change initiator, Netwrix Auditor needs native trace logs data. During
-every data collection, Netwrix Auditor will check if the internal SQL audit mechanism is enabled,
-and enable it if necessary. To read more, refer to
-[this Netwrix Knowledge Base article](https://kb.netwrix.com/728).
+If trace logging is disabled in SQL Server, then changes will be reported in Netwrix Auditor as made by _system_. To detect the actual change initiator, Netwrix Auditor needs native trace log data. During every data collection, Netwrix Auditor checks if the internal SQL audit mechanism is enabled and enables it if necessary. See [this Netwrix Knowledge Base article](https://kb.netwrix.com/728) for more information.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -22,7 +18,7 @@ follow the procedure below.
 
 If you enable monitoring of SQL logons, SQL trace for these logons will be created anyway.
 
-Follow the steps to exclude SQL Server instance from turning trace logging on automatically.
+## Exclude SQL Server instances from automatic trace logging
 
 **Step 1 –** On Netwrix Auditor server, go to the _%Netwrix Auditor installation folder%\SQL Server
 Auditing_ folder.
@@ -42,9 +38,9 @@ By default, SQL Server trace logs will be stored in the predefined location (dep
 Server version). For example, SQL Server 2019 error logs are located at _`<drive>`:\Program
 Files\Microsoft SQL Server\MSSQL13.`<InstanceName>`\MSSQL\Log_.
 
-You can change this default location, using the _pathstotracelogs.txt_ file.
+You can change this default location by editing the _pathstotracelogs.txt_ file.
 
-Follow the steps to change trace log location.
+## Change trace log location
 
 **Step 1 –** On Netwrix Auditor server, go to _%Netwrix Auditor installation folder%\SQL Server
 Auditing_ folder.
@@ -61,7 +57,7 @@ will be ignored.
 
 `SQLSRV01\MSSQL2016|C:\Logs\NA trace logs\`
 
-If you want to change trace logs location for multiple instances of one SQL server, make sure that
+If you want to change trace logs location for multiple instances of one SQL server, ensure that
 specified UNC paths are unique across these instances.
 
 Correct:

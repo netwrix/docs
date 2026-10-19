@@ -7,8 +7,7 @@ sidebar_position: 10
 # Qumulo Activity Auditing Configuration
 
 The Netwrix Activity Monitor can be configured to monitor activity on Qumulo devices. To prepare
-Qumulo to be monitored, an account needs to be provisioned and the audit event format may need to be
-modified.
+Qumulo for monitoring, provision an account and modify the audit event format if needed.
 
 ## Provision Account
 
@@ -19,7 +18,7 @@ steps to create a new account in the Qumulo web user interface with the Observer
 
 **Step 2 –** Assign the Observers role to the user using **Cluster** > **Role Management**.
 
-This credential will then be used when configuring the Activity Agent to monitor the Qumulo device.
+Use this credential when configuring the Activity Agent to monitor the Qumulo device.
 
 ## Verify Audit Event Format
 
@@ -32,7 +31,7 @@ advanced filtering of Microsoft Office activity also requires the JSON format.
 The JSON format for audit events was introduced in Qumulo Core 6.0.1. The new format can be enabled
 via an SSH session to the Qumulo cluster.
 
-Follow the steps to verify that audit event format and change the format, if needed.
+Verify the audit event format and change it, if needed:
 
 **Step 1 –** Connect to the Qumulo cluster with SSH.
 
