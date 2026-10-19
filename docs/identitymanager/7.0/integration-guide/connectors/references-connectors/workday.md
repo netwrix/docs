@@ -171,7 +171,7 @@ the `appsettings.encrypted.agent.json` file;
 - A
 [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) able to store Workday's `Login`, `Password` and `Server`.
 
-Protected attributes are stored inside a safe in <b>cyberark</b>, into an account whose identifier Identity Manager retrieves from `*appsettings.<b>cyberark</b>.agent.json*`.
+Identity Manager stores protected attributes inside a safe in <b>cyberark</b>, in an account whose identifier it retrieves from `*appsettings.<b>cyberark</b>.agent.json*`.
 
 > For example:
 >

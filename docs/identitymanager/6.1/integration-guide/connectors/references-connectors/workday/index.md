@@ -190,8 +190,8 @@ You can protect data through:
   [CyberArk Vault](/docs/identitymanager/6.1/integration-guide/network-configuration/agent-configuration/cyberark-application-access-manager-credential-providers/index.md)
   able to store Workday's `Login`, `Password` and `Server`.
 
-Protected attributes are stored inside a safe in CyberArk, into an account whose identifier
-Usercube retrieves from `appsettings.cyberark.agent.json`.
+Usercube stores protected attributes inside a safe in CyberArk, in an account whose identifier
+it retrieves from `appsettings.cyberark.agent.json`.
 
 > For example:
 >
