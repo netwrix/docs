@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Netwrix Identity Manager
 
-To learn about Netwrix Identity Manager (formerly Usercube) and build the solution you need, explore the guides below.
+To learn about Netwrix Identity Manager (formerly Usercube) and build the solution you need, explore the following guides.
 
-The present documentation mentions the Netwrix Identity Manager (formerly Usercube) application as simply Identity Manager.
+This documentation refers to the Netwrix Identity Manager (formerly Usercube) application as Identity Manager.
 
 Identity Manager's guides include:
 
