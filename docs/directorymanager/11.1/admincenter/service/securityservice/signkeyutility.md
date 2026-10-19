@@ -18,8 +18,7 @@ authentication mechanism for schedules. See the Update Schedules section for add
 
 If you run multiple instances of Directory Manager for load balancing and high availability, you can
 use this utility to export the newly generated signing key and then import it to other Directory
-Manager instances. See the following sections for information on how to export and import the
-signing key:
+Manager instances. To export and import the signing key, see the following sections:
 
 - Export a Signing Key
 - Import a Signing Key
@@ -52,7 +51,7 @@ Generate the new signing key on your Directory Manager server machine.
 
 To generate a new signing key:
 
-1. At the Windows Command prompt, go to the folder where you have placed the utility.
+1. At the Windows Command prompt, go to the folder that contains the utility.
 
 2. Enter the following command at the prompt:
 
