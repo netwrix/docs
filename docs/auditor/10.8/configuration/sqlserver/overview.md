@@ -19,7 +19,7 @@ knowledge base article for additional information.
 Auditor configures the following automatically:
 
 - SQL Server traces that capture configuration changes, logons, and, in the **Don't use triggers**
-  mode, data changes and SELECT statements. Auditor restores the traces after SQL Server restarts.
+  mode, data changes and SELECT statements.
 - In the **Use triggers for detailed monitoring** mode, triggers on the audited tables and the
   _NetwrixSQLCRAudit_ database where the triggers store data changes. Auditor also sets the
   TRUSTWORTHY option to ON for the audited databases.
