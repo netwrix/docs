@@ -17,17 +17,22 @@ products:
 sidebar_label: How to Update Endpoint Protector or Unify Server
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "How to Update Endpoint Protector or Unify Server"
 knowledge_article_id: kA0Qk0000001EfFKAU
 ---
 
 # How to Update Netwrix Endpoint Protector or Unify Server
 
+:::note
+Netwrix removed the Live Update feature from Endpoint Protector (EPP) starting with EPP Server version 2509. You can only apply updates through the [Offline Patch Uploader](/docs/endpointprotector/admin/systemconfiguration/systemdashboard#software-update).
+:::
+
 ## Finding the Current Version
 
-Customers not using the live update server will need to know their version number to ensure the correct patch is installed.
+Customers not using the live update server will need to know their version number to ensure they install the correct patch.
 
-To find the version of the Netwrix Endpoint Protector server, follow the below steps:
+To find the version of the Netwrix Endpoint Protector server, follow these steps:
 
 1. Navigate to the web interface of the console.  
 2. Log in.  
@@ -35,7 +40,7 @@ To find the version of the Netwrix Endpoint Protector server, follow the below s
 
 ![Netwrix Endpoint Protector version number](./../0-images/ka0Qk0000004M3Z_0EMQk000005fb5Z.png)
 
-To find the version of the Unify server, follow the below steps:
+To find the version of the Unify server, follow these steps:
 
 1. Log in to the Unify web console.  
 2. Check the top left for the version information.
@@ -44,9 +49,9 @@ To find the version of the Unify server, follow the below steps:
 
 ## Updating with Live Update
 
-Live Update is the recommended way to patch the Netwrix Endpoint Protector server. It uses the server's internet connection to check for and download updates for the Netwrix Endpoint Protector server. More information on the Live Update feature can be found here. If internet access is restricted on the Netwrix Endpoint Protector appliance, then follow the instructions for offline update.
+Live Update is the recommended way to patch the Netwrix Endpoint Protector server. It uses the server's internet connection to check for and download updates. For more information about Live Update, see [Server Update](/docs/endpointprotector/admin/systemconfiguration/systemdashboard#server-update) in the Netwrix Endpoint Protector documentation. If internet access is restricted on the Netwrix Endpoint Protector appliance, follow the instructions for offline update instead.
 
-To install the latest updates with Live Update, follow the below steps:
+To install the latest updates with Live Update, follow these steps:
 
 1. Log in to the Netwrix Endpoint Protector Web Console using an administrative account.  
 2. Under the **Dashboard** heading, select **Live Update.**  
@@ -60,9 +65,9 @@ To install the latest updates with Live Update, follow the below steps:
 
 ## Updating Using the Offline Patch Uploader
 
-The offline patch uploader is the mechanism used to perform offline updates of the Netwrix Endpoint Protector server when no internet connection is available from the Netwrix Endpoint Protector server itself.
+Use the offline patch uploader to update the Netwrix Endpoint Protector server when it has no internet connection. For more information, see [Server Update](/docs/endpointprotector/admin/systemconfiguration/systemdashboard#software-update) in the Administration section of the Netwrix Endpoint Protector documentation.
 
-To apply an offline update, follow the below steps:
+To apply an offline update, follow these steps:
 
 1. Download the offline patch.  
 2. Log in to the Netwrix Endpoint Protector Web Console using an administrative account.  
@@ -76,12 +81,12 @@ To apply an offline update, follow the below steps:
 
 ## Verifying an Update Installed
 
-To verify an update was applied to the Netwrix Endpoint Protector server, follow the below instructions:
+To verify that the Netwrix Endpoint Protector server applied an update, follow these instructions:
 
 1. Log in to the Netwrix Endpoint Protector web console using an administrative account.  
 2. Under the **Dashboard** heading, select **Live Update.**  
 3. Click on **View Applied EPP Software Updates.**  
-4. Look through the applied updates to see if the update was installed.
+4. Look through the applied updates to confirm the server installed the update.
 
 ![The button to open the view of all updates](./../0-images/ka0Qk0000004M3Z_0EMQk000005fbTl.png)
 

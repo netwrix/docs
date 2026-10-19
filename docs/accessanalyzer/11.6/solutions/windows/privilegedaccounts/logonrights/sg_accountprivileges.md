@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # SG_AccountPrivileges Job
 
-The SG_AccountPrivileges job identifies accounts privileges on hosts in the targeted environment.
+The SG_AccountPrivileges job identifies account privileges on hosts in the targeted environment.
 
 **Targeted Hosts**
 
@@ -33,7 +33,7 @@ Navigate to the **Windows** > **Privileged Accounts** > **Logon Rights** >
 **SG_AccountPrivileges** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

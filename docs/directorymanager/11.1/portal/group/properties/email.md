@@ -19,8 +19,8 @@ displayed in this box.
 
 **Managed by**
 
-Microsoft Exchange 2013/2016/2019 offers the co-managed by feature that enables you to specify
-Exchange additional owners for a group.
+Microsoft Exchange 2013/2016/2019 offers the co-managed by feature. Use it to specify
+additional owners for a group.
 
 The **Managed by** section is displayed when Microsoft Exchange Server 2013/2016/2019 is deployed as
 the messaging provider for the identity store your portal is connected to. This list shows Exchange
@@ -39,3 +39,4 @@ along with the group’s primary owner and additional owners. See
 Only mail-enabled users can be designated as Exchange additional owners.
 
 :::
+

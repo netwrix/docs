@@ -12,13 +12,11 @@ for triggering these schedules at their respective frequency.
 
 ## View Scheduler Service Details
 
-Follow the steps to view details of Scheduler service.
-
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
 Step 2 – On the Applications page, click the **Scheduler Service** tab.
 
-The tab displays the default Scheduler service(s) hosted in native IIS. The number of services
+The tab displays the default Scheduler services hosted in native IIS. The number of services
 displayed on the tab depend on the number of nodes in all Elasticsearch clusters in your
 environment, as each cluster has its own Scheduler services. See the
 [Elasticsearch Clusters, Nodes, and Directory Manager](overview.md#elasticsearch-clusters-nodes-and-directory-manager)
@@ -26,7 +24,7 @@ topic for additional information.
 For details displayed on a service card, see the table in the
 [View Data Service Details](dataservice/manage.md#view-data-service-details) topic.
 
-You cannot create a new Scheduler service or delete the existing one.
+You can't create a new Scheduler service or delete the existing one.
 
 ## Manage Scheduler Service Settings
 

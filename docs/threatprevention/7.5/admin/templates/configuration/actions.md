@@ -32,15 +32,15 @@ same type. However, only one database event consumer can be added per policy.
 
 Actions are configured to run on a separate thread from the policy’s event processing thread.
 Incoming events have a dedicated thread/queue for processing. Email notification has a dedicated
-thread/queue for processing. Custom Script actions has a dedicated thread/queue for processing. This
+thread/queue for processing. Custom Script actions have a dedicated thread/queue for processing. This
 allows the action to process without blocking new events from going into the database while the
 action completes.
 
 You can enable or disable an action in any of the following ways:
 
 - Check or uncheck the Enabled checkbox for an action in the Action Configurations list
-- On selecting an action in the Action Configurations list, its details are displayed on the Actions
-  tab. You can check or uncheck the Enabled checkbox for the action here.
+- Select an action in the Action Configurations list to view its details on the Actions
+  tab, where you can check or uncheck the Enabled checkbox.
 
 Save all changes made to a policy or a template before leaving the configuration interface.
 
@@ -53,8 +53,8 @@ alert. Reporting uses the events database.
 
 ## Send to SIEM
 
-This action is added by selecting the desired SIEM profile to be the recipient of the SIEM
-notifications from the drop-down menu. Only SIEM profiles previously created are available for
+This action is added by selecting the SIEM profile you want to receive the SIEM
+notifications from the dropdown menu. Only SIEM profiles previously created are available for
 selection. This action can also be assigned on the
 [SIEM Tab](/docs/threatprevention/7.5/admin/configuration/systemalerting/siem.md) of the System Alerting Window.
 
@@ -86,13 +86,13 @@ Threat Manager Configuration window.
 ## Email Notifications
 
 :::warning
-Email notifications should not be used on highly active policies. Please reserve this
-feature for policies where immediate notification of an event is needed.
+Don't use email notifications on highly active policies. Reserve this
+feature for policies where you need immediate notification of an event.
 :::
 
 
-To enable email notifications, select the desired message profile to be recipient of the email
-notifications from the drop-down menu. Only message profiles previously created are available for
+To enable email notifications, select the message profile you want to receive the email
+notifications from the dropdown menu. Only message profiles previously created are available for
 selection. This action can also be assigned on the
 [System Alerting Window](/docs/threatprevention/7.5/admin/configuration/systemalerting/overview.md).
 
@@ -106,10 +106,9 @@ Enable the Email Notifications checkbox, select a message profile and then choos
   - Policy – Threat Prevention will send an email notification for the first event only, and skip
     notifications for any other events captured by the same policy during the duration you specify
     in the boxes below.
-  - Subject – Threat Prevention will send an email notification (say, Notification1) for the first
-    event only, and skip notifications for any other events whose email notification will have the
-    same subject line as Notification1. It will skip sending notifications for the duration you
-    specify in the boxes below. Note that the subject line is configured within the message
+  - Subject – Threat Prevention sends an email notification (for example, Notification1) for the first
+    event only, then skips notifications for any other events with the same subject line for the duration you
+    specify in the boxes below. The subject line is configured within the message
     profile.
 
 - Set the duration (in minutes or hours) for which emails notifications are skipped after an email

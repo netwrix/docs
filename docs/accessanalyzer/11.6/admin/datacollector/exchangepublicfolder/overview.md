@@ -7,12 +7,12 @@ sidebar_position: 200
 # ExchangePublicFolder Data Collector
 
 The ExchangePublicFolder Data Collector audits an Exchange Public Folder, including contents,
-permissions, ownership, and replicas. This is a MAPI-based data collector which requires the
-**Settings > Exchange** node to be enabled and configured. See the
+permissions, ownership, and replicas. This is a MAPI-based data collector, which requires you to
+enable and configure the **Settings > Exchange** node. See the
 [Exchange](/docs/accessanalyzer/11.6/admin/settings/exchange.md)
 topic for additional information.
 
-The ExchangePublicFolder Data Collector has been preconfigured within the Exchange Solution. Both
+The ExchangePublicFolder Data Collector comes preconfigured within the Exchange Solution. Both
 this data collector and the solution are available with a special Enterprise Auditor license. See
 the
 [Exchange Solution](/docs/accessanalyzer/11.6/solutions/exchange/overview.md)
@@ -35,11 +35,11 @@ topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time ,
-then an extra 16 GB of RAM are required (8x2=16).
+You must install the Sensitive Data Discovery Add-On on the Enterprise Auditor Console server to
+enable Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans, increase
+the minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For
+example, if you configure the job to scan 8 hosts at a time, you need an extra 16 GB of RAM
+(8 x 2 = 16).
 
 ## ExchangePublicFolder Query Configuration
 
@@ -62,7 +62,7 @@ permissions on the Welcome page.
 In the Connection Setting section, choose to either maintain the global inheritance, or configure
 query specific settings.
 
-The **Use Global setting** option specifies what setting is being inherited. Clear this option to
+The **Use Global setting** option specifies which setting the query inherits. Clear this option to
 break inheritance, and then select one of the following options:
 
 - System Attendant (2003 & 2007)
@@ -74,6 +74,6 @@ See the
 [Exchange](/docs/accessanalyzer/11.6/admin/settings/exchange.md)
 topic for additional information.
 
-In the Sampling server section, enter the Exchange server in the textbox to be used to test the
+In the Sampling server section, enter the Exchange server in the textbox to test the
 connection settings. Click **Test sampling server** to ensure there is access to the server. The box
 at the bottom of the page displays information regarding the test connection in progress.

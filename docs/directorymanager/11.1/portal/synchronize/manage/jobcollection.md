@@ -21,7 +21,7 @@ You can do the following in a job collection:
   objects processed by the job collection and a detailed log of statistics and errors.
 
     :::note
-    Notification settings for individual jobs do not apply when they are run as part of a job
+    Notification settings for individual jobs don't apply when they are run as part of a job
     collection.
     :::
 
@@ -56,7 +56,7 @@ All the job collections that match the specified criterion are displayed.
 
 ## Run a Job Collection
 
-Follow the steps to run a job collection.
+To run a job collection.
 
 Step 1 – On Directory Manager portal, click **Synchronize** on left pane.
 
@@ -68,14 +68,14 @@ Step 3 – From the list, click the three vertical dots icon of the required job
 The Run Job Collection dialog box opens, showing the progress of the of the job collection as it
 runs.
 
-Step 4 – Run Job Collection dialog box displays overall collection statistics for the run, reports
+Step 4 – Run Job Collection dialog box displays overall collection statistics for the run, reports,
 and individual logs for each job in the collection.
 
 Step 5 – Click **Run Job Collection in the Background** to list the job in the Background tasks.
 
 ## Create a Job Collection by duplicating an existing one
 
-Follow the steps to create a Job Collection by duplicating an existing one
+To create a Job Collection by duplicating an existing one
 
 Step 1 – In Directory Manager portal, select **Synchronize**.
 
@@ -106,7 +106,7 @@ Step 5 – Click **Finish**.
 
 ## Edit a Job in a Job Collection
 
-Follow the steps to edit a Job in a Job Collection.
+To edit a Job in a Job Collection.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
@@ -144,14 +144,14 @@ Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
 Step 2 – On the Synchronize portal, click **Job Collections**.
 
-Step 3 – In the job collections list, click on the required job collection to open Synchronized Job
+Step 3 – In the job collections list, click the required job collection to open Synchronized Job
 Collection page.
 
 Step 4 – Select the required job and click **Remove**.
 
 ## Delete a Job Collection
 
-Follow the steps to delete a job collection.
+To delete a job collection.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
@@ -162,7 +162,7 @@ want to delete and click **Delete**.
 
 ## Preview a Job Collection
 
-Follow the steps to preview a job collection.
+To preview a job collection.
 
 Step 1 – On Directory Manager portal, click select **Synchronize** on left pane.
 
@@ -179,7 +179,7 @@ reports.
 
 ## Pin a Job Collection
 
-Follow the steps to pin a job to the [Dashboard](/docs/directorymanager/11.1/portal/synchronize/dashboard.md) under the pinned job card.
+To pin a job to the [Dashboard](/docs/directorymanager/11.1/portal/synchronize/dashboard.md) under the pinned job card.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
@@ -210,7 +210,7 @@ The new template gets listed in the Job Collection Templates page.
 ## Rename a Job Collection
 
 Renaming a job collection lets you save a job collection under a new name and a new description.
-Renaming a job collection does not affect its settings.
+Renaming a job collection doesn't affect its settings.
 
 **Renaming a Job Collection, using shortcut**
 
@@ -222,8 +222,8 @@ Step 3 – Click the required Job Collection. It takes you to Job Collection cre
 
 Step 4 – Go to Job Details to rename the job.
 
-1. In the Job Collection Name box, type a new name for the Job.
-2. In the Job Collection Description box, type a new description for the box (optional).
+1. In the Job Collection Name box, enter a new name for the Job.
+2. In the Job Collection Description box, enter a new description for the box (optional).
 
 Step 5 – Click **Finish** to close the dialog box and save changes.
 
@@ -239,8 +239,8 @@ Step 4 – On the Actions menu, click **Rename**.
 
 Step 5 – On the Rename Job Collection dialog box:
 
-1. In the **Job Name** box, type a new name for the Job.
-2. In the Job Collection **Description** box, type a new description for the box (optional).
+1. In the **Job Name** box, enter a new name for the Job.
+2. In the Job Collection **Description** box, enter a new description for the box (optional).
 
 Step 6 – Click **Save** to close the dialog box and save changes.
 
@@ -255,9 +255,9 @@ Step 2 – On Synchronize portal, click **Job Collection**.
 Step 3 – On the Job Collection page, click the three vertical dots icon on the job in the list that
 you want to export and click **Export**.
 
-Step 4 – On the Export Job(s) wizard, enter the password and export the job collection.
+Step 4 – On the Export Jobs wizard, enter the password and export the job collection.
 
-If you want to export multiple job collections, select all and click **Export Job(s)** from the top
+If you want to export multiple job collections, select all and click **Export Jobs** from the top
 right corner.
 
 ## Import a Job Collection
@@ -277,14 +277,14 @@ Step 4 – Click the **Browse** button to browse to the location where the expor
 
 Enter the password in the **Password** box.
 
-Select the **Rename Job if already exists** checkbox if you do not want multiple jobs with same
+Select the **Rename Job if already exists** checkbox if you don't want multiple jobs with same
 names.
 
-Step 5 – Click **Import Job(s)**. The Job collection gets listed with other jobs.
+Step 5 – Click **Import Jobs**. The Job collection gets listed with other jobs.
 
 ## Recent Runs
 
-Follow the steps to view overall collection statistics, reports and individual logs for each of the
+To view overall collection statistics, reports, and individual logs for each of the
 jobs in the collection for their last run activity.
 
 Step 1 – On Directory ManagerPortal, click **Synchronize** on left pane.

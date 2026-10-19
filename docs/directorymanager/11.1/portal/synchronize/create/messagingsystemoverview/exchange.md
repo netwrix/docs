@@ -14,9 +14,9 @@ you the facility to sync or deprovision subscriptions from Office 365 messaging 
 While creating or editing a Synchronize job (mailbox-enabled user) you can sync subscriptions from
 Exchange messaging provider.
 
-On the **Object, Fields and Mapping** page:
+On the **Object, Fields, and Mapping** page:
 
-Step 1 – In the **Messaging Provider** drop-down list, select the **Exchange** version that you want
+Step 1 – In the **Messaging Provider** dropdown list, select the **Exchange** version that you want
 to use.
 
 Step 2 – Enter the domain name where the mail server resides in the **Domain** name box.
@@ -31,9 +31,9 @@ With Microsoft Exchange as the messaging provider, the **Server Name** column in
 assigns the highest priority to a server. You can change its priority level and set the priority for
 other servers.
 
-If your required server is not listed, click **Sync Again**.
+If your required server isn't listed, click **Sync Again**.
 
-1. In the **Server Status and Priority** section, select the check box for the server you want to
+1. In the **Server Status and Priority** section, select the checkbox for the server you want to
    specify or change the priority for.
 
     Directory Manager checks the availability of the server and displays its status as _Online_

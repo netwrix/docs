@@ -8,7 +8,7 @@ sidebar_position: 80
 
 The User Investigation dashboard only appears when a search is conducted. This can be done by
 clicking a user-account hyperlink in the Perpetrator or Affected Object columns of a table card.
-Alternatively, type the complete user name in the Search box on the right side of the navigation
+Alternatively, enter the complete user name in the Search box on the right side of the navigation
 bar.
 
 The User Investigation dashboard contains the following cards:
@@ -31,14 +31,13 @@ The User Investigation dashboard contains the following cards:
 
 The time interval is identified in the upper-right corner with the _Start_ and _End_ boxes. This is
 set by default to the past three (3) hours. To search within a different interval, either manually
-type the desired date and time or use the calendar buttons to set the desired date and time
-interval. Then click **Search** to refresh the card data.
+enter the date and time you want or use the calendar buttons to set the interval. Then click **Search** to refresh the card data.
 
 When a search using a time interval longer than twelve (12) hours is instigated, the database query
 is broken into multiple mini-queries. This will result in a visible reset of the dashboard display
 at the end of each mini-query until all data for the selected time interval has been retrieved.
 
-Additionally, this feature allows you to scope the report data to just Threat Prevention collected
+Additionally, use this feature to scope the report data to just Threat Prevention collected
 events or to all information in QRadar for the selected user, which opens in another tab. Click
-Search and select Threat Prevention from the drop-down menu to refresh the card data or select
-QRadar from the drop-down menu to open the user’s _List of Events_.
+Search and select Threat Prevention from the dropdown menu to refresh the card data or select
+QRadar from the dropdown menu to open the user’s _List of Events_.

@@ -14,7 +14,7 @@ View the analysis task by navigating to the **Exchange** > **6. Distribution Lis
 Analysis** > **EX_LargestGroups** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

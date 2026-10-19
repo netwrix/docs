@@ -13,37 +13,25 @@ need to create a monitoring plan for auditing event logs.
 
 ## Create Alerts for Non-Owner Mailbox Access Events
 
-The procedure below describes the basic steps, required for creation of a monitoring plan that will
-be used to collect data on non-owner mailbox access events. See
-[Event Log Manager](/docs/auditor/10.7/tools/eventlogmanager/eventlogmanager.md) topic for additional information.
+The procedure below describes the basic steps required to create a monitoring plan for collecting data on non-owner mailbox access events. See [Event Log Manager](/docs/auditor/10.7/tools/eventlogmanager/eventlogmanager.md) for additional information.
 
-Follow the steps to create alert for non-owner mailbox access events.
+1. Create a monitoring plan in Netwrix Auditor Event Log Manager.
 
-**Step 1 –** Create a monitoring plan in Netwrix Auditor Event Log Manager.
+2. Ensure that the Enable event log collection checkbox is selected. Specify a name for the new plan, for example, "_Non-owner mailbox access auditing_".
 
-**Step 2 –** Make sure that the Enable event log collection checkbox is selected. Specify the name
-for the new plan, for example, "_Non-owner mailbox access auditing_".
+3. Navigate to the Monitored computers list and add the server where your Exchange organization resides.
 
-**Step 3 –** Navigate to the Monitored computers list and add a server where your Exchange
-organization resides.
+4. On the General tab, click Configure next to Alerts. Ensure the predefined alerts are disabled and click Add to create an alert for non-owner mailbox access events.
 
-**Step 4 –** On the General tab, click Configure next to Alerts. Make sure the predefined alerts are
-disabled. Click Add to create an alert for non-owner mailbox access event.
+5. In the Alert Properties wizard, specify the alert name and enter an alert description (optional). Specify the number of alerts per email. Grouped alerts for different computers will be delivered in separate email messages. This value is set to 1 by default, which means each alert will be delivered as a separate email message.
 
-**Step 5 –** In the Alert Properties wizard, specify the alert name and enter alert description
-(optional). Specify the number alerts per email. Grouped alerts for different computers will be
-delivered in separate email messages. This value is set to 1 by default, which means that each alert
-will be delivered as a separate email message.
+6. Specify the alert recipient if you want the alert delivered to a non-default email address.
 
-**Step 6 –** Specify alert recipient if you want the alert to be delivered to a non-default email.
+7. Navigate to Event Filters and click Add to specify an event that will trigger the alert.
 
-**Step 7 –** Navigate to Event Filters and click Add to specify an event that will trigger the
-alert.
+8. Complete the Event Filter dialog.
 
-**Step 8 –** Complete the Event Filter dialog.
-
-- In the Event tab, specify the filter name and description. In the Event Log field enter _"Netwrix
-  Non-Owner Mailbox Access Agent"_.
+   - In the Event tab, specify the filter name and description. In the Event Log field, enter _"Netwrix Non-Owner Mailbox Access Agent"_.
 
 - In the Event Fields tab, complete the following fields:
 
@@ -67,27 +55,21 @@ alert.
 
     - Source—Enter _"Netwrix Non-Owner Mailbox Access Agent"_.
 
-- In the Insertion Strings tab, select Consider the following event Insertion Strings to receive
-  alerts on events containing a specific string in the EventData. Click Add and specify the
-  Insertion String.
+   - In the Insertion Strings tab, select Consider the following event Insertion Strings to receive alerts on events containing a specific string in the EventData. Click Add and specify the Insertion String.
 
-**Step 9 –** Click OK to save the changes and close the Event Filters dialog.
+9. Click OK to save the changes and close the Event Filters dialog.
 
-**Step 10 –** In the Netwrix Auditor Event Log Manager wizard, navigate to Notifications and specify
-the email address where notifications will be delivered.
+10. In the Netwrix Auditor Event Log Manager wizard, navigate to Notifications and specify the email address where notifications will be delivered.
 
-**_RECOMMENDED:_** click **Send Test Email**. The system will send a test message to the specified
-email address and inform you if any problems are detected.
+    **RECOMMENDED:** Click **Send Test Email**. The system will send a test message to the specified email address and inform you if any problems are detected.
 
-**Step 11 –** Click Edit next to Audit Archiving Filters step, in the Inclusive Filters section
-clear the filters you do not need, click Add and specify the following information:
+11. Click Edit next to Audit Archiving Filters step. In the Inclusive Filters section, clear the filters you don't need, click Add, and specify the following information:
 
-- The filter name and description (e.g., Non-owner mailbox access event)
-- In Event Log, enter _"Netwrix Non-Owner Mailbox Access Agent"_.
-- In Write to, select Long-Term Archive. The events will be saved into the local repository.
+    - The filter name and description (e.g., Non-owner mailbox access event)
+    - In Event Log, enter _"Netwrix Non-Owner Mailbox Access Agent"_
+    - In Write to, select Long-Term Archive. The events will be saved to the local repository.
 
-**Step 12 –** Click Save. If an event occurs that triggers an alert, an email notification will be
-sent immediately to the specified recipients.
+12. Click Save. When an event occurs that triggers an alert, an email notification will be sent immediately to the specified recipients.
 
 ## Review Event Description
 

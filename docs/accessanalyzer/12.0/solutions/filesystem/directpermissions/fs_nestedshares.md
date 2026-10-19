@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # FS_NestedShares Job
 
-The FS_NestedShares job is is designed to report on nested shares that have been granted direct
+The FS_NestedShares job is designed to report on nested shares that have been granted direct
 permissions from targeted file servers.
 
 ## Analysis Tasks for the FS_NestedShares Job
@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **FileSystem** > **2.Direct Permiss
 **FS_NestedShares** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

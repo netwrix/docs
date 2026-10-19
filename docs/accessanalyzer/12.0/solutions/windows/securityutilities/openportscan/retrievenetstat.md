@@ -31,7 +31,7 @@ Navigate to the **Windows** > **Security Utilities** > **OpenPortScan** > **Retr
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -43,7 +43,7 @@ The default analysis tasks are:
 -   **1. NETSTAT Result** – Creates the SA_RetrieveNetstat_NETSTAT table accessible under the job’s
        Results node
 
-In addition to the tables and views created by the analysis tasks, the EX_DeliveryTimes job produces
+In addition to the tables and views created by the analysis tasks, the RetrieveNetstat job produces
 the following pre-configured report.
 
 | Report                            | Description                                                                                                                      | Default Tags | Report Elements                                                                                   |

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # General tab
 
-This tab allows you to view or modify the general information about the group.
+This tab lets you view or modify the general information about the group.
 
 **Display name**
 
@@ -18,11 +18,11 @@ The alias for the group.
 
 **Manager can update membership**
 
-Select this check box to enable the group managers (primary owner and Exchange additional owners) to
-update this group’s membership directly on the directory server. Additional owners are not included
-because they are Directory Manager-specific and the directory does not recognize them.
+Select this checkbox to enable the group managers (primary owner and Exchange additional owners) to
+update this group’s membership directly on the directory server. Additional owners aren't included
+because they are Directory Manager-specific and the directory doesn't recognize them.
 
-This is a provider-end permission and does not impact role-based permissions assigned at the
+This is a provider-end permission and doesn't impact role-based permissions assigned at the
 identity store level in Directory Manager. Nor do role-based permissions assigned at the identity
 store level have any impact on this feature.
 
@@ -31,17 +31,17 @@ example, the manager is granted the following permissions:
 
 - Create, delete, and manage user accounts.
 - Reset user password and force password change at next logon.
-- Create, delete and manage groups.
+- Create, delete, and manage groups.
 - Modify the membership of a group.
 
 :::note
-Do not update Smart Group membership manually; changes might be reversed when the Smart Group
+Don't update Smart Group membership manually; changes might be reversed when the Smart Group
 Update job runs.
 :::
 
 
 :::note
-The _manager can update membership_ feature is not available for groups in a Microsoft Entra
+The _manager can update membership_ feature isn't available for groups in a Microsoft Entra
 ID based identity store.
 :::
 
@@ -57,7 +57,7 @@ would expire when the period ends.
 
 If you select the Other option from the list, two boxes are displayed under the Expiration Policy
 box. First, select an option (Days, Months, or Years) from the second list. Then enter a value for
-the selected option in the first box. the group will remain active for the duration you specify
+the selected option in the first box. The group will remain active for the duration you specify
 here.
 
 The Group Life Cycle job is responsible for expiring groups.
@@ -86,7 +86,7 @@ group scope must be set to _Universal_ for mail-enabled groups.
 
 
 :::note
-In a Microsoft Entra ID based identity store, the group scope does not apply.
+In a Microsoft Entra ID based identity store, the group scope doesn't apply.
 :::
 
 
@@ -94,13 +94,13 @@ In a Microsoft Entra ID based identity store, the group scope does not apply.
 
 The group type set for the group.
 
-- **Security** - this group will be used for securing public folders, printers and other network
+- **Security** - this group will be used for securing public folders, printers, and other network
   resources.
 - **Distribution** - this group will only be used for email distribution.
 
 :::note
 In a Microsoft Entra ID based identity store, the group type is set to 'security' by default
-and this option is not displayed.
+and this option isn't displayed.
 :::
 
 

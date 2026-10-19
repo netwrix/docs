@@ -27,9 +27,9 @@ Step 3 – Read the welcome message and click **Next**.
 Step 4 – The Ready to begin page lists the required software and Windows features that the
 Preparation Tool has identified for Directory Manager. Click **Install** to begin.
 
-![We are preparing page](/images/directorymanager/11.1/install/installer/wearepreparing.webp)
+![Preparing the machine](/images/directorymanager/11.1/install/installer/wearepreparing.webp)
 
-Step 5 – On the We are preparing this machine for Directory Manager... page the progress bar shows
+Step 5 – On the preparation page the progress bar shows
 the installation progress while prerequisites are installed.
 
 ![Ready to install](/images/directorymanager/11.1/install/installer/readytoinstall.webp)
@@ -55,8 +55,8 @@ displayed. Click **OK** to restart.
 ## Run the Preparation Tool on a Directory Manager server
 
 If you have an earlier version of Directory Manager 11.0 installed on a machine, then before running
-the preparation tool make sure no other version of the following prerequisite than the mentioned
-below is installed, otherwise uninstall them manually:
+the preparation tool ensure no version other than the following prerequisite versions is installed.
+Otherwise, uninstall them manually:
 
 - Microsoft .NET Desktop Runtime 8.0.8
 - Microsoft ASP.NET Core Hosting Bundle 8.0.8
@@ -76,5 +76,6 @@ below is installed, otherwise uninstall them manually:
     :::
 
 
-After uninstalling the prerequisites, follow the steps given in the Run the Preparation Tool first
-time on a fresh machine section above.
+After uninstalling the prerequisites, follow the steps given in the
+[Run the Preparation Tool first time on a fresh machine](#run-the-preparation-tool-first-time-on-a-fresh-machine)
+section.

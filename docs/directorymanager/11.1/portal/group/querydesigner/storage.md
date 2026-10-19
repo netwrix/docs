@@ -14,7 +14,7 @@ mailboxes, irrespective of any server or mailbox store. You can apply a filter t
 the query to return.
 
 If filters are specified, the query will return only mailboxes on the specified server or mailbox
-store. This filter does not affect custom recipients, public folders, and distribution lists.
+store. This filter doesn't affect custom recipients, public folders, and distribution lists.
 
 **Mailbox on any Server**
 
@@ -22,17 +22,15 @@ Returns all mailboxes. No filters apply with this selection.
 
 **Mailbox on this Server**
 
-Returns mailboxes from the server you select from the drop-down list.
+Returns mailboxes from the server you select from the dropdown list.
 
 **Mailbox on this MailStore**
 
-Returns mailboxes from the mailbox store you select from the drop-down list.
+Returns mailboxes from the mailbox store you select from the dropdown list.
 
 **Preview**
 
-Enables you to preview the results returned with the criteria specified on all tabs of the Query
-Designer dialog box. This is a check to ensure the accuracy of data before changes are committed to
-the directory.
+Preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This checks the accuracy of data before you commit changes to the directory.
 
 **OK**
 

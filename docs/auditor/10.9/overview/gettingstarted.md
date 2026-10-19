@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Getting Started
 
-In this section, we will cover:
+This section covers:
 
 - Pre-installation procedures
 - Installation
@@ -21,7 +21,7 @@ In this section, we will cover:
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | Pre-installation procedures                                                                                                                        |                                                                                      |
 | Review recommendations and considerations for Netwrix Auditor deployment planning.                                                                 | - [Requirements](/docs/auditor/10.9/requirements/overview.md)                                           |
-| Make sure the data source you are going to audit is supported.                                                                                     | - [Supported Data Sources](/docs/auditor/10.9/requirements/supporteddatasources/supporteddatasources.md)                     |
+| Ensure the data source you are going to audit is supported.                                                                                     | - [Supported Data Sources](/docs/auditor/10.9/requirements/supporteddatasources/supporteddatasources.md)                     |
 | Open the required ports for connections.                                                                                                           | - [Protocols and Ports Required](/docs/auditor/10.9/requirements/ports.md)                              |
 | Review system requirements.                                                                                                                        | - [Requirements](/docs/auditor/10.9/requirements/overview.md)                                           |
 | Installation                                                                                                                                       |                                                                                      |
@@ -30,7 +30,7 @@ In this section, we will cover:
 | IT infrastructure configuration                                                                                                                    |                                                                                      |
 | Configure target IT infrastructure depending on your data source.                                                                                  | - [Supported Data Sources](/docs/auditor/10.9/requirements/supporteddatasources/supporteddatasources.md)                     |
 | Configure Auditor service accounts.                                                                                                                | - [Software Requirements](/docs/auditor/10.9/requirements/software.md)                                  |
-| If you are going to use Group Managed Service Account (gMSA) for data collection and storage, refer to the following article for more information. | - [Use Group Managed Service Account (gMSA)](/docs/auditor/10.9/requirements/gmsa.md)                   |
+| If you are going to use Group Managed Service Account (gMSA) for data collection and storage, see the following article for more information. | - [Use Group Managed Service Account (gMSA)](/docs/auditor/10.9/requirements/gmsa.md)                   |
 | Product configuration                                                                                                                              |                                                                                      |
 | Configure role-based access and delegation.                                                                                                        | - [Role-Based Access and Delegation](/docs/auditor/10.9/admin/monitoringplans/delegation.md)            |
 | Configure general product settings.                                                                                                                | - [Netwrix Auditor Settings](/docs/auditor/10.9/admin/settings/overview.md)                             |

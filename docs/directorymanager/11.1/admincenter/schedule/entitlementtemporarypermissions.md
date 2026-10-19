@@ -22,18 +22,18 @@ The Entitlement Temporary Permissions schedule updates the temporary permissions
 on shared files and folders residing on file servers (for Active Directory), and the document
 libraries in SharePoint sites (for Microsoft Entra ID). This is how it works:
 
-- Administrators and other users can set a start and end date to grant certain permission(s)
+- Administrators and other users can set a start and end date to grant certain permissions
   temporarily to an object on shared resources, such as file shares and document libraries in a
   SharePoint site.
-- They can also set a start and end date to revoke certain permission(s) temporarily for an object
+- They can also set a start and end date to revoke certain permissions temporarily for an object
   on shared resources, such as file shares and document libraries in a SharePoint site.
 - The Entitlement Temporary Permissions schedule temporarily grants and revokes permissions for an
   object on the specified dates.
 
 Let’s assume that the Entitlement Temporary Permissions schedule is scheduled to run once a week,
 say Mondays. If temporary permissions are to be granted to an object on file server share for three
-days - Wednesday till Friday, it will not happen. This is because the Entitlement Temporary
-Permissions schedule did not run on the specific days for temporary permissions update. Make sure
+days - Wednesday till Friday, it won’t happen. This is because the Entitlement Temporary
+Permissions schedule didn’t run on the specific days for temporary permissions update. Ensure
 that the schedule is set to run at a frequency that meets your temporary permission requirements.
 
 The Entitlement Temporary Permissions schedule runs in the context of the following accounts:
@@ -49,12 +49,12 @@ The Entitlement Temporary Permissions schedule runs in the context of the follow
   [Connect to a Site Using a Different Account](/docs/directorymanager/11.1/admincenter/entitlement/managesp.md#connect-to-a-site-using-a-different-account)
   topic.
 
-You cannot create or delete an Entitlement Temporary Permissions schedule; only edit the existing
+You can't create or delete an Entitlement Temporary Permissions schedule; only edit the existing
 schedule.
 
 ## Update the Entitlement Temporary Permissions Schedule
 
-Follow the steps to udpate the Entitlement Temporary Permissions schedule.
+To update the Entitlement Temporary Permissions schedule:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -70,13 +70,14 @@ Step 5 – On the Edit Schedule page, the Schedule Name and Name Preview boxes d
 schedule as read-only. The name format is
 _Entitlement_`<the name of the machine the schedule is created on>`_ TemporaryPermission_.
 
-Step 6 – In the Scheduler Service Name drop-down list, select a Scheduler service that would be
+Step 6 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
 responsible for triggering this schedule. The number of services displayed in the list depend on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
 service. See the [Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
 information.
 
-Please note the following while selecting a Scheduler service:
+:::note
+When selecting a Scheduler service, note the following:
 
 - The Scheduler service for the Directory Manager instance on which you are creating the schedule is
   selected by default. However, you can select the Scheduler service of another instance as well.

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Assign Application Permissions Using Manifest
 
-Follow the steps to assign application permissions using manifest.
+Assign application permissions using the manifest:
 
 **Step 1 –** Under **App registrations**, select the newly created app.
 
@@ -22,7 +22,7 @@ it to your application.
 
 Depending on your installation type, do one of the following:
 
-- For the clear installation, add roles as described below.
+- For the clear installation, add the roles shown in the following JSON snippet.
 - If you upgraded Auditor from previous version, replace all existing content under the
   requiredResourceAccess property.
 

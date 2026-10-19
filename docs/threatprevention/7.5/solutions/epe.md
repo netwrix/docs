@@ -19,9 +19,7 @@ Rules policy (see the
 the Password Enforcement event type). The user can use this information to create a new password
 that passes the complexity requirements of the organization.
 
-You can choose a method to deploy the EPE User Feedback module; however, logon scripts are a
-suggested way to deploy this zero configuration msi. Prior to deploying the EPE User Feedback
-module, you must select the Enable EPE User Feedback Module checkbox in the
+You can deploy the EPE User Feedback module using logon scripts (the recommended approach). Before deploying it, you must select the **Enable EPE User Feedback Module** checkbox in the
 [EPE Settings Window](/docs/threatprevention/7.5/admin/configuration/epesettings.md). See the
 [EPE User Feedback Module](/docs/threatprevention/7.5/install/epeuserfeedback.md) topic for additional information.
 

@@ -11,28 +11,28 @@ the information Access Analyzer uses to connect to the target hosts during job e
 
 ![Connection](/images/accessanalyzer/12.0/admin/settings/connection/connectionpage.webp)
 
-There are two methods for authentication to a targeted host:
+You can authenticate to a targeted host using one of two methods:
 
 - Use Local Login Credentials
 - Use a Connection Profile
 
 ## Use Local Login Credentials
 
-This method is traditionally assigned through the **Only use the Windows account that the
+You traditionally assign this method through the **Only use the Windows account that the
 application is run with System default** option. It is generally referred to as the System Default
 or trusted method. When used, Access Analyzer authenticates to the target hosts during host
 inventory or job execution with the Windows account used to launch Access Analyzer. This can be:
 
-- Account which was used to log on to the Access Analyzer Console server and start the application
-- Account which was used to launch the Access Analyzer application through the run-as security
+- Account used to log on to the Access Analyzer Console server and start the application
+- Account used to launch the Access Analyzer application through the run-as security
   context
-- Account which was used to provision a Windows scheduled task when running a job group or job via a
+- Account used to provision a Windows scheduled task when running a job group or job via a
   scheduled task
 
 ## Use a Connection Profile
 
-This method allows you to define a Connection Profile which houses one or several sets of
-credentials to be used for authentication on the target hosts during host inventory or job
+Use this method to define a Connection Profile which houses one or several sets of
+credentials for authentication on the target hosts during host inventory or job
 execution. The credentials specified in a Connection Profile could be any of the following:
 
 - Local machine account
@@ -44,21 +44,21 @@ execution. The credentials specified in a Connection Profile could be any of the
 - Web service JWT
 - Oracle account
 
-For the majority of auditing scenarios, domain-based accounts are preferred if not required by the
-nature of the auditing task. The credentials must have the permissions required by the data
+For the majority of auditing scenarios, use domain-based accounts unless the auditing task requires
+otherwise. The credentials must have the permissions required by the data
 collector being used.
 
 ### Password Storage Options
 
-The password for the credential provided can be stored in Access Analyzer application or Access
-Analyzer Vault. Certain types of credentials can be stored in CyberArk®.
+You can store the password for the credential provided in the Access Analyzer application or
+Access Analyzer Vault. You can store certain types of credentials in CyberArk®.
 
-Choosing to store passwords in either the Access Analyzer application or the Access Analyzer Vault
-is a global setting configured in the **Settings** > **Application** node. See the
+You configure whether to store passwords in the Access Analyzer application or the Access Analyzer
+Vault as a global setting in the **Settings** > **Application** node. See the
 [Application](/docs/accessanalyzer/12.0/admin/settings/application/overview.md) topic for additional information.
 
 The Access Analyzer vault provides enhanced security through enhanced encryption to various
-credentials stored by the Access Analyzer application. See the [Vault](/docs/accessanalyzer/12.0/admin/settings/application/vault.md)
+credentials the Access Analyzer application stores. See the [Vault](/docs/accessanalyzer/12.0/admin/settings/application/vault.md)
 topic for additional information.
 
 CyberArk integration stores supported credentials in the CyberArk Enterprise Password Vault.
@@ -70,9 +70,9 @@ additional information.
 ![Cancel and Save options](/images/accessanalyzer/12.0/admin/settings/connection/cancelsavebuttons.webp)
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Connection view. These
-buttons become enabled when modifications are made to the Connection global setting.
+buttons become enabled when you modify the Connection global setting.
 
 ![Information update message box](/images/accessanalyzer/12.0/admin/settings/connection/settingssavedmessage.webp)
 
-Whenever changes are made at the global level, click **Save** and then **OK** to confirm the
-changes. Otherwise, click **Cancel** if no changes were intended.
+Whenever you make changes at the global level, click **Save** and then **OK** to confirm the
+changes. Otherwise, click **Cancel** if you didn't intend to make changes.

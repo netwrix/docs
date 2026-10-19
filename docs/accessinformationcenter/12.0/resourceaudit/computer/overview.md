@@ -10,7 +10,7 @@ Computer reports are accessed through the Computer Audit interface. You can acce
 by searching for computer objects on the Home page. See the [Search Features](/docs/accessinformationcenter/12.0/resourceaudit/navigate/search.md)
 topic for additional information. The computer object being reviewed is identified in the upper-left
 corner. The data within these reports is collected by the Access Analyzer solutions which provide
-data to the Resource reports. See the desired solution topic in the
+data to the Resource reports. See the solution topic in the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 

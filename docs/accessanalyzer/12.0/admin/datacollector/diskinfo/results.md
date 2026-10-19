@@ -6,14 +6,13 @@ sidebar_position: 20
 
 # DiskInfo: Results
 
-The Results page provides a checklist of the data that is available for return by the query. Any
-number of options can be selected at once, but at least one must be selected in order to complete
-the wizard.
+The Results page provides a checklist of the data the query can return. You can select any number
+of options at once, but you must select at least one to complete the wizard.
 
 ![Disk Info wizard Results page](/images/accessanalyzer/12.0/admin/datacollector/diskinfo/results.webp)
 
-Properties can be selected individually, or you can use the **Select all** and **Clear all**
-buttons. The table below describes the available options.
+You can select properties individually, or use the **Select all** and **Clear all**
+buttons. The following table describes the available options.
 
 | Checklist Result              | Description                                                                                                         |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------- |

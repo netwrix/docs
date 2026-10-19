@@ -22,7 +22,7 @@ When a Smart Group or Dynasty is updated using a scheduled job, it involves the 
     :::
 
 
-- The values of certain attribute(s) is updated.
+- The values of certain attributes are updated.
 
     - For a Smart Group, for example, the value of the managedBy attribute is updated for nested
       groups. These nested groups are created when the Out of Bounds settings are applied at the
@@ -130,8 +130,8 @@ membership update.
 Use the **Background Tasks** icon in the top right corner to view the status of the Smart Group
 Update jobs.
 
-- Jobs that are currently running in the background are displayed under **In Progress**.
-- All jobs that have completed successfully, failed or canceled are listed under **Other**.
+- Jobs that are running in the background are displayed under **In Progress**.
+- All jobs that have completed successfully, failed, or canceled are listed under **Other**.
 
 ## Modify the query for a Smart Group/Dynasty created by other role members
 
@@ -162,11 +162,12 @@ A member of administrator role has created a Smart Group named QDGroup1.
     All the options that the administrator has restricted for your role appear as disabled. You can
     modify the query using the options allowed for your role.
 
-    Please note in case of a conflict in the role policies, you cannot modify the group. For
-    example:
+    :::note
+    In case of a conflict in the role policies, you can't modify the group. For example:
 
     - the administrator role member who created the group has defined some settings on the Database
       tab but in your role policy the Database tab is hidden, in this case, you will not be able to
       modify the query of the group.
     - Similarly, if the group has been created using the user object and in your role policy the
-      user object is not available, upon group update an error will be displayed.
+      user object isn't available, upon group update an error will be displayed.
+    :::

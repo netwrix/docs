@@ -15,13 +15,13 @@ the categories of:
 
 ![EWS Mailbox Data Collector Wizard Filter page](/images/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filter.webp)
 
-All folders and attachments are scanned by default. Scope the scan for specific folders and
+By default, the scan includes all folders and attachments. Scope the scan for specific folders and
 attachments:
 
-- Include Folders – Type the folder paths to filter the scan to specific mailbox folders
-- Include Attachments – Type the attachment file names to filter to specific attachments
-- Exclude Folders – Type the folder paths to exclude mailbox folders from the scan
-- Exclude Attachments – Type the file names for the attachments to exclude attachments from the scan
+- Include Folders – Enter the folder paths to filter the scan to specific mailbox folders
+- Include Attachments – Enter the attachment file names to filter to specific attachments
+- Exclude Folders – Enter the folder paths to exclude mailbox folders from the scan
+- Exclude Attachments – Enter the file names for the attachments to exclude attachments from the scan
 
 Use `*` and `?` for matching wildcard and single characters.
 

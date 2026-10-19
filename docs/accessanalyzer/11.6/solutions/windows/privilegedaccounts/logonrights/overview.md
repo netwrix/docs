@@ -14,8 +14,8 @@ The jobs and job groups in the Logon Rights job group are:
 
 - [Collection Job Group](/docs/accessanalyzer/11.6/solutions/windows/privilegedaccounts/logonrights/collection/overview.md)
   – The jobs within this group collect group policy settings, local users, and local group
-  membership from Windows servers which will be further analyzed to provide insight into privileged
-  users within the environment
+  membership from Windows servers, then analyze this information to provide insight into
+  privileged users within the environment
 - [SG_AccountPrivileges Job](/docs/accessanalyzer/11.6/solutions/windows/privilegedaccounts/logonrights/sg_accountprivileges.md)
   – This job highlights account privileges across the audited environment, filtering out default
   privileges present on Windows servers

@@ -28,14 +28,14 @@ references to AD FS with PingOne.
 In Authenticate, use the **Metadata** section on the **Generate URLs** page to generate the metadata
 file for the Directory Manager client with which you want to set up PingOne for single sign-on.
 
-Since we generated the consumer URL for the _Wizard_ portal, we should generate the metadata file
-for this same portal.
+Since the consumer URL was generated for the _Wizard_ portal, generate the metadata file
+for the same portal.
 
 **To generate the file:**
 
 1. In Authenticate, click the **Generate URL's** tab. The **Generate URL's** page is displayed.
-2. In the **Metadata** section, select an identity store in the **Identity store** drop-down list.  
-   Users will be authenticated in this identity store when they use PingOne for single sign-on.
-3. The **Client** drop-down list displays the Directory Manager clients for the identity store.
+2. In the **Metadata** section, select an identity store in the **Identity store** dropdown list.  
+   This identity store authenticates users who use PingOne for single sign-on.
+3. The **Client** dropdown list displays the Directory Manager clients for the identity store.
    Select the client for which you have already generated the consumer URL.
 4. Click **Download** to download the metadata file to your machine.

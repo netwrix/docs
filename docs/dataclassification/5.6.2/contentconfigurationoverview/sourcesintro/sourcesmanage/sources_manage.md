@@ -8,20 +8,20 @@ sidebar_position: 40
 
 The following commands are available on the **General** tab of the **Sources** section:
 
-- Delete—Removes the source from processing. Its content will not appear in the search results in
-  due course.
+- Delete—Removes the source from processing. Its content will not appear in the search results
+  immediately.
 
-**NOTE:** This does not delete content from the external system
+**NOTE:** This doesn't delete content from the external system
 
 - Re-Collect—Queues the source for re-processing. Crawled items will be deleted, and the entire
   source re-crawled
 - Re-Index—Queues a source or item to be re-indexed regardless of if the documents were changed or
   not. You can select Re-Index scope:
 
-    - Selected Item(s) and All Descendants — select to Re-Index an Item and child of a child of so
+    - Selected Items and All Descendants — select to Re-Index an item and child of a child of so
       forth child element.
-    - Selected Item(s) and Children — select to Re-Index an Item and its direct child elements.
-    - Selected Item(s) Only — select to Re-Index only current item and ignore its child elements.
+    - Selected Items and Children — select to Re-Index an item and its direct child elements.
+    - Selected Items Only — select to Re-Index only current item and ignore its child elements.
 
 - Re-Classify—Queues a source or item to be re-classified against the latest configured
   classification rules

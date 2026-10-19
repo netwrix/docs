@@ -21,7 +21,7 @@ These jobs are compatible with the Office 365 environment.
 - [Effective Membership > EX_GroupExpansion Job](/docs/accessanalyzer/11.6/solutions/exchange/distributionlists/ex_groupexpansion.md)
   – Expands the direct membership of distribution groups in the environment
 - [Membership Analysis Job Group](/docs/accessanalyzer/11.6/solutions/exchange/distributionlists/membershipanalysis/overview.md)
-  – Provides visibility into toxic conditions contained with the environment, such as circular
+  – Provides visibility into toxic conditions within the environment, such as circular
   nesting, large groups, empty groups, nesting, and potentially stale groups
 - [EX_DLCleanup Job](/docs/accessanalyzer/11.6/solutions/exchange/distributionlists/ex_dlcleanup.md)
   – Identifies potentially stale distribution groups based on the last domain logon of the members,

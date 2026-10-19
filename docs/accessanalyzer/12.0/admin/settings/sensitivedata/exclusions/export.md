@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Exporting False Positive Exclusion Filters
 
-Follow the steps to export selected False Positive Exclusion Filters into a TXT file.
+Export selected False Positive Exclusion Filters into a TXT file.
 
 ![Export on False Positives tab](/images/accessanalyzer/12.0/admin/settings/sensitivedata/exclusions/exportfilter.webp)
 
@@ -18,4 +18,4 @@ Explorer opens.
 **Step 2 –** Enter a File name for the TXT file that the exported false positive exclusion filters
 will be contained in. Click **Save**.
 
-The False Positive Exclusion Filters are now exported.
+Access Analyzer exports the False Positive Exclusion Filters.

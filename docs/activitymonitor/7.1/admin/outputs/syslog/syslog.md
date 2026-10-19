@@ -26,24 +26,24 @@ The tab contains the following settings:
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used.
 
-- Syslog protocol – Identifies which protocol is used for the Event stream. The drop-down menu
+- Syslog protocol – Identifies which protocol is used for the Event stream. The dropdown menu
   includes: UDP, TCP, and TLS.
 - Message framing – The TCP and TLS Syslog protocols require Message framing to be set. The
-  drop-down menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
+  dropdown menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
   delimiter, NUL (ASCII 0) delimiter, and Octet Count (RFC 5425).
 - Syslog message template – Template that controls what data is sent in the event stream. The
   ellipsis (…) button opens the Syslog Message Template window. See the
   [Message Template Window](/docs/activitymonitor/7.1/admin/outputs/syslog/messagetemplate.md)
   topic for additional information.
 - Enable periodic AD Status Check event reporting – Indicates periodic AD Status Check event
-  reporting is enabled, which means the agent will send out status messages every five minutes to
+  reporting. The agent will send out status messages every five minutes to
   verify whether the connection is still active.
 
 The Test button sends a test message to the Syslog server to check the connection. A green check
 mark or red x will indicate whether the test message has been sent or failed to send. Test messages
 vary by Syslog protocol:
 
-- UDP protocol – Sends a test message and does not verify connection
+- UDP protocol – Sends a test message and doesn't verify connection
 - TCP protocol – Sends test message and verifies connection
 - TLS protocol – Sends test message and verifies connection and shows an error if TLS handshake
   fails
@@ -64,13 +64,13 @@ The tab contains the following settings:
       organization’s environment can resolve the name format used.
     - The default port for Netwrix Threat Manager is 10001.
 
-- Syslog protocol – Identifies which protocol is used for the Event stream. The drop-down menu
+- Syslog protocol – Identifies which protocol to use for the Event stream. The dropdown menu
   includes: UDP, TCP, and TLS.
 
-    - UPD is the only protocol supported for Threat Manager.
+    - UDP is the only protocol that Threat Manager supports.
 
 - Message framing – The TCP and TLS Syslog protocols require Message framing to be set. The
-  drop-down menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
+  dropdown menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
   delimiter, NUL (ASCII 0) delimiter, and Octet Count (RFC 5425).
 - Syslog message template – Template that controls what data is sent in the event stream. The
   ellipsis (…) button opens the Syslog Message Template window. See the
@@ -84,7 +84,7 @@ The Test button sends a test message to the Syslog server to check the connectio
 mark or red x will indicate whether the test message has been sent or failed to send. Test messages
 vary by Syslog protocol:
 
-- UDP protocol – Sends a test message and does not verify connection
+- UDP protocol – Sends a test message and doesn't verify connection
 - TCP protocol – Sends test message and verifies connection
 - TLS protocol – Sends test message and verifies connection and shows an error if TLS handshake
   fails
@@ -104,10 +104,10 @@ The tab contains the following settings:
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used.
 
-- Syslog protocol – Identifies which protocol is used for the Event stream. The drop-down menu
+- Syslog protocol – Identifies which protocol is used for the Event stream. The dropdown menu
   includes: UDP, TCP, and TLS.
 - Message framing – The TCP and TLS Syslog protocols require Message framing to be set. The
-  drop-down menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
+  dropdown menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
   delimiter, NUL (ASCII 0) delimiter, and Octet Count (RFC 5425).
 - Syslog message template – Template that controls what data is sent in the event stream. The
   ellipsis (…) button opens the Syslog Message Template window. See the
@@ -118,7 +118,7 @@ The Test button sends a test message to the Syslog server to check the connectio
 mark or red x will indicate whether the test message has been sent or failed to send. Test messages
 vary by Syslog protocol:
 
-- UDP protocol – Sends a test message and does not verify connection
+- UDP protocol – Sends a test message and doesn't verify connection
 - TCP protocol – Sends test message and verifies connection
 - TLS protocol – Sends test message and verifies connection and shows an error if TLS handshake
   fails
@@ -139,13 +139,13 @@ The tab contains the following settings:
       organization’s environment can resolve the name format used.
     - The default port for Netwrix Threat Manager is 10000.
 
-- Syslog protocol – Identifies which protocol is used for the Event stream. The drop-down menu
+- Syslog protocol – Identifies which protocol to use for the Event stream. The dropdown menu
   includes: UDP, TCP, and TLS.
 
-    - UPD is the only protocol supported for Threat Manager.
+    - UDP is the only protocol that Threat Manager supports.
 
 - Message framing – The TCP and TLS Syslog protocols require Message framing to be set. The
-  drop-down menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
+  dropdown menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
   delimiter, NUL (ASCII 0) delimiter, and Octet Count (RFC 5425).
 - Syslog message template – Template that controls what data is sent in the event stream. The
   ellipsis (…) button opens the Syslog Message Template window. See the
@@ -160,7 +160,7 @@ The Test button sends a test message to the Syslog server to check the connectio
 mark or red x will indicate whether the test message has been sent or failed to send. Test messages
 vary by Syslog protocol:
 
-- UDP protocol – Sends a test message and does not verify connection
+- UDP protocol – Sends a test message and doesn't verify connection
 - TCP protocol – Sends test message and verifies connection
 - TLS protocol – Sends test message and verifies connection and shows an error if TLS handshake
   fails
@@ -181,13 +181,13 @@ The tab contains the following settings:
       organization’s environment can resolve the name format used.
     - The default port for Netwrix Threat Manager is 10001.
 
-- Syslog protocol – Identifies which protocol is used for the Event stream. The drop-down menu
+- Syslog protocol – Identifies which protocol is used for the Event stream. The dropdown menu
   includes: UDP, TCP, and TLS.
 
     - UPD is the only protocol supported for Threat Manager.
 
 - Message framing – The TCP and TLS Syslog protocols require Message framing to be set. The
-  drop-down menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
+  dropdown menu includes: LS (ASCII 10) delimiter, CR (ASCII 13) delimiter, CRLF (ASCII 13, 10)
   delimiter, NUL (ASCII 0) delimiter, and Octet Count (RFC 5425).
 - Syslog message template – Template that controls what data is sent in the event stream. The
   ellipsis (…) button opens the Syslog Message Template window. See the
@@ -199,7 +199,7 @@ The Test button sends a test message to the Syslog server to check the connectio
 mark or red x will indicate whether the test message has been sent or failed to send. Test messages
 vary by Syslog protocol:
 
-- UDP protocol – Sends a test message and does not verify connection
+- UDP protocol – Sends a test message and doesn't verify connection
 - TCP protocol – Sends test message and verifies connection
 - TLS protocol – Sends test message and verifies connection and shows an error if TLS handshake
   fails

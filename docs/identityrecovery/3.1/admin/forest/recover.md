@@ -107,11 +107,11 @@ controller. The dropdown menu lists the backups available for the domain control
 **Step 7 –** If the backup is encrypted, provide the password used for encryption in the Encryption
 Password field. This would allow the recovery process to decrypt the backup.
 
-**Step 8 –** From the **Roles** dropdown menu, select the FSMO roles the domain controller will
+**Step 8 –** From the **Roles** dropdown menu, select the Flexible Single Master Operation (FSMO) roles the domain controller will
 acquire when you restore it. You can:
 
-- Select the Acquire All Roles option to assign all FSMO roles to the domain controller.
-- Select one or more FSMO roles to assign to the domain controller. All five FSMO roles are listed.
+- Select the Acquire All Roles option to assign all Flexible Single Master Operation (FSMO) roles to the domain controller.
+- Select one or more FSMO roles to assign to the domain controller. All five roles are listed.
 - Select Restore original roles to retain the previously assigned roles that are defined in the
   backup.
 - Select Don't assign any roles if you don't want to assign any role to the domain controller.

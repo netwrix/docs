@@ -11,7 +11,7 @@ Kerberoasting. An account is deemed vulnerable to a Kerberoasting attack if the
 msDS-SupportedEncryptionTypes value supports RC4 as the highest encryption type.
 
 :::tip
-Remember, the 1-AD_Scan Job needs to be configured to collect these Custom Attributes:
+Configure the 1-AD_Scan Job to collect these custom attributes:
 :::
 
 
@@ -26,7 +26,7 @@ Navigate to the **Active Directory** > **2.Users** > **AD_ServiceAccounts** > **
 select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -9,7 +9,7 @@ sidebar_position: 30
 If trace logging is disabled in SQL Server, then changes will be reported in Netwrix Auditor as made
 by _system_. To detect actual change initiator, Netwrix Auditor needs native trace logs data. During
 every data collection, Netwrix Auditor will check if the internal SQL audit mechanism is enabled,
-and enable it if necessary. To read more, refer to
+and enable it if necessary. See
 [this Netwrix Knowledge Base article](https://kb.netwrix.com/728).
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
@@ -22,7 +22,7 @@ follow the procedure below.
 
 If you enable monitoring of SQL logons, SQL trace for these logons will be created anyway.
 
-Follow the steps to exclude SQL Server instance from turning trace logging on automatically.
+To exclude SQL Server instance from turning trace logging on automatically.
 
 **Step 1 –** On Netwrix Auditor server, go to the _%Netwrix Auditor installation folder%\SQL Server
 Auditing_ folder.
@@ -44,7 +44,7 @@ Files\Microsoft SQL Server\MSSQL13.`<InstanceName>`\MSSQL\Log_.
 
 You can change this default location, using the _pathstotracelogs.txt_ file.
 
-Follow the steps to change trace log location.
+To change trace log location.
 
 **Step 1 –** On Netwrix Auditor server, go to _%Netwrix Auditor installation folder%\SQL Server
 Auditing_ folder.
@@ -61,7 +61,7 @@ will be ignored.
 
 `SQLSRV01\MSSQL2016|C:\Logs\NA trace logs\`
 
-If you want to change trace logs location for multiple instances of one SQL server, make sure that
+If you want to change trace logs location for multiple instances of one SQL server, ensure that
 specified UNC paths are unique across these instances.
 
 Correct:

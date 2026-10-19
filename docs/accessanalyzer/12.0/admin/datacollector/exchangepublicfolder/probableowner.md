@@ -6,13 +6,13 @@ sidebar_position: 50
 
 # ExchangePublicFolder: Probable Owner
 
-The Probable Owner Settings page provides configuration options to determine an owner. It is enabled
-when the Probable Owner property is selected on the Properties page. See the
+The Probable Owner Settings page provides configuration options to determine an owner. Selecting
+the Probable Owner property on the Properties page enables it. See the
 [ExchangePublicFolder: Properties](/docs/accessanalyzer/12.0/admin/datacollector/exchangepublicfolder/properties.md) topic for additional information.
 
 ![Exchange Public Folder Data Collector Wizard Probable Owner page](/images/accessanalyzer/12.0/admin/datacollector/exchangepublicfolder/probableowner.webp)
 
-In the Determine owner section, select the desired option to specify what setting to use to
+In the Determine owner section, select an option to specify what setting to use to
 determine an owner:
 
 - Determine owner from folder hierarchy – Select to determine the probable owner with a weight of
@@ -47,15 +47,15 @@ In the Exclusions section, select one or more of the following checkboxes to spe
     - Remove selected – Select a user or users to remove from the Exclude users list and click
       **Remove selected** to remove the users
 
-In the Output Options section, select the desired output option:
+In the Output Options section, select an output option:
 
 - Get one most probable owner – Return one probable owner
 - Get probable owners with relative deviation to the most probable owner – Return probable owners
   based on the deviation from percentage from the most probable owner
 
-    - Maximum deviation [number] percents – Use the arrow buttonss to enter the desired percent of
+    - Maximum deviation [number] percents – Use the arrow buttons to enter the percent of
       deviation from the most probable owner from which to return probable owners
 
 - Get multiple probable owners – Return multiple probable owners
 
-    - Count – Use the arrow buttons to enter the desired number of probable owners to return
+    - Count – Use the arrow buttons to enter the number of probable owners to return

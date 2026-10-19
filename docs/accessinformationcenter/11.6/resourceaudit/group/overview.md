@@ -11,7 +11,7 @@ searching for group objects on the Home page. See the
 [Search Features](/docs/accessinformationcenter/11.6/resourceaudit/navigate/search.md)
 topic for additional information. The group object being reviewed is identified in the upper-left
 corner. The data within these reports is collected by the Enterprise Auditor solutions which provide
-data to the Resource reports. See the desired solution topics in the
+data to the Resource reports. See the solution topics you want in the
 [Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 for additional information.
 

@@ -20,7 +20,7 @@ The jobs in the 1.Users and Roles Job Group are:
   – This job group is designed to analyze the SQL or Azure SQL login passwords and evaluate if they
   comply with the prescribed password policies. In addition, it checks for weak passwords.
 - [SQL_RoleMembers Job](/docs/accessanalyzer/11.6/solutions/databases/sql/usersroles/sql_rolemembers.md)
-  – This job is designed to analyze and provide information about all the role members in each o the
+  – This job is designed to analyze and provide information about all the role members in each of the
   SQL or Azure SQL server role groups, both at the instance and database level, across all the
   targeted SQL or Azure SQL servers
 - [SQL_ServerPrincipals Job](/docs/accessanalyzer/11.6/solutions/databases/sql/usersroles/sql_serverprincipals.md)

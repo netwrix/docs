@@ -6,20 +6,20 @@ sidebar_position: 30
 
 # Backup and Recovery
 
-For data recovery purposes, the Access Analyzer does not need a complete image back up of the Access
+For data recovery purposes, the Access Analyzer doesn't need a complete image back up of the Access
 Analyzer Console server. Rather a standard file level back up of a few key components is all that is
 necessary. This document contains a step-by-step guide for back up and recovery. The choice of back
 up utility is left to the Access Analyzer user.
 
 :::note
-This does not cover back up of the Access Analyzer database.
+This doesn't cover back up of the Access Analyzer database.
 :::
 
 
 ## Steps to Back Up the Console Server
 
-Follow these steps to back up the key components necessary for data recovery of the Access Analyzer
-Console server.
+To back up the key components necessary for data recovery of the Access Analyzer
+Console server:
 
 **Step 1 –** Obtain or save the installation media for Access Analyzer.
 
@@ -38,7 +38,7 @@ built-in environment variable `%SAINSTALLDIR%`):
 - ...\ STEALTHbits\StealthAUDIT\StealthAUDIT.LIC: The license key
 
 **Step 3 –** Back up all Scheduled Tasks. The method of back up is determined by the Access Analyzer
-user. This can be as simple as copying the contents of the tasks folder from the following two
+user. For example, you can copy the contents of the tasks folder from the following two
 locations:
 
 ![C:\Windows\Tasks](/images/accessanalyzer/12.0/admin/maintenance/maintenance_3.webp)
@@ -58,7 +58,7 @@ Follow these steps for data recovery of the Access Analyzer Console server.
 **Step 1 –** Confirm the prerequisites have been met on the Access Analyzer Console Server. See the
 [Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topic for specific prerequisites.
 
-**Step 2 –** Install the Access Analyzer application. Do not start the Access Analyzer application
+**Step 2 –** Install the Access Analyzer application. Don't start the Access Analyzer application
 at this time.
 
 **Step 3 –** Restore all of the backed up files and folders from Step 2 of Steps to Back up the
@@ -70,8 +70,8 @@ Analyzer Console Server to the corresponding tasks folder of the operating syste
 **Step 5 –** For Host Management and Host List Replication in a new host scenario, run the following
 code within the SQL Studio on the Access Analyzer database.
 
-- Replace `OldServer` and `NewServer` in the script below with the names of the old and new Access
-  Analyzer servers
+- Replace `OldServer` and `NewServer` in the following script with the names of the old and new
+  Access Analyzer servers
 
 ```
 Declare @OHost varchar (128)

@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # 0.Collection Job Group
 
-The **SharePoint** > **0.Collection** Job Group is designed to collect information from SharePoint
-farms using the SPAA Data Collector. The collected data is then available to other SharePoint
+The **SharePoint** > **0.Collection** Job Group collects information from SharePoint farms using the
+SPAA Data Collector. The collected data is then available to other SharePoint
 Solution sub-job groups and the Access Information Center for analysis.
 
 ![0.Collection Job Group](/images/accessanalyzer/11.6/solutions/sharepoint/collection/jobstree.webp)
@@ -52,24 +52,24 @@ components:
   [SharePoint Activity Auditing](#sharepoint-activity-auditing) topic for additional information.
 - SharePoint Sensitive Data Discovery Auditing (SEEK) – The SharePoint Sensitive Data Discovery
   Auditing (SEEK) component searches file content for sensitive data. It also collects permission
-  information; therefore, it does not need to be run with the SPAA component. This component employs
+  information; therefore, it doesn't need to be run with the SPAA component. This component employs
   the 1-SPSEEK_SystemScans Job, the 5-SPAA_BulkImport Job, the 4-SPSEEK_BulkImport Job, and the
   7-SPAA_Exceptions Job. This component requires an additional installer package before data
   collection will occur. See the
   [SharePoint Sensitive Data Discovery Auditing (SEEK)](#sharepoint-sensitive-data-discovery-auditing-seek)
   topic for additional information.
 
-These jobs are numbered to keep them in the necessary run order. Not all jobs need be run. See the
+These jobs are numbered to keep them in the necessary run order. Not all jobs need to run. See the
 appropriate auditing section for specific job relationships and recommended workflows.
 
 The relationship between system scans and bulk import jobs requires the following considerations:
 
-- A system scans job executed from a Enterprise Auditor Console must be followed by the
+- A system scans job executed from an Enterprise Auditor Console must be followed by the
   corresponding bulk import job from the same Enterprise Auditor Console with the same version of
   Enterprise Auditor
 - Two system scans processing the same information, for example two **2-SPAA_SystemScans** jobs,
-  cannot be executed consecutively against the same target host. The corresponding bulk import job,
-  for example. **5-SPAA_BulkImport**, must be executed in between.
+  can't be executed consecutively against the same target host. The corresponding bulk import job,
+  for example, **5-SPAA_BulkImport**, must be executed in between.
 
 The system scans job collects the data and creates a Tier-2 database, or SQLite database, on the
 local host or the host where the SharePoint Agent was installed (according to the scan method
@@ -132,14 +132,14 @@ topic for other Runtime Details.
 
 **Step 4 –** Run desired corresponding analysis and reporting sub-job groups.
 
-Please see the
+see the
 [Recommended Configuration for the SharePoint Solution](/docs/accessanalyzer/11.6/solutions/sharepoint/recommended.md)
 topic before continuing with this workflow.
 
 :::info
 Scope the 0.Collection Job Group to only include the collection components
 desired by disabling the undesired collection jobs. Disabling them allows the solution to run more
-efficiently. It is not recommended to delete any jobs. See the
+efficiently. It isn't recommended to delete any jobs. See the
 [Disable or Enable a Job](/docs/accessanalyzer/11.6/admin/jobs/job/disableenable.md)
 topic for additional information.
 :::
@@ -154,9 +154,9 @@ and tables specifically incorporated into this component are prefaced with SPAC.
 [Standard Reference Tables & Views for the SPAA Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/spaa/standardtables.md)
 topic for additional information on the data collected.
 
-The Access Auditing components must be run in order to create the tables in the database for the
-SPAC component to use. Either the SPAA or SEEK Scan job, run to at least a 0-level scan depth (and
-the corresponding Bulk Import job) can be used to create these tables. Once an initial 0-level SPAA
+The Access Auditing components must be run to create the tables in the database for the
+SPAC component to use. Use either the SPAA or SEEK Scan job, run to at least a 0-level scan depth, along
+with the corresponding Bulk Import job, to create these tables. After an initial 0-level SPAA
 or SPSEEK scan job and corresponding Bulk Import have been run against a particular SharePoint On
 Prem farm or SharePoint Online tenant, SPAA or SPSEEK Scan jobs can be run concurrently with SPAC
 Scan and Bulk Import jobs as needed.
@@ -201,8 +201,8 @@ for additional information.
 **Step 6 –** Run desired corresponding analysis and reporting sub-job groups.
 
 :::note
-Once an initial 2-SPAA SystemScans job (scoped to at least 0-level depth) and the
-corresponding 5-SPAA Bulk Import job have been run, then the SPAA Scans can be run concurrently with
+After an initial 2-SPAA SystemScans job (scoped to at least 0-level depth) and the
+corresponding 5-SPAA Bulk Import job have been run, the SPAA Scans can be run concurrently with
 SPAC Scans and Bulk Import jobs as desired.
 :::
 
@@ -210,9 +210,9 @@ SPAC Scans and Bulk Import jobs as desired.
 Recommended Workflow 2 (for Access, Sensitive Data Discovery & Activity Auditing)
 
 :::warning
-The jobs must be run in the order shown. It is not possible to disable the
+The jobs must be run in the order shown. It isn't possible to disable the
 1-SPAA_SystemScan and 2-SPAA_BulkImport jobs and run the 0.Collection Job Group because the
-remaining jobs are in the wrong order. Renaming the jobs is not an option.
+remaining jobs are in the wrong order. Renaming the jobs isn't an option.
 :::
 
 
@@ -237,8 +237,8 @@ only).
 **Step 7 –** Run desired corresponding analysis and reporting sub-job groups.
 
 :::note
-Once an initial 1-SPSEEK SystemScans job (scoped to at least 0-level depth) and the
-corresponding 4-SPSEEK Bulk Import job have been run, then the SPSEEK Scans jobs can be run
+After an initial 1-SPSEEK SystemScans job (scoped to at least 0-level depth) and the
+corresponding 4-SPSEEK Bulk Import job have been run, the SPSEEK Scans jobs can be run
 concurrently with the SPAC Scans and the Bulk Import jobs as desired.
 :::
 
@@ -254,7 +254,7 @@ concurrently with the SPAC Scans and the Bulk Import jobs as desired.
 **Step 3 –** Run desired corresponding analysis and reporting sub-job groups.
 
 :::note
-Please see the
+see the
 [Recommended Configuration for the SharePoint Solution](/docs/accessanalyzer/11.6/solutions/sharepoint/recommended.md)
 topic before continuing with this workflow.
 :::
@@ -263,7 +263,7 @@ topic before continuing with this workflow.
 :::info
 Scope the 0.Collection Job Group to only include the collection components
 desired by disabling the undesired collection jobs. Disabling them allows the solution to run more
-efficiently. It is not recommended to delete any jobs. See the
+efficiently. It isn't recommended to delete any jobs. See the
 [Disable or Enable a Job](/docs/accessanalyzer/11.6/admin/jobs/job/disableenable.md)
 topic for additional information.
 :::
@@ -343,9 +343,9 @@ the SharePoint application server when applicable (once only).
 Recommended Workflow 2 (for Access, Sensitive Data Discovery & Activity Auditing)
 
 :::warning
-The jobs must be run in the order shown. It is not possible to disable the
-2-SPAA_SystemScan and 5-SPAA_BulkImport jobs and run the 0.Collection Job Group because the
-remaining jobs are in the wrong order. Renaming the jobs is not an option.
+The jobs must be run in the order shown. It isn't possible to disable the
+2-SPAA_SystemScans and 5-SPAA_BulkImport jobs and run the 0.Collection Job Group because the
+remaining jobs are in the wrong order. Renaming the jobs isn't an option.
 :::
 
 
@@ -369,14 +369,14 @@ remaining jobs are in the wrong order. Renaming the jobs is not an option.
 **Step 7 –** Run desired corresponding analysis and reporting sub-job groups.
 
 :::note
-Once an initial 1-SPSEEK SystemScans job (scoped to at least 0-level depth) and the
-corresponding 4-SPSEEK Bulk Import job have been run, then the SPSEEK Scans can be run concurrently
+After an initial 1-SPSEEK SystemScans job (scoped to at least 0-level depth) and the
+corresponding 4-SPSEEK Bulk Import job have been run, the SPSEEK Scans can be run concurrently
 with the SPAC Scans and the Bulk Import jobs as desired.
 :::
 
 
 :::note
-Please see the
+see the
 [Recommended Configuration for the SharePoint Solution](/docs/accessanalyzer/11.6/solutions/sharepoint/recommended.md)
 topic before continuing with this workflow.
 :::
@@ -385,7 +385,7 @@ topic before continuing with this workflow.
 :::info
 Scope the 0.Collection Job Group to only include the collection components
 desired by disabling the undesired collection jobs. Disabling them allows the solution to run more
-efficiently. It is not recommended to delete any jobs. See the
+efficiently. It isn't recommended to delete any jobs. See the
 [Disable or Enable a Job](/docs/accessanalyzer/11.6/admin/jobs/job/disableenable.md)
 topic for additional information.
 

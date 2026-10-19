@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the FileSystem > Ad Hoc Audits > FS_Tru
 Configure node and select Analysis.
 
 :::warning
-Do not modify or deselect the second selected analysis task. The analysis task is
+Don't modify or deselect the second selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -38,4 +38,4 @@ produces the following pre-configured report:
 
 | Report                    | Description                                                                                             | Default Tags | Report Elements                                                                                                                                              |
 | ------------------------- | ------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Trustee Permissions Audit | This report provides an overview of the access sprawl across the environment for the select trustee(s). | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays summary of trustees</li><li>Table – Provides details on trustee permissions</li></ul> |
+| Trustee Permissions Audit | This report provides an overview of the access sprawl across the environment for the select trustees. | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays summary of trustees</li><li>Table – Provides details on trustee permissions</li></ul> |

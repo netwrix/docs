@@ -6,8 +6,6 @@ sidebar_position: 10
 
 # Deploy the Add-On
 
-Follow the steps to deploy the Add-On.
-
 **Step 1 –** Download the distribution package **Netwrix_Auditor_Add-on_for_Okta.zip**.
 
 **Step 2 –** Unpack it to a folder on the computer where you plan to deploy the add-on.

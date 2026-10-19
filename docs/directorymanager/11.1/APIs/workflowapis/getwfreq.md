@@ -6,8 +6,7 @@ sidebar_position: 150
 
 # Get Workflow Requests
 
-Using this API you can retrieve information about a workflow request ID(s) of which are specified in
-the end point URL.
+Use this API to retrieve information about the workflow request IDs specified in the endpoint URL.
 
 ## Endpoint
 

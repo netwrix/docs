@@ -21,5 +21,5 @@ The Directory Scope page has the following options:
 - Connect – Connects to the target domain to provide a list of directories
 - Add – Add an OU to the query scope
 - Remove – Removes an OU from the query scope
-- Scope – List of OUs to be scanned
+- Scope – List of OUs to scan
 - Sub tree – Sub-OUs included in the scan if checked

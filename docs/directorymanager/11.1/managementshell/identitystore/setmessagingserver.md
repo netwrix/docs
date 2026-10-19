@@ -8,7 +8,7 @@ sidebar_position: 180
 
 The commandlet Set-MessagingServer configures a messaging system in identity store. The SmtpServer
 parameter requires the server name of the messaging system to be specified.
-[Get-AvailableMessagingServers](/docs/directorymanager/11.1/managementshell/identitystore/getavailablemessagingservers.md) commandlet can be used to retrieve
+Use the [Get-AvailableMessagingServers](/docs/directorymanager/11.1/managementshell/identitystore/getavailablemessagingservers.md) commandlet to retrieve
 the server names of the messaging systems.
 
 This commandlet also has some parameters that appear depending on the value of the Provider

@@ -7,7 +7,7 @@ sidebar_position: 20
 # Additional Properties Tab
 
 The Additional Properties tab on an output Properties window is where comments and displayed host
-name can be modified. These settings are initially configured when the output is added.
+you can modify the displayed host name. These settings are initially configured when the output is added.
 
 Select an output from the Monitored Hosts tab and click **Edit** to open the output Properties
 window.
@@ -21,7 +21,7 @@ The options are:
 - Comment – The value entered here will appear in the Comments column in the Monitored Hosts tab
   table.
 
-Often, the Additional Properties Tab is used to indicate the purpose of the output, e.g. for Netwrix
+Often, the Additional Properties Tab helps you indicate the purpose of the output, e.g. for Netwrix
 Access Analyzer (formerly Enterprise Auditor). This can be useful if using multiple outputs with
 different configurations for different purposes. For example, a SharePoint site could be added as a
 host and configured for Netwrix Access Analyzer (formerly Enterprise Auditor) data collection. It
@@ -35,4 +35,4 @@ Properties window closes.
 If a Threat Prevention Agent has been deployed to the same Windows proxy server where and activity
 agent is deployed to monitor NAS devices, then the **Comment** column in the monitored hosts table
 identifies the host as being “Managed by Threat Prevention”, and that ‘monitored host’ configuration
-is not editable through the Activity Monitor Console. Simply add the host again for other outputs.
+isn't editable through the Activity Monitor Console. Simply add the host again for other outputs.

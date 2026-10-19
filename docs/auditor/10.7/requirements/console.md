@@ -12,7 +12,7 @@ the resources required for Netwrix Auditor deployment.
 The actual hardware requirements will depend on the number of activities collected per day in
 addition to the number of files and folders monitored.
 
-**CAUTION:** To keep your systems safe, Auditor should not be exposed to inbound access from the
+**CAUTION:** To keep your systems safe, Auditor shouldn't be exposed to inbound access from the
 internet.
 
 ## Full Installation
@@ -39,7 +39,7 @@ Netwrix Auditor and SQL Server instance will be deployed on different servers.
 
 Requirements below apply to Netwrix Auditor server.
 
-| Hardware component | Evaluation, PoC or starter environment | Regular environment (up to 1m ARs\*/day) | Large environment (1-10m ARs\*/day)       | XLarge environment (10m ARs\*/day or more)                       |
+| Hardware component | Evaluation, PoC, or starter environment | Regular environment (up to 1m ARs\*/day) | Large environment (1-10m ARs\*/day)       | XLarge environment (10m ARs\*/day or more)                       |
 | ------------------ | -------------------------------------- | ---------------------------------------- | ----------------------------------------- | ---------------------------------------------------------------- |
 | CPUs               | 2 cores                                | 4 CPUs                                   | 8 CPUs                                    | 16 CPUs                                                          |
 | RAM                | 8 GB                                   | min 8 GB                                 | min 16 GB                                 | 64 GB                                                            |
@@ -59,7 +59,7 @@ details, see:
 - [Working Folder](/docs/auditor/10.7/requirements/workingfolder.md)
 
 Netwrix Auditor informs you if you are running out of space on a system disk where the Long-Term
-Archive is stored by default. You will see related events in the Health log once the free disk space
+Archive is stored by default. You will see related events in the Health log when the free disk space
 starts approaching the minimum level. When the free disk space is less than 3 GB, the Netwrix
 services responsible for audit data collection will be stopped.
 
@@ -98,8 +98,8 @@ by clicking
 
 ## Client Installation
 
-The client installation includes only Netwrix Auditor client console that enables you to connect to
-the Netwrix Auditor Server installed remotely.
+The client installation includes only the Netwrix Auditor client console, which connects you to
+a remotely installed Netwrix Auditor Server.
 
 Virtual deployment is recommended.
 

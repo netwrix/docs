@@ -12,7 +12,7 @@ running the 1-AD_Scan Job, also located in the .Active Directory Inventory Job G
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+The Configuration section on a Job's overview page lets you modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -34,11 +34,11 @@ topic for additional information.
 ## Analysis Tasks for the 3-AD_Exceptions Job
 
 View the analysis tasks by navigating to the **.Active Directory Inventory** > **3-AD_Exceptions** >
-**Configure** node and select **Analysis**. Analysis tasks with configuration parameters that define
-the security concerns within them can be modified.
+**Configure** node and select **Analysis**. You can modify analysis tasks whose configuration
+parameters define their security concerns.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

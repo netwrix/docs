@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Set a Default Storage Profile
 
-While multiple Storage Profiles can exist, only one profile can be set as the default. A green
-checkmark next to the profile name indicates the default Storage Profile. Follow the steps to change
-the default Storage Profile at the global level.
+You can create multiple Storage Profiles, but you can set only one as the default. A green
+checkmark next to the profile name indicates the default Storage Profile. To change
+the default Storage Profile at the global level:
 
 ![Set as Default option on Storage page](/images/accessanalyzer/11.6/admin/settings/storage/default.webp)
 
@@ -17,8 +17,8 @@ storage profile window opens.
 
 ![Change storage profile window](/images/accessanalyzer/11.6/admin/settings/storage/changestorageprofile.webp)
 
-**Step 2 –** There are three options for host management data migration. Select the desired option,
-choose whether or not to apply the secondary option, and click **OK**.
+**Step 2 –** There are three options for host management data migration. Select the option you want,
+choose whether to apply the secondary option, and click **OK**.
 
 - Merge your host management data with data in the destination table (Recommended) – This option
   keeps existing hosts and host discovery tasks in the destination and updates the tasks based on
@@ -33,7 +33,7 @@ choose whether or not to apply the secondary option, and click **OK**.
     - Also overwrite shared host inventory data – If selected, host inventory data is also replaced
       with data found in the source database
 
-- Don’t copy your host management data to destination table – This option does not copy, update, or
+- Don’t copy your host management data to destination table – This option doesn't copy, update, or
   overwrite information between databases
 
     - Clear data in destination table – If selected, all host management data in the destination
@@ -45,12 +45,12 @@ choose whether or not to apply the secondary option, and click **OK**.
 
 ![Storage page with new default storage profile](/images/accessanalyzer/11.6/admin/settings/storage/defaultsave.webp)
 
-**Step 4 –** A blue arrow now points to the new default Storage Profile. However, the arrow is also
-an indication that the new default is not fully recognized by Enterprise Auditor. Click **Save** and
+**Step 4 –** A blue arrow now points to the new default Storage Profile. However, the arrow also
+indicates that Enterprise Auditor hasn't fully recognized the new default. Click **Save** and
 then **OK** to confirm the changes.
 
 **Step 5 –** Finally, to ensure these changes take effect, exit the Enterprise Auditor application
 and relaunch it.
 
-The blue arrow is replaced by the green checkmark, indicating the new default Storage Profile is
-recognized.
+The green checkmark replaces the blue arrow, indicating that Enterprise Auditor now recognizes the
+new default Storage Profile.

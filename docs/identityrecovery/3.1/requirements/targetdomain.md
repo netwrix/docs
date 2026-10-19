@@ -28,13 +28,13 @@ specified on the Domain page of the Add Domain Configuration wizard. This accoun
 - A member of the Domain Administrators group in the target domain
 
 There is a Least Privilege Access Model to provision an Active Directory security group with the
-permissions that are necessary to perform backups, rollbacks and recovery.
+permissions that are necessary to perform backups, rollbacks, and recovery.
 
 ### Least Privilege Access Model
 
 It is strongly suggested that the Identity Recovery service account be provided Domain
 Admin privileges; however, there are situations where security policies prevent an organization from
-providing Domain Admin privileges. In those situations, please contact your Netwrix service
+providing Domain Admin privileges. In those situations, contact your Netwrix service
 representative to work with you to develop a tailored Least Privilege Access model based on your
 environment.
 

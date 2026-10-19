@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Software Package Manager
 
-Netwrix PolicyPak Software Package Manager enables you to deliver
+With Netwrix PolicyPak Software Package Manager, you can deliver
 or remove pre-packaged software. The only type of supported software you can deliver or remove is
 Microsoft Store applications, also known as UWP (Universal Windows Platform applications), or AppX
 packages.
@@ -16,10 +16,14 @@ For AppX packages, you can do the following with Software Package Manager:
 - Remove unwanted games like Candy Crush Saga or some built-in applications like Skype.
 - Deploy applications from the Microsoft Store like Slack, Netflix, or Power BI.
 - Work with PolicyPak Least Privilege Manager to tighten down specifically which
-  Windows applications can and cannot run.
+  Windows applications can and can't run.
 
-Watch this video for an overview of See PolicyPak Software Package Manager:
+Watch this video for an overview of PolicyPak Software Package Manager:
 [PolicyPak Software Package Manager: AppX Manager](/docs/policypak/components/softwarepackage/videos/appxpoliciesitems/appxmanager.md)
 for additional information.
 
-
+:::note
+Software Package Manager supports assigning multiple triggers to a single policy. See
+[Using Multiple Triggers](/docs/policypak/components/scriptstriggers/manual/gettingtoknow/multipletriggers.md)
+for details.
+:::

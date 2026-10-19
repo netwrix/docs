@@ -10,9 +10,7 @@ The Specify account or group window is opened from a field where a Windows accou
 
 ![Specify Account or Group popup window](/images/activitymonitor/7.1/admin/agents/properties/windowsspecifyaccountorgroup.webp)
 
-Follow the steps to use this window.
-
-**Step 1 –** Select the Domain from the drop-down menu.
+**Step 1 –** Select the Domain from the dropdown menu.
 
 **Step 2 –** Enter the Account in the textbox.
 
@@ -20,7 +18,7 @@ Follow the steps to use this window.
 - Use the ellipsis (…) button to open the Select Users, Computers, Service Accounts, or Groups
   window to browse for an account.
 
-**Step 3 –** Then click Resolve. A message displays indicating whether or not the account could be
+**Step 3 –** Then click Resolve. A message displays indicating whether the account could be
 resolved.
 
 **Step 4 –** If successful, click OK.

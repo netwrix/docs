@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -67,15 +67,15 @@ VMware audit peculiarities
 
 The following considerations refer to VMware infrastructure monitoring with Netwrix Auditor:
 
-- A VM that was moved from one resource pool to another (within the same VMware host) will be
-  reported as _Modified_.
-- If an ESXi host was specified as a monitored item in the corresponding monitoring plan, but a
+- Netwrix Auditor reports a VM moved from one resource pool to another (within the same VMware
+  host) as _Modified_.
+- If you specified an ESXi host as a monitored item in the corresponding monitoring plan, but a
   virtual machine was created using the vCenter Server (not this ESXi host) management facilities,
-  information about this VM creation will not be collected. To work around, specify the vCenter
-  Server as a monitored item in the monitoring plan.
+  Netwrix Auditor won't collect information about this VM creation. To work around this, specify
+  the vCenter Server as a monitored item in the monitoring plan.
 - For ESXi host permission changes, the "What" field in the Activity Records (and, therefore,
   reports and search results) will report _\root_.
 - Netwrix Auditor will not collect data on _Failed Logon_ event in case of incorrect logon attempt
   through VMware vCenter Single Sign-On.
-- Also, data on the logon attempts performed using SSH will not be collected.
-- For custom role creation event, initiator will be reported as _System_.
+- Also, Netwrix Auditor won't collect data on logon attempts performed using SSH.
+- For a custom role creation event, Netwrix Auditor reports the initiator as _System_.

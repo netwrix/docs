@@ -7,7 +7,7 @@ sidebar_position: 70
 # Credential & Data Security Assessment Overview
 
 Proper data security begins with a strong foundation. The Credential & Data Security Assessment
-(CDSA) provides a deep-dive into the security of your structured and unstructured data, Active
+(CDSA) provides an in-depth analysis of the security of your structured and unstructured data, Active
 Directory, and Windows infrastructure.
 
 The CDSA job depends upon several Enterprise Auditor solutions for data collection. See the
@@ -16,7 +16,7 @@ topic for installation and database requirements.
 
 ## Supporting Solutions
 
-At a minimum the following solutions need to run prior to the CDSA job to provide the data used to
+At a minimum the following solutions need to run before the CDSA job to provide the data used to
 generate the CDSA presentations:
 
 - .Active Directory Inventory Solution

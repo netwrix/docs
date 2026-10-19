@@ -15,7 +15,7 @@ modify the parameters as required.
 
 **Step 1 –** On computer where you want to execute the add-on, start **Windows PowerShell**.
 
-**Step 2 –** Type a path to the add-on. Or simply drag and drop the add-on file in the console
+**Step 2 –** Enter a path to the add-on. Or simply drag and drop the add-on file in the console
 window.
 
 **Step 3 –** Add script parameters. The console will look similar to the following:
@@ -56,7 +56,7 @@ file that defines mapping between the Data Source and related Category ID.
 Every time you run the script, Auditor makes a timestamp. The next time you run the script, it will
 start retrieving new Activity Records. Consider the following:
 
-- By default, the add-on does not apply any filters when exporting Activity Records. If you are
+- By default, the add-on doesn't apply any filters when exporting Activity Records. If you are
   running the add-on for the first time (there is no timestamp yet) with no filters, it will export
   Activity Records for the last month only. This helps to optimize solution performance during the
   first run. At the end of the first run, the timestamp will be created, and the next run will start

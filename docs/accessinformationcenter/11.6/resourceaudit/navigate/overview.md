@@ -10,8 +10,8 @@ The audit interfaces are accessible from the home page of the Access Information
 
 ![Home page](/images/accessinformationcenter/11.6/resourceaudit/navigate/auditinterface.webp)
 
-The **Resource Audit** button opens the Resource Audit interface. The search features, which include
-a search bar and a Recent Searches box, can be used to open any audit interface.
+The **Resource Audit** button opens the Resource Audit interface. Use the search features, which include
+a search bar and a Recent Searches box, to open any audit interface.
 
 ## Interface Components
 
@@ -58,9 +58,9 @@ There are two checkbox options depending on the report selected:
 - Include Subfolders – Select to include subfolders of the selected share or folder in the report
 - Highlight Active Permissions – Select to show permissions that are in use. When a user or
   effective member of a group that has permissions to a resource also has activity on the resource,
-  a yellow icon is displayed for the permission type to indicate the access level used to perform
-  the activity. Therefore, access level cells not highlighted when activity is being monitored
-  represent permissions that are identified as stale. See the
+  the system displays a yellow icon for the permission type to indicate the access level used to perform
+  the activity. Therefore, access level cells not highlighted when activity is monitored
+  represent stale permissions. See the
   [Stale Permissions](/docs/accessinformationcenter/11.6/resourceaudit/filesystem/sharesubfolder/permissions.md#stale-permissions)
   topic for additional information.
 
@@ -72,7 +72,7 @@ Activity reports contain the following unique features.
 
 Activity reports display information for a selected date range. To adjust the date range, click the
 **Date Range** filter to open a calendar window. The date range can be changed manually by selecting
-dates in the calendars, using the arrows to change the month. Once the selection is made, click
+dates in the calendars, using the arrows to change the month. After the selection is made, click
 **OK**. The report loads data for the new date range.
 
 **Trend Graphs**
@@ -115,7 +115,7 @@ configure the Access Information Center to commit changes to Active Directory.
 
 
 While a resource owner has access to a Resource Audit interface filtered for their resource and can
-model changes, only users with an Administrator or a Security Team role are able to commit modeled
+model changes, only users with an Administrator or a Security Team role can commit modeled
 access changes. However, if the ad hoc changes have been enabled on a resource, the owner can use
 the **Change Access** button in the Owner portal to commit changes.
 

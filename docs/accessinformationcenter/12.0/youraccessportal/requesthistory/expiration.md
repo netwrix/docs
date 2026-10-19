@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Access Expiration Email
 
-If only temporary access was granted, once the date expires, the user will be automatically removed
+If only temporary access was granted, after the date expires, the user will be automatically removed
 from the resource, and will receive an email notification informing them of the removal.
 
 ![Access Expired email](/images/accessinformationcenter/12.0/accessrequests/email/expired.webp)

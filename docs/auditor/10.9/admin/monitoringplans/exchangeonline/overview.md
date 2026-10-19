@@ -6,8 +6,8 @@ sidebar_position: 80
 
 # Exchange Online
 
-**NOTE:** Prior to configuring your monitoring plan, please read and complete the instructions in
-the following topics:
+**NOTE:** Read and complete the instructions in the following topics before configuring your
+monitoring plan:
 
 - [Protocols and Ports Required](/docs/auditor/10.9/requirements/ports.md) – To ensure successful data
   collection and activity monitoring configure necessary protocols and ports for inbound and
@@ -25,7 +25,7 @@ This instruction shows how to collect audit data from the Microsoft 365 tenant.
 If you plan to use modern authentication, see the
 [Configuring Microsoft Entra ID App for Auditing Microsoft Entra ID](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/permissions/modernauth/modernauth.md#configuring-microsoft-entra-id-app-for-auditing-microsoft-entra-id)
 topic for additional information on how to prepare Microsoft Entra ID app with required permissions.
-Make sure you have the following at hand:
+Ensure you have the following at hand:
 
 - Tenant name
 - For modern authentication: Application (client) ID
@@ -35,24 +35,24 @@ Make sure you have the following at hand:
 Types of data that can be collected by Netwrix Auditor from the Microsoft 365 tenant depend on the
 authentication option you choose.
 
-Follow the steps to configure Office 365 tenant as a monitored item.
+To configure an Office 365 tenant as a monitored item:
 
 **Step 1 –** On the **General** page of the item properties, specify **Tenant name**:
 
 - If you are going to use **Basic authentication**, you can proceed to the next step – **Tenant
   name** will be filled in automatically after it.
-
-- **NOTE:** Basic authentication is no longer possible for Exchange Online. For the already existing
-  tenants it is still possible to use basic authentication for SharePoint Online and Microsoft Entra
-  ID monitoring.
-
 - If you are going to use **Modern authentication**, paste the obtained name. See the
   [Using Modern Authentication with Microsoft Entra ID](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/permissions/modernauth/modernauth.md)
   topic for additional information.
 
+:::note
+Basic authentication is no longer possible for Exchange Online. For existing tenants, you can still
+use basic authentication for SharePoint Online and Microsoft Entra ID monitoring.
+:::
+
 ![tenantenvironment](/images/auditor/10.9/admin/monitoringplans/tenantenvironment.webp)
 
-If you are using a government tenant, please click the **Tenant Environment** tab and select the
+If you are using a government tenant, click the **Tenant Environment** tab and select the
 desired tenant environment.
 
 **Step 2 –** Select authentication method that will be used when accessing Office 365 services:
@@ -63,7 +63,7 @@ desired tenant environment.
     - Enter **User name** and **password**; use any of the following formats: _user@domain.com_ or
       _user@domain.onmicrosoft.com_.
     - The **Tenant name** field then will be filled in automatically.
-    - Make sure this user account has sufficient access rights. See
+    - Ensure this user account has sufficient access rights. See
       [Using Basic Authentication with Microsoft Entra ID](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/permissions/basicauth.md)
       topic for additional information.
 

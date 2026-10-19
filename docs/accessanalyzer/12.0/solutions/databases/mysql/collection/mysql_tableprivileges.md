@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # MySQL_TablePrivileges Job
 
-The MySQL_TablePrivileges job is designed to collect MySQL table privileges from all the targeted
+The MySQL_TablePrivileges job collects MySQL table privileges from all the targeted
 servers.
 
 ## Queries for the MySQL_TablePrivileges Job
@@ -14,7 +14,7 @@ servers.
 The MySQL_TablePrivileges Job uses the SQL Data Collector for queries.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 
@@ -30,7 +30,7 @@ Navigate to the **Databases** > **0.Collection** > **MySQL** > **MySQL_TablePriv
 **Configure** node and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

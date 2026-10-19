@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Troubleshoot 2FA Issues
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "Troubleshoot Two-Factor Authentication Issues"
 knowledge_article_id: kA0Qk0000002B61KAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Troubleshoot Two-Factor Authentication Issues

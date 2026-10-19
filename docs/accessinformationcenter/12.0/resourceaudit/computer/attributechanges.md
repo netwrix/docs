@@ -11,7 +11,7 @@ change to the audited computer that was logged during the selected date range.
 
 ![Attribute Changes report](/images/accessinformationcenter/12.0/resourceaudit/computer/attributechanges.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Scan Time – Date and timestamp of the Access Analyzer scan that identified the change
 - Attribute – Active Directory attribute changed for the computer

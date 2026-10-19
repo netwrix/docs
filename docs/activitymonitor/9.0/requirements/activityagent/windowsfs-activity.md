@@ -6,11 +6,11 @@ sidebar_position: 80
 
 # Windows File Server Activity Auditing Configuration
 
-In order for the Netwrix Activity Monitor to monitor Windows file server activity, an Activity Agent must be deployed to the server. It cannot be deployed to a proxy server. However, additional considerations are needed when targeting a Windows File System Clusters.
+In order for the Netwrix Activity Monitor to monitor Windows file server activity, you must deploy an Activity Agent to the server, not to a proxy server. However, additional considerations apply when targeting a Windows File System Cluster.
 
 ## Windows File System Clusters
 
-In order to monitor a Windows File System Cluster, an Activity Agent needs to be deployed on all nodes that comprise the Windows File System Cluster. The credential used to deploy the Activity Agent must have the following permissions on the server:
+to monitor a Windows File System Cluster, an Activity Agent needs to be deployed on all nodes that comprise the Windows File System Cluster. The credential used to deploy the Activity Agent must have the following permissions on the server:
 
 - Membership in the local Administrators group
 - READ and WRITE access to the archive location for Archiving feature only

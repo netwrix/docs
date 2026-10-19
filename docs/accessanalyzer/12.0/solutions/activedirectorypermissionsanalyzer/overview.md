@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # Active Directory Permissions Analyzer Solution
 
-The Access Analyzer Active Directory Permissions Analyzer Solution enables organizations to easily
-and automatically determine effective permissions applied to any and all Active Directory (AD)
-objects. AD, Security, and Network Administrators can easily browse and compare information from
+The Access Analyzer Active Directory Permissions Analyzer Solution enables organizations to
+automatically determine effective permissions applied to all Active Directory (AD)
+objects. AD, Security, and Network Administrators can browse and compare information from
 individual or multiple domains using comprehensive, preconfigured analyses and reports focused on
 permissions associated with AD domains, organizational units, groups, users, and computers. These
 capabilities enable them to obtain the most authoritative view of who has access to what in AD.
@@ -42,8 +42,8 @@ installed from the Instant Job Wizard, see the
 [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for additional information.
 When purchased separately, the Permissions Analyzer Solution is installed into the Jobs tree with
 the Active Directory instant solution. The license limits the solution to just the **Jobs** >
-**Active Directory Permissions Analyzer** Job Group. Once installed into the Jobs tree, navigate to
-the solution: **Jobs** > **Active Directory Permissions Analyzer**. The 0.Collection Job Group
+**Active Directory Permissions Analyzer** Job Group. After you install the solution into the Jobs tree, navigate to
+it: **Jobs** > **Active Directory Permissions Analyzer**. The 0.Collection Job Group
 collects the data. The other job groups run analysis on the collected data and generate reports.
 
 ## Job Groups
@@ -72,8 +72,8 @@ The job groups and jobs in the Active Directory Permissions Analyzer Solution ar
 - [4.Computers Job Group](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/computers/overview.md) – Reports on all Active Directory permissions
   applied to computer objects within the targeted domains
 - [5.Open Access > AD_OpenAccess Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ad_openaccess.md) – Reports on all Active Directory
-  permissions granting open access within the targeted domains. Open Access can be defined as access
-  granted to security principals such as: Domain Users, Authenticated Users, and Everyone.
+  permissions granting open access within the targeted domains. Open Access means access
+  granted to security principals such as Domain Users, Authenticated Users, and Everyone.
 - [6.Broken Inheritance > AD_BrokenInheritance Job](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/ad_brokeninheritance.md) – Reports on all
   locations within Active Directory where inheritance is broken within the targeted domains
 - [7.Containers Job Group](/docs/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/containers/overview.md) – Reports on all Active Directory permissions

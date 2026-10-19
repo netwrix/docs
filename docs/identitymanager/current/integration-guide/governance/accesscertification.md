@@ -55,7 +55,6 @@ The administrator profile, created with CreateAdministratorProfile scaffolding, 
 
 If you are not using the AccessReviewAdministrationAccessControlRules scaffolding, the user cannot query on dimensions when editing the owner filters, so you need to give the permissions on the correct contexts:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```
 <AccessControlRule Profile="Administrator" EntityType="Dimension0" Identifier="Administrator_AccessCertificationCampaign_Dimension0" DisplayName_L1="Administrator_AccessCertificationCampaigns">    <Entry Permission="/AccessCertification/AccessCertificationCampaign/Create" />    <Entry Permission="/AccessCertification/AccessCertificationCampaign/Update" /></AccessControlRule>
@@ -73,7 +72,6 @@ The option to display only the **Approve** or **Deny** buttons next to the Acces
 
 This example shows how to set the scope of responsibility for the **Manager** profile.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```
 <AccessControlRule Identifier="Manager_AccessCertificationItem_Custom_AccessCertification_AutoAssign_Directory_User"
@@ -106,7 +104,6 @@ For a profile to be the target of an automatic assignment of an access certifica
 
 This example completes the previous one by adding the automatic assignment capabilities.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```
 <AccessControlRule            Identifier="Manager_AccessCertificationItem_Custom_AccessCertification_AutoAssign_Directory_User"
@@ -125,7 +122,6 @@ The target profiles need the following `/Custom/AccessCertification/ManualAssign
 
 The example below allows the **Manager** profile to be the target of forwarded assignments.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```
 <AccessControlRule Identifier="Manager_AccessCertificationItem_Custom_AccessCertification_ManualAssign_Directory_User" DisplayName_L1="User - Access certification manual assign" EntityType="AccessCertificationItem" Profile="Manager">        <Entry CanExecute="true" Permission="/Custom/AccessCertification/ManualAssigned/Directory_User" />    </AccessControlRule>
@@ -135,6 +131,17 @@ There is no filter so the Manager profile can certify all forwarded certificatio
 
 It is recommended to have a larger scope for forwarded certification orders than for automatically assigned ones.
 
+#### Delegated assignments
+
+Profiles eligible to receive delegated certification items must have the `/Custom/AccessCertification/DelegationAssigned/{entityTypeName}` permission.
+
+The example below allows the **Manager** profile to be selected as a delegated reviewer for items of type Directory_User.
+
+
+```
+<AccessControlRule Identifier="Manager_AccessCertificationItem_Custom_AccessCertification_DelegationAssigned_Directory_User" DisplayName_L1="User - Access certification delegated reviewer" EntityType="AccessCertificationItem" Profile="Manager">        <Entry CanExecute="true" Permission="/Custom/AccessCertification/DelegationAssigned/Directory_User" />    </AccessControlRule>
+```
+
 ### Certification policy
 
 Scopes of responsibility can also be defined in terms of access certification campaign policy. See the [AccessCertificationCampaignPolicy](../../integration-guide/toolkit/xml-configuration/access-certification/accesscertificationcampaignpolicy) topic for additional information.
@@ -143,7 +150,6 @@ Assigning an access certification campaign policy to an access certification cam
 
 The following example creates a new policy named Manager.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```
 <AccessCertificationCampaignPolicy Id="-2" Identifier="Manager" DisplayName_L1="Manager" DisplayName_L2="Responsable"/>
@@ -157,7 +163,6 @@ To use it, modify the access control rules by adding a filter on the campaign po
 
 ##### Example
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```
 <AccessControlRule
@@ -177,7 +182,6 @@ Once entitlement assignments have been reviewed (accepted or rejected), the fina
 
 The user needs to have the correct permission to launch the item processing:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
 ```
 <AccessControlRule Profile="Administrator" EntityType="AccessCertificationCampaign" Identifier="Administrator_AccessCertificationCampaign_Process" DisplayName_L1="Administrator_AccessCertificationCampaigns">    <Entry Permission="/AccessCertification/AccessCertificationCampaign/Process" /></AccessControlRule>

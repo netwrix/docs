@@ -13,11 +13,11 @@ Use the Operations page to select the operations to apply to the target hosts. S
 
 Select and configure the operations using the following options:
 
-- Add operation – Use the drop-down menu to select an operation to perform on the target host. This
+- Add operation – Use the dropdown menu to select an operation to perform on the target host. This
   opens a corresponding window for configuration. Operations include:
 
     :::note
-    Window options vary based on the operation selected from the drop-down menu.
+    Window options vary based on the operation selected from the dropdown menu.
     :::
 
 
@@ -44,12 +44,12 @@ Select a key using the following options:
 
 - Computer name – By default, the Registry browser connects to the local machine
 
-    - If the desired registry item is on the local machine, browse the registry, and select the item
+    - If the registry item you want is on the local machine, browse the registry, and select it
     - To connect to the registry of another machine:
 
         - Enter the hostname in the **Computer name** textbox
         - Click **Connect**, then browse the registry of that machine
-        - Select the desired registry item
+        - Select the registry item you want
 
 - Connect – Attempts to connect to the registry of the machine specified in the **Computer name**
   field
@@ -64,14 +64,14 @@ Use the Select Users or Groups window to select a user, group, or built-in secur
 
 The options are:
 
-- Select this object type – Displays types that are queried against
+- Select this object type – Displays the object types you can query
 
     - Click **Object Types** to open the Object Types window and select the types to query against.
       See the [Object Types Window](#object-types-window) topic for additional information.
 
-- From this location – Displays the location the intended objects are found
+- From this location – Displays the location to search for the intended objects
 
-    - Click **Locations** to open the Locations window and set the location to be queried. See the
+    - Click **Locations** to open the Locations window and set the location to query. See the
       [Locations Window](#locations-window) topic for additional information.
 
 - Enter the object names to select – Select names of objects to query
@@ -126,8 +126,8 @@ following additional options:
 - Columns – Click **Columns** to open the Choose Columns window. See the
   [Choose Columns Window](#choose-columns-window) topic for additional information.
 - Find now – Click **Find Now** to search for objects matching the selected criteria
-- Stop – While a search is running , the **Stop** button is available. Click **Stop** to halt the
-  search before it is completed.
+- Stop – While a search is running, the **Stop** button is available. Click **Stop** to halt the
+  search before it completes.
 - Search Results – Displays results from a search
 
 #### Choose Columns Window

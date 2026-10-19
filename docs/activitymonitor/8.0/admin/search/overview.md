@@ -46,11 +46,9 @@ Queries that may be useful to an organization include the following:
 - What did user X do between days Y and Z?
 - Administrator activity details?
 
-Follow the steps to use the search feature.
-
 **Step 1 –** Click the magnifying glass icon and select the source type.
 
-**Step 2 –** Set the desired filters and click **Search**.
+**Step 2 –** Set the filters you want and click **Search**.
 
 **Step 3 –** Filter and Sort the results in the table as desired.
 
@@ -58,12 +56,12 @@ Follow the steps to use the search feature.
 
 ## Filter
 
-The drop-down menu for a column header in the search results data grid provides the option to filter
+The dropdown menu for a column header in the search results data grid provides the option to filter
 the search results further.
 
 ![Operations Filter Dropdown Menu](/images/activitymonitor/8.0/admin/search/operationssdropdownfiltermenu.webp)
 
-Choose between checking/unchecking the desired field values from the list of available values and
+Choose between checking/unchecking the field values you want from the list of available values and
 typing in the search textbox. The Clear filter option removes all filters from the selected column.
 A filter icon appears on the header where filters have been applied. Multiple columns can be
 filtered in the search results data grid.
@@ -81,7 +79,7 @@ descending order.
 
 ![Sort Options](/images/activitymonitor/8.0/admin/search/sort.webp)
 
-The drop-down menu on the column header has options to Sort A to Z or Sort Z to A for the selected
+The dropdown menu on the column header has options to Sort A to Z or Sort Z to A for the selected
 column. Sorting can only occur for one column at a time.
 
 :::note
@@ -95,5 +93,5 @@ The search results data grid can be exported to a CSV/JSON file.
 
 ![Export Button](/images/activitymonitor/8.0/admin/search/exportbutton.webp)
 
-Once the search results are configured as desired, click the Export button located at the top left
+After you configure the search results, click the Export button located at the top left
 corner of the window. Set the name and location of the CSV/JSON file.

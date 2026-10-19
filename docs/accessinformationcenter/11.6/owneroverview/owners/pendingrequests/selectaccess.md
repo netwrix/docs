@@ -7,17 +7,17 @@ sidebar_position: 20
 # Select Access Window
 
 The Select Access window opens from the Pending Access Requests Page of the Owner portal and allows
-you to select an access level different to what has been requested. See the
+you to select an access level different from what was requested. See the
 [Pending Access Requests](/docs/accessinformationcenter/11.6/owneroverview/owners/pendingrequests/pendingrequests.md)
-topic for additional information. Follow the steps to grant a different access level.
+topic for additional information. To grant a different access level:
 
-**Step 1 –** On the Pending Access Requests Page of the Owner portal, select the desired request and
+**Step 1 –** On the Pending Access Requests Page of the Owner portal, select the request you want and
 click **More Options**. The Select Access window opens.
 
 ![Select Access window](/images/accessinformationcenter/11.6/accessrequests/window/selectaccess.webp)
 
-**Step 2 –** The drop-down menu provides alternative access levels. Options vary based on how the
-resource was configured for self-service. Select the desired Access Level.
+**Step 2 –** The dropdown menu provides alternative access levels. Options vary based on how the
+resource was configured for self-service. Select the Access Level you want.
 
 :::tip
 Remember, this is only applicable to file system and SharePoint resources. Group membership only

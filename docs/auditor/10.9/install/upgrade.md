@@ -17,7 +17,7 @@ version 10.9. See the following Netwrix knowledge base article for more informat
 
 ## Before Starting the Upgrade
 
-Before you start the upgrade, it is strongly recommended taking the following preparatory steps.
+Before you start the upgrade, Netwrix strongly recommends taking the following preparatory steps.
 
 **Step 1 –** Upgrade Netwrix Auditor Server OS to the supported version before upgrading Netwrix
 Auditor itself.
@@ -44,13 +44,13 @@ Netwrix recommends doing so.
 ### General Considerations and Known Issues
 
 During the seamless upgrade from previous versions, Netwrix Auditor preserves its configuration, so
-you will be able to continue auditing right after finishing the upgrade. However, there are some
-considerations you should examine - they refer to the upgrade process and post-upgrade product
-operation. The issues listed below apply to upgrade from 9.96 and 10.
+you will be able to continue auditing right after finishing the upgrade. However, review the
+following considerations, which cover the upgrade process and post-upgrade product
+operation. The following issues apply to upgrade from 9.96 and 10.
 
 - After the upgrade you may receive temporary data collection errors – they occur when the program
   tries to upload collected data to the Audit Database before the database upgrade is finished.
-- Microsoft Exchange Server 2010 is no longer supported. Please upgrade your Exchange Server to a
+- Microsoft Exchange Server 2010 is no longer supported. upgrade your Exchange Server to a
   new version.
 - For Netwrix Auditor for SharePoint Online, the following data will be available within 24 hours
   after upgrade:
@@ -62,7 +62,7 @@ operation. The issues listed below apply to upgrade from 9.96 and 10.
 
 - For auditing cloud-based applications (Microsoft Entra ID, Exchange Online, SharePoint Online, and
   MS Teams) with Netwrix Auditor using basic authentication: before an upgrade from version 10.0 and
-  earlier, make sure that the account under which the upgrade will be performed has sufficient
+  earlier, ensure that the account you use to perform the upgrade has sufficient
   rights and permissions to perform initial data collection and upgrade. Review the following for
   more information about required rights and permissions:
 
@@ -82,8 +82,8 @@ operation. The issues listed below apply to upgrade from 9.96 and 10.
     - [Permissions for Teams Auditing](/docs/auditor/10.9/configuration/microsoft365/teams/permissions/permissions.md)
 
 - Netwrix Auditor for Oracle Database. If you use the following combination of the audit settings:
-  Mixed Mode + Fine Grained Auditing, please check your configuration. You may need to re-configure
-  your audit since the Oracle Database data collection mechanism was changed. See the
+ Mixed Mode + Fine Grained Auditing, check your configuration. You may need to re-configure
+  your audit since the Oracle Database data collection mechanism changed. See the
   [Supported Data Sources](/docs/auditor/10.9/requirements/supporteddatasources/supporteddatasources.md) and
   [Verify Your Oracle Database Audit Settings](/docs/auditor/10.9/configuration/oracle/verifysettings.md) topics for
   additional information.
@@ -103,8 +103,8 @@ operation. The issues listed below apply to upgrade from 9.96 and 10.
   out or delete the "\*._PasswordChanged_" line in the omitproplist.txt file.
 - For Exchange Online, the "_Who_" field in search, reports, Activity Summary emails, etc., shows
   User Principal Name (UPN) instead of Display Name.
-- For Windows Server Auditing and User Activity Video Recording data sources .NET 4.8 needs to be
-  installed on the Netwrix Auditor server and target servers.
+- Windows Server Auditing and User Activity Video Recording data sources require .NET 4.8 on the
+  Netwrix Auditor server and target servers.
 
 ## Upgrade Procedure
 
@@ -119,12 +119,13 @@ topic for information on how to register for a Customer Portal account.
 Partners and MSPs who are logged into the Netwrix Partner Portal can download the latest version of
 their software products from the My Product page:
 [https://www.netwrix.com/par/site/products](https://www.netwrix.com/my_products.html). To receive an
-invitation to the Partner Portal, please contact
+invitation to the Partner Portal, contact
 [netwrix.msp@netwrix.com](http://netwrix.msp@netwrix.com/).
 
-Follow the steps to perform the upgrade.
+To perform the upgrade:
 
-**Step 1 –** Make sure you have completed the preparatory steps above.
+**Step 1 –** Ensure you have completed the preparatory steps described in Before Starting the
+Upgrade.
 
 **Step 2 –** Run the setup on the computer where the Auditor Server resides. See the
 [Installation](/docs/auditor/10.9/install/overview.md) topic for additional information.
@@ -135,6 +136,6 @@ on all remote machines where the Auditor Client resides.
 Netwrix recommends reviewing your current port configuration after every re-installation or upgrade.
 
 If you were auditing Windows Server or SharePoint server/farm, and the corresponding Core Services
-were installed automatically according to the monitoring plan settings, then they will be upgraded
-automatically during the initial data collection. During the Netwrix Auditor for SharePoint Core
+were installed automatically according to the monitoring plan settings, Netwrix Auditor upgrades
+them automatically during the initial data collection. During the Netwrix Auditor for SharePoint Core
 Service upgrade, your SharePoint sites will be temporarily unavailable.

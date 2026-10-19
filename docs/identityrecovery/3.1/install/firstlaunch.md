@@ -13,11 +13,9 @@ To launch the Recovery Console, either:
 
 ## First Login
 
-On the first login to the Recovery Console, use the credentials configured on the Administrator Role
+On the first log in to the Recovery Console, use the credentials configured on the Administrator Role
 page during installation. This account has the Administrator role needed to manage the application.
 If a group is used, any account with membership to this group can login.
-
-Follow the steps to login to Identity Recovery.
 
 **Step 1 –** Launch the Recovery Console. The Log in page is displayed.
 

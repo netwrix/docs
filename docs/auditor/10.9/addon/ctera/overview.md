@@ -8,10 +8,10 @@ sidebar_position: 60
 
 The add-on works in collaboration with Netwrix Auditor, supplying data about activity on your
 Ctera-based devices. Aggregating data into a single audit trail simplifies analysis, makes activity
-monitoring more cost effective, and helps you keep tabs on your IT infrastructure.
+monitoring more cost effective, and helps you monitor your IT infrastructure.
 
 Implemented as a service, this add-on facilitates the data transition from Ctera-based systems to
-Netwrix Auditor. All you have to do is provide connection details and specify parsing rules.
+Netwrix Auditor. To set it up, provide connection details and specify parsing rules.
 
 On a high level, the add-on works as follows:
 
@@ -36,7 +36,7 @@ follows:
 
 ### Configure Logging for CTERA Edge Filer
 
-Prior to start using the Add-On, configure syslog logging settings on your CTERA Edge Filers. See
+Before you start using the Add-On, configure syslog logging settings on your CTERA Edge Filers. See
 the
 [Configuring Syslog Settings](https://kb.ctera.com/docs/configuring-logging#configuring-syslog-settings)
 article on the CTERA product documentation portal for detailed instructions.
@@ -59,5 +59,5 @@ installed on the same server.
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
-leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
+Ensure to check your product version, and then review and update your add-ons and scripts
+that use the Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

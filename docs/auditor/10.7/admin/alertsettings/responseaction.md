@@ -19,29 +19,19 @@ Response Action settings contain the following configuration options:
 - With parameters – If your script contains parameters, specify them here
 - Working directory – If you need to specify a working directory for your script to perform the
   operation, insert the path here
-- Write data to CSV file – If this checkbox is selected, Netwrix Auditor will save activity records
-  in a CSV file. You can use it to pass information into your response action to receive a more
-  targeted response.
-- Limit row count in a file to – Select the desired number of rows you want for the file
+- Write data to CSV file – If this checkbox is selected, Netwrix Auditor will save activity records in a CSV file. You can use it to pass information into your response action to receive a more targeted response.
+- Limit row count in a file to – Specify the number of rows to include in the file
 - Use custom credentials – Enter the username and password if you want the script to be run as an
   account different from LocalSystem
-- Command line preview – Showing a preview of the command line script. Click **Test run** button to
-  test its performance.
+- Command line preview – Shows a preview of the command line script. Click **Test run** to test its performance.
 
-Follow the steps to configure the required settings in the Response Action tab of the alert
-properties.
+1. Turn the switch to On if you want a response action to be taken when the alert occurs.
 
-**Step 1 –** Turn the switch to On if you want a response action to be taken when the alert occurs.
+2. In the Run field, specify the path to the executable file (_.exe_, _.cmd_, _.bat_; for _.ps1_ files, see step 3 below). The file must be located on the machine where Netwrix Auditor server runs.
 
-**Step 2 –** In the Run field, specify the path to the executable file (_.exe_, ._cmd_, _.bat_; for
-_.ps1_ files see step 3 below). The file must be located on the machine where Netwrix Auditor server
-runs.
+3. In the With parameters field, enter the parameters to be used by the executable file. Use a space character as a separator.
 
-**Step 3 –** In the With parameters field, enter the parameters to be used by the executable file.
-Use space character as a separator.
-
-**Step 4 –** To run _.exe_, _.cmd_ and _.bat_ files, you can enter the path to your command-line or
-batch file directly in the Run field, for example:
+4. To run _.exe_, _.cmd_, and _.bat_ files, you can enter the path to your command-line or batch file directly in the Run field. For example:
 
 ![command_thumb_0_0](/images/auditor/10.7/admin/alertsettings/command_thumb_0_0.webp)
 
@@ -53,39 +43,26 @@ script. For example:
 
 ![powershell_thumb_0_0](/images/auditor/10.7/admin/alertsettings/powershell_thumb_0_0.webp)
 
-Unless you select to Write data to CSV file, Auditor will also pass the following parameters to the
-command line:
+Unless you select Write data to CSV file, Auditor will also pass the following parameters to the command line:
 
 - _AlertID_ — alert ID
 - _RecordID_ — ID of the activity record that triggered the alert
 
-Selecting Write data to CSV file will change this behavior, as described in the Configure a Response
-Action for Alert section below.
+Selecting Write data to CSV file will change this behavior.
 
-**Step 5 –** In the Working directory field, specify path to the working directory of the executable
-file on NAuditor server.
+5. In the Working directory field, specify the path to the working directory of the executable file on the Auditor server.
 
-**Step 6 –** In the Working directory field, specify path to the working directory of the executable
-file on NAuditor server.
+6. In the Working directory field, specify the path to the working directory of the executable file on the Auditor server.
 
-If you leave this field empty, then the path to the file specified in the Run field will be used as
-a working directory. As shown in the example with the _.ps_ file, this may be the system directory.
-So, to avoid system directory cluttering, it is recommended not to leave the Working directory field
-empty but to explicitly specify the directory where your executable file is located, or a dedicated
-directory for that purpose. In the latter case, make sure the directory exists on Auditor server.
+If you leave this field empty, the path specified in the Run field will be used as the working directory. As shown in the PowerShell example, this may be a system directory. To avoid system directory clutter, specify the directory where your executable file is located or a dedicated directory. Ensure the directory exists on the Auditor server.
 
-**Step 7 –** Write data to CSV file — select this option if you want Auditor to locate the activity
-records associated with the alert, and write the record fields and their values in a structured way
-to a ._csv_ file. For each new alert being created, this option is selected by default, as well as
-for the predefined alerts installed with Auditor.
+7. **Write data to CSV file** — Select this option if you want Auditor to locate the activity records associated with the alert and write the record fields and their values to a _.csv_ file. This option is selected by default for new alerts and predefined alerts installed with Auditor.
 
-After the upgrade, all alerts with previously configured response action will have this option
-cleared.
+   After an upgrade, all alerts with previously configured response actions will have this option cleared.
 
-**Step 8 –** Limit row count in a file to `<N>` — limit the number of rows (activity records) to be
-written to a single ._csv_ file. Enter a value from _1_ to _1000_.
+8. **Limit row count in a file to `<N>`** — Limit the number of rows (activity records) written to a single _.csv_ file. Enter a value from 1 to 1000.
 
-Learn more about how these options work in the Configure a Response Action for Alert section.
+For more information on these options, see the Response Action settings section below.
 
 By default, the executable file will be launched under the _LocalSystem_ account. If you want to use
 another account, select the Use custom credentials checkbox and specify user name and password. Make
@@ -113,14 +90,14 @@ After the test run, you will get a notification message with the exit code. Typi
 follows:
 
 - **0** — the response action completed successfully
-- Any other value — the response action was not a success
+- Any other value — the response action wasn't a success
 
 **_RECOMMENDED:_** Apply similar logic if you plan to use custom exit codes in your response action
 script.
 
 Same exit codes will be returned by response action regular runs.
 
-If the action is not a success (exit code is not 0), the program will try to perform response action
+If the action isn't a success (exit code isn't 0), the program will try to perform response action
 again (up to 200 times) with increasing time interval.
 
 ## Write Data to a CSV File
@@ -142,9 +119,4 @@ create 5 CSV files, with 10 records in each chunk. Also notice that the response
 launched once for every such chunk (5 times in this example), and will retrieve multiple activity
 records per launch (not more than the specified limit, i.e. 10 records in this example).
 
-A CSV file is named using the timestamp and GUID and stored in the subfolder of Netwrix Auditor
-working folder (by default, _%ProgramData%\Netwrix
-Auditor\AuditCore\AuditArchive\AlertsToolLauncher\Csv_). Note that a CSV file will exist only while
-the executable file is running – after the execution is completed, the CSV file will be deleted. So
-if you plan, for example, to obtain some data from that file for further processing, you may need to
-copy it to a permanent location in a timely manner, e.g., using a script.
+A CSV file is named using the timestamp and GUID and stored in the subfolder of the Netwrix Auditor working folder (by default, _%ProgramData%\Netwrix Auditor\AuditCore\AuditArchive\AlertsToolLauncher\Csv_). A CSV file exists only while the executable file is running—after execution completes, the CSV file is deleted. If you need to obtain data from the file for further processing, copy it to a permanent location in a timely manner (for example, using a script).

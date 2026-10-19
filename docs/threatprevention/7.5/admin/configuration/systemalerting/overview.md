@@ -20,13 +20,10 @@ grouped into five types:
   - The ability to collect the data
   - Changes to who can access it
 
-- Operations – Provides alerts on internal operations of the product that are not directly
-  influenced by a user
+- Operations – Provides alerts on internal operations of the product that users don't directly influence
 - Configuration – Provides alerts on changes to general configuration settings
-- Analytics – Provides alerts when an analytic incident is triggered. These alerts are not available
-  for Event Log alerts.
-- Policies – Provides alerts when a policy monitors or blocks an event. These alerts are not
-  available for Event Log alerts.
+- Analytics – Provides alerts when an analytic incident is triggered. These alerts aren't available for Event Log alerts.
+- Policies – Provides alerts when a policy monitors or blocks an event. These alerts aren't available for Event Log alerts.
 
 ## Email and SIEM Alert Notifications for Policy Events
 
@@ -36,9 +33,7 @@ Email and SIEM alert notifications for policy events can be enabled through:
 - The [Actions Tab](/docs/threatprevention/7.5/admin/policies/configuration/actions/overview.md) of a policy
 - The [Actions Tab](/docs/threatprevention/7.5/admin/templates/configuration/actions.md) of a policy template
 
-In any case, configuration must first be set through the System Alerting window. The
-[Alerts Interface](/docs/threatprevention/7.5/admin/alerts/overview.md) allows you to quickly view recent alerts in a
-centralized location.
+In any case, configuration must first be set through the System Alerting window. Use the [Alerts Interface](/docs/threatprevention/7.5/admin/alerts/overview.md) to quickly view recent alerts in a centralized location.
 
 ## Email and SIEM Alert Notifications for Analytic Incidents
 
@@ -48,7 +43,7 @@ reminders of an ongoing attack if it continues after the initial notification ha
 
 ## View the Alert Notifications
 
-Notifications are generated for the alerts you enable on the the System Alerting window.
+Notifications are generated for the alerts you enable on the System Alerting window.
 
 - All Security, Configuration, and Operation alert notifications are displayed on the
   [Alerts Interface](/docs/threatprevention/7.5/admin/alerts/overview.md).
@@ -64,8 +59,7 @@ Below are some considerations:
   process termination shortly after a server reboot. The
   [LSASS Process Terminated](/docs/threatprevention/7.5/troubleshooting/lsass.md) alert (Operations alert) is
   triggered in this event and the Agent is stopped. As a result, all monitoring/blocking by that
-  Agent stops. To resolve the issue, either upgrade to the latest version of the Agent or simply
-  upgrade SI.ActiveDirectoryMonitor.dll - commonly known as ADMonitor DLL (recommended). See the
+  Agent stops. To resolve the issue, upgrade to the latest version of the Agent, or upgrade SI.ActiveDirectoryMonitor.dll (commonly known as ADMonitor DLL, recommended). See the
   [Upgrade ADMonitor](/docs/threatprevention/7.5/admin/agents/agent-management/upgradeadmonitor.md)topic for additional information.
 
   :::info
@@ -77,9 +71,7 @@ Below are some considerations:
 
 
 - In addition to the LSASS process termination check, the Agent can be configured for a Safe Mode.
-  In Safe Mode, the Agent records the version of the LSASS DLLs that it hooks into during
-  installation. When an Agent is restarted, it compares the DLL versions with the recorded list. If
-  the versions do not match, the Windows AD Events monitoring module is not loaded. The Agent’s
+  In Safe Mode, the Agent records the version of the LSASS DLLs that it hooks into during installation. When an Agent is restarted, it compares the DLL versions with the recorded list. If the versions don’t match, the Windows AD Events monitoring module isn’t loaded. The Agent’s
   status in the Agents interface changes to Active (Modules Pending), and all Active Directory
   monitoring/blocking by that Agent stops. The 'Agent Started in AD Monitor pending mode' alert
   (Operations alert) is triggered in this event. To resolve the issue temporarily, the Threat

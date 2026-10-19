@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # MongoDB_SensitiveDataScan Job
 
-The MongoDB_SensitiveDataScan Job is designed to discover sensitive data in MongoDB databases based
+The MongoDB_SensitiveDataScan Job discovers sensitive data in MongoDB databases based
 on pre-defined or user-defined search criteria.
 
 ## Queries for the MongoDB_SensitiveDataScan Job
@@ -26,7 +26,7 @@ The query is:
 ## Configure the MongoDB SDD Query
 
 The MongoDB SDD Query is preconfigured to run using the default settings for the Sensitive Data
-Collection category. Follow the steps to customize configurations.
+Collection category. To customize configurations, complete the following steps.
 
 **Step 1 –** Navigate to the **Databases** > **0.Collection** > **MongoDB** >
 **MongoDB_SensitiveDataScan** > **Configure** node and select Queries.
@@ -37,7 +37,7 @@ The Query Properties window opens.
 **Step 3 –** Select the Data Source tab, and click Configure. The NoSQL Data Collector Wizard opens.
 
 :::warning
-Do not make changes to wizard pages not listed in these steps. They have been
+Don't make changes to wizard pages not listed in these steps. They have been
 pre-configured for this job.
 :::
 
@@ -47,7 +47,7 @@ page.
 
 ![Sensitive Data Scan Settings](/images/accessanalyzer/12.0/install/application/options.webp)
 
-**Step 5 –** Select the desired scan options.
+**Step 5 –** Select the scan options you want.
 
 **Step 6 –** Navigate to the [NoSQL: Criteria](/docs/accessanalyzer/12.0/admin/datacollector/nosql/criteria.md)
 page.
@@ -56,7 +56,7 @@ page.
 
 **Step 7 –** To modify criteria, navigate to the
 [NoSQL: Criteria](/docs/accessanalyzer/12.0/admin/datacollector/nosql/criteria.md) page. By default, the Sensitive
-Data Scan job is configured to scan for criteria configured in the Global Criteria settings. See the
+Data Scan job scans for criteria in the Global Criteria settings. See the
 [Sensitive Data Criteria Editor](/docs/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/overview.md)
 topic for additional information.
 
@@ -71,7 +71,7 @@ may significantly increase scan time.
 
 ![Database Selection Settings](/images/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filter.webp)
 
-**Step 9 –** MongoDB databases must be added to the query before they can be scanned. Click
+**Step 9 –** You must add MongoDB databases to the query before you can scan them. Click
 **Connections** to open the Manage Connections window.
 
 ![Manage Connections window](/images/accessanalyzer/12.0/admin/datacollector/nosql/manageconnections.webp)
@@ -99,7 +99,7 @@ Connections window.
 **Step 13 –** On the Filter page, click Retrieveto populate the Servers pane with the databases and
 collections.
 
-**Step 14 –** (Optional) Right click on an object in the list to include or exclude it from the
+**Step 14 –** (Optional) Right click an object in the list to include or exclude it from the
 sensitive data scan, or build /edit a pattern to create a custom filter. See the
 [NoSQL: Filter](/docs/accessanalyzer/12.0/admin/datacollector/nosql/filter.md) topic for additional information.
 
@@ -117,7 +117,7 @@ Navigate to the Databases > > 0.Collection > MongoDB > MongoDB_SensitiveDataScan
 and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

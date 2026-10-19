@@ -20,11 +20,11 @@ Administration Console.
 is typically used. If the CIFS or NFS shares are accessible through different zones on the OneFS
 cluster, include all relevant zones.
 
-Ensure that OneFS collects only events you are interested in. By default, OneFS may monitor things
-like directory reads, which can take up a large amount of space. Configuring the OneFS events that
-need monitoring is not done through the Activity Monitor console. Configure OneFS event monitoring
-using OneFS CLI with the isi audit modify command for each access zone. Enabling monitoring for only
-what is needed for the environment will reduce the data load to the agent.
+Ensure that OneFS collects only events you are interested in. By default, OneFS may monitor items
+such as directory reads, which can use significant space. You can't configure which OneFS events
+need monitoring through the Activity Monitor console. Configure OneFS event monitoring using the
+OneFS CLI with the isi audit modify command for each access zone. Enabling monitoring only for what
+your environment needs reduces the data load on the agent.
 
 Activity Monitor monitors the following events: `close_file_modified`, `close_file_unmodified`,
 `create_file`, `create_directory`, `delete_file`, `delete_directory`, `rename_file`,
@@ -53,10 +53,10 @@ server hosting CEE. Use either of the following format:
 http://[SERVER Name]:[PORT]/cee
 
 :::info
-When deploying multiple Dell CEE instances at scale, it is recommended that an
-accommodating agent must be configured with each CEE instance. If multiple CEE instances send events
-to just one agent, it may create an overflow of data and overload the agent. Distributing the
-activity stream into pairs will be the most efficient way of monitoring large data sets at scale.
+When deploying multiple Dell CEE instances at scale, configure an accommodating agent
+for each CEE instance. If multiple CEE instances send events
+to just one agent, it may create an overflow of data and overload the agent. Distribute the
+activity stream into pairs to monitor large data sets most efficiently at scale.
 :::
 
 
@@ -65,7 +65,7 @@ be an exact match to the name which is entered in the Activity Monitor for the *
 list.
 
 This name is used as a ‘tag’ on all events coming through the CEE. This name must exactly match what
-is in the Activity Monitor or it does not recognize the events.
+is in the Activity Monitor or it doesn't recognize the events.
 
 :::info
 Use the CIFS DNS name for Dell OneFS.
@@ -78,10 +78,10 @@ the name entered here must exactly match what is used for Enterprise Auditor as 
 :::
 
 
-If the Storage Cluster Name cannot be modified (for example, another third-party depends on it), you
+If the Storage Cluster Name can't be modified (for example, another third-party depends on it), you
 need to set the Host Aliases parameter in the Activity Monitor Console:
 
-- If the Storage Cluster Name is not empty, set the Host Aliases parameter to its value
+- If the Storage Cluster Name isn't empty, set the Host Aliases parameter to its value
 - If the Storage Cluster Name is empty, set the Host Aliases to a semicolon-separated list of OneFS
   node names
 

@@ -14,10 +14,10 @@ directly or scheduled.
 If applicable, the **.NIS Inventory** job group can be run to enable reporting on users and groups
 from NIS environments.
 
-**Target Host(s)**
+**Target Hosts**
 
-All Unix Servers. Create a custom host list in Host Management that contains all Unix servers that
-are in scope to be auditing with the Unix solution.
+All Unix Servers. Create a custom host list in Host Management that contains all Unix servers you
+want to audit with the Unix solution.
 
 The Unix job group has been configured to inherit the host list assignment from the solution level.
 The host list assignment should be assigned under the **Unix** > **Settings** > **Host List
@@ -27,7 +27,7 @@ Assignment** node. Select the UNIX servers host list created previously.
 
 Set a Connection Profile on the Unix job group with root permissions for Unix/Linux.
 
-If the Root permission is unavailable, a least privileged model can be used. See the
+If the Root permission is unavailable, you can use a least privileged model instead. See the
 [Least Privilege Model](/docs/accessanalyzer/12.0/requirements/unix/target.md#least-privilege-model) topic for
 permissions needed to target the supported platforms for data collection.
 
@@ -37,7 +37,7 @@ Schedule the Unix Solution or individual job groups to run as desired.
 
 **History Retention**
 
-This is not supported in this job group and should be turned off.
+This isn't supported in this job group and should be turned off.
 
 **Run at the Job Group Level**
 
@@ -57,7 +57,7 @@ The analysis tasks in this job group are preconfigured to run with the default c
 **Step 1 –** Run a Host Discovery Query to create a host list with All Unix Servers, and assign that
 host list under the **Unix** > **Settings** > **Host List Assignment** node.
 
-**Step 2 –** (Optional) If applicable, run the **.NIS Inventory** job group run to enable reporting
+**Step 2 –** (Optional) If applicable, run the **.NIS Inventory** job group to enable reporting
 on users and groups from NIS environments.
 
 **Step 3 –** Set a Connection Profile on the Unix job group.

@@ -4,10 +4,11 @@ This report shows the server-level fixed and custom roles for the selected SQL S
 grouped by role name. The details for each role include its name, type, and a list of the effective
 role members and member types. Use this report to control role membership and permissions.
 
-To read more about SQL server-level roles, refer to
-[this Microsoft article](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/server-level-roles?view=sql-server-ver15).
+For background on SQL server-level roles, see
+[Server-Level Roles](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/server-level-roles?view=sql-server-ver15)
+in the Microsoft documentation.
 
-To instruct Netwrix Auditor to collect data needed for this report, make sure that **Collect data
+To instruct Netwrix Auditor to collect data needed for this report, ensure that **Collect data
 for state-in-time reports** option is selected in the monitoring plan properties. See Settings for
 Data Collection in the monitoring plan documentation.
 
@@ -42,7 +43,7 @@ This report has the following filters:
   UTC-08:00.
 - **Snapshot date** —select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
-  To report on other snapshots, make sure they are available through import. For details, see
+  To report on other snapshots, ensure they are available through import. For details, see
   **Manage historical snapshots** option description in the SQL Server monitoring plan
   documentation.
 - **Item**— name of the SQL Server instance monitored with selected monitoring plan.
@@ -52,7 +53,7 @@ This report has the following filters:
 
 ## Considerations and limitations
 
-- Reporting for case-sensitive SQL Servers and databases is not supported.
+- Reporting for case-sensitive SQL Servers and databases isn't supported.
 
 ## Related reports
 

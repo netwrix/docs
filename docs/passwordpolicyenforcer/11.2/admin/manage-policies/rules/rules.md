@@ -8,8 +8,8 @@ sidebar_position: 10
 
 Password Policy Enforcer (PPE) uses rules to accept or reject passwords. Each [policy](../manage_policies.md) has rules that you configure independently of the rules in other policies. To configure the rules for a policy:
 
-1. Open the PPE configuration console.
-2. Click the name of a policy in the policy list. The **Rules** tab opens by default.
+1. Open the [PPE configuration console](../../configconsole.md).
+2. Click the name of a policy in the policy list.
 
 The left pane of the policy editor lists the available rules. A check mark appears beside enabled rules. Click a rule to configure its settings in the right pane. The first setting is always a checkbox with the same name as the rule. Select the checkbox to enable the rule.
 
@@ -51,9 +51,9 @@ Some rules have a **Detect character substitution** checkbox. PPE tests password
 
 Some rules have a **Tolerance** dropdown. The tolerance controls how strictly PPE enforces the rule.
 
-Tolerance typically refers to the maximum allowable number of consecutive matching characters in the password and some other parameter. Password Policy Enforcer rejects a password if it exceeds the specified tolerance. For example, the logon name "mary**jones**", and the password "**Jones**town" contain five consecutive matching characters (shown in bold). Password Policy Enforcer rejects this password if the tolerance for the User Logon Name rule is four or lower, and accepts it if the tolerance is five or higher.
+Tolerance is the maximum number of consecutive matching characters that PPE allows between the password and another parameter. Password Policy Enforcer rejects a password if it exceeds the specified tolerance. For example, the logon name "mary**jones**", and the password "**Jones**town" contain five consecutive matching characters (shown in bold). Password Policy Enforcer rejects this password if the tolerance for the User Logon Name rule is four or lower, and accepts it if the tolerance is five or higher.
 
-Some rules have an Auto tolerance option. Setting the tolerance to Auto tells Password Policy Enforcer to reject only passwords that contain the entire comparison parameter. This is useful when the length of the comparison parameter is unknown. For example, if you want PPE to reject passwords that contain the user's entire logon name, then you can't specify a fixed tolerance unless all logon names are the same length. Setting the tolerance to Auto lets Password Policy Enforcer calculate an appropriate tolerance during the password change.
+Some rules have an Auto tolerance option. Setting the tolerance to Auto tells Password Policy Enforcer to reject only passwords that contain the entire comparison parameter. This is useful when you don't know the length of the comparison parameter. For example, if you want PPE to reject passwords that contain the user's entire logon name, then you can't specify a fixed tolerance unless all logon names are the same length. Setting the tolerance to Auto lets Password Policy Enforcer calculate an appropriate tolerance during the password change.
 
 Password Policy Enforcer sets the tolerance to the length of the comparison parameter minus one. The following table shows some parameter values and the calculated tolerance. PPE rejects a password if it contains all the text in the Value column (or a derivative of it if you enable **Detect character substitution** or **Detect words typed backwards**).
 

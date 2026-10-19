@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Compromised Rule
 
-The Compromised rule rejects passwords from prior breaches. These passwords should not be used as
+The Compromised rule rejects passwords from prior breaches. These passwords shouldn't be used as
 they are vulnerable to credential stuffing attacks.
 
 - Enable the **Compromised** button to enable the Compromised rule.

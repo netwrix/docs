@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # AWS: Filter S3 Objects
 
-The Filter S3 Objects page provides the options to filter which objects stored in S3 should be
-queried for permissions and sensitive data. It is a wizard page for the categories of:
+The Filter S3 Objects page provides options to filter which objects stored in S3 the AWS Data
+Collector queries for permissions and sensitive data. It is a wizard page for the categories of:
 
 - Collect S3
 - Collect SDD Data
@@ -32,7 +32,7 @@ Select from the available buckets and click **OK** to add them to the Filter S3 
 
 ## Add Custom Filter
 
-The Add Custom Filter window allows a custom filter to be configured.
+Use the Add Custom Filter window to configure a custom filter.
 
 ![Add Custom Filter window](/images/accessanalyzer/12.0/admin/datacollector/aws/customfilter.webp)
 

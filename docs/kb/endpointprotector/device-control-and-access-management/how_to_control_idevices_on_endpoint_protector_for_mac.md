@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Control iDevices on Endpoint Protector
 tags:
   - device-control-and-access-management
+  - kb
 title: "How to Control iDevices on Endpoint Protector for Mac"
 knowledge_article_id: kA0Qk0000002B7eKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Control iDevices on Endpoint Protector for Mac

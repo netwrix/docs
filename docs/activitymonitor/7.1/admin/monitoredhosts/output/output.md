@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Output for Monitored Hosts
 
-Once a host is being monitored the event stream can be sent to multiple outputs.
+After you start monitoring a host, you can send the event stream to multiple outputs.
 
 ![Output Properties Overview](/images/activitymonitor/7.1/admin/monitoredhosts/outputpropertiesoverview.webp)
 
@@ -19,15 +19,13 @@ The host event outputs are:
 
 ## Add File Output
 
-Follow the steps to add a File output.
+**Step 1 –** On the Monitored Hosts tab, select the host you want to configure and click **Add Output**.
 
-**Step 1 –** On the Monitored Hosts tab, select the desired host and click **Add Output**.
-
-**Step 2 –** Select **File** from the drop-down menu. The Add New Output window opens.
+**Step 2 –** Select **File** from the dropdown menu. The Add New Output window opens.
 
 ![addnewoutputfile](/images/activitymonitor/7.1/admin/monitoredhosts/addnewoutputfile.webp)
 
-**Step 3 –** Configure the tab(s) as desired.
+**Step 3 –** Configure the tabs as desired.
 
 **Step 4 –** Click **Add Output** to save your settings. The Add New Output window closes.
 
@@ -38,15 +36,13 @@ for additional information.
 
 ## Add Syslog Output
 
-Follow the steps to add a Syslog output.
+**Step 1 –** On the Monitored Hosts tab, select the host you want to configure and click **Add Output**.
 
-**Step 1 –** On the Monitored Hosts tab, select the desired host and click **Add Output**.
-
-**Step 2 –** Select **Syslog** from the drop-down menu. The Add New Output window opens.
+**Step 2 –** Select **Syslog** from the dropdown menu. The Add New Output window opens.
 
 ![addnewoutputsyslog](/images/activitymonitor/7.1/admin/monitoredhosts/addnewoutputsyslog.webp)
 
-**Step 3 –** Configure the tab(s) as desired.
+**Step 3 –** Configure the tabs as desired.
 
 **Step 4 –** Click **Add Output** to save your settings. The Add New Output window closes.
 

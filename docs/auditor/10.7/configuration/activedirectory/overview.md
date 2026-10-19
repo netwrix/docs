@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -40,15 +40,15 @@ You can configure your IT Infrastructure for monitoring in one of the following
             **50** hours). See the [Adjust Security Event Log Size and Retention](/docs/auditor/10.7/configuration/activedirectory/securitylog.md)
             topic.
 
-        - To provide for event data collection, the Secondary Logon service must be up and running .
+        - To provide for event data collection, the Secondary Logon service must be operational .
           Open **Administrative Tools** > **Services**, right-click the **Secondary Logon** service
-          and on the **General** tab make sure that Startup type for this service is other than
+          and on the **General** tab ensure that Startup type for this service is other than
           _Disabled_.
 
 ## Monitored Objects
 
 Netwrix Auditor tracks changes made to all object classes and attributes in the Active Directory
-Domain, Configuration and Schema partitions. It also tracks changes to new object classes and
+Domain, Configuration, and Schema partitions. It also tracks changes to new object classes and
 attributes added due to the Active Directory Schema extension. For detailed information, refer to
 Microsoft articles:
 
@@ -57,15 +57,15 @@ Microsoft articles:
 
 Review the following limitations:
 
-- Netwrix Auditor does not track changes to non-replicated attributes, such as badPwdCount,
+- Netwrix Auditor doesn't track changes to non-replicated attributes, such as badPwdCount,
   Last-Logon, Last-Logoff, etc. The non-replicated attributes pertain to a particular domain
-  controller and are not replicated to other domain controllers.
+  controller and aren't replicated to other domain controllers.
 - Changes made through the Exchange Management Console in the Organization Configuration node
   (Federation Trust, Organization Relationships and Hybrid Configuration tabs) are displayed in an
   internal Active Directory format that can be difficult to interpret.
 - Netwrix Auditor tracks changes to membership in all groups inside the monitored domain (Domain
   local groups) and Universal and Global groups of domains in the same forest. Changes to Domain
-  local groups of a different domain in the same forest are not reported.
+  local groups of a different domain in the same forest aren't reported.
 
 State-in-time data collection is supported for Active Directory.
 
@@ -142,7 +142,7 @@ you should:
 
 - Configure the Exchange Administrator Audit Logging (AAL) settings, as described the
   [Exchange Administrator Audit Logging Settings](/docs/auditor/10.7/configuration/exchange/auditlog.md) topic.
-- Make sure that the account used for data collection has the following:
+- Ensure that the account used for data collection has the following:
 
     - Membership in the Organization Management or Records Management group
 

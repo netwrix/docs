@@ -116,7 +116,7 @@ Set-IdentityStore
 :::note
 You can use the **Set-IdentityStore** commandlet in a secure way by using the _Credential_
 parameter or by specifying the credentials through _Username_ and _Password_ parameters in plain
-text format which is not a secure way.
+text format which isn't a secure way.
 :::
 
 
@@ -253,7 +253,7 @@ This example creates a new security role by specifying the container and criteri
 
 The value for RoleCriteriaFilters parameter is specified as 3-length arrays. At first index, specify
 the filter name which can be either ‘name’ or ‘type’. Second index holds the operator which is one
-of the ‘is exactly’ and ‘is not’ operator. The third index of the array holds the client name or
+of the ‘is exactly’ and ‘isn’t’ operator. The third index of the array holds the client name or
 client type depending upon whether ‘name’ or ‘type’ is specified at the first index.
 
 ```
@@ -284,7 +284,7 @@ This example creates a new security role by specifying a role criterion as conta
 filters and permissions.
 
 By default, all the permissions except those specified in RolePermissions parameter are granted.
-This is due to the presence of DefaultAllowPermissions. In this example, only Manage my groups and
+This is due to the presence of DefaultAllowPermissions. In this example, only Manage groups and
 Create user permissions are denied (and the remaining ones are granted) to the created role.
 
 ```
@@ -324,7 +324,7 @@ Example 20:
 This example configures out of bounds settings for the AdStore9 identity store.
 
 Maximum 500 members are allowed in each group and when the threshold reaches, the members will be
-nested into child groups. The orphan groups will be deleted. Do not update the membership and alert
+nested into child groups. The orphan groups will be deleted. Don't update the membership and alert
 if the percentage in membership exceeds by more than 65% and either the current or new membership
 exceeds 200 members.
 
@@ -367,7 +367,7 @@ Example 24:
 
 This example configures password options.
 
-This example enforces the following password policy: Do not allow passwords starting with either
+This example enforces the following password policy: Don't allow passwords starting with either
 ‘password123R’ or containing ‘123R’ and allow only those passwords matching
 '^(?=.\*[a-z])(?=.\*[A-Z])(?=.\*\d)(?=.\*[^\da-zA-Z]).{8,15}$' regular expression pattern.
 

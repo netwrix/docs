@@ -10,7 +10,7 @@ Use the Operations page to specify the operations to perform as part of the acti
 
 ![Public Folder Action Module Wizard Operations page](/images/accessanalyzer/12.0/admin/action/publicfolder/operations.webp)
 
-The **Add operation** drop-down menu lists the operations that can be performed. Each operation
+The **Add operation** dropdown menu lists the operations you can perform. Each operation
 opens a corresponding window. Operations include:
 
 - Rename – See the [Rename Folder Window](#rename-folder-window) topic for additional information
@@ -22,9 +22,9 @@ opens a corresponding window. Operations include:
 - Limits – See the [Limits Window](#limits-window) topic for additional information
 - Delete – See the [Delete Folder Window](#delete-folder-window) topic for additional information
 
-The buttons to the right of the drop-down control the operations in the field:
+The buttons to the right of the dropdown control the operations in the field:
 
-- Edit – Allows you to alter operation settings
+- Edit – Alters operation settings
 - Add – Places selected operation one step above its current position
 - Down – Places selected operation one step below its current position
 - Delete – Removes a selected operation
@@ -66,7 +66,7 @@ Change permissions using the following options:
 - Mode – Select whether to change or remove permissions
 - Permissions – Determine Permission level and assign permissions to the user
 
-    - Permission level – Use the drop-down menu to select a permission level from the following:
+    - Permission level – Use the dropdown menu to select a permission level from the following:
 
         - Reviewer
         - Contributor
@@ -84,20 +84,20 @@ Change permissions using the following options:
         - Read items – User can read items
         - Create Subfolders – User can create subfolders
         - Folder owner – User can view and move the public folder, create subfolders, and set
-          permissions for the folder, but cannot read, edit, delete, or create items
+          permissions for the folder, but can't read, edit, delete, or create items
         - Folder contact – Set user as the contact for the specified public folder
-        - Folder visible – User can view the specified public folder but cannot read or edit the
+        - Folder visible – User can view the specified public folder but can't read or edit the
           items within
 
         :::note
-        Different permissions become automatically selected based on which permission
-        level is selected. To override this default, select the checkbox of the unwanted permission
-        to deselect it. If a desired checkbox is blocked by a black square, click the square to
-        unblock the checkbox. The checkbox can then be selected or unselected.
+        Selecting a permission level automatically selects the corresponding permissions. To
+        override this default, select the checkbox of the unwanted permission to deselect it. If a
+        desired checkbox is blocked by a black square, click the square to unblock the checkbox. You
+        can then select or unselect the checkbox.
         :::
 
 
-    - Edit items – Use the drop-down menu to determine user editing permissions from the following:
+    - Edit items – Use the dropdown menu to determine user editing permissions from the following:
 
         - No change
         - None
@@ -106,7 +106,7 @@ Change permissions using the following options:
         - Own only
         - All
 
-    - Delete items – Use the drop-down menu to determine user deletion permissions from the
+    - Delete items – Use the dropdown menu to determine user deletion permissions from the
       following:
 
         - No change
@@ -132,8 +132,8 @@ Select attributes using the following options:
 - Select a Field from the dropdown list and click **Add** to add the field to the custom attribute
 
     :::note
-    Multiple fields may be added to a custom attribute. Fields added to a custom attribute
-    can be modified or deleted manually.
+    You can add multiple fields to a custom attribute. You can also modify or delete added
+    fields manually.
     :::
 
 
@@ -145,7 +145,7 @@ Use the Replicas window to replicate servers. It is a wizard page for the Replic
 
 Replicate servers using the following options:
 
-- Select a server from the dropdown menu and click **Add**. The servers listed will be replicated.
+- Select a server from the dropdown menu and click **Add**. The action replicates the listed servers.
 - Select a server from the list and click **Delete** to remove it from the list of replicated
   servers
 - Select the **Remove last replica** option to delete the replica created when the action was last
@@ -182,5 +182,5 @@ Select deletion settings using the following options:
 
 - Optionally, select a checkbox to apply any exception
 
-    - Do not delete folders with subfolders
-    - Do not delete folders with content
+    - Don't delete folders with subfolders
+    - Don't delete folders with content

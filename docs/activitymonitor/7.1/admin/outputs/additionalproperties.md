@@ -24,15 +24,15 @@ The options are:
 Often, the Additional Properties Tab is used to indicate the purpose of the output, e.g. for Netwrix
 Enterprise Auditor. This can be useful if using multiple outputs with different configurations for
 different purposes. For example, a SharePoint site could be added as a host and configured for
-Netwrix Enterprise Auditor data collection. It can be added again with different monitoring options
-and be configured for SIEM notification.
+Netwrix Enterprise Auditor data collection. It can be added again with different monitoring options
+and be configured for SIEM notification.
 
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
 Properties window closes.
 
 **Integration with Netwrix Threat Prevention for NAS Monitoring**
 
-If a Threat Prevention Agent has been deployed to the same Windows proxy server where and activity
-agent is deployed to monitor NAS devices, then the **Comment** column in the monitored hosts table
-identifies the host as being “Managed by Threat Prevention”, and that ‘monitored host’ configuration
-is not editable through the Activity Monitor Console. Simply add the host again for other outputs.
+If you deploy a Threat Prevention Agent to the same Windows proxy server where an activity
+agent monitors NAS devices, the **Comment** column in the monitored hosts table
+identifies the host as being "Managed by Threat Prevention", and you can't edit that 'monitored host' configuration
+through the Activity Monitor Console. Simply add the host again for other outputs.

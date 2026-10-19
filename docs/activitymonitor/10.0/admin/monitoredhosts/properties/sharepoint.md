@@ -6,7 +6,7 @@ sidebar_position: 140
 
 # SharePoint Tab
 
-The SharePoint tab on a host’s Properties window allows users to modify settings that are populated
+The SharePoint tab on a host’s Properties window lets you modify settings populated
 with the information entered when the SharePoint host is added.
 
 ![SharePoint Tab](/images/activitymonitor/9.0/admin/monitoredhosts/properties/sharepointtab.webp)
@@ -16,7 +16,7 @@ The configurable options are:
 - Enable auditing on selected site collections - Check the box to enable auditing on selected site
   collections. Enabling this option will ensure that auditing is enabled for all monitored site
   collections with periodic checks.
-- Choose to audit all sites or scope the monitoring to specific site(s):
+- Choose to audit all sites or scope the monitoring to specific sites:
 
     - Audit all sites – Leave textbox for URLs blank
     - Scope to specific sites – List URLs for sites to be monitored in the textbox. List should be

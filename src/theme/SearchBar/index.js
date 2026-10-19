@@ -16,8 +16,15 @@ import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import translations from '@theme/SearchTranslations';
 import {PRODUCTS} from '../../config/products';
+import {getVersionsForProducts, dedupeToLatestVersion, versionLabel} from '../searchUtils';
 
 let DocSearchModal = null;
+
+// Versions only mean something within one product, so the Versions control — and
+// the version filter behind it — is gated on exactly one product being selected.
+function isSingleProduct(products) {
+    return (products || []).filter(p => p !== '__all__' && p !== '__none__').length === 1;
+}
 
 function importDocSearchModalIfNeeded() {
     if (DocSearchModal) {
@@ -92,7 +99,6 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
             searchClient.search = function(searchMethodParams, requestOptions) {
                 const products = selectedProductsRef.current || [];
                 const versions = selectedVersionsRef.current || [];
-                const typoTolerance = false;
 
                 // Build product filter (OR logic - any of selected products)
                 const realProducts = products.filter(p => p !== '__all__' && p !== '__none__');
@@ -144,7 +150,6 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
                             return {
                                 ...req,
                                 facetFilters: newFilters.length > 0 ? newFilters : undefined,
-                                typoTolerance,
                             };
                         })
                     };
@@ -161,16 +166,57 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
     );
 }
 
-function useTransformItems(props) {
+// DocSearch (@docsearch/react 4.6.3) buckets results twice before rendering, and both passes must
+// be defeated to show Algolia's relevance order:
+//   outer: groupBy(_highlightResult.hierarchy.lvl0) -> one section per group, capped at
+//          maxResultsPerGroup. The Algolia crawler sets lvl0 to "Product > Version", so results get
+//          bucketed per product and a product's hits past the cap are dropped.
+//   inner: groupBy(hierarchy.lvl1) -> reorders hits that share a page title ("Install" exists in
+//          every product); the key is only unique because the outer pass scoped it to one product.
+// So each hit gets one shared lvl0 (single section) and a unique raw lvl1 = url (no inner
+// clustering). But DocSearch renders the title from `_snippetResult.hierarchy.lvl1.value || raw
+// hierarchy.lvl1` — so overwriting raw lvl1 with the url makes title-match hits (which lack a
+// _snippetResult) display the url. We therefore copy the highlighted title from _highlightResult
+// into _snippetResult; that value is Algolia-escaped, so it is safe as innerHTML. Raw
+// hierarchy.lvl0 is kept and shown per-hit as the product label.
+//
+// This shims around the crawler putting the product in lvl0, and depends on DocSearch grouping on
+// lvl0/lvl1 and resolving the title via _snippetResult. If a future @docsearch/react bump changes
+// either, the modal silently reverts to product order — re-verify the Ctrl+K modal renders one flat
+// list after any Docusaurus upgrade. The real fix is to stop putting the product in lvl0 in the
+// crawler config, after which this whole shim deletes.
+const ONE_GROUP = {value: '', matchLevel: 'none', matchedWords: []};
+
+function ungroup(items) {
+    return items.map((item) => {
+        const title = item._highlightResult?.hierarchy?.lvl1?.value ?? item.hierarchy?.lvl1 ?? '';
+        return {
+            ...item,
+            hierarchy: {...item.hierarchy, lvl1: item.url},
+            _snippetResult: {
+                ...item._snippetResult,
+                hierarchy: {...item._snippetResult?.hierarchy, lvl1: {value: title, matchLevel: 'full'}},
+            },
+            _highlightResult: {
+                ...item._highlightResult,
+                hierarchy: {...item._highlightResult?.hierarchy, lvl0: ONE_GROUP},
+            },
+        };
+    });
+}
+
+function useTransformItems(selectedVersionsRef) {
     const processSearchResultUrl = useSearchResultUrlProcessor();
-    const [transformItems] = useState(() => {
-        return (items) =>
-            props.transformItems
-                ? props.transformItems(items)
-                : items.map((item) => ({
-                    ...item,
-                    url: processSearchResultUrl(item.url),
-                }));
+    const [transformItems] = useState(() => (items) => {
+        const mapped = items.map((item) => ({...item, url: processSearchResultUrl(item.url)}));
+        // Modal version state never holds the '__all__' sentinel (MultiSelectDropdown
+        // maps the All toggle to []) and can only be non-empty while exactly one
+        // product is selected (filters reset on open; onChangeProducts clears versions
+        // whenever the selection stops being a single product — the same condition that
+        // enables the Versions control), so non-empty means a real version filter the
+        // user can see and clear is active — de-dupe off (R3).
+        const versionFilterActive = (selectedVersionsRef.current || []).length > 0;
+        return ungroup(versionFilterActive ? mapped : dedupeToLatestVersion(mapped));
     });
     return transformItems;
 }
@@ -192,7 +238,16 @@ function useResultsFooterComponent({closeModal, selectedProductsRef, selectedVer
 }
 
 function Hit({hit, children}) {
-    return <Link to={hit.url}>{children}</Link>;
+    return (
+        <Link to={hit.url}>
+            {children}
+            {/* lvl0 ("Product > Version") was the group heading until ungroup() collapsed it.
+                Shown per-hit so four versions of one page aren't four indistinguishable rows. */}
+            {hit.hierarchy?.lvl0 && (
+                <span className="DocSearch-Hit-product">{hit.hierarchy.lvl0}</span>
+            )}
+        </Link>
+    );
 }
 
 function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef}) {
@@ -240,6 +295,18 @@ function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef
     );
 }
 
+// DocSearch 4.6.3 replaces its default attributesToRetrieve wholesale when
+// searchParameters provides one, so the defaults must be re-listed here.
+// product_name/product_version are what dedupeToLatestVersion keys on.
+// Re-verify this list against DocSearch's defaults on any @docsearch/react
+// bump (same caveat as ungroup()).
+const ATTRIBUTES_TO_RETRIEVE = [
+    'hierarchy.lvl0', 'hierarchy.lvl1', 'hierarchy.lvl2', 'hierarchy.lvl3',
+    'hierarchy.lvl4', 'hierarchy.lvl5', 'hierarchy.lvl6',
+    'content', 'type', 'url',
+    'product_name', 'product_version',
+];
+
 function useSearchParameters({contextualSearch, productFacetFilters = [], ...props}) {
     function mergeFacetFilters(f1, f2) {
         const normalize = (f) => (typeof f === 'string' ? [f] : f);
@@ -276,6 +343,7 @@ function useSearchParameters({contextualSearch, productFacetFilters = [], ...pro
     return useMemo(() => ({
         ...props.searchParameters,
         facetFilters,
+        attributesToRetrieve: ATTRIBUTES_TO_RETRIEVE,
     }), [
         contextualSearch,
         JSON.stringify(facetFilters),
@@ -298,23 +366,8 @@ const PRODUCT_OPTIONS = [
     return a.label.localeCompare(b.label);
 });
 
-// Helper to get versions for selected products
-function getVersionsForProducts(selectedProducts) {
-    if (!selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__')) {
-        return [];
-    }
-    const versionsSet = new Set();
-    selectedProducts.forEach(productName => {
-        const product = PRODUCTS.find(p => p.name === productName);
-        if (product && product.versions) {
-            product.versions.forEach(v => versionsSet.add(v.version));
-        }
-    });
-    return Array.from(versionsSet).sort();
-}
-
 // Multi-select dropdown component with checkboxes
-function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder}) {
+function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder, disabled = false}) {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -344,7 +397,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
     };
 
     const realSelected = selectedValues.filter(v => v !== '__all__' && v !== '__none__');
-    const displayText = selectedValues.length === 0 || selectedValues.includes('__all__')
+    const displayText = disabled || selectedValues.length === 0 || selectedValues.includes('__all__')
         ? placeholder
         : `${realSelected.length} selected`;
 
@@ -352,6 +405,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
         <div className="DocSearch-MultiSelect" ref={dropdownRef} style={{position: 'relative'}}>
             <button
                 type="button"
+                disabled={disabled}
                 onClick={() => setIsOpen(!isOpen)}
                 className="DocSearch-MultiSelect-Button"
                 style={{
@@ -361,7 +415,8 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
                     borderRadius: 4,
                     background: 'var(--docsearch-modal-background)',
                     color: 'var(--docsearch-text-color)',
-                    cursor: 'pointer',
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                    opacity: disabled ? 0.55 : 1,
                     display: 'flex',
                     alignItems: 'center',
                     gap: 4,
@@ -371,7 +426,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
                 <span style={{flex: 1, textAlign: 'left', fontSize: '14px'}}>{displayText}</span>
                 <span style={{fontSize: '10px'}}>▼</span>
             </button>
-            {isOpen && (
+            {isOpen && !disabled && (
                 <div
                     className="DocSearch-MultiSelect-Dropdown"
                     style={{
@@ -439,7 +494,7 @@ function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProduct
     // Keep searchParameters stable - don't include product filters here
     // Product filters are injected at request time via transformSearchClient
     const searchParameters = useSearchParameters({...props, productFacetFilters: []});
-    const transformItems = useTransformItems(props);
+    const transformItems = useTransformItems(selectedVersionsRef);
     const transformSearchClient = useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale);
     const searchContainer = useRef(null);
     const searchButtonRef = useRef(null);
@@ -532,6 +587,9 @@ function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProduct
                         {...props}
                         translations={props.translations?.modal ?? translations.modal}
                         searchParameters={searchParameters}
+                        // One group now (see ungroup), so this caps the whole list. DocSearch
+                        // defaults it to 5, which would drop every hit past the fifth.
+                        maxResultsPerGroup={searchParameters.hitsPerPage ?? 20}
                     />,
                     searchContainer.current,
                 )}
@@ -616,8 +674,13 @@ export default function SearchBar() {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
         }
-        // Clear versions that don't exist for the new product selection
-        const validVersions = new Set(getVersionsForProducts(newProducts));
+        // Drop versions the new selection can't show. The Versions control is only
+        // enabled for a single product, so anything other than one product clears versions
+        // outright — otherwise a filter the user can no longer reach would keep suppressing
+        // results (and de-duplication).
+        const validVersions = new Set(
+            isSingleProduct(newProducts) ? getVersionsForProducts(newProducts) : [],
+        );
         const cleaned = selectedVersionsRef.current.filter(v => validVersions.has(v));
         if (cleaned.length !== selectedVersionsRef.current.length) {
             selectedVersionsRef.current = cleaned;
@@ -642,9 +705,11 @@ export default function SearchBar() {
         const versions = getVersionsForProducts(selectedProducts);
         return [
             {label: 'All versions', value: '__all__'},
-            ...versions.map(v => ({label: v, value: v})),
+            ...versions.map(v => ({label: versionLabel(v), value: v})),
         ];
     }, [selectedProducts]);
+
+    const isSingleProductSelected = useMemo(() => isSingleProduct(selectedProducts), [selectedProducts]);
 
     // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
@@ -726,21 +791,27 @@ export default function SearchBar() {
             {modalHeaderEl &&
                 createPortal(
                     <>
-                        {/* Custom controls: product + version filters */}
+                        {/* Custom controls: version + product filters */}
                         <div className="search-custom-controls">
+                            {/* Version filtering only makes sense when exactly one product is
+                                selected. Disabled rather than unmounted: this is a flex row, so
+                                adding and removing a 150px control mid-selection slides its
+                                siblings — including the open Products panel — sideways under the
+                                cursor. Keeping the slot also states why versions aren't available. */}
+                            <MultiSelectDropdown
+                                label="Versions"
+                                options={availableVersions}
+                                selectedValues={selectedVersions}
+                                onChange={onChangeVersions}
+                                placeholder={isSingleProductSelected ? 'All versions' : 'Select one product'}
+                                disabled={!isSingleProductSelected}
+                            />
                             <MultiSelectDropdown
                                 label="Products"
                                 options={PRODUCT_OPTIONS}
                                 selectedValues={selectedProducts}
                                 onChange={onChangeProducts}
                                 placeholder="All products"
-                            />
-                            <MultiSelectDropdown
-                                label="Versions"
-                                options={availableVersions}
-                                selectedValues={selectedVersions}
-                                onChange={onChangeVersions}
-                                placeholder="All versions"
                             />
                         </div>
                         {/* Our own close button — replaces the DocSearch-Close button

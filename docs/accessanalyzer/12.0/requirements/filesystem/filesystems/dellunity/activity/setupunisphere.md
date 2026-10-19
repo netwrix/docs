@@ -6,12 +6,12 @@ sidebar_position: 20
 
 # Unity Initial Setup with Unisphere
 
-Follow the steps to configure the initial setup for a Unity device with Unisphere.
+To configure the initial setup for a Unity device with Unisphere, complete the following steps.
 
 **Step 1 –** Edit the NAS Server > Protection and Events > Events Publishing > Select Pool settings:
 
-- Add CEPA server – This is the server where CEE is installed. It is recommended that this is also
-  the server were the Activity Monitor activity agent is deployed.
+- Add CEPA server – This is the server where CEE is installed. Use the same server for the Activity
+  Monitor activity agent when possible.
 - Enable the following events for Post Events.
 
 Required Unity events needed for CIFS Activity:
@@ -29,5 +29,5 @@ Required Unity events needed for NFS Activity:
     - NFS Events Publishing – Enabled (required for NFS protocol monitoring)
     - SMB Events publishing – Enabled (required for SMB / CIFS protocol monitoring)
 
-Once Unity setup is complete, it is time to configure and enable monitoring with the Activity
+After you complete the Unity setup, configure and enable monitoring with the Activity
 Monitor.

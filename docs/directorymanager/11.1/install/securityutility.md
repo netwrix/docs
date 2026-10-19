@@ -15,11 +15,8 @@ Use the NDM11-ADV-2025-014 utility to:
 
 **Downloads**
 
-- Click [here](https://releases.netwrix.com/products/groupid/11.1/NDM11-ADV-2025-014-Utility.zip) to
-  download NDM11-ADV-2025-014-Utility.
-- Click
-  [here](https://releases.netwrix.com/products/groupid/11.1/GroupIDPasswordTransferUtility.zip) to
-  download GroupIDPasswordTransferUtility.
+- [Download NDM11-ADV-2025-014-Utility](https://releases.netwrix.com/products/groupid/11.1/NDM11-ADV-2025-014-Utility.zip)
+- [Download GroupIDPasswordTransferUtility](https://releases.netwrix.com/products/groupid/11.1/GroupIDPasswordTransferUtility.zip)
 
 ## Restrict IP Addresses
 

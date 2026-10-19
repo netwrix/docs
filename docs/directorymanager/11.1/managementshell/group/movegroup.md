@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Move-Group
 
-The Move-Group commandlet enables you to move a group to a different container in the same domain or
-in a different domain within the same forest. Movement of groups across forests is not allowed.
+The Move-Group commandlet lets you move a group to a different container in the same domain or
+in a different domain within the same forest. Movement of groups across forests isn't allowed.
 
 You can view events related to this commandlet in Directory Manager portal, against the History node
 in the left panel.

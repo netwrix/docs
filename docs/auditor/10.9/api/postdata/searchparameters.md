@@ -48,8 +48,8 @@ Generally, the Search parameters file looks similar to the following:
 }
 ```
 
-Ensure to pass information about transferred data, including `Content-Type:application/xml` or
-`application/json `and encoding. The syntax greatly depends on the tool you use.
+Pass information about transferred data, including `Content-Type:application/xml` or
+`application/json` and encoding. The syntax greatly depends on the tool you use.
 
 ## Schema
 

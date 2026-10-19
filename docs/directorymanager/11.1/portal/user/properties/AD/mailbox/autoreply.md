@@ -24,7 +24,7 @@ Select this option button to send out-of-office replies to senders.
 
 **Send replies only during this time period**
 
-Select this check box if you want to specify a time frame during which the automatic replies should
+Select this checkbox if you want to specify a time frame during which the automatic replies should
 be sent.
 
 **Start Time, End Time**
@@ -33,12 +33,12 @@ Specify the date and time between which the replies will be sent.
 
 Send reply once to each sender inside my organization with the following message
 
-In the text box, type the content that you want to be sent as the reply to the senders from your
+In the text box, enter the content that you want to be sent as the reply to the senders from your
 organization.
 
 Send automatic reply messages to senders outside my organization
 
-Select this check box to send automatic replies to the senders from other organizations as well.
+Select this checkbox to send automatic replies to the senders from other organizations as well.
 
 Send replies only to senders in my contact list
 
@@ -50,5 +50,5 @@ Select this option button to send replies to all external senders.
 
 Send a reply once to each sender outside my organization with the following message
 
-In the text box, type the content that should be sent as the reply to the senders who do not belong
+In the text box, enter the content that should be sent as the reply to the senders who don't belong
 to your organization.

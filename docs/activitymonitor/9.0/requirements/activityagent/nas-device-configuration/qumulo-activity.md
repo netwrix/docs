@@ -7,8 +7,8 @@ sidebar_position: 120
 # Qumulo Activity Auditing Configuration
 
 The Netwrix Activity Monitor can be configured to monitor activity on Qumulo devices. To prepare
-Qumulo to be monitored, an account needs to be provisioned and the audit event format may need to be
-modified.
+Qumulo for monitoring, you need to provision an account and may need to modify the audit event
+format.
 
 ## Provision Account
 
@@ -32,26 +32,28 @@ advanced filtering of Microsoft Office activity also requires the JSON format.
 The JSON format for audit events was introduced in Qumulo Core 6.0.1. The new format can be enabled
 via an SSH session to the Qumulo cluster.
 
-Follow the steps to verify that audit event format and change the format, if needed.
-
 **Step 1 –** Connect to the Qumulo cluster with SSH.
 
 **Step 2 –** Execute the following command to log in:
 
 ```bash
 qq --host <ip-address-of-qumulo> login -u <user-name>
+```
 
 The command will ask for the password.
 
-__Step 3 –__ Execute the following command to check current format:
+**Step 3 –** Execute the following command to check current format:
 
-**qq audit_get_syslog_config**
-
-The format will be shown in the __format__ field. The old format is __csv__; the new format is __json__.
-
-__Step 4 –__ Execute the following command to change the format, if needed:
-
-**qq audit_set_syslog_config --json**
-
-The change willshould be reflected in the __format__ field.
+```bash
+qq audit_get_syslog_config
 ```
+
+The format will be shown in the `format` field. The old format is `csv`; the new format is `json`.
+
+**Step 4 –** Execute the following command to change the format, if needed:
+
+```bash
+qq audit_set_syslog_config --json
+```
+
+The change will be reflected in the `format` field.

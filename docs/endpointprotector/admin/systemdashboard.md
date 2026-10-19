@@ -6,10 +6,9 @@ sidebar_position: 20
 
 # Server Functionality
 
-Once the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User
-Interface from the assigned IP address.
+After the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User Interface from the assigned IP address.
 
-The default Endpoint Protector Appliance IP address is https://192.168.0.201
+Use your assigned Appliance IP address, for example, `https://192.168.0.201`.
 
 :::note
 Always use the IP address with HTTPS (Hypertext Transfer Protocol Secure).
@@ -20,10 +19,9 @@ Use the default login credentials for the root account. To obtain the password, 
 ticket through the
 [Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html).
 
-For detailed information on settings change or creating additional administrators, refer to the
-[System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic.
+To configure settings or create administrators, see [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 
-![Page for default login credentials for the root account](login.webp)
+![Page for default login credentials for the root account](serverlogin.webp)
 
 ## Conﬁguration Wizard
 
@@ -32,16 +30,15 @@ setting up the Server Time Zone, importing Licenses, Server Update or uploading 
 Global device rights, E-mail Server settings, Main Administrator details, etc. You can change these
 settings at any time.
 
-The Conﬁguration Wizard is available only if the basic settings for the Endpoint Protector have
-never been conﬁgured.
+The Conﬁguration Wizard is available only if you have never conﬁgured the basic settings for
+Endpoint Protector.
 
-As an additional security measure, a session timeout is implemented for 300 seconds (5 minutes) of
-inactivity. If you are not active for this amount of time, you are notiﬁed the session will expire
-and logged out unless you select to continue the session.
+As an additional security measure, the session times out after 300 seconds (5 minutes) of
+inactivity. If you aren't active for this amount of time, a notification appears indicating the session will expire,
+and Endpoint Protector logs you out unless you select to continue the session.
 
 :::note
-You can customize the session timeout and timeout counter from the
-[System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic.
+You can customize the session timeout and timeout counter in [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 :::
 
 
@@ -50,21 +47,21 @@ You can customize the session timeout and timeout counter from the
 ## General Dashboard
 
 In this section, you can view general information as graphics and charts related to the most
-important activities logged by Endpoint Protector.
+important activities Endpoint Protector logs.
 
 You will view more speciﬁc dashboards on the Device Control, Content Aware Protection and eDiscovery
 sections.
 
-![View general information as graphics and charts related to the most important activities](general.webp)
+![View general information as graphics and charts related to the most important activities](dashboard.webp)
 
 ## System Status
 
-In this section you can view general information of the system’s functionality, alerts, and backup
+In this section, you can view general information about the system’s functionality, alerts, and backup
 status.
 
 ![View general information of the system’s functionality, alerts, and backup status](systemstatus.webp)
 
-From the System Functionality section, you can enable Endpoint Protector, as well as just speciﬁc
+From the System Functionality section, you can enable Endpoint Protector or specific
 modules (Device Control, Content Aware Protection, or eDiscovery).
 
 ![Enable EPP , as well as just speciﬁc modules](systemfunctionality.webp)
@@ -72,8 +69,8 @@ modules (Device Control, Content Aware Protection, or eDiscovery).
 From the System Status subsection, you can enable the HDD Disk Space and Log Rotation.
 
 :::note
-If this setting is enabled, when the Server’s disk space reaches a certain percentage
-(starting from 50% up to 90%), old logs will be automatically overwritten by the new ones.
+If you enable this setting, when the Server’s disk space reaches a certain percentage
+(starting from 50% up to 90%), new logs automatically overwrite the old ones.
 :::
 
 
@@ -91,9 +88,10 @@ From the System Backup subsection, you can enable the System Backup.
 
 ## Effective Rights
 
-In this section you can view currently applied Device Control or Content Aware Protection policies.
+In this section you can view applied Device Control or Content Aware Protection policies.
 Based on the options you select from the Effective Rights Criteria form, you can view information
 based on rights, users, computers, device types, speciﬁc devices, report type (PDF or XLS),
 including Outside Hours and Outside Network Policies, and more.
 
-Once the report is generated, from the Actions column, you can download or delete it.
+After Endpoint Protector generates the report, you can download or delete it from the Actions
+column.

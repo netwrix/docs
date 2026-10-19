@@ -16,7 +16,7 @@ Navigate to **Box** > **1.Activity** > **Usage Statistics** > **Box_Folders_Stal
 node and select **Analysis** to view analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

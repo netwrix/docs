@@ -33,7 +33,7 @@ Programs → Exchange Management Shell**.
 
 **Step 2 –** Execute the following command depending on your Exchange version:
 
-- Exchange 2019, 2016 and 2013
+- Exchange 2019, 2016, and 2013
 
     `Set-AdminAuditLogConfig -AdminAuditLogEnabled $true -AdminAuditLogAgeLimit 30 -AdminAuditLogCmdlets * -LogLevel Verbose`
 
@@ -52,4 +52,4 @@ Exchange logging. For that:
 
     `<Path_To_SetAALExcludedCmdlets_File>.\SetAALExcludedCmdlets.ps1`
 
-Make sure your policies allow script execution.
+Ensure your policies allow script execution.

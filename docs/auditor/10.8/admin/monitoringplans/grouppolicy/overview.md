@@ -6,7 +6,7 @@ sidebar_position: 100
 
 # Group Policy
 
-**NOTE:** Prior to configuring your monitoring plan, please read and complete the instructions in
+**NOTE:** Before configuring your monitoring plan, read and complete the instructions in
 the following topics:
 
 - [Protocols and Ports Required](/docs/auditor/10.8/requirements/ports.md) – To ensure successful data
@@ -26,7 +26,7 @@ Complete the following fields:
 | Prerequisites                                      | Netwrix Auditor will automatically look up additional system components and prompt you to install those that are missing. In case all required components have been already installed, this section will be omitted. See the [Other Components](/docs/auditor/10.8/requirements/software.md#other-components) topic for additional information.                                                                                                                                                                                                                                                                                                                         |
 | Detect additional details                          | Specify additional information to include in reports and activity summaries. Select Group membership if you want to include Group membership of the account under which the change was made.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | Specify data collection method                     | You can enable **network traffic compression.** If enabled, a Compression Service will be automatically launched on the audited computer, collecting and prefiltering data. This significantly improves data transfer and minimizes the impact on the target computer performance.                                                                                                                                                                                                                                                                                                                                                                            |
-| Configure audit settings                           | You can adjust audit settings automatically. Your current audit settings will be checked on each data collection and adjusted if necessary. This method is recommended for evaluation purposes in test environments. If any conflicts are detected with your current audit settings, automatic audit configuration will not be performed. Do not select the checkbox if you want to configure audit settings manually. See the [Group Policy](/docs/auditor/10.8/configuration/grouppolicy/overview.md) configuration topic for additional information about audit settings required to collect comprehensive audit data and the instructions on how to configure them. |
+| Configure audit settings                           | You can adjust audit settings automatically. Your current audit settings will be checked on each data collection and adjusted if necessary. This method is recommended for evaluation purposes in test environments. If any conflicts are detected with your current audit settings, automatic audit configuration will not be performed. Don't select the checkbox if you want to configure audit settings manually. See the [Group Policy](/docs/auditor/10.8/configuration/grouppolicy/overview.md) configuration topic for additional information about audit settings required to collect comprehensive audit data and the instructions on how to configure them. |
 
 Review your data source settings and click **Add** to go back to your plan. The newly created data
 source will appear in the **Data source** list. As a next step, click **Add item** to specify an
@@ -52,9 +52,9 @@ integration and supported data sources. In this case, the credentials will not b
 Auditor. Instead, they will be managed by Netwrix Privilege Secure and provided on demand, ensuring
 password rotation or using temporary accounts for data collection.
 
-Follow the steps to use Netwrix Privilege Secure as an account for data collection.
+To use Netwrix Privilege Secure as an account for data collection.
 
-**Step 1 –** Select the desired item.
+**Step 1 –** Select the item you want.
 
 **Step 2 –** In the item configuration menu, select Netwrix Privilege Secure as an option for data
 collection.
@@ -64,7 +64,7 @@ collection.
 **Step 3 –** Select the type of the Access Policy you want to use in Netwrix Privilege Secure.
 Credential-based is the default option. Refer to the
 [Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
-documentation to learn more about Access Policies.
+documentation to Access Policies documentation.
 
 In this case, you need to provide the username of the account managed by Netwrix Privilege Secure,
 and to which Netwrix Auditor has the access through a Credential-based access policy.
@@ -75,7 +75,7 @@ sources.
 ![npsdatacollectingaccountresourced](/images/auditor/10.8/configuration/grouppolicy/npsdatacollectingaccountresourced.webp)
 
 The second option is Resource-based. To use this option, you need to provide the Activity and
-Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Make sure
+Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Ensure
 that you specified the same names as in Netwrix Privilege Secure.
 
 The Resource name in this case is where the activity will be performed. For example, if you grant

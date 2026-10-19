@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Remove Agents
 
-On the Agents tab of the Activity Monitor Console, the Remove button allows users to remove the
+On the Agents tab of the Activity Monitor Console, click the Remove button to remove the
 selected activity agent from the Agents list and/or uninstall the activity agent from the hosting
 server.
 

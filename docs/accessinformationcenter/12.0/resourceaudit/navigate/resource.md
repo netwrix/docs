@@ -36,7 +36,7 @@ resource by expanding the levels.
 
 ![Resources pane](/images/accessinformationcenter/12.0/resourceaudit/navigate/resourcespane.webp)
 
-Select a resource in the Resources pane and a report in the Reports pane to to view the report data
+Select a resource in the Resources pane and a report in the Reports pane to view the report data
 in the Results pane. Hover over any icon in the Access Information Center interface to view its
 description.
 

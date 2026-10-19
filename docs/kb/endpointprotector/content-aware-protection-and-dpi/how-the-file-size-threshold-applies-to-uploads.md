@@ -12,10 +12,11 @@ keywords:
   - upload block
   - web-facing applications
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: How the File Size Threshold Applies to Uploads
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "How the File Size Threshold Applies to Uploads"
 knowledge_article_id: kA0Qk0000002Ay2KAE
 ---

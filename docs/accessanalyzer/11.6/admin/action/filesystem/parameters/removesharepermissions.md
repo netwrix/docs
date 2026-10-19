@@ -13,7 +13,7 @@ removes.
 
 Use the options to enter the Permissions:
 
-- Insert field – Use the drop-down list to select a field (column) from the source table, then click
+- Insert field – Use the dropdown list to select a field (column) from the source table, then click
   the blue arrow
 - Group or user names:
 

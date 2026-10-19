@@ -10,10 +10,11 @@ keywords:
 sidebar_label: Find CoSoSys Team ID and Bundle ID
 tags:
   - deployment-and-installation
+  - kb
 title: "How to Find the CoSoSys Team ID and Bundle ID for Client Deployment on macOS"
 knowledge_article_id: kA0Qk0000002B7kKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Find the CoSoSys Team ID and Bundle ID for Client Deployment on macOS

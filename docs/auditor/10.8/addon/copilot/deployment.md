@@ -6,8 +6,6 @@ sidebar_position: 10
 
 # Deployment Procedure
 
-Follow the steps to install Microsoft Copilot add-on.
-
 **Step 1 –** Accept EULA.
 
 **Step 2 –** Select the installation folder and click **Next**.
@@ -16,8 +14,6 @@ Follow the steps to install Microsoft Copilot add-on.
 
 ## Configure Copilot for Monitoring
 
-Follow the steps to configure Copilot for monitoring.
-
 **Step 1 –** Register an Azure App and grant it the following permissions:
 
 - Microsoft.Graph — Domain.Read.All
@@ -25,12 +21,10 @@ Follow the steps to configure Copilot for monitoring.
 
 ## Configure the add-on
 
-Follow the steps to configure the add-on.
-
 **Step 1 –** Specify Active Directory credentials.
 
 - Username – Provide the name of the account under which the service runs. Unless specified, the
-  service runs under the account currently logged on.
+ service runs under the account logged on.
 - Password – Provide the password for the selected account.
 
 ![adcredentials](/images/auditor/10.7/addon/copilot/adcredentials.webp)

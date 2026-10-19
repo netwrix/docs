@@ -6,10 +6,10 @@ sidebar_position: 260
 
 # LDAP Data Collector
 
-The LDAP Data Collector uses LDAP to query Active Directory returning the specified objects and
-attributes. For example, a query can be configured to return all user objects at the selected level.
-Another query can be configured to return a master list of all user objects found within the target
-domain. Wildcards and LDAP filters can be applied to the query configurations.
+The LDAP Data Collector uses LDAP to query Active Directory and return the specified objects and
+attributes. For example, you can configure a query to return all user objects at the selected level.
+You can configure another query to return a master list of all user objects found within the target
+domain. You can apply wildcards and LDAP filters to the query configurations.
 
 The LDAP Data Collector is a core component of Access Analyzer, but it has been preconfigured within
 the Active Directory Solution. While the data collector is available with all Access Analyzer
@@ -38,7 +38,7 @@ following configuration options:
 
 - Connect to the server – Use the default domain controller entered in the box, or enter an
   alternate server
-- Naming context – Select a directory partition from the drop-down list: **Default Context**,
+- Naming context – Select a directory partition from the dropdown list: **Default Context**,
   **Configuration Context**, or **Schema Context**
 - Connect – Connects to the domain specified. The root folder of the domain is displayed in the left
   pane of the window.
@@ -77,7 +77,7 @@ The Options window contains configure connection options and multi-value results
 - Server Port
 
     - If the Connect Securely with TLS/SSL option is selected, use Server Port `686`
-    - If the Connect Securely with TLS/SSL option is not selected, use Server Port `389`
+    - If the Connect Securely with TLS/SSL option isn't selected, use Server Port `389`
 
 - Authentication Type
 
@@ -119,7 +119,7 @@ The Custom Filter window provides options for creating a complex filter.
 
 ![Custom Filter window](/images/accessanalyzer/12.0/admin/datacollector/customfilter.webp)
 
-Select a **Field** and **Condition** from the drop-down lists. Enter a **Value** for the condition.
+Select a **Field** and **Condition** from the dropdown lists. Enter a **Value** for the condition.
 Click **Add** to add the filter to the Filter Lines table.
 
 - Filter Lines will be combined with a logical – Select the **AND** or **OR** option. **AND** is

@@ -6,12 +6,12 @@ sidebar_position: 30
 
 # Limits tab
 
-This tab applies to mailboxes only. It allows you to set the storage quota for the object's mailbox,
+This tab applies to mailboxes only. Use it to set the storage quota for the object's mailbox,
 such as an Exchange mailbox.
 
 **Use default storage quota**
 
-Select this check box to use the default quota for the mailbox store instead of defining it
+Select this checkbox to use the default quota for the mailbox store instead of defining it
 individually.
 
 **Issue warning (K)**

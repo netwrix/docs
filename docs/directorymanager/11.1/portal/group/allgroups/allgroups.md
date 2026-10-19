@@ -45,9 +45,9 @@ especially when there are more than 100 groups.
 
     Select **Other** to remove other users from the group.
 
-- To Join/Leave the group, you can also click on **Want to write reason to group owner?** and state
+- To Join/Leave the group, you can also click **Want to write reason to group owner?** and state
   the reason for joining or leaving the group for the group owner.
-- Update the security type of a group group using **Set Security Type** option. You can select one
+- Update the security type of a group using **Set Security Type** option. You can select one
   of the following security types:
 
     - Public
@@ -65,7 +65,7 @@ especially when there are more than 100 groups.
     - Expire Every Year
     - Other
 
-- Set owner for a group using **Set Owner** option. The drop down list displays two options:
+- Set owner for a group using **Set Owner** option. The dropdown list displays two options:
 
     - **Me**: You can set yourself as the Owner.
     - **Other**: You can select some other user as the Owner.
@@ -106,7 +106,7 @@ a domain to search active groups from.
 ## Transfer Ownership
 
 You can find [Transfer Ownership](/docs/directorymanager/11.1/portal/group/transferownership.md) option on the top right corner. Transfer
-Ownership enables you to:
+Ownership lets you:
 
 - Assign owners to orphan groups.
 - Transfer group ownership (including Exchange 2013/2016/2019 additional ownership) from one

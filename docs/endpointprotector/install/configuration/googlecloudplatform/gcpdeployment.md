@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Launching on Google Cloud Platform
 
-Once the Endpoint Protector Image becomes accessible in the Google Cloud Platform images list,
-proceed to create a new Virtual Machine Instance:
+After the Endpoint Protector Image appears in the Google Cloud Platform images list, create a new
+Virtual Machine Instance:
 
 **Step 1 –** In the Google Cloud Platform Console, go to the VM Instances page and click Create
 instance.
@@ -31,11 +31,14 @@ click Create.
 
 ## Requesting a Static IP
 
-You will need to request a static IP so the Endpoint Protector Clients can communicate with the same
+Request a static IP so the Endpoint Protector Clients can communicate with the same
 IP Address in case of an instance restart.
 
-Without a Static IP (Elastic IP) the instance will assign a new IP address every time it is
-restarted and the Endpoint Protector Clients have to be reinstalled.
+Without a Static IP (Elastic IP), the instance will assign a new IP address every time it restarts, and you must reinstall the Endpoint Protector Clients.
+
+:::tip
+A static IP keeps the address stable when the instance restarts, but not when you migrate to a new instance. Create a DNS record for a fully qualified domain name (FQDN) that points to the static IP, and configure clients and integrations with the FQDN. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
 
 To request a Static IP, go to IP addresses and select the External IP addresses tab.
 

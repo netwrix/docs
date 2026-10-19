@@ -19,7 +19,7 @@ Access Auditing and Sensitive Data Discovery Auditing support CIFS and NFSv3.
 :::
 
 
-Ports and permissions vary based on the scan mode option selected as well as the target environment.
+Ports and permissions vary based on the selected scan mode option and the target environment.
 
 **Data Collectors**
 
@@ -52,13 +52,14 @@ The following firewall ports are needed:
 
 **Permissions and Ports for FileSystemAccess Data Collector**
 
-- Permissions vary based on the Scan Mode Option selected. See the File System Supported Platforms
+- Permissions vary based on the selected Scan Mode Option. See the File System Supported Platforms
   topic for additional information.
 
 ## Supported Windows Platforms
 
 The following are supported Microsoft® Windows® operating systems:
 
+- Windows Server 2025
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
@@ -76,8 +77,8 @@ See the topic for target environment requirements.
 
 ## Azure Files Support
 
-Azure Files is a fully managed, cloud-based file sharing service from Microsoft that allows users to
-access file shares from anywhere as a virtual network drive. Access Analyzer supports Access
+Azure Files is a fully managed, cloud-based file sharing service from Microsoft. With Azure Files,
+users can access file shares from anywhere as a virtual network drive. Access Analyzer supports Access
 Auditing (FSAA) and Sensitive Data Discovery Auditing scans of Azure Files.
 
 See the [Azure Files Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/azurefiles.md) topic for additional information.
@@ -114,7 +115,7 @@ environment requirements.
 See the [Hitachi Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/hitachi/overview.md) topic for target
 environment requirements.
 
-**Nasuni Nasuni Edge Appliances**
+**Nasuni Edge Appliances**
 
 - 8.0+
 

@@ -13,10 +13,11 @@ keywords:
   - allowlists
   - content aware policies
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Whitelisting Authentication Servers for Deep Packe
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Whitelisting Authentication Servers for Deep Packet Inspection"
 knowledge_article_id: kA0Qk0000002BDuKAM
 ---
@@ -29,6 +30,8 @@ When Deep Packet Inspection (DPI) is enabled in environments using an authentica
 
 This article describes how to whitelist authentication servers in Netwrix Endpoint Protector to ensure successful authentication when DPI is enabled.
 
+For the full reference, see [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket) and [Deep Packet Inspection Allowlists](/docs/endpointprotector/admin/denylistsallowlists/allowlists#deep-packet-inspection).
+
 ## Instructions
 
 1. Log in to the Netwrix Endpoint Protector Console.
@@ -38,6 +41,10 @@ This article describes how to whitelist authentication servers in Netwrix Endpoi
    ![Deep Packet Inspection tab in Allowlists](./../0-images/ka0Qk000000Eb4X_0EMQk00000CAOGf.png)
 4. Fill in all required fields to define your authentication resource(s) (e.g., ADFS), then click **Save**.  
    ![Defining authentication resource in DPI allowlist](./../0-images/ka0Qk000000Eb4X_0EMQk00000CAOIH.png)
+
+   :::note
+   Use `*` as a wildcard to match subdomains or partial matches — for example, `*.yourcompany.com` to cover an ADFS federation subdomain. The `?` character can't be used as a wildcard. You can create or import up to 100 allowlists, each with up to 50,000 web domains.
+   :::
 5. Go to **Content Aware Protection** > **Content Aware Policies** and select your policy then click **Edit**.
 6. Navigate to the **Policy Allowlists** section and click the **Deep Packet Inspection** tab.
 7. Select the entry defined in step 4 and verify the accuracy of your selected policy entities.  

@@ -7,14 +7,14 @@ sidebar_position: 20
 # File System Reports
 
 File System reports are accessed through the Resource Audit interface. Explore the file system
-resources by expanding the levels within the Resources pane and selecting the desired resource. The
+resources by expanding the levels within the Resources pane and selecting the resource you want. The
 data within these reports is collected by the Enterprise Auditor File System solution. See the File
 System Solution topic in the
 [Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 for additional information.
 
 :::note
-In order to populate the NFS resources within the reports, the **.Active Directory
+to populate the NFS resources within the reports, the **.Active Directory
 Inventory** job group must be configured to collect the `uid` and `uidNumber` attributes for user
 objects. See the NFS Permissions for the Access Information Center topic in the
 [Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)

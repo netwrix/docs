@@ -11,7 +11,7 @@ required when first launching the Enterprise Auditor Console. It also includes a
 information, such as how to secure the Enterprise Auditor Database, and configuring the Web Console
 for viewing reports outside of the Enterprise Auditor Console.
 
-Prior to installing Enterprise Auditor, please ensure that all of the prerequisites have been met.
+Before installing Enterprise Auditor, ensure that you've met all the prerequisites.
 See the
 [Requirements](/docs/accessanalyzer/11.6/requirements/overview.md)
 topic for more information.
@@ -24,8 +24,8 @@ Your Netwrix Representative will provide the appropriate binaries.
 - Enterprise Auditor binary – Core installation package
 
     - Includes data collectors, analysis modules, and action modules
-    - An organization’s license key, needed during installation, controls which components are laid
-      down during installation
+    - An organization’s license key, needed during installation, controls which components the
+      installer includes
     - Installs the Web Console
 
 - File System Proxy binary – Installation package for the File System Proxy Scanning option

@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Data Service Logs
 
-Use this API to get Directory Manager Data service log. See the
-[Data Service](/docs/directorymanager/11.1/admincenter/service/dataservice/overview.md) for additional information on Data
+Use this API to get Directory Manager Data Service logs. See the
+[Data Service](/docs/directorymanager/11.1/admincenter/service/dataservice/overview.md) for additional information on the Data Service
 service.
 
 ## Endpoint

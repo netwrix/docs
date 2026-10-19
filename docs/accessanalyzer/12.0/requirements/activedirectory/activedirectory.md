@@ -10,8 +10,8 @@ The core components for Netwrix Access Analyzer (formerly Enterprise Auditor) ar
 Analyzer Console server, SQL Server, and Access Information Center. See the
 [Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topic for the core requirements.
 
-In addition to these, integration with either the Netwrix Activity Monitor or the Netwrix Threat
-Prevention is required for event activity data to be scanned. See the
+In addition to these, you need integration with either the Netwrix Activity Monitor or the Netwrix
+Threat Prevention to scan event activity data. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor) or
 the
 [Netwrix Threat Prevention Documentation](https://helpcenter.netwrix.com/category/threatprevention)

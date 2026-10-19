@@ -135,7 +135,7 @@ Menu items include:
   needs to be modified. Unlocking a job will prevent Job Initiators from scheduling or running the
   job. This option only applies to Role Based Access. See the
   [Role Based Access](/docs/accessanalyzer/12.0/admin/settings/access/rolebased/overview.md) for additional information.
-- Enable/Disable Job(s) – Disables the selected job or job group and skips them during scan
+- Enable/Disable Jobs – Disables the selected job or job group and skips them during scan
   execution. When a job group is disabled, all existing jobs within the job group are disabled. See
   the [Disable or Enable a Job](/docs/accessanalyzer/12.0/admin/jobs/job/disableenable.md) topic for more information.
 - Schedules – Opens the [Schedule Jobs](/docs/accessanalyzer/12.0/admin/schedule/overview.md#schedule-jobs) to schedule job group

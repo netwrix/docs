@@ -6,9 +6,44 @@ sidebar_position: 20
 
 # Client
 
+The Netwrix Endpoint Protector Client runs natively on Windows, macOS, and Linux, on both x86
+64-bit and ARM64 hardware, enforcing the same data protection policies regardless of operating
+system or CPU architecture.
+
+## Lightweight, Cross-Platform Design
+
+The Endpoint Protector Client doesn't require OS kernel-level integration. This design reduces the
+risk of conflicts with other security applications, such as antivirus, Endpoint Detection and Response (EDR), and Host-based Intrusion Prevention System (HIPS) solutions, and keeps the Client's footprint on the endpoint to a minimum.
+
+### Kernel Independence
+
+The Client doesn't inject kernel-level drivers or extensions on Windows, macOS, or Linux. This
+avoids the stability and compatibility risks associated with kernel-mode components, such as system
+crashes from driver conflicts or extension issues after an OS update.
+
+On Linux specifically, this also means the Client doesn't depend on Dynamic Kernel Module Support
+(DKMS) and doesn't require a rebuild each time you update the kernel, removing the operational
+risk — common with kernel-module-based agents — of endpoint protection breaking after a routine
+kernel update.
+
+### Cross-OS Feature Parity
+
+The Client maintains feature parity across Windows, macOS, and Linux for Device Control (DC),
+Content Aware Protection (CAP), and eDiscovery. The Enforced Encryption Client, which provides FIPS
+140-3 validated removable media encryption, offers full parity between Windows and macOS. Enforced
+Encryption Client isn't available for Linux; Device Control policies protect Linux endpoints
+instead.
+
+:::note
+For the supported operating systems and lifecycle policy for each platform, see
+[Client Supportability](/docs/endpointprotector/supportability/client-supportability.md).
+:::
+
+## Resource Consumption
+
 The Endpoint Protector Client has one of the smallest footprints of any similar solution on the
 market. The resources it consumes or the bandwidth it uses is insignificant. The processing power
-consumed, and bandwidth used by the Client depends on the functions, settings, policies used, and
+and bandwidth the Client uses depend on the functions, settings, and policies in use, and on
 the endpoint’s hardware configuration. In an idle state, the base requirements are:
 
 - CPU: At least 1 GHz dual-core x86 64bit  or ARM64bit architecture CPU.
@@ -17,7 +52,7 @@ the endpoint’s hardware configuration. In an idle state, the base requirements
   when sending logs or uploading shadow files.
 
 :::note
-For Content Aware Protection and eDiscovery scanning, more CPU and RAM are required.
+For Content Aware Protection and eDiscovery scanning, you need more CPU and RAM.
 :::
 
 The following table shows the resource consumption when all modules are enabled, functions are
@@ -29,17 +64,19 @@ active, and policies are configured for a stress test:
 | RAM       | 30 MB                                                                     | 30 MB (in general) > 30 MB (during scanning)                              | 30 MB (in general) > 30 MB (during scanning)                              |
 | Bandwidth | < 1 Kbs (when idle) > 1 Kbs (when sending logs or uploading shadow files) | < 1 Kbs (when idle) > 1 Kbs (when sending logs or uploading shadow files) | < 1 Kbs (when idle) > 1 Kbs (when sending logs or uploading shadow files) |
 
+These CPU figures apply equally to x86 64-bit and ARM64 architectures.
+
 ## Security Exclusions
 
 To maintain the optimal performance and stability of the Endpoint Protector Client, configure
 security exclusions within third-party security software, such as antivirus, EDR, and HIPS
-solutions. The Endpoint Protector Client is designed to be lightweight, but certain antivirus
+solutions. The Endpoint Protector Client is lightweight, but certain antivirus
 programs may scan its files and processes intensively, which can impact performance.
 
 **Importance of Exclusions**
 
 The Endpoint Protector Client logs data in small, frequent increments. Antivirus software may
-attempt to scan each entry as it is written, which can lead to:
+attempt to scan each entry as the Client writes it, which can lead to:
 
 - Timeouts on larger files due to extended antivirus scanning.
 - Increased RAM and CPU usage, as both Endpoint Protector and antivirus processes compete for system
@@ -52,7 +89,9 @@ add exclusions for specific files, folders, and processes on Windows, macOS, and
 in the following sections.
 
 :::warning Important
-Before escalating any Endpoint Client performance issue, ensure that the security tool exclusions in the following sections for EPP are configured and deployed on the affected endpoint, and that you have rebooted the computer.
+Before escalating any Endpoint Client performance issue, first configure and deploy the security tool
+exclusions listed in the following sections for EPP on the affected endpoint, then reboot the
+computer.
 :::
 
 ### Recommended Exclusions for Windows
@@ -90,7 +129,7 @@ C:\Program Files\CoSoSys\Endpoint Protector\cssguard.exe
 C:\Program Files\CoSoSys\Endpoint Protector\EPPNotifier.exe
 C:\Program Files\CoSoSys\Endpoint Protector\BrowserBroker.exe <- EPP versions before 2601
 C:\Program Files\CoSoSys\Endpoint Protector\EppExtensionHost.exe <- EPP Versions starting 2601
-  Alternative (for the above 4 files):
+  Alternative:
   C:\Program Files\CoSoSys\Endpoint Protector\*
 C:\Windows\System32\drivers\cssdlp20.sys
 C:\Windows\System32\drivers\cssredir.sys
@@ -196,5 +235,4 @@ linux_install_certicates.sh
 epp_collect_dpi_info_linux.sh
 ```
 
-By applying these exclusions, you will allow the Endpoint Protector Client to operate smoothly alongside other security products, ensuring both functionality and protection across endpoints.
-```
+Applying these exclusions allows the Endpoint Protector Client to operate smoothly alongside other security products, ensuring both functionality and protection across endpoints.

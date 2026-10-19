@@ -14,14 +14,12 @@ the Access Reviews installation directory:
 
 ...\Netwrix\Access Reviews
 
-Follow the steps to modify the timeout parameter.
-
 **Step 1 –** Open the `AccessInformationCenter.Service.exe.Config` file with a text editor, e.g.
 Notepad.
 
 ![Notepad showing the AccessInformationCenter.Service.exe.Config file](/images/auditor/10.7/access/reviews/admin/additionalconfig/timeout.webp)
 
-**Step 2 –** Change the value for the `AuthSessionTimeout` parameter to the desired number of
+**Step 2 –** Change the value for the `AuthSessionTimeout` parameter to your preferred number of
 minutes. For example:
 
 <add key="AuthSessionTimeout" value="20"/>

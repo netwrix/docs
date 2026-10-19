@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # Sign In Using Okta
 
-We configured Okta with a Directory Manager client, that is the Directory Manager portal _Wizard_ in
-our example. For single sign-on using Okta, we can choose any of the following ways:
+This example configures Okta with a Directory Manager client, the Directory Manager portal _Wizard_. For single sign-on using Okta, you can choose any of the following ways:
 
 - SP-initiated single sign-on - when the SSO operation is initiated from the SP end, i.e., from the
   Directory Manager portal, Wizard.
@@ -26,7 +25,7 @@ our example. For single sign-on using Okta, we can choose any of the following w
 2. Click the button/image/link for Okta; the Okta Sign In page is displayed.
 3. Enter your credentials and click **Sign In**. You will be routed to the main page of the
    Directory Manager portal _Wizard_.  
-   Only users defined for our app in Okta can log in by entering their user names and passwords. See
+   Only users defined for the Directory Manager app in Okta can log in by entering their user names and passwords. See
    the [Configure Users in Okta](configureinokta.md#configure-users-in-okta) topic.
 
 With single sign-on, you can now launch any Directory Manager client without having to sign in

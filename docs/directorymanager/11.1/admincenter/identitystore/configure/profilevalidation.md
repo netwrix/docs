@@ -22,7 +22,7 @@ By default, a few attributes (fields) are available in the Directory Manager por
 validation. You can add and remove fields as required. See the
 [Manage Property Validation Attributes](/docs/directorymanager/11.1/admincenter/applications/portal/displaytype/propertyvalidation.md) topic.
 
-## What can Users do While Validating their Profiles?
+## Actions Users Can Perform While Validating Profiles
 
 When performing profile validation, a user can:
 
@@ -39,7 +39,7 @@ When performing profile validation, a user can:
 
 
 - Transfer his or her direct reports to another manager - When a user transfers his or her direct
-  report, the new manager is notified by email to accept or reject the transfer. If the manager
+  report, the new manager isn'tified by email to accept or reject the transfer. If the manager
   accepts it, the direct report is transferred to him or her. If the manager rejects the transfer,
   the direct report remains with the old manager.
 
@@ -57,14 +57,14 @@ When performing profile validation, a user can:
 For workflows in an identity store, see the
 [System Workflows](/docs/directorymanager/11.1/admincenter/workflow/overview.md#system-workflows) topic.
 
-## What Happens When Users do not Validate their Profiles?
+## When Users Don't Validate Their Profiles
 
 Periodically, users receive reminder emails to validate their profile. Directory Manager expires the
-users who ignore these reminders and do not validate their profiles within the required time.
+users who ignore these reminders and don't validate their profiles within the required time.
 Consequently, their accounts get disabled.
 
 Expired users can request the administrator or helpdesk to unlock their accounts temporarily and
-grant an extension period. If they do not validate their profile within that extension period
+grant an extension period. If they don't validate their profile within that extension period
 either, Directory Manager expires them again and notifies their managers by email. To reactivate
 these accounts, users’ managers must send a request to the helpdesk.
 
@@ -78,7 +78,7 @@ function in Directory Manager. It:
 
 - Monitors the profile validation dates for users.
 - Generates reminder emails, if reminder notifications settings are applied.
-- Expires (disables) users who do not validate their profiles within the given period.
+- Expires (disables) users who don't validate their profiles within the given period.
 - Marks user accounts that are disabled due to profile non-validation, provided that the ‘Profile
   Validation Attribute’ setting is applied.
 - Deletes the profile validation date if it is x number of days old, provided that the ‘Clear the
@@ -86,7 +86,7 @@ function in Directory Manager. It:
 
 ## Specify a Group for Profile Validation
 
-By default, profile validation is not enabled for an identity store, and therefore does not apply to
+By default, profile validation isn't enabled for an identity store, and therefore doesn't apply to
 any user.
 
 You can apply profile validation to a directory group. As a result, all group members will be
@@ -101,7 +101,7 @@ required to validate their profiles. Only one group can be specified at a time.
 4. On the **Profile Validation** page, use the **Search for the Criteria** box to search and specify
    a group.
 
-    - Type a search string in the box. Directory Manager displays all groups with names that start
+    - Enter a search string in the box. Directory Manager displays all groups with names that start
       with the string. Click **Select** for a group to select it for profile validation.
 
 **Or**
@@ -131,7 +131,7 @@ validate their profiles once during each cycle of 90 days. When a user validates
 the current cycle ends and the next cycle starts for him or her.
 
 The User Life Cycle schedule monitors the profile validation dates for users; it expires users who
-do not validate their profiles within the given period.
+don't validate their profiles within the given period.
 
 **To specify a life cycle period:**
 
@@ -139,7 +139,7 @@ do not validate their profiles within the given period.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Profile Validation**.
-4. In the **User Profile Validation Lifecycle** box on the **Profile Validation** page, type the
+4. In the **User Profile Validation Lifecycle** box on the **Profile Validation** page, enter the
    number of days to set as the profile validation life cycle period.  
    If this number of days is less than the days set for any of the reminders configured in the
    **Reminder Notification Settings** area, Directory Manager removes that reminder from the list.
@@ -147,7 +147,7 @@ do not validate their profiles within the given period.
 
 ## Specify a Profile Validation Period for New Users
 
-Apart from the regular profile validation life cycle, Directory Manager enables you to set a
+Apart from the regular profile validation life cycle, you can set a
 separate profile validation period for newly found user objects (by way of newly created objects or
 by way of disabled object enabled again) in the directory.
 
@@ -173,7 +173,7 @@ them.
 ## Specify a Duration for the Extension Period
 
 Using the Directory Manager portal, the administrator or helpdesk can grant an extension period to
-users who have been expired due to non-profile validation. If users do not validate their profile
+users who have been expired due to non-profile validation. If users don't validate their profile
 within the extended period, Directory Manager disables them again, and an email notification is sent
 to their managers.
 
@@ -192,7 +192,7 @@ On the **Profile Validation** page, you can specify the duration of the extensio
 
 ## Specify Reminder Notification Settings
 
-By default, three email notifications are sent to a user, precisely 30, 21 and 14 days before the
+By default, three email notifications are sent to a user, precisely 30, 21, and 14 days before the
 profile validation period ends. These notifications serve as reminders, directing users to validate
 their profiles. The final reminder is sent to the user and the user’s manager.
 
@@ -232,7 +232,7 @@ For email notifications, an SMTP Server must be configured for the identity stor
 
 User accounts in an identity store may get disabled for various reasons, such as when the
 administrator disables a user in the directory or when the User Life Cycle schedule expires a user
-account because the user did not validate his or her directory profile during a given period.
+account because the user didn't validate his or her directory profile during a given period.
 
 To identify users that are disabled by the User Life Cycle schedule, the administrator can apply the
 **Profile Validation Attribute** setting. This setting requires the administrator to select a schema
@@ -240,14 +240,14 @@ attribute and specify a string as its value.
 
 - When the User Life Cycle schedule expires a user, it sets the given string as the attribute’s
   value for the user.
-- For active users or those disabled for a different reason, this attribute does not have the
+- For active users or those disabled for a different reason, this attribute doesn't have the
   specified string as value.
 
 When the administrator or a helpdesk user extends the profile validation period for a disabled user,
 the string value is cleared and the attribute is empty again.
 
 The administrator can access the directory server to check whether the string value is set for the
-attribute. For example, he or she can use a standard Microsoft-based Active Directory tool to view
+attribute. For example, they can use a standard Microsoft-based Active Directory tool to view
 the attribute’s value either natively in the given propertysheet options or via the ADSI property
 sheet shell extension.
 
@@ -258,11 +258,11 @@ sheet shell extension.
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Profile Validation**.
 4. On the **Profile Validation** page, use the toggle button for **Set an attribute that will be
-   updated with the desired value for users that are expired due to non-profile validation** to
+   updated with the value you want for users that are expired due to non-profile validation** to
    enable the attribute value setting.
-5. Select a schema attribute in the **Attribute** drop-down list and specify a string as value for
-   it in the **Desired Value** box.  
-   When the User Life Cycle schedule expires a user who does not validate his or her profile within
+5. Select a schema attribute in the **Attribute** dropdown list and specify a string as value for
+   it in the **Value You Want** box.  
+   When the User Life Cycle schedule expires a user who doesn't validate his or her profile within
    the given period, it also sets the attribute’s value to the specified string for that user.
 6. Click **Save**.
 

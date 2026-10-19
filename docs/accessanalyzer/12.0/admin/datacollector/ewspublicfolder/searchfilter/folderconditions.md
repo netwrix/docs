@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # EWSPublicFolder FW: Folder Conditions
 
-The Folder Conditions page is where folder-related filter criteria can be applied to the search.
+Use the Folder Conditions page to apply folder-related filter criteria to the search.
 
 ![Filter Wizard Folder Conditions page](/images/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/folderconditions.webp)
 
@@ -21,7 +21,7 @@ Customize folder search conditions using the following options:
   of the template conditions
 
     :::note
-    The values present depends on the selections made in the Select conditions box.
+    The available values depend on the selections in the Select conditions box.
     :::
 
 
@@ -48,11 +48,11 @@ Use the Search Terms window to determine terms for the search. The Search Terms 
 
 Determine terms for the search using the following options:
 
-- Type the desired term into the upper text box and click **Add** to add the term to the lower text
+- Enter the term into the upper text box and click **Add** to add the term to the lower text
   box, which adds the term to the search
 - Select a term in the lower text box, and click **Remove** to remove the term from the search
 - Click **Clear** to clear all terms from the lower box
-- Select the desired qualifier option:
+- Select a qualifier option:
 
     - Contains ALL of the following search terms (And) – Search only returns results containing all
       of the search terms

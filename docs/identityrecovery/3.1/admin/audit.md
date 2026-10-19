@@ -12,7 +12,7 @@ Click **Audit Logs** in the left pane to open the Audit Logs page.
 
 ![Audit Logs Page](/images/identityrecovery/3.1/product/auditing.png)
 
-The following information is displayed for an event:
+The page displays the following information for each event:
 
 - Action – The action perpetrated by the account
 - Object – The name of the object affected by the change

@@ -26,8 +26,8 @@ The query categories are:
     - Sensitive Data Collection – Scan databases for sensitive data
 
     :::note
-    The Sensitive Data category options require the Sensitive Data Discovery Add-on to
-    have been installed on the Enterprise Auditor Console before the SQL Data Collector can collect
+    The Sensitive Data category options require you to install the Sensitive Data Discovery Add-on
+    on the Enterprise Auditor Console before the SQL Data Collector can collect
     sensitive data. See the
     [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
     topic for additional information.
@@ -100,7 +100,7 @@ The query categories are:
 
         - Latest Week Backup – Information about the latest week backup
         - Oldest and Newest Backup – Information about the oldest and the most recent backups
-        - Database File Without Backup – Indicates file names of the files that are not present in
+        - Database File Without Backup – Indicates file names of the files that aren't present in
           the RMAN backup
 
     - Utilities

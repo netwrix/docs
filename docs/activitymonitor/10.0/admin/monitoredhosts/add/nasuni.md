@@ -13,7 +13,7 @@ The Activity Monitor can be configured to monitor the following:
 - Ability to collect all or specific file activity for specific values or specific combinations of
   values
 
-It provides the ability to feed activity data to SIEM products. The following dashboards have been
+It lets you feed activity data to Security Information and Event Management (SIEM) products. The following dashboards have been
 specifically created for Activity Monitor event data:
 
 - For IBM® QRadar®, see the
@@ -22,13 +22,13 @@ specifically created for Activity Monitor event data:
 - For Splunk®, see the [File Activity Monitor App for Splunk](/docs/activitymonitor/10.0/siem/splunk/overview.md) for
   additional information.
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Access Analyzer
 - Netwrix Threat Prevention
 - Netwrix Threat Manager
 
-Prior to adding a Nasuni Edge Appliance host to the Activity Monitor, the prerequisites for the
+Before adding a Nasuni Edge Appliance host to the Activity Monitor, the prerequisites for the
 target environment must be met. See the
 [Nasuni Edge Appliance Activity Auditing Configuration](/docs/activitymonitor/10.0/requirements/activityagent/nas-device-configuration/nasuni-activity.md) topic
 for additional information.
@@ -40,8 +40,6 @@ monitoring the target environment.
 
 
 ## Add Nasuni Host
-
-Follow the steps to add a Nasuni Edge Appliance host to be monitored.
 
 **Step 1 –** In Activity Monitor, go to the Monitored Hosts & Services tab and click Add. The Add New Host
 window opens.
@@ -62,7 +60,7 @@ Click **Next**.
 **Step 4 –** On the Nasuni Options page, enter the **API Key Name** and the **API Key Value**. Click
 Connect to validate the connection with the Nasuni device.
 
-- Protocol – Select from the following options in the drop-down list:
+- Protocol – Select from the following options in the dropdown list:
     - Auto Detect
     - HTTPS
     - HTTPS, ignore certificate errors
@@ -85,7 +83,7 @@ and **Link Operations** to be monitored. Additional options include:
 
 :::warning
 Enabling the Suppress subsequent Read operations in the same folder option can result
-in Read events not being monitored.
+in the product suppressing Read events.
 :::
 
 
@@ -103,7 +101,7 @@ Click **Next**.
 ![Configure Basic Options page for Nasuni](/images/activitymonitor/9.0/admin/monitoredhosts/add/configurebasicoptionsnasuni.webp)
 
 **Step 6 –** On the Configure Basic Options page, choose which settings to enable. The “Log files”
-are the activity logs created by the activity agent on the proxy host. Select the desired options:
+are the activity logs created by the activity agent on the proxy host. Select the options you want:
 
 - Report account names – Adds an Account Name column in the generated TSV files
 - Add C:\ to the beginning of the reported file paths – Adds ‘C:\” to file paths to be displayed
@@ -118,8 +116,8 @@ are the activity logs created by the activity agent on the proxy host. Select th
         - Example CIFS activity – `\\ExampleHost\TestShare\DocTeam\Temp.txt`
         - For NFS activity – `[HOST]:/[VOLUME]/[PATH]`
         - Example NFS activity – `ExampleHost:/ExampleVolume/DocTeam/Temp.txt`
-    - When the option is enabled, the added columns are populated when a file is accessed remotely
-      through the UNC Path. These columns have also been added as Syslog macros.
+    - When the option is enabled, the system populates the added columns when a file is accessed remotely
+      through the UNC Path. These columns are also available as Syslog macros.
 - Report operations with millisecond precision – Changes the timestamps of events being recorded in
   the TSV log file for better ordering of events if multiple events occur within the same second
 
@@ -138,14 +136,14 @@ Output** page can be configured.
 - Specify output file path – Specify the file path where log files are saved. Click the ellipses
   button (**...**) to open the Windows Explorer to navigate to a folder destination. Click **Test**
   to test if the path works.
-- Period to keep Log files – Log files will be deleted after the period entered number of days
-  entered. The default is 10 days. Use the dropdown to specify whether to keep the Log files for a
+- Period to keep Log files – The system deletes log files after the number of days you enter.
+  The default is 10 days. Use the dropdown to specify whether to keep the Log files for a
   set amount of Minutes, Hours, or Days.
 - This log file is for Access Analyzer – Enable this option to have Access Analyzer collect this
   monitored host configuration
 
     :::info
-    Identify the configuration to be read by Access Analyzer  when integration is
+    Identify the configuration that Access Analyzer can read  when integration is
     available.
     :::
 
@@ -162,26 +160,26 @@ Click **Next**.
 **Step 9 –** If Syslog Server is selected on the **Where To Log The Activity** page, the Syslog
 Output page can be configured.
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used. The Event stream is the activity
       being monitored according to this configuration for the monitored host.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the Message framing drop-down menu. See the
+    The TCP and TLS protocols add the Message framing dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/10.0/admin/outputs/syslog/syslog.md) topic for additional information.
 
 - The Test button sends a test message to the Syslog server to check the connection. A green check
-  mark or red will determine whether the test message has been sent or failed to send. Messages vary
+  mark or red indicates whether the test message was delivered or if delivery failed. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -192,7 +190,7 @@ Click **Finish**.
 ![Activity Monitor with Nasuni host added](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitornasuni.webp)
 
 The added Nasuni host is displayed in the monitored hosts/services table. Once a host has been added for
-monitoring, configure the desired outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/10.0/admin/monitoredhosts/output/output.md) topic
+monitoring, configure the outputs you want. See the [Output for Monitored Hosts](/docs/activitymonitor/10.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 ## Host Properties for Nasuni

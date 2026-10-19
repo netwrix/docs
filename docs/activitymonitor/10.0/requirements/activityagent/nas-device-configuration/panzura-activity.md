@@ -67,13 +67,11 @@ The product will also ensure the settings are correct with periodic checks.
 
 ## Manual Configuration
 
-Follow these steps to enable auditing.
-
 **Step 1 –** Navigate to **Audit Settings** > **Third Party Support**.
 
 **Step 2 –** Enable the **Generate Third Party Logs** option.
 
-**Step 3 –** Enable the **Push to Subordinate(s)** option.
+**Step 3 –** Enable the **Push to Subordinates** option.
 
 **Step 4 –** Enter **other** as the Vendor Name.
 

@@ -12,11 +12,11 @@ Use the Create Users page to create users on the selected target.
 
 Use the following options to configure the action:
 
-- Insert field – Use the drop-down list to select a field (column) from the source table. Then,
+- Insert field – Use the dropdown list to select a field (column) from the source table. Then,
   click the blue arrow to insert the item into the selected box.
 - OU – The organizational unit in which to create the user
 
-    - Create target OU location if it does not already exist - Select this checkbox to create the
+    - Create target OU location if it doesn't already exist - Select this checkbox to create the
       target OU.
 
 - First Name – The first name of the user being created
@@ -31,6 +31,6 @@ Optionally, select from the following checkboxes:
 
 - User must change password at next logon – Require the user to change the password at the next
   logon
-- User cannot change password
+- User can't change password
 - Password never expires
 - Account is disabled

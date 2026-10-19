@@ -16,7 +16,7 @@ To add a content source
 
     ![add_source_wizard_thumb_0_0](/images/dataclassification/5.6.2/sources/add_source_wizard_thumb_0_0.webp)
 
-2. Select the source you need and configure its settings. See detailed instructions for the sources:
+2. Select the source you need and configure its settings. For detailed instructions, see:
 
 - [Box](/docs/dataclassification/5.6.2/contentconfigurationoverview/sourcesintro/addingsource/box.md)
 - [Add Database Source](/docs/dataclassification/5.6.2/contentconfigurationoverview/sourcesintro/addingsource/database/database.md)

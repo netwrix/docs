@@ -30,14 +30,14 @@ The service account must be a member of the `Farm Read` group at the farm level.
 Enterprise Auditor to call the SharePoint web services to gather permissions, site hierarchy, and
 content information remotely.
 
-Follow these steps to configure farm-level permissions on SharePoint 2013 through SharePoint 2019:
+### Configure farm-level permissions on SharePoint 2013 through SharePoint 2019
 
 1. In the SharePoint **Central Administration Center**, navigate to the **Security** section.
 2. Select **Manage the farm administrators group** under **Users**.
 3. If the `Farm Read` group exists, add the service account to that group. If the group has been
    deleted, create a new group:
    - Select **More** under the **Groups** section.
-   - Select **New Group** from the **New** drop-down menu.
+   - Select **New Group** from the **New** dropdown menu.
    - Ensure the group has the `Read – Can view pages and list items and download documents`
      permission.
    - Add the service account to the new group.
@@ -50,8 +50,7 @@ The service account requires a custom policy role with `Site Collection Auditor`
 permissions at the web application level. This allows Enterprise Auditor to execute web service
 calls against **Central Administration**.
 
-Follow these steps to configure web application-level permissions on SharePoint 2013 through
-SharePoint 2019:
+### Configure web application-level permissions on SharePoint 2013 through SharePoint 2019
 
 1. In the **Central Administration Center**, navigate to the **Application Management** section.
 2. Select **Manage web applications** under **Web Applications**.
@@ -72,8 +71,8 @@ SharePoint 2019:
      then click **Finish**.
 6. Repeat step 5 for each web application in scope.
 
-The service account is provisioned as `Site Collection Auditor` on all web applications to be
-audited.
+The service account now has `Site Collection Auditor` access on all web applications you want to
+audit.
 
 ## SharePoint database server permissions
 
@@ -82,7 +81,7 @@ configuration database and all content databases. This allows Enterprise Auditor
 operations directly against the SharePoint databases and gather information about web application
 and content database locations.
 
-Follow these steps to configure database server permissions:
+### Configure database server permissions
 
 1. Open the SharePoint database server user configuration in SQL Server Management Studio.
 2. Grant the service account the `SPDataAccess` database role membership on the following
@@ -91,7 +90,7 @@ Follow these steps to configure database server permissions:
    - All SharePoint Content databases that house web application data (by default, content
      databases begin with `WSS_Content`, but they can be customized)
 
-The service account is provisioned with the required SharePoint database permissions.
+The service account now has the required SharePoint database permissions.
 
 ## MySites and OneDrive permissions
 
@@ -102,5 +101,5 @@ MySites and OneDrive permissions depend on the SharePoint Access Data Collector 
   requires the SharePoint Farm Administrator role or `Site Collection Auditor` at the web
   application that hosts MySites.
 - **Skip inaccessible personal sites**: This option scans only sites where the service account
-  already has administrative access. You must provision the service account before the scan to
-  scan OneDrives and personal sites.
+  already has administrative access. To scan OneDrives and personal sites, provision the service
+  account with access before running the scan.

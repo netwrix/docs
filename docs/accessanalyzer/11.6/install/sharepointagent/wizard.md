@@ -16,7 +16,7 @@ the Enterprise Auditor Console. See the
 topic for detailed permission information.
 
 :::note
-If utilizing the SharePoint Agent to scan for Sensitive Data, the 64-bit
+If using the SharePoint Agent to scan for Sensitive Data, the 64-bit
 `SensitiveDataAddon.msi` needs to be installed after the SharePoint Agent has been installed on the
 SharePoint server. See the
 [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
@@ -24,8 +24,8 @@ topic for additional information.
 :::
 
 
-Follow the steps to install the SharePoint Agent on the application server which hosts the Central
-Administration component of the targeted SharePoint farms.
+To install the SharePoint Agent on the application server which hosts the Central
+Administration component of the targeted SharePoint farms:
 
 **Step 1 –** Run the `SharePointAgent.exe` executable to open the Netwrix Enterprise Auditor
 SharePoint Agent Setup Wizard.

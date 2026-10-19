@@ -21,11 +21,11 @@ The Location section provides options to scope the search.
 - Current Job Directory – Search the job’s root folder for the specified file
 - Registry Lookup – Select this option to programmatically obtain a file path from a registry key
   that exists on the target host in the environment. Click the ellipsis to open the Enterprise
-  Auditor Registry Browser and connect to a host to select a registry key and path to be used for
+  Auditor Registry Browser and connect to a host to select a registry key and path to use for
   the lookup.
 
-    - Value Name – This value is automatically populated from the registry key
-    - Levels – The Levels slider can be used to truncate the path for the key value in the Adjust
+    - Value Name – Enterprise Auditor automatically populates this value from the registry key
+    - Levels – Use the Levels slider to truncate the path for the key value in the Adjust
       Path dialog box
     - Current value data – Displays the current value for the registry key
     - Query 32-bit – Select this checkbox to query a 32-bit view
@@ -37,8 +37,8 @@ The Files section provides options to define the object or set of objects to fin
 
 - File name – Enter file names to search in the following format: `filename.extension`. Separate
   multiple file names with a semicolon and no spaces between the names. Wild cards can be used.
-- File type – Select the extension type of the file name entered above to tell the collection
-  routine how the data within the underlying file is structured and should be handled:
+- File type – Select the extension type of the file name you entered to tell the collection
+  routine how the data within the underlying file is structured and how to handle it:
 
     - Autodetect – Select this when the data type is unknown. The data collection routine will
       attempt to figure out what type of data it is and handle it appropriately.
@@ -48,7 +48,7 @@ The Files section provides options to define the object or set of objects to fin
     - Binary
     - Space Separated Text
 
-- First line is header captions line – Enabled when CSV, TSV, or Space Separated Text is selected
+- First line is header captions line – Enabled when you select CSV, TSV, or Space Separated Text
 
 **Options**
 
@@ -71,13 +71,13 @@ The Last Modification Time Filter section provides options to apply time filters
 
 Clicking the ellipsis in the Location section of the Source Files page opens the Remote Folder
 Explorer search window. In the Remote Folder Explorer window, navigate to the file folder location
-and add the path to the scope. Multiple paths can be added to the scope.
+and add the path to the scope. You can add multiple paths to the scope.
 
 ![Remote Folder Explorer window](/images/accessanalyzer/11.6/admin/datacollector/textsearch/remotefolderexplorer.webp)
 
 The Remote Folder Explorer functions are:
 
-- Sample from host (path) – If the desired file does not exist on the local Enterprise Auditor
+- Sample from host (path) – If the file you want doesn't exist on the local Enterprise Auditor
   Console, enter the name of the host that contains the file and click **Connect** to browse that
   host
 - Selected Path – Displays the path selected in the box above

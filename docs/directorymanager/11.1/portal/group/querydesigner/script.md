@@ -30,9 +30,7 @@ registered, and where on the host machine they should be installed.
 
 **Preview**
 
-Enables you to preview the results returned with the criteria specified on all tabs of the Query
-Designer dialog box. This is a check to ensure the accuracy of data before changes are committed to
-the directory.
+Preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
 
 **OK**
 

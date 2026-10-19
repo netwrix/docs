@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Administrators can enforce an account lockout policy for a domain that locks a user account after a
 certain number of failed login attempts. This secures a machine from unauthorized access. However,
-legitimate users may also get locked out; typically because of a typo or they could not recall their
+legitimate users may also get locked out; typically because of a typo or they couldn't recall their
 password correctly.
 
 In such a situation as this, helpdesk users can unlock user accounts in an identity store.
@@ -42,7 +42,7 @@ Step 4 – The Unlock page displays the user name, the identity store where this
 last time the user changed his or her password, and the lock status of the account. In case the user
 has linked his or her accounts that exist in different identity stores, this page displays all
 linked accounts that are locked.  
-To unlock an account, select the check box for it and click **Unlock**.
+To unlock an account, select the checkbox for it and click **Unlock**.
 
 ## Unlock User Accounts in Restricted Mode
 
@@ -57,7 +57,7 @@ Use the **History** button to view user history, i.e., the actions performed on 
 user. This history is specific to helpdesk functions, as listed in the
 [History in Helpdesk](/docs/directorymanager/11.1/admincenter/helpdesk/history.md) topic.
 
-Step 4 – The Authenticate page displays the authentication type(s) the user's account is enrolled
+Step 4 – The Authenticate page displays the authentication types the user's account is enrolled
 with. to authenticate the user, follow step 4 in the
 [Reset Passwords in Restricted Mode](resetpassword.md#reset-passwords-in-restricted-mode) topic.
 
@@ -67,4 +67,4 @@ Step 6 – The Unlock page displays the user name, the identity store where this
 last time the user changed his or her password, and the lock status of the account. In case the user
 has linked his or her accounts that exist in different identity stores, this page displays all
 linked accounts that are locked.  
-To unlock an account, select the check box for it and click **Unlock**.
+To unlock an account, select the checkbox for it and click **Unlock**.

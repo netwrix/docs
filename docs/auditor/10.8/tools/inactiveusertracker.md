@@ -12,7 +12,7 @@ performs the following tasks:
 - Checks the managed domain or specific organizational units by inquiring all domain controllers,
   and sends reports to managers and system administrators listing all accounts that have been
   inactive for the specified number of days.
-- Automatically deactivates inactive accounts by settings a random password, disabling, deleting or
+- Automatically deactivates inactive accounts by setting a random password, disabling, deleting, or
   moving them to a specified organizational unit.
 
     **NOTE:** The password that is generated will contain uppercase and lowercase letters, numbers
@@ -28,8 +28,6 @@ performs the following tasks:
 - Windows Server 2012
 
 ## Create Monitoring Plan to Audit Inactive Users
-
-Follow the steps to create a monitoring plan to audit inactive users.
 
 **Step 1 –** Navigate to Start > Netwrix Auditor > Netwrix Auditor Inactive Users Tracker.
 
@@ -90,7 +88,7 @@ The following variables can be used in the Inactive User Tracker message templat
 
 | Option                                                    | Description                                                                                                                                                                                                                                                                                   |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Use Netwrix Auditor notification settings                 | Select this option if you want to use modern authentication. Please note that modern authentication must already be configured in the monitoring plan you are going to use. If you select this option, the fields below are not needed.                                                       |
+| Use Netwrix Auditor notification settings                 | Select this option to use modern authentication. Modern authentication must already be configured in the monitoring plan. If you select this option, the fields below aren't needed.                                                       |
 | SMTP server                                               | Enter your SMTP server address. It can be your company's Exchange server or any public mail server (e.g., Gmail, Yahoo).                                                                                                                                                                      |
 | Port number                                               | Specify your SMTP server port number.                                                                                                                                                                                                                                                         |
 | Sender address                                            | Enter the address that will appear in the From field. **_RECOMMENDED:_** click **Send Test Email**. The system will send a test message to the specified email address and inform you if any problems are detected.                                                                           |
@@ -99,16 +97,14 @@ The following variables can be used in the Inactive User Tracker message templat
 | Password                                                  | Enter a password for SMTP authentication.                                                                                                                                                                                                                                                     |
 | Use Secure Sockets Layer encrypted connection (SSL)       | Select this checkbox if your SMTP server requires SSL to be enabled.                                                                                                                                                                                                                          |
 | Use implicit SSL                                          | Select this checkbox if the implicit SSL mode is used, which means that an SSL connection is established before any meaningful data is sent.                                                                                                                                                  |
-| Enforce certificate validation to ensure security         | Select this checkbox if you want to verify security certificate on every email transmission. The option is not available for auditing User Activity as well Netwrix Auditor tools.                                                                                                            |
-| Display the following From address in email notifications | Enter the address that will appear in the "_From_" field in email notifications. This option does not affect notifications sent to users' managers and administrators. Before configuring the "_From_" field for user email notifications, make sure that your Exchange supports this option. |
+| Enforce certificate validation to ensure security         | Select this checkbox if you want to verify security certificate on every email transmission. The option isn't available for auditing User Activity as well Netwrix Auditor tools.                                                                                                            |
+| Display the following From address in email notifications | Enter the address that will appear in the "_From_" field in email notifications. This option doesn't affect notifications sent to users' managers and administrators. Before configuring the "_From_" field for user email notifications, ensure that your Exchange supports this option. |
 
 Review your configuration and click Save.
 
 ## Review Report on Inactive Users
 
-Follow the steps to review report on inactive users.
-
-**Step 1 –** Click Generate next to Generate report on inactive users to view report immediately.
+**Step 1 –** Click **Generate** next to Generate report on inactive users to view the report immediately.
 
 ![inactiveusersactivedirectory](/images/auditor/10.8/tools/inactiveusersactivedirectory.webp)
 
@@ -129,8 +125,6 @@ your Active Directory domain with Netwrix Auditor. Navigate to Start > Run and t
 You can fine-tune Netwrix Auditor by specifying data that you want to exclude from the Inactive User
 monitoring scope.
 
-Follow the steps to exclude data from the Inactive Users monitoring scope:
-
 **Step 1 –** Navigate to the `%PROGRAMDATA%\Netwrix Auditor\Inactive Users Tracker` folder.
 
 **NOTE:** This is default location. However, it may be changed because users can move this folder.
@@ -144,5 +138,5 @@ Follow the steps to exclude data from the Inactive Users monitoring scope:
 | File           | Description                                                                                                                                                                                                                                                                                                                                  | Syntax                                                                                                               |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | filter.txt     | Contains a list of accounts to be excluded from processing.                                                                                                                                                                                                                                                                                  | `Username`                                                                                                           |
-| omitdclist.txt | Contains a list of domain controllers to be excluded from processing. Auditor skips all automated deactivation actions for inactive accounts (disable, move, delete) even if one domain controller is unavailable during scheduled task execution. Add the unavailable domain controllers to this file to ensure Auditor functions properly. | `Full DNS name` or `NetBIOS name` IP addresses are not supported.                                                    |
+| omitdclist.txt | Contains a list of domain controllers to be excluded from processing. Auditor skips all automated deactivation actions for inactive accounts (disable, move, delete) even if one domain controller is unavailable during scheduled task execution. Add the unavailable domain controllers to this file to ensure Auditor functions properly. | `Full DNS name` or `NetBIOS name` IP addresses aren't supported.                                                    |
 | omitoulist.txt | Contains a list of organizational units to be excluded from processing.                                                                                                                                                                                                                                                                      | `Path` `*OU=OUNAME*` For example: If the OU is "sampledomain.sample/sampling", the syntax should be: `*OU=sampling*` |

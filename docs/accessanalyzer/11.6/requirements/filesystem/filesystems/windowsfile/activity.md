@@ -6,11 +6,11 @@ sidebar_position: 20
 
 # Windows File Server Activity Auditing Configuration
 
-In order for Netwrix Access Analyzer to collect and store Windows file server activity, an activity monitor agent for Netwrix Activity Monitor must be deployed to the server and monitoring. See the [Single Activity Agent Deployment](https://docs.netwrix.com/docs/activitymonitor/9_0/admin/agents/overview) topic for additional information.
+For Netwrix Access Analyzer to collect and store Windows file server activity, an activity monitor agent for Netwrix Activity Monitor must be deployed to the server and monitoring. See the [Single Activity Agent Deployment](https://docs.netwrix.com/docs/activitymonitor/9_0/admin/agents/overview) topic for additional information.
 
 ## Windows File System (Standard)
 
-Configure the credential(s) with the following rights on the Windows host(s):
+Configure the credentials with the following rights on the Windows hosts:
 
 - For **Local** or **Proxy as a Service Mode** Scans: 
   - Group membership in both of the following local groups:
@@ -21,7 +21,7 @@ Configure the credential(s) with the following rights on the Windows host(s):
     - Local Administrators
   - Granted the “Log on as a batch” privilege
   - Remote Registry service must be enabled on the host where the applet is deployed (Applet or Proxy w/ Applet scans) to determine the system platform and where to deploy the applet.
-  - The local policy, “Network access: Do not allow storage of passwords and credentials for network authentication” must be disabled in order for the applet to start.
+  - The local policy, “Network access: Don't allow storage of passwords and credentials for network authentication” must be disabled for the applet to start.
 - Granted the "Network access: Restrict clients allowed to make remote calls to SAM" Local Policies > Security Options privilege
 - Granted the “Backup files and directories” local policy privilege
 - The service account in the credential profile requires access to the admin share (e.g. `C$`) where the `sbtfilemon.ini` file exists
@@ -29,10 +29,10 @@ Configure the credential(s) with the following rights on the Windows host(s):
 
 ## Windows File System Clusters
 
-In order to monitor a Windows File System Cluster, an Activity Agent needs to be deployed on all nodes that comprise the Windows File System Cluster.
+to monitor a Windows File System Cluster, an Activity Agent needs to be deployed on all nodes that comprise the Windows File System Cluster.
 
 :::note
-It is necessary to target the Windows Cluster File Server Role Server (name clients connect to) when running a File System scan against a Windows File System Cluster.
+Target the Windows Cluster File Server Role Server (name clients connect to) when running a File System scan against a Windows File System Cluster.
 :::
 
 Configure credentials according to the Windows File System (Standard) permissions on all cluster nodes that comprise the cluster, with the following additional requirements:
@@ -43,7 +43,7 @@ Configure credentials according to the Windows File System (Standard) permission
 
 ### Host List Considerations
 
-It is necessary to target the Windows File Server Cluster (name of the cluster) of interest when running a File System scan against a Windows File System Cluster. Within the Master Host Table, there should be a host entry for the cluster as well as for each node. Additionally, each of these host entries must have the name of the cluster in the `WinCluster` column in the host inventory data. This may need to be updated manually.
+Target the Windows File Server Cluster (name of the cluster) of interest when running a File System scan against a Windows File System Cluster. Within the Master Host Table, there should be a host entry for the cluster as well as for each node. Additionally, each of these host entries must have the name of the cluster in the `WinCluster` column in the host inventory data. This may need to be updated manually.
 
 See the View/Edit section of the [Host Management Activities](https://docs.netwrix.com/docs/accessanalyzer/11_6/admin/hostmanagement/actions/overview) topic for additional information on host inventory.
 
@@ -53,7 +53,7 @@ The host targeted by the File System scans is only the host entry for the cluste
 
 :::note Example:
 
-The environment has a Windows File System Cluster named `ExampleCluster1` with three nodes named `ExampleNodeA`, `ExampleNodeB`, and `ExampleNodeC`. There would be four host entries in the Access Analyzer Master Host Table: `ExampleCluster1`, `ExampleNodeA`, `ExampleNodeB`, and `ExampleNodeC`. Each of these four entries would have the same value of the cluster name in the `WinCluster` column: `ExampleCluster1`. An additional entry containing the File Server Role Server name(s) should also be added, including the WinCluster name of the nodes. This File Server Role Server name will be our target host.
+The environment has a Windows File System Cluster named `ExampleCluster1` with three nodes named `ExampleNodeA`, `ExampleNodeB`, and `ExampleNodeC`. There would be four host entries in the Access Analyzer Master Host Table: `ExampleCluster1`, `ExampleNodeA`, `ExampleNodeB`, and `ExampleNodeC`. Each of these four entries would have the same value of the cluster name in the `WinCluster` column: `ExampleCluster1`. An additional entry containing the File Server Role Server names should also be added, including the WinCluster name of the nodes. This File Server Role Server name is the target host.
 :::
 
 ### Host Mapping

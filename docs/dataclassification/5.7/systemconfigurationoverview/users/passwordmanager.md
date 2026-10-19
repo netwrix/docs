@@ -6,9 +6,7 @@ sidebar_position: 30
 
 # Password Manager
 
-Use the Password Manager to automatically schedule password changes for service accounts that
-are being used to access external systems. This is particularly useful when there are business
-policies in place to change passwords on a rolling basis.
+Use the Password Manager to automatically schedule password changes for service accounts that access external systems. This is useful when your organization requires changing passwords on a rolling basis.
 
 ![passwordmanager_thumb_0_0](/images/dataclassification/5.7/security/passwordmanager_thumb_0_0.webp)
 

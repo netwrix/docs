@@ -7,7 +7,7 @@ sidebar_position: 20
 # Features > EX_Features Job
 
 The EX_Features job is comprised of data collection and a report that provides information around
-which features have been enabled or disabled on Mailboxes, such as ActiveSync, IMAP, POP and more.
+which features have been enabled or disabled on Mailboxes, such as ActiveSync, IMAP, POP, and more.
 
 :::info
 Schedule the Features Job Group to run weekly on any desired recurrence.

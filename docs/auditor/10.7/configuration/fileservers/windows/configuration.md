@@ -9,9 +9,6 @@ sidebar_position: 80
 Configure this Back up Files and Directories policy via the Local Security Policy Snap-in or using
 the Group Policy Management Console.
 
-Follow the steps to configure the Back up Files and Directories policy via the Local Security Policy
-Snap-in.
-
 **Step 1 –** On any domain controller in the target domain, open the Local Security Policy snap-in:
 navigate to Start > Windows Administrative Tools > Local Security Policy.
 
@@ -24,10 +21,7 @@ specify the user that you want to define this policy for.
 
 The policy is now configured.
 
-Follow the steps to configure the Back up Files and Directories policy using the Group Policy
-Management Console.
-
-**NOTE:** Perform this procedure only if the account selected for data collection is not a member of
+**NOTE:** Perform this procedure only if the account selected for data collection isn't a member of
 the Domain Admins group.
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:

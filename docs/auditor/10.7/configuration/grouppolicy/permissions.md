@@ -36,7 +36,7 @@ The account used for data collection must meet the following requirements:
     OR
 
 - The combination of the following rights and permissions if you plan to disable network traffic
-  compression for your monitoring plan or, for some reasons, do not want to add this account to the
+  compression for your monitoring plan or, for some reasons, don't want to add this account to the
   **Domain Admins** group:
 
     - **Manage auditing and security log** policy must be defined for this account.
@@ -60,7 +60,7 @@ The following is required if auto-backup is _enabled_ for the domain controller 
 
 ## Assign Permission to Read the Registry Key
 
-This permission is required only if the account selected for data collection is not a member of the
+This permission is required only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
 This permission should be assigned on each domain controller in the audited domain, so if your
@@ -71,9 +71,7 @@ Policy, or automatically using
 To assign permissions manually, use the Registry Editor snap-in or the Group Policy Management
 console.
 
-Assign Permission Via the Registry Editor Snap-in
-
-Follow the steps to assign permission via the Registry Editor snap-in:
+## Assign Permission Via the Registry Editor Snap-in
 
 **Step 1 –** On your target server, open Registry Editor: navigate to **Start > Run** and type
 _"regedit"_.
@@ -90,11 +88,7 @@ Set\Services\EventLog\Security_.
 **Step 6 –** For auditing Logon Activity, you also need to assign the Read permission to the
 _HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv_ registry key.
 
-To assign permission using the Group Policy Management console
-
-Assign Permission Using the Group Policy Management Console
-
-Follow the steps to assign permission using the Group Policy Management console:
+## Assign Permission Using the Group Policy Management Console
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools
@@ -143,9 +137,7 @@ about integration and supported data sources. In this case, the credentials will
 Netwrix Auditor. Instead, they will be managed by Netwrix Privilege Secure and provided on demand,
 ensuring password rotation or using temporary accounts for data collection.
 
-Follow the steps to use Netwrix Privilege Secure as an account for data collection.
-
-**Step 1 –** Select the desired item.
+**Step 1 –** Select the monitored item you want to configure.
 
 **Step 2 –** In the item configuration menu, select Netwrix Privilege Secure as an option for data
 collection.
@@ -153,9 +145,9 @@ collection.
 ![npsdatacollectingaccount](/images/auditor/10.7/configuration/grouppolicy/npsdatacollectingaccount.webp)
 
 **Step 3 –** Select the type of the Access Policy you want to use in Netwrix Privilege Secure.
-Credential-based is the default option. Refer to the
-[Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
-documentation to learn more about Access Policies.
+Credential-based is the default option. See the
+[Netwrix Privilege Secure documentation](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
+for details about Access Policies.
 
 In this case, you need to provide the username of the account managed by Netwrix Privilege Secure,
 and to which Netwrix Auditor has the access through a Credential-based access policy.
@@ -166,7 +158,7 @@ sources.
 ![npsdatacollectingaccountresourced](/images/auditor/10.7/configuration/grouppolicy/npsdatacollectingaccountresourced.webp)
 
 The second option is Resource-based. To use this option, you need to provide the Activity and
-Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Make sure
+Resource names, assigned to Netwrix Auditor in the corresponding Resource-based policy. Ensure
 that you specified the same names as in Netwrix Privilege Secure.
 
 The Resource name in this case is where the activity will be performed. For example, if you grant

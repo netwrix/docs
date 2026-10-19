@@ -10,7 +10,7 @@ The Host Discovery Queries Pane contains a list of previously-configured queries
 
 ![Host Discovery Queries Pane](/images/accessanalyzer/11.6/admin/hostdiscovery/queries.webp)
 
-The list of previously configured queries is provided in a table format with the following columns:
+The list of previously configured queries appears in a table format with the following columns:
 
 - Name – Displays the name assigned to the query during creation
 - Query Source – Identifies where the query searches for hosts
@@ -27,13 +27,13 @@ The list of previously configured queries is provided in a table format with the
     - Snapshot – Only shows host found during the most recent query execution
 
     :::note
-    The Snapshot mode is configured on the Options page of the Host Discovery Wizard.
+    Configure Snapshot mode on the Options page of the Host Discovery Wizard.
     :::
 
 
 ## View Hidden Columns
 
-Follow the steps to view the hidden columns in the table:
+To view the hidden columns in the table:
 
 **Step 1 –** Right-click a header in the table, which opens a context menu.
 
@@ -47,7 +47,7 @@ Follow the steps to view the hidden columns in the table:
 
 ![Drag hidden colum into table](/images/accessanalyzer/11.6/admin/hostdiscovery/queriesaddhiddencolumn.webp)
 
-**Step 4 –** Drag and drop the desired column between any header of the table.
+**Step 4 –** Drag and drop the column you want between any header of the table.
 
 ![Host Discovery Queries table with column added](/images/accessanalyzer/11.6/admin/hostdiscovery/querieshiddencolumnadded.webp)
 

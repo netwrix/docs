@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # SQL: Filter
 
-The Filter page is where the query can be scoped to target specific databases or instances. It is a
+Use the Filter page to scope the query to target specific databases or instances. It's a
 wizard page for the categories of:
 
 - Permissions > Permissions Collection
@@ -46,14 +46,14 @@ wizard page for the categories of:
 
 - Utilities – Remove Storage Data
 
-It is necessary for the SA_SQL_Instances table to be populated before available databases/instances
-can populate the Available Server audits list. For Oracle and SQL, the SA_SQL_Instances table is
-populated through an instance discovery query. See the
+You must populate the SA_SQL_Instances table before available databases/instances can populate the
+Available Server audits list. For Oracle and SQL, an instance discovery query populates the
+SA_SQL_Instances table. See the
 [0-SQL_InstanceDiscovery Job](/docs/accessanalyzer/11.6/solutions/databases/sql/collection/0-sql_instancediscovery.md)
-topic for additional information. For PostgreSQL and MySQL Scans, the SA_SQL_Instances table is
-populated manually in the Manage Connections window. See the
-[Manage Connections Window](#manage-connections-window) topic for additional information. Once the
-table has been populated, a query can be scoped.
+topic for additional information. For PostgreSQL and MySQL scans, you populate the
+SA_SQL_Instances table manually in the Manage Connections window. See the
+[Manage Connections Window](#manage-connections-window) topic for additional information. After you
+populate the table, you can scope a query.
 
 ![SQL Data Collector Wizard Filter page](/images/accessanalyzer/11.6/admin/datacollector/sql/filter.webp)
 
@@ -72,13 +72,13 @@ The configurable filter options are:
 
     - Select from the available list and click **Add**
 
-- Selected databases or instances — Displays selected database objects for which the query has been
-  scoped. Additional options include:
+- Selected databases or instances — Displays selected database objects the query is scoped to.
+  Additional options include:
 
     - Remove — Removes the selected database/instance from the query
     - Include — Reverts an exclusion. By default, all sub tables are included.
     - Exclude — Excludes selected databases/instances and displays them in red
-    - Add Custom Filter — Opens the Add custom filter window to build a custom filter to be applied
+    - Add Custom Filter — Opens the Add custom filter window to build a custom filter to apply
       to the selected databases/instances. See the
       [Add Custom Filter Window](#add-custom-filter-window) topic for additional information.
     - Import CSV — Import a list of databases/instances from a CSV file
@@ -86,7 +86,7 @@ The configurable filter options are:
 
 ## Manage Connections Window
 
-The Manage Connections window enables you to add database instances to search. Click the
+Use the Manage Connections window to add database instances to search. Click the
 **Connections** button to open it.
 
 ![Manage Connections window](/images/accessanalyzer/11.6/admin/datacollector/sql/manageconnections.webp)
@@ -99,8 +99,8 @@ Select a row in the table to edit that instance, or create a new instance to add
 - Database System — Select from a list of available databases
 - Service Name — Name of the service
 - Host — Name or IP address of the host where the database is located
-- Port Number — Port number for the database. If a non-default port is being used, it should be
-  specified in the Port Number section.
+- Port Number — Port number for the database. If you use a non-default port, specify it in the
+  Port Number section.
 - Default Database — Account used to access the database. Admin is recommended.
 - Enable impersonation — Select to enable impersonation
 - Service Type— If applicable, select whether the service type is **Service** or **SID**
@@ -127,7 +127,7 @@ you to apply a custom scoping filter to the query.
 
 ![Add custom filter window](/images/accessanalyzer/11.6/admin/datacollector/sql/addcustomfilter.webp)
 
-Type the filter in the window and click Save. The following characters can be used in the filter:
+Enter the filter in the window and click Save. You can use the following characters in the filter:
 
 - Forward slash (/) – Path separator
 - Asterisk (\*) – Wild card for any combination of characters

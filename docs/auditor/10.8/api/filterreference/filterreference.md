@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Reference for Creating Search Parameters File
 
-Review this section to learn more about operators and how to apply them to Activity Record filters
+This section describes how to use operators and how to apply them to Activity Record filters
 to create a unique search. You can:
 
 - Add different filters to your search. Search results will be sorted by all selected filters since

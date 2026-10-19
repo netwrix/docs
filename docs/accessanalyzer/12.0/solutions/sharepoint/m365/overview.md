@@ -7,7 +7,7 @@ sidebar_position: 100
 # 8.M365 Job Group
 
 The 8.M365 Job Group generates summary and detail reports of SharePoint Activity on the specified
-Teams sites. These reports can be used for identifying file, folder, and user related activity
+Teams sites. Use these reports to identify file, folder, and user related activity
 across your SharePoint environment.
 
 ![8.M365 Job Group in the Jobs Tree](/images/accessanalyzer/12.0/solutions/sharepoint/m365/jobstree.webp)
