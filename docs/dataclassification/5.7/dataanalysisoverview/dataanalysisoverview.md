@@ -9,7 +9,7 @@ sidebar_position: 50
 **Data Analysis** section in Netwrix Data Classification management console includes Reports and
 DSAR areas:
 
-- To view reports on product operation, indexing and classification results, click Reports.
+- To view reports on product operation, indexing, and classification results, click Reports.
 - To use DSAR search capabilities, click **DSAR**.
 
 ![data_analysis_thumb_0_0](/images/dataclassification/5.7/admin/reporting/data_analysis_thumb_0_0.webp)

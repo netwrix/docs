@@ -8,10 +8,11 @@ keywords:
 sidebar_label: How EasyLock Works with EPP
 tags:
   - device-control-and-access-management
+  - kb
 title: "How EasyLock Software Works with the Endpoint Protector Server and Client Software"
 knowledge_article_id: kA0Qk0000002BE3KAM
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How EasyLock Software Works with the Endpoint Protector Server and Client Software

@@ -9,8 +9,8 @@ sidebar_position: 10
 The Convert-Group commandlet converts an unmanaged group to a Smart Group.
 
 Directory Manager Management Shell prompts for the identity of the unmanaged group you want to
-convert into a Smart Group. After executing, the commandlet displays the status that update is
-successful as shown in the following snapshot:
+convert into a Smart Group. After executing, the commandlet displays a status indicating the update is
+successful, as in the snapshot:
 
 ![managementshell](/images/directorymanager/11.1/managementshell/group/managementshell.webp)
 

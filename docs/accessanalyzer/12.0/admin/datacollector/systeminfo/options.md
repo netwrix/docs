@@ -26,11 +26,11 @@ For the File Shares and Open File Shares categories:
 ![System Info Data Collector Wizard Options page for File Shares category](/images/accessanalyzer/12.0/admin/datacollector/systeminfo/optionsfileshares.webp)
 
 Select from the following options to control the depth of processing and the amount of information
-to be returned by the query:
+the query returns:
 
 - Include file level permissions
 
-    - Do not collect inherited file permissions
+    - Don't collect inherited file permissions
 
         - Return All Folders
 
@@ -38,7 +38,7 @@ to be returned by the query:
 
     - Limit returned subfolders depth to – Specify the number of levels
 
-- Size units for corresponding properties – Select the desired size unit:
+- Size units for corresponding properties – Select the size unit you want:
 
     - Bytes
     - KBytes

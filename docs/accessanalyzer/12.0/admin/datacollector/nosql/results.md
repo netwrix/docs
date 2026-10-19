@@ -6,11 +6,10 @@ sidebar_position: 60
 
 # NoSQL: Results
 
-The Results page is where the properties that will be gathered are selected. It is a wizard page for
-all of the categories.
+Select the properties to gather on the Results page. This wizard page applies to all categories.
 
 ![NoSQL Data Collector Wizard Results page](/images/accessanalyzer/12.0/admin/datacollector/nosql/results.webp)
 
-Properties can be selected individually, or the **Select All**, **Clear All**, and **Reset to
-Defaults** buttons can be used. All selected properties are gathered. Available properties vary
-based on the category selected.
+Select properties individually, or use the **Select All**, **Clear All**, and **Reset to
+Defaults** buttons. The data collector gathers all selected properties. Available properties vary
+based on the selected category.

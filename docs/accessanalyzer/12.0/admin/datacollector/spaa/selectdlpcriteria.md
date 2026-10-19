@@ -6,14 +6,14 @@ sidebar_position: 100
 
 # SPAA: Select DLP Criteria
 
-The Select Criteria page is where criteria to be used for discovering sensitive data are configured.
-It is a wizard page for the category of Scan For Sensitive Content.
+Use the Select Criteria page to configure criteria for discovering sensitive data. It's a wizard
+page for the category of Scan For Sensitive Content.
 
 :::warning
-Users should not change scans in a way that would result in less data being returned on
-a subsequent scan (i.e. scanning fewer web applications, scanning fewer site collections, or a
-shallower depth scan). Those resources not included in a subsequent scan are marked as deleted in
-the Tier 2 database and subsequently removed from the Tier 1 database.
+Don't change scans in a way that results in returning less data on a subsequent scan (i.e.
+scanning fewer web applications, scanning fewer site collections, or a shallower depth scan).
+Access Analyzer marks resources not included in a subsequent scan as deleted in the Tier 2
+database and later removes them from the Tier 1 database.
 :::
 
 
@@ -28,8 +28,8 @@ The options on the Select DLP Criteria page are:
   sensitive data criteria to scan for
 - Select All – Click **Select All** to enable all sensitive data criteria for scanning
 - Clear All – Click **Clear All** to remove all selections from the table
-- Select the checkboxes next to the sensitive data criteria options to enable it to be scanned for
-  during job execution
+- Select the checkboxes next to the sensitive data criteria options to include them in job
+  execution scans
 
 The table contains the following types of criteria:
 

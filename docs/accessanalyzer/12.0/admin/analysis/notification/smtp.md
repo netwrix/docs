@@ -24,13 +24,13 @@ The following options are available:
 - Subject – Specify a subject for the email. The subject can include field variables.
 
     :::info
-    If configuring a Notification analysis module for a pre-configured job, it is
-    recommended not to change the existing field variables.
+    If you configure a Notification analysis module for a pre-configured job, avoid changing the
+    existing field variables.
     :::
 
 
 - Insert Field – Select a source data column to add to the message body or subject line. Click the
-  drop-down to see a list of columns. Once the column displays in the field, click an arrow to
+  dropdown to see a list of columns. After the column displays in the field, click an arrow to
   insert the field.
 
     - Down arrow – Adds the selected source column to the message text
@@ -39,9 +39,9 @@ The following options are available:
 - Embed HTML Report – Embed a HTML report in the notification email. Click the Embed HTML Report
   button to navigate to the HTML file.
 - Show sample input source data – Opens the Sample Source Data window, containing sample input
-  source data as it currently exists in the database
-- Show dialog to set SMTP options – Opens the SMTP Options window, where SMTP global settings can be
-  overwritten through manual configuration
+ source data as it exists in the database
+- Show dialog to set SMTP options – Opens the SMTP Options window, where you can overwrite SMTP
+  global settings through manual configuration
 - Preview – Displays a preview of the email.
 
     :::note
@@ -49,9 +49,9 @@ The following options are available:
     :::
 
 
-- Clear Template – Clears all data from the subject and message boxes. Does not clear e-mail
+- Clear Template – Clears all data from the subject and message boxes. Doesn't clear e-mail
   addresses.
 - Text Box – Specify the text of the email message. The toolbar above the text box contains various
   icons providing access to text editing and formatting tools. To insert fields from Access
-  Analyzer, choose a field from the drop-down menu and click the Down arrow. Block tag formatting is
+  Analyzer, choose a field from the dropdown menu and click the Down arrow. Block tag formatting is
   supported.

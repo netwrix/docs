@@ -8,8 +8,8 @@ sidebar_position: 10
 
 To create a workflow, you have to specify the following:
 
-- **Object** - the object(s) - user, contact, group - to apply the workflow to.
-- **Event** - a create, edit, or delete event that, when performed for the object(s), would trigger
+- **Object** - the objects - user, contact, group - to apply the workflow to.
+- **Event** - a create, edit, or delete event that, when performed for the objects, would trigger
   the workflow.
 - **Field** - one or more fields (attributes) that the workflow would apply to. When the values of
   these attributes change for the object, an approval request is triggered.
@@ -31,9 +31,9 @@ Consider a workflow where:
 - Field: criteria
 - Approver: Group owner
 
-It implies that when a user edits the values stored in the _criteria_ attribute of a group, a
-workflow request is sent to the group owner, who is the workflow approver. Changes are applied after
-the request is approved.
+It implies that when a user edits the values stored in the _criteria_ attribute of a group,
+Directory Manager sends a workflow request to the group owner, who is the workflow approver.
+Directory Manager applies the changes after the approver approves the request.
 
 But if you add a filter as:
 
@@ -43,7 +43,7 @@ But if you add a filter as:
 | employee Type | Not Equals | manager |
 
 It implies that when a manager edits the value of the _criteria_ attribute, the change is effective
-immediately and this workflow does not apply. When a non-manager user changes the value of the
+immediately and this workflow doesn't apply. When a non-manager user changes the value of the
 attribute, it triggers the workflow.
 
 ## View the Workflows
@@ -52,15 +52,15 @@ attribute, it triggers the workflow.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Workflows** under **Settings** in the left pane. On the **Configure Workflows** tab of
-   the **Workflows** page, the following information is displayed for a workflow:
+   the **Workflows** page, the following information appears for a workflow:
 
     | Label       | Description                                                                                                                                                                                  |
     | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | Enable      | Shows whether a workflow is enabled or disabled Use the toggle button next to a workflow to enable or disable it.                                                                            |
     | Type        | A workflow has one of these types: <br /><ul><li>**System:** workflows that are defined by default for an identity store.</li><li>**User Defined:** workflows that are defined by users for an identity store.</li></ul> |
     | Name        | A descriptive name for a workflow that identifies the action the workflow audits                                                                                                             |
-    | Object(s)   | The directory object(s) the workflow applies to                                                                                                                                              |
-    | Approver(s) | The approver(s) specified for a workflow. Approver(s) are responsible for approving or denying the requests generated for the workflow.                                                      |
+    | Objects   | The directory objects the workflow applies to                                                                                                                                              |
+    | Approvers | The approvers specified for a workflow. Approvers are responsible for approving or denying the requests generated for the workflow.                                                      |
     | Event       | The event that triggers a workflow                                                                                                                                                           |
 
 4. You can perform the following actions:
@@ -79,41 +79,40 @@ attribute, it triggers the workflow.
    right corner.
 5. On the **Create Workflow** page, enter a name for the workflow In the **Name** box.
 6. Select one or more objects (User, Contact, Group) to apply the workflow to.
-7. In the **Events** drop-down list, select the event (Create, Edit, Delete) that will trigger the
+7. In the **Events** dropdown list, select the event (Create, Edit, Delete) that will trigger the
    workflow.
 
     :::note
     (1) For the Create event, you can define only one workflow for an object.  
-    (2) A workflow for the Group object with the Delete event will be triggered when the group is
+    (2) A workflow for the Group object with the Delete event triggers when the group is
     manually deleted.
     :::
 
 
-8. Select the **Mail Approval** check box to enable the approver to approve or deny a workflow
+8. Select the **Mail Approval** checkbox to enable the approver to approve or deny a workflow
    request from within the workflow email notification. These notifications contain the **Accept**
-   and **Deny** buttons. On clicking any of these, the approver is redirected and auto-authenticated
-   on the Directory Manager portal, where he or she can approve or deny the request.  
-   When this check box is not selected, the **Accept** and **Deny** buttons are not available in the
+   and **Deny** buttons. On clicking any of these, Directory Manager redirects and auto-authenticates the approver
+   on the Directory Manager portal, where the approver can approve or deny the request.  
+   When this checkbox isn't selected, the **Accept** and **Deny** buttons aren't available in the
    email notifications. Approvers have to sign into the Directory Manager portal to manage workflow
    requests.
-9. The **Approver Acceleration** check box applies if approver acceleration is enabled for the
+9. The **Approver Acceleration** checkbox applies if approver acceleration is enabled for the
    identity store. See the
    [Apply Approver Acceleration](approveracceleration.md#apply-approver-acceleration) topic.
 
     - To apply approver acceleration to this workflow, select the **Approver Acceleration** check
       box.
-    - To exempt this workflow from approver acceleration, clear this check box.
+    - To exempt this workflow from approver acceleration, clear this checkbox.
 
 10. Enter a brief description for the workflow in the **Description** box.
-11. In the **Portal URL** drop-down list, select a Directory Manager portal URL to include in the
+11. In the **Portal URL** dropdown list, select a Directory Manager portal URL to include in the
     workflow email notifications. The URL will redirect the recipients to the portal for taking
     action on a request, such as approve or deny it.  
     The list contains URLs of Directory Manager portals linked with the identity store.
-12. Click **Add Approver(s)** in the **Approver(s)** section to select the users and groups to
-    approve the requests generated for this workflow: The **Add Approver(s)** dialog box is
-    displayed.
+12. Click **Add Approvers** in the **Approvers** section to select the users and groups to
+    approve the requests generated for this workflow: The **Add Approvers** dialog box appears.
 
-    1. Fields on the **Add Approver(s)** dialog box vary, depending on the object and event
+    1. Fields on the **Add Approvers** dialog box vary, depending on the object and event
        selected. Then select one or more of the available options:
 
         | Option | Available For | Description |
@@ -122,9 +121,9 @@ attribute, it triggers the workflow.
         | Owner and Additional Owner of the Group | _Edit_ and _delete_ events of the _Group_ object | Select it to specify the group’s primary and additional owners as the request approvers. |
         | Manager of User | _Edit_ and _Delete_ events of the _User_ and _Contact_ objects | Select it to specify the user’s or contact’s primary manager as the request approver. |
         | Manager and Additional Manager of User | _Edit_ and _Delete_ events of the _User_ and _Contact_ objects | Select it to specify the user’s/contact’s primary and additional managers as the request approvers. |
-        | Search Container Include Sub-Containers Search box | For all objects and events | You can specify one or more users and groups as approvers. In case of a group, all its members are set as approvers. Specify a container to search for the desired object(s); then perform a search to locate and select the object. <br /><ul><li>Click the down arrow in the **Search Container** box and select a container to limit the search scope to it.</li><li>Select the **Include Sub-Containers** check box to include the sub-containers within the selected container to search for the object.</li><li>Enter a search string in the search box; objects starting with the string are displayed as you type. Click **Add** for an object to select it. <br />You can also perform an advanced search to locate the object. Click **Advanced** in the search box and use the search fields to enter a search string. On clicking **Search**, objects matching the string are displayed. Select the user or group you want to add as approver.</li></ul> |
+        | Search Container Include Sub-Containers Search box | For all objects and events | You can specify one or more users and groups as approvers. In case of a group, all its members are set as approvers. Specify a container to search for the objects you want; then perform a search to locate and select the object. <br /><ul><li>Click the down arrow in the **Search Container** box and select a container to limit the search scope to it.</li><li>Select the **Include Sub-Containers** checkbox to include the sub-containers within the selected container to search for the object.</li><li>Enter a search string in the search box; objects starting with the string appear as you type. Click **Add** for an object to select it. <br />You can also perform an advanced search to locate the object. Click **Advanced** in the search box and use the search fields to enter a search string. On clicking **Search**, objects matching the string appear. Select the user or group you want to add as approver.</li></ul> |
 
-    2. Click **Add** to close the **Add Approver(s)** dialog box.
+    2. Click **Add** to close the **Add Approvers** dialog box.
 
 13. Use the **Filters** section to specify a criterion; anything beyond that criterion will not
     trigger the workflow. For example, when you define the following filter:
@@ -135,23 +134,22 @@ attribute, it triggers the workflow.
     This workflow will trigger when a security group is deleted. However, when a group object with
     type other than ‘Security’ is deleted, this workflow will not trigger.
 
-    1. In the **Filter(s)** section, click **Add Filter(s)**. The **Add Filter** dialog box is
-       displayed.
+    1. In the **Filters** section, click **Add Filters**. The **Add Filter** dialog box appears.
     2. Select a schema attribute from the _field_ list.
     3. Select an operator to evaluate the attribute from the _operator_ list.
 
         - **Present** - returns objects that have a value specified for the attribute.
-        - **Not Present** - returns objects that do not have a value specified for the attribute.
+        - **Not Present** - returns objects that don't have a value specified for the attribute.
         - **Equals** - returns objects when the attribute value exactly matches the text you specify
           in the value box.
-        - **Not Equals** - returns objects when the attribute value does not match the text you
+        - **Not Equals** - returns objects when the attribute value doesn't match the text you
           specify in the value box.
 
-    4. Enter a value in the _value_ box (not case-sensitive). This box is not available for the
-       _Present_ and _Not Present_ operators, which are not comparison operators.
+    4. Enter a value in the _value_ box (not case-sensitive). This box isn't available for the
+       _Present_ and _Not Present_ operators, which aren't comparison operators.
     5. Click **Add** to close the **Add Filter** dialog box.
 
-14. Use the **Field(s)** section to specify the fields (attributes) that you want to apply the
+14. Use the **Fields** section to specify the fields (attributes) that you want to apply the
     workflow to. For example, when you define a workflow as:
 
     Object: User  
@@ -159,17 +157,17 @@ attribute, it triggers the workflow.
     Filter: Department = IT  
     Field: Email  
     This workflow will trigger when the Email field for a user object with department set to IT is
-    edited. It will not be triggered when the Email field is edited for a user that does not belong
+    edited. It will not be triggered when the Email field is edited for a user that doesn't belong
     to the IT department, or when a field other than Email is edited for a user in the IT
     department.
 
-    1. To add a field, click **Add Field(s)** in the **Field(s)** section.
-    2. On the **Add Fields** dialog box, select the check box for a field to add it to the workflow
+    1. To add a field, click **Add Fields** in the **Fields** section.
+    2. On the **Add Fields** dialog box, select the checkbox for a field to add it to the workflow
        and click **Add**.
 
     :::note
-    The **Field(s)** section is not available when _Create_ is selected in the **Events**
-    drop-down list.
+    The **Fields** section isn't available when _Create_ is selected in the **Events**
+    dropdown list.
     :::
 
 
@@ -183,20 +181,21 @@ attribute, it triggers the workflow.
 You can define Power-Automate settings for a workflow to link that workflow to a Power Automate
 flow.
 
-These settings enable you to connect to Power Automate from within a workflow (say Workflow1) and
-create a basic flow template there. On providing the URL of the flow template in Workflow1, the two
-are linked. As a result, the flow auto triggers when the Directory Manager workflow is triggered.
+Use these settings to connect to Power Automate from within a workflow (say Workflow1) and
+create a basic flow template there. When you provide the URL of the flow template in Workflow1,
+Directory Manager links the two. As a result, the flow auto triggers when the Directory Manager
+workflow triggers.
 
 For details on linking a workflow to a flow, see the
-[Trigger a Flow from Directory Manager ](integrate.md#trigger-a-flow-from-directory-manager) topic.
+[Trigger a Flow from Directory Manager ](powerautomate/integrate.md#trigger-a-flow-from-directory-manager) topic.
 
 ## Modify a Workflow
 
-Workflows for an identity store are differentiated by their type. Predefined workflows (also called
-system workflows), by default, are displayed at the top; user-defined workflows follow.
+Workflows for an identity store differ by type. Predefined workflows (also called
+system workflows) appear at the top by default; user-defined workflows follow.
 
-You can update all details for a user-defined workflow. A system workflow, however, can be modified
-to a limited extent. You can only update the approvers, enable/disable mail approval, enable/disable
+You can update all details for a user-defined workflow. You can modify a system workflow, however,
+only to a limited extent. You can only update the approvers, enable/disable mail approval, enable/disable
 approver acceleration, and link it to a Power Automate flow.
 
 **To modify a workflow:**
@@ -207,12 +206,12 @@ approver acceleration, and link it to a Power Automate flow.
 3. Click **Workflows** under **Settings** in the left pane.
 4. On the **Configure Workflows** tab of the **Workflows** page, click the ellipsis button for a
    workflow and select **Edit**.
-5. The **Edit Workflow** page is displayed. Follow steps 5-15 in the Create a New Workflow topic to
+5. The **Edit Workflow** page appears. Follow steps 5-15 in the Create a New Workflow topic to
    update the required information.
 6. To link this workflow to a Power Automate flow, click **Power Automate Settings** in the top
-   right corner; the **Power Automate Settings** dialog box is displayed. Follow step
-   [6](/docs/directorymanager/11.1/admincenter/workflow/integrate.md) and onwards in the
-   [Link an Identity Store Workflow to a Flow](integrate.md#link-an-identity-store-workflow-to-a-flow)
+   right corner; the **Power Automate Settings** dialog box appears. Follow step
+   [6](/docs/directorymanager/11.1/admincenter/workflow/powerautomate/integrate.md) and onwards in the
+   [Link an Identity Store Workflow to a Flow](powerautomate/integrate.md#link-an-identity-store-workflow-to-a-flow)
    topic to complete the task.
 7. After making the required changes, click **Update Workflow** on the **Edit Workflow** page to
    save the settings.
@@ -220,7 +219,7 @@ approver acceleration, and link it to a Power Automate flow.
 
 ## Enable or Disable a Workflow
 
-Workflows in an identity store can be disabled to prevent them from triggering.
+You can disable workflows in an identity store to prevent them from triggering.
 
 You can enable or disable a workflow in any of the following ways.
 
@@ -249,7 +248,7 @@ You can enable or disable a workflow in any of the following ways.
 ## Delete a User-defined Workflow
 
 Workflows in an identity store can have their type as _System_ or _User Defined_. You can delete
-user-defined workflows; system workflows cannot be deleted.
+user-defined workflows; you can't delete system workflows.
 
 **To delete a workflow:**
 

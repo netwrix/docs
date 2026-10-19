@@ -7,7 +7,7 @@ sidebar_position: 110
 # Customize Branding
 
 Netwrix Auditor allows customizing look and feel of your reports, search subscriptions and exported
-search results—you can skip Netwrix logo, add your company logo and title. However, users are not
+search results—you can skip Netwrix logo, add your company logo and title. However, users aren't
 empowered to customize layout or color scheme.
 
 Review the following for additional information:
@@ -26,11 +26,13 @@ You can customize branding for the following AuditIntelligence outputs:
 - Overview dashboard exported to pdf file;
 - Overview dashboard delivered in the subscription email.
 
-Please note the following rebranding limitations and requirements to the logo file:
+:::note
+Rebranding limitations and requirements for logo files:
+:::
 
-1. Make sure you have full Netwrix Auditor installation: Netwrix Auditor Server and Client to enable
+1. Ensure you have full Netwrix Auditor installation: Netwrix Auditor Server and Client to enable
    rebranding.
-2. Since Netwrix applies company's logo as is, keep in mind reasonable limitations of your logo
+2. Since Netwrix applies company's logo as is, be aware of reasonable limitations of your logo
    dimensions. You can find examples of appropriate logo files in the rebranding archive (file
    LLogo.webp). Re-size your logo and verify that subscriptions emails and pdf files look fine after
    rebranding.
@@ -40,7 +42,7 @@ Please note the following rebranding limitations and requirements to the logo fi
 
     - For subscription emails, just put the logo file to _%ALLUSERSPROFILE%\Netwrix
       Auditor\Branding_ and run the script to update email look and feel.
-    - For exported pdf files, make sure that the logo file is located in the default directory for
+    - For exported pdf files, ensure that the logo file is located in the default directory for
       each user that is going to work with exported search results, Risk Assessment and Overview
       dashboards. Otherwise, specify custom path to logo file. Default path to logo for exported
       files is _%LOCALAPPDATA%\Netwrix Auditor\Audit Intelligence\Resources_.
@@ -55,7 +57,7 @@ installed.
 
 **Step 3 –** Run SearchRebranding.ps1 considering the following:
 
-- Use default paths to logo files—Run the script and type your company name as the `report_title`.
+- Use default paths to logo files—Run the script and enter your company name as the `report_title`.
 - Use custom paths to logo files—run the script as follows:
 
     `SearchRebranding.ps1 -subscriptions_logo_path <custom_path> -export_logo_path <custom_path>`
@@ -75,7 +77,7 @@ By default, Netwrix Auditor reports look as follows:
 Report branding is customized on Netwrix Auditor Server side that means that all clients connected
 to this server will have the same look and feel for reports.
 
-Follow the steps to customize branding.
+To customize branding:
 
 **Step 1 –** On the computer where Auditor Server resides, navigate to _C:\Program Data\Netwrix
 Auditor\Rebranding_.
@@ -105,7 +107,7 @@ be updated.
 
 ![report_rebranding_result_thumb_0_0](/images/auditor/10.7/admin/settings/report_rebranding_result_thumb_0_0.webp)
 
-Follow the steps to restore original look.
+To restore original look:
 
 **Step 1 –** On the computer where Auditor Server resides, navigate to the script location.
 

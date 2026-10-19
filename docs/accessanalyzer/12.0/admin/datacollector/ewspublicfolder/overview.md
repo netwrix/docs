@@ -31,9 +31,9 @@ collector and the solution are available with a special Access Analyzer license.
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each thread
+requires a minimum of 2 additional GB of RAM per host. For example, if you configure the job to scan
+8 hosts at a time, the job requires an extra 16 GB of RAM (8x2=16).
 
 ## EWSPublicFolder Query Configuration
 
@@ -41,7 +41,7 @@ The EWSPublicFolder Data Collector is configured through the Exchange Public Fol
 Wizard. The wizard contains the following pages:
 
 :::note
-The Category selected may alter the subsequent steps displayed by the wizard.
+The category you select may alter the steps the wizard displays next.
 :::
 
 

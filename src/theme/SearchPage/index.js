@@ -4,7 +4,6 @@
 
 import React, {useCallback, useEffect, useMemo, useReducer, useRef, useState} from 'react';
 import {useHistory, useLocation} from '@docusaurus/router';
-import clsx from 'clsx';
 import algoliaSearchHelper from 'algoliasearch-helper';
 import {liteClient} from 'algoliasearch/lite';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
@@ -17,7 +16,7 @@ import {useAlgoliaThemeConfig, useSearchResultUrlProcessor} from '@docusaurus/th
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import {PRODUCTS} from '../../config/products';
-import styles from './styles.module.css';
+import {getVersionsForProducts, dedupeToLatestVersion, versionLabel} from '../searchUtils';
 
 // Safely strip HTML tags to plain text
 function stripHtmlTagsToText(input) {
@@ -47,14 +46,35 @@ const PRODUCT_OPTIONS = [
     return a.label.localeCompare(b.label);
 });
 
+// Keep only versions the current product selection actually offers. The Versions panel
+// only ever lists the selection's own versions — and for a single-version product it is a
+// plain label with no checkboxes — so a foreign version (from a stale URL param or
+// sessionStorage) would filter every result away with no control able to clear it.
+// '__all__' is a sentinel, not a version, and always survives; if pruning empties the
+// selection the filter has become meaningless, so fall back to '__all__'.
+// Returns the input array itself when there is nothing to prune. That keeps identity
+// stable, which matters twice: the effect that re-checks on every change would otherwise
+// never settle, and a deliberate "uncheck every version" ([]) must not be rewritten to
+// '__all__' — that would re-check the whole list under the user.
+function pruneVersions(versions, selectedProducts) {
+    const valid = new Set(getVersionsForProducts(selectedProducts));
+    const cleaned = versions.filter(v => v === '__all__' || valid.has(v));
+    if (cleaned.length === versions.length) return versions;
+    return cleaned.length > 0 ? cleaned : ['__all__'];
+}
+
 // Checkbox-based multi-select component
-function MultiSelect({label, options, selectedValues, onChange}) {
+function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHeight, sizeScale = 1}) {
     // options[0] is the "All products" sentinel — skip it for the checkbox list
     const productOptions = options.filter(o => o.value !== '__all__');
     const allSelected = selectedValues.includes('__all__');
     const noneSelected = selectedValues.length === 0;
     const someSelected = !allSelected && !noneSelected;
 
+    // Hooks must run on every render — the option count changes at runtime (the
+    // Versions list re-renders with a different product's versions), so the
+    // single-option early return below has to sit after them or React throws
+    // "Rendered fewer hooks than expected".
     const selectAllRef = useRef(null);
 
     useEffect(() => {
@@ -63,6 +83,40 @@ function MultiSelect({label, options, selectedValues, onChange}) {
             if (!someSelected) selectAllRef.current.indeterminate = false;
         }
     }, [someSelected]);
+
+    // With only one real option, there's nothing to filter — show it as a
+    // plain, always-selected label instead of a confusing single-row checkbox list.
+    if (productOptions.length === 1) {
+        return (
+            <div style={{display: 'flex', flexDirection: 'column', flexShrink: 0, marginTop: topMargin}}>
+                {/* A div, not a <label> — this branch renders static text, so there is no
+                    control for a label element to name. */}
+                <div style={{marginBottom: '8px', fontWeight: 'bold'}}>
+                    {label}
+                </div>
+                <div style={{
+                    border: '2px solid var(--ifm-color-emphasis-300)',
+                    borderRadius: '8px',
+                    background: 'var(--ifm-background-color)',
+                    padding: '4px 10px',
+                    fontSize: '13px',
+                    color: 'var(--ifm-color-emphasis-700)',
+                }}>
+                    {productOptions[0].label}
+                </div>
+                {label === 'Versions' && (
+                    <p style={{
+                        marginTop: '6px',
+                        marginBottom: 0,
+                        fontSize: '12px',
+                        color: 'var(--ifm-color-emphasis-600)',
+                    }}>
+                        This product only has one version in documentation.
+                    </p>
+                )}
+            </div>
+        );
+    }
 
     function handleSelectAll() {
         if (allSelected && !someSelected) {
@@ -95,13 +149,14 @@ function MultiSelect({label, options, selectedValues, onChange}) {
         background: 'var(--ifm-background-color)',
         flex: 1,
         minHeight: 0,
+        maxHeight,
     };
 
     const rowStyle = {
         display: 'flex',
         alignItems: 'center',
         gap: '8px',
-        padding: '4px 10px',
+        padding: `${4 * sizeScale}px 10px`,
         cursor: 'pointer',
         fontSize: '13px',
         lineHeight: '1.3',
@@ -123,7 +178,7 @@ function MultiSelect({label, options, selectedValues, onChange}) {
     };
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0}}>
+        <div style={{display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, marginTop: topMargin}}>
             <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold', flexShrink: 0}}>
                 {label}
             </label>
@@ -163,45 +218,63 @@ function MultiSelect({label, options, selectedValues, onChange}) {
     );
 }
 
-function ToggleSwitch({checked, onChange, small}) {
-    const width = small ? 32 : 48;
-    const height = small ? 18 : 26;
-    const thumbSize = small ? 12 : 18;
-    const thumbOffset = small ? 3 : 4;
-    const thumbOn = width - thumbSize - thumbOffset;
+// A single search hit. The product/version badge carries the context the grouped
+// headings used to provide, so the flat (relevance-ordered) view keeps it visible.
+function SearchResultItem({item: {title, url, summary, breadcrumbs, product, version}}) {
     return (
-        <button
-            type="button"
-            role="switch"
-            aria-checked={checked}
-            onClick={(e) => { e.preventDefault(); onChange(!checked); }}
+        <article
             style={{
-                position: 'relative',
-                display: 'inline-flex',
-                alignItems: 'center',
-                width: `${width}px`,
-                height: `${height}px`,
-                borderRadius: `${height / 2}px`,
-                background: checked ? 'var(--ifm-color-primary)' : 'var(--ifm-color-emphasis-400)',
-                border: 'none',
-                cursor: 'pointer',
-                padding: 0,
-                flexShrink: 0,
-                transition: 'background 0.2s ease',
+                marginBottom: '16px',
+                paddingBottom: '12px',
+                borderBottom: '1px solid var(--ifm-color-emphasis-200)',
             }}
         >
-            <span style={{
-                position: 'absolute',
-                top: `${thumbOffset}px`,
-                left: checked ? `${thumbOn}px` : `${thumbOffset}px`,
-                width: `${thumbSize}px`,
-                height: `${thumbSize}px`,
-                borderRadius: '50%',
-                background: 'white',
-                transition: 'left 0.2s ease',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
-            }} />
-        </button>
+            {product && (
+                <span className="badge badge--secondary" style={{display: 'inline-block', marginBottom: '8px'}}>
+                    {version ? `${product} ${version}` : product}
+                </span>
+            )}
+
+            <Heading
+                as="h3"
+                style={{
+                    fontSize: '18px',
+                    marginBottom: '8px',
+                    fontWeight: '600',
+                }}
+            >
+                <Link to={url} dangerouslySetInnerHTML={{__html: title}} />
+            </Heading>
+
+            {breadcrumbs.length > 0 && (
+                <nav aria-label="breadcrumbs">
+                    <ul
+                        className="breadcrumbs"
+                        style={{fontSize: '13px', marginBottom: '8px'}}
+                    >
+                        {breadcrumbs.map((html, index) => (
+                            <li
+                                key={index}
+                                className="breadcrumbs__item"
+                                dangerouslySetInnerHTML={{__html: html}}
+                            />
+                        ))}
+                    </ul>
+                </nav>
+            )}
+
+            {summary && (
+                <p
+                    style={{
+                        color: 'var(--ifm-color-emphasis-700)',
+                        margin: 0,
+                        fontSize: '14px',
+                        lineHeight: '1.6',
+                    }}
+                    dangerouslySetInnerHTML={{__html: summary}}
+                />
+            )}
+        </article>
     );
 }
 
@@ -273,6 +346,7 @@ function SearchPageContent() {
     const urlParams = new URLSearchParams(location.search);
     const queryFromUrl = urlParams.get('q') || '';
     const productsFromUrl = urlParams.get('products')?.split(',').filter(Boolean) || [];
+    const versionsFromUrl = urlParams.get('versions')?.split(',').filter(Boolean) || [];
     const resultsPerPageFromUrl = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
     const pageFromUrl = parseInt(urlParams.get('page'), 10) || 1;
 
@@ -280,83 +354,83 @@ function SearchPageContent() {
     // Initialize from URL if present, otherwise from localStorage
     const [selectedProducts, setSelectedProducts] = useState(() => {
         if (productsFromUrl.length > 0) return productsFromUrl;
-        if (typeof window === 'undefined') return [];
+        if (typeof window === 'undefined') return ['__all__'];
         const saved = sessionStorage.getItem('docs_product_filter');
         try {
-            return saved ? JSON.parse(saved) : [];
+            const parsed = saved ? JSON.parse(saved) : [];
+            if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
+            return parsed;
         } catch {
-            return [];
+            return ['__all__'];
         }
+    });
+    // Initialize from URL if present, otherwise from sessionStorage. Both can name a
+    // version the selected product doesn't have, so prune here rather than letting the
+    // first search go out with a filter the UI can't clear.
+    const [selectedVersions, setSelectedVersions] = useState(() => {
+        if (versionsFromUrl.length > 0) return pruneVersions(versionsFromUrl, selectedProducts);
+        if (typeof window === 'undefined') return ['__all__'];
+        const saved = sessionStorage.getItem('docs_version_filter');
+        try {
+            const parsed = saved ? JSON.parse(saved) : [];
+            if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
+            return pruneVersions(parsed, selectedProducts);
+        } catch { return ['__all__']; }
     });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
 
-    // Typo tolerance — off by default, shared with SearchBar via sessionStorage + events
-    const [typoTolerance, setTypoTolerance] = useState(() => {
-        if (typeof window === 'undefined') return false;
-        const saved = sessionStorage.getItem('docs_typo_tolerance');
-        try {
-            return saved ? JSON.parse(saved) : false;
-        } catch {
-            return false;
-        }
-    });
+    const availableVersions = useMemo(() => getVersionsForProducts(selectedProducts), [selectedProducts]);
 
-    // Track if we're restoring from URL (e.g., browser back button)
-    const restoringFromUrl = useRef(false);
-    const targetPageRef = useRef(null);
+    const isSingleProductSelected = useMemo(() => {
+        return selectedProducts.filter(p => p !== '__all__' && p !== '__none__').length === 1;
+    }, [selectedProducts]);
+
+    // Clear orphan versions when products change. Synchronous here so the interactive path
+    // never fires a search with the outgoing selection's versions.
+    const handleProductChange = useCallback((newProducts) => {
+        setSelectedProducts(newProducts);
+        setSelectedVersions(prev => pruneVersions(prev, newProducts));
+    }, []);
+
+    // Backstop for every path that sets versions without going through
+    // handleProductChange: first mount, and the location.search effect below (browser
+    // back/forward, or arriving from the search modal). pruneVersions returning its input
+    // unchanged is what stops this from looping on its own update.
+    useEffect(() => {
+        setSelectedVersions(prev => pruneVersions(prev, selectedProducts));
+    }, [selectedProducts, selectedVersions]);
+
+    // Track if we're restoring from URL (e.g., browser back button).
+    // Initialize from pageFromUrl so landing on /search?page=3 works
+    // even though the location.search effect skips initial mount.
+    const restoringFromUrl = useRef(pageFromUrl > 1);
+    const targetPageRef = useRef(pageFromUrl > 1 ? pageFromUrl - 1 : null);
     const isInternalNavigation = useRef(false);
+    const isInitialMount = useRef(true);
 
-    // All sorted results for client-side pagination
-    const allItemsRef = useRef([]);
-
-    // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
+    // Sync selectedProducts to sessionStorage
     useEffect(() => {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
-            // Dispatch custom event for same-tab synchronization
-            window.dispatchEvent(new CustomEvent('productFilterChange', {
-                detail: {products: selectedProducts}
-            }));
         }
     }, [selectedProducts]);
 
-    // Listen for filter changes from SearchBar modal (same-tab sync)
-    useEffect(() => {
-        const handleFilterChange = (e) => {
-            const newProducts = e.detail.products;
-            // Avoid infinite loop by checking if products actually changed
-            if (JSON.stringify(newProducts) !== JSON.stringify(selectedProducts)) {
-                setSelectedProducts(newProducts);
-            }
-        };
-        window.addEventListener('productFilterChange', handleFilterChange);
-        return () => window.removeEventListener('productFilterChange', handleFilterChange);
-    }, [selectedProducts]);
-
-    // Sync typoTolerance to sessionStorage and dispatch event for same-tab sync
+    // Sync selectedVersions to sessionStorage
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            sessionStorage.setItem('docs_typo_tolerance', JSON.stringify(typoTolerance));
-            window.dispatchEvent(new CustomEvent('typoToleranceChange', {
-                detail: {typoTolerance},
-            }));
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(selectedVersions));
         }
-    }, [typoTolerance]);
+    }, [selectedVersions]);
 
-    // Listen for typo tolerance changes from SearchBar modal (same-tab sync)
-    useEffect(() => {
-        const handler = (e) => {
-            const newVal = e.detail.typoTolerance;
-            if (newVal !== typoTolerance) {
-                setTypoTolerance(newVal);
-            }
-        };
-        window.addEventListener('typoToleranceChange', handler);
-        return () => window.removeEventListener('typoToleranceChange', handler);
-    }, [typoTolerance]);
 
-    // Update state when URL changes (e.g., when navigating from search modal or browser back)
+    // Update state when URL changes (e.g., browser back/forward)
+    // Skips initial mount — useState initializers already read URL params and sessionStorage
     useEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            return;
+        }
+
         // Skip if this was an internal navigation (we triggered the URL change ourselves)
         if (isInternalNavigation.current) {
             isInternalNavigation.current = false;
@@ -367,11 +441,13 @@ function SearchPageContent() {
         const urlParams = new URLSearchParams(location.search);
         const newQuery = urlParams.get('q') || '';
         const newProducts = urlParams.get('products')?.split(',').filter(Boolean) || [];
+        const newVersions = urlParams.get('versions')?.split(',').filter(Boolean) || [];
         const newResultsPerPage = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
         const newPage = parseInt(urlParams.get('page'), 10) || 1;
 
         setSearchQuery(newQuery);
-        setSelectedProducts(newProducts);
+        setSelectedProducts(newProducts.length > 0 ? newProducts : ['__all__']);
+        setSelectedVersions(newVersions.length > 0 ? newVersions : ['__all__']);
         setResultsPerPage(newResultsPerPage);
 
         // Store target page for restoration
@@ -387,7 +463,6 @@ function SearchPageContent() {
     const initialSearchResultState = {
         items: [],
         query: null,
-        totalResults: null,
         totalMatches: null,
         totalPages: null,
         lastPage: null,
@@ -406,19 +481,7 @@ function SearchPageContent() {
                     if (searchQuery !== data.value.query) {
                         return prevState;
                     }
-                    return {
-                        ...data.value,
-                        items: data.value.items, // Show only current page
-                    };
-                case 'setPage':
-                    return {
-                        ...prevState,
-                        items: data.value.items,
-                        lastPage: data.value.lastPage,
-                        totalPages: data.value.totalPages,
-                        hasMore: data.value.hasMore,
-                        loading: false,
-                    };
+                    return {...data.value};
                 default:
                     return prevState;
             }
@@ -430,108 +493,88 @@ function SearchPageContent() {
     const algoliaHelper = useMemo(
         () =>
             algoliaSearchHelper(algoliaClient, indexName, {
-                hitsPerPage: 1000, // Fetch all results at once for client-side sorting/pagination
-                advancedSyntax: true,
-                disjunctiveFacets: ['language'], // Only language facet exists in index
+                distinct: true, // Match the modal (docusaurus.config.js) — dedupe per URL
+                // The index does not return these by default. They are the same fields the
+                // product/version filters filter on, so the badge cannot disagree with the
+                // filter. _highlightResult and _snippetResult are unaffected by this list.
+                attributesToRetrieve: ['url', 'product_name', 'product_version'],
             }),
         [algoliaClient, indexName],
     );
 
-    algoliaHelper.on('result', ({results: {query, hits, page, nbHits, nbPages, facets}}) => {
+    // makeSearch is defined below, but handleResult needs it to re-fetch a clamped page when a
+    // restored ?page=N overshoots the result set. A ref breaks the definition cycle.
+    const makeSearchRef = useRef(null);
+
+    const handleResult = useCallback(({results: {query, hits, nbHits, page, nbPages}, state}) => {
         if (query === '' || !Array.isArray(hits)) {
             searchResultStateDispatcher({type: 'reset'});
             return;
         }
 
+        // A restored or stale ?page=N can point past the end (the result set shrank since the
+        // link was made). Algolia returns an empty page — and for a large overshoot, nbPages:0 —
+        // which would render no pagination controls: a dead end. Recover to the first page, which
+        // always holds the most relevant hits. Guarding on page > 0 avoids looping on a query
+        // that genuinely has no results (page 0 empty stays empty).
+        if (hits.length === 0 && page > 0) {
+            makeSearchRef.current?.(0);
+            return;
+        }
 
         const sanitizeValue = (value) =>
             value.replace(/algolia-docsearch-suggestion--highlight/g, 'search-result-match');
 
-        // Extract product and version from URL and filter client-side
-        const allItems = hits.map(({url, _highlightResult: {hierarchy}, _snippetResult: snippet = {}, product_name}) => {
-            const titles = Object.keys(hierarchy).map((key) => sanitizeValue(hierarchy[key].value));
-            const breadcrumbs = [...titles];
-            const title = titles.pop();
+        // makeSearch enforces the activation rule, so a product_version facet on this
+        // request means a real version filter was active (R3) — de-dupe off. Gating on
+        // the response's own request state (not current UI state) means a filter change
+        // with a response in flight can never mis-gate de-dupe.
+        const versionFilterActive = (state.facetFilters || []).some(
+            (f) => (Array.isArray(f) ? f : [f]).some((x) => String(x).startsWith('product_version:')));
+        const pageHits = versionFilterActive ? hits : dedupeToLatestVersion(hits);
 
-            // Extract product and version from URL path like /docs/auditor/10.8/...
-            let product = product_name;
-            let version = null;
-            let productId = null;
-
-            // Try to match: /docs/{product}/{version}/ or /docs/kb/{product}/
-            const urlMatch = url.match(/\/docs\/(?:kb\/)?([^/]+)(?:\/([^/]+))?/);
-            if (urlMatch) {
-                productId = urlMatch[1];
-                const versionPart = urlMatch[2];
-
-                // Map product ID to display name
-                const productConfig = PRODUCTS.find(p => p.id === productId);
-                if (productConfig) {
-                    product = productConfig.name;
-
-                    // Convert version from URL format (10_8) to display format (10.8)
-                    if (versionPart && versionPart !== 'kb') {
-                        version = versionPart.replace(/_/g, '.');
-                    }
-                }
-            }
-
-            // Fallback: try to extract product from breadcrumbs
-            if (!product && breadcrumbs.length > 0) {
-                product = stripHtmlTagsToText(breadcrumbs[0]);
-            }
-            if (!product) {
-                product = 'Unknown';
-            }
+        const items = pageHits.map(({url, _highlightResult: {hierarchy}, _snippetResult: snippet = {}, product_name, product_version}) => {
+            const levels = Object.keys(hierarchy).map((key) => sanitizeValue(hierarchy[key].value));
 
             return {
-                title,
+                title: levels[levels.length - 1],
                 url: processSearchResultUrl(url),
                 summary: snippet.content ? `${sanitizeValue(snippet.content.value)}...` : '',
-                breadcrumbs,
-                product,
-                version,
-                productId,
-                originalUrl: url,
+                // lvl0 is already the badge and the deepest level is already the title, so the
+                // breadcrumb is only what sits between them — otherwise every hit prints its
+                // product and its title twice.
+                breadcrumbs: levels.slice(1, -1),
+                // Straight from the index. Deriving these from the URL instead meant a section
+                // name could be mistaken for a version ("1Secure admin"), and single-version
+                // products rendered their sentinel version ("Identity Manager current").
+                product: product_name || stripHtmlTagsToText(levels[0]) || 'Unknown',
+                version: product_version && product_version !== 'current' ? product_version : null,
             };
         });
-
-        // Sort all results by product name alphabetically so products don't split across pages
-        allItems.sort((a, b) => (a.product || '').localeCompare(b.product || ''));
-
-        // Store all sorted results for client-side pagination
-        allItemsRef.current = allItems;
-
-        // Determine which page to display (URL restore or start at 0)
-        const displayPage = (restoringFromUrl.current && targetPageRef.current !== null)
-            ? targetPageRef.current
-            : 0;
-        restoringFromUrl.current = false;
-        targetPageRef.current = null;
-
-        const totalPages = Math.ceil(allItems.length / resultsPerPage);
-        const start = displayPage * resultsPerPage;
-        const items = allItems.slice(start, start + resultsPerPage);
 
         searchResultStateDispatcher({
             type: 'update',
             value: {
                 items,
                 query,
-                totalResults: allItems.length,
                 totalMatches: nbHits,
-                totalPages,
-                lastPage: displayPage,
-                hasMore: displayPage + 1 < totalPages,
+                totalPages: nbPages,
+                lastPage: page,
+                hasMore: page + 1 < nbPages,
                 loading: false,
             },
         });
-    });
+    }, [processSearchResultUrl]);
 
-    // Pagination is now controlled by Previous/Next buttons instead of infinite scroll
+    // Register the result handler once per helper. Registering during render would add a new
+    // listener on every re-render, each firing with a stale closure.
+    useEffect(() => {
+        algoliaHelper.on('result', handleResult);
+        return () => algoliaHelper.removeListener('result', handleResult);
+    }, [algoliaHelper, handleResult]);
 
     const makeSearch = useCallback(
-        () => {
+        (pageNum = 0) => {
             // Build facetFilters with product filters (matching SearchBar logic)
             const facetFilters = [`language:${currentLocale}`];
 
@@ -541,38 +584,39 @@ function SearchPageContent() {
                 facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
             }
 
-            // Always fetch page 0 — all results come back at once for client-side pagination
+            // A version filter is only active while the Versions panel is visible, i.e.
+            // exactly one product is selected. Versions left over in state, the URL, or
+            // sessionStorage must not silently filter results the user can't unfilter.
+            const realVersions = realProducts.length === 1 ? selectedVersions.filter(v => v !== '__all__') : [];
+            if (realVersions.length > 0) {
+                facetFilters.push(realVersions.map(v => `product_version:${v}`)); // Array within array = OR logic
+            }
+
+            // Server-side pagination: fetch exactly one page in Algolia's relevance order
             algoliaHelper
                 .setQuery(searchQuery)
                 .setQueryParameter('facetFilters', facetFilters)
-                .setQueryParameter('typoTolerance', typoTolerance)
-                .setPage(0)
+                .setQueryParameter('hitsPerPage', resultsPerPage)
+                .setPage(pageNum)
                 .search();
         },
-        [searchQuery, algoliaHelper, currentLocale, selectedProducts, typoTolerance],
+        [searchQuery, algoliaHelper, currentLocale, selectedProducts, selectedVersions, resultsPerPage],
     );
+    makeSearchRef.current = makeSearch;
 
-    // Navigate to a page client-side using already-fetched sorted results
+    // Fetch another page from Algolia (server-side), clamped to the known page count
     const goToPage = useCallback(
         (pageNum) => {
-            const totalPages = Math.ceil(allItemsRef.current.length / resultsPerPage);
+            const totalPages = searchResultState.totalPages || 1;
             const clampedPage = Math.max(0, Math.min(pageNum, totalPages - 1));
-            const start = clampedPage * resultsPerPage;
-            searchResultStateDispatcher({
-                type: 'setPage',
-                value: {
-                    items: allItemsRef.current.slice(start, start + resultsPerPage),
-                    lastPage: clampedPage,
-                    totalPages,
-                    hasMore: clampedPage + 1 < totalPages,
-                },
-            });
+            searchResultStateDispatcher({type: 'loading'});
+            makeSearch(clampedPage);
         },
-        [resultsPerPage],
+        [makeSearch, searchResultState.totalPages],
     );
 
     // Update URL when filters or pagination change
-    const prevFiltersRef = useRef({searchQuery: '', selectedProducts: [], resultsPerPage: 25, page: 1});
+    const prevFiltersRef = useRef({searchQuery: '', selectedProducts: [], selectedVersions: [], resultsPerPage: 25, page: 1});
 
     useEffect(() => {
         // Only update URL if values actually changed
@@ -582,6 +626,7 @@ function SearchPageContent() {
         if (
             prev.searchQuery !== searchQuery ||
             JSON.stringify(prev.selectedProducts) !== JSON.stringify(selectedProducts) ||
+            JSON.stringify(prev.selectedVersions) !== JSON.stringify(selectedVersions) ||
             prev.resultsPerPage !== resultsPerPage ||
             prev.page !== currentPage
         ) {
@@ -589,31 +634,46 @@ function SearchPageContent() {
             if (searchQuery) params.set('q', searchQuery);
             const urlProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
             if (urlProducts.length > 0) params.set('products', urlProducts.join(','));
+            // Same activation rule as makeSearch: never advertise a version filter the UI doesn't show.
+            const urlVersions = urlProducts.length === 1 ? selectedVersions.filter(v => v !== '__all__') : [];
+            if (urlVersions.length > 0) params.set('versions', urlVersions.join(','));
             if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
             if (currentPage > 1) params.set('page', String(currentPage));
 
-            // Mark this as an internal navigation so location.search effect ignores it
-            isInternalNavigation.current = true;
-            history.replace({search: params.toString()});
+            // Only set the flag when the URL actually changes — otherwise the
+            // location.search effect never fires to reset it, and the next
+            // external navigation (e.g. from the modal) gets skipped.
+            const newSearch = params.toString();
+            if (newSearch !== location.search.replace(/^\?/, '')) {
+                isInternalNavigation.current = true;
+                history.replace({search: newSearch});
+            }
 
-            prevFiltersRef.current = {searchQuery, selectedProducts, resultsPerPage, page: currentPage};
+            prevFiltersRef.current = {searchQuery, selectedProducts, selectedVersions, resultsPerPage, page: currentPage};
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery, selectedProducts, resultsPerPage, searchResultState.lastPage]);
+    }, [searchQuery, selectedProducts, selectedVersions, resultsPerPage, searchResultState.lastPage]);
 
     // IntersectionObserver removed - using pagination buttons instead
 
     useEffect(() => {
         searchResultStateDispatcher({type: 'reset'});
-        allItemsRef.current = [];
-        if (searchQuery) {
-            searchResultStateDispatcher({type: 'loading'});
-            setTimeout(() => {
-                makeSearch();
-            }, 300);
+        if (!searchQuery) {
+            return undefined;
         }
+        searchResultStateDispatcher({type: 'loading'});
+        // Restore ?page=N on mount and browser back/forward; otherwise start at page 0.
+        const targetPage = (restoringFromUrl.current && targetPageRef.current !== null)
+            ? targetPageRef.current
+            : 0;
+        restoringFromUrl.current = false;
+        targetPageRef.current = null;
+        // Debounce: only the last keystroke fires a query. Page size is a dep because it is now
+        // the fetch size — changing it must re-query, not re-slice.
+        const timeout = setTimeout(() => makeSearch(targetPage), 300);
+        return () => clearTimeout(timeout);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery, selectedProducts, resultsPerPage, typoTolerance]);
+    }, [searchQuery, selectedProducts, selectedVersions, resultsPerPage]);
 
     // Scroll to top when page changes (except initial load)
     const isInitialLoad = useRef(true);
@@ -658,7 +718,7 @@ function SearchPageContent() {
         <Layout>
             <PageMetadata title={pageTitle} />
             <Head>
-                <meta property="robots" content="noindex, follow" />
+                <meta name="robots" content="noindex, follow" />
             </Head>
 
             <div className="container" style={{
@@ -798,29 +858,7 @@ function SearchPageContent() {
                             </div>
                         </div>
 
-                        <div style={{display: 'flex', justifyContent: 'flex-start', marginBottom: '12px'}}>
-                            <label
-                                title="When enabled, search results include near-matches for typos and spelling variations."
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '7px',
-                                    cursor: 'pointer',
-                                    userSelect: 'none',
-                                    fontSize: '12px',
-                                    color: 'var(--ifm-color-emphasis-600)',
-                                }}
-                            >
-                                <ToggleSwitch
-                                    checked={typoTolerance}
-                                    onChange={setTypoTolerance}
-                                    small
-                                />
-                                Typo Tolerance
-                            </label>
-                        </div>
-
-                        {!!searchResultState.totalResults && (
+                        {!!searchResultState.totalMatches && (
                             <div
                                 style={{
                                     marginBottom: '12px',
@@ -831,9 +869,12 @@ function SearchPageContent() {
                                     fontWeight: '500',
                                 }}
                             >
-                                {searchResultState.totalMatches > searchResultState.totalResults
-                                    ? `Showing top ${searchResultState.totalResults.toLocaleString()} of ${searchResultState.totalMatches.toLocaleString()} documents found — refine your search to see more relevant results`
-                                    : documentsFoundPlural(searchResultState.totalResults)
+                                {/* Algolia caps pagination (paginationLimitedTo, ~1000 hits) and
+                                    nbHits is an estimate, so when more match than are reachable, say
+                                    so instead of implying every match can be paged to. */}
+                                {searchResultState.totalPages * resultsPerPage < searchResultState.totalMatches
+                                    ? `Showing the top ${(searchResultState.totalPages * resultsPerPage).toLocaleString()} of ${searchResultState.totalMatches.toLocaleString()} matches — refine your search to narrow results`
+                                    : documentsFoundPlural(searchResultState.totalMatches)
                                 }
                             </div>
                         )}
@@ -860,8 +901,25 @@ function SearchPageContent() {
                             label="Products"
                             options={PRODUCT_OPTIONS}
                             selectedValues={selectedProducts}
-                            onChange={setSelectedProducts}
+                            onChange={handleProductChange}
+                            maxHeight={isSingleProductSelected && availableVersions.length > 1 ? (isMobile ? '132px' : 'calc((100vh - var(--ifm-navbar-height)) * 0.60)') : undefined}
                         />
+                        {/* The length guard covers a product name from a stale URL or
+                            sessionStorage that no longer exists in the config — one product is
+                            selected, but it contributes no versions, so there is nothing to list. */}
+                        {isSingleProductSelected && availableVersions.length > 0 && (
+                            <MultiSelect
+                                label="Versions"
+                                options={[
+                                    {label: 'All versions', value: '__all__'},
+                                    ...availableVersions.map(v => ({label: versionLabel(v), value: v})),
+                                ]}
+                                selectedValues={selectedVersions}
+                                onChange={setSelectedVersions}
+                                topMargin="16px"
+                                sizeScale={1.1}
+                            />
+                        )}
                     </div>{/* closes filters div */}
 
                     {/* Results area */}
@@ -869,92 +927,10 @@ function SearchPageContent() {
 
                 {searchResultState.items.length > 0 ? (
                     <main>
-                        {(() => {
-                            // Group results by product
-                            const groupedByProduct = searchResultState.items.reduce((acc, item) => {
-                                const product = item.product || 'Unknown';
-                                if (!acc[product]) acc[product] = [];
-                                acc[product].push(item);
-                                return acc;
-                            }, {});
-
-                            // Sort products alphabetically
-                            const sortedProducts = Object.keys(groupedByProduct).sort();
-
-                            return sortedProducts.map((product) => {
-                                const productResults = groupedByProduct[product];
-
-                                return (
-                                    <section key={product} style={{marginBottom: '32px'}}>
-                                        <Heading
-                                            as="h2"
-                                            style={{
-                                                fontSize: '22px',
-                                                marginBottom: '16px',
-                                                paddingBottom: '8px',
-                                                borderBottom: '2px solid var(--ifm-color-primary)',
-                                                color: 'var(--ifm-color-primary)',
-                                            }}
-                                        >
-                                            {product} ({productResults.length} {productResults.length === 1 ? 'result' : 'results'} on this page)
-                                        </Heading>
-
-                                    {productResults.map(({title, url, summary, breadcrumbs}, i) => {
-                                        return (
-                                            <article
-                                                key={i}
-                                                style={{
-                                                    marginBottom: '16px',
-                                                    paddingBottom: '12px',
-                                                    borderBottom: '1px solid var(--ifm-color-emphasis-200)',
-                                                }}
-                                            >
-                                                <Heading
-                                                    as="h3"
-                                                    style={{
-                                                        fontSize: '18px',
-                                                        marginBottom: '8px',
-                                                        fontWeight: '600',
-                                                    }}
-                                                >
-                                                    <Link to={url} dangerouslySetInnerHTML={{__html: title}} />
-                                                </Heading>
-
-                                            {breadcrumbs.length > 0 && (
-                                                <nav aria-label="breadcrumbs">
-                                                    <ul
-                                                        className="breadcrumbs"
-                                                        style={{fontSize: '13px', marginBottom: '8px'}}
-                                                    >
-                                                        {breadcrumbs.map((html, index) => (
-                                                            <li
-                                                                key={index}
-                                                                className="breadcrumbs__item"
-                                                                dangerouslySetInnerHTML={{__html: html}}
-                                                            />
-                                                        ))}
-                                                    </ul>
-                                                </nav>
-                                            )}
-
-                                            {summary && (
-                                                <p
-                                                    style={{
-                                                        color: 'var(--ifm-color-emphasis-700)',
-                                                        margin: 0,
-                                                        fontSize: '14px',
-                                                        lineHeight: '1.6',
-                                                    }}
-                                                    dangerouslySetInnerHTML={{__html: summary}}
-                                                />
-                                            )}
-                                        </article>
-                                        );
-                                    })}
-                                </section>
-                                );
-                            });
-                        })()}
+                        {/* Algolia's relevance order, flat. Product context is on each hit's badge. */}
+                        {searchResultState.items.map((item, i) => (
+                            <SearchResultItem key={i} item={item} />
+                        ))}
                     </main>
                 ) : (
                     [

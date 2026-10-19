@@ -26,14 +26,11 @@ General Requirements
   [Download .NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471)
 
 **NOTE:** If you have the FIPS option enabled you should proceed to Manual Exchange Online
-pre-configuration. See the Configure Exchange Online Modern Authentication Manuallysection for
+pre-configuration. See the Configure Exchange Online Modern Authentication Manually section for
 additional information.
 
-Follow the steps to enable Exchange Online Auto Audit for mailboxes with Modern Authentication
-(automatic mode).
-
 **Step 1 –** Install the ExchangeOnlineManagement Powershell module and dependencies (Nget package
-provider). Refer to the following Microsoft article for more information:
+provider). See the following Microsoft article for more information:
 [About the Exchange Online PowerShell V2 module](https://docs.microsoft.com/en-us/powershell/exchange/exchange-online-powershell-v2?view=exchange-ps).
 
 **Step 2 –** Generate the self-signed certificate.
@@ -50,8 +47,6 @@ This section will be helpful for any case below:
 - You encountered errors related to the ExchangeOnlineManagement PowerShell module
 - You have the FIPS policy enabled
 - You want to install the module manually
-
-Follow the steps to install the module.
 
 **Step 1 –** Install the Windows Management Framework for your OS:
 [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
@@ -101,18 +96,14 @@ certificate, complete the following steps.
 If the error still persists, or you want to pre-configure the work with certificate, follow the
 instructions below:
 
-Follow the steps to install a certificate.
-
 **Step 1 –** Get your certificate or generate a self-signed certificate. The name must be
-_`Netwrix_Auditor_MFA_<your*tenant_name>`*
+_`Netwrix_Auditor_MFA_<your_tenant_name>`_
 
 **Step 2 –** Save the certificate to the _CurrentUser/My certificate_ folder for the Local System
 account.
 
 **Step 3 –** Upload the certificate to the application selected in your monitoring plan or configure
 it automatically with Netwrix Auditor.
-
-Follow the steps to generate a self-signed certificate.
 
 **Step 1 –** Open Windows PowerShell as an Administrator and run the following commands:
 
@@ -125,15 +116,13 @@ $mycert | Export-PfxCertificate -FilePath mycert.pfx -Password $(ConvertTo-Secur
 $mycert | Export-Certificate -FilePath mycert.cer
 ```
 
-**Step 2 –** Replace the `DnsName `parameter value with your certificate name
+**Step 2 –** Replace the `DnsName` parameter value with your certificate name
 (`Netwrix_Auditor_MFA_<your_tenant_name>`).
 
-Follow the steps to install the certificate to the CurrentUser/My certificate folder.
-
 **Step 1 –** Download [PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec) to
-run Windows PowerShell session under the LocalSystem account;
+run Windows PowerShell session under the LocalSystem account.
 
-**Step 2 –** Run Windows PowerShell as an Administrator, navigate to to PsExec.exe installation
+**Step 2 –** Run Windows PowerShell as an Administrator, navigate to the PsExec.exe installation
 directory (use the 'CD' command), if necessary, and run the following command:
 
 ```

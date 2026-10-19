@@ -7,8 +7,8 @@ sidebar_position: 10
 # Manage a Job
 
 After creating a job, you can open a job to edit and change the settings of the job. You can also
-rename a job without changing its setting or entirely delete a job. All these actions are easily
-accessible through the Actions pane in **All Jobs** page.
+rename a job without changing its setting or entirely delete a job. All these actions are accessible
+through the Actions pane in **All Jobs** page.
 
 ## Filter a Job
 
@@ -56,15 +56,15 @@ want to review or modify.
 
 ## Run a Job
 
-Follow the steps to run a job.
+To run a job.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
 Step 2 – On the **Synchronize** portal, click **All Jobs**.
 
-Step 3 – In the jobs list, click
+Step 3 – In the jobs list, click the
 ![option](/images/directorymanager/11.1/portal/synchronize/manage/option.webp)
-on the job that you want to run and click **Run**.
+icon for the job that you want to run and click **Run**.
 
 Step 4 – If workflow requests are enabled, the request for running the job will go to the approver.
 If they approve the requests, the job will run. If they deny the requests, you will not be able to
@@ -77,7 +77,7 @@ Step 6 – Click **Run Job in the Background** to list the job in the **Backgrou
 
 ## Edit a Job
 
-Follow the steps to edit a job.
+To edit a job.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
@@ -163,7 +163,7 @@ The new template gets listed in the **Job Templates** page.
 
 ## Duplicate a Job
 
-Follow the steps to duplicate a job.
+To duplicate a job.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
@@ -204,10 +204,10 @@ Step 4 – Click the **Browse** button to browse to the location where the expor
 
 Enter the password in the **Password** box.
 
-Select the **Rename Job if already exists** checkbox if you do not want multiple jobs with same
+Select the **Rename Job if already exists** checkbox if you don't want multiple jobs with same
 names.
 
-Step 5 – Click **Import Job(s)**. The job gets listed with other jobs.
+Step 5 – Click **Import Jobs**. The job gets listed with other jobs.
 
 ## Export a Job
 
@@ -217,18 +217,18 @@ Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
 Step 2 – On the Synchronize portal, click **All Jobs**.
 
-Step 3 – On the **All Job** page, click the **three vertical dots** icon on the job in the list that
+Step 3 – On the **All Jobs** page, click the **three vertical dots** icon on the job in the list that
 you want to export and click **Export**.
 
-Step 4 – On the **Export Job(s)** wizard, enter the password and export the job.
+Step 4 – On the **Export Jobs** wizard, enter the password and export the job.
 
-If you want to export multiple jobs, select all and click **Export Job(s)** from the top right
+If you want to export multiple jobs, select all and click **Export Jobs** from the top right
 corner.
 
 ## Rename a Job
 
 Renaming a job lets you save a job under a new name and a new description. As you would expect,
-renaming a job does not affect its settings.
+renaming a job doesn't affect its settings.
 
 **Renaming a Job, using shortcut**
 
@@ -240,8 +240,8 @@ Step 3 – Click the required Job. It takes you to Job creation pages.
 
 Step 4 – Go to **Job Details** to rename the job.
 
-1. In the **Job Name** box, type a new name for the Job.
-2. In the **Description** box, type a new description for the box (optional).
+1. In the **Job Name** box, enter a new name for the Job.
+2. In the **Description** box, enter a new description for the box (optional).
 
 Step 5 – Click **Finish** to close the dialog box and save changes.
 
@@ -257,7 +257,7 @@ Step 4 – On the **Actions** menu, click **Rename**.
 
 Step 5 – On the **Rename Job** dialog box:
 
-1. In the **Job Name** box, type a new name for the Job.
-2. In the **Description** box, type a new description for the box (optional).
+1. In the **Job Name** box, enter a new name for the Job.
+2. In the **Description** box, enter a new description for the box (optional).
 
 Step 6 – Click **Save** to close the dialog box and save changes.

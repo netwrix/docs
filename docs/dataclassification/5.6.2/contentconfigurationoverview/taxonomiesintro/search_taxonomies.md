@@ -25,12 +25,11 @@ termset level including:
 - Reuse Terms
 - Export CSV
 
-You can also drag-and-drop a node from one location on the tree view to another, once you have
-dropped the node you can select to either move, copy, or merge the node(s).
+You can also drag-and-drop a node from one location on the tree view to another. After you drop
+the node you can select to either move, copy, or merge the nodes.
 
 Browser rendering restrictions limits the maximum suitable size per level within the tree view at
-10,000 terms. Therefore we recommend that the tree view is structured across multiple branches, both
-for performance and usability. Once a branch within the taxonomy reaches 10,000 terms the tree view
+10,000 terms. Structure the tree view across multiple branches for performance and usability. When a branch within the taxonomy reaches 10,000 terms the tree view
 will cap the returned nodes and log a warning to the event logs.
 
 Review the following for additional information:

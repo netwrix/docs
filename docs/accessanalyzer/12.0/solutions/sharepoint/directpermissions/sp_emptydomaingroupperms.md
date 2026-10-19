@@ -7,7 +7,7 @@ sidebar_position: 20
 # SP_EmptyDomainGroupPerms Job
 
 The SP_EmptyDomainGroupPerms Job identifies empty security groups with directly assigned permissions
-to resources, these groups should be deleted from SharePoint farms, where found. Inadvertent changes
+to resources. Delete these groups from SharePoint farms, where found. Inadvertent changes
 to group membership may open up unwanted access.
 
 ## Analysis Tasks for the SP_EmptyDomainGroupPerms Job
@@ -17,7 +17,7 @@ Navigate to the **Jobs** > **SharePoint** > **1.Direct Permissions** >
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

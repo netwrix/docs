@@ -6,7 +6,7 @@ sidebar_position: 140
 
 # Get My Smart Groups
 
-Using this API, information about the authentiacated user's Smart Groups can be retrieved.
+Using this API, you can retrieve information about the authenticated user's Smart Groups.
 
 ## Endpoint
 

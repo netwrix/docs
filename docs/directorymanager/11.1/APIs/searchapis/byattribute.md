@@ -7,7 +7,7 @@ sidebar_position: 10
 # Search an Object By a Single Value Attribute
 
 Use this API to search a directory object in an identity store based on the specified attribute. For
-example, search a group based on the displayname attribute.
+example, search a group based on the displayName attribute.
 
 ## Endpoint
 

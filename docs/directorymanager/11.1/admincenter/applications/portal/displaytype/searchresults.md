@@ -14,7 +14,7 @@ You can customize the search result pages for a portal. You can:
 - Change the arrangement of fields on a page
 
 :::note
-You can only customize existing search result pages; you cannot add new ones.
+You can only customize existing search result pages; you can't add new ones.
 :::
 
 
@@ -24,7 +24,7 @@ The following table lists the search results pages that you can customize:
 
 | Form Name           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Smart Group Preview | Manage the column headers on the preview page, which is displayed when users click the **Preview** button on the **Query Designer** dialog box. It enables users to preview the results returned with the specified query for the Smart Group/Dynasty. The **Query Designer** dialog box can be launched from the Smart Group page when creating a new Smart Group or Dynasty, and from the Smart Group tab in group properties.                                                                                                                             |
+| Smart Group Preview | Manage the column headers on the preview page, which is displayed when users click the **Preview** button on the **Query Designer** dialog box. Users can preview the results returned with the specified query for the Smart Group/Dynasty. The **Query Designer** dialog box can be launched from the Smart Group page when creating a new Smart Group or Dynasty, and from the Smart Group tab in group properties.                                                                                                                             |
 | Default             | Manage the column headers on the **All** tab of the search results page, which is displayed when users perform a search on the **Advanced Search** page in the portal. The **Advanced Search** page can be launched using the **Advanced Search** link.                                                                                                                                                                                                                                                                                                      |
 | User                | Manage the column headers on the following portal pages: <ul><li>The **My Direct Reports** tab, where users can view a list of their direct reports. This tab is displayed when users click **Users > My Direct Reports** in the portal.</li><li>The **Users** and **Contacts** tabs on the search results page, which is displayed when users perform a search on the **Advanced Search** page in the portal.</li></ul>                                                                                                                                     |
 | Disabled Users      | Manage the column headers on the **Disabled Users** tab in the portal, which displays a list of disabled users in the directory. This tab is displayed when users click **Users > My Direct Reports** and then the **Disabled Users** tab in the portal.                                                                                                                                                                                                                                                                                                     |
@@ -48,12 +48,12 @@ The following table lists the search results pages that you can customize:
 6. On the **Edit Search Results** pane, the **Fields** area lists the fields that display search
    results on the selected page.  
    Click **Add Field** to add a new field.
-7. On the **Add Field** pane, use the **Field** drop-down list to select a schema attribute to link
+7. On the **Add Field** pane, use the **Field** dropdown list to select a schema attribute to link
    to the field. The field will display the value of this attribute on the search results page.
 8. In the **Display Name** box, enter a display name for the field. This name is the field’s label
    on the search results page.
 9. In the **Tooltip** box, enter the text to appear when a user hovers the mouse over the field.
-10. In the **Display Type** drop-down list, select the display type to use to render this field in
+10. In the **Display Type** dropdown list, select the display type to use to render this field in
     the portal. Available options are limited to textbox, DN, DNs, and Link, which are basic display
     Types. See the [Basic Display Types](/docs/directorymanager/11.1/admincenter/applications/portal/categories/categories.md#basic-display-types) topic.
 11. Click **OK.** The field is displayed in the **Fields** area on the **Edit Search Results**

@@ -6,14 +6,14 @@ sidebar_position: 2
 
 # Getting Started
 
-Once Access Analyzer is installed, the following workflow will quickly enable users to begin
+Once Access Analyzer is installed, use the following workflow to quickly begin
 auditing the organization’s IT infrastructure. See the
 [Navigating the Console](/docs/accessanalyzer/12.0/admin/navigate/overview.md) topic for additional information and data grid
 functionality.
 
 ## Initial Configuration During First Launch
 
-During the initial Access Analyzer Configuration Wizard, users are walked through configuring
+The initial Access Analyzer Configuration Wizard walks you through configuring
 several key global settings:
 
 - Storage
@@ -22,25 +22,25 @@ several key global settings:
     - Requires credential on the SQL® Server database which is used to create and modify the Access
       Analyzer database
     - Option to either create a new database or point to an existing database
-    - If using Windows Authentication, the Schedule node must be configured also
+    - If using Windows Authentication, you must also configure the Schedule node
     - See the [Storage](/docs/accessanalyzer/12.0/admin/settings/storage/overview.md) topic for additional information
 
 - Schedule
 
-    - Only appears if the Storage Profile is configured to use Windows Authentication
-    - If the Storage Profile is configured to use SQL Authentication, the setting is configured
+    - Only appears if you configure the Storage Profile to use Windows Authentication
+    - If you configure the Storage Profile to use SQL Authentication, you configure the setting
       later
     - See the [Schedule](/docs/accessanalyzer/12.0/admin/settings/schedule.md) topic for additional information
 
 - Instant Job
 
-    - Install the pre-configured solutions for which the organization is licensed
+    - Install the pre-configured solutions the organization has a license for
     - See the [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for additional
       information
 
 ## Global Settings Configured
 
-The global Settings have an overall impact on the running of Access Analyzer jobs. They are managed
+The global Settings have an overall impact on the running of Access Analyzer jobs. You manage them
 through the Settings node at the top of the Navigation pane. The following global Settings require
 configuration from the start:
 
@@ -57,7 +57,7 @@ The other global Settings provide additional options for impacting how Access An
   privileged application of Access Analyzer and report viewing or the enable the REST API
 
     :::note
-    If Role Based Access is enabled by accident, contact
+    If you enable Role Based Access by accident, contact
     [Netwrix Support](https://www.netwrix.com/support.html) for assistance in disabling it.
     :::
 
@@ -67,7 +67,7 @@ The other global Settings provide additional options for impacting how Access An
 - [Exchange](/docs/accessanalyzer/12.0/admin/settings/exchange.md) – Configure Microsoft® Exchange Server connections
 
 :::warning
-Do not configure data retention at the global level without ensuring History is
+Don't configure data retention at the global level without ensuring History is
 supported by ALL solutions to be run.
 :::
 
@@ -88,23 +88,23 @@ See the [Global Settings](/docs/accessanalyzer/12.0/admin/settings/overview.md) 
 ## Discover Hosts
 
 Within the terminology of Access Analyzer, hosts are the machines being targeted during data
-collection. Hosts can be discovered or manually introduced to Access Analyzer. Known hosts are then
-inventoried to populate dynamic host lists. Host discovery is done at the Host Discovery  node.
-Hosts are manually introduced at the Host Management node.
+collection. You can discover hosts or manually introduce them to Access Analyzer. Access Analyzer
+then inventories known hosts to populate dynamic host lists. Perform host discovery at the Host
+Discovery node. Manually introduce hosts at the Host Management node.
 
-Host management consists of maintaining up-to-date host inventories and host lists which can be
-assigned to job groups or jobs as targeted hosts. See the
+Host management consists of maintaining up-to-date host inventories and host lists that you can
+assign to job groups or jobs as targeted hosts. See the
 [Host Management](/docs/accessanalyzer/12.0/admin/hostmanagement/overview.md) topic for additional information.
 
 ## Job Workflow
 
-Once the global Settings are configured and hosts have been introduced to Access Analyzer, it is
+After you configure the global Settings and introduce hosts to Access Analyzer, it's
 time to begin auditing. This requires an understanding of the relationship between solutions, job
 groups, jobs, queries, analysis, actions, and reports.
 
 The Access Analyzer job is the fundamental unit. Jobs are responsible for all data collection
-queries, analysis tasks, notification tasks, action tasks, and report generation. When Jobs are
-designed to work together, they are housed within job groups to control the order of job execution.
+queries, analysis tasks, notification tasks, action tasks, and report generation. When jobs are
+designed to work together, job groups house them to control the order of job execution.
 Solutions are pre-configured job groups which have been designed to target specific types of
 environments to audit for specific data sets, typically the most common types of information
 desired.

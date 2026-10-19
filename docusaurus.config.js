@@ -7,7 +7,8 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
+import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -31,6 +32,46 @@ PRODUCTS.forEach(product => {
   });
 });
 
+// Filter to a single product when DOCS_PRODUCT is set, matching the filtering
+// generateDocusaurusPlugins() applies — otherwise redirects reference routes
+// from products that were never built in this run.
+const targetProduct = process.env.DOCS_PRODUCT;
+
+const latestVersionMap = getLatestVersionUrlMap();
+
+// Match the product filtering generateDocusaurusPlugins() applies, so redirects
+// never target a product whose pages weren't built for this DOCS_PRODUCT run.
+const redirectProducts = getActiveProducts();
+
+// Passed to the client via customFields: React components are bundled by
+// rspack/webpack, which polyfill `process` with an empty env in that context,
+// so process.env.DOCS_PRODUCT isn't readable from component code directly.
+const activeProductIds = redirectProducts.map(product => product.id);
+const activeVersionsByProduct = Object.fromEntries(
+  redirectProducts.map(product => [product.id, getActiveVersions(product).map(v => v.version)])
+);
+
+// Docs base paths that currently serve pages without a version segment, used
+// client-side to redirect stale /docs/<product>/<version>/<page> links to
+// /docs/<product>/<page>. Derived from the route base path the plugin actually
+// mounts rather than from the version name: a lone version named 'current' can
+// still carry a customRoutePath (docs/identitymanager/current) and serve
+// versioned URLs, so comparing against product.path is what makes the
+// "unversioned" inference hold.
+//
+// Reads product.versions rather than getActiveVersions(product) on purpose:
+// DOCS_PRODUCT_LATEST_ONLY narrows the active list to one version, which would
+// make a genuinely multi-version product look collapsed and start rewriting its
+// valid versioned URLs in local single-product builds.
+const unversionedDocsBasePaths = redirectProducts
+  .map(product => {
+    if (product.versions.length !== 1) return null;
+    const [version] = product.versions;
+    const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
+    return routeBasePath === product.path ? `/${routeBasePath}` : null;
+  })
+  .filter(Boolean);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Netwrix Product Documentation',
@@ -45,7 +86,13 @@ const config = {
   baseUrl: '/',
 
   // throw on anything that is not configured correctly
-  onBrokenLinks: 'throw',
+  // Relaxed to 'warn' for single-product builds (DOCS_PRODUCT set): the navbar
+  // always links to every product, but a filtered build only generates routes
+  // for one of them, so cross-product navbar (site) links are expected to be
+  // unresolved. Markdown links and anchors resolve within the target product's
+  // own plugin instance regardless of filtering, so those stay strict to catch
+  // real mistakes during single-product iteration.
+  onBrokenLinks: targetProduct ? 'warn' : 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
 
@@ -80,7 +127,9 @@ const config = {
       rspackBundler: true,
       rspackPersistentCache: true,
       mdxCrossCompilerCache: true,
-      ssgWorkerThreads: false,
+      // Renders the static pages across a worker pool instead of one thread.
+      // Requires future.v4.removeLegacyPostBuildHeadAttribute, set below.
+      ssgWorkerThreads: true,
     },
     v4: {
       removeLegacyPostBuildHeadAttribute: true,
@@ -94,6 +143,12 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  customFields: {
+    activeProductIds,
+    activeVersionsByProduct,
+    unversionedDocsBasePaths,
+  },
+  clientModules: ['./src/clientModules/scrollBehavior.js'],
   presets: [
     [
       'classic',
@@ -134,24 +189,41 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: PRODUCTS.filter(product => {
-          // Only create redirects for products with multiple versions (not just 'current')
-          return !(product.versions.length === 1 && product.versions[0].version === 'current');
-        }).map(product => {
-          const latestVersion = getDefaultVersion(product);
-          const latestVersionUrl = versionToUrl(latestVersion.version);
+        redirects: [
+          ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...(activeProductIds.includes('changetracker')
+            ? [{ from: '/docs/changetracker/componentreleases', to: '/docs/changetracker' }]
+            : []),
+          ...redirectProducts.filter(product => {
+            // Only create redirects for products with multiple versions (not just 'current')
+            return !(product.versions.length === 1 && product.versions[0].version === 'current');
+          }).map(product => {
+            const latestVersion = getDefaultVersion(product);
+            const latestVersionUrl = versionToUrl(latestVersion.version);
 
-          // Use explicit customRoutePath if specified (e.g., for multi-versioned products with 'current')
-          // Otherwise use standard path generation
-          const targetPath = latestVersion.customRoutePath
-            ? latestVersion.customRoutePath
-            : `${product.path}/${latestVersionUrl}`;
+            // Use explicit customRoutePath if specified (e.g., for multi-versioned products with 'current')
+            // Otherwise use standard path generation
+            const targetPath = latestVersion.customRoutePath
+              ? latestVersion.customRoutePath
+              : `${product.path}/${latestVersionUrl}`;
 
-          return {
-            from: `/${product.path}`,
-            to: `/${targetPath}`,
-          };
-        }),
+            return {
+              from: `/${product.path}`,
+              to: `/${targetPath}`,
+            };
+          }),
+        ],
+        createRedirects(existingPath) {
+          for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
+            const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
+            if (existingPath.startsWith(versionedPrefix)) {
+              const rest = existingPath.slice(versionedPrefix.length).replace(/\/$/, '');
+              if (!rest) return undefined;
+              return [`/docs/${productId}/${rest}`];
+            }
+          }
+          return undefined;
+        },
       },
     ],
     // Generate all product documentation plugins from centralized configuration
@@ -167,21 +239,21 @@ const config = {
     [
       'docusaurus-plugin-openapi-docs',
       {
-        id: 'openapi',
-        docsPluginId: 'changetracker8_1',
+        id: 'openapi-changetracker',
+        docsPluginId: 'changetracker',
         config: {
           'changetracker-hub': {
-            specPath: 'static/openapi/changetracker-hub-8.1.yaml',
-            outputDir: 'docs/changetracker/8.1/api/reference',
+            specPath: 'static/openapi/changetracker-hub-8.2.yaml',
+            outputDir: 'docs/changetracker/api/reference',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
               sidebarCollapsed: true,
             },
-            downloadUrl: '/openapi/changetracker-hub-8.1.yaml',
-            version: '8.1',
-            label: 'ChangeTracker Hub 8.1 API',
-            baseUrl: '/docs/changetracker/8_1/api/reference/',
+            downloadUrl: '/openapi/changetracker-hub-8.2.yaml',
+            version: 'current',
+            label: 'Change Tracker Hub API',
+            baseUrl: '/docs/changetracker/api/reference/',
           },
         },
       },
@@ -191,6 +263,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Shown only on scoped paths — see src/theme/AnnouncementBar
+      announcementBar: {
+        id: 'endpointprotector-announcement',
+        content: '<a href="https://community.netwrix.com/discourse-ai/ai-bot/conversations?agent=epp-navigator" target="_blank" rel="noopener noreferrer">⚡ <strong>Skip the searching:</strong> Chat with EPP Navigator, an AI guide built on this documentation. <small>(Community account required)</small> <svg class="announcement-external-icon" width="18" height="18" aria-label="(opens in new tab)"><use href="#theme-svg-external-link"></use></svg></a>',
+        backgroundColor: '#5851DB',
+        textColor: '#ffffff',
+        isCloseable: true,
+      },
       // MermaidJS Config
       mermaid: {
         theme: {
@@ -213,10 +293,11 @@ const config = {
       algolia: {
         // Your Algolia credentials
         appId: 'KPMSCF6G6J',
-        apiKey: '1b20f30f13a874cd46f9d5c30b01d99c', // Use the search-only API key, not the admin key
+        apiKey: 'b38509adea6e7a1189bfb0d06ca37436', // Use the search-only API key, not the admin key
         indexName: 'Production Docs',
 
-        // Enable contextual search (already great that you have product/version meta tags!)
+        // NOTE: overridden to false by the custom SearchBar (src/theme/SearchBar), which
+        // injects product/version facet filters itself. Kept here for theme compatibility.
         contextualSearch: true,
 
         // Search parameters for better results
@@ -252,21 +333,6 @@ const config = {
 
         // Placeholder text for the search box
         placeholder: 'Search the Netwrix docs...',
-
-        // Transform items before displaying (optional)
-        transformItems: (items) => {
-          return items.map((item) => {
-            // Add product badges or modify display as needed
-            return {
-              ...item,
-              // Example: Add custom badges based on product
-              _highlightResult: {
-                ...item._highlightResult,
-                // Customize highlighted results if needed
-              },
-            };
-          });
-        },
 
         // Replace paths if you're using different deployments
         // replaceSearchResultPathname: {

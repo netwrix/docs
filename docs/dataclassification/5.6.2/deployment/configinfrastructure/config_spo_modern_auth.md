@@ -28,16 +28,14 @@ Netwrix Data Classification and other services.
     1. Open Certificate Manager.
     2. Go to search and type in **Certificate**.
     3. Choose **Manage Computer Certificates**.
-    4. Right-click on the certificate you created.
+    4. Right-click the certificate you created.
     5. Select **All Tasks**, **Export**.
-    6. On the displayed message, click _**_Do not export private key__**.
+    6. On the displayed message, click _**_Don't export private key__**.
     7. Set file type to _DER-encoded binary x.509_ (CER).
     8. Chose location to save the certificate and name it as **leave.cer**. You can later upload it
        to the Microsoft Entra ID admin center.
 
 ## Step 2: Create and Register a New App in Microsoft Entra ID
-
-Follow the steps to register a new Microsoft Entra ID application.
 
 1. Sign into the **Microsoft 365 Admin Center** (with your _Global Administrator_, _Application
    Administrator_ or _Cloud Application Administrator_ account).
@@ -59,7 +57,7 @@ Follow the steps to register a new Microsoft Entra ID application.
 
     ![mfa_0365_2](/images/dataclassification/5.6.2/config_infrastructure/mfa_0365_2.webp)
 
-8. Copy your application ID from the Overview section it to a safe location.
+8. Copy your application ID from the Overview section to a safe location.
 
 ## Step 3: Grant Required Permissions
 
@@ -74,11 +72,11 @@ Microsoft Entra ID applications can be assigned _Delegated_ or _Application_ per
 For the newly created app, you should use _Application_ permissions.
 
 **NOTE:** By default, a new application is granted one delegated permission for **Microsoft Graph
-API** – **User.Read**. It is not required and can be removed.
+API** – **User.Read**. It isn't required and can be removed.
 
 Do the following:
 
-When found, click on the entry and proceed with adding the necessary permissions. The steps from
+When found, click the entry and proceed with adding the necessary permissions. The steps from
 here on remain the same, so in most cases you would need the Application permissions entry, and the
 relevant set of permissions therein.
 

@@ -6,9 +6,9 @@ sidebar_position: 60
 
 # File System Action: Parameters
 
-The Parameters page is available for some of the selections on the Operation page. The list of
-operations below provides access to the operation-specific versions of the Parameters page for this
-wizard. Click on an operation to view its associated Parameters page.
+The Parameters page is available for some of the selections on the Operation page. The following
+list of operations provides access to the operation-specific versions of the Parameters page for
+this wizard. Click an operation to view its associated Parameters page.
 
 - [Change Attributes](/docs/accessanalyzer/11.6/admin/action/filesystem/parameters/changeattributes.md)
 - [Change Permissions and Auditing](/docs/accessanalyzer/11.6/admin/action/filesystem/parameters/changepermissionsauditing.md)
@@ -23,4 +23,4 @@ wizard. Click on an operation to view its associated Parameters page.
 ![File System Action Module Wizard Change File Attributes Parameters page](/images/accessanalyzer/11.6/admin/action/filesystem/changeattributes.webp)
 
 The Navigation pane will list this as the Parameters page, but the title for each version indicates
-the type of parameter to be configured.
+the type of parameter to configure.

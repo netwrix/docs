@@ -35,7 +35,7 @@ The Audit History table displays the following information:
 - Resource – Where applicable, identifies the related resource that was changed or accessed
 
 The table is designed to display 10 records at a time, by default. However, you can set this to 50,
-100, or 1,000 rows with the drop-down menu above the right corner of the table. There is a search
+100, or 1,000 rows with the dropdown menu above the right corner of the table. There is a search
 box above the left corner of the table. Page navigation buttons are below the table. You can also
 export the data from the current page using the **Export CSV** button.
 
@@ -43,7 +43,7 @@ export the data from the current page using the **Export CSV** button.
 
 You can filter the records in the Audit History table on the Auditing interface.
 
-- Select an option from the drop-down menu next to the search box. The options correspond to column
+- Select an option from the dropdown menu next to the search box. The options correspond to column
   headers in the Audit History table:
 
   - Log Level
@@ -57,7 +57,7 @@ You can filter the records in the Audit History table on the Auditing interface.
   Then enter a search string in the search box to display records that contain the given text in
   the selected column.
 
-- Click on **Today** to open the calendar along with several other options to filter the data for a
+- Click **Today** to open the calendar along with several other options to filter the data for a
   specific time period. For example:
 
   - Click _Last 7 Days_ to view the audit data for the last week

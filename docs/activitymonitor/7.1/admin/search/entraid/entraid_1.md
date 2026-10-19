@@ -30,12 +30,12 @@ The results data grid columns display the following information for each event:
 - Application – Indicates the Application associated with the event
 - Service – Indicates the Service associated with the event
 - Category – Indicates the Category associated with the event. Categories returned from search
-  queries can be configured using the Category filter drop-down.
+  queries can be configured using the Category filter dropdown.
 - Operation - Indicates the Operation associated with the event. Operations returned from search
-  queries can be configured using the Operation filter drop-down.
+  queries can be configured using the Operation filter dropdown.
 - Type – Indicates the Type associated with the event. Types returned from search queries can be
-  configured using the Type filter drop-down.
-- Target(s) – Indicates the Target(s) of the event
+  configured using the Type filter dropdown.
+- Targets – Indicates the Targets of the event
 - Modified – Indicates modifications associated with the event
 - Client App – Indicates the Client App associated with the event
 - OS – Indicates the OS associated with the event
@@ -48,7 +48,7 @@ The results data grid columns display the following information for each event:
 - Risk – Indicates the level of Risk associated with events
 - Conditional Access – Indicates whether Conditional Access was applied to the event
 - Conditional Policy – Indicates whether a Conditional Policy was applied to the event
-- Details – If applicable, provides additional information associated with the event that is not
+- Details – If applicable, provides additional information associated with the event that isn't
   provided by the other Results columns
 
 At the bottom of the search interface, additional information is displayed for selected events in

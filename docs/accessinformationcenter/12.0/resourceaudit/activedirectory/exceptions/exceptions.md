@@ -11,8 +11,8 @@ This report includes a Details table.
 
 ![Exceptions report](/images/accessinformationcenter/12.0/resourceaudit/activedirectory/exceptions/exceptionsexceptions.webp)
 
-An exception is defined as a problem or risk to Active Directory security. Exceptions include deeply
-nested groups and stale membership. This report is comprised of the following columns:
+An exception is a problem or risk to Active Directory security. Exceptions include deeply
+nested groups and stale membership. This report contains the following columns:
 
 - Server Name – Name of the Domain
 - Name – Type of exception found

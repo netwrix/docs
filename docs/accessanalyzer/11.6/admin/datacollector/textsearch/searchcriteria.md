@@ -14,8 +14,8 @@ entire row of each file.
 The configurable functions are:
 
 - Use advanced criteria (instead of simple criteria) – Select this checkbox to display the Advanced
-  Criteria page and configure the search with additional filtering options. Advanced search criteria
-  is configured on the Advanced Criteria page. See the
+  Criteria page and configure the search with additional filtering options. Configure advanced
+  search criteria on the Advanced Criteria page. See the
   [TextSearch: Advanced Criteria](/docs/accessanalyzer/11.6/admin/datacollector/textsearch/advancedcriteria.md) topic
   for additional information.
 - Simple Criteria

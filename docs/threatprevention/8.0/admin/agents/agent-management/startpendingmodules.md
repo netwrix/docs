@@ -7,7 +7,7 @@ sidebar_position: 30
 # Start Pending Modules
 
 If the Agent was deployed using the Safe Mode option, then it could enter a _Start Pending Modules_
-state, in which the AD Events monitoring module is not loaded on the machine where the Agent is
+state, in which the AD Events monitoring module isn't loaded on the machine where the Agent is
 deployed. This happens due to a change in the DLL versions. To exit this state, the Threat
 Prevention administrator must start the Active Directory module. See the
 [Agent Safe Mode](/docs/threatprevention/8.0/admin/agents/safemode.md) topic for additional information.
@@ -21,13 +21,16 @@ be stable before starting the pending modules on additional DCs.
 :::
 
 
-Follow the steps to start pending modules on a server.
+To start pending modules on a server:
 
 **Step 1 –** Click Agents in the left pane to launch the Agents interface.
 
-**Step 2 –** Right-click a server/Agent and select **Start Pending Modules** on the menu. Note that
-the Agent will have _Active (Modules Pending)_ as status when there are pending modules.
+**Step 2 –** Right-click a server/Agent and select **Start Pending Modules** on the menu.
 
-The Starting window is displayed.
+:::note
+The Agent displays _Active (Modules Pending)_ as status when there are pending modules.
+:::
 
-**Step 3 –** Once the pending modules are started, the status is displayed as _Active_.
+The Starting window appears.
+
+**Step 3 –** After the pending modules start, the status appears as _Active_.

@@ -13,11 +13,12 @@ keywords:
   - read-only
   - allow charging
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: What Do the Colors Represent in Endpoint Protector
 tags:
   - features-and-operations
+  - kb
 title: "What Do the Colors Represent in Endpoint Protector Server and Client?"
 knowledge_article_id: kA0Qk0000002B63KAE
 ---

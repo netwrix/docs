@@ -8,18 +8,11 @@ sidebar_position: 10
 
 Monitoring a NAS device first requires the Netwrix Activity Monitor to have an Activity agent
 deployed and configured to monitor the device. A Threat Prevention Agent must be deployed on the
-same Windows server hosting the Activity agent. Once monitoring begins, follow the steps to
-configure a Threat Prevention policy to monitor file system changes.
+same Windows server hosting the Activity agent. Once monitoring begins, you can configure a Threat Prevention policy to monitor file system changes.
 
 :::note
-The Threat Prevention policy does not change what the Activity Monitor agent is
-monitoring. It reads information collected by the Activity Monitor and applies any additional
-filters defined in the policy. Therefore, it is necessary for the Activity Monitor agent to be
-configured to monitor the desired activity.
+The Threat Prevention policy doesn't change what the Activity Monitor agent is monitoring. It reads information collected by the Activity Monitor and applies any additional filters defined in the policy. Configure the Activity Monitor agent to monitor the activity you want.
 :::
-
-
-Follow the steps to monitor NAS devices.
 
 **Step 1 –** In Threat Prevention, create a new policy.
 
@@ -39,20 +32,17 @@ Include Paths area.
 Activity agent. The local drives of the Windows server and all NAS devices being monitored by the
 Activity agent are listed in the Navigation pane.
 
-**Step 5 –** Select the desired NAS device in the Navigation pane and type the path(s) to be
+**Step 5 –** Select the NAS device you want in the Navigation pane and Enter the paths to be
 monitored by this policy in the Results pane, one path per row.
 
 The paths entered can be file or folder names.
 
-- For example, type c:\HR\NewHireProcess.doc for a NAS device with 192.168.16.188 as IP address, and
+- For example, Enter c:\HR\NewHireProcess.doc for a NAS device with 192.168.16.188 as IP address, and
   it appears in the paths list as c:\HR\NewHireProcess.doc (\192.168.16.188).
 
-> **NOTE:** Unlike Windows path, NAS paths are not validated by Threat Prevention. You must
-> accurately enter the path of the file or folder to be monitored. The format of the paths needs to
-> match the data in the TSV files produced by the Netwrix Activity Monitor agent. The Search feature
-> in the Netwrix Activity Monitor can be used to validate path formats. See the
-> [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
-> for additional information.
+:::warning
+Unlike Windows paths, NAS paths aren't validated by Threat Prevention. You must accurately enter the path of the file or folder to be monitored. The format of the paths needs to match the data in the TSV files produced by the Netwrix Activity Monitor agent. Use the Search feature in the Netwrix Activity Monitor to validate path formats. See the [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor) for additional information.
+:::
 
 **Step 6 –** Click **OK** to close the Select File System Objects window.
 

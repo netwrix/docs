@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # False Positives Tab
 
-Configure False Positive exclusion filters using the options in the False Positives tab. False
-Positives Filters listed here as False Positives results in the corresponding matches being removed
-from Enterprise Auditor and Access Information Center reports.
+Configure False Positive exclusion filters using the options in the False Positives tab. When you
+list filters here as False Positives, Enterprise Auditor removes the corresponding matches from
+Enterprise Auditor and Access Information Center reports.
 
 ![False Positives tab](/images/accessanalyzer/11.6/admin/settings/sensitivedata/exclusions/falsepositivestab.webp)
 
@@ -45,6 +45,6 @@ Filters:
 - Criteria – Sensitive Data criteria where the exclusion filter is applied
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Sensitive Data view. These
-buttons become enabled when modifications are made to the Sensitive Data global settings. Whenever
-changes are made at the global level, click **Save** and then **OK** to confirm the changes.
-Otherwise, click **Cancel** if no changes were intended.
+buttons become enabled when you make modifications to the Sensitive Data global settings. Whenever
+you make changes at the global level, click **Save** and then **OK** to confirm the changes.
+Otherwise, click **Cancel** if you don't want to save the changes.

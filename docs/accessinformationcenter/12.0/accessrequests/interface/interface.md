@@ -48,10 +48,10 @@ The information displayed in the table includes:
 - Expiration – If the access is temporary, shows the expiration date:
 
     - When a user has temporary access already granted to a resource, and then requests a different
-      type of access to the same resource with a different expiration date, once the new access is
+      type of access to the same resource with a different expiration date, after the new access is
       granted, the new expiration date supersedes the old date.
 
-- Notes – Icon indicates a Note has been added. Click on the icon to read the attached note(s).
+- Notes – Icon indicates a Note has been added. Click the icon to read the attached notes.
 - Resource Name – The icon indicates the type of resource. The resource name includes its location,
   such as the UNC path for a file system resource, the URL for SharePoint resource, or Group name
   (e.g., [Domain]\[Group]).
@@ -73,13 +73,13 @@ The information displayed in the table includes:
 The table data grid functions the same way as other table grids. See the
 [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.
 
-The buttons at the bottom enable you to perform the following actions:
+The buttons at the bottom let you perform the following actions:
 
 ![Pending Requests tab buttons](/images/accessinformationcenter/12.0/accessrequests/interfacependingbuttons.webp)
 
 | Button         | Description                                                                                                                                                                                                              |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Send Reminders | Opens the Sending Reminder window, which displays the status of the notification action. The action sends email reminders to owners with pending requests. Click **OK** to close the window once the status is complete. |
+| Send Reminders | Opens the Sending Reminder window, which displays the status of the notification action. The action sends email reminders to owners with pending requests. Click **OK** to close the window after the status is complete. |
 | View Notes     | Opens the View Notes window for the selected request. Clicking on the Notes icon in the table will also open the View Notes window. Click **OK** to close the window.                                                    |
 | Cancel         | Opens the Cancel Request wizard. See the [Cancel Request Wizard](/docs/accessinformationcenter/12.0/accessrequests/interface/cancel.md) topic for additional information.                                                                                                     |
 
@@ -123,10 +123,10 @@ The information displayed in the table includes:
 - Expiration – If the access is temporary, shows the expiration date:
 
     - When a user has temporary access already granted to a resource, and then requests a different
-      type of access to the same resource with a different expiration date, once the new access is
+      type of access to the same resource with a different expiration date, after the new access is
       granted, the new expiration date supersedes the old date.
 
-- Notes – Icon indicates a Note has been added. Click on the icon to read the attached note(s).
+- Notes – Icon indicates a Note has been added. Click the icon to read the attached notes.
 - Resource Name – The icon indicates the type of resource. The resource name includes its location,
   such as the UNC path for a file system resource, the URL for SharePoint resource, or Group name
   (e.g., [Domain]\[Group]).
@@ -149,7 +149,7 @@ The information displayed in the table includes:
 The table data grid functions the same way as other table grids. See the
 [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.
 
-The buttons at the bottom enable you to perform the following actions:
+The buttons at the bottom let you perform the following actions:
 
 ![Request History tab buttons](/images/accessinformationcenter/12.0/accessrequests/interfacehistorybuttons.webp)
 

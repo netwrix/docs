@@ -73,6 +73,12 @@ can be monitored are All, CIFS, or NIFS. Click **Next**.
 Operations** to be monitored. Additional options include:
 
 :::warning
+**Limitation: Permission Change details not available for Dell devices**
+For Dell devices, Activity Monitor reports that a permission change occurred, but can't report the specifics of the change
+(e.g., which permissions were added or removed, owner changes, or inheritance changes).
+:::
+
+:::warning
 Suppress Microsoft Office operations on temporary files – Filters out events for
 Microsoft Office temporary files. When Microsoft Office files are saved or edited, many temporary
 files are created. With this option enabled, events for these temporary files are ignored. This
@@ -176,9 +182,9 @@ Output page can be configured.
       template for Threat Manager. See the
       [Netwrix Threat Manager Documentation](https://helpcenter.netwrix.com/category/stealthdefend)
       for additional information.
-    - Custom templates can be created. Select the template you want or create a new template by
-      modifying an existing template within the Syslog Message Template window. The new message
-      template will be named Custom.
+    - You can create custom templates. Select the template you want or create a new template by
+      modifying an existing template within the Syslog Message Template window. Activity Monitor names the new message
+      template Custom.
 - Add C:\ to the beginning of the reported file paths – Adds 'C:\" to file paths to be displayed
   like a Windows file path:
     - Display example if checked – C:\Folder\file.txt

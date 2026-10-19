@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Netwrix product documentation site — 27+ security products, built with Docusaurus v3.8.1. Hosted on Azure, deployed from `main`. Writing standards and doc-specific guidance are in `docs/CLAUDE.md` (loaded automatically when working in `docs/`).
+Netwrix product documentation site — 27+ security products, built with Docusaurus (always the latest stable release). Hosted on Azure, deployed from `main`. Writing standards and doc-specific guidance are in `docs/CLAUDE.md` (loaded automatically when working in `docs/`).
 
 ## Commands
 
@@ -20,29 +20,34 @@ npm run clear            # Clear Docusaurus cache (fixes stale build issues)
 # Linting
 vale <file>              # Run Vale style checker on a markdown file
 /dale <file>             # Run Dale linter (Claude skill) on a markdown file
+npm run quality:check    # Vale + Dale + AI-isms check on your staged or branch docs (what the pre-commit hook runs)
+npm run quality:check -- --file <path>   # the same check on one page, whole
 
-# Install Vale (if not already installed)
-# macOS:
-brew install vale
-# Linux:
-sudo snap install vale
-# Windows:
-choco install vale
-# Manual (any platform) — download binary from GitHub releases:
-# https://github.com/errata-ai/vale/releases
+# Vale and the git hooks (hk) are pinned in .config/mise.toml
+# macOS: brew install mise    Windows: winget install jdx.mise
+mise install             # installs Vale + hk and the hooks (accept the trust prompt)
+mise x -- hk check --pr  # run the hook checks on the branch's changed files
+
+# In Claude Code, prefer /docs-build and /docs-preview over running these by hand
 
 # KB management
 npm run kb:clean         # Remove copied KB files from versioned folders
 npm run kb:dry           # Dry run of KB copy script
+
+# Single-product builds (faster iteration — only generates plugins/routes for one product)
+DOCS_PRODUCT=pingcastle npm run build
+DOCS_PRODUCT=pingcastle npm run start
 ```
 
-The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set automatically by npm scripts). Broken links, markdown links, and anchors all throw build errors (`onBrokenLinks: 'throw'`).
+The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set automatically by npm scripts). Markdown links and anchors always throw build errors. `onBrokenLinks` also throws, except it's relaxed to `'warn'` for `DOCS_PRODUCT` single-product builds, since those intentionally filter out other products' pages (cross-product links 404 on purpose).
 
 ## Architecture
 
 ### Central configuration
 
 `src/config/products.js` is the single source of truth. It defines every product's ID, name, versions, categories, and paths. Docusaurus plugins, routes, navbar dropdowns, and sidebars are all auto-generated from this file. To add a product or version, edit this file — don't manually create plugin entries in `docusaurus.config.js`.
+
+Setting the `DOCS_PRODUCT` environment variable (matching a product's `id`) scopes plugin generation, navbar, homepage, redirects, and KB copy down to that single product, speeding up local builds and dev server startup. Set `DOCS_PRODUCT_LATEST_ONLY=true` to also build only that product's latest version (default: all versions). See `getActiveProducts()`/`getActiveVersions()` in `src/config/products.js`.
 
 ### Versioning
 
@@ -62,20 +67,24 @@ Images go in `static/images/<product>/` as `.webp` files, organized by version a
 
 ## Branch Workflow
 
-PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-main` workflow merges `dev` to `main` daily at 8 AM PST if the build passes. Production deploys from `main` to Azure Blob Storage.
+PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-main` workflow merges `dev` to `main` daily at 8 AM PST if the build passes. Production deploys from `main` to Azure Blob Storage. Writers don't deploy: merging to `dev` deploys the dev site, and the daily sync deploys production.
 
 ## CI/CD Workflows
 
 | Workflow | Trigger | Purpose |
 |---|---|---|
-| `build-and-deploy.yml` | Push to main/dev, PRs to dev | Build and deploy to Azure |
-| `vale-autofix.yml` | PRs with `.md` changes | Auto-fix Vale + Dale issues (script + AI), post summary comment |
-| `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Editorial review; `@claude` follow-up |
-| `claude-documentation-reviewer.yml` | PRs with `.md` changes | AI review with inline suggestions |
-| `claude-documentation-fixer.yml` | `@claude` comment on PR | Apply fixes and push |
-| `claude-issue-labeler.yml` | Issues opened/edited | Security screening, CoC check, auto-labeling, content fix automation |
-| `sync-dev-to-main.yml` | Daily 8 AM PST | Auto-merge dev to main |
-| `reindex-algolia.yml` | After main deploy | Refresh search index |
+| `build-and-deploy.yml` | Push to main/dev, PRs to dev, manual | Build the site. Pushes deploy to Azure (`dev` to development, `main` to production); PRs build only |
+| `script-tests.yml` | PRs that change `scripts/` or `package.json` | Runs the repo's script tests. Docs are linted before the PR (pre-commit: Vale, Dale, AI-isms); `vale-autofix.yml` still lints on the PR as a backstop |
+| `md-extension-autofix.yml` | PRs to dev | Adds missing `.md` extensions and frontmatter, and commits the fix |
+| `claude-code-review.yml` | PRs to dev that change non-doc files | Code review comment |
+| `claude-code-followup.yml` | `@claude` comment on a code PR (owners, members, collaborators) | Answers or applies a fix |
+| `claude-doc-pr.yml` | PRs to dev with `docs/` changes; `@claude` comments | Editorial review (`doc-review` job) and `@claude` follow-up (`doc-followup` job) |
+| `claude-issue-labeler.yml` | Issues opened/edited, comments | Security screening, CoC check, auto-labeling, content fix automation |
+| `auto-create-pr-tracking-issues.yml` | Review requested on a PR | Creates the admin or KB tracking issue |
+| `slack-notify-pr.yml` | PR opened, review requested, PR comment | Posts to #docs-gh and @-mentions the CODEOWNERS teams for the changed files |
+| `slack-notify-issue.yml` | Issue opened or commented | Posts to #docs-gh and @-mentions the relevant CODEOWNERS members |
+| `update-project-board-on-pr-merge.yml` | PR closed | Sets the linked tracking issue's status on the project board |
+| `sync-dev-to-main.yml` | Daily 8 AM PST (16:00 UTC), manual | Auto-merge dev to main if the build passes |
 
 ## Skills and Agents
 
@@ -83,16 +92,23 @@ Skills (`.claude/skills/`) are invoked with `/skill-name`. Agents (`.claude/agen
 
 When a user asks for help with documentation, always use the appropriate tool:
 - **`/doc-help` skill** — Interactive tasks: reviewing content, suggesting improvements, discussing structure or flow, brainstorming, explaining style rules, incorporating external documents (e.g., `.docx` files) into existing markdown files, or any back-and-forth conversation about writing.
-- **`tech-writer` agent** — Autonomous end-to-end tasks: drafting new documents, rewriting files, fixing all Vale errors, or editing for style and clarity.
+- **`/doc-draft` skill** — Drafts documentation from source material, in your session: a PR to document ("look at PR X in repo Y"), a GitHub issue, Jira ticket, or Azure DevOps item to document ("look at PLAT-1234"), specs for a feature, notes to turn into a document, or a prompt detailed enough to draft from. Product context for PR drafting lives in `.claude/references/products/<product>.md`; add a brief there for any product you want it to understand. It does not edit existing docs; use `/doc-help`, `/dale`, or Vale for that.
 
 | Component | Type | Purpose |
 |---|---|---|
+| `/docs-build` | Skill | Build one product or the whole site locally; summarizes broken links and MDX errors |
+| `/docs-preview` | Skill | Start, stop, or check a local dev server or production preview |
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
+| `/doc-draft` | Skill | Drafts new pages from a PR, a work item (GitHub issue, Jira ticket, Azure DevOps item), specs, notes, or a detailed prompt, and structures new docs directories |
 | `/doc-pr` | Skill | Automated PR editorial review |
 | `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
-| `tech-writer` | Agent | Autonomous end-to-end doc writing/editing |
+| `/derek` | Skill | KB article quality reviewer (frontmatter, structure, title format, product names, callouts, bolding/path formatting, image alt-text/external-refs, keywords) |
+| `/kb-writer` | Skill | Interactive KB article content coach — depth, structure, clarity before linting |
+| `/kb-pr-open` | Skill | Last-mile KB submission helper for TSEs — lints and opens a PR to `dev` |
+| `/kb-pr-review` | Skill | Reviews a KB PR (Vale + Dale + Derek) and drafts a review comment |
+| `/audit-fix` | Skill | Applies a docs-audit correction to a page and its duplicate versions |
 | `vale-rule-writer` | Agent | Creates new Vale rules |
 | `vale-auditor` | Agent | Audits Vale rule set for conflicts |
 | `github-issue-manager` | Agent | Issue intake pipeline orchestrator |
@@ -100,7 +116,10 @@ When a user asks for help with documentation, always use the appropriate tool:
 ## Hooks
 
 Project hooks are in `.claude/settings.json`:
-- **PostToolUse (Edit|Write)**: After editing a `docs/*.md` file, reminds to run `/dale`
+- **PostToolUse (Edit|Write)**: After editing a `docs/*.md` file, reminds to run `/dale`; a second hook records the file so the Stop hook knows which docs this session edited
 - **PostToolUse (Bash)**: After running `vale`, reminds to fix and re-run until clean
+- **Stop**: When Claude finishes a turn, runs the style check (Vale, Dale, AI-isms) on the docs this session edited and hands any findings back to Claude, up to 3 rounds
 
 Hook scripts live in `.claude/hooks/`.
+
+Git hooks are defined in `.config/hk.pkl` and installed by `mise install` once the user accepts mise's trust prompt for `.config/mise.toml` (`npm install` reinstalls them after that; it never trusts the config itself). Pre-commit applies the mechanical Vale fixes (`scripts/vale-local.mjs`), runs the anchor check, blocks on the style check (Vale, Dale, AI-isms: `scripts/quality/check.mjs --staged`), and warns about draft markers. Pre-push blocks on Vale warnings on lines the branch changed since it left `dev`. The hooks use `.vale-local.ini`, which adds the local-only `DaleLocal` style; CI keeps `.vale.ini`.

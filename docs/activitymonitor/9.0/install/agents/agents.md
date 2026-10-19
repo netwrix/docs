@@ -15,19 +15,19 @@ There are two deployment modes:
 
 1. **The agent monitors the server it is installed on**
 
-The agent must be deployed on the target system for the following event sources:
+Deploy the agent on the target system for the following event sources:
 
 |Event source|Additional requirements|
 |------------|-----------------------|
 |Windows File Server| |
 |Linux File Server| |
-|Active Directory domain controllers| The agent must be installed on all domain controllers of the monitored domain.|
-|SharePoint On-Premise|The agent must be deployed to the server that hosts the _Central Administration_ component of the SharePoint farm.|
+|Active Directory domain controllers| Install the agent on all domain controllers of the monitored domain.|
+|SharePoint On-Premise|Deploy the agent to the server that hosts the _Central Administration_ component of the SharePoint farm.|
 
 
 2. **The agent monitors remote hosts or services**
 
-In this mode, the agent is installed on a Windows Server and configured to monitor the following event sources:
+In this mode, install the agent on a Windows Server and configure it to monitor the following event sources:
 
 |Event source|Additional requirements|
 |------------|-----------------------|
@@ -55,7 +55,7 @@ In this mode, the agent is installed on a Windows Server and configured to monit
 
 
 :::info
-For file storage, the agent's server should be located close to the monitored NAS device on the network to reduce latency.
+For file storage, locate the agent's server close to the monitored NAS device on the network to reduce latency.
 :::
 
 :::info

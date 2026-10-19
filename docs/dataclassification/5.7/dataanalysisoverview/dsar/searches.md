@@ -58,4 +58,4 @@ To template search request, do the following:
 2. Locate the Searches tab.
 3. Select search and click Template on the right.
 
-A new search window will appear, pre-populated with exactly the same criteria as above.
+A new search window will appear, pre-populated with exactly the same criteria as the original search.

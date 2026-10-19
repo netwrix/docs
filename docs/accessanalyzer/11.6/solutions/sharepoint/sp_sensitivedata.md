@@ -6,8 +6,8 @@ sidebar_position: 80
 
 # 6.Sensitive Data > SP_SensitiveData Job
 
-The SP_SensitiveData Job identifies where sensitive data is located inside SharePoint farms. Special
-care is paid to access and user activity in these locations.
+The SP_SensitiveData Job identifies where sensitive data is located inside SharePoint farms. Monitor
+access and user activity in these locations closely.
 
 ![6.Sensitve Data > SP_SensitiveData Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/sharepoint/sensitivedatajobstree.webp)
 
@@ -19,7 +19,7 @@ Navigate to the **Jobs** > **SharePoint** > **6.Sensitive Data** > **SP_Sensitiv
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

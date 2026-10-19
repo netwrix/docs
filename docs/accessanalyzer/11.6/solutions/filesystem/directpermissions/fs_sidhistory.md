@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **FileSystem** > **2.Direct Permiss
 **FS_SIDHistory** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -39,4 +39,4 @@ the following pre-configured report:
 
 | Report               | Description                                                                    | Default Tags | Report Elements                                                                                                                                                                                                     |
 | -------------------- | ------------------------------------------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SID History Overview | This report identifies any applied ACE which utilizes a trustee's SID history. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays the top 5 hosts by affected folders</li><li>Table – Provides details on permissions</li><li>Table – Provides details on trustees</li></ul> |
+| SID History Overview | This report identifies any applied ACE which uses a trustee's SID history. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays the top 5 hosts by affected folders</li><li>Table – Provides details on permissions</li><li>Table – Provides details on trustees</li></ul> |

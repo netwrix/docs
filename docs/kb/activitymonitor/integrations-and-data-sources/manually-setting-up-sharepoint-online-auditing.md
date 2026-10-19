@@ -16,9 +16,11 @@ keywords:
   - SPAC
 products:
   - activitymonitor
-  - access-analyzer
+  - accessanalyzer
 sidebar_label: Manually Setting Up SharePoint Online Auditing
-tags: []
+tags:
+  - kb
+  - integrations-and-data-sources
 title: "Manually Setting Up SharePoint Online Auditing"
 knowledge_article_id: kA0Qk0000001s6PKAQ
 ---
@@ -133,8 +135,8 @@ The SharePoint Activity Auditing (SPAC) scan can use the same app registration a
    - **Expires:** Set this to the longest option or per your organization's internal policy.
 7. After creating the client secret, copy the **Secret Value** to a secure location.
 
-   > **NOTE:** This value will obfuscate. Make sure you copy it immediately or you will need to create a new client secret.  
-   > ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl5Fe.png)
+    > **NOTE:** This value will obfuscate. Make sure you copy it immediately or you will need to create a new client secret.  
+    > ![](../0-images/ka0Qk000000D6nZ_0EMQk00000Bl5Fe.png)
 
 8. In Netwrix Activity Monitor, navigate to the **Monitored Hosts** tab and select **Add Host**.
    - **Choose Agent:** Specify the agent you would like to use for collecting SharePoint activity logs.

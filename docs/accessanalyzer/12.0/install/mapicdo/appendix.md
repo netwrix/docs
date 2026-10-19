@@ -6,16 +6,16 @@ Exchange MAPI CDO.
 :::
 
 
-Before installing either binary, close the Access Analyzer application and ensure the following
-requirements have been met:
+Before installing either binary, close the Access Analyzer application and ensure you meet the
+following requirements:
 
-- Exchange System Manager for Exchange 2003 is not installed on the Access Analyzer Console server.
-- Microsoft Outlook is not installed on the Access Analyzer Console server.
+- Exchange System Manager for Exchange 2003 isn't installed on the Access Analyzer Console server.
+- Microsoft Outlook isn't installed on the Access Analyzer Console server.
 
 These programs will interfere with the Microsoft Exchange MAPI CDO installation and with MAPI
 connections if they are installed on the Access Analyzer Console server.
 
-Follow these steps to install the Microsoft Exchange MAPI CDO.
+Install the Microsoft Exchange MAPI CDO.
 
 **Step 1 –** Download and run the ExchangeMapiCDO application from Microsoft.
 
@@ -46,5 +46,5 @@ agreement and click Next.
 
 **Step 6 –** When the installation is complete, click Finish.
 
-Reopen the Access Analyzer application, and the Settings > Exchange node is enabled for
+Reopen the Access Analyzer application. Access Analyzer enables the Settings > Exchange node for
 configuration.

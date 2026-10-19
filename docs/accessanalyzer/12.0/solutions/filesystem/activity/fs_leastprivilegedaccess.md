@@ -7,7 +7,7 @@ sidebar_position: 20
 # Least Privileged Access > FS_LeastPrivilegedAccess Job
 
 The FS_LeastPrivilegedAccess job is designed to report on activity event information that can assist
-in identifying least privilege from targeted file servers. It identifies where trustees are not
+in identifying least privilege from targeted file servers. It identifies where trustees aren't
 leveraging their permissions to resources from targeted file servers. Requires **Access Auditing**
 component data collection.
 
@@ -21,7 +21,7 @@ View the analysis tasks by navigating to the **FileSystem** > **5.Activity** > *
 Access** > **FS_LeastPrivilegedAccess** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -54,5 +54,5 @@ produces the following pre-configured reports:
 | Report                         | Description                                                                                                                            | Default Tags                                          | Report Elements                                                                                                                                                                      |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Overprovisioning Risk by Share | This report identifies shares with the largest amount of unutilized entitlements and assigns a risk rating to each one.                | GDPR SOX HIPAA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of two elements: <ul><li>Pie Chart – Displays shares by overprovisioning risk</li><li>Table – Provides details on shares by overprovisioning risk</li></ul> |
-| Overprovisioning Summary       | This report shows the percentage of all entitlements which are being used. An entitlement refers to one user's access to one folder.   | GDPR SOX HIPAA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of two elements: <ul><li>Pie Chart – entitlements by level of usage</li><li>Table – Provides details on entitlements</li></ul>                              |
-| Remediation                    | If all members of a group are not using their full access, then modification to group permissions on the share will be suggested here. | None                                                  | This report is comprised of one element: <ul><li>Table – Provides details on recommended changes to permissions</li></ul>                                                            |
+| Overprovisioning Summary       | This report shows the percentage of all entitlements in use. An entitlement refers to one user's access to one folder.   | GDPR SOX HIPAA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of two elements: <ul><li>Pie Chart – entitlements by level of usage</li><li>Table – Provides details on entitlements</li></ul>                              |
+| Remediation                    | If all members of a group aren't using their full access, this report suggests changes to group permissions on the share. | None                                                  | This report is comprised of one element: <ul><li>Table – Provides details on recommended changes to permissions</li></ul>                                                            |

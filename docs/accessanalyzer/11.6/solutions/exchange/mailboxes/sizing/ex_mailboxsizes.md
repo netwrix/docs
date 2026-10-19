@@ -8,18 +8,18 @@ sidebar_position: 20
 
 The EX_MailboxSizes job provides analysis and reporting around mailbox sizing and growth.
 
-#### Analysis Tasks for the EX_Mailbox Sizes Job
+#### Analysis Tasks for the EX_MailboxSizes Job
 
 View the analysis tasks by navigating to the **Exchange** > **4. Mailboxes** > **Sizing** >
 **EX_MailboxSizes** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
 
-![Analysis Tasks for the EX_Mailbox Sizes Job](/images/accessanalyzer/11.6/solutions/exchange/mailboxes/sizing/mailboxsizesanalysis.webp)
+![Analysis Tasks for the EX_MailboxSizes Job](/images/accessanalyzer/11.6/solutions/exchange/mailboxes/sizing/mailboxsizesanalysis.webp)
 
 The following analysis tasks are selected by default:
 
@@ -47,7 +47,7 @@ The following analysis task deletes table data from data collection and analysis
 task should remain cleared unless specifically needed:
 
 :::warning
-Do not select the **00.Delete All Data** option. This analysis task is for
+Don't select the **00.Delete All Data** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database:
 :::
 

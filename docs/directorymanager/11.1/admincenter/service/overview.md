@@ -29,7 +29,7 @@ The following table discusses Directory Manager services.
 These services run in the context of specific accounts that are different from the logged-on user or
 the default computer account. See the Accounts to Run the Servicestopic for details.
 
-### Where are these Services Hosted?
+### Services Hosting
 
 Directory Manager services are hosted on a web server, that could be native IIS or remote IIS.
 
@@ -51,7 +51,7 @@ Directory Manager requires the following third-party services:
 | Key Distribution Service (KDS) | You must enable the Key Distribution Service (KDS) on the Directory Manager server if you want to use Group Managed Service Accounts (gMSA) in Directory Manager. Directory Manager supports a gMSA in various contexts, such as for the Directory Manager app pool and as service account for an identity store. |
 | Elasticsearch service          | This service is responsible for searching the Elasticsearch repository to display object listings and search results in Directory Manager. If this service stops, Directory Manager will not work.                                                                                                                |
 
-### Where are these Services Hosted?
+### Services Hosting
 
 Third-party services are created as Windows services in Windows Services Manager:
 
@@ -62,12 +62,12 @@ example of services in Windows Services Manager. You can start, stop, disable, a
 
 ## Accounts to Run the Services
 
-The Directory Manager Configuration Tool enables you to specify the service accounts to use for the
+With the Directory Manager Configuration Tool, you can specify the service accounts to use for the
 Directory Manager app pool and Windows services.
 
 | Services                          | Service Account Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Directory Manager App Pool in IIS | Use a domain account or a Group Managed Service Account (gMSA). The account must be a member of the Administrators group or both the Backup Operators and IIS_IUSRS groups. The account is used to manage the Directory Manager app pool in IIS. Data service, Security service, and the portals run under the app pool. For a Microsoft Entra ID identity store, you can specify a local account (with local administrator rights) in app pool for a machine that is not joined to any domain. |
+| Directory Manager App Pool in IIS | Use a domain account or a Group Managed Service Account (gMSA). The account must be a member of the Administrators group or both the Backup Operators and IIS_IUSRS groups. The account is used to manage the Directory Manager app pool in IIS. Data service, Security service, and the portals run under the app pool. For a Microsoft Entra ID identity store, you can specify a local account (with local administrator rights) in app pool for a machine that isn't joined to any domain. |
 | Windows services                  | Use a domain account, system user account, or gMSA. The account must be a member of the Backup Operators group. The account is used to run the Windows services for Directory Manager, as discussed in the Third-party Services topic.                                                                                                                                                                                                                                                          |
 
 ## Elasticsearch Clusters, Nodes, and Directory Manager

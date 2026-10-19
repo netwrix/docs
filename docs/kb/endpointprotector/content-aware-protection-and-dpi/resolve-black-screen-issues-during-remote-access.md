@@ -14,10 +14,11 @@ keywords:
   - screen sharing
   - troubleshooting
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Resolve Black Screen Issues During Remote Access
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Resolve Black Screen Issues During Remote Access"
 knowledge_article_id: kA0Qk0000002B62KAE
 ---

@@ -13,14 +13,14 @@ of:
 
 ![Active Directory Activity DC wizard Share settings page](/images/activitymonitor/8.0/config/activedirectory/share.webp)
 
-The following connection setting can be configured to connect to the AD activity archives that must
-be located on a Domain Controller share:
+Configure the following connection setting to connect to the AD activity archives, which must
+reside on a Domain Controller share:
 
-- UNC Path – Enter the path of the share that stores AD Activity from the AD Agent(s). The ellipsis
-  (**…**) opens a file explorer where the path can be navigated to and selected.
+- UNC Path – Enter the path of the share that stores AD Activity from the AD Agents. The ellipsis
+  (**…**) opens a file explorer where you can navigate to and select the path.
 
-    - _Remember,_ all AD Agent logs must be archived to this location or the AD Activity data is not
-      queried by Access Analyzer
+    - _Remember,_ you must archive all AD Agent logs to this location, or Access Analyzer won't
+      query the AD Activity data
 
 - Include Sub-Directories – Select to include sub-directories on the targeted share. Use this option
   if there are multiple archives in the same location.

@@ -10,9 +10,9 @@ The following report is available at the **Exceptions** node:
 
 - [Exceptions Report](/docs/accessinformationcenter/12.0/resourceaudit/activedirectory/exceptions/exceptions.md)
 
-The Exceptions node displays when exceptions have been identified on the selected domain. When it is
-present, it can be expanded to view the exception type level reports. The following nodes may show
-under the Exceptions node for a domain when that exception type has been identified:
+The Exceptions node displays when Access Analyzer identifies exceptions on the selected domain. When
+present, expand it to view the exception type level reports. The following nodes may show
+under the Exceptions node for a domain when that exception type appears:
 
 - Circular Nesting – Groups with circular references in their effective membership
 - Deeply Nested – Groups with deep levels of membership nesting

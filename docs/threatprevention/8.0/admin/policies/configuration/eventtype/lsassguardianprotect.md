@@ -49,11 +49,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -71,11 +70,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -90,11 +88,11 @@ Use the Target Processes filter to set the scope of the policy to lockdown acces
 - Select **Lsass** to lockdow Lsass process access.
 - Select **Custom Process** to lockdown any other process access.
 
-For the Custom Process option type the process name in the textbox. Use the
+For the Custom Process option, enter the process name in the textbox. Use the
 buttons in the process list area to edit the list.
 
 - The Process **Add** (+) button adds a textbox to the list to add an additional process.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 
 ## Requesting Processes Filter
@@ -107,18 +105,18 @@ exclude specific processes from being locked down.
 
 Select the **Block** or **Allow** option button and then edit the list.
 
-Type the process in the textbox. Use the buttons above the box to edit the list.
+Enter the process in the textbox. Use the buttons above the box to edit the list.
 
 - The **Add** (+) button adds a textbox to the list to add an additional process.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 
 :::note
-- While you can select to **Block** processes, it is _not recommended_ for locking down target process.
-  Adding a process block filter will limit the policy to only block that requesting process. Unknown malicious
-  processes would not be blocked by the policy.
+- While you can select to **Block** processes, it isn't recommended for locking down target process.
+  Adding a process block filter will limit the policy to only block that requesting process. The policy
+  wouldn't block unknown malicious processes.
 - While you can select to **Allow** processes, it is possible that a malicious process could be
-  renamed to the same as an “allowed” process. Therefore, the malicious process would not be
+  renamed to the same as an “allowed” process. Therefore, the malicious process wouldn't be
   blocked.
 :::
 
@@ -130,7 +128,7 @@ maliciously impact target process.
 
 ![openprocessflagsmonitoring](/images/threatprevention/8.0/admin/policies/eventtype/openprocessflagsmonitoring.webp)
 
-Check the box to select the process flag(s) to be removed from the target process handle that is returned to
+Check the box to select the process flags to be removed from the target process handle that is returned to
 the requesting process.
 
 
@@ -146,7 +144,7 @@ the requesting process.
 
 
 :::note
-Process Guardian Protect does not fully block an operation like other lockdown policies. It
+Process Guardian Protect doesn't fully block an operation like other lockdown policies. It
 allows the handle request to complete, but the handle returned will have the specified flags
 removed.
 

@@ -9,19 +9,19 @@ sidebar_position: 40
 The following C# script sends an email notification to the specified user when their Active
 Directory password has changed.
 
-The following environmental variables must be added to the script prior to execution:
+The following environmental variables must be added to the script before execution:
 
 - SMTPHOST – Name of the organization’s SMTP server
 - SMTPPORT – Port used by the organization’s SMTP server
 - SMTPENABLESSL – Indicates whether SSL is enabled or disabled on the SMTP server
-  - False = Do not use SSL
+  - False = Don't use SSL
   - True = Use SSL
 - SMTPFROM – Valid email account sending the email to the recipient
 - SMTPID – Valid username for SMTP server within the user's environment
 - SMTPPwD – Valid password for the username above
 
 In the Templates > Actions folder in the Navigation pane, the _AD Changes: Notify user that his
-password changed_ template is preconfigured to use this action script.
+password changed_ template uses this action script by default.
 
 ```
 namespace ScriptNamespace

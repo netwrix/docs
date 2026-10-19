@@ -15,10 +15,10 @@ The options on the Edit Query page are:
 
 - Open – Click to import and open a PowerShell script
 - Script Editor – Input PowerShell script to use for the configured job
-- Parameters – The Parameters tab located on the right-hand side of the Edit Query page is used to
-  bring up the Parameters window. See the [Parameters](#parameters) topic for additional
+- Parameters – Use the Parameters tab, located on the right-hand side of the Edit Query page, to
+  open the Parameters window. See the [Parameters](#parameters) topic for additional
   information.
-- Use table input for PowerShell script – select the checkbox to bring up the Input options for the
+- Use table input for PowerShell script – select the checkbox to display the Input options for the
   PowerShell script. See the [Input Options](#input-options) topic for additional information.
 
 ## Parameters
@@ -36,8 +36,8 @@ The options in the Parameters Window are:
 - Delete – Delete a parameter
 
 :::note
-Only user created parameters can be edited or deleted. Pre-configured parameters cannot be
-edited or deleted.
+You can edit or delete only user-created parameters. You can't edit or delete preconfigured
+parameters.
 :::
 
 
@@ -64,22 +64,22 @@ The options in the Add/Edit Variable window are:
 
 ## Input Options
 
-When the Use table input for PowerShell script option is selected on the Edit Query page, additional
+When you select the Use table input for PowerShell script option on the Edit Query page, additional
 options display to define the source for input data.
 
 ![Edit Query page input options](/images/accessanalyzer/12.0/admin/datacollector/powershell/editqueryinput.webp)
 
 The input options are:
 
-- Please select name – Select the input table to be used from the drop-down menu
+- select name – Select the input table to use from the dropdown menu
 - Filter nulls – Excludes values that are null from input
 - Filter duplicates – Excludes any values that are duplicate from input
-- Text Box – Displays an example of how the input can be used in a PowerShell script
+- Text Box – Displays an example of how to use the input in a PowerShell script
 - Columns – Displays the columns in the selected input table. If applicable, select the checkbox to
   include the column in the input.
 - Input Data – Preview how the input data will look in the Input Data tab
 
 ![Text Box and the Columns tab populated with information](/images/accessanalyzer/12.0/admin/datacollector/powershell/editqueryinputtable.webp)
 
-Selecting an input table in the **Please select name** dropdown populates the Text Box and the
+Selecting an input table in the **select name** dropdown populates the Text Box and the
 Columns tab with information.

@@ -18,9 +18,9 @@ category of Bulk Import Sensitive Content Scan.
 
 The query for the 2-Dropbox_SDD Bulk Import job is:
 
-- DropboxSDD Bulk Import – Imports data collected by the Dropbox 1-SDD Scan Job into the Enterprise
+- DropboxSDD Bulk Import – Imports data collected by the 1-Dropbox_SDD Scan Job into the Enterprise
   Auditor database
 
-There are no customization options available for this job. The Summary page of the Dropbox Access
-Auditor Data Collector wizard can be viewed at the **Jobs** > **Dropbox** > **0.Collection** >
+There are no customization options available for this job. You can view the Summary page of the
+Dropbox Access Auditor Data Collector wizard at the **Jobs** > **Dropbox** > **0.Collection** >
 **2-Dropbox_SDD Bulk Import** > **Configure** > **Queries** node.

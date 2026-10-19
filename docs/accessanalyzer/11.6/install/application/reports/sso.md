@@ -6,10 +6,10 @@ sidebar_position: 40
 
 # Enable Single Sign-On
 
-Single sign-on using Windows authentication allows users to be automatically log into the Web
-Console according to the user’s current login session. When opening a session from a different
-domain, the user will be prompted for credentials from a pop-up windows. After authenticating, the
-user will be automatically logged in the Web Console.
+With single sign-on using Windows authentication, the Web Console automatically logs users in
+according to the user's current login session. When a user opens a session from a different
+domain, a pop-up window prompts the user for credentials. After the user authenticates, the Web
+Console automatically logs the user in.
 
 :::note
 The Web Console also supports using Microsoft Entra ID single sign-on. See the
@@ -18,7 +18,7 @@ topic for additional information.
 :::
 
 
-Follow the steps to enable single sign-on for the Web Console.
+To enable single sign-on for the Web Console:
 
 **Step 1 –** Open the **WebServer.exe.config** file with a text editor, for example Notepad. It is
 located within the Web folder of the Enterprise Auditor installation directory.
@@ -36,15 +36,15 @@ located within the Web folder of the Enterprise Auditor installation directory.
 **Step 4 –** Navigate to Services (`services.msc`). Restart the Netwrix Enterprise Auditor Web
 Server service.
 
-The Web Console has been enabled for single sign-on.
+You have now enabled the Web Console for single sign-on.
 
 ## Local Intranet Settings
 
-Next, configure local intranet settings to enable SSO. This enables users to have authentication
-pass through Windows Authentication and bypass SSO configuration Prompts for credentials via Browser
-pop-up.
+Next, configure local intranet settings to enable SSO. This lets authentication
+pass through Windows Authentication and bypass SSO configuration prompts for credentials through a
+browser pop-up.
 
-Follow the steps to configure local intranet settings.
+To configure local intranet settings:
 
 **Step 1 –** Open Windows Internet Properties (**Control Panel** > **Network and
 Internet** > **Internet Options**).
@@ -71,7 +71,7 @@ Authentication will now pass through Windows Authentication and bypass SSO confi
 credentials via Browser pop-up
 
 :::note
-A list of allowed authentication servers can also be configured using the
+You can also configure a list of allowed authentication servers using the
 AuthServerAllowList policy.
 
 :::

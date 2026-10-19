@@ -31,7 +31,7 @@ membership of the specified group as well as all its nested groups.
 Use the buttons to include Active Directory groups in the list.
 
 - The Add (+) button opens the [Select AD Groups Window](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/window/groups.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## AD Perpetrator Filter
 
@@ -49,10 +49,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -72,7 +72,7 @@ both.
 
 ![Event Type – Success filter](/images/threatprevention/8.0/admin/policies/eventtype/success.webp)
 
-Select the radio button for the desired monitoring filter:
+Select the radio button for the monitoring filter you want:
 
 - Success – Only monitors successful events
 - Failure – Only monitors failed events

@@ -9,7 +9,7 @@ sidebar_position: 30
 The Selected Resources window opens from the **View Selections** button in the
 [Create Review Wizard](/docs/accessinformationcenter/11.6/resourcereviews/create/create.md).
 
-![Selected Resources windwo](/images/accessinformationcenter/11.6/resourcereviews/window/selectedresources.webp)
+![Selected Resources window](/images/accessinformationcenter/11.6/resourcereviews/window/selectedresources.webp)
 
 The table displays:
 

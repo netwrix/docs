@@ -28,7 +28,7 @@ The information displayed in the table includes:
 - Expiration – If the access is temporary, shows the expiration date:
 
     - When a user has temporary access already granted to a resource, and then requests a different
-      type of access to the same resource with a different expiration date, once the new access is
+      type of access to the same resource with a different expiration date, after the new access is
       granted, the new expiration date supersedes the old date.
 
 - Expired – If the access is temporary, shows when the access is expired:
@@ -38,7 +38,7 @@ The information displayed in the table includes:
       In the case that an owner removes a user’s access through ad hoc changes before the expiration
       date, the removed access will show the superseded icon.
 
-- Notes – Icon indicates a Note has been added. Click on the icon to read the attached note(s).
+- Notes – Icon indicates a Note has been added. Click the icon to read the attached notes.
 - Resource Name – The icon indicates the type of resource. The resource name includes its location,
   such as the UNC path for a file system resource, the URL for SharePoint resource, or Group name
   (e.g., [Domain]\[Group]).
@@ -55,7 +55,7 @@ The information displayed in the table includes:
 - Reviewer Department – Department in the company of the owner who processed the request, as read
   from Active Directory
 
-The buttons below the table enable you to perform the following actions:
+Use the following buttons below the table to perform actions:
 
 ![Request History page buttons](/images/accessinformationcenter/11.6/accessrequests/youraccessportal/requesthistorybuttons.webp)
 

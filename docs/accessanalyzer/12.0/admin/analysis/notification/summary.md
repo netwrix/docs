@@ -11,6 +11,6 @@ previous pages of the wizard.
 
 ![Notification Data Analysis Module wizard Summary page](/images/accessanalyzer/12.0/admin/analysis/notification/summary.webp)
 
-Click **Finish** to save configuration changes. If no changes were made, it is best practice to
-click **Cancel** to close the Notification Data Analysis Module wizard to ensure no accidental
-clicks are saved.
+Click **Finish** to save configuration changes. If you didn't make any changes, click **Cancel** to
+close the Notification Data Analysis Module wizard instead. This prevents the wizard from saving
+accidental clicks.

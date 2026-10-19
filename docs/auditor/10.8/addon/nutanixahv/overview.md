@@ -7,12 +7,12 @@ sidebar_position: 150
 # Nutanix AHV
 
 Netwrix Auditor is a visibility platform for user behavior analysis and risk mitigation that enables
-control over changes, configurations and access in hybrid IT environments to protect data regardless
+control over changes, configurations, and access in hybrid IT environments to protect data regardless
 of its location. The platform provides security analytics to detect anomalies in user behavior and
 investigate threat patterns before a data breach occurs.
 
 Nutanix AHV is a virtualization platform within the Nutanix Enterprise Cloud architecture. It
-provides facilities for VM deployment, operation and centralized management. Nutanix AHV is a fully
+provides facilities for VM deployment, operation, and centralized management. Nutanix AHV is a fully
 integrated component of the Nutanix Enterprise Cloud.
 
 Virtualization teams, Managed Service Providers and other IT professionals need to detect who does
@@ -122,7 +122,7 @@ be then encrypted and stored in the solution configuration.
 
 - By default, the add-on is targeted at a single Nutanix Prism Central/Element server.
 - Netwrix add-on must be deployed in the same subnet as Nutanix Prism Central/Element server.
-- Please be aware that monitoring of actions performed on the add-on installation server is not
+- be aware that monitoring of actions performed on the add-on installation server isn't
   supported.
 
 ### Upgrade Path

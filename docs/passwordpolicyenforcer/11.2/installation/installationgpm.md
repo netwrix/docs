@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # Deploy with Group Policy
 
-You can use Group Policy to deploy the [Password Policy Enforcer server components](/docs/passwordpolicyenforcer/11.2/installation/installationserver.md) or the [Password Policy Client (PPC)](/docs/passwordpolicyenforcer/11.2/installation/installationclient.md). Microsoft Endpoint Configuration Manager (MECM) and other software deployment tools can also be used.
+You can use Group Policy to deploy the [Password Policy Enforcer server components](installationserver.md) or the [Password Policy Client (PPC)](installationclient.md). You can also use Microsoft Endpoint Configuration Manager (MECM) and other software deployment tools.
 
-## Create a Distribution Point
+## Create a distribution point
 
 A distribution point can be a UNC path to a server share, or a Distributed File System (DFS) path. To create a distribution point:
 
@@ -48,10 +48,10 @@ A distribution point can be a UNC path to a server share, or a Distributed File 
 7. Click **OK**.
 8. Close the Group Policy Management Editor.
 
-## Complete the Installation
+## Complete the installation
 
 Allow time for the GPO to replicate to all domain controllers before proceeding, then restart each target computer to complete the installation. Windows installs the component during startup, then restarts the computer a second time if necessary.
 
 :::note
-The Password Policy Server won't start enforcing a password policy until you [configure](/docs/passwordpolicyenforcer/11.2/admin/configconsole.md) it. Users can still change their passwords during this time, and must comply with the Windows password policy rules (if enabled).
+The Password Policy Server won't start enforcing a password policy until you [configure](../admin/configconsole.md) it. Users can still change their passwords during this time, and must comply with the Windows password policy rules (if enabled).
 :::

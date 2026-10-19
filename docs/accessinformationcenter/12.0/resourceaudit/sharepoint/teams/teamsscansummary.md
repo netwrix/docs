@@ -10,7 +10,7 @@ The Teams Scan Summary report at the **Teams** node provides an overview of scan
 
 ![Teams Scan Summary report](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/teams/teamsscansummary.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Team Name – The name of the teams that show up under the node, these are site collection resources
 - Url – URL path to the resource

@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Microsoft Entra ID Activity Auditing Configuration
 
-It is necessary to register Activity Monitor as a web application to the targeted Microsoft Entra ID
-(formerly Azure AD), in order for Activity Monitor to monitor the environment. This generates the
+Register Activity Monitor as a web application to the targeted Microsoft Entra ID
+(formerly Azure AD) so Activity Monitor can monitor the environment. This generates the
 Client ID and Client Secret needed by the Activity Agent. See
 [Microsoft Support](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-api-prerequisites-azure-portal)
 for assistance in configuring the Microsoft Entra ID web application.
@@ -20,14 +20,14 @@ Microsoft Entra ID.
 
 **Configuration Settings from the Registered Application**
 
-The following settings are needed from your tenant once you have registered the application:
+The following settings are needed from your tenant after you register the application:
 
 - Tenant ID – This is the Tenant ID for Microsoft Entra ID
 - Client ID – This is the Application (client) ID for the registered application
 - Client Secret – This is the Client Secret Value generated when a new secret is created
 
     :::warning
-    It is not possible to retrieve the value after saving the new key. It must be
+    It isn't possible to retrieve the value after saving the new key. It must be
     copied first.
     :::
 
@@ -45,8 +45,6 @@ The following permissions are required:
         - User.Read.All – Read all users' full profiles
 
 ## Register a Microsoft Entra ID Application
-
-Follow the steps to register Activity Monitor with Microsoft Entra ID.
 
 :::note
 The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
@@ -78,9 +76,6 @@ The Overview page for the newly registered app opens. Review the newly created r
 application. Now that the application has been registered, permissions need to be granted to it.
 
 ## Grant Permissions to the Registered Application
-
-Follow the steps to set up permissions to enable the Activity Monitor to monitor data and collect
-logs from Microsoft Entra ID.
 
 :::note
 The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
@@ -115,8 +110,6 @@ Now that the permissions have been granted to it, the settings required for Acti
 be collected.
 
 ## Identify the Client ID
-
-Follow the steps to find the registered application's Client ID.
 
 :::note
 The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
@@ -154,8 +147,6 @@ application’s Client Secret Key.
 
 **Overview Page**
 
-Follow the steps to find the tenant name where the registered application resides.
-
 :::note
 The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
@@ -174,9 +165,6 @@ application’s Client Secret Key.
 
 ## Generate the Client Secret Key
 
-Follow the steps to find the registered application's Client Secret, create a new key, and save its
-value when saving the new key.
-
 :::note
 The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
@@ -185,7 +173,7 @@ additional information.
 
 
 :::warning
-It is not possible to retrieve the value after saving the new key. It must be copied
+It isn't possible to retrieve the value after saving the new key. It must be copied
 first.
 :::
 
@@ -212,7 +200,7 @@ list.
 **Step 5 –** Click **Add** to generate the key.
 
 :::warning
-If this page is left before the key is copied, then the key is not retrievable, and
+If this page is left before the key is copied, then the key isn't retrievable, and
 this process will have to be repeated.
 :::
 

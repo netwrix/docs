@@ -14,7 +14,7 @@ View the analysis tasks by navigating to the **FileSystem** > **5.Activity** > *
 Statistics** > **FS_StaleShares** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

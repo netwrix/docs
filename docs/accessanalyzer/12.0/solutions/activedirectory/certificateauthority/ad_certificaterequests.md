@@ -11,8 +11,8 @@ are expiring soon.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
-parameters used by analysis tasks in the job. See the
+Use the Configuration section on a Job's overview page to modify any customizable parameters used
+by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
 
@@ -20,9 +20,9 @@ The AD_CertificateRequests job has the following configurable parameter:
 
 - Number of days to consider a cert close to expiration (default 60)
 
-This parameter sets the definition of an expiring certificate, which is used by the Certificate
-Expiration analysis task to identify any certificates expiring with this specified next number of
-days. The default is 60 days.
+This parameter defines what counts as an expiring certificate. The Certificate Expiration analysis
+task uses it to identify certificates expiring within the specified number of days. The default is
+60 days.
 
 ## Analysis Tasks for the AD_CertificateRequests Job
 
@@ -30,7 +30,7 @@ Navigate to the **Active Directory** > **7.Certificate Authority** > **AD_Certif
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -41,8 +41,8 @@ The default analysis tasks are:
 
 - Suspicious Principal Certs – Identifies certificates that show the requester requesting a
   certificate for a different principal
-- OID in Template – Analysis on certificate Extended Key Usage (EKU) Object Identifier (OID) being
-  in template OID
+- OID in Template – Identifies certificates where the Extended Key Usage (EKU) Object Identifier
+  (OID) is in the template OID
 - Certificate Expiration – Identifies certificates that expire in the next number of days set by the
   customizable parameter. The default number of days is 60. Creates the
   SA_AD_CertificateRequests_ExpiringSoon table accessible under the job’s Results node.

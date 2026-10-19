@@ -19,9 +19,9 @@ identity store and displays them as history to helpdesk users:
 - Enroll account
 - Authenticate with password, authentication types, or any other medium
 
-History can be used for audit and analysis, such as how many users changed their passwords in the
-last x days, reset their passwords using secure link, and more. It can also be used to verify the
-identity of a user through the last action he or she performed.
+Use history to audit and analyze your security, such as how many users changed their passwords in the
+last x days, reset their passwords using secure link, and more. You can also use it to verify the
+identity of a user through the last action they performed.
 
 ## View History in Helpdesk
 
@@ -61,7 +61,7 @@ following:
 - **Display name:** the user on whom the action was performed.
 - **Identity store:** the identity store the action was performed in.
 - **Action:** the action performed.
-- **Authentication type:** the authentication type(s) used by the user to authenticate in order to
+- **Authentication type:** the authentication types used by the user to authenticate to
   perform the action. For some actions performed by helpdesk, such as sending a secure link for
   password reset, no authentication type is displayed. For other actions such as _unenroll_, the
   authentication type for which the end user is unenrolled will be displayed.
@@ -110,8 +110,8 @@ Click the arrow to change the order from ascending to descending and vice versa.
 
 ## Search History
 
-You can search for history records in all the identity stores or specific identity stores. Simply
-enter the name of a user to view all actions performed for it, be it by that same user or another
+You can search for history records in all the identity stores or specific identity stores. Enter
+the name of a user to view all actions performed for it, be it by that same user or another
 user, such as helpdesk. You can also create a filter based on multiple attributes to search for
 specific records.
 
@@ -122,12 +122,12 @@ To perform a search:
 3. On the **History** tab, the following search options are available:
 
     - **Identity Store list** - To get the history records for one or specific identity stores,
-      click in the **Identity Store** box and select the check boxes for the identity stores you
+      click in the **Identity Store** box and select the checkboxes for the identity stores you
       want to view the history for.
     - **Search box to search for records specific to a user** - In the _Search_ box, enter a user’s
       full name or part of a name and press _Enter_. Directory Manager displays all history actions
       that are performed by or performed on the user.
-    - **Search filter** - Click **Filter**. On the **Filter(s)** dialog box, you can search the
+    - **Search filter** - Click **Filter**. On the **Filters** dialog box, you can search the
       history data using the available filters individually or in combination.
 
         - **Date Logged:** Specify a time period to view history data for. Click in the box and use
@@ -139,7 +139,7 @@ To perform a search:
         - **Status:** Specify whether you want to view successful actions, failed actions, or both
           successful and failed actions
         - **Action Type:** Select an action to view the history records for it. On selecting
-          _Enrollment_ or _Authenticate_, another drop-down list is displayed that lists the
+          _Enrollment_ or _Authenticate_, another dropdown list is displayed that lists the
           authentication types. Select an option to view the enrollment or authentication actions
           performed using that specific type.
 

@@ -9,8 +9,7 @@ sidebar_position: 30
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data integrity; otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -23,7 +22,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
   automatically configure audit in the target environment, your current audit settings will be
   checked on each data collection and adjusted if necessary.
 
-    - To use this option for NetApp Clustered Data ONTAP 8 or ONTAP 9, make sure that audit
+    - To use this option for NetApp Clustered Data ONTAP 8 or ONTAP 9, ensure that audit
       configuration has been created (with `vserver audit create` command) for the target system
       enabling audit configuration is optional.
 
@@ -138,9 +137,9 @@ the following administration and management guides.
 
 Perform the following steps before proceeding with the audit configuration.
 
-**Step 1 –** Configure CIFS server and make sure it functions properly.
+**Step 1 –** Configure CIFS server and ensure it functions properly.
 
-**NOTE**: NFS file shares are not supported.
+**NOTE**: NFS file shares aren't supported.
 
 **Step 2 –** Configure System Access Control List (SACL) on your file share. See
 [Configure Audit Settings for CIFS File Shares](/docs/auditor/10.8/configuration/fileservers/netappcmode/cifs.md) topic for additional information.
@@ -152,4 +151,4 @@ the _"ntfs"_ or _"mixed"_.
 volumes section in
 [Clustered Data ONTAP® 8.3 File Access Management Guide for CIFS.](https://library.netapp.com/ecm/ecm_download_file/ECMP1610207)
 
-**NOTE:** The current version of Netwrix Auditor does not support auditing of Infinite Volumes.
+**NOTE:** The current version of Netwrix Auditor doesn't support auditing of Infinite Volumes.

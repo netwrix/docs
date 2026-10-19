@@ -22,7 +22,7 @@ View the analysis tasks by navigating to the FileSystem > 6.Probable Owner > FS_
 Configure node and select Analysis.
 
 :::warning
-Do not modify or deselect the first and third selected analysis tasks. The analysis
+Don't modify or deselect the first and third selected analysis tasks. The analysis
 tasks are preconfigured for this job.
 :::
 
@@ -41,8 +41,8 @@ The following analysis tasks are selected by default:
       `@maxlevel` parameter set to Value0.
     - Value0 = root share, Value1 = 1 folder deep, Value2 = 2 folders deep, etc.
     - Set the variable #FILTERED_TRUSTEES to a CSV file that contains one row for each SID to be
-      excluded. When the job is run, SIDs specified in the #FILTERED_TRUSTEES variable are excluded
-      from the analysis and not reported as probable owners.
+      excluded. When you run the job, it excludes SIDs specified in the #FILTERED_TRUSTEES variable
+      from the analysis and doesn't report them as probable owners.
     - See the
       [Configure the Customizable Parameters in an Analysis Task](/docs/accessanalyzer/12.0/admin/jobs/job/configure/analysis/analysiscustomizableparameters.md)
       topic for additional information.

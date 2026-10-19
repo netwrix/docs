@@ -8,6 +8,7 @@ keywords:
 sidebar_label: Set Up SIEM Integration
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "Set Up a SIEM Integration"
 knowledge_article_id: kA0Qk0000002B75KAE
 products:
@@ -38,4 +39,16 @@ Once the requirements are met, log in to the **Endpoint Protector** web console 
 7. Select all **Log Types** that you want to send to the SIEM server.
 8. Click **Save** to complete the integration setup. The server will now redirect logs to your SIEM server.
 
-> **NOTE:** Previous logs will not be sent to the SIEM server. Only logs received after the integration is set up will be forwarded.
+:::note
+Previous logs will not be sent to the SIEM server. Only logs received after the integration is set up will be forwarded.
+:::
+
+For the full configuration reference, including SIEM Encryption for the TCP protocol, see [SIEM Integration](/docs/endpointprotector/admin/appliance#siem-integration) in the Appliance documentation.
+
+## Reviewing Exported Log Formats and Fields
+
+Endpoint Protector exports logs to your SIEM server in a standard format, with a specific set of fields for each log type (for example, Device Control, Content Aware Protection, and Admin Action). See [SIEM Export Log Formats](/docs/endpointprotector/admin/appliance#siem-export-log-formats) for the full field reference by log type.
+
+:::tip
+Review the exported log formats and fields before completing the integration, and adjust your SIEM parser accordingly. Netwrix periodically adds fields and data to the standard format across releases, so a parser configured against an older format may not capture newer fields.
+:::

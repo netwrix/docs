@@ -7,7 +7,7 @@ sidebar_position: 60
 # Host Investigation Dashboard
 
 The Host Investigation dashboard only appears when a search is conducted. This can be done by
-clicking a hyperlink within the Destination IP column of a table card. Alternatively, type the
+clicking a hyperlink within the Destination IP column of a table card. Alternatively, enter the
 complete host IP Address in the Search box on the right side of the navigation bar.
 
 ![Home Investigation Dashboard for Stealthbits Activivty Monitor App for QRadar](/images/activitymonitor/7.1/siem/qradar/dashboard/userinvestigationdashboard.webp)
@@ -38,5 +38,5 @@ The Host Investigation dashboard contains the following cards:
 
 The time interval is identified in the upper-right corner with the Start and End boxes. This is set
 by default to the “past day,” or 24 hours. To search within a different interval, either manually
-type the desired date and time or use the calendar buttons to set the desired date and time
-interval. Then click Search to refresh the card data.
+enter the date and time you want or use the calendar buttons to set the date and time
+interval you want. Then click Search to refresh the card data.

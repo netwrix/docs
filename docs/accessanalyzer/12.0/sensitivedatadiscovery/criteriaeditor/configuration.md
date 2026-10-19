@@ -11,7 +11,7 @@ edit, and remove sub-criteria information for User Criteria.
 
 ![Configuration Pane](/images/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/configurationpanesystemcriteria.webp)
 
-The information in the configuration pane changes based on the criteria currently selected in the
+The information in the configuration pane changes based on the criteria selected in the
 navigation pane.
 
 ![Options at the top of the configuration pane](/images/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/configurationpanetop.webp)
@@ -19,7 +19,7 @@ navigation pane.
 The options at the top of the Configuration Pane are:
 
 :::note
-Configuration settings for System Criteria cannot be modified.
+Configuration settings for System Criteria can't be modified.
 :::
 
 
@@ -40,7 +40,7 @@ Configuration settings for System Criteria cannot be modified.
     - The risk score can be set to **Low**, **Medium**, or **High**
     - Click the **Risk Score** button to change the risk score for user-configured criteria
 
-- Required matched criteria list – Lists the sub-criteria configured for the currently selected
+- Required matched criteria list – Lists the sub-criteria configured for the selected
   top-level criteria in the navigation pane. The columns in the table are:
 
     - Name – Name of the sub-criteria
@@ -54,7 +54,7 @@ Configuration settings for System Criteria cannot be modified.
 The options at the bottom of the configuration pane are:
 
 :::note
-Configuration settings for System Criteria cannot be modified.
+Configuration settings for System Criteria can't be modified.
 :::
 
 
@@ -67,7 +67,7 @@ Configuration settings for System Criteria cannot be modified.
     - [Summary Criteria](/docs/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/summary.md)
 
 - Remove – Remove sub-criteria from the Required matched sub-criteria list
-- Edit – Edit the currently selected sub-criteria
+- Edit – Edit the selected sub-criteria
 - Must match at least this many criteria – Adjust the slider to configure how many sub-criteria must
   be matched for the sensitive data criteria to be reported
 
@@ -76,13 +76,13 @@ Configuration settings for System Criteria cannot be modified.
       required matched criteria list
 
     :::warning
-    The character distance feature does not account for summaries that are nested
+    The character distance feature doesn't account for summaries that are nested
     within other summaries.
     :::
 
 
 - Matches should be within this proximity of characters – Match hits for this criteria should be
-  within this many characters of one another in order for there to be a match. Adjust the slider to
+  within this many characters of one another for there to be a match. Adjust the slider to
   set the default character distance required for match hits.
 
     - The minimum value is 0
@@ -90,15 +90,15 @@ Configuration settings for System Criteria cannot be modified.
     - Using this feature requires any combination of two or more Regular Expression (Pattern) and
       Keyword sub-criteria
 
-- Include keywords as part of match hits – Select this option to enable the inclusion of keywords as
-  part of match hits. This option determines whether a match found based on a Keyword Criteria is
+- Include keywords as part of match hits – Select this option to include keywords in match hits.
+  This option determines whether a match found based on a Keyword Criteria is
   reported as a match hit. When this option is selected, any matches found for a word in the Keyword
-  list is reported as match hit. If this option is not selected, then only matches found based on
+  list is reported as match hit. If this option isn't selected, then only matches found based on
   Pattern or child Summary Criteria are reported as a match hit.
 - Metadata for this criteria – Click the green plus (**+**) button to add a new metadata type for
   the criteria. Delete a metadata type by clicking the **X** button in the gray metadata tag.
 
-    - For a list of available out-of-the-box metadata tags, see the
+    - For a list of available predefined metadata tags, see the
       [Default Metadata Tag Values](/docs/accessanalyzer/12.0/sensitivedatadiscovery/metadatatags.md) topic for additional information
 
 - Cancel – Exit the Sensitive Data Criteria Editor without saving changes
@@ -115,8 +115,8 @@ The options in the Criteria Tester are:
 - Use the following sample text – Enter sample text to test against current configured criteria in
   the **Use the following sample text** textbox
 - Use the following file – Click **Browse** to import a file as sample text to test against
-  currently configured criteria
-- Test Data – Click **Test Data** to test the sample text against currently configured criteria.
+ configured criteria
+- Test Data – Click **Test Data** to test the sample text against configured criteria.
   Match hits show in the **Test Results** section.
 - Test Results – Displays match hits for the sample text typed into the text box. The two tabs under
   Test Results are:

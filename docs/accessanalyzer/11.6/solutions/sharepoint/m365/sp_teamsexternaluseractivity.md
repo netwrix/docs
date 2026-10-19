@@ -12,11 +12,11 @@ Teams, including details on the date/time, resource, and operation.
 ## Analysis Tasks for the SP_TeamsExternalUserActivity Job
 
 Navigate to the **Jobs** > **SharePoint** > **8.M365** >
-**SP_TeamsExternalUserActivity** >**Configure** node and select **Analysis** to view the analysis
+**SP_TeamsExternalUserActivity** > **Configure** node and select **Analysis** to view the analysis
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

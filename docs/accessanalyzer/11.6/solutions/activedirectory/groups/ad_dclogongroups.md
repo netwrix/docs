@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # AD_DCLogonGroups Job
 
-The AD_DCLogonGroups Job identifies users who are able to log on to Domain Controllers through
+The AD_DCLogonGroups Job identifies users who can log on to Domain Controllers through
 effective membership to the Enterprise Admins, Domain Admins, Administrators, Backup Operators,
 Account Operators, Print Operators, or Remote Desktop Users groups. This type of access should be
 limited to only those individuals who require this level of administrative privileges.
@@ -17,7 +17,7 @@ Navigate to the **Active Directory** > **1.Groups** > **AD_DCLogonGroups** > **C
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

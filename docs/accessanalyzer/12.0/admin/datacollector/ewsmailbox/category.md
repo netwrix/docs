@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # EWSMailbox: Category
 
-The Category page identifies which type of EWSMailbox information is retrieved during the scan.
+The Category page identifies which type of EWSMailbox information the scan retrieves.
 
 ![EWS Mailbox Data Collector Wizard Category page](/images/accessanalyzer/12.0/admin/datacollector/ewsmailbox/category.webp)
 

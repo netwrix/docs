@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Get-TombStoneObject
 
-When you delete an object from Directory, the object is not physically removed from the database.
+When you delete an object from Directory, the object isn't physically removed from the database.
 Instead, Directory marks the object as deleted, strips most of the properties from the object and
 moves it to a special container. The object becomes invisible to normal directory operations and is
 referred to as a tombstone object.

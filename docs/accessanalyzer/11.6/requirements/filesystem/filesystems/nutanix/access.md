@@ -11,7 +11,7 @@ Admin: Backup Access only** role assigned.
 
 ## Nutanix Prism Central Interface
 
-Follow the steps to configure the required account in the Nutanix Prism Central Interface.
+Complete the following steps to configure the required account in the Nutanix Prism Central Interface.
 
 **Step 1 –** Select the **Home** dropdown and select **File Server**.
 

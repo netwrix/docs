@@ -29,7 +29,7 @@ Configure Syslog alerts using the Syslog Alerts Tab.
 
 The configurable options are:
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
 - Syslog protocol – Identify the Syslog protocol to be used for the alerts
 

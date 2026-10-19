@@ -16,10 +16,8 @@ Provisioning this account is a three part process:
 - Part 2: Create a Group & Assign Role
 - Part 3: Add User to Group
 
-Relevant NetApp Documentation: To learn more about node access controls, please visit the NetApp
-website and read the
-[na_useradmin – Administers node access controls](https://library.netapp.com/ecmdocs/ECMP1511537/html/man1/na_useradmin.1.html)
-article.
+For information about node access controls, see the NetApp documentation for
+[na_useradmin – Administers node access controls](https://library.netapp.com/ecmdocs/ECMP1511537/html/man1/na_useradmin.1.html).
 
 ## Part 1: Create Role with API/CLI Access
 
@@ -42,9 +40,9 @@ Host configuration.
 :::
 
 
-The following command needs to be run to create the role.
+Run the following command to create the role.
 
-Run the following command when provisioning an account for manual configuration of FPolicy; it
+When provisioning an account for manual configuration of FPolicy, run the following command; it
 includes the "Enable and connect FPolicy" option requirement:
 
 ```
@@ -57,7 +55,7 @@ Example:
 useradmin role -add activitymonitor -c "Role for Activity Monitor" -a login-http-admin,api-system-api-list,api-system-get-version,api-cifs-share-list-iter-*,api-volume-list-info-iter-*,cli-fpolicy*
 ```
 
-Run the following command when provisioning an account for automatic configuration of FPolicy; it
+When provisioning an account for automatic configuration of FPolicy, run the following command; it
 includes the "Enable and connect FPolicy" option requirement:
 
 ```
@@ -74,8 +72,7 @@ After the role is created, complete Part 2: Create a Group & Assign Role.
 
 ## Part 2: Create a Group & Assign Role
 
-Once the role has been created, it must be attached to a group. The following command needs to be
-run to create a group and assign the role to it.
+After you've created the role, attach it to a group. Run the following command to create a group and assign the role to it.
 
 ```
 useradmin group -add [GROUP_NAME] -r [ROLE_NAME]
@@ -92,7 +89,7 @@ After the group is created and the role is assigned, complete Part 3: Add User t
 ## Part 3: Add User to Group
 
 The final step is to add the domain user to the new group, Backup Operators group, and Power Users
-group. The following command needs to be run to add the user to all three groups.
+group. Run the following command to add the user to all three groups.
 
 ```
 useradmin domainuser -add [DOMAIN\USER] -g [GROUP_NAME, WITHIN " MARKS IF MULTIPLE WORDS],"Backup Operators","Power Users"

@@ -10,6 +10,10 @@ keywords:
   - SubAuthentication
   - Auth0
   - subauthentication filter
+  - Event ID 2060
+  - Kerberos
+  - Domain Controller
+  - password expiry
 
 products:
   - passwordpolicyenforcer
@@ -18,7 +22,6 @@ tags:
   - kb
   - authentication-and-integration
 title: "SubAuthentication Filter Event Warning When Fortinet Is Installed"
-knowledge_article_id: ""
 ---
 
 # SubAuthentication Filter Event Warning When Fortinet Is Installed
@@ -50,14 +53,14 @@ To restore the password expiry reminder when PPE and Fortinet are both installed
 1.	Open `RegEdit` to key: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\`.
 2.	Verify that the `Auth0` registry value reads `dcagent`.
 
-	![Registry editor showing the Auth0 value set to dcagent](./0-images/dcagentAuth0.png)
+	![Registry editor showing the Auth0 value set to dcagent](../0-images/dcagentAuth0.png)
 
 3.	Set the `Auth0` value to `PPE`.
 
-	![Registry editor showing the Auth0 value set to PPE](./0-images/PPEAuth0.png)
+	![Registry editor showing the Auth0 value set to PPE](../0-images/PPEAuth0.png)
 
 4.	Create a new value of type `REG_SZ` called `AuthPPE`, and set it to `dcagent`.
 
-	![Registry editor showing the new AuthPPE value set to dcagent](./0-images/AuthPPEdcagent.png)
+	![Registry editor showing the new AuthPPE value set to dcagent](../0-images/AuthPPEdcagent.png)
 
 5.	Restart the Domain Controller.

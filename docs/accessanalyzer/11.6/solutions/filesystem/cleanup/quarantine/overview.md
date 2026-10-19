@@ -13,7 +13,7 @@ The 3. Quarantine job group is designed to report on and quarantine files that a
 This job group includes the following jobs:
 
 - [FS_QuarantineData Job](/docs/accessanalyzer/11.6/solutions/filesystem/cleanup/quarantine/fs_quarantinedata.md)
-  – Designed to quarantine files subject to be cleaned up
+  – Designed to quarantine files that are pending cleanup
 - [FS_QuarantineData_Status Job](/docs/accessanalyzer/11.6/solutions/filesystem/cleanup/quarantine/fs_quarantinedata_status.md)
   – Designed to report on the FS_QuarantineData job
 - [FS_RestoreInheritance Job](/docs/accessanalyzer/11.6/solutions/filesystem/cleanup/quarantine/fs_restoreinheritance.md)

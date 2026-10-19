@@ -6,13 +6,13 @@ sidebar_position: 100
 
 # Nutanix Files Activity Auditing Configuration
 
-The Netwrix Activity Monitor can be configured to monitor file activity on Nutanix Files devices.
+Configure the Netwrix Activity Monitor to monitor file activity on Nutanix Files devices.
 
-A user having REST API access must be created on the Nutanix Files server to monitor the files
-server using Activity Monitor. Additional configurations are done automatically by Activity Monitor
-using the Nutanix API with the help of this user.
+Create a user with REST API access on the Nutanix Files server to monitor the files
+server using Activity Monitor. Activity Monitor then automatically performs additional configurations
+using the Nutanix API with this user.
 
-Follow the steps to create a new user account with Nutanix Prism:
+To create a new user account with Nutanix Prism:
 
 **Step 1 –** Open Nutanix Prism web portal.
 
@@ -37,7 +37,7 @@ Monitor.
 
 
 :::note
-Nutanix Files does not report events for activity originating from a server where the
+Nutanix Files doesn't report events for activity originating from a server where the
 Activity Monitor Agent is installed.
 
 :::

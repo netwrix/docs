@@ -12,10 +12,11 @@ keywords:
   - management console
   - blocking policy
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Deploying Endpoint Protector Agents
 tags:
   - deployment-and-installation
+  - kb
 title: "Deploying Endpoint Protector Agents"
 knowledge_article_id: kA0Qk0000002BCeKAM
 ---
@@ -25,6 +26,12 @@ knowledge_article_id: kA0Qk0000002BCeKAM
 ## Overview
 
 This article explains how to deploy Endpoint Protector agents to endpoint systems. You should deploy agents before modifying policies to perform blocking. This approach allows you to identify any system variables that may require allowances and gives you an opportunity for end-user feedback.
+
+For the full reference, see [Client Software](/docs/endpointprotector/admin/systemconfiguration/overview#client-software).
+
+:::warning
+Only the latest Endpoint Protector and Enforced Encryption Clients are available for download from Client Software. If you're deploying to endpoints still running client version 5.9.4.1 or older, they can't receive the latest client package directly — you must deploy the 5.9.4.3 Hotfix 1 signature bridge client first. See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#certificate-bridge--historical-context) for the full certificate bridge explanation and required package list.
+:::
 
 ## Instructions
 

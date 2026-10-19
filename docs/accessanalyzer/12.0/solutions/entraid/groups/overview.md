@@ -24,15 +24,14 @@ The jobs in the 1.Groups Job Group are:
 - [AAD_GroupDirSync Job](/docs/accessanalyzer/12.0/solutions/entraid/groups/aad_groupdirsync.md) – Summarizes on-premises Active Directory syncing in
   the audited Microsoft Entra ID environment
 - [AAD_LargestGroups Job](/docs/accessanalyzer/12.0/solutions/entraid/groups/aad_largestgroups.md) – Identifies groups with large effective member
-  counts. These types of groups may cause administrative overhead and burden in being able to easily
-  understand who is getting access to resources, or how much access is being granted to resources
-  through these groups.
+  counts. These types of groups can create administrative overhead, making it hard to see who has
+  access to resources and how much access these groups grant.
 - [AAD_NestedGroups Job](/docs/accessanalyzer/12.0/solutions/entraid/groups/aad_nestedgroups.md) – Identifies nested groups within Microsoft Entra ID
-  and provides details such as the levels of nesting. While Microsoft Entra ID provides the ability
-  to nest certain types of groups within other groups, Microsoft recommends nesting does not go
-  beyond two levels in order to avoid difficulties in understanding effective membership and access.
+  and provides details such as the levels of nesting. While Microsoft Entra ID lets you nest
+  certain types of groups within other groups, Microsoft recommends nesting doesn't go
+  beyond two levels to avoid difficulties in understanding effective membership and access.
 - [AAD_ProbableOwners Job](/docs/accessanalyzer/12.0/solutions/entraid/groups/aad_probableowners.md) – Determines potential owners for Microsoft Entra
-  ID Groups which can be used to perform automated membership reviews and enable self-service group
+  ID groups. Use these results to perform automated membership reviews and enable self-service group
   management and membership requests
 - [AAD_StaleGroups Job](/docs/accessanalyzer/12.0/solutions/entraid/groups/aad_stalegroups.md)– Identifies Microsoft Entra ID groups that contain
   potentially stale users. Users are considered stale if they have never logged onto the domain,

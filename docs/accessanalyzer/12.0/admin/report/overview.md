@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Reporting
 
-Access Analyzer provides the ability to report on collected data in multiple ways such as tables,
+Access Analyzer lets you report on collected data in multiple ways such as tables,
 views, graphs, and emails. Depending on the type of data collected, different reporting methods can
 simplify how to present and understand the information.
 

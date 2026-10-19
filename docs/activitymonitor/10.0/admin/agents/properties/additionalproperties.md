@@ -17,7 +17,7 @@ The Additional Properties tab for the Activity Agent has the following configura
 
 - Comment – Create an annotation for the agent in the **Comment** text box. Annotations entered here
   will appear in the Comment column in the table on the Agents tab.
-- Agent's Trace Level – Select a trace level for the agent log from the drop-down list:
+- Agent's Trace Level – Select a trace level for the agent log from the dropdown list:
 
     - Same Level as the Console (uses the global level selected in the console)
     - Trace (the most verbose) many collection points and can slow down
@@ -34,7 +34,7 @@ The Additional Properties tab for the Activity Agent has the following configura
     - Error
     - Fatal
 
-In certain situations, the trace logs are not enough to identify issues. Collect extended debugging
+In certain situations, the trace logs aren't enough to identify issues. Collect extended debugging
 data (ETW) can be useful for problems related to the following:
 
 - Not getting events
@@ -47,7 +47,7 @@ When this is needed, enable the **Collect extended debugging data (ETW) from the
 the Trace level is activated** option to diagnose these problems.
 
 :::warning
-Selecting this option collects a large amount of data. Therefore, it is important to
+Selecting this option collects a large amount of data. Therefore,
 enable it only for short periods of time. Otherwise, the trace file may overflow with data.
 :::
 
@@ -66,7 +66,7 @@ The Additional Properties tab for the Linux Agent has the following configuratio
 
 - Comment – Create an annotation for the agent in the **Comment** text box. Annotations entered here
   will appear in the Comment column in the table on the Agents tab.
-- Agent's Trace Level – Select a trace level for the agent log from the drop-down list:
+- Agent's Trace Level – Select a trace level for the agent log from the dropdown list:
 
     - Same Level as the Console (uses the global level selected in the console)
     - Trace (the most verbose) many collection points and can slow down

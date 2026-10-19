@@ -20,7 +20,7 @@ The account used for data collection must meet the following requirements on the
 
 ## Assign Permission To Read the Registry Key
 
-**NOTE:** This permission is required only if the account selected for data collection is not a
+**NOTE:** This permission is required only if the account selected for data collection isn't a
 member of the Domain Admins group.
 
 This permission should be assigned on each domain controller in the audited domain, so if your
@@ -31,8 +31,6 @@ To assign permissions manually, use the Registry Editor snap-in or the Group Pol
 console.
 
 ### Assign Permission via the Registry Editor Snap-in
-
-Follow the steps to assign permission via the Registry Editor snap-in:
 
 **Step 1 –** On your target server, open Registry Editor: navigate to **Start > Run** and type
 _"regedit"_.
@@ -46,12 +44,9 @@ Set\Services\EventLog\Security_.
 
 **Step 5 –** Check **Allow** next to the **Read** permission.
 
-**NOTE:** For auditing Logon Activity, you also need to assign the Read permission to the
-_HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv_ registry key.
-
 ### Assign Permission using the Group Policy Management Console
 
-Follow the steps to assign permission using the Group Policy Management console;
+To assign permission using the Group Policy Management console:
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools
@@ -66,7 +61,7 @@ the left and navigate to Policies > Windows Settings > Security Settings > Regis
 
 **Step 4 –** Right-click in the pane and select Add Key.
 
-**Step 5 –** Navigate to `HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv` and click OK.
+**Step 5 –** Navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg` and click OK.
 
 **Step 6 –** Click Add and enter the name of the user that you want to grant permissions to and
 press Enter.
@@ -77,7 +72,6 @@ In the pop-up window, select Propagate inheritable permissions to all subkeys an
 
 Repeat the steps 4-7 for keys below:
 
-- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg`;
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security`.
 
 **Step 8 –** Close Group Policy Management console.

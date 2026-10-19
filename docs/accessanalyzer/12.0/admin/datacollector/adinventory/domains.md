@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # ADInventory: Domains
 
-The Domains page removes host domain-related data from the SQL server for the selected domains.
+The Domains page removes host domain-related data from the SQL server for the domains you select.
 
 ![Active Directory Inventory DC Wizard Domains page](/images/accessanalyzer/12.0/admin/datacollector/adinventory/domains.webp)
 

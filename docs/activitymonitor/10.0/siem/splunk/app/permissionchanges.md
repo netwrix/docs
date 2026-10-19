@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Permission Changes Dashboard
 
-View information on permissions changes on the through the Permission Changes Dashboard for Splunk.
+View permissions changes in the Permission Changes Dashboard for Splunk.
 
 ![Permission Changes Dashboard for Netwrix Activity Monitor App for Splunk](/images/activitymonitor/9.0/siem/splunk/dashboard/permissionchangesdashboard.webp)
 

@@ -7,7 +7,7 @@ sidebar_position: 4
 # Getting Started
 
 This topic provides information on installing and configuring Netwrix Identity Recovery,
-which enables organizations to quickly and easily roll back and recover unintended directory
+which enables organizations to quickly roll back and recover unintended directory
 changes.
 
 ## Installation Requirements
@@ -20,7 +20,7 @@ Install and configure Identity Recovery. See the
 [Install the Application](/docs/identityrecovery/3.1/install/application.md) topic for additional information.
 
 :::note
-Installing the server automatically installs the RSAT Extension locally.
+Installing the server automatically installs the Remote Server Administration Tools (RSAT) Extension locally.
 :::
 
 ## First Launch

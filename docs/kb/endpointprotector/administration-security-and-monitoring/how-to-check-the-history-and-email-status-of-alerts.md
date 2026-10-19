@@ -13,10 +13,11 @@ keywords:
   - Content Aware
   - EasyLock
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: How to Check the History and Email Status of Alert
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "How to Check the History and Email Status of Alerts"
 knowledge_article_id: kA0Qk0000002B15KAE
 ---

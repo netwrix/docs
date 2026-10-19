@@ -7,12 +7,12 @@ sidebar_position: 10
 # Recommended Configurations for the .Entra ID Inventory Job Group
 
 The .Entra ID Inventory Solution is configured to inherit settings from the Global Settings node.
-The host list and connection profile must be assigned before job execution. Once these are assigned
+The host list and connection profile must be assigned before job execution. After these are assigned
 to the job group, it can be run directly or scheduled.
 
 **Dependencies**
 
-This job group does not have dependencies.
+This job group doesn't have dependencies.
 
 **Targeted Hosts**
 
@@ -22,7 +22,7 @@ All Microsoft Entra Tenants.
 
 The Connection Profile is assigned under **.Entra ID Inventory** > **Settings** > **Connection**. It
 is set to **Use the Default Profile**, as configured at the global **Settings** level. However, if
-this is not the Connection Profile with the necessary permissions for targeting the Microsoft Entra
+this isn't the Connection Profile with the necessary permissions for targeting the Microsoft Entra
 tenants, select the **Select one of the following user defined profiles** option and select the
 appropriate Connection Profile. See the
 [Microsoft Entra ID Connection Profile & Host List](/docs/accessanalyzer/11.6/admin/datacollector/azureadinventory/configurejob.md)
@@ -40,27 +40,27 @@ Not supported.
 
 :::info
 Schedule the .Entra ID Inventory job group to run once a day. If there are
-frequent Microsoft Entra ID changes within the target environment, then it can be executed more
+frequent Microsoft Entra ID changes within the target environment, run it more
 often. It is best to rerun it anytime Entra ID changes might have occurred.
 :::
 
 
 **Run at the Solution Level**
 
-The jobs in the .Entra ID Inventory Job Group should be run together and in order by running the
-entire solution, instead of the individual jobs.
+Run the jobs in the .Entra ID Inventory Job Group together and in order by running the
+entire solution, instead of running the individual jobs.
 
 **Query Configuration**
 
-Run the solution with the default query configuration for best results. While it is recommended to
-make no changes to the
+Run the solution with the default query configuration for best results. Although you typically
+don't need to change the
 [1-AAD_Scan Job](/docs/accessanalyzer/11.6/solutions/entraidinventory/1-aad_scan.md),
-a possible modification might be to scope the query to not collect login activity.
+you can scope the query to skip collecting login activity.
 
 **Analysis Configuration**
 
-Run the solution with the default analysis configuration for best results. However, a possible
-modification might be to customize exception analysis parameters within the
+Run the solution with the default analysis configuration for best results. However, you can
+customize exception analysis parameters in the
 [2-AAD_Exceptions Job](/docs/accessanalyzer/11.6/solutions/entraidinventory/2-aad_exceptions.md).
 
 **Workflow**

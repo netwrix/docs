@@ -7,7 +7,7 @@ sidebar_position: 30
 # Configure a new Directory Manager server to add it to an existing Directory Manager 11 cluster with an existing database
 
 While installing Directory Manager, you can choose to create a Directory Managerserver with load
-balancing support, where load will be balanced in real time with multiple Data Services, portals and
+balancing support, where load will be balanced in real time with multiple Data Services, portals, and
 Elasticsearch instances.
 
 This option also configures the Directory Manager Elasticsearch Service as a slave node to the
@@ -26,7 +26,7 @@ Step 2 – Click **Next**.
 Step 3 – In the SQL Server list, select the SQL Server to use with this new Directory Manager
 Server. The SQL Server must be the same used with the master node of Directory Manager.
 
-If the required server does not appear in the list, make sure that the SQL Server Browser service is
+If the required server doesn't appear in the list, ensure that the SQL Server Browser service is
 running on the SQL Server machine and then click the **Refresh** button.
 
 Step 4 – In the Authentication list, select an authentication mode to be used when connecting to the
@@ -111,16 +111,16 @@ Select the relevant option:
     1. Cluster Name: lists all the clusters defined so far. Select one to create an Elasticsearch
        node within the selected cluster.
     2. Port: the default port for Elasticsearch API communication. Modify the port number if the
-       mentioned default port is not available.
+       mentioned default port isn't available.
     3. TCP Port: the default port for communication between nodes within the cluster. Modify the
-       port number if the mentioned default port is not available.
+       port number if the mentioned default port isn't available.
 
         :::note
-        Make sure that the specified ports are available and unblocked.
+        Verify that the specified ports are available and unblocked.
         :::
 
 
-    I will install and manage Elasticsearch myself: If you select this option, the following page is
+    Install and manage Elasticsearch myself — If you select this option, the following page is
     displayed:
 
     ![Elasticsearch settings page](/images/directorymanager/11.1/install/configure/elasticsearchsettings-2.webp)
@@ -159,18 +159,18 @@ Manager app pool in IIS and Windows services.
 - The account you specify will be used to manage the Directory Manager app pool in IIS. Directory
   Manager Data Service, Security Service, and the portals run under the app pool.
 - By default, a local account, GroupIDSSuser, is set for the Directory Manager app pool, but you
-  cannot proceed unless you change it to a domain account or gMSA.
+  can't proceed unless you change it to a domain account or gMSA.
 - You can specify a local account (with local administrator rights) in app pool for a machine that
-  is not joined to any domain (this applies to an Microsoft Entra ID identity store only).
+  isn't joined to any domain (this applies to an Microsoft Entra ID identity store only).
 
     :::note
-    For Directory Manager App Pool, a domain account can be used for a machine joined to a
+    Use a domain account for Directory Manager App Pool on a machine joined to a
     domain.
     :::
 
 
     :::note
-    Before you use a Group Managed Service Account, make sure that:
+    Before you use a Group Managed Service Account, ensure that:
     :::
 
 
@@ -183,14 +183,14 @@ Step 15 – You can specify a service accounts for the app pool in any of the fo
 
     ![Find Service Account page](/images/directorymanager/11.1/install/configure/findserviceaccount.webp)
 
-    On the Find Service Account dialog box, search and select the required account and click **OK**.
+    On the Find Service Account dialog box, search, select the required account, and click **OK**.
 
 - Create a new service account: Click the **Create New** button on the Service Account Setting page.
 
     ![Create a new service account page](/images/directorymanager/11.1/install/configure/createserviceaccount.webp)
 
     On the Create Service Account dialog box, select the kind of account you want to create. Enter a
-    name, container and password for the account. Click **Create**.
+    name, container, and password for the account. Click **Create**.
 
     :::note
     The logged-in user must have appropriate rights to create a new account.
@@ -198,8 +198,8 @@ Step 15 – You can specify a service accounts for the app pool in any of the fo
 
 
     :::note
-    If Key Distribution Service (KDS) is not configured in the environment, a warning will be
-    displayed that you cannot use a Group Managed Service Account.
+    If Key Distribution Service (KDS) isn't configured in the environment, a warning will be
+    displayed that you can't use a Group Managed Service Account.
     :::
 
 

@@ -17,8 +17,8 @@ distribution lists.
 
 - Select either Browse Mode or Search Mode.
 
-- Select an Agent from the drop-down menu and click **Connect**.
-- Navigate through the domain tree and check the desired item(s) in the **Results** pane on the
+- Select an Agent from the dropdown menu and click **Connect**.
+- Navigate through the domain tree and check the items you want in the **Results** pane on the
   right.
 - Then click **OK** to close the window.
 

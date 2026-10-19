@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Advanced Actions for SharePoint
 
-In addition to the **Email Alert** ,**Migrate Document** and additional classification, the
+In addition to the **Email Alert**, **Migrate Document**, and additional classification, the
 following actions are available for the **SharePoint** content source type:
 
 - [Migrate Document](/docs/dataclassification/5.6.2/contentconfigurationoverview/workflows/actions/actionsbysources/workflowsmigration/workflows_migration.md)
@@ -26,12 +26,12 @@ following actions are available for the **SharePoint** content source type:
     [this Microsoft article](https://docs.microsoft.com/en-us/microsoft-365/compliance/labels) for
     details.
 
-    - **Filtered Targeted Meta Update** — this advanced action can be used to update a SharePoint
+    - **Filtered Targeted Meta Update** — use this advanced action to update a SharePoint
       property based on rules embedded in the taxonomy clues. Enter the document property to update
       in the **Update Field**, then select the required **Taxonomy** and enter **Match Field**, i.e.
       the field name/clue to match on.
 
-- Apply MIP Label, Remove MIP Label — these actions, respectively, apply and remove sensitivity
+- Apply MIP Label, Remove MIP Label — these actions, respectively, apply, and remove sensitivity
   label to/from a document stored on a file system, using Microsoft Information Protection (MIP).
   This helps to automate protection policies application. See
   [Modify MIP Label](/docs/dataclassification/5.6.2/contentconfigurationoverview/workflows/actions/actionsbysources/advancedactionsfiles/mip_workflow_action.md)

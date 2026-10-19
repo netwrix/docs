@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # LDAP Search Operations Use Case
 
-Use the LDAP Search operation to search for and identify activity that does not conform to your
+Use the LDAP Search operation to search for and identify activity that doesn't conform to your
 security configurations.
 
 When you create a policy with the [LDAP Monitoring Event Type](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/ldapmonitoring/ldapmonitoring.md) or the
-[LDAP Lockdown Event Type](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/ldaplockdown.md), the LDAP filter allows you to enable the LDAP Search
+[LDAP Lockdown Event Type](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/ldaplockdown.md), the LDAP filter lets you enable the LDAP Search
 option.
 
 The Secure configurations and Search scope options filter the search based on a match to the
@@ -26,13 +26,13 @@ protocol used by that operation.
 Select **All** to capture LDAP events that used any protocol.
 
 You can also limit Threat Prevention to capture LDAP events only when one of the selected
-protocol(s) are used.
+protocols are used.
 
 - SSL
 - StartTLS
 - Signed
 - Signed and Sealed
-- None – To capture events for an LDAP operation that did not use any of the secure protocols
+- None – To capture events for an LDAP operation that didn't use any of the secure protocols
 
 **Search scopes**
 

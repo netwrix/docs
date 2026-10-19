@@ -6,10 +6,8 @@ sidebar_position: 50
 
 # Work with Collected Data
 
-Auditor provides a convenient interface for reviewing RADIUS server logons. Once the script
-execution completed, you can start analyzing user activity data with Netwrix search.
-
-Follow the steps to see results.
+Auditor provides a convenient interface for reviewing RADIUS server logons. After the script
+execution completes, you can start analyzing user activity data with Netwrix search.
 
 **Step 1 –** Start the Auditor client and navigate to Search.
 

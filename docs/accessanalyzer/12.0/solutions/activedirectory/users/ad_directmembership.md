@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # AD_DirectMembership Job
 
-The AD_DirectMembership Job identifies users who do not have any group membership. This condition
+The AD_DirectMembership Job identifies users who don't have any group membership. This condition
 may indicate unnecessary user accounts that are suitable candidates for review and cleanup.
 
 ## Analysis Tasks for the AD_DirectMembership Job
@@ -15,7 +15,7 @@ Navigate to the **Active Directory** > **2.Users** > **AD_DirectMembership** > *
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

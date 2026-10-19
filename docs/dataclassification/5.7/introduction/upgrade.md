@@ -7,53 +7,72 @@ sidebar_position: 50
 # Upgrade to the Latest Version
 
 Netwrix recommends that you upgrade from the older versions of Netwrix Data Classification to the
-latest version available in order to take advantage of the new features.
+latest version available to take advantage of new features and fixes.
 
 ## Upgrade Prerequisites
 
-Before you start the upgrade, it is strongly recommended to take the following steps:
+Before you start the upgrade, Netwrix strongly recommends taking the following steps:
 
-**Step 1 –** Make sure you have .NET Framework 4.7.2 installed on the computer where Netwrix Data
+**Step 1 –** Ensure you have .NET Framework 4.7.2 installed on the computer where Netwrix Data
 Classification resides. If not, download it from Microsoft website:
 [Download .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472).
 
-**Step 2 –** Back up NDC SQL database. It is recommended to do the following:
+**Step 2 –** Back up NDC SQL database. Netwrix recommends the following:
 
 - Start Microsoft SQL Server Management Studio and connect to SQL Server instance hosting this
   database.
 - In the Object Explorer, right-click the database and select **Tasks** > **Back Up**.
 - Wait for the process to complete.
 
-**Step 3 –** Back up the Index files. It is recommended to do the following:
+**Step 3 –** Stop all NDC services. Netwrix recommends the following:
 
-- On the computer where Netwrix Data Classification is installed, start the Netwrix Data
+- On the computer where Netwrix Data Classification resides, start the Netwrix Data
   Classification Service Viewer tool. Select **Stop** next to each service.
-- Locate the folder containing index files (default location is _C:\Program
-  Files\ConceptSearching\ConceptDB_) and back it up.
+- If you upgrade a Distributed Query Server (DQS) environment, stop all services on all instances before upgrading any instance. 
 
-**Step 4 –** Confirm that the NDC services and IIS Application pool are running as the same service
-account on all NDC servers. That account also needs to be a domain account.
+:::warning
+If any services are running while the upgrade occurs, database schema updates may fail to apply correctly. If this occurs, Netwrix recommends contacting Netwrix Support for help.
+:::
+
+**Step 4 –** Back up the Index files. Locate the folder containing the index files (the default location is _C:\Program
+Files\Netwrix\Data Classification\Index_) and back it up.
+
+:::note
+For versions of 5.7 before 5.7.10, all NDC services and the NDC IIS Application Pool had to run as the same service account. For 5.7.10 onwards this is no longer necessary, but if you upgrade from an earlier version of 5.7, complete the upgrade to 5.7.10 _before_ changing the service account to avoid upgrade issues.
+:::
 
 ## Upgrade Process
 
-Seamless upgrade to Netwrix Data Classification 5.7 is supported for versions 5.5 and newer.
+You can upgrade directly to Netwrix Data Classification 5.7 only from versions 5.5 and newer.
 
-To upgrade your deployment, after taking the preparatory steps described above, run the product
-setup and follow the wizard steps. When finished, all solution components will be up and running.
+After taking the preceding preparatory steps, run the product setup and follow the wizard
+steps. When the upgrade finishes, all solution components are running.
 
-If you need to upgrade from an earlier version, you should perform a staged upgrade, first upgrade
-to version 5.5, then perform a second upgrade to version 5.7.
+To upgrade from an earlier version, perform a staged upgrade: first upgrade to version 5.5, then
+upgrade to version 5.7.
+
+## Upgrading a DQS Environment
+
+When upgrading to 5.7.10 or later in an NDC environment that uses the **Distributed Query Server** (DQS) functionality, 
+upgrade the primary server before the secondary instances. Secondary instances 
+attempt to resynchronize with the primary instance during the upgrade process, and this resynchronization 
+fails if you haven't upgraded the primary instance.
+
+When upgrading to 5.7.10 or later from an earlier version of 5.7, you should
+run the installer as the NDC service account if possible so that the installer can synchronize the DQS instances automatically. 
+If you don't, you must resynchronize DQS when upgrading each secondary DQS instance. For further details on this process,
+see the [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) page.
 
 ## After the Upgrade
 
-During the seamless upgrade from previous versions, Netwrix Data Classification preserves its
-configuration, so you will be able to classify your data right after finishing the upgrade. However,
-there are several steps you may need to take after upgrading.
+During the upgrade from previous versions, Netwrix Data Classification preserves its
+configuration, so you can classify your data right after finishing the upgrade. However,
+you may need to take several steps after upgrading.
 
-Follow the steps to update taxonomies manually.
+To update taxonomies manually:
 
 **Step 1 –** In administrative web console, navigate to **Taxonomies** > **Global
-Settings**.Settings.
+Settings**.
 
 **Step 2 –** Click **Update** in the right corner next to each taxonomy.
 

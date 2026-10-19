@@ -11,7 +11,7 @@ matches were found on the selected instance. This report includes a Details tabl
 
 ![Sensitive Content Summary report at the instance level](/images/accessinformationcenter/12.0/resourceaudit/sql/instance/instancesensitivecontentsummary.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Server Name – SQL server name
 - Criteria Name – Type of potentially sensitive criteria matches found

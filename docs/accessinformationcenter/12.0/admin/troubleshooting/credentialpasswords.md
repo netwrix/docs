@@ -18,7 +18,7 @@ may be impacted by password changes or security policies:
 
 ## Database Service Account
 
-The Database service account grants access to the SQL Server database. It can be updated on the
+The Database service account grants access to the SQL Server database. You can update it on the
 Database page of the Configuration interface. See the
 [Update the Database Service Account Password](/docs/accessinformationcenter/12.0/admin/configuration/database.md#update-the-database-service-account-password)
 topic for instructions.
@@ -26,7 +26,7 @@ topic for instructions.
 ## Active Directory Service Account
 
 The Active Directory service account handles user authentication to the Access Information Center.
-It can be updated on the Active Directory page of the Configuration interface. It is also used to
+You can update it on the Active Directory page of the Configuration interface. The system also uses it to
 commit changes in Active Directory, if that feature has been enabled. See the
 [Update the Active Directory Service Account Password](/docs/accessinformationcenter/12.0/admin/configuration/activedirectory.md#update-the-active-directory-service-account-password)
 topic for instructions.
@@ -34,7 +34,7 @@ topic for instructions.
 ## SMTP Authentication Service Account
 
 An SMTP server is required for the application to send notifications. If the SMTP server requires
-authentication, the service account can be updated on the Notifications page of the Configuration
+authentication, you can update the service account on the Notifications page of the Configuration
 interface. See the
 [Configure SMTP Server Settings](/docs/accessinformationcenter/12.0/admin/configuration/notifications.md#configure-smtp-server-settings)
 topic for instructions.
@@ -44,7 +44,7 @@ topic for instructions.
 The Builtin Administrator account is an application account that is created during the first launch.
 It is used to complete the initial configuration steps and to grant console access to domain users.
 This account can be disabled after Administrator users are added. However, if it is enabled and a
-security policy requires the password to be reset, it can be updated on the Console Access page of
+security policy requires you to reset the password, you can update it on the Console Access page of
 the Configuration interface. See the
 [Modify the Builtin Administrator Account](/docs/accessinformationcenter/12.0/admin/configuration/consoleaccess.md#modify-the-builtin-administrator-account)
 topic for modification instructions.

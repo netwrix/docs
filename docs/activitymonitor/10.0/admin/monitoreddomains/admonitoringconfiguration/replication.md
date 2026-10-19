@@ -18,11 +18,11 @@ sub-tabs:
 - Servers
 - Users
 
-Each filter tab acts like an “AND” statement for the filter. Any filter tab left blank is treated
-like an ALL for that filter set.
+Each filter tab acts like an “AND” statement for the filter. Leave any filter tab blank to
+monitor all items for that filter set.
 
-Windows cannot detect if a sync request is coming from a legitimate domain controller. This option
-is designed to monitor requests from computers that are not ‘excluded’ by the policy. Therefore,
+Windows can't detect if a sync request is coming from a legitimate domain controller. This option
+is designed to monitor requests from computers that aren't ‘excluded’ by the policy. Therefore,
 legitimate domain controllers should be identified in the event filters.
 
 ## Host (From) Filter
@@ -56,7 +56,7 @@ The Servers option targets servers to be included or excluded when filtering for
 In both cases, servers must be specified in the form 'DOMAIN\SERVER', where DOMAIN is NetBIOS Domain
 name and SERVER is NetBIOS server name.
 
-Double-click the text box beneath Name to enter the desired servers to include or exclude. Press the
+Double-click the text box beneath Name to enter the servers you want to include or exclude. Press the
 Enter or Tab key to add another text box.
 
 ## Users Filter
@@ -83,7 +83,7 @@ The following details appear beneath both sections:
   e.g. 'CN=Users,DC=Domain,DC=com'. However, for objects with 'sidType' type, it must be in the form
   of WellKnownSidType Enum, e.g. 'AnonymousSid' or 'LocalSid'.
 
-Double-click the text box beneath Distinguished Name to enter the desired group types to include or
-exclude. Double-click the text box beneath Type to enter the desired AD object to include or
+Double-click the text box beneath Distinguished Name to enter the group types you want to include or
+exclude. Double-click the text box beneath Type to enter the AD object you want to include or
 exclude. Press the Enter or Tab key to add another textbox. Check the box under Subtree to include
 or exclude child contexts.

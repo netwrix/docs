@@ -7,11 +7,9 @@ sidebar_position: 30
 # Policy Comparison Window
 
 When you edit a policy, the change creates an alert in the Alerts interface. You can track the
-changes made to the policy through a comparison of the new xml with the old xml. Threat Prevention
-uses fc.exe to do a comparison but you can also employ a third party comparison tool for better
+changes made to the policy through a comparison of the new XML with the old XML. Threat Prevention
+uses fc.exe to do a comparison, but you can also employ a third party comparison tool for better
 results.
-
-Follow the steps to run a comparison.
 
 **Step 1 –** Click **Alerts** in the left pane to launch the Alerts interface.
 
@@ -19,14 +17,14 @@ Follow the steps to run a comparison.
 link in the Message column for an alert. The Policy Comparison window opens, where you can view the
 changes made to the policy against the respective alert.
 
-![olicy Comparison window ](/images/threatprevention/7.5/admin/alerts/window/policycomparison.webp)
+![Policy Comparison window](/images/threatprevention/7.5/admin/alerts/window/policycomparison.webp)
 
-**Step 3 –** On the Policy Comparison windowthe old xml displays on the left and the modified xml on
+**Step 3 –** On the Policy Comparison window, the old XML displays on the left and the modified XML on
 the right.
 
 **Step 4 –** _(Optional)_ Click the **Configure** icon next to the Run Different Tool button. The
 File Comparison Tool window opens. In the Path to Comparison Tool box, provide the path to the file
-comparison tool location in quotations. Next, add **%1 %2** after the quoted location path. for
+comparison tool location in quotations. Next, add **%1 %2** after the quoted location path. For
 example, _cmd.exe /K fc.exe %1 %2_. Click **OK** to close the window.
 
 :::note

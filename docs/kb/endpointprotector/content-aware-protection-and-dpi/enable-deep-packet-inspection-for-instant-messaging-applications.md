@@ -12,10 +12,11 @@ keywords:
   - Teams
   - Slack
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Enable Deep Packet Inspection for Instant Messagin
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Enable Deep Packet Inspection for Instant Messaging Applications"
 knowledge_article_id: kA0Qk0000002B2uKAE
 ---
@@ -25,6 +26,8 @@ knowledge_article_id: kA0Qk0000002B2uKAE
 ## Overview
 
 The Netwrix Endpoint Protector (EPP) Client can inspect text written in instant messaging applications by using Deep Packet Inspection (DPI). This article explains how to enable DPI and configure text inspection for supported instant messaging applications.
+
+For the full Deep Packet Inspection reference, including Text Inspection, DPI Applications, and Google/webmail-specific settings, see [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket).
 
 ## Instructions
 
@@ -53,7 +56,13 @@ The Netwrix Endpoint Protector (EPP) Client can inspect text written in instant 
 
 ![Deep Packet Inspection Applications list with Enable DPI action](./../0-images/ka0Qk000000DzDl_0EMQk00000BuWGb.png)
 
-> **NOTE:** You must enable DPI for each application on every operating system where the EPP Client is installed (Windows, macOS, Linux).
+:::note
+You must enable DPI for each application on every operating system where the EPP Client is installed (Windows, macOS, Linux).
+:::
+
+:::warning
+In blocking mode, platforms such as **Slack** and **Google Chat** might generate Instant Messaging events multiple times. This is expected behavior — it results from these tools' retry mechanisms when a message is blocked, and Endpoint Protector blocks each retry attempt for enhanced security.
+:::
 
 ### Configure Content Aware Policies for Instant Messaging Applications
 
@@ -63,3 +72,7 @@ The Netwrix Endpoint Protector (EPP) Client can inspect text written in instant 
 4. Save the policy.
 
 ![Content Aware Policies configuration with instant messaging apps selected](./../0-images/ka0Qk000000DzDl_0EMQk00000BuWID.png)
+
+:::tip
+For comprehensive visibility into **Teams over web** in Microsoft Edge, also enable **Edge** under **Policy Exit Points** > **Applications** > **Web Browser** in the Content Aware Policy.
+:::

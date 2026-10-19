@@ -1,0 +1,7 @@
+extends: existence
+message: "Don't use exclamatory sentences."
+level: warning
+nonword: true
+tokens:
+  # A "!" that ends a sentence; skips UI names like "GroupID! page".
+  - '[A-Za-z0-9)]!(?=\s*$|\s+[A-Z])'

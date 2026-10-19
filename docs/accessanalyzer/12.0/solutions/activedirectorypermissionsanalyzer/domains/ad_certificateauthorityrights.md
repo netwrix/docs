@@ -16,7 +16,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **8.Domains** >
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -38,4 +38,4 @@ job produces the following pre-configured report.
 
 | Report                 | Description                                                                                                                                                                                  | Default Tags | Report Elements                                                                                                                                                                                                                 |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Enrollment Permissions | This report highlights vulnerable Access control Lists (ACLs) with permissions or owners assigned to open groups and non-standard ACLs with owners that are not domain or enterprise admins. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays risky permissions by principal</li><li>Pie Chart – Displays risky permissions by count</li><li>Table – Provides details on risky permissions</li></ul> |
+| Enrollment Permissions | This report highlights vulnerable Access control Lists (ACLs) with permissions or owners assigned to open groups and non-standard ACLs with owners that aren't domain or enterprise admins. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays risky permissions by principal</li><li>Pie Chart – Displays risky permissions by count</li><li>Table – Provides details on risky permissions</li></ul> |

@@ -39,7 +39,7 @@ Additionally the server or workstation must meet these requirements:
 
 The following are additional requirements for the Threat Prevention Administration Console machine:
 
-- .NET 4.7.2 or .NET 4.8.x installed. If the installer does not find it already installed, it will
+- .NET 4.7.2 or .NET 4.8.x installed. If the installer doesn't find it already installed, it will
   install .NET Framework 4.7.2.
 
 **Permissions for Installation and Application Use**
@@ -51,7 +51,7 @@ The following permissions are required to install and use the application:
 ## Virtual Environment Recommendations
 
 While physical machines are always preferred, Threat Prevention fully supports the use of virtual
-machines. Consider the following when leveraging virtualization.
+machines. Consider the following when using virtualization.
 
 - VMWare ESX – If using ESX, the following specifications are recommended:
 

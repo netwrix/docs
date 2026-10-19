@@ -10,9 +10,9 @@ The Analysis node uses Enterprise Auditor analysis modules to run analysis tasks
 There are two basic types of analysis modules. Most analysis modules correlate, format, and
 transform collected data into powerful data views for end-stage reports and graphs.
 
-The Notification analysis module allows for the ability to send an email notice when a trigger is
-met, for example an email can be sent to an administrator to notify that disk space has reached a
-particular point (the trigger) and needs to be addressed before space runs out.
+The Notification analysis module lets you send an email notice when a trigger is
+met. For example, it can send an email to an administrator to notify that disk space has reached a
+particular point (the trigger) and needs attention before space runs out.
 
 ![Analysis Selection page](/images/accessanalyzer/11.6/admin/jobs/job/configure/analysisselection.webp)
 

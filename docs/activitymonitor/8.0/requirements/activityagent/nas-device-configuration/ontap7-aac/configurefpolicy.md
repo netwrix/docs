@@ -27,7 +27,7 @@ Manually Configure FPolicy (Recommended Option) – A tailored FPolicy
 ## Manually Configure FPolicy (Recommended Option)
 
 This section describes how to manually configure FPolicy. Manual configuration of the FPolicy is
-recommended so that the policy can be scoped. It is necessary to create six FPolicy components and
+recommended so that the policy can be scoped. Create six FPolicy components and
 then enable the FPolicy. See the sections corresponding to each part of this list:
 
 - Part 1: Create FPolicy
@@ -43,10 +43,9 @@ vFiler. This is because FPolicy operates on the affected vFiler. Therefore, when
 commands on a vFiler, the commands must be run from a vFiler context (e.g. via the vFiler run
 command).
 
-Relevant NetApp Documentation: To learn more about configuring file policies, please visit the
-NetApp website and read
+Relevant NetApp Documentation: For detailed information on configuring file policies, see
 [na_fpolicy – configure file policies](https://library.netapp.com/ecmdocs/ECMP1196890/html/man1/na_fpolicy.1.html)
-article.
+in the NetApp documentation.
 
 ### Part 1: Create FPolicy
 
@@ -65,8 +64,8 @@ fpolicy create StealthAUDIT screen
 
 ### Part 2: Set FPolicy Required to Off
 
-If the `FPolicy Required` value is set to on, user requests are denied if an FPolicy server is not
-available to implement the policy. If it is set to off, user requests are allowed when it is not
+If the `FPolicy Required` value is set to on, user requests are denied if an FPolicy server isn't
+available to implement the policy. If it is set to off, user requests are allowed when it isn't
 possible to apply the policy to the file because no FPolicy server is available.
 
 IMPORTANT:
@@ -81,7 +80,7 @@ fpolicy options StealthAUDIT required off
 
 ### Part 3: Set FPolicy to Collect Permission Changes
 
-The cifs_setattr value must be set to on in order for CIFS requests to change file security
+The cifs_setattr value must be set to on in order for Common Internet File Sharing (CIFS) requests to change file security
 descriptors to be screened by the policy.
 
 IMPORTANT:
@@ -96,7 +95,7 @@ fpolicy options StealthAUDIT cifs_setattr on
 
 ### Part 4: Set FPolicy to Monitor Alternate Data Streams
 
-The monitor_ads value must be set to on in order for CIFS requests for alternate data streams (ADS)
+The monitor_ads value must be set to on in order for CIFS (Common Internet File Sharing) requests for alternate data streams (ADS)
 to be monitored by the policy.
 
 IMPORTANT:
@@ -111,7 +110,7 @@ fpolicy options StealthAUDIT monitor_ads on
 
 ### Part 5: Set FPolicy to Monitor Disconnected Sessions
 
-The cifs_disconnect_check value must be set to on in order for CIFS requests associated with
+The cifs_disconnect_check value must be set to on in order for CIFS (Common Internet File Sharing) requests associated with
 disconnected sessions to be monitored by the policy.
 
 IMPORTANT:

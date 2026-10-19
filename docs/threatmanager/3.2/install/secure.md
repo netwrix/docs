@@ -6,6 +6,10 @@ sidebar_position: 40
 
 # Secure the Threat Manager Console
 
+:::warning
+Before editing configuration files, review the [Modify Service Configuration Settings](/docs/threatmanager/3.2/install/appsettings.md) topic for important guidance on the correct approach.
+:::
+
 To support HTTPS, do the following:
 
 - Import an SSL certificate to the server
@@ -28,7 +32,7 @@ editing the configuration files discussed in this topic.
 :::
 
 
-**Step 2 –**   Copy the thumbprint of the certificate as you will need to use it while editing
+**Step 2 –**   Copy the thumbprint of the certificate, as you need it while editing
 the configuration files.
 
 ## Web Service Configuration File
@@ -143,8 +147,8 @@ Found cert with subject % and thumbprint 12345ABCDEF54AED1DB59C349CA4D514628DB4D
 
 ## Re-register the Action Service
 
-While not always necessary it is a good practice to also re-register the Action Service whenever
-changing the certificate in use.
+Re-registering the Action Service whenever you change the certificate in use is good practice,
+though not always necessary.
 
 **Step 1 –** Open an administrative command prompt.
 

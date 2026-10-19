@@ -14,15 +14,15 @@ administrative concerns within Microsoft Entra ID such as disabled or stale user
 The jobs in the 2.Users Job Group are:
 
 - [AAD_DirectMembership Job](/docs/accessanalyzer/11.6/solutions/entraid/users/aad_directmembership.md)
-  – Identifies Microsoft Entra ID users who do not have any group membership. This condition may
+  – Identifies Microsoft Entra ID users who don't have any group membership. This condition may
   indicate unnecessary user accounts that are suitable candidates for review and cleanup.
 - [AAD_DisabledUsers Job](/docs/accessanalyzer/11.6/solutions/entraid/users/aad_disabledusers.md)
   – Identifies disabled user accounts within Microsoft Entra ID. These accounts should be reviewed
-  and cleaned up in order to increase security and reduce complexity.
-- [AAD_StaleUsers Job](/docs/accessanalyzer/11.6/solutions/entraid/users/aad_staleusers.md)–
+  and cleaned up to increase security and reduce complexity.
+- [AAD_StaleUsers Job](/docs/accessanalyzer/11.6/solutions/entraid/users/aad_staleusers.md) –
   Identifies potentially stale users based on a variety of factors. These accounts should be
-  reviewed and cleaned up in order to increase security and reduce complexity.
-- [AAD_UserAttributeCompletion Job](/docs/accessanalyzer/11.6/solutions/entraid/users/aad_userattributecompletion.md)–
+  reviewed and cleaned up to increase security and reduce complexity.
+- [AAD_UserAttributeCompletion Job](/docs/accessanalyzer/11.6/solutions/entraid/users/aad_userattributecompletion.md) –
   Identifies which attributes are present within User fields in Microsoft Entra ID, and which ones
   are blank for a majority of objects. This may indicate accounts within Microsoft Entra ID which
   are lacking appropriate information.

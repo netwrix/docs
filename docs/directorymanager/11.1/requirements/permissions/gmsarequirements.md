@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # gMSA for Active Directory
 
-Directory Manager enables you to use a Group Managed Service Account (gMSA) to connect an Active
+Use a Group Managed Service Account (gMSA) with Directory Manager to connect an Active
 Directory identity store to the identity provider. To ensure that the gMSA can be configured and
 used effectively, verify the following:
 
@@ -42,7 +42,7 @@ used effectively, verify the following:
     - Directory Manager server (type: Computer)
     - The account configured for the Directory Manager app pool (type: Service Account)
 
-- If any of these principals are not allowed to retrieve the managed password for the gMSA, do the
+- If any of these principals aren't allowed to retrieve the managed password for the gMSA, do the
   following depending on the scenario:
 
     - If a group is mentioned in the 'PrincipalsAllowedToRetrieveManagedPassword' parameter of
@@ -56,7 +56,7 @@ used effectively, verify the following:
       add the missing principals (Directory Manager server and/or app pool account).
 
 :::note
-Restart the Directory Manager server if you apply any of the above.
+Restart the Directory Manager server if you apply any of these changes.
 :::
 
 

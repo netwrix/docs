@@ -9,8 +9,6 @@ sidebar_position: 20
 You can fine-tune Netwrix Auditor by specifying data that you want to exclude from the Event Log
 monitoring scope.
 
-Follow the steps to exclude data from the Event Log monitoring scope:
-
 **Step 1 –** Navigate to the _%Netwrix Auditor installation folder%\Event Log Management_ folder.
 
 **Step 2 –** Edit the \*.txt files, based on the following guidelines:

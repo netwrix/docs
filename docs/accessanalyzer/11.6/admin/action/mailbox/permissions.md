@@ -11,7 +11,7 @@ Use the Permissions page to determine which permissions to remove. It is a wizar
 
 ![New Mailbox Action Wizard Permissions page](/images/accessanalyzer/11.6/admin/action/mailbox/permissions.webp)
 
-Use the following options to add, change or remove Permissions:
+Use the following options to add, change, or remove Permissions:
 
 - User – Specifies user permissions to add or change. To select different users, click the
   down-arrow to display the User window. See the [User Window](#user-window) topic for additional
@@ -22,8 +22,8 @@ Use the following options to add, change or remove Permissions:
   window. See the [Permission Window](#permission-window) topic for additional information.
 - Propagate permissions to child folders – Propagates permissions to the child folders of the
   selected folders
-- Once User, Folder, and Permission are selected, click **Add** to add them to the summary of the
-  action to be taken
+- After you select User, Folder, and Permission, click **Add** to add them to the summary of the
+  action
 - To remove an added Permission, select it in the panel and click **Remove**
 
 ## User Window
@@ -37,7 +37,7 @@ Select a user using the following options:
 
 - Users found in the following column – Select this option to identify users via a data table column
 
-    - Use the drop-down menu to select a data table column containing either the Mailbox display
+    - Use the dropdown menu to select a data table column containing either the Mailbox display
       name or email address
     - Select a data type for the selected field using the following options:
 
@@ -81,7 +81,7 @@ Select a folder using the following options:
 
 - The list of folders – Select one of the default folders
 
-    - Select a folder from the drop-down menu and click **Add**
+    - Select a folder from the dropdown menu and click **Add**
     - To remove a folder, select it and click **Remove**
 
 ## Permission Window
@@ -93,9 +93,9 @@ Use the Permission window to specify permissions. The Permission window opens wh
 
 Specify permissions using the following options:
 
-- Permissions Level – Each permission level has a set of default selections. If a setting is
-  changed, the Permissions Level field changes to **Custom**. Permission levels are associated with
-  the different permissions available for assignment through Outlook. Options include:
+- Permissions Level – Each permission level has a set of default selections. If you change a
+  setting, the Permissions Level field changes to **Custom**. Permission levels correspond to the
+  different permissions available for assignment through Outlook. Options include:
 
     - None
     - Contributor
@@ -131,7 +131,7 @@ Specify permissions using the following options:
     - Folder Contact – User receives automated messages about the folder such as replication
       conflict messages, requests from users for additional permissions, and other changes to folder
       status
-    - Folder visible – User can see the folder but cannot read or edit the items within
+    - Folder visible – User can see the folder but can't read or edit the items within
 
 - To add anonymous permissions, choose **None**
 

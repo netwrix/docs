@@ -430,7 +430,7 @@ html {
     display: none !important;
 }
 
-/* Custom controls (Typo Tolerance toggle + product filter) portaled into the search bar. */
+/* Custom controls (product filter) portaled into the search bar. */
 .search-custom-controls {
     display: flex;
     align-items: center;
@@ -480,6 +480,10 @@ html {
         margin-right: 0;
         padding: 6px 16px 8px;
         border-bottom: 1px solid var(--docsearch-subtle-color);
+        /* Both filter controls are always rendered (Versions is disabled rather than
+           unmounted), and neither shrinks below its 150px button — so let them stack
+           instead of overflowing this row on narrow phones. */
+        flex-wrap: wrap;
     }
 
     .DocSearch-Button-Keys {
@@ -631,3 +635,72 @@ html {
     overflow: hidden;
 }
 
+
+/* Announcement bar (shown only in scoped sections — see src/theme/AnnouncementBar) */
+/* Height var is set only while the bar is showing (attribute set in src/theme/AnnouncementBar) */
+html[data-has-announcement-bar] {
+  --docusaurus-announcement-bar-height: 64px;
+}
+
+.theme-announcement-bar {
+  min-height: 64px;
+  font-size: 1.35rem;
+  font-weight: 400;
+  padding: 0 1rem;
+}
+
+/* The theme's Content styles underline links; these selectors outrank them */
+html .theme-announcement-bar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html .theme-announcement-bar a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.theme-announcement-bar strong {
+  font-family: Hubot Sans, HubotSans-fallback, sans-serif;
+  font-weight: 700;
+}
+
+.theme-announcement-bar button[class*='closeButton'] {
+  color: #fff;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-announcement-bar .announcement-external-icon {
+  margin-left: 0.4rem;
+  vertical-align: -0.1em;
+}
+
+/* Keep the bar pinned on desktop; push navbar, sidebar, TOC and anchors below it */
+@media (min-width: 997px) {
+  html[data-has-announcement-bar] .theme-announcement-bar {
+    position: sticky;
+    top: 0;
+    z-index: calc(var(--ifm-z-index-fixed) + 1);
+  }
+
+  html[data-has-announcement-bar] .navbar--fixed-top {
+    top: var(--docusaurus-announcement-bar-height);
+  }
+
+  html[data-has-announcement-bar] [class*='sidebarViewport_'] {
+    top: var(--docusaurus-announcement-bar-height);
+    max-height: calc(100vh - var(--docusaurus-announcement-bar-height));
+  }
+
+  html[data-has-announcement-bar] [class*='tableOfContents_'] {
+    top: calc(var(--ifm-navbar-height) + var(--docusaurus-announcement-bar-height) + 1rem);
+    max-height: calc(100vh - var(--ifm-navbar-height) - var(--docusaurus-announcement-bar-height) - 2rem);
+  }
+
+  html[data-has-announcement-bar] [class*='anchorWithStickyNavbar_'] {
+    scroll-margin-top: calc(var(--ifm-navbar-height) + var(--docusaurus-announcement-bar-height) + 0.5rem);
+  }
+}

@@ -6,14 +6,12 @@ sidebar_position: 40
 
 # Citrix XenServer
 
-Citrix XenServer facilitates the import of virtual appliances using the OVF format, catering to
+Citrix XenServer facilitates the import of virtual appliances using the Open Virtualization Format (OVF), catering to
 enterprise-grade virtualization needs.
 
 ## Citrix XenServer
 
-Citrix XenServer offers straightforward OVF imports for virtual appliances.
-
-Follow the steps to get started with your deployment process.
+Citrix XenServer imports virtual appliances in OVF format.
 
 **Step 1 –** Unzip the downloaded package.
 

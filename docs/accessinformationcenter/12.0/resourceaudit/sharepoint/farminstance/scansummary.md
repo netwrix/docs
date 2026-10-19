@@ -11,7 +11,7 @@ all site collections on the selected farm/instance.
 
 ![Scan Summary report at the on-premise farm and online instance levels](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/farminstance/instancescansummary.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Web Application
 

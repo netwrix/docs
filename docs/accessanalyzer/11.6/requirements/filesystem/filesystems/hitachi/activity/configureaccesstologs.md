@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Configure Access to HNAS Audit Logs on Activity Agent Server
 
-Follow the steps to configure access to the HNAS audit logs on the Windows server hosting the
-Activity Monitor activity agent.
+Configure access to the HNAS audit logs on the Windows server hosting the
+Activity Monitor activity agent using the following steps.
 
 **Step 1 –** On the Windows computer, go to Run and type `compmgmt.msc`.
 
@@ -22,7 +22,7 @@ Folders > Shares.
 **Step 5 –** Select the Security tab and click Advanced.
 
 **Step 6 –** In the Advanced Security Settings dialog box, select the Audit tab. Click Add or Edit
-to select the users and groups to be audited and add the desired user or group.
+to select the users and groups to be audited and add the user or group you want.
 
 **Step 7 –** Select All for Type, and Full Control for Basic permissions.
 

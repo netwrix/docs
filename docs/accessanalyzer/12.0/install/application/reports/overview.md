@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Reports via the Web Console
 
-The Web Console is where any reports which have been published can be viewed outside of the Access
+The Web Console is where you can view any published reports outside of the Access
 Analyzer Console. This is also known as the Published Reports site.
 
 - Web Console – This console uses an embedded website for published reports. It provides a
@@ -19,7 +19,7 @@ Console upon installation.
 
 :::note
 The Access Analyzer Web Server service must run as an account that has access to the
-Access Analyzer database. This may be a different account than the one used to connect Access
+Access Analyzer database. This may be a different account than the one you use to connect Access
 Analyzer to the database. If the Access Analyzer Vault service is running, the account running the
 Web Server service must be an Access Analyzer Administrator. See the
 [Vault](/docs/accessanalyzer/12.0/admin/settings/application/vault.md) topic for additional information.
@@ -30,8 +30,8 @@ The Web folder that the Access Analyzer installer places at the root of the Acce
 directory also contains a `WebServer.exe.config` file. This file contains configurable parameters.
 
 :::warning
-If encryption methods have been configured for Kerberos on the Access Analyzer server
-but not on the service account running the Access Analyzer Web Server service, then users will not
+If you configure encryption methods for Kerberos on the Access Analyzer server
+but not on the service account running the Access Analyzer Web Server service, users will not
 be able to log-in to the Web Console and will receive an error message. See the
 [Manage Kerberos Encryption Warning for the Web Console](/docs/accessanalyzer/12.0/install/application/reports/kerberosencryption.md) topic for additional
 information on configuring security polices to allow Kerberos encryption.
@@ -40,21 +40,21 @@ information on configuring security polices to allow Kerberos encryption.
 
 ## Log into the Web Console
 
-In order for a user to log into the Web Console, the user’s account must have the User Principal
-Name (UPN) attribute populated within Active Directory. Then the user can login using domain
-credentials. If multiple domains are being utilized, then
+To log into the Web Console, the user’s account must have a populated User Principal
+Name (UPN) attribute within Active Directory. Then the user can login using domain
+credentials. If the organization uses multiple domains,
 the username needs to be in the `domain\username` format when logging into the Published Reports site.
 
-Access to reports in the Web Console can be managed through the Role Based Access feature of Access
+You can manage access to reports in the Web Console through the Role Based Access feature of Access
 Analyzer (**Settings** > **Access**). The Web Administrator role and the Report Viewer role grant
 access to the published reports. See the
 [Role Based Access](/docs/accessanalyzer/12.0/admin/settings/access/rolebased/overview.md) topic for addition
 information.
 
 
-The address to the Web Console can be configured within the Access Analyzer Console (**Settings** >
+You can configure the address to the Web Console within the Access Analyzer Console (**Settings** >
 **Reporting**). The default address is `http://[hostname.domain.com]:8082`. From the Access Analyzer
-Console server, it can be accessed at `http://localhost/` with any standard browser. To access the
+Console server, you can access it at `http://localhost/` with any standard browser. To access the
 Web Console from another machine in or connected to the environment, replace localhost with the name
 of the Access Analyzer Console. See the [Update Website URLs](secure.md#update-website-urls) topic
 for additional information.
@@ -67,7 +67,7 @@ topic for additional information.
 :::
 
 
-Follow the steps to login to the Web Console.
+To log in to the Web Console:
 
 **Step 1 –** To open the Web Console page, use one of the following methods:
 
@@ -80,7 +80,7 @@ Follow the steps to login to the Web Console.
     - `https://[machinename]:8082`
 
 :::note
-The URL that is used may need to be added to the browser’s list of trusted sites.
+You may need to add the URL to the browser’s list of trusted sites.
 :::
 
 

@@ -12,7 +12,7 @@ Notifications page.
 
 ![Notifications Page](/images/accessinformationcenter/11.6/admin/configuration/notifications.webp)
 
-At the top, the SMTP server and email security settings are configured. The Notification options is
+At the top, the SMTP server and email security settings are configured. The Notification options is
 where you configure the sender information, and other optional settings. The Reminders section is
 for configuring weekly reminders for owners with outstanding resource reviews or access requests.
 
@@ -20,8 +20,8 @@ for configuring weekly reminders for owners with outstanding resource reviews or
 
 If the Access Information Center is installed on the same server as the Enterprise Auditor Console,
 SMTP server settings from Enterprise Auditor should be populated automatically. SMTP server
-information can be supplied and modified on the Notifications page. Follow the steps to configure or
-modify the SMTP settings.
+information can be supplied and modified on the Notifications page. To configure or
+modify the SMTP settings:
 
 ![Notifications page SMTP server settings section](/images/accessinformationcenter/11.6/admin/configuration/notificationsserversettings.webp)
 
@@ -34,7 +34,7 @@ name (mail.example.com) or IP Address.
 Historically, the default for SMTP has been port 25. However, if a secure connection is desired
 (SSL/TLS), the SMTPS port needs to be changed, traditionally 465. Alternately, environments with
 off-premises or outsourced email service, e.g. gmail.com, hotmail.com, etc., may have to supply a
-different submission port, traditionally port 587. Ultimately it is an organization’s
+different submission port, traditionally port 587. Ultimately it is an organization's
 email/messaging administrator who will know the proper value for the SMTP port.
 
 **Step 4 –** SMTP security settings:
@@ -68,13 +68,13 @@ email/messaging administrator who will know the proper value for the SMTP port.
 
 ![Test Settings window](/images/accessinformationcenter/11.6/admin/configuration/notificationstestsettings.webp)
 
-**Step 5 –** Click **Test Settings** to ensure a connection to the SMTP server. The Test Settings
+**Step 5 –** Click **Test Settings** to ensure a connection to the SMTP server. The Test Settings
 window opens. Enter a valid email address and click **OK**.
 
 ![Testing your settings window](/images/accessinformationcenter/11.6/admin/configuration/notificationstestconfirm.webp)
 
 **Step 6 –** If the SMTP settings are configured correctly, you receive a successful message. Click
-**OK** to close the Testing your settings window. The test recipient should have recieved a test
+**OK** to close the Testing your settings window. The test recipient should have received a test
 email.
 
 **Step 7 –** Click **Save**. Then click **OK** to confirm.
@@ -90,18 +90,18 @@ additional Notification options.
 
 ## Notification Options
 
-Once the SMTP server is configured, there are additional options. Only the Reply-To field must be
+When the SMTP server is configured, there are additional options. Only the Reply-To field must be
 populated:
 
 ![Notifications page showing Notification Options section](/images/accessinformationcenter/11.6/admin/configuration/notificationsnotificationoptions.webp)
 
 - Reply-To — The email address that receives responses to notifications sent by the application.
-  This can be a “no reply” address.
+  This can be a "no reply" address.
 - Reply-Display — Optionally enter a display name for the sender
-- Carbon-Copy — Optionally set additional email addresses to be CC’d on all email messages sent
+- Carbon-Copy — Optionally set additional email addresses to be CC'd on all email messages sent
 - Server Name Alias — Optionally provide an alternate name for the URL link to the Access
   Information Center. By default, the URL is the hosting server name and port, e.g. NEWYORKSRV10:81.
-  If you do not want the server name visible in the URL, provide an alias here, e.g.
+  If you don't want the server name visible in the URL, provide an alias here, e.g.
   AIC.NWXTECH.com.
 - Send notifications to all resource owners — This option applies only to resources with multiple
   assigned owners. When unchecked, notifications are only sent to the Primary Owner. Check this
@@ -110,7 +110,7 @@ populated:
     - This option is part of the Resources Reviews and Self-Service Access Requests workflows.
 
 :::tip
-Remember, click **Save** after making modifications to the Notification settings. After the
+Click **Save** after making modifications to the Notification settings. After the
 settings are saved, a re-authentication is required to continue using the Access Information Center.
 :::
 
@@ -130,8 +130,8 @@ Reminders section.
 
 **Step 3 –** Set the date and time for when the reminder will be sent:
 
-- Day of the week – Select the day of the week from the drop-down menu
-- Time of day – Click on the field to open a clock window. Set the time of day reminders will be
+- Day of the week – Select the day of the week from the dropdown menu
+- Time of day – Click the field to open a clock window. Set the time of day reminders will be
   sent, e.g. 12:00 AM
 
 **Step 4 –** Click **Save**. Then click **OK** to confirm.

@@ -21,7 +21,7 @@ The required credentials for this account type are:
 - Password Storage – Application (Uses the configured Profile Security setting as selected at the
   **Settings** > **Application** node. See the [Application](/docs/accessanalyzer/12.0/admin/settings/application/overview.md) topic
   for additional information.)
-- Key – The required Key depends on the target environment the Connection Profile is being used for:
+- Key – The required Key depends on the target environment where you use the Connection Profile:
 
     - Entra ID – Client secret value for the Access Analyzer application registered with Microsoft
       Entra ID. See the
