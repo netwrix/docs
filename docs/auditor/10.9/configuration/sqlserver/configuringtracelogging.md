@@ -8,7 +8,7 @@ sidebar_position: 30
 
 Netwrix Auditor creates and maintains its own SQL Server trace automatically. On every data
 collection, Auditor checks whether the trace exists on each monitored SQL Server instance and
-creates it if needed. **No manual configuration is required.**
+creates it if needed. **You don't need to configure anything manually.**
 
 Auditor uses the trace data to report the actual "Who", "Workstation", and "When" values for
 changes to SQL Server configuration and objects. Without the trace, Auditor reports these changes
@@ -32,7 +32,7 @@ If you exclude an instance, Auditor doesn't report the "Who", "Workstation", and
 correctly for changes on that instance, except for content changes.
 
 The exclusion applies only to the trace used for configuration and object changes. Auditor still
-creates traces for the following features if they're enabled in the monitoring plan:
+creates traces for the following features if you enable them in the monitoring plan:
 
 - Logon activity monitoring
 - Data change monitoring in the **Don't use triggers** mode
@@ -63,7 +63,7 @@ To exclude all instances, enter `*`.
 ## Change the trace log location
 
 By default, Auditor stores trace files in the log folder of the SQL Server instance, the same folder
-where the SQL Server default trace is stored. For example, for a default SQL Server 2019 instance,
+where SQL Server stores its default trace. For example, for a default SQL Server 2019 instance,
 this folder is _C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Log_.
 
 The SQL Server service writes the trace files, so the path refers to the computer where SQL Server
@@ -78,7 +78,7 @@ Auditing_ folder.
 **Step 2 –** Open the _pathstotracelogs.txt_ file for editing.
 
 **Step 3 –** Add a line for each SQL Server instance in the `server\instance|path` format.
-Wildcards aren't supported; specify the exact instance name.
+This file doesn't support wildcards; specify the exact instance name.
 
 **Example:**
 

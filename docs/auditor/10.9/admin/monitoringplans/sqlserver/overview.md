@@ -38,7 +38,7 @@ On the **General** tab, you can configure the following settings for SQL Server 
 | Option                                                 | Description                                                                                                                                                       |
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Monitor this data source and collect activity data** | Enable monitoring of the selected data source and configure Auditor to collect and store audit data.                                                              |
-| **Monitor SQL Server configuration changes**           | Always enabled, as SQL Server configuration changes are always monitored.                                                                                         |
+| **Monitor SQL Server configuration changes**           | Always enabled, as Auditor always monitors SQL Server configuration changes.                                                                                      |
 | **Monitor SQL Server logon activity**                  | Specify what types of logon events you want to monitor, performed through Windows and SQL authentication:<br/>- **Failed logons**<br/>- **Successful logons** |
 | **Collect data for state-in-time reports**             | Store the snapshots of your SQL Server instance configuration for state-in-time reports. See [Collect data for state-in-time reports](#collect-data-for-state-in-time-reports). |
 
@@ -54,7 +54,7 @@ information.
 The product updates the latest snapshot on the regular basis to keep users up-to-date on actual
 system state. Only the latest snapshot is available for reporting in Netwrix Auditor. If you want
 to generate reports based on different snapshots, you must import snapshots to the Audit Database.
-To import snapshots, you must be assigned the Global administrator or the Global reviewer role in
+To import snapshots, you need the Global administrator or the Global reviewer role in
 Netwrix Auditor.
 
 1. In the **Manage historical snapshots** section, click **Manage** and select the snapshots that
@@ -79,10 +79,10 @@ Server monitoring scope:
 - **Exclude users matching these criteria**
 
 For example, you may need to track only actions performed by administrative accounts, or exclude
-the activity initiated by ordinary applications. If so, data should be filtered accordingly before
-it appears in search results, reports, and Activity Summaries.
+the activity initiated by ordinary applications. If so, use these filters so that Auditor filters
+the data before it appears in search results, reports, and Activity Summaries.
 
-You can create either inclusion or exclusion lists. All filters are applied using AND logic. To
+You can create either inclusion or exclusion lists. Auditor applies all filters using AND logic. To
 create a filter for user activity monitoring, select the related option and click the button on the
 right. Specify the following:
 
@@ -127,8 +127,8 @@ altering databases on the monitored SQL Server instances.
   reports and search results without producing additional load on your SQL Server instance.
   Netwrix recommends this mode for highly-transactional servers.
 - **Use triggers for detailed monitoring** — Select this mode if you require very detailed
-  reporting on the data changes. It will be also selected by default if you are upgrading your
-  Netwrix Auditor deployment. Data will be collected using a set of triggers. For more information
+  reporting on the data changes. Auditor also selects this mode by default if you are upgrading your
+  Netwrix Auditor deployment. In this mode, Auditor collects data using a set of triggers. For more information
   on this technology, see [https://kb.netwrix.com/728](https://kb.netwrix.com/728).
 
   Use this setting carefully, since collecting a large amount of details from a
@@ -153,7 +153,7 @@ may affect its performance.
 
 ### Monitoring rules
 
-To specify what data changes must be monitored, create at least one **inclusion rule**. Exclusion
+To specify which data changes Auditor monitors, create at least one **inclusion rule**. Exclusion
 rules are optional. Click **Add Rule** and configure the following:
 
 ![data_source_sql_data_rule_thumb_0_0](/images/auditor/10.9/admin/monitoringplans/sqlserver/data_source_sql_data_rule_thumb_0_0.webp)
@@ -170,7 +170,7 @@ rules are optional. Click **Add Rule** and configure the following:
 - **Column** — Specify table column name. The following column types aren't supported: `text`,
   `ntext`, `image`, `binary`, `varbinary`, `timestamp`, `sql_variant`.
 
-These filters will be applied using AND logic. Wildcard (\*) is supported and replaces any number
+Auditor applies these filters using AND logic. You can use a wildcard (\*) to replace any number
 of characters.
 
 ## Audit SELECT
