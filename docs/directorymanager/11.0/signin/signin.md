@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Access Admin Center
 
-Admin Center is a web-based application that can be accessed over the Internet and Intranet. It
-comes with a default provider, _GroupID_, which primarily facilitates first-time login to the
+Admin Center is a web-based application that users can access over the Internet and Intranet. It
+comes with a default provider, _GroupID_, which primarily facilitates first-time log in to the
 application. Typically, the _GroupID_ provider has one default user, _Super Admin_, that has full
 access to Admin Center. On signing in, this user can create identity stores and configure settings
 to get the application ready for use.
@@ -27,17 +27,21 @@ Use any of the following methods to connect and sign in:
 
 - Select an identity store and enter the username and password of your identity store account.
 
-    NOTE: To sign in using the GroupID provider, enter the username and password you specified for
+    :::note
+    To sign in using the GroupID provider, enter the username and password you specified for
     _GroupID Administrator_ on the **Service Account Settings** page of the Configuration Tool. See
     the
     [Configure a new GroupID server with a new or an existing database](/docs/directorymanager/11.0/about/configure/gidserver.md)
     topic.
+    :::
 
 - Select an identity store and sign in using a SAML provider.  
   (This option is available if a SAML provider is configured with the selected identity store.)
 
-    NOTE: Microsoft Entra ID MFA enabled users cannot log into GroupID using their username and
-    password. They will be authenticated through the SAML provider configured for in GroupID.
+    :::note
+    Microsoft Entra ID MFA enabled users can't log into GroupID using their username and
+    password. They authenticate through the SAML provider configured in GroupID.
+    :::
 
 - Scan the displayed QR code with the GroupID app installed on your smartphone.  
   (This option is available if the QR code feature is enabled for the identity store you want to
@@ -49,7 +53,7 @@ permissions in the identity store.
 
 **To sign in:**
 
-1. Type the Admin Center URL in the address bar of a web browser and press Enter. For example:  
+1. Enter the Admin Center URL in the address bar of a web browser and press Enter. For example:  
    https://[machine name]:4443//AdminCenter
 
     Or
@@ -83,8 +87,10 @@ configuration:
 On the **GroupID Authenticate** page, click the button or image for the provider and proceed to sign
 in.
 
-NOTE: For Microsoft Entra ID MFA enabled users, a SAML provider must be configured for signing into
-GroupID.
+:::note
+For Microsoft Entra ID MFA enabled users, you must configure a SAML provider so that they can sign
+into GroupID.
+:::
 
 ### With QR Code
 
@@ -97,7 +103,7 @@ code too. Use the QR code to sign into an identity store.
 2. Tap **Configure Application Using QR Code** in the app.
 3. Capture the QR code through the app on your phone. One of the following happens:
 
-    - If the identity store that the app is connected to does not have the QR code option enabled,
+    - If the identity store that the app is connected to doesn't have the QR code option enabled,
       an error message is displayed.
     - If the identity store that the app is connected to has the QR code option enabled, Admin
       Center will connect to this identity store.
@@ -107,16 +113,16 @@ code too. Use the QR code to sign into an identity store.
 The administrator can enable second factor authentication for a security role in an identity store.
 
 If enabled for your role in the identity store, you must pass second factor authentication after
-signing in via any of the above methods.
+signing in via any of the [sign-in methods](#sign-in).
 
 For second factor authentication, one of the following applies:
 
-- If you have not enrolled your identity store account in GroupID, the **Enroll Account** page is
-  displayed. You must enroll using at least one authentication type. See the
+- If you have not enrolled your identity store account in GroupID, GroupID displays the
+  **Enroll Account** page. You must enroll using at least one authentication type. See the
   [Enroll with Authentication Types](/docs/directorymanager/11.0/signin/authpolicy/enroll.md)
   topic.
-- If you have already enrolled your identity store account in GroupID, the **Authenticate** page is
-  displayed. It lists the authentication type(s) your account is enrolled with. Select an
+- If you have already enrolled your identity store account in GroupID, GroupID displays the
+  **Authenticate** page. It lists the authentication types your account is enrolled with. Select an
   authentication type to authenticate. See the
   [Authenticate with Authentication Types](/docs/directorymanager/11.0/signin/authpolicy/authenticate.md)
   topic.
@@ -154,7 +160,7 @@ settings.
 
 ### Modern Authentication and gMSA Permissions
 
-To use a gMSA as service account for GroupID services and app pool, do the following:
+To use a group Managed Service Account (gMSA) as service account for GroupID services and app pool, do the following:
 
 1. Add the gMSA account to the membership of the _IIS_IUSRS_ group on the GroupID server.
 2. Then, add the _IIS_IUSRS_ group in the ‘Manage Private Keys’ permission for the certificate that
