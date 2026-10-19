@@ -27,20 +27,9 @@ Auditor configures the following automatically:
   triggers on the audited tables, and database-level and server-level triggers. Auditor also sets
   the TRUSTWORTHY option to ON for the audited databases.
 
-To exclude data from monitoring, see the
-[SQL Server Monitoring Scope](/docs/auditor/10.7/configuration/sqlserver/scope.md) topic.
+Optionally, you can fine-tune the monitoring scope. See the
+[SQL Server Monitoring Scope](/docs/auditor/10.7/configuration/sqlserver/scope.md) topic for additional information.
 
-Also remember to do the following:
-
-1. Configure Data Collecting Account, as described in the
-   [Permissions for SQL Server Auditing](/docs/auditor/10.7/configuration/sqlserver/permissions.md)
-   topic.
-2. Configure required protocols and ports, as described in the
-   [SQL Server Ports](/docs/auditor/10.7/configuration/sqlserver/ports.md) topic.
-3. If you monitor data changes, ensure the account that runs the SQL Server service has at least
-   read permissions in Active Directory. See the
-   [SQL Server](/docs/auditor/10.7/admin/monitoringplans/sqlserver/overview.md#monitor-changes-to-data-in-the-database-tables)
-   topic for additional information.
 ## Before and after values for data changes
 
 When you monitor data changes in the **Use triggers for detailed monitoring** mode, Auditor reports
