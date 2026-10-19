@@ -15,7 +15,7 @@ Get provisioning orders from the server for one or more resource types.
 This endpoint requires `api-version=2.0`. Requests with `api-version=1.0` fail.
 :::
 
-The caller must be an agent authenticated with a JWT.
+The caller must be an agent authenticated with a JSON Web Token (JWT).
 
 ##### Parameters:
 
