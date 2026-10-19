@@ -4,7 +4,7 @@ description: "Netwrix Identity Manager 7.1"
 sidebar_position: 10
 ---
 
-# A software solution to match your IGA needs
+# Netwrix Identity Manager
 
 To learn about Netwrix Identity Manager (formerly Usercube) and build the solution you need, explore our guides.
 
