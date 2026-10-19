@@ -27,7 +27,7 @@ Implementing this connector requires:
     > Web Service contains operations that expose Workday Human Capital Management Business Services
     > data, including Employee, Contingent Worker and Organization information.
 
-- access to the Web Services that are to be used;
+- access to the Web Services you plan to use;
 - the [XPath](https://www.w3.org/TR/1999/REC-xpath-19991116/) syntax to configure and select the
   attributes to export.
 
@@ -37,7 +37,7 @@ This connector exports any entity available in WWS.
 
 ### Configuration
 
-This process is configured through a
+Configure this process through a
 [connection](/docs/identitymanager/6.1/integration-guide/toolkit/xml-configuration/connectors/connection/index.md)
 in the UI and/or the XML configuration, and in the `appsettings.agent.json > Connections` section:
 
@@ -84,7 +84,7 @@ The identifier of the connection and thus the name of the subsection must:
 
 | Name                   | Details                                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| InputFilePath required | **Type** String **Description** Path of the JSON file defining which entities and attributes are to be exported. See more details below.                           |
+| InputFilePath required | **Type** String **Description** Path of the JSON file defining which entities and attributes to export. For the file structure, see [InputFilePath](#inputfilepath). |
 | Login required         | **Type** String **Description** Login used to authenticate to Workday.                                                                                             |
 | Password required      | **Type** String **Description** Password used to authenticate to Workday.                                                                                          |
 | Server required        | **Type** String **Description** URL of the targeted Workday instance. **Syntax:**`https://####.workday.com/ccx/service/tenantName` (without the Web Service part). |
@@ -92,7 +92,7 @@ The identifier of the connection and thus the name of the subsection must:
 ##### InputFilePath
 
 The file specified in `InputFilePath` must have a specific structure, with a section for each entity
-to be exported.
+to export.
 
 > For example:
 >
@@ -112,14 +112,14 @@ to be exported.
 | Name                    | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | XmlBody required        | **Type** String **Description** Request to send to the Web Service. **Syntax:** `"XmlBody": "<soapenv:Body> <bsvc:Get_Entity_1_Request> ... </bsvc:Get_Entity_1_Request> </soapenv:Body>"` - the request body must begin with `<soapenv:Body>` and end with `</soapenv:Body>`; - inside the body, the entity request must use the namespace `bsvc`; - the body must fit on a single line. **Tip:** write the body in a separate XML file and remove the line breaks in a text editor. **Tip:**[see an example](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v34.2/samples/Get_Workers_Request.xml). |
-| XPaths optional         | **Type** String Pair List **Description** One or several key-value pairs, where: - the key is the attribute name that will be the column name in the output CSV file; - the value is the XPath used in the response to get the attribute value. **Info:** useless most of the time because the information is provided by entity type mappings and entity association mappings. Still useful when using the exe directly. **Note:** NETWRIX recommends using an **XPath** to the property `WID`, because it helps logs (in Trace mode) find entities with multi-valued properties. **Syntax:** `"XPaths": {     "Attribute_1_Name": "XPath 1",    ...    "Attribute_N_Name": "XPath N"   }`             |
-| EntityName required     | **Type** String **Description** Name of the entity, which conditions the name of the output file. See more details.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| IncrementalTag optional | **Type** String **Description** XML tag associated with the incremental request. **Note:** in the xml request, `<bsvc:IncrementalTag>` must be the parent of `<bsvc:Transaction_Date_Range_Data>` which is the parent of `<bsvc:Updated_From>` and `<bsvc:Updated_Through>`. **Note:** when not specified, this entity is always exported in complete mode. **Warning:** the `IncrementalTag` part must not be added manually in `XmlBody` because the connector adds it automatically when exporting in incremental mode.                                                                                                                                                                              |
+| XPaths optional         | **Type** String Pair List **Description** One or several key-value pairs, where: - the key is the attribute name that will be the column name in the output CSV file; - the value is the XPath used in the response to get the attribute value. **Info:** useless most of the time because entity type mappings and entity association mappings provide the information. Still useful when using the exe directly. **Note:** NETWRIX recommends using an **XPath** to the property `WID`, because it helps logs (in Trace mode) find entities with multi-valued properties. **Syntax:** `"XPaths": {     "Attribute_1_Name": "XPath 1",    ...    "Attribute_N_Name": "XPath N"   }`             |
+| EntityName required     | **Type** String **Description** Name of the entity, which conditions the name of the output file. See the Output details section.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| IncrementalTag optional | **Type** String **Description** XML tag associated with the incremental request. **Note:** in the xml request, `<bsvc:IncrementalTag>` must be the parent of `<bsvc:Transaction_Date_Range_Data>` which is the parent of `<bsvc:Updated_From>` and `<bsvc:Updated_Through>`. **Note:** when not specified, the connector always exports this entity in complete mode. **Warning:** don't add the `IncrementalTag` part manually in `XmlBody` because the connector adds it automatically when exporting in incremental mode.                                                                                                                                                                              |
 | WebService required     | **Type** String **Description** Name and version of the Web Service.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ### Output details
 
-This connector is meant to generate to the
+This connector generates the following to the
 [ExportOutput](/docs/identitymanager/6.1/integration-guide/network-configuration/agent-configuration/appsettings/index.md)
 folder:
 
@@ -143,11 +143,11 @@ folder:
     ```
 
 - a cookie file named `workday_<connectionIdentifier>_cookie.bin`, containing the time of the last
-  export in order to perform an incremental export.
+  export to perform an incremental export.
 
-    Most exports can be run in complete mode, where the CSV files will contain all entries, or in
-    incremental mode, where CSV files will contain only the entries which have been modified since
-    the last synchronization.
+    You can run most exports in complete mode, where the CSV files contain all entries, or in
+    incremental mode, where CSV files contain only the entries modified since the last
+    synchronization.
 
     A task can use the `IgnoreCookieFile` boolean property, and a command line (with an executable)
     can use the option `--ignore-cookies`.
@@ -160,7 +160,7 @@ folder:
 >
 > ```
 >
-> We choose to export only the entity `workers`, so the output is generated to
+> This example exports only the entity `workers`, so the connector generates the output to
 > `WorkdayExport_workers.csv` in the directory
 > [ExportOutput](/docs/identitymanager/6.1/integration-guide/network-configuration/agent-configuration/appsettings/index.md).
 >
@@ -171,7 +171,7 @@ folder:
 
 ### Credential protection
 
-Data protection can be ensured through:
+You can protect data through:
 
 - [RSA encryption](/docs/identitymanager/6.1/integration-guide/network-configuration/agent-configuration/rsa-encryption/index.md),
   configured in the `appsettings.encrypted.agent.json` file;
@@ -190,8 +190,8 @@ Data protection can be ensured through:
   [CyberArk Vault](/docs/identitymanager/6.1/integration-guide/network-configuration/agent-configuration/cyberark-application-access-manager-credential-providers/index.md)
   able to store Workday's `Login`, `Password` and `Server`.
 
-Protected attributes are stored inside a safe in CyberArk, into an account whose identifier can be
-retrieved by Usercube from `appsettings.cyberark.agent.json`.
+Protected attributes are stored inside a safe in CyberArk, into an account whose identifier
+Usercube retrieves from `appsettings.cyberark.agent.json`.
 
 > For example:
 >
