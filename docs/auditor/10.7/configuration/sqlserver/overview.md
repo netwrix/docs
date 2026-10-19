@@ -6,26 +6,75 @@ sidebar_position: 110
 
 # SQL Server
 
-Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
-access auditing requires a certain configuration of native audit settings in the audited environment
-and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Configure auditing properly to ensure audit data
-integrity; otherwise, your change reports may contain warnings, errors, or incomplete audit data.
+Netwrix Auditor configures SQL Server for monitoring automatically. Unlike Windows-based data
+sources, SQL Server doesn't require native audit policies: on each data collection, Auditor checks
+the monitored SQL Server instances and creates or repairs the objects it needs. Don't change or
+delete these objects manually.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-Netwrix Auditor configures your IT infrastructure for monitoring automatically. It checks your
-current audit settings on each data collection and adjusts them if necessary.
+## Audit configuration
 
-## Checking for Primary Key
+### What Auditor configures automatically
 
-If you plan to audit an SQL Server for data changes and browse the results using '_Before_' and
-'_After_' filter values, ensure that the audited SQL database tables have a primary key (or a
-unique column). Otherwise, Netwrix Auditor doesn't report '_Before_' and '_After_' values.
+- **SQL Server traces** — Auditor creates its own traces to capture configuration changes, logons,
+  and, in the **Don't use triggers** mode, data changes and SELECT statements. To restart the traces
+  after SQL Server restarts, Auditor registers the `nwxsqlcr_tracestartup` startup procedure in the
+  _master_ database. You can exclude instances from tracing or change the trace file location. See
+  [Configuring Trace Logging](/docs/auditor/10.7/configuration/sqlserver/configuringtracelogging.md).
+- **Data change auditing objects** — In the **Use triggers for detailed monitoring** mode, Auditor
+  creates the _NetwrixSQLCRAudit_ database, DML triggers on the audited tables, and database-level
+  and server-level triggers that keep the auditing consistent. Auditor also sets the TRUSTWORTHY
+  option to ON for the audited databases.
 
+### What you configure
+
+- **Data collecting account** — Windows account with the **sysadmin** server role. See
+  [Permissions for SQL Server Auditing](/docs/auditor/10.7/configuration/sqlserver/permissions.md).
+- **Network ports** — See [SQL Server Ports](/docs/auditor/10.7/configuration/sqlserver/ports.md).
+- **SQL Server service account** — If you monitor data changes, the account that runs the SQL
+  Server service must have at least read permissions in Active Directory. See
+  [SQL Server](/docs/auditor/10.7/admin/monitoringplans/sqlserver/overview.md#monitor-changes-to-data-in-the-database-tables).
+## Before and after values for data changes
+
+When you monitor data changes in the **Use triggers for detailed monitoring** mode, Auditor reports
+the column values before and after each UPDATE. To match the old and new versions of a row, Auditor
+uses the primary key or a unique constraint of the table.
+
+If a table has neither, Auditor still reports the UPDATE, but without the before and after values.
+The values are also missing when an UPDATE changes the primary key or unique constraint columns
+themselves.
+
+To get the before and after values for such a table, add a primary key or a unique constraint to
+it. A unique index without a constraint isn't enough. Auditor updates its triggers for the table
+automatically during data collection.
+
+In the **Don't use triggers** mode, Auditor doesn't report column values, so the primary key
+doesn't affect the results.
+## Exclude monitored objects
+
+To narrow the SQL Server monitoring scope, edit the omit list files in the
+_%Netwrix Auditor install folder%\SQL Server Auditing_ folder. The following table lists the files
+and their purpose. For the syntax and examples, see
+[SQL Server Monitoring Scope](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md).
+
+| File | Purpose |
+| ---- | ------- |
+| [omitarlist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omitarlisttxt) | Hide activity records from reports, search, and Activity Summaries |
+| [omitdcpathlist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omitdcpathlisttxt) | Hide data categories for SQL Server objects in search and reports |
+| [omiterrorlist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omiterrorlisttxt) | Exclude errors and warnings from the Netwrix Auditor System Health log |
+| [omitlogonlist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omitlogonlisttxt) | Exclude logons from monitoring |
+| [omitobjlist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omitobjlisttxt) | Hide object types from reports, search, and Activity Summaries |
+| [omitpathlist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omitpathlisttxt) | Hide objects by path from reports, search, and Activity Summaries |
+| [omitproplist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omitproplisttxt) | Exclude attributes from monitoring and from the Long-Term Archive |
+| [omitreadaccesslist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omitreadaccesslisttxt) | Exclude SELECT statements from auditing |
+| [omitsitpathlist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omitsitpathlisttxt) | Exclude objects from state-in-time data collection |
+| [omitstorelist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omitstorelisttxt) | Exclude objects from data collection and reporting |
+| [omittracelist.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#omittracelisttxt) | Prevent Auditor from enabling SQL tracing on specific instances |
+| [propnames.txt](/docs/auditor/10.7/admin/monitoringplans/sqlserver/scope.md#propnamestxt) | Set friendly names for object types and properties in change reports |
 ## SQL Server Objects
 
 Review a full list of all object and data types Netwrix Auditor can collect on SQL Server.
@@ -53,7 +102,6 @@ availability groups.
 
 | Object type | Attributes |
 | ----------- | ---------- |
-| **SQL Objects** | |
 | Application Role | Date Created, Date Modified, Default Schema, Extended Properties, Id, Name, Owned Schemas |
 | Backup | Backup name, Description, Device name, logical_device_name, Size, Type |
 | Column | Allow nulls, ANSI Padding Status, Collation, Computed Text, Default Constraint, Full Text, ID, Identity, Identity increment, Identity seed, Is Computed, Length, Name, Not for replication, Numeric precision, Numeric scale, Primary Key, Rule, Rule Schema, System Type, XML Schema Namespace |
@@ -92,11 +140,3 @@ The following list contains the names of all data types monitored by Netwrix Aud
 `hierarchyid`, `int`, `float`, `money`, `nchar`, `nvarchar`, `numeric`, `real`, `smalldatetime`,
 `smallint`, `smallmoney`, `table`, `time`, `timestamp`, `tinyint`, `uniqueidentifier`, `varchar`,
 `xml`
-
-## Next Steps
-
-Also remember to do the following:
-
-- Configure Data Collecting Account as described in
-  [Permissions for SQL Server Auditing ](/docs/auditor/10.7/configuration/sqlserver/permissions.md)section.
-- Configure ports as described in the [SQL Server Ports](/docs/auditor/10.7/configuration/sqlserver/ports.md) section.

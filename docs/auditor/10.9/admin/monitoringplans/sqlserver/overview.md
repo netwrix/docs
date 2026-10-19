@@ -131,6 +131,9 @@ altering databases on the monitored SQL Server instances.
   Netwrix Auditor deployment. In this mode, Auditor collects data using a set of triggers. For more information
   on this technology, see [https://kb.netwrix.com/728](https://kb.netwrix.com/728).
 
+  To get the before and after values for updated rows, the audited tables need a primary key or a
+  unique constraint. See [Before and after values for data changes](/docs/auditor/10.9/configuration/sqlserver/overview.md#before-and-after-values-for-data-changes).
+
   Use this setting carefully, since collecting a large amount of details from a
   highly-transactional server may affect its performance. Using this mode may lead to issues when
   altering databases on the monitored SQL Server instances. The issues occur only if the SQL Server
