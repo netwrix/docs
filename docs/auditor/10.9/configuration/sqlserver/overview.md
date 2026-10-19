@@ -23,6 +23,7 @@ To prepare SQL Server for monitoring:
   topic.
 - Configure required protocols and ports, as described in the
   [SQL Server Ports](/docs/auditor/10.9/configuration/sqlserver/ports.md) topic.
+
 Auditor configures the following automatically:
 
 - SQL Server traces that capture configuration changes, logons, and, in the **Don't use triggers**
@@ -39,6 +40,7 @@ If you need to change the default behavior:
   topic.
 - To exclude objects, logons, or other data from monitoring, see the
   [SQL Server Monitoring Scope](/docs/auditor/10.9/configuration/sqlserver/scope.md) topic.
+
 ## Before and after values for data changes
 
 When you monitor data changes in the **Use triggers for detailed monitoring** mode, Auditor reports
@@ -55,6 +57,7 @@ automatically during data collection.
 
 In the **Don't use triggers** mode, Auditor doesn't report column values, so the primary key
 doesn't affect the results.
+
 ## SQL Server Objects
 
 Review a full list of all object and data types Netwrix Auditor can collect on SQL Server.
