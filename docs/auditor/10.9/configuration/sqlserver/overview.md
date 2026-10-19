@@ -48,6 +48,9 @@ Review the full list of monitored object types and their attributes:
 The attributes marked with asterisk (\*) are reported only for the SQL Server item, not for
 availability groups.
 
+<!-- vale Netwrix.FirstPerson = NO -->
+<!-- vale Netwrix.OxfordComma = NO -->
+
 | Object type | Attributes |
 | ----------- | ---------- |
 | **SQL Objects** | |
@@ -77,6 +80,9 @@ availability groups.
 | View Column | Allow nulls, ANSI Padding Status, Collation, Computed Text, Default Constraint, Full Text, ID, Identity, Identity increment, Identity seed, Is Computed, Length, Name, Not for replication, Numeric precision, Numeric scale, Rule, Rule Schema, System Type, XML Schema Namespace, XML Schema Namespace schema |
 | View Index | Allow Page Locks, Allow Row Locks, ID, Data Space ID, Disabled, Fill Factor, Hypothetical, Ignore Dup Key, Name, Padindex, Primary Key, Schema Name, Type, Unique, Unique Constraint, View Name |
 | View Index Column | Column ID, ID, Included Column, Index ID, Key Ordinal, Name, Partition Ordinal, Schema Name, Sort Order, View Name |
+
+<!-- vale Netwrix.OxfordComma = YES -->
+<!-- vale Netwrix.FirstPerson = YES -->
 
 ### Monitored data types
 

@@ -204,9 +204,9 @@ rule**. Exclusion rules are optional. Click **Add Inclusion** and specify the fo
 - **Table** — Specify database table you will monitor.
 
 Wildcard (\*) is supported and replaces any number of characters. Filters will be applied using AND
-logic, that is, only SELECT statements matching all specified criteria will be monitored. So, in
-the example above, the program will track and report only the successful SELECT statements
-executed against the _Applicants_ table of the _HR2019_ database with _Custom_ schema, hosted on
-the _SQLsrv02\TestInstance_.
+logic, that is, only SELECT statements matching all specified criteria will be monitored. For
+example, with the rule shown in the **Add Inclusion** screenshot, the program will track and report
+only the successful SELECT statements executed against the _Applicants_ table of the _HR2019_
+database with _Custom_ schema, hosted on the _SQLsrv02\TestInstance_.
 
 When finished, click **Add**. If needed, configure the exclusion rules in a similar way.
