@@ -18,18 +18,20 @@ knowledge base article for additional information.
 
 Auditor configures the following automatically:
 
-- SQL Server traces for configuration changes, logons, and, in the **Don't use triggers** mode,
-  data changes and SELECT statements. The `nwxsqlcr_tracestartup` startup procedure in the _master_
-  database restarts the traces after SQL Server restarts. See the
+- SQL Server traces that capture configuration changes, logons, and, in the **Don't use triggers**
+  mode, data changes and SELECT statements. Auditor restores the traces after SQL Server restarts.
+- In the **Use triggers for detailed monitoring** mode, triggers on the audited tables and the
+  _NetwrixSQLCRAudit_ database where the triggers store data changes. Auditor also sets the
+  TRUSTWORTHY option to ON for the audited databases.
+
+If you need to change the default behavior:
+
+- To prevent Auditor from creating traces on specific instances, or to store trace files in a
+  different folder, see the
   [Configuring Trace Logging](/docs/auditor/10.7/configuration/sqlserver/configuringtracelogging.md)
-  topic for additional information.
-- In the **Use triggers for detailed monitoring** mode, the _NetwrixSQLCRAudit_ database, DML
-  triggers on the audited tables, and database-level and server-level triggers. Auditor also sets
-  the TRUSTWORTHY option to ON for the audited databases.
-
-Optionally, you can fine-tune the monitoring scope. See the
-[SQL Server Monitoring Scope](/docs/auditor/10.7/configuration/sqlserver/scope.md) topic for additional information.
-
+  topic.
+- To exclude objects, logons, or other data from monitoring, see the
+  [SQL Server Monitoring Scope](/docs/auditor/10.7/configuration/sqlserver/scope.md) topic.
 ## Before and after values for data changes
 
 When you monitor data changes in the **Use triggers for detailed monitoring** mode, Auditor reports
