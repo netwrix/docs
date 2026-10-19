@@ -13,9 +13,8 @@ statuses to each:
 ![statuses_chart](/images/1secure/admin/statuses_chart.webp)
 
 :::note
-The New status changes to Healthy status when the agent finishes collection from the
-environment. The time frame for a change may be within a minute up to several hours depending on the
-environment size.
+The New status changes to Healthy when the first batch of data arrives from the
+environment without error.
 :::
 
 
