@@ -16,6 +16,13 @@ the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
+To prepare SQL Server for monitoring:
+
+- Prepare a Data Collecting Account as described in the
+  [Permissions for SQL Server Auditing](/docs/auditor/10.8/configuration/sqlserver/permissions.md)
+  topic.
+- Configure required protocols and ports, as described in the
+  [SQL Server Ports](/docs/auditor/10.8/configuration/sqlserver/ports.md) topic.
 Auditor configures the following automatically:
 
 - SQL Server traces that capture configuration changes, logons, and, in the **Don't use triggers**
