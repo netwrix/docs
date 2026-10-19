@@ -42,7 +42,7 @@ folder.
 
 ## Generate a Signing Key
 
-Using Netwrix Directory Manager (formerly GroupID) Signing Key Utility you can generate a new
+Use the Netwrix Directory Manager (formerly GroupID) Signing Key Utility to generate a new
 signing key.
 
 :::info
@@ -106,7 +106,7 @@ later use. The utility saves the encrypted signing key in the specified folder.
 ## Import a Signing Key
 
 Copy the newly generated signing key on the required Directory Manager instance. Enter the following
-command at the Windows Command prompt to import the signing key which is in .pfx encrypted format:
+command at the Windows Command prompt to import the encrypted .pfx signing key:
 
 ```
 SigningKeyUtility.exe ImportSigningKey -n “<Folder location of encryption key>” -p “<Password of encryption key>” -u “<DB username>” -s “<SQLServer name>” -d “<DB name>” -i
