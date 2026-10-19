@@ -1,0 +1,86 @@
+@startuml component
+package "FormControl" {
+	class FormControl {
+		AddedMinutes : Int32
+		ColumnSize : Int32
+		DisplayName_L1 : String
+		DisplayOrder : Int32
+		ExtensionIdentifier : String
+		IsReadOnly : Boolean
+		IsRequired : Boolean
+		Name : String
+		PlaceHolderText_L1 : String
+		--
+		Binding : Binding
+		Binding2 : Binding
+		Binding3 : Binding
+		DefaultValueBinding : Binding
+		DisplayTable : DisplayTable
+		EmbeddedForm : Form
+		EntityType : EntityType
+		FilterBinding1 : Binding
+		FilterBinding2 : Binding
+		Form : Form
+		HomonymEntityLink : HomonymEntityLink
+		InputType : InputType
+		LinkedBinding1 : Binding
+		LinkedBinding2 : Binding
+		NavigationBinding : Binding
+		OutputType : OutputType
+		ParentControl : FormControl
+		ParentControlFormControls : FormControl[]
+		Tile : Tile
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "DisplayTable" {
+	class DisplayTable {
+	}
+}
+package "Form" {
+	class Form {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "HomonymEntityLink" {
+	class HomonymEntityLink {
+	}
+}
+package "InputType" {
+	class InputType {
+	}
+}
+package "OutputType" {
+	class OutputType {
+	}
+}
+package "Tile" {
+	class Tile {
+	}
+}
+FormControl "0..*" --  "0..1"Binding
+FormControl "0..*" --  "0..1"Binding
+FormControl "0..*" --  "0..1"Binding
+FormControl "0..*" --  "0..1"Binding
+FormControl "0..*" --  "0..1"DisplayTable
+FormControl "0..*" --  "0..1"Form
+FormControl "0..*" --  "0..1"EntityType
+FormControl "0..*" --  "0..1"Binding
+FormControl "0..*" --  "0..1"Binding
+FormControl "0..*" --  "1"Form
+FormControl "0..*" --  "0..1"HomonymEntityLink
+FormControl "0..*" --  "1"InputType
+FormControl "0..*" --  "0..1"Binding
+FormControl "0..*" --  "0..1"Binding
+FormControl "0..*" --  "0..1"Binding
+FormControl "0..*" --  "1"OutputType
+FormControl "0..*" --  "0..1"FormControl
+FormControl "0..*" --  "0..1"Tile
+hide empty members
+@enduml

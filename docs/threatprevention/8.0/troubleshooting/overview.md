@@ -37,17 +37,17 @@ Whether choosing to archive or delete data, this is always a good feature to ena
 **Best Practice #3 – Analytics? Turn on One at a Time & Tune**
 
 Analytics provide organizations with the ability to capture and analyze authentication or file
-system traffic. The best way to employ analytics is to turn on one at a time and then ‘tune’ it to
+system traffic. The best way to employ analytics is to turn on one at a time and then tune it to
 the targeted environment before turning on another. Each environment generates unique authentication
-or file system ‘noise’ that can be filtered out by adjusting triggers and filters. Once the analytic
-is in tune with the environment, move to the next one desired.
+or file system noise that can be filtered out by adjusting triggers and filters. After the analytic
+is in tune with the environment, move to the next one.
 
 **Best Practice #4 – Monitor before Blocking**
 
-The lockdown event types are used to block events. When configuring a blocking policy, it is always
-a best practice to configure and enable a monitoring policy with the desired filters first as a
-trial run. This will allow you to ensure the filters set will block events the way they were
-intended. Once the desired filters are confirmed, then the blocking policy is good-to-go.
+The lockdown event types are used to block events. When configuring a blocking policy, always
+configure and enable a monitoring policy with the filters you want first as a trial run. This ensures
+the filters you want will block events as intended. After confirming the filters, the blocking policy
+is ready.
 
 **Best Practice #5 – File System ‘Read’ Monitoring, in Moderation**
 
@@ -60,16 +60,15 @@ The volume of Read events in most environments can fill the Threat Prevention da
 The following information provides basic troubleshooting techniques and frequently asked questions
 (FAQs) for the Administration Console users.
 
-**FAQ: Microsoft just released a security bulletin that impacts LSASS. How do I know if the Microsoft KB will affect the Agent instrumentation?**
+**FAQ: Will a Microsoft KB that impacts LSASS affect the Agent instrumentation?**
 
 The Agent has been configured to monitor LSASS after a reboot (triggered by the Microsoft KB). If
 LSASS stops shortly after a reboot (default within five minutes), then the Agent will be stopped and
 the Agent service will be changed to manual start.
 
 :::info
-Reach out to [Netwrix Support](https://www.netwrix.com/support.html) prior to
-restarting the Agent, as a hotfix may exist which will prevent future issues with that Microsoft
-Security Bulletin.
+Contact [Netwrix Support](https://www.netwrix.com/support.html) before restarting the Agent, as a
+hotfix may exist which will prevent future issues with that Microsoft Security Bulletin.
 :::
 
 
@@ -86,13 +85,12 @@ topic for additional information.
 :::
 
 
-**FAQ: The user interface is not displaying correctly and windows are cut off. What should I do?**
+**FAQ: The user interface isn't displaying correctly and windows are cut off. How do you resolve this?**
 
 If any of the dialogs in the Administration Console have buttons or other user interface (UI)
-elements hidden or partially hidden, then you are advised to reduce their Windows font size. For
-example, some high resolution laptops may have their system font size set to a default of “Medium”.
-In such cases it may be necessary to change this to “Small” for all dialogs in theconsole to be
-displayed fully.
+elements hidden or partially hidden, reduce the Windows font size. For example, some high resolution
+laptops may have their system font size set to a default of “Medium”. In such cases, change this to
+“Small” for all dialogs in the console to display fully.
 
 **FAQ: How are Active Directory and Authentication raw events handled by Threat Prevention?**
 
@@ -101,7 +99,7 @@ for Authentication traffic. This allows the Active Directory event data to flow 
 even if there is a flood of Authentication traffic. A flood in Authentication traffic could result
 in a loss of Authentication event data. However, this will not impact Active Directory event data.
 
-**FAQ: How can I prevent flooding the memory with authentication traffic?**
+**FAQ: How do you prevent flooding the memory with authentication traffic?**
 
 The options in the
 [Event Filtering Configuration Window](/docs/threatprevention/8.0/admin/configuration/eventfilteringconfiguration.md)

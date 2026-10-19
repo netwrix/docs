@@ -7,8 +7,8 @@ sidebar_position: 30
 # Entra ID Object Details Pages
 
 The Microsoft Entra ID Object details pages provide details on Microsoft Entra ID objects including
-users, groups, applications, devices and roles. These pages can be used to discover more information
-about the various resources related to threats and events in Threat Manager. Pages include:
+users, groups, applications, devices, and roles. Use these pages to discover more information about
+the various resources related to threats and events in Threat Manager. Pages include:
 
 - [User Details Page](/docs/threatmanager/3.1/administration/threats/entraidobjects/entraiduser.md)
 
@@ -41,16 +41,16 @@ The profile card displays information about the selected user, application, grou
 - ObjectID
 - Object Type
 - Tenant
-- On-premises synced accounts (will appear if a synced account exists)
+- On-premises synced accounts (appears if a synced account exists)
 - Assigned tags, with an option to add Tags
 
 ## Tabs
 
-Depending on the selected user, group, application or role, the following tabs may be displayed:
+Depending on the selected user, group, application, or role, the following tabs may be displayed:
 
 ![Tabs](/images/threatmanager/3.0/administration/threatdetails/tabs.webp)
 
-- Threats Tab – Displays a chart with threats detected for a Microsoft Entra ID object
+- Threats Tab – Displays a chart with threats detected for a Microsoft Entra ID object
 - Activity Summary Tab – Depending on the selected object, the page may display the following
   information:
 
@@ -70,19 +70,19 @@ Depending on the selected user, group, application or role, the following tabs m
 
 ## Add Tag Button
 
-The Add Tag button can be used to assign existing tags to a user, group, or host computer. It also
+Use the Add Tag button to assign existing tags to a user, group, or host computer. The button also
 provides the option to create new tags.
 
 **Add an Existing Tag**
 
-Follow the steps to add a tag to a user, group, or computer
+To add a tag to a user, group, or computer:
 
 ![Existing Tags List](/images/threatmanager/3.0/administration/threatdetails/addtagbutton.webp)
 
 **Step 1 –** Click the Add Tag button.
 
-**Step 2 –** Click the desired tag to add from the list of existing tags.
+**Step 2 –** Click the tag you want from the list of existing tags.
 
-The selected tag is added to the user, group, application or role. See the
+The selected tag is added to the user, group, application, or role. See the
 [Tag Management Page](/docs/threatmanager/3.1/administration/configuration/integrations/tagmanagement.md) topic for additional
-information.
+information:

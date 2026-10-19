@@ -1,0 +1,176 @@
+@startuml component
+package "Resource" {
+	class Resource {
+		C0 : String
+		Dirty : Boolean
+		DisplayName_L1 : String
+		I40 : Int64
+		PrimaryKey : String
+		U0 : String
+		--
+		AdministratedAccessCertificationItems : AccessCertificationItem[]
+		AssignedCompositeRoles : AssignedCompositeRole[]
+		AssignedProfiles : AssignedProfile[]
+		AssignedResourceNavigations : AssignedResourceNavigation[]
+		AssignedSingleRoles : AssignedSingleRole[]
+		D0AutomationRules : AutomationRule[]
+		D0CompositeRoleRules : CompositeRoleRule[]
+		D0Contexts : Context[]
+		D0Policies : Policy[]
+		D0ProfileContexts : ProfileContext[]
+		D0ResourceNavigationRules : ResourceNavigationRule[]
+		D0ResourceTypeRules : ResourceTypeRule[]
+		D0SingleRoleRules : SingleRoleRule[]
+		D0SingleRoles : SingleRole[]
+		IdentifiedRisks : IdentifiedRisk[]
+		JobGroupInstance : JobInstance[]
+		OwnedAccessCertificationItems : AccessCertificationItem[]
+		OwnerAssignedResourceTypes : AssignedResourceType[]
+		OwnerResourceNotificationInstances : NotificationInstance[]
+		PerformedActivityInstances : ActivityInstance[]
+		PolicyAssignedResourceNavigations : AssignedResourceNavigation[]
+		R1ResourceLinks : ResourceLink[]
+		R2ResourceLinks : ResourceLink[]
+		ResourceActivityInstanceCCs : ActivityInstanceCC[]
+		ResourceAssignedResourceTypes : AssignedResourceType[]
+		ResourceNavigationRules : ResourceNavigationRule[]
+		ResourceResourceCorrelationKeies : ResourceCorrelationKey[]
+		ResourceResourceFiles : ResourceFile[]
+		ReviewedAccessCertificationItems : AccessCertificationItem[]
+		RiskRuleItems : RiskRuleItem[]
+		Type : EntityType
+	}
+}
+package "AccessCertificationItem" {
+	class AccessCertificationItem {
+	}
+}
+package "AssignedCompositeRole" {
+	class AssignedCompositeRole {
+	}
+}
+package "AssignedProfile" {
+	class AssignedProfile {
+	}
+}
+package "AssignedResourceNavigation" {
+	class AssignedResourceNavigation {
+	}
+}
+package "AssignedSingleRole" {
+	class AssignedSingleRole {
+	}
+}
+package "AutomationRule" {
+	class AutomationRule {
+	}
+}
+package "CompositeRoleRule" {
+	class CompositeRoleRule {
+	}
+}
+package "Context" {
+	class Context {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "ProfileContext" {
+	class ProfileContext {
+	}
+}
+package "ResourceNavigationRule" {
+	class ResourceNavigationRule {
+	}
+}
+package "ResourceTypeRule" {
+	class ResourceTypeRule {
+	}
+}
+package "SingleRoleRule" {
+	class SingleRoleRule {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+package "IdentifiedRisk" {
+	class IdentifiedRisk {
+	}
+}
+package "JobInstance" {
+	class JobInstance {
+	}
+}
+package "AssignedResourceType" {
+	class AssignedResourceType {
+	}
+}
+package "NotificationInstance" {
+	class NotificationInstance {
+	}
+}
+package "ActivityInstance" {
+	class ActivityInstance {
+	}
+}
+package "ResourceLink" {
+	class ResourceLink {
+	}
+}
+package "ActivityInstanceCC" {
+	class ActivityInstanceCC {
+	}
+}
+package "ResourceCorrelationKey" {
+	class ResourceCorrelationKey {
+	}
+}
+package "ResourceFile" {
+	class ResourceFile {
+	}
+}
+package "RiskRuleItem" {
+	class RiskRuleItem {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+Resource "0..1" --  "0..*"AccessCertificationItem
+Resource "1" --  "0..*"AssignedCompositeRole
+Resource "1" --  "0..*"AssignedProfile
+Resource "1" --  "0..*"AssignedResourceNavigation
+Resource "1" --  "0..*"AssignedSingleRole
+Resource "0..1" --  "0..*"AutomationRule
+Resource "0..1" --  "0..*"CompositeRoleRule
+Resource "0..1" --  "0..*"Context
+Resource "0..1" --  "0..*"Policy
+Resource "0..1" --  "0..*"ProfileContext
+Resource "0..1" --  "0..*"ResourceNavigationRule
+Resource "0..1" --  "0..*"ResourceTypeRule
+Resource "0..1" --  "0..*"SingleRoleRule
+Resource "0..1" --  "0..*"SingleRole
+Resource "1" --  "0..*"IdentifiedRisk
+Resource "0..1" --  "0..*"JobInstance
+Resource "1" --  "0..*"AccessCertificationItem
+Resource "0..1" --  "0..*"AssignedResourceType
+Resource "1" --  "0..*"NotificationInstance
+Resource "0..1" --  "0..*"ActivityInstance
+Resource "0..1" --  "0..*"AssignedResourceNavigation
+Resource "1" --  "0..*"ResourceLink
+Resource "1" --  "0..*"ResourceLink
+Resource "1" --  "0..*"ActivityInstanceCC
+Resource "0..1" --  "0..*"AssignedResourceType
+Resource "0..1" --  "0..*"ResourceNavigationRule
+Resource "1" --  "0..*"ResourceCorrelationKey
+Resource "1" --  "0..*"ResourceFile
+Resource "0..1" --  "0..*"AccessCertificationItem
+Resource "0..1" --  "0..*"RiskRuleItem
+Resource "0..*" --  "1"EntityType
+hide empty members
+@enduml

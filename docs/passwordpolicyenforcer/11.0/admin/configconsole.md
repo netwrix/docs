@@ -125,7 +125,7 @@ Here are the default settings.
 
 - **Default policy** sets the policy to be enforced on the domain or local computer unless users
   have a different policy assigned to them.
-- **Enforce policy when password is reset** requires users, administrators and helpdesk operators to
+- **Enforce policy when password is reset** requires users, administrators, and helpdesk operators to
   comply with the password policy when resetting a password or creating a new user account. Default
   is checked.
 
@@ -134,7 +134,7 @@ Here are the default settings.
       password is reset** option is selected on the [History Rule](/docs/passwordpolicyenforcer/11.0/admin/manage-policies/rules/history_rule.md) Properties.
 
 - **Accept encrypted client request only** specifies requests from Password Policy Client, Netwrix
-  Password Reset and Password Policy/Web must be encrypted. Client requests do not contain passwords
+  Password Reset and Password Policy/Web must be encrypted. Client requests don't contain passwords
   or password hashes. See the [Password Policy Client](/docs/passwordpolicyenforcer/11.0/admin/password-policy-client/password_policy_client.md) topic for
   additional information. Default is checked.
 - **Log event when password not checked by service** adds an entry to the Windows Application Event
@@ -143,18 +143,18 @@ Here are the default settings.
     - Password Policy Enforcer is disabled.
     - The policy assigned to a user is disabled.
     - No policy is assigned to a user or an error occurs when determining the assigned policy, and a
-      Default Policy is not specified.
-    - A password is reset, and the **Enforce policy when password is reset** is not selected.
+      Default Policy isn't specified.
+    - A password is reset, and the **Enforce policy when password is reset** isn't selected.
 
 - **Log event when password rejected by service** adds an entry to the Windows Application Event Log
-  whenever a password is rejected. Default is not checked. The logged event includes:
+  whenever a password is rejected. Default isn't checked. The logged event includes:
 
     - Username
     - Source (client or server)
-    - Rules the password does not meet.
+    - Rules the password doesn't meet.
 
         :::note
-        Passwords or password hashes are not sent over the network.
+        Passwords or password hashes aren't sent over the network.
         :::
 
 
@@ -172,7 +172,7 @@ Here are the default settings.
       Password Policy Client and Password Policy Server.
 
 - **Log event when password accepted by service** adds an entry to the Windows Application Event Log
-  whenever a password is accepted. The logged event includes the username. Default is not checked.
+  whenever a password is accepted. The logged event includes the username. Default isn't checked.
 
 #### Notifications
 
@@ -185,7 +185,7 @@ Here are the default settings.
 
 ![Notifications Settings](/images/passwordpolicyenforcer/11.0/administration/settingsnotifications.webp)
 
-- **Send email reminders**: check this option to send reminders. Default is not checked.
+- **Send email reminders**: check this option to send reminders. Default isn't checked.
 
     - **SMTP Server**: enter IP address.
     - **Port**: enter port number.

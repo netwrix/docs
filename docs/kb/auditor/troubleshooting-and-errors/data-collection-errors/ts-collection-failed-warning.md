@@ -22,7 +22,7 @@ knowledge_article_id: kA00g000000H9baCAC
 
 # TS collection failed warning
 
-Netwrix Auditor includes the "**Failed to process DC: %domain controller name% The error is: TS collection failed: Can't open output file: `C:WindowsADCR_Agent%domain contoller name%.ts.` Permission denied**" warning for Windows Server 2008 domain controllers in summary reports.
+Netwrix Auditor includes the "**Failed to process DC: %domain controller name% The error is: TS collection failed: Can't open output file: `C:WindowsADCR_Agent%domain controller name%.ts.` Permission denied**" warning for Windows Server 2008 domain controllers in summary reports.
 
 ---
 
@@ -45,5 +45,5 @@ To resolve this issue, you need to disable User Account Control (UAC) on the pro
    - Restart domain controller
 3. Once the domain controller is restarted, log onto it and delete the *.ts file Netwrix Auditor was able to access:
    - Navigate to `C:WindowsADCR_Agent`
-   - Find the file listed in the error (`%domain contoller name%.ts`) and delete it
+   - Find the file listed in the error (`%domain controller name%.ts`) and delete it
    - Do not enable User Account Control (UAC) back.

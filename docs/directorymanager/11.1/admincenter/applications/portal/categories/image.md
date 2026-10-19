@@ -38,8 +38,8 @@ provides many image editing options, including rotate, crop, flip, and re-size.
 4. Click **Custom Display Types** in the left pane.
 5. On the **Custom Display Types** page, click **Add** on the **Custom Display Types** tab.
 6. On the **New Display Type** pane, enter a name for the display type and select _Image_ in the
-   **Type** drop-down list.
-   You cannot change the name of a custom display type once you have created it.
+   **Type** dropdown list.
+   You can't change the name of a custom display type after creating it.
 7. In the **Height** and **Width** boxes, enter image dimensions (in pixels). The image will be
    displayed in the portal with these dimensions.
    The default is set to 100 x 100 pixels.

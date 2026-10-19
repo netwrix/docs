@@ -69,7 +69,7 @@ However there are 2 ways you can figure out the IP address:
 
    ![Image 1-1]./../0-images/ka04u000000HcPz_0EM700000004y31.png)
 
-2. In the **Netwrix Auditor Management Console**, go to **Managed Objects / &lt;Your Mananaged Object&gt; / Event Log Manager** node.
+2. In the **Netwrix Auditor Management Console**, go to **Managed Objects / &lt;Your Managed Object&gt; / Event Log Manager** node.
 3. Enable the "**Write event descriptions into the database**" check box (if it is already selected, continue from **step 6**). Close console.
 
    ![Image 1-2]./../0-images/ka04u000000HcPz_0EM700000004y3B.png)
@@ -79,7 +79,7 @@ However there are 2 ways you can figure out the IP address:
 
    ![Image 1-3]./../0-images/ka04u000000HcPz_0EM700000004y3G.png)
 
-6. Start **Netwrix Auditor Management Console**, go to **Managed Objects / &lt;Your Mananaged Object&gt; / Event Log Manager / Reports / General Reports / All Events by Computer** report.
+6. Start **Netwrix Auditor Management Console**, go to **Managed Objects / &lt;Your Managed Object&gt; / Event Log Manager / Reports / General Reports / All Events by Computer** report.
 7. In the filters:
    - specify date range around the timestamp that you have noticed on step 1
    - specify **Computer** as **Computer name** you have noticed on step 1 (put **%** before and after the name)

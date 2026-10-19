@@ -8,9 +8,9 @@ sidebar_position: 10
 
 Password Reset has two server components, and an optional client. See the
 [Password Reset Client](/docs/passwordreset/3.23/evaluation/password_reset_client.md)
-topic for additional information. Both server components can be installed on one server, or they may
-be installed on separate servers if your web server is in a DMZ. As the evaluation server is not in
-a DMZ, we will install both components on one server.
+topic for additional information. Both server components can be installed on one server, or you can
+install them on separate servers if your web server is in a DMZ. As the evaluation server isn't in
+a DMZ, both components can be installed on one server.
 
 The Web Interface is the component that users interact with. It accepts user requests, encrypts
 them, and sends them to the Password Reset Server. The Password Reset Server is the component that
@@ -22,14 +22,13 @@ credentials, and performs the requested task if the credentials are valid.
 You only need one Windows 2008 to 2019 server for the evaluation. The server can be a domain
 controller or a member server.
 
-Follow the steps below to install Password Reset on the server.
+To install Password Reset on the server:
 
 **Step 1 –** Start the Password Reset Setup wizard (APR323.exe).
 
 **Step 2 –** Click **Next**.
 
-**Step 3 –** Read the license agreement. Click **I accept the terms of the license agreement**.
-Click **Next** if you accept all terms.
+**Step 3 –** Read the license agreement, accept the terms, then click **Next**.
 
 **Step 4 –** Click **Next**, then click **OK** to install IIS, if asked.
 

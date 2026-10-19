@@ -21,5 +21,5 @@ to be enrolled with Security Questions and Email.
 3. Click the ellipsis button for the user and select **Unenroll Account**.  
    The **Unenroll Account** dialog box displays the authentication types the user account is
    enrolled with.
-4. Select the check boxes for the authentication type(s) you want to unenroll the user account with.
+4. Select the checkboxes for the authentication types you want to unenroll the user account with.
 5. Click **Unenroll** and then **Unenroll** on the confirmation dialog box.

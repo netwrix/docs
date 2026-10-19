@@ -12,11 +12,10 @@ environment. See the
 [Netwrix Activity Monitor](https://helpcenter.netwrix.com/category/activitymonitor) documentation
 for additional information.
 
-In order for Threat Manager to receive the event stream data, the Activity Monitor must be
-configured to do so. For file system activity events, use the Threat Manager Syslog template for the
+For Threat Manager to receive the event stream data, configure the Activity Monitor accordingly. For file system activity events, use the Threat Manager Syslog template for the
 desired monitored host configuration. For Active Directory activity events, generate an App Token in
 Threat Manager and then use that app token to configure the domain’s output to Threat Manager.
 
-The Threat Manager DC Sync threat is sourced by the Activity Monitor's Replication AD monitoring
-configuration. It is necessary for it to be configured to exclude domain controllers on the Host
+The Threat Manager DC Sync threat is sourced by the Activity Monitor’s Replication AD monitoring
+configuration. Configure the monitoring policy to exclude domain controllers on the Host
 (From) filter.

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Alerts Overview Dashboard
 
-Aggregated statistics on the alerts is provided in the Alerts overview widget. It displays currently
+Aggregated statistics on the alerts is provided in the Alerts overview widget. It displays 
 triggered alerts with detailed information.
 
 To view the dashboard, on the main Auditor page, click the Alerts tile.
@@ -23,13 +23,13 @@ The dashboard includes the following widgets:
 - Alerts timeline – Shows the number of alerts triggered at the specific day.
 - Recent alerts – Shows all the triggered alerts in chronological order.
 
-![alerts_overview_thumb_0_0](/images/auditor/10.7/admin/alertsettings/alerts_overview_thumb_0_0.webp)
+![alerts_overview_thumb_0_0](/images/auditor/10.8/admin/alertsettings/alerts_overview_thumb_0_0.webp)
 
-Clicking any tile except for Risk score by top 5 users drills down to the Alert history dashboard
+Clicking any tile except for Risk score by top 5 users opens the Alert history dashboard
 that provides users with the detailed information about the latest alerts triggered in their IT
 infrastructure enriched with the actionable chart and timeline.
 
-![alerts_history_thumb_0_0](/images/auditor/10.7/admin/alertsettings/alerts_history_thumb_0_0.webp)
+![alerts_history_thumb_0_0](/images/auditor/10.8/admin/alertsettings/alerts_history_thumb_0_0.webp)
 
 Review detailed information about the triggered alerts and change anomaly status. See the
 [Review User Profiles and Process Anomalies](/docs/auditor/10.8/admin/behavioranomalies/userprofile.md) topic for

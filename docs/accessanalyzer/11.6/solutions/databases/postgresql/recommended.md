@@ -8,8 +8,8 @@ sidebar_position: 10
 
 The jobs in the PostgreSQL Solution has been configured to inherit down from the **PostgreSQL** >
 **Settings** node. However, it is best practice to assign the host list and the Connection Profile
-at the data collection level, 0.Collection Job Group. Once these are assigned to the job group, it
-can be run directly or scheduled.
+at the data collection level, 0.Collection Job Group. After you assign the host list and Connection
+Profile to the job group, you can run it directly or schedule it.
 
 **Dependencies**
 
@@ -18,9 +18,9 @@ can be run directly or scheduled.
   Enterprise Auditor Console server
 - For AWS RDS and Aurora instances, right-click a job in the **PostgreSQL** > **0.Collection**
   folder and open the properties window. Select the **Performance** tab and ensure that the **Skip
-  Hosts that do not respond to PING**checkbox is not selected.
+  Hosts that don't respond to PING**checkbox isn't selected.
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
 - The 0.Collection Job Group must be set to run against a custom host list containing the
   PostgreSQL database instances / clusters.
@@ -35,10 +35,10 @@ the
 [Connection](/docs/accessanalyzer/11.6/admin/settings/connection/overview.md)
 topic for additional information on permissions and creating a SQL custom connection profile.
 
-The Connection Profile is set to **Use the Default Profile**, as configured at the global settings
-level. However, since this may not be the Connection Profile with the necessary permissions for the
-assigned hosts, click the radio button for the **Select one of the following user defined profiles**
-option and select the appropriate Connection Profile drop-down menu.
+The Connection Profile defaults to the **Use the Default Profile** setting, configured at the global
+settings level. If that profile doesn't have the permissions the assigned hosts need, select the
+radio button for the **Select one of the following user defined profiles** option, then choose the
+correct profile from the Connection Profile dropdown menu.
 
 **Schedule Frequency**
 
@@ -46,7 +46,7 @@ Daily
 
 **Run Order**
 
-The 0.Collection Job Group must be run first before running the other jobs and job groups.
+Run the 0.Collection Job Group first, before running the other jobs and job groups.
 
 :::info
 Run the solution at the top level: PostgreSQL Job Group
@@ -63,12 +63,12 @@ topic for additional information.
 **Analysis Configuration**
 
 This solution should be run with the default analysis configurations. These analysis tasks are
-preconfigured and should not be modified or deselected!
+preconfigured and shouldn't be modified or deselected.
 
 Disabling obsolete or run-desired jobs allows the solution to run more efficiently. To disable a job
-or job group, right-click on the item and select **Disable Job**.
+or job group, right-click the item and select **Disable Job**.
 
 :::info
-Do not delete any jobs. Instead, jobs should be disabled.
+Don't delete any jobs. Disable them instead.
 
 :::

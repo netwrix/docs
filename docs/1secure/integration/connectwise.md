@@ -7,7 +7,7 @@ sidebar_position: 10
 # ConnectWise
 
 ConnectWise is a flexible platform for Managed Service Providers that provides integrated services.
-Integrated with Netwrix 1Secure, ConnectWise allows to deliver an alert as a ticket for help desk or
+Integrated with Netwrix 1Secure, With the ConnectWise integration, you can deliver an alert as a ticket for help desk or
 tech services. In ConnectWise, you can create a Company and match with the Organization in Netwrix
 1Secure. The tickets are delivered under the name of that company.
 
@@ -21,7 +21,7 @@ Image keys:
 
 ## Add a ConnectWise Company in a System
 
-Follow the steps to add a ConnectWise company in Netwrix 1Secure.
+To add a ConnectWise company in Netwrix 1Secure:
 
 **Step 1 –** Go to **Configuration** > **Integrations** and click the **Add** icon to add the
 ConnectWise company.
@@ -50,7 +50,7 @@ information.
 
 **Step 4 –** Click _Finish_.
 
-The ConnectWise company is added now. The status displays "Ok" in green.
+The ConnectWise company is added. The status displays "Ok" in green.
 
 ![Integrations List](/images/1secure/integration/connectwise.webp)
 
@@ -65,12 +65,12 @@ Also, when you add a new organization, you can specify your ConnectWise company 
 the [Add Organizations](/docs/1secure/admin/organizations/addorganizations.md) topic for additional
 information.
 
-Follow the steps to manage delivery settings for ConnectWise.
+To manage delivery settings for ConnectWise:
 
 **Step 1 –** Navigate to Configuration > Alerts.
 
 **Step 2 –** Click the ConnectWise icon under the Delivery Settings. The ConnectWise Delivery
-Settings pane is displayed.
+Settings pane opens.
 
 ![ConnectWise Delivery Settings](/images/1secure/integration/alerts_connectwisedeliverysettings.webp)
 
@@ -82,7 +82,7 @@ Settings pane is displayed.
 
 **Step 6 –** Click **Save**.
 
-ConnectionWise delivery settings are configured.
+ConnectWise delivery settings are saved.
 
 ## ConnectWise Manage Permissions
 
@@ -95,8 +95,7 @@ required to log in to ConnectWise Manage. See
 [this article](https://docs.connectwise.com/ConnectWise_Documentation/090/040/010/040) for
 additional information.
 
-It is recommended to assign the API Member account to a limited security role with the following
-permissions:
+Assign the API Member account to a limited security role with the following permissions:
 
 - System – Table Setup – Inquire Level = All
 - Companies – Company Maintenance – Add(all), Inquire(all)

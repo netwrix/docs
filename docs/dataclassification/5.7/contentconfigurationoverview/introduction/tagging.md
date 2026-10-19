@@ -10,7 +10,7 @@ sidebar_position: 40
 
 Tagging in Netwrix Data Classification means writing classification attributes back to the content
 files. Tagging enables external systems (that is, not directly integrated with Netwrix Data
-Classification) to leverage the automatically generated classifications for a variety of business
+Classification) to use the automatically generated classifications for a variety of business
 purposes, for example:
 
 - Enriching the search experience
@@ -33,8 +33,7 @@ Typically, to use tagging, you need to take the following steps:
    properties, as described in the related section.
 
 :::note
-If you are unsure of the correct source specific settings to use, then we recommend
-initially working with some sandbox data.
+If you are unsure of the correct source-specific settings to use, consider initially working with some sandbox data.
 :::
 
 

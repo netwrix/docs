@@ -16,7 +16,7 @@ Navigate to the **FileSystem** > **Cleanup** > **3. Quarantine** >
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

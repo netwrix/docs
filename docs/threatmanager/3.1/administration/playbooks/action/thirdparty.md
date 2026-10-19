@@ -15,7 +15,7 @@ This action creates an incident in ServiceNow®.
 ![createservicenow](/images/threatmanager/3.0/administration/playbooks/action/createservicenow.webp)
 
 - Instance – Specify the ServiceNow instance. Only enter a name and the .servicenow.com instance is
-  automatically applied. For example, entering "company" will automatically become
+  automatically applied. For example, entering "company" becomes
   company.servicenow.com.
 - Message – Specify the optional message to display
 - Password – Specify the password for the ServiceNow instance
@@ -35,17 +35,17 @@ This action sends an authentication push to the Duo API.
 - Auth API Integration Key – Specify the Duo Auth integration key
 - Auth API Secret Key – Specify the Duo Auth API secret key
 - Auth API Hostname – Specify the Duo Auth API hostname
-- Prompt Title – Specify the Duo Prompt title. If not specified, a default title will be used.
+- Prompt Title – Specify the Duo Prompt title. If not specified, a default title is used.
 - Push Information – Specify the Duo Push information. If not specified, default threat information
-  will be used.
-- Fail On – Select the response on which to fail the action step. If not specified, the step will
-  fail on "Deny". Select an option from the following:
+  is used.
+- Fail On – Select the response on which to fail the action step. If not specified, the step
+  fails on "Deny". Select an option from the following:
 
     - Allow
     - Deny
 
 - User Alias – Select the alias of the user to authorize. If not specified, the user's Activity
-  Monitor Account Name will be used. Select an option from the following:
+  Monitor Account Name is used. Select an option from the following:
 
     - Display Name
     - SAM Account Name
@@ -61,23 +61,23 @@ This action posts to a Microsoft Teams channel.
 
 ## RADIUS Authentication
 
-This action utilizes RADIUS profiles to authenticate user activity.
+This action uses RADIUS profiles to authenticate user activity.
 
 ![radiusauthentication](/images/threatmanager/3.0/administration/playbooks/action/radiusauthentication.webp)
 
 - User Not Found Behavior – Select how to handle a user not configured for RADIUS authentication. If
-  not specified, the authentication will fail.
+  not specified, the authentication fails.
 - Method – Specify the RADIUS authentication method value required by the authentication provider.
-  This value will vary depending upon vendor. Example values may include: push, SMS, or phone.
-- Users – Select the users to authenticate. If not specified, the perpetrator will be used.
-- Timeout Behavior – Select how to handle a timeout. If not specified, the authentication will fail.
+  This value varies depending upon vendor. Example values may include: push, SMS, or phone.
+- Users – Select the users to authenticate. If not specified, the perpetrator is used.
+- Timeout Behavior – Select how to handle a timeout. If not specified, the authentication fails.
 - Fail On – Select which authentication type to fail on. This allows configuration to determine when
-  the action step fails. This is based upon the user response to the RADIUS Authentication request.
-  If not specified, the action step will fail with a failed authentication.
+  the action step fails. This is based upon the user response to the RADIUS authentication request.
+  If not specified, the action step fails with a failed authentication.
 
 ## Send Syslog
 
-This action sends a Syslog message to a server. This action utilizes the current SIEM settings,
+This action sends a Syslog message to a server. This action uses the current SIEM settings,
 specified on the [Integrations Interface](/docs/threatmanager/3.1/administration/configuration/integrations/overview.md), to send the
 threat information via Syslog.
 
@@ -94,7 +94,7 @@ the use of the capabilities of Forescout for threat response.
 - Forescout Server IP – The IP address of the Forescout server
 - Forescout Property String – The value of the Forescout property string to be added to the host
   associated with the Target IP
-- Target IP – The resource IP address that will be used to identify the host in Forescout. The
+- Target IP – The resource IP address used to identify the host in Forescout. The
   default is Host.
 - Forescout Password – Password for the Forescout server
 
@@ -117,8 +117,8 @@ This action sends an SMS message through Twilio.
 - SID – The Twilio SID
 - Twilio Number – The phone number provided by Twilio
 - Token – The Twilio token
-- Message – The optional custom SMS message to send. If a message is not specified, a default SMS
-  message will be sent.
+- Message – The optional custom SMS message to send. If a message isn't specified, a default SMS
+  message is sent.
 
 ## VirusTotal Report
 
@@ -126,19 +126,19 @@ This action scans the file hashes against the VirusTotal API and emails the resu
 
 ![virustotalreport](/images/threatmanager/3.0/administration/playbooks/action/virustotalreport.webp)
 
-- Subject – The optional custom email subject. If a subject is not specified, a default email
-  subject will be used.
+- Subject – The optional custom email subject. If a subject isn't specified, a default email
+  subject is used.
 - Key – The key provided by VirusTotal
 - To – The email addresses receiving the email
 
 ## Webhook
 
-This action executes a webhook via a HTTP request from Threat Manager. Webhooks are used by a
+This action executes a webhook via a HTTP request from Threat Manager. Webhooks are used by a
 variety of web applications to trigger actions or receive data from external sources.
 
 ![webhook](/images/threatmanager/3.0/administration/playbooks/action/webhook.webp)
 
-- Method – The HTTP method for the webhook. Select a method from the drop-down list:
+- Method – The HTTP method for the webhook. Select a method from the dropdown:
     - GET
     - POST
     - DELETE

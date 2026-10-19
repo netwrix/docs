@@ -18,8 +18,7 @@ for configuring weekly reminders for owners with outstanding reviews.
 
 ## Configure SMTP Server Settings
 
-SMTP server information is supplied and modified on the Notifications page. Follow the steps to
-configure or modify the SMTP settings.
+SMTP server information is supplied and modified on the Notifications page. To configure or modify the SMTP settings:
 
 ![Notifications page SMTP server settings section](/images/auditor/10.7/access/reviews/admin/configuration/notificationssmtp.webp)
 
@@ -68,7 +67,7 @@ window opens. Enter a valid email address and click **OK**.
 ![Testing your settings window](/images/accessinformationcenter/12.0/admin/configuration/notificationstestconfirm.webp)
 
 **Step 6 –** If the SMTP settings are configured correctly, you receive a successful message. Click
-**OK** to close the Testing your settings window. The test recipient should have recieved a test
+**OK** to close the Testing your settings window. The test recipient should have received a test
 email.
 
 **Step 7 –** Click **Save**. Then click **OK** to confirm.
@@ -78,7 +77,7 @@ Notification options.
 
 ## Notification Options
 
-Once the SMTP server is configured, there are additional options. Only the Reply-To field must be
+After the SMTP server is configured, there are additional options. Only the Reply-To field must be
 populated:
 
 ![Notifications page showing Notification Options section](/images/auditor/10.7/access/reviews/admin/configuration/notificationsoptions.webp)
@@ -111,8 +110,8 @@ Reminders section.
 
 **Step 3 –** Set the date and time for when the reminder will be sent:
 
-- Day of the week – Select the day of the week from the drop-down menu
-- Time of day – Click on the field to open a clock window. Set the time of day reminders will be
+- Day of the week – Select the day of the week from the dropdown menu
+- Time of day – Click the field to open a clock window. Set the time of day reminders will be
   sent, e.g. 12:00 AM
 
 **Step 4 –** Click **Save**. Then click **OK** to confirm.

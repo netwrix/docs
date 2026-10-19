@@ -1,0 +1,36 @@
+@startuml component
+package "Recipient" {
+	class Recipient {
+		EmailAddresses : String
+		Expression : String
+		IsCC : Boolean
+		Type : Int32
+		--
+		Activity : Activity
+		ActivityState : ActivityTemplateState
+		Aspect : Aspect
+		Binding : Binding
+	}
+}
+package "Activity" {
+	class Activity {
+	}
+}
+package "ActivityTemplateState" {
+	class ActivityTemplateState {
+	}
+}
+package "Aspect" {
+	class Aspect {
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+Recipient "0..*" --  "0..1"Activity
+Recipient "0..*" --  "0..1"ActivityTemplateState
+Recipient "0..*" --  "1"Aspect
+Recipient "0..*" --  "0..1"Binding
+hide empty members
+@enduml

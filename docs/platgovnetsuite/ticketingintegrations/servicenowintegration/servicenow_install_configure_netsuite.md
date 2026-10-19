@@ -10,7 +10,7 @@ sidebar_position: 10
 
 1. Open **Customization** > **SuiteBundler** > **Search & Install Bundles**
 2. Search for bundle id **311232**
-3. Click on bundle name **ServiceNow Integration**
+3. Click bundle name **ServiceNow Integration**
 4. When the **Bundle Details** opens, click **Install**.
 
     ![servicenowinstall2](/images/platgovnetsuite/integrations/servicenowinstall2.webp)
@@ -18,7 +18,7 @@ sidebar_position: 10
 5. When **Preview Bundle** opens, review the bundle and click **Install** to finish.
 6. Open **Strongpoint** > **Strongpoint Support** > **Installation Settings** > **View**
 7. Open the **ServiceNow Integration** tab.
-8. If the **Service Now URL** is not present:
+8. If the **Service Now URL** isn't present:
 
     1. Click **Edit**.
     2. Add the url. The format is: _https://dev67367.service-now.com/_
@@ -52,7 +52,7 @@ sidebar_position: 10
     **URL**:
     _[https://github.com/StrongpointGit/strongpoint-ns-ssn.git](https://github.com/StrongpointGit/strongpoint-ns-ssn.git)_
     **Credential**:
-    Select your credential from the drop down list
+    Select your credential from the dropdown list
     **User Name**: sp-integrations
 
     **Branch**: master
@@ -82,7 +82,7 @@ You can configure ServiceNow for your users:
 
 You can set conditions on NetSuite integration buttons to control when they are displayed on
 specific change records. If you use ServiceNow, you can set Configuration Items to manage change
-requests for different platforms, projects or products.
+requests for different platforms, projects, or products.
 
 You need to know the IDs of the configuration items to set conditions. Ask your ServiceNow
 administrator for help.
@@ -97,7 +97,7 @@ administrator for help.
 
 2. Set the **Condition** field to restrict display based on specific configuration items. If your
    company uses a different solution to identify changes for the NetSuite platform, contact your
-   ServiceNow administrator to help determine the conditions to be set. In this example, we set the
+   ServiceNow administrator to help determine the conditions to be set. In this example, the
    condition to be:
    **current.cmdb_ci == 'configuration_item_sys_id'**
 
@@ -113,7 +113,7 @@ This is an example procedure to display the **Push Deployment Record** button on
 has passed the **Authorize** state. Your organization may have a different approval process.
 
 You can set any other stage (standard or custom) depending on your approval processes.
- If you need help to determine the correct conditions per your customizations, please contact your
+ If you need help to determine the correct conditions per your customizations,contact your
 Service Now Administrator.
 
 1. In ServiceNow, open **System Applications** > **Studio**
@@ -146,9 +146,9 @@ modify this to only allow configured users to see the tab.
         ![Open the ServiceNow Configuration items](/images/platgovnetsuite/integrations/servicenow_tab1.webp)
 
     3. Select the system for the user to grant access to the tab.
-    4. Select **Copy sys_id** from the drop down menu.
+    4. Select **Copy sys_id** from the dropdown menu.
 
-        ![Select Copy sys_id from the drop down menu](/images/platgovnetsuite/integrations/servicenow_tab2.webp)
+        ![Select Copy sys_id from the dropdown menu](/images/platgovnetsuite/integrations/servicenow_tab2.webp)
 
     5. Paste the identifier in a file where you can access it to add to the script when you are
        finished locating the system identifiers. An example identifier is

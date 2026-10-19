@@ -6,8 +6,7 @@ sidebar_position: 60
 
 # Edit HTML Templates
 
-Password Policy Enforcer Web's user interface is built with customizable templates. You can easily
-modify the user interface by editing the templates.
+Password Policy Enforcer Web's user interface is built with customizable templates. Modify the user interface by editing the templates.
 
 ### User Interface Files
 
@@ -38,7 +37,7 @@ are used to prepare the pages. Some of these comments define ranges. A range loo
 
 `<!—RANGE_NAME-->Some text or HTML<!--/RANGE_NAME-->`
 
-Password Policy Enforcer Web deletes ranges (and the text inside them) when they are not needed.
+Password Policy Enforcer Web deletes ranges (and the text inside them) when they aren't needed.
 Some ranges span only one word, while others span several lines. The other type of comment tag is
 called a field.
 
@@ -61,13 +60,13 @@ Templates end with a resource string section.
 
 Resource strings are mostly validation error messages, but they can contain any text Password Policy
 Enforcer Web may need to build the page. See the [Error Messages](using_web.md#error-messages) topic
-for additional information. Do not modify the identifiers on the left, only edit the text on the
+for additional information. Don't modify the identifiers on the left, only edit the text on the
 right. Resource strings are always inside a range called RESOURCE_STRINGS. Password Policy Enforcer
 Web deletes this range before sending the page to the user's web browser.
 
 :::warning
 You may rebrand the Password Policy Enforcer Web user interface, but it is a violation
-of the License Agreement to modify, remove or obscure any copyright notice.
+of the License Agreement to modify, remove, or obscure any copyright notice.
 :::
 
 
@@ -85,9 +84,8 @@ The Netwrix logo is shown in the top left corner of the Welcome page. The logo i
 `\Inetpub\wwwroot\ppeweb\images\` folder by default, and it is called logo.gif. You can replace this
 file with one containing your organization's logo.
 
-Your logo may appear distorted if it is not the same size as the Netwrix logo. You can fix this by
-opening en_default.htm in a text editor such as Notepad. Search for the line shown below, and
-replace the width (116) and height (69) with the dimensions of your logo in pixels.
+Your logo may appear distorted if it isn't the same size as the Netwrix logo. You can fix this by
+opening en_default.htm in a text editor such as Notepad. Search for the following line, and replace the width (116) and height (69) with the dimensions of your logo in pixels.
 
 `<img class="logo" src="images/logo.gif" alt="ANIXIS" width="116" height="69" />`
 
@@ -95,10 +93,10 @@ replace the width (116) and height (69) with the dimensions of your logo in pixe
 
 Instructions appear at the top of the Password Change page in the white section above the input
 fields. You can edit these instructions by opening `en_ppeweb.htm` and searching for the text you
-wish to modify.
+want to modify.
 
 Instructions are inside ranges called SECTION_A and SECTION_B. Each section contains the
-instructions for a page in the template. Make sure you edit the instructions in the correct section,
+instructions for a page in the template. Ensure you edit the instructions in the correct section,
 or they may be displayed on the wrong page.
 
 `<!--SECTION_A-->`
@@ -139,13 +137,13 @@ information.
 
 You may see placeholders like %1 and %2 in some error messages. These are replaced with more
 information about the error. You should keep these as they provide important information about the
-error, but you can delete them if you do not want them.
+error, but you can delete them if you don't want them.
 
 | String                  | Error Message                                  |
 | ----------------------- | ---------------------------------------------- |
-| @RES_ACCESS_DENIED      | You do not have permission to change your pas… |
-| @RES_ACCOUNT_LOCKED_OUT | Your account is currently locked out. Try aga… |
-| @RES_LICENSE_MISSING    | License reminder. Your password was not chang… |
+| @RES_ACCESS_DENIED      | You don't have permission to change your pas… |
+| @RES_ACCOUNT_LOCKED_OUT | Your account is locked out. Try aga… |
+| @RES_LICENSE_MISSING    | License reminder. Your password wasn't chang… |
 
 If you want to display some text for all error messages, then insert your text above or below the
 `<p>{/*ERROR*/}</p>` line. For example:
@@ -171,9 +169,7 @@ defined in en_finished.htm.
 
 ### Change Font Sizes and Colors
 
-`ppeweb.css` contains most of the user interface formatting information. You can easily change font
-sizes and colors by editing this file. You can even reposition and resize items, but you will need
-some understanding of CSS to do this. For example, this is the CSS for the validation error box:
+`ppeweb.css` contains most of the user interface formatting information. Change font sizes and colors by editing this file. To reposition and resize items, you need some understanding of CSS. For example, this is the CSS for the validation error box:
 
 ```
 .error {

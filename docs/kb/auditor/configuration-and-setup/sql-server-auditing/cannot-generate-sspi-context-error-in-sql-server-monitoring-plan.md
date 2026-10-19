@@ -1,7 +1,7 @@
 ---
 description: >-
   Shows how to troubleshoot and resolve the "Cannot generate SSPI context" error
-  when Netwrix Auditor or the SQL Logons Connector for Netwrix OneSecutre DSPM
+  when Netwrix Auditor or the SQL Logons Connector for Netwrix OneSecure DSPM
   attempts to connect to a SQL Server instance, including causes and
   step-by-step resolutions.
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - SPN
   - SQL Server
   - Netwrix Auditor
-  - OneSecutre
+  - OneSecure
   - setspn
   - TLS
   - time synchronization
@@ -27,7 +27,7 @@ knowledge_article_id: kA04u0000000HefCAE
 
 ## Symptom
 
-The following error is displayed in the Health Log for your SQL Server monitoring plan, or when Netwrix Auditor or the SQL Logons Connector for Netwrix OneSecutre DSPM attempts to connect to a SQL Server instance:
+The following error is displayed in the Health Log for your SQL Server monitoring plan, or when Netwrix Auditor or the SQL Logons Connector for Netwrix OneSecure DSPM attempts to connect to a SQL Server instance:
 
 ```text
 Source: SQL Server Audit Service
@@ -38,7 +38,7 @@ The target principal name is incorrect.
 Cannot generate SSPI context.
 ```
 
-This error may also affect the state-in-time snapshot collection, the SQL Server instance used by Netwrix Auditor to store and retrieve audit data, and the SQL Logons Connector for Netwrix OneSecutre DSPM.
+This error may also affect the state-in-time snapshot collection, the SQL Server instance used by Netwrix Auditor to store and retrieve audit data, and the SQL Logons Connector for Netwrix OneSecure DSPM.
 
 ## Causes
 

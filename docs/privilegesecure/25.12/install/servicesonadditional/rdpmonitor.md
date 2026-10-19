@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # Install Remote Desktop Monitor Service on Target RDP Hosts
 
-The Netwrix Privilege Secure Remote Desktop Monitor service needs to be installed on the target host
+The Netwrix Privilege Secure Remote Desktop Monitor service must be installed on the target host
 that users will establish RDP connections to via an Access Policy session. Run the **NPS.TSMon.exe**
-on the target host to install and enable this service. The EXE file is located in the Extras folder
+on the target host to install and enable this service. The EXE file is located in the Extras folder
 of the Privilege Secure installation download ZIP file.
 
 The Windows event activity that occurs during an RDP session is then displayed and is searchable
@@ -16,7 +16,7 @@ within the [Live Session Viewer Window](/docs/privilegesecure/25.12/admin/dashbo
 [Replay Viewer Window](/docs/privilegesecure/25.12/admin/dashboard/historical/replayviewer.md) with keystroke details, which are
 monitored and recorded without this service.
 
-Follow the steps to install the Remote Desktop Monitor service.
+To install the Remote Desktop Monitor service.
 
 **Step 1 –** Copy the **NPS.TSMon.exe** file to the target host.
 
@@ -29,7 +29,7 @@ extracted ZIP file.
 **Step 2 –** Run the EXE file. The Netwrix Privilege Secure Terminal Services Monitor Setup window
 opens.
 
-**Step 3 –** Check the I agree to the license terms and conditions box.
+**Step 3 –** Accept the license terms and conditions.
 
 :::tip
 Remember, it is a best practice to read the terms before agreeing to them.

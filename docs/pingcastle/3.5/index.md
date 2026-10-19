@@ -1,10 +1,13 @@
+---
+sidebar_position: 4
+---
 # PingCastle Standard and Basic User Guide
 
 ## About PingCastle
 
 PingCastle is a security assessment and auditing tool for CISOs, Security Auditors, and IT Professionals working with Active Directory and Entra ID.
 
-Netwrix offers various products to help protect your network infrastructure. PingCastle is specifically designed for assessment—not protection. It collects comprehensive information from your Active Directory and Entra ID environments, analyzes this data for security risks and misconfigurations, and generates detailed reports with actionable findings.
+Netwrix offers various products to help protect your network infrastructure. PingCastle focuses specifically on assessment. It collects comprehensive information from your Active Directory and Entra ID environments, analyzes this data for security risks and misconfigurations, and generates detailed reports with actionable findings.
 
 These reports help you identify and prioritize security issues that need remediation, giving you clear visibility into your security posture and enabling data-driven decisions to improve your environment's security.
 
@@ -14,42 +17,40 @@ The source code of the program is licensed to the Non-Profit Open Software Licen
 
 **Binary License and Usage**
 
-The binary code may not be included as part of a commercial package unless a license is purchased. Visit the "our services" section on https://www.pingcastle.com for more information.
+You can't include the binary code as part of a commercial package unless you purchase a license. Visit the **Services** section on https://www.pingcastle.com for licensing options.
 
 **License Expiration**
 
-PingCastle will only run until the built-in license expiration date. After this date, the program will cease to function.
+PingCastle only runs until the built-in license expiration date. After this date, the program stops functioning.
 
-This date is surfaced as the End of Support date in the tool.
+The tool surfaces this date as the End of Support date.
 
 **Licensing Options**
 
 To continue using PingCastle after the built-in license expires, you must purchase one of the following:
 
 - **PingCastle Standard**: Traditional licensing model for ongoing use
-- **PingCastle For Service Providers**: Per-assessment licensing where each license is valid for 2 weeks for specific Active Directory domains and forests. Forest-level assessments can be performed using wildcard notation (e.g., `*.domain.local` to scan all subdomains within a forest)
+- **PingCastle For Service Providers**: Per-assessment licensing where each license is valid for 2 weeks for specific Active Directory domains and forests. You can perform forest-level assessments using wildcard notation (e.g., `*.domain.local` to scan all subdomains within a forest)
 
 ## Methodology
 
-The PingCastle tool is just one part of a global methodology aiming at
-securing Active Directories.
+The PingCastle tool is one part of a global methodology for securing Active Directories.
 
 ![](/images/pingcastle/basicuser/image1.webp)
 
-You can get more information about this methodology by visiting the
-website https://www.pingcastle.com/methodology/
+For details on how the tool fits into the broader process of securing Active Directory, see the [PingCastle methodology page](https://www.pingcastle.com/methodology/).
 
 ## Requirements
 
 ### Active Directory Account
 
-PingCastle requires an Active Directory account to connect and perform audits. In most cases, a standard user account with no special privileges is sufficient—the account can even be from a trusted domain and does not need to be part of the local administrators group.
+PingCastle requires an Active Directory account to connect and perform audits. In most cases, a standard user account with no special privileges is sufficient—the account can even be from a trusted domain and doesn't need to be part of the local administrators group.
 
 ### Privileged Mode
 
 PingCastle offers a privileged mode that enhances the reliability and accuracy of specific security checks. While non-privileged mode works for basic operations and many checks, privileged mode provides higher confidence results for certain assessments.
 
-**Running as Administrator**: Running PingCastle as an administrator is not required for most operations, though certain checks (such as DNS-related checks) may have limited functionality without administrator privileges.
+**Running as Administrator**: Most operations don't require running PingCastle as an administrator, though certain checks (such as DNS-related checks) may have limited functionality without administrator privileges.
 
 **Privileged Mode Command**:
 ```
@@ -71,18 +72,18 @@ The following table shows which rules benefit from privileged mode and the permi
 
 PingCastle has no specific server-side requirements.
 
-For optimal performance, we recommend having Active Directory Web Services (ADWS) installed on your domain controllers. ADWS is installed by default on Windows Server 2008 R2 and later. When available, ADWS can significantly reduce scan times—often by a factor of 10 or more.
+For optimal performance, install Active Directory Web Services (ADWS) on your domain controllers. Windows Server 2008 R2 and later install ADWS by default. When available, ADWS can significantly reduce scan times—often by a factor of 10 or more.
 
 ### Client Side
 
-Starting with PingCastle 3.5, the .NET runtime is bundled directly with the application, eliminating the need for any prerequisites or manual .NET framework installation.
+Starting with PingCastle 3.5, PingCastle bundles the .NET runtime directly with the application, eliminating the need for any prerequisites or manual .NET framework installation.
 
 **System Requirements**:
 - PingCastle runs on any system that supports .NET 8
 - No local administrator privileges required
-- No additional components or frameworks need to be installed
+- No need to install additional components or frameworks
 
-**Previous Versions**: PingCastle versions prior to 3.5 required .NET Framework 4.7.2 to be installed separately.
+**Previous Versions**: PingCastle versions before 3.5 required a separate installation of .NET Framework 4.7.2.
 
 ## How it works
 
@@ -92,7 +93,7 @@ PingCastle can also read its own machine-readable report files to build consolid
 
 ### Getting Started
 
-PingCastle is provided as a zip file. Simply extract the zip file and run `PingCastle.exe`—no installation required.
+PingCastle ships as a zip file. Extract the zip file and run `PingCastle.exe`—no installation required.
 
 ## Running PingCastle
 
@@ -127,7 +128,7 @@ PingCastle.exe --healthcheck --server domain.local --privileged
 
 To enable detailed logging for troubleshooting or support requests, use the `--log` switch.
 
-When using command line arguments, interactive mode is automatically disabled. To enable logging while keeping interactive mode active:
+When you use command line arguments, PingCastle automatically disables interactive mode. To enable logging while keeping interactive mode active:
 
 ```
 PingCastle.exe --log --interactive
@@ -154,7 +155,7 @@ When a healthcheck scan completes, PingCastle generates two files:
 
 ### Risk Scoring
 
-PingCastle calculates an overall security score based on four categories. The overall score is determined by the **maximum** score across these categories (maximum 100 points per category):
+PingCastle calculates an overall security score based on four categories. The **maximum** score across these categories determines the overall score (maximum 100 points per category):
 
 | Category | Description |
 |----------|-------------|
@@ -167,7 +168,7 @@ Each triggered rule displays its severity level and point value. Clicking on a r
 
 ### Report Structure
 
-The healthcheck report is organized into the following sections:
+PingCastle organizes the healthcheck report into the following sections:
 
 **1. Overview**
 - Overall security score
@@ -208,13 +209,13 @@ Scan all reachable domains and automatically generate a consolidated report with
 PingCastle.exe --healthcheck --server *
 ```
 
-This will scan all reachable domains, enable reachable mode, and automatically create a consolidation report. The process typically takes a few minutes to an hour depending on your environment size.
+This scans all reachable domains, enables reachable mode, and automatically creates a consolidation report. The process typically takes a few minutes to an hour depending on your environment size.
 
 ### Option 2: Report Consolidation
 
 If you already have multiple XML healthcheck reports, you can consolidate them to generate overview reports and trust maps.
 
-**Prerequisites**: All XML report files must be in the current directory (or subdirectories). If duplicate reports exist, only the most recent is used.
+**Prerequisites**: All XML report files must be in the current directory (or subdirectories). If duplicate reports exist, PingCastle uses only the most recent.
 
 **Interactive Mode**: Select "conso" from the menu.
 
@@ -223,17 +224,17 @@ If you already have multiple XML healthcheck reports, you can consolidate them t
 PingCastle.exe --hc-conso
 ```
 
-This consolidates all available XML reports and generates summary reports with trust relationship maps. XML reports generated from multiple locations can be combined to create a comprehensive view of your infrastructure.
+This consolidates all available XML reports and generates summary reports with trust relationship maps. You can combine XML reports generated from multiple locations to create a comprehensive view of your infrastructure.
 
-**Note**: Consolidation is performed automatically when using `--server *` for automatic domain discovery.
+**Note**: PingCastle performs consolidation automatically when using `--server *` for automatic domain discovery.
 
 **Output Files**
 
-Three HTML files are generated during consolidation:
+Consolidation generates three HTML files:
 
-- **ad_hc_summary.html** - Summary of all reports with the same structure as detailed reports but at a higher level. [Example](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary.html)
-- **ad_hc_summary_full_node_map.html** - Complete trust relationship map showing all discovered domains and trusts. [Example](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary_full_node_map.html)
-- **ad_hc_summary_simple_node_map.html** - Simplified trust relationship map for easier visualization. [Example](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary_simple_node_map.html)
+- **ad_hc_summary.html**: Summary of all reports with the same structure as detailed reports but at a higher level. See an [example summary report](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary.html).
+- **ad_hc_summary_full_node_map.html**: Complete trust relationship map showing all discovered domains and trusts.
+- **ad_hc_summary_simple_node_map.html**: Simplified trust relationship map for easier visualization.
 
 ### Option 3: Quick Domain Cartography
 
@@ -246,9 +247,9 @@ For a fast network map without full healthcheck scores (under 5 minutes), use th
 PingCastle.exe --carto
 ```
 
-This option discovers all reachable domains, performs a lightweight scan, and generates trust relationship maps. The SID Filtering status is accurate, but individual domain scores are not available. Scans run in parallel for speed.
+This option discovers all reachable domains, performs a lightweight scan, and generates trust relationship maps. The SID Filtering status is accurate, but individual domain scores aren't available. Scans run in parallel for speed.
 
-**Note**: Cartography reports cannot be combined when run from multiple locations. For comprehensive multi-location data, use Option 1 or Option 2 instead.
+**Note**: You can't combine cartography reports run from multiple locations. For comprehensive multi-location data, use Option 1 or Option 2 instead.
 
 ## Trust Relationship Maps
 
@@ -258,7 +259,7 @@ PingCastle generates interactive HTML maps visualizing trust relationships betwe
 
 **File**: `xxx_full_node_map.html`
 
-The full domain map displays all trust relationships between discovered domains. This dynamic, interactive map allows you to:
+The full domain map displays all trust relationships between discovered domains. With this dynamic, interactive map, you can:
 - Drag and reposition nodes for better visualization
 - View domain names by hovering over nodes
 - See trust details in a popup by hovering over trust connections
@@ -268,13 +269,13 @@ The full domain map displays all trust relationships between discovered domains.
 
 **File**: `xxx_simple_node_map.html`
 
-The simplified map presents a cleaner, hierarchical view where each domain appears only once and is connected by a single trust relationship. The domain with the most trusts is automatically placed at the center, though this can be manually specified if needed.
+The simplified map presents a cleaner, hierarchical view where each domain appears only once, connected by a single trust relationship. PingCastle automatically places the domain with the most trusts at the center, though you can specify this manually if needed.
 
 ### Hilbert Map
 
 **File**: `xxx_hilbert_map.html`
 
-The Hilbert map provides a visual representation of network IP address space using fractal functions to compress IP addresses into a 2D visualization. Each square represents a network, making it easy to identify unused address space or overlapping networks.
+The Hilbert map provides a visual representation of network IP address space using fractal functions to compress IP addresses into a 2D visualization. Each square represents a network, so you can identify unused address space or overlapping networks.
 
 **Report Layout**:
 - **Network Overview**: High-level view of all networks
@@ -289,7 +290,7 @@ The Hilbert map provides a visual representation of network IP address space usi
 
 ## Deployment Strategies
 
-PingCastle is designed for scalable deployment in enterprise environments. For comprehensive security coverage, run healthchecks on all domains in your infrastructure. Since PingCastle doesn't require domain-specific accounts, you can leverage trust relationships to scan multiple domains efficiently.
+PingCastle supports scalable deployment in enterprise environments. For comprehensive security coverage, run healthchecks on all domains in your infrastructure. Since PingCastle doesn't require domain-specific accounts, you can use trust relationships to scan multiple domains efficiently.
 
 ### Decentralized Deployment
 
@@ -350,7 +351,7 @@ PingCastle includes `PingCastleAutoUpdater.exe`, which automatically downloads t
 
 ### Report Encryption
 
-For environments where reports must be transferred over unsecured channels, PingCastle supports RSA encryption.
+For environments where you must transfer reports over unsecured channels, PingCastle supports RSA encryption.
 
 **Generate an RSA Key Pair**:
 ```
@@ -402,11 +403,11 @@ PingCastle.exe --reload-report report.xml --encrypt
 PingCastle.exe --reload-report encrypted-report.xml
 ```
 
-**Note**: You can specify only one key for encryption, but multiple keys can be used for decryption. Key selection is automatic.
+**Note**: You can specify only one key for encryption, but you can use multiple keys for decryption. Key selection is automatic.
 
 ### Email Delivery
 
-PingCastle can automatically send reports via SMTP. If encryption is enabled, reports will be encrypted before sending.
+PingCastle can automatically send reports via SMTP. If you enable encryption, PingCastle encrypts reports before sending.
 
 **SMTP Configuration**:
 
@@ -445,7 +446,7 @@ For authenticated SMTP, provide values for `UserName` and `Password`. For TLS/SS
 
 ### API
 
-PingCastle can send reports in XML format (encrypted or not) to an API endpoint using the `--api-endpoint` and `--api-key` command line options. This is primarily used with PingCastle Enterprise, where PingCastle.exe runs in "agent" mode to automatically perform scans and send reports to the Enterprise web UI. Scans are typically scheduled using Windows Task Scheduler.
+PingCastle can send reports in XML format (encrypted or not) to an API endpoint using the `--api-endpoint` and `--api-key` command line options. You primarily use this with PingCastle Enterprise, where PingCastle.exe runs in "agent" mode to automatically perform scans and send reports to the Enterprise web UI. You typically schedule scans using Windows Task Scheduler.
 
 ![https://www.pingcastle.com/wp/wp-content/uploads/2018/09/pingcastle-swagger.webp](/images/pingcastle/basicuser/image26.webp)
 
@@ -484,7 +485,7 @@ PingCastle includes built-in scanners to check for specific security configurati
 
 ### Scanner Options
 
-Additional options can be used to control scanner behavior:
+Use these additional options to control scanner behavior:
 
 - `--scmode-all` - Scan all computers (default)
 - `--scmode-single` - Check one single computer
@@ -553,7 +554,7 @@ PingCastle.exe --healthcheck --server domain.local --explore-trust --explore-for
 ```powershell
 PingCastle.exe --healthcheck --server domain.local --api-endpoint https://enterprise.local --api-key <your-key> --encrypt --level Full
 ```
-Used with PingCastle Enterprise to send encrypted reports to the centralized web UI.
+Use this with PingCastle Enterprise to send encrypted reports to the centralized web UI.
 
 #### Consolidation with Date Filtering
 ```powershell
@@ -591,7 +592,7 @@ PingCastle.exe --hc-conso --filter-date 2024-01-01 --center-on primary.local --x
 | 1 | InvalidLicenseDomainPattern - license contains invalid domain limitation pattern |
 | 2 | DomainNotAllowed - specified domain not allowed by license restrictions |
 | 3 | MissingApiEndpointArgument - `--api-endpoint` requires a URL argument |
-| 4 | InvalidApiEndpointArgument - `--api-endpoint` URL is not valid |
+| 4 | InvalidApiEndpointArgument - `--api-endpoint` URL isn't valid |
 | 5 | MissingApiKeyArgument - `--api-key` requires a key argument |
 | 6 | InvalidLicense - license validation failed or expired |
 | 7 | InvalidCommandLineArguments - command line parsing failed |
@@ -606,7 +607,7 @@ PingCastle.exe --help
 
 ## Frequently Asked Questions (FAQ)
 
-### Why has PingCastle.exe increased in size so much?
+### PingCastle.exe Size Increase
 
 The file size has grown significantly across recent versions due to enhanced capabilities and runtime dependencies:
 
@@ -616,11 +617,11 @@ The file size has grown significantly across recent versions due to enhanced cap
 
 The version 3.5 size increase is due to the migration from .NET Framework 4.7.2 to ASP.NET 8 with native packaging. This change eliminates the need for custom packaging tools (Fody Costura) and allows PingCastle to run without requiring users to install ASP.NET 8 prerequisites on their systems, providing a better deployment experience.
 
-### Where has the pingcastle.exe.config file gone?
+### pingcastle.exe.config File Location
 
-The configuration file format changed in version 3.5 due to the ASP.NET 8 upgrade. The legacy `PingCastle.exe.config` XML file has been replaced with `appsettings.console.json` using JSON format.
+The configuration file format changed in version 3.5 due to the ASP.NET 8 upgrade. The `appsettings.console.json` file, which uses JSON format, replaces the legacy `PingCastle.exe.config` XML file.
 
-### How do I migrate my settings from pingcastle.exe.config?
+### Settings Migration from pingcastle.exe.config
 
 The `PingCastleAutoUpdater.exe` includes an automatic migration process:
 
@@ -630,25 +631,25 @@ The `PingCastleAutoUpdater.exe` includes an automatic migration process:
 4. **Run PingCastleAutoUpdater.exe a second time** to trigger automatic migration
 
 During migration:
-- Settings are automatically converted from `PingCastle.exe.config` (XML) to `appsettings.console.json` (JSON)
-- The original `PingCastle.exe.config` is renamed to `PingCastle.exe.config.bak` as a backup
-- A **Configuration Migration Report** is generated detailing which sections were migrated
+- The updater automatically converts settings from `PingCastle.exe.config` (XML) to `appsettings.console.json` (JSON)
+- The updater renames the original `PingCastle.exe.config` to `PingCastle.exe.config.bak` as a backup
+- The updater generates a **Configuration Migration Report** detailing which sections it migrated
 
-**Important**: Visually review the migrated settings in `appsettings.console.json` to ensure they are correct. No configuration context is lost if the upgrade fails.
+**Important**: Visually review the migrated settings in `appsettings.console.json` to ensure they're correct. The upgrade doesn't lose any configuration context if it fails.
 
-### Why does PingCastle get detected by AntiVirus products?
+### PingCastle AntiVirus Detections
 
-PingCastle has been used as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and EDR products to flag it as malicious.
+Attackers have used PingCastle as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and EDR products to flag it as malicious.
 
-**Recommended Action**: Whitelist PingCastle.exe on specific systems and/or users where it is authorized for security assessments. Normal end users should not be running PingCastle.
+**Recommended Action**: Whitelist PingCastle.exe on the specific systems and users your organization authorizes for security assessments. Normal end users shouldn't be running PingCastle.
 
 #### Changes Made to Reduce False Positives
 
-We are actively working to reduce false positive detections:
+Netwrix is actively working to reduce false positive detections:
 
 **Packaging Changes**:
 - Removed `changelog.txt` from .zip packages, which some AV engines misinterpret
-- Release notes are now documented on GitHub, with detailed changelogs at [community.netwrix.com](https://community.netwrix.com)
+- Netwrix now documents release notes on GitHub, with detailed changelogs at [community.netwrix.com](https://community.netwrix.com)
 
 **Auto-Updater Improvements**:
 - Previously made two network calls on first run (GitHub API and `release-assets.githubusercontent.com`), which triggered AV detections
@@ -664,16 +665,16 @@ We are actively working to reduce false positive detections:
 >
 >  PingCastle is a trusted security assessment tool designed to help organizations evaluate the health and security posture of their Active Directory environments. 
 >
-> Some antivirus or endpoint protection solutions may flag PingCastle as "hacktool" or a "potentially unwanted program (PUP)". This is not because PingCastle is malicious, but because it has dual-use potential: the same in-depth techniques it uses to audit and test security could also be misused by attackers. It does not itself attack AD, but could be used during reconnaissance to enumerate risks that attackers could exploit. Security vendors often classify such advanced administrative and diagnostic tools conservatively to avoid underestimating risk. 
+> Some antivirus or endpoint protection solutions may flag PingCastle as "hacktool" or a "potentially unwanted program (PUP)". The flag reflects PingCastle's dual-use potential rather than malicious behavior: the same in-depth techniques it uses to audit and test security can also be misused by attackers. PingCastle doesn't itself attack AD, but attackers could use it during reconnaissance to enumerate risks they could exploit. Security vendors often classify such advanced administrative and diagnostic tools conservatively to avoid underestimating risk. 
 >
->  It is important to emphasize that: 
+> The following applies: 
 >
 > * PingCastle is safe to use when obtained from the official source.
-> * It does not exploit or attack Active Directory.
+> * It doesn't exploit or attack Active Directory.
 > * No malicious payloads or hidden behavior are present in the software.
-> * The detections occur only because because its ability to enumerate security risks and misconfigurations could, provide information an attacker might misuse.
+> * The detections occur only because its ability to enumerate security risks and misconfigurations could provide information an attacker might misuse.
 >
-> In short, PingCastle should be viewed in the same category as other professional penetration-testing or red-team tools: safe and valuable in the hands of administrators and security professionals, but flagged by antivirus products due to its capabilities.
+> In short, PingCastle belongs in the same category as other professional penetration-testing or red-team tools: safe and valuable in the hands of administrators and security professionals, but flagged by antivirus products due to its capabilities.
 :::
 
 ## List of open source software used
@@ -708,7 +709,7 @@ The list of components used by PingCastle, but not limited to, is:
 
 ## Scheduling PingCastle Scans
 
-PingCastle can be automated using Windows Task Scheduler to run regular security assessments. The tool supports Managed Service Accounts (available since Windows Server 2008 R2).
+You can automate PingCastle using Windows Task Scheduler to run regular security assessments. The tool supports Managed Service Accounts (available since Windows Server 2008 R2).
 
 ### Quick Setup
 
@@ -738,7 +739,7 @@ If the scheduled task fails to run, verify the service account has the "Log on a
 2. Navigate to: **Local Policies → User Rights Assignment**
 3. Open **"Log on as batch job"** and add the service account
 
-**Note**: If "Add User or Group" is grayed out, the setting is controlled by a Group Policy Object (typically the Default Domain Controllers Policy). Use `rsop.msc` to identify the controlling GPO and modify it accordingly.
+**Note**: If "Add User or Group" is grayed out, a Group Policy Object (typically the Default Domain Controllers Policy) controls the setting. Use `rsop.msc` to identify the controlling GPO and modify it accordingly.
 
 ### Example Command for Scheduled Scans
 

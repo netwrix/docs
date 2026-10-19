@@ -13,7 +13,7 @@ article for additional information.
 ## Differences between Visual Basic .NET and other Visual Basic versions
 
 Visual Basic .NET is largely a superset of Visual Basic 6. If you are familiar with Visual Basic
-before the advent of .NET technology, you may wish to refer to
+before the advent of .NET technology, you may want to refer to
 [Language Changes in Visual Basic](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/skw8dhdd(v%3dvs.90)),
 and particularly to
 [Programming Element Support Changes Summary](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/kaf4ssya(v%3dvs.90)).
@@ -21,11 +21,11 @@ For the most part, statements and constructs that worked in Visual Basic 6, Visu
 Visual BasicA continue to work in Visual Basic .NET.
 
 Important: A key difference, however, is that the Set keyword is no longer used to assign a value to
-an object. Simply omit it!
+an object. Omit it.
 
 ## Declaring variables
 
-Variables must be declared via the Dim keyword prior to, or concurrent with, their first use.
+Variables must be declared via the Dim keyword before, or concurrent with, their first use.
 Optionally, you can indicate the data type of the variable in the declaration.
 
 The following declarations are valid:
@@ -106,8 +106,8 @@ For a list of such string methods, see
 
 ## Line Continuation
 
-With extensive string manipulation, statement lines frequently become quite long. In order to break
-a statement into two or more lines, insert a space followed by an underline (”\_”) just prior to
+With extensive string manipulation, statement lines frequently become quite long. To break
+a statement into two or more lines, insert a space followed by an underline (“\_”) just before
 each line break.
 
 :::note
@@ -165,10 +165,10 @@ End Select
 
 ## Loops
 
-It is uncommon to use loops in a DTM script, since the script itself is executed in the context of a
+It is uncommon to use loops within a DTM script, since the script itself is executed in the context of a
 single source row (or object) and a single destination row (or object). However, complex string
 manipulations may require iterating through the characters of a string. Iteration through the
-characters is most easily accomplished using the or Each construct.
+characters typically uses the For Each construct.
 
 **Example:**
 

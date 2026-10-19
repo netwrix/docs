@@ -18,15 +18,16 @@ The following examples describe situations where using a script may be useful:
   another, for example `build1230` to `at risk`. See the
   [Script Example 1: Conversion of Data](/docs/accessanalyzer/11.6/admin/datacollector/script/example1.md)
   topic for additional information.
-- Compound Queries – This is a query that cannot be performed using a single query. See the
+- Compound Queries – This is a query that you can't perform using a single query. See the
   [Script Example 2: Command Query](/docs/accessanalyzer/11.6/admin/datacollector/script/example2.md)
   topic for additional information.
 - Interfacing with External Systems – This is a query that requires access to external data. For
   example, the query needs to access a corporate database to obtain a location code.
 
-The Script Data Collector is a core component of Enterprise Auditor, but it has been preconfigured
-within the Windows Solution. While the data collector is available with all Enterprise Auditor
-license options, the Windows Solution is only available with a special Enterprise Auditor license.
+The Script Data Collector is a core component of Enterprise Auditor, and the Windows Solution
+includes it as a preconfigured component. While the data collector is available with all Enterprise
+Auditor license options, the Windows Solution is only available with a special Enterprise Auditor
+license.
 See the
 [Windows Solution](/docs/accessanalyzer/11.6/solutions/windows/overview.md)
 topic for additional information.

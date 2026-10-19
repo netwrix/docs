@@ -31,7 +31,7 @@ Specify the account that you want to define this policy for.
 
 ## To configure the Log On As a Batch Job policy using the Group Policy Management console
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
@@ -53,9 +53,9 @@ the left and navigate to Policies → Windows Settings → Security Settings →
 user that you want to define this policy for.
 
 **Step 7 –** Navigate to Start → Run and type "_cmd_". Input the `gpupdate /force` command and press
-Enter. The group policy will be updated.
+Enter. The group policy is updated.
 
-**Step 8 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
+**Step 8 –** Type `repadmin /syncall` command and press Enter to replicate GPO changes to other
 domain controllers.
 
-**Step 9 –** Ensure that new GPO settings applied on any audited domain controller.
+**Step 9 –** Verify that the new GPO settings are applied on any audited domain controller.

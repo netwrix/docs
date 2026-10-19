@@ -16,7 +16,7 @@ running the add-on.
 **Step 2 –** Select **Create Task**.
 
 **Step 3 –** On the **General** tab, specify a task name, e.g., Netwrix Auditor Add-on for ArcSight.
-Make sure the account that runs the task has all necessary rights and permissions.
+Ensure the account that runs the task has all necessary rights and permissions.
 
 **Step 4 –** On the **Triggers** tab, **click** New and define the schedule. This option controls
 how often audit data is exported from Auditor and transferred to ArcSight Logger. Netwrix recommends

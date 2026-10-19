@@ -57,14 +57,14 @@ time, not only during a password change or reset.
       password. The log entry can be found in the X log of the event viewer.
     - Force password change at next logon – Sets the Force Password Change at next login attribute
       on the AD User that was found to have a compromised password. When the user tries to login the
-      next time they will be forced to go through the password change process.
+      next login, they are prompted to go through the password change process.
 
-- **Schedule** – Click this link to open the "Schedule task" window. Choose date and time when the
-  scan will start and configure the scan frequency.
+- **Schedule** – Click **Schedule** to open the "Schedule task" window. Choose date and time when the
+  scan starts and the scan frequency.
 
     ![supporttoolswindowpasswordcheckerschedule](/images/passwordpolicyenforcer/10.2/administration/supporttoolswindowpasswordcheckerschedule.webp)
 
-    Setup the desired schedule to run Password Checker. You may choose to run it once, or
+    Set up the scan schedule for Password Checker. You may choose to run it once, or
     periodically on a defined schedule.
 
     - **Frequency** – Select how frequently you want to run Password Checker.
@@ -85,23 +85,23 @@ time, not only during a password change or reset.
 - **List of compromised passwords** – The path to the database of compromised passwords.
 - **Domain Controller** – Name of the Domain Controller you want to scan with Compromised Password
   Checker. The name of the current domain controller can be taken from Configuration Report tab >
-  Computer value. Please use the fully qualified (FQDN) domain controller name.
+  Computer value. Use the fully qualified (FQDN) domain controller name.
 
 #### Report Recipient
 
 ![cpcreportrecipient](/images/passwordpolicyenforcer/10.2/administration/cpcreportrecipient.webp)
 
-- **To** – Type the email address of the administrator receiving the full report.
-- **From** – Type the name and email address you wish to appear. The correct format is
+- **To** – Enter the email address of the administrator receiving the full report.
+- **From** – Enter the name and email address you want to appear. The correct format is
   `"Display Name" <mailbox@domain.com>`
 
 #### User Notification
 
 ![cpcusernotification](/images/passwordpolicyenforcer/10.2/administration/cpcusernotification.webp)
 
-- **From** – Type the name and email address you wish to appear. The correct format is
+- **From** – Enter the name and email address you want to appear. The correct format is
   `"Display Name" <mailbox@domain.com>`
-- **Subject** – Type the subject line of your email.
+- **Subject** – Enter the subject line of your email.
 - **Email** – The text for the message you want to send to the user. The default text contains
   information about the recipient's name and account, as well as a request to change the password.
   You can customize it any way you want.

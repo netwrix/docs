@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **FileSystem** > **5.Activity** > *
 Activity** > **FS_HighestHourlyActivity** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

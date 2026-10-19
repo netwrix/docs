@@ -7,7 +7,7 @@ sidebar_position: 50
 # Change Detection: Additional Fields
 
 Use the Additional Fields page to choose any additional fields to include with the change analysis.
-These fields do not detect change, but may provide additional information to help diagnose and
+These fields don't detect change, but may provide additional information to help diagnose and
 analyze the changes reported.
 
 ![Change Detection Data Analysis Module wizard Additional Fields page](/images/accessanalyzer/11.6/admin/analysis/changedetection/additionalfields.webp)

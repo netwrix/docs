@@ -6,18 +6,18 @@ sidebar_position: 20
 
 # Hyper-V
 
-Hyper-V Tools utilize the VHD format for virtualization, ensuring seamless integration with
+Hyper-V Tools use the VHD format for virtualization, ensuring seamless integration with
 Microsoft environments.
 
 ## Implementing Using Microsoft Hyper-V 2022
 
 Follow the steps below to get started with your implementation.
 
-**Step 1 –** Extract the downloaded Endpoint Protector Virtual Appliance .zip package to a location other than the *Documents* or *Downloads* folder and make sure you have ownership of that folder.
+**Step 1 –** Extract the downloaded Endpoint Protector Virtual Appliance .zip package to a location other than the *Documents* or *Downloads* folder and ensure you have ownership of that folder.
 
 **Step 2 -** Open **Hyper-V Manager.**
 
-**Step 3 -** On the right sidebar of the application: click on **New \> Virtual Machine**.
+**Step 3 -** On the right sidebar of the application: click **New \> Virtual Machine**.
 
 ![New Virtual Machine](New.png)
 
@@ -33,7 +33,7 @@ Follow the steps below to get started with your implementation.
 
 ![Generation](generation.png)
 
-**Step 7 -** On **Assign Memory** screen leave the by default memory or make the change you want then click **Next**.
+**Step 7 -** On the **Assign Memory** screen, leave the default memory or modify it as needed, then click **Next**.
 
 ![Memory](memory.png)
 
@@ -41,7 +41,7 @@ Step 8 - On **Configure Networking screen \> Connection**, choose **Default Swit
 
 ![Default Switch](defaultswitch.png)
 
-**Step 9 -** On **Connect Virtual Hard Disk** choose **Use an existing virtual disk**. It is recommended to choose a folder where you have ownership. You can use the location from **Step 1**.
+**Step 9 -** On **Connect Virtual Hard Disk** choose **Use an existing virtual disk**. Choose a folder where you have ownership. You can use the location from **Step 1**.
 
 ![Assign Hard Disks](harddisk.png)
 

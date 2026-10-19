@@ -6,15 +6,15 @@ sidebar_position: 120
 
 # Mailbox: Delegate Rights
 
-Use the Delegate Rights page to specify folder permissions for the selected delegates. A permission
-level can be specified for each folder on the page. It is a wizard page for the Add Delegates
+Use the Delegate Rights page to specify folder permissions for the selected delegates. You can
+specify a permission level for each folder on the page. It is a wizard page for the Add Delegates
 operation.
 
 ![New Mailbox Action Wizard Delegate Rights page](/images/accessanalyzer/12.0/admin/action/mailbox/delegaterights.webp)
 
 Set delegate rights using the following options:
 
-- The following delegate rights can be chosen to access each mailbox folder:
+- Choose from the following delegate rights to access each mailbox folder:
 
     - None
     - Reviewer
@@ -26,13 +26,13 @@ Set delegate rights using the following options:
     - Publishing Editor
     - Owner
 
-- Select a right from the drop-down menu of any desired mailbox folder, including:
+- Select a right from the dropdown menu of any desired mailbox folder, including:
 
     - Calendar
 
         :::note
-        If Editor or a higher rights level is selected, the **Delegate receives copies of
-        meeting-related messages sent to me** option is enabled for selection.
+        If you select Editor or a higher rights level, the wizard enables the **Delegate receives
+        copies of meeting-related messages sent to me** option for selection.
         :::
 
 

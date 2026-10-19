@@ -6,17 +6,14 @@ sidebar_position: 60
 
 # Permissions for NetApp Auditing
 
-Before you start creating a monitoring plan to audit your NetApp file storage system, plan for the
-account that will be used for data collection – it should meet the requirements listed below.
+Before you create a monitoring plan to audit your NetApp file storage system, plan for the
+account you will use for data collection — it must meet the following requirements.
 
-If you want to authenticate with AD user account, you must enable it to access SVM through ONTAPI.
-See the Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section
-for additional information.
+If you want to authenticate with an AD user account, you must enable it to access a Storage Virtual Machine (SVM) through ONTAPI or REST API (see [ONTAPI vs. REST API](#ontapi-vs-rest-api) and [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
 
-The following permissions are required for the account on the target server:
+The account on the target server requires the following permissions:
 
-- The account must be a member of the Local Administrators group.
-- The account must be a member of the BUILTIN\Administrators group.
+- The account must be a member of the NetApp BUILTIN\Administrators group.
 
 - The account requires the following **NTFS** permissions:
 
@@ -34,30 +31,53 @@ The following permissions are required for the account on the target server:
     - Read permission on the audit logs folder and its content.
     - Delete permission on the audit log folder content.
 
-- To connect to NetApp Clustered Data ONTAP 8 or ONTAP 9, an account must be assigned a custom role
-  (e.g., fsa_role) on SVM that has the following capabilities with access query levels:
+- To connect to NetApp Clustered Data ONTAP 8 or ONTAP 9, assign the account a custom role
+  (e.g., netwrix_role) on SVM with the following capabilities and access query levels:
 
-    |                                                                              |                                    |
-    | ---------------------------------------------------------------------------- | ---------------------------------- |
-    | - version - volume - vserver audit - vserver audit rotate-log - vserver cifs | readonly readonly all all readonly |
+  To connect using the ONTAPI
+    |             API               |       Access Level     |
+    | ----------------------------- | ---------------------- |
+    |   version                     |    readonly            |
+    |   volume                      |    readonly            |            
+    |   vserver audit               |    all                 |
+    |   vserver audit rotate-log    |    all                 |
+    |   vserver cifs                |    readonly            |
 
-The following permissions are required for the account on the Netwrix Auditor server:
+   To connect using the REST API
+    |             API               |       Access Level     |
+    | ----------------------------- | ---------------------- |
+    |  /api/svm/svms                |    read_create_modify  |
+    |  /api/storage/volumes         |    readonly            |            
+    |  /api/protocols/audit         |    read_create_modify  |
+    |  /api/protocols/cifs/shares   |    readonly            |
 
-- The account must be a member of the Local Administrators group.
 
-See Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section for
-additional information.
+## ONTAPI vs. REST API
 
-_Remember,_ that you can also assign the built-in vsadmin role instead of the permissions above.
+NetApp ONTAP supports two API protocols for SVM access: ONTAPI (also known as ZAPI) and REST API. The protocol you choose determines how you create and assign roles.
+
+**ONTAPI is applicable when:**
+
+- The environment runs ONTAP 9.9 or earlier, where REST API support may be limited or unavailable.
+- The existing configuration already uses ONTAPI and you don't need to migrate. NetApp continues to support ONTAPI on ONTAP 9.10 and later for backward compatibility but recommends transitioning to REST API for new deployments on 9.10+.
+
+**REST API is applicable when:**
+
+- The environment runs ONTAP 9.10 or later — REST API is the recommended interface from ONTAP 9.10 onward.
+- The security or network policy prefers REST-based communication over the legacy ONTAPI (ZAPI) protocol.
+
+**NOTE:** In ONTAP 9.10 and higher, you can't assign an ONTAPI role (a custom role with ONTAPI capabilities) and a REST API role (a custom role with REST API capabilities) to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
+
+If you don't need granular permissions and prefer to skip custom role configuration, use the [NetApp Built-in vsadmin Role](#netapp-built-in-vsadmin-role) instead.
 
 ## Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access
 
 **NOTE:** This article applies to NetApp 8.3.2 and later. You must be a **cluster administrator** to
-run the commands below.
+run the following commands.
 
-Follow the steps to create a role for enabling AD user access:
+To create a role for enabling AD user access:
 
-**Step 1 –** Create a new role (e.g., netwrix_role for ONTAPI and netwrix_rest_role for RESTAPI) on
+**Step 1 –** Create a new role (e.g., netwrix_role for ONTAPI and netwrix_rest_role for REST API) on
 your SVM (e.g., svm1). For example:
 
 Create ONTAPI role:
@@ -67,24 +87,19 @@ security login role create -role netwrix_role -cmddirname version -access readon
 security login role create -role netwrix_role -cmddirname volume -access readonly -vserver svm1
 security login role create -role netwrix_role -cmddirname "vserver audit" -access all -vserver svm1
 security login role create -role netwrix_role -cmddirname "vserver audit rotate-log" -access all -vserver svm1
-```
-
-**NOTE:** This option is required for auto audit configuration.
-
-```
 security login role create -role netwrix_role -cmddirname "vserver cifs" -access readonly -vserver svm1
 ```
 
-Create RESTAPI role:
+Create REST API role:
 
 ```
 security login rest-role create -role netwrix_rest_role -api /api/svm/svms -access read_create_modify -vserver svm1 
-security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access read_create_modify -vserver svm1 
 security login rest-role create -role netwrix_rest_role -api /api/storage/volumes -access readonly -vserver svm1 
+security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access read_create_modify -vserver svm1 
 security login rest-role create -role netwrix_rest_role -api /api/protocols/cifs/shares -access readonly -vserver svm1
 ```
 
-**NOTE:** The commands in the first two lines above can be used on NetApp versions 9.11+. In earlier
+**NOTE:** The commands in the first two lines work on NetApp 9.11 and later. In earlier
 versions, use the following commands:
 
 ```
@@ -92,8 +107,8 @@ security login rest-role create -role netwrix_rest_role -api /api/svm/svms -acce
 security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access all -vserver svm1
 ```
 
-**Step 2 –** The capabilities must be assigned one by one. To review currently applied capabilities,
-you can use the following command:
+**Step 2 –** Assign the capabilities individually. To review applied capabilities,
+use the following command:
 
 ONTAPI role:
 
@@ -101,20 +116,15 @@ ONTAPI role:
 security login role show -vserver svm1 -role netwrix_role
 ```
 
-RESTAPI role:
+REST API role:
 
 ```
 security login rest-role show -vserver svm1 -role netwrix_rest_role
 ```
 
-**Step 3 –** Create a login for the account that is going to authenticate and collect data from
+**Step 3 –** Create a login for the account that will authenticate and collect data from
 NetApp. If you want to use an AD account for collecting data, enable it to access SVM through
 ONTAPI. For example:
-
-**NOTE:** In ONTAP 9.10 and higher, it is not possible to assign ONTAPI role (e.g. netwrix_role) and
-RESTAPI role (e.g. netwrix_rest_role) to one AD user. To allow a user access to both the ONTAPI and
-RESTAPI, you can use different AD groups by assigning roles to them and including the user in these
-groups.
 
 Create login for ONTAPI role:
 
@@ -122,7 +132,7 @@ Create login for ONTAPI role:
 security login create -vserver svm1 -user-or-group-name domain\user -application ontapi -authmethod domain -role netwrix_role
 ```
 
-Create login for RESTAPI role:
+Create login for REST API role:
 
 ```
 security login create -vserver svm1 -user-or-group-name domain\user -application http -authmethod domain -role netwrix_rest_role
@@ -130,18 +140,25 @@ security login create -vserver svm1 -user-or-group-name domain\user -application
 
 where `domain\user` is your data collecting account.
 
-_Remember,_ that to be able to add event policy for NetApp, the role you set up for working with
-ONTAPI must have the following attributes:
+## NetApp Built-in vsadmin Role
 
-- version readonly
-- volume readonly
-- vserver audit all (required for the product to adjust audit settings automatically)
-- vserver audit rotate-log all
-- vserver cifs readonly
+As an alternative to custom roles, you can assign the built-in **vsadmin** role to the data collection account. The `vsadmin` role grants full SVM administrative access and covers all API capabilities that Netwrix Auditor requires.
 
-The role you set up for working with RESTAPI must have the following attributes:
+**NOTE:** The vsadmin role grants broad SVM administrative privileges beyond what Netwrix Auditor requires. Use granular custom roles in production environments following the principle of least privilege.
 
-- /api/svm/svms read_create_modify
-- /api/protocols/audit read_create_modify
-- /api/storage/volumes readonly
-- /api/protocols/cifs/shares readonly
+**vsadmin is suitable when:**
+
+- A simple setup without custom role configuration is acceptable.
+- There are no restrictions on using a highly privileged SVM account.
+- You're troubleshooting collection issues and want to eliminate insufficient permissions as a cause.
+
+**Granular roles are preferable when:**
+
+- Security is a priority — granular roles follow the principle of least privilege and limit the data collection account to only the permissions Netwrix Auditor requires.
+- The SVM is shared or has strict access controls.
+- You use an AD domain account for data collection — AD accounts require a custom role because you can't directly assign the vsadmin role to domain accounts via the ONTAPI or HTTP login mechanism (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
+
+## Related Resources
+
+- [NetApp ONTAP documentation: Predefined roles for SVM administrators](https://docs.netapp.com/us-en/ontap/authentication/predefined-roles-svm-administrators-concept.html)
+- [NetApp ONTAP Automation documentation: Migrate to the ONTAP REST API](https://docs.netapp.com/us-en/ontap-automation/migrate/overview.html)

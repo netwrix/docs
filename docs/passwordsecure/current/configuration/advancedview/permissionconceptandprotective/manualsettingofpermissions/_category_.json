@@ -1,0 +1,10 @@
+{
+  "label": "Manual setting of permissions",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "manual_setting_of_permissions"
+  }
+}

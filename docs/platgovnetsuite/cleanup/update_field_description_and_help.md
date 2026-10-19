@@ -17,13 +17,13 @@ changed_. The Change Log is closed.
     You can filter the
     results by **Name**, **Script Id**, **Type** or check the **Description/Help is Empty** checkbox to automatically hide rows with populated description and help from the **Field List**.
 
-    You can also click on a column heading in the **Field List** to sort the list by the selected column.
+    You can also click a column heading in the **Field List** to sort the list by the selected column.
     :::note
     The column with the arrow up or arrow down is the column used for sorting. (Ascending or Descending Order)
     :::
     ![field_column_sort](/images/platgovnetsuite/clean_up/field_column_sort.png)
 
 2.  Add or edit **Description** and **Help** text.
-    The edited text will be **highlighted in blue** to indicate which fields have been modified.
+    Edited text is **highlighted in blue** to indicate which fields have been modified.
     ![cust_ui_help_update](/images/platgovnetsuite/clean_up/cust_ui_help_update.webp)
-3.  Click **Update** to submit the changes. The page will refresh and display the updated Descriptions and Help.
+3.  Click **Update** to submit the changes. The page refreshes and displays the updated Descriptions and Help.

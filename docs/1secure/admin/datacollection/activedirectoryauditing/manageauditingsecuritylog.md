@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Configure the Manage Auditing and Security Log Policy
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
 **Step 1 –** Open the **Group Policy Management** console on any domain controller in the target
@@ -28,9 +28,9 @@ Policies.**
 Group**, specify the user that you want to define this policy for.
 
 **Step 7 –** Navigate to **Start → Run** and type _"cmd"_. Input the `gpupdate /force` command and
-press **Enter**. The group policy will be updated.
+press **Enter**. The group policy is updated.
 
-**Step 8 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
+**Step 8 –** Type `repadmin /syncall` command and press Enter to replicate GPO changes to other
 domain controllers.
 
-**Step 9 –** Ensure that new GPO settings applied on any audited domain controller.
+**Step 9 –** Verify that the new GPO settings are applied on any audited domain controller.

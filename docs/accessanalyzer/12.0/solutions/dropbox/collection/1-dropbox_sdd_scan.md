@@ -7,7 +7,7 @@ sidebar_position: 20
 # 1-Dropbox_SDD Scan Job
 
 The 1-Dropbox_SDD Scan job collects data from the Dropbox environment on access rights, sharing
-policies, configurations, content and sensitive data.
+policies, configurations, content, and sensitive data.
 
 ## Queries for the 1-Dropbox_SDD Scan Job
 
@@ -22,8 +22,8 @@ The query for the 1-Dropbox_SDD Scan job is:
 
 ### Configure the Sensitive Data Scan Query
 
-Follow the steps to either generate the access token needed for the Connection Profile (only done
-prior to first execution) or to set any desired customizations.
+To either generate the access token needed for the Connection Profile (only done
+before first execution) or to set any desired customizations, complete the following steps.
 
 **Step 1 –** Navigate to the **Jobs** > **Dropbox** > **0.Collection** > **1-Dropbox_SDD Scan** >
 **Configure** node and select **Queries**.
@@ -71,4 +71,4 @@ topic for additional information.
 **Step 7 –** On the Completion Page, click **Finish** to save any setting modifications or click
 **Cancel** if no changes were made. Then click **OK** to close the Query Properties window.
 
-If changes were made, the 1-Dropbox_SDD Scan job has now been customized.
+If you made changes, you've now customized the 1-Dropbox_SDD Scan job.

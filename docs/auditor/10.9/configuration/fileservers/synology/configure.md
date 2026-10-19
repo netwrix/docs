@@ -1,0 +1,37 @@
+---
+title: "Configure Synology File Servers for Audit"
+description: "Configure Synology File Servers for Audit"
+sidebar_position: 10
+---
+
+# Configure Synology File Servers for Audit
+
+**Step 1 –** Navigate to **Control Panel > File Services > SMB > Log Settings**.
+
+:::note
+Enable all audit types.
+:::
+
+**Step 2 –** Log in to the Synology Web Administration Console.
+
+**Step 3 –** Navigate to **Log Center > Log Sending** and configure the following:
+
+- Server – Provide the IP address or the computer listened by Syslog. It should be a running Netwrix
+  Syslog service or a third-party Syslog forward service.
+- Port – Use the default value (514).
+- Transfer protocol – select TCP or **UDP**.
+- Log format – Set to "IETF (RFC 5424)".
+- Enable secure connection – Use the default value.
+- Import certificate – Use the default value.
+
+**Step 4 –** Click Apply.
+
+:::note
+Netwrix Auditor can't collect activities using a local Synology user. Data collection is only
+supported via a domain user with the necessary access privileges to the Synology file server.
+:::
+
+:::note
+Netwrix Auditor can't collect activities on shared folders hidden using the Synology option
+**Hide this shared folder in "My Network Places"**.
+:::

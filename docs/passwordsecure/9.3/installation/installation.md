@@ -6,71 +6,56 @@ sidebar_position: 20
 
 # Installation
 
-The following pages will provide you with all the information how to install the different Netwrix
-Password Secure components.
+This section covers how to install each Netwrix Password Secure component.
 
 ## System landscape
 
-The following overview presents a basic production Netwrix Password Secure system landscape. Version
-9 allows the use of several database servers across all sites. These are then synchronized using
-Microsoft SQL server tools. Any number of application servers can be made available for the client
-connection. This ensures load distribution, and allows work without significant latency. This
-technology offers enormous performance advantages, particularly in the case of installations that
-are spread across worldwide locations.
+A basic production Netwrix Password Secure system landscape consists of the three tiers described below. Version 9 supports multiple database servers across all sites, and Microsoft SQL Server tools synchronize them. You can deploy any number of application servers to handle client connections, which distributes load and reduces latency. This is especially valuable for installations spread across multiple geographic locations.
 
 ## Client (presentation layer)
 
-The client layer handles the representation of all data and functions, which are provided by the
-application server.
+The client layer handles the presentation of all data and functions that the application server provides.
 
 ## Application server (business logic)
 
-The application server is entirely responsible for the control of the business logic. This server
-only ever delivers the data for which the corresponding permissions are available. The multi-tier
-architecture described at the beginning allows the use of several application servers and ensures
-efficient load distribution.
+The application server controls all business logic and only delivers data for which the corresponding permissions exist. The multi-tier architecture supports multiple application servers, ensuring efficient load distribution.
 
 ## Database server (data storage)
 
-Netwrix Password Secure uses Microsoft SQL Server to store data due to its widespread use, and its
-ability to ensure high-performance access even in large and geographically scattered environments.
-Smaller installations may also use the free SQL Express version.
+Netwrix Password Secure uses Microsoft SQL Server for data storage, which provides high-performance access in large and geographically distributed environments. Smaller installations can use the free SQL Express edition.
 
-## Conclusion
+## Recommended server configuration
 
-At least three servers are thus recommended:
+Use a minimum of three servers:
 
 - Database server (MSSQL)
 - Application server (Netwrix Password Secure services)
 - Web server (IIS, NginX, Apache 2)
 
-**CAUTION:** For databases in a production system, we recommend using a fail-safe cluster. Microsoft
-SQL Server can replicate the data to a different data centre, e.g via WAN. We also recommend
-providing a Windows server for each function. Separating the systems makes it easier to expand and
-scale the system landscape at a later point. However, it is not absolutely necessary to separate the
-systems. Accordingly, all of the components can also be installed on one server in the case of
-smaller installations or test environments.
+:::warning
+For production systems, use a fail-safe database cluster. Microsoft SQL Server can replicate data to a different data center, for example via WAN. Also use a dedicated Windows Server for each role — separating roles makes it easier to expand and scale the environment later. For smaller installations or test environments, you can install all components on a single server.
+:::
 
-### Firewall rules / Ports
+## Firewall rules and ports
 
-## MSSQL Server
+### MSSQL server
 
-- Port 1433 TCP for communication with application server (incoming)
+- Port 1433 TCP for communication with the application server (incoming)
 
 ### Application server
 
 - Port 443 HTTPS for connection to the Netwrix Password Secure license server (outgoing)
-- Port 11011 TCP for communication with clients or web server IIS (incoming)
-- Port 11014 TCP for the backup service (usually does not need to be unlocked)
-- Port 11016 TCP for the Web services (incoming; only when using the Web Application)
-- Port 11018 TCP for real-time update (incoming)
+- Port 11011 TCP for communication with clients or the IIS web server (incoming)
+- Port 11014 TCP for the backup service (usually not required)
+- Port 11016 TCP for web services (incoming; only required when using the Web Application)
+- Port 11018 TCP for real-time updates (incoming)
 - Port 1433 TCP for communication with SQL Server (outgoing)
 
-### Webserver (Web Application)
+### Web server (Web Application)
 
-- Port 443 HTTPS to access the webserver from the client (incoming)
-- Port 11016 for communication to the application server (outgoing)
-- Port 11018 for the real-time update (outgoing)
+- Port 443 HTTPS to access the web server from the client (incoming)
+- Port 11016 for communication with the application server (outgoing)
+- Port 11018 for real-time updates (outgoing)
 
 ### Client
 

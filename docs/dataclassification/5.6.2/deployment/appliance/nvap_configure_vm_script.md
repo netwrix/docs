@@ -6,16 +6,15 @@ sidebar_position: 60
 
 # Configure Virtual Appliance
 
-Follow the steps below to configure your virtual appliance with Netwrix Data Classification.
+Complete the following steps to configure your virtual appliance with Netwrix Data Classification.
 
-1. For Windows Server, the EULA will be displayed in the License terms page; read and accept the
+1. For Windows Server, the License terms page displays the End User License Agreement (EULA); read and accept the
    agreement.
 2. Next, specify a password for the built-in administrator account. Then re-enter your password.
    Click Finish.
 3. Log in to the virtual machine.
 4. The Windows PowerShell opens and automatically runs the script. Press any key to read the license
-   agreement and then press `Y` to accept it. Then you will be prompted to configure the virtual
-   machine. Press Enter to start.
+   agreement and then press `Y` to accept it. Then configure the virtual machine. Press Enter to start.
 
     | Step                                     | Description                                                                                                                                                                                                                                                                                                        |
     | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -24,8 +23,7 @@ Follow the steps below to configure your virtual appliance with Netwrix Data Cla
     | Configure network                        | - Select `Y` to use DHCP server to configure network settings automatically. - Select `N` to configure required parameters manually. In this case, you will be prompted to set up IP settings manually.                                                                                                            |
     | Join computer to the domain or workgroup | - Select `Y`. Specify the fully qualified domain name to join (e.g., `corp.local`). Then specify domain administrator name and password. - Select `N`. Specify the local administrator name and credentials.                                                                                                       |
 
-5. When the script execution completes, you will be prompted to reboot the virtual machine for the
-   changes to take effect.
+5. When the script execution completes, reboot the virtual machine to apply the changes.
 6. After reboot, log in to the virtual machine using the domain administrator credentials (for
    appliances joined to domain) or local administrator credentials (for appliances joined to
    workgroup).

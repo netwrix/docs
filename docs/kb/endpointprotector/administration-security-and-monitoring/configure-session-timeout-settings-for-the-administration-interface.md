@@ -13,10 +13,11 @@ keywords:
   - security
   - idle logout
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Configure Session Timeout Settings for the Adminis
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "Configure Session Timeout Settings for the Administration Interface"
 knowledge_article_id: kA0Qk0000002BDxKAM
 ---

@@ -11,7 +11,7 @@ external users, such as users who are invited to sign in using their gmail accou
 
 ![External Sharing report at the online instance level](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/farminstance/instanceexternalsharing.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Resource Name – Name of the shared resource
 - Resource Type – Type of SharePoint resource

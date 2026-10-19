@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # AWS_S3BucketTags Job
 
-The AWS_S3BucketTags job identifies tags associated with AWS S3 Buckets. Tagging can be helpful to
-identify the storage class or purpose of a bucket and can be used in AWS IAM Policy assignments.
+The AWS_S3BucketTags job identifies tags associated with AWS S3 Buckets. Tagging can help identify
+the storage class or purpose of a bucket, and you can use tags in AWS IAM Policy assignments.
 
 ## Analysis Tasks for the AWS_S3BucketTagsJob
 
@@ -15,7 +15,7 @@ Navigate to the **AWS** > **7.S3 Content** > **AWS_S3BucketTags** > **Configure*
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

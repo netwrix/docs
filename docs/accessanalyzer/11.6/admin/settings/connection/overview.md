@@ -32,7 +32,7 @@ inventory or job execution with the Windows account used to launch Enterprise Au
 
 ## Use a Connection Profile
 
-This method allows you to define a Connection Profile which houses one or several sets of
+Use this method to define a Connection Profile that houses one or several sets of
 credentials to be used for authentication on the target hosts during host inventory or job
 execution. The credentials specified in a Connection Profile could be any of the following:
 
@@ -51,8 +51,8 @@ collector being used.
 
 ### Password Storage Options
 
-The password for the credential provided can be stored in Enterprise Auditor application or
-Enterprise Auditor Vault. Certain types of credentials can be stored in CyberArk®.
+You can store the password for the credential provided in the Enterprise Auditor application or
+Enterprise Auditor Vault. You can store certain types of credentials in CyberArk®.
 
 Choosing to store passwords in either the Enterprise Auditor application or the Enterprise Auditor
 Vault is a global setting configured in the **Settings** > **Application** node. See the
@@ -74,9 +74,9 @@ topic for additional information.
 ![Cancel and Save options](/images/accessanalyzer/11.6/admin/settings/connection/cancelsavebuttons.webp)
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Connection view. These
-buttons become enabled when modifications are made to the Connection global setting.
+buttons become enabled when you make modifications to the Connection global setting.
 
 ![Information update message box](/images/accessanalyzer/11.6/admin/settings/connection/settingssavedmessage.webp)
 
-Whenever changes are made at the global level, click **Save** and then **OK** to confirm the
-changes. Otherwise, click **Cancel** if no changes were intended.
+Whenever you make changes at the global level, click **Save** and then **OK** to confirm the
+changes. Otherwise, click **Cancel** if you don't want to save the changes.

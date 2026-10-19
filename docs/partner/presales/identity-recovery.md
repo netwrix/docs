@@ -1,6 +1,6 @@
 ---
 title: Netwrix Identity Recovery Presales Engineer
-sidebar_position: 1480
+sidebar_position: 1310
 tags: [certification, partners, presales, identity-recovery]
 keywords: [training, course, certification, partners, presales, identity recovery]
 description: "Become a certified Presales Engineer for Netwrix Identity Recovery"

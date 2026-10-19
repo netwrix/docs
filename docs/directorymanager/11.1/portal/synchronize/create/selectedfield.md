@@ -7,14 +7,14 @@ sidebar_position: 50
 # Selected Fields for object types
 
 On the Selected Fields for Object type section, click Add/Edit Fields. You can specify the action to
-take if the data or object being exported from the source does not exist at the destination.
+take if the data or object being exported from the source doesn't exist at the destination.
 
 1. Select the operation that you want to perform. Click **Create** to create new objects and
    **Update** if you want to update the existing objects.
 
     - If table provider is the destination, you can enable two-way synchronization.
 
-        - If an object exists in the source but does not exist in the destination, you can select
+        - If an object exists in the source but doesn't exist in the destination, you can select
           one of the following options:
 
             - **Create**
@@ -24,9 +24,9 @@ take if the data or object being exported from the source does not exist at the 
 
             - **Skip**
 
-                Ignore items that do not exist on the destination and update only those that do.
+                Ignore items that don't exist on the destination and update only those that do.
 
-        - If an object does not exist in the source but exists in the destination, you can select
+        - If an object doesn't exist in the source but exists in the destination, you can select
           one of the following options:
 
             - **Delete**
@@ -35,7 +35,7 @@ take if the data or object being exported from the source does not exist at the 
 
             - **Skip**
 
-                Ignore objects at the destination that do not exist at the source.
+                Ignore objects at the destination that don't exist at the source.
 
     - If LDAP-compliant directory server or a phone system is the destination, you can do the
       following:
@@ -61,11 +61,11 @@ take if the data or object being exported from the source does not exist at the 
                 - **Create objects in the container specified in this source field**- Enter the
                   distinguished name of the container.
                 - **Create objects in a container specified in script** - Click the Edit Script
-                  button and write a script that identifies the desired container.
+                  button and write a script that identifies the target container.
 
             - **Skip**
 
-                The default selection is to skip items that do not exist on the destination and only
+                The default selection is to skip items that don't exist on the destination and only
                 update those that do.
 
         - For phone systems such as a third-party Switchvox provider, you can only select one object
@@ -81,12 +81,12 @@ take if the data or object being exported from the source does not exist at the 
 
             - **Skip**
 
-                Select this option to ignore any source objects that does not exist at the
+                Select this option to ignore any source objects that doesn't exist at the
                 destination during synchronization.
 
 2. Select the fields to be synced. Repeat for each object type desired. Object types listed are
    based on the source directory that you selected on the previous page.
-3. If the destination is not an Active Directory domain, select the names of fields to sync from the
+3. If the destination isn't an Active Directory domain, select the names of fields to sync from the
    list.
 4. By default, Synchronize moves selects some fields from the list by analyzing the fields from the
    source.
@@ -95,7 +95,7 @@ take if the data or object being exported from the source does not exist at the 
    destination.
 
     :::note
-    A Synchronize job can only create groups at the destination. In order to sync group
+    A Synchronize job can only create groups at the destination. To sync group
     members, it searches Active Directory for the matching objects based on the Member Key field and
     adds them to the group membership.
     :::

@@ -13,7 +13,7 @@ The Services tab shows information about the services running on the selected re
 The Services tab has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Type — Provides options to filter results based on a chosen criterion: Managed and Unmanaged
 - Refresh — Reload the information displayed
 

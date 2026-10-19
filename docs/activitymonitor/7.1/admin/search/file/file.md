@@ -7,7 +7,7 @@ sidebar_position: 20
 # File Search Query
 
 You can search Windows file server and NAS device activity that has been monitored and recorded to a
-File output. When you select **File** from the magnifying glass drop-down menu, a New Search tab
+File output. When you select **File** from the magnifying glass dropdown menu, a New Search tab
 opens with the applicable query filters.
 
 ![Search UI Options Toolbar](/images/activitymonitor/7.1/admin/search/query/searchuitop.webp)
@@ -19,20 +19,20 @@ Set the filters as desired and click **Search**. The application searches throug
 activity log files and returns the events that match the filters. You can
 [Filter](/docs/activitymonitor/7.1/admin/search/overview.md#filter) and
 [Sort](/docs/activitymonitor/7.1/admin/search/overview.md#sort) the
-results using the column headers. Below the Search button is the
+results using the column headers. The
 [Export](/docs/activitymonitor/7.1/admin/search/overview.md#export)
-option.
+option is also available in the search interface.
 
 **Filter Value Entry**
 
 Field options vary based on the selected query filter:
 
-- Textbox – Enter the filter value. If the field has a drop-down arrow, then you can select from
+- Textbox – Enter the filter value. If the field has a dropdown arrow, then you can select from
   values known to the application.
-- Gray drop-down menu – Provides options to match the value against on of the following, which vary
+- Gray dropdown menu – Provides options to match the value against on of the following, which vary
   based on the filter:
 
-    - Selected values – Filters by the value selected from the drop-down menu for the textbox
+    - Selected values – Filters by the value selected from the dropdown menu for the textbox
     - Simple string with wildcards – Filters by the value entered into the textbox, which contains
       an asterisk (\*) as the wildcard
     - Regular expression – Filters by the Regex entered into the textbox
@@ -43,9 +43,9 @@ The sections have the following filters:
 
 - Events time range – The time frame filter must be configured for every search query:
 
-    - From – Set the date and timestamp for the start of the activity range. The drop-down menu
+    - From – Set the date and timestamp for the start of the activity range. The dropdown menu
       opens a calendar.
-    - To – Set the date and timestamp for the end of the activity range. The drop-down menu opens a
+    - To – Set the date and timestamp for the end of the activity range. The dropdown menu opens a
       calendar.
 
 - File Path – Filter the data for a specific file path where activity has occurred

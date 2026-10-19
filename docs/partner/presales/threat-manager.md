@@ -1,6 +1,6 @@
 ---
 title: Netwrix Threat Manager Presales Engineer
-sidebar_position: 1550
+sidebar_position: 1390
 tags: [certification, partners, presales, threat-manager]
 keywords: [training, course, certification, partners, presales, threat manager]
 description: "Become a certified Presales Engineer for Netwrix Threat Manager"

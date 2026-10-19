@@ -7,7 +7,7 @@ sidebar_position: 40
 # Log Files Tab
 
 The Log Files tab on an output Properties window is where the activity log settings can be modified.
-These settings are initially configured when the output is added.
+These settings are initially configured when you add the output.
 
 Select a File output from either the Monitored Domains tab or the Monitored Hosts & Services tab and click
 **Edit** to open the output Properties window. The tab varies based on the type of domain/host
@@ -26,7 +26,7 @@ The tab contains the following settings:
   information recorded per event.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 
@@ -48,7 +48,7 @@ The tab contains the following settings:
 
 
 - Enable periodic AD Status Check event reporting – Indicates periodic AD Status Check event
-  reporting is enabled, which means the agent will send out status messages every five minutes to
+  reporting sends status messages from the agent every five minutes to
   verify whether the connection is still active.
 
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
@@ -66,7 +66,7 @@ The tab contains the following settings:
   is 10 days.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 
@@ -83,24 +83,22 @@ The tab contains the following settings:
       [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
       for additional information.
     - For integration with Netwrix Threat Prevention NAS monitoring, this setting only controls the
-      log retention period for NAS devices, as Netwrix Threat Prevention does not read Windows file
+      log retention period for NAS devices, as Netwrix Threat Prevention doesn't read Windows file
       server activity from Activity Monitor.
 
-- Report account names – Indicates if an Account Name column is added in the activity log files
-- Add header to Log files – Indicates if headers are added in the activity log filesAdd header to
-  Log files – Indicates if headers are added in the activity log files
+- Report account names – Whether an Account Name column appears in the activity log files
+- Add header to Log files – Whether headers appear in the activity log files
 
     :::note
-    This is needed to feed data into Splunk in a Syslog output. However, Netwrix Access
-    Analyzer  does not support log files with headers. Therefore, do
+    Enable this to feed data into Splunk in a Syslog output. However, Netwrix Access
+    Analyzer  doesn't support log files with headers. Therefore, do
     not select this option for a File output designed for Netwrix Access Analyzer.
     :::
 
 
-- Report UNC paths – Indicates if a UNC Path column and a Rename UNC Path column are added in the
-  activity log files. This option corresponds to the REPORT_UNC_PATH parameter in the INI file. When
-  the option is enabled, the added columns are populated when a file is accessed remotely through
-  the UNC Path. If a file is accessed locally, these columns are empty.
+- Report UNC paths – Whether the activity log files include a UNC Path column and a Rename UNC Path column. This option corresponds to the REPORT_UNC_PATH parameter in the INI file. When
+  you enable this option, the columns contain data when you access a file remotely through
+  the UNC Path. If you access a file locally, these columns remain empty.
 
     - The UNC Path is in the following format:
 
@@ -142,7 +140,7 @@ The tab contains the following settings:
   is 10 days.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 
@@ -153,22 +151,20 @@ The tab contains the following settings:
     :::
 
 
-- Add header to Log files – Indicates if headers are added in the activity log filesAdd header to
-  Log files – Indicates if headers are added in the activity log files
+- Add header to Log files – Whether headers appear in the activity log files
 
     :::note
-    This is needed to feed data into Splunk in a Syslog output. However, Netwrix Access
-    Analyzer  does not support log files with headers. Therefore, do
+    Enable this to feed data into Splunk in a Syslog output. However, Netwrix Access
+    Analyzer  doesn't support log files with headers. Therefore, do
     not select this option for a File output designed for Netwrix Access Analyzer.
     :::
 
 
 - Add C:\ to the beginning of the reported file paths – Adds C:\ to the beginning of the reported
   file paths in the activity log file
-- Report UNC paths – Indicates if a UNC Path column and a Rename UNC Path column are added in the
-  activity log files. This option corresponds to the REPORT_UNC_PATH parameter in the INI file. When
-  the option is enabled, the added columns are populated when a file is accessed remotely through
-  the UNC Path. If a file is accessed locally, these columns are empty.
+- Report UNC paths – Whether the activity log files include a UNC Path column and a Rename UNC Path column. This option corresponds to the REPORT_UNC_PATH parameter in the INI file. When
+  you enable this option, the columns contain data when you access a file remotely through
+  the UNC Path. If you access a file locally, these columns remain empty.
 - Report operations with millisecond precision – Indicates the timestamps of events being recorded
   in the activity log file has been changed for better ordering of events if multiple events occur
   within the same second
@@ -197,7 +193,7 @@ The tab contains the following settings:
   is 10 days.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 
@@ -236,7 +232,7 @@ The tab contains the following settings:
   is 10 days.
 
     :::note
-    This setting effects activity log retention whether or not the archiving feature is
+    This setting effects activity log retention whether the archiving feature is
     enabled.
     :::
 

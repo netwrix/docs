@@ -6,10 +6,10 @@ sidebar_position: 20
 
 # Create an AD Contact
 
-The Directory Manager portal enables you to create the contact object in the directory.
+The Directory Manager portal lets you create the contact object in the directory.
 
 :::note
-The contact object type is not supported in a Microsoft Entra ID based identity store.
+The contact object type isn't supported in a Microsoft Entra ID based identity store.
 :::
 
 
@@ -21,7 +21,7 @@ administrator can customize the wizard by adding or removing pages and fields.
 
 ## Create a contact
 
-Follow the steps to create a contact in an Active Directory identity store.
+To create a contact in an Active Directory identity store.
 
 Step 1 – In the Directory Manager portal, click the **Create New** button in the left pane and
 select **Contact**.

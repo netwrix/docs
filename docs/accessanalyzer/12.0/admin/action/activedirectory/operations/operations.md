@@ -11,7 +11,7 @@ Active Directory objects. Some operations have wizard pages to specify the confi
 
 ![Active Directory Action Module Wizard Operations page](/images/accessanalyzer/12.0/admin/action/activedirectory/operations.webp)
 
-The Operations drop-down menu contains the following operations:
+The Operations dropdown menu contains the following operations:
 
 - [Clear/Set SID History ](/docs/accessanalyzer/12.0/admin/action/activedirectory/operations/sidhistory.md)
 - [Computer Details](/docs/accessanalyzer/12.0/admin/action/activedirectory/operations/computerdetails.md)
@@ -28,7 +28,7 @@ The Operations drop-down menu contains the following operations:
 - [Unlock Users ](#unlock-users)
 - [Users Details ](/docs/accessanalyzer/12.0/admin/action/activedirectory/operations/usersdetails.md)
 
-Select an operation from the drop-down list and then click **Add**. The selection appears in the
+Select an operation from the dropdown list and then click **Add**. The selection appears in the
 Selections pane as well as the navigation pane if there is an associated configuration page. If
 performing multiple operations, the action executes the operations in the order in which they appear
 here. To change the order, select an operation and use the **Down** and **Up** buttons.
@@ -36,20 +36,20 @@ here. To change the order, select an operation and use the **Down** and **Up** b
 ## Delete Objects
 
 :::warning
-Once deleted, objects from Active Directory cannot be restored.
+Once deleted, objects from Active Directory can't be restored.
 :::
 
 
 Select this operation to delete objects from Active Directory, such as users, groups, or computers.
 The source table determines which objects are deleted from the Active Directory. Therefore, this
-operation does not possess its own wizard window.
+operation doesn't have its own wizard window.
 
 ## Groups Remove All Members
 
-Select this operation to remove all members from groups located in the source table. There is not a
+Select this operation to remove all members from groups located in the source table. There isn't a
 wizard window associated with this operation. No configuration is required.
 
 ## Unlock Users
 
-Select this operation to unlock the account of the specified users in the source table. There is not
+Select this operation to unlock the account of the specified users in the source table. There isn't
 a wizard window associated with this operation. No configuration is required.

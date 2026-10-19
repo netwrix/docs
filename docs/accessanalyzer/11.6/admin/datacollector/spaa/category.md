@@ -30,7 +30,7 @@ The options on the Category page are:
       Auditor database
 
 :::tip
-Remember, the sensitive data discovery options require the Sensitive Data Discovery Add-On to be
-installed on the Enterprise Auditor Console. If the SharePoint Agent is used, then it must also be
-installed on the application server that hosts the Central Administration component.
+Remember, the sensitive data discovery options require you to install the Sensitive Data Discovery
+Add-On on the Enterprise Auditor Console. If you use the SharePoint Agent, you must also install it
+on the application server that hosts the Central Administration component.
 :::

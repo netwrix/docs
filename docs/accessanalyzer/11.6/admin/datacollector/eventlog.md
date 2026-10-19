@@ -27,7 +27,7 @@ Enterprise Auditor licenses.
 
 ## EventLog Query Configuration
 
-The EventLog Data Collector is configured through the Event Log Browser window.
+Configure the EventLog Data Collector through the Event Log Browser window.
 
 ![Event Log Browser window](/images/accessanalyzer/11.6/admin/datacollector/eventlogbrowser.webp)
 
@@ -39,7 +39,7 @@ In the Sample section, select from the following options:
 
     - Host – Enter a sample host that contains a log with the type of events desired for the query.
       Click **Connect** to generate a list of logs available for extraction.
-    - Log name – Select a log from the drop-down list. Events from the selected log are populated in
+    - Log name – Select a log from the dropdown list. Events from the selected log are populated in
       the table.
 
 - From file
@@ -51,7 +51,7 @@ In the Sample section, select from the following options:
   File path box
 
     :::note
-    A preview displays automatically if the folder icons is used to navigate to the log.
+    A preview displays automatically if you use the folder icon to navigate to the log.
     :::
 
 
@@ -62,11 +62,11 @@ In the Sample section, select from the following options:
 In the Search Criteria section, add a search filter to the table by configuring the following
 criteria:
 
-- Event Source – Select the event source from the drop-down list. Typically, select **Any Source**.
-- Even Type – Select the event type from the drop-down list. Typically, select **Any Type**.
+- Event Source – Select the event source from the dropdown list. Typically, select **Any Source**.
+- Even Type – Select the event type from the dropdown list. Typically, select **Any Type**.
 - Event ID – Enter the event ID for the type of event to search
 
-Once the information above has been entered, click **Add** to add the configured event to the query.
+After you enter this information, click **Add** to add the configured event to the query.
 Add as many events as desired.
 
 - Latest event only – Select this checkbox to only search the latest event
@@ -83,7 +83,7 @@ Click **Apply Filter** to filter the list of sample events to the search criteri
 
 **Options**
 
-In the Options section, select the desired processing options:
+In the Options section, select the processing options you want:
 
 - Process offline logs only – Select this checkbox to process only offline logs
 - Process offline logs if required – Select this checkbox to process offline logs if needed
@@ -93,14 +93,14 @@ In the Options section, select the desired processing options:
 
 **Available Properties**
 
-In the Available Properties section, select which properties will be collected by the browser.
+In the Available Properties section, select which properties the browser collects.
 
 - Add Icon – Add properties from those available in the list to add the properties to the search
 
-    - The Description properties provide the ability to extract the bracketed pieces of information
+    - The Description properties let you extract the bracketed pieces of information
       found within the description and display each bracketed piece of information in its own column
 
 - Remove Icon – Use to remove properties from the search
 
-Once all options have been configured, click **OK** to save changes and exit the browser. Click
+After you configure all options, click **OK** to save changes and exit the browser. Click
 **Cancel** to exit without saving.

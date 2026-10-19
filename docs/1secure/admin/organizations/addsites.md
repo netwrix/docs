@@ -20,7 +20,7 @@ for the agent updates.
 
 ## Add a New Site
 
-Follow the steps to add a site to your organization.
+**To add a site to your organization:**
 
 **Step 1 –** Add your organization or add a source to the created organization. See the
 [Add Organizations](/docs/1secure/admin/organizations/addorganizations.md) topic for additional information.
@@ -53,25 +53,25 @@ information.
 
 The site is now added.
 
-You can now add the created sites to your source.
+To add the created sites to your source:
 
 **Step 1 –** Add a source to the your organization.
 
-**Step 2 –** Select your site from the drop-down list or click the **Add** icon, if your want to add
+**Step 2 –** Select your site from the dropdown list or click the **Add** icon, if your want to add
 a new site. Click **Next**.
 
 ![sitesdropdown](/images/1secure/admin/organizations/sitesdropdown.webp)
 
-**Step 3 –** Finish adding the source. Screens will vary depending on the source added. See the
+**Step 3 –** Finish adding the source. Screens vary depending on the source. See the
 [Add a Source and Connectors for Active Directory](/docs/1secure/admin/organizations/sourcesandconnectors/activedirectory.md) or
 [Add a Source and Connectors for Computer](/docs/1secure/admin/organizations/sourcesandconnectors/computer.md)topic for additional
 information.
 
 ## View Sites and Agent Status
 
-Now you can review the created site for your organization and check the agent status.
+Review the created site for your organization and check the agent status.
 
-Follow the steps to view the site for the organization.
+**To view the site for the organization:**
 
 **Step 1 –** Navigate to Managed Organizations > "your organization" > Sites.
 
@@ -79,7 +79,7 @@ Follow the steps to view the site for the organization.
 
 **Step 2 –** View the following details:
 
-- Agent status – Agent status in color. See the [Statuses](docs\1secure\admin\statuses.md) topic for additional
+- Agent status – Agent status in color. See the [Statuses](/docs/1secure/admin/statuses.md) topic for additional
   information
 - Server name – Server from which the data is collected
 - Last Connected – Last connection time with your agent in UTC

@@ -9,7 +9,7 @@ sidebar_position: 10
 When a search has been started, the Search Status table at the bottom displays the percentage
 complete according to the size and quantity of the activity log files being searched per activity
 agent. You can [Filter](/docs/activitymonitor/8.0/admin/search/overview.md#filter) and [Sort](/docs/activitymonitor/8.0/admin/search/overview.md#sort) the results using the
-column headers. Below the Search button is the [Export](/docs/activitymonitor/8.0/admin/search/overview.md#export) option.
+column headers. The [Export](/docs/activitymonitor/8.0/admin/search/overview.md#export) option is located beneath the Search button.
 
 ![SharePoint Online Search Results](/images/activitymonitor/8.0/admin/search/results/sharepointonlinesearchresults.webp)
 

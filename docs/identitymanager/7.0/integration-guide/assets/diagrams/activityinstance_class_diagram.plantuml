@@ -1,0 +1,67 @@
+@startuml component
+package "ActivityInstance" {
+	class ActivityInstance {
+		AssignedTo : Int64
+		Body : String
+		CC : String
+		ChangeSetSummary : String
+		CreationDate : DateTime
+		ExpectedDate : DateTime
+		PrivateBody : String
+		Subject : String
+		TriggerMode : Int32
+		--
+		Activity : Activity
+		ActivityInstanceActivityInstanceCCs : ActivityInstanceCC[]
+		ActivityInstanceActivityInstancesActors : ActivityInstancesActor[]
+		ActivityInstanceChanges : Change[]
+		ActivityInstance_WorkflowInstanceForWhichItIsCurrent : WorkflowInstance[]
+		ActivityState : ActivityTemplateState
+		OpenIdClient : OpenIdClient
+		Performer : Resource
+		WorkflowInstance : WorkflowInstance
+	}
+}
+package "Activity" {
+	class Activity {
+	}
+}
+package "ActivityInstanceCC" {
+	class ActivityInstanceCC {
+	}
+}
+package "ActivityInstancesActor" {
+	class ActivityInstancesActor {
+	}
+}
+package "Change" {
+	class Change {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+package "ActivityTemplateState" {
+	class ActivityTemplateState {
+	}
+}
+package "OpenIdClient" {
+	class OpenIdClient {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+ActivityInstance "0..*" --  "1"Activity
+ActivityInstance "1" --  "0..*"ActivityInstanceCC
+ActivityInstance "1" --  "0..*"ActivityInstancesActor
+ActivityInstance "1" --  "0..*"Change
+ActivityInstance "0..1" --  "0..*"WorkflowInstance
+ActivityInstance "0..*" --  "1"ActivityTemplateState
+ActivityInstance "0..*" --  "0..1"OpenIdClient
+ActivityInstance "0..*" --  "0..1"Resource
+ActivityInstance "0..*" --  "1"WorkflowInstance
+hide empty members
+@enduml

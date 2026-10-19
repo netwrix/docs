@@ -24,7 +24,7 @@ knowledge_article_id: kA04u0000011196CAA
 
 ## Symptom
 
-When trying to create a monitoring plan for Windows Servers explicitely for Domain Controllers, the following error appears:
+When trying to create a monitoring plan for Windows Servers explicitly for Domain Controllers, the following error appears:
 
 ```
 Event ID:1016: Unable to configure the following audit policies on this computer because it is a domain controller.

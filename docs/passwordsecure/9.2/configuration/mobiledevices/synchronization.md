@@ -12,13 +12,13 @@ automatically synchronized in the background.
 
 Synchronization logic
 
-First of all, it is important to note how the synchronization has been configured in the
+First of all, note how the synchronization has been configured in the
 [Settings](/docs/passwordsecure/9.2/configuration/mobiledevices/settings_mobileapp.md). A prerequisite for successful synchronization is that
 the configured connection is available. This is done via https port 443, which must be enabled on
-the server side. Once the prerequisites have been met, there are the following triggers for
+the server side. After the prerequisites have been met, there are the following triggers for
 synchronization:
 
-- A login to the app takes place
+- A log in to the app takes place
 - Swipe down in the app
 - The synchronization is started in the settings of the app.
 - A data record is changed in one of the two databases

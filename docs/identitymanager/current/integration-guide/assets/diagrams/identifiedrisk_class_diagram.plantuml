@@ -1,0 +1,45 @@
+@startuml component
+package "IdentifiedRisk" {
+	class IdentifiedRisk {
+		EndDate : DateTime
+		OwnerType : Int64
+		StartDate : DateTime
+		--
+		AssignedCompositeRole1 : AssignedCompositeRole
+		AssignedCompositeRole2 : AssignedCompositeRole
+		AssignedSingleRole1 : AssignedSingleRole
+		AssignedSingleRole2 : AssignedSingleRole
+		Owner : Resource
+		Risk : Risk
+		WorkflowInstance : WorkflowInstance
+	}
+}
+package "AssignedCompositeRole" {
+	class AssignedCompositeRole {
+	}
+}
+package "AssignedSingleRole" {
+	class AssignedSingleRole {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "Risk" {
+	class Risk {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+IdentifiedRisk "0..*" --  "0..1"AssignedCompositeRole
+IdentifiedRisk "0..*" --  "0..1"AssignedCompositeRole
+IdentifiedRisk "0..*" --  "0..1"AssignedSingleRole
+IdentifiedRisk "0..*" --  "0..1"AssignedSingleRole
+IdentifiedRisk "0..*" --  "1"Resource
+IdentifiedRisk "0..*" --  "1"Risk
+IdentifiedRisk "0..*" --  "0..1"WorkflowInstance
+hide empty members
+@enduml

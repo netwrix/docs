@@ -30,9 +30,9 @@ on the first page:
 
 ## Add Access
 
-Follow the steps to add new user access to the selected resource.
+To add new user access to the selected resource:
 
-**Step 1 –** Select the desired resource in the Owner portal and click **Change Access**. The Change
+**Step 1 –** Select the resource you want in the Owner portal and click **Change Access**. The Change
 Resource Access wizard opens.
 
 ![Change Resource Access wizard showing 1. Select Change page](/images/accessinformationcenter/11.6/resourceowners/ownerportal/selectchangeadd.webp)
@@ -43,8 +43,8 @@ who have been granted access to the resource. Click **Next**.
 
 ![Change Resource Access wizard showing 2. Add Access page](/images/accessinformationcenter/11.6/resourceowners/ownerportal/addaccess.webp)
 
-**Step 3 –** On the Add Access page, indicate the new users. Entering a name or email address in the
-search field to find and select users from Active Directory, which populate in a drop-down menu as
+**Step 3 –** On the Add Access page, indicate the new users. Enter a name or email address in the
+search field to find and select users from Active Directory. They populate in a dropdown menu as
 you type. You can also import a list of users by clicking **Import**, navigating to the CSV file,
 and clicking **Open** to select the file. See the [Import Users CSV File](#import-users-csv-file)
 topic for additional information.
@@ -55,7 +55,7 @@ remove a selected user from the list.
 :::
 
 
-**Step 4 –** When the user list is complete, select the desired access level from the drop-down
+**Step 4 –** When the user list is complete, select the access level you want from the dropdown
 menu.
 
 - For File System or SharePoint resources – The options available are dependent upon how the
@@ -75,7 +75,7 @@ menu.
   an expiration date. The user will be automatically removed from the resource after the expiration
   date.
 
-**Step 7 –** Click **Next**. The Access Information Center will begin to process the updates.
+**Step 7 –** Click **Next**. The Access Information Center processes the updates.
 
 :::tip
 Remember, Notes are included in the notification sent to the user (if selected) and recorded with
@@ -89,7 +89,7 @@ the historical record of this change.
 **Finish**. The Change Resource Access wizard closes.
 
 :::note
-If an error is reported on the Commit page, it indicates the access changes could not be
+If an error is reported on the Commit page, it indicates the access changes couldn't be
 made. Reach out to the Ownership Administrator. If an existing request is pending, approve the
 request on the Pending Requests tab of the Access Requests page via the **Access Requests** link on
 the Actions panel.
@@ -110,9 +110,9 @@ user name, for example `NWXTECH\JSmith`.
 
 ## Change Access
 
-Follow the steps to change or remove access for the selected resource.
+To change or remove access for the selected resource:
 
-**Step 1 –** Select the desired resource in the Owner portal and click **Change Access**. The Change
+**Step 1 –** Select the resource you want in the Owner portal and click **Change Access**. The Change
 Resource Access wizard opens.
 
 ![Change Resource Access wizard with the 1. Select Change page with Change access for an existing user option selected](/images/accessinformationcenter/11.6/resourceowners/ownerportal/selectchangechange.webp)
@@ -127,8 +127,8 @@ having access to the resource changed. Click **Next**.
 Windows ctrl-left-click key command to select multiple users. The **View Selections** button shows a
 count of selected users and opens the Users selected for access change panel listing the selections.
 
-**Step 4 –** When the user selection list is complete, select the desired access level from the
-drop-down menu.
+**Step 4 –** When the user selection list is complete, select the access level you want from the
+dropdown menu.
 
 - For File System or SharePoint resources – The options available are dependent upon how the
   Ownership Administrator configured the resource. Options can include **Read**, **Modify**, and
@@ -155,7 +155,7 @@ the historical record of this change.
 **Finish**. The Change Resource Access wizard closes.
 
 :::note
-If an error is reported on the Commit page, it indicates the access changes could not be
+If an error is reported on the Commit page, it indicates the access changes couldn't be
 made. Reach out to the Ownership Administrator. If an existing request is pending, process the
 request on the Pending Requests tab of the Access Requests page via the **Access Requests** link on
 the Actions panel.

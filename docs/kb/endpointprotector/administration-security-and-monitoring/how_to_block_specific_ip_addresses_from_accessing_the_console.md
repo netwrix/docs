@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Block Specific IP Addresses
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "How to Block Specific IP Addresses from Accessing the Console"
 knowledge_article_id: kA0Qk0000002B78KAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Block Specific IP Addresses from Accessing the Console

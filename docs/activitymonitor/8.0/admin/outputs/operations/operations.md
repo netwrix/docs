@@ -37,11 +37,42 @@ The tab contains the following settings and features:
 
 - Monitor Sign-Ins activity – Indicates if user sign-ins activity is monitored
 - Monitor Audit activity – Indicates if audit for all operations is monitored
-- Service – Filter the table by Service using the drop-down menu
-- Category – Filter the table by Category using the drop-down menu
+- Service – Filter the table by Service using the dropdown menu
+- Category – Filter the table by Category using the dropdown menu
 - Operation – Filter the table by Operation using the textbox
 
 The table lists operations being monitored, displaying columns for Service, Category, and Operation.
+
+Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
+Properties window closes.
+
+## For Dell Hosts
+
+The tab contains the following settings and features:
+
+- File Operations – Scope by file operation events: Add, Delete, Rename, Permission change, Read,
+  Update
+- Directory Operations – Scope by directory operation events: Add, Delete, Rename, Permission
+  change, Read / List
+- Suppress reporting of File Explorer's excessive directory traversal activity – When you open a
+  folder, Windows File Explorer tends to read all sub-folders to display proper icons and meta-data.
+  This activity occurs without the explicit intent of the user. This option tries to suppress such
+  automatic activity. It is only available when the Read / List option for Directory Operations is
+  selected.
+- Suppress reporting of File Explorer's excessive file read activity – When you open a folder,
+  Windows File Explorer tends to read files in the folder to display proper icons and meta-data.
+  This activity occurs without the explicit intent of the user. This option tries to suppress such
+  automatic activity. It is only available when the Read option for File Operations is selected.
+- Suppress Microsoft Office operations on temporary files – Filters out events for Microsoft Office
+  temporary files. When Microsoft Office files are saved or edited, many temporary files are
+  created. With this option enabled, events for these temporary files are ignored.
+- Suppress duplicate operations for [VALUE] seconds
+
+:::warning
+**Limitation: Permission Change details not available for Dell devices**
+For Dell devices, Activity Monitor reports that a permission change occurred, but can't report the specifics of the change
+(e.g., which permissions were added or removed, owner changes, or inheritance changes).
+:::
 
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
 Properties window closes.
@@ -124,7 +155,7 @@ Properties window closes.
 
 ## For SharePoint Online Host
 
-The tab contains a subset of tabs. Each tab has a **Select All** check box to include all events for
+The tab contains a subset of tabs. Each tab has a **Select All** checkbox to include all events for
 that tab.
 
 ![Operations Tab for SharePoint Online Properties](/images/activitymonitor/8.0/admin/outputs/operationstab.webp)
@@ -341,4 +372,4 @@ The tab contains the following settings and features:
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
 Properties window closes.
 
-See[Suppress Windows Explorer Activity](/docs/activitymonitor/8.0/admin/outputs/operations/suppress.md) topic for more information.
+See the [Suppress Windows Explorer Activity](/docs/activitymonitor/8.0/admin/outputs/operations/suppress.md) topic for additional information.

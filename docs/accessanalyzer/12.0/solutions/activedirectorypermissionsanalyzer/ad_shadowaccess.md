@@ -33,7 +33,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **AD_ShadowAccess** 
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks, with the exception of the
+Don't modify or deselect the selected analysis tasks, with the exception of the
 **Calculate Shadow Access** analysis tasks. The analysis tasks are preconfigured for this job. The
 **Calculate Shadow Access** analysis task is the only analysis task that has customizable
 parameters.
@@ -95,8 +95,8 @@ topic for additional information.
 
 Customizable parameters enable Access Analyzer users to set the values used to classify user and
 group objects during this job’s analysis. The parameters can be customized and are listed in a
-section at the bottom of the SQL Script Editor. Follow the steps to customize an analysis task’s
-parameters.
+section at the bottom of the SQL Script Editor. To customize an analysis task’s
+parameters, complete the following steps.
 
 **Step 1 –** Navigate to the **Active Directory Permissions Analyzer** > **AD_ShadowAccess** >
 **Configure** node and select **Analysis** to view analysis tasks.
@@ -109,12 +109,12 @@ then click **Analysis Configuration**. The SQL Script Editor opens.
 ![SQL Script Editor](/images/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/shadowaccesssqlscripteditor.webp)
 
 **Step 3 –** In the parameters section at the bottom of the editor, find the Value column.
-Double-click on the current value and change as desired.
+Double-click the current value and change as desired.
 
 - If the variable type is a table, select the cell and click **Edit Table** to modify the value.
 
 :::warning
-Do not change any parameters where the Value states `Created during execution`.
+Don't change any parameters where the Value states `Created during execution`.
 :::
 
 
@@ -154,7 +154,7 @@ domain and sensitive data.
 
 The last report element displays information on potential attack paths for users found in the
 targeted domain. Clicking on the green plus sign next to an attack path will open an Attack Path
-window that displays a step-by-step process of how a user object, if compromised, can be used to
+window that displays a step-by-step process of how an attacker can use a compromised user object to
 conduct a shadow attack.
 
 ![Attack Path window example](/images/accessanalyzer/12.0/solutions/activedirectorypermissionsanalyzer/shadowaccessreport3.webp)

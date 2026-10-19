@@ -15,12 +15,10 @@ where the selected policy employs that event type.
 :::
 
 
-Follow the steps to enable database maintenance.
-
 **Step 1 –** Click **Configuration** > **Database** > **Maintenance** on the menu. The Database
 Maintenance window is displayed.
 
-**Step 1 –** Select the desired tab (Event Type, Analytics, or Policy) and check the **Enabled** box
+**Step 1 –** Select the tab (Event Type, Analytics, or Policy) and check the **Enabled** box
 at the top of the tab.
 
 ![Database Maintenance window - Event Type tab](/images/threatprevention/7.5/admin/configuration/databasemaintenance/enablesettings.webp)
@@ -28,7 +26,7 @@ at the top of the tab.
 **Step 2 –** Select a maintenance task (Event Type, Analytic, or Policy). To set the same operation
 and retention period for multiple tasks, use the **ctrl-left click** command.
 
-**Step 3 –** Select either **Move** or **Delete** from the Operation drop-down menu.
+**Step 3 –** Select either **Move** or **Delete** from the Operation dropdown menu.
 
 - The Move operation requires the Archive DB tab to be configured. See the
   [Archive Data](/docs/threatprevention/7.5/admin/configuration/databasemaintenance/archive.md) topic for additional information.
@@ -48,5 +46,5 @@ in the job execution.
 The configured maintenance options are displayed in the Operation and Retention Period columns of
 the table.
 
-Disabling a previously enabled database maintenance task does not remove the configured settings,
+Disabling a previously enabled database maintenance task doesn't remove the configured settings,
 only prevents that task from being executed in the next run of the database maintenance job.

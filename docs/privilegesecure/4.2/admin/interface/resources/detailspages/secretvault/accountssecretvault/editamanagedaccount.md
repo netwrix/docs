@@ -6,8 +6,6 @@ sidebar_position: 20
 
 # Edit a Managed Account Window
 
-Follow the steps below to edit a managed account in a secret vault.
-
 **Step 1 –** Select a resource from the results list.
 
 **Step 2 –** Click **Edit**.
@@ -18,8 +16,8 @@ Follow the steps below to edit a managed account in a secret vault.
 
 - Resource Name —Displays the name of the resource
 - Username — Displays the name of the account
-- Change Password _(optional)_ — Contains the service account password. The Eye icon can be used to
-  view the password.
+- Change Password _(optional)_ — Contains the service account password. The Eye icon lets you
+view the password.
 
 **Step 4 –** Click **Okay** when finished.
 

@@ -13,10 +13,10 @@ sidebar_position: 160
 3. Click **Lookup Customization**. Enter a sample **Name** and set **Type** to **Entity Field**.
 4. Click **Add Selected Customization** to add the field as a proposed customization.
 5. Click **In Progress** in the status bar.
-6. Click **Save**. The Change Level Required, Current Stage and Change Policy are displayed.
+6. Click **Save**. The Change Level Required, Current Stage, and Change Policy appear.
 7. For this example:
 
-    If you are not an **Approver**:
+    If you aren't an **Approver**:
 
     1. Click **Edit**.
     2. Select yourself as an **Additional Approver**.
@@ -52,7 +52,7 @@ sidebar_position: 160
 
 ## Create a Non-Compliant Change
 
-This change will be flagged as non-compliant and appear on the report as **Non-Compliant**.
+This change is flagged as non-compliant and appears on the report as **Non-Compliant**.
 
 1. Change the **Entity Field** (for example, apply it to **Project**) and click **Save**.
 2. Open the Customization Record.

@@ -1,0 +1,10 @@
+{
+  "label": "Autofill Add-on",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "autofill_add-on"
+  }
+}

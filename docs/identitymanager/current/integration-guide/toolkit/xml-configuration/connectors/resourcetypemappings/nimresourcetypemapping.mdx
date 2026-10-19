@@ -1,0 +1,35 @@
+---
+title: "NimResourceTypeMapping"
+description: " "
+sidebar_position: 6
+---
+
+import ResourcetypemappingIdentifier from '@site/docs/identitymanager/current/_partials/resourcetypemapping-identifier.mdx';
+
+<ResourcetypemappingIdentifier />
+
+The `NimResourceTypeMapping` element is used exclusively with the **NIM (Netwrix Identity Manager) Connector Template** feature. This element is **automatically generated** by the NIM template wizard and should not be created manually.
+
+When you configure a NIM connector and click the "Apply Template" button, the system generates a complete connector configuration. As part of this generation, one `NimResourceTypeMapping` is created for each ResourceType that manages Profile assignments. This mapping links the ResourceType to the NimProfile connection, enabling Identity Manager to provision Profile assignments to the target Identity Manager instance (either the same instance in Local mode or a different instance in Remote mode).
+
+Each generated ResourceType for Profile assignments requires its corresponding `NimResourceTypeMapping` to function correctly. The mapping ensures that provisioning operations route through the appropriate NimProfile connection package.
+
+
+## Examples
+```xml
+<NimResourceTypeMapping Identifier="NimFinanceAnalyst_RT_Generic" Connection="NimProfiles" />
+```
+
+In this example:
+- `Identifier`: References a ResourceType generated for the FinanceAnalyst Profile (naming follows the pattern `Nim{ProfileName}_RT_*`)
+- `Connection`: References the NimProfiles connection that was created when configuring the NIM connector
+
+The NIM template wizard automatically creates one `NimResourceTypeMapping` element for each Profile defined in the target Identity Manager instance.
+
+
+## Properties
+
+|Property|Details|
+|---|---|
+| Connection required | **Type:** String **Description:** Identifier of the corresponding connection. |
+

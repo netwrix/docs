@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -45,7 +45,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
             | Change Permissions\*                                        | "Success" and "Fail" |
             | Take Ownership\*                                            | "Success" and "Fail" |
 
-            \* Select "Fail" only if you want to track failure events, it is not required for
+            \* Select "Fail" only if you want to track failure events, it isn't required for
             success events monitoring.
 
             **NOTE:** If you want to get only state-in-time snapshots of your system configuration,
@@ -56,14 +56,13 @@ You can configure your IT Infrastructure for monitoring in one of the following
 
             - The Audit: Force audit policy subcategory settings (Windows 7 or later) security
               option must be enabled.
-            - **NOTE:** If you want to get only state-in-time snapshots of your system
-              configuration, limit your audit settings to the following policies:
+            - If you want to get only state-in-time snapshots of your system configuration, limit your audit settings to the following policies:
 
                 | Advanced Audit Policy                     | Setting   |
                 | ----------------------------------------- | --------- |
                 | Object Access > Audit File Share          | "Success" |
                 | Object Access > Audit Handle Manipulation | "Success" |
-                | Policy Change > Audit Audit Policy Change | "Success" |
+                | Policy Change > Audit Policy Change       | "Success" |
 
         - The following legacy policies can be configured instead of advanced:
 
@@ -88,11 +87,11 @@ You can configure your IT Infrastructure for monitoring in one of the following
             - File and Printer Sharing (Echo Request - ICMPv4-In)
             - File and Printer Sharing (Echo Request - ICMPv6-In)
 
-                **NOTE:** The rules marked with \* are required only if you do not want to use
+                **NOTE:** The rules marked with \* are required only if you don't want to use
                 network traffic compression for auditing.
 
             - If you plan to audit Windows Server 2019 or Windows 10 Update 1803 without network
-              compression service, make sure the following inbound connection rules are enabled:
+              compression service, ensure the following inbound connection rules are enabled:
 
                 - Remote Scheduled Tasks Management (RPC)
                 - Remote Scheduled Tasks Management (RPC-EMAP)
@@ -107,18 +106,16 @@ Consider the following:
 
 - To collect data from 32-bit operating systems, network traffic compression must be disabled.
 - To collect data from Windows Failover Cluster, network traffic compression must be enabled.
-- Scale-Out File Server (SOFS) cluster is not supported.
-- Auditing of files and folders placed directly into the DFS namespace root is not supported, as
-  such configuration is not recommended by Microsoft. (See the Microsoft
+- Scale-Out File Server (SOFS) cluster isn't supported.
+- Auditing of files and folders placed directly into the DFS namespace root isn't supported, as
+  such configuration isn't recommended by Microsoft. (See the Microsoft
   [Placing files directly in the namespace share](https://learn.microsoft.com/en-us/archive/blogs/askds/common-dfsn-configuration-mistakes-and-oversights#placing-files-directly-in-the-namespace-share)
-  article for additional information.) Make sure the UNC path of a shared folder is placed within a
+  article for additional information.) ensure the UNC path of a shared folder is placed within a
   share targeted by a DFS folder.
 
 ## Configuration Steps
 
-Follow the steps to configure Windows File Servers for auditing:
-
-**Step 1 –** Check requirements. Make sure the Windows File Servers you want to monitor meet the
+**Step 1 –** Check requirements. Ensure the Windows File Servers you want to monitor meet the
 requirements.
 
 **Step 2 –** Decide on audit data to collect.
@@ -132,7 +129,7 @@ requirements.
     - Audit flags must be set on every file share you want to audit.
     - If your file shares are stored within one folder (or disk drive), you can configure audit
       settings for this folder only. As a result, you will receive reports on all required access
-      types applied to all file shares within this folder. It is not recommended to configure audit
+      types applied to all file shares within this folder. It isn't recommended to configure audit
       settings for system disks.
     - By default, Auditor will monitor all shares stored in the specified location, except for
       hidden shares (both default and user-defined). If you want to monitor user-defined hidden
@@ -146,7 +143,7 @@ requirements.
 
 - To collect data from 32-bit operating systems, network traffic compression must be disabled.
 - To collect data from Windows Failover Cluster, network traffic compression must be enabled.
-- Scale-Out File Server (SOFS) cluster is not supported.
+- Scale-Out File Server (SOFS) cluster isn't supported.
 - Several constraints apply to DFS auditing. See the DFS-Related Constraints topic for additional
   information.
 
@@ -155,14 +152,14 @@ requirements.
 - In the reports and search results, in some cases, Auditor displays not the actual time when the
   event occurred but data collection time.
 - Auditor may report on several unexpected changes with _who_ (initiator's account) reported as
-  _system_ due to the native Windows File Servers audit peculiarities. If you do not want to see
+  _system_ due to the native Windows File Servers audit peculiarities. If you don't want to see
   these changes, exclude them from the audit. See the [File Servers](/docs/auditor/10.7/configuration/fileservers/overview.md) topic for
   additional information. For example - mass file removals, when target Windows server generates too
   many events at a time and the product is unable to parse their sequences correctly.
 - Due to Windows limitations, the _copy/rename/move_ actions on remote file shares may be reported
   as two sequential actions: copying – as adding a new file and reading the initial file;
   renaming/moving – as removing the initial file and adding a new file with the same name.
-- To report on _copy_ actions on remote file shares, make sure that audit of successful read
+- To report on _copy_ actions on remote file shares, ensure that audit of successful read
   operations is enabled. See the [Configure Object-Level Access Auditing](/docs/auditor/10.7/configuration/fileservers/windows/objectlevel.md) topic for
   additional information.
 
@@ -228,16 +225,15 @@ provide the UNC path of the whole namespace or UNC path of the DFS link (folder)
 - _"\\domain\dfsnamespace\"_ (domain-based namespace)
 - _"\\server\dfsnamespace\"_ (in case of stand-alone namespace);
 
-Auditing of files and folders placed directly into the DFS namespace root is not supported, as such
-configuration is not recommended by Microsoft. See the
+Auditing of files and folders placed directly into the DFS namespace root isn't supported, as such
+configuration isn't recommended by Microsoft. See the
 [Placing files directly in the namespace share](https://docs.microsoft.com/en-us/archive/blogs/askds/common-dfsn-configuration-mistakes-and-oversights#placing-files-directly-in-the-namespace-share)
-section of the Microsoft article for additional information. Make sure the UNC path of a shared
+section of the Microsoft article for additional information. Ensure the UNC path of a shared
 folder is placed within a share targeted by a DFS folder.
 
-For recommendations on configuring DFS replication, refer to the following Netwrix knowledge base
-article:
+For recommendations on configuring DFS replication, see the Netwrix knowledge base article
 [Why did loss of performance occur when configuring audit settings for Windows File Servers?](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/auditing-distributed-file-systems-with-replication-in-netwrix-auditor).
-Remember that replication of namespace roots is not supported.
+Remember that replication of namespace roots isn't supported.
 
 ## File Servers and Antivirus
 

@@ -19,7 +19,7 @@ The Managed organizations page has the following tabs:
   the [Sources and Connectors](/docs/1secure/admin/organizations/sourcesandconnectors/overview.md) topic for additional information.
 - Sites – View the sites and status of your Netwrix Cloud Agent. See the
   [Add Sites to an Organization](/docs/1secure/admin/organizations/addsites.md) and
-  [Update Netwrix Cloud Agent](docs\1secure\admin\updatenetwrixcloudagent.md) topic for additional information.
+  [Update Netwrix Cloud Agent](/docs/1secure/admin/updatenetwrixcloudagent.md) topic for additional information.
 - Credentials – Review and edit the credentials of your organization. See
   the[ Manage Credentials ](/docs/1secure/admin/organizations/managingcredentials.md)topic for additional information.
 - Users – Review or add Business Viewers or Co-managing Administrators to the audited organization.
@@ -34,8 +34,8 @@ In addition to the tabs, the right upper corner of the page has the following op
 
 ## View the Dashboard for an Organization
 
-Once you select **View dashboard** on your organization's tab, you can view the predefined
-dashboards with the data applicable to your organization. These includes the following dashboards:
+After you select **View dashboard** on your organization's tab, you can view the predefined
+dashboards with data applicable to your organization. The following dashboards are available:
 
 - New investigation – Search incidents, create reports, and browse your data
 - [Risk Assessment Dashboard](/docs/1secure/admin/riskprofiles/riskassessmentdashboard.md) – Go to Risk Assessment

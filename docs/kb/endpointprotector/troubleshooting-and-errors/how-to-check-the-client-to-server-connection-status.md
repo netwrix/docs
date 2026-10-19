@@ -14,10 +14,11 @@ keywords:
   - port
   - policies
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: How to Check the Client-to-Server Connection Statu
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "How to Check the Client-to-Server Connection Status"
 knowledge_article_id: kA0Qk0000002B14KAE
 ---

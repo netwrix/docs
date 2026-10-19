@@ -9,8 +9,8 @@ sidebar_position: 10
 New Health Status dashboard facilitates Auditor maintenance and troubleshooting tasks, providing IT
 specialists with at-a-glance view on the most critical factors: data collection performance, product
 health and storage capacity. The dashboard comprises a set of widgets that display the status of
-these aspects using aggregated statistics and charts. Nearly each widget allows you to drill down to
-the detailed information on the aspect you are interested in.
+these aspects using aggregated statistics and charts. Nearly each widget provides access to detailed
+information on the aspect you're interested in.
 
 To view the dashboard, on the main Auditor page, click the Health status tile located in the
 Configuration section.
@@ -18,7 +18,7 @@ Configuration section.
 The dashboard includes the following widgets:
 
 - The Activity records by date chart—Shows the number of activity records produced by your data
-  sources, collected and saved by Netwrix Auditor during the last 7 days. See the
+  sources, collected, and saved by Netwrix Auditor during the last 7 days. See the
   [Activity Records Statistics](/docs/auditor/10.8/admin/healthstatus/dashboard/activityrecordstatistics.md) topic for additional information.
 - The Monitoring overview widget—Shows aggregated statistics on the statuses of all monitoring plans
   configured in Netwrix Auditor at the moment. See the [Monitoring Overview](/docs/auditor/10.8/admin/healthstatus/dashboard/monitoringoverview.md)
@@ -39,7 +39,7 @@ The dashboard includes the following widgets:
   [System Health](/docs/auditor/10.8/requirements/longtermarchive.md#system-health) topic for additional
   information.
 
-![healthstatusdashboard_thumb_0_0](/images/auditor/10.7/admin/healthstatus/dashboard/healthstatusdashboard_thumb_0_0.webp)
+![healthstatusdashboard_thumb_0_0](/images/auditor/10.8/admin/healthstatus/dashboard/healthstatusdashboard_thumb_0_0.webp)
 
 You can also instruct Netwrix Auditor to forward similar statistics as a health summary email to
 personnel in charge. For that, click Notification settings, then follow the steps described in the

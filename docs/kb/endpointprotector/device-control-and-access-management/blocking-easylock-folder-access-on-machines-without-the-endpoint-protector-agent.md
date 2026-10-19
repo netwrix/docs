@@ -12,10 +12,11 @@ keywords:
   - access control
   - endpoint protection
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Blocking EasyLock Folder Access on Machines...
 tags:
   - device-control-and-access-management
+  - kb
 title: "Blocking EasyLock Folder Access on Machines Without the Endpoint Protector Agent"
 knowledge_article_id: kA0Qk0000002B6iKAE
 ---

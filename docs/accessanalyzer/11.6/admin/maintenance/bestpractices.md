@@ -6,20 +6,19 @@ sidebar_position: 50
 
 # Best Practices
 
-With any new product, a few pointers can really get us started on the right foot. In the spirit of
-making you successful, here are some tips that will help you become an effective user of the
-Enterprise Auditor in no time. Enjoy!
+With any new product, a few pointers can help you get started effectively. Here are some tips to
+help you become an effective user of Enterprise Auditor quickly.
 
 ## Do
 
 The following is a list of best practices to use for Enterprise Auditor:
 
-- Read all Job and Job Group descriptions and instructions prior to running any solution
-- Scope all collection queries to target just the desired objects, locations, or hosts you want to
+- Read all Job and Job Group descriptions and instructions before running any solution
+- Scope all collection queries to target just the objects, locations, or hosts you want to
   collect information from
-- Run new solutions against a single host or subset of data prior to running against all to ensure
+- Run new solutions against a single host or subset of data before running against all to ensure
   proper operation, configuration, and output of each job
-- Leverage service accounts (if possible) containing the proper permissions to access the
+- Use service accounts (if possible) containing the proper permissions to access the
   information you want to audit rather than personal user accounts (this will reduce “access denied”
   warnings due to insufficient privileges)
 - Set a username and password for any scheduled task
@@ -27,31 +26,31 @@ The following is a list of best practices to use for Enterprise Auditor:
   Enterprise Auditor System Requirements & Installation Notes document for details)
 - Set a connection profile inside the Job “properties” menu for any job that runs using the Exchange
   Metrics data collector
-- Check the “Messages” table within any Job’s “Results” node if reports do not generate or
+- Check the “Messages” table within any Job’s “Results” node if reports don't generate or
   collection doesn’t appear to be working properly
 - Configure history settings at the Job level (as opposed to at the Global or Job Group level) to
   avoid unnecessary storage consumption within SQL
 - Contact Netwrix Support with ANY questions you have
 
-## Do Not
+## Don't
 
 The following is a list of practices to avoid for Enterprise Auditor.
 
-- Do not change Job or Job Group names within the Job Tree
-- Do not attempt to run an entire Solution Set without configuring your scoping options first
-- Do not confuse WARNINGS for errors in data collection. Warnings are purely informational
-- Do not change the name of your Enterprise Auditor database
-- Do not edit a job’s configuration or open any query or analysis rule while that job is running
-- Do not use the Fully Qualified Domain Name of a host when manually entering hosts to run queries
+- Don't change Job or Job Group names within the Job Tree
+- Don't attempt to run an entire Solution Set without configuring your scoping options first
+- Don't confuse WARNINGS for errors in data collection. Warnings are purely informational
+- Don't change the name of your Enterprise Auditor database
+- Don't edit a job’s configuration or open any query or analysis rule while that job is running
+- Don't use the Fully Qualified Domain Name of a host when manually entering hosts to run queries
   against; instead, use the Common Name
-- Do not enable “Debug” logging unless needed for additional troubleshooting
-- Do not change the database Enterprise Auditor writes to at the global level; instead, change the
+- Don't enable “Debug” logging unless needed for additional troubleshooting
+- Don't change the database Enterprise Auditor writes to at the global level; instead, change the
   database at the job level if desired
 
 ### Contact Support
 
-When the checklist items do not resolve the issue, contact support with as much applicable
-information as possible from the table below. It is possible that a hot fix may already exist for
+When the checklist items don't resolve the issue, contact support with as much applicable
+information as possible from the following information. A hot fix may already exist for
 the product.
 
 **What is the version of the Access Analyzer application?**   

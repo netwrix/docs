@@ -7,7 +7,7 @@ sidebar_position: 10
 # Application Server Requirements
 
 :::warning
-Netwrix Threat Manager cannot be installed on the same server as Netwrix Threat Manager
+Netwrix Threat Manager can't be installed on the same server as Netwrix Threat Manager
 Reporting Module.
 :::
 
@@ -21,12 +21,11 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the total number of daily events sent to Threat Manager. It is suggested to
-use the total events for a peak day of the week, by activity.
+These depend on the total number of daily events sent to Threat Manager. Use the total events for a peak day of the week, by activity.
 
 | Environment      | Enterprise | Extra Large | Large  | Medium | Small | Extra Small |
 | ---------------- | ---------- | ----------- | ------ | ------ | ----- | ----------- |
@@ -43,7 +42,7 @@ All values are based upon a seven day event retention period in Threat Manager.
 
 
 Daily events to be monitored by Threat Manager can typically be discovered by using Netwrix Threat
-Prevention or Netwrix Activity Monitor. When planning a deployment where there is currently no
+Prevention or Netwrix Activity Monitor. When planning a deployment where there is  no
 Netwrix agent deployed, it can be more difficult to plan for scale. However, the following are
 estimations based on organization size can be used:
 
@@ -81,11 +80,11 @@ The following are additional requirements for the application server:
 The following considerations must be accommodated for:
 
 - When running antivirus scans against the PostgreSQL v14 database, the PostgreSQL data folder must
-  be excluded from the scans in order to prevent database complications.
+  be excluded from the scans to prevent database complications.
 - For performance reasons, disable Windows File Indexing on the drive containing the Threat Manager
   database.
-- Disk Defragmentation jobs should never be performed on the drive containing Threat Manager
-  PostgreSQL database. This can cause operational issues with the PostgreSQL database.
+- Never run Disk Defragmentation jobs on the drive containing the Threat Manager
+  PostgreSQL database. Defragmentation can cause operational issues with the PostgreSQL database.
 
 **Permissions for Installation and Application Use**
 
@@ -95,8 +94,8 @@ The following permissions are required to install and use the application:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, we fully support the use of virtual machines. This
-section contains special considerations when leveraging virtualization.
+Although physical machines are always preferred, Threat Manager fully supports virtual machines. This
+section contains special considerations when using virtualization.
 
 - VMWare® ESX® – If using ESX, the following specifications are recommended:
 

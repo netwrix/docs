@@ -1,0 +1,36 @@
+@startuml component
+package "ConnectionPackage" {
+	class ConnectionPackage {
+		Description_L1 : String
+		DisplayName_L1 : String
+		DocumentationUrl : String
+		ExportType : Int32
+		FulfillmentType : Int32
+		HasIncrementalMode : Boolean
+		Identifier : String
+		ImplementsConfiguration : Boolean
+		ImplementsEntityTypeMapping : Boolean
+		ImplementsResourceTypeMapping : Boolean
+		InducedFulfillment : Int32
+		Keywords : String
+		License : String
+		LogoUrl : String
+		Publisher : String
+		WebsiteUrl : String
+		--
+		Connections : Connection[]
+		PackageScaffoldings : Scaffolding[]
+	}
+}
+package "Connection" {
+	class Connection {
+	}
+}
+package "Scaffolding" {
+	class Scaffolding {
+	}
+}
+ConnectionPackage "1" --  "0..*"Connection
+ConnectionPackage "0..1" --  "0..*"Scaffolding
+hide empty members
+@enduml

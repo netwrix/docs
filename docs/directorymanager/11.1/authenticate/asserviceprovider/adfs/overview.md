@@ -27,13 +27,12 @@ server.
       metadata.
     - Configure the types of claims that are supported by AD FS.
 
-To learn more about the AD FS console, see the
-[AD FS Console](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/gg557729(v=ws.10)?redirectedfrom=MSDN)
-Microsoft article.
+For more information about the AD FS console, see the Microsoft documentation on
+[AD FS Console configuration](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/gg557729(v=ws.10)?redirectedfrom=MSDN).
 
 ## Configuration Steps
 
-Follow these steps to set up AD FS as an SSO solution for Directory Manager:
+To set up AD FS as an SSO solution for Directory Manager:
 
 - Generate the consumer URL and audience URL for the Directory Manager client with which you want to
   configure AD FS. See the [Generate URLs](/docs/directorymanager/11.1/authenticate/asserviceprovider/adfs/generateurls.md) topic for additional information.

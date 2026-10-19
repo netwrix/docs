@@ -1,0 +1,3 @@
+message: "Avoid positional references like 'below', 'above', or 'as shown below'. Use 'the following' or a named anchor instead."
+level: warning
+reason: "This rule should trigger when the documentation uses spatial direction words like 'below', 'above', 'as shown below', or 'the above section' to reference other content."

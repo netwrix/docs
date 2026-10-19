@@ -6,10 +6,7 @@ sidebar_position: 50
 
 # Work with Collected Data
 
-Follow the steps to work with collected data:
-
-**Step 1 –** On the computer where you executed the add-on, navigate to **Start** > **All
-Programs** > **Event Viewer**.
+**Step 1 –** On the computer where you executed the add-on, navigate to **Start** > **All Programs** > **Event Viewer**.
 
 **Step 2 –** In the Event Viewer dialog, navigate to **Event Viewer (local)** > **Applications and
 Services Logs** >Netwrix Auditor Integration log.

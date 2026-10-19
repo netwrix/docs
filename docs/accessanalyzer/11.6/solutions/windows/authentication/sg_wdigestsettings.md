@@ -7,7 +7,7 @@ sidebar_position: 30
 # SG_WDigestSettings Job
 
 The SG_WDigestSettings job lists WDigest settings on all targeted hosts. In particular, the
-UseLogonCredentials key is examined. If this key is not set properly for a given host, cleartext
+UseLogonCredentials key is examined. If this key isn't set properly for a given host, cleartext
 passwords will be stored in memory. See the
 [Microsoft Security Advisory](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)
 article for more information.
@@ -36,7 +36,7 @@ Navigate to the **Windows** > **Authentication** > **SG_WDigestSettings** > **Co
 select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

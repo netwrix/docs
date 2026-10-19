@@ -30,5 +30,5 @@ installed. The documentation of the Web Application installation can be seen in 
 [User rights](/docs/passwordsecure/9.2/configuration/advancedview/mainmenufc/userrights/user_rights.md)**:** The users need the
 right **Can synchronize with mobile devices.**
 
-[Database properties](/docs/passwordsecure/9.2/configuration/servermanger/databaseproperties/database_properties.md): It must
+[Database properties](/docs/passwordsecure/9.2/configuration/servermanager/databaseproperties/database_properties.md): It must
 be ensured that the Enable mobile synchronization option is set.

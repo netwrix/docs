@@ -11,7 +11,7 @@ following in an identity store:
 
 - Search the directory.
 - Perform group management tasks, such as create and update their groups; join and leave groups;
-  attest, expire and renew groups, and more.
+  attest, expire, and renew groups, and more.
 - Carry out user management tasks, such as create, update, and delete users in the directory. Users
   can maintain and update their profiles, change their passwords, manage their accounts, manage
   their direct reports, and more.
@@ -40,13 +40,13 @@ in.
 ## Self-Service Password Reset Portal (SSPR)
 
 A Self-Service Password Reset portal is a type of Directory Manager portal that only facilitates
-password-related functions. This portal enables users to manage their directory account passwords,
+password-related functions. With this portal, users can manage their directory account passwords,
 i.e., the password for the account they use to access their workstations and other Microsoft
 services. Users can change and reset their passwords, as well as unlock their accounts. They can
 also enroll their accounts in Directory Manager and link accounts in different identity stores.
 
 :::note
-Directory Manager does not support the upgrade of a Password Center portal (from a previous
+Directory Manager doesn't support the upgrade of a Password Center portal (from a previous
 version) to an SSPR portal. You have to create the SSPR portal as a new portal.
 :::
 

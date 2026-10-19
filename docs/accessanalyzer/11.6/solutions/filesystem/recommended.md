@@ -6,14 +6,13 @@ sidebar_position: 10
 
 # Recommended Configuration for the File System Solution
 
-The File System Solution has been configured to inherit down from the **FileSystem** > **Settings**
-node for most jobs. However, it is a best practice to assign the host list and the Connection
-Profile at the data collection level. Once these are assigned to the job, it can be run manually or
-scheduled.
+By default, the File System Solution inherits settings from the **FileSystem** > **Settings**
+node for most jobs. However, as a best practice, assign the host list and the Connection Profile at the data collection
+level. After you assign these to the job, you can run it manually or schedule it.
 
 :::tip
-Remember, the credential permissions required for the scan and host lists are affected by the scan
-mode selected. See the
+Remember, the scan mode you select affects the credential permissions required for the scan and
+host lists. See the
 [File System Scan Options](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/scanoptions.md)
 topic for additional information.
 :::
@@ -21,7 +20,7 @@ topic for additional information.
 
 **Dependencies**
 
-- The .Active Directory Inventory Job Group needs to be executed prior to running the File System
+- The .Active Directory Inventory Job Group needs to be executed before running the File System
   Solution
 - File System Proxy deployed to targeted proxy servers (for proxy scanning architecture only)
 - Activity Monitor deployed, configured, and services running (for Activity Auditing only)
@@ -32,21 +31,21 @@ topic for additional information.
 
 **Targeted Hosts**
 
-The host list assignment should be assigned under the **FileSystem** > **0.Collection** >
-**[job]** > **Host** node. The list should be a custom created list for the file system environments
-to be targeted. Check the box for the custom-created host list. It is necessary for the **…System
-Scans** jobs and the corresponding **…Bulk Import** jobs to be set to the same host lists.
+Assign the host list under the **FileSystem** > **0.Collection** >
+**[job]** > **Host** node. Use a custom list of the file system environments you want to target.
+Check the box for the custom-created host list. The **…System
+Scans** jobs and the corresponding **…Bulk Import** jobs must use the same host lists.
 
 The 0-FSDFS System Scans Job is an exception and is set to the Default domain controller. For
-standalone namespaces, modify this host list to target the desired File Systems or Storage
-Controllers.
+standalone namespaces, modify this host list to target the File Systems or Storage Controllers you
+want to scan.
 
-If targeting Nasuni Edge Appliances, the 0-FS_Nasuni Job needs to be assigned a custom host list
+If you target Nasuni Edge Appliances, assign the 0-FS_Nasuni Job a custom host list
 containing all on-premise Nasuni Edge Appliances and cloud filers.
 
-If using multiple proxy servers, these should also be configured within a different custom-created
+If you use multiple proxy servers, configure them within a different custom-created
 host list. Then assign the proxy servers host list on the
-[FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings.md)
+[FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings/appletsettings.md)
 page of the File System Access Auditor Data Collector Wizard within the following jobs in the
 0.Collection Job Group according to the type of auditing being conducted:
 
@@ -54,12 +53,12 @@ page of the File System Access Auditor Data Collector Wizard within the followin
 - 1-FSAC System Scans Job for Activity Auditing
 - 1-SEEK System Scans Job for Sensitive Data Discovery Auditing
 
-Windows clusters have special needs when it comes to a host list and the host inventory data. It is
-necessary to target the Windows File Server Cluster (name of the cluster) of interest when running a
-scan against a Windows File System Cluster. Within the Enterprise Auditor Master Host Table, there
-should be a host entry for the cluster as well as for each node. Additionally, each of these host
-entries must have the name of the cluster in the WinCluster column in the host inventory data. This
-may need to be updated manually. See the
+Windows clusters have special needs for the host list and host inventory data. You must target the
+Windows File Server Cluster (name of the cluster) of interest when running a scan against a Windows
+File System Cluster. The Enterprise Auditor Master Host Table must include a
+host entry for the cluster as well as for each node. Additionally, each of these host
+entries must have the name of the cluster in the WinCluster column in the host inventory data. You
+may need to update this manually. See the
 [Host Inventory](/docs/accessanalyzer/11.6/admin/settings/hostinventory.md)
 topic for additional information.
 
@@ -74,8 +73,8 @@ targeted by the File System scans.
 :::
 
 
-In order for the selected scan mode to be applied accurately for the target file system, it is
-necessary for host inventory to match the values in the table for OSType:
+For the selected scan mode to apply accurately to the target file system, host inventory must match
+the values in the table for OSType:
 
 | Devices | OSType Value   |
 | ------- | -------------- |
@@ -90,7 +89,7 @@ necessary for host inventory to match the values in the table for OSType:
 **Connection Profile**
 
 The FSAA Data Collector requires permissions based on the platform being targeted for data
-collection as well as the scan mode selected. See the
+collection and the scan mode selected. See the
 [File System Scan Options](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/scanoptions.md)
 topic and the
 [File System Supported Platforms](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/filesystems.md)
@@ -103,13 +102,13 @@ The Connection Profile should be assigned under the **FileSystem** > **0.Collect
 Properties window on the **Connection** tab. It is set to Use the Default Profile, as configured at
 the global settings level. However, since this may not be the Connection Profile with the necessary
 permissions for the assigned hosts, click the radio button for the **Select one of the following
-user defined profiles** option and select the appropriate Connection Profile drop-down menu.
+user defined profiles** option and select the appropriate Connection Profile dropdown menu.
 
 :::tip
-Remember, if targeting Nasuni Edge Appliances, the 0-FS_Nasuni Job needs to be assigned a custom
+Remember, if you target Nasuni Edge Appliances, assign the 0-FS_Nasuni Job a custom
 Connection Profile containing the **API Access Key** and **Passcode** for each on-premise Nasuni
 Edge Appliance and cloud filer in the target environment. Nasuni API key names are case sensitive.
-When providing them, ensure they are entered in the exact same case as generated.
+Enter them in the exact case in which they were generated.
 :::
 
 
@@ -124,33 +123,33 @@ dependent on the size of the target environment. The FileSystem Solution can be 
 weekly or as desired depending on the types of auditing being conducted and the scope of the target
 environment.
 
-For example, it may be desired in large environments to run Activity Auditing collection jobs on a
-daily basis, but to only run Access Auditing and Sensitive Data Discovery Auditing collection jobs
-on a weekly basis followed by the analysis and reporting job groups.
+For example, in large environments, you might run Activity Auditing collection jobs daily, but run
+Access Auditing and Sensitive Data Discovery Auditing collection jobs only weekly, followed by the
+analysis and reporting job groups.
 
 **Run Order**
 
-Whatever schedule frequency may be configured, it is also recommended to streamline the collection
-jobs to those desired. The jobs in the 0.Collection Job Group must be run in order for the auditing
+Regardless of the schedule frequency you configure, streamline the collection
+jobs to only those you need. Run the jobs in the 0.Collection Job Group in order for the auditing
 type. Run …System Scans jobs and then the corresponding …Bulk Import jobs according to the desired
 workflow.
 
-The other File System Solution sub-job groups can be run in any order, together or individually,
+The other File System Solution sub-job groups can be run together or individually in any order,
 after running the 0.Collection Job Group. The FileSystemOverview Job pulls information from both the
 0.Collection Job Group and the other sub-job groups, and the report may contain blank sections if
-only select sub-job groups are run.
+you run only select sub-job groups.
 
 :::info
-If only conducting one or two types of auditing, scope the solution by disabling
-the undesired collection jobs. Disabling them allows the solution to run more efficiently. It is not
-recommended to delete any jobs. See the
+If you conduct only one or two types of auditing, scope the solution by disabling
+the undesired collection jobs. Disabling them allows the solution to run more efficiently. Don't
+delete any jobs. See the
 [Disable or Enable a Job](/docs/accessanalyzer/11.6/admin/jobs/job/disableenable.md)
 topic for additional information.
 :::
 
 
 :::note
-If targeting Nasuni Edge Appliances, it is necessary to add the
+If targeting Nasuni Edge Appliances, add the
 [0-FS_Nasuni Job](/docs/accessanalyzer/11.6/solutions/filesystem/collection/0-fs_nasuni.md)
 to the **0.Collection** Job Group.
 :::
@@ -179,7 +178,7 @@ customizations include:
 - Default Scoping Options page > File Details tab, configure the file detail collection
 
     - By default, file detail scans are disabled
-    - Select the type of file data to be collected and optionally add filters
+    - Select the type of file data to collect and optionally add filters
     - Set on the following **0.Collection** Job Group jobs:
 
         - **1-FSAA System Scans** Job for Access Auditing
@@ -208,26 +207,24 @@ customizations include:
       topic and the
       [File System Supported Platforms](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/filesystems.md)
       topic for additional information.
-    - Local Mode – All of the data collection processing is conducted by the Enterprise Auditor
-      Console server across the network
-    - Applet Mode – The File System applet is deployed to the target host when the job is executed
-      to conduct data collection. The data is collected on the Windows target host where the applet
-      is deployed. The final step in data collection is to compress and transfer the data collected
-      in the SQLite databases, or Tier 2 databases, back to the Enterprise Auditor Console server.
-      If the target host is a NAS device, the File System scans default to local mode for that host.
-    - Proxy Mode with Applet – The File System applet is deployed to the Windows proxy server when
-      the job is executed to conduct data collection. The data collection processing is initiated by
-      the proxy server where the applet is deployed and leverages a local mode-type scan to each of
-      the target hosts. The final step in data collection is to compress and transfer the data
-      collected in the SQLite databases, or Tier 2 databases, back to the Enterprise Auditor Console
-      server.
-    - Proxy Mode as a Service – The File System Proxy Service must be installed on the Windows proxy
-      servers prior to executing the scans. The data collection processing is conducted by the proxy
-      server where the service is running and leverages a local mode-type scan to each of the target
-      hosts. The final step in data collection is to compress and transfer the data collected in the
-      SQLite databases, or Tier 2 databases, back to the Enterprise Auditor Console server. The
-      credential granted rights to interact with the service must be included in the assigned
-      Connection Profile.
+    - Local Mode – The Enterprise Auditor Console server conducts all data collection processing
+      across the network
+    - Applet Mode – When the job runs, it deploys the File System applet to the target host to
+      collect data. The applet collects data on the Windows target host where it's deployed. The
+      final step compresses and transfers the collected data in the SQLite databases, or Tier 2
+      databases, back to the Enterprise Auditor Console server. If the target host is a NAS device,
+      the File System scans default to local mode for that host.
+    - Proxy Mode with Applet – When the job runs, it deploys the File System applet to the Windows
+      proxy server to collect data. The proxy server where the applet is deployed initiates data
+      collection processing and uses a local mode-type scan against each target host. The final step
+      compresses and transfers the collected data in the SQLite databases, or Tier 2 databases, back
+      to the Enterprise Auditor Console server.
+    - Proxy Mode as a Service – You must install the File System Proxy Service on the Windows proxy
+      servers before running the scans. The proxy server where the service runs conducts data
+      collection processing and uses a local mode-type scan against each target host. The final step
+      compresses and transfers the collected data in the SQLite databases, or Tier 2 databases, back
+      to the Enterprise Auditor Console server. The assigned Connection Profile must include the
+      credential granted rights to interact with the service.
     - Set on the following **0.Collection** Job Group jobs:
 
         - **1-FSAA System Scans** Job for Access Auditing
@@ -240,7 +237,7 @@ customizations include:
 
         - For first time execution, recommend setting to 0
         - For second execution, recommend setting to 2
-        - Then set to the desired depth.
+        - Then set to the depth you want.
 
     - Set on the following **0.Collection** Job Group jobs:
 
@@ -260,14 +257,14 @@ customizations include:
 **Analysis Configuration**
 
 This solution should be run with the default analysis configuration. Most of these analysis tasks
-are preconfigured and should not be modified or deselected. There are a few which are deselected by
+are preconfigured and shouldn't be modified or deselected. There are a few which are deselected by
 default, as they are for troubleshooting purposes.
 
-Though the analysis tasks should not be deselected, the following parameters can be modified:
+Though the analysis tasks shouldn't be deselected, the following parameters can be modified:
 
 - The .Active Directory Inventory Solution defines large groups, deeply nested groups, stale users,
   and users with large tokens. These parameters can be customized and are applicable to any
-  solution, including File System, which incorporate this analyzed data into further analysis.
+  solution, including File System, which incorporates this analyzed data into further analysis.
 
     - Customize within **.Active Directory Inventory** > **3-AD_Exceptions** Job analysis tasks
 
@@ -297,20 +294,20 @@ following jobs:
 - **5.Activity** > **Forensics** > **FS_PermissionChanges** Job
 - **5.Activity** > **Suspicious Activity** > **FS_HighestHourlyActivity** Job
 
-Please see the appropriate topics for details on these tasks.
+See the appropriate topics for details on these tasks.
 
 **Additional Consideration**
 
-The Ad Hoc Audits Job Group is designed to work independent from the rest of the solution, but it is
-dependent upon the 0.Collection Job Group. The jobs are scoped to specific shares and trustees
+The Ad Hoc Audits Job Group works independently from the rest of the solution but depends on the
+0.Collection Job Group. The jobs are scoped to specific shares and trustees
 within an analysis task.
 
 The jobs contained in the group use custom SQL scripts to render views on collected data. SQL views
-are used to populate report element tables and graphs. Changing or modifying the group, job, or
-table names result in no data displayed within the reports or the AIC.
+populate report element tables and graphs. Changing or modifying the group, job, or
+table names results in no data displayed within the reports or the AIC.
 
 :::tip
-Remember, it is recommended to scope the 0.Collection Job Group to only include the collection
-components desired by disabling the undesired collection jobs. Disabling them allows the solution to
-run more efficiently. It is not recommended to delete any jobs.
+Remember, scope the 0.Collection Job Group to include only the collection
+components you want by disabling the undesired collection jobs. Disabling them allows the solution to
+run more efficiently. Don't delete any jobs.
 :::

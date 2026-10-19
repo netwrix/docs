@@ -7,7 +7,7 @@ sidebar_position: 160
 # LDAP Monitoring Event Type
 
 The LDAP Monitoring event type generates an event for LDAP queries that match policy filter rules.
-It is important to specify rules that zero in on specific or unusual activity. Since Active
+Specify rules that focus on specific or unusual activity. Since Active
 Directory is mostly LDAP queries, insufficient policy filters/rules will adversely impact
 performance.
 
@@ -46,7 +46,7 @@ types.
 The operation selected affects what options are available on this filter and what other filters are
 available for the event type:
 
-- LDAP Search – Use the LDAP Search operation to search for and identify activity that does not
+- LDAP Search – Use the LDAP Search operation to search for and identify activity that doesn't
   conform to your security configurations
 
   - This option displays additional filters for Secure configurations and Search scopes. See the
@@ -58,7 +58,7 @@ available for the event type:
 
   - See the [LDAP Ping Operations Use Case](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/ldapmonitoring/ldapping.md) topic for additional information.
 
-  When LDAP Ping is selected, the Secure Configurations and Search scopes sections are not
+  When LDAP Ping is selected, the Secure Configurations and Search scopes sections aren't
   displayed.
 
 ## LDAP Runtime Filter
@@ -73,7 +73,7 @@ event with a count indicating the number of occurrences within that ten second w
 reported event also has a minimum, maximum, and average runtime reflecting the individual events
 that occurred during the ten second window.
 
-Check the desired options and set the range for the LDAP event collection threshold:
+Check your desired options and set the range for the LDAP event collection threshold:
 
 - Minimum runtime – Save event if minimum runtime is within the minimum and maximum range specified
   in milliseconds
@@ -101,10 +101,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -117,7 +117,7 @@ both.
 
 ![Event Type – Success filter](/images/threatprevention/7.5/admin/policies/eventtype/success.webp)
 
-Select the radio button for the desired monitoring filter:
+Select the radio button for the monitoring filter you want filter:
 
 - Success – Only monitors successful events
 - Failure – Only monitors failed events
@@ -140,10 +140,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -163,12 +163,12 @@ exclude specific queries from being monitored.
 
 ![Policy window - LDAP Query filter](/images/threatprevention/7.5/admin/policies/eventtype/ldapquery.webp)
 
-Enter a query in the Include LDAP Queries and/or Exclude LDAP Queries boxes. You can type a string
+Enter a query in the Include LDAP Queries and/or Exclude LDAP Queries boxes. You can enter a string
 in the textbox. Alternatively, use the buttons in the respective sections.
 
 - The Add (+) buttons open the
   [Select Active Directory Objects Window](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/window/objects.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## LDAP Result Filter
 
@@ -179,21 +179,21 @@ on the results.
 ![Policy window - LDAP Result filter](/images/threatprevention/7.5/admin/policies/eventtype/queryresult.webp)
 
 To scope by the number of objects returned by a query, check the Number of objects box and set the
-number of objects to be returned in the Minumun and Maximum boxes.
+number of objects to be returned in the Minimum and Maximum boxes.
 
-Specify the desired object in the Include Objects box. You can type a string in the textbox.
+Specify the object you want in the Include Objects box. You can enter a string in the textbox.
 Alternatively, use the buttons in the respective sections.
 
 - The Add (+) buttons open the
   [Select Active Directory Objects Window](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/window/objects.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## LDAP Attributes Filter
 
 Use the LDAP Attributes filter to set the scope of the policy to only monitor specific
 LDAP attributes or exclude specific attributes from being monitored.
 
-![Policcy window - LDAP Attributes filter](/images/threatprevention/7.5/admin/policies/eventtype/ldapattributes.webp)
+![Policy window - LDAP Attributes filter](/images/threatprevention/7.5/admin/policies/eventtype/ldapattributes.webp)
 
 Use the buttons in the Include Attributes and Exclude Attributes boxes to edit the lists.
 
@@ -201,7 +201,7 @@ Use the buttons in the Include Attributes and Exclude Attributes boxes to edit t
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Hosts (from) Filter
 
@@ -217,10 +217,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::

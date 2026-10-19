@@ -11,8 +11,8 @@ collected by the
 [File System Access Auditing](/docs/accessanalyzer/11.6/solutions/filesystem/collection/overview.md#file-system-access-auditing)
 components and the components of the
 [0.Collection Job Group](/docs/accessanalyzer/11.6/solutions/filesystem/collection/overview.md).
-It also depends on the running of the sub-job groups within the solution. If only select sub-job
-groups have been run, there will be blank sections in the overview report.
+It also depends on running the sub-job groups within the solution. If you run only select sub-job
+groups, the overview report has blank sections.
 
 ![FileSystemOverview Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/filesystem/filesystemoverviewjobstree.webp)
 
@@ -25,7 +25,7 @@ View the analysis tasks by navigating to the **FileSystem** > **FileSystemOvervi
 node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

@@ -6,14 +6,14 @@ sidebar_position: 10
 
 # Configuring the Password Policy Client
 
-The Password Policy Client is self-configuring and does not require manual configuration in most
+The Password Policy Client is self-configuring and doesn't require manual configuration in most
 cases. See the [Install Password Policy Enforcer Client](/docs/passwordpolicyenforcer/11.1/installation/installationclient.md) topic for
 additional details. You may need to manually configure the Password Policy Client if:
 
 - You want to install it in a disabled state to be enabled later.
 - You want to change the display settings for small screens.
 - Password Policy Client displays policy messages in the wrong language.
-- Default communication settings are not suitable (for example, if you change the default Password
+- Default communication settings aren't suitable (for example, if you change the default Password
   Policy Server Port).
 
 Password Policy Enforcer includes an administrative template to help configure the Password Policy
@@ -48,7 +48,7 @@ Client. If not, see the topic's section for additional information.
 **`<domain_name>`**, right-click **`<OU_name>`** and select **Create a GPO** in this domain and Link
 it here.
 
-Once the GPO is configured, this view is available:
+After the GPO is configured, this view is available:
 
 ![ppc_configuration3](/images/passwordpolicyenforcer/11.1/administration/ppc_configuration3.webp)
 
@@ -59,7 +59,7 @@ Once the GPO is configured, this view is available:
 
 ![ppc_configuration4](/images/passwordpolicyenforcer/11.1/administration/ppc_configuration4.webp)
 
-**Step 9 –** Click on **Netwrix Password Policy Client** to open a list of modification settings.
+**Step 9 –** Click **Netwrix Password Policy Client** to open a list of modification settings.
 
 ![ppc_configuration5](/images/passwordpolicyenforcer/11.1/administration/ppc_configuration5.webp)
 
@@ -81,14 +81,14 @@ You can change the default display settings to control which user interface elem
 the point at which they are hidden. The display of the Password Policy message box is also
 configurable.
 
-Follow the steps below to change the default display settings for the Password Policy Client on
+Follow the steps to change the default display settings for the Password Policy Client on
 Windows 10 and 11.
 
 **Step 1 –** Use the **Group Policy Management Console** (gpmc.msc) to display the GPOs linked at
 the domain level.
 
 :::note
-If you are not using Active Directory, then open the Local Group Policy Editor
+If you aren't using Active Directory, then open the Local Group Policy Editor
 (**gpedit.msc**) and skip step 2.
 :::
 

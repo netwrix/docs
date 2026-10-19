@@ -9,12 +9,12 @@ sidebar_position: 10
 The data collecting account is a service account that Netwrix 1Secure uses to collect audit data
 from the monitored items (domains, OUs, servers, etc.). Netwrix recommends creating a dedicated
 service account for that purpose. Depending on the data source and connector, the account must meet
-the corresponding requirements (see the table below).
+the corresponding requirements (see the following table).
 
 You can use group Managed Service Account (gMSA) as data collecting account. See the
 [Using Group Managed Service Account (gMSA)](/docs/1secure/admin/datacollection/gmsa.md) topic for additional information.
 
-Currently, the following data sources are supported:
+The following data sources are supported:
 
 | Data source       | Provided connectors                               | Required rights and permissions:                                                                                                    |
 | ----------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -27,8 +27,8 @@ Currently, the following data sources are supported:
 ## Data Collection Workflow
 The Netwrix 1Secure data collection workflow is as follows:
 
-**Step 1 –** Add organizations. See the [Add Organizations](docs\1secure\admin\organizations\addorganizations.md) topic for additional information.
+**Step 1 –** Add organizations. See the [Add Organizations](/docs/1secure/admin/organizations/addorganizations.md) topic for additional information.
 
-**Step 2 –** Install the agent. See the [Install Agent](docs\1secure\install\installagent.md) topic for additional information.
+**Step 2 –** Install the agent. See the [Install Agent](/docs/1secure/install/installagent.md) topic for additional information.
 
-Once you have added the organization and selected the domain for collecting the data, Netwrix 1Secure starts collecting audit data from the managed Active Directory, Azure AD domain, a computer, an Exchange Online, or a SharePoint Online collection.
+After you add the organization and select the domain, Netwrix 1Secure starts collecting audit data from the managed Active Directory, Azure AD domain, computer, Exchange Online, or SharePoint Online source.

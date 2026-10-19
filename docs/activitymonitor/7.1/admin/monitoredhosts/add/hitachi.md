@@ -13,7 +13,7 @@ The Activity Monitor can be configured to monitor the following:
 - Ability to collect all or specific file activity for specific values or specific combinations of
   values
 
-It provides the ability to feed activity data to SIEM products. The following dashboards have been
+It lets you feed activity data to SIEM products. The following dashboards have been
 specifically created for Activity Monitor event data:
 
 - For IBM® QRadar®, see the
@@ -23,13 +23,13 @@ specifically created for Activity Monitor event data:
   [File Activity Monitor App for Splunk](/docs/activitymonitor/7.1/siem/splunk/overview.md)
   for additional information.
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Enterprise Auditor
 - Netwrix Threat Prevention
 - Netwrix Threat Manager
 
-Prior to adding a Hitachi host to the Activity Monitor, the prerequisites for the target environment
+Before adding a Hitachi host to the Activity Monitor, the prerequisites for the target environment
 must be met. See the
 [Hitachi Activity Auditing Configuration](/docs/activitymonitor/7.1/requirements/activityagent/nasdeviceconfiguration/hitachi-aac/hitachi-activity.md)
 topic for additional information.
@@ -41,8 +41,6 @@ monitoring the target environment.
 
 
 ## Add Hitachi NAS Host
-
-Follow the steps to add a Hitachi host to be monitored.
 
 **Step 1 –** In Activity Monitor, go to the Monitored Hosts tab and click Add. The Add New Host
 window opens.
@@ -71,7 +69,7 @@ Operations** to be monitored. Click **Next**.
 ![Configure Basic Options page for Hitachi NAS](/images/activitymonitor/7.1/admin/monitoredhosts/add/configurebasicoptionshitachi.webp)
 
 **Step 6 –** On the Configure Basic Options page, choose which settings to enable. The “Log files”
-are the activity logs created by the activity agent on the proxy host. Select the desired options:
+are the activity logs created by the activity agent on the proxy host. Select the options you want:
 
 - Report UNC paths – Adds a UNC Path column and a Rename UNC Path column in the generated TSV files
     - This option corresponds to the REPORT_UNC_PATH parameter in the INI file. It is disabled by
@@ -125,19 +123,19 @@ Click **Next**.
 **Step 9 –** If Syslog Server is selected on the **Where To Log The Activity** page, the Syslog
 Output page can be configured.
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used. The Event stream is the activity
       being monitored according to this configuration for the monitored host.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the Message framing drop-down menu. See the
+    The TCP and TLS protocols add the Message framing dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/7.1/admin/outputs/syslog/syslog.md) topic
     for additional information.
 
@@ -145,7 +143,7 @@ Output page can be configured.
   mark or red will determine whether the test message has been sent or failed to send. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -158,7 +156,7 @@ Click **Finish**.
 ![Activity Monitor with Hitachi Host added](/images/activitymonitor/7.1/admin/monitoredhosts/add/activitymonitorhitachi.webp)
 
 The added Hitachi host is displayed in the monitored hosts table. Once a host has been added for
-monitoring, configure the desired ouptuts. See the
+monitoring, configure the outputs you want to use. See the
 [Output for Monitored Hosts](/docs/activitymonitor/7.1/admin/monitoredhosts/output/output.md)
 topic for additional information.
 

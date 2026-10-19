@@ -58,10 +58,10 @@ name, last name, login ID and the UPN suffix.
 Step 3 – On the [Password page](/docs/directorymanager/11.1/portal/user/create/AD/password.md), provide a password for the user account and set other
 password-specific options.
 
-Step 4 – On the [Exchange page](/docs/directorymanager/11.1/portal/user/create/AD/messaging.md), clear the **Mail-Enabled** check box to create the
+Step 4 – On the [Exchange page](/docs/directorymanager/11.1/portal/user/create/AD/messaging.md), clear the **Mail-Enabled** checkbox to create the
 user as non mail-enabled. This disables the remaining fields on the page.
 
-A non mail-enabled user does not have an email address.
+A non mail-enabled user doesn't have an email address.
 
 Step 5 – On the [Summary Page](/docs/directorymanager/11.1/portal/user/create/AD/summary.md), review the settings and then click Finish to complete
 the wizard.

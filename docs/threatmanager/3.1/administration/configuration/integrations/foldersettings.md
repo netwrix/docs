@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Folder Settings Page
 
-The Folder Settings page within the Integrations interface allows users to designate the
+The Folder Settings page within the Integrations interface lets you designate the
 Investigation exports folder location. Additionally, a shared folder can be provided for
 subscription purposes.
 
@@ -26,7 +26,7 @@ The Shared Folders table has the following columns:
 - Path to the Shared folder – The path to the shared folder where subscription reports are stored
 - Credential Profile – Name of the Credential Profile
 - Access – The users that can save their subscription exports to the shared folder
-- Last Time tested – Date timestamp when the the shared folder was tested to ensure it is configured
+- Last Time tested – Date timestamp when the shared folder was tested to ensure it is configured
   correctly
 
 **Additional Options**
@@ -41,7 +41,7 @@ When you hover over a row within the Shared Folders table, three additional opti
 
 ## Designate a Local Folder
 
-Follow the steps to designate a local folder for Investigation exports.
+To designate a local folder for Investigation exports:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -56,19 +56,19 @@ installed. For example, C:\Reports.
 **Step 4 –** The Save button is enabled when any settings are modified. Click it to commit the
 changes before leaving the page.
 
-Investigation exports will now be saved to the designated local folder on the application server.
+Investigation exports are now saved to the designated local folder on the application server.
 
 ## Add a Shared Folder
 
 :::note
-Prior to adding a shared folder, you must first configure a Credential Profile with Write
+Before adding a shared folder, configure a Credential Profile with Write
 access to the shared folder. See the [Credential Profile Page](/docs/threatmanager/3.1/administration/configuration/integrations/credentialprofile.md) topic for
 additional information on creating a profile.
 :::
 
 
 You can specify a shared folder for exporting investigations data from subscriptions through the
-Integrations menu. Follow the steps to add a shared folder.
+Integrations menu. To add a shared folder:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -82,14 +82,14 @@ menu. Then select **Integrations** to open the Integrations interface.
 **Step 4 –** Enter the following information:
 
 - Display Name – Enter a name of the shared folder as displayed in the application
-- Credential Profile – Select the Credential Profile by name from the drop-down menu. This was
+- Credential Profile – Select the Credential Profile by name from the dropdown. This was
   pre-created in the Credential Profiles page.
 - Path – Enter a valid share path with the \\[SERVER NAME]\[PATH TO SHARED FOLDER] format. For
   example, \\NT-FS02\Subscriptions.
 - Access – Allow specific users to access the folder when configuring subscriptions in the
   application. By default, this is set to All users. To limit access, select users from the
-  drop-down menu. Only users granted application access through the System Settings > User Access
-  page will be available in the drop-down.
+  dropdown. Only users granted application access through the System Settings > User Access
+  page are available in the dropdown.
 
 **Step 5 –** Click **Add**. The Add New Shared Folder window closes.
 

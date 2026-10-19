@@ -28,12 +28,12 @@ sidebar_position: 10
 #### Extended view
 
 - An external package with a vulnerability classified as weak has been updated. The vulnerability
-  could not be exploited via Netwrix Password Secure (This also affects the server & Server Manager
+  couldn't be exploited via Netwrix Password Secure (This also affects the server & Server Manager
   as well as the autofill & offline add-on.).
 - The obsolete property “Spaces” has been removed from the password policies (This also affects the
   offline add-on.).
 - A possible XSS vulnerability in the WebViewer has been closed (This also affects the web app.).
-- A problem has been fixed where the password was not saved on the server after a change when it was
+- A problem has been fixed where the password wasn't saved on the server after a change when it was
   copied to the clipboard.
 - The cross-client login for the browser extension is now also operational for synchronized Windows
   profiles.

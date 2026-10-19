@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # Audit and Compliance Page
 
-The Audit and Compliance page in the Investigations interface list of saved out-of-the-box
-investigations with applied filters for commonly used Audit and Compliance activity reports.
+The Audit and Compliance page in the Investigations interface lists saved built-in investigations
+with applied filters for commonly used Audit and Compliance activity reports.
 
 ![Investigations interface on the Audit and Compliance page](/images/threatmanager/3.0/administration/investigations/auditcompliance.webp)
 
@@ -34,7 +34,7 @@ By default, this folder contains the following saved investigations:
 | AD Logins | Active Directory logins including Kerberos and NTLM authentication | One filter statement set: <br /><ul><li> Attribute = Event Operation</li><li>Operator = Equals</li><li>Filter = Active Directory Authentication</li></ul> |
 | All Events | New Investigation | No filters set |
 | Confirmed Compromised Account Activity | Occurs when a Confirmed Compromised Account is being active within an Entra ID tenant | One filter statement set: <br /><ul><li>Attribute = Tag (Direct)</li><li>Operator = Equals</li><li>Filter 1 = Confirmed Compromised</li></ul> |
-| Failed AD Logins | All failed Active Directory logins including Kerberos and NTLM authentication | Two filter statements set: <br /><ul><li>Attribute 1 = Event Operation</li><li>Operator 1 = Equals</li><li>Filter 1 = Active Directory Authentication</li></ul><p>AND</p><ul><li>Attribute 2 = Success</li><li>Operator 2 = Equals</li><li>Filter 2 = false</li></ul> |
+| Failed AD Logins | All failed Active Directory logins including Kerberos and NTLM authentication | Two filter statements set: <br /><ul><li>Attribute 1 = Event Operation</li><li>Operator 1 = Equals</li><li>Filter 1 = Active Directory Authentication</li></ul><p>AND</p><ul><li>Attribute 2 = Success</li><li>Operator 2 = Equals</li><li>Filter 2 = false</li></ul> |
 | Failed Entra ID Logins | Occurs when an Entra ID login attempt has failed | Two filter statements set: <br /><ul><li>Attribute = Event Operation</li><li>Operator = Equals</li><li>Filter 1 = EntraID Sign-In</li></ul><p>AND</p><ul><li> Attribute = Success</li><li>Operator = Equals</li><li>Filter 2 = False</li></ul> |
 | LDAP Search | All LDAP search events | One filter statement set: <br /><ul><li>Attribute = Event Operation</li><li> Operator = Equals</li><li>Filter = LDAP Search</li></ul> |
 | Privileged Account Activity | All activity by privileged accounts | One filter statement set: <br /><ul><li>Attribute = Tag (Direct)</li><li>Operator = Equals</li><li>Filter = Privileged</li></ul> |

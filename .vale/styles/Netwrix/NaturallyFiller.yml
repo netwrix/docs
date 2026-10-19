@@ -1,0 +1,7 @@
+extends: existence
+message: "Remove the filler word '%s' — state the fact directly without implying it should be obvious."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '\bnaturally\b'

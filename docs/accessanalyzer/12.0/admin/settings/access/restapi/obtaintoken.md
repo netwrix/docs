@@ -38,7 +38,7 @@ article for additional information.
 :::
 
 
-If the token does not have the ability to perform this request, is invalid, or the specific resource
+If the token doesn't have the ability to perform this request, is invalid, or the specific resource
 has been blocked from access remotely, an HTTP status code of 401 is returned.
 
 If the request for an access token is valid, the authorization server generates an access token and

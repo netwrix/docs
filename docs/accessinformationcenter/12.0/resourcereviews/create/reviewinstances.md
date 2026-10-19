@@ -6,11 +6,10 @@ sidebar_position: 10
 
 # Review Instances
 
-After a review has been completed, it can be run again, which creates multiple instances of the
-review. Each instance is identified by date timestamps indicating its start and end times.
+After a review is completed, you can run it again to create multiple instances. Each instance is identified by date timestamps indicating its start and end times.
 
 :::info
-Prior to running another review instance, ensure the most up to date information
+Before running another review instance, ensure the most up to date information
 is available to owners for review.
 :::
 
@@ -23,10 +22,10 @@ the Review Type page. The review can be run as-is by navigating through the wiza
 buttons, or you can modify as desired. Completing the wizard process restarts the review. See the
 [Create Review Wizard](/docs/accessinformationcenter/12.0/resourcereviews/create/create.md) topic for additional information.
 
-![Instance drop-down on Review Details page](/images/accessinformationcenter/12.0/resourcereviews/reviewinstances.webp)
+![Instance dropdown on Review Details page](/images/accessinformationcenter/12.0/resourcereviews/reviewinstances.webp)
 
 Previous instances for a review can be viewed on the Review Details page. Select the instance from
-the drop-down menu to show the details for it. See the
+the dropdown menu to show the details for it. See the
 [Review Details Page](/docs/accessinformationcenter/12.0/resourcereviews/interface/interface.md#review-details-page) topic for additional information.
 
 ## Sensitive Data Review Instances

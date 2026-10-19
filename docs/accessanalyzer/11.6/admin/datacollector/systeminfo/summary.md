@@ -10,6 +10,6 @@ The Summary page displays a summary of the configured query. It is a wizard page
 
 ![System Info Data Collector Wizard Summary page](/images/accessanalyzer/11.6/admin/datacollector/systeminfo/summary.webp)
 
-Click **Finish** to save configuration changes. If no changes were made, it is a best practice to
-click **Cancel** to close the System Info Data Collector Wizard ensuring that no accidental clicks
-are saved.
+Click **Finish** to save configuration changes. If you made no changes, click **Cancel** to close
+the System Info Data Collector Wizard instead. This prevents the wizard from saving accidental
+clicks.

@@ -16,7 +16,7 @@ The window has the following features:
 - Description — Optional field to describe the auditor role.
 - Permission Assignment - Add or remove permissions.
 
-The Users tab is where users to be monitored by the Auditor are added.  
+The Users tab is where users to be monitored by the Auditor are added. 
 
 All users can be selected by the checkbox. If that is selected, then the user list is grayed-out
 
@@ -26,7 +26,7 @@ All users can be selected by the checkbox. If that is selected, then the user li
 - User Name — Displays the sAMAccountName for the account
 - Email — Displays the associated email address, if available
 
-The Resources tab is where users to be monitored by the Auditor are added.  
+The Resources tab is where users to be monitored by the Auditor are added. 
 
 All resources can be selected by the checkbox. If that is selected, then the resource list is grayed-out
 
@@ -40,11 +40,11 @@ All resources can be selected by the checkbox. If that is selected, then the res
 
 ## Assign Auditor Role to Users
 
-Follow the steps to grant users the Auditor role.
+To grant users the Auditor role.
 
 **Step 1 –** Click **Add Role User** to open the Add Reviewers window.
 
-**Step 2 –** Select the checkbox for the desired account from the Available Accounts table.
+**Step 2 –** Select the checkbox for the account you want from the Available Accounts table.
 
 **Step 3 –** Click **Add** to add the account to the role.
 

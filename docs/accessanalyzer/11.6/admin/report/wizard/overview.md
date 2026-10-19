@@ -6,17 +6,17 @@ sidebar_position: 30
 
 # Report Configuration Wizard
 
-You can use the Report Configuration Wizard to configure reports. The wizard can be launched for an
+You can use the Report Configuration Wizard to configure reports. You can launch the wizard for an
 existing report or when creating a new report. See the
 [Creating a Report](/docs/accessanalyzer/11.6/admin/report/create.md)
 and
 [Editing Existing Reports](/docs/accessanalyzer/11.6/admin/report/edit.md)
 topics for additional information.
 
-Follow the steps to configure a report using the wizard.
+To configure a report using the wizard:
 
 :::note
-Skip any sections or pages that do not require changes to the existing configuration.
+Skip any sections or pages that don't require changes to the existing configuration.
 :::
 
 
@@ -33,12 +33,12 @@ page, use the inherited settings or configure report specific settings. Click **
 **Step 4 –** The
 [Publish Security Page](/docs/accessanalyzer/11.6/admin/report/wizard/publishsecurity.md)
 page is only enabled if role-based access is configured for the Enterprise Auditor console. On this
-page you can view and configure accounts with permissions to view the report. If you are not using
+page you can view and configure accounts with permissions to view the report. If you aren't using
 role-based access, you can skip this page. Click **Next**.
 
 **Step 5 –** On the
 [Layout Page](/docs/accessanalyzer/11.6/admin/report/wizard/layout.md)
-page, select the number of rows using the dropdown menu. Then select the desired pre-defined layout
+page, select the number of rows using the dropdown menu. Then select the pre-defined layout you want
 from the options displayed. Click **Next**.
 
 **Step 6 –** On the
@@ -47,9 +47,9 @@ page, configure widgets for each element of the layout.
 
 **Step 7 –** Click **Finish** to save your changes.
 
-- If you do not want to save your changes or have not made any changes, click **Cancel** on any page
+- If you don't want to save your changes or have not made any changes, click **Cancel** on any page
   to exit the wizard without saving your changes.
 
-Your configuration has been saved. For information on how to view your report, see the
+Enterprise Auditor has saved your configuration. For information on how to view your report, see the
 [Viewing Generated Reports](/docs/accessanalyzer/11.6/admin/report/view.md)
 topic.

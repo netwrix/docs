@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Character (Granular) Rules
 
-Password Policy Enforcer has seven Character rules that reject passwords if they contain, or do not
+Password Policy Enforcer has seven Character rules that reject passwords if they contain, or don't
 contain certain characters. These rules can increase password strength or ensure password
 compatibility with other systems.
 
@@ -19,22 +19,22 @@ Password Policy Enforcer selects the Password Policy Enforcer character on the
 [Set Priorities](/docs/passwordpolicyenforcer/11.0/admin/manage-policies/manage_policies.md#set-priorities) page.
 
 :::note
-Only Password Policy Enforcer 11 and higher will contain the Windows character set.
+Only Password Policy Enforcer 11 and later contain the Windows character set.
 Password Policy Enforcer 9, Netwrix Password Reset3 and Password Policy Enforcer Web 7 (and older
 for all products) use the Password Policy Enforcer character set.
 :::
 
 
-Select the **Characters (Granular)** check box to enable the Characters rule.
+Select the **Characters (Granular)** checkbox to enable the Characters rule.
 
 For each selected character set, select whether they **Contain** or **Not contain** the specified
 number of characters.
 
 Select the **contain** option if this rule should ensure that new passwords contain certain
 characters. Only one character is required by default, but you can specify a different value by
-choosing the required number of characters from the drop-down list beside the **contain** option.
+choosing the required number of characters from the dropdown list beside the **contain** option.
 
-Select the **not contain any...** option if this rule should ensure that new passwords do not
+Select the **not contain any...** option if this rule should ensure that new passwords don't
 contain certain characters.
 
 You can further restrict the rule by defining positions or embedding characters.
@@ -56,8 +56,8 @@ Click the + sign by the character set.
 
 Select **Embedded**.
 
-Select the **Embedded** check box if users are required to embed these characters within their
-passwords. For example, the passwords "12hello", "1hello", and "hello$987" do not contain any
+Select the **Embedded** checkbox if users are required to embed these characters within their
+passwords. For example, the passwords "12hello", "1hello", and "hello$987" don't contain any
 embedded numeric characters, but these passwords do contain embedded numeric characters (shown in
 bold type): "he**7**llo", "4he**3**llo", "23hello**7**$45". Embedded numeric and special characters
 can help to protect passwords from cracking attacks.

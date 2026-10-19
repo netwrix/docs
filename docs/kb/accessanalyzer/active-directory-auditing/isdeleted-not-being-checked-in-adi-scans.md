@@ -10,7 +10,7 @@ keywords:
   - dsacls
   - permissions
   - ADInventory
-  - Netwrix Auditor
+  - Netwrix Access Analyzer
   - LCRP
 products:
   - access-analyzer
@@ -38,7 +38,7 @@ dsacls "CN=Deleted Objects,DC=domain,DC=com" /g domain\\username:LCRP
 ```
 
 ## Product Information
-- **Product:** Netwrix Auditor  
+- **Product:** Netwrix Access Analyzer  
 - **Module:** SA - DC - ADInventory  
 - **Versions:** All  
 - **Salesforce Article ID:** 000001543

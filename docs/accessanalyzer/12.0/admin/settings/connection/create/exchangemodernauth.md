@@ -16,11 +16,11 @@ The values for the required credentials for the Exchange Modern Authentication a
 - Password Storage – Application (Uses the configured Profile Security setting as selected at the
   **Settings** > **Application** node. See the [Application](/docs/accessanalyzer/12.0/admin/settings/application/overview.md) topic
   for additional information.)
-- Organization – The primary domain name of the Microsoft Entra tenant being leveraged to make the
+- Organization – The primary domain name of the Microsoft Entra tenant used to make the
   connection. See the
   [Identify the Tenant's Name](/docs/accessanalyzer/12.0/requirements/exchange/exchangeonline/access.md#identify-the-tenants-name)
   topic for additional information.
-- Email Address – The email address for the mailbox to be leveraged in Exchange Online environment
+- Email Address – The email address for the mailbox used in Exchange Online environment
   scans. The mailbox must belong to the primary domain used in the Organization field.
 - AppID – Application (client) ID of the Access Analyzer application registered with Microsoft Entra
   ID. See the

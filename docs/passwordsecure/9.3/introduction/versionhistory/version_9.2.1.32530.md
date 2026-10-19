@@ -14,7 +14,7 @@ The default name of the configuration database now contains the host name of the
 
 #### API
 
-The version of the API can now be called up within it.
+The version of the API can now be opened within it.
 
 ## Fixed
 

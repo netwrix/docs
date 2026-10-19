@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # 0-FSDFS System Scans Job
 
-The 0-FSDFS System Scans job enumerates a list of all root and link targets in the distributed file
-system and creating a dynamic host list that will be used by the components.
+The 0-FSDFS System Scans job enumerates all root and link targets in the distributed file system
+and creates a dynamic host list for the components to use.
 
 ## Query for the 0-FSDFS System Scans Job
 
@@ -15,7 +15,7 @@ The DFS System Scan Query uses the FSAA Data Collector and has been preconfigure
 Scan Category.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 
@@ -29,7 +29,7 @@ View the analysis tasks by navigating to the **FileSystem** > **0.Collection** >
 Scans** > **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

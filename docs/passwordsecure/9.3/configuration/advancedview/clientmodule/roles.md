@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Roles
 
-## What are roles?
+## Roles overview
 
 Each employee in a company is ultimately a member of a department and / or part of a particular
 function level. These departments or groups are mapped within Netwrix Password Secure using the role
@@ -55,25 +55,29 @@ present in a company is the starting point for the success of Netwrix Password S
 design the roles in Netwrix Password Secure only once a detailed design has been drawn up, and all
 the requirements of all project participants have been met.
 
-## Why are there no groups?
+## Roles instead of groups
 
 Netwrix Password Secure enforces the avoidance of unnecessary structures through the role concept. A
-group-in-group nesting is not supported – and is not necessary at all. The resultant increase in
+group-in-group nesting isn't supported – and isn't necessary at all. The resultant increase in
 performance as well as increased overview promotes efficiency and effectiveness. The elegant
 interplay of organisational structures, roles, and granular filter options can cover all
 customer-specific scenarios.
 
-NOTE: This architecture makes nesting of roles obsolete.
+:::note
+This architecture makes nesting of roles obsolete.
+:::
 
 ## Overview of members for a role
 
 As well as being able to view the **members** in the permissions dialogue, a list of all members for
 a role is already made available in the
 [Reading pane](/docs/passwordsecure/9.3/configuration/advancedview/operationandsetup/reading_pane.md). All of the other users with
-permissions but without membership of the role are not taken into account.
+permissions but without membership of the role aren't taken into account.
 
 ![role overview](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/roles/roles_4-en.webp)
 
-NOTE: The roles module is based on the
+:::note
+The roles module is based on the
 [Roles module](/docs/passwordsecure/9.3/configuration/webapplication/functionalscope/roles_module.md) of the Web
 Application. Both modules have a different scope and design but are almost identical to use.
+:::

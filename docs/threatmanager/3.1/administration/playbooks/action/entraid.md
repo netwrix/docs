@@ -15,20 +15,20 @@ Manages an Entra ID group's membership by adding or removing an object from a gr
 ![entraidmembership](/images/threatmanager/3.0/administration/playbooks/action/entraidmembership.webp)
 
 - Users – Select the users for whom to alter group membership. If not specified, the user who
-  triggered the threat will be used.
+  triggered the threat is used.
     - Perpetrator – The account that initiated the threat
     - Users Affected – Users affected by the threat
     - Both Perpetrators and Users Affected – The account that initiated the threat and the users
       affected by the threat
 - Group – Specify the identity of the group to manage. If not specified, the group affected by the
-  threat will be used.
+  threat is used.
 - Action – Select the action to take on the user's group membership
     - Add – Add the user to the specified group
     - Remove – Remove the user from the specified group
 - Credential – Select a credential profile that contains valid Entra ID credentials. Credential
   profiles are configured on the
   [Integrations Interface](/docs/threatmanager/3.1/administration/configuration/integrations/overview.md). If not specified, the
-  action will be run as the credentials of the Action Service.
+  action runs as the credentials of the Action Service.
 
 ## Flag Entra ID User as Confirmed Compromised
 
@@ -37,17 +37,17 @@ Flag a user as confirmed compromised within your Entra ID tenant.
 ![confirmcompromised](/images/threatmanager/3.0/administration/playbooks/action/confirmcompromised.webp)
 
 - Users – The users to flag as confirmed compromised. If not specified, the user who triggered the
-  threat will be used.
+  threat is used.
 
     - Perpetrator – The account that initiated the threat
     - Users Affected – Users affected by the threat
     - Both Perpetrators and Users Affected – The account that initiated the threat and the users
       affected by the threat
 
-- Credential – Select a credential profile that will mark the user as confirmed compromised.
+- Credential – Select a credential profile that marks the user as confirmed compromised.
   Credential profiles are configured on the
   [Integrations Interface](/docs/threatmanager/3.1/administration/configuration/integrations/overview.md). If not specified, the
-  action will be run as the credentials of the Action Service.
+  action runs as the credentials of the Action Service.
 
 ## Disable Entra ID User
 
@@ -55,16 +55,16 @@ This actions disables a user in your Entra ID tenant.
 
 ![disableuser](/images/threatmanager/3.0/administration/playbooks/action/disableuser.webp)
 
-- Users –The users to disable. If not specified, the user who triggered the threat will be used
+- Users –The users to disable. If not specified, the user who triggered the threat is used.
 
     - Perpetrator – The account that initiated the threat
     - Users Affected – Users affected by the threat
     - Both Perpetrators and Users Affected – The account that initiated the threat and the users
       affected by the threat
 
-- Credential – Select a credential profile that will execute this action. Credential profiles are
+- Credential – Select a credential profile that executes this action. Credential profiles are
   configured on the [Integrations Interface](/docs/threatmanager/3.1/administration/configuration/integrations/overview.md). If not
-  specified, the action will be run as the credentials of the Action Service.
+  specified, the action runs as the credentials of the Action Service.
 
 ## Reset Entra ID Password
 
@@ -73,16 +73,16 @@ user's password to a random group of letters, numbers, and special characters.
 
 ![entraidresetpassword](/images/threatmanager/3.0/administration/playbooks/action/entraidresetpassword.webp)
 
-- New Password – Password will be reset to this value. If not specified, generates a random
+- New Password – The password resets to this value. If not specified, generates a random
   password.
-- Users – The users that will have their password reset. If not specified, the user who triggered
-  the threat will be used.
+- Users – The users whose password is reset. If not specified, the user who triggered
+  the threat is used.
 
     - Perpetrator – The account that initiated the threat
     - Users Affected – Users affected by the threat
     - Both Perpetrators and Users Affected – The account that initiated the threat and the users
       affected by the threat
 
-- Credential – Select a credential profile that will execute this action. Credential profiles are
+- Credential – Select a credential profile that executes this action. Credential profiles are
   configured on the [Integrations Interface](/docs/threatmanager/3.1/administration/configuration/integrations/overview.md). If not
-  specified, the action will be run as the credentials of the Action Service.
+  specified, the action runs as the credentials of the Action Service.

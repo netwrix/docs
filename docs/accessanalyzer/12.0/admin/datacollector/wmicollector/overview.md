@@ -7,8 +7,8 @@ sidebar_position: 410
 # WMICollector Data Collector
 
 The WMICollector Data Collector identifies data for certain types of WMI classes and namespaces. The
-WMICollector Data Collector is a core component of Access Analyzer, but it has been preconfigured
-within the Windows Solution. While the data collector is available with all Access Analyzer license
+WMICollector Data Collector is a core component of Access Analyzer, but Access Analyzer
+preconfigures it within the Windows Solution. While the data collector is available with all Access Analyzer license
 options, the Windows Solution is only available with a special Access Analyzer license. See the
 [Windows Solution](/docs/accessanalyzer/12.0/solutions/windows/overview.md) topic for additional information.
 
@@ -28,7 +28,7 @@ options, the Windows Solution is only available with a special Access Analyzer l
 
 ## WMICollector Query Configuration
 
-The WMICollector Data Collector is configured through the WMI Browser wizard, which contains the
+You configure the WMICollector Data Collector through the WMI Browser wizard, which contains the
 following wizard pages:
 
 - Welcome
@@ -39,5 +39,5 @@ following wizard pages:
 
 ![WMI Browser wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/wmicollector/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+You can hide the Welcome page by selecting the **Don't display this page the next time** checkbox
+when the wizard is open and you save configuration settings.

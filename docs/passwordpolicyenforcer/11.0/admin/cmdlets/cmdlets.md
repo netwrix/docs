@@ -7,7 +7,7 @@ sidebar_position: 60
 # PPE cmdlets
 
 The PPE Cmdlets are available to manage Password Policy Enforcer from a Windows PowerShell. The
-cmdlets are not case-sensitive.
+cmdlets aren't case-sensitive.
 
 To establish the connection:
 

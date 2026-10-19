@@ -1,0 +1,93 @@
+---
+title: "Docker Secrets Matching DR Site to PROD Site"
+description: "Docker Secrets Matching DR Site to PROD Site"
+sidebar_position: 30
+---
+
+# Docker Secrets Matching DR Site to PROD Site
+
+Docker Secrets Matching DR Site to PROD Site
+
+# Docker Secrets Matching DR Site to PROD Site
+
+### Overview
+
+Privilege Secure uses Docker secrets to encrypt sensitive data, such as passwords, SSH keys, and
+SSL certificates, for transmission over the network.
+
+Privilege Secure creates this secret during installation. To backup and restore data from
+one Privilege Secure instance to another, these secrets must match. Examples of when you need to
+transfer data between Privilege Secure instances include:
+
+- Backing up the database to a disaster recovery instance
+- Transferring from a single appliance, like a PoC, to a high availability cluster
+- Rebuilding the docker swarm for troubleshooting, or environment restructuring
+
+See [Docker: Manage sensitive data with Docker secrets](https://docs.docker.com/engine/swarm/secrets/)
+to learn how Docker handles secrets in swarm mode.
+
+### Requirements
+
+This guide uses
+the [Install the S1 CLI Helper Utility ](./s1clihelperutility.md)
+
+### Retrieve the Docker Secret from Current Privilege Secure Instance
+
+If using a single appliance, open an SSH session into thePrivilege Secure node.
+
+If using a cluster, located the node running the API service with `s1 status`; and open an SSH
+session into that Privilege Secure node.
+
+Run following command:
+
+```
+sudo docker exec -it $(sudo docker ps | grep api | cut -d' ' -f1) cat /run/secrets/key.txt > /secureone/data/key.txt
+```
+
+Check the file was created and has two lines.
+
+```
+cat /secureone/data/key.txt; echo
+```
+
+Note:  Without the`; echo` in the preceding command, the second line will run into the command prompt,
+this is expected as that line doesn't have a carriage return. 
+
+Highlight the two lines of the key, stopping at the end of the second line, don't include the
+carriage return, and copy.
+
+### Copy Docker Secret to New Privilege Secure Instance
+
+SSH into the primary node of the new instance. Use your favorite text editor to create a key.txt
+file to use for as the new Docker secret. The following example uses Vim:
+
+```
+sudo vim /secureone/data/key.txt
+```
+
+Paste the two lines cut from above and save the file.
+
+### Applying the Docker Secret to the New Privilege Secure Instance
+
+During the Privilege Secure install, at the step that creates the Docker secret key, apply the new
+key instead:
+
+```
+sudo docker secret create key.txt/secureone/data/key.txt
+```
+
+Continue the deployment. After the install, verify the new key is in use by following the steps in the 'Retrieve the Docker
+Secret from Current SecureONE Instance' section.
+
+### Troubleshooting
+
+Some indicators that the Docker secrets key didn't transfer correctly are described in the
+Troubleshooting section above.
+
+### More Information
+
+[Docker: Manage sensitive data with Docker secrets](https://docs.docker.com/engine/swarm/secrets/)
+
+**See also:** [Docker Credentials Helper](dockercredentials.md) — secure credential storage for
+pulling private registry images during NPSD deployment and upgrades.
+

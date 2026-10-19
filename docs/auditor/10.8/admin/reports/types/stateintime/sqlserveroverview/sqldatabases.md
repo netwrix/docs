@@ -9,7 +9,7 @@ sidebar_position: 30
 This report lists the properties of databases and database snapshots hosted on the selected SQL
 Server instance. Use this report for your SQL Server database inventory.
 
-![sqlserverdatabases_thumb_0_0](/images/auditor/10.7/admin/reports/types/stateintime/sqlserverdatabases_thumb_0_0.webp)
+![sqlserverdatabases_thumb_0_0](/images/auditor/10.8/admin/reports/types/stateintime/sqlserverdatabases_thumb_0_0.webp)
 
 ## Reported data
 
@@ -58,7 +58,7 @@ This report has the following filters:
 
 ## Considerations and recommendations
 
-Reporting for case-sensitive SQL Servers and databases is not supported.
+Reporting for case-sensitive SQL Servers and databases isn't supported.
 
 ## Usage example
 

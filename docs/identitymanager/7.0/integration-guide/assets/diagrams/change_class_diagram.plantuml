@@ -1,0 +1,24 @@
+@startuml component
+package "Change" {
+	class Change {
+		Linked : Int64
+		Object : Int64
+		Operation : Int32
+		Value : String
+		--
+		ActivityInstance : ActivityInstance
+		Property : EntityProperty
+	}
+}
+package "ActivityInstance" {
+	class ActivityInstance {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+Change "0..*" --  "1"ActivityInstance
+Change "0..*" --  "1"EntityProperty
+hide empty members
+@enduml

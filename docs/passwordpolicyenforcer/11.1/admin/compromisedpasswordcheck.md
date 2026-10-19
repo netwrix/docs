@@ -11,7 +11,7 @@ or empty ones. Users can be notified via email and advised or forced to change t
 The check can be scheduled to run at any time to verify existing passwords against security rules.
 
 :::note
-Create the **Compromised Passwords Base** file prior to enabling the Compromised Password
+Create the **Compromised Passwords Base** file before enabling the Compromised Password
 Check. See the [HIBP Updater](/docs/passwordpolicyenforcer/11.1/installation/hibpupdater.md) topic for instructions.
 :::
 
@@ -63,14 +63,14 @@ Here is an example of the compromised passwords report:
 **List of compromised passwords**
 |User  |  Account | Sid | Email | Description |
 | --- | --- | --- | --- | --- |
-| admin    | Administrator | S-1-5-21-1006207104-1546379664-2458629591-500  |      | Sending emails is not possible due to the lack of an email address in the account. |
+| admin    | Administrator | S-1-5-21-1006207104-1546379664-2458629591-500  |      | Sending emails isn't possible due to the lack of an email address in the account. |
 | user2   | user2  | S-1-5-21-1006207104-1546379664-2458629591-1118 | user2@company.com | Email has been sent  |
 
 
 **List of reused passwords**
 |User  |  Account | Sid | Email | Description |
 | --- | --- | --- | --- | --- |
-| admin    | Administrator | S-1-5-21-1006207104-1546379664-2458629591-500  |      | Sending emails is not possible due to the lack of an email address in the account. |
+| admin    | Administrator | S-1-5-21-1006207104-1546379664-2458629591-500  |      | Sending emails isn't possible due to the lack of an email address in the account. |
 | user2   | user2  | S-1-5-21-1006207104-1546379664-2458629591-1118 | user2@company.com | Email has been sent  |
 
 **Users with empty password:**

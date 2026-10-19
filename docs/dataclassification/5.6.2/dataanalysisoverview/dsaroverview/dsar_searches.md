@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # Manage Search Requests
 
-The **Searches** interface may contain multiple requests. This section contains information on how
-to work with searches to address specific tasks.
+The **Searches** interface may contain multiple requests. This section explains how to work with searches to address specific tasks.
 
 **NOTE:** To manage the search requests, users require sufficient access rights that are assigned by
 the **Super User** (DSAR Administrator). See
@@ -21,7 +20,7 @@ You can filter your requests by status. Select one of the following under Displa
 - Active – shows all requests with "_Processed_" status (default view).
 - Completed – shows all completed requests. Review the
   [View Search Query Results](/docs/dataclassification/5.6.2/dataanalysisoverview/dsaroverview/dsar_view_search_results.md)
-  section for instructions on how to complete your request.
+  section to learn how to complete your request.
 - Canceled – shows all canceled requests. [See Cancel Search for more information.](#cancel-search)
 - All – shows all search requests.
 
@@ -36,8 +35,7 @@ Complete_, _Updated Date_, etc.
 
 ## Cancel Search
 
-If a search request is pending, you can cancel it — this will prevent the search terms from being
-included in the search when it runs.
+If a search request is pending, you can cancel it — this prevents the system from using the search terms when it runs.
 
 To cancel a search request, do the following:
 
@@ -56,4 +54,4 @@ To template search request, do the following:
 2. Locate the Searches tab.
 3. Select search and click Template on the right.
 
-A new search window will appear, pre-populated with exactly the same criteria as above.
+A new search window will appear, pre-populated with the same criteria.

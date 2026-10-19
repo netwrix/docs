@@ -17,7 +17,7 @@ The Delete Review window opens from either the
 
 ## Delete Entire Review
 
-Select the desired review on the Manage Reviews page and click **Delete**. The Delete Review window
+Select the review on the Manage Reviews page and click **Delete**. The Delete Review window
 opens to confirm the action.
 
 ![Delete Review window](/images/accessinformationcenter/12.0/resourcereviews/window/deletereviewentire.webp)
@@ -29,7 +29,7 @@ Click **Yes** to complete the deletion. Click **No** to cancel it. The Delete Re
 
 ## Delete Review Instance
 
-Select the desired review instance from the drop-down menu on the Review Details page and click
+Select the review instance from the dropdown menu on the Review Details page and click
 **Delete**. The Delete Review window opens to confirm the action.
 
 ![Delete Review window](/images/accessinformationcenter/12.0/resourcereviews/window/deletereviewinstance.webp)

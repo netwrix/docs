@@ -25,7 +25,7 @@ Another password is created in the **Password Reset module** and is required for
 
 ![password reset list](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/discoveryservice/created_password/created_passwords_2-en.webp)
 
-Points 1-7 are described below:
+The following list describes points 1-7:
 
 1. The name of the Password Reset
 2. Overview of the password

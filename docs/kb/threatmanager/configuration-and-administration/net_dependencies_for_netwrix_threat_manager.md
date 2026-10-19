@@ -25,9 +25,11 @@ Which version of .NET is required for Netwrix Threat Manager?
 
 ## Answer
 
-ASP.NET Core 8.0.11 (or newer) and .NET Desktop Runtime 8.0.11 (or newer) are required. You can also navigate to the [Netwrix Threat Manager Requirements](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server) located under **Getting Started**.
+Netwrix Threat Manager requires ASP.NET Core 8.0.11 (or newer) and .NET Desktop Runtime 8.0.11 (or newer). See also [Netwrix Threat Manager Requirements](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server) in **Getting Started**.
 
-> **NOTE:** .NET Framework is not the same as ASP.NET Core, and having one does not mean you have the other. ASP.NET Core and .NET Desktop Runtime should show on the list of installed Apps & features; however, .NET Framework does not appear on that list. You can check which versions of .NET Framework you have installed by running the following command in PowerShell:
+:::note
+.NET Framework and ASP.NET Core are separate components — installing one does not install the other. ASP.NET Core and .NET Desktop Runtime appear in the list of installed Apps & features. .NET Framework does not appear on that list. You can check which versions of .NET Framework you have installed by running the following command in PowerShell:
+:::
 
 ```powershell
 Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -Recurse | 
@@ -42,3 +44,7 @@ Example:
 ## Related Articles
 
 - [Netwrix Threat Manager Requirements](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server)
+- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/installation-and-upgrades/net_dependencies_for_netwrix_access_analyzer)
+- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/configuration-and-administration/net_dependencies_for_netwrix_threat_prevention)
+- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/configuration-and-administration/net_dependencies_for_netwrix_recovery_for_active_directory)

@@ -1,0 +1,10 @@
+{
+  "label": "Installation Client",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "installation_client"
+  }
+}

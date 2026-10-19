@@ -47,7 +47,7 @@ Note that this service account will not be used to scan the target device since 
    ![image.png](./../0-images/ka0Qk00000013dN_0EMQk000001xmPq.png)
 4. Your resources should be displayed. Click **Add**.  
    ![image.png](./../0-images/ka0Qk00000013dN_0EMQk000001xr4Z.png)
-5. The resources will be added and a host scan will be attempted for each one. This host scan will fail - this is expected for unsupported platforms during initial onboarding.  
+5. The resources are added and a host scan is attempted for each one. This host scan will fail - this is expected for unsupported platforms during initial onboarding.  
    ![image.png](./../0-images/ka0Qk00000013dN_0EMQk000001xtUY.png)
 
 Your resources should now be visible on the **Resources** page.
@@ -56,7 +56,7 @@ Your resources should now be visible on the **Resources** page.
 When creating an Activity that uses domain credentials, it is important not to use the `%targetdomain%` variable in the **Login Account Template**. Rather, use the name of the domain, as indicated.  
 ![image.png](./../0-images/ka0Qk00000013dN_0EMQk000001xula.png)
 
-Note that group membership add/remove operations will be needed if access control groups are used for the target devices.
+Note that group membership add/remove operations are needed if access control groups are used for the target devices.
 
 Once the activity is configured, it can be added to an access policy in the usual manner, and used to run an activity.  
 ![image.png](./../0-images/ka0Qk00000013dN_0EMQk000001xx6j.png)  

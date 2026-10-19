@@ -6,16 +6,13 @@ sidebar_position: 60
 
 # Third-party Systems
 
-Managed Service Providers use a service ticket to track an issue, usually by someone in an IT role.
-Each issue gets its own ticket, and the ticket remains open until the issue is resolved. Once the
+Managed Service Providers (MSPs) use a service ticket to track an issue, usually by someone in an IT role.
+Each issue gets its own ticket, and the ticket remains open until the issue is resolved. After the
 issue is resolved, IT closes the ticket.
 
-There are two ticket-related services Netwrix 1Secure uses - ConnectWise and ServiceNow. The system
-shall display the service, which the MSP applies.
+Netwrix 1Secure integrates with two ticket-related services: ConnectWise and ServiceNow. The product displays the service the MSP has configured.
 
-There is also a SharePoint Online integration which you can use for report subscriptions. This
-feature is useful when you create the report and deliver it to a specific folder in SharePoint
-Online.
+There is also a SharePoint Online integration you can use for report subscriptions. Use this integration to deliver reports to a specific folder in SharePoint Online.
 
 See the following topics for additional information:
 

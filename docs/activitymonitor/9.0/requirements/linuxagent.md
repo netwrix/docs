@@ -19,8 +19,8 @@ are:
 ## Target Requirements
 
 :::note
-For monitoring a Linux file server, the The Linux Agent is deployed to Linux servers to be
-monitored. It cannot be deployed to a proxy server.
+For monitoring a Linux file server, deploy the Linux Agent to the Linux servers you want to
+monitor, not to a proxy server.
 :::
 
 
@@ -33,7 +33,7 @@ The following protocols are supported for the Linux agent:
 - Network File System (Mounted Client-Side)
 
 :::note
-Server-Side NFS protocol is not supported.
+Server-Side NFS protocol isn't supported.
 :::
 
 
@@ -48,7 +48,7 @@ Analyzer to read the activity log files must have also have this permission.
 
 :::info
 Activity Monitor Agent uses certificates to secure the connection between the Linux Agent and the Console / API Server.
-By default, the Agent uses an automatically generated self-signed certificate. The Console and the API Server do not enforce 
+By default, the Agent uses an automatically generated self-signed certificate. The Console and the API Server don't enforce 
 validity checks on these self-signed agent certificates.
 
 This self-signed certificate can be replaced with one issued by a Certification Authority. Once replaced, the Console and 

@@ -1,0 +1,59 @@
+@startuml component
+package "DisplayTable" {
+	class DisplayTable {
+		Identifier : String
+		IsEntityTypeDefault : Boolean
+		LinesPerPage : Int32
+		--
+		Columns : DisplayTableColumn[]
+		Controls : FormControl[]
+		DisplayEntityProperties : DisplayEntityProperty[]
+		DisplayTableDesignElement : DisplayTableDesignElement
+		EntityType : EntityType
+		HomonymEntityLink : HomonymEntityLink
+		ParentProperty : EntityProperty
+		RecordTableForms : Form[]
+	}
+}
+package "DisplayTableColumn" {
+	class DisplayTableColumn {
+	}
+}
+package "FormControl" {
+	class FormControl {
+	}
+}
+package "DisplayEntityProperty" {
+	class DisplayEntityProperty {
+	}
+}
+package "DisplayTableDesignElement" {
+	class DisplayTableDesignElement {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "HomonymEntityLink" {
+	class HomonymEntityLink {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "Form" {
+	class Form {
+	}
+}
+DisplayTable "1" --  "0..*"DisplayTableColumn
+DisplayTable "0..1" --  "0..*"FormControl
+DisplayTable "0..1" --  "0..*"DisplayEntityProperty
+DisplayTable "0..*" --  "1"DisplayTableDesignElement
+DisplayTable "0..*" --  "1"EntityType
+DisplayTable "0..*" --  "0..1"HomonymEntityLink
+DisplayTable "0..*" --  "0..1"EntityProperty
+DisplayTable "0..1" --  "0..*"Form
+hide empty members
+@enduml

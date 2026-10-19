@@ -9,8 +9,7 @@ sidebar_position: 40
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data integrity; otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -60,7 +59,7 @@ performed in any of the following ways:
 
 Remember that in both cases (automatic or manual configuration) you will need to complete the steps
 above to ensure that the user account for accessing REST API is created and the listening port on
-Netwrix Auditor  Server is open for inbound connections.
+Netwrix Auditor Server is open for inbound connections.
 
 ### Nutanix Files
 
@@ -84,12 +83,9 @@ The following table lists the actions that can be performed with Nutanix Files:
 
 The following considerations refer to Nutanix Files auditing and reporting:
 
-- All changes performed on Nutanix File Shares initiated from the machine(s) where Auditor Server
+- All changes performed on Nutanix File Shares initiated from the machines where Auditor Server
   resides, will not displayed in Netwrix search and reports because Nutanix Files unable to generate
   such Activity Records for Auditor.
 - Auditing of NFS file shares in not supported due to known limitations.
-- Currently, not every detail about permission and attribute changes may be provided by Nutanix
-  Files, so they cannot be reported by Auditor.
-- As for the state-in-time data collection, note that effective permissions (as a combination of
-  NTFS and Shared permissions) are not calculated properly for the local Administrator group
-  members.
+- not every detail about permission and attribute changes may be provided by Nutanix Files, so they can't be reported by Auditor.
+- For state-in-time data collection, effective permissions (as a combination of NTFS and Shared permissions) aren't calculated properly for the local Administrator group members.

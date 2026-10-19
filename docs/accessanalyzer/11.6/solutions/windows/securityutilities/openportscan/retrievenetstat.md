@@ -11,7 +11,7 @@ systems.
 
 ## Queries for the RetrieveNetstat Job
 
-The RetrieveNetstat job is uses the TextSearch Data Collector for the following query:
+The RetrieveNetstat job uses the TextSearch Data Collector for the following query:
 
 :::warning
 The query is preconfigured for this job. Never modify the query.
@@ -31,7 +31,7 @@ Navigate to the **Windows** > **Security Utilities** > **OpenPortScan** > **Retr
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -43,9 +43,9 @@ The default analysis tasks are:
 -   **1. NETSTAT Result** – Creates the SA_RetrieveNetstat_NETSTAT table accessible under the job’s
        Results node
 
-In addition to the tables and views created by the analysis tasks, the EX_DeliveryTimes job produces
+In addition to the tables and views created by the analysis tasks, the RetrieveNetstat job produces
 the following pre-configured report.
 
 | Report                            | Description                                                                                                                      | Default Tags | Report Elements                                                                                   |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------- |
-| Network Ports (Open Ports Report) | This job is designed to report on all available ports on the targeted host. It will bring back the results of a `Netstat -b -a`. | None         | This report is comprised of one element: <ul><li>Table – Provides details on open ports</li></ul> |
+| Network Ports (Open Ports Report) | This job reports on all available ports on the targeted host, returning the results of a `Netstat -b -a` command. | None         | This report is comprised of one element: <ul><li>Table – Provides details on open ports</li></ul> |

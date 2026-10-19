@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # PostgreSQL Solution
 
-Data privacy and security is quickly evolving to be on equal footing with traditional security
-measures focused on the network, hardware, or software the data is contained within. Organizations
+Data privacy and security is becoming as important as traditional security measures that focus on
+the network, hardware, or software where the data resides. Organizations
 aligning to concepts like Data-Centric Audit and Protection (DCAP) as defined by Gartner, or the
 requirements of strict compliance regulations like EU GDPR, are looking to implement processes that
 help them understand where sensitive data is stored, who or what is leveraging their privileges to
@@ -15,7 +15,7 @@ access the data, and how each database has been configured.
 
 As part of Netwrix comprehensive Data Access Governance suite for structured and unstructured data,
 Enterprise Auditor for PostgreSQL automates the process of understanding where PostgreSQL databases
-exist and provides an overview of the PostgreSQL environment in order to answer questions around
+exist and provides an overview of the PostgreSQL environment to answer questions around
 data access:
 
 - Who has access to your data?
@@ -23,7 +23,7 @@ data access:
 
 With visibility into every corner of PostgreSQL, organizations can proactively highlight and
 prioritize risks to sensitive data. Additionally, organizations can automate manual, time-consuming,
-and expensive processes associated with compliance, security, and operations to easily adhere to
+and expensive processes associated with compliance, security, and operations to adhere to
 best practices that keep PostgreSQL Server safe and operational.
 
 **Supported Platforms**
@@ -42,8 +42,8 @@ topic for additional information.
 **Sensitive Data Discovery Considerations**
 
 The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
+which enables Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans,
+increase the minimum amount of RAM. Each thread requires a minimum of 2
 additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time ,
 then an extra 16 GB of RAM are required (8x2=16).
 
@@ -52,9 +52,9 @@ resources on the Enterprise Auditor server.
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
-configuration; it has been preconfigured to work with Enterprise Auditor and should never be
-customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
+configuration; it has been preconfigured to work with Enterprise Auditor. Never customize it through
+Java. It will not conflict with other JDKs or Java Runtimes in the same
 environment.
 :::
 
@@ -62,14 +62,14 @@ environment.
 **Location**
 
 The Structured Sensitive Data Discovery License is required to run the PostgreSQL Solution. It can
-be installed from theEnterprise Auditor Instant Job Wizard. Once it has been installed into the Jobs
+be installed from theEnterprise Auditor Instant Job Wizard. After it has been installed into the Jobs
 tree, navigate to the solution: Jobs > **Databases** > PostgreSQL.
 
 The 0.Collection Job Group performs sensitive data discovery and collects information on database
 configurations on the target hosts. The other job groups analyze and report on the data collected by
 the 0.Collection Job Group.
 
-The Database Solution license includes all supported database platforms supported by Enterprise
+The Database Solution license includes all database platforms supported by Enterprise
 Auditor. Additionally, the Sensitive Data Discovery Add-On enables the solution to search database
 content for sensitive data.
 

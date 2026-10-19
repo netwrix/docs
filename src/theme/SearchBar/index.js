@@ -1,0 +1,835 @@
+import React, {useCallback, useMemo, useRef, useState, useEffect} from 'react';
+import {createPortal} from 'react-dom';
+import {DocSearchButton, useDocSearchKeyboardEvents} from '@docsearch/react';
+import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
+import {useHistory} from '@docusaurus/router';
+import {
+    isRegexpStringMatch,
+    useSearchLinkCreator,
+} from '@docusaurus/theme-common';
+import {
+    useAlgoliaContextualFacetFilters,
+    useSearchResultUrlProcessor,
+} from '@docusaurus/theme-search-algolia/client';
+import Translate from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import translations from '@theme/SearchTranslations';
+import {PRODUCTS} from '../../config/products';
+import {getVersionsForProducts, dedupeToLatestVersion, versionLabel} from '../searchUtils';
+
+let DocSearchModal = null;
+
+// Versions only mean something within one product, so the Versions control — and
+// the version filter behind it — is gated on exactly one product being selected.
+function isSingleProduct(products) {
+    return (products || []).filter(p => p !== '__all__' && p !== '__none__').length === 1;
+}
+
+function importDocSearchModalIfNeeded() {
+    if (DocSearchModal) {
+        return Promise.resolve();
+    }
+    return Promise.all([
+        import('@docsearch/react/modal'),
+        import('@docsearch/react/style'),
+        import('./styles.css'),
+    ]).then(([{DocSearchModal: Modal}]) => {
+        DocSearchModal = Modal;
+    });
+}
+
+function useNavigator({externalUrlRegex, selectedProductsRef, selectedVersionsRef}) {
+    const history = useHistory();
+    const createSearchLink = useSearchLinkCreator();
+
+    // Create navigator ONCE and read filters from refs at navigation time
+    // This prevents navigator identity from changing when filters change
+    const navigator = useMemo(() => {
+        return {
+            navigate(params) {
+                // Get the current search query directly from the DOM at navigation time
+                const input =
+                    document.querySelector('.DocSearch-Input') ||
+                    document.querySelector('input[type="search"]');
+                const currentQuery = input ? input.value : '';
+
+                // Read selected filters from refs at navigation time
+                const selectedProducts = selectedProductsRef?.current || [];
+                const selectedVersions = selectedVersionsRef?.current || [];
+
+                // If we have a search query, redirect to full search results page instead
+                if (currentQuery) {
+                    const baseLink = createSearchLink(currentQuery);
+                    const urlParams = new URLSearchParams();
+                    if (selectedProducts.length > 0) {
+                        urlParams.set('products', selectedProducts.join(','));
+                    }
+                    if (selectedVersions.length > 0) {
+                        urlParams.set('versions', selectedVersions.join(','));
+                    }
+                    const searchPageUrl = urlParams.toString()
+                        ? `${baseLink}&${urlParams.toString()}`
+                        : baseLink;
+                    history.push(searchPageUrl);
+                } else if (isRegexpStringMatch(externalUrlRegex, params.itemUrl)) {
+                    window.location.href = params.itemUrl;
+                } else {
+                    history.push(params.itemUrl);
+                }
+            },
+        };
+    }, [externalUrlRegex, history, createSearchLink, selectedProductsRef, selectedVersionsRef]);
+
+    return navigator;
+}
+
+function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale) {
+    const {
+        siteMetadata: {docusaurusVersion},
+    } = useDocusaurusContext();
+    return useCallback(
+        (searchClient) => {
+            searchClient.addAlgoliaAgent('docusaurus', docusaurusVersion);
+
+            const originalSearch = searchClient.search.bind(searchClient);
+
+            // Override search to inject product and version filters at request time
+            // This keeps searchParameters prop stable, preventing query reset
+            searchClient.search = function(searchMethodParams, requestOptions) {
+                const products = selectedProductsRef.current || [];
+                const versions = selectedVersionsRef.current || [];
+
+                // Build product filter (OR logic - any of selected products)
+                const realProducts = products.filter(p => p !== '__all__' && p !== '__none__');
+                const productFilter = realProducts.length > 0
+                    ? realProducts.map(p => `product_name:${p}`)
+                    : null;
+
+                // Build version filter (OR logic - any of selected versions)
+                const realVersions = versions.filter(v => v !== '__all__');
+                const versionFilter = realVersions.length > 0
+                    ? realVersions.map(v => `product_version:${v}`)
+                    : null;
+
+                // Language filter for internationalization
+                const languageFilter = `language:${currentLocale}`;
+
+                // v5 API structure: { requests: [...] }
+                if (searchMethodParams && Array.isArray(searchMethodParams.requests)) {
+                    const modifiedParams = {
+                        ...searchMethodParams,
+                        requests: searchMethodParams.requests.map(req => {
+                            // Get existing facetFilters from the request
+                            const existingFilters = Array.isArray(req.facetFilters)
+                                ? req.facetFilters
+                                : (req.facetFilters ? [req.facetFilters] : []);
+
+                            // Build new filters array
+                            const newFilters = [...existingFilters];
+
+                            // Add language filter if not already present
+                            const hasLanguageFilter = newFilters.some(f =>
+                                (typeof f === 'string' && f.startsWith('language:')) ||
+                                (Array.isArray(f) && f.some(ff => ff.startsWith('language:')))
+                            );
+                            if (!hasLanguageFilter) {
+                                newFilters.push(languageFilter);
+                            }
+
+                            // Add product filter if we have selected products
+                            if (productFilter) {
+                                newFilters.push(productFilter);
+                            }
+
+                            // Add version filter if we have selected versions
+                            if (versionFilter) {
+                                newFilters.push(versionFilter);
+                            }
+
+                            return {
+                                ...req,
+                                facetFilters: newFilters.length > 0 ? newFilters : undefined,
+                            };
+                        })
+                    };
+                    return originalSearch(modifiedParams, requestOptions);
+                }
+
+                // Fallback for other structures - pass through unchanged
+                return originalSearch(searchMethodParams, requestOptions);
+            };
+
+            return searchClient;
+        },
+        [docusaurusVersion, currentLocale],
+    );
+}
+
+// DocSearch (@docsearch/react 4.6.3) buckets results twice before rendering, and both passes must
+// be defeated to show Algolia's relevance order:
+//   outer: groupBy(_highlightResult.hierarchy.lvl0) -> one section per group, capped at
+//          maxResultsPerGroup. The Algolia crawler sets lvl0 to "Product > Version", so results get
+//          bucketed per product and a product's hits past the cap are dropped.
+//   inner: groupBy(hierarchy.lvl1) -> reorders hits that share a page title ("Install" exists in
+//          every product); the key is only unique because the outer pass scoped it to one product.
+// So each hit gets one shared lvl0 (single section) and a unique raw lvl1 = url (no inner
+// clustering). But DocSearch renders the title from `_snippetResult.hierarchy.lvl1.value || raw
+// hierarchy.lvl1` — so overwriting raw lvl1 with the url makes title-match hits (which lack a
+// _snippetResult) display the url. We therefore copy the highlighted title from _highlightResult
+// into _snippetResult; that value is Algolia-escaped, so it is safe as innerHTML. Raw
+// hierarchy.lvl0 is kept and shown per-hit as the product label.
+//
+// This shims around the crawler putting the product in lvl0, and depends on DocSearch grouping on
+// lvl0/lvl1 and resolving the title via _snippetResult. If a future @docsearch/react bump changes
+// either, the modal silently reverts to product order — re-verify the Ctrl+K modal renders one flat
+// list after any Docusaurus upgrade. The real fix is to stop putting the product in lvl0 in the
+// crawler config, after which this whole shim deletes.
+const ONE_GROUP = {value: '', matchLevel: 'none', matchedWords: []};
+
+function ungroup(items) {
+    return items.map((item) => {
+        const title = item._highlightResult?.hierarchy?.lvl1?.value ?? item.hierarchy?.lvl1 ?? '';
+        return {
+            ...item,
+            hierarchy: {...item.hierarchy, lvl1: item.url},
+            _snippetResult: {
+                ...item._snippetResult,
+                hierarchy: {...item._snippetResult?.hierarchy, lvl1: {value: title, matchLevel: 'full'}},
+            },
+            _highlightResult: {
+                ...item._highlightResult,
+                hierarchy: {...item._highlightResult?.hierarchy, lvl0: ONE_GROUP},
+            },
+        };
+    });
+}
+
+function useTransformItems(selectedVersionsRef) {
+    const processSearchResultUrl = useSearchResultUrlProcessor();
+    const [transformItems] = useState(() => (items) => {
+        const mapped = items.map((item) => ({...item, url: processSearchResultUrl(item.url)}));
+        // Modal version state never holds the '__all__' sentinel (MultiSelectDropdown
+        // maps the All toggle to []) and can only be non-empty while exactly one
+        // product is selected (filters reset on open; onChangeProducts clears versions
+        // whenever the selection stops being a single product — the same condition that
+        // enables the Versions control), so non-empty means a real version filter the
+        // user can see and clear is active — de-dupe off (R3).
+        const versionFilterActive = (selectedVersionsRef.current || []).length > 0;
+        return ungroup(versionFilterActive ? mapped : dedupeToLatestVersion(mapped));
+    });
+    return transformItems;
+}
+
+function useResultsFooterComponent({closeModal, selectedProductsRef, selectedVersionsRef}) {
+    // Create footer component ONCE - read filters from refs at render time
+    // This prevents resultsFooterComponent identity from changing when filters change
+    return useMemo(
+        () =>
+            ({state}) =>
+                <ResultsFooter
+                    state={state}
+                    onClose={closeModal}
+                    selectedProductsRef={selectedProductsRef}
+                    selectedVersionsRef={selectedVersionsRef}
+                />,
+        [closeModal, selectedProductsRef, selectedVersionsRef],
+    );
+}
+
+function Hit({hit, children}) {
+    return (
+        <Link to={hit.url}>
+            {children}
+            {/* lvl0 ("Product > Version") was the group heading until ungroup() collapsed it.
+                Shown per-hit so four versions of one page aren't four indistinguishable rows. */}
+            {hit.hierarchy?.lvl0 && (
+                <span className="DocSearch-Hit-product">{hit.hierarchy.lvl0}</span>
+            )}
+        </Link>
+    );
+}
+
+function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef}) {
+    const createSearchLink = useSearchLinkCreator();
+    const history = useHistory();
+
+    // Build URL from refs — used for the href (right-click / middle-click)
+    const buildLink = useCallback(() => {
+        const baseLink = createSearchLink(state.query);
+        const selectedProducts = selectedProductsRef?.current || [];
+        const selectedVersions = selectedVersionsRef?.current || [];
+
+        const params = new URLSearchParams();
+        if (selectedProducts.length > 0) {
+            params.set('products', selectedProducts.join(','));
+        }
+        if (selectedVersions.length > 0) {
+            params.set('versions', selectedVersions.join(','));
+        }
+
+        return params.toString()
+            ? `${baseLink}&${params.toString()}`
+            : baseLink;
+    }, [state.query, createSearchLink, selectedProductsRef, selectedVersionsRef]);
+
+    // Read refs at click time to guarantee current filter state
+    const handleClick = useCallback((e) => {
+        e.preventDefault();
+        // Snapshot filters into sessionStorage before navigation so SearchPage
+        // can fall back to them if URL params are lost for any reason
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProductsRef?.current || []));
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(selectedVersionsRef?.current || []));
+        }
+        onClose();
+        history.push(buildLink());
+    }, [onClose, history, buildLink, selectedProductsRef, selectedVersionsRef]);
+
+    return (
+        <Link to={buildLink()} onClick={handleClick}>
+            <Translate id="theme.SearchBar.seeAll">
+                {'See all results'}
+            </Translate>
+        </Link>
+    );
+}
+
+// DocSearch 4.6.3 replaces its default attributesToRetrieve wholesale when
+// searchParameters provides one, so the defaults must be re-listed here.
+// product_name/product_version are what dedupeToLatestVersion keys on.
+// Re-verify this list against DocSearch's defaults on any @docsearch/react
+// bump (same caveat as ungroup()).
+const ATTRIBUTES_TO_RETRIEVE = [
+    'hierarchy.lvl0', 'hierarchy.lvl1', 'hierarchy.lvl2', 'hierarchy.lvl3',
+    'hierarchy.lvl4', 'hierarchy.lvl5', 'hierarchy.lvl6',
+    'content', 'type', 'url',
+    'product_name', 'product_version',
+];
+
+function useSearchParameters({contextualSearch, productFacetFilters = [], ...props}) {
+    function mergeFacetFilters(f1, f2) {
+        const normalize = (f) => (typeof f === 'string' ? [f] : f);
+        return [...normalize(f1), ...normalize(f2)];
+    }
+
+    const contextualSearchFacetFilters = useAlgoliaContextualFacetFilters();
+
+    const configFacetFilters = props.searchParameters?.facetFilters ?? [];
+    const combinedConfigFacetFilters =
+        productFacetFilters.length > 0
+            ? mergeFacetFilters(configFacetFilters, productFacetFilters)
+            : configFacetFilters;
+
+    let facetFilters;
+    if (contextualSearch) {
+        // Use contextual filters (includes language and doc tags)
+        facetFilters = mergeFacetFilters(contextualSearchFacetFilters, combinedConfigFacetFilters);
+    } else {
+        // When contextualSearch is disabled, still include language filter but not doc tags
+        const languageFilter = contextualSearchFacetFilters.find(f => typeof f === 'string' && f.startsWith('language:'));
+        if (languageFilter && productFacetFilters.length > 0) {
+            // IMPORTANT: Don't spread productFacetFilters - it's already an array of arrays
+            // We want: ['language:en', ['product1', 'product2']] not ['language:en', 'product1', 'product2']
+            facetFilters = [languageFilter].concat(productFacetFilters);
+        } else {
+            facetFilters = combinedConfigFacetFilters;
+        }
+    }
+
+    // Memoize the result to maintain stable object reference
+    // This prevents DocSearch from resetting query state on re-renders
+    // Using JSON.stringify for comparison - can be refined if hypothesis is confirmed
+    return useMemo(() => ({
+        ...props.searchParameters,
+        facetFilters,
+        attributesToRetrieve: ATTRIBUTES_TO_RETRIEVE,
+    }), [
+        contextualSearch,
+        JSON.stringify(facetFilters),
+        JSON.stringify(props.searchParameters),
+    ]);
+}
+
+// Generate product options dynamically from PRODUCTS constant
+// Values MUST match Algolia facet values exactly
+const PRODUCT_OPTIONS = [
+    {label: 'All products', value: '__all__'},
+    ...PRODUCTS.map(product => ({
+        label: product.name,
+        value: product.name,
+    }))
+].sort((a, b) => {
+    // Keep "All products" first
+    if (a.value === '__all__') return -1;
+    if (b.value === '__all__') return 1;
+    return a.label.localeCompare(b.label);
+});
+
+// Multi-select dropdown component with checkboxes
+function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder, disabled = false}) {
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const handleToggle = (value) => {
+        let newSelection;
+        if (value === '__all__') {
+            newSelection = [];
+        } else {
+            if (selectedValues.includes(value)) {
+                newSelection = selectedValues.filter(v => v !== value);
+            } else {
+                newSelection = [...selectedValues, value];
+            }
+        }
+        onChange(newSelection);
+    };
+
+    const realSelected = selectedValues.filter(v => v !== '__all__' && v !== '__none__');
+    const displayText = disabled || selectedValues.length === 0 || selectedValues.includes('__all__')
+        ? placeholder
+        : `${realSelected.length} selected`;
+
+    return (
+        <div className="DocSearch-MultiSelect" ref={dropdownRef} style={{position: 'relative'}}>
+            <button
+                type="button"
+                disabled={disabled}
+                onClick={() => setIsOpen(!isOpen)}
+                className="DocSearch-MultiSelect-Button"
+                style={{
+                    height: 36,
+                    padding: '0 8px',
+                    border: '1px solid var(--docsearch-muted-color)',
+                    borderRadius: 4,
+                    background: 'var(--docsearch-modal-background)',
+                    color: 'var(--docsearch-text-color)',
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                    opacity: disabled ? 0.55 : 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 4,
+                    minWidth: 150,
+                }}
+            >
+                <span style={{flex: 1, textAlign: 'left', fontSize: '14px'}}>{displayText}</span>
+                <span style={{fontSize: '10px'}}>▼</span>
+            </button>
+            {isOpen && !disabled && (
+                <div
+                    className="DocSearch-MultiSelect-Dropdown"
+                    style={{
+                        position: 'absolute',
+                        top: '100%',
+                        left: 0,
+                        marginTop: 4,
+                        background: 'var(--docsearch-modal-background)',
+                        border: '1px solid var(--docsearch-muted-color)',
+                        borderRadius: 4,
+                        boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                        zIndex: 1000,
+                        maxHeight: 300,
+                        overflowY: 'auto',
+                        minWidth: 200,
+                    }}
+                >
+                    {options.map((opt) => {
+                        const isSelected = opt.value === '__all__'
+                            ? selectedValues.length === 0 || selectedValues.includes('__all__')
+                            : selectedValues.includes(opt.value);
+
+                        return (
+                            <label
+                                key={opt.value}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    padding: '8px 12px',
+                                    cursor: 'pointer',
+                                    fontSize: '14px',
+                                    background: 'transparent',
+                                }}
+                                onMouseEnter={(e) => {
+                                    if (!isSelected) {
+                                        e.currentTarget.style.background = 'var(--docsearch-hit-background)';
+                                    }
+                                }}
+                                onMouseLeave={(e) => {
+                                    if (!isSelected) {
+                                        e.currentTarget.style.background = 'transparent';
+                                    }
+                                }}
+                            >
+                                <input
+                                    type="checkbox"
+                                    checked={isSelected}
+                                    onChange={() => handleToggle(opt.value)}
+                                    style={{marginRight: 8, cursor: 'pointer'}}
+                                />
+                                {opt.label}
+                            </label>
+                        );
+                    })}
+                </div>
+            )}
+        </div>
+    );
+}
+
+function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProductsRef, selectedVersionsRef, ...props}) {
+    const {i18n: {currentLocale}} = useDocusaurusContext();
+    // Use ref for navigator to prevent identity change when filters change
+    const navigator = useNavigator({externalUrlRegex, selectedProductsRef, selectedVersionsRef});
+    // Keep searchParameters stable - don't include product filters here
+    // Product filters are injected at request time via transformSearchClient
+    const searchParameters = useSearchParameters({...props, productFacetFilters: []});
+    const transformItems = useTransformItems(selectedVersionsRef);
+    const transformSearchClient = useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale);
+    const searchContainer = useRef(null);
+    const searchButtonRef = useRef(null);
+    const [isOpen, setIsOpen] = useState(false);
+    const [initialQuery, setInitialQuery] = useState(undefined);
+
+    const prepareSearchContainer = useCallback(() => {
+        if (!searchContainer.current) {
+            const divElement = document.createElement('div');
+            searchContainer.current = divElement;
+            document.body.insertBefore(divElement, document.body.firstChild);
+        }
+    }, []);
+
+    const closeModal = useCallback(() => {
+        setIsOpen(false);
+        searchButtonRef.current?.focus();
+        setInitialQuery(undefined);
+        onModalClose?.();
+    }, [onModalClose]);
+
+    const openModal = useCallback(() => {
+        prepareSearchContainer();
+        importDocSearchModalIfNeeded().then(() => {
+            setIsOpen(true);
+            // Let React render the modal, then caller can locate DOM nodes
+            setTimeout(() => onModalOpen?.(closeModal), 0);
+        });
+    }, [prepareSearchContainer, onModalOpen, closeModal]);
+
+    const handleInput = useCallback(
+        (event) => {
+            if (event.key === 'f' && (event.metaKey || event.ctrlKey)) {
+                return;
+            }
+            event.preventDefault();
+            setInitialQuery(event.key);
+            openModal();
+        },
+        [openModal],
+    );
+
+    const resultsFooterComponent = useResultsFooterComponent({
+        closeModal,
+        selectedProductsRef,
+        selectedVersionsRef,
+    });
+
+    useDocSearchKeyboardEvents({
+        isOpen,
+        onOpen: openModal,
+        onClose: closeModal,
+        onInput: handleInput,
+        searchButtonRef,
+    });
+
+    return (
+        <>
+            <Head>
+                <link
+                    rel="preconnect"
+                    href={`https://${props.appId}-dsn.algolia.net`}
+                    crossOrigin="anonymous"
+                />
+            </Head>
+
+            <DocSearchButton
+                onTouchStart={importDocSearchModalIfNeeded}
+                onFocus={importDocSearchModalIfNeeded}
+                onMouseOver={importDocSearchModalIfNeeded}
+                onClick={openModal}
+                ref={searchButtonRef}
+                translations={props.translations?.button ?? translations.button}
+            />
+
+            {isOpen &&
+                DocSearchModal &&
+                searchContainer.current &&
+                createPortal(
+                    <DocSearchModal
+                        onClose={closeModal}
+                        initialScrollY={window.scrollY}
+                        initialQuery={initialQuery}
+                        navigator={navigator}
+                        transformItems={transformItems}
+                        hitComponent={Hit}
+                        transformSearchClient={transformSearchClient}
+                        {...(props.searchPagePath && {resultsFooterComponent})}
+                        placeholder={translations.placeholder}
+                        {...props}
+                        translations={props.translations?.modal ?? translations.modal}
+                        searchParameters={searchParameters}
+                        // One group now (see ungroup), so this caps the whole list. DocSearch
+                        // defaults it to 5, which would drop every hit past the fifth.
+                        maxResultsPerGroup={searchParameters.hitsPerPage ?? 20}
+                    />,
+                    searchContainer.current,
+                )}
+        </>
+    );
+}
+
+export default function SearchBar() {
+    const {siteConfig} = useDocusaurusContext();
+
+    // Store the current search query to preserve it across filter changes
+    const searchQueryRef = useRef('');
+
+    // Multi-select state — always starts empty; reset on every modal open
+    const [selectedProducts, setSelectedProducts] = useState([]);
+    const [selectedVersions, setSelectedVersions] = useState([]);
+
+    // Ref to access selectedProducts without causing re-renders
+    // This is used by transformSearchClient to inject filters at request time
+    const selectedProductsRef = useRef(selectedProducts);
+    useEffect(() => {
+        selectedProductsRef.current = selectedProducts;
+    }, [selectedProducts]);
+
+    const selectedVersionsRef = useRef(selectedVersions);
+    useEffect(() => {
+        selectedVersionsRef.current = selectedVersions;
+    }, [selectedVersions]);
+
+
+
+    // Keep track of the search input value
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const input =
+                document.querySelector('.DocSearch-Input') ||
+                document.querySelector('input[type="search"]');
+            if (input) {
+                searchQueryRef.current = input.value;
+            }
+        }, 100);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    // Helper to refresh search results with current filters.
+    // DocSearch uses React-controlled inputs, so plain native input events don't trigger
+    // its onChange handler. We use React's native HTMLInputElement value setter to bypass
+    // React's change-tracking wrapper, then dispatch an input event so React processes it.
+    const refreshSearch = useCallback(() => {
+        const input =
+            document.querySelector('.DocSearch-Input') ||
+            document.querySelector('input[type="search"]');
+
+        if (!input || !input.value) return;
+
+        const query = input.value;
+        searchQueryRef.current = query;
+
+        // Grab the native setter before React wraps it
+        const nativeSetter = Object.getOwnPropertyDescriptor(
+            window.HTMLInputElement.prototype,
+            'value',
+        ).set;
+
+        // Simulate typing a trailing space and removing it.
+        // This causes DocSearch/Autocomplete to run a new search with the updated filters.
+        // Both events fire in the same JS task so DocSearch batches them — only the final
+        // value (query) triggers a visible search, preventing an intermediate result flash.
+        setTimeout(() => {
+            nativeSetter.call(input, query + ' ');
+            input.dispatchEvent(new Event('input', {bubbles: true}));
+
+            nativeSetter.call(input, query);
+            input.dispatchEvent(new Event('input', {bubbles: true}));
+        }, 50);
+    }, []);
+
+    const onChangeProducts = useCallback((newProducts) => {
+        selectedProductsRef.current = newProducts;
+        setSelectedProducts(newProducts);
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
+        }
+        // Drop versions the new selection can't show. The Versions control is only
+        // enabled for a single product, so anything other than one product clears versions
+        // outright — otherwise a filter the user can no longer reach would keep suppressing
+        // results (and de-duplication).
+        const validVersions = new Set(
+            isSingleProduct(newProducts) ? getVersionsForProducts(newProducts) : [],
+        );
+        const cleaned = selectedVersionsRef.current.filter(v => validVersions.has(v));
+        if (cleaned.length !== selectedVersionsRef.current.length) {
+            selectedVersionsRef.current = cleaned;
+            setSelectedVersions(cleaned);
+            if (typeof window !== 'undefined') {
+                sessionStorage.setItem('docs_version_filter', JSON.stringify(cleaned));
+            }
+        }
+        refreshSearch();
+    }, [refreshSearch]);
+
+    const onChangeVersions = useCallback((newVersions) => {
+        selectedVersionsRef.current = newVersions;
+        setSelectedVersions(newVersions);
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(newVersions));
+        }
+        refreshSearch();
+    }, [refreshSearch]);
+
+    const availableVersions = useMemo(() => {
+        const versions = getVersionsForProducts(selectedProducts);
+        return [
+            {label: 'All versions', value: '__all__'},
+            ...versions.map(v => ({label: versionLabel(v), value: v})),
+        ];
+    }, [selectedProducts]);
+
+    const isSingleProductSelected = useMemo(() => isSingleProduct(selectedProducts), [selectedProducts]);
+
+    // This is where we will portal the filters into the modal DOM.
+    const [modalHeaderEl, setModalHeaderEl] = useState(null);
+    // Holds the closeModal function passed up from the inner DocSearch component.
+    const closeModalRef = useRef(null);
+
+    const onModalOpen = useCallback((closeModal) => {
+        // Reset filters to defaults each time the modal opens so stale
+        // state from a previous search or the full results page is cleared.
+        setSelectedProducts([]);
+        setSelectedVersions([]);
+        selectedProductsRef.current = [];
+        selectedVersionsRef.current = [];
+
+        // Target .DocSearch-SearchBar so our controls are a sibling of .DocSearch-Form.
+        // This lets us move them below the search row on mobile via flex-wrap.
+        const el =
+            document.querySelector('.DocSearch-SearchBar') ||
+            document.querySelector('.DocSearch-Modal');
+
+        closeModalRef.current = closeModal ?? null;
+        setModalHeaderEl(el || null);
+    }, []);
+
+    // Navigate to full search results page with current filters
+    const history = useHistory();
+    const createSearchLink = useSearchLinkCreator();
+    const navigateToSearchPage = useCallback(() => {
+        const query = searchQueryRef.current;
+        if (!query) return;
+        const baseLink = createSearchLink(query);
+        const params = new URLSearchParams();
+        const products = selectedProductsRef.current || [];
+        const versions = selectedVersionsRef.current || [];
+        if (products.length > 0) params.set('products', products.join(','));
+        if (versions.length > 0) params.set('versions', versions.join(','));
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(products));
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(versions));
+        }
+        closeModalRef.current?.();
+        history.push(params.toString() ? `${baseLink}&${params.toString()}` : baseLink);
+    }, [createSearchLink, history]);
+
+    // Enter key anywhere in the modal (except the search input) → go to full results
+    useEffect(() => {
+        if (!modalHeaderEl) return;
+        const handler = (e) => {
+            if (e.key !== 'Enter') return;
+            // Let DocSearch handle Enter when focus is on its own input
+            const active = document.activeElement;
+            if (active && (active.classList.contains('DocSearch-Input') || (active.tagName === 'INPUT' && active.type === 'search'))) return;
+            e.preventDefault();
+            navigateToSearchPage();
+        };
+        document.addEventListener('keydown', handler);
+        return () => document.removeEventListener('keydown', handler);
+    }, [modalHeaderEl, navigateToSearchPage]);
+
+    const onModalClose = useCallback(() => {
+        setModalHeaderEl(null);
+    }, []);
+
+    // Keep contextualSearch stable to prevent query reset
+    // Product filters are handled via transformSearchClient instead
+    const contextualSearch = false;
+
+    return (
+        <>
+            <DocSearch
+                {...siteConfig.themeConfig.algolia}
+                contextualSearch={contextualSearch}
+                selectedProductsRef={selectedProductsRef}
+                selectedVersionsRef={selectedVersionsRef}
+                onModalOpen={onModalOpen}
+                onModalClose={onModalClose}
+            />
+
+            {modalHeaderEl &&
+                createPortal(
+                    <>
+                        {/* Custom controls: version + product filters */}
+                        <div className="search-custom-controls">
+                            {/* Version filtering only makes sense when exactly one product is
+                                selected. Disabled rather than unmounted: this is a flex row, so
+                                adding and removing a 150px control mid-selection slides its
+                                siblings — including the open Products panel — sideways under the
+                                cursor. Keeping the slot also states why versions aren't available. */}
+                            <MultiSelectDropdown
+                                label="Versions"
+                                options={availableVersions}
+                                selectedValues={selectedVersions}
+                                onChange={onChangeVersions}
+                                placeholder={isSingleProductSelected ? 'All versions' : 'Select one product'}
+                                disabled={!isSingleProductSelected}
+                            />
+                            <MultiSelectDropdown
+                                label="Products"
+                                options={PRODUCT_OPTIONS}
+                                selectedValues={selectedProducts}
+                                onChange={onChangeProducts}
+                                placeholder="All products"
+                            />
+                        </div>
+                        {/* Our own close button — replaces the DocSearch-Close button
+                            (which is hidden via CSS) so we avoid mutating React-owned
+                            DOM nodes, which causes reconciliation errors. */}
+                        <button
+                            type="button"
+                            className="search-modal-close"
+                            aria-label="Close"
+                            onClick={() => closeModalRef.current?.()}
+                        >
+                            <svg width="10" height="10" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill="currentColor" d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/>
+                            </svg>
+                        </button>
+                    </>,
+                    modalHeaderEl,
+                )}
+        </>
+    );
+}

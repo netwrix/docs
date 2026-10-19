@@ -61,7 +61,7 @@ are required for communication between the Agent server and the Netwrix Activity
 
 The Windows firewall rules need to be configured on the Windows server, which require certain
 inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+port range, which can't be specified via an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 
@@ -72,5 +72,5 @@ settings are required for communication between the agent server and the Access 
 
 | Communication Direction         | Protocol | Ports      | Description                    |
 | ------------------------------- | -------- | ---------- | ------------------------------ |
-| Access Analyzer to Agent Server | TCP      | 445        | SMB, used for Agent Deployment |
-| Access Analyzer to Agent Server | TCP      | Predefined | WMI, used for Agent Deployment |
+| Access Analyzer to Agent Server | TCP      | 445        | SMB |
+| Access Analyzer to Agent Server | TCP      | Predefined | WMI |

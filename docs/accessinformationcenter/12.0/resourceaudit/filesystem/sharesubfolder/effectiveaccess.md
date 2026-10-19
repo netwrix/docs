@@ -7,7 +7,7 @@ sidebar_position: 30
 # Effective Access Report
 
 The Effective Access report at the share and subfolder levels provides insight into who has what
-level of access to this resource through a calculation that encompasses server policies, share and
+level of access to this resource through a calculation that encompasses server policies, share, and
 folder permissions, and group membership. It contains a list of all trustees with access to the
 selected resource and specifies the effective access level. This report includes a Permission Source
 table.
@@ -46,8 +46,7 @@ the trustee:
 If the selected trustee in the top section of the report is a group, the Group Membership pane
 displays the group membership, including nested groups.
 
-There is one table at the bottom displaying Permission Source for the select trustee. It contains
-all of the ways the selected trustee has been granted rights to the selected resource.
+The Permission Source table at the bottom contains all of the ways the selected trustee has been granted rights to the selected resource.
 
 ![Permission Source table](/images/accessinformationcenter/12.0/resourceaudit/filesystem/sharesubfolder/shareeffectiveaccesstable.webp)
 
@@ -80,7 +79,7 @@ The following columns display the combined direct and inherited rights:
 - Deny Mask – Bitmask corresponding to Windows ACE permission bits for combined direct inherited
   deny rights
 
-In the example above, the selected trustee has three sources of access to the selected resource. One
+In this example, the selected trustee has three sources of access to the selected resource. One
 source is directly applied, one is through share permissions, one is through a policy. In order for
 this trustee’s access to the selected resource to be changed, each of these source paths must be
 taken into consideration.

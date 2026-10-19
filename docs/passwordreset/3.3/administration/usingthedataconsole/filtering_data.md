@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # Filtering Data
 
-The Data Console can show thousands of records, but only some of them will be of interest to you at
+The Data Console can show thousands of records, but only some are of interest at
 any time. Filters let you focus on the important information.
 
 You can create simple filters by typing values directly into the filter row, or by selecting values
-from Filtering by Column Values. More complex filters are created with the Custom Filters and
+from Filtering by Column Values. Create more complex filters with the Custom Filters and
 [Filter Editor](/docs/passwordreset/3.3/administration/usingthedataconsole/filter_editor.md) windows.
 
 ### The Filter Row
@@ -21,21 +21,21 @@ values directly into this row.
 ![using_the_data_console_3](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_3.webp)
 
 The Filter Row is empty when you first open the Data Console. To create a filter, click the **Filter
-Row** in the column you wish to filter. A cursor will appear. Type a value, and then press **ENTER**
+Row** in the column you want to filter. A cursor appears. Type a value, and then press **ENTER**
 or **TAB**.
 
-Click the button to shown an editor or selector that helps you enter a value. Values can include
+Click the button to show an editor or selector that helps you enter a value. Values can include
 wildcard characters. Use a ? to match any single character, or a \* to match more than one
 character.
 
 ![using_the_data_console_4](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_4.webp)
 
-The image above shows a filter on the Date, Source, and Source IP columns. Only password reset
-events on 2/5/2015 originating from IP addresses starting with 192.168.115 are shown. The small blue
+The image shows a filter on the Date, Source, and Source IP columns. Only password reset
+events on 2/5/2015 originating from IP addresses starting with 192.168.115 appear. The small blue
 icons in the column headers show which columns have active filters.
 
 :::note
-Rows are shown only if they match all filter values (logical AND). Use the custom filter
+The Data Console shows only rows that match all filter values (logical AND). Use the custom filter
 or the filter editor windows for a logical OR filter.
 :::
 
@@ -72,15 +72,15 @@ filters. Click **(Custom...)** in a column header's value list to create a custo
 ![using_the_data_console_8](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_8.webp)
 
 Custom filters can contain one or two conditions for each column. Select an operator for the first
-condition from the drop-down list below the column name. Only relevant operators are shown for each
+condition from the drop-down list below the column name. The list shows only relevant operators for each
 column.
 
 Type a value for the condition in the text box beside the operator. The text box may have a button
-on the right. Click the button to shown an editor or selector that will help you enter a value.
+on the right. Click the button to show an editor or selector that helps you enter a value.
 Values can include wildcard characters. Use a ? to match any single character, or a \* to match more
 than one character.
 
-Select the **AND** or **OR** operator if the filter will have two conditions. Select **AND** if the
+Select the **AND** or **OR** operator if the filter has two conditions. Select **AND** if the
 filter should only show rows that meet both conditions. Select **OR** if the filter should show rows
 that meet either condition.
 
@@ -88,7 +88,7 @@ Select an operator and value for the second condition, or leave them blank if yo
 one condition. Click **OK** to close the Custom Filter window and apply the filter.
 
 :::note
-The Filter Editor is shown instead of the Custom Filter window if the current filter is
+The Filter Editor appears instead of the Custom Filter window if the current filter is
 too complex for the Custom Filter window.
 :::
 
@@ -114,7 +114,7 @@ A drop-down button appears to the right of the filter. Click it to select a rece
 
 You can export the visible rows to Microsoft Excel, HTML, text, and XML formats.
 
-Follow the steps below to export the visible rows in the current tab.
+To export the visible rows in the current tab:
 
 **Step 1 –** Click the **Audit Log** or **Users** tab.
 
@@ -130,14 +130,13 @@ The default file type is .xlsx.
 
 ## Deleting Users
 
-Users are automatically deleted from Password Reset's database approximately one week after they are
-deleted from Active Directory. You can also manually delete users from the Data Console.
+Password Reset automatically deletes users from its database approximately one week after Active Directory deletes them. You can also manually delete users from the Data Console.
 
-Follow the steps below to delete a user.
+To delete a user:
 
 **Step 1 –** Click the **Users** tab.
 
-**Step 2 –** Select the user(s) you wish to delete.
+**Step 2 –** Select the users to delete.
 
 **Step 3 –** Press the **DELETE** key, and then click **OK**.
 

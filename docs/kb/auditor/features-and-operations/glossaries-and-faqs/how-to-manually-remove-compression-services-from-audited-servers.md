@@ -32,7 +32,7 @@ I've changed the auditing scope for Windows Servers Auditing or User Activity Au
 
 Refer to the following list for prerequisites:
 
-- Access to your domain contoller. All further activities should be done on a domain controller.
+- Access to your domain controller. All further activities should be done on a domain controller.
 - Access to PowerShell.
 - Access to a file share accessible from all servers.
 - PsExec tool. Download the PsExec tool in PsExec ⸱ Microsoft 🛈: https://learn.microsoft.com/en-us/sysinternals/downloads/psexec

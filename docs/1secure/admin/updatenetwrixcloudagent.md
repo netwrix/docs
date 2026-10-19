@@ -6,33 +6,33 @@ sidebar_position: 100
 
 # Updating Netwrix Cloud Agent
 
-With Netwrix 1Secure, you can both update the version of the agent by installing new agent or using
-Self-update function. The Self-update saves your time from installing the new version repeatedly,
-while providing real-time notifications, managing agent schedule, and bulk update option.
+With Netwrix 1Secure, you can update the agent by installing a new version or using the Self-update
+function. Self-update eliminates the need to install new versions manually by providing real-time
+notifications, agent schedule management, and a bulk update option.
 
-During the update process, your activity monitoring will not be disrupted.
+Activity monitoring continues during the update process.
 
 | Icon                                                                                    | Description                                                                                     |
 | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| ![selfupdate_icon](/images/1secure/admin/selfupdate_icon.webp) | Bell Icon. Click the Bell Icon to look up for the available updates of the Netwrix Cloud Agent. |
+| ![selfupdate_icon](/images/1secure/admin/selfupdate_icon.webp) | Bell Icon. Click the Bell Icon to view available updates for the Netwrix Cloud Agent. |
 
 ## Update Agents in Bulk
 
-Follow the steps to update agents in bulk.
+**To update agents in bulk:**
 
 **Step 1 –** To update selected agents, on the Managed Organizations page, select **Bulk Update
 Agent**.
 
 ![updateagents](/images/1secure/admin/updateagents.webp)
 
-**Step 2 –** On the Update Agents page, check the boxes next to agents you wish to update and click
+**Step 2 –** On the Update Agents page, check the boxes next to agents you want to update and click
 **Confirm**.
 
 The agents are now updated.
 
 ## Edit Agent Update Schedule
 
-Follow the steps to update agent schedule.
+**To edit the agent update schedule:**
 
 **Step 1 –** To edit the agent update schedule, on the Managed Organizations page, select **Agent
 Update Settings**. The Edit Agent Update Schedule page displays.
@@ -50,22 +50,22 @@ The agent update schedule is now configured.
 
 ## Enable Self-Update Function
 
-Follow the steps to enable the self-update function .
+**To enable the self-update function:**
 
-**Step 1 –** To look up the available updates, click the **Bell** icon. The panel with available
+**Step 1 –** Click the **Bell** icon to view available updates. The panel with available
 updates displays.
 
 ![selfupdate_panel](/images/1secure/admin/selfupdate_panel.webp)
 
-**Step 2 –** Click **Fix** for the agents to be updated. Now you can see the list of organizations
-and which agents may be updated to the new version.
+**Step 2 –** Click **Fix** for the agents to be updated. The list of organizations and agents
+available for update appears.
 
 **Step 3 –** Click **Update available** to update the agent to the current version. The Edit Agent
 Update Schedule page displays, offering you the proposed version.
 
 ![editagentupdatesschedule](/images/1secure/admin/editagentupdatesschedule.webp)
 
-**Step 4 –** Select **Confirm**. The agent shall update and upload a new .msi file of your agent.
+**Step 4 –** Select **Confirm**. The agent updates and uploads a new .msi file.
 
 **Step 5 –** Alternately, update the version for an organization from the Managed organizations
 page. Select the **organization** and then the **Sites** tab.
@@ -74,8 +74,7 @@ page. Select the **organization** and then the **Sites** tab.
 
 **Step 6 –** Click Update.
 
-**Step 7 –** Toggle on Override Tenancy Defaults if you want to change the update defaults for that
-organization.
+**Step 7 –** To change the update defaults for that organization, toggle on **Override Tenancy Defaults**.
 
 **Step 8 –** Click Edit.
 

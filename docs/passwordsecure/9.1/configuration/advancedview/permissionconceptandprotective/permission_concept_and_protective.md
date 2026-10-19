@@ -6,13 +6,12 @@ sidebar_position: 40
 
 # Permission concept and protective mechanisms
 
-## What is the permission concept?
+## Permission concept overview
 
-With Netwrix Password Secure version 8 we provide the right solution to all conceivable demands
+Netwrix Password Secure version 8 provides the right solution to all conceivable demands
 placed on it with regards to permission management.
 [Roles](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/roles.md)
-are a great way to efficiently manage multiple users without losing the overview. We've created
-multiple methods to manually or automatically manage your permissions. More information can be seen
+are a great way to efficiently manage multiple users without losing the overview. Multiple methods exist to manually or automatically manage your permissions. More information can be seen
 in the chapter
 [Multiple editing of permissions](/docs/passwordsecure/9.1/configuration/advancedview/permissionconceptandprotective/manualsettingofpermissions/multiple_editing_of_permissions.md)
 
@@ -24,11 +23,13 @@ diagram.
 
 ![Authorisation concept](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/permission_concept_1-en.webp)
 
-NOTE: Applying some form of permissions is **obligatory**. Applying a protective mechanism is
-**optional**.
+:::note
+Applying some form of permissions is **obligatory**. Applying a protective mechanism is **optional**.
+:::
 
-NOTE: The configuration of visibility is a technical part of the permissions process. However, this
-mechanism has a “protective character” and is thus listed under protective mechanisms.
+:::note
+The configuration of visibility is a technical part of the permissions process. However, this mechanism has a “protective character” and is thus listed under protective mechanisms.
+:::
 
 ## Basic mechanics of the permission concept
 
@@ -53,22 +54,18 @@ is, of course, a good idea to manage these roles in accordance with your company
 role “Administrators” can therefore be provided with more extensive authorizations than, for
 example, the role “Sales Assistance”. This role-based inheritance allows the organization to
 maintain the overview in a larger corporate structure as well as a simple procedure when adding new
-employees. Instead of having to entitle him individually, this is simply added to his role.
+employees. Instead of having to entitle him individually, the new employee is added to his role.
 
 ![Permission only for users or roles](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/permission_concept_2-en.webp)
 
-It is obvious to proceed with the organization of accesses using the concept of roles as a basis and
+It's obvious to proceed with the organization of accesses using the concept of roles as a basis and
 only to grant rights individually to employees in exceptional cases. The unplanned absence of
 personnel must also be taken into account in such concepts. Working with roles defuses such risks
 significantly.
 
-NOTE:
-
-
-```
-Permissions are always granted to only one user or role!
-
-```
+:::note
+Permissions are always granted to only one user or role.
+:::
 
 ### 2. Membership in roles
 
@@ -78,13 +75,9 @@ been authorized for the role.
 
 ![Membership in roles](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/permission_concept_3-en.webp)
 
-NOTE:
-
-
-```
-A small technical digression into the nature of the encryption can be very helpful with the basic understanding. Each role has a key pair. The first key is used to encrypt data. Access to this information is only possible with the second key. The membership in a role is equivalent to this second key.
-
-```
+:::note
+Each role has a key pair. The first key encrypts data. Access to this information is only possible with the second key. Membership in a role is equivalent to this second key.
+:::
 
 ### 3. Membership vs. permissions for roles
 
@@ -97,28 +90,24 @@ illustrates this with an example of two users.
 
 - **User 1** is a member of the role, and is therefore authorized for all records that are assigned
   to the role. However, it has only “read rights” for the role itself. This means, it can see the
-  role, but cannot “Edit, move, or delete” it.
+  role, but can't “Edit, move, or delete” it.
 - **User 2** has all rights for the role. It can add additional users to the role by means of
-  “authorize”. The crucial point, however, is that it is not a member of the role. It cannot,
+  “authorize”. The crucial point, however, is that it isn't a member of the role. It can't,
   therefore, see any records for which the role is authorized.
 
-In practice, the first user would be a classic user that is assigned, for example, to the Sales role
+In practice, the first user would be a classic user that's assigned, for example, to the Sales role
 by the administrators, and can view the records accordingly. The second user could be one of those
 administrators. This user has extensive rights for the role. It can edit it, and add users to it.
-However, it cannot see any data that is assigned to sales. It lacks membership in the role.
+However, it can't see any data that's assigned to sales. It lacks membership in the role.
 
-NOTE:
-
-
-```
-As a member of a role, it must have at least the “read” right for the role!
-
-```
+:::note
+As a member of a role, it must have at least the “read” right for the role.
+:::
 
 ## Specific example and configuration
 
 Similar to the previous section on permission concept and protective mechanisms for roles, the
-configuration of a role will be illustrated using two users. The configuration is performed in the
+configuration of a role is illustrated using two users. The configuration is performed in the
 [Roles](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/roles.md).
 By double-clicking on the role “IT-Consultants” in the
 [List view](/docs/passwordsecure/9.1/configuration/advancedview/operationandsetup/list_view.md),
@@ -128,15 +117,16 @@ you can open their detailed view.
 
 - The user “Holste” is a member of the role and can, therefore, access those records for which the
   role has permissions. He has the obligatory read right for the role, which is the basic
-  requirement in order to be a member of the role. Which exact rights it has to the data record is
+  requirement to be a member of the role. Which exact rights it has to the data record is
   not defined within the role! This is set out in the following section.
-- The user “Administrator” has all rights to the role, but is not a member! Thus, it cannot see any
-  records that are authorized for the role. However, it has all rights to the role and can therefore
+- The user “Administrator” has all rights to the role, but isn't a member! Thus, it can't see any
+  records that are authorized for the role. However, it has all rights to the role, and can therefore
   print, assign other users to the role, and delete them.
 
 ![explanation of the authorization through a role](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/permission_concept_6-en.webp)
 
 This example clearly shows the advantages of the concept. The complete separation of administrative
-users from regular users brings significant advantages. Of course, one does not necessarily exclude
-the other. An administrator can, of course, have full access to the role and also be a member in it!
+users from regular users brings significant advantages. Of course, one doesn't necessarily exclude
+the other. An administrator can, of course, have full access to the role, and also be a member in it.
 The boundaries between the two often overlap, and can be freely defined in Netwrix Password Secure.
+

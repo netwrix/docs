@@ -6,12 +6,12 @@ sidebar_position: 40
 
 # Host Discovery Node
 
-Use the **Host Discovery** node to discover hosts to audit. Host Discovery queries are created in
+Use the **Host Discovery** node to discover hosts to audit. Create Host Discovery queries in
 the Host Discovery node to discover hosts within the targeted environment that match the desired
 criteria (for example, all domain controllers for Active Directory auditing).
 
 The Host Discovery queries view displays a list of previously configured queries, opens the Host
-Discovery Wizard to create new queries, and is where host inventory process can be automated. The
+Discovery Wizard to create new queries, and lets you automate host inventory. The
 **Host Discovery** node houses the Discovery Log. The **Settings** > **Host Discovery** node
 contains the global settings that affect discovery queries. See the
 [Host Discovery](/docs/accessanalyzer/11.6/admin/settings/hostdiscovery.md)

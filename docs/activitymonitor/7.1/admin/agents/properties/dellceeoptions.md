@@ -7,7 +7,7 @@ sidebar_position: 70
 # Dell CEE Options Tab
 
 The Dell CEE Options tab provides options to configure Dell Common Event Enabler (CEE) settings for
-monitoring Dell devices. File activity monitoring leverages the Dell CEE to deliver activity events
+monitoring Dell devices. File activity monitoring uses the Dell CEE to deliver activity events
 from Dell devices.
 
 CEE supports two protocols to deliver events to Activity Monitor: RPC and HTTP. An agent can receive
@@ -29,11 +29,10 @@ The options are:
   server
 - Choose the CEE event delivery mode:
 
-    - Synchronous real-time delivery – Events are delivered immediately as they occur, one by one.
-    - Asynchronous bulk delivery (VCAPS) - Events are delivered in batches with a cadence based on a
-      time period or a number of events. As this mode provides better throughput, it is recommended
-      for heavily loaded servers. If selected, specify how often events are delivered by Dell CEE
-      using the following options:
+    - Synchronous real-time delivery – The system delivers events immediately as they occur, one by one.
+    - Asynchronous bulk delivery (VCAPS) - The system delivers events in batches with a cadence based on a
+      time period or a number of events. This mode provides better throughput and is recommended
+      for heavily loaded servers. If selected, use the following options to specify how often Dell CEE delivers events:
 
         - Every [number] seconds (from 60 to 600) - Default is 60 seconds
         - Or every [number] events (from 10 to 10000) - Default is 100 events
@@ -63,7 +62,7 @@ Properties window closes.
 ## Windows CEE Manual Configuration
 
 Windows CEE is configured with the windows registry and depends on the selected event delivery mode,
-AUDIT or VCAPS.
+AUDIT, or VCAPS.
 
 For the synchronous real-time delivery mode (AUDIT), use the following steps.
 
@@ -72,7 +71,7 @@ For the synchronous real-time delivery mode (AUDIT), use the following steps.
 
 **Step 2 –** Set the `Enabled` parameter to 1.
 
-**Step 3 –** If the `EndPoint` parameter is empty, set it to the string listed below. If it is not
+**Step 3 –** If the `EndPoint` parameter is empty, set it to the string listed below. If it isn't
 empty (i.e. some other 3rd party application is also receiving activity events from CEE), append the
 following string to the existing `EndPoint` value, separating them with a semicolon.
 
@@ -89,7 +88,7 @@ For the asynchronous bulk delivery mode with a cadence based on a time period or
 
 **Step 2 –** Set the `Enabled` parameter to 1.
 
-**Step 3 –** If the `EndPoint` parameter is empty, set it to the string listed below. If it is not
+**Step 3 –** If the `EndPoint` parameter is empty, set it to the string listed below. If it isn't
 empty (i.e. some other 3rd party application is also receiving activity events from CEE), append the
 following string to the existing `EndPoint` value, separating them with a semicolon.
 
@@ -183,7 +182,7 @@ Here's an example for the asynchronous delivery (VCAPS):
 </CEPP>
 ```
 
-Make sure to set `Enabled` to `1` only in `Audit` or `VCAPS` if Activity Monitor is the only product
+ensure to set `Enabled` to `1` only in `Audit` or `VCAPS` if Activity Monitor is the only product
 receiving activity from CEE. Otherwise, enable the modes according to all product requirements.
 
 If you want to send activity to several 3rd party applications, separate them with semicolons.

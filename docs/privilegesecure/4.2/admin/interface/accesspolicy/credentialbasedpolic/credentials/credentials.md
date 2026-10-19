@@ -13,16 +13,16 @@ The Credentials tab shows credentials associated with the selected Credential Ba
 The Credentials table has the following features:
 
 - Add — Opens the Add Credentials window. See the
-  [Add Credentials Window](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/credentials/addcredentials.md) topic for additional
-  information.
+[Add Credentials Window](/docs/privilegesecure/4.2/admin/interface/accesspolicy/credentialbasedpolic/credentials/addcredentials.md) topic for additional
+information.
 - Remove — Removes the selected item from being associated with the policy
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Type— Provides options to filter results based on a chosen criterion:
 
-    - All — Displays all credentials for users and groups
-    - Credential — Displays user credentials
-    - Credential Group — Displays group credentials
+- All — Displays all credentials for users and groups
+- Credential — Displays user credentials
+- Credential Group — Displays group credentials
 
 - Refresh — Reload the information displayed
 

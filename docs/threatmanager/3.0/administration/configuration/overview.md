@@ -14,10 +14,9 @@ It contains links to the component configuration and settings interfaces:
 
 - Threat Detection – Provides an interface to configure threat monitoring. See the
   [Threat Detection Page](/docs/threatmanager/3.0/administration/configuration/threatdetection/threatdetection.md) topic for additional information.
-- Threat Response – Provides the ability to designate playbooks, which contain actions that can be
-  executed in response to detected threats. See the [Threat Response Page](/docs/threatmanager/3.0/administration/configuration/threatresponse.md) topic
+- Threat Response – Lets you designate playbooks, which contain actions that can be executed in response to detected threats. See the [Threat Response Page](/docs/threatmanager/3.0/administration/configuration/threatresponse.md) topic
   for additional information.
-- Integrations – Allows you to configure integrations with a variety of Netwrix products and
+- Integrations – Lets you configure integrations with a variety of Netwrix products and
   third-party systems and applications. See the [Integrations Interface](/docs/threatmanager/3.0/administration/configuration/integrations/overview.md)
   topic for additional information.
 - Policies – Provides a single location to manage a variety of policy object types that define how

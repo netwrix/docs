@@ -83,7 +83,7 @@ topic for additional information.
 
 ## Monitored Host Inactivity Alerts Email Account
 
-The Monitored Host Inactivity Alerts Email Account are used to automate email alerts for inactivity
+The Monitored Host Inactivity Alerts Email Account is used to automate email alerts for inactivity
 detected by the monitored host. The credentials can be updated in the monitored **Host Properties**.
 
 ![Monitored Host Inactivity Alerts Email Credentials Page](/images/activitymonitor/7.1/troubleshooting/monitoredhostinactivityalertsemailcredentials.webp)

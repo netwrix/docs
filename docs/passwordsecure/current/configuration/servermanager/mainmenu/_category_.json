@@ -1,0 +1,10 @@
+{
+  "label": "Main menu",
+  "position": 90,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "main_menu"
+  }
+}

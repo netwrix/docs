@@ -6,14 +6,14 @@ sidebar_position: 80
 
 # Password Reset Client
 
-The Password Reset Client allows users to securely reset their password or unlock their account from
+With the Password Reset Client, users can securely reset their password or unlock their account from
 the Windows Logon and Unlock Computer screens. Users click **Reset Password** to access the Password
 Reset system.
 
 ![the_password_reset_client](/images/passwordreset/3.3/administration/the_password_reset_client.webp)
 
 :::note
-The Password Reset Client does not modify any Windows system files.
+The Password Reset Client doesn't modify any Windows system files.
 :::
 
 
@@ -197,13 +197,13 @@ This will help prevent users from navigating to untrusted sites within the Passw
 
 **Step 10 –** Close the Group Policy Management Editor.
 
-The new PRC configuration is applied to all computers in the domain. This does not happen
+Windows applies the new PRC configuration to all computers in the domain. This doesn't happen
 immediately, as Windows takes some time to apply the changes to Group Policy. You can force an
 immediate refresh of Group Policy on the local computer with the following command: gpupdate
 /target:computer
 
 The Password Reset Client only opens URLs with .dll, .htm, and .html extensions. URLs without a
-filename are not opened. The PRC also blocks some page content, including audio and video files,
+filename aren't opened. The PRC also blocks some page content, including audio and video files,
 ActiveX controls and Java applets. Send an e-mail to
 [support@netwrix.com ](mailto:support@netwrix.com)if you need to change the default filename and
 content restrictions.
@@ -269,7 +269,7 @@ Editor.
 
 **Step 12 –** Close the Group Policy Management Editor.
 
-The license key is applied to all computers in the domain. This does not happen immediately, as
+Windows applies the license key to all computers in the domain. This doesn't happen immediately, as
 Windows takes some time to apply the changes to Group Policy. You can force an immediate refresh of
 Group Policy on the local computer with the following command:
 

@@ -1,0 +1,9 @@
+{
+  "label": "How To And Tech Support",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

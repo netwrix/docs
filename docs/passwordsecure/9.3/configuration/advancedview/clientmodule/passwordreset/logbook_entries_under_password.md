@@ -27,7 +27,7 @@ logbook entries are written:
 | Execution Error       | Password Reset |
 | Error during rollback | Password Reset |
 
-If an attempt was made to perform a rollback, but the rollback cannot be performed because the old
+If an attempt was made to perform a rollback, but the rollback can't be performed because the old
 password was incorrect before the reset, or the first script is of the type “user-defined”, the
 following logbook entry is written:
 
@@ -36,7 +36,7 @@ following logbook entry is written:
 | Error during rollback | Password Reset |
 
 If a password reset has failed and an attempt is made to perform a rollback, the reset is blocked
-for one day and the following logbook entry is written: (It does not matter if the rollback worked
+for one day and the following logbook entry is written: (It doesn't matter if the rollback worked
 or not)
 
 | Logbook type           | Logbook record |

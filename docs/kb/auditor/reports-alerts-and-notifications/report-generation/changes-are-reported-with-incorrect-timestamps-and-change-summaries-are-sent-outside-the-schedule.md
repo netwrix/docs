@@ -23,7 +23,7 @@ knowledge_article_id: kA00g000000H9ZdCAK
 
 # Changes are reported with incorrect timestamps and Change Summaries are sent outside the schedule
 
-- Сhanges are reported with incorrect timestamps.
+- Changes are reported with incorrect timestamps.
 - Change Summaries are sent outside the schedule.
 
 On the computer where **Netwrix Auditor** is installed:

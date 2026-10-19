@@ -25,17 +25,17 @@ knowledge_article_id: kA04u0000000JvTCAU
 
 ## Question
 
-I want to know if sensitive data is sent outside of my IT Infrastructure by Netwrix Data Classification.
+Does Netwrix Data Classification send sensitive data outside of my IT infrastructure?
 
 ## Answer
 
-All collected data remains on-prem. The product does send usage statistics, however. This includes the following high level / counter information:
+All collected data remains on-premises. The product does send usage statistics, including the following counters:
 
 ### Top Level
 
 - Licence information (licensee, expiry date, features enabled)
 - Number of custom taxonomies
-- Number of sensitive data taxonomies (# of our predefined taxonomies that have been enabled)
+- Number of sensitive data taxonomies (out of the predefined taxonomies you have enabled)
 
 ### Per Source Type
 

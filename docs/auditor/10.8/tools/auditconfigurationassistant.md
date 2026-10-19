@@ -25,7 +25,7 @@ Auditor\*\*\*\*>**\*\*Netwrix Auditor Audit Configuration Assistant**. Alternati
 this utility from the monitoring plan wizard for Active Directory data source. See the Launch Audit
 Configuration Assistant section for additional information.
 
-Currently, the utility supports Active Directory and Logon Activity data sources.
+the utility supports Active Directory and Logon Activity data sources.
 
 ## Prerequisites
 
@@ -60,9 +60,8 @@ Select **Netwrix Auditor**→**Netwrix Auditor Audit Configuration Assistant**.
 
 - If the utility is installed on the same machine as Netwrix Auditor server, you will be taken to
   the **Welcome** step.
-- If the utility is installed on the remote machine together with Netwrix Auditor client, the
-  initial window will allow you to enter the settings to connect to Netwrix Auditor Server. Specify
-  the following:
+- If the utility is installed on the remote machine together with Netwrix Auditor client, enter the
+  connection settings in the initial window. Specify the following:
 
 | Setting                   | Description                                                                                                                                                   |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -83,12 +82,10 @@ Alternatively, you can launch this utility by clicking the corresponding link:
 
 ## Start Assessment
 
-Follow the steps to start assessment.
-
 **Step 1 –** Specify the monitoring scope —select what you plan to monitor with Netwrix Auditor. You
 can select both **Active Directory** and **Logon Activity**, or any of them.
 
-![audit_cfg_assist_creds](/images/auditor/10.7/tools/audit_cfg_assist_creds.webp)
+![audit_cfg_assist_creds](/images/auditor/10.8/tools/audit_cfg_assist_creds.webp)
 
 **Step 2 –** If you launched **Audit Configuration Assistant** from the **Start** menu (not from the
 monitoring plan settings), enter the name of Active Directory domain you want to assess.
@@ -110,9 +107,7 @@ At this step, you will be presented the results of the environment readiness ass
 - the list of current and required settings for each entity
 - the list of issues (if any) that occurred during the assessment
 
-![assessment_results_thumb_0_0](/images/auditor/10.7/tools/assessment_results_thumb_0_0.webp)
-
-Follow the steps to view results.
+![assessment_results_thumb_0_0](/images/auditor/10.8/tools/assessment_results_thumb_0_0.webp)
 
 **Step 1 –** Examine the report.
 
@@ -133,7 +128,7 @@ audit settings. Operation progress will be reported in the bottom of the window.
 **Step 1 –** Wait for the process to complete.
 
 **Step 2 –** Review the results. Successfully applied settings will be reported with a green tick;
-those that did not manage to apply will be with the yellow warning sign and explanatory text.
+those that didn't manage to apply will be with the yellow warning sign and explanatory text.
 
 **Step 3 –** You can click **Start over** to get to the Start Assessment, fix the issues and perform
 the procedure again, or click **Finish**.

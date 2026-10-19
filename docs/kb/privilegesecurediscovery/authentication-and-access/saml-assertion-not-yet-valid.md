@@ -23,7 +23,7 @@ sfdc_migration:
   original_categories:
   - privilege_secure_discovery
   visibility: public
-sidebar_label: SAML Assertion not yet Valid
+sidebar_label: SAML Assertion Not Yet Valid
 tags: []
 title: "SAML Assertion not yet Valid"
 knowledge_article_id: kA04u00000110p6CAA
@@ -45,7 +45,7 @@ SAML assertion not yet valid
 
 In ADFS add the `NotBeforeSkew` value to the relying party on the ADFS server. The number after `NotBeforeSkew` represent the number of minutes to skew the `NotBeforeValue`, so a setting of 3 would result in a `NotBefore` of -3 minutes.
 
-This is the PowerShell command to set `NotBeforeSkew`:
+Use the following PowerShell command to set `NotBeforeSkew`:
 
 ```powershell
 Set-ADFSRelyingPartyTrust -TargetIdentifier "" -NotBeforeSkew 3"

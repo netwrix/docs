@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Licensing Page
 
-License information is displayed on the Licensing page of the System Settings interface. Threat
+The Licensing page of the System Settings interface displays license information. Threat
 Manager comes with a temporary 15-day license.
 
 ![System Settings interfaces on the Licensing page](/images/threatmanager/3.0/administration/configuration/systemsettings/licensing.webp)
@@ -24,8 +24,6 @@ header.
 
 ## Import License
 
-Follow the steps to import a license key file.
-
 ![License section of the Licensing page](/images/threatmanager/3.0/administration/configuration/systemsettings/licensingbrowse.webp)
 
 **Step 1 –** On the License page of the System Settings interface, click Browse. The Add New
@@ -36,5 +34,4 @@ Explorer closes and returns to the console.
 
 **Step 3 –** Refresh the page to confirm that the license has been uploaded properly.
 
-The License Key is now imported into Threat Manager. The license information is displayed in the
-License Info section at the top of the page.
+The License Key is now imported into Threat Manager. The License Info section at the top of the page displays the license information.

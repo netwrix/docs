@@ -11,7 +11,7 @@ sensitive data. It is a wizard page for the Scan for Sensitive Content category.
 
 ![Dropbox Access Auditor Data Collector Wizard Select DLP criteria page](/images/accessanalyzer/12.0/admin/datacollector/dropboxaccess/selectdlpcriteria.webp)
 
-Select the checkbox next to each criteria to be included in the search for sensitive data. You can
+Select the checkbox next to each criteria to include in the search for sensitive data. You can
 also use the **Select All** and **Clear All** buttons.
 
 The table contains the following types of criteria:
@@ -19,7 +19,7 @@ The table contains the following types of criteria:
 - System Criteria – Lists pre-defined criteria
 - User Criteria – Lists user-defined criteria
 
-Use the **Edit** button to access the Criteria Editor where user-defined criteria can be created or
-customized. See the
+Use the **Edit** button to access the Criteria Editor, where you can create or customize
+user-defined criteria. See the
 [Sensitive Data Criteria Editor](/docs/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/overview.md) topic
 for additional information.

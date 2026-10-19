@@ -8,7 +8,7 @@ sidebar_position: 10
 
 **Dependencies**
 
-This job group requires the following items to be enabled:
+This job group requires you to enable the following items:
 
 - Exchange Access Auditing is enabled in the Exchange environment
 
@@ -16,7 +16,7 @@ This job group requires the following items to be enabled:
       [Enable Exchange Mailbox Access Auditing](/docs/accessanalyzer/12.0/requirements/exchange/support/powershell.md#enable-exchange-mailbox-access-auditing)
       topic for additional information.
 
-The following job groups need to be successfully run:
+Successfully run the following job groups first:
 
 - **.Active Directory Inventory** Job Group
 - **.Entra ID Inventory** Job Group
@@ -38,11 +38,11 @@ on-premises to run against:
 - Local host
 
 This Job Group can target a custom host list for Exchange Online instead of targeting Exchange
-on-premises. However, do not try to target both types of environments.
+on-premises. However, don't try to target both types of environments.
 
 **Connection Profile**
 
-A Connection Profile must be set directly on the collection jobs within each sub-job group:
+Set a Connection Profile directly on the collection jobs within each sub-job group:
 
 - **Features** > **EX_Features** Job
 - **Logons** > **0.Collection** > **EX_MailboxActivity** Job
@@ -62,7 +62,7 @@ topic for additional information.
 
 **Schedule Frequency**
 
-It is not recommended to run these jobs at the 4. Mailboxes job group level. The Logons sub-job
+Don't run these jobs at the 4. Mailboxes job group level. The Logons sub-job
 group and Sizing job group have been designed to run daily. The Features sub-job group and
 Permissions job group have been designed to run weekly. See the table for recommended times:
 
@@ -75,7 +75,7 @@ Permissions job group have been designed to run weekly. See the table for recomm
 
 **History Retention**
 
-History retention should not be enabled on this job group. History is kept through analysis tasks.
+Don't enable history retention on this job group. History is kept through analysis tasks.
 Modify the following analysis tasks to customize the amount of history which is kept:
 
 | Job Name          | Analysis Task Name    | Default History |
@@ -85,7 +85,7 @@ Modify the following analysis tasks to customize the amount of history which is 
 
 **Query Configuration**
 
-The 4. Mailboxes job group is designed to be run with the default query configurations. However, the
+Run the 4. Mailboxes job group with the default query configurations. However, the
 following queries can be modified:
 
 - **Features** > **EX_Features** Job – **User Mailbox Settings** Query
@@ -96,20 +96,20 @@ following queries can be modified:
 - **Permissions** > **0. Collection** > **EX_SendAs** Job – **Send AS - Rights** Query
 - **Sizing** > **0. Collection** > **EX_MBSize** Job – **Mailbox Counts and Sizes** Query
 
-No other queries should be modified.
+Don't modify other queries.
 
 **Analysis Configuration**
 
-The 4. Mailboxes job group should be run with the default analysis configurations.
+Run the 4. Mailboxes job group with the default analysis configurations.
 
 :::warning
-Most of these analysis tasks are preconfigured and should not be modified or
+Most of these analysis tasks are preconfigured and shouldn't be modified or
 deselected. There are some tasks that are deselected by default, as they are for troubleshooting
 purposes.
 :::
 
 
-The following analysis tasks should not be deselected, but their parameters can be modified:
+The following analysis tasks shouldn't be deselected, but their parameters can be modified:
 
 - **Logons** > **EX_MailboxLogons** Job – **03.SET HISTORY RETENTION** Analysis Task
 - **Sizing** > **EX_MailboxSizes** Job – **02.SET HISTORY RETENTION** Analysis Task

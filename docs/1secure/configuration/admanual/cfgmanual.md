@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Active Directory: manual configuration
 
-To configure your domain for monitoring manually, you will need:
+To configure your domain for monitoring manually, you need:
 
 - **Group Policy Management Console** — if you plan to perform configuration steps from a domain
   controller
@@ -16,7 +16,7 @@ To configure your domain for monitoring manually, you will need:
 - **ADSI Edit** — if you plan to perform configuration steps from a server other than domain
   controller
 
-If these tools are not installed, refer to the related topics:
+If these tools aren't installed, refer to the related topics:
 
 - [Install ADSI Edit](/docs/1secure/configuration/admanual/adsi.md)
 - [Group Policy Management Console](/docs/1secure/configuration/admanual/grouppolicymanagementconsole.md)
@@ -31,12 +31,12 @@ Policy). See [Configure Basic Domain Audit Policies](/docs/1secure/configuration
 
 **Step 3 –** Adjust Security Event Log Size and Retention Settings
 
-**Step 4 –** If you have an on-premises Exchange server in your Active Directory domain, consider
-that some changes to AD can be made via that Exchange server. To be able to audit and report who
-made those changes, you should
+**Step 4 –** If you have an on-premises Exchange server in your Active Directory domain, note
+that some changes to AD can be made via that Exchange server. To audit and report who made those
+changes,
 [Configure Exchange Administrator Audit Logging Settings](/docs/1secure/admin/datacollection/activedirectoryauditing/auditlogging.md)
 
-Also, remember to do the following for AD auditing:
+Also complete the following steps for AD auditing:
 
 **Step 1 –** Configure Data Collecting Account, as described in
 [Active Directory Auditing](/docs/1secure/admin/datacollection/activedirectoryauditing/activedirectoryauditing.md)

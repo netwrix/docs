@@ -1,0 +1,3 @@
+message: "Don't use passive voice. Use active voice instead."
+level: warning
+reason: "This rule should trigger when the user or agent writes a sentence or clause in passive voice."

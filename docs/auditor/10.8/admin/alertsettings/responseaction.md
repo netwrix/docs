@@ -10,7 +10,7 @@ Upon the alert triggering, you can instruct Auditor to perform several actions s
 command, a script or other executable file that will perform a remediation action, open a ticket
 with the organization help desk, etc.
 
-![passwordreset_thumb_0_0](/images/auditor/10.7/admin/alertsettings/passwordreset_thumb_0_0.webp)
+![passwordreset_thumb_0_0](/images/auditor/10.8/admin/alertsettings/passwordreset_thumb_0_0.webp)
 
 Response Action settings contain the following configuration options:
 
@@ -22,14 +22,13 @@ Response Action settings contain the following configuration options:
 - Write data to CSV file – If this checkbox is selected, Netwrix Auditor will save activity records
   in a CSV file. You can use it to pass information into your response action to receive a more
   targeted response.
-- Limit row count in a file to – Select the desired number of rows you want for the file
+- Limit row count in a file to – Select the number of rows you want for the file
 - Use custom credentials – Enter the username and password if you want the script to be run as an
   account different from LocalSystem
 - Command line preview – Showing a preview of the command line script. Click **Test run** button to
   test its performance.
 
-Follow the steps to configure the required settings in the Response Action tab of the alert
-properties.
+## Configure response action settings
 
 **Step 1 –** Turn the switch to On if you want a response action to be taken when the alert occurs.
 
@@ -43,7 +42,7 @@ Use space character as a separator.
 **Step 4 –** To run _.exe_, _.cmd_ and _.bat_ files, you can enter the path to your command-line or
 batch file directly in the Run field, for example:
 
-![command_thumb_0_0](/images/auditor/10.7/admin/alertsettings/command_thumb_0_0.webp)
+![command_thumb_0_0](/images/auditor/10.8/admin/alertsettings/command_thumb_0_0.webp)
 
 To run the ._ps1_ files, you will need to enter the path to _powershell.exe_ and path to your
 script. For example:
@@ -51,7 +50,7 @@ script. For example:
 - In the Run field, enter _C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe_
 - In the With parameters field, enter `–File <path_to_your_ps_script>`
 
-![powershell_thumb_0_0](/images/auditor/10.7/admin/alertsettings/powershell_thumb_0_0.webp)
+![powershell_thumb_0_0](/images/auditor/10.8/admin/alertsettings/powershell_thumb_0_0.webp)
 
 Unless you select to Write data to CSV file, Auditor will also pass the following parameters to the
 command line:
@@ -72,7 +71,7 @@ If you leave this field empty, then the path to the file specified in the Run fi
 a working directory. As shown in the example with the _.ps_ file, this may be the system directory.
 So, to avoid system directory cluttering, it is recommended not to leave the Working directory field
 empty but to explicitly specify the directory where your executable file is located, or a dedicated
-directory for that purpose. In the latter case, make sure the directory exists on Auditor server.
+directory for that purpose. In the latter case, ensure the directory exists on Auditor server.
 
 **Step 7 –** Write data to CSV file — select this option if you want Auditor to locate the activity
 records associated with the alert, and write the record fields and their values in a structured way
@@ -85,7 +84,7 @@ cleared.
 **Step 8 –** Limit row count in a file to `<N>` — limit the number of rows (activity records) to be
 written to a single ._csv_ file. Enter a value from _1_ to _1000_.
 
-Learn more about how these options work in the Configure a Response Action for Alert section.
+For details on how these options work, see the section below.
 
 By default, the executable file will be launched under the _LocalSystem_ account. If you want to use
 another account, select the Use custom credentials checkbox and specify user name and password. Make
@@ -113,14 +112,14 @@ After the test run, you will get a notification message with the exit code. Typi
 follows:
 
 - **0** — the response action completed successfully
-- Any other value — the response action was not a success
+- Any other value — the response action wasn't a success
 
 **_RECOMMENDED:_** Apply similar logic if you plan to use custom exit codes in your response action
 script.
 
 Same exit codes will be returned by response action regular runs.
 
-If the action is not a success (exit code is not 0), the program will try to perform response action
+If the action isn't a success (exit code isn't 0), the program will try to perform response action
 again (up to 200 times) with increasing time interval.
 
 ## Write Data to a CSV File
@@ -144,7 +143,6 @@ records per launch (not more than the specified limit, i.e. 10 records in this e
 
 A CSV file is named using the timestamp and GUID and stored in the subfolder of Netwrix Auditor
 working folder (by default, _%ProgramData%\Netwrix
-Auditor\AuditCore\AuditArchive\AlertsToolLauncher\Csv_). Note that a CSV file will exist only while
-the executable file is running – after the execution is completed, the CSV file will be deleted. So
-if you plan, for example, to obtain some data from that file for further processing, you may need to
-copy it to a permanent location in a timely manner, e.g., using a script.
+Auditor\AuditCore\AuditArchive\AlertsToolLauncher\Csv_). A CSV file exists only while the executable file is running – after the execution completes, it's
+deleted. If you need to obtain data from that file for further processing, copy it to a permanent
+location in a timely manner, for example, using a script.

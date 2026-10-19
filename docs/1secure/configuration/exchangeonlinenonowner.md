@@ -6,16 +6,13 @@ sidebar_position: 70
 
 # Settings for Non-Owner Mailbox Access Audit: Using Application
 
-To prepare for non-owner mailbox access auditing in the Exchange Online organization, you will need
-to take several configuration steps, creating a Microsoft Entra ID app with the required permissions
-and instructing this app to automatically apply the necessary audit settings.
+To prepare for non-owner mailbox access auditing in the Exchange Online organization, you need to complete several configuration steps: create a Microsoft Entra ID app with the required permissions and configure it to automatically apply the necessary audit settings.
 
-These settings shall provide configuration for the All Exchange Online Non-Owner Mailbox Access
-Events report. See the Filters topic for additional information.
+These settings configure the All Exchange Online Non-Owner Mailbox Access Events report. See the Filters topic for additional information.
 
 :::note
 To start auditing the data for the report, you need to select the **Collect non-owner
-mailbox audit data** check box when adding the Exchange Online source. See the
+mailbox audit data** checkbox when adding the Exchange Online source. See the
 [Add a Source and Connectors for Exchange Online](/docs/1secure/admin/organizations/sourcesandconnectors/exchangeonline.md)topic
 for additional information.
 :::
@@ -30,45 +27,45 @@ article for additional information.
 
 ## Grant Permissions to the Application
 
-Follow the steps to grant permissions to the Microsoft Entra ID application.
+**To grant permissions to the Microsoft Entra ID application:**
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+The following steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
 
 
-**Step 1 –** In the Microsoft Entra admin center, create and register a Microsoft Entra ID app. See
+**Step 1 –** Go to the Microsoft Entra admin center and create and register a Microsoft Entra ID app. See
 the
 
 **Step 2 –** After you created an app, select the newly-created, registered application. If you left
-the Overview page, it will be listed in the **Identity** > **Applications** > **App
+the Overview page, it is listed in the **Identity** > **Applications** > **App
 registrations** > **All applications** list.
 
 **Step 3 –** On the registered app blade, click **API permissions** in the Manage section.
 
 **Step 4 –** In the top toolbar, click **Add a permission**.
 
-**Step 5 –** On the Request API permissions blade, click the **APIs my organization uses** tab and
+**Step 5 –** On the Request API permissions blade, click the **APIs your organization uses** tab and
 search for _Office 365 Exchange Online_.
 
-**Step 6 –** Click on the _Office 365 Exchange Online_ entry in the list of apps found.
+**Step 6 –** Click the _Office 365 Exchange Online_ entry in the list of apps found.
 
 **Step 7 –** Proceed with adding the permissions for this app: select **Application permissions**
 and then select **Exchange.ManageAsApp**.
 
-**Step 8 –** Click **Grant Admin Consent for [tenant]**. Then click **Yes** in the confirmation
+**Step 8 –** Click **Grant Admin Consent for `<tenant>`**. Then click **Yes** in the confirmation
 window.
 
 The application is granted the required API permissions.
 
 ## Grant Required Roles
 
-Follow the steps to grant roles to the registered application.
+**To grant roles to the registered application:**
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+The following steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -86,11 +83,11 @@ The application is granted the required roles.
 
 ## Set Up an Environment
 
-Follow the steps to set up your environment using PowerShell.
+**To set up your environment using PowerShell:**
 
 **Step 1 –** Install the Exchange Online PowerShell V2 module.
 
-Make sure you are using the version specified in the
+Ensure you are using the version specified in the
 [related Microsoft article](https://docs.microsoft.com/en-us/powershell/exchange/app-only-auth-powershell-v2?view=exchange-ps).
 
 **Step 2 –** Download the PowerShell script for certificate creation, as provided in the
@@ -150,7 +147,7 @@ Connect-ExchangeOnline -CertificateThumbprint 6AEА5A82911ААА3F76FEE149B7B52�
 Get-ExoMailbox -PropertySets Minimum -RecipientTypeDetails UserMailbox,SharedMailbox,EquipmentMailbox,LinkedMailbox,RoomMailbox | Set-Mailbox -AuditEnabled $true –AuditAdmin Update,Copy,Move,MoveToDeletedItems,SoftDelete,HardDelete,FolderBind,SendAs,SendOnBehalf,Create –AuditDelegate Update,Move,MoveToDeletedItems,SoftDelete,HardDelete,FolderBind,SendAs,SendOnBehalf,Create
 ```
 
-**Step 9 –** Finally, run the following command in Powershell to end the session:
+**Step 9 –** Run the following command in Powershell to end the session:
 
 ```
 Disconnect-ExchangeOnline -Confim:$False

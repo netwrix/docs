@@ -8,16 +8,17 @@ keywords:
   - uninstall
   - Mac
   - remove-epp.command
-  - endpoint-protector
+  - endpointprotector
   - Netwrix Endpoint Protector
   - installation kit
   - uninstall script
   - client removal
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Uninstall the Client From a Mac Computer
 tags:
   - deployment-and-installation
+  - kb
 title: "Uninstall the Client From a Mac Computer"
 knowledge_article_id: kA0Qk0000002B7SKAU
 ---

@@ -6,8 +6,7 @@ sidebar_position: 30
 
 # Workflow Actions
 
-Actions are automated operation to be performed with the documents when rule conditions are
-triggered. There are two types of workflow actions:
+Actions are automated operations performed on documents when rule conditions are triggered. There are two types of workflow actions:
 
 - Generic actions available for any type of document. These are:
 
@@ -31,4 +30,4 @@ This table lists workflow actions available for the certain content source types
 | SharePoint              | [Email Alert](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/actions/availableactions/emailalert/emailalert.md) [Migrate Document](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/actions/availableactions/migratedocument/migratedocument.md) [Apply Additional Classification](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/actions/availableactions/classification.md) [Advanced Actions for SharePoint](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/actions/availableactions/sharepoint/sharepoint.md)\*: send classification value, filtered targeted meta update, write/remove O365 label, copy/move document |
 | SQL and other databases | [Email Alert](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/actions/availableactions/emailalert/emailalert.md) [Migrate Document](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/actions/availableactions/migratedocument/migratedocument.md) [Apply Additional Classification](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/actions/availableactions/classification.md)                                                                                                                                                                             |
 
-\* — these actions can be only configured using the Advanced UI dialog window.
+\* — You can only configure these actions using the Advanced UI dialog window.

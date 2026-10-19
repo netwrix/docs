@@ -10,8 +10,6 @@ The PostgreSQL database application can be installed on the same server as the a
 different server. If it is installed on a different server, the location of the database server must
 be provided while installing the application.
 
-Follow the steps to install the PostgreSQL database application.
-
 :::warning
 The PostgreSQL database application must be installed before the application.
 :::
@@ -19,7 +17,7 @@ The PostgreSQL database application must be installed before the application.
 
 :::note
 These steps assume you have launched the installer through the Netwrix Setup Launcher
-`(Netwrix_Setup.exe`). If you are not using the launcher, right-click on `NetwrixPostgreSQL14.exe`
+`(Netwrix_Setup.exe`). If you aren't using the launcher, right-click `NetwrixPostgreSQL14.exe`
 and select Run as administrator. Then skip to Step 2.
 :::
 
@@ -53,7 +51,7 @@ when the installation is successful. The Netwrix PostgreSQL Setup wizard closes.
 
 ![postgresqlcheck](/images/threatprevention/7.5/install/reportingmodule/postgresqlcheck.webp)
 
-The PostgreSQL database application is now installed. Nest you can install the Netwrix Threat
+The PostgreSQL database application is now installed. Next, you can install the Netwrix Threat
 Manager Reporting Module application. See the
 [Install the Netwrix Threat Manager Reporting Module](/docs/threatprevention/7.5/install/reportingmodule/application.md) topic for additional
 information.

@@ -41,10 +41,10 @@ portal.
 ## Enable Auditing on CTERA Edge Filer
 
 The CTERA Edge Filer can generate audit log events for the SMB access. Audit events are stored in a
-local file and then forwarded to the CTERA Portal for further processing. The audit log is disabled
-by default and must be enabled.
+local file and then forwarded to the CTERA Portal for further processing. By default, the system
+disables the audit log, but you must enable it.
 
-Follow the steps to enable SMB audit logs.
+Use the following steps to enable SMB audit logs.
 
 **Step 1 –** Log in to the Edge Filer web interface. In the Configuration view, select **Logs** >
 **Audit Logs**.
@@ -64,10 +64,10 @@ create a share.
 **Step 4 –** Adjust the **Keep closed files for** parameter. Otherwise, use the default value.
 
 **Step 5 –** Check all events except the **Read Extended Attributes** event in Events to log list.
-If you do not require monitoring of _Directory Read/List_ operations, which typically generate a
+If you don't require monitoring of _Directory Read/List_ operations, which typically generate a
 high volume of data, uncheck the **List Folder Read Data** event.
 
-**Step 6 –** Make sure that **Log permission changes in human readable format** is unchecked.
+**Step 6 –** ensure that **Log permission changes in human readable format** is unchecked.
 
 **Step 7 –** Click **Save**.
 
@@ -123,7 +123,7 @@ article for additional information.
 and then to ACTIVE. Wait until the status is ACTIVE before proceeding to the next step.
 
 :::note
-If the status does not change to ACTIVE, the log files need to be collected from
+If the status doesn't change to ACTIVE, the log files need to be collected from
 `/usr/local/lib/ctera/work/logs/services` directory.
 See the
 [CTERA Messaging Service Logs](https://kb.ctera.com/docs/setting-up-the-ctera-messaging-service-2#ctera-messaging-service-logs)
@@ -146,7 +146,7 @@ Monitor Agent will apply the settings and perform periodic checks to ensure cor
 automatic configuration, use the **Enable Edge Filer Syslog auditing** option in the host properties
 and specify credentials to access the CTERA Portal API.
 
-Follow the steps to configure the Edge Filer Syslog Service manually.
+Use the following steps to configure the Edge Filer Syslog Service manually.
 
 **Step 1 –** Configure monitoring of the CTERA Portal in the Activity Monitor Console.
 

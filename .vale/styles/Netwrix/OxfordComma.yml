@@ -1,0 +1,7 @@
+extends: existence
+message: "'%s' appears to be missing an Oxford comma. Add a comma before 'and' or 'or' in series of three or more items."
+level: warning
+ignorecase: true
+tokens:
+  - '\w+,\s+\w+\s+and\b'
+  - '\w+,\s+\w+\s+or\b'

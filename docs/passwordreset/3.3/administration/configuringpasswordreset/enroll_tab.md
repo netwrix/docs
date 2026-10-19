@@ -17,7 +17,7 @@ questions from the Question List.
 
 **Add a question**
 
-Follow the steps below to add a question to the list.
+To add a question to the list:
 
 **Step 1 –** Select a language from the drop-down list above the Question List.
 
@@ -29,7 +29,7 @@ Follow the steps below to add a question to the list.
 
 **Remove a question**
 
-Follow the steps below to remove a question from the list.
+To remove a question from the list:
 
 **Step 1 –** Select a language from the drop-down list above the Question List.
 

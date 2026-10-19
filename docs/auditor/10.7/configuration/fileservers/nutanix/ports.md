@@ -6,8 +6,6 @@ sidebar_position: 10
 
 # Nutanix Ports
 
-Follow the steps to open Nutanix port for inbound connections.
-
 **Step 1 –** On a target computer navigate to **Start** > **Control Panel** and select **Windows
 Firewall.**
 

@@ -1,0 +1,17 @@
+@startuml component
+package "AssignedResourceError" {
+	class AssignedResourceError {
+		AssignedResourceType : Int64
+		ErrorCode : Int32
+		Message : String
+		--
+		JobInstance : TaskInstance
+	}
+}
+package "TaskInstance" {
+	class TaskInstance {
+	}
+}
+AssignedResourceError "0..*" --  "1"TaskInstance
+hide empty members
+@enduml

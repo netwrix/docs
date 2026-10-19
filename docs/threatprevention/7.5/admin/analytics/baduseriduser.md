@@ -7,8 +7,8 @@ sidebar_position: 20
 # Bad User ID (by User) Analytic Type
 
 The **Bad User ID (by user)** analytic type identifies pre-authentication failures due to using
-account names that cannot be found in Active Directory. These incidents are grouped per account
-name. Every time a previously unseen user that does not exist attempts to login within the specified
+account names that can't be found in Active Directory. These incidents are grouped per account
+name. Every time a previously unseen user that doesn't exist attempts to login within the specified
 day limit, an incident is stored in the database. The count for the number of attempts is
 incremented each time that same bad user account attempts to login until the specified day limit
 expires. After the time expires, any additional attempt will generate a new incident. This allows
@@ -23,7 +23,7 @@ Configure the day limit to 30 days.
 | Bad User ID (by user) |                      |
 | --------------------- | ---------------------- |
 | Definition            | Pre-authentication failures using one or more non-existing user IDs    |
-| Example               | Malware or a bad-actor is attempting to obtain access by guessing a user ID and password but has provided a user ID that does not exist. Most operating systems and devices have default administrative accounts such as “administrator” or “admin”. Because the account name is known, if left unchanged, the account becomes vulnerable to attack. To prevent this, most organizations change the name of these accounts. In the case where the account has been renamed, a perpetrator attempting to hack a well-known account will actually be attempting to authenticate against an account that does not exist and will be detected by this analytic. This analytic looks for attacks, regardless of source, against non-existing accounts. |
+| Example               | Malware or a bad-actor is attempting to obtain access by guessing a user ID and password but has provided a user ID that doesn't exist. Most operating systems and devices have default administrative accounts such as “administrator” or “admin”. Because the account name is known, if left unchanged, the account becomes vulnerable to attack. To prevent this, most organizations change the name of these accounts. In the case where the account has been renamed, a perpetrator attempting to hack a well-known account will actually be attempting to authenticate against an account that doesn't exist and will be detected by this analytic. This analytic looks for attacks, regardless of source, against non-existing accounts. |
 | Trigger               | Any number of failed authentication attempts made by a non-existing account       |
 | Recommended Settings  | Bad User ID (by user) groups attacks by account name where every new non-existing account will generate an analytic hit. The user-configurable parameter is based on time, where time is used to visualize how often an attempt is made to authenticate using the same non-existing account name. <br />Netwrix recommends setting the default value to 30 days. If an attempt to use that same non-existing account name occurs after the 30 day time period, a new analytic hit will be produced rather than incrementing the previous hit count.      |
 
@@ -43,7 +43,7 @@ Open the Bad User ID (by user) Analytic Policy in any of the following ways:
 
 - Click Analytics in the left pane to launch the Analytics interface. Then click the gear icon for
   the analytic.
-- Expand the Analytics node and click the desired analytic. On the analytic window, click the gear
+- Expand the Analytics node and click the analytic. On the analytic window, click the gear
   icon available in the top right corner.
 
 The Configure Analytics window has two tabs:
@@ -69,12 +69,12 @@ first attempt, a new incident will be triggered for any additional attempt with 
 The **Policy** tab for configuring analytics consists of three sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/7.5/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can’t be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/overview.md) is configured. The only exception is that the
   [Authentication Monitoring Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/authenticationmonitoring.md) is hard
-  coded, and the Success filter cannot be modified. Additionally, there is no AD Perpetrator filter.
+  coded, and the Success filter can’t be modified. Additionally, there is no AD Perpetrator filter.
 
   - *Optional:* Scope the protocol to be monitored on the Authentication Protocol filter. If
     enabling the analytic on a domain controller, also scope the login type.
@@ -123,7 +123,7 @@ The top data grid includes the following information for each incident:
 - Account Name – Name of the bad user account that attempted to login
 - Last Attempt – Date timestamp of the last event that triggered the incident. Hover over the data
   in this column to view the local time (of the Enterprise Manager) and UTC time simultaneously.
-- Protocols – Protocol(s) used for the monitored operation
+- Protocols – Protocols used for the monitored operation
 - Number of Attempts – Number of attempts monitored during the specified interval matching this rule
 - Number of Hosts – Number of hosts accessed during the specified interval matching this rule
 
@@ -134,7 +134,7 @@ incident:
 - From Host IP Address – IP address of the originating host
 - To Host – Name of the target host
 - To Host IP Address – IP address of the target host
-- Protocol – Protocol(s) used for the monitored operation
+- Protocol – Protocols used for the monitored operation
 - Access Type – Type of authentication, e.g. RDP, CIFS, etc.
 - Status – Detailed information on the error generated by the event
 - Detected on DC – Fully-qualified name of the domain controller that detected the event

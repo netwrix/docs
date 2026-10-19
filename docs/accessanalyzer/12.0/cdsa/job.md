@@ -11,7 +11,7 @@ The CDSA Job is available through the Instant Job Library under the CDSA library
 this instant job to the Jobs tree. When installing the job, select **Local host** on the Host pages
 of the Instant Job Wizard.
 
-Ensure the supporting solutions have successfully collected and analyzed data prior to running this
+Ensure the supporting solutions have successfully collected and analyzed data before running this
 job. See the [Presentation Dependencies](/docs/accessanalyzer/12.0/cdsa/presentation.md) topic for alignment between presentation
 slides and jobs that supply the data points.
 
@@ -29,12 +29,12 @@ The CDSA job generates three PowerPoint files:
       self-review as a PDF file
 
 :::warning
-Do not send any these presentations to a customer in PowerPoint format.
+Don't send any these presentations to a customer in PowerPoint format.
 :::
 
 
-The printable assets can be converted to PDFs or printed booklet style at a professional print shop
-(suggested) if desired.
+You can convert the printable assets to PDFs, or have them printed booklet style at a professional
+print shop (suggested), if desired.
 
 These presentations are located within the job’s folder in the Access Analyzer installation
 directory, which varies according to the location of the job within the Jobs tree. Navigate to this
@@ -53,7 +53,7 @@ are two presentation options for the live slide show:
 - The **ePHI Security Assessment** slide show contains the ending slides with select summary slides
   from the Classic slide show and is applicable to the healthcare industry
 
-Use the Custom Slide Show drop-down menu on the Slide Show ribbon in PowerPoint to select the
+Use the Custom Slide Show dropdown menu on the Slide Show ribbon in PowerPoint to select the
 appropriate presentation.
 
 :::note
@@ -73,7 +73,7 @@ Both of the printable assets have two customized options for converting to a PDF
 - ePHI Security Assessment – Contains the ending slides with select summary slides from the Classic
   slide show and is applicable to the healthcare industry
 
-Follow the steps to create the appropriate custom PDF.
+To create the appropriate custom PDF:
 
 **Step 1 –** Use the **Save As** option.
 
@@ -81,12 +81,12 @@ Follow the steps to create the appropriate custom PDF.
 
 **Step 3 –** Click **Options** and change the Range to **Custom show**.
 
-**Step 4 –** By default, this is set to the **CDSA Classic** show. If needed, change it to the
+**Step 4 –** By default, the file uses the **CDSA Classic** show. If needed, change it to the
 **ePHI Security Assessment** show.
 
 **Step 5 –** Click **OK** to confirm the option, and then click **Save** to generate the PDF.
 
-The presentation is converted to a PDF with only the applicable slides included.
+PowerPoint converts the presentation to a PDF with only the applicable slides included.
 
 :::note
 Slide 16 is hidden by default as same information is available on Slides 17-19.

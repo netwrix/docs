@@ -1,0 +1,10 @@
+extends: substitution
+message: "Use '%s' — omit 'on' after click verbs."
+level: warning
+ignorecase: true
+swap:
+  '\b(double-click) on\b': '$1'
+  '\b(right-click) on\b': '$1'
+  '\b(left-click) on\b': '$1'
+  '\b(left click) on\b': '$1'
+  '\b(click) on\b': '$1'

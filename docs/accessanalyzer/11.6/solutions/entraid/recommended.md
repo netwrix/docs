@@ -7,7 +7,7 @@ sidebar_position: 10
 # Recommended Configurations for Entra ID Job Group
 
 The Entra ID Solution has been configured to inherit down from the job group **Settings** node. The
-host list must be assigned and the Connection Profile configured before job execution. Once these
+host list must be assigned and the Connection Profile configured before job execution. After these
 are assigned to the job group, it can be run directly or scheduled.
 
 **Dependencies**
@@ -21,15 +21,15 @@ topic for additional information.
 
 **Targeted Hosts**
 
-The Entra ID Solution does not require a target host because the jobs use data collected from the
+The Entra ID Solution doesn't require a target host because the jobs use data collected from the
 .Entra ID Inventory Job Group and the .Active Directory Inventory Job Group. However, Enterprise
-Auditor jobs do not execute successfully without a host list assigned. Assign the host list under
+Auditor jobs don't execute successfully without a host list assigned. Assign the host list under
 the **Entra ID** > **Settings** > **Host Lists Assignment** node. Check the **Local host** box and
 click **Save**.
 
 **Connection Profile**
 
-Since the Entra ID Solution is not collecting any data, a specific connection profile is not
+Since the Entra ID Solution isn't collecting any data, a specific connection profile isn't
 necessary. Therefore, the default setting **Use the Default Profile** is sufficient for this
 solution.
 
@@ -52,7 +52,7 @@ topic for additional information.
 
 The following is the recommended workflow:
 
-**Step 1 –** Assign the Local host at the solution level as described above.
+**Step 1 –** Assign the Local host at the solution level, as described in Targeted Hosts.
 
 **Step 2 –** Run the .Entra ID Inventory Job Group. If on-premises directory syncing information is
 desired, run the .Active Directory Inventory Job Group.

@@ -11,7 +11,7 @@ from the Password Reset Client. The default URL for the Web Interface
 is:` http://[server]/pwreset/`
 See the
 [Password Reset Client](/docs/passwordreset/3.23/administration/password_reset_client.md)
-topic for more information.
+topic for installation and configuration steps.
 
 You can use URL parameters to open a specific page, and to set the user and domain names. For
 example: `http://[server]/pwreset/apr.dll? cmd=enroll&username=maryjones&domain=ANIXIS`
@@ -28,7 +28,7 @@ The connection between the Web Interface and Password Reset Server is always enc
 Install an SSL certificate on the web server and use HTTPS to encrypt connections from the browser
 to the web server. See the
 [Installing and Using an SSL Certificate](/docs/passwordreset/3.23/administration/securing_password_reset.md#installing-and-using-an-ssl-certificate)
-topic for more information.
+topic for certificate setup steps.
 :::
 
 
@@ -41,7 +41,7 @@ out of Password Reset, or if they want to change their questions or answers. See
 [Verification Codes](/docs/passwordreset/3.23/administration/configuring_password_reset.md#verification-codes)
 and
 [Lockout](/docs/passwordreset/3.23/administration/configuring_password_reset.md#lockout)
-topics for more information.
+topics for configuration options.
 
 Follow the steps below to manually enroll into Password Reset.
 
@@ -53,9 +53,9 @@ Follow the steps below to manually enroll into Password Reset.
 
 **Step 3 –** Type an e-mail address if the **E-mail** text box is visible. See the
 [Options](/docs/passwordreset/3.23/administration/configuring_password_reset.md#options)
-topic for more information.
+topic for the e-mail enrollment setting.
 
-**Step 4 –** Select a question from each of the **Question** drop-down lists, and type an answer to
+**Step 4 –** Select a question from each of the **Question** dropdown lists, and type an answer to
 each question in the **Answer** text boxes.
 
 **Step 5 –** Click **Next**, and then click **OK** to return to the menu.
@@ -129,7 +129,7 @@ phone by e-mail or SMS. Type the **Code**, and then click **Next**.
 The Unlock feature unlocks accounts in Active Directory. Users who are locked out of
 Password Reset should re-enroll to gain access to Password Reset. See the
 [Lockout](/docs/passwordreset/3.23/administration/configuring_password_reset.md#lockout)
-and [Enroll](#enroll) topics for more information.
+and [Enroll](#enroll) topics for lockout threshold settings and enrollment steps.
 :::
 
 
@@ -168,7 +168,7 @@ fields and resubmitting the form.
 ![using_apr_10](/images/passwordreset/3.23/administration/using_apr_10.webp)
 
 Critical errors are shown on their own page. These errors are mostly a result of configuration or
-system errors. An event may be written to the Windows Application event log on the Password Reset
+system errors. Password Reset may write an event to the Windows Application event log on the Password Reset
 Server computer when a critical error occurs. Users can sometimes overcome a critical error by
 following the instructions in the error message, but most critical errors are beyond the user's
 control.
@@ -178,4 +178,4 @@ control.
 Validation and critical error messages are stored in the HTML templates. You can modify the default
 messages by editing the templates. See the
 [Resource Strings](/docs/passwordreset/3.23/administration/editing_the_html_templates.md#resource-strings)
-topic for more information.
+topic for the template format and editing steps.

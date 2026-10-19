@@ -11,6 +11,6 @@ categories.
 
 **-![Summary Page](/images/accessanalyzer/11.6/admin/datacollector/spaa/summarypage.webp)**
 
-Click **Finish** to save configuration changes. If no changes were made, it is a best practice to
-click **Cancel** to close the SharePoint Access Auditor Data Collector Wizard ensuring that no
-accidental clicks are saved.
+Click **Finish** to save configuration changes. If you made no changes, click **Cancel** to close
+the SharePoint Access Auditor Data Collector Wizard instead. This prevents the wizard from saving
+accidental clicks.

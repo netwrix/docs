@@ -34,11 +34,11 @@ The Set Options window provides the following options:
     [Agent Safe Mode](/docs/threatprevention/8.0/admin/agents/safemode.md) topic for additional information.
   - Use local Pwned hash DB – A local copy of the Pwned hash database is sent to the Agent after
     installation from the Enterprise Manager. Any updates to the database are sent from the
-    Enterprise Manager to the Agent(s) as long as the Agent service is enabled.
+    Enterprise Manager to the Agents as long as the Agent service is enabled.
   - Start Agent Service – Starts the Threat Prevention Agent service on host after installation
 
     :::note
-    If the Agent Service is not started at the time of deployment, the Agent requires
+    If the Agent Service isn't started at the time of deployment, the Agent requires
     a manual start or will be started automatically after a server reboot. Until the Agent is
     started, no activity is monitored or blocked.
     :::
@@ -54,7 +54,7 @@ The Set Options window provides the following options:
 If checked, the Agent is installed to the default location: ...\Netwrix\Netwrix Threat
 Prevention\SIWindowsAgent
 
-If unchecked, specify the desired installation location, e.g. d:\myagent.
+If unchecked, specify a custom installation location, e.g. d:\myagent.
 
 The installation location applies to all computers where the Agent is being deployed in this session
 (as specified on the [Select Computers Window](/docs/threatprevention/8.0/admin/agents/deploy/selectcomputers.md) of the Deploy Agents wizard).
@@ -78,7 +78,7 @@ events may have one or more of following: SID, domain name, NetBiosName, machine
 address. When any one of these data points is available, Threat Prevention uses Windows DNS, if
 enabled, to collect the missing data points for the raw event from LSASS. This provides more uniform
 data, but may have a performance impact on the machine where the Agent is deployed, especially if
-name resolution is not handled locally by that machine.
+name resolution isn't handled locally by that machine.
 
 ## Set Options Window for Update Agent Settings
 
@@ -88,7 +88,7 @@ option on the [Right-Click Menu](/docs/threatprevention/8.0/admin/agents/overvie
 ![Update Agent Settings > Set Options page](/images/threatprevention/8.0/admin/agents/deploy/updatesetoptions.webp)
 
 This window displays the default selections in the Modules to Set and Additional Options areas; they
-do not represent the actual current state of the Agent.
+don't represent the actual current state of the Agent.
 
 :::note
 To view the current state and configured options for an Agent, hover over the Version
@@ -103,14 +103,14 @@ This Set Options window is the same as discussed above, with the exception of th
   when this option is enabled for the Agent, it is displayed as unchecked. You must either check
   this setting or check the Keep Existing Settings checkbox to keep it enabled for the Agent.
 - Keep Existing Settings – When checked, options in the Modules to Set and Additional Options areas
-  are grayed out and cannot be changed, indicating that the same current settings are retained for
+  are grayed out and can't be changed, indicating that the same current settings are retained for
   the Agent.
 
   This setting has no impact on the Use These Credentials and Enterprise Manager areas.
 
 :::warning
-Make sure you select the desired settings for the Agent on this window, such as the
-Enable DNS Host Name Resolution and Safe Mode options, even when they are currently enabled for the
+Ensure you select the correct settings for the Agent on this window, such as the
+Enable DNS Host Name Resolution and Safe Mode options, even when they are enabled for the
 Agent. Leaving them unchecked will disable those settings when the wizard completes.
 
 :::

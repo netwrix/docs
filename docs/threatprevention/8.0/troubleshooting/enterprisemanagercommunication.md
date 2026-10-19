@@ -17,7 +17,7 @@ Agent, the console and Agent will fail to connect to Enterprise Manager.
 :::note
 To configure custom managed certificates for the Enterprise Manager and the Agent, see the
 [Certificate Management Wizard](/docs/threatprevention/8.0/install/certificatemanagementwizard.md) and
-[Create Custom Managed Certificates for Each Agent](/docs/threatprevention/8.0/install/agent/manual/customcert.md) topics
+[Create Custom Managed Certificates for Each Agent](/docs/threatprevention/8.0/install/agent/customcert.md) topics
 respectively.
 :::
 
@@ -25,11 +25,11 @@ respectively.
 You must provide the Enterprise Manager server DNS name when you install the following:
 
 - Threat Prevention server (see the [Application Server Install](/docs/threatprevention/8.0/install/application.md) topic)
-- Threat Prevention Agent (see the [Manual Agent Deployment](/docs/threatprevention/8.0/install/agent/manual/manual.md) topic)
+- Threat Prevention Agent (see the [Manual Agent Deployment](/docs/threatprevention/8.0/install/agent/manual.md) topic)
 - Remote instance of the Administration Console (see the
   [Administration Console Remote Install](/docs/threatprevention/8.0/install/adminconsole.md) topic)
 
-If you have already installed the above with the IP address of the Enterprise Manager server, you
+If you have already installed these components with the IP address of the Enterprise Manager server, you
 can change it to the DNS name post-install by modifying the following config files:
 
 - SIWinConsole.exe.Config  
@@ -37,7 +37,7 @@ can change it to the DNS name post-install by modifying the following config fil
 - SIWindowsAgent.exe.config  
   Path: `…\Netwrix\Netwrix Threat Prevention\SIWindowsAgent\SIWindowsAgent.exe.config`
 
-Follow the steps to modify these files.
+To modify these files, complete the following steps:
 
 **Step 1 –** Open the SIWindowsAgent.exe.config or SIWinConsole.exe.Config file.
 

@@ -21,7 +21,7 @@ the user:
 - ObjectID
 - Object Type
 - Tenant
-- On-premises synced accounts (will appear if a synced account exists)
+- On-premises synced accounts (appears if a synced account exists)
 - Tags, with an option to add additional tags
 
 The page has the following tabs:
@@ -38,7 +38,7 @@ The Threats tab for a user displays the threats for the user by timeframe.
 
 ![threats](/images/threatmanager/3.0/administration/threatdetails/threats.webp)
 
-A key for threat types is displayed below the chart.
+A key for threat types appears below the chart.
 
 ## Activity Summary Tab
 
@@ -49,7 +49,7 @@ The Activity Summary tab displays charts for a user's activity over different ti
 The Activity Overview (Past 12 Months) shows a color-coded heat map of user activity. Other metrics
 include Average Activity by Day, and Events by Type.
 
-The Activity by Host and Activity by Client tables are displayed below the charts.
+The page also displays the Activity by Host and Activity by Client tables below the charts.
 
 **Activity by Host Table**
 
@@ -101,11 +101,11 @@ Each table has the following columns:
 - Group Type – The type of group within Microsoft Entra ID
 - Membership Type - How the group membership was assigned
 
-- Security Enabled - Shows whether or not the "Security Enabled" flag is enabled within Microsoft
+- Security Enabled - Shows whether the "Security Enabled" flag is enabled within Microsoft
   Entra ID, if enabled it means that this type of group is used to manage user and computer access
   to shared resources for a group of users.
 
-- Role Assignments Allowed - This flag shows whether or not a group can be assigned a role within
+- Role Assignments Allowed - This flag shows whether a group can be assigned a role within
   Microsoft Entra ID
 
 - Tags - The tags associated with the group Image
@@ -122,10 +122,10 @@ Microsoft Entra ID user.
 The Roles tab displays two tables:
 
 - Eligible Assignments – Lists the roles that the user is eligible for. An eligible assignment
-  refers to a role assignment that a user or group can activate when needed but is not permanently
+  refers to a role assignment that a user or group can activate when needed but isn't permanently
   active
 
-- Active Assignments – Lists roles that are currently active and usable to a user.
+- Active Assignments – Lists roles that are  active and usable to a user.
 
 The eligible assignments table has the following columns:
 
@@ -139,7 +139,7 @@ The eligible assignments table has the following columns:
 
 The active assignments table has the following columns:
 
-- Role - Roles that are currently active
+- Role - Roles that are  active
 - Scope - Defines the boundary within which the assigned role permissions are valid
 - Inherited from - How the eligible assignment was inherited
 - Assignment Type - How was the active role assignment assigned

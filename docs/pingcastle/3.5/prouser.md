@@ -1,3 +1,6 @@
+---
+sidebar_position: 7
+---
 # PingCastle Pro User Manual
 
 ## Description
@@ -5,7 +8,7 @@
 PingCastle Pro is a tool designed to improve and follow the Active
 Directory overall security level. This software has been developed to be
 compatible with most of the possible existing configurations. The goal
-(when the tool was created) was not to aim for perfection, but to
+(when the tool was created) wasn't to aim for perfection, but to
 provide reliable data to present the situation to the management, thus
 improving over time.
 
@@ -25,7 +28,7 @@ That means that all the JavaScript code of the application is stored in
 separate files and that JavaScript included in the page via injection
 will not run in the browser. This protection can be checked via third
 party service such as \"security headers\". It means that
-\"unsafe-inline\" and \"unsafe-eval\" are not accepted.
+\"unsafe-inline\" and \"unsafe-eval\" aren't accepted.
 
 ![](/images/pingcastle/prouser/image3.webp)
 
@@ -82,14 +85,14 @@ and its data.
 
 This view displays detailed information on the domain, as well as many
 other information such the results of the last report, some history,
-timeline and cartography. This can be modified by selecting a tab.
+timeline, and cartography. This can be modified by selecting a tab.
 
 Last report tab:
 
 ![](/images/pingcastle/prouser/image5.webp)
 
 The full detail of the last report performed is accessible in this tab,
-though it is not shown here.
+though it isn't shown here.
 
 History tab:
 
@@ -126,8 +129,8 @@ that an existing trust has been modified.
 Technical event:
 
 There has been a significant technical change modifying the global level
-of security, but which is not yet covered by the existing rules. This is
-a very rare event and it is not likely that you have this kind of event.
+of security, but which isn't yet covered by the existing rules. This is
+a very rare event and it isn't likely that you have this kind of event.
 
 Cartography tab:
 
@@ -136,7 +139,7 @@ Cartography tab:
 # Tool configuration (\"Configuration\")
 
 The \"Configuration\" view of the PingCastle Pro application allows the
-user to set up all the tool in order to be able to use it completely. It
+user to set up all the tool to be able to use it completely. It
 is also in this view that the user will be able to personalize settings
 so that the tool fits more the Company needs.
 
@@ -151,13 +154,11 @@ perimeter.
 
 **Rule exceptions**
 
-\"Rule exceptions\" can be set in order to completely disable a rule
+\"Rule exceptions\" can be set to completely disable a rule
 within a specific domain. It means that this rule will not be applied
 for a certain period, that you have to specify. This should be use only
-when for very specific reasons, such as when a rule does not apply in
-your organization. Do not hesitate to contact the PingCastle editors if
-you have doubts or require extra assistance regarding how the exceptions
-are managed.
+when for very specific reasons, such as when a rule doesn't apply in
+your organization. Contact the PingCastle editors if you have doubts or require extra assistance about exception management.
 
 **Migration**
 
@@ -168,11 +169,9 @@ the migration is happening.
 
 ## Importing data
 
-PingCastle Pro is tool that will allow the administrators to easily and
-efficiently consult all the data from reports, as well as take decisions
-and such.
+PingCastle Pro allows administrators to consult all report data and make decisions.
 
-1.  Therefore, it is not yet possible to launch scans and so directly
+1.  Therefore, it isn't yet possible to launch scans and so directly
     from the application, so it is required to launch the PingCastle
     tool in standalone mode and to then import the report that are
     produced that way.
@@ -181,12 +180,12 @@ There are two way for doing so:
 
 - Option 1: Importing the file manually
 
-From the \"Configuration\" tab, open \"Import one or more report(s).
-Once you are on the page, you can simply drag and drop any file produced
-by the PingCastle standalone executable and it will upload in the
+From the \"Configuration\" tab, open \"Import one or more reports.
+After you are on the page, you can drag and drop any file produced
+by the PingCastle standalone executable and it will upload to the
 PingCastle Pro solution.
 
-Once it is down, the file will be marked with either a success or a
+After it is done, the file will be marked with either a success or a
 failure.
 
 In case of a failure, a mouse over can display the associated error
@@ -205,7 +204,7 @@ the \"Agents\" page and configurate the PingCastle agent accordingly.
 
 ![](/images/pingcastle/prouser/image12.webp)
 
-The first step is to create an Agent API key. Click on the create button
+The first step is to create an Agent API key. Click the create button
 to reach the creation page.
 
 ![](/images/pingcastle/prouser/image13.webp)
@@ -216,7 +215,7 @@ can be an entity or a domain, such as the \"default\" entity.
 The API key is generated automatically but can be changed if the
 complexity requirements are met
 
-Once this is set up correctly, it is possible to directly upload reports
+After this is set up correctly, you can directly upload reports
 automatically using the command:
 
 ```bash

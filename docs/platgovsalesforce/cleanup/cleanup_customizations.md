@@ -63,8 +63,8 @@ Use these processes to Clean up Individual Customization or Clean Up Multiple Cu
 
     ![multi_select_cleanup](/images/platgovsalesforce/clean_up/multi_select_cleanup.webp)
 
-9. You can now choose what you want to edit for the multiple customizations selected.
-   For example, if you want to change the clean up status:
+9. Choose what to edit for the multiple customizations selected.
+   For example, to change the clean up status:
 10. Go to **Edit Clean Up Status**.
 11. Select a status such as To Be Cleaned Up.
 12. Choose to **Apply changes to: All the selected records**.

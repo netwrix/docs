@@ -13,10 +13,11 @@ keywords:
   - block file transfer
   - denylist file location
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Block File Transfers to or from Network Shares
 tags:
   - device-control-and-access-management
+  - kb
 title: "Block File Transfers to or from Network Shares"
 knowledge_article_id: kA0Qk0000002B6oKAE
 ---

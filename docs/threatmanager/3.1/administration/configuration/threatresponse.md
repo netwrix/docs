@@ -6,9 +6,8 @@ sidebar_position: 20
 
 # Threat Response Page
 
-The Threat Response page provides the ability to create playbooks and add steps which contain
-actions that can be executed in response to detected threats. Threat Manager provides preconfigured
-actions for different targets.
+The Threat Response page lets you create playbooks and add steps that contain actions executed in
+response to detected threats. Threat Manager provides preconfigured actions for different targets.
 
 Playbooks are a collection of steps that run sequentially in response to a threat. Each step
 contains an action that is designated for the threat response. These steps typically integrate with
@@ -26,7 +25,7 @@ requires advanced scripting knowledge.
 
 ## Preconfigured Actions
 
-Threat Manager provides the following out-of-the-box actions:
+Threat Manager provides the following built-in actions:
 
 ### Active Directory Target Actions
 
@@ -40,15 +39,15 @@ Threat Manager has the following preconfigured Active Directory target actions:
 - Reset Password – Resets the password of the specified account
 - Revert Permission Change – Reverts a permission change on an Active Directory Object
 
-### Microsoft Entra ID Target Actions
+### Microsoft Entra ID Target Actions
 
-Threat Manager has the following preconfigured Entra ID target actions:
+Threat Manager has the following preconfigured Entra ID target actions:
 
-- Entra ID Group Membership – Manages an Entra ID group's membership
+- Entra ID Group Membership – Manages an Entra ID group's membership
 - Flag Entra ID User as Confirmed Compromised – Marks a user as confirmed compromised in an Entra
-  ID tenant
-- Disable Entra ID User – Disables a user in an Entra ID tenant
-- Reset Entra ID Password – Resets an Entra ID user's password to a specified password
+  ID tenant
+- Disable Entra ID User – Disables a user in an Entra ID tenant
+- Reset Entra ID Password – Resets an Entra ID user's password to a specified password
 - Revoke Entra ID Sessions – Terminate all active sessions for the perpetrator or affected user to
   prevent unauthorized access
 
@@ -93,7 +92,7 @@ Threat Manager has the following preconfigured third-party applications target a
 
 - Create ServiceNow®Incident – Creates an Incident in ServiceNow
 - Duo Authentication Push – Sends an Authentication Push to the Duo API
-- RADIUS Authentication – Utilizes RADIUS profiles to authenticate user activity
+- RADIUS Authentication – Uses RADIUS profiles to authenticate user activity
 - Microsoft Teams – Posts messages to a Microsoft Teams channel
 - Send SYSLOG – Sends a Syslog message to a server
 - Set Forescout Property On Host – Adds a property to a Forescout host record

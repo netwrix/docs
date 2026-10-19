@@ -16,7 +16,7 @@ Admin Center:
 
 ## Configure Directory Manager in Microsoft Entra ID
 
-Follow the steps to configure Directory Manager in Microsoft Entra ID.
+To configure Directory Manager in Microsoft Entra ID.
 
 Step 1 – Sign into Microsoft Entra Admin Center.
 
@@ -38,19 +38,19 @@ Step 5 – On the Create your own application pane, do the following:
 Step 6 – On the Overview page, click **Properties** in the left pane to navigate to the
 application's properties.
 
-Step 7 – On the Properties page, make sure the application is enabled so that users can sign in. For
+Step 7 – On the Properties page, ensure the application is enabled so that users can sign in. For
 this, the Enabled for Users to sign in option should be set to _Yes_.
 
 Step 8 – The Name box displays the application name. You can change the application logo. Your
 application is displayed with the logo in the Access Panel Applications.
 
-Step 9 – Make sure Assignment required? is set to _Yes_. We will be assigning users manually, who
+Step 9 – Ensure Assignment required? is set to _Yes_. You must assign users manually, who
 would be able to log into the Directory Manager portal _Wizard_ using Microsoft Entra SSO.
 
 Step 10 – Next, assign owners to the application. To assign one or more users as owners of the
 application, click **Owners** under Manage in the left pane.
 
-Step 11 – On the Owners page, click **Add** and search the user(s) you want to assign as owners. For
+Step 11 – On the Owners page, click **Add** and search the users you want to assign as owners. For
 example, you can specify your service account as an owner.
 
 Step 12 – The next step is to assign users who can sign into the Directory Manager portal _Wizard_

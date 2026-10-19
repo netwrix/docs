@@ -17,7 +17,6 @@ provide its settings to Auditor when configuring a monitored item.
 
 ## Configuring Microsoft Entra ID App for Auditing Microsoft Entra ID
 
-Follow the steps to use a data collecting account with modern authentication.
 
 **Step 1 –** Create and Register a New App in Microsoft Entra ID app that will be used for modern
 authentication. See the Create and Register a New App in Microsoft Entra ID section for additional
@@ -43,7 +42,6 @@ You will need to create a dedicated app for each cloud-based data source you pla
 
 If you plan to audit all of them, you need to create 4 apps.
 
-Follow the steps to register a new Microsoft Entra ID application.
 
 **Step 1 –** Sign into the **Microsoft 365 Admin Center** with your _Global Administrator_,
 _Application Administrator_ or _Cloud Application Administrator_ account and go to the **Microsoft
@@ -117,7 +115,6 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Configure Client Secret
 
-Follow the steps to create a new client secret to be used by the app.
 
 **Step 1 –** Go to **Manage** > **Certificates & secrets** and click **New client secret**.
 
@@ -133,7 +130,6 @@ See the following Microsoft article for more information on how to add a client 
 
 ### Add Microsoft Entra ID monitoring plan
 
-Follow the steps to add Microsoft Entra ID monitoring plan in the Netwrix Auditor.
 
 **Step 1 –** In the Monitoring Plans, click **Add Plan** button.
 
@@ -155,7 +151,6 @@ Microsoft Entra ID monitoring plan has been added to Auditor and initial data co
 
 ### Obtain Tenant Name
 
-Follow the steps to obtain the tenant name.
 
 **Step 1 –** Navigate to **Microsoft Entra ID** > **Overview**.
 

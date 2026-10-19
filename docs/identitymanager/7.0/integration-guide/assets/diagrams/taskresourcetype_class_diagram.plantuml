@@ -1,0 +1,20 @@
+@startuml component
+package "TaskResourceType" {
+	class TaskResourceType {
+		--
+		ResourceType : ResourceType
+		Task : Task
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "Task" {
+	class Task {
+	}
+}
+TaskResourceType "0..*" --  "1"ResourceType
+TaskResourceType "0..*" --  "1"Task
+hide empty members
+@enduml

@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # Notifications
 
-## What are notifications?
+## Notifications overview
 
 With the notification system, you are always up-to-date on all events that you consider important.
-Almost all modules allow users to configure notifications. All configured messages are only created
-for the currently registered Netwrix Password Secure user. It is not possible to create a
+Almost all modules let users configure notifications. All configured messages are only created
+for the registered Netwrix Password Secure user. It isn't possible to create a
 notification for another user. Each user can and should define himself which passwords, which
 triggers as well as changes are important and informative for him. The configuration of visibility
 is explained in a similar way to the other modules in one place
@@ -18,8 +18,10 @@ is explained in a similar way to the other modules in one place
 
 ![Notifications modul](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/applications/rdp_and_ssh_applications/recording_a_session/notifications_1-en.webp)
 
-NOTE: The reading pane is deactivated in this module by default. It can be activated in the
+:::note
+The reading pane is deactivated in this module by default. It can be activated in the
 "Display" tab in the ribbon.
+:::
 
 ## Module-specific ribbon functions
 
@@ -31,13 +33,13 @@ administrators and users to maintain control and transparency independent of the
 
 ### Mark notifications as read
 
-The two buttons on the ribbon enable you to mark notifications as read/unread. In particular, the
+The two buttons on the ribbon let you mark notifications as read/unread. In particular, the
 filter criterion available in this context (see following screenshot) enables fast sorting according
 to current and also historical notifications.
 
 ![filter notifications](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/notifications/notifications_3-en.webp)
 
-It is possible to mark the notifications as read/unread via the ribbon and also via the context menu
+You can mark the notifications as read/unread via the ribbon and also via the context menu
 that is accessed using the right mouse button. If the corresponding setting has been activated,
 opening a notification will also mean that it is marked as read.
 
@@ -75,4 +77,4 @@ which will result in notifications.
 
 If desired, notifications can be automatically cleaned up. This option can be configured on the
 **Server Manager**. Further information can be found in the section
-[Managing databases](/docs/passwordsecure/9.3/configuration/servermanger/managingdatabases/managing_databases.md).
+[Managing databases](/docs/passwordsecure/9.3/configuration/servermanager/managingdatabases/managing_databases.md).

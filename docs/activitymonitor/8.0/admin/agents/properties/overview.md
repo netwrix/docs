@@ -27,6 +27,6 @@ tabs:
 - [Panzura Tab](/docs/activitymonitor/8.0/admin/agents/properties/panzura.md) – Activity Agent only
 - [Qumulo Tab](/docs/activitymonitor/8.0/admin/agents/properties/qumulo.md) – Activity Agent only
 
-Select the desired agent and click **Edit** to open the agent’s Properties window.
+Select the agent you want and click **Edit** to open the agent’s Properties window.
 
 ![Properties Window](/images/activitymonitor/8.0/admin/agents/properties/mainimage.webp)

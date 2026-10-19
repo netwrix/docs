@@ -1,0 +1,10 @@
+{
+  "label": "Operation and Setup",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "operation_and_setup"
+  }
+}

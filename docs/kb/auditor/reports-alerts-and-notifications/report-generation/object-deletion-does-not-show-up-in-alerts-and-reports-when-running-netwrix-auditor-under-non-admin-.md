@@ -57,7 +57,7 @@ To obtain and install the ADAM Administration Tools, perform the following steps
 After you have installed the ADAM Administration Tools, you can modify the permissions on the deleted objects container. To do this, perform the following steps:
 
 1. Log on with a user account that is a member of the **Domain Admins** group.
-2. Click **Start -> All Programms -> ADAM** and then click **ADAM Tools Command Prompt.**
+2. Click **Start -> All Programs -> ADAM** and then click **ADAM Tools Command Prompt.**
 3. At the command prompt, type a command similar to the following example:
 
 ```bat

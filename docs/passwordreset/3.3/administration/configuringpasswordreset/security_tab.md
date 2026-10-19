@@ -29,14 +29,14 @@ article for additional information. The hotfix is included with SP1 for Windows 
 standard feature on later Windows versions.
 
 Users are more likely to forget a password shortly after changing it. Enforcing a minimum age for
-password resets may increase the number of help desk calls because users won't be able to reset
-recently changed passwords. One solution is to clear the check box above, and select the **Require
-users to change their password after a reset** check box instead. The Active Directory password
-history policy won't be enforced for the password reset, but it will be enforced for the password
-change when the user logs on. This stops users from reusing a recent password, but it won't stop
+password resets may increase the number of help desk calls because users cannot reset
+recently changed passwords. One solution is to clear the **Enforce the AD password history and minimum age policies for resets** check box, and select the **Require
+users to change their password after a reset** check box instead. Active Directory does not
+enforce the password history policy for the password reset, but does enforce it for the password
+change when the user logs on. This stops users from reusing a recent password, but does not stop
 them from resetting a recently changed password.
 
-Users whose passwords are set to never expire in Active Directory will not be forced to change their
+Users whose passwords are set to never expire in Active Directory are not forced to change their
 password during logon, even if this check box is selected.
 
 :::note
@@ -65,13 +65,13 @@ codes.
 
 Select a value from the **Lockout user after...** drop-down list to specify how many incorrect
 answers Password Reset accepts before locking out a user. Set it to 0 incorrect answers to disable
-the lockout feature. Incorrect verification codes are counted as incorrect answers if the **Lockout
+the lockout feature. Password Reset counts incorrect verification codes as incorrect answers if the **Lockout
 users if they enter too many incorrect verification codes** check box is selected on the
 **Verification** tab.
 
 :::note
 Locked out users must re-enroll before they can use Password Reset to reset their password
-or unlock their account. The incorrect answer count is reset when a user enrolls, or answers all
+or unlock their account. Password Reset resets the incorrect answer count when a user enrolls, or answers all
 questions during a reset or unlock.
 
 :::

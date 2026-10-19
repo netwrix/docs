@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Configuring Roles
 
-To ensure a least privilege access model, roles need to be configured within both the Enterprise
+To ensure a least-privilege access model, configure roles within both the Enterprise
 Auditor Console for folder rights and SQL Management Studio for database access rights.
 
 This is a three-part process:
@@ -23,7 +23,7 @@ This is a three-part process:
     - Delete Role Members
 
 :::note
-This configuration process is not required if only using Role Based Access to secure
+This configuration process isn't required if only using Role Based Access to secure
 Published Reports. See the
 [Securing Published Reports Only](/docs/accessanalyzer/11.6/admin/settings/access/rolebased/securereports.md)
 topic for additional information.
@@ -32,12 +32,12 @@ topic for additional information.
 
 ## Configure the Installation Account
 
-The Enterprise Auditor Installation Account is used both to perform the initial installation of
-Enterprise Auditor and to change Storage Profile settings. It needs additional rights in order to
+Enterprise Auditor uses the Installation Account both to perform the initial installation of
+Enterprise Auditor and to change Storage Profile settings. It needs additional rights to
 query objects in the master database. This is only necessary so the user can enumerate the available
 databases to choose from when configuring the Enterprise Auditor Storage Profile.
 
-The following script can be executed to give these necessary rights only to the account performing
+Run the following script to give these necessary rights only to the account that performs
 the initial installation of Enterprise Auditor and any changes to the database where Enterprise
 Auditor writes data:
 
@@ -57,15 +57,15 @@ GO
 
 ## Configure Roles in SQL Management Studio
 
-It is necessary to provision rights to the SQL Server database so the Enterprise Auditor application
+Provision rights to the SQL Server database so the Enterprise Auditor application
 rights and database access rights are consistent and provide the minimum rights necessary to support
-the Enterprise Auditor roles. This approach involves creating custom database roles which will be
-assigned rights and privileges. Then, individual domain user accounts must be assigned to these
+the Enterprise Auditor roles. This approach involves creating custom database roles and assigning
+rights and privileges to them. Then, assign individual domain user accounts to these
 roles.
 
 :::note
-For any SQL Server version prior to 2012, Windows groups cannot be used because SQL Server
-does not allow the assignment of default schemas to Windows groups. Enterprise Auditor requires the
+For any SQL Server version before 2012, you can't use Windows groups because SQL Server
+doesn't allow assigning default schemas to Windows groups. Enterprise Auditor requires the
 default schema of [dbo] to function properly.
 :::
 
@@ -77,7 +77,7 @@ To create the roles within the SQL Server database, run the following script.
 ![Query Window](/images/accessanalyzer/11.6/admin/settings/access/rolebased/sqlcreateroles.webp)
 
 Be sure to set the context of this query to the Enterprise Auditor database by selecting the right
-database from the drop-down window. Alternatively, prefix the script with a
+database from the dropdown window. Alternatively, prefix the script with a
 `USE [Enterprise Auditor DATABASE NAME]` clause.
 
 ```
@@ -119,20 +119,20 @@ GO
 
 ```
 
-Once the script has been successfully executed, assign domain users to these database roles.
+After the script runs successfully, assign domain users to these database roles.
 
 ### Assigning Users to SQL Roles
 
-Now that the SQL Server database roles have been created the next step is to assign domain users to
-those roles. This can be done interactively in SQL Management Studio. Follow the steps to assign
-users to SQL Server database roles.
+Now that you've created the SQL Server database roles, the next step is to assign domain users to
+those roles. You can do this interactively in SQL Management Studio. To assign
+users to SQL Server database roles:
 
 **Step 1 –** Connect to the Enterprise Auditor database through SQL Management Studio.
 
 ![Database Roles](/images/accessanalyzer/11.6/admin/settings/access/rolebased/sqldatabaseroles.webp)
 
-**Step 2 –** Validate that the roles have been properly created by navigating to **Security** >
-**Roles** > **Database Roles**. The three new roles should be visible:
+**Step 2 –** Navigate to **Security** > **Roles** > **Database Roles** to confirm the script created
+the three new roles. The three new roles should be visible:
 
 - SMP_Admin
 - SMP_Builder
@@ -142,8 +142,8 @@ users to SQL Server database roles.
 | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | ![New User Option](/images/accessanalyzer/11.6/admin/settings/access/rolebased/sqlusers.webp) | ![New User Option](/images/accessanalyzer/11.6/admin/settings/access/rolebased/sqlusersnewuser.webp) |
 
-**Step 3 –** After confirmation of role creation, the next step is to map users to these roles.
-Right-click on the **Security** > **Users** node and select **New User**.
+**Step 3 –** After you confirm the roles were created, map users to these roles by right-clicking the
+**Security** > **Users** node and selecting **New User**.
 
 ![Database User Window](/images/accessanalyzer/11.6/admin/settings/access/rolebased/sqluserwindow.webp)
 
@@ -162,5 +162,5 @@ Right-click on the **Security** > **Users** node and select **New User**.
   [Role Definitions](/docs/accessanalyzer/11.6/admin/settings/access/rolebased/roledefinitions.md)
   topic for more information.
 
-When all of the users have been assigned to the appropriate SQL Server database roles, complete the
+After you assign all users to the appropriate SQL Server database roles, complete the
 process by assigning users to roles within the Enterprise Auditor Console.

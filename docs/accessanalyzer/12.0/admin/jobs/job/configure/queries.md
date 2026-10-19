@@ -15,21 +15,21 @@ chart with recommended permissions per data collector.
 
 ![Query Selection page](/images/accessanalyzer/12.0/admin/jobs/job/configure/queryselection.webp)
 
-The Query Selection view lists all queries for the selected job. Though it is possible to have
-multiple queries in a single job, it is not usually recommended. The listed information includes:
+The Query Selection view lists all queries for the selected job. Though a single job can have
+multiple queries, it isn't usually recommended. The listed information includes:
 
 - Name – Name of the query (as provided by the creator of the query)
 - Source – Name of the Access Analyzer data collector
 - Table – Name of the Native Data table
-- Enumerates – Whether or not the data collector will return enumerated data, or multiple lines of
+- Enumerates – Whether the data collector will return enumerated data, or multiple lines of
   data per target host
     - If **Yes**, only one query can write to a single table
     - If **No**, then multiple related queries can write to a single table
 - Properties – Number of the properties to be returned
 - Filters – Number of in-line filters applied to the data being returned by the query
-- Script – Whether or not a VB Script was added to the query
+- Script – Whether a VB Script was added to the query
     - If **Yes**, a VB Script was added to query execution
-    - If **No**, a VB Script was not added to query execution
+    - If **No**, a VB Script wasn't added to query execution
 - Description – Description of the query (as provided by the creator of the query)
 
 ## Tables
@@ -46,8 +46,8 @@ The Tables section at the top has three options:
   database table if it has already been created. This action does require confirmation.
 
     :::warning
-    Do not delete the last table in a job’s Query Selection view. Doing so will also
-    delete the Messages table. In order to delete the last table, it is necessary to delete the job.
+    Don't delete the last table in a job’s Query Selection view. Doing so will also
+    delete the Messages table. To delete the last table, delete the job.
     :::
 
 

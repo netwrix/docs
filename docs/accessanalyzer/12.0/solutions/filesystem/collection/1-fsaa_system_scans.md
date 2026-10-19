@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # 1-FSAA System Scans Job
 
-The 1-FSAA System Scans job is designed to collect access information from the targeted file
-servers.
+The 1-FSAA System Scans job collects access information from the targeted file servers.
 
 ## Query for the 1-FSAA System Scans Job
 
@@ -30,7 +29,7 @@ The following default configurations are commonly customized:
 
 - Default Scoping Options page > Scan Settings tab:
 
-    - Set to **Limit subfolder scan depth to 2 level(s)**
+    - Set to **Limit subfolder scan depth to 2 levels**
 
 See the [Recommended Configuration for the File System Solution](/docs/accessanalyzer/12.0/solutions/filesystem/recommended.md) topic for a
 complete list of customizable settings. See the
@@ -40,8 +39,8 @@ additional information.
 ### Configure the (FSAA) File System Scan Query
 
 The 1-FSAA System Scans job has been preconfigured to run with the default settings with the
-category of File system access/permission auditing Scan. Follow the steps to set any desired
-customizations.
+category of File system access/permission auditing Scan. To customize the configuration, complete
+the following steps.
 
 **Step 1 –** Navigate to the **FileSystem** > **0.Collection** > **1-FSAA System Scans** >
 **Configure** node and select the **Queries** node.
@@ -53,7 +52,7 @@ opens.
 Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -61,7 +60,7 @@ purpose of this job.
 ![Applet Settings](/images/accessanalyzer/12.0/solutions/filesystem/collection/fsaaseekappletsettings.webp)
 
 **Step 4 –** The Applet Settings page applies to the applet and proxy mode scans. If employing proxy
-servers, see the [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings.md) topic
+servers, see the [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/appletsettings.md) topic
 for configuration instructions.
 
 ![Scan Server Selection](/images/accessanalyzer/12.0/solutions/filesystem/collection/fsaaseekserverselection.webp)
@@ -77,7 +76,7 @@ for additional information.
 information.
 
 :::note
-If streaming is enabled, the **2-FSAA Bulk Import** job is no longer needed as part of the
+If you enable streaming, you no longer need the **2-FSAA Bulk Import** job as part of the
 **0.Collection** job group.
 :::
 
@@ -102,34 +101,34 @@ additional information.
 
     - Action on failure to enable LAT Preservation – Before scanning each file, FSAA attempts to
       enable an operating system feature to preserve the LAT when accessing the file. This operation
-      may fail for a variety of reasons, which include but are not limited to: the operating system
-      or file system where the file is located does not support LAT preservation, or insufficient
+      may fail for a variety of reasons, which include but aren't limited to: the operating system
+      or file system where the file is located doesn't support LAT preservation, or insufficient
       permissions from the service account trying to access the file. The following configuration
       addresses a failure to enable the LAT preservation mode:
 
         - Continue to scan file silently – FSAA scans the file with the possibility that LAT
-          preservation is not possible. No warning will be shown.
+          preservation isn't possible. No warning appears.
         - Continue to scan file with warning – FSAA scans the file with the possibility that LAT
-          will not be preserved. A warning will be shown for this file.
-        - Skip file silently – FSAA will not scan the file. No warning will be shown.
-        - Skip file with warning – FSAA will not scan the file. A warning will be shown indicating
+          will not be preserved. A warning appears for this file.
+        - Skip file silently – FSAA will not scan the file. No warning appears.
+        - Skip file with warning – FSAA will not scan the file. A warning appears indicating
           the file was skipped.
         - Abort the scan – FSAA will abort the scan. No further files will be processed.
 
     - Action on changed LAT After scan – Before scanning each file, the LAT of the current file is
-      recorded. After scanning, it is verified whether the LAT has changed since then (likely
+      recorded. After scanning, FSAA verifies whether the LAT has changed since then (likely
       scenarios are either that the LAT preservation mechanism failed to function as intended, or
       that the file was accessed by someone while the scan was occurring). The following
       configuration addresses a changed LAT:
 
         - Continue scan silently – The scan will move on to the next file while updating the LAT for
-          the processed file. No warning will be shown.
+          the processed file. No warning appears.
         - Continue scan with warning – The scan will continue on to the next file. LAT will be
-          updated for the processed file. A warning will be shown.
+          updated for the processed file. A warning appears.
         - Force-reset file LAT silently – The scan will reset the file's LAT to its original state
-          before processing. No warning will be shown. The scan will proceed to the next file.
+          before processing. No warning appears. The scan will proceed to the next file.
         - Force-reset file LAT with warning – The scan will Reset the file's LAT to its original
-          state before processing. A warning will be shown. The scan will proceed to the next file.
+          state before processing. A warning appears. The scan will proceed to the next file.
         - Abort the scan – FSAA will abort the scan. LAT will be updated for the processed file. No
           other files will be processed
 
@@ -143,8 +142,8 @@ scans. See the
 [File Details Tab](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/defaultscopingoptions/filedetails.md)
 
 :::info
-Carefully consider configuring the following settings. Applying filters when file
-detail scanning has been enabled reduces the impact on the database.
+Carefully consider configuring the following settings. Applying filters after you enable
+file detail scanning reduces the impact on the database.
 :::
 
 
@@ -180,10 +179,9 @@ information.
 See the [FSAA: Scoping Queries](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/scopingqueries.md) topic for
 additional information.
 
-**Step 13 –** Click **Finish** to save any setting modifications or click **Cancel** if no changes
-were made. Then click **OK** to close the Query Properties window.
+**Step 13 –** Click **Finish** to save any setting modifications or click **Cancel** if you made no changes. Then click **OK** to close the Query Properties window.
 
-If changes were made, the **1-FSAA System Scans** job is now customized.
+If you made changes, the **1-FSAA System Scans** job is now customized.
 
 ## Analysis Task for the 1-FSAA System Scans Job
 
@@ -191,7 +189,7 @@ View the analysis task by navigating to the **FileSystem** > **0.Collection** > 
 Scans** > **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

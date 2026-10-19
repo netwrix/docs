@@ -18,7 +18,7 @@ Access to the Strongpoint tab must be granted to other users or roles:
 
 1. Open **Customization** > **Centers and Tabs** > **Center Tabs**
 2. Click **Edit** by Strongpoint
-   The **Label** should be **Strongpoint**.
+   Confirm the **Label** is **Strongpoint**.
 3. Click the **Audience** tab.
 4. Grant access to the appropriate users and roles. Refer to NetSuite’s Help for more details on
    **Role and Tab Access**.
@@ -35,7 +35,7 @@ There are two options where to set permissions:
 ## Creating a Copy of Classic Center
 
 This procedure makes a copy of the Strongpoint Classic Center tab that is preserved through bundle
-updates. After you create the copy, you must add all of the appropriate category links prior to
+updates. After you create the copy, you must add all of the appropriate category links before
 **Setting Permissions**.
 
 1. Open **Customization** > **Centers and Tabs** > **Center Tabs**
@@ -59,7 +59,7 @@ updates. After you create the copy, you must add all of the appropriate category
        window.
        Click **Edit** by the Label of the same category and the **Classic Center** version.
     3. Add each **Link** and **Label** in your new **Center**, using the **Classic Center** version
-       as a guide. A drop down completion list is shown as you type. Click **Add** after each
+       as a guide. A dropdown completion list is shown as you type. Click **Add** after each
        addition.
 
         ![Two category windows open to copy links to your new Center.](/images/platgovnetsuite/installing_strongpoint/copy_categories2.webp)
@@ -76,7 +76,7 @@ updates. After you create the copy, you must add all of the appropriate category
 1. Open **Customization** > **Centers and Tabs** > **Center Tabs**
 2. Click **Edit** by Strongpoint and the correct **Center Type** (**Engineering** in this example).
 3. Open the **Audience** tab.
-4. Assign the audience. This can be role(s) or specific employees.
+4. Assign the audience. This can be roles or specific employees.
 5. Click **Save**
 
     ![Assigning permissions.](/images/platgovnetsuite/installing_strongpoint/engineeringexample2.webp)
