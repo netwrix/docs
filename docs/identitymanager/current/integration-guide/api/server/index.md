@@ -18,6 +18,7 @@ sidebar_position: 3
 - [ResourceChange](./resourcechange)
 - [ResourceFileChange](./resourcefilechange)
 - [ResourceLinkChange](./resourcelinkchange)
+- [ResourceTypeProvisioner](./resourcetypeprovisioner)
 - [Robots.Txt](./robots.txt)
 - [Universes](./universes)
 - [Workflows](./workflows)
