@@ -74,7 +74,7 @@ availability groups.
 | Server Role\* | Date Created, Date Modified, Id, Name, Role Members |
 | Stored Procedure | ANSI NULLs, Date Created, Date Modified, Encrypted, Execute as, FOR replication, Id, Name, Permissions, Quoted Identifier, Recompile, Schema |
 | Table | ANSI NULLs, Date Created, Date Modified, Filegroup, Id, Name, Partition scheme, Permissions, Schema, Table is partitioned, Table is replicated, Text filegroup |
-| Triggers | Only DML table triggers are supported.<br/>Date Created, Date Modified, Disabled, ID, Instead of trigger, MS shipped, Name, Not for replication |
+| Triggers | Auditor supports only DML table triggers.<br/>Date Created, Date Modified, Disabled, ID, Instead of trigger, MS shipped, Name, Not for replication |
 | User | Date Created, Date Modified, Default Schema, Extended Properties, Id, Name, Owned Schemas, Roles |
 | View | ANSI NULLs, Date Created, Date Modified, Encrypted, Id, Name, Permissions, Quoted Identifier, Schema, Schema bound |
 | View Column | Allow nulls, ANSI Padding Status, Collation, Computed Text, Default Constraint, Full Text, ID, Identity, Identity increment, Identity seed, Is Computed, Length, Name, Not for replication, Numeric precision, Numeric scale, Rule, Rule Schema, System Type, XML Schema Namespace, XML Schema Namespace schema |

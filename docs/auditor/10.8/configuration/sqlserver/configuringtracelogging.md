@@ -1,77 +1,106 @@
 ---
 title: "Configuring Trace Logging"
-description: "Configuring Trace Logging"
+description: "Learn how Netwrix Auditor uses SQL Server traces and how to exclude instances from tracing or change the trace file location."
 sidebar_position: 30
 ---
 
 # Configuring Trace Logging
 
-If trace logging is disabled in SQL Server, then changes will be reported in Netwrix Auditor as made
-by _system_. To detect actual change initiator, Netwrix Auditor needs native trace logs data. During
-every data collection, Netwrix Auditor will check if the internal SQL audit mechanism is enabled,
-and enable it if necessary. See
+Netwrix Auditor creates and maintains its own SQL Server trace automatically. On every data
+collection, Auditor checks whether the trace exists on each monitored SQL Server instance and
+creates it if needed. **You don't need to configure anything manually.**
+
+Auditor uses the trace data to report the actual "Who", "Workstation", and "When" values for
+changes to SQL Server configuration and objects. Without the trace, Auditor reports these changes
+as made by _system_. For more information, see
 [this Netwrix Knowledge Base article](https://kb.netwrix.com/728).
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
-the
-[Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
-knowledge base article for additional information.
+The settings on this page are optional. Use them only if you need to:
 
-In some cases, however, you may need to disable trace logging on your SQL Server instance. For that,
-follow the procedure below.
+- Prevent Auditor from creating the trace on specific SQL Server instances. See
+  [Exclude instances from trace logging](#exclude-instances-from-trace-logging).
+- Store trace files in a folder other than the default one. See
+  [Change the trace log location](#change-the-trace-log-location).
 
-If you enable monitoring of SQL logons, SQL trace for these logons will be created anyway.
+Both files are in the _%Netwrix Auditor installation folder%\SQL Server Auditing_ folder on the
+Auditor server. In both files, each entry must be on a separate line, and Auditor ignores lines
+that start with the # sign.
 
-To exclude SQL Server instance from turning trace logging on automatically.
+## Exclude instances from trace logging
 
-**Step 1 –** On Netwrix Auditor server, go to the _%Netwrix Auditor installation folder%\SQL Server
+If you exclude an instance, Auditor doesn't report the "Who", "Workstation", and "When" values
+correctly for changes on that instance, except for content changes.
+
+The exclusion applies only to the trace used for configuration and object changes. Auditor still
+creates traces for the following features if you enable them in the monitoring plan:
+
+- Logon activity monitoring
+- Data change monitoring in the **Don't use triggers** mode
+- Auditing of successful SELECT statements
+
+To exclude a SQL Server instance from trace logging:
+
+**Step 1 –** On the Auditor server, go to the _%Netwrix Auditor installation folder%\SQL Server
 Auditing_ folder.
 
-**Step 2 –** Locate the _omittracelist.txt_ file and open it for editing.
+**Step 2 –** Open the _omittracelist.txt_ file for editing.
 
-**Step 3 –** Specify SQL Server instances that you want to exclude from switching trace logging on
-automatically. Syntax: `server\instance name`
+**Step 3 –** Add the SQL Server instances to exclude. Use the `server\instance` format. The
+wildcard (\*) is supported and replaces any number of characters.
 
-Each entry must be a separate line. Lines that start with the # sign are treated as comments and
-will be ignored.
+**Examples:**
 
-With trace logging disabled, the "Who", "Workstation" and "When" values will be not reported
-correctly by Netwrix Auditor (except for content changes).
+```text
+SQLSRV01\MSSQL2019
+*\SQLEXPRESS
+SQLSRV02\*
+```
 
-By default, SQL Server trace logs will be stored in the predefined location (depending on the SQL
-Server version). For example, SQL Server 2019 error logs are located at _`<drive>`:\Program
-Files\Microsoft SQL Server\MSSQL13.`<InstanceName>`\MSSQL\Log_.
+To exclude all instances, enter `*`.
 
-You can change this default location, using the _pathstotracelogs.txt_ file.
+**Step 4 –** Save the file. The change takes effect on the next data collection.
 
-To change trace log location.
+## Change the trace log location
 
-**Step 1 –** On Netwrix Auditor server, go to _%Netwrix Auditor installation folder%\SQL Server
+By default, Auditor stores trace files in the log folder of the SQL Server instance, the same folder
+where SQL Server stores its default trace. For example, for a default SQL Server 2019 instance,
+this folder is _C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Log_.
+
+The SQL Server service writes the trace files, so the path refers to the computer where SQL Server
+runs, not to the Auditor server. You can specify a local folder on that computer or a UNC path to a
+network share. The account that runs the SQL Server service must have write access to the folder.
+
+To change the trace log location:
+
+**Step 1 –** On the Auditor server, go to the _%Netwrix Auditor installation folder%\SQL Server
 Auditing_ folder.
 
-**Step 2 –** Locate the _pathstotracelogs.txt_ file and open it for editing.
+**Step 2 –** Open the _pathstotracelogs.txt_ file for editing.
 
-**Step 3 –** Specify SQL Server instance that you need to audit and enter a UNC path to the folder
-where you want the trace logs to be stored. Syntax: `SQLServer\Instance|UNC path`
-
-Each entry must be a separate line. Lines that start with the # sign are treated as comments and
-will be ignored.
+**Step 3 –** Add a line for each SQL Server instance in the `server\instance|path` format.
+This file doesn't support wildcards; specify the exact instance name.
 
 **Example:**
 
-`SQLSRV01\MSSQL2016|C:\Logs\NA trace logs\`
+```text
+SQLSRV01\MSSQL2019|D:\SQL trace logs\
+```
 
-If you want to change trace logs location for multiple instances of one SQL server, ensure that
-specified UNC paths are unique across these instances.
+**Step 4 –** Save the file. The change takes effect on the next data collection.
+
+If several instances run on the same SQL Server computer, specify a unique folder for each
+instance.
 
 Correct:
 
-`SQLSRV01\MSSQL2014|C:\Program Files\Microsoft SQL Server\MSSQL\LOG\`
-
-`SQLSRV01\MSSQL2019|C:\Logs\SQL trace logs\`
+```text
+SQLSRV01\MSSQL2017|D:\SQL trace logs\MSSQL2017\
+SQLSRV01\MSSQL2019|D:\SQL trace logs\MSSQL2019\
+```
 
 Incorrect:
 
-`SQLSRV01\MSSQL2014|C:\Logs\SQL trace logs\`
-
-`SQLSRV01\MSSQL2019|C:\Logs\SQL trace logs\`
+```text
+SQLSRV01\MSSQL2017|D:\SQL trace logs\
+SQLSRV01\MSSQL2019|D:\SQL trace logs\
+```
