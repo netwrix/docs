@@ -121,5 +121,5 @@ The following list contains the names of all data types monitored by Netwrix Aud
 
 `bigint`, `bit`, `char`, `cursor`, `date`, `datetime2`, `datetime`, `datetimeoffset`, `decimal`,
 `hierarchyid`, `int`, `float`, `money`, `nchar`, `nvarchar`, `numeric`, `real`, `smalldatetime`,
-`smallint`, `smallmoney`, `table`, `time`, `timestamp`, `tinyint`, `uniqueidentifier`, `varchar`,
+`smallint`, `smallmoney`, `table`, `time`, `tinyint`, `uniqueidentifier`, `varchar`,
 `xml`

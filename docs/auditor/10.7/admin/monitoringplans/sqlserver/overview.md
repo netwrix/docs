@@ -163,8 +163,8 @@ rules are optional. Click **Add Rule** and configure the following:
 
 - **Database** — Specify the database whose data changes you want to monitor.
 - **Table** — Specify database table to monitor.
-- **Column** — Specify table column name. The following column types aren't supported: `text`,
-  `ntext`, `image`, `binary`, `varbinary`, `timestamp`, `sql_variant`.
+- **Column** — Specify table column name. For supported column types, see
+  [Monitored data types](/docs/auditor/10.7/configuration/sqlserver/overview.md#monitored-data-types).
 
 Auditor applies these filters using AND logic. You can use a wildcard (\*) to replace any number
 of characters.
