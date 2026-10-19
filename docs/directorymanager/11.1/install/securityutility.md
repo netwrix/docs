@@ -27,7 +27,7 @@ Directory Manager services. To achieve this, the utility:
 2. Detects whether DHCP provides the primary public address and alerts that dynamically
    assigned addresses may present operational challenges. Use a DHCP Reservation or statically
    configured IP for the Directory Manager server.
-3. Supports adding additional addresses for remote Directory Manager servers.
+3. Supports adding addresses for remote Directory Manager servers.
 4. The IP rule applies to the following services/virtual directories:
 
     - GroupIDDataService
@@ -38,15 +38,15 @@ Directory Manager services. To achieve this, the utility:
 To restrict Directory Manager service access to specific IP addresses, complete these steps:
 
 Step 1 – On the Directory Manager server, run the “NDM11-ADV-2025-014-Utility.exe” utility from the
-command line as an administrator. This will present the following options:
+command line as an administrator. The utility presents the following options:
 
 - AddIpSecurity — Enables the IIS IP Security feature on the Directory Manager server
 - GenerateSecurePassword — Generates a secure password for the GroupID user account
 - --help — Displays details about a specific command
 - version — Displays the NDM11-ADV-2025-014-Utility version
 
-Step 2 – Run the `NDM11-ADV-2025-014-Utility.exe AddIpSecurity` cmdlet. This will enable the IIS IP
-Security feature in Directory Manager and ask if there is any machine other than the local one that
+Step 2 – Run the `NDM11-ADV-2025-014-Utility.exe AddIpSecurity` cmdlet. The cmdlet enables the IIS IP
+Security feature in Directory Manager and asks whether any machine other than the local one
 accesses GroupIDDataService. If yes, provide the IP of that machine. Press Enter.
 
 For multiple machines, use a comma to separate the IP addresses with no space after the
@@ -71,8 +71,8 @@ Directory Manager server in your environment.
 If you deploy a new Directory Manager server/instance, add the IP address of the new
 server to the primary server's IP security rule allowed list. Run the NDM11-ADV-2025-014 utility on
 the primary server to add the additional IP. Do this before the new server connects to
-the Data service on the primary server (this connection is required while configuring the new
-server). After you configure the new server, you can remove the IP from the allowed list of the
+the Data service on the primary server (the new server needs this connection during
+configuration). After you configure the new server, you can remove the IP from the allowed list of the
 primary server.
 :::
 
