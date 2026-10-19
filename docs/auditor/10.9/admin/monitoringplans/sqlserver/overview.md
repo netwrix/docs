@@ -6,17 +6,10 @@ sidebar_position: 170
 
 # SQL Server
 
-**NOTE:** Read and complete the instructions in the following topics before configuring your
-monitoring plan:
-
-- [Protocols and Ports Required](/docs/auditor/10.9/requirements/ports.md) – To ensure successful data
-  collection and activity monitoring configure necessary protocols and ports for inbound and
-  outbound connections
-- [Data Collecting Account](/docs/auditor/10.9/admin/monitoringplans/dataaccounts.md) – Configure data collecting accounts as required to
-  audit your IT systems
-
-- [SQL Server](/docs/auditor/10.9/configuration/sqlserver/overview.md) – Configure data source as required to
-  be monitored
+**NOTE:** Before configuring your monitoring plan, read and complete the instructions in the
+[SQL Server](/docs/auditor/10.9/configuration/sqlserver/overview.md) configuration topic. It
+describes the required data collecting account and ports, what Auditor configures on SQL Server
+automatically, and which object types and attributes Auditor monitors.
 
 To configure SQL Server data source settings, use the following property tabs:
 
