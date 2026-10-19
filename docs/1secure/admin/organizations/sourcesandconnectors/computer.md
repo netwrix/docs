@@ -27,7 +27,7 @@ pane appears.
 select an existing site or add a new one. To add a new site, select the **Add new site** option from
 the dropdown menu or click the **Add** icon.
 
-- When you choose to add a new site, you have to provide a name for it in the New site name field.
+- When you add a new site, provide a name for it in the New site name field.
   Then click **Next** to proceed with configuring the agent for the site. See the
   [Install Agent](/docs/1secure/install/installagent.md) topic for details on configuring the agent,
   starting at Step 6.
@@ -62,7 +62,7 @@ the dropdown menu or click the **Add** icon.
   then specify:
 
     - Domain Name – Specify the FQDN of the domain the container exists in.
-    - Container Name – Specify the name of the container to crawl its computers. Use the format: `OU` or `OU/Sub OU`.
+    - Container Name – Specify the name of the container whose computers you want to crawl. Use the format: `OU` or `OU/Sub OU`.
     - Detection Interval – Specify the time interval (in hours and minutes) after which the
       source group will automatically detect the computers for auditing.
     - Source Group – Specify a name for the group to which the data source will belong. Grouping
