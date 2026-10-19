@@ -162,6 +162,6 @@ To use a gMSA as service account for GroupID services and app pool, do the follo
 
 See Also
 
-- [Getting Started](/docs/directorymanager/11.0/introduction/gettingstarted.md)
+- [Getting Started](/docs/directorymanager/11.0/gettingstarted.md)
 - [Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
 - [Navigation](/docs/directorymanager/11.0/signin/concepts/navigation.md)

@@ -9,7 +9,7 @@ sidebar_position: 20
 GroupID generates a variety of notifications for different events, such as when changes are made to
 a group, when workflows are triggered, and when profile validation is due for users. Supported
 languages for notifications are listed in the
-[Localization](/docs/directorymanager/11.0/introduction/gettingstarted.md#localization) topic.
+[Localization](/docs/directorymanager/11.0/gettingstarted.md#localization) topic.
 
 Templates for all GroupID notifications are available in these languages. You can customize a
 notification template for the following in each of the supported languages:

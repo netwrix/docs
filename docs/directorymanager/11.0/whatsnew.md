@@ -1,7 +1,7 @@
 ---
 title: "What's New"
 description: "What's New"
-sidebar_position: 10
+sidebar_position: 2
 ---
 
 # What's New
