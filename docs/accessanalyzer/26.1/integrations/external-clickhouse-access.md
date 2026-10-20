@@ -36,6 +36,10 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
 
 `dspmctl set-helm-param` turns automated sync off for the application. The last step turns it back on.
 
+:::note
+The installer doesn't save these settings. If you run the installer again on this server, for example to change the TLS certificate mode, it removes them and closes access. Repeat these steps afterwards. Upgrades and `update-cert` keep the settings.
+:::
+
 1. On the Access Analyzer server, set the access parameters. For `LoadBalancer`, restricting access to one address range:
 
    ```bash
