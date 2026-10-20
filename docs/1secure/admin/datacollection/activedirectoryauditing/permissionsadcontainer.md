@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Granting Permissions for 'Deleted Objects' Container
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
 **Step 1 –** Log on to any domain controller in the target domain with a user account that is a
@@ -21,7 +21,7 @@ where `deleted_object_dn` is the distinguished name of the deleted directory obj
 For example: `dsacls "CN=Deleted Objects,DC=Corp,DC=local" /takeownership`
 
 **Step 4 –** To grant permission to view objects in the **Deleted Objects** container to a user or a
-group, type the following command:
+group, enter the following command:
 
 `dsacls <deleted_object_dn> /G <user_or_group>:<Permissions>`
 
@@ -33,6 +33,6 @@ For example, `dsacls "CN=Deleted Objects,DC=Corp,DC=local" /G Corp\jsmith:LCRP`
 
 In this example, the user CORP\jsmith has been granted **List Contents** and **Read Property**
 permissions for the **Deleted Objects** container in the **corp.local** domain. These permissions
-let this user view the contents of the **Deleted Objects** container, but do not let this user make
+let this user view the contents of the **Deleted Objects** container, but don't let this user make
 any changes to objects in this container. These permissions are equivalent to the default
 permissions that are granted to the **Domain Admins** group.

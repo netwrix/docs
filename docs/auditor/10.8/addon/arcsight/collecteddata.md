@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Work with Collected Data
 
-Follow the steps to see collected data.
+To see collected data:
 
 **Step 1 –** Log on to your ArcSight Logger web interface.
 

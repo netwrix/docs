@@ -13,7 +13,7 @@ option.
 
 ![Activity report at the Databases node](/images/accessinformationcenter/12.0/resourceaudit/sql/databases/databasesactivity.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Access Time – Date and timestamp for when the operation occurred
 - Trustee Name – Owner of the trustee account
@@ -35,5 +35,5 @@ This report is comprised of the following columns:
 - Target Path – Query that triggered the activity event to be stored
 - Process Name – Not populated for SQL Server reports
 
-The table data grid functions the same way as other table grids. See the
+The table data grid functions like other table grids. See the
 [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.

@@ -14,10 +14,11 @@ keywords:
   - allow
   - DLP
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Can Endpoint Protector Block Internal Card Readers
 tags:
   - device-control-and-access-management
+  - kb
 title: "Can Endpoint Protector Block Internal Card Readers on Mac?"
 knowledge_article_id: kA0Qk0000002BCfKAM
 ---

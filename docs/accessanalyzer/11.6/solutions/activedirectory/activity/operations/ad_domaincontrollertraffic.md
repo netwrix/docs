@@ -7,7 +7,7 @@ sidebar_position: 20
 # AD_DomainControllerTraffic Job
 
 The AD_DomainControllerTraffic Job provides a summary of the amount of traffic for Changes,
-Authentication, Replication, and LDAP Queries for each domain controller which can be used to
+Authentication, Replication, and LDAP Queries for each domain controller. Use this information to
 identify issues with load balancing. If the AD_DCSummary job has been run, the roles for each domain
 controller will be provided.
 
@@ -18,7 +18,7 @@ Navigate to the **Active Directory** > **6.Activity** > **Operations** >
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

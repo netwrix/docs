@@ -1,31 +1,38 @@
 ---
 description: >-
-  This article outlines the installation and configuration paths for Netwrix Activity Monitor 7.0, detailing the various locations and files used for the NAM agent and console.
+  This article outlines the installation and configuration paths for Netwrix Activity Monitor (NAM) 7.0, detailing the various locations and files used for the NAM agent and console.
 keywords:
   - Netwrix Activity Monitor
+  - NAM
   - installation paths
+  - configuration paths
   - configuration files
   - NAM agent
   - NAM console
-sidebar_label: Activity Monitor 7.0 Paths
-tags: []
-title: "Netwrix Activity Monitor 7.0 Paths"
+  - Windows agent
+  - Linux agent
+  - activity logs
+  - registry
+sidebar_label: Activity Monitor 7.0 Agent and Console Paths
+tags:
+  - kb
+title: "Activity Monitor 7.0 Agent and Console Paths"
 knowledge_article_id: kA04u00000111AOCAY
 products:
   - activitymonitor
 ---
 
-# Netwrix Activity Monitor 7.0 Paths
+# Activity Monitor 7.0 Agent and Console Paths
 
 ## Overview
 
-NAM 7.0 has changed its installation and configuration paths from 6.0. This article explains all the different locations and files that are used for the NAM agent and console.
+Netwrix Activity Monitor (NAM) 7.0 has changed its installation and configuration paths from 6.0. This article explains all the different locations and files that the NAM agent and console use.
 
-If collecting SharePoint Online activity for Access Analyzer, please review and update the SPAC System Scan job query configuration to reflect these new values: [SPAA: Activity Log Locations](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/spaa/activityloglocations)
+If collecting SharePoint Online activity for Access Analyzer *and upgrading from NAM 7.0 or earlier*, review and update the **SPAC (SharePoint Activity Auditing) System Scan** job query configuration to reflect these new values: [SPAA: Activity Log Locations](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/spaa/activityloglocations).
 
 ## Installation Binaries (Default Location)
 
-*Only includes installation binaries; doesn't include config files or logs.*
+This section covers installation binary locations only and does not include config files or logs.
 
 ### Console
 
@@ -35,7 +42,9 @@ If collecting SharePoint Online activity for Access Analyzer, please review and 
 %PROGRAMFILES%\Netwrix\Activity Monitor\Console
 ```
 
-**NAM Agent install packages** (that the console uses for deployments, includes Windows Agent, Linux Agent, and SI Agent):
+**NAM Agent install packages**
+
+Used for deployments, including Windows Agent, Linux Agent, and SI Agent
 
 ```
 %PROGRAMFILES%\Netwrix\Activity Monitor\Console\Agents
@@ -49,7 +58,9 @@ If collecting SharePoint Online activity for Access Analyzer, please review and 
 %PROGRAMFILES%\Netwrix\Activity Monitor\Agent
 ```
 
-**SBTService** (Only for SBTService / Windows Monitoring)
+**SBTService**
+
+Only used for SBTService / Windows monitoring
 
 ```
 %PROGRAMFILES%\Stealthbits\StealthAUDIT\FSAC
@@ -61,7 +72,9 @@ If collecting SharePoint Online activity for Access Analyzer, please review and 
 %WINDIR%\System32\drivers\SBTFSF.sys
 ```
 
-**SI Agent** (only used for AD Activity)
+**SI Agent**
+
+Only used for AD activity
 
 ```
 %PROGRAMFILES%\Stealthbits\StealthINTERCEPT\SIWindowsAgent
@@ -77,11 +90,13 @@ If collecting SharePoint Online activity for Access Analyzer, please review and 
 
 ## Program Data
 
-*Includes config files, logs, and additional data.*
+This section covers program data locations, including config files, logs, and additional data.
 
 ### Console
 
-**Console's list of agents and encrypted credentials** (access given to SYSTEM and BUILTIN\Administrators only)
+**Console's list of agents and encrypted credentials**
+
+Access restricted to SYSTEM and BUILTIN\Administrators only
 
 ```
 %PROGRAMDATA%\Netwrix\Activity Monitor\Console\Agents.ini
@@ -107,13 +122,17 @@ If collecting SharePoint Online activity for Access Analyzer, please review and 
 %PROGRAMDATA%\Netwrix\Activity Monitor\Agent\SBTFileMon.ini
 ```
 
-**NAM Agent's SI config File** (only used for AD Activity)
+**NAM Agent's SI config File**
+
+Only used for AD activity
 
 ```
 %PROGRAMFILES%\Stealthbits\StealthINTERCEPT\SIWindowsAgent\SAMConfig.xml
 ```
 
-**Main SI Agent's Config File** (only used for AD Activity)
+**Main SI Agent's Config File**
+
+Only used for AD activity
 
 ```
 %PROGRAMFILES%\Stealthbits\StealthINTERCEPT\SIWindowsAgent\SIWindowsAgent.exe.Config
@@ -137,19 +156,25 @@ If collecting SharePoint Online activity for Access Analyzer, please review and 
 %PROGRAMDATA%\Netwrix\Activity Monitor\Agent\Dumps
 ```
 
-**NAM Audit Logs** - History of all config changes; this is also included in the Windows Event Log (Application)
+**NAM Audit Logs**
+
+History of all config changes — also included in the Windows Event Log (Application)
 
 ```
 %PROGRAMDATA%\Netwrix\Activity Monitor\Agent\Audit
 ```
 
-**NAM Journal Logs** - History of hosts and output statuses
+**NAM Journal Logs**
+
+History of hosts and output statuses
 
 ```
 %PROGRAMDATA%\Netwrix\Activity Monitor\Agent\Journal
 ```
 
-**NAM Activity Logs** (Default location, can be customized)
+**NAM Activity Logs**
+
+Default location — can be customized
 
 ```
 %PROGRAMDATA%\Netwrix\Activity Monitor\Agent\ActivityLogs
@@ -169,19 +194,25 @@ If collecting SharePoint Online activity for Access Analyzer, please review and 
 /usr/bin/activity-monitor-agentd/DebugLogs
 ```
 
-**NAM Audit Logs** - History of all config changes; this is also included in the Windows Event Log (Application)
+**NAM Audit Logs**
+
+History of all config changes — also included in the Windows Event Log (Application)
 
 ```
 /usr/bin/activity-monitor-agentd/Audit
 ```
 
-**NAM Journal Logs** - History of hosts and output statuses
+**NAM Journal Logs**
+
+History of hosts and output statuses
 
 ```
 /usr/bin/activity-monitor-agentd/Journal
 ```
 
-**NAM Activity Logs** (Default location, can be customized)
+**NAM Activity Logs**
+
+Default location — can be customized
 
 ```
 /usr/bin/activity-monitor-agentd/ActivityLogs
@@ -193,12 +224,12 @@ If collecting SharePoint Online activity for Access Analyzer, please review and 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SBTLogging\Parameters
 ```
 
-### Values:
+### Values
 
-- **ConfigPath** – String (REG_SZ)
+- `ConfigPath` – String (`REG_SZ`)
   - Full path of config `SBTFileMon.ini` file that the agent is currently using
 
-- **TraceLevel** – DWORD 32-bit (REG_DWORD)
+- `TraceLevel` – DWORD 32-bit (`REG_DWORD`)
   - The integer value of the trace level that the product is currently using (for console and agents)
     - 0 – Trace
     - 1 – Debug

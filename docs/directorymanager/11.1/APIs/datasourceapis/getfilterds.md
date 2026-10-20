@@ -6,9 +6,7 @@ sidebar_position: 90
 
 # Get Filtered Data Sources by isSource
 
-This API is for getting information of data sources filtered on the basis of your role policy. if
-value of isSource is true in the end point URL then it will filter information of data sources
-otherwise it will not.
+Use this API to get information about data sources filtered by your role policy. If the isSource parameter in the URL is true, the API filters the results; otherwise, it returns all data sources.
 
 ## Endpoint
 

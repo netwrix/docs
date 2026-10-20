@@ -23,7 +23,7 @@ This is a three-part process:
     - Delete Role Members
 
 :::note
-This configuration process is not required if only using Role Based Access to secure
+This configuration process isn't required if only using Role Based Access to secure
 Published Reports. See the [Securing Published Reports Only](/docs/accessanalyzer/12.0/admin/settings/access/rolebased/securereports.md) topic for additional
 information.
 :::
@@ -32,7 +32,7 @@ information.
 ## Configure the Installation Account
 
 The Access Analyzer Installation Account is used both to perform the initial installation of Access
-Analyzer and to change Storage Profile settings. It needs additional rights in order to query
+Analyzer and to change Storage Profile settings. It needs additional rights to query
 objects in the master database. This is only necessary so the user can enumerate the available
 databases to choose from when configuring the Access Analyzer Storage Profile.
 
@@ -56,15 +56,15 @@ GO
 
 ## Configure Roles in SQL Management Studio
 
-It is necessary to provision rights to the SQL Server database so the Access Analyzer application
+Provision rights to the SQL Server database so the Access Analyzer application
 rights and database access rights are consistent and provide the minimum rights necessary to support
 the Access Analyzer roles. This approach involves creating custom database roles which will be
 assigned rights and privileges. Then, individual domain user accounts must be assigned to these
 roles.
 
 :::note
-For any SQL Server version prior to 2012, Windows groups cannot be used because SQL Server
-does not allow the assignment of default schemas to Windows groups. Access Analyzer requires the
+For any SQL Server version before 2012, Windows groups can't be used because SQL Server
+doesn't allow the assignment of default schemas to Windows groups. Access Analyzer requires the
 default schema of [dbo] to function properly.
 :::
 
@@ -76,7 +76,7 @@ To create the roles within the SQL Server database, run the following script.
 ![Query Window](/images/accessanalyzer/12.0/admin/settings/access/rolebased/sqlcreateroles.webp)
 
 Be sure to set the context of this query to the Access Analyzer database by selecting the right
-database from the drop-down window. Alternatively, prefix the script with a
+database from the dropdown window. Alternatively, prefix the script with a
 `USE [Access Analyzer DATABASE NAME]` clause.
 
 ```
@@ -118,13 +118,13 @@ GO
 
 ```
 
-Once the script has been successfully executed, assign domain users to these database roles.
+After the script executes successfully, assign domain users to these database roles.
 
 ### Assigning Users to SQL Roles
 
 Now that the SQL Server database roles have been created the next step is to assign domain users to
-those roles. This can be done interactively in SQL Management Studio. Follow the steps to assign
-users to SQL Server database roles.
+those roles. This can be done interactively in SQL Management Studio. Assign users to SQL Server
+database roles:
 
 **Step 1 –** Connect to the Access Analyzer database through SQL Management Studio.
 
@@ -142,7 +142,7 @@ users to SQL Server database roles.
 | ![New User Option](/images/accessanalyzer/12.0/admin/settings/access/rolebased/sqlusersnewuser.webp) |
 
 **Step 3 –** After confirmation of role creation, the next step is to map users to these roles.
-Right-click on the **Security** > **Users** node and select **New User**.
+Right-click the **Security** > **Users** node and select **New User**.
 
 ![Database User Window](/images/accessanalyzer/12.0/admin/settings/access/rolebased/sqluserwindow.webp)
 

@@ -2,6 +2,8 @@
 title: "Video Learning Center"
 description: "Video Learning Center"
 sidebar_position: 20
+pagination_prev: null
+pagination_next: null
 ---
 
 # Video Learning Center
@@ -30,5 +32,5 @@ See the following Video topics for PolicyPak GP Compliance Reporter.
 
 ## Troubleshooting
 
-- [Open required firewall ports](/docs/policypak/gpcompliancereporter/videos/troubleshooting/firewallports.md)
+- [Open required firewall ports](/docs/policypak/gpcompliancereporter/videos/firewallports.md)
 

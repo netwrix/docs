@@ -36,7 +36,7 @@ sidebar_position: 30
 ## Register the Classifier in 1Secure
 
 * In Azure classifier app, go to Overview
-* Click on the "Default domain" link and copy the full url (see below)
+* Click the **Default domain** link and copy the full URL (shown in the following screenshot)
 
   \
   ![](attachments/0138b931-17d4-4266-ade7-d619757f14e2.png " =1890x197")
@@ -59,7 +59,7 @@ sidebar_position: 30
 
 
 * Press Register
-* After success, save and swap back to Azure Portal (tab 1)
+* After success, save, and swap back to Azure Portal (tab 1)
 
 ## Set Up Classifier Link to SPO
 
@@ -79,13 +79,13 @@ sidebar_position: 30
 
 * Copy App Registration tenant ID
 * Swap to Azure Portal (tab 1)
-  * Click on the secret with the name "source-auth-key-\{Guid\}-__tenant-id__"
+  * Click the secret with the name "source-auth-key-\{Guid\}-__tenant-id__"
   * Click "+New Version"
   * Paste the tenant ID as the secret value
   * Click Create\n![](attachments/beabf83e-a591-4914-be74-37cd6755fe25.png " =1510x876")
 * Copy App Registration client ID
 * Swap to Azure Portal (tab 1)
-  * Click on the secret with the name "source-auth-key-\{Guid\}-__client-id__"
+  * Click the secret with the name "source-auth-key-\{Guid\}-__client-id__"
   * Click "+New Version"
   * Paste the client ID as the secret value
   * Click Create
@@ -99,9 +99,9 @@ sidebar_position: 30
  ![](attachments/2dfd2ba5-c013-43b5-ae8f-c813dda8e9a0.png " =1852x685")
 
 * Go to Certificates
-* Click on "sharepoint-auth-\{Guid\}"
-* Click on current version
-* Click on "Download in CER format"
+* Click "sharepoint-auth-\{Guid\}"
+* Click the current version
+* Click "Download in CER format"
 * Swap to Azure Portal (tab 2)
 
 **On Azure Portal (tab 2):**
@@ -120,7 +120,7 @@ sidebar_position: 30
 
 **Classification connector successfully registers but shows status 'New' even after a successful state crawl**
 
-* There could be errors in the classifier app - check the Application Insights resource (in the classifier resource group, resource ending in `-ai`) for more detailed errors - use the below section for further troubleshooting steps
+* There could be errors in the classifier app - check the Application Insights resource (in the classifier resource group, resource ending in `-ai`) for more detailed errors - see the [Application Insights Errors](#application-insights-errors) section for further troubleshooting steps
 
 ### Application Insights Errors
 

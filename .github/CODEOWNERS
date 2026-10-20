@@ -57,11 +57,11 @@
 /static/files/directorymanager/ @netwrix/directorymanager-docs
 /static/images/directorymanager/ @netwrix/directorymanager-docs
 
-# Endpoint Policy Manager team
-/docs/endpointpolicymanager/ @netwrix/endpointpolicymanager-docs
-/sidebars/endpointpolicymanager.js @netwrix/endpointpolicymanager-docs
-/static/files/endpointpolicymanager/ @netwrix/endpointpolicymanager-docs
-/static/images/endpointpolicymanager/ @netwrix/endpointpolicymanager-docs
+# Endpoint Policy Manager team (product now branded PolicyPak)
+/docs/policypak/ @netwrix/endpointpolicymanager-docs
+/sidebars/policypak.js @netwrix/endpointpolicymanager-docs
+/static/files/policypak/ @netwrix/endpointpolicymanager-docs
+/static/images/policypak/ @netwrix/endpointpolicymanager-docs
 
 # Endpoint Protector team
 /docs/endpointprotector/ @netwrix/endpointprotector-docs

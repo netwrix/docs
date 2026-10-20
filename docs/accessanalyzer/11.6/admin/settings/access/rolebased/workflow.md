@@ -16,11 +16,11 @@ rejects it
 
 ![Lock Job option in right-click menu](/images/accessanalyzer/11.6/admin/settings/access/rolebased/lockjob.webp)
 
-- If a job is approved, then a lock needs to be applied by right-clicking the job title in the Jobs
+- If a job is approved, apply a lock by right-clicking the job title in the Jobs
   tree and selecting **Lock Job**
 - If a job is rejected, then the job remains unlocked
 - If the **Lock Job** option is visible, then the job has not yet been approved
-- If the **Lock Job** option is not visible, then the job has been approved
+- If the **Lock Job** option isn't visible, then the job has been approved
 
 ![Unlock Job option in right-click menu](/images/accessanalyzer/11.6/admin/settings/access/rolebased/unlockjob.webp)
 
@@ -32,9 +32,9 @@ approved by the grayed-out **Unlock Job** option in the right-click menu.
 
     - For the Job Initiator (No Actions) role, the user is unable to execute a job which contains
       configured actions, even if it is approved and locked
-    - Both roles can enable and disable job groups and jobs regardless of whether or not they are
-      locked. Disabled jobs are grayed out with a red x next to it and are not executed with the job
-      group. When applied at the job group level, all nested jobs are disabled and do not run.
+    - Both roles can enable and disable job groups and jobs regardless of whether they are
+      locked. Disabled jobs are grayed out with a red x next to it and aren't executed with the job
+      group. When applied at the job group level, all nested jobs are disabled and don't run.
       However, any new job added to that group is enabled by default.
 
     :::note
@@ -50,8 +50,8 @@ approved by the grayed-out **Unlock Job** option in the right-click menu.
 
 ![Report under the Results Node in the Jobs Tree](/images/accessanalyzer/11.6/admin/settings/access/rolebased/reportjobstree.webp)
 
-**Step 4 –** After a job has been successfully run, the **Job Viewer** can now view the results of
-the job under the job’s Status and Results node, or in the Web Console. See the
+**Step 4 –** After the Job Initiator successfully runs a job, the **Job Viewer** can view the
+results of the job under the job’s Status and Results node, or in the Web Console. See the
 [Viewing Generated Reports](/docs/accessanalyzer/11.6/admin/report/view.md)
 topic for additional information.
 
@@ -64,10 +64,10 @@ Console.
 
 ## Other Console Roles
 
-Any modifications needed in the Settings or Host Management nodes must be done by the corresponding
-administrator role (Global Options Administrator, Access Administrator, or Host Management
-Administrator). These roles can be used in conjunction with any other role (for example, a user can
-be a Job Builder and Global Options Administrator in order to build jobs and manage corresponding
+The corresponding administrator role (Global Options Administrator, Access Administrator, or Host
+Management Administrator) must make any modifications needed in the Settings or Host Management
+nodes. You can combine these roles with any other role (for example, a user can
+be a Job Builder and Global Options Administrator to build jobs and manage corresponding
 Connection Profiles).
 
 ### Web Administrator

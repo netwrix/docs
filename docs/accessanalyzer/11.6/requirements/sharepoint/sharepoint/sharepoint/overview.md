@@ -7,7 +7,7 @@ sidebar_position: 10
 # SharePoint Target Requirements
 
 Netwrix Enterprise Auditor can execute Access Auditing (SPAA) and/or Sensitive Data Discovery
-Auditing scans on SharePoint farms. The Netwrix Activity Monitor can be configured to monitor
+Auditing scans on SharePoint farms. You can configure the Netwrix Activity Monitor to monitor
 activity on SharePoint farms and make the event data available for Enterprise Auditor Activity
 Auditing (SPAC) scans.
 
@@ -39,7 +39,7 @@ Activity Agent must have the following permissions on the proxy server:
 - Membership in the local Administrators group
 - READ and WRITE access to the archive location for Archiving feature only
 
-It is also necessary to enable the Remote Registry Service on the Activity Agent server.
+Also enable the Remote Registry Service on the Activity Agent server.
 
 For integration between the Activity Monitor and Enterprise Auditor, the credential used by
 Enterprise Auditor to read the activity log files must have also have this permission.
@@ -65,15 +65,15 @@ are required for communication between the Agent server and the Netwrix Activity
 | -------------------------------- | -------- | ----- | ------------------- |
 | Activity Monitor to Agent Server | TCP      | 4498  | Agent Communication |
 
-The Windows firewall rules need to be configured on the Windows server, which require certain
-inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+Configure the Windows firewall rules on the Windows server. If the scans run in applet mode, you
+must create certain inbound rules. These scans operate over a default
+port range, which can't be specified via an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 
 Additional Firewall Rules for Integration between Enterprise Auditor and Activity Monitor
 
-Firewall settings are dependent upon the type of environment being targeted. The following firewall
+Firewall settings depend on the type of environment you target. The following firewall
 settings are required for communication between the agent server and the Enterprise Auditor Console:
 
 | Communication Direction            | Protocol | Ports      | Description                    |

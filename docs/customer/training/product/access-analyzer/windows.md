@@ -10,7 +10,7 @@ import { NAAValue, NAAConcepts, NAAArchitecture, NAAIntro, AICIntro, NAAWindows,
 import { NAA, AIC } from '@site/src/training/products';
 
 
-Estimated length: 3.75 hours
+Estimated length: 3 hours 52 minutes
 
 In the <NAA /> – Windows learning path, you will learn how to use the Windows solution in this application, formerly Netwrix Enterprise Auditor / StealthAUDIT. It includes content for the <AIC />. It contains the following courses:
 

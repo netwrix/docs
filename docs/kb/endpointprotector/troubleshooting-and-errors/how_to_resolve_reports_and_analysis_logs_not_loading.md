@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Resolve Reports and Analysis Logs
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "How to Resolve Reports and Analysis Logs Not Loading"
 knowledge_article_id: kA0Qk0000002B2rKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Resolve Reports and Analysis Logs Not Loading

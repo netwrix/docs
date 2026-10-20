@@ -6,19 +6,19 @@ sidebar_position: 10
 
 # Role Definitions
 
-The following is a list of all roles leveraged within Access Analyzer once Role Based Access is
-enabled, including their intended functionality. A user may have more than one role assigned to
-them.
+The following is a list of all roles used within Access Analyzer once Role Based Access is
+enabled, including their intended functionality. You can assign a user more than one role.
 
 :::note
-When a job is moved or copied to a separate job group, it inherits the assigned roles at
-the parent and global level from the new job group. Any previous role inheritance is overwritten.
+When you move or copy a job to a separate job group, it inherits the assigned roles at
+the parent and global level from the new job group. Access Analyzer overwrites any previous
+role inheritance.
 :::
 
 
 - OS Administrator – Used only for installation purposes
 
-    - This is not not a configured role, but rather the access required during installation
+    - This isn't not a configured role, but rather the access required during installation
 
 - Administrator – At least one must be set before any other roles are assigned
 
@@ -27,8 +27,8 @@ the parent and global level from the new job group. Any previous role inheritanc
     - Rights to preform an upgrade on Access Analyzer
 
 :::note
-In order to use Role Base Access with the Exchange Solution, all Exchange users must be
-assigned the Administrator role. This is because the solution requires local Administrator rights on
+to use Role Base Access with the Exchange Solution, assign all Exchange users the
+Administrator role. This is because the solution requires local Administrator rights on
 the Access Analyzer Console server.
 :::
 
@@ -58,8 +58,8 @@ the Access Analyzer Console server.
 - Global Options Administrator
 
     - Able to modify global settings, except for the **Setting** > **Access** node
-    - The Exchange node is the exception due to its requirements. Therefore, this node cannot be
-      modified by the Global Options Administrator.
+    - The Exchange node is the exception due to its requirements. Therefore, the Global Options
+      Administrator can't modify this node.
     - Rights to view report Tags within the Web Console but not report content or permissions
 
 - Host Management Administrator
@@ -120,8 +120,9 @@ the Access Analyzer Console server.
           **Configure** > **Reports**> **Configure** > **Publish Security** page) – Able to view
           only this report
 
-By default, many roles are granted rights to view all reports and report content. The inheritance of
-the Report Viewer role can be broken at the job group, job, or report configuration levels. See the
+By default, Access Analyzer grants many roles rights to view all reports and report content. You
+can break the inheritance of the Report Viewer role at the job group, job, or report configuration
+levels. See the
 [Report Viewer Inheritance](#report-viewer-inheritance) topic for additional information.
 
 ## Access Analyzer Console Roles & Rights
@@ -198,15 +199,15 @@ This table describes the roles that will be created within the SQL Server databa
 they will have to the Access Analyzer database. It also describes which Access Analyzer roles they
 are mapped to.
 
-| Database Role(s)                              | Access Analyzer Role                                         | Rights                                                                                                                                                                   | Role Description                                                                                                                                                |
+| Database Roles                              | Access Analyzer Role                                         | Rights                                                                                                                                                                   | Role Description                                                                                                                                                |
 | --------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | SMP Administrator db_datareader db_datawriter | Administrator Job Initiator Job Initiator (No Actions)       | On the dbo schema: ALTER, EXECUTE, INSERT, UPDATE, REFERENCES On the Access Analyzer database: CREATE TABLE, CREATE VIEW, CREATE PROCEDURE, CREATE FUNCTION, CREATE TYPE | This role is used by full Administrators and Job Initiators who must run the 2-FSAA Bulk Import Job which requires manipulation of the Access Analyzer database |
 | SMP Builder                                   | Job Builder Host Management Administrator                    | On the dbo schema: ELECT, INSERT, DELETE On the Access Analyzer database: CREATE TABLE                                                                                   | This role is used by the Job Builder who must be able to create/delete tables, view data, and insert and delete hosts from the Access Analyzer Console          |
-| SMP Viewer                                    | Job Viewer Access Administrator Job Approver All other roles | On the dbo schema: SELECT                                                                                                                                                | This role is used by all roles who do not require anything more than just reading data and information from the database                                        |
+| SMP Viewer                                    | Job Viewer Access Administrator Job Approver All other roles | On the dbo schema: SELECT                                                                                                                                                | This role is used by all roles who don't require anything more than just reading data and information from the database                                        |
 
 ## Report Viewer Inheritance
 
-When Role-Based Access is enabled, users assigned the following roles inherit rights to view all
+When you enable Role-Based Access, users assigned the following roles inherit rights to view all
 reports and their content:
 
 - Administrator role
@@ -218,10 +219,9 @@ reports and their content:
 - Job Viewer
 - Web Administrator
 
-Additional users can be assigned the Report Viewer role at the global, job group, job, or report
-configuration levels. These rights are inherited down through child objects. However, the Report
-Viewer role inheritance can be broken at any level. Break inheritance to remove the right to view
-specific reports at:
+You can assign additional users the Report Viewer role at the global, job group, job, or report
+configuration levels. Child objects inherit these rights. However, you can break the Report Viewer
+role inheritance at any level. Break inheritance to remove the right to view specific reports at:
 
 - Job Group level – **[Job Group]** >**Settings** > **Reporting** node
 - Job level – **[Job]** > **Properties** >**Report Roles** tab
@@ -245,5 +245,5 @@ There are two options that control inheritance for Report Viewers when selected:
   Viewer role inherited from a parent object at the lower levels
 - Set all the child objects to inherit these settings – Only available at the Job Group level. Sets
   all Jobs and Reports to inherit group settings for all child objects by automatically selecting
-  the **Include Report Viewers from this object’s parent** option. Any previous configurations are
-  overwritten once **Yes** is selected in the confirmation window.
+  the **Include Report Viewers from this object’s parent** option. Access Analyzer overwrites any
+  previous configurations after you select **Yes** in the confirmation window.

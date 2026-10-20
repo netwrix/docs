@@ -44,7 +44,7 @@ the results of the rotation.
 :::note
 If the AWS KMS key is rotated, there is no need to rotate the NPS key. Encrypted values
 continues to be decrypted and any new encryption uses the updated AWS KMS key. If the AWS
-user Access Key is rotated it is necessary to rotate the NPS key to update it to use the new
+user Access Key is rotated, rotate the NPS key to update it to use the new
 Ids. Best practice for use of access keys is to rotate them regularly. **don't** delete the AWS
 user Access Key without rotating the NPS key first.
 :::

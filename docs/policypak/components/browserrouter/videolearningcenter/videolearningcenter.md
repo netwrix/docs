@@ -1,6 +1,8 @@
 ---
 title: Browser Router Videos
 description: Video tutorials and demonstrations for Browser Router
+pagination_prev: null
+pagination_next: null
 ---
 
 # Browser Router Video Learning Center

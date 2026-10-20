@@ -8,7 +8,7 @@ sidebar_position: 70
 
 In Directory Manager portal, you can view a list of disabled users.
 
-Follow the steps to view the list of disabled users in the Directory Manager portal.
+To view the list of disabled users in the Directory Manager portal.
 
 Step 1 – In Directory Manager portal, click **Users** on the left navigation bar and select **My
 Direct Reports**. On the displayed page, select the **Disabled Users** tab.
@@ -42,10 +42,10 @@ To reinstate a disabled user, select it and click **Reinstate** on the toolbar.
 
 To grant an extension period to an expired user, select it and click **Extend** on the toolbar.
 
-The extension period applies to users who did not validate their profiles within the required
+The extension period applies to users who didn't validate their profiles within the required
 period, and were consequently expired.
 
-On extension, the user's account is temporarily unlocked. If they do not validate their profile
+On extension, the user's account is temporarily unlocked. If they don't validate their profile
 information within that extension period either, Directory Manager expires them again. Only the
 administrator or Helpdesk users can reactivate these accounts.
 

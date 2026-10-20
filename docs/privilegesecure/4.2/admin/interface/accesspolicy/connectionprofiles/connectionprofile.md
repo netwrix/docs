@@ -25,7 +25,7 @@ When customizing to use a specific proxy RDP (port 4489) and SSH (port 4422) pro
 one server can be listed.
 
 :::note
-If you want to use more than one proxy server, a load balancer must be used in front of the servers.
+To use more than one proxy server, use a load balancer in front of the servers.
 :::
 
 - Session Control – Configure the Session Control settings to set up session duration and user login

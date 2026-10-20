@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # AD_DomainControllers Job
 
-The 0.Collection > AD_DomainControllers Job collects domain controller details which will be further
-analyzed in order to provide information on domains, sites, and trusts.
+The 0.Collection > AD_DomainControllers Job collects domain controller details for further analysis
+to provide information on domains, sites, and trusts.
 
 ## Queries for the AD_DomainControllers Job
 
@@ -15,7 +15,7 @@ The AD_DomainControllers Job uses the LDAP Data Collector and the ActiveDirector
 the following queries:
 
 :::warning
-Except the first query, do not modify the remaining queries. The remaining queries are
+Except the first query, don't modify the remaining queries. The remaining queries are
 preconfigured for this job.
 :::
 
@@ -26,7 +26,7 @@ The queries for this job are:
 
 - Domain Controller Listing – Targets one domain controller per domain known to Access Analyzer to
   collect a listing of all domain controllers
-    - Can be modified to connect securely with TLS/SSL.
+    - You can modify this query to connect securely with TLS/SSL.
     - See the [Connect Securely with TLS/SSL](#connect-securely-with-tlsssl) topic for additional
       information.
 - Actual Bridgehead Servers – Targets one domain controller per domain known to Access Analyzer to
@@ -47,10 +47,10 @@ The queries for this job are:
 ### Connect Securely with TLS/SSL
 
 The Domain Controller Listing Query in the AD_DomainControllers Job is configured to use the LDAP
-Data Collector. This query can be optionally configured to connect securely with TLS/SSL.
+Data Collector. You can optionally configure this query to connect securely with TLS/SSL.
 
 :::warning
-Do not modify any other settings in this query.
+Don't modify any other settings in this query.
 :::
 
 
@@ -72,6 +72,6 @@ opens.
 **Ignore Certificate Errors** to connect even if certificate errors occur. Use **Server Port** 686
 for a secure connection. Click **OK** to close the Options page.
 
-**Step 6 –** Step 13 – Then click **OK** to close the LDAP template form wizard.
+**Step 6 –** Click **OK** to close the LDAP template form wizard.
 
 The job now connects securely with TLS/SSL.

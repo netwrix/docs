@@ -6,18 +6,18 @@ sidebar_position: 80
 
 # Report Cleanup when Deleting a Job or Job Group
 
-When deleting a job or job group, the Delete Job and Delete Group wizards allow you to delete any
-published reports contained in the jobs that are being deleted. Follow the steps to delete a job or
-job group that contains published reports.
+When deleting a job or job group, the Delete Job and Delete Group wizards let you delete any
+published reports contained in the jobs that are being deleted. To delete a job or
+job group that contains published reports:
 
 :::warning
-Deleted objects cannot be restored.
+Deleted objects can't be restored.
 :::
 
 
 ![Delete Group on right-click menu](/images/accessanalyzer/12.0/admin/report/jobstree.webp)
 
-**Step 1 –** In the Jobs tree, right-click on the job or group that you want to delete and select
+**Step 1 –** In the Jobs tree, right-click the job or group that you want to delete and select
 **Delete Job/Group**.
 
 ![Delete Group wizard page](/images/accessanalyzer/12.0/admin/report/deletegroup.webp)

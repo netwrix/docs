@@ -13,10 +13,11 @@ keywords:
   - web console
   - device control
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Installing the Agent with Proxy Settings on Window
 tags:
   - deployment-and-installation
+  - kb
 title: "Installing the Agent with Proxy Settings on Windows"
 knowledge_article_id: kA0Qk0000002B6OKAU
 ---

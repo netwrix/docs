@@ -60,7 +60,7 @@ irreparable damage to the Privilege Secure database and loss of data.
 administrator.
 
 :::note
-A server restart will be required after the installer in complete. A notification in the
+A server restart is required after the installer completes. A notification in the
 installer displays after the upgrade procedure is complete.
 :::
 

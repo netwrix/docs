@@ -30,7 +30,7 @@ The Reports tree contains the following folders.
 
 **Favorites Folder**
 
-This folder in the report tree contains reports that have been marked with a star for easy access.
+This folder in the report tree contains reports that have been marked with a star.
 Clicking the star on a favorite report removes it from the Favorites folder.
 
 **Predefined Reports**
@@ -134,7 +134,7 @@ following attributes for a given user account:
 - Privilege
 
 :::note
-The Subscriptions tab is not enabled until saving the report. See the Subscriptions
+The Subscriptions tab isn't enabled until saving the report. See the Subscriptions
 Tab topic for additional information.
 :::
 

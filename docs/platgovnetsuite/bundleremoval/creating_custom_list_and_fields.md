@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Creating a Custom List and Fields
 
-Seven custom fields and one custom list needs to be created for the bundle’s customization records.
+Create seven custom fields and one custom list for the bundle’s customization records.
 The custom list holds six different values to view the different scenarios that are covered. The
 customization records have one custom field to show the name of the scenario that the customization
 belongs to and six different check boxes, one for each scenario.
@@ -29,7 +29,7 @@ belongs to and six different check boxes, one for each scenario.
 ## Create Custom Fields
 
 1. Open **Customization** > **Lists, Records, & Fields** > **Record Types**
-2. Click on **Customization** in the record type list.
+2. Click **Customization** in the record type list.
 3. Click **New Field** on the **Fields** tab.
 4. Add the new Field information:
 

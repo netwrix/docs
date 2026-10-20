@@ -41,9 +41,9 @@ additional information.
 - RDP Port — Displays the RDP port number
 - WinRM Port — Displays the WinRM port number
 - WinRM HTTPS Port — Displays the WinRM HTTPS port number
-- WinRM Disabled checkbox — If this checkbox is selected, Netwrix Privilege Secure does not attempt
+- WinRM Disabled checkbox — If this checkbox is selected, Netwrix Privilege Secure doesn't attempt
 to communicate to the target resource via WinRM. This value is determined during the initial host
-scan of the resource, but is not automatically changed during subsequent host scans.
+scan of the resource, but isn't automatically changed during subsequent host scans.
 - Trust on Discovery checkbox — If this checkbox is selected, the certificate that is used with
 WinRM HTTPS is trusted when the host is first scanned. Otherwise, the NPS administrator needs
 to manually trust the host.

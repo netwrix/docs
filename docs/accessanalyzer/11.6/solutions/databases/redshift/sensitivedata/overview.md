@@ -11,7 +11,7 @@ targeted Redshift databases.
 
 ![sensitivedatajobgroup](/images/accessanalyzer/11.6/solutions/databases/redshift/sensitive_data/sensitivedatajobgroup.webp)
 
-The job(s) in the Sensitive Data Job Group are:
+The jobs in the Sensitive Data Job Group are:
 
 - [Redshift_SensitiveData Job](/docs/accessanalyzer/11.6/solutions/databases/redshift/sensitivedata/redshift_sensitivedata.md) -
   Provides information on all the data that was discovered in the targeted Redshift database servers

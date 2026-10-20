@@ -14,7 +14,7 @@ the Access Information Center. As an assigned owner, you will receive the follow
 The Ownership Confirmation Request email provides buttons for confirming (Yes) or declining (No)
 ownership of the listed resource. You will be asked to authenticate for your response to be
 processed. The application will launch in your default browser. Enter your domain credentials to
-complete the process. One of two messages will appear according to if you confirmed or declined.
+complete the process. One of two messages will appear depending on whether you confirmed or declined.
 
 ## Confirmed Ownership Message
 

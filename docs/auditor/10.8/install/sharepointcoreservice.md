@@ -11,8 +11,8 @@ This section contains instructions on how to install Netwrix Auditor for SharePo
 During the Netwrix Auditor for SharePoint Core Service installation / uninstallation your SharePoint
 sites may be unavailable.
 
-Prior to the Netwrix Auditor for SharePoint Core Service installation, review the following
-prerequisites and make sure that:
+Before installing Netwrix Auditor for SharePoint Core Service, review the following
+prerequisites and ensure that:
 
 - Netwrix Auditor for SharePoint Core Service is going to be installed on the computer that hosts
   SharePoint Central Administration in the audited SharePoint farm.
@@ -26,8 +26,6 @@ prerequisites and make sure that:
     - Is granted the SharePoint_Shell_Access role on SharePoint SQL Server configuration database.
       See [Permissions for SharePoint Auditing](/docs/auditor/10.8/configuration/sharepoint/permissions.md) topic
       for more information.
-
-Follow the steps to install Netwrix Auditor for SharePoint Core Service manually.
 
 **Step 1 –** On the computer where Auditor Server resides,navigate to _%Netwrix Auditor installation
 folder%\SharePoint Auditing\_\_\SharePointPackage_ and copy SpaPackage\_`<version>`.msi to the

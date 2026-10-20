@@ -10,21 +10,17 @@ Remote Desktop Protocol Manager enables you to configure and manage Remote Deskt
 
 ## Quick Links
 
-### 📖 Manual
+### Manual
 Complete documentation for using Remote Desktop Protocol Manager:
-- **Getting to Know RDP Manager** - Basic concepts and interface
-- **Configuration** - Advanced settings and item-level targeting
+- [**Getting to Know RDP Manager**](/docs/policypak/components/remotedesktopprotocolmanager/manual/gettingtoknow/importrdpfile.md) - Basic concepts and interface
+- [**Configuration**](/docs/policypak/components/remotedesktopprotocolmanager/manual/configuration/exportcollections.md) - Advanced settings and item-level targeting
 
-### 🎥 Videos
+### Videos
 Video tutorials and demonstrations:
-- Getting Started guides
-- Configuration methods
-- Tips and tricks
+- [Videos](/docs/policypak/components/remotedesktopprotocolmanager/videolearningcenter/videolearningcenter.md)
 
-### 🔧 Tech Notes
-- Installation guides
-- Troubleshooting common issues
-- Tips and tricks
+### Tech Notes
+- [Tech Notes](/docs/policypak/components/remotedesktopprotocolmanager/knowledgebase/knowledgebase.md)
 
 ## Key Features
 

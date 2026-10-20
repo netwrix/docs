@@ -7,7 +7,7 @@ sidebar_position: 20
 # Creating a Ticket and Change Request for ServiceNow
 
 The [ServiceNow integration](/docs/platgovnetsuite/ticketingintegrations/servicenowintegration/servicenow_install_configure_netsuite.md) must be installed and
-configured prior to use.
+configured before use.
 
 1. Open **ServiceNow**.
 2. Select **Manage** > **Instance**.
@@ -48,7 +48,7 @@ configured prior to use.
 
     ![servicenow_impact_analysis](/images/platgovnetsuite/integrations/servicenow_impact_analysis.webp)
 
-    Click on the links to open the record in NetSuite for further research.
+    Click the links to open the record in NetSuite for further research.
 
     ![servicenow_impact_analysis_ns](/images/platgovnetsuite/integrations/servicenow_impact_analysis_ns.webp)
 
@@ -58,5 +58,5 @@ configured prior to use.
     ![servicenow_erd](/images/platgovnetsuite/integrations/servicenow_erd.webp)
 
 14. Click **Submit**. The list of change requests is displayed.
-15. Once the change request is moved to the Authorize state, click **Push Deployment Record** in the
+15. After the change request is moved to the Authorize state, click **Push Deployment Record** in the
     menu bar to complete the change request.

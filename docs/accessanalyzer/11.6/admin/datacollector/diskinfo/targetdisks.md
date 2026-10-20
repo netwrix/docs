@@ -11,9 +11,9 @@ target host after a query.
 
 ![Disk Info wizard Target Disks page](/images/accessanalyzer/11.6/admin/datacollector/diskinfo/targetdisks.webp)
 
-Use the options to select the desired target disk.
+Use the options to select the target disk you want.
 
-- The Enumerate all storage devices – Allows all internal drives to be scanned. In order to expand
+- The Enumerate all storage devices – Allows all internal drives to be scanned. to expand
   the scan, two sub-options can be included together, separately, or not at all.
 
     - Include removable storage devices – Scans removable devices that are plugged into the target

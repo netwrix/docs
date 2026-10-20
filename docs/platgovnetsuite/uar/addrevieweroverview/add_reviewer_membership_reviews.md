@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Additional Reviewer Membership Reviews
 
-This type of review is used to keep your roles up to date. When you click on a membership review,
+This type of review is used to keep your roles up to date. When you click a membership review,
 the list of users with the role is displayed. The links open the appropriate record in NetSuite, for
 example the **User** link opens the **User** record.
 
@@ -53,7 +53,7 @@ This display provides a global view of the user's access.
    ![Reviewing user roles](/images/platgovnetsuite/uar/uar_additional_reviewer/additional_user_reviewer_review.webp)
 2. Review their Global Permissions, Other Roles, and SoD Violations. The links all open the specific
    records for further review. If the user should retain the role, click **Mark Completed**. The
-   status is updated. You cannot undo this action.
+   status is updated. You can't undo this action.
    ![Mark your review complete](/images/platgovnetsuite/uar/uar_additional_reviewer/additional_user_reviewer_complete.webp)
 3. Click **Submit** or make additional changes.
 

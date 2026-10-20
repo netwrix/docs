@@ -6,32 +6,34 @@ sidebar_position: 2
 
 # Getting Started
 
-Welcome to Netwrix Endpoint Protector, your solution for securing endpoint data. With features like
-Device Control, Content Aware Protection, eDiscovery, and Enforced Encryption, Endpoint Protector
-safeguards against data breaches originating from a wide range of endpoints, including portable storage devices
-such as USB flash drives, external HDDs, digital cameras, MP3 players, and iPods. These devices connect
-seamlessly to Windows, Mac, or Linux computers, increasing the risk of data theft or
-accidental loss. Ensure compliance and protect sensitive information with Netwrix Endpoint Protector.
+Welcome to Netwrix Endpoint Protector, a data loss prevention (DLP) platform that secures endpoint
+data across Windows, macOS, and Linux. With features like Device Control, Content Aware Protection,
+eDiscovery, and Enforced Encryption, Endpoint Protector safeguards against data breaches
+originating from a wide range of endpoints, including portable storage devices such as USB flash
+drives, external HDDs, digital cameras, MP3 players, and iPods. These devices connect seamlessly to
+Windows, Mac, or Linux computers, increasing the risk of data theft or accidental loss. Ensure
+compliance and protect sensitive information with Netwrix Endpoint Protector.
 
 ## System Requirements
 
 Before starting, ensure that your environment meets the following requirements:
 
-- Operating Systems: Windows, macOS, Linux
-- Disk Space: Sufficient for agent installation
-- Network: Access to Endpoint Protector Server
+- Operating Systems: Windows, macOS, Linux,
+- CPU x86 64 bit or ARM64 bit,
+- Disk Space: Sufficient for agent installation,
+- Network: Access to Endpoint Protector Server,
 
-See the [Requirements](/docs/endpointprotector/requirements/overview.md) topic for additional information.
+For more information, see [Requirements](/docs/endpointprotector/requirements/overview.md).
 
 ## Staging the Server
 
 - Access the Endpoint Protector Management Console:
 
-    - Access the appliance using the IP address configured during the deployment process, which is
+    - Access the appliance using the IP address you configured during deployment. This address is
       also visible on the backend console.
     - Log in using your administrator credentials.
 
-See the [Server Functionality](/docs/endpointprotector/admin/systemdashboard.md) topic for additional information.
+For more information, see [Server Functionality](/docs/endpointprotector/admin/systemdashboard.md).
 
 ## Managing Administrators
 
@@ -40,10 +42,16 @@ See the [Server Functionality](/docs/endpointprotector/admin/systemdashboard.md)
     - Create and manage administrator accounts with appropriate permissions under System
       Configuration > System Administrators.
 
-See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic for additional
-Information.
+For more information, see [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 
 ## Configuring Device Control
+
+[Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) governs data movement across
+dozens of device categories, including removable storage (USB flash drives, external hard drives,
+and memory cards), mobile devices (smartphones and tablets), imaging devices (digital cameras and
+webcams), connectivity interfaces (Bluetooth, Wi-Fi, Thunderbolt, and FireWire), and peripherals
+such as printers, card readers, and biometric devices. Device Control policies apply consistently
+across Windows, macOS, and Linux endpoints.
 
 - Create Device Control Policies:
 
@@ -51,9 +59,19 @@ Information.
     - Create Custom Policies to configure device access rules.
     - Customize policies based on device types and access requirements.
 
-See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic for additional information.
+For more information, see [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md).
 
 ## Configuring Content Aware Protection
+
+[Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md) is Endpoint
+Protector's data loss prevention module for data in motion. It inspects file transfers, clipboard
+actions, print jobs, and network communications for sensitive content, combining content-aware
+detection (what the data contains) with context-aware detection (how and where users transfer
+it) to block or report on policy violations before sensitive data leaves the
+organization. Content Aware Protection and eDiscovery policies also recognize labels from
+third-party document classification tools, including
+[Netwrix Data Classification](/docs/endpointprotector/admin/denylistsallowlists/denylists.md#ndc-classification)
+and [Microsoft Purview Information Protection](/docs/endpointprotector/admin/denylistsallowlists/denylists.md#microsoft-information-protection).
 
 - Create Content Aware Policies:
 
@@ -61,10 +79,15 @@ See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) to
     - Create Custom Policies to define file monitoring and protection rules.
     - Specify Denylists, Predefined Content, or Custom Content to identify sensitive data.
 
-See the [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md) topic for more
-information.
+For more information, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md).
 
 ## Configuring an eDiscovery Scan
+
+[eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md) is Endpoint Protector's
+data-at-rest scanning module. It scans data stored on Windows, macOS, and Linux endpoints to
+discover, encrypt, or delete sensitive data wherever it resides. In addition to
+administrator-initiated scans, eDiscovery supports user-initiated scans, letting end users start
+their own data-at-rest scans directly from the Endpoint Protector Client.
 
 - Setup eDiscovery Scans:
 
@@ -72,7 +95,7 @@ information.
     - Create custom scan policies to identify sensitive data at rest on endpoint systems.
     - Configure scan options and remediation actions (Encrypt, Decrypt, Delete).
 
-See the [eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md) topic for additional more information.
+For more information, see [eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md).
 
 ## Configuring the User Experience
 
@@ -81,7 +104,7 @@ See the [eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md) topic 
     - Navigate to Device Control > Client Settings.
     - Configure Client Modes (Normal, Transparent, Stealth, etc.) and Notification Preferences.
 
-See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic for more information.
+See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic for details on client modes and notification preferences.
 
 ### Configuring User Remediation Settings
 
@@ -91,7 +114,7 @@ See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) to
     - Configure settings such as Time Interval for user actions and User Remediation Pop-up
       notifications.
 
-See the [System Parameters](/docs/endpointprotector/admin/systempar.md) topic for more information.
+For user remediation configuration details, see [System Parameters](/docs/endpointprotector/admin/systempar.md).
 
 ### Setting Up Offline Temporary Password
 
@@ -100,18 +123,22 @@ See the [System Parameters](/docs/endpointprotector/admin/systempar.md) topic fo
     - Navigate to Offline Temporary Passwords.
     - Generate passwords to provide temporary access rights when User Remediation is unavailable.
 
-See the [Offline Temporary Password](/docs/endpointprotector/admin/otpassword.md) topic for more
-information.
+For more information, see [Offline Temporary Password](/docs/endpointprotector/admin/otpassword.md).
 
 ## Deploying Agents
+
+The Endpoint Protector Client runs natively on Windows, macOS, and Linux distributions, including
+Ubuntu LTS and Red Hat Enterprise Linux (RHEL), with native ARM64 builds available. This lets
+administrators apply and enforce the same data protection policies across mixed-OS environments
+from a single console.
 
 - Deploy Netwrix Endpoint Protector Agents:
 
     - Access System Configuration > Client Software.
     - Download and deploy Endpoint Protector Client packages for Windows, macOS, and Linux systems.
-    - Utilize MDM software or other deployment tools for efficient agent deployment.
+    - Use MDM software or other deployment tools for efficient agent deployment.
 
-See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic for more information.
+For agent download and deployment details, see [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 
 ## Blocking Content Aware Protection Policies
 
@@ -120,8 +147,7 @@ See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration
     - Duplicate "Report Only" Content Aware Protection (CAP) policies and modify them to enforce restrictions.
     - Activate blocking policies to prevent unauthorized data movements.
 
-See the [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md) topic for more
-information.
+For more information, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md).
 
 ## Performing Remediation within eDiscovery
 
@@ -131,24 +157,36 @@ information.
     - Perform actions such as Encrypt, Decrypt, or Delete on identified sensitive data to mitigate
       risks.
 
-See the
-[eDiscovery Scan Result and Actions](/docs/endpointprotector/admin/dc_module/dcmodule.md)
-topic for more information.
+For remediation action details, see
+[eDiscovery Scan Results and Actions](/docs/endpointprotector/admin/ed_module/edmodule.md).
 
 ## Deploying Enforced Encryption
+
+[Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) centralizes management
+of encrypted removable storage. It enforces FIPS 140-3 validated encryption on USB storage
+devices, and administrators can remotely reset a protected device to delete the sensitive data it
+holds. Administrators can also control whether Enforced Encryption launches on computers where the
+Endpoint Protector Client isn't installed, and whether it runs in
+[read-only mode](/docs/endpointprotector/admin/ee_module/eemodule.md#enforced-encryption-in-read-only-mode)
+on those unmanaged computers — for example, when someone uses a protected device outside the
+organization.
 
 - Automatic Deployment:
 
     - Go to Device Control > Global Rights.
     - Enable Allow Access if Trusted Device™ Level 1+.
-    - Ensures automatic deployment of Enforced Encryption 2 on USB devices recognized as Trusted
-      Device™ Level 1.
+    - Ensures automatic deployment of Enforced Encryption 2 on USB devices that Endpoint Protector
+      recognizes as Trusted Device™ Level 1.
 
 - Manual Deployment:
 
-    - Download Enforced Encryption installer for Windows/macOS.
-    - Copy installer to USB root.
-    - Execute installer from USB to setup Enforced Encryption.
+    Method 1:
+    - Download the Enforced Encryption installer for Windows or macOS.
+    - Copy the installer to the USB root.
+    - Run the installer from the USB to set up Enforced Encryption.
+
+    Method 2:
+    - Click the EPP Notifier deploy button next to the USB drive in the device list.
 
 - Configuration:
 
@@ -156,4 +194,4 @@ topic for more information.
     - Monitoring Devices:
     - Manage Enforced Encryption devices in Clients list section.
 
-See the [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) topic for more information.
+For deployment, configuration, and monitoring details, see [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md).

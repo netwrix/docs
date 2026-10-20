@@ -12,5 +12,5 @@ Services**.
 
 **Step 2 –** In the **Services** dialog, locate the **Secondary Logon** service.
 
-**Step 3 –** Right-click the service and on the **General** tab make sure that **Startup type** for
+**Step 3 –** Right-click the service and on the **General** tab ensure that **Startup type** for
 this service is other than _Disabled_. Startup type can be either _Automatic_ or _Manual_.

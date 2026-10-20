@@ -45,6 +45,6 @@ The shared patches applied by this job create the following objects in the stora
 | `SA_DatabaseUsageMode` | Table | Lookup table for database usage modes (Oracle Service, Oracle SID, Redshift, Azure Managed Instance, Azure Stand Alone, etc.) |
 | `SA_SQL_GetFriendlyName` | Function | Converts a host name, instance name, and port number from the `SA_SQL_Instances` table into a single display name |
 
-In addition to the shared patches above, each supported database platform (SQL Server, Oracle,
+In addition to the shared patches listed in the previous table, each supported database platform (SQL Server, Oracle,
 MySQL, PostgreSQL, Db2 LUW, Azure SQL) registers its own set of vendor-specific schema patches
 that are also applied by this job.

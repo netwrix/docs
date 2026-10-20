@@ -6,14 +6,12 @@ sidebar_position: 80
 
 # Clear SQLite Agent Queue
 
-When the Agent is unable to communicate with the Enterprise Manager, Agent events queue up in the
-Agents local SQLite database until the Enterprise Manager is available to accept events. The Clear
-SQLite Agent Queue option dumps the queue and all pending events are lost.
-
-Follow the steps to clear the SQLite Agent queue for an Agent:
+When the Agent can't communicate with the Enterprise Manager, Agent events queue up in the
+Agent's local SQLite database until the Enterprise Manager is available to accept events. The Clear
+SQLite Agent Queue option dumps the queue, and all pending events are lost.
 
 :::warning
-These events are permanently deleted and are not processed by the Enterprise Manager on
+These events are permanently deleted and aren't processed by the Enterprise Manager on
 reconnection. This option is for diagnostic and troubleshooting purposes only.
 :::
 
@@ -30,10 +28,10 @@ on the target machine should have access to the system shares. Click **OK** afte
 credentials.
 
 :::note
-The wizard does not block access to the Administration Console and can be minimized while
+The wizard doesn't block access to the Administration Console and can be minimized while
 actions are in progress. If this wizard is hidden by clicking outside of the dialog box, a flashing
 blue link displays on the upper right corner of the interface with the action name displayed. Click
-this link to bring back the focus to the wizard.
+the flashing blue link to bring back the focus to the wizard.
 :::
 
 
@@ -41,7 +39,7 @@ this link to bring back the focus to the wizard.
 check that can fail or succeed.
 
 - Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of prior to the next attempt.
+  of before the next attempt.
 - Success – Click **Next** to begin clearing the SQLite Agent Queue
 
 :::note
@@ -54,7 +52,7 @@ data collection.
 either:
 
 - Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of prior to the next attempt.
+  of before the next attempt.
 - Completed – Indicates that the task is completed
 
 **Step 6 –** When the task is successfully completed, click **Finish** to close the window.

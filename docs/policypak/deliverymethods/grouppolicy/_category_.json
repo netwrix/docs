@@ -1,2 +1,9 @@
-{"label":"Group Policy","position":20,"collapsed":true,"collapsible":true}
-
+{
+  "label": "Group Policy",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

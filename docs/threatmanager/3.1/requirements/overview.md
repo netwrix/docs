@@ -7,8 +7,8 @@ sidebar_position: 20
 # Requirements
 
 This topic describes the recommended configuration of the servers needed to install the application
-in a production environment. Depending on the size of the organization, it is recommended to review
-your environment and requirements with a Netwrix engineer prior to deployment to ensure all
+in a production environment. Depending on the size of the organization, review
+your environment and requirements with a Netwrix engineer before deployment to ensure all
 exceptions are covered.
 
 ## Architecture Overview
@@ -51,4 +51,4 @@ See the following documents for server requirements:
 
 - [Netwrix Threat Prevention Documentation](https://helpcenter.netwrix.com/category/threatprevention)
 - [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
-- [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
+- [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)

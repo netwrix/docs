@@ -3,50 +3,6 @@ title: "Job"
 sidebar_position: 5
 ---
 
-### /api/Job/Job
-
-#### Get
-##### Summary:
-
-Returns all the Job according to the provided query.
-
-##### Parameters:
-
-| Name | Description | Required | Type | Reference |
-| --- | --- | --- | --- | --- |
-| squery | Query compliant to the API query grammar. | False |  |  |
-| Path | Represents the permission path. | False |  |  |
-| QueryRootEntityType | Defines the query root entity type. | False |  |  |
-| QueryBinding | Defines the query binding. | False |  |  |
-| ApplyPostCondition | If true, use PostCondition access control rules. | False |  |  |
-| AllowedAllJoinQuery |  | False |  |  |
-| PageSize | Page size. | False |  |  |
-| ContinuationToken | ContinuationToken returned by previous page request. | False |  |  |
-| api-version | The requested API version | True |  |  |
-
-##### Responses:
-
-| Code | Description | Reference |
-| --- | --- | --- |
-| 200 | The JobGroup list. | List of Job |
-
-#### Post
-##### Summary:
-
-Creates a Job.
-
-##### Parameters:
-
-| Name | Description | Required | Type | Reference |
-| --- | --- | --- | --- | --- |
-| api-version | The requested API version | True |  |  |
-
-##### Responses:
-
-| Code | Description | Reference |
-| --- | --- | --- |
-| 200 | The result of the JobGroup creation. | JobCreatedResult |
-
 ### /api/Job/Job/\{id\}
 
 #### Get
@@ -108,6 +64,50 @@ Deletes a Job.
 | Code | Description | Reference |
 | --- | --- | --- |
 | 200 | The result of the Job delete. | JobDeletedResult |
+
+### /api/Job/Job
+
+#### Post
+##### Summary:
+
+Creates a Job.
+
+##### Parameters:
+
+| Name | Description | Required | Type | Reference |
+| --- | --- | --- | --- | --- |
+| api-version | The requested API version | True |  |  |
+
+##### Responses:
+
+| Code | Description | Reference |
+| --- | --- | --- |
+| 200 | The result of the JobGroup creation. | JobCreatedResult |
+
+#### Get
+##### Summary:
+
+Returns all the Job according to the provided query.
+
+##### Parameters:
+
+| Name | Description | Required | Type | Reference |
+| --- | --- | --- | --- | --- |
+| squery | Query compliant to the API query grammar. | False |  |  |
+| Path | Represents the permission path. | False |  |  |
+| QueryRootEntityType | Defines the query root entity type. | False |  |  |
+| QueryBinding | Defines the query binding. | False |  |  |
+| ApplyPostCondition | If true, use PostCondition access control rules. | False |  |  |
+| AllowedAllJoinQuery |  | False |  |  |
+| PageSize | Page size. | False |  |  |
+| ContinuationToken | ContinuationToken returned by previous page request. | False |  |  |
+| api-version | The requested API version | True |  |  |
+
+##### Responses:
+
+| Code | Description | Reference |
+| --- | --- | --- |
+| 200 | The JobGroup list. | List of Job |
 
 ### /api/Job/Job/Notification
 
@@ -174,30 +174,6 @@ Creates a job instance.
 
 ### /api/Job/JobInstance/\{id\}
 
-#### Get
-##### Summary:
-
-Returns a job instance corresponding to the provided identifier and its information according to the provided query.
-
-##### Parameters:
-
-| Name | Description | Required | Type | Reference |
-| --- | --- | --- | --- | --- |
-| id | Identifier of the job instance. | True |  |  |
-| squery | Query compliant to the API query grammar. | False |  |  |
-| Path | Represents the permission path. | False |  |  |
-| QueryRootEntityType | Defines the query root entity type. | False |  |  |
-| QueryBinding | Defines the query binding. | False |  |  |
-| ApplyPostCondition | If true, use PostCondition access control rules. | False |  |  |
-| AllowedAllJoinQuery |  | False |  |  |
-| api-version | The requested API version | True |  |  |
-
-##### Responses:
-
-| Code | Description | Reference |
-| --- | --- | --- |
-| 200 | The job instance. | JobInstance |
-
 #### Put
 ##### Summary:
 
@@ -233,6 +209,30 @@ Deletes a job instance.
 | Code | Description | Reference |
 | --- | --- | --- |
 | 200 | The result of the job instance delete. | JobInstanceDeletedResult |
+
+#### Get
+##### Summary:
+
+Returns a job instance corresponding to the provided identifier and its information according to the provided query.
+
+##### Parameters:
+
+| Name | Description | Required | Type | Reference |
+| --- | --- | --- | --- | --- |
+| id | Identifier of the job instance. | True |  |  |
+| squery | Query compliant to the API query grammar. | False |  |  |
+| Path | Represents the permission path. | False |  |  |
+| QueryRootEntityType | Defines the query root entity type. | False |  |  |
+| QueryBinding | Defines the query binding. | False |  |  |
+| ApplyPostCondition | If true, use PostCondition access control rules. | False |  |  |
+| AllowedAllJoinQuery |  | False |  |  |
+| api-version | The requested API version | True |  |  |
+
+##### Responses:
+
+| Code | Description | Reference |
+| --- | --- | --- |
+| 200 | The job instance. | JobInstance |
 
 ### /api/Job/JobStep
 

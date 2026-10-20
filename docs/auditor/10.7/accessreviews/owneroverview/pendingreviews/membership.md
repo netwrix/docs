@@ -6,8 +6,7 @@ sidebar_position: 20
 
 # Perform a Membership Review
 
-A Membership review is an evaluation of group membership. Follow the steps to perform a Membership
-review.
+A Membership review is an evaluation of group membership.
 
 **Step 1 –** On the Pending Reviews page, select the resource with a pending Membership review and
 click **Begin Review**. The Resource Review page opens to the 1 Make changes tab.

@@ -6,9 +6,9 @@ sidebar_position: 190
 
 # ExchangePS Data Collector
 
-The ExchangePS Data Collector utilizes the Exchange CMDlets to return information about the Exchange
-environment utilizing PowerShell. This data collector has been designed to work with Exchange 2010
-and newer. The ExchangePS Data Collector has been preconfigured within the Exchange Solution. Both
+The ExchangePS Data Collector uses the Exchange CMDlets to return information about the Exchange
+environment using PowerShell. This data collector works with Exchange 2010
+and newer. The ExchangePS Data Collector comes preconfigured within the Exchange Solution. Both
 this data collector and the solution are available with a special Enterprise Auditor license. See
 the
 [Exchange Solution](/docs/accessanalyzer/11.6/solutions/exchange/overview.md)
@@ -42,9 +42,9 @@ topic for additional information.
 
 ## Remote PowerShell
 
-The ExchangePS Data Collector will utilize Remote PowerShell when connecting to Exchange 2010 or
-newer. This behavior simulates what the Exchange Management Shell does when loading. The below
-PowerShell syntax is an example of how the connection is loaded through PowerShell.
+The ExchangePS Data Collector will use Remote PowerShell when connecting to Exchange 2010 or
+newer. This behavior simulates what the Exchange Management Shell does when loading. The following
+PowerShell syntax is an example of how PowerShell loads the connection.
 
 ```
 $JobUserName = '{insert domain\username}'
@@ -62,14 +62,14 @@ topic for instructions on enabling Remote PowerShell.
 
 ## The Exchange Applet
 
-The Exchange Applet will run on the Exchange server by the ExchangePS Data Collector in the
+The ExchangePS Data Collector runs the Exchange Applet on the Exchange server in the
 following circumstances:
 
-- An actual Client Access Server (CAS) server is not specified either in the global configuration
+- An actual Client Access Server (CAS) server isn't specified either in the global configuration
   (**Settings** > **Exchange** node) or on the Category page of the ExchangePS Data Collector Wizard
-- Remote PowerShell has not been enabled for targeting Exchange 2010
+- You haven't enabled Remote PowerShell for targeting Exchange 2010
 
-The following Exchange Snap-in is used when the applet is utilized:
+The applet uses the following Exchange Snap-in:
 
 - Add-pssnapin Microsoft.Exchange.Management.Powershell.E2010
 

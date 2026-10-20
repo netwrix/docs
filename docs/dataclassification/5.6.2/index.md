@@ -7,7 +7,7 @@ sidebar_position: 1
 # Features and Benefits
 
 Netwrix Data Classification is a platform that identifies data that’s important for your
-organization and enables you to reduce risk and unleash the true value of this data.
+organization and lets you reduce risk and unleash the true value of this data.
 
 Powered by unique compound term processing technology, it enriches your enterprise content with
 accurate and consistent metadata empowering you to work with data more confidently. By seeing which

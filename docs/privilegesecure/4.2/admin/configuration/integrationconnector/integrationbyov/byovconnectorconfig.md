@@ -249,7 +249,7 @@ down menu.
 - Activity Type — Controls the type of actions for the activity. Select **Interactive** from the
 dropdown menu.
 - Vault Connector — Displays a list of previously configured vault connectors. Select the vault
-connector created from the steps above.
+connector created in the previous steps.
 
 :::note
 You may use accounts stored in a Vault and added as a resource after the integration is

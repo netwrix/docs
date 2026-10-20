@@ -18,7 +18,7 @@ RESULT: You only see PolicyPak Browser Router's extension and NOT your desired
 user-side extensions for Chrome.. Workaround: PolicyPak Provides ADMX settings to work
 around various items in PolicyPak On-Prem. See this video to implement the ADMX:
 
-[Troubleshooting with ADMX files](/docs/policypak/gettingstarted/misc/videos/troubleshooting/admxfiles.md)
+[Troubleshooting with ADMX files](/docs/policypak/misc/videos/troubleshooting/admxfiles.md)
 
 :::note
 You shouldn't need to perform these steps (any of them) if you want to dictate Chrome

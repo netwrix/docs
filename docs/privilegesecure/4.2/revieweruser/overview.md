@@ -12,8 +12,7 @@ Reviewer.
 New Reviewers added to Privilege Secure must go through the MFA registration process before
 they can log in. By default, Privilege Secure requires a multi-factor authentication (MFA) solution
 (Authenticator, DUO, Symantec VIP etc) for all user accounts. Upon initial login, the Reviewer must
-complete MFA registration to proceed with using Privilege Secure. We recommend that you
-check with the organization's Administrators for login requirements.
+complete MFA registration to proceed with using Privilege Secure. Check with the organization's Administrators for login requirements.
 
 ## First Time Login
 

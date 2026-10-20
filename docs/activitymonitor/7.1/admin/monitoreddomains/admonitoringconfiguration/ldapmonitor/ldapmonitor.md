@@ -6,12 +6,12 @@ sidebar_position: 60
 
 # LDAP Monitor Tab
 
-The LDAP Monitor tab on a domain’s Configuration window allows users to scope monitoring by adding
+Use the LDAP Monitor tab on a domain’s Configuration window to scope monitoring by adding
 filters for accounts by name or type.
 
 ![Operations Tab in the LDAP Monitor Tab](/images/activitymonitor/7.1/admin/monitoreddomains/admonitoringconfiguration/operations.webp)
 
-After checking the Enable Ldap Monitor box, the following event filters can be modified on the
+After checking the Enable Ldap Monitor box, you can modify the following event filters on the
 sub-tabs:
 
 - Host (From)
@@ -51,7 +51,7 @@ The Query section is where monitoring can be scoped to those LDAP queries that c
 of the user-supplied string as a substring in BaseDN or in Query field of the LDAP Search request.
 For the Query value, provide the user-supplied string in the text box.
 
-Double-click the text box beneath Value to enter the desired string. Press the Enter or Tab key to
+Double-click the text box beneath Value to enter the string you want. Press the Enter or Tab key to
 add another text box.
 
 Example Values:
@@ -63,7 +63,7 @@ The Result section is where monitoring can be scoped to those LDAP query results
 least one of the user-supplied string as a substring. For the Result value, provide the
 user-supplied string in the text box.
 
-Double-click the text box beneath Value to enter the desired string. Press the Enter or Tab key to
+Double-click the text box beneath Value to enter the string you want. Press the Enter or Tab key to
 add another text box.
 
 Example Value:
@@ -91,7 +91,7 @@ The Servers option targets servers to be included or excluded when filtering for
 In both sections, servers must be specified in the form 'DOMAIN\SERVER', where DOMAIN is NetBIOS
 Domain name and SERVER is NetBIOS server name.
 
-Double-click the text box beneath Name to enter the desired servers to include or exclude. Press the
+Double-click the text box beneath Name to enter the servers you want to include or exclude. Press the
 Enter or Tab key to add another text box.
 
 ## Users
@@ -118,7 +118,7 @@ The following details appear beneath both sections:
   e.g. 'CN=Users,DC=Domain,DC=com'. However, for objects with 'sidType' type, it must be in the form
   of WellKnownSidType Enum, e.g. 'AnonymousSid' or 'LocalSid'.
 
-Double-click the text box beneath Distinguished Name to enter the desired group types to include or
-exclude. Double-click the text box beneath Type to enter the desired AD object to include or
+Double-click the text box beneath Distinguished Name to enter the group types you want to include or
+exclude. Double-click the text box beneath Type to enter the AD object you want to include or
 exclude. Press the Enter or Tab key to add another text box. Check the box under Subtree to include
 or exclude child contexts.

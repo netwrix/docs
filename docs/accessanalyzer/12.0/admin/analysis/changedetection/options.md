@@ -13,7 +13,7 @@ made within a certain time period, or only changes between the last two runs of 
 
 Configure the additional options using the following:
 
-- Save change detection results for xx days – Modify the number of days that results for the Change
-  Detection task are saved for
+- Save change detection results for xx days – Modify the number of days the Change
+  Detection task saves results
 - Only save most recent change (per unique key) – Select the checkbox to only save changes between
   the last two runs of the source set

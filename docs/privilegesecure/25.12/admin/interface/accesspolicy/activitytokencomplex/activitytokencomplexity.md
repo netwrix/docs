@@ -39,7 +39,7 @@ This list contains the following options:
 - Max Consecutive Chars — The maximum number of consecutively occurring characters that the activity
 token complexity policy allow
 - Characters to Exclude — Custom characters the activity token complexity policy will exclude.
-Characters entered in this field will be excluded in addition to the characters listed beneath the
+Characters entered in this field are excluded in addition to the characters listed beneath the
 Additional characters excluded section.
 - Additional characters excluded — Default characters the activity token complexity policy will
 exclude

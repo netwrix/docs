@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Add Entry to Justification List
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "How to Add a New Entry to the Justification List"
 knowledge_article_id: kA0Qk0000002B2lKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Add a New Entry to the Justification List
@@ -19,6 +20,8 @@ products:
 ## Overview
 
 This article explains how to add a new entry to the Justification List in Endpoint Protector (EPP) and apply it to a Content Aware Protection policy for user remediation.
+
+For the full reference, see [Justifications List](/docs/endpointprotector/admin/systempar#justiﬁcations-list) in the System Parameters documentation.
 
 ## Instructions
 
@@ -30,6 +33,10 @@ This article explains how to add a new entry to the Justification List in Endpoi
    - On the **Justification** tab, add a question (for example, "Why is the Print Screen required?").
    - Change the status to **Enable** and set the reason to **Yes**.
    - Click **Save**.
+
+:::note
+You can add up to a maximum of 10 justifications. Several justifications are already added by default — make sure at least one justification stays enabled at all times.
+:::
 
 3. After saving the Justification list, navigate to the top of the console and select the **Content Aware Protection** menu.
 

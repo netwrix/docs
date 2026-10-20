@@ -10,10 +10,11 @@ keywords:
 sidebar_label: Recommendations for Endpoint Protector Interaction
 tags:
   - features-and-operations
+  - kb
 title: "Recommendations for Endpoint Protector Interaction with Security Vendors, Proxies, CASBs, and Browsers"
 knowledge_article_id: kA0Qk0000002B7HKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Recommendations for Endpoint Protector Interaction with Security Vendors, Proxies, CASBs, and Browsers
@@ -21,6 +22,12 @@ products:
 ## Overview
 
 This article provides recommendations for ensuring seamless interaction between Endpoint Protector and various security vendors, proxies, cloud access security brokers (CASBs), and web browsers.
+
+These recommendations address network- and DPI-level conflicts. Many of the same vendors also require file, process, and registry-level security exclusions to prevent their antivirus/EDR scanning from interfering with the EPP Client. See [Security Exclusions](/docs/endpointprotector/requirements/client#security-exclusions) for the complete, authoritative exclusion list for Windows, macOS, and Linux.
+
+:::important
+Before escalating any EPP Client performance issue with a security vendor, confirm that the security exclusions above are configured and deployed on the affected endpoint, and that the computer has been rebooted afterward.
+:::
 
 ## General Recommendations
 

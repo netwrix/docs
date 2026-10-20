@@ -6,7 +6,7 @@ sidebar_position: 130
 
 # FSAA: Bulk Import Settings
 
-The Bulk Import Settings page is where the bulk import process settings are configured. It is a
+Use the Bulk Import Settings page to configure the bulk import process settings. It is a
 wizard page for the categories of:
 
 - Bulk Import File System Access/Permission Auditing
@@ -16,5 +16,5 @@ wizard page for the categories of:
 ![FSAA Data Collector Wizard Bulk Import Settings page](/images/accessanalyzer/11.6/admin/datacollector/fsaa/bulkimport.webp)
 
 Select the **Import incomplete scan data** checkbox to enable imports of partial scan data. If the
-scan is stopped before successful completion, this option must be checked in order to bulk import
+scan stops before successful completion, check this option to bulk import
 the data from a partially scanned host.

@@ -13,10 +13,11 @@ keywords:
   - Device Control
   - Computers
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Installing the Agent with Proxy Settings on MacOS
 tags:
   - deployment-and-installation
+  - kb
 title: "Installing the Agent with Proxy Settings on MacOS"
 knowledge_article_id: kA0Qk0000002B5vKAE
 ---

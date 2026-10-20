@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The Rename Review window opens from the
 [Manage Reviews Page](/docs/accessinformationcenter/11.6/resourcereviews/interface/interface.md#manage-reviews-page)
-of the Resource Reviews interface. Follow the steps to rename a review.
+of the Resource Reviews interface. To rename a review:
 
 **Step 1 –** Select the review and click **Rename**. The Rename Review window opens.
 

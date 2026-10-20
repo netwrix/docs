@@ -6,17 +6,16 @@ sidebar_position: 30
 
 # Customizing Favorite Reports
 
-The Favorite reports tile displays a shortened list of your favorite reports. To view, edit or
+The Favorite reports tile displays a shortened list of your favorite reports. To view, edit, or
 update the full list, click View all.
 
-The Home > Reports page opens. This page includes several folders: Favorites, Predefined, Compliance
-and Custom. Favorite reports are located in the Favorites folder.
+The Home > Reports page opens. This page includes several folders: Favorites, Predefined, Compliance, and Custom. Favorite reports are located in the Favorites folder.
 
 ![reportsfavorites](/images/auditor/10.8/admin/navigation/reportsfavorites.webp)
 
-Follow the steps to add or remove a Favorite report
+To add or remove a favorite report:
 
-**Step 1 –** Locate the desired report in one of the other folders.
+**Step 1 –** Locate the report in one of the other folders.
 
 **Step 2 –** Click the name of the report to view its description.
 

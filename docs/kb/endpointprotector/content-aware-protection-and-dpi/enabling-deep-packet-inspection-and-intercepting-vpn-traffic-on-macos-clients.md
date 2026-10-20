@@ -15,10 +15,11 @@ keywords:
   - system extension
   - proxy configuration
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Enabling Deep Packet Inspection and Intercepting V
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Enabling Deep Packet Inspection and Intercepting VPN Traffic on macOS Clients"
 knowledge_article_id: kA0Qk0000002BCQKA2
 ---
@@ -26,7 +27,17 @@ knowledge_article_id: kA0Qk0000002BCQKA2
 # Enabling Deep Packet Inspection and Intercepting VPN Traffic on macOS Clients
 
 ## Overview
-This article describes how to enable Deep Packet Inspection and intercept VPN traffic on macOS clients. These instructions apply to Netwrix Endpoint Protector Server version 5.3.0.5 and later, and Netwrix Endpoint Protector Client version 2.2.1.5 and later. Ensure that you have installed the Netwrix Endpoint Protector Client and created the desired Content Aware Policy before proceeding.
+This article describes how to enable Deep Packet Inspection and intercept VPN traffic on macOS clients. Ensure that you have installed the Netwrix Endpoint Protector Client and created the desired Content Aware Policy before proceeding.
+
+For the full Deep Packet Inspection reference, including the Stealthy vs. Regular DPI modes referenced by the Intercept VPN Traffic setting, see [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket).
+
+:::note
+Enabling Deep Packet Inspection can impact the upload speed of inspected files. Enabling **Intercept VPN Traffic** uses a network extension instead of Packet Filter, which is a possible workaround for this performance impact.
+:::
+
+:::note
+Before configuring Deep Packet Inspection and VPN interception, confirm the EPP Client was installed with **Full Disk Access** granted (**System Preferences** > **Security & Privacy** > **Privacy** > **Full Disk Access**). See [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation) for the full macOS installation steps, including this requirement.
+:::
 
 ## Instructions
 1. Open the **Netwrix Endpoint Protector Server** interface. In the **Device Control** section, select **User**, **Computer**, **Group**, or **Global Settings**. Click **Manage Settings**, then select **Netwrix Endpoint Protector Client** and enable **Deep Packet Inspection**.  
@@ -47,6 +58,10 @@ This article describes how to enable Deep Packet Inspection and intercept VPN tr
 
 8. Click **Save** to apply your changes.
 
+:::warning
+If the server's Certificate Stack is ever regenerated, you must repeat steps 2–8 to manually add the new certificate to Keychain Access. Endpoint Protector doesn't push certificate updates to macOS clients automatically.
+:::
+
 9. In the **Netwrix Endpoint Protector** interface, enable **Intercept VPN Traffic**. When prompted, select one of the following behaviors for when the network extension is disabled:
    - **Temporary Disable Deep Packet Inspection**: Temporarily disables Deep Packet Inspection.
    - **Block Internet Access**: Blocks Internet access until the user approves the Netwrix Endpoint Protector Proxy Configuration. The user can allow it after restarting the computer.
@@ -63,3 +78,7 @@ This article describes how to enable Deep Packet Inspection and intercept VPN tr
 14. Confirm that **Intercept VPN Traffic** is enabled.
 
 15. Disconnect and reconnect to the VPN to ensure all settings take effect in the Netwrix Endpoint Protector Client.
+
+:::note
+Restart the computer after enabling or disabling Deep Packet Inspection, or after upgrading Endpoint Protector, to ensure consistent DPI behavior.
+:::

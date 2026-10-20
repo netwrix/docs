@@ -6,8 +6,8 @@ sidebar_position: 100
 
 # DiskInfo Data Collector
 
-The DiskInfo Data Collector provides enumeration of disks and their associated properties. When
-targeting the local host for a DiskInfo query, it is necessary to select the **Systems Default**
+The DiskInfo Data Collector enumerates disks and their associated properties. When
+targeting the local host for a DiskInfo query, select the **Systems Default**
 option as the connection profile. This data collector is a core component of Enterprise Auditor and
 is available with all Enterprise Auditor licenses.
 
@@ -27,7 +27,7 @@ is available with all Enterprise Auditor licenses.
 
 ## DiskInfo Query Configuration
 
-The DiskInfo Data Collector is configured through the Disk Info wizard, which contains the following
+Configure the DiskInfo Data Collector through the Disk Info wizard, which contains the following
 wizard pages:
 
 - Welcome
@@ -37,5 +37,5 @@ wizard pages:
 
 ![Disk Info wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/diskinfo/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the **Don't display this page the next time** checkbox while the
+wizard is open, and save the configuration settings.

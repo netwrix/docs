@@ -37,4 +37,4 @@ workstation, i.e., the computer from which a change was made. This functionality
 be disabled.
 
 **Step 5 –** Navigate to **Start > Run** and type _"cmd"_. Input the `gpupdate /force` command and
-press **Enter**. The group policy will be updated.
+press **Enter**. The group policy updates.

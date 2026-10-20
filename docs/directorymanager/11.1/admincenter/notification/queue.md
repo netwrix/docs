@@ -10,7 +10,7 @@ Directory Manager maintains a queue of the email notification generated on event
 identity stores, and sends them one by one through the SMTP server configured for the respective
 identity store. Each new email notification is stacked at the top of the queue.
 
-When the SMTP server for an identity store is down and notifications in the queue cannot be
+When the SMTP server for an identity store is down and notifications in the queue can't be
 delivered, Directory Manager attempts to re-send them until they are successfully delivered.
 Successfully delivered notifications move out of the queue.
 
@@ -35,8 +35,8 @@ following is displayed for a notification:
 - **Retry Count:** the total number of attempts to send the notification
 - **In Progress:** displays one of the following statuses for a notification:
 
-    - **True:** indicates that the notification is currently being processed for sending
-    - **False:** indicates that the notification is not under process
+    - **True:** indicates that the notification is being processed for sending
+    - **False:** indicates that the notification isn't under process
 
     As Directory Manager processes notifications in batches, all notifications in a batch have the
     same status.
@@ -71,8 +71,8 @@ In the **Categories** list on the **Filter** dialog box, select one of the follo
    attempts to send notifications manually are tracked in Admin Center history.
 
     - Click **Send** for a notification in the **Actions** column to send it urgently.
-    - To send multiple notifications, select the check boxes for those notifications. To select all
-      notifications, select the check box in the header row. This displays the following icons:
+    - To send multiple notifications, select the checkboxes for those notifications. To select all
+      notifications, select the checkbox in the header row. This displays the following icons:
 
         ![send_refresh](/images/directorymanager/11.1/admincenter/notification/send_refresh.webp)
 
@@ -90,8 +90,8 @@ To delete a notification:
    notifications together.
 
     - Click **Delete** for a notification in the **Actions** column to delete it.
-    - To delete multiple notifications, select the check boxes for those notifications. To select
-      all notifications, select the check box in the header row. This displays the following icons:
+    - To delete multiple notifications, select the checkboxes for those notifications. To select
+      all notifications, select the checkbox in the header row. This displays the following icons:
 
         ![send_refresh](/images/directorymanager/11.1/admincenter/notification/send_refresh.webp)
 

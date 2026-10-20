@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Profile Permission Comparison
 
-The Profile / Permission Set Comparison enables you to efficiently clean up and secure your Orgs.
+Use the Profile / Permission Set Comparison to efficiently clean up and secure your Orgs.
 
 - _Clean Up Efficiency_: Identify inactive, unused, or excessive permissions, ensuring your Org is
   streamlined and efficient.
@@ -15,9 +15,8 @@ The Profile / Permission Set Comparison enables you to efficiently clean up and 
 
 Comparison tool features include:
 
-- _Native Salesforce Components_: Enjoy a seamless experience within your Salesforce environment.
-- _Compare up to three Profiles / Permission Sets_: Gain a comprehensive view of your Org's
-  permissions.
+- _Native Salesforce Components_: Works within your Salesforce environment.
+- _Compare up to three Profiles / Permission Sets_: View your Org's permissions side by side.
 - _Export Results to Excel_: Share and analyze comparison results.
 
 :::note
@@ -29,7 +28,7 @@ Run the scanners before you perform comparisons to ensure you have the latest da
 To perform a **System Permission** comparison:
 
 1. Select **Tools** > **Permissions Comparison** from the Netwrix Dashboard page. Click the
-   expansion indicator u to expand the **Comparison** panel. Make sure **System Permission** is
+   expansion indicator u to expand the **Comparison** panel. Ensure **System Permission** is
    selected.
 
     ![Open the Profile / Permission Comparison](/images/platgovsalesforce/tools/permission_comparison.webp)
@@ -57,11 +56,10 @@ To perform a **System Permission** comparison:
 To perform an **Object Permission** comparison:
 
 1. Select **Tools** > **Permissions Comparison** from the Netwrix Dashboard page. Click the
-   expansion indicator u to expand the **Comparison** panel. Make sure **Object Permission** is
+   expansion indicator u to expand the **Comparison** panel. Ensure **Object Permission** is
    selected.
 
-    If you ran a **System Permission** comparison before switching to **Object Permission**, your
-    selected items are used by default. You can select different items to compare.
+    If you ran a **System Permission** comparison before switching to **Object Permission**, the tool uses your selected items by default. You can select different items to compare.
 
 2. Select at least two **Profile / Permission Sets**. For each item:
 

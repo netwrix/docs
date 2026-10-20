@@ -33,7 +33,7 @@ Create Local Account option has no effect
 - Use a mask to define an account that is created locally on the target resource — For example,
 a mask of “`%domain%_%samaccountname%`” in conjunction with the Create Local Account option set to
 yes, will result in a local account being created using name substitution so the user
-“sblab\jsmith” will be connected to a local account named “sblab_jsmith”
+“sblab\jsmith” is connected to a local account named “sblab_jsmith”
 
 :::note
 The value of each mask can be customized on the
@@ -67,7 +67,7 @@ supplied `stringToManipulate` parameter.
 
 `int numCharactersReturned` must be a positive number.
 
-If `int numCharactersReturned` exceeds string `stringToManipulate` then the entire string will be
+If `int numCharactersReturned` exceeds string `stringToManipulate` then the entire string is
 returned.
 
 **Examples**
@@ -84,8 +84,8 @@ For example:
 
 `%first(%samaccountname%,3)/first%`
 
-In the example above, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
-of the `first()` function will be "jsm"
+In the preceding example, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
+of the `first()` function is "jsm"
 
 ### substr()
 
@@ -128,8 +128,8 @@ For example:
 
 `%substr(%samaccountname%,2)/substr%`
 
-In the example above, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
-of the `substr()` function will be "mith"
+In the preceding example, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
+of the `substr()` function is "mith"
 
 ### replace()
 
@@ -168,7 +168,7 @@ The string or Privilege Secure Login Account Template mask to be manipulated.
 
 `numberOfCharacters (int)`
 
-A non-negative integer should be supplied. That many characters will be trimmed from the end of the
+A non-negative integer should be supplied. That many characters are trimmed from the end of the
 string.
 
 **Notes**

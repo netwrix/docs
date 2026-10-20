@@ -2,6 +2,8 @@
   "label": "Getting to know Device Manager",
   "position": 1,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }
-

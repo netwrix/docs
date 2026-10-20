@@ -34,7 +34,7 @@ To send the results to a recipient:
 
     ![saved_search_timeout2](/images/platgovnetsuite/troubleshooting/saved_search_timeout2.webp)
 
-4. Click on **Customize Message** tab.
+4. Click **Customize Message** tab.
 5. Select **Send as CSV**.
 
     ![saved_search_timeout3](/images/platgovnetsuite/troubleshooting/saved_search_timeout3.webp)

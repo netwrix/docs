@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # SharePoint Online Activity Auditing Configuration
 
-In order to collect logs and monitor SharePoint Online activity using the Netwrix Activity Monitor,
-it needs to be registered with Microsoft® Entra ID® (formerly Azure AD).
+To collect logs and monitor SharePoint Online activity, the Netwrix Activity Monitor requires an
+application registered with Microsoft® Entra ID® (formerly Azure AD).
 
 :::note
 A user account with the Global Administrator role is required to register an app with
@@ -26,14 +26,14 @@ additional information.
 
 **Configuration Settings from the Registered Application**
 
-The following settings are needed from your tenant once you have registered the application:
+The following settings are needed from your tenant after you register the application:
 
 - Tenant ID – This is the Tenant ID for Microsoft Entra ID
 - Client ID – This is the Application (client) ID for the registered application
 - Client Secret – This is the Client Secret Value generated when a new secret is created
 
     :::warning
-    It is not possible to retrieve the value after saving the new key. It must be
+    It isn't possible to retrieve the value after saving the new key. It must be
     copied first.
     :::
 
@@ -55,10 +55,8 @@ The following settings are needed from your tenant once you have registered the 
 
 ## Register a Microsoft Entra ID Application
 
-Follow the steps to register Activity Monitor with Microsoft Entra ID.
-
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::
@@ -84,14 +82,12 @@ registrations.
 **Step 5 –** Click **Register**.
 
 The Overview page for the newly registered app opens. Review the newly created registered
-application. Now that the application has been registered, permissions need to be granted to it.
+application, then grant it permissions.
 
 ## Grant Permissions to the Registered Application
 
-Follow the steps to grant permissions to the registered application.
-
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::
@@ -131,15 +127,12 @@ Microsoft APIs tab. Select the following permissions:
 **Step 9 –** Click **Grant Admin Consent for [tenant]**. Then click **Yes** in the confirmation
 window.
 
-Now that the permissions have been granted to it, the settings required for Activity Monitor need to
-be collected.
+Now that you've granted the permissions, collect the settings required for Activity Monitor.
 
 ## Identify the Client ID
 
-Follow the steps to find the registered application's Client ID.
-
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::
@@ -174,10 +167,8 @@ application’s Client Secret Key.
 
 **Overview Page**
 
-Follow the steps to find the tenant name where the registered application resides.
-
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::
@@ -194,18 +185,15 @@ application’s Client Secret Key.
 
 ## Generate the Client Secret Key
 
-Follow the steps to find the registered application's Client Secret, create a new key, and save its
-value when saving the new key.
-
 :::note
-The steps below are for the Microsoft Entra Admin Center. These steps might vary slightly
+The following steps are for the Microsoft Entra Admin Center. These steps might vary slightly
 if you start from a different Microsoft portal. See the relevant Microsoft documentation for
 additional information.
 :::
 
 
 :::warning
-It is not possible to retrieve the value after saving the new key. It must be copied
+It isn't possible to retrieve the value after saving the new key. It must be copied
 first.
 :::
 
@@ -232,13 +220,13 @@ list.
 **Step 5 –** Click **Add** to generate the key.
 
 :::warning
-If this page is left before the key is copied, then the key is not retrievable, and
-this process will have to be repeated.
+If you leave this page before copying the key, the key isn't retrievable and you'll have to repeat
+this process.
 :::
 
 
-**Step 6 –** The Client Secret will be displayed in the Value column of the table. You can use the
-Copy to clipboard button to copy the Client Secret.
+**Step 6 –** The Value column of the table displays the Client Secret. You can use the Copy to
+clipboard button to copy the Client Secret.
 
 **Step 7 –** Save this value in a text file.
 
@@ -246,15 +234,14 @@ This is needed for adding a SharePoint Online host in the Activity Monitor.
 
 ## Enable Auditing for SharePoint Online
 
-Follow the steps to enable auditing for SharePoint Online so the Activity Monitor can receive
-events.
+Enable auditing for SharePoint Online so the Activity Monitor can receive events.
 
 **Step 1 –** In the Microsoft Purview compliance portal at
 [https://compliance.microsoft.com](https://compliance.microsoft.com/), go to **Solutions** >
 **Audit**. Or, to go directly to the Audit page at
 [https://compliance.microsoft.com/auditlogsearch](https://compliance.microsoft.com/auditlogsearch).
 
-**Step 2 –** If auditing is not turned on for your organization, a banner is displayed prompting you
+**Step 2 –** If auditing isn't turned on for your organization, a banner is displayed prompting you
 start recording user and admin activity.
 
 **Step 3 –** Select the **Start recording** user and **admin activity** banner.

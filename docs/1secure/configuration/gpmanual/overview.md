@@ -6,11 +6,12 @@ sidebar_position: 10
 
 # Group Policy
 
-Netwrix 1secure relies on native logs for collecting audit data. Therefore, successful change and
+Netwrix 1Secure relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
-and on the computer where Netwrix Cloud Agent resides. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+and on the computer where Netwrix Cloud Agent resides. Configuring your IT infrastructure may also
+include enabling certain built-in Windows services. Proper audit configuration is required to ensure
+audit data integrity; otherwise, change reports can contain warnings, errors, or incomplete audit
+data.
 
 
 ## Group Policy Activity Overview
@@ -28,17 +29,17 @@ The Group Policy Activity feature monitors:
 
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
-- **Automatically by adding connector Group Policy Activity in Active Directory data source** This method is recommended for evaluation purposes in test environments. If any conflicts are detected with your current audit settings, automatic audit configuration will not be performed.For a full list of audit settings required for Netwrix 1Secure to collect comprehensive audit data and instructions on how to configure them, refer to [Configure IT Infrastructure for Auditing and Monitoring.](/docs/1secure/configuration/configureitinfrastructure)
+- **Automatically by adding connector Group Policy Activity in Active Directory data source** — This method is recommended for evaluation purposes in test environments. If any conflicts are detected with your current audit settings, automatic audit configuration doesn't run. For a full list of audit settings required for Netwrix 1Secure to collect comprehensive audit data and instructions on how to configure them, refer to [Configure IT Infrastructure for Auditing and Monitoring](/docs/1secure/configuration/configureitinfrastructure).
 
-If you select to automatically configure audit in the target environment, your current audit settings will be checked on each data collection and adjusted if necessary.
+  If you select to automatically configure audit in the target environment, 1Secure checks your current audit settings on each data collection and adjusts them if necessary.
 
 
 
-- **Manually** – Native audit settings must be adjusted manually to ensure collecting comprehensive and
-  reliable audit data. You can enable 1secure to continually enforce the relevant audit policies or
+- **Manually** – Adjust native audit settings manually to ensure comprehensive and reliable audit
+  data collection. You can enable 1Secure to continually enforce the relevant audit policies or
   configure them manually:
 
-    - [Configure Basic Domain Audit Policies](/docs/1secure/configuration/admanual/domainauditpolicies) or [Configure Advanced Audit Policies](/docs/1secure/configuration/admanual/advancedpolicy) Either local or advanced audit policies must be configured to track changes to accounts and groups, and to identify workstations where changes were made.
+    - [Configure Basic Domain Audit Policies](/docs/1secure/configuration/admanual/domainauditpolicies) or [Configure Advanced Audit Policies](/docs/1secure/configuration/admanual/advancedpolicy) — Configure either local or advanced audit policies to track changes to accounts and groups and to identify workstations where changes were made.
       
     - [Configure Object-Level Auditing](/docs/1secure/configuration/admanual/objectlevel)
 

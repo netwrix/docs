@@ -6,10 +6,7 @@ sidebar_position: 40
 
 # Recent Events Tab
 
-The Recent Events tab provides information on the events that have been recently monitored or
-blocked by the selected policy. See the [Investigate Interface](/docs/threatprevention/8.0/admin/investigate/overview.md) for
-recent events monitored or blocked by all policies. You can also view event data configured to be
-sent to syslog (SIEM) on the [SIEM Output Viewer](/docs/threatprevention/8.0/admin/configuration/siemoutputviewer.md) window.
+The Recent Events tab shows information on events the selected policy recently monitored or blocked. See the [Investigate Interface](/docs/threatprevention/8.0/admin/investigate/overview.md) for events that all policies monitored or blocked. You can also view event data you configure to send to syslog (SIEM) on the [SIEM Output Viewer](/docs/threatprevention/8.0/admin/configuration/siemoutputviewer.md) window.
 
 ![Policy - Recent Events tab](/images/threatprevention/8.0/admin/policies/recentevents/recenteventstab.webp)
 
@@ -27,7 +24,7 @@ The Recent Events tab has the following options on the toolbar:
 
 Example for the Events for Last [number] Hours Option
 
-Below is an example of how to use the Events for Last [number] Hours option:
+The following example shows how to use the Events for Last [number] Hours option:
 
 The number of hours set is based on UTC and is adjusted for the time zones of the Administration
 Console server and the Agent that is monitoring the events. Let's assume the following:
@@ -70,7 +67,7 @@ below in the default order of the data grid columns:
   - Authenticate – DN of the user object making the request
 
   :::note
-  For LDAP bind/monitoring/blocking, Affected Object Path is not used
+  For LDAP bind/monitoring/blocking, the system doesn't use Affected Object Path.
   :::
 
 
@@ -98,13 +95,12 @@ below in the default order of the data grid columns:
 - Perpetrator: Protocol – Protocol used for the monitored operation
 
   - File System monitoring/blocking – Name of the share where the operation was monitored/blocked.
-    It will be blank if the affected host has an operating system older than Windows Server 2008
-    R2.
+    Shows blank on hosts with operating systems older than Windows Server 2008 R2.
 
 - Perpetrator: IP Address –IP address of the originating host
 
-  - File System monitoring/blocking – It will be blank if the affected host has an operating
-    system older than Windows Server 2008 R2.
+  - File System monitoring/blocking – Shows blank on hosts with operating systems older than
+    Windows Server 2008 R2.
 
 - Perpetrator: MAC Address – Network adapter identifier
 - Perpetrator: Host – Name of the originating host
@@ -117,11 +113,11 @@ Select an event to view additional information about it.
 
 ![Recent Events tab - Additional Information for an event](/images/threatprevention/8.0/admin/policies/recentevents/recenteventdetails.webp)
 
-The following information (as applicable to the event) is displayed:
+You see the following information (as applicable to the event):
 
-- Attribute Name – The name of the object attribute that is affected
+- Attribute Name – The name of the object attribute affected
 - Operation – The operation performed on the attribute
-- Old Value – Value prior to the monitored change
+- Old Value – Value before the monitored change
 - New Value – Value after the monitored change
 
 This data grid employs features for sorting, filtering, searching, and more. See the
@@ -129,7 +125,7 @@ This data grid employs features for sorting, filtering, searching, and more. See
 
 ## Recent Events Right-Click Menu
 
-Right-click on a row in the data grid to open the right-click menu.
+Right-click a row in the data grid to open the right-click menu.
 
 ![Recent Events tab - Right-Click menu](/images/threatprevention/8.0/admin/policies/recentevents/rightclickmenu.webp)
 
@@ -137,4 +133,4 @@ Right-click on a row in the data grid to open the right-click menu.
 - Event Viewer – Opens the [Event Viewer Window](/docs/threatprevention/8.0/admin/policies/configuration/recentevents/eventviewer.md) for the selected event/data row
 - Event Tracker – Opens the [Event Tracker Window](/docs/threatprevention/8.0/admin/policies/configuration/recentevents/eventtracker.md) for the selected event/data row
 - [Execute PS Script](/docs/threatprevention/8.0/admin/policies/configuration/recentevents/executepsscript.md) – Opens a Windows Explorer window to the scripts folder.
-  Enables users to run a PowerShell script for the selected event/data row.
+  You can run a PowerShell script for the selected event or data row.

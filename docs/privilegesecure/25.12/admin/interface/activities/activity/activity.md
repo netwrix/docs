@@ -38,7 +38,7 @@ options include:
 - Activity Type — Controls the type of actions for the activity.
 - Requester Login Format — Indicates the format that prefill the Username field for
 logging into the resource. It must exactly match the username defined on the resource.
-- Application to Launch — Indicates the application that will be launched on the RDS server that the
+- Application to Launch — Indicates the application launched on the RDS server that the
 user is connected to by Privilege Secure
 - Logon URL — Displays the primary logon page
 

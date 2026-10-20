@@ -1,10 +1,9 @@
-{
+﻿{
   "label": "Using DesignStudio Tools",
   "position": 130,
   "collapsed": true,
   "collapsible": true,
   "link": {
-    "type": "doc",
-    "id": "overview"
+    "type": "generated-index"
   }
 }

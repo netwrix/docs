@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Roles & the Schedule Service Account
 
-Once Role-Based Access is enabled, a user or group with the appropriate access role has the ability
-to schedule a job or job group as a Schedule Service Account at the **Settings** > **Schedule**
+Once Role-Based Access is enabled, a user or group with the appropriate access role can schedule
+a job or job group as a Schedule Service Account at the **Settings** > **Schedule**
 node. Multiple accounts can be added as needed.
 
 **Who Configures This Account?**
@@ -25,18 +25,18 @@ Whose Credentials Should Be Used as the Schedule Service Account?
     - Job Initiator role
 
 :::note
-In order to run or schedule a Host Inventory query, the Schedule Service Account must have
+to run or schedule a Host Inventory query, the Schedule Service Account must have
 an Administrator, Power User, or Host Management Administrator role. Therefore, if the account has
 the Job Initiator role assigned, it must have the Host Management Administrator role as well.
 :::
 
 
-The Schedule Service Account is used to access the Task folders when scheduling tasks and to apply
-locks on jobs.
+Enterprise Auditor uses the Schedule Service Account to access the Task folders when scheduling
+tasks and to apply locks on jobs.
 
 - Schedule Tasks
 
-    - In order to have the appropriate level of rights to schedule tasks, the credentials specified
+    - to have the appropriate level of rights to schedule tasks, the credentials specified
       must at least have the following:
 
         - Create Files/Write Data rights on the Windows Task Folder
@@ -44,7 +44,7 @@ locks on jobs.
         - Otherwise, they should have local Administrator privileges on the Enterprise Auditor
           Console server
 
-    - The user whose credentials are specified must also have a role that allows the scheduling of
+    - The user whose credentials are specified must also have a role that allows scheduling
       tasks – Administrator, Power User, or Job Initiator
 
 - Apply Locks
@@ -55,19 +55,19 @@ locks on jobs.
     :::
 
 
-    - These credentials are used to apply locks on jobs, enabling the Job Approver to have fewer
-      rights on the Jobs directory. Therefore, the credentials specified must at least have the
-      following:
+    - Enterprise Auditor uses these credentials to apply locks on jobs, so the Job Approver needs
+      fewer rights on the Jobs directory. Therefore, the credentials specified must at least have
+      the following:
 
         - Modify rights on this directory
         - Otherwise, these credentials should have local Administrator privileges on the Enterprise
           Auditor Console server
 
-    - The Job Approver uses these credentials to apply locks. Therefore, the Job Approver must be
-      added to the local policy **Impersonate a client after Authentication**.
+    - The Job Approver uses these credentials to apply locks. Therefore, add the Job Approver to
+      the local policy **Impersonate a client after Authentication**.
 
-Do not choose the **Use local System account to schedule tasks** option. This account does not have
-the appropriate rights to apply locks on jobs. Therefore, it does not work in conjunction with Role
+Don't choose the **Use local System account to schedule tasks** option. This account doesn't have
+the appropriate rights to apply locks on jobs. Therefore, it doesn't work with Role
 Based Access.
 
 See the

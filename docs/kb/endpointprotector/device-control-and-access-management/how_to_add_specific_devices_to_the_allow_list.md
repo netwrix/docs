@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Add Devices to Allow List
 tags:
   - device-control-and-access-management
+  - kb
 title: "How to Add Specific Devices to the Allow List"
 knowledge_article_id: kA0Qk0000002B4JKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Add Specific Devices to the Allow List

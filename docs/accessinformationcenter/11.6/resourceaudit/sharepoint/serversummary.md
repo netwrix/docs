@@ -12,7 +12,7 @@ instances.
 
 ![Server Summary report](/images/accessinformationcenter/11.6/resourceaudit/sharepoint/serversummary.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Server Name – Single server name representing the entire SharePoint on-premise farm or SharePoint
   Online instance

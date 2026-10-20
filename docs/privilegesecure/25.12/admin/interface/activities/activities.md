@@ -84,7 +84,7 @@ topic for additional information.
 :::
 
 
-- Application to Launch — Indicates the application that will be launched on the RDS server that the
+- Application to Launch — Indicates the application launched on the RDS server that the
 user is connected to by Privilege Secure. This option is only visible when the Activity Type is
 set to Interactive App Launch.
 
@@ -109,7 +109,7 @@ Microsoft Entra ID or Website. See the [Microsoft Entra ID Details Page](/docs/p
 If any of these settings are modified, Save, and Cancel buttons display. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
-Below the activity details in the main pane are the session details, the actions that will occur
+The main pane also shows the session details — the actions that occur
 before, during, and after the session:
 
 - Pre-Session (Grant) — List of actions that will run before the session begins. These actions may

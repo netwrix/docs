@@ -12,12 +12,12 @@ Center, a resource refers to file system servers, SharePoint farms, shared folde
 Reports include permissions, effective access, membership, user activity, changes, and sensitive
 criteria matches. Most Enterprise Auditor solutions can send data to the Access Information Center.
 Additionally, the Access Information Center Flexible Imports feature and Enterprise Auditor's AnyID
-Connectors solution can be used to introduce data from target environments not available with the
+Connectors solution to introduce data from target environments not available with the
 default solutions. See the All Solutions topic of the
 [Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 for additional information on the data collection options.
 
-The Access Information Center search features, found on the home page, can be used to open the other
+Use the Access Information Center search features, located on the home page, to open the other
 audit interfaces. These other interfaces show reports on users, groups, computers, and sensitive
 content.
 

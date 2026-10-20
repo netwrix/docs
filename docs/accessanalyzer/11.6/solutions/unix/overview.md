@@ -29,7 +29,7 @@ topic for additional information.
 **Location**
 
 The Unix Solution requires a special Enterprise Auditor license. It can be installed from the
-Enterprise Auditor Instant Job Wizard. Once it has been installed into the Jobs tree, navigate to
+Enterprise Auditor Instant Job Wizard. After it has been installed into the Jobs tree, navigate to
 the solution: **Jobs** > **Unix**.
 
 ## Job Groups

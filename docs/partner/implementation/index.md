@@ -6,19 +6,16 @@ keywords: [training, course, certification, partners, professional services]
 description: "Learn about the Netwrix Professional Services Engineer ceritifcation options"
 ---
 
+
+import { Company } from '@site/src/training/products';
+
 The following learning paths provide Partner certification for Professional Services Engineers:
 
 * [Netwrix Access Analyzer Professional Services Engineer](./access-analyzer.md)
 * [Netwrix Auditor Professional Services Engineer](./auditor.md)
 * [Netwrix Data Classification Professional Services Engineer](./data-classification.md)
-* [Netwrix Platform Governance for NetSuite Professional Services Engineer](./platform-governance-for-netsuite.md)
-* [Netwrix Platform Governance for Salesforce Professional Services Engineer](./platform-governance-for-salesforce.md)
 * [Netwrix Privilege Secure Professional Services Engineer](./privilege-secure.md)
+* [Netwrix Strongpoint for NetSuite Professional Services Engineer](./strongpoint-for-netsuite.md)
+* [Netwrix Strongpoint for Salesforce Professional Services Engineer](./strongpoint-for-salesforce.md)
 
-The following learning paths provide product training for Professional Services engineers, but certification isn't available:
-* [Netwrix Access Analyzer 26+ – Professional Services Engineer](./access-analyzer-26+.md)
-* [Netwrix Change Tracker – Professional Services Engineer](./change-tracker.md)
-* [Netwrix Identity Manager – Professional Services Engineer](./identity-manager.md)
-* [Netwrix Password Secure – Professional Services Engineer](./password-secure.md)
-* [Netwrix Threat Manager – Professional Services Engineer](./threat-manager.md)
-* [Netwrix Threat Prevention – Professional Services Engineer](./threat-prevention.md)
+The Learning Library offers courses for other <Company /> products, but Professional Services Engineer certification isn't available for them.

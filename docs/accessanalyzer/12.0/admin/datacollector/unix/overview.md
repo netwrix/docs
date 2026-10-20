@@ -7,8 +7,8 @@ sidebar_position: 390
 # Unix Data Collector
 
 The Unix Data collector provides host inventory, software inventory, and logical volume inventory on
-UNIX & Linux platforms. The Unix Data Collector has been preconfigured within the Unix Solution.
-Both this data collector and the solution are available with a special Access Analyzer license. See
+UNIX & Linux platforms. Access Analyzer preconfigures the Unix Data Collector within the Unix
+Solution. Both this data collector and the solution are available with a special Access Analyzer license. See
 the [Unix Solution](/docs/accessanalyzer/12.0/solutions/unix/overview.md) topic for additional information.
 
 **Protocols**
@@ -24,14 +24,14 @@ the [Unix Solution](/docs/accessanalyzer/12.0/solutions/unix/overview.md) topic 
 
 - Root permissions in Unix/Linux
 
-If the Root permission is unavailable, a least privileged model can be used. See the
+If the Root permission is unavailable, you can use a least privileged model. See the
 [Least Privilege Model](/docs/accessanalyzer/12.0/requirements/unix/target.md#least-privilege-model) topic additional
 information.
 
 ## Unix Query Configuration
 
-The Unix Data Collector is configured through the Unix Data Collector Wizard. It is designed to scan
-and import information from UNIX / Linux systems. The Unix Data Collector has these pages:
+You configure the Unix Data Collector through the Unix Data Collector Wizard. It scans
+and imports information from UNIX / Linux systems. The Unix Data Collector has these pages:
 
 - [Unix: Settings](/docs/accessanalyzer/12.0/admin/datacollector/unix/settings.md)
 - [Unix: Input](/docs/accessanalyzer/12.0/admin/datacollector/unix/input.md)

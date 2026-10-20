@@ -14,4 +14,4 @@ components.
 The Results page options are:
 
 - Properties to return – List of available properties which can be gathered for the PowerShell query
-- ROWKEY's components – List of available properties based on which ROWKEY will be built
+- ROWKEY's components – List of available properties for building ROWKEY

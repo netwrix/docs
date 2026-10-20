@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Logons Job Group
 
-The Logons Job Group provides collection of Native Mailbox Access Auditing logs from Exchange to
-provide reporting around mailbox logon activity.
+The Logons Job Group collects Native Mailbox Access Auditing logs from Exchange to provide reporting
+around mailbox logon activity.
 
 :::info
 Schedule the Logons Job Group to run daily at 7 PM.

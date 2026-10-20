@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # SPAA: Scan Scoping Options
 
-The Scan Scoping Options page provides scoping options to specify the list of URLs to be scanned. It
+The Scan Scoping Options page provides scoping options to specify the list of URLs to scan. It
 is a wizard page for the categories of:
 
 - Scan SharePoint Access
@@ -24,19 +24,19 @@ The options on the Scan Scoping Options page are:
       topic for additional information.
 
     :::note
-    If sites are included in the Scope box, all other sites are excluded from the scan.
+    If you include sites in the Scope box, the scan excludes all other sites.
     :::
 
 
 - Import CSV – Opens a file explorer to browse for a CSV file
 - Scope box – Lists all added URLs
-- Scope drop-down list – Select include to include a URL in the scan. Select exclude to exclude a
+- Scope dropdown list – Select include to include a URL in the scan. Select exclude to exclude a
   URL from the scan.
 - Remove – Removes the selected URL from the Scope box
 
 ## Scoping to SharePoint Host Named Site Collections
 
-In order to scope to objects within host named site collections, add a scope line which includes the
+to scope to objects within host named site collections, add a scope line which includes the
 URL of the web application containing the host named site collection. To scope the host named site
 collection URL `http://sample.com/documents/` for a host named site collection that exists under the
 web application URL `http://example.com`, follow the steps:
@@ -56,17 +56,17 @@ the HNSCs. Click **Add**.
 
 ![Scan Scoping Options example](/images/accessanalyzer/11.6/admin/datacollector/spaa/scanscopingoptionsexample.webp)
 
-**Step 4 –** The Web App URL must appear above the HNSC URL, as depicted in the example above.
+**Step 4 –** The Web App URL must appear above the HNSC URL, as depicted in the preceding example.
 
 **Step 5 –** The SharePoint Access Auditor Data Collector Wizard is now configured to filter for the
 URL inside the SharePoint Host Named Site Collections.
 
 ## Virtual Hosts
 
-In order to decrease the scan time in large SharePoint Online environments, it is possible to break
+To decrease the scan time in large SharePoint Online environments, you can break
 Site Collections for a single host down into subsets, or **Virtual Hosts**, that are treated as
-separate hosts by Enterprise Auditor. This allows multiple scans of a single host to be run
-concurrently. Follow the steps to configure this.
+separate hosts by Enterprise Auditor. This allows multiple scans of a single host to run
+concurrently. To configure this:
 
 ![CSV file with host and site collection information](/images/accessanalyzer/11.6/admin/datacollector/spaa/virtualhostscsv.webp)
 
@@ -96,8 +96,8 @@ will also see a separate line on the Running Instances tab for each Virtual Host
 scan.
 
 :::note
-The Host List for Bulk Import should be configured to contain each Virtual Host included
-in the above scan using the `HOSTNAME#DESIGNATOR` format. After Bulk Import, the data contained in
-Tier 1 Database tables and views will resemble a scan run against multiple hosts.
+Configure the Host List for Bulk Import to contain each Virtual Host included
+in the preceding scan, using the `HOSTNAME#DESIGNATOR` format. After Bulk Import, the data contained
+in Tier 1 Database tables and views resembles a scan run against multiple hosts.
 
 :::

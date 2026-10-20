@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Non-Triggerable Objects
 
-Some **Standard Salesforce objects aren't triggerable**, which means it isn't possible to generate and deploy triggers for them in the Salesforce environment. Because of this limitation, **Netwrix Platform Governance** can't block the creation of records for these objects.
+Some **Standard Salesforce objects aren't triggerable**, meaning Salesforce doesn't support generating and deploying triggers for them. Because of this limitation, **Netwrix Platform Governance** can't block the creation of records for these objects.
 
 As a result, the tracking process for these objects is different.
 
@@ -46,7 +46,7 @@ If Field History Tracking isn't already enabled:
 4. Click **Save All Records**.
 
 :::important
-If a user attempts to configure one of these objects as **Tracked, Blocking**, Salesforce will return a validation error.
+If a user attempts to configure one of these objects as **Tracked, Blocking**, Salesforce returns a validation error.
 :::
 
 ## Enable the Non-Triggerable Standard Object Data Scanner

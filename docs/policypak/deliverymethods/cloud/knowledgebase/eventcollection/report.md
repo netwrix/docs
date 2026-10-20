@@ -43,7 +43,7 @@ The steps are as follows:
 ![1331_4_7343ac11bad81555a0df4d9b989c7992](/images/policypak/cloud/eventcollection/1331_4_7343ac11bad81555a0df4d9b989c7992.webp)
 
 **Step 5 –** You can select the drop-down option to select the **Event IDs**. See the
-[List of PolicyPak Event Categories and IDs](/docs/policypak/gettingstarted/misc/knowledgebase/tipstricksandfaqs/eventcategories.md) topic for
+[List of PolicyPak Event Categories and IDs](/docs/policypak/misc/knowledgebase/tipstricksandfaqs/eventcategories.md) topic for
 additional information on the event categories and IDs.
 
 ![1331_5_1abd34538213d5d2da7bf97cdc936d01](/images/policypak/cloud/eventcollection/1331_5_1abd34538213d5d2da7bf97cdc936d01.webp)

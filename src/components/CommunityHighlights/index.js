@@ -231,17 +231,17 @@ function CommunityHighlights() {
                   </div>
                 )}
               </div>
-              {featuredTopics.length > 1 && (
-                <div className={styles.carouselIndicators}>
-                  {featuredTopics.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`${styles.indicator} ${index === currentSlide ? styles.active : ''}`}
-                      onClick={() => setCurrentSlide(index)}
-                    />
-                  ))}
-                </div>
-              )}
+            </div>
+          )}
+          {featuredTopics.length > 1 && (
+            <div className={styles.carouselIndicators}>
+              {featuredTopics.map((_, index) => (
+                <button
+                  key={index}
+                  className={`${styles.indicator} ${index === currentSlide ? styles.active : ''}`}
+                  onClick={() => setCurrentSlide(index)}
+                />
+              ))}
             </div>
           )}
         </div>

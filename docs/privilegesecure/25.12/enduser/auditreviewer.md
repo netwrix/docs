@@ -10,7 +10,7 @@ Only the **assigned reviewer** for an access certification task can modify the a
 To review and modify access entitlements for users and groups in the selected
 access certification task.
 
-**Step 1 –** Navigate to Audit and Reporting. Any pending reviews will be waiting.
+**Step 1 –** Navigate to Audit and Reporting. Any pending reviews are waiting.
 
 **Step 2 –** In the Access Certification Task list, select the name of the task and select the
 Entitlements tab.

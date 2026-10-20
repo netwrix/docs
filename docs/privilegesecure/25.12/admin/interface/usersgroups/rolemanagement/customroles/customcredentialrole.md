@@ -62,7 +62,7 @@ Available permissions include:
 
 ## Role Users
 
-Role Users is located at the bottom of the Custom Role details page. This will be the user that has
+Role Users is located at the bottom of the Custom Role details page. This is the user that has
 access to the Custom Role.
 
 The Role Users has the following features:

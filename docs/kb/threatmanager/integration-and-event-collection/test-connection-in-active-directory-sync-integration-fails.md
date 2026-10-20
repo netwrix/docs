@@ -20,7 +20,7 @@ knowledge_article_id: kA0Qk0000001RRBKA2
 
 ## Symptoms
 
-Refer to the following symptoms present in your environment:
+The following symptoms are present in affected environments:
 
 - In Netwrix Threat Manager (NTM), the test connection fails when you attempt to configure the **Active Directory Sync Integration**.
 - The **Threat Manager Console** is configured to use the HTTPS protocol.
@@ -31,15 +31,15 @@ The Active Directory Service is misconfigured and cannot be connected to via HTT
 
 ## Resolution
 
-Edit the Active Directory Service configuration to implement the HTTPS protocol. Follow these steps:
+Edit the Active Directory Service configuration to use the HTTPS protocol:
 
-1. Proceed to the Web Service folder and locate the `appsettings.json` file to manage the service settings. Refer to the following default location:
+1. Go to the Web Service folder and locate the `appsettings.json` file. The default location is:
 
    ```
    C:\Program Files\Stealthbits\StealthDEFEND\WebService
    ```
 
-2. Locate the `"ADService"` node and alter the `Scheme` value to state `https`. Refer to the following example:
+2. Locate the `"ADService"` node and change the `Scheme` value to `https`. For example:
 
    ```json
    "ADService": {
@@ -49,7 +49,7 @@ Edit the Active Directory Service configuration to implement the HTTPS protocol.
    },
    ```
 
-3. Locate or create the `JWT` node. Specify the relevant certificate values. Refer to the following example:
+3. Locate or create the `JWT` node. Specify the relevant certificate values. For example:
 
    ```json
    "Jwt": {
@@ -62,6 +62,6 @@ Edit the Active Directory Service configuration to implement the HTTPS protocol.
 
 4. Save the changes.
 
-Refer to the following example of the `appsettings.json` file:
+Example `appsettings.json` file:
 
 ![appsettings.json example](../0-images/ka0Qk0000005sxR_0EMQk000007sh3x.png)

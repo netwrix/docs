@@ -7,9 +7,9 @@ sidebar_position: 210
 # Password Enforcement Event Type
 
 The Password Enforcement event type prevents changing a password if the supplied password string
-does not meet the requirements specified in the policy rules. An event is generated for blocked
+doesn't meet the requirements specified in the policy rules. An event is generated for blocked
 password change attempts. This event type also has a ‘monitor’ mode that allows all password changes
-and generates an event for changes that do not meet the rules.
+and generates an event for changes that don't meet the rules.
 
 The event filters for the Password Enforcement event type are:
 
@@ -38,7 +38,7 @@ topic for additional information.
 
 
 The Password Enforcement event type locks down or monitors password creation/modification so that
-known, compromised passwords are not accepted.
+known, compromised passwords aren't accepted.
 
 - First Windows checks against an organization’s password policies.
 - Passwords which pass the Windows check are then further validated by this policy. Threat
@@ -66,19 +66,19 @@ The goal is to create a password enforcement policy for the organization’s use
 executives require a different or stronger set of password rules. To achieve this goal, you can
 create a single policy with the Password Enforcement event type added twice.
 
-Configure one Password Enforcement event type with the desired password rules for all users:
+Configure one Password Enforcement event type with the password rules you want for all users:
 
 - Identify the senior executives on the AD Account filter using the Allow option
-- The users selected are not held to the password rules configured
+- The users selected aren't held to the password rules configured
 
-Configure the other Password Enforcement event type with the desired password rules for the senior
+Configure the other Password Enforcement event type with the password rules you want for the senior
 executives:
 
 - Identify the senior executives on the AD Account filter using the Block option
 - The users selected are held to these password rules
 
 A client-side module is available in the Threat Prevention installer to provide feedback to end
-users for why their password does not meet the complexity requirements of the Password Enforcement
+users for why their password doesn't meet the complexity requirements of the Password Enforcement
 policy. This feature is inactive by default but can be installed on the domain controller to be
 implemented across the environment. See the
 [EPE User Feedback Module](/docs/threatprevention/8.0/install/epeuserfeedback.md) topic for additional information.
@@ -96,11 +96,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -133,15 +132,14 @@ lists. The following windows are displayed when you click the Add (+) button:
   appropriate Collection category.
 - Containers – The Containers Add (+) button opens the
   [Select Active Directory Contexts Window](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/window/context.md). All user
-  objects in the selected organizational unit(s) are subject to the applied rule.
+  objects in the selected organizational units are subject to the applied rule.
 - Groups – The Groups Add (+) button opens the
   [Select AD Groups Window](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/window/groups.md).
 
-The Remove (x) button deletes the selected item(s) from that box.
+The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -153,14 +151,14 @@ for additional information.
 When contexts are added, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
 and all child contexts. Uncheck it to apply the filter to the listed context only.
 
-**Block if user's group(s) is not resolved checkbox**
+**Block if user's groups isn't resolved checkbox**
 
 When applying EPE rules based on group membership, it may happen that at runtime, Threat Prevention
-cannot determine the groups the user making a password change is a member of. It is here that the
-Block if user's group(s) is not resolved checkbox determines the action to take.
+can't determine the groups the user making a password change is a member of. It is here that the
+Block if user's groups isn't resolved checkbox determines the action to take.
 
-- For example, if you select the Block option button and check the Block if user's group(s) is not
-  resolved checkbox, then if Threat Prevention cannot determine the group membership of a given
+- For example, if you select the Block option button and check the Block if user's groups isn't
+  resolved checkbox, then if Threat Prevention can't determine the group membership of a given
   user, it will enforce the password policy as if they were a member of one of the listed groups.
 
 ## AD Perpetrator Filter
@@ -187,11 +185,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -209,12 +206,12 @@ Select the **Block** or **Allow** option button and then edit the list.
   validate the new passwords for the accounts listed here. Selecting **Block** means that this
   policy will validate the new passwords for the accounts listed here.
 - For the [Authentication Lockdown Event Type](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/authenticationlockdown.md), this filter blocks or
-  only allows authentication from the identified host(s).
+  only allows authentication from the identified hosts.
 
 Use the buttons in the Include Hosts area to edit the list.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/window/selectcomputers.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Password Rules Filter
 
@@ -290,9 +287,9 @@ for additional information.
 :::tip
 Remember, the
 [Password Dictionary Window](/docs/threatprevention/8.0/admin/configuration/epesettings.md#password-dictionary-window) is
-always used to validate the password, so there is no 'check box' for it on the Password Rules
+always used to validate the password, so there is no 'checkbox' for it on the Password Rules
 filter. Hence, matched passwords will always be blocked. You must have at least one line in the
-dictionary but you can remove all others if you do not want the default entries to be used.
+dictionary but you can remove all others if you don't want the default entries to be used.
 :::
 
 
@@ -309,8 +306,8 @@ I Been Pwned? database, which contains compromised password hashes from world-wi
   Pwned database, the user is blocked from using the password
 
 :::tip
-Remember, the Pwned database must be initially deployed to the Enterprise Manager. Once it is
-stored, Agent(s) can be configured to obtain and use a local copy of this database. See the
+Remember, the Pwned database must be initially deployed to the Enterprise Manager. After it's
+stored, Agents can be configured to obtain and use a local copy of this database. See the
 [EPE Settings Window](/docs/threatprevention/8.0/admin/configuration/epesettings.md) topic for additional information.
 :::
 
@@ -355,9 +352,9 @@ scoping can be enabled:
 
 These settings ignore or monitor/block certain types of usernames from being included in a password
 string. If the corresponding string value is less than the number chosen in the “Ignore values less
-than” box, then the values in that string are not prevented from use in the password.
+than” box, then the values in that string aren't prevented from use in the password.
 
-Check the box(es) to enable the feature(s) and set the respective Ignore values less than value to
+Check the box(es) to enable the features and set the respective Ignore values less than value to
 the minimum string length.
 
 - Pre-Windows 2000 Logon Name
@@ -421,7 +418,7 @@ Additional scoping can be enabled:
 
 **Defined Text Section**
 
-These settings block passwords that contain the string(s) specified in the text box. For multiple
+These settings block passwords that contain the strings specified in the text box. For multiple
 strings, add one entry per line.
 
 :::note
@@ -434,7 +431,7 @@ the entire password as entered or uploaded.
 
 Additional scoping can be enabled:
 
-- Block if contains defined text – Manually enter the desired text for a sub string search
+- Block if contains defined text – Manually enter the text you want for a sub string search
 
   For Example: If “day” is entered, then “M0nday47” is blocked, “M0n47” is allowed
 
@@ -469,7 +466,7 @@ characteristics within a password to be blocked or allowed. Additional scoping c
 
 - Start with Alpha – Blocks passwords starting with an alpha character
 - Disallow last character as number (0-9) – Blocks passwords ending in a number character
-- Require specific character(s) – Enter one or more desired character(s) in the text box. The logic
+- Require specific characters – Enter one or more desired characters in the text box. The logic
   applies an OR statement to multiple characters. Passwords not including at least one of these
   specified characters will be blocked.
 
@@ -479,7 +476,7 @@ characteristics within a password to be blocked or allowed. Additional scoping c
     - “P@ssword” is allowed
     - “Passw@!rd” is allowed
 
-- Disallow specific character(s) – Enter one or more desired character(s) in the text box. The logic
+- Disallow specific characters – Enter one or more desired characters in the text box. The logic
   applies an OR statement to multiple characters. Passwords including at least one of these
   specified characters will be blocked.
 
@@ -505,7 +502,7 @@ meet the range requirements, it is blocked.
 
 **Optional Rules Section**
 
-These settings enable you to enforce all or X number of rules that a candidate password must pass.
+Use these settings to enforce all or X number of rules that a candidate password must pass.
 
 - All Required – Accepts a password if it satisfies all the rules enabled on this filter
 - Comply with at least X rules – Accepts a password if it complies with X number of rules (where X

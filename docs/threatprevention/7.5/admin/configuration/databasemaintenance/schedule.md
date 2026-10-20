@@ -11,8 +11,6 @@ enabled event type data, analytic data, and/or policy data older than a specific
 can be run once now; it can be scheduled to run once at a later time; or it can be scheduled to run
 on a regular rotation.
 
-Follow the steps to configure a schedule.
-
 ![Database Maintenance window - Schedule tab](/images/threatprevention/7.5/admin/configuration/databasemaintenance/schedule.webp)
 
 **Step 1 –** Click **Configuration** > **Database** > **Maintenance** on the menu. The Database

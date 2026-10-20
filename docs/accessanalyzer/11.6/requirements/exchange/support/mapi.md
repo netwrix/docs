@@ -10,7 +10,7 @@ The Exchange2K, ExchangeMailbox, and ExchangePublicFolder data collectors have o
 requirements.
 
 These data collectors supports Exchange 2010 through Exchange 2013. Since this data collectors are
-MAPI-based, they do not support Exchange Online, Exchange 2019, nor Exchange 2016.
+MAPI-based, they don't support Exchange Online, Exchange 2019, nor Exchange 2016.
 
 All MAPI-based data collectors have the following prerequisites:
 

@@ -47,7 +47,7 @@ machines.
 
 :::note
 See the
-[PolicyPak ARM Support Supportability Statement](/docs/policypak/gettingstarted/misc/knowledgebase/gettingstarted/arm.md)
+[PolicyPak ARM Support Supportability Statement](/docs/policypak/misc/knowledgebase/gettingstarted/arm.md)
 topic about PolicyPak Support on Arm processors.
 :::
 
@@ -74,6 +74,6 @@ be sooner than expected.
 See the
 [How can I tell how a machine is licensed (by GPO, MDM, or XML file), and also know for what components it is licensed?](/docs/policypak/licensing/knowledgebase/troubleshooting/components.md)
 topic for further details on validating licensing. See also the
-[Testing and Troubleshooting By Renaming an endpoint Computer](/docs/policypak/gettingstarted/misc/videos/troubleshooting/mdm.md)
+[Testing and Troubleshooting By Renaming an endpoint Computer](/docs/policypak/misc/videos/troubleshooting/mdm.md)
 topic for further details showing what happens when you rename a computer and how PolicyPak reacts.
 

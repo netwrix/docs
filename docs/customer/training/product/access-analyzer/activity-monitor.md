@@ -10,7 +10,7 @@ import { NAMIntro, NAMFileSystem } from '@site/src/training/activity-monitor';
 import { NAM } from '@site/src/training/products';
 
 
-Estimated length: 1.75 hours
+Estimated length: 1 hour 20 minutes
 
 In the <NAM /> learning path, you will learn how to use this application. It contains the following courses:
 

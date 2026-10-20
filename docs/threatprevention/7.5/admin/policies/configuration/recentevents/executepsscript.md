@@ -19,7 +19,7 @@ the _si_eventdata.txt_ file on the C:\ drive. The example script also contains a
 needed for working with the selected event data.
 
 :::note
-For a PowerShell script to reference the selected event data, it is necessary to use the
+To reference selected event data in a PowerShell script, use
 _$helper.[class]_ with the data parameter. This is Threat Prevention specific. For example:
 :::
 

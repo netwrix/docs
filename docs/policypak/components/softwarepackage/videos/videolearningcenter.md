@@ -2,6 +2,8 @@
 title: "Video Learning Center"
 description: "Video Learning Center"
 sidebar_position: 20
+pagination_prev: null
+pagination_next: null
 ---
 
 # Video Learning Center
@@ -21,10 +23,10 @@ See the following Video topics for Software Package Manager.
 
 ## Tips and Tricks
 
-- [Software Package Manager - Extras Tool](/docs/policypak/components/softwarepackage/videos/tipsandtricks/extrastool.md)
+- [Software Package Manager - Extras Tool](/docs/policypak/components/softwarepackage/videos/extrastool.md)
 
 ## Using with other METHODS (Cloud, MDM, etc.)
 
-- [PolicyPak Package Manager (AppX Policies): Add or Remove Microsoft Store using your MDM service.](/docs/policypak/components/softwarepackage/videos/usingwithothermethod/mdm.md)
+- [PolicyPak Package Manager (AppX Policies): Add or Remove Microsoft Store using your MDM service.](/docs/policypak/components/softwarepackage/videos/mdm.md)
 
 

@@ -6,13 +6,13 @@ sidebar_position: 70
 
 # Reporting Module
 
-Threat Prevention leverages the user-friendly, HTML-5 based Netwrix Threat Manager Reporting Module
+Threat Prevention uses the user-friendly, HTML-5 based Netwrix Threat Manager Reporting Module
 for reporting.
 
 ![Threat Manager Investigations interface](/images/threatprevention/7.5/reportingmodule/interface.webp)
 
 With it, you can perform ad-hoc investigations and save commonly used reports. You can also schedule
-report exports as well as subscribe to recurring reports. It is necessary to install the Netwrix
+report exports as well as subscribe to recurring reports. You must install the Netwrix
 Threat Manager Reporting Module, configure the integration, and grant access to users. See the
 following topics:
 

@@ -54,7 +54,7 @@ gone through a rename and a state change.
 
 Before continuing, please get familiar with how to use the PolicyPak ADMX settings and
 also how to update them:
-[Troubleshooting with ADMX files](/docs/policypak/gettingstarted/misc/videos/troubleshooting/admxfiles.md)
+[Troubleshooting with ADMX files](/docs/policypak/misc/videos/troubleshooting/admxfiles.md)
 
 If you're using an older set of ADMX settings, you will find a setting named "Disable PolicyPak AppLock" (which exists on both User and Computer Side):
 

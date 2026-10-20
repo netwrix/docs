@@ -36,5 +36,5 @@ following wizard pages:
 
 ![INI File Data Collector Wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/inifile/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** box when
-the wizard is open and configuration settings are saved.
+Select the **Don't display this page the next time** box to hide the Welcome page when the wizard is
+open and configuration settings are saved.

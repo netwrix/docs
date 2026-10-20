@@ -11,7 +11,7 @@ MDM service. Use this table below to determine how to get licensed:
 
 - Intune (Automatic) — Use the PolicyPak Portal and download the BITS. Then run the
   Licensing Tool (LT) to acquire the information and save it to your License Request Key. See
-  [How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/requestall/licenserequestkey.md)
+  [How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/licenserequestkey.md)
 - Intune (Alternate) — Only if asked, follow the directions on this page.
 - VMware Workspace One — Follow the directions on this page.
 - Citrix CEM — Follow the directions on this page.

@@ -12,7 +12,7 @@ and easily get started with activity monitoring.
 ## Requirements
 
 The Activity Monitor console needs to be installed on a server or workstation. After that agents are deployed to
-the target environment and configured to monitor activity. It is necessary to prepare the target
+the target environment and configured to monitor activity. Prepare the target
 environment and configure the credentials used by the agents. Each supported environment has
 different requirements. See the following topics for additional information:
 
@@ -32,7 +32,7 @@ different requirements. See the following topics for additional information:
 
 ## Install & Deploy Agents
 
-Once the prerequisites are accomplished, you are ready to install the application and deploy agents.
+After the prerequisites are accomplished, you are ready to install the application and deploy agents.
 See the following topics for additional information:
 
 - [Install Application](/docs/activitymonitor/9.0/install/application.md)
@@ -41,10 +41,10 @@ See the following topics for additional information:
 
 ## Configure Monitoring
 
-After the agents have been deployed, you can configure the monitoring of the target environment. For
-Windows File Servers, this can be done at the same time as the agent is deployed, but for all other
-target environments it is done after the agent is deployed. You will configure what will be
-monitored as well as where the collected data will go (outputs). See the following topics for
+After you deploy the agents, configure the monitoring of the target environment. For
+Windows File Servers, configure monitoring at the same time you deploy the agent. For all other
+target environments, configure monitoring after you deploy the agent. Configure what to
+monitor and where the collected data will go (outputs). See the following topics for
 additional information:
 
 - [Monitored Domains Tab](/docs/activitymonitor/9.0/admin/monitoreddomains/overview.md) for Active Directory monitoring

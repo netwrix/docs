@@ -21,12 +21,14 @@ KB articles follow one of two primary types.
 
 How-to articles provide step-by-step guidance for accomplishing specific tasks.
 
-**Title format:** `[Action Gerund] [Specific Task]` — start with a gerund, no "How to" prefix, no question mark.
+**Title format (Instructions format only):** `[Action Gerund] [Specific Task]` — start with a gerund, no "How to" prefix, no question mark.
 
 - Good: `Modifying SSRS Report Timeouts`
 - Good: `Auditing a Non-trusted Domain`
 - Bad: `How to Modify SSRS Report Timeouts?` (starts with "How to", ends with question mark)
 - Bad: `Auditing a non-trusted domain` (sentence case)
+
+**Title format (Question and Answer format only):** not required to use gerund/action form, unlike Instructions-format titles. A topic-descriptive title, a "How to..." title, or a question-form title are all valid — none is a gerund violation. The interrogative form doesn't have to live in the title; it can instead appear in the `## Question` section itself.
 
 **Formats:**
 
@@ -50,7 +52,7 @@ Resolution articles help customers troubleshoot specific errors or unexpected be
 - Good: `Active Directory Users Missing from Search Results`
 - Bad: `AD not working right` (too vague)
 
-Both resolution article formats use sections: `## Symptom` (or `## Symptoms`), `## Cause` (or `## Causes`), `## Resolution` (or `## Resolutions`).
+Both resolution article formats use sections: `## Symptom`, `## Cause`, `## Resolution` — always singular, even when the section describes multiple items.
 
 ---
 
@@ -64,7 +66,7 @@ Articles should not exceed five main H2 headings.
 
 **Related Query / Related Queries** — place as the first section when applicable. Include exact wording from customer support ticket subjects (correcting only typos). Helps with searchability and surfaces real customer language.
 
-**Related Links** — place at the end. List all relevant links referenced in the article.
+**Related Links** — place at the end. Include only when the article body already contains three or more links. If the article has fewer than three links, the inline links are sufficient — do not add a Related Links section.
 
 ### Heading hierarchy
 
@@ -319,30 +321,31 @@ Format external links with a middot and arrow after the company name:
 
 Use the following names in KB articles. Do not use abbreviations such as "NA" for Netwrix Auditor.
 
+Product IDs in the `products` field are used for Algolia search metadata. If a product ID below seems outdated, verify against `src/config/products.js` before using it — that file is the authoritative source for product IDs in this repo.
+
 | Full Product Name | Short Product Name | Product ID (for `products` field) |
 |---|---|---|
-| Netwrix Activity Monitor | Activity Monitor | `activity_monitor` |
-| Netwrix 1Secure | 1Secure | `onesecure` |
+| Netwrix 1Secure | 1Secure | `1secure` |
+| Netwrix Access Analyzer | Access Analyzer | `accessanalyzer` |
+| Netwrix Access Information Center | Access Information Center | `accessinformationcenter` |
+| Netwrix Activity Monitor | Activity Monitor | `activitymonitor` |
 | Netwrix Auditor | Auditor | `auditor` |
-| Netwrix Change Tracker | Change Tracker | `change_tracker` |
-| Netwrix Data Classification | Data Classification | `data_classification` |
-| Netwrix Directory Manager | Directory Manager | `groupid` |
-| Netwrix Endpoint Protector | Endpoint Protector | `endpoint_protector` |
-| Netwrix Log Tracker | Log Tracker | `log_tracker` |
-| Netwrix Password Policy Enforcer | Password Policy Enforcer | `password_policy_enforcer` |
-| Netwrix Password Reset | Password Reset | `password_reset_manager` |
-| Netwrix Password Secure | Password Secure | `password_secure` |
+| Netwrix Change Tracker | Change Tracker | `changetracker` |
+| Netwrix Data Classification | Data Classification | `dataclassification` |
+| Netwrix Directory Manager | Directory Manager | `directorymanager` |
 | Netwrix Endpoint Policy Manager | Endpoint Policy Manager | `policypak` |
-| Netwrix Endpoint Privilege Manager | Endpoint Privilege Manager | `privilege_secure_endpoints` |
-| Netwrix Privilege Secure for Access Management | Privilege Secure for Access Management | `privilege_secure` |
-| Netwrix Privilege Secure for Discovery | Privilege Secure for Discovery | `privilege_secure_discovery` |
-| Netwrix Recovery for Active Directory | Recovery for Active Directory | `recovery_ad` |
-| Netwrix Access Analyzer | Access Analyzer | `enterprise_auditor` |
-| Netwrix Threat Manager | Threat Manager | `threat_manager` |
-| Netwrix Threat Prevention | Threat Prevention | `threat_prevention` |
-| Netwrix Platform Governance for NetSuite | Platform Governance for NetSuite | `strongpoint_netsuite` |
-| Netwrix Platform Governance for Salesforce | Platform Governance for Salesforce | `strongpoint_salesforce` |
-| Netwrix Identity Manager | Identity Manager | `usercube` |
+| Netwrix Endpoint Protector | Endpoint Protector | `endpointprotector` |
+| Netwrix Identity Manager | Identity Manager | `identitymanager` |
+| Netwrix Password Policy Enforcer | Password Policy Enforcer | `passwordpolicyenforcer` |
+| Netwrix Password Reset | Password Reset | `passwordreset` |
+| Netwrix Password Secure | Password Secure | `passwordsecure` |
+| Netwrix Platform Governance for NetSuite | Platform Governance for NetSuite | `platgovnetsuite` |
+| Netwrix Platform Governance for Salesforce | Platform Governance for Salesforce | `platgovsalesforce` |
+| Netwrix Privilege Secure for Access Management | Privilege Secure for Access Management | `privilegesecure` |
+| Netwrix Privilege Secure for Discovery | Privilege Secure for Discovery | `privilegesecurediscovery` |
+| Netwrix Recovery for Active Directory | Recovery for Active Directory | `recoveryforactivedirectory` |
+| Netwrix Threat Manager | Threat Manager | `threatmanager` |
+| Netwrix Threat Prevention | Threat Prevention | `threatprevention` |
 | Netwrix Vulnerability Tracker by Greenbone | Vulnerability Tracker | `vulnerability_tracker_gb` |
 
 ### When to use long vs. short product names

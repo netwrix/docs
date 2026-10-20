@@ -7,8 +7,8 @@ sidebar_position: 100
 # User Activity
 
 The User Login Activity creates a comprehensive display of user activity for the past 60 days. It
-can be run for all users or a selected user. The data can be used to ensure continuity of roles
-prior to deactivating a user.
+can be run for all users or a selected user. Use the data to ensure continuity of roles
+before deactivating a user.
 
 The User Login Activity feature is available with the Intelligent Change Enablement and Enterprise
 Compliance [licenses](/docs/platgovsalesforce/installingstrongpoint/features_by_license_type.md).

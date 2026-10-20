@@ -20,11 +20,11 @@ When creating a job, you select any of the following destination providers.
 - Text
 
 Once selected, you can see a specific set of objects that can be created in the destination
-providers. Once the object type is selected, there are a set of mandatory attributes that are
+providers. After the object type is selected, there are a set of mandatory attributes that are
 required for creating the respective objects.
 
-The tables below show the mandatory attribute for different object types for each provider and what
-transformations that need to apply to them while mapping.
+The following tables show the mandatory attribute for different object types for each provider and
+what transformations that need to apply to them while mapping.
 
 Mandatory attributes for User:
 
@@ -197,7 +197,7 @@ Mandatory Attributes for Mailbox-enabled User:
         </tr>
         <tr>
             <td valign="top">mailnickname</td>
-            <td>Same as user principalname. We do not need to update script. It will add domain name itself.</td>
+            <td>Same as user principalname. The script doesn't need to be updated. It will add domain name itself.</td>
         </tr>
         <tr>
             <td>surname</td>
@@ -217,7 +217,7 @@ Mandatory Attributes for Mailbox-enabled User:
         </tr>
         <tr>
             <td valign="top">LicenseAssignment</td>
-            <td>All mailboxes are assigned a license. We assign that license while creation. <br />Select static transformation, it will display all available licenses. You can select any and once user is created they will be assigned this license.</td>
+            <td>All mailboxes are assigned a license. The license is assigned during creation. <br />Select static transformation, it will display all available licenses. You can select any and once user is created they will be assigned this license.</td>
         </tr>
     </tbody>
  </table>
@@ -311,7 +311,7 @@ Mandatory Attributes for Group:
         </tr>
         <tr>
             <td valign="top">mailNickname</td>
-           <td>Same as user principalname. We do not need to update the script. It will add domain name itself.</td>
+           <td>Same as user principalname. The script doesn't need to be updated. It will add domain name itself.</td>
         </tr>
     </tbody>
 </table>

@@ -14,7 +14,7 @@ count next to the **Request Inbox** label.
 By default, the page displays pending requests that were initiated today. You can also view
 processed (approved or denied) requests. Use add filters to filter the requests list as required.
 
-For each request, you can view the description, approver(s), requester name, the target to change,
+For each request, you can view the description, approvers, requester name, the target to change,
 status of the request, creation date, and the reason why that request was denied. Expand a request
 to view more details, such as the field changed along with its old and new value.
 

@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # Upgrade Proxy Service Procedure
 
-When the Access Analyzer Console and File System Solution are upgraded, it is necessary to also
-upgrade the File System Proxy Service when running Access Analyzer in Proxy Mode as a Service. This
-upgrade can be done in two ways:
+When you upgrade the Access Analyzer Console and File System Solution, also
+upgrade the File System Proxy Service when running Access Analyzer in Proxy Mode as a Service. You
+can do this upgrade in two ways:
 
 - Automatically – An instant job within the Access Analyzer Console
 - Manually – On each server hosting the proxy service
@@ -16,21 +16,21 @@ upgrade can be done in two ways:
 :::warning
 When upgrading the Proxy Service to 11.6 from a previous version for the first time,
 you must manually uninstall the previous version and follow the [Manual Upgrade](#manual-upgrade)
-steps below. Subsequent 11.6 upgrades can be done using the automatic upgrade option.
+steps. You can do subsequent 11.6 upgrades using the automatic upgrade option.
 :::
 
 
 :::note
 If you have the old Netwrix Sensitive Data Discovery Add-On installed, you must uninstall
-it before continuing with this upgrade. For Access Analyzer 12.0, Sensitive Data Discovery is
-installed as part of the main installation if your license includes it.
+it before continuing with this upgrade. For Access Analyzer 12.0, the main installation includes
+Sensitive Data Discovery if your license includes it.
 :::
 
 
 ## Automatic Upgrade
 
 The **FS_UpdateProxy** Job is available through the Instant Job Wizard. This job updates the File
-System Proxy Service on all servers in the assigned host list. Follow the steps to instantiate this
+System Proxy Service on all servers in the assigned host list. Instantiate this
 job.
 
 **Step 1 –** Within the **Jobs** tree, right-click and select **Add Instant Job**. The Instant Job
@@ -46,15 +46,15 @@ Expand the category and select the **FS_UpgradeProxy** Job. Click **Next**.
 **Step 4 –** On the Host Assignment page, select the **Specify individual hosts or host lists**
 option and click **Next**.
 
-**Step 5 –** On the Host Lists page, assign the host lists containing the proxy servers to be
-updated . Multiple host lists can be added. Click Next.
+**Step 5 –** On the Host Lists page, assign the host lists containing the proxy servers you want to
+update. You can add multiple host lists. Click Next.
 
 **Step 6 –** On the Individual Hosts page, click **Next**.
 
 **Step 7 –** Review the Summary and click either **Save & Exit** or **Save & Run Jobs Now**.
 
-The proxy does not update until the job is run. Once successfully ran, the servers in the assigned
-host lists have been updated.
+The proxy doesn't update until you run the job. After the job runs successfully, Access Analyzer
+updates the servers in the assigned host lists.
 
 ## Manual Upgrade
 

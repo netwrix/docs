@@ -12,7 +12,7 @@ Secure administrator role are walked through features that are relevant to their
 ![producttour](/images/privilegesecure/4.2/accessmanagement/enduser/producttour.webp)
 
 At any time, the tour can be stopped by clicking the **X** icon at the top-right of the Console. By
-default, the tour does not display on next login unless the **don't display again** checkbox is
+default, the tour doesn't display on next login unless the **don't display again** checkbox is
 unchecked.
 
 The product tour may be re-started at any time via the user menu.

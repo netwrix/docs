@@ -21,33 +21,46 @@ This section covers a range of deployment methods, including:
 - Third-party Management Tools: using JAMF and Microsoft Intune for streamlined deployment.
 
 :::warning Important
-This section of the documentation is provided as a best-effort guideline to support deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, refer to the official resources from the product vendor.
+This section of the documentation provides best-effort guidance on deployment. It is optional and may not always reflect the latest interface or features, as third-party products can change frequently. For the most up-to-date information, refer to the official resources from the product vendor.
 :::
 
 ## Staging the Server
 
 To start using Endpoint Protector, you need to deploy a server instance. The server hosts all endpoint controls and behavior configuration and delivers the
 Endpoint Protector agent to endpoint systems. There are two principal options for server management;
-Customer-Managed or Provider- Managed. If Customer-Managed is a desired option, you can install the server On-Premise or in a Hosted-Cloud Environment.
+Customer-Managed or Provider- Managed. If you choose Customer-Managed, you can install the server On-Premise or in a Hosted-Cloud Environment.
 
-The On-Premise option for a Customer-Managed instance allows you to set up a virtualized image in your LAN. Virtualization options include, but aren't limited to: VMware and
-Hyper-V. The Hosted-Cloud method of deployment allows for use of a customer’s Amazon Web Services
-(AWS), Azure, or Google Cloud Platform (GCP) instance. For more information on each of these options, see the [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) topic and the
-[Cloud Services](/docs/endpointprotector/install/configuration/overview.md) topic.
+With the On-Premise option for a Customer-Managed instance, you can set up a virtualized image in your LAN. Virtualization options include, but aren’t limited to: VMware and
+Hyper-V. The Hosted-Cloud deployment method uses a customer’s Amazon Web Services
+(AWS), Azure, or Google Cloud Platform (GCP) instance. See [Virtual Appliance Formats](/docs/endpointprotector/install/virtualappliance/formats/formats.md) for supported VM formats including VMware and Hyper-V, and [Cloud Services](/docs/endpointprotector/install/configuration/overview.md) for AWS, Azure, and GCP deployment details.
 
-Alternatively, if a Provider-Managed setup is required, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
+Alternatively, if you require a Provider-Managed setup, Netwrix can deploy an instance of Endpoint Protector in an isolated cloud environment. For details on the Provider-Managed option, speak with your Netwrix Account Manager.
 
 :::note
-To use the Endpoint Protector Server in a production environment, a License Key is required. After purchasing Endpoint Protector with the necessary modules, your Account Manager will assign a license that can be installed within the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
+To use the Endpoint Protector Server in a production environment, you need a License Key. After you purchase Endpoint Protector with the necessary modules, your Account Manager will assign a license that you can install in the Endpoint Protector Management Console (the configuration interface available on the Endpoint Protector Server).
 :::
 
 The following sections describe the different methods for deploying Endpoint Protector, with step-by-step instructions and best practices.
 
+## Use an FQDN Instead of an IP Address
+
+Always address the Endpoint Protector Server by a fully qualified domain name (FQDN), such as `epp.example.com`, instead of a static IP address. Use the FQDN everywhere the server address appears:
+
+- **EPP Clients** – configure each client to reach the server through the FQDN.
+- **Single sign-on (SSO) integrations** – register the SSO response (callback) URL with the FQDN. An SSO configuration bound to an IP address stops working when the server address changes, for example after a migration.
+- **Other integrations** – use the FQDN in any other configuration that stores the server address.
+
+With an FQDN, you can move the server to a new IP address, for example during a migration, by updating a single DNS record. You don't need to reconfigure every client and integration.
+
+:::tip Netwrix-hosted (SaaS) deployments
+Netwrix assigns an FQDN to every SaaS deployment by default. Bind your clients and integrations to that FQDN so that service migrations don't require changes on your side.
+:::
+
 ## Communication Between Endpoint Protector Server and Netwrix Servers
 
-Communication between Endpoint Protector Server (apliance used by your company) and Netwrix servers is possible only when your server is connected to the internet.
+Your Endpoint Protector Server can communicate with Netwrix servers only when you connect it to the internet.
 
-When connected, Netwrix may access the following metadata information:
+When the server has an internet connection, Netwrix may access the following metadata information:
 
 - **Server metrics:**  
   - RAM  
@@ -81,7 +94,7 @@ Additionally, internet connectivity allows your company to:
 - Activate modules by communicating with Netwrix servers
 
 :::note 
-All communication with Netwrix servers is governed by the applicable privacy and security policies.
+The applicable privacy and security policies govern all communication with Netwrix servers.
 :::
 
 
@@ -111,4 +124,16 @@ Starting with version 2509, Netwrix standardizes EPP product versioning. The ver
 
 **`B`** — Optional build number for internal tracking
 
-**Consistency across interfaces:** This versioning format is applied across all UI pages where version numbers appear, including dashboards, reports, maintenance tools, and the EPP Client Notifier.
+**Consistency across interfaces:** Endpoint Protector uses this versioning format across all UI pages where version numbers appear, including dashboards, reports, maintenance tools, and the EPP Client Notifier.
+
+
+**Examples of the New Versioning**
+| Description | Version |
+|---|---|
+| February 2026 server, standard build | 2602.0.1.0 |
+| February 2026 Windows client, standard | 2602.1.1.0 |
+| RHEL client, May 2026, custom #3 | 2605.4.3.0 |
+| Server, April 2026, internal build #7 | 2604.0.0.7 |
+
+
+This versioning system provides a transparent and easily navigable structure, improving your workflow.

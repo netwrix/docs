@@ -99,19 +99,19 @@ Our example generates the following configuration:
 <EntityPropertyExpression Identifier="Op_MainRecord_UserType_Category_Id_Expr" Binding="Directory_User:MainRecord.UserType.Category.Id" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_UserType_Category_Id" />
 <EntityPropertyExpression Identifier="Op_MainRecord_UserType_Expr" Binding="Directory_User:MainRecord.UserType.Id" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_UserType" />
 <EntityPropertyExpression Identifier="Op_MainRecord_VIP_Expr" Binding="Directory_User:MainRecord.VIP" EntityType="Directory_User" Priority="99" Property="Op_MainRecord_VIP" />
-<DisplayEntityType Identifier="Directory_Organization" Color="#95c18b" IconCode="Suitcase" PluralDisplayName_L1="Departments" PluralDisplayName_L2="Départements">
+<DisplayEntityType Identifier="Directory_Organization" Color="#95c18b" IconCode="suitcase" PluralDisplayName_L1="Departments" PluralDisplayName_L2="Départements">
   <Property Identifier="Op_Directory_Users" IsHidden="true" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_Site" AutocompleteBinding="Directory_Site:DisplayName" Color="#95c18b" IconCode="MapPin" PluralDisplayName_L1="Sites" PluralDisplayName_L2="Sites">
+<DisplayEntityType Identifier="Directory_Site" AutocompleteBinding="Directory_Site:DisplayName" Color="#95c18b" IconCode="map-location" PluralDisplayName_L1="Sites" PluralDisplayName_L2="Sites">
   <Property Identifier="Op_Directory_Users" IsHidden="true" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_Subsidiary" Color="#95c18b" IconCode="Suitcase" PluralDisplayName_L1="Subsidiaries" PluralDisplayName_L2="Filiales">
+<DisplayEntityType Identifier="Directory_Subsidiary" Color="#95c18b" IconCode="suitcase" PluralDisplayName_L1="Subsidiaries" PluralDisplayName_L2="Filiales">
   <Property Identifier="Op_Directory_Users" IsHidden="true" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_Title" AutocompleteBinding="Directory_Title:Identifier" Color="#95c18b" IconCode="Suitcase" MinSearchLength="5" PluralDisplayName_L1="Titles" PluralDisplayName_L2="Fonctions">
+<DisplayEntityType Identifier="Directory_Title" AutocompleteBinding="Directory_Title:Identifier" Color="#95c18b" IconCode="suitcase" MinSearchLength="5" PluralDisplayName_L1="Titles" PluralDisplayName_L2="Fonctions">
   <Property Identifier="Op_Directory_Users" IsHidden="true" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_User" Color="#79C3D2" D0IsActive="true" D1IsActive="true" D2IsActive="true" D3IsActive="true" D4IsActive="true" D5IsActive="true" D6IsActive="true" D7IsActive="true" IconCode="People" PluralDisplayName_L1="Users" PluralDisplayName_L2="Collaborateurs" Priority="0">
+<DisplayEntityType Identifier="Directory_User" Color="#79C3D2" D0IsActive="true" D1IsActive="true" D2IsActive="true" D3IsActive="true" D4IsActive="true" D5IsActive="true" D6IsActive="true" D7IsActive="true" IconCode="users" PluralDisplayName_L1="Users" PluralDisplayName_L2="Collaborateurs" Priority="0">
   <Property Identifier="Op_MainRecord_FirstName" IsHidden="true" />
   <Property Identifier="Op_MainRecord_LastName" IsHidden="true" />
   <Property Identifier="Op_MainRecord_MobileNumber" IsHidden="true" />

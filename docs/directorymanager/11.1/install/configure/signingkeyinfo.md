@@ -16,7 +16,7 @@ signing key status. The following scenarios are possible for the application’s
 ## Single Directory Manager instance
 
 If you are running the Configuration Tool on a machine that had a prior Directory Manager version
-and the Signing Key utility is not applied on that Directory Manager on that machine. The
+and the Signing Key utility isn't applied on that Directory Manager on that machine. The
 Configuration Tool will change the Signing Key and displays a disclaimer message on the Directory
 Manager is successfully configured page as follows:
 
@@ -37,8 +37,8 @@ must be updated for schedules using one of the following way:
 
 In the multi Directory Manager instances environment with a single cluster ( _i.e. with a master
 node and a slave node_) and the instances had a prior Directory Manager version and without the
-Signing Key utility applied to them, follow the steps to change the Signing Key on all the
-instances.
+Signing Key utility applied to them, complete the following steps to change the Signing Key on all the
+instances:
 
 Step 1 – Run the Configuration Tool on the master node of the cluster. It will change the Signing
 Key on the master node and display a disclaimer message on the Directory Manager is successfully
@@ -87,7 +87,7 @@ master node in each cluster and a slave node in each cluster_), for example:
 
 - Cluster B (instance 3 : a master node and instance 4 : a slave node)
 
-Follow the steps to change the Signing Key on all four Directory Manager instances.
+To change the Signing Key on all four Directory Manager instances.
 
 Step 1 – Run the Configuration Tool on the master node of Cluster A (_i.e. instance 1_). It will
 change the Signing Key on the master node and display a disclaimer message on the Directory Manager

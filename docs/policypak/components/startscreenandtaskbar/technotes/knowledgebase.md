@@ -2,6 +2,8 @@
 title: "Knowledge Base"
 description: "Knowledge Base"
 sidebar_position: 10
+pagination_prev: null
+pagination_next: null
 ---
 
 # Knowledge Base

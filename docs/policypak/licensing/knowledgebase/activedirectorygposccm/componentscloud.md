@@ -16,7 +16,7 @@ for additional information on this topic.
 
 :::note
 You need to first install the PolicyPak ADMX files as seen in
-[Troubleshooting with ADMX files](/docs/policypak/gettingstarted/misc/videos/troubleshooting/admxfiles.md).
+[Troubleshooting with ADMX files](/docs/policypak/misc/videos/troubleshooting/admxfiles.md).
 :::
 
 

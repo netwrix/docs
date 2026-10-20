@@ -6,12 +6,11 @@ sidebar_position: 40
 
 # Import License Key
 
-The Activity Monitor comes with a temporary 10-day license. Uploading a new license key or importing
-a Access Analyzer key can be done from the Activity Monitor Console. If the Activity Monitor Console
+The Activity Monitor comes with a temporary 10-day license. You can upload a new license key or import
+an Access Analyzer key from the Activity Monitor Console. If the Activity Monitor Console
 is installed on a server where Access Analyzer has already been installed, it reads the license
 information from the Access Analyzer installation directory.
 
-Follow the steps to import a license key file.
 
 ![Activity Monitor Installation with Trial License](/images/activitymonitor/9.0/install/triallicense.webp)
 

@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Deployment Logs
 
-The deployment log is attached to the Deployment Record on the **Related Lists** tab. You can also
+The Deployment Record on the **Related Lists** tab contains the deployment log. You can also
 access the logs from **Strongpoint** > **Reports** > **Release and Deployment**.
 
 Deployment logs have these sections:
@@ -53,7 +53,7 @@ Deployment logs have these sections:
 
 ## Customizations
 
-Links to the customizations attached to the deployment record. The link open the customization
+Links to the customizations attached to the deployment record. The link opens the customization
 record.
 
 ## Deployed Components and Apex Test Information
@@ -75,13 +75,12 @@ record.
 
 ## Notes and Attachments
 
-Attachments are generated during the deployment for validation and auditing. Use **New Note** to
-create a deployment note, or **Attach File** to add a file to the deployment log. Notes and
-attachments can be edited, viewed or deleted.
+The deployment generates attachments for validation and auditing. Use **New Note** to
+create a deployment note, or **Attach File** to add a file to the deployment log. You can edit, view, or delete notes and
+attachments.
 
 ## Deployment Components
 
-Deployment Components are generated during the deployment. Use **New Deployment Component** to add a
+The deployment generates Deployment Components. Use **New Deployment Component** to add a
 deployment component to the deployment log. Deployment Components Name and Customization are links
-to the individual component or customization records. Deployment Components can be edited or
-deleted.
+to the individual component or customization records. You can edit or delete Deployment Components.

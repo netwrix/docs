@@ -6,8 +6,6 @@ sidebar_position: 40
 
 # Deploy the Service
 
-Follow the steps to deploy the service.
-
 **Step 1 –** Locate the add-on folder on the computer where the Auditor Server resides.
 
 **Step 2 –** Run the **install.cmd** file. The file deploys and enables the Auditor **ITSM

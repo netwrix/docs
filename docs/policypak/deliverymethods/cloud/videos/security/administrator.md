@@ -8,6 +8,8 @@ sidebar_position: 40
 The process of adding new admins to your cloud service couldn't be easier. Watch this video to find
 out how.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2ssafepckjk" title="PolicyPak Cloud: Adding New Admins" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 See
 also:  [PolicyPak Cloud Portal - Adding new company admins - Quickstart](/docs/policypak/deliverymethods/cloud/knowledgebase/cloudportalsecurity/administrator.md)
 

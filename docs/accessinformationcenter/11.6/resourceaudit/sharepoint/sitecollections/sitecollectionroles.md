@@ -12,13 +12,13 @@ descriptions. It also displays a calculation of the actual rights that each role
 targeted SharePoint on-premise farm or SharePoint Online instance.
 
 :::note
-This report is only available at the site collection level.
+This report appears only at the site collection level.
 :::
 
 
 ![Site Collections Roles report](/images/accessinformationcenter/11.6/resourceaudit/sharepoint/sitecollections/sitecollectionroles.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Role – Role name for the SharePoint permission level
 - Description – Description of the SharePoint role, this is an open text entry within SharePoint and

@@ -6,10 +6,10 @@ sidebar_position: 10
 
 # Deployments
 
-Your deployments can be documented across your test environment(s) to your production
-environment(s). Each step in the deployment process complies with your policies and a comprehensive
-approval process. Deployments are blocked if approvals are not complete. A full audit trail of the
-entire deployment process is maintained.The process is:
+Platform Governance for Salesforce documents your deployments across test environments to production
+environments. Each step in the deployment process complies with your policies and a comprehensive
+approval process. Deployments are blocked if approvals aren't complete. Platform Governance for Salesforce maintains a full audit trail of the
+entire deployment process. The process is:
 
 - Create a Change Request
 - Create a Deployment Record
@@ -20,7 +20,7 @@ entire deployment process is maintained.The process is:
 
 1. Open **Change Requests** > **New**
 2. Enter a meaningful **Change Request Name**, select the **Change Request Type** (Between Record Type and customization) and **Change Overview**
-3. Modify the **Change Type** as needed. Add any other supporting information, such as Parent Change Request, customizations or data records.
+3. Modify the **Change Type** as needed. Add any other supporting information, such as Parent Change Request, customizations, or data records.
 4. **Save** the change request.
 5. Click **Submit for Approval**
 
@@ -39,7 +39,7 @@ These steps can be completed after the change request is approved.
     ![Deployment Tool](/images/platgovsalesforce/release_management/deployment_tool.webp)
 
 5. Click **Test Connection** for both environments to ensure your credentials are correct. If your
-   credentials are not correct, you can click **Save Credentials** and edit.
+   credentials aren't correct, you can click **Save Credentials** and edit.
 6. Click **Run Scan** on both environments to ensure the customizations on the change request are up
    to date.
 7. **Save** the Deployment Record.
@@ -62,13 +62,13 @@ These steps can be completed after the deployment record is approved.
 
     This creates a package to:
 
-    - **Validate Customizations**: Use to check the deployment is going to work. It simulates your
+    - **Validate Customizations**: Use to check the deployment before it runs. It simulates your
       deployment.
     - **Deploy Retrieved Customizations**: Use to deploy your customizations when you are ready to
       proceed.
 
 4. Check your dependencies and validate your customizations.
-5. Click **Deploy Retrieved Customizations** to start the deployment. This may take some time, since
+5. Click **Deploy Retrieved Customizations** to start the deployment. This can take some time because
    it runs the test cases into the target environment.
 
     ![Run the Deployment](/images/platgovsalesforce/release_management/deployment_tool-4.webp)
@@ -79,6 +79,6 @@ When the deployment process is finished:
 
 1. Check the [Deployment Logs](/docs/platgovsalesforce/releasemanagement/deployment_logs.md).
 2. Fix any errors and repeat the deployment if needed.
-3. Once the deployment is successful, open the change request and set the status to **Completed**.
+3. After the deployment is successful, open the change request and set the status to **Completed**.
 
     ![Complete the Process](/images/platgovsalesforce/release_management/deployment_tool-5.webp)

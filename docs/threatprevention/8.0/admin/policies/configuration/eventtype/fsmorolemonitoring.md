@@ -32,7 +32,7 @@ when a FSMO role is seized from a domain controller.
 Select the **All** checkbox to generate events when a domain controller acquires or relinquishes a
 FSMO role.
 
-On selecting it, both the Acquire and Relinquish checkboxes are automatically checked.
+Selecting it automatically checks both the Acquire and Relinquish checkboxes.
 
 - Check the **Acquire** checkbox to generate events when a domain controller acquires a FSMO role.
 - Check the **Relinquish** checkbox to generate events when a domain controller relinquishes a FSMO
@@ -40,8 +40,7 @@ On selecting it, both the Acquire and Relinquish checkboxes are automatically ch
 
 ## FSMO Roles Filter
 
-On the FSMO Roles filter, specific FSMO role assignments for a domain controller are selected to be
-monitored.
+Use the FSMO Roles filter to select specific FSMO role assignments for a domain controller to monitor.
 
 ![Policy window - FSMO Roles filter](/images/threatprevention/8.0/admin/policies/eventtype/fsmoroles.webp)
 
@@ -77,11 +76,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -102,11 +100,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 

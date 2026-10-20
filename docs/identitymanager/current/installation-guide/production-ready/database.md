@@ -14,7 +14,7 @@ Please make sure that the [Database](../../installation-guide/requirements/datab
 
 ### 1. Install SQL server
 
-Microsoft's extensive documentation can be used to get help [installing a SQL Server 2016 or later](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server).
+Microsoft's extensive documentation can be used to get help [installing a SQL Server 2022 or later](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server).
 
 ### 2. Create the database
 

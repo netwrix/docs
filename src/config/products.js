@@ -18,6 +18,7 @@
  * @property {boolean} isLatest - Whether this is the latest version
  * @property {string} [sidebarFile] - Custom sidebar file path (defaults to generated path)
  * @property {string} [kbSource] - Optional override for the KB source directory for this version (relative to repo root). When set, this version pulls KB articles from this directory instead of the product-level default (docs/kb/<productId>/).
+ * @property {boolean} [kb] - Set to false to give this version no Knowledge Base section. The KB copy script skips the version (and removes any previously copied kb/ folder) instead of falling back to the product-level KB source. Defaults to true.
  */
 
 /**
@@ -62,11 +63,11 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '2601',
-        label: '2601',
+        version: '26.1',
+        label: '26.1',
         isLatest: true,
-        sidebarFile: './sidebars/accessanalyzer/2601.js',
-        kbSource: 'docs/kb/accessanalyzer-2601',
+        sidebarFile: './sidebars/accessanalyzer/26.1.js',
+        kb: false, // No Knowledge Base section: the docs/kb/accessanalyzer articles apply to 12.0 and 11.6 only
       },
       {
         version: '12.0',
@@ -81,7 +82,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/accessanalyzer/11.6.js',
       },
     ],
-    defaultVersion: '2601',
+    defaultVersion: '26.1',
   },
   {
     id: 'accessinformationcenter',
@@ -115,9 +116,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.0',
+        label: '10.0',
+        isLatest: true,
+        sidebarFile: './sidebars/activitymonitor/10.0.js',
+      },
+      {
         version: '9.0',
         label: '9.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/activitymonitor/9.0.js',
       },
       {
@@ -133,7 +140,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/activitymonitor/7.1.js',
       },
     ],
-    defaultVersion: '9.0',
+    defaultVersion: '10.0',
   },
   {
     id: 'auditor',
@@ -144,9 +151,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.9',
+        label: '10.9',
+        isLatest: true,
+        sidebarFile: './sidebars/auditor/10.9.js',
+      },
+      {
         version: '10.8',
         label: '10.8',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/auditor/10.8.js',
       },
       {
@@ -155,14 +168,8 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/auditor/10.7.js',
       },
-      {
-        version: '10.6',
-        label: '10.6',
-        isLatest: false,
-        sidebarFile: './sidebars/auditor/10.6.js',
-      },
     ],
-    defaultVersion: '10.8',
+    defaultVersion: '10.9',
   },
   {
     id: 'changetracker',
@@ -173,19 +180,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '8.1',
-        label: '8.1',
+        version: 'current',
+        label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/changetracker/8.1.js',
-      },
-      {
-        version: '8.0',
-        label: '8.0',
-        isLatest: false,
-        sidebarFile: './sidebars/changetracker/8.0.js',
+        sidebarFile: './sidebars/changetracker.js',
+        apiSidebarPath: './docs/changetracker/api/reference/sidebar.ts',
       },
     ],
-    defaultVersion: '8.1',
   },
   {
     id: 'customer',
@@ -212,9 +213,15 @@ export const PRODUCTS = [
     icon: '🏷️',
     versions: [
       {
+        version: '5.8',
+        label: '5.8',
+        isLatest: true,
+        sidebarFile: './sidebars/dataclassification/5.8.js',
+      },
+      {
         version: '5.7',
         label: '5.7',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/dataclassification/5.7.js',
       },
       {
@@ -224,7 +231,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/dataclassification/5.6.2.js',
       },
     ],
-    defaultVersion: '5.7',
+    defaultVersion: '5.8',
   },
   {
     id: 'directorymanager',
@@ -299,16 +306,10 @@ export const PRODUCTS = [
         customDocPath: 'docs/identitymanager/current',
       },
       {
-        version: '6.3',
-        label: '6.3',
+        version: '7.0',
+        label: '7.0',
         isLatest: false,
-        sidebarFile: './sidebars/identitymanager/6.3.js',
-      },
-      {
-        version: '6.2',
-        label: '6.2',
-        isLatest: false,
-        sidebarFile: './sidebars/identitymanager/6.2.js',
+        sidebarFile: './sidebars/identitymanager/7.0.js',
       },
       {
         version: '6.1',
@@ -344,9 +345,30 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '12.1',
+        label: '12.1',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/12.1.js',
+      },
+      {
+        version: '12.0',
+        label: '12.0',
+        isLatest: false,
+        hidden: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/12.0.js',
+      },
+      {
+        version: '11.2',
+        label: '11.2',
+        isLatest: false,
+        hidden: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/11.2.js',
+      },
+      {
         version: '11.1',
         label: '11.1',
-        isLatest: true,
+        isLatest: false,
+        hidden: true,
         sidebarFile: './sidebars/passwordpolicyenforcer/11.1.js',
       },
       {
@@ -364,7 +386,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/passwordpolicyenforcer/10.2.js',
       },
     ],
-    defaultVersion: '11.1',
+    defaultVersion: '12.1',
   },
   {
     id: 'passwordreset',
@@ -430,13 +452,19 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '4.0',
+        label: '4.0',
+        isLatest: true,
+        sidebarFile: './sidebars/pingcastle/4.0.js',
+      },
+      {
         version: '3.5',
         label: '3.5',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/pingcastle/3.5.js',
       },
     ],
-    defaultVersion: '3.5',
+    defaultVersion: '4.0',
   },
   {
     id: 'platgovnetsuite',
@@ -511,9 +539,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '26.03',
+        label: '26.03',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/26.03.js',
+      },
+      {
         version: '25.12',
         label: '25.12',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
       {
@@ -522,14 +556,8 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/privilegesecure/4.2.js',
       },
-      {
-        version: '4.1',
-        label: '4.1',
-        isLatest: false,
-        sidebarFile: './sidebars/privilegesecure/4.1.js',
-      },
     ],
-    defaultVersion: '25.12',
+    defaultVersion: '26.03',
   },
   {
     id: 'privilegesecurediscovery',
@@ -606,19 +634,31 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '3.3',
+        label: '3.3',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.3.js',
+      },
+      {
+        version: '3.2',
+        label: '3.2',
+        isLatest: false,
+        sidebarFile: './sidebars/threatmanager/3.2.js',
+      },
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: false,
+        sidebarFile: './sidebars/threatmanager/3.1.js',
+      },
+      {
         version: '3.0',
         label: '3.0',
         isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.0.js',
       },
-      {
-        version: '3.1',
-        label: '3.1',
-        isLatest: true,
-        sidebarFile: './sidebars/threatmanager/3.1.js',
-      },
     ],
-    defaultVersion: '3.1',
+    defaultVersion: '3.3',
   },
   {
     id: 'threatprevention',
@@ -629,9 +669,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '8.1',
+        label: '8.1',
+        isLatest: true,
+        sidebarFile: './sidebars/threatprevention/8.1.js',
+      },
+      {
         version: '8.0',
         label: '8.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatprevention/8.0.js',
       },
       {
@@ -641,7 +687,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/threatprevention/7.5.js',
       }
     ],
-    defaultVersion: '8.0',
+    defaultVersion: '8.1',
   },
 ];
 
@@ -760,12 +806,72 @@ export function getDefaultVersion(product) {
 }
 
 /**
+ * Get the DOCS_PRODUCT env var (single-product build filter), or null if unset.
+ */
+export function getTargetProductId() {
+  return process.env.DOCS_PRODUCT || null;
+}
+
+/**
+ * Whether DOCS_PRODUCT_LATEST_ONLY=true — scopes a single-product build to its latest version only.
+ */
+export function isLatestOnly() {
+  return process.env.DOCS_PRODUCT_LATEST_ONLY === 'true';
+}
+
+/**
+ * Get the products to build. Filters to DOCS_PRODUCT when set.
+ * Throws on a typo'd DOCS_PRODUCT instead of silently building an empty site.
+ */
+export function getActiveProducts() {
+  const target = getTargetProductId();
+  if (!target) return PRODUCTS;
+  if (target === 'kb') return [];
+  const match = PRODUCTS.filter(p => p.id === target);
+  if (match.length === 0) {
+    throw new Error(
+      `DOCS_PRODUCT="${target}" does not match any product id. Valid ids: ${PRODUCTS.map(p => p.id).join(', ')}`
+    );
+  }
+  return match;
+}
+
+/**
+ * Get the versions to build for a product. Scopes to the latest version only when
+ * DOCS_PRODUCT_LATEST_ONLY=true and this is the DOCS_PRODUCT target product.
+ */
+export function getActiveVersions(product) {
+  if (!isLatestOnly() || product.id !== getTargetProductId()) return product.versions;
+  const latest = getDefaultVersion(product);
+  return product.versions.filter(v => v.version === latest.version);
+}
+
+/**
+ * Build a map of product ID → latest URL-version string.
+ * Used by the evergreen-links redirect config to generate version-less aliases.
+ * Skips single-version 'current' products (their URLs are already version-less).
+ */
+export function getLatestVersionUrlMap() {
+  const map = {};
+  for (const product of PRODUCTS) {
+    if (product.versions.length === 1 && product.versions[0].version === 'current') continue;
+    const latest = getDefaultVersion(product);
+    if (!latest) continue;
+    const urlVersion = latest.customRoutePath
+      ? latest.customRoutePath.split('/').pop()
+      : versionToUrl(latest.version);
+    map[product.id] = urlVersion;
+  }
+  return map;
+}
+
+/**
  * Create product map for route matching (used by ProductMetaTags)
  */
 export function createProductMap() {
   const map = {};
   const injectSubDir = ['kb'];
-  PRODUCTS.forEach((product) => {
+  getActiveProducts().forEach((product) => {
     map[`/${product.path}`] = product.name;
     injectSubDir.forEach((subDir) => {
       const injectedPath = product.path.replace('docs/', `docs/${subDir}/`);
@@ -796,25 +902,51 @@ export function hasKBContent(productId) {
   return kbProducts.includes(productId);
 }
 
+function camelToTitleCase(str) {
+  return str.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase()).trim();
+}
+
+function transformApiSidebarLabels(items) {
+  return items.map(item => {
+    if (item.type === 'category') {
+      return {
+        ...item,
+        label: camelToTitleCase(item.label),
+        items: item.items ? transformApiSidebarLabels(item.items) : item.items,
+      };
+    }
+    if (item.type === 'doc' && item.label) {
+      return { ...item, label: item.label.replace(/\.$/, '') };
+    }
+    return item;
+  });
+}
+
+
 /**
  * Generate all Docusaurus plugin configurations
  */
-export function generateDocusaurusPlugins() {
+export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
   const plugins = [];
 
   // Filter products if DOCS_PRODUCT environment variable is set
-  const targetProduct = process.env.DOCS_PRODUCT;
-  const productsToProcess = targetProduct
-    ? PRODUCTS.filter(product => product.id === targetProduct)
-    : PRODUCTS;
+  const targetProduct = getTargetProductId();
+  const productsToProcess = getActiveProducts();
 
   productsToProcess.forEach((product) => {
-    product.versions.forEach((version) => {
+    getActiveVersions(product).forEach((version) => {
       const pluginId = generatePluginId(product.id, version.version);
       // Use explicit paths if specified (e.g., for multi-versioned products with 'current')
       // Otherwise use standard path generation
       const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
       const docPath = version.customDocPath || generateDocPath(product.path, version.version);
+
+      // Look up the pre-loaded API sidebar items for this version (loaded by docusaurus.config.js).
+      // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
+      const apiSidebarItems = version.apiSidebarPath
+        ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
+            .filter(item => !(item.type === 'doc' && item.id?.endsWith('/changetracker-hub')))
+        : [];
 
       // Build plugin configuration
       const pluginConfig = {
@@ -824,23 +956,44 @@ export function generateDocusaurusPlugins() {
         sidebarPath: version.sidebarFile,
         editUrl: 'https://github.com/netwrix/docs/tree/main/',
         exclude: ['**/CLAUDE.md', '**/docs-staging/**', '**/_partials/**'],
+        // Use ApiItem as the doc renderer when this plugin contains API reference docs.
+        // ApiItem sets up the Redux Provider required by the API explorer components.
+        // It falls back to normal DocItem layout for pages without `api` frontmatter.
+        ...(version.apiSidebarPath && { docItemComponent: '@theme/ApiItem' }),
         sidebarItemsGenerator: async function({ defaultSidebarItemsGenerator, ...args }) {
           const sidebarItems = await defaultSidebarItemsGenerator(args);
-          // Recursively filter out items from _partials folder
+
+          // Replace the autogenerated flat listing for API reference directories
+          // with the structured sidebar produced by docusaurus-plugin-openapi-docs.
+          // The directory is marked via _category_.json customProps.isGeneratedApiSidebar.
+          function injectApiSidebar(items) {
+            return items.map(item => {
+              if (item.customProps?.isGeneratedApiSidebar && apiSidebarItems.length > 0) {
+                return { ...item, items: apiSidebarItems };
+              }
+              if (item.items) {
+                return { ...item, items: injectApiSidebar(item.items) };
+              }
+              return item;
+            });
+          }
+
           function filterPartials(items) {
             return items.filter(item => {
-              // Filter out if label or id contains _partials
               if (item.label?.includes('_partials') || item.id?.includes('_partials')) {
                 return false;
               }
-              // Recursively filter nested items
               if (item.items) {
                 item.items = filterPartials(item.items);
               }
               return true;
             });
           }
-          return filterPartials(sidebarItems);
+
+          const processed = apiSidebarItems.length > 0
+            ? injectApiSidebar(sidebarItems)
+            : sidebarItems;
+          return filterPartials(processed);
         },
         versions: {
           current: {
@@ -882,10 +1035,16 @@ export function generateDocusaurusPlugins() {
 /**
  * Generate product categories for HomepageFeatures component
  */
-export function generateProductCategories() {
+export function generateProductCategories(activeProductIds, activeVersionsByProduct) {
+  // activeProductIds/activeVersionsByProduct let callers bundled by rspack/webpack
+  // (e.g. HomepageFeatures) pass build-time values through customFields, since
+  // process.env isn't readable from that bundled code (see docusaurus.config.js).
+  const activeIds = new Set(activeProductIds ?? getActiveProducts().map(p => p.id));
+
   return PRODUCT_CATEGORIES.map((category) => {
     const categoryProducts = getProductsByCategory(category.title)
-      .filter(product => !product.hideFromNavbar); // Exclude products hidden from navbar/landing page
+      .filter(product => !product.hideFromNavbar) // Exclude products hidden from navbar/landing page
+      .filter(product => activeIds.has(product.id));
 
     const products = categoryProducts.map((product) => {
       const defaultVersion = getDefaultVersion(product);
@@ -901,7 +1060,14 @@ export function generateProductCategories() {
       };
 
       // Add versions if product has multiple visible versions
-      const visibleVersions = product.versions.filter(v => !v.hidden);
+      // (scoped to the active version set so a DOCS_PRODUCT_LATEST_ONLY build
+      // doesn't link to a version that wasn't built)
+      const activeVersionStrings = activeVersionsByProduct
+        ? activeVersionsByProduct[product.id]
+        : getActiveVersions(product).map(v => v.version);
+      const visibleVersions = product.versions
+        .filter(v => !v.hidden)
+        .filter(v => activeVersionStrings.includes(v.version));
       if (visibleVersions.length > 1) {
         productInfo.versions = visibleVersions.map((version) => ({
           version: version.label,
@@ -919,7 +1085,7 @@ export function generateProductCategories() {
       icon: category.icon,
       products: products,
     };
-  });
+  }).filter(category => category.products.length > 0);
 }
 
 /**
@@ -936,10 +1102,33 @@ export function generateNavbarDropdowns() {
     'Identity Threat Detection & Response (ITDR)': 'ITDR',
   };
 
+  // In DOCS_PRODUCT single-product mode, render one plain link to the target
+  // product instead of filtering its category dropdown — the target may end up
+  // in an emptied category, be flagged hideFromNavbar, or land in 'Other'.
+  const target = getTargetProductId();
+  if (target) {
+    const [product] = getActiveProducts();
+    if (!product) return [];
+    const defaultVersion = getDefaultVersion(product);
+    const link = defaultVersion.customRoutePath
+      ? `/${defaultVersion.customRoutePath}/`
+      : `/${generateRouteBasePath(product.path, defaultVersion.version)}`;
+    return [
+      {
+        label: product.name,
+        to: link,
+        position: 'left',
+      },
+    ];
+  }
+
+  const activeIds = new Set(getActiveProducts().map(p => p.id));
+
   return PRODUCT_CATEGORIES.filter((category) => category.title !== 'Other') // Exclude 'Other' category from navbar
     .map((category) => {
       const categoryProducts = getProductsByCategory(category.title)
-        .filter(product => !product.hideFromNavbar); // Exclude products hidden from navbar
+        .filter(product => !product.hideFromNavbar) // Exclude products hidden from navbar
+        .filter(product => activeIds.has(product.id));
 
       const items = categoryProducts.map((product) => {
         const defaultVersion = getDefaultVersion(product);

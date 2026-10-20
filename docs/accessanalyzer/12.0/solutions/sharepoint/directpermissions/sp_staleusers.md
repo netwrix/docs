@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # SP_StaleUsers Job
 
-A stale user is defined as either currently disabled within Active Directory, or has not logged onto
+A stale user is a user account that's disabled in Active Directory or hasn't logged on to
 the domain for over 90 days. This job will identify locations where there are stale users directly
 applied on SharePoint resources. These permissions can be safely removed.
 
@@ -16,7 +16,7 @@ Navigate to the **Jobs** > **SharePoint** > **1.Direct Permissions** > **SP_Stal
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -37,4 +37,4 @@ users, the SP_StaleUsers Job produces the following pre-configured report:
 
 | Report                 | Description                                                                                                                       | Default Tags | Report Elements                                                                                                                                                                                                                                                           |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Stale User Permissions | A stale user is defined as either currently disabled within Active Directory, or has not logged onto the domain for over 90 days. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays top 5 users by affected resources</li><li>Table – Provides details on top resource by stale user permissions</li><li>Table – Provides details on top stale users by affected resources</li></ul> |
+| Stale User Permissions | A stale user is a user account that's disabled in Active Directory or hasn't logged on to the domain for over 90 days. | None | This report is comprised of three elements: <ul><li>Bar Chart – Displays top 5 users by affected resources</li><li>Table – Provides details on top resource by stale user permissions</li><li>Table – Provides details on top stale users by affected resources</li></ul> |

@@ -101,7 +101,7 @@ To execute an operation.
 :::note
 The Help menu displays key information regarding the selected operation. The Help menu for
 the Enumerate Active Directory Objects operation displays the operation name, required fields,
-notes, and a brief description of the selected operation. We recommend that you view the Help menu
+notes, and a brief description of the selected operation. View the Help menu
 for each operation you intend to execute.
 :::
 
@@ -141,7 +141,6 @@ certificate for Netwrix Privilege Secure. Signing the RDP file with this trusted
 To obtain the certificate thumbprint, open the Certificates snap-in. From there, the certificate
 thumbprint can be found in the local computer's certificates store on the Netwrix Privilege Secure
 server. This certificate thumbprint lets you certify the Privilege Secure Web Service as well.
-Follow the steps below to obtain a certificate thumbprint.
 
 **Step 1 –** Open the Windows Certificate Manager Tool (certmgr.exe).
 
@@ -165,9 +164,6 @@ The Netwrix Privilege Secure session has been authenticated. Update the GPO to i
 thumbprint of the signed certificate to ensure the unknown publisher warning disappears completely.
 
 **Update Group Policy settings in Windows**
-
-Follow the steps below to update the GPO to include the SHA1 thumbprint of the signed certificate to
-ensure the unknown publisher warning disappears completely.
 
 **Step 1 –** Open the Windows Local Group Policy Editor.
 

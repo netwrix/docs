@@ -6,7 +6,7 @@ sidebar_position: 160
 
 # Import Additional Owners
 
-The **Import Additional Owners** wizard enables you to specify additional owners for a group using
+Use the **Import Additional Owners** wizard to specify additional owners for a group using
 an external file.
 
 The wizards search the directory for objects listed in the external file, and if found, adds them as
@@ -30,7 +30,7 @@ launch the **Import Additional Owners** wizard.
 4. On the **Import** page, follow these steps:
 
     1. In the **Import Options** section, select this site/domain or the entire directory from the
-       **Search** drop-down list.
+       **Search** dropdown list.
 
         The wizard compares records in the import file with records in the selected domain or
         directory to update the group's membership.
@@ -52,7 +52,7 @@ launch the **Import Additional Owners** wizard.
 
     - **Unresolved Items:**
 
-        Shows objects that will not be processed because a matching object could not be found in the
+        Shows objects that will not be processed because a matching object couldn't be found in the
         destination directory.
 
     - **Ambiguous Items:**

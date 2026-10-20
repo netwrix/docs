@@ -13,7 +13,7 @@ after the database and application are installed, the next step is to walk throu
 The Netwrix Setup Launcher can be closed, if it was used during installation.
 
 :::info
-The first user, your primary Administrator, is set up through the wizard. We recommend that you have a multi-factor authentication (MFA) solution (Authenticator, DUO, Symantec VIP, etc.) ready to set up for this account through the wizard.
+The first user, your primary Administrator, is set up through the wizard. Have a multi-factor authentication (MFA) solution (Authenticator, DUO, Symantec VIP, etc.) ready to set up for this account through the wizard.
 :::
 
 
@@ -69,7 +69,7 @@ To walk through the Setup Wizard.
 the following information and then click Next:
 
 - Domain – Enter the account's domain in `domain.com` format
-- Username – Enter the account. The domain auto-populate from the field above.
+- Username – Enter the account. The domain auto-populates from the Domain field.
 - Password – Enter the account's password. The eye icon lets you view the entry.
 
 ![Setup Wizard on the Step 2 page](/images/privilegesecure/4.2/accessmanagement/install/authenticator.webp)
@@ -93,7 +93,7 @@ topic for additional information.
 
 ![Setup Wizard on the Step 2 page displaying the recovery codes](/images/privilegesecure/4.2/accessmanagement/install/authenticatorcodes.webp)
 
-**Step 5 –** One-time recovery codes are provided for the registered authenticator. We recommend that you copy these codes with the Copy to clipboard link and save them in a secure location in case you lose your phone with the authenticator app. Click **Next**.
+**Step 5 –** One-time recovery codes are provided for the registered authenticator. Copy these codes with the Copy to clipboard link and save them in a secure location in case you lose your phone with the authenticator app. Click **Next**.
 
 ![Setup Wizard on the Step 3 page](/images/privilegesecure/4.2/accessmanagement/install/adserviceaccount.webp)
 
@@ -150,7 +150,7 @@ See the [Getting Started](/docs/privilegesecure/4.2/gettingstarted.md) topic for
 ## Exit Wizard Early
 
 You can exit the Setup Wizard from Step 3, Step 4, and Step 5 pages. If you do that, then
-the Setup Wizard does not create the Activity Token for Domain Admin Access activity. You need
+the Setup Wizard doesn't create the Activity Token for Domain Admin Access activity. You need
 to complete the following to create your first access policy, depending on what page of the wizard
 you exited from:
 

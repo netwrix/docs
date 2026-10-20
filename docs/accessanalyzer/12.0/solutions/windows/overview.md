@@ -7,8 +7,8 @@ sidebar_position: 160
 # Windows Solution
 
 The Windows Solution is designed to provide both high-level and granular views into any sized
-organization's infrastructure. Systems are a critical business asset. In order to optimally support
-and benefit the business, these systems must be running optimally and be fully secured. The Windows
+organization's infrastructure. Systems are a critical business asset. To optimally support
+and benefit the business, these systems must run efficiently and stay secure. The Windows
 Solution allows organizations to quickly inventory, assess, and secure their Windows desktop and
 server infrastructure from a central location. Key capabilities include privileged account
 discovery, security configuration and vulnerability assessment, compliance reporting, and asset
@@ -29,7 +29,7 @@ topic for additional information.
 
 The Windows Solution requires a special Access Analyzer license. It can be installed from the
 Instant Job Wizard. See the [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for
-additional information. Once it has been installed in the Jobs tree, navigate to the solution:
+additional information. After it's installed in the Jobs tree, navigate to the solution:
 **Jobs** > **Windows**.
 
 ![Windows Solution in the Jobs Tree](/images/accessanalyzer/12.0/solutions/windows/jobstree.webp)
@@ -62,7 +62,7 @@ The jobs and job groups in the Windows Solution are:
 - [Security Utilities Job Group](/docs/accessanalyzer/12.0/solutions/windows/securityutilities/overview.md) – This group provides a series of
   security element checks across the audited environment
 - [SG_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/windows/sg_securityassessment.md) – This job performs checks against Windows
-  security best practices in order to proactively identify critical security configurations that
+  security best practices to proactively identify critical security configurations that
   leave the environment vulnerable to attack. The result is a report which provides a listing of
-  findings by severity and category with corresponding details that can be used to prioritize and
+  findings by severity and category with corresponding details you can use to prioritize and
   remediate security issues.

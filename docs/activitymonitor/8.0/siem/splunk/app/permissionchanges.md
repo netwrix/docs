@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Permission Changes Dashboard
 
-View information on permissions changes on the through the Permission Changes Dashboard for Splunk.
+View information on permission changes through the Permission Changes Dashboard for Splunk.
 
 ![Permission Changes Dashboard for Stealthbits Activivty Monitor App for Splunk](/images/activitymonitor/8.0/siem/splunk/dashboard/permissionchangesdashboard.webp)
 

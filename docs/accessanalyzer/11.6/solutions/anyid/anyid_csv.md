@@ -33,7 +33,7 @@ Local Host
 
 **Connection Profile**
 
-The AnyID_CSV job does not require a connection profile.
+The AnyID_CSV job doesn't require a connection profile.
 
 **History Retention**
 
@@ -82,7 +82,7 @@ The query is:
 
 ### Configure the AnyID_CSV Query
 
-Follow the steps to configure the AnyID_CSV query.
+To configure the AnyID_CSV query:
 
 ![ The name of the source repository parameter on the job Overview page](/images/accessanalyzer/11.6/solutions/anyid/csvoverviewpage.webp)
 
@@ -111,7 +111,7 @@ The following attributes must be configured in order for the job to execute prop
 
 
 - $inputfile – File path to the CSV file which contains the identity and attribute information
-- $RequiredAttributes – The list of attributes that need to be found in the document in order to
+- $RequiredAttributes – The list of attributes that need to be found in the document to
   trigger a match
 
     - An attribute in the Attributes list will not be considered a match (in reporting and AIC)
@@ -141,7 +141,7 @@ Navigate to the **Jobs** > **AnyID Connectors** > **AnyID_CSV** > **Configure**
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

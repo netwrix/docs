@@ -16,8 +16,8 @@ You can delete a single workflow or a group of workflows within the scope (Globa
 
     **TIP:** You can use **Search** in the upper right corner of the window.
 
-    2. Click the link in the **Name** column for the required workflow (Global for Google Drive in
-       the figure below):
+    2. Click the link in the **Name** column for the required workflow (for example, Global for Google Drive in
+       the following figure):
 
     ![workflow_delete_single_thumb_0_0](/images/dataclassification/5.7/admin/workflows/workflow_delete_single_thumb_0_0.webp)
 

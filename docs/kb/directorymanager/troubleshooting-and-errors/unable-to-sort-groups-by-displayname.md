@@ -15,9 +15,10 @@ keywords:
   - attribute
   - bulk update
 products:
-  - directory-manager
+  - directorymanager
 sidebar_label: Unable to Sort Groups by DisplayName
 tags:
+  - kb
   - troubleshooting-and-errors
 title: "Unable to Sort Groups by DisplayName"
 knowledge_article_id: kA0Qk0000002IC9KAM
@@ -33,12 +34,12 @@ When you attempt to sort the **My Groups** listing in Netwrix Directory Manager 
 
 ![Group listing in Directory Manager portal with Display Name column sorted in ascending order](./../0-images/ka0Qk000000EZ2j_0EMQk00000BoBWe.png)
 
-## Causes
+## Cause
 - The **Display Name** attribute is not mandatory for groups created directly in Active Directory, so some groups may not have this attribute populated.
 - When you sort by **Display Name** in Netwrix Directory Manager, the portal treats missing display names as null values and uses the **Common Name** instead. This can result in incorrect or failed sorting.
 - Groups created using Netwrix Directory Manager always have a **Display Name** because it is a required attribute.
 
-## Resolutions
+## Resolution
 1. Verify which groups are missing the **Display Name** attribute by checking the attribute editor in Active Directory.
 2. Populate the **Display Name** attribute for all groups that are missing it.
 3. After all groups have a **Display Name**, the Netwrix Directory Manager portal will sort group listings correctly by this attribute.

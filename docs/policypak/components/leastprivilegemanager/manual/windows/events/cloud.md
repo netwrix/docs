@@ -28,7 +28,7 @@ select **Edit Group**.
 
 :::note
 You can select the drop-down option to select the Event IDs. See the
-[List of PolicyPak Event Categories and IDs](/docs/policypak/gettingstarted/misc/knowledgebase/tipstricksandfaqs/eventcategories.md) topic
+[List of PolicyPak Event Categories and IDs](/docs/policypak/misc/knowledgebase/tipstricksandfaqs/eventcategories.md) topic
 for a list of PolicyPak Event IDs.
 :::
 

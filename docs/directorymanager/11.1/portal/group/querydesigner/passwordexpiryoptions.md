@@ -26,7 +26,7 @@ group.
 
 ## Domain Expiration Policy
 
-Specify the maximum password age. The default age is 42 days. This setting does not affect your
+Specify the maximum password age. The default age is 42 days. This setting doesn't affect your
 domain security settings on the directory server.
 
 ## Expiration Range Policy
@@ -38,16 +38,16 @@ group.
 
 ### Include disabled users
 
-Select this check box to include disabled user accounts in the new group.
+Select this checkbox to include disabled user accounts in the new group.
 
 ### Include users whose password never expires
 
-Select this check box to include users with the **Password never expires** setting enabled, in group
+Select this checkbox to include users with the **Password never expires** setting enabled, in group
 membership.
 
 ## Send email after update
 
-Select this check box to send a password expiry warning email to group members each time group
+Select this checkbox to send a password expiry warning email to group members each time group
 membership is updated either manually or through a scheduled job.
 
 This email contains a URL that redirects users to a Password Center portal for changing their
@@ -56,18 +56,16 @@ server for the identity store.)
 
 The **Send email after update** options is enabled after the group is created.
 
-Warning emails are not sent to group members (users) whose passwords are set to 'never expire'. Such
+Warning emails aren't sent to group members (users) whose passwords are set to 'never expire'. Such
 users are included in group membership when you select the **Include users whose password never
-expires** check box or add such users to the **Include** list on the
+expires** checkbox or add such users to the **Include** list on the
 [Query Designer - Include/Exclude tab](/docs/directorymanager/11.1/portal/group/querydesigner/includeexclude.md).
 
 For warning emails to be sent, you must have an SMTP server configured for the identity store.
 
 ## Preview
 
-Use this button to preview results obtained with the current settings on all tabs of the **Query
-Designer** dialog box. This is a check to ensure the accuracy of data before changes are committed
-to the directory. On clicking it, results are displayed on the following two tabs at the bottom of
+Use this button to preview results obtained with the current settings on all tabs of the **Query Designer** dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory. On clicking it, results are displayed on the following two tabs at the bottom of
 the dialog box:
 
 - Directory tab: displays the results for all the options set on all the tabs of the Query Designer
@@ -83,7 +81,7 @@ context (right-click) menu of each column header on the tab. Options are:
 | Column header's context menu option | Description                                                                                                                                                   |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Size All Columns to Fit             | Set the column size of each column to fit its content.                                                                                                        |
-| `<Attribute Name>`                  | The names of the attributes currently displayed on the tab. Clear the check box for an attribute to remove it from the **Directory** tab.                     |
+| `<Attribute Name>`                  | The names of the attributes the displayed on the tab. Clear the checkbox for an attribute to remove it from the **Directory** tab.                     |
 | **More**                            | Select additional attributes to display on the tab. After adding attributes, re-launch the **Directory** tab to refresh the list of the attributes displayed. |
 
 In addition to the column header display options, the **Directory** tab also provides object display
@@ -91,15 +89,13 @@ options that are available when you right-click an object. Options are:
 
 | Object's Context Menu Option | Description                                                                                                                                                                      |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Add to Exclude               | Add the object to the Exclude list so that it cannot be added to the group's membership.                                                                                         |
+| Add to Exclude               | Add the object to the Exclude list so that it can't be added to the group's membership.                                                                                         |
 | Export                       | Export the selected object's information to a comma-separated value (csv) or XML file. The export action exports only the attributes displayed on the tab.                       |
 | Export All                   | Export the information of all objects on the **Directory** tab to a comma-separated value (csv) or XML file. The export action exports only the attributes displayed on the tab. |
 
 **Preview**
 
-Enables you to preview the results returned with the criteria specified on all tabs of the Query
-Designer dialog box. This is a check to ensure the accuracy of data before changes are committed to
-the directory.
+Preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This checks the accuracy of data before you commit changes to the directory.
 
 **OK**
 

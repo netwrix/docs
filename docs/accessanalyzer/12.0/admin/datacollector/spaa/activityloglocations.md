@@ -6,8 +6,8 @@ sidebar_position: 120
 
 # SPAA: Activity Log Locations
 
-The Activity Log Locations page is where to manually configure log locations to avoid requiring
-remote registry access to locate the activity event log files. It is a wizard page for the category
+Use the Activity Log Locations page to manually configure log locations, to avoid requiring remote
+registry access to locate the activity event log files. It's a wizard page for the category
 of Scan SharePoint Activity.
 
 ![Activity Log Locations page](/images/accessanalyzer/12.0/admin/datacollector/spaa/activityloglocations.webp)
@@ -16,7 +16,7 @@ The options in the Activity Log Locations page are:
 
 - Add – Opens the Customize Activity Log UNC Paths location window to add a new host
 - Add Default – Opens the Customize Activity Log UNC Paths location window for the default host
-- Edit – Opens the Customize Activity Log UNC Paths window for the selected host. If edits are made,
+- Edit – Opens the Customize Activity Log UNC Paths window for the selected host. If you make edits,
   click **OK** to save the changes.
 - Remove – Removes the selected host
 
@@ -31,17 +31,17 @@ The options in the Customize Activity Log UNC Paths Window are:
   Activity Logs (as configured in **Activity Monitor** > **Monitored Hosts**)
 
     :::note
-    For On-Premises environments you do not need to specify an Activity Log UNC path as
+    For On-Premises environments you don't need to specify an Activity Log UNC path as
     the Data Collector will default to finding the log locations via the registry.
     :::
 
 
 - Activity archive UNC path – UNC path to the archive location of Activity Logs (as configured in
-  **Activity Monitor** > **Agents**). If archiving is not enabled in Activity Monitor this can be
-  left blank.
+  **Activity Monitor** > **Agents**). If you haven't enabled archiving in Activity Monitor, you can
+  leave this blank.
 
 :::note
-In any UNC paths, `%HOST%` will be replaced with the host name.
+In any UNC paths, Access Analyzer replaces `%HOST%` with the host name.
 :::
 
 

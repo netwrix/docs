@@ -7,7 +7,7 @@ sidebar_position: 10
 # Active Directory Domain Target Requirements
 
 Netwrix Access Analyzer (formerly Enterprise Auditor) can execute scans on Active Directory domains.
-The Netwrix Activity Monitor can be configured to monitor activity on Active Directory domains and
+You can configure the Netwrix Activity Monitor to monitor activity on Active Directory domains and
 make the event data available for Access Analyzer Active Directory Activity scans.
 
 ## Auditing Permissions
@@ -16,7 +16,7 @@ The following permission is needed:
 
 - Member of the Domain Administrators group
 
-Some collection jobs do allow for a least privilege model. See the
+Some collection jobs allow for a least privilege model. See the
 [Active Directory Auditing Configuration](/docs/accessanalyzer/12.0/requirements/activedirectory/target/access.md) topic for additional information.
 
 ## Auditing Port Requirements
@@ -27,7 +27,7 @@ Ports vary based on the data collector being used. See the
 ## Activity Auditing Permissions
 
 :::note
-Active Directory domain activity events can also be monitored through Netwrix Threat
+You can also monitor Active Directory domain activity events through Netwrix Threat
 Prevention. This requires integration between it and Netwrix Activity Monitor to enable access to
 the data for Access Analyzer Active Directory Activity scans. See the
 [Send Active Directory Event Data from Netwrix Threat Prevention to Netwrix Access Analyzer](/docs/accessanalyzer/12.0/requirements/activedirectory/target/activity/threatprevention.md)
@@ -37,8 +37,8 @@ topic for additional information.
 
 Requirements to Deploy the AD Agent on the Domain Controller
 
-The Netwrix Activity Monitor must have an AD Agent deployed on the domain controller to be
-monitored. While actively monitoring, the AD Agent generates activity log files stored on the
+The Netwrix Activity Monitor must have an AD Agent deployed on each domain controller you want to
+monitor. While actively monitoring, the AD Agent generates activity log files stored on the
 server. The credential used to deploy the AD Agent must have the following permissions on the
 server:
 
@@ -46,8 +46,8 @@ server:
 - READ and WRITE access to the archive location for Archiving feature only
 
 :::note
-For monitoring an Active Directory domain, the AD Agent must be installed on all domain
-controllers within the domain to be monitored.
+To monitor an Active Directory domain, you must install the AD Agent on all domain
+controllers within the domain.
 :::
 
 
@@ -74,9 +74,9 @@ are required for communication between the Agent server and the Netwrix Activity
 | -------------------------------- | -------- | ----- | ------------------- |
 | Activity Monitor to Agent Server | TCP      | 4498  | Agent Communication |
 
-The Windows firewall rules need to be configured on the Windows server, which require certain
-inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+You need to configure the Windows firewall rules on the Windows server, which require you to
+create certain inbound rules if the scans are running in applet mode. These scans operate over a
+default port range, which you can't specify via an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 

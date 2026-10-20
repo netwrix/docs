@@ -15,7 +15,7 @@ The jobs in the 3.Permissions Job Group are:
 
 - [SQL_ControlServer Job](/docs/accessanalyzer/11.6/solutions/databases/sql/permissions/sql_controlserver.md)
   – This job will provide information on control server permissions. Users with control server
-  permissions allow users to command full control of a SQL and Azure SQL server instances
+  permissions can command full control of a SQL and Azure SQL server instances
 - [SQL_DirectPermissions Job](/docs/accessanalyzer/11.6/solutions/databases/sql/permissions/sql_directpermissions.md)
   – This job will provide information about the permissions granted to users at the schema,
   database, and server levels

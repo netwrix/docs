@@ -2,6 +2,8 @@
 title: "Video Learning Center"
 description: "Video Learning Center"
 sidebar_position: 20
+pagination_prev: null
+pagination_next: null
 ---
 
 # Video Learning Center
@@ -31,6 +33,6 @@ See the following Video topics for Start Screen and Task Bar Manager.
 
 ## Extras
 
-- [PolicyPakStart Screen and PolicyPak Scripts: Specify exact Start Menu experience one time](/docs/policypak/components/startscreenandtaskbar/videos/extras/onetime.md)
+- [PolicyPakStart Screen and PolicyPak Scripts: Specify exact Start Menu experience one time](/docs/policypak/components/startscreenandtaskbar/videos/onetime.md)
 
 

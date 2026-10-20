@@ -32,7 +32,7 @@ To integrate with Microsoft Entra ID, you need to create a separate application 
    - **Description**: "Netwrix Integration Secret"
    - **Expires**: Choose appropriate expiration period (recommended: 12-24 months)
 4. Click **Add**
-5. **Important**: Copy the secret value - you cannot retrieve it later
+5. **Important**: Copy the secret value - you can't retrieve it later
 
 ### 1.3 Configure API Permissions (Optional)
 
@@ -124,7 +124,7 @@ Create a login for the Entra ID application to access audit configuration.
 ### 3.1 Connect to SQL Managed Instance
 
 Use SQL Server Management Studio (SSMS) or Azure Data Studio with an account that has:
-- Azure AD admin privileges on the SQL MI
+- Microsoft Entra ID admin privileges on the SQL MI
 - `sysadmin` server role or equivalent permissions
 
 ### 3.2 Create Login from External Provider
@@ -339,7 +339,7 @@ Run the Netwrix Auditor Add-on Setup Wizard and follow these configuration steps
   your-sql-instance.public.<region>.database.windows.net,1433
   ```
 - **Database Name**: `master` (for audit collection)
-- **Authentication**: Azure Active Directory
+- **Authentication**: Microsoft Entra ID
 - **Blob Path**: Full path to audit logs container:
   ```
   https://stnetwrixsqlmi001.blob.core.windows.net/audit-logs/<managed-instance-name>
@@ -382,7 +382,7 @@ Run the Netwrix Auditor Add-on Setup Wizard and follow these configuration steps
 
 This Azure SQL Managed Instance add-on is a **free integration solution** for Netwrix Auditor.
 
-**We value your feedback!** Your experience and suggestions help us improve the add-on. Please share your feedback on:
+Your feedback is valuable! Your experience and suggestions help improve the add-on. Share your feedback on:
 - Functionality and features
 - Documentation and setup process
 - Additional requirements or use cases

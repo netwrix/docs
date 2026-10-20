@@ -1,6 +1,8 @@
 ---
 title: Device Manager Videos
 description: Video tutorials for Device Manager
+pagination_prev: null
+pagination_next: null
 ---
 
 # Device Manager Video Learning Center

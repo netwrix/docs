@@ -18,7 +18,7 @@ new group will be created after it is verified by an approver. See the
 
 ## Create a Static Group
 
-Follow the steps to create a static group.
+To create a static group.
 
 1. In the Directory Manager portal, click the **Create New** button in the left pane and select
    **Group**.
@@ -49,7 +49,7 @@ Follow the steps to create a static group.
 
 ## Create a Smart Group
 
-Follow the steps to create a Smart Group.
+To create a Smart Group.
 
 1. In the Directory Manager portal, click the **Create New** button in the left pane and select
    **Group**.
@@ -57,16 +57,16 @@ Follow the steps to create a Smart Group.
     The **Create Group** wizard opens to the **Group Type** page.
 
     :::tip
-    Remember, pages and fields on the Create Group wizard may vary, since the administrator can
+    Pages and fields on the Create Group wizard may vary, since the administrator can
     customize the wizard by adding or removing tabs and fields.
     :::
 
 
 
-2. On the [Group Type page](/docs/directorymanager/11.1/portal/group/create/grouptype.md) page, select the **Smart Group** option button and
+2. On the [Group Type page](/docs/directorymanager/11.1/portal/group/create/grouptype.md), select the **Smart Group** option button and
    click **Next**.
-3. On the [General page](/docs/directorymanager/11.1/portal/group/create/AD/general.md) page, specify basic information about the group.
-4. On the [ Smart Group page](/docs/directorymanager/11.1/portal/group/create/AD/smartgroup.md) page, review and modify the query
+3. On the [General page](/docs/directorymanager/11.1/portal/group/create/AD/general.md), specify basic information about the group.
+4. On the [Smart Group page](/docs/directorymanager/11.1/portal/group/create/AD/smartgroup.md), review and modify the query
    for updating group membership.
 
     Smart Groups in an Microsoft Entra ID based identity store use a device structured query
@@ -80,7 +80,7 @@ Follow the steps to create a Smart Group.
     - You can specify multiple primary owners for a group. At least one primary owner is mandatory.
     - When a Smart Group Update job runs on a group, the notification behavior is as follows:
 
-        Even when the **Do not Notify** check box is selected, the additional owner will receive the
+        Even when the **Don't Notify** checkbox is selected, the additional owner will receive the
         notifications if the administrator has included its email address for job-specific
         notifications.
 

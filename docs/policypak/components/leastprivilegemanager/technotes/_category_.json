@@ -1,6 +1,9 @@
 {
   "label": "Knowledge Base",
-  "position": 3,
+  "position": 4,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

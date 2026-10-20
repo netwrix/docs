@@ -6,9 +6,9 @@ sidebar_position: 60
 
 # Export Attachment Records
 
-When an [Environment Comparison](/docs/platgovsalesforce/tools/environment_comparison.md) is run, or [Object](/docs/platgovsalesforce/tools/export_objects.md),
-[Profile](/docs/platgovsalesforce/tools/export_profiles.md) or [User](/docs/platgovsalesforce/tools/export_profiles.md) information is exported, an **Export
-Attachment** Record is created for the export. When an export request is completed, you
+When you run an [Environment Comparison](/docs/platgovsalesforce/tools/environment_comparison.md) or export [Object](/docs/platgovsalesforce/tools/export_objects.md),
+[Profile](/docs/platgovsalesforce/tools/export_profiles.md), or [User](/docs/platgovsalesforce/tools/export_profiles.md) information, the system creates an **Export
+Attachment** record for the export. When an export request is completed, you
 receive an email notification your export file is ready. The link in the notification opens the
 **Export Attachment** Record in Salesforce. Your download file is available under **Notes &
 Attachments**.
@@ -17,7 +17,7 @@ Attachments**.
 
 ![Example Export Attachment detail](/images/platgovsalesforce/tools/export_object_attach_record_2.webp)
 
-The export history is saved in Salesforce. The **Export Attachments** tab appears by default in both Salesforce Lightning and Classic views. If the tab is not visible, you can add it using the following methods:
+The export history is saved in Salesforce. The **Export Attachments** tab appears by default in both Salesforce Lightning and Classic views. If the tab isn't visible, you can add it using the following methods:
 
 ## Salesforce Lightning
 

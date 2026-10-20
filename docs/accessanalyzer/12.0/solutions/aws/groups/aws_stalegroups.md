@@ -11,14 +11,14 @@ definition for staleness is set by default to 60 days. This can be configured.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
 
 The AWS_StaleGroups job has the following configurable parameter:
 
-- Days without login to consider an account stale
+- Days without log in to consider an account stale
 
 See the
 [Customizable Analysis Tasks for the AWS_StaleGroups Job](#customizable-analysis-tasks-for-the-aws_stalegroups-job)
@@ -30,7 +30,7 @@ Navigate to the **AWS** > **3.Groups** > **AWS_StaleGroups** > **Configure** nod
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not deselect the selected analysis tasks. The analysis tasks are preconfigured for
+Don't deselect the selected analysis tasks. The analysis tasks are preconfigured for
 this job. Only modify the analysis tasks listed in the customizable analysis tasks section.
 :::
 
@@ -42,7 +42,7 @@ The following analysis tasks are selected by default:
 - Stale Group Details – Highlights the staleness of users in AWS groups. Creates the
   AWS_StaleGroup_Details table accessible under the job’s Results node.
 
-    - The number of days without login to consider an account stale can be customized. By default it
+    - The number of days without log in to consider an account stale can be customized. By default it
       is set to 60. See the
       [Customizable Analysis Tasks for the AWS_StaleGroups Job](#customizable-analysis-tasks-for-the-aws_stalegroups-job)
       topic for additional information.
@@ -57,7 +57,7 @@ The default values for parameters that can be customized are:
 
 | Analysis Task       | Customizable Parameter Name | Default Value | Value Indicates                                 |
 | ------------------- | --------------------------- | ------------- | ----------------------------------------------- |
-| Stale Group Details | @StaleThreshold             | 60            | Days without login to consider an account stale |
+| Stale Group Details | @StaleThreshold             | 60            | Days without log in to consider an account stale |
 
 See the
 [Configure the Customizable Parameters in an Analysis Task](/docs/accessanalyzer/12.0/admin/jobs/job/configure/analysis/analysiscustomizableparameters.md)

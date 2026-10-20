@@ -14,7 +14,7 @@ The FastScan monitors your org for changes to security permissions by:
 - Triggering targeted rescans only for the modified customizations
 - Running on a scheduled basis to keep your documentation up to date
 
-This approach significantly reduces processing time compared to full metadata scans while ensuring you capture all security changes in near real-time.
+This approach significantly reduces processing time compared to full metadata scans while capturing all security changes in near real-time.
 
 ### Special Profile Settings Detection
 
@@ -23,7 +23,7 @@ The FastScan is the **only method** that detects and documents changes to:
 - **ProfilePasswordPolicy**: Password policies and requirements configured at the Profile level
 - **ProfileSessionSetting**: Session timeout and security settings for Profiles
 
-When changes are made to these settings, it automatically creates Change Log records at the Profile level, ensuring complete visibility of security configuration changes that are not captured by the standard scanner.
+When changes are made to these settings, FastScan automatically creates Change Log records at the Profile level, ensuring complete visibility of security configuration changes that the standard scanner doesn't capture.
 
 ---
 
@@ -41,7 +41,7 @@ When changes are made to these settings, it automatically creates Change Log rec
 
 ### 1. Scheduled Execution
 
-The FastScan runs automatically based on the schedule you configure in the **Scheduling** section of the Platform Governance Scheduler. You can set it to run daily, weekly, or at custom intervals to continuously monitor permission changes in your org.
+The FastScan runs automatically based on the schedule you configure in the **Scheduling** section of the Platform Governance Scheduler. Set it to run daily, weekly, or at custom intervals to continuously monitor permission changes in your org.
 
 ### 2. Change Detection
 
@@ -76,13 +76,13 @@ You can schedule the FastScan to run automatically:
 1. Go to the **Netwrix Dashboard** page
 2. Navigate to the **Scanner** > **Scheduler** menu
 3. Locate the **FastScan Profile/Permission Set** scheduler
-4. Select your desired frequency (for example, Daily or Weekly)
+4. Select your desired frequency (for example, Daily, or Weekly)
 5. Choose the time of day to run
 6. Click **Enable** to activate
 
-For more information about the scheduler, see the [Scheduler documentation](/docs/platgovsalesforce/scanner/scheduler.md).
+See [Scheduler documentation](/docs/platgovsalesforce/scanner/scheduler.md).
 
-**Best Practice**: Schedule the FastScan to run daily during off-peak hours to ensure timely change detection without impacting users.
+**Best Practice**: Schedule FastScan to run daily during off-peak hours to ensure timely change detection without impacting users.
 
 ### Manual Execution
 

@@ -17,8 +17,6 @@ an authenticator app—such as Google Authenticator or Microsoft Authenticator�
 
 ## Enable Authenticator for MFA
 
-Follow the steps to enable the authenticator option for MFA.
-
 ![Enable MFA page](/images/identityrecovery/3.1/product/mfa_enable.png)
 
 **Step 1 –** In the Recovery Console, click your profile icon in the top right corner of the page
@@ -41,13 +39,11 @@ seconds.
 
 **Step 5 –** Click **Close**.
 
-MFA has been enabled for your account. Now you must authenticate your account using the
+The system has enabled MFA for your account. Now you must authenticate your account using the
 Authenticator app every time you sign into Identity Recovery. See the
 [Sign In](/docs/identityrecovery/3.1/install/login.md#sign-in) topic for additional information.
 
 ## Disable Authenticator for MFA
-
-Follow the steps to disable MFA for your Identity Recovery account.
 
 ![Disable MFA page](/images/identityrecovery/3.1/product/mfa_disable.png)
 
@@ -57,5 +53,5 @@ and select **Manage**. The MFA page opens.
 **Step 2 –** Click **Disable 2FA**. A confirmation message is displayed. Click **Disable 2FA** to
 disable multi-factor authentication or **Cancel** to leave it enabled.
 
-On disabling MFA, the page displays a confirmation message and there is an option to enable it
+When you disable MFA, the page displays a confirmation message with an option to enable it
 again.

@@ -12,8 +12,8 @@ This document describes the Netwrix customizations for Salesforce types ReportFo
 - Supports hierarchical folder structures with subfolders
 
 ### 2. Detection Mechanism
-- Changes detected during Netwrix daily scan
-- Frequency depends on configured scan schedule
+- The Netwrix daily scan detects changes
+- Frequency depends on the configured scan schedule
 
 ### 3. Related Objects
 - Folders can have relationships with:
@@ -57,7 +57,7 @@ This document describes the Netwrix customizations for Salesforce types ReportFo
   - Type of modification (add/modify/remove)
 
 ### 7. Metadata Storage
-- XML attachment stores:
+- An XML attachment stores:
   - Folder structure details
   - Access levels for users, groups, and roles
 

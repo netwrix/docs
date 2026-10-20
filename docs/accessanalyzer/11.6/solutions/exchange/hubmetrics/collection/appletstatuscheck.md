@@ -14,7 +14,7 @@ Exchange servers.
 The .AppletStatusCheck Job uses the Script Data Collector.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 

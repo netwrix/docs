@@ -11,24 +11,24 @@ Here is an example using the simplest clean up case:
 - Unused custom fields on Account object
 - No risky dependencies
 
-Using the steps outlined Org Clean Up, we can proceed quickly, efficiently and with confidence.
+Using the steps outlined in Org Clean Up, you can proceed with a clear, repeatable process.
 
 ## Step 1: Identify and Prioritize Targets for Clean Up
 
-We are going to use the out-of-the-box Default Clean Up List View with these filters:
+Use the Default Clean Up List View with these filters:
 
 ![Filters](/images/platgovsalesforce/tech_debt/tech_debt_9.webp)
 
 - Filter on the single Record Type **Objects & Fields** to enable editing the Customizations
   directly from the List View. This filter selects all Objects and their related Fields.
-- Filter for API Names starting with **Account** (for example, **Account.\_**my*custom_field*)
-  limits results to the **Account** object. We could use a similar technique to focus on a specific
+- Filter for API Names starting with **Account** (for example, **Account.\_**your_custom_field)
+  limits results to the **Account** object. Use a similar technique to focus on a specific
   App.
 - Filter on **Salesforce CustomField** to return all Custom Fields.
 - Filter to exclude **Standard** fields. The Salesforce metadata type for all fields is CustomField.
   Platform Governance for Salesforce identifies standard fields and appends **Standard:
   object_name** to the Customization Name so they can be filtered out of your results.
-- In our example, **unused** means _not used within the last six months_, so we finish up with a
+- In this example, **unused** means _not used within the last six months_, so finish with a
   Date Last Used filter.
 
 Specify the fields to show:
@@ -50,7 +50,7 @@ Specify the fields to show:
 ## Step 2: Assess the Risk of Downstream Problems and Add Related Customizations
 
 You now have a list of unused, custom fields on the Account object. Examine the dependencies to
-determine what to do next. For this example, we are going to clean up fields without these
+determine what to do next. For this example, the focus is on fields without these
 complications.
 
 1. Set the **Clean Up Status** on any field without dependencies to **To Be Cleaned Up**. In the
@@ -58,7 +58,7 @@ complications.
    ![Edit icon](/images/platgovsalesforce/tech_debt/edit_icon.webp)
    icon and edit the **Clean Up Status** and other Clean Up Fields. You can select multiple fields
    using the checkboxes to set the values for the group.
-2. For easy reference later, set a project name in the **Clean Up Classification** field such as
+2. To find the group later, set a project name in the **Clean Up Classification** field such as
    _Simple Account Clean Up_. You can filter on this later when you send for approval.
 3. If you have questions, send an email or Chatter request to the owner and set the **Clean Up
    Status** to _Send Request Info Email_ as a reminder you are awaiting a response.
@@ -70,9 +70,7 @@ complications.
    scripts and workflows are still useful, need to be fixed, or cleaned up. What are the scripts or
    workflows doing if there is no data in the field?
 6. As you work through the list, note your findings in the **Clean Up Comments** field.
-7. To keep an unused field, set the **Clean Up Status** to **Ignore**. Alternatively, you can set
-   the **Date Last Used** to a date in the future. Platform Governance for Salesforce will not
-   override the manually set date with an earlier date so you can retain the Customization. To view
+7. To keep an unused field, set the **Clean Up Status** to **Ignore**. Alternatively, set the **Date Last Used** to a date in the future. Platform Governance for Salesforce doesn't override the manually set date with an earlier date, so you can retain the customization. To view
    ignored Customizations, select:
    **Strongpoint** > **Reports** > **Clean Up** > **Customizations Excluded From Clean Up**
 
@@ -97,9 +95,9 @@ Some of the fields may have associated Reports or List Views. If you open the DR
 Customization Record, you can drill into the details to see if removing the field is likely to cause
 a problem. Some things to consider:
 
-- List Views do not track Date Last Used. Be careful cleaning up them up. Reports do track DLU.
+- List Views don't track Date Last Used. Be careful cleaning up them up. Reports do track DLU.
 - Cleaning up fields used in **Report Filters** can change the scope of the report. You can check
-  whether the field is used in the report filter by looking at the **Search Filters** check box
+  whether the field is used in the report filter by looking at the **Search Filters** checkbox
   field.
 - Fields on actively used Reports should have **Clean Up Status** set to **Under Investigation** and
   a plan for cleaning up the Report documented in the **Clean Up Comments** field. You might want to
@@ -149,15 +147,13 @@ approval process. Related Customizations can be grouped and managed using a **Ch
 
    The Impact Analysis categorizes Customizations into the following sections:
    - **Can Be Safely Deleted or Modified**
-   - **Cannot Be Safely Deleted or Modified**
+   - **Can't Be Safely Deleted or Modified**
    - **Inactive Customizations**
 
    This analysis identifies dependencies such as references in reports, scripts, workflows, or other
    metadata that could be affected by the clean up.
 
-8. Review the Impact Analysis results carefully. If Customizations appear under
-   **Cannot Be Safely Deleted or Modified**, further investigation or remediation may be required
-   before proceeding.
+8. Review the Impact Analysis results. If customizations appear under **Can't Be Safely Deleted or Modified**, investigate or remediate them before proceeding.
 
 9. When you are satisfied with the scope and impact of the clean up, submit the Change Request for
    approval.
@@ -170,10 +166,7 @@ You can add additional approvers (beyond what is required for the policy) to the
 - Manually specify one or more approvers in the **Additional Approvers** field.
 :::
 
-If you are not using Change Enablement, you can export the results to Excel by clicking the **Export
-To Excel** on the Change Request **Impact Analysis** tab. You can also create a report of
-Customization Records (there are third party apps that enable List View export). You must double
-check the impact and manually route your list for approval.
+To export results without Change Enablement, click **Export To Excel** on the Change Request **Impact Analysis** tab. You can also create a report of Customization Records (third-party apps can enable List View export). Verify the impact and manually route your list for approval.
 
 ## Step 5: Archive the Customization Definition / Data
 
@@ -183,21 +176,13 @@ the fields.
 
 ## Step 6: Clean Up Approved Customizations
 
-As with any change, you are strongly encouraged to clean up the fields in a sandbox first, run your
-test sets, and review the changes with the affected business owners prior to making the change in
-production.
+Clean up the fields in a sandbox first, run your test sets, and review the changes with the affected business owners before making the change in production.
 
-You currently cannot delete items using Platform Governance for Salesforce tools. To actually remove
-objects in bulk, you can use
-[Destructive Change Sets](https://developer.salesforce.com/docs/atlas.en-us.daas.meta/daas/daas_destructive_changes.htm).
-You can also remove them manually. We are working with customers to understand the controls required
-to automate this process, taking into account the judgment required to safety proceed in various
-sized orgs.
+Platform Governance for Salesforce tools don't support deleting items. To remove objects in bulk, use [Destructive Change Sets](https://developer.salesforce.com/docs/atlas.en-us.daas.meta/daas/daas_destructive_changes.htm). You can also remove them manually.
 
 ## Step 7: Validate Your Change Approval Process Was Followed
 
-To ensure that your change approval process is being followed, there is an **Unresolved
-Non-Compliant Changes** report. This report summarizes all changes where a Change Request was
+Use the **Unresolved Non-Compliant Changes** report to confirm that your change approval process is being followed. This report summarizes all changes where a Change Request was
 required by policy, but either not created or not approved. The report includes these details:
 
 - Customization Name and API Name

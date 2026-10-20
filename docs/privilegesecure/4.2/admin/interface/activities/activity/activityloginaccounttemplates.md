@@ -74,7 +74,7 @@ If `int numCharactersReturned` exceeds string `stringToManipulate` then the enti
 
 `%first(jsmith,3)/first%`
 
-The above example returns: "jsm"
+This example returns: "jsm"
 
 A common use case for this function is to manipulate Privilege Secure Login Account Template masks
 such as `%samaccountname%`, to change how what the Login Account Template evaluates to when an
@@ -84,7 +84,7 @@ For example:
 
 `%first(%samaccountname%,3)/first%`
 
-In the example above, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
+In the preceding example, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
 of the `first()` function is "jsm"
 
 ### substr()
@@ -114,11 +114,11 @@ supplied string, then an empty string is returned.
 
 `%substr(jsmith,2)/substr%`
 
-The above example returns "mith"
+This example returns "mith"
 
 `%substr(jsmith,-2)/substr%`
 
-The above example returns "th"
+This example returns "th"
 
 A common use case for this function is to manipulate Privilege Secure Login Account Template masks
 such as "`%samaccountname%`" to change how what the Login Account Template evaluates to when an
@@ -128,7 +128,7 @@ For example:
 
 `%substr(%samaccountname%,2)/substr%`
 
-In the example above, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
+In the preceding example, if "`%samaccountname%`" normally evaluates to "jsmith" then the return value
 of the `substr()` function is "mith"
 
 ### replace()
@@ -154,7 +154,7 @@ The string that replaces the newString
 
 `%replace(jsmith,smith,jones)/replace%`
 
-The above example returns "jjones"
+This example returns "jjones"
 
 ### trim()
 
@@ -180,7 +180,7 @@ empty string is returned.
 
 `%trim(jsmith-suffix,7)/trim%`
 
-The above example returns "jsmith"
+This example returns "jsmith"
 
 A common use case for this function is to remove known suffixes from Privilege Secure Login Account
 Template masks such as "`%samaccountname%`" to change what the Login Account Template evaluates to

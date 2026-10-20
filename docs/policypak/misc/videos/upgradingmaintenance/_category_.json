@@ -1,0 +1,9 @@
+{
+  "label": "Upgrading and Maintenance",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

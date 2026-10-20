@@ -10,36 +10,36 @@ The following learning paths provide Partner certification for Sales Professiona
 
 * Data Security
     * AI Governance
-        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix 1Secure Pro Sales Professional](./1secure-pro.md)
         * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
     * Data Security Posture Management
-        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix 1Secure Pro Sales Professional](./1secure-pro.md)
         * [Netwrix Data Security Posture Management Solution Sales Professional](./data-security-posture-management.md)
         * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
     * Data Access Governance
-        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md) 
+        * [Netwrix 1Secure Pro Sales Professional](./1secure-pro.md)
     * Data Loss Prevention
-        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix 1Secure Pro Sales Professional](./1secure-pro.md)
         * [Netwrix Endpoint Protector Sales Professional](./endpoint-protector.md)
     * Data Discovery & Classification
-        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix 1Secure Pro Sales Professional](./1secure-pro.md)
 * Identity Security
     * Identity Threat Detection & Response
-        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix 1Secure Pro Sales Professional](./1secure-pro.md)
         * [Netwrix Identity Threat Detection & Response Solution Sales Professional](./identity-threat-detection-response.md)
     * Identity Governance & Administration
         * [Netwrix Identity Manager Sales Professional](./identity-manager.md)
     * Identity Security Posture Management
-        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix 1Secure Pro Sales Professional](./1secure-pro.md)
         * [Netwrix PingCastle Sales Professional](./pingcastle.md)
     * Privileged Access Management
         * [Netwrix Privileged Access Management Solution Sales Professional](./privileged-access-management.md)
     * Directory Security
-        * [Netwrix 1Secure Sales Professional](./1secure-dspm.md)
+        * [Netwrix 1Secure Pro Sales Professional](./1secure-pro.md)
         * [Netwrix Password Secure Sales Professional](./password-secure.md)
         * [Netwrix PingCastle Sales Professional](./pingcastle.md)
 * Other Certifications
     * [Netwrix Change Tracker Sales Professional](./change-tracker.md)
-    * [Netwrix Platform Governance for NetSuite Sales Professional](./platform-governance-netsuite.md)
-    * [Netwrix Platform Governance for Salesforce Sales Professional](./platform-governance-salesforce.md)
     * [Netwrix PolicyPak Sales Professional](./policypak.md)
+    * [Netwrix Strongpoint for NetSuite Sales Professional](./strongpoint-for-netsuite.md)
+    * [Netwrix Strongpoint for Salesforce Sales Professional](./strongpoint-for-salesforce.md)

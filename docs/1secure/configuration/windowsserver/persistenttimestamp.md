@@ -6,8 +6,7 @@ sidebar_position: 90
 
 # Configure Enable Persistent Time Stamp Policy
 
-The Enable Persistent Time Stamp policy must be enabled on the target servers to track the
-shutdowns.
+Enable the Enable Persistent Time Stamp policy on the target servers to track shutdowns.
 
 ## Manual Configuation
 

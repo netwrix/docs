@@ -39,7 +39,7 @@ topic for additional information.
 **Troubleshooting Dell Unity Denied Access Errors**
 
 If there are folders to which the credential is denied access, it is likely that the Backup
-Operators group does not have the “Back up files and directories” right. In that case, it is
+Operators group doesn't have the “Back up files and directories” right. In that case, it is
 necessary to assign additional the “Back up files and directories” right to those groups or to
 create a new local group, using Computer Management from a Windows server. Then assign rights to it
 using the CelerraManagementTool.msc plugin, which is available to Dell customers. For further
@@ -104,7 +104,7 @@ are required for communication between the Agent server and the Netwrix Activity
 
 The Windows firewall rules need to be configured on the Windows server, which require certain
 inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+port range, which can't be specified via an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 

@@ -6,15 +6,13 @@ sidebar_position: 40
 
 # Overview
 
-Netwrix 1Secure provides a convenient search interface for investigating incidents, suspicious
-activities, collected across the entire IT infrastructure. Netwrix 1Secure allows creating flexible
-searches in order to receive precise results on _who_ changed _what_, _when_, or _where_, for
-example.
+Netwrix 1Secure provides a convenient search interface for investigating incidents and suspicious
+activities across the entire IT infrastructure. Use flexible searches to get precise results on _who_ changed _what_, _when_, or _where_.
 
 Based on your filter preferences, you can create your customized report or choose the report from
 the list with the predefined filter settings.
 
-This functionality is currently available for the following data sources:
+This functionality is available for the following data sources:
 
 - Active Directory (on-premise)
 - Azure AD
@@ -22,8 +20,8 @@ This functionality is currently available for the following data sources:
 - Exchange Online
 - SharePoint Online
 
-Netwrix 1Secure also provides possibility for generating state-in-time reports. This functionality
-is currently available for the following connectors:
+Netwrix 1Secure also lets you generate state-in-time reports. This functionality
+is available for the following connectors:
 
 - Active Directory State
 - Microsoft Entra ID State

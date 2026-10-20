@@ -13,9 +13,8 @@ moving, and renaming file system contents. It is available with a special Enterp
 license.
 
 :::warning
-Be careful when using this Action Module. Make sure that only the changes required are
-applied and only to those target systems desired. Actions perform their functions on all rows in a
-table.
+Be careful when using this Action Module. Apply only the changes you need, and only to the target
+systems you intend. Actions perform their functions on all rows in a table.
 :::
 
 
@@ -61,12 +60,12 @@ is present. Otherwise, applets are deployed to `C:\Program Files (x86)\STEALTHbi
 Individual action modules, including File System Action Module, may have their own column
 requirements. To take action on a file system resource, the source table must contain a column with
 values to uniquely identify it. File System resources correspond to rows in a Enterprise Auditor
-table. File System attributes correspond to columns. Once the source table has been scoped, use the
+table. File System attributes correspond to columns. After you scope the source table, use the
 Target page to specify the field that identifies the target attribute along with any environmental
 variables.
 
-These columns are required to use the File System Action Module. Otherwise, errors may occur upon
-execution of the action and with analysis and reports downstream.
+The File System Action Module requires these columns. Otherwise, errors may occur upon execution of
+the action and with analysis and reports downstream.
 
 | Required Columns | Description                                                                                                                  |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -75,11 +74,11 @@ execution of the action and with analysis and reports downstream.
 
 :::tip
 Remember, the individual File System actions may have their own column requirements in addition to
-the above. These columns are made available through the File System Action Module wizard.
+these. The File System Action Module wizard makes these columns available.
 :::
 
 
-The Operations page lists the operations that may be performed by the File System Action Module.
+The Operations page lists the operations that the File System Action Module can perform.
 Each operation has its own source table column requirements as follows:
 
 | Operation                       | Column requirements                                                                                                                                                     |

@@ -4,6 +4,7 @@ description: "Global Rights"
 sidebar_position: 30
 ---
 
+
 # Global Rights
 
 From this section, you can manage the entire system and specify what rights and settings apply
@@ -73,7 +74,8 @@ Current list of all Device Categories:
 - Android Smartphone (Media Transfer Protocol)
 - Chip Card Device
 - Biometric Devices
-- Audio Device (Output)
+- Audio Card Output
+- Audio Card Input
 
 ![Device Type configuration](globalrights.webp)
 
@@ -91,8 +93,8 @@ the wired network isn't present.
 :::
 
 :::note
-Audio Device Control for sound cards is supported only on Windows and applies only to the audio output channel. Audio input channels, whether analog or digital, aren't covered.
-::: 
+Audio Card Output and Audio Card Input are supported on Windows and macOS. Audio Card Input provides Allow Access and Deny Access rights.
+:::
 
 :::note
 Occasionally, the EPP system may display a limitation where certain webcams can activate in Zoom meetings, even when you set rights to DENY in computer settings. To enforce proper rights after configuration, you must restart the PC.

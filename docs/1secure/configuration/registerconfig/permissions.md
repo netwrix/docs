@@ -28,7 +28,7 @@ Administrator role for Microsoft Entra ID state collection.
 | Office 365 Exchange Online | Exchange<ul><li>Exchange.ManageAsApp – Manage Exchange As Application This permission is required to collect state-in-time reports.</li></ul>                                                                                                          |
 
 :::note
-To access the Office 365 Exchange Online API, click the **APIs my organization uses** tab
+To access the Office 365 Exchange Online API, click the **APIs your organization uses** tab
 on the Request API Permissions pane and search this API by entering its name in the search box.
 :::
 

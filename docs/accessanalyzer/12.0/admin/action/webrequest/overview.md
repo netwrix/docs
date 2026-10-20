@@ -7,12 +7,12 @@ sidebar_position: 110
 # WebRequest Action Module
 
 The Web Request action module provides methods of applying bulk changes to REST endpoints. At this
-stage, target endpoints should be identified to invoke web requests against. This wizard allows the
-definition of requests to perform.
+stage, identify the target endpoints to invoke web requests against. This wizard lets you define
+requests to perform.
 
 :::warning
-Ensure that only the changes required are applied and only those target systems desired
-when using this action module.
+When using this action module, apply only the required changes, and only to the target
+systems you want.
 :::
 
 

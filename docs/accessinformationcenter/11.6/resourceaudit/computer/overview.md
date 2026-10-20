@@ -11,7 +11,7 @@ by searching for computer objects on the Home page. See the
 [Search Features](/docs/accessinformationcenter/11.6/resourceaudit/navigate/search.md)
 topic for additional information. The computer object being reviewed is identified in the upper-left
 corner. The data within these reports is collected by the Enterprise Auditor solutions which provide
-data to the Resource reports. See the desired solution topic in the
+data to the Resource reports. See the solution you want topic in the
 [Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 for additional information.
 

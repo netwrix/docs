@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # Multiple Environment Deployment Tracking
 
-A best practice is to create change requests in your production account so that they are not lost,
-they have an audit trail and approvals can be shown.
+Create change requests in your production account so that they aren't lost,
+they have an audit trail, and approvals are recorded.
 
 Here is the overall process flow for multiple deployment tracking:
 
@@ -27,16 +27,16 @@ Here is the overall process flow for multiple deployment tracking:
     - **Change Request Name**: Enter a meaningful name.
     - Select the **Change Type**.
     - **Change Overview**: Enter a meaningful description.
-    - Add **Customizations**. If you add **Proposed Customizations** they do not show up on the
-      change log as they do not exist in both environments.
-    - Add **Additional Approver(s)**.
+    - Add **Customizations**. If you add **Proposed Customizations**, they don't appear on the
+      change log because they don't exist in both environments.
+    - Add one or more **Additional Approvers**.
 
 3. **Save** the change request.
 4. Click **Submit for Approval**
 
 ## Push the Change Request
 
-Once the change request is approved:
+After the change request is approved:
 
 1. Click **Sync CR**.
 
@@ -48,7 +48,7 @@ Once the change request is approved:
 
     ![Enter your credentials](/images/platgovsalesforce/release_management/push_pull_popup.webp)
 
-4. Click **Test Connection** to make sure your credentials are correct. If your credentials are
+4. Click **Test Connection** to ensure your credentials are correct. If your credentials are
    not correct, click **Save Credentials** and edit.
 5. Make the necessary changes on your change request in your development/testing environment and
    **Save**.
@@ -58,7 +58,7 @@ Once the change request is approved:
 1. On the updated change request, click **Sync CR**.
 2. Choose a **Production** environment.
 3. Add your **Credentials**.
-4. Click **Test Connection** to make sure your credentials are correct. If your credentials are not
+4. Click **Test Connection** to ensure your credentials are correct. If your credentials aren't
    correct, click **Save Credentials** and edit.
 5. Click **Push**.
 6. Click **Push CR**.
@@ -70,8 +70,8 @@ After the push, the Change Request in Production has a related deployment record
 ## Create the Deployment Record
 
 1. Open the **Related Lists** tab on your change request.
-2. Click **Run Compare Tool**. Refer to
-   [Compare Environments](/docs/platgovsalesforce/tools/environment_comparison.md) for more information.
+2. Click **Run Compare Tool**. See
+   [Compare Environments](/docs/platgovsalesforce/tools/environment_comparison.md) for instructions.
 
     ![Run the Compare Environment tool](/images/platgovsalesforce/release_management/apex_enviro_comparison.webp)
 
@@ -97,13 +97,13 @@ These steps can be completed after the deployment record is approved.
     This creates a package to:
 
     - **Check Dependencies**: Use to check what has been referenced.
-    - **Validate Customizations**: Use to check the deployment is going to work. It simulates your
+    - **Validate Customizations**: Use to check the deployment before it runs. It simulates your
       deployment.
     - **Deploy Retrieved Customizations**: Use to deploy your customizations when you are ready to
       proceed.
 
 4. Check your dependencies and validate your customizations.
-5. Click **Deploy Retrieved Customizations** to start the deployment. This may take some time, since
+5. Click **Deploy Retrieved Customizations** to start the deployment. This can take some time because
    it runs the test cases into the target environment.
 
     ![Run the Deployment](/images/platgovsalesforce/release_management/deployment_tool-4.webp)
@@ -116,6 +116,6 @@ When the deployment process is finished:
 
 1. Check the [Deployment Logs](/docs/platgovsalesforce/releasemanagement/deployment_logs.md).
 2. Fix any errors and repeat the deployment if needed.
-3. Once the deployment is successful, open the change request and set the status to **Completed**.
+3. After the deployment is successful, open the change request and set the status to **Completed**.
 
     ![Complete the Process](/images/platgovsalesforce/release_management/deployment_tool-5.webp)

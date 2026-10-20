@@ -1,0 +1,20 @@
+---
+title: "Configure Health Alerting"
+description: "Configure Health Alerting"
+sidebar_position: 50
+---
+
+# Configure Health Alerting
+
+On this step, configure email settings for health reporting and select immediate health alerts.
+
+![initial_config_health](/images/dataclassification/5.8/install/initialconfiguration/initial_config_health.webp)
+
+Complete the following fields:
+
+| Setting                                       | Description                                                                                                                                                                                                               |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Would you like to configure Health Reporting? | Select Setup now if you want to receive health alerts. You can do it later in the communication settings area. See [System Health](/docs/dataclassification/5.8/dashboards.md) for details on health monitoring.                |
+| Who should the email be sent from?            | Select a user registered in the Netwrix Data Classification administrative web console. Alternatively, use Specific recipients to add one or more external email addresses.                 |
+| What sort of immediate alerts should be sent? | Select the appropriate alert level for the emails you want to receive: don't receive any alerts at all, only receive alerts for errors, or get emails for both errors and warnings. See [System Health](/docs/dataclassification/5.8/dashboards.md) for details on alert levels.        |
+| Should a daily health summary be sent?        | Select whether you want to receive a daily summary on the current health status of NDC.                                                                                                                                                   |

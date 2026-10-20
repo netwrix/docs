@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Assign Permission To Read the Registry Key
 
-This permission is required only if the account selected for data collection is not a member of the
+This permission is required only if the account selected for data collection isn't a member of the
 Domain Admins group. This permission should be assigned on each domain controller in the audited
 domain, so if your domain contains multiple domain controllers, it is recommended to assign
 permissions through Group Policy, or automatically using
@@ -16,8 +16,6 @@ manually, use the Registry Editor snap-in or the Group Policy Management console
 information.
 
 ## Assign Permission Via the Registry Editor Snap-in
-
-Follow the steps to assign permission via the Registry Editor snap-in.
 
 **Step 1 –** On your target server, open Registry Editor: navigate to **Start > Run** and type
 _"regedit"_.
@@ -35,8 +33,6 @@ Set\Services\EventLog\Security_.
 _HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv_ registry key.
 
 ## Assign Permission Using the Group Policy Management Console
-
-Follow the steps to assign permission using the Group Policy Management console.
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools

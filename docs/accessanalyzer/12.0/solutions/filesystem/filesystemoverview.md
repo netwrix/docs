@@ -9,8 +9,8 @@ sidebar_position: 130
 The FileSystemOverview job provides insight into all targeted file servers. It is dependent on data
 collected by the [File System Access Auditing](collection/overview.md#file-system-access-auditing)
 components and the components of the [0.Collection Job Group](/docs/accessanalyzer/12.0/solutions/filesystem/collection/overview.md). It also
-depends on the running of the sub-job groups within the solution. If only select sub-job groups have
-been run, there will be blank sections in the overview report.
+depends on the running of the sub-job groups within the solution. If you run only select sub-job
+groups, the overview report has blank sections.
 
 ![FileSystemOverview Job in the Jobs Tree](/images/accessanalyzer/12.0/solutions/filesystem/filesystemoverviewjobstree.webp)
 
@@ -23,7 +23,7 @@ View the analysis tasks by navigating to the **FileSystem** > **FileSystemOvervi
 node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

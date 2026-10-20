@@ -26,7 +26,7 @@ Using Directory Manager, you can manage the following three kinds of groups:
 
 An unmanaged group, also called a static group, is a group you normally create in a directory, for
 example, by using the Active Directory Users and Computers console. Though such groups can be
-created using the Directory Manager portal and Management Shell, Directory Manager does not support
+created using the Directory Manager portal and Management Shell, Directory Manager doesn't support
 dynamic updates to them. Any changes to the membership have to be updated manually.
 
 ### Smart Groups
@@ -38,7 +38,7 @@ applies the defined rules to the directory and fetches matching records to updat
 memberships.
 
 In this way, Smart Groups are automatically updated whenever the user information changes in the
-directory. This automated group management allows administrators to easily maintain large
+directory. This automated group management allows administrators to maintain large
 distribution lists and security groups without having to manually add or remove members.
 
 ### Dynasties
@@ -115,7 +115,7 @@ you can send emails (via a mail server) to a group rather than individually to e
 group.
 
 Distribution groups can be used only with email applications, such as Microsoft Exchange. These
-groups are not security-enabled, which means that they cannot be listed in discretionary access
+groups aren't security-enabled, which means that they can't be listed in discretionary access
 control lists (DACLs). If you need a group for controlling access to shared resources, create a
 security group.
 
@@ -134,7 +134,7 @@ security groups, you can:
   determine who can access the resource and the level of access, such as Full Control or Read-only.
 
 Security groups can also be used as a distribution group in Exchange. These are known as
-security-enabled distribution groups.
+security-enabled distribution groups. You can also use security groups as a distribution group in Exchange.
 
 ## Group Scope
 
@@ -145,7 +145,7 @@ functional level of the domain in which it resides.
 A group’s scope determines:
 
 - the domains from where members can be added to the group
-- the domains where the group can be used to grant permissions
+- the domains in which you can grant permissions using the group
 - the domains where the group can be nested in other groups
 
 A group can be of universal, global, or domain local scope.
@@ -157,20 +157,20 @@ accounts to groups with global scope, and then nest these groups within groups t
 scope. When you use this strategy, any membership changes in the groups that have global scope do
 not affect the groups with universal scope.
 
-Do not change the membership of a group with universal scope frequently, because membership changes
+Don't change the membership of a group with universal scope frequently, because membership changes
 cause the entire membership of the group to be replicated to every global catalog in the forest.
 
 ### Global
 
 Use groups with global scope to manage directory objects that require daily maintenance, such as
-user and computer accounts. Because groups with global scope are not replicated outside their own
+user and computer accounts. Because groups with global scope aren't replicated outside their own
 domain, you can change accounts in a group having global scope frequently without generating
 replication traffic to the global catalog.
 
 As a best practice, you should use global groups or universal groups rather than domain local groups
 when you specify permissions on domain directory objects that are replicated to the global catalog.
 
-A global group can contain users, computers, and groups from the same domain but not universal
+A global group can contain users, computers, and groups from the same domain but can't include universal
 groups.
 
 ### Domain Local
@@ -189,7 +189,7 @@ A group’s security type determines how non-members can access the group and be
 Directory Manager provides three security types:
 
 - Private - to restrict access to the group to members selected by the group owner. Only the owner
-  can add or remove members from the group. Requests to join or leave the group cannot be submitted.
+  can add or remove members from the group. Requests to join or leave the group can't be submitted.
 - Semi-Private - to restrict access to the group to members selected by the group owner. However,
   requests to join or leave the group can be sent to the owner.
 - Public - to allow all users to access the group. Users can join or leave the group at will and do

@@ -9,9 +9,9 @@ sidebar_position: 40
 Change requests are the method to plan, analyze, track, and approve changes. You can create different
 types of Change Requests to match the change you want to manage. Here are two options:
 
-- **Customization** Change request is used for Metadata changes, such as
+- **Customization** — handles Metadata changes, such as
   [Customizations](/docs/platgovsalesforce/customizations/customizations_overview.md).
-- **Data Record** - Change request is used for Data Changes to Revenue Cloud/
+- **Data Record** — handles Data Changes to Revenue Cloud/
   [CPQ](/docs/platgovsalesforce/changemanagement/datatracking/enhanced_cpq_support.md).
 
 :::note
@@ -29,7 +29,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
     - **Change Request Type**: Customizations for metadata changes and Data Records for data.
     - **Parent Change Request**: enter an optional parent change request if this is part of a bigger
       change.
-    - **Change Overview**: add a summary of the desired changes.
+    - **Change Overview**: add a summary of the changes you want to make.
     - **Change Type**: select the type from the list. **Minor** is the default.
     - **Is Release**: check if this change request represents a release. The customizations from all
       the child change requests are rolled into this release for deployment.
@@ -40,15 +40,15 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
 
         ![Add an existing customization to a change request](/images/platgovsalesforce/change_management/change_request_new4_light.webp)
 
-    - To search for existing Customizations, you can use different filters such as **Salesforce Type**, **Package**, **Last Modified By**, or search directly by **Name**.
+    - To search for existing customizations, use different filters such as **Salesforce Type**, **Package**, **Last Modified By**, or search directly by **Name**.
 
         ![Enter filters to search for customizations](/images/platgovsalesforce/change_management/change_request_new5_light.webp)
 
-    - User can search and select multiple customizations from the list.
+    - You can search and select multiple customizations from the list.
     - Once finished, click **Confirm Selection**.
 
 
-5. You can also enter the **Proposed Customizations** at this point.
+5. You can also enter the **Proposed Customizations** now.
 
     - Click **Add** button in the Proposed panel to add **Proposed Customizations** to the change request.
 
@@ -57,7 +57,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
         - Enter the **API Name** and **Salesforce Metadata Type**. Click **+** to add additional
       proposed customizations. This can be used in conjunction with customizations that already exist.
       All **Customizations** and **Proposed Customizations** are evaluated to determine the change
-      level. The highest change level is used for the change request.
+      level. The change request uses the highest change level found.
     - Once finished, click **Confirm Selection**.
 
     :::tip Troubleshooting: Incorrect API Name Format in Proposed Customizations
@@ -78,7 +78,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
     - **ValidationRule**  
       `Object_Name__c.Validation_Rule_Name`
 
-    Validations are implemented for multiple Salesforce Types, so using an incorrect format will cause the request to fail.
+    Validations are implemented for multiple Salesforce Types, so using an incorrect format causes the request to fail.
 
     **Workaround**
 
@@ -88,7 +88,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
 
     - Filter an existing List View or create a new one.
 
-    - Select the desired Salesforce Type.
+    - Select the Salesforce Type you want.
 
     - Add the **API Name** column to the view.
 

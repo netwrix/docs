@@ -97,7 +97,7 @@ is the same as what we are calling "Enterprise Full" here.
 
 - Upgrade your MMC snap-in to the latest version first.
 - Perform these steps:
-  [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md)
+  [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md)
 
   :::note
   Using the PolicyPak "LT" tool to install licenses is not recommended,
@@ -151,7 +151,7 @@ we recommend updating to the latest MMC snap-in.
 
 
 - Get the GUIDs for a license you wish to expressly unlicensed here:
-  [What CSEs are contained within PolicyPak, what are their CSE GUIDs, and in what release did they appear?](/docs/policypak/gettingstarted/misc/knowledgebase/troubleshooting/guids.md)
+  [What CSEs are contained within PolicyPak, what are their CSE GUIDs, and in what release did they appear?](/docs/policypak/misc/knowledgebase/troubleshooting/guids.md)
 
 ## How can I request Enterprise Full keys (which will also have an Expiry date until the end of my term?)
 

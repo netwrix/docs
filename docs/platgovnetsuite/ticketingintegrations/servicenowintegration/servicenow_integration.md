@@ -9,7 +9,7 @@ sidebar_position: 20
 ## Features and Benefits
 
 With Platform Governance for NetSuite's integration of **NetSuite** and **ServiceNow**, you can use
-the **ServiceNow** tool while we automatically add and track the associated changes in your NetSuite
+the **ServiceNow** tool while Platform Governance for NetSuite automatically adds and tracks the associated changes in your NetSuite
 account. The integration eliminates the need for double entry in the two systems.
 
 The ServiceNow integration automatically syncs ServiceNow with NetSuite:
@@ -28,10 +28,10 @@ Change Managers and System Administrators quickly realize the integration benefi
 
 ## Technical Considerations
 
-The following should be considered prior to deploying the ServiceNow integration:
+The following should be considered before deploying the ServiceNow integration:
 
 1. The integration is a client script that can be enabled or disabled by form, user, or role. It has
-   high order value to ensure it is the last thing to run and does not interrupt any other process.
+   high order value to ensure it is the last thing to run and doesn't interrupt any other process.
 2. All functions are self-executing, complying with ServiceNow's best practices.
 3. No DOM manipulation or global scripts are deployed.
 4. No external libraries are needed. It is plain JavaScript.

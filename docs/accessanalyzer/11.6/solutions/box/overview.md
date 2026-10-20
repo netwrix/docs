@@ -7,8 +7,8 @@ sidebar_position: 80
 # Box Solution
 
 The Box solution set contains jobs to provide visibility into Box access rights, policies,
-configurations, activities, and more, ensuring you never lose sight or control of your critical
-assets residing in Box.
+configurations, activities, and more, so you can monitor and control your critical assets residing in
+Box.
 
 **Supported Platforms**
 
@@ -23,7 +23,7 @@ topic for additional information.
 **Location**
 
 The Box Solution requires a special Enterprise Auditor license. It can be installed from the Instant
-Job Wizard. Once it has been installed into the Jobs tree, navigate to the solution: **Jobs** >
+Job Wizard. After it has been installed into the Jobs tree, navigate to the solution: **Jobs** >
 **Box**.
 
 ![Box Solution in the Jobs Tree](/images/accessanalyzer/11.6/solutions/box/jobstree.webp)
@@ -41,7 +41,7 @@ an organization's Box environment.
 The Box Solution has the following job groups and jobs:
 
 - [0.Collection Job Group](/docs/accessanalyzer/11.6/solutions/box/collection/overview.md)
-  – Collects the data which will be further analyzed in order to provide details on Box access
+  – Collects the data which will be further analyzed to provide details on Box access
   rights, policies, configurations, activities, and content
 - [1.Activity Job Group](/docs/accessanalyzer/11.6/solutions/box/activity/overview.md)
   – Identifies long term trends of activity providing insight into user activity, usage statistics,
@@ -50,7 +50,7 @@ The Box Solution has the following job groups and jobs:
   – Analyzes and summarizes the content of the Box environment, highlighting users with the most
   content as well as what type of content exists
 - [Box_Access Job](/docs/accessanalyzer/11.6/solutions/box/box_access.md)
-  – Analyzes access granted to users and groups in an organization's Box environment in order to
+  – Analyzes access granted to users and groups in an organization's Box environment to
   report on effective access rights, file-level permissions, and inactive access rights that can be
   revoked
 - [Box_GroupMembership Job](/docs/accessanalyzer/11.6/solutions/box/box_groupmembership.md)

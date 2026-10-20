@@ -8,7 +8,7 @@ sidebar_position: 20
 
 You can export alert data displayed on the Alerts interface to a CSV file.
 
-Follow the steps to export the alerts data.
+To export the alerts data:
 
 **Step 1 –** Click **Alerts** in the left pane to launch the Alerts interface.
 
@@ -20,7 +20,7 @@ Alerts Export window is displayed.
 **Step 3 –** Export options include:
 
 - All – Exports all alert data
-- Currently Displayed – Exports alert data according to the filters set in the data grid on the
+- Displayed – Exports alert data according to the filters set in the data grid on the
   Alerts interface
 - Data Range – Exports alert data generated during the time period you specify in the **From** and
   **To** boxes

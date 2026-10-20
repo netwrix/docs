@@ -10,8 +10,8 @@ The PasswordSecurity Data Collector compares passwords stored in Active Director
 passwords in the Netwrix dictionary or custom dictionaries. The PasswordSecurity Data Collector also
 checks for common misconfigurations with passwords in Active Directory.
 
-The PasswordSecurity Data Collector is a core component of Enterprise Auditor, but it has been
-preconfigured within the Active Directory Solution. While the data collector is available with all
+The PasswordSecurity Data Collector is a core component of Enterprise Auditor, and the Active
+Directory Solution includes it as a preconfigured component. While the data collector is available with all
 Enterprise Auditor license options, the Active Directory Solution is only available with a special
 Enterprise Auditor license. See the
 [Active Directory Solution](/docs/accessanalyzer/11.6/solutions/activedirectory/overview.md)

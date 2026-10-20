@@ -115,7 +115,7 @@ For example:
 }
 ```
 
-**Step 3 –** If edits were made, remove the `sbpam-node.crt` file from the following location using the command below as an administrator:
+**Step 3 –** If edits were made, remove the `sbpam-node.crt` file from the following location using the following command as an administrator:
 
 ```
 del C:\ProgramData\Stealthbits\PAM\tls\certs\sbpam-node.crt
@@ -152,7 +152,7 @@ default location is `C:\ProgramData\Stealthbits\PAM\ProxyService`.
 }
 ```
 
-**Step 3 –** If there was an edit and `sbpam-node.crt` was created, delete the file on the remote proxy server using the command below.
+**Step 3 –** If there was an edit and `sbpam-node.crt` was created, delete the file on the remote proxy server using the following command.
 
 ```
 del C:\ProgramData\Stealthbits\PAM\tls\certs\sbpam-node.crt

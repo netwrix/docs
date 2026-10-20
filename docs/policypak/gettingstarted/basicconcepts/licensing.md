@@ -11,7 +11,7 @@ information about Active Directory and Intune.
 
 :::note
 For a video overview of the process, watch this tutorial:
-[How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/requestall/licenserequestkey.md)
+[How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/licenserequestkey.md)
 :::
 
 
@@ -235,7 +235,7 @@ You may receive multiple license files for PolicyPak:
 To deploy your licenses, you can use the following:
 
 Use these key installation instructions (which demonstrate Active Directory, SCCM, and MDM methods):
-[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md)
+[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md)
 
 ## Licensing PolicyPak Through PolicyPak Cloud
 

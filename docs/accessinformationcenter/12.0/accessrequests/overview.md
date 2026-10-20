@@ -11,9 +11,9 @@ or Administrator role (to be referred to as Request Administrators) can manage t
 Access Requests workflow through the Access Information Center. This workflow provides a way for
 domain users to request access to resources or membership in groups being managed through the Access
 Information Center. It also enables the assigned owners to respond to those requests directly,
-granting or denying the request without involving an IT Team member.
+granting, or denying the request without involving an IT Team member.
 
-For the purpose of the Access Information Center, a “resource” refers to the file system shared
+In the Access Information Center, a “resource” refers to the file system shared
 folders, SharePoint sites, Active Directory (AD) groups, AD distribution lists, and/or local
 Administrators groups.All data available within the Access Information Center is collected by
 Netwrix Access Analyzer (formerly Enterprise Auditor) according to the targeted environments.
@@ -40,7 +40,7 @@ Information Center is located. Domain users with an Access Information Center us
 the Your Access portal by clicking the **Manage Your Access** link in the Your Links section of the
 Home page. Domain users without an Access Information Center user role who are assigned as resource
 owners navigate to the Your Access portal with the My Access link in the Owner portal. Domain users
-without an Access Information Center role and who are not assigned resource ownership are directed
+without an Access Information Center role and who aren't assigned resource ownership are directed
 to the Your Access portal at login. See the
 [Your Access Portal Overview](/docs/accessinformationcenter/12.0/youraccessportal/overview.md) topic for additional information.
 
@@ -87,7 +87,7 @@ Prerequisites:
 
 Workflow:
 
-**Step 1 –** Notify owners of their responsibilities prior to enabling Self-Service Access Requests.
+**Step 1 –** Notify owners of their responsibilities before enabling Self-Service Access Requests.
 
 **Step 2 –** Notify domain users of the Your Access portal for submitting Self-Service Access
 Requests.

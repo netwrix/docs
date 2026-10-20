@@ -6,11 +6,11 @@ sidebar_position: 80
 
 # Configuring the Web Console to use ADFS
 
-The Access Analyzer Webserver and Access Information Center are able to support Single-Sign-On (SSO)
+The Access Analyzer Webserver and Access Information Center can support Single-Sign-On (SSO)
 leveraging WSFederation with SAML tokens. This guide contains steps for implementing SSO using
 Active Directory Federation Services (ADFS).
 
-Follow the steps to configure the Web Console to use ADFS authentication:
+Configure the Web Console to use ADFS authentication:
 
 :::note
 A certificate from the ADFS server is required. Confer with a PKI administrator to
@@ -21,7 +21,7 @@ determine which certificate method will conform to the organization's security p
 **Step 1 –** Import the certificate for the ADFS server onto the hosting server using the
 Certificate Management MMC snap-in.
 
-- If used, self-signed certificates will also need to be imported
+- If used, also import self-signed certificates
 
 **Step 2 –** On the ADFS server, open **AD FS Management**.
 
@@ -33,7 +33,7 @@ Add Relying Party Trust Wizard to configure the relying party trust:
   **Next**.
 - On the Specify Display Name page, enter a display name for the relying party trust. Click
   **Next**.
-- On the Configure URL page, do not select any options and click **Next**.
+- On the Configure URL page, don't select any options and click **Next**.
 
     ![Identifier added on the Configure Identifiers page](/images/accessanalyzer/12.0/install/application/reports/relyingpartytrustwizardidentifier.webp)
 
@@ -46,7 +46,7 @@ Add Relying Party Trust Wizard to configure the relying party trust:
 
 ![Add an Endpoint window](/images/accessanalyzer/12.0/install/application/reports/addanendpointwindow.webp)
 
-**Step 4 –** Double-click on the newly added relying party trust to open it's Properties window.
+**Step 4 –** Double-click the newly added relying party trust to open it's Properties window.
 Navigate to the Endpoints tab and click **Add WS-Federation**. On the Add an Endpoint window, add
 ``https://`<FQDN of the web server>`:`<port number>`/federation`` as the Trusted URL, then click
 **OK**.
@@ -66,7 +66,7 @@ right-hand panel.
 
 - On the Configure Claim Rule page, enter a name in the **Claim rule name** field.
 
-If the SID claim is not configured by default, add it to the Claim Description as follows:
+If ADFS doesn't configure the SID claim by default, add it to the Claim Description as follows:
 
 ![Configure Claim Rule SID Properties](/images/accessanalyzer/12.0/install/application/reports/claimrulenamesidproperties.webp)
 
@@ -121,12 +121,12 @@ The following is an example of how the parameters should look when configured in
 **Step 9 –** Navigate to Services (`services.msc`). Restart the **Access Analyzer Web Server**
 service.
 
-ADFS authentication is now enabled for Access Analyzer.
+Access Analyzer now supports ADFS authentication.
 
 ## Update the Published Reports URL for ADFS
 
-If ADFS does not accept `http://localhost:8082/` as an acceptable path, the path will need to be
-updated in the Published Reports properties window. Follow the steps to configure the Published
+If ADFS doesn't accept `http://localhost:8082/` as an acceptable path, you must update the path
+in the Published Reports properties window. Configure the Published
 Reports URL for ADFS:
 
 **Step 1 –** Right-click the Published Reports shortcut on the desktop and select **Properties**.
@@ -137,4 +137,4 @@ Reports URL for ADFS:
 
 **Step 3 –** Click **Apply**. Exit the window.
 
-The Published Reports URL is now configured for ADFS.
+You've now configured the Published Reports URL for ADFS.

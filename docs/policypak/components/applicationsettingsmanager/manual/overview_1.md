@@ -22,7 +22,7 @@ Let's recall the three pieces that constitute PolicyPak Application Settings Man
 
 :::note
 Video: For an overview video of how to backup and restore, please see this
-video:[PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/gettingstarted/misc/videos/upgradingmaintenance/backup.md).
+video:[PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/misc/videos/upgradingmaintenance/backup.md).
 :::
 
 
@@ -59,7 +59,7 @@ When restoring, the PolicyPak Application Settings Manager data and all the mode
 
 :::note
 For an overview of exporting and importing settings, please see this video:
-[PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/gettingstarted/misc/videos/upgradingmaintenance/backup.md)
+[PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/misc/videos/upgradingmaintenance/backup.md)
 (at the 2 minute and 50 second mark).
 :::
 

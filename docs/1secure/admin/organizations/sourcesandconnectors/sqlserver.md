@@ -6,12 +6,12 @@ sidebar_position: 60
 
 # Add a Source and Connectors for SQL Server
 
-Follow the steps to add a SQL Server data source and connector to your organization.
+**To add a SQL Server data source and connector to your organization:**
 
 **Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
 that lists the managed organizations defined in 1Secure.
 
-**Step 2 –** Click an organization to define a data source and connector(s) for it. The properties
+**Step 2 –** Click an organization to define a data source and connectors for it. The properties
 page for the organization is displayed with the Sources tab selected by default.
 
 **Step 3 –** On the Sources tab, click **Add** to add a source. The Select Data Source (Step 1 of 3)
@@ -23,20 +23,20 @@ pane is displayed.
 
 ![Configure Source Details %28Step 2 of 3%29 pane](/images/1secure/admin/organizations/sourcesandconnectors/configuresourcedetails_step2-3.webp)
 
-**Step 5 –** On the Configure source details (Step 2 of 3) pane, use the Site drop-down menu to
+**Step 5 –** On the Configure source details (Step 2 of 3) pane, use the Site dropdown menu to
 select an existing site or add a new one. To add a new site, select the **Add new site** option from
-the drop-down menu or click the **Add** icon.
+the dropdown menu or click the **Add** icon.
 
 - When you choose to add a new site, you have to provide a name for it in the New site name field.
   Then click **Next** to proceed with configuring the agent for the site. See the
   [Install Agent](/docs/1secure/install/installagent.md) topic for details on configuring the agent,
   starting at Step 6.
-- When you select an existing site from the drop-down menu, one of the following happens:
+- When you select an existing site from the dropdown menu, one of the following happens:
 
-    - If the agent has not been configured for the site, the system will proceed with the agent
+    - If the agent has not been configured for the site, the system proceeds with the agent
       configuration when you click _Next_. See the [Install Agent](/docs/1secure/install/installagent.md)
       topic for details on configuring the agent, starting at Step 6.
-    - If the agent has already been configured for the site, the system will proceed with the SQL
+    - If the agent has already been configured for the site, the system proceeds with the SQL
       Server source and connector settings when you click _Next_.
 
 **Step 6 –** Click **Next**.
@@ -54,12 +54,12 @@ the drop-down menu or click the **Add** icon.
 - Credentials – Displays the crdentials that have already been added, while also providing the
   option to add new credentials. Netwrix 1Secure uses these credentials to connect to the data
   source. You can select existing credentials or add new ones. To add new credentials, select **Add
-  new Credentials** from the drop-down menu or click the **Add** icon, then specify the following:
+  new Credentials** from the dropdown menu or click the **Add** icon, then specify the following:
 
     - Username – The username of the SQL Server account
     - Password – The password of the account
 
-        The newly added credentials are also displayed in the drop-down menu.
+        The newly added credentials are also displayed in the dropdown menu.
 
 **Step 8 –** Click **Next**.
 
@@ -73,8 +73,8 @@ generate logon reports on SQL Server data. See the
 **Step 10 –** Choose one option from the following:
 
 - Audit all accounts – Select this option to audit all accounts within the connector
-- Audit specific accounts – Select this option to audit only the specific account(s) within the
-  connector. After selecting this option, specify the account(s) to be audited in the field below.
+- Audit specific accounts – Select this option to audit only specific accounts within the
+  connector. After selecting this option, specify the accounts to be audited in the field below.
   To specify an account, enter its name and click the Add icon. To audit multiple accounts, add them
   one by one.
 

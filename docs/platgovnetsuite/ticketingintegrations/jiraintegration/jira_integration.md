@@ -7,7 +7,7 @@ sidebar_position: 10
 # Jira
 
 Platform Governance for NetSuite's Change Management capabilities are integrated with Jira, one of
-the most popular issue ticketing and development project management systems. Customers are able to
+the most popular issue ticketing and development project management systems. Customers can
 look for and include NetSuite Customizations, assess impacts for requested changes, and push Jira
 change tickets into a Change Request. This enables easy management of changes, seamless tracking of
 compliant changes and automating the reconciliation of change logs during an audit.
@@ -21,7 +21,7 @@ compliant changes and automating the reconciliation of change logs during an aud
 ### Features and Benefits
 
 With Platform Governance for NetSuite's integration of NetSuite and Jira (Cloud), you can use the
-Jira tool while we automatically add and track the associated changes in your NetSuite account. The
+Jira tool while Platform Governance for NetSuite automatically adds and tracks the associated changes in your NetSuite account. The
 integration eliminates the need for double entry in the two systems.
 
 The Jira integration automatically syncs Jira tickets with NetSuite change request:
@@ -41,7 +41,7 @@ Change Managers and System Administrators quickly realize the integration benefi
 
 ### Technical Considerations
 
-Review these considerations prior to deploying the Jira integration:
+Review these considerations before deploying the Jira integration:
 
 1. Platform Governance for NetSuite's integration is a client script that can be enabled or disabled
    by form, user, or role. It has high order value to ensure it is the last thing to run and does
@@ -67,7 +67,7 @@ To set up the Strongpoint Jira integration:
 
 ### Review Your Jira Statuses
 
-To take advantage of the automatic synchronization feature, we recommend reviewing your Jira
+To take advantage of the automatic synchronization feature, review your Jira
 statuses to be mapped to the Change Management statuses. When a ticket status is updated to a mapped
 status, Platform Governance for NetSuite handles the synchronization between Jira and NetSuite.
 
@@ -81,7 +81,7 @@ Refer to the Atlassian documentation for instructions on
 
 1. Open **Customization** > **SuiteBundler** > **Search & Install Bundles**
 2. Search for bundle **311231**
-3. Click on **StrongPoint Jira integration Client Side** in the search results.
+3. Click **StrongPoint Jira integration Client Side** in the search results.
 4. Click **Install** when the Bundle Details opens.
 5. Click **Install Bundle** on the **Preview Bundle** Install page.
 
@@ -94,7 +94,7 @@ Refer to the Atlassian documentation for instructions on
    [Atlassian documentation](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) to
    obtain a Token
 5. Enter the mappings between your Jira statuses and the Change Request statuses. For best practice,
-   define your Jira statuses prior to this step. You can enter multiple Jira statuses for each
+   define your Jira statuses before this step. You can enter multiple Jira statuses for each
    Change Request status, separated by commas. For example, **Ready for Deployment,Done**. Assign
    your mapping for each of the Change Request statuses:
 
@@ -107,7 +107,7 @@ Refer to the Atlassian documentation for instructions on
 
 6. Check **Automatic Synchronization** to enable Platform Governance for NetSuite to handle the
    synchronization between Jira and NetSuite when a Ticket status is updated to a mapped status.
-   without having to click **Push**. If you are using an account where you do not want to create a
+   without having to click **Push**. If you are using an account where you don't want to create a
    Change Request, leave this unchecked so you can do your research or testing without generating
    Change Requests.
 
@@ -135,7 +135,7 @@ Refer to the Atlassian documentation for instructions on
 
     ![Jira Search.](/images/platgovnetsuite/integrations/jira_search.webp)
 
-3. Click on the **Strongpoint for NetSuite** tile to open the details and follow the installation
+3. Click the **Strongpoint for NetSuite** tile to open the details and follow the installation
    prompts.
 
 ### Create an Integration User Account (optional)
@@ -147,7 +147,7 @@ must have access granted for the **Strongpoint Developer Role**.
 
 ### Set Up Token Based Authentication
 
-Token Based Authentication is set up through NetSuite. Here is the basic process:
+Token Based Authentication is set up through NetSuite. The basic process is as follows:
 
 1. NetSuite Administrator creates an Integration Record for the Platform Governance for NetSuite
    application. This only needs to be performed once per account. Open **Setup** > **Integration** >
@@ -159,7 +159,7 @@ Token Based Authentication is set up through NetSuite. Here is the basic process
    **Integration Management** > **Manage Integrations**.
 2. Each user creates their token in NetSuite. Refer to the
    [NetSuite help Manage TBA Tokens in the NetSuite UI](https://netsuite.custhelp.com/app/answers/detail/a_id/41902)
-   for details. Once you have created your tokens, add them to Jira.
+   for details. After you create your tokens, add them to Jira.
 3. Open **Jira**.
 4. Open your **Projects** page:
 
@@ -187,8 +187,8 @@ This process is performed by the Jira Administrator.
 2. Select **Strongpoint NetSuite** activity tab. Select a NetSuite account to connect to.
 3. Add customization/s(existing or proposed) to the Jira ticket:
 
-    - Two ways to add: (a.) Click on **Lookup Customization** or **Proposed Customization** to
-      narrow down customizations to attach. (b.) Click on **Import Customization** , add
+    - Two ways to add: (a.) Click **Lookup Customization** or **Proposed Customization** to
+      narrow down customizations to attach. (b.) Click **Import Customization** , add
       customizations in bulk from a file. File format accepted are XML and ZIP files. File contents
       for XML should have the same format as the MANIFEST.xml file in the SDF Project. SDF zip
       format uses the SDF structure as extracted from an existing SDF project.

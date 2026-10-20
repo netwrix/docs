@@ -36,7 +36,7 @@ To add a new user, click the Add Person button:
 Privilege Secure will use the ‘Username’ value to search the host-user table for the matching user.
 
 The OpenID Connector configuration screen gives 3 options for the host-user field that the Okta
-Username will be matched against – under the Login Format dropdown:
+Username is matched against – under the Login Format dropdown:
 
 - sAMAccountName
 - User Principal Name
@@ -50,7 +50,7 @@ here.
 
 Users in sbpam.local are all set up with both UPN and Email Address – but they’re not the same.
 
-The two Okta users below both map to the same sbpam.local user
+The following two Okta users both map to the same sbpam.local user
 
 ![Okta login format](/images/privilegesecure/25.12/accessmanagement/admin/configuration/integrationdetails/oktaloginformat.webp)
 
@@ -59,7 +59,7 @@ for the second UPN.
 
 To create a user, enter the appropriate Username value and other data. Set the
 Password option to ‘Set by Admin’ and setting it yourself. If the user is required to set (or reset)
-their own password then it will be handled on the Okta side – which won’t give control back to
+their own password then it is handled on the Okta side – which won’t give control back to
 Privilege Secure until it’s done.
 
 ### Assigning Users to Applications

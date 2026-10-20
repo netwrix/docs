@@ -32,7 +32,7 @@ The table has the following columns:
 
 - Domain — Match is made on the domain name
 - Exact — Match is only made if the URL is an exact match
-- Never — Match is not made to URL
+- Never — Match isn't made to URL
 - Starts With — Match is only made when the URL starts with the value
 - Regex — Match is made on the valid regex string
 - Host — Match is made on the host name (FQDN)

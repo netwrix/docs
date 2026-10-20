@@ -77,7 +77,7 @@ Full licenses with the `<disabled>` block.
 
 
 First, identify which component(s) you wish to unlicense.
-[What CSEs are contained within PolicyPak, what are their CSE GUIDs, and in what release did they appear?](/docs/policypak/gettingstarted/misc/knowledgebase/troubleshooting/guids.md)
+[What CSEs are contained within PolicyPak, what are their CSE GUIDs, and in what release did they appear?](/docs/policypak/misc/knowledgebase/troubleshooting/guids.md)
 
 For instance, if you wanted to unlicense Netwrix PolicyPak
 Browser Router and also PolicyPak Preferences 2.0 you would create an XML block like

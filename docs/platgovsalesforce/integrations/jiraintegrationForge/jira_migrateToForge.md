@@ -17,7 +17,7 @@ The Salesforce Forge App is a **new and separate application**. Both application
 - If a user continues using the legacy integration, **no issues occur**, as the underlying Change Request logic remains the same.
 - Netwrix **strongly recommends using the Salesforce Forge App** for all new activity.
 
-The migration primarily affects **authentication and configuration**, not the overall workflow.
+The migration primarily affects **authentication and configuration**. The overall workflow remains the same.
 
 ## Key Differences
 
@@ -82,7 +82,7 @@ No other changes are required for Connected App authentication.
 ### Status Mapping
 
 - **Status Mapping is still required**.
-- Existing Status Mapping configurations continue to work and do not need to be recreated.
+- Existing Status Mapping configurations continue to work and don't need to be recreated.
 - Ensure Status Mapping is correctly configured before switching users to the Forge App.
 
 ## Coexistence During Migration
@@ -93,11 +93,11 @@ During migration:
 - Users may access either app without impacting Change Requests or Salesforce data.
 - Change Requests created from either app follow the same processing logic.
 
-However, to ensure consistency and take advantage of the latest improvements, Netwrix recommends directing users to the **Salesforce Forge App** once migration steps are completed.
+To ensure consistency and access the latest improvements, direct users to the **Salesforce Forge App** once migration steps are completed.
 
 ## Recommendation
 
-Although continued use of the legacy integration does not cause functional issues, the **Salesforce Forge App** is the recommended solution moving forward due to:
+The **Salesforce Forge App** is the recommended solution due to:
 
 - Simplified authentication
 - Reduced configuration requirements

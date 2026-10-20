@@ -6,22 +6,22 @@ sidebar_position: 20
 
 # Send Active Directory Event Data from Netwrix Threat Prevention to Netwrix Access Analyzer
 
-When Netwrix Threat Prevention is configured to monitor a domain, the event data collected by the
-policies can be provided to Netwrix Access Analyzer (formerly Enterprise Auditor) for auditing and
+When you configure Netwrix Threat Prevention to monitor a domain, you can provide the event data
+collected by the policies to Netwrix Access Analyzer (formerly Enterprise Auditor) for auditing and
 analysis. This is accomplished by configuring Threat Prevention to send data to Netwrix Activity
 Monitor, which in turn creates the activity log files that Access Analyzer collects.
 
 :::note
-Threat Prevention can only be configured to send event data to one Netwrix application,
-either Netwrix Activity Monitor or Netwrix Threat Manager but not both. However, the Activity
-Monitor can be configured with outputs for Access Analyzer and Threat Manager.
+You can only configure Threat Prevention to send event data to one Netwrix application,
+either Netwrix Activity Monitor or Netwrix Threat Manager but not both. However, you can configure
+the Activity Monitor with outputs for Access Analyzer and Threat Manager.
 :::
 
 
-Follow the steps to configure this integration.
+Configure this integration.
 
 :::info
-It is a best practice to use the API Server option of the Activity Monitor for
+As a best practice, use the API Server option of the Activity Monitor for
 this integration between Threat Prevention and Access Analyzer.
 :::
 
@@ -41,12 +41,12 @@ Threat Manager Configuration** on the menu. The Netwrix Threat Manager Configura
 
 - App Token – Leave this field blank for integration with Activity Monitor
 - Policies – The table displays all policies created in Threat Prevention along with a State icon
-  indicating if the policy is active. Check the **Send** box for the desired policies monitoring the
-  target domain activity.
+  indicating if the policy is active. Check the **Send** box for the policies you want that monitor
+  the target domain activity.
 
 **Step 3 –** Click **Save**.
 
-All real-time event data from the selected policies is now sent to Activity Monitor. Additional
-policies can be added to this data stream through the Netwrix Threat Manager Configuration window or
-by selecting the **Send to Netwrix Threat Manager** option on the Actions tab of the respective
-policy.
+Threat Prevention now sends all real-time event data from the selected policies to Activity
+Monitor. You can add additional policies to this data stream through the Netwrix Threat Manager
+Configuration window or by selecting the **Send to Netwrix Threat Manager** option on the Actions
+tab of the respective policy.

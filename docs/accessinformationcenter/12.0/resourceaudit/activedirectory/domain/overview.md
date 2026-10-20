@@ -8,7 +8,7 @@ sidebar_position: 40
 
 The following reports are available at the **Domain** level:
 
-- Activity – Displayed but not populated at the domain level
+- Activity – Shows but has no data at the domain level
 - [Exceptions Report](/docs/accessinformationcenter/12.0/resourceaudit/activedirectory/domain/exceptions.md)
 - [Membership Changes Report](/docs/accessinformationcenter/12.0/resourceaudit/activedirectory/domain/membershipchanges.md)
 - [Principal Attribute Changes Report](/docs/accessinformationcenter/12.0/resourceaudit/activedirectory/domain/principalattributechanges.md)

@@ -7,12 +7,12 @@ sidebar_position: 50
 # AWS_UnusedManagedPolicies Job
 
 The AWS_UnusedManagedPolicies job provides details on customer managed policies that exist in the
-AWS Organization. Optionally, AWS managed policies can be included by changing the parameter for the
+AWS Organization. Optionally, include AWS managed policies by changing the parameter for the
 analysis task.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
@@ -31,7 +31,7 @@ Navigate to the **AWS** > **5.Policies** > **AWS_UnusedManagedPolicies** > **Con
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not deselect the selected analysis tasks. The analysis tasks are preconfigured for
+Don't deselect the selected analysis tasks. The analysis tasks are preconfigured for
 this job. Only modify the analysis tasks listed in the customizable analysis tasks section.
 :::
 
@@ -43,7 +43,7 @@ The following analysis tasks are selected by default:
 - Unused Managed Policies – Policies not assigned to any group or user. Creates the
   AWS_UnusedPolicies_Details table accessible under the job’s Results node.
 
-    - Optionally, AWS managed policies can be included by setting the parameter to True. See the
+    - Optionally, include AWS managed policies by setting the parameter to True. See the
       [Customizable Analysis Tasks for the AWS_UnusedManagedPolicies Job](#customizable-analysis-tasks-for-the-aws_unusedmanagedpolicies-job)
       topic for additional information.
 
@@ -69,4 +69,4 @@ produces the following preconfigured report:
 
 | Report                  | Description                                                                 | Default Tags | Report Element                                                                                                                                                                                                                                             |
 | ----------------------- | --------------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unused Managed Policies | This report identifies policies that are not assigned to any group or user. | None         | This report is comprised of the following elements: <ul><li>Stacked Bar Chart – Displays unused managed policies by account</li><li>Table – Shows unused managed policies by account</li><li>Table – Provides details on unused managed policies</li></ul> |
+| Unused Managed Policies | This report identifies policies that aren't assigned to any group or user. | None         | This report is comprised of the following elements: <ul><li>Stacked Bar Chart – Displays unused managed policies by account</li><li>Table – Shows unused managed policies by account</li><li>Table – Provides details on unused managed policies</li></ul> |

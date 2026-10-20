@@ -2,5 +2,8 @@
   "label": "Helpers Tools And Tips And Tricks",
   "position": 80,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

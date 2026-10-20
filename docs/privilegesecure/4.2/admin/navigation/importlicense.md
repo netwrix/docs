@@ -21,7 +21,7 @@ Licensing is done according to user count. Any user who has provisioned access c
 license after their first login. This is true for all users, regardless of role.
 
 :::warning
-If your license is expired, and you can still log in, you cannot create
+If your license is expired, and you can still log in, you can't create
 activity sessions or add new users.
 :::
 

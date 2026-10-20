@@ -10,20 +10,20 @@ Use this action module to create surveys and make them available to targeted rec
 For example, a survey can solicit feedback from clients or poll employees on company issues.
 
 The Survey Action Module Wizard builds customizable, web-based surveys containing questions created
-by the user. Once the survey is defined, a list of recipients can then be specified. When executing
+by the user. After you define the survey, specify a list of recipients. When executing
 the action, the process simultaneously sends an email to the recipients containing a link to the
 survey and creates a web page to host the survey.
 
 :::warning
-This module sends one or more electronic messages to a selected audience. Prior to
-executing the action, ensure the audience consists of only the desired members. Netwrix recommends
+This module sends one or more electronic messages to a selected audience. Before
+executing the action, ensure the audience consists of only the members you want to include. Netwrix recommends
 using this and all other Access Analyzer actions with caution.
 :::
 
 
 ## Survey Action Source Table Configuration
 
-All data tables used in Access Analyzer action modules require the presence of certain data columns.
+All data tables used in Access Analyzer action modules require certain data columns.
 In addition, individual action modules including Survey may have their own column requirements. The
 Survey action module requires a column containing well-formatted email addresses (for example,
 `hfinn@netwrix.com`) for your recipients.

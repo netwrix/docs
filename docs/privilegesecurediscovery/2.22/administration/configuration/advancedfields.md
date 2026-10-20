@@ -1,227 +1,309 @@
 ---
 title: "QuickStart Advanced Fields"
-description: "QuickStart Advanced Fields"
+description: "Advanced usage of the NPS-D QuickStart script: bulk reporting, protect mode, EDR and OAM policy management"
 sidebar_position: 180
 ---
 
 # QuickStart Advanced Fields
 
-QuickStart Advanced Fields
+This page covers advanced usage of the QuickStart script: bulk reporting, making changes to
+systems, and managing EDR and Offline Access Management (OAM) policies.
 
-# QuickStart Advanced Fields
-
-QuickStart is used for planning, deployment and tracking Protect mode by querying and updating
-multiple target computers in one operation. These updates can include placing computers in Scan
-mode, Protect mode and managing the computer's Offline Access Management (OAM).
+Before using these features, complete the installation steps in [QuickStart Script](./quickstartscript.md).
 
 ## Installation
 
-Required Modules:
+Change to the directory where you extracted QuickStart and install the required modules:
 
 ```
-pip install -r requirements.txt
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
 ```
 
-Edit reports.py and change the configuration options:
+Edit `reports.py` and update the configuration block:
 
-```
-config = {'baseUrl': 'https://localhost:3000/api/v1', #Url of PrivilegeSecure API'UserId': '59057412c4e92dccc356552c' ,      #PrivilegeSecure superadmin account'provisionUser': 'jita.universal' ,         #account to filter in report}
+```python
+config = {
+    'baseUrl': 'https://localhost:3000/api/v1',  # URL of NPS-D API
+    'userId': '59057412c4e92dccc356552c',         # NPS-D superadmin account
+    'provisionUser': 'jita.universal'              # Account to filter in report
+}
 ```
 
 ## Reporting
 
 ### Single Report
 
-A single report can be created by passing the OU flag --ou to reports.py as an argument
-
-Example:
+Create a report for a single OU by passing the `--ou` flag:
 
 ```
 reports.py --ou "OU=ReportTEST,DC=rtest,DC=com"
 ```
 
-[+] API key loaded from secure storageProcessing 16 of 16 systemsFile successfully saved to
-s1_report.xlsx
+Example output:
 
 ```
-
- Additional arguments can be specified:
-
+[+] API key loaded from secure storage
+Processing 16 of 16 systems
+File successfully saved to s1_report.xlsx
 ```
 
+### Available Arguments
+
+```
 reports.py --help
-
-````
-usage: reports.py [-h] [--ou OU] [--file XLS_OUT][--input-file COMPUTERS_FILE][--protect-mode-file PROTECT_FILE][--linux-reg-file LINUX_FILE] [--dry-run][--ou-file OU_FILE] [--rm-api-key] [--no-save-api][--insecure] [--version]Generates Privilege Secure reports based on OU.optional arguments:-h, --help        show this help message and exit--ou OU           Specify the OU DN to filter on                   (OU=Computers,OU=Bulk,DC=rtest,DC=com)--file XLS_OUT                   Filename to save output (Default: s1_report.xlsx)--input-file COMPUTERS_FILE                  Instead of OU filtering, use a file containing a list                  of computers in "DOMAIN\Computer" format--protect-mode-file PROTECT_FILE                  Makes changes to systems/admins based from updated                   report file--linux-reg-file LINUX_FILE                   Registers an excel list of linux systems containing                   the required registration parameters--dry-run         Displays changes but does not actually make them--ou-file OU_FILE File containing list of OUs to process.--rm-api-key      Remove the securely stored API key--no-save-api     Do not save API key locally--insecure        Ignore certificate checks--version         show program's version number and exit
 ```
 
-## Bulk Reports
+```
+usage: reports.py [-h] [--ou OU] [--file XLS_OUT] [--input-file COMPUTERS_FILE]
+                  [--protect-mode-file PROTECT_FILE] [--linux-reg-file LINUX_FILE]
+                  [--dry-run] [--ou-file OU_FILE] [--rm-api-key] [--no-save-api]
+                  [--insecure] [--max-worksheet-rows]
 
-Reports can be created in bulk by passing the ou file flag --ou-file OUs.txt as an argument script. The text file specified needsto be a line delimited list of OUs to process .
+Generates Privilege Secure reports based on OU.
 
- Example:
+optional arguments:
+  -h, --help                        Show this help message and exit
+  --ou OU                           Specify the OU DN to filter on
+                                    (OU=Computers,OU=Bulk,DC=rtest,DC=com)
+  --file XLS_OUT                    Filename to save output (Default: s1_report.xlsx)
+  --input-file COMPUTERS_FILE       Use a file containing a list of computers in
+                                    "DOMAIN\Computer" format instead of OU filtering
+  --protect-mode-file PROTECT_FILE  Make changes to systems/admins from an updated
+                                    report file
+  --linux-reg-file LINUX_FILE       Register an Excel list of Linux systems with
+                                    required registration parameters
+  --dry-run                         Display changes but don't make them
+  --ou-file OU_FILE                 File containing list of OUs to process
+  --rm-api-key                      Remove the securely stored API key
+  --no-save-api                     Don't save API key locally
+  --insecure                        Ignore certificate checks
+  --max-worksheet-rows INTEGER_VALUE
+                                    Limit number of admins per worksheet before
+                                    rolling over to a new worksheet
+```
+
+### Bulk Reports
+
+Create reports for multiple OUs by passing the `--ou-file` flag with a line-delimited text file:
+
+`OUs.txt` example:
 
 ```
-OUs.txt
-````
-
-OU=ReportTEST,DC=rtest,DC=comOU=NonExistantSubOU1,OU=ReportTEST,DC=rtest,DC=comOU=SubOU2,OU=SubOU1,OU=ReportTEST,DC=rtest,DC=comOU=SubOU1,OU=ReportTEST,DC=rtest,DC=comOU=NonExistantSubOU1,OU=ReportTEST,DC=rtest,DC=com
-
+OU=ReportTEST,DC=rtest,DC=com
+OU=NonExistantSubOU1,OU=ReportTEST,DC=rtest,DC=com
+OU=SubOU2,OU=SubOU1,OU=ReportTEST,DC=rtest,DC=com
+OU=SubOU1,OU=ReportTEST,DC=rtest,DC=com
 ```
 
- Running a report on multiple OUs:
+Run the report:
 
 ```
-
 reports.py --ou-file OUs.txt
+```
 
-````
-[+] API key loaded from secure storageProcessing OU: OU=ReportTEST,DC=rtest,DC=comProcessing 16 of 16 systemsProcessing OU: OU=NonExistantSubOU1,OU=ReportTEST,DC=rtest,DC=comProcessing 0 of 0 systemsProcessing OU: OU=SubOU2,OU=SubOU1,OU=ReportTEST,DC=rtest,DC=comProcessing 0 of 0 systemsProcessing OU: OU=SubOU1,OU=ReportTEST,DC=rtest,DC=comProcessing 3 of 3 systemsProcessing OU: OU=NonExistantSubOU1,OU=ReportTEST,DC=rtest,DC=comProcessing 0 of 0 systemsFile successfully saved to s1_report.xlsx
+Example output:
+
+```
+[+] API key loaded from secure storage
+Processing OU: OU=ReportTEST,DC=rtest,DC=com
+Processing 16 of 16 systems
+Processing OU: OU=NonExistantSubOU1,OU=ReportTEST,DC=rtest,DC=com
+Processing 0 of 0 systems
+Processing OU: OU=SubOU1,OU=ReportTEST,DC=rtest,DC=com
+Processing 3 of 3 systems
+File successfully saved to s1_report.xlsx
 ```
 
 ## Supplying a List of Systems
 
-Instead of OUs, a file supplying a list of systems containing DOMAIN\Computer can be specified with the --input-file flag.
+Instead of OUs, specify a file containing a list of systems in `DOMAIN\Computer` format using
+the `--input-file` flag.
 
-Example using target_computers.txt:
+`target_computers.txt` example:
 
 ```
-RTEST\BulkComp1012RTEST\BulkComp1013RTEST\BulkComp1014RTEST\BulkComp1015RTEST\BulkComp1016RTEST\BulkComp1017RTEST\BulkComp1018RTEST\HORIZONRTEST\LINKEDCLONEVM3RTEST\SRV-0RTEST\SRV-24RTEST\VMTEMP1RTEST\VMTEMP2
+RTEST\BulkComp1012
+RTEST\BulkComp1013
+RTEST\BulkComp1014
+RTEST\HORIZON
+RTEST\SRV-0
 ```
 
-Running a report on a list of systems:
+Run the report:
 
 ```
 reports.py --input-file target_computers.txt
-````
+```
 
-[+] API key loaded from secure storageProcessing 13 systemsFile successfully saved to s1_report.xlsx
+Example output:
 
+```
+[+] API key loaded from secure storage
+Processing 13 systems
+File successfully saved to s1_report.xlsx
 ```
 
 ## Making Changes to Systems
 
-Using the --protect-mode-file flag will push changes to the systems specified in the spreadsheet generated by the reports.
+Use the `--protect-mode-file` flag to push changes to systems specified in a spreadsheet
+generated by the reports script.
+
+### Applying Changes Immediately
+
+By default, NPS-D applies changes to the target host the next time it scans the host — either
+during the normal scan process or when you manually rescan the system in the UI or via the API.
+To trigger an immediate scan of each system that had a protect mode change, add the `--scan`
+flag:
+
+```
+reports.py --protect-mode-file OU=ReportTEST,DC=rtest,DC=com.xlsx --insecure --scan
+```
+
+:::note
+Using `--scan` causes the script to run more slowly.
+:::
 
 ## Managing the System's EDR Policy
 
-With the change in 2.17 we can support multiple integrations to one or many EDR providers. This allows an organization to use specific naming conventions when creating the policy. The implications of this mean a change to how this is managed via QuickStart. You can verify the current configuration for EDR on field "O", and this is modified using the field "AC" Set EDR Integration.
+As of version 2.17, NPS-D supports multiple integrations to one or many EDR providers. The
+current EDR configuration is visible in column **O** of the report spreadsheet. Modify it using
+field **AC** (Set EDR Integration).
 
-The value passed into the AC field needs to match the naming convention chosen for the EDR integration.
+The value in the AC field must match the naming convention used when creating the EDR integration
+in NPS-D.
 
-```
-
-arigrim@AriGrimshawsMBP SecureONE_2.18_Reporting % python3 reports_2.18.py --insecure --dry-run
---protect-mode-file s1_report.xlsx [+] API key loaded from secure storage [!] DRY RUN ONLY -
-displaying proposed changes only. [*] Updating 0 Users Persistence: [*] Removing 0 Users from
-Inventory: [*] Adding 0 Users to Inventory: [*] Updating Protect Mode on 0 systems: [*] Updating
-Scan Mode on 0 systems: [*] Updating Directory Bridging Strategy on 0 systems: [*] Updating EDR
-Integration on 3 systems: [+] System: ip-10-100-11-### EDR Integration: Carbon Black Cloud 1 [+]
-System: ip-10-100-11-## EDR Integration: CrowdStrike Falcon 1 [+] System: ip-10-100-11-## EDR
-Integration: SentinelOne 1 [*] Updating Sudoers Representation on 0 systems: [*] Updating Offline
-Access Management on 0 systems:
+Example dry run showing EDR changes:
 
 ```
+python3 reports_2.18.py --insecure --dry-run --protect-mode-file s1_report.xlsx
 
-## Managing the system's Offline Access Management (OAM) Policy
+[+] API key loaded from secure storage
+[!] DRY RUN ONLY - displaying proposed changes only.
+[*] Updating EDR Integration on 3 systems:
+[+] System: ip-10-100-11-100  EDR Integration: Carbon Black Cloud 1
+[+] System: ip-10-100-11-101  EDR Integration: CrowdStrike Falcon 1
+[+] System: ip-10-100-11-102  EDR Integration: SentinelOne 1
+```
 
-The excel sheet Computer Data contains a group of columns which report the system's "Offline Access Management" policy. OfflineAccess Management Enabled will report TRUE/FALSE if Privilege Secure is managing the built-in administrator account and/or an alternate administrator account.
+## Managing the System's Offline Access Management (OAM) Policy
 
-The following policy options will be displayed for the computer's OAM Policy if it exists.
+The **Computer Data** sheet contains columns reporting the system's OAM policy:
 
-| Column Name | Value |
-| --- | --- |
-| OAM (Offline Access Management) Enabled | TRUE,FALSE |
-| OAM Strategy | OS-BEST-PRACTICE, MANAGED-BUILT-IN, CUSTOM |
-| OAM Name Template | an alpha-numeric with ? wildcards (ex: S1_ALT_??????) |
-| OAM JITA User Can Access PW | TRUE,FALSE |
-| OAM Use Alt Admin | TRUE,FALSE |
-| OAM Manage Built-in PW | TRUE,FALSE |
-| OAM Disable Built-in Admin | TRUE,FALSE |
+| Column Name | Values |
+|---|---|
+| OAM Enabled | `TRUE`, `FALSE` |
+| OAM Strategy | `OS-BEST-PRACTICE`, `MANAGED-BUILT-IN`, `CUSTOM` |
+| OAM Name Template | Alphanumeric with `?` wildcards (example: `S1_ALT_??????`) |
+| OAM JITA User Can Access PW | `TRUE`, `FALSE` |
+| OAM Use Alt Admin | `TRUE`, `FALSE` |
+| OAM Manage Built-in PW | `TRUE`, `FALSE` |
+| OAM Disable Built-in Admin | `TRUE`, `FALSE` |
 
-If you wish to change any of this policy's options, set the Set OAM Enabled to TRUE/FALSE as appropriate.
+To change policy options, set **Set OAM Enabled** to `TRUE` or `FALSE` as appropriate.
 
-The Strategy may be entered with any of following values: OS-BEST-PRACTICE, MANAGED-BUILT-IN, CUSTOM. If left blank it will default to the current value, or to OS-BEST-PRACTICE if no previous policy was set.
+If you leave **OAM Strategy** blank, it defaults to the current value or to `OS-BEST-PRACTICE` if
+no previous policy exists. If you leave **OAM Name Template** blank, it defaults to the current
+value or to `S1_ALT_ADMIN`.
 
-The OAM Name Template accepts a string with wildcards expressed by question marks (?). If left blank it will default to the currentvalue, or to "S1_ALT_??????".
+### Default Settings by Strategy
 
-The remaining options may be included when they do not conflict with the defined strategy.
-
-## Default Settings by Strategy
-
-| Option \ Strategy | OS-BEST-PRACTICE | MANAGED-BUILT-IN | CUSTOM |
-| --- | --- | --- | --- |
+| Option | OS-BEST-PRACTICE | MANAGED-BUILT-IN | CUSTOM |
+|---|---|---|---|
 | JITA User Can Access PW | FALSE | FALSE | FALSE |
 | Use Alt Admin | TRUE | FALSE | required |
 | OAM Manage Built-in PW | TRUE | TRUE | required |
 | Disable Built-in Admin | TRUE | FALSE | required |
 
+## Linux Bridging Strategies
+
+Set the directory bridging strategy for Linux systems using these columns in the report
+spreadsheet:
+
+| Column Name | Values |
+|---|---|
+| Set Directory Bridging Strategy | `secureone`, `centrify`, `powerbroker` |
+| Set Directory Bridging Domain | Domain name. Required for `centrify` and `powerbroker` strategies. |
+
+## Setting Linux Sudoers Representation
+
+An NPS-D admin can assign a specific sudoers representation to a set of systems using the
+**Set Sudoers Representation** column. Supply the `id` value of an existing sudoers
+representation to apply it to the system.
+
+:::note
+The export process doesn't retrieve or display the current sudoers representation value.
+:::
+
 ## Dry Run
 
-Enabling --dry-run will only display the proposed changes and not make any actual changes to system. This is useful for seeingchanges before they occur.
-
-Example:
+Use `--dry-run` to preview proposed changes without applying them.
 
 ```
-
 reports.py --protect-mode-file OU=ReportTEST,DC=rtest,DC=com.xlsx --insecure --dry-run
+```
 
-````
-[+] API key loaded from secure storage[!] DRY RUN ONLY - displaying proposed changes only.[*] Setting Users Persistent: [+] User: VMTEMP2\privilegesecure System: VMTEMP2 [+] User: RTEST\tkeeler System: VMTEMP2[*] Removing Users from Inventory: [-] User: RTEST\jbax System: VMTEMP2[*] Adding Users to Inventory: [+] User: RTEST\jbax System: VMTEMP1 [+] User: RTEST\kbui System: VMTEMP2[*] Enabling Protect Mode: [+] System: VMTEMP1 [+] System: VMTEMP2
+Example output:
+
+```
+[+] API key loaded from secure storage
+[!] DRY RUN ONLY - displaying proposed changes only.
+[*] Setting Users Persistent:
+[+] User: VMTEMP2\privilegesecure  System: VMTEMP2
+[*] Adding Users to Inventory:
+[+] User: RTEST\jbax  System: VMTEMP1
+[*] Enabling Protect Mode:
+[+] System: VMTEMP1
+[+] System: VMTEMP2
 ```
 
 ## Processing Changes
 
-When you are ready to make the changes, run without the --dry-run argument to make updates. Any failures/errors will bedisplayed in the output.
-
-Example:
+When you're ready to apply changes, run without `--dry-run`:
 
 ```
 reports.py --protect-mode-file OU=ReportTEST,DC=rtest,DC=com.xlsx --insecure
-````
-
-[+] API key loaded from secure storage[!] Protect mode enabled - updates in progress![*] Setting
-Users Persistent: [+] User: VMTEMP2\privilegesecure System: VMTEMP2 [!] Error submitting request:
-Url: https://localhost:3000/api/v1/computers/595e7cc39576068ad62b31a7/admins Response Code: 409
-Response Body: \{"message":"No changes made or administrator not in inventory"\}. [+] User:
-RTEST\tkeeler System: VMTEMP2[*] Removing Users from Inventory: [-] User: RTEST\jbax System: VMTEMP2
-[!] Error submitting request: Url:
-https://localhost:3000/api/v1/computers/595e7cc39576068ad62b31a7/admins Response Code: 409 Response
-Body: \{"message":"Administrator does not exist in inventory"\}[*] Adding Users to Inventory: [+]
-User: RTEST\jbax System: VMTEMP1 [+] User: RTEST\kbui System: VMTEMP2[*] Enabling Protect Mode: [+]
-System: VMTEMP1 [+] System: VMTEMP2
-
 ```
+
+The output displays any failures with the HTTP response code and message.
 
 ## Registering Linux Computers
 
 Linux registration prerequisites:
 
-- [Linux Registrations Prerequisites](../../requirements/technicalpreparation/linuxregistrationsprerequisites.md)
-
-Guide on registering linux system with Postman (using API):
-
+- [Linux Registration Prerequisites](../../requirements/technicalpreparation/linuxregistrationsprerequisites.md)
 - [Postman Linux Registration](../../requirements/technicalpreparation/postmanlinuxregistration.md)
 
-Troubleshooting Linux Registration:
+You can register Linux systems from an Excel file using the `--linux-reg-file` flag. You can add
+the `--dry-run` flag to preview changes before committing them.
 
-- [QuickStart Advanced Fields](#quickstart-advanced-fields)
+```
+reports.py --linux-reg-file linux_register.xlsx --insecure --dry-run
+```
 
-You can also specify a an excel file containing a list of linux systems and credentials to register with Privilege Secure.
+See the example template:
+[linux_register.xlsx](/files/privilegesecure/discovery/attachments/360042878654_linux_register.xlsx)
 
-Example [linux_register.xlsx](/static/files/privilegesecure/discovery/attachments/360042878654_linux_register.xlsx):
+| Column | Description |
+|---|---|
+| `system` | DNS hostname of the Linux system to register |
+| `username` / `password` | Credentials used to log in and create the default service account |
+| `admins[0]` | Object ID of an AD user to add as an admin. Add more admins with `admins[1]`, `admins[2]`, and so on |
+| `persistent` | Comma-separated list of account names to mark as persistent |
+| `scan` | `TRUE` or `FALSE` — whether to periodically scan this system |
+| `secure` | `TRUE` or `FALSE` — whether to place this system in Protect:JITA mode |
+| `nondomain` | `TRUE` or `FALSE` — whether this system is already directory-bridged and part of the AD domain |
+| `directory_bridging` | Directory bridging strategy: `secureone` (default), `centrify`, or `powerbroker` |
 
-| System | Username | Password | Admins[0] | Scan | Persistent | Secure | Nondomain |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ip-10-30-1-247.us-west-2.compute.internal | registerAcct | welcome | 5b64514ec181fa007780acdd | TRUE | "" | FALSE | TRUE |
-| ip-10-30-1-249.us-west-2.compute.internal | registerAcct | welcome | 5b64514ec181fa007780acdd | TRUE | "" | FALSE | TRUE |
-| ip-10-30-1-172.us-west-2.compute.internal | ubuntu | welcome | 5b64514ec181fa007780acdd | TRUE | "" | FALSE | TRUE |
+Example `linux_register.xlsx`:
+
+| system | username | password | admins[0] | persistent | scan | secure | nondomain | directory_bridging |
+|---|---|---|---|---|---|---|---|---|
+| ip-10-30-1-247.us-west-2.compute.internal | registerAcct | welcome | 5b64514ec181fa007780acdd | alice,bob | TRUE | FALSE | TRUE | |
+| ip-10-30-1-249.us-west-2.compute.internal | registerAcct | welcome | 5b64514ec181fa007780acdd | bishop | TRUE | FALSE | TRUE | |
+| ip-10-30-1-172.us-west-2.compute.internal | ubuntu | welcome | 5b64514ec181fa007780acdd | vasquez | TRUE | FALSE | TRUE | |
+| ip-10-30-1-222.us-west-2.compute.internal | ubuntu | welcome | 5b64514ec181fa007780acdd | ferro | TRUE | FALSE | TRUE | secureone |
+| ip-10-30-1-111.us-west-2.compute.internal | xxxxxx | yyyyyyy | | | TRUE | FALSE | FALSE | centrify |
 
 ## Full QuickStart Excel File Layout
 
-The full Excel file layout of the QuickStart file is detailed in the picture below:
-
-![LOAM-S1-1824.webp](/images/privilegesecure/4.2/discovery/admin/configuration/360042878654_oam-s1-1824_941x297.webp)
-```
-
-
+![QuickStart Excel layout](/images/privilegesecure/4.2/discovery/admin/configuration/360042878654_oam-s1-1824_941x297.webp)

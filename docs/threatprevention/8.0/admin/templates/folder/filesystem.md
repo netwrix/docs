@@ -10,8 +10,7 @@ The **Templates** > **Microsoft** > **File System** folder in the Navigation pan
 following templates:
 
 :::warning
-‘Reads’ are left out due to the potential high volume of data that could be gathered;
-recommended only for highly sensitive content.
+This template excludes ‘Reads’ to avoid gathering excessive volumes of data. Use it only for highly sensitive content.
 :::
 
 

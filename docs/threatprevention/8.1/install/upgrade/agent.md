@@ -1,0 +1,82 @@
+---
+title: "Upgrade Agent"
+description: "Upgrade Agent"
+sidebar_position: 20
+---
+
+# Upgrade Agent
+
+You update the Threat Prevention Agent from the Agents interface.
+
+:::note
+If you are using an Endpoint Detection and Response (EDR) solution to protect LSASS, you
+must create an exclusion for Threat Prevention using any of these methods:
+:::
+
+
+- Add the path or names of the files listed under Agent Server in the [Installation](/docs/threatprevention/8.1/install/overview.md)
+  topic in the EDR.
+- Add the hash of the individual files in the EDR. In this case, every time you deploy a new Agent
+  version, the hashes change and you must update them. If you don't do this before upgrade, the
+  Agent can't hook into LSASS because the executable hash differs.
+
+In most cases, you only need to white-list the SIWindowsAgent.exe and SI.ActiveDirectoryMonitor.dll
+files.
+
+To upgrade a deployed Agent:
+
+**Step 1 –** Click **Agents** in the left pane to open the Agents interface.
+
+**Step 2 –** On the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md), select the desired
+server/Agent in the grid and on the top toolbar, select **Update Agent Installer**. The
+[Agent Installer Update Window](/docs/threatprevention/8.1/admin/agents/agents-windows/agentinstallerupdate.md) opens.
+
+**Step 3 –** On the Agent Installer Update window, click **Check for Newer Version of the Netwrix
+Threat Prevention Agent**. The green bar indicates the progress of checking the Agent for a newer
+version. If a new version is available, click **Apply Update**.
+
+:::tip
+Remember, when an Agent is out-of-date, the Version String column on the Agents interface has an
+orange background.
+:::
+
+
+**Step 4 –** Right-click an out-of-date Agent and select **Upgrade Agent** on the right-click menu.
+The Access Verification window opens.
+
+:::note
+The wizard doesn't block access to the Administration Console, and you can minimize it while
+actions are in progress. If you hide this wizard by clicking outside of the dialog box, a flashing
+blue link with the action name displays in the upper right corner of the interface. Click
+the flashing link to return the focus to the wizard.
+:::
+
+
+![Access Verification window](/images/threatprevention/8.1/install/upgrade/accessverification.webp)
+
+**Step 5 –** The Access Verification window displays one of the following statuses:
+
+- Failed – Read the failure messages and close the window. Resolve any error messages before the
+  next attempt.
+- Success – If the status displays Success, click **Next** to begin upgrading the Agent.
+- If some but not all items fail, click **Next** to continue the action on those
+  where access verification succeeded.
+
+:::note
+Closing the Administration Console while this action is in process causes problems with
+data collection.
+:::
+
+
+![Upgrade Agent window](/images/threatprevention/8.1/install/upgrade/upgradeagent.webp)
+
+**Step 6 –** On the Upgrade Agent window, Threat Prevention uninstalls the old Agent and installs
+the newer version. One of two status messages display:
+
+- Started – Self-upgrading agent
+- Failed – Read the failure messages and close the window. Resolve any error messages before the
+  next attempt.
+
+**Step 7 –** When the task completes successfully, click **Finish** to close the window.
+
+The Agent's status displays as Active.

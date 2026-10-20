@@ -40,7 +40,7 @@ port of the Privilege Secure server:
 
 - CORS – The OpenID Connect provider requires the Privilege Secure callback location to be
 configured for CORS. This will either be displayed by the provider after redirection, or a 500
-error is returned. If an error is returned, CORS is probably not configured with the correct
+error is returned. If an error is returned, CORS isn't configured with the correct
 information. Enter the address and port of the Privilege Secure server:
 
 [protocol]//[hostname]:[port]
@@ -57,7 +57,7 @@ page in the browser. don't sign in.
 - If the Sign In page doesn't display as expected, review the values configured for the OpenID
 Connect connector and modify them where needed. Then, verify the Sign In page again.
 :::note
-When configuring OpenID Connect for Okta, it is necessary to ensure that the Grant
+When configuring OpenID Connect for Okta, ensure that the Grant
 type in Okta is set to Implicit (hybrid) and the sub-settings Allow ID Token with implicit grant
 type and Allow Access Token with implicit grant type are both enabled.
 :::

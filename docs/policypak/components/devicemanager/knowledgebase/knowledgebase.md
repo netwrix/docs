@@ -1,6 +1,8 @@
 ---
 title: Device Manager Technical Notes
 description: Technical documentation for Device Manager
+pagination_prev: null
+pagination_next: null
 ---
 
 # Device Manager Technical Notes

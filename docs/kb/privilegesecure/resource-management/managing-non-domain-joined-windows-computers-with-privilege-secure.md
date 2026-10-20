@@ -60,7 +60,7 @@ Make sure that you have the following:
 4. Click the **Add Manually** radio button
 5. Enter the FQDN of the target computer
 6. Click **Add**
-7. In the lower right, select the Service Account you created above.
+7. In the lower right, select the Service Account created in the previous step.
 8. Click **Add**
 
 This will start the scanning step, you can close the dialog or wait for the scan to complete. If there are failures during the scan you can review the logs by navigating to the resource page.

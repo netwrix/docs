@@ -10,8 +10,6 @@ This section describes how to configure settings of the main add-on component, N
 **ConnectWise Manage Integration Service** that is required for connection to ConnectWise Manage and
 service ticket creation.
 
-Follow the steps to configure ConnectWise.
-
 **Step 1 –** To connect to ConnectWise Manage REST API, the API keys will be required. To obtain
 them, you will need an API Member account. See
 [this article](https://docs.connectwise.com/ConnectWise_Documentation/090/040/010/040) for details.

@@ -14,11 +14,12 @@ keywords:
   - custom classes
   - system settings
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: Understanding the Rights Hierarchy for Devices
 tags:
   - device-control-and-access-management
+  - kb
 title: "Understanding the Rights Hierarchy for Devices"
 knowledge_article_id: kA0Qk0000002B6SKAU
 ---
@@ -35,6 +36,14 @@ The rights hierarchy for devices, from lowest to highest, is as follows:
 2. Group Rights
 3. Computer or User Rights (You can configure which takes precedence in **System Configuration > System Settings.**)
 4. Devices
+
+![Priority order when configuring device rights](../../../endpointprotector/admin/dc_module/priortyorder.webp)
+
+For the full reference, see [Priority order](/docs/endpointprotector/admin/dc_module/devicesandcomputers#priority-order) in the Devices and Computers documentation.
+
+:::note
+If you don't configure device rights, they're inherited from the default Global Rights set per Device Type (USB Storage Device, Digital Camera, iPod, Thunderbolt, Chip Card Device, etc.). See [Directory Services](/docs/endpointprotector/admin/directoryserv) for more detail on how these defaults interact with directory-synced entities.
+:::
 
 ## Instructions
 

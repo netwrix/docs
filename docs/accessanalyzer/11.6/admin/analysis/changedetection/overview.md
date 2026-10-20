@@ -12,8 +12,8 @@ selected data items and compares result rows from previous collection activity w
 most recent collection.
 
 This module compares values collected for two different query instances. Therefore, as change
-detection depends on the existence of a **JobRunTimeKey**, history must be enabled and data
-collected at least twice to produce the desired results. Configure History settings under the job’s
+detection depends on the existence of a **JobRunTimeKey**, you must enable history and collect data
+at least twice to produce the results you want. Configure History settings under the job’s
 **Settings** > **History** node. See the
 [History](/docs/accessanalyzer/11.6/admin/settings/history.md) topic
 for additional information.

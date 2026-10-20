@@ -7,7 +7,7 @@ sidebar_position: 40
 # Access Admin Center
 
 Admin Center is a web-based application accessible over the Internet and Intranet. It
-comes with a default provider,Directory Manager, which primarily facilitates first-time log in to the
+comes with a default provider, Directory Manager, which primarily facilitates first-time log in to the
 application. Typically, the Directory Manager provider has one default user, _Super Admin_, that has
 full access to the Admin Center. On signing in, this user can create identity stores and configure
 settings to set up the application.
