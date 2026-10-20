@@ -99,7 +99,9 @@ Fix the cause and the cluster retries automatically — no reinstall needed.
 
 ## Use a private ACME certificate authority
 
-If your organization runs its own ACME-compatible certificate authority (for example smallstep `step-ca`), point `--acme-server` at its directory URL and supply that CA's root chain with `--ca-bundle` so Access Analyzer's own services trust the certificates it issues:
+If your organization runs its own ACME-compatible certificate authority (for example smallstep `step-ca`), point `--acme-server` at its directory URL and supply that CA's root chain with `--ca-bundle` so Access Analyzer's own services trust the certificates it issues.
+
+The bootstrap certificate must also chain to that bundle, so get one for the hostname from the same CA and pass it with `--tls-cert` and `--tls-key`. `--generate-self-signed-cert` doesn't work here: the installer rejects it whenever you supply a CA bundle.
 
 ```bash
 sudo --preserve-env=LICENSE_KEY dspm-installer \
@@ -108,7 +110,8 @@ sudo --preserve-env=LICENSE_KEY dspm-installer \
   --acme-server https://ca.corp.example.com/acme/acme/directory \
   --acme-email pki-admins@corp.example.com \
   --ca-bundle /etc/dspm/corp-root-ca.pem \
-  --generate-self-signed-cert
+  --tls-cert /etc/dspm/tls.crt \
+  --tls-key /etc/dspm/tls.key
 ```
 
 With a private CA the public-DNS requirement relaxes to: the hostname must resolve, and ports 80 and 443 must be reachable, **from the CA's network** rather than from the internet.
