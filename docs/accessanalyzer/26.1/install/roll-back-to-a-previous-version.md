@@ -90,6 +90,10 @@ Run these commands on the install host. `dspmctl` needs `sudo` because only root
    Don't skip this step. Without it, the root application never syncs again, and later upgrades, including an air-gapped `dspm-installer upgrade`, stop working.
    :::
 
+   To confirm, run `sudo dspmctl auto-status`. Every application should show **Yes** in all three columns:
+
+   ![dspmctl auto-status listing every application with auto-sync, self-heal, and auto-prune turned on](/images/accessanalyzer/26.1/install/auto-status.webp)
+
 5. Wait for every application to become healthy:
 
    ```bash
