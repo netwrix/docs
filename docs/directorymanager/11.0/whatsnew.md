@@ -32,8 +32,8 @@ Web-based application
 GroupID 11 is a web-based application. It has two portals:
 
 - Admin Center - Has replaced the Microsoft Management Console (MMC)-based Windows application.
-- GroupID portal - Self-Service portal, Password Center user portal, Password Center helpdesk
-  portal, Insights portal, Automate, Synchronize, and Reports have been merged into a single portal.
+- GroupID portal - A single portal that combines the Self-Service portal, Password Center user
+  portal, Password Center helpdesk portal, Insights portal, Automate, Synchronize, and Reports.
 
 Elasticsearch support
 
@@ -48,7 +48,7 @@ service provider in GroupID to authenticate users in that application through Gr
 GroupID Scheduler Service in IIS
 
 GroupID now saves scheduled jobs in the GroupID database. The GroupIDSchedulerService, created in the
-GroupIDSite11 site in native IIS, is responsible for initiating schedule runs.
+GroupIDSite11 site in native IIS, initiates schedule runs.
 
 Web-based Replication and Email services
 
@@ -102,8 +102,7 @@ triggered, GroupID automatically triggers the linked flow.
 Admin Center history tracking
 
 In earlier GroupID versions, GroupID partially tracked history for actions performed in GroupID
-Management Console. In GroupID 11, the history tracking function has been extended to include Admin
-Center history. GroupID auto-tracks actions such as the creation and deletion of identity stores,
+Management Console. In GroupID 11, history tracking also covers Admin Center. GroupID auto-tracks actions such as the creation and deletion of identity stores,
 the creation and deletion of SMS gateway accounts, changes to replication settings, modifications to
 notification templates, and much more.
 
@@ -134,7 +133,7 @@ In GroupID portal, end users can perform functions according to the roles assign
 
 Single portal for end-users
 
-The following GroupID modules and portals have been merged into a single portal – GroupID portal.
+The GroupID portal combines the following GroupID modules and portals into a single portal.
 
 | Modules/Nodes | Portals                         |
 | ------------- | ------------------------------- |
@@ -176,7 +175,7 @@ configurations are specified, the membership preview takes them into account as 
 Microsoft Teams groups
 
 Use the GroupID portal to create teams and channels in MS Teams. You can create static teams
-and smart teams, where smart team memberships are defined through queries. Your teams can have
+and smart teams, where queries define smart team memberships. Your teams can have
 temporary and permanent members as well as temporary and permanent owners. You can also set expiry
 dates for teams.
 
@@ -206,8 +205,8 @@ other providers.
 
 Data source for files on local server and one drive
 
-The Excel, Access, and Text/CSV files used for creating a data source can be placed on a local
-server or OneDrive.
+You can place the Excel, Access, and Text/CSV files that you use to create a data source on a
+local server or OneDrive.
 
 Synchronize policy
 
@@ -229,8 +228,8 @@ _Create Job_ option will not be available to role members.
 Workflows support in Synchronize
 
 If a Synchronize job performs an operation in the destination identity store and a workflow is
-configured for that operation in that identity store, then a workflow request is generated on the
-job run. If the approver approves the request, the job will run successfully. If the approver denies
+configured for that operation in that identity store, then GroupID generates a workflow request
+when the job runs. If the approver approves the request, the job will run successfully. If the approver denies
 the request, you will be unable to run the job.
 
 Python scripting in Synchronize
@@ -240,7 +239,7 @@ either of the two to modify the script for a job.
 
 Messaging provider of destination
 
-Synchronize supports different messaging providers that can be configured while creating a job.
+Synchronize supports different messaging providers that you can configure while creating a job.
 However, instead of configuring a new messaging provider, you can also select the messaging provider
 of the destination identity store.
 

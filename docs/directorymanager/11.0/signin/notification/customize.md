@@ -35,7 +35,7 @@ What do you want to do?
     The editor displays a list of all notifications that GroupID generates. The editor displays
     notification names in English, regardless of the language you select.
 
-2. By default, English (US) is selected, so you can view and customize the notification templates in
+2. By default, the editor selects English (United States), so you can view and customize the notification templates in
    the English language. To set another language:
 
     1. Click **Filter**.
@@ -45,8 +45,7 @@ What do you want to do?
 
 3. You can search for a notification template using the following filters:
 
-    - Select an event in the **Categories** list to get a list of notifications pertaining to that
-      event.
+    - Select an event in the **Categories** list to get a list of notifications for that event.
     - Specify a search string in the search box at the top and press **Enter**; the list displays
       notification templates that have the string as part of their name or description. You can
       also search for a specific notification template by its name.
@@ -97,7 +96,7 @@ options:
 - Use the page navigator in the top right corner of the source code view to scroll through the
   content. The navigator has sections that let you jump to the beginning, middle, and
   end of the source code.
-- Use the options on the **Edit** menu to search for target text (whether it be a word, phrase, or
+- Use the options on the **Edit** menu to search for target text (a word, phrase, or
   tag), to cut the selected text, to copy the selected text, and to redo and undo an operation. You
   can also insert the current date and time in the template.
 
@@ -118,7 +117,7 @@ will show the email address of the requester, and so on.
     Each notification template has its own set of recommended tags.
 
 2. Use the _Go To_ option on the **Edit** menu to search for a tag you want to replace. Refer to the
-   tag dictionary to know what tags are used in the notification.
+   tag dictionary to see which tags the notification uses.
 3. After replacing a tag in the template, click **Save** on the menu bar.
 
 ##### Complete List of Tags

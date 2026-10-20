@@ -36,7 +36,7 @@ Use any of the following methods to connect and sign in:
     :::
 
 - Select an identity store and sign in using a SAML provider.  
-  (This option is available if a SAML provider is configured with the selected identity store.)
+  (This option is available if the selected identity store has a SAML provider configured.)
 
     :::note
     Microsoft Entra ID MFA enabled users can't log into GroupID using their username and
@@ -48,7 +48,7 @@ Use any of the following methods to connect and sign in:
   connect to.)
 
 Next, you may have to pass second factor authentication, depending on whether it is enabled for your
-role in the identity store. You can perform tasks in Admin Center in keeping with your role and
+role in the identity store. You can perform tasks in Admin Center according to your role and
 permissions in the identity store.
 
 **To sign in:**
