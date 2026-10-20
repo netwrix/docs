@@ -25,7 +25,21 @@ hooks {
   ["pre-commit"] {
     fix = true
     stash = "git"
-    steps = docsSteps
+    steps = (docsSteps) {
+      // Blocks the commit on Vale, Dale, and AI-isms findings: new pages whole, existing
+      // pages on the lines this commit changes. Reads the staged text, so no {{files}}.
+      // Dale uses ANTHROPIC_API_KEY or the claude CLI; without either it skips Dale and says so.
+      ["quality"] {
+        glob = List("docs/**/*.md", "docs/**/*.mdx")
+        exclude = notLinted
+        check = "node scripts/quality/check.mjs --staged --table"
+      }
+      // Warns, never blocks, about unresolved {/* TODO: ... */} draft markers.
+      ["todo"] {
+        glob = List("docs/**/*.md", "docs/**/*.mdx")
+        check = "node scripts/quality/todo-check.mjs --staged || true"
+      }
+    }
   }
   // Blocks the push while a Vale warning remains on a line the branch changed.
   // Check-only, so hk doesn't suggest a --fix that can't clear what's left.

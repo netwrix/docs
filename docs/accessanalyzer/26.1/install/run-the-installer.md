@@ -29,7 +29,7 @@ The Netwrix package registry hosts the installer binary and the media archive, a
    ```
 
 :::note
-On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` can fail with `command not found`. Run it by its full path instead, for example `sudo /usr/local/bin/dspm-installer`.
+On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` can fail with `command not found`. Run it by its full path instead, for example `sudo /usr/local/bin/dspm-installer`.
 :::
 
 <Tabs groupId="install-mode">
@@ -57,7 +57,7 @@ On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`,
 </TabItem>
 <TabItem value="airgap" label="Air-gapped install">
 
-2. Download the installer and the offline install media for the server's architecture.
+2. Confirm the server has at least 25 GB free on the volume that holds the media directory (see [Requirements](requirements.md#server)), then download the installer and the offline install media for the server's architecture.
 
    ```bash
    ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
