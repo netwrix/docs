@@ -29,8 +29,8 @@ Use any of the following methods to connect and sign in:
     :::
 
 
-- Select an identity store and sign in using a SAML provider. This option is available if a SAML
-  provider is configured with the selected identity store.
+- Select an identity store and sign in using a SAML provider. This option is available if an
+  administrator has configured a SAML provider for the selected identity store.
 
     :::note
     Microsoft Entra ID MFA enabled users can't log into Directory Manager using their
@@ -89,7 +89,7 @@ Directory Manager.
 
 The administrator can enable second factor authentication for a security role in an identity store.
 
-If enabled for your role in the identity store, you must pass second factor authentication after
+If the administrator enables it for your role in the identity store, you must pass second factor authentication after
 signing in via any of these methods.
 
 For second factor authentication, one of the following applies:
