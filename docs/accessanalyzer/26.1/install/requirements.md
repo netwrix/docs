@@ -139,7 +139,15 @@ Some features add outbound connections of their own after you configure them.
 
 The rows for sources apply to every host that runs the scan: the server, and any agent that the scan or a source override routes it to with a label. [Agent labels and scan routing](../agents/agent-labels.md) explains how a scan picks its agent. **Test connection** always runs on the server, so the server needs these hosts too. A passing test shows only that the server can reach the source.
 
-The Microsoft hosts are for the commercial Microsoft 365 cloud. Government and sovereign clouds use different hosts.
+The `login.microsoftonline.com`, `graph.microsoft.com`, and `*.sharepoint.com` hosts are for the commercial Microsoft 365 cloud. Azure Government (GCC) tenants use the same hosts. Each Entra ID and SharePoint Online source picks its hosts from its **Azure cloud** setting. If you set **Azure cloud** to another cloud, allow that cloud's hosts on TCP 443 instead:
+
+| Azure cloud | Login and Graph hosts | SharePoint Online hosts |
+|---|---|---|
+| Azure Government (GCC High) | `login.microsoftonline.us`, `graph.microsoft.us` | `*.sharepoint.us` |
+| Azure Government (DoD) | `login.microsoftonline.us`, `dod-graph.microsoft.us` | `*.sharepoint-mil.us` |
+| Azure China (21Vianet) | `login.chinacloudapi.cn`, `microsoftgraph.chinacloudapi.cn` | `*.sharepoint.cn` |
+
+An Entra ID source needs only the login and Graph hosts. Entra ID as the identity provider always uses the commercial hosts, so it supports only commercial and GCC tenants.
 
 ## Browser
 
