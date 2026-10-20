@@ -15,7 +15,7 @@ database environments to collect permissions, sensitive data, and activity event
 
 **Data Collectors**
 
-This solution employs the following data collector to scan the target environment:
+This solution uses the following data collectors to scan the target environment:
 
 - [ADInventory Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/adinventory/overview.md)
 - [PowerShell Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/powershell/overview.md)
@@ -44,7 +44,7 @@ This solution employs the following data collector to scan the target environmen
 **For Oracle Data Collection**
 
 - **Recommended** User with SYSDBA role OR [Least Privilege Model](/docs/accessanalyzer/11.6/requirements/databases/oracle/leastprivilege.md)
-- Local Administrator on the target servers – Only applies to Windows Servers and not on Linux or
+- Local Administrator on the target servers – Applies only to Windows Servers, not to Linux or
   Unix operating systems
 
 The
