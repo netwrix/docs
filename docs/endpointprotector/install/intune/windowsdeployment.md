@@ -47,9 +47,13 @@ Protector MSI file and click OK;
 - Name – add Endpoint Protector and optional, the package version (Endpoint Protector 5.7.3.6)
 - Description – click Edit Description and add installation details
 - Publisher – add NetwrixLtd.
-- Command-line argument – add the following command line in the text box and complete it with the required information (server IP, port):
+- Command-line argument – add the following command line in the text box and complete it with the required information (server address, port):
 
-    - WSIP="EPP_server_IP" WSPORT="443" /q REBOOT=ReallySuppress
+    - WSIP="EPP_server_FQDN" WSPORT="443" /q REBOOT=ReallySuppress
+
+:::tip
+Use the server's fully qualified domain name (FQDN) for `WSIP`, for example `WSIP="epp.example.com"`, instead of an IP address. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
 
 ![App information page to add information. ](addapp.webp)
 

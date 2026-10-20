@@ -30,7 +30,7 @@ To upload the script and package, follow these steps:
 **Step 3 –** On the General section, add a name for the profile, and then select the **Script tab**
 and paste the content of the `epp_change_ip.sh` script.
 
-**Step 4 –** Add your Server IP to the EPP_SERVER_ADDRESS field.
+**Step 4 –** Add your server's fully qualified domain name (FQDN) to the EPP_SERVER_ADDRESS field. Netwrix recommends an FQDN over an IP address, so clients keep working when the server address changes. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
 
 :::note
 You can edit the EPP_DEPARTMET CODE and EPP_SERVER_PORT fields to deploy the Endpoint
