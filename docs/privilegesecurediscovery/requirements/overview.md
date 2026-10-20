@@ -8,7 +8,7 @@ Netwrix Privilege Secure for Discovery runs as a container-based deployment on U
 
 ## Host requirements
 
-- Ubuntu Server 24.04 LTS on every node.
+- Ubuntu Server 24.04 LTS on every node, on an x86-64 processor that supports the Advanced Vector Extensions (AVX) instruction set, which MongoDB 8.0 requires.
 - One node for a single-node deployment, or three nodes for a cluster. A cluster is the basis for high availability (HA). For HA and disaster recovery (DR) options, see [High availability and disaster recovery](../getting-started/high-availability-and-disaster-recovery.md).
 - Docker Engine and the AWS Command Line Interface (AWS CLI) on every node. See [Host prerequisites](./host-prerequisites.md).
 - Access to the Netwrix container registry. See [Registry access](./registry-access.md).

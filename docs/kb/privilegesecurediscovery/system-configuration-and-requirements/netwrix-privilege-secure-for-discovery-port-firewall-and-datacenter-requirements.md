@@ -64,14 +64,14 @@ WAN accelerators can affect scan times and function. Exclude the nodes from WAN 
 
 - ICMP
 - Windows devices:
-  - `TCP/445`: Connect and authenticate through SMB to bind a Microsoft Remote Procedure Call (MSRPC) service for scanning, policy enforcement, and provisioning administrative privileges.
-  - `TCP/135` and `TCP/139`: Required only for Windows systems that use SMBv1 over NetBIOS, which are Windows versions before Vista and Windows Server versions before 2008. These ports provide the same SMB connection and authentication for the MSRPC service.
+  - `TCP/445`: Connect over SMB, negotiating the highest SMB version that the system supports, including SMB 3.1.1, and authenticate. The product then uses Microsoft Remote Procedure Call (MSRPC) services over that SMB connection for scanning, policy enforcement, and provisioning administrative privileges.
 - UNIX devices: SSH (`TCP/22`)
 - macOS devices: SSH (`TCP/22`)
 
 ### Domain Controller
 
-LDAP (`TCP/389`) or LDAPS (`TCP/636`)
+- LDAP (`TCP/389`) or LDAPS (`TCP/636`)
+- Kerberos (`TCP/88` and `UDP/88`)
 
 ### NTP Host
 

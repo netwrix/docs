@@ -4,12 +4,6 @@ description: "Learn what Privilege Secure for Discovery does, its key concepts, 
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the sidebar path names Insight > Computer and Access > Grant Access that the onboarding pages use are unchanged at 26.09.1. Evidence: Access > Grant Access found in docker/web/common/access/views/accessView.html; Insight > Computer not verified.
-
-TODO: Confirm the rollout order (scan, add users, protect a test system, then bulk onboarding) is the recommended sequence for 26.09.1. Evidence: none.
-:::
-
 Netwrix Privilege Secure for Discovery finds privileged accounts on Windows and Linux systems and removes standing administrator access. Users request just-in-time access when they need it, so privileged access exists only for the time a task requires. This page introduces the key concepts and the steps of a typical rollout.
 
 ## Key concepts
@@ -24,7 +18,7 @@ Protect mode manages the local administrator group on a system. Protect mode rem
 
 **Just-in-time access (JITA)**
 
-With JITA, a user requests administrator access to a system for a limited time. The user must also be a member of an Active Directory (AD) group that is allowed to access the system. Privilege Secure for Discovery doesn't change Active Directory.
+With JITA, a user requests administrator access to a system for a limited time. The user must also be a member of an Active Directory (AD) group that has permission to access the system. Privilege Secure for Discovery doesn't change Active Directory.
 
 **Persistent accounts**
 
@@ -38,7 +32,7 @@ OAM maintains a local administrator account on a system, with a password that Pr
 
 A rollout moves from visibility to enforcement in stages.
 
-1. Plan the deployment. Decide whether to use a single node or a three-node cluster, and decide how to recover from a serious failure. See [High availability and disaster recovery](./high-availability-and-disaster-recovery.md) and [Risk register](./risk-register.md).
+1. Plan the deployment. Decide whether to use a single node or a three-node cluster, and decide how to recover from a serious failure. See [High availability and disaster recovery](./high-availability-and-disaster-recovery.md).
 2. Review the [requirements](../requirements/overview.md) and [install](../install/overview.md) the containers.
 3. Add the domain and the service accounts. See [Add a domain](../configuration/domains-and-ad/add-a-domain.md) and [Service accounts](../requirements/service-accounts.md).
 4. [Set up scan mode](../configuration/onboard-systems/set-scan-mode.md) and review the results on the [dashboard](../admin/dashboard.md).

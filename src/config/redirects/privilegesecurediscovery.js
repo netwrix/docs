@@ -138,7 +138,7 @@ const PAGE_MAP = {
   "requirements/technicalpreparation/postmanlinuxregistration": "configuration/bulk-onboarding/register-linux-systems",
   "requirements/technicalpreparation/productmodeaccount": "configuration/domains-and-ad/protect-mode-account-gpo",
   "requirements/technicalpreparation/proxyfirewallwhitelist": "requirements/proxy-and-firewall-allowlist",
-  "requirements/technicalpreparation/riskregister": "getting-started/risk-register",
+  "requirements/technicalpreparation/riskregister": "getting-started/high-availability-and-disaster-recovery",
   "requirements/technicalpreparation/scangposerver2012or2008dcs": "configuration/domains-and-ad/scan-gpo-domain-controllers",
   "requirements/technicalpreparation/scangposerver2016+dcs": "configuration/domains-and-ad/scan-gpo-domain-controllers",
   "requirements/technicalpreparation/serviceaccounts": "requirements/service-accounts",

@@ -5,8 +5,6 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the download URL pattern on the Netwrix releases server for the quickstart tools archive. Evidence: the archive name `privilegesecure-discovery-quickstart-tools-<version>.zip` comes from infrastructure azure-pipelines.yml lines 190-199 (pre-move reading); the host and path couldn't be confirmed from the repositories.
-
 TODO: Explain how an administrator finds the user ID to enter as userId. Evidence: none; the API key screen and reports.py (config block) both ask for it without describing where to find it.
 
 TODO: Confirm that the tool runs on an Ubuntu node of the deployment, and that the OS keyring is available there. Evidence: none; reports.py uses the keyring package to store the API key.

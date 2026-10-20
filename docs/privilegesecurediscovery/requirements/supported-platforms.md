@@ -16,7 +16,7 @@ This page lists the operating systems that Privilege Secure for Discovery can ma
 
 ## Host operating system
 
-Install Netwrix Privilege Secure for Discovery on Ubuntu Server 24.04 LTS. For the host requirements, see [Requirements overview](./overview.md).
+Install Netwrix Privilege Secure for Discovery on Ubuntu Server 24.04 LTS, on an x86-64 processor. For the host requirements, see [Install host prerequisites](./host-prerequisites.md).
 
 ## Endpoint operating systems
 

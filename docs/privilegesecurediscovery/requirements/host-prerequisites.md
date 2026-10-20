@@ -8,7 +8,9 @@ Prepare each Ubuntu machine before you deploy Netwrix Privilege Secure for Disco
 
 ## Prerequisites
 
-- Ubuntu Server 24.04 LTS.
+- Ubuntu Server 24.04 LTS, on an x86-64 processor.
+- A processor that supports the Advanced Vector Extensions (AVX) instruction set. MongoDB 8.0 requires AVX. Some virtual machine configurations hide AVX from the guest, so confirm that your hypervisor exposes it.
+- The CPU, memory, and storage that [Sizing](./sizing.md) specifies.
 - One machine for a single-node deployment, or three machines for a cluster.
 - Internet access to download packages and container images. If the environment uses a proxy server, see [Proxy and firewall allowlist](./proxy-and-firewall-allowlist.md).
 
@@ -58,6 +60,10 @@ sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --u
 ```
 
 Run these steps on every node in the deployment.
+
+## Prepare the storage
+
+MongoDB stores the product data under `/secureone/data/db`, inside the installation directory. Place the installation directory on local storage with an XFS or ext4 file system. Allocate the capacity that [Sizing](./sizing.md) specifies to the file system that holds the installation directory and the Docker data directory.
 
 ## Next step
 

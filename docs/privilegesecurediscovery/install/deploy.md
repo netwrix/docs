@@ -5,8 +5,6 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the release server path pattern for the 26.09.1 quickstart bundle (`.../privilegesecure-discovery/26.09/privilegesecure-discovery-quickstart-26.09.1.zip`). Evidence: none; the pattern comes from the previous version of this page.
-
 TODO: Confirm that `sudo -E` keeps the HOME of the calling user, or state which user's Docker configuration `secureone.sh` reads for the registry login. Evidence: none.
 
 TODO: Confirm that the bundle ships the three files in the zip (`secureone.sh`, `secureone.tar.gz`) with no other contents at 26.09.1. Evidence: none.
@@ -22,7 +20,7 @@ A future release will update the backend to Python 3.13 and supported library ve
 
 - Every node meets the requirements in [Requirements](../requirements/overview.md).
 - Every node has the operating system prerequisites installed. See [Install host prerequisites](../requirements/host-prerequisites.md).
-- Every node is authenticated with the Netwrix container registry. See [Configure registry access](../requirements/registry-access.md).
+- Every node has signed in to the Netwrix container registry. See [Configure registry access](../requirements/registry-access.md).
 - You can sign in to each node over SSH with an account that can run `sudo`.
 
 ## Download the quickstart bundle
@@ -169,7 +167,7 @@ Run the following command to re-deploy the stack from `/secureone/docker-stack.y
 sudo -E bash secureone.sh deploy --version <version>
 ```
 
-The `--version` value must match the release that is installed. To move to another release, use `upgrade`.
+The `--version` value must match the release that you installed. To move to another release, use `upgrade`.
 
 ## Reset a deployment before a reinstall
 

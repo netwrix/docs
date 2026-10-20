@@ -23,7 +23,7 @@ Privilege Secure for Discovery supports two deployment layouts: a single node an
 | Single node | One standalone MongoDB service (`s1_db`) with no replica set | The product is unavailable until you restore the node or recover on another host. |
 | Three-node cluster | A three-member MongoDB replica set (`s1_mongo1`, `s1_mongo2`, and `s1_mongo3`) on a Docker Swarm of three nodes | The product continues to run when any one node fails. |
 
-A single node provides no high availability. Plan for recovery from a backup, and review the [risk register](./risk-register.md) for the failures that affect it.
+A single node provides no high availability. Plan for recovery from a backup.
 
 ## High availability
 

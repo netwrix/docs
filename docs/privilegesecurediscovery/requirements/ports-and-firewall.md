@@ -14,6 +14,11 @@ TODO: Confirm that Fluentd port 24224 needs no firewall rule. The stack files bi
 TODO: Confirm the SYSLOG ports (UDP/514 and TCP/6514) for the SIEM forwarding that the container deployment supports. Evidence: none in the stack files.
 
 TODO: Confirm NTP is UDP/123 and whether the host uses the domain controller or an internet time source. Evidence: none in the stack files.
+
+TODO: Confirm the EDR API hosts in the table. Evidence: they are the placeholders that the product shows in the EDR provider form (`https://api.crowdstrike.com`, `https://defense.conferdeploy.net`, `https://<customerName>-api.cloud.tanium.com`); SentinelOne has no single common host, so the table shows the console pattern. Confirm that these are the most common commercial hosts, in particular Carbon Black Cloud Prod 02 compared with Prod 05, and that the product contacts only the API base URL.
+
+TODO: The Windows entry now covers only TCP/445 and says nothing about NetBIOS, SMBv1, or dynamic RPC high ports. Confirm the product needs no TCP/135, TCP/139, or dynamic RPC high ports. Evidence: windows_rpc/_smb.py connects to the SMB session port 445 with the highest available dialect (impacket 0.13.1) and runs MSRPC through named pipes over that connection (SMBTransport). The Kerberos entry in the domain controllers section (TCP and UDP 88) was added at the owner's direction because the same module authenticates with Kerberos tickets. Confirm it and whether the product needs any other Kerberos port.
+
 :::
 
 This page lists the network ports, load balancer settings, and certificate requirements for Netwrix Privilege Secure for Discovery. Use it to prepare firewalls before you install the product.
@@ -47,14 +52,13 @@ The following sections list the connections that the firewall must allow. Each h
 
 - ICMP.
 - Windows devices:
-  - TCP/445. The product connects and authenticates through SMB to bind a Microsoft Remote Procedure Call (MSRPC) service for scanning, policy enforcement, and provisioning administrative privileges. If the Privilege Secure for Discovery servers are in a secure network enclave, configure the firewall to allow connections over the dynamic RPC high ports in use.
-  - TCP/135. Required only for Windows systems that use SMBv1 over NetBIOS. This is the MSRPC endpoint mapper. If the servers are in a secure network enclave, allow the dynamic RPC high ports in use.
-  - TCP/139. Required only for Windows systems that use SMBv1 over NetBIOS: Windows versions earlier than Vista and Windows Server versions earlier than 2008.
+  - TCP/445. The product connects over Server Message Block (SMB) and negotiates the highest SMB version that the system supports, including SMB 3.1.1, and authenticates. It then uses Microsoft Remote Procedure Call (MSRPC) services over that SMB connection for scanning, policy enforcement, and provisioning administrative privileges.
 - Linux devices: SSH (TCP/22).
 
 ### Privilege Secure for Discovery to domain controllers
 
 - LDAP (TCP/389) or LDAPS (TCP/636).
+- Kerberos (TCP/88 and UDP/88).
 
 ### Privilege Secure for Discovery to the NTP host
 
@@ -110,4 +114,15 @@ For the other hosts that an installation needs, see [Proxy and firewall allowlis
 
 ### Privilege Secure for Discovery to EDR cloud platforms
 
-If you use an endpoint detection and response (EDR) integration, allow HTTPS (TCP/443) to the cloud platform URLs, such as `api.crowdstrike.com` and `defense.conferdeploy.net`.
+If you use an endpoint detection and response (EDR) integration, allow HTTPS (TCP/443) to the API host of each platform that you configure. The host that you enter as the API base URL in the EDR provider configuration is the host to allow.
+
+| Platform | API base URL |
+| --- | --- |
+| CrowdStrike Falcon | `https://api.crowdstrike.com` |
+| SentinelOne | `https://<console-name>.sentinelone.net` |
+| Carbon Black Cloud | `https://defense.conferdeploy.net` |
+| Tanium Cloud | `https://<customer-name>-api.cloud.tanium.com` |
+
+If your tenant runs in another region or environment, allow the API host that your platform console shows instead.
+
+For the steps to configure each platform, see the EDR integration pages.

@@ -7,9 +7,6 @@ sidebar_position: 30
 :::warning[Needs dev input: remove before publishing]
 TODO: This page uses `secureone.sh upgrade`, `install-cli`, and `verify` (present in the 26.09.1 release branch) instead of the earlier manual procedure that edited `/secureone/s1.env` and copied `/app/s1-cli` out of the s1tool image by hand. Confirm the manual procedure is no longer needed for any supported starting release. Evidence: origin/release/26.09.1-rc secureone.sh usage text (upgrade, install-cli, verify).
 
-TODO: Confirm the location and file name of the 26.09.1 quickstart bundle that customers download. Evidence: none.
-:::
-
 The `s1 mongo-upgrade` commands come from the `s1` command-line tool on the host. Upgrading the application services doesn't by itself prove that every database node has the 26.09.1 tool. Prepare each database node before you run `check`.
 
 ## Before you begin

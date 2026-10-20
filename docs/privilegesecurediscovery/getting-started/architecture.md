@@ -5,14 +5,14 @@ sidebar_position: 20
 ---
 
 :::warning[Screenshot needs attention: remove before publishing]
-TODO: /images/privilegesecure/4.2/discovery/requirements/architectureoverview.webp shows a diagram with the old product name and branding from an earlier release. Re-create the diagram for the current release.
-
-TODO: /images/privilegesecure/4.2/discovery/requirements/singlenodearchitecture.webp shows the old product logo and name and an operating system version that is no longer supported. Re-create the diagram for the current release.
-
 TODO: /images/privilegesecure/4.2/discovery/360021493614_screen_shot_2019-04-19_at_1.13.51_pm_293x206.webp (service listing) isn't used here. Capture a new `docker service ls` listing from a 26.09.1 single node if a screenshot is wanted.
 :::
 
 :::warning[Needs dev input: remove before publishing]
+TODO: Confirm the details in the cluster diagram that the stack files do not state: that the Swarm routing mesh publishes TCP 443 and TCP 80 on every node, that the API runs on the node that hosts MongoDB replica 1, the syslog ports (UDP 514 and TCP 6514), the NTP and RADIUS ports, and that the Entra ID connection uses HTTPS on TCP 443. Evidence: docker-stack.prod.cluster.yml placement constraints on lines 33-54; the ports come from the Ports and firewall page, which carries its own open items.
+
+TODO: Confirm which container reads Microsoft Entra ID for the single-node diagram. The stack files have no separate Entra sync service, so the diagram draws the arrow from the discovery tier as a group. Evidence: not present in docker-stack.prod.single.yml.
+
 TODO: Confirm the purpose of the analytics_engine service in customer-facing terms. Evidence: image analytics_engine in docker-stack.prod.single.yml:34; no description found.
 
 TODO: Confirm the purpose of the worker-secondary service and how it differs from worker. Evidence: docker-stack.prod.single.yml:131 uses the worker image.
@@ -26,15 +26,15 @@ TODO: Confirm the ldapsync behavior (initial sync stages, 60-second change check
 TODO: Confirm whether the entraidsync service named in the application repository runs as a separate service in the customer stack. Evidence: not present in docker-stack.prod.single.yml or docker-stack.prod.cluster.yml.
 :::
 
-Privilege Secure for Discovery runs as a set of Docker services, deployed as the `s1` stack on Docker Swarm. A single-node deployment runs every service on one Ubuntu Server 24.04 LTS host. A three-node cluster runs the same services across three hosts and adds a three-member MongoDB replica set. This page describes the services and how to check them.
+Privilege Secure for Discovery runs as a set of Docker services, deployed as the `s1` stack on Docker Swarm. A single-node deployment runs every service on one Ubuntu Server host. A three-node cluster runs the same services across three hosts and adds a three-member MongoDB replica set. This page describes the services and how to check them.
 
 ## Deployment diagrams
 
 The following diagrams show the architecture of a clustered and a single-node deployment.
 
-![Architecture diagram of a Privilege Secure for Discovery cluster deployment showing the services and the database](/images/privilegesecure/4.2/discovery/requirements/architectureoverview.webp)
+![Architecture diagram of a three-node cluster deployment. Clients reach a load balancer over HTTPS. Three Ubuntu Server nodes run in one Docker Swarm. Each node hosts one MongoDB replica and one health reporter, and Swarm schedules the other services on any node. The diagram lists the ports for node-to-node traffic and for connections to Active Directory, Microsoft Entra ID, Windows and Linux systems, EDR platforms, a SAML identity provider, NTP and RADIUS servers, SIEM collectors, and the Netwrix container registry.](/images/privilegesecurediscovery/architecture/cluster-architecture.webp)
 
-![Architecture diagram of a single-node Privilege Secure for Discovery deployment](/images/privilegesecure/4.2/discovery/requirements/singlenodearchitecture.webp)
+![Architecture diagram of a single-node deployment. Administrators, users, and REST API clients connect over HTTPS to the web portal and API. All containers run on one Docker host in Swarm mode. The containers connect to Active Directory, Microsoft Entra ID, Windows and Linux systems, EDR platforms, and SIEM and log collectors.](/images/privilegesecurediscovery/architecture/single-node-architecture.webp)
 
 ## Container services
 
