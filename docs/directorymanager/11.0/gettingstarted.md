@@ -26,8 +26,8 @@ The GroupID application has the following main modules or clients:
   joining/leaving groups. You can also perform these operations in the GroupID portal, but
   the app is more convenient.
 - **Management Shell** - This command-line interface is for users who are comfortable with
-  scripts. Use Management Shell cmdlets to perform several group and user management functions, as
-  an alternative to performing those same functions from the GroupID portal.
+  scripts. Use Management Shell cmdlets instead of the GroupID portal to perform several group and
+  user management functions.
 - **APIs** - Integrate other applications with GroupID to perform several user management and group
   management functions.
 

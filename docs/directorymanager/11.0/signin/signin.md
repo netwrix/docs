@@ -44,11 +44,11 @@ Use any of the following methods to connect and sign in:
     :::
 
 - Scan the displayed QR code with the GroupID app installed on your smartphone.  
-  (This option is available if the QR code feature is enabled for the identity store you want to
-  connect to.)
+  (This option is available if the identity store you want to connect to has the QR code feature
+  enabled.)
 
-Next, you may have to pass second factor authentication, depending on whether it is enabled for your
-role in the identity store. You can perform tasks in Admin Center according to your role and
+Next, you may have to pass second factor authentication, depending on whether your role in the
+identity store requires it. You can perform tasks in Admin Center according to your role and
 permissions in the identity store.
 
 **To sign in:**
@@ -77,8 +77,8 @@ permissions in the identity store.
 
 ### With a SAML Provider
 
-You can opt for single sign-on across all GroupID clients, provided that a SAML provider is
-configured with GroupID. See the following topics for additional information on the SAML provider
+You can opt for single sign-on across all GroupID clients, provided that GroupID has a SAML
+provider configured. See the following topics for additional information on the SAML provider
 configuration:
 
 - [Configure GroupID in Microsoft Entra ID for SSO](/docs/directorymanager/11.0/authenticate/asserviceprovider/entrasso/configureinentra.md)
@@ -94,7 +94,7 @@ into GroupID.
 
 ### With QR Code
 
-If QR code is enabled for any of the identity stores, the **GroupID Authenticate** page displays the
+If any of the identity stores has QR code enabled, the **GroupID Authenticate** page displays the
 code too. Use the QR code to sign into an identity store.
 
 1. Open the GroupID app on your smartphone and connect to an identity store. This identity store
@@ -104,7 +104,7 @@ code too. Use the QR code to sign into an identity store.
 3. Capture the QR code through the app on your phone. One of the following happens:
 
     - If the identity store that the app is connected to doesn't have the QR code option enabled,
-      an error message is displayed.
+      GroupID displays an error message.
     - If the identity store that the app is connected to has the QR code option enabled, Admin
       Center will connect to this identity store.
 
@@ -149,7 +149,7 @@ in Microsoft Entra Admin Center.
 In GroupID, you must provide this PFX certificate on the following pages:
 
 - In Identity store connection settings while creating a Microsoft Entra ID identity store.
-- In messaging provider settings (when Exchange Online / Office 365 is set as messaging provider).
+- In messaging provider settings (when you set Exchange Online / Office 365 as the messaging provider).
 - When you select AD as destination and Office 365 as messaging provider in a Synchronize job, you
   have to provide the certificate on the Sync Object page.
 

@@ -102,8 +102,8 @@ options:
 
 ### Replace the Tags
 
-In a notification template, variables are appended with an attribute name and enclosed in percentage
-signs, to display that attribute’s value in the notification. For example,
+In a notification template, a tag combines a variable with an attribute name between percentage
+signs to display that attribute’s value in the notification. For example,
 %TARGETOBJECT_DisplayName% will resolve to the display name of the targetobject; %REQUESTER_mail%
 will show the email address of the requester, and so on.
 

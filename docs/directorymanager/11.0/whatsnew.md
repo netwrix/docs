@@ -154,8 +154,8 @@ objects and save each query for later use.
 Dynasties in the GroupID portal
 
 Dynasties, which only Automate previously managed, are now available in the GroupID portal.
-Just like Smart Groups and static groups, users can create and manage Dynasties through the
-GroupID portal.
+Users can create and manage Dynasties through the GroupID portal, just as they do Smart Groups and
+static groups.
 
 Upgrade a static group to a Managerial Dynasty
 
@@ -169,8 +169,8 @@ Portal users can transfer their direct reports and specify a new manager for the
 Membership preview for Smart Groups and Dynasties
 
 Use the membership preview option to preview the objects (along with their membership) that
-will be created/added when you update the membership of a Smart Group or Dynasty. If out-of-bounds
-configurations are specified, the membership preview takes them into account as well.
+GroupID creates or adds when you update the membership of a Smart Group or Dynasty. If you specify
+out-of-bounds configurations, the membership preview takes them into account as well.
 
 Microsoft Teams groups
 
@@ -187,8 +187,7 @@ determines private channel membership.
 Synchronize is now web-based and available in the GroupID portal. Synchronize jobs now use identity
 stores and data sources defined in Admin Center as source and destination. Earlier, only IT admins
 could run Synchronize since it was part of the GroupID Management Console but now end users can use
-it too. Proper checks are in place to control access via the Synchronize policy and
-Synchronize-related permissions.
+it too. The Synchronize policy and Synchronize-related permissions control access.
 
 Support for Microsoft Entra ID and Google Workspace providers
 
@@ -215,15 +214,14 @@ Using the Synchronize policy, you can allow or disallow:
 - a provider to be used as a source or destination.
 - an identity store/data source to be used as a source or destination.
 
-You can choose the object types that can be created or synced at the destination using a Synchronize
-job. For each object type in an identity store and data source, you can also specify the attributes
+You can choose the object types that a Synchronize job can create or sync at the destination. For each object type in an identity store and data source, you can also specify the attributes
 that will be available for mapping the source and destination fields in a Synchronize job.
 
 Synchronize permissions
 
 Using Synchronize permission, you can control different actions that role members can perform in
-Synchronize. For example, if the permission to create a Synchronize job is disabled for a role, the
-_Create Job_ option will not be available to role members.
+Synchronize. For example, if you disable the permission to create a Synchronize job for a role, the
+_Create Job_ option isn't available to role members.
 
 Workflows support in Synchronize
 
@@ -234,7 +232,7 @@ the request, you will be unable to run the job.
 
 Python scripting in Synchronize
 
-Along with VB scripting, GroupID 11 introduces Python scripting while creating a job. You can choose
+When you create a job, GroupID 11 lets you use Python scripting along with VB scripting. You can choose
 either of the two to modify the script for a job.
 
 Messaging provider of destination
@@ -246,8 +244,8 @@ of the destination identity store.
 Notification server of destination
 
 If notifications are enabled for a Synchronize job, then Synchronize sends email notifications to
-the specified recipients through the notification server of the destination identity store. If a notification
-server isn't configured in the destination identity store, you can configure it while creating the
+the specified recipients through the notification server of the destination identity store. If the destination
+identity store has no notification server configured, you can configure it while creating the
 job.
 
 ### Entitlement
