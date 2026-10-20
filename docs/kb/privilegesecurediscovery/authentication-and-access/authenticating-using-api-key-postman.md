@@ -24,7 +24,7 @@ tags:
 
 Postman is free to download at [postman.com/downloads](https://www.postman.com/downloads/). Use these instructions to authenticate against the Privilege Secure Discovery API using an API key and store the resulting JWT token as a global variable.
 
-Refer to the [NPS-D API documentation](pathname:///docs/privilegesecurediscovery/2_22/integrations/api/advancedapireference) for a full list of available endpoints and usage. For Postman-specific authentication steps, see [Authenticate Using Postman](pathname:///docs/privilegesecurediscovery/2_22/integrations/api/postmanauthenticate).
+Refer to the [NPS-D API documentation](pathname:///docs/privilegesecurediscovery/integrations/api/advancedapireference) for a full list of available endpoints and usage. For Postman-specific authentication steps, see [Authenticate Using Postman](pathname:///docs/privilegesecurediscovery/integrations/api/postmanauthenticate).
 
 ## Prerequisites
 

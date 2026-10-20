@@ -38,10 +38,10 @@ Use this model when Microsoft Graph supplies the directory objects, SAML provide
 
 NPS-D provides EDR configuration for:
 
-- [Carbon Black Cloud](pathname:///docs/privilegesecurediscovery/2_22/integrations/edr/carbonblack)
-- [CrowdStrike Falcon](pathname:///docs/privilegesecurediscovery/2_22/integrations/edr/crowdstrike)
-- [SentinelOne](pathname:///docs/privilegesecurediscovery/2_22/integrations/edr/sentinelone)
-- [Tanium Cloud](pathname:///docs/privilegesecurediscovery/2_22/integrations/edr/tanium)
+- [Carbon Black Cloud](pathname:///docs/privilegesecurediscovery/integrations/edr/carbonblack)
+- [CrowdStrike Falcon](pathname:///docs/privilegesecurediscovery/integrations/edr/crowdstrike)
+- [SentinelOne](pathname:///docs/privilegesecurediscovery/integrations/edr/sentinelone)
+- [Tanium Cloud](pathname:///docs/privilegesecurediscovery/integrations/edr/tanium)
 
 Use the provider guide to configure provider-side access and required NPS-D fields. The endpoint actions available to a device depend on the selected connector, its configuration, and the installed NPS-D release. Validate each required action with a controlled pilot before you use it in production.
 
@@ -81,7 +81,7 @@ Use a dedicated provider-side service identity with only the required permission
 
 ### Tanium Bulk Scan boundary
 
-Tanium Bulk Scan is an inventory path. It doesn't replace the standard per-device path for supported Protect, Deny, JIT/JITA, or password-management operations. Follow the [Tanium Cloud configuration guide](pathname:///docs/privilegesecurediscovery/2_22/integrations/edr/tanium), and validate the completed, offline, and unmatched device counts during the pilot.
+Tanium Bulk Scan is an inventory path. It doesn't replace the standard per-device path for supported Protect, Deny, JIT/JITA, or password-management operations. Follow the [Tanium Cloud configuration guide](pathname:///docs/privilegesecurediscovery/integrations/edr/tanium), and validate the counts of completed devices, offline devices, and devices with no match during the pilot.
 
 ## AD and Microsoft Entra Hybrid
 

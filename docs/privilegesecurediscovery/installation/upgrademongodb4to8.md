@@ -207,13 +207,13 @@ Schedule `run` to finish as close as practical to the approved cutover window. A
 For an existing container-based deployment, use this order:
 
 
-1. Follow [Download and Deploy](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/installation/containerbaseddeployment/deploysecureone) to download the NPS-D 26.09.0 quickstart bundle, and use the `secureone.sh` file from that bundle. Don't use a copy of `secureone.sh` retained from an earlier release.
+1. Follow [Download and Deploy](https://docs.netwrix.com/docs/privilegesecurediscovery/installation/containerbaseddeployment/deploysecureone) to download the NPS-D 26.09.0 quickstart bundle, and use the `secureone.sh` file from that bundle. Don't use a copy of `secureone.sh` retained from an earlier release.
 2. On the primary node, upgrade the NPS-D services:
 
    ```text
    sudo -E bash secureone.sh upgrade --version 26.09.0
    ```
-3. Confirm that every database node has authenticated to the Netwrix container registry as described in [AWS Configuration](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/installation/containerbaseddeployment/awsconfiguration).
+3. Confirm that every database node has authenticated to the Netwrix container registry as described in [AWS Configuration](https://docs.netwrix.com/docs/privilegesecurediscovery/installation/containerbaseddeployment/awsconfiguration).
 4. Install the 26.09.0 `s1` CLI on the single database host or, for a three-node cluster, repeat these commands on all three database nodes. The command uses the production Netwrix container registry that the AWS Configuration procedure specifies. The complete image reference is `176947481038.dkr.ecr.us-west-2.amazonaws.com/secureone-onprem/s1tool:26.09.0`.
 
    ```text

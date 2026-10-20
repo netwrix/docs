@@ -24,7 +24,7 @@ tags:
 
 Complete the following steps during a scheduled downtime window or support call, in case the service restart causes any issues.
 
-Refer to [Forward Logs to Syslog Servers and SIEM Solutions](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/integrations/siem/forwardlogs) for the required configuration (stanza) details.
+Refer to [Forward Logs to Syslog Servers and SIEM Solutions](https://docs.netwrix.com/docs/privilegesecurediscovery/integrations/siem/forwardlogs) for the required configuration (stanza) details.
 
 > **IMPORTANT:** Before starting, confirm the host (FQDN or IP), port number, and protocol for your SIEM. Once these three values are confirmed, the update typically takes around 30 minutes in a scheduled window to complete.
 
