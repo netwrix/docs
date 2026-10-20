@@ -64,7 +64,7 @@ Add `-f` (`--follow`) to keep the command running and print each new line as the
 sudo dspm-installer logs webapp -f --tail 2
 ```
 
-![dspm-installer logs webapp -f printing new web application log lines until Ctrl+C is pressed](/images/accessanalyzer/26.1/install/logs-follow.webp)
+![dspm-installer logs webapp -f printing new web application log lines until you press Ctrl+C](/images/accessanalyzer/26.1/install/logs-follow.webp)
 
 ## Read the Logs from Before a Restart
 
