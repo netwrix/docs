@@ -40,10 +40,10 @@ function split(markdown) {
 
 const counts = arr => arr.reduce((m, x) => m.set(x, (m.get(x) || 0) + 1), new Map());
 
-function missing(before, after, label, out) {
+function missing(before, after, label, out, verb = 'removed or changed') {
   const a = counts(after);
   for (const [k, n] of counts(before)) {
-    if ((a.get(k) || 0) < n) out.push(`${label} removed or changed: ${k}`);
+    if ((a.get(k) || 0) < n) out.push(`${label} ${verb}: ${k}`);
   }
 }
 
@@ -87,40 +87,68 @@ export function checkPreserved(original, rewritten) {
 const FREE_FRONTMATTER = new Set(['description', 'sidebar_label', 'title']);
 const IGNORED_NUMBER_KEYS = new Set(['sidebar_position']);
 
-function parseDoc(text) {
-  const lines = text.split('\n');
+const FM_KEY = /^([A-Za-z_][\w-]*):[ \t]*(.*)$/;
+const unquote = v => (/^(["']).*\1$/.test(v) && v.length > 1 ? v.slice(1, -1) : v);
+
+/** Top-level keys with their whole value, so a `keywords:` list or a folded block is compared as a unit. */
+function parseFrontmatter(lines) {
   const front = {};
+  let key = null;
+  for (const line of lines) {
+    const m = line.match(FM_KEY);
+    if (m) {
+      key = m[1];
+      front[key] = [m[2]];
+    } else if (key) {
+      front[key].push(line);
+    }
+  }
+  for (const k of Object.keys(front)) {
+    const [first, ...rest] = front[k];
+    const tail = rest.map(l => l.trimEnd()).join('\n').trim();
+    front[k] = tail ? `${first.trim()}\n${tail}` : unquote(first.trim());
+  }
+  return front;
+}
+
+// Indenting a block under a list item is a layout change, so compare a block without its indent.
+function dedent(block) {
+  const pad = block.lines[0].match(/^\s*/)[0].length;
+  return block.lines.map(l => l.replace(new RegExp(`^\\s{0,${pad}}`), '')).join('\n');
+}
+
+function parseDoc(raw) {
+  const lines = raw.replace(/\r\n?/g, '\n').split('\n');
+  let front = {};
   let start = 0;
   if (lines[0]?.trim() === '---') {
     let j = 1;
-    while (j < lines.length && lines[j].trim() !== '---') {
-      const m = lines[j].match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
-      if (m) front[m[1]] = m[2].trim();
-      j++;
-    }
+    while (j < lines.length && lines[j].trim() !== '---') j++;
+    front = parseFrontmatter(lines.slice(1, j));
     start = j + 1;
   }
   const fences = [];
   const prose = [];
   let block = null;
   for (const line of lines.slice(start)) {
-    if (FENCE.test(line)) {
-      if (block) {
-        block.push(line);
-        // Indenting a block under a list item is a layout change, so compare it without its indent.
-        const pad = block[0].match(/^\s*/)[0].length;
-        fences.push(block.map(l => l.replace(new RegExp(`^\\s{0,${pad}}`), '')).join('\n'));
+    if (block) {
+      block.lines.push(line);
+      // A fence closes only on the same character, at least as long as the opener, with nothing after it.
+      const close = line.match(/^\s*(`{3,}|~{3,})\s*$/);
+      if (close && close[1][0] === block.char && close[1].length >= block.len) {
+        fences.push(dedent(block));
         block = null;
-      } else {
-        block = [line];
       }
-    } else if (block) {
-      block.push(line);
+      continue;
+    }
+    const open = line.match(/^\s*(`{3,}|~{3,})(.*)$/);
+    if (open && !(open[1][0] === '`' && open[2].includes('`'))) {
+      block = { char: open[1][0], len: open[1].length, lines: [line] };
     } else {
       prose.push(line);
     }
   }
-  if (block) fences.push(block.join('\n'));
+  if (block) fences.push(dedent(block));
   // "**Step 3 –**" is a list marker written by hand, so a numbered list may replace it.
   return { front, fences, prose: prose.join('\n').replace(/^\s*\*\*Step \d+\s*[–—-]\s*\*\*\s*/gm, '') };
 }
@@ -157,19 +185,23 @@ export function checkContent(originals, rewrittens, allow = []) {
   const a = contentFacts(before);
   const b = contentFacts(after);
   missing(a.fences, b.fences, 'code block', violations);
-  missing(b.fences, a.fences, 'code block added', violations);
+  missing(b.fences, a.fences, 'code block', violations, 'added');
   missing(a.inlineCode, b.inlineCode, 'inline code', violations);
   missing(a.linkTargets, b.linkTargets, 'link or image target', violations);
   missing(a.bold, b.bold, 'bold text (UI label)', violations);
   missing(a.numbers, b.numbers, 'number', violations);
-  missing(b.numbers, a.numbers, 'number added', violations);
+  missing(b.numbers, a.numbers, 'number', violations, 'added');
   missing(a.admonitions, b.admonitions, 'admonition', violations);
   rewrittens.forEach((f, i) => {
     const o = originals.find(x => x.path === f.path);
     if (!o || !o.text) return;
     const of = parseDoc(o.text).front;
+    const nf = after[i].front;
     for (const [k, v] of Object.entries(of)) {
-      if (!FREE_FRONTMATTER.has(k) && after[i].front[k] !== v) violations.push(`frontmatter ${k} changed in ${f.path}`);
+      if (!FREE_FRONTMATTER.has(k) && nf[k] !== v) violations.push(`frontmatter ${k} ${k in nf ? 'changed' : 'removed'} in ${f.path}`);
+    }
+    for (const k of Object.keys(nf)) {
+      if (!FREE_FRONTMATTER.has(k) && !(k in of)) violations.push(`frontmatter ${k} added in ${f.path}`);
     }
   });
   return violations;

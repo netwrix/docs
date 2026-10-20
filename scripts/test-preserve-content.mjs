@@ -51,12 +51,12 @@ run --now
 
 test('a dropped number fails', () => {
   const v = checkContent(one(ORIGINAL), one(ORIGINAL.replace('30 seconds', 'seconds')));
-  assert.ok(v.some(x => x.startsWith('number removed') || x.startsWith('number')));
+  assert.deepEqual(v, ['number removed or changed: 30']);
 });
 
 test('an added number fails', () => {
   const v = checkContent(one(ORIGINAL), one(ORIGINAL + '\nRetry 5 times.\n'));
-  assert.ok(v.some(x => x.startsWith('number added')));
+  assert.deepEqual(v, ['number added: 5']);
 });
 
 test('a changed code block fails', () => {
@@ -76,11 +76,20 @@ test('a split across two files passes', () => {
   assert.deepEqual(checkContent([{ path: 'a.md', text: ORIGINAL }, { path: 'b.md', text: '' }], rewrittens), []);
 });
 
-test('a changed frontmatter key outside the free ones fails', () => {
-  const v = checkContent(one(ORIGINAL), one(ORIGINAL.replace('title: T', 'title: T\nkeywords: x')));
-  assert.deepEqual(v, []);
+test('frontmatter: free keys may change, any other key may not change, go away, or appear', () => {
   const orig = page('Body.', 'title: T\nslug: old');
-  assert.ok(checkContent(one(orig), one(page('Body.', 'title: T\nslug: new'))).some(x => x.startsWith('frontmatter slug')));
+  const body = 'Body.';
+  assert.deepEqual(checkContent(one(orig), one(page(body, 'title: New\nslug: old\ndescription: Added\nsidebar_label: L'))), []);
+  assert.deepEqual(checkContent(one(orig), one(page(body, 'title: T\nslug: new'))), ['frontmatter slug changed in a.md']);
+  assert.deepEqual(checkContent(one(orig), one(page(body, 'title: T'))), ['frontmatter slug removed in a.md']);
+  assert.deepEqual(checkContent(one(orig), one(page(body, 'title: T\nslug: old\nkeywords: x'))), ['frontmatter keywords added in a.md']);
+});
+
+test('frontmatter: a list under a key is compared as a whole, and quote style does not matter', () => {
+  const orig = page('Body.', 'title: T\nkeywords:\n  - alpha\n  - beta\nslug: "a-b"');
+  assert.deepEqual(checkContent(one(orig), one(page('Body.', "title: T\nkeywords:\n  - alpha\n  - beta\nslug: 'a-b'"))), []);
+  assert.deepEqual(checkContent(one(orig), one(page('Body.', 'title: T\nkeywords:\n  - alpha\nslug: "a-b"'))), ['frontmatter keywords changed in a.md']);
+  assert.deepEqual(checkContent(one(orig), one(page('Body.', 'title: T\nkeywords:\n  - alpha\n  - gamma\nslug: "a-b"'))), ['frontmatter keywords changed in a.md']);
 });
 
 test('a confirmed fix passes when allowed', () => {
@@ -179,4 +188,24 @@ test('CLI: an absolute path and a new file work', () => {
     const r = cli(join(dir, 'docs', 'a.md'), 'docs/new.md');
     assert.equal(r.status, 0, r.stdout + r.stderr);
   });
+});
+
+test('a longer fence can hold shorter fence lines, and a mismatched fence does not close it', () => {
+  const orig = page('Example:\n\n````markdown\n```bash\nrun 5\n```\n````\n\nAfter 10 minutes.\n');
+  assert.deepEqual(checkContent(one(orig), one(orig)), []);
+  // Changing the number inside the nested example is a code change, not a prose number.
+  const changed = orig.replace('run 5', 'run 6');
+  assert.deepEqual(checkContent(one(orig), one(changed)), ['code block removed or changed: ````markdown\n```bash\nrun 5\n```\n````', 'code block added: ````markdown\n```bash\nrun 6\n```\n````']);
+  const tilde = page('~~~text\n```\nstill code 7\n~~~\nAfter.\n');
+  assert.deepEqual(checkContent(one(tilde), one(tilde)), []);
+});
+
+test('an unterminated fence is compared without its indent too', () => {
+  const orig = page('Run:\n\n```bash\nrun 5\n');
+  assert.deepEqual(checkContent(one(orig), one(page('1. Run:\n\n   ```bash\n   run 5\n'))), []);
+});
+
+test('Windows line endings do not fail a code block', () => {
+  const orig = page('Run:\n\n```bash\nrun 5\n```\n');
+  assert.deepEqual(checkContent(one(orig), one(orig.replace(/\n/g, '\r\n'))), []);
 });
