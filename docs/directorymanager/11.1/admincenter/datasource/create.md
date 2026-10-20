@@ -368,8 +368,8 @@ use this data source in queries and as source and destination provider in Synchr
 provider supports dynamic schema detection.
 
 :::note
-Install the Oracle client to use this provider. Ensure you reboot your computer after
-installing the Oracle client.
+Install the Oracle client to use this provider. Restart your computer after you install the
+Oracle client.
 :::
 
 
