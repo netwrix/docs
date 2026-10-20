@@ -1,12 +1,12 @@
 ---
-title: "FS_AIPLabels Job"
-description: "Report on files classified with Microsoft Information Protection sensitivity labels by using the FS_AIPLabels job."
+title: "FS_MIPLabels Job"
+description: "Report on files classified with Microsoft Information Protection sensitivity labels by using the FS_MIPLabels job."
 sidebar_position: 10
 ---
 
-# FS_AIPLabels Job
+# FS_MIPLabels Job
 
-The FS_AIPLabels job reports on resources classified by Microsoft Information Protection (MIP)
+The FS_MIPLabels job reports on resources classified by Microsoft Information Protection (MIP)
 sensitivity labels from targeted file servers.
 
 :::note
@@ -16,14 +16,21 @@ File SDK. See the
 topic for the prerequisites to scan for labels. To apply sensitivity labels to files that
 contain sensitive data, see the
 [FS_MIPLabeling Job](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/fs_miplabeling.md) topic.
-
-A future release will rename this job to FS_MIPLabels.
 :::
 
-## Analysis Tasks for the FS_AIPLabels Job
+:::note
+This job replaces the FS_AIPLabels job. When you upgrade Access Analyzer, the FS_MIPLabels job
+doesn't appear in an existing FileSystem solution unless you select **Full Upgrade** for the
+solution in the Upgrade Wizard. If you use another upgrade option, copy the FS_MIPLabels job from
+the `InstantSolutions` directory to the **FileSystem** > **4.Content** > **Tags** job group. See the
+[Upgrade Wizard](/docs/accessanalyzer/12.0/install/application/upgrade/wizard.md) topic for
+additional information on the upgrade options.
+:::
+
+## Analysis Tasks for the FS_MIPLabels Job
 
 To view the analysis tasks, navigate to the **FileSystem** > **4.Content** > **Tags** >
-**FS_AIPLabels** > **Configure** node and select **Analysis**.
+**FS_MIPLabels** > **Configure** node and select **Analysis**.
 
 :::warning
 Don't modify or deselect the selected analysis tasks. The analysis tasks are
@@ -31,14 +38,14 @@ preconfigured for this job.
 :::
 
 
-![Analysis Tasks for the FS_AIPLabels Job](/images/accessanalyzer/12.0/solutions/filesystem/content/tags/aiplabelsanalysis.webp)
+![Analysis Tasks for the FS_MIPLabels Job](/images/accessanalyzer/12.0/solutions/filesystem/content/tags/miplabelsanalysis.webp)
 
 The following analysis task is selected by default:
 
 - MIP Label Details – Creates the SA_FS_FileLabel_Details table, accessible under the job’s Results
   node, which lists the sensitivity labels applied to files
 
-In addition to the tables and views created by the analysis task, the FS_AIPLabels job produces the
+In addition to the tables and views created by the analysis task, the FS_MIPLabels job produces the
 following pre-configured report:
 
 | Report     | Description                                                                                                                               | Default Tags | Report Elements                                                                                                                                                                                                               |
