@@ -133,15 +133,14 @@ Give external tools only this user. Don't share the analytics store's administra
 
 ## Rotate the password
 
-Access Analyzer creates the password once and resets the `access_analyzer_external` user's password from it on every sync. If you change the password inside the analytics store, the next sync overwrites it, so rotate through the stored secret:
+Access Analyzer creates the password once and resets the `access_analyzer_external` user's password from it on every sync of `netwrix.infra`, the application that runs the analytics store. If you change the password inside the analytics store, the next sync overwrites it, so rotate through the stored secret. Delete it, then sync `netwrix.infra` to generate a new one:
 
 ```bash
-kubectl delete secret clickhouse-external-secret -n access-analyzer
-sudo dspmctl sync netwrix
-sudo dspmctl enable-auto netwrix
+sudo kubectl delete secret clickhouse-external-secret -n access-analyzer
+sudo dspmctl sync netwrix.infra
 ```
 
-The sync generates a new password. Print it with `dspmctl get-secret`.
+The old password stops working when the sync finishes, so update your external tools then. Print the new password with `dspmctl get-secret`.
 
 ## Close access
 
@@ -156,7 +155,7 @@ The sync generates a new password. Print it with `dspmctl get-secret`.
 2. Delete the stored password so the next time you turn access on it generates a new one:
 
    ```bash
-   kubectl delete secret clickhouse-external-secret -n access-analyzer
+   sudo kubectl delete secret clickhouse-external-secret -n access-analyzer
    ```
 
 3. Remove the firewall rules you added.
