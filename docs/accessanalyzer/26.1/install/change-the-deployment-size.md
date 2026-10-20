@@ -52,6 +52,14 @@ Exit code `0` means every application runs the new size. Restart the scans you s
 4. Syncs `netwrix`, then waits until every application is Synced and Healthy. Each wait lasts up to 10 minutes.
 5. Turns automated sync on `netwrix` back on, if it was on before the resize.
 
+If the server is too small for the new size, the command stops at the first step and changes nothing. In this example, a server with 14 CPU cores and 29.4 GB of RAM refuses the **enterprise** size. It skips the agent node, prints each shortfall, and exits with code `1`:
+
+```bash
+sudo dspmctl resize enterprise
+```
+
+![dspmctl resize enterprise refusing because the server has too few CPU cores and too little RAM, then exiting with code 1](/images/accessanalyzer/26.1/install/resize-capacity.webp)
+
 ## What Happens to the Volumes
 
 A resize never deletes, recreates, or shrinks a volume claim, so no data moves. What it does to an existing claim depends on the storage behind it.
@@ -135,6 +143,10 @@ Check that automated sync is on for `netwrix`:
 ```bash
 sudo dspmctl auto-status
 ```
+
+On the default host-path storage, every claim shows `local-path` and keeps its original size:
+
+![The volume claim list with requested size, capacity, and StorageClass, followed by dspmctl auto-status showing automated sync on for every app](/images/accessanalyzer/26.1/install/resize-check.webp)
 
 Confirm every pod is running before you restart scans:
 
