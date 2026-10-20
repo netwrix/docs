@@ -17,7 +17,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Installation',
-          items: ['enterpriseinstall', 'enterprisehttpssetup'],
+          items: ['enterpriseinstall', 'enterprisesilentinstall', 'enterprisehttpssetup'],
         },
         {
           type: 'category',
@@ -74,13 +74,22 @@ module.exports = {
             'enterpriseuser-dashboard',
             'enterpriseuser-infrastructure',
             'enterpriseuser-entities',
+            'enterpriseuser-actionplans-exceptions',
             'enterpriseuser-import',
             'enterpriseuser-account',
             'enterpriseauditlog',
           ],
         },
         'enterpriseupgrade',
-        'enterprisetroubleshooting',
+        {
+          type: 'category',
+          label: 'Troubleshooting',
+          link: {
+            type: 'doc',
+            id: 'enterprisetroubleshooting',
+          },
+          items: ['enterprisesupportlogs'],
+        },
       ],
     },
     {
