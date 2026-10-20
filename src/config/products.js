@@ -213,9 +213,15 @@ export const PRODUCTS = [
     icon: '🏷️',
     versions: [
       {
+        version: '5.8',
+        label: '5.8',
+        isLatest: true,
+        sidebarFile: './sidebars/dataclassification/5.8.js',
+      },
+      {
         version: '5.7',
         label: '5.7',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/dataclassification/5.7.js',
       },
       {
@@ -225,7 +231,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/dataclassification/5.6.2.js',
       },
     ],
-    defaultVersion: '5.7',
+    defaultVersion: '5.8',
   },
   {
     id: 'directorymanager',
@@ -339,9 +345,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '12.1',
+        label: '12.1',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/12.1.js',
+      },
+      {
         version: '12.0',
         label: '12.0',
-        isLatest: true,
+        isLatest: false,
+        hidden: true,
         sidebarFile: './sidebars/passwordpolicyenforcer/12.0.js',
       },
       {
@@ -373,7 +386,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/passwordpolicyenforcer/10.2.js',
       },
     ],
-    defaultVersion: '12.0',
+    defaultVersion: '12.1',
   },
   {
     id: 'passwordreset',
@@ -656,9 +669,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '8.1',
+        label: '8.1',
+        isLatest: true,
+        sidebarFile: './sidebars/threatprevention/8.1.js',
+      },
+      {
         version: '8.0',
         label: '8.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatprevention/8.0.js',
       },
       {
@@ -668,7 +687,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/threatprevention/7.5.js',
       }
     ],
-    defaultVersion: '8.0',
+    defaultVersion: '8.1',
   },
 ];
 

@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Monitored Object Types, Actions, and Attributes
 
-Netwrix Auditor monitored object types, actions, attributes, and components for each data source are
-listed in the following topics:
+The following topics list the Netwrix Auditor monitored object types, actions, attributes, and
+components for each data source:
 
 - [Active Directory](/docs/auditor/10.8/configuration/activedirectory/overview.md)
 - [AD FS](/docs/auditor/10.8/configuration/activedirectoryfederatedservices/overview.md)
@@ -39,7 +39,7 @@ listed in the following topics:
 - [VMware](/docs/auditor/10.8/configuration/vmware/overview.md)
 - [Windows Server](/docs/auditor/10.8/configuration/windowsserver/overview.md)
 
-Review the list of actions audited and reported by Netwrix Auditor. Actions vary depending on the
+Review the list of actions that Netwrix Auditor audits and reports. Actions vary depending on the
 data source and the object type.
 
 | Action                                    | Active Directory | Active Directory Federation Services | Exchange Online | File Servers | Group Policy | Logon Activity | Microsoft Entra ID (formerly Azure AD) | Oracle database | SharePoint Online | SQL Server | User Activity | VMware Servers | Windows Server |
@@ -52,8 +52,8 @@ data source and the object type.
 | Modify (failed attempt)                   | –                | –                                    | –                        | +            | –            | –              | –                                      | +               | –                            | –          | –             | –              | +              |
 | Read                                      | –                | –                                    | +\*                      | +            | –            | –              | –                                      | +               | +                            | –          | –             | –              | –              |
 | Read (failed attempt)                     | –                | –                                    | –                        | +            | –            | –              | –                                      | +               | –                            | –          | –             | –              | –              |
-| Renamed                                   | –                | –                                    | –                        | +            | –            | –              | –                                      | +               | +\*\*                        | –          | –             | –              | –              |
-| Moved                                     | –                | –                                    | +\*                      | +            | –            | –              | –                                      | –               | +                            | –          | –             | –              | –              |
+| Renamed                                   | –                | –                                    | –                        | +            | –            | –              | –                                      | +               | +\*\*                        | –          | –             | +              | –              |
+| Moved                                     | –                | –                                    | +\*                      | +            | –            | –              | –                                      | –               | +                            | –          | –             | +              | –              |
 | Rename (failed attempt)                   | –                | –                                    | –                        | +            | –            | –              | –                                      | +               | –                            | –          | –             | –              | –              |
 | Move (failed attempt)                     | –                | –                                    | –                        | +            | –            | –              | –                                      | –               | –                            | –          | –             | –              | –              |
 | Checked in                                | –                | –                                    | –                        | –            | –            | –              | –                                      | –               | +                            | –          | –             | –              | –              |
@@ -67,10 +67,10 @@ data source and the object type.
 | Activated                                 | –                | –                                    | –                        | –            | –            | –              | –                                      | –               | –                            | –          | +             | –              | –              |
 | Support for state-in-time data collection | +                | –                                    | +                        | +            | +            | -              | +                                      | -               | +                            | -          | -             | +              | +              |
 
-\* —these actions are reported when auditing non-owner mailbox access for Exchange or Exchange
-Online.
+\* — Netwrix Auditor reports these actions when auditing non-owner mailbox access for Exchange or
+Exchange Online.
 
-\*\* — these actions are reported for SharePoint Online only.
+\*\* — Netwrix Auditor reports these actions for SharePoint Online only.
 
-\*\*\* — Auditor will not collect data on _Failed Logon_ event for VMware in case of incorrect logon
-attempt through VMware vCenter Single Sign-On; also, it will not collect logons using SSH.
+\*\*\* — Auditor doesn't collect data on the _Failed Logon_ event for VMware for incorrect logon
+attempts through VMware vCenter Single Sign-On, and it doesn't collect logons using SSH.

@@ -18,11 +18,11 @@ A source is a system Access Analyzer scans: File Server, Active Directory, Entra
 
 ## Service Accounts
 
-A Service Account is a saved credential for reading a source or deploying an agent: Username/password, Client ID/secret, Client ID/certificate, or SSH username/key. For a certificate account, Access Analyzer can generate a self-signed certificate valid for one year, or you can upload your own. Access Analyzer never displays a secret again after you save it. See [Service Accounts](service-accounts/index.md).
+A Service Account is a saved credential for reading a source: Username/password, Client ID/secret, Client ID/certificate, or SSH username/key. For a certificate account, Access Analyzer can generate a self-signed certificate valid for one year, or you can upload your own. Access Analyzer never displays a secret again after you save it. See [Service Accounts](service-accounts/index.md).
 
 ## Agents
 
-An Agent is a Linux machine that _runs_ your Access Scans. The System agent on the Access Analyzer server is there from the start. To reach a segmented network or keep scan traffic local, deploy more agents over SSH and route scans to them with labels. See [Agents](agents/index.md).
+An Agent is a Linux machine that _runs_ your Access Scans. The System agent on the Access Analyzer server is there from the start. To reach a segmented network or keep scan traffic local, deploy more agents by running an install command on each host, and route scans to them with labels. See [Agents](agents/index.md).
 
 ## Scans
 

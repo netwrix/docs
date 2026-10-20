@@ -1,0 +1,3 @@
+message: Do not use 'not just X, but Y' or 'isn't merely X, it's Y'.
+level: warning
+reason: 'Fires on negative parallelism: ''not just X but Y'', ''not only X but also Y'', ''isn''t merely X, it''s Y'', ''this isn''t about X, it''s about Y''. Does not fire on a plain contrast that conveys real information, such as ''Use the service account, not your personal account''.'
