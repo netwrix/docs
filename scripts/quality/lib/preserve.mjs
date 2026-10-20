@@ -157,7 +157,9 @@ function parseDoc(raw) {
 function contentFacts(docs) {
   const fences = docs.flatMap(d => d.fences);
   const prose = docs.map(d => d.prose).join('\n');
-  const frontNumbers = docs.flatMap(d =>
+  // Frontmatter numbers count only for a page that exists before and after, so a split's new page
+  // (or a merge's deleted one) does not read as a number added or removed.
+  const frontNumbers = docs.filter(d => d.paired).flatMap(d =>
     Object.entries(d.front)
       .filter(([k]) => !IGNORED_NUMBER_KEYS.has(k) && !FREE_FRONTMATTER.has(k))
       .map(([, v]) => v),
@@ -180,9 +182,9 @@ const allowPattern = from => {
   return new RegExp(`${/^\w/.test(from) ? '(?<!\\w)' : ''}${esc}${/\w$/.test(from) ? '(?!\\w)' : ''}`, 'g');
 };
 
-export function checkContent(originals, rewrittens, allow = []) {
+export function checkContent(originals, rewrittens, allow = [], allowLinks = []) {
   const violations = [];
-  if (allow.some(a => !a.from)) throw new Error('an allowed change needs a non-empty "from" text');
+  if ([...allow, ...allowLinks].some(a => !a.from)) throw new Error('an allowed change needs a non-empty "from" text');
   // A confirmed fix applies to plain prose only: never a code block, frontmatter, inline code, link
   // target, or bold label. It matches whole words, so "5" does not touch "1521".
   const used = allow.map(() => 0);
@@ -191,14 +193,23 @@ export function checkContent(originals, rewrittens, allow = []) {
       .split(GUARDED)
       .map((part, i) => (i % 2 ? part : allow.reduce((t, a, n) => t.replace(allowPattern(a.from), () => (used[n]++, a.to)), part)))
       .join('');
+  // A confirmed link update (a renamed anchor, a moved page) rewrites link and image targets only.
+  const usedLinks = allowLinks.map(() => 0);
+  const fixLinks = text =>
+    text.replace(/\]\(([^)]*)\)/g, (m, target) =>
+      `](${allowLinks.reduce((t, a, n) => (t.includes(a.from) ? (usedLinks[n]++, t.split(a.from).join(a.to)) : t), target)})`);
+  const paired = new Set(rewrittens.filter(f => f.text && originals.some(o => o.path === f.path && o.text)).map(f => f.path));
   const before = originals.map(f => {
     const d = parseDoc(f.text);
-    return { ...d, prose: fix(d.prose) };
+    return { ...d, prose: fixLinks(fix(d.prose)), paired: paired.has(f.path) };
   });
   allow.forEach((a, n) => {
     if (!used[n]) throw new Error(`the allowed change "${a.from}" was not found in the original prose (it must appear in plain text, not in code, a link, or bold text)`);
   });
-  const after = rewrittens.map(f => parseDoc(f.text));
+  allowLinks.forEach((a, n) => {
+    if (!usedLinks[n]) throw new Error(`the allowed link change "${a.from}" was not found in any link or image target of the original`);
+  });
+  const after = rewrittens.map(f => ({ ...parseDoc(f.text), paired: paired.has(f.path) }));
   const a = contentFacts(before);
   const b = contentFacts(after);
   missing(a.fences, b.fences, 'code block', violations);

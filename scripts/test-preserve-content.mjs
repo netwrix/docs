@@ -283,3 +283,39 @@ test('CLI: --base rejects a value that looks like an option', () => {
     assert.equal(cli('--base', '-x', 'docs/a.md').status, 2);
   });
 });
+
+test('an allowed link change approves a renamed anchor or moved page, and only in link targets', () => {
+  const orig = page('## Old heading\n\nSee [this](#old-heading) and [that](/docs/a/b.md#old-heading) and `#old-heading`.');
+  const renamed = page('## New heading\n\nSee [this](#new-heading) and [that](/docs/a/b.md#new-heading) and `#old-heading`.');
+  assert.ok(checkContent(one(orig), one(renamed)).length > 0);
+  assert.deepEqual(checkContent(one(orig), one(renamed), [], [{ from: '#old-heading', to: '#new-heading' }]), []);
+  // Inline code is not a link target, so it must stay as it was.
+  const touchedCode = renamed.replace('`#old-heading`', '`#new-heading`');
+  assert.ok(checkContent(one(orig), one(touchedCode), [], [{ from: '#old-heading', to: '#new-heading' }]).length > 0);
+  assert.throws(() => checkContent(one(orig), one(renamed), [], [{ from: '#nowhere', to: '#x' }]), /not found in any link/);
+  assert.throws(() => checkContent(one(orig), one(renamed), [], [{ from: '', to: '#x' }]), /non-empty/);
+});
+
+test('frontmatter numbers of a new or deleted page do not count as added or removed', () => {
+  const keys = 'title: T\nsidebar_position: 3\nkeywords:\n  - ppe 10.2';
+  const original = [{ path: 'a.md', text: page('Set 30 seconds. Open port 8080.', keys) }];
+  const split = [
+    { path: 'a.md', text: page('Set 30 seconds.', keys) },
+    { path: 'b.md', text: page('Open port 8080.', keys) },
+  ];
+  assert.deepEqual(checkContent(original, split), []);
+  const merge = [{ path: 'a.md', text: page('Set 30 seconds.', keys) }, { path: 'b.md', text: page('Open port 8080.', keys) }];
+  const merged = [{ path: 'a.md', text: page('Set 30 seconds. Open port 8080.', keys) }, { path: 'b.md', text: '' }];
+  assert.deepEqual(checkContent(merge, merged), []);
+});
+
+test('CLI: --allow-link rewrites link targets and rejects a bad value', () => {
+  withRepo((dir, cli) => {
+    writeFileSync(join(dir, 'docs', 'a.md'), page('See [x](#old).'));
+    spawnSync('git', ['-c', 'commit.gpgsign=false', 'commit', '-qam', 'link'], { cwd: dir });
+    writeFileSync(join(dir, 'docs', 'a.md'), page('See [x](#new).'));
+    assert.equal(cli('docs/a.md').status, 1);
+    assert.equal(cli('--allow-link', '#old=>#new', 'docs/a.md').status, 0);
+    assert.equal(cli('--allow-link', '=>x', 'docs/a.md').status, 2);
+  });
+});

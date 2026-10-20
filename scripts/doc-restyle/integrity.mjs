@@ -2,11 +2,12 @@
 /**
  * integrity.mjs — check that a restyle did not change a page's content.
  *
- *   node scripts/doc-restyle/integrity.mjs [--base HEAD] [--allow-change "old=>new"]... [--json] <file...>
+ *   node scripts/doc-restyle/integrity.mjs [--base HEAD] [--allow-change "old=>new"]... [--allow-link "old=>new"]... [--json] <file...>
  *
  * Reads each file's original from git (`git show <base>:<path>`; a file missing at <base> counts
  * as new) and compares the whole set with checkContent. Pass --allow-change for each fix the
- * writer confirmed (a typo, a renamed link target); it applies to prose only, never to code blocks.
+ * writer confirmed (a typo); it applies to plain prose only. Pass --allow-link for each link or image
+ * target you updated (a renamed anchor, a moved page); it applies to link targets only.
  * Exits 1 on violations, and also when every file is identical to its original, because there is
  * nothing to compare (use --base <ref> for the commit that holds the original). Exits 2 on bad input.
  */
@@ -16,12 +17,12 @@ import { execFileSync, spawnSync } from 'child_process';
 import { pathToFileURL } from 'url';
 import { checkContent } from '../quality/lib/preserve.mjs';
 
-const USAGE = 'Usage: node scripts/doc-restyle/integrity.mjs [--base <ref>] [--allow-change "old=>new"] [--json] <file...>';
+const USAGE = 'Usage: node scripts/doc-restyle/integrity.mjs [--base <ref>] [--allow-change "old=>new"] [--allow-link "old=>new"] [--json] <file...>';
 
 const git = (args, opts = {}) => spawnSync('git', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, ...opts });
 
 function parseArgs(argv) {
-  const opts = { base: 'HEAD', json: false, allow: [], files: [] };
+  const opts = { base: 'HEAD', json: false, allow: [], allowLinks: [], files: [] };
   const value = i => {
     if (i + 1 >= argv.length || argv[i + 1].startsWith('--')) throw new Error(`${argv[i]} needs a value`);
     return argv[i + 1];
@@ -37,6 +38,10 @@ function parseArgs(argv) {
       const [from, ...to] = value(i++).split('=>');
       if (!from || !to.length) throw new Error('--allow-change needs "old=>new" with a non-empty old text');
       opts.allow.push({ from, to: to.join('=>') });
+    } else if (a === '--allow-link') {
+      const [from, ...to] = value(i++).split('=>');
+      if (!from || !to.length) throw new Error('--allow-link needs "old=>new" with a non-empty old text');
+      opts.allowLinks.push({ from, to: to.join('=>') });
     } else if (a.startsWith('--')) throw new Error(`unknown option ${a}`);
     else opts.files.push(a);
   }
@@ -101,7 +106,7 @@ export function run(argv) {
   }
   let violations;
   try {
-    violations = checkContent(originals, rewrittens, opts.allow);
+    violations = checkContent(originals, rewrittens, opts.allow, opts.allowLinks);
   } catch (e) {
     console.error(e.message);
     return 2;
