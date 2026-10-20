@@ -221,7 +221,7 @@ Any of these starts the upgrade and its conversion:
 
 - The **Settings** page: select the new version, then select **Update**.
 - The automatic updater: when a newer release that matches the install's version constraint appears, it starts the upgrade on its next run. It checks every 12 hours.
-- `dspmctl` on the host, with the steps below.
+- `dspmctl` on the host, with the following steps.
 - `dspm-installer upgrade --download --migrate`, as [Convert a registry install](convert-or-connect-an-install.md#convert-a-registry-install) shows.
 
 To upgrade with `dspmctl`:
