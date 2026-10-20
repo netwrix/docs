@@ -380,7 +380,7 @@ The bundle expires 30 minutes after the panel generates it, and `install-agent` 
 | `--token` | none | none | Required. The registration bundle from the **Deploy agent** panel. |
 | `--name` | none | none | Required. The agent's display name. |
 | `--label` | none | none | An agent label as `key=value`. Repeat the flag for more labels. |
-| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. Refused for a server that pulls from the registry. Without it, an agent for a connected media install downloads the media. |
+| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. `install-agent` refuses it for a server that pulls from the registry. Without it, an agent for a connected media install downloads the media. |
 | `--accept-warnings` | none | `false` | Continue past preflight warnings without the prompt. |
 
 Before it changes the host, `install-agent` stops if the host runs the Access Analyzer server, if you don't run it as root, if the host's CPU architecture differs from the server's on a media install, or if the server's certificate doesn't cover the address in `--server`. It then runs the agent preflight, opens the firewall ports on a host that runs firewalld or ufw, and joins the host. On a media install, it downloads or unpacks the release's media first, keeps it in `/var/lib/dspm/media`, and deletes the media it unpacked or downloaded after the agent joins.
