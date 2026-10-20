@@ -107,7 +107,9 @@ function parseDoc(text) {
     if (FENCE.test(line)) {
       if (block) {
         block.push(line);
-        fences.push(block.join('\n'));
+        // Indenting a block under a list item is a layout change, so compare it without its indent.
+        const pad = block[0].match(/^\s*/)[0].length;
+        fences.push(block.map(l => l.replace(new RegExp(`^\\s{0,${pad}}`), '')).join('\n'));
         block = null;
       } else {
         block = [line];

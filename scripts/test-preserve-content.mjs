@@ -95,3 +95,9 @@ test('hand-numbered Step labels may become a numbered list', () => {
   assert.deepEqual(checkContent(one(orig), one(page('1. Open the console.\n2. Click **Save**.'))), []);
   assert.ok(checkContent(one(orig), one(page('1. Open the console.\n2. Click Save.'))).length > 0);
 });
+
+test('indenting a code block under a list item passes, changing it does not', () => {
+  const orig = page('**Step 1 –** Run:\n\n```powershell\nGet-Service\n```\n');
+  assert.deepEqual(checkContent(one(orig), one(page('1. Run:\n\n   ```powershell\n   Get-Service\n   ```\n'))), []);
+  assert.ok(checkContent(one(orig), one(page('1. Run:\n\n   ```powershell\n   Get-Process\n   ```\n'))).length > 0);
+});
