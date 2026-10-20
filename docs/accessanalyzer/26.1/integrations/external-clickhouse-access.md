@@ -13,7 +13,7 @@ Opening access exposes two of the analytics store's ports, each on a node port t
 | 9000 | TCP | ClickHouse native protocol. |
 | 8123 | TCP | ClickHouse HTTP interface. |
 
-Access Analyzer never exposes the metrics port. External queries run on the same analytics store that serves scan ingestion and the reports, so heavy external load competes with the product.
+Access Analyzer doesn't expose ClickHouse's metrics port, 9363. External queries run on the same analytics store that serves scan ingestion and the reports, so heavy external load competes with the product.
 
 :::warning
 These ports are unencrypted. Credentials and query results cross the network in clear text. Restrict access to a trusted network, or put a TLS-terminating proxy in front of the ports.
@@ -26,13 +26,17 @@ These ports are unencrypted. Credentials and query results cross the network in 
 
 ## Access type
 
-Open the ports as a `NodePort` Service. A `LoadBalancer` Service doesn't work on a standard installation. ServiceLB, the load balancer built into Access Analyzer's bundled k3s cluster, already binds port 9000 on the server for the Traefik ingress controller, so a `LoadBalancer` Service for the analytics store never gets an address.
+Open the ports as a `NodePort` Service. A `NodePort` Service makes a port reachable on each node's own IP address, on a port from 30000 through 32767. A `LoadBalancer` Service doesn't work on a standard installation, because port 9000 is already in use on the server.
 
 `NodePort` has no access control in Access Analyzer, so restrict it with the server's firewall. Kubernetes opens the node ports on every node in the cluster, including agent hosts. The command in [Open the ports](#open-the-ports) sets `externalTrafficPolicy=Local`, so only the server, which runs the analytics store, answers on those ports.
 
+:::warning
+If you opened `NodePort` access without `externalTrafficPolicy=Local`, every agent host also forwards the node ports to the analytics store, and the server's firewall doesn't protect them. Add the setting with `sudo dspmctl set-helm-param netwrix config.clickhouse.externalAccess.externalTrafficPolicy=Local`, then repeat steps 2 and 3 of [Open the ports](#open-the-ports), or block the node ports on every agent host's firewall.
+:::
+
 ## Open the ports
 
-`dspmctl set-helm-param` turns automated sync off for the application. The last step turns it back on.
+`dspmctl set-helm-param` turns off ArgoCD's automated sync for the `netwrix` application, so the change takes effect only when you sync it in step 2. Step 3 turns automated sync back on.
 
 :::note
 The installer doesn't save these settings. If you run the installer again on this server, for example to change the TLS certificate mode, it removes them and closes access. Repeat these steps afterwards. Upgrades and `update-cert` keep the settings.
@@ -63,7 +67,7 @@ The installer doesn't save these settings. If you run the installer again on thi
    sudo dspmctl enable-auto netwrix
    ```
 
-4. Open the chosen ports on the server's firewall.
+4. Open the node ports on the server's firewall. If Kubernetes assigned them, find them with the command in [Verify access](#verify-access).
 
 ## Get the credentials
 
@@ -81,11 +85,11 @@ Give external tools only this user. Don't share the analytics store's administra
 
    Omit `password` to print the username and password together. Print one key at a time when you capture the value in a variable, because the two-key form adds a carriage return.
 
-2. In the external tool, connect with the username `access_analyzer_external`, this password, and one of the four databases the user can read as the default database. To query a table in another database, prefix the table name with the database name, for example `access_analyzer_landing.entities`.
+2. In the external tool, connect with the username `access_analyzer_external`, this password, and a default database. For report data, use `access_analyzer_reporting`. To query a table in another database, prefix the table name with the database name, for example `access_analyzer_landing.entities`.
 
 ## Verify access
 
-1. On the server, list the assigned ports and address:
+1. On the server, list the assigned node ports:
 
    ```bash
    sudo kubectl get svc clickhouse-external -n access-analyzer
@@ -97,11 +101,9 @@ Give external tools only this user. Don't share the analytics store's administra
    curl http://<server-address>:<http-port>/ping
    ```
 
+   Where `<server-address>` is the Access Analyzer server's hostname or IP address.
+
    A working connection returns `Ok.`.
-
-## Limitations
-
-- With `NodePort` and no `externalTrafficPolicy=Local` line, every node in the cluster, including agent hosts, forwards connections on the node ports to the analytics store. The server's firewall doesn't protect agent hosts. If you opened `NodePort` access without that line, add it with `sudo dspmctl set-helm-param netwrix config.clickhouse.externalAccess.externalTrafficPolicy=Local`, then repeat steps 2 and 3 of [Open the ports](#open-the-ports). If you keep the default instead, block the node ports on every agent host's firewall too.
 
 ## Rotate the password
 
