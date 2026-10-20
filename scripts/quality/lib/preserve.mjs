@@ -95,6 +95,7 @@ function parseFrontmatter(lines) {
   const front = {};
   let key = null;
   for (const line of lines) {
+    if (/^\s*#/.test(line)) continue; // a YAML comment is not part of any value
     const m = line.match(FM_KEY);
     if (m) {
       key = m[1];
@@ -172,14 +173,30 @@ function contentFacts(docs) {
   return { fences, inlineCode: x.inlineCode, linkTargets: x.linkTargets, bold: x.bold, numbers, admonitions };
 }
 
+// Inline code, link targets, and bold text are kept exactly, so an allowed change never reaches them.
+const GUARDED = /(`[^`\n]+`|\]\([^)]*\)|\*\*[^*\n]+\*\*)/;
+const allowPattern = from => {
+  const esc = from.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`${/^\w/.test(from) ? '(?<!\\w)' : ''}${esc}${/\w$/.test(from) ? '(?!\\w)' : ''}`, 'g');
+};
+
 export function checkContent(originals, rewrittens, allow = []) {
   const violations = [];
   if (allow.some(a => !a.from)) throw new Error('an allowed change needs a non-empty "from" text');
-  // A confirmed fix applies to prose only, so it can never rewrite a code block or frontmatter.
-  const fix = text => allow.reduce((t, { from, to }) => t.split(from).join(to), text);
+  // A confirmed fix applies to plain prose only: never a code block, frontmatter, inline code, link
+  // target, or bold label. It matches whole words, so "5" does not touch "1521".
+  const used = allow.map(() => 0);
+  const fix = text =>
+    text
+      .split(GUARDED)
+      .map((part, i) => (i % 2 ? part : allow.reduce((t, a, n) => t.replace(allowPattern(a.from), () => (used[n]++, a.to)), part)))
+      .join('');
   const before = originals.map(f => {
     const d = parseDoc(f.text);
     return { ...d, prose: fix(d.prose) };
+  });
+  allow.forEach((a, n) => {
+    if (!used[n]) throw new Error(`the allowed change "${a.from}" was not found in the original prose (it must appear in plain text, not in code, a link, or bold text)`);
   });
   const after = rewrittens.map(f => parseDoc(f.text));
   const a = contentFacts(before);

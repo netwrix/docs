@@ -28,7 +28,10 @@ function parseArgs(argv) {
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
-    if (a === '--base') opts.base = value(i++);
+    if (a === '--base') {
+      opts.base = value(i++);
+      if (opts.base.startsWith('-')) throw new Error('--base needs a commit, branch, or tag name, not an option');
+    }
     else if (a === '--json') opts.json = true;
     else if (a === '--allow-change') {
       const [from, ...to] = value(i++).split('=>');

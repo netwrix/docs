@@ -142,14 +142,16 @@ const CLI = join(dirname(fileURLToPath(import.meta.url)), 'doc-restyle', 'integr
 
 function withRepo(fn) {
   const dir = mkdtempSync(join(tmpdir(), 'restyle repo '));
-  const git = (...a) => spawnSync('git', a, { cwd: dir, encoding: 'utf8' });
+  // Never sign the fixture commit, whatever the developer's global git config says.
+  const git = (...a) => spawnSync('git', ['-c', 'commit.gpgsign=false', '-c', 'tag.gpgsign=false', ...a], { cwd: dir, encoding: 'utf8' });
   git('init', '-q');
   git('config', 'user.email', 't@example.com');
   git('config', 'user.name', 't');
   mkdirSync(join(dir, 'docs'));
   writeFileSync(join(dir, 'docs', 'a.md'), page('Set the timeout to 30 seconds.'));
   git('add', '.');
-  git('commit', '-q', '-m', 'original');
+  const commit = git('commit', '-q', '-m', 'original');
+  assert.equal(commit.status, 0, `fixture commit failed: ${commit.stderr}`);
   try {
     fn(dir, (...args) => spawnSync('node', [CLI, ...args], { cwd: dir, encoding: 'utf8' }));
   } finally {
@@ -254,5 +256,30 @@ test('CLI: an absolute path through a symlinked checkout still maps into the rep
     } finally {
       rmSync(holder, { recursive: true, force: true });
     }
+  });
+});
+
+test('an allowed change reaches plain prose only, whole words only, and must be found', () => {
+  const orig = page('Wait 5 minutes on port 1521, run `v5` or **Set 5**, see [x](/docs/v5/a.md).');
+  const fixed = 'Wait 10 minutes on port 1521, run `v5` or **Set 5**, see [x](/docs/v5/a.md).';
+  const allow = [{ from: '5 minutes', to: '10 minutes' }];
+  assert.deepEqual(checkContent(one(orig), one(page(fixed)), allow), []);
+  // A bare number is whole-word only: it changes the lone "5" prose, not 1521, `v5`, bold, or the link.
+  const rewrittenKeepsOthers = 'Wait 10 minutes on port 1521, run `v5` or **Set 5**, see [x](/docs/v5/a.md).';
+  assert.deepEqual(checkContent(one(orig), one(page(rewrittenKeepsOthers)), [{ from: '5', to: '10' }]), []);
+  const rewrittenChangesPort = 'Wait 10 minutes on port 11021, run `v10` or **Set 5**, see [x](/docs/v5/a.md).';
+  assert.ok(checkContent(one(orig), one(page(rewrittenChangesPort)), [{ from: '5', to: '10' }]).length > 0);
+  assert.throws(() => checkContent(one(orig), one(page(fixed)), [{ from: 'v5', to: 'v6' }]), /not found/);
+  assert.throws(() => checkContent(one(orig), one(page(fixed)), [{ from: 'no such text', to: 'x' }]), /not found/);
+});
+
+test('a YAML comment in frontmatter is not part of a value', () => {
+  const orig = page('Body.', 'title: T\nslug: a\n# keep this\nkeywords:\n  - x');
+  assert.deepEqual(checkContent(one(orig), one(page('Body.', 'title: T\nslug: a\nkeywords:\n  - x'))), []);
+});
+
+test('CLI: --base rejects a value that looks like an option', () => {
+  withRepo((dir, cli) => {
+    assert.equal(cli('--base', '-x', 'docs/a.md').status, 2);
   });
 });
