@@ -222,7 +222,7 @@ After completing this section, you can:
 
 ## Deploy Changes and Complete the Ticket
 
-When development is done and the Change Request is approved according to your policy, you can update the Jira ticket.
+When development is done and the Change Request reaches Approved status under your policy, you can update the Jira ticket.
 
 1. The Change Request Status field on the form shows the change request status in NetSuite. The status is now Approved.
 
