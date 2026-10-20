@@ -58,7 +58,7 @@ Policy testing simulates a password change, but it may not always reflect what h
 You can install the Policy Tester .EXE to a moveable folder and distribute it to a location that Helpdesk Engineers can access.
 
 :::note
-Engineers must open the .EXE using a user account with Read access to the Active Directory object that stores the Password Policy Enforcer configuration. The object name is "Password Policy Enforcer X.0" (where X represents the major version number), and it resides in Active Directory Users and Computers > System. To view it, enable Advanced Features under the View menu in Active Directory Users and Computers.
+Engineers must open the .EXE using a user account with Read access to the Active Directory object that stores the Password Policy Enforcer configuration. The object name is "Password Policy Enforcer X.0" (where X is the major version number), and it resides in Active Directory Users and Computers > System. To view it, enable Advanced Features under the View menu in Active Directory Users and Computers.
 :::
 
 **Step 1 –** Navigate to the installation folder at Program Files > Netwrix > Password Policy Enforcer.
@@ -66,7 +66,7 @@ Engineers must open the .EXE using a user account with Read access to the Active
 **Step 2 –** Run PPEPolicyTestInst.exe and select an installation location.
 
 :::note
-This installation requires .NET, per the Server section of the installation documentation. The .NET requirement also applies to the machine that will run the Test Policy Module.
+This installation requires .NET, per the Server section of the installation documentation. The machine that runs the Test Policy Module also requires .NET.
 :::
 
 **Step 3 –** If you install the module to a location other than where Engineers will access it, move the installed files to the accessible location.
