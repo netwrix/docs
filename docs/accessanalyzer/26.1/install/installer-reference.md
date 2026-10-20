@@ -468,6 +468,8 @@ sudo dspm-installer rollback-cert --latest
 
 ## Logs
 
+For the logs of the Access Analyzer services themselves, and for support bundles, see [View and export logs](view-and-export-logs.md).
+
 | File | Contents |
 |---|---|
 | The `--log-path` file (default `/var/log/dspm-installer.log`) | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail `--log-level` sets. The installer appends to the file on every run, with mode `0640`, and rejects a symlink at that path. At the default path, a write failure is non-fatal and the installer sends the same output to the terminal's standard error as text instead; with `--log-path` set explicitly, the same failure stops the installer with an error. |
