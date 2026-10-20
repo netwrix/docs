@@ -29,7 +29,7 @@ The Netwrix package registry hosts the installer binary and the media archive, a
    ```
 
 :::note
-On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` can fail with `command not found`. Run it by its full path instead, for example `sudo /usr/local/bin/dspm-installer`.
+On Red Hat Enterprise Linux (RHEL) and similar distributions, `/usr/local/bin` usually isn't on the `PATH`, so `dspm-installer` can fail with `command not found`. Run it by its full path instead, for example `sudo /usr/local/bin/dspm-installer`.
 :::
 
 <Tabs groupId="install-mode">
