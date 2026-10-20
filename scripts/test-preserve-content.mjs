@@ -76,6 +76,14 @@ test('a split across two files passes', () => {
   assert.deepEqual(checkContent([{ path: 'a.md', text: ORIGINAL }, { path: 'b.md', text: '' }], rewrittens), []);
 });
 
+test('a merge that deletes a page passes, and still fails if the merged content drops a fact', () => {
+  const originals = [{ path: 'a.md', text: page('Set 30 seconds.') }, { path: 'b.md', text: page('Open port 8080.', 'title: B\nsidebar_position: 4') }];
+  const merged = [{ path: 'a.md', text: page('Set 30 seconds.\n\nOpen port 8080.') }, { path: 'b.md', text: '' }];
+  assert.deepEqual(checkContent(originals, merged), []);
+  merged[0].text = page('Set 30 seconds.');
+  assert.deepEqual(checkContent(originals, merged), ['number removed or changed: 8080']);
+});
+
 test('frontmatter: free keys may change, any other key may not change, go away, or appear', () => {
   const orig = page('Body.', 'title: T\nslug: old');
   const body = 'Body.';
@@ -208,4 +216,18 @@ test('an unterminated fence is compared without its indent too', () => {
 test('Windows line endings do not fail a code block', () => {
   const orig = page('Run:\n\n```bash\nrun 5\n```\n');
   assert.deepEqual(checkContent(one(orig), one(orig.replace(/\n/g, '\r\n'))), []);
+});
+
+test('CLI: a path outside the repository exits 2', () => {
+  withRepo((dir, cli) => {
+    const outside = join(tmpdir(), 'restyle-outside.md');
+    writeFileSync(outside, page('x'));
+    try {
+      const r = cli(outside);
+      assert.equal(r.status, 2);
+      assert.match(r.stderr, /outside the repository/);
+    } finally {
+      rmSync(outside, { force: true });
+    }
+  });
 });

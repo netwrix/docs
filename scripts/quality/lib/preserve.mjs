@@ -194,7 +194,8 @@ export function checkContent(originals, rewrittens, allow = []) {
   missing(a.admonitions, b.admonitions, 'admonition', violations);
   rewrittens.forEach((f, i) => {
     const o = originals.find(x => x.path === f.path);
-    if (!o || !o.text) return;
+    // A new file has no original to compare, and a file a merge deleted has no rewrite to compare.
+    if (!o || !o.text || !f.text) return;
     const of = parseDoc(o.text).front;
     const nf = after[i].front;
     for (const [k, v] of Object.entries(of)) {

@@ -65,6 +65,10 @@ export function run(argv) {
   for (const file of opts.files) {
     const abs = path.resolve(file);
     const rel = path.relative(root, abs).split(path.sep).join('/');
+    if (rel.startsWith('../') || path.isAbsolute(rel)) {
+      console.error(`${file} is outside the repository at ${root}.`);
+      return 2;
+    }
     const spec = `${opts.base}:${rel}`;
     const exists = git(['cat-file', '-e', spec], { cwd: root }).status === 0;
     const original = exists ? execFileSync('git', ['show', spec], { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }) : '';
