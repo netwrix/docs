@@ -114,11 +114,11 @@ sudo dspm-installer logs access-analyzer/clickhouse --since 10m --tail 4
 `dspm-installer export-logs` collects the logs and cluster state for a support case into one file. With no target, it includes every pod in the selected namespaces. It takes the same targets, `--namespace`, `--all`, and `--since` flags as `logs`.
 
 ```bash
-sudo dspm-installer export-logs core-api zitadel --since 2h
+sudo dspm-installer export-logs --since 2h
 sudo dspm-installer export-logs core-api -o ./core-api-bundle/
 ```
 
-![dspm-installer export-logs writing a compressed support bundle, then writing a core-api bundle to a folder](/images/accessanalyzer/26.1/install/export-logs.webp)
+![dspm-installer export-logs collecting every pod into a compressed support bundle, then writing a core-api bundle to a folder](/images/accessanalyzer/26.1/install/export-logs.webp)
 
 By default the bundle is a compressed file named `dspm-support-<timestamp>.tar.gz` in the current folder. Use `-o` (`--output`) to choose the path. A path that ends in `.tar.gz` writes a compressed file. A path that ends in a slash, or an existing empty folder, writes the same files uncompressed, so you can read them on the server.
 
