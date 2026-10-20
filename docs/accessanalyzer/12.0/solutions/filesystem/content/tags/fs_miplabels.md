@@ -33,8 +33,8 @@ To view the analysis tasks, navigate to the **FileSystem** > **4.Content** > **T
 **FS_MIPLabels** > **Configure** node and select **Analysis**.
 
 :::warning
-Don't modify or deselect the selected analysis tasks. The analysis tasks are
-preconfigured for this job.
+Don't modify or deselect the selected analysis tasks. Netwrix preconfigures the
+analysis tasks for this job.
 :::
 
 
