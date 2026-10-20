@@ -24,22 +24,30 @@ Run `resize` with the new size, one of `small`, `medium`, `large`, or `enterpris
 sudo dspmctl resize <size>
 ```
 
-For example, to move a **medium** install to **large**:
+For example, to move an install to **small**:
 
 ```bash
-sudo dspmctl resize large
+sudo dspmctl resize small
 ```
 
-The command prints each step with a timestamp. On a server with enough capacity, the output starts and ends like this:
+The command prints each step with a timestamp. This recording, played at four times its real speed, shows a resize to **small** on a server with host-path storage. The server passes the capacity check, every claim keeps its size, and about three minutes later every application runs the new size:
+
+![dspmctl resize small passing the capacity check, keeping the host-path claims, syncing every application, and exiting with code 0](/images/accessanalyzer/26.1/install/resize-grow.webp)
+
+The same output as text, shortened:
 
 ```text
-[2026-10-19T14:02:11Z] Host capacity 24 CPU cores / 96.0 GB RAM fits the large size
+[2026-10-20T13:35:59Z] Host capacity 14 CPU cores / 33.3 GB RAM fits the small size
+[2026-10-20T13:35:59Z] clickhouse-pvc keeps its 20Gi claim: a host-path volume does not cap a volume at its claim, so it can use the host disk the small size requires
 ...
-[2026-10-19T14:02:12Z] Setting Helm param config.sizingTier=large for app netwrix
-[2026-10-19T14:02:12Z] Syncing app netwrix
+[2026-10-20T13:35:59Z] Disabling automated sync for app netwrix
+[2026-10-20T13:35:59Z] Setting Helm param config.sizingTier=small for app netwrix
+[2026-10-20T13:35:59Z] Syncing app netwrix
+[2026-10-20T13:36:31Z] Sync of app netwrix succeeded
+[2026-10-20T13:36:31Z] Waiting for netwrix.classification (syncing), netwrix.common-functions (syncing), ...
 ...
-[2026-10-19T14:09:40Z] Every app runs the large size
-[2026-10-19T14:09:40Z] Restored automated sync for netwrix
+[2026-10-20T13:38:59Z] Every app runs the small size
+[2026-10-20T13:38:59Z] Restored automated sync for netwrix
 ```
 
 Exit code `0` means every application runs the new size. Restart the scans you stopped. If the command exits with any other code, see [If the Resize Stops](#if-the-resize-stops).
