@@ -9,7 +9,7 @@ This article describes the standard health check procedure for Netwrix Privilege
 Docker, and operating system (OS) checks that confirm a healthy environment, and it highlights items
 to follow up on with Support.
 
-This article groups the checks in the same order the intro lists them. Work through each group in turn, and
+The following sections present the checks in that order. Work through each group in turn, and
 run the commands on every node in the cluster unless a step says otherwise.
 
 ## Application Checks
@@ -60,7 +60,7 @@ The `find` pattern needs the wildcards (`*.log*`) to match filenames, and the `g
 
 ### Fluentd/Log Forwarding to SIEM
 
-If log forwarding isn't configured, the customer can create a Support ticket to enable it. Reference the SIEM log forwarding documentation:
+If the environment doesn't forward logs to a SIEM, the customer can create a Support ticket to enable it. Reference the SIEM log forwarding documentation:
 
 [Forward Logs to SIEM](https://docs.netwrix.com/docs/kb/privilegesecurediscovery/security-and-compliance/forward-logs-to-siem-fluentd)
 
