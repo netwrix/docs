@@ -8,7 +8,7 @@ You pick a [size](requirements.md#size) when you install Access Analyzer. When t
 
 A resize only grows an install. `dspmctl resize` refuses a size smaller than the installed one, whatever flags you pass, because a smaller size can lose data. Access Analyzer doesn't support moving to a smaller size. An install that doesn't record a size counts as **medium**.
 
-Run the commands on this page on the Access Analyzer server, with `sudo`. See [Upgrade to a new version](upgrade-to-a-new-version.md) for why `dspmctl` needs `sudo` and how to run it on RHEL.
+Run the commands on this page on the Access Analyzer server, with `sudo`. See [Upgrade to a new version](upgrade-to-a-new-version.md) for why `dspmctl` needs `sudo` and how to run it on Red Hat Enterprise Linux (RHEL).
 
 ## Before You Start
 
@@ -96,7 +96,7 @@ sudo dspmctl sync netwrix
 sudo dspmctl enable-auto netwrix
 ```
 
-Then check the result as described in [Check the Result](#check-the-result).
+Then [check the result](#check-the-result).
 
 :::warning
 Don't uninstall and reinstall Access Analyzer to recover from a failed resize. `dspm-installer --uninstall` permanently deletes all Access Analyzer data. Finish the resize instead.
