@@ -143,7 +143,7 @@ On RHEL and similar distributions, `/usr/local/bin` usually isn't on the `PATH`,
 
 2. Paste the command from the panel and press Enter.
 
-   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes if it's interrupted, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command right away.
+   `install-agent` downloads the release's media from Netwrix into `/var/lib/dspm/media`. The download resumes after an interruption, and the installer verifies the checksum when it finishes. The download must finish before the start time the panel shows, so start the command right away.
 
    To use media that's already on the host, add `--bundle-dir=<path>` to the command. The path is the archive, such as `/etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz`, or the extracted directory.
 
@@ -301,6 +301,6 @@ Removal takes the agent out of Access Analyzer. The server doesn't connect to th
 
 You can't remove an agent while a scan is running on it; the attempt fails with **Failed to delete agent**. Wait for the execution to finish, or stop it from [Scan executions](../scans/scan-executions.md), then try again.
 
-Scans whose agent label pointed at the removed agent keep that label. Their next execution waits until another agent with matching labels is available, as described in [Agent labels and scan routing](agent-labels.md#when-no-agent-matches). Edit those scans, or deploy a replacement agent with the same labels, before their next scheduled run.
+Scans whose agent label pointed at the removed agent keep that label. Their next execution waits until another agent with matching labels is available, as [Agent labels and scan routing](agent-labels.md#when-no-agent-matches) describes. Edit those scans, or deploy a replacement agent with the same labels, before their next scheduled run.
 
 The System agent has no **Delete** action.
