@@ -105,11 +105,23 @@ function target(newPath) {
 // new page, which createRedirects() already generates.
 const UNVERSIONED_COLLISIONS = new Set(Object.values(PAGE_MAP));
 
-export const accessAnalyzer261Redirects = Object.entries(PAGE_MAP).flatMap(([oldPath, newPath]) => {
-  const to = target(newPath);
-  const entries = [{ from: join(OLD_VERSION_PREFIX, oldPath), to }];
-  if (oldPath && !UNVERSIONED_COLLISIONS.has(oldPath)) {
-    entries.push({ from: join(UNVERSIONED_PREFIX, oldPath), to });
-  }
-  return entries;
-});
+export const accessAnalyzer261Redirects = [
+  ...Object.entries(PAGE_MAP).flatMap(([oldPath, newPath]) => {
+    const to = target(newPath);
+    const entries = [{ from: join(OLD_VERSION_PREFIX, oldPath), to }];
+    if (oldPath && !UNVERSIONED_COLLISIONS.has(oldPath)) {
+      entries.push({ from: join(UNVERSIONED_PREFIX, oldPath), to });
+    }
+    return entries;
+  }),
+  // Renamed in place: guides/microsoft-365 -> guides/sharepoint-online.
+  // Both the versioned page and its unversioned alias were live, so map each.
+  {
+    from: `${NEW_VERSION_PREFIX}/guides/microsoft-365`,
+    to: `${NEW_VERSION_PREFIX}/guides/sharepoint-online`,
+  },
+  {
+    from: `${UNVERSIONED_PREFIX}/guides/microsoft-365`,
+    to: `${NEW_VERSION_PREFIX}/guides/sharepoint-online`,
+  },
+];

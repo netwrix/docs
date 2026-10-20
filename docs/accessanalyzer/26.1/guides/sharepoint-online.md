@@ -66,7 +66,7 @@ The generated certificate expires one year after you create the account, and sca
 
 ![Add source drawer for a SharePoint Online source](/images/accessanalyzer/26.1/sources/add-sharepoint-online.webp)
 
-Field details are on the [Microsoft 365](../sources/microsoft-365.md) source page.
+Field details are on the [SharePoint Online source](../sources/microsoft-365.md) page.
 
 ## 4. Create the Access Scan
 
