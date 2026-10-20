@@ -37,7 +37,7 @@ Use the **Password bulk test** to test a password policy against a list of passw
 
 Select a policy to test from the dropdown, then click **Browse** to select the text file. The file should have one password on every line.
 
-The default test report includes all accepted and rejected passwords, and PPE saves the report to the `%ProgramFiles%\Netwrix\Password Policy Enforcer\` folder. Click **Report settings** if you want to change the defaults.
+The default test report includes all accepted and rejected passwords, and PPE saves the report to the `%ProgramFiles%\Netwrix\Password Policy Enforcer\` folder. To change the defaults, click **Report settings**.
 
 Click **Test passwords** to begin the test. The Configuration Console shows a progress bar along with some statistics in the right pane. You can click **Cancel** to terminate the test.
 
@@ -73,4 +73,4 @@ This installation requires .NET, per the Server section of the installation docu
 
 **Step 4 –** Engineers can then launch PPEPolicyTest.exe to run the module.
 
-Join the machine running the Test Policy Module to the same domain to retrieve the required information.
+Join the machine running the Test Policy Module to the same domain so that the module can retrieve the required information.
