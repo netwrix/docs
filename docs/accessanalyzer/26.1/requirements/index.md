@@ -111,7 +111,7 @@ Open these ports on the server's firewall.
 | 80 | TCP | Users' browsers | Redirects HTTP requests to HTTPS. |
 | 4504 | TCP | Netwrix Activity Monitor | Receives activity data. Open it only if you use [Netwrix Activity Monitor](../integrations/netwrix-activity-monitor.md). |
 | 6443 | TCP | Agent hosts | Lets [agents](../configuration/agents/index.md) join and connect back to the server. Open it only to the hosts you deploy agents on. [Deploy an agent](../configuration/agents/deploy-agent.md#prepare-the-host) lists the other ports an agent host needs. |
-| 30000–32767 | TCP | External query tools | Direct access to the analytics store, through the two node ports in this range that its Service uses. Open only those two, and only if you [open the analytics store's ports](../integrations/external-clickhouse-access.md). |
+| 30000–32767 | TCP | External query tools | Direct access to the analytics store through two ports in this range, which you choose or Kubernetes assigns when you [open the analytics store's ports](../integrations/external-clickhouse-access.md). Open only those two, and only if you use this feature. |
 
 ### Outbound
 
