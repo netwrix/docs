@@ -10,7 +10,7 @@ Three automatic modes are available:
 
 | Mode | Certificate comes from | Best for |
 |---|---|---|
-| `acme` | Let's Encrypt (default) or any ACME-compatible certificate authority | Servers reachable from the internet, or organizations running a private ACME CA |
+| `acme` | Let's Encrypt (default) or any certificate authority that supports Automatic Certificate Management Environment (ACME) | Servers reachable from the internet, or organizations running a private ACME CA |
 | `adcs` | Your Active Directory Certificate Services CA | Enterprises with an existing Microsoft public key infrastructure (PKI) |
 | `selfsigned` | An internal CA the cluster creates and manages itself | Demos, labs, and isolated environments |
 
@@ -22,7 +22,7 @@ This page covers the `acme` mode. For `adcs`, see [AD CS TLS Certificates](adcs-
 
 The nonprofit Internet Security Research Group operates [Let's Encrypt](https://letsencrypt.org), a free, publicly trusted certificate authority (CA). There are no fees and no account to create ahead of time — you only provide an email address for expiry and incident notices. All mainstream browsers and operating systems trust its certificates, so users see no certificate warnings.
 
-Let's Encrypt issues certificates over Automatic Certificate Management Environment (ACME), an open protocol in which the certificate authority verifies that you control the domain before issuing. Access Analyzer uses the HTTP-01 challenge: the certificate authority connects to `http://<hostname>/.well-known/acme-challenge/<token>` on port 80 and checks for a response only your server could produce. The cluster answers this challenge automatically — you never handle the token.
+Let's Encrypt issues certificates over ACME, an open protocol in which the certificate authority verifies that you control the domain before issuing. Access Analyzer uses the HTTP-01 challenge: the certificate authority connects to `http://<hostname>/.well-known/acme-challenge/<token>` on port 80 and checks for a response only your server could produce. The cluster answers this challenge automatically — you never handle the token.
 
 Certificates are valid for 90 days and Access Analyzer renews them automatically 30 days before expiry, using the same challenge. As long as your DNS record and firewall rules stay in place, no one has to update the certificate again.
 

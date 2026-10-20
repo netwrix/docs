@@ -54,7 +54,7 @@ sudo --preserve-env=LICENSE_KEY,DSPM_ADCS_PASSWORD dspm-installer \
 ```
 
 - `--cert-manager-issuer-mode adcs` turns on AD CS issuance.
-- `--adcs-url`, `--adcs-username`, and `--adcs-password` (here set through `DSPM_ADCS_PASSWORD`) are required.
+- This mode requires `--adcs-url`, `--adcs-username`, and `--adcs-password` (here set through `DSPM_ADCS_PASSWORD`).
 - Setting the password through the environment variable instead of `--adcs-password` keeps it out of shell history and process listings.
 - `--generate-self-signed-cert` provides the bootstrap certificate.
 
