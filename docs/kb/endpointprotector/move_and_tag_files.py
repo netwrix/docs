@@ -160,6 +160,8 @@ categories = {
         "how_to_remotely_activate_and_collect_client_logs_from_the_server_interface.md",
         "how_to_resolve_reports_and_analysis_logs_not_loading.md",
         "how_to_upgrade_when_apply_updates_button_is_grayed_out.md",
+        "ldap-connection-failures-to-active-directory-domain-controllers.md",
+        "microsoft-entra-id-synchronization-failures.md",
         "recurring-http-500-errors-resolved-only-by-a-full-reboot.md",
         "siem-integration-not-receiving-events.md",
         "user_interface_performance_issues.md",

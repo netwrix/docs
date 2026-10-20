@@ -87,7 +87,7 @@ Click **Next** to move from one step to the next.
 
 ## 4. Watch the Execution
 
-Go to **Configuration > Scan executions** and find the row for the new scan. The list refreshes on its own and shows the execution's **Status** and its **Objects** count.
+Go to **Configuration > Scan executions** and find the row for the new scan. The list refreshes on its own and shows the execution's **Status** and, under **Progress**, how many users and groups it read.
 
 ![Scan executions list](/images/accessanalyzer/26.1/scans/executions-list.webp)
 

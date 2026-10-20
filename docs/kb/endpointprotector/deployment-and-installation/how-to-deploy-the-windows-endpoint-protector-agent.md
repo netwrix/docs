@@ -14,116 +14,150 @@ keywords:
   - DEPT_CODE
 products:
   - endpointprotector
-sidebar_label: How to Deploy the Windows Endpoint Protector Agent
+sidebar_label: Deploying the Windows Agent
 tags:
   - deployment-and-installation
   - kb
-title: "How to Deploy the Windows Endpoint Protector Agent"
+title: "Deploying the Windows Agent"
 knowledge_article_id: kA0Qk0000001FTFKA2
 ---
 
-# How to Deploy the Windows Endpoint Protector Agent
+# Deploying the Windows Agent
+
+## Overview
+
+This article describes how to deploy the Netwrix Endpoint Protector Windows agent manually, silently with `msiexec`, or through Group Policy.
 
 For the full reference, see [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation) and [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters) in the Agent documentation. For deploying via Active Directory Group Policy without an MSI transform, see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#upload-procedure) and [Active Directory](/docs/endpointprotector/install/activedirectory/overview).
 
-## Manual Installation
+> **IMPORTANT:** Netwrix recommends setting `WSIP` to the server's fully qualified domain name (FQDN) instead of an IP address. Clients configured with an FQDN keep working when the server moves to a new IP address, for example after a migration.
 
-If installing the Netwrix Endpoint Protector Agent on a small number of clients or for testing, the agent can simply be installed by downloading the MSI Package from the Netwrix Endpoint Protector Console and executed. When downloaded from the console, the installer will have a name that follows the below convention, where `\<VERSION_INFO\>` is replaced with the agent version and `\<ENDPOINT_PROTECTOR_SERVER_ADDRESS\>` is replaced with the Netwrix Endpoint Protector server IP or URL:
+All three methods install the same agent. Choose the method that fits the size of your environment and the deployment tools you already use:
+
+- [Manual installation](#manual-installation): suits a small number of clients or testing.
+- [Silent installation with `msiexec`](#silent-installation): installs without user interaction, so you can use it in scripts or in any deployment tool that can run a command line.
+- [Group Policy](#deploying-the-agent-via-group-policy): installs the agent on every computer in the scope of a Group Policy Object, so you can use it when you manage endpoints through Active Directory.
+
+## Instructions
+
+### Manual Installation
+
+To install the Netwrix Endpoint Protector Agent on a small number of clients or for testing, download the MSI package from the Netwrix Endpoint Protector Console and run it. The installer name follows this convention, where `\<VERSION_INFO\>` is the agent version and `\<ENDPOINT_PROTECTOR_SERVER_ADDRESS\>` is the server FQDN (recommended) or IP address:
 
 `EPPClientSetup.<VERSION_INFO>._x86_64_[a=<ENDPOINT_PROTECTOR_SERVER_ADDRESS>].msi`
 
 Example installer:
 
-`EPPClientSetup.6.2.2.1006_x86_64_[a=10.0.0.86].msi`
+`EPPClientSetup.6.2.2.1006_x86_64_[a=epp.example.com].msi`
 
-Note: This does not apply to the Netwrix Endpoint Protector Hotfix, as agents were not included in the server patch. To download the agents, please go to the security advisory located at https://security.netwrix.com/Advisories/ADV-2024-002 and download the required agent(s).
+> **NOTE:** This does not apply to the Netwrix Endpoint Protector Hotfix, because the server patch did not include agents. To download the agents, go to [Security Advisory ADV-2024-002 ⸱ Netwrix 🡥](https://security.netwrix.com/Advisories/ADV-2024-002) and download the required agents.
 
-## Silent Installation
+### Silent Installation
 
-You can install the Netwrix Endpoint Protector Windows agent silently by using `msiexec` and specifying the options required for your environment.
+You can install the Netwrix Endpoint Protector Windows agent silently by using `msiexec` and specifying the options required for your environment. In the following examples, replace `EPPClient.msi` with the name of the MSI being used.
 
-## Examples
+#### msiexec Options and Installer Properties
 
-In all the below examples, replace `EPPClient.msi` with the name of the MSI being used.
+The examples combine standard Windows `msiexec` options with Endpoint Protector installer properties.
 
-### Basic Installation
+The following options are standard `msiexec` options that work with any MSI package:
 
-To install the Netwrix Endpoint Protector Agent with the defaults and the EPP server located at `192.168.1.50`, use the following:
+| Option | Description |
+|---|---|
+| `/i` | Installs the specified MSI package |
+| `/qn` | Runs the installation silently, with no user interface |
+
+To suppress a restart or write an installation log, you can also add the standard options `/norestart` or `/l*v "<log-path>"`. See [How to Deploy the Client Using SCCM or msiexec](/docs/kb/endpointprotector/deployment-and-installation/how_to_deploy_the_client_using_sccm_or_msiexec) for an example.
+
+The following properties are specific to the Endpoint Protector agent. Set them as `PROPERTY=value` after the `msiexec` options:
+
+| Property | Description |
+|---|---|
+| `WSIP` | The Endpoint Protector server FQDN (recommended) or IP address |
+| `DEPT_CODE` | The department code to assign to the computer |
+| `PROXYSETTINGSRBGPROP` | Selects the proxy mode; `ManualProxy` uses the agent's own proxy settings |
+| `PROXYIP`, `PROXYPORT` | The IP address and port of the proxy server |
+
+Advanced Installations customers requiring further options should see the [Appendix](#appendix) for the full list of properties that can be specified.
+
+#### Basic Installation
+
+To install the agent with the defaults and the Endpoint Protector server at `epp.example.com`, use the following:
 
 ```batch
-msiexec /i "C:\EPPClient.msi" /qn WSIP=192.168.1.50
+msiexec /i "C:\EPPClient.msi" /qn WSIP=epp.example.com
 ```
 
-### Installation with Non-Default Department
+#### Installation with Non-Default Department
 
 Use the same as the basic installation and specify your department code using the `DEPT_CODE` property:
 
 ```batch
-msiexec /i "C:\EPPClient.msi" /qn WSIP=192.168.1.50 DEPT_CODE=depfin
+msiexec /i "C:\EPPClient.msi" /qn WSIP=epp.example.com DEPT_CODE=depfin
 ```
 
-### Installation with Agent-Specific Proxy Settings
+#### Installation with Agent-Specific Proxy Settings
 
-To install the agent with a proxy that doesn’t require authentication, use the `PROXYSETTINGSRBGPROP`, `PROXYIP`, and `PROXYPORT` options along with the basic installation. The following will set the agent's proxy to `10.0.0.10:8080`:
+To install the agent with a proxy that does not require authentication, use the `PROXYSETTINGSRBGPROP`, `PROXYIP`, and `PROXYPORT` options along with the basic installation. The following will set the agent's proxy to `10.0.0.10:8080`:
 
 ```batch
-msiexec /i "C:\EPPClient.msi" WSIP=192.168.1.50 PROXYSETTINGSRBGPROP=ManualProxy PROXYIP=10.0.0.10 PROXYPORT=8080
+msiexec /i "C:\EPPClient.msi" /qn WSIP=epp.example.com PROXYSETTINGSRBGPROP=ManualProxy PROXYIP=10.0.0.10 PROXYPORT=8080
 ```
 
-Advanced Installations customers requiring further options should see the Appendix for the full list of properties that can be specified.
+### Deploying the Agent via Group Policy
 
-## Deploying the Agent via Group Policy
+To deploy the agent through Group Policy, edit the MSI directly, or create an MSI transform file and update the specific properties in the transform. The following sections use a transform.
 
-Deploying the agent via Group Policy requires editing the MSI either directly or via an MSI transform file to be created and the specific properties updated in the transform. To do this, follow the instructions below:
+#### Create the Transform
 
 1. Download the Orca MSI (or your preferred MSI editing software; these instructions use Orca).
-   1. Orca can be installed from the Windows SDK and selecting the MSI options.
 
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lsoU.png)
+    > **NOTE:** Orca can be installed from the Windows SDK and selecting the MSI options.
+
+   ![File Explorer context menu with Edit with Orca highlighted for the EPPClientSetup MSI file](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lsoU.png)
 
 2. Right-click on the `EPPClientSetup` MSI and select **Edit with Orca**.
 
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lrve.png)
+   ![Orca Transform menu with New Transform highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lrve.png)
 
 3. Click on **Transform** > **New Transform**.
-4. Add the required properties to the Property Table.
-   1. Find and open the Property table.
-   2. Right click in the table and select **Add Row**.
-   3. In the popup box, input **WSIP** as the property, and then add your Netwrix Endpoint Protector Server IP Address or FQDN as the value.
-   4. Click **Ok**.
-   5. Optional: If there are more properties that need changing or adding, such as not using the default department code, refer to the Appendix for the list of properties and change them all in the Properties table.
+4. Find and open the Property table.
+5. Right click in the table and select **Add Row**.
+6. In the popup box, input **WSIP** as the property, and then add your Endpoint Protector server's FQDN (recommended) or IP address as the value.
+7. Click **Ok**.
+8. Optional: If there are more properties that need changing or adding, such as not using the default department code, refer to the [Appendix](#appendix) for the list of properties and change them all in the Properties table.
 
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005ls6y.png)
+   ![Orca Property table with the Add Row option highlighted in the right-click menu](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005ls6y.png)
 
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lxoA.png)
+   ![Orca Add Row dialog with the WSIP property and the server address value highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lxoA.png)
 
-5. Generate the Transform.
-   1. Click on **Transform**.
-   2. Click on **Generate Transform**.
-   3. In the open box, save your transform.
-   4. Ensure the packages are placed on a network share that is accessible to all clients that need to install it.
+9. Click on **Transform**.
+10. Click on **Generate Transform**.
+11. In the open box, save your transform.
+12. Ensure the packages are placed on a network share that is accessible to all clients that need to install it.
 
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3Ov.png)
+    ![Orca Transform menu with Generate Transform highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3Ov.png)
 
-6. Deploy the MSI with the Transform file via Group Policy.
-   1. Open Group Policy Management Console.
-   2. Find or create a new group policy for the deployment.
-   3. Right click on the group policy object and select **Edit…**
-   4. Expand **Computer Configuration** / **Policies** / **Software Settings**.
-   5. Right-click **Software Installation** and select **New** > **Package**.
-   6. Select the Advanced option on the Deploy Software dialog box.
-   7. Browse to the network share where the installer and transform were placed in step 5.
-   8. Select the `EPPClientSetup` MSI file and click **Open**.
-   9. In the new window, select the **Modifications** tab.
-   10. Click **Add** and browse to your saved transform file on the network share.
-   11. Select the transform file and click **Ok**.
-   12. Click **Ok**.
+#### Deploy the MSI with the Transform
 
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3VN.png)
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lwId.png)
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3gf.png)
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m13n.png)
-   ![image.png](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lzGU.png)
+1. Open Group Policy Management Console.
+2. Find or create a new group policy for the deployment.
+3. Right click on the group policy object and select **Edit…**
+4. Expand **Computer Configuration** / **Policies** / **Software Settings**.
+5. Right-click **Software Installation** and select **New** > **Package**.
+6. Select the Advanced option on the Deploy Software dialog box.
+7. Browse to the network share where you placed the installer and the transform.
+8. Select the `EPPClientSetup` MSI file and click **Open**.
+9. In the new window, select the **Modifications** tab.
+10. Click **Add** and browse to your saved transform file on the network share.
+11. Select the transform file and click **Ok**.
+12. Click **Ok**.
+
+    ![Group Policy Management Software installation node with New and Package highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3VN.png)
+    ![Open dialog with the EPPClientSetup MSI file and the Open button highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lwId.png)
+    ![Deploy Software dialog with the Advanced option and the OK button highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m3gf.png)
+    ![Package properties Modifications tab with Add highlighted next to an Open dialog selecting the transform file](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005m13n.png)
+    ![Package properties Modifications tab listing the transform file with OK highlighted](./../0-images/ka0Qk0000004Rkn_00N0g000004CA0p_0EMQk000005lzGU.png)
 
 ## Appendix
 
@@ -131,21 +165,27 @@ A full list of properties that can be specified in the installer can be found in
 
 | Property | Example Values | Description |
 |---|---|---|
-| **WSIP** | `EPPServer.domain.local` | The name or IP address of your Netwrix Endpoint Protector Server. If this is not specified, then the value of `[a=XXX]` from the name of the installer is used for new installations. For existing installations, the registry is used. |
-| **WSPORT** | `443` | The port on which the Netwrix Endpoint Protector Server is listening for agents. Default value: 443 |
+| **WSIP** | `EPPServer.domain.local` | The FQDN (recommended) or IP address of your Endpoint Protector server. If this is not specified, then the value of `[a=XXX]` from the name of the installer is used for new installations. For existing installations, the registry is used |
+| **WSPORT** | `443` | The port on which the Endpoint Protector server is listening for agents. Default value: 443 |
 | **DEPT_CODE** | `Defdep` | The department code to assign the computers. Default value: defep |
 | **PROXYSETTINGSRBGPROP** | `SystemProxy` | Whether to use the System settings for proxy or to use the agent's own proxy configuration. Default: SystemProxy Allowed values: ManualProxy, SystemProxy |
-| **PROXYIP** | `192.168.1.200` | The IP Address of the proxy server. This is only used when **PROXYSETTINGSRBGPROP** is set to ManualProxy. |
-| **PROXYPORT** | `8080` | The port to use for the proxy server. This is only used when **PROXYSETTINGSRBGPROP** is set to ManualProxy. |
+| **PROXYIP** | `192.168.1.200` | The IP Address of the proxy server. This is only used when **PROXYSETTINGSRBGPROP** is set to ManualProxy |
+| **PROXYPORT** | `8080` | The port to use for the proxy server. This is only used when **PROXYSETTINGSRBGPROP** is set to ManualProxy |
 | **AUTHCHECKBOXPROP** | `1` | Enable this to use Authentication on the proxy. Allowed values: 0 (Disabled), 1 (Enabled) |
-| **AUTHUSR** | `ProxyUser` | The username for the user that will authenticate to the proxy. |
-| **AUTHPASS** | `P@ssw0rd123` | The password for the user that will authenticate to the proxy. |
-| **INSTALL_NOTES_EXT** | `1` | Installs the Lotus Notes Add-on. Default value: 1 (Install) Allowed values: 1 (Install), 0 (Don't install) |
-| **INSTALL_OUTLOOK_EXT** | `1` | Installs the Outlook Add-on. Default value: 1 (Install) Allowed values: 1 (Install), 0 (Don't install) |
-| **IPV6MAPPING** | `1` | Maps IPv6 addresses to IPv4. |
-| **SUPPRESSRD** | `1` | Suppresses FileRead/FileDelete events for network share and removable devices. |
-| **DISABLECAP** | `1` | Disables loading of Content Aware Protection (CAP) drivers. When enabled, CAP does not work. |
+| **AUTHUSR** | `ProxyUser` | The username for the user that will authenticate to the proxy |
+| **AUTHPASS** | `P@ssw0rd123` | The password for the user that will authenticate to the proxy |
+| **INSTALL_NOTES_EXT** | `1` | Installs the Lotus Notes Add-on. Default value: 1 (Install) Allowed values: 1 (Install), 0 (Do not install) |
+| **INSTALL_OUTLOOK_EXT** | `1` | Installs the Outlook Add-on. Default value: 1 (Install) Allowed values: 1 (Install), 0 (Do not install) |
+| **IPV6MAPPING** | `1` | Maps IPv6 addresses to IPv4 |
+| **SUPPRESSRD** | `1` | Suppresses FileRead/FileDelete events for network share and removable devices |
+| **DISABLECAP** | `1` | Disables loading of Content Aware Protection (CAP) drivers. When enabled, CAP does not work |
 
-:::note
-Starting with the 2511 Client release, the `IPV6MAPPING`, `SUPPRESSRD`, and `DISABLECAP` install parameters persist across EPP Client upgrades.
-:::
+> **NOTE:** Starting with the 2511 Client release, the `IPV6MAPPING`, `SUPPRESSRD`, and `DISABLECAP` install parameters persist across EPP Client upgrades.
+
+## Related Links
+
+- [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation)
+- [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters)
+- [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#upload-procedure)
+- [Active Directory](/docs/endpointprotector/install/activedirectory/overview)
+- [How to Deploy the Client Using SCCM or msiexec](/docs/kb/endpointprotector/deployment-and-installation/how_to_deploy_the_client_using_sccm_or_msiexec)
