@@ -192,7 +192,7 @@ If the command stops at a preflight warning, it asks whether to continue. Add `-
 
 1. Checks the bundle, the name, and the labels.
 2. Stops if the host is the Access Analyzer server, if the command isn't running as root, or if the `--bundle-dir` setting doesn't match the server.
-3. Runs the agent preflight: the sizing, operating system, disk, and network checks that [Prepare the host](#prepare-the-host) lists.
+3. Runs the agent preflight: the same checks as the server's [Preflight Checks](../install/installer-reference.md#preflight-checks), including the antivirus check, with the agent's sizing minimums and network targets. [Prepare the host](#prepare-the-host) lists the requirements.
 4. Checks that the server's certificate covers the address that the host joins. See [The certificate doesn't cover the join address](#the-certificate-doesnt-cover-the-join-address).
 5. On a server that runs from offline media, either downloads or unpacks the media, and stops if the media's k3s is newer than the server's.
 6. Opens the host firewall if firewalld or ufw is active.
