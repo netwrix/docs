@@ -10,7 +10,7 @@ Details the effective permissions that the specified account has on the SQL Serv
 selected type. Use this report to review the permissions granted to users through your SQL Server
 objects.
 
-![accountpermissionssqlserver_thumb_0_0](/images/auditor/10.7/admin/reports/types/stateintime/accountpermissionssqlserver_thumb_0_0.webp)
+![accountpermissionssqlserver_thumb_0_0](/images/auditor/10.8/admin/reports/types/stateintime/accountpermissionssqlserver_thumb_0_0.webp)
 
 ## Reported data
 
@@ -51,7 +51,7 @@ This report has the following filters:
   value is filled in automatically.
 - **Snapshot date** —select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
-  To report on other snapshots, make sure they are available through import. For details, see
+  To report on other snapshots, ensure they are available through import. For details, see
   **Manage historical snapshots** option description in
   [SQL Server](/docs/auditor/10.8/admin/monitoringplans/sqlserver/overview.md)
 - **Item**— name of the SQL Server instance monitored with selected monitoring plan.
@@ -70,7 +70,7 @@ This report has the following filters:
 
 ## Considerations and limitations
 
-- Reporting for case-sensitive SQL Servers and databases is not supported.
+- Reporting for case-sensitive SQL Servers and databases isn't supported.
 - Permissions for INFORMATION*SCHEMA granted via \_master db* will not be reported.
 - The report will not show the RESTORE capability for the database owner.
 

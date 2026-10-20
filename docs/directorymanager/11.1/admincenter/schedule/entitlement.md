@@ -21,12 +21,11 @@ An Entitlement schedule is automatically created for an identity store when:
 By default, the schedule runs weekly to compute permissions on shared files and folders residing on
 the specified servers (for Active Directory), and the document libraries present in the specified
 sites (for SharePoint). It then replicates these permissions to Elasticsearch, enabling users to
-view, manage and update these permissions in the Directory Manager portal.
+view, manage, and update these permissions in the Directory Manager portal.
 
-On the very first run of the Entitlement schedule, it computes all permissions from scratch and
+On the very first run of the Entitlement schedule, it computes all permissions from the beginning and
 performs a complete replication. On each next run, it will create a parallel index for that specific
-server/SharePoint site index with the suffix \_replication which computes all permissions from
-scratch. In the meantime, user can perform actions on Directory Manager Entitlement. The actions
+server/SharePoint site index with the suffix \_replication which computes all permissions from the beginning. In the meantime, user can perform actions on Directory Manager Entitlement. The actions
 performed during this parallel replication are committed directly at the provider and stored in the
 database. These changes are then immediately committed to elastic after the replication is complete.
 
@@ -47,11 +46,11 @@ The GroupID Entitlement schedule runs in the context of the following accounts:
   [Connect to a Site Using a Different Account](/docs/directorymanager/11.1/admincenter/entitlement/managesp.md#connect-to-a-site-using-a-different-account)
   topic.
 
-You cannot create or delete a GroupID Entitlement schedule; only edit the existing schedule.
+You can't create or delete a GroupID Entitlement schedule; you can only edit the existing schedule.
 
 ## Update the Schedule
 
-Follow the steps to update the GroupID Entitlement schedule.
+To update the GroupID Entitlement schedule:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -67,13 +66,13 @@ Step 5 – On the Edit Schedule page, the Schedule Name and Name Preview boxes d
 schedule as read-only. The name format is
 `_Entitlement_<the name of the machine the schedule is created on>`.
 
-Step 6 – In the Scheduler Service Name drop-down list, select a Scheduler service that would be
+Step 6 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
 responsible for triggering this schedule. The number of services displayed in the list depend on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
 service. See the [Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
 information.
 
-Please note the following while selecting a Scheduler service:
+Consider the following while selecting a Scheduler service:
 
 - The Scheduler service for the Directory Manager instance on which you are creating the schedule is
   selected by default. However, you can select the Scheduler service of another instance as well.

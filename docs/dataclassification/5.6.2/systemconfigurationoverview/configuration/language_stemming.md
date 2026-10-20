@@ -10,27 +10,25 @@ Language stemming is a morphological process that converts words to their root f
 inflected forms are considered equal. For example, an English language search for the word “baby”
 will also locate documents containing the word “babies”.
 
-Note that the stemming process is highly language specific and so one word may stem differently in
+The stemming process is highly language-specific, so one word may stem differently in
 different languages.
 
-Netwrix Data Classification has support for most common languages and will detect the language for
-each document. However, when an index is to be built for documents in multiple languages it is
-normally important that the same stemmer be used for all documents. Otherwise, a search across the
-collection may be compromised when some words from the query are stemmed differently in different
+Netwrix Data Classification supports most common languages and automatically detects the language for
+each document. When building an index for documents in multiple languages, use the same stemmer for all documents.
+Otherwise, searches across the collection may be compromised if query words stem differently in different
 languages.
 
-If all searches are filtered by language then it may make sense to use a different stemmer for each
-language. However, in this case we would recommend building a separate index for each language
-rather than combining all languages in a single index.
+If you filter all searches by language, you might use a different stemmer for each
+language. However, it's better to build a separate index for each language
+than combining all languages in a single index.
 
-The reason that automatic language detection is important during the indexing process is so that the
-correct stoplist is used when extracting terms and concepts. By excluding words in the stoplist the
-index size can be significantly reduced. More importantly, the stoplists play an integral part of
-the concept identification process.
+Automatic language detection during indexing is important because it ensures the
+correct stoplist is used when extracting terms and concepts. Excluding stoplist words significantly
+reduces index size and improves concept identification.
 
-The stemmer should be selected based on the dominant language for a given index. The default stemmer
-is English but this may be configured via the “StemLang” field in the “Config” table in the SQL
-Database.
+Select the stemmer based on the dominant language for a given index. The default stemmer
+is English, but you can configure it via the “StemLang” field in the “Config” table in the SQL
+database.
 
 Netwrix Data Classification uses the stemming algorithms published as part of the Snowball project
 (see [http://snowball.tartarus.org](http://snowball.tartarus.org/) for details).
@@ -53,7 +51,7 @@ By default, the NDC database will index words containing the following character
 - “=”
 - “_” (underscore)
 
-Indexing of these characters can be stopped by removing the relevant entries from the
+Stop indexing these characters by removing the relevant entries from the
 CustomTermCharacters table:
 
 - “@”
@@ -66,8 +64,7 @@ CustomTermCharacters table:
 - “=”
 - “_” (underscore)
 
-Any of the following characters can be included in the list of indexed characters by adding them to
-the CustomTermCharacters table:
+Add any of the following characters to the CustomTermCharacters table to include them in the list of indexed characters:
 
 - “(”
 - “)”
@@ -120,8 +117,8 @@ will match with:
 
 and vice versa.
 
-Note that this mapping of diacritics is transparent to the end user and all data displayed will
-always contain the original characters formats. Therefore, all document summaries, extracts and
+This mapping of diacritics is transparent to the end user, and all data displayed will
+always contain the original character formats. Therefore, all document summaries, extracts, and
 related topics will always be displayed with diacritics if the original documents contained them.
 
 In addition, all stopword processing is based on the extended ASCII character set and so stopwords
@@ -129,20 +126,18 @@ for different languages are always held with appropriate diacritics.
 
 ## Fuzzy Matching Options
 
-It can be useful to search for concepts using a degree of fuzzy matching so that words may be
-matched even if the query or documents contain typing errors or variant spelling.
+Fuzzy matching lets you search for concepts even if the query or documents contain typing errors or variant spelling.
 
-In general, fuzzy matching improves recall but at the expense of precision. In other words, more
-documents should be located but some of these may not be relevant to the query. ConceptSearching
-offers several options for fuzzy matching so that an application can balance the needs of precision
-and recall.
+Fuzzy matching improves recall at the expense of precision. More documents are located,
+but some may not be relevant to the query. Netwrix Data Classification offers several fuzzy matching options
+to balance precision and recall needs.
 
 ### Fuzzy Stemming
 
-Our stemming algorithms can optionally include a degree of fuzzy matching based on removal of
-duplicated consonants. The advantage of this technique is that is improves recall without any loss
-of precision since duplicated consonants are largely redundant in word matching. Enabling this
-option (set StemmingMode=1 in the Config table) will cause the following words to match:
+Stemming algorithms can optionally include fuzzy matching based on removing
+duplicated consonants. This technique improves recall without losing
+precision because duplicated consonants are largely redundant in word matching. Enable this
+option (set StemmingMode=1 in the Config table) to match the following words:
 
 accelerate with
 

@@ -14,8 +14,8 @@ related to Oracle Database Instance configuration settings.
 The jobs in the 4.Configuration Job Group are:
 
 - [Oracle_DatabaseLinks Job](/docs/accessanalyzer/11.6/solutions/databases/oracle/configuration/oracle_databaselinks.md)
-  – Contains a report that provides information on Database Links where the listed Oracle Server is
-  able to execute remote commands
+  – Contains a report that provides information on Database Links where the listed Oracle Server
+  can execute remote commands
 - [Oracle_DatabaseSizing Job](/docs/accessanalyzer/11.6/solutions/databases/oracle/configuration/oracle_databasesizing.md)
   – Provides details on tablespace file sizes and overall tablespace sizes
 - [Oracle_DataDictionaryProtection Job](/docs/accessanalyzer/11.6/solutions/databases/oracle/configuration/oracle_datadictionaryprotection.md)
@@ -25,7 +25,7 @@ The jobs in the 4.Configuration Job Group are:
 - [Oracle_InstanceNameIssues Job](/docs/accessanalyzer/11.6/solutions/databases/oracle/configuration/oracle_instancenameissues.md)
   – This job is designed to find out if the names used for the Oracle database instances conform to
   Oracle recommended best practices. The job also checks to see if the Oracle SID conforms to DISA
-  STIG V-61413 – Oracle instance name or SID should not contain Oracle version numbers.
+  STIG V-61413 – Oracle instance name or SID shouldn't contain Oracle version numbers.
 - [Oracle_RemoteOSAuthentication Job](/docs/accessanalyzer/11.6/solutions/databases/oracle/configuration/oracle_remoteosauthentication.md)
   – This job is designed to find out if remote OS authentication is enabled for the targeted Oracle
   database servers

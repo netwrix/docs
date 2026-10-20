@@ -9,12 +9,12 @@ sidebar_position: 30
 The following C# script sends an email notification to the specified user when an Active Directory
 account is locked and/or unlocked.
 
-The following environmental variables must be added to the script prior to execution:
+The following environmental variables must be added to the script before execution:
 
 - SMTPHOST – Name of the organization’s SMTP server
 - SMTPPORT – Port used by the organization’s SMTP server
 - SMTPENABLESSL – Indicates whether SSL is enabled or disabled on the SMTP server
-  - False = Do not use SSL
+  - False = Don't use SSL
   - True = Use SSL
 - SMTPFROM – Valid email account sending the email to the recipient
 - SMTPID – Valid username for SMTP server within the user's environment

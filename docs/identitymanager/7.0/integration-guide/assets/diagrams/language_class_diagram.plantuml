@@ -1,0 +1,18 @@
+@startuml component
+package "Language" {
+	class Language {
+		Code : String
+		IndicatorNumber : Int32
+		JsonPath : String
+		Translations : String
+		--
+		Properties : EntityProperty[]
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+Language "0..1" --  "0..*"EntityProperty
+hide empty members
+@enduml

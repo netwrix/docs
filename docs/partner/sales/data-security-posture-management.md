@@ -1,6 +1,6 @@
 ---
 title: Netwrix Data Security Posture Management Solution Sales Professional
-sidebar_position: 1270
+sidebar_position: 1081
 tags: [certification, partners, sales, access-analyzer, auditor, data-classification, endpoint-protector, data-security-posture-management]
 keywords: [training, course, certification, partners, sales, access analyzer, auditor, data classification, endpoint protector, data security posture management]
 description: "Become a certified Sales Professional for Netwrix Data Security Posture Management"
@@ -26,7 +26,7 @@ It contains the following courses:
 
 ## Introduction to the Netwrix Solution for Data Security Posture Management (DSPM)
 
-This course is all about giving sellers the know-how to confidently pitch the <Company /> Data Security Posture Management suite.
+This course gives sellers the knowledge to confidently pitch the <Company /> Data Security Posture Management suite.
 You’ll learn what’s driving the need for change, what risks customers might not even realize they’re facing, and how the suite can deliver real value while helping them avoid costly missteps.
 
 Key topics include:

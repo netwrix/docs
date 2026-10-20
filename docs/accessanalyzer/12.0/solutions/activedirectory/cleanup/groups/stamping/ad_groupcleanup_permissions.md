@@ -7,7 +7,7 @@ sidebar_position: 10
 # AD_GroupCleanup_Permissions Job
 
 The AD_GroupCleanup_Permissions Job reports on where security groups are being used to assign
-permissions. This can be used to prioritize remediation for groups that are rarely used.
+permissions. Use this information to prioritize remediation for groups that are rarely used.
 
 ## Analysis Tasks for the AD_GroupCleanup_Permissions Job
 
@@ -16,7 +16,7 @@ Navigate to the **Active Directory** > **Cleanup** > **1.Groups** > **2. Group S
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

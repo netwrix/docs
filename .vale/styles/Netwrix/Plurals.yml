@@ -1,0 +1,7 @@
+extends: existence
+message: "Avoid parenthetical plurals '%s'. Use the plural form, or rephrase with 'one or more'."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '\w+\(s\)'

@@ -6,14 +6,14 @@ sidebar_position: 40
 
 # GroupPolicy: Options
 
-The Options page is used to configure how to return multi-valued properties and how policy results
-are presented. It is a wizard page for all categories.
+Use the Options page to configure how to return multi-valued properties and how to present policy
+results. It is a wizard page for all categories.
 
 ![Group Policy Data Collector Wizard Options page](/images/accessanalyzer/11.6/admin/datacollector/grouppolicy/options.webp)
 
 The configurable options are:
 
-- Result Presentation – Select one of the following options. This section is not available for the
+- Result Presentation – Select one of the following options. This section isn't available for the
   Group Policy Objects category.
 
     - Each part of each policy on a new row

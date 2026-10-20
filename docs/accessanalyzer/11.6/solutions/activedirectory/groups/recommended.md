@@ -11,16 +11,16 @@ settings. It can be run directly or scheduled.
 
 **Dependencies**
 
-The **.Active Directory Inventory** Job Group needs to be successfully executed prior to running
+The **.Active Directory Inventory** Job Group needs to be successfully executed before running
 this job group.
 
 **Target Host**
 
-This job group does not collect data. No target host is required.
+This job group doesn't collect data. No target host is required.
 
 **Connection Profile**
 
-This job group does not collect data. No specific Connection Profile is required.
+This job group doesn't collect data. No specific Connection Profile is required.
 
 **Schedule Frequency**
 

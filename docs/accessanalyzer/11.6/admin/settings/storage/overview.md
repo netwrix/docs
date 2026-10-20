@@ -28,9 +28,8 @@ Each Storage Profile consists of the following parts:
 - Command Timeout – Number of minutes before Enterprise Auditor halts any SQL queries running for
   that amount of time. This prevents SQL queries from running excessively long. The default is 1440
   minutes.
-- Authentication – Mode of authentication to the SQL Server. In general, it is recommended to
-  connect with an account configured with the DBO role (database owner rights) and provisioned to
-  use DBO Schema.
+- Authentication – Mode of authentication to the SQL Server. In general, use an account configured
+  with the DBO role (database owner rights) and provisioned to use DBO Schema.
 
     :::info
     When possible, use Windows Authentication. Windows Authentication is more
@@ -40,7 +39,7 @@ Each Storage Profile consists of the following parts:
     :::
 
 
-    - Windows authentication – Leverages the account used to run the Enterprise Auditor Console
+    - Windows authentication – Uses the account used to run the Enterprise Auditor Console
 
         :::note
         This option affects the credentials used for Schedule Service Accounts. See the
@@ -49,16 +48,16 @@ Each Storage Profile consists of the following parts:
         :::
 
 
-    - SQL Server authentication – Leverages the account provided in the **User name** and
+    - SQL Server authentication – Uses the account provided in the **User name** and
       **Password** textboxes
     - Use existing password – Use the password configured for the Storage Profile account
     - Specify a new password below – Enter a new password for the selected Storage Profile account
 
 - Database name – Name of the Enterprise Auditor database to use in this storage profile
 
-    - Use existing database – Drop-down menu provides a list of databases on the named SQL Server,
+    - Use existing database – dropdown menu provides a list of databases on the named SQL Server,
       provided the connection information supplied is correct. If the menu is empty, then a
-      connection to the SQL Server was not established.
+      connection to the SQL Server wasn't established.
     - Create new database – Enterprise Auditor automatically creates a new database using the name
       provided in the textbox. This value should be a unique, descriptive name.
 
@@ -82,11 +81,11 @@ A green checkmark in the Storage Profiles list indicates the default Storage Pro
 
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Storage view. These buttons
-become enabled when modifications are made to the Storage global setting. Whenever changes are made
+become enabled when you make changes to the Storage global setting. Whenever you make changes
 at the global level, click **Save** and then **OK** to confirm the changes. Otherwise, click
-**Cancel** if no changes were intended.
+**Cancel** if you don't want to save the changes.
 
-The vault provides enhanced security through enhanced encryption to various credentials stored by
+The vault provides enhanced security through encryption for various credentials stored by
 the Enterprise Auditor application. See the
 [Vault](/docs/accessanalyzer/11.6/admin/settings/application/vault.md)
 topic for additional information.

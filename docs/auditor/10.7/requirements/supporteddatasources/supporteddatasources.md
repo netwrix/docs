@@ -74,7 +74,7 @@ Auditor supports monitoring the following device versions:
 
 **NOTE:** Only CIFS configuration is supported.
 
-Auditing of _System_ zone is not supported. As stated by Dell, this zone should be reserved for
+Auditing of _System_ zone isn't supported. As stated by Dell, this zone should be reserved for
 configuration access only. Current data should be stored in other access zones. See the
 [Isilon OneFS 8.2.1 CLI Administration Guide](https://www.dellemc.com/en-us/collaterals/unauth/technical-guides-support-information/2019/09/docu95372.pdf)
 for additional information.
@@ -180,7 +180,7 @@ Auditor supports monitoring the following versions:
 - Exchange Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-    **NOTE:** DoD tenant types are not supported.
+    **NOTE:** DoD tenant types aren't supported.
 
 See the [Exchange Online](/docs/auditor/10.7/configuration/microsoft365/exchangeonline/overview.md) topic for
 additional information.
@@ -192,7 +192,7 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-    **NOTE:** DoD tenant types are not supported.
+    **NOTE:** DoD tenant types aren't supported.
 
 See the
 [Microsoft Entra ID (formerly Azure AD)](/docs/auditor/10.7/configuration/microsoft365/microsoftentraid/overview.md)
@@ -205,7 +205,7 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-    **NOTE:** DoD tenant types are not supported.
+    **NOTE:** DoD tenant types aren't supported.
 
 See the [MS Teams](/docs/auditor/10.7/configuration/microsoft365/teams/overview.md) topic for additional
 information.
@@ -217,7 +217,7 @@ Auditor supports monitoring the following versions:
 - SharePoint Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-    **NOTE:** DoD tenant types are not supported.
+    **NOTE:** DoD tenant types aren't supported.
 
 See the [SharePoint Online](/docs/auditor/10.7/configuration/microsoft365/sharepointonline/overview.md) topic for
 additional information.
@@ -356,7 +356,7 @@ Auditor supports monitoring the following versions:
 - Microsoft SQL Server 2014
 - Microsoft SQL Server 2012
 
-**NOTE:** Linux-based versions are not supported.
+**NOTE:** Linux-based versions aren't supported.
 
 See the [SQL Server](/docs/auditor/10.7/configuration/sqlserver/overview.md) topic for additional information.
 
@@ -433,7 +433,7 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2012
 
 **NOTE:** DNS support is limited on Windows Server 2008 to Windows Server 2008 SP2 (32 and 64-bit).
-DHCP is not supported on Windows Server 2008.
+DHCP isn't supported on Windows Server 2008.
 
 Internet Information Services (IIS)
 

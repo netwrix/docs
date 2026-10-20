@@ -1,0 +1,36 @@
+.toggle {
+  display: flex;
+  align-items: center;
+}
+
+.toggleButton {
+  display: flex;
+  overflow: hidden;
+}
+
+.toggleButtonDisabled {
+  cursor: not-allowed;
+}
+
+.icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+/* Moon (lightModeIcon) visible in light mode */
+.lightModeIcon {
+  display: block;
+}
+
+/* Sun (darkModeIcon) hidden in light mode */
+.darkModeIcon {
+  display: none;
+}
+
+[data-theme='dark'] .lightModeIcon {
+  display: none;
+}
+
+[data-theme='dark'] .darkModeIcon {
+  display: block;
+}

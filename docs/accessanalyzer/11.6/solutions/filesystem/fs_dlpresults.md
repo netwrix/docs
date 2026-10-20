@@ -21,7 +21,7 @@ View the analysis tasks by navigating to the **FileSystem** > **7.Sensitive Data
 **FS_DLPResults** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -54,4 +54,4 @@ the following pre-configured reports:
 | File Ownership (Sensitive Data Ownership)     | This report identifies the top 3 potential owners of files which have been found to contain sensitive content.                       | None                                                  | This report is comprised of one element: <ul><li>Table – Provides details on top owners per file</li></ul>                                                                                                                             |
 | Sensitive Data Access                         | This report shows who is accessing sensitive data. Emphasis is placed on activity within the last 30 days.                           | GDPR SOX HIPAA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of two elements: <ul><li>Bar Chart – Displays sensitive data access by top users</li><li>last 30 days</li><li>Table – Provides details on sensitive data access</li></ul>                                     |
 | Sensitive Security Groups                     | This report identifies groups which are used to provide access to sensitive data. Changes to membership should be closely monitored. | GDPR SOX HIPAA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of two elements: <ul><li>Bar Chart – Top groups by access to sensitive files</li><li>Table – Provides details on group access to sensitive files</li></ul>                                                    |
-| Share Details (Shares with Sensitive Content) | This report identifies the location of sensitive data, and flags whether or not this data is accessible through open access.         | GDPR SOX HIPAA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of three elements: <ul><li>Bar chart – Displays top shares by sensitive file count</li><li>Table – Provides details on files</li><li>Table – Provides details on top shares by sensitive file count</li></ul> |
+| Share Details (Shares with Sensitive Content) | This report identifies the location of sensitive data, and flags whether this data is accessible through open access.         | GDPR SOX HIPAA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of three elements: <ul><li>Bar chart – Displays top shares by sensitive file count</li><li>Table – Provides details on files</li><li>Table – Provides details on top shares by sensitive file count</li></ul> |

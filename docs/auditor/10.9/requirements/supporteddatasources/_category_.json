@@ -1,0 +1,10 @@
+{
+  "label": "Supported Data Sources",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "supporteddatasources"
+  }
+}

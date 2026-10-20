@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Exchange Web Services API Permissions
 
-The EWSMailbox and EWSPublicFolder data collectors utilizes Exchange Web Services API to access and
+The EWSMailbox and EWSPublicFolder data collectors uses Exchange Web Services API to access and
 communicate with Exchange. These data collectors collect statistical, content, permission, and
 sensitive data information from mailboxes and public folders.
 

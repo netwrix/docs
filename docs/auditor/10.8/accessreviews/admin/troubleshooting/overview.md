@@ -15,7 +15,7 @@ Configuration of Permissions on the Installation Directory:
 The Windows service account running the Netwrix Auditor Access Reviews service may be used as the
 Database service account, the Active Directory service account, and/or the SMTP authentication
 account. Check the Database, Active Directory, and Notification pages in the Configuration interface
-to confirm where the account is in use before modifying it to ensure these functionality are not
+to confirm where the account is in use before modifying it to ensure these functionality aren't
 impaired. If this account is changed, a new account must have the **Full Control** permission to
 files and folders in the Access Reviews installation directory. See the
 [Application Service Account](/docs/auditor/10.8/accessreviews/admin/troubleshooting/serviceaccount.md) topic for additional information.

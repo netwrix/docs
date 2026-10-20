@@ -1,0 +1,55 @@
+@startuml component
+package "AutomationRule" {
+	class AutomationRule {
+		Decision : Byte
+		HoursToWait : Int32
+		L0 : Boolean
+		Type : Byte
+		WorkflowState : Byte
+		--
+		Category : Category
+		CompositeRole : CompositeRole
+		D0 : Resource
+		EntityType : EntityType
+		Policy : Policy
+		ResourceType : ResourceType
+		SingleRole : SingleRole
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "CompositeRole" {
+	class CompositeRole {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+AutomationRule "0..*" --  "0..1"Category
+AutomationRule "0..*" --  "0..1"CompositeRole
+AutomationRule "0..*" --  "0..1"Resource
+AutomationRule "0..*" --  "1"EntityType
+AutomationRule "0..*" --  "0..1"Policy
+AutomationRule "0..*" --  "0..1"ResourceType
+AutomationRule "0..*" --  "0..1"SingleRole
+hide empty members
+@enduml

@@ -6,17 +6,11 @@ sidebar_position: 10
 
 # Configure ONTAPI\RESTAPI Web Access
 
-Netwrix Auditor uses ONTAPI to obtain the current CIFS audit configuration and force the audit data
-flush from the internal filer format to an MS Event Viewer compatible format. Netwrix Auditor
-supports both the SSL and non-SSL HTTP access, trying HTTPS first, and falling back to HTTP if it is
-unavailable.
+Netwrix Auditor uses ONTAPI to obtain the current CIFS audit configuration and force the audit data flush from the internal filer format to an MS Event Viewer compatible format. Netwrix Auditor supports both the SSL and non-SSL HTTP access, trying HTTPS first, and falling back to HTTP if it is unavailable.
 
-Follow the steps to configure ONTAPI\RESTAPI Web Access.
+1. Navigate to your cluster management command prompt through the SSH/Telnet connection.
 
-**Step 1 –** Navigate to your cluster management command prompt through the SSH/Telnet connection.
-
-**Step 2 –** Log in as a cluster administrator and review your current web access settings. Make
-sure that External Web Services are allowed. For example:
+2. Log in as a cluster administrator and review your current web access settings. Ensure that External Web Services are allowed. For example:
 
 |                                                                                                        |        |
 | ------------------------------------------------------------------------------------------------------ | ------ |
@@ -35,7 +29,7 @@ If the result of the` External Web Services` command is '`false`', execute the f
 cluster1::> system services web modify -external true
 ```
 
-**Step 3 –** Enable ONTAPI access on the 'Storage VM' (SVM) where CIFS server is installed. Run the
+3. Enable ONTAPI access on the 'Storage VM' (SVM) where CIFS server is installed. Run the
 following command where svm1 is the name of your SVM:
 
 ```
@@ -56,10 +50,10 @@ To display the current settings of web services for SVM svm1, use the following 
 cluster1::> vserver services web show -vserver svm1
 ```
 
-**Step 4 –** Review the [Permissions for NetApp Auditing](/docs/auditor/10.8/configuration/fileservers/netappcmode/permissions.md) topic for additional
+4. Review the [Permissions for NetApp Auditing](/docs/auditor/10.8/configuration/fileservers/netappcmode/permissions.md) topic for additional
 information on how to create the role and enable AD user access.
 
-**Step 5 –** Enable HTTP/HTTPS access. For example:
+5. Enable HTTP/HTTPS access. For example:
 
 ONTAPI
 
@@ -73,7 +67,7 @@ RESTAPI
 cluster1::> vserver services web modify -vserver svm1 -name rest -enabled true
 ```
 
-**Step 6 –** Enable only SSL access (HTTPS in Netwrix Auditor). For example:
+6. Enable only SSL access (HTTPS in Netwrix Auditor). For example:
 
 ONTAPI
 
@@ -87,7 +81,7 @@ RESTAPI
 cluster1::> vserver services web modify -vserver svm1 -name rest -enabled true -ssl-only true
 ```
 
-**Step 7 –** Make sure that the custom role (e.g., netwrix_role for ONTAPI or netwrix_rest_role for
+7. Ensure that the custom role (e.g., netwrix_role for ONTAPI or netwrix_rest_role for
 RESTAPI) assigned to your account specified for data collection can access ONTAPI or RESTAPI. See
 [Permissions for NetApp Auditing](/docs/auditor/10.8/configuration/fileservers/netappcmode/permissions.md) topic for additional information.
 

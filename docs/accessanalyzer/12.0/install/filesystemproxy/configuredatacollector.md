@@ -12,7 +12,7 @@ Access Auditor Data Collector Wizard from the job’s query.
 
 On the Applet Settings wizard page, select the following option:
 
-- Require applet to be running as service on target – Must be selected in the Applet Launch
+- Require applet to be running as service on target – Select this option in the Applet Launch
   Mechanism section to prevent the deployment of the applet or the ad hoc installation of the
   service during the scan
 

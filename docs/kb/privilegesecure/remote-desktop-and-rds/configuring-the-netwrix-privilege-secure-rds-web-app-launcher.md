@@ -46,7 +46,7 @@ There are configurable runtime settings that you can apply to the Web App Launch
 - Start Maximized - runs the browser maximized
 - Command Line Arguments - allows certificate and SSL errors to be ignored when using the Web Launcher
 
-In order to configure these settings, open `appsettings.json` in your Web App Launcher directory. The `ChromeOptions` section contains the above settings. Change the values as required, and save the file.
+In order to configure these settings, open `appsettings.json` in your Web App Launcher directory. The `ChromeOptions` section contains the preceding settings. Change the values as required, and save the file.
 
 ![image.png](./../0-images/ka0Qk0000001EP7_00N0g000004CA0p_0EMQk000001tH7k.png)
 

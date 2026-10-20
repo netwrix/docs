@@ -14,10 +14,11 @@ keywords:
   - groups
   - device inventory
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Device Control Sections Overview
 tags:
   - device-control-and-access-management
+  - kb
 title: "Device Control Sections Overview"
 knowledge_article_id: kA0Qk0000002BCbKAM
 ---

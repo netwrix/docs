@@ -26,13 +26,13 @@ The permissions needed depends on the functionality level:
 
 - Least Privileged: ONLY Collect Events – This is the minimal functionality level. A user manually
   configures FPolicy and ensures that it stays enabled and connected. The product only collects
-  events. This functionality level is not recommended as it requires an additional solution that
+  events. This functionality level isn't recommended as it requires an additional solution that
   tracks the state of FPolicy and fixes the problem should ONTAP disconnect or should the policy
   become disabled.
 - **_RECOMMENDED:_** Less Privileged: Enable/Connect Policy & Collect Events – With this level, the
   user still performs the initial FPolicy configuration manually. The product tracks the state of
   FPolicy with periodic checks to ensure it stays enabled and connected all the time.
-- **_RECOMMENDED:_** Automatically Configure the FPolicy – With this full-blown level, no manual
+- **_RECOMMENDED:_** Automatically Configure the FPolicy – With this comprehensive level, no manual
   configuration is needed. The product performs the initial FPolicy configuration; updates FPolicy
   to reflect configuration changes; ensures that FPolicy stays enabled and connected all the time.
 
@@ -105,7 +105,7 @@ security login rest-role create -role enterpriseauditorrest -api "/api/svm/svms"
 ```
 
 :::note
-If the FPolicy account is configured with these permissions, it is necessary to manually
+If the FPolicy account is configured with these permissions, you must manually
 configure the FPolicy. See the
 [Configure FPolicy](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/netappcmode/activity/configurefpolicy.md)
 topic for additional information.
@@ -130,7 +130,7 @@ permissions to collect events:
 
     :::tip
         Remember, this permission permits the Activity Monitor to enable the FPolicy. If the “Enable
-    and connect FPolicy” option is employed but the permission is not provided, the agent will
+    and connect FPolicy” option is employed but the permission isn't provided, the agent will
     encounter “Failed to enable policy” errors, but it will still be able to connect to the FPolicy.
     Since this permission model requires a manual configuration of the FPolicy, then the need to
     manually enable the FPolicy will be met.
@@ -195,7 +195,7 @@ security login rest-role create -role enterpriseauditorrest -api "/api/protocols
 ```
 
 :::note
-If the FPolicy account is configured with these permissions, it is necessary to manually
+If the FPolicy account is configured with these permissions, you must manually
 configure the FPolicy. See the
 [Configure FPolicy](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/netappcmode/activity/configurefpolicy.md)
 topic for additional information.
@@ -345,7 +345,7 @@ article.
 
 ## Part 2: Create Security Login
 
-Once the access control role has been created, apply it to a domain account. Ensure the following
+After the access control role is created, apply it to a domain account. Ensure the following
 requirements are met:
 
 - The SVM used in the following command must be the same SVM used when creating the access control

@@ -6,11 +6,11 @@ sidebar_position: 70
 
 # Footer
 
-The footer displays various different information about the currently selected record in multiple
+The footer displays various different information about the selected record in multiple
 tabs. It can be activated or deactivated using the small arrow on the far right. The footer is
 hidden by default.
 
-![installation_with_parameters_178](/images/passwordsecure/9.2/configuration/web_applicaiton/operation/footer/installation_with_parameters_178.webp)
+![installation_with_parameters_178](/images/passwordsecure/9.2/configuration/web_application/operation/footer/installation_with_parameters_178.webp)
 
 1. Notification area
 
@@ -27,7 +27,7 @@ The history can also be displayed via a corresponding tab.
 
 4. Documents
 
-The documents tab can be used to access all linked documents.
+The documents tab lets you access all linked documents.
 
 5. Notifications
 

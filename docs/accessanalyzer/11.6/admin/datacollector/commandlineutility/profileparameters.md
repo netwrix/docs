@@ -24,7 +24,7 @@ Profile parameters include:
 - Start in path for task (Optional) – Working directory for the command line that executes the
   program or script. This should be either the path to the program or script file, or the path to
   the files that are used by the executable file.
-- Command Line – Command that the utility executes. If the utility is self-executable and does not
+- Command Line – Command that the utility executes. If the utility is self-executable and doesn't
   need a command, leave this field blank.
-- Output File Name – Enter the desired name for the output file. By default, the output file name
+- Output File Name – Enter the name you want for the output file. By default, the output file name
   matches the profile name.

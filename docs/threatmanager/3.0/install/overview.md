@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Installation
 
-Prior to installing Threat Manager, please ensure that all of the prerequisites have been met in
+Before installing Threat Manager,  ensure that all of the prerequisites have been met in
 accordance with the [Requirements](/docs/threatmanager/3.0/requirements/overview.md) topic. Additionally, the monitoring
 agents need to be deployed through either Netwrix Threat Prevention or Netwrix Activity Monitor and
 configured to send data to Threat Manager.
@@ -21,8 +21,7 @@ The PostgreSQL database must be installed before installing Threat Manager.
 **Netwrix_Setup.exe**
 
 This executable starts a setup launcher containing buttons to install the PostgreSQL database and
-the application. The launcher installs these components on the same server. See the installation
-details for each components below.
+the application. The launcher installs these components on the same server. See the installation details for each component in the following sections.
 
 **NetwrixPostgreSQL14.exe**
 
@@ -43,7 +42,7 @@ This executable is for installing the application and its services:
 - Netwrix Threat Manager SIEM Service
 - Netwrix Threat Manager Web Service
 
-The following prerequisites will be installed if they are not present:
+The installer installs the following prerequisites if they aren't present:
 
 - .NET 8.0.11
 - .NET Desktop Runtime 8.0.11
@@ -73,22 +72,21 @@ Antivirus software can interfere with PostgreSQL's operation because PostgreSQL 
 commands in Windows to behave exactly as documented by Microsoft, and many antivirus programs
 contain errors or accidental behavior changes that cause these commands to misbehave subtly.
 
-This is not a problem for most programs because they access files in fairly simple ways. Because
+This isn't a problem for most programs because they access files in fairly simple ways. Because
 PostgreSQL is continuously reading from and writing to the same set of files from multiple
 processes, it tends to trigger programming and design mistakes in antivirus software, particularly
 problems related to concurrency. Such problems can cause random and unpredictable errors, or even
 data corruption.
 
-Antivirus software is also likely to dramatically slow down PostgreSQL's operation. For that reason,
-you should at least exclude postgres.exe and the data directories so the scanner ignores them.
+Antivirus software is also likely to dramatically slow down PostgreSQL's operation. At minimum, exclude postgres.exe and the data directories so the scanner ignores them.
 
 ## Installation Process
 
-Follow the steps to install the Threat Manager application on a single server.
+ install the Threat Manager application on a single server.
 
 ![setuplauncher](/images/threatmanager/3.0/install/setuplauncher.webp)
 
-**Step 1 –** Right-click on `Netwrix_Setup.exe` and select Run as administrator. The Netwrix Setup
+**Step 1 –** Right-click `Netwrix_Setup.exe` and select Run as administrator. The Netwrix Setup
 launcher opens. You can now install the following components on the same server:
 
 - Click PostgreSQL Setup to install the database. See the
@@ -107,7 +105,7 @@ launcher opens. You can now install the following components on the same server:
 **Step 3 –** Log into the console for the first time. See the [First Launch](/docs/threatmanager/3.0/install/firstlaunch/firstlaunch.md) topic
 for additional information.
 
-**Step 4 –** Configure integration with one or more Netwrix products to feed the desired type of
+**Step 4 –** Configure integration with one or more Netwrix products to feed the type you want of
 data into Threat Manager:
 
 - [Netwrix Activity Monitor Integration](/docs/threatmanager/3.0/install/integration/activitymonitor.md) – Configure Netwrix

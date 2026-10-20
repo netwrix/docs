@@ -6,13 +6,11 @@ sidebar_position: 10
 
 # Deploy the Add-On
 
-Follow the steps to deploy the Add-On for ConnectWise.
-
 **Step 1 –** Prepare Auditor for using the add-on:
 
 1. In the Auditor settings, enable Integration API and specify connection port. See the
    [Integrations](/docs/auditor/10.8/admin/settings/integrations.md) topic for additional information.
-2. Make sure your monitoring plans set up in Auditor are using Audit Databases to store collected
+2. Ensure your monitoring plans set up in Auditor are using Audit Databases to store collected
    data. See the [Audit Database](/docs/auditor/10.8/admin/settings/auditdatabase.md) topic for additional
    information.
 
@@ -25,7 +23,7 @@ the Netwrix Auditor Add-On for ConnectWise Manage folder.
 Manage Integration Service**.
 
 **Step 5 –** Run the ConfigureConnection.exe and follow the steps of the wizard to configure
-connection and ticketing settings for ConectWise Manage. See the
+connection and ticketing settings for ConnectWise Manage. See the
 [Configure ConnectWise ](/docs/auditor/10.8/addon/connectwise/configure.md)topic for additional information.
 
 **Step 6 –** (optional) To adjust the add-on operation and data flow settings, edit the

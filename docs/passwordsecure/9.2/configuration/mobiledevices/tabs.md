@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Tabs
 
-Once you have successfully logged in, you will find yourself in the view where all the user's
+After you have successfully logged in, you will find yourself in the view where all the user's
 passwords are located.
 
 ![all passwords in mobile app](/images/passwordsecure/9.2/configuration/mobiledevices/tabs/all-passwords-ma-en.webp)
@@ -15,7 +15,7 @@ Here you have the following options:
 
 Action menu
 
-With a click on
+With a click
 ![three-points-en](/images/passwordsecure/9.2/configuration/mobiledevices/tabs/three-points-en.webp)
 the action menu is opened.
 

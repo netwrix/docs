@@ -17,9 +17,9 @@ Welcome to the Netwrix Threat Manager knowledge base. This section contains trou
 - **Licensing and System Issues** - License activation, console crashes, and system-level problems
 - **Threat Management and Operations** - Ransomware protection, quarantine management, and operational procedures
 
-## Need Help?
+## Additional Resources
 
-If you can't find what you're looking for:
+If you cannot find what you are looking for:
 1. Use the search function above
 2. Check the main Threat Manager documentation
 3. Contact [Netwrix support](https://www.netwrix.com/support.html)

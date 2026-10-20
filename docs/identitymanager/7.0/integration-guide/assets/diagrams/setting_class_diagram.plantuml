@@ -1,0 +1,11 @@
+@startuml component
+package "Setting" {
+	class Setting {
+		B0 : Bytes
+		C0 : String
+		Identifier : String
+		Type : Int32
+	}
+}
+hide empty members
+@enduml

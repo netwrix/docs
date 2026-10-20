@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # AWS_MemberAccountUsers Job
 
-The AWS_MemberAccountUsers job highlights users that are not located in the primary AWS Identity
+The AWS_MemberAccountUsers job highlights users that aren't located in the primary AWS Identity
 Source, which is generally the Master AWS Account for the Organization.
 
 ## Analysis Tasks for the AWS_MemberAccountUsers Job
@@ -15,7 +15,7 @@ Navigate to the **AWS** > **1.Organizations** > **AWS_MemberAccountUsers** > **C
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -36,4 +36,4 @@ produces the following preconfigured report:
 
 | Report               | Description                                                                            | Default Tags | Report Element                                                                                                                                                                                                                                |
 | -------------------- | -------------------------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Member Account Users | This report highlights user accounts that are not contained in the AWS Master Account. | None         | This report is comprised of the following elements: <ul><li>Stacked Bar Chart – Displays top member account users by org</li><li>Table – Shows member account users by Org</li><li>Table – Provides details on member account users</li></ul> |
+| Member Account Users | This report highlights user accounts that aren't contained in the AWS Master Account. | None         | This report is comprised of the following elements: <ul><li>Stacked Bar Chart – Displays top member account users by org</li><li>Table – Shows member account users by Org</li><li>Table – Provides details on member account users</li></ul> |

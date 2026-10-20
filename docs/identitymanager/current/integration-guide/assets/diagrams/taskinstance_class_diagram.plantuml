@@ -1,0 +1,47 @@
+@startuml component
+package "TaskInstance" {
+	class TaskInstance {
+		C0 : Int32
+		DisplayName_L1 : String
+		EndDate : DateTime
+		IsChild : Boolean
+		IsValidation : Boolean
+		LastProgressUpdate : DateTime
+		StartDate : DateTime
+		State : Int16
+		WrappedProgress : String
+		--
+		Agent : Agent
+		AssignedResourceErrors : AssignedResourceError[]
+		JobInstance : JobInstance
+		Task : Task
+		TaskInstanceSynchronizationHistories : SynchronizationHistory[]
+	}
+}
+package "Agent" {
+	class Agent {
+	}
+}
+package "AssignedResourceError" {
+	class AssignedResourceError {
+	}
+}
+package "JobInstance" {
+	class JobInstance {
+	}
+}
+package "Task" {
+	class Task {
+	}
+}
+package "SynchronizationHistory" {
+	class SynchronizationHistory {
+	}
+}
+TaskInstance "0..*" --  "0..1"Agent
+TaskInstance "1" --  "0..*"AssignedResourceError
+TaskInstance "0..*" --  "0..1"JobInstance
+TaskInstance "0..*" --  "1"Task
+TaskInstance "1" --  "0..*"SynchronizationHistory
+hide empty members
+@enduml

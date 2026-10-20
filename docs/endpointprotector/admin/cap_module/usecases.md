@@ -18,7 +18,7 @@ addresses, birthday, phone numbers, social security numbers, and email address. 
 block the transfer of this data through common Windows desktop applications.
 
 Since the data is organized by patient profile, the administrator can create a HIPAA-compliant
-policy as shown below.
+policy:
 
 ![Content Aware Edit Policy](capeditpolicytwo.webp)
 
@@ -42,12 +42,12 @@ Company Y wants to block the transfer of files containing 10 or more PII items w
 the transfer of files containing 3 PII items.
 
 You can create a policy to block the transfer of files containing 10 or more PIIs by setting the
-Global Threshold to 10, as shown in the policy example below.
+Global Threshold to 10:
 
 ![Applying multiple Content Aware Policies](policyinformationtwo.webp)
 
-Another HIPAA-compliant policy can be configured to report the transfer of ﬁles containing 3 PII
-items by setting the Regular Threshold to 3, as shown in the example below.
+Another HIPAA-compliant policy can be configured to report the transfer of files containing 3 PII
+items by setting the Regular Threshold to 3:
 
 ![Applying multiple Content Aware Policies](policyinformationthree.webp)
 

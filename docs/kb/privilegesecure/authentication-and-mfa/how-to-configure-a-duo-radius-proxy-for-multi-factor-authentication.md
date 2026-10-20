@@ -30,7 +30,7 @@ This article lists the steps to configure a Duo RADIUS proxy server as a multi-f
 
 ## Instructions
 
-1. On your RADIUS server, follow the default path below to open the `authproxy.cfg` file.
+1. On your RADIUS server, follow the following path to open the `authproxy.cfg` file.
 
 ```
 %ProgramFiles%\Duo Security Authentication Proxy\conf\authproxy.cfg
@@ -60,10 +60,10 @@ port=1812
 
 - **IP**, **Remote Port**, and **Shared Secret** match the corresponding values in the `authproxy.cfg` file.
 - The **Prefix for Response Text** field contains a comma. In case the PAP protocol is used, no prefix is needed.
-- Both **Initial Auto-Response Text** and **Send Initial Text** features are optional. If you specify the `push` auto-response text and enable the **Send Initial Text** feature, a Duo push will be automatically initiated.
+- Both **Initial Auto-Response Text** and **Send Initial Text** features are optional. If you specify the `push` auto-response text and enable the **Send Initial Text** feature, a Duo push is automatically initiated.
 
 5. Save the changes to the configuration.
 
 > **NOTE:** You can assign Duo as an authenticator connector for any NPS user. In the main NPS screen, click **Policy** > **Users & Groups**. Select any user and proceed to the **Authenticator Connector** tab. Select the **Duo** option.
 
-On their login to NPS, the configured user should both enter their password and see the multi-factor authentication prompt from Duo. During the initial login, they will be asked to perform the initial Duo enrollment.
+On their login to NPS, the configured user should both enter their password and see the multi-factor authentication prompt from Duo. During the initial login, they are asked to perform the initial Duo enrollment.

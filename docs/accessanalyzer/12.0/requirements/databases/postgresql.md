@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Target PostgreSQL Requirements, Permissions, and Ports
 
-The Access Analyzer for Databases Solution provides the ability to audit and monitor PostgreSQL
+The Access Analyzer for Databases Solution lets you audit and monitor PostgreSQL
 database environments to collect permissions and sensitive data. It scans:
 
 - Open Source PostgreSQL 9x through 12x

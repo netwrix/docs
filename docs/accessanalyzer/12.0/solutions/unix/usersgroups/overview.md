@@ -14,7 +14,7 @@ to pinpoint potential areas of administrative concern.
 The jobs in the 1.Users and Groups job group are:
 
 - [0.Collection > UX_UsersAndGroups Job](/docs/accessanalyzer/12.0/solutions/unix/usersgroups/ux_usersandgroups.md) – Collects user and group related
-  information from /etc/shadow and their equivalents in order to provide details on user and group
+  information from /etc/shadow and their equivalents to provide details on user and group
   conditions to help pinpoint areas of administrative concerns
 - [UX_DuplicateGroups Job](/docs/accessanalyzer/12.0/solutions/unix/usersgroups/ux_duplicategroups.md) – This job identifies duplicate groups within the
   audited Unix or Linux environment. Duplicate groups contain the same group membership as one

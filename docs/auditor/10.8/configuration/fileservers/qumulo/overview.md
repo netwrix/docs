@@ -9,8 +9,7 @@ sidebar_position: 50
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data integrity; otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -46,6 +45,8 @@ Review a full list of object types Netwrix Auditor can collect on Qumulo networ
 | Removed                 | +    | +      | -     |
 | Remove (failed attempt) | -    | -      | -     |
 | Copied                  | -    | -      | -     |
+| Change Permissions      | -    | -      | -     |
+| Change Permissions (failed attempt)     | -    | -      | -     |
 
 **NOTE:** For Qumulo system Auditor displays the actual time when the event occurred. The 'When'
 column shows the time when the syslog message arrived.

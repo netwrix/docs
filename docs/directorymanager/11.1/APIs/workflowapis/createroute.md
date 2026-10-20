@@ -11,8 +11,8 @@ following:
 
 - name - name of the workflow.
 - Description – Description of the workflow.
-- Object – The object(s) – user, contact, group – to apply the workflow to.
-- Event – A create, edit, or delete event that, when performed for the object(s), would trigger the
+- Objects – The objects – user, contact, group – to apply the workflow to.
+- Event – A create, edit, or delete event that, when performed for the objects, would trigger the
   workflow.
 - Field – One or more fields (attributes) that the workflow would apply to. When the values of these
   attributes change for the object, an approval request is triggered.

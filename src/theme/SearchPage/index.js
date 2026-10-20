@@ -1,0 +1,1136 @@
+/**
+ * Custom SearchPage that respects product and version filters from URL parameters
+ */
+
+import React, {useCallback, useEffect, useMemo, useReducer, useRef, useState} from 'react';
+import {useHistory, useLocation} from '@docusaurus/router';
+import algoliaSearchHelper from 'algoliasearch-helper';
+import {liteClient} from 'algoliasearch/lite';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
+import {HtmlClassNameProvider, PageMetadata, usePluralForm} from '@docusaurus/theme-common';
+import Translate, {translate} from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {useAlgoliaThemeConfig, useSearchResultUrlProcessor} from '@docusaurus/theme-search-algolia/client';
+import Layout from '@theme/Layout';
+import Heading from '@theme/Heading';
+import {PRODUCTS} from '../../config/products';
+import {getVersionsForProducts, dedupeToLatestVersion, versionLabel} from '../searchUtils';
+
+// Safely strip HTML tags to plain text
+function stripHtmlTagsToText(input) {
+    if (!input) {
+        return '';
+    }
+    if (ExecutionEnvironment.canUseDOM) {
+        const container = document.createElement('div');
+        container.innerHTML = input;
+        return container.textContent || container.innerText || '';
+    }
+    // Fallback for non-DOM environments (SSR): remove all angle brackets to prevent tags
+    // This avoids multi-character tag patterns and ensures no HTML elements can be formed.
+    return input.replace(/[<>]/g, '');
+}
+
+// Generate product options from PRODUCTS config
+const PRODUCT_OPTIONS = [
+    {label: 'All products', value: '__all__'},
+    ...PRODUCTS.map(product => ({
+        label: product.name,
+        value: product.name,
+    }))
+].sort((a, b) => {
+    if (a.value === '__all__') return -1;
+    if (b.value === '__all__') return 1;
+    return a.label.localeCompare(b.label);
+});
+
+// Keep only versions the current product selection actually offers. The Versions panel
+// only ever lists the selection's own versions — and for a single-version product it is a
+// plain label with no checkboxes — so a foreign version (from a stale URL param or
+// sessionStorage) would filter every result away with no control able to clear it.
+// '__all__' is a sentinel, not a version, and always survives; if pruning empties the
+// selection the filter has become meaningless, so fall back to '__all__'.
+// Returns the input array itself when there is nothing to prune. That keeps identity
+// stable, which matters twice: the effect that re-checks on every change would otherwise
+// never settle, and a deliberate "uncheck every version" ([]) must not be rewritten to
+// '__all__' — that would re-check the whole list under the user.
+function pruneVersions(versions, selectedProducts) {
+    const valid = new Set(getVersionsForProducts(selectedProducts));
+    const cleaned = versions.filter(v => v === '__all__' || valid.has(v));
+    if (cleaned.length === versions.length) return versions;
+    return cleaned.length > 0 ? cleaned : ['__all__'];
+}
+
+// Checkbox-based multi-select component
+function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHeight, sizeScale = 1}) {
+    // options[0] is the "All products" sentinel — skip it for the checkbox list
+    const productOptions = options.filter(o => o.value !== '__all__');
+    const allSelected = selectedValues.includes('__all__');
+    const noneSelected = selectedValues.length === 0;
+    const someSelected = !allSelected && !noneSelected;
+
+    // Hooks must run on every render — the option count changes at runtime (the
+    // Versions list re-renders with a different product's versions), so the
+    // single-option early return below has to sit after them or React throws
+    // "Rendered fewer hooks than expected".
+    const selectAllRef = useRef(null);
+
+    useEffect(() => {
+        if (selectAllRef.current) {
+            selectAllRef.current.indeterminate = someSelected;
+            if (!someSelected) selectAllRef.current.indeterminate = false;
+        }
+    }, [someSelected]);
+
+    // With only one real option, there's nothing to filter — show it as a
+    // plain, always-selected label instead of a confusing single-row checkbox list.
+    if (productOptions.length === 1) {
+        return (
+            <div style={{display: 'flex', flexDirection: 'column', flexShrink: 0, marginTop: topMargin}}>
+                {/* A div, not a <label> — this branch renders static text, so there is no
+                    control for a label element to name. */}
+                <div style={{marginBottom: '8px', fontWeight: 'bold'}}>
+                    {label}
+                </div>
+                <div style={{
+                    border: '2px solid var(--ifm-color-emphasis-300)',
+                    borderRadius: '8px',
+                    background: 'var(--ifm-background-color)',
+                    padding: '4px 10px',
+                    fontSize: '13px',
+                    color: 'var(--ifm-color-emphasis-700)',
+                }}>
+                    {productOptions[0].label}
+                </div>
+                {label === 'Versions' && (
+                    <p style={{
+                        marginTop: '6px',
+                        marginBottom: 0,
+                        fontSize: '12px',
+                        color: 'var(--ifm-color-emphasis-600)',
+                    }}>
+                        This product only has one version in documentation.
+                    </p>
+                )}
+            </div>
+        );
+    }
+
+    function handleSelectAll() {
+        if (allSelected && !someSelected) {
+            onChange([]); // All checked → uncheck all
+        } else {
+            onChange(['__all__']); // Indeterminate or none → check all
+        }
+    }
+
+    function handleOption(value, checked) {
+        // Resolve current explicit selection
+        const current = allSelected
+            ? productOptions.map(o => o.value)   // __all__ means all
+            : noneSelected
+                ? []                              // [] means none
+                : selectedValues.filter(v => v !== '__all__');
+        if (checked) {
+            const next = current.concat(value);
+            onChange(next.length === productOptions.length ? ['__all__'] : next);
+        } else {
+            onChange(current.filter(v => v !== value));
+        }
+    }
+
+    const containerStyle = {
+        width: '100%',
+        border: '2px solid var(--ifm-color-emphasis-300)',
+        borderRadius: '8px',
+        overflowY: 'auto',
+        background: 'var(--ifm-background-color)',
+        flex: 1,
+        minHeight: 0,
+        maxHeight,
+    };
+
+    const rowStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        padding: `${4 * sizeScale}px 10px`,
+        cursor: 'pointer',
+        fontSize: '13px',
+        lineHeight: '1.3',
+        userSelect: 'none',
+    };
+
+    const checkboxStyle = {
+        width: '16px',
+        height: '16px',
+        flexShrink: 0,
+        cursor: 'pointer',
+        accentColor: 'var(--ifm-color-primary)',
+    };
+
+    const dividerStyle = {
+        height: '1px',
+        background: 'var(--ifm-color-emphasis-200)',
+        margin: '0',
+    };
+
+    return (
+        <div style={{display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, marginTop: topMargin}}>
+            <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold', flexShrink: 0}}>
+                {label}
+            </label>
+            <div style={containerStyle}>
+                {/* Select-all row */}
+                <label style={{...rowStyle, fontWeight: '500', background: 'var(--ifm-color-emphasis-100)', justifyContent: 'space-between'}}>
+                    <input
+                        ref={selectAllRef}
+                        type="checkbox"
+                        style={checkboxStyle}
+                        checked={allSelected && !noneSelected}
+                        onChange={handleSelectAll}
+                    />
+                    {!noneSelected && (
+                        <span style={{fontSize: '13px', color: 'var(--ifm-color-emphasis-600)', marginLeft: 'auto'}}>
+                            {allSelected ? productOptions.length : selectedValues.length} of {productOptions.length}
+                        </span>
+                    )}
+                </label>
+                <div style={dividerStyle} />
+                {productOptions.map((opt) => {
+                    const checked = !noneSelected && (allSelected || selectedValues.includes(opt.value));
+                    return (
+                        <label key={opt.value} style={rowStyle}>
+                            <input
+                                type="checkbox"
+                                style={checkboxStyle}
+                                checked={checked}
+                                onChange={(e) => handleOption(opt.value, e.target.checked)}
+                            />
+                            {opt.label}
+                        </label>
+                    );
+                })}
+            </div>
+        </div>
+    );
+}
+
+// A single search hit. The product/version badge carries the context the grouped
+// headings used to provide, so the flat (relevance-ordered) view keeps it visible.
+function SearchResultItem({item: {title, url, summary, breadcrumbs, product, version}}) {
+    return (
+        <article
+            style={{
+                marginBottom: '16px',
+                paddingBottom: '12px',
+                borderBottom: '1px solid var(--ifm-color-emphasis-200)',
+            }}
+        >
+            {product && (
+                <span className="badge badge--secondary" style={{display: 'inline-block', marginBottom: '8px'}}>
+                    {version ? `${product} ${version}` : product}
+                </span>
+            )}
+
+            <Heading
+                as="h3"
+                style={{
+                    fontSize: '18px',
+                    marginBottom: '8px',
+                    fontWeight: '600',
+                }}
+            >
+                <Link to={url} dangerouslySetInnerHTML={{__html: title}} />
+            </Heading>
+
+            {breadcrumbs.length > 0 && (
+                <nav aria-label="breadcrumbs">
+                    <ul
+                        className="breadcrumbs"
+                        style={{fontSize: '13px', marginBottom: '8px'}}
+                    >
+                        {breadcrumbs.map((html, index) => (
+                            <li
+                                key={index}
+                                className="breadcrumbs__item"
+                                dangerouslySetInnerHTML={{__html: html}}
+                            />
+                        ))}
+                    </ul>
+                </nav>
+            )}
+
+            {summary && (
+                <p
+                    style={{
+                        color: 'var(--ifm-color-emphasis-700)',
+                        margin: 0,
+                        fontSize: '14px',
+                        lineHeight: '1.6',
+                    }}
+                    dangerouslySetInnerHTML={{__html: summary}}
+                />
+            )}
+        </article>
+    );
+}
+
+function useDocumentsFoundPlural() {
+    const {selectMessage} = usePluralForm();
+    return (count) =>
+        selectMessage(
+            count,
+            translate(
+                {
+                    id: 'theme.SearchPage.documentsFound.plurals',
+                    message: 'One document found|{count} documents found',
+                },
+                {count},
+            ),
+        );
+}
+
+function SearchPageContent() {
+    const {i18n: {currentLocale}} = useDocusaurusContext();
+    const {algolia: {appId, apiKey, indexName}} = useAlgoliaThemeConfig();
+    const processSearchResultUrl = useSearchResultUrlProcessor();
+    const documentsFoundPlural = useDocumentsFoundPlural();
+    const location = useLocation();
+    const history = useHistory();
+
+    // Back to top button visibility
+    const [showBackToTop, setShowBackToTop] = useState(false);
+    const [showJumpToBottom, setShowJumpToBottom] = useState(false);
+
+    // Results per page dropdown state
+    const [rppOpen, setRppOpen] = useState(false);
+    const rppRef = useRef(null);
+
+    // Close results-per-page dropdown when clicking outside
+    useEffect(() => {
+        if (!rppOpen) return;
+        const handler = (e) => {
+            if (rppRef.current && !rppRef.current.contains(e.target)) setRppOpen(false);
+        };
+        document.addEventListener('mousedown', handler);
+        return () => document.removeEventListener('mousedown', handler);
+    }, [rppOpen]);
+
+    // Page jump input state
+    const [pageInputValue, setPageInputValue] = useState('');
+    const [pageInputFocused, setPageInputFocused] = useState(false);
+
+    // Mobile breakpoint
+    const [isMobile, setIsMobile] = useState(false);
+    const [isSmall, setIsSmall] = useState(false);
+    useEffect(() => {
+        if (!ExecutionEnvironment.canUseDOM) return;
+        const mqMobile = window.matchMedia('(max-width: 768px)');
+        const mqSmall = window.matchMedia('(max-width: 480px)');
+        setIsMobile(mqMobile.matches);
+        setIsSmall(mqSmall.matches);
+        const mobileHandler = (e) => setIsMobile(e.matches);
+        const smallHandler = (e) => setIsSmall(e.matches);
+        mqMobile.addEventListener('change', mobileHandler);
+        mqSmall.addEventListener('change', smallHandler);
+        return () => {
+            mqMobile.removeEventListener('change', mobileHandler);
+            mqSmall.removeEventListener('change', smallHandler);
+        };
+    }, []);
+
+    // Parse URL parameters
+    const urlParams = new URLSearchParams(location.search);
+    const queryFromUrl = urlParams.get('q') || '';
+    const productsFromUrl = urlParams.get('products')?.split(',').filter(Boolean) || [];
+    const versionsFromUrl = urlParams.get('versions')?.split(',').filter(Boolean) || [];
+    const resultsPerPageFromUrl = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
+    const pageFromUrl = parseInt(urlParams.get('page'), 10) || 1;
+
+    const [searchQuery, setSearchQuery] = useState(queryFromUrl);
+    // Initialize from URL if present, otherwise from localStorage
+    const [selectedProducts, setSelectedProducts] = useState(() => {
+        if (productsFromUrl.length > 0) return productsFromUrl;
+        if (typeof window === 'undefined') return ['__all__'];
+        const saved = sessionStorage.getItem('docs_product_filter');
+        try {
+            const parsed = saved ? JSON.parse(saved) : [];
+            if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
+            return parsed;
+        } catch {
+            return ['__all__'];
+        }
+    });
+    // Initialize from URL if present, otherwise from sessionStorage. Both can name a
+    // version the selected product doesn't have, so prune here rather than letting the
+    // first search go out with a filter the UI can't clear.
+    const [selectedVersions, setSelectedVersions] = useState(() => {
+        if (versionsFromUrl.length > 0) return pruneVersions(versionsFromUrl, selectedProducts);
+        if (typeof window === 'undefined') return ['__all__'];
+        const saved = sessionStorage.getItem('docs_version_filter');
+        try {
+            const parsed = saved ? JSON.parse(saved) : [];
+            if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
+            return pruneVersions(parsed, selectedProducts);
+        } catch { return ['__all__']; }
+    });
+    const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
+
+    const availableVersions = useMemo(() => getVersionsForProducts(selectedProducts), [selectedProducts]);
+
+    const isSingleProductSelected = useMemo(() => {
+        return selectedProducts.filter(p => p !== '__all__' && p !== '__none__').length === 1;
+    }, [selectedProducts]);
+
+    // Clear orphan versions when products change. Synchronous here so the interactive path
+    // never fires a search with the outgoing selection's versions.
+    const handleProductChange = useCallback((newProducts) => {
+        setSelectedProducts(newProducts);
+        setSelectedVersions(prev => pruneVersions(prev, newProducts));
+    }, []);
+
+    // Backstop for every path that sets versions without going through
+    // handleProductChange: first mount, and the location.search effect below (browser
+    // back/forward, or arriving from the search modal). pruneVersions returning its input
+    // unchanged is what stops this from looping on its own update.
+    useEffect(() => {
+        setSelectedVersions(prev => pruneVersions(prev, selectedProducts));
+    }, [selectedProducts, selectedVersions]);
+
+    // Track if we're restoring from URL (e.g., browser back button).
+    // Initialize from pageFromUrl so landing on /search?page=3 works
+    // even though the location.search effect skips initial mount.
+    const restoringFromUrl = useRef(pageFromUrl > 1);
+    const targetPageRef = useRef(pageFromUrl > 1 ? pageFromUrl - 1 : null);
+    const isInternalNavigation = useRef(false);
+    const isInitialMount = useRef(true);
+
+    // Sync selectedProducts to sessionStorage
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
+        }
+    }, [selectedProducts]);
+
+    // Sync selectedVersions to sessionStorage
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(selectedVersions));
+        }
+    }, [selectedVersions]);
+
+
+    // Update state when URL changes (e.g., browser back/forward)
+    // Skips initial mount — useState initializers already read URL params and sessionStorage
+    useEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            return;
+        }
+
+        // Skip if this was an internal navigation (we triggered the URL change ourselves)
+        if (isInternalNavigation.current) {
+            isInternalNavigation.current = false;
+            return;
+        }
+
+        // External navigation (browser back/forward, or coming from search modal)
+        const urlParams = new URLSearchParams(location.search);
+        const newQuery = urlParams.get('q') || '';
+        const newProducts = urlParams.get('products')?.split(',').filter(Boolean) || [];
+        const newVersions = urlParams.get('versions')?.split(',').filter(Boolean) || [];
+        const newResultsPerPage = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
+        const newPage = parseInt(urlParams.get('page'), 10) || 1;
+
+        setSearchQuery(newQuery);
+        setSelectedProducts(newProducts.length > 0 ? newProducts : ['__all__']);
+        setSelectedVersions(newVersions.length > 0 ? newVersions : ['__all__']);
+        setResultsPerPage(newResultsPerPage);
+
+        // Store target page for restoration
+        if (newPage > 1) {
+            restoringFromUrl.current = true;
+            targetPageRef.current = newPage - 1;
+        } else {
+            restoringFromUrl.current = false;
+            targetPageRef.current = null;
+        }
+    }, [location.search]);
+
+    const initialSearchResultState = {
+        items: [],
+        query: null,
+        totalMatches: null,
+        totalPages: null,
+        lastPage: null,
+        hasMore: null,
+        loading: null,
+    };
+
+    const [searchResultState, searchResultStateDispatcher] = useReducer(
+        (prevState, data) => {
+            switch (data.type) {
+                case 'reset':
+                    return initialSearchResultState;
+                case 'loading':
+                    return {...prevState, loading: true};
+                case 'update':
+                    if (searchQuery !== data.value.query) {
+                        return prevState;
+                    }
+                    return {...data.value};
+                default:
+                    return prevState;
+            }
+        },
+        initialSearchResultState,
+    );
+
+    const algoliaClient = useMemo(() => liteClient(appId, apiKey), [appId, apiKey]);
+    const algoliaHelper = useMemo(
+        () =>
+            algoliaSearchHelper(algoliaClient, indexName, {
+                distinct: true, // Match the modal (docusaurus.config.js) — dedupe per URL
+                // The index does not return these by default. They are the same fields the
+                // product/version filters filter on, so the badge cannot disagree with the
+                // filter. _highlightResult and _snippetResult are unaffected by this list.
+                attributesToRetrieve: ['url', 'product_name', 'product_version'],
+            }),
+        [algoliaClient, indexName],
+    );
+
+    // makeSearch is defined below, but handleResult needs it to re-fetch a clamped page when a
+    // restored ?page=N overshoots the result set. A ref breaks the definition cycle.
+    const makeSearchRef = useRef(null);
+
+    const handleResult = useCallback(({results: {query, hits, nbHits, page, nbPages}, state}) => {
+        if (query === '' || !Array.isArray(hits)) {
+            searchResultStateDispatcher({type: 'reset'});
+            return;
+        }
+
+        // A restored or stale ?page=N can point past the end (the result set shrank since the
+        // link was made). Algolia returns an empty page — and for a large overshoot, nbPages:0 —
+        // which would render no pagination controls: a dead end. Recover to the first page, which
+        // always holds the most relevant hits. Guarding on page > 0 avoids looping on a query
+        // that genuinely has no results (page 0 empty stays empty).
+        if (hits.length === 0 && page > 0) {
+            makeSearchRef.current?.(0);
+            return;
+        }
+
+        const sanitizeValue = (value) =>
+            value.replace(/algolia-docsearch-suggestion--highlight/g, 'search-result-match');
+
+        // makeSearch enforces the activation rule, so a product_version facet on this
+        // request means a real version filter was active (R3) — de-dupe off. Gating on
+        // the response's own request state (not current UI state) means a filter change
+        // with a response in flight can never mis-gate de-dupe.
+        const versionFilterActive = (state.facetFilters || []).some(
+            (f) => (Array.isArray(f) ? f : [f]).some((x) => String(x).startsWith('product_version:')));
+        const pageHits = versionFilterActive ? hits : dedupeToLatestVersion(hits);
+
+        const items = pageHits.map(({url, _highlightResult: {hierarchy}, _snippetResult: snippet = {}, product_name, product_version}) => {
+            const levels = Object.keys(hierarchy).map((key) => sanitizeValue(hierarchy[key].value));
+
+            return {
+                title: levels[levels.length - 1],
+                url: processSearchResultUrl(url),
+                summary: snippet.content ? `${sanitizeValue(snippet.content.value)}...` : '',
+                // lvl0 is already the badge and the deepest level is already the title, so the
+                // breadcrumb is only what sits between them — otherwise every hit prints its
+                // product and its title twice.
+                breadcrumbs: levels.slice(1, -1),
+                // Straight from the index. Deriving these from the URL instead meant a section
+                // name could be mistaken for a version ("1Secure admin"), and single-version
+                // products rendered their sentinel version ("Identity Manager current").
+                product: product_name || stripHtmlTagsToText(levels[0]) || 'Unknown',
+                version: product_version && product_version !== 'current' ? product_version : null,
+            };
+        });
+
+        searchResultStateDispatcher({
+            type: 'update',
+            value: {
+                items,
+                query,
+                totalMatches: nbHits,
+                totalPages: nbPages,
+                lastPage: page,
+                hasMore: page + 1 < nbPages,
+                loading: false,
+            },
+        });
+    }, [processSearchResultUrl]);
+
+    // Register the result handler once per helper. Registering during render would add a new
+    // listener on every re-render, each firing with a stale closure.
+    useEffect(() => {
+        algoliaHelper.on('result', handleResult);
+        return () => algoliaHelper.removeListener('result', handleResult);
+    }, [algoliaHelper, handleResult]);
+
+    const makeSearch = useCallback(
+        (pageNum = 0) => {
+            // Build facetFilters with product filters (matching SearchBar logic)
+            const facetFilters = [`language:${currentLocale}`];
+
+            // Add product filters (OR logic - any of the selected products)
+            const realProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
+            if (realProducts.length > 0) {
+                facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
+            }
+
+            // A version filter is only active while the Versions panel is visible, i.e.
+            // exactly one product is selected. Versions left over in state, the URL, or
+            // sessionStorage must not silently filter results the user can't unfilter.
+            const realVersions = realProducts.length === 1 ? selectedVersions.filter(v => v !== '__all__') : [];
+            if (realVersions.length > 0) {
+                facetFilters.push(realVersions.map(v => `product_version:${v}`)); // Array within array = OR logic
+            }
+
+            // Server-side pagination: fetch exactly one page in Algolia's relevance order
+            algoliaHelper
+                .setQuery(searchQuery)
+                .setQueryParameter('facetFilters', facetFilters)
+                .setQueryParameter('hitsPerPage', resultsPerPage)
+                .setPage(pageNum)
+                .search();
+        },
+        [searchQuery, algoliaHelper, currentLocale, selectedProducts, selectedVersions, resultsPerPage],
+    );
+    makeSearchRef.current = makeSearch;
+
+    // Fetch another page from Algolia (server-side), clamped to the known page count
+    const goToPage = useCallback(
+        (pageNum) => {
+            const totalPages = searchResultState.totalPages || 1;
+            const clampedPage = Math.max(0, Math.min(pageNum, totalPages - 1));
+            searchResultStateDispatcher({type: 'loading'});
+            makeSearch(clampedPage);
+        },
+        [makeSearch, searchResultState.totalPages],
+    );
+
+    // Update URL when filters or pagination change
+    const prevFiltersRef = useRef({searchQuery: '', selectedProducts: [], selectedVersions: [], resultsPerPage: 25, page: 1});
+
+    useEffect(() => {
+        // Only update URL if values actually changed
+        const prev = prevFiltersRef.current;
+        const currentPage = (searchResultState.lastPage || 0) + 1;
+
+        if (
+            prev.searchQuery !== searchQuery ||
+            JSON.stringify(prev.selectedProducts) !== JSON.stringify(selectedProducts) ||
+            JSON.stringify(prev.selectedVersions) !== JSON.stringify(selectedVersions) ||
+            prev.resultsPerPage !== resultsPerPage ||
+            prev.page !== currentPage
+        ) {
+            const params = new URLSearchParams();
+            if (searchQuery) params.set('q', searchQuery);
+            const urlProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
+            if (urlProducts.length > 0) params.set('products', urlProducts.join(','));
+            // Same activation rule as makeSearch: never advertise a version filter the UI doesn't show.
+            const urlVersions = urlProducts.length === 1 ? selectedVersions.filter(v => v !== '__all__') : [];
+            if (urlVersions.length > 0) params.set('versions', urlVersions.join(','));
+            if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
+            if (currentPage > 1) params.set('page', String(currentPage));
+
+            // Only set the flag when the URL actually changes — otherwise the
+            // location.search effect never fires to reset it, and the next
+            // external navigation (e.g. from the modal) gets skipped.
+            const newSearch = params.toString();
+            if (newSearch !== location.search.replace(/^\?/, '')) {
+                isInternalNavigation.current = true;
+                history.replace({search: newSearch});
+            }
+
+            prevFiltersRef.current = {searchQuery, selectedProducts, selectedVersions, resultsPerPage, page: currentPage};
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchQuery, selectedProducts, selectedVersions, resultsPerPage, searchResultState.lastPage]);
+
+    // IntersectionObserver removed - using pagination buttons instead
+
+    useEffect(() => {
+        searchResultStateDispatcher({type: 'reset'});
+        if (!searchQuery) {
+            return undefined;
+        }
+        searchResultStateDispatcher({type: 'loading'});
+        // Restore ?page=N on mount and browser back/forward; otherwise start at page 0.
+        const targetPage = (restoringFromUrl.current && targetPageRef.current !== null)
+            ? targetPageRef.current
+            : 0;
+        restoringFromUrl.current = false;
+        targetPageRef.current = null;
+        // Debounce: only the last keystroke fires a query. Page size is a dep because it is now
+        // the fetch size — changing it must re-query, not re-slice.
+        const timeout = setTimeout(() => makeSearch(targetPage), 300);
+        return () => clearTimeout(timeout);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchQuery, selectedProducts, selectedVersions, resultsPerPage]);
+
+    // Scroll to top when page changes (except initial load)
+    const isInitialLoad = useRef(true);
+    useEffect(() => {
+        if (isInitialLoad.current) {
+            isInitialLoad.current = false;
+            return;
+        }
+        if (searchResultState.items.length > 0 && !searchResultState.loading) {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    }, [searchResultState.lastPage, searchResultState.items.length, searchResultState.loading]);
+
+    // Show/hide back to top and jump to bottom buttons based on window scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrolledDown = window.scrollY > 300;
+            const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 300;
+
+            setShowBackToTop(scrolledDown);
+            setShowJumpToBottom(!scrolledDown && !nearBottom && searchResultState.items.length > 0);
+        };
+
+        handleScroll();
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [searchResultState.items.length]);
+
+    const scrollToTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
+    const scrollToBottom = () => {
+        window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'});
+    };
+
+    const pageTitle = searchQuery
+        ? `Search results for "${searchQuery}"`
+        : 'Search the documentation';
+
+    return (
+        <Layout>
+            <PageMetadata title={pageTitle} />
+            <Head>
+                <meta name="robots" content="noindex, follow" />
+            </Head>
+
+            <div className="container" style={{
+                paddingBottom: '48px',
+            }}>
+                <div style={isMobile ? {
+                    display: 'flex',
+                    flexDirection: 'column',
+                } : {
+                    display: 'grid',
+                    gridTemplateColumns: '20% 1fr',
+                    gridTemplateAreas: '"filters controls" "filters results"',
+                    columnGap: '24px',
+                    alignItems: 'start',
+                }}>
+                    {/* Controls — heading + search + results-per-page + doc count */}
+                    <div style={isMobile ? {
+                        paddingTop: '16px',
+                        paddingBottom: '12px',
+                    } : {
+                        gridArea: 'controls',
+                        position: 'sticky',
+                        top: 'var(--ifm-navbar-height)',
+                        zIndex: 10,
+                        backgroundColor: 'var(--ifm-background-color)',
+                        paddingTop: '16px',
+                        paddingBottom: '12px',
+                    }}>
+                        <Heading as="h1" style={{fontSize: '20px', lineHeight: '1.3', marginBottom: '12px'}}>{pageTitle}</Heading>
+                        <div style={{display: 'flex', flexDirection: isSmall ? 'column' : 'row', gap: '16px', marginBottom: '12px', alignItems: isSmall ? 'stretch' : 'flex-end'}}>
+                            <div style={{flex: 1}}>
+                                <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
+                                    Search
+                                </label>
+                                <input
+                                    type="search"
+                                    name="q"
+                                    placeholder="Type your search here"
+                                    aria-label="Search"
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    value={searchQuery}
+                                    autoComplete="off"
+                                    autoFocus
+                                    style={{
+                                        width: '100%',
+                                        padding: '14px 16px',
+                                        fontSize: '16px',
+                                        borderRadius: '8px',
+                                        border: '2px solid var(--ifm-color-emphasis-300)',
+                                        background: 'var(--ifm-background-color)',
+                                        color: 'var(--ifm-font-color-base)',
+                                        marginBottom: '0',
+                                        transition: 'border-color 0.2s',
+                                    }}
+                                    onFocus={(e) => {
+                                        e.target.style.borderColor = 'var(--ifm-color-primary)';
+                                        e.target.style.outline = 'none';
+                                    }}
+                                    onBlur={(e) => {
+                                        e.target.style.borderColor = 'var(--ifm-color-emphasis-300)';
+                                    }}
+                                />
+                            </div>
+                            <div ref={rppRef} style={{flexShrink: 0, position: 'relative'}}>
+                                <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
+                                    Results per page
+                                </label>
+                                <button
+                                    onClick={() => setRppOpen(o => !o)}
+                                    style={{
+                                        width: '160px',
+                                        padding: '14px 44px 14px 16px',
+                                        fontSize: '16px',
+                                        borderRadius: rppOpen ? '8px 8px 0 0' : '8px',
+                                        border: '2px solid var(--ifm-color-emphasis-300)',
+                                        background: 'var(--ifm-background-color)',
+                                        color: 'var(--ifm-font-color-base)',
+                                        cursor: 'pointer',
+                                        textAlign: 'left',
+                                        transition: 'border-color 0.2s',
+                                        position: 'relative',
+                                    }}
+                                >
+                                    {resultsPerPage}
+                                    <svg
+                                        width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style={{
+                                            position: 'absolute',
+                                            right: '14px',
+                                            top: '50%',
+                                            transform: `translateY(-50%) ${rppOpen ? 'rotate(180deg)' : 'rotate(0deg)'}`,
+                                            transition: 'transform 0.2s',
+                                            pointerEvents: 'none',
+                                        }}
+                                    >
+                                        <path d="M1 1l5 5 5-5" stroke="var(--ifm-color-emphasis-600)" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                                    </svg>
+                                </button>
+                                {rppOpen && (
+                                    <div style={{
+                                        position: 'absolute',
+                                        top: '100%',
+                                        left: 0,
+                                        width: '160px',
+                                        background: 'var(--ifm-background-surface-color)',
+                                        border: '2px solid var(--ifm-color-emphasis-300)',
+                                        borderTop: 'none',
+                                        borderRadius: '0 0 8px 8px',
+                                        overflow: 'hidden',
+                                        zIndex: 100,
+                                        boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                                    }}>
+                                        {[25, 50, 100, 150, 200].map(n => (
+                                            <div
+                                                key={n}
+                                                onClick={() => { setResultsPerPage(n); setRppOpen(false); }}
+                                                style={{
+                                                    padding: '8px 16px',
+                                                    fontSize: '15px',
+                                                    cursor: 'pointer',
+                                                    background: n === resultsPerPage ? 'var(--ifm-color-primary)' : 'transparent',
+                                                    color: n === resultsPerPage ? 'white' : 'var(--ifm-font-color-base)',
+                                                }}
+                                                onMouseEnter={(e) => {
+                                                    if (n !== resultsPerPage) e.currentTarget.style.background = 'var(--ifm-color-emphasis-100)';
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    if (n !== resultsPerPage) e.currentTarget.style.background = 'transparent';
+                                                }}
+                                            >
+                                                {n}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+                        {!!searchResultState.totalMatches && (
+                            <div
+                                style={{
+                                    marginBottom: '12px',
+                                    padding: '8px 12px',
+                                    background: 'var(--ifm-color-emphasis-100)',
+                                    borderRadius: '6px',
+                                    fontSize: '15px',
+                                    fontWeight: '500',
+                                }}
+                            >
+                                {/* Algolia caps pagination (paginationLimitedTo, ~1000 hits) and
+                                    nbHits is an estimate, so when more match than are reachable, say
+                                    so instead of implying every match can be paged to. */}
+                                {searchResultState.totalPages * resultsPerPage < searchResultState.totalMatches
+                                    ? `Showing the top ${(searchResultState.totalPages * resultsPerPage).toLocaleString()} of ${searchResultState.totalMatches.toLocaleString()} matches — refine your search to narrow results`
+                                    : documentsFoundPlural(searchResultState.totalMatches)
+                                }
+                            </div>
+                        )}
+                    </div>{/* closes controls div */}
+
+                    {/* Filters sidebar — product filters */}
+                    <div style={isMobile ? {
+                        maxHeight: '220px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        paddingBottom: '8px',
+                    } : {
+                        gridArea: 'filters',
+                        position: 'sticky',
+                        top: 'var(--ifm-navbar-height)',
+                        maxHeight: 'calc(100vh - var(--ifm-navbar-height))',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        paddingTop: '16px',
+                        paddingBottom: '16px',
+                        backgroundColor: 'var(--ifm-background-color)',
+                    }}>
+                        <MultiSelect
+                            label="Products"
+                            options={PRODUCT_OPTIONS}
+                            selectedValues={selectedProducts}
+                            onChange={handleProductChange}
+                            maxHeight={isSingleProductSelected && availableVersions.length > 1 ? (isMobile ? '132px' : 'calc((100vh - var(--ifm-navbar-height)) * 0.60)') : undefined}
+                        />
+                        {/* The length guard covers a product name from a stale URL or
+                            sessionStorage that no longer exists in the config — one product is
+                            selected, but it contributes no versions, so there is nothing to list. */}
+                        {isSingleProductSelected && availableVersions.length > 0 && (
+                            <MultiSelect
+                                label="Versions"
+                                options={[
+                                    {label: 'All versions', value: '__all__'},
+                                    ...availableVersions.map(v => ({label: versionLabel(v), value: v})),
+                                ]}
+                                selectedValues={selectedVersions}
+                                onChange={setSelectedVersions}
+                                topMargin="16px"
+                                sizeScale={1.1}
+                            />
+                        )}
+                    </div>{/* closes filters div */}
+
+                    {/* Results area */}
+                    <div style={isMobile ? {} : {gridArea: 'results'}}>
+
+                {searchResultState.items.length > 0 ? (
+                    <main>
+                        {/* Algolia's relevance order, flat. Product context is on each hit's badge. */}
+                        {searchResultState.items.map((item, i) => (
+                            <SearchResultItem key={i} item={item} />
+                        ))}
+                    </main>
+                ) : (
+                    [
+                        searchQuery && !searchResultState.loading && (
+                            <p key="no-results">
+                                <Translate>No results were found</Translate>
+                            </p>
+                        ),
+                        !!searchResultState.loading && (
+                            <div key="spinner" style={{textAlign: 'center', padding: '40px'}}>
+                                Loading...
+                            </div>
+                        ),
+                    ]
+                )}
+
+                {/* Pagination controls */}
+                {searchResultState.items.length > 0 && (
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: '20px',
+                        padding: '40px 20px',
+                        marginTop: '20px'
+                    }}>
+                        <button
+                            onClick={() => goToPage(searchResultState.lastPage - 1)}
+                            disabled={searchResultState.lastPage === 0 || searchResultState.loading}
+                            style={{
+                                padding: '10px 20px',
+                                fontSize: '16px',
+                                fontWeight: '500',
+                                border: searchResultState.lastPage === 0 || searchResultState.loading
+                                    ? '1px solid var(--ifm-color-emphasis-300)'
+                                    : '1px solid var(--ifm-color-primary)',
+                                borderRadius: '6px',
+                                backgroundColor: searchResultState.lastPage === 0 || searchResultState.loading
+                                    ? 'var(--ifm-color-emphasis-200)'
+                                    : 'var(--ifm-color-primary)',
+                                color: searchResultState.lastPage === 0 || searchResultState.loading
+                                    ? 'var(--ifm-color-emphasis-600)'
+                                    : 'white',
+                                cursor: searchResultState.lastPage === 0 || searchResultState.loading
+                                    ? 'not-allowed'
+                                    : 'pointer',
+                                transition: 'all 0.2s ease',
+                            }}
+                        >
+                            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '6px', display: 'inline'}}>
+                                <polyline points="7,1 1,6 7,11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            Previous
+                        </button>
+
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px'
+                        }}>
+                            <span style={{
+                                fontSize: '16px',
+                                fontWeight: '500',
+                                color: 'var(--ifm-color-emphasis-800)'
+                            }}>
+                                Page
+                            </span>
+                            <input
+                                type="text"
+                                inputMode="numeric"
+                                pattern="[0-9]*"
+                                value={pageInputFocused ? pageInputValue : (searchResultState.lastPage + 1)}
+                                onChange={(e) => {
+                                    const value = e.target.value.replace(/\D/g, '');
+                                    setPageInputValue(value);
+                                }}
+                                onFocus={(e) => {
+                                    setPageInputFocused(true);
+                                    setPageInputValue(String(searchResultState.lastPage + 1));
+                                    setTimeout(() => e.target.select(), 0);
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        const pageNum = parseInt(pageInputValue, 10);
+                                        if (pageNum >= 1 && pageNum <= searchResultState.totalPages) {
+                                            goToPage(pageNum - 1);
+                                        }
+                                        setPageInputValue('');
+                                        setPageInputFocused(false);
+                                        e.target.blur();
+                                    } else if (e.key === 'Escape') {
+                                        setPageInputValue('');
+                                        setPageInputFocused(false);
+                                        e.target.blur();
+                                    }
+                                }}
+                                onBlur={() => {
+                                    setPageInputValue('');
+                                    setPageInputFocused(false);
+                                }}
+                                style={{
+                                    width: '60px',
+                                    padding: '6px 8px',
+                                    fontSize: '16px',
+                                    fontWeight: '500',
+                                    border: '1px solid var(--ifm-color-emphasis-300)',
+                                    borderRadius: '4px',
+                                    textAlign: 'center',
+                                }}
+                            />
+                            <span style={{
+                                fontSize: '16px',
+                                fontWeight: '500',
+                                color: 'var(--ifm-color-emphasis-800)'
+                            }}>
+                                of {searchResultState.totalPages}
+                            </span>
+                        </div>
+
+                        <button
+                            onClick={() => goToPage(searchResultState.lastPage + 1)}
+                            disabled={!searchResultState.hasMore || searchResultState.loading}
+                            style={{
+                                padding: '10px 20px',
+                                fontSize: '16px',
+                                fontWeight: '500',
+                                border: !searchResultState.hasMore || searchResultState.loading
+                                    ? '1px solid var(--ifm-color-emphasis-300)'
+                                    : '1px solid var(--ifm-color-primary)',
+                                borderRadius: '6px',
+                                backgroundColor: !searchResultState.hasMore || searchResultState.loading
+                                    ? 'var(--ifm-color-emphasis-200)'
+                                    : 'var(--ifm-color-primary)',
+                                color: !searchResultState.hasMore || searchResultState.loading
+                                    ? 'var(--ifm-color-emphasis-600)'
+                                    : 'white',
+                                cursor: !searchResultState.hasMore || searchResultState.loading
+                                    ? 'not-allowed'
+                                    : 'pointer',
+                                transition: 'all 0.2s ease',
+                            }}
+                        >
+                            Next
+                            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginLeft: '6px', display: 'inline'}}>
+                                <polyline points="1,1 7,6 1,11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                )}
+                    </div>{/* closes results div */}
+                </div>{/* closes outer grid/flex container */}
+            </div>
+
+            {/* Back to top / jump to bottom buttons — mutually exclusive, same position */}
+            {(showBackToTop || showJumpToBottom) && (
+                <button
+                    onClick={showBackToTop ? scrollToTop : scrollToBottom}
+                    aria-label={showBackToTop ? 'Back to top' : 'Jump to bottom'}
+                    style={{
+                        position: 'fixed',
+                        bottom: '30px',
+                        right: '24px',
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '50%',
+                        backgroundColor: 'var(--ifm-color-primary)',
+                        border: 'none',
+                        cursor: 'pointer',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
+                        zIndex: 1000,
+                        transition: 'opacity 0.2s ease, box-shadow 0.2s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        opacity: 0.85,
+                        padding: 0,
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.opacity = '1';
+                        e.currentTarget.style.boxShadow = '0 4px 14px rgba(0,0,0,0.25)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.opacity = '0.85';
+                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.18)';
+                    }}
+                >
+                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style={{transform: showBackToTop ? 'none' : 'rotate(180deg)'}}>
+                        <polyline points="1,8 7,2 13,8" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </button>
+            )}
+        </Layout>
+    );
+}
+
+export default function SearchPage() {
+    return (
+        <HtmlClassNameProvider className="search-page-wrapper">
+            <SearchPageContent />
+        </HtmlClassNameProvider>
+    );
+}

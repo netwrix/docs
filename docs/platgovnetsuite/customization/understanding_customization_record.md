@@ -6,9 +6,7 @@ sidebar_position: 10
 
 # Understanding the Customization Record
 
-Customization records are the documentation about each customization. They are normally built and
-maintained by the Spiders. They enable you to search the customizations and attach them to
-processes.
+Customization records are the documentation about each customization. The Spiders build and maintain them. Use them to search customizations and attach them to processes.
 
 Customization records tell you:
 
@@ -19,8 +17,7 @@ Customization records tell you:
 - Detailed automated documentation (search filters and formulas, related fields, scripts, searches
   and records).
 
-A Customization is a meta record of the NetSuite customization that is created by the spider
-process. Links to other customizations and processes are captured and managed in this record.
+A Customization is a meta record of the NetSuite customization created by the spider process. Links to other customizations and processes are captured and managed in this record.
 
 ## Understanding the Customization Record
 
@@ -65,7 +62,7 @@ The tabs provide detailed information about the customization:
   customizations include States, Actions, and Workflow Fields not applicable when viewing Field
   customizations.
 - **ERD**: Displays the Entity-Relationship Diagram centered around this customization.
-- **Clean Up**: Comments, classification and clean up status associated with the customization.
+- **Clean Up**: Comments, classification, and clean up status associated with the customization.
   Search records have additional fields for Automated Search Clean Up alerts, rules, and status.
 - **Change Log**: Displays the change log for the customization.
 - **Related Change Log**: Displays any related change logs for the customization.

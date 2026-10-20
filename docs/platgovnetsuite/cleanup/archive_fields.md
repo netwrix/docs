@@ -6,9 +6,7 @@ sidebar_position: 70
 
 # Archive Fields
 
-When cleaning up your account with Platform Governance for NetSuite clean up tools, you may find
-fields that are no longer in use and you want to delete them. To do this you need to create a Change
-Request and add the fields you want to delete.
+When cleaning up your account with Platform Governance for NetSuite clean up tools, you may find fields that are no longer in use and need to be deleted. Create a Change Request and add the fields you want to delete.
 
 ## Create a Change Request to Archive Fields
 
@@ -28,11 +26,9 @@ To create a change request:
 
 ![archivefields1](/images/platgovnetsuite/clean_up/archivefields1.webp)
 
-6. Click on the **Archive Customizations** if you find your customizations under **Cannot Be Safely
+6. Click the **Archive Customizations** if you find your customizations under **Cannot Be Safely
 Deleted or Modified** and under **Warning it says Not Archived**
 
 ![archivefields2](/images/platgovnetsuite/clean_up/archivefields2.webp)
 
-7. Once your customizations are processed and archived, your customizations are listed under **Can be
-Safely Deleted or Modified**. Your [archive folder](/docs/platgovnetsuite/cleanup/set_up_archive_folder.md) has the CSV file you
-can download. The file name has the field type and the script ID.
+7. After your customizations are processed and archived, they appear under **Can be Safely Deleted or Modified**. Your [archive folder](/docs/platgovnetsuite/cleanup/set_up_archive_folder.md) contains the CSV file you can download. The file name includes the field type and the script ID.

@@ -6,17 +6,17 @@ sidebar_position: 50
 
 # Password Reset Client
 
-The Password Reset Client allows users to securely reset their password or unlock their account from
-the Windows Logon and Unlock Computer screens. Users click **Reset Password** to access the Password
+Users can securely reset their password or unlock their account from the Windows Logon and Unlock
+Computer screens with the Password Reset Client. Users click **Reset Password** to access the Password
 Reset system.
 
 ![the_password_reset_client_1](/images/passwordreset/3.3/evaluation/the_password_reset_client_1.webp)
 
-The Password Reset Client does not modify any Windows system files.
+The Password Reset Client doesn't modify any Windows system files.
 
 The Password Reset Client is normally deployed with Group Policy, Microsoft System Center
 Configuration Manager, or some other software deployment tool. It takes about 15 minutes to set up
-an automated deployment, so we will install the PRC manually for the evaluation.
+an automated deployment, so this guide covers manual installation for the evaluation.
 
 ## Installing the PRC
 
@@ -28,12 +28,11 @@ Follow the steps below to install the PRC.
 
 **Step 3 –** Click **Next**.
 
-**Step 4 –** Read the license agreement. Click **I accept the license agreement**. Click **Next** if
-you accept all the terms.
+**Step 4 –** Read the license agreement. Select the checkbox to accept the license agreement terms, then click **Next**.
 
 **Step 5 –** Click **Next**.
 
-**Step 6 –** Once the Password Reset Client is installed, click **Finish**.
+**Step 6 –** After the Password Reset Client is installed, click **Finish**.
 
 **Step 7 –** Click **Yes** is asked to restart the computer.
 
@@ -43,8 +42,8 @@ evaluation.
 ## Configuring the PRC
 
 The Password Reset Client is normally configured with an Active Directory administrative template.
-This allows you to centrally configure all computers in the domain. It takes about 15 minutes to set
-up the Administrative Template, so we will configure the PRC by importing the settings into the
+With an administrative template, you can centrally configure all computers in the domain. It takes about 15 minutes to set
+up the administrative template, so this guide covers configuring the PRC by importing the settings into the
 registry for the evaluation.
 
 **Step 1 –** Download the sample configuration from the following link:
@@ -72,7 +71,7 @@ when asked to confirm. Repeat this step on any client computers being used for t
 
 :::note
 You must import the configuration settings into the registry whenever you edit
-PRC_Config.reg, otherwise the old settings will remain.
+PRC_Config.reg, otherwise the old settings remain.
 :::
 
 

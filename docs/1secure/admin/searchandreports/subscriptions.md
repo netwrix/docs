@@ -15,12 +15,12 @@ or upload reports to a designated folder in SharePoint Online. This enables MSPs
 
 ## Add a Subscription
 
-Follow the steps to add a subscription.
+**To add a subscription:**
 
 **Step 1 –** Click **Reports** in the top bar to navigate to the Reports page. By default, the page
 opens to the Activity tab with New Investigation selected in the left pane.
 
-**Step 2 –** Select an organization from the drop-down menu at the top of the left pane to access
+**Step 2 –** Select an organization from the dropdown menu at the top of the left pane to access
 its reports. An organization is selected by default, but you can choose a different one if needed.
 
 **Step 3 –** In the left pane, click a category to view its reports.
@@ -29,45 +29,45 @@ its reports. An organization is selected by default, but you can choose a differ
 you open them. Click **Search** to generate reports with a predefined filter set.
 
 :::note
-You cannot subscribe to a report if no data is available for it. In this case, the
+You can't subscribe to a report if no data is available for it. In this case, the
 Subscribe button remains disabled.
 :::
 
 
 **Step 5 –** Click **Subscribe** on the top right of the page. The Subscription to
-`<name of the report>` pane is displayed.
+`<name of the report>` pane opens.
 
 ![Subscription to Report pane](/images/1secure/admin/searchandreports/subscriptions.webp)
 
 **Step 6 –** Set a start date, time, and time zone for sending the report to the intended
 recipients.
 
-- Start Date – Click the icon in this field to open a calender to select a date. You can also type a
+- Start Date – Click the icon in this field to open a calendar to select a date. You can also enter a
   date in the field.
-- Time – Click the icon in this field to open a clock to select a time. You can also type a time in
+- Time – Click the icon in this field to open a clock to select a time. You can also enter a time in
   the field.
 - Time Zone – Select a timezone.
 
-**Step 7 –** Select a frequency for sending the reports from the Frequency drop-down menu. The
+**Step 7 –** Select a frequency for sending the reports from the Frequency dropdown menu. The
 available options are: Daily, Weekly, and Monthly.
 
 You can view the subscription timing details in the footer of the pane.
 
 **Step 8 –** In the Attached File field, specify the name of the file the intended recipients will
-receive. The default name is: Report on `{{Report_Name}}` `{{Export_Date}}`. These variables will be
+receive. The default name is: Report on `{{Report_Name}}` `{{Export_Date}}`. These variables are
 replaced with the report's name and date. For example, Report on Accounts Deleted 01/10/2025
 09:00:00.
 
 You can use other variables to specify the file name, as discussed in the following step.
 
-**Step 9 –** From the Variables drop-down menu, select a variable to be used in the name of the
-file. To use multiple variables, select them one by one from the drop-down menu. The available
+**Step 9 –** From the Variables dropdown menu, select a variable to be used in the name of the
+file. To use multiple variables, select them one by one from the dropdown menu. The available
 options are: Report Name, Export Date, Frequency, Num Records, Managing Organization, and Managed
 Organization.
 
-**Step 10 –** Select a file format (XLSX, CSV) from the drop-down menu.
+**Step 10 –** Select a file format (XLSX, CSV) from the dropdown menu.
 
-**Step 11 –** Click the **Send reports by email** check box to specify email delivery settings. The
+**Step 11 –** Click the **Send reports by email** checkbox to specify email delivery settings. The
 Email Settings section expands to display the following:
 
 ![Email Delivery Settings](/images/1secure/admin/searchandreports/subscriptionsemailsettings.webp)
@@ -75,14 +75,14 @@ Email Settings section expands to display the following:
 - Recipients – Specify the email addresses of the recipients of the report subscription. You can
   enter multiple addresses separated by a comma.
 - Email Subject – Specify the email subject. The default subject is: `{{Frequency}}` Report on
-  `{{Report_Name}}` from `{{Managed_Organization}}`. These variables will be replaced with the
+  `{{Report_Name}}` from `{{Managed_Organization}}`. These variables are replaced with the
   report frequency, report name, and managed organization name. For example, Monthly Report on
   Accounts Deleted from Netwrix.
 
-    You can use other variables to specify the subject line of the email, as discussed below.
+    You can use other variables to specify the subject line of the email, as described in the following step.
 
-- Variables – Select variable(s) to customize the subject line of the email. To use multiple
-  variables, select them one by one from the drop-down menu. The available options are: Report Name,
+- Variables – Select variables to customize the subject line of the email. To use multiple
+  variables, select them one by one from the dropdown menu. The available options are: Report Name,
   Export Date, Frequency, Num Records, Managing Organization, and Managed Organization.
 
     ![Email Subject](/images/1secure/admin/searchandreports/subscriptions_2.webp)
@@ -95,7 +95,7 @@ Email Settings section expands to display the following:
 
 - Message – Enter the information to be included in the body of the email.
 
-**Step 12 –** Click the **Upload reports to a designated folder in SharePoint Online** check box to
+**Step 12 –** Click the **Upload reports to a designated folder in SharePoint Online** checkbox to
 specify the settings for SharePoint Online delivery.
 
 :::note
@@ -114,7 +114,7 @@ report:
   /Shared Documents/FolderName)
 
     :::note
-    For MSP organizations, reports will always be saved to the location in a sub-folder
+    For MSP organizations, reports are always saved in a sub-folder
     named after the child organization.
     :::
 
@@ -125,13 +125,11 @@ The subscription is created.
 
 ## Edit a Subscription
 
-Follow the steps to edit a subscription.
+**To edit a subscription:**
 
-**Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
-that lists the managed organizations defined in 1Secure.
+**Step 1 –** Click **Configuration** in the top bar. The Managed Organizations page opens, listing the managed organizations defined in 1Secure.
 
-**Step 2 –** Click the name of an organization from the list. The properties page for the
-organization is displayed.
+**Step 2 –** Click the name of an organization from the list. The properties page for the organization opens.
 
 **Step 3 –** Click the **Subscriptions** tab. The subscriptions for the organization are listed
 here. On this page, you can review statuses for your subscriptions in the Last run result column. It
@@ -143,7 +141,7 @@ Processing, Error Sending).
 ![Organization Subscriptions Page](/images/1secure/admin/searchandreports/subscriptions_3.webp)
 
 **Step 5 –** Click the Edit icon for a subscription to modify it. The Subscription to
-`<name of the report>` pane is displayed.
+`<name of the report>` pane opens.
 
 **Step 6 –** Modify the required information. For details, refer to Steps 6 through 12 in the
 [Add a Subscription](#add-a-subscription) topic.
@@ -152,21 +150,19 @@ Processing, Error Sending).
 
 ## Delete a Subscription
 
-Follow the steps to delete a subscription.
+**To delete a subscription:**
 
-**Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
-that lists the managed organizations defined in 1Secure.
+**Step 1 –** Click **Configuration** in the top bar. The Managed Organizations page opens, listing the managed organizations defined in 1Secure.
 
-**Step 2 –** Click the name of an organization from the list. The properties page for the
-organization is displayed.
+**Step 2 –** Click the name of an organization from the list. The properties page for the organization opens.
 
 **Step 3 –** Click the **Subscriptions** tab. The subscriptions for the organization are listed
 here.
 
 **Step 4 –** Click the Delete icon for a subscription to delete it.
 
-A dialog box is displayed, prompting you to confirm the deletion of the subscription.
+A confirmation dialog box appears.
 
 **Step 5 –** Click **Yes**.
 
-The subscription is deleted.
+The subscription is removed.

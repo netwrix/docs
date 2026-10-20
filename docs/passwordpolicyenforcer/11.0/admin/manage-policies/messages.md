@@ -28,8 +28,8 @@ Password Policy Client messages.
 
 - Rejection Reason – Displays why an intended password was rejected on clients that have the Netwrix
   Password Policy Enforcer Client installed
-- Generic Rejection – Displays if Password Policy Enforcer does not have a specific reason for the
-  rejection, generally because the password does not comply with the Windows password policy
+- Generic Rejection – Displays if Password Policy Enforcer doesn't have a specific reason for the
+  rejection, generally because the password doesn't comply with the Windows password policy
 
 **Step 1 –** Open the Configuration Console:
 
@@ -37,14 +37,14 @@ Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
 or
 Double click the **PPE Configuration** desktop shortcut.
 
-**Step 2 –** Click on a policy name to open the policy configuration page.
+**Step 2 –** Click a policy name to open the policy configuration page.
 
 **Step 3 –** Open the **Messages** tab.
 
 ![Set up messages](/images/passwordpolicyenforcer/11.0/administration/messages.webp)
 
-**Step 4 –** Select the message language from the drop-down list. You can set messages for multiple
-languages. You do not have to create a Password Policy Enforcer policy for each language. To set
+**Step 4 –** Select the message language from the dropdown list. You can set messages for multiple
+languages. You don't have to create a Password Policy Enforcer policy for each language. To set
 multiple languages, pick one, edit the message templates. Select another language, and edit the
 message templates. Repeat for each language you want to implement. The correct message is displayed
 to users based on their selected language.
@@ -60,7 +60,7 @@ Reason, and Generic rejection messages for any of the components you want to use
 the message.
 
 :::note
-If you do not see the **Preview**, contact your network administrator to set up the
+If you don't see the **Preview**, contact your network administrator to set up the
 firewall to allow Password Policy Enforcer to communicate.
 
 :::

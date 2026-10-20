@@ -15,7 +15,7 @@ The CDSA job depends upon several Access Analyzer solutions for data collection.
 
 ## Supporting Solutions
 
-At a minimum the following solutions need to run prior to the CDSA job to provide the data used to
+At a minimum the following solutions need to run before the CDSA job to provide the data used to
 generate the CDSA presentations:
 
 - .Active Directory Inventory Solution

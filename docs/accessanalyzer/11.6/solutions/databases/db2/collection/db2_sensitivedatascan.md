@@ -21,14 +21,14 @@ The query is:
 
 ## Recommended Configuration for the SensitiveDataScan Query
 
-It is only necessary to set up the connection for the 1-Db2 SensitiveDataScan Job. Once the
-connection is established, custom configurations apply to all other job queries within the
-0.Collection job group. Follow the steps to customize configurations.
+You only need to set up the connection for the 1-Db2 SensitiveDataScan Job. After you establish the
+connection, custom configurations apply to all other job queries within the 0.Collection job group.
+To customize configurations:
 
 **Step 1 –** Navigate to the Databases > 0.Collection > Db2 > 1-Db2_SensitiveDataScan > Configure
 node and select Queries.
 
-**Step 2 –** In the Query Selection view, select the SensitiveDataScan query click on Query
+**Step 2 –** In the Query Selection view, select the SensitiveDataScan query click Query
 Properties. The Query Properties window appears.
 
 **Step 3 –** Select the Data Source tab, and click Configure. The SQL Data Collector Wizard opens
@@ -40,7 +40,7 @@ with Sensitive Data Collection category selected.
 
 ![Sensitive Data Scan Settings](/images/accessanalyzer/11.6/solutions/databases/db2/collection/sensitivedatajoboptions.webp)
 
-**Step 5 –** To modify sensitive data scan options, select the desired scan options. See the
+**Step 5 –** To modify sensitive data scan options, select the scan options you want. See the
 [SQL: Options](/docs/accessanalyzer/11.6/admin/datacollector/sql/options.md)
 page for additional information.
 
@@ -55,7 +55,7 @@ may significantly increase scan time.
 
 ![Select Criteria](/images/accessanalyzer/11.6/solutions/databases/db2/collection/sensitivedatacriteria.webp)
 
-**Step 7 –** To modify criteria, click on **Use the following selected criteria:** and select your
+**Step 7 –** To modify criteria, click **Use the following selected criteria:** and select your
 choices. By default, the Sensitive Data Scan job is set to **Use Global Criteria**.
 
 :::note
@@ -84,14 +84,14 @@ query, you must establish a connection to the database.
 **Step 10 –** In the Manage Connections window, enter the following information:
 
 - Instance Label — Custom name of the instance
-- Database System — A drop down containing all available database servers. Select the Db2LUW server
+- Database System — A dropdown containing all available database servers. Select the Db2LUW server
   to configure Db2 queries.
 - Service Name — Custom name of the service
 - Host — Name or IP address of the host where the database is located. Host list is IBM DB2
 - Port Number — Port number for the selected database
 - Default Database — Default Database
 
-**Step 11 –** After completing the above information fields, click **Test Connection** to validate
+**Step 11 –** After completing these information fields, click **Test Connection** to validate
 the new connection. Once validated, click **Create New Connection** to finalize the connection.
 
 **Step 12 –** Navigate to the Filter page. Select Only select database objects or **All database
@@ -106,14 +106,14 @@ page.
 
 **Step 13 –** Click Retrieve. The Available database objects box will populate.
 
-**Step 14 –** Add the Databases and instances to be audited. Databases and instances can be added in
+**Step 14 –** Add the databases and instances that you want to audit. Add them in
 the following ways:
 
-- Select the desired database objects and click Add.
+- Select the database objects you want and click Add.
 - Use the Import CSV button to import a list from a CSV file, if desired.
 - Optionally use the Add Custom Filter button to create and apply a custom filter.
 
-Selected database objects to be audited will display.
+Selected database objects will display.
 
 **Step 15 –** Click **Next** and navigate to the Summary page, click Finish to save any setting
 modifications or click Cancel if no changes were made. Then click OK to close the Query Properties
@@ -127,7 +127,7 @@ Navigate to the **Databases** > **0.Collection** > **Db2** > **1-Db2_SensitiveDa
 **Configure** node and select **Analysis** to view the Analysis Tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -140,4 +140,5 @@ The default analysis tasks are:
   single host
 - Db2 Matches — Brings the Db2 SDD Matches View to the Enterprise Auditor console
 - Db2 Match Hits — Brings the Db2 Match Hits View to the Enterprise Auditor console
-- AIC Sensitive Data Import — Db2 Match Imports discovered Db2 sensitive data to the AIC
+- AIC Sensitive Data Import — Db2 Match Imports discovered Db2 sensitive data to the Access
+  Information Center (AIC)

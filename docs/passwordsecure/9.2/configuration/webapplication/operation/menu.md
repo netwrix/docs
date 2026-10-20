@@ -6,19 +6,19 @@ sidebar_position: 40
 
 # Menu
 
-## What is the menu?
+## Menu overview
 
 The ribbon on the client has been replaced by a menu on the Web Application. The menu thus
 represents the central operating element on the Web Application. The functions available within the
-menu are dynamic and are based on the currently available actions. Different actions are possible
-depending on which view is currently being used.
+menu are dynamic and are based on the available actions. Different actions are possible
+depending on which view is being used.
 
 #### Menu bar
 
 The menu can take on two forms. In general, the **menu bar** containing the **most important
 functions** is displayed. It will be described here using the example of the password module.
 
-![menu bar](/images/passwordsecure/9.2/configuration/web_applicaiton/operation/menu_bar/installation_with_parameters_174-en.webp)
+![menu bar](/images/passwordsecure/9.2/configuration/web_application/operation/menu_bar/installation_with_parameters_174-en.webp)
 
 1. Expand menu
 
@@ -26,7 +26,7 @@ The size of the menu can be maximised using this button.
 
 2. New
 
-This option can be selected to call up the wizard for adding a new record.
+This option can be selected to open the wizard for adding a new record.
 
 3. Open
 
@@ -46,13 +46,13 @@ Copies the password to the clipboard.
 
 ###### Advanced menu
 
-If the menu – as described above – is maximised, **all functions** are then available. The functions
+If the menu – is maximised, **all functions** are then available. The functions
 on the menu bar are repeated here. The menu is divided into a number of sections. These correspond 1
 to 1 to the sections of the ribbon on the client.
 
-![Menu](/images/passwordsecure/9.2/configuration/web_applicaiton/operation/menu_bar/installation_with_parameters_175-en.webp)
+![Menu](/images/passwordsecure/9.2/configuration/web_application/operation/menu_bar/installation_with_parameters_175-en.webp)
 
-In our example, the menu looks like this:
+In this example, the menu looks like this:
 
 1. New Item
 
@@ -65,19 +65,21 @@ The actions can be used, for example, to mark the password as a Favourite or als
 
 3. Permissions
 
-This section does not offer any additional functions than simply opening the permissions.
+This section doesn't offer any additional functions than opening the permissions.
 
 4. Clipboard
 
-This section can be used to copy all available fields to the clipboard.
+Use this section to copy all available fields to the clipboard.
 
 5. Start
 
-A website can be called up here.
+A website can be opened here.
 
-NOTE: As already described, the menu is dynamic and thus appears in a variety of different forms.
+:::note
+As already described, the menu is dynamic and thus appears in a variety of different forms.
 However, the basic function is always the same: The menu bar contains the basis functions, while the
 advanced menu contains all functions.
+:::
 
 6. Extras
 

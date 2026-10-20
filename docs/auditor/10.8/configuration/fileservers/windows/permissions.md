@@ -12,11 +12,25 @@ provide this account in the monitoring plan wizard or monitored item settings.
 
 Data Collection Accounts should meet the following policies and permissions:
 
-- Data collecting account on the target server must be a member of the local Administrators group.
-- The **Manage auditing and security log** and Backup files and directories policies must be defined
-  for this account. See the
-  [Permissions for Active Directory Auditing](/docs/auditor/10_8/configuration/activedirectory/permissions#configure-the-manage-auditing-and-security-log-policy) and topics for
-  additional more information.
+- **Data collecting account (DCA)** on the target server must be a member of the local Administrators group.
+- The **Manage auditing and security log** and **Backup files and directories** policies must be assigned
+  for **DCA** account. Alternatively for assignment, you can use "_Domain group policies_” 
+  (see [Configure the Manage Auditing and Security Log Policy](/docs/auditor/10_7/configuration/activedirectory/permissions#configure-the-manage-auditing-and-security-log-policy)) 
+  or “_Local policies_” by following these steps:
+
+
+      **Step 1 –** Open the **Local Group Policy Editor** console on target file server.
+
+      **Step 2 –** Expand the **Computer Configuration > Windows Settings > Security Settings > Local Policies.** node.
+
+      **Step 3 –** Select the **User Rights Assignment** item.
+
+      **Step 4 –** Locate the **Manage auditing and security log** policy and double-click it.
+
+      **Step 5 –** Click the **Add User orGroup** button and select **DCA** account.
+
+      **Step 6 –** Do steps 4-5 for the **Back up files and directories** policy.
+
 - The **Read** share permission on the audited shared folders.
 - The Read NTFS permission on all objects in the audited folders.
 

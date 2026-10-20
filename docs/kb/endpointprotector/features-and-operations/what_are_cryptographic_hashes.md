@@ -8,6 +8,7 @@ keywords:
 sidebar_label: Cryptographic Hashes Overview
 tags:
   - features-and-operations
+  - kb
 title: "What Are Cryptographic Hashes?"
 knowledge_article_id: kA0Qk0000002BM5KAM
 products:

@@ -13,7 +13,7 @@ The Permissions report for imported data shows the permissions for trustees on t
 This report is comprised of the following columns:
 
 - Trustee Type – Type of the trustee (for example, Domain User or Domain Group)
-- Trustee Name – Owner of the trustee account
+- Trustee Name – Name of the trustee
 - Trustee Account – Account associated with the trustee
 - Department – Department to which the trustee account belongs
 - Title – Trustee’s title
@@ -41,7 +41,7 @@ The following columns display the combined direct and inherited rights:
 
 - Allow Mask – Bitmask corresponding to Windows ACE permission bits for combined direct and
   inherited allow rights
-- Deny Mask – Bitmask corresponding to Windows ACE permission bits for combined direct inherited
+- Deny Mask – Bitmask corresponding to Windows ACE permission bits for combined direct and inherited
   deny rights
 
 If the selected trustee is a group, the Group Membership pane displays the Active Directory and

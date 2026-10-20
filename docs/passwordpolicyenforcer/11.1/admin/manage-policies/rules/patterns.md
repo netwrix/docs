@@ -11,7 +11,7 @@ patterns weaken the password.
 
 ![Patterns rule](/images/passwordpolicyenforcer/11.1/administration/patterns.webp)
 
-Select the **Patterns** check box to enable the Patterns rule.
+Select the **Patterns** checkbox to enable the Patterns rule.
 
 Select **Reject character patterns like "abcde"** to check for character patterns.
 
@@ -26,19 +26,19 @@ passwords with their characters reversed. Enabling this analysis stops users fro
 rule by reversing the order of characters in their password. For example, a user may enter "edcba"
 instead of "abcde".
 
-Choose a value from the **Tolerance** drop-down list to specify the longest pattern that Password
+Choose a value from the **Tolerance** dropdown list to specify the longest pattern that Password
 Policy Enforcer allows before rejecting a password. For example, the password "password**wxyz**"
 contains a four-character pattern (shown in bold type). Password Policy Enforcer rejects this
 password if the tolerance is set to three (or lower), and accept it if the tolerance is set to four
 (or higher). Choose the **Auto** value if passwords should be rejected if they only contain a
 single, continuous, character pattern. For example, "abcde" would be rejected, but "abcdz" and
-"abc123" would not.
+"abc123" wouldn't.
 
 Select **Reject keyboard patterns like "qwerty"** to check for keyboard patterns.
 
 Select **Keyboard layouts** to set the keyboard type. Default is **United States**.
 
-Select the type of keyboard pattern: **Horizontal**, **Vertical** or **Horizontal and Vertical**.
+Select the type of keyboard pattern: **Horizontal**, **Vertical**, or **Horizontal and Vertical**.
 
 Select **Detect direction change** for entries that change direction. For example, **qweewq**.
 

@@ -16,6 +16,6 @@ Directory Manager provides the following APIs to perform contact-specific functi
 - [Update a Contact](/docs/directorymanager/11.1/APIs/contactapis/updatecontact.md)
 
 :::note
-The contact object type is not supported in a Microsoft Entra ID based identity store.
+The contact object type isn't supported in a Microsoft Entra ID based identity store.
 
 :::

@@ -46,6 +46,12 @@ This file is located within the following directory: `…\STEALTHbits\StealthAUD
 
 - FSAAAppletServer.exe
 
+## SharePoint Agent Server
+
+This file is located within the following directory: `...\Program Files\STEALTHbits\StealthAUDIT\SPAA\`
+
+- Stealthbits.StealthAUDIT.Agent.Service.exe
+
 ## Access Information Center
 
 This file is located within the following directory: `…\STEALTHbits\Access Information Center\`

@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Default Metadata Tag Values
 
-Sensitive Data Criteria can be tagged with one or more metadata tags to describe the criteria. The
+You can tag Sensitive Data Criteria with one or more metadata tags to describe the criteria. The
 following is a list of default metadata tag values:
 
 | Tag Name          | Value Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |

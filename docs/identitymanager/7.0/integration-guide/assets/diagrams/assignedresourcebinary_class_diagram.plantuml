@@ -1,0 +1,35 @@
+@startuml component
+package "AssignedResourceBinary" {
+	class AssignedResourceBinary {
+		AssignedResourceType : Int64
+		EndDate : DateTime
+		IsDenied : Boolean
+		IsPending : Boolean
+		Owner : Int64
+		OwnerType : Int64
+		Performer : Int64
+		PolicyResourceFile : Int64
+		ProvisioningState : Byte
+		ResourceFile : Int64
+		ResourceFileHash : Int32
+		StartDate : DateTime
+		WhenPerformed : DateTime
+		WhenTransmitted : DateTime
+		WorkflowState : Byte
+		--
+		Property : EntityProperty
+		WorkflowInstance : WorkflowInstance
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+AssignedResourceBinary "0..*" --  "1"EntityProperty
+AssignedResourceBinary "0..*" --  "0..1"WorkflowInstance
+hide empty members
+@enduml

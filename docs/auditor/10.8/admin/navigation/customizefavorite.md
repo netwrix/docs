@@ -6,24 +6,23 @@ sidebar_position: 30
 
 # Customizing Favorite Reports
 
-The Favorite reports tile displays a shortened list of your favorite reports. To view, edit or
+The Favorite reports tile displays a shortened list of your favorite reports. To view, edit, or
 update the full list, click View all.
 
-The Home > Reports page opens. This page includes several folders: Favorites, Predefined, Compliance
-and Custom. Favorite reports are located in the Favorites folder.
+The Home > Reports page opens. This page includes several folders: Favorites, Predefined, Compliance, and Custom. Favorite reports are located in the Favorites folder.
 
-![reportsfavorites](/images/auditor/10.7/admin/navigation/reportsfavorites.webp)
+![reportsfavorites](/images/auditor/10.8/admin/navigation/reportsfavorites.webp)
 
-Follow the steps to add or remove a Favorite report
+To add or remove a favorite report:
 
-**Step 1 –** Locate the desired report in one of the other folders.
+**Step 1 –** Locate the report in one of the other folders.
 
 **Step 2 –** Click the name of the report to view its description.
 
 **Step 3 –** To change whether the report is a favorite, click the star icon in the upper right-hand
 corner of the report description.
 
-![reportsummary](/images/auditor/10.7/admin/navigation/reportsummary.webp)
+![reportsummary](/images/auditor/10.8/admin/navigation/reportsummary.webp)
 
 Report Summary with Star icon unchecked
 
@@ -33,7 +32,7 @@ The options on the Reports page for Favorite reports are show below:
 
 |                                                                                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![favoritesrestorerefresh](/images/auditor/10.7/admin/navigation/favoritesrestorerefresh.webp) | ![reportsoptions](/images/auditor/10.7/admin/navigation/reportsoptions.webp)                                                                                                                                                                                                                                                                                                                                        |
+| ![favoritesrestorerefresh](/images/auditor/10.8/admin/navigation/favoritesrestorerefresh.webp) | ![reportsoptions](/images/auditor/10.8/admin/navigation/reportsoptions.webp)                                                                                                                                                                                                                                                                                                                                        |
 | _Favorites Sub-Folder Options_                                                                                                   | _Favorites > [Report] Options_                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Option Name                                                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ---                                                                                                                              | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                   |

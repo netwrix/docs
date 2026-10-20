@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # SG_PowerShellCommands Job
 
-The SG_PowerShellCommands job lists suspicious PowerShell commands on all targeted hosts. The list
-of commands considered can be customized by configuring the Check PowerShell Log query.
+The SG_PowerShellCommands job lists suspicious PowerShell commands on all targeted hosts. You can
+customize the list of commands considered by configuring the Check PowerShell Log query.
 
 ## Queries for the SG_PowerShellCommands Job
 
@@ -25,7 +25,7 @@ The queries for the SG_PowerShellCommands job are:
 
 - Check PowerShell log – Checks the PowerShell log
 
-    - (Optional) This query can be configured. See the
+    - (Optional) You can configure this query. See the
       [Configure the Check PowerShell log Query](#configure-the-check-powershell-log-query) topic
       for additional information.
 
@@ -33,8 +33,8 @@ The queries for the SG_PowerShellCommands job are:
 
 ### Configure the Check PowerShell log Query
 
-The Check PowerShell log query has been preconfigured to run with the default settings. However, the
-new criteria can optionally be added on the Criteria page in the Smart Log Data Collector Wizard.
+The Check PowerShell log query has been preconfigured to run with the default settings. However, you
+can optionally add new criteria on the Criteria page in the Smart Log Data Collector Wizard.
 
 **Step 1 –** Navigate to the **Jobs** > **Windows** > **Security Utilities** >
 **SG_PowerShellCommands** > **Configure** node and select **Queries**. Select the **Check PowerShell
@@ -53,7 +53,7 @@ is accessible.
 
 **Step 5 –** On the Criteria page, click the **press the button to add a new condition** box.
 
-**Step 6 –** Enter the desired conditions.
+**Step 6 –** Enter the conditions you want.
 
 **Step 7 –** Click **Next** to navigate to the Summary page and click **Finish**.
 
@@ -65,7 +65,7 @@ View the analysis tasks by navigating to the **Windows** > **Security Utilities*
 **SG_PowerShellCommands** > **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -87,7 +87,7 @@ The optional analysis tasks is:
   [Configure the Notify on Suspicious Commands Analysis Task](#configure-the-notify-on-suspicious-commands-analysis-task)
   topic for additional information.
 
-In addition to the tables and views created by the analysis tasks, the EX_DeliveryTimes job produces
+In addition to the tables and views created by the analysis tasks, the SG_PowerShellCommands job produces
 the following pre-configured report.
 
 | Report                         | Description                                                                                                       | Default Tags | Report Elements                                                                                                                                                                                                         |
@@ -97,7 +97,7 @@ the following pre-configured report.
 
 ### Configure the Notify on Suspicious Commands Analysis Task
 
-Follow these steps to configure the notification analysis task.
+To configure the notification analysis task:
 
 **Step 1 –** Navigate to the **Jobs** > **Windows** > **Security Utilities** >
 **SG_PowerShellCommands** > **Configure** node and select **Analysis**.
@@ -107,14 +107,14 @@ task and click **Analysis Configuration**. The Notification Data Analysis Module
 
 ![Notification Data Analysis Module wizard SMTP properties page](/images/accessanalyzer/12.0/solutions/windows/securityutilities/powershellcommandsnotifysmtp.webp)
 
-**Step 3 –** Use the **Next** button to navigate to the SMTP page. Do not make changes to the
+**Step 3 –** Use the **Next** button to navigate to the SMTP page. Don't make changes to the
 preceding pages.
 
 ![Recipients section](/images/accessanalyzer/12.0/solutions/windows/securityutilities/powershellcommandsnotifyrecipients.webp)
 
 **Step 4 –** In the Recipients section, provide the email addresses or distribution lists (fully
-qualified address) for those who are to receive this notification. Multiple addresses can be
-provided. You can use the following options:
+qualified address) for those who are to receive this notification. You can provide multiple
+addresses. You can use the following options:
 
 - Add – Add an email address to the E-mail field
 - Remove – Remove an email address from the Recipients list
@@ -123,12 +123,12 @@ provided. You can use the following options:
 
 ![Message section](/images/accessanalyzer/12.0/solutions/windows/securityutilities/powershellcommandsnotifymessage.webp)
 
-**Step 5 –** In the Message section, edit the **Subject**. It is not recommended to remove any
-parameters. Then, customize the email content in the textbox to provide an explanation of the
-notification to the recipients.
+**Step 5 –** In the Message section, edit the **Subject**. Don't remove any parameters. Then,
+customize the email content in the textbox to provide an explanation of the notification to the
+recipients.
 
 **Step 6 –** To save these configuration changes, use the **Next** to navigate to the Summary page.
-Do not make changes to any other pages. Click **Finish**. The Notification Data Analysis Module
+Don't make changes to any other pages. Click **Finish**. The Notification Data Analysis Module
 window closes.
 
 **Step 7 –** This notification analysis task is now configured to send emails. In the Analysis

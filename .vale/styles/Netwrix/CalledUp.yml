@@ -1,0 +1,9 @@
+extends: existence
+message: "Replace '%s' with 'open', 'access', or 'view' — 'called up' is not standard English for this meaning."
+level: warning
+ignorecase: true
+tokens:
+  - '\bcalled\s+up\b'
+  - '\bcalls\s+up\b'
+  - '\bcalling\s+up\b'
+  - '\bcall\s+up\b'

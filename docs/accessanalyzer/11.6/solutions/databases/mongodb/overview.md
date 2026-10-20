@@ -15,16 +15,16 @@ access the data, and how each database has been configured.
 
 As part of Stealthbits comprehensive Data Access Governance suite for structured and unstructured
 data, Enterprise Auditor for MongoDB automates the process of understanding where MongoDB databases
-exist and provides an overview of the MongoDB environment in order to answer questions around data
+exist and provides an overview of the MongoDB environment to answer questions around data
 access:
 
 - Who has access to your data?
 - Where is sensitive data being stored?
 
-With visibility into every corner of MongoDB, organizations can proactively highlight and prioritize
-risks to sensitive data. Additionally, organizations can automate manual, time-consuming, and
-expensive processes associated with compliance, security, and operations to easily adhere to best
-practices that keep MongoDB Server safe and operational.
+With complete visibility into MongoDB, organizations can proactively highlight and prioritize risks
+to sensitive data. Additionally, organizations can automate manual, time-consuming, and expensive
+processes associated with compliance, security, and operations to adhere to best practices that keep
+MongoDB Server safe and operational.
 
 **Supported Platforms**
 
@@ -52,7 +52,7 @@ resources on the Enterprise Auditor server.
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
 configuration; it has been preconfigured to work with Enterprise Auditor and should never be
 customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
 environment.
@@ -62,7 +62,7 @@ environment.
 **Location**
 
 The Structured Sensitive Data Discovery License is required to run the MongoDB Solution. The MongoDB
-Solution can be installed from the Enterprise Auditor Instant Job Wizard. Once it has been installed
+Solution can be installed from the Enterprise Auditor Instant Job Wizard. After it has been installed
 into the Jobs tree, navigate to the solution: Jobs > **Databases** > MongoDB.
 
 The 0.Collection Job Group scans MongoDB instances on the target hosts, and collects

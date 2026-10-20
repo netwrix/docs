@@ -17,7 +17,7 @@ This report is comprised of the following columns:
 - Group Mail – Group’s email account as read from Active Directory, if applicable
 - Group ObjectSid – Security ID of the group object
 - Domain Name – Name of the domain
-- Group Scope – Scope of the group object: Domain Local, Global, or Universall
+- Group Scope – Scope of the group object: Domain Local, Global, or Universal
 - Group Target – Type of the group object: Distribution or Security
 - Membership – Type of membership the audited object has to the selected group
 

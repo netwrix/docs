@@ -31,7 +31,7 @@ Refer to the following possible causes and resolutions:
 
 ### Event descriptions
 
-- 1267 − Unable to report changes to SharePoint farm ` %affected_Shapoint_farm% ` correctly, as the current, previous, or both snapshots are partially invalid.
+- 1267 − Unable to report changes to SharePoint farm ` %affected_SharePoint_farm% ` correctly, as the current, previous, or both snapshots are partially invalid.
 - 1268 − Unable to report changes to web application `<ID>` correctly as the current, previous, or both snapshots are partially invalid.
 - 1269 − Unable to report changes to site collection `<ID>` correctly as the current, previous, or both snapshots are partially invalid.
 - 1270 − Unable to report changes to feature `<ID>` correctly as the current, previous, or both snapshots are partially invalid.

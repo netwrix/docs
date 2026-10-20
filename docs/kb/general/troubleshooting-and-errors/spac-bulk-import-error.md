@@ -24,7 +24,7 @@ knowledge_article_id: kA0Qk0000001PxFKAU
 
 ## Issue
 
-SPAC Bulk Import is prompting the below error:
+The SharePoint Activity Auditing (SPAC) Bulk Import job shows the following error:
 
 ```text
 ERROR  SHAREPOINTACCESS  Netwrix.StealthAUDIT.DataCollectors.Tasks.Task.StartExecute  "[C:8] Unable to perform bulk import Error: The MERGE statement conflicted with the FOREIGN KEY constraint "FK_SA_SPAC_GroupMembershipChanges_HOST_ID". The conflict occurred in database "Access Analyzer", table "dbo.SA_SPAC_ActivityEvents". The statement has been terminated."  POINT32HEALTH.SHAREPOINT.COM  DCExtract  8640  6516  6284
@@ -32,8 +32,8 @@ ERROR  SHAREPOINTACCESS  Netwrix.StealthAUDIT.DataCollectors.Tasks.Task.
 
 ## Cause
 
-The SPAC Bulk Import was unable to be completed due to a foreign key constraint merge between the SP_SPAC_GroupMembershipChanges table and the SA_SPAC_ActiviyEvents table. 
+The SPAC Bulk Import could not complete due to a foreign key constraint conflict between the SP_SPAC_GroupMembershipChanges table and the SA_SPAC_ActiviyEvents table.
 
 ## Resolution
 
-We removed all SPAA and SPAC tables since there's a 180-day retention period on SP activity. Once all tables were removed from the database we then reran the SPSEEK jobs and verified that the tables were repopulated on the database. We suggest allowing these scans to run and monitor the SPAC bulk import job. After monitoring the job it was confirmed that the SPAC Bulk Import job was successful.
+Remove all SharePoint Access Auditing (SPAA) and SPAC tables — there is a 180-day retention period on SharePoint activity. After removing the tables, rerun the SharePoint Sensitive Data Discovery Auditing (SPSEEK) jobs and verify that the tables are repopulated in the database. Allow these scans to run and monitor the SPAC Bulk Import job to confirm it completes successfully.

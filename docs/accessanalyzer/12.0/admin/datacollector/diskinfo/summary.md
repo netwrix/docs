@@ -6,10 +6,9 @@ sidebar_position: 30
 
 # DiskInfo: Summary
 
-The Summary page displays a summary of the configured query.
+The Summary page summarizes the configured query.
 
 ![Disk Info wizard Summary page](/images/accessanalyzer/12.0/admin/datacollector/diskinfo/summary.webp)
 
-Click **Finish** to save configuration changes. If no changes were made, it is a best practice to
-click **Cancel** to close the Disk Info Data Collector Wizard to ensure that no accidental clicks
-are saved.
+Click **Finish** to save configuration changes. If you didn't make any changes, click **Cancel** to
+close the Disk Info Data Collector Wizard instead, so accidental clicks don't get saved.

@@ -19,8 +19,8 @@ Bi-directional analysis tests passwords with their characters reversed to stop u
 circumventing a rule by entering a non-compliant password backwards. For example, "drowssapym"
 instead of "mypassword".
 
-Follow the steps below to enable the character substitution detection and bi-directional analysis
-properties for the User Logon Name and Dictionary rules.
+To enable the character substitution detection and bi-directional analysis properties for the User
+Logon Name and Dictionary rules, complete the following steps.
 
 **Step 1 –** Click the **Users** policy in the left pane of the management console.
 
@@ -35,7 +35,7 @@ boxes, then click **OK**.
 then click **OK**.
 
 Test the improved Users policy with passwords that were accepted under the previous policy (see the
-table below). Password Policy Enforcer should reject all of them.
+following table). Password Policy Enforcer rejects all of them.
 
 | Password | Result   | Reason                             |
 | -------- | -------- | ---------------------------------- |

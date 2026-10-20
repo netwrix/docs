@@ -11,9 +11,9 @@ refresh token when the access token expires.
 
 - `grant_type` (Required) – The `grant_type` parameter must be set to `client_credentials`
 - `refresh_token` (Required) – The refresh token previously issue to the client
-- `scope` (Optional) – The requested scope must not include additional scopes that were not issued
-  in the original access token. If the scope is not included in the request, the service issues an
-  access token with the same scope as previously issued.
+- `scope` (Optional) – The requested scope must not include additional scopes that the service
+  didn't issue in the original access token. If the request doesn't include a scope, the service
+  issues an access token with the same scope it previously issued.
 - Client Authentication – Required if the client was issued a secret
 
 The authentication server then verifies the access request. If the request is valid, the service
@@ -30,12 +30,12 @@ grant_type=refresh_token
 &client_secret=xxxxxxxxxx
 ```
 
-If the token does not have the ability to perform this request, is invalid, or the specific resource
-has been blocked from access remotely, an HTTP status code of 401 is returned.
+If the token can't perform this request, is invalid, or the specific resource has been blocked from
+access remotely, the server returns an HTTP status code of 401.
 
-The response for a refresh token is the same as the response for an access token. Optionally, a new
-refresh token can be included in the response. If a new refresh token is not included in the
-response, the current refresh token will continue to be valid. The following example shows a
+The response for a refresh token is the same as the response for an access token. Optionally, the
+service can include a new refresh token in the response. If the response doesn't include a new
+refresh token, the current refresh token remains valid. The following example shows a
 successful access token response:
 
 ```

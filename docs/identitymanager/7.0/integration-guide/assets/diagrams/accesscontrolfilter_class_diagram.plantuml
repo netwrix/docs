@@ -1,0 +1,34 @@
+@startuml component
+package "AccessControlFilter" {
+	class AccessControlFilter {
+		Category : Boolean
+		CompositeRole : Boolean
+		CurrentUser : Boolean
+		Group : String
+		Operator : Byte
+		ResourceType : Boolean
+		SingleRole : Boolean
+		Value : String
+		--
+		Binding : Binding
+		Dimension : Dimension
+		Rule : AccessControlRule
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "Dimension" {
+	class Dimension {
+	}
+}
+package "AccessControlRule" {
+	class AccessControlRule {
+	}
+}
+AccessControlFilter "0..*" --  "1"Binding
+AccessControlFilter "0..*" --  "0..1"Dimension
+AccessControlFilter "0..*" --  "1"AccessControlRule
+hide empty members
+@enduml

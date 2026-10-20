@@ -1,0 +1,10 @@
+{
+  "label": "Manage Clues",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "manageclues"
+  }
+}

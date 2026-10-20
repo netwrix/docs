@@ -1,0 +1,62 @@
+---
+title: "Metadata Configuration"
+description: "Metadata Configuration"
+sidebar_position: 30
+---
+
+# Metadata Configuration
+
+This section contains information on how to configure metadata of your documents. Review the
+following for additional information:
+
+- Document Metadata Fields
+- Metadata Field Mappings
+- Metadata Value Mappings
+- [](#)Owner Mapping Priorities
+
+## Document Metadata Fields
+
+This list specifies which internally generated fields to use:
+
+![configdocumentmetadatafields_thumb_0_0](/images/dataclassification/5.8/configuration/configdocumentmetadatafields_thumb_0_0.webp)
+
+## Metadata Field Mappings
+
+This table lets you generate additional metadata fields by mapping an existing field
+name to a new name.
+
+![configmetadatafieldmappings_thumb_0_0](/images/dataclassification/5.8/configuration/configmetadatafieldmappings_thumb_0_0.webp)
+
+## Metadata Value Mappings
+
+This list lets you map metadata values from a source value to a new target value.
+
+![configmetadatavaluemappings_thumb_0_0](/images/dataclassification/5.8/configuration/configmetadatavaluemappings_thumb_0_0.webp)
+
+For example, if you create an entry for the field “Modified By”, with Source=”Cheryl Tweedy” and
+Target=”Cheryl Cole”, then a document with this metadata:
+
+`“Modified By: Cheryl Tweedy;”`
+
+The product generates an index with this metadata:
+
+`“Modified By: Cheryl Cole;”`
+
+You can use this facility to align metadata field values—for example, when employees
+change their name or move to different roles.
+
+## Owner Mapping Priorities
+
+This feature applies to the CSE-owner function for a workflow. Suppose, you want to email the
+documents after the classification to the CSE owner. Then you may need to specify what is the role
+you stand for these documents: Owner, Author, Creator, etc. You can prioritise any of these roles by
+clicking
+the![arrowup](/images/dataclassification/5.8/configuration/arrowup.webp)
+or
+![arrowadown](/images/dataclassification/5.8/configuration/arrowadown.webp)
+arrows.
+
+For example, if you own or authored the document but didn't modify or create it, you may
+choose this priority:
+
+![owner_mapping_priorities_thumb_0_0](/images/dataclassification/5.8/configuration/owner_mapping_priorities_thumb_0_0.webp)

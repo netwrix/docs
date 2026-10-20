@@ -38,7 +38,7 @@ created records.
 
 The following values can be configured:
 
-Off: Permissions from OUs are not inherited organisational unit: When creating new objects,
+Off: Permissions from OUs aren't inherited organisational unit: When creating new objects,
 permissions are set in accordance with the defined rights for the target organisational unit. This
 setting is active by default. organisational unit and user: As well as inheriting permissions for
 organization units, the configured permissions for the user are now also inherited when creating
@@ -59,12 +59,12 @@ Increase or reduce permissions: The permissions for the passwords are retained a
 increased or reduced by the change. Overwrite permissions: The permissions for the passwords are
 completely overwritten. This means that all permissions for a password are firstly removed and then
 the new permissions for the organisational unit are inherited. Cancel inheritance: The permissions
-are not inherited but are only changed in the organisational unit. \*The permissions are only
-inherited by existing passwords within the organisational unit. Therefore, the permissions are not
+aren't inherited but are only changed in the organisational unit. \*The permissions are only
+inherited by existing passwords within the organisational unit. Therefore, the permissions aren't
 inherited downwards throughout the entire structure.
 
 Example case This example shows the creation of a new record in the organisational structure
-“marketing”. It is defined in the settings for the stated organisational structure that permissions
+“marketing”. It's defined in the settings for the stated organisational structure that permissions
 should be inherited by new objects in accordance with the organisational structure.
 
 The permissions for the organisational unit “marketing” are shown below:
@@ -75,7 +75,7 @@ A new password is now created in the organisational unit “marketing”.
 
 ![new password](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/automated_settings/inheritance_from_organisational_structures/inheritance-5-en.webp)
 
-It is important that no preset is defined for this organisational unit. The permissions for the
+It's important that no preset is defined for this organisational unit. The permissions for the
 record just created are now shown.
 
 ![permissions example](/images/passwordsecure/9.1/configuration/advanced_view/permissionconcept/automated_settings/inheritance_from_organisational_structures/inheritance-6-en.webp)

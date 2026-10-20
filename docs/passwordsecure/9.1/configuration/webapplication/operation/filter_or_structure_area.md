@@ -6,10 +6,10 @@ sidebar_position: 30
 
 # Filter or structure area
 
-As is also the case on the client, it is possible to select between filter and structure. For this
+As is also the case on the client, it's possible to select between filter and structure. For this
 purpose, the following buttons are available on the navigation bar
 
-![installation_with_parameters_169](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/filter_or_structure/installation_with_parameters_169.webp)
+![installation_with_parameters_169](/images/passwordsecure/9.1/configuration/web_application/operation/filter_or_structure/installation_with_parameters_169.webp)
 
 1. Filter
 
@@ -20,14 +20,14 @@ Therefore, only those characteristics specific to the Web Application will be de
 **Using the filter**
 
 Operation of the “Web Application filter” barely differs from the operation of the client filter. It
-is only necessary to note that the Clear filter and Apply filter buttons can be found above the
+is only necessary to know that the Clear filter and Apply filter buttons can be found above the
 filter. The configuration settings can also be found directly above the Web Application filter.
 
 **Configuring the filter**
 
 The configuration for the filter can be displayed via the following buttons:
 
-![installation_with_parameters_170](/images/passwordsecure/9.1/configuration/web_applicaiton/operation/filter_or_structure/installation_with_parameters_170.webp)
+![installation_with_parameters_170](/images/passwordsecure/9.1/configuration/web_application/operation/filter_or_structure/installation_with_parameters_170.webp)
 
 New filter groups can be added using **Add filter groups** and the current filter can be reset using
 **Reset filter. Advanced mode** provides you with the possibility of deleting or moving individual

@@ -13,13 +13,13 @@ Password Policy messages.
   Enforcer installed.
 - [POLICY] – Customize the text for the active rules.
 - [LIVE_POLICY] – Password Policy messages can be configured to display live feedback for the active
-  rules to users as they reset or change their passwords. This feature enables users to see if their
-  passwords meet the requirements of the policy set by the organization.
+  rules to users as they reset or change their passwords. Use this feature to see if passwords
+  meet the requirements of the policy set by the organization.
 - Rejection Reason – Displays why an intended password was rejected.
-- Generic Rejection – Displays if Password Policy Enforcer does not have a specific reason for the
-  rejection, generally because the password does not comply with the Windows password policy
+- Generic Rejection – Displays if Password Policy Enforcer doesn't have a specific reason for the
+  rejection, generally because the password doesn't comply with the Windows password policy
 
-Follow the steps to set up message template for active rules.
+## To Set up Message Templates for Active Rules
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -33,11 +33,11 @@ Step 4 – Click the **three vertical dots** icon next to the policy , click **E
 
 **Or**
 
-Click on a policy name to open the policy configuration page.
+Click a policy name to open the policy configuration page.
 
 Step 5 – Open the **Messages** tab.
 
-Step 6 – Select the message language from the drop-down list. You can set messages for multiple
+Step 6 – Select the message language from the dropdown list. You can set messages for multiple
 languages.
 
 Step 7 – Edit the message templates in the Password policy, [POLICY], [LIVE_POLICY], Rejection

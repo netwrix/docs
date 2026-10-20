@@ -7,14 +7,14 @@ sidebar_position: 10
 # Recommended Configurations for the Dropbox Solution
 
 The Dropbox Solution requires the host list to be assigned and the Connection Profile configured
-before job execution. Once these are assigned to the job group, it can be run directly or scheduled.
+before job execution. After these are assigned to the job group, it can be run directly or scheduled.
 
 **Targeted Hosts**
 
 The Dropbox solution has been configured to inherit the host list assignment from the collection job
 group level.
 
-The host list assignment should be assigned under the **Dropbox** > **0.Collection** >
+Assign the host list under the **Dropbox** > **0.Collection** >
 **Settings** > **Host List Assignment** node. Select the **Local host** option.
 
 **Connection Profile**
@@ -23,20 +23,20 @@ The DropboxAccess Data Collector requires a specific set of permissions to gener
 which is used to configure the Connection Profile for Dropbox. The access token is generated in the
 Dropbox Access Auditor Data Collector Wizard on the Scan Options page (accessed through the
 **1-Dropbox_Permissions Scan** job’s **Queries** node). The access token only needs to be generated
-once, prior to running the job group for the first time. Then it is used as the credential in the
+once, before running the job group for the first time. Then it is used as the credential in the
 Connection Profile. See the
 [DropboxAccess: Scan Options](/docs/accessanalyzer/11.6/admin/datacollector/dropboxaccess/scanoptions.md)
 topic for additional information.
 
 The Dropbox solution has been configured to inherit the Connection Profile from the collection job
-group level. The Connection Profile should be assigned under the **Dropbox** > **0.Collection** >
+group level. Assign the Connection Profile under the **Dropbox** > **0.Collection** >
 **Settings** > **Connection** node. It is set to **Use the Default Profile**, as configured at the
 global settings level. However, since this may not be the Connection Profile with the necessary
 permissions for Dropbox, select the **Select one of the following user defined profiles** option and
-select the appropriate Connection Profile from the drop-down menu. See the
+select the appropriate Connection Profile from the dropdown menu. See the
 [Custom Dropbox Connection Profile & Host List](/docs/accessanalyzer/11.6/admin/datacollector/dropboxaccess/configurejob.md)
 topic for additional information on configuring the Dropbox credential. The Dropbox bulk import jobs
-requires the same connection profile as used in the corresponding Dropbox scan jobs
+require the same connection profile as used in the corresponding Dropbox scan jobs.
 
 See the
 [Connection](/docs/accessanalyzer/11.6/admin/settings/connection/overview.md)
@@ -66,7 +66,7 @@ versa.
 :::
 
 
-After running the 0.Collection jobs, the other Dropbox solution job groups can be run in any order.
+After you run the 0.Collection jobs, you can run the other Dropbox solution job groups in any order.
 Best practice is to run at the solution level.
 
 **Query Configuration**
@@ -81,12 +81,12 @@ topic for additional information.
 This solution should be run with the default analysis configuration.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this solution.
 :::
 
 
-Though the analysis tasks should not be deselected the time frame used to define staleness can be
+Though the analysis tasks shouldn't be deselected, the time frame used to define staleness can be
 modified:
 
 - Stale content set to default of 365 days
@@ -113,10 +113,10 @@ Scan** job).
 **Step 2 –** Run the **2-Dropbox_Permissions Bulk Import** job (for sensitive data, run the
 **2-Dropbox_SDD Bulk Import** job).
 
-**Step 3 –** Run the desired corresponding analysis and reporting sub-job groups.
+**Step 3 –** Run the corresponding analysis and reporting sub-job groups you want.
 
 :::tip
-Remember, prior to running the Dropbox solution for the first time, it is necessary to generate an
+Remember, before running the Dropbox solution for the first time, generate an
 access token to be used in the Connection Profile. This only needs to be done once. See the
 [Configure the Dropbox Access Query](/docs/accessanalyzer/11.6/solutions/dropbox/collection/1-dropbox_permissions_scan.md#configure-the-dropbox-access-query)
 topic for additional information.

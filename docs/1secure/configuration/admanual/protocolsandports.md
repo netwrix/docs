@@ -15,9 +15,9 @@ Group Policy.
 - Allow outbound connections to remote ports on the source and inbound connections to local ports on
   the target.
 
-Tip for reading the table: For example, on the computer where Netwrix Auditor Server resides
-(source), allow outbound connections to remote 389 TCP port. On domain controllers in your domain
-(target), allow inbound connections to local 389 TCP port.
+For example, on the computer where Netwrix Cloud Agent resides (source), allow outbound connections
+to remote 389 TCP port. On domain controllers in your domain (target), allow inbound connections to
+local 389 TCP port.
 
 | Port | Protocol | Source | Target | Purpose |
 | ---| ---| ---| ---| --- |

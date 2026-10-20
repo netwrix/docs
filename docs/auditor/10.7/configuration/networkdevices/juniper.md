@@ -6,51 +6,39 @@ sidebar_position: 80
 
 # Configure Juniper Devices
 
-Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
-access auditing requires a certain configuration of native audit settings in the audited environment
-and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+Netwrix Auditor relies on native syslog events for collecting audit data. Therefore, successful
+change and access auditing requires a certain configuration of native audit settings in the audited
+environment. Proper audit configuration ensures audit data integrity; otherwise, your change reports
+may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
-the
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-You can configure your IT Infrastructure for monitoring in one of the following ways:
+Configure native audit settings manually on the Juniper device to ensure Netwrix Auditor collects
+comprehensive and reliable audit data.
 
-- Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
-- Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
-  reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
-  configure them manually:
+To configure your Juniper devices, do the following:
 
-    - The target Juniper device must be configured via JunOS Command Line Interface (CLI) as
-      described below.
-
-To configure you Juniper devices, do the following:
-
-1. Launch the JunOS Command Line Interface (CLI).
+1. Launch the Junos OS command line interface (CLI).
 2. Execute the following commands:
 
     # configure
 
     # set system syslog host `<host address>` any info
 
-    where `<host address>` is the IP address of the computer where Netwrix Auditor Server is
-    installed.
+    where `<host address>` is the IP address of the computer that hosts Netwrix Auditor Server.
 
     # set system syslog host `<host address>` port `<port name>`
 
     where
 
-    `<host address>` is the IP address of the computer where Netwrix Auditor Server is installed
+    `<host address>` is the IP address of the computer that hosts Netwrix Auditor Server
 
     AND
 
-    `<port number>` is the name of the UDP port used to listen to network devices (514 port used by
-    default). [Network Devices](/docs/auditor/10.7/admin/monitoringplans/networkdevices.md)
+    `<port number>` is the name of the UDP port that Netwrix Auditor uses to listen to network
+    devices (port 514 by default). [Network Devices](/docs/auditor/10.7/admin/monitoringplans/networkdevices.md)
 
     # set system syslog time-format `<current year>`
 

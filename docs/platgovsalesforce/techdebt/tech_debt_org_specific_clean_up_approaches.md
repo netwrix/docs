@@ -18,8 +18,7 @@ Here are some guidelines to specific clean up problems:
 - Layouts and List Views
 - Value-based Clean Up
 
-These guidelines assume you set up your List Views the same way as described
-[Step 1: Identify and Prioritize Targets](/docs/platgovsalesforce/techdebt/tech_debt_org_clean_up_example.md).
+These guidelines assume you set up your List Views as described in [Step 1: Identify and Prioritize Targets](/docs/platgovsalesforce/techdebt/tech_debt_org_clean_up_example.md).
 
 ## Unused, Risky
 
@@ -51,7 +50,7 @@ Code and Other Critical Objects with dependencies on Unused Fields and Objects:
 2. Open each relevant Customization in a new tab and set the **Clean Up Status** to **Under
    Investigation** and add appropriate **Clean Up Notes**.
 3. While investigating, flag any Unused Test Classes you no longer need. They are identified with
-   the Test Class check box.
+   the Test Class checkbox.
 
 ## Unused Test Classes
 
@@ -94,26 +93,24 @@ itself):
 
     - Equals the API Name of the parent or
     - Starts with the API Name of the parent object **plus " \_ \_. "**. (example **API Name starts
-      with Record\_ \_.**) The period is required to ensure you just match that record and its
+      with Record\_ \_.**) The period is required to ensure you match only that record and its
       children. You get all fields and children under the parent.
 
 3. Set the **Clean Up Status** to **Under Investigation** and add appropriate **Clean Up Notes**.
 
 ## Layouts and List Views
 
-These customizations do not have a reliable **Date Last Used**. We are working to narrow this gap.
-For now, be extra careful when investigating these items.
+These customizations don't have a reliable **Date Last Used**. Be careful when investigating these items.
 
 ## Value-based Clean Up
 
-Sometimes we want to clean up values not just Customizations. For example:
+Sometimes you need to clean up values, not only Customizations. For example:
 
 - Cleaning up as someone leaves the company
 - Identifying hard-coded dependencies on users
 - Identifying where a record type or list value is used
 
-You have already seen some clues to how you might do this in preceding cases. For most objects,
-simply:
+You have already seen some clues to how you might do this in preceding cases. For most objects:
 
 1. Create a Clean Up List View showing all Customizations.
 2. Include the XML/Code field and any other specific fields you are interested in, for example:
@@ -128,11 +125,10 @@ simply:
 
 Points to consider:
 
-- Restricting the List View to one Record Type enables you to edit records directly from the List
+- Restricting the List View to one Record Type lets you edit records directly from the List
   View.
-- Search carefully if using multiple terms (refer to this
-  [Salesforce Search guide](https://help.salesforce.com/articleView?id=000247472andtype=1)) - quotes
-  can be useful to enforce just the string you are looking for. **"Search Term"** (in quotes) finds
+- Search carefully if using multiple terms - quotes
+  can be useful to enforce only the string you are looking for. **"Search Term"** (in quotes) finds
   objects with that phrase whereas **Search Term** (unquoted) finds anything with **Search** and
   **Term** even if they are in different fields in the List View.
 - Even good searches can result in false positive matches if the same value appears in multiple

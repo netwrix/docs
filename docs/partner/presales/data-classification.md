@@ -1,6 +1,6 @@
 ---
 title: Netwrix Data Classification Presales Engineer
-sidebar_position: 1430
+sidebar_position: 1270
 tags: [certification, partners, presales, data-classification]
 keywords: [training, course, certification, partners, presales, data classification]
 description: "Become a certified Presales Engineer for Netwrix Data Classification"

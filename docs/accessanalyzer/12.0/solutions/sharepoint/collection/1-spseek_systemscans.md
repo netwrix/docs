@@ -22,18 +22,18 @@ The query for the 1-SPSEEK SystemScans Job is:
 ### Configure the Query for the 1-SPSEEK_SystemScans Job
 
 The 1-SPSEEK_SystemScans Job has been preconfigured to run with the default settings using the SPAA
-Data Collector category of Scan for Sensitive Content, which is not visible within the SharePoint
+Data Collector category of Scan for Sensitive Content, which isn't visible within the SharePoint
 Access Auditor Data Collector Wizard when opened from within this job.
 
 :::warning
-Users should not change scans in a way that would result in less data being returned on
+Users shouldn't change scans in a way that would result in less data being returned on
 a subsequent scan (i.e. scanning fewer web applications, scanning fewer site collections, or a
 shallower depth scan). Those resources not included in a subsequent scan are marked as deleted in
 the Tier 2 database and subsequently removed from the Tier 1 database.
 :::
 
 
-Follow the steps to set any desired customizations.
+To set any desired customizations:
 
 **Step 1 –** Navigate to the **Jobs** > **SharePoint** > **0.Collection** >
 **1-SPSEEK_SystemScans** > **Configure** node and select **Queries**.
@@ -94,7 +94,7 @@ remove criteria as desired by either manually selecting criteria or using the **
 for additional information.
 
 :::warning
-Do not configure the options on the Results page.
+Don't configure the options on the Results page.
 :::
 
 

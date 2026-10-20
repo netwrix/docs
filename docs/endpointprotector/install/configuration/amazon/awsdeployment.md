@@ -6,14 +6,11 @@ sidebar_position: 10
 
 # Launching the EC2 Image
 
-As the Endpoint Protector image has already been shared with you, this process is similar to any
-other EC2 launch.
-
-Follow the steps to launch the EC2 image.
+As the Endpoint Protector image has already been shared with you, this process is similar to any other EC2 launch.
 
 **Step 1 –** Go to Services: EC2 and select your region.
 
-**Step 2 –** Go to Images: AMIs and select the type of the Private image and search for Endpoint
+**Step 2 –** Go to Images: Amazon Machine Image (AMI) and select the type of the Private image and search for Endpoint
 Protector.
 
 ![Launching AMISs](imagesamis.webp)
@@ -35,9 +32,7 @@ submit a support ticket through the
 
 **Step 6 –** Select an available key pair or create a new key pair.
 
-If you choose to use a key pair, you may need to share it with our Support Team for certain support
-requests. Ensure that the key pair is used exclusively for this instance to maintain security. We
-recommend selecting **Proceed without a Key Pair** and then clicking **Launch Instances**.
+If you choose to use a key pair, you may need to share it with the Netwrix Support Team for certain support requests. Use the key pair exclusively for this instance to maintain security. Recommend selecting **Proceed without a Key Pair** and then clicking **Launch Instances**.
 
 ![Launching AMI instances ](launchinstance.webp)
 
@@ -58,7 +53,7 @@ recommend selecting **Proceed without a Key Pair** and then clicking **Launch In
 
 ![Editing the Network Section ](editnetwork.webp)
 
-**Step 9 –** The Storage section does not require any changes.
+**Step 9 –** The Storage section doesn't require any changes.
 
 ![Configuring the storage section](configurestorage.webp)
 

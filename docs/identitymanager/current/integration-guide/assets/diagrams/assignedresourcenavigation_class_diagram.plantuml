@@ -1,0 +1,54 @@
+@startuml component
+package "AssignedResourceNavigation" {
+	class AssignedResourceNavigation {
+		ConfidenceLevel : Byte
+		EndDate : DateTime
+		IsDenied : Boolean
+		IsIndirect : Boolean
+		IsInferred : Boolean
+		IsPending : Boolean
+		Owner : Int64
+		OwnerType : Int64
+		Performer : Int64
+		ProvisioningState : Byte
+		StartDate : DateTime
+		WhenPerformed : DateTime
+		WhenTransmitted : DateTime
+		WorkflowState : Byte
+		--
+		AccessCertificationItems : AccessCertificationItem[]
+		AssignedResourceType : AssignedResourceType
+		PolicyResource : Resource
+		Property : EntityProperty
+		Resource : Resource
+		WorkflowInstance : WorkflowInstance
+	}
+}
+package "AccessCertificationItem" {
+	class AccessCertificationItem {
+	}
+}
+package "AssignedResourceType" {
+	class AssignedResourceType {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+AssignedResourceNavigation "0..1" --  "0..*"AccessCertificationItem
+AssignedResourceNavigation "0..*" --  "1"AssignedResourceType
+AssignedResourceNavigation "0..*" --  "0..1"Resource
+AssignedResourceNavigation "0..*" --  "1"EntityProperty
+AssignedResourceNavigation "0..*" --  "1"Resource
+AssignedResourceNavigation "0..*" --  "0..1"WorkflowInstance
+hide empty members
+@enduml

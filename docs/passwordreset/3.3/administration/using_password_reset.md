@@ -9,7 +9,7 @@ sidebar_position: 20
 Netwrix Password Policy Enforcer is a web application. Users can access it from a web browser, or
 from the Password Reset Client. The default URL for the Web Interface
 is:` http://[server]/pwreset/`
-See the [Password Reset Client](/docs/passwordreset/3.3/administration/password_reset_client.md) topic for more information.
+See the [Password Reset Client](/docs/passwordreset/3.3/administration/password_reset_client.md) topic to install and configure the client application.
 
 You can use URL parameters to open a specific page, and to set the user and domain names. For
 example: `http://[server]/pwreset/apr.dll? cmd=enroll&username=johnsmith&domain=CORP`
@@ -26,7 +26,7 @@ The connection between the Web Interface and Password Reset Server is always enc
 Install an SSL certificate on the web server and use HTTPS to encrypt connections from the browser
 to the web server. See the
 [Installing and Using an SSL Certificate](securing_password_reset.md#installing-and-using-an-ssl-certificate)
-topic for more information.
+for steps to install and configure an SSL certificate.
 :::
 
 
@@ -37,7 +37,7 @@ answering some questions about themselves, or they can be enrolled automatically
 enrollment is enabled. Users only need to enroll once, but they can enroll again if they are locked
 out of Password Reset, or if they want to change their questions or answers. See the
 [Verification Codes](/docs/passwordreset/3.3/administration/configuringpasswordreset/verification_tab.md#verification-codes) and
-[Verification Tab](/docs/passwordreset/3.3/administration/configuringpasswordreset/verification_tab.md) topics for more information.
+[Verification Tab](/docs/passwordreset/3.3/administration/configuringpasswordreset/verification_tab.md) topics to configure verification code settings and automatic enrollment.
 
 Follow the steps below to manually enroll into Password Reset.
 
@@ -48,9 +48,9 @@ Follow the steps below to manually enroll into Password Reset.
 **Step 2 –** Type a **Username**, **Domain**, and **Password**.
 
 **Step 3 –** Type an e-mail address if the **E-mail** text box is visible. See the
-[Options](/docs/passwordreset/3.3/administration/configuringpasswordreset/enroll_tab.md#options) topic for more information.
+[Options](/docs/passwordreset/3.3/administration/configuringpasswordreset/enroll_tab.md#options) topic to configure whether an e-mail address is required for enrollment.
 
-**Step 4 –** Select a question from each of the **Question** drop-down lists, and type an answer to
+**Step 4 –** Select a question from each of the **Question** dropdown lists, and type an answer to
 each question in the **Answer** text boxes.
 
 **Step 5 –** Click **Next**, and then click **OK** to return to the menu.
@@ -82,7 +82,7 @@ questions are answered correctly.
 
 ![using_npr_3](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_3.webp)
 
-**Step 4 –** You may be asked to enter a verification code. The verification code is sent to your
+**Step 4 –** Password Reset may ask you to enter a verification code. The verification code is sent to your
 phone by e-mail or SMS. Type the **Code**, and then click **Next**.
 
 ![using_npr_5](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_5.webp)
@@ -113,7 +113,7 @@ questions are answered correctly.
 
 ![using_npr_8](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_8.webp)
 
-**Step 4 –** You may be asked to enter a verification code. The verification code is sent to your
+**Step 4 –** Password Reset may ask you to enter a verification code. The verification code is sent to your
 phone by e-mail or SMS. Type the **Code**, and then click **Next**.
 
 ![using_npr_9](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_9.webp)
@@ -122,8 +122,8 @@ phone by e-mail or SMS. Type the **Code**, and then click **Next**.
 
 :::note
 The Unlock feature unlocks accounts in Active Directory. Users who are locked out of
-Password Reset should re-enroll to gain access to Password Reset. See the
-[Verification Codes](/docs/passwordreset/3.3/administration/configuringpasswordreset/verification_tab.md#verification-codes) topic for more information.
+Password Reset should re-enroll to gain access to Password Reset. See
+[Verification Codes](/docs/passwordreset/3.3/administration/configuringpasswordreset/verification_tab.md#verification-codes) for details on automatic enrollment and lockout behavior.
 :::
 
 
@@ -155,14 +155,14 @@ policy is enabled.
 
 ## Error Messages
 
-Validation errors are shown in a red box below the page instructions. Validation errors are normally
-caused by invalid user input. They can often be overcome by changing the value of one or more input
+Validation errors appear in a red box below the page instructions. Validation errors are normally
+caused by invalid user input. You can often resolve them by changing the value of one or more input
 fields and resubmitting the form.
 
 ![using_npr_12](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_12.webp)
 
-Critical errors are shown on their own page. These errors are mostly a result of configuration or
-system errors. An event may be written to the Windows Application event log on the Password Reset
+Critical errors appear on their own page. These errors are mostly a result of configuration or
+system errors. Password Reset may write an event to the Windows Application event log on the Password Reset
 Server computer when a critical error occurs. Users can sometimes overcome a critical error by
 following the instructions in the error message, but most critical errors are beyond the user's
 control.
@@ -170,5 +170,5 @@ control.
 ![using_npr_13](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_13.webp)
 
 Validation and critical error messages are stored in the HTML templates. You can modify the default
-messages by editing the templates. See the
-[Resource Strings](editing_the_html_templates.md#resource-strings) topic for more information.
+messages by editing the templates. See
+[Resource Strings](editing_the_html_templates.md#resource-strings) for details on editing validation and error message text.

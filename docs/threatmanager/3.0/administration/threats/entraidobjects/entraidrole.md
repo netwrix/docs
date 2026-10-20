@@ -26,9 +26,9 @@ role:
 The members tab displays two tables:
 
 - Eligible Assignments – Lists the roles that the user is eligible for. An eligible assignment
-  refers to a role assignment that a user or group can activate when needed but is not permanently
+  refers to a role assignment that a user or group can activate when needed but isn't permanently
   active.
-- Active Assignments – Lists roles that are currently active and usable to a user.
+- Active Assignments – Lists roles that are  active and usable to a user.
 
 ![Role Members Tab Active Assignement Page](/images/threatmanager/3.0/administration/threatdetails/rolesactiveassignments.webp)
 

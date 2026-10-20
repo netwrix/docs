@@ -29,13 +29,13 @@ The table displays access information for the resource being reviewed:
 - Recommendation — Any information known to the Access Information Center that might be helpful
   during this review is listed in this column
 
-**Step 2 –** Recommend access changes for a trustee by clicking the icon for the desired access
-level (Full Control, Modify, or Read columns). A yellow checkmark icon indicates the new level of
+**Step 2 –** Recommend access changes for a trustee by clicking the icon for the access level
+you want (Full Control, Modify, or Read columns). A yellow checkmark icon indicates the new level of
 access you are recommending.
 
 **Step 3 –** Recommend removing access by selecting one or more trustees and clicking the **Remove
 Access** button or by clicking on a checkmark icon. A blank yellow icon indicates you are
-recommending all access be removed; it appears in the column for the current level of access.
+recommending removing all access; it appears in the column for the current level of access.
 
 :::tip
 Remember, at any time you can save your recommendations and exit the review. It will remain
@@ -61,5 +61,5 @@ To make changes to your recommendations, you must return to the first tab. Click
 **Step 6 –** When all recommendations are confirmed and the desire notes added, click **Submit**. A
 message displays stating that the review is complete. Click **OK** to close the message window.
 
-The review for this resource is now complete. You will be redirected to the Pending Reviews page.
-Your recommended changes have been sent to the Review Administrator for approval and processing.
+The review for this resource is now complete. The system redirects you to the Pending Reviews page.
+Your recommended changes go to the Review Administrator for approval and processing.

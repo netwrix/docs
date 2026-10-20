@@ -7,7 +7,7 @@ sidebar_position: 150
 # Send-TestNotification
 
 The commandlet Send-TestNotification sends a test notification using the email addresses (specified
-From/To) through the SMTP server of the specified identity store. This cmdlet can be used to
+From/To) through the SMTP server of the specified identity store. Use this cmdlet to
 validate SMTP settings before configuring notifications or SMTP settings.
 
 ## Syntax

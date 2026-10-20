@@ -55,7 +55,7 @@ The following recommendations will allow you to reduce disk space consumption:
 
    For additional information about the Backup folder, refer to the following article: [Backups Folder in Netwrix Auditor](/docs/kb/auditor/system-administration/backup-and-recovery/backups-folder-in-netwrix-auditor).
 
-5. Additional space might be consumed by the **Local DB** in the **ShortTerm** folder; this can occur when the SQL communication is not working properly or the DB files getting corrupted. Follow the resolution steps in the article: [Netwrix Auditor System Health Log Contains EventID 2002](https://docs.netwrix.com/docs/kb/auditor/features-and-operations/glossaries-and-faqs/netwrix-auditor-health-log-contains-eventid-2002).
+5. Additional space might be consumed by the **Local DB** in the **ShortTerm** folder; this can occur when the SQL communication is not working properly or the DB files getting corrupted. Follow the resolution steps in the article: [Netwrix Auditor System Health Log Contains EventID 2002](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/netwrix-auditor-health-log-contains-eventid-2002).
 
 6. Check the size of the Windows page file. If it grows big, this indicates lack of RAM and Windows tries to compensate it with disk space. Adding more RAM helps fixing disk space consumption by page files.
 
@@ -76,4 +76,4 @@ The following recommendations will allow you to reduce disk space consumption:
 - [Error: Netwrix Auditor for File Servers Audit Service Terminated Unexpectedly](/docs/kb/auditor/configuration-and-setup/file-server-auditing/error-netwrix-auditor-for-file-servers-audit-service-terminated-unexpectedly)
 - [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 - [How to Add Additional Space to Long-Term Archive](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-add-additional-space-to-long-term-archive)
-- [Netwrix Auditor System Health Log Contains EventID 2002](https://docs.netwrix.com/docs/kb/auditor/features-and-operations/glossaries-and-faqs/netwrix-auditor-health-log-contains-eventid-2002)
+- [Netwrix Auditor System Health Log Contains EventID 2002](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/netwrix-auditor-health-log-contains-eventid-2002)

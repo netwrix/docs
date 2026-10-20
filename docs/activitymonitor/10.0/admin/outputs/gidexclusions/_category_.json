@@ -1,0 +1,10 @@
+{
+  "label": "GID Exclusions Tab",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "gidexclusions"
+  }
+}

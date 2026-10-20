@@ -1,0 +1,9 @@
+extends: existence
+message: "Avoid '%s' for temporal sequence. Use 'After' (for sequential steps) or 'When' (for conditions or events)."
+level: warning
+ignorecase: true
+tokens:
+  - '\bonce you\b'
+  - '\bonce the\b'
+  - '\bonce it\b'
+  - '\bonce this\b'

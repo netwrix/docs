@@ -10,7 +10,7 @@ sidebar_position: 10
 
 Logging into SAP can be achieved via the usage of
 [Start Parameter](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/applications/learningtheapplications/start_parameter.md).
-The prerequisite here is for the login process to be carried out via the "SAPshortcut". All
+The prerequisite here is for the login process to be performed via the "SAPshortcut". All
 available parameters are listed in the
 [SAP-Wiki](https://wiki.scn.sap.com/wiki/display/NWTech/SAPshortcut).
 

@@ -1,0 +1,25 @@
+@startuml component
+package "ActivityTemplateTransition" {
+	class ActivityTemplateTransition {
+		DisplayName_L1 : String
+		Identifier : String
+		IsBatchActor : Boolean
+		--
+		CurrentWorkflowInstances : WorkflowInstance[]
+		FromState : ActivityTemplateState
+		ToState : ActivityTemplateState
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+package "ActivityTemplateState" {
+	class ActivityTemplateState {
+	}
+}
+ActivityTemplateTransition "1" --  "0..*"WorkflowInstance
+ActivityTemplateTransition "0..*" --  "1"ActivityTemplateState
+ActivityTemplateTransition "0..*" --  "1"ActivityTemplateState
+hide empty members
+@enduml

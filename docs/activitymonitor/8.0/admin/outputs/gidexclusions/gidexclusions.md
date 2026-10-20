@@ -18,7 +18,7 @@ The tab contains the following settings:
 
 - Add – Opens the Add or Edit GID window to add a group for exclusion. See the
   [Add or Edit GID Window](/docs/activitymonitor/8.0/admin/outputs/gidexclusions/addeditgid.md) topic for additional information.
-- Remove – Removes the selected group from exclusion. Confirmation is not requested.
+- Remove – Removes the selected group from exclusion. Confirmation isn't requested.
 
     :::warning
     If an account is removed by group, use the **Cancel** button to discard the change.
@@ -28,8 +28,8 @@ The tab contains the following settings:
 - Edit – Opens the Add or Edit GID window to edit a selected group for exclusion. See the
   [Add or Edit GID Window](/docs/activitymonitor/8.0/admin/outputs/gidexclusions/addeditgid.md) topic for additional information.
 
-The table lists groups that are being excluded from monitoring, displayed in the GID column. By
-default, no groups are being excluded.
+The table lists groups you have excluded from monitoring, displayed in the GID column. By
+default, no groups are excluded.
 
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
 Properties window closes.

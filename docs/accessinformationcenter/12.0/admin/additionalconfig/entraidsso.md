@@ -6,13 +6,13 @@ sidebar_position: 70
 
 # Microsoft Entra ID Single Sign-On
 
-The Access Information Center can be configured to use Microsoft Entra ID Single Sign-On (SSO). When
+Configure the Access Information Center to use Microsoft Entra ID Single Sign-On (SSO). When
 configured, users are directed to the Microsoft Entra ID login page, and can log in using their
 existing Entra credentials.
 
 :::note
-If enabled, only Microsoft Entra ID SSO can be used for logging in. Other accounts,
-including the default administrator account, cannot be used.
+If enabled, use only Microsoft Entra ID SSO for logging in. Other accounts,
+including the default administrator account, can't be used.
 :::
 
 
@@ -26,9 +26,9 @@ ID, and then configure the Access Information Center to use it.
 
 ## Configure an Application in Microsoft Entra ID
 
-An application must be registered for the Access Information Center with your Microsoft Entra ID
-tenant and be configured with the necessary single sign-on settings. Follow the steps to create and
-configure the application.
+Register an application for the Access Information Center with your Microsoft Entra ID
+tenant and configure it with the necessary single sign-on settings. To create and
+configure the application:
 
 **Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
@@ -46,13 +46,13 @@ single sign-on method.
 **Step 5 –** On the Set up Single Sign-On with SAML page, click **Edit** on the Basic SAML
 Configuration section. Add your Identifier and Reply URL, and then click **Save**.
 
-- As the Identifier, enter `https://<FQDN of AIC>:<port number>`, for example:
+- As the Identifier, enter `https://<FQDN of Access Information Center>:<port number>`, for example:
 
     ```
     https://app0190.train90.local:481
     ```
 
-- As the Reply URL, enter `https://<FQDN of AIC>:<port number>/v2/federation`, for example:
+- As the Reply URL, enter `https://<FQDN of Access Information Center>:<port number>/v2/federation`, for example:
 
     ```
     https://app0190.train90.local:481/v2/federation
@@ -69,23 +69,23 @@ table, and then click **Save**.
 | sid                | http://schemas.xmlsoap.org/ws/2005/05/identity/claims   | user.onpremisessecurityidentifier |
 | upn                | http://schemas.xmlsoap.org/ws/2005/05/identity/claims   | user.onpremisesuserprincipalname  |
 
-Once configured they should show under Additional claims as below:
+After you configure them, they should appear under Additional claims:
 
 ![Claims configured](/images/accessanalyzer/12.0/install/application/reports/entraidssoclaims.webp)
 
 **Step 7 –** In the **Manage** > **Users and groups** section for your application, add any required
 users or groups to give permission to access the application.
 
-The application is now configured with the necessary settings. The next step is to enable the use of
+You have now configured the application with the necessary settings. The next step is to enable the use of
 Microsoft Entra ID SSO in the Access Information Center config file.
 
 ## Enable in the Access Information Center Config File
 
 To enable Microsoft Entra ID SSO for the Access Information Center, the config file needs to be
-updated with values from Microsoft Entra ID. Follow the steps to enable the SSO.
+updated with values from Microsoft Entra ID. To enable the SSO:
 
 :::tip
-Remember, Enabling Entra ID SSO requires SSL to be enabled. If this was not done during the
+Remember, Enabling Entra ID SSO requires SSL to be enabled. If this wasn't done during the
 installation, then you must manually configure it. See the
 [Securing the Access Information Center](/docs/accessinformationcenter/12.0/installation/secure.md) topic for additional
 information.
@@ -100,7 +100,7 @@ Notepad. The file is located in the Access Information Center installation direc
 ![Parameters in the config file](/images/accessinformationcenter/12.0/admin/additionalconfig/configfileentrasso.webp)
 
 **Step 2 –** Locate the **WsFederationMetaData**, **WsFederationRealm**, and **WsFederationReply**
-parameters in the config file. If these are not present, then manually add them to your config file
+parameters in the config file. If these aren't present, then manually add them to your config file
 as follows:
 
 ```

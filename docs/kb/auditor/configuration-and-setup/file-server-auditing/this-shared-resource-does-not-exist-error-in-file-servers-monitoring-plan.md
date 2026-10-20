@@ -34,7 +34,7 @@ Object: %share%, Error: 0x80070906 This shared resource does not exist.
 ## Causes
 
 1. Misconfigured permissions for the Auditor data collecting account.
-2. The affected share is specified incorrectly in the coresponding monitoring plan.
+2. The affected share is specified incorrectly in the corresponding monitoring plan.
 
 ## Resolutions
 

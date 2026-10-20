@@ -6,15 +6,14 @@ sidebar_position: 100
 
 # NetApp Tab
 
-The NetApp tab on a host’s Properties window allows users to modify settings, which are populated
-with the information entered when the NetApp host is added to the monitored hosts/services table.
+The NetApp tab on a host’s Properties window lets you modify the settings you entered when you added the NetApp host to the monitored hosts/services table.
 
 ![Host Properties NetApp Tab](/images/activitymonitor/9.0/admin/monitoredhosts/properties/netapptab.webp)
 
 Modify the targeted NetApp device by specifying a NetApp device to be monitored for activity and
 credentials to access it with the Data ONTAP API.
 
-- Protocol – Select from the following options in the drop-down list:
+- Protocol – Select from the following options in the dropdown list:
     - Auto Detect
     - HTTPS
     - HTTPS, ignore certificate errors

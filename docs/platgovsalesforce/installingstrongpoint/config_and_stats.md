@@ -25,6 +25,7 @@ The report is divided into multiple tabs:
     - Scanner Logs
     - Scanner Additional Information
     - Change Log Creation (sandbox option)
+- Scanner Inactivity Alert
 - Jira Configuration
     - Credentials
     - Status Mapping
@@ -64,9 +65,9 @@ The section displays details for each of the scanner logs:
 
 This section only applies to sandbox orgs. It displays each scanner function and the status:
 
-- Last Scanner Run Date
-- Last Automated Scanner Run Date
-- Last Scanner Run Status
+- **Last Scanner Run Date**: The date and time when the scanner was last run manually.
+- **Last Automated Scanner Run Date**: The date and time when the scanner last ran on its automated schedule.
+- **Last Scanner Run Status**: Indicates the type of the most recent scanner execution (manual or automated).
 
 ![Configuration and Stas - Scanner Additional Information](/images/platgovsalesforce/installing_strongpoint/config_scan_add_info.webp)
 
@@ -75,9 +76,65 @@ This section only applies to sandbox orgs. It displays each scanner function and
 If you are in a sandbox, you can control whether change logs are created. Due to Salesforce space
 limits on different
 [sandbox accounts](https://help.salesforce.com/articleView?id=data_sandbox_environments.htmandtype=5),
-you may want to disable change logs to save space.
+consider disabling change logs to save space.
 
 ![Control Change Log Creation in Sandbox](/images/platgovsalesforce/installing_strongpoint/config_stats_enable_change_log.webp)
+
+## Scanner Inactivity Alert
+
+The Scanner Inactivity Alert feature provides automated email notifications to designated administrators when the Auto Scanner fails to run according to its configured schedule. This proactive monitoring ensures that your Salesforce environment remains continuously protected.
+
+![Scanner Inactivity Alert Section](/images/platgovsalesforce/scanner_inactivity_alert/Scanner_Inactivity_Alert.webp)
+
+### Configuration Steps
+
+#### Step 1: Enable Scanner Inactivity Alert
+
+1. **Locate the Enable Checkbox**
+   - Find the checkbox labeled "Enable Scanner Inactivity Alert"
+
+2. **Enable the Feature**
+   - Select the checkbox to enable scanner inactivity alerts
+   - Once enabled, the Admin Users Selection panel appears
+
+#### Step 2: Select Admin Users
+
+After enabling the alert, configure the recipients.
+
+##### Admin Users Selection Panel
+
+A multi-select list displays available administrator users.
+
+##### Select Recipients
+
+The system lists all Salesforce users with the System Administrator profile.
+
+![Admin Users Selection](/images/platgovsalesforce/scanner_inactivity_alert/Scanner_Inactivity_Alert_Select.webp)
+
+Use the multi-select panel to manage recipients:
+
+- **Search**: Type to filter admin users by name
+- **Select**: Click a user to add them to the recipient list
+- **Remove**: Click a selected user again to remove them
+- Multiple users can be selected
+
+##### Review Selection
+
+- Confirm all intended recipients are selected
+- For redundancy, consider selecting more than one admin
+
+#### Step 3: Save Configuration
+
+##### Save Settings
+
+1. Click **Save Configuration** at the bottom of the page
+2. A loading spinner appears while the configuration saves.
+3. Wait for the confirmation message.
+
+
+#### Alert Trigger Conditions
+
+The system continuously monitors the Auto Scanner and sends email alerts when it detects that the scanner isn't running as configured in the scheduler.
 
 ## Jira Configuration
 
@@ -90,7 +147,7 @@ Governance for Salesforce.
 
 ### Credentials
 
-Your credentials are generated in Jira. Enter them here for the Platform Governance for Salesforce
+Generate your credentials in Jira, then enter them here for the Platform Governance for Salesforce
 Jira integration.
 
 1. Open **Netwrix Dashboard** > **Settings** > **Configuration and Stats**.
@@ -101,7 +158,7 @@ Jira integration.
 3. Enter your credentials:
 
     - **Jira Username** is your Jira login email associated with your Jira API token.
-    - **Jira Token** is your Jira API token. If you do not have your token, follow the steps in the
+    - **Jira Token** is your Jira API token. If you don't have your token, follow the steps in the
       [Atlassian](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) documentation.
     - **Jira Account Name** is the _company specific part_ of the Jira site URL
       (**https://\_**JiraAccountName**\_.atlassian.net**). Only enter the _JiraAccountName_, not the
@@ -119,7 +176,7 @@ Jira integration.
     ![Set up the Jira status mappings for Change Request status](/images/platgovsalesforce/integrations/jira_status_settings.webp)
 
 4. Enter the mappings between your Jira statuses and the Change Request statuses. You must define
-   your Jira statuses prior to this step. You can enter multiple Jira statuses for each Change
+   your Jira statuses before this step. You can enter multiple Jira statuses for each Change
    Request status, separated by commas. For example, **In Progress, Backlog**. Assign your mapping
    for each of the Change Request statuses:
 
@@ -131,14 +188,13 @@ Jira integration.
 
 5. Check **Is Automatic Sync** to enable Platform Governance for Salesforce to handle the
    synchronization between Jira and Salesforce when a Ticket status is updated to a mapped status.
-   without having to click **Push**. If you are using an org where you do not want to create a
+   without clicking **Push**. If you are using an org where you don't want to create a
    Change Request, leave this unchecked so you can do your research or testing without generating
    Change Requests.
-6. Change Requests are not automatically created, as not all tickets result in a Change Request.
-   Tickets must be pushed to Platform Governance for Salesforce to begin the process. If Automatic
-   Synchronization is turned on, then changes to the Status and Customizations are synchronized
-   between Jira and Platform Governance for Salesforce without the need to keep manually pushing the
-   changes.
+6. Platform Governance for Salesforce doesn't automatically create Change Requests, because not all tickets result in a Change Request.
+   Tickets must be pushed to Platform Governance for Salesforce to begin the process. When Automatic
+   Synchronization is on, Platform Governance for Salesforce synchronizes changes to the Status and Customizations
+   between Jira and Platform Governance for Salesforce without manually pushing changes.
 7. Click **Save**.
 
 ## Orgs Credentials

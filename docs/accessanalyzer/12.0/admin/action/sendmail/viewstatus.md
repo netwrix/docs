@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Viewing the Status of SendMail Actions
 
-Follow the steps to view the status of an executed SendMail action:
+To view the status of an executed SendMail action, complete the following steps:
 
 ![Analysis Properties page for SendMail View Status Analysis task](/images/accessanalyzer/12.0/admin/action/sendmail/viewstatusanalysisproperties.webp)
 

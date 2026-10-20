@@ -1,0 +1,51 @@
+@startuml component
+package "ProfileContext" {
+	class ProfileContext {
+		IsAutomatic : Boolean
+		--
+		AssignedProfiles : AssignedProfile[]
+		Category : Category
+		CompositeRole : CompositeRole
+		ContextOpenIdClients : OpenIdClient[]
+		D0 : Resource
+		ResourceType : ResourceType
+		SingleRole : SingleRole
+	}
+}
+package "AssignedProfile" {
+	class AssignedProfile {
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "CompositeRole" {
+	class CompositeRole {
+	}
+}
+package "OpenIdClient" {
+	class OpenIdClient {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+ProfileContext "1" --  "0..*"AssignedProfile
+ProfileContext "0..*" --  "0..1"Category
+ProfileContext "0..*" --  "0..1"CompositeRole
+ProfileContext "0..1" --  "0..*"OpenIdClient
+ProfileContext "0..*" --  "0..1"Resource
+ProfileContext "0..*" --  "0..1"ResourceType
+ProfileContext "0..*" --  "0..1"SingleRole
+hide empty members
+@enduml

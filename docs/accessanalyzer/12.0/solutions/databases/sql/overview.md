@@ -1,21 +1,19 @@
 ---
-title: "SQL Job Group"
-description: "SQL Job Group"
+title: "Microsoft SQL Server Solution"
+description: "Microsoft SQL Server Solution"
 sidebar_position: 70
 ---
 
-# SQL Job Group
+# Microsoft SQL Server Solution
 
-The SQL Job Group reports on SQL Server, AzureSQL, or both depending on which collection jobs were
-run. The SQL Job Group is a comprehensive set of pre-configured audit jobs and reports that provide
+The Microsoft SQL Server Solution is a comprehensive set of pre-configured audit jobs and reports that provide
 information on users and roles, activity, permissions, configuration, sensitive data, and overall
-security assessment.
+security assessment for Microsoft SQL Server.
 
 **Supported Platforms**
 
-- Azure SQL
-
-- SQL Server 2022
+- SQL Server 2025
+- SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
 - SQL Server 2016
@@ -28,52 +26,47 @@ topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host.For example, if the job is
-configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, you must increase the minimum amount of RAM. Each
+thread requires a minimum of 2 additional GB of RAM per host. For example, a job configured to scan
+8 hosts at a time requires an extra 16 GB of RAM (8x2=16).
 
 :::note
 The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and does not require any configuration; it has been
-preconfigured to work with Access Analyzer and should never be customized through Java. It will not
+server. The JDK deployed is prepackaged and doesn't require any configuration. Netwrix preconfigures
+it to work with Access Analyzer, and you shouldn't customize it through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.
 :::
 
 
 **Location**
 
-The SQL Job Group within the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
+The Microsoft SQL Server Solution is in the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
 
-The Database Solution license includes all supported database platforms supported by Access
-Analyzer. Additionally, Sensitive Data Discovery enables the solution to search database content for
+The Database Solution license includes all database platforms that Access Analyzer
+supports. Additionally, Sensitive Data Discovery enables the solution to search database content for
 sensitive data.
 
-![SQL Job Group](/images/accessanalyzer/12.0/solutions/databases/sql/sqljobgroup.webp)
+![Microsoft SQL Server Solution](/images/accessanalyzer/12.0/solutions/databases/sql/sqljobgroup.webp)
 
-The SQL Job Group includes:
+The Microsoft SQL Server Solution includes:
 
 - Databases > 0.Collection > SQL > [0.Collection > SQL Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/collection/overview.md) – This job
-  group is designed to collect high level summary information from Microsoft SQL servers. This
-  information is used by other jobs in the SQL solution set for further analysis and for producing
+  group collects high level summary information from Microsoft SQL servers. Other jobs in the SQL
+  solution set use this information for further analysis and for producing
   respective reports.
-- Databases > 0.Collection > AzureSQL >
-  [0.Collection > Azure SQL Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/collection-azuresql/overview.md) — This job group is
-  designed to collect high level summary information from targeted Azure SQL Instances. This
-  information is used by other jobs in the Azure SQL solution set to provide further analysis and
-  for producing respective reports.
-- [1.Users and Roles Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/usersroles/overview.md)– This job group is designed to provide
+- [1.Users and Roles Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/usersroles/overview.md)– This job group provides
   insight into user security, roles, and object permissions to all the SQL server objects
-- [2.Activity Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/activity/overview.md) – This job group is designed to provide insight into
+- [2.Activity Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/activity/overview.md) – This job group provides insight into
   use login activity, object permission changes, any unusual database activity, SQL activity against
   sensitive data, SQL activity against selective or all database objects
-- [3.Permissions Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/permissions/overview.md) – This job group is designed to provide insight
+- [3.Permissions Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/permissions/overview.md) – This job group provides insight
   into all types of permissions at the instance, database, and object level across all the targeted
   SQL servers
-- [4.Configuration Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/configuration/overview.md) – This job group is designed to provide
+- [4.Configuration Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/configuration/overview.md) – This job group provides
   insight into potential vulnerabilities related to SQL server configuration settings
-- [5.Sensitive Data Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/sensitivedata/overview.md)– This job group is designed to provide
+- [5.Sensitive Data Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/sensitivedata/overview.md)– This job group provides
   insight into where sensitive data exists and who has access to it across all the targeted SQL
   server databases
-- [SQL_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/databases/sql/sql_securityassessment.md) – This job is designed to summarize and
-  categorize the security findings into HIGH, MEDIUM, LOW, and NO FINDING categories based on their
+- [SQL_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/databases/sql/sql_securityassessment.md) – This job summarizes and
+  categorizes the security findings into HIGH, MEDIUM, LOW, and NO FINDING categories based on their
   severity.

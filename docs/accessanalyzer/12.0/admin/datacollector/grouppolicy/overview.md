@@ -6,13 +6,13 @@ sidebar_position: 240
 
 # GroupPolicy Data Collector
 
-The GroupPolicy Data Collector provides the ability to retrieve the GPO’s list in the domain and
+The GroupPolicy Data Collector lets you retrieve the GPO’s list in the domain and
 where they are linked, return information on configured policies and policy parts from the
-individual policies that have been selected, return information on selected policy parts from all
+individual policies you select, return information on selected policy parts from all
 policies within the domain, and return effective security policies in effect at the individual
 workstation.
 
-The GroupPolicy Data Collector is a core component of Access Analyzer, but it has been preconfigured
+The GroupPolicy Data Collector is a core component of Access Analyzer, but it comes preconfigured
 within the Active Directory Solution and the Windows Solution. While the data collector is available
 with all Access Analyzer license options, the Windows Solution is only available with a special
 Access Analyzer licenses. See the following topics for additional information:
@@ -38,7 +38,7 @@ Access Analyzer licenses. See the following topics for additional information:
 
 ## GroupPolicy Query Configuration
 
-The GroupPolicy Data Collector is configured through the Group Policy Data Collector Wizard. The
+Configure the GroupPolicy Data Collector through the Group Policy Data Collector Wizard. The
 available pages change based upon the query category selected. It contains the following wizard
 pages:
 
@@ -51,5 +51,5 @@ pages:
 
 ![Group Policy Data Collector Wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/grouppolicy/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the **Don't display this page the next time** checkbox while the
+wizard is open; the wizard saves your configuration settings.

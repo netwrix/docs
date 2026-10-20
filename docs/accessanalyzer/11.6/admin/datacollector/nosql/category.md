@@ -17,8 +17,8 @@ The query categories are:
 
     - Sensitive Data Collection – Scan databases for sensitive data
 
-        - The Sensitive Data category options require the Sensitive Data Discovery Add-on to be
-          installed on the Enterprise Auditor Console before the NoSQL Data Collector can collect
+        - The Sensitive Data category options require you to install the Sensitive Data Discovery
+          Add-on on the Enterprise Auditor Console before the NoSQL Data Collector can collect
           sensitive data. See the
           [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
           topic for additional information.
@@ -37,5 +37,5 @@ The query categories are:
 
     - NoSQL Utilities
 
-        - Remove NoSQL Storage Tables — All connection related and filter data will be removed for
+        - Remove NoSQL Storage Tables — Removes all connection-related and filter data for
           NoSQL databases

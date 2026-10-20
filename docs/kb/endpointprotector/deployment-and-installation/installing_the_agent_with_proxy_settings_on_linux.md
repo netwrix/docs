@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Installing the Agent with Proxy Settings
 tags:
   - deployment-and-installation
+  - kb
 title: "Installing the Agent with Proxy Settings on Linux"
 knowledge_article_id: kA0Qk0000002B2iKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Installing the Agent with Proxy Settings on Linux

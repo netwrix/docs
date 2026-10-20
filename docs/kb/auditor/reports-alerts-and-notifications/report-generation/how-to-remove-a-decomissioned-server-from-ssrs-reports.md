@@ -14,13 +14,13 @@ keywords:
   - remove server
 products:
   - auditor
-sidebar_label: How to remove a decomissioned server from SSRS rep
+sidebar_label: How to remove a decommissioned server from SSRS rep
 tags: []
-title: "How to remove a decomissioned server from SSRS rep"
+title: "How to remove a decommissioned server from SSRS rep"
 knowledge_article_id: kA00g000000H9VpCAK
 ---
 
-# How to remove a decomissioned server from SSRS rep
+# How to remove a decommissioned server from SSRS rep
 
 How to remove a decommissioned file server from the drop down menu in SQL Report Manager?
 

@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # Alerts Interface
 
-The Alerts interface allows you to quickly view recent Security events, Operations events, and
-Configuration events for Threat Prevention - all of which are known as alerts. These events are
-system-generated and do not require any prior configuration.
+Use the Alerts interface to view recent Security events, Operations events, and
+Configuration events for Threat Prevention — all of which are known as alerts. These events are
+system-generated and don't require any prior configuration.
 
 You can choose to view alerts related to analytics configuration and monitoring status on the Alerts
 interface. See the [Alerts Cleanup Window](/docs/threatprevention/7.5/admin/alerts/alertscleanup.md) topic for options to display
@@ -31,7 +31,7 @@ The following options are available on the toolbar:
 
 Example for the Alerts for Last [number] Hours Option
 
-Below is an example of how to use the Alerts for Last [number] Hours option.
+The following example shows how to use the Alerts for Last [number] Hours option.
 
 The number of hours set is based on UTC and is adjusted for the time zones of the Administration
 Console server and the Agent that is monitoring the events. Let's assume the following:
@@ -76,7 +76,7 @@ The data grid displays the following information for each event:
   prefix to differentiate them from those generated for the database maintenance job.
 
 This data grid employs features for sorting, filtering, searching, and more. See the
-[ Data Grid Functionality](/docs/threatprevention/7.5/admin/navigation/datagrid.md) topic for additional information.
+[ Data Grid Functionality](/docs/threatprevention/7.5/admin/navigation/datagrid.md) topic for more information.
 
 Select an event in the data grid to view its details.
 
@@ -84,29 +84,29 @@ In addition to this information, several notifications have been sent for the ev
 
 ## Additional Considerations
 
-Below are some considerations:
+Consider the following:
 
 - Occasionally a Microsoft Security Bulletin impacting LSASS can interfere with the Agent
   instrumentation resulting in LSASS shutting down. The Agent is configured to monitor for an LSASS
   process termination shortly after a server reboot. The
   [LSASS Process Terminated](/docs/threatprevention/7.5/troubleshooting/lsass.md) alert (Operations alert) is triggered
   in this event and the Agent is stopped. As a result, all monitoring/blocking by that Agent stops.
-  To resolve the issue, either upgrade to the latest version of the Agent or simply upgrade
-  SI.ActiveDirectoryMonitor.dll - commonly known as ADMonitor DLL (recommended). See the
-  [Upgrade ADMonitor](/docs/threatprevention/7.5/admin/agents/agent-management/upgradeadmonitor.md)topic for additional information.
+  To resolve the issue, either upgrade to the latest version of the Agent or upgrade
+  SI.ActiveDirectoryMonitor.dll — commonly known as ADMonitor DLL (recommended). See the
+  [Upgrade ADMonitor](/docs/threatprevention/7.5/admin/agents/agent-management/upgradeadmonitor.md) topic for more information.
 
   :::info
   Activate an email notification for the _LSASS process terminated_ alert. See
   the
   [Enable the 'LSASS Process Terminated' Email Alert](/docs/threatprevention/7.5/troubleshooting/lsass.md#enable-the-lsass-process-terminated-email-alert)
-  topic for additional information.
+  topic for more information.
   :::
 
 
 - In addition to the LSASS process termination check, the Agent can be configured for a Safe Mode.
   In Safe Mode, the Agent records the version of the LSASS DLLs that it hooks into during
   installation. When an Agent is restarted, it compares the DLL versions with the recorded list. If
-  the versions do not match, the Windows AD Events monitoring module is not loaded. The Agent’s
+  the versions don't match, the Windows AD Events monitoring module isn't loaded. The Agent’s
   status in the Agents interface changes to Active (Modules Pending), and all Active Directory
   monitoring/blocking by that Agent stops. The 'Agent Started in AD Monitor pending mode' alert
   (Operations alert) is triggered in this event. To resolve the issue temporarily, the Threat
@@ -114,11 +114,11 @@ Below are some considerations:
   [Start Pending Modules](/docs/threatprevention/7.5/admin/agents/agent-management/startpendingmodules.md) topic for additional
   information. It is also recommended to upgrade SI.ActiveDirectoryMonitor.dll (commonly known as
   ADMonitor DLL) to resolve the issue permanently. See the
-  [Upgrade ADMonitor](/docs/threatprevention/7.5/admin/agents/agent-management/upgradeadmonitor.md) topic for additional information.
+  [Upgrade ADMonitor](/docs/threatprevention/7.5/admin/agents/agent-management/upgradeadmonitor.md) topic for more information.
 
   :::info
   Activate an email notification for this alert. See the
   [Enable Agent Started in AD Monitor Pending Mode Email Alert](/docs/threatprevention/7.5/admin/agents/safemode.md#enable-agent-started-in-ad-monitor-pending-mode-email-alert)
-  topic and the [Agent Safe Mode](/docs/threatprevention/7.5/admin/agents/safemode.md) topic for additional information.
+  topic and the [Agent Safe Mode](/docs/threatprevention/7.5/admin/agents/safemode.md) topic for more information.
 
   :::

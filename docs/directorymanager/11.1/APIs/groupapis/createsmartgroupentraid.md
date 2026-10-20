@@ -255,7 +255,7 @@ value in the Value attribute of the GroupType parameter.
             ],
             "info": [
                 {
-                    "Value": "This is an automated group, please do not modify membership. Membership is controlled by GroupID.",
+                    "Value": "This is an automated group, please don't modify membership. Membership is controlled by GroupID.",
                     "Action": 0
                 }
             ]
@@ -591,7 +591,7 @@ value in the Value attribute of the GroupType parameter.
         "info": [
           {
             "identityStoreId": 0,
-            "value": "This is an automated group, please do not modify membership. Membership is controlled by GroupID.",
+            "value": "This is an automated group, please don't modify membership. Membership is controlled by GroupID.",
             "dn": null,
             "action": 0,
             "attributeCollection": {},

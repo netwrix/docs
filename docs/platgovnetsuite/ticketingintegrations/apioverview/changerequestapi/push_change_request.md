@@ -227,7 +227,7 @@ Returns a JSON format string.
 
 **Message**
 
-**"Unable to load Change Request. External ID: xxxx"**: There is an error with the change request.
+**"Uncan load Change Request. External ID: xxxx"**: There is an error with the change request.
 
 Error messages are returned if any exceptions are encountered.
 

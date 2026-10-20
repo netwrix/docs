@@ -7,7 +7,7 @@ sidebar_position: 110
 # Kerberos Weak Encryption Analytic Type
 
 The **Kerberos Weak Encryption** analytic type identifies Kerberos tickets with RC4_HMAC_MD5
-encryption by detecting the use of weak encryption. Various attack methods utilize weak Kerberos
+encryption by detecting the use of weak encryption. Various attack methods use weak Kerberos
 encryption cyphers, including Overpass-the-Hash.
 
 | Kerberos Weak Encryption |                    |
@@ -33,7 +33,7 @@ Open the Kerberos Weak Encryption Policy in any of the following ways:
 
 - Click Analytics in the left pane to launch the Analytics interface. Then click the gear icon for
   the analytic.
-- Expand the Analytics node and click the desired analytic. On the analytic window, click the gear
+- Expand the Analytics node and click the analytic. On the analytic window, click the gear
   icon available in the top right corner.
 
 The Configure Analytics window has one tab:
@@ -48,20 +48,19 @@ The Configure Analytics window has one tab:
 The **Policy** tab for configuring analytics consists of three sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/7.5/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can’t be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/overview.md) is configured. The only exception is that the
   [Authentication Monitoring Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/authenticationmonitoring.md) is hard
-  coded, and the Success filter cannot be modified.
+  coded, and the Success filter can’t be modified.
 
   - Scope the servers to be included in or excluded from monitoring on the IP Addresses (from)
     filter, the IP Addresses (to) filter, the Hosts (from) filter, or the Hosts (to) filter.
 
     :::note
     Some authentication events may return only a host name (NetBIOS or FQDN), others
-    may return only an IP address. It is recommended to take this into account when entering
-    filter values.
+    may return only an IP address. If you enter filter values, take this into account.
     :::
 
 

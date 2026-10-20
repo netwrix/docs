@@ -23,7 +23,7 @@ knowledge_article_id: kA0Qk0000000ZdhKAE
 
 # Logs to Collect for Netwrix Auditor SMS Alert Issues
 
-## Qusetion
+## Question
 
 Netwrix Auditor does not send SMS alerts, while email alerts work fine. What logs should be collected and provided to the Netwrix support team to troubleshoot the issue?
 

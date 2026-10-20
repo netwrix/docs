@@ -13,9 +13,9 @@ The Groups tab shows information about the domain groups on the selected resourc
 The Groups tab has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Type — Provides options to filter results based on a chosen criterion: Not Enrolled, Can Log In,
-  and Admin
+and Admin
 - Add to NPS User Role — Onboards the selected account, granting the Privilege Secure User role
 - Remove NPS Role — Removes console access from the selected account
 - Refresh — Reload the information displayed

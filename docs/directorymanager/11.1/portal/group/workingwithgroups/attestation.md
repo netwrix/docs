@@ -17,7 +17,7 @@ While attesting a group, the owner can:
   group membership instantly or after x number of days, depending on the configurations made by the
   administrator.
 
-A group expires when it is not attested and renewed during its expiring days.
+A group expires when it isn't attested and renewed during its expiring days.
 
 **History Logging**
 
@@ -31,7 +31,7 @@ logged:
 
 ## Attest a group
 
-Follow the steps to attest a group.
+To attest a group.
 
 1. In Directory Manager portal, on the left navigation bar, click **Groups.** On the **Groups** page
    select the **All Groups** tab.
@@ -47,7 +47,7 @@ Follow the steps to attest a group.
     - **Not logged in 30 days**: Lists group members that have not logged into their workstations in
       the last 30 days.
     - **All Members**: Lists active group members only. Disabled members and those who have not
-      logged in during the last 30 days are not included.
+      logged in during the last 30 days aren't included.
 
 5. On each of these tabs, review the members list and set their status to _active_ or _inactive_.
 
@@ -58,13 +58,13 @@ Follow the steps to attest a group.
         The **Active All** and **Inactive All** buttons are available if the administrator has
         allowed group owners to specify the status of all member in a single click.
 
-    - If the **Active All** and **Inactive All** buttons are not available, the group owner must
+    - If the **Active All** and **Inactive All** buttons aren't available, the group owner must
       verify each member one by one (by individually specifying its status as active or inactive.
 
     :::note
-    Setting ‘active’ as status for a disabled user does not activate or enable the user's
+    Setting ‘active’ as status for a disabled user doesn't activate or enable the user's
     account.  
-    Setting ‘active’ as status for users who have not logged in during the last 30 days does not
+    Setting ‘active’ as status for users who have not logged in during the last 30 days doesn't
     move them to the **All Members** listing.
     :::
 
@@ -89,8 +89,8 @@ Follow the steps to attest a group.
 
         You add Smith as a temporary member to Group A on May 15 for future dates, May 20-30.
 
-        Smith will be displayed in Group A’s membership with ‘Addition Pending’ as its membership
-        type from May 15 to 19. However, Smith would not be added to group membership in the
+        Smith appears in Group A’s membership with ‘Addition Pending’ as its membership
+        type from May 15 to 19. However, Smith wouldn't be added to group membership in the
         provider.
 
         On May 20, Smith will become a temporary member of Group A and its membership type will
@@ -109,7 +109,7 @@ Follow the steps to attest a group.
 
         You remove Smith from Group A on May 15 for future dates, May 20-30.
 
-        Smith will be displayed in Group A’s membership with ‘Removal Pending’ as membership type
+        Smith appears in Group A’s membership with ‘Removal Pending’ as membership type
         from May 15 to 19.
 
         On May 20, Smith’s membership type in Directory Manager will change to ‘Temporary Removed’;
@@ -137,7 +137,7 @@ Follow the steps to attest a group.
         be removed from group membership in Directory Manager, based on the specified days.
 
         During this period, the member can be activated (added back to group membership). When the
-        member is not activated, the Membership Life Cycle job removes it from group membership in
+        member isn't activated, the Membership Life Cycle job removes it from group membership in
         Directory Manager too.
 
     - If the administrator has not specified any days, the inactivated member is removed from group

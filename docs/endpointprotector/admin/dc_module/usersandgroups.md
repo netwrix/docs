@@ -60,9 +60,7 @@ In addition to the Standard device control rights, if enabled from the Global Se
 administrator can create fallback policies for Outside Network and Outside Hours circumstances.
 
 :::note
-The Restore Global Rights button can be used to revert to a lower level of rights. Once
-this button is pushed all rights on that level will be set to preserve global settings and the
-system will use the next level of rights.
+Use the Restore Global Rights button to revert to a lower level of rights. When this button is pushed, all rights on that level reset to preserve global settings and the system uses the next level of rights.
 :::
 
 
@@ -76,10 +74,8 @@ From this section, you can edit the settings for each user.
 
 ![You can edit the settings for each user.](groupsettings.webp)
 
-Deﬁning custom settings for all users is not necessary since a user is perfectly capable of
-functioning correctly without any manual settings deﬁned. It will do this by either inheriting the
-settings from the group it belongs to or, if not possible, the global settings, which are mandatory
-and exist in the system with default values from installation.
+You don't need to define custom settings for each user—users function correctly with inherited
+settings from their group or, if none exist, the global settings, which come with default values.
 
 ### User History
 
@@ -114,7 +110,7 @@ Rights, Manage Settings, History, and Delete.
 
 #### Regular Groups
 
-Regular Groups are the groups created by the Administrator or are imported from AD and are not
+Regular Groups are the groups created by the Administrator or are imported from AD and aren't
 created based on a rule. From this section you can add or remove Computers or Users.
 
 #### Smart Groups
@@ -128,8 +124,7 @@ To use Smart Groups, follow these steps:
 section, scroll to the bottom of the page and click **Save**.
 
 :::note
-By enabling the Smart Group feature, Computers and Users will not be automatically
-assigned to the Default Group unless you create a Smart Group.
+By enabling the Smart Group feature, Computers and Users won't be automatically assigned to the Default Group unless you create a Smart Group.
 :::
 
 
@@ -138,9 +133,9 @@ assigned to the Default Group unless you create a Smart Group.
 **Step 2 –** Create a Smart Groups from Device Control, Groups section. Click **Create**, provide
 the following and then click **Save**:
 
-- Group name, description and Department
+- Group name, description, and Department
 - Enable the Smart Group setting
-- Select the Entity, Computers or Users
+- Select the Entity, Computers, or Users
 - Set rules for the Computers or Users by adding conditions for their selected properties.
 
 These entities support similar, but slightly different properties that can be used in filtering, as follows:
@@ -193,7 +188,7 @@ The Synchronization process will not change settings for the regular groups.
 If a new Computer is registered and matches one of the rules, the Computer will automatically be
 assigned to that Group.
 
-If the new Computer does not match the rule, it will be added to the Default Group, if Default
+If the new Computer doesn't match the rule, it will be added to the Default Group, if Default
 Groups are enabled from System Conﬁguration, System Settings, and the Smart Groups section.
 
 ![Editing Group Information](groupinformationedit.png)
@@ -205,9 +200,9 @@ click **Delete**.
 
 Smart Groups have the following limitations:
 
-- Smart Groups do not display assigned computers or users
-- You cannot manually add an entity to a Smart Group
-- Smart Groups are part of the Default Department but do not use Departments
+- Smart Groups don't display assigned computers or users
+- You can't manually add an entity to a Smart Group
+- Smart Groups are part of the Default Department but don't use Departments
 
 If you disable Smart Group from System Settings, the Smart Group will be converted into a Regular
 Group. This will preserve its settings, rights, and other settings but will lose its entities and
@@ -224,8 +219,8 @@ active/online).
 
 #### Default Groups
 
-Default Groups are groups of Computers and Users that do not belong to Smart Groups. These are
-Computers and Users that do not follow the name pattern set for Smart Groups.
+Default Groups are groups of Computers and Users that don't belong to Smart Groups. These are
+Computers and Users that don't follow the name pattern set for Smart Groups.
 
 :::note
 Default Groups are available only if Smart Groups are enabled. To use Default Groups,
@@ -239,7 +234,7 @@ Settings > on the Smart Groups section, scroll to the bottom of the page and cli
 ![Enabling Default Groups for Computers and Users from System Conﬁguration](enablesmartgroups.webp)
 
 :::warning
-You are not required to manually create Default Groups – by enabling them, the Default
+You aren't required to manually create Default Groups – by enabling them, the Default
 Groups for Users and Computers will be automatically created.
 :::
 
@@ -255,7 +250,7 @@ Groups section, find the Actions column, select **Edit**, and then click **Sync*
 Default Groups have the following limitations:
 
 - You can only edit Default Groups description, not the Default Groups name
-- The Default Groups cannot be deleted, but can be disabled from System Conﬁguration, System
+- The Default Groups can't be deleted, but can be disabled from System Conﬁguration, System
   Settings, on the Smart Groups section
 - If Default Groups are disabled, they will be deleted with all their dependencies
 
@@ -316,8 +311,5 @@ From this section, you can edit the settings for each group.
 
 ![groupsettings](groupsettings.webp)
 
-Computers and users can be grouped to make editing the settings easier and more logical. Deﬁning
-custom settings for all groups is not necessary since a computer is perfectly capable of functioning
-correctly without any granular settings deﬁned. It will do this by either inheriting the settings
-from the group it belongs to or, if not possible, the global settings, which are mandatory and exist
-in the system with default values from installation.
+Grouping computers and users makes editing settings easier and more logical. You don't need to define custom settings for each group—computers function correctly with inherited
+settings from their group or, if none exist, the global settings, which come with default values.

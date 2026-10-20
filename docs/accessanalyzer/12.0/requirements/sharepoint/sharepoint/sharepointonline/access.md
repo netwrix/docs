@@ -19,7 +19,7 @@ Microsoft Entra ID.
 
 **Configuration Settings from the Registered Application**
 
-The following settings are needed from your tenant once you have registered the application:
+After you register the application, the following settings are needed from your tenant:
 
 - Client ID – This is the Application (client) ID for the registered application
 - Key – The comma delimited string containing the path to the certificate PFX file, certificate
@@ -28,9 +28,10 @@ The following settings are needed from your tenant once you have registered the 
 
 Configure Modern Authentication for SharePoint Online using SP_RegisterAzureAppAuth Instant Job
 
-Registering a Microsoft Entra ID application and provisioning it to grant permissions to SharePoint
-Online can be automated using the SP_RegisterAzureAppAuth job from the Access Analyzer Instant Job
-Library. The SP_RegisterAzureAppAuth job uses the PowerShell Data Collector to automatically
+You can automate registering a Microsoft Entra ID application and provisioning it to grant
+permissions to SharePoint Online with the SP_RegisterAzureAppAuth job from the Access Analyzer
+Instant Job Library. The SP_RegisterAzureAppAuth job uses the PowerShell Data Collector to
+automatically
 configure modern authentication for SharePoint Online. It requires:
 
 - A Connection Profile containing the following two user credentials, both with an Account Type of
@@ -103,9 +104,9 @@ against Entra ID while requesting the App Only access token. See the Microsoft
 [Granting access via Azure AD App-Only](https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azuread)
 article for additional information.
 
-Follow the steps create the self-signed X.509 certificate.
+Create the self-signed X.509 certificate:
 
-**Step 1 –** To generate a certificate, use the sample PowerShell command below:
+**Step 1 –** To generate a certificate, use the following sample PowerShell command:
 
 - Change the following parameters in the sample PowerShell command. See the Microsoft
   [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pki/new-selfsignedcertificate)
@@ -115,7 +116,7 @@ Follow the steps create the self-signed X.509 certificate.
       certificate
     - Subject – A unique name for the new App (always starts with CN=, to denote a canonical name)
     - FriendlyName – Same as Subject name minus the canonical name prefix
-    - NotAfter – A datetime string denoting the certificate's expiration date - in the above sample,
+    - NotAfter – A datetime string denoting the certificate's expiration date - in the following example,
       Get-Date.AddYears(11) specifies that the certificate will expire 11 years from the current
       datetime
 
@@ -131,7 +132,7 @@ $certPath variable (see Step 1).
 
 :::note
 The environment variable `SAINSTALLDIR` always points to the base Access Analyzer install
-directory; simply append the PrivateAssemblies to point to that folder with the following cmdlet:
+directory; append the PrivateAssemblies to point to that folder with the following cmdlet:
 :::
 
 
@@ -162,10 +163,10 @@ more secure before running this cmdlet.
 
 ## Register a Microsoft Entra ID Application
 
-Follow the steps to register Access Analyzer with Microsoft Entra ID.
+Register Access Analyzer with Microsoft Entra ID:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -187,14 +188,14 @@ registrations.
 **Step 5 –** Click **Register**.
 
 The Overview page for the newly registered app opens. Review the newly created registered
-application. Now that the application has been registered, permissions need to be granted to it.
+application. Now that you've registered the application, grant it permissions.
 
 ## Upload Self-Signed Certificate
 
-Follow the steps to provision the upload your self-signed certificate.
+Upload your self-signed certificate:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -219,10 +220,10 @@ The upload certificate public key .cer file is an application key credential.
 
 ## Grant Permissions to the Registered Application
 
-Follow the steps to grant permissions to the registered application.
+Grant permissions to the registered application:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -298,15 +299,15 @@ Select the following permissions:
 **Step 12 –** Click **Grant Admin Consent for [tenant]**. Then click **Yes** in the confirmation
 window.
 
-Now that the permissions have been granted to it, the Connection Profile and host settings for
-Access Analyzer need to be collected.
+Now that you've granted the permissions, collect the Connection Profile and host settings for
+Access Analyzer.
 
 ## Identify the Client ID
 
-Follow the steps to find the registered application's Client ID.
+Find the registered application's Client ID:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::

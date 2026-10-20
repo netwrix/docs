@@ -15,8 +15,8 @@ Use the following fields to specify the text of the email:
 - Subject – Specify a subject for the email. The contents of this field displays as the subject line
   of the delivered email. Enter text directly and optionally use the Insert field to insert one or
   more data fields. This is a required field.
-- Insert Field – Inserts a data field into the subject or body of the email. The drop-down menu
-  displays a list of available fields. Once a selection displays in the field, click on the blue Up
+- Insert Field – Inserts a data field into the subject or body of the email. The dropdown menu
+  displays a list of available fields. Once a selection displays in the field, click the blue Up
   and Down arrows to insert the field into the body or the subject, respectively. This field is
   optional.
 - Show sample input source data – To display a table of sample source data, click the icon next to
@@ -25,7 +25,7 @@ Use the following fields to specify the text of the email:
   blue arrows to display the SMTP Options dialog box
 - Preview – Displays the Message Preview window containing a preview of the current SendMail. Click
   **Send** to send a single message to the addresses in the Recipient field in the Message Preview
-  window. The Preview button is active only if the Recipients field is populated on the Properties
+  window. The Preview button is active only if you populate the Recipients field on the Properties
   page of the Send Mail Action Module Wizard. See the
   [Messages Preview Window](#messages-preview-window) topic for additional information.
 - Clear Template – Clears any content from the Subject and Text Entry box
@@ -54,7 +54,7 @@ Use the following fields to specify the text of the email:
 
 ## Text Entry Box
 
-The Text Entry box allows you to compose a message. A Microsoft Word-style editor provides
+Use the Text Entry box to compose a message. A Microsoft Word-style editor provides
 formatting options including the ability to insert dynamic text from the specified table (such as a
 username) through the Insert field option. Use the editor to personalize the content and appearance
 of each message.
@@ -62,13 +62,13 @@ of each message.
 Example:
 
 Assume the source table includes a column containing the names of intended recipients. Place the
-cursor in the greeting section of the email. Next, select that field from the Insert field drop-down
+cursor in the greeting section of the email. Next, select that field from the Insert field dropdown
 list and click the down arrow to insert a dynamic field. The column name appears in the Text Entry
 box, enclosed by brackets:
 
 Dear [ProbableOwner];
 
-You are approaching your Mailbox storage quota. Please clean up any unneeded items.
+You are approaching your Mailbox storage quota. clean up any unneeded items.
 
 **Thank you,**
 

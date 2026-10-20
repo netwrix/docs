@@ -26,4 +26,4 @@ sidebar_position: 90
 - System tasks are no longer deactivated after each run if they were configured with the interval
   'Once' in the past.
 - HSM accesses are limited to a minimum now.
-- A self-defined password can be used for the WebViewer export again
+- A self-defined password supports the WebViewer export again

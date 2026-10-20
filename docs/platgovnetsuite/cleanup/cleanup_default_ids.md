@@ -6,8 +6,7 @@ sidebar_position: 30
 
 # Clean Up Scripts with Default IDs
 
-Default IDs significantly increase the cost and risks associated with any development work, and are
-a critical clean up practice.
+Default IDs significantly increase the cost and risk associated with development work and represent a critical clean up practice.
 
 1. Open **Strongpoint** > **Clean Up** > **Default ID**
 2. Review each item to determine how they should be modified if their identifier is changed.

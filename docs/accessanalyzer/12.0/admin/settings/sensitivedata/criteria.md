@@ -13,23 +13,22 @@ jobs using the Criteria Tab.
 
 The options on the Criteria Tab are:
 
-- Add – Opens the Select Criteria window to add search criteria that will be inherited by Sensitive
-  Data scan jobs. See the [Select Criteria Window](#select-criteria-window) topic for additional
+- Add – Opens the Select Criteria window to add search criteria that Sensitive Data scan jobs
+  inherit. See the [Select Criteria Window](#select-criteria-window) topic for additional
   information.
-- Remove – Removes the selected criteria from being inherited by Sensitive Data scan jobs
+- Remove – Removes the selected criteria, so Sensitive Data scan jobs no longer inherit them
 - Launch Editor – Opens the Sensitive Data Criteria Editor. See the
   [Sensitive Data Criteria Editor](/docs/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/overview.md) topic
   for additional information.
 - Search selected criteria – Filter the criteria listed in the Criteria tab
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Sensitive Data view. These
-buttons become enabled when modifications are made to the Sensitive Data global settings. Whenever
-changes are made at the global level, click **Save** and then **OK** to confirm the changes.
-Otherwise, click **Cancel** if no changes were intended.
+buttons become enabled when you modify the Sensitive Data global settings. Whenever you make changes at the global level, click **Save** and then **OK** to confirm the changes.
+Otherwise, click **Cancel** if you didn't intend to make changes.
 
 ## Select Criteria Window
 
-Follow the steps to add Search Criteria for Sensitive Data scan jobs.
+Add Search Criteria for Sensitive Data scan jobs:
 
 ![Add criteria](/images/accessanalyzer/12.0/admin/settings/sensitivedata/addcriteria.webp)
 
@@ -37,13 +36,13 @@ Follow the steps to add Search Criteria for Sensitive Data scan jobs.
 
 ![Select Criteria window](/images/accessanalyzer/12.0/admin/settings/sensitivedata/selectcriteria.webp)
 
-**Step 2 –** Select the checkbox to select the criteria. Use the **Search Criteria** text field to
-filter the list using keywords or expand each category to view and select individual Sensitive Data
+**Step 2 –** Select the checkbox for each criterion you want. Use the **Search Criteria** text field
+to filter the list by keyword, or expand each category to view and select individual Sensitive Data
 search criteria.
 
 **Step 3 –** Click **OK** to confirm changes. The Select Criteria window closes.
 
 **Step 4 –** Click **Save** on the Sensitive Data view to save changes.
 
-The selected Search Criteria are now inherited by Sensitive Data scan jobs that are set to use
-global sensitive data criteria settings.
+Sensitive Data scan jobs that use global sensitive data criteria settings now inherit the selected
+Search Criteria.

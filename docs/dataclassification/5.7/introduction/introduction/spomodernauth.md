@@ -33,12 +33,9 @@ Netwrix Data Classification and other services.
     2. Go to the **Details** tab.
     3. Select **Copy to File**.
 
-**:::note**
-    
+    :::note
+    Don't export private key.
     :::
-
-
-    Do not export private key.
 
     4. Set file type to _DER-encoded CER_.
 
@@ -61,7 +58,7 @@ To register a new Azure AD application, do the following:
     :::
 
 
-8. Copy your application ID from the **Overview** section it to a safe location.
+8. Copy your application ID from the **Overview** section to a safe location.
 
 ## Step 3: Grant Required Permissions
 
@@ -77,13 +74,13 @@ For the newly created app, you should use _Application_ permissions.
 
 :::note
 By default, a new application is granted one delegated permission for **Microsoft Graph
-API** – **User.Read**. It is not required and can be removed.
+API** – **User.Read**. It isn't required and can be removed.
 :::
 
 
 Do the following:
 
-When found, click on the entry and proceed with adding the necessary permissions. The steps from
+When found, click the entry and proceed with adding the necessary permissions. The steps from
 here on remain the same, so in most cases you would need the Application permissions entry, and the
 relevant set of permissions therein.
 

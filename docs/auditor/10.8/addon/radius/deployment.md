@@ -12,7 +12,7 @@ the add-on on the computer where Auditor is installed or on your RADIUS server.
 Depending on the execution scenario you choose, you have to define a different set of script
 parameters. See the [Define Parameters](/docs/auditor/10.8/addon/radius/parameters.md) topic for additional information.
 
-Netwrixsuggests the following execution scenarios:
+Netwrix suggests the following execution scenarios:
 
 | Scenario                                                                                                                                                                                   | Example                                                                                                                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

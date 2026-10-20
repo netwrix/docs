@@ -6,8 +6,8 @@ sidebar_position: 140
 
 # SMS Authentication
 
-To enable users to enroll and authenticate their identity store accounts using SMS, you must make
-sure that an SMS gateway account is linked with the identity store. Using this gateway account,
+Users can enroll in and authenticate their identity store accounts using SMS if you ensure that an
+SMS gateway account is linked with the identity store. Using this gateway account,
 Directory Manager sends confirmation codes to the users' mobile phone numbers for verification.
 
 See the [Manage SMS Gateway Accounts](/docs/directorymanager/11.1/admincenter/smsgateway/manage.md) topic for creating and managing
@@ -26,7 +26,7 @@ To enable it, see the [Enable Authentication Types](/docs/directorymanager/11.1/
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **SMS Authentication**.
-4. In the **SMS gateway account** drop-down list on the **SMS Authentication** page, select an SMS
+4. In the **SMS gateway account** dropdown list on the **SMS Authentication** page, select an SMS
    gateway account to link it with the identity store. If a default SMS gateway account is defined
    before the identity store was created, it is auto selected in this list.
 5. In the **Text message** box, modify the displayed message, except the [Code] placeholder.  

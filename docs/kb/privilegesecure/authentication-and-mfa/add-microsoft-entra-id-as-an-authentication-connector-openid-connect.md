@@ -44,7 +44,7 @@ Perform the following steps in Microsoft Entra ID as an administrator to prepare
 
    ![App registration page with Redirect URI field highlighted](./../0-images/ka0Qk000000DtGP_0EM4u000004bUjf.png)
 
-4. Click **Register**. After registration completes, you will be redirected to the new app's **Overview** page.
+4. Click **Register**. After registration completes, you are redirected to the new app's **Overview** page.
 5. In the left sidebar, click **Authentication**. Scroll down and enter the same **Callback Address** from Step 3 in the **Front-channel logout URL** field.  
    Enable the following checkboxes:
    - **Access tokens (used for implicit flows)**
@@ -54,8 +54,8 @@ Perform the following steps in Microsoft Entra ID as an administrator to prepare
 
 6. Click **Save** at the top of the page, then return to the app's **Overview** page.
 7. Click **Endpoints** near the top of the page. Copy the **OpenID Connect metadata document** URL and open it in a new browser tab.  
-   This will display JSON data. To make it easier to read, consider using a JSON browser extension such as **JSON Formatter** for Chromium-based browsers.
-8. While viewing the JSON data, find the **Issuer** key. **Copy only the value between the forward slashes**, not the entire line. In this case, it will be a URL.  
+   This displays JSON data. To make it easier to read, consider using a JSON browser extension such as **JSON Formatter** for Chromium-based browsers.
+8. While viewing the JSON data, find the **Issuer** key. **Copy only the value between the forward slashes**, not the entire line. In this case, it is a URL.  
    For example:
 
    ```text
@@ -81,7 +81,7 @@ After completing the **Steps for Microsoft Entra ID**, perform the following ste
 5. Click **Test Connection**.  
    On the Microsoft Entra ID sign-in page that loads, **do not sign in**. Once you have verified that the sign-in page loaded properly, click the back button in your browser to return to Netwrix Privilege Secure. The connection test is successful if Microsoft Entra ID did not display an error.
 6. Click **Next** to advance in the Authentication Connector Configuration Wizard. You will now be on the **Test Login** page.
-7. Click **Login** and sign in as any Microsoft Entra ID user (this does not need to be an administrator). You will be prompted to accept the app's requested permissions. Check **Consent on behalf of your organization** and click **Accept**.
+7. Click **Login** and sign in as any Microsoft Entra ID user (this does not need to be an administrator). You are prompted to accept the app's requested permissions. Check **Consent on behalf of your organization** and click **Accept**.
 
    ![Microsoft Entra ID permissions consent dialog](./../0-images/ka0Qk000000DtGP_0EM4u000004bUjz.png)
 
@@ -112,4 +112,4 @@ After completing the **Steps for Microsoft Entra ID**, perform the following ste
 
     ![Netwrix Privilege Secure login screen with OpenID Connect option](./../0-images/ka0Qk000000DtGP_0EM4u000004bUkO.png)
 
-    When using the OpenID Connect log-in option, the user will be redirected to sign in to Microsoft Entra ID. Upon successful authentication, the user will be redirected to the Netwrix Privilege Secure UI as their signed-in user.
+    When using the OpenID Connect log-in option, the user is redirected to sign in to Microsoft Entra ID. Upon successful authentication, the user is redirected to the Netwrix Privilege Secure UI as their signed-in user.

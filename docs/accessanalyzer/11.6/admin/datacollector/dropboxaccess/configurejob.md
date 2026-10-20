@@ -6,12 +6,12 @@ sidebar_position: 20
 
 # Custom Dropbox Connection Profile & Host List
 
-The DropboxAccess Data Collector requires a custom Connection Profile to be created and assigned to
-the job or job group conducting the data collection.
+The DropboxAccess Data Collector requires you to create a custom Connection Profile and assign it
+to the job or job group conducting the data collection.
 
 ## Connection Profile
 
-Creating the Connection Profile requires an access token. The access token is generated on the Scan
+Creating the Connection Profile requires an access token. You generate the access token on the Scan
 Options page of the Dropbox Access Auditor Data Collector Wizard.
 
 Create a Connection Profile and set the following information on the User Credentials window:
@@ -32,6 +32,6 @@ topic for additional information.
 
 ## Host List
 
-The host list should be set to:
+Set the host list to:
 
 - Local host

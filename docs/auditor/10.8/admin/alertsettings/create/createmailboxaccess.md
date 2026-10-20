@@ -17,17 +17,15 @@ The procedure below describes the basic steps, required for creation of a monito
 be used to collect data on non-owner mailbox access events. See
 [Event Log Manager](/docs/auditor/10.8/tools/eventlogmanager/eventlogmanager.md) topic for additional information.
 
-Follow the steps to create alert for non-owner mailbox access events.
-
 **Step 1 –** Create a monitoring plan in Netwrix Auditor Event Log Manager.
 
-**Step 2 –** Make sure that the Enable event log collection checkbox is selected. Specify the name
+**Step 2 –** ensure that the Enable event log collection checkbox is selected. Specify the name
 for the new plan, for example, "_Non-owner mailbox access auditing_".
 
 **Step 3 –** Navigate to the Monitored computers list and add a server where your Exchange
 organization resides.
 
-**Step 4 –** On the General tab, click Configure next to Alerts. Make sure the predefined alerts are
+**Step 4 –** On the General tab, click Configure next to Alerts. Ensure the predefined alerts are
 disabled. Click Add to create an alert for non-owner mailbox access event.
 
 **Step 5 –** In the Alert Properties wizard, specify the alert name and enter alert description
@@ -80,7 +78,7 @@ the email address where notifications will be delivered.
 email address and inform you if any problems are detected.
 
 **Step 11 –** Click Edit next to Audit Archiving Filters step, in the Inclusive Filters section
-clear the filters you do not need, click Add and specify the following information:
+clear the filters you don't need, click Add and specify the following information:
 
 - The filter name and description (e.g., Non-owner mailbox access event)
 - In Event Log, enter _"Netwrix Non-Owner Mailbox Access Agent"_.

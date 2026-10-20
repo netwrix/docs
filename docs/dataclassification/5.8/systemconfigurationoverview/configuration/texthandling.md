@@ -1,0 +1,115 @@
+---
+title: "Text Processing"
+description: "Text Processing"
+sidebar_position: 60
+---
+
+# Text Processing
+
+This section contains information on how to configure text processing. Related options apply to:
+
+- Best Bets
+- Content Type Extension Mapping
+- Content Type Extraction Methods
+- Language Detection
+- No Stem
+- OCR Language Mapping
+- Synonyms
+- Text Patterns
+
+[](#)Best Bets
+
+Sometimes an application may want to push selected documents to the top of a hitlist for specific
+queries. To do this, specify Best Bets for specific query text.
+
+![configbestbets_thumb_0_0](/images/dataclassification/5.8/configuration/configbestbets_thumb_0_0.webp)
+
+First, enter the search term that you want to match and then click the Add button.
+
+Next, click the term, and specify one or more URLs that should appear at the top of the hit list.
+
+[](#)Content Type Extension Mapping
+
+Sometimes an organization may want to process certain file types as a different content type. The
+primary use case for this is internal content types that map to a content type already understood /
+identified.
+
+In this example, the product treats a .rpt file as a text file: it copies the file to a temporary
+location as a .txt file and processes it as if it were any other text file.
+
+![configcontenttypeextensionmappings](/images/dataclassification/5.8/configuration/configcontenttypeextensionmappings.webp)
+
+[](#)Content Type Extraction Methods
+
+The Content Type Extraction methods describes how the APIs and core
+services handle documents. Several built-in processing methods are available; where no method is
+available, processing defaults to standard Microsoft Search iFilter processing.
+
+You can alter the methods by clicking Edit and then selecting the preferred processing
+method. You can also specify an iFilter as a backup if the primary method
+fails to extract text from the document – the backup method activates if the extraction yields fewer than 5 characters.
+
+If you updated the extraction method, Netwrix recommends re-processing any already-processed
+documents to ensure consistency. Selecting Re-index from the grid for the affected content type
+re-processes the necessary records.
+
+![configcontenttypeextractionmethods_thumb_0_0](/images/dataclassification/5.8/configuration/configcontenttypeextractionmethods_thumb_0_0.webp)
+
+[](#)Language Detection
+
+The language detection list specifies which languages the product considers for auto-detection.
+
+![configlanguages_thumb_0_0](/images/dataclassification/5.8/configuration/configlanguages_thumb_0_0.webp)
+
+If you exclude a language, the system won't use it to identify document language, and it won't appear in the language options in Taxonomy Manager.
+
+:::tip
+You can also enable OCR recognition for non-English images. See the Netwrix knowledge base article [How to enable OCR for non-English images](https://kb.netwrix.com/3519) for setup instructions.
+:::
+
+[](#)No Stem
+
+The No Stem list lets you disable language stemming for a particular word or phrase,
+this supports always applying a phrasematch when a particular term appears as either a
+clue – or a search term.
+
+![confignostem_thumb_0_0](/images/dataclassification/5.8/configuration/confignostem_thumb_0_0.webp)
+
+[](#)OCR Language Mapping
+
+Use the OCR language mapping configuration screen to OCR non-English images with
+Tesseract and the Apache Tika OCR engine. You can map file paths (including parts of paths) to specific Tesseract language packs.
+You can also override the OCR processing mode, enable conversion of PDF files to images for improved text extraction, and override 
+the Page Segmentation mode used by Tika to identify text.
+
+![configocrlanguagemapping](/images/dataclassification/5.8/configuration/configocrlanguagemapping.webp)
+
+[](#)Synonyms
+
+When you submit a query, the system automatically includes synonyms. You can configure a generic
+set of synonyms by using the Synonyms form.
+
+![configsynonyms](/images/dataclassification/5.8/configuration/configsynonyms.webp)
+
+[](#)Text Patterns
+
+Many HTML web pages contain navigation information and other extraneous information that is the same
+for all pages and/or not relevant to the individual page content. If the product indexes all of the
+text from these HTML pages, this can lead to unwanted search results that match, for example,
+an entry in a standard page navigation area.
+
+Use the Text Patterns feature to clean up HTML documents and index terms that would normally be discarded.
+
+![configtextpatterns_thumb_0_0](/images/dataclassification/5.8/configuration/configtextpatterns_thumb_0_0.webp)
+
+The StartTag and EndTag values are case-sensitive strings that identify the content you want to manage. The system manages the content based on the filter type.
+
+You can use three tag types to assist in the cleanup:
+
+- FILTER—Extracts a subset of the HTML page, before extracting the plain text. The product extracts
+  only a single section for each TextFilter processed.
+- DELETE—Deletes sections of the HTML page, before extracting the plain text.
+- INDEX TERM (EndTag ignored)—Create index terms that would otherwise not be formed. For example the
+  term “E.ON” is a useful one for people interested in energy companies. However, this term would
+  not normally be created because a full stop normally acts as a term separator. However, creating
+  an INDEX TERM for this pattern means the product detects and indexes it as required.

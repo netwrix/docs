@@ -6,7 +6,7 @@ sidebar_position: 130
 
 # Completing and Validating a Change Request
 
-Once the changes are complete, validate the Change Request and mark it **Complete**.
+After the changes are complete, validate the Change Request and mark it **Complete**.
 
 1. Open **Strongpoint** > **Change Management Tools** > **Change Request** to view the list of
    Change Requests.

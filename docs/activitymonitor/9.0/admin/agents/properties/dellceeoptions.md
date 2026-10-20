@@ -7,7 +7,7 @@ sidebar_position: 70
 # Dell CEE Options Tab
 
 The Dell CEE Options tab provides options to configure Dell Common Event Enabler (CEE) settings for
-monitoring Dell devices. File activity monitoring leverages the Dell CEE to deliver activity events
+monitoring Dell devices. File activity monitoring uses the Dell CEE to deliver activity events
 from Dell devices.
 
 CEE supports two protocols to deliver events to Activity Monitor: RPC and HTTP. An agent can receive
@@ -63,7 +63,7 @@ Properties window closes.
 ## Windows CEE Manual Configuration
 
 Windows CEE is configured with the windows registry and depends on the selected event delivery mode,
-AUDIT or VCAPS.
+AUDIT, or VCAPS.
 
 For the synchronous real-time delivery mode (AUDIT), use the following steps.
 
@@ -72,7 +72,7 @@ For the synchronous real-time delivery mode (AUDIT), use the following steps.
 
 **Step 2 –** Set the `Enabled` parameter to 1.
 
-**Step 3 –** If the `EndPoint` parameter is empty, set it to the string listed below. If it is not
+**Step 3 –** If the `EndPoint` parameter is empty, set it to the string listed below. If it isn't
 empty (i.e. some other 3rd party application is also receiving activity events from CEE), append the
 following string to the existing `EndPoint` value, separating them with a semicolon.
 
@@ -89,7 +89,7 @@ For the asynchronous bulk delivery mode with a cadence based on a time period or
 
 **Step 2 –** Set the `Enabled` parameter to 1.
 
-**Step 3 –** If the `EndPoint` parameter is empty, set it to the string listed below. If it is not
+**Step 3 –** If the `EndPoint` parameter is empty, set it to the string listed below. If it isn't
 empty (i.e. some other 3rd party application is also receiving activity events from CEE), append the
 following string to the existing `EndPoint` value, separating them with a semicolon.
 
@@ -219,7 +219,7 @@ Here's an example for the asynchronous delivery (VCAPS):
 </CEPP>
 ```
 
-Make sure to set `Enabled` to `1` only in `Audit` or `VCAPS` if Activity Monitor is the only product
+ensure to set `Enabled` to `1` only in `Audit` or `VCAPS` if Activity Monitor is the only product
 receiving activity from CEE. Otherwise, enable the modes according to all product requirements.
 
 If you want to send activity to several 3rd party applications, separate them with semicolons.

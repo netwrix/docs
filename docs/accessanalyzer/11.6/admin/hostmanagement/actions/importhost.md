@@ -6,10 +6,10 @@ sidebar_position: 20
 
 # Import Hosts Option
 
-On the Manual Host Entry page of the Host List Wizard, the **Import** option allows hosts to be
-imported from either a CSV file or a database into the host list being created.
+On the Manual Host Entry page of the Host List Wizard, the **Import** option lets you import hosts
+from either a CSV file or a database into the host list you're creating.
 
-Follow the steps to import hosts.
+To import hosts:
 
 ![Import option on the Manual Host Entry page of the Host List Wizard](/images/accessanalyzer/11.6/admin/hostmanagement/actions/hostlistwizardimport.webp)
 
@@ -28,11 +28,11 @@ step.
 
 - CSV File
 
-    - File Name – Click the ellipsis (**…**) to open a browser window and select the CSV file. This
-      file needs to be stored on the Enterprise Auditor Console server. Once selected, a preview of
-      the file is shown in the preview box.
+    - File Name – Click the ellipsis (**…**) to open a browser window and select the CSV file. You
+      must store this file on the Enterprise Auditor Console server. Once selected, the preview box
+      shows a preview of the file.
     - Includes header row – Select this checkbox if the file contains a header row. Otherwise, the
-      header row will be included in the import (visible within the preview box).
+      import includes the header row (visible within the preview box).
 
 ![Import Hosts window for importing from Database](/images/accessanalyzer/11.6/admin/hostmanagement/actions/importhostsdatabase.webp)
 
@@ -45,23 +45,23 @@ step.
       topic for additional information.
 
         :::note
-        The Provider, Advanced, and All tabs of the Data Link Properties window should not
-        be modified.
+        Don't modify the Provider, Advanced, and All tabs of the Data Link Properties window.
         :::
 
 
-    - Table – Use the dropdown to select the table that contains the hosts to be imported. A preview
-      of the selected table is displayed in the preview box.
+    - Table – Use the dropdown to select the table that contains the hosts to be imported. The
+      preview box displays a preview of the selected table.
 
-**Step 4 –** Use either the drop-down menu or click on the column in the preview box to select the
-column containing the host names. The selected column is highlighted in the preview box.
+**Step 4 –** Use either the dropdown menu or click the column in the preview box to select the
+column containing the host names. The preview box highlights the selected column.
 
 **Step 5 –** Click **OK** to complete the import.
 
 ![Imported hosts added in the Host list box on the Manual Host Entry page of the Host List Wizard](/images/accessanalyzer/11.6/admin/hostmanagement/actions/importhostscomplete.webp)
 
-The Import Hosts window closes, and the imported list of host names is added in the Host list box on
-the Manual Host Entry page of the Host List Wizard. Click **Next** to proceed with configuring the
+The Import Hosts window closes, and Enterprise Auditor adds the imported list of host names to the
+Host list box on the Manual Host Entry page of the Host List Wizard. Click **Next** to proceed with
+configuring the
 host list. See the
 [Add Hosts](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/add.md)
 topic for additional information on the Host List Wizard.

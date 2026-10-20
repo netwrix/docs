@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Configure Policy Rules
 
-The policy you just created does not enforce any password requirements yet. You can now configure
+The policy you just created doesn't enforce any password requirements yet. You can now configure
 the policy to enforce these rules:
 
 - Password must contain at least seven characters.

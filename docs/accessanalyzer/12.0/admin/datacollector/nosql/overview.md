@@ -8,7 +8,7 @@ sidebar_position: 280
 
 The NoSQL Data Collector for MongoDB provides information on MongoDB Cluster configuration, limited
 user permissions, scans collections for sensitive data, and identifies who has access to sensitive
-data. It also supports the execution of custom queries against all targeted MongoDB cluster nodes.
+data. It also supports executing custom queries against all targeted MongoDB cluster nodes.
 
 The NoSQL Data Collector has been preconfigured within the MongoDB Solution. Both this data
 collector and the solution are available with a special Access Analyzer license. See the
@@ -22,7 +22,7 @@ information.
 **Ports**
 
 - MongoDB Cluster
-- Default port is 27017 (A custom port can be configured)
+- Default port is 27017 (you can configure a custom port)
 
 **Permissions**
 
@@ -35,15 +35,15 @@ information.
 - Read Only access to any user databases is required for sensitive data discovery
 - Read access to NOSQL instance
 - Read access to MongoDB instance
-- Requires NOSQL Full-Text and Semantic Extractions for Search feature to be installed on the target
+- Requires installing the NOSQL Full-Text and Semantic Extractions for Search feature on the target
   NOSQL instances when using the Scans full rows for sensitive data option on the Options wizard
   page
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each thread
+requires a minimum of 2 additional GB of RAM per host. For example, if you configure the job to scan
+8 hosts at a time, you need an extra 16 GB of RAM (8x2=16).
 
 ## NoSQL Query Configuration
 

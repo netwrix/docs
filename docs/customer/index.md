@@ -9,7 +9,7 @@ description: "Learn how to access the Netwrix Customer Portal and Netwrix Univer
 import { Company } from '@site/src/training/products';
 
 
-The <Company /> Customer Portal on the <Company /> website provides you with access to detailed information about your <Company /> products. This will enable you to maximize the value of your investment and have the best user experience possible.
+The <Company /> Customer Portal on the <Company /> website provides you with access to detailed information about your <Company /> products. This will enable you to maximize the value of your investment and have the best user experience possible. 
 
 ## What Can I Do in the <Company /> Customer Portal
 

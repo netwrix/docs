@@ -68,7 +68,7 @@ function FeaturedDiscussion({ topic }) {
 
   // Find the first product tag that matches our known product list
   const productTag = topic.tags
-    ? topic.tags.find((tag) => PRODUCT_TAGS.includes(tag.toLowerCase()))
+    ? topic.tags.find((tag) => typeof tag === 'string' && PRODUCT_TAGS.includes(tag.toLowerCase()))
     : null;
 
   return (
@@ -231,17 +231,17 @@ function CommunityHighlights() {
                   </div>
                 )}
               </div>
-              {featuredTopics.length > 1 && (
-                <div className={styles.carouselIndicators}>
-                  {featuredTopics.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`${styles.indicator} ${index === currentSlide ? styles.active : ''}`}
-                      onClick={() => setCurrentSlide(index)}
-                    />
-                  ))}
-                </div>
-              )}
+            </div>
+          )}
+          {featuredTopics.length > 1 && (
+            <div className={styles.carouselIndicators}>
+              {featuredTopics.map((_, index) => (
+                <button
+                  key={index}
+                  className={`${styles.indicator} ${index === currentSlide ? styles.active : ''}`}
+                  onClick={() => setCurrentSlide(index)}
+                />
+              ))}
             </div>
           )}
         </div>

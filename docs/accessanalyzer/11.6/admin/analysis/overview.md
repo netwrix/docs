@@ -6,17 +6,17 @@ sidebar_position: 90
 
 # Analysis Modules
 
-The Enterprise Auditor analysis modules are capable of finding unique data and notifying users of
-its location from a variety of environments. Analysis modules are assigned to a job at the
-**Configure** > **Analysis** node. See the
+The Enterprise Auditor analysis modules find unique data and notify users of its location from a
+variety of environments. Assign analysis modules to a job at the **Configure** > **Analysis** node.
+See the
 [Analysis Node](/docs/accessanalyzer/11.6/admin/jobs/job/configure/analysis/analysis.md)
 topic for information on the Analysis Selection view.
 
 ![Configure an analysis](/images/accessanalyzer/11.6/admin/analysis/configure.webp)
 
-Analysis tasks are configured through the Analysis Properties page. Navigate to the job’s
-**Configure** > Analysis node. The Analysis Properties page is opened from the Analysis Selection
-page by either of the following options:
+Configure analysis tasks through the Analysis Properties page. Navigate to the job’s
+**Configure** > Analysis node. Open the Analysis Properties page from the Analysis Selection
+page using either of the following options:
 
 - Select **Create Analysis** to add a new analysis task to a job
 - Select an existing analysis and click **Analysis Properties** to modify its configuration
@@ -30,7 +30,7 @@ Auditor.
 | Analysis Module                                                                                                                         | Description                                                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | [AutoAction Analysis Module](/docs/accessanalyzer/11.6/admin/analysis/autoaction.md)                     | Performs a specified action at the conclusion of an analysis task’s execution                   |
-| [Business Rules Analysis Module](/docs/accessanalyzer/11.6/admin/analysis/businessrules/overview.md)     | Finds data that does not match user expectations for the target environment                     |
+| [Business Rules Analysis Module](/docs/accessanalyzer/11.6/admin/analysis/businessrules/overview.md)     | Finds data that doesn't match user expectations for the target environment                     |
 | [Change Detection Analysis Module](/docs/accessanalyzer/11.6/admin/analysis/changedetection/overview.md) | Notifies when a change occurs in the results of a job and identifies the location of the change |
 | [Notification Analysis Module](/docs/accessanalyzer/11.6/admin/analysis/notification/overview.md)        | Sends notifications to specified recipients when a specified event occurs                       |
 | [SQLscripting Analysis Module](/docs/accessanalyzer/11.6/admin/analysis/sqlscripting.md)                 | Executes free-form SQL scripts                                                                  |
@@ -41,16 +41,16 @@ Auditor.
 ## Executing Analyses
 
 Analysis tasks execute automatically if enabled through the Analysis Selection page for jobs with
-analysis modules configured. Analysis tasks can be enabled or disabled by selecting the checkbox
-next to the analysis tasks. Analysis tasks execute in the order shown in the Analysis Selection
-window. Tasks can be manually executed without running the job by right-clicking on the task and
-selecting **Execute Analyses** from the dropdown menu.
+analysis modules configured. Select the checkbox next to an analysis task to enable or disable it.
+Analysis tasks execute in the order shown in the Analysis Selection window. To run a task manually
+without running the job, right-click the task and select **Execute Analyses** from the dropdown
+menu.
 
 ## Analysis Selection Page
 
-Analysis tasks can be created, deleted, and configured through the Analysis Selection page. For jobs
-with existing analysis tasks, the Analysis Selection page is used to change the order in which tasks
-are run, as well as enabling or disabling tasks.
+Use the Analysis Selection page to create, delete, and configure analysis tasks. For jobs
+with existing analysis tasks, use the Analysis Selection page to change the run order and to enable
+or disable tasks.
 
 ![Analysis Selection Page](/images/accessanalyzer/11.6/admin/analysis/analysisselectionpage.webp)
 
@@ -78,8 +78,8 @@ The Analysis Selection page has the following options:
 
 ## Analysis Properties Page
 
-Configure task properties through the Analysis Properties page. The Analysis Properties page is
-accessed through the Analysis Selection page.
+Configure task properties through the Analysis Properties page. Access the Analysis Properties page
+through the Analysis Selection page.
 
 ![Analysis Properties Page](/images/accessanalyzer/11.6/admin/analysis/analysispropertiespage.webp)
 
@@ -88,7 +88,7 @@ The Analysis Properties page has the following options:
 - Name – Name of the analysis task. Default names can be changed.
 - Description – Description of the analysis task. Analysis tasks for default solutions reference
   associate data tables. Descriptions for new tasks are blank by default.
-- Analysis Module – Click the drop-down to select an analysis module for the task
+- Analysis Module – Click the dropdown to select an analysis module for the task
 - Configure Analysis – Click to access the configuration wizard for the selected analysis module
 - ID – Unique identifying number of the analysis task. The database uses distinct IDs to distinguish
   between analysis tasks, even those with identical configurations.

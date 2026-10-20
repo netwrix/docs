@@ -9,8 +9,7 @@ sidebar_position: 20
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data integrity; otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -26,7 +25,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
   reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
   configure them manually:
 
-    - CIFS Network Protocol support is required.
+    - SMB Network Protocol support is required.
     - Create a shared directory _/ifs/.ifsvar/audit/_ on your cluster.
 
         Use SMB (CIFS) protocol for sharing.
@@ -71,7 +70,7 @@ The following table lists actions that can be performed on Dell Isilon/PowerScal
 | Remove (failed attempt)  | +\*  | +\*    | –     |
 | Copied                   | –    | –      | –     |
 
-**NOTE:** For Dell Isilon/PowerScale storage, auditing of _System_ zone is not supported. As stated
+**NOTE:** For Dell Isilon/PowerScale storage, auditing of _System_ zone isn't supported. As stated
 by Dell, this zone should be reserved for configuration access only. Current data should be stored
 in other access zones. See the
 [Dell Upsilon CLI Administration Guide](https://www.dellemc.com/en-us/collaterals/unauth/technical-guides-support-information/2019/09/docu95372.pdf)

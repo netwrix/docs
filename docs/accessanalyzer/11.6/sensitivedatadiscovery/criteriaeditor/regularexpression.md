@@ -7,7 +7,7 @@ sidebar_position: 20
 # Regular Expression (Pattern) Criteria
 
 Regular Expression criteria are a set of pattern matching rules that provide a concise and flexible
-means for matching strings of text. This criteria type can be used to verify a series of numbers as
+means for matching strings of text. Use this criteria type to verify a series of numbers as
 potentially valid, for example credit card numbers.
 
 ![Regular Expression window](/images/accessanalyzer/11.6/sensitivedatadiscovery/criteriaeditor/criteriatype/regularexpression.webp)
@@ -18,7 +18,7 @@ The options on the Regular Expression window are:
 - Expression – Enter the Regular Expression in the Expression text box
 - Case Sensitive Expression – Select the checkbox for case sensitive Regular Expression pattern
   matching
-- Validation – Select a validation method from the Validation drop-down. The default value is **No
+- Validation – Select a validation method from the Validation dropdown. The default value is **No
   validation required**.
 
     :::note
@@ -35,9 +35,9 @@ The options on the Regular Expression window are:
 - Match Type – Choose whether pattern matches for the Regular Expression criteria **Must match** or
   **Must not match**
 
-    - Must match – The Regular Expression must be matched for there to be a match
-    - Must not match – If the Regular Expression is matched and is designated **Must not match**,
-      then the potential match is invalidated
+    - Must match – The criteria counts as a match only if the Regular Expression matches
+    - Must not match – If the Regular Expression matches while set to **Must not match**, the
+      potential match is invalid
 
 - Apply this expression to these file components – Select which file components the expression
   applies to:

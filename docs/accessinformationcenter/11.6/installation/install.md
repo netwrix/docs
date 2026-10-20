@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Install the Access Information Center
 
-Once the prerequisites have been met, follow the steps to install the Access Information Center.
+After the prerequisites are met, to install the Access Information Center:
 
 **Step 1 –** Run the `AccessInformationCenter.exe` executable and the Netwrix Access Information
 Center Setup wizard opens.
@@ -49,7 +49,7 @@ open.
 
 - Database — Enter the name of the existing database
 
-- Authentication — Select the Database service account type from the drop-down menu. Then enter the
+- Authentication — Select the Database service account type from the dropdown menu. Then enter the
   account information in the **User Name** and **Password** fields.
     - For Windows Authentication — **User Name** format must be [DOMAIN]\[username] , e.g.
       NWXTECH\ad.bruce
@@ -76,7 +76,7 @@ field. When the port is set as desired, click **Next**.
 
 ![AIC Setup Wizard Completed page](/images/accessinformationcenter/11.6/installation/completed.webp)
 
-**Step 8 –** Once the installation has successfully completed, click Finish to exit the wizard.
+**Step 8 –** After the installation has successfully completed, click Finish to exit the wizard.
 
 The installation wizard placed an Netwrix Access Information Center icon on the desktop. Now proceed
 to the

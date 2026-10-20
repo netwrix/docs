@@ -7,7 +7,7 @@ sidebar_position: 40
 # System Audit and Support
 
 Password Policy Enforcer can run a discovery and testing of your domain controllers for an overview
-on PPE health, versions and logs.
+on PPE health, versions, and logs.
 
 Open the Configuration Console:
 
@@ -26,7 +26,7 @@ configuration setting. System Audit and Support opens on the **Version Tracker**
 Click **Run test**. The audit reports the discovered domain controllers and versions.
 
 :::note
-If you do not see the **Configuration Timestamp**, contact your network administrator to
+If you don't see the **Configuration Timestamp**, contact your network administrator to
 set up the firewall to allow Password Policy Enforcer to communicate.
 :::
 
@@ -46,7 +46,7 @@ the logs.
 
 ## Support Tools
 
-The **Support Tools** tab enables you to save a configuration report, export/import PPE settings,
+Use the **Support Tools** tab to save a configuration report, export/import PPE settings,
 and open the property editor.
 
 ![System Audit Support Tools tab](/images/passwordpolicyenforcer/11.1/administration/systemaudittools.webp)
@@ -68,7 +68,7 @@ and open the property editor.
 
 ### Property Editor
 
-The Property Editor enables you to edit the Password Policy Enforcer configuration. It should only
+The Property Editor lets you edit the Password Policy Enforcer configuration. It should only
 be used instructed by Netwrix Support. It is accessed from the Configuration Console:
 
 **Help** > **Open Property Editor**

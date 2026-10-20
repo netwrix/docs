@@ -1,0 +1,6 @@
+extends: existence
+message: "Avoid '%s'. For cross-references, use 'See [link]'. For procedure lead-ins, use a direct heading and numbered list instead."
+level: warning
+ignorecase: true
+tokens:
+  - '\brefer to the following\b'

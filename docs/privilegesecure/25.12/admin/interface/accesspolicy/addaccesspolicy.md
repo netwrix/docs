@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Add Access Policy
 
-Follow the steps to add access policies to the console.
+To add access policies to the console.
 
 :::tip
 Remember, a connection profile is required to create an access policy. You can create one ahead of
@@ -25,10 +25,10 @@ to create one during these steps.
 
 - Name – Displays the name of the policy
 - Description – (Optional) Description of the policy
-- Type – Classification of the access policy. The Type drop-down contains the following options:
+- Type – Classification of the access policy. The Type dropdown contains the following options:
 
-    - Resource Based - enables users to access remote devices (computers, databases, network equipment)
-    - Credential Based - enables users to access credentials and files stored in vaults.
+- Resource Based - lets users access remote devices (computers, databases, network equipment)
+- Credential Based - lets users access credentials and files stored in vaults.
 
 - Connection Profile – Displays the name of the connection profile associated to the access policy
 
@@ -39,8 +39,8 @@ Resources/Credentials to the policy. See the following topics for additional inf
 
 - Resource Based Policy
 
-    - [Users Tab for Resource Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/resourcebasedpolicyt/users.md)
-    - [Activities Tab for Resource Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/resourcebasedpolicyt/activities/activities.md)
-    - [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/resourcebasedpolicyt/resources/resources.md)
+- [Users Tab for Resource Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/resourcebasedpolicyt/users.md)
+- [Activities Tab for Resource Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/resourcebasedpolicyt/activities/activities.md)
+- [Resources Tab for Resource Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/resourcebasedpolicyt/resources/resources.md)
 
 - Credential Based Policy [CreCredential Based Access Policies](/docs/privilegesecure/25.12/admin/interface/accesspolicy/credentials.md)

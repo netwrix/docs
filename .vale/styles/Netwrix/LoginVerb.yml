@@ -1,0 +1,6 @@
+extends: substitution
+message: "Use '%s' — 'login' as a verb should be two words."
+level: warning
+ignorecase: true
+swap:
+  '\blogin to\b': 'log in to'

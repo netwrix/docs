@@ -23,7 +23,7 @@ knowledge_article_id: kA00g000000H9YbCAK
 
 # Audit Status shows "Logon auditing is disabled"
 
-Audit status of some Domain controllers in the list shows that some auditing is disabled, for example "Logon Auditing is disabled, some funcionality will be unavailable for this DC. Please turn on auditing of invalid logons in audit policy for this DC"
+Audit status of some Domain controllers in the list shows that some auditing is disabled, for example "Logon Auditing is disabled, some functionality will be unavailable for this DC. Please turn on auditing of invalid logons in audit policy for this DC"
 
 ![User-added image]./../0-images/ka04u000000HcRc_0EM700000004wxR.png)
 

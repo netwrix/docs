@@ -9,7 +9,7 @@ sidebar_position: 10
 ## Security
 
 The REST-style API is exposed via TLS v1.2, with a self-signed certificate by default. The port is
-customizable, 4494 by default. The IP whitelist can be used to restrict access to the port.
+customizable, 4494 by default. Use the IP whitelist to restrict access to the port.
 
 You can use the Activity Monitor Console to allow applications to access the API, change
 permissions, or revoke access. The console generates unique Client ID and Secret for each
@@ -19,7 +19,7 @@ application.
 
 OAuth 2.0 client-credentials grant is used for authentication. A pair of Client ID and Secret are
 used to obtain an access token from the access token URL: `https://localhost:4494/api/v1/token`.
-Token expiration intervals are not configurable.
+Token expiration intervals aren't configurable.
 
 | Type          | Expires in |
 | ------------- | ---------- |
@@ -28,16 +28,16 @@ Token expiration intervals are not configurable.
 | Refresh Token | never      |
 
 It is considered a best practice to use short expiration periods for OAuth 2.0 tokens, like 1 hour
-for the access token. A shorter period allows you to revoke the access quicker if needed. In case of
+for the access token. A shorter period lets you revoke the access quicker if needed. In case of
 Activity Monitor, the Agent is both the authentication server and the resource server. Therefore, it
 can validate the token on each and every access to a resource. So, for Activity Monitor long
-expiration periods do not make the protocol less secure.
+expiration periods don't make the protocol less secure.
 
 A client is expected to pass the access token in the `Authorization` request header.
 
 :::note
 **Use a client library that is secure and fully implements the OAuth 2.0 protocol.** The
-sample below shows just a piece of OAuth 2 interaction.
+following sample shows just a piece of OAuth 2 interaction.
 :::
 
 
@@ -62,7 +62,7 @@ Activity Monitor8.0 permissions:
 | Permission           | Description                                                                                                                 |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Access activity data | Provides minimal access rights to list and download the log files.                                                          |
-| Read                 | Read-only access to all the information about all agents, domains, and hosts. Does not allow one to download the log files. |
+| Read                 | Read-only access to all the information about all agents, domains, and hosts. Doesn't allow one to download the log files. |
 | Policy change        | Add, modify, and delete the AD monitoring policies.                                                                         |
 | Modify host          | Add, modify, enable, disable, and delete Hosts and their Outputs.                                                           |
 | Modify agent         | Add, modify, and delete agents.                                                                                             |

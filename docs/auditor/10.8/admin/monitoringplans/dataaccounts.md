@@ -7,7 +7,7 @@ sidebar_position: 30
 # Data Collecting Account
 
 This is a service account that Auditor uses to collect audit data from the monitored items, such as
-domains, OUs and servers. Netwrix recommends the creation of a dedicated service account for that
+domains, OUs, and servers. Netwrix recommends the creation of a dedicated service account for that
 purpose. Depending on the data source your monitoring plan will process, the account must meet the
 corresponding requirements in the table below.
 
@@ -63,7 +63,7 @@ data source.
 Once a Data Collecting Account has been configured, you can always update the password for this
 account in Netwrix Auditor.
 
-Follow the steps to update credentials for the accounts used by Auditor:
+To update credentials for the accounts used by Auditor:
 
 **Step 1 –** On the Auditor home page, navigate to **Settings**.
 
@@ -76,7 +76,7 @@ Follow the steps to update credentials for the accounts used by Auditor:
 **Step 5 –** Review the account configuration scope and click **Update password** next to this
 account.
 
-![Password Management](/images/auditor/10.7/admin/monitoringplans/updatecredentials.webp)
+![Password Management](/images/auditor/10.8/admin/monitoringplans/updatecredentials.webp)
 
 **Step 6 –** Save your edits.
 

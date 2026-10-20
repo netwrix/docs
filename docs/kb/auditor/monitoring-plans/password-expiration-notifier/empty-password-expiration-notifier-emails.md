@@ -37,7 +37,7 @@ One of the following issues is present in your environment:
 
 Refer to the respective resolution for the cause in your environment:
 
-1. Verify that TLS 1.2 is correctly configured on your Netwrix Auditor server. Refer to the following article for additional information: Сonnection Issue when TLS 1.2 Is Required.
+1. Verify that TLS 1.2 is correctly configured on your Netwrix Auditor server. Refer to the following article for additional information: Connection Issue when TLS 1.2 Is Required.
 2. Disable the implicit SSL connection mode in Netwrix Password Reset.
 
    1. Run PEN. Select the affected monitoring plan and click **Edit**.
@@ -45,4 +45,4 @@ Refer to the respective resolution for the cause in your environment:
 
 ## Related Articles
 
-- Сonnection Issue when TLS 1.2 Is Required
+- Connection Issue when TLS 1.2 Is Required

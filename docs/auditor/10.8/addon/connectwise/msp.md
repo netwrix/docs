@@ -21,7 +21,7 @@ specified the add-on launch as response action.
 Then a new ticket is automatically created shortly after any account password is reset.
 
 All necessary details about the case are automatically entered into the ConnectWise ticket (_Initial
-Description_ ﬁeld), including the name of the workstation, the name of the account in question, and
+Description_ field), including the name of the workstation, the name of the account in question, and
 the time when the event occurred:
 
 ![serviceboard](/images/auditor/10.7/addon/connectwise/serviceboard.webp)

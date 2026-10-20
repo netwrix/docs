@@ -6,11 +6,7 @@ sidebar_position: 20
 
 # .NET Script Actions
 
-A Visual Basic or C# script can be written and assigned to a policy by users or a Netwrix Engineer
-via engaging Netwrix Professional Services. The script will be invoked by the Enterprise Manager for
-an enabled policy.
-
-Follow the steps to add a .NET Script action to a policy/template.
+A Visual Basic or C# script can be written and assigned to a policy by users or a Netwrix Engineer via engaging Netwrix Professional Services. The script will be invoked by the Enterprise Manager for an enabled policy.
 
 ![Actions tab - Actions Configurations area](/images/threatprevention/7.5/admin/policies/actions/actionsconfigurationsarea.webp)
 
@@ -69,7 +65,7 @@ The Tools menu contains the following options:
 - Reset to Default Script – Replaces the existing script with the default script that is shipped
   with Threat Prevention.
 - Encrypt – Encrypts selected portions of the script to an encrypted string with a decrypt command
-  for run time. See note below explaining why only a plain text string, information in thae script
+  for run time. See note below explaining why only a plain text string, information in the script
   between quote marks (“), should be encrypted.
 
 :::tip

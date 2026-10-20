@@ -1,0 +1,9 @@
+{
+  "label": "Administrative Templates Manager",
+  "position": 1,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

@@ -12,7 +12,7 @@ the resources required for Netwrix Auditor deployment.
 The actual hardware requirements will depend on the number of activities collected per day in
 addition to the number of files and folders monitored.
 
-**CAUTION:** To keep your systems safe, Auditor should not be exposed to inbound access from the
+**CAUTION:** To keep your systems safe, Auditor shouldn't be exposed to inbound access from the
 internet.
 
 ## Full Installation
@@ -39,7 +39,7 @@ Netwrix Auditor and SQL Server instance will be deployed on different servers.
 
 Requirements below apply to Netwrix Auditor server.
 
-| Hardware component | Evaluation, PoC or starter environment | Regular environment (up to 1m ARs\*/day) | Large environment (1-10m ARs\*/day)       | XLarge environment (10m ARs\*/day or more)                       |
+| Hardware component | Evaluation, PoC, or starter environment | Regular environment (up to 1m ARs\*/day) | Large environment (1-10m ARs\*/day)       | XLarge environment (10m ARs\*/day or more)                       |
 | ------------------ | -------------------------------------- | ---------------------------------------- | ----------------------------------------- | ---------------------------------------------------------------- |
 | CPUs               | 2 cores                                | 4 CPUs                                   | 8 CPUs                                    | 16 CPUs                                                          |
 | RAM                | 8 GB                                   | min 8 GB                                 | min 16 GB                                 | 64 GB                                                            |
@@ -47,8 +47,7 @@ Requirements below apply to Netwrix Auditor server.
 | Others             | —                                      | —                                        | Network capacity 1 Gbit                   | Network capacity 1 Gbit                                          |
 
 \* — ARs stands for Activity Records, that is, Netwrix-compatible format for the audit data. See
-[Activity Records](/docs/auditor/10.8/api/postdata/activityrecords.md)[Activity Records](/docs/auditor/10.8/api/postdata/activityrecords.md)
-for more details.
+[Activity Records](/docs/auditor/10.8/api/postdata/activityrecords.md) for more details.
 
 \*\* — By default, the Long-Term Archive and working folder are stored on a system drive. To reduce
 the impact on the system drive in large and xlarge environments, Netwrix recommends storing your
@@ -59,7 +58,7 @@ details, see:
 - [Working Folder](/docs/auditor/10.8/requirements/workingfolder.md)
 
 Netwrix Auditor informs you if you are running out of space on a system disk where the Long-Term
-Archive is stored by default. You will see related events in the Health log once the free disk space
+Archive is stored by default. You will see related events in the Health log when the free disk space
 starts approaching the minimum level. When the free disk space is less than 3 GB, the Netwrix
 services responsible for audit data collection will be stopped.
 
@@ -71,10 +70,10 @@ following Microsoft article:
 troubleshooting such cases, refer to the [Sample Deployment Scenarios](/docs/auditor/10.8/requirements/deploymentscenarios.md)
 topic.
 
-Additional Sizing Information for File Data Source
+Additional Sizing Information for File Server and SharePoint Online Data Sources
 
-Use this table to determine the requirements for file servers monitoring based on the number of
-files in the system. These requirements will add up to the requirements for other monitoring plans.
+Use this table to determine the requirements for File Servers and SharePoint Online monitoring based on the number of
+files or objects in the system. These requirements will add up to the requirements for other monitoring plans.
 
 | Netwrix Auditor                          | Per 1 Million Files | Per 5 Million Files |
 | ---------------------------------------- | ------------------- | ------------------- |
@@ -82,8 +81,8 @@ files in the system. These requirements will add up to the requirements for othe
 | RAM (Activity Records only)              | 0.125 GB RAM        | 0.625 GB RAM        |
 | RAM (Activity Records and State-in-Time) | 0.5 GB RAM          | 2.5 GB RAM          |
 
-If you are monitoring both Active Directory and Windows File Servers data sources, you calculate
-using the requirements for AD, and then add the requirements for your File Servers.
+If for example you are monitoring both Active Directory, File Servers, and/or SharePoint Online Data Sources, you calculate
+using the requirements for AD, and then add the requirements for your File Servers and/or SharePoint Online.
 
 For example, you have a large Active Directory environment which requires 8 cores and 16 GB RAM. Add
 the requirements for 5 million files which are 1 CPU and 2.5 GB RAM. Therefore, you will need 9 CPUs
@@ -94,11 +93,11 @@ this information is displayed in the Environment Stats located on the Home Scree
 
 If you have not already started using Netwrix Auditor, you can download the Resource Estimation Tool
 by clicking
-[the download link](https://releases.netwrix.com/products/auditor/10.7/auditor-resource-estimation-tool-1.2.39.zip).
+[the download link](https://releases.netwrix.com/products/auditor/10.8/auditor-resource-estimation-tool-1.2.46.zip).
 
 ## Client Installation
 
-The client installation includes only Netwrix Auditor client console that enables you to connect to
+The client installation includes only Netwrix Auditor client console for connecting to
 the Netwrix Auditor Server installed remotely.
 
 Virtual deployment is recommended.

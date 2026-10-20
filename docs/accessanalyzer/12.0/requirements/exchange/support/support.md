@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Exchange Support and Permissions Explained
 
-This topic outlines what is supported for each type of Exchange version.
+This topic outlines support for each Exchange version type.
 
 :::note
 Sensitive Data Discovery is available with the EWSMailbox, EWSPublicFolder, and
@@ -16,7 +16,7 @@ ExchangeMailbox data collectors.
 
 ## Support by Data Collector
 
-The following tables provide a breakdown of support by data collector:
+The following tables show support by data collector:
 
 | Data Collector       | Exchange Online | Exchange 2019 | Exchange 2016 | Exchange 2013 | Exchange 2010 | MAPI-Based |
 | -------------------- | --------------- | ------------- | ------------- | ------------- | ------------- | ---------- |
@@ -33,14 +33,14 @@ The following tables provide a breakdown of support by data collector:
 
 ## Support by Job Group
 
-The following tables provide a breakdown of support by job group:
+The following tables show support by job group:
 
 | Job Group             | Exchange Online | Exchange 2019 | Exchange 2016 | Exchange 2013 | Exchange 2010 | MAPI-Based |
 | --------------------- | --------------- | ------------- | ------------- | ------------- | ------------- | ---------- |
 | 1. HUB Metrics        | No              | Yes           | Yes           | Yes           | Yes           | No         |
 | 2. CAS Metrics        | No              | Yes           | Yes           | Yes           | Yes           | No         |
 | 3. Database           | No              | Limited\*     | Limited\*     | Yes           | Yes           | Yes        |
-| 4. Mailboxes          | Yes             | Yes           | Yes           | Yes           | Yes           | No         |
+| 4. Mailboxes          | Yes\*\*\*             | Yes           | Yes           | Yes           | Yes           | No         |
 | 5. Public Folders     | No              | No            | No            | Yes           | Yes           | Yes        |
 | 6. Distribution Lists | Yes             | Yes           | Yes           | Yes           | Yes           | No         |
 | 7. Sensitive Data     | Yes             | Yes           | Yes           | Yes           | Limited\*     | Mix\*\*    |
@@ -50,10 +50,11 @@ The following tables provide a breakdown of support by job group:
 
 \*\* Mix indicates some data collectors are MAPI-based, but not all.
 
+\*\*\* The **Logons** sub-group (part of job group 4. Mailboxes) isn't compatible with Exchange Online targets. For the Exchange Online version of this group, use 8. Exchange Online > Mailboxes.
+
 ## Exchange Solution to Permissions Alignment
 
-See the following sections for permission requirements according to the job group, data collector,
-or action module to be used:
+See the following sections for permission requirements by job group, data collector, or action module:
 
 - [Exchange Mail-Flow Permissions](/docs/accessanalyzer/12.0/requirements/exchange/support/mailflow.md)
 

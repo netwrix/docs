@@ -7,7 +7,7 @@ sidebar_position: 60
 # Custom Credential Role Details Page
 
 The Role Management page is accessible from the Navigation pane under Users & Group. It provides
-details on all available roles for Privilege Secure users. Here we discuss the custom credential role. This role enables control over managed account credential policy and access.
+details on all available roles for Privilege Secure users. This page describes the custom credential role. This role enables control over managed account credential policy and access.
 
 ![Custome Role Page](/images/privilegesecure/25.12/accessmanagement/admin/policy/page/details/customcredentialsrole.png)
 
@@ -17,17 +17,17 @@ the following features:
 - Name — Name of the access policy
 - Description — Description of the policy
 - Permission Assignment section — Use this section to assign permissions for the custom role. See
-  the Permission Assignment topic for additional information.
+the Permission Assignment topic for additional information.
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results. This search is specific to the table in the
-  Users section at the bottom.
+table or list is filtered to the matching results. This search is specific to the table in the
+Users section at the bottom.
 - Filter — Provides options to filter results based on a chosen criterion: User, Group, Application,
-  Collection, and Local User
+Collection, and Local User
 - Add Role User — Opens Add Role Users window. 
 - Remove — Removes console access from the selected account. This button is specific to the table in
-  the Users role assignment section at the bottom.
+the Users role assignment section at the bottom.
 - Refresh — Reload the information displayed. This button is specific to the table in the Users
-  section at the bottom.
+section at the bottom.
 
 
 The Credentials assignment section table has the following columns:
@@ -62,21 +62,21 @@ Available permissions include:
 
 ## Role Users
 
-Role Users is located at the bottom of the Custom Role details page. This will be the user that has
+Role Users is located at the bottom of the Custom Role details page. This is the user that has
 access to the Custom Role.
 
 The Role Users has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results. This search is specific to the table in the
-  Users tab.
+table or list is filtered to the matching results. This search is specific to the table in the
+Users tab.
 - Type — Provides options to filter results based on a chosen criterion: User, Group, Application,
-  Collection, and Local User
+Collection, and Local User
 - Add Role Users— Opens the Add Users and Groups window. Add this role to users here.
 - Remove — Removes console access from the selected account. This button is specific to the table in
-  the Policies tab.
+the Policies tab.
 - Refresh — Reload the information displayed. This button is specific to the table in the Policies
-  tab.
+tab.
 
 The Role Users table has the following columns:
 

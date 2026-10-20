@@ -16,8 +16,8 @@ It contains five pages:
 -   **2. Select Owners** — Select Owners from Active Directory
 -   **3. Description** — Optionally enter a note describing the resource
 -   **4. Access Groups** — Optionally enable Access Requests and Owner Ad Hoc changes for this resource.
-       When File System or SharePoint resources will be managed through the AIC, it is necessary to
-       configure access groups for those resources in the target environment. An access group
+       To manage File System or SharePoint resources through the AIC, configure access groups for
+       those resources in the target environment. An access group
        provides one of the following access levels to a specific resource: Read, Modify, or Full
        Control.
 
@@ -35,7 +35,7 @@ See the Add a Resource topic for additional information.
 
 ## Add a Resource
 
-Follow the steps to add resources one at a time and assign owners.
+To add resources one at a time and assign owners:
 
 **Step 1 –** In the Resource Owners interface, click **Add**. The Add new resource wizard opens.
 
@@ -50,8 +50,8 @@ Follow the steps to add resources one at a time and assign owners.
         - For example, http://farm.corp.com
     - For groups, enter the group name in NTAccount format [DOMAIN\GROUP]
         - For example, acme\app.group
-- Browse option – Navigate through the resource tree to select the desired File System or SharePoint
-  resource.
+- Browse option – Navigate through the resource tree to select the File System or SharePoint
+  resource you want.
 
 ![Add new resources wizard showing 2. Select Owners page](/images/accessinformationcenter/12.0/resourceowners/wizard/selectowners.webp)
 
@@ -64,7 +64,7 @@ information.
 **Step 4 –** When only one owner is assigned, the owner will be the Primary by default. When
 multiple owners are assigned, the first owner in the list is the Primary owner. Use the arrow
 buttons to order the owners. Use the **Add** and **Remove** buttons to modify the list of owners.
-When the owners list is complete, click **Next**.The table has several columns with information on
+When the owners list is complete, click **Next**. The table has several columns with information on
 the owners:
 
 - Owner Name — Name of the assigned owner
@@ -72,7 +72,7 @@ the owners:
 - Owner Title — Trustee's title as read from Active Directory
 - Owner Mail — Trustee's email address as read from Active Directory
 - Owner Department — Trustee's department as read from Active Directory
-- Confirmed — Indicates whether or not the assigned owner has confirmed ownership of that resource.
+- Confirmed — Indicates whether the assigned owner has confirmed ownership of that resource.
   Tool-tips display when hovering over the icons indicating whether the resource ownership has been
   confirmed, declined, pending response, or that a confirmation has not been requested.
 
@@ -93,12 +93,11 @@ for this resource:
 
 ![Add new resource wizard showing 4. Access Groups page with groups configured](/images/accessinformationcenter/12.0/resourceowners/wizard/accessgroupsconfigured.webp)
 
-**Step 7 –** When File System or SharePoint resources will be managed through the AIC, it is
-necessary to configure access groups for those resources in the target environment. An access group
-provides one of the following access levels to a specific resource: Read, Modify, or Full Control.
-If either option in Step 6 is selected for this resource, it is necessary to set a group for at
-least one access level. Select the desired access level and click **Change**. The Select Group
-Window opens. Select the desired group and click **OK**. The Select Group window closes and the
+**Step 7 –** To manage File System or SharePoint resources through the AIC, configure access groups for
+those resources in the target environment. An access group provides one of the following access levels to a specific resource: Read, Modify, or Full Control.
+If either option in Step 6 is selected for this resource, set a group for at
+least one access level. Select the access level you want and click **Change**. The Select Group
+Window opens. Select the group you want and click **OK**. The Select Group window closes and the
 group appears in the table. Repeat this step for each access level desired. See the
 [Select Group Window](/docs/accessinformationcenter/12.0/resourceowners/interface/selectgroup.md) topic for additional information.
 

@@ -21,7 +21,7 @@ The account used for data collection must meet the following requirements:
 
 - Local Admin on the Netwrix Auditor server.
 - The combination of the following rights and permissions if you plan to disable network traffic
-  compression for your monitoring plan or, for some reasons, do not want to add this account to the
+  compression for your monitoring plan or, for some reasons, don't want to add this account to the
   Domain Admins group:
 
     - The "Manage auditing and security log" policy must be defined for this account.
@@ -31,14 +31,14 @@ The account used for data collection must meet the following requirements:
       container are required. See the Grant Permissions for the Deleted Objects Container topic for
       additional information.
 
-If the account selected for data collection is not a member of the Domain Admins group, see the
+If the account selected for data collection isn't a member of the Domain Admins group, see the
 [Assign Permission To Read the Registry Key](/docs/auditor/10.7/configuration/windowsserver/permissions.md) topic.
 
 ## Additional Configuration to Review Changes Made via Exchange Server
 
 If you have an on-premises Exchange server in your Active Directory domain, consider that some
 changes can be made via that Exchange server. To be able to audit and report who made those changes,
-you should make sure that the account used for data collection has any of the following:
+you should ensure that the account used for data collection has any of the following:
 
 - Membership in the **Organization Management** or **Records Management** group.
 
@@ -78,7 +78,7 @@ If you plan to use network traffic compression for data processing, consider the
 - If network traffic compression will be _enabled_, then the account must belong to the Domain
   Admins group.
 - If network traffic compression will be _disabled_, and the account you plan to use for data
-  collection is not a member of the Domain Admins group, then the **Manage auditing and security
+  collection isn't a member of the Domain Admins group, then the **Manage auditing and security
   log** policy must be defined for this account.
   See the Configure the Manage Auditing and Security Log Policy topic for more information.
 
@@ -86,7 +86,7 @@ If you need to process Active Directory **Deleted Objects** container, consider 
 
 - Read permission on this container is required. See the Grant Permissions for the Deleted Objects
   Container topic for additional information.
-- Grant this permission only if the account you plan to use for data collection is not a member of
+- Grant this permission only if the account you plan to use for data collection isn't a member of
   the Domain Admins group.
 
 If auto-backup is _enabled_ for the domain controller event logs:
@@ -98,12 +98,12 @@ If auto-backup is _enabled_ for the domain controller event logs:
 - Membership in any of the following groups: Administrators, Print Operators, Server Operators
 - Read/Write share permission and Full control security permission on the logs backup folder.
 
-**NOTE:** Grant these permissions only if the account you plan to use for data collection is not a
+**NOTE:** Grant these permissions only if the account you plan to use for data collection isn't a
 member of the **Domain Admins** group.
 
 If you have an on-premises Exchange server in your Active Directory domain, consider that some
 changes can be made via that Exchange server. To be able to audit and report who made those changes,
-you should make sure that the account used for data collection has any of the following:
+you should ensure that the account used for data collection has any of the following:
 
 - Membership in the **Organization Management** or **Records Management** group.
 - The **Audit Logs** management role (see the
@@ -123,10 +123,9 @@ reports, search results and activity summaries.
 
 ## Configure the Manage Auditing and Security Log Policy
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
-Follow the steps to configure the Manage Auditing and Security Log Policy.
 
 **Step 1 –** Open the **Group Policy Management** console on any domain controller in the target
 domain: navigate to Start > Windows Administrative Tools (Windows Server 2016 and higher) or
@@ -156,10 +155,9 @@ domain controllers.
 
 ## Grant Permissions for the Deleted Objects Container
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
-Follow the steps to grant permissions for the Deleted Objects Container.
 
 **Step 1 –** Log on to any domain controller in the target domain with a user account that is a
 member of the **Domain Admins** group.
@@ -173,7 +171,7 @@ where `deleted_object_dn` is the distinguished name of the deleted directory obj
 For example: `dsacls "CN=Deleted Objects,DC=Corp,DC=local" /takeownership`
 
 **Step 4 –** To grant permission to view objects in the **Deleted Objects** container to a user or a
-group, type the following command:
+group, Enter the following command:
 
 `dsacls <deleted_object_dn> /G <user_or_group>:<Permissions>`
 
@@ -185,7 +183,7 @@ For example, `dsacls "CN=Deleted Objects,DC=Corp,DC=local" /G Corp\jsmith:LCRP`
 
 In this example, the user CORP\jsmith has been granted **List Contents** and **Read Property**
 permissions for the **Deleted Objects** container in the **corp.local** domain. These permissions
-let this user view the contents of the **Deleted Objects** container, but do not let this user make
+let this user view the contents of the **Deleted Objects** container, but don't let this user make
 any changes to objects in this container. These permissions are equivalent to the default
 permissions that are granted to the **Domain Admins** group.
 
@@ -198,7 +196,6 @@ policy will be reset. In this case, redefine the Deny log on as a service policy
 Security Policy console on your computer or on the domain level through the Group Policy Management
 console.
 
-Follow the steps to define the Log On As a Service policy.
 
 **Step 1 –** On the computer where Auditor Server is installed, open the **Local Security Policy**
 snap-in: navigate to Start > Windows Administrative Tools and select Local Security Policy.
@@ -224,7 +221,6 @@ Management console.
 
 ### Configure the Log On As a Batch Job policy via Local Security Policy Snap-in
 
-Follow the steps to configure the Log On As a Batch Job policy via Local Security Policy snap-in.
 
 **Step 1 –** On any domain controller in the target domain, open the **Local Security Policy**
 snap-in: navigate to Start > Windows Administrative Tools and select Local Security Policy.
@@ -239,10 +235,9 @@ Specify the account that you want to define this policy for.
 
 ### Configure the Log On As a Batch Job Policy Using the Group Policy Management Console
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
-Follow the steps to configure the Log On As a Batch Job policy using the Group Policy Management
 Console.
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:

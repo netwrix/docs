@@ -1,0 +1,9 @@
+﻿{
+  "label": "Security Settings Manager",
+  "position": 14,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

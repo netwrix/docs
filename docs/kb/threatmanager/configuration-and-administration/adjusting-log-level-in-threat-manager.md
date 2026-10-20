@@ -15,17 +15,17 @@ Netwrix Threat Manager job services support several logging levels to provide th
 
 ## Instructions
 
-Refer to the following steps to modify the logging level for a Threat Manager job service:
+To modify the logging level for a Threat Manager job service:
 
-1. Proceed to the installation folder. Refer to the following default location:
+1. Go to the installation folder. The default location is:
 
    ```
    C:\Program Files\STEALTHbits\StealthDEFEND
    ```
 
-2. The `StealthDEFEND` folder contains separate folders for all job services. Proceed to the required service folder and locate the `appsettings.default.json` file to manage the service settings. Open the file with an available text editor.
+2. The `StealthDEFEND` folder contains separate folders for all job services. Go to the required service folder and locate the `appsettings.default.json` file. Open the file with a text editor.
 
-3. Locate the `"Serilog": \{ \}` node and modify the values. Refer to the following example:
+3. Locate the `"Serilog": \{ \}` node and modify the values. For example:
 
    ```json
    "Serilog": {
@@ -39,7 +39,7 @@ Refer to the following steps to modify the logging level for a Threat Manager jo
    },
    ```
 
-The default logging level is `Warning`. The `Information` or `Debug` level is necessary to provide a sufficient level of logging to troubleshoot most issues. Refer to the following list of available logging options from least detailed to most detailed:
+The default logging level is `Warning`. The `Information` or `Debug` level provides sufficient logging to troubleshoot most issues. Available logging options from least detailed to most detailed:
 
 - Error
 - Warning

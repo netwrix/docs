@@ -1,0 +1,42 @@
+@startuml component
+package "OpenIdClient" {
+	class OpenIdClient {
+		DisplayName_L1 : String
+		ExpirationDate : DateTime
+		HashedSecret : String
+		Identifier : String
+		--
+		AllowedNavigationBindings : AllowedNavigationBinding[]
+		ContextId : ProfileContext
+		OpenIdClient : ActivityInstance[]
+		Profile : Profile
+		Tasks : Task[]
+	}
+}
+package "AllowedNavigationBinding" {
+	class AllowedNavigationBinding {
+	}
+}
+package "ProfileContext" {
+	class ProfileContext {
+	}
+}
+package "ActivityInstance" {
+	class ActivityInstance {
+	}
+}
+package "Profile" {
+	class Profile {
+	}
+}
+package "Task" {
+	class Task {
+	}
+}
+OpenIdClient "1" --  "0..*"AllowedNavigationBinding
+OpenIdClient "0..*" --  "0..1"ProfileContext
+OpenIdClient "0..1" --  "0..*"ActivityInstance
+OpenIdClient "0..*" --  "1"Profile
+OpenIdClient "0..1" --  "0..*"Task
+hide empty members
+@enduml

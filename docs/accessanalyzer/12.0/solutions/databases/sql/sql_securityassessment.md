@@ -13,7 +13,7 @@ and NO FINDINGS categories based on severity.
 
 **Special Dependencies**
 
-One or more of the following jobs or job groups must be run to produce results:
+To produce results, run one or more of the following jobs or job groups:
 
 - [0.Collection > SQL Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/collection/overview.md)
 - [SQL_PasswordIssues Job](/docs/accessanalyzer/12.0/solutions/databases/sql/usersroles/sql_passwordissues.md)
@@ -23,7 +23,7 @@ One or more of the following jobs or job groups must be run to produce results:
 - [Privileged Accounts Job Group](/docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/overview.md)
 - [Privileged Accounts Job Group](/docs/accessanalyzer/12.0/solutions/windows/privilegedaccounts/overview.md)
 
-Only information collected from jobs/groups being run will produce findings.
+Only information from jobs or job groups that ran produces findings.
 
 ### Analysis Task for the SQL_SecurityAssessment Job
 

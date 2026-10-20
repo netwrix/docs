@@ -19,12 +19,12 @@ knowledge_article_id: kA04u000000LLkSCAW
 # Fixing missing python file issue
 
 ## Issue
-Sometimes during upgrades Python can fail to lay down files correctly. Follow these steps to fix that.
+During upgrades, Python may fail to lay down files correctly.
 
 Example error:
 `[ERR] LaunchPythonJob error: System.ComponentModel.Win32Exception (2): The system cannot find the file specified.`
 
-If you’re seeing this in your job logs you will likely need to follow the steps below.
+If you see this error in your job logs, follow the steps in the following section.
 
 ## Instructions
 First, try to cleanly uninstall Python via **Add/Remove Programs** and follow these steps:
@@ -37,12 +37,12 @@ If you are unable to cleanly uninstall Python using the above steps, follow thes
 
 4. Go to `C:\Users\%USERNAME%\AppData\Local\Programs`
 5. **Delete** Python Folder
-6. Go to Control Panel >> **Uninstall a Program**
-7. Right Click on Python and then **Change/Modify**
-8. Click on **Repair** Python. **Note: This may or may not fail, but be patient**
-9. Now Again go to step 6
-10. Now, after step 6, uninstall Python
-11. Now, try steps 1-3 again
+6. Go to Control Panel > **Uninstall a Program**
+7. Right-click Python and select **Change/Modify**
+8. Click **Repair** Python. The repair may fail — this is expected.
+9. Return to step 6.
+10. After step 6, uninstall Python.
+11. Retry steps 1–3.
 
 ## Affected Versions
 **Affected Versions :** `2.7.1544+`

@@ -1,0 +1,22 @@
+@startuml component
+package "AccessControlPermission" {
+	class AccessControlPermission {
+		BlockInheritance : Boolean
+		Identifier : String
+		--
+		AllowedNavigationBindings : AllowedNavigationBinding[]
+		Entries : AccessControlEntry[]
+	}
+}
+package "AllowedNavigationBinding" {
+	class AllowedNavigationBinding {
+	}
+}
+package "AccessControlEntry" {
+	class AccessControlEntry {
+	}
+}
+AccessControlPermission "1" --  "0..*"AllowedNavigationBinding
+AccessControlPermission "1" --  "0..*"AccessControlEntry
+hide empty members
+@enduml

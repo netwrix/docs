@@ -15,14 +15,14 @@ topic for additional information.
 When a policy is assigned to a group, Password Policy Enforcer enforces the policy for all members
 of the group as well as any nested groups. For example, if the Helpdesk group is a member of the
 Info Tech group, then any policy assigned to the Info Tech group also applies to the members of the
-Helpdesk group. If this behavior is not desired, then you can assign a different policy to the
+Helpdesk group. If this behavior isn't desired, then you can assign a different policy to the
 Helpdesk group.
 
 :::note
 When a policy is assigned to a container, Password Policy Enforcer enforces the policy for
 all users in the container as well as any child containers. For example, if the Helpdesk and
 Managers OUs are children of the Info Tech OU, then any policy assigned to the Info Tech OU also
-applies to the two child OUs. If this behavior is not desired, then you can assign a different
+applies to the two child OUs. If this behavior isn't desired, then you can assign a different
 policy to a child OU.
 :::
 
@@ -41,11 +41,9 @@ the configuration. The assignment is invalidated if the user is renamed.
 
 ## Assign a Password Policy
 
-Follow the steps to assign a password policy.
-
 **Step 1 –** Click the **Policies** item to display the Policies view.
 
-**Step 2 –** Click the desired policy in the right pane of the management console.
+**Step 2 –** Click the policy you want in the right pane of the management console.
 
 **Step 3 –** Click **Properties** in the right pane of the management console.
 
@@ -54,30 +52,28 @@ Follow the steps to assign a password policy.
 **Step 5 –** Click the **Add...** button corresponding to Users, Groups, or Containers /
 Organizational Units.
 
-**Step 6 –** Select the desired user, group, or container, then click **OK**.
+**Step 6 –** Select the user, group, or container you want, then click **OK**.
 
 **Step 7 –** Click **OK** to close the Policy Properties page.
 
 ## Remove a Password Policy
 
-Follow the steps to remove a policy assignment.
-
 **Step 1 –** Click the Policies item to display the Policies view.
 
-**Step 2 –** Click the desired policy in the right pane of the management console.
+**Step 2 –** Click the policy you want in the right pane of the management console.
 
 **Step 3 –** Click Properties in the right pane of the management console.
 
 **Step 4 –** Click the Assigned To tab.
 
-**Step 5 –** Select the policy assignment that you wish to remove.
+**Step 5 –** Select the policy assignment that you want to remove.
 
 **Step 6 –** Click the appropriate Remove button.
 
 **Step 7 –** Click OK to close the Policy Properties page.
 
 :::note
-Different assignment types can be used for a single policy. For example, you may assign
+You can use different assignment types for a single policy. For example, you may assign
 users to a policy by both OU and group at the same time.
 :::
 
@@ -100,7 +96,7 @@ enforce Policy B for all users in the Users\Students and Users\Students\Science 
 the policy assigned to the nearest parent container.
 
 If a policy assignment conflict still exists, then Password Policy Enforcer checks the priority of
-each remaining policy, and enforces the policy with the highest priority. See the diagram above for
+each remaining policy, and enforces the policy with the highest priority. See the Policy Assignment Conflicts diagram for
 a diagrammatic representation of this algorithm.
 
 Use the Log tab in the Test Policies page to quickly determine which policy Password Policy Enforcer

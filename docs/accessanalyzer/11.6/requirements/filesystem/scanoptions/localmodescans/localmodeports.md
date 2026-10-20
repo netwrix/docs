@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Local Mode Port Requirements
 
-The following are the firewall settings are required when executing the Access Auditing (FSAA)
+The following firewall settings are required when executing the Access Auditing (FSAA)
 and/or Sensitive Data Discovery Auditing scans in local mode for communication between Enterprise
 Auditor and the target host:
 

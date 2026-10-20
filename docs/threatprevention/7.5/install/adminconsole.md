@@ -11,8 +11,6 @@ additional consoles on standalone machines, like administrator or user workstati
 users can launch the Administration Console on their workstations, as an alternate to using it on
 the Enterprise Manager server only.
 
-Follow the steps to install the Administration Console on a remote machine.
-
 **Step 1 –** From the Threat Prevention Installer package, run the server executable
 (threatprevention-server-7.5.x.xxx.msi). The Netwrix Threat Prevention Server Setup wizard opens.
 
@@ -23,7 +21,7 @@ happens:
 
 - If the installer detects .NET Framework 4.7.2 or later version installed on the machine, it
   proceeds with the installation.
-- If it does not detect .NET Framework 4.7.2 or later version, a message is displayed to inform you
+- If it doesn't detect .NET Framework 4.7.2 or later version, a message is displayed to inform you
   to install it.
 
   ![.NET Framework Required](/images/threatprevention/7.5/install/netrequired.webp)
@@ -52,10 +50,10 @@ machine.
 By default, Enterprise Manager and Administration Console are selected for installation. However,
 you can choose to select or deselect a component for installation.
 
-- To select a component – Click on the red cross next to a component name and select the **Entire
+- To select a component – Click the red cross next to a component name and select the **Entire
   feature will be installed on local hard drive** option. An icon representing a hard drive appears
   for the component.
-- To deselect a component – Click on the icon next to a component name and select the **Entire
+- To deselect a component – Click the icon next to a component name and select the **Entire
   feature will be unavailable** option. A red cross appears for the component.
 
 As you have to install the Administration Console only, deselect the Enterprise Manager and EPE Rest
@@ -70,7 +68,7 @@ page opens.
 
 ![Threat Prevention Server Setup wizard - Change Destination Folder page](/images/threatprevention/7.5/install/changedestinationfolder.webp)
 
-> - Use the Look in field to select the desired installation folder.
+> - Use the Look in field to select the installation folder you want.
 > - When the Folder name box is set as desired, click **OK**.
 
 The wizard returns to the Custom Setup page. You can use the **Reset** button to revert to the
@@ -113,7 +111,7 @@ finished, the Completed the Netwrix Threat Prevention Server Setup Wizard page i
 
 ![Threat Prevention Server Setup wizard – Completed page](/images/threatprevention/7.5/install/complete.webp)
 
-If .NET Framework 4.7.2 is not installed, the Completed the Netwrix Threat Prevention Server Setup
+If .NET Framework 4.7.2 isn't installed, the Completed the Netwrix Threat Prevention Server Setup
 Wizard page displays the **Run .NET installation package** checkbox. Check it and click **Finish**
 to install it.
 
@@ -141,7 +139,7 @@ CertsInfo folder path on the remote Administration Console machine:
 
 :::warning
 Never copy all files from the Certsinfo folder on the server to a machine where the
-Enterprise Manager is not installed. Doing so exposes the Enterprise Manager private keys, which
+Enterprise Manager isn't installed. Doing so exposes the Enterprise Manager private keys, which
 undermines security.
 :::
 

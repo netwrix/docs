@@ -1,0 +1,9 @@
+﻿{
+  "label": "Manual Edits",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

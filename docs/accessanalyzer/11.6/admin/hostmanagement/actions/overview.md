@@ -20,9 +20,9 @@ The available actions are:
   the Host Management node)
 - [View/Edit Host](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/viewhost.md)
   – Open the Host Details View, which displays the collected host inventory information for the
-  selected host in an easier-to-read format and allows you to manually edit the host inventory
+  selected host in an easier-to-read format and lets you manually edit the host inventory
   information
-- [Delete Host(s)](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/deletehost.md)
+- [Delete Hosts](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/deletehost.md)
   – Delete host from the selected list (permanently deletes host from the host master table if used
   in the Host Management node)
 - [Import Location](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/importlocation.md)
@@ -41,8 +41,9 @@ The available actions are:
   – Export the current data grid to a HTML, XML, or CSV file
 - [Suspend/Resume Host Inventory](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/suspend.md)
   – Pause an **In progress** host inventory or resume a paused **In queue** host inventory
-- External commands – Sub-header (not activity) that separates the Activities above which occur
-  within the Enterprise Auditor Console from the Activities below which open external processes:
+- External commands – Sub-header (not activity) that separates the preceding Activities, which occur
+  within the Enterprise Auditor Console, from the following Activities, which open external
+  processes:
 
     - Manage Host – Opens the Microsoft Management Console interface for the selected host if it has
       that feature enabled
@@ -58,7 +59,7 @@ Activities available only at the individual host list nodes are:
 - [Edit Query](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/editquery.md)
   – Edit the Host Discovery query settings for the selected query-created host list
 - [Rename List](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/rename.md)
-  – Rename the selected host list (should not be used if the host list has already been assigned to
+  – Rename the selected host list (shouldn't be used if the host list has already been assigned to
   a job for execution)
 - [Delete List](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/deletelist.md)
   – Delete the selected host list

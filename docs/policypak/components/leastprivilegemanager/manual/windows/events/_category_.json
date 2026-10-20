@@ -1,0 +1,9 @@
+﻿{
+  "label": "Discovery, Auditing, and Events",
+  "position": 110,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

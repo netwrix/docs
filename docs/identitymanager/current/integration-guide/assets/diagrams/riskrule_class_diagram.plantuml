@@ -1,0 +1,27 @@
+@startuml component
+package "RiskRule" {
+	class RiskRule {
+		Order : Int32
+		--
+		Items : RiskRuleItem[]
+		Policy : Policy
+		Risk : Risk
+	}
+}
+package "RiskRuleItem" {
+	class RiskRuleItem {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "Risk" {
+	class Risk {
+	}
+}
+RiskRule "1" --  "0..*"RiskRuleItem
+RiskRule "0..*" --  "1"Policy
+RiskRule "0..*" --  "1"Risk
+hide empty members
+@enduml

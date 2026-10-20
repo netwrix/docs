@@ -7,9 +7,9 @@ sidebar_position: 10
 # File System Proxy Service Installation
 
 The File System Proxy installer is designed to simplify the process of setting up File System
-Scanning Proxy as a service on the designated proxy server. It is a best practice to use a
-specifically provisioned domain account as the File System Proxy service account. Follow the steps
-to install the FSAA service on the targeted proxy servers.
+Scanning Proxy as a service on the designated proxy server. As a best practice, use a
+specifically provisioned domain account as the File System Proxy service account. To install the
+FileSystemAccess (FSAA) service on the targeted proxy servers:
 
 **Step 1 –** Run the `FileSystemProxy.exe` executable. The Netwrix Access Analyzer (formerly
 Enterprise Auditor) File System Scanning Proxy Setup wizard opens.
@@ -34,8 +34,8 @@ folder page.
 On the Change destination folder page, choose a different destination folder for the installation.
 
 - Look in – Select which folder or sub-folder to complete installation in using the Look in
-  drop-down
-- Up one level – Click the Up one level button to select the folder one level above the currently
+  dropdown
+- Up one level – Click the Up one level button to select the folder one level above the 
   selected one
 - Create a new folder – Click to create a new folder for the destination of the installation
 
@@ -62,33 +62,33 @@ radio buttons. Then, click **Next**.
 **Step 7 –** When the installation completes, click **Finish** to exit the wizard.
 
 :::note
-If the File System Proxy Service is installed on multiple servers, then a custom host list
-of proxy servers should also be created in Netwrix Access Analyzer (formerly Enterprise Auditor).
+If the File System Proxy Service is installed on multiple servers, you should also create a custom
+host list of proxy servers in Netwrix Access Analyzer (formerly Enterprise Auditor).
 :::
 
 
-Once the File System Proxy Service has been installed on any proxy server, it is necessary to
-configure the File System Solution certificate exchange method for Proxy Mode as a Service. See the
+After you install the File System Proxy Service on any proxy server, configure the File System
+Solution certificate exchange method for Proxy Mode as a Service. See the
 [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md)
 topic for additional information.
 
 ## Custom Parameters for File System Proxy Service
 
-The port and priority parameters can be modified for the File System Proxy Service on the registry
+You can modify the port and priority parameters for the File System Proxy Service on the registry
 key:
 
 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\StealthAUDITFSAA\ImagePath**
 
-- Port parameter – Only needs to be added to the registry key value if a custom port is used. The
-  default port of 8766 does not need to be set as a parameter
+- Port parameter – You only need to add this to the registry key value if you use a custom port.
+  You don't need to set the default port of 8766 as a parameter
     - Append `-e [PORT NUMBER]` to the ImagePath key value
-- Priority parameter – Can be modified so that the service runs as a background priority, which may
-  be desired if the service has been installed directly on a file server
+- Priority parameter – You can modify this so that the service runs as a background priority, which
+  may be useful if you installed the service directly on a file server
 
     - Append `-r 0` to the ImagePath key value
 
     :::note
-    If both parameters are added, there is no required order.
+    If you add both parameters, there is no required order.
     :::
 
 
@@ -98,12 +98,12 @@ key:
     :::
 
 
-Follow the steps to configure these service parameters.
+Configure these service parameters:
 
 ![Netwrix Enterprise Auditor FSAA Proxy Scanner service in the Services Management Console](/images/accessanalyzer/12.0/install/filesystemproxy/service.webp)
 
 **Step 1 –** After installing the File System Proxy Service, open Services Management Console
-(`services.msc`). To stop the service, right-click on the Netwrix Access Analyzer (formerly
+(`services.msc`). To stop the service, right-click the Netwrix Access Analyzer (formerly
 Enterprise Auditor) FSAA Proxy Scanner service and select **Stop**.
 
 ![File System Proxy ImagePath registry key in the Registry Editor](/images/accessanalyzer/12.0/install/filesystemproxy/regedit.webp)
@@ -112,8 +112,8 @@ Enterprise Auditor) FSAA Proxy Scanner service and select **Stop**.
 
 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\StealthAUDITFSAA\ImagePath**
 
-**Step 3 –** Right-click on the **ImagePath** key and select **Modify**. The Value data was set
-during installation according to the installation directory location selected.
+**Step 3 –** Right-click the **ImagePath** key and select **Modify**. The installer set the Value data
+during installation according to the installation directory location you selected.
 
 - Priority set to background priority:
     - Add `-r 0` to the end of the path value
@@ -126,7 +126,7 @@ during installation according to the installation directory location selected.
 **C:\Program Files (x86)\STEALTHbits\StealthAUDIT\FSAA\StealthAUDITRPC.EXEFSAASrv.DLL -e 1234**
 
         :::note
-        The port number needs to be added to the path only if a custom port is used.
+        You only need to add the port number to the path if you use a custom port.
         :::
 
 
@@ -151,5 +151,5 @@ section for additional configurations required to run scans in proxy mode as a s
 **Step 7 –** Repeat the previous step for each of the **FileSystem** > **0.Collection** jobs to
 employ this proxy service.
 
-The custom port identified is now used for communication between the File System Proxy Service and
-Access Analyzer.
+Access Analyzer now uses the custom port you identified for communication between the File System
+Proxy Service and Access Analyzer.

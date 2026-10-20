@@ -1,0 +1,45 @@
+@startuml component
+package "AccessCertificationDataFilter" {
+	class AccessCertificationDataFilter {
+		IncludeCompositeRoles : Boolean
+		IncludeDeniedPermissions : Boolean
+		IncludeDoubleValidation : Boolean
+		IncludeManualAssignmentNotAllowed : Boolean
+		IncludeNestedCategories : Boolean
+		IncludeNoValidation : Boolean
+		IncludeResourceNavigations : Boolean
+		IncludeResourceScalars : Boolean
+		IncludeResourceTypes : Boolean
+		IncludeSimpleValidation : Boolean
+		IncludeSingleRoles : Boolean
+		IncludeTripleValidation : Boolean
+		IncludeWorkflowStateApproved : Boolean
+		IncludeWorkflowStateFound : Boolean
+		IncludeWorkflowStateHistory : Boolean
+		IncludeWorkflowStatePolicyApproved : Boolean
+		LatestCertifiedLimitDate : DateTime
+		Tags : String
+		TargetedRisk : Int64
+		--
+		Campaign : AccessCertificationCampaign
+		Category : Category
+		ResourceType : ResourceType
+	}
+}
+package "AccessCertificationCampaign" {
+	class AccessCertificationCampaign {
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+AccessCertificationDataFilter "0..*" --  "1"AccessCertificationCampaign
+AccessCertificationDataFilter "0..*" --  "0..1"Category
+AccessCertificationDataFilter "0..*" --  "0..1"ResourceType
+hide empty members
+@enduml

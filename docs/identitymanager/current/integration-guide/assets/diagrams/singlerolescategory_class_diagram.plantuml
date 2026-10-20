@@ -1,0 +1,20 @@
+@startuml component
+package "SingleRolesCategory" {
+	class SingleRolesCategory {
+		--
+		Category : Category
+		SingleRole : SingleRole
+	}
+}
+package "Category" {
+	class Category {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+SingleRolesCategory "0..*" --  "1"Category
+SingleRolesCategory "0..*" --  "1"SingleRole
+hide empty members
+@enduml

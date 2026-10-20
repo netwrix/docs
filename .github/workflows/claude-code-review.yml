@@ -1,57 +1,63 @@
-name: Claude Code Review
+name: Code Review
 
 on:
   pull_request:
     types: [opened, synchronize]
-    # Optional: Only run on specific file changes
-    # paths:
-    #   - "src/**/*.ts"
-    #   - "src/**/*.tsx"
-    #   - "src/**/*.js"
-    #   - "src/**/*.jsx"
+    branches:
+      - dev
+    paths-ignore:
+      - 'docs/**/*.md'
+      - 'docs/kb/**'
+      - 'static/**'
 
 jobs:
-  claude-review:
-    # Optional: Filter by PR author
-    # if: |
-    #   github.event.pull_request.user.login == 'external-contributor' ||
-    #   github.event.pull_request.user.login == 'new-developer' ||
-    #   github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
-
+  code-review:
+    if: github.event.pull_request.head.repo.fork == false && github.actor != 'dependabot[bot]'
+    concurrency:
+      group: code-review-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
-      issues: read
-      id-token: write
-
+      issues: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 1
 
-      - name: Run Claude Code Review
-        id: claude-review
-        uses: anthropics/claude-code-action@v1
+      - name: Delete previous bot review comments
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          COMMENT_IDS=$(gh api repos/${{ github.repository }}/issues/${PR_NUMBER}/comments --paginate \
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("## Code Review"))) | .id] | .[]' 2>/dev/null || true)
+          for ID in $COMMENT_IDS; do
+            gh api repos/${{ github.repository }}/issues/comments/${ID} -X DELETE 2>/dev/null || true
+          done
+
+      - name: Run code review
+        uses: anthropics/claude-code-action@1d6de8cb0c237e7c15e9e1bdf973826ebae490cc # v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
           prompt: |
-            REPO: ${{ github.repository }}
-            PR NUMBER: ${{ github.event.pull_request.number }}
+            Review this PR for correctness issues. Focus on:
+            - Bugs, broken logic, or unintended side effects
+            - Security issues (injection, exposed secrets, unsafe eval, etc.)
+            - Docusaurus config changes that could break the build or routing (products.js, docusaurus.config.js, sidebars)
+            - Script changes that could break the KB copy pipeline or build process
+            - GitHub Actions workflow changes — correct triggers, permissions, and secret usage
 
-            Please review this pull request and provide feedback on:
-            - Code quality and best practices
-            - Potential bugs or issues
-            - Performance considerations
-            - Security concerns
-            - Test coverage
+            Do NOT review documentation content or style — a separate workflow handles that.
 
-            Use the repository's CLAUDE.md for guidance on style and conventions. Be constructive and helpful in your feedback.
-
-            Use `gh pr comment` with your Bash tool to leave your review as a comment on the PR.
-
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://docs.claude.com/en/docs/claude-code/cli-reference for available options
-          claude_args: '--allowed-tools "Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"'
+            Use `gh pr diff ${{ github.event.pull_request.number }}` to read the diff.
+            Post your findings as a single PR comment starting with "## Code Review".
+            If there are no issues, say so briefly.
+          claude_args: '--allowedTools "Bash(gh:*),Read,Glob,Grep"'

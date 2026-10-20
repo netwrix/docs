@@ -19,7 +19,7 @@ Bi-directional analysis tests passwords with their characters reversed to stop u
 circumventing a rule by entering a non-compliant password backwards. For example, "drowssapym"
 instead of "mypassword".
 
-Click on your policy name on the Configuration Console dashboard if needed.
+Click your policy name on the Configuration Console dashboard if needed.
 
 **Step 1 –** Open the **Dictionary** rule.
 

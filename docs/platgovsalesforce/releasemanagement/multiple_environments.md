@@ -7,14 +7,14 @@ sidebar_position: 40
 # Multiple Environment Deployments
 
 Multiple Environment Deployment Tracking helps you manage changes between your Production and
-Development/Testing .
+Development/Testing environments.
 
-With multiple environment deployment tracking, you can push, pull and access your change requests in
-all your environments that have Platform Governance for Salesforce installed. This alleviates the
+With multiple environment deployment tracking, you can push, pull, and access your change requests in
+all your environments that have Platform Governance for Salesforce installed. This reduces the
 risk of breaking your production account. By documenting and validating the change process through
-change requests, deployment records and environment comparison, multiple environment deployment
-tracking enables you to access change requests in any environment where Platform Governance for
-Salesforce is installed, and to deploy changes and promote code from one environment to another.
+change requests, deployment records, and environment comparison, multiple environment deployment
+tracking lets you access change requests in any environment where Platform Governance for
+Salesforce is installed, and deploy changes and promote code from one environment to another.
 
 ## Push/Pull Change Requests
 
@@ -23,10 +23,7 @@ Salesforce is installed, and to deploy changes and promote code from one environ
     ![Open Completed Change Request](/images/platgovsalesforce/release_management/push_pullcr-1.webp)
 
 2. Edit the change request and add all necessary details.
-
-    ![Edit the Change Request](/images/platgovsalesforce/release_management/push_pull_cr.webp)
-
-3. Click on **Sync CR**.
+3. Click **Sync CR**.
 
     ![Sync the Change Request](/images/platgovsalesforce/release_management/push_pull_sync_cr.webp)
 
@@ -35,8 +32,8 @@ Salesforce is installed, and to deploy changes and promote code from one environ
 
     ![Enter Credentials](/images/platgovsalesforce/release_management/push_pull_popup.webp)
 
-6. Click on **Test Connection** to make sure your credentials are correct. If your credentials are
-   not correct, you can click on **Save Credentials** and edit.
+6. Click **Test Connection** to ensure your credentials are correct. If your credentials are
+   not correct, click **Save Credentials** and edit.
 
 ### Push the Change Request
 
@@ -54,7 +51,7 @@ Your Change Request is pushed to your selected environment.
 To pull a change request from the selected environment:
 
 1. Select **Pull**
-2. Click on **Get Change Requests**
+2. Click **Get Change Requests**
 
     ![pullcr](/images/platgovsalesforce/release_management/pullcr.webp)
 
@@ -64,5 +61,5 @@ To pull a change request from the selected environment:
 
 4. Click **Pull Change Request.**
 
-The parent change request is the one you pull from and when the change request is pulled, it becomes
+The parent change request is the one you pull from. When the change request is pulled, it becomes
 a child of the original change request.

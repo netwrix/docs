@@ -37,7 +37,7 @@ Stop-Service sbpam* -Force
 Stop-Service w3svc -Force
 ```
 
-2. In Windows Explorer, navigate to the Program Data directory for Privilege Secure (for example, `C:\ProgramData\Stealthbits\PAM\`). From here, open the **WebService** folder, and then open `appsettings.jwt.json` in Notepad. In `appsettings.jwt.json`, locate the `"Jwt"` section (such as the example below) and delete all of it. This is the trigger to generate a new JWT Signing Certificate:
+2. In Windows Explorer, navigate to the Program Data directory for Privilege Secure (for example, `C:\ProgramData\Stealthbits\PAM\`). From here, open the **WebService** folder, and then open `appsettings.jwt.json` in Notepad. In `appsettings.jwt.json`, locate the `"Jwt"` section (such as the following example) and delete all of it. This is the trigger to generate a new JWT Signing Certificate:
 
 ```json
 "Jwt": {

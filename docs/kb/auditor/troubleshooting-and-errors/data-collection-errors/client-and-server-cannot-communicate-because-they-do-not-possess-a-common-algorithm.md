@@ -61,4 +61,4 @@ If initial changes do not affect the system operability, you can revert them to 
 
 Refer to the following Microsoft article for additional information on best TLS practices: [TLS Best Practices](https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls).
 
-For additional information on mismatched TLS versions and limited ciphers, refer to the following article: Сonnection Issue when TLS 1.2 Is Required.
+For additional information on mismatched TLS versions and limited ciphers, refer to the following article: Connection Issue when TLS 1.2 Is Required.

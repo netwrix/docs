@@ -1,0 +1,198 @@
+---
+title: "Application Server Install"
+description: "Application Server Install"
+sidebar_position: 10
+---
+
+# Application Server Install
+
+To install Threat Prevention:
+
+**Step 1 –** From the Threat Prevention Installer package, run the server executable
+(threatprevention-server-8.1.x.xxx.msi). The Netwrix Threat Prevention Server Setup wizard opens.
+
+:::note
+Run the msi via the command prompt with elevated privileges (domain admin rights) on a
+domain-joined machine. Else the installer runs and completes without errors, though it installs no
+components.
+:::
+
+
+![Threat Prevention Server Setup wizard - Welcome page](/images/threatprevention/8.1/install/welcome.webp)
+
+**Step 2 –** On the Welcome page, click **Next** to begin the installation. One of the following
+happens:
+
+- If the installer detects .NET Framework 4.7.2 or later version installed on the machine, it
+  proceeds with the installation.
+- If it doesn't detect .NET Framework 4.7.2 or later version, the wizard displays a message
+  informing you to install it.
+
+  ![.NET Framework Required](/images/threatprevention/8.1/install/netrequired.webp)
+
+  You can either exit the wizard and install it manually or walk through the wizard until its last
+  page and install it as part of the Threat Prevention installation process.
+
+When you click Next, the End-User License Agreement page opens.
+
+![Threat Prevention Server Setup wizard - End-User License Agreement page](/images/threatprevention/8.1/install/licenseagreement.webp)
+
+**Step 3 –** On the End-User License Agreement page, select the **I accept the terms in the License
+Agreement** checkbox and click **Next**.
+
+![Threat Prevention Server Setup wizard - Custom Setup page](/images/threatprevention/8.1/install/customsetup_1.webp)
+
+**Step 4 –** The Custom Setup page displays the Threat Prevention components that are available to
+install.
+
+:::note
+EPE Rest Site is available if Internet Information Services (IIS) is installed on the
+machine.
+:::
+
+
+By default, Enterprise Manager and Administration Console are selected for installation. However,
+you can choose to select or deselect a component for installation.
+
+- To select a component – Click the red cross next to a component name and select the **Entire
+  feature will be installed on local hard drive** option. An icon representing a hard drive appears
+  for the component.
+- To deselect a component – Click the icon next to a component name and select the **Entire
+  feature will be unavailable** option. A red cross appears for the component.
+
+The components require the following hard drive space for installation:
+
+- Enterprise Manager – 112 MB
+- Administration Console – 173 MB
+- EPE Rest Site – 32 MB
+
+Optionally, you can change the installation directory location for Threat Prevention.
+
+**Step 5 –** By default, the wizard installs the Threat Prevention infrastructure components to the
+`C:\Program Files\Netwrix\Netwrix Threat Prevention\` directory.
+
+_(Optional)_ Click **Browse…** to change the installation location. The Change destination folder
+page opens.
+
+![Threat Prevention Server Setup wizard - Change Destination Folder page](/images/threatprevention/8.1/install/changedestinationfolder.webp)
+
+> - Use the Look in field to select the installation folder you want.
+> - When the Folder name box is set as desired, click **OK**.
+
+The wizard returns to the Custom Setup page. You can use the **Reset** button to revert to the
+default settings on the Custom Setup page. Click **Next** to proceed.
+
+![Threat Prevention Server Setup wizard - Enterprise Manager Location Information page](/images/threatprevention/8.1/install/emlocationinfo.webp)
+
+**Step 6 –** On the Enterprise Manager Location Information page, the host name or IP address for
+the Enterprise Manager server is pre-populated. Enter the ports for the Enterprise Manager service
+to communicate with the other Threat Prevention components.
+
+- Enterprise Manager port for Agent Communications – 3741
+- Enterprise Manager port for Console and PowerShell API Communications – 3740
+
+:::note
+As a requirement for using custom managed certificates, you must provide the Enterprise
+Manager server DNS name, hostname, or FQDN (instead of the IP address) when installing the
+following:
+:::
+
+
+- Threat Prevention server
+- Remote instance of the Administration Console
+- Agent
+
+See the
+[Administration Console and Agent Not Communicating with the Enterprise Manager ](/docs/threatprevention/8.1/troubleshooting/enterprisemanagercommunication.md)topics
+for additional information.
+
+Checking the **Create Windows Firewall Rules** box automatically sets the Windows firewall rules
+needed to open these ports on the server during the installation process. If you use a third party
+firewall, uncheck this option and manually create the necessary firewall rules. See the
+[Firewall Ports](/docs/threatprevention/8.1/requirements/ports.md) topic for additional information.
+
+After you configure the settings, click **Next**.
+
+![Threat Prevention Server Setup wizard - Database Login Information page](/images/threatprevention/8.1/install/databselogininfor.webp)
+
+**Step 7 –** On the Database Login Information page, provide the SQL Server information for database
+connection.
+
+- In the first box, enter the IP address (may need instance port number, e.g. 192.168.189.152,1433)
+  or the server name (Server\Instance) of the SQL server where the Threat Prevention database
+  resides. Click Browse to select the server.
+- Select the **Windows authentication** or **SQL Server Credentials** option button (for SQL Server
+  authentication) and enter the credentials:
+
+  - Windows authentication uses the credentials provided on the Logon page, which appears if you
+    select this option.
+  - For SQL Server authentication, provide SQL credentials in the **Login ID** and **Password**
+    boxes.
+
+  :::note
+  The account used for authentication, either a Windows or SQL account, requires a
+  minimum of the following permissions on the SQL Server:
+  :::
+
+
+  - Create schema
+  - Read
+  - Write
+
+- Click **Next**.
+
+  - If using Windows authentication, continue with the next step.
+  - If using SQL Server authentication, skip the next step.
+
+    :::note
+    For SQL Server authentication, the wizard tests the credentials when you click
+    **Next**. If the credential authentication fails, the setup doesn't proceed and a pop-up
+    window displays failure details.
+    :::
+
+
+![Threat Prevention Server Setup wizard – Logon page](/images/threatprevention/8.1/install/logon.webp)
+
+**Step 8 –** If you select Windows authentication, the Logon page opens.
+
+- Provide the username (Domain\User format) and password that the Threat Prevention Enterprise
+  Manager service will impersonate when connecting to the database. These credentials must have
+  elevated privileges with rights to create and modify the database.
+
+  :::note
+  Windows authentication uses an Active Directory account. Local Windows accounts are
+  not supported.
+  :::
+
+
+- Click **Next**.
+
+  :::note
+  For Windows authentication, the wizard tests the credentials when you click **Next**. If the
+  credential authentication fails, the setup doesn't proceed and a pop-up window displays failure
+  details.
+  :::
+
+
+![Threat Prevention Server Setup wizard - Ready to Install page](/images/threatprevention/8.1/install/readytoinstall.webp)
+
+**Step 9 –** On the Ready to Install Netwrix Threat Prevention Server page, click **Install**. When
+it finishes, the Completed the Netwrix Threat Prevention Server Setup Wizard page opens.
+
+![Threat Prevention Server Setup wizard – Completed page](/images/threatprevention/8.1/install/complete.webp)
+
+If .NET Framework 4.7.2 isn't installed, the Completed the Netwrix Threat Prevention Server Setup
+Wizard page displays the **Run .NET installation package** checkbox. Check it and click **Finish**
+to install it.
+
+![Option to install .Net Framework on Complete page](/images/threatprevention/8.1/install/installnet.webp)
+
+You can also choose to skip the built-in download of .NET Framework 4.7.2 and install it manually.
+
+**Step 10 –** The installation process begins and the wizard displays the installation status. When
+installation is complete, click **Finish**.
+
+![Threat Prevention Admin Console desktop icon](/images/threatprevention/8.1/install/desktopicon.webp)
+
+The wizard has installed the selected components, and the Threat Prevention Console icon is now on
+the desktop. See the [First Launch](/docs/threatprevention/8.1/install/firstlaunch/firstlaunch.md) topic for the next steps.

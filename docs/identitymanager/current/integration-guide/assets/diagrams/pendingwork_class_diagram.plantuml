@@ -1,0 +1,13 @@
+@startuml component
+package "PendingWork" {
+	class PendingWork {
+		ActualCompletionDate : DateTime
+		CompletionRedirectUri : String
+		EstimatedCompletionDate : DateTime
+		LaunchDate : DateTime
+		Payload : String
+		State : Int16
+	}
+}
+hide empty members
+@enduml

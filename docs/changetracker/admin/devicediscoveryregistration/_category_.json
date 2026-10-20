@@ -1,0 +1,10 @@
+{
+  "label": "Device Discovery and Registration",
+  "position": 100,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "devicediscoveryregistration"
+  }
+}

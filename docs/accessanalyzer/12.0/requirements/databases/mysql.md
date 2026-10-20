@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Target MySQL Requirements, Permissions, and Ports
 
-The Access Analyzer for Databases Solution provides the ability to audit and monitor MySQL database
+The Access Analyzer for Databases Solution lets you audit and monitor MySQL database
 environments to collect permissions and sensitive data. It scans:
 
 - MySQL 5.x

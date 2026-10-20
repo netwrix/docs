@@ -83,8 +83,7 @@ Follow the steps below to change a password.
 **Step 3 –** Enter the **Old Password**, **New Password**, and **Confirm Password** in the
 respective field. Click **Next**.
 
-Password Reset's user interface is built with customizable templates. You can easily modify the user
-interface by editing the templates. Even the error messages are defined in the templates, so you can
+Password Reset's user interface is built with customizable templates. You can modify the user interface by editing the templates. Even the error messages are defined in the templates, so you can
 edit those too. See the
 [Editing the HTML Templates](/docs/passwordreset/3.3/administration/editing_the_html_templates.md) topic of the
 Administrator's Guide for additional information.

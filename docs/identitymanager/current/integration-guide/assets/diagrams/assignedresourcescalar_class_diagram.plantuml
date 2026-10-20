@@ -1,0 +1,44 @@
+@startuml component
+package "AssignedResourceScalar" {
+	class AssignedResourceScalar {
+		EndDate : DateTime
+		IsPending : Boolean
+		Owner : Int64
+		OwnerType : Int64
+		Performer : Int64
+		PolicyValue : String
+		ProvisioningState : Byte
+		StartDate : DateTime
+		Value : String
+		WhenPerformed : DateTime
+		WhenTransmitted : DateTime
+		WorkflowState : Byte
+		--
+		AccessCertificationItems : AccessCertificationItem[]
+		AssignedResourceType : AssignedResourceType
+		Property : EntityProperty
+		WorkflowInstance : WorkflowInstance
+	}
+}
+package "AccessCertificationItem" {
+	class AccessCertificationItem {
+	}
+}
+package "AssignedResourceType" {
+	class AssignedResourceType {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "WorkflowInstance" {
+	class WorkflowInstance {
+	}
+}
+AssignedResourceScalar "0..1" --  "0..*"AccessCertificationItem
+AssignedResourceScalar "0..*" --  "1"AssignedResourceType
+AssignedResourceScalar "0..*" --  "1"EntityProperty
+AssignedResourceScalar "0..*" --  "0..1"WorkflowInstance
+hide empty members
+@enduml

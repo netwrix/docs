@@ -132,9 +132,9 @@ request(for duplicate additions/updates).
 
 **Message**
 
-**"Unable to load Change Request. External ID: xxxx"**: There is an error with the change request.
+**"Uncan load Change Request. External ID: xxxx"**: There is an error with the change request.
 
-**"Change Request update prohibited. Change Request status is xxxx"**: The change request can not be
+**"Change Request update prohibited. Change Request status is xxxx"**: The change request can't be
 modified because of the current status.
 
 Error messages are returned if any exceptions are encountered.

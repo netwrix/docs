@@ -13,7 +13,7 @@ exceptions that were found within the selected farm/instance. This report includ
 
 An exception is defined as a problem or risk to data governance security. Exceptions include open
 access and permissions granted to stale or disabled users. This report will be blank if no
-exceptions were found on the selected farm/instance. It is comprised of the following columns:
+exceptions were found on the selected farm/instance. It includes the following columns:
 
 - Server Name – Single server name representing the entire SharePoint on-premise farm or SharePoint
   Online instance
@@ -21,7 +21,7 @@ exceptions were found on the selected farm/instance. It is comprised of the foll
 - Description – Description of the exception type
 - Count – Number of this type of exception found on the server
 
-There is one table at the bottom displaying Details for the selected exception:
+A table displays the following details for the selected exception:
 
 - Trustee Name – Owner of the trustee account
 - Path – Location of the resource where the exception exists

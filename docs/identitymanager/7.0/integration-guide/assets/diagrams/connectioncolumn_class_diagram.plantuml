@@ -1,0 +1,25 @@
+@startuml component
+package "ConnectionColumn" {
+	class ConnectionColumn {
+		DisplayName : String
+		Identifier : String
+		IsMultivalued : Boolean
+		KeyType : Byte
+		Path : String
+		UpdateDate : DateTime
+		ValueLength : Int32
+		ValueType : Byte
+		--
+		ForeignColumn : ConnectionColumn
+		ForeignColumnConnectionColumns : ConnectionColumn[]
+		Table : ConnectionTable
+	}
+}
+package "ConnectionTable" {
+	class ConnectionTable {
+	}
+}
+ConnectionColumn "0..*" --  "0..1"ConnectionColumn
+ConnectionColumn "0..*" --  "1"ConnectionTable
+hide empty members
+@enduml

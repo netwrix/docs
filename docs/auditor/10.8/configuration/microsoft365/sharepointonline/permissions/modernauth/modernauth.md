@@ -15,8 +15,8 @@ appropriate access permissions.
 If you plan to implement such scenario, you should register an Microsoft Entra ID app manually and
 provide its settings to Auditor when configuring a monitored item.
 
-Support for modern authentication will allow you to audit the organizations where MFA is enabled for
-all users, including service accounts.
+Modern authentication support lets you audit organizations where MFA is enabled for all users,
+including service accounts.
 
 Required configuration procedure includes several manual steps, as described in the corresponding
 section:
@@ -48,7 +48,6 @@ You will need to create a dedicated app for each cloud-based data source you pla
 
 If you plan to audit all of them, you need to create 4 apps.
 
-Follow the steps to register a new Microsoft Entra ID application.
 
 **Step 1 –** Sign into the **Microsoft 365 Admin Center** with your _Global Administrator_,
 _Application Administrator_ or _Cloud Application Administrator_ account and go to the **Microsoft
@@ -122,7 +121,6 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Configuring client secret
 
-Follow the steps to create a new client secret to be used by the app.
 
 **Step 1 –** Go to **Manage** > **Certificates & secrets** and click **New client secret**.
 
@@ -138,7 +136,6 @@ See the following Microsoft article for more information on how to add a client 
 
 ### Obtaining tenant name
 
-Follow the steps to obtain the tenant name.
 
 **Step 1 –** Navigate to **Microsoft Entra ID** > **Overview**.
 

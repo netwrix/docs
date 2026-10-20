@@ -14,7 +14,7 @@ Manager metadata. You can copy metadata values and paste them in the service pro
 
 ## Create an Application for a Service Provider
 
-Follow the steps to create an application for a service provider in Directory Manager.
+To create an application for a service provider in Directory Manager.
 
 Step 1 – In Directory Manager Authenticate, go to the SAML Applications tab and click **New
 Application**.
@@ -26,7 +26,7 @@ Step 3 – Copy the consumer URL from the service provider and enter it In the C
 
 Step 4 – Copy the audience URL from the service provider and enter it In the Entity ID/Audience box.
 
-Step 5 – From the Identity store drop-down list, select the identity store to use for authenticating
+Step 5 – From the Identity store dropdown list, select the identity store to use for authenticating
 users.  
 For single sign-on, third-party application users must authenticate through an identity store
 defined in Directory Manager. For example, to authenticate users through Active Directory, select an
@@ -51,18 +51,18 @@ Image file dimensions: 210 x 60 pixels
 Step 8 – Expand the Advanced section by clicking the down arrow head to specify advanced settings
 for the application.
 
-Step 9 – Select _Enabled_ or _Disabled_ in the Response Signing drop-down list, depending on whether
+Step 9 – Select _Enabled_ or _Disabled_ in the Response Signing dropdown list, depending on whether
 it is enabled or disabled in the service provider.
 
-Step 10 – Select a response signing method from the Response Signing Method drop-down list. This
+Step 10 – Select a response signing method from the Response Signing Method dropdown list. This
 method should be the same for the identity provider (Directory Manager) and the service provider
 (third-party application).
 
-Step 11 – Select _Post_ or _Redirect_ in the Response Binding drop-down list, depending on how the
+Step 11 – Select _Post_ or _Redirect_ in the Response Binding dropdown list, depending on how the
 service provider accepts the response.
 
-Step 12 – If you are not using assertion encryption, make sure _Disabled_ is selected in the
-Assertion Encryption drop-down list.  
+Step 12 – If you aren't using assertion encryption, ensure _Disabled_ is selected in the
+Assertion Encryption dropdown list.  
 To use assertion encryption as an advanced security feature, select **Enabled**. Then provide the
 certificate, key transport algorithm, and encryption algorithm to encrypt the response.
 
@@ -82,7 +82,7 @@ Step 15 – Click **Create Application** to create the service provider in Direc
 As part of registering an application in Directory Manager, you also have to provide Directory
 Manager metadata in the service provider.
 
-Follow the steps to copy the metadata.
+To copy the metadata.
 
 Step 1 – On the Create Application page, expand the Metadata section by clicking the down arrow
 head.

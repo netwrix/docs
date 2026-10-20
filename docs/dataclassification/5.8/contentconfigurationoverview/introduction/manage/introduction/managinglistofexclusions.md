@@ -1,0 +1,50 @@
+---
+title: "Managing list of exclusions"
+description: "Managing list of exclusions"
+sidebar_position: 60
+---
+
+# Managing list of exclusions
+
+When indexing SharePoint files, you can specify the list of file locations that the product ignores. For
+that, in the list of sources, select SharePoint, then select **Settings** →**SharePoint Excluded**
+on the left, and click **Add**.
+
+1. On the **Filter** tab, specify the objects (files or folders) to exclude:
+
+    To exclude a certain document, enter the page URL with no wildcard indicators (e.g.
+    _http://test.sharepoint.com/sites/documents/excluded%20document.docx_
+
+    ![manage_managing_list_of_exclusions](/images/dataclassification/5.8/admin/sources/sharepoint/manage_managing_list_of_exclusions.webp)
+
+    You can use wildcards anywhere in the exclusion pattern definition as follows:
+
+    - The asterisk character (\*) matching any sequence of characters
+    - The question mark character (?) matching any single character
+
+    For example:
+
+    - _http://test.sharepoint.com/sites/documents/\*_ will exclude all documents in the folder
+    - _\*/Restricted Folder/\*_ will exclude such folder in any site
+
+:::note
+Exclusions are case-insensitive.
+:::
+
+
+2. Optionally, enter the full exclusion URL to verify the settings and click **Test**.
+3. If needed, use metadata conditions to restrict when an exclusion filter applies. Click the
+   **Condition** tab and click **Add**. Then select how the exclusion conditions will work: the system can
+   check if a metadata field has any value, isn't specified, or matches a specific metadata value.
+
+    | Criteria      | Condition                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+    | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | Comparison    | Compare a value in the document metadata field with the value the condition sets. When you select this criteria, specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
+    | Has any value | Exclude the document if its metadata field has any value. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
+    | Has no values | Exclude the document if the metadata field has no value. When you select this criteria, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
+
+    ![gdrive_exclusion_condition_2_thumb_0_0](/images/dataclassification/5.8/admin/sources/box/gdrive_exclusion_condition_2_thumb_0_0.webp)
+
+    When finished, click **Add**.
+
+4. Finally, click **Save** and close the window.

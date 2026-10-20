@@ -1,0 +1,6 @@
+extends: capitalization
+message: "Use title case for KB article headings."
+level: warning
+match: $title
+style: Chicago
+scope: heading

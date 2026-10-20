@@ -1,16 +1,16 @@
 ---
 title: Netwrix Identity Manager Learning Path
-sidebar_position: 190
+sidebar_position: 180
 tags: [getting-started, training, identity-manager]
 keywords: [training, course, identity manager]
 description: "Learn to use Netwrix Identity Manager through courses"
 ---
 
-import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMStandard, NIMDataModel, NIMConnectors, NIMProfilesFundamentals, NIMIdentityWorkflow, NIMRoleModel, NIMReconciliation, NIMIntro } from '@site/src/training/identity-manager';
+import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning, NIMIntro, NIMReport, NIMConnectors, NIMResources, NIMJobs, NIMRoleModel, NIMAccessCert, NIMRisks, NIMRoleMining } from '@site/src/training/identity-manager';
 import { Company, NIM } from '@site/src/training/products';
 
 
-Estimated length: 3.75 hours
+Estimated length: 6 hours 40 minutes
 
 In this learning path, you will learn how to use <NIM />. This product was formerly Netwrix Usercube. It contains the following courses:
 
@@ -18,14 +18,16 @@ In this learning path, you will learn how to use <NIM />. This product was forme
 * 1721 <NIM /> – Identity & Identity Life Cycle
 * 2720 <NIM /> – Concepts
 * 2721 <NIM /> – Architecture
-* 2722 <NIM /> – Standard Deployment Project
-* 2723 <NIM /> – Data Model
-* 2724 <NIM /> – Connectors
-* 2725 <NIM /> – Profiles Fundamentals
-* 2726 <NIM /> – Identity Workflow Fundamentals
-* 2727 <NIM /> – Designing Role Model
-* 2728 <NIM /> – Reconciliation
+* 2722 <NIM /> – IGA Project Planning
 * 3720 Introduction to <NIM />
+* 3721 <NIM /> – Reporting & Business Intelligence
+* 3722 <NIM /> – Connectors & Synchronization
+* 3723 <NIM /> – Resources & Provisioning
+* 3724 <NIM /> – Jobs
+* 3725 <NIM /> – Role Model
+* 3726 <NIM /> – Access Certification
+* 3727 <NIM /> – Risks
+* 3728 <NIM /> – Role Mining
 
 <NIMValue />
 
@@ -35,18 +37,22 @@ In this learning path, you will learn how to use <NIM />. This product was forme
 
 <NIMArchitecture />
 
-<NIMStandard />
+<NIMProjectPlanning />
 
-<NIMDataModel />
+<NIMIntro />
+
+<NIMReport />
 
 <NIMConnectors />
 
-<NIMProfilesFundamentals />
+<NIMResources />
 
-<NIMIdentityWorkflow />
+<NIMJobs />
 
 <NIMRoleModel />
 
-<NIMReconciliation />
+<NIMAccessCert />
 
-<NIMIntro />
+<NIMRisks />
+
+<NIMRoleMining />

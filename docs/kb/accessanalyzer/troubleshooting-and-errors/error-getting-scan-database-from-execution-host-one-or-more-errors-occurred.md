@@ -9,7 +9,7 @@ keywords:
   - scan database
   - execution host
   - disk space
-  - Netwrix Auditor
+  - Netwrix Access Analyzer
   - FSAA
   - proxy service
   - StealthAUDIT
@@ -26,7 +26,7 @@ knowledge_article_id: kA0Qk0000000awLKAQ
 
 ## Symptom
 
-A file system scan using a proxy server prompts the following error in Netwrix Auditor:
+A file system scan using a proxy server prompts the following error in Netwrix Access Analyzer:
 
 ```text
 Error getting scan database from execution host: One or more errors occurred

@@ -12,7 +12,7 @@ to the job group, it can be run directly or scheduled.
 
 **Dependencies**
 
-This job group does not have dependencies.
+This job group doesn't have dependencies.
 
 **Targeted Hosts**
 
@@ -22,7 +22,7 @@ All Microsoft Entra Tenants.
 
 The Connection Profile is assigned under **.Entra ID Inventory** > **Settings** > **Connection**. It
 is set to **Use the Default Profile**, as configured at the global **Settings** level. However, if
-this is not the Connection Profile with the necessary permissions for targeting the Microsoft Entra
+this isn't the Connection Profile with the necessary permissions for targeting the Microsoft Entra
 tenants, select the **Select one of the following user defined profiles** option and select the
 appropriate Connection Profile. See the
 [Microsoft Entra ID Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/azureadinventory/configurejob.md)
@@ -47,14 +47,14 @@ often. It is best to rerun it anytime Entra ID changes might have occurred.
 
 **Run at the Solution Level**
 
-The jobs in the .Entra ID Inventory Job Group should be run together and in order by running the
-entire solution, instead of the individual jobs.
+Run the jobs in the .Entra ID Inventory Job Group together and in order by running the entire
+solution, instead of the individual jobs.
 
 **Query Configuration**
 
-Run the solution with the default query configuration for best results. While it is recommended to
-make no changes to the [1-AAD_Scan Job](/docs/accessanalyzer/12.0/solutions/entraidinventory/1-aad_scan.md), a possible modification might be to scope
-the query to not collect login activity.
+Run the solution with the default query configuration for best results. It's best to leave the
+[1-AAD_Scan Job](/docs/accessanalyzer/12.0/solutions/entraidinventory/1-aad_scan.md) unchanged, but a possible modification is to scope
+the query to skip collecting sign-in activity.
 
 **Analysis Configuration**
 

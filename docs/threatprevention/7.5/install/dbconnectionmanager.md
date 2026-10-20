@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # DB Connection Manager Wizard
 
-The Database Connection Manager (SIDBConfigMgr.exe) allows you to update the connection options for
+Use the Database Connection Manager (SIDBConfigMgr.exe) to update the connection options for
 the NVMonitorConfig and NVMonitorData databases. The databases are originally configured during
 initial install of the Enterprise Manager package. See the
 [Application Server Install](/docs/threatprevention/7.5/install/application.md) topic for additional information.
@@ -21,8 +21,6 @@ additional information.
 :::
 
 
-Follow the steps to manage database settings on the DB Connection Manager Wizard.
-
 **Step 1 –** Navigate to the following location on the Threat Prevention server:
 
 `...\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager`
@@ -35,7 +33,7 @@ Connection Manager wizard.
 **Step 3 –** You can update the following:
 
 - EM config file – Displays the current location of the SIEnterpriseManager.exe.config file. Use the
-  ellipsis (...) to locate the configuration file if it is not available at the default location.
+  ellipsis (...) to locate the configuration file if it isn't available at the default location.
   The default location is:
 
 **...\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager\SIEnterpriseManager.exe.config**
@@ -71,7 +69,7 @@ string for that database.
     SQL Server
   - Password – Password of the account
 
-**Step 4 –** The system verifies the new connection string data for the desired SQL server. The
+**Step 4 –** The system verifies the new connection string data for the SQL server you specified. The
 **Ignore Errors** checkbox controls the behavior when the system encounters an error when attempting
 to connect:
 

@@ -8,10 +8,11 @@ keywords:
 sidebar_label: iPhone Blocked by Endpoint Protector
 tags:
   - device-control-and-access-management
+  - kb
 title: "Why Does an iPhone Remain Blocked Despite Having Allow Access Rights?"
 knowledge_article_id: kA0Qk0000002B9JKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Why Does an iPhone Remain Blocked Despite Having Allow Access Rights?

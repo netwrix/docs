@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **Exchange** > **5. Public Folders*
 **Permissions** > **PF_Entitlements** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -34,7 +34,7 @@ The following analysis tasks are selected by default:
   under the job’s Results node
 - 04.Unresolved SIDs – Creates the SA_PF_Entitlements_UnresolvedSIDDetails table, accessible under
   the job’s Results node
-- AIC Import - PF Entitlements – Imports public folder entitlements to the Access Information Center
+- AIC Import - PF Entitlements – Imports public folder entitlements to the Access Information Center (AIC)
 
 In addition to the tables and views created by the analysis tasks, the PF_Entitlements job produces
 the following pre-configured reports:

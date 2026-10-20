@@ -16,8 +16,8 @@ consuming SharePoint Site collections.
 
 ![content_type_hubs_thumb_0_0](/images/dataclassification/5.6.2/workflows/content_type_hubs_thumb_0_0.webp)
 
-To configure a Workflow to run against all sites that consume a Content Type Hub please follow the
-below steps:
+To configure a Workflow to run against all sites that consume a Content Type Hub, follow these
+steps:
 
 1. Navigate to Workflows → Configs → Content Type Hubs
 2. Select Add

@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Main menu
 
-## What is the Main menu/Backstage?
+## Main menu and Backstage overview
 
-All settings that are not linked to a particular module are defined in the Backstage (main menu).
+All settings that aren't linked to a particular module are defined in the Backstage (main menu).
 This makes it easy to access the settings at any time and in any module.
 
 ![Main menu](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/installation_with_parameters_56-en.webp)

@@ -1,0 +1,10 @@
+﻿{
+  "label": "Device Manager",
+  "position": 4,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}
+

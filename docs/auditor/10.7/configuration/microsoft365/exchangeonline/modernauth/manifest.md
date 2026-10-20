@@ -6,8 +6,6 @@ sidebar_position: 20
 
 # Assigning Application Permissions Using Manifest
 
-Follow the steps to assign Exchange Online application permissions using manifest.
-
 **Step 1 –** Under App registrations, select the newly created app.
 
 **Step 2 –** Select **Manifest** on the left.

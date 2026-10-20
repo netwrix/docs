@@ -6,12 +6,12 @@ sidebar_position: 30
 
 # Configuration of SAML
 
-## What is SAML?
+## SAML overview
 
 The Security Assertion Markup Language (SAML) is an XML framework for exchanging authentication and
 authorization information. It provides functions to describe and transmit security-related
 information. This means that you can use one set of credentials to log in to many different
-websites. It is much easier to manage one login per user than separate logins for email, Customer
+websites. It's much easier to manage one login per user than separate logins for email, Customer
 Relationship Management (CRM) software, Active Directory, and more.
 
 ## Preconditions
@@ -22,13 +22,13 @@ Web Application must already be "set up or installed".
 
 ## Configuration
 
-In order to create **SAML applications**, SAML must **first** be activated.
+To create **SAML applications**, SAML must **first** be activated.
 
 This is implemented in the settings of the database in the Server Manager:
 
 ![activate SAML](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/applications/configuration_of_saml/configuration_of_saml_1-en.webp)
 
-As soon as the check box is ticked, the next step is to enter the URL of the Web Application. The
+As soon as the checkbox is ticked, the next step is to enter the URL of the Web Application. The
 SAML configuration screen should then look like this:
 
 ![SAML configuration ](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/applications/configuration_of_saml/configuration_of_saml_2-ewn.webp)
@@ -37,8 +37,9 @@ The screen is left open and the configuration is continued at the Advanced view.
 to the client as usual and switch to the **Applications** module. Select a **new SAML application**
 and fill it with the relevant data from the service provider.
 
-NOTE: The data of the service provider, which are entered in the Advanced view, can be found at the
-respective provider. This differs from provider to provider.
+:::note
+The data of the service provider, which are entered in the Advanced view, can be found at the respective provider. This differs from provider to provider.
+:::
 
 ![new SAML application](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/applications/configuration_of_saml/configuration_of_saml_3-en.webp)
 
@@ -53,13 +54,11 @@ himself.
 After verification, the **SAML application** can be started from the Basic view view.
 
 :::warning
-As this is a passwordless authentication, it is not necessary to link the **SAML
+As this is a passwordless authentication, it isn't necessary to link the **SAML
 application** with a password.
 :::
 
+:::note
+Setup and configuration instructions for [SAML Application for Dropbox](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/applications/exampleapplications/saml_application_for_dropbox.md) and [SAML application for Postman](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/applications/exampleapplications/saml_application_for_postman.md)can be found in the corresponding chapters.
+:::
 
-NOTE: Setup and configuration instructions for
-[SAML Application for Dropbox](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/applications/exampleapplications/saml_application_for_dropbox.md)
-and
-[SAML application for Postman](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/applications/exampleapplications/saml_application_for_postman.md)can
-be found in the corresponding chapters.

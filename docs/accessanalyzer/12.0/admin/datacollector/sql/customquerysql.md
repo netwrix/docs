@@ -20,9 +20,9 @@ The configurable options are:
 
 - Test Database:
 
-    - Data Source – Select the host\instance from the drop-down menu
-    - Database – Select the database from the drop-down menu
+    - Data Source – Select the host\instance from the dropdown menu
+    - Database – Select the database from the dropdown menu
 
 - SQL Query textbox – Enter the custom SQL script
 - Validate Query – Click to test the query, results display in the box
-- Row limit – Enter a number to limit the rows the query is tested on
+- Row limit – Enter a number to limit the rows used to test the query

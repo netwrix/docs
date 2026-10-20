@@ -57,7 +57,7 @@ function TopicItem({ topic, showCategory = false, showVotes = false, showSolved 
 
   // Find product tag for all sections that should show it
   const productTag = topic.tags
-    ? topic.tags.find((tag) => PRODUCT_TAGS.includes(tag.toLowerCase()))
+    ? topic.tags.find((tag) => typeof tag === 'string' && PRODUCT_TAGS.includes(tag.toLowerCase()))
     : null;
 
   return (

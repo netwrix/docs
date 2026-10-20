@@ -9,8 +9,8 @@ sidebar_position: 80
 Use this tab to control the group's visibility in the messaging provider's address book and manage
 out-of-office notifications.
 
-You can also specify non-delivery report (NDR) recipients when this group does not receive a message
-sent to it. The non-delivery report lets the recipient know that the message was not delivered.
+You can also specify non-delivery report (NDR) recipients when this group doesn't receive a message
+sent to it. The non-delivery report lets the recipient know that the message wasn't delivered.
 
 **Admin Note**
 
@@ -37,16 +37,16 @@ If selected, the group members will not be visible from within the address book.
 
 **Delivery Reports**
 
-Specify non-delivery report (NDR) recipients when a message sent to this group is not delivered. The
-non-delivery report lets the recipient know that the message was not delivered.
+Specify non-delivery report (NDR) recipients when a message sent to this group isn't delivered. The
+non-delivery report lets the recipient know that the message wasn't delivered.
 
 Options are:
 
 - **Report to originator** - The non-delivery report is sent to the sender to inform him or her that
-  the message was not delivered to the target group.
+  the message wasn't delivered to the target group.
 - **Report to owner** - The non-delivery report is sent to the group owner to inform him or her that
-  a message sent to the group was not delivered to group members.
-- **Do not send delivery report** - Non-delivery reports are not sent to anyone.
+  a message sent to the group wasn't delivered to group members.
+- **Don't send delivery report** - Non-delivery reports aren't sent to anyone.
 
 :::note
 Non-delivery reports are sent if an SMTP server is configured for the identity store.

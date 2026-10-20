@@ -1,0 +1,10 @@
+{
+  "label": "Policies Tab",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "policies"
+  }
+}

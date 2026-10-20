@@ -1,6 +1,6 @@
 ---
 title: Netwrix Auditor Presales Engineer
-sidebar_position: 1410
+sidebar_position: 1250
 tags: [certification, partners, presales, auditor]
 keywords: [training, course, certification, partners, presales, auditor]
 description: "Become a certified Presales Engineer for Netwrix Auditor"

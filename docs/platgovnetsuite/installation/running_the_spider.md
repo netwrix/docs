@@ -16,13 +16,13 @@ information.
 :::
 
 :::note
-You must keep this window open for the spider to complete. Do not change roles or accounts during
+You must keep this window open for the spider to complete. Don't change roles or accounts during
 this process.
 :::
 
 To run the spider:
 
-1. Log in as an Administrator. NetSuite security standards require an active Administrator login to
+1. Log in as an Administrator. NetSuite security standards require an active Administrator log in to
    execute some of the spider’s tasks.
 2. Open **Strongpoint** > **Tools** > **Strongpoint Spider**.
 3. Select **ReSpider All Records - SLOW** from **Update or ReSpider** if available.
@@ -33,11 +33,11 @@ To run the spider:
     - Remain logged in as an Administrator.
 
 The gears spin during this part of the spider run. It can take between 45-60 minutes to complete.
-When finished, the gears stop spinning and **Spider Finished** is displayed below the **Start
+When finished, the gears stop spinning and **Spider Finished** appears below the **Start
 Spider** button. You can close the tab when finished. The spider continues to work in the background
 to document your account.
 
-If you are not sure the spider completed successfully:
+If you aren't sure the spider completed successfully:
 
 1. Open **Strongpoint** > **Strongpoint Support** > **Installation Settings**
 2. Click **Print**.
@@ -51,7 +51,7 @@ customizations. This phase takes 3 to 5 days to complete. The scripts automatica
 after 10 minutes and reschedule themselves based on queue priority to enable other scripts to run.
 
 If you track the progress of the scripts, you may see that they fail occasionally. The script will
-reschedule itself, skip and flag the record that caused the fail. This is normal functionality and
+reschedule itself, skip, and flag the record that caused the fail. This is normal functionality and
 any issues that arise are captured during the data validation phase.
 
 ### Confirm the Spider is Complete
@@ -62,7 +62,7 @@ Status** tab to confirm the **Last Completed Spider** shows a date.
 ![Review the Spider Status tab of the Installation Settings](/images/platgovnetsuite/installing_strongpoint/install_settings_spider_status.webp)
 
 - **Strongpoint Record Server Side Spider Scheduled Script** is no longer running.
-- **Strongpoint Search Customization to Make Join (By Join Proc)** should not have any results. If
+- **Strongpoint Search Customization to Make Join (By Join Proc)** shouldn't have any results. If
   there are items in the results, it indicates the **Strongpoint Make Joins Script** is still
   running.
 
@@ -75,14 +75,14 @@ validate the data.
 1. Open **Strongpoint** > **Support** > **Installation Settings**
 2. Click **View**
 3. Review the **Recommendation** column for any Customization Types labeled **ReSpider This Record**
-   or **Run DeDuplicate**. You can click on the column head to change the sort order, or use the
+   or **Run DeDuplicate**. You can click the column head to change the sort order, or use the
    record counter on the right side of the table to view additional pages. Note the **Customization
    Types** so you can ReSpider them.
 4. Review the **Documented Record Count** looking for any **0** (zero) values. Note the
    **Customization Types** so you can ReSpider them. No action is required if the value is blank.
 5. Open **Strongpoint** > **Tools** > **Strongpoint Spider**
 6. Select **ReSpider All Records - SLOW** from **Update or ReSpider**
-7. **Select the Record Types** you noted. Use Ctrl-Click to select multiple record types. You do not
+7. **Select the Record Types** you noted. Use Ctrl-Click to select multiple record types. You don't
    want to start over by ReSpidering the entire account. You can also enter an optional **Name
    Filter**: entering all of part of the customization name to focus the spider. You can use the
    **%** wildcard to search with the given name.
@@ -90,7 +90,7 @@ validate the data.
    spider completes.
 
 :::note
-If some of the Data Validation searches return a result, it does not mean there is a problem. In
+If some of the Data Validation searches return a result, it doesn't mean there is a problem. In
 most cases if there are many results for any given search, you can fix this by ReSpidering the
 record type with the issue.
 :::
@@ -103,7 +103,7 @@ You can ReSpider your account at any time.
 2. Select **Update Only - FAST** from **Update or ReSpider**
 3. Select one or more record types that have an issue. You can also enter an optional **Name
    Filter**: entering all of part of the customization name to focus the spider. You can use the
-   **%** wildcard to search with the given name. Here are the record types:
+   **%** wildcard to search with the given name. The following are the record types:
 
 > |                          |                            |                                   |
 > | ------------------------ | -------------------------- | --------------------------------- |
@@ -141,7 +141,7 @@ for fully scriptable customization types. Customization metadata and changes are
 a day when the spiders run. If there are multiple record changes within the day, separate change
 logs are created for each change to capture system notes and audit trails.
 
-Here is the schedule for each customization type.
+The following is the schedule for each customization type.
 
 |                                            |                      |                                       |
 | ------------------------------------------ | -------------------- | ------------------------------------- |

@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Read Only Access Issues
 tags:
   - device-control-and-access-management
+  - kb
 title: "Read Only Access Not Working After Rights Change"
 knowledge_article_id: kA0Qk0000002BIqKAM
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Read Only Access Not Working After Rights Change

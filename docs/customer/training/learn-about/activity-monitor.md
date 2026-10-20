@@ -14,9 +14,8 @@ Estimated length: 1.75 hours
 
 In this learning path, you will be introduced to <NAM />. It contains the following courses:
 
-* 3002.1 <NAM /> – Core Component Definitions
-* 3002.2 Introduction to <NAM />
-* 3003.3 <NAM /> – File System Activity
+* 3002 Introduction to <NAM />
+* 3003.3 <NAM /> – File System
 
 <NAMIntro />
 

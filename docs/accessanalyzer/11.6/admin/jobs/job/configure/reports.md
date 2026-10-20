@@ -6,17 +6,17 @@ sidebar_position: 50
 
 # Reports Node
 
-The Reports node is for configuring reports to be generated during job execution.
+The Reports node is for configuring reports to generate during job execution.
 
 ![Reports page](/images/accessanalyzer/11.6/admin/jobs/job/configure/reports.webp)
 
-The Reports view lists any reports that have been configured for the selected job and options
+The Reports view lists any reports you've configured for the selected job and options
 related to configuring reports. The options at the top of the Reports view are:
 
 - Properties – Opens the
   [Job Properties](/docs/accessanalyzer/11.6/admin/jobs/job/properties/overview.md)
   page for the job that the report is for
-- Run Now – Runs the currently selected job that the report is for
+- Run Now – Runs the selected job that the report is for
 - Open Folder – Opens the Report’s folder location with supporting files in the Windows Explorer
 - View Log – Opens the log for the job that the report is for
 
@@ -33,8 +33,8 @@ contains the following options for adding reports to the table:
 
 - Paste – Paste a cut or copied report into the selected job
 
-    - The paste option is accessed from the vertical ellipsis menu of the header row of the Reports
-      table
+    - You can access the paste option from the vertical ellipsis menu of the header row of the
+      Reports table
 
 ![Reports table row options](/images/accessanalyzer/11.6/admin/jobs/job/configure/reportstablerowoptions.webp)
 
@@ -48,9 +48,9 @@ on a reports row:
 - Copy – Copies the report to the clipboard
 - Delete – Deletes the report
 
-Once a report is generated, it can be viewed in several locations depending on the configuration.
-Report configurations may also be copied to other reports to generate preferred outputs for
-alternate jobs. However, all generated reports can be viewed in the job’s **Results** node.
+After you generate a report, you can view it in several locations depending on the configuration.
+You can also copy report configurations to other reports to generate preferred outputs for
+alternate jobs. However, you can view all generated reports in the job’s **Results** node.
 
 See the
 [Reporting](/docs/accessanalyzer/11.6/admin/report/overview.md) topic

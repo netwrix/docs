@@ -6,11 +6,7 @@ sidebar_position: 40
 
 # Administration
 
-Threat Prevention monitors events in real‐time, gathers and processes event data, then outputs that
-data in usable ways. Threat Prevention components allow you to create and configure policies to
-control what is monitored, where to look in the network, and when. You can also create and control
-responses to event data via reports, alert notifications, analytic triggers, as well as take actions
-with scripts.
+Threat Prevention monitors events in real-time, gathers, and processes event data, then outputs that data in usable ways. Threat Prevention components let you create and configure policies to control what is monitored, where to look in the network, and when. You can also create and control responses to event data via reports, alert notifications, analytic triggers, and take actions with scripts.
 
 The following components make up Threat Prevention:
 
@@ -93,13 +89,9 @@ where on a network that policy applies, and when it is active. See the
 
 **General**
 
-General components include the name and description of the policy, policy creation and modification
-information, policy schedule, whether or not the policy is sending alerts, and whether or not the
-policy is enabled.
+General components include the name and description of the policy, policy creation and modification information, policy schedule, whether the policy is sending alerts, and whether the policy is enabled.
 
-The schedule controls when the policy is active. For example, if it is desired that certain activity
-be more closely monitored outside of regular business hours, then a policy can be created and
-scheduled to be active only outside of regular business hours.
+The schedule controls when the policy is active. For example, if you want certain activity to be more closely monitored outside of regular business hours, you can create a policy and schedule it to be active only outside of regular business hours.
 
 **Event Type**
 
@@ -107,20 +99,15 @@ Event Type components indicate what kind of events are to be monitored or blocke
 single policy can contain multiple event types, even from different event sources. For example, a
 policy might monitor the creation of user accounts in Active Directory.
 
-Each event type has an optional set of filters associated with it. The available filters vary
-depending on the event source.
+Each event type has an optional set of filters associated with it. The available filters vary depending on the event source. A policy can't work without at least one event type assigned to it.
 
 **Actions**
 
-Actions components are used to process and respond to events once they have been captured. A policy
-can include one or more actions (or event consumers). It can also have no actions, but this is not
-recommended. Actions are policy specific and cannot be shared between policies. However, they can be
-exported with a policy.
+Actions components process and respond to events after they're captured. A policy can include one or more actions (or event consumers). It can also have no actions, but this isn't recommended. Actions are policy-specific and can't be shared between policies. However, you can export them with a policy.
 
 ### Policy Templates
 
-A policy template is an inactive policy specification that can be used to create active policies.
-Policy templates contain one or more event types that match a set of related events.
+A policy template is an inactive policy specification that lets you create active policies. Policy templates contain one or more event types that match a set of related events.
 
 Some settings in a policy template are necessarily generic. For example, the filters associated with
 the event types of a template may need to be refined to refer to a particular local domain,

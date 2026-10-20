@@ -6,14 +6,14 @@ sidebar_position: 50
 
 # Log Files Page
 
-The Logs page shows the log files. From here, search and investigate the records.
+The Logs page shows the log files. From here, search, and investigate the records.
 
 ![Audit and Reporting Log Files Page](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/page/logfilespage.webp)
 
 On the left of the page, the Log list shows the log files:
 
 - Search – Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - List of Log files – Select a log file from the list to view it contents
 
 The right of the page shows the contents of the selected log file and has the following features:

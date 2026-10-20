@@ -7,8 +7,7 @@ sidebar_position: 50
 # Management Console
 
 This section introduces you to the Password Policy Enforcer management console, and explains how to
-configure Password Policy Enforcer's global properties. You will also learn how to disable and
-enable Password Policy Enforcer without uninstalling it.
+configure Password Policy Enforcer's global properties and how to disable and enable Password Policy Enforcer without uninstalling it.
 
 ## Management Console Overview
 
@@ -19,7 +18,7 @@ you want to remotely configure Password Policy Enforcer.
 
 ### Installing the Management Console
 
-Follow the steps below to install the Password Policy Enforcer management console onto your computer
+Complete the following steps to install the Password Policy Enforcer management console onto your computer
 so that you can remotely configure Password Policy Enforcer.
 
 **Step 1 –** Start the Password Policy Enforcer installer (PPE10.2.exe).

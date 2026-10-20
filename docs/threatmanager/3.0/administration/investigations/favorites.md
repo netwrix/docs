@@ -30,7 +30,7 @@ pane. Click the investigation there to open it.
 
 There is an empty star icon beside the name of an investigation not identified as a favorite.
 
-![Empty star showing that investigation is not a favorite](/images/threatmanager/3.0/administration/investigations/favoriteunselectedtm.webp)
+![Empty star showing that investigation isn't a favorite](/images/threatmanager/3.0/administration/investigations/favoriteunselectedtm.webp)
 
 Click the star to add the investigation to your Favorites list.
 

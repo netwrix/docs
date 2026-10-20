@@ -17,10 +17,10 @@ The Additional Properties tab for the Activity Agent has the following configura
 
 - Comment – Create an annotation for the agent in the **Comment** text box. Annotations entered here
   will appear in the Comment column in the table on the Agents tab.
-- Agent's Trace Level – Select a trace level for the agent log from the drop-down list:
+- Agent's Trace Level – Select a trace level for the agent log from the dropdown list:
 
     - Same Level as the Console (uses the global level selected in the console)
-    - Trace (the most verbose) many collection points and can slow down
+    - Trace (the most verbose) with many collection points and can slow down
 
         :::warning
         Selecting the **Trace** option can slow down collection due to the large amount
@@ -34,7 +34,7 @@ The Additional Properties tab for the Activity Agent has the following configura
     - Error
     - Fatal
 
-In certain situations, the trace logs are not enough to identify issues. Collect extended debugging
+In certain situations, the trace logs aren't enough to identify issues. Collect extended debugging
 data (ETW) can be useful for problems related to the following:
 
 - Not getting events
@@ -44,16 +44,15 @@ data (ETW) can be useful for problems related to the following:
 - Issues caused by Antivirus or Backup software
 
 When this is needed, enable the **Collect extended debugging data (ETW) from the Windows driver when
-the Trace level is activated** option to diagnose these problems.
+you activate the Trace level** option to diagnose these problems.
 
 :::warning
-Selecting this option collects a large amount of data. Therefore, it is important to
-enable it only for short periods of time. Otherwise, the trace file may overflow with data.
+Selecting this option collects a large amount of data. Enable it only for short periods of time, or the trace file may overflow with data.
 :::
 
 
-In general for troubleshooting, start with trace logs. If the root cause of the problem might be a
-low-level functionality the driver, then the ETW logs must be enabled.
+In general, for troubleshooting, start with trace logs. If the root cause of the problem might be
+low-level functionality of the driver, then enable the ETW logs.
 
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The Agent
 Properties window closes.
@@ -66,10 +65,10 @@ The Additional Properties tab for the Linux Agent has the following configuratio
 
 - Comment – Create an annotation for the agent in the **Comment** text box. Annotations entered here
   will appear in the Comment column in the table on the Agents tab.
-- Agent's Trace Level – Select a trace level for the agent log from the drop-down list:
+- Agent's Trace Level – Select a trace level for the agent log from the dropdown list:
 
     - Same Level as the Console (uses the global level selected in the console)
-    - Trace (the most verbose) many collection points and can slow down
+    - Trace (the most verbose) with many collection points and can slow down
 
         :::warning
         Selecting the **Trace** option can slow down collection due to the large amount

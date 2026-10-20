@@ -1,0 +1,31 @@
+---
+title: "Update SQL Server Service Account Password"
+description: "Update SQL Server Service Account Password"
+sidebar_position: 20
+---
+
+# Update SQL Server Service Account Password
+
+**Step 1 –** To launch the Recovery Configuration Utility, double-click the Recovery_Config.exe
+executable at the following location in the Identity Recovery installation directory:
+`...Netwrix\Identity Recovery\Recovery_Config.exe`
+
+![  Recovery Configuration Utility](/images/identityrecovery/3.1/product/config_utility.png)
+
+**Step 2 –** Update the account password for SQL Server Authentication in the Login and Password
+fields.
+
+**Step 3 –** Click the **Test** button to validate the connection. On success, the following message
+is displayed:
+
+![Connection Test Successful](/images/identityrecovery/3.1/troubleshooting/updatepassword/connectiontest.webp)
+
+**Step 4 –** Click **OK**.
+
+**Step 5 –** After the connection has been established, click **Save** to update the account.
+
+![Configuration Utility Saved Confirm](/images/identityrecovery/3.1/troubleshooting/updatepassword/sqlsettings.webp)
+
+**Step 6 –** Click **OK**.
+
+You have updated and saved the SQL Server service account password.

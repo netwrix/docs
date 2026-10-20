@@ -6,13 +6,12 @@ sidebar_position: 50
 
 # Clearing a Control Incident
 
-Unresolved Control Incidents are filtered and displayed under the Unresolved Control Incidents
-Report.
+Unresolved Control Incidents appear in the Unresolved Control Incidents Report.
 
-Here is the process to clear/resolve a control incident:
+To clear or resolve a control incident:
 
 1. Open **Strongpoint** > **Financial Controls** > **Unresolved Control Incidents**
-2. Click on the **Customization** to display the incidents.
+2. Click the **Customization** to display the incidents.
 3. Click **Edit** on the Incident record to clear/resolve.
 
     ![Clearing a Control Incident](/images/platgovnetsuite/financial_controls/agent_clear_incident.webp)
@@ -23,11 +22,10 @@ Here is the process to clear/resolve a control incident:
 
 The incident moves from **Unresolved Control Incident Log** to **Resolved Control Incident Log**.
 
-Alternatively, you can complete this process by inline editing of the Unresolved Control Incidents
-Report::
+You can also clear an incident by inline editing the Unresolved Control Incidents Report:
 
-1. Click on **EDIT** in the report tool bar. When enabled, it is green with a check mark.
-2. Click on the red pencil icon in the column head. Columns without the pencil icon cannot be
+1. Click **EDIT** in the report tool bar. When enabled, it is green with a check mark.
+2. Click the red pencil icon in the column head. Columns without the pencil icon can't be
    edited.
 3. Click in the column to open a text box.
 

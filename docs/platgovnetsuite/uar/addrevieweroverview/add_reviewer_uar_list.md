@@ -10,7 +10,7 @@ Access your Additional Reviewer list from **UAR List** in your menu bar, or one
 shortcuts. Your UAR List displays either the list of Global Reviews or Single Reviews. The view is
 controlled with the **Sort By** selection in the Filters section.
 
-Here is an example of the **Global** review list:
+The following is an example of the **Global** review list:
 
 ![UAR list additional reviewer](/images/platgovnetsuite/uar/uar_additional_reviewer/additional_user_uar_list.webp)
 
@@ -27,7 +27,7 @@ Use **Clear** to reset the Filters.
     - Second Date field only: All reviews created before the specified date are listed.
     - Both Date fields: All reviews created in the date range are listed.
 
-- **Status** Select from the drop down list. **All** is the default.
+- **Status** Select from the dropdown list. **All** is the default.
   Possible statuses are **Not Started**, **Pending Assignment**, **In Progress**, **Complete**,
   **Cancelled** and **Waiting for CR**.
 - **Sort By** Displays a list of either **Global Reviews** or **Single Reviews**. **Global Reviews**
@@ -44,15 +44,15 @@ Use **Clear** to reset the Filters.
   Single is **Membership** or **Permission**. The review type is set when the review is created.
 - **Status** Current status of the review:
 
-    - **Pending Assignment** Review does not have an assigned owner.
+    - **Pending Assignment** Review doesn't have an assigned owner.
     - **Not Started** Email notification has been sent, review has not been started.
     - **In Progress** Review has been started.
     - **Additional Reviewer** Review has been assigned to an additional reviewer.
     - **Change Request** Change request has been created. The **Change Request ID** is added to the
       row. The link opens the Change Request. **CR Rejected**, **CR Cancelled**, and **CR Complete**
       are the other Change Request status values.
-    - **Waiting for CR** Change request cannot be started, because there is an existing change
-      request in progress for the role or permission as part of a different global review. Once the
+    - **Waiting for CR** Change request can't be started, because there is an existing change
+      request in progress for the role or permission as part of a different global review. After the
       existing change request is complete, the current review can continue.
     - **Cancelled** Review has been canceled. Canceled global reviews are shown in the UAR History
       list. Canceled single reviews are shown in the global review.
@@ -82,15 +82,15 @@ showing all of the single reviews associated with the global review.
   when the review is created.
 - **Status** Current status of the review:
 
-    - **Pending Assignment** Review does not have an assigned owner.
+    - **Pending Assignment** Review doesn't have an assigned owner.
     - **Not Started** Email notification has been sent, review has not been started.
     - **In Progress** Review has been started.
     - **Additional Reviewer** Review has been assigned to an additional reviewer.
     - **Change Request** Change request has been created. The **Change Request ID** is added to the
       row. The link opens the Change Request. **CR Rejected**, **CR Cancelled**, and **CR Complete**
       are the other Change Request status values.
-    - **Waiting for CR** Change request cannot be started, because there is an existing change
-      request in progress for the role or permission as part of a different global review. Once the
+    - **Waiting for CR** Change request can't be started, because there is an existing change
+      request in progress for the role or permission as part of a different global review. After the
       existing change request is complete, the current review can continue.
     - **Cancelled** Review has been canceled. Canceled global reviews are shown in the UAR History
       list. Canceled single reviews are shown in the global review.

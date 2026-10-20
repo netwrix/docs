@@ -13,6 +13,6 @@ requests that have been processed (approved or denied).
 By default, the page displays pending requests that you initiated today. You can also filter the
 request by adding filters.
 
-For each request, you can view the description, approver(s), requester name, the target to change,
+For each request, you can view the description, approvers, requester name, the target to change,
 status, date the request was made on, and the reason why that request was denied. Expand a request
 to view more details, such as the field changed along with its old and new value.

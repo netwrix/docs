@@ -8,8 +8,7 @@ sidebar_position: 10
 
 ## First Mass Update
 
-The first mass update flags all the bundle components to be cleaned up and set the status on the
-Customization to **To Be Cleaned Up**. It identifies everything needing removal.
+The first mass update flags all the bundle components for cleanup and sets the status on the Customization to **To Be Cleaned Up**. It identifies everything needing removal.
 
 To create the first mass update:
 
@@ -43,8 +42,7 @@ You can remove more than one bundle at a time.
 
 ## Second Mass Update
 
-The second mass update flags all the objects related to the bundle and sets a status on the
-Customization to **To Be Investigated**. It identifies everything needing investigation.
+The second mass update flags all the objects related to the bundle and sets the Customization status to **To Be Investigated**. It identifies everything needing investigation.
 
 1. Open **Lists** > **Mass Update** > **Mass Updates**
 2. Open **General Updates** > **Custom Records** > **Customization**

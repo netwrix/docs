@@ -7,8 +7,8 @@ sidebar_position: 30
 # 2-Box_Import Job
 
 The 2-Box_Import Job takes the data that has been collected from the 1-Box_Access Scans Job and the
-1-Box_Activity Scans Job and imports it to the Enterprise Auditor database to be analyzed in order
-to provide detailed reports on Box access rights, policies, configurations, activities, and content.
+1-Box_Activity Scans Job and imports it to the Enterprise Auditor database to be analyzed to provide
+detailed reports on Box access rights, policies, configurations, activities, and content.
 
 ## Queries for the 2-Box_Import Job
 
@@ -20,5 +20,5 @@ Permissions Category.
 The 2-Box_Import Job has the following query:
 
 - Import - Takes the data that has been collected from Box and imports it to the Enterprise Auditor
-  database to be analyzed in order to provide detailed reports on Box access rights, policies,
+  database to be analyzed to provide detailed reports on Box access rights, policies,
   configurations, activities, and content.

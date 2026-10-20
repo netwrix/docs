@@ -12,7 +12,7 @@ The evaluation installation uses the standard installation packages:
   evaluating. You can install manually using the procedure in
   [Install Password Policy Enforcer on a Server](/docs/passwordpolicyenforcer/11.1/installation/installationserver.md) or automatically
   with [Install with Group Policy Management](/docs/passwordpolicyenforcer/11.1/installation/installationgpm.md) procedure. Installing
-  Password Policy Enforcer does not extend the Active Directory schema. Be sure and install the
+  Password Policy Enforcer doesn't extend the Active Directory schema. Be sure and install the
   **Configuration Console** feature on at least one server.
 - Client Installation: install on each workstation you are evaluating. The Password Policy Client is
   an optional Password Policy Enforcer component to help users choose compliant passwords. Follow

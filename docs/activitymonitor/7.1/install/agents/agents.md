@@ -32,7 +32,7 @@ systems and applications. There are three types of agents:
       for monitoring the target environment
     - SQL Server – Activity Agent must be deployed to a Windows server that acts as a proxy for
       monitoring the target environment
-    - Windows File Server – Activity Agent must be deployed to the server. It cannot be deployed to
+    - Windows File Server – Activity Agent must be deployed to the server. It can't be deployed to
       a proxy server.
 
         - Credentials used for deployments must also be provisioned for monitoring
@@ -44,8 +44,7 @@ systems and applications. There are three types of agents:
 
     - Credentials used for deployments must also be provisioned for monitoring
 
-In order to perform centralized agent maintenance from the application console server, WMI must be
-enabled on the machine where the agent is installed.
+To perform centralized agent maintenance from the application console server, enable WMI on the machine where the agent is installed.
 
 You will need the following information to deploy agents from the console:
 

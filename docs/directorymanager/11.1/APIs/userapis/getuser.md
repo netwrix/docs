@@ -6,7 +6,7 @@ sidebar_position: 150
 
 # Get a User
 
-Use this API to get information of a single user.
+Use this API to get information about a single user.
 
 ## Endpoint
 

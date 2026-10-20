@@ -7,8 +7,8 @@ sidebar_position: 10
 # Collection Job Group
 
 The Collection job group collects group policy settings, local users, and local group membership
-information from Windows servers which will be further analyzed to provide insight into privileged
-users within the environment.
+information from Windows servers. It further analyzes this information to provide insight into
+privileged users within the environment.
 
 ![Collection Job Group in the Jobs Tree](/images/accessanalyzer/12.0/solutions/windows/privilegedaccounts/logonrights/collection/collectionjobstree.webp)
 

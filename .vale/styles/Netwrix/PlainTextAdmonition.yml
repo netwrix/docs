@@ -1,0 +1,9 @@
+extends: existence
+message: "Use a Docusaurus admonition block (:::note, :::warning, or :::tip) instead of plain text '%s'."
+level: warning
+nonword: true
+tokens:
+  - '(?m)^NOTE:'
+  - '(?m)^\*\*NOTE:\*\*'
+  - '(?m)^CAUTION:'
+  - '(?m)^\*\*CAUTION:\*\*'

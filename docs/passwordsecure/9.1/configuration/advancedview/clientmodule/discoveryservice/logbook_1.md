@@ -37,10 +37,10 @@ If an error occurs during the execution of the **Discovery Service Task**, this 
 In general, the **logbook module** displays more detailed information about the **Discovery Service
 Task**. The
 [Filter](/docs/passwordsecure/9.1/configuration/advancedview/operationandsetup/filter/filter.md)
-can be used to select which data is displayed. The same **events** as for the footer for the
+lets you select which data is displayed. The same **events** as for the footer for the
 **Discovery Service Task** are also used here.
 
 ![logbook entries](/images/passwordsecure/9.1/configuration/advanced_view/clientmodule/discoveryservice/logbook/logbook_ds-3-en.webp)
 
-The column editor can be used to arrange and display the data in the table according to their
+The column editor lets you arrange and display the data in the table according to their
 importance.

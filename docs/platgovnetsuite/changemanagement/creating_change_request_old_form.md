@@ -11,7 +11,7 @@ These are the steps to create a Change Request using the old form. Refer to
 [Setting Preferred Forms](/docs/platgovnetsuite/customization/setting_preferred_forms.md) for information on
 designating your preferred Change Request form.
 
-Before making any changes, it is important to understand the scope of the planned change, potential
+Before making any changes, understand the scope of the planned change, potential
 impacts and the level of change required.
 
 To do this, in your **production** account:
@@ -33,12 +33,12 @@ To do this, in your **production** account:
 
 3. Fill in the following fields in the **Scope** section of the change request:
 
-    - **Change Overview**: Add a summary of the desired change.
+    - **Change Overview**: Add a summary of the change.
     - To add customizations you can use the Customization field and/or the Proposed Customization
       field or you can add the Affected Bundle ID:
         - **Customizations**: Use this field if you are changing objects that already exist in your
           account. (Can be used in conjunction with proposed customizations.)
-        - **Proposed Customizations**: Use this field when you are adding customizations that do not
+        - **Proposed Customizations**: Use this field when you are adding customizations that don't
           yet exist in your account. You can add multiple Script IDs by separating them with commas.
           (Can be used in conjunction with customizations that already exist.)
         - **Affected Bundle ID**: If you are using a bundle to move objects from sandbox to
@@ -55,11 +55,8 @@ To do this, in your **production** account:
   are safe to change.
 - **Change Request:** you are planning on changing objects that require approval to change.
 
-6. Click on **Impact Analysis**. This will show you how objects are connected to other things.
-7. Scroll down to the bottom of the page and click on the **Impact Analysis** tab.This shows you
-   which customization record(s) can or cannot be safely modified as well as customizations that are
-   inactive. You see a list of the customization record(s) that have been included, and warnings for
-   impacted customization record(s) that need to be investigated before you make a change.
+6. Click **Impact Analysis**. This shows how objects are connected to other things.
+7. Scroll down to the bottom of the page and click the **Impact Analysis** tab. This shows which customization records can or can't be safely modified, as well as customizations that are inactive. You see a list of the customization records that have been included, and warnings for impacted customization records that need to be investigated before you make a change.
 
     ![impactanalysissubtab](/images/platgovnetsuite/change_management/impactanalysissubtab.webp)
 
