@@ -4,7 +4,7 @@
 
 # Netwrix Product Documentation
 
-A centralized documentation site for all Netwrix security products, built with [Docusaurus v3.8.1](https://docusaurus.io/) and a simple prouct configuration for easy maintenance.
+A centralized documentation site for all Netwrix security products, built with [Docusaurus](https://docusaurus.io/) (always the latest stable release) and a simple product configuration for easy maintenance.
 
 ## Overview
 
