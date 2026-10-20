@@ -37,6 +37,8 @@ Disk is a recommendation. A server with less free space than the size recommends
 
 For example, a virtual machine with 16 cores, 64 GB of RAM, and 600 GB free on the storage volume (`/var/lib` by default) installs as **medium** with a disk warning you can accept. The same machine with 12 cores fails preflight for **medium**; install it as **small** or add cores.
 
+To move an installed server to a larger size later, see [Change the deployment size](change-the-deployment-size.md). Access Analyzer doesn't support moving to a smaller size.
+
 If you want the data on a different volume, the installer accepts custom data directories. They must be absolute paths to existing, writable directories, and can't be `/` or sit under a reserved system path such as `/etc`, `/usr`, or `/var/log`. See [Installer reference](installer-reference.md) for the flags.
 
 ## Install Media

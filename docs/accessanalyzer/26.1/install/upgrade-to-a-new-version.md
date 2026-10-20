@@ -17,7 +17,7 @@ How you upgrade Access Analyzer depends on how you installed it.
 
 Pick the tab that matches your install.
 
-The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell wrapper that runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace. That pod signs in to ArgoCD and runs `argocd` commands for you. You don't need the `argocd` command-line interface (CLI) on the host.
+The installer installs `dspmctl` at `/usr/local/bin/dspmctl`. It's a small shell wrapper that runs `kubectl exec` into the `dspmctl` pod in the `argocd` namespace. The `dspmctl` program in that pod changes the ArgoCD applications through the Kubernetes API, with its own service account. It doesn't sign in to ArgoCD, and you don't need the `argocd` command-line interface (CLI) on the host.
 
 Run `dspmctl` and `dspm-installer` with `sudo`. Only root can read the default kubeconfig at `/etc/rancher/k3s/k3s.yaml`, so without `sudo`, kubectl falls back to `localhost:8080` and fails with "connection refused."
 
@@ -250,7 +250,7 @@ If you pinned a specific version at install time, or want to pin one now, follow
    sudo dspmctl enable-auto netwrix
    ```
 
-   `enable-auto` changes only the sync policy. It doesn't force a reconcile, and the ArgoCD controller polls roughly every 3 minutes. If you ran only `enable-auto` and nothing changed yet, run `sync`.
+   `enable-auto` doesn't force a reconcile, and the ArgoCD controller polls roughly every 3 minutes. If you ran only `enable-auto` and nothing changed yet, run `sync`.
 
 </TabItem>
 </Tabs>
@@ -292,7 +292,7 @@ A re-pin doesn't roll back database schema changes the new release made.
 
 ## Troubleshooting an Upgrade
 
-**Automated sync is still off after a failed upgrade.** Run the same upgrade command to finish it, or turn sync back on with `sudo dspmctl enable-auto netwrix`.
+**Automated sync is still off after a failed upgrade.** Run the same upgrade command to finish it, or turn sync back on with `sudo dspmctl enable-auto netwrix`. On the `netwrix` app, `enable-auto` also clears the pause an unfinished upgrade leaves.
 
 **An upgrade exits with code `70`, and running it again says the cluster is already on that version.** The new version is in place but wasn't healthy in time. Run `sudo dspm-installer wait-for-apps`.
 
@@ -310,58 +310,28 @@ sudo dspmctl version
 
 The output should show the version you set. Pod restarts take longer on a busy server, so if the version hasn't changed after five minutes, wait another two or three minutes and run the command again.
 
-For a detailed view of the sync, ask ArgoCD directly:
+For a detailed view of the sync, read the `netwrix` application's status:
 
 ```bash
-sudo kubectl exec -n argocd -ti deploy/dspmctl -- argocd app get argocd/netwrix
+sudo kubectl get application netwrix -n argocd \
+  -o custom-columns='REVISION:.spec.source.targetRevision,SYNC:.status.sync.status,HEALTH:.status.health.status'
 ```
 
-Check `TARGET REVISION` and `Sync Status`. The `netwrix` app only manages the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
+Check that `REVISION` shows the version you set and `SYNC` shows `Synced`. The `netwrix` app only manages the child `Application` resources; each child still has to sync on its own to roll new pods. A child with auto-sync enabled syncs shortly after the parent. Otherwise, sync it directly, for example:
 
 ```bash
 sudo dspmctl sync netwrix.webapp
 ```
 
 <details>
-<summary>Troubleshooting: dspmctl hangs after a cancelled command</summary>
+<summary>Troubleshooting: dspmctl says an operation is already in progress</summary>
 
-If you press Ctrl-C part-way through a `dspmctl` command (for example, after typing the wrong version), every later `dspmctl` call can hang at `Logging in to ArgoCD ...` and never return. Even `argocd version --client`, which needs no network at all, hangs, so the cause is local to the pod. Every `dspmctl` invocation runs inside the same long-lived `dspmctl` pod, and the interrupted run leaves the `argocd` binary in that pod unresponsive.
+If a `dspmctl` command fails with `an operation on <app> is already in progress`, ArgoCD is still running an earlier sync of that application. A sync keeps running in ArgoCD even if you press Ctrl-C while `dspmctl sync` waits for it. Wait for the sync to finish, then run the command again.
 
-Restart that pod and re-run the upgrade:
-
-```bash
-sudo kubectl rollout restart deploy/dspmctl -n argocd
-sudo kubectl rollout status deploy/dspmctl -n argocd
-sudo kubectl exec -n argocd deploy/dspmctl -- argocd version --client   # should print instantly now
-sudo dspmctl set-revision netwrix 1.1.2
-sudo dspmctl sync netwrix
-```
-
-If `argocd version --client` still hangs after the restart, `dspmctl` isn't usable in that environment. Everything `dspmctl` does is an edit to the `netwrix` ArgoCD `Application` object, so make the same changes directly with `kubectl` from the host.
-
-Pin the umbrella chart:
+If the operation makes no progress after the ArgoCD application controller restarted, the request is stale. Clear it, then run the command again:
 
 ```bash
-sudo kubectl patch application netwrix -n argocd --type merge \
-  -p '{"spec":{"source":{"targetRevision":"1.1.2"}}}'
-```
-
-Set the Helm parameter that propagates the version to the child apps. List the parameters, find the 0-based position of `config.spec.source.targetRevision`, and use it as `N`:
-
-```bash
-sudo kubectl get application netwrix -n argocd \
-  -o jsonpath='{range .spec.source.helm.parameters[*]}{.name}{"\n"}{end}'
-sudo kubectl patch application netwrix -n argocd --type json \
-  -p '[{"op":"replace","path":"/spec/source/helm/parameters/N/value","value":"1.1.2"}]'
-```
-
-Turn auto-sync back on and force an immediate refresh:
-
-```bash
-sudo kubectl patch application netwrix -n argocd --type merge \
-  -p '{"spec":{"syncPolicy":{"automated":{"selfHeal":true,"prune":true}}}}'
-sudo kubectl annotate application netwrix -n argocd argocd.argoproj.io/refresh=hard --overwrite
-sudo kubectl get applications -n argocd -w
+sudo kubectl -n argocd patch application <app> --type=json -p '[{"op":"remove","path":"/operation"}]'
 ```
 
 </details>

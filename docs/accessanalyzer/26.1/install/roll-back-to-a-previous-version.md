@@ -139,12 +139,7 @@ Without `--allow-downgrade`, `upgrade` refuses media that's the same as or older
 
 ## Troubleshooting
 
-**`dspmctl` hangs at "Logging in to Argo CD ..."** A canceled `dspmctl` command can leave its pod stuck. Restart it and run the rollback again:
-
-```bash
-sudo kubectl rollout restart deploy/dspmctl -n argocd
-sudo kubectl rollout status deploy/dspmctl -n argocd
-```
+**`dspmctl` says an operation on `netwrix` is already in progress.** ArgoCD is still running an earlier sync, for example one that a canceled `dspmctl sync` started. Wait for it to finish, then run the step again.
 
 **`db-seeds` fails with "database schema is ahead of this release's newest migration."** The stored down migrations are missing or the chain between the current schema and the older release is broken, so `db-seeds` can't roll back safely. Contact Netwrix Support. Don't edit the schema by hand: the stored down migrations are the source of truth for the rollback, and manual changes break the chain `db-seeds` validates.
 
