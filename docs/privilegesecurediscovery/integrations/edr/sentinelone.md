@@ -1,80 +1,85 @@
 ---
-title: "SentinelOne"
-description: "SentinelOne"
+title: "Configure the SentinelOne integration"
+sidebar_label: "SentinelOne"
+description: "Collect a SentinelOne API token, account ID, and base URL, and create an EDR provider configuration for Netwrix Privilege Secure for Discovery."
 sidebar_position: 30
 ---
 
-# SentinelOne
+:::warning[Screenshot needs attention: remove before publishing]
+TODO: 4406186645143_screen_shot_2022-10-10_at_10.15.37_am_420x358.webp: shows the user profile of a named employee. Redact or replace.
 
-SentinelOne
+TODO: 4406186645143_screen_shot_2022-10-10_at_10.16.00_am_392x224.webp: shows a generated API token. Replace with a screenshot that masks the token.
 
-# SentinelOne
+TODO: 4406186645143_screen_shot_2022-10-10_at_10.18.06_am.webp: shows an account ID and a partner-portal URL. Redact or replace.
 
-## Overview
+TODO: 4406186645143_screen_shot_2022-10-10_at_2.35.30_pm.webp: shows a company account in the accounts list. Redact or replace.
+:::
 
-The SentinelONE Manage Remote Systems integration is available from **SecureONE version 2.17**. This
-allows machines to be protected and access elevated with out direct line of site. Privilege Secure
-integrates to the SentinelONE end point and is able to perform these tasks without the need for the
-end machine being on the domain.
+The SentinelOne Remote Systems Management integration lets Netwrix Privilege Secure for Discovery protect machines and grant administrator access without a direct network connection to the endpoint. The product connects to SentinelOne and performs these tasks through the SentinelOne agent, so the machine doesn't need to be on the domain.
 
-Login to Privilege Secure
-([https://usea1-partners.sentinelone.net/](https://usea1-partners.sentinelone.net/)).
+## Prerequisites
 
-## API Configuration
+Privilege Secure for Discovery needs three values from SentinelOne: an API token, the account ID, and the API base URL. You also need:
 
-There are three items that are required for Privilege Secure to be able to connect to SentinelONE
-for Remote Computer Management, API Token, Account ID, and the API Base URL.
+- A SentinelOne console account that can create users and generate API tokens.
+- The SentinelOne agent installed on the Windows endpoints that you want to manage.
+- Network access from the Privilege Secure for Discovery server to your SentinelOne management console.
 
-### API Token
+## Generate an API token
 
-A new user can be created or an existing user can be utilized. To create a new user click settings
-in the left hand menu:
+You can create a new service user or use an existing user.
 
-![Screen_Shot_2022-10-10_at_10.09.L39_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.09.39_am_135x382.webp)
+1. Sign in to the SentinelOne management console.
+2. In the left menu, select **Settings**.
 
-Click the users option at the top:
+   ![The Settings option in the SentinelOne left menu](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.09.39_am_135x382.webp)
 
-![Screen_Shot_2022-10-10_at_10.09.L54_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.09.54_am_538x83.webp)
+3. At the top of the page, select **Users**.
 
-Then, under Actions, New User
+   ![The Users tab in SentinelOne settings](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.09.54_am_538x83.webp)
 
-![Screen_Shot_2022-10-10_at_10.10.L09_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.10.09_am_198x92.webp)
+4. Select **Actions > New User**, and complete the user details.
 
-Once the details of the user for the API configuration is created an API token can be generated.
-This is done by clicking on the user required and selecting Generate API token under the options
-menu:
+   ![The Actions menu with the New User option](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.10.09_am_198x92.webp)
 
-![Screen_Shot_2022-10-10_at_10.15.L37_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.15.37_am_420x358.webp)
+5. Select the user, and then select **Options > Generate API token**.
 
-The API key will only be displayed while it is visible on the screen. After the UI is closed, revoke
-the key and create a new one if you need another copy:
+   ![The Options menu of a SentinelOne user with Generate API token](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.15.37_am_420x358.webp)
 
-![Screen_Shot_2022-10-10_at_10.16.L00_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.16.00_am_392x224.webp)
+6. Copy the token to a secret manager.
 
-### Account ID
+   ![The API token dialog with the token masked](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.16.00_am_392x224.webp)
 
-Next the Account ID is required. It is available by selecting the Accounts option at
-the  top from the Settings menu.
+SentinelOne displays the token only while the dialog is open. If you close the dialog before you copy the token, revoke the token and generate a new one.
 
-![Screen_Shot_2022-10-10_at_10.18.L06_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.18.06_am.webp)
+## Find the account ID
 
-Then clicking the account and the selecting the Account Info option from the top menu
+1. In SentinelOne, go to **Settings > Accounts**.
 
-![Screen_Shot_2022-10-10_at_10.20.L12_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.20.12_am_214x92.webp)
+   ![The Accounts list in SentinelOne settings](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.18.06_am.webp)
 
-This will give the Account ID information
+2. Select the account, and then select **Account Info**.
 
-## Privilege Secure Configuration
+   ![The Account Info tab of a SentinelOne account](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_10.20.12_am_214x92.webp)
 
-The EDR configuration is available under the Configure, Server menu within Privilege Secure.
+3. Record the **Account ID**.
 
-![Screen_Shot_2022-10-10_at_2.35.L11_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_2.35.11_pm_197x188.webp)
+## Configure Privilege Secure for Discovery
 
-Multiple configurations can be created which can be applied to different machines as appropriate.
-The configuration is completed as below using the API Token and User ID captured from SentinelOne.
+You can create more than one configuration and apply each one to different machines.
 
-![Screen_Shot_2022-10-10_at_2.35.L30_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_2.35.30_pm.webp)
+1. In Privilege Secure for Discovery, open **Configure > Server > EDR Provider Configuration**.
 
-If the Privilege Secure instance is on a version behind 2.17 you will not see the Remote Systems
-Management UI on the Servers page, nor will you see SentinelOne on an endpoint in the EDR dropdown
-menu. Please inquire to Support to upgrade the environment.
+   ![The Server configuration menu with the EDR provider configuration](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_2.35.11_pm_197x188.webp)
+
+2. Select **Add Provider**, and select **SentinelOne**.
+3. Enter a configuration name.
+4. Enable the remote systems management option.
+5. Enter the API base URL, the API token, and the account ID.
+
+   ![The SentinelOne configuration panel with API credentials](/images/privilegesecure/4.2/discovery/integrations/edr/4406186645143_screen_shot_2022-10-10_at_2.35.30_pm.webp)
+
+6. Select **Test Connection**.
+7. Save the configuration.
+
+Assign the configuration to machines individually, through **Bulk Actions**, or as the default EDR configuration of a domain. You can't delete an EDR provider configuration while it is assigned to a domain or a system.

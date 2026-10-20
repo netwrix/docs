@@ -1,33 +1,35 @@
 ---
-description: 'Describes causes and resolutions for the UnprocessableEntityError: "SSH connection error: encountered RSA key, expected OPENSSH key" that can occur during registration in Netwrix Privilege Secure Discovery.'
-keywords: ['UnprocessableEntityError', 'SSH connection error', 'RSA key', 'OPENSSH key', 'sshd_config', 'PubkeyAcceptedKeyTypes', 'AllowUsers', 'Netwrix Privilege Secure Discovery']
+title: "UnprocessableEntityError: SSH Connection Error: Encountered RSA Key, Expected OPENSSH Key"
+description: "Resolve the SSH connection error that reports an RSA key where an OPENSSH key is expected by checking SSH access limits, removed users, and RSA key support."
+sidebar_label: "UnprocessableEntityError: SSH Connection Error: Encountered RSA Key, Expected OPENSSH Key"
+keywords:
+- UnprocessableEntityError
+- SSH connection error
+- encountered RSA key, expected OPENSSH key
+- RSA key
+- OPENSSH key
+- sshd_config
+- PubkeyAcceptedKeyTypes
+- AllowUsers
+- Ubuntu 22.04
+- NPS-D
+- SecureONE
+- Remediant SecureONE
 products:
-- privilege-secure-discovery
-sfdc_migration:
-  article_id: ka04u00000116bAAAQ
-  article_owner: Anna Evdokimova-Glinskaia
-  article_reviewer: null
-  article_sme: null
-  created_date: '2023-07-11'
-  knowledge_article_id: kA04u00000110pVCAQ
-  last_modified_date: '2023-07-11'
-  original_categories:
-  - privilege_secure_discovery
-  visibility: public
-sidebar_label: 'UnprocessableEntityError: SSH Connection Error: En'
-tags: []
-title: 'UnprocessableEntityError: SSH Connection Error: Encountered RSA Key, Expected
-  OPENSSH Key'
+- privilegesecurediscovery
+tags:
+- kb
+- linux-and-ssh-integration
 knowledge_article_id: kA04u00000110pVCAQ
 ---
 
-Formerly SecureONE
-
-# UnprocessableEntityError: SSH Connection Error: Encountered RSA Key, Expected OPENSSH Key
+:::warning[Needs dev input: remove before publishing]
+TODO: Confirm that s1 --single-node db is the correct command for opening the database shell on a single-node deployment at 26.09.1. Evidence: none.
+:::
 
 ## Symptom
 
-Example of error when running registration via Postman:
+When you register a Linux system through the API, the registration returns the following error:
 
 ```json
 {
@@ -37,57 +39,63 @@ Example of error when running registration via Postman:
 }
 ```
 
-## Causes
+## Cause
 
-### Cause 1
-This error can occur if SSH access is being limited to specific accounts. Example is having account specified in `/etc/ssh/sshd_config` file using options parameters like `AllowUsers` or `AllowGroups`. Go to Resolution 1.
+One of the following causes applies:
 
-### Cause 2
-This registration error can happen when a system was already registered in Netwrix Privilege Secure Discovery and a user was removed from the system (even if the user is manually added back in). Go to Resolution 2.
+1. SSH access is limited to specific accounts. For example, the `/etc/ssh/sshd_config` file specifies the `AllowUsers` or `AllowGroups` option.
+2. The system was already registered in Netwrix Privilege Secure for Discovery, and a user was removed from the system. This applies even if the user was added back manually.
+3. The system runs Ubuntu 22.04 or later, which does not allow RSA SSH keys by default.
 
-### Cause 3
-The use of Ubuntu 22.04+ and RSA SSH keys which are not allowed. Go to Resolution 3.
+## Resolution
 
-## Resolutions
+### Allow SSH Access for the Service Account
 
-<a id="R1" name="R1"></a>
-### Resolution 1
-Either change configuration to allow SSH to all users, or add the service account, default name is `"secureone"`, to necessary line(s) to allow SSH connectivity. And then restart the sshd service.
+Either change the configuration to allow SSH access for all users, or add the service account to the relevant `AllowUsers` or `AllowGroups` lines. The default service account name is `secureone`. Then restart the `sshd` service.
 
-<a id="R2" name="R2"></a>
-### Resolution 2
+### Remove the User and the Database Record
 
-1. Remove the user and home directory from the system:
+> **IMPORTANT:** This procedure deletes data from the product database. Back up the database before you continue, and confirm the system name before you run the delete command.
+
+1. Remove the user and the home directory from the system:
+
    ```bash
    sudo deluser --remove-home secureone
    ```
-   If the user was remove but the home directory remains, please remove home directory **manually**:
+
+2. If the user was removed but the home directory remains, remove the home directory manually:
 
    ```bash
    sudo rm -r /home/secureone
    ```
-2. Remove the system from the Netwrix Privilege Secure Discovery database.
-   1. SSH into a node and log into the database:
-      - For cluster deployment, use `s1 db`
-      - For a single node deployment: ` s1 --single-node db`
-   2. Locate the systems, ip-10-100-11-115 is used as an example hostname:
-      ```js
-      db.ldap_store.find({ "cn" : "ip-10-100-11-115"}).count()
-      ```
-   3. Remove all ldap_store record of that system:
-      ```js
-      db.ldap_store.deleteMany({ "cn" : "ip-10-100-11-115"})
-      ```
 
-<a id="R3" name="R3"></a>
-### Resolution 3
+3. Connect to a node over SSH, and open the database shell:
 
-1. Add the following line:
+   - For a cluster deployment, run `s1 db`.
+   - For a single-node deployment, run `s1 --single-node db`.
+
+4. Find the system records. In this example, `linux01` is the system name:
+
+   ```javascript
+   db.ldap_store.find({ "cn" : "linux01" }).count()
+   ```
+
+5. Remove all `ldap_store` records of the system:
+
+   ```javascript
+   db.ldap_store.deleteMany({ "cn" : "linux01" })
+   ```
+
+### Allow RSA Keys on Ubuntu 22.04 or Later
+
+1. Add the following line to the bottom of the `/etc/ssh/sshd_config` file:
+
    ```text
    PubkeyAcceptedKeyTypes +ssh-rsa
    ```
-2. To the bottom of: `/etc/ssh/sshd_config`
-3. Restart sshd:
+
+2. Restart `sshd`:
+
    ```bash
    sudo systemctl restart sshd
    ```

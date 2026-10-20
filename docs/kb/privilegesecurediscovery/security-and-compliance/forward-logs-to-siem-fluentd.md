@@ -1,16 +1,18 @@
 ---
-title: "Forward Logs to SIEM via Fluentd"
-description: "Steps to validate and update the Fluentd configuration to forward logs from Privilege Secure Discovery (NPS-D) to a SIEM, including backup, update, and service restart procedures."
-sidebar_label: "Forward Logs to SIEM via Fluentd"
+title: "Forwarding Logs to a SIEM with Fluentd"
+description: "Back up, update, restart, and validate the Fluentd configuration that forwards Privilege Secure for Discovery logs to a SIEM."
+sidebar_label: "Forwarding Logs to a SIEM with Fluentd"
 keywords:
 - Fluentd
 - SIEM
 - NPS-D
-- Privilege Secure Discovery
+- SecureONE
+- Remediant SecureONE
 - fluent.conf
 - log forwarding
 - syslog
 - Docker
+- s1 restart fluentd
 products:
 - privilegesecurediscovery
 tags:
@@ -18,67 +20,64 @@ tags:
 - security-and-compliance
 ---
 
-# Forward Logs to SIEM via Fluentd
-
 ## Overview
 
-Complete the following steps during a scheduled downtime window or support call, in case the service restart causes any issues.
+This article describes how to update the Fluentd configuration that forwards Netwrix Privilege Secure for Discovery logs to a SIEM. For the required configuration (stanza) details, see [Forward Logs to Syslog Servers and SIEM Solutions](/docs/privilegesecurediscovery/integrations/siem/forward-logs).
 
-Refer to [Forward Logs to Syslog Servers and SIEM Solutions](https://docs.netwrix.com/docs/privilegesecurediscovery/integrations/siem/forwardlogs) for the required configuration (stanza) details.
+Complete these steps during a scheduled downtime window or a support call, in case the service restart causes issues.
 
-> **IMPORTANT:** Before starting, confirm the host (FQDN or IP), port number, and protocol for your SIEM. Once these three values are confirmed, the update typically takes around 30 minutes in a scheduled window to complete.
+> **IMPORTANT:** Before you start, confirm the host (FQDN or IP address), port number, and protocol for your SIEM. After you confirm these three values, the update typically takes about 30 minutes.
 
 ## Instructions
 
-1. SSH into the server running Privilege Secure Discovery using an account with sudo access.
+1. Connect to the server that runs the product over SSH, using an account with sudo access.
 
 2. Back up the current configuration file:
 
-```
-sudo cp -v /secureone/conf/fluentd/fluent.conf /secureone/conf/fluentd/fluent.conf-$(date '+%Y-%m-%dT%H_%M_%S')
-```
+   ```bash
+   sudo cp -v /secureone/conf/fluentd/fluent.conf /secureone/conf/fluentd/fluent.conf-$(date '+%Y-%m-%dT%H_%M_%S')
+   ```
 
-3. Check the current IP/hostname, port, and protocol:
+3. Check the current IP address or hostname, port, and protocol:
 
-```
-sudo grep -C4 host /secureone/conf/fluentd/fluent.conf
-```
+   ```bash
+   sudo grep -C4 host /secureone/conf/fluentd/fluent.conf
+   ```
 
-> **NOTE:** If the above command returns no results, review the full file to confirm the required entries exist:
->
-> ```
-> sudo cat /secureone/conf/fluentd/fluent.conf
-> ```
+   > **NOTE:** If the command returns no results, review the full file to confirm that the required entries exist:
+   >
+   > ```bash
+   > sudo cat /secureone/conf/fluentd/fluent.conf
+   > ```
 
-4. Update the IP/hostname, port(s), and protocol using a text editor (vi, vim, or nano). Example:
+4. Update the IP address or hostname, port, and protocol in a text editor such as `vi`, `vim`, or `nano`. For example:
 
-```
-sudo vim /secureone/conf/fluentd/fluent.conf
-```
+   ```bash
+   sudo vim /secureone/conf/fluentd/fluent.conf
+   ```
 
-5. Recheck that the file was updated and saved correctly by repeating step 3.
+5. Repeat step 3 to confirm that the file was updated and saved correctly.
 
-6. Restart the fluentd service:
+6. Restart the Fluentd service:
 
-```
-s1 restart fluentd
-```
+   ```bash
+   s1 restart fluentd
+   ```
 
-7. Confirm logs are flowing correctly:
+7. Confirm that logs are flowing:
 
-```
-sudo docker service logs --tail 50 --follow s1_fluentd
-```
+   ```bash
+   sudo docker service logs --tail 50 --follow s1_fluentd
+   ```
 
 8. Validate that the configuration loaded successfully:
 
-```
-sudo docker exec -it $(sudo docker ps | grep fluentd | cut -d' ' -f1) fluentd -c /fluentd/etc/fluent.conf --dry-run
-```
+   ```bash
+   sudo docker exec -it $(sudo docker ps | grep fluentd | cut -d' ' -f1) fluentd -c /fluentd/etc/fluent.conf --dry-run
+   ```
 
-## Validation Notes
+   The output must contain no red lines. The text color in the output indicates the following:
 
-* No red lines should appear in the output.
-* Green indicates successfully loaded.
-* Yellow indicates warnings.
-* Red indicates failure to load.
+   - Green: The configuration loaded successfully.
+   - Yellow: The configuration loaded with warnings.
+   - Red: The configuration failed to load.

@@ -1,81 +1,87 @@
 ---
-description: 'Access the MongoDB shell on the Netwrix Privilege Secure Discovery appliance via SSH to run queries directly against the SecureONE database. Use this method only for small query results because it displays results in the terminal rather than exporting them.'
+title: "Accessing MongoDB"
+description: "Open the MongoDB shell on a Privilege Secure for Discovery host with the s1 db command or with docker exec, using mongo (4.0) or mongosh (8.0)."
+sidebar_label: "Accessing MongoDB"
 keywords:
 - MongoDB
 - mongo shell
-- SSH
-- Docker
-- SecureONE
-- Privilege Secure Discovery
+- mongosh
+- s1 db
+- docker exec
 - replicaSet
 - mongo container
-- history
-- terminal
+- command history
+- MongoDB 8.0
+- NPS-D
+- SecureONE
+- Remediant SecureONE
 products:
-- privilege-secure-discovery
-sfdc_migration:
-  article_id: ka04u00000116XmAAI
-  article_owner: Anna Evdokimova-Glinskaia
-  article_reviewer: null
-  article_sme: null
-  created_date: '2023-07-07'
-  knowledge_article_id: kA04u00000110orCAA
-  last_modified_date: '2023-07-07'
-  original_categories:
-  - privilege_secure_discovery
-  visibility: public
-sidebar_label: How to Access MongoDB
-tags: []
-title: "How to Access MongoDB"
+- privilegesecurediscovery
+tags:
+- kb
+- database-and-backend
 knowledge_article_id: kA04u00000110orCAA
 ---
 
-# How to Access MongoDB
+:::warning[Needs dev input: remove before publishing]
+TODO: Confirm the s1 db command options for a single-node deployment (s1 --single-node db) and that s1 db selects the correct shell (mongo or mongosh) at 26.09.1. Evidence: none.
 
-Netwrix Privilege Secure Discovery (formerly SecureONE)
+TODO: Screenshots ka04u00000116Xm_0EM4u000008LTeI.png and ka04u00000116Xm_0EM4u000008LTeN.png (2018 terminal captures showing MongoDB 3.2.9 and a host name) are no longer referenced. Replace with current captures or delete the files. Evidence: image.
+:::
 
 ## Overview
 
-Access the MongoDB shell by first logging in to the Netwrix Privilege Secure Discovery appliance directly via SSH. The appliance must already be running and properly configured in order to connect to MongoDB.
+This article describes how to open the MongoDB shell on the Netwrix Privilege Secure for Discovery server so that you can run queries directly against the product database. Connect to the server over SSH, and then use either the `s1 db` command or a `docker exec` command.
 
-> **NOTE:** Only utilize the connection approach in this section if the query data being returned is small, such as a **.count()** function or a small data set, as this approach will not export the information but will only display it in the Terminal window.
+> **NOTE:** Use these methods only when the query returns a small amount of data, such as a `.count()` result or a small data set. The shell does not export data. It displays results in the terminal window.
 
-## Connect to the MongoDB shell
+## Instructions
 
-From the terminal, enter the following command, which executes the Docker container by specifying the container ID, and then automatically begins using the SecureONE document collection once the shell is established:
+### Open the Shell with the s1 Command
 
-### Single Node:
-
-```bash
-sudo docker exec -it $(sudo docker ps | grep mongo | cut -d’ ‘ -f1)
-mongo SecureONE
-```
-
-### Cluster:
+On the server, run the following command. The `s1 db` command opens the MongoDB shell for the active database:
 
 ```bash
-sudo docker exec -it $(sudo docker ps | grep mongo | cut -d’ ‘ -f1)
-mongo mongodb://mongo1,mongo2,mongo3/SecureONE?replicaSet=secureone
+s1 db
 ```
 
-## Use command history to re-run previous commands
+### Open the Shell with Docker
 
-If this command has ever been entered before, another option is to enter:
+If you cannot use the `s1 db` command, run the shell in the MongoDB container. The command finds the container ID and then opens the `SecureONE` database. The shell binary depends on the MongoDB version:
+
+- MongoDB 4.0 uses the `mongo` shell.
+- MongoDB 8.0 uses the `mongosh` shell.
+
+For a single-node deployment, run the command for your MongoDB version:
+
+```bash
+sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongo SecureONE
+```
+
+```bash
+sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongosh SecureONE
+```
+
+For a cluster deployment, run the command for your MongoDB version:
+
+```bash
+sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongo "mongodb://mongo1,mongo2,mongo3/SecureONE?replicaSet=secureone"
+```
+
+```bash
+sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongosh "mongodb://mongo1,mongo2,mongo3/SecureONE?replicaSet=secureone"
+```
+
+When the connection succeeds, the shell displays a prompt that waits for commands.
+
+### Reuse a Previous Command
+
+If you entered the command before, find it in the shell history:
 
 ```bash
 history | grep mongo
 ```
 
-This will return a list of numbered results. Locate the line above, and either copy and paste it into the terminal window or enter an `‘!’` followed by the number located next to the history line. Executing the command this way will execute the command located on the specified line number from the `‘history’` output.
+The command returns a numbered list. Copy and paste the line that you want, or enter `!` followed by the number next to that line to run it again.
 
-![mongo1.png](../0-images/ka04u00000116Xm_0EM4u000008LTeI.png)
-
-Once a successful MongoDB shell connection has been established, the following screen will appear indicating a successful establishment of a MongoDB shell. The '>' character at the bottom indicates a fresh line waiting for commands.
-
-Example:
-
-![mongo2.png](../0-images/ka04u00000116Xm_0EM4u000008LTeN.png)
-
-Now, the shell is ready to run the queries that follow.
-
-> **NOTE:** Some queries may require moderate computing resources, and scanning may slow down while they are running.
+> **NOTE:** Some queries require moderate computing resources, and scanning can slow down while they run.

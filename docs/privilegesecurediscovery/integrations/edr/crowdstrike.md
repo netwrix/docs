@@ -1,86 +1,83 @@
 ---
-title: "CrowdStrike"
-description: "CrowdStrike"
+title: "Configure the CrowdStrike Falcon integration"
+sidebar_label: "CrowdStrike"
+description: "Create a CrowdStrike Falcon API client and an EDR provider configuration so Netwrix Privilege Secure for Discovery can manage Windows systems remotely."
 sidebar_position: 20
 ---
 
-# CrowdStrike
+:::warning[Screenshot needs attention: remove before publishing]
+TODO: 4404584855447_screen_shot_2021-07-19_at_3.08.26_pm.webp: shows a CrowdStrike client ID in the integration panel. Redact or replace.
 
-CrowdStrike
+TODO: Review the remaining CrowdStrike screenshots for tenant-specific values.
+:::
 
-# CrowdStrike
+The CrowdStrike Falcon Remote Systems Management integration lets Netwrix Privilege Secure for Discovery protect machines and grant administrator access without a direct network connection to the endpoint. The product connects to CrowdStrike Falcon and performs these tasks through the Falcon agent, so the machine doesn't need to be on the domain.
 
-## Overview
+> **Note:** Remote Systems Management and Intelligent Session Capture are independent features. Intelligent Session Capture works regardless of whether Remote Systems Management is enabled. Enabling Remote Systems Management adds the **EDR Integration** list to endpoint configuration.
 
-The CrowdStrike Manage Remote Systems integration is available from Privilege Secure version 2.11.
-This allows machines to be protected and access elevated without direct line of site. Privilege
-Secure integrates to the CrowdStrike end point and is able to perform these tasks without the need
-for the end machine being on the domain.
+## Prerequisites
 
-**NOTE:** Remote Computer Management and Intelligent Session Capture are independent on each other.
-Intelligent Session Capture should work regardless of Remote Computer Management. Enabling Remote
-Computer Management will cause the "EDR Integration" drop down menu to appear on endpoints.
+- A CrowdStrike Falcon account that can create API clients.
+- The Falcon agent installed on the Windows endpoints that you want to manage.
+- Network access from the Privilege Secure for Discovery server to your Falcon API base URL.
 
-## CrowdStrike Configuration
+## Create a CrowdStrike API client
 
-Login to CrowdStrike ([https://falcon.crowdstrike.com](https://falcon.crowdstrike.com)).
+1. Sign in to the CrowdStrike Falcon console.
+2. On the **Support** menu, select **API Clients and Keys**.
 
-## API Configuration
+   ![The Support menu in the Falcon console with API Clients and Keys](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_2.39.57_pm_135x268.webp)
 
-Next the API access needs to be configured for Privilege Secure access.
+3. Select **Add new API client**.
 
-**Step 1 –** In the Support menu select the "API Clients and Keys" option:
+   ![The Add API client button](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_2.42.41_pm.webp)
 
-![Screen_Shot_2021-07-19_at_2.39.L57_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_2.39.57_pm_135x268.webp)
+4. Enter a client name and a description.
+5. Select the following scopes.
 
-**Step 2 –** Add an API Client
+   | Scope | Permission |
+   | --- | --- |
+   | Hosts | Read |
+   | Real time response (admin) | Write |
+   | Real time response | Read |
 
-![Screen_Shot_2021-07-19_at_2.42.L41_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_2.42.41_pm.webp)
+6. Select **Add**.
+7. Record the **Client ID**, **Secret**, and **Base URL**.
 
-**Step 3 –** Enter a suitable Client Name and Description then add select the following check boxes:
+Falcon displays the secret only once. Store it in a secret manager.
 
-- Hosts                                           Read
-- Real time response (admin)      Write
-- Real time response                    Read
+## Configure Privilege Secure for Discovery
 
-Once added the details of the API will be provided (Client ID, Secret and Base URL). These should be
-noted for entry into Privilege Secure.
+You can create more than one EDR provider configuration and assign each one to different machines.
 
-## Privilege Secure Configuration
+1. In Privilege Secure for Discovery, open **Configure > Server > EDR Provider Configuration**.
 
-With 2.17 and later multiple configurations for EDR solutions can be created. This is under the
-Server Configuration:
+   ![The Server configuration page with the EDR provider configuration](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.17.39_pm.webp)
 
-![Screen_Shot_2022-10-03_at_1.17.L39_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.17.39_pm.webp)
+2. Select **Add Provider**, and select **CrowdStrike Falcon**.
 
-A new EDR configuration can then be created:
+   ![The Add Provider list with CrowdStrike Falcon](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.15.31_pm.webp)
 
-![Screen_Shot_2022-10-03_at_1.15.L31_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.15.31_pm.webp)
+3. Enter a configuration name. You select this name when you assign the configuration to machines.
 
-The configuration should be named. This name will be referred to from the machine configuration:
+   ![The Configuration Name field of a new EDR configuration](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.15.45_pm.webp)
 
-![Screen_Shot_2022-10-03_at_1.15.L45_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.15.45_pm.webp)
+4. Under **Remote Systems Management**, set **Enable** to **Enabled**.
+5. Enter the **API Base URL** and the **Client ID** and **Client Secret** from the API client.
+6. If the server reaches the internet through a proxy, enable **Use Proxy Configuration**.
 
-The configuration can be tested when the appropriate entries have been entered:
+   ![The CrowdStrike Falcon configuration panel with API credentials](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_3.08.26_pm.webp)
 
-![Screen_Shot_2021-07-19_at_3.09.L13_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_3.09.13_pm.webp)
+7. Select **Test Connection**.
 
-Individual machines can now be assigned to the appropriate EDR configuration, either via the UI or
-via Quickstart: *The EDR integration drop down is tied to Remote Systems Management. Intelligent
-Session Capture should work regardless if enabled.*
+   ![A successful CrowdStrike connection test result](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_3.09.13_pm.webp)
 
-![Screen_Shot_2022-10-03_at_1.25.L07_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.25.07_pm.webp)
+8. Save the configuration.
 
-## Prior to 2.17
+## Assign the configuration to machines
 
-To set up Privilege Secure to use the integration created with CrowdStrike the Server Configuration
-page should be accessed within Privilege Secure.
+Assign the EDR provider configuration to a machine in the interface, through **Bulk Actions**, or by using the Quickstart tools. The **EDR Integration** list is tied to Remote Systems Management.
 
-Complete the CrowdStrike EDR Integration panel with the details noted for the API created in
-CrowdStrike Falcon
+![The EDR Integration list on a machine configuration](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.25.07_pm.webp)
 
-![Screen_Shot_2021-07-19_at_3.08.L26_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_3.08.26_pm.webp)
-
-The connection can then be tested.
-
-![Screen_Shot_2021-07-19_at_3.09.L13_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_3.09.13_pm.webp)
+You can't delete an EDR provider configuration while it is assigned to a domain or a system.

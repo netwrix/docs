@@ -1,10 +1,6 @@
 {
   "label": "Requirements",
-  "position": 20,
+  "position": 100,
   "collapsed": true,
-  "collapsible": true,
-  "link": {
-    "type": "doc",
-    "id": "overview"
-  }
+  "collapsible": true
 }

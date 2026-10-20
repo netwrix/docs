@@ -1,42 +1,35 @@
 ---
-description: 'This article lists common error messages encountered during Linux registration with Netwrix Privilege Secure Discovery and links to detailed KB articles for each error.'
+title: "Troubleshooting Linux Registration"
+description: "Find the error message you receive when you register a Linux system and open the article that explains how to resolve it."
+sidebar_label: "Troubleshooting Linux Registration"
 keywords:
-- linux registration
+- Linux registration
+- registration error
 - SSH
-- RSA
-- OPENSSH
-- authentication
+- RSA key
+- OPENSSH key
 - UnprocessableEntityError
 - MODULE FAILURE
-- ascii encoding
-- Netwrix Privilege Secure Discovery
+- ascii codec
+- NPS-D
+- SecureONE
+- Remediant SecureONE
 products:
-- privilege-secure-discovery
-sfdc_migration:
-  article_id: ka04u00000116b5AAA
-  article_owner: Anna Evdokimova-Glinskaia
-  article_reviewer: null
-  article_sme: null
-  created_date: '2023-07-11'
-  knowledge_article_id: kA04u00000110q9CAA
-  last_modified_date: '2023-07-11'
-  original_categories:
-  - privilege_secure_discovery
-  visibility: public
-sidebar_label: Troubleshooting Linux Registration
-tags: []
-title: "Troubleshooting Linux Registration"
+- privilegesecurediscovery
+tags:
+- kb
+- linux-and-ssh-integration
 knowledge_article_id: kA04u00000110q9CAA
 ---
 
-# Troubleshooting Linux Registration
+## Overview
 
-Netwrix Privilege Secure Discovery (formerly SecureONE)
+This article lists the common error messages that you can receive when you register a Linux system with Netwrix Privilege Secure for Discovery, and links to the article that describes each resolution.
 
 ## Common Error Messages
 
-- [Error: Invalid SSH Credentials Authentication Failed](/docs/kb/privilegesecurediscovery/linux-and-ssh-integration/error-invalid-ssh-credentials-authentication-failed.md)
-- UnprocessableEntityError: SSH Connection Error: Encountered RSA Key, Expected OPENSSH Key
-- UnprocessableEntityError: Missing Result for Task checkAdminPrivilege. Code:9999
-- Unhandled Error: there has been an Error Processing the Registration Request: 'ascii' Codec can't Encode Character u
-- [Unhandled Error: Module Failure](/docs/kb/privilegesecurediscovery/linux-and-ssh-integration/unhandled-error-module-failure.md)
+- [Error: Invalid SSH Credentials Authentication Failed](./error-invalid-ssh-credentials-authentication-failed.md)
+- [UnprocessableEntityError: SSH Connection Error: Encountered RSA Key, Expected OPENSSH Key](./unprocessableentityerror-ssh-connection-error-encountered-rsa-key-expected-openssh-key.md)
+- [UnprocessableEntityError: Missing Result for Task checkAdminPrivilege (Code 9999)](./unprocessableentityerror-missing-result-for-task-checkadminprivilege-code-9999.md)
+- [Unhandled Error: There Has Been an Error Processing the Registration Request: 'ascii' Codec Can't Encode Character](./unhandled-error-there-has-been-an-error-processing-the-registration-request-ascii-codec-can-t-encode.md)
+- [Unhandled Error: Module Failure](./unhandled-error-module-failure.md)

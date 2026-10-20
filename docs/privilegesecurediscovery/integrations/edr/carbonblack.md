@@ -1,101 +1,119 @@
 ---
-title: "Carbon Black"
-description: "Carbon Black"
+title: "Configure the Carbon Black Cloud integration"
+sidebar_label: "Carbon Black"
+description: "Create Carbon Black Cloud API keys and an EDR provider configuration so Privilege Secure for Discovery can manage Windows systems remotely."
 sidebar_position: 10
 ---
 
-# Carbon Black
+:::warning[Needs dev input: remove before publishing]
+TODO: Confirm the minimum Carbon Black Cloud permissions for the custom access level. The permissions in the following procedure come from an existing screenshot (carbonblack access level, February 2022); a draft note in the old page asked whether the policy is needed. Evidence: none.
 
-Carbon Black
+TODO: Confirm which Carbon Black Cloud API key (Live Response or Devices) requires which access level, and whether the Policies permission is required. Evidence: docker/node/packages/lib-api-common/schemas/edrIntegrationsConfig/carbonBlackCloudConfig.js lists org_key and credentials.live_response_api only in the excerpt checked.
 
-# Carbon Black
+TODO: Confirm the current labels of the Carbon Black Cloud fields in the EDR Provider Configuration form. The Carbon Black screenshots show an earlier panel layout. Evidence: none.
+:::
 
-## Overview
+:::warning[Screenshot needs attention: remove before publishing]
+TODO: 360061787514_screen_shot_2021-03-02_at_7.22.31_pm.webp: shows the Carbon Black org key and API IDs. Redact or replace.
 
-The Carbon Black integration is available from Privilege Secure version 2.8 and later. This allows
-machines to be protected and access elevated with out direct line of site. Privilege Secure
-integrates to the Carbon Black end point and is able to perform these tasks without the need for the
-end machine being on the domain.
+TODO: 360061787514_image_105x410.webp, 360061787514_screen_shot_2021-03-02_at_7.04.16_pm.webp, and 360061787514_screen_shot_2021-03-02_at_7.06.55_pm.webp: the Carbon Black Cloud console screens show organization identifiers. Redact or replace.
 
-Follow the steps to configure Carbon Black integration.
+TODO: 360061787514_screen_shot_2021-03-02_at_7.20.53_pm_486x402.webp and 7.22.31: re-capture with the current EDR Provider Configuration form.
+:::
 
-**Step 1 –** Login to Carbon Black Cloud.
+The Carbon Black Cloud integration lets Netwrix Privilege Secure for Discovery protect machines and grant administrator access without a direct network connection to the endpoint. The product connects to Carbon Black Cloud and performs these tasks through the Carbon Black agent, so the machine doesn't need to be on the domain.
 
-**Step 2 –** Next the API access needs to be granted to Privilege Secure. This is done using the API
-Access under Settings within Carbon Black Cloud and click the API Access details under settings.
+## Prerequisites
 
-![image.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_image_105x410.webp)
+- A Carbon Black Cloud console account that can create access levels and API keys.
+- Carbon Black agents installed on the Windows endpoints that you want to manage.
+- Network access from the Privilege Secure for Discovery server to your Carbon Black Cloud API base URL.
 
-Note the ORG KEY at the top left.
+## Find the organization key
 
-![Screen_Shot_2021-03-02_at_6.36.L07_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_6.36.07_pm_267x140.webp)
+1. Sign in to Carbon Black Cloud.
+2. Go to **Settings > API Access**.
+3. Record the **ORG KEY** at the top left of the page.
 
-**Step 3 –** Create two API Keys: One is Live Response API and one is the Device API.
+   ![The Carbon Black Cloud API Access page with the org key at the top left](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_image_105x410.webp)
 
-## Access Level Creation
+   ![The org key displayed in the Carbon Black Cloud console](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_6.36.07_pm_267x140.webp)
 
-Follow the steps for access level creation.
+## Create a custom access level
 
-**Step 1 –** First, a specific access level for one of these keys must be created.
+Privilege Secure for Discovery uses two API keys. One key uses the **Live Response** access level. The other key uses a custom access level that you create in this procedure.
 
-**Step 2 –** Click the **Access Levels** selection in the top left.
+1. In Carbon Black Cloud, open **API Access**, and select **Access Levels**.
 
-![Screen_Shot_2021-03-02_at_7.06.L12_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.06.12_pm_375x183.webp)
+   ![The Access Levels tab in Carbon Black Cloud](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.06.12_pm_375x183.webp)
 
-**Step 3 –** The Add Access Level button should be clicked to start the creation of the custom
-access level.
+2. Select **Add Access Level**.
 
-![Screen_Shot_2021-03-02_at_7.06.L55_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.06.55_pm.webp)
+   ![The Add Access Level button](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.06.55_pm.webp)
 
-**Step 4 –** Enter the details to identify the new Access Level.
+3. Enter a name and a description for the access level.
 
-![Screen_Shot_2021-03-02_at_7.04.L16_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.04.16_pm.webp)
+   ![The Add Access Level form with name and description fields](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.04.16_pm.webp)
 
-**Step 5 –** The following access level items should be selected - CHECK THE POLICY IS NEEDED OR NOT
-XXXX\*\*\*\*\*\*\*\*
+4. Select the following permissions.
 
-![Screen_Shot_2022-02-11_at_11.04.L26_AM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2022-02-11_at_11.04.26_am.webp)
+   | Category | Permission | Notation name | Select |
+   | --- | --- | --- | --- |
+   | Device | General information | `device` | Read |
+   | Device | Policy assignment | `device.policy` | Update |
+   | Live Query | Manage queries | `livequery.manage` | Create, Read, Update, Delete |
+   | Live Response | Live Response Session | `org.liveresponse.session` | Create, Read, Delete |
+   | Live Response | Live Response File | `org.liveresponse.file` | Create, Read, Delete |
+   | Live Response | Disable Live Response | `org.liveresponse` | Delete |
+   | Live Response | Live Response Process | `org.liveresponse.process` | Read, Delete, Execute |
+   | Policies | Policies | `org.policies` | Create, Read, Update, Delete |
 
-**Step 6 –** Click the **Save** button to save the custom access level.
+   ![The Carbon Black Cloud permission list with the required permissions selected](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2022-02-11_at_11.04.26_am.webp)
 
-## API Keys Creation
+5. Select **Save**.
 
-Follow the steps to create API keys.
+## Create the API keys
 
-**Step 1 –** Click the Add API Key button in the top right corner.
+1. In **API Access**, select **Add API Key**.
 
-![Screen_Shot_2021-03-02_at_6.42.L09_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_6.42.09_pm.webp)
+   ![The Add API Key button in Carbon Black Cloud](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_6.42.09_pm.webp)
 
-**Step 2 –** Enter the details for the Live Response API.
+2. Enter a name and description for the Live Response key, and set **Access Level type** to **Live Response**.
 
-![Screen_Shot_2021-03-02_at_6.48.L23_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_6.48.23_pm_417x412.webp)
+   ![The Add API Key form for the Live Response key](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_6.48.23_pm_417x412.webp)
 
-**Step 3 –** Click **Save** and note the API ID and API Secret Key.
+3. Select **Save**, and record the **API ID** and **API Secret Key**.
 
-![Screen_Shot_2021-03-02_at_6.51.L34_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_6.51.34_pm_323x185.webp)
+   ![The API ID and API Secret Key shown after saving a key](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_6.51.34_pm_323x185.webp)
 
-**Step 4 –** Create a second API Key using the custom access level previously created.
+4. Create a second API key, and set **Access Level type** to **Custom** with the access level that you created.
 
-![Screen_Shot_2021-03-02_at_7.15.L12_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.15.12_pm_428x421.webp)
+   ![The Add API Key form for the Devices key with the custom access level](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.15.12_pm_428x421.webp)
 
-**Step 5 –** Click **Save** and again the API ID and Secret Key should be noted.
+5. Select **Save**, and record the **API ID** and **API Secret Key**.
 
-![Screen_Shot_2021-03-02_at_6.51.L34_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_6.51.34_pm_323x185.webp)
+Carbon Black Cloud displays the secret key only once. Store both secrets in a secret manager.
 
-## Privilege Secure Configuration
+## Configure Privilege Secure for Discovery
 
-Follow the steps for configuration.
+1. In Privilege Secure for Discovery, open **Configure > Server > EDR Provider Configuration**.
 
-**Step 1 –** To set up Privilege Secure to use the integration created with Carbon Black, the Server
-Configuration page should be accessed within Privilege Secure.
+   ![The Server configuration page with the EDR provider configuration](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.20.53_pm_486x402.webp)
 
-![Screen_Shot_2021-03-02_at_7.20.L53_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.20.53_pm_486x402.webp)
+2. Select **Add Provider**, and select **Carbon Black Cloud**.
+3. Enter a configuration name. You select this name when you assign the configuration to domains and machines.
+4. Enable the remote systems management option.
+5. Enter the **API Base URL** of your Carbon Black Cloud console, and the **Org Key**.
+6. Under **Live Response APIs Credentials**, enter the API ID and API Secret Key of the Live Response key.
+7. Under **Devices API Credentials**, enter the API ID and API Secret Key of the custom-access-level key.
+8. If the server reaches the internet through a proxy, enable **Use Proxy Configuration**.
 
-**Step 2 –** Complete the Carbon Black EDR Integration panel with the details noted for the APIs
-created in Carbon Black Cloud.
+   ![The Carbon Black Cloud configuration fields with credentials entered](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.22.31_pm.webp)
 
-![Screen_Shot_2021-03-02_at_7.22.L31_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.22.31_pm.webp)
+9. Select **Test Connection**. A successful response confirms that the product can reach the Carbon Black Cloud API.
 
-**Step 3 –** Test the connection and a successful response should be returned.
+   ![A successful Carbon Black Cloud connection test result](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.24.15_pm.webp)
 
-![Screen_Shot_2021-03-02_at_7.24.L15_PM.webp](/images/privilegesecure/4.2/discovery/integrations/edr/360061787514_screen_shot_2021-03-02_at_7.24.15_pm.webp)
+10. Save the configuration.
+
+After you save the configuration, assign it to machines individually, through **Bulk Actions**, or as the default EDR configuration of a domain. You can't delete an EDR provider configuration while it is assigned to a domain or a system.

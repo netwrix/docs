@@ -1,40 +1,35 @@
 ---
-description: 'You see the error ''module'' object has no attribute ''MODE_CCM'' in Access History or when you run a rescan from the Grant Access page. This article explains the cause (SMB encryption enabled) and provides PowerShell steps to resolve the issue.'
+title: "Error: 'module' Object Has No Attribute 'MODE_CCM'"
+description: "Resolve the 'module' object has no attribute 'MODE_CCM' error in Access History or on rescan by disabling SMB encryption, and learn how to re-enable it."
+sidebar_label: "Error: 'module' Object Has No Attribute 'MODE_CCM'"
 keywords:
-- SMB
-- SMB encryption
-- PowerShell
+- "'module' object has no attribute 'MODE_CCM'"
 - MODE_CCM
+- SMB encryption
+- Set-SmbServerConfiguration
+- EncryptData
+- Get-SmbServerConfiguration
 - Grant Access
 - Access History
-- troubleshoot
-- Privilege Secure Discovery
+- rescan
+- NPS-D
+- SecureONE
+- Remediant SecureONE
 products:
-- privilege-secure-discovery
-sfdc_migration:
-  article_id: ka04u00000116WpAAI
-  article_owner: Anna Evdokimova-Glinskaia
-  article_reviewer: null
-  article_sme: null
-  created_date: '2023-07-06'
-  knowledge_article_id: kA04u00000110oNCAQ
-  last_modified_date: '2023-07-06'
-  original_categories:
-  - privilege_secure_discovery
-  visibility: public
-sidebar_label: 'Error: ''Module'' Object has no Attribute ''MODE_CCM'''
-tags: []
-title: 'Error: ''Module'' Object has no Attribute ''MODE_CCM'''
+- privilegesecurediscovery
+tags:
+- kb
+- troubleshooting-and-errors
 knowledge_article_id: kA04u00000110oNCAQ
 ---
 
-# Error: 'Module' Object has no Attribute 'MODE_CCM'
-
-Formerly SecureONE
+:::warning[Needs dev input: remove before publishing]
+TODO: Confirm whether MODE_CCM (SMB encryption) is still unsupported at 26.09.1 and whether a product-side fix or a narrower workaround exists, such as per-share encryption settings. Evidence: none.
+:::
 
 ## Symptom
 
-You see the following error in the system **Access History** or when you run a rescan from the **Grant Access** page:
+You see the following error in the **Access History** of the system, or when you rescan the system from the **Grant Access** page:
 
 ```text
 'module' object has no attribute 'MODE_CCM'
@@ -42,29 +37,34 @@ You see the following error in the system **Access History** or when you run a r
 
 ## Cause
 
-This error is caused when SMB encryption is enabled on the system.
+SMB encryption is enabled on the system.
 
 ## Resolution
 
-**IMPORTANT.** To perform troubleshooting steps, you must have:
+> **IMPORTANT:** To perform these troubleshooting steps, you must have the administrator role in the product, and you must be able to run PowerShell on the system.
 
-- the administrator role
-- an ability to run PowerShell on the system
+> **IMPORTANT:** Disabling SMB encryption removes encryption for all SMB traffic to and from the server. Data in transit, including file transfers and credentials passed over SMB, is then exposed to anyone who can capture network traffic. Disable SMB encryption only if your security policy allows it, and limit the change to the affected servers. To restore encryption, see [Re-enable SMB Encryption](#re-enable-smb-encryption). The error returns on a system after you re-enable encryption on it.
 
-Troubleshooting steps:
+1. Verify that SMB encryption is enabled. Run the following command in PowerShell:
 
-1. Verify SMB encryption is enabled from PowerShell:
+   ```powershell
+   Get-SmbServerConfiguration | Select-Object EncryptData
+   ```
+
+2. Disable SMB encryption on the affected servers:
+
+   ```powershell
+   Set-SmbServerConfiguration -EncryptData $false
+   ```
+
+3. Rescan the system from the **Grant Access** page to verify that the issue is resolved.
+
+### Re-enable SMB Encryption
+
+To restore SMB encryption on a server, run the following command in PowerShell:
 
 ```powershell
-Get-SmbServerConfiguration | Select EncryptData
+Set-SmbServerConfiguration -EncryptData $true
 ```
 
-2. Disable SMB encryption on affected servers:
-
-```powershell
-Set-SmbServerConfiguration -EncryptData $false
-```
-
-3. Rescan the system from the **Grant Access** page to verify the issue is resolved
-
-Learn more in SMB security enhancements ⸱ Microsoft: https://learn.microsoft.com/en-us/windows-server/storage/file-server/smb-security
+For more information, see [SMB security enhancements](https://learn.microsoft.com/en-us/windows-server/storage/file-server/smb-security) in the Microsoft documentation.

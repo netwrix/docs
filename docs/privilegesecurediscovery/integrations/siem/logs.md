@@ -1,144 +1,103 @@
 ---
-title: "Logs"
-description: "Logs"
-sidebar_position: 40
+title: "Log format reference"
+description: "Learn the structure of Netwrix Privilege Secure for Discovery log messages, the log levels, and the fields that each service writes."
+sidebar_position: 20
 ---
 
-# Logs
+Most log lines that Netwrix Privilege Secure for Discovery writes are JSON objects. The exact structure varies by service. For information about parsing the logs in Splunk, see [Splunk JSON source type](./splunk-json-source-type.md). For additional events, see [Additional log events](./additional-logs.md).
 
-Logs
+## Event logs and debugging logs
 
-# Logs
+- **Debugging logs:** logs with a `"debugging": true` flag support troubleshooting and can change without notice.
+- **Event logs:** all other logs, without the `"debugging"` flag, don't change without notice. Netwrix lists changes to these logs in the release notes. Dynamic data, such as timing and system names, isn't a change.
 
-## General Log Format
+The following example shows a debugging log.
 
-Most log lines are output in JSON format. The exact structure varies by service. See
-Service-Specific Log Format section below. See the
-[Splunk (JSON) Source Type](./splunkjson.md)
-topic for additional information.
-
-### Event Logs vs Debugging Logs
-
-- Debugging logs – logs with a `"debugging": true` flag are meant for troubleshooting and are
-  subject to change without notice.
-
-Example
-
-```
+```json
 {
-"asctime": "2020-09-23 16:19:19,622",
-"debugging": true,
-"jobId": "46b0f845-5a35-4433-b955-195a8a794985",
-...
-}
-
-```
-
-- Event logs – all other logs without the `"debugging"` flag should _not_ be changed without notice
-  (via an entry in the changelog).
-
-**NOTE:** Dynamic data (such as timing, system name, etc...) are not considered changes
-
-### Log Levels
-
-**NOTE:** Older log messages may not follow this format and are being migrated over.
-
-- Critical – Service is going down (people should be woken up)
-- Error – Definitely a problem (should be reported to someone, tests should fail)
-- Warning – Something concerning that may not indicate a problem
-
-    - Example – Most network-related issues are only a problem if they happen frequently
-
-- Info – Normal event/ info log
-- Debug – More information than is normally needed, usually only used when troubleshooting
-
-## Service-Specific Log Formats
-
-This sections describes log formats in Privilege Secure.
-
-### API Log Fields
-
-Most log messages emitted by the API will include the following fields:
-
-- req_id — Unique identifier for an incoming request. All API events that are generated as part of
-  this request will have the same value.
-- access.user — Properties about the authenticated user making the request
-- client
-
-- forwardedForIPs — List of IPs that have acted as proxies for this request
-- requestIP — IP for the origin of the request
-- userAgent — User-agent information
-
-- req
-
-- headers — HTTP request headers
-- method — HTTP method
-- url — request URL
-- params — Params, if any from the body or the URL
-- query — Pagination information, if any
-- remoteAddress/remotePort — Requestor IP information
-
-- res
-
-- statusCode — HTTP response status code
-- header — HTTP response headers
-- body — Response body
-
-### Worker Logs
-
-All log messages will include the following fields:
-
-- asctime – The date/ time the log message was emitted
-- levelname – The level name (see above)
-
-### Scanner Logs
-
-All log messages will include the following fields:
-
-- asctime – The date/ time the log message was emitted
-- levelname – The level name (see above)
-
-### LDAPSync Logs
-
-All log messages will include the following fields:
-
-- asctime – The date/ time the log message was emitted
-- levelname – The level name (see above)
-
-### Expire Logs
-
-Fields
-
-- asctime – The date/ time the log message was emitted
-- levelname – The level name (see above)
-- message – A specific message
-- name – always svc-expire
-- system – always Main
-- threadName – always Main
-
-Example
-
-```
-{
-"asctime": "2000-01-01 00:00:00,000",
-"levelname": "INFO",
-"message": "Checking for pending requests",
- "name": "svc-expire",
-"system": "Main",
- "threadName": "MainThread"
- },
- {
-"asctime": "2000-01-01 00:00:00,010",
-"levelname": "WARNING",
- "message": "Pending requests in queue, sending notification",
- "name": "svc-expire",
- "system": "Main",
-"threadName": "MainThread"
+  "asctime": "2026-01-01 00:00:00,000",
+  "debugging": true,
+  "jobId": "<job-id>"
 }
 ```
 
-## Logging Configuration
+## Log levels
 
-Privilege Secure log levels can be set in the UI for each service.
+Older log messages might not follow this convention.
 
+| Level | Meaning |
+| --- | --- |
+| Critical | The service is going down. |
+| Error | A definite problem that you should report to someone. |
+| Warning | Something concerning that might not indicate a problem. For example, most network-related issues are a problem only if they happen frequently. |
+| Info | A normal event or information log. |
+| Debug | More information than normally needed, usually for troubleshooting. |
 
+## Service-specific log formats
+
+### API log fields
+
+Most log messages from the API include the following fields:
+
+- `req_id`: a unique identifier for an incoming request. All API events that the request generates have the same value.
+- `access.user`: properties of the authenticated user that makes the request.
+- `client`:
+  - `forwardedForIPs`: the IP addresses that acted as proxies for the request.
+  - `requestIP`: the IP address of the origin of the request.
+  - `userAgent`: the user-agent information.
+- `req`:
+  - `headers`: the HTTP request headers.
+  - `method`: the HTTP method.
+  - `url`: the request URL.
+  - `params`: the parameters from the body or the URL, if any.
+  - `query`: pagination information, if any.
+  - `remoteAddress` and `remotePort`: the requester's IP address and port.
+- `res`:
+  - `statusCode`: the HTTP response status code.
+  - `header`: the HTTP response headers.
+  - `body`: the response body.
+
+### Worker, scanner, and LDAPSync log fields
+
+All log messages from the worker, scanner, and LDAPSync services include the following fields:
+
+- `asctime`: the date and time that the service emitted the message.
+- `levelname`: the log level.
+
+### Expire log fields
+
+Log messages from the expire service include the following fields:
+
+- `asctime`: the date and time that the service emitted the message.
+- `levelname`: the log level.
+- `message`: a specific message.
+- `name`: always `svc-expire`.
+- `system`: always `Main`.
+- `threadName`: always `MainThread`.
+
+The following example shows two expire log messages.
+
+```json
+[
+  {
+    "asctime": "2026-01-01 00:00:00,000",
+    "levelname": "INFO",
+    "message": "Checking for pending requests",
+    "name": "svc-expire",
+    "system": "Main",
+    "threadName": "MainThread"
+  },
+  {
+    "asctime": "2026-01-01 00:00:00,010",
+    "levelname": "WARNING",
+    "message": "Pending requests in queue, sending notification",
+    "name": "svc-expire",
+    "system": "Main",
+    "threadName": "MainThread"
+  }
+]
+```
+
+## Configure log levels
+
+You can set the log level of each service in the interface.
