@@ -108,9 +108,9 @@ The certificate is application-specific. Don't reuse a certificate from another 
 5. Reopen the configuration and verify the saved values.
 6. Enable SSO, and save the configuration again.
 
-![Review the saved NPS-D SAML settings](/img/product_docs/privilegesecurediscovery/microsoftentraid/07-npsd-saml-operational-settings.webp)
+![NPS-D SAML settings with Auto-Redirect to IdP turned off](/img/product_docs/privilegesecurediscovery/microsoftentraid/07-npsd-saml-operational-settings-26.09.0.webp)
 
-> **Version note:** This screenshot shows NPS-D 26.06 and doesn't include Auto-Redirect to IdP. Starting with NPS-D 26.09.0, the **SAML/SSO Configuration** section includes an Auto-Redirect to IdP row with the **redirect to IdP on login page** checkbox.
+> **Version note:** Starting with NPS-D 26.09.0, the **SAML/SSO Configuration** section includes an **Auto-Redirect to IdP** row with the **redirect to IdP on login page** checkbox.
 
 ## Select the login behavior
 

@@ -127,7 +127,7 @@ You can also apply manual proxy settings using CLI commands:
 Example:
 
 ```
-msiexec.exe /i "C:\Work\Tools\EPPClientSetup.5.7.1.5_x86_64.msi" /q REBOOT=ReallySuppress RUNNOTIFIER=0 /log "C:\Windows\TEMP\epp-upgrade.log" WSIP="192.168.18.125" WSPORT="8080" DEPT_CODE="defdep" PROXYIP="127.0.0.1" PROXYPORT="80" AUTHUSR="user_name" AUTHPASS="password"
+msiexec.exe /i "C:\Work\Tools\EPPClientSetup.5.7.1.5_x86_64.msi" /q REBOOT=ReallySuppress RUNNOTIFIER=0 /log "C:\Windows\TEMP\epp-upgrade.log" WSIP="epp.example.com" WSPORT="8080" DEPT_CODE="defdep" PROXYIP="127.0.0.1" PROXYPORT="80" AUTHUSR="user_name" AUTHPASS="password"
 ```
 
 Where:
@@ -139,7 +139,7 @@ Where:
 
 You can also use the following CLI commands to install Endpoint Protector Client in a specific working mode.
 
-- WSIP – server address
+- WSIP – server address (use the server's fully qualified domain name (FQDN) instead of an IP address)
 - WSPORT – server port number
 - DEPT_CODE – department code
 - IPV6MAPPING – IPV6 Mapping IPv4 addresses

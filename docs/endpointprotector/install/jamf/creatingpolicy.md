@@ -28,7 +28,7 @@ sidebar menu, select **Policies**, and then click **+ New**.
 ![Configuring Script under Policies](scripts.webp)
 
 **Step 4 –** On the Packages section, click **Configure** and then add the package
-EndpointProtector.pkg.
+`EndpointProtectorClient2608.2.1.3.pkg`.
 
 ![Adding the Endpoint Protector package to policy](addingpackage.webp)
 

@@ -18,6 +18,7 @@
  * @property {boolean} isLatest - Whether this is the latest version
  * @property {string} [sidebarFile] - Custom sidebar file path (defaults to generated path)
  * @property {string} [kbSource] - Optional override for the KB source directory for this version (relative to repo root). When set, this version pulls KB articles from this directory instead of the product-level default (docs/kb/<productId>/).
+ * @property {boolean} [kb] - Set to false to give this version no Knowledge Base section. The KB copy script skips the version (and removes any previously copied kb/ folder) instead of falling back to the product-level KB source. Defaults to true.
  */
 
 /**
@@ -62,11 +63,11 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '2601',
-        label: '2601',
+        version: '26.1',
+        label: '26.1',
         isLatest: true,
-        sidebarFile: './sidebars/accessanalyzer/2601.js',
-        kbSource: 'docs/kb/accessanalyzer-2601',
+        sidebarFile: './sidebars/accessanalyzer/26.1.js',
+        kb: false, // No Knowledge Base section: the docs/kb/accessanalyzer articles apply to 12.0 and 11.6 only
       },
       {
         version: '12.0',
@@ -81,7 +82,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/accessanalyzer/11.6.js',
       },
     ],
-    defaultVersion: '2601',
+    defaultVersion: '26.1',
   },
   {
     id: 'accessinformationcenter',
@@ -212,9 +213,15 @@ export const PRODUCTS = [
     icon: '🏷️',
     versions: [
       {
+        version: '5.8',
+        label: '5.8',
+        isLatest: true,
+        sidebarFile: './sidebars/dataclassification/5.8.js',
+      },
+      {
         version: '5.7',
         label: '5.7',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/dataclassification/5.7.js',
       },
       {
@@ -224,7 +231,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/dataclassification/5.6.2.js',
       },
     ],
-    defaultVersion: '5.7',
+    defaultVersion: '5.8',
   },
   {
     id: 'directorymanager',
@@ -338,9 +345,23 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '12.1',
+        label: '12.1',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/12.1.js',
+      },
+      {
+        version: '12.0',
+        label: '12.0',
+        isLatest: false,
+        hidden: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/12.0.js',
+      },
+      {
         version: '11.2',
         label: '11.2',
-        isLatest: true,
+        isLatest: false,
+        hidden: true,
         sidebarFile: './sidebars/passwordpolicyenforcer/11.2.js',
       },
       {
@@ -365,7 +386,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/passwordpolicyenforcer/10.2.js',
       },
     ],
-    defaultVersion: '11.2',
+    defaultVersion: '12.1',
   },
   {
     id: 'passwordreset',
@@ -648,9 +669,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '8.1',
+        label: '8.1',
+        isLatest: true,
+        sidebarFile: './sidebars/threatprevention/8.1.js',
+      },
+      {
         version: '8.0',
         label: '8.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatprevention/8.0.js',
       },
       {
@@ -660,7 +687,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/threatprevention/7.5.js',
       }
     ],
-    defaultVersion: '8.0',
+    defaultVersion: '8.1',
   },
 ];
 

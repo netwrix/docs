@@ -8,7 +8,7 @@ sidebar_position: 20
 
 After the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User Interface from the assigned IP address.
 
-The default Endpoint Protector Appliance IP address is https://192.168.0.201
+Use your assigned Appliance IP address, for example, `https://192.168.0.201`.
 
 :::note
 Always use the IP address with HTTPS (Hypertext Transfer Protocol Secure).
@@ -21,7 +21,7 @@ ticket through the
 
 To configure settings or create administrators, see [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 
-![Page for default login credentials for the root account](login.webp)
+![Page for default login credentials for the root account](serverlogin.webp)
 
 ## Conﬁguration Wizard
 
@@ -30,12 +30,12 @@ setting up the Server Time Zone, importing Licenses, Server Update or uploading 
 Global device rights, E-mail Server settings, Main Administrator details, etc. You can change these
 settings at any time.
 
-The Conﬁguration Wizard is available only if the basic settings for the Endpoint Protector have
-never been conﬁgured.
+The Conﬁguration Wizard is available only if you have never conﬁgured the basic settings for
+Endpoint Protector.
 
-As an additional security measure, a session timeout is set to 300 seconds (5 minutes) of
+As an additional security measure, the session times out after 300 seconds (5 minutes) of
 inactivity. If you aren't active for this amount of time, a notification appears indicating the session will expire,
-and you are logged out unless you select to continue the session.
+and Endpoint Protector logs you out unless you select to continue the session.
 
 :::note
 You can customize the session timeout and timeout counter in [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
@@ -47,12 +47,12 @@ You can customize the session timeout and timeout counter in [System Configurati
 ## General Dashboard
 
 In this section, you can view general information as graphics and charts related to the most
-important activities logged by Endpoint Protector.
+important activities Endpoint Protector logs.
 
 You will view more speciﬁc dashboards on the Device Control, Content Aware Protection and eDiscovery
 sections.
 
-![View general information as graphics and charts related to the most important activities](general.webp)
+![View general information as graphics and charts related to the most important activities](dashboard.webp)
 
 ## System Status
 
@@ -69,8 +69,8 @@ modules (Device Control, Content Aware Protection, or eDiscovery).
 From the System Status subsection, you can enable the HDD Disk Space and Log Rotation.
 
 :::note
-If this setting is enabled, when the Server’s disk space reaches a certain percentage
-(starting from 50% up to 90%), old logs will be automatically overwritten by the new ones.
+If you enable this setting, when the Server’s disk space reaches a certain percentage
+(starting from 50% up to 90%), new logs automatically overwrite the old ones.
 :::
 
 
@@ -93,4 +93,5 @@ Based on the options you select from the Effective Rights Criteria form, you can
 based on rights, users, computers, device types, speciﬁc devices, report type (PDF or XLS),
 including Outside Hours and Outside Network Policies, and more.
 
-After the report is generated, from the Actions column, you can download or delete it.
+After Endpoint Protector generates the report, you can download or delete it from the Actions
+column.

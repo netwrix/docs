@@ -6,12 +6,23 @@ sidebar_position: 60
 
 # Install for User Activity Core Service
 
-By default, the Core Service is installed automatically on the audited computers when setting up
-auditing in Netwrix Auditor. If, for some reason, installation has failed, you must install the Core
-Service manually on each audited computer.
+By default, Netwrix Auditor automatically installs the User Activity Core Service on the audited
+computers when you set up auditing. If the installation fails, you must install the Netwrix Auditor
+User Activity Core Service manually on each audited computer.
+
+Before installing the Netwrix Auditor User Activity Core Service manually, ensure that:
+
+- The audit settings are configured properly.
+- The Data Processing Account has access to the administrative shares.
+
+## Install User Activity Core Service Manually
 
 **Step 1 –** On the computer where Auditor Server resides, navigate to _%ProgramFiles% (x86)\Netwrix
 Auditor\User Activity Video Recording_ and copy the UACoreSvcSetup.msi file to the audited computer.
+
+:::note
+This is the default location. It may differ because users can move this folder.
+:::
 
 **Step 2 –** Run the installation package.
 
@@ -21,7 +32,11 @@ agreement and specify the installation folder.
 **Step 4 –** On the Core Service Settings page, specify the host server (i.e., the name of the
 computer where Netwrix Auditor is installed) and the server TCP port.
 
+The Netwrix Auditor User Activity Core Service is installed and ready to audit user activity.
+
 ## Install User Activity Core Service with the Command Prompt
+
+To perform a silent installation of the User Activity Core Service with the command prompt, complete the following steps:
 
 **Step 1 –** On the computer where Auditor Server resides, navigate to _%ProgramFiles%
 (x86)\Netwrix Auditor\User Activity Video Recording_ and copy the **UACoreSvcSetup.msi** file to the

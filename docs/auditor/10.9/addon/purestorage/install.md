@@ -52,7 +52,7 @@ FlashArray supports both SMB and NFS. Create a remote syslog log target pointing
 installation server and the port you plan to use, for example:
 
 ```
-purelog syslog create --uri tls://<add-on-host>:<port> --services data-audit fa-remote-syslog
+purelog syslog create --uri tcp://<add-on-host>:<port> --services data-audit fa-remote-syslog
 ```
 
 You can also create the syslog target from the FlashArray web console: **Settings → Monitoring**,
@@ -126,6 +126,6 @@ The wizard covers the settings needed to get the add-on running. Advanced tuning
 which shares or protocols a source should collect, excluding specific users or paths, or turning ACL
 enrichment on or off — is available in the add-on's configuration file (`addonconfiguration.json`).
 
-The following behaviors are expected: the add-on reports NFS paths as native Unix paths rather than
+Expect the following behaviors: the add-on reports NFS paths as native Unix paths rather than
 converting them to Windows UNC paths, and ACL/owner "after" value enrichment is available only for
 SMB shares, since NFS has no equivalent concept to query.

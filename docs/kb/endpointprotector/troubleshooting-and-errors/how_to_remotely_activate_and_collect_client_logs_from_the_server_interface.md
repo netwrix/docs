@@ -5,25 +5,30 @@ keywords:
   - debug logging
   - client logs
   - endpoint management
-sidebar_label: Remotely Activate and Collect Client Logs
+  - Device Control
+  - Collect diagnostics
+  - Debug Logging
+  - Logs Report
+  - Artifact Received
+sidebar_label: Remotely Activating and Collecting Client Logs
 tags:
   - troubleshooting-and-errors
   - kb
-title: "How to Remotely Activate and Collect Client Logs from the Server Interface"
+title: "Remotely Activating and Collecting Client Logs from the Server Interface"
 knowledge_article_id: kA0Qk0000002B2cKAE
 products:
   - endpointprotector
 ---
 
-# How to Remotely Activate and Collect Client Logs from the Server Interface
+# Remotely Activating and Collecting Client Logs from the Server Interface
 
 ## Overview
 
 This article explains how to remotely enable debug logging on an endpoint machine and collect client logs from the server interface, without requiring input or knowledge from the endpoint user.
 
-This procedure uses the **Automatic Logging** method (the **Collect diagnostics** action), which is the optimal way to gather logs since it requires no action from the end user. For the full Debug Logging reference, see [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) in the Global Settings documentation.
+This procedure uses the **Automatic Logging** method (the Collect diagnostics action), which is the optimal way to gather logs since it requires no action from the end user. For the full Debug Logging reference, see [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) in the Global Settings documentation.
 
-If this automatic method isn't available or doesn't apply to your situation, use the manual terminal-based alternative instead: [How to Manually Activate Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows) or [How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal).
+If the EPP Client cannot communicate with the EPP Server at all, this remote method is not available. Use the [diagnostic collection script](/docs/kb/endpointprotector/troubleshooting-and-errors/how-to-collect-debug-logs-locally-on-an-endpoint-using-the-diagnostic-script) instead, or the manual terminal-based alternative as a last resort: [Manually Activating Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows) or [Manually Generating Logs for Mac Endpoint Protector Agents via Terminal](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal).
 
 ## Instructions
 
@@ -42,20 +47,19 @@ If this automatic method isn't available or doesn't apply to your situation, use
    ![Collect diagnostics option](./../0-images/servlet_image_60b30f91932d.png)  
    ![Diagnostics collection in progress](./../0-images/servlet_image_96e38073d295.png)
 
-6. Logs will be sent to the server under **Reports and Analysis > Logs Report**.  
+   The server sends the logs to **Reports and Analysis > Logs Report**.  
    ![Logs Report section](./../0-images/servlet_image_9aa4123f77f5.png)
 
-7. Navigate to **Reports and Analysis > Logs Report**.
+6. Navigate to **Reports and Analysis > Logs Report**.
 
-8. Expand the filters. Click the **Event** drop-down menu, then select **Artifact Received** and click **Apply**.  
+7. Expand the filters. Click the **Event** drop-down menu, then select **Artifact Received** and click **Apply**.  
    ![Filter for Artifact Received event](./../0-images/servlet_image_3f1c3b331cfe.png)
 
-9. Under the events, the uploaded artifact or client logs will be listed and available for download by the system administrator.
+8. Under the events, locate the uploaded artifact or client logs and click **Download**.
 
-   :::note
-   The artifact may not be available for immediate download and may display a "File not found" error. It can take 20–30 minutes before the file is ready to download.
-   :::
+   > **NOTE:**
+   > The artifact may not be available for immediate download and may display a "File not found" error. It can take 20–30 minutes before the file is ready to download.
 
    ![Artifact or client logs available for download](./../0-images/servlet_image_823648e31f8f.png)
 
-10. Once the client logs are downloaded, submit them to the support team as needed.
+9. Once the client logs are downloaded, submit them to [Netwrix Technical Support](https://netwrix.com/en/support/) as needed.

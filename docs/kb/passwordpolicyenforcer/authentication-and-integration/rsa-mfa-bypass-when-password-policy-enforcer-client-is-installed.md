@@ -43,7 +43,7 @@ Both options achieve the same result: they disable Password Policy Enforcer Clie
 After applying either option, the username and password fields will no longer appear on the Windows logon screen. Only the authentication method configured for RSA MFA will be available at logon.
 
 ### Option 1 — With Group Policy:
-> **NOTE:** Install the Password Policy Client administrative template before these steps. For the ADMX template and installation steps, see [Configuring the password policy client](https://docs.netwrix.com/docs/passwordpolicyenforcer/11_2/admin/password-policy-client/configuring_the_password_policy_client).
+> **NOTE:** Install the Password Policy Client administrative template before these steps. For the ADMX template and installation steps, see [Configuring the password policy client](https://docs.netwrix.com/docs/passwordpolicyenforcer/admin/password-policy-client/configuring_the_password_policy_client).
 
 1. In Group Policy Management, edit the GPO linked to the affected machines.
 2. Expand **Computer Configuration** > **Policies** > **Administrative Templates** > **Netwrix Password Policy Enforcer** > **Netwrix Password Policy Client**.

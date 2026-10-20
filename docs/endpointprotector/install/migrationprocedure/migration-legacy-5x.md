@@ -4,12 +4,12 @@ description: "Netwrix Endpoint Protector — migrating a legacy 5.7.0.0–5.9.4.
 sidebar_position: 12
 ---
 
-<small><em>Document version: 1.0</em></small>
+<small><em>Document version: 1.2</em></small>
 
 ---
 
 :::note
-This article covers on-premises EPP Servers running any version from **5.7.0.0 through 5.9.4.2** (5700, 5710, 5800, 5810, 5820, 5900, 5910, 5920, 5930, 5940, 5941, 5942). If your server is already on the current image-based platform (2509–2604), see [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image) instead. For the full picture and how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
+This article covers on-premises Endpoint Protector (EPP) Servers running any version from **5.7.0.0 through 5.9.4.2** (5700, 5710, 5800, 5810, 5820, 5900, 5910, 5920, 5930, 5940, 5941, 5942). If your server is already on the current image-based platform (2509–2604), see [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image) instead. For an overview of how this fits together, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
 :::
 
 ## Overview
@@ -50,12 +50,12 @@ If you're unsure whether your license is current, contact Netwrix Support or you
 **Verified compatible hypervisors:**
 - VMware vSphere
 - VMware ESXi
-- Microsoft Hyper-V
+- Microsoft Hyper-V (Windows Server 2019 or later)
 - AWS, Azure, GCP (cloud deployments — snapshot behavior differs per provider)
 - Proxmox VE — not officially supported; see the following note
 
 :::note
-**Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after manually adjusting networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
+**Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after you manually adjust networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
 :::
 
 :::warning
@@ -97,7 +97,7 @@ The 2608 image adds CrateDB, which may raise the minimum disk, RAM, and CPU base
 :::
 
 :::tip
-If disk space is below 30%, perform database shrinking via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. To export logs, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
+If disk space is below 30%, shrink the database via **System Maintenance → Audit Log Backups** before proceeding. Exporting old logs to an external SIEM or repository reduces DB size significantly. If not possible, consider expanding the associated disk space. To export logs, see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup).
 :::
 
 ### Maintenance Window Planning
@@ -114,7 +114,7 @@ Plan a maintenance window that accounts for the following:
 These times reflect laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
 
 **During the upgrade window, you won't have:**
-- EPP/EE client communication with the server
+- EPP and Enforced Encryption (EE) client communication with the server
 - Email alerts and SIEM integrations
 - File Shadow and log generation
 
@@ -255,6 +255,14 @@ These tasks run silently in the background and don't produce visible progress in
 
 After confirming the upgrade to 5.9.4.2 is stable (wait for the 24-hour background task window), create a **new System Configuration Backup** specifically for use in the 2608 migration:
 
+:::warning
+Disable Two-Factor Authentication (2FA) for all administrator accounts before you create this
+backup. Re-enable 2FA only after you restore the backup and confirm the new 2608 server works
+correctly — see
+[Re-Enabling Two-Factor Authentication](#re-enabling-two-factor-authentication) in Post-Migration
+Verification.
+:::
+
 1. Navigate to **System Maintenance → System Backup**.
 2. Click **Create** and name it clearly: `migration-to-2608-YYYY-MM-DD`.
 3. Save the backup key securely.
@@ -282,7 +290,7 @@ If your 5.9.4.2 backup export is larger than 200 MB, follow these steps:
 This doesn't change the EPP Server version — it remains 5.9.4.2.
 :::
 
-4. If the new export attempt still returns more than 200 MB after successfully importing the offline patch, contact Netwrix Support for assistance with the manual procedure.
+4. If the new export attempt still returns more than 200 MB after you successfully import the offline patch, contact Netwrix Support for assistance with the manual procedure.
 
 ---
 
@@ -322,11 +330,11 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 | High server load | Certificate regeneration for all endpoints creates a burst load spike |
 
 :::warning
-If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
+If you use Enforced Encryption and change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
 :::
 
 :::warning
-If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, reviewing your SSO configuration after the backup is restored is mandatory. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
+If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, you must review your SSO configuration after you restore the backup. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
 :::
 
 ### Deploying the 2608 Base Image
@@ -344,16 +352,17 @@ On unpatched 2509 and early 2510 environments, IP network settings didn't save u
 
 4. Power on the new VM and access the console at `https://<new-ip-or-fqdn>:443`.
 
-### Temporarily Disabling Client Communications
+### Blocking Client Connectivity to the New Server
 
-Immediately after you provision the new VM and it's reachable, disable client communications before performing any further configuration. This prevents endpoints from discovering and connecting to the new server while you're still preparing it.
+Immediately after you provision the new VM and it's reachable, consider blocking client connectivity to it before performing any further configuration. This prevents endpoints from discovering and connecting to the new server while you're still preparing it.
 
-1. Log in to the new server console.
-2. Navigate to **System Configuration → System Settings**.
-3. Disable client communication.
+How you do this depends on how you host and manage your environment. Options include:
+- Disabling routing to the new server's IP address
+- Disconnecting the physical or virtual network cable until you're ready
+- Blocking the relevant EPP communication port at your perimeter or host-based firewall
 
 :::tip
-Disabling client communications prevents endpoints from registering with an incomplete server configuration. Re-enable only after the full restoration and verification is complete.
+Blocking client connectivity prevents endpoints from registering with an incomplete server configuration. Restore connectivity only after the full restoration and verification is complete.
 :::
 
 ### Activate Trial License on a Newly Deployed Image
@@ -379,7 +388,7 @@ For air-gapped environments, follow the same procedure using the 2608 cumulative
 :::
 
 3. After each patch, refresh the browser and verify the version in **Appliance → Server Information** before applying the next.
-4. Once fully patched, confirm the server is stable and all services are running before proceeding to the backup restore.
+4. After you fully patch the server, confirm it's stable and all services are running before proceeding to the backup restore.
 
 ### Restoring the 5.9.4.2 Backup onto 2608
 
@@ -447,13 +456,18 @@ Complete all items in this checklist after you finish the migration.
 
 ![Appliance → Server Information — license](server_info_license.webp)
 
-### Re-Enabling Client Communications
+### Re-Enabling Two-Factor Authentication
+
+After you confirm the new server works correctly (responds normally, license is active, and
+endpoints check in), re-enable Two-Factor Authentication (2FA) for each administrator account you
+disabled before migration.
+
+### Restoring Client Connectivity
 
 After you verify the restore and upload the client packages (see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade)):
 
-1. Navigate to **System Configuration → System Settings**.
-2. Re-enable client communications.
-3. Monitor **Device Control → Computers** — endpoints should begin checking in within their configured communication interval.
+1. Reverse whichever method you used to block client connectivity to the new server (re-enable routing, reconnect the network cable, or remove the firewall rule).
+2. Monitor **Device Control → Computers** — endpoints should begin checking in within their configured communication interval.
 
 ### Endpoint Communication Check
 
@@ -474,7 +488,7 @@ Verify each active module:
 | Content Aware Protection | Content Aware Protection → Dashboard |
 | eDiscovery | eDiscovery → Dashboard |
 | Enforced Encryption | Check that EE-protected drives are accessible |
-| Reports & Analytics | Reports and Analytics → relevant sub-service |
+| Reports and Analysis | Reports and Analysis → relevant sub-service |
 | Alerts | Check that configured alerts are firing |
 
 :::tip
@@ -484,7 +498,7 @@ Generate deliberate test events on a known test machine for each active module. 
 ### eDiscovery Scan Locations Verification
 
 :::warning
-If an eDiscovery policy with configured **Scan Locations** is restored from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead — with no error reported anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
+If you restore an eDiscovery policy with configured **Scan Locations** from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead, without reporting an error anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
 :::
 
 If you use eDiscovery with Scan Locations configured on any policy, this check is mandatory after restore:
@@ -496,14 +510,25 @@ If you use eDiscovery with Scan Locations configured on any policy, this check i
 ### CAP Policy Verification
 
 :::note
-In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, with no error reported.
+In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, without reporting an error.
 :::
 
 If you use Content Aware Protection, this check is recommended after restore:
 
 1. Test each active CAP policy against a known-blocked transfer to confirm it still triggers.
-2. If a policy doesn't trigger, open it, edit and save it — even without changing anything — to redistribute it to endpoints.
+2. If a policy doesn't trigger, open it, edit it, and save it — even without changing anything — to redistribute it to endpoints.
 3. Re-test to confirm the policy now triggers correctly.
+
+### Denylists and Allowlists Dictionary Verification
+
+After migration, verify that Denylists and Allowlists dictionaries imported correctly and that
+policies relying on them still work as expected.
+
+1. Navigate to **Denylists and Allowlists** and review each dictionary for correct content.
+2. Test each policy that relies on a Denylist or Allowlist dictionary to confirm it still applies
+   correctly.
+3. If a dictionary doesn't display or apply correctly, export it from the old server (if still
+   available) and re-upload it to the new server, then re-test.
 
 ### DPI / CAP Functionality Verification
 
@@ -518,6 +543,33 @@ If using Deep Packet Inspection or Content Aware Protection:
 1. Navigate to **System Maintenance → System Backup**.
 2. Verify that backups are configured and active.
 3. Run a test backup and confirm **"Ready to download"** status.
+
+### Log Retention Verification
+
+:::warning
+**This is a behavior change from earlier server versions.** Endpoint Protector 2608 introduces
+automatic, age-based log rotation for Device Control, Content Aware Protection, and eDiscovery
+logs. Earlier versions kept these logs indefinitely unless an administrator deleted them manually.
+After migration, Endpoint Protector enables this setting by default at three months and
+automatically deletes logs older than three months, together with their associated file shadows.
+Endpoint Protector deletes logs already older than the configured period on the first rotation
+cycle after the server starts, so export anything you want to keep before you migrate.
+:::
+
+After migration, verify:
+1. Navigate to **System Configuration → System Settings → Log Settings**.
+2. Check the value configured for **Enable Log Rotate After**.
+3. Confirm the configured retention period matches your organization's operational and compliance
+   needs. Adjust the value if three months doesn't match your retention policy. The value is in
+   months, from 1 to 360 — there's no option to disable log rotation entirely.
+
+For the full description of this setting, see [Log Settings](/docs/endpointprotector/admin/systemconfiguration/systemsettings#log-settings).
+
+:::tip
+If you need to retain log data for compliance beyond your configured retention period, export it
+regularly through **Reports and Analysis** → **Export Logs** and store the exports separately.
+Exports also keep the server's log tables smaller, which helps console and report performance.
+:::
 
 ### Third-Party Integration Reconfiguration
 
@@ -548,7 +600,7 @@ After reconfiguration, verify each integration is functioning:
 | AWS / S3 / File Shadows | Generate a file shadow; confirm it reaches the S3 bucket |
 
 :::warning
-**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after the backup is restored. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until this is corrected. You have two options:
+**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after you restore the backup. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until you correct it. You have two options:
 1. Manually recreate the SSO configuration in **System Configuration → SSO / Single Sign-On** with the updated response/callback URL, and update the corresponding redirect URI in your identity provider.
 2. Raise a Netwrix Support case to have the SSO configuration updated on the backend.
 :::
@@ -577,7 +629,7 @@ AD Sync may appear to complete successfully but only import a partial set of use
 2. Re-enter tenant ID, client ID, and client secret — the backup doesn't restore these.
 3. Verify the redirect URI registered in Azure AD matches the new server address. If the new server uses an IP address instead of an FQDN, either manually recreate the SSO configuration with the updated response/callback URL, or raise a Netwrix Support case to have it updated on the backend.
 4. Perform a test SSO login in an incognito window.
-5. If SCIM provisioning is broken, re-generate the SCIM token in the EPP console and update it in Entra ID.
+5. If SCIM provisioning fails, re-generate the SCIM token in the EPP console and update it in Entra ID.
 
 **SIEM / Syslog events not forwarding:**
 1. Reconfigure the SIEM destination IP, port, and protocol.

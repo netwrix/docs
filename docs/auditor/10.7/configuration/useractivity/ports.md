@@ -21,9 +21,9 @@ allow inbound connections to local 9004 TCP port.
 | -------------------- | -------- | ---------------------- | ---------------------- | ---------------------------------------------------------------------------------------------- |
 | 9004                 | TCP      | Monitored computer     | Netwrix Auditor Server | Network Traffic Compression Service communications                                             |
 | 9003                 | TCP      | Netwrix Auditor Server | Monitored computer     | Network Traffic Compression Service communications                                             |
-| 139 445              | TCP      | Netwrix Auditor Server | Monitored computer     | Service Control Manager Remote Protocol (RPC) Remote registry                                  |
+| 139, 445             | TCP      | Netwrix Auditor Server | Monitored computer     | Service Control Manager Remote Protocol (RPC) Remote registry                                  |
 | Dynamic: 1024 -65535 | TCP      | Netwrix Auditor Server | Monitored computer     | Windows Management Instrumentation                                                             |
-| 135                  | TCP      | Netwrix Auditor Server | Monitored computer     | Service Control Manager Remote Protocol (RPC) Network Traffic Compression Service installation |
-| 137 through 139      | UDP      | Netwrix Auditor Server | Monitored computer     | Service Control Manager Remote Protocol (RPC) Network Traffic Compression Service installation |
+| 135                  | TCP      | Netwrix Auditor Server | Monitored computer     | Service Control Manager Remote Protocol (RPC) — Network Traffic Compression Service installation      |
+| 137 through 139      | UDP      | Netwrix Auditor Server | Monitored computer     | Service Control Manager Remote Protocol (RPC) — Network Traffic Compression Service installation      |
 | 445                  | TCP      | Netwrix Auditor Server | Monitored computer     | SMB 2.0/3.0 Video files copy                                                                   |
 | –                    | ICMP     | Netwrix Auditor Server | Monitored computer     | Network Traffic Compression Service communications                                             |

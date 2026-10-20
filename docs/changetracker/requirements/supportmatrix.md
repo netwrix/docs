@@ -41,8 +41,7 @@ The versions in the following table cover Standard and Datacenter editions, plus
 
 ## Linux (RedHat Based) Operating Systems
 
-This table assumes Intel/AMD x64 architecture. Express Agent is also available on 32 bit and s390x
-architectures upon request.
+Express Agent is also available on 32 bit and s390x architectures upon request.
 
 | Linux (RedHat Based) | Change Tracker Management Software | Change Tracker Agent | Express Agent | Change Tracker Agentless |
 | -------------------- | :--------------------------------: | :------------------: | :-----------: | :----------------------: |
@@ -56,8 +55,7 @@ architectures upon request.
 
 ## Linux (Debian Based) Operating Systems
 
-This table assumes Intel/AMD x64 architecture. Express Agent is also available on 32 bit and s390x
-architectures upon request.
+Express Agent is also available on 32 bit and s390x architectures upon request.
 
 | Linux (Debian Based)         | Change Tracker Management Software | Change Tracker Agent | Express Agent | Change Tracker Agentless |
 | ---------------------------- | :--------------------------------: | :------------------: | :-----------: | :----------------------: |
@@ -67,7 +65,7 @@ architectures upon request.
 
 ## Other Linux Operating Systems
 
-This table assumes Intel/AMD x64 architecture. Express Agent is also available on 32 bit and s390x architectures upon request.
+Express Agent is also available on 32 bit and s390x architectures upon request.
 
 | Other Linux               | Change Tracker Agent | Express Agent | Change Tracker Agentless |
 | ------------------------- | :------------------: | :-----------: | :----------------------: |

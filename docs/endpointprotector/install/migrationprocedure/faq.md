@@ -144,7 +144,7 @@ See also [Endpoints Not Checking In After Migration](/docs/endpointprotector/ins
 
 **Checklist:**
 1. Confirm the new server's IP/FQDN is reachable from endpoints (firewall, DNS).
-2. Confirm you enabled client communications on the server (**System Configuration → System Settings**).
+2. Confirm you've reversed whatever mechanism you used to block client connectivity to the new server (firewall rule, routing block, disconnected network cable, and so on).
 3. Confirm you uploaded the client packages to the server — 2608 (the target version), plus 5.9.4.3 Hotfix 1 only if any endpoints are still below that bridge version.
 4. Check the **Device Control → Computers** page and sort by **Last Seen**.
 5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 Hotfix 1 first, they can't receive the 2608 client package directly — deploy 5.9.4.3 Hotfix 1 first via your software distribution tool before upgrading to 2608. See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade) for the full client upgrade path.

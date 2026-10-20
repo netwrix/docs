@@ -6,19 +6,19 @@ sidebar_position: 30
 
 # Installation
 
-This topic describes the console installation and agent deployment the process for Activity Monitor.
-Before installing the application, ensure that all requirements have been met. See the
+This topic describes the console installation and agent deployment process for Activity Monitor.
+Before installing the application, ensure that your environment meets all requirements. See the
 [Requirements ](/docs/activitymonitor/10.0/requirements/overview.md) topic for additional information.
 
 ## Software Compatibility & Versions
 
-For proper integration between the Activity Monitor and other Netwrix products, it is necessary for
-the versions to be compatible.
+For proper integration between the Activity Monitor and other Netwrix products, the versions must be
+compatible.
 
 | Component                                             | Version |
 | ----------------------------------------------------- | ------- |
 | Netwrix Activity Monitor                              | 10.0.x  |
-| Netwrix Access Analyzer                               | 12.0.x or 2601 |
+| Netwrix Access Analyzer                               | 12.0.x or 26.1 |
 | Netwrix Threat Prevention                             | 8.0.x   |
 | Netwrix Threat Manager                                | 3.0.x   |
 

@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # Output for Monitored Hosts/Services
 
-Once a host is being monitored the event stream can be sent to multiple outputs.
+After you start monitoring a host, you can send its event stream to multiple outputs.
 
 ![Output Properties Overview](/images/activitymonitor/9.0/admin/monitoredhosts/outputpropertiesoverview.webp)
 
-Configured outputs are grouped under the host. You can have multiple outputs configured for a host.
+Activity Monitor groups configured outputs under the host. You can have multiple outputs configured for a host.
 The host event outputs are:
 
 - Access Analyzer 26 – Sends activity events to Netwrix Access Analyzer 26.
@@ -44,7 +44,7 @@ Tokens expire after **1 hour**. Generating a new token immediately invalidates a
 A single token can enroll multiple agents and outputs simultaneously — plan your enrollment session and generate the token immediately before you begin.
 :::
 
-See the [Netwrix Access Analyzer 26 Documentation](/docs/accessanalyzer/2601/configurations/activity-monitor-integration) for
+See the [Netwrix Access Analyzer 26 Documentation](/docs/accessanalyzer/26_1/integrations/netwrix-activity-monitor) for
 additional information.
 
 ### Add the Output in Netwrix Activity Monitor

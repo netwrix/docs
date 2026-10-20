@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Setup Wizard
 
-The Endpoint Protector Appliance requires incoming traffic for ports 443 inbound to be whitelisted
-from the firewall. They are used for:
+The Endpoint Protector Appliance requires the firewall to allow inbound traffic on port 443. The
+appliance uses this port for:
 
 - Endpoint Protector Server and Client communication: 443 inbound
 
@@ -29,14 +29,14 @@ Starting with version 2509, only the manual configuration option is available. A
 ![Networking configuration options](networkingconfig.png)
 
 :::warning
-Modifying network configuration creates certificate a regeneration operation which temporarily stops communication between server and client.
-Changes from one IP version to another should always be saved by pressing the Apply button to ensure the configuration is properly applied.
+Modifying the network configuration triggers a certificate regeneration, which temporarily stops communication between the server and client.
+When you change from one IP version to another, always press the Apply button to save and apply the configuration.
 :::
 
 
 ## Manual Conﬁguration
 
-As mentioned before, starting with version 2509, only the manual configuration option is available. But even for older versions, for precise control, use manual configuration to set the IP address and default gateway, ensuring the appliance is correctly set up and accessible.
+Starting with version 2509, only the manual configuration option is available. For older versions, use manual configuration for precise control to set the IP address and default gateway, ensuring the appliance is correctly set up and accessible.
 
 **Step 1 –** Select **Conﬁgure Network manually** (IPV4 example).
 
@@ -54,6 +54,10 @@ As mentioned before, starting with version 2509, only the manual configuration o
 **Step 4 –** Select **Apply**. The virtual appliance is now accessible from the conﬁgured IP
 Address. (e.g., https:// 192.168.7.94).
 
+:::tip
+Create a DNS record for the appliance's fully qualified domain name (FQDN), for example `epp.example.com`, that points to this IP address. Use the FQDN to access the server and to configure clients and integrations. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
+
 :::note
-E-mail Server Settings are no longer configured in the setup wizard. To configure email server settings and authentication, go to **System Configuration** > **[Mail Settings](/docs/endpointprotector/admin/systemconfiguration/mailsettings.md)** after completing the initial setup.
+The setup wizard no longer includes E-mail Server Settings. To configure email server settings and authentication, go to **System Configuration** > **[Mail Settings](/docs/endpointprotector/admin/systemconfiguration/mailsettings.md)** after completing the initial setup.
 :::

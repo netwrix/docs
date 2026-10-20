@@ -9,101 +9,123 @@ sidebar_position: 80
 You can configure IT infrastructure for monitoring removable storage media both locally and
 remotely.
 
-Review the following:
+Review the following for additional information:
 
-To configure removable storage media monitoring on the local server
+- [Configure Removable Storage Media Monitoring on the Local Server](#configure-removable-storage-media-monitoring-on-the-local-server)
+- [Configure Removable Storage Media Monitoring Remotely](#configure-removable-storage-media-monitoring-remotely)
+- [Review Event Trace Session Object Configuration](#review-event-trace-session-object-configuration)
 
-1. On the target server, create the following catalog: _“%ALLUSERSPROFILE%\Netwrix Auditor\Windows
-   Server Audit\ETS\”_ to store event logs. To review Event Trace Session objects' configurationhow
-   to modify the root directory.
+## Configure Removable Storage Media Monitoring on the Local Server
 
-    If you don't want to use the Netwrix Auditor for Windows Server Compression Service for data
-    collection, ensure that this path is readable via any shared resource.
+**Step 1 –** On the target server, create the following folder to store event logs:
+_"%ALLUSERSPROFILE%\Netwrix Auditor\Windows Server Audit\ETS\"_. For instructions on how to modify
+the root directory, see [Review Event Trace Session Object Configuration](#review-event-trace-session-object-configuration).
 
-    After environment variable substitution, the path shall be as follows:
+:::note
+If you don't want to use the Netwrix Auditor for Windows Server Compression Service for data
+collection, ensure that this path is readable via any shared resource.
+:::
 
-    `C:\ProgramData\Netwrix Auditor\Windows Server Audit\ETS`
+After environment variable substitution, the path is as follows:
 
-    If your environment variable accesses another directory, update the path.
+`C:\ProgramData\Netwrix Auditor\Windows Server Audit\ETS`
 
-2. Run the Command Prompt as Administrator.
-3. Execute the commands below.
+:::note
+If your environment variable accesses another directory, update the path.
+:::
 
-    - To create the Event Trace Session object:
+**Step 2 –** Run the Command Prompt as Administrator.
 
-        `logman import -n "Session\NetwrixAuditorForWindowsServer" -xml "<path to the EventTraceSessionTemplate.xml file>"`
+**Step 3 –** Execute the following commands.
 
-    - To start the Event Trace Session object automatically every time the server starts:
+- To create the Event Trace Session object:
 
-        `logman import -n "AutoSession\NetwrixAuditorForWindowsServer" -xml "<path to the EventTraceSessionTemplate.xml file>"`
+    `logman import -n "Session\NetwrixAuditorForWindowsServer" -xml "<path to the EventTraceSessionTemplate.xml file>"`
 
-        where:
+- To start the Event Trace Session object automatically every time the server starts:
 
-        - `NetwrixAuditorForWindowsServer`—Fixed name the product uses to identify the Event Trace
-          Session object. The name can't be changed.
-        - `<path to the EventTraceSessionTemplate.xml file>`—Path to the Event Trace Session
-          template file that comes with Netwrix Auditor. The default path is _"C:\Program Files
-          (x86)\Netwrix Auditor\Windows Server Auditing\EventTraceSessionTemplate.xml"_.
+    `logman import -n "AutoSession\NetwrixAuditorForWindowsServer" -xml "<path to the EventTraceSessionTemplate.xml file>"`
 
-To configure removable storage media monitoring remotely
+    where:
 
-1. On the target server, create the following catalog: _“%ALLUSERSPROFILE%\Netwrix Auditor\Windows
-   Server Audit\ETS\”_ to write data to. To review Event Trace Session objects' configurationhow to
-   modify the root directory.
+    - `NetwrixAuditorForWindowsServer`—Fixed name the product uses to identify the Event Trace
+      Session object. You can't change the name.
+    - `<path to the EventTraceSessionTemplate.xml file>`—Path to the Event Trace Session
+      template file that comes with Netwrix Auditor. The default path is _"C:\Program Files
+      (x86)\Netwrix Auditor\Windows Server Auditing\EventTraceSessionTemplate.xml"_.
 
-    If you don't want to use the Netwrix Auditor for Windows Server Compression Service for data
-    collection, ensure that this path is readable via any shared resource.
+## Configure Removable Storage Media Monitoring Remotely
 
-    After environment variable substitution, the path shall be as follows:
+**Step 1 –** On the target server, create the following folder to write data to:
+_"%ALLUSERSPROFILE%\Netwrix Auditor\Windows Server Audit\ETS\"_. For instructions on how to modify
+the root directory, see [Review Event Trace Session Object Configuration](#review-event-trace-session-object-configuration).
 
-    `\\<target_server_name>\c$\ProgramData\Netwrix Auditor\Windows Server Audit\ETS`
+:::note
+If you don't want to use the Netwrix Auditor for Windows Server Compression Service for data
+collection, ensure that this path is readable via any shared resource.
+:::
 
-    If your environment variable accesses another directory, update the path.
+After environment variable substitution, the path is as follows:
 
-2. Run the Command Prompt under the target server Administrator's account.
-3. Execute the commands below.
+`\\<target_server_name>\c$\ProgramData\Netwrix Auditor\Windows Server Audit\ETS`
 
-    - To create the Event Trace Session object:
+:::note
+If your environment variable accesses another directory, update the path.
+:::
 
-        `logman import -n "Session\NetwrixAuditorForWindowsServer" -xml "<path to the EventTraceSessionTemplate.xml file>" -s <target server name>`
+**Step 2 –** Run the Command Prompt under the target server Administrator's account.
 
-    - To create the Event Trace Session object automatically every time the server starts:
+**Step 3 –** Execute the following commands.
 
-        `logman import -n "AutoSession\NetwrixAuditorForWindowsServer" -xml "<path to the EventTraceSessionTemplate.xml file>" -s <target server name>`
+- To create the Event Trace Session object:
 
-        where:
+    `logman import -n "Session\NetwrixAuditorForWindowsServer" -xml "<path to the EventTraceSessionTemplate.xml file>" -s <target server name>`
 
-        - `NetwrixAuditorForWindowsServer`—Fixed name the product uses to identify the Event Trace
-          Session object. The name can't be changed.
-        - `<path to the EventTraceSessionTemplate.xml file>`—Path to the Event Trace Session
-          template file that comes with Netwrix Auditor. The default path is _"C:\Program Files
-          (x86)\Netwrix Auditor\Windows Server Auditing\EventTraceSessionTemplate.xml"_.
-        - `<target server name>`—Name of the target server. Provide a server name by entering its FQDN, NETBIOS, or IPv4 address.
+- To create the Event Trace Session object automatically every time the server starts:
 
-To review Event Trace Session objects' configuration
+    `logman import -n "AutoSession\NetwrixAuditorForWindowsServer" -xml "<path to the EventTraceSessionTemplate.xml file>" -s <target server name>`
 
-An Administrator can only modify the root directory and log file name. Other configurations aren't
-supported by Netwrix Auditor.
+    where:
 
-1. On the target server, navigate to Start → Administrative Tools → Performance Monitor.
-2. In the Performance Monitor snap-in, navigate to Performance → Data Collectors Set → Event Trace
-   Sessions.
-3. Stop the NetwrixAuditorForWindowsServer object.
-4. Locate the NetwrixAuditorForWindowsServer object, right-click it and select Properties. Complete
-   the following fields:
+    - `NetwrixAuditorForWindowsServer`—Fixed name the product uses to identify the Event Trace
+      Session object. You can't change the name.
+    - `<path to the EventTraceSessionTemplate.xml file>`—Path to the Event Trace Session
+      template file that comes with Netwrix Auditor. The default path is _"C:\Program Files
+      (x86)\Netwrix Auditor\Windows Server Auditing\EventTraceSessionTemplate.xml"_.
+    - `<target server name>`—Name of the target server. Provide a server name by entering its
+      FQDN, NETBIOS, or IPv4 address.
 
-    | Option                     | Description                                                                                                                                                                                                                                                                                                |
-    | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Directory → Root Directory | Path to the directory where event log is stored. If you want to change root directory, do the following: 1. Under the Root directory option, click Browse and select a new root directory. 2. Navigate to _C:\ProgramData\Netwrix Auditor\Windows Server Audit_ and copy the ETS folder to a new location. |
-    | File → Log file name       | Name of the event log where the events will be stored.                                                                                                                                                                                                                                                     |
+## Review Event Trace Session Object Configuration
 
-5. Start the NetwrixAuditorForWindowsServer object.
-6. In the Performance Monitor snap-in, navigate to Performance → Data Collectors Set → Startup Event
-   Trace Sessions.
-7. Locate the NetwrixAuditorForWindowsServer object, right-click it and select Properties. Complete
-   the following fields:
+:::note
+An Administrator can only modify the root directory and log file name. Netwrix Auditor doesn't
+support other configurations.
+:::
 
-    | Option                     | Description                                                                                                                     |
-    | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-    | Directory → Root Directory | Path to the directory where event log is stored. Under the Root directory option, click Browse and select a new root directory. |
-    | File → Log file name       | Name of the event log where the events will be stored.                                                                          |
+**Step 1 –** On the target server, navigate to Start → Administrative Tools → Performance Monitor.
+
+**Step 2 –** In the Performance Monitor snap-in, navigate to Performance → Data Collectors Set →
+Event Trace Sessions.
+
+**Step 3 –** Stop the NetwrixAuditorForWindowsServer object.
+
+**Step 4 –** Locate the NetwrixAuditorForWindowsServer object, right-click it and select
+**Properties**. Complete the following fields:
+
+| Option | Description |
+| --- | --- |
+| Directory → Root Directory | Path to the directory where the event log is stored. To change the root directory: <br/>1. Under the Root directory option, click **Browse** and select a new root directory. <br/>2. Navigate to _C:\ProgramData\Netwrix Auditor\Windows Server Audit_ and copy the ETS folder to the new location. |
+| File → Log file name | Name of the event log where the events are stored. |
+
+**Step 5 –** Start the NetwrixAuditorForWindowsServer object.
+
+**Step 6 –** In the Performance Monitor snap-in, navigate to Performance → Data Collectors Set →
+Startup Event Trace Sessions.
+
+**Step 7 –** Locate the NetwrixAuditorForWindowsServer object, right-click it and select
+**Properties**. Complete the following fields:
+
+| Option | Description |
+| --- | --- |
+| Directory → Root Directory | Path to the directory where the event log is stored. Under the Root directory option, click **Browse** and select a new root directory. |
+| File → Log file name | Name of the event log where the events are stored. |
