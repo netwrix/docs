@@ -9,7 +9,7 @@
 
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import test from 'node:test';
@@ -220,14 +220,39 @@ test('Windows line endings do not fail a code block', () => {
 
 test('CLI: a path outside the repository exits 2', () => {
   withRepo((dir, cli) => {
-    const outside = join(tmpdir(), 'restyle-outside.md');
+    // A fresh private folder, never a fixed file name in the shared temp directory.
+    const folder = mkdtempSync(join(tmpdir(), 'restyle outside '));
+    const outside = join(folder, 'outside.md');
     writeFileSync(outside, page('x'));
     try {
       const r = cli(outside);
       assert.equal(r.status, 2);
       assert.match(r.stderr, /outside the repository/);
     } finally {
-      rmSync(outside, { force: true });
+      rmSync(folder, { recursive: true, force: true });
+    }
+  });
+});
+
+test('CLI: a path that exists nowhere exits 2 instead of passing', () => {
+  withRepo((dir, cli) => {
+    const r = cli('docs/typo.md');
+    assert.equal(r.status, 2);
+    assert.match(r.stderr, /does not exist/);
+  });
+});
+
+test('CLI: an absolute path through a symlinked checkout still maps into the repo', () => {
+  withRepo((dir, cli) => {
+    const holder = mkdtempSync(join(tmpdir(), 'restyle link '));
+    const link = join(holder, 'repo-link');
+    symlinkSync(dir, link);
+    try {
+      writeFileSync(join(dir, 'docs', 'a.md'), page('Set the timeout to 30 seconds, then save.'));
+      const r = cli(join(link, 'docs', 'a.md'));
+      assert.equal(r.status, 0, r.stdout + r.stderr);
+    } finally {
+      rmSync(holder, { recursive: true, force: true });
     }
   });
 });

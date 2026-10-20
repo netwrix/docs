@@ -41,6 +41,20 @@ function parseArgs(argv) {
   return opts;
 }
 
+// Resolve symlinks, including for a file a merge deleted (resolve its folder instead).
+function realPath(file) {
+  const abs = path.resolve(file);
+  try {
+    return fs.realpathSync(abs);
+  } catch {
+    try {
+      return path.join(fs.realpathSync(path.dirname(abs)), path.basename(abs));
+    } catch {
+      return abs;
+    }
+  }
+}
+
 export function run(argv) {
   let opts;
   try {
@@ -54,7 +68,7 @@ export function run(argv) {
     console.error('Run this inside the git repository.');
     return 2;
   }
-  const root = top.stdout.trim();
+  const root = fs.realpathSync(top.stdout.trim());
   if (git(['rev-parse', '--verify', '--quiet', `${opts.base}^{commit}`], { cwd: root }).status !== 0) {
     console.error(`--base ${opts.base} is not a commit in this repository.`);
     return 2;
@@ -63,7 +77,7 @@ export function run(argv) {
   const rewrittens = [];
   const identical = [];
   for (const file of opts.files) {
-    const abs = path.resolve(file);
+    const abs = realPath(file);
     const rel = path.relative(root, abs).split(path.sep).join('/');
     if (rel.startsWith('../') || path.isAbsolute(rel)) {
       console.error(`${file} is outside the repository at ${root}.`);
@@ -72,7 +86,12 @@ export function run(argv) {
     const spec = `${opts.base}:${rel}`;
     const exists = git(['cat-file', '-e', spec], { cwd: root }).status === 0;
     const original = exists ? execFileSync('git', ['show', spec], { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }) : '';
-    const rewritten = fs.existsSync(abs) ? fs.readFileSync(abs, 'utf8') : '';
+    const onDisk = fs.existsSync(abs);
+    if (!exists && !onDisk) {
+      console.error(`${file} does not exist at ${opts.base} or on disk. Check the path.`);
+      return 2;
+    }
+    const rewritten = onDisk ? fs.readFileSync(abs, 'utf8') : '';
     originals.push({ path: rel, text: original });
     rewrittens.push({ path: rel, text: rewritten });
     if (exists && original === rewritten) identical.push(file);
