@@ -4,48 +4,94 @@
  *
  *   node scripts/doc-restyle/integrity.mjs [--base HEAD] [--allow-change "old=>new"]... [--json] <file...>
  *
- * Reads each file's original from git (`git show <base>:<path>`; a new file has no
- * original) and compares the whole set with checkContent. Pass --allow-change for
- * each fix the writer confirmed (a typo, a renamed link target). Exits 1 on violations.
+ * Reads each file's original from git (`git show <base>:<path>`; a file missing at <base> counts
+ * as new) and compares the whole set with checkContent. Pass --allow-change for each fix the
+ * writer confirmed (a typo, a renamed link target); it applies to prose only, never to code blocks.
+ * Exits 1 on violations, and also when every file is identical to its original, because there is
+ * nothing to compare (use --base <ref> for the commit that holds the original). Exits 2 on bad input.
  */
 import fs from 'fs';
-import { execFileSync } from 'child_process';
+import path from 'path';
+import { execFileSync, spawnSync } from 'child_process';
+import { pathToFileURL } from 'url';
 import { checkContent } from '../quality/lib/preserve.mjs';
 
-function readBase(base, path) {
-  try {
-    return execFileSync('git', ['show', `${base}:${path}`], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 64 * 1024 * 1024 });
-  } catch {
-    return '';
+const USAGE = 'Usage: node scripts/doc-restyle/integrity.mjs [--base <ref>] [--allow-change "old=>new"] [--json] <file...>';
+
+const git = (args, opts = {}) => spawnSync('git', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, ...opts });
+
+function parseArgs(argv) {
+  const opts = { base: 'HEAD', json: false, allow: [], files: [] };
+  const value = i => {
+    if (i + 1 >= argv.length || argv[i + 1].startsWith('--')) throw new Error(`${argv[i]} needs a value`);
+    return argv[i + 1];
+  };
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i];
+    if (a === '--base') opts.base = value(i++);
+    else if (a === '--json') opts.json = true;
+    else if (a === '--allow-change') {
+      const [from, ...to] = value(i++).split('=>');
+      if (!from || !to.length) throw new Error('--allow-change needs "old=>new" with a non-empty old text');
+      opts.allow.push({ from, to: to.join('=>') });
+    } else if (a.startsWith('--')) throw new Error(`unknown option ${a}`);
+    else opts.files.push(a);
   }
+  if (!opts.files.length) throw new Error('no files given');
+  return opts;
 }
 
 export function run(argv) {
-  let base = 'HEAD';
-  let json = false;
-  const allow = [];
-  const files = [];
-  for (let i = 0; i < argv.length; i++) {
-    if (argv[i] === '--base') base = argv[++i];
-    else if (argv[i] === '--json') json = true;
-    else if (argv[i] === '--allow-change') {
-      const [from, ...to] = argv[++i].split('=>');
-      allow.push({ from, to: to.join('=>') });
-    } else files.push(argv[i]);
-  }
-  if (!files.length) {
-    console.error('Usage: node scripts/doc-restyle/integrity.mjs [--base HEAD] [--allow-change "old=>new"] [--json] <file...>');
+  let opts;
+  try {
+    opts = parseArgs(argv);
+  } catch (e) {
+    console.error(`${e.message}\n${USAGE}`);
     return 2;
   }
-  const originals = files.map(path => ({ path, text: readBase(base, path) }));
-  const rewrittens = files.map(path => ({ path, text: fs.existsSync(path) ? fs.readFileSync(path, 'utf8') : '' }));
-  const violations = checkContent(originals, rewrittens, allow);
-  if (json) console.log(JSON.stringify({ ok: !violations.length, violations }, null, 2));
-  else if (violations.length) {
-    console.log(`FAIL  ${violations.length} integrity violation(s):`);
-    for (const v of violations) console.log(`  - ${v}`);
-  } else console.log(`PASS  ${files.length} file(s) keep their content`);
-  return violations.length ? 1 : 0;
+  const top = git(['rev-parse', '--show-toplevel']);
+  if (top.status !== 0) {
+    console.error('Run this inside the git repository.');
+    return 2;
+  }
+  const root = top.stdout.trim();
+  if (git(['rev-parse', '--verify', '--quiet', `${opts.base}^{commit}`], { cwd: root }).status !== 0) {
+    console.error(`--base ${opts.base} is not a commit in this repository.`);
+    return 2;
+  }
+  const originals = [];
+  const rewrittens = [];
+  const identical = [];
+  for (const file of opts.files) {
+    const abs = path.resolve(file);
+    const rel = path.relative(root, abs).split(path.sep).join('/');
+    const spec = `${opts.base}:${rel}`;
+    const exists = git(['cat-file', '-e', spec], { cwd: root }).status === 0;
+    const original = exists ? execFileSync('git', ['show', spec], { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }) : '';
+    const rewritten = fs.existsSync(abs) ? fs.readFileSync(abs, 'utf8') : '';
+    originals.push({ path: rel, text: original });
+    rewrittens.push({ path: rel, text: rewritten });
+    if (exists && original === rewritten) identical.push(file);
+  }
+  let violations;
+  try {
+    violations = checkContent(originals, rewrittens, opts.allow);
+  } catch (e) {
+    console.error(e.message);
+    return 2;
+  }
+  const vacuous = identical.length === opts.files.length;
+  const notes = identical.map(f => `${f} is identical to ${opts.base}, so there is nothing to compare. Use --base <ref> for the commit that holds the original.`);
+  if (opts.json) console.log(JSON.stringify({ ok: !violations.length && !vacuous, violations, notes }, null, 2));
+  else {
+    if (violations.length) {
+      console.log(`FAIL  ${violations.length} integrity violation(s):`);
+      for (const v of violations) console.log(`  - ${v}`);
+    } else if (vacuous) console.log('FAIL  nothing to compare');
+    else console.log(`PASS  ${opts.files.length} file(s) keep their content`);
+    for (const n of notes) console.log(`  note: ${n}`);
+  }
+  return violations.length || vacuous ? 1 : 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(run(process.argv.slice(2)));
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) process.exit(run(process.argv.slice(2)));

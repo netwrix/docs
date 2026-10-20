@@ -146,8 +146,13 @@ function contentFacts(docs) {
 
 export function checkContent(originals, rewrittens, allow = []) {
   const violations = [];
+  if (allow.some(a => !a.from)) throw new Error('an allowed change needs a non-empty "from" text');
+  // A confirmed fix applies to prose only, so it can never rewrite a code block or frontmatter.
   const fix = text => allow.reduce((t, { from, to }) => t.split(from).join(to), text);
-  const before = originals.map(f => parseDoc(fix(f.text)));
+  const before = originals.map(f => {
+    const d = parseDoc(f.text);
+    return { ...d, prose: fix(d.prose) };
+  });
   const after = rewrittens.map(f => parseDoc(f.text));
   const a = contentFacts(before);
   const b = contentFacts(after);
@@ -162,7 +167,7 @@ export function checkContent(originals, rewrittens, allow = []) {
   rewrittens.forEach((f, i) => {
     const o = originals.find(x => x.path === f.path);
     if (!o || !o.text) return;
-    const of = parseDoc(fix(o.text)).front;
+    const of = parseDoc(o.text).front;
     for (const [k, v] of Object.entries(of)) {
       if (!FREE_FRONTMATTER.has(k) && after[i].front[k] !== v) violations.push(`frontmatter ${k} changed in ${f.path}`);
     }

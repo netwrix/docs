@@ -8,7 +8,12 @@
  */
 
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
+import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { dirname, join } from 'node:path';
 import test from 'node:test';
+import { fileURLToPath } from 'node:url';
 
 import { checkContent } from './quality/lib/preserve.mjs';
 
@@ -100,4 +105,78 @@ test('indenting a code block under a list item passes, changing it does not', ()
   const orig = page('**Step 1 –** Run:\n\n```powershell\nGet-Service\n```\n');
   assert.deepEqual(checkContent(one(orig), one(page('1. Run:\n\n   ```powershell\n   Get-Service\n   ```\n'))), []);
   assert.ok(checkContent(one(orig), one(page('1. Run:\n\n   ```powershell\n   Get-Process\n   ```\n'))).length > 0);
+});
+
+test('a confirmed fix never rewrites a code block', () => {
+  const orig = page('Set 3O seconds.\n\n```text\n3O\n```\n');
+  const fixedProse = page('Set 30 seconds.\n\n```text\n3O\n```\n');
+  const changedCode = page('Set 30 seconds.\n\n```text\n30\n```\n');
+  const allow = [{ from: '3O', to: '30' }];
+  assert.deepEqual(checkContent(one(orig), one(fixedProse), allow), []);
+  assert.ok(checkContent(one(orig), one(changedCode), allow).some(x => x.startsWith('code block')));
+});
+
+test('an allowed change with empty text is rejected', () => {
+  assert.throws(() => checkContent(one(page('x')), one(page('x')), [{ from: '', to: 'y' }]), /non-empty/);
+});
+
+// CLI tests run in a throwaway git repo whose path contains a space.
+const CLI = join(dirname(fileURLToPath(import.meta.url)), 'doc-restyle', 'integrity.mjs');
+
+function withRepo(fn) {
+  const dir = mkdtempSync(join(tmpdir(), 'restyle repo '));
+  const git = (...a) => spawnSync('git', a, { cwd: dir, encoding: 'utf8' });
+  git('init', '-q');
+  git('config', 'user.email', 't@example.com');
+  git('config', 'user.name', 't');
+  mkdirSync(join(dir, 'docs'));
+  writeFileSync(join(dir, 'docs', 'a.md'), page('Set the timeout to 30 seconds.'));
+  git('add', '.');
+  git('commit', '-q', '-m', 'original');
+  try {
+    fn(dir, (...args) => spawnSync('node', [CLI, ...args], { cwd: dir, encoding: 'utf8' }));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
+test('CLI: runs from a path with a space and passes a clean restyle', () => {
+  withRepo((dir, cli) => {
+    writeFileSync(join(dir, 'docs', 'a.md'), page('Set the timeout to 30 seconds, then save.'));
+    const r = cli('docs/a.md');
+    assert.equal(r.status, 0, r.stdout + r.stderr);
+    assert.match(r.stdout, /PASS/);
+  });
+});
+
+test('CLI: a dropped number fails', () => {
+  withRepo((dir, cli) => {
+    writeFileSync(join(dir, 'docs', 'a.md'), page('Set the timeout.'));
+    assert.equal(cli('docs/a.md').status, 1);
+  });
+});
+
+test('CLI: a file identical to its base fails as nothing to compare', () => {
+  withRepo((dir, cli) => {
+    const r = cli('docs/a.md');
+    assert.equal(r.status, 1);
+    assert.match(r.stdout, /nothing to compare/);
+  });
+});
+
+test('CLI: a bad base ref and a missing flag value exit 2', () => {
+  withRepo((dir, cli) => {
+    assert.equal(cli('--base', 'no-such-ref', 'docs/a.md').status, 2);
+    assert.equal(cli('docs/a.md', '--allow-change').status, 2);
+    assert.equal(cli('--allow-change', '=>x', 'docs/a.md').status, 2);
+  });
+});
+
+test('CLI: an absolute path and a new file work', () => {
+  withRepo((dir, cli) => {
+    writeFileSync(join(dir, 'docs', 'a.md'), page('Set the timeout to 30 seconds, then save.'));
+    writeFileSync(join(dir, 'docs', 'new.md'), page('No numbers here.'));
+    const r = cli(join(dir, 'docs', 'a.md'), 'docs/new.md');
+    assert.equal(r.status, 0, r.stdout + r.stderr);
+  });
 });
