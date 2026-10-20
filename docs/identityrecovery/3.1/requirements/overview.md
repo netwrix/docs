@@ -10,7 +10,7 @@ This topic describes the recommended configuration of the servers needed to inst
 in a production environment.
 
 :::info
-Review your environment and requirements with a Netwrix support engineer prior to
+Review your environment and requirements with a Netwrix support engineer before
 deployment to ensure all exceptions are covered.
 :::
 

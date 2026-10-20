@@ -46,8 +46,8 @@ options opens the Find a Group or Find a User browser.
 
 ![Find a group window](/images/accessanalyzer/12.0/admin/datacollector/usersgroups/category/findagroup.webp)
 
-The Find a Group and Find a User browsers display a list of groups or users, depending on which one
-is being used, that can be selected for the option. Select from a specific host using the Sample
+The Find a Group and Find a User browsers display a list of groups or users you can select for the
+option, depending on which browser you use. Select from a specific host using the Sample
 from host option, or leave the text field blank and click **Connect** to retrieve all user groups or
 users that are selectable.
 

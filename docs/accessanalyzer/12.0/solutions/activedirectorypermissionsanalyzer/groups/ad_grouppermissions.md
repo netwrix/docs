@@ -15,7 +15,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **2.Groups** > **AD_
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -29,7 +29,7 @@ The default analysis tasks are:
 - Summarize group object permissions – Creates an interim processing table in the database for use
   by downstream analysis and report generation
 - Group Ownership – Lists the owners of each group object and determines if they are a non-standard
-  owner. Principals that are not administrators are considered non-standard owners of group objects.
+  owner. Principals that aren't administrators are considered non-standard owners of group objects.
 - Group Ownership Summary – Summarizes owner type by domain
 
 In addition to the tables and views created by the analysis tasks, the AD_GroupPermissions job

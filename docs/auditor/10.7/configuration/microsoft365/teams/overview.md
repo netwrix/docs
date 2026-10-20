@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -36,7 +36,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
 Auditor can monitor for operations with MS Teams entities, collect state-in-time snapshots and track
 changes to the object attributes. This section provides detailed information on these activities.
 
-Starting with the version 10.5, Auditor is able to report about sensitive data in your IT
+Starting with the version 10.5, Auditor can report about sensitive data in your IT
 infrastructure. Pay attention to the "_Data categories_" column in search and reports (for the
 "_Document_" object types only). Refer to
 [Sensitive Data Discovery ](/docs/auditor/10.7/admin/settings/sensitivedatadiscovery.md) for detailed

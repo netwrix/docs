@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Enable Authentication Types
 
-You must enable authentication types for an identity store to allow users to use them for second
+You must enable authentication types for an identity store so users can use them for second
 factor authentication and multifactor authentication.
 
 Moreover, you must also enable enrollment for an identity store, so users can enroll their accounts.
@@ -40,14 +40,14 @@ Moreover, you must also enable enrollment for an identity store, so users can en
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations under Settings** in the left pane. Then click **Authentication Types**.
-4. On the **Authentication Types** page, select the **Enrollment Enabled** check box to force
+4. On the **Authentication Types** page, select the **Enrollment Enabled** checkbox to force
    unenrolled users to enroll their identity store accounts in Directory Manager.  
-   Do not select this check box if you do not want to use multifactor authentication or second
+   Don't select this checkbox if you don't want to use multifactor authentication or second
    factor authentication in Directory Manager.
 5. Click **Save**.
 
 :::note
 For second factor authentication and multifactor authentication to work in Directory Manager,
-the **Enrollment Enabled** check box must be selected. Else, users will not be able to enroll, which
+the **Enrollment Enabled** checkbox must be selected. Else, users will not be able to enroll, which
 will prevent them from using Directory Manager.
 :::

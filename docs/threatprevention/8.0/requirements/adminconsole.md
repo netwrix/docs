@@ -24,7 +24,7 @@ supported:
 
 Additionally the server or workstation must meet these requirements:
 
-- US English language installation
+- United States English language installation
 - Domain member
 
 **RAM, CPU, and Disk Space**
@@ -39,7 +39,7 @@ Additionally the server or workstation must meet these requirements:
 
 The following are additional requirements for the Threat Prevention Administration Console machine:
 
-- .NET 4.7.2 or .NET 4.8.x installed. If the installer does not find it already installed, it will
+- .NET 4.7.2 or .NET 4.8.x installed. If the installer doesn't find it already installed, it will
   install .NET Framework 4.7.2.
 
 **Permissions for Installation and Application Use**

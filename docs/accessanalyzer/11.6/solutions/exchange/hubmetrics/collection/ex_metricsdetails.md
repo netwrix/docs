@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # EX_MetricsDetails Job
 
-The EX_MetricsDetails Job collects daily user-to-user Traffic. Walk through this jobs query to
+The EX_MetricsDetails Job collects daily user-to-user Traffic. Walk through this job's query to
 configure the internal domains to collect the sender to recipient traffic from. By default, the
 query is configured to collect the previous 1 day of Message Tracking Logs and has @netwrix.com
-configured as the domain. If the domains are not configured in the query, then most likely data
-collection does not return.
+configured as the domain. If the domains aren't configured in the query, then most likely data
+collection doesn't return.
 
 ## Queries for the EX_MetricsDetails Job
 
@@ -31,7 +31,7 @@ The following query is included in the EX_MetricsDetails Job:
 The Activity Metrics Query has been preconfigured to run with the ExchangeMetrics Data Collector to
 collect user traffic per day. The domains must be configured for data collection to return data.
 
-Follow the steps to configure the Activity Metrics Query.
+To configure the Activity Metrics Query:
 
 **Step 1 –** Navigate to the **Exchange** > **1. HUB Metrics** > **0. Collection** >
 **EX_MetricsDetails** > **Configure** node and select **Queries**.
@@ -43,7 +43,7 @@ Properties**. The Query Properties window opens.
 Collector Wizard opens.
 
 :::warning
-Do not modify other wizard pages. The wizard pages are pre-configured for this job.
+Don't modify other wizard pages. The wizard pages are pre-configured for this job.
 :::
 
 
@@ -65,7 +65,7 @@ View the analysis tasks by navigating to the **Exchange** > **1. HUB Metrics** >
 **EX_MetricsDetails** > **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -87,7 +87,7 @@ The following analysis task clears table data from data collection and analysis 
 task should remain deselected unless specifically needed:
 
 :::warning
-Do not select the **00. DROP HISTORY** option. This analysis task is for
+Don't select the **00. DROP HISTORY** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database.
 :::
 

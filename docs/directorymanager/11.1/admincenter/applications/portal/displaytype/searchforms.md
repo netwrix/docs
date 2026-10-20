@@ -14,7 +14,7 @@ You can customize the search forms for a portal. You can:
 - Change the arrangement of fields on a page
 
 :::note
-You can only customize existing search forms; you cannot add new ones.
+You can only customize existing search forms; you can't add new ones.
 :::
 
 
@@ -47,13 +47,13 @@ The following table lists the search forms that you can customize:
 6. On the **Edit Search Form** pane, the **Fields** area lists the fields available on the search
    form for performing a search.  
    Click **Add Field** to add a new field. The **Add Field** pane is displayed.
-7. In the **Field** drop-down list, select a schema attribute to link to the field.  
+7. In the **Field** dropdown list, select a schema attribute to link to the field.  
    The search string that portal users enter in the field will be matched to this attribute’s values
    to fetch search results.
 8. In the **Display Name** box, enter a display name for the field. This name is the field’s label
    on the search form.
 9. In the **Tooltip** box, enter the text to appear when a user hovers the mouse over the field.
-10. In the **Display Type** drop-down list, select the display type to use to render this field in
+10. In the **Display Type** dropdown list, select the display type to use to render this field in
     the portal. The list contains basic display types and custom display types defined on the
     **Custom Display Types** page. See the
     [Display Type Categories](/docs/directorymanager/11.1/admincenter/applications/portal/categories/categories.md) topic.

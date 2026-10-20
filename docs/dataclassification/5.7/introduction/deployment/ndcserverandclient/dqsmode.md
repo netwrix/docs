@@ -15,8 +15,8 @@ supports up to 64M objects per cluster of 4 servers.
 - SharePoint — Recommended if processing over 8M objects,
 supports up to 32M objects per cluster of 4 servers.
 
-To make use of Distributed Query Server mode, you need to arrange your NDC Servers in a 'cluster' for load
-distribution as described below. Each clustered NDC Server will store its own set of .CSE index files,
+To make use of Distributed Query Server mode, arrange your NDC Servers in a 'cluster' for load
+distribution. Each clustered NDC Server will store its own set of .CSE index files,
 thus distributing the **NDC Index** over the clustered servers. To assemble and combine data required for the
 search results, each NDC Server will automatically communicate with the other clustered servers.
 
@@ -30,14 +30,14 @@ This functionality is implemented through the _Query Server_ application.
 
 DQS mode is configured via the administrative web console and, from version 5.7.10 onwards, the installer.
 
-If you want to implement DQS configuration for your NDC deployment, be aware that you can't easily
+If you want to implement DQS configuration for your NDC deployment, be aware that you can't
 undo it. Netwrix strongly recommends taking a full backup of your environment before enabling DQS.
 Also, read the DQS documentation sections thoroughly before you start.
 
 Ensure all servers you plan to add to the DQS cluster have a network connection and are
 visible to each other across the network. Adjust your firewall settings if necessary.
 
-DQS mode can only be configured by a user whose account has the **Superuser** role.
+Only users with the **Superuser** role can configure DQS mode.
 
 ### Enabling DQS Mode (5.7.9 and earlier versions)
 
@@ -55,7 +55,7 @@ DQS mode can only be configured by a user whose account has the **Superuser** ro
     | Setting           | Value                                                                                                                                          |
     | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
     | Server            | The NDC Server name or IP address (name format is case-insensitive).                                                                   |
-    | QS Path           | The path to the NDC QS process on the server being added. This is filled in automatically when filling in the server name; leave the default value. |                                                                                    |
+    | QS Path           | The path to the NDC QS process on the server you're adding. The system fills this in automatically when you enter the server name; leave the default value. |                                                                                    |
     | Alternate Server  | Optional, Netwrix recommends using default values.                                                                                                       |
     | Alternate QS Path | Optional, Netwrix recommends using default values.                                                                                                       |
 
@@ -97,7 +97,7 @@ DQS mode can only be configured by a user whose account has the **Superuser** ro
    background and, if successful, will skip the DQS Synchronization step. You can then skip ahead in these instructions
    to step 13. 
 
-   The DQS Synchronization step will only display for an upgrade if this process fails. Follow the steps below to 
+   The DQS Synchronization step will only display for an upgrade if this process fails. Follow the following steps to 
    resynchronize the NDC instance with the primary NDC server.
    :::
 
@@ -126,7 +126,7 @@ value to your clipboard, then paste it in the Authentication Code field in the N
 
 If you were configuring the DQS mode for an existing NDC deployment, you will be prompted to
 re-collect data from the data sources to re-distribute the content index across all
-NDC Servers in the cluster. **This will result in all data sources being recollected**, which may
+NDC Servers in the cluster. **The system will recollect all data sources**, which may
 take a significant amount of time.
 
 :::note

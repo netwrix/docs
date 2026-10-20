@@ -128,7 +128,7 @@ Device registration is the process of placing newly discovered devices into appr
 
 ### Registration Process Flow
 
-When a device is first discovered or re-registered, it follows this sequence:
+When the system first discovers or re-registers a device, the device moves through this sequence:
 
 1. **Initial Placement**: The system places the device in both the "New Devices" and "Awaiting Registration" groups
    - The "New Devices" group provides a fallback — if the registration process fails for any reason, you can still find the device here
@@ -138,9 +138,9 @@ When a device is first discovered or re-registered, it follows this sequence:
    - The report gathers information such as operating system type, version, and other attributes
    - This data determines appropriate group placement
 
-3. **Group Assignment**: Based on the report results and custom scripts, the system assigns the device to groups
+3. **Group Assignment**: The system assigns the device to groups based on the report results and custom scripts
    - Custom registration scripts can examine the collected data and apply business logic
-   - If no custom script exists, default OS-based group assignment is used
+   - If no custom script exists, the system uses default OS-based group assignment
 
 4. **Final Placement**: The system moves the device from "Awaiting Registration" to its target groups
    - If the system finds appropriate groups, it removes the device from "New Devices" and adds it to the target groups
@@ -297,7 +297,7 @@ For comprehensive troubleshooting, you may also want to enable DEBUG logging for
 
 ### OS Type Not Correctly Identified
 
-**Impact**: If the agent can't correctly identify the operating system type, the device registration process will encounter problems because both the registration report and custom registration scripts depend on accurate OS Type information.
+**Impact**: If the agent can't correctly identify the operating system type, the device registration process encounters problems because both the registration report and custom registration scripts depend on accurate OS Type information.
 
 **Possible Causes**:
 1. **Outdated Agent**: Agent version doesn't recognize newer operating systems
@@ -307,7 +307,7 @@ For comprehensive troubleshooting, you may also want to enable DEBUG logging for
 
 **Common Scenarios**:
 - **New Windows OS Release**: A completely new Windows version is released (e.g., Windows 12, Windows Server 2027) before agent code is updated to recognize it
-  - Note: New builds of existing OS versions (e.g., Windows 11 updates) are handled by build number ranges and won't cause issues
+  - Note: Build number ranges handle new builds of existing OS versions (e.g., Windows 11 updates), so they won't cause issues
 - **New Linux Distribution or Major Version**: A new Linux distribution or major version is released that doesn't match existing detection patterns
 - **Beta/Preview OS**: Running preview or beta versions of operating systems with non-standard version information or identifiers
 
@@ -436,4 +436,4 @@ For comprehensive troubleshooting, you may also want to enable DEBUG logging for
 
 ## Summary
 
-The device discovery and registration process provides a flexible framework for automatically organizing devices based on their characteristics. By understanding the discovery methods, supported operating systems, registration flow, and configuration options, you can effectively manage device onboarding and ensure devices are placed in appropriate groups for policy application and reporting.
+The device discovery and registration process provides a flexible framework for automatically organizing devices based on their characteristics. By understanding the discovery methods, supported operating systems, registration flow, and configuration options, you can effectively manage device onboarding and ensure the system places devices in appropriate groups for policy application and reporting.

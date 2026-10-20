@@ -10,7 +10,7 @@ Examine the Active Directory state-in-time data on the user account attributes:
 
 - User Accounts - Attributes
 
-To instruct Netwrix Auditor to collect data needed for the report, make sure that **Collect data for
+To instruct Netwrix Auditor to collect data needed for the report, ensure that **Collect data for
 state-in-time reports** option is selected in the corresponding monitoring plan properties. See the
 [Settings for Data Collection](/docs/auditor/10.9/admin/monitoringplans/create.md#settings-for-data-collection)
 topic for additional information.
@@ -36,14 +36,14 @@ topic for additional information.
    for each account that comply filtering criteria.
 3. Filter on Sort by to bring important accounts' data to front.
 4. Add filters by specific attribute values to narrow your report scope. In this case, the report
-   shows only accounts that contains these values. See the Reported Attributes  topic below for more
-   information.
+   shows only accounts that contains these values. See the [Reported Attributes](#reported-attributes)
+   topic for more information.
 5. The report is limited by 2000 records. To view all, create subscription to the report. The
    subscription (email attachment or file uploaded to a file share) will contain complete data.
 6. If you have more than 2000 entities within the report scope, sorting might work incorrectly.
    Apply filters to narrow your report scope.
 
-Please consider that if you are going to export the report in .csv format or want to subscribe to
+consider that if you are going to export the report in .csv format or want to subscribe to
 the .csv report, the file will contain the full list of available attributes regardless of which
 filters you specified.
 
@@ -65,7 +65,7 @@ filters and values:
 
 ### Reported Data
 
-For the account(s) you selected using filters, the summary section includes:
+For the accounts you selected using filters, the summary section includes:
 
 - **Total account count** — total number of accounts that meet selected filtering criteria.
 - **Enabled accounts** —total number of enabled accounts that meet selected filtering criteria.
@@ -103,7 +103,7 @@ The following account attributes are reported:
 | ZIP/postal code               | Equals the Postal-Code attribute. See the corresponding Microsoft article for more information: [Postal-Code attribute](https://docs.microsoft.com/en-us/windows/win32/adschema/a-postalcode).                                                                               | Example: _61441_                                                                                                                                       | +         |
 | Country/region                | Shows the country/region in which the user is located.                                                                                                                                                                                                                       | Example: _Ireland_                                                                                                                                     | +         |
 | Security                      |                                                                                                                                                                                                                                                                              |                                                                                                                                                        |           |
-| Account cannot be delegated   | Shows whether the account can be delegated or not based on the User-Account-Control attribute. See the corresponding Microsoft article for more information: [User-Account-Control attribute](https://docs.microsoft.com/en-us/windows/win32/adschema/a-useraccountcontrol). | Yes No                                                                                                                                                 | +         |
+| Account can't be delegated   | Shows whether the account can be delegated or not based on the User-Account-Control attribute. See the corresponding Microsoft article for more information: [User-Account-Control attribute](https://docs.microsoft.com/en-us/windows/win32/adschema/a-useraccountcontrol). | Yes No                                                                                                                                                 | +         |
 | Account expiration date       | Equals the Account-Expires attribute. See the corresponding Microsoft article for more information: [Account-Expires attribute](https://docs.microsoft.com/en-us/windows/win32/adschema/a-accountexpires).                                                                   | Date                                                                                                                                                   | –         |
 | Password age                  | Shows password age for the account based on the Pwd-Last-Set attribute. See the corresponding Microsoft article for more information: [Pwd-Last-Set attribute](https://docs.microsoft.com/en-us/windows/win32/adschema/a-pwdlastset).                                        | Number of days N/A — if password never set When the filter applied, the report shows above or equal results                                            | +         |
 | Password expired              | Shows whether the account has the "_Password expired_" flag set under the AccountControl attribute.                                                                                                                                                                          | Yes No                                                                                                                                                 | +         |
@@ -111,7 +111,7 @@ The following account attributes are reported:
 | Never – if password never set | +                                                                                                                                                                                                                                                                            |                                                                                                                                                        |           |
 | Password never expires        | Shows whether the account has the "_Password never expires_" flag set on the Account tab in properties.                                                                                                                                                                      | Yes No                                                                                                                                                 | +         |
 | Password not required         | Shows whether the account has the "_Password not required_" flag set under the AccountControl attribute. Such account may have empty password.                                                                                                                               | Yes No                                                                                                                                                 | +         |
-| User cannot change password   | Shows whether the account has the "_User cannot change password_" flag set on the Account tab in properties.                                                                                                                                                                 | Yes No                                                                                                                                                 | +         |
+| User can't change password   | Shows whether the account has the "_User can't change password_" flag set on the Account tab in properties.                                                                                                                                                                 | Yes No                                                                                                                                                 | +         |
 | User must change password     | Shows whether the account has the "_User must change password_" flag set on the Account tab in properties.                                                                                                                                                                   | Yes No                                                                                                                                                 | +         |
 | Other                         |                                                                                                                                                                                                                                                                              |                                                                                                                                                        |           |
 | Creation date                 | Shows account creation date.                                                                                                                                                                                                                                                 | Date                                                                                                                                                   | –         |
@@ -132,7 +132,7 @@ account.
 
 ### Usage Example
 
-An IT administrators wants to find all user accounts from the OU named _Finance_ that are currently
+An IT administrators wants to find all user accounts from the OU named _Finance_ that are 
 locked out and disabled with information about their managers to contact them in case of any
 questions. This OU is included in the monitoring plan named _Active Directory Monitoring_. They need
 to set report filters as follows:

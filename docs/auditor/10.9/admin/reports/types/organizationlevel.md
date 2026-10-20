@@ -10,7 +10,7 @@ Organization Level reports aggregate data on all monitoring plans and list chang
 occurred across all data sources. Also, this folder includes a report on Auditor self-audit - it
 provides detailed information on changes to monitoring plans, data sources and audited items.
 
-Organization Level reports can be found in the Organization Level Reports folder under the Reports
+You can find Organization Level reports in the Organization Level Reports folder under the Reports
 node.
 
 This folder includes:

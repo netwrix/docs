@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Schedules
 
-The scheduling feature in Directory Manager enables you to perform several operations by creating
+The scheduling feature in Directory Manager lets you perform several operations by creating
 scheduled jobs for an identity store. These schedules auto run at the specified day, time, and
 frequency.
 
@@ -39,7 +39,7 @@ You can define the following schedules for an identity store:
 - A [Smart Group Update Schedule](/docs/directorymanager/11.1/admincenter/schedule/smartgroupupdate.md)updates Smart Groups and Dynasties.
 - A [Synchronize Schedule](/docs/directorymanager/11.1/admincenter/schedule/synchronize.md) can execute Synchronize jobs and job groups at a set
   frequency.
-- A [User Life Cycle Schedule](/docs/directorymanager/11.1/admincenter/schedule/userlifecycle.md) disables users who do not validate their profiles
+- A [User Life Cycle Schedule](/docs/directorymanager/11.1/admincenter/schedule/userlifecycle.md) disables users who don't validate their profiles
   within a given period, based on the settings defined for user profile validation.
 - A [Workflow Acceleration Schedule](/docs/directorymanager/11.1/admincenter/schedule/workflowacceleration.md) forwards workflow requests to
   approvers and auto approves requests according to workflow approver acceleration rules.
@@ -75,10 +75,10 @@ configure a schedule:
 ![entraidscheduleauthenticate](/images/directorymanager/11.1/admincenter/schedule/entraidscheduleauthenticate.webp)
 
 Use the Login with a different user option to provide the credentials of another account to run the
-schedule in the identity store is not available for a Microsoft Entra ID identity store.
+schedule in the identity store isn't available for a Microsoft Entra ID identity store.
 
 :::note
-The existing schedules will continue to work. The SAML provider authentication does not apply
+The existing schedules will continue to work. The SAML provider authentication doesn't apply
 on them.
 
 :::

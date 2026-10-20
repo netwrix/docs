@@ -10,12 +10,12 @@ Netwrix Change Tracker supports single sign-on (SSO) through any standards-compl
 (OIDC) identity provider (IdP). Compatible providers include Keycloak, PingFederate, Active
 Directory Federation Services (ADFS), OneLogin, Okta, Auth0, and others.
 
-When OIDC is enabled, the login page displays an SSO button that redirects users to the IdP for
+When you enable OIDC, the login page displays an SSO button that redirects users to the IdP for
 authentication. After successful authentication, the IdP redirects back to the Hub, which logs the
 user in automatically. Standard username/password login remains available alongside it.
 
-On a user's first login, Change Tracker automatically creates a local account — no
-pre-registration is required. On subsequent logins, Change Tracker updates the user's roles to reflect any
+On a user's first login, Change Tracker automatically creates a local account, so users don't need
+to pre-register. On subsequent logins, Change Tracker updates the user's roles to reflect any
 changes made in the IdP since their last login.
 
 :::note
@@ -31,7 +31,7 @@ Collect the following from your identity provider before configuring Change Trac
 |---|---|---|
 | **Client ID** | The unique identifier your IdP assigns to the Change Tracker application registration | IdP application / client settings |
 | **Client Secret** | A shared secret used to exchange an authorization code for tokens | IdP application / client settings |
-| **Authorization endpoint URL** | The URL users are redirected to for authentication | IdP documentation or discovery document |
+| **Authorization endpoint URL** | The URL Change Tracker redirects users to for authentication | IdP documentation or discovery document |
 | **Token endpoint URL** | The URL Change Tracker calls to exchange an authorization code for tokens | IdP documentation or discovery document |
 | **UserInfo endpoint URL** | The URL Change Tracker calls to retrieve user profile claims | IdP documentation or discovery document |
 | **Roles claim key** | The claim key in the token or UserInfo response that contains role assignments | IdP documentation, or by [decoding a sample token](#verify-your-idp-configuration) — see [The rolesClaimKey setting](#the-rolesclaimkey-setting) |
@@ -55,7 +55,7 @@ Create a new application or client registration in your IdP with the following s
 
 - **Application type / grant type**: Confidential client using the **Authorization Code** flow
 - **Redirect URI (callback URL)**: `https://<your-hub-host>/api/auth/oidc`
-  - This must exactly match the address users use to reach Change Tracker Hub. If Hub is served on
+  - This must exactly match the address users use to reach Change Tracker Hub. If you run Hub on
     a non-standard port, include it: `https://hub.example.com:5001/api/auth/oidc`
 - **Allowed scopes**: At minimum, `openid`, `profile`, and `email`. Add additional scopes if your
   IdP requires them to include role or group claims in the token.
@@ -105,8 +105,8 @@ such as Postman, and verify that the roles claim is present with the expected va
 
 ## Configure OIDC in Change Tracker
 
-All OIDC settings are defined under the `security:oauth:oidc` section of the Hub's
-`appsettings.Production.json` configuration file.
+The `security:oauth:oidc` section of the Hub's `appsettings.Production.json` configuration file
+contains all OIDC settings.
 
 ### Configuration keys
 
@@ -201,7 +201,7 @@ However:
 
 - Some IdPs use a different key entirely. For example, ADFS may publish group memberships under
   `groups`, or a Keycloak mapper may use a custom name.
-- Some IdPs require custom claims to be namespaced with a URL prefix to prevent collisions. Auth0,
+- Some IdPs require you to namespace custom claims with a URL prefix to prevent collisions. Auth0,
   for example, requires the full namespaced string — such as `https://your-domain.com/roles` — as
   the claim key.
 
@@ -265,7 +265,7 @@ effect the next time the user logs in to Change Tracker.
 | `licenseupdater` | Can apply license updates. |
 
 :::note
-The `agent` role is reserved for device monitoring agents and can't be assigned via OIDC.
+Change Tracker reserves the `agent` role for device monitoring agents; you can't assign it via OIDC.
 :::
 
 ### Configure role mappings
@@ -288,7 +288,7 @@ format `oidc:rolemap:<IdP-role-name>`, with the value set to the target Change T
 | `oidc:rolemap:CT-ChangeApprovers` | `changeapprover` |
 | `oidc:rolemap:CT-UserAdmins` | `useradmin` |
 
-**Step 3 –** Save. Mappings take effect on the user's next login — no Hub restart is required.
+**Step 3 –** Save. Mappings take effect on the user's next login, and you don't need to restart the Hub.
 
 :::warning
 Key matching is case-sensitive. The IdP role name in the key must exactly match the value returned
@@ -303,7 +303,7 @@ in the token. For example, `oidc:rolemap:CT-Administrators` matches only `CT-Adm
 ### First login
 
 When an OIDC user logs in for the first time, Change Tracker automatically creates a local account
-for them. No pre-registration is required.
+for them, so users don't need to pre-register.
 
 Change Tracker creates the new account with:
 
@@ -351,7 +351,7 @@ successfully.
 
 ### SSO button
 
-When OIDC is enabled, a **Sign In with SSO** button (or the custom label configured via
+When you enable OIDC, a **Sign In with SSO** button (or the custom label configured via
 `buttonLabel`) appears on the Change Tracker login page alongside the standard username/password
 form. OIDC doesn't replace existing authentication methods.
 
@@ -373,20 +373,20 @@ Change Tracker. MFA enforcement is the responsibility of the IdP — Change Trac
 its own MFA for OIDC-authenticated users.
 
 If the IdP includes an `amr` (Authentication Methods References) claim in the ID token, Change
-Tracker reflects the MFA status in the user's session. No additional configuration is required.
+Tracker reflects the MFA status in the user's session. You don't need any additional configuration.
 
 ---
 
 ## Limitations
 
-The following items aren't supported in the current release:
+Change Tracker doesn't support the following items in the current release:
 
 - **Automatic OIDC endpoint discovery**: You must supply endpoint URLs individually. Change
   Tracker doesn't support automatic discovery from a `.well-known/openid-configuration` URL.
 - **Multiple simultaneous OIDC providers**: You can configure only one OIDC provider at a time.
-- **Group-to-device group mapping**: Role mapping assigns Change Tracker roles only. Mapping IdP
-  groups to Change Tracker device access groups isn't supported.
-- **SAML**: SAML-based SSO isn't supported.
+- **Group-to-device group mapping**: Role mapping assigns Change Tracker roles only. Change Tracker
+  doesn't support mapping IdP groups to Change Tracker device access groups.
+- **SAML**: Change Tracker doesn't support SAML-based SSO.
 
 ---
 
@@ -411,7 +411,8 @@ The following items aren't supported in the current release:
 **User logs in successfully but has incorrect permissions**
 
 - Check the Hub's `rolling-log.txt` for warnings from `OidcRoleMappingService`. The log shows
-  which IdP roles were received and whether they were mapped, matched directly, or discarded.
+  which IdP roles Change Tracker received and whether it mapped them, matched them directly, or
+  discarded them.
 - Verify the `rolesClaimKey` value exactly matches the claim key the IdP uses, including any URL
   namespace prefix.
 - Confirm that the IdP is actually including role claims in its response. Decode a sample token at
@@ -430,7 +431,7 @@ The following items aren't supported in the current release:
   address in Change Tracker to match what the IdP returns — see
   [Username conflicts](#username-conflicts).
 
-**Roles aren't updating after being changed in the IdP**
+**Roles aren't updating after an IdP role change**
 
 - Change Tracker re-syncs roles on every login. The user must log out and log back in via OIDC
   for role changes to take effect.

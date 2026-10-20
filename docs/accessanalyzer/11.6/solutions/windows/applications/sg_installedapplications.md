@@ -19,7 +19,7 @@ The query is preconfigured for this job. Never modify the query.
 
 ![Queries for the SG_InstalledApplications Job](/images/accessanalyzer/11.6/solutions/windows/applications/installedapplicationsquery.webp)
 
-The query for the SG_InstalledApplications job are:
+The query for the SG_InstalledApplications job is:
 
 - Installed Applications – Targets all Windows servers known to Enterprise Auditor to determine
   installed applications
@@ -30,7 +30,7 @@ Navigate to the **Windows** > **Applications** > **SG_InstalledApplications** > 
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

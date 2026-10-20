@@ -21,9 +21,8 @@ The available options are:
     - Password – Enter a custom password or use the generated password. Click **Copy** to copy the
       user name and password to the clipboard.
 
-- IPv4 or IPv6 allowlist – IP Addresses of the remote hosts, which are allowed to connect to the API
-  port, can be whitelisted by entering them in the box. IP Addresses should be entered as separate
-  addresses with space, comma (,), semicolon (;), or a multi-line list. Leave the box blank to
+- IPv4 or IPv6 allowlist – Enter IP addresses of the remote hosts allowed to connect to the API
+  port. Separate addresses with space, comma (,), semicolon (;), or a multi-line list. Leave the box blank to
   accept connections from any hosts.
 
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The Agent

@@ -10,7 +10,7 @@ Any resource type mapping must be configured with the same identifier as the rel
 
 ## Examples
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <MicrosoftEntraIDResourceTypeMapping Identifier="MicrosoftEntraID_DirectoryObject_Guest" Connection="MicrosoftEntraIDExportFulfillment" DefaultObjectClass="users" InvitationMode="MicrosoftInvitation" InvitationRedirectUrl="https://demo.usercube.com" PasswordResetSetting="ToSponsor">    <Property Property="objectid" IsDNProperty="true" />    <Property Property="groups" DataSourceBacklinkColumnName="member" />    <Property Property="displayName" IsDisplayNameProperty="true" />    <Property Property="mail" IsMailProperty="true" /></MicrosoftEntraIDResourceTypeMapping>

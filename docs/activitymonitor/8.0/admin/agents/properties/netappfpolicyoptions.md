@@ -15,7 +15,7 @@ The available options are:
 
 - FPolicy server port (TCP): [number] (from 1000 to 65535) – Enter the FPolicy server port. The
   default is 9999.
-- FPolicy authentication – Select from the following options in the drop-down list. For TLS server
+- FPolicy authentication – Select from the following options in the dropdown list. For TLS server
   authentication, a Server certificate is required. For TLS, mutual authentication, a Server
   certificate and Client certificate are required.
 

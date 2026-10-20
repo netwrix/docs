@@ -11,8 +11,7 @@ documents achieving the minimum score set for classification in the term.
 See [Classification Rules (Clues)](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/clues/clues.md) for details on how clues control classification scoring.
 
 :::note
-This list will include the current classification status of each document. Any changes
-made to the classification clues since the last time each document was classified aren't taken into account.
+This list shows the current classification status of each document. The system doesn't account for changes you made to the classification clues since it last classified each document.
 :::
 
 To see how the classification of each document would change based on the current term configuration, 
@@ -20,13 +19,13 @@ tick the Show Movements checkbox. When selected, the results will display any ch
 in document scoring between the current stored document score and the score it would receive 
 against the current classification clues.
 
-The document text will be highlighted based upon the clues configured for the term. Highlighting
-will include regular expression matches when configured (Config→Query Server→Enable Regex Browse
+The system highlights the document text based on the clues configured for the term. Highlighting
+includes regular expression matches when configured (Config→Query Server→Enable Regex Browse
 Highlighting (Advanced)).
 
 :::note
-If a new class is selected in the treeview menu, the view will remain in "Browse" mode and
-will show the documents for the selected class.
+If you select a new class in the treeview menu, the view remains in "Browse" mode and
+shows the documents for that class.
 :::
 
 
@@ -43,8 +42,8 @@ You can use the Browse function to:
 ![browsetab_thumb_0_0](/images/dataclassification/5.7/admin/reporting/browsetab_thumb_0_0.webp)
 
 :::note
-By default, results from sources that have not yet been indexed, or that aren't configured to be indexed, aren't included in the Browse results. 
-To include these results, tick the Show Unindexed Documents checkbox.
+By default, the Browse results don't include sources that haven't been indexed yet or that aren't configured for indexing. 
+To include results from these sources, tick the Show Unindexed Documents checkbox.
 :::
 
 

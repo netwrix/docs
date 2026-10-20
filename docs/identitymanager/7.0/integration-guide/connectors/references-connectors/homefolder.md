@@ -22,7 +22,7 @@ Implementing this connector requires:
 
 - reading first how to
 [Set, View, Change, or Remove Special Permissions](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772196(v=ws.10)) and check the [File and Folder Permissions](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732880(v=ws.10)) list;
-- an account with at least the special permission Read on all home folders in order to be able to
+- an account with at least the special permission Read on all home folders to be able to
 export them.
 
 ## Export
@@ -111,7 +111,7 @@ There are no fulfill capabilities for this connector.
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 

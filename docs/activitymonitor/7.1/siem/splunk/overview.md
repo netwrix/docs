@@ -6,10 +6,9 @@ sidebar_position: 20
 
 # File Activity Monitor App for Splunk
 
-Stealthbits File Activity monitoring solutions enable organizations to successfully, efficiently,
-and affordably monitor file access and permission changes across Windows and Network Attached
+Stealthbits File Activity monitoring solutions enable organizations to monitor file access and permission changes across Windows and Network Attached
 Storage (NAS) file systems in real-time. Using the preconfigured  Stealthbits File Activity Monitor
-App for Splunk, users can quickly understand all file activities as a whole, for specific resources
+App for Splunk, users can understand all file activities as a whole, for specific resources
 or users, as well as patterns of activity indicative of threats such as crypto ransomware or data
 exfiltration attempts. With full control over the data, users can create custom searches, all while
 enabling Splunk to correlate file system activity with any log source.
@@ -17,7 +16,7 @@ enabling Splunk to correlate file system activity with any log source.
 This document describes how to integrate Netwrix products with the  Stealthbits File Activity
 Monitor App for Splunk found in Splunkbase. Any Netwrix product can be configured to monitor file
 system activity and send the monitored events to Splunk. After installing this app, ensure that
-either theActivity Monitor, Threat Prevention, or Enterprise Auditor has been configured to send
+either the Activity Monitor, Threat Prevention, or Enterprise Auditor has been configured to send
 events to Splunk. See the product user guide on the
 [Netwrix Technical Knowledge Center](https://helpcenter.netwrix.com/) for additional information.
 
@@ -31,7 +30,7 @@ Activity Monitor App for Splunk, follow the
 Splunk to install the app.
 
 :::note
-In order to use the Ransomware dashboard within the app, install
+to use the Ransomware dashboard within the app, install
 [Splunk User Behavior Analytics](https://www.splunk.com/en_us/products/premium-solutions/user-behavior-analytics.html)
 (any version) and the [Machine Learning Toolkit](https://splunkbase.splunk.com/app/2890/) app for
 Splunk (version 2.0.0+).
@@ -40,11 +39,9 @@ Splunk (version 2.0.0+).
 
 The Stealthbits: File Activity Monitor tab will appear within the Splunk web interface. Once
 installation of the  Stealthbits File Activity Monitor App for Splunk is complete, it must be
-configured to receive data from either theActivity Monitor or Threat Prevention.
+configured to receive data from either the Activity Monitor or Threat Prevention.
 
 ## Initial Configuration of the Splunk App
-
-Follow the steps to configure Splunk to receive data from Stealthbits products.
 
 **Step 1 –** Determine the IP Address of the Splunk Console, e.g. run the ifconfig command. This
 information is required for the following sections:
@@ -61,7 +58,7 @@ information is required for the following sections:
 **Step 3 –** Select UDP.
 
 **Step 4 –** Click New and add a new data input with Port 514. If another Splunk UDP input is
-already using 514, another value (515 or higher) can be used as long as it is not blocked by the
+already using 514, another value (515 or higher) can be used as long as it isn't blocked by the
 network. Remember to configure the port within the Stealthbits product configuration to align with
 this change.
 
@@ -76,7 +73,7 @@ this change.
 - Host – Select IP
 - Index – Select Default
 
-**Step 7 –** Review and save the new settings. Remember, prior to using the Stealthbits File
+**Step 7 –** Review and save the new settings. Remember, before using the Stealthbits File
 Activity Monitor App for Splunk, the related Stealthbits products must be configured to send data to
 Splunk.
 

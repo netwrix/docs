@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Authentication Lockdown Event Type
 
-Based on policy rules, the Authentication Lockdown event type can block specific Kerberos, TGT, TGS
+Based on policy rules, the Authentication Lockdown event type can block specific Kerberos, TGT, TGS,
 and/or NTLM authentication requests. An event is generated for each blocked authentication attempt.
 
 The event filters for the Authentication Lockdown event type are:
@@ -34,9 +34,9 @@ interactive logons, etc.
 
 Due to the method used by Windows to establish an RDP session to a computer with the less secure
 mode (“Allow connections from computers running any version of Remote Desktop (less secure)” option
-in the System Properties of the target host) Threat Prevention cannot see the ‘from host’
+in the System Properties of the target host) Threat Prevention can't see the ‘from host’
 information to block. Therefore, if the target host is configured with the less secure mode, the
-Hosts (from) filter does not block authentications for these RDP sessions. Since the perpetrator and
+Hosts (from) filter doesn't block authentications for these RDP sessions. Since the perpetrator and
 host to information is available to Threat Prevention with this mode of RDP session, use the AD
 Perpetrator for lockdown filter and the Hosts (to) filter to block authentications.
 
@@ -111,10 +111,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -133,12 +133,12 @@ Select the **Block** or **Allow** option button and then edit the list.
   this policy will not validate the new passwords for the accounts listed here. Selecting **Block**
   means that this policy will validate the new passwords for the accounts listed here.
 - For the Authentication Lockdown Event Type, this filter blocks or only allows authentication from
-  the identified host(s).
+  the identified hosts.
 
 Use the buttons in the Include Hosts area to edit the list.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/window/selectcomputers.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Hosts (to) Filter
 
@@ -150,7 +150,7 @@ hosts as target hosts of an event.
 Use the buttons in the Include Hosts area to edit the list.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/window/selectcomputers.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Rule Preview Filter
 

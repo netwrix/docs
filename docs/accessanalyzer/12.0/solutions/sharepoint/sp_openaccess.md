@@ -16,10 +16,10 @@ its exposure.
 
 The job group is comprised of the SP_OpenAccess Job. Minimizing your attack surface is the goal.
 Open site collections can potentially provide access to privileged data, greatly increasing your
-vulnerability. The SP_OpenAccess Job will identify places in the environment where data is able to
-be accessed by a very large amount of employees.
+vulnerability. The SP_OpenAccess Job will identify places in the environment where data can
+be accessed by a very large number of employees.
 
-It is dependent on data collected by the
+It depends on data collected by the
 [SharePoint Access Auditing](collection/overview.md#sharepoint-access-auditing) or
 [SharePoint Sensitive Data Discovery Auditing (SEEK)](collection/overview.md#sharepoint-sensitive-data-discovery-auditing-seek)
 components of the [0.Collection Job Group](/docs/accessanalyzer/12.0/solutions/sharepoint/collection/overview.md).
@@ -30,7 +30,7 @@ Navigate to the **Jobs** > **SharePoint** > **2.High Risk Sites** > **SP_OpenAcc
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

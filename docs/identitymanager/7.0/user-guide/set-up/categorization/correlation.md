@@ -31,7 +31,7 @@ Sometimes, the managed system doesn't use rigorous rules and thus data quality i
 
 Each rule is configured with a confidence rate to express its reliability, according to data quality and sensitivity.
 
-In our case, correlation/classification can be based on a first rule applicable to quality data resources with a high confidence rate, and a second rule applicable to resources with a lower data quality. This second rule is going to have a lower confidence rate, thus a lower priority, because the strategy is to apply the first rule as much as possible. But the second rule is essential in case the first one doesn't apply, though it cannot be trusted as much as the first rule.
+In this case, correlation/classification can be based on a first rule applicable to quality data resources with a high confidence rate, and a second rule applicable to resources with a lower data quality. This second rule is going to have a lower confidence rate, thus a lower priority, because the strategy is to apply the first rule as much as possible. But the second rule is essential in case the first one doesn't apply, though it can't be trusted as much as the first rule.
 
 Hence correlation/classification rules are configured with a confidence rate:
 
@@ -58,16 +58,16 @@ requested manually or assigned automatically by a resource type rule;
 
     ![Correlation Review - Provisioning Review Screen](/images/identitymanager/categorization_reviewsprovisioningreview_v603.webp)
 
-- on the **Resource Reconciliation** page when the owned resource is not allowed by the role model,
+- on the **Resource Reconciliation** page when the owned resource isn't allowed by the role model,
 i.e. not requested manually nor assigned by a resource type rule. For example, the creation of a correlation rule without a resource type rule triggers unauthorized accounts on the **Resource Reconciliation** page.
 
     ![Correlation Review - Resource Reconciliation Screen](/images/identitymanager/categorization_reviewsresourcereconciliation_v603.webp)
 
-Broadly speaking, the **Resource Reconciliation** page displays non-conforming assignments/values (gaps), i.e. resources and property values from the managed systems that are not allowed by a rule in Identity Manager. The **Provisioning Review** page displays the resource and property changes whose workflows require a manual approval.
+Broadly speaking, the **Resource Reconciliation** page displays non-conforming assignments/values (gaps), i.e. resources and property values from the managed systems that aren't allowed by a rule in Identity Manager. The **Provisioning Review** page displays the resource and property changes whose workflows require a manual approval.
 
 ### Correlation rule examples
 
-Consider AD accounts (**target**) and their owners (**source**). A classic example is to try and correlate identities and AD accounts based on the first name and last name. We can write a correlation rule that states that, for a given identity, Identity Manager looks for all AD accounts that bear the same first name and the same last name. All AD accounts that match this description are said to be **correlated** to the identity. The identity becomes the **owner** of the accounts.
+Consider AD accounts (**target**) and their owners (**source**). A classic example is to try and correlate identities and AD accounts based on the first name and last name. A correlation rule can state that, for a given identity, Identity Manager looks for all AD accounts that bear the same first name and the same last name. All AD accounts that match this description are said to be **correlated** to the identity. The identity becomes the **owner** of the accounts.
 
 A set of correlation rules for a resource type could be:
 
@@ -85,7 +85,7 @@ Correlation rules don't have to compare equivalent properties from Identity Mana
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the application **owner** who knows the application users, entitlements and data model.
+For a given managed system, integrators may need the help of the application **owner** who knows the application users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -99,7 +99,7 @@ The principle of a correlation rule is to compare the expressions of the **sourc
 
 Fill a resource type with a correlation rule by proceeding as follows:
 
-1. On the relevant resource type's page, click on **Correlation Rules** and **+ New**.
+1. On the relevant resource type's page, click **Correlation Rules** and **+ New**.
 
     ![New Correlation Rule](/images/identitymanager/resourcetype_newcorrelrule_v602.webp)
 
@@ -122,29 +122,29 @@ a given **target** object. Can be defined by a property path and/or an [Expressi
 >
         > ![Correlation Rule Example](/images/identitymanager/correlation_example_v602.webp)
 
-3. Click on **Create** and see a line added on the rules page.
-4. On the connector dashboard and in the **Resource Types** frame, click on **Jobs** > **Prepare
-Correlation Keys** to compute the expressions used in the new correlation rule(s), and click on **Jobs** > **Compute Role Model** to apply all correlation rules.
+3. Click **Create** and see a line added on the rules page.
+4. On the connector dashboard and in the **Resource Types** frame, click **Jobs** > **Prepare
+Correlation Keys** to compute the expressions used in the new correlation rules, and click **Jobs** > **Compute Role Model** to apply all correlation rules.
 
 ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 ## Impact of Modifications
 
-An action (addition/modification/deletion) on a correlation rule doesn't trigger a new computation of correlation for the resources that are already **correlated**. The new version of said correlation rule will be applied only to new resources, along with the existing resources whose correlation was not yet reviewed (as unauthorized accounts on the **Resource Reconciliation** screen).
+An action (addition/modification/deletion) on a correlation rule doesn't trigger a new computation of correlation for the resources that are already **correlated**. The new version of said correlation rule will be applied only to new resources, along with the existing resources whose correlation wasn't yet reviewed (as unauthorized accounts on the **Resource Reconciliation** screen).
 
 Thus only non-conforming resources (unauthorized accounts on the **Resource Reconciliation** screen) can have their correlation and classification re-computed.
 
 Even without selecting an **owner**, reviewing unauthorized accounts on the **Resource Reconciliation** screen "blocks" correlation and classification "as is". Neither will be re-computed.
 
-Simulations are available in order to anticipate the changes induced by a creation/modification/deletion in correlation rules. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
+Simulations are available to anticipate the changes induced by a creation/modification/deletion in correlation rules. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
 
-Any modification in correlation rules is taken into account via the following jobs: on the connector dashboard and in the **Resource Types** frame, click on **Jobs** > **Prepare Correlation Keys**, and then on **Jobs** > **Compute Role Model**.
+Any modification in correlation rules is taken into account via the following jobs: on the connector dashboard and in the **Resource Types** frame, click **Jobs** > **Prepare Correlation Keys**, and then on **Jobs** > **Compute Role Model**.
 
 ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 ## Verify Correlation
 
-In order to verify the process, check the list of [Review Orphaned and Unused Accounts](../../../user-guide/administrate/orphan-unused-account-review) and analyze them to look for patterns revealing correlation issues. To do so, click on the **target** entity type(s) affected by your rule(s) in the left menu of the home page.
+To verify the process, check the list of [Review Orphaned and Unused Accounts](../../../user-guide/administrate/orphan-unused-account-review) and analyze them to look for patterns revealing correlation issues. To do so, click the **target** entity types affected by your rules in the left menu of the home page.
 
 ![Test Entity Type](/images/identitymanager/entitytypecreation_test_v602.webp)
 
@@ -154,11 +154,11 @@ The entity type's page can be configured via XML to customize all displayed colu
 
 A knowledgeable person must analyze a few samples to ensure that resources' owners can all be justified, meaning that orphaned accounts are supposed to be so, and that **correlated** resources are matched with the **right** **owner**.
 
-Another possibility of correlation validation is to compare the **number of AD accounts** to the number of users. However, keep in mind that several accounts are sometimes assigned to a single user.
+Another possibility of correlation validation is to compare the **number of AD accounts** to the number of users. However, several accounts are sometimes assigned to a single user.
 
 ## Troubleshooting
 
-If a resource is not **correlated** (or not correctly), then:
+If a resource isn't **correlated** (or not correctly), then:
 
 ![Uncorrelated Resource](/images/identitymanager/correlation_uncorrelated_v600.webp)
 

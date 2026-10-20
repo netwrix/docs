@@ -10,21 +10,18 @@ The Delete Review window opens from either the
 [Manage Reviews Page](/docs/accessinformationcenter/12.0/resourcereviews/interface/interface.md#manage-reviews-page) or the
 [Review Details Page](/docs/accessinformationcenter/12.0/resourcereviews/interface/interface.md#review-details-page) of the Resource Reviews interface:
 
-- Delete Entire Review — Deleting a review from the Manage Reviews page will delete all instances of
-  the selected review
-- Delete Review Instance — Deleting a review from the Review Details page will delete the selected
-  review instance
+- Delete Entire Review — Deletes all instances of the selected review from the Manage Reviews page
+- Delete Review Instance — Deletes the selected review instance from the Review Details page
 
 ## Delete Entire Review
 
-Select the desired review on the Manage Reviews page and click **Delete**. The Delete Review window
+Select the review you want on the Manage Reviews page and click **Delete**. The Delete Review window
 opens to confirm the action.
 
 ![Delete Review window](/images/accessinformationcenter/12.0/resourcereviews/window/deletereviewentire.webp)
 
 :::warning
-This will delete all instances of the selected review and all historical data
-associated with it.
+Deleting removes all instances of the selected review and all associated historical data.
 :::
 
 
@@ -32,13 +29,13 @@ Click **Yes** to complete the deletion. Click **No** to cancel it. The Delete Re
 
 ## Delete Review Instance
 
-Select the desired review instance from the drop-down menu on the Review Details page and click
+Select the review instance you want from the dropdown menu on the Review Details page and click
 **Delete**. The Delete Review window opens to confirm the action.
 
 ![Delete Review window](/images/accessinformationcenter/12.0/resourcereviews/window/deletereviewinstance.webp)
 
 :::warning
-This will delete all historical data associated to the selected review instance.
+Deleting removes all historical data associated with the selected review instance.
 :::
 
 

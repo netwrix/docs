@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # FSAA: Activity Settings
 
-The File System Activity Auditor Scan Filter Settings page is where activity scan filter settings
-are configured. It is a wizard page for the category of File System Activity Scan.
+Use the File System Activity Auditor Scan Filter Settings page to configure activity scan filter
+settings. It is a wizard page for the category of File System Activity Scan.
 
 ![FSAA Data Collector Wizard Activity Settings page](/images/accessanalyzer/11.6/admin/datacollector/fsaa/activitysettings.webp)
 
@@ -28,16 +28,16 @@ In the Scan Limit section, configure the following:
 - Set Log Processing Limit – Stops the scan after the set number of MB or GB of log files are
   processed and the threshold number is reached
 
-These filters affect what data is collected from the activity logs. However, enabling these filters
-also causes the corresponding bulk import query to purge the database of selected activity
+These filters affect what data the scan collects from the activity logs. However, enabling these
+filters also causes the corresponding bulk import query to purge the database of selected activity
 information older than the time filter specified here.
 
-If either is left deselected, all available log files are collected and stored. This has a direct
-impact on both scan time and database size.
+If you leave either deselected, the scan collects and stores all available log files. This has a
+direct impact on both scan time and database size.
 
 :::tip
-Remember, the file activity options require the Activity Monitor to be deployed, configured, and
-services running.
+Remember, the file activity options require you to deploy and configure the Activity Monitor and run
+its services.
 :::
 
 
@@ -55,7 +55,7 @@ Query window.
 
 ![Host Mapping Query window](/images/accessanalyzer/11.6/admin/datacollector/fsaa/hostmappingquery.webp)
 
-When the Enable host mapping checkbox is selected, the query textbox is enabled. The SQL query
+When you select the Enable host mapping checkbox, the query textbox becomes available. The SQL query
 provided by a user should return a set of log locations, target hosts, and host names of the
 Monitored Hosts in the Activity Monitor. The target tables must reside within the Enterprise Auditor
 database and contain at least the following columns:
@@ -71,21 +71,21 @@ database and contain at least the following columns:
 - Host – Name of the host being targeted in the FSAC scan and Bulk Import which the activity events
   will be mapped to
 
-Enter the SQL query by clicking Sample Query then replacing the sample text in the textbox, as shown
-above. The SQL query must target tables that have the required columns populated with the host
+Enter the SQL query by clicking **Sample Query**, then replace the sample text in the textbox as
+needed. The SQL query must target tables that have the required columns populated with the host
 mapping.
 
 (Optional) Enter a host in the **Host parameter value (@host)** textbox to test the query to
 retrieve the data for that host.
 
 Select **Test Query** to open a preview of the results in the Query Results window. Ensure that the
-data being retrieved by the query is expected. When this option is selected, the data collector runs
+query retrieves the expected data. When you select this option, the data collector runs
 against the target table.
 
 ### Host-Agent Mapping
 
-Enterprise Auditor can be configured via the Host Mapping feature to support the use of Multiple
-Activity Monitor Agents for a single targeted Host. See the examples below:
+You can configure Enterprise Auditor via the Host Mapping feature to support the use of Multiple
+Activity Monitor Agents for a single targeted Host. See the following examples:
 
 Single-Host Single-Agent Example:
 

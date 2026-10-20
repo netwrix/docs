@@ -16,7 +16,7 @@ enrolled with, while signing into Admin Center or the Directory Manager portal. 
 multiple authentication types can use any one type to authenticate.
 
 :::note
-Directory Manager SFA does not apply to Microsoft Entra ID MFA enabled users.
+Directory Manager SFA doesn't apply to Microsoft Entra ID MFA enabled users.
 :::
 
 

@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Update Authentication Credentials in a Storage Profile
 
-Follow the steps to update authentication credentials for a Storage Profile in the Enterprise
-Auditor Console.
+To update authentication credentials for a Storage Profile in the Enterprise
+Auditor Console:
 
 **Step 1 –** Navigate to the **Settings** > **Storage** page.
 
@@ -21,4 +21,4 @@ Auditor Console.
 
 **Step 5 –** Click **Apply**.
 
-A new password has been added to a Storage profile.
+You have added a new password to the Storage profile.

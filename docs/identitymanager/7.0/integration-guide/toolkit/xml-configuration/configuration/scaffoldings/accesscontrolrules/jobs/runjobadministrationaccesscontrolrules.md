@@ -25,7 +25,7 @@ Generates the rights to launch from UI jobs that are in state blocked after a Pr
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_JobInstance_RunJobLaunch" DisplayName_L1="Administrator - Management for JobInstance" DisplayName_L2="Administrator - Gestion des JobInstance" EntityType="JobInstance" Profile="Administrator">

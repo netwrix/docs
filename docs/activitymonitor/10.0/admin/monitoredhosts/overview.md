@@ -81,7 +81,7 @@ you can add a user to Account Exclusions, set the retention period for log files
 disable reporting of Directory Read operations.
 
 To initiate bulk editing, select multiple hosts or outputs (`Ctrl+A` and `Ctrl+Shift+A` may help
-here), and click the **Edit** Edit button. The Properties window shows divergent settings as blank
+here), and click the **Edit** button. The Properties window shows divergent settings as blank
 or in the unknown state or with the `<-Different-Values->` marker for the list-like settings. Leave
 the `<-Different-Values->` marker to preserve the difference in each selected object, or delete it
 to remove all divergent elements. When the window closes, only changed properties are saved to all

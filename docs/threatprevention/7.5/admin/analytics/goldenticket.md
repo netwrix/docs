@@ -35,7 +35,7 @@ Open the Golden Tickets Analytic Policy in any of the following ways:
 
 - Click Analytics in the left pane to launch the Analytics interface. Then click the gear icon for
   the analytic.
-- Expand the Analytics node and click the desired analytic. On the analytic window, click the gear
+- Expand the Analytics node and click the analytic. On the analytic window, click the gear
   icon available in the top right corner.
 
 The Configure Analytics window has two tabs:
@@ -61,15 +61,15 @@ ticket exceeds either of these values, an incident is triggered.
 The **Policy** tab for configuring analytics consists of three sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/7.5/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can’t be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/overview.md) is configured. The only exception is that the
   [Authentication Monitoring Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/authenticationmonitoring.md) is hard
-  coded, and the Success filter cannot be modified.
+  coded, and the Success filter can’t be modified.
 
   :::info
-  Do not configure any filters for this analytic type.
+  Don't configure any filters for this analytic type.
   :::
 
 
@@ -93,8 +93,7 @@ The **Policy** tab for configuring analytics consists of three sub-tabs:
 
     :::note
     Some authentication events may return only a host name (NetBIOS or FQDN), others
-    may return only an IP address. It is recommended to take this into account when entering
-    filter values.
+    may return only an IP address. If you enter filter values, take this into account.
     :::
 
 
@@ -123,7 +122,7 @@ The top data grid includes the following information for each incident:
 - To Host – Name of the target host
 - To Host IP Address – IP address of the target host
 - Account Name – Security principal of the account that triggered the incident
-- Account SID – Security Identifier of the account used in the event that triggered the incident
+- Account SID – Security Identifier of the account that triggered the incident
 - Access Type – Type of authentication, e.g. RDP, CIFS, etc.
 - Status – Indication of whether the authentication was successful
 - Date/Time – Date timestamp of the monitored event. Hover over the data in this column to view the

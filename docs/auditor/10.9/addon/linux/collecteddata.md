@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Work with Collected Data
 
-Follow the steps to search for collected data:
+**To search for collected data:**
 
 **Step 1 –** Start the Auditor client and navigate to **Search**.
 
@@ -18,4 +18,4 @@ data source only.
 ## Expand List of Gathered Events
 
 Based on the activity you get, you may want to adjust the processing rules, add other relevant
-events, etc. To do that, copy and edit the file with processing rules, and then restart the service.
+events, etc. To do that, copy the file with processing rules, edit it, and then restart the service.

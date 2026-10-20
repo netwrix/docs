@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Exchange Online Activity Auditing Configuration
 
-In order to collect logs and monitor Exchange Online activity using the Netwrix Activity Monitor, it
+to collect logs and monitor Exchange Online activity using the Netwrix Activity Monitor, it
 needs to be registered with Microsoft® Entra ID® (formerly Azure AD).
 
 :::note
@@ -25,14 +25,14 @@ See the Enable Auditing for Exchange Online topic for additional information.
 
 **Configuration Settings from the Registered Application**
 
-The following settings are needed from your tenant once you have registered the application:
+After you have registered the application, the following settings are needed from your tenant:
 
 - Tenant ID – This is the Tenant ID for Microsoft Entra ID
 - Client ID – This is the Application (client) ID for the registered application
 - Client Secret – This is the Client Secret Value generated when a new secret is created
 
     :::warning
-    It is not possible to retrieve the value after saving the new key. It must be
+    It isn't possible to retrieve the value after saving the new key. It must be
     copied first.
     :::
 
@@ -52,8 +52,6 @@ The following settings are needed from your tenant once you have registered the 
     - ActivityFeed.ReadDlp – Read DLP policy events including detected sensitive data
 
 ## Register a Microsoft Entra ID Application
-
-Follow the steps to register Activity Monitor with Microsoft Entra ID.
 
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
@@ -85,8 +83,6 @@ The Overview page for the newly registered app opens. Review the newly created r
 application. Now that the application has been registered, permissions need to be granted to it.
 
 ## Grant Permissions to the Registered Application
-
-Follow the steps to grant permissions to the registered application.
 
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
@@ -133,8 +129,6 @@ be collected.
 
 ## Identify the Client ID
 
-Follow the steps to find the registered application's Client ID.
-
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
@@ -174,8 +168,6 @@ Key.
 
 **Overview Page**
 
-Follow the steps to find the tenant name where the registered application resides.
-
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
@@ -196,9 +188,6 @@ Key.
 
 ## Generate the Client Secret Key
 
-Follow the steps to find the registered application's Client Secret, create a new key, and save its
-value when saving the new key.
-
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
@@ -207,7 +196,7 @@ documentation for additional information.
 
 
 :::warning
-It is not possible to retrieve the value after saving the new key. It must be copied
+It isn't possible to retrieve the value after saving the new key. It must be copied
 first.
 :::
 
@@ -234,7 +223,7 @@ list.
 **Step 5 –** Click **Add** to generate the key.
 
 :::warning
-If this page is left before the key is copied, then the key is not retrievable, and
+If this page is left before the key is copied, then the key isn't retrievable, and
 this process will have to be repeated.
 :::
 
@@ -250,14 +239,12 @@ additional information.
 
 ## Enable Auditing for Exchange Online
 
-Follow the steps to enable auditing for Exchange Online so the Activity Monitor can receive events.
-
 **Step 1 –** In the Microsoft Purview compliance portal at
 [https://compliance.microsoft.com](https://compliance.microsoft.com/), go to **Solutions** >
 **Audit**. Or, to go directly to the Audit page at
 [https://compliance.microsoft.com/auditlogsearch](https://compliance.microsoft.com/auditlogsearch).
 
-**Step 2 –** If auditing is not turned on for your organization, a banner is displayed prompting you
+**Step 2 –** If auditing isn't turned on for your organization, a banner is displayed prompting you
 start recording user and admin activity.
 
 **Step 3 –** Select the **Start recording** user and **admin activity** banner.

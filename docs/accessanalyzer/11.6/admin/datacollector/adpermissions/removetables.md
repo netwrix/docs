@@ -12,7 +12,7 @@ Connection Profile applied should be the same as the one used for the associated
 Permissions Analyzer** > **0.Collection** Job. Follow the steps.
 
 :::warning
-Using this query task results in the deletion of collected data.
+Using this query task deletes collected data.
 :::
 
 
@@ -21,23 +21,23 @@ Using this query task results in the deletion of collected data.
 **Step 2 –** In the Active Directory Permissions Data Collector Wizard, on the Category page select
 the **Remove Tables** category and click **Next**.
 
-**Step 3 –** On the Results page, make sure all the Available Properties are selected and click
+**Step 3 –** On the Results page, ensure all the Available Properties are selected and click
 **Next**.
 
 **Step 4 –** Click **Finish** to close the Active Directory Permissions Data Collector Wizard. Click
 **OK** to close the Query Properties window.
 
-When the job is run, all of the ADPermissions standard reference tables are removed from the
-database.
+When you run the job, Enterprise Auditor removes all of the ADPermissions standard reference tables
+from the database.
 
 :::tip
-Remember, this job deletes data from the Enterprise Auditor database. Ensure the job has been
-configured correctly prior to executing the job.
+Remember, this job deletes data from the Enterprise Auditor database. Ensure you configure the job
+correctly before running it.
 :::
 
 
 :::warning
-Never leave the query task selected after the job has been executed. Accidental data
+Never leave the query task selected after you execute the job. Accidental data
 loss can occur.
 
 :::

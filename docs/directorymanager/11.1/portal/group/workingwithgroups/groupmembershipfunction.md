@@ -37,10 +37,10 @@ and Group 2 with 120 members) and nests them into Group A. Hence, Directory Mana
 member count and takes necessary action before adding members to the group.
 
 :::note
-An Office 365 group cannot have other groups as members. Therefore, the option to break the
+An Office 365 group can't have other groups as members. Therefore, the option to break the
 membership into child groups would have the following impact:  
 An Office 365 group (Group A) will be updated according to the Smart Group update process. When the
-maximum membership limit is hit, the update process will create child group(s). These child groups
+maximum membership limit is hit, the update process will create child groups. These child groups
 will exist but without any link to Group A. Hence, Group A’s membership will be empty.
 :::
 
@@ -64,7 +64,7 @@ Use any of the following methods to add members to groups.
 1. [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the required objects.
 2. Select these objects on the **Search Results** page and click **Add to Group** on the toolbar.
 3. The [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md) is displayed, where you can search and select the
-   group(s) to add the objects to.
+   groups to add the objects to.
 
 ### Method 2:
 
@@ -95,7 +95,7 @@ membership type of an object from permanent to temporary and vice versa.
 You can also add or remove an object from a group's membership for a temporary period.
 
 1. [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search.md) a group to change the membership type of its
-   member(s).
+   members.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's [Group Properties](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed, where the
@@ -117,8 +117,8 @@ You can also add or remove an object from a group's membership for a temporary p
 
         You add Smith as a temporary member to Group A on May 15 for future dates, May 20-30.
 
-        Smith will be displayed in Group A’s membership with ‘Addition Pending’ as its membership
-        type from May 15 to 19. However, Smith would not be added to group membership in the
+        Smith appears in Group A’s membership with ‘Addition Pending’ as its membership
+        type from May 15 to 19. However, Smith wouldn't be added to group membership in the
         provider.
 
         On May 20, Smith will become a temporary member of Group A and its membership type will
@@ -137,7 +137,7 @@ You can also add or remove an object from a group's membership for a temporary p
 
         You remove Smith from Group A on May 15 for future dates, May 20-30.
 
-        Smith will be displayed in Group A’s membership with ‘Removal Pending’ as membership type
+        Smith appears in Group A’s membership with ‘Removal Pending’ as membership type
         from May 15 to 19.
 
         On May 20, Smith’s membership type in Directory Manager will change to ‘Temporary Removed’;
@@ -158,14 +158,14 @@ temporary members from group membership on the specified dates.
 
 Consider a scenario where the Membership Life Cycle job is scheduled to run once a week, say
 Mondays. If an object is to be added to group membership for three days - Wednesday till Friday, it
-will not be added. This happens because the Membership Life Cycle job did not run on the particular
+will not be added. This happens because the Membership Life Cycle job didn't run on the particular
 days for temporary membership update.
 
 ## Remove members permanently from a group
 
-Follow the steps to remove members permanently from a group.
+To remove members permanently from a group.
 
-1. [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to remove member(s) from.
+1. [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search.md) the group you want to remove members from.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's [Group Properties](/docs/directorymanager/11.1/portal/group/properties/overview.md) page is displayed.
@@ -184,11 +184,11 @@ To remove a member temporarily from a group, see Change the membership type of a
 
 ## Add a group to the membership of another group (nesting)
 
-Follow the steps to add a group to the membership of another group (nesting).
+To add a group to the membership of another group (nesting).
 
 1. In Directory Manager portal, click **Groups** in the left navigation pane, select Groups.
 2. Select the My Groups, **My Memberships**, or **My Expiring Groups** tab.
-3. Select the group(s) to add to the membership of another group and click **Add to Group** on the
+3. Select the groups to add to the membership of another group and click **Add to Group** on the
    toolbar.
 4. On the [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md), search and select the group to add members to it,
    and click **OK**.
@@ -248,7 +248,7 @@ You can export members of a group to an external file.
 
 ## Invite a guest user
 
-For a Microsoft Entra ID based identity store, the portal enables you to invite a user from another
+For a Microsoft Entra ID based identity store, use the portal to invite a user from another
 Microsoft Entra ID tenant to the membership of a group in your domain.
 
 1. In Directory Manager portal, click **Groups** in the left navigation pane, select Groups.
@@ -272,12 +272,12 @@ Microsoft Entra ID tenant to the membership of a group in your domain.
 
         :::note
         If the group you want to invite a guest user to is a distribution group and the
-        invited user is not in the guest user list of Microsoft 365 Admin portal than the invited
-        user is not added into the group on the first invite but on the second invite.
+        invited user isn't in the guest user list of Microsoft 365 Admin portal than the invited
+        user isn't added into the group on the first invite but on the second invite.
         :::
 
 
-5. The guest user is sent an email with the redirect link. On clicking this link, the guest user is
+5. The guest user is sent an email with the redirect link. On clicking the redirect link, the guest user is
    successfully invited.
 
     The **Invite User** button on the **Invite User** dialog box changes to **Add To Group**.

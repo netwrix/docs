@@ -34,7 +34,7 @@ Next, you may have to pass second factor authentication, depending on whether it
 role in the identity store. You can perform tasks in Directory Manager portal in keeping with your
 role and permissions in the identity store.
 
-Follow the steps to log in.
+To log in.
 
 Step 1 – Enter the portal URL in the address bar of a web browser and press Enter. For example:
 
@@ -58,7 +58,7 @@ account, or click **Edit** next to the identity store name to connect to a diffe
 Step 4 – After providing your credentials, click **Sign In**.
 
 :::note
-Microsoft Entra ID MFA enabled users cannot log into Directory Manager using their username
+Microsoft Entra ID MFA enabled users can't log into Directory Manager using their username
 and password. They will be authenticated through the SAML provider configured in Directory Manager.
 :::
 
@@ -71,7 +71,7 @@ topics for additional information on configuring a SAML provider:
 - [Configure Directory Manager in Microsoft Entra ID for SSO](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureinentra.md)
 - [Configure the Microsoft Entra SSO Application in Directory Manager](/docs/directorymanager/11.1/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md)
 
-Follow the steps to log in with a SAML provider
+To log in with a SAML provider
 
 Step 1 – Click **Log in to continue** on the portal to Directory Managerpage.
 

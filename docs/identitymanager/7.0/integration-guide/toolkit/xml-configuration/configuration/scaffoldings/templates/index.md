@@ -22,7 +22,7 @@ Creates all configuration items to add a ReportQuery for an EntityType and profi
 Assigns a set of rights to a given profile to execute any job, and view all job instances, task instances and logs.
 - [JobViewAccessControlRules](./jobviewaccesscontrolrules)
 
-Scaffolding to generate a set of rights to view all JobInstances, TaskInstances and logs.
+Scaffolding to generate a set of rights to view all JobInstances, TaskInstances, and logs.
 - [SimulationAccessControlRules](./simulationaccesscontrolrules)
 
 Generates the permissions to configure and launch simulations.

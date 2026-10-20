@@ -6,11 +6,11 @@ sidebar_position: 40
 
 # EWSPublicFolder FW: BodyOptions
 
-The BodyOptions page is where the size of messages is selected.
+Use the BodyOptions page to select the message size unit.
 
 ![Filter Wizard BodyOptions page](/images/accessanalyzer/12.0/admin/datacollector/ewsmailbox/filterwizard/bodyoptions.webp)
 
-Select the desired message size unit:
+Select the message size unit:
 
 - KB
 - MB

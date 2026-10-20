@@ -62,8 +62,8 @@ To resolve this error, follow the steps below:
    | `MaxFieldLength` | DWORD      | `65536 (Decimal) or 10000 (Hexadecimal)`       |
    | `MaxRequestBytes` | DWORD      | `16777216 (Decimal) or 1000000 (Hexadecimal)` |
 
-For detailed information on this error message, refer to the full Microsoft documentation: [Troubleshooting HTTP 400 Bad Request Responses — Microsoft 🤥](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/iis/www-authentication-authorization/http-bad-request-response-kerberos#workaround-1-decrease-the-number-of-active-directory-groups).
+For detailed information on this error message, refer to the full Microsoft documentation: [Troubleshooting HTTP 400 Bad Request Responses — Microsoft](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/iis/www-authentication-authorization/http-bad-request-response-kerberos#workaround-1-decrease-the-number-of-active-directory-groups).
 
 ## Related Article
 
-- [Troubleshooting HTTP 400 Bad Request Responses — Microsoft 🤥](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/iis/www-authentication-authorization/http-bad-request-response-kerberos#workaround-1-decrease-the-number-of-active-directory-groups)
+- [Troubleshooting HTTP 400 Bad Request Responses — Microsoft](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/iis/www-authentication-authorization/http-bad-request-response-kerberos#workaround-1-decrease-the-number-of-active-directory-groups)

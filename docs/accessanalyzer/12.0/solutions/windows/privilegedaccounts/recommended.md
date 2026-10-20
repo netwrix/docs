@@ -9,8 +9,8 @@ sidebar_position: 10
 **Dependencies**
 
 - SG_AccountPrivileges – To populate the Local Administrator column, which is hidden by default, the
-  SG_LocalAdmins job must be run prior to running this job
-- The **Logon Rights** > **Collection** job group must be run prior to running the SG_LocalPolicies
+  SG_LocalAdmins job must be run before running this job
+- The **Logon Rights** > **Collection** job group must be run before running the SG_LocalPolicies
   job
 
 **Targeted Hosts**
@@ -36,7 +36,7 @@ Domain Admin privileges if targeting domain controllers.
 - Assign the appropriate target host list under Hosts List Assignment for each job group
 
 **Step 2 –** Prerequisite: Ensure that the .Active Directory Inventory job group has successfully
-run prior to running this job group.
+run before running this job group.
 
 **Step 3 –** Schedule the Privileged Accounts job group or the individual job groups within the
 Privleged Accounts job group to run as desired.

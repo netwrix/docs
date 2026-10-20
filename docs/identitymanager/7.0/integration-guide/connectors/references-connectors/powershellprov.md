@@ -37,7 +37,7 @@ There are no export capabilities for this connector.
 
 ## Fulfill
 
-This connector executes a PowerShell script for the creation, deletion and update of any entity linked to the managed system.
+This connector executes a PowerShell script for the creation, deletion, and update of any entity linked to the managed system.
 
 > For example, it can fulfill the `mailboxes` entity from Microsoft Exchange.
 

@@ -19,7 +19,7 @@ administrator can customize the wizard by adding or removing pages and fields.
 
 ## Create a mailbox in an Microsoft Entra ID
 
-Follow the steps to create a mailbox object in an Microsoft Entra ID identity store.
+To create a mailbox object in an Microsoft Entra ID identity store.
 
 Step 1 – In the Directory Manager portal, click the **Create New** button and select **Mailbox**.
 

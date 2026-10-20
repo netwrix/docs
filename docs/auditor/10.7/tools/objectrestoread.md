@@ -35,15 +35,15 @@ their passwords preserved, you must modify the Schema container settings so that
 are retained when accounts are being deleted.
 
 To perform this procedure, you will need the
-[ADSI Edit](http://technet.microsoft.com/en-us/library/cc773354(v=ws.10).aspx) utility.utility.
+[ADSI Edit](http://technet.microsoft.com/en-us/library/cc773354(v=ws.10).aspx) utility.
 
-Follow the steps to modify schema container settings.
+To modify schema container settings, complete the following steps:
 
 **Step 1 –** Navigate to Start > Windows Administrative Tools > ADSI Edit.
 
 **Step 2 –** Right-click the **ADSI Edit** node and select **Connect To**. In the **Connection
 Settings** dialog, enable **Select a well-known Naming Context** and select **Schema** from the
-drop-down list.
+dropdown list.
 
 **Step 3 –** Expand the Schema your_Root_Domain_name node. Right-click the CN=Unicode-Pwd attribute
 and select Properties.
@@ -58,7 +58,7 @@ Now you will be able to restore deleted accounts with their passwords preserved.
 
 ## Roll Back Unwanted Changes
 
-Follow the steps to roll back unwanted changes.
+To roll back unwanted changes, complete the following steps:
 
 **Step 1 –** Navigate to Start > Netwrix Auditor > Netwrix Auditor Object Restore for Active
 Directory.

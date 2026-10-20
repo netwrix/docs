@@ -12,7 +12,7 @@ sidebar_position: 280
 
 Consider an external system that is fulfilled manually and requires a new password.
 
-To avoid writing the password in any file while still choosing a cryptographically secure password, we generate it just before using it.
+To avoid writing the password in any file while still choosing a cryptographically secure password, generate it just before using it.
 
 `--auto-generate true --digit-chars 2 --lower-case-chars 6 --symbol-chars 2 --upper-case-chars 2`
 

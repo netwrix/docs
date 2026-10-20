@@ -27,13 +27,13 @@ When using only a context rule without a record section, the context generation 
 
 As described in the [Identity Management](../../integration-guide/identity-management), identities are complex to model. Records were introduced to tackle this complexity by allowing multiple positions for the same identity.
 
-[Record Section](../../integration-guide/toolkit/xml-configuration/provisioning/recordsection) go further by modeling the relationship between positions. Indeed with record sections, it is possible to define:
+[Record Section](../../integration-guide/toolkit/xml-configuration/provisioning/recordsection) go further by modeling the relationship between positions. Indeed with record sections, define:
 
 - what are the shared properties between all positions?
 - what are the properties unique to each position?
 - what happens when there is a time gap between two positions, should the previous be extended or
-should the future position be used to fill the gap?
-- what happens when a position property value is not defined?
+should the future position be used to cover the missing time?
+- what happens when a position property value isn't defined?
 
 Before illustrating how the record sections can be configured to handle most cases of position management, here is the background situation for the examples that follow:
 
@@ -65,7 +65,7 @@ The context rule start/end dates bindings and expressions won't have any effect 
 <RecordSection Identifier="Directory_UserRecord_Position" DisplayName_L1="Position Properties" SourceEntityType="Directory_User" ResourceEntityType="Directory_UserRecord" StartProperty="StartDate" EndProperty="EndDate">    <Property Property="Department" ExtensionKind="None" />    <Property Property="Location" ExtensionKind="None" />    <Property Property="JobTitle" ExtensionKind="None" /></RecordSection>
 ```
 
-The configuration above binds the position to the contract end date, meaning that a position without an end date will take the end date of the contract. The properties of the position record section cannot be propagated, meaning if a position does not have a `Location` it cannot take the `Location` of the previous or future position.
+The configuration above binds the position to the contract end date, meaning that a position without an end date will take the end date of the contract. The properties of the position record section can't be propagated, meaning if a position doesn't have a `Location` it can't take the `Location` of the previous or future position.
 
 The following image shows the positions of `Mark Barn` in a defined timeline.
 
@@ -87,10 +87,10 @@ Any rules targeting all identities will be assigned to `Mark Barn` from `Cs` to 
 
 #### Extension of a property
 
-The record sections can help extend some position property value when for some time the identity does not have a position. For example, let's say that an identity can have multiple positions but they must be in the same `Location`. So it is safe to configure the record sections to copy the `Location` from a position if:
+The record sections can help extend some position property value when for some time the identity doesn't have a position. For example, let's say that an identity can have multiple positions but they must be in the same `Location`. So it is safe to configure the record sections to copy the `Location` from a position if:
 
-- the identity does not have a position for some time;
-- for a position, the `Location` is not defined.
+- the identity doesn't have a position for some time;
+- for a position, the `Location` isn't defined.
 
 Here is the configuration needed to apply this policy.
 
@@ -115,7 +115,7 @@ Any rules targeting identities working in `London` will be assigned to `Mark Bar
 
 #### Extension of a whole position
 
-The property value copy can be leveraged to extend a chosen position when for some time the identity does not have one. See the Generate Contexts topic for additional information. The following configuration and the identity of `Phoebe Buffay` will be used to showcase a position extension. It is done by removing the `ExtensionKind="None"` of the position properties.
+Use the property value copy to extend a chosen position when the identity doesn't have one for some time. See the Generate Contexts topic for additional information. The following configuration and the identity of `Phoebe Buffay` will showcase a position extension. Extend a position by removing the `ExtensionKind="None"` of the position properties.
 
 ````
 *Default section:*

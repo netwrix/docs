@@ -6,7 +6,7 @@ sidebar_position: 130
 
 # Notifications
 
-Identity Manager is able to send notification emails when an action is expected, or a job ends with an error.
+Identity Manager can send notification emails when an action is expected, or a job ends with an error.
 
 Identity Manager provides [Native Notifications](../../integration-guide/notifications/native) for usual cases, for example provisioning review, resource reconciliation, and role reconciliation.
 

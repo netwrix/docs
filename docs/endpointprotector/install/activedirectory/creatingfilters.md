@@ -31,12 +31,12 @@ providing the name, description, and queries;
 
 ![Newly Created Windows Management Instrumentation Filters](createdwmifilters_118x25.webp)
 
-Selecting the 32-bit and 64-bit operating systems:
+To select 32-bit and 64-bit operating systems, use the following queries:
 
 - 32-bit Operating System: Select \* from Win32_Processor where AddressWidth = '32'
 - 64-bit Operating System: Select \* from Win32_Processor where AddressWidth = '64'
 
-You can add the following queries to target certain oeprating systems and/or type of computers:
+You can add the following queries to target certain operating systems and/or type of computers:
 
 - Workstation: Select \* from WIN32_OperatingSystem where ProductType=1
 - Domain Controller: Select \* from WIN32_OperatingSystem where ProductType=2

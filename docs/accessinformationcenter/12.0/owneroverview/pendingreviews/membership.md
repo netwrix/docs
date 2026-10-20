@@ -6,8 +6,7 @@ sidebar_position: 20
 
 # Perform a Membership Review
 
-A Membership review is an evaluation of group membership. Follow the steps to perform a Membership
-review.
+A Membership review is an evaluation of group membership. To perform a Membership review:
 
 **Step 1 –** On the Pending Reviews page, select the resource with a pending Membership review and
 click **Begin Review**. The Resource Review page opens to the 1 Make changes tab.
@@ -31,7 +30,7 @@ The table displays membership information for the group being reviewed:
 
 **Step 2 –** Recommend removing membership by selecting one or more trustees and clicking the
 **Remove Access** button or by clicking on a checkmark icon. A blank yellow icon indicates you are
-recommending the trustee be removed from the group.
+recommending removing the trustee from the group.
 
 :::tip
 Remember, at any time you can save your recommendations and exit the review. It will remain
@@ -57,5 +56,5 @@ To make changes to your recommendations, you must return to the first tab. Click
 **Step 5 –** When all recommendations are confirmed and the desire notes added, click **Submit**. A
 message displays stating that the review is complete. Click **OK** to close the message window.
 
-The review for this resource is now complete. You will be redirected to the Pending Reviews page.
-Your recommended changes have been sent to the Review Administrator for approval and processing.
+The review for this resource is now complete. The system redirects you to the Pending Reviews page.
+Your recommended changes go to the Review Administrator for approval and processing.

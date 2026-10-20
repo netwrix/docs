@@ -10,7 +10,7 @@ This page lists the component versions, platforms, and network devices that Netw
 
 ## Hub Compatibility Matrix
 
-The following table shows Hub releases and the component versions verified to work with each release.
+The following table shows Hub releases and the component versions that Netwrix has verified with each release.
 
 | Hub   | Gen7 Agent | Express Agent | Sync Service | MongoDB | .NET Runtime |
 | ----- | ---------- | ------------- | ------------ | ------- | ------------ |
@@ -21,6 +21,10 @@ The following table shows Hub releases and the component versions verified to wo
 | 8.1.0 | 7.2.0      | 2.1.1         | 2.1.0        | 8.0.5   | 8.0.0        |
 | 8.0.0 | 7.1.5      | 2.1.1         | 2.1.0        | 7.0.1   | 8.0.0        |
 | 7.7.4 | 7.1.4      | 2.1.1         | 2.0.4        | 7.0.1   | 6.0.0        |
+
+:::info
+The remaining information on this page applies to the latest Change Tracker release. Confirm the latest release on the [Netwrix Community](https://community.netwrix.com/c/products/change-tracker/news/98).
+:::
 
 ## Windows Operating Systems
 
@@ -37,8 +41,7 @@ The versions in the following table cover Standard and Datacenter editions, plus
 
 ## Linux (RedHat Based) Operating Systems
 
-This table assumes Intel/AMD x64 architecture. Express Agent is also available on 32 bit and s390x
-architectures upon request.
+Express Agent is also available on 32 bit and s390x architectures upon request.
 
 | Linux (RedHat Based) | Change Tracker Management Software | Change Tracker Agent | Express Agent | Change Tracker Agentless |
 | -------------------- | :--------------------------------: | :------------------: | :-----------: | :----------------------: |
@@ -52,8 +55,7 @@ architectures upon request.
 
 ## Linux (Debian Based) Operating Systems
 
-This table assumes Intel/AMD x64 architecture. Express Agent is also available on 32 bit and s390x
-architectures upon request.
+Express Agent is also available on 32 bit and s390x architectures upon request.
 
 | Linux (Debian Based)         | Change Tracker Management Software | Change Tracker Agent | Express Agent | Change Tracker Agentless |
 | ---------------------------- | :--------------------------------: | :------------------: | :-----------: | :----------------------: |
@@ -63,7 +65,7 @@ architectures upon request.
 
 ## Other Linux Operating Systems
 
-This table assumes Intel/AMD x64 architecture. Express Agent is also available on 32 bit and s390x architectures upon request.
+Express Agent is also available on 32 bit and s390x architectures upon request.
 
 | Other Linux               | Change Tracker Agent | Express Agent | Change Tracker Agentless |
 | ------------------------- | :------------------: | :-----------: | :----------------------: |

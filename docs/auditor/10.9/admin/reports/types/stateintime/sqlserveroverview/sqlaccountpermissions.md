@@ -24,8 +24,8 @@ The summary section shows:
     - Windows Account
     - Login SQL Authentication
     - DB SQL User with password
-- **Job title** —reported for Active Directory users as set in their corresponding attribute. If not
-  set, _`<not set>`_ is reported.
+- **Job title** — the value set in the corresponding attribute for Active Directory users. If no
+  value is set, the report displays _`<not set>`_.
 - **Total objects count** — total number of objects that this account has access to.
 
 The detailed information under summary includes:
@@ -36,7 +36,7 @@ The detailed information under summary includes:
   _Databases\database_name_.
 - **Object type** — monitored object type; for the full list of supported object types, refer to
   [SQL Server](/docs/auditor/10.9/configuration/sqlserver/overview.md) topic.
-- **Means granted** —how access permissions were granted to this account, e.g., _Direct permissions_
+- **Means granted** —how this account received access permissions, e.g., _Direct permissions_
   or _Server role permissions_.
 - **Effective grant** —the effective set of permissions granted to this account on the selected
   object.
@@ -51,7 +51,7 @@ This report has the following filters:
   value is filled in automatically.
 - **Snapshot date** —select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
-  To report on other snapshots, make sure they are available through import. For details, see
+  To report on other snapshots, ensure they are available through import. For details, see
   **Manage historical snapshots** option description in
   [SQL Server](/docs/auditor/10.9/admin/monitoringplans/sqlserver/overview.md)
 - **Item**— name of the SQL Server instance monitored with selected monitoring plan.
@@ -61,8 +61,8 @@ This report has the following filters:
   path as follows: _Databases\database_name_.
 - **Object type**— type of the monitored object that provided data for this report. Possible values:
   _Database_, _Server Instance_.
-- **Permissions** —access permissions whose assignment you want to be reported for selected account.
-- **Means granted** —how access permissions were granted to this account. You can select _Directly_,
+- **Permissions** —access permissions you want to report on for the selected account.
+- **Means granted** —how this account received access permissions. You can select _Directly_,
   _Inherited_, or both (default setting).
 - **Account type** —possible values: _Windows Account_, _Login SQL Authentication_, _DB SQL User
   with password_.
@@ -70,11 +70,11 @@ This report has the following filters:
 
 ## Considerations and limitations
 
-- Reporting for case-sensitive SQL Servers and databases is not supported.
-- Permissions for INFORMATION*SCHEMA granted via \_master db* will not be reported.
+- The report doesn't support case-sensitive SQL Servers and databases.
+- The report will not show permissions for INFORMATION*SCHEMA granted via \_master db*.
 - The report will not show the RESTORE capability for the database owner.
 
-- When calculating effective rights and permissions, the following will not be considered:
+- When calculating effective rights and permissions, the report will not consider the following:
 
     - Ownership chaining
     - Cross DB ownership chaining

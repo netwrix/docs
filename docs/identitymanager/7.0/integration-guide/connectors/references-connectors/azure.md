@@ -14,7 +14,7 @@ This page is about [Azure](../../../integration-guide/connectors/references-pack
 
 ## Prerequisites
 
-Implementing this connector requires at least the `Security Reader` role, because Identity Manager does not access the [Azure API](https://docs.microsoft.com/en-us/rest/api/azure/) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/rest/api/azure/).
+Implementing this connector requires at least the `Security Reader` role, because Identity Manager doesn't access the [Azure API](https://docs.microsoft.com/en-us/rest/api/azure/) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/rest/api/azure/).
 
 ## Export
 
@@ -112,7 +112,7 @@ There are no fulfill capabilities for this connector.
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 

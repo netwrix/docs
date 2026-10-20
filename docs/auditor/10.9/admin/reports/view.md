@@ -19,7 +19,7 @@ To view reports, users need the following:
    [SQL Server Reporting Services](/docs/auditor/10.9/requirements/sqlserverreportingservice.md) topic for
    additional information.
 
-To view a report
+To view a report:
 
 You can add any elements (a dashboard, report, alert, risk, etc.) to the Auditor Home screen to
 access them instantly. See the [Navigation](/docs/auditor/10.9/admin/navigation/overview.md) and
@@ -41,7 +41,7 @@ To learn how to subscribe to a report, see [Create Subscriptions](/docs/auditor/
 
 If no data is displayed in the report, you may need to do the following:
 
-1. Make sure that the Audit Database settings are configured properly in the monitoring plan, and
+1. Ensure that the Audit Database settings are configured properly in the monitoring plan, and
    that data is written to databases that reside on the default SQL Server instance. See the
    [Audit Database](/docs/auditor/10.9/admin/settings/auditdatabase.md) topic for additional information.
 2. For SSRS-based reports - verify that SSRS (SQL Server Reporting Services) settings are configured
@@ -53,12 +53,12 @@ If no data is displayed in the report, you may need to do the following:
 
 ## Customize Report with Filters
 
-Report filters allow you to display changes matching certain criteria. For example, you can filter
-changes by audited domain or object type. Filtering does not delete changes, but modifies the report
-view allowing you to see changes you are interested in. Filters can be found in the upper part of
+Use report filters to display changes matching certain criteria. For example, you can filter
+changes by audited domain or object type. Filtering doesn't delete changes, but modifies the report
+view allowing you to see changes you are interested in. Find filters in the upper part of
 the Preview Report page.
 
-To apply filters
+To apply filters:
 
 1. Navigate to Reports and generate a report.
 2. Apply required filters to the report and click View Report. For example, you can update report
@@ -66,16 +66,16 @@ To apply filters
 
 Wildcards are supported. For example, type _%companydomain\admin2%_ in the Who domain\user field if you want to view changes made by the companydomain\admin2 user only.
 
-Do not use % in the exclusive filters (e.g., Who (Exclude domain\user)). Otherwise, you will receive
+Don't use % in the exclusive filters (e.g., Who (Exclude domain\user)). Otherwise, you will receive
 an empty report.
 
-`escape_characters` are not supported.
+`escape_characters` aren't supported.
 
 The filters may vary slightly depending on the audited system and report type.
-Below is the All Active Directory Changes report with the default filter:
+The following image shows the All Active Directory Changes report with the default filter:
 
 ![allchangesserver](/images/auditor/10.9/admin/reports/allchangesserver.webp)
 
-Below is the same report, but filtered by a specific user on a selected domain controller, sorted by a specific type:
+The following image shows the same report, but filtered by a specific user on a selected domain controller, sorted by a specific type:
 
 ![allchangesserverfiltered](/images/auditor/10.9/admin/reports/allchangesserverfiltered.webp)

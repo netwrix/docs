@@ -9,15 +9,15 @@ sidebar_position: 20
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+certain built-in Windows services, etc. Configure auditing properly to ensure audit data
+integrity; otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-Active Directory Federation Services (AD FS) server role can be assigned:
+You can assign the Active Directory Federation Services (AD FS) server role:
 
 - to a domain controller
 - to a Windows server joined in the domain
@@ -27,18 +27,18 @@ configuration replicated between them. The first AD FS federation server you set
 becomes the **primary** server. Other federation servers you add to the farm will become
 **secondary** servers.
 
-Make sure you have Windows Remote Management properly configured on your Auditor console computer.
+Ensure you have Windows Remote Management properly configured on your Auditor console computer.
 See the [Software Requirements](/docs/auditor/10.9/requirements/software.md) topic for additional information.
 
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
-- Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary. See the Configure AD FS farm audit
-  settings automatically topic for additional information.
-- Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
-  reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
-  configure them manually:
+- Automatically through a monitoring plan – This is the recommended method. If you select to
+  configure audit automatically in the target environment, Auditor checks your current audit
+  settings on each data collection and adjusts them if necessary. See the Configure AD FS farm
+  audit settings automatically topic for additional information.
+- Manually – Adjust native audit settings manually to collect comprehensive, reliable audit
+  data. You can enable Auditor to continually enforce the relevant audit policies, or configure
+  them manually:
 
     - AD FS audit settings must be configured on the primary AD FS server, i.e. on the first server
       you have set up in the farm:
@@ -71,9 +71,9 @@ You can configure your IT Infrastructure for monitoring in one of the following
 
 ## **Configure AD FS farm audit settings automatically**
 
-Audit settings can be applied automatically if your monitoring plan has the primary AD FS federation
-server included as an item. If it has only secondary AD FS federation servers included, you will
-need to configure audit settings manually, as described later in this section.
+Auditor can apply audit settings automatically if your monitoring plan includes the primary AD FS
+federation server as an item. If it includes only secondary AD FS federation servers, you need to
+configure audit settings manually, as described later in this section.
 
 **Step 1 –** Select the AD FS data source in this monitoring plan (top row under the header), click
 **Edit data source** to open its settings.
@@ -81,7 +81,7 @@ need to configure audit settings manually, as described later in this section.
 ![mp_adfs_listing_thumb_0_0](/images/auditor/10.9/configuration/activedirectoryfederatedservices/mp_adfs_listing_thumb_0_0.webp)
 
 **Step 2 –** In the **Configure audit settings** section, select **Adjust audit settings
-automatically** check box.
+automatically** checkbox.
 
 ![mp_data_source_ad_fs_thumb_0_0](/images/auditor/10.9/configuration/activedirectoryfederatedservices/mp_data_source_ad_fs_thumb_0_0.webp)
 
@@ -91,8 +91,6 @@ Auditor will automatically configure audit settings on all servers in the AD FS 
 necessary log settings on these servers.
 
 ## Configure AD FS farm manually
-
-Follow the steps to enable AD FS audit settings and set up Windows audit policy.
 
 **Step 1 –** AD FS audit settings must be configured on the primary AD FS server, i.e. on the first
 server you have set up in the farm:
@@ -133,14 +131,14 @@ _Remember,_ do the following:
 ## AD FS Servers Data Collection
 
 For Active Directory Federation Services (AD FS) servers, Netwrix Auditor can collect audit data on
-the events and configuration objects listed below.
+the following events and configuration objects.
 
 | Event type             | Action           | Details                                          |
 | ---------------------- | ---------------- | ------------------------------------------------ |
 | AD FS logon (intranet) | Failed Logon     | Cause (for failed attempts)                      |
 | AD FS logon (extranet) | Successful Logon | Authentication methods (for Successful attempts) |
 
-Configuration information can be collected for the following objects:
+Auditor can collect configuration information for the following objects:
 
 - AD FS servers included in the farm
 - Application Groups settings

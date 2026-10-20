@@ -11,13 +11,13 @@ you to select an access level different to what has been requested. See the
 [Pending Access Requests](/docs/accessinformationcenter/12.0/owneroverview/owners/pendingrequests/pendingrequests.md) topic for additional information. Follow the
 steps to grant a different access level.
 
-**Step 1 –** On the Pending Access Requests Page of the Owner portal, select the desired request and
+**Step 1 –** On the Pending Access Requests Page of the Owner portal, select the request you want and
 click **More Options**. The Select Access window opens.
 
 ![Select Access window](/images/accessinformationcenter/12.0/accessrequests/window/selectaccess.webp)
 
-**Step 2 –** The drop-down menu provides alternative access levels. Options vary based on how the
-resource was configured for self-service. Select the desired Access Level.
+**Step 2 –** The dropdown menu provides alternative access levels. Options vary based on how the
+resource was configured for self-service. Select the Access Level you want.
 
 :::tip
 Remember, this is only applicable to file system and SharePoint resources. Group membership only
@@ -28,7 +28,7 @@ has one access level, Membership.
 **Step 3 –** Optionally select to only grant temporary access, or change a requested expiration
 date:
 
-- If only temporary access is required, select the checkbox, click **Set Date** and select an
+- If you need only temporary access, select the checkbox, click **Set Date** and select an
   expiration date (or modify an existing date set by the requester).
 - The owner also has the option to remove the expiration date by deselecting the temporary access
   option.

@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Integrations
 
-Netwrix Auditor Integration API—endless integration, auditing and reporting capabilities.
+Netwrix Auditor Integration API—endless integration, auditing, and reporting capabilities.
 
 The Netwrix Auditor Integration API provides access to audit data collected by Netwrix Auditor
 through REST API endpoints. According to the RESTful model, each operation is associated with a URL.
@@ -26,5 +26,4 @@ Netwrix recommends adding a special data source to your monitoring plan—Netwri
 In Netwrix Auditor 9.0, Netwrix has updated API schemas. See the
 [Compatibility Notice](/docs/auditor/10.8/api/compatibility.md) topic for additional information.
 
-To learn more about Integration API capabilities, refer to the
-[Integration API](/docs/auditor/10.8/api/overview.md).
+For more information about Integration API capabilities, see [Integration API](/docs/auditor/10.8/api/overview.md).

@@ -7,7 +7,8 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
+import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -49,6 +50,27 @@ const activeProductIds = redirectProducts.map(product => product.id);
 const activeVersionsByProduct = Object.fromEntries(
   redirectProducts.map(product => [product.id, getActiveVersions(product).map(v => v.version)])
 );
+
+// Docs base paths that currently serve pages without a version segment, used
+// client-side to redirect stale /docs/<product>/<version>/<page> links to
+// /docs/<product>/<page>. Derived from the route base path the plugin actually
+// mounts rather than from the version name: a lone version named 'current' can
+// still carry a customRoutePath (docs/identitymanager/current) and serve
+// versioned URLs, so comparing against product.path is what makes the
+// "unversioned" inference hold.
+//
+// Reads product.versions rather than getActiveVersions(product) on purpose:
+// DOCS_PRODUCT_LATEST_ONLY narrows the active list to one version, which would
+// make a genuinely multi-version product look collapsed and start rewriting its
+// valid versioned URLs in local single-product builds.
+const unversionedDocsBasePaths = redirectProducts
+  .map(product => {
+    if (product.versions.length !== 1) return null;
+    const [version] = product.versions;
+    const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
+    return routeBasePath === product.path ? `/${routeBasePath}` : null;
+  })
+  .filter(Boolean);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -105,7 +127,9 @@ const config = {
       rspackBundler: true,
       rspackPersistentCache: true,
       mdxCrossCompilerCache: true,
-      ssgWorkerThreads: false,
+      // Renders the static pages across a worker pool instead of one thread.
+      // Requires future.v4.removeLegacyPostBuildHeadAttribute, set below.
+      ssgWorkerThreads: true,
     },
     v4: {
       removeLegacyPostBuildHeadAttribute: true,
@@ -122,6 +146,7 @@ const config = {
   customFields: {
     activeProductIds,
     activeVersionsByProduct,
+    unversionedDocsBasePaths,
   },
   clientModules: ['./src/clientModules/scrollBehavior.js'],
   presets: [
@@ -164,24 +189,30 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: redirectProducts.filter(product => {
-          // Only create redirects for products with multiple versions (not just 'current')
-          return !(product.versions.length === 1 && product.versions[0].version === 'current');
-        }).map(product => {
-          const latestVersion = getDefaultVersion(product);
-          const latestVersionUrl = versionToUrl(latestVersion.version);
+        redirects: [
+          ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...(activeProductIds.includes('changetracker')
+            ? [{ from: '/docs/changetracker/componentreleases', to: '/docs/changetracker' }]
+            : []),
+          ...redirectProducts.filter(product => {
+            // Only create redirects for products with multiple versions (not just 'current')
+            return !(product.versions.length === 1 && product.versions[0].version === 'current');
+          }).map(product => {
+            const latestVersion = getDefaultVersion(product);
+            const latestVersionUrl = versionToUrl(latestVersion.version);
 
-          // Use explicit customRoutePath if specified (e.g., for multi-versioned products with 'current')
-          // Otherwise use standard path generation
-          const targetPath = latestVersion.customRoutePath
-            ? latestVersion.customRoutePath
-            : `${product.path}/${latestVersionUrl}`;
+            // Use explicit customRoutePath if specified (e.g., for multi-versioned products with 'current')
+            // Otherwise use standard path generation
+            const targetPath = latestVersion.customRoutePath
+              ? latestVersion.customRoutePath
+              : `${product.path}/${latestVersionUrl}`;
 
-          return {
-            from: `/${product.path}`,
-            to: `/${targetPath}`,
-          };
-        }),
+            return {
+              from: `/${product.path}`,
+              to: `/${targetPath}`,
+            };
+          }),
+        ],
         createRedirects(existingPath) {
           for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
             const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
@@ -232,6 +263,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Shown only on scoped paths — see src/theme/AnnouncementBar
+      announcementBar: {
+        id: 'endpointprotector-announcement',
+        content: '<a href="https://community.netwrix.com/discourse-ai/ai-bot/conversations?agent=epp-navigator" target="_blank" rel="noopener noreferrer">⚡ <strong>Skip the searching:</strong> Chat with EPP Navigator, an AI guide built on this documentation. <small>(Community account required)</small> <svg class="announcement-external-icon" width="18" height="18" aria-label="(opens in new tab)"><use href="#theme-svg-external-link"></use></svg></a>',
+        backgroundColor: '#5851DB',
+        textColor: '#ffffff',
+        isCloseable: true,
+      },
       // MermaidJS Config
       mermaid: {
         theme: {

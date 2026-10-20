@@ -35,21 +35,21 @@ This process is an optimization of the role model. It is part of the "compute ro
 
 The **classic behavior** gives priority to **approved** manual entitlements over **calculated** automatic ones. A manual assignment stays as is, even if the entitlement is also assigned by a rule.
 
-For example, consider a user who has a given entitlement which was assigned to them manually on several distinct time periods. When creating a rule that assigns the same entitlement to them automatically on a given time period, then we have:
+For example, consider a user who has a given entitlement which was assigned to them manually on several distinct time periods. When creating a rule that assigns the same entitlement to them automatically on a given time period, the result looks like this:
 
 ![Schema - Compute Role Model](/images/identitymanager/redundantassignments_examplewithout.webp)
 
 The **redundant assignment analysis** gives priority to the rules inside the role model and the policy. When an entitlement is assigned via a rule, it is stated as **calculated**, even if it is also assigned manually. Thus, manual assignments whose start and end dates overlap with the validity period are to be truncated or deleted.
 
-For example, consider the same situation as before. Using the redundant assignments analysis, then we have:
+For example, consider the same situation as before. Using the redundant assignments analysis, the result looks like this:
 
 ![Schema - **redundant assignment analysis**](/images/identitymanager/redundantassignments_examplewith.webp)
 
-Redundant assignments can be removed by Identity Manager only when the corresponding assigned items are tagged as redundant and displayed in the most recent report. The manual assigned items that are not tagged are still kept as discretionary entitlements and will not be removed.
+Redundant assignments can be removed by Identity Manager only when the corresponding assigned items are tagged as redundant and displayed in the most recent report. The manual assigned items that aren't tagged are still kept as discretionary entitlements and will not be removed.
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the **application owner** who knows the application's users, entitlements and data model.
+For a given managed system, integrators may need the help of the **application owner** who knows the application's users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -63,16 +63,16 @@ Remove redundant assignments by proceeding as follows:
 
 ![Home Page - Redundant Assignments](/images/identitymanager/home_redundantassignments_v602.webp)
 
-**Step 1 –** Click on **Redundant Assignments** on the home page in the **Administration** section.
+**Step 1 –** Click **Redundant Assignments** on the home page in the **Administration** section.
 
 ![Redundant Assignments - Buttons](/images/identitymanager/redundantassignments_buttons_v602.webp)
 
-**Step 2 –** Click on **Analyze** to tag the manual roles and resource types from all policies eligible for conversion to an automatic state.
+**Step 2 –** Click **Analyze** to tag the manual roles and resource types from all policies eligible for conversion to an automatic state.
 
 :::note
  Previous tags are cleared at each instance of this tagging process. 
 :::
-**Step 3 –** Click on **Download Excel** to download a dedicated XLSX report which contains one tab per entity type representing identities.
+**Step 3 –** Click **Download Excel** to download a dedicated XLSX report which contains one tab per entity type representing identities.
 
 ![Redundant Assignments - Report Example](/images/identitymanager/redundantassignments_reportexample_v602.webp)
 
@@ -80,11 +80,11 @@ The example states that in the entity type Directory_User, the user Nicholas Aco
 
 It means that Nicholas Acosta will have the role in the ****calculated**** state from dateB to dateC, and he will keep the role in the ****approved**** state from dateA to dateB and from dateC to dateD.
 
-**Step 4 –** If the report's content is satisfying, then click on **Apply** to actually switch eligible manual roles to **calculated**.
+**Step 4 –** If the report's content is satisfying, then click **Apply** to actually switch eligible manual roles to **calculated**.
 
 ## Verify Redundant Assignment Removal
 
-In order to verify the process:
+To verify the process:
 
 ![Home Page - Directory User](/images/identitymanager/home_directoryuser_v523.webp)
 
@@ -100,5 +100,5 @@ In order to verify the process:
 
 When **removing redundant assignments** based on the previous report example the setting will be as above.
 
-Once the steps above completed, the state changes to ****approved****.
+After completing the steps above, the state changes to ****approved****.
 

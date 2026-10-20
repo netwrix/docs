@@ -24,10 +24,7 @@ There is also a Settings interface for configuring the QRadar SEC token.
 
 ![Active Directory App for QRadar - Top Ribbon](/images/threatprevention/7.5/siemdashboard/qradar/topribbon.webp)
 
-The User Investigation and Host Investigation dashboards only appear when a search is conducted.
-This can be done by clicking a hyperlink in the Perpetrator, Affected Object (when it is a user
-account), Source IP, or Destination IP columns of a table card. Alternatively, type the complete
-user name or host IP address in the Search box on the right side of the navigation bar.
+The User Investigation and Host Investigation dashboards only appear when a search is conducted. Click a hyperlink in the Perpetrator, Affected Object (when it's a user account), Source IP, or Destination IP columns of a table card, or enter the complete user name or host IP address in the Search box on the right side of the navigation bar.
 
 ## Progress Bar
 
@@ -51,14 +48,14 @@ features:
     filtered out.
   - Total number of entries “Showing” will adjust for the filtered total.
 
-- Sort can be applied to one column at a time by clicking on the desired column header.
+- Sort by one column at a time by clicking on the column header.
 - Show 10, 25, 100, or All entries in the table. Only visible entries can be exported.
-- Result data currently visible in the table can be exported from the dashboard:
+- Export the data visible in the table from the dashboard:
 
-  - Copy – Copy to clipboard in order to paste to another application
+  - Copy – Copy to clipboard to paste into another application
   - CSV – Export to a Comma Separated Value file
   - Excel – Export to an Excel Workbook file
-  - Print – Send currently displayed table to printer
+  - Print – Send the displayed table to printer
 
 ## Graph Card Features
 

@@ -6,25 +6,25 @@ sidebar_position: 100
 
 # HubDetails.xml File
 
-The Agent configuration settings are controlled by the Hub during operations but the initial
-registration necessitates a basic config file for registration with the Hub.
+The Hub controls the Agent configuration settings during operations, but initial registration
+requires a basic config file to register with the Hub.
 
-The **HubDetails.xml** file includes some details unique to your deployment of Change Tracker ,
-hence it requiring your intervention to make sure settings are as needed.
+The **HubDetails.xml** file includes details unique to your deployment of Change Tracker, so you
+must review the settings to ensure they're correct.
 
 The key tags within the file are as follows:
 
 ![AgentHubDetailsFile](/images/changetracker/install/agent/agenthubdetailsfile.webp)
 
 :::tip
-Remember, an unencrypted password means the Agent didn’t initialize and suggests a bad
-installation or .NET Framework issue – remember the Agent on Windows requires .NET Framework V3.5,
-Linux/Solaris requires the latest NNT Mono runtime. Gen 7 Agent also supports additional nodes –
-NamePrefix, NameSuffix.
+An unencrypted password means the Agent didn't initialize, which usually indicates a bad
+installation or a .NET Framework issue. The Agent on Windows requires .NET Framework V3.5, and
+Linux/Solaris requires the latest NNT Mono runtime. The Gen 7 Agent also supports two additional
+nodes: NamePrefix and NameSuffix.
 :::
 
 
-\*The Thumbprint uniquely identifies the Web Server certificate, see the Microsoft
+\*The Thumbprint uniquely identifies the Web Server certificate. See the Microsoft
 [How to: Retrieve the Thumbprint of a Certificate](https://msdn.microsoft.com/en-us/library/ms734695(v=vs.110).aspx)
 article for more information.
 
@@ -40,13 +40,11 @@ article for more information.
 
 **Step 6 –** Scroll to the bottom of the list and highlight the **Thumbprint** field.
 
-**Step 7 –** The thumbprint value will then be displayed – transpose this to your **HubDetails.xml**
-file.
+**Step 7 –** Copy the displayed thumbprint value to your **HubDetails.xml** file.
 
-The next step is to check that there is network connectivity to the Hub URL from the Agent’s host.
+Next, verify network connectivity from the Agent's host to the Hub URL.
 
 :::note
-Where the Change Tracker Hub has been installed on a Windows/IIS platform then the Hub URL
-will be https://192.168.1.36.
-
+If you install the Change Tracker Hub on a Windows/IIS platform, the Hub URL
+is https://192.168.1.36.
 :::

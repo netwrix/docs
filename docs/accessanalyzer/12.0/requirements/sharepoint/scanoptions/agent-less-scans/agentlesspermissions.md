@@ -9,7 +9,7 @@ sidebar_position: 10
 When SharePoint agent-less scans are run, it means all of the data collection processing is
 conducted by the Access Analyzer Console server across the network.
 
-The SharePoint agent-less scan architecture requires permissions to be configured on the specified
+The SharePoint agent-less scan architecture requires you to configure permissions on the specified
 server:
 
 - SharePoint Application Server permissions:

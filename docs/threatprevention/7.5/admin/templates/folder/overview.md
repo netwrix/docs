@@ -8,18 +8,18 @@ sidebar_position: 20
 
 Threat Prevention comes with several policy templates that cover a wide range of event monitoring
 and lockdown. Pre-created policy templates are provided as part of the initial Threat Prevention
-installation process. New policy templates can be created from scratch or from existing policies.
+installation process. You can create new policy templates independently or based on existing policies.
 
-When Threat Prevention is upgraded, new and updated policy templates are available for import. They
-are not automatically imported during the installation of the latest version. Updates can be made to
+When Threat Prevention is upgraded, new, and updated policy templates are available for import. They
+aren't automatically imported during the installation of the latest version. Updates can be made to
 upgrade existing templates for a new release. See the
 [Upgrade Policy Templates](/docs/threatprevention/7.5/install/upgrade/policytemplates.md) topic for additional
 information.
 
 When the Administration Console is launched for the first time, the administrator is asked to import
-pre-created policy templates. If the administrator does not import the templates, they can be
-imported later. See the Import Templates topic for additional information. Once the templates are
-imported, they are available through an organized folder structure.
+pre-created policy templates. If the administrator doesn't import the templates, they can be
+imported later. See the Import Templates topic for additional information. After the templates are
+imported, they're available through an organized folder structure.
 
 ## Template Folders
 
@@ -72,7 +72,7 @@ Templates in the [Templates Interface](/docs/threatprevention/7.5/admin/template
 - The Ransomware folder contains templates that detect the creation of files known to be associated
   with a Ransomware attack.
 - The Reconnaissance folder contains templates that detect an attacker's attempt to discover useful
-  resources to escalate permissions, gain Domain Amin persistence, or exfiltrate information.
+  resources to escalate permissions, gain Domain Admin persistence, or exfiltrate information.
 - The Schema and Configuration folder contains templates that audit changes that happen to data
   stored in the schema or configuration container, such as site creation or attributes being
   indexed.
@@ -80,7 +80,7 @@ Templates in the [Templates Interface](/docs/threatprevention/7.5/admin/template
 
 ## Import Templates
 
-The pre-created policy templates are stored in the `SI_Templates_All.xml` file. If they were not
+The pre-created policy templates are stored in the `SI_Templates_All.xml` file. If they weren't
 imported when the Administration Console is first launched, you can import them later by following
 these steps.
 
@@ -96,7 +96,7 @@ window. The location of the default templates is:
 
 ![Import window](/images/threatprevention/7.5/admin/templates/import.webp)
 
-**Step 4 –** The Import window auto-fills with the import file details. Do not change the defaults
+**Step 4 –** The Import window auto-fills with the import file details. Don't change the defaults
 settings. Click **Import**.
 
 :::note

@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # GroupPolicy: Target
 
-The Target page is where a host from which to get data (in wizard only) and .admx source are
-identified. It is a wizard page for the categories of:
+Use the Target page to identify a host to get data from (in wizard only) and the .admx source. It is
+a wizard page for the categories of:
 
 - Policies State
 - Policies State for all GPOs
@@ -19,9 +19,9 @@ In the Connect to section of the page, select from the following options:
 
 - Default domain – Select this option to connect to the default domain
 - This domain – Select this option and click the ellipsis to open the Browse for Domain window. Then
-  select the desired domain. Click **OK**.
+  select the domain you want. Click **OK**.
 
-In the Use these job credentials to browse section of the page, if multiple credentials are set up,
+In the Use these job credentials to browse section of the page, if you set up multiple credentials,
 select the credentials to use for the query from the dropdown menu.
 
 :::note

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Target Db2 Requirements, Permissions, and Ports
 
-The Access Analyzer for Databases Solution provides the ability to audit and monitor Db2 database
+The Access Analyzer for Databases Solution lets you audit and monitor Db2 database
 environments to collect permissions and sensitive data. It scans:
 
 - DB2LUW 11+
@@ -25,7 +25,7 @@ addition, the following clients and drivers must be installed:
 - IBM .NET Driver NuGet
 
 :::note
-All necessary clients and drivers can be found on IBM Support's
+IBM Support provides all necessary clients and drivers on its
 [Download initial version 11.5 clients and drivers](https://www.ibm.com/support/pages/download-initial-version-115-clients-and-drivers)
 page. From the list of available packages, select the IBM Data Server Client, which is the
 all-in-one client package. This package includes all of the client tools and available libraries, as

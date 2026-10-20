@@ -11,7 +11,7 @@ The Entitlement Reviews interface is where users with either the Security Team o
 business users or data custodians (to be referred to as Owners) to attest to the access and
 privileges users have to their resources.
 
-For the purpose of the Access Reviewsapplication, a “resource” refers to the file system shared
+To the Access Reviewsapplication, a “resource” refers to the file system shared
 folders, SharePoint Online site collections, and Active Directory (AD) groups. All data available
 within the Access Reviews application is collected by Netwrix Auditor according to the synchronized
 monitoring plans.
@@ -65,7 +65,7 @@ Prerequisite:
 Workflow:
 
 **_RECOMMENDED:_** When deploying the Access Reviews application in an organization to process
-reviews, owners should be notified prior to launching the first set of reviews. See the
+reviews, owners should be notified before launching the first set of reviews. See the
 [Notification to Owners](/docs/auditor/10.8/accessreviews/resourceowners/overview.md#notification-to-owners) topic for additional
 information.
 

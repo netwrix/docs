@@ -10,11 +10,11 @@ Role mining aims to reduce the cost of entitlement management by automating enti
 
 ## Overview
 
-After the role catalog is established, the [Compute Role Model Task](../integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask) is able to assign single roles to users according to their attributes which are used as assignment criteria.
+After the role catalog is established, the [Compute Role Model Task](../integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask) can assign single roles to users according to their attributes which are used as assignment criteria.
 
 > For example, in the AD, entitlements are given through group membership. Integrators create a
 > navigation rule to assign each group to the users who have the corresponding single role. Then,
-> the Compute-RoleModel task is able to assign single roles to users according to their existing
+> the Compute-RoleModel task can assign single roles to users according to their existing
 > group membership.
 >
 > In addition to group membership, the assignment of an entitlement to users could also depend on
@@ -24,7 +24,7 @@ Now that users received their roles, the role mining tool can analyze these assi
 
 ![Schema - Role Mining](/images/identitymanager/rolemining_schema.webp)
 
-Role mining is a Machine Learning process. It is a statistic tool used to emphasize the dimensions that constitute the key criteria for existing role assignments. See the [Conforming Assignments](../integration-guide/role-assignment/conformingassignmentcomputation)topic for additional information. It detects the most probable links between identities dimensions and their roles in order to suggest the appropriate entitlement assignment rules.
+Role mining is a Machine Learning process. It is a statistic tool used to emphasize the dimensions that constitute the key criteria for existing role assignments. See the [Conforming Assignments](../integration-guide/role-assignment/conformingassignmentcomputation)topic for additional information. It detects the most probable links between identities dimensions and their roles to suggest the appropriate entitlement assignment rules.
 
 > For example, suppose that 80% of Netwrix Identity Manager (formerly Usercube) workers in
 > Marseilles have access to an application "App". Then, role mining is most likely to recognize the
@@ -50,7 +50,7 @@ entitlement request for a user.
 You can generate both automatic and suggested rules for the same role, with different precision levels and different approval workflows.
 
 > Consider an organization where an unknown ratio of users have a given role. Using the precision
-> settings, we can create a mining rule to generate automatic assignment rules when the ratio is
+> settings, can create a mining rule to generate automatic assignment rules when the ratio is
 > above 95% and a second mining rule to generate suggested assignment rules when the ratio is
 > between 75% and 95%.
 >
@@ -82,7 +82,7 @@ Starting from the previous example, consider now that users continue requesting 
 
 ![Impact Example - Use Case 4](/images/identitymanager/rolemining_impact_usecase4.webp)
 
-Starting from the previous example, consider now that, as a result of a reorganization or an access certification for example, some users do not have the role anymore. If the ratio is below the threshold, then role mining will remove the single role rule. If the role (or its policy) is configured with a grace period, users who need the role will not lose it. Then users' entitlements remain unchanged:
+Starting from the previous example, consider now that, as a result of a reorganization or an access certification for example, some users don't have the role anymore. If the ratio is below the threshold, then role mining will remove the single role rule. If the role (or its policy) is configured with a grace period, users who need the role will not lose it. Then users' entitlements remain unchanged:
 
 ![Impact Example - Use Case 5](/images/identitymanager/rolemining_impact_usecase5.webp)
 
@@ -115,11 +115,11 @@ The system performs two checks:
 If the estimated memory requirement exceeds these limits, the operation fails with an error message rather than risking system crashes.
 
 **Common error message:**
-> This role mining operation is too resource intensive. Please simplify your model by excluding non-relevant dimensions (use IsExcludedFromRoleMining).
+> This role mining operation is too resource intensive. simplify your model by excluding non-relevant dimensions (use IsExcludedFromRoleMining).
 
 **Resolution options:**
 
-- **Exclude non-relevant dimensions**: Set `IsExcludedFromRoleMining="true"` on entity type dimensions that are not relevant for role assignment analysis. This reduces the dimensionality of the analysis and memory requirements. See the [Dimension](toolkit/xml-configuration/metadata/dimension) documentation for details on this attribute.
+- **Exclude non-relevant dimensions**: Set `IsExcludedFromRoleMining="true"` on entity type dimensions that aren't relevant for role assignment analysis. This reduces the dimensionality of the analysis and memory requirements. See the [Dimension](toolkit/xml-configuration/metadata/dimension) documentation for details on this attribute.
 - **Process entity types separately**: Instead of using `AllEntities="true"` in your mining rule, create separate mining rules for specific entity types to reduce the scope of each analysis.
 - **Adjust memory limits (on-premises only)**: Configure the `MaxRamPercentageRoleMining` setting to control what percentage of available RAM role mining operations can use. See the [Application Settings](../integration-guide/network-configuration/server-configuration/general-purpose) topic for configuration details.
 

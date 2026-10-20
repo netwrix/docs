@@ -12,11 +12,11 @@ The Options page provides the option to execute the script remotely on the targe
 
 The configurable options are:
 
-- Execute remotely – Remotely executes the script on the target host. If this checkbox is not
-  selected, the script will be executed from the Access Analyzer Console server.
+- Execute remotely – Remotely executes the script on the target host. If you don't select this
+  checkbox, Access Analyzer executes the script from the Access Analyzer Console server.
 - Use impersonation within server executable – Executes the script with the job credentials
 
-For cmdlets requiring explicit credentials, a single credential set from the job's Connection
-Profile can be referenced using `Get-Credential` or the `$JobCredential` variable, a `PSCredential`
-type object. All credentials from the job’s Connection Profile may be accessed via the
+For cmdlets that require explicit credentials, you can reference a single credential set from the
+job's Connection Profile using `Get-Credential` or the `$JobCredential` variable, a `PSCredential`
+type object. You can access all credentials from the job's Connection Profile via the
 `$JobCredentials` array.

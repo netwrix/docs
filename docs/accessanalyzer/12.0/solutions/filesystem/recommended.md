@@ -20,10 +20,9 @@ additional information.
 
 **Dependencies**
 
-- The .Active Directory Inventory job group needs to be executed before running the File System
-  solution
-- The .Entra ID Inventory job group needs to be executed before running the File System solution
-  (for targeting Azure Files only)
+- Run the .Active Directory Inventory job group before you run the File System solution
+- Run the .Entra ID Inventory job group before you run the File System solution (for targeting
+  Azure Files only)
 - File System Proxy deployed to targeted proxy servers (for proxy scanning architecture only)
 - Activity Monitor deployed, configured, and services running (for Activity Auditing only)
 
@@ -41,8 +40,8 @@ want to scan.
 If you target Nasuni Edge Appliances, assign the 0-FS_Nasuni Job a custom host list
 containing all on-premise Nasuni Edge Appliances and cloud filers.
 
-If using multiple proxy servers, these should also be configured within a different custom-created
-host list. Then assign the proxy servers host list on the
+If you use multiple proxy servers, configure them within a different custom-created host list. Then
+assign the proxy servers host list on the
 [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/appletsettings.md) page of the File System
 Access Auditor Data Collector Wizard within the following jobs in the 0.Collection Job Group
 according to the type of auditing being conducted:
@@ -94,17 +93,17 @@ permissions for the supported target platforms. See the
 for the necessary permission for collecting activity data. Then create a custom Connection Profile
 containing the appropriate credentials for the targeted environment.
 
-The Connection Profile should be assigned under the **FileSystem** > **0.Collection** job’s
-Properties window on the **Connection** tab. It is set to Use the Default Profile, as configured at
+Assign the Connection Profile under the **FileSystem** > **0.Collection** job’s Properties window,
+on the **Connection** tab. It is set to Use the Default Profile, as configured at
 the global settings level. However, since this may not be the Connection Profile with the necessary
 permissions for the assigned hosts, click the radio button for the **Select one of the following
 user defined profiles** option and select the appropriate Connection Profile dropdown menu.
 
 :::tip
-Remember, if targeting Nasuni Edge Appliances, the 0-FS_Nasuni Job needs to be assigned a custom
-Connection Profile containing the **API Access Key** and **Passcode** for each on-premise Nasuni
-Edge Appliance and cloud filer in the target environment. Nasuni API key names are case sensitive.
-When providing them, enter them in the exact same case as generated.
+Remember, if you target Nasuni Edge Appliances, assign the 0-FS_Nasuni Job a custom Connection
+Profile containing the **API Access Key** and **Passcode** for each on-premise Nasuni Edge
+Appliance and cloud filer in the target environment. Nasuni API key names are case sensitive.
+Enter them in the exact same case as generated.
 :::
 
 
@@ -117,24 +116,24 @@ dependent on the size of the target environment. The FileSystem Solution can be 
 weekly or as desired depending on the types of auditing being conducted and the scope of the target
 environment.
 
-For example, it may be desired in large environments to run Activity Auditing collection jobs on a
-daily basis, but to only run Access Auditing and Sensitive Data Discovery Auditing collection jobs
-on a weekly basis followed by the analysis and reporting job groups.
+For example, in large environments, you might want to run Activity Auditing collection jobs daily,
+but run Access Auditing and Sensitive Data Discovery Auditing collection jobs only weekly, followed
+by the analysis and reporting job groups.
 
 **Run Order**
 
-Whatever schedule frequency may be configured, it is also recommended to streamline the collection
+Whatever schedule frequency you configure, it is also recommended to streamline the collection
 jobs to those desired. The jobs in the 0.Collection Job Group must be run in order for the auditing
 type. Run …System Scans jobs and then the corresponding …Bulk Import jobs according to the desired
 workflow.
 
-The other File System Solution sub-job groups can be run together or individually in any order,
-after running the 0.Collection Job Group. The FileSystemOverview Job pulls information from both the
+You can run the other File System Solution sub-job groups together or individually, in any order,
+after you run the 0.Collection Job Group. The FileSystemOverview Job pulls information from both the
 0.Collection Job Group and the other sub-job groups, and the report may contain blank sections if
 only select sub-job groups are run.
 
 :::info
-If only conducting one or two types of auditing, scope the solution by disabling
+If you're only conducting one or two types of auditing, scope the solution by disabling
 the undesired collection jobs. Disabling them allows the solution to run more efficiently. It isn't
 recommended to delete any jobs. See the
 [Disable or Enable a Job](/docs/accessanalyzer/12.0/admin/jobs/job/disableenable.md) topic for additional information.
@@ -256,7 +255,7 @@ Though the analysis tasks shouldn't be deselected, the following parameters can 
 
 - The .Active Directory Inventory Solution defines large groups, deeply nested groups, stale users,
   and users with large tokens. These parameters can be customized and are applicable to any
-  solution, including File System, which incorporate this analyzed data into further analysis.
+  solution, including File System, which incorporates this analyzed data into further analysis.
 
     - Customize within **.Active Directory Inventory** > **3-AD_Exceptions** Job analysis tasks
 
@@ -296,7 +295,7 @@ within an analysis task.
 
 The jobs contained in the group use custom SQL scripts to render views on collected data. SQL views
 populate report element tables and graphs. Changing or modifying the group, job, or
-table names result in no data displayed within the reports or the AIC.
+table names results in no data displayed within the reports or the AIC.
 
 :::tip
 Remember, it is recommended to scope the 0.Collection Job Group to only include the collection

@@ -31,5 +31,5 @@ The query categories are:
 
     - NoSQL Utilities
 
-        - Remove NoSQL Storage Tables — All connection related and filter data will be removed for
+        - Remove NoSQL Storage Tables — Removes all connection-related and filter data for
           NoSQL databases

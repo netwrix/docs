@@ -53,7 +53,7 @@ rule information.
 - Console ↔ Proxy: **NAA** **Computer Account (Kerberos)**
 - Target Access (Proxy ↔ Targets): Connection Profile Account
 :::note
-If the service is deployed by the File System Scan job (as opposed to manually installed), the account used by the connection profile will be used to run the FSAA Proxy Service unless **Run service as Local System** is checked on the Applet Settings page of the job query. Alternatively, you can add a credential to the connection profile using either **Task (Local)** or **Task (Domain)** to run the service.
+If the File System Scan job deploys the service (as opposed to a manual installation), the FSAA Proxy Service runs using the connection profile account unless you select **Run service as Local System** on the Applet Settings page of the job query. Alternatively, you can add a credential to the connection profile using either **Task (Local)** or **Task (Domain)** to run the service.
 
 If the target host resides in a different domain than the proxy server and there is no trust relationship between the two domains, you must stack a task credential for the proxy domain with the credential for scanning the target file system. 
 

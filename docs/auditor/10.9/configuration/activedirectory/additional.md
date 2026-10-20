@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # Additional Configuration to Review Changes Made via Exchange Server
 
-If you have an on-premises Exchange server in your Active Directory domain, consider that some
-changes can be made through this Exchange server. To be able to audit and report who made those
-changes, make sure that the account used for data collection meets one of the following
+If you have an on-premises Exchange server in your Active Directory domain, consider that
+administrators can make some changes through this Exchange server. To be able to audit and report
+who made those changes, ensure that the account used for data collection meets one of the following
 requirements:
 
 - Membership in the Organization Management or Records Management group
@@ -38,13 +38,13 @@ The following is required if auto-backup is _enabled_ for the domain controller 
 If you are using gMSA for data collection, consider that AAL event data collection from your
 on-premise Exchange server will not be possible.
 
-Thus, changes made to your Active Directory domain via that Exchange server will be reported with
-_domain\\Exchange_server_name$_ instead of the initiator (user) name in the "_Who_" field of
+Thus, Netwrix Auditor reports changes made to your Active Directory domain via that Exchange server
+with _domain\\Exchange_server_name$_ instead of the initiator (user) name in the "_Who_" field of
 reports, search results and activity summaries.
 
 ## Configure Manage Auditing and Security Log Policy
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group. Follow the steps:
 
 **Step 1 –** Open the **Group Policy Management** console on any domain controller in the target
@@ -75,7 +75,7 @@ domain controllers.
 
 ## Grant Permissions for Deleted Objects Container
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group. Follow the steps:
 
 **Step 1 –** Log on to any domain controller in the target domain with a user account that is a
@@ -90,7 +90,7 @@ where `deleted_object_dn` is the distinguished name of the deleted directory obj
 For example: `dsacls "CN=Deleted Objects,DC=Corp,DC=local" /takeownership`
 
 **Step 4 –** To grant permission to view objects in the Deleted Objects container to a user or a
-group, type the following command:
+group, enter the following command:
 
 `dsacls <deleted_object_dn> /G <user_or_group>:<Permissions>`
 
@@ -100,26 +100,25 @@ permission to grant.
 
 For example, `dsacls "CN=Deleted Objects,DC=Corp,DC=local" /G Corp\jsmith:LCRP`
 
-In this example, the user CORP\jsmith has been granted **List Contents** and **Read Property**
-permissions for the **Deleted Objects** container in the **corp.local** domain. These permissions
-let this user view the contents of the **Deleted Objects** container, but do not let this user make
-any changes to objects in this container. These permissions are equivalent to the default
-permissions that are granted to the **Domain Admins** group.
+In this example, the `dsacls` command grants the user CORP\jsmith **List Contents** and **Read
+Property** permissions for the **Deleted Objects** container in the **corp.local** domain. These
+permissions let this user view the contents of the **Deleted Objects** container, but don't let
+this user make any changes to objects in this container. These permissions are equivalent to the
+default permissions the **Domain Admins** group receives.
 
 ## Define Log On As a Batch Job Policy
 
-On monitoring plan creation, the Log on as a batch job policy is automatically defined for the Data
-Processing Account as a local security policy. However, if you have the "Deny a log on as a batch
-job" policy defined locally or on the domain level, the local "Log on as a batch job" policy will be
-reset. In this case, redefine the "Deny log on as a batch job" policy through the "Local Security
-Policy" console on your computer or on the domain level through the Group Policy Management console.
+When you create a monitoring plan, Netwrix Auditor automatically defines the Log on as a batch job
+policy for the Data Processing Account as a local security policy. However, if you have the "Deny a
+log on as a batch job" policy defined locally or on the domain level, that policy resets the local
+"Log on as a batch job" policy. In this case, redefine the "Deny log on as a batch job" policy
+through the "Local Security Policy" console on your computer or on the domain level through the
+Group Policy Management console.
 
 You can configure this policy via the Local Security Policy snap-in or using the Group Policy
 Management console.
 
 ### Configure the Log On As a Batch Job policy via Local Security Policy Snap-in
-
-Follow the steps to configure the Log On As a Batch Job policy via Local Security Policy snap-in.
 
 **Step 1 –** On any domain controller in the target domain, open the Local Security Policy snap-in:
 navigate to Start > Windows Administrative Tools and select Local Security Policy.
@@ -134,7 +133,7 @@ Specify the account that you want to define this policy for.
 
 ### Configure the Log On As a Batch Job Policy Using the Group Policy Management Console
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group. Follow the steps:
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
@@ -165,20 +164,18 @@ domain controllers.
 
 ## Assign Permission to Read the Registry Key
 
-This permission is required only if the account selected for data collection is not a member of the
+This permission is required only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
-This permission should be assigned on each domain controller in the audited domain, so if your
-domain contains multiple domain controllers, it is recommended to assign permissions through Group
-Policy, or automatically using
+Assign this permission on each domain controller in the audited domain. If your domain contains
+multiple domain controllers, Netwrix recommends assigning permissions through Group Policy, or
+automatically using
 [Audit Configuration Assistant](/docs/auditor/10.9/tools/auditconfigurationassistant.md).
 
 To assign permissions manually, use the Registry Editor snap-in or the Group Policy Management
 console.
 
-Assign Permission Via the Registry Editor Snap-in
-
-Follow the steps to assign permission via the Registry Editor snap-in:
+### Assign Permission via the Registry Editor Snap-in
 
 **Step 1 –** On your target server, open Registry Editor: navigate to **Start > Run** and type
 _"regedit"_.
@@ -195,11 +192,7 @@ Set\Services\EventLog\Security_.
 **Step 6 –** For auditing Logon Activity, you also need to assign the Read permission to the
 _HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv_ registry key.
 
-To assign permission using the Group Policy Management console
-
-Assign Permission Using the Group Policy Management Console
-
-Follow the steps to assign permission using the Group Policy Management console:
+### Assign Permission Using the Group Policy Management Console
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools
@@ -224,7 +217,7 @@ press Enter.
 **Step 8 –** In the pop-up window, select Propagate inheritable permissions to all subkeys and click
 OK.
 
-**Step 9 –** Repeat the steps 4-8 for keys below:
+**Step 9 –** Repeat steps 4-8 for the following keys:
 
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg`;
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security`.
@@ -232,7 +225,7 @@ OK.
 **Step 10 –** Close the Group Policy Management console.
 
 **Step 11 –** Navigate to Start > Run and type **cmd**. Input the `gpupdate /force` command and
-press Enter. The group policy will be updated.
+press Enter to update the group policy.
 
 **Step 12 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
 domain controllers.

@@ -16,9 +16,15 @@ import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import translations from '@theme/SearchTranslations';
 import {PRODUCTS} from '../../config/products';
-import {getVersionsForProducts, dedupeToLatestVersion} from '../searchUtils';
+import {getVersionsForProducts, dedupeToLatestVersion, versionLabel} from '../searchUtils';
 
 let DocSearchModal = null;
+
+// Versions only mean something within one product, so the Versions control — and
+// the version filter behind it — is gated on exactly one product being selected.
+function isSingleProduct(products) {
+    return (products || []).filter(p => p !== '__all__' && p !== '__none__').length === 1;
+}
 
 function importDocSearchModalIfNeeded() {
     if (DocSearchModal) {
@@ -204,9 +210,11 @@ function useTransformItems(selectedVersionsRef) {
     const [transformItems] = useState(() => (items) => {
         const mapped = items.map((item) => ({...item, url: processSearchResultUrl(item.url)}));
         // Modal version state never holds the '__all__' sentinel (MultiSelectDropdown
-        // maps the All toggle to []) and can't hold versions without a product
-        // (filters reset on open; onChangeProducts prunes orphan versions), so
-        // non-empty means a real version filter is active — de-dupe off (R3).
+        // maps the All toggle to []) and can only be non-empty while exactly one
+        // product is selected (filters reset on open; onChangeProducts clears versions
+        // whenever the selection stops being a single product — the same condition that
+        // enables the Versions control), so non-empty means a real version filter the
+        // user can see and clear is active — de-dupe off (R3).
         const versionFilterActive = (selectedVersionsRef.current || []).length > 0;
         return ungroup(versionFilterActive ? mapped : dedupeToLatestVersion(mapped));
     });
@@ -359,7 +367,7 @@ const PRODUCT_OPTIONS = [
 });
 
 // Multi-select dropdown component with checkboxes
-function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder}) {
+function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder, disabled = false}) {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -389,7 +397,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
     };
 
     const realSelected = selectedValues.filter(v => v !== '__all__' && v !== '__none__');
-    const displayText = selectedValues.length === 0 || selectedValues.includes('__all__')
+    const displayText = disabled || selectedValues.length === 0 || selectedValues.includes('__all__')
         ? placeholder
         : `${realSelected.length} selected`;
 
@@ -397,6 +405,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
         <div className="DocSearch-MultiSelect" ref={dropdownRef} style={{position: 'relative'}}>
             <button
                 type="button"
+                disabled={disabled}
                 onClick={() => setIsOpen(!isOpen)}
                 className="DocSearch-MultiSelect-Button"
                 style={{
@@ -406,7 +415,8 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
                     borderRadius: 4,
                     background: 'var(--docsearch-modal-background)',
                     color: 'var(--docsearch-text-color)',
-                    cursor: 'pointer',
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                    opacity: disabled ? 0.55 : 1,
                     display: 'flex',
                     alignItems: 'center',
                     gap: 4,
@@ -416,7 +426,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
                 <span style={{flex: 1, textAlign: 'left', fontSize: '14px'}}>{displayText}</span>
                 <span style={{fontSize: '10px'}}>▼</span>
             </button>
-            {isOpen && (
+            {isOpen && !disabled && (
                 <div
                     className="DocSearch-MultiSelect-Dropdown"
                     style={{
@@ -664,8 +674,13 @@ export default function SearchBar() {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
         }
-        // Clear versions that don't exist for the new product selection
-        const validVersions = new Set(getVersionsForProducts(newProducts));
+        // Drop versions the new selection can't show. The Versions control is only
+        // enabled for a single product, so anything other than one product clears versions
+        // outright — otherwise a filter the user can no longer reach would keep suppressing
+        // results (and de-duplication).
+        const validVersions = new Set(
+            isSingleProduct(newProducts) ? getVersionsForProducts(newProducts) : [],
+        );
         const cleaned = selectedVersionsRef.current.filter(v => validVersions.has(v));
         if (cleaned.length !== selectedVersionsRef.current.length) {
             selectedVersionsRef.current = cleaned;
@@ -690,9 +705,11 @@ export default function SearchBar() {
         const versions = getVersionsForProducts(selectedProducts);
         return [
             {label: 'All versions', value: '__all__'},
-            ...versions.map(v => ({label: v, value: v})),
+            ...versions.map(v => ({label: versionLabel(v), value: v})),
         ];
     }, [selectedProducts]);
+
+    const isSingleProductSelected = useMemo(() => isSingleProduct(selectedProducts), [selectedProducts]);
 
     // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
@@ -774,8 +791,21 @@ export default function SearchBar() {
             {modalHeaderEl &&
                 createPortal(
                     <>
-                        {/* Custom controls: product + version filters */}
+                        {/* Custom controls: version + product filters */}
                         <div className="search-custom-controls">
+                            {/* Version filtering only makes sense when exactly one product is
+                                selected. Disabled rather than unmounted: this is a flex row, so
+                                adding and removing a 150px control mid-selection slides its
+                                siblings — including the open Products panel — sideways under the
+                                cursor. Keeping the slot also states why versions aren't available. */}
+                            <MultiSelectDropdown
+                                label="Versions"
+                                options={availableVersions}
+                                selectedValues={selectedVersions}
+                                onChange={onChangeVersions}
+                                placeholder={isSingleProductSelected ? 'All versions' : 'Select one product'}
+                                disabled={!isSingleProductSelected}
+                            />
                             <MultiSelectDropdown
                                 label="Products"
                                 options={PRODUCT_OPTIONS}
@@ -783,17 +813,6 @@ export default function SearchBar() {
                                 onChange={onChangeProducts}
                                 placeholder="All products"
                             />
-                            {/* availableVersions always holds the '__all__' sentinel at index 0,
-                                so length > 1 means a specific product is selected (R2). */}
-                            {availableVersions.length > 1 && (
-                                <MultiSelectDropdown
-                                    label="Versions"
-                                    options={availableVersions}
-                                    selectedValues={selectedVersions}
-                                    onChange={onChangeVersions}
-                                    placeholder="All versions"
-                                />
-                            )}
                         </div>
                         {/* Our own close button — replaces the DocSearch-Close button
                             (which is hidden via CSS) so we avoid mutating React-owned

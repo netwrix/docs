@@ -14,7 +14,7 @@ Infrastructure (PKI) and certificates. To continue with this configuration, it w
 necessary to confer with the PKI administrator to determine which certificate method will conform to
 the organization’s security policies.
 
-Follow the steps to enable SSL.
+## Enable SSL
 
 **Step 1 –** Create an SSL Binding.
 
@@ -43,7 +43,7 @@ value and the certificate name:
 dir cert:\localmachine\my
 ```
 
-Replace the environmental variables in the example script below. Then Run the PowerShell command to
+Replace the environmental variables in the example script below. Then run the PowerShell command to
 create an SSL binding:
 
 ```powershell
@@ -58,8 +58,7 @@ The next step is to modify the `AccessInformationCenter.Service.exe.Config` file
 
 ## Modify the AccessInformationCenter.Service.exe.Config File
 
-Follow the steps to modify the Modify the `AccessInformationCenter.Service.exe.Config` file for
-HTTPS.
+Configure the `AccessInformationCenter.Service.exe.Config` file for HTTPS:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exe.Config` file in a text editor, e.g.
 Notepad. It is located in the installation directory:

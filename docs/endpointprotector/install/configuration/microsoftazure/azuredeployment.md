@@ -11,8 +11,8 @@ information such as the access keys to a Container specifically created for the 
 Virtual Machine.
 
 :::note
-We will upload the Endpoint Protector Virtual Machine to your Container as soon as
-possible. Once this step is done, we advise regenerating the access key.
+After your container is configured, Netwrix will upload the Endpoint Protector Virtual Machine
+and notify you when the upload is complete. Regenerate the access key after the upload.
 :::
 
 
@@ -55,11 +55,11 @@ access level select Container (anonymous read access for containers and blobs);
 **Step 8 –** Select the container you created, and then click Shared access tokens.
 
 :::warning
-Make sure you are creating a token on the container level, not the storage account!
+ensure you are creating a token on the container level, not the storage account!
 :::
 
 
-**Step 9 –** Configure the SAS token with Create, Write and Add Permissions with a 5-day window to
+**Step 9 –** Configure the SAS token with Create, Write, and Add Permissions with a 5-day window to
 allow the Netwrix team to copy the image;
 
 ![Configuring the SAS token](accesstokens.webp)

@@ -8,12 +8,13 @@ sidebar_position: 60
 
 ## Endpoint
 
-Write data to the Audit Database and to the Long-Term Archive. By default, all imported data is
-written to a special Netwrix_Auditor_API database and recognized as the Netwrix API data source.
-This data is not associated with any monitoring plan in the product. You can associate Activity
-Records with a plan, in this case data will be written to a database linked to this plan. Make sure
-the plan you specify is already created in Netwrix Auditor, the Netwrix API data source is added to
-the plan and enabled for monitoring.
+Write data to the Audit Database and to the Long-Term Archive. By default, Netwrix Auditor writes
+all imported data to a special Netwrix_Auditor_API database and recognizes it as the Netwrix API
+data source.
+This data isn't associated with any monitoring plan in the product. You can associate Activity
+Records with a plan; in this case, Netwrix Auditor writes the data to a database linked to this
+plan. Ensure the plan you specify already exists in Netwrix Auditor, that you've added the Netwrix
+API data source to the plan, and that you've enabled it for monitoring.
 
 To feed data, send a POST request containing Activity Records. The user sending a request must be
 assigned the Contributor role in Netwrix Auditor. After feeding data to the Audit Database it will
@@ -147,6 +148,6 @@ Date: Fri, 08 Apr 2017 13:56:22 GMT
 
 ![apiactivity_thumb_0_0](/images/auditor/10.9/api/apiactivity_thumb_0_0.webp)
 
-**Step 5 –** For input Activity Records, the data source is set to Netwrix API.
+**Step 5 –** For input Activity Records, Netwrix Auditor sets the data source to Netwrix API.
 
 ![apiactivitydetails](/images/auditor/10.9/api/apiactivitydetails.webp)

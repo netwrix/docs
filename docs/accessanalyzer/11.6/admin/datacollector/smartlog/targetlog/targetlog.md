@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # SMARTLog: Target Log
 
-The Target Log page is where logs are selected to be collected. There are three versions of this
+Use the Target Log page to select the logs to collect. There are three versions of this
 wizard page that change based on log type. This version is a wizard page for the log types of:
 
 - Windows Event Log (Archived)
@@ -23,9 +23,9 @@ topics for information on the other versions of this wizard page.
 The configurable options are:
 
 - Path – Enter or browse to the path to the log
-- File mask – Enter file names to limit the file names to return from the path entered. Asterisks
-  can be used for wildcards. For example, `u_ex*.log` would match **u_ex170530.log**. When no mask
-  is set, all files from the listed path are returned.
+- File mask – Enter file names to limit the file names to return from the path entered. Use asterisks
+  for wildcards. For example, `u_ex*.log` would match **u_ex170530.log**. When you don't set a mask,
+  Enterprise Auditor returns all files from the listed path.
 - Log files to be processed – Select from the following options:
 
     - All

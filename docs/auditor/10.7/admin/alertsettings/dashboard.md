@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Alerts Overview Dashboard
 
-Aggregated statistics on the alerts is provided in the Alerts overview widget. It displays currently
+Aggregated statistics on the alerts is provided in the Alerts overview widget. It displays 
 triggered alerts with detailed information.
 
 To view the dashboard, on the main Auditor page, click the Alerts tile.
@@ -25,9 +25,7 @@ The dashboard includes the following widgets:
 
 ![alerts_overview_thumb_0_0](/images/auditor/10.7/admin/alertsettings/alerts_overview_thumb_0_0.webp)
 
-Clicking any tile except for Risk score by top 5 users drills down to the Alert history dashboard
-that provides users with the detailed information about the latest alerts triggered in their IT
-infrastructure enriched with the actionable chart and timeline.
+Clicking any tile except Risk score by top 5 users opens the Alert history dashboard, which provides detailed information about the latest alerts triggered in your IT infrastructure, including an actionable chart and timeline.
 
 ![alerts_history_thumb_0_0](/images/auditor/10.7/admin/alertsettings/alerts_history_thumb_0_0.webp)
 

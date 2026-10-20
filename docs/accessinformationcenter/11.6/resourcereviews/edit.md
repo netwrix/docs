@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Edit Review Wizard
 
-The Edit Review wizard is opened with the **Edit** button on the Resource Reviews interface. See the
+Click the **Edit** button on the Resource Reviews interface to open the Edit Review wizard. See the
 [Manage Reviews Page](/docs/accessinformationcenter/11.6/resourcereviews/interface/interface.md#manage-reviews-page)
 topic for additional information.
 
@@ -15,7 +15,7 @@ topic for additional information.
 It contains four pages:
 
 -   **1. Review Type** — Select whether to notify the review creator when the resources have been
-       reviewed. The review type and name cannot be changed.
+       reviewed. The review type and name can't be changed.
 -   **2. Criteria** — Only applies to Sensitive Data reviews. Update the sensitive criteria to be
        reviewed.
 -   **3. Resources** — Modify the list of resources included in the review
@@ -25,15 +25,15 @@ See the [Edit a Review](#edit-a-review) topic for additional information.
 
 ## Edit a Review
 
-Follow the steps to edit an active review.
+To edit an active review:
 
 **Step 1 –** On the Manage Reviews page, click **Edit**. The Edit Review wizard opens.
 
 ![Edit Review wizard Review Type page](/images/accessinformationcenter/11.6/resourcereviews/wizard/reviewtype_1.webp)
 
 **Step 2 –** On the Review Type page, configure the notify review creator option as required. The
-Review Name and type are shown on the page but can not be edited. For Permissions, Access, and
-Sensitive Data reviews, the selection of the include children option is also shown, but can not be
+Review Name and type are shown on the page but can't be edited. For Permissions, Access, and
+Sensitive Data reviews, the selection of the include children option is also shown, but can't be
 edited.
 
 - Notify the review creator when resources are reviewed — When selected, an email is sent to the
@@ -52,11 +52,11 @@ to Step 5.
 
 **Step 3 –** On the Criteria page, you can modify the selected types of sensitive criteria to
 include in the Sensitive Data review if no responses have been received. If responses for one or
-more resources have already been submitted you can not add or remove criteria.
+more resources have already been submitted you can't add or remove criteria.
 
 - To add a new criteria, select the criteria to include from the list on the left and click **Add**.
   Multiple items can be selected together by using the **Ctrl** or **Shift** key with mouse click
-  combinations. The selected criteria is added to the Selected Criteria list.
+  combinations. The Selected Criteria list now displays the selected criteria.
 - To remove a criteria, select the criteria in the Selected Criteria list on the right and click
   **Remove**
 
@@ -66,14 +66,14 @@ Netwrix Enterprise Auditor data collection scans.
 :::
 
 
-**Step 4 –** Optionally edit the selection of the **Reviewers are able to see the sensitive data
+**Step 4 –** Optionally edit the selection of the **Reviewers can see the sensitive data
 match if available** option to allow the owner with Console Access roles of Security Team or
 Administrator to view potentially sensitive data within the review. Click **Next** to continue.
 
 :::warning
 If this option is checked, but the data has not been collected with matches stored by
-Netwrix Enterprise Auditor for all of the resources selected in Step 5, the “One or more resources
-selected have not been scanned” error occurs. The Create Review wizard will not allow the review to
+Netwrix Enterprise Auditor for all of the resources selected in Step 5, the "One or more resources
+selected have not been scanned" error occurs. The Create Review wizard will not allow the review to
 be created until those resources have been removed or the option unchecked.
 :::
 
@@ -96,24 +96,24 @@ or removing parent resources from the review also adds or removes their children
     - Description — Description or explanation of the resource as supplied by either the Ownership
       Administrator or the assigned owner
     - Reviewer — Primary owner assigned to the resource
-    - Confirmed — Indicates whether or not the assigned owner has confirmed ownership of that
-      resource. Tool-tips display when hovering over the icons indicating whether the resource
+    - Confirmed — Indicates whether the assigned owner has confirmed ownership of that
+      resource. Hover over the icons to display tool-tips indicating whether the resource
       ownership has been confirmed, declined, pending response, or that a confirmation has not been
       requested.
     - Scan Data — A checkmark indicates the resource has been scanned. Only resources with scan data
       can be included in a review.
-    - Active Review — Indicates whether or not there is a pending review
+    - Active Review — Indicates whether there is a pending review
 
-- Select the desired resource(s) and click **Add**. The **View Selections** button indicates how
+- Select the resources you want and click **Add**. The **View Selections** button indicates how
   many resources have been selected. Click the button to open the Selected Resources window, where
   you can view and modify the selections. See the
   [Selected Resources Window](/docs/accessinformationcenter/11.6/resourcereviews/interface/selectedresources.md)
   topic for additional information.
-- Alternatively you can import a list of resources from a CSV file. Click the **Import** button and
-  then select the CSV file. A message displays if items are not found or not valid for the review.
-  Any valid resources are selected and can be viewed in the Selected Resources window.  See the
+- Alternatively you can import a list of resources from a CSV file. Click the **Import** button and
+  then select the CSV file. A message displays if items aren't found or not valid for the review.
+  Valid resources automatically appear in the Selected Resources window. See the
   [Missing Items Window](/docs/accessinformationcenter/11.6/resourcereviews/create/missingitems.md)
-  topic for additional information
+  topic for additional information.
 
     The CSV file must use the following format for the resources:
 
@@ -122,7 +122,7 @@ or removing parent resources from the review also adds or removes their children
     - Groups: `Domain\GroupName`
     - Distribution lists: `Name@domain.com`
 
-- Once the desired resources have been selected, click **Next**.
+- After the resources you want have been selected, click **Next**.
 
 ![Edit Review wizard Summary page](/images/accessinformationcenter/11.6/resourcereviews/wizard/summary_1.webp)
 

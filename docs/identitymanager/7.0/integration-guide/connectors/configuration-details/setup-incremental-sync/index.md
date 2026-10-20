@@ -44,7 +44,7 @@ This guide is about incremental synchronization, but complete synchronization ca
 
 ### Permissions for the agent
 
-In order to launch a job via the [Usercube-Invoke-Job](../../../../integration-guide/executables/references/invoke-job) tool, the agent must use a profile with the right permissions for each task.
+To launch a job via the [Usercube-Invoke-Job](../../../../integration-guide/executables/references/invoke-job) tool, the agent must use a profile with the right permissions for each task.
 
 Permissions within Identity Manager are configured through [Access Control Rule](../../../../integration-guide/toolkit/xml-configuration/access-control/accesscontrolrule).
 
@@ -60,9 +60,9 @@ Permissions within Identity Manager are configured through [Access Control Rule
 >
 > ```
 
-Netwrix Identity Manager (formerly Usercube) recommends the creation of a profile for synchronization jobs, and another for provisioning jobs, in order to comply with the principle of least privilege.
+Netwrix Identity Manager (formerly Usercube) recommends the creation of a profile for synchronization jobs, and another for provisioning jobs, to comply with the principle of least privilege.
 
-In order to run a synchronization job, the agent requires the permissions to:
+To run a synchronization job, the agent requires the permissions to:
 
 - view the tasks via `/Jobs/Task/Query`;
 - access progress reports via `/Jobs/JobInstance/Query`, `/Jobs/JobInstance/Update`,
@@ -123,11 +123,11 @@ Agents' settings are configured in their [appsettings.agent](../../../../integra
 
 ### Permissions for users
 
-In order to launch the job, a user must have the right permissions.
+To launch the job, a user must have the right permissions.
 
 Permissions within Identity Manager are configured through [Access Control Rule](../../../../integration-guide/toolkit/xml-configuration/access-control/accesscontrolrule).
 
-In order to launch a synchronization job, a user requires the appropriate permission: `/Jobs/RunJob/Launch`.
+To launch a synchronization job, a user requires the appropriate permission: `/Jobs/RunJob/Launch`.
 
 Identity Manager provides a [Job Execution Access Control Rules](../../../../integration-guide/toolkit/xml-configuration/configuration/scaffoldings/templates/jobexecutionaccesscontrolrules) that generates the configuration for granting this permission.
 
@@ -166,5 +166,5 @@ Validate the job's execution by proceeding as follows:
 2. In the UI, access the **Job Execution** page from the dashboard's **Administration** section.
 3. Find the job named with the string specified in the XML configuration in the job's `DisplayName`
 property, and launch it.
-4. Once the job is completed, the system's objects should be synchronized to the database's `UR_Resources` table.
+4. After the job is completed, the system's objects should be synchronized to the database's `UR_Resources` table.
 

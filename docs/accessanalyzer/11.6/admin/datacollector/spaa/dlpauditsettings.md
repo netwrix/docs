@@ -6,14 +6,14 @@ sidebar_position: 90
 
 # SPAA: DLP Audit Settings
 
-The DLP Audit Settings page is where sensitive data discovery settings are configured. It is a
-wizard page for the category of Scan For Sensitive Content.
+Use the DLP Audit Settings page to configure sensitive data discovery settings. It's a wizard page
+for the category of Scan For Sensitive Content.
 
 :::warning
-Users should not change scans in a way that would result in less data being returned on
-a subsequent scan (i.e. scanning fewer web applications, scanning fewer site collections, or a
-shallower depth scan). Those resources not included in a subsequent scan are marked as deleted in
-the Tier 2 database and subsequently removed from the Tier 1 database.
+Don't change scans in a way that results in a subsequent scan returning less data (for example,
+scanning fewer web applications, scanning fewer site collections, or using a shallower depth scan).
+Enterprise Auditor marks resources not included in a subsequent scan as deleted in the Tier 2
+database and subsequently removes them from the Tier 1 database.
 :::
 
 
@@ -21,11 +21,11 @@ the Tier 2 database and subsequently removed from the Tier 1 database.
 
 Configure the **Scan Performance** options:
 
-- Don’t process files larger than: Size Limit [number] MB – Limits the files to be scanned for
+- Don’t process files larger than: Size Limit [number] MB – Limits the files scanned for
   sensitive content to only files smaller than the specified size. The checkbox is selected by
   default. The default size is 2 MB.
 - Number of SDD scan processes [number] – Increases the number of SDD scanner processes that spawn
-  as part of a scan, increasing parallel scanning. The value should not exceed 2x the number of CPU
+  as part of a scan, increasing parallel scanning. The value shouldn't exceed 2x the number of CPU
   threads available.
 
 Use the radio buttons to select the **File types to scan**:
@@ -46,13 +46,13 @@ Use the radio buttons to select the **File types to scan**:
 Use the checkboxes to select to **Store Match Hits**:
 
 - Store discovered sensitive data – Stores match hits for sensitive data in the SPAA Tier 2
-  database. If this option is not selected, then the match hits for sensitive data are still
-  reported but the data columns are masked in the database.
-- Limit stored matches per criteria to [number] – Enabled when the Store discovered sensitive data
-  checkbox is selected. Limits the number of stored matches per criteria to the specified number.
+  database. If you don't select this option, Enterprise Auditor still reports the match hits for
+  sensitive data but masks the data columns in the database.
+- Limit stored matches per criteria to [number] – Available when you select the Store discovered
+  sensitive data checkbox. Limits the number of stored matches per criteria to the specified number.
 
 :::tip
-Remember, the sensitive data discovery options require the Sensitive Data Discovery Add-On to be
-installed on the Enterprise Auditor Console. If the SharePoint Agent is used, then it must also be
-installed on the application server that hosts the Central Administration component.
+Remember, the sensitive data discovery options require you to install the Sensitive Data Discovery
+Add-On on the Enterprise Auditor Console. If you use the SharePoint Agent, you must also install it
+on the application server that hosts the Central Administration component.
 :::

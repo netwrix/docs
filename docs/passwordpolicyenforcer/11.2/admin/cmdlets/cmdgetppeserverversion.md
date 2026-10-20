@@ -16,8 +16,8 @@ The **Get-PPEServerVersion** cmdlet returns the Password Policy Enforcer server 
 
 **-DC** `<_string_>`
 
-Name of the domain controller running the PPE Server. If not specified, the current domain
-controller is used.
+Name of the domain controller running the PPE Server. If you don't specify one, PPE uses the current
+domain controller.
 
 **-Local** `<_SwitchParameter_>`
 

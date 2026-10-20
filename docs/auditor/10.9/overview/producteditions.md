@@ -11,21 +11,21 @@ Netwrix Auditor is available in two editions:
 - Full-featured Enterprise Advanced
 - Free Community Edition that is distributed free of charge and is more limited
 
-Netwrix Auditor Enterprise Advanced can be evaluated for 20 days. During this period you have free,
+You can evaluate Netwrix Auditor Enterprise Advanced for 20 days. During this period you have free,
 unlimited access to all features and functions. After the evaluation license expires, the product
 will prompt you to supply a commercial license where you can choose if you want to stay on
 Enterprise Advanced version. Alternatively, you can switch to Free Community Edition.
 
 Free Community Edition helps you maintain visibility into your environment by delivering daily
 reports that summarize changes that took place in the last 24 hours. However, you will no longer be
-able to use interactive search, predefined reports, alerts and dashboards, or store your security
+able to use interactive search, predefined reports, alerts, and dashboards, or store your security
 intelligence. After switching to free mode, you may need to re-arrange your audit configuration due
 to the limitations.
 
-When running Free Community Edition, at any time you can upgrade to Enterprise Advanced version,
-simply by supplying a commercial license in Settings > Licenses.
+When running Free Community Edition, at any time you can upgrade to the Enterprise Advanced
+version by supplying a commercial license in Settings > Licenses.
 
-Refer to a table below to compare product editions.
+See the following table to compare product editions.
 
 | Feature                                                                                                                                                       | Free Community Edition                                             | Enterprise Advanced                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------- |

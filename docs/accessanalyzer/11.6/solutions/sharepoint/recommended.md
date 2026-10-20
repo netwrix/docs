@@ -13,9 +13,9 @@ directly or scheduled.
 
 **Dependencies**
 
-- The **.Active Directory Inventory** Job Group needs to be executed prior to running the SharePoint
+- The **.Active Directory Inventory** Job Group needs to be executed before running the SharePoint
   Solution against a SharePoint on-premises environment
-- The **.Entra ID Inventory** Job Group needs to be executed prior to running the SharePoint
+- The **.Entra ID Inventory** Job Group needs to be executed before running the SharePoint
   Solution against a SharePoint Online environment
 - For Agent-based scans, the SharePoint Agent must be installed on the application server (for
   Access Auditing & Sensitive Data Discovery Auditing only)
@@ -24,7 +24,7 @@ directly or scheduled.
 - The Sensitive Data Discovery Add-on must be installed on the SharePoint application server (for
   Sensitive Data Discovery Auditing with agent-based scans only)
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
 For the 0.Collection Job Group:
 
@@ -43,24 +43,24 @@ topic for additional information.
 
 **Connection Profile**
 
-The SPAA Data Collector requires a specific set of permissions. See the
+The SharePoint Access Auditor (SPAA) Data Collector requires a specific set of permissions. See the
 [SharePoint Scan Options](/docs/accessanalyzer/11.6/requirements/sharepoint/scanoptions/scanoptions.md)
 and
 [SharePoint Support](/docs/accessanalyzer/11.6/requirements/sharepoint/sharepoint/sharepoint.md)
 topics for the necessary permissions for both on-premises and online target environments. Then
 create a custom Connection Profile containing the appropriate credentials for the targeted
-environment. If a single Connection Profile contains both on-premises and online credentials, it is
-necessary for the online credentials to be above the on-premises credentialss in the Connection
-Profile credentials list.
+environment. If a single Connection Profile contains both on-premises and online credentials, the
+online credentials must appear above the on-premises credentials in the Connection Profile
+credentials list.
 
 The Connection Profile should be assigned under the **SharePoint** > **0.Collection** >
 **Settings** > **Connection** node. It is set to **Use the Default Profile**, as configured at the
 global settings level. However, since this may not be the Connection Profile with the necessary
-permissions for the assigned hosts, select the the **Select one of the following user defined
-profiles** option and select the appropriate Connection Profile from the drop-down menu.
+permissions for the assigned hosts, select the **Select one of the following user defined
+profiles** option and select the appropriate Connection Profile from the dropdown menu.
 
 The jobs within the 5.Effective Access Audits Job Group import CSV files from the jobs’ directories
-using the TextSearch Data Collector. Therefore, it is necessary to assign a Connection Profile with
+using the TextSearch Data Collector. Therefore, assign a Connection Profile with
 rights on the Enterprise Auditor Console server to access the CSV file saved in the job’s directory.
 The Connection Profile can be set at either the **Effective Access Audits** > **Settings** >
 **Connection** node (applies to both jobs) or in the job’s Properties window on the Connection tab.
@@ -75,21 +75,21 @@ The jobs in this job group can be scheduled to run as desired.
 
 **Run Order**
 
-The 0.Collection Jobs must be run first and in order. RunSystem Scans jobs and then the Bulk Import
-jobs according to the desired workflow. The other SharePoint Solution sub-job groups can be run in
+The 0.Collection Jobs must be run first and in order. Run System Scans jobs and then the Bulk Import
+jobs according to your workflow. The other SharePoint Solution sub-job groups can be run in
 any order, together or individually, after running the 0.Collection Job Group. It is recommended to
 run at the sub-job group level. The SP_Overview Job pulls information from both the 0.Collection Job
 Group and the other sub-job groups, and the report may contain blank sections if only select sub-job
 groups are run.
 
-The Access Information Center requires the execution of the 2-SPAA_BulkImport Job default analysis
-tasks in order for permission/access reports to be accessible. For activity reports, the Access
-Information Center requires the execution of both the 2-SPAA Bulk Import Job default analysis tasks
-and the 2-SPAC Bulk Import Job default analysis tasks.
+The Access Information Center requires the 2-SPAA_BulkImport Job default analysis tasks to run
+before permission and access reports become accessible. For activity reports, the Access
+Information Center requires both the 2-SPAA Bulk Import Job default analysis tasks and the 2-SPAC
+Bulk Import Job default analysis tasks to run.
 
 :::info
 If only conducting one or two types of auditing, scope the solution by disabling
-the undesired collection jobs. Disabling them allows the solution to run more efficiently. It is not
+the undesired collection jobs. Disabling them allows the solution to run more efficiently. It isn't
 recommended to delete any jobs. See the
 [Disable or Enable a Job](/docs/accessanalyzer/11.6/admin/jobs/job/disableenable.md)
 topic for additional information.
@@ -101,7 +101,7 @@ topic for additional information.
 This solution can be run with the default query configuration. However, the most common
 customizations include:
 
-- If using agent-based scanning, it is necessary to enable the agent services on the SharePoint
+- If using agent-based scanning, enable the agent services on the SharePoint
   Access Auditor Data Collector Wizard pages:
 
     - Agent Settings page, enable agent service scans:
@@ -163,7 +163,7 @@ This solution should be run with the default analysis configuration. Most of the
 are preconfigured. There are a few which are deselected by default, as they are for troubleshooting
 purposes.
 
-Though the analysis tasks should not be deselected, the following parameters can be modified:
+Though the analysis tasks shouldn't be deselected, the following parameters can be modified:
 
 - Stale File is defined by default to 365 days
 

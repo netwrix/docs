@@ -18,12 +18,12 @@ For more on the notification queue, see the
 
 ## View Email Service Details
 
-Follow the steps to view Email service details.
+To view Email service details.
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
 Step 2 – On the **Applications** page, click the **Email Service** tab.  
-The tab displays the default Email service(s) hosted in native IIS. The number of services displayed
+The tab displays the default Email services hosted in native IIS. The number of services displayed
 on the tab depend on the number of nodes in all Elasticsearch clusters in your environment, as each
 node has its own Email service. On each Directory Manager instance, notifications will be generated
 for Directory Manager operations and will be queued in Notification queue. All the deployed services
@@ -35,7 +35,7 @@ See the
 topic for additional information. For details displayed on a service card, see the table in the
 [View Data Service Details](dataservice/manage.md#view-data-service-details) topic.
 
-You cannot create a new Email service or delete the existing one.
+You can't create a new Email service or delete the existing one.
 
 ## Manage Email Service Settings
 

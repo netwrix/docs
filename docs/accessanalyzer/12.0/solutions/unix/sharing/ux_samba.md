@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **Unix** > **3.Sharing** > **UX_Sam
 node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -29,7 +29,7 @@ The default analysis tasks are:
 - Highlights hosts with a large number of risky shares – Creates an interim processing table in the
   database for use by downstream analysis and report generation
 
-In addition to the tables and views created by the analysis task, the UX_NFS job produces the
+In addition to the tables and views created by the analysis task, the UX_Samba job produces the
 following pre-configured report:
 
 | Report                                                | Description                                                                       | Default Tags | Report Elements                                                                                                                                                                                                                                                                                          |

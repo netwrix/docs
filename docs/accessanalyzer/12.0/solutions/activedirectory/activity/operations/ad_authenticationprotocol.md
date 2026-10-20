@@ -7,7 +7,7 @@ sidebar_position: 10
 # AD_AuthenticationProtocol Job
 
 The AD_Authentication Job shows what protocols are being used to authenticate across the environment
-and will help to identify what services and computers may be affected when disabling NTLM.
+and will help to identify what services and computers may be affected if you disable NTLM.
 
 ## Analysis Tasks for the AD_AuthenticationProtocol Job
 
@@ -16,7 +16,7 @@ Navigate to the **Active Directory** > **6.Activity** > **Operations** >
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

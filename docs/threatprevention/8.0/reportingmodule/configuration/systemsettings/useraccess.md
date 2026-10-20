@@ -36,15 +36,15 @@ Roles are assigned by the following methods:
 
 The User Access page has the following sections:
 
-- Users & Groups – Itprovides the ability to allow or deny console access and configure
+- Users & Groups – Itlets you allow or deny console access and configure
   authentication types for users and groups. See the Users & Groups topic for additional
   information.
-- Settings – It provides the ability to customize the user login page and configure the token
+- Settings – It lets you customize the user login page and configure the token
   expiration time for authenticated users. See the Settings topic for additional information.
 
 ## Users & Groups
 
-The Users & Groups section provides the ability to allow or deny console access and configure
+The Users & Groups section lets you allow or deny console access and configure
 authentication types for users and groups.
 
 ![Users and Groups section of the User Access page](/images/threatprevention/8.0/reportingmodule/configuration/systemsettings/usersgroups.webp)
@@ -55,7 +55,7 @@ The table displays the following information:
   which disables console access
 
   :::note
-  Disabling a user or group disables that level of access. It does not block the user or
+  Disabling a user or group disables that level of access. It doesn't block the user or
   group from logging into the console if they have access through another role assignment.
   :::
 
@@ -70,12 +70,12 @@ The table displays the following information:
   Authentication Types Defined topic for additional information.
 - Action – This column has the following icons for conducting actions on the user or group:
 
-  - Edit icon – Allows you to edit the columns in the selected row by enabling drop-down menus.
+  - Edit icon – lets you edit the columns in the selected row by enabling dropdown menus.
     The edit icon changes to a save icon while in edit mode. See the Edit Console Access topic for
     additional information.
   - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
-    Removing a user or group removes console access for it.. Note that the builtin "ADMIN" account
-    cannot have its access removed until an account besides the builtin "ADMIN" is granted
+    Removing a user or group removes console access for it. The builtin "ADMIN" account
+    can't have its access removed until an account besides the builtin "ADMIN" is granted
     administrative access to the console.
   - Reset MFA button – Forces the user or every user in the group to reconfigure MFA on the next
     login. This option is only available if an MFA authentication type is applied to the user or
@@ -92,7 +92,7 @@ additional information.
 The following roles can be assigned to users and groups:
 
 - Administrator – This role provides unrestricted access to all functionality
-- Report Reviewer – This role can only utilize investigations that have been directly assigned to
+- Report Reviewer – This role can only use investigations that have been directly assigned to
   them
 
   - No access to Configuration pages
@@ -113,7 +113,7 @@ The following roles can be assigned to users and groups:
 
 - Response Managers – This role allows users or groups to run, save, and modify Investigations and
   view the Configuration interface
-- Report Administrator – This role can configure/utilize anything on the investigations page
+- Report Administrator – This role can configure/use anything on the investigations page
 
   - No access to Configuration pages
   - Only has access to the investigation pages
@@ -139,7 +139,7 @@ The following authentication types can be assigned to users and groups:
 - Authentication Provider Profiles – This type enables third-party authentication providers using
   RADIUS, OpenID, and SAML integrations. Methods of authentication will vary based on the
   third-party authentication provider. This must be configure in the Authentication Provider page of
-  the Integrations interface in order to be available for user assignment.
+  the Integrations interface to be available for user assignment.
 
 See the [Authentication Provider Page](/docs/threatprevention/8.0/reportingmodule/configuration/integrations/authenticationprovider/page.md) topic for
 additional information.
@@ -152,9 +152,6 @@ information is updated. See the [Active Directory Sync Page](/docs/threatprevent
 for additional information.
 :::
 
-
-Follow the steps to add console access for a user or group.
-
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **System Settings** to open the System Settings interface.
 
@@ -163,10 +160,10 @@ Console Access window opens.
 
 ![Add Console Access window](/images/threatprevention/8.0/reportingmodule/configuration/systemsettings/addconsoleaccess.webp)
 
-**Step 3 –** Begin typing a user or group name in the **User Access** box. The drop-down menu will
+**Step 3 –** Begin typing a user or group name in the **User Access** box. The dropdown menu will
 populate as you type with available options. Select a user or group from the menu.
 
-**Step 4 –** Select an authentication type from the **Authentication Type** drop-down menu.
+**Step 4 –** Select an authentication type from the **Authentication Type** dropdown menu.
 
 :::tip
 Remember, authentication provider profile types are displayed after an integration has been
@@ -174,7 +171,7 @@ configured on the Authentication Provider page of the Integrations interface.
 :::
 
 
-**Step 5 –** Select a role to assign it to the user or group from the **Role** drop-down menu.
+**Step 5 –** Select a role to assign it to the user or group from the **Role** dropdown menu.
 
 **Step 6 –** Click Add. The Add Console Access window closes.
 
@@ -182,17 +179,15 @@ The user or group is added to the table with the assigned role.
 
 ### Edit Console Access
 
-Follow the steps to change the role assigned to a user or group.
-
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **System Settings** to open the System Settings interface.
 
 **Step 2 –** On the User Access page of the System Settings interface, click the **Edit** icon for a
 user or group.
 
-![User and Groups section showing the 3 drop-down menus in Edit mode](/images/threatprevention/8.0/reportingmodule/configuration/systemsettings/editaccess.webp)
+![User and Groups section showing the 3 dropdown menus in Edit mode](/images/threatprevention/8.0/reportingmodule/configuration/systemsettings/editaccess.webp)
 
-**Step 3 –** Use the drop-down menus to modify the Access rule type, Role, and/or Authentication
+**Step 3 –** Use the dropdown menus to modify the Access rule type, Role, and/or Authentication
 Type for this user or group.
 
 **Step 4 –** Click the Save icon, which replaced the Edit icon.
@@ -200,8 +195,6 @@ Type for this user or group.
 The modification for the selected user or group is committed.
 
 ### Edit Built-in Admin Password
-
-Follow the steps to change the password for the built-in ADMIN account.
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **System Settings** to open the System Settings interface.
@@ -223,7 +216,7 @@ The password for the built-in ADMIN account has been updated.
 
 ## Settings
 
-The Settings section provides the ability to customize the user login page and configure the token
+The Settings section lets you customize the user login page and configure the token
 expiration time for authenticated users.
 
 ![Settings section of the User Access page](/images/threatprevention/8.0/reportingmodule/configuration/systemsettings/settings.webp)
@@ -236,7 +229,7 @@ expiration time for authenticated users.
   - The second page is the multi-factor authentication page
 
 - Token expiration time – The period of inactivity before the user is required to re-authenticate
-  for access to the console. Select the desired expiration time from the drop-down menu:
+  for access to the console. Select the expiration date you want time from the dropdown menu:
 
   - 15 Minutes
   - 30 Minutes

@@ -16,7 +16,7 @@ How to initiate the repository for workforce identities by loading identities in
 
 - [Configure Unique Property Generation](../../user-guide/set-up/initial-identities-loading/generate-unique-properties)
 
-How to configure Identity Manager to generate unique identifiers, mails and logins for any user who does not have them already.
+How to configure Identity Manager to generate unique identifiers, mails, and logins for any user who doesn't have them already.
 
 - [Load Identities to Identity Manager](../../user-guide/set-up/initial-identities-loading/load-identities)
 
@@ -76,7 +76,7 @@ How to define correlation rules to match up resources across systems, usually ac
 
 - [Classify Resources](../../user-guide/set-up/categorization/classification)
 
-How to define classification rules in order to classify remaining uncorrelated resources, assigning them resource types.
+How to define classification rules to classify remaining uncorrelated resources, assigning them resource types.
 
 - [Create a Provisioning Rule](../../user-guide/set-up/provisioning-rule-creation)
 
@@ -84,7 +84,7 @@ How to define scalar rules, navigation rules and/or query rules to compute and p
 
 - [Create Resources](../../user-guide/set-up/provisioning-rule-creation/resource-creation)
 
-How to define resource type rules to create new (target) resources for given users, computing and provisioning their properties based on source resources.
+How to define resource type rules to create new (target) resources for given users, computing, and provisioning their properties based on source resources.
 
 - [Compute a Scalar Property](../../user-guide/set-up/provisioning-rule-creation/scalar-property-computation)
 
@@ -116,5 +116,5 @@ How to assign Identity Manager's access permissions to users through profiles.
 
 - Manage Role Officers
 
-How to manage role officers in order to ensure the approval for entitlement assignments.
+How to manage role officers to ensure the approval for entitlement assignments.
 

@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Modules
 
-Identity Manager can integrate with other software for issues such as credential protection and logging. To use these integration modules, they just need to be configured in Identity Manager's `appsettings.json` file. Below is more module-specific information.
+Identity Manager can integrate with other software for issues such as credential protection and logging. To use these integration modules, configure them in Identity Manager's `appsettings.json` file. The following sections contain module-specific information.
 
 ## Credentials Protection
 

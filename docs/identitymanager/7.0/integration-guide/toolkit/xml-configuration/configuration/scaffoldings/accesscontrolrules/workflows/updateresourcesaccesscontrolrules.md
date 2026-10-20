@@ -27,7 +27,7 @@ sidebar_position: 2
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_HR_Person_Custom_Workflows_HR_Person" DisplayName_L1="Administrator_HR_Person_Custom_Workflows_HR_Person" EntityType="Workflow_HR_Person" Profile="Administrator">

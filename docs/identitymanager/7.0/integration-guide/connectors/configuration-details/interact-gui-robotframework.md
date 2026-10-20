@@ -10,7 +10,7 @@ This guide shows how to write a Robot Framework script which interacts with an e
 
 ## Example: Interacting with an application via a GUI
 
-Consider an external system that is accessible through a GUI program, and that does not offer an API. In this situation, we can either interact manually with the external system , or with a Robot Framework connection.
+Consider an external system that is accessible through a GUI program, and that doesn't offer an API. In this situation, you can either interact manually with the external system , or with a Robot Framework connection.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ Most FlaUI keywords require an XPath locator. These XPaths can be found using th
 
 This tool lets you choose the UIA (UI Automation) version. Picking UIA3 should work in most use cases.
 
-The FlaUI inspection tool shows each window that is open on the computer. To find the element the script is supposed to interact with, it is possible to manually search through the windows, and through the elements. However, the easiest way is to use the Hover Mode, which is accessible in the tool bar by clicking on **Mode** > **Hover Mode (use Ctrl)**. To see the XPath, click on **Mode** > **Show XPath**.
+The FlaUI inspection tool shows each window that is open on the computer. To find the element the script is supposed to interact with, you can manually search through the windows, and through the elements. However, the easiest way is to use the Hover Mode, which is accessible in the tool bar by clicking on **Mode** > **Hover Mode (use Ctrl)**. To see the XPath, click **Mode** > **Show XPath**.
 
 ![Show XPath](/images/identitymanager/robotframeworkflaui_flauishowxpath.webp)
 
@@ -46,11 +46,11 @@ As an example, imagine an application showing a list of files and folders. Targe
 
 The last part of the XPath however, `/Group[1]/ListItem[1]`, is what should be modified to find the right file. `Group[1]` means the element is in the first file group. `ListItem[1]` means the element is the first file of the group. Depending on the file explorer view mode, the XPath may end with `Edit[1]`, which means the targeted element is the name section of the file.
 
-As the Window's number may change, it should be specified by name. For the Downloads folder, `Window[@Name='Downloads']` specifies the window. The file may not always be at the same position, so it should also be specified. If the file is `FlaUInspect.exe`, it can be specified with `ListItem[@Name='FlaUInspect.exe']`. The Group may also change. It is not easy to find the right group, so the best method is to remove the groups, by right clicking, then selecting **Group by** > **(None)**.
+As the Window's number may change, it should be specified by name. For the Downloads folder, `Window[@Name='Downloads']` specifies the window. The file may not always be at the same position, so it should also be specified. If the file is `FlaUInspect.exe`, it can be specified with `ListItem[@Name='FlaUInspect.exe']`. The Group may also change. It isn't easy to find the right group, so the best method is to remove the groups, by right clicking, then selecting **Group by** > **(None)**.
 
 ## Use Case: Set a file to read-only
 
-Consider an HR system that creates a file for each employee. When an employee retires, it may be interesting to set the file to read-only, so that it is not modified by accident. It is possible to set the file to read-only by provisioning it with the Robot Framework.
+Consider an HR system that creates a file for each employee. When an employee retires, it may be interesting to set the file to read-only, so that it isn't modified by accident. You can set the file to read-only by provisioning it with the Robot Framework.
 
 ### Define settings
 
@@ -74,15 +74,15 @@ ${FOLDERPATH}  C:/identitymanagerDemo/${FOLDERNAME}
 
 ### Define custom keywords
 
-To modify a file's properties, the script needs custom keywords that allow the desired actions to be accomplished. In this case, to navigate through the explorer program. These keywords were written with the Windows 10 File Explorer in mind.
+To modify a file's properties, the script needs custom keywords that allow the actions you want to be accomplished. In this case, to navigate through the explorer program. These keywords were written with the Windows 10 File Explorer in mind.
 
  | Keyword | Details | 
  | --- | --- | 
  | Open Explorer | Opens and attaches the explorer program to FlaUI. A program can be attached to FlaUI by its name or by its `Pid`, which stands for process identifier. The `Launch Application` keyword returns a `Pid`, however the program may launch multiple processes. In the case of the explorer, it is almost always running, even if no explorer windows are open. The `Pid` returned may not be the correct one. Attaching by the program name seems to work in this case. | 
- | Open Folder | Opens the folder specified in the `Variables` section. Accessing the address bar is not trivial, as it is not a text field until it is clicked. However, clicking on most elements of the address bar does not open the text field. In this keyword, the icon in the address bar is clicked, which opens the text field. | 
+ | Open Folder | Opens the folder specified in the `Variables` section. Accessing the address bar isn't trivial, as it isn't a text field until it is clicked. However, clicking on most elements of the address bar doesn't open the text field. In this keyword, the icon in the address bar is clicked, which opens the text field. | 
  | Get File Name | Returns the file's name. This allows the computation of the file's name through a keyword instead of an expression, which can make syntax easier. | 
  | Set File To Read Only | Sets the file corresponding to the user to read only. This keyword calls the other keywords in the right order, and is used to simplify the readability of the script. | 
- | Open File Properties | Right clicks on a file, then opens the file's properties. The right click is on the file's image, but it could be changed to any of the file's fields. Note that changing the folder's view mode or ordering may alter the file's XPath. | 
+ | Open File Properties | Right clicks on a file, then opens the file's properties. The right click is on the file's image, but it could be changed to any of the file's fields. Changing the folder's view mode or ordering may alter the file's XPath. | 
  | Select Read Only | Selects the read only option. This keyword simply clicks on the radio button, then clicks on the `Ok` button. If the radio button is already ticked, the file will no longer be in read only mode. The script clicks on the `Ok` button as it automatically closes the properties window, unlike the `Apply` button. | 
  | Close Explorer | Clicks on the cross to close the explorer window. It is also possible to close the program with the `Close Application` keyword, however that also closes the background explorer process, so closing only the window is better. | 
 

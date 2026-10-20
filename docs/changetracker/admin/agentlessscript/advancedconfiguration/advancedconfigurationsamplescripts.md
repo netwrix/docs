@@ -14,8 +14,8 @@ name **NNT.Script.Console.exe**
 :::
 
 
-The sample scripts provided in this section all include a Main Script and a Logon Script dialogue,
-however, for Production Agentless Tracker’s, the Logon script only is used within the Credentials
-key with the Main Script commands being configured with the relevant Configuration Template.
+The sample scripts in this section include a Main Script and a Logon Script dialog. However, in a
+production Agentless Tracker, the Credentials key uses only the Logon script, and the relevant
+Configuration Template configures the Main Script commands.
 
 ![AgentlessScriptSamples.](/images/changetracker/admin/agentlessscript/agentlessscriptsamples.webp)

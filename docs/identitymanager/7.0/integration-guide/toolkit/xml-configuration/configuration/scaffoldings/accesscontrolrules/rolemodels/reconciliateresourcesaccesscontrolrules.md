@@ -33,7 +33,7 @@ Also create the rights to view the TargetEntityTypes of all ResourceTypes whose 
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Workforce/Administration/Directory_User_ReconciliateResources_AD_Entry_Custom_Resources_TargetResourceView" DisplayName_L1="Workforce/Administration/Directory_User_ReconciliateResources_AD_Entry_Custom_Resources_TargetResourceView" EntityType="AD_Entry" Profile="Administrator">

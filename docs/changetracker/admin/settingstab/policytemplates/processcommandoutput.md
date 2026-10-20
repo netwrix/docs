@@ -6,34 +6,39 @@ sidebar_position: 110
 
 # Policy Templates: Process/Command Output
 
-Where required, Netwrix Change Tracker can also execute commands on the endpoint device. Note that
-commands must be pre-approved for usage. All standard commands employed within Change Tracker
-Compliance Reports and the built-in Policy Templates are pre-approved but if you add any new
-commands these may require Admin approval. See the [Allowed Commands](/docs/changetracker/admin/settingstab/allowedcommands.md) topic
-for additional information.
+Where required, Netwrix Change Tracker can also execute commands on the endpoint device.
 
-- **Agent-Based Monitoring** – Where an Agent is being used for monitoring the commands will be
-  executed directly by the Agent and the initial baseline stored in the local Agent database, with
-  any subsequent changes detected being reported back to the Hub. The commands will be run using
-  whichever service account has been assigned to it. When run on Windows any commands are run from
-  the standard Windows\System32 shell and therefore may require a full executable path to be
-  specified e.g.
+:::note
+Commands require pre-approval before use.
+:::
 
-cmd /C %systemroot%\system32\inetsrv\appcmd list VDIR /text:VDIR.NAME
+Change Tracker pre-approves all standard commands used in Compliance Reports and the built-in
+Policy Templates, but new commands you add may require admin approval. See [Allowed
+Commands](/docs/changetracker/admin/settingstab/allowedcommands.md) for additional information.
+
+- **Agent-Based Monitoring** – For Agent-based monitoring, the Agent executes the commands directly
+  and stores the initial baseline in the local Agent database, reporting any subsequent changes back
+  to the Hub. The Agent runs the commands using whichever service account is assigned to it. On
+  Windows, commands run from the standard `Windows\System32` shell, so you may need to specify a
+  full executable path, for example:
+
+  ```
+  cmd /C %systemroot%\system32\inetsrv\appcmd list VDIR /text:VDIR.NAME
+  ```
 
 ![ProcessCommandOutput](/images/changetracker/admin/settings/policytemplates/processcommandoutput.webp)
 
-- Commands will be executed indirectly by the **Master Proxy Agent** being used and the initial
-  baseline stored in the **Proxy Agent** database, with any subsequent changes detected being
-  reported back to the Hub. The commands will be run using whichever service account has been used
-  in the assigned **Credentials**.
+- **Agentless Monitoring** – The **Master Proxy Agent** in use executes commands indirectly and
+  stores the initial baseline in the **Proxy Agent** database, reporting any subsequent changes back
+  to the Hub. It runs the commands using whichever service account is assigned in the
+  **Credentials**.
 
 ![ProcessCommandOutputCredentials](/images/changetracker/admin/settings/policytemplates/processcommandoutputcredentials.webp)
 
-- **Use of RegEx** – Whether using Agent-based or Agentless Command Output Trackers, a Regular
-  Expression can be applied to the command output to filter/match specific keywords/patterns. Note
-  that any device-offered RegEx capabilities e.g. egrep on Linux, can still be used instead of or to
-  complement the Agent regex applied.
+- **Use of RegEx** – Whether using Agent-based or Agentless Command Output Trackers, you can apply a
+  regular expression to the command output to filter or match specific keywords or patterns. You can
+  still use any device-offered RegEx capability, such as `egrep` on Linux, instead of or in addition
+  to the Agent's regex.
 
-The Agent will only trust a signed **Configuration Template** issued from its assigned Hub. Please
-contact [Netwrix Support](https://www.netwrix.com/support.html) for additional information.
+The Agent only trusts a signed **Configuration Template** issued from its assigned Hub. Contact
+[Netwrix Support](https://www.netwrix.com/support.html) for additional information.

@@ -13,7 +13,7 @@ the Gen 7 Agent reads user and process information from log files that Activity 
 instead of relying on the built-in kernel mini-filter driver (`NNTInfo.sys`).
 
 This is useful in environments where the kernel driver can't load, for example systems
-with strict kernel security policies (Secure Boot / HVCI), certain hypervisor configurations, or
+with strict kernel security policies (Secure Boot / Hypervisor-Enforced Code Integrity, or HVCI), certain hypervisor configurations, or
 where you already deploy Activity Monitor and want a single audit trail for file activity.
 
 :::note
@@ -62,7 +62,7 @@ Add or update the following keys in the `<appSettings>` section:
 |---|---|---|
 | `useActivityMonitorChangeSource` | `true` | Enables Activity Monitor as the attribution source. Set to `false` (or omit) to use the default kernel driver. |
 | `activityMonitorChangeSourceDirectory` | Path to log directory | The folder where Activity Monitor writes its log files. The default is `C:\ProgramData\Netwrix\Activity Monitor\Agent\ActivityLogs`. Must match the `LOG_FILE` directory in the [auto-generated INI file](#auto-generated-ini-file). |
-| `changeSourceFileFormat` | `json` (default) or `tsv` | Log file format that Activity Monitor writes. Leave as `json` unless you explicitly configure Activity Monitor for TSV output. |
+| `changeSourceFileFormat` | `json` (default) or `tsv` | Log file format that Activity Monitor writes. Leave as `json` unless you explicitly configure Activity Monitor for tab-separated values (TSV) output. |
 | `loaddriver` | `true` (default) or `false` | Controls whether the agent loads the kernel mini-filter driver (`NNTInfo.sys`) for file change attribution. Mutually exclusive with `useActivityMonitorChangeSource`. When both are `true`, Activity Monitor takes precedence and the agent doesn't load the driver. |
 
 Example `<appSettings>` entries:
@@ -81,7 +81,7 @@ can do so to make the configuration clearer.
 :::
 
 **Step 1 –** Open `Gen7Agent.App.NetCore.dll.config` in a text editor with administrator
-privileges and add the preceding keys with the appropriate values for your environment.
+privileges and add the keys from the `<appSettings>` table with the appropriate values for your environment.
 
 **Step 2 –** Restart the Gen 7 Agent service for the changes to take effect:
 
@@ -126,14 +126,14 @@ The `SBTFileMon.ChangeTracker.ini` file is separate from Activity Monitor's main
 - Verify the `activityMonitorChangeSourceDirectory` path exists and contains files matching
   the pattern `*_CT_Log_{YYYYMMDD}.json`.
 - Check the agent's `rolling-log.txt` for warnings from `ActivityMonitorChangeSource`. Look
-  for messages indicating the directory or log file can't be found.
+  for messages indicating the agent can't find the directory or log file.
 
 **INI file not generated**
 
 - Check that the registry key
   `HKLM\SYSTEM\CurrentControlSet\Services\SBTLogging\Parameters\ConfigPath` exists and
   contains a valid path. The Activity Monitor installer creates this key; if it is
-  missing, Activity Monitor may not be installed correctly.
+  missing, Activity Monitor might not have installed correctly.
 - Confirm that the Hub assigns the FIM policy to the device and that the policy template
   enables live tracking.
 

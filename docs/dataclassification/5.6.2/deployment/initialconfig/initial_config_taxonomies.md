@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Add Taxonomy
 
-On this step, you are prompted to load predefined taxonomies.
+On this step, load predefined taxonomies.
 
 ![processing_settings_taxonomies](/images/dataclassification/5.6.2/deployment/processing_settings_taxonomies.webp)
 

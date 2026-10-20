@@ -58,7 +58,7 @@ Generates the execution rights for Provisioning and Fulfillment tasks for a give
 
 - [Resource Changes View Access Control Rules](accesscontrolrules/jobs/resourcechangesviewaccesscontrolrules)
 
-Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange and ResourceLinkChange.
+Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange, and ResourceLinkChange.
 
 - [Resource Type Mapping Control Rules](accesscontrolrules/jobs/resourcetypemappingcontrolrules)
 
@@ -106,7 +106,7 @@ Generates the access control rule which gives to a profile the permission to que
 
 - [Assign Profile Access Control Rules](accesscontrolrules/profiles/assignprofileaccesscontrolrules)
 
-Gives to a given profile the rights to create, update, delete and query any assigned profile.
+Gives to a given profile the rights to create, update, delete, and query any assigned profile.
 
 - [Open Id Client Administration Access Control Rules](accesscontrolrules/profiles/openidclientadministrationaccesscontrolrules)
 
@@ -114,13 +114,13 @@ Gives to a given profile the rights to create, update, delete and query any assi
 
 - [Profile Administration Access Control Rules](accesscontrolrules/profiles/profileadministrationaccesscontrolrules)
 
-Gives to a given profile the rights to create, update and delete profiles.
+Gives to a given profile the rights to create, update, and delete profiles.
 
 - [Queries](accesscontrolrules/queries)
 
 - [Manage Setting Access Control Rule](accesscontrolrules/queries/managesettingaccesscontrolrule)
 
-Generates the access control rule which gives to a profile the permission to query, create, update and delete settings from the UM_Settings table.
+Generates the access control rule which gives to a profile the permission to query, create, update, and delete settings from the UM_Settings table.
 
 - [Report Access Control Rules](accesscontrolrules/queries/reportaccesscontrolrules)
 
@@ -308,7 +308,7 @@ Creates the Item menu for the entity's report so that it is displayed in the rep
 
 - [Create Update Delete Menus](entitytypes/workflows/createupdatedeletemenus)
 
-Creates creation, update and delete menus for an entity.
+Creates creation, update, and delete menus for an entity.
 
 - [Create Update Delete Workflows](entitytypes/workflows/createupdatedeleteworkflows)
 
@@ -420,7 +420,7 @@ Assigns a set of rights to a given profile to execute any job, and view all job 
 
 - [Job View Access Control Rules](templates/jobviewaccesscontrolrules)
 
-Scaffolding to generate a set of rights to view all JobInstances, TaskInstances and logs.
+Scaffolding to generate a set of rights to view all JobInstances, TaskInstances, and logs.
 
 - [Simulation Access Control Rules](templates/simulationaccesscontrolrules)
 

@@ -6,8 +6,6 @@ sidebar_position: 30
 
 # Console Backup
 
-Follow the steps to back up the list of agents managed on the Activity Monitor Console.
-
 **Step 1 –** Back up the configuration file:
 
 **%ALLUSERSPROFILE%\Netwrix\Activity Monitor\Console\Agents.ini**
@@ -18,8 +16,6 @@ Follow the steps to back up the list of agents managed on the Activity Monitor C
 
 **Step 3 –** Back up passwords.
 
-Credentials for the agents are stored in the `Agents.ini` file in an encrypted form using PSAPI.
-They can only be decrypted on the same Windows workstation. To be able to restore the configuration
-on a different workstation, back up the passwords separately.
+The `Agents.ini` file stores agent credentials in an encrypted form using PSAPI. You can only decrypt them on the same Windows workstation. To restore the configuration on a different workstation, back up the passwords separately.
 
 All key components necessary for data recovery have now been backed up for the console.

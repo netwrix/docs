@@ -26,7 +26,7 @@ sidebar_position: 10
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <NotificationAspect Identifier="PerformerNotification_Directory_User_ChangeName" ExpressionBinding="Workflow_Directory_User:Directory_User" RazorFile_L1="&lt;div&gt;

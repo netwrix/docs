@@ -41,7 +41,7 @@ To enable permissions, the Active Directory administrator must do the following:
 
 ![Enable Permissions - Step 2](/images/identitymanager/references_connectors_activedirectory_02.webp)
 
-**Step 3 –** Select the **Replicating Directory Changes** check box from the list.
+**Step 3 –** Select the **Replicating Directory Changes** checkbox from the list.
 
 ![Enable Permissions - Step 3](/images/identitymanager/references_connectors_activedirectory_03.webp)
 
@@ -65,7 +65,7 @@ The export is executed by a job from the UI, or via Usercube-Export-ActiveDirect
 
 This process is configured through a connection in the UI and/or the XML configuration, and in the *appsettings.agent.json* > Connections section:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -90,7 +90,7 @@ The identifier of the connection and thus the name of the subsection must:
 > contoso.server.com using Basic Authentication with **BaseDN**, **Login**, **Password** with
 > EnableSSL for all entries ( "Filter": "(objectclass=\*)"):
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```
@@ -123,9 +123,9 @@ The identifier of the connection and thus the name of the subsection must:
  | --- | --- | --- | 
  | Servers required | Server List | List of pairs that define the target servers, made of: - Server: domain controller URL. - BaseDN: base Distinguished Name used to connect to the related server. | 
  | AsAdLds optional | Boolean | True to state the managed system as an AD LDS. It is used for extracting the schema through the connection screen. | 
- | EnableSSL optional | Boolean | True to enable SSL protocol for authentication requests. recommended when using AuthType set to Basic because basic authentication packets are **not** encrypted by default. SSL is **not** available on Linux. | 
+ | EnableSSL optional | Boolean | True to enable SSL protocol for authentication requests. Recommended when using AuthType set to Basic because basic authentication packets aren't encrypted by default. SSL isn't available on Linux. | 
  | NoSigning optional | Boolean | True to disable Kerberos encryption. | 
- | AuthType default value: Negotiate | String | Authentication method used by Identity Manager to authenticate to the server. Access is granted to the target domain controller: Anonymous - without any login/password; Basic - via the BaseDN, Login and Password attributes; Negotiate - via GSS-API negotiations with the Kerberos mechanism used for authentication. | 
+ | AuthType default value: Negotiate | String | Authentication method used by Identity Manager to authenticate to the server. Access is granted to the target domain controller: Anonymous - without any login/password; Basic - via the BaseDN, Login, and Password attributes; Negotiate - via GSS-API negotiations with the Kerberos mechanism used for authentication. | 
  | Login optional | String | Login used by Identity Manager for basic authentication. It is required when AuthType is set to Basic. | 
  | Password optional | String | Password used by Identity Manager for basic authentication. It is required when AuthType is set to Basic. | 
  | Filter required | String | Value that filters out the corresponding entries from the AD instance which will **not** be exported. **only** non-filtered entries are exported. The filter value complies with Microsoft's [search filter syntax](https://docs.microsoft.com/en-us/windows/win32/adsi/search-filter-syntax). | 
@@ -144,7 +144,7 @@ Any property can be exported in a specific format when specified. See the [Refer
 
 - An additional file for each related table other than entries;
 - A cookie file named `<connectionIdentifier>`\_cookie.bin, containing the time of the last export
-in order to perform incremental exports.
+to perform incremental exports.
 
 :::note
  Most exports can be run in complete mode, where the CSV files will contain all entries, or in incremental mode, where CSV files will contain **only** the entries which have been modified since the last synchronization. 
@@ -155,15 +155,15 @@ The CSV files are stored in the ExportOutput folder, and the cookie file in the 
 
 For example, with the following configuration example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
                 <EntityType Identifier="AD_Entry" DisplayName_L1="AD - Entry" >  <Property Identifier="dn" DisplayName_L1="dn" IsKey="true" TargetColumnIndex="0" Type="String" />  <Property Identifier="objectCategory" DisplayName_L1="objectCategory" TargetColumnIndex="4" Type="String" />  <Property Identifier="objectGuid" DisplayName_L1="objectGuid" TargetColumnIndex="3" Type="String" IsKey="true" />  <Property Identifier="objectSid" DisplayName_L1="objectSid" TargetColumnIndex="9" Type="String" />  <Property Identifier="pwdLastSet" DisplayName_L1="pwdLastSet" TargetColumnIndex="13" Type="String" />  <Property Identifier="thumbnailPhoto" DisplayName_L1="thumbnailPhoto" Type="Binary" />  <Property Identifier="ParentDn" DisplayName_L1="ParentDN" Type="ForeignKey" TargetColumnIndex="128" />  <Property Identifier="children" DisplayName_L1="children" Type="ForeignKey" />  <Property Identifier="Member" DisplayName_L1="Member" Type="ForeignKey" />  <Property Identifier="memberOf" DisplayName_L1="memberOf" Type="ForeignKey"/></EntityType><EntityTypeMapping Identifier="AD_Entry" Connector="AD" ConnectionTable="ADExport_entries">  <Property Identifier="dn" <b>ConnectionColumn="dn"</b> IsUniqueKey="true" />  <Property Identifier="objectCategory" <b>ConnectionColumn="objectCategory"</b> Format="rdn" />  <Property Identifier="objectGuid" <b>ConnectionColumn="objectGuid"</b> IsPrimaryKey="true" Format="guid" />  <Property Identifier="objectSid" <b>ConnectionColumn="objectSid"</b> IsUniqueKey="true" Format="sid"/>  <Property Identifier="pwdLastSet" <b>ConnectionColumn="pwdLastSet"</b> Format="1601date" />  <Property Identifier="thumbnailPhoto" <b>ConnectionColumn="thumbnailPhoto"</b> Format="binary" /></EntityTypeMapping><EntityAssociation Identifier="AD_Entry_parentdn" DisplayName_L1="Parent DN" IsProperty1Collection="true" Property2="AD_Entry:ParentDn" Property1="AD_Entry:children" /><EntityAssociation Identifier="AD_Entry_member" DisplayName_L1="Member" IsProperty1Collection="true" IsProperty2Collection="true" Property1="AD_Entry:Member" Property2="AD_Entry:memberOf" /><EntityAssociationMapping Identifier="AD_Entry_parentdn" Column2="dn" <b>Column1="parentdn"</b> ConnectionTable="ADExport_entries" EntityPropertyMapping1="AD_Entry:dn" EntityPropertyMapping2="AD_Entry:dn" Connector="AD" /><EntityAssociationMapping Identifier="AD_Entry_member" Column1="dn" <b>Column2="member"</b> ConnectionTable="ADExport_members" EntityPropertyMapping1="AD_Entry:dn" EntityPropertyMapping2="AD_Entry:dn" Connector="AD" />
 ```
 
-We would have `C:/identitymanagerContoso/Temp/ExportOutput/*ADExport_entries.csv*` with a column for each scalar property. See the [Entity Model](../../../integration-guide/entity-model) topic for additional information.
+The result is `C:/identitymanagerContoso/Temp/ExportOutput/*ADExport_entries.csv*` with a column for each scalar property. See the [Entity Model](../../../integration-guide/entity-model) topic for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 *ADExport_entries.csv*
@@ -193,7 +193,7 @@ Each **BaseDN** will generate a cookie file, but the entries from all **BaseDN**
 > (contoso.server.com), but on two different **BaseDN**s (DC=contoso,DC=com and
 > DC=defense,DC=contoso,DC=com).
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```
@@ -227,7 +227,7 @@ Each **BaseDN** will generate a cookie file, but the entries from all **BaseDN**
 
 ## Fulfill
 
-This connector writes to the Active Directory, to create, update and delete entries, initiated manually through the UI or automatically by enforcing the policy. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
+This connector writes to the Active Directory to create, update, and delete entries, initiated manually through the UI or automatically by enforcing the policy. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
 
 ### Configuration
 
@@ -235,7 +235,7 @@ Same as for export, fulfill is configured through connections.
 
 > The following example connects to an AD LDS system located at contoso.server.com.
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```
@@ -267,9 +267,9 @@ Same as for export, fulfill is configured through connections.
  | --- | --- | --- | 
  | Servers required | Server List | List of pairs that define the target servers, made of: - Server: domain controller URL. - BaseDN: base Distinguished Name used to connect to the related server. | 
  | AsAdLds optional | Boolean | True to state the managed system as an AD LDS. It isInfo: used for extracting the schema through the connection screen. | 
- | EnableSSL optional | Boolean | True to enable SSL protocol for authentication requests. **NOTE:** recommended when using AuthType set to Basic because basic authentication packets are **not** encrypted by default. SSL is **not** available on Linux. | 
+ | EnableSSL optional | Boolean | True to enable SSL protocol for authentication requests. Recommended when using AuthType set to Basic because basic authentication packets aren't encrypted by default. SSL isn't available on Linux. | 
  | NoSigning optional | Boolean | True to disable Kerberos encryption. | 
- | AuthType default value: Negotiate | String | Authentication method used by Identity Manager to authenticate to the server. Access is granted to the target domain controller: Anonymous - without any login/password; Basic - via the BaseDN, Login and Password attributes; Negotiate - via GSS-API negotiations with the Kerberos mechanism used for authentication. | 
+ | AuthType default value: Negotiate | String | Authentication method used by Identity Manager to authenticate to the server. Access is granted to the target domain controller: Anonymous - without any login/password; Basic - via the BaseDN, Login, and Password attributes; Negotiate - via GSS-API negotiations with the Kerberos mechanism used for authentication. | 
  | Login optional | String | Login used by Identity Manager for basic authentication. **NOTE:** It is required when AuthType is set to Basic. | 
  | Password optional | String | Password used by Identity Manager for basic authentication. **NOTE:** It is required when AuthType is set to Basic. | 
 
@@ -285,7 +285,7 @@ Same as for export, this connector can fulfill resources to multiple forests tru
 
 The following example fulfills data to two targets: both on the same Server (contoso.server.com), but on two different BaseDNs (DC=contoso,DC=com and DC=defense,DC=contoso,DC=com).
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -315,11 +315,11 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 Some systems using the LDAP protocol require additional attributes in the creation and/or update requests.
 
-If these attributes are **not** synchronized in Identity Manager, then they cannot be computed and provided by scalar rules or navigation rules. In this case, they can be given as arguments in the provisioning order, through the ResourceType's ArgumentsExpression.
+If these attributes **aren't** synchronized in Identity Manager, then they can't be computed and provided by scalar rules or navigation rules. In this case, they can be given as arguments in the provisioning order, through the ResourceType's ArgumentsExpression.
 
 The following example adds the attribute description with a value depending on what is modified:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
                 <ResourceType Identifier="LDAP_Entry_NominativeUser" DisplayName_L1="LDAP User (nominative)" Policy="Default" TargetEntityType="LDAP_Entry" Category="Accounts" SourceEntityType="Directory_User" ApprovalWorkflowType="One" HideOnSimplifiedView="true"
@@ -351,6 +351,6 @@ Data protection can be ensured through:
 - An Azure Key Vault safe; See the
 [Azure Key Vault](../../../integration-guide/network-configuration/agent-configuration/azure-key-vault) topic for additional information.
 
-- A CyberArk Vault able to store Active Directory's Login, Password and Server. See the
+- A CyberArk Vault able to store Active Directory's Login, Password, and Server. See the
 [CyberArk's AAM Credential Providers ](../../../integration-guide/network-configuration/agent-configuration/cyberark-application-access-manager-credential-providers) topic for additional information.
 

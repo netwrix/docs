@@ -21,7 +21,7 @@ send the monitored events to Splunk.
   show file system activity will display data.
 - If only Threat Prevention is configured to send events to Splunk, all the cards will display data.
 
-After installing the Threat Hunting App for Splunk, ensure that the applicable Netwrix product(s)
+After installing the Threat Hunting App for Splunk, ensure that the applicable Netwrix products
 have been configured to send events to Splunk.
 
 ## App Installation in Splunk (Threat Hunting)
@@ -38,11 +38,11 @@ Threat Prevention or Netwrix File Activity Monitor.
 
 ## Initial Configuration of the Threat Hunting App for Splunk
 
-Follow the steps to configure Splunk to receive data from either Threat Prevention or Netwrix
+Complete the following steps to configure Splunk to receive data from either Threat Prevention or
 Netwrix Activity Monitor.
 
 :::tip
-Remember, prior to using the Netwrix Threat Hunting App for Splunk, the relevant Netwrix product
+Remember, before using the Netwrix Threat Hunting App for Splunk, the relevant Netwrix product
 must be configured to send data to Splunk.
 :::
 

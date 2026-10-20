@@ -6,44 +6,45 @@ sidebar_position: 20
 
 # Export Reports
 
-In order to export filtered events, just use the **Report/Export** button and menu presented. Most
-fields and settings are self-explanatory but those most likely to need explaining are covered below.
+To export filtered events, use the **Report/Export** button and menu. The following sections
+explain the fields and settings that need more explanation.
 
 ![ReportsExportDisplayOptions](/images/changetracker/admin/tabs/reportsexportdisplayoptions.webp)
 
-These options provide control over the report display options. Where a condensed and simplified
-report is needed, these options can be unchecked, but generally the tables and analysis charts are
-useful for identifying sources of change noise.
+These options control the report display. If you need a condensed, simplified report, you can
+uncheck these options. Generally, the tables and analysis charts are useful for identifying
+sources of change noise.
 
 ![ReportsExportScheduleAndEmail](/images/changetracker/admin/tabs/reportsexportscheduleandemail.webp)
 
-Set schedule for start and end time for reporting schedule, with frequency for repeating report
-delivery.
+Set the start and end time for the reporting schedule, along with the frequency for repeating
+report delivery.
 
 **Results Delivery** options include:
 
 - List of recipient emails
-- Two different report formats e.g. pdf and csv
-- No email if no results, otherwise a reassuring email is always sent, even if there is nothing to
-  report
-- Maximum attachment size is a safety measure to prevent sending of, say, a 5TB report
+- Two different report formats, for example PDF and CSV
+- No email if there are no results; otherwise, Change Tracker always sends a confirmation email,
+  even if there's nothing to report
+- Maximum attachment size, a safety measure that prevents sending an excessively large report, for
+  example a 5 TB report
 
-Press the **OK** button at the bottom of the window when done.
+Click **OK** at the bottom of the window when done.
 
-## Permission and Storage Settings Offered by the Event/Report Settings
+## Permission and storage settings
 
 ![ReportsExportPermissionsAndStorage](/images/changetracker/admin/tabs/reportsexportpermissionsandstorage.webp)
 
-Netwrix Change Tracker gives greater control over storage usage. By default, reports generated are
-retained for a finite period after which they are removed. Typically reports are delivered by email
-so are stored outside of the DB so it is unnecessary to retain the reports within the DB too. The
-events within the reports are retained, of course, but the duplicate set of events created for the
-report are removed.
+Netwrix Change Tracker gives you greater control over storage usage. By default, Change Tracker
+retains generated reports for a finite period, then removes them. Change Tracker typically
+delivers reports by email and stores them outside the database, so it doesn't need to also retain
+the reports in the database. Change Tracker retains the events within the reports, but removes the
+duplicate set of events it created for the report.
 
-By default, the originator of the report is provided with visibility of their own reports, but where
-required, reports can be made visible and/or editable by others.
+By default, the report's originator can view their own reports. If required, you can make reports
+visible or editable by others.
 
-Press the **OK** button at the bottom of the window when done!
+Click **OK** at the bottom of the window when done.
 
-Report settings, schedules and results can all be seen and edited on the **Reports** tab. See the
+You can view and edit report settings, schedules, and results on the **Reports** tab. See the
 [Report Options](/docs/changetracker/admin/reportstab/reportsquerysettingstab.md) topic for additional information.

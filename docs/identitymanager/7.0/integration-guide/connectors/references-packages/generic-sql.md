@@ -17,5 +17,5 @@ Exports data from a SQL database.
  | Has Incremental Mode | False | 
  | Publisher | Identity Manager | 
 
-When creating a connection to a database which is not handled by Identity Manager's packages, you'll need to fill in the `ProviderDllName` and `ProviderClassFullName` properties of the [Sql](../../../integration-guide/connectors/references-connectors/sql) connector using the procedure given in the example.
+When creating a connection to a database which isn't handled by Identity Manager's packages, you'll need to fill in the `ProviderDllName` and `ProviderClassFullName` properties of the [Sql](../../../integration-guide/connectors/references-connectors/sql) connector using the procedure given in the example.
 

@@ -40,7 +40,7 @@ The following example implements a default display name for resources from the `
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <EntityTypeDisplayName Id="101" EntityType="Directory_PresenceState" />

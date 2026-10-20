@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Search Users
 
-Helpdesk users can search for users in specific identity store(s) or all identity stores defined in
+Helpdesk users can search for users in specific identity stores or all identity stores defined in
 Directory Manager. A search filter is also available to help you narrow down your search results.
 
 ## Perform a Search
@@ -18,16 +18,16 @@ Directory Manager. A search filter is also available to help you narrow down you
 3. Use the following options to filter users:
 
     - **Identity store box** - To get users from one or specific identity stores, click in the
-      **Identity store** box and select the check boxes for the identity stores you want to fetch
+      **Identity store** box and select the checkboxes for the identity stores you want to fetch
       users from.
     - **Search Users box** - Enter a search text and press _Enter_. Users with the first names, last
       names, or email addresses matching the text are filtered and displayed.
-    - **Search filter** - You can also search users based on enrollment. Click **Filter(s)**. The
-      **Filter(s)** dialog box is displayed with the following options:
+    - **Search filter** - You can also search users based on enrollment. Click **Filters**. The
+      **Filters** dialog box is displayed with the following options:
 
-        - **Enrolled with:** click in the box and select the authentication type(s) to restrict
+        - **Enrolled with:** click in the box and select the authentication types to restrict
           search to users enrolled with any of those authentication types.
-        - **Not Enrolled with:** click in the box and select the authentication type(s) to restrict
+        - **Not Enrolled with:** click in the box and select the authentication types to restrict
           search to users not enrolled with any of those authentication types.
         - Click **Apply**. Users matching the given criteria get listed.
 

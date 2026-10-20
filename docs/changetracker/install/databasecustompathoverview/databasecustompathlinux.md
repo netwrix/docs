@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Linux
 
-By default the Netwrix Change Tracker database resides on the /var/lib/mongo path. A typical
-installation will look like the below:
+By default, the Netwrix Change Tracker database resides on the /var/lib/mongo path. A typical
+installation looks like the following:
 
 # cd /var/lib/mongo
 
@@ -22,23 +22,22 @@ local.ns NNTHubService.1 NNTHubService.4 NNTHubService.7
 The minimum requirement for Netwrix Change Tracker implementation is 10GB free space for the volume
 supporting `/var/lib`.
 
-## Modify Database Storage Path Prior to Installation of Change Tracker
+## Modify database storage path before installing Change Tracker
 
-If you prefer database files to be written to a different path/volume then it is best to carry out
-the following procedure instead of using the standard **nnthubservice.rpm** installer package.
+If you prefer to write database files to a different path or volume, use the following procedure
+instead of the standard **nnthubservice.rpm** installer package.
 
-You can install mongo first and alter the `dbpath` parameter before installing the rest of the
-system if you wish - it s probably best setup as early as possible to prevent the large files being
-created.
+You can install mongo first and change the `dbpath` parameter before installing the rest of the
+system. Set this up as early as possible to prevent mongo from creating large files.
 
 # yum install mongodb-org
 
-Should install just mongo at which point you can tweak the parameters as required before proceeding
-with the rest of the installation. First stop any mongo processes:
+This installs just mongo. At that point, you can tweak the parameters as needed before proceeding
+with the rest of the installation. First, stop any mongo processes:
 
 # service mongod stop
 
-Create the folder for the data to be moved to:
+Create the folder to move the data to:
 
 # mkdir -p /opt/mongod/data
 
@@ -58,12 +57,11 @@ Finally, restart the database using:
 
 # service mongod start
 
-## Modify the Database Storage Path after Installing the Product
+## Modify the database storage path after installing the product
 
 :::tip
-Remember, if SELinux is enabled then please copy the directory created by the install to the new
-location. The copy command (example below), will take all the SELinux labelling with the copied
-directory.
+If SELinux is enabled, copy the directory that the installer creates to the new location. The
+following copy command example preserves the SELinux labeling in the copied directory.
 :::
 
 
@@ -75,7 +73,7 @@ Stop the hub and mongo services:
 
 # service mongod stop
 
-Create the folder for the data to be moved to:
+Create the folder to move the data to:
 
 # mkdir -p /opt/mongod/data
 
@@ -107,7 +105,7 @@ Restart mongo and the hub:
 
 # service nnhubservice start
 
-In addition it is possible to ask mongo to use smaller files on disk-space constrained systems. In
-the mongod.conf file you can add a further parameter:
+You can also configure mongo to use smaller files on disk-space-constrained systems by adding a
+parameter to the mongod.conf file:
 
 smallfiles=true

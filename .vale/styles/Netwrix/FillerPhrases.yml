@@ -1,0 +1,15 @@
+extends: existence
+message: "Remove the filler phrase '%s'."
+level: warning
+ignorecase: true
+tokens:
+  - "\\bin today's (?:fast.paced|digital|modern|ever.changing|rapidly evolving)\\b"
+  - '\bin the (?:modern|digital) (?:age|era|world)\b'
+  - '\bit goes without saying\b'
+  - '\bwhen it comes to\b'
+  - '\bat its core\b'
+  - '\bat the heart of\b'
+  - '\blet''s dive\b'
+  - '\bdive (?:in|into)\b'
+  - '\bin the (?:ever.evolving|ever.changing) \w+'
+  - '\bever.(?:evolving|changing) (?:landscape|world|threat)\b'

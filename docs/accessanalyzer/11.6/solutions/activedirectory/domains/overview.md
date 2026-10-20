@@ -14,7 +14,7 @@ configurations that may leave your environment at risk.
 The following components comprises the 5.Domains Job Group:
 
 - [0.Collection Job Group](/docs/accessanalyzer/11.6/solutions/activedirectory/domains/collection/overview.md)
-  – Collects the data which will be further analyzed in order to provide details on domains, sites,
+  – Collects the data which will be further analyzed to provide details on domains, sites,
   and trusts.
 - [AD_DCSummary Job](/docs/accessanalyzer/11.6/solutions/activedirectory/domains/ad_dcsummary.md)
   – Provides operational reporting related to the details collected for each domain controller. For
@@ -26,7 +26,8 @@ The following components comprises the 5.Domains Job Group:
   and types and directions of trusts
 - [AD_DSRMSettings Job](/docs/accessanalyzer/11.6/solutions/activedirectory/domains/ad_dsrmsettings.md)
   – Provides details on domain controller registry settings for the DSRMAdminLogonBehavior key. If
-  this key is set to 1 or 2, the DSRM Admin Account can be used to log in to the domain controller
-  even if it has not been started in DSRM which can present a potential security vulnerability.
+  this key is set to 1 or 2, the Directory Services Restore Mode (DSRM) Admin Account can log in to
+  the domain controller even if it has not been started in DSRM, which can present a potential
+  security vulnerability.
   Additional information on this registry key is available in this
   [Microsoft Document](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732714(v=ws.10)?redirectedfrom=MSDN).

@@ -117,7 +117,7 @@
 | is_policy_checked | bit | | No | SA_SQLServer_SqlLogins.is_policy_checked | Whether password policy is enforced |
 | is_expiration_checked | bit | | No | SA_SQLServer_SqlLogins.is_expiration_checked | Whether password expiration is enforced |
 | password_hash | varbinary | 256 | Yes | SA_SQLServer_SqlLogins.password_hash | Hashed password value |
-| is_locked | bit | | Yes | SA_SQLServer_SqlLogins.is_locked | Whether the account is currently locked out |
+| is_locked | bit | | Yes | SA_SQLServer_SqlLogins.is_locked | Whether the account is locked out |
 | is_expired | bit | | Yes | SA_SQLServer_SqlLogins.is_expired | Whether the password has expired |
 | is_must_change | bit | | Yes | SA_SQLServer_SqlLogins.is_must_change | Whether the password must be changed at next login |
 | password_hash_algorithm | int | | Yes | SA_SQLServer_SqlLogins.password_hash_algorithm | Algorithm used to hash the password |

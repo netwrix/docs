@@ -56,7 +56,7 @@ The integration can be configured for the following Auditor data sources:
 
 ## Enable and Configure Netwrix Privilege Secure Integration
 
-Follow the steps to enable and configure Netwrix Privilege Secure integration.
+enable and configure Netwrix Privilege Secure integration:
 
 **Step 1 –** In Netwrix Auditor, navigate to Settings in the upper right corner.
 
@@ -70,7 +70,7 @@ Follow the steps to enable and configure Netwrix Privilege Secure integration.
 options are available:
 
 - New/Generate certificate – Create a new certificate.
-- Select an existing certificate – Select an available certificate from the drop-down list.
+- Select an existing certificate – Select an available certificate from the dropdown list.
 
 ![npsclientcertificate](/images/auditor/10.7/admin/settings/npsclientcertificate.webp)
 
@@ -84,7 +84,7 @@ the steps below:
    Console).
 2. **Click File > Add/Remove Snap-in...** and locate Certificates icon.
 3. In the pop-up window, select the **Computer account** and click **Next**.
-4. Make sure that the **Local Computer** option is selected in the next window, then click
+4. Ensure that the **Local Computer** option is selected in the next window, then click
    **Finish**. The Certificates menu will appear.
 5. Go to **Certificates (Local Computer) > Personal > Certificates > `{Certificate Name}`** and
    click **Export**.
@@ -117,7 +117,7 @@ documentation for additional instructions.
 **Step 12 –** After the validation, click **Finish**.
 
 Integration between Netwrix Auditor and Netwrix Privilege Secure is established. Before using the
-Netwrix Privilege Secure for data collection in Netwrix Auditor, make sure that you created a
+Netwrix Privilege Secure for data collection in Netwrix Auditor, ensure that you created a
 dedicated Access Policy and Connection Profile in Netwrix Privilege Secure. Refer to the
 [Netwrix Privilege Secure](https://helpcenter.netwrix.com/category/privilegesecure_accessmanagement)
 documentation for additional information.

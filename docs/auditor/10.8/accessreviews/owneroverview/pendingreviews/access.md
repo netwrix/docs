@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Perform an Access Review
 
-An Access review can be conducted for various types of data repository resources. Follow the steps
-to perform an Access review.
+An Access review can be conducted for various types of data repository resources. To perform an Access review:
 
 **Step 1 –** On the Pending Reviews page, select the resource with a pending Access review and click
 **Begin Review**. The Resource Review page opens to the 1 Make changes tab.
@@ -22,8 +21,8 @@ The table displays access information for the resource being reviewed:
 - Access Level (Full Control, Modify, and Read) columns — Blue checkmark icon indicates current
   access level
 
-**Step 2 –** Recommend access changes for a trustee by clicking the icon for the desired access
-level (Full Control, Modify, or Read columns). A yellow checkmark icon indicates the new level of
+**Step 2 –** Recommend access changes for a trustee by clicking the icon for the access level you
+want (Full Control, Modify, or Read columns). A yellow checkmark icon indicates the new level of
 access you are recommending.
 
 **Step 3 –** Recommend removing access by selecting one or more trustees and clicking the **Remove

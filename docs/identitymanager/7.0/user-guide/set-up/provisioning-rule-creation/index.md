@@ -14,7 +14,7 @@ How to define scalar rules, navigation rules and/or query rules to compute and p
 
 Sources are usually identities, and targets are usually accounts from the managed systems.
 
-Here, we are going to compute the values of scalar and navigation properties for the target resources used in entitlement management, based on source resources. We are going to [Provision](../../../user-guide/administrate/provisioning) these properties, i.e. write them to the managed system.
+This topic explains how to compute the values of scalar and navigation properties for the target resources used in entitlement management, based on source resources, and how to [Provision](../../../user-guide/administrate/provisioning) these properties, i.e. write them to the managed system.
 
 The right tools for the job are provisioning rules: scalar rules, navigation rules, query rules.
 
@@ -30,7 +30,7 @@ In testing mode, the impacted resource types can be configured to block provisio
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the application owner who knows the application users, entitlements and data model.
+For a given managed system, integrators may need the help of the application owner who knows the application users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -44,7 +44,7 @@ See the [Categorize Resources](../../../user-guide/set-up/categorization) topic 
 - [Compute a Scalar Property](../../../user-guide/set-up/provisioning-rule-creation/scalar-property-computation) to compute scalar properties;
 - Create navigation and/or query rules to compute navigation properties.
 
-Netwrix Identity Manager (formerly Usercube) recommends creating/modifying/deleting provisioning rules using simulations in order to anticipate changes. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
+Netwrix Identity Manager (formerly Usercube) recommends creating/modifying/deleting provisioning rules using simulations to anticipate changes. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
 
 ## Next Steps
 

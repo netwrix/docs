@@ -10,7 +10,7 @@ The SAS_ExecutionStatistics Job tracks historical performance of Enterprise Audi
 functions and highlights when a particular task takes an abnormal length of time to execute. It is
 available through the Instant Job Library under the Enterprise Auditor Utilities library. See the
 [Instant Job Wizard](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/overview.md)
-section for instructions to add this instant job into the Jobs tree. Since this job does not require
+section for instructions to add this instant job into the Jobs tree. Since this job doesn't require
 a host to target, select Local host on the Hosts page of the Instant Job Wizard.
 
 The job is dependent upon the Job Statistics Retention configuration in the **Settings** >
@@ -40,7 +40,7 @@ Navigate to the **Jobs** > **SAS_ExecutionStatistics** > **Configure** node and 
 to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

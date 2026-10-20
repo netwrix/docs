@@ -12,10 +12,9 @@ Use the Input Data Source page to choose a data source to analyze for changes.
 
 The configurable option is:
 
-- Please select a data source – Select a data source table from the list
+- select a data source – Select a data source table from the list
 
     :::note
-    The selectable data sources change based on which option is selected on the Input
+    The selectable data sources change based on which option you select on the Input
     Scope page.
-
     :::

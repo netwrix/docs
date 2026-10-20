@@ -6,18 +6,10 @@ sidebar_position: 10
 
 # Nutanix Ports
 
-Follow the steps to open Nutanix port for inbound connections.
-
-**Step 1 –** On a target computer navigate to **Start** > **Control Panel** and select **Windows
-Firewall.**
-
-**Step 2 –** In the Help Protect your computer with Windows Firewall page, click **Advanced
-settings** on the left.
-
-**Step 3 –** In the Windows Firewall with Advanced Security dialog, select Inbound Rules on the
-left.
-
-**Step 4 –** Click New Rule. In the New Inbound Rule wizard, complete the steps as described below.
+1. On a target computer, navigate to **Start** > **Control Panel** and select **Windows Firewall**.
+2. In the **Help Protect your computer with Windows Firewall** page, click **Advanced settings** on the left.
+3. In the **Windows Firewall with Advanced Security** dialog, select **Inbound Rules** on the left.
+4. Click **New Rule**. In the **New Inbound Rule** wizard, complete the steps as described below.
 
 | Option              | Setting                                                                                                  |
 | ------------------- | -------------------------------------------------------------------------------------------------------- |

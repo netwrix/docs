@@ -29,7 +29,7 @@ When the entity type contains fewer than 4 scalar properties, all properties wil
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <DisplayTable Identifier="Directory_Country" DisplayTableDesignElement="table" EntityType="Directory_Country" IsEntityTypeDefault="true">

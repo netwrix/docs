@@ -6,11 +6,11 @@ sidebar_position: 90
 
 # Express Agent Troubleshooting
 
-If you experience problem with the Express Agent then please sent the express agent log files found
+If you experience a problem with the Express Agent, send the express agent log files found
 in `/var/nnt/expressagent` to [Netwrix Support](https://www.netwrix.com/support.html).
 
-There are also a few simple checks that can be done to aid troubleshooting. Check that all the
-agent’s dependencies are present using the `ldd` command:
+You can also run a few checks to aid troubleshooting. Check that all the
+agent's dependencies are present using the `ldd` command:
 
 # ldd /opt/nnt/expressagent/expressAgent
 
@@ -32,8 +32,8 @@ agent’s dependencies are present using the `ldd` command:
 
 /usr/lib/libpthreads.a(shr_comm.o)
 
-If the details of the user account who made caused a FIM change are not included in the change
-information, check that AIX® Event Infrastructure is installed and the aha folder mounted
+If the details of the user account that caused a FIM change aren't included in the change
+information, check that the AIX® Event Infrastructure is installed and the aha folder is mounted
 correctly.
 
 # lslpp -l bos.aha\*
@@ -74,5 +74,5 @@ Filesystem 512-blocks Free %Used Iused %Iused Mounted on
 
 /aha - - - 330 2% /aha
 
-If you do not get an output similar to the above, please repeat the steps at the start of this
-section to install and/or mount the aha fs.
+If you don't get output similar to this example, repeat the steps at the start of this
+section to install or mount the aha fs.

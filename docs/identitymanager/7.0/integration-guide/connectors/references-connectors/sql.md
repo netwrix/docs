@@ -40,7 +40,7 @@ A Database Management System (DBMS) is a software for storing and retrieving use
 
 > Some popular DBMS systems are Microsoft SQL Server, MySQL, Oracle, PostgreSQL, etc.
 
-The goal of this connector is to connect to a DBMS and execute a query in order to export a table.
+The goal of this connector is to connect to a DBMS and execute a query to export a table.
 
 ## Prerequisites
 
@@ -113,7 +113,7 @@ The identifier of the connection and thus the name of the subsection must:
  | CsvEncoding default value: UTF-8 | **Type** String **Description** Encoding of the file. [See the list of available encodings](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding#see-the-list-of-available-encodings). | 
  | ProviderClassFullName optional | **Type** String **Description** Invariant name to register the provider. **Note:** required when querying a DBMS other than Microsoft SQL Server. | 
  | ProviderDllName optional | **Type** String **Description** DLL, i.e. name and extension, to be loaded by the connector. **Note:** the DLL must be in the `Runtime` folder. **Note:** required when querying a DBMS other than Microsoft SQL Server. | 
- | IsolationLevel default value: ReadUncommitted | **Type** String **Description** Locking behavior of the transaction: `ReadUncommitted`; `ReadCommitted` - used for the databases that do not support the ReadUncommitted level, like Oracle databases. | 
+ | IsolationLevel default value: ReadUncommitted | **Type** String **Description** Locking behavior of the transaction: `ReadUncommitted`; `ReadCommitted` - used for the databases that don't support the ReadUncommitted level, like Oracle databases. | 
 
 ### Connect to other DBMS
 
@@ -195,7 +195,7 @@ There are no fulfill capabilities for this connector.
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 
@@ -215,5 +215,5 @@ the `appsettings.encrypted.agent.json` file;
  | ProviderDllName | `Connections--<identifier>--ProviderDllName` | 
  | Timeout | `Connections--<identifier>--Timeout` | 
 
-[Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) is not available for this connector.
+[Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) isn't available for this connector.
 

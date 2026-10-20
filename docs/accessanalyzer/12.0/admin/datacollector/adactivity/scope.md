@@ -14,21 +14,21 @@ the categories of:
 
 ![Active Directory Activity DC wizard Scoping and Retention page](/images/activitymonitor/8.0/config/activedirectory/scope.webp)
 
-The Timespan is defined according to the following two elements:
+Two elements define the Timespan:
 
-- Relative Timespan – Number of days AD Activity is collected when the scan is run
+- Relative Timespan – Number of days the scan collects AD Activity when it runs
 - Absolute Timespan – Set the date range for the scan to collect AD Activity
 
     :::info
-    The threshold should be set for after the Netwrix Activity Monitor collects
-    and archives its data but before they are deleted after a set retention period.
+    Set the threshold to a point after the Netwrix Activity Monitor collects
+    and archives its data but before the set retention period deletes it.
     :::
 
 
-The Retention section sets what event type is collected and how many days Access Analyzer keeps the
+The Retention section sets which event types Access Analyzer collects and how many days it keeps the
 collected data in its SQL database. The table has the following columns:
 
-- Event Type – The event type that may be enabled for the scan. The event types are:
+- Event Type – The event type you can enable for the scan. The event types are:
 
     - AD Change
     - AD Replication
@@ -37,4 +37,4 @@ collected data in its SQL database. The table has the following columns:
     - Process Injection
 
 - Days to Store – Specify the number of days to store the collected data for the event type
-- Enable Collection – When selected, the corresponding event type is collected
+- Enable Collection – When you select this checkbox, the scan collects the corresponding event type

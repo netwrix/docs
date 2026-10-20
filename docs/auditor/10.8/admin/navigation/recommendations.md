@@ -7,21 +7,21 @@ sidebar_position: 10
 # Recommendations
 
 This section covers the Recommendations interface that contains detailed guidance on the Auditor
-usage patterns. Once you installed the product, configured your IT infrastructure, and prepared
+usage patterns. After installing the product, configured your IT infrastructure, and prepared
 Netwrix Service Accounts, you can start collecting data and review it with Netwrix Auditor. The
 recommendations are based on your current product configuration and help you to experience the
 Auditor capabilities in earnest.
 
 ![recommendations](/images/auditor/10.8/admin/navigation/recommendations.webp)
 
-Follow the steps to review the recommendations provided by Netwrix industry experts.
+To review the recommendations provided by Netwrix industry experts.
 
 **Step 1 –** On the Auditor home page, click the **Recommendations** tile.
 
 **Step 2 –** Review the recommendations applicable to your current Auditor configuration and take
 required steps.
 
-Once the required steps are done, the recommendation goes to the '**Complete**' list. You can move
+After the required steps are done, the recommendation goes to the '**Complete**' list. You can move
 it back to the active state any time you want by clicking the **Move to active** link.
 
 ## Available Recommendations
@@ -99,7 +99,7 @@ For completed recommendations, you can configure the retention period to keep th
 select their categories for further displaying on the tile. If you want to proceed with a completed
 recommendation, click the '**Move to active**' link below the recommendation.
 
-Follow the steps to manage recommendations:
+## Manage Recommendations Procedure
 
 **Step 1 –** On the Auditor home page, click the **Recommendations** tile.
 

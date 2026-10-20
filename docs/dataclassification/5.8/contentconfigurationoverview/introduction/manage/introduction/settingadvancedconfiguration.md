@@ -1,0 +1,45 @@
+---
+title: "Setting advanced configuration"
+description: "Setting advanced configuration"
+sidebar_position: 20
+---
+
+# Setting advanced configuration
+
+Use **Advanced SharePoint Configuration** to define which content within the SharePoint site
+collection to crawl and to specify metadata mapping settings.
+
+To open the Advanced SharePoint Configuration window:
+
+1. Select the required SharePoint source in the list of **Sources**.
+2. Click the multi-cog (**Advanced Configuration**) icon for it.
+
+The following option tabs are available:
+
+- Entity Configuration, where you can do the following:
+    - Include / Exclude an entity (subsite/list)
+    - Define custom metadata mappings per entity (see Understanding custom metadata mappings)
+- Source Defaults—Use this to specify the default custom metadata mapping for the site collection.
+- Configuration Viewer—Use this simple XML view to examine the raw configuration.
+
+![sharepointadvancedsourceconfiguration_thumb_0_0](/images/dataclassification/5.8/configuration/configinfrastructure/sharepointadvancedsourceconfiguration_thumb_0_0.webp)
+
+### Understanding custom metadata mappings
+
+Custom metadata mappings let you map specific SharePoint fields to internal indexed
+fields. There are two types of mapping:
+
+- **Content Field Mappings** - The product extracts and indexes the fields listed as
+  **Content Fields** when it crawls the site collection.
+- **Special Field Mappings** (Including _Date_ fields) - These mappings let you use the
+  advanced filtering options available in the core search index. You can map any of the available
+  SharePoint fields to some of the internal fields. For example, you can configure a SharePoint date
+  field to map to the "_Last Modified_" value so that the search returns results only if they
+  are within a certain date range.
+
+The product applies mappings first from the list-level settings, then the subsite-level
+settings, and finally the source-level settings. Thus, in the absence of a list level
+configuration, the collector service will automatically use the mappings configured at the subsite
+level (or global level, if there is no subsite configuration).
+
+Mappings operate on a _Defaults_ basis (described later in this section.)

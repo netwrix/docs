@@ -22,7 +22,7 @@ The tab contains the following settings and features:
 - Add – Opens the Add or Edit Path window to add a new path to the list. See the
   [Add or Edit Path Window](/docs/activitymonitor/7.1/admin/outputs/pathfiltering/addeditpath.md)
   topic for additional information.
-- Remove – Removes the selected path from the list. Confirmation is not requested.
+- Remove – Removes the selected path from the list. Confirmation isn't requested.
 
     :::warning
     If a path is removed by accident, use the **Cancel** button to discard the change.
@@ -34,7 +34,7 @@ The tab contains the following settings and features:
 - Edit – Opens the Add or Edit Path window to modify the selected path. See the
   [Add or Edit Path Window](/docs/activitymonitor/7.1/admin/outputs/pathfiltering/addeditpath.md)
   topic for additional information.
-- Type a path below to test whether it will be included or excluded – Enter a path in the textbox to
+- Enter a path below to test whether it will be included or excluded – Enter a path in the textbox to
   test whether it will be included/excluded based on the path filtering list
 
     - Result – Under the text box, a description of whether the indicated path is included or
@@ -57,7 +57,7 @@ precedence, and the ‘Edward’ child folder will not be monitored.
 
 
 :::note
-If ‘Include’ is not listed under the Filter Type column (or no Include filter paths are
+If ‘Include’ isn't listed under the Filter Type column (or no Include filter paths are
 added), then all current and new discovered drives will be monitored.
 :::
 
@@ -74,7 +74,7 @@ The tab contains the following settings and features:
 - Add – Opens the Add or Edit Path window to add a new path to the list. See the
   [Add or Edit Path Window](/docs/activitymonitor/7.1/admin/outputs/pathfiltering/addeditpath.md)
   topic for additional information.
-- Remove – Removes the selected path from the list. Confirmation is not requested.
+- Remove – Removes the selected path from the list. Confirmation isn't requested.
 
     :::warning
     If a path is removed by accident, use the **Cancel** button to discard the change.
@@ -86,7 +86,7 @@ The tab contains the following settings and features:
 - Edit – Opens the Add or Edit Path window to modify the selected path. See the
   [Add or Edit Path Window](/docs/activitymonitor/7.1/admin/outputs/pathfiltering/addeditpath.md)
   topic for additional information.
-- Type a path below to test whether it will be included or excluded – Enter a path in the textbox to
+- Enter a path below to test whether it will be included or excluded – Enter a path in the textbox to
   test whether it will be included/excluded based on the path filtering list
 
     - Result – Under the text box, a description of whether the indicated path is included or
@@ -109,7 +109,7 @@ precedence, and the ‘Edward’ child folder will not be monitored.
 
 
 :::note
-If ‘Include’ is not listed under the Filter Type column (or no Include filter paths are
+If ‘Include’ isn't listed under the Filter Type column (or no Include filter paths are
 added), then all current and new discovered drives will be monitored.
 :::
 
@@ -140,7 +140,7 @@ The tab contains the following settings and features:
 - Add – Opens the Add or Edit Path window to add a new path to the list. See the
   [Add or Edit Path Window](/docs/activitymonitor/7.1/admin/outputs/pathfiltering/addeditpath.md)
   topic for additional information.
-- Remove – Removes the selected path from the list. Confirmation is not requested.
+- Remove – Removes the selected path from the list. Confirmation isn't requested.
 
     :::warning
     If a path is removed by accident, use the **Cancel** button to discard the change.
@@ -154,7 +154,7 @@ The tab contains the following settings and features:
   topic for additional information.
 - Add all local drives – Retrieves and adds all local drives to the bottom of the list with a type
   of Include
-- Type a path below to test whether it will be included or excluded – Enter a path in the textbox to
+- Enter a path below to test whether it will be included or excluded – Enter a path in the textbox to
   test whether it will be included/excluded based on the path filtering list
 
     - Result – Under the text box, a description of whether the indicated path is included or
@@ -177,7 +177,7 @@ precedence, and the ‘Edward’ child folder will not be monitored.
 
 
 :::note
-If ‘Include’ is not listed under the Filter Type column (or no Include filter paths are
+If ‘Include’ isn't listed under the Filter Type column (or no Include filter paths are
 added), then all current and new discovered drives will be monitored.
 :::
 

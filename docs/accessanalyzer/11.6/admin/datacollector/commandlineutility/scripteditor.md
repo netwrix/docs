@@ -6,15 +6,15 @@ sidebar_position: 50
 
 # CLU: Script Editor
 
-The Script Editor page provides options to create or edit a Visual Basic script that is used to
-parse the output file created by the data collector after execution. The Script Editor page is
-enabled when **Edit Profile** or **Create a New Profile** is selected on the Profile Type page. The
-page is disabled when the **Select Profile** option is selected on the Profile Type page.
+The Script Editor page provides options to create or edit a Visual Basic script that parses the
+output file the data collector creates after execution. Enterprise Auditor enables the Script Editor
+page when you select **Edit Profile** or **Create a New Profile** on the Profile Type page, and
+disables it when you select the **Select Profile** option on the Profile Type page.
 
 ![Command Line Utility Data Collector Wizard Script Editor page](/images/accessanalyzer/11.6/admin/datacollector/commandlineutility/scripteditor.webp)
 
 :::warning
-Do not modify this page without guidance from Netwrix or the data may not be processed
-by Enterprise Auditor.
+Don't modify this page without guidance from Netwrix, or Enterprise Auditor may not process the
+data.
 
 :::

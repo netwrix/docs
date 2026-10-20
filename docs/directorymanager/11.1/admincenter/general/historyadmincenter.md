@@ -44,8 +44,8 @@ To view history:
     - **Who:** The name of the user who performed the action.
     - **Where:** The name of the computer the action was performed on.
     - **When:** The date and time of the action.
-    - **Added Item(s):** A short description of the action.
-    - **Removed Item(s):** This box is displayed for actions showing deletion. It displays a short
+    - **Added Items:** A short description of the action.
+    - **Removed Items:** This box is displayed for actions showing deletion. It displays a short
       description of the action.
 3. The **Add Note** button is available if you performed this action. See
    [Annotate History Items](/docs/directorymanager/11.1/admincenter/identitystore/view/details.md#annotate-history-items) to manage
@@ -82,7 +82,7 @@ You can export Admin Center history to Microsoft Excel, CSV, and XML formats.
 2. On the **Admin Center History** page, click **Export History**.
 3. On the **Export History** dialog box, enter a name for the history file in the **Name** box or
    leave it to default.
-4. Select a format for the history file in the **Format** drop-down list. Available formats are
+4. Select a format for the history file in the **Format** dropdown list. Available formats are
    Excel, CSV, and XML
 5. Click **Export History**. The file is saved at the download location specified in browser
    settings.

@@ -16,12 +16,10 @@ additional information.
 :::
 
 
-Follow the steps to configure a policy to block the creation of weak passwords.
-
 ![EPE Settings window](/images/threatprevention/7.5/admin/configuration/epesettings.webp)
 
 :::note
-It is a best practice to create and enable a monitoring policy prior to creating and
+It is a best practice to create and enable a monitoring policy before creating and
 enabling a blocking policy. See the [Monitor Weak Passwords Use Case](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/passwordenforcement/monitorweakpasswords.md) topic
 for additional information.
 :::
@@ -32,7 +30,7 @@ environment.
 
 - Click **Configuration** > **EPE Settings** on the menu to open the EPE Settings window.
 - Download the latest copy of the HaveIBeenPwned dictionary file. See the
-  [Download and Configure the Have I Been Pwnd Hash List](/docs/threatprevention/7.5/admin/configuration/epesettings.md#download-and-configure-the-have-i-been-pwnd-hash-list)
+  [Download and Configure the Have I Been Pwned Hash List](/docs/threatprevention/7.5/admin/configuration/epesettings.md#download-and-configure-the-have-i-been-pwned-hash-list)
   topic for additional information.
 - Determine whether you want to deploy the dictionary to each domain controller or keep it locally
   on the Enterprise Manager server. See the
@@ -46,7 +44,7 @@ environment.
 
 ![New Prevent Weak Passwords Policy - General tab](/images/threatprevention/7.5/admin/policies/eventtype/usecase/newblockepepolicy.webp)
 
-- Right-click on the **Policies > Auditing** folder and select **New > Policy**.
+- Right-click the **Policies > Auditing** folder and select **New > Policy**.
 - On the General tab, provide a unique descriptive name, e.g. Prevent Weak Passwords, and
   description, e.g. This policy blocks the creation of weak passwords according to the global
   EPE settings.

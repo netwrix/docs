@@ -4,7 +4,7 @@ description: ""
 sidebar_position: 11
 ---
 
-In Identity Manager, this type of rule is used to classify the resources based on a C# expression.
+In Identity Manager, use this rule type to classify resources based on a C# expression.
 
 
 ## Examples
@@ -23,4 +23,4 @@ The following example declares a rule to classify the Active Directory accounts 
 | ResourceType required | **Type:** Int64 **Description:** Represents the resource type definition. |
 | ResourceTypeIdentificationConfidenceLevel <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Defines the confidence level used to match the resources. |
 | SourceMatchedConfidenceLevel <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Defines the confidence level used to match the sources. |
-| TargetExpression optional | **Type:** String **Description:** Defines the C# expression used to classify the resources. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| TargetExpression optional | **Type:** String **Description:** Defines the C# expression used to classify the resources. See [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions) for details. |

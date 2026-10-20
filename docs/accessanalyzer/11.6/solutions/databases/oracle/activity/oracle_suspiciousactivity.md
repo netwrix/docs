@@ -7,7 +7,7 @@ sidebar_position: 60
 # Oracle_SuspiciousActivity Job
 
 The Oracle_SuspiciousActivity job is designed to provide insight into suspicious behavior based on
-user activity that does not conform to normal database activity.
+user activity that doesn't conform to normal database activity.
 
 ## Analysis Tasks for the Oracle_SuspiciousActivity Job
 
@@ -15,7 +15,7 @@ Navigate to the **Oracle** > **2.Activity** > **Oracle_SuspiciousActivity** > **
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

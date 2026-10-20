@@ -26,6 +26,6 @@ The categories include the following tasks:
 :::note
 The Scan Active Directory category is the pre-configured setting for the .Active Directory
 Inventory Job Group. Therefore, accessing the Active Directory Inventory DC Wizard from the query
-within that job group does not display the Category wizard page.
+within that job group doesn't display the Category wizard page.
 
 :::

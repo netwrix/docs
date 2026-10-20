@@ -1,10 +1,10 @@
 ---
 title: "ViewHistoryResourceTemplate"
-description: "Generates an access control rule giving to the specified profile the permission to browse the resources history of the specified entity type."
+description: "Generates an access control rule giving the specified profile the permission to browse the resources history of the specified entity type."
 sidebar_position: 5
 ---
 
-Generates an access control rule giving to the specified profile the permission to browse the resources history of the specified entity type.
+Generates an access control rule giving the specified profile the permission to browse the resources history of the specified entity type.
 
 
 
@@ -27,7 +27,7 @@ Generates an access control rule giving to the specified profile the permission 
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Directory_User_View_History_Directory_User" DisplayName_L1="Administrator_Directory_User_View_History_Directory_User" EntityType="Directory_User" Profile="Administrator">

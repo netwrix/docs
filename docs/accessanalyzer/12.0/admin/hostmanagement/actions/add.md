@@ -7,7 +7,7 @@ sidebar_position: 10
 # Add Hosts
 
 The **Add Hosts** option creates a new host list. It can be accessed through the **Host Management**
-node. Follow the steps to add a new host list.
+node. To add a new host list:
 
 ![Add Hosts option on Activities pane of the Host Management node](/images/accessanalyzer/12.0/admin/hostmanagement/actions/addhosts.webp)
 
@@ -18,9 +18,9 @@ node. Follow the steps to add a new host list.
 **Step 2 –** On the Manual Host Entry page, choose to either enter the hosts manually one at a time,
 or use the **Import** option. When the list is completed, click **Next**.
 
-- To enter hosts manually, type the host name in the **Host name** textbox. Then click **Add**. The
-  entry will appear in the **Host list** box. Repeat the process until all hosts for this list have
-  been entered.
+- To enter hosts manually, enter the host name in the **Host name** textbox. Then click **Add**. The
+  entry will appear in the **Host list** box. Repeat the process until you've entered all hosts for
+  this list.
 - The **Import** option opens the Import Hosts window. See the [Import Hosts Option](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/importhost.md)
   topic for additional information.
 - Use **Remove** to delete a selected host from the **Host list** box
@@ -30,7 +30,7 @@ or use the **Import** option. When the list is completed, click **Next**.
 **Step 3 –** On the Specify Host List Properties page, provide a unique descriptive **Host List
 Name**.
 
-- There cannot be two host lists with the same name. Access Analyzer automatically appends a numeral
+- There can't be two host lists with the same name. Access Analyzer automatically appends a numeral
   to the end of a host list name to avoid duplicates.
 
 **Step 4 –** On the Specify Host List Properties page, configure when inventory fields should be

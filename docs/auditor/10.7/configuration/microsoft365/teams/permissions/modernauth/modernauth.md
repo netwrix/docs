@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Using Modern Authentication with MS Teams
 
-Modern authentication allows you to audit MS Teams environments without using an account with basic
+Modern authentication lets you audit MS Teams environments without using an account with basic
 authentication. The configuration procedure includes several manual steps, as described below.
 
 ### Access MS Teams Using Modern Authentication
@@ -21,8 +21,6 @@ If you plan to implement this scenario, you should register an Microsoft Entra I
 provide its settings to Netwrix Auditor when configuring a monitored item.
 
 ## Configure the Microsoft Entra ID App for Auditing MS Teams
-
-Follow the steps to use a data collecting account with modern authentication:
 
 **Step 1 –** Create an Microsoft Entra ID app that will be used for modern authentication. See the
 Create and Register a New App in Microsoft Entra ID section for additional information.
@@ -46,8 +44,6 @@ You will need to create a dedicated app for each cloud-based data source you pla
 - MS Teams
 
 If you plan to audit all of them, you need to create 4 apps.
-
-Follow the steps to register a new Microsoft Entra ID application.
 
 **Step 1 –** Sign into the **Microsoft 365 Admin Center** with your _Global Administrator_,
 _Application Administrator_ or _Cloud Application Administrator_ account and go to the **Microsoft
@@ -120,8 +116,6 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Configure Client Secret
 
-Follow the steps to create a new client secret to be used by the app.
-
 **Step 1 –** Go to **Manage** > **Certificates & secrets** and click **New client secret**.
 
 **Step 2 –** Enter the description. From the expiration options select **24 months**.
@@ -136,7 +130,6 @@ See the following Microsoft article for more information on how to add a client 
 
 ### Add MS Teams monitoring plan
 
-Follow the steps to add MS Teams monitoring plan in the Netwrix Auditor.
 
 **Step 1 –** In the Monitoring Plans, click **Add Plan** button.
 
@@ -158,7 +151,6 @@ MS Teams monitoring plan has been added to Auditor and initial data collection 
 
 ### Obtain Tenant Name
 
-Follow the steps to obtain the tenant name.
 
 **Step 1 –** Navigate to **Microsoft Entra ID** > **Overview**.
 

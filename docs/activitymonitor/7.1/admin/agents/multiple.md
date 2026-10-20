@@ -7,8 +7,7 @@ sidebar_position: 20
 # Multiple Activity Agents Deployment
 
 Before deploying the activity agent, ensure all Prerequisites are met, including those for NAS
-devices when applicable. Follow the steps to deploy the activity agent to a multiple Windows
-servers. See the
+devices when applicable. See the
 [Activity Agent Server Requirements](/docs/activitymonitor/7.1/requirements/activityagent/activityagent.md) topic
 for additional information.
 
@@ -18,7 +17,7 @@ environments.
 :::
 
 
-**Step 1 –** On the Agents tab, click Add agent to open the Add New Agent(s) window.
+**Step 1 –** On the Agents tab, click Add agent to open the Add New Agents window.
 
 ![Install New Agent](/images/activitymonitor/7.1/install/agent/installnew.webp)
 
@@ -45,7 +44,7 @@ There are two methods for adding multiple hosts are:
 
 ## Manual Entry
 
-Use **Manual Entry** to manually type the host names or IP addresses of the servers to be monitored.
+Use **Manual Entry** to manually enter the host names or IP addresses of the servers to be monitored.
 
 ![Enter Host Name or IP Address window](/images/activitymonitor/7.1/admin/agents/add/hostnameoripaddresswindow.webp)
 
@@ -77,9 +76,9 @@ For Import a List:
 The Activity Monitor will monitor the Host Names or IP Address added to the **Install Agents on
 Multiple Hosts** table. Click **Next**.
 
-![Credentials to Connect to the Server(s) window](/images/activitymonitor/7.1/install/agent/credentials.webp)
+![Credentials to Connect to the Servers window](/images/activitymonitor/7.1/install/agent/credentials.webp)
 
-**Step 5 –** On the Credentials To Connect To The Server(s) page, connect to the server using either
+**Step 5 –** On the Credentials To Connect To The Servers page, connect to the server using either
 a **User name** and **password**, a Public Key, or a Client Certificate.
 
 The options for connecting with a Password are:
@@ -87,7 +86,7 @@ The options for connecting with a Password are:
 - User name
 - Password
 
-![Credentials to Connect to the Server(s) ](/images/activitymonitor/7.1/admin/agents/add/publickey.webp)
+![Credentials to Connect to the Servers ](/images/activitymonitor/7.1/admin/agents/add/publickey.webp)
 
 The options for connecting with a Public Key are:
 
@@ -108,7 +107,7 @@ Using an existing Client Certificate installs a new agent without using SSH.
 **Step 6 –** Click **Connect** to test the connection. If the connection is successful, click
 **Next**.
 
-The credentials are tested against each server added on the **Install Agent(s) on Multiple Hosts**
+The credentials are tested against each server added on the **Install Agents on Multiple Hosts**
 page. If the connection is unsuccessful, see the status message that appears for information on the
 failed connection. Activity agents are only successfully deployed for servers where the test status
 returns Ok. Failed deployments can be retried through the Connection tab of the agent’s Properties
@@ -127,11 +126,13 @@ The default path is `C:\Program Files\Netwrix\Activity Monitor\Agent`. Click **N
   monitoring after installation checkbox to enable monitoring all file system activity on the
   targeted Windows server after installation.
 - Management Group — By default, the agent only accepts commands from members from the
-  BUILTIN\Administrators group. Less privileged accounts can be used to manage the agent with the
-  Management group setting. Keep in mind that an administrator account must be used to install,
-  upgrade, or uninstall an agent.
+  BUILTIN\Administrators group. Use the Management group setting to allow less privileged accounts to manage the agent.
 
-**Step 9 –** Click Finish. The Add New Agent(s) window closes, and the activity agent is deployed to
+    :::note
+    An administrator account is required to install, upgrade, or uninstall an agent.
+    :::
+
+**Step 9 –** Click Finish. The Add New Agents window closes, and the activity agent is deployed to
 and installed on the target host.
 
 During the installation process, the status will be **Installing**. If there are any errors, the

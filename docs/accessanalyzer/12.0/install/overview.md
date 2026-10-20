@@ -21,7 +21,7 @@ information.
 
 ## File System Proxy Service
 
-The File System Solution can be enabled to use proxy servers for scanning targeted file systems in
+You can enable the File System Solution to use proxy servers for scanning targeted file systems in
 very large or widely dispersed environments. The File System Proxy installer is designed to simplify
 the process of setting up File System Scanning Proxy as a service on the designated proxy server.
 

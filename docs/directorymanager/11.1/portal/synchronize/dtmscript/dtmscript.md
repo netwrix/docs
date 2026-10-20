@@ -39,12 +39,12 @@ DTM keywords give you access to the data being processed.
     This is a write-only property. This script must assign a value to DTM.Result. This type of
     script determines what the value signifies.
 
-    - Transform script – assign to DTM.Result the desired value of the transform’s destination
+    - Transform script – assign to DTM.Result the value you want of the transform’s destination
       field.
     - Container script – assign to DTM.Result the distinguished name of the new object’s container.
 
     In any script, each branch of execution must assign a value to DTM.Result. Failure to assign a
-    value to DTM.Result causes a runtime error, and the destination row ("object") is not updated or
+    value to DTM.Result causes a runtime error, and the destination row ("object") isn't updated or
     created . The job still runs to completion.
 
 - DTM.ExpandVariables(**`<text>`**)
@@ -56,7 +56,7 @@ DTM keywords give you access to the data being processed.
 
 - DTM.CancelRow()
 
-    This subroutine contains no arguments. The current destination row ("object") is not updated or
+    This subroutine contains no arguments. The current destination row ("object") isn't updated or
     created. DTM.CancelRow provides a way to bypass certain objects based on their attributes. (In
     general, using a filter query for this purpose gives better performance.)
 
@@ -80,38 +80,38 @@ possible by adding them to the Context.
 
 The Context is an implementation of the .NET Hashtable collection, which is an in-memory data
 structure that stores and retrieves objects using key/value pairs. The DTM object in the Synchronize
-job model provides two members, AddToContext and Context, for adding and retrieving objects from the
-Context. To learn more about these two members, please see the previous section on DTM keywords.
+job model provides two members, AddToContext, and Context, for adding and retrieving objects from the
+Context. For more information about these two members, see the previous section on DTM keywords.
 
 Although a Context makes it possible to share objects added to it across different code segments of
-a Synchronize job, it is not possible to test code for each segment individually without actually
+a Synchronize job, it isn't possible to test code for each segment individually without actually
 running the job. For this reason, you may encounter one of the following situations:
 
 - You receive an exception when trying to compile the code in the Script Editor, stating that the
-  object reference is not found.
-- Testing your script using the built-in Script Tester with random data does not provide the
+  object reference isn't found.
+- Testing your script using the built-in Script Tester with random data doesn't provide the
   expected results, even though the code handles the exception and checks are placed for null object
   references.
 
 ## Scripting restrictions enforced by Synchronize
 
-Behind the scenes, Synchronize inserts each script into the body of a subroutine before compiling.
+Synchronize inserts each script into the body of a subroutine before compiling.
 Therefore, any Visual Basic .NET constructs that are only valid outside of a subroutine/function
 will fail to compile and will be disallowed.
 
 These restrictions apply to creating a Synchronize script:
 
-- Subroutines, functions, classes, modules, and namespaces are not allowed.
-- Module-level statements, such as Import or Option statements, are not permitted.
-- Shared (that is, static, and global) variables are not supported.
+- Subroutines, functions, classes, modules, and namespaces aren't allowed.
+- Module-level statements, such as Import or Option statements, aren't permitted.
+- Shared (that is, static, and global) variables aren't supported.
 
 ## Visual Basic options set by Synchronize
 
-Synchronize establishes the following Option statements which apply to all scripts and cannot be
+Synchronize establishes the following Option statements which apply to all scripts and can't be
 overridden:
 
 - Option Explicit On – all variables must be declared before use via a Dim statement. With Visual
-  Basic .Net, it is possible to both declare and assign variables at their first use, as follows:
+  Basic .Net, you can both declare and assign variables at their first use, as follows:
 
     ```
     Dim MyVariable = "Hello"
@@ -121,14 +121,14 @@ overridden:
     Dim MyObject = New Object()
     ```
 
-- Option Strict Off – data types do not need to be declared for each variable. Conversions between
+- Option Strict Off – data types don't need to be declared for each variable. Conversions between
   types, when possible, are performed implicitly. (By declaring data types, unnecessary conversions
   can be avoided, and performance improved).
 
 ## .Net assembly references
 
 Synchronize establishes certain system assembly references before compiling your scripts. These
-references apply to all scripts and cannot be overridden.
+references apply to all scripts and can't be overridden.
 
 These references are:
 
@@ -145,7 +145,7 @@ responsibility for updating these providers.
 ## .Net Namespaces
 
 Synchronize imports certain namespaces when compiling your scripts. These imports apply to all
-scripts and cannot be overridden.
+scripts and can't be overridden.
 
 These imports are:
 

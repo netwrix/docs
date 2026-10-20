@@ -18,7 +18,7 @@ several minutes.
 
 ## Transfer the ownership of a group
 
-Follow the steps to transfer the ownership of a group.
+To transfer the ownership of a group.
 
 1. In Directory Managerportal, from the left pane, select **All Groups** or **My Groups** under
    **Groups** and select **Transfer Ownership** option on the top right corner.
@@ -29,9 +29,9 @@ Follow the steps to transfer the ownership of a group.
     The smaller the selection, the less time it takes to carry out the transfer.
 
     Specify whether to search for groups in sub-containers by selecting or clearing the **Include
-    sub-containers** check box.
+    sub-containers** checkbox.
 
-    The scope of this setting varies, depending on the container that you selected in the previo us
+    The scope of this setting varies, depending on the container that you selected previously
     step. The following table explains the actual structures searched when you select the Include
     sub-containers option:
 
@@ -43,7 +43,7 @@ Follow the steps to transfer the ownership of a group.
 
     :::note
     For Active Directory, if the search container is set to Global Catalog and Extension Data
-    is not replicated to the Global Catalog, additional ownership of the groups will not be
+    isn't replicated to the Global Catalog, additional ownership of the groups will not be
     transferred.
     :::
 

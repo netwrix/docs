@@ -9,8 +9,8 @@ sidebar_position: 10
 New Health Status dashboard facilitates Auditor maintenance and troubleshooting tasks, providing IT
 specialists with at-a-glance view on the most critical factors: data collection performance, product
 health and storage capacity. The dashboard comprises a set of widgets that display the status of
-these aspects using aggregated statistics and charts. Nearly each widget allows you to drill down to
-the detailed information on the aspect you are interested in.
+these aspects using aggregated statistics and charts. Nearly each widget provides detailed information on
+the aspect you're interested in.
 
 To view the dashboard, on the main Auditor page, click the Health status tile located in the
 Configuration section.

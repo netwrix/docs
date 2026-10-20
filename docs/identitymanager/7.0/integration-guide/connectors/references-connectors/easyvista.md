@@ -14,7 +14,7 @@ This page is about EasyVista .
 
 ## Overview
 
-EasyVista is an IT Service Manager that provides a service to organize IT resources in a company by using tickets. This allows users to manage projects, materials and teams through a customizable interface.
+EasyVista is an IT Service Manager that provides a service to organize IT resources in a company by using tickets. With EasyVista, manage projects, materials, and teams through a customizable interface.
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ The identifier of the connection and thus the name of the subsection must:
 > }
 > ```
 
-The `ExportSettingsOptions` attribute is necessary only if custom entities are exported. It is not required if only the users are exported. Besides, `"Profiles"` is used here as an example and corresponds to a name to identify the exported entities.
+The `ExportSettingsOptions` attribute is necessary only if custom entities are exported. It isn't required if only the users are exported. Besides, `"Profiles"` is used here as an example and corresponds to a name to identify the exported entities.
 
 #### Setting attributes
 
@@ -86,7 +86,7 @@ The `ExportSettingsOptions` attribute is necessary only if custom entities are e
  | Password required | **Type** String **Description** Password to use to connect to the EasyVista instance. | 
  | --- | --- | 
  | --- | --- | 
- | ExportSettingsOptions optional | **Type** List **Description** List of entities to retrieve from the EasyVista instance. **Note:** for any customized entity to be exported, this argument must contain its REST API URL. **Get REST API URLs** Access the relevant view in EasyVista and click on **...** > **Rest API Url** to copy the URL. For example: ![EasyVista Profiles View](/images/identitymanager/easyvista_view_v523.webp) | 
+ | ExportSettingsOptions optional | **Type** List **Description** List of entities to retrieve from the EasyVista instance. **Note:** for any customized entity to be exported, this argument must contain its REST API URL. **Get REST API URLs** Access the relevant view in EasyVista and click **...** > **Rest API Url** to copy the URL. For example: ![EasyVista Profiles View](/images/identitymanager/easyvista_view_v523.webp) | 
 
 ### Output details
 
@@ -112,7 +112,7 @@ a `ConnectionColumn` and each property without it but used in an entity associat
 >
 > ```
 >
-> Then we will have `C:/identitymanagerContoso/Sources/*EasyVistaExport_Employees.csv*` as follows:
+> The result is `C:/identitymanagerContoso/Sources/*EasyVistaExport_Employees.csv*` as follows:
 >
 > ```
 > *EasyVistaExport_Employees.csv*
@@ -127,7 +127,7 @@ a `ConnectionColumn` and each property without it but used in an entity associat
 >
 > ```
 >
-> Then we will have `C:/identitymanagerContoso/Sources/*EasyVistaExport_Profiles.csv*` as follows:
+> The result is `C:/identitymanagerContoso/Sources/*EasyVistaExport_Profiles.csv*` as follows:
 >
 > ```
 > *EasyVistaExport_Profiles.csv*
@@ -184,7 +184,7 @@ This connector can:
 - **create** and **update** employees and their profiles, but is limited by
 [API limitations](https://wiki.easyvista.com/xwiki/bin/view/Documentation/Integration/WebService%20REST/REST%20API%20-%20Create%20an%20employee/);
 
-In particular, this connector cannot set dates nor the `employee_id` property.
+In particular, this connector can't set dates nor the `employee_id` property.
 
 - **archive** employees, i.e. set the `CONTRACT_END_DATE` to the date of the fulfill execution.
 

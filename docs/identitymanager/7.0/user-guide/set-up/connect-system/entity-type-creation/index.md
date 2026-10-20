@@ -37,11 +37,11 @@ Create an entity type by proceeding as follows:
 1. [Create the Entity Type](../../../../user-guide/set-up/connect-system/entity-type-creation/entity-type-declaration).
 2. [Define Scalar Properties](../../../../user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition)to be used in the entity type.
 3. Choose the [Select Primary Keys](../../../../user-guide/set-up/connect-system/entity-type-creation/key-selection) and key properties which will identify resources.
-4. Define [Define Navigation Properties](../../../../user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition)if applicable.
+4. [Define Navigation Properties](../../../../user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition) if applicable.
 5. Customize the [Set Resources' Display Names](../../../../user-guide/set-up/connect-system/entity-type-creation/display-name-setting) for the entity type's resources.
 6. Organize the [Organize Resources' Datasheets](../../../../user-guide/set-up/connect-system/entity-type-creation/datasheet-organization) for the entity type's resources in Identity Manager.
 
-For some connectors, Identity Manager provides a template to automatically create a basic configuration. See below this note.
+For some connectors, Identity Manager provides a template to automatically create a basic configuration. The following example shows how the Active Directory template automatically creates an AD entity type and resource types for a standard AD connector.
 
 > For example, the Active Directory template automatically creates an AD entity type and two
 > resource types for a standard AD connector. The template is available for a connector with an AD
@@ -51,5 +51,5 @@ For some connectors, Identity Manager provides a template to automatically creat
 
 ## Verify the Entity Type
 
-Changes will take effect once you have launched synchronization. Therefore, in order to verify the process, follow the verification procedure indicated to [Synchronize Data](../../../../user-guide/set-up/synchronization).
+Changes take effect after you launch synchronization. Therefore, to verify the process, follow the verification procedure indicated to [Synchronize Data](../../../../user-guide/set-up/synchronization).
 

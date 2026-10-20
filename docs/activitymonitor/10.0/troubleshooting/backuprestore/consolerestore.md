@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Console Restoration
 
-Follow the steps to restore the list of agents managed on the Activity Monitor Console.
+To restore the list of agents managed on the Activity Monitor Console, complete the following steps:
 
 **Step 1 –** Restore `Agents.ini` file.
 

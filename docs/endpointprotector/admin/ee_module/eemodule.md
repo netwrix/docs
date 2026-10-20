@@ -70,24 +70,15 @@ Encryption tab.
 
 ![File Tracing Settings](filetracing.webp)
 
-When you enable the File Tracing option, Endpoint Protector records and logs all data transferred to and from devices using Enforced
-Encryption for later auditing. If the Endpoint Protector Client is present on that computer, it automatically sends the logged information to the Endpoint Protector Server. This
-action takes place regardless of the File Tracing option being enabled or not for that speciﬁc
-computer through the Device Control module.
+When you enable File Tracing, Endpoint Protector records all data transferred to and from devices using Enforced Encryption. If the Client is present, it automatically sends this information to the Server, regardless of whether File Tracing is enabled for that computer in Device Control.
 
 If the Endpoint Protector Client isn't present, the device stores the information locally in an
 encrypted format and sends it later from any other computer with the
 Endpoint Protector Client installed.
 
-The additional Oﬄine File Tracing option extends the ﬁrst option and stores information directly
-on the device before sending it to the Endpoint Protector
-Server. The device sends the list of copied ﬁles only the next time someone plugs it in, and only if the
-Endpoint Protector Client is present and communicates with the Endpoint Protector Server.
+The additional Offline File Tracing option stores information on the device before sending it to the Server. The device sends the file list only when someone connects it again, and only if the Client is present and can communicate with the Server.
 
-Additionally, Easy Lock performs File Shadowing for the transferred ﬁles if the Endpoint
-Protector Client is present and you enabled the File Shadowing option on the computer on which the
-events occur – through the Device Control module. This is a real-time event, and the device never
-stores shadowing information.
+Additionally, Easy Lock performs File Shadowing for transferred files if the Client is present and you enable File Shadowing on the computer where events occur through Device Control. This is a real-time event—the device stores no shadowing information.
 
 :::note
 Enabling global File Tracing will not automatically activate the File Tracing option on

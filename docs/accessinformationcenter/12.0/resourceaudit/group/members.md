@@ -50,8 +50,7 @@ including nested groups.
 There is one table at the bottom displaying Membership Paths for the select group. It contains all
 of the ways the audited group has been granted membership to the selected group.
 
-- Type – Type of membership the selected trustee has to the audited groupType – Type of membership
-  the selected trustee has to the audited group
+- Type – Type of membership the selected trustee has to the audited group
 
     - Direct – Trustee is specifically assigned to this group
     - Nested – Trustee is a member of a group which has membership in this group

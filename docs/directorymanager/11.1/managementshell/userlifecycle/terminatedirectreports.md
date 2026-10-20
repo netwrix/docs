@@ -6,11 +6,11 @@ sidebar_position: 40
 
 # Terminate-DirectReports
 
-Use the Terminate-DirectRreports command to terminate user(s). Specify manager of the user you want
+Use the Terminate-DirectRreports command to terminate users. Specify manager of the user you want
 to terminate.
 
 :::note
-You can perform this function in directory as per your role and permissions.
+You can perform this function in directory according to your role and permissions.
 :::
 
 

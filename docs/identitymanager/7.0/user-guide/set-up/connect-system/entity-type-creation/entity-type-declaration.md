@@ -21,7 +21,7 @@ Create the entity type by proceeding as follows:
 
     ![Home page - Connectors](/images/identitymanager/home_connectors_v602.webp)
 
-2. On the connector's page, in the **Entity Types** frame, click on the addition button.
+2. On the connector's page, in the **Entity Types** frame, click the addition button.
 
     ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
 
@@ -42,12 +42,12 @@ source's data structure.
 
     ![Properties' source](/images/identitymanager/entitytypecreation_propertiessource_v522.webp)
 
-    > Let's use the example of an AD connector. We create an entity type `AD - Entry` to gather the
-    > valuable information from the AD, i.e. all the AD entries (groups and accounts) which we want
-    > to classify, with the properties that are useful for assignment management.
+    > Consider the example of an AD connector. This entity type `AD - Entry` gathers the
+    > valuable information from the AD, i.e. all the AD entries (groups and accounts) to classify,
+    > with the properties that are useful for assignment management.
 >
     > The AD connector uses as a source `Connection Active Directory - entries`. Its structure was
-    > retrieved when we refreshed the schemas of the `Active Directory` >
+    > retrieved when the schemas of the `Active Directory` were refreshed >
     > [Create a Connection](../../../../user-guide/set-up/connect-system/connection-creation), thus retrieving the attributes from
     > the Active Directory and storing them temporarily on the agent side, inside CSV files.
 
@@ -63,7 +63,7 @@ If there are no connection tables available in the **Source** dropdown list of a
 
 Ensure that there are existing connections:
 
-- if this is the case, then click on **Refresh all schemas** on the connector page, and verify that
+- if this is the case, then click **Refresh all schemas** on the connector page, and verify that
 there is no error. See the [Create a Connection](../../../../user-guide/set-up/connect-system/connection-creation) topic for  additional information.
 - if not, then you must create at least one connection.
 
@@ -73,5 +73,5 @@ If there is a message stating to refresh the connection's schema, then:
 
 Start by making sure that the connection's schema is refreshed by clicking on **Refresh all schemas** on the connector page, and verify that there is no error.
 
-If the message is still displayed, then it means that the previously selected connection table no longer exists in the managed system. In this case, either the table's name simply changed, or the table is not relevant anymore. Then you should find a relevant table in the **Source** dropdown list.
+If the message is still displayed, then it means that the previously selected connection table no longer exists in the managed system. In this case, either the table's name changed, or the table isn't relevant anymore. Then you should find a relevant table in the **Source** dropdown list.
 

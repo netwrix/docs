@@ -50,7 +50,7 @@ operation. The issues listed below apply to upgrade from 9.96 and 10.
 
 - After the upgrade you may receive temporary data collection errors – they occur when the program
   tries to upload collected data to the Audit Database before the database upgrade is finished.
-- Microsoft Exchange Server 2010 is no longer supported. Please upgrade your Exchange Server to a
+- Microsoft Exchange Server 2010 is no longer supported. upgrade your Exchange Server to a
   new version.
 - For Netwrix Auditor for SharePoint Online, the following data will be available within 24 hours
   after upgrade:
@@ -62,7 +62,7 @@ operation. The issues listed below apply to upgrade from 9.96 and 10.
 
 - For auditing cloud-based applications (Microsoft Entra ID, Exhange Online, SharePoint Online, and
   MS Teams) with Netwrix Auditor using basic authentication: before an upgrade from version 10.0 and
-  earlier, make sure that the account under which the upgrade will be performed has sufficient
+  earlier, ensure that the account under which the upgrade will be performed has sufficient
   rights and permissions to perform initial data collection and upgrade. Review the following for
   more information about required rights and permissions:
 
@@ -82,7 +82,7 @@ operation. The issues listed below apply to upgrade from 9.96 and 10.
     - [Permissions for Teams Auditing](/docs/auditor/10.7/configuration/microsoft365/teams/permissions/permissions.md)
 
 - Netwrix Auditor for Oracle Database. If you use the following combination of the audit settings:
-  Mixed Mode + Fine Grained Auditing, please check your configuration. You may need to re-configure
+ Mixed Mode + Fine Grained Auditing, check your configuration. You may need to re-configure
   your audit since the Oracle Database data collection mechanism was changed. See the
   [Supported Data Sources](/docs/auditor/10.7/requirements/supporteddatasources/supporteddatasources.md) and
   [Verify Your Oracle Database Audit Settings](/docs/auditor/10.7/configuration/oracle/verifysettings.md) topics for
@@ -116,15 +116,9 @@ software products from the My Products page:
 [Customer Portal Access](https://helpcenter.netwrix.com/bundle/NetwrixCustomerPortalAccess/page/Customer_Portal_Access.html)
 topic for information on how to register for a Customer Portal account.
 
-Partners and MSPs who are logged into the Netwrix Partner Portal can download the latest version of
-their software products from the My Product page:
-[https://www.netwrix.com/par/site/products](https://www.netwrix.com/my_products.html). To receive an
-invitation to the Partner Portal, please contact
-[netwrix.msp@netwrix.com](http://netwrix.msp@netwrix.com/).
+Partners and MSPs who are logged into the Netwrix Partner Portal can download the latest version of their software products from the My Product page: [https://www.netwrix.com/par/site/products](https://www.netwrix.com/my_products.html). To receive an invitation to the Partner Portal, contact [netwrix.msp@netwrix.com](http://netwrix.msp@netwrix.com/).
 
-Follow the steps to perform the upgrade.
-
-**Step 1 –** Make sure you have completed the preparatory steps above.
+**Step 1 –** Ensure you have completed the preparatory steps above.
 
 **Step 2 –** Run the setup on the computer where the Auditor  Server resides. See the
 [Installation](/docs/auditor/10.7/install/overview.md) topic for additional information.

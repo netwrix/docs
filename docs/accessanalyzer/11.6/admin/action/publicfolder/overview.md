@@ -6,24 +6,22 @@ sidebar_position: 60
 
 # PublicFolder Action Module
 
-The Public Folder action module allows users to make bulk changes to selected Microsoft Exchange
+Use the Public Folder action module to make bulk changes to selected Microsoft Exchange
 public folders by adding, changing, or removing folders and permissions from the environment. Use
 the Pubic Folder Action Module Wizard to choose the data table column that identifies the folders
 and to configure the operations performed against the selected folders.
 
-Prior to configuring the Pubic Folder Action Module Wizard, scope the source data table to ensure
-the actions apply only to the desired folders.
+Before configuring the Public Folder Action Module Wizard, scope the source data table to ensure
+the actions apply only to the folders you want.
 
 :::warning
-Be careful when using this action module. Make sure that only the changes required are
-applied and only to those target folders desired. Always verify the data prior to execution of any
-action.
+Be careful when using this action module. Apply only the changes you need, and only to the
+target folders you intend. Always verify the data before executing any action.
 :::
 
 
 :::info
-Although rollbacks for some actions are available, having to use one should be
-avoided
+Although rollbacks are available for some actions, avoid relying on them.
 :::
 
 

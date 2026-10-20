@@ -10,7 +10,7 @@ How to load identities into Identity Manager for the first time using a basic da
 
 ## Overview
 
-Loading the digital identities into Identity Manager is the very first task you have to perform, once you installed the development environment.
+Loading the digital identities into Identity Manager is the very first task you have to perform after you install the development environment.
 
 The initial workforce repository is going to be the first version of a comprehensive directory containing all users in the organization. This directory is crucial in setting up the identity lifecycle management features and managing assignments of entitlements.
 
@@ -31,18 +31,18 @@ Not all data is useful for identity governance and administration. Thus, to star
 
     > For example, consider that internal employees must be managed by HR officers only, then you'll
     > need to identify whether users are internal employees or external contractors. Then you should
-    > make sure that you fill an `Employee Type` property with at least two values: one for internal
+    > ensure that you fill an `Employee Type` property with at least two values: one for internal
     > employees, and one for external contractors.
 
 - is needed to automatically grant permissions.
 
-    > For example, if a user's position title ("manager" for instance), defines what users currently
-    > do, and thus what permissions they need, then you should make sure to fill in a property
+ > For example, if a user's position title ("manager" for instance), defines what users 
+    > do, and thus what permissions they need, then you should ensure to fill in a property
     > storing the position's title in the workforce repository.
 
 ## Participants and Artifacts
 
-Integrators may need the help of the **HR department** who knows the organization in order to get the identity and organizational data. After the initial loading, the **HR department** can review the data to confirm its accuracy.
+Integrators may need the help of the **HR department** who knows the organization to get the identity and organizational data. After the initial loading, the **HR department** can review the data to confirm its accuracy.
 
  | Input | Output | 
  | --- | --- | 
@@ -55,7 +55,7 @@ See the [Install the Development Environment](../../../user-guide/set-up/develop
 
 Load identities for the first time by proceeding as follows:
 
-1. On the home page, click on **Settings** in the **Configuration** section.
+1. On the home page, click **Settings** in the **Configuration** section.
 
     ![Home Page - Configuration](/images/identitymanager/home_settings_v523.webp)
 
@@ -67,7 +67,7 @@ Load identities for the first time by proceeding as follows:
 
 If you don't know where to start, identities most often include **long-term employees, temporary employees** (such as interns and temps) **and external contractors**. The template contains a `UserType` tab that lists all the types of workers that you want to include, i.e. the usual identities listed just before, but also partners, clients, even applications.
 
-Workforce should include obviously all current workers, but also incoming workers, and those who left the organization in the past XXX (time period defined by the rules of the security officer). It is interesting to have past workers in order to understand the process and ensure that they are supposed to be orphaned. See the [Review Orphaned and Unused Accounts](../../../user-guide/administrate/orphan-unused-account-review) topic for additional information.
+Workforce should include obviously all current workers, but also incoming workers, and those who left the organization in the past XXX (time period defined by the rules of the security officer). It is interesting to have past workers to understand the process and ensure that they are supposed to be orphaned. See the [Review Orphaned and Unused Accounts](../../../user-guide/administrate/orphan-unused-account-review) topic for additional information.
 
 **Employees**
 
@@ -75,7 +75,7 @@ The workers that are directly employed by the organization usually have their da
 
 **Contractors**
 
-Often third-party workers like contractors are not part of the **HR system**. Then, there are a few possible solutions to get their data:
+Often third-party workers like contractors aren't part of the **HR system**. Then, there are a few possible solutions to get their data:
 
     - through **purchasing department** if it doesn't imply any personal data security breach;
     - **manually** with knowledgeable people, for example department managers and assistants;
@@ -86,11 +86,11 @@ specific part, for example on the employee identifier.
 
 4. Fill said template with the data you collected.
 
-The Excel file contains several tabs which organize data, but not all tabs and columns are mandatory. You can find **more details about the [Template Description](../../../user-guide/set-up/initial-identities-loading/template-description)**. Below are the minimum recommended attributes (mandatory in orange):
+The Excel file contains several tabs which organize data, but not all tabs and columns are mandatory. You can find **more details about the [Template Description](../../../user-guide/set-up/initial-identities-loading/template-description)**. The following image shows the minimum recommended attributes (mandatory in orange):
 
     ![Template Recommendations](/images/identitymanager/initialload_templatereco_v600.webp)
 
-[**Click here to download a template example**](/files/identitymanager/user-guide/set-up/initial-identities-loading/Directory_example_V602.xlsx).
+[**Download a template example**](/files/identitymanager/user-guide/set-up/initial-identities-loading/Directory_example_V602.xlsx).
 
 Every object (so every tab) of the directory must have a **key**, which is an attribute:
 
@@ -103,11 +103,11 @@ Among other things, a **consistent** key allows identities to use the same login
 
 **Create your initial workforce repository with only recommended attributes.**
 
-As we aim to quickly enable Identity Governance and Administration (IGA) actions (like the review of orphaned and unused accounts, or access certification, etc.), Netwrix Identity Manager (formerly Usercube) recommends **loading identities with only necessary data**. The model can be completed later.
+To quickly enable Identity Governance and Administration (IGA) actions (like the review of orphaned and unused accounts, or access certification, etc.), Netwrix Identity Manager (formerly Usercube) recommends **loading identities with only necessary data**. The model can be completed later.
 
 Moreover, Identity Manager's Query module can help gather data from other systems.
 
-For example, let's say that contractors' phone numbers are found only in the AD. Then we can wait for the connection of Identity Manager to the AD, and finally use the Query module to collect missing data. In this case:
+For example, suppose contractors' phone numbers are found only in the AD. Integrators can wait for the connection of Identity Manager to the AD, and then use the Query module to collect missing data. In this case:
 
     1. Upload the `Directory.xlsx` file with only recommended data, validate and synchronize as
 explained on this page.
@@ -126,18 +126,18 @@ order to feed the data back to Identity Manager.
 
 The latest uploaded file overwrites the previous one.
 
-6. Click on **Verify and Synchronize** to check the file's consistency and import its data into
+6. Click **Verify and Synchronize** to check the file's consistency and import its data into
 Identity Manager.
 
     ![Verify and Synchronize](/images/identitymanager/initialload_dataupload-synchronize_v602.webp)
 
-Now you are able to view users' pages in the directory.
+Now you can view users' pages in the directory.
 
     ![Directory - Users](/images/identitymanager/initialload_directoryusers_v602.webp)
 
 ## Verify Identities Loading
 
-In order to validate the process:
+To validate the process:
 
 - Check **manually** a sample in the user directory accessible from the home page. You should verify at
 least your own sheet and the sheets for your hierarchy.
@@ -154,7 +154,7 @@ directory on the home page.
 If the system contains many organizations, then it is also possible to list each organization with its manager through the Query module.
 
 - Create reports with indicators on the number of workers per type or per organization for example
-(through Identity Manager's predefined reports, the Query module or Power BI), in order to ensure that Identity Manager's content sticks to reality.
+(through Identity Manager's predefined reports, the Query module or Power BI), to ensure that Identity Manager's content sticks to reality.
 
 See the [Generate Reports](../../../user-guide/administrate/reporting) topic for additional information.
 

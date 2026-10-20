@@ -10,6 +10,6 @@ The Summary page displays a summary of the configured query. It wizard page for 
 
 ![EWS Public Folder Data Collector Wizard Summary page](/images/accessanalyzer/12.0/admin/datacollector/ewspublicfolder/summary.webp)
 
-Click **Finish** to save configuration changes. If no changes were made, it is a best practice to
-click **Cancel** to close the EWS Public Folder Data Collector Wizard to ensure that no accidental
-clicks are saved.
+Click **Finish** to save configuration changes. If you made no changes, click **Cancel** to close
+the EWS Public Folder Data Collector Wizard. This is a best practice to avoid saving accidental
+clicks.

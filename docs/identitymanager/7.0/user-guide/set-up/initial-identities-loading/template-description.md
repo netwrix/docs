@@ -8,7 +8,7 @@ sidebar_position: 30
 
 Description of the MS Excel template for the creation of the identities repository.
 
-[**Click here to download a template example**](/files/identitymanager/user-guide/set-up/initial-identities-loading/Directory_example_V602.xlsx).
+[**Download a template example**](/files/identitymanager/user-guide/set-up/initial-identities-loading/Directory_example_V602.xlsx).
 
 ![Template Model](/images/identitymanager/initialload_templatemodel_v603.webp)
 

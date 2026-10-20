@@ -18,7 +18,7 @@ You can manage several settings for a service, such as:
 
 ## View Service Details
 
-Follow the steps to view the service details.
+To view the service details:
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
@@ -40,9 +40,9 @@ Security service, such as deployment and log settings.
 ## Manage Advanced Settings
 
 If you have created multiple Security services for load balancing and high availability, the
-Advanced Settings option enables the services to share session information.
+Advanced Settings option lets services share session information.
 
-Follow the steps to enable communication between multiple Security services.
+To enable communication between multiple Security services:
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
@@ -86,7 +86,7 @@ Deleting a Security service removes the following:
 
     The container created in Docker Engine for the Security service
 
-Follow the steps to delete a Security service.
+To delete a Security service.
 
 Step 1 – In Admin Center, click **Applications** in the left pane.
 
@@ -95,7 +95,7 @@ Step 2 – On the **Applications** page, click the **Security Service** tab.
 Step 3 – Click the ellipsis button for a Security service and select **Delete**.
 
 :::note
-You cannot delete the default Security service. You cannot also delete a Security service that
+You can't delete the default Security service. You can't also delete a Security service that
 has been linked with a Directory Manager client, such as the Directory Manager portal.
 
 :::

@@ -6,14 +6,14 @@ sidebar_position: 10
 
 # A software solution to match your IGA needs
 
-To learn about Netwrix Identity Manager (formerly Usercube) and build the solution you need, explore our guides.
+To learn about Netwrix Identity Manager (formerly Usercube) and build the solution you need, explore the guides below.
 
 The present documentation mentions the Netwrix Identity Manager (formerly Usercube) application as simply Identity Manager.
 
 Identity Manager's guides include:
 
 - An [Introduction Guide](introduction-guide) if you are new to Identity Manager.
-- A [User Guide](user-guide) to configure Identity Manager from scratch via the UI.
+- A [User Guide](user-guide) to configure Identity Manager via the UI.
 - An [Integration Guide](integration-guide) to complete Identity Manager's configuration in
 XML according to your needs.
 - An [Installation Guide](installation-guide) to install Identity Manager in a production

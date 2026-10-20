@@ -19,8 +19,7 @@ This report is comprised of the following columns:
   Subject Profile matches (for example, Customer, Employee, and so on)
 - Count – Number of files with criteria matches
 
-There is one table at the bottom displaying Details on the files where the selected criterion
-matches were found:
+The Details table at the bottom shows the files where the selected criterion matches were found:
 
 - Source — For System Criteria this shows the criteria name (for example, Credit Cards). For Subject
   Profiles criteria it shows the individual identities (for example, Jon Doe).

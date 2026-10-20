@@ -10,6 +10,5 @@ The Summary page summarizes the configuration of the action.
 
 ![Registry Action Module Wizard Summary page](/images/accessanalyzer/11.6/admin/action/registry/summary.webp)
 
-When done configuring the action, click **Finish**. If no changes were made, it is a best practice
-to click **Cancel** to close the Registry Action Module Wizard to ensure that no accidental clicks
-are saved.
+When done configuring the action, click **Finish**. If you made no changes, click **Cancel** instead
+to close the Registry Action Module Wizard without saving accidental clicks.

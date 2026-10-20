@@ -2,7 +2,7 @@
 
 Netwrix Auditor provides State-in-Time reports for Azure Files. With these reports, you can view the permissions state of your Azure file shares at a specific moment in time. These reports complement change and activity reports by giving you a snapshot-based view of who has access to what, and the current state of files and folders across your Azure file shares.
 
-State-in-Time reports rely on daily configuration snapshots collected by Netwrix Auditor. Each snapshot captures the permissions state, folder structure, and file metadata of the monitored Azure file shares at the time of collection.
+State-in-Time reports rely on the daily configuration snapshots that Netwrix Auditor collects. Each snapshot captures the permissions state, folder structure, and file metadata of the monitored Azure file shares at the time of collection.
 
 ## How it works
 
@@ -10,9 +10,13 @@ Netwrix Auditor connects to Azure Files via the SMB protocol and collects the fo
 
 - Folder and file permissions (NTFS ACLs + RBAC from Azure Portal)
 - Folder structure, file sizes, and file metadata
-- Account information resolved via Microsoft Graph API (EntraID and ADDS identities)
+- Account information from the Microsoft Graph API — EntraID and Active Directory Domain Services (ADDS) identities
 
 Netwrix Auditor calculates the effective permissions based on **NTFS ACLs + Share-level ACLs + RBAC (Azure Portal)**.
+
+:::note
+Effective permission calculations that depend on a trust relationship between Active Directory domains or forests aren't always fully accurate. Netwrix Auditor can't guarantee the same accuracy for group membership and effective access across a trust relationship as it can within a single domain.
+:::
 
 ## Supported configurations
 
@@ -58,7 +62,7 @@ By default, reports show the current (most recent) state. To view historical sna
 2. In the **Snapshot Date** filter, select the date you want to view.
 3. Click **View Report**.
 
-A Global administrator must import historical snapshots. Once imported, they are available for all State-in-Time reports for that monitoring plan.
+A Global administrator must import historical snapshots. After the import completes, the snapshots are available for all State-in-Time reports for that monitoring plan.
 
 ## Export formats
 
@@ -73,7 +77,7 @@ If you are familiar with File Server State-in-Time reports, note the following d
 - **"Item" filter** represents the monitoring scope: either a specific **Storage Account** or an **Azure Subscription** (not a file server or share).
 - **"Times Accessed" data** comes from Azure Monitor diagnostic logs. If you haven't configured diagnostic settings, this value defaults to 0.
 - **Local file server users and groups** don't appear in Azure Files reports — only EntraID and ADDS identities.
-- UNC paths follow the Azure file share format: `\\<storageaccount>.file.core.windows.net\<share>\<path>`.
+- Universal Naming Convention (UNC) paths follow the Azure file share format: `\\<storageaccount>.file.core.windows.net\<share>\<path>`.
 
 ## Related topics
 

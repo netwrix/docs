@@ -16,7 +16,7 @@ import {useAlgoliaThemeConfig, useSearchResultUrlProcessor} from '@docusaurus/th
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import {PRODUCTS} from '../../config/products';
-import {getVersionsForProducts, dedupeToLatestVersion} from '../searchUtils';
+import {getVersionsForProducts, dedupeToLatestVersion, versionLabel} from '../searchUtils';
 
 // Safely strip HTML tags to plain text
 function stripHtmlTagsToText(input) {
@@ -46,14 +46,35 @@ const PRODUCT_OPTIONS = [
     return a.label.localeCompare(b.label);
 });
 
+// Keep only versions the current product selection actually offers. The Versions panel
+// only ever lists the selection's own versions — and for a single-version product it is a
+// plain label with no checkboxes — so a foreign version (from a stale URL param or
+// sessionStorage) would filter every result away with no control able to clear it.
+// '__all__' is a sentinel, not a version, and always survives; if pruning empties the
+// selection the filter has become meaningless, so fall back to '__all__'.
+// Returns the input array itself when there is nothing to prune. That keeps identity
+// stable, which matters twice: the effect that re-checks on every change would otherwise
+// never settle, and a deliberate "uncheck every version" ([]) must not be rewritten to
+// '__all__' — that would re-check the whole list under the user.
+function pruneVersions(versions, selectedProducts) {
+    const valid = new Set(getVersionsForProducts(selectedProducts));
+    const cleaned = versions.filter(v => v === '__all__' || valid.has(v));
+    if (cleaned.length === versions.length) return versions;
+    return cleaned.length > 0 ? cleaned : ['__all__'];
+}
+
 // Checkbox-based multi-select component
-function MultiSelect({label, options, selectedValues, onChange}) {
+function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHeight, sizeScale = 1}) {
     // options[0] is the "All products" sentinel — skip it for the checkbox list
     const productOptions = options.filter(o => o.value !== '__all__');
     const allSelected = selectedValues.includes('__all__');
     const noneSelected = selectedValues.length === 0;
     const someSelected = !allSelected && !noneSelected;
 
+    // Hooks must run on every render — the option count changes at runtime (the
+    // Versions list re-renders with a different product's versions), so the
+    // single-option early return below has to sit after them or React throws
+    // "Rendered fewer hooks than expected".
     const selectAllRef = useRef(null);
 
     useEffect(() => {
@@ -62,6 +83,40 @@ function MultiSelect({label, options, selectedValues, onChange}) {
             if (!someSelected) selectAllRef.current.indeterminate = false;
         }
     }, [someSelected]);
+
+    // With only one real option, there's nothing to filter — show it as a
+    // plain, always-selected label instead of a confusing single-row checkbox list.
+    if (productOptions.length === 1) {
+        return (
+            <div style={{display: 'flex', flexDirection: 'column', flexShrink: 0, marginTop: topMargin}}>
+                {/* A div, not a <label> — this branch renders static text, so there is no
+                    control for a label element to name. */}
+                <div style={{marginBottom: '8px', fontWeight: 'bold'}}>
+                    {label}
+                </div>
+                <div style={{
+                    border: '2px solid var(--ifm-color-emphasis-300)',
+                    borderRadius: '8px',
+                    background: 'var(--ifm-background-color)',
+                    padding: '4px 10px',
+                    fontSize: '13px',
+                    color: 'var(--ifm-color-emphasis-700)',
+                }}>
+                    {productOptions[0].label}
+                </div>
+                {label === 'Versions' && (
+                    <p style={{
+                        marginTop: '6px',
+                        marginBottom: 0,
+                        fontSize: '12px',
+                        color: 'var(--ifm-color-emphasis-600)',
+                    }}>
+                        This product only has one version in documentation.
+                    </p>
+                )}
+            </div>
+        );
+    }
 
     function handleSelectAll() {
         if (allSelected && !someSelected) {
@@ -94,13 +149,14 @@ function MultiSelect({label, options, selectedValues, onChange}) {
         background: 'var(--ifm-background-color)',
         flex: 1,
         minHeight: 0,
+        maxHeight,
     };
 
     const rowStyle = {
         display: 'flex',
         alignItems: 'center',
         gap: '8px',
-        padding: '4px 10px',
+        padding: `${4 * sizeScale}px 10px`,
         cursor: 'pointer',
         fontSize: '13px',
         lineHeight: '1.3',
@@ -122,7 +178,7 @@ function MultiSelect({label, options, selectedValues, onChange}) {
     };
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0}}>
+        <div style={{display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, marginTop: topMargin}}>
             <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold', flexShrink: 0}}>
                 {label}
             </label>
@@ -308,30 +364,41 @@ function SearchPageContent() {
             return ['__all__'];
         }
     });
-    // Initialize from URL if present, otherwise from sessionStorage
+    // Initialize from URL if present, otherwise from sessionStorage. Both can name a
+    // version the selected product doesn't have, so prune here rather than letting the
+    // first search go out with a filter the UI can't clear.
     const [selectedVersions, setSelectedVersions] = useState(() => {
-        if (versionsFromUrl.length > 0) return versionsFromUrl;
+        if (versionsFromUrl.length > 0) return pruneVersions(versionsFromUrl, selectedProducts);
         if (typeof window === 'undefined') return ['__all__'];
         const saved = sessionStorage.getItem('docs_version_filter');
         try {
             const parsed = saved ? JSON.parse(saved) : [];
             if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
-            return parsed;
+            return pruneVersions(parsed, selectedProducts);
         } catch { return ['__all__']; }
     });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
 
     const availableVersions = useMemo(() => getVersionsForProducts(selectedProducts), [selectedProducts]);
 
-    // Clear orphan versions when products change
+    const isSingleProductSelected = useMemo(() => {
+        return selectedProducts.filter(p => p !== '__all__' && p !== '__none__').length === 1;
+    }, [selectedProducts]);
+
+    // Clear orphan versions when products change. Synchronous here so the interactive path
+    // never fires a search with the outgoing selection's versions.
     const handleProductChange = useCallback((newProducts) => {
         setSelectedProducts(newProducts);
-        const validVersions = new Set(getVersionsForProducts(newProducts));
-        setSelectedVersions(prev => {
-            const cleaned = prev.filter(v => v === '__all__' || validVersions.has(v));
-            return cleaned.length > 0 ? cleaned : ['__all__'];
-        });
+        setSelectedVersions(prev => pruneVersions(prev, newProducts));
     }, []);
+
+    // Backstop for every path that sets versions without going through
+    // handleProductChange: first mount, and the location.search effect below (browser
+    // back/forward, or arriving from the search modal). pruneVersions returning its input
+    // unchanged is what stops this from looping on its own update.
+    useEffect(() => {
+        setSelectedVersions(prev => pruneVersions(prev, selectedProducts));
+    }, [selectedProducts, selectedVersions]);
 
     // Track if we're restoring from URL (e.g., browser back button).
     // Initialize from pageFromUrl so landing on /search?page=3 works
@@ -517,9 +584,10 @@ function SearchPageContent() {
                 facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
             }
 
-            // A version filter is only active while a product filter is active — stale
-            // URL/sessionStorage versions must not silently filter while the panel is hidden.
-            const realVersions = realProducts.length > 0 ? selectedVersions.filter(v => v !== '__all__') : [];
+            // A version filter is only active while the Versions panel is visible, i.e.
+            // exactly one product is selected. Versions left over in state, the URL, or
+            // sessionStorage must not silently filter results the user can't unfilter.
+            const realVersions = realProducts.length === 1 ? selectedVersions.filter(v => v !== '__all__') : [];
             if (realVersions.length > 0) {
                 facetFilters.push(realVersions.map(v => `product_version:${v}`)); // Array within array = OR logic
             }
@@ -567,7 +635,7 @@ function SearchPageContent() {
             const urlProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
             if (urlProducts.length > 0) params.set('products', urlProducts.join(','));
             // Same activation rule as makeSearch: never advertise a version filter the UI doesn't show.
-            const urlVersions = urlProducts.length > 0 ? selectedVersions.filter(v => v !== '__all__') : [];
+            const urlVersions = urlProducts.length === 1 ? selectedVersions.filter(v => v !== '__all__') : [];
             if (urlVersions.length > 0) params.set('versions', urlVersions.join(','));
             if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
             if (currentPage > 1) params.set('page', String(currentPage));
@@ -834,16 +902,22 @@ function SearchPageContent() {
                             options={PRODUCT_OPTIONS}
                             selectedValues={selectedProducts}
                             onChange={handleProductChange}
+                            maxHeight={isSingleProductSelected && availableVersions.length > 1 ? (isMobile ? '132px' : 'calc((100vh - var(--ifm-navbar-height)) * 0.60)') : undefined}
                         />
-                        {availableVersions.length > 0 && (
+                        {/* The length guard covers a product name from a stale URL or
+                            sessionStorage that no longer exists in the config — one product is
+                            selected, but it contributes no versions, so there is nothing to list. */}
+                        {isSingleProductSelected && availableVersions.length > 0 && (
                             <MultiSelect
                                 label="Versions"
                                 options={[
                                     {label: 'All versions', value: '__all__'},
-                                    ...availableVersions.map(v => ({label: v, value: v})),
+                                    ...availableVersions.map(v => ({label: versionLabel(v), value: v})),
                                 ]}
                                 selectedValues={selectedVersions}
                                 onChange={setSelectedVersions}
+                                topMargin="16px"
+                                sizeScale={1.1}
                             />
                         )}
                     </div>{/* closes filters div */}

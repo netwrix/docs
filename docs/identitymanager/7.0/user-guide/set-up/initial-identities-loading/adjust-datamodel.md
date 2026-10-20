@@ -37,11 +37,11 @@ See the [Install the Development Environment](../../../user-guide/set-up/develop
 
 Adjust the data model by proceeding as follows:
 
-1. On the home page, click on **Settings** in the **Configuration** section.
+1. On the home page, click **Settings** in the **Configuration** section.
 
     ![Home Page - Configuration](/images/identitymanager/home_settings_v523.webp)
 
-2. On the **Workforce** > **Data Model** page, click on the following icon to adjust the data model
+2. On the **Workforce** > **Data Model** page, click the following icon to adjust the data model
 to your specific situation.
 
     ![Scan Data Model](/images/identitymanager/iconscandatamodel_v602.svg)
@@ -63,34 +63,36 @@ While Identity Manager suggests a structure for the data model, the choice is yo
     > For example, empty attributes should be excluded to simplify the data model. However, you can
     > choose to keep an empty property anyway if you know that you want to fill it in later.
 
-Note that Identity Manager stays authoritative to activate some properties that are mandatory for Identity Manager's operation.
+:::note
+Identity Manager stays authoritative to activate some properties that are mandatory for Identity Manager's operation.
+:::
 
 For example the contract's start date is necessary for Identity Manager's workflows.
 
 Modifications can be performed later, decisions can be reconsidered. See the [Modify the Identity Data Model](../../../user-guide/optimize/identity-datamodel-modification) topic for additional information.
 
-4. Click on the Save icon at the top.
+4. Click the Save icon at the top.
 
     ![Save Icon](/images/identitymanager/iconsave_v602.svg)
 
-5. Click on the **Reload** button to apply the recent changes to the application.
+5. Click the **Reload** button to apply the recent changes to the application.
 
     ![Reload Button](/images/identitymanager/reload_v603.webp)
 
 ## Verify Identities Loading
 
-In order to validate the process:
+To validate the process:
 
 1. Choose a test field and note its displaying mode.
 
-    > For example, our `Region` field in `Site` is sized as `large`.
+    > For example, the `Region` field in `Site` is sized as `large`.
 >
     > ![Scan Data Model - Example](/images/identitymanager/initialload_scan-example_v523.webp)
 
 2. Navigate within Identity Manager to find a workflow using the test field. Observe the displaying
 mode in the UI.
 
-    > Our `State` field must be filled in during the creation of a new site. It can be filled by
+    > The `State` field must be filled in during the creation of a new site. It can be filled by
     > opening a pop-up and choosing the region in the list.
 >
     > ![Scan Data Model - Example](/images/identitymanager/initialload_scan-example2_v523.webp)
@@ -99,7 +101,7 @@ mode in the UI.
 
 3. Back on the scanning feature, change the displaying mode of your test field and save.
 
-    > We change `large` to `extra small`.
+    > Change `large` to `extra small`.
 
 4. Verify the test field's displaying mode.
 

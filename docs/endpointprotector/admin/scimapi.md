@@ -12,14 +12,14 @@ The SCIM API Connector enables Endpoint Protector to integrate with enterprise I
 
 Using SCIM (System for Cross-domain Identity Management), organizations can ensure that user accounts and group memberships in Endpoint Protector are automatically created, updated, and deactivated based on changes in their Identity Provider.
 
-This integration helps:
+This integration:
 
--   Reduce manual user management
--   Enforce the Identity Provider as the source of truth
--   Improve security through automated deprovisioning
--   Support enterprise compliance and access governance requirements
+-   Reduces manual user management
+-   Enforces the Identity Provider as the source of truth
+-   Improves security through automated deprovisioning
+-   Supports enterprise compliance and access governance
 
-## What Is SCIM?
+## Understanding SCIM
 
 SCIM (System for Cross-domain Identity Management) is an industry-standard protocol designed to simplify identity lifecycle management between systems.
 
@@ -120,7 +120,7 @@ For detailed endpoint definitions, schemas, and examples, refer to the **SCIM AP
 
 ## Summary
 
-The SCIM API Connector enables automated, identity-driven user and group management in Endpoint Protector. When combined with SSO, it provides a complete enterprise identity integration that improves security, reduces operational overhead, and supports compliance best practices.
+The SCIM API Connector automates user and group management in Endpoint Protector. Combined with SSO, it provides complete enterprise identity integration that improves security and reduces operational overhead.
 
 ***
 
@@ -727,7 +727,7 @@ X-AUTH-TOKEN: scim_xxxx...
 | `invalidFilter` | Invalid filter syntax             |
 | `tooMany`       | Too many results                  |
 | `uniqueness`    | Uniqueness constraint violation   |
-| `mutability`    | Cannot modify immutable attribute |
+| `mutability`    | Can't modify immutable attribute |
 | `invalidSyntax` | Malformed request                 |
 | `invalidPath`   | Invalid attribute path            |
 | `noTarget`      | Resource not found                |

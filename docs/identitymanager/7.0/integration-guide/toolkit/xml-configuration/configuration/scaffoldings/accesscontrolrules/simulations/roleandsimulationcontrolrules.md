@@ -26,7 +26,7 @@ sidebar_position: 2
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_CompositeRoleRule_CreateUpdateDeleteSimulation" DisplayName_L1="Administrator_CompositeRoleRule" DisplayName_L2="Administrator_CompositeRoleRule" EntityType="CompositeRoleRule" Profile="Administrator">

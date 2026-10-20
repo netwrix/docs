@@ -16,4 +16,4 @@ Roles are: Global Administrator, Limited Administrator, and User.
 Displays the role assigned to the user on the Microsoft Entra Admin Center.
 
 To change the user role, click the down arrow for the new role you want to assign, and then select
-the check boxes for the role privileges for assignment.
+the checkboxes for the role privileges for assignment.

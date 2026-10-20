@@ -7,7 +7,7 @@ sidebar_position: 60
 # Authentication Monitoring Event Type
 
 The Authentication Monitoring event type captures events according to policy filters for Kerberos,
-TGT, TGS and/or NTLM authentication requests.
+TGT, TGS, and/or NTLM authentication requests.
 
 The event filters for the Authentication Monitoring event type are:
 
@@ -48,11 +48,13 @@ being monitored.
   - Kerberos (TGT and/or TGS)
   - NTLM
 
-> > **CAUTION:** Saving all TGT and/or TGS authentication data results in the bloating of the Threat
-> > Prevention database. Configure policy filters and use Database Maintenance while monitoring
-> > these protocols to retain data for the necessary timeframe. See the
-> > [Database Maintenance Window](/docs/threatprevention/7.5/admin/configuration/databasemaintenance/overview.md) topic for
-> > additional information.
+:::warning
+Saving all TGT and/or TGS authentication data results in the bloating of the Threat
+Prevention database. Configure policy filters and use Database Maintenance while monitoring
+these protocols to retain data for the necessary timeframe. See the
+[Database Maintenance Window](/docs/threatprevention/7.5/admin/configuration/databasemaintenance/overview.md) topic for
+additional information.
+:::
 > >
 > > **_RECOMMENDED:_** Save only a few days' worth of TGT and TGS data at a time.
 
@@ -89,10 +91,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -105,7 +107,7 @@ both.
 
 ![Event Type – Success filter](/images/threatprevention/7.5/admin/policies/eventtype/success.webp)
 
-Select the radio button for the desired monitoring filter:
+Select the radio button for a monitoring filter:
 
 - Success – Only monitors successful events
 - Failure – Only monitors failed events
@@ -128,10 +130,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -158,10 +160,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -181,10 +183,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -204,10 +206,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -227,10 +229,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 

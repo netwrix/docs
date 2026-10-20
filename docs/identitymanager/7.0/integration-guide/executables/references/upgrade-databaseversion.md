@@ -6,7 +6,7 @@ sidebar_position: 380
 
 # Usercube-Upgrade-DatabaseVersion
 
-This tool is used to run the necessary migration scripts in order to upgrade the database structure from its current version to the most recent version.
+This tool is used to run the necessary migration scripts to upgrade the database structure from its current version to the most recent version.
 
 ## Examples
 

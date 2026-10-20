@@ -321,7 +321,7 @@ Permission to review provisioning corresponding to an access right owned by an o
 - The permission's recipient will receive a notification email.
 
 :::note
- In order to receive the notifications, a profile must have the full permission path. Having a (great-)parent permission will not enable notifications for all child entities. 
+ To receive the notifications, a profile must have the full permission path. Having a (great-)parent permission will not enable notifications for all child entities. 
 :::
 For example, the permission /ProvisioningPolicy/PerformManualProvisioning/Directory_User allows a profile to perform manual provisioning with Directory_User as the source entity type, and receive the corresponding notifications. On the contrary, the permission /ProvisioningPolicy/PerformManualProvisioning/ allows a profile to perform manual provisioning for all entity types, but not receive the corresponding notifications. Each permission can be configured in an access control entry so that the corresponding notification is disabled. See the [Access Control Rule](../toolkit/xml-configuration/access-control/accesscontrolrule)topic for additional information.
 
@@ -332,7 +332,7 @@ Permission to review roles corresponding to an access right owned by an object o
 The permission's recipient will receive a notification email.
 
 :::note
- In order to receive the notifications, a profile must have the full permission path. Having a (great-)parent permission will not enable notifications for all child entities. 
+ To receive the notifications, a profile must have the full permission path. Having a (great-)parent permission will not enable notifications for all child entities. 
 :::
 For example, the permission /ProvisioningPolicy/PerformManualProvisioning/Directory_User allows a profile to perform manual provisioning with Directory_User as the source entity type, and receive the corresponding notifications. On the contrary, the permission /ProvisioningPolicy/PerformManualProvisioning/ allows a profile to perform manual provisioning for all entity types, but not receive the corresponding notifications. Each permission can be configured in an access control entry so that the corresponding notification is disabled. See the [Access Control Rule](../toolkit/xml-configuration/access-control/accesscontrolrule)topic for additional information.
 
@@ -1743,7 +1743,7 @@ Permission to query and read objects of type PersonasByFilterQuery
 
 - /UserInterface/Reload
 
-Permission to reset the container, in order to update the permissions and the displayed configuration.
+Permission to reset the container, to update the permissions and the displayed configuration.
 
 - /UserInterface/ResourceReadForm/Query
 

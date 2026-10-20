@@ -25,10 +25,20 @@ export function getVersionsForProducts(selectedProducts) {
     return [...versions];
 }
 
+// Display labels come from products.js, where 'current' — the internal sentinel for
+// single-version products — is labeled 'Current'. Filter UIs must print the label, not
+// the raw value. Versions absent from the config (stale index entries) keep their string.
+const VERSION_LABELS = new Map(PRODUCTS.flatMap(p =>
+    (p.versions || []).map(v => [v.version, v.label || v.version])));
+
+export function versionLabel(version) {
+    return VERSION_LABELS.get(version) || version;
+}
+
 // A version-pinned KB source (kbSource override) publishes under its directory
 // basename instead of the product id — both as the standalone route segment and as
-// the copied landing page's slug (docs/kb/accessanalyzer-2601/index.md pins
-// slug: accessanalyzer-2601 while the default source pins slug: accessanalyzer).
+// the copied landing page's slug (a source at docs/kb/<product>-<version>/ pins
+// slug: <product>-<version> while the default source pins slug: <product>).
 // basename -> product id, so every shape of one article normalizes to one key.
 const PINNED_KB_SOURCES = new Map();
 PRODUCTS.forEach(p => (p.versions || []).forEach(v => {

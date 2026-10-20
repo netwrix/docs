@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Sync Service Installation
 
-The Sync Service is installed as a Windows service. Currently only a single instance of the service
-is supported. Run the installer executable, following the installer wizard steps in turn.
+The Sync Service runs as a Windows service. Change Tracker supports only a single instance
+of the service. Run the installer executable, following the installer wizard steps in order.
 
 ## Requirements
 
@@ -16,18 +16,17 @@ is supported. Run the installer executable, following the installer wizard steps
 
 Upgrading Existing Installations
 
-Normally the upgrade process is as simple as running the new installer and clicking next until the
-end. Previously configured values will be the default values (existing passwords will not be
-visible).
+Normally, the upgrade process involves running the new installer and clicking Next through the
+wizard. Previously configured values become the new defaults (existing passwords aren't visible).
 
-Version 2.2 is the exception. When upgrading to 2.2 or higher, installations prior to 2.2 must be
-uninstalled first by using the `unins000` application in
+Version 2.2 is the exception. When upgrading to 2.2 or later, uninstall installations before 2.2
+first, using the `unins000` application in
 `C:\Program Files\NNT Change Tracker Suite\Gen7SyncService`.
 
 Make a copy of the `Gen7SyncService.exe.config` file as this will contain all the settings for the
 Sync Service.
 
-The following folders should then be removed:
+Then remove the following folders:
 
 - `C:\Program Files\NNT Change Tracker Suite\Gen7SyncService`
 - `C:\Program Data\NNT\syncservice`
@@ -53,9 +52,9 @@ Enter the required configuration values:
 - In the “Hub Server URL” field, specify the URL for your Change Tracker REST API endpoint, e.g.
   https://changetracker-server/api
 - In the “Sync service username” and “Sync service password” fields, enter the credentials for the
-  Change Tracker user account which the service should use to connect to Change Tracker; it is
-  recommended that a user account be created specifically for this purpose. Note: Change Tracker
-  includes an “ITSM” role which is preconfigured with the necessary permissions.
+  Change Tracker user account which the service should use to connect to Change Tracker. Netwrix
+  recommends creating a user account specifically for this purpose. Note: Change Tracker includes
+  an “ITSM” role that already has the necessary permissions.
 
 ## Authentication
 
@@ -64,32 +63,32 @@ Select which type of authorization to use:
 ![authenticationtype](/images/changetracker/integration/itsm/authenticationtype.webp)
 
 - Basic (provide Username / Password of a ServiceNow user account only). Use when OAuth
-  authorization is not available. The encoded credentials are sent in the headers of every HTTP
-  request.
+  authorization isn't available. The Sync Service sends the encoded credentials in the headers of
+  every HTTP request.
 - OAuth2 Resource Owner Password Flow (provide Username / Password of a ServiceNow user account, and
-  Client ID / Client Secret of a ServiceNow OAuth application). Use when using an OAuth application
+  Client ID / Client Secret of a ServiceNow OAuth application). Use with an OAuth application
   registration native to ServiceNow.
 - OAuth2 Client Credentials Flow (provide Client ID / Client Secret of an OAuth application). Use if
-  required by an OAuth application not registered with ServiceNow e.g. Apigee.
+  an OAuth application not registered with ServiceNow (e.g., Apigee) requires it.
 
 ## ITSM URLs
 
-Enter the require configuration values:
+Enter the required configuration values:
 
 ![servicenowconnection](/images/changetracker/integration/itsm/servicenowconnection.webp)
 
 - In the “ServiceNow ITSM Server URL” field, specify the URL for your ServiceNow REST API endpoint,
   e.g. https://service-now-server/api
 - In the “ServiceNow OAuth2 Token URL” field (not applicable if using Basic Authentication), specify
-  the URL for your OAuth2 token endpoint, e.g. https://service-now-server/ oauth_token.do
+  the URL for your OAuth2 token endpoint, e.g. https://service-now-server/oauth_token.do
 
 ## ITSM Account
 
-A ServiceNow account must be created specifically for the Sync Service to connect with. The Sync
-Service must be configured to use the same time zone as this ServiceNow account. Because UTC is not
+Create a ServiceNow account specifically for the Sync Service to connect with. Configure the Sync
+Service to use the same time zone as this ServiceNow account. Because UTC isn't
 an option for a user's time zone in ServiceNow, the Sync Service defaults to GMT. The only
 requirement here is for the time zones to match, so the easiest approach is to use GMT for the
-ServiceNow user, but it is possible to configure the Sync Service to use a different time zone by
+ServiceNow user. However, you can configure the Sync Service to use a different time zone instead by
 setting the serviceNow.timeZone element in the Sync Service configuration file (see the
 administration page for instructions).
 

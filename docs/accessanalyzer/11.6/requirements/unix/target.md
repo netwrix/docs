@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Target Unix Requirements, Permissions, and Ports
 
-The Enterprise Auditor for Unix Solution provides the ability to audit Unix servers. It scans:
+The Enterprise Auditor for Unix Solution lets you audit Unix servers. It scans:
 
 - AIX® 4+
 - Solaris™ 8+
@@ -33,8 +33,8 @@ This solution employs the following data collectors to scan the target environme
 
 - Root permissions in Unix/Linux
 
-If the Root permission is unavailable, a least privileged model can be used. See the
-[Least Privilege Model](#least-privilege-model) topic additional information.
+If the Root permission is unavailable, you can use a least privileged model. See the
+[Least Privilege Model](#least-privilege-model) topic for additional information.
 
 ## Ports
 
@@ -53,17 +53,17 @@ The following firewall ports are needed:
 ## Least Privilege Model
 
 Enterprise Auditor for Unix collects information from Unix devices by running commands or executing
-scripts on your Unix hosts (if configured properly our tool can SCP scripts to your hosts before
-execution). Therefore, the domain or local user credentials entered in the Connection Profile within
-the Enterprise Auditor must be capable of running the necessary commands, executing the necessary
-scripts or, in some cases, have rights to SCP scripts to the host.
+scripts on your Unix hosts (if configured properly, Enterprise Auditor can SCP scripts to your hosts
+before execution). Therefore, the domain or local user credentials entered in the Connection Profile within
+the Enterprise Auditor must be able to run the necessary commands, execute the necessary
+scripts, or, in some cases, have rights to SCP scripts to the host.
 
 ### Connecting to Unix Hosts
 
 Enterprise Auditor for Unix connects to your host in two ways:
 
-- Plink – This mechanism is leveraged during our tools Host Inventory to test connectivity to a host
-  and to collect basic details about a host (Host Name, OS Type, etc.)
+- Plink – Enterprise Auditor uses this mechanism during Host Inventory to test connectivity to a
+  host and to collect basic details about a host (Host Name, OS Type, etc.)
 - Implementation of the SSH2 protocol built into Enterprise Auditor – This is how the Unix Data
   Collector interacts with and pulls information from your environment
 
@@ -81,13 +81,13 @@ Enterprise Auditor for Unix connects to your host in two ways:
 
 - SSH port opened in software and hardware firewalls. Default is 22.
 
-    - If you do not use Port 22, you can specify your SSH port in the Connection Profile
+    - If you don't use Port 22, you can specify your SSH port in the Connection Profile
 
 ### Commands for Non-Root Accounts
 
-We recommend using the root account to run Enterprise Auditor against a Unix system. However, if
-that is not acceptable all the commands we leverage in the solution set are below and can be used to
-implement least privilege:
+Netwrix recommends using the root account to run Enterprise Auditor against a Unix system. However,
+if that isn't acceptable, the following commands used in the solution set implement least
+privilege:
 
 All Perl scripts require the account to be able to execute the following commands:
 
@@ -118,7 +118,7 @@ environment to run the following commands:
 - `cat /etc/security/user` (read access)
 - `cat /etc/shadow`
 
-    - Requires root or customization to job to utilize sudo without password prompt (:NOPASSWD)
+    - Requires root or customization to job to use sudo without password prompt (:NOPASSWD)
 
 - `egrep /etc/security/user` (read access)
 - `egrep /etc/login.defs` (read access)
@@ -150,8 +150,8 @@ The 2.PrivilegedAccess > Sudoers > 0.Collection > UX_ParseSudoers Job requires p
 Unix environment to run the following commands:
 
 :::note
-To parse sudoers we either need root or an account that has access to use sudo without
-password prompt (:NOPASSWD)
+To parse sudoers, the account needs root access or access to use sudo without a
+password prompt (:NOPASSWD).
 :::
 
 

@@ -12,7 +12,7 @@ an embedded website installed with Access Analyzer. It provides a consolidated l
 Analyzer reports and the Access Information Center. See the [URL & Login](/docs/accessinformationcenter/12.0/admin/login/login.md)
 topic for additional information.
 
-In order to secure the Access Information Center, it is first necessary to enable SSL for theAccess
+To secure the Access Information Center, first enable SSL for the Access
 Information Center website. If you access the Access Information Center via the Web Console, then
 both websites must have SSL enabled with the same certificate. See the Securing the Web Console
 topic in the
@@ -33,7 +33,7 @@ Enable Secure Sockets Layer (SSL) for secure, remote connections to the applicat
 These configuration steps are for if you need to manually enable SSL after installing the
 Access Information Center. SSL can also be enabled via the Setup wizard when you first install or
 upgrade the Access Information Center. If SSL was enabled during installation, then this
-configuration is not required.
+configuration isn't required.
 :::
 
 
@@ -45,7 +45,7 @@ the organization’s security policies.
 :::
 
 
-Follow the steps to enable SSL.
+To enable SSL:
 
 **Step 1 –** Create an SSL Binding.
 
@@ -89,8 +89,7 @@ The next step is to modify the `AccessInformationCenter.Service.exe.Config` file
 
 ### Modify the AccessInformationCenter.Service.exe.Config File
 
-Follow the steps to modify the Modify the `AccessInformationCenter.Service.exe.Config` file for
-HTTPS.
+To modify the `AccessInformationCenter.Service.exe.Config` file for HTTPS:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exeWeb.config` file in a text editor, such as
 Notepad. The file is located in the Access Information Center installation directory:
@@ -113,9 +112,9 @@ creating the binding). For example, `https://ENGLANDSRV10.NWXTech.com:481/v2/log
 
 ### Update the URL in the AIC’s Desktop Icon Properties
 
-Follow the steps to update the AIC’s desktop icon's Access Information Center's Properties window.
+To update the URL in the AIC’s desktop icon’s Properties window:
 
-**Step 1 –** Right click on the **Access Information Center** desktop shortcut and click
+**Step 1 –** Right click the **Access Information Center** desktop shortcut and click
 **Properties**.
 
 ![Access Information Center desktop icon properties](/images/accessinformationcenter/12.0/installation/aicproperties.webp)
@@ -125,7 +124,7 @@ Follow the steps to update the AIC’s desktop icon's Access Information Center'
 
 **Step 3 –** Click **Apply** and then **OK** to exit.
 
-The URL is now updated.
+The URL is now updated. SSL is enabled for the Access Information Center website.
 
 ## Enable Single Sign-On
 
@@ -144,7 +143,7 @@ additional information.
 :::
 
 
-Follow the steps to enable SSO for accessing the Access Information Center website directly.
+To enable SSO for accessing the Access Information Center website directly:
 
 ![AccessInformationCenter.Service.exe config file in File Explorer](/images/accessinformationcenter/12.0/installation/configfilelocation.webp)
 
@@ -173,15 +172,15 @@ Change the value for the `AuthAllowWindowsAuthentication` parameter to:
 **Step 4 –** Navigate to Services (`services.msc`). Restart the Netwrix Access Information Center
 service.
 
-The Access Information Center has been enabled for single sign-on.
+Single sign-on is now enabled for the Access Information Center.
 
 ### Local Intranet Settings
 
-Next, configure local intranet settings to enable SSO. This enables users to have authentication
-pass through Windows Authentication and bypass SSO configuration Prompts for credentials via Browser
+Next, configure local intranet settings for SSO. This lets authentication
+pass through Windows Authentication and bypass SSO configuration prompts for credentials via browser
 pop-up.
 
-Follow the steps to configure local intranet settings.
+To configure local intranet settings:
 
 **Step 1 –** Open Windows Internet Properties (**Control Panel** > **Network and
 Internet** > **Internet Options**).

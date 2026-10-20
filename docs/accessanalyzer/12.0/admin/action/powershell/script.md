@@ -6,15 +6,15 @@ sidebar_position: 10
 
 # PowerShell Action: Script
 
-The Script page enables you to input the PowerShell script that will be used to perform the
+Use the Script page to input the PowerShell script used to perform the
 requested action. Built-in variables are available for use in the script.
 
 ![PowerShell Action Module Wizard Script page](/images/accessanalyzer/12.0/admin/action/powershell/script.webp)
 
-The PowerShell script can be entered manually into the Script window at the top of the Script page.
+You can enter the PowerShell script manually into the Script window at the top of the Script page.
 To open a pre-existing PowerShell script from a file, click **Open** to select the script file.
 
-At the bottom of the page are three tabs that can be used to configure the PowerShell action module
+At the bottom of the page are three tabs to configure the PowerShell action module
 further. The tabs are:
 
 - [Columns](#columns)
@@ -27,8 +27,8 @@ Use the Columns tab to select the available columns.
 
 ![Columns tab](/images/accessanalyzer/12.0/admin/action/powershell/scriptcolumns.webp)
 
-The table in the Columns tab displays the Columns that can be used for the PowerShell script. To use
-a Column, select the checkbox under the **Use** column.
+The table in the Columns tab displays the columns available for the PowerShell script. To use
+a column, select the checkbox under the **Use** column.
 
 ![Right-click menu](/images/accessanalyzer/12.0/admin/action/powershell/scriptrightclickoption.webp)
 
@@ -53,7 +53,7 @@ The options are:
 - Delete – Delete a selected parameter
 
 :::note
-The built-in default parameters cannot be edited or deleted.
+You can't edit or delete the built-in default parameters.
 :::
 
 
@@ -84,5 +84,5 @@ Preview how the input data will look in the Input Data tab.
 
 ![Input Data tab](/images/accessanalyzer/12.0/admin/action/powershell/scriptinputdata.webp)
 
-Information in the Input Data tab varies depending on which source table the PowerShell action
-module is configured to pull data from.
+Information in the Input Data tab varies depending on which source table you configure the
+PowerShell action module to pull data from.

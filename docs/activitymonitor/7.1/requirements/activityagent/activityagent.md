@@ -62,7 +62,7 @@ topic for firewall port requirements.
 
 ## Supported Exchange Online
 
-The Activity Monitor provides the ability to monitor Exchange Online:
+The Activity Monitor lets you monitor Exchange Online:
 
 :::note
 For monitoring Exchange Online, the Activity Agent must be deployed to a Windows server
@@ -78,7 +78,7 @@ topic for target environment requirements.
 
 ## Supported Microsoft Entra ID
 
-The Activity Monitor provides the ability to monitor Microsoft Entra ID:
+The Activity Monitor lets you monitor Microsoft Entra ID:
 
 :::note
 For monitoring Microsoft Entra ID, the Activity Agent must be deployed to a Windows server
@@ -94,7 +94,7 @@ topic for target environment requirements.
 
 ## Supported Network Attached Storage Devices
 
-The Activity Monitor provides the ability to monitor NAS file server devices:
+The Activity Monitor lets you monitor NAS file server devices:
 
 :::note
 For monitoring NAS devices, the Activity Agent must be deployed to a Windows server that
@@ -140,7 +140,7 @@ See the
 [Hitachi Activity Auditing Configuration](/docs/activitymonitor/7.1/requirements/activityagent/nasdeviceconfiguration/hitachi-aac/hitachi-activity.md)
 topic for target environment requirements.
 
-**Nasuni Nasuni Edge Appliances**
+**Nasuni Edge Appliances**
 
 - 8.0+
 
@@ -154,7 +154,7 @@ topic for target environment requirements.
 - Cluster-Mode 8.2+
 
     :::note
-    The Resiliency feature introduced in ONTAP 9.0 is not supported.
+    The Resiliency feature introduced in ONTAP 9.0 isn't supported.
     :::
 
 
@@ -184,7 +184,7 @@ topic for target environment requirements.
 
 ## Supported SharePoint Farms Platforms
 
-The Activity Monitor provides the ability to monitor SharePoint farms:
+The Activity Monitor lets you monitor SharePoint farms:
 
 :::note
 For monitoring a SharePoint farm, the Activity Agent must be deployed to the SharePoint
@@ -204,7 +204,7 @@ topic for target environment requirements.
 
 ## Supported SharePoint Online
 
-The Activity Monitor provides the ability to monitor SharePoint Online:
+The Activity Monitor lets you monitor SharePoint Online:
 
 :::note
 For monitoring SharePoint Online, the Activity Agent must be deployed to a Windows server
@@ -220,11 +220,10 @@ topic for target environment requirements.
 
 ## Supported SQL Server Platforms
 
-The Activity Monitor provides the ability to monitor SQL Server:
+The Activity Monitor lets you monitor SQL Server:
 
 :::note
-For monitoring SQL Server, it is recommended to install the Activity Agent must be
-deployed to a Windows server that acts as a proxy for monitoring the target environment.
+For monitoring SQL Server, it is recommended to deploy the Activity Agent to a Windows server that acts as a proxy for monitoring the target environment.
 :::
 
 
@@ -242,11 +241,11 @@ topic for target environment requirements.
 
 ## Supported Windows File Servers Platforms
 
-The Activity Monitor provides the ability to monitor Windows file servers:
+The Activity Monitor lets you monitor Windows file servers:
 
 :::note
 For monitoring a Windows file server, the Activity Agent must be deployed to the server.
-It cannot be deployed to a proxy server.
+It can't be deployed to a proxy server.
 :::
 
 

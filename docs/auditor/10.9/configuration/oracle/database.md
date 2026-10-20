@@ -20,17 +20,17 @@ The following auditing modes are available for Oracle Database:
 
     1. Create and enable an audit policy to audit specific parameters across your Oracle Database.
 
-        After an audit policy has been enabled or disabled, Netwrix Auditor starts collecting data
+        After you enable or disable an audit policy, Netwrix Auditor starts collecting data
         after a successful logon session.
 
     2. If needed, create and enable specific audit policies to audit successful data access and
        changes, user actions, component actions, etc.
 
 - Mixed Mode—Default auditing in a newly installed database. It enables both traditional and the new
-  **Unified Auditing** facilities. Netwrix recommends using **Unified Auditing** mode if you do not
+  **Unified Auditing** facilities. Netwrix recommends using **Unified Auditing** mode if you don't
   have any trail audit facilities in your infrastructure.
 
-    The product does not log any errors on these events to the Netwrix Auditor System Health log.
+    The product doesn't log any errors on these events to the Netwrix Auditor System Health log.
 
 To configure Unified Auditing for Oracle Database 12c, 18c, 19c, 21c, and 23c:
 
@@ -143,9 +143,9 @@ Oracle Database administration documents:
 - `[CREATE AUDIT POLICY](https://docs.oracle.com/database/121/SQLRF/statements_5001.htm#create-audit-policy)`
 - `[AUDIT POLICY](http://docs.oracle.com/database/121/SQLRF/statements_4008.htm#audit-policy)`
 
-Currently, Netwrix Auditor checks audit settings for Unified Auditing when compatibility is enabled
+Netwrix Auditor checks audit settings for Unified Auditing when compatibility is enabled
 for `ACTIONS`. If any of your current settings conflict with the audit configuration required for
-Netwrix Auditor, these conflicts are listed in the System Health event log.
+Netwrix Auditor, Netwrix Auditor lists these conflicts in the System Health event log.
 
 Also, remember to do the following:
 

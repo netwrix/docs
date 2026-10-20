@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Calculations
 
-Follow the steps to review the calculations for taxonomy:
+To review the calculations for your taxonomy:
 
 1. Select Content > Taxonomies.
 2. Choose the required taxonomy.
@@ -24,7 +24,7 @@ This will show the classification calculation using the latest clues definition.
 There are three sections:
 
 - Clues – Shows how each clue contributed to the total score.
-- Boosts – Shows what boosts were added to the clue scores when related terms were processed (e.g.
+- Boosts – Shows what boosts the system added to the clue scores when processing related terms (e.g.
   Parent and Child terms).
 
 - Related—Shows a flat list of terms that were linked by "Boosts" (including chained links).

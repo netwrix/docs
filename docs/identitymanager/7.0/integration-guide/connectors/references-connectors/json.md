@@ -12,5 +12,5 @@ This connector generates [JSON](https://www.json.org/json-en.html) files for eac
 
 ![Package: Custom/JSON](/images/identitymanager/packages_json_v603.webp)
 
-The documentation is not yet available for this page and will be completed in the near future.
+The documentation isn't yet available for this page and will be completed in the near future.
 

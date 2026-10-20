@@ -10,9 +10,9 @@ sidebar_position: 30
 
 Compliance Score Report:
 
-This filter is set by the way in which you access the Detail Tab. By default, the full range of
-devices and score ranges will be displayed but you can dial in a Compliance Score Range by using the
-drop-down filters. Alternatively, click through on the Device Scores bar from the Policy Tab to
-predefine the score range.
+How you access the Detail tab determines this filter. By default, Change Tracker displays the full
+range of devices and score ranges, but you can narrow the Compliance Score Range using the
+dropdown filters. Alternatively, click the Device Scores bar from the Policy tab to predefine the
+score range.
 
-The score for each device is linked to the full Cloud Compliance report.
+Each device's score links to the full Cloud Compliance report.

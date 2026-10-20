@@ -48,7 +48,7 @@ The contents of `MainControl` and `RecordControl` are visible during the workflo
 ![Form Example - Mass Update](/images/identitymanager/formexample_workflowupdaterecordentitiesform_v603.webp)
 
 :::note
-The content of `RecordUniqueItemControl` is not visible. The user's records that have the same values for all the properties in `RecordUniqueItemControl` will be modified as one.
+The content of `RecordUniqueItemControl` isn't visible. The user's records that have the same values for all the properties in `RecordUniqueItemControl` will be modified as one.
 :::
 
 The contents of `MainSummaryControl` and `RecordSummaryControl` are visible after the workflow's execution:

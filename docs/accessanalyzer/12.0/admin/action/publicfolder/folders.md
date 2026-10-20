@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Public Folder: Folders
 
-The Folders page identifies which public folders are targeted by this action.
+The Folders page identifies which public folders this action targets.
 
 ![Public Folder Action Module Wizard Folders page](/images/accessanalyzer/12.0/admin/action/publicfolder/folders.webp)
 
@@ -17,8 +17,8 @@ The options on this page are:
     - Field – Column names
 
         :::note
-        The displayed fields vary depending on the Source Table selected during the
-        creation of the new action
+        The displayed fields vary depending on the Source Table you selected when you created
+        the new action
         :::
 
 

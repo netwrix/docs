@@ -14,7 +14,7 @@ Once clicked, the option changes to **Resume Host Inventory** and the **In progr
 inventories change to an **In queue** state.
 
 :::note
-Clicking **Refresh Hosts** while inventory is suspended adds to the queue but does not
+Clicking **Refresh Hosts** while inventory is suspended adds to the queue but doesn't
 resume the inventory.
 :::
 

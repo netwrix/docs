@@ -17,8 +17,8 @@ Perform the following procedures:
 ## Configuring security options
 
 Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To force
-basic audit policies to be ignored and prevent conflicts, enable the _Audit: Force audit policy
-subcategory settings_ policy.
+the system to ignore basic audit policies and prevent conflicts, enable the _Audit: Force audit
+policy subcategory settings_ policy.
 
 To do it, perform the following steps:
 
@@ -32,7 +32,7 @@ To do it, perform the following steps:
    and navigate to Policies → Windows Settings → Security Settings → Local Policies → Security
    Options.
 4. Locate the Audit: Force audit policy subcategory settings to override audit policy category
-   settings and make sure that policy setting is set to _"Enabled"_.
+   settings and ensure that policy setting is set to _"Enabled"_.
 
     ![manualconfig_ad_nla_audit_force_winserver2016](/images/1secure/configuration/ad/manualconfig_ad_nla_audit_force_winserver2016.webp)
 

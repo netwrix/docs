@@ -17,10 +17,10 @@ The jobs in the 2.Users Job Group are:
   not have any group membership. This condition may indicate unnecessary user accounts that are
   suitable candidates for review and cleanup.
 - [AAD_DisabledUsers Job](/docs/accessanalyzer/12.0/solutions/entraid/users/aad_disabledusers.md) – Identifies disabled user accounts within Microsoft
-  Entra ID. These accounts should be reviewed and cleaned up in order to increase security and
+  Entra ID. These accounts should be reviewed and cleaned up to increase security and
   reduce complexity.
 - [AAD_StaleUsers Job](/docs/accessanalyzer/12.0/solutions/entraid/users/aad_staleusers.md)– Identifies potentially stale users based on a variety of
-  factors. These accounts should be reviewed and cleaned up in order to increase security and reduce
+  factors. These accounts should be reviewed and cleaned up to increase security and reduce
   complexity.
 - [AAD_UserAttributeCompletion Job](/docs/accessanalyzer/12.0/solutions/entraid/users/aad_userattributecompletion.md)– Identifies which attributes are
   present within User fields in Microsoft Entra ID, and which ones are blank for a majority of

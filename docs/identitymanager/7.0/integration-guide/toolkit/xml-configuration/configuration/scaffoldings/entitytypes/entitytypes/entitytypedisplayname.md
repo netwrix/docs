@@ -34,7 +34,7 @@ The following example assigns the `DisplayName` property as a default display na
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <EntityPropertyExpression Identifier="Directory_Country_InternalDisplayName_L1" Binding="Directory_Country:DisplayName_enUS" EntityType="Directory_Country" Property="InternalDisplayName_L1" />

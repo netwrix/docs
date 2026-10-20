@@ -49,7 +49,7 @@ Generates the permissions to view an entity type's resources.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <EntityTypeDisplayName Id="303" EntityType="SAB_User" />
