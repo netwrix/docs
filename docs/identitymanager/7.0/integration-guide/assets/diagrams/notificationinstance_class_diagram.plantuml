@@ -1,0 +1,21 @@
+@startuml component
+package "NotificationInstance" {
+	class NotificationInstance {
+		LastExecutionDate : DateTime
+		--
+		Notification : Notification
+		OwnerResource : Resource
+	}
+}
+package "Notification" {
+	class Notification {
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+NotificationInstance "0..*" --  "1"Notification
+NotificationInstance "0..*" --  "1"Resource
+hide empty members
+@enduml

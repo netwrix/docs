@@ -1,6 +1,6 @@
 ---
 title: Netwrix Change Tracker Presales Engineer
-sidebar_position: 1420
+sidebar_position: 1260
 tags: [certification, partners, presales, change-tracker]
 keywords: [training, course, certification, partners, presales, change tracker]
 description: "Become a certified Presales Engineer for Netwrix Change Tracker"

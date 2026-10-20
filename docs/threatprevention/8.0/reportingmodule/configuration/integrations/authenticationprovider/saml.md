@@ -12,9 +12,8 @@ information. This means that you can use one set of credentials to log in to man
 websites. It is much easier to manage one login per user than separate logins for email, Customer
 Relationship Management (CRM) software, Active Directory, and more.
 
-Once you have added an authentication provider, as discussed in the
-[Add an Authentication Provider](/docs/threatprevention/8.0/reportingmodule/configuration/integrations/authenticationprovider/page.md#add-an-authentication-provider)topic, the next step is to
-configure the provider for use with a supported authentication provider type, i.e., OpenID, RADIUS,
+After you add an authentication provider, as discussed in the
+[Add an Authentication Provider](/docs/threatprevention/8.0/reportingmodule/configuration/integrations/authenticationprovider/page.md#add-an-authentication-provider) topic, configure the provider for use with a supported authentication provider type: OpenID, RADIUS,
 or SAML.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
@@ -23,7 +22,7 @@ select **Integrations** to open the Integrations interface.
 On the Integrations interface, select an authentication provider under the Authentication Provider
 node in the navigation pane or from the table to configure, view, or modify its details.
 
-![Integrations interface displaying the details for a SAML authneication provider](/images/threatprevention/8.0/reportingmodule/configuration/integrations/authenticationprovider/saml.webp)
+![Integrations interface displaying the details for a SAML authentication provider](/images/threatprevention/8.0/reportingmodule/configuration/integrations/authenticationprovider/saml.webp)
 
 The details page for a SAML authentication provider has two tabs:
 
@@ -39,16 +38,16 @@ respective users.
 
 Configure the following settings for a SAML provider on the Configuration tab:
 
-![Configuration tab for a SAML authneication provider](/images/threatprevention/8.0/reportingmodule/configuration/integrations/authenticationprovider/configurationsaml.webp)
+![Configuration tab for a SAML authentication provider](/images/threatprevention/8.0/reportingmodule/configuration/integrations/authenticationprovider/configurationsaml.webp)
 
 - Default – The default profile applied when a user is assigned multiple authentication profiles.
-  When off, the profile will be determined in alphabetical order of the profile name. Toggle off and
+  When off, the application sorts profiles alphabetically by name. Toggle off and
   on as desired.
 - Login URI – Login URI is a specific web address where users can authenticate themselves to access
   a web application or service
 - Logout Uri – A logout URI is a specific web address where users are directed to terminate their
   authenticated session in a web application or service
-- Login Type – The login type to use to log into the account. Use the drop-down menu to select one
+- Login Type – The login type to use to log into the account. Use the dropdown menu to select one
   of the following: Sam Account Name, User Principal Name, Email Address, or Sid
 - User Claim – A user claim is an assertion made by the identity provider about a user, such as
   their name, role, or email, that the service provider can use for authorization decisions
@@ -61,12 +60,12 @@ Click Save to commit the configuration settings.
 
 ## Users/Groups Tab
 
-The Users/Groups tab displays users and groups that are currently assigned to this authentication
+The Users/Groups tab displays users and groups assigned to this authentication
 profile. To give access to the application to new users, click the New Access button, which opens
 the Add Console Access window. To assign this authentication provider to existing users, go to
 System Settings > User Access Page.
 
-![UserGroups tab for an authneication provider](/images/threatprevention/8.0/reportingmodule/configuration/integrations/authenticationprovider/usersgroupstab.webp)
+![UserGroups tab for an authentication provider](/images/threatprevention/8.0/reportingmodule/configuration/integrations/authenticationprovider/usersgroupstab.webp)
 
 The table displays the following information:
 
@@ -80,7 +79,7 @@ The table displays the following information:
 - Authentication Type – Type of MFA authentication assigned to the user or group
 - Action – This column has the following icons for conducting actions on the user or group:
 
-  - Edit icon – Allows you to edit the columns in the selected row by enabling drop-down menus.
+  - Edit icon – Edit the columns in the selected row by enabling dropdown menus.
     The edit icon changes to a save icon while in edit mode.
   - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
     Removing a user or group removes console access for it.

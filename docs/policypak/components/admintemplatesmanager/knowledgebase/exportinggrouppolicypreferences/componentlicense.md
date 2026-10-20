@@ -18,7 +18,7 @@ Here are the scenarios for which you should request a PPPrefs license:
 - You want to use PolicyPak over MDM. (This is automatically included when we issue an
   MDM license)
 - You want to deliver user-side-only Microsoft's GPPreferences items to computers, that is,
-  [Deploying PolicyPak directives without Group Policy (PolicyPak Exporter Utility)](/docs/policypak/gettingstarted/misc/videos/methods/exporterutility.md)
+  [Deploying PolicyPak directives without Group Policy (PolicyPak Exporter Utility)](/docs/policypak/misc/videos/methods/exporterutility.md)
 - You want to deliver GPPrefs items using SCCM or some other non-GP method.
 
 In those cases, or if you think you have another reason why you need it, open a support ticket at

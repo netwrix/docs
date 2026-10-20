@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Manage My Organization
 
-After you added your organization, you can review or edit your profile on Configuration > My
+After you add your organization, you can review or edit your profile on Configuration > My
 Organization page.
 
 ![myorganization](/images/1secure/admin/organizations/myorganization.webp)
@@ -14,8 +14,8 @@ Organization page.
 - Optionally, specify Edit settings or Request Deletion for your Organization.
 
     :::note
-    If you are a Managed Service Provider or a parent tenant, your organization will be
-    deleted within 14 days. If you are a child tenant, your organization will be deleted within 2
+    If you are a Managed Service Provider (MSP) or a parent tenant, your organization is
+    deleted within 14 days. If you are a child tenant, your organization is deleted within 2
     days.
     :::
 

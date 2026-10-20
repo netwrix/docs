@@ -1,0 +1,66 @@
+@startuml component
+package "Connector" {
+	class Connector {
+		CompleteJob : Byte
+		DisplayName_L1 : String
+		Identifier : String
+		IncrementalJob : Byte
+		IsDeactivated : Boolean
+		IsSynchronizationBlocked : Boolean
+		MaxLinkPercentageDeletedLines : Int32
+		MaxLinkPercentageInsertedLines : Int32
+		MaxPercentageDeletedLines : Int32
+		MaxPercentageInsertedLines : Int32
+		MaxPercentageUpdatedLines : Int32
+		MaximumDeletedLines : Int32
+		MaximumInsertedLines : Int32
+		MaximumLinkDeletedLines : Int32
+		MaximumLinkInsertedLines : Int32
+		MaximumUpdatedLines : Int32
+		--
+		Agent : Agent
+		Connections : Connection[]
+		ConnectorScaffoldings : Scaffolding[]
+		ConnectorSynchronizationHistories : SynchronizationHistory[]
+		EntityAssociationMappings : EntityAssociationMapping[]
+		EntityTypeMappings : EntityTypeMapping[]
+		Tasks : Task[]
+	}
+}
+package "Agent" {
+	class Agent {
+	}
+}
+package "Connection" {
+	class Connection {
+	}
+}
+package "Scaffolding" {
+	class Scaffolding {
+	}
+}
+package "SynchronizationHistory" {
+	class SynchronizationHistory {
+	}
+}
+package "EntityAssociationMapping" {
+	class EntityAssociationMapping {
+	}
+}
+package "EntityTypeMapping" {
+	class EntityTypeMapping {
+	}
+}
+package "Task" {
+	class Task {
+	}
+}
+Connector "0..*" --  "0..1"Agent
+Connector "1" --  "0..*"Connection
+Connector "0..1" --  "0..*"Scaffolding
+Connector "1" --  "0..*"SynchronizationHistory
+Connector "1" --  "0..*"EntityAssociationMapping
+Connector "0..1" --  "0..*"EntityTypeMapping
+Connector "0..1" --  "0..*"Task
+hide empty members
+@enduml

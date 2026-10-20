@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Position Change via Records"
 description: "Position Change via Records"
 sidebar_position: 20
@@ -37,7 +37,7 @@ Any change in an identity's lifecycle, such as a position change, usually entail
 
 It seems natural to model identities by splitting their properties into three entities: one for users' personal data, one for their contract(s) and one for their position(s):
 
-![Records Origin - Three-Entity Model](/images/identitymanager/integration-guide/identity-management/joiners-movers-leavers/position-change/recordsorigin_firstmodel.webp)
+![Records Origin - Three-Entity Model](/images/identitymanager/recordsorigin_firstmodel.webp)
 
 A user can have several positions over time, even simultaneously. A user's contract can change over time too. Even personal data is subject to change. This is why we can have several sets of personal data (and/or several contracts and/or several positions) for a single user, and also why the `User` entity is meant to contain only users' unique identifiers.
 
@@ -76,16 +76,16 @@ To simplify the expressions, the model needs to be "flattened" in order to provi
 > fixed-term to permanent. At day D2, he starts an additional position. The two positions overlap
 > from day D2 to day D3 when the first position ends.
 >
-> ![User Example](/images/identitymanager/integration-guide/identity-management/joiners-movers-leavers/position-change/recordsorigin_userexample.webp)
+> ![User Example](/images/identitymanager/recordsorigin_userexample.webp)
 >
 > Over time, the three entities are as follows:
 >
-> ![Example - Timelines](/images/identitymanager/integration-guide/identity-management/joiners-movers-leavers/position-change/recordsorigin_timelines.webp)
+> ![Example - Timelines](/images/identitymanager/recordsorigin_timelines.webp)
 >
 > From this, Identity Manager is able to combine the start and end dates of all entities at all
 > times to generate the following datasheets, named contexts:
 >
-> ![Example - Contexts](/images/identitymanager/integration-guide/identity-management/joiners-movers-leavers/position-change/recordsorigin_contexts.webp)
+> ![Example - Contexts](/images/identitymanager/recordsorigin_contexts.webp)
 
 Contexts are the result of the combination of all entities (personal data, contract and position) so that all values contained in a given context are valid on a given period of time.
 
@@ -112,7 +112,7 @@ The complexity that comes from the combination of all start and end dates is tac
 
 The final step to a viable model is to find a way to **store optimally** this context model in the database, in order to be able to perform fast requests. Hence, the final model gathers all entities (personal data, contracts and positions), including their respective start and end dates, into a single entity named records, where a context is a record instance:
 
-![Records Origin - Final Model](/images/identitymanager/integration-guide/identity-management/joiners-movers-leavers/position-change/recordsorigin_thirdmodel.webp)
+![Records Origin - Final Model](/images/identitymanager/recordsorigin_thirdmodel.webp)
 
 While there are as many contexts for a user as the number of changes in the user's datasheet, there are only as many records as needed to store each value at least once.
 

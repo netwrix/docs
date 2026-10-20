@@ -1,4 +1,4 @@
-﻿---
+---
 title: "RoleAdministrationAccessControlRules"
 description: "Generates the permissions to access the configuration pages and create, update, delete the elements of the role model."
 sidebar_position: 15
@@ -21,7 +21,7 @@ Generates the rights to access the access configuration pages and create, update
 
 Gives access to a shortcut on the dashboard to access this page.
 
-![Configuration Section](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/rolemodels/roleadministrationaccesscontrolrules/home_configuration_v603.webp)
+![Configuration Section](/images/identitymanager/home_configuration_v603.webp)
 
 
 

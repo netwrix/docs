@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Configure a Parametrized Role"
 description: "Configure a Parametrized Role"
 sidebar_position: 80
@@ -12,17 +12,17 @@ How to reduce the number of roles in the model by configuring **roles with param
 
 The assignment of a role to a user gives them an entitlement, usually a group membership, thanks to a navigation rule. See the [Create Roles in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation) topic for additional information.
 
-![Simple Role](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_simplerole.webp)
+![Simple Role](/images/identitymanager/parameterizedroles_simplerole.webp)
 
 To enable the assignment of all existing entitlements, the role model usually contains numerous roles.
 
 For example, the SAP role can be given with slight differences according to the users' subsidiaries:
 
-**> ![Role Matrix](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_numerousroles.webp)**
+**> ![Role Matrix](/images/identitymanager/parameterizedroles_numerousroles.webp)**
 
 In order to reduce the number of roles, we can configure **roles with parameters** by inserting a criterion in the navigation rules. Thus, instead of having as many roles as entitlements (left on the schema), we can have way fewer roles (right on the schema).
 
-![With/Without Parameters](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_parameters.webp)
+![With/Without Parameters](/images/identitymanager/parameterizedroles_parameters.webp)
 
 In the previous example, with a parameter on the subsidiary, the number of roles would be divided by three.
 
@@ -46,7 +46,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 <Dimension Identifier="TimeSlot" DisplayName_L1="Time Slot" EntityType="Access_TimeSlot" ColumnMapping="10" IsExcludedFromRoleMining="true" />
 ```
 
-![Example - Role](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedrole_examplerole_v603.webp)
+![Example - Role](/images/identitymanager/parameterizedrole_examplerole_v603.webp)
 
 **Step 2 –** Create a single role. See the [Create a Role Manually](../../user-guide/set-up/single-roles-catalog-creation/role-manual-creation) topic for additional information.
 
@@ -54,7 +54,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 Here we have three navigation rules, one for each distinct time slot (dimension A). For example:
 
-![Example - Rule](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedrole_examplerule_v603.webp)
+![Example - Rule](/images/identitymanager/parameterizedrole_examplerule_v603.webp)
 
 :::note
  Make sure that the corresponding dimension is specified in the right `DisplayEntityType` in XML to be displayed in the UI. 
@@ -62,7 +62,7 @@ Here we have three navigation rules, one for each distinct time slot (dimension 
 :::note
  It is important to note that for manually assigned roles, if a new dimension is added to the definition of the role, the assignment's dimension will not be re-calculated, and will therefore not be propagated to calculate automatic assignments. Example Scenario — Role A was created as a composite role with no parameters a long time ago. Role A was later updated to depend on the optional parameter X and a single role rule was created to assign a single role B if a user had Role A and parameter X set to value Y. If a user already manually had the role A, even if its dimension X (for example its department, which could be calculated) was equal to value Y, got its permissions recalculated, that person would not get the role B. Since the modification occurred after the assignment, it is understood as if the role was assigned voluntarily with dimension X unset. However, if a user got role A assigned after the modification, and its dimension X was equal to value Y, then that user would get the role B. 
 :::
-![Example - Role Parameter Required](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedrole_exampleroleparameter_v603.webp)
+![Example - Role Parameter Required](/images/identitymanager/parameterizedrole_exampleroleparameter_v603.webp)
 
 **Step 4 –** Go back to the roles page to edit the single role from step 2, if needing to set the parameter required.
 
@@ -82,13 +82,13 @@ In order to verify the process, request manually the parametrized role for a tes
 
 In our example:
 
-![Example - Step 1](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_parameterexamplestep1_v603.webp)
+![Example - Step 1](/images/identitymanager/parameterizedroles_parameterexamplestep1_v603.webp)
 
-![Example - Step 2](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedroles_parameterexamplestep2_v603.webp)
+![Example - Step 2](/images/identitymanager/parameterizedroles_parameterexamplestep2_v603.webp)
 
 If the dimension is specified in the users' context rule, then Identity Manager will provide suggestions.
 
-![Example - Suggestion](/images/identitymanager/user-guide/optimize/parameterized-role/parameterizedrole_examplerolesuggestion_v603.webp)
+![Example - Suggestion](/images/identitymanager/parameterizedrole_examplerolesuggestion_v603.webp)
 
 For example, concerning the `Title` dimension mentioned above.
 

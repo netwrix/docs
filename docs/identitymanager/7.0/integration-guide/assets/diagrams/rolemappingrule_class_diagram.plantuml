@@ -1,0 +1,21 @@
+@startuml component
+package "RoleMappingRule" {
+	class RoleMappingRule {
+		Order : Int32
+		--
+		RoleMapping : RoleMapping
+		RoleMappingRuleRoleMappingRuleItems : RoleMappingRuleItem[]
+	}
+}
+package "RoleMapping" {
+	class RoleMapping {
+	}
+}
+package "RoleMappingRuleItem" {
+	class RoleMappingRuleItem {
+	}
+}
+RoleMappingRule "0..*" --  "1"RoleMapping
+RoleMappingRule "1" --  "0..*"RoleMappingRuleItem
+hide empty members
+@enduml

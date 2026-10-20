@@ -1,4 +1,4 @@
-﻿# Create Menu Items
+# Create Menu Items
 
 After creating a workflow as for the EntityTypes, is mandatory to create the MenuItems to create the Navigation to this Workflow.
 
@@ -6,7 +6,7 @@ After creating a workflow as for the EntityTypes, is mandatory to create the Men
 
 To add a link to an entity's workflow displayed under the search bar on the visualization page of the entity's resource list you need to create a menu containing the different workflows and put a link to the entity's searchBar as below.
 
-[See available icons](https://uifabricicons.azurewebsites.net/).
+[See available icons](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons#available-icons).
 
 The first MenuItem is the main action displayed on the right.
 
@@ -18,7 +18,7 @@ The other MenuItems are displayed from left to right.
 
 This XML element gives the following result:
 
-![Add workflow link in resource list entity](/images/identitymanager/integration-guide/ui/how-tos/create-menu-items/workflowinentitylist.webp)
+![Add workflow link in resource list entity](/images/identitymanager/workflowinentitylist.webp)
 
 ### Create menu items for a workflow in a resource view
 
@@ -32,6 +32,6 @@ These workflows will manipulate the selected resource in the view.
 
 This XML element gives the following result:
 
-![Workflow in resource view](/images/identitymanager/integration-guide/ui/how-tos/create-menu-items/workflowinresourceview.webp)
+![Workflow in resource view](/images/identitymanager/workflowinresourceview.webp)
 
-![All workflow in resource view*](/images/identitymanager/integration-guide/ui/how-tos/create-menu-items/allworkflowinresourceview.webp)
+![All workflow in resource view*](/images/identitymanager/allworkflowinresourceview.webp)

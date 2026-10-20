@@ -7,14 +7,14 @@ sidebar_position: 10
 # Multi-User Environments
 
 When several users are maintaining the taxonomy structure simultaneously there is a need to prevent
-concurrent access to individual classes so that one user’s work is not overwritten by another user
+concurrent access to individual classes so that one user’s work isn't overwritten by another user
 working in the same area of the taxonomy.
 
-In order to allow multiple users to work simultaneously we provide a locking facility that allows
+To allow multiple users to work simultaneously, a locking facility enables
 each user to reserve one or more classes for private editing. When they have finished a batch of
-work then they can unlock the classes to release.
+work, they can unlock the classes to release.
 
-In order to enable this facility the administrator should “Enable User Locking” under Config → Core
+To enable this facility the administrator should “Enable User Locking” under Config → Core
 → Query Server.
 
 The administrator should also ensure that Anonymous Access is disabled for the administration web

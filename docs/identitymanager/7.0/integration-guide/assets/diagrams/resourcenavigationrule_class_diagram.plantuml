@@ -1,0 +1,59 @@
+@startuml component
+package "ResourceNavigationRule" {
+	class ResourceNavigationRule {
+		BaseRule : Int64
+		IsDenied : Boolean
+		L0 : Boolean
+		TimeOffsetAfterReference : Int32
+		TimeOffsetBeforeReference : Int32
+		TimeOffsetReference : Int32
+		Type : Int32
+		--
+		D0 : Resource
+		EntityType : EntityType
+		Policy : Policy
+		Property : EntityProperty
+		Resource : Resource
+		ResourceFromDimension : Dimension
+		ResourceType : ResourceType
+		SingleRole : SingleRole
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "Dimension" {
+	class Dimension {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+ResourceNavigationRule "0..*" --  "0..1"Resource
+ResourceNavigationRule "0..*" --  "1"EntityType
+ResourceNavigationRule "0..*" --  "1"Policy
+ResourceNavigationRule "0..*" --  "1"EntityProperty
+ResourceNavigationRule "0..*" --  "0..1"Resource
+ResourceNavigationRule "0..*" --  "0..1"Dimension
+ResourceNavigationRule "0..*" --  "1"ResourceType
+ResourceNavigationRule "0..*" --  "0..1"SingleRole
+hide empty members
+@enduml

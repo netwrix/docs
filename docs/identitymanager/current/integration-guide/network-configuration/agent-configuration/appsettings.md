@@ -65,6 +65,7 @@ For example:
  | Name | Type | Description | 
  | --- | --- | --- | 
  | MaxTaskBatchSize default value: 5 | Int64 | Maximum number of tasks that **can** be launched simultaneously, thus avoiding timeout issues. When executing a job, Identity Manager launches simultaneously the tasks of a same Level. See the [Job](../../../integration-guide/toolkit/xml-configuration/jobs/job) topic for additional information. If the number of same-level tasks exceeds MaxTaskBatchSize, then Identity Manager inserts new levels. These effective levels **can** be seen in the job's logs or with the Usercube-Get-JobSteps executable. See the [Usercube-Get-JobSteps](../../../integration-guide/executables/references/get-jobsteps) topic for additional information. | 
+ | ServerUnresponsiveTimeout default value: 600 | Int32 | Maximum age (in seconds) of the task instance's LastProgressUpdate heartbeat before the agent considers the server unreachable and stops retrying. If the server returns no heartbeat update within this period, the agent stops retrying and reports failure. |
 
 ## Scheduler
 

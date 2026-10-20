@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Categorize Resources"
 description: "Categorize Resources"
 sidebar_position: 80
@@ -38,13 +38,13 @@ Thus, a resource type is a name that informs users about the intent of a resourc
 
 **Classification** is a process that simply aims to assign a resource type to specific resources. A specific resource can only be assigned a single resource type. See the [Entitlement Management](../../../introduction-guide/overview/entitlement-management) topic for additional information.
 
-![Classification Schema](/images/identitymanager/user-guide/set-up/categorization/categorization_classifschema.webp)
+![Classification Schema](/images/identitymanager/categorization_classifschema.webp)
 
 Any resource that is unclassified will not be available for review.
 
 **Correlation** is a process that aims to establish an ownership relationship between two resources. In most cases, an identity resource that becomes the owner of an account resource. See the [Entitlement Management](../../../introduction-guide/overview/entitlement-management) topic for additional information.
 
-![Correlation Schema](/images/identitymanager/user-guide/set-up/categorization/categorization_correlschema.webp)
+![Correlation Schema](/images/identitymanager/categorization_correlschema.webp)
 
 While an owner can possess several resources, a resource can have only one owner.
 
@@ -54,11 +54,11 @@ As stated previously, both classification and correlation work through sets of r
 
 > For basic users, we have in Identity Manager:
 >
-> ![Example - Basic Users in Usercube](/images/identitymanager/user-guide/set-up/categorization/categorization_examplebasicuser.webp)
+> ![Example - Basic Users in Usercube](/images/identitymanager/categorization_examplebasicuser.webp)
 >
 > For basic users, we have in the AD:
 >
-> ![Example - Basic Users in AD](/images/identitymanager/user-guide/set-up/categorization/categorization_examplebasicad.webp)
+> ![Example - Basic Users in AD](/images/identitymanager/categorization_examplebasicad.webp)
 >
 > Thus our example could induce the following rules: | Classification Rules | Correlation Rules | |
 > --- | --- | | all accounts from OU=Users | 1. mail (from AD) = user's email
@@ -67,11 +67,11 @@ As stated previously, both classification and correlation work through sets of r
 
 > For administrators, we have in Identity Manager:
 >
-> ![Example - Basic Users in Usercube](/images/identitymanager/user-guide/set-up/categorization/categorization_exampleadminuser.webp)
+> ![Example - Basic Users in Usercube](/images/identitymanager/categorization_exampleadminuser.webp)
 >
 > For administrators, we have in the AD:
 >
-> ![Example - Admin Users in AD](/images/identitymanager/user-guide/set-up/categorization/categorization_exampleadminad.webp)
+> ![Example - Admin Users in AD](/images/identitymanager/categorization_exampleadminad.webp)
 >
 > Thus our example could induce the following rules: | Classification Rules | Correlation Rules | |
 > --- | --- | | all accounts from OU=Administrators | 1. sAMAccountName = "A" + user's employee id
@@ -90,7 +90,7 @@ Hence, integrators should start with correlation rules, and then write classific
 
 In the same way, Identity Manager will apply correlation rules before classification rules.
 
-![Categorization Schema](/images/identitymanager/user-guide/set-up/categorization/categorization_categschema.webp)
+![Categorization Schema](/images/identitymanager/categorization_categschema.webp)
 
 Now that you have created resource types and their correlation/classification rules, you have created the first elements for your role model. See the [Entitlement Management](../../../introduction-guide/overview/entitlement-management) topic for additional information. The role model contains all the roles and rules which drive the entitlement assignment logic inside Identity Manager.
 

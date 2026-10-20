@@ -1,4 +1,4 @@
-﻿---
+---
 title: "PerformManualProvisioningAccessControlRules"
 description: "Generates the permissions to access the manual provisioning pages for a given entity type and profile."
 sidebar_position: 8
@@ -8,7 +8,7 @@ Generates the rights to access the access manual provisioning pages for a given 
 
 Gives access to a shortcut on the dashboard to access this page.
 
-![Manual Provisioning](/images/identitymanager/user-guide/administrate/provisioning/manual-provisioning/home_manualprovisioning_v523.webp)
+![Manual Provisioning](/images/identitymanager/home_manualprovisioning_v523.webp)
 
 :::warning
 The connector connected to the entity type must have the manual type as the provisioning type, otherwise the information of the entity type cannot be displayed on this screen.

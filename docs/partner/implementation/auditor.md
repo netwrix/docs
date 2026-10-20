@@ -1,6 +1,6 @@
 ---
 title: Netwrix Auditor Professional Services Engineer
-sidebar_position: 1710
+sidebar_position: 1440
 tags: [certification, partners, professional-services, auditor]
 keywords: [training, course, certification, partners, professional services, auditor]
 description: "Become a certified Professional Services Engineer for Netwrix Auditor"

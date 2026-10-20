@@ -10,7 +10,7 @@ Various different certificates are used to guarantee the security of Netwrix Pas
 certificates are essential for the smooth operation of Netwrix Password Secure. It is thus important
 that they are carefully backed up.
 
-## What certificates are used?
+## Certificates in use
 
 The individual certificates are described in the following sections:
 
@@ -20,7 +20,7 @@ The individual certificates are described in the following sections:
 - [Discovery service certificates](/docs/passwordsecure/9.3/configuration/servermanager/certificates/discovery_service_certificates.md)s
 - [Password Reset certificates](/docs/passwordsecure/9.3/configuration/servermanager/certificates/password_reset_certificates.md)
 
-## Calling up the certificate manager
+## Opening the certificate manager
 
 There are two ways to open the certificate manager. The certificates for each specific database can
 be managed via the ribbon:
@@ -32,8 +32,10 @@ In the **Main menu**, it is also possible to start the certificate manager for a
 
 ![base configuration](/images/passwordsecure/9.2/configuration/server_manager/certificates/installation_with_parameters_197-en.webp)
 
-NOTE: Operation of the certificate manager is always the same. The only difference is whether the
+:::note
+Operation of the certificate manager is always the same. The only difference is whether the
 certificates are displayed for each database or for all databases.
+:::
 
 #### Checking existing certificates
 
@@ -52,7 +54,7 @@ information.
 The overview will initially only display those certificates that are being used and are thus
 required. Clicking on **All** will also display the no longer required certificates. For example, it
 is possible that outdated certificates exist on the machine due to a test installation. These
-certificates can be easily deleted via the corresponding button in the ribbon.
+certificates can be deleted via the corresponding button in the ribbon.
 
 ![certificates-ac-4-en](/images/passwordsecure/9.2/configuration/server_manager/certificates/certificates-ac-4-en.webp)
 
@@ -67,8 +69,10 @@ The relevant certificates will be backed up by clicking on export. A password fi
 issued here. If a storage location has not yet been entered via the settings, you are firstly asked
 to enter it.
 
-NOTE: SSL connection certificates are not included in this process and are also not backed up. These
+:::note
+SSL connection certificates aren't included in this process and are also not backed up. These
 certificates can be recreated if necessary.
+:::
 
 #### Settings
 
@@ -80,5 +84,5 @@ addition, the storage location is defined in the settings.
 
 #### Backing up certificates
 
-If you want to automatically back up the certificates on a cyclical basis, this can be done via the
+To automatically back up the certificates on a cyclical basis, use the
 backup system. Further information can be found in the section Backup management.

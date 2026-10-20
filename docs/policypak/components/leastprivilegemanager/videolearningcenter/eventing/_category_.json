@@ -1,6 +1,9 @@
 {
   "label": "Eventing",
-  "position": 80,
+  "position": 90,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

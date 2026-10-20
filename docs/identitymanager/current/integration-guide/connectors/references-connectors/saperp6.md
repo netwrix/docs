@@ -1,7 +1,7 @@
-﻿---
+---
 title: "SAP ERP 6.0 and SAP S4/HANA"
 description: "SAP ERP 6.0 and SAP S4/HANA"
-sidebar_position: 230
+sidebar_position: 240
 ---
 
 # SAP ERP 6.0 and SAP S4/HANA
@@ -10,7 +10,7 @@ This connector exports and fulfills users and roles from/to an [SAP ERP 6.0](htt
 
 This page is about ERP/SAP ERP 6.0.
 
-![Package: ERP/SAP ERP 6.0](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/packages_saperp6_v603.webp)
+![Package: ERP/SAP ERP 6.0](/images/identitymanager/packages_saperp6_v603.webp)
 
 ## Overview
 
@@ -92,17 +92,29 @@ Go
 ```
 **Set up the prerequisites for reading**
 
-To set up the prerequisites for reading follow the steps below.
+Two files must be copied into the Identity Manager Runtime folder: the managed ADO.NET provider (renamed to `Sap.Data.Hana.Net.dll`) and its native companion `libadonetHDB.dll`. Use one of the two methods below.
 
-**Step 1 –** Copy the DLL `Sap.Data.Hana.Core.v2.1.dll` into the Runtime of Identity Manager.
+**Method A — NuGet (recommended)**
 
-![connectorreadprerequisites1](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/connectorreadprerequisites1.webp)
+1. Go to [Sap.Data.Hana.Net.v10.0 on NuGet](https://www.nuget.org/packages/Sap.Data.Hana.Net.v10.0) and click **Download package**.
+2. Rename the downloaded `.nupkg` file to `.zip` and extract it.
+3. Copy the files into the Identity Manager Runtime folder:
 
-**Step 2 –** Unzip the "hdbclient.zip" archive to C: drive and add the path to the Path environment variables.
+| Source (inside the extracted package) | Target | Action |
+| --- | --- | --- |
+| `lib\net10.0\Sap.Data.Hana.Net.v10.0.dll` | `<Runtime>\Sap.Data.Hana.Net.dll` | Copy **and rename** |
+| `runtimes\win-x64\native\libadonetHDB.dll` | `<Runtime>\libadonetHDB.dll` | Copy as-is |
 
-![connectorreadprerequisites2](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/connectorreadprerequisites2.webp)
+**Method B — SAP tools**
 
-**Step 3 –** Create environment variables: `HDBADOTNET=C:\hdbclient\ado.net` and `HDBADOTNETCORE=C:\hdbclient\dotnetcore`.
+1. Download `hanaclient-latest-windows-x64.zip` from [https://tools.hana.ondemand.com/#hanatools](https://tools.hana.ondemand.com/#hanatools).
+2. Extract the outer zip, then extract `client/DOTNETCORE.TGZ` inside it.
+3. Copy the files into the Identity Manager Runtime folder:
+
+| Source (inside DOTNETCORE.TGZ) | Target | Action |
+| --- | --- | --- |
+| `dotnetcore/v10.0/Sap.Data.Hana.Net.v10.0.dll` | `<Runtime>\Sap.Data.Hana.Net.dll` | Copy **and rename** |
+| `dotnetcore/libadonetHDB.dll` | `<Runtime>\libadonetHDB.dll` | Copy as-is |
 
 **Set up the prerequisites for writing**
 
@@ -115,11 +127,11 @@ To set up the prerequisites for reading follow the steps below.
 
 **Step 3 –** Copy the DLLs icudt50.dll, `icuin50.dll` and icuuc50.dll into the Runtime of Identity Manager.
 
-![connectorwriteprerequisites](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/connectorwriteprerequisites.webp)
+![connectorwriteprerequisites](/images/identitymanager/connectorwriteprerequisites.webp)
 
 **Step 4 –** Disable DLLs search by adding the environment variable `NLSUI_7BIT_FALLBACK=YES`.
 
-![connectorwriteprerequisites2](/images/identitymanager/integration-guide/connectors/references-connectors/saperp6/connectorwriteprerequisites2.webp)
+![connectorwriteprerequisites2](/images/identitymanager/connectorwriteprerequisites2.webp)
 
 **Step 5 –** Add new environment variable `USERCUBE_DOTNET32` containing the path to dotnetx86 (e.g.: `C: \donetx86\dotnet.exe`).
 
@@ -179,6 +191,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | Name | Type | Description |
  | --- | --- | --- |
  | IsHana default value: false | Boolean | True to connect to an S/4 HANA instance instead of an ERP 6.0. |
+ | HanaEncrypt default value: false | Boolean | Enables TLS encryption for HANA connections. |
  | AseLogin required | String | Login to connect to SAP ASE. |
  | AsePassword required | String | Password to connect to SAP ASE. |
  | Client required | String | Client id of SAP. |
@@ -236,6 +249,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | Name | Type | Description |
  | --- | --- | --- |
  | IsHana default value: false | Boolean | True to connect to an S/4 HANA instance instead of an ERP 6.0. |
+ | SystemNumber | String | SAP system number. Required when connecting to a HANA instance. |
  | Server required | String | URL of the SAP ERP server. |
  | BapiLogin required | String | Login to connect to the specified server. |
  | BapiPassword required | String | Password to connect to the specified server. |
@@ -265,6 +279,7 @@ Data protection can be ensured through:
  | BapiLogin | Connections--`<identifier>`--BapiLogin |
  | BapiPassword | Connections--`<identifier>`--BapiPassword |
  | SystemNumber | Connections--`<identifier>`--SystemNumber |
+ | HanaEncrypt | Connections--`<identifier>`--HanaEncrypt |
 
 - A <b>cyberark</b> Vault able to store Active Directory's Login, Password, and Server.
 

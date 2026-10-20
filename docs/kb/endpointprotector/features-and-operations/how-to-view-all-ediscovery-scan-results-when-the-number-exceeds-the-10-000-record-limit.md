@@ -14,10 +14,11 @@ keywords:
   - EPP
   - scan results
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: 'How to View All eDiscovery Scan Results When the Number Exceeds the 10,000 Record Limit'
 tags:
   - features-and-operations
+  - kb
 title: >-
   How to View All eDiscovery Scan Results When the Number Exceeds the 10,000
   Record Limit

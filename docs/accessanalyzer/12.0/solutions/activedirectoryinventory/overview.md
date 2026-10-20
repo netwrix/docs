@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # .Active Directory Inventory Solution
 
-Active Directory (AD) acts as the central nervous system of any Microsoft environment and plays a
+Active Directory (AD) is the core identity infrastructure of any Microsoft environment and plays a
 vital role in granting access to resources such as Exchange, File Systems, SharePoint, and SQL
 Server. The .Active Directory Inventory Solution is designed to provide essential user, group
 membership, and computer details from the targeted domains to many Access Analyzer built-in
@@ -50,14 +50,13 @@ Inventory Job Group.
 
 The .Active Directory Inventory Solution is a core component of all Access Analyzer installations.
 Typically this solution is instantiated during installation, but it can be installed from the
-Instant Job Wizard. Once it has been installed into the Jobs tree, navigate to the solution:
-**Jobs** > **.Active Directory Inventory**. This group has been named in such a way to keep it at
-the top of the Jobs tree.
+Instant Job Wizard. After it has been installed into the Jobs tree, navigate to the solution:
+**Jobs** > **.Active Directory Inventory**. This group's name keeps it at the top of the Jobs tree.
 
 ## Jobs
 
-This Job Group is comprised of three jobs that collect, analyze, and report on data. The data
-collection is conducted by the ADInventory Data Collector. See the
+This Job Group is comprised of three jobs that collect, analyze, and report on data. The
+ADInventory Data Collector performs the data collection. See the
 [Standard Reference Tables & Views for the ADInventory Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/adinventory/standardtables.md)
 topic for database table information.
 

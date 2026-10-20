@@ -7,7 +7,7 @@ sidebar_position: 30
 # Zendesk
 
 Platform Governance For NetSuite's Change Management capabilities are integrated with Zendesk, one
-of the most popular customer service and issue ticketing systems. Customers are able to look for and
+of the most popular customer service and issue ticketing systems. Customers can look for and
 include NetSuite Customizations, assess impacts for requested changes, and push Zendesk change
 tickets into a Change Request. This enables easy management of changes, seamless tracking of
 compliant changes and automating the reconciliation of change logs during an audit.
@@ -32,14 +32,13 @@ To set up the Zendesk integration:
 
 1. Open **Customization** > **SuiteBundler** > **Search & Install Bundles**
 2. Search for bundle **402177**
-3. Click on **Netwrix Platform Governance Zendesk** in the search results.
+3. Click **Netwrix Platform Governance Zendesk** in the search results.
 4. Click **Install** when the Bundle Details opens.
 5. Click **Install Bundle** on the **Preview Bundle** Install page.
 
 ## Install the App
 
-Here are the steps to install the Zendesk app. You must have **Admin** privileges to install the
-app.
+To install the Zendesk app, you must have **Admin** privileges.
 
 1. Open your Zendesk dashboard.
 2. Click the **Admin** icon in the left panel. It should open a new window to Admin Center.
@@ -111,9 +110,9 @@ After you install the Zendesk app, set up the approvals.
 2. Enter the group and approval information:
 
     - **Allow these Zendesk groups to request approval** one or more groups who can request approval
-      for a change request. Select a group from the drop down list. Click **+**. Repeat as needed.
+      for a change request. Select a group from the dropdown list. Click **+**. Repeat as needed.
     - **Allow these Zendesk groups to approve** one or more groups who can approve a change request.
-      Select a group from the drop down list. Click **+**. Repeat as needed.
+      Select a group from the dropdown list. Click **+**. Repeat as needed.
     - **Approval process** select the approval process to use. **Platform Governance Approval in Zendesk**,
       **Platform Governance Approval in NetSuite**, **No Approval Needed**, or **Not set**.
 

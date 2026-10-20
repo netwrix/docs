@@ -11,4 +11,4 @@ permissions.
 
 ![File System Action Module Wizard Change Permissions Inheritance Parameters page](/images/accessanalyzer/12.0/admin/action/filesystem/parameters/changepermissionsinheritance.webp)
 
-Select the desired options for adding or removing inheritance.
+Select the options you want for adding or removing inheritance.

@@ -37,9 +37,11 @@ also possible to enter the IP address and/or password after starting the applica
 
 It is also possible to use SSH-certificates for authentication. For this purpose, the certificate is
 stored as a document in .ppk format. The document is then linked to the data record via the footer.
-The data record does not have to contain a password, but it must be linked to an SSH application.
+The data record doesn't have to contain a password, but it must be linked to an SSH application.
 
-NOTE: The file extension may first have to be enabled via the settings.
+:::note
+The file extension may first have to be enabled via the settings.
+:::
 
 ## Keyboard shortcuts
 

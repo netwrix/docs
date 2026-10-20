@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # SQL_DatabasePrinciples Job
 
-The SQL_DatabasePrinciplesJob provides detailed information on database principals across all
+The SQL_DatabasePrinciples Job provides detailed information on database principals across all
 targeted SQL or Azure SQL server instances.
 
 ## Analysis Tasks for the SQL_DatabasePrinciples Job
@@ -15,7 +15,7 @@ Navigate to the **Databases** > SQL > 3.Users and Roles > SQL_DatabasePrinciple
 and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task(s). The analysis task(s) are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -29,7 +29,7 @@ The default analysis tasks are:
 - Summarize by instance – Creates the SA_SQLServer_DatabasePrincipals_InstanceSummary table
   accessible under the job’s Results node
 
-In addition to the tables and views created by the analysis tasks, the SQL_DataPrinciples Job
+In addition to the tables and views created by the analysis tasks, the SQL_DatabasePrinciples Job
 produces the following pre-configured report.
 
 | Report              | Description                                                             | Default Tags | Report Elements                                                                                                                                                                                                                                  |

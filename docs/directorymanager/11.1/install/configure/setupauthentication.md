@@ -14,17 +14,17 @@ Server (that hosts the Directory Manager database). There are two possible modes
 
 ## SQL Server Authentication
 
-It is recommended that you create a new SQL Server account for Directory Manager. You must add the
+Create a new SQL Server account for Directory Manager. You must add the
 account to the _db_creator_ server role so that it can create and maintain the Directory Manager
 database.
 
 The account must also be part of the _db_owner_ database role, so that it can execute DDL (Data
 Definition Language) and DML (Data Manipulation Language) commands. However, unlike Windows
-Authentication mode setup, you do not need to add the account to the _db_owner_ role because SQL
+Authentication mode setup, you don't need to add the account to the _db_owner_ role because SQL
 Server _db_creator_ is mapped to the _db_owner_ database role by default.
 
 :::note
-For SQL Server 2016, 2017, 2019 and 2022 families, every SQL Server account is assigned
+For SQL Server 2016, 2017, 2019, and 2022 families, every SQL Server account is assigned
 the _public_ role. Therefore, the Directory Manager SQL account belongs to two server roles:
 _db_creator_ and _public_.
 :::
@@ -42,7 +42,7 @@ Step 4 – Right-click the database server node and click **Properties**.
 Step 5 – On the Properties dialog box, select the **Permissions** page.
 
 Step 6 – Scroll down on the Explicit tab to the Connect SQL permission and select the **Grant**
-check box for it.
+checkbox for it.
 
 Step 7 – Click the **Effective** tab. You should have the following permissions listed here:
 

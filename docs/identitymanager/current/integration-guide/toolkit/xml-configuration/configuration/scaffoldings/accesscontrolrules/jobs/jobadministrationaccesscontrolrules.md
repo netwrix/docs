@@ -1,4 +1,4 @@
-﻿---
+---
 title: "JobAdministrationAccessControlRules"
 description: "Scaffolding to access the job administration page."
 sidebar_position: 2
@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Scaffolding to access the job administration page. This page is accessible from the administration part in dashboard of the user interface.
 
-![Job Execution](/images/identitymanager/user-guide/set-up/synchronization/home_jobexecution_v602.webp)
+![Job Execution](/images/identitymanager/home_jobexecution_v602.webp)
 
 
 

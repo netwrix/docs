@@ -34,7 +34,7 @@ View the analysis task by navigating to the **Exchange** > **5. Public Folders**
 **Collection** > **PF_ContentScans** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

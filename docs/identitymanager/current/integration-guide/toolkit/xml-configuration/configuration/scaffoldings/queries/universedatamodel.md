@@ -1,4 +1,4 @@
-﻿---
+---
 title: "UniverseDataModel"
 description: "Creates, within a universe, entity instances and association instances based on a predefined template."
 sidebar_position: 2
@@ -49,7 +49,7 @@ The following example generates a universe `U8_Users` based on the entity type `
 ```
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (ExcludedProperty)](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/queries/universedatamodel/universe_excluded.webp)
+![Universe (ExcludedProperty)](/images/identitymanager/universe_excluded.webp)
 
 ### RootInstance
 
@@ -67,10 +67,10 @@ The following example generates a universe `U2_UserRecords` based on the entity 
 </UniverseDataModel>
 ```
 
-![Universe (RootInstance)](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/queries/universedatamodel/universe_rootinstance.webp)
+![Universe (RootInstance)](/images/identitymanager/Universe_rootInstance.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (RootInstance)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_rootInstance.webp)
+![Universe (RootInstance)](/images/identitymanager/Universe_rootInstance.webp)
 
 #### RootInstance for several scaffoldings together
 
@@ -85,10 +85,10 @@ A universe can be made of several scaffoldings which need to be grouped together
 &lt;UniverseDataModel Universe="U3_UserRecords" EntityType="Directory_UserRecord" /&gt;
 ```
 
-![Universe Schema (Several Scaffoldings with Data Duplication)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_severalDuplicationSchema.webp)
+![Universe Schema (Several Scaffoldings with Data Duplication)](/images/identitymanager/Universe_severalDuplicationSchema.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (Several Scaffoldings with Data Duplication)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_severalDuplication.webp)
+![Universe (Several Scaffoldings with Data Duplication)](/images/identitymanager/Universe_severalDuplication.webp)
 We see that `Directory_User_Records` and `Directory_UserRecords` represent the same entity instances.
 
 **The following example** generates a better version of the universe `U3_UserRecords` based on the entity types `Directory_User` and `Directory_UserRecord`, renaming `Directory_UserRecord` as `Directory_User_Records` to follow the naming rule, thus building the universe model with `Directory_User` as the core entity instance:
@@ -101,10 +101,10 @@ We see that `Directory_User_Records` and `Directory_UserRecords` represent the s
 &lt;/UniverseDataModel&gt;
 ```
 
-![Universe (Several Scaffoldings without Data Duplication)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_severalNoDuplicationSchema.webp)
+![Universe (Several Scaffoldings without Data Duplication)](/images/identitymanager/Universe_severalNoDuplicationSchema.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (Several Scaffoldings without Data Duplication)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_severalNoDuplication.webp)
+![Universe (Several Scaffoldings without Data Duplication)](/images/identitymanager/Universe_severalNoDuplication.webp)
 Thus we removed the duplicated data, and we understand easily the navigations of the model.
 
 ### SourceEntityType
@@ -152,10 +152,10 @@ It generates:
 </Universe>
 ```
 
-![Universe (No Template)](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/queries/universedatamodel/universe_notemplateschema.webp)
+![Universe (No Template)](/images/identitymanager/universe_notemplateschema.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (No Template)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_noTemplate.webp)
+![Universe (No Template)](/images/identitymanager/Universe_noTemplate.webp)
 
 :::info
 We see here identifiers instead of display names due to `ColumnNamesMode` set to identifiers.
@@ -194,10 +194,10 @@ It generates:
 &lt;/Universe&gt;
 ```
 
-![Universe (Template Schema: Owned Resource Types)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_OwnedResourceTypesSchema.webp)
+![Universe (Template Schema: Owned Resource Types)](/images/identitymanager/Universe_OwnedResourceTypesSchema.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (Template: Owned Resource Types)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_OwnedResourceTypes.webp)
+![Universe (Template: Owned Resource Types)](/images/identitymanager/Universe_OwnedResourceTypes.webp)
 
 #### ResourceResourceTypes
 
@@ -212,10 +212,10 @@ The following example generates a universe `U5_AD` based on the entity type `AD_
 
 The configuration generated by this snippet is similar to the one for `OwnedResourceTypes`.
 
-![Universe (Template Schema: Resource Resource Types)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_ResourceResourceTypesSchema.webp)
+![Universe (Template Schema: Resource Resource Types)](/images/identitymanager/Universe_ResourceResourceTypesSchema.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (Template: Resource Resource Types)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_ResourceResourceTypes.webp)
+![Universe (Template: Resource Resource Types)](/images/identitymanager/Universe_ResourceResourceTypes.webp)
 
 #### OwnedSingleRoles
 
@@ -247,10 +247,10 @@ It generates:
 &lt;/Universe&gt;
 ```
 
-![Universe (Template Schema: Owned Single Roles)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_OwnedSingleRolesSchema.webp)
+![Universe (Template Schema: Owned Single Roles)](/images/identitymanager/Universe_OwnedSingleRolesSchema.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (Template: Owned Single Roles)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_OwnedSingleRoles.webp)
+![Universe (Template: Owned Single Roles)](/images/identitymanager/Universe_OwnedSingleRoles.webp)
 
 #### OwnedCompositeRoles
 
@@ -265,10 +265,10 @@ The following example generates a universe `U7_User` based on the entity type `D
 
 The configuration generated by this snippet is similar to the one for `OwnedSingleRoles`.
 
-![Universe (Template Schema: Owned Composite Roles)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_OwnedCompositeRolesSchema.webp)
+![Universe (Template Schema: Owned Composite Roles)](/images/identitymanager/Universe_OwnedCompositeRolesSchema.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (Template: Owned Composite Roles)](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/Universe_OwnedCompositeRoles.webp)
+![Universe (Template: Owned Composite Roles)](/images/identitymanager/Universe_OwnedCompositeRoles.webp)
 
 
 ## Mixed Example
@@ -303,4 +303,4 @@ The following example generates a universe `U9_AccessControl` aiming to create r
 ```
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (Mixed Example)](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/queries/universedatamodel/universe_mixedexample.webp)
+![Universe (Mixed Example)](/images/identitymanager/universe_mixedexample.webp)

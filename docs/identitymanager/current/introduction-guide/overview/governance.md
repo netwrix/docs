@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Governance"
 description: "Governance"
 sidebar_position: 30
@@ -14,7 +14,7 @@ By reading entitlement data from the managed systems, Identity Manager builds an
 
 Rules and roles define a policy. By definition, assignments not supported by a rule do not comply with the policy. These assignments are identified as **non-conforming** in order to be acted upon by knowledgeable users who can decide whether the assignment is warranted, such as security officers.
 
-![**non-conforming** Assignments](/images/identitymanager/integration-guide/role-assignment/assignments-of-entitlements/governance_nonconforming.webp)
+![**non-conforming** Assignments](/images/identitymanager/governance_nonconforming.webp)
 
 A **non-conforming** assignment must be reviewed in Identity Manager by a knowledgeable user, and is therefore:
 

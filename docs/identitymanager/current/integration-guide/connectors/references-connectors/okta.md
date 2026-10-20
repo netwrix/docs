@@ -1,14 +1,14 @@
-﻿---
+---
 title: "Okta"
 description: "Okta"
-sidebar_position: 170
+sidebar_position: 180
 ---
 
 # Okta
 
 This connector exports and fulfills entries from/to Okta application.
 
-![okta](/images/identitymanager/integration-guide/connectors/references-connectors/okta/okta.webp)
+![okta](/images/identitymanager/okta.webp)
 
 ## Overview
 

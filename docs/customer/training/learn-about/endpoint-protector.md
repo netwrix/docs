@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Endpoint Protector Learning Path
-sidebar_position: 400
+sidebar_position: 390
 tags: [training, endpoint-protector]
 keywords: [training, course, endpoint protector]
 description: "Learn about Netwrix Endpoint Protector through introductory courses"

@@ -77,4 +77,4 @@ Follow these steps to complete the AIC upgrade:
 
 4. Verify that the AIC configuration settings match those saved during the preparation phase.
 
-5. Verify that the built-in admin account for the AIC is either disabled or that the password has been changed.
+5. Verify that the built-in AIC admin account is disabled or that you have set a new password for it.

@@ -8,6 +8,7 @@ keywords:
 sidebar_label: Configure Content Aware Policy Priorities
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Configure Content Aware Policy Priorities"
 knowledge_article_id: kA0Qk0000002B4DKAU
 products:
@@ -22,7 +23,7 @@ This article explains how to configure priorities for **content aware policies**
 
 ## Instructions
 
-1. In the Endpoint Protector console, navigate to **Content Aware Protection** > **Content Aware Policies**.
+1. In the Endpoint Protector console, navigate to **Content Aware Protection** > **Content Aware Policies**. You can switch between **Grid** and **Widget** view using the controls in the top-right corner. See [Policy Configuration and Application](/docs/endpointprotector/admin/cap_module/cappolicies) for a screenshot of this page.
 
 2. To change the priority of a policy, use the left and right arrows to move the policy in the list:
    - The leftmost policy has the highest priority (Priority 1).
@@ -32,6 +33,6 @@ This article explains how to configure priorities for **content aware policies**
 
 3. You can also edit policy priority by double-clicking on a policy listed in the Priority column.
 
-> **NOTE:** One or more Content Aware Policies can be enforced on the same computer, user, group, or department. To avoid conflicts between applied rules, use prioritization to determine which policy is enforced when there is a conflict. In the current Endpoint Protector implementation, there is no guarantee in which order **Block** CAP policies will trigger. Policies are evaluated simultaneously (not sequentially) against a file. When a conflict is encountered (for example, one policy only reports a PII and another blocks the PII), Endpoint Protector will apply the policy with the higher priority.
-
-You can find more information in the [Policy Configuration and Application](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/cap_module/cappolicies) documentation.
+:::note
+One or more Content Aware Policies can be enforced on the same computer, user, group, or department. When multiple policies apply to the same transfer event, Endpoint Protector evaluates them using a two-level hierarchy: entity level first — Computer/User has the highest precedence, then Group, then Department — and then the **Priority** number within that entity level. The policy action (**Block & Report**, **Report Only**, **Block Only**, or **Block and Remediate**) doesn't affect the processing order. See [Policy Processing Order](/docs/endpointprotector/admin/cap_module/cappolicies#policy-processing-order) for the full breakdown, including how to configure entity-level evaluation behavior in **System Configuration** > **System Settings**.
+:::

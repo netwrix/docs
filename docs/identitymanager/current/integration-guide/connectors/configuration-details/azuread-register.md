@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Register for Microsoft Entra ID"
 description: "Register for Microsoft Entra ID"
 sidebar_position: 60
@@ -18,7 +18,7 @@ Create a new registration for Identity Manager with Microsoft Identity Platform
 4. Go to **App Registrations** in the left panel.
 5. Click the **+ New Registration** button in the top menu.
 
-    ![Azure AD Export - Add New Registration](/images/identitymanager/integration-guide/connectors/how-tos/azuread-register/howtos_azuread_exportregistration.webp)
+    ![Azure AD Export - Add New Registration](/images/identitymanager/howtos_azuread_exportregistration.webp)
 
 A new registration form is displayed:
 
@@ -55,7 +55,7 @@ end-user authentication, but doesn't apply to Identity Manager.
 
 The **Essentials** top panel displays the **Application (client) ID** required by the Identity Manager Agent. The same page also displays the **Directory (tenant) ID** that will also be needed by the Identity Manager Agent.
 
-    ![Azure AD Export - New ApplicationId](/images/identitymanager/integration-guide/connectors/how-tos/azuread-register/howtos_azuread_exportapplicationid.webp)
+    ![Azure AD Export - New ApplicationId](/images/identitymanager/howtos_azuread_exportapplicationid.webp)
 
 ### Get the application's secret key
 
@@ -71,7 +71,7 @@ A **Client Secret** key needs to be generated. Get it by proceeding as follows:
 
 The Client Secret is now listed in the bottom panel **Client Secrets**. The Client Secret value is needed by the Identity Manager Agent settings file.
 
-    ![Azure AD Export - New Client Secret](/images/identitymanager/integration-guide/connectors/how-tos/azuread-register/howtos_azuread_exportsecret.webp)
+    ![Azure AD Export - New Client Secret](/images/identitymanager/howtos_azuread_exportsecret.webp)
 
 The **Client Secret** value is only displayed in the UI in plain text at first. After a while, it is only displayed as `**************`. It should hence be stored in the appsettings.agent.json file or an environment variable as soon as it is created, to be used subsequently by Identity Manager. If the key is lost, a new key can be created to replace the lost one.
 
@@ -84,7 +84,7 @@ Grant Identity Manager directory permissions by proceeding as follows:
 3. Go to **API Permissions** in the left panel.
 4. Click on the **+ Add a permission** button.
 
-    ![Azure AD Export - Add Permission](/images/identitymanager/integration-guide/connectors/how-tos/azuread-register/howtos_azuread_exportpermissions.webp)
+    ![Azure AD Export - Add Permission](/images/identitymanager/howtos_azuread_exportpermissions.webp)
 
 5. Go to **Microsoft graph** > **Application permissions**.
 6. Search and open the **Directory** category.
@@ -92,7 +92,7 @@ Grant Identity Manager directory permissions by proceeding as follows:
 
 If you plan on configuring fulfillment too, you must only check the **Directory.ReadWrite.All** permission.
 
-    ![Azure AD Export - Directory Permission](/images/identitymanager/integration-guide/connectors/how-tos/azuread-register/howtos_azuread_exportdirectorypermission.webp)
+    ![Azure AD Export - Directory Permission](/images/identitymanager/howtos_azuread_exportdirectorypermission.webp)
 
 8. Confirm with the **Add permissions** button at the bottom of the page.
 
@@ -100,6 +100,6 @@ You now see the Directory.Read.All or Directory.ReadWrite.All permission in the 
 
 9. Grant admin consent by clicking on **√ Grant admin consent for** name of the organization.
 
-    ![Azure AD Export - Grant Admin Consent](/images/identitymanager/integration-guide/connectors/how-tos/azuread-register/howtos_azuread_exportadminconsent.webp)
+    ![Azure AD Export - Grant Admin Consent](/images/identitymanager/howtos_azuread_exportadminconsent.webp)
 
 You should now see the status displayed as **√ Granted for** name of the organization.

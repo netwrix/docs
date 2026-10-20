@@ -20,7 +20,7 @@ Configuration changes are applied when you click **Apply** or **OK**. Clicking *
 the Configuration Console.
 
 :::note
-Password Reset includes a 30-day evaluation license for up to 50 users. Please contact
+Password Reset includes a 30-day evaluation license for up to 50 users. Contact
 Netwrix support if you would like to evaluate Netwrix Password Reset with more than 50 users.
 
 :::

@@ -30,21 +30,21 @@ The right of the page shows details of the selected service and has the followin
 - Name – Displays the short name of the service
 - Minimum Log Level:
 
-    - Verbose – Extremely detailed logging
+- Verbose – Extremely detailed logging
 
-        :::note
-        There are not many Verbose log messages in Privilege Secure so the difference
-        between Verbose and Debug is minimal.
-        :::
+:::note
+There aren't many Verbose log messages in Privilege Secure so the difference
+between Verbose and Debug is minimal.
+:::
 
 
-    - Debug – More information for detailed analysis of system behavior. Customer support may ask
-      for logs with this log level enabled for troubleshooting purposes
-    - Information – Normal operation for the system
-    - Warning – Message that indicates an unusual condition that the system can recover from
-    - Error – Message that indicates an unrecoverable condition has been reached and may indicate
-      data loss
-    - Fatal – Error that has caused the service to abort
+- Debug – More information for detailed analysis of system behavior. Customer support may ask
+for logs with this log level enabled for troubleshooting purposes
+- Information – Normal operation for the system
+- Warning – Message that indicates an unusual condition that the system can recover from
+- Error – Message that indicates an unrecoverable condition has been reached and may indicate
+data loss
+- Fatal – Error that has caused the service to abort
 
 - Retained File Count Limit - The number of log files to keep before deletion
 - File Size Limit Bytes - Maximum size of individual log file

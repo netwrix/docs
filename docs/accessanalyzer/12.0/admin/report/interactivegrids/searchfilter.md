@@ -10,7 +10,7 @@ When dealing with large sets of data, it may be useful to search for a desired a
 be done using the Filter icon.
 
 :::note
-Searching and grouping cannot be enabled at the same time. If grouping is enabled, the
+Searching and grouping can't be enabled at the same time. If grouping is enabled, the
 Search icon is disabled in the report.
 :::
 
@@ -23,7 +23,7 @@ The following example shows an interactive grid in which searching has been enab
 Enter search criteria in the boxes under the columns to filter the data. Click the search icon again
 to clear the filters.
 
-Click on a column to sort by that column. Clicking on a cell in a column automatically expands the
+Click a column to sort by that column. Clicking on a cell in a column automatically expands the
 column size to fit the largest length of text contained in the column.
 
 ## Searching Enumerated Tables
@@ -35,7 +35,7 @@ types to display as enumerated tables.
 
 To change the enumeration in the report, select an option from the enumerated column list. When
 enumeration is set on an interactive grid, a second download button is displayed with the name of
-the currently selected enumerated column. You can use this to download a CSV file that only contains
+the selected enumerated column. You can use this to download a CSV file that only contains
 the data for the selected enumeration.
 
 ## Filtering on Dates & Times
@@ -45,12 +45,12 @@ filter on specific time periods.
 
 ![Date column filter](/images/accessanalyzer/12.0/admin/report/interactivegrids/datefilter.webp)
 
-Enter a Start and End date and select the desired time period.
+Enter a Start and End date and select the time period you want.
 
 ## Filtering on Numeric Columns
 
-Comparison operators can also be used for filtering. Comparison operators which can be used for
-filtering include the following:
+Use comparison operators to filter data. The available comparison operators include the
+following:
 
 | Description              | Operator |
 | ------------------------ | -------- |
@@ -67,5 +67,5 @@ Columns can be added or removed from the table.
 
 ![Add and remove columns](/images/accessanalyzer/12.0/admin/report/interactivegrids/addremovecolumns.webp)
 
-Right-click on a column to display a list of the available columns. Select the checkboxes of the
+Right-click a column to display a list of the available columns. Select the checkboxes of the
 columns you want to be displayed. Click the up or down arrows to scroll through the list of columns.

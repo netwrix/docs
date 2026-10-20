@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Upward Data Synchronization"
 description: "Upward Data Synchronization"
 sidebar_position: 10
@@ -118,7 +118,7 @@ Exporting data from an Active Directory can be achieved by using the [Export Tas
 
 The Tasks requests from the source Active Directory all entries that match a configured filter. It outputs a set of _CSV source files_, containing raw AD Entries data (`ad_entries.csv`), information about group membership (`ad_members.csv`) and about the hierarchical organization (`ad_managers.csv`).
 
-![Active Directory Export Example](/images/identitymanager/integration-guide/synchronization/upward-data-sync/ad_export_example.webp)
+![Active Directory Export Example](/images/identitymanager/ad_export_example.webp)
 
 `ad_entries.csv` contains raw AD entry data.
 
@@ -220,7 +220,7 @@ Of course, any notification of a _complete__Prepare-Synchronization_ would cance
 
 The following illustration models the complete _prepare-synchronization_ steps applied to an Active Directory export. The matching _Connector_ defines an Entity Type _AD Entry_ and two associations: _members_ and _manager_.
 
-![Active Directory Prepare-Synchronization Example](/images/identitymanager/integration-guide/synchronization/upward-data-sync/ad_preparesynchro_example.webp)
+![Active Directory Prepare-Synchronization Example](/images/identitymanager/ad_preparesynchro_example.webp)
 
 ## Synchro
 
@@ -281,7 +281,7 @@ Then, changes according to the _command_ column are applied to UR_Resources and 
 
 This example illustrates the _complete_ loading of Active Directory ```.sorted``` files into Identity Manager database.
 
-![Active Directory Synchronization Example](/images/identitymanager/integration-guide/synchronization/upward-data-sync/ad_synchro_example.webp)
+![Active Directory Synchronization Example](/images/identitymanager/ad_synchro_example.webp)
 
 ## Handling Errors
 

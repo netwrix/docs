@@ -1,4 +1,4 @@
-﻿# Customize Display Tables
+# Customize Display Tables
 
 This part shows how to define a custom way to display entity types' data.
 
@@ -14,7 +14,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 Here is the visualization of this display table on the interface:
 
-![DisplayTable(Table)](/images/identitymanager/integration-guide/ui/how-tos/custom-display-table/displaytablestable.webp)
+![DisplayTable(Table)](/images/identitymanager/displaytablestable.webp)
 
 Ergonomically, it is recommended to hide the search symbol in a column header (in a list displayed like a table) if a criterion linked to this column is already displayed in a search bar. This avoids filter duplication. Thus, the `CanBeFiltered` property can be deleted in the `Column` argument.
 
@@ -30,7 +30,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 Here is the visualization of this resource table on the interface:
 
-![ResourceTable](/images/identitymanager/integration-guide/ui/how-tos/custom-display-table/displaytablesresourcetable.webp)
+![ResourceTable](/images/identitymanager/displaytablesresourcetable.webp)
 
 ## Display Table with Tiles
 
@@ -51,7 +51,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 Here is the visualization of this display table on the interface:
 
-![DisplayTable with Tiles](/images/identitymanager/integration-guide/ui/how-tos/custom-display-table/displaytablestiles.webp)
+![DisplayTable with Tiles](/images/identitymanager/displaytablestiles.webp)
 
 See the [Display Table](../../../integration-guide/toolkit/xml-configuration/user-interface/displaytable) topic for additional information.
 

@@ -38,7 +38,7 @@ In order to minimize conflicts, we have, in the past, suggested that customers u
 See
 [How to Un-License any PolicyPakComponent via ADMX or PolicyPak Cloud](/docs/policypak/licensing/videolearningcenter/troubleshooting/unlicense.md)
 for additional information. There is also a video you can watch on
-[Troubleshooting with ADMX files](/docs/policypak/gettingstarted/misc/videos/troubleshooting/admxfiles.md)
+[Troubleshooting with ADMX files](/docs/policypak/misc/videos/troubleshooting/admxfiles.md)
 
 More recently, Universal licenses are delivered with PolicyPak Preferences disabled
 (for customers which have domain joined machines), and you need to specifically enable it. In this

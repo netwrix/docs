@@ -1,6 +1,6 @@
 ---
 title: Netwrix Identity Threat Detection & Response Solution Presales Engineer
-sidebar_position: 1610
+sidebar_position: 1311
 tags: [certification, partners, presales, access-analyzer, identity-recovery, pingcastle, threat-manager, threat-prevention, ITDR]
 keywords: [training, course, certification, partners, presales, access analyzer, identity recovery, pingcastle, threat manager, threat prevention, itdr]
 description: "Become a certified Presales Engineer for Netwrix Identity Threat Detection & Response"

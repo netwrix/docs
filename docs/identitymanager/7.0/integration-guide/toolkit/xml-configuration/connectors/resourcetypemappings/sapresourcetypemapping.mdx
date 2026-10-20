@@ -1,0 +1,27 @@
+---
+title: "SapResourceTypeMapping"
+description: " "
+sidebar_position: 8
+---
+
+import ResourcetypemappingIdentifier from '@site/docs/identitymanager/current/_partials/resourcetypemapping-identifier.mdx';
+
+<ResourcetypemappingIdentifier />
+
+## Examples
+```xml
+<SapResourceTypeMapping Identifier="SAP_User_NominativeUser" Connection="SAPConnection" PasswordResetSetting="ToSelf" DefaultObjectClass="sapuser">
+  <Property Property="sapid" IsDNProperty="true" />
+  <Property Property="roles" DataSourceBacklinkColumnName="member" />
+</SapResourceTypeMapping>
+```
+
+
+## Properties
+
+|Property|Details|
+|---|---|
+| Connection required | **Type:** String **Description:** Identifier of the corresponding connection. |
+| DefaultObjectClass optional | **Type:** String **Description:** Default object class used by the provisioner, for example `person`, `organizationalPerson`, `user`, etc.**Note:** multiple default object classes are separated with ` `. |
+| PasswordResetSetting optional | **Type:** String **Description:** Identifier of the corresponding password reset setting. |
+

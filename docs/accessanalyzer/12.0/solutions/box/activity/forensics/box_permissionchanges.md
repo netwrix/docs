@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Box_PermissionChanges Job
 
-The Box_PermissionChannges Job provides details on permission changes that have occurred over the
+The Box_PermissionChanges Job provides details on permission changes that have occurred over the
 past 30 days.
 
 ## Analysis Tasks for the Box_PermissionChanges Job
@@ -15,7 +15,7 @@ Navigate to **Box** > **1.Activity** > **Forensics** > **Box_PermissionChanges**
 node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

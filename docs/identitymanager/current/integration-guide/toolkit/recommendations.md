@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Recommendations"
 description: "Recommendations"
 sidebar_position: 10
@@ -27,7 +27,7 @@ features.
 
 RedHat's XML extension provides auto-completion based on an XSD file. It opens an auto-completion popup when you start to edit an element or attribute name. You can open the popup by typing `Ctrl-Space`.
 
-![Auto-complete](/images/identitymanager/integration-guide/toolkit/recommendations/autocomplete.webp)
+![Auto-complete](/images/identitymanager/autocomplete.webp)
 
 Configure auto-completion by proceeding as follows:
 
@@ -62,4 +62,4 @@ EntityAssociations and their mappings.
 - **_Jobs.xml_** file containing the jobs configuration.
 - **_Workflows.xml_** file containing the Workflows configuration for the given connector.
 
-![Recommendation](/images/identitymanager/integration-guide/toolkit/recommendations/recommendation.webp)
+![Recommendation](/images/identitymanager/recommendation.webp)

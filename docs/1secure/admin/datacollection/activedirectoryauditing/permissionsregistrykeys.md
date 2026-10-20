@@ -6,12 +6,10 @@ sidebar_position: 40
 
 # Assigning Permission To Read the Registry Key
 
-This permission is required only if the account selected for data collection is not a member of the
+This permission is required only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
-This permission should be assigned on each domain controller in the audited domain, so if your
-domain contains multiple domain controllers, it is recommended to assign permissions through Group
-Policy.
+Assign this permission on each domain controller in the audited domain. If your domain contains multiple domain controllers, assign permissions through Group Policy.
 
 To assign permissions manually, use the Registry Editor snap-in or the Group Policy Management
 console.
@@ -57,7 +55,7 @@ press Enter.
 **Step 8 –** In the pop-up window, select Propagate inheritable permissions to all subkeys and click
 OK.
 
-**Step 9 –** Repeat the steps 4-8 for keys below:
+**Step 9 –** Repeat steps 4-8 for the following keys:
 
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg`;
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security`.
@@ -65,9 +63,9 @@ OK.
 **Step 10 –** Close Group Policy Management console.
 
 **Step 11 –** Navigate to Start → Run and type "_cmd_". Input the `gpupdate /force` command and
-press Enter. The group policy will be updated.
+press Enter. The group policy is updated.
 
-**Step 12 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
+**Step 12 –** Type `repadmin /syncall` command and press Enter to replicate GPO changes to other
 domain controllers.
 
-**Step 13 –** Ensure that new GPO settings were applied to the domain controllers.
+**Step 13 –** Verify that the new GPO settings are applied to the domain controllers.

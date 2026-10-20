@@ -7,16 +7,16 @@ sidebar_position: 40
 # Configure Advanced Audit Policies
 
 Configure advanced audit policies to limit the range of events tracked and recorded by the product,
-thus preventing your AuditArchive and the Security event log from overfilling. Perform procedures
-below instead of those discussed in the [Configure Local Audit Policies](/docs/1secure/configuration/computer/localpolicy.md) topic.
+thus preventing your AuditArchive and the Security event log from overfilling. Perform the following
+procedures instead of those discussed in the [Configure Local Audit Policies](/docs/1secure/configuration/computer/localpolicy.md) topic.
 
 ## Enforce Advanced Policies Over Local Policies
 
-Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To force
-basic audit policies to be ignored and prevent conflicts, enable the _Audit: Force audit policy
+Setting up both basic and advanced audit policies leads to incorrect audit reporting. To force basic
+audit policies to be ignored and prevent conflicts, enable the _Audit: Force audit policy
 subcategory settings_ policy.
 
-Follow the steps to enforce advanced policies.
+**To enforce advanced policies:**
 
 **Step 1 –** On the audited server, open the Local Security Policy snap-in and navigate to Start >
 Windows Administrative Tools > Local Security Policy.
@@ -30,9 +30,9 @@ Force audit policy subcategory settings policy.
 
 ## Configure Advanced Audit Policy on Windows Server 2016 / Windows 12 and Above
 
-In Windows Server 2016 and above, Advanced audit policies are integrated with Group Policies, so
-they can be applied via Group Policy Object or Local Security Policies. The procedure below
-describes how to apply Advanced policies via Local Security Policy console.
+In Windows Server 2016 and above, advanced audit policies are integrated with Group Policies, so
+they can be applied via Group Policy Object or Local Security Policies. The following procedure
+describes how to apply advanced policies via Local Security Policy console.
 
 **Step 1 –** On the audited server, open the **Local Security Policy** snap-in and navigate to
 Start > Windows Administrative Tools > Local Security Policy.

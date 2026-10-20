@@ -6,12 +6,12 @@ sidebar_position: 120
 
 # Group Expiry Functions
 
-You can expire, renew or delete a group using Directory Manager portal. You can change expiry policy
+You can expire, renew, or delete a group using Directory Manager portal. You can change expiry policy
 of a group and attest an expiring group, if required.
 
 ## Expire a group manually
 
-Follow the steps to expire a group manually.
+To expire a group manually.
 
 1. On the left navigation bar, click **Groups** and then select the **My Groups**, **My
    Memberships**, or **My Expiring Groups** tab.
@@ -26,18 +26,18 @@ Note the following:
 
 
 - When you try to manually expire a group with the expiry policy set to ‘Never Expire’, an error
-  message is displayed, informing you that the group cannot be expired.
+  message is displayed, informing you that the group can't be expired.
 - When you manually expire a group with an expiry policy other than ‘Never Expire’, the group
   expires and is moved it to the [My Expired Groups](/docs/directorymanager/11.1/portal/group/mygroups/myexpiredgroups.md) page.
 - A group without an expiry policy will not expire.
 
-    Directory groups that are created outside of Directory Manager do not have an expiry policy.
+    Directory groups that are created outside of Directory Manager don't have an expiry policy.
 
-    In Directory Manager, you cannot distinguish groups with an expiry policy from group without an
+    In Directory Manager, you can't distinguish groups with an expiry policy from group without an
     expiry policy because groups without an expiry policy are displayed with "Never Expire' set as
     policy.
 
-If expired groups are not renewed within a specific period (set by the Directory Manager
+If expired groups aren't renewed within a specific period (set by the Directory Manager
 administrator in the Group Lifecycle policy for the identity store), they are logically deleted when
 the period ends. See Group life cycle job.
 
@@ -86,7 +86,7 @@ To use an expired group again, you can renew it. On renewal, the group becomes a
 expiry policy is re-applied to it, starting from the date of renewal.
 
 In the Group Life Cycle policy, the administrator can specify a period for retaining expired groups
-in the directory. If a group is not renewed within this period, the Group Life Cycle job
+in the directory. If a group isn't renewed within this period, the Group Life Cycle job
 automatically deletes it from the directory.
 
 1. On the left navigation bar, click **Groups** and then select the **My Groups** tab.

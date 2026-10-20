@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WorkflowUpdateRecordEntityForm"
 description: "Displays a form to select an existing record and update it."
 sidebar_position: 8
@@ -70,14 +70,14 @@ And with the following form for the data that groups records together:
 ```
 
 The contents of `MainControl` and `RecordControl` are visible during the workflow's execution:
-![Form Example - Update Data](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/FormExample_WorkflowUpdateRecordEntityForm_V603.webp)
+![Form Example - Update Data](/images/identitymanager/formexample_workflowupdaterecordentityform_v603.webp)
 
 :::note
 The content of `RecordUniqueItemControl` is not visible. The user's records that have the same values for all the properties in `RecordUniqueItemControl` will be displayed, and potentially modified, as one.
 :::
 
 The contents of `MainSummaryControl` and `RecordSummaryControl` are visible after the workflow's execution:
-![Formexample Workflowupdaterecordentityform V603](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workflowupdaterecordentityform/formexample_workflowupdaterecordentityform_v603.webp)
+![Formexample Workflowupdaterecordentityform V603](/images/identitymanager/formexample_workflowupdaterecordentityform_v603.webp)
 
 
 ## Properties

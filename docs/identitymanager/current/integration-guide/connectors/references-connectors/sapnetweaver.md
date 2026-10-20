@@ -1,7 +1,7 @@
-﻿---
+---
 title: "SAP Netweaver"
 description: "SAP Netweaver"
-sidebar_position: 240
+sidebar_position: 250
 ---
 
 # SAP Netweaver
@@ -10,7 +10,7 @@ This connector exports and fulfills users and roles from/to an [SAP Netweaver](h
 
 This page is about [SAP S/4 HANA](../../../integration-guide/connectors/references-packages/saphana).
 
-![Package: ERP/SAP S/4 HANA](/images/identitymanager/integration-guide/connectors/references-connectors/sapnetweaver/packages_sap_v603.webp)
+![Package: ERP/SAP S/4 HANA](/images/identitymanager/packages_sap_v603.webp)
 
 ## Overview
 

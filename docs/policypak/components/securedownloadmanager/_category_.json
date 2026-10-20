@@ -1,0 +1,9 @@
+{
+  "label": "Secure Download Manager",
+  "position": 17,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

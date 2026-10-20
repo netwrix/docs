@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Toolkit for XML Configuration"
 description: "Toolkit for XML Configuration"
 sidebar_position: 210
@@ -14,5 +14,5 @@ The [Deploy Configuration Task](../../integration-guide/toolkit/xml-configuratio
 
 The Identity Manager project's integration cycle consists in developing a configuration by successive imports in a test instance.
 
-![Integration cycle](/images/identitymanager/integration-guide/toolkit/configurationcycle.webp)
+![Integration cycle](/images/identitymanager/configurationcycle.webp)
 

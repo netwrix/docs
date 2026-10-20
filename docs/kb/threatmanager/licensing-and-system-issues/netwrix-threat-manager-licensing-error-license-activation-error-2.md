@@ -49,7 +49,7 @@ There is a corruption in the existing license file.
    Start-Service -DisplayName "Netwrix Threat Manager*" -verbose
    ```
 
-4. If you now see an error or a red message that the license is not uploaded, navigate to the **Netwrix Threat Manager Web Console** and add the license again.
+4. If an error or red message appears indicating the license is not uploaded, navigate to the **Netwrix Threat Manager Web Console** and add the license again.
    - For assistance applying the license, see the Configuration Guide: Licensing Page.
 
 ## Related Article

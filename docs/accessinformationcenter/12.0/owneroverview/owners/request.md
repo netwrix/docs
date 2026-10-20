@@ -33,7 +33,7 @@ You can use these buttons to either accept or decline the request from the email
 
 ### Accept Request
 
-Follow the steps to accept the request using the email buttons.
+To accept the request using the email buttons:
 
 **Step 1 –** Click **Yes** to approve the request. The Access Information Center launches in the
 default browser for security authentication.
@@ -42,7 +42,7 @@ default browser for security authentication.
 
 ![Request accepted message](/images/accessinformationcenter/12.0/accessrequests/email/requestaccepted.webp)
 
-**Step 3 –** A message displays confirming that your response has been saved. Click **Close** to
+**Step 3 –** A message displays confirming that the system saved your response. Click **Close** to
 close the browser window.
 
 The requester will receive an email notification on the updated status of the request. See the
@@ -53,7 +53,7 @@ You can view the history of requests processed for your resources in the Owner p
 
 ### Decline Request
 
-Follow the steps to decline the request using the email buttons.
+To decline the request using the email buttons:
 
 **Step 1 –** Click **No** to decline the request. The Access Information Center launches in the
 default browser for security authentication.
@@ -68,7 +68,7 @@ user. Optionally enter an explanation into the Notes box, and click **Submit**.
 
 ![Access declined message](/images/accessinformationcenter/12.0/accessrequests/email/requestdeclined.webp)
 
-**Step 4 –** A message displays confirming that your response has been saved. Click **Close** to
+**Step 4 –** A message displays confirming that the system saved your response. Click **Close** to
 close the browser window.
 
 The requester will receive an email notification on the updated status of the request, including any

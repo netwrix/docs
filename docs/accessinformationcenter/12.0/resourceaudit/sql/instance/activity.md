@@ -11,7 +11,7 @@ the selected date range.
 
 ![Activity report at the instance level](/images/accessinformationcenter/12.0/resourceaudit/sql/instance/instanceactivity.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Access Time – Date and timestamp for when the operation occurred
 - Trustee Name – Owner of the trustee account

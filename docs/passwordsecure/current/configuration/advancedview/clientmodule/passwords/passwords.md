@@ -6,12 +6,12 @@ sidebar_position: 10
 
 # Passwords
 
-## What are passwords?
+## Passwords overview
 
 In Netwrix Password Secure v8, the data record with the passwords represents the central data
 object. The Passwords module provides administrators and users with central access to the passwords
-for the purpose of handling this sensitive data that requires protection. Search filters in
-combination with color-highlighted tags enable very focussed work. Various approaches can be used to
+to handling this sensitive data that requires protection. Search filters in
+combination with color-highlighted tags enable very focussed work. You can use various approaches to
 help apply the desired permissions to objects. Furthermore, the ergonomic structure of the module
 helps all users to use Netwrix Password Secure in an efficient and targeted manner.
 
@@ -28,7 +28,7 @@ The following user right is required for adding new passwords:
 The ribbon offers access to all possible actions relevant to the situation at all times. Especially
 within the "Passwords" module, the ribbon plays a key role due to the numerous module-specific
 functions. General information on the subject of the ribbon is available in the relevant section.
-The module-specific ribbon functions will be explained below.
+The module-specific ribbon functions will be explained in the following sections.
 
 ![ribbon functions](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwords/passwords_2-en.webp)
 
@@ -40,7 +40,7 @@ The module-specific ribbon functions will be explained below.
 - **Open**: Opens the object marked in list view and provides further information about the record
   in the reading pane.
 - **Delete**: Deletes the object marked in list view. A log file entry is created (see logbook).
-- **Reveal**: The function **Reveal** can be used for all records that have a password field. The
+- **Reveal**: The function **Reveal** works for all records that have a password field. The
   passwords in the reading pane will be revealed. In the example, the passwords have been revealed
   and can be hidden again with the **Hide** button.
 
@@ -49,10 +49,10 @@ The module-specific ribbon functions will be explained below.
 ### Actions
 
 - **Notifications**: Defining notifications enables a constant flow of information about any type of
-  interaction. The issuing of notifications is carried out in the module designed for this purpose.
+  interaction. The issuing of notifications is performed in the module designed for this purpose.
 - **Duplicate**: Duplicating creates an exact copy of the record in a new tab.
 - **Move**: Moves the record marked in list view to another organisational structure.
-- **Toggle** **Favorite**: The selected record is marked as a favorite. It is possible to switch
+- **Toggle** **Favorite**: The selected record is marked as a favorite. You can switch
   between all records and favorites at any time.
 - **Quick view**: A modal window opens for the selected record for 15 seconds and displays all
   available information **including the value of the password**.
@@ -60,7 +60,7 @@ The module-specific ribbon functions will be explained below.
 
 ### Permissions
 
-- **Permissions**: The drop-down menu can be used to set both password permissions and also form
+- **Permissions**: Use the dropdown menu to set both password permissions and also form
   field permissions. This method only allows the manual setting of permissions for data (see
 
     authorization concept)
@@ -86,7 +86,7 @@ Conveniently working with passwords is only possible via the efficient usage of 
 via RDP, SSH, general Windows applications or websites. This makes it possible to dispense with
 (unsecure) entries via "copy & paste".
 
-- **Open web page**: If an URL is saved in the record, this menu option can be used to directly open
+- **Open web page**: If an URL is saved in the record, use this menu option to directly open
   it.
 - **Applications**: If applications have been linked to records, they can be directly opened via the
   "start menu".
@@ -104,12 +104,14 @@ first session.
 - **History**: This icon opens the history for those records selected in list view in a new tab. Due
   to the comprehensive recording of historical versions of passwords, it is now possible to compare
   several versions with one another.
-- **Print**: This option can be used to open the print function.
-- **Export**: It is possible to export all the selected records and also the data defined by the
+- **Print**: Use this option to open the print function.
+- **Export**: You can export all the selected records and also the data defined by the
   filter to a .csv file.
-- **Change form**: It is possible to change the form used for individual records. "Mapping" of the
-  previous form fields can be directly carried out in the process.
+- **Change form**: You can change the form used for individual records. "Mapping" of the
+  previous form fields can be directly performed in the process.
 - **Settings**: The password settings are described in a separate section.
 
-NOTE: The password module is based on the module of the same name in the Web Application. Both
+:::note
+The password module is based on the module of the same name in the Web Application. Both
 modules have a different scope and design. However, they are almost identical to use.
+:::

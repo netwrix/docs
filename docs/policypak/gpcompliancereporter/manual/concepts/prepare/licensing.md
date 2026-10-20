@@ -11,14 +11,14 @@ but the endpoint does.
 
 :::note
 Watch this video to see how to request a license:
-[How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/requestall/licenserequestkey.md).
+[How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/licenserequestkey.md).
 :::
 
 
 :::note
 To install the license file received from PolicyPak, see the following
 video:
-[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md).
+[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md).
 :::
 
 
@@ -113,5 +113,5 @@ the future.
 
 PolicyPak Sales can send you a working PolicyPak GPCR key. To install
 the key, follow these instructions:
-[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md).
+[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md).
 

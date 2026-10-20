@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Application
 
-The following functions are currently available in the **Application module**:
+The following functions are available in the **Application module**:
 
 Web & SAML applications:
 
@@ -14,8 +14,10 @@ Web & SAML applications:
 - Manage
 - Delete
 
-NOTE: A detailed explanation of how to configure SAML can be found in the chapter “Configuration of
+:::note
+A detailed explanation of how to configure SAML can be found in the chapter “Configuration of
 SAML”
+:::
 
 General functions:
 
@@ -26,5 +28,7 @@ General functions:
 - Quick view
 - Connect password
 
-NOTE: The Web Application module Applications is based on the client module of the same name
+:::note
+The Web Application module Applications is based on the client module of the same name
 “Applications”. Both modules differ in scope and design, but the operation is almost identical.
+:::

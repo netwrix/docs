@@ -19,6 +19,6 @@ Schedule these jobs to run with the 0.Collection job group.
 
 
 - [AD_AdminAccounts Job](/docs/accessanalyzer/12.0/solutions/activedirectory/activity/privilegedaccounts/ad_adminaccounts.md) – Shows all actions taken by domain administrators
-  within the environment being compromised
+  within the environment
 - [AD_ServiceAccountAuth Job](/docs/accessanalyzer/12.0/solutions/activedirectory/activity/privilegedaccounts/ad_serviceaccountauth.md) – Shows the last time a service account,
   identified by the presence of a servicePrincipalName, was active within the environment

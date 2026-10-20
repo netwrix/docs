@@ -81,6 +81,6 @@ Restart each domain controller to complete the installation. Windows installs Pa
 Enforcer during startup, and then immediately restarts the computer a second time to complete the
 installation.
 
-Password Policy Enforcer does not enforce a password policy until the policies are defined. Users
-can still change their password, and will only need to comply with the Windows password policy rules
+Password Policy Enforcer doesn't enforce a password policy until the policies are defined. Users
+can still change their password, and must comply only with the Windows password policy rules
 (if enabled).

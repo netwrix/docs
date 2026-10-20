@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Temporary permissions
 
-## What are temporary permissions?
+## Temporary permissions overview
 
-So far, we have covered permissions that were valid for an unlimited period. However, a permission
+So far, this guide has covered permissions that were valid for an unlimited period. However, a permission
 can also be granted in advance with a time restriction. Examples are users who stay in the company
 for a limited time, such as interns or trainees.
 
@@ -33,8 +33,10 @@ permissions:
 - **Green:** The temporary permission is active.
 - **Red:** The time period for the temporary permissions has already expired.
 
-NOTE: Temporary permissions can also be assigned to multiple roles and users at the same time. You
-can select multiple users and roles as usual with Ctrl/Shift + left mouse button!
+:::note
+Temporary permissions can also be assigned to multiple roles and users at the same time. You
+can select multiple users and roles as usual with Ctrl/Shift + left mouse button.
+:::
 
 ## Special features of the authorization system
 
@@ -43,5 +45,7 @@ configurations. Conceivable constellations include a situation when the only use
 only has temporary permissions. When these permissions expire, there is no longer any user with full
 permissions. To prevent this happening, users with temporary permissions are handled differently.
 
-**CAUTION:** There must always be one user who has the “authorize” right to a record, who does not
+:::warning
+There must always be one user who has the “authorize” right to a record, who doesn't
 only have temporary permissions.
+:::

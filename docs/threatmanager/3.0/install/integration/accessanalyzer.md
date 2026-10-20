@@ -20,22 +20,19 @@ collection.
 
 ## Instantiate the FS_DEFEND_SDD Job in Access Analyzer
 
-Follow the steps to configure the FS_DEFEND_SDD Job to send sensitive data to Threat Manager. See
+ configure the FS_DEFEND_SDD Job to send sensitive data to Threat Manager. See
 the Instant Job Wizard section of the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 instructions to add this instant job to the **Jobs** tree.
 
-In Access Analyzer, install the FS_DEFEND_SDD Job to the desired location. It is available through
+In Access Analyzer, install the FS_DEFEND_SDD Job to the location you want. It is available through
 the Instant Job Library under the File System library.
 
 **Step 1 –** In the Threat Manager Console, generate the app token (endpoint token) to be copied and
 pasted into the Connection Profile, and the host name (endpoint) to be used when creating the custom
 host list.
 
-In order for Access Analyzer to send data to Threat Manager, an app token must be created in Threat
-Manager. If multiple Access Analyzer Consoles are sending data to Threat Manager, an app token may
-be created for each Access Analyzer Console to grant individual access to Threat Manager from each
-Console.
+For Access Analyzer to send data to Threat Manager, create an app token in Threat Manager. If multiple Access Analyzer Consoles send data to Threat Manager, create an app token for each Access Analyzer Console to grant individual access to Threat Manager from each Console.
 
 - Navigate to the Configuration > App Tokens page.
 - Click the +Add button to create a new app token:
@@ -75,7 +72,7 @@ The FS_DEFEND_SDD Job requires a custom Connection Profile to authenticate to Th
 credential for the Connection Profile must be created with the Web Services (JWT) account type.
 
 :::tip
-Remember, , the Threat Manager App Token is generated within Threat Manager.
+Generate the Threat Manager App Token in Threat Manager before creating the Connection Profile.
 :::
 
 
@@ -83,9 +80,9 @@ Create a Connection Profile and set the following information on the User Creden
 
 - Select Account Type – Web Services (JWT)
 - Domain – `{not a field for this type of credential, defaults to <WSJWT>}`
-- User name – This field should be left blank
+- User name – Leave this field blank
 - Password Storage: Application – Uses Access Analyzer’s configured Profile Security setting as
   selected at the Settings > Other Settings node
 - Access Token – Copy and paste the Threat Manager App Token
 
-The FS_DEFEND_SDD Job must be configured to use this custom Connection Profile.
+Configure the FS_DEFEND_SDD Job to use this custom Connection Profile.

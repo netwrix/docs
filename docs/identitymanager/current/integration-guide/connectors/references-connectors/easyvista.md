@@ -1,4 +1,4 @@
-﻿---
+---
 title: "EasyVista"
 description: "EasyVista"
 sidebar_position: 50
@@ -10,7 +10,7 @@ This connector exports and fulfills users from/to an [EasyVista](https://wiki.ea
 
 This page is about EasyVista .
 
-![Package: ITSM/EasyVista](/images/identitymanager/integration-guide/connectors/references-connectors/easyvista/packages_easyvista_v603.webp)
+![Package: ITSM/EasyVista](/images/identitymanager/packages_easyvista_v603.webp)
 
 ## Overview
 
@@ -86,7 +86,7 @@ The `ExportSettingsOptions` attribute is necessary only if custom entities are e
  | Password required | **Type** String **Description** Password to use to connect to the EasyVista instance. | 
  | --- | --- | 
  | --- | --- | 
- | ExportSettingsOptions optional | **Type** List **Description** List of entities to retrieve from the EasyVista instance. **Note:** for any customized entity to be exported, this argument must contain its REST API URL. **Get REST API URLs** Access the relevant view in EasyVista and click on **...** > **Rest API Url** to copy the URL. For example: ![EasyVista Profiles View](/images/identitymanager/integration-guide/connectors/references-connectors/easyvista/easyvista_view_v523.webp) | 
+ | ExportSettingsOptions optional | **Type** List **Description** List of entities to retrieve from the EasyVista instance. **Note:** for any customized entity to be exported, this argument must contain its REST API URL. **Get REST API URLs** Access the relevant view in EasyVista and click on **...** > **Rest API Url** to copy the URL. For example: ![EasyVista Profiles View](/images/identitymanager/easyvista_view_v523.webp) | 
 
 ### Output details
 

@@ -25,8 +25,10 @@ organisational unit.
 Whether this form of inheritance should be applied is defined via the settings in the ribbon. It can
 be configured in more detail using two settings.
 
-**CAUTION:** If a predefined rights exists, this will always overwrite inherited permissions from
+:::warning
+If a predefined rights exists, this will always overwrite inherited permissions from
 organisational structures
+:::
 
 Inherit permissions for new objects (without rights template) This setting is relevant for newly
 created records.
@@ -35,7 +37,7 @@ created records.
 
 The following values can be configured:
 
-Off: Permissions from OUs are not inherited organisational unit: When creating new objects,
+Off: Permissions from OUs aren't inherited organisational unit: When creating new objects,
 permissions are set in accordance with the defined rights for the target organisational unit. This
 setting is active by default. organisational unit and user: As well as inheriting permissions for
 organization units, the configured permissions for the user are now also inherited when creating
@@ -56,15 +58,15 @@ Increase or reduce permissions: The permissions for the passwords are retained a
 increased or reduced by the change. Overwrite permissions: The permissions for the passwords are
 completely overwritten. This means that all permissions for a password are firstly removed and then
 the new permissions for the organisational unit are inherited. Cancel inheritance: The permissions
-are not inherited but are only changed in the organisational unit. \*The permissions are only
-inherited by existing passwords within the organisational unit. Therefore, the permissions are not
+aren't inherited but are only changed in the organisational unit. \*The permissions are only
+inherited by existing passwords within the organisational unit. Therefore, the permissions aren't
 inherited downwards throughout the entire structure.
 
 Example case This example shows the creation of a new record in the organisational structure
 “marketing”. It is defined in the settings for the stated organisational structure that permissions
 should be inherited by new objects in accordance with the organisational structure.
 
-The permissions for the organisational unit “marketing” are shown below:
+The permissions for the organisational unit “marketing” are shown in the following screenshot:
 
 ![example of permissions](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/automated_settings/inheritance_from_organisational_structures/inheritance-4-en.webp)
 
@@ -79,7 +81,7 @@ record just created are now shown.
 
 ## Conclusion
 
-The permissions for the “storage location” are simply used when creating new objects. Two conditions
+The permissions for the “storage location” are used when creating new objects. Two conditions
 apply here:
 
 The value “organisational unit” must be selected in the settings for the inheritance of permissions

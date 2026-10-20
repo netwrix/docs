@@ -9,7 +9,7 @@ sidebar_position: 20
 :::note
 For an overview of how to block threats and unknown software like malware and similar
 applicates, see the
-[Using Least Privilege Manager's SecureRun Feature](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/feature.md)
+[Using Least Privilege Manager's SecureRun Feature](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/feature.md)
 video.
 :::
 
@@ -121,7 +121,7 @@ downloads and tries to run but continues to let properly installed applications 
 :::note
 An additional way to use PolicyPak SecureRum™ is to also trap for anything
 that is unsigned. See the
-[Least Privilege Manager: Block All Unsigned with SecureRun](/docs/policypak/components/leastprivilegemanager/videolearningcenter/howtoandtechsupport/preventunsigned.md)
+[Least Privilege Manager: Block All Unsigned with SecureRun](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/preventunsigned.md)
 video for a demonstration.
 :::
 

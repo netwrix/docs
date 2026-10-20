@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Microsoft Excel"
 description: "Microsoft Excel"
 sidebar_position: 140
@@ -10,7 +10,7 @@ This connector exports datasheets from a [Microsoft Excel](https://www.microsoft
 
 This page is about [Excel](../../../integration-guide/connectors/references-packages/excel).
 
-![Package: File/Microsoft Excel](/images/identitymanager/integration-guide/connectors/references-connectors/excel/packages_excel_v603.webp)
+![Package: File/Microsoft Excel](/images/identitymanager/packages_excel_v603.webp)
 
 ## Overview
 
@@ -92,7 +92,7 @@ This connector exports datasheets from a [Microsoft Excel](https://www.microsoft
 
 This page is about [Excel](../../../integration-guide/connectors/references-packages/excel).
 
-![Package: File/Microsoft Excel](/images/identitymanager/integration-guide/connectors/references-connectors/excel/packages_excel_v603.webp)
+![Package: File/Microsoft Excel](/images/identitymanager/packages_excel_v603.webp)
 
 ## Overview
 

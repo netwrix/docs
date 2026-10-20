@@ -1,4 +1,4 @@
-﻿---
+---
 title: "How to Implement a New System"
 description: "How to Implement a New System"
 sidebar_position: 30
@@ -18,7 +18,7 @@ The **option B** takes more time as it goes through the creation of the role mod
 
 The option B is more complicated and time-consuming than the option A, but leads to more gain. Be aware that **you can go through the process options simultaneously**.
 
-![Process Schema - How to Implement a New System](/images/identitymanager/user-guide/global-process/howto-newsystem/globalprocess_schemaconnectsyst.webp)
+![Process Schema - How to Implement a New System](/images/identitymanager/globalprocess_schemaconnectsyst.webp)
 
 ## Process Details
 

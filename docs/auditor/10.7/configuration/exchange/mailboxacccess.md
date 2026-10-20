@@ -16,12 +16,12 @@ information.
 However, in some scenarios users may need to apply required audit settings manually. For that,
 review the following procedures:
 
-- Configuring mailbox access tracking for Exchange 2019, 2016 and 2013 manually
+- Configuring mailbox access tracking for Exchange 2019, 2016, and 2013 manually
 - Configuring mailbox access tracking for Exchange 2010 manually
 
-## Configuring mailbox access tracking for Exchange 2019, 2016 and 2013 manually
+## Configuring mailbox access tracking for Exchange 2019, 2016, and 2013 manually
 
-Perform the procedures below only if you do not want to enable the automatic audit configuration
+Perform the procedures below only if you don't want to enable the automatic audit configuration
 option when setting up monitoring in Netwrix Auditor.
 
 You can configure auditing for:
@@ -36,7 +36,7 @@ You can configure auditing for:
 
 ## Configuring mailbox access tracking for Exchange 2010 manually
 
-Perform the procedure below only if you do not want to enable network traffic compression option
+Perform the procedure below only if you don't want to enable network traffic compression option
 when setting up Exchange monitoring in Netwrix Auditor.
 
 **Step 1 –** On the computer where the monitored Exchange server is installed, navigate to **Start →

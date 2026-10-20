@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Select Primary Keys"
 description: "Select Primary Keys"
 sidebar_position: 30
@@ -78,7 +78,7 @@ Create an entity type by proceeding as follows:
 
 1. Start by defining the entity type's scalar properties. See the [Define Scalar Properties](../../../../user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition) topic for additional information.
 
-    ![Keys](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/key-selection/entitytypecreation_keys_v522.webp)
+    ![Keys](/images/identitymanager/entitytypecreation_keys_v522.webp)
 
 2. In the entity type's **Properties** section, choose the **key properties**.
 3. Choose the **mapping key**.
@@ -88,7 +88,7 @@ Create an entity type by proceeding as follows:
 
 Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You do not need to click on the button every time. It is essential though to reload after the final changes are made.
 
-![Reload](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/key-selection/entitytypecreation_reload_v522.webp)
+![Reload](/images/identitymanager/entitytypecreation_reload_v522.webp)
 
 The **Reload** button mostly enables your changes to appear in the menu items, which configure the left menu links on the UI's home page.
 

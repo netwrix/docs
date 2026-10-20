@@ -24,7 +24,7 @@ instead of an empty text box.
 
 **Add Domain**
 
-Follow the steps below to add a domain to the list.
+Follow the steps to add a domain to the list.
 
 **Step 1 –** Click the **Add...** button.
 
@@ -33,7 +33,7 @@ Follow the steps below to add a domain to the list.
 **Step 3 –** Click **OK**, the click **Apply**.
 
 :::note
-The most frequently used domain should be first in the list as it will be the default. You
+Put the most frequently used domain first in the list — it is the default. You
 can rearrange the domains by dragging them to another position. You can also click **Sort** to sort
 them alphabetically.
 :::
@@ -41,7 +41,7 @@ them alphabetically.
 
 **Remove Domain**
 
-Follow the steps below to remove a domain from the list.
+Follow the steps to remove a domain from the list.
 
 **Step 1 –** Select the domain name from the Domain List.
 
@@ -59,18 +59,16 @@ Enforcer to help users choose a compliant password.
 
 Password Policy Enforcer Web displays the Password Policy Enforcer password policy message when a
 user is prompted for their new password, and the Password Policy Enforcer rejection message if the
-new password does not comply with the password policy. Select the **Password Policy Enforcer
-integration** check box if you have installed and configured Password Policy Enforcer on your domain
+new password doesn't comply with the password policy. Select the **Password Policy Enforcer
+integration** checkbox if you have installed and configured Password Policy Enforcer on your domain
 controllers.
 
 You can also set the Port, Timeout, and number of Retries for the Password Policy Protocol if the
-defaults are not suitable.
+defaults aren't suitable.
 
 :::note
-A Password Policy Enforcer Web license does not include a Password Policy Enforcer
-license. Go to
-[netwrix.com/password_policy_enforcer](https://www.netwrix.com/password_policy_enforcer.html) to
-learn more about Password Policy Enforcer.
+A Password Policy Enforcer Web license doesn't include a Password Policy Enforcer
+license. See [Netwrix Password Policy Enforcer](https://www.netwrix.com/password_policy_enforcer.html) for licensing information.
 :::
 
 

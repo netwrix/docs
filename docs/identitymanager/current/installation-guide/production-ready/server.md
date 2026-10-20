@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Install the Server"
 description: "Install the Server"
 sidebar_position: 30
@@ -60,7 +60,7 @@ The following is mandatory:
 - **Application Pool** > `Usercube<Organization>` > **Advanced Settings** > **General** > .NET CLR
 Version > `No Managed Code`
 
-![IIS Settings](/images/identitymanager/installation-guide/production-ready/server/iis_settings.webp)
+![IIS Settings](/images/identitymanager/iis_settings.webp)
 
 An SSL Certificate should also be set to the IIS Server to perform HTTPS communication with end-users.
 
@@ -137,7 +137,7 @@ This guide will show you how to perform these operations using SQL Server Manage
 
 **Step 1 –** Open SQL Server Management Studio (SSMS) **and** log in to access the server on which runs the Identity Manager Database with an account member of the **sysadmin** **or** **securityadmin** server-level role.
 
-![New Login](/images/identitymanager/installation-guide/production-ready/server/newlogin.webp)
+![New Login](/images/identitymanager/newlogin.webp)
 
 **Step 2 –** Expand the **Security** **and** **Login** nodes, **and** look for the Identity Manager service account in the list.
 
@@ -151,7 +151,7 @@ If you cannot find the service account click on the **Login** node, right-click 
 
 **Step 6 –** Go to **User Mapping****and** make sure `Usercube/<Organization/>` is checked (top panel), as well as **db_owner** **and** **public** (bottom panel).
 
-![Bulk](/images/identitymanager/installation-guide/production-ready/server/bulk.webp)
+![Bulk](/images/identitymanager/bulk.webp)
 
 **Step 7 –** Right-click the **Server** root node **and** select **Properties**, **and** in the **Permissions** tab, select the service account **or** group name.
 
@@ -189,7 +189,7 @@ to do
 
 **Step 1 –** Click on **Edit** **and** then on **Add**.
 
-    ![Object Names](/images/identitymanager/installation-guide/production-ready/server/enter-the-object-names-to-select.webp)
+    ![Object Names](/images/identitymanager/enter-the-object-names-to-select.webp)
 
 **Step 2 –** In the **Enter the object names to select** textbox, enter the service account name in the down-level log on format, such as `CONTOSO/identitymanagerContosoServer`, then click **OK**.
 

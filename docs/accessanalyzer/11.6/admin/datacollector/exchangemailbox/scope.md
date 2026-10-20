@@ -6,13 +6,13 @@ sidebar_position: 20
 
 # ExchangeMailbox: Scope
 
-The Scope page is used to define which mailboxes are to be queried. It is a wizard page for all of
+Use the Scope page to define which mailboxes to query. It is a wizard page for all of
 the categories.
 
 ![Exchange Mailbox Data Collector Wizard Scope page](/images/accessanalyzer/11.6/admin/datacollector/exchangemailbox/scope.webp)
 
-At the top, configure the mailboxes to be queried. The selected option changes how the mailboxes are
-identified for scoping.
+At the top, configure the mailboxes to query. The selected option changes how the data collector
+identifies mailboxes for scoping.
 
 - All mailboxes – Searches all mailboxes
 - Selected mailboxes from server – Retrieves all mailboxes in the Exchange organization, making them
@@ -23,7 +23,7 @@ identified for scoping.
 
     - Retrieve – Enter the server and select Retrieve to display the list of mailboxes on that
       server
-    - Add – Select the desired mailboxes to add to the query. The added mailboxes display in the
+    - Add – Select the mailboxes you want to add to the query. The added mailboxes display in the
       **Selected mailboxes** list.
     - Remove – Deletes selected mailboxes from the list
     - Select All – Click the Select All icon to select all mailboxes in the list
@@ -34,7 +34,7 @@ identified for scoping.
 
     ![Scope page with Selected table selected](/images/accessanalyzer/11.6/admin/datacollector/exchangemailbox/scopeselectedtable.webp)
 
-    - Table – Filters this list by tables. Select the table which hosts the list of mailboxes for
-      which this query will be scoped.
-    - Field containing EmailAddressDNs – This list will be populated with columns from the selected
+    - Table – Filters this list by tables. Select the table that hosts the list of mailboxes to scope
+      this query to.
+    - Field containing EmailAddressDNs – This list populates with columns from the selected
       table. Select the appropriate column from the list.

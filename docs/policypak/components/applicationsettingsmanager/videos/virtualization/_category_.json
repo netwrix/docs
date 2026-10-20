@@ -2,5 +2,8 @@
   "label": "Application Virtualization",
   "position": 100,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

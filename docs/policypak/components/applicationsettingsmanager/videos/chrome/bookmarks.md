@@ -8,6 +8,8 @@ sidebar_position: 30
 Using Netwrix PolicyPak's pre-configured PAK for Google Chrome we
 can deliver Chrome bookmarks.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Cu3feJgMLU8" title="Manage Google Chrome Bookmarks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - Launch Google Chrome PAK properties
 - Select Extras tab and find an option Managed Bookmarks
 

@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Master Key certificates
 
-#### What is a Master Key certificate?
+#### Master Key certificate overview
 
 If Active Directory is accessed via
 [Masterkey mode](/docs/passwordsecure/9.3/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/masterkey_mode.md),
@@ -16,13 +16,19 @@ Active Directory: Domain:
 
 ![installation_with_parameters_208](/images/passwordsecure/9.2/configuration/server_manager/certificates/installation_with_parameters_208.webp)
 
-NOTE: The Master Key certificate cannot be replaced by your own certificate.
+:::note
+The Master Key certificate can't be replaced by your own certificate.
+:::
 
-NOTE: The certificates for Master Key mode have an expiry date. However, this is not checked. The
-certificate thus does not need to be renewed.
+:::note
+The certificates for Master Key mode have an expiry date. However, this isn't checked. The
+certificate thus doesn't need to be renewed.
+:::
 
-**CAUTION:** If the database is being moved to another server, it is essential that the Master Key
-certificate is also transferred!
+:::warning
+If the database is being moved to another server, it is essential that the Master Key
+certificate is also transferred.
+:::
 
 #### Exporting and importing the certificate
 

@@ -12,15 +12,15 @@ can filter the report or sort by the column heads.
 
 ![Non-Compliant Change Management Report](/images/platgovnetsuite/change_management/changelog-1.webp)
 
-A noncompliant change means something got changed without the required approvals. Open each change
+A noncompliant change means someone changed something without the required approvals. Open each change
 log to investigate the change. You can retroactively attach a change request to a noncompliant
-change and get the necessary approvals for the change to be compliant.
+change and get the necessary approvals to bring the change into compliance.
 
 1. Create a New [Change Request](/docs/platgovsalesforce/changemanagement/creating_change_request.md) or open an existing one.
 2. Set it to Pending Approval.
-3. Once it is approved and complete, set the **Status** of the Change Request to **Complete**.
+3. After it is approved and complete, set the **Status** of the Change Request to **Complete**.
 4. Click the Change Log name to open it.
 5. Enter the **Related Change Request**.
 6. Enter the **Resolution Description**.
-7. Once all changes are made, select **Closed** for the Status.
+7. After all changes are made, select **Closed** for the Status.
 8. Save the **Change Log**.

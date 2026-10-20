@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Automatic backup cleanup
 
-It is possible to delete backups automatically after a certain period of time. This can be useful if
+You can delete backups automatically after a certain period of time. This can be useful if
 you append date and time to the backups and thus generate new files daily.
 
 ![automatic cleanup](/images/passwordsecure/9.2/configuration/server_manager/main_menu/backup_settings/automatic_backup_cleanup/automated-deletion-of-backups-en.webp)

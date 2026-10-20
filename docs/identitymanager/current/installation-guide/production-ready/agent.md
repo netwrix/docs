@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Install the Agents"
 description: "Install the Agents"
 sidebar_position: 40
@@ -80,13 +80,13 @@ The following is [mandatory](https://docs.microsoft.com/en-us/aspnet/core/host-*
 - **Application Pool** > **Identity Manager `<Organization>`** > **Advanced Settings** >
 **General** > **.NET CLR Version** > **No Managed Code**
 
-![IIS Settings](/images/identitymanager/installation-guide/production-ready/server/iis_settings.webp)
+![IIS Settings](/images/identitymanager/iis_settings.webp)
 
 This sums up IIS settings.
 
 ## Hosting Bundle
 
-You need to install the [dotnet hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (version 8.0 or higher) to be able to run dotnet application.
+You need to install the [dotnet hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) (version 10.0 or higher) to be able to run dotnet application.
 
 ## Select an Agent Identity
 
@@ -191,7 +191,7 @@ To fix the **missing** permissions follow the steps:
 
 **Step 5 –** Select the newly added user name in the Group or user names panel at the top of the window.
 
-![Object Names](/images/identitymanager/installation-guide/production-ready/server/enter-the-object-names-to-select.webp)
+![Object Names](/images/identitymanager/enter-the-object-names-to-select.webp)
 
 **Step 6 –** Check the **Allow** column for the relevant permissions. Check the **Deny** column for the others. See the[Server](../../installation-guide/requirements/server-requirements) topic for additional information.
 

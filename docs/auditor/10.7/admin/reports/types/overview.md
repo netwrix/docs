@@ -10,8 +10,8 @@ Netwrix Auditor is shipped with 250+ ready-to-use reports designed by Netwrix in
 find a report that is right for you, check out the predefined report types available in the product.
 
 - Enterprise Overview—A dashboard with a set of widgets that provide quick access to important
-  statistics across the audited IT infrastructure. They allow you to see the activity trends by
-  date, user, data source, server or audited IT system, and drill through to detailed reports for
+  statistics across the audited IT infrastructure. You can see activity trends by
+  date, user, data source, server, or audited IT system, and drill through to detailed reports for
   further analysis. The Enterprise Overview dashboard aggregates the information on changes from all
   data sources and provides a centralized overview. System-specific dashboards reflect all changes
   across all monitoring plans where audit of this target system is enabled. See the
@@ -27,13 +27,13 @@ find a report that is right for you, check out the predefined report types avail
   drill through to detailed reports for further analysis.
 - Change and activity reports—System-specific reports that aggregate audit data for a specific data
   source within specified monitoring plans. These reports show detailed data on changes and activity
-  and provide grouping, sorting and filtering capabilities. Each report has a different set of
+  and provide grouping, sorting, and filtering capabilities. Each report has a different set of
   filters allowing you to manage collected data in the most convenient way. See the
   [Change and Activity Reports](/docs/auditor/10.7/admin/reports/types/activity.md) topic for additional information.
 - State-in-time reports—System-specific reports that aggregate data for a specific data source
   within a specified individual monitoring plan and allow reviewing the point-in-time state of the
   data source. These reports are based on daily snapshots and help you paint a picture of your
-  system configuration at a specific moment in time. Currently, the Windows Server State-in-Time
+ system configuration at a specific moment in time. the Windows Server State-in-Time
   report set provides baselining functionality that help identify aberrant servers. See the
   [State–In–Time Reports](/docs/auditor/10.7/admin/reports/types/stateintime/overview.md) topic for additional information.
 - Changes with video reports—Windows server-based reports that provide video recordings of user

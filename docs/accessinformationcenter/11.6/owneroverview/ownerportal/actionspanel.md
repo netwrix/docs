@@ -16,7 +16,7 @@ workflow features.
 The Reviews link in the Actions panel is part of the Resource Review feature.
 
 - Reviews — Opens the Reviews page. If any of your resources have pending reviews, a count of
-  pending reviews displays next to the link. The Reviews page allows you to view both pending and
+  pending reviews displays next to the link. The Reviews page displays both pending and
   historical resource reviews. See the
   [Owners & Resource Reviews](/docs/accessinformationcenter/11.6/owneroverview/pendingreviews/pendingreviews.md)
   topic for additional information.
@@ -31,8 +31,8 @@ Requests feature.
   you to view pending and historical access requests for you resources. See the
   [Owners & Access Requests](/docs/accessinformationcenter/11.6/owneroverview/owners/overview.md)
   topic for additional information.
-- My Access — Opens the Your Access portal. The Your Access portal allows you to see your existing
-  access, request access to resources, and view your access request history. See the
+- My Access — Opens the Your Access portal. The Your Access portal displays your existing
+  access, lets you request access to resources, and shows your access request history. See the
   [Your Access Portal Overview](/docs/accessinformationcenter/11.6/youraccessportal/overview.md)
   topic for additional information.
 

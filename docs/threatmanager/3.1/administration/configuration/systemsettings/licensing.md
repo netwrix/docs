@@ -24,7 +24,7 @@ header.
 
 ## Import License
 
-Follow the steps to import a license key file.
+To import a license key file.
 
 ![License section of the Licensing page](/images/threatmanager/3.0/administration/configuration/systemsettings/licensingbrowse.webp)
 
@@ -36,5 +36,4 @@ Explorer closes and returns to the console.
 
 **Step 3 –** Refresh the page to confirm that the license has been uploaded properly.
 
-The License Key is now imported into Threat Manager. The license information is displayed in the
-License Info section at the top of the page.
+Threat Manager imports the License Key. The License Info section at the top of the page displays the license information:

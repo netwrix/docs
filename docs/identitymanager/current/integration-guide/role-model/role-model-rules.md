@@ -1,4 +1,4 @@
-﻿# Assignment Policy
+# Assignment Policy
 
 The assignment policy is the set of rules enforced on the resources to compute automatic assignments and risks. It contains the role model and risks definition.
 
@@ -153,7 +153,7 @@ provisioned to materialize `SRa`.
 
 This series of steps is actually a very simplified version of the [Evaluate Policy](../../integration-guide/role-assignment/evaluate-policy) algorithm.
 
-![Cascading From **dimensions** To Roles To Provisioning Orders](/images/identitymanager/integration-guide/role-model/role-model-rules/enforce-assignment-policy-summary.webp)
+![Cascading From **dimensions** To Roles To Provisioning Orders](/images/identitymanager/enforce-assignment-policy-summary.webp)
 
 **---**
 

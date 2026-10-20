@@ -7,8 +7,7 @@ sidebar_position: 30
 # System Settings
 
 From this section, you can manage general settings that apply to the entire Endpoint Protector
-system. Some of these settings were pre-configured during the initial setup through the Endpoint
-Protector Configuration Wizard. You can adjust these settings to customize system behavior, security
+system. The Endpoint Protector Configuration Wizard pre-configures some of these settings during initial setup. You can adjust these settings to customize system behavior, security
 protocols, user access, and integrations to meet your organization’s needs.
 
 ## Department Usage
@@ -17,7 +16,7 @@ Select an option to grant access for clients based on the Department Code. You c
 Default Department code - defdep.
 
 :::note
-See the System Settings topic for additional information.
+For more information, see the System Settings topic.
 :::
 
 
@@ -27,21 +26,19 @@ See the System Settings topic for additional information.
 
 You can modify the following session timeout settings:
 
-- Session Timeout – set the amount of time the user is inactive until the session expires between 5
-  and 60 minutes
-- Timeout counter – set the amount of time for the session timeout countdown between 5 seconds and
+- Session Timeout – set the amount of time, between 5 and 60 minutes, that the user can remain
+  inactive before the session expires
+- Timeout counter – set the length of the session timeout countdown, between 5 seconds and
   Session Timeout minus one minute
 
-Example: If you deﬁne the Session Timeout to 5 minutes and the Timeout counter to 60 seconds, then
-after 4 minutes of inactivity you will be notiﬁed by the pop-up window that in 60 seconds you will
-be logged out.
+Example: If you set the Session Timeout to 5 minutes and the Timeout counter to 60 seconds, after 4 minutes of inactivity a pop-up window notifies you that Endpoint Protector will log you out in 60 seconds.
 
 ![Session Settings](sessionsettings.webp)
 
-If you remain idle for the deﬁned amount of time, then Endpoint Protector stops responding and
-displays a message that indicates the session will expire in the predeﬁned countdown.
+After you remain idle for the defined amount of time, Endpoint Protector stops responding and
+displays a message that indicates the session will expire in the predefined countdown.
 
-You can choose to log out or continue your session, resetting the session timeout interval.
+You can log out, or continue your session to reset the session timeout interval.
 
 ![Session timeout interval](sessiontimeout.webp)
 
@@ -57,31 +54,31 @@ or computer rights.
 Manage settings related to Smart Groups, Default Groups for Computers or Users.
 
 :::note
-Smart Groups are dynamic groups for which membership can be deﬁned based on element name
+Smart Groups are dynamic groups whose membership you can deﬁne based on an element name
 pattern.
 :::
 
 
-- Enable Smart Groups – when this setting is disabled, it will convert Smart Groups to regular
-  groups with no entities assigned and will remove the Default Group for Computers and the Default
-  Group for Users.
-- Enable Default Group for Computers – this will create a default group for computers containing all
-  computers that are not part of a Smart Group.
+- Enable Smart Groups – when you disable this setting, Endpoint Protector converts Smart Groups to
+  regular groups with no entities assigned and removes the Default Group for Computers and the
+  Default Group for Users.
+- Enable Default Group for Computers – creates a default group for computers containing all
+  computers that aren't part of a Smart Group.
 
 :::note
-By disabling this setting, you will delete the Default Group for Computers.
+Disabling this setting deletes the Default Group for Computers.
 :::
 
 
-- Enable Default Group for Users – this will create a default group for users containing all users
-  that are not part of a Smart Group.
+- Enable Default Group for Users – creates a default group for users containing all users
+  that aren't part of a Smart Group.
 
 :::note
-By disabling this setting, you will delete the Default Group for Users.
+Disabling this setting deletes the Default Group for Users.
 :::
 
 :::note
-Smart Group sync job interval: the default configured time is 60 min. There is a possible configuration time between that goes from 15 min up to 1440 minutes.
+Smart Group sync job interval: the default configured time is 60 min. You can configure an interval between 15 and 1440 minutes.
 :::
 
 ![Smart Groups](SmartGroupSettings.png)
@@ -91,12 +88,12 @@ Smart Group sync job interval: the default configured time is 60 min. There is a
 Configure the client update settings to optimize update performance by specifying a custom hostname
 and port.
 
-- Use custom hostname: Enter a custom hostname to tailor the client update URL as needed.
+- Use custom hostname: Enter a custom hostname to tailor the client update URL.
 - Use custom port: Specify a custom port for generating the client update download link, instead of
   using the default port 443.
 
 :::note
-Note: Ensure that your specified hostname and port settings comply with your network
+Ensure that your specified hostname and port settings comply with your network
 policies and any security requirements.
 :::
 
@@ -107,7 +104,7 @@ policies and any security requirements.
 
 To display more information in Endpoint Protector, enable the following:
 
-- Show VID, PID and Serial Number for Oﬄine Temporary Password
+- Show VID, PID, and Serial Number for Oﬄine Temporary Password
 - Show MAC Address for Oﬄine Temporary Password
 - Show User Domain
 - MAC Address Priority
@@ -122,32 +119,58 @@ Manage the following log settings:
 - Set the Maximum number of rows in millions to export the Logs Report in .csv format.
 
 :::note
-By setting the maximum number of rows to 1.0, you will export 1 million logs in the Logs
-Report .csv export as one row corresponds with one log.
+Setting the maximum number of rows to 1.0 exports 1 million logs in the Logs
+Report .csv export, since one row corresponds with one log.
 :::
 
 
-When having partitions for logs on the server, make sure the dates are also selected when making the
+If the server has partitions for logs, also select the dates when making the
 export.
 
 - Reporting V2 – enabled by default, use this setting to modify the Content Aware Report log
   structure and display information in Destination details, Email sender, and Email subject columns.
 
 :::note
-For Endpoint Protector Server versions older than 5.7.0.0, the Reporting V2 setting is not
-enabled by default.
+For Endpoint Protector Server versions older than 5.7.0.0, Endpoint Protector doesn't enable
+the Reporting V2 setting by default.
 :::
 
 
-The structure enabled by this setting will also be reﬂected in SIEM.
+SIEM also reﬂects the structure that this setting enables.
 
-- **NOTE:** Set the Maximum number of reported threats per event that will be displayed in the
-  Content Aware Report log structure, the expanded Log Details section, on the Count column.
+- Set the Maximum number of reported threats per event to display in the
+  Content Aware Report log structure, expanded Log Details section, in the Count column.
 
 :::note
 You can set a number of reported threats between 100 and 1000.
 :::
 
+
+- Enable Log Rotate After – sets how long Endpoint Protector keeps logs on the server, in months.
+  The default is three months. Log rotation runs every five minutes and deletes Device Control, Content Aware
+  Protection, and eDiscovery logs older than the retention period, together with their associated
+  file shadows. For example, setting this option to 6 keeps six months of logs and removes anything
+  older. Enter a value between 1 and 360 months. There's no option to turn log rotation off once
+  it's active — 1 month is the shortest retention period you can configure, and Endpoint Protector
+  rejects a value of 0.
+
+:::warning
+Endpoint Protector 2608 enables this setting by default. Earlier server versions kept these logs
+indefinitely unless an administrator removed them manually or through Audit Log Backup, which can
+delete logs from the server as it archives them. The first rotation cycle runs within five minutes
+of the server starting, so Endpoint Protector deletes any logs already older than the configured
+period at that point — export anything you need to keep before you upgrade. Review this value
+as soon as you migrate and configure it to match your organization's retention needs. If you must
+retain log data for compliance beyond the configured period, export it regularly through
+**Reports and Analysis** > **Export Logs** and store the exports separately — don't rely on
+server-side log storage for long-term compliance evidence, since you can't disable log rotation
+to keep data on the server indefinitely.
+:::
+
+
+- Show old logs structure – displays logs collected before the migration to the 2608 database
+  structure. Enabling this option adds an **Export Audit Logs** tab and makes the legacy Audit Log
+  Backup sections visible. Leave it disabled if the server holds no pre-migration logs.
 
 ![Log Settings](logsettings.png)
 
@@ -182,9 +205,7 @@ Log request:
 
 ## Content Aware Protection – Ignore Thresholds
 
-Enable the Ignore Thresholds setting to allow Endpoint Protector to log all sensitive information
-from scanned ﬁles from 1 to 100 000 threats limit set in the Maximum number of reported threats
-ﬁeld, for the Content Aware Protection Block policies applied.
+Enable the Ignore Thresholds setting to log all sensitive information from scanned files with a threat count from 1 to 100,000, as limited in the Maximum number of reported threats field for Content Aware Protection Block policies.
 
 :::note
 This will increase the amount of logging and potentially affect client and server
@@ -194,12 +215,12 @@ performance.
 
 :::warning
 The Limit Reporting Content Aware Protection setting has priority over Ignore
-Thresholds setting. If Limit Reporting Content Aware Protection is enabled, the reporting will stop
-when the threshold is reached.
+Thresholds setting. If you enable Limit Reporting Content Aware Protection, reporting stops
+when the threat count reaches the threshold.
 :::
 
 
-The maximum number of reported threats will be automatically modiﬁed as follows:
+Endpoint Protector automatically modiﬁes the maximum number of reported threats as follows:
 
 | User Input | Input Updated |
 | ---------- | ------------- |
@@ -211,21 +232,21 @@ The maximum number of reported threats will be automatically modiﬁed as follow
 
 Limit Reporting Content Aware Protection refers to Report Only policies.
 
-- If enabled, the Endpoint Protector client will stop reporting threats for a Report Only policy
-  once it ﬁnds enough threats to conclude it is satisﬁed.
+- When you enable this setting, the Endpoint Protector client stops reporting threats for a Report
+  Only policy after it finds enough threats to satisfy the policy.
 
 The "Content Aware Protection - Ignore Thresholds" toggle refers to Block & Report policies.
 
-- When this toggle is On, scanning will not stop when a block verdict is determined, but will
-  continue to report further threats found in a transfer.
-- To limit the number of reported threats in this case, the value of the "Maximum number of reported
-  threats" setting can be set to a value greater than zero. The set value is only indicative for the
-  number of reported threats, the actual number reported can be slightly larger.
+- When this toggle is On, scanning continues past a block verdict and reports further
+  threats found in a transfer.
+- To limit the number of reported threats in this case, set the "Maximum number of reported threats"
+  setting to a value greater than zero. The value you set only indicates the number of
+  reported threats; the actual number reported can be slightly larger.
 
-The ‘Global/Threat Threshold’ values in Content Aware Protection policies will be ignored/overridden
-by the setting ‘Ignore Thresholds’ when the Boolean logic of the Content Aware Protection policy
-contains at least one “AND” operator. A policy will be satisﬁed when the Boolean logic (example: see
-below) is met with one or more matches per identiﬁer.
+The ‘Ignore Thresholds’ setting ignores and overrides the ‘Global/Threat Threshold’ values in
+Content Aware Protection policies when the Boolean logic of the Content Aware Protection policy
+contains at least one “AND” operator. A policy triggers when one or more matches per identiﬁer
+satisfy the Boolean logic (see the following example).
 
 Eg. ( E-mail AND SSN US) OR CC Visa
 
@@ -249,9 +270,9 @@ Eg. ( E-mail AND SSN US) OR CC Visa
     - CC Visa: 6
     - IBAN: 22
 
-In our example, the policy will trigger when the policy is satisﬁed (Boolean logic), no matter if
-the ‘Threat Threshold’ is met or not due to the ‘AND’ operator in the policy. Depending on the data
-structure in our test ﬁle, Endpoint Protector Client may report different 10 threats to Endpoint
+In this example, the policy will trigger when the policy is satisfied (Boolean logic), regardless
+of the ‘Threat Threshold’, due to the ‘AND’ operator in the policy. Depending on the data
+structure in the test file, Endpoint Protector Client may report different 10 threats to Endpoint
 Protector Server
 
 - 2 E-mails + 2 SSN US + 6 CC Visa
@@ -259,28 +280,28 @@ Protector Server
 - Etc.
 
 :::note
-Identiﬁers which are not part of the Boolean logic in a Content Aware Protection policy
-will not be reported!
+Endpoint Protector doesn't report identifiers that aren't part of the Boolean logic in a Content
+Aware Protection policy.
 :::
 
 
 Generally, a Content Aware Protection policy (Block & Report) will trigger when the Boolean logic of
-the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operator(s) in
+the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
 the policy, the scan engine will ignore the ‘Threat Threshold’ setting and continue the scan until
-the total threat of 10 is reached, no matter if “Limit Reporting” (under DEVICE CONTROL - Global
-Settings) is being enabled or disabled.
+it reaches a total of 10 threats, regardless of whether you enable “Limit Reporting” (under DEVICE
+CONTROL - Global Settings).
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
-the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operator(s) in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is enabled, the scan continues until the total threat of 10 from
-setting ‘Maximum number of reported threats’ under ‘Ignore Thresholds’ is reached.
+the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you enable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan continues until it reaches the total
+threat of 10 from the ‘Maximum number of reported threats’ setting under ‘Ignore Thresholds’.
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
-the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operator(s) in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is disabled, the scan engine will continue the scan until the
-entire ﬁle is scanned, but will only report 10 threats, set with ‘Maximum number of reported
+the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you disable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan engine will continue until it scans
+the entire ﬁle, but will only report 10 threats, as set with ‘Maximum number of reported
 threats’ under ‘Ignore Thresholds’.
 
 **Example - Scenario 2**
@@ -303,9 +324,9 @@ threats’ under ‘Ignore Thresholds’.
     - CC Visa: 6
     - IBAN: 22
 
-In our example, the policy will trigger when the policy is satisﬁed (Boolean logic), no matter if
-the ‘Threat Threshold’ is met or not due to the ‘AND’ operator in the policy. Depending on the data
-structure in our test ﬁle, Endpoint Protector Client may report different 4 threats to Endpoint
+In this example, the policy will trigger when the policy is satisfied (Boolean logic), regardless
+of the ‘Threat Threshold’, due to the ‘AND’ operator in the policy. Depending on the data
+structure in the test file, Endpoint Protector Client may report different 4 threats to Endpoint
 Protector Server
 
 - 1 E-mail + 1 SSN US + 2 CC Visa
@@ -313,22 +334,22 @@ Protector Server
 - Or 1 E-mail + 2 SSN US + 1 CC Visa
 
 Generally, a Content Aware Protection policy (Block & Report) will trigger when the Boolean logic of
-the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operator(s) in
+the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
 the policy, the scan engine will ignore the ‘Threat Threshold’ setting and continue the scan until
-the total threat of 4 from setting ‘Maximum number of reported threats’ is reached, no matter if
-“Limit Reporting” (under DEVICE CONTROL - Global Settings) is being enabled or disabled.
+it reaches the total threat of 4 from the ‘Maximum number of reported threats’ setting, regardless
+of whether you enable “Limit Reporting” (under DEVICE CONTROL - Global Settings).
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
-the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operator(s) in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is enabled, the scan continues until the total threat of 4 from
-setting ‘Maximum number of reported threats’ under ‘Ignore Thresholds’ is reached.
+the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you enable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan continues until it reaches the total
+threat of 4 from the ‘Maximum number of reported threats’ setting under ‘Ignore Thresholds’.
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
-the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operator(s) in
-the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If “Limit Reporting” (under
-DEVICE CONTROL - Global Settings) is disabled, the scan engine will continue the scan until the
-entire ﬁle is scanned, but will only report 4 threats, set with ‘Maximum number of reported threats’
+the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and with 1+ ‘AND’ operators in
+the policy, the scan engine will ignore the ‘Threat Threshold’ setting. If you disable “Limit
+Reporting” (under DEVICE CONTROL - Global Settings), the scan engine will continue until it scans
+the entire ﬁle, but will only report 4 threats, as set with ‘Maximum number of reported threats’
 under ‘Ignore Thresholds’.
 
 **Example - Scenario 3**
@@ -351,9 +372,9 @@ under ‘Ignore Thresholds’.
     - CC Visa: 6
     - IBAN: 22
 
-In our example, the policy will trigger when the policy is satisﬁed (Boolean logic), meaning that
-all identiﬁers reach a ‘Threat Threshold’ of at least 1, ignoring setting ‘Maximum number of
-reported threats’ under ‘Ignore Thresholds’. Depending on the data structure in our test ﬁle,
+In this example, the policy will trigger when the policy is satisfied (Boolean logic), meaning that
+all identifiers reach a ‘Threat Threshold’ of at least 1, ignoring setting ‘Maximum number of
+reported threats’ under ‘Ignore Thresholds’. Depending on the data structure in the test file,
 Endpoint Protector Client may report the single threats to Endpoint Protector Server differently
 
 - 1 E-mails + 1 SSN US
@@ -362,14 +383,14 @@ Endpoint Protector Client may report the single threats to Endpoint Protector Se
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed, meaning that all identiﬁers reach a ‘Threat Threshold’ of at least 1. The
 scan engine will ignore the ‘Maximum number of reported threats’ under ‘Ignore Thresholds’, when
-“Limit Reporting” (under DEVICE CONTROL - Global Settings) is enabled. Reporting stops as soon as
+you enable “Limit Reporting” (under DEVICE CONTROL - Global Settings). Reporting stops as soon as
 the policy is satisﬁed.
 
 Generally, a Content Aware Protection policy (Report only) will trigger when the Boolean logic of
 the policy is satisﬁed, meaning that all identiﬁers reach a ‘Threat Threshold’ of at least 1. The
 scan engine will consider the ‘Maximum number of reported threats’ under ‘Ignore Thresholds’, when
-“Limit Reporting” (under DEVICE CONTROL - Global Settings) is disabled. Reporting stops when 10
-threats are found.
+you disable “Limit Reporting” (under DEVICE CONTROL - Global Settings). Reporting stops when the
+scan ﬁnds 10 threats.
 
 **Example - Scenario 4**
 
@@ -391,10 +412,10 @@ threats are found.
     - CC Visa: 6
     - IBAN: 22
 
-In our example, the policy will trigger when the policy is satisﬁed (Boolean logic), meaning when at
-least one identiﬁer (eg. E-mail) reaches a ‘Threat Threshold’ of 4, but the scan engine will
-continue to scan until the total threat of 10 from setting ‘Maximum number of reported threats’
-under ‘Ignore Thresholds’ is reached. Depending on the data structure in our test ﬁle, Endpoint
+In this example, the policy will trigger when the policy is satisfied (Boolean logic), meaning when at
+least one identifier (eg. E-mail) reaches a ‘Threat Threshold’ of 4, but the scan engine will
+continue to scan until it reaches the total threat of 10 from setting ‘Maximum number of reported
+threats’ under ‘Ignore Thresholds’. Depending on the data structure in the test file, Endpoint
 Protector Client may report different 10 threats to Endpoint Protector Server
 
 - 2 E-mails + 2 SSN US + 6 CC Visa
@@ -402,9 +423,9 @@ Protector Client may report different 10 threats to Endpoint Protector Server
 - Etc.
 
 Generally, a Content Aware Protection policy (Block & Report) will trigger when the Boolean logic of
-the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and no ‘AND’ operator(s) in the
-policy, the scan engine will search until the total threat of 10 from setting ‘Maximum number of
-reported threats’ under ‘Ignore Thresholds’ is reached.
+the policy is satisﬁed. However, with ‘Ignore Thresholds’ enabled and no ‘AND’ operators in the
+policy, the scan engine will search until it reaches the total threat of 10 from the ‘Maximum number
+of reported threats’ setting under ‘Ignore Thresholds’.
 
 ## Virtual Desktop Clones
 
@@ -426,32 +447,32 @@ Use this section to regenerate a custom server certiﬁcate. Enable the option a
 following information:
 
 - FQDN (Fully Qualiﬁed Domain Name) – used in certiﬁcates and Regenerate Server Certiﬁcate Stack and
-  CA Certiﬁcate used for Deep Packet Inspection on macOS
+  CA Certiﬁcate used for Deep Packet Inspection on macOS. Set it to the FQDN that your EPP Clients and single sign-on (SSO) integrations use to reach the server.
 - Country name – add the ﬁrst two letters of the country
 - State or Province name – add the state or province name
 - Locality Name – add locality name
 
-Once you’ve set all the mandatory information, scroll to the bottom of the settings page, click
-**Save** and then return to the Server Certiﬁcate Stack section and click **Regenerate Server
-Certiﬁcate Stack**.
+After you’ve set all the mandatory information, scroll to the bottom of the settings page, click
+**Save** and then return to the Server Certificate Stack section and click **Regenerate Server
+Certificate Stack**.
 
-The Server certiﬁcate will be regenerated in a couple of minutes, and the user will be logged out.
+Endpoint Protector regenerates the server certiﬁcate in a couple of minutes and logs the user out.
 
 :::note
-Please download the Deep Packet Inspection certificate again on both macOS and Linux, and
-ensure that it is trusted in the respective keychain on each system.
+Download the Deep Packet Inspection certificate again on both macOS and Linux, and
+ensure that each system's keychain trusts it.
 :::
 
 
 :::note
-Regenerating the CA certificate requires manually adding it to the macOS keychain, as well
-as to Linux systems.
+Regenerating the CA certificate requires manually adding it to the macOS keychain and to Linux
+systems.
 :::
 
 
 :::warning
-Do not use this setting if no instance of macOS 12.0 (or higher) is registered on the
-Endpoint Protector server.
+Don't use this setting if the Endpoint Protector server has no registered instance of
+macOS 12.0 (or higher).
 :::
 
 
@@ -460,12 +481,12 @@ Endpoint Protector server.
 ## Single Sign On
 
 Enable the Single Sign On Login setting to log into Endpoint Protector and then select a **Failover
-Login User** to use when single sign on is not functional.
+Login User** to use when single sign on isn't functional.
 
 ![Single Sign On](singlesignon.webp)
 
 :::note
-See the [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon.md) topic for additional information.
+For more information, see [Single Sign On](/docs/endpointprotector/admin/systemconfiguration/singlesignon/singlesignon.md).
 :::
 
 
@@ -475,7 +496,7 @@ Enable the **Active Directory Authentication** setting to import an Active Direc
 administrators into Endpoint Protector as Super Administrators.
 
 :::note
-By enabling the Active Directory Authentication, you allow the administrators to use their
+Enabling Active Directory Authentication lets administrators use their
 Active Directory credentials to log into Endpoint Protector.
 :::
 
@@ -485,11 +506,11 @@ To import an Active Directory group of administrators, follow these steps:
 **Step 1 –** Fill in the ﬁelds with the required information, considering:
 
 1. In some cases, you need to add the domain in front of the username (domain\username)
-2. Active Directory Administrators Group can be synchronized with any other groups of users except
-   for "primary groups" which is limited from this action by Microsoft
+2. You can synchronize the Active Directory Administrators Group with any other groups of users
+   except for "primary groups", which Microsoft limits from this action
 
-**Step 2 –** Scroll to the bottom of the page and save the changes. You will view a successful
-message at the top of the page.
+**Step 2 –** Scroll to the bottom of the page and save the changes. A success message appears at the
+top of the page.
 
 **Step 3 –** Return to the Active Directory Authentication section and click **Test Connection** to
 conﬁrm the process was successful.
@@ -497,10 +518,10 @@ conﬁrm the process was successful.
 **Step 4 –** Click **Sync AD Administrators**.
 
 :::warning
-Once the Active Directory Administrators Group has been deﬁned, only users that are
-part of this AD group will be synced and imported as Super Administrators for Endpoint Protector.
-Any additional administrators (with different access control levels) can be created manually from
-the System Administrators section.
+After you define the Active Directory Administrators Group, Endpoint Protector syncs and imports
+only users that are part of this AD group as Super Administrators. You can create any additional
+administrators (with different access control levels) manually from the System Administrators
+section.
 :::
 
 
@@ -508,22 +529,11 @@ the System Administrators section.
 
 ## E-mail Server Settings
 
-![E-mail Server Settings](mailserversettings.webp)
-
-Manage Email server settings based on the email type you use - native or SMTP.
-
-:::note
-To enable this feature, you need an Internet connection.
+:::warning
+The E-mail Server Settings moved to a new section. Go to **System Configuration** > **[Mail Settings](/docs/endpointprotector/admin/systemconfiguration/mailsettings.md)** to configure email server settings and authentication.
 :::
 
-
-Manage email server settings based on your email type—native or SMTP, with support for TLS 1.3.
-
-![E-mail Server Settings](mailserversettingstwo.webp)
-
-![E-mail Server Settings](mailserversettingsthree.webp)
-
-### Proxy Server Settings
+## Proxy Server Settings
 
 Conﬁgure Proxy server settings by managing the following:
 
@@ -532,10 +542,10 @@ Conﬁgure Proxy server settings by managing the following:
 - IP and Port
 - Proxy access credentials (username/password)
 
-Once you provide all the information, click Test to conﬁrm the settings are working successfully.
+After you provide all the information, click **Test** to confirm the settings work.
 
 :::note
-If a Proxy Server is not conﬁgured, Endpoint Protector will connect directly to
+If you don't conﬁgure a Proxy Server, Endpoint Protector will connect directly to
 liveupdate.endpointprotector.com.
 :::
 
@@ -550,13 +560,13 @@ Edit contact details for the main administrator and then click Save to keep all 
 
 ### Server Display Name
 
-Endpoint Protector users can easily visually differentiate environments within the Endpoint Protector console, ensuring precise identification and preventing unintended actions in the wrong environment. This customization feature allows users to add custom text above the Endpoint Protector logo on the login page and alongside the logo in the console header. Moreover, users have the capability to upload a custom logo for further personalization.
+Endpoint Protector users can visually differentiate environments within the Endpoint Protector console, ensuring precise identification and preventing unintended actions in the wrong environment. This customization feature lets users add custom text at the Endpoint Protector logo on the login page and alongside the logo in the console header. Users can also upload a custom logo.
 
-To assist customers in distinguishing between multiple EPP Server consoles, Netwrix has introduced options for configuring custom text, icon markings, and extended legal banners for compliance purposes. Organizations managing multiple consoles, such as those for production and testing environments, can implement distinct visual cues. These elements, including custom login text, background colors, and legal banner specifications, help administrators easily identify the environment they are working in, ensuring the appropriate usage of each console.
+Organizations managing multiple Endpoint Protector Server consoles (such as production and testing environments) can use distinct visual cues—custom text, icon markings, and extended legal banners—to differentiate between them. These elements help administrators identify the environment they are working in and ensure appropriate console usage.
 
-Refer to the image above for guidance on customizing these elements. You can enable custom login and header displays, Enter your desired text and choose colors that will best highlight your environment’s uniqueness. Additionally, you can upload a custom logo and configure legal banners for added clarity and compliance. By strategically using these visual indicators, administrators can effortlessly distinguish between different operational contexts, enhancing both security and workflow efficienc
+To customize these elements, refer to the image in the Server Display Name section. You can enable custom login and header displays, enter your desired text, and choose colors to highlight your environment’s uniqueness. You can also upload a custom logo and configure legal banners for clarity and compliance. Using these visual indicators helps administrators distinguish between different operational contexts and enhance both security and workflow efficiency.
 
-![EPP Server Display Name](serverdisplayname.webp)
+![Endpoint Protector Server Display Name](serverdisplayname.webp)
 
 :::note
 The legal banner placeholder can accommodate up to 5,000 characters.

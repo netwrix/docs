@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Create a Composite Role"
 description: "Create a Composite Role"
 sidebar_position: 70
@@ -12,7 +12,7 @@ How to define composite **roles** in order to create sets of single **roles** ea
 
 A composite role is a set of single **roles** that are usually assigned together, because they revolve around the same application, or the same job, etc. Composite **roles** are aggregates of single **roles**, they can help organize the role catalog. See the [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole) topic for additional information.
 
-![Schema](/images/identitymanager/user-guide/optimize/composite-role-creation/compositeroles_applicativeroles.webp)
+![Schema](/images/identitymanager/compositeroles_applicativeroles.webp)
 
 A composite role is a business role comprehensible by managers. It provides an additional layer of abstraction above existing entitlements and single **roles**. We can say that if a single role allows a user to perform a task, a composite role allows them to perform a job.
 
@@ -22,7 +22,7 @@ Composite **roles** can also be created based on the **rules** provided by Role 
 
 The following example shows single **roles** from A to F. Role Mining suggested the **rules** on the schema, linking these single **roles** to the organizations R&D and Project as well as to the functions developer, writer, contractor and project manager. The idea is to use these **rules** to create composite **roles**. Here, we clearly have one role for R&D-developer, one for R&D-writer, Project-contractor and Project-project manager. Thus, it is clear here that composite **roles** add an abstraction layer.
 
-![Example](/images/identitymanager/user-guide/optimize/composite-role-creation/compositeroles_schema.webp)
+![Example](/images/identitymanager/compositeroles_schema.webp)
 
 Single role **rules** link composite **roles** to single **roles**: a single role rule states that specific single **roles** are assigned according to specific criteria, particularly composite **roles**. See the [Single Role Rule](../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule) and [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation)topics for additional information. Thus, a composite role assignment can imply specific single role assignments.
 
@@ -42,13 +42,13 @@ Create a composite role by proceeding as follows:
 
 **Step 1 :** On the home page in the **Configuration** section, click on **Access **roles**** to access the **roles** page.
 
-![Home Page - Access **roles**](/images/identitymanager/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
+![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 
 **Step 2 :** On the **roles** page, click on the adequate category and create a role by clicking on **+ New** at the top right corner.
 
 **Step 3 :** Fill in the fields.
 
-![singlerolescatalog_createcompositerole_v62](/images/identitymanager/user-guide/optimize/composite-role-creation/singlerolescatalog_createcompositerole_v62.webp)
+![singlerolescatalog_createcompositerole_v62](/images/identitymanager/singlerolescatalog_createcompositerole_v62.webp)
 
 - **Identifier**: must be unique among **roles** and without any whitespace.
 - **Name**: will be displayed in the UI to identify the single role.
@@ -89,11 +89,11 @@ In order to verify the process, check that the role and rule are created with th
 
 For **roles**, click on **Access **roles**** on the home page in the **Configuration** section.
 
-![Home Page - Access **roles**](/images/identitymanager/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
+![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 
 Select composite **roles** and find the role you created inside the right category and with the right parameters.
 
-![Access Composite **roles**](/images/identitymanager/user-guide/optimize/composite-role-creation/compositeroles_testroles_v602.webp)
+![Access Composite **roles**](/images/identitymanager/compositeroles_testroles_v602.webp)
 
 For **rules**, follow the instructions about assignment **rules**. See the [Automate Role Assignments](../../user-guide/optimize/assignment-automation/automate-role-assignment)
 

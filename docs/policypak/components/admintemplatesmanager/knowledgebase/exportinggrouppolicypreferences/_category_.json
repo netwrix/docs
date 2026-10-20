@@ -2,5 +2,8 @@
   "label": "Exporting Group Policy Preferences Using PolicyPak Preferences Manager",
   "position": 40,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

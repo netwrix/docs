@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Set Access and Permissions
 
-Platform Governance for Salesforce access is only granted to system administrations. To extend
+By default, Platform Governance for Salesforce grants access only to system administrators. To extend
 access to other users:
 
 1. Open Salesforce **Setup** > **Users** > **Users**
@@ -20,7 +20,7 @@ access to other users:
    ![editassignments](/images/platgovsalesforce/installing_strongpoint/editassignments.webp)
 
 5. Select **Netwrix Grant Permissions** from the **Available Permission Sets**
-6. Click **Add**. It should now be shown in the **Enabled Permission Sets**.
+6. Click **Add**. The permission set now appears in the **Enabled Permission Sets** list.
 7. Click **Save**.
 
    ![enablepermissionsets](/images/platgovsalesforce/installing_strongpoint/enablepermissionsets.webp)
@@ -28,13 +28,13 @@ access to other users:
 The user is ready to view and use Platform Governance for Salesforce.
 
 :::note
-The previous image shows additional Permission Sets included in the package. Below is a brief description of each:
+The previous image shows additional Permission Sets included in the package. The following is a brief description of each:
    - **Netwrix Administrator**  
    Provides access to Netwrix configuration settings.
 
    - **Netwrix CR Approval Override**  
-   Allows users to approve a Change Request regardless of the current policy.
+   Users with this permission set can approve a Change Request regardless of the current policy.
 
    - **Netwrix Restricted**  
-   A restricted set of permissions required for users who will be making data updates to tracked or controlled objects.
+   A restricted set of permissions required for users who make data updates to tracked or controlled objects.
 :::

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Usercube-Create-DatabaseViews"
 description: "Usercube-Create-DatabaseViews"
 sidebar_position: 60
@@ -36,5 +36,5 @@ The following example allows the user to connect to Identity Manager server at 
 
 You can explore created views in the Identity Manager database's Views folder in SQL Server Management Studio
 
-![SSMS Views](/images/identitymanager/integration-guide/executables/references/create-databaseviews/identitymanager-create-databaseviews_ssms.webp)
+![SSMS Views](/images/identitymanager/identitymanager-create-databaseviews_ssms.webp)
 

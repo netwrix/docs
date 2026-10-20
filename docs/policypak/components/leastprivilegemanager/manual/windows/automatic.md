@@ -15,7 +15,7 @@ representative machines.
 
 :::note
 See the
-[Auto Rules Generator Tool (with SecureRun)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/basicsandgettingstarted/autorulesgeneratortool.md)
+[Auto Rules Generator Tool (with SecureRun)](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/autorulesgeneratortool.md)
 video for a demo of PolicyPak Automatic Rules Generator Tool in action.
 :::
 

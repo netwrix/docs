@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Edit or Delete a Playbook Step
 
-Follow the steps to edit a playbook step.
+ edit a playbook step.
 
 ![playbookstep](/images/threatmanager/3.0/administration/playbooks/playbookstep.webp)
 
@@ -20,7 +20,7 @@ The playbook step is now updated.
 
 ## Delete a Playbook Step
 
-Follow the steps to delete a playbook step.
+ delete a playbook step.
 
 **Step 1 –** Click the step in the playbook to expand it.
 

@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # File Actions
 
-A File action can output the event data collected by a policy to a log file. Follow the steps to add
-a File action to a policy/template.
+A File action can output the event data collected by a policy to a log file.
 
 ![Actions tab - Actions Configurations area](/images/threatprevention/8.0/admin/policies/actions/actionsconfigurationsarea.webp)
 
@@ -24,23 +23,23 @@ window.
 - Check the box for **Enabled** to allow the policy to send the event data to the file
 - Description – Provide a clear and detailed description for this File action. This is optional but
   recommended.
-- File Name – Provide a name for the file. The file extension is added automatically
+- File Name – Provide a name for the file. Threat Prevention adds the file extension automatically
 
-  - By default, the file is created at the following location:
+  - By default, Threat Prevention creates the file at the following location:
 
 **…\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager\output\file**
 
   - The name can include a full UNC path to place the file at a desired location.
 
-- Select the radio button for the desired File Output Format:
+- Select the radio button for the File Output Format you want:
   - XML
   - Comma Delimited (CSV)
 - Adjust the File Size Limit and Minimum disk space required for reporting values as desired
 
   :::note
   Set thresholds for file event consumers to maximize performance and minimize
-  individual file sizes. When a file reaches its maximum size, it continues to record data but the
-  oldest data in the file is deleted to make room for the newest.
+  individual file sizes. When a file reaches its maximum size, it continues to record data, but
+  Threat Prevention deletes the oldest data in the file to make room for the newest.
   :::
 
 
@@ -53,5 +52,5 @@ window.
 
 ![Actions tab - File action created](/images/threatprevention/8.0/admin/policies/actions/fileaction.webp)
 
-The Actions tab now displays the configured settings for the specified File action. The action
-configuration can be directly edited through this display as well.
+The Actions tab now displays the configured settings for the specified File action. You can also
+directly edit the action configuration through this display.

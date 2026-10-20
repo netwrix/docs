@@ -28,7 +28,6 @@ Most Netwrix rules use `existence` or `substitution`. Default to these unless an
 The following rules already exist in `.vale/styles/Netwrix/`. Check all of them before writing a new rule to avoid duplication or conflict:
 
 - **Aforementioned** — flags "aforementioned"; suggest direct reference
-- **BoilerplateCrossRef** — flags "for more information"; require specific cross-reference text
 - **Checkbox** — substitutes "check box" → "checkbox"
 - **CondescendingWords** — flags "simply", "easily", "basically", "obviously"
 - **Dropdown** — substitutes "dropdown"/"drop down" → "drop-down"

@@ -13,10 +13,11 @@ keywords:
   - support ticket
   - System Administrators
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Resetting an Administrator Password
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "Resetting an Administrator Password"
 knowledge_article_id: kA0Qk0000002B2eKAE
 ---
@@ -25,7 +26,9 @@ knowledge_article_id: kA0Qk0000002B2eKAE
 
 ## Overview
 
-This article explains how to reset an administrator password on the Netwrix Endpoint Protector Server. These instructions apply to regular Netwrix Endpoint Protector administrators. For administrators imported from Active Directory, you must manage the password through Active Directory.
+This article explains how to reset an administrator password on the Netwrix Endpoint Protector Server. These instructions apply to regular Netwrix Endpoint Protector administrators. Administrators imported from Active Directory or from SSO (Azure and OKTA) must have their password managed through their respective identity provider instead.
+
+For the full list of administrator account settings, roles, and password security options, see [Administration and Access Control](/docs/endpointprotector/admin/systemconfiguration/adminandaccess).
 
 ## Instructions
 
@@ -38,6 +41,10 @@ This article explains how to reset an administrator password on the Netwrix Endp
 ![Edit administrator password fields in Endpoint Protector](./../0-images/ka0Qk000000EbSj_0EMQk00000CAmm2.png)
 
 ![Require password change at next login option in Endpoint Protector](./../0-images/ka0Qk000000EbSj_0EMQk00000CAaeP.png)
+
+:::warning
+The **Require password change at next login** setting is ignored for Active Directory imported administrators and for SSO users (Azure and OKTA). It's also overridden if **Enforce All Administrator Password Security at Next Login** is enabled under **System Configuration** > **System Security** — that setting takes priority and forces a password change for all users, not only administrators.
+:::
 
 6. If you encounter any issues and are unable to reset the password, create a support ticket via the [Netwrix Support portal](https://www.netwrix.com/support.html) for assistance.
 7. If the server is hosted on your end, the support team will contact you to schedule a remote session for resetting the password in the server's backend.

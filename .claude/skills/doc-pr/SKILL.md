@@ -32,15 +32,15 @@ Split the comma-separated file list into individual file paths for processing.
 
 This stage applies the doc-help editing analysis to the PR changes — but non-interactively. You are producing a written review, not having a conversation.
 
-1. Run `gh pr diff $DOC_PR_NUMBER` to get the diff
-2. For each changed file, read the full file content
-3. Analyze ONLY the added or modified lines (lines starting with `+` in the diff) against these priorities:
+1. The PR diff is already saved at `/tmp/pr-diff.txt` — read it with the Read tool. Identify the added lines (starting with `+`, excluding `+++` file headers) and note which file each change belongs to.
+2. For each changed file, **read the full file content**. This gives you the context needed to judge whether new content fits logically, whether a new term was already defined earlier, and whether a new step assumes knowledge established elsewhere in the document.
+3. Using the full file as context, analyze the **added lines only** against these priorities:
 
-   **Structure** — Is the document organized so readers can find what they need? Can a reader scanning the page quickly find the section they need? For procedures, can someone follow it step by step? For explanatory content, does it build from simple to complex?
+   **Structure** — Does the new content fit logically in its position? Would a reader scanning the document find it where they expect it? If it introduces a new section or step, is the placement correct relative to surrounding content?
 
-   **Clarity** — Is the content easy to understand? Can the reader follow the explanation without having to reread, guess at meaning, or fill in gaps?
+   **Clarity** — Is the new content easy to understand on its own? Does it use a term or concept that hasn't been defined yet in the document?
 
-   **Completeness** — After reading, can the reader do what they came to do? Are there gaps that would force them to search elsewhere or open a support ticket?
+   **Completeness** — Does the new content leave the reader with an unanswered question? If it introduces a new concept, term, step, or instruction, does it provide enough context — or does the reader need to look elsewhere?
 
 For each issue found, note:
 - The file path and line number
@@ -48,7 +48,7 @@ For each issue found, note:
 - A specific description of the problem
 - A concrete suggested fix
 
-Only report issues on lines that were added or modified in this PR. Do not flag preexisting issues.
+**Report issues only on added lines.** The full file is context for your judgment — not a source of additional issues to flag. Do not report problems on lines that were unchanged in this PR.
 
 **Idiom tagging:** When the editorial review catches an idiom or figurative expression, tag it with `[idiom]` at the start of the bullet so the fixer can identify it and add it to the Vale `Idioms.yml` rule. Example:
 

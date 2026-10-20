@@ -9,7 +9,7 @@ sidebar_position: 20
 The Windows service account running the Netwrix Auditor Access Reviews service may be used as the
 Database service account, the Active Directory service account, and/or the SMTP authentication
 account. Check the Database, Active Directory, and Notification pages in the Configuration interface
-to confirm where the account is in use before modifying it to ensure these functionality are not
+to confirm where the account is in use before modifying it to ensure these functionality aren't
 impaired. If the same account is being used for multiple purposes, it will require the proper
 permissions for each purpose.
 
@@ -24,7 +24,7 @@ Control over the installation directory:
 
 ## Modify the Service Account via Service Control Manager
 
-Follow the steps to enable and/or modify the Windows service account running the Netwrix Auditor
+To enable and/or modify the Windows service account running the Netwrix Auditor
 Access Reviews service.
 
 **Step 1 –** Navigate to Service Control Manager (`services.msc`). The Services Control Manager
@@ -32,7 +32,7 @@ opens.
 
 ![Services Manager Console showing the Netwrix Access Information Center service and the right-click Menu](/images/auditor/10.7/access/reviews/admin/troubleshooting/servicesmanager.webp)
 
-**Step 2 –** Right-click on the Netwrix Auditor Access Reviews service and select **Properties**.
+**Step 2 –** Right-click the Netwrix Auditor Access Reviews service and select **Properties**.
 The service Properties window opens.
 
 ![Netwrix Access Information Center service Properties window with Select User browser window](/images/auditor/10.7/access/reviews/admin/troubleshooting/serviceproperties.webp)

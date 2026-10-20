@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Review and Modify Assigned Roles"
 description: "Review and Modify Assigned Roles"
 sidebar_position: 70
@@ -48,11 +48,11 @@ Multiple filters can be combined simultaneously. Use filters to isolate specific
 
 Review the Assigned Roles by proceeding as follows:
 
-![assignedroles](/images/identitymanager/user-guide/administrate/assigned-roles/assignedroles.webp)
+![assignedroles](/images/identitymanager/assignedroles.webp)
 
 **Step 1 –** On the home page, in the Administration section of the UI click on Assigned Roles.
 
-![assignedrolesscreen](/images/identitymanager/user-guide/administrate/assigned-roles/assignedrolesscreen.webp)
+![assignedrolesscreen](/images/identitymanager/assignedrolesscreen.webp)
 
 **Step 2 –** View the list of users with different assigned roles and filter them by **Entity Type**, **Workflow State**, **Policy**, **Role** or by using a custom filter.
 

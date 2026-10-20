@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # ADActivity: Category
 
-Use the Category page to identify how activity data is retrieved or removed.
+Use the Category page to identify how the data collector retrieves or removes activity data.
 
 ![Active Directory Activity DC wizard Category page](/images/accessanalyzer/11.6/admin/datacollector/adactivity/category.webp)
 

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # SSL connection certificates
 
-## What is an SSL connection certificate?
+## SSL connection certificate overview
 
 The connection between clients and the server is secured via an SSL certificate. The **latest
 encryption standard TLS 1.2** is used here. It is also possible to create a certificate via the
@@ -15,14 +15,16 @@ installed must trust the certificate.
 
 Otherwise, the following message will appear when the client is started:
 
-**This connection is not trusted!**
+**This connection isn't trusted!**
 
-The connection to the server is not considered secure.
+The connection to the server isn't considered secure.
 
 ![not_trusted_certificates](/images/passwordsecure/9.2/configuration/server_manager/certificates/not_trusted_certificates.webp)
 
-NOTE: Windows Server 2012 R2 requires the latest patch level, since it has been delivered with SSL3,
+:::note
+Windows Server 2012 R2 requires the latest patch level, since it has been delivered with SSL3,
 and has been extended to include TLS 1.2
+:::
 
 **CAUTION:** The service user creates the databases. A separate certificate is also generated for
 each database. Therefore, the service user must be a local administrator or a domain administrator,
@@ -40,7 +42,9 @@ certificate with the alternative applicant. Therefore, the Netwrix Password Secu
 stores all IP addresses for the server, as well as the hostname. When creating your own certificate,
 this information should also be saved under the alternative applicant.
 
-NOTE: All information (including the IP address) are stored as DNS name.
+:::note
+All information (including the IP address) are stored as DNS name.
+:::
 
 #### Using the Netwrix Password Secure certificate
 
@@ -50,8 +54,10 @@ certificate is saved locally under:
 
 Local computer -> own certificates -> certificates
 
-NOTE: The certificate is valid from its creation up to the year 9999 – and is thus valid almost
-indefinitely. For this reason, it is not necessary to note any expiry date.
+:::note
+The certificate is valid from its creation up to the year 9999 – and is thus valid almost
+indefinitely. For this reason, it isn't necessary to note any expiry date.
+:::
 
 Distributing the Netwrix Password Secure certificate
 
@@ -64,7 +70,7 @@ The certificate can be both rolled out and distributed using group guidelines.
 
 Manually importing the Netwrix Password Secure certificate
 
-If the Netwrix Password Secure certificate is not rolled out, it is also possible to manually import
+If the Netwrix Password Secure certificate isn't rolled out, it is also possible to manually import
 the certificate. To do this, firstly open the certificate information. In the warning notification,
 the Show server certificate button is available for this purpose. In the following dialogue, select
 the option Install certificate…
@@ -82,18 +88,20 @@ selected.
 
 Finally, the installation needs to be confirmed once again.
 
-NOTE: The user logged in to the operating system requires rights to create certificates
+:::note
+The user logged in to the operating system requires rights to create certificates
+:::
 
 #### Using your own certificate
 
 If a CA already exists, you can also use your own certificate. You can specify this within the
-[Basic configuration](/docs/passwordsecure/current/configuration/servermanager/basic_configuration.md). Please note that a server
+[Basic configuration](/docs/passwordsecure/current/configuration/servermanager/basic_configuration.md). A server
 certificate for SSL encryption is used here. The CA must be configured so that all clients trust the
-certificate. It is necessary to adhere to the certification path.
+certificate. You must adhere to the certification path.
 
 **CAUTION:** When configuring, you must ensure that the clients can access the CA lock lists
 
 Wildcard certificates
 
-Wildcard certificates are not supported. In theory, it should be possible to use them but we cannot
+Wildcard certificates aren't supported. In theory, it should be possible to use them but Password Secure can't
 help with the configuration. You can use wildcard certificates at your own responsibility.

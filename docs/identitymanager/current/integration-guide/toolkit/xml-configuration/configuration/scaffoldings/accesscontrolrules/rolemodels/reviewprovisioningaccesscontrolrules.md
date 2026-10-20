@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ReviewProvisioningAccessControlRules"
 description: "Generates the permissions to access the provisioning review pages for a given entity type and profile."
 sidebar_position: 12
@@ -9,7 +9,7 @@ Also create the rights to view the TargetEntityTypes of all ResourceTypes whose 
 
 Gives access to a shortcut on the dashboard to access this page.
 
-![Provisioning Review](/images/identitymanager/user-guide/administrate/provisioning/provisioning-review/home_provisioningreview_v523.webp)
+![Provisioning Review](/images/identitymanager/home_provisioningreview_v523.webp)
 
 
 

@@ -1,0 +1,18 @@
+@startuml component
+package "ConfigurationFileItem" {
+	class ConfigurationFileItem {
+		Item : Int64
+		LineNumber : Int32
+		Scaffolding : Int64
+		TableName : String
+		--
+		File : ConfigurationFile
+	}
+}
+package "ConfigurationFile" {
+	class ConfigurationFile {
+	}
+}
+ConfigurationFileItem "0..*" --  "1"ConfigurationFile
+hide empty members
+@enduml

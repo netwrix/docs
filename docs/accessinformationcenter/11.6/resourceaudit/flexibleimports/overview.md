@@ -25,7 +25,7 @@ enable Access Information Center to access the data for reports:
 - SA_AIC_FlexibleSddMatchHits table
 
 Imported data reports are accessed through the Resource Audit interface. Explore the resources by
-expanding the levels within the Resources pane and selecting the desired resource. These reports
+expanding the levels within the Resources pane and selecting the resource you want. These reports
 identify the following information in the targeted environment:
 
 - Permissions applied to a particular resource

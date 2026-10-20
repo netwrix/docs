@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # General settings
 
-## What are general settings?
+## General settings overview
 
 The **general settings** relate to users. Thus, each user can customize the software to their own
 needs. The following options can be configured:
@@ -14,7 +14,7 @@ needs. The following options can be configured:
 Colour scheme
 
 Various Windows colour schemes are available. The colour scheme Colorful provides e.g. different
-colours which make it easier to distinguish between the modules in the software. If the colour
+colours that make it easier to distinguish between the modules in the software. If the colour
 scheme is changed, the client must be restarted.
 
 Language
@@ -24,7 +24,7 @@ restarted.
 
 Starting the application minimised in the notification area
 
-You can start the client minimized if you wish to run Netwrix Password Secure in the background. You
+You can start the client minimized if you want to run Netwrix Password Secure in the background. You
 will be able to access it through the notification area.
 
 Minimise the application on closing

@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Target Oracle Requirements, Permissions, and Ports
 
-The Enterprise Auditor for Databases Solution provides the ability to audit and monitor Oracle
+The Enterprise Auditor for Databases Solution lets you audit and monitor Oracle
 database environments to collect permissions, sensitive data, and activity events. It scans:
 
 - Oracle Database 12c

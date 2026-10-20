@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WorkflowOverviewControlRules"
 description: "Generates the permissions to access the workflow supervision page."
 sidebar_position: 6
@@ -8,7 +8,7 @@ Generates the rights to access the workflow supervision page.
 
 Gives access to a shortcut on the dashboard to access this page.
 
-![Workflow Overview](/images/identitymanager/user-guide/administrate/reporting/home_workflowoverview_v602.webp)
+![Workflow Overview](/images/identitymanager/home_workflowoverview_v602.webp)
 
 
 

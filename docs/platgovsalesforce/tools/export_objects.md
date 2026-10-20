@@ -7,9 +7,9 @@ sidebar_position: 30
 # Export Objects
 
 Administrators can use this to export one or more objects, including all child objects, into a
-single view for easy review and management. For each export, you select the settings and optional
-profiles and permission sets to include in the object details. The export is done in the background
-to avoid timing out or exceeding the Salesforce Governor Limits. You will receive an email with a
+single view for review and management. For each export, you select the settings and optional
+profiles and permission sets to include in the object details. The export runs in the background
+to avoid timing out or exceeding the Salesforce Governor Limits. You receive an email with a
 link to the [Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) record, where you can
 download your file. You can also use the **Download Files** link on this page or on the Netwrix
 Dashboard to download your file.
@@ -62,12 +62,12 @@ To remove permissions set, select them in the Selected list and use the left arr
 
 **Download XLS**
 
-Click **Download XLS** to export your selections. An email is sent with a link to the file
+Click **Download XLS** to export your selections. You receive an email with a link to the file
 _Object_Export.xls_.
 
 **Download Files**
 
-Click **Download Files** to see a list of generated files. The file does not appear in the list
+Click **Download Files** to see a list of generated files. The file doesn't appear in the list
 until it is complete.
 
 ![Download files](/images/platgovsalesforce/tools/export_object_download.webp)

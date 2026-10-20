@@ -7,8 +7,7 @@ sidebar_position: 20
 # Access Analyzer Core Installation
 
 Save the organization’s Access Analyzer license key, received from your Netwrix Sales
-Representative, to the server where Access Analyzer is to be installed. Then follow the steps to
-install Access Analyzer.
+Representative, to the server where you will install Access Analyzer.
 
 :::note
 The process explained in this topic assumes that both the downloaded binary and the
@@ -17,8 +16,8 @@ license (.lic) file are located on the server which will become the Access Analy
 
 
 :::warning
-If User Account Control (UAC) is enabled on the server, ensure the installation package
-is run in Administrative/privilege mode.
+If User Account Control (UAC) is enabled on the server, ensure you run the installation package
+in Administrative/privilege mode.
 :::
 
 
@@ -49,7 +48,7 @@ install Access Analyzer. The default destination folder is
 file. When the path to the file is visible in the textbox, click **Next**.
 
 :::note
-The license file must be stored on the Access Analyzer Console server before the
+You must store the license file on the Access Analyzer Console server before the
 installation begins.
 :::
 
@@ -58,7 +57,7 @@ installation begins.
 
 **Step 6 –** The License Features page displays a list of all features covered by the imported
 license. It also displays the name of the organization which owns the license, the expiration date,
-and the host limit. These are the features that will be installed. Click **Next**.
+and the host limit. These are the features the installer will install. Click **Next**.
 
 ![Ready to install Netwrix Access Governance page](/images/accessanalyzer/12.0/install/application/ready.webp)
 
@@ -69,6 +68,6 @@ installation.
 
 **Step 8 –** When the installation has completed, click **Finish** to exit the wizard.
 
-The Access Analyzer Console has been installed, and two desktop icons have been created: Access
-Analyzer and Published Reports. Launch the Access Analyzer application to complete the initial
-configuration.
+You have now installed the Access Analyzer Console, and the installer has created two desktop
+icons: Access Analyzer and Published Reports. Launch the Access Analyzer application to complete
+the initial configuration.

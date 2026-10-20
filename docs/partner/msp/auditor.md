@@ -1,6 +1,6 @@
 ---
 title: Netwrix Auditor & Data Classification MSP Engineer
-sidebar_position: 1950
+sidebar_position: 1630
 tags: [certification, partners, msp, auditor, data-classification]
 keywords: [training, course, certification, partners, msp, auditor, data classification]
 description: "Become a certified MSP Engineer for Netwrix Auditor & Data Classification"

@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Service Accounts
 
-The Service Accounts dashboard provides visibility into service account usage across the environment, enabling organizations to identify, classify, and assess non-human accounts that operate outside typical user authentication behavior. It includes accounts that have a defined servicePrincipalName, account type reflective of a service account, or repeated authentication patterns. The dashboard identifies service accounts with machine learning to identify pattern-based authentication.
+The Service Accounts dashboard provides visibility into service account usage across the environment. It lets organizations identify, classify, and assess non-human accounts that operate outside typical user authentication behavior. The dashboard includes accounts that have a defined servicePrincipalName, an account type reflective of a service account, or repeated authentication patterns, and uses machine learning to detect pattern-based authentication.
 
 ![Netwrix Threat Manager Service Accounts Dashboard](/images/threatmanager/3.1/administration/serviceaccounts/dashboard.webp)
 
@@ -31,7 +31,7 @@ The type of service account. Possible values include:
 - **dMSA** (3) - Domain Managed Service Account
 
 ### Enabled
-Indicates whether the service account is currently enabled or disabled in Active Directory.
+Indicates whether the service account is enabled or disabled in Active Directory.
 
 ### Tags
 Custom tags associated with the service account for organization and categorization. Displays up to 2 tags visibly with an overflow indicator for additional tags. Each tag includes a name and description (shown on hover).

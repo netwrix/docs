@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Microsoft Exchange"
 description: "Microsoft Exchange"
 sidebar_position: 150
@@ -10,7 +10,7 @@ This connector exports mailboxes from a [Microsoft Exchange](https://support.mic
 
 This page is about [Microsoft Exchange](../../../integration-guide/connectors/references-packages/microsoft-exchange).
 
-![Package: Server/Microsoft Exchange](/images/identitymanager/integration-guide/connectors/references-connectors/microsoftexchange/packages_exchange_v603.webp)
+![Package: Server/Microsoft Exchange](/images/identitymanager/packages_exchange_v603.webp)
 
 ## Overview
 

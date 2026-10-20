@@ -50,8 +50,10 @@ SET MatchData = NULL,
 ### Removing All SDD Matches
 
 Use the `FS_SDD_DELETE` instant job to remove SDD matches entirely:
-- **NAA v12.0:** [InstantJobs\FS_SDD_DELETE](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/instantjobs/fs_sdd_delete)
-- **NAA v11.6:** [InstantJobs\FS_SDD_DELETE](https://docs.netwrix.com/docs/accessanalyzer/11_6/admin/jobs/instantjobs/fs_sdd_delete)
+- **Access Analyzer 12.0:** [FS_SDD_DELETE Job](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/instantjobs/fs_sdd_delete)
+- **Access Analyzer 11.6:** [FS_SDD_DELETE Job](https://docs.netwrix.com/docs/accessanalyzer/11_6/admin/jobs/instantjobs/fs_sdd_delete)
 
-## Related Link
+## Related Links
 - [Configure the (SEEK) File System Scan Query](https://docs.netwrix.com/docs/accessanalyzer/12_0/solutions/filesystem/collection/seek_system_scans#configure-the-seek-file-system-scan-query)
+- [FS_SDD_DELETE Job — Access Analyzer 12.0](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/jobs/instantjobs/fs_sdd_delete)
+- [FS_SDD_DELETE Job — Access Analyzer 11.6](https://docs.netwrix.com/docs/accessanalyzer/11_6/admin/jobs/instantjobs/fs_sdd_delete)

@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Subscriptions
 
-Subscriptions enable you to schedule email delivery of a variety of reports or set of specific
+Subscriptions let you schedule email delivery of a variety of reports or set of specific
 search criteria. Subscriptions are helpful if you are a rare guest of Netwrix Auditor and you only
 need to get statistics based on individual criteria. For example, an IT manager can easily provide
 auditors with weekly reports to prove compliance with regulations.

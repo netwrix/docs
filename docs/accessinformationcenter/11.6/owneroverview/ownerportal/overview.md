@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Owner Portal Overview
 
-The Owner portal is where owners manage their assigned resources. You should log into the Access
-Information Center with domain credentials. Where it opens is dependent on whether or not you have
+The Owner portal is where owners manage their assigned resources. Log into the Access
+Information Center with domain credentials. Where it opens depends on whether you have
 been assigned a user role beyond owner.
 
 - For an owner with an assigned user role, the Access Information Center will open to the Home page.

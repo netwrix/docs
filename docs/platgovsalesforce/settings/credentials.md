@@ -15,21 +15,21 @@ You must create a Connected App to run the scanner. Refer to
 [Install Platform Governance for Salesforce](/docs/platgovsalesforce/installingstrongpoint/installing_strongpoint.md)
 for instructions.
 
-Click **New** to add a new credential or **Edit** and existing credential. **Search** finds and
+Click **New** to add a new credential or **Edit** an existing credential. **Search** finds and
 filters information from the current credentials list.
 
-Use the **Test Connection** to verify your credentials.
+Use **Test Connection** to verify your credentials.
 
 Click **Save** when complete.
 
 ## Credentials for Environment Comparison
 
-When you follow the **Click here to proceed** link on the Environment Comparison tool, it opens the
-Credentials Handler where you can add, edit and sync your credentials.
+On the Environment Comparison tool, select the link to open the
+Credentials Handler where you can add, edit, and sync your credentials.
 
 ![Credentials Handler](/images/platgovsalesforce/settings/credentials_list.webp)
 
-Click **New** to add a new credential or **Edit** and existing credential. **Search** finds and
+Click **New** to add a new credential or **Edit** an existing credential. **Search** finds and
 filters information from the current credentials list.
 
 ![credentials_handler_edit](/images/platgovsalesforce/settings/credentials_handler_edit.webp)

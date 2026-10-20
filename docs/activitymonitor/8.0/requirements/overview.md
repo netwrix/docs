@@ -8,7 +8,7 @@ sidebar_position: 20
 
 This topic describes the recommended configuration of the servers needed to install the application
 in a production environment. Depending on the size of the organization, it is recommended to review
-your environment and requirements with a Netwrix engineer prior to deployment to ensure all
+your environment and requirements with a Netwrix engineer before deployment to ensure all
 exceptions are covered.
 
 ## Architecture Overview

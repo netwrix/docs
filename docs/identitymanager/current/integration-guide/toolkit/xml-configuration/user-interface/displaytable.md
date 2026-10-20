@@ -1,4 +1,4 @@
-﻿---
+---
 title: "DisplayTable"
 description: ""
 sidebar_position: 4
@@ -24,13 +24,13 @@ The following example displays sites as a table.
 </DisplayTable>
 ```
 
-![Example - DisplayTableDesignElement Set to Table](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/DisplayTableDesignElement_table_V602.webp)
+![Example - DisplayTableDesignElement Set to Table](/images/identitymanager/DisplayTableDesignElement_table_V602.webp)
 
 #### list
 
 The following example displays users as a list.
 
-![DisplayTableDesignElement_table_V602](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/DisplayTableDesignElement_table_V602.webp)
+![DisplayTableDesignElement_table_V602](/images/identitymanager/DisplayTableDesignElement_table_V602.webp)
 
 :::note
 For resources to be displayed as a list, the display table must also be configured with **tiles**.
@@ -49,7 +49,7 @@ The following example displays AD entries as a table, with an "Owner/Type" colum
 </DisplayTable>
 ```
 
-![Example - DisplayTableDesignElement Set to ResourceTable](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/displaytable/displaytabledesignelement_resourcetable_v602.webp)
+![Example - DisplayTableDesignElement Set to ResourceTable](/images/identitymanager/displaytabledesignelement_resourcetable_v602.webp)
 
 
 ## Properties

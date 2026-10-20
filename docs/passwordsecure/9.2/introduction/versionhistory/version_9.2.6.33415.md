@@ -10,7 +10,7 @@ sidebar_position: 5
 - The legacy web app was removed from the product completely.
 
 #### Server
-- The SAML feature will soon be removed from Netwrix Password Secure! As a result of this announcement, it can no longer be installed on new systems. In addition, it can no longer be enabled for new databases.
+- The SAML feature will soon be removed from Netwrix Password Secure. As a result of this announcement, it can no longer be installed on new systems. In addition, it can no longer be enabled for new databases.
 
 # Fixes
 

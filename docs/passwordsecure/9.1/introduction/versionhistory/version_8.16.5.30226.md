@@ -34,11 +34,11 @@ sidebar_position: 100
 - After restoring a user, the authorizations for roles are now correct again.
 - The tag/image management window can be closed if no changes have been made.
 - Adding a new organisational unit from within structure view works again.
-- The website can be reloaded without any problems if you are logged in with an Entra ID user.
+- The website can be reloaded without any problems if you're logged in with an Entra ID user.
 
 #### Server
 
-- If a password cannot be shared, this now also applies to the password fields.
+- If a password can't be shared, this now also applies to the password fields.
 - In the emergency web viewer revealing passwords with umlauts now works correctly.
 
 #### Server Manager
@@ -51,5 +51,5 @@ sidebar_position: 100
 
 #### LightClient in the Web View
 
-- The website can be reloaded without any problems if you are logged in with an Entra ID user.
+- The website can be reloaded without any problems if you're logged in with an Entra ID user.
 - A tag will be created when using predefined rights.

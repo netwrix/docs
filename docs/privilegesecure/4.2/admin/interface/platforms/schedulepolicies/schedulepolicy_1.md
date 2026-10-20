@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Edit Schedule Policy
 
-Follow the steps to edit the scheduled tasks.
+To edit the scheduled tasks.
 
 **Step 1 –** Navigate to the **Policy** > **Platforms** > **Schedule Policies** page.
 
@@ -18,15 +18,15 @@ Follow the steps to edit the scheduled tasks.
 run:
 
 :::note
-The fields will change depending on the selected frequency.
+The fields changes depending on the selected frequency.
 :::
 
 
 - Every X Hours — Enter the number of hours between executions
 - Every X Days— Enter the time of day
-- Weekly — Select the day of the week from the drop-down menu and enter the time of day
+- Weekly — Select the day of the week from the dropdown menu and enter the time of day
 - Monthly — Enter a number representing the day of the month and then enter the time of day
 
 **Step 4 –** Click **Save** to accept the changes.
 
-The task will run at the new scheduled frequency.
+The task runs at the new scheduled frequency.

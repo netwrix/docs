@@ -6,22 +6,22 @@ sidebar_position: 20
 
 # Event Type Tab
 
-The Event Type tab enables you to define the objects and events that Threat Prevention
-monitors/blocks.
+Use the Event Type tab to define the objects and events that Threat Prevention
+monitors or blocks.
 
 ![Policy - Event Type tab](/images/threatprevention/8.0/admin/policies/eventtype/eventtypetab.webp)
 
 Each event type represents what is monitored or blocked. Event filters are used to either narrow or
 broaden the scope of the monitoring/blocking as desired. Click **Add** (+) to open the Event
 Selection window. Your licensed modules determine what event types are available. Event types that
-are not available or not licensed are grayed-out but visible in the Event Selection window. See the
+aren't available or not licensed are grayed-out but visible in the Event Selection window. See the
 [License Manager Window](/docs/threatprevention/8.0/admin/navigation/licensemanager.md) topic for additional information.
 
 ## Event Selection Window
 
 ![Event Type tab - Event Selection window](/images/threatprevention/8.0/admin/policies/eventtype/eventselection.webp)
 
-Check the box for the desired event type and click **OK**. The corresponding event filters show at
+Check the box for the event type you want and click **OK**. The corresponding event filters show at
 the bottom of the Event Type tab. Multiple event types can be assigned to a policy.
 
 :::info
@@ -31,7 +31,7 @@ feature.
 :::
 
 
-Once the event type to be monitored by the policy is selected, use the filters to scope the policy.
+After selecting the event type to be monitored by the policy, use the filters to scope the policy.
 
 Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
 like an "ALL" for that filter set.
@@ -76,7 +76,7 @@ Several filters allow for both an Include and an Exclude list to be set together
 takes precedence over the Include list. If an item is part of both lists, then when an event comes
 through with that item, it is excluded.
 
-When using a Lockdown Event Type, it is necessary to decide between Block or Allow for the filter.
+When using a Lockdown Event Type, decide between Block or Allow for the filter.
 
 - Block – Blocks all items added to the list, or if the list is left blank, it blocks all items for
   that filter category

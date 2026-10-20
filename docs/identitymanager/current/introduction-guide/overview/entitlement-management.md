@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Entitlement Management"
 description: "Entitlement Management"
 sidebar_position: 20
@@ -18,7 +18,7 @@ A managed system's entitlements can have many forms. They authorize identities t
 
 Identity Manager is designed to help establish an exhaustive and reliable catalog of the entitlements available in the managed systems, and assign the right entitlements to the right users.
 
-![Role Catalog and Users](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_rolecatalogusers.webp)
+![Role Catalog and Users](/images/identitymanager/entitlements_rolecatalogusers.webp)
 
 Thus, the role model contains:
 
@@ -26,7 +26,7 @@ Thus, the role model contains:
 - the **rules** that trigger the assignment of entitlements to identities, and more broadly manage the
 systems' resources. Some of them act as link between Identity Manager's **roles** and the systems' accounts and permissions. Some of them are linked to, and thus apply only to, specific **resource types**.
 
-![Role Model](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_rolemodel.webp)
+![Role Model](/images/identitymanager/entitlements_rolemodel.webp)
 
 The role model is a subset of a **policy** that also includes [Governance](../../introduction-guide/overview/governance) data such as risk definition. So, at a higher level, distinct policies can be used to implement distinct behaviors.
 
@@ -36,11 +36,11 @@ Identity Manager intends to represent IGA-related access right mechanisms by a [
 
 Entitlements from the managed systems are modeled by **roles**. For each entitlement, NETWRIX advises creating a **single role**, with an easily understandable name, more functional than technical, so that everyone knows what the role is for.
 
-![Single **roles**](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/singlerolescatalog_schemarole.webp)
+![Single **roles**](/images/identitymanager/singlerolescatalog_schemarole.webp)
 
 Each individual entitlement should usually be modeled by a **single role**, and single **roles** can be grouped together into composite **roles** to be closer to real job positions.
 
-![Composite **roles**](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_compositeroles.webp)
+![Composite **roles**](/images/identitymanager/entitlements_compositeroles.webp)
 
 ## A Rule Set
 
@@ -60,7 +60,7 @@ Provisioning **rules** write the actual entitlements to the managed systems, mos
 > Thus, we should have a rule that, when a user is assigned a specific role, adds the user to the
 > member list of a specific AD group.
 
-![Provisioning **rules**](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_provisioningrules.webp)
+![Provisioning **rules**](/images/identitymanager/entitlements_provisioningrules.webp)
 
 Even when a role is manually assigned, provisioning **rules** will determine which account (and permission groups) are given as entitlements.
 
@@ -77,7 +77,7 @@ While the role catalog and provisioning **rules** are together enough to manuall
 > For example, we can choose to assign the role `Benefits Manager - FR` to any user whose job title
 > is benefits manager and whose location is in France.
 
-![Assignment **rules**](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_assignmentrules.webp)
+![Assignment **rules**](/images/identitymanager/entitlements_assignmentrules.webp)
 
 Once all assignment **rules** are created, Identity Manager is able to spot existing assignments that are not supported by any rule, marking them as non-conforming.
 
@@ -96,7 +96,7 @@ Different resources can be managed through different **rules**, by being part of
 > steps in the workflows related to privileged accounts, for more security than for standard
 > accounts.
 
-![Categorization **rules**](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_categorizationrules.webp)
+![Categorization **rules**](/images/identitymanager/entitlements_categorizationrules.webp)
 
 Identity Manager's categorization **rules** are:
 
@@ -126,15 +126,15 @@ dimension, and identities are distributed along the line.
 - The schema with two **dimensions** would be a table, a square.
 - The schema with three **dimensions** would be a 3D **cube**. And you can imagine 4D or 5D hypercubes, etc.
 
-![**dimensions** - 1D](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_dimension1.webp)
+![**dimensions** - 1D](/images/identitymanager/entitlements_dimension1.webp)
 
 #### 1D
 
-![**dimensions** - 2D](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_dimension2.webp)
+![**dimensions** - 2D](/images/identitymanager/entitlements_dimension2.webp)
 
 #### 2D
 
-![**dimensions** - 3D](/images/identitymanager/introduction-guide/overview/entitlement-management/entitlements_dimension3.webp)
+![**dimensions** - 3D](/images/identitymanager/entitlements_dimension3.webp)
 
 ## Next Steps
 

@@ -1,7 +1,7 @@
-﻿---
+---
 title: "Robot Framework"
 description: "Robot Framework"
-sidebar_position: 220
+sidebar_position: 230
 ---
 
 # Robot Framework
@@ -10,7 +10,7 @@ This connector writes to an external system via a [Robot Framework](https://robo
 
 **This page is about [Robot Framework](../../../integration-guide/connectors/references-packages/robot-framework)**
 
-![Package: Custom/Robot Framework](/images/identitymanager/integration-guide/connectors/references-connectors/robotframework/packages_robot_v603.webp)
+![Package: Custom/Robot Framework](/images/identitymanager/packages_robot_v603.webp)
 
 ## Overview
 

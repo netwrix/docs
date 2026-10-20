@@ -12,7 +12,7 @@ import { NPS } from '@site/src/training/products';
 
 Estimated length: 2 hours
 
-In this learning path, you will be introduced to <NPS />. It contains the following courses:
+This learning path introduces you to <NPS />. It contains the following courses:
 
 * 1800 <NPS /> – Valuable Features
 * 2800 <NPS /> – Concepts

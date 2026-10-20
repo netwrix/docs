@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Add a Storage Profile
 
-Follow the steps to create a Storage Profile.
+Create a Storage Profile:
 
 ![Add Storage profile option](/images/accessanalyzer/12.0/admin/settings/storage/addprofile.webp)
 
@@ -19,8 +19,8 @@ Profile name to a unique and descriptive name.
 
 ![Server Name field](/images/accessanalyzer/12.0/admin/settings/storage/addprofileservername.webp)
 
-**Step 3 –** Type the SQL **Server name** in the textbox provided. This can be a NetBIOS name, a
-fully qualified domain name, or an IP Address. If the SQL Server specified is configured to use a
+**Step 3 –** Enter the SQL **Server name** in the textbox provided. This can be a NetBIOS name, a
+fully qualified domain name, or an IP Address. If the specified SQL Server uses a
 named instance, provide the **Instance name** in the next textbox.
 
 ![Command timeout field](/images/accessanalyzer/12.0/admin/settings/storage/addprofiletimeout.webp)
@@ -45,17 +45,17 @@ for additional information.
 |:-------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|
 | *Good Connection Test*                                                                                              | *Bad Connection Test*                                                                                                     |
 
-**Step 6 –** It is recommended to test the credentials provided at this point. The radio button for
-**Use existing database** should be selected by default. Test the SQL Server connection by clicking
-the drop-down arrow for an existing database. If the connection is established, a listing of
-databases appears. If the connection cannot be established, an error warning displays.
+**Step 6 –** Test the credentials you provided at this point. By default, Access Analyzer selects the
+radio button for **Use existing database**. Test the SQL Server connection by clicking
+the dropdown arrow for an existing database. If Access Analyzer establishes the connection, a listing
+of databases appears. If Access Analyzer can't establish the connection, an error warning displays.
 
 ![Database options](/images/accessanalyzer/12.0/admin/settings/storage/addprofiledatabase.webp)
 
 **Step 7 –** Set the database through one of the following options:
 
 - Use existing database – Click this radio button and select a database from this list provided in
-  the drop-down menu
+  the dropdown menu
 - Create new database – Click this radio button and provide a unique, descriptive name in the
   textbox
 
@@ -66,8 +66,8 @@ the appropriate permissions and lists any that are missing. If no permissions ar
 message appears in the Connection report window. When there is a `Successful connection test`, click
 **Close**.
 
-**Step 9 –** If **Create new database** was selected, the new database now exists. If **Use existing
-database** was selected, the Storage Profile is now linked to the database. Click **Save** and then
+**Step 9 –** If you selected **Create new database**, the new database now exists. If you selected
+**Use existing database**, the Storage Profile is now linked to the database. Click **Save** and then
 **OK** to complete the creation of the new Storage Profile.
 
-The new Storage Profile is available to be used by Access Analyzer.
+Access Analyzer can now use the new Storage Profile.

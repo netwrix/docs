@@ -41,7 +41,7 @@ the credentials are valid.
 :::note
 Microsoft SQL Server Compact is installed with the Password Reset Server. SQL Server
 Compact is free to use, and should only be removed if you move the database to SQL Server. SQL
-Server Compact is an embedded database. Unlike SQL Server, you do not need to configure or manage
+Server Compact is an embedded database. Unlike SQL Server, you don't need to configure or manage
 it. See the [Working with the Database](/docs/passwordreset/3.3/administration/workingwiththedatabase/working_with_the_database.md) topic for additional
 information.
 :::
@@ -85,26 +85,25 @@ is detected. Backup the files, and then click **Next**.
 
 **Step 3 –** Click **Next**.
 
-**Step 4 –** Read the License Agreement. Click **I accept the terms of the license agreement**, and
-then click **Next** if you accept all the terms.
+**Step 4 –** Read the License Agreement. Accept the terms, then click **Next**.
 
 **Step 5 –** Select the **All Components** option, and then click **Next**.
 
 **Step 6 –** The Setup wizard may offer to install IIS. Click **OK** to install IIS.
 
 **Step 7 –** Enter a **User Name**, **Domain**, and **Password** for the Password Reset service
-account. The account will be created and added to the Domain Admins group if it does not exist.
+account. The account is created and added to the Domain Admins group if it doesn't exist.
 
 :::note
 You can remove the account from the Domain Admins group later. If using an existing
-account, make sure it has the required permissions. See the
+account, ensure it has the required permissions. See the
 [Securing Password Reset](/docs/passwordreset/3.3/administration/securing_password_reset.md) topic for additional information.
 :::
 
 
 **Step 8 –** Click **Next**.
 
-**Step 9 –** Select an **IIS Web Site** from the drop-down list, and optionally change the default
+**Step 9 –** Select an **IIS Web Site** from the dropdown list, and optionally change the default
 **Virtual Directory** for the Web Interface.
 
 :::note
@@ -159,22 +158,21 @@ is detected. Backup the files, and then click **Next**.
 
 **Step 3 –** Click **Next**.
 
-**Step 4 –** Read the License Agreement. Click **I accept the terms of the license agreement**, and
-then click **Next** if you accept all the terms.
+**Step 4 –** Read the License Agreement. Accept the terms, then click **Next**.
 
 **Step 5 –** Select the Server **Only option**, and then click **Next**.
 
 **Step 6 –** Type a **User Name**, **Domain**, and **Password** for the Password Reset service
-account. The account will be created and added to the Domain Admins group if it does not exist.
+account. The account is created and added to the Domain Admins group if it doesn't exist.
 
 :::note
 You can remove the account from the Domain Admins group later. If using an existing
-account, make sure it has the required permissions. See the
+account, ensure it has the required permissions. See the
 [Securing Password Reset](/docs/passwordreset/3.3/administration/securing_password_reset.md) topic for additional information.
 :::
 
 
-**Step 7 –** Make sure the **Create Windows Firewall Exception for the NPR Server service** check
+**Step 7 –** Ensure the **Create Windows Firewall Exception for the NPR Server service** check
 box is selected, and then click **Next** twice.
 
 **Step 8 –** Wait for the Password Reset Server to install, and then click **Finish**.
@@ -201,14 +199,13 @@ is detected. Backup the files, and then click **Next**.
 
 **Step 3 –** Click **Next**.
 
-**Step 4 –** Read the License Agreement. Click **I accept the terms of the license agreement**, and
-then click **Next** if you accept all the terms.
+**Step 4 –** Read the License Agreement. Accept the terms, then click **Next**.
 
 **Step 5 –** Select the **Web Interface Only** option, and then click **Next**.
 
 **Step 6 –** The Setup wizard may offer to install IIS. Click **OK** to install IIS.
 
-**Step 7 –** Select an **IIS Web Site** from the drop-down list, and optionally change the default
+**Step 7 –** Select an **IIS Web Site** from the dropdown list, and optionally change the default
 **Virtual Directory** for the Web Interface. The Web Interface should be installed in its own
 virtual directory.
 
@@ -227,8 +224,8 @@ installed the Password Reset Server onto.
 ![installing_npr_1](/images/passwordpolicyenforcer/11.0/passwordreset/administration/installing_npr_1.webp)
 
 The Password Reset Setup wizard only installs one Web Interface on each server, but you can copy the
-files to another directory and publish several Web Interfaces from one server. This allows you to
-present different user interfaces from each directory. The Web Interfaces all communicate with the
+files to another directory and publish several Web Interfaces from one server. Each directory can
+present a different user interface. The Web Interfaces all communicate with the
 same NPR Server because there is only one ServerIP value.
 
 Follow the steps below to configure the Web Interfaces to communicate with different Password Reset
@@ -256,7 +253,7 @@ recommended if you have not installed NPR before.
 
 ### Before You Begin
 
-The database files are not overwritten during an upgrade, but you should still create a backup
+The database files aren't overwritten during an upgrade, but you should still create a backup
 before upgrading. See the
 [Backing up the Database](/docs/passwordreset/3.3/administration/workingwiththedatabase/working_with_the_database.md#backing-up-the-database) topic for additional
 information.
@@ -266,14 +263,14 @@ Interface files before upgrading**. The Web Interface files are installed in the
 `\Inetpub\wwwroot\pwreset\` folder by default.
 
 :::note
-A full backup of the NPR server(s) is recommended. This allows you to roll back to the
-previous version if the upgrade cannot be completed.
+A full backup of the NPR servers is recommended. Rolling back to the previous version
+is possible if the upgrade can't be completed.
 You may need to restart Windows after upgrading.
 :::
 
 
-If Password Reset was originally installed by someone else and you do not have their installation
-notes, then read the Installation topic before you begin. Also make sure you know the password for
+If Password Reset was originally installed by someone else and you don't have their installation
+notes, then read the Installation topic before you begin. Also ensure you know the password for
 the Password Reset Server service account as you will need it during the upgrade.
 
 ### Upgrading to V3.3
@@ -285,12 +282,12 @@ If the Password Reset Server and Web Interface are installed on different server
 servers before using the new version. The Password Reset Server and Web Interface are only tested
 with matching versions.
 
-Restore any customized Web Interface files after upgrading. Do not restore APR.dll from the backup
+Restore any customized Web Interface files after upgrading. Don't restore APR.dll from the backup
 as it belongs to the previous version. You should keep a copy of the original Web Interface files
 and compare them with the files from the previous version using a file comparison tool. Any changes
 between versions should be merged into your customized files.
 
-The Password Reset V3.30 data console does not read the VerificationCode or EnrollRecord columns
+The Password Reset V3.30 data console doesn't read the VerificationCode or EnrollRecord columns
 from the User table on SQL Server. Access to these columns can be denied for Data Console users
 after upgrading all instances of the Data Console. See the
 [Using the Data Console](/docs/passwordreset/3.3/administration/usingthedataconsole/using_the_data_console.md) topic for additional information.
@@ -302,9 +299,9 @@ trial run on a lab network is recommended, especially if you are customizing the
 the [Editing the HTML Templates](/docs/passwordreset/3.3/administration/editing_the_html_templates.md) topic for additional information.
 
 :::warning
-Due to a protocol upgrade, Netwrix Password Reset v3.3 is not compatible with Netwrix
+Due to a protocol upgrade, Netwrix Password Reset v3.3 isn't compatible with Netwrix
 Password Policy Enforcer v8.x and earlier versions. If you are using Netwrix Password Reset with any
-of those older Netwrix Password Policy Enforcer versions, please consider upgrading Netwrix Password
+of those older Netwrix Password Policy Enforcer versions, consider upgrading Netwrix Password
 Policy Enforcer first to a current version, and only then upgrade Netwrix Password Reset to v3.3 (or
 later).
 :::
@@ -312,7 +309,7 @@ later).
 
 ### Before You Begin
 
-**Step 1 –** Backup the NPR V2.x server(s).
+**Step 1 –** Backup the NPR V2.x servers.
 
 **Step 2 –** Close the Data Console if it is open.
 
@@ -325,7 +322,7 @@ information.
 **Step 1 –** Follow the steps for either Single Server Installation or Multiple Server Installation.
 If the Web Interface is on a different server, then upgrade it as well.
 
-**Step 2 –** Open the Data Console, and check the Audit Log and User tabs to make sure the data was
+**Step 2 –** Open the Data Console, and check the Audit Log and User tabs to ensure the data was
 imported.
 
 **Step 3 –** Open NPR in a web browser and test the Enroll, Reset, and Change features.
@@ -340,7 +337,7 @@ imported.
 
 The database files are created in the installation folder when NPR is first installed. The default
 installation folder for NPR V2.x was below the Program Files (x86) folder, but in NPR V3.3 it is
-below the Program Files folder. The database files are not moved automatically during an upgrade, so
+below the Program Files folder. The database files aren't moved automatically during an upgrade, so
 you should move them to the new installation folder (or a different folder) after upgrading.
 
 Follow the steps below to move the database files to the `\Program Files\Netwrix Password Reset\`
@@ -373,7 +370,7 @@ information.
 Configure Password Reset Client to use IE11 emulation mode
 
 Older versions of the Password Reset Client display pages in Internet Explorer 7 emulation mode.
-This mode cannot display the new HTML templates correctly. You can upgrade the Password Reset Client
+This mode can't display the new HTML templates correctly. You can upgrade the Password Reset Client
 to the latest version, or configure existing installations to use IE 11 mode. This only works on
 Windows Vista and later with IE 9 or later.
 

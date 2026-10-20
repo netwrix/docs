@@ -1,6 +1,8 @@
 ---
 title: Browser Router Technical Notes
 description: Installation, troubleshooting, and technical guidance for Browser Router
+pagination_prev: null
+pagination_next: null
 ---
 
 # Browser Router Technical Notes

@@ -1,0 +1,6 @@
+extends: existence
+message: "Replace the wordy phrase 'carried out' with a direct verb like 'performed', 'completed', or 'run' — or rewrite in active voice."
+level: warning
+ignorecase: true
+tokens:
+  - 'carried out'

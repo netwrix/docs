@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # EmergencyWebViewer
 
-## What is an Emergency WebViewer export?
+## Emergency WebViewer export overview
 
-Safeguarding data is essential and this should be carried out using
+Safeguarding data is essential and this should be performed using
 [Backup management](/docs/passwordsecure/9.1/configuration/servermanager/mainmenu/backupsettings/backup_management.md).
-However, a backup is not sufficient in some cases e.g. if a backup cannot be directly restored due
+However, a backup isn't sufficient in some cases e.g. if a backup can't be directly restored due
 to a hardware problem. In these cases, **Netwrix Password Secure** offers the backup feature
 **Emergency WebViewer Export**.
 
@@ -22,7 +22,7 @@ the core system of the backup mechanism.
 
 The **Emergency WebViewer Export** is created in Netwrix Password Secure as a
 **[System tasks](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/extras/systemtasks/system_tasks.md)**
-and this task can be used to guarantee a regular backup of the records (passwords) by entering an
+and this task lets you guarantee a regular backup of the records (passwords) by entering an
 interval. When setting up the system task, the user thus defines the cycle at which the **Emergency
 WebViewer.html file** is created on the Server Manager. The existing file is overwritten in each
 case by the latest version at the defined interval. The associated key is only created once at the
@@ -31,13 +31,12 @@ using this **key**.
 
 :::warning
 The key (PrivateKey.prvkey) and the file (Emergency WebViewer.html) must be saved onto
-a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location!
+a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location.
 :::
-
 
 ## Data security
 
-**• Naturally, the HTML WebViewer file is encrypted**
+**• the HTML WebViewer file is encrypted**
 
 • The export of the file is protected using a corresponding
 [User rights](/docs/passwordsecure/9.1/configuration/advancedview/mainmenufc/userrights/user_rights.md)
@@ -45,9 +44,8 @@ a secure medium (USB stick, HDD, CD/DVD, …) and kept in a secure location!
 • The file can only be encrypted using the **PrivateKey.prvkey** file
 
 :::warning
-The export right for the passwords is not required for the Emergency WebViewer Export!
+The export right for the passwords isn't required for the Emergency WebViewer Export.
 :::
-
 
 ## Required rights
 
@@ -62,9 +60,9 @@ The **Emergency WebViewer Export** creates two associated files.
 1. The file **Emergency WebViewer.html** is created on the computer executing the task
 2. The associated key **PrivateKey.prvkey** is created on the client.
 
-## Calling up the Emergency WebViewer Export
+## Opening the Emergency WebViewer Export
 
-The Emergency WebViewer Export is set up as a **system task**. It can be called up in the main menu
+The Emergency WebViewer Export is set up as a **system task**. It can be opened in the main menu
 under **Extras -> System Tasks**.
 
 ![installation_with_parameters_90_831x487](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/extras/system_tasks/emergency_webviewer/installation_with_parameters_90_831x487.webp)
@@ -76,7 +74,7 @@ Clicking on New opens a new window and the **Emergency WebViewer Export** can be
 
 ![installation_with_parameters_91_578x390](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/extras/system_tasks/emergency_webviewer/installation_with_parameters_91_578x390.webp)
 
-It is not possible to use the **Emergency WebViewer Export** with an **Active Directory user.**
+It isn't possible to use the **Emergency WebViewer Export** with an **Active Directory user.**
 
 ![installation_with_parameters_92_467x103](/images/passwordsecure/9.1/configuration/advanced_view/mainmenu/extras/system_tasks/emergency_webviewer/installation_with_parameters_92_467x103.webp)
 
@@ -98,13 +96,12 @@ in accordance with the requirements.
 
 :::warning
 The private key for the Emergency WebViewer must be saved before the system task can be
-saved!
+saved.
 :::
-
 
 ## Displaying the Emergency WebViewer Export tasks
 
-Once the configuration has been completed, the **system task** is displayed in the current module in
+After the configuration has been completed, the **system task** is displayed in the current module in
 the
 
 **System Tasks** tab. The user has the option of checking the data here
@@ -113,7 +110,7 @@ the
 
 ## Using the Emergency WebViewer.html file
 
-After the **system task** has been successfully executed, **two files** will have been created for
+After the **system task** has been successfully executed, **two files** are created for
 the password backup.
 
 1. Emergency WebViewer.html
@@ -123,20 +120,19 @@ the password backup.
 The file Emergency WebViewer.html is saved on the server executing the task. The
 :::
 
-
 :::warning
 key PrivateKey.prvkey needs to be securely saved by the user!\*
 :::
-
 
 The **Emergency WebViewer Export** is used in the same way as the **WebViewer export**. The
 **passwords** are displayed in a current browser. The passwords are accessed in the **Emergency
 WebViewer Export** with the **user password** and the **key** saved for the user. The search
 function is used to select the **key (PrivateKey.prvkey)** and also to check its **validity**. If
-all data has been correctly entered, it is then possible to log in.
+all data has been correctly entered, it's then possible to log in.
 
-NOTE: The current user needs to log in using their password. If an incorrect password is entered,
-access is temporarily blocked.
+:::note
+The current user needs to log in using their password. If an incorrect password is entered, access is temporarily blocked.
+:::
 
 **Login data**
 
@@ -161,7 +157,7 @@ The following data is displayed in the overview:
 
 Overview data:
 
-1. Display of the currently available records
+1. Display of the available records
 2. Detailed information on the selected record
 3. Search, logout, timeout until logout
 4. Copy password to clipboard
@@ -175,7 +171,10 @@ closed by clicking on **Logout**.
 If the user is **inactive** for **60 seconds**, he is automatically **logged out** and the **login**
 is displayed with additional information.
 
-NOTE: You have been logged out due to inactivity
+:::note
+You have been logged out due to inactivity
+:::
 
 The user can log in again using the **password** and **key** as described above. After successfully
 logging in, the **Emergency WebViewer Export overview** is displayed again.
+

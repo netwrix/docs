@@ -25,13 +25,13 @@ The Directory Manager installation package consists of:
 
 ## Who can install
 
-Before installing Directory Manager, make sure that the logged-in user is a member of the local
+Before installing Directory Manager, ensure that the logged-in user is a member of the local
 Administrators group on that machine.
 
 :::note
 (1) There should be a dedicated server for Directory Manager.  
-(2) Do not install Directory Manager on the domain controller.  
-(3) Do not install Directory Manager and Microsoft Exchange Server on the same machine.
+(2) Don't install Directory Manager on the domain controller.  
+(3) Don't install Directory Manager and Microsoft Exchange Server on the same machine.
 :::
 
 
@@ -56,11 +56,11 @@ version.
 
 :::note
 When Directory Manager 11 co-exists with a previous Directory Manager version (case # 1 and
-2), the two must have separate databases. Data is not replicated between these databases.
+2), the two must have separate databases. Data isn't replicated between these databases.
 :::
 
 
 :::note
-This section does not apply to a fresh Directory Manager installation.
+This section doesn't apply to a fresh Directory Manager installation.
 
 :::

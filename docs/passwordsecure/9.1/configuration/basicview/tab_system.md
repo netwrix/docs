@@ -6,10 +6,10 @@ sidebar_position: 50
 
 # Tab system
 
-## What is the tab system?
+## Tab system overview
 
-The tab system helps to structure the passwords in order to manage and find them more easily. For
-this purpose, several tabs can be created and switched between them with a click.
+The tab system helps to structure the passwords to manage and find them. For
+this purpose, several tabs can be created, and switched between them with a click.
 
 ![tabs LightClient](/images/passwordsecure/9.1/configuration/basic_view/tab_system/tabs-lc-en.webp)
 
@@ -23,7 +23,7 @@ the passwords assigned to the personal organizational unit
 
 Furthermore, public tabs are also available. These correspond to the public
 
-organizational units on the Advanced view. It is also possible to store all public organizational
+organizational units on the Advanced view. It's also possible to store all public organizational
 units as public tabs. No upper limit is set here.
 
 ![public tab](/images/passwordsecure/9.1/configuration/basic_view/tab_system/public-tab-en.webp)
@@ -34,9 +34,9 @@ The public tabs can be shown and hidden as needed. The X closes the current tab.
 
 ![close tab](/images/passwordsecure/9.1/configuration/basic_view/tab_system/close-tab-en.webp)
 
-A public tab can be displayed again with a simple click on the +.
+A public tab can be displayed again with a simple click the +.
 
 ![select organisational unit](/images/passwordsecure/9.1/configuration/basic_view/tab_system/select-ou-en.webp)
 
-In the subsequent dialog, only the desired organizational unit must be selected and confirmed with
+In the subsequent dialog, only the desired organizational unit must be selected, and confirmed with
 OK. All organizational units to which the user is authorized are available here.

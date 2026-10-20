@@ -10,8 +10,6 @@ There are no password policies defined when Password Policy Enforcer is first in
 Policy Enforcer accepts all passwords in this state, so users only need to comply with the Windows
 password policy rules (if enabled).
 
-Follow the steps to create a new password policy.
-
 **Step 1 –** Click the **Policies** item to display the Policies view.
 
 **Step 2 –** Click **New Policy** in the right pane of the management console.
@@ -21,10 +19,10 @@ Follow the steps to create a new password policy.
 **Step 3 –** Enter a unique policy name in the **New policy name** text box.
 
 **Step 4 –** If the new policy should inherit its default configuration from an existing policy,
-choose a policy from the **Copy settings from** drop-down list.
+choose a policy from the **Copy settings from** dropdown list.
 
 **Step 5 –** Optionally, if the new policy should inherit settings from commonly used frameworks,
-select an Policy Template from the drop-down list. For a list of policies see
+select an Policy Template from the dropdown list. For a list of policies see
 [ Policy Templates ](#policy-templates).
 
 **Step 6 –** Click **OK**.
@@ -38,7 +36,7 @@ topic for additional information.
 
 ## Policy Templates
 
-Password Policy Enforcer v10.1 contains Out-of-the-box Policy Templates based on the requirements of
+Password Policy Enforcer v10.1 includes built-in Policy Templates based on the requirements of
 the most popular regulatory frameworks.
 
 - CIS Password Policy Guide — See the

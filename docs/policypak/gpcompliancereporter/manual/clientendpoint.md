@@ -66,7 +66,7 @@ console) and each target machine requesting RSOP. An example of these errors is 
 :::note
 For a video addressing the opening of the firewall ports as described in this section,
 please go to the following link:
-[Open required firewall ports](/docs/policypak/gpcompliancereporter/videos/troubleshooting/firewallports.md).
+[Open required firewall ports](/docs/policypak/gpcompliancereporter/videos/firewallports.md).
 :::
 
 

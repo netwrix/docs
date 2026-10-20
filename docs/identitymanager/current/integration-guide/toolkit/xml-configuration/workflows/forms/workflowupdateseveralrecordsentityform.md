@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WorkflowUpdateSeveralRecordsEntityForm"
 description: "Displays a form to create, update or delete one or several records."
 sidebar_position: 9
@@ -68,10 +68,10 @@ And with the following form for the data that groups records together:
 ```
 
 The contents of `MainControl`, `RecordControl`, `RecordSlaveUniqueItemControl` and `RecordSlaveControl` are visible during the workflow's execution:
-![Form Example - Manage a User's Positions](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/FormExample_WorkflowUpdateSeveralRecordsEntityForm_V603.webp)
+![Form Example - Manage a User's Positions](/images/identitymanager/formexample_workflowupdateseveralrecordsentityform_v603.webp)
 
 When adding a new position, we decide to make `Title` available, in addition to the fields used to update existing records:
-![Formexample Workflowupdateseveralrecordsentityform V603](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workflowupdateseveralrecordsentityform/formexample_workflowupdateseveralrecordsentityform_v603.webp)
+![Formexample Workflowupdateseveralrecordsentityform V603](/images/identitymanager/formexample_workflowupdateseveralrecordsentityform_v603.webp)
 
 :::note
 The content of `RecordUniqueItemControl` is not visible. The user's records that have the same values for all the properties in `RecordUniqueItemControl` will be displayed, and potentially modified, as one.

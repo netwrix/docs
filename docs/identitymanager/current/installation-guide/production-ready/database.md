@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Install the Database"
 description: "Install the Database"
 sidebar_position: 20
@@ -14,7 +14,7 @@ Please make sure that the [Database](../../installation-guide/requirements/datab
 
 ### 1. Install SQL server
 
-Microsoft's extensive documentation can be used to get help [installing a SQL Server 2016 or later](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server).
+Microsoft's extensive documentation can be used to get help [installing a SQL Server 2022 or later](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server).
 
 ### 2. Create the database
 
@@ -41,7 +41,7 @@ Preferred methods include [SQL Server Management Studio](https://docs.microsoft.
 - Locate the database name dropdown, next to the **Execute** button in the top left section of the
 screen.
 
-![Execute Query](/images/identitymanager/installation-guide/production-ready/database/execute_query.webp)
+![Execute Query](/images/identitymanager/execute_query.webp)
 
 - From the dropdown, select the newly created database.
 - Click **Execute**.

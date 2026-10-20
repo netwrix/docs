@@ -189,7 +189,6 @@ Deploy your configuration. After deployment:
 - [CreateAgentSynchroComplete](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/jobs/createagentsynchrocomplete) - Scaffolding documentation
 - [CreateConnectorSynchroComplete](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/jobs/createconnectorsynchrocomplete) - Scaffolding documentation
 
-
 Task that sends a notification to all users who have pending roles to review, only for roles with a simple approval workflow, i.e. pending the validation 1 out of 1.
 
 

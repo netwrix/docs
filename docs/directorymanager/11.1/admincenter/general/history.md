@@ -29,7 +29,7 @@ In Directory Manager, history is tracked for:
 
 **Enable History Tracking**
 
-History for Admin Center and helpdesk is tracked by default and you cannot disable it.
+History for Admin Center and helpdesk is tracked by default and you can't disable it.
 
 However, history for identity store configurations and objects is disabled by default. You can
 enable it for an identity store as well as choose to track all or specific actions. See the
@@ -43,7 +43,7 @@ enable it for an identity store as well as choose to track all or specific actio
 
 **History Retention**
 
-The _history retention_ setting for an identity store enables you to choose whether you want to keep
+Use the _history retention_ setting for an identity store to choose whether you want to keep
 history data forever or for a specific period. See the
 [Retain Complete History Data](/docs/directorymanager/11.1/admincenter/identitystore/configure/historytracking.md#retain-complete-history-data)
 and

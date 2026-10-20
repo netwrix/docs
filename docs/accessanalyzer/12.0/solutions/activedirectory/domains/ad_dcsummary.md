@@ -16,7 +16,7 @@ Navigate to the **Active Directory > 5.Domains > AD_DCSummary > Configure** node
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task(s). The analysis task(s) are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

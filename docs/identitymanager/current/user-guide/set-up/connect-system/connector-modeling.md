@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Model the Data"
 description: "Model the Data"
 sidebar_position: 10
@@ -109,7 +109,7 @@ Find at the bottom a procedure example about modeling the Active Directory.
 
 All templates are detailed with examples **and** schemas with the following key:
 
-![Schemas' Key](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_key.webp)
+![Schemas' Key](/images/identitymanager/connectormodel_key.webp)
 
 During the technical modeling inside Identity Manager, these objects will become **entity types**, their attributes will become **scalar properties**, the links between them will become **navigation properties**.
 
@@ -128,7 +128,7 @@ Permissions can be managed:
 
 #### Model
 
-![User Model](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_user.webp)
+![User Model](/images/identitymanager/connectormodel_user.webp)
 
 Thus you need to create one entity type to represent either accounts or other resources.
 
@@ -153,13 +153,13 @@ In further steps, you will be able to define one resource type per account type 
 
 Canteen badges are a **simple** system handled with the User model. Indeed users can simply have among their attributes the access authorization for a given building **and** a given time. Or also, instead of creating an entity type for users, we can create an entity type for the badges. They would have in their attributes their respective access location **and** time, **and** an attribute listing authorized users.
 
-![User Model - Canteen Badges Example](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_user-canteen.webp)
+![User Model - Canteen Badges Example](/images/identitymanager/connectormodel_user-canteen.webp)
 
 #### Example - Mailboxes
 
 Mailboxes constitute a complex system, but IGA purposes require little information (only accounts) so this system can too be handled with the User model, either through users **and** their entitlement lists, or through mailbox entitlements **and** their lists of authorized users.
 
-![User Model - Mailboxes Example](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_user-mailbox.webp)
+![User Model - Mailboxes Example](/images/identitymanager/connectormodel_user-mailbox.webp)
 
 ### User-Group
 
@@ -173,7 +173,7 @@ Users are represented by the accounts they own.
 
 #### Model
 
-![User-Group Model](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_usergroup.webp)
+![User-Group Model](/images/identitymanager/connectormodel_usergroup.webp)
 
 Thus you need to create one entity type to represent groups (or roles or profiles) **and** one for accounts.
 
@@ -193,13 +193,13 @@ The SAB system handles authorizations using users **and** groups. A user is auth
 
 We define two **entity types** `SAB - User` **and** `SAB - Group`. We fill them with a few attributes useful to manage entitlements in the SAB application. Finally, we add a navigation property in both **entity types** in order to link `User` with `Group` with an "n-to-n" relationship.
 
-![User-Group Example - SAB](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_sab.webp)
+![User-Group Example - SAB](/images/identitymanager/connectormodel_sab.webp)
 
 #### Example - RACF
 
 The [RACF](https://www.ibm.com/docs/en/zos-basic-skills?topic=zos-what-is-racf) connector is used to manage critical entitlements on the mainframe. RACF is a complex system, but IGA purposes only require information about accounts **and** groups, as entitlements are given by group membership. Thus the system can be simplified to be managed by Identity Manager following the User-Group model.
 
-![User-Group Example - RACF](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_racf.webp)
+![User-Group Example - RACF](/images/identitymanager/connectormodel_racf.webp)
 
 For RACF, Identity Manager provisions only the link between accounts **and** groups.
 
@@ -209,7 +209,7 @@ The TSS connector is similar to RACF in its use, but manages fine-grained entitl
 
 Identity Manager manages users (with their accounts) **and** groups called here profiles. Both users **and** profiles are grouped into departments, themselves grouped into partitions. Entitlements are called authorizations, **and** are linked to users through group (profile) membership.
 
-![User-Group Example - TSS](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_tss.webp)
+![User-Group Example - TSS](/images/identitymanager/connectormodel_tss.webp)
 
 For TSS, Identity Manager provisions only the link between users **and** profiles.
 
@@ -231,7 +231,7 @@ The object `User` or `Account` from the template, which contains users' accounts
 
 The object `Group` from the template is called here `Position` (grouped into organizations, themselves grouped into organization types). It contains the way an entitlement is given, here through a given position **and** wallet.
 
-![User-Group Example - SDGE](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_sdge.webp)
+![User-Group Example - SDGE](/images/identitymanager/connectormodel_sdge.webp)
 
 For SDGE, Identity Manager provisions only workers **and** the link between workers **and** positions.
 
@@ -253,7 +253,7 @@ then assigned to accounts, which are owned by users.
 
 #### Model
 
-![Account-Profile-Transaction Model](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_profiletransaction.webp)
+![Account-Profile-Transaction Model](/images/identitymanager/connectormodel_profiletransaction.webp)
 
 Thus you need to create one entity type to represent accounts, one for profiles, **and** one for **transactions**.
 
@@ -267,7 +267,7 @@ For example, instead of modeling two artificial types of profiles called `PP` fo
 
 See the schema below this note.
 
-![Profiles Example](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_profiles.webp)
+![Profiles Example](/images/identitymanager/connectormodel_profiles.webp)
 
 **transactions** are not mandatory in a model. Most of the time, the profile packages are predefined once **and** for all, or are the responsibility of the **application owner**. Then Identity Manager doesn't need to manage the specific **transactions** for a profile directly inside the managed system. You can hence avoid modeling **transactions** altogether. In this case, you fall back on the User-Group model with a twist: if profile categories are relevant in the system's authorization mechanism, then you must take them into account.
 
@@ -275,7 +275,7 @@ See the schema below this note.
 
 The TSS connector is actually a mix of the User-Group **and** Account-Profile-Transaction models. The User-Group part is explained above.
 
-![User-Group Example - TSS](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_tss-prof-trans.webp)
+![User-Group Example - TSS](/images/identitymanager/connectormodel_tss-prof-trans.webp)
 
 **transactions** are called here authorizations.
 
@@ -298,7 +298,7 @@ Users are represented by the accounts they own.
 
 #### Model
 
-![Star Model](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_star.webp)
+![Star Model](/images/identitymanager/connectormodel_star.webp)
 
 Thus you need to create one entity type to represent accounts, one for each criterion, **and** another one to represent the object linking acounts to criteria.
 
@@ -319,7 +319,7 @@ The flexibility generated by parameters is particularly interesting for roles th
 
 Consider an application which manages entitlement assignment with different rules, according to users' profiles, attachment areas **and** sites. Our example shows 4 profiles, 4 attachment areas **and** 3 sites. So a user may be assigned a given entitlement for a given profile, attachment area **and** site.
 
-![Star Model Example](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_starmodel.webp)
+![Star Model Example](/images/identitymanager/connectormodel_starmodel.webp)
 
 For this connector, Identity Manager provisions only the links between accounts **and** linking objects, **and** the links between linking objects **and** each criterion.
 
@@ -335,19 +335,19 @@ available profiles, attachment areas **and** sites, which makes a total of 48 ro
 
 Let's say we are modeling an Active Directory, which handles authorization through the group memberships of accounts. In other words, to assign an entitlement to an identity, we make the AD account of said identity member of the corresponding AD group. That is exactly what the User-Group template is designed to handle. See the Model the Data topic for additional information.
 
-![User-Group Model](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_usergroup.webp)
+![User-Group Model](/images/identitymanager/connectormodel_usergroup.webp)
 
 **Step 2: adapt the model to your **reality**.**
 
 We start by renaming the `Account` object as `AD_User` **and** the `Group` object as `AD_Group`.
 
-![AD Example - Step 1](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_ad-step1.webp)
+![AD Example - Step 1](/images/identitymanager/connectormodel_ad-step1.webp)
 
 **Step 3: define useful data close to your **reality**.**
 
 We **shape** these objects with the following attributes:
 
-![AD Example - Step 2](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_ad.webp)
+![AD Example - Step 2](/images/identitymanager/connectormodel_ad.webp)
 
 **Step 4: ensure that all objects have unique keys.**
 
@@ -369,5 +369,5 @@ Beyond avoiding repetition, this makes the model easily adaptable if new element
 > `AD_Computer` **and** `AD_OU` without merging groups with entries, designing `AD_Entry` with all these
 > attributes provides the means to add objects without creating new **entity types**.
 >
-> ![AD_Entry Example](/images/identitymanager/user-guide/set-up/connect-system/connector-modeling/connectormodel_adentry.webp)
+> ![AD_Entry Example](/images/identitymanager/connectormodel_adentry.webp)
 

@@ -22,7 +22,7 @@ The following are the software requirements for Netwrix Data Classification inst
    - Named Pipe Activation
 
    :::note
-   To activate these features, select them under **.Net Framework Advanced Services** - **WCF Services** from **Windows Features**.
+   To activate these features, select them in **Windows Features** under **.Net Framework Advanced Services** → **WCF Services**.
    :::
 
    **Web Server Role (IIS)**
@@ -36,7 +36,7 @@ The following are the software requirements for Netwrix Data Classification inst
      - Anonymous Authentication
 
        :::note
-       The Anonymous Authentication element is included in the default installation of IIS 7. Make sure you use IIS 7 and above.
+       The Anonymous Authentication element is included in the default installation of IIS 7. Ensure you use IIS 7 and above.
        :::
    - **Application Development:**
      - ISAPI Extensions

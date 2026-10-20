@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # MS SQL Server Tab
 
-The MS SQL Server tab on SQL Server host's properties window is used to configure properties for
+The MS SQL Server tab on SQL Server host's properties window configures properties for
 SQL activity monitoring on the host.
 
 ![MS SQL Server Tab](/images/activitymonitor/9.0/admin/monitoredhosts/properties/mssqlservertab.webp)
@@ -14,7 +14,7 @@ SQL activity monitoring on the host.
 The configurable options are:
 
 - Enable Trace automatically — Check the box to enable the activity monitor to enable Trace
-  automatically if it is disabled
+  automatically when disabled
 - Audit polling interval — Configure the interval between audits. The default is **15 seconds**.
 - Open instruction... — Click **Open Instruction...** to view steps on how to create a login for
   SQL monitoring

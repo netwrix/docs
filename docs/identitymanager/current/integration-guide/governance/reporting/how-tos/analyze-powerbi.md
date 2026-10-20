@@ -1,4 +1,4 @@
-﻿# Analyze Identity Manager's Data with Power BI
+# Analyze Identity Manager's Data with Power BI
 
 This topic explains how to prepare Identity Manager's data and use it in Power BI, with the final goal to generate user-friendly reports.
 
@@ -18,7 +18,7 @@ Based on this model, Power BI will be able to:
 - generate customized graphic reports
 - publish the reports with Power BI Service (SaaS) or Power BI Report Server (on premises)
 
-![Process Schema](/images/identitymanager/integration-guide/governance/reporting/how-tos/analyze-powerbi/powerbi_process.webp)
+![Process Schema](/images/identitymanager/powerbi_process.webp)
 
 ## Prerequisites
 

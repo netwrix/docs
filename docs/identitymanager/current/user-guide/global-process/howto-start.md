@@ -1,4 +1,4 @@
-﻿---
+---
 title: "How to Start"
 description: "How to Start"
 sidebar_position: 10
@@ -22,7 +22,7 @@ The options 2A and 2B are more complicated and time-consuming than the option 1,
 
 Netwrix Identity Manager (formerly Usercube) recommends the option 1 to be able to start IGA without waiting for the installation of an agent in your network, and go through the option 2 simultaneously.
 
-![Process Schema - How to Start with Usercube](/images/identitymanager/user-guide/global-process/howto-start/globalprocess_schemastart.webp)
+![Process Schema - How to Start with Usercube](/images/identitymanager/globalprocess_schemastart.webp)
 
 ## Process Details
 

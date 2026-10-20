@@ -14,7 +14,7 @@ inheritance.
 
 ## Prerequisites
 
-Action modules are available with a special Enterprise Auditor license. In order to use the Resource
+Action modules are available with a special Enterprise Auditor license. To use the Resource
 Based Groups workflow, the following Enterprise Auditor licensing components are required:
 
 - File System Feature
@@ -22,7 +22,7 @@ Based Groups workflow, the following Enterprise Auditor licensing components are
 - File System Actions Add-on
 - Active Directory Actions Add-on
 
-The following job groups must be successfully run prior to using this workflow:
+The following job groups must be successfully run before using this workflow:
 
 - .Active Directory Inventory Job Group
 - FileSystem > 0.Collection Job Group
@@ -35,7 +35,7 @@ but it can be installed from the Instant Job Wizard.
 
 ![Resource Based Groups Job Group in the Jobs Tree](/images/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/jobstree.webp)
 
-Once it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **FileSystem** >
+After it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **FileSystem** >
 **Resource Based Groups**.
 
 The FS_TraverseGroups Job and the FS_ResourceBasedGroupsAICImport Job must be installed from the
@@ -53,13 +53,13 @@ based groups model.
 The following jobs comprise the Resource Based Groups Job Group:
 
 - [FS_ResourceBasedGroups Job](/docs/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/fs_resourcebasedgroups.md)
-  – This job will transform permission on specified folders to a resource based groups model
+  – This job will transform permissions on specified folders to a resource based groups model
 - [FS_TraverseGroups Job](/docs/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/fs_traversegroups.md)
-  – (Optional) This job can be used to create and apply permissions for traverse groups based on
-  previous resource based groups. The FS_TraverseGroupsJob must be added from the Instant Job
-  Library in order to be used.
+  – (Optional) Use this job to create and apply permissions for traverse groups based on
+  previous resource based groups. The FS_TraverseGroups Job must be added from the Instant Job
+  Library to be used.
 - [FS_ResourceBasedGroupAICImport Job](/docs/accessanalyzer/11.6/solutions/filesystem/resourcebasedgroups/fs_resourcebasedgroupaicimport.md)
-  – (Optional) This job imports resources and access groups from the FS_ResoureBasedGroup Job into
+  – (Optional) This job imports resources and access groups from the FS_ResourceBasedGroups Job into
   the Netwrix Access Information Center. The FS_ResourceBasedGroupsAICImport Job must be added from
   the Instant Job Library to be used.
 
@@ -67,8 +67,8 @@ The following jobs comprise the Resource Based Groups Job Group:
 
 **Dependencies**
 
-- The **.Active Directory Inventory** Job Group must be successfully run prior to running this job
-- The **FileSystem** > **0.Collection** Job Group must be successfully run prior to running this job
+- The **.Active Directory Inventory** Job Group must be successfully run before running this job
+- The **FileSystem** > **0.Collection** Job Group must be successfully run before running this job
 
 **Targeted Hosts**
 
@@ -77,8 +77,8 @@ The following jobs comprise the Resource Based Groups Job Group:
 
 **Schedule Frequency**
 
-This job group can be scheduled to run as desired. Throughout this document reference to executing a
-job refers to either manual execution or scheduled execution, according to the needs of the
+This job group can be scheduled to run as desired. Throughout this document, executing a
+job refers to either manual execution or scheduled execution, based on the needs of the
 organization. See the
 [Scheduling the Resource Based Groups Job Group](#scheduling-the-resource-based-groups-job-group)
 topic for additional information.
@@ -96,5 +96,5 @@ scheduled for discrete one-time runs so that results may be reviewed after each 
 [Schedule Jobs](/docs/accessanalyzer/11.6/admin/schedule/overview.md#schedule-jobs)
 topic for additional information.
 
-Throughout this document reference to executing a job refers to either manual execution or scheduled
-execution, according to the needs of the organization.
+Throughout this document, executing a job refers to either manual execution or scheduled
+execution, based on the needs of the organization.

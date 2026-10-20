@@ -1,6 +1,6 @@
 ---
 title: Netwrix Directory Manager Presales Engineer
-sidebar_position: 1440
+sidebar_position: 1280
 tags: [certification, partners, presales, directory-manager]
 keywords: [training, course, certification, partners, presales, directory manager]
 description: "Become a certified Presales Engineer for Netwrix Directory Manager"

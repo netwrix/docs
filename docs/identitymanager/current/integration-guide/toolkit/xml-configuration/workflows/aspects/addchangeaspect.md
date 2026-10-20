@@ -1,4 +1,4 @@
-﻿---
+---
 title: "AddChangeAspect"
 description: "Modifies a given property value."
 sidebar_position: 1
@@ -51,7 +51,7 @@ A pointcut is a mechanism telling Identity Manager when to execute the linked [a
 
 The position of the pointcut is specified by an activity state and a mode (before or after).
 
-![pointcut Schema](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/aspects/addchangeaspect/pointcut.webp)
+![pointcut Schema](/images/identitymanager/pointcut.webp)
 
 
 |Property|Details|

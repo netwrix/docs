@@ -15,13 +15,12 @@ export default function VersionSwitcher() {
   let currentVersion = null;
 
   for (const product of PRODUCTS) {
-    // Extract the product path segment (e.g., 'passwordsecure' from 'docs/passwordsecure')
-    const productPathSegment = product.path.split('/').pop();
+    // Check if the URL starts with this product's path (e.g., 'docs/auditor')
+    const productPathParts = product.path.split('/').filter((part) => part);
+    const matches = productPathParts.every((part, i) => pathParts[i] === part);
 
-    // Check if this product's path segment is in the URL
-    const productIndex = pathParts.indexOf(productPathSegment);
-
-    if (productIndex !== -1) {
+    if (matches) {
+      const productIndex = productPathParts.length - 1;
       matchedProduct = product;
 
       // Check if there's a version segment after the product
@@ -36,19 +35,21 @@ export default function VersionSwitcher() {
     }
   }
 
+  // Sort versions so latest is always first (on the left), excluding hidden versions
+  const sortedVersions = matchedProduct
+    ? [...matchedProduct.versions].filter((v) => !v.hidden).sort((a, b) => {
+        if (a.isLatest) return -1;
+        if (b.isLatest) return 1;
+        return 0;
+      })
+    : [];
+
   // Don't render anything if:
   // - No product matched
-  // - Product only has one version
-  if (!matchedProduct || matchedProduct.versions.length <= 1) {
+  // - Product has one or fewer visible versions
+  if (!matchedProduct || sortedVersions.length <= 1) {
     return null;
   }
-
-  // Sort versions so latest is always first (on the left)
-  const sortedVersions = [...matchedProduct.versions].sort((a, b) => {
-    if (a.isLatest) return -1;
-    if (b.isLatest) return 1;
-    return 0;
-  });
 
   return (
     <div className={styles.versionSwitcherContainer}>

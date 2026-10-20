@@ -693,7 +693,7 @@ Creates an automation rule.
 #### Get
 ##### Summary:
 
-Returns a automation rule corresponding to the provided identifier and its information according to the provided query.
+Returns an automation rule corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -1206,7 +1206,7 @@ Returns all the identified risks according to the provided query.
 #### Get
 ##### Summary:
 
-Returns a IdentifiedRisk corresponding to the provided identifier and its information according to the provided query.
+Returns an IdentifiedRisk corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 

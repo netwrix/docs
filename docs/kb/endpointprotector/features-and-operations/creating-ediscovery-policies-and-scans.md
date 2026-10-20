@@ -15,10 +15,11 @@ keywords:
   - clean scan
   - incremental scan
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Creating eDiscovery Policies and Scans
 tags:
   - features-and-operations
+  - kb
 title: "Creating eDiscovery Policies and Scans"
 knowledge_article_id: kA0Qk0000002BCiKAM
 ---

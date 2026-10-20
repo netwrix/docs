@@ -18,7 +18,7 @@ The Package Usage tool is available with the Intelligent Change Enablement and E
 Run the scanners first to ensure you have the latest data.
 :::
 
-Once you have run the scanner, you filter and export the data:
+After you run the scanner, you filter and export the data:
 
 - Filter by package
 - Filter by usage
@@ -38,4 +38,4 @@ To open the Package Usage tool:
 
 4. Click **Run Scanner** to ensure you have the latest data.
 
-You can filter by package, usage and user. Use **Export Details** to generate a **.xlsx** file.
+You can filter by package, usage, and user. Use **Export Details** to generate a **.xlsx** file.

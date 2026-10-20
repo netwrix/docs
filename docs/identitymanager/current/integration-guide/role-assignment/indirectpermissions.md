@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Indirect Permissions"
 description: "Indirect Permissions"
 sidebar_position: 120
@@ -61,7 +61,7 @@ Currently, Indirect Permissions are only displayed and found in the users' `View
 Although Indirect Permissions are marked as `Non-conforming`, they can be neither approved nor deleted. They also won't appear in Access certification campaigns.
 
 Indirect Permissions are always indicated by the following icon:
-![Indirect Permission Icon](/images/identitymanager/integration-guide/role-assignment/indirectpermissions/ic_fluent_flow_20_regular.webp)
+![Indirect Permission Icon](/images/identitymanager/ic_fluent_flow_20_regular.webp)
 
 ## Disabling the Indirect Permission Computation
 

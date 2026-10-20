@@ -28,13 +28,13 @@ sidebar_position: 10
 - [Resource Reviews Overview](/docs/accessinformationcenter/11.6/resourcereviews/overview.md)
   topic and subtopics cover the process of managing resource reviews through the Access Information
   Center. The Resource Review workflow enables business owners to conduct resource and group reviews
-  and recommend changes. It is necessary to first assign resource Owners in the Resource Owners
+  and recommend changes. First assign resource Owners in the Resource Owners
   interface. The Resource Reviews interface is available to users with either Security Team or
   Administrator access.
 - [Access Requests Overview](/docs/accessinformationcenter/11.6/accessrequests/overview.md)
   topic and subtopics cover the Self-Service Access Requests workflow, which enables domain users to
   request access to resources or to request membership in Active Directory groups or distribution
-  lists. The approval process involves the business owners, so it is necessary to first assign
+  lists. The approval process involves the business owners, so first assign
   resource Owners in the Resource Owners interface. The Access Requests interface is available to
   users with either Security Team or Administrator access.
 

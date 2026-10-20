@@ -1,4 +1,4 @@
-﻿---
+---
 title: "For Resource Creation (Mono Record)"
 description: "For Resource Creation (Mono Record)"
 sidebar_position: 10
@@ -82,7 +82,7 @@ Resource Creation (Mono Record) topic for additional information.
 </WorkflowCreateRecordEntityForm>
 ```
 
-![UI Form](/images/identitymanager/integration-guide/workflows/how-to/workflow-create-mono/howto_resourcecreationmono_form_v602.webp)
+![UI Form](/images/identitymanager/howto_resourcecreationmono_form_v602.webp)
 
 ### Add a summary (Optional)
 
@@ -95,7 +95,7 @@ Summary form:
 </WorkflowCreateRecordEntityForm>
 ```
 
-![UI Summary](/images/identitymanager/integration-guide/workflows/how-to/workflow-create-mono/howto_resourcecreationmono_summary_v602.webp)
+![UI Summary](/images/identitymanager/howto_resourcecreationmono_summary_v602.webp)
 
 ## Assign the Right Permissions
 
@@ -119,7 +119,7 @@ Below is an example of an access control rule where the `Administrator` profile 
 
 Creating a new resource, an interesting location for this workflow could be the users list page.
 
-![Workflow Menu Items - Users List](/images/identitymanager/integration-guide/workflows/how-to/workflow-create-multi/menuitems_userslist_v603.webp)
+![Workflow Menu Items - Users List](/images/identitymanager/menuitems_userslist_v603.webp)
 
 To create a menu item here for the new workflow, you can add the following XML configuration to the existing menu items list:
 
@@ -159,7 +159,7 @@ Partial form for user data:
 <Control DisplayName_L1="Personal Data" DisplayName_L2="Informations personnelles" OutputType="LayoutFieldset" HomonymEntityLink="Homonym_Directory_UserRecord">  <Control DisplayName_L1="Full Name" DisplayName_L2="Nom complet" OutputType="LayoutRowset">    <Control Binding="LastName" IsRequired="true" />    <Control Binding="FirstName" IsRequired="true" />  </Control></Control>...
 ```
 
-![UI Homonym Detection](/images/identitymanager/integration-guide/workflows/how-to/workflow-create-multi/howto_resourcecreationmono_homonym_v603.webp)
+![UI Homonym Detection](/images/identitymanager/howto_resourcecreationmono_homonym_v603.webp)
 
 ## Customize the Display Table (Optional)
 

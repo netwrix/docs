@@ -13,10 +13,11 @@ keywords:
   - certificate stack
   - regenerate
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: How to Set FQDN in Server Certificate Subject
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "How to Set FQDN in Server Certificate Subject"
 knowledge_article_id: kA0Qk0000002BB7KAM
 ---

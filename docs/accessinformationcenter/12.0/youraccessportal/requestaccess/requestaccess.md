@@ -20,19 +20,19 @@ It contains two pages:
     :::
 
 
--   **2. Add Notes** — Allows you to enter a note explaining why the request is being made
+-   **2. Add Notes** — Enter a note explaining why the request is being made
 
 See the Submit a Request topic for additional information.
 
 ## Submit a Request
 
-Follow the steps to submit a resource request.
+To submit a resource request:
 
 **Step 1 –** In the Your Access portal, click **Request Access**. The Request Access wizard opens.
 
 ![Request Access Wizard Select Resource page](/images/accessinformationcenter/12.0/accessrequests/wizard/selectresource.webp)
 
-**Step 2 –** On the Select Resource page, locate the desired resources using the Search Catalog and
+**Step 2 –** On the Select Resource page, locate the resources you want using the Search Catalog and
 browse options.
 
 - Search Catalog – Begin typing the name of the resource:
@@ -43,19 +43,18 @@ browse options.
       filter the search field to groups which reside in a particular domain, enter the domain name.
 
     :::tip
-        Remember, it is possible that the resource may not be managed by the Access Information
-    Center. Contact the Request Administrator if the desired resource does not come up with search
-    filters.
+        Remember, only resources managed by the Access Information Center appear in search results.
+    Contact the Request Administrator if the resource you want doesn't appear.
     :::
 
 
-- Browse option – Navigate through the table to select the desired resource. The table will display
+- Browse option – Navigate through the table to select the resource you want. The table will display
   the following information:
 
     - Resource Name – The icon indicates the type of resource. The resource name includes its
       location, such as the UNC path for a file system resource, the URL for SharePoint resource, or
       Group name (e.g., [Domain]\[Group]).
-    - Access – Level of access currently possessed. A green plus symbol indicates multiple access
+ - Access – Level of access possessed. A green plus symbol indicates multiple access
       levels are available. Possible values include:
 
         - For file system and SharePoint resources: Full Control, Modify, or Read
@@ -66,14 +65,13 @@ browse options.
 
     :::note
     When there are more than 100 rows of resources available for access request, this page
-    will only load 100 rows of data. You will be able to search for a specific resource that is not
+    will only load 100 rows of data. You will be able to search for a specific resource that isn't
     showing in the current view.
     :::
 
 
 **Step 3 –** Select the resource in the table. If there are multiple access levels available, as
-indicated by the green plus (+) button, click the button to rotate through and select the desired
-access level. Multiple resources can be selected using ether the Ctrl or Shift key with mouse click
+indicated by the green plus (+) button, click the button to rotate through and select the access level you want. Multiple resources can be selected using either the Ctrl or Shift key with mouse click
 combinations. Click **Add** to place a selected resource into your list.
 
 ![Selected Resources Window](/images/accessinformationcenter/12.0/accessrequests/wizard/selectedresources.webp)
@@ -81,7 +79,7 @@ combinations. Click **Add** to place a selected resource into your list.
 **Step 4 –** Use the **View Selections** button to open the Selected Resources window. If an extra
 resource is in your list, select it and click **Remove**. Click **OK** to close the window.
 
-**Step 5 –** When you selection list is set as desired, click **Next**.
+**Step 5 –** When your selection list is set as desired, click **Next**.
 
 ![Request Access wizard Add Notes page](/images/accessinformationcenter/12.0/accessrequests/wizard/addnotes_1.webp)
 
@@ -94,7 +92,7 @@ resource is in your list, select it and click **Remove**. Click **OK** to close
 
     :::note
     When a user has temporary access already granted to a resource, and then requests a
-    different type of access to the same resource with a different expiration date, once the new
+    different type of access to the same resource with a different expiration date, after the new
     access is granted, the new expiration date supersedes the old date.
     :::
 

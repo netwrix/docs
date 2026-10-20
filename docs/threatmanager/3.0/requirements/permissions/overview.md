@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Overview
 
-To sync Active Directory domain(s) and Microsoft Entra ID tenant(s) in Threat Manager you must use
+To sync Active Directory domains and Microsoft Entra ID tenants in Threat Manager you must use
 service accounts with the required permissions. See the following topics for details on these
 permission.
 

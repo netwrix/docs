@@ -7,7 +7,7 @@ sidebar_position: 90
 # Hyper-V SCVMM
 
 Netwrix Auditor is a visibility platform for user behavior analysis and risk mitigation that enables
-control over changes, configurations and access in hybrid IT environments to protect data regardless
+control over changes, configurations, and access in hybrid IT environments to protect data regardless
 of its location. The platform provides security analytics to detect anomalies in user behavior and
 investigate threat patterns before a data breach occurs.
 
@@ -68,7 +68,7 @@ See the [Integration API](/docs/auditor/10.8/api/overview.md) topic for addition
 of the Activity Record and the capabilities of the Integration API.
 
 8. The add-on uses the Integration API to send the Activity Records to Auditor Server, where this
-   data becomes available for search, reporting and alerting.
+   data becomes available for search, reporting, and alerting.
 9. Users open Auditor Client to work with collected data:
     - Search for file changes using certain criteria
     - Export data to PDF or CSV files
@@ -78,7 +78,7 @@ of the Activity Record and the capabilities of the Integration API.
 
 ### Add-on Delivery Package
 
-The add-on delivery package is a ZIP archive comprising several files, including DLLs, configuration
+The add-on delivery package is a ZIP archive comprising several files, including DLLs, configuration,
 and executable files. The latter ones are listed in the table below.
 
 | File name         | Description                                                                                             |

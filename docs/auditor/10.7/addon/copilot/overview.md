@@ -7,15 +7,15 @@ sidebar_position: 70
 # Copilot
 
 Microsoft Copilot is an AI-powered assistant designed to help users in Microsoft 365 apps like Word,
-Excel, and Teams. It leverages large language models to assist with tasks such as generating
+Excel, and Teams. It uses large language models to assist with tasks such as generating
 content, analyzing data, and automating workflows.
 
 To retrieve activity logs on Copilot interactions, the Add-on requires an Azure App registration.
 This allows the application to interact with Microsoft services by obtaining necessary logs and data
 related to Copilot activity.
 
-The Netwrix Auditor Add-On for Microsoft Copilot works in collaboration with Netwrix Auditor. To get
-the add-on up and running, refer the following topics:
+The Netwrix Auditor Add-On for Microsoft Copilot works in collaboration with Netwrix Auditor. To deploy
+and configure the add-on, refer the following topics:
 
 - [Deployment Procedure](/docs/auditor/10.7/addon/copilot/deployment.md)
 - [Work with Collected Data](/docs/auditor/10.7/addon/copilot/collecteddata.md)

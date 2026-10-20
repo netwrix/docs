@@ -12,8 +12,8 @@ to track changes to accounts and groups, and to identify workstations where chan
 
 ## To configure security options
 
-Using both basic and advanced audit policies settings may lead to incorrect audit reporting. To
-force basic audit policies to be ignored and prevent conflicts, enable the Audit: Force audit policy
+Using both basic and advanced audit policy settings leads to incorrect audit reporting. To force
+basic audit policies to be ignored and prevent conflicts, enable the Audit: Force audit policy
 subcategory settings to override audit policy category settings option.
 
 Follow the steps:
@@ -31,12 +31,12 @@ the left and navigate to Policies > Windows Settings > Security Settings → Loc
 Options.
 
 **Step 4 –** Locate the Audit: Force audit policy subcategory settings to override audit policy
-category settings and make sure that policy setting is set to _"Enabled"_.
+category settings and ensure that policy setting is set to _"Enabled"_.
 
 ![manualconfig_ad_nla_audit_force_winserver2016](/images/1secure/configuration/ad/manualconfig_ad_nla_audit_force_winserver2016.webp)
 
 **Step 5 –** Navigate to **Start → Run** and type _"cmd"_. Input the `gpupdate /force` command and
-press **Enter**. The group policy will be updated.
+press **Enter**. The group policy updates.
 
 ## To configure advanced audit policies
 
@@ -64,4 +64,4 @@ Configuration > Audit Policies.
 ![manualconfig_ad_advpol_winserver2016](/images/1secure/configuration/ad/manualconfig_ad_advpol_winserver2016.webp)
 
 **Step 5 –** Navigate to **Start > Run** and type _"cmd"_. Input the `gpupdate /force` command and
-press **Enter**. The group policy will be updated.
+press **Enter**. The group policy updates.

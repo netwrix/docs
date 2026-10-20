@@ -2,6 +2,8 @@
 title: "Video Learning Center"
 description: "Video Learning Center"
 sidebar_position: 20
+pagination_prev: null
+pagination_next: null
 ---
 
 # Video Learning Center
@@ -28,7 +30,7 @@ See the following Video topics for GPO Export Merge, Admin Templates, and Prefe
 
 ## Admin Templates: Tips & Tricks
 
-- [The Ultimate Guide to Managing Screensavers](/docs/policypak/components/admintemplatesmanager/videolearningcenter/admintemplatestips/screensavers.md)
+- [The Ultimate Guide to Managing Screensavers](/docs/policypak/components/admintemplatesmanager/videolearningcenter/screensavers.md)
 
 ## Getting Started: Preferences 2.0
 

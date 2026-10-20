@@ -33,7 +33,7 @@ Update-Group
 
 Example 1:
 
-The following command updates all the Directory Manager group(s), by using the credentials of a
+The following command updates all the Directory Manager groups, by using the credentials of a
 locally logged on user, in a container specified by the "SearchContainer" parameter.
 
 ```

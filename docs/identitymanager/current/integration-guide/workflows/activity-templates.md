@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Activity Templates"
 description: "Activity Templates"
 sidebar_position: 10
@@ -12,7 +12,7 @@ This section describes the activities that constitute and model a [Workflow](../
 
 Going through an activity means going through states and transitions.
 
-![Activity Template - Example](/images/identitymanager/integration-guide/workflows/activity-templates/activitytemplates_example.webp)
+![Activity Template - Example](/images/identitymanager/activitytemplates_example.webp)
 
 By default, Identity Manager's workflow engine implements the following activity templates:
 
@@ -30,33 +30,33 @@ By default, Identity Manager's workflow engine implements the following activity
 
 Awaits user modifications **without** another user's intervention.
 
-![Activity Template - Action](/images/identitymanager/integration-guide/workflows/activity-templates/activitytemplates_action.webp)
+![Activity Template - Action](/images/identitymanager/activitytemplates_action.webp)
 
 ### ActionWithRefine
 
 Awaits user modifications **with** the possibility to delegate the action to another user.
 
-![Activity Template - ActionWithRefine](/images/identitymanager/integration-guide/workflows/activity-templates/activitytemplates_actionwithrefine.webp)
+![Activity Template - ActionWithRefine](/images/identitymanager/activitytemplates_actionwithrefine.webp)
 
 The `ActionWithRefine` activity can be translated into the following form:
 
-![ActionWithRefine in the UI](/images/identitymanager/integration-guide/workflows/activity-templates/activity_actionwithrefine_v602.webp)
+![ActionWithRefine in the UI](/images/identitymanager/activity_actionwithrefine_v602.webp)
 
 ### Review
 
 Awaits user approval **without** another user's intervention.
 
-![Activity Template - Review](/images/identitymanager/integration-guide/workflows/activity-templates/activitytemplates_review.webp)
+![Activity Template - Review](/images/identitymanager/activitytemplates_review.webp)
 
 ### ReviewWithFeedback
 
 Awaits user approval **with** the possiblity of getting feedback from another user before taking the action.
 
-![Activity Template - ReviewWithFeedback](/images/identitymanager/integration-guide/workflows/activity-templates/activitytemplates_reviewwithfeedback.webp)
+![Activity Template - ReviewWithFeedback](/images/identitymanager/activitytemplates_reviewwithfeedback.webp)
 
 The `ReviewWithFeedback` activity can be translated into the following form:
 
-![ReviewWithFeedback in the UI](/images/identitymanager/integration-guide/workflows/activity-templates/activity_reviewwithfeedback_v602.webp)
+![ReviewWithFeedback in the UI](/images/identitymanager/activity_reviewwithfeedback_v602.webp)
 
 ### Persist
 

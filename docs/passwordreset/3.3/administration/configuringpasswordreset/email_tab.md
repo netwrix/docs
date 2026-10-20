@@ -29,7 +29,7 @@ this option if your mail server supports pickup folders.
 
 ### Triggers
 
-Triggers define when e-mails are sent. If the trigger for an event is enabled, then Password Reset
+Triggers define when Password Reset sends e-mails. If the trigger for an event is enabled, then Password Reset
 sends an e-mail when the event occurs. Enabled triggers are underlined.
 
 Click the name of an enabled trigger to edit the trigger's e-mail template.
@@ -51,8 +51,8 @@ macros.
 
 :::note
 Use [NPR_OR_AD_EMAIL] with caution as Password Reset does not check the validity of e-mail
-addresses. If the e-mail address in Password Reset's database is no longer valid, then the alert is
-only sent to the invalid address.
+addresses. If the e-mail address in Password Reset's database is no longer valid, then Password Reset sends the alert
+only to the invalid address.
 :::
 
 
@@ -61,7 +61,7 @@ carbon copies. Separate multiple recipients with a semicolon.
 
 Type the e-mail's subject in the **Subject** text box.
 
-Type the e-mail's body in the large text box. The e-mail is sent as plain text unless the body
+Type the e-mail's body in the large text box. Password Reset sends the e-mail as plain text unless the body
 contains the `<html>` tag. Include the entire HTML document when sending e-mail as HTML. You can
 also use these macros.
 
@@ -71,23 +71,23 @@ also use these macros.
 | [AD_USER]   | The user's Active Directory logon name  |
 
 Password Reset stores the user's preferred language every time they successfully complete an Enroll,
-Reset, Unlock, or Change. E-mail alerts are sent in the user's preferred language, or in the current
-Web Interface language if the user's preferred language is not known. If an e-mail template is not
-defined for the user's preferred language, then the alert is sent in English.
+Reset, Unlock, or Change. Password Reset sends e-mail alerts in the user's preferred language, or in the current
+Web Interface language if the user's preferred language is not known. If no e-mail template exists
+for the user's preferred language, Password Reset sends the alert in English.
 
 Use the drop-down list at the bottom of the E-mail template editor to switch between template
 languages. Changes are preserved as you switch between languages. The **From**, **To**, and **Bcc**
 are the same for all languages.
-A warning icon is shown beside the language drop-down list if an e-mail template is not defined for
+A warning icon appears beside the language drop-down list if no e-mail template is defined for
 every language. You should define an e-mail template for every language to ensure that users can
 understand their e-mail alerts.
 
 ![configuring_npr_5](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr_5.webp)
 
 :::warning
-An attacker may choose a specific language to avoid detection. E-mail alerts are sent
-in the Web Interface language chosen by the attacker if the target user has not enrolled or changed
-their password with Password Reset. The target user will receive the e-mail alerts, but they may not
+An attacker may choose a specific language to avoid detection. Password Reset sends e-mail alerts
+in the Web Interface language the attacker chose if the target user has not enrolled or changed
+their password with Password Reset. The target user receives the e-mail alerts, but may not
 understand them. Use the Rest API to remind new users to enroll so their preferred language is known
 to Password Reset. See the [Enroll Tab](/docs/passwordreset/3.3/administration/configuringpasswordreset/enroll_tab.md) topic
 for additional information.

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ProfileAdministrationAccessControlRules"
 description: "Gives to a given profile the rights to create, update and delete profiles."
 sidebar_position: 3
@@ -8,9 +8,9 @@ Gives to a given profile the rights to create, update and delete profiles.
 
 Profiles are listed on the **Profiles** screen, from **Settings** in the **Configuration** section.
 
-![Settings](/images/identitymanager/buttons/Home_settings_V523.webp)
+![Settings](/images/identitymanager/home_settings_v523.webp)
 
-![Profiles](/images/identitymanager/integration-guide/toolkit/xml-configuration/scaffoldings/AccessControl_Profiles_V603.webp)
+![Profiles](/images/identitymanager/AccessControl_Profiles_V603.webp)
 
 [See more details on profiles' APIs](/docs/identitymanager/current/integration-guide/api/server/accesscontrol).
 

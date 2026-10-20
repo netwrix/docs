@@ -11,9 +11,9 @@ The Netwrix Threat Hunting App for Splunk contains only one dashboard called Thr
 ![ribbon](/images/threatprevention/7.5/siemdashboard/splunk/threathunting/ribbon.webp)
 
 - The Timeframe interval is identified in the upper-left corner of each dashboard and uses the
-  default Splunk search features. The drop-down menu provides additional options. To search within a
+  default Splunk search features. The dropdown menu provides additional options. To search within a
   different interval, choose a new option from the menu.
-- The Threat Type drop-down menu contains several predefined options: Perpetrator Hunting, Sensitive
+- The Threat Type dropdown menu contains several predefined options: Perpetrator Hunting, Sensitive
   Data Hunting, and Privilege Creep/Escalation. The textbox changes based on the selection as
   follows:
 

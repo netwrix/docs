@@ -10,7 +10,7 @@ This section covers how to install each Netwrix Password Secure component.
 
 ## System landscape
 
-A basic production Netwrix Password Secure system landscape consists of the three tiers described below. Version 9 supports multiple database servers across all sites, and Microsoft SQL Server tools synchronize them. You can deploy any number of application servers to handle client connections, which distributes load and reduces latency. This is especially valuable for installations spread across multiple geographic locations.
+A basic production Netwrix Password Secure system landscape consists of the three tiers described in the following sections. Version 9 supports multiple database servers across all sites, and Microsoft SQL Server tools synchronize them. You can deploy any number of application servers to handle client connections, which distributes load and reduces latency. This is especially valuable for installations spread across multiple geographic locations.
 
 ## Client (presentation layer)
 

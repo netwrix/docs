@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WorkflowEditEntityForm"
 description: "Displays a form to update or delete an existing resource, without a record."
 sidebar_position: 6
@@ -23,10 +23,10 @@ With the following form for the workflow's content and summary:
 ```
 
 The content of `MainControl` is visible during the workflow's execution:
-![Form Example - Computer Request](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/FormExample_WorkflowEditEntityForm_V603.webp)
+![Form Example - Computer Request](/images/identitymanager/formexample_workfloweditentityform_v603.webp)
 
 The content of `SummaryControl` is visible after the workflow's execution:
-![Formexample Workfloweditentityform V603](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workfloweditentityform/formexample_workfloweditentityform_v603.webp)
+![Formexample Workfloweditentityform V603](/images/identitymanager/formexample_workfloweditentityform_v603.webp)
 
 
 ## Properties

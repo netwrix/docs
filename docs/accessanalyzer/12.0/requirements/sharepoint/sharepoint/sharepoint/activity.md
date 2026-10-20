@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # SharePoint On-Premise Activity Auditing Configuration
 
-SharePoint Event Auditing must be enabled for each site collection to be monitored by the Netwrix
-Activity Monitor and/or audited by Netwrix Access Analyzer (formerly Enterprise Auditor).
+Enable SharePoint Event Auditing for each site collection that the Netwrix Activity Monitor
+monitors or that Netwrix Access Analyzer (formerly Enterprise Auditor) audits.
 
 ## User Requirements
 
@@ -44,7 +44,7 @@ select the events to be audited.
 
 **Step 6 –** Click OK to save the changes.
 
-SharePoint will create the audit logs to be monitored by the Netwrix Activity Monitor and/or audited
-by Access Analyzer. See the Microsoft
+SharePoint creates the audit logs that the Netwrix Activity Monitor monitors and/or that Access
+Analyzer audits. See the Microsoft
 [Configure audit settings for a site collection (SharePoint 2013/2016/2019)](https://support.office.com/en-us/article/Configure-audit-settings-for-a-site-collection-a9920c97-38c0-44f2-8bcb-4cf1e2ae22d2)
 article for additional information.

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "For Resource Update (Multi Records)"
 description: "For Resource Update (Multi Records)"
 sidebar_position: 50
@@ -100,7 +100,7 @@ fields, for the update of record data shared with all records. Thus it calls the
 
 The `RecordSlaveControl` attribute calls here the same form as `RecordUniqueControl`, because it copies part of the main record to pre-fill the fields of `RecordUniqueControl`.
 
-![UI Form](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-multi/howto_resourceupdatemulti_form_v603.webp)
+![UI Form](/images/identitymanager/howto_resourceupdatemulti_form_v603.webp)
 
 ## Assign the Right Permissions
 
@@ -118,7 +118,7 @@ Below is an example of an access control rule where the `Administrator` profile 
 
 Updating an existing resource, this workflow manages one given resource at a time. Hence an interesting location for this workflow could be the individual view page of users.
 
-![Workflow Menu Items - User's Page](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-mono/menuitems_userview_v603.webp)
+![Workflow Menu Items - User's Page](/images/identitymanager/menuitems_userview_v603.webp)
 
 To create a menu item here for the new workflow, you can add the following XML configuration to the existing menu items list:
 

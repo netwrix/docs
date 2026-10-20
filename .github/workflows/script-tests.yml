@@ -1,0 +1,45 @@
+name: Script Tests
+
+# Runs the repo's own script tests when a PR changes scripts, package.json, or the
+# Vale and Dale rule files that lint-rules.md is generated from.
+# Docs are linted before the PR (Vale, Dale, and the AI-isms check run in the
+# pre-commit hook); nothing here lints documentation.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - dev
+    paths:
+      - 'scripts/**'
+      - 'package.json'
+      - '.vale/styles/**'
+      - '.claude/skills/dale/rules/**'
+      - '.claude/references/lint-rules.md'
+
+concurrency:
+  group: script-tests-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  test-scripts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22.x'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Run script tests
+        run: npm run test:scripts

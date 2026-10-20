@@ -6,10 +6,9 @@ sidebar_position: 20
 
 # Rollback
 
-When deploying changes in a single Salesforce environment, you may find instances where you need to
-rollback to a previous state after a deployment. Platform Governance for Salesforce's rollback tool
-gives you the flexibility of rolling back all or selected components of your deployment,enabling you
-to take action on a specific problem. There are two steps:
+When deploying changes in a single Salesforce environment, you can roll back to a previous state after a deployment. Platform Governance for Salesforce's rollback tool
+lets you roll back all or selected components of your deployment, enabling you
+to address a specific problem. There are two steps:
 
 - Create the Rollback Record
 - Execute and Validate the Rollback
@@ -24,12 +23,12 @@ The Deployment Record status must be **Completed** to be eligible for Rollback.
 
     ![Rollback button is only available for Completed Deployment Records](/images/platgovsalesforce/release_management/rollback_button.webp)
 
-3. Click **Test Connection** to ensure your credentials are working. If your credentials are not
-   correct, you can click **Save Credentials** and edit.
+3. Click **Test Connection** to ensure your credentials are working. If your credentials aren't
+   correct, click **Save Credentials** and edit.
 
     ![Rollback selected customizations](/images/platgovsalesforce/release_management/rollback_selected.webp)
 
-4. By default, all of the customizations are selected for rollback. Deselect any customizations to keep. The **Rollback Type** specifies the effect of the rollback:
+4. By default, all customizations are selected for rollback. Deselect any customizations to keep. The **Rollback Type** specifies the effect of the rollback:
 
     - **Delete**: If a customization was created during the deployment, it is deleted during the
       rollback.
@@ -56,7 +55,7 @@ The Rollback Record must be approved before it can be executed.
     ![Validate the Rollback](/images/platgovsalesforce/release_management/rollback_validation.webp)
 
 5. Open **Netwrix Dashboard** > **Reports** > **Release and Deployment** > **Rollback Logs**
-   You can use **Customize** to add the **Status** column to your report. Here is an example of a
+   Use **Customize** to add the **Status** column to your report. The following is an example of a
    failed rollback [deployment log](/docs/platgovsalesforce/releasemanagement/deployment_logs.md).
 
     ![Review the Rollback log](/images/platgovsalesforce/release_management/rollback_log.webp)

@@ -17,7 +17,7 @@ If the **Take Web Site Offline for Maintenance** option is changed, you must use
  Or re-push the bundle to update the Spider link.
 :::
 
-In most cases, if you are not using NetSuite web sites there is no impact on your system so you can
+In most cases, if you aren't using NetSuite web sites there is no impact on your system so you can
 do the following:
 
 1. Open **Setup** > Select **Site Builder** > **Set Up Website**

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Interact with a GUI Application via Robot Framework"
 description: "Interact with a GUI Application via Robot Framework"
 sidebar_position: 150
@@ -36,11 +36,11 @@ This tool lets you choose the UIA (UI Automation) version. Picking UIA3 should w
 
 The FlaUI inspection tool shows each window that is open on the computer. To find the element the script is supposed to interact with, it is possible to manually search through the windows, and through the elements. However, the easiest way is to use the Hover Mode, which is accessible in the tool bar by clicking on **Mode** > **Hover Mode (use Ctrl)**. To see the XPath, click on **Mode** > **Show XPath**.
 
-![Show XPath](/images/identitymanager/integration-guide/connectors/how-tos/interact-gui-robotframework/robotframeworkflaui_flauishowxpath.webp)
+![Show XPath](/images/identitymanager/robotframeworkflaui_flauishowxpath.webp)
 
 To see the XPath of an element, hover over the element, and press control. A red box should appear around the element, and the FlaUI inspection tool should show the element's information. The XPath should be at the bottom left of the FlaUI element.
 
-![Highlight Element](/images/identitymanager/integration-guide/connectors/how-tos/interact-gui-robotframework/robotframeworkflaui_flauixpathexample.webp)
+![Highlight Element](/images/identitymanager/robotframeworkflaui_flauixpathexample.webp)
 
 As an example, imagine an application showing a list of files and folders. Targeting a specific file would produce an XPath in the shape of `/Window/Pane[3]/Pane/Pane[2]/List/Group[1]/ListItem[1]`. The important parts of this path are the beginning and the end. The beginning of the XPath specifies the window. The middle part of the XPath, in most cases, is irrelevant.
 

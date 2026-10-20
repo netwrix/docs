@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Onboarding and Offboarding"
 description: "Onboarding and Offboarding"
 sidebar_position: 10
@@ -39,7 +39,7 @@ These start and end dates can be configured to be different from the actual star
 
 These dates should then be part of entity types' properties (for example as `StartDate` and `EndDate`), in order to be used in [Record Section](../../../integration-guide/toolkit/xml-configuration/provisioning/recordsection) and [Context Rule](../../../integration-guide/toolkit/xml-configuration/provisioning/contextrule).
 
-![Identities - Validity Period](/images/identitymanager/integration-guide/identity-management/joiners-movers-leavers/on-offboarding/validityperiod.webp)
+![Identities - Validity Period](/images/identitymanager/validityperiod.webp)
 
 At the start date, the resource is created and a few entitlements are assigned to the identity.
 

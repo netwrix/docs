@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Example: Set an Agent Control
 
-Here is the process to create a control to monitor changes:
+To create a control to monitor changes:
 
 1. Create a Saved Search
 2. Create the Customization Record
@@ -81,12 +81,12 @@ From the customization record:
   it here.
 - **Risk/Requirement**: Assign or create a new Control Process and Risk Requirement. For example,
   **1259 Purchase Order Controls**.
-- **Control Error/Warning**: warnings or errors are displayed in this box.
+- **Control Error/Warning**: displays warnings or errors.
 - **Cross Match Control**, **Cross Match Field** and **Cross Match Operator** can be set to
   effectively perform a double join to filter your data and eliminate false positives. For example,
   a script to create an invoice from the user interface is saved to be run as administrator. A user
   creates the invoice from the interface as part of their work flow. Running a search for
-  administrator-touched transactions causes false positives as the user is not an administrator.
+  administrator-touched transactions causes false positives as the user isn't an administrator.
   Using cross match, the first Saved Search is for all transactions by an administrator. The second
   Saved Search is an employee search using the administrator role. Cross Match returns the
   intersection of those two searches, showing only the transactions performed by administrators.

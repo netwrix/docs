@@ -14,7 +14,7 @@ Navigate to the **Jobs** > **SharePoint** > **7.Activity** > **Forensics** > **S
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -26,7 +26,7 @@ The default analysis task is:
 - Analyze SPAC Deletion Events – Creates the SA_SPAC_Deletions_Last30Days table accessible under the
   job’s Results node
 
-In addition to the tables and views created by the analysis tasks, the SQL_Deletions Job produces
+In addition to the tables and views created by the analysis tasks, the SP_Deletions Job produces
 the following pre-configured report:
 
 | Report           | Description                                                                                                                                                                        | Default Tags | Report Elements                                                                                                                                                                                  |

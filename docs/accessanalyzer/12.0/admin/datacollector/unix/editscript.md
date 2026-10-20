@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Unix: Edit Script
 
-The Edit Script page allows the script to be customized.
+Use the Edit Script page to customize the script.
 
 ![Unix Data Collector Wizard Edit Script page](/images/accessanalyzer/12.0/admin/datacollector/unix/editscript.webp)
 

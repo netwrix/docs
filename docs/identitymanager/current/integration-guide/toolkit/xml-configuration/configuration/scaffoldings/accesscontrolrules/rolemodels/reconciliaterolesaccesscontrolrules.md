@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ReconciliateRolesAccessControlRules"
 description: "Generates the permissions to access the role reconciliation pages for a given entity type and profile."
 sidebar_position: 10
@@ -8,7 +8,7 @@ Generates the rights to access the access reconcile roles pages for a given enti
 
 Gives access to a shortcut on the dashboard to access this page.
 
-![Role Reconciliation](/images/identitymanager/user-guide/administrate/non-conforming-assignment-review/role-reconciliation/home_rolereconciliation_v523.webp)
+![Role Reconciliation](/images/identitymanager/home_rolereconciliation_v523.webp)
 
 
 

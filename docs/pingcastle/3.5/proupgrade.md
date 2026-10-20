@@ -1,3 +1,6 @@
+---
+sidebar_position: 6
+---
 # PingCastle Pro Upgrade Guide
 
 ## Before proceeding to the upgrade
@@ -13,14 +16,14 @@ each page.
 
 ## Database backup
 
-We highly recommend to backup the data before proceeding to an upgrade.
+Netwrix highly recommends backing up the data before proceeding with an upgrade.
 
-The data is stored I the database. No data is stored outside of the DB.
+The data is stored in the database. No data is stored outside of the DB.
 
 # Software requirements
 
 Before performing the upgrade, the software requirements for the new
-version need to be met. The table below lays out the different
+version need to be met. The following table lays out the different
 requirements for versions.
 
 2.x All versions have same requirements

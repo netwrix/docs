@@ -31,7 +31,7 @@ The Ransomware dashboard contains the following cards:
     - Only visible after clicking Search on an offense
 
 The offenses generated within QRadar are based upon the Stealthbits: Ransomware Detected rule that
-is packaged with this application. In order to adjust this rule to better suit an organization’s
-needs, please refer to the IBM QRadar
+is packaged with this application. To adjust this rule to better suit an organization’s
+needs, refer to the IBM QRadar
 [Rule management](https://www.ibm.com/support/knowledgecenter/SS42VS_7.2.6/com.ibm.qradar.doc/c_qradar_rul_mgt.html)
 article on how to modify rules.

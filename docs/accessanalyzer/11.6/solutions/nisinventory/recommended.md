@@ -11,11 +11,11 @@ directly or scheduled.
 
 **Dependencies**
 
-This job group does not have dependencies.
+This job group doesn't have dependencies.
 
 **Targeted Hosts**
 
-The host list assignment should be assigned under the **.NIS Inventory** > **NIS Scan** > **Hosts**
+Assign the host list under the **.NIS Inventory** > **NIS Scan** > **Hosts**
 node. Select the custom host list containing the NIS servers or manually add the host in the
 **Individual hosts** section. See the
 [Unix Connection Profile & Host List](/docs/accessanalyzer/11.6/admin/datacollector/nis/configurejob.md)
@@ -25,7 +25,7 @@ topic for additional information.
 
 The Connection Profile should be assigned in the **.NIS Inventory** > **NIS Scan** > **Job
 Properties** window on the **Connection** tab. It is set to **Use the Default Profile**, as
-configured at the global settings level. However, if this is not the Connection Profile with the
+configured at the global settings level. However, if this isn't the Connection Profile with the
 necessary permissions for targeting the NIS servers, select the **Select one of the following user
 defined profiles** option and select the appropriate Connection Profile. See the
 [Unix Connection Profile & Host List](/docs/accessanalyzer/11.6/admin/datacollector/nis/configurejob.md)
@@ -33,8 +33,8 @@ topic for additional information.
 
 **Schedule Frequency**
 
-It is recommended to schedule the .NIS Inventory job group to run once a day. If there are frequent
-changes within the target environment, then it can be executed more often. It is best to rerun it
+Schedule the .NIS Inventory job group to run once a day. If the target environment changes
+frequently, you can run it more often. It is best to rerun it
 anytime changes might have occurred.
 
 **Run at the Solution Level**
@@ -43,9 +43,9 @@ The job in the .NIS Inventory job group can be run at either the job or job grou
 
 **Query Configuration**
 
-The solution requires the NIS domain to be configured in the **Inventory Scan** query. Navigate to
-the **NIS Settings** page of the NIS Data Collector Wizard. Optionally, modifications can be made
-for SID mappings within the **NIS Scan** job. See the
+The solution requires you to configure the NIS domain in the **Inventory Scan** query. Navigate to
+the **NIS Settings** page of the NIS Data Collector Wizard. Optionally, modify SID mappings within
+the **NIS Scan** job. See the
 [NIS Scan Job](/docs/accessanalyzer/11.6/solutions/nisinventory/nis_scan.md) topic
 for additional information.
 
@@ -56,11 +56,11 @@ analysis task is deselected by default, as it is for troubleshooting purposes on
 
 **History Retention**
 
-History retention is not supported and should be turned off.
+History retention isn't supported. Turn it off.
 
 **Multi-console Support**
 
-Multi-console is not supported.
+Multi-console isn't supported.
 
 **Workflow**
 

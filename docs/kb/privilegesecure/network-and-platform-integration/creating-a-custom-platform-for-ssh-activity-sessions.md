@@ -37,7 +37,7 @@ Platforms in SbPAM can be customized to meet specific SSH Activity Session workf
 
    ![User-added image](./../0-images/ka04u000000HcaJ_0EM4u000004cJVz.png)
 
-3. Navigate to the **Resources** page and manually add the Palo Alto resource by IP or DNS name (using the Service Account created above). In this step, it's expected for the Host Scan to fail. Simply close the Host Scan window and proceed to the next step.
+3. Navigate to the **Resources** page and manually add the Palo Alto resource by IP or DNS name (using the service account added in step 2). In this step, it is expected for the Host Scan to fail. Close the Host Scan window and proceed to the next step.
 
    ![User-added image](./../0-images/ka04u000000HcaJ_0EM4u000004cJWE.png)
 
@@ -45,6 +45,6 @@ Platforms in SbPAM can be customized to meet specific SSH Activity Session workf
 
    ![User-added image](./../0-images/ka04u000000HcaJ_0EM4u000004cJWJ.png)
 
-5. Navigate to the **Access Policy** page, create a new resource-based Access Policy that includes SbPAM users, the new Activity created above, and the new Resource manually added above.
+5. Navigate to the **Access Policy** page, create a new resource-based Access Policy that includes SbPAM users, the activity created in step 4, and the resource added in step 3.
 
-6. Navigate to **My Activities** as an SbPAM user in the Access Policy, and you will be able to launch an SSH Activity Session for the Palo Alto resource.
+6. Navigate to **My Activities** as an SbPAM user in the Access Policy, and launch an SSH Activity Session for the Palo Alto resource.

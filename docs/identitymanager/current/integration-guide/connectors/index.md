@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Connectors"
 description: "Connectors"
 sidebar_position: 40
@@ -16,7 +16,7 @@ In this documentation, we talk about managed systems (sometimes called external 
 
 A connector, therefore, acts as an interface between Identity Manager and a managed system.
 
-![Connector Schema](/images/identitymanager/user-guide/set-up/connect-system/connectorcreation_connectorschema.webp)
+![Connector Schema](/images/identitymanager/connectorcreation_connectorschema.webp)
 
 Netwrix Identity Manager (formerly Usercube)strongly recommends the creation of one connector for each application.
 
@@ -31,7 +31,7 @@ Netwrix Identity Manager (formerly Usercube)strongly recommends the creation of 
 
 In the early steps of a project, we'll consider most of our connectors to be outbound, i.e. Identity Manager will feed data into connected managed systems.
 
-![Outbound System=](/images/identitymanager/user-guide/set-up/connect-system/connectorcreation_outbound.webp)
+![Outbound System=](/images/identitymanager/connectorcreation_outbound.webp)
 
 In this case, data flows between Identity Manager and the managed system are also called:
 
@@ -91,7 +91,7 @@ resource types. See the [Resource Type](../../integration-guide/toolkit/xml-conf
     > `AD User (administration)` for sensitive administration accounts, which we want to provision
     > manually through Identity Manager.
 
-![Connector Technical Schema](/images/identitymanager/user-guide/set-up/connect-system/connectorcreation_connectortechnicalschema.webp)
+![Connector Technical Schema](/images/identitymanager/connectorcreation_connectortechnicalschema.webp)
 
 A connector requires at least one connection and one entity type.
 

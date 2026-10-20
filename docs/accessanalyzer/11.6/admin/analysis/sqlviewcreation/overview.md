@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # SQLViewCreation Analysis Module
 
-The SQLViewCreation analysis module provides the ability to create new views or tables that are used
-in Enterprise Auditor actions and reports. These views or tables are re-created during job
+The SQLViewCreation analysis module lets you create new views or tables for use in Enterprise
+Auditor actions and reports. Enterprise Auditor re-creates these views or tables during job
 execution.
 
 :::warning
@@ -19,7 +19,7 @@ tables. Tables require more storage space in the database.
 ## Configuration
 
 This analysis module provides the View and Table Creation Analysis Module wizard to assist in
-configuring the module. Before the wizard, collect the desired data for manipulation.
+configuring the module. Before the wizard, collect the data you want to manipulate.
 
 The wizard contains the following pages:
 

@@ -1,6 +1,9 @@
 {
   "label": "Best Practices",
-  "position": 40,
+  "position": 30,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

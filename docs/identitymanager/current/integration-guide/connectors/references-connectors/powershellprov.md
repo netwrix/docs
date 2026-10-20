@@ -1,7 +1,7 @@
-﻿---
+---
 title: "PowerShellProv"
 description: "PowerShellProv"
-sidebar_position: 190
+sidebar_position: 200
 ---
 
 # PowerShellProv
@@ -10,7 +10,7 @@ This connector writes to an external system via a [PowerShell](https://learn.mic
 
 This page is about [PowerShellProv](../../../integration-guide/connectors/references-packages/powershellprov).
 
-![Package: Custom/PowerShellProv](/images/identitymanager/integration-guide/connectors/references-connectors/powershellprov/packages_powershellprov_v603.webp)
+![Package: Custom/PowerShellProv](/images/identitymanager/packages_powershellprov_v603.webp)
 
 ## Overview
 

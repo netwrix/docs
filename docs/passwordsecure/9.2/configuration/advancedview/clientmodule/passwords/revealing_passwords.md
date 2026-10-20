@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Revealing passwords
 
-## What is involved in revealing passwords?
+## Revealing passwords overview
 
 Not all information is encrypted by the MSSQL database in Netwrix Password Secure for performance
 reasons. Only the password itself (=secret) is encrypted with the help of the used encryption
@@ -16,7 +16,7 @@ secured via access permissions, this process enables the **maximum possible work
 methods**. Revealing passwords describes the mechanism by which a password is made visible to the
 user in the client. This process for dealing with passwords very precisely reflects the importance
 of data security in Netwrix Password Secure – and this process will thus be described in detail
-below.
+in the following sections.
 
 ### Example case
 
@@ -29,32 +29,32 @@ means the user can view the value of the password using the "reveal" function.
 
 ## Revealing passwords – diagram
 
-In this context, it is important to note that the word "reveal" does not really accurately describe
+In this context, the word "reveal" doesn't really accurately describe
 this process. It creates the **incorrect** impression that the client already has the password and
 only needs to reveal it. However, the processes running in the background until the password are
-revealed are much more complex and will thus be described below.
+revealed are much more complex and are described in the following diagram.
 
 ![revealing password diagram](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwords/revealing_passwords_2-en.webp)
 
 ### Saving the password on the server
 
 Even though you would assume the opposite, at the start a masked password (\*) is neither available
-on the client nor the server in plain text! The password is stored as part of the MSSQL database in
-a hybrid encrypted state via the two methods **AES 256** and **RSA**. Accordingly, it is not
-currently possible either on the server or the client to view the password. If you mark a record,
-the password is not available at all on the client and is encrypted on the server before it is
+on the client nor the server in plain text. The password is stored as part of the MSSQL database in
+a hybrid encrypted state via the two methods **AES 256** and **RSA**. Accordingly, it isn't
+ possible either on the server or the client to view the password. If you mark a record,
+the password isn't available at all on the client and is encrypted on the server before it is
 revealed.
 
 ### The encrypted password is requested
 
 Pressing the "reveal"- button triggers the process for requesting the password. A request is sent to
-the server to apply for the encrypted password to be released. The server itself does not possess
+the server to apply for the encrypted password to be released. The server itself doesn't possess
 the required key (private key) to decrypt the password. Therefore, it can only deliver the
 **encrypted value**.
 
 ### Checking the permissions
 
-Whether the request sent in step 2 is approved is defined in the authorization concept. Once the
+Whether the request sent in step 2 is approved is defined in the authorization concept. After the
 request has been received, the server checks whether the user possess the required rights. It also
 checks the possible existence of other security mechanisms such as a seal or password masking. If
 the necessary requirements for releasing the password have been met, the server now sends the

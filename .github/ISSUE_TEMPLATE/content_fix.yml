@@ -40,14 +40,15 @@ body:
         - Activity Monitor 7.1
         - Activity Monitor 8.0
         - Activity Monitor 9.0
-        - Auditor 10.6
         - Auditor 10.7
         - Auditor 10.8
+        - Auditor 10.9
         - Change Tracker 8.0
         - Change Tracker 8.1
         - Customer Portal & Training Guide
         - Data Classification 5.6.2
         - Data Classification 5.7
+        - Data Classification 5.8
         - Directory Manager 11.0
         - Directory Manager 11.1
         - Endpoint Policy Manager
@@ -61,10 +62,9 @@ body:
         - Password Policy Enforcer 11.1
         - Password Reset 3.23
         - Password Reset 3.3
-        - Password Secure 9.1
         - Password Secure 9.2
         - Password Secure 9.3
-        - Password Secure 26.3
+        - Password Secure Current
         - PingCastle
         - Platform Governance for NetSuite
         - Platform Governance Flashlight for NetSuite

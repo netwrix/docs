@@ -1,4 +1,4 @@
-﻿# Identity Manager Deploy the Configuration
+# Identity Manager Deploy the Configuration
 
 This guide shows how to deploy the XML configuration, in order to build and use the Identity Manager application.
 
@@ -66,7 +66,7 @@ However, if, since then, there has been a change in the identity deploying/expor
 
 2.  Log in to the IDP to be redirected back to this screen:
 
-    ![Usercube-Login.exe Success Screen](/images/identitymanager/integration-guide/toolkit/how-tos/export-configuration/identitymanager-login_success_v602.webp)
+    ![Usercube-Login.exe Success Screen](/images/identitymanager/identitymanager-login_success_v602.webp)
 
 Once authenticated, an identification token is stored on your local machine for the authentication to Identity Manager's deployment and export processes.
 

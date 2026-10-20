@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Perform Role Mining"
 description: "Perform Role Mining"
 sidebar_position: 20
@@ -19,7 +19,7 @@ After the role catalog is established, the Compute Role Model Task task is able 
 
 Now that users received their roles, the role mining tool can analyze these assignments and deduce [Single Role Rule](../../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule) which will assign single roles to certain users matching given criteria.
 
-![Schema - Role Mining](/images/identitymanager/user-guide/optimize/assignment-automation/role-mining/rolemining_schema.webp)
+![Schema - Role Mining](/images/identitymanager/rolemining_schema.webp)
 
 Role mining is a Machine Learning process. It is a statistic tool used to emphasize the [Single Role Rule](../../../integration-guide/toolkit/xml-configuration/provisioning/singlerolerule) that constitute the key criteria for existing role assignments. It detects the most probable links between identities dimensions and their roles in order to suggest the appropriate entitlement assignment rules.
 
@@ -38,17 +38,17 @@ Mining rules can be configured to generate:
 1. **automatic rules**, i.e. rules which assign roles automatically with or without a validation;
 2. **suggested rules**, i.e. rules which don't assign roles directly, but suggest them during an entitlement request for a user.
 
-    ![Suggested](/images/identitymanager/user-guide/optimize/assignment-automation/role-mining/rolemining_suggested_v602.webp)
+    ![Suggested](/images/identitymanager/rolemining_suggested_v602.webp)
 
 You can generate both automatic and **suggested rules** for the same role, with different precision levels and different approval workflows.
 
 > Consider an organization where an unknown ratio of users have a given role. Using the precision settings, we can create a mining rule to generate automatic assignment rules when the ratio is above 95% and a second mining rule to generate suggested assignment rules when the ratio is between 75% and 95%.
 >
-> ![Rule Types](/images/identitymanager/user-guide/optimize/assignment-automation/role-mining/rolemining_ruletype.webp)
+> ![Rule Types](/images/identitymanager/rolemining_ruletype.webp)
 
 You can also differentiate entitlements according to their sensitivity, for example require additional reviews following the request of a sensitive entitlement:
 
-![Rule Types - Sensitivity](/images/identitymanager/user-guide/optimize/assignment-automation/role-mining/rolemining_ruletype-sensitivity.webp)
+![Rule Types - Sensitivity](/images/identitymanager/rolemining_ruletype-sensitivity.webp)
 
 The automation of entitlement assignments according to sensitivity brings greater confidence in basic entitlements assignment which won't need to be certified anymore. Thus, automation lets certification campaigns focus on more sensitive entitlements.
 
@@ -72,15 +72,15 @@ Create a mining rule by proceeding as follows:
 
 1. On the home page in the **Configuration** section, click on the **Role Mining** button.
 
-    ![Home page - Connectors](/images/identitymanager/user-guide/optimize/assignment-automation/role-mining/home_rolemining_v60.webp)
+    ![Home page - Connectors](/images/identitymanager/home_rolemining_v60.webp)
 
 You will see all existing mining rules.
 
 2. Click on the addition button at the top right and fill in the fields.
 
-    ![Addition Icon](/images/identitymanager/user-guide/set-up/categorization/classification/iconadd_v602.svg)
+    ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
 
-    ![**new** Mining Rule](/images/identitymanager/user-guide/optimize/assignment-automation/role-mining/rolemining_miningrule_v602.webp)
+    ![**new** Mining Rule](/images/identitymanager/rolemining_miningrule_v602.webp)
 
     - `Policy`: [Create a Policy](../../../user-guide/optimize/policy-creation) in which the mining rule exists.
     - `Entity Type`:
@@ -112,7 +112,7 @@ Automation reduces the error rate by avoiding human mistakes. Errors can still o
 1. Click on **Create** and see a line added on the rules page.
 2. Click on **Simulate** to perfom role mining in a simulation. See the[Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
 
-    ![Role Mining Jobs](/images/identitymanager/user-guide/optimize/assignment-automation/role-mining/rolemining_launchjob_v602.webp)
+    ![Role Mining Jobs](/images/identitymanager/rolemining_launchjob_v602.webp)
 
 :::info
  If you need to bypass the simulation process, clicking on **Launch** will perform role mining and apply its results directly. NETWRIX recommends always performing role mining in simulation. 
@@ -127,7 +127,7 @@ Netwrix Identity Manager (formerly Usercube) recommends [Removing Redundant Assi
 
 In order to verify the process, access the rule list from the home page.
 
-![Home - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home - Access Rules](/images/identitymanager/home_rules_v602.webp)
 
 Select **Single Roles** and check that the single role rules are created with the right parameters.
 

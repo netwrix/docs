@@ -21,15 +21,15 @@ The different grouping, filtering, and search methods in the Data Grid are:
 The Show maximum [value] of total [value] rows, located in the upper-right hand corner of the Data
 Grid view in the Results Pane, indicates how many rows of data are available within this data grid
 (the first value) and how many rows of data are available in the Enterprise Auditor database for
-this data grid (the second value). The maximum value can be changed by the user and only affects the
-maximum number of rows available for this data grid within the Enterprise Auditor Console. The total
-value is automatically supplied from the Enterprise Auditor database and cannot be changed by the
-user. If the total value is less than the maximum value, then all available data for this grid is
+this data grid (the second value). The user can change the maximum value, and it only affects the
+maximum number of rows available for this data grid within the Enterprise Auditor Console. The
+Enterprise Auditor database automatically supplies the total value, and the user can't change it.
+If the total value is less than the maximum value, then all available data for this grid is
 present for sorting, filtering, and searching.
 
 ## Data Grid Right-Click Menu
 
-The right-click menu that affects data grid functionality is accessible by right-clicking on the
+Access the right-click menu that affects data grid functionality by right-clicking on the
 data grid header row.
 
 ![Data Grid Functionality](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality1.webp)
@@ -57,7 +57,7 @@ for information on right-click menus within a data grid.
 
 ### Customization Window
 
-The Customization window can be used to customize the data grid to only display specific columns.
+Use the Customization window to customize the data grid to only display specific columns.
 
 ![Customization Window](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality2.webp)
 
@@ -65,8 +65,8 @@ To open the Customization window, select Field Chooser from the column header ri
 
 ![Customization Window](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality3.webp)
 
-Any column that has been removed from the data grid, either by dragging it off the screen or by
-dropping it into this window, will be listed here. A column not currently displayed can be returned
+Any column that you remove from the data grid, either by dragging it off the screen or by
+dropping it into this window, appears here. You can return a column that isn't displayed
 to the data grid by dragging-and-dropping it from this window onto the header row.
 
 ### Footer
@@ -80,8 +80,8 @@ To enable the footer, right-click in a column header and select Footer from the 
 
 ![Footer display](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality5.webp)
 
-The footer appears as a gray bar at the bottom of the grid (or grid group). Right-click on the
-footer under the desired column. Only the options applicable to the desired column will be valid for
+The footer appears as a gray bar at the bottom of the grid (or grid group). Right-click the
+footer under the column you want. Only the options applicable to that column will be valid for
 selection.
 
 ![Footer options](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality6.webp)
@@ -97,7 +97,7 @@ The different footer options are:
 
 ## Sort
 
-The data grid can be sorted in alphanumeric order by clicking on a column header.
+You can sort the data grid in alphanumeric order by clicking on a column header.
 
 ![Sort Order](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality7.webp)
 
@@ -118,22 +118,22 @@ a ‘count’ of records within each group. Expand the group to view the data.
 
 ![Expand Group View](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality10.webp)
 
-Multiple columns can be dragged into the Group By area to form tiered groupings.
+You can drag multiple columns into the Group By area to form tiered groupings.
 
 :::note
-Sorting by the FQDN column is an easy way to see if there are two entries for the same
+Sort by the FQDN column to see if there are two entries for the same
 host.
 :::
 
 
 ![Column Header](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality11.webp)
 
-The data grid can also be grouped by dragging a column header beneath the other column headers
+You can also group the data grid by dragging a column header beneath the other column headers
 either to the stationary section on the left or to the mobile section on the right. Each record
 counts as a single row for the total rows value, but displays in two rows with the second row
 dedicated for the moved column.
 
-Drag the column header(s) back to the table to remove the grouping or use the Clear Sort option in
+Drag the column headers back to the table to remove the grouping or use the Clear Sort option in
 the [Data Grid Right-Click Menu](#data-grid-right-click-menu). Additionally, the sort will clear
 when the user navigates to another place in the console.
 
@@ -145,9 +145,9 @@ dialog located above the Activities Pane.
 
 ![Filter](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality12.webp)
 
-In the header of every column is a drop-down arrow. This provides users with the ability to filter
-the data grid for a particular item or items within a column. The drop-down menu has the options of
-(All), (Custom…), and an alphabetical listing of all items currently within that column for the data
+In the header of every column is a dropdown arrow. This provides users with the ability to filter
+the data grid for a particular item or items within a column. The dropdown menu has the options of
+(All), (Custom…), and an alphabetical listing of all items within that column for the data
 grid.
 
 - [Custom Filter](#custom-filter) – Click Custom Filter in the header dropdown to open the Custom
@@ -171,44 +171,44 @@ The Custom Filter window options are:
     - Second Comparison Operator – Select from a list of different logical operators that will apply
       to the second custom filter criteria.
 - Two wildcard options:
-    - The underscore (_) can be used to represent any single character
-    - The asterisk (\*) can be used to represent any series of characters
+    - Use the underscore (_) to represent any single character
+    - Use the asterisk (\*) to represent any series of characters
 
 #### Creating a Custom Filter
 
-Follow the steps to create a Custom Filter:
+To create a Custom Filter:
 
-**Step 1 –** Click the dropdown arrow in the column header for the column where the Custom Filter is
-going to be applied and select (Custom…) from the list. The Custom Filter window opens.
+**Step 1 –** Click the dropdown arrow in the column header for the column where you want to apply
+the Custom Filter and select (Custom…) from the list. The Custom Filter window opens.
 
 ![Creating a Custom Filter](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality14.webp)
 
-**Step 2 –** Set the desired criteria for the custom filter. Select the logical operator from the
-drop-down menu on the left and set the criteria in the textbox on the right.
+**Step 2 –** Set the criteria you want for the custom filter. Select the logical operator from the
+dropdown menu on the left and set the criteria in the textbox on the right.
 
 **Step 3 –** Select either AND/OR and set the second criteria field, following the same method as
 Step 2.
 
-**Step 4 –** Click OK to confirm changes. The custom filter criteria is now applied to the Data
-Grid.
+**Step 4 –** Click OK to confirm changes. Enterprise Auditor now applies the custom filter criteria
+to the Data Grid.
 
-In the example above, OSName is like \*2008\* AND not like \*Standard\*, the filter returns all data
+In this example, OSName is like \*2008\* AND not like \*Standard\*, the filter returns all data
 records with an operating system name that contains “2008” but not “Standard,” e.g. Windows Server
-2008 Enterprise Edition, 64 bit and Windows Server 2008 R2 Datacenter Edition, 64-bit, etc. Complex
-filters can be created using the Advanced Search option in the Filtration Dialog.
+2008 Enterprise Edition, 64 bit and Windows Server 2008 R2 Datacenter Edition, 64-bit, etc. You can
+create complex filters using the Advanced Search option in the Filtration Dialog.
 
 ![Selected Filter Criteria](/images/accessanalyzer/11.6/admin/navigate/datagridfunctionality15.webp)
 
 The selected filter criteria will appear at the top of the data grid. A red X appears in the
 filtration dialog, and the total rows value drops to the number of records that match the filter
-criteria. Additional filter statements can be added for other columns by repeating the process to
+criteria. You can add additional filter statements for other columns by repeating the process to
 build complex filters. The filtration dialog also provides other ways to filter and search the data
 set. See the [Filtration Dialog](#filtration-dialog) topic for additional information on this
 feature.
 
-Filters can be cleared by clicking the red X in the filtration dialog (to clear all filter
-statements), selecting All from the column’s drop-down menu (to clear filters one column at a time),
-or by navigating to another place in the console (to clear all filter statements). However, the
+You can clear filters by clicking the red X in the filtration dialog (to clear all filter
+statements), selecting All from the column’s dropdown menu (to clear filters one column at a time),
+or navigating to another place in the console (to clear all filter statements). However, the
 Recent Filters option in the filtration dialog provides a list of the most recent filters applied to
 the data set for users to quickly return to a filtered view.
 
@@ -237,8 +237,8 @@ The filter options and logical operators are:
     - Add Condition
     - Add Group
     - Clear All
-- Logical Operator – The logical operator (red text) beside the Filter button can be changed by
-  clicking on it to open a menu with:
+- Logical Operator – Click the logical operator (red text) beside the Filter button to open a menu
+  with:
     - AND
     - OR
     - NOT AND
@@ -248,12 +248,12 @@ The filter options and logical operators are:
     - Add Condition
     - Add Group
     - Remove Row
-- Column Selection – The selected column (green text) can be changed by clicking on it to open a
+- Column Selection – Click the selected column (green text) to open a
   menu with all available columns for the data grid.
-- Comparison Operator – The comparison operator (dark red text) can be changed by clicking on it to
+- Comparison Operator – Click the comparison operator (dark red text) to
   open a menu with:
     - equals
-    - does not equal
+    - doesn't equal
     - is less than
     - is less than or equal to
     - is greater than
@@ -261,11 +261,11 @@ The filter options and logical operators are:
     - like
     - not like
     - is blank
-    - is not blank
+    - isn't blank
     - between
     - not between
     - in
     - not in
-- Filter Criteria – The filter criteria (blue text) can be changed by clicking on it and typing in
-  the textbox that appears. The Custom Filter builder wildcards can also be used in the Set Filter
+- Filter Criteria – Click the filter criteria (blue text) and type in
+  the textbox that appears. You can also use the Custom Filter builder wildcards in the Set Filter
   builder.

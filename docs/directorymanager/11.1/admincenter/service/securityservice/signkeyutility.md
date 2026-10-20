@@ -50,11 +50,11 @@ Generate the new signing key on your Directory Manager server machine.
 :::
 
 
-Follow the steps to generate a new signing key.
+To generate a new signing key.
 
 Step 1 – At the Windows Command prompt, go to the folder where you have placed the utility.
 
-Step 2 – Type the following command at the prompt:
+Step 2 – Enter the following command at the prompt:
 
 ```
 SigningKeyUtility.exe GenerateSigningKey -u “<DB username>” -s “<SQLServer name>” -d “<DB name>” -i
@@ -89,7 +89,7 @@ SigningKeyUtility.exe UpdateSchedulers -u “<DB username>” -s “<SQLServer n
 ## Export a Signing Key
 
 If you are using multiple instances of Directory Manager, then you need to export the newly
-generated signing key to other instances of Directory Manager. Type the following command at the
+generated signing key to other instances of Directory Manager. Enter the following command at the
 Windows Command prompt to export the signing key in .pfx. encrypted format with a password:
 
 ```
@@ -105,7 +105,7 @@ later use. The encrypted signing key is saved in the specified folder.
 
 ## Import a Signing Key
 
-Copy the newly generated signing key on the required Directory Manager instance. Type the following
+Copy the newly generated signing key on the required Directory Manager instance. Enter the following
 command at the Windows Command prompt to import the signing key which is in .pfx encrypted format:
 
 ```

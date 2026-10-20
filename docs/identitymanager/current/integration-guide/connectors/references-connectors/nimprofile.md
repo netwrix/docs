@@ -1,7 +1,7 @@
-﻿---
+---
 title: "NIM Profile"
 description: "NIM Profile"
-sidebar_position: 110
+sidebar_position: 160
 ---
 
 # NIM Profile
@@ -10,7 +10,7 @@ This connector exports and fulfills profile assignments from/to an Identity Mana
 
 This page is about [NIM Profile](../../../integration-guide/connectors/references-packages/nimprofile).
 
-![Package: Netwrix Identity Manager/NIM Profile](/images/identitymanager/integration-guide/connectors/references-connectors/nimprofile/packages_nimprofile_v63.png)
+![Package: Netwrix Identity Manager/NIM Profile](/images/identitymanager/packages_nimprofile_v63.png)
 
 ## Overview
 
@@ -59,13 +59,13 @@ More specifically, based on the profiles, dimensions and entity types in the tar
 - UI components (views and menu items)
 - A dedicated category for the connector
 
-![NIM Profile Modal](/images/identitymanager/integration-guide/connectors/references-connectors/nimprofile/nimProfileModal_v63.png)
+![NIM Profile Modal](/images/identitymanager/nimProfileModal_v63.png)
 When generating the configuration, as seen above, the following elements need to be specified:
 - **Policy**: Defines where to include the category, single roles, resource types, and rules
 - **Profile**: Defines the profile used to specify the access control rules
 - **MenuItem**: Determines where to nest the sub-menu items for the NIM connector in the user interface (see screenshot below showing menu item locations). For example, in the demo configuration, `Nav_Connectors` should be used. Parent Menu Item `Nav` can be used. It will add the items to the root of the navigation left panel on the Home page. For more information, refer to the [Menu Item documentation](../../toolkit/xml-configuration/user-interface/menuitem).
 
-![NIM Profile Menu Items](/images/identitymanager/integration-guide/connectors/references-connectors/nimprofile/nimProfile_MenuItem_v63.png)
+![NIM Profile Menu Items](/images/identitymanager/nimProfile_MenuItem_v63.png)
 
 :::note
 In complex scenarios, when the owner entity type is different from the identity entity type (the entity type bound via the `ResourceIdentityProperty` setting), the wizard generates multiple Resource Types per profile, one for each identity correlation path (e.g., separate Resource Types for nominative and administrative accounts).

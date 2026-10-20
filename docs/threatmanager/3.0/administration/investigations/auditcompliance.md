@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Audit and Compliance Page
 
-The Audit and Compliance page in the Investigations interface list of saved out-of-the-box
+The Audit and Compliance page in the Investigations interface list of saved built-in
 investigations with applied filters for commonly used Audit and Compliance activity reports.
 
 ![Investigations interface on the Audit and Compliance page](/images/threatmanager/3.0/administration/investigations/auditcompliance.webp)

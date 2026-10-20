@@ -17,10 +17,10 @@ knowledge_article_id: kA04u0000000ISBCA2
 # Syslog Variables
 
 ## Overview
-This article provides a comprehensive list of syslog variables available for use in custom SIEM templates with Netwrix Threat Manager. These variables can be utilized to customize syslog messages for integration with your SIEM solution.
+This article provides a comprehensive list of syslog variables available for use in custom SIEM templates with Netwrix Threat Manager. Use these variables to customize syslog messages for integration with your SIEM solution.
 
 ## Instructions
-To use these variables, include them in your custom SIEM template configuration within Netwrix Threat Manager. Ensure that the variables are correctly formatted as shown above to avoid errors in syslog message generation.
+To use these variables, include them in your custom SIEM template configuration within Netwrix Threat Manager. Format the variables exactly as shown in the following list to avoid errors in syslog message generation.
 
 ## Available Syslog Variables
 The following syslog variables are available for use in custom SIEM templates:

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Reverse Proxy"
 description: "Reverse Proxy"
 sidebar_position: 50
@@ -15,18 +15,18 @@ A reverse proxy is usually used when:
 - needing to encrypt the requests from/to end-users on the one hand, and on the other hand to be
 able to monitor plain text requests from/to Identity Manager's server;
 
-    ![Proxy Purposes: Encryption](/images/identitymanager/installation-guide/reverse-proxy/proxy_purpose_encryption.webp)
+    ![Proxy Purposes: Encryption](/images/identitymanager/proxy_purpose_encryption.webp)
 
 - installing Identity Manager with an integrated agent on a network isolated from the users'
 browsers, in order to be able to access sensitive systems which are protected by being set up on a network isolated from the Internet;
 
-    ![Proxy Installation Example](/images/identitymanager/installation-guide/reverse-proxy/proxy_example.webp)
+    ![Proxy Installation Example](/images/identitymanager/proxy_example.webp)
 
 This installation will be used for the configuration examples below.
 
 - using several Identity Manager's server instances for load-balancing purposes.
 
-    ![Proxy Purposes: Load Balancing](/images/identitymanager/installation-guide/reverse-proxy/proxy_purpose_loadbalancing.webp)
+    ![Proxy Purposes: Load Balancing](/images/identitymanager/proxy_purpose_loadbalancing.webp)
 
 As Identity Manager is **session-less**, working with several servers does not imply the need to synchronize sessions between servers, nor the need to guarantee that a particular IP will be processed by a particular server.
 
@@ -34,7 +34,7 @@ As Identity Manager is **session-less**, working with several servers does not 
 
 For these tasks, [nginx](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#nginx) is a relevant choice of reverse proxy. There are several versions of nginx available, suitable for several Linux-based environments. [Installation instructions](https://docs.nginx.com/nginx/admin-guide/installing-nginx/) can be found directly on the nginx website.
 
-At its core, Identity Manager is an ASP.NET application with a Kestrel server. We can configure a nginx reverse proxy accordingly by following [Microsoft's guidelines](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-8.0&tabs=linux-ubuntu#microsofts-guidelines).
+At its core, Identity Manager is an ASP.NET application with a Kestrel server. We can configure a nginx reverse proxy accordingly by following [Microsoft's guidelines](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-10.0&tabs=linux-ubuntu#microsofts-guidelines).
 
 Nginx [configuration files](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/) are usually located in `/etc/nginx`.
 

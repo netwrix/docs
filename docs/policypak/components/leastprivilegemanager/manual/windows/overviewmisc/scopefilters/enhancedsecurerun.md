@@ -8,7 +8,7 @@ sidebar_position: 10
 
 :::note
 For an overview of this scenario, see the
-[SecureRun to block User AND System executables](/docs/policypak/components/leastprivilegemanager/videolearningcenter/bestpractices/usersystemexecutables.md)
+[SecureRun to block User AND System executables](/docs/policypak/components/leastprivilegemanager/videolearningcenter/securerun/usersystemexecutables.md)
 video demo.
 :::
 

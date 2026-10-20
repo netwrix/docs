@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Compute a **navigation** Property"
 description: "Compute a **navigation** Property"
 sidebar_position: 30
@@ -23,7 +23,7 @@ resources during the rule's creation. The assigned resource is the same for all 
 - A **query rule** assigns a resource from the "other" entity type too. However, the resource is chosen
 according to a query via a C# expression with conditions, based on the attributes of the source objects (usually users). Hence, contrary to a **navigation** rule, a **query rule** can assign a different resource for each impacted account, based on the attributes of the account's owner. Use a **query rule** when there is the need to use variables from among users' attributes to select the resource to assign.
 
-![Schema - Scalar Rule](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_schemanavigation.webp)
+![Schema - Scalar Rule](/images/identitymanager/provrules_schemanavigation.webp)
 
 > A **navigation** rule could add the AD group `SG_APP_SQL` to the `memberOf` **navigation** property to all
 > AD nominative accounts provided that the user has the single role `SQL Server Administration`.
@@ -139,19 +139,19 @@ Fill an entity type with a **navigation** rule by proceeding as follows:
 
 **Step 1 –** Click on **Access Rules** on the home page in the **Configuration** section.
 
-![Home - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home - Access Rules](/images/identitymanager/home_rules_v602.webp)
 
 **Step 2 –** In the dropdown menu at the top left, choose the source entity type for the future **navigation** rule.
 
-![Entity Type Choice](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
+![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
 **Step 3 –** Click on the **Navigations** tab and on the addition button at the top right corner.
 
-![Addition Icon](/images/identitymanager/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
+![Addition Icon](/images/identitymanager/iconadd_v602.webp)
 
 **Step 4 –** Fill in the fields.
 
-![Create a **navigation** Rule](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-manual-creation/singlerolescatalog_createnavrule_v602.webp)
+![Create a **navigation** Rule](/images/identitymanager/singlerolescatalog_createnavrule_v602.webp)
 
 - `Join`: **navigation** property from the target entity type, whose value is to be impacted.
 - `Resource`: resource from the entity type pointed by the `Join`, which is to be added to the
@@ -167,7 +167,7 @@ computation according to the value's start and/**or** end date.
 
 > Our example would look like:
 >
-> ![Scalar Rule Example](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_examplenav_v602.webp)
+> ![Scalar Rule Example](/images/identitymanager/provrules_examplenav_v602.webp)
 
 **Step 5 –** Click on **Create** and see a line added on the rules page.
 
@@ -179,23 +179,23 @@ Fill an entity type with a **query rule** by proceeding as follows:
 
 **Step 1 –** Click on **Access Rules** on the home page in the **Configuration** section.
 
-![Home - Access Rules](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home - Access Rules](/images/identitymanager/home_rules_v602.webp)
 
 **Step 2 –** In the dropdown menu at the top left, choose the source entity type for the future **query rule**.
 
-![Entity Type Choice](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
+![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
 **Step 3 –** Click on the **Queries** tab and on the addition button at the top right corner.
 
-![Addition Icon](/images/identitymanager/user-guide/set-up/user-profile-assignment/iconadd_v602.webp)
+![Addition Icon](/images/identitymanager/iconadd_v602.webp)
 
 Fill in the fields.
 
-![Create **query rule**](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_queryrule_v522.webp)
+![Create **query rule**](/images/identitymanager/provrules_queryrule_v522.webp)
 
 Once the `Resource Type` is provided, more fields appear.
 
-![**query rule** Fields](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_queryrulefields_v602.webp)
+![**query rule** Fields](/images/identitymanager/provrules_queryrulefields_v602.webp)
 
 - **Target Object** > `Property to fill`: **navigation** property from the target entity type, whose
 value is to be impacted.
@@ -210,9 +210,9 @@ the[Classify Resources](../../../user-guide/set-up/categorization/classification
 
 > Our examples would look like:
 >
-> ![**query rule** Example](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_examplequery_v602.webp)
+> ![**query rule** Example](/images/identitymanager/provrules_examplequery_v602.webp)
 >
-> ![**query rule** Example 2](/images/identitymanager/user-guide/set-up/provisioning-rule-creation/navigation-property-computation/provrules_examplequerybis_v602.webp)
+> ![**query rule** Example 2](/images/identitymanager/provrules_examplequerybis_v602.webp)
 
 Click on **Create** and see a line added on the rules page.
 
@@ -220,7 +220,7 @@ Click on **Create** and see a line added on the rules page.
 
 Any modification in a **navigation** **or** **query rule** is taken into account when launching the role model computation task, in the **Resource Types** frame of the corresponding connector's overview page, via **Jobs** > **Compute Role Model**.
 
-![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 This task applies the rules and computes new properties. Therefore, if a given rule's criterion is modified, then all corresponding assignments are computed again. If a resource was created automatically for an identity through a **navigation** rule (and its criteria), and if the user's criteria do not comply with the new version of the rule, then the corresponding resource is automatically deleted.
 
@@ -234,7 +234,7 @@ In order to verify the process:
 
 **Step 1 –** On the corresponding connector's overview page, in the **Resource Types** frame click on **Jobs** > **Compute Role Model** to apply all rules.
 
-![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 Review unauthorized accounts (on the **Resource Reconciliation** screen) and roles (on the **Role Reconciliation** screen) to help check query rules: if there are numerous properties to be reconciled following the same pattern, then there may be a rule that needs to be changed.
 

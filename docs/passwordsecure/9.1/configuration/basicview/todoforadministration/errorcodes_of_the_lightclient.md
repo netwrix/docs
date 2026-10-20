@@ -8,7 +8,7 @@ sidebar_position: 10
 
 ## Error codes for administration
 
-If problems with the Basic view should appear, they are classified by error codes. These codes help
+If problems with the Basic view should appear, they're classified by error codes. These codes help
 the administration to stop problems even more quickly and solve them. There are 7 different types of
 error codes:
 
@@ -19,7 +19,7 @@ application server.
 
 **SavePasswordPlausibilityField**
 
-The plausibility has not been fulfilled when saving a password. The mandatory fields of the
+The plausibility hasn't been fulfilled when saving a password. The mandatory fields of the
 deposited form should be checked.
 
 ![installation_with_parameters_156_795x595](/images/passwordsecure/9.1/configuration/basic_view/administration/errorcodes/installation_with_parameters_156_795x595.webp)
@@ -42,10 +42,10 @@ required: Text, user name, password, URL.
 
 **DefaultFormImpossiblePlausibility**
 
-When creating a password for an application, there is a field which is not displayed. Therefore, the
+When creating a password for an application, there's a field which isn't displayed. Therefore, the
 plausibility in fields should be checked.
 
 **NoValidOrganisation**
 
-Is only relevant for the web view of the Basic view. It is activated if you want to create a
-password using the add-on and the user does not have an OU in which to create it.
+Is only relevant for the web view of the Basic view. It's activated if you want to create a
+password using the add-on and the user doesn't have an OU in which to create it.

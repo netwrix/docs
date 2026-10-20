@@ -13,6 +13,29 @@ This tool creates the necessary SQL indexes based on the latest deployed configu
 - Creates SQL indexes and statistics to optimize searches on specific entity types
 - Creates SQL indexes to optimize joins between records and main entity types
 - Creates SQL indexed views used to compute dashboard counters
+- Creates SQL indexes to optimize workflow overview and consultation queries
+
+### Workflow Reverse-Join Indexes
+
+The tool automatically creates database indexes that improve the performance of Workflow Overview and Workflow Consultation pages. These indexes are derived from the workflow configuration and target the navigation properties used by workflow queries on the `UR_Resources` table.
+
+Without these indexes, workflow pages can become slow on large databases because the database engine must scan millions of rows to resolve related entities. With them, the same queries complete in milliseconds.
+
+**Behavior:**
+- Indexes are created automatically — no manual configuration is required
+- The set of indexes adapts to your workflow configuration
+- Running the tool multiple times is safe — indexes that already exist are skipped, and indexes whose definition no longer matches the configuration are dropped and recreated
+
+**Expected storage impact:** approximately 0.1 MB per 1,000 rows in `UR_Resources`.
+
+**To verify that the indexes were created:**
+```sql
+SELECT name, filter_definition
+FROM sys.indexes
+WHERE object_id = OBJECT_ID('UR_Resources')
+  AND name LIKE 'ZZ_IX_%ReverseJoin%'
+ORDER BY name;
+```
 
 ## Examples
 

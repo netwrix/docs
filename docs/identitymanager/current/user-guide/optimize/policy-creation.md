@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Create a Policy"
 description: "Create a Policy"
 sidebar_position: 40
@@ -31,15 +31,15 @@ See the [Create a Resource Type](../../user-guide/set-up/categorization/resource
 
 Create a policy by proceeding as follows:
 
-![Home - Access Policies](/images/identitymanager/user-guide/optimize/policy-creation/home_accesspolicies_v602.webp)
+![Home - Access Policies](/images/identitymanager/home_accesspolicies_v602.webp)
 
 **Step 1 –** Access the policies screen by clicking on **Access Policies** on the home page in the **Configuration** section.
 
-![New Policy](/images/identitymanager/user-guide/optimize/policy-creation/policycreation_policies_v602.webp)
+![New Policy](/images/identitymanager/policycreation_policies_v602.webp)
 
 **Step 2 –** Click on **+ New policy** at the top right corner.
 
-![createpolicy](/images/identitymanager/user-guide/optimize/policy-creation/createpolicy.webp)
+![createpolicy](/images/identitymanager/createpolicy.webp)
 
 **Step 3 –** Fill in the information fields.
 

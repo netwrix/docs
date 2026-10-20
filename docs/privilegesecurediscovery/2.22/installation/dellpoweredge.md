@@ -1,7 +1,7 @@
 ---
-title: "Dell PowerEdge Default iDRAC Password"
+title: "(RETIRED) Dell PowerEdge Default iDRAC Password"
 description: "Dell PowerEdge Default iDRAC Password"
-sidebar_position: 10
+sidebar_position: 90
 ---
 
 # Dell PowerEdge Default iDRAC Password
@@ -10,7 +10,13 @@ Dell PowerEdge Default iDRAC Password
 
 # Dell PowerEdge Default iDRAC Password
 
-## Dell PowerEdge - What is the default username and password for iDRAC?
+:::warning
+This page applies to legacy NPS-D deployments on Dell PowerEdge hardware appliances. For new
+deployments, use the [Container-Based Deployment](./containerbaseddeployment/overview.md) method,
+which doesn't require dedicated hardware.
+:::
+
+## Dell PowerEdge default iDRAC username and password
 
 Source:
 [https://www.dell.com/support/article/en-us/sln306783/dell-poweredge-what-is-the-default-username-and-password-for-idrac?lang=en](https://www.dell.com/support/article/en-us/sln306783/dell-poweredge-what-is-the-default-username-and-password-for-idrac?lang=en)

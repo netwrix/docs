@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Backup settings
 
-## What are backup settings?
+## Backup settings overview
 
 Within the backup settings the default values for the execution of backups can be defined.
 

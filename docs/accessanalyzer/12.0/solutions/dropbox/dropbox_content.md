@@ -16,8 +16,8 @@ The Dropbox_Content job is located in the 4.Content job group.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
-parameters used by analysis tasks in the job. See the
+Use the Configuration section on a Job's overview page to modify any customizable parameters used
+by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
 
@@ -35,7 +35,7 @@ View the analysis tasks by navigating to the **Jobs** > **Dropbox** > **4.Conten
 **Dropbox_Content** > **Configure** node and select **Analysis**.
 
 :::warning
-Most of the analysis tasks should not be modified or deselected. The analysis tasks are
+Most of the analysis tasks shouldn't be modified or deselected. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -66,8 +66,8 @@ Dropbox_Content job produces the following pre-configured reports.
 ### Customizable Analysis Tasks for the Dropbox_Content Job
 
 The time frame used to define stale content is set by default to 365 days. This can be modified
-within the **Determines stale data by owner** analysis task. The customizable parameter feature
-enables you to easily set this value.
+within the **Determines stale data by owner** analysis task. Use the customizable parameter feature
+to set this value.
 
 | Customizable Parameter Name | Default Value | Value Indicates                                                                               |
 | --------------------------- | ------------- | --------------------------------------------------------------------------------------------- |

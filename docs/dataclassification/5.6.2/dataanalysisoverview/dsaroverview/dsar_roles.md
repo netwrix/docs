@@ -10,17 +10,15 @@ To keep the DSAR request process secure, Netwrix suggests configuring role-based
 control ensures that only appropriate users can modify DSAR configuration or view data, based on
 your company policies and the user's job responsibilities.
 
-- DSAR User – basic user role, which will allow access to the tool itself, and allow search requests
-  to be run. The only requests that this user will be able to view are those submitted by the user
-  themselves (i.e. they cannot view searches submitted by other users). This role does not have
+- DSAR User – basic user role, which grants access to the tool itself and lets users run search requests. The only requests that this user will be able to view are those submitted by the user
+  themselves (i.e. they can't view searches that other users submitted). This role doesn't have
   access to any system settings as well as to any of the sensitive data identified, including
-  filenames/locations.
-- DSAR Manager – has all the permissions of the DSAR User role, plus the ability to see and
-  pause/cancel searches submitted by other users.
+  filenames/locations of sensitive data.
+- DSAR Manager – has all the permissions of the DSAR User role, plus the ability to see and pause/cancel searches that other users submitted.
 - Super User – has all the permissions of the DSAR Manager role, with the addition of being able to
   see and amend the DSAR settings (user management, output path, batch run-time).
 
-DSAR roles are described briefly in the table below:
+The following table briefly describes the DSAR roles:
 
 | Role         | Query Creation |            | Query Management |              |        | Output |     | Administrative area |
 | ------------ | -------------- | ---------- | ---------------- | ------------ | ------ | ------ | --- | ------------------- |

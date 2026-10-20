@@ -11,11 +11,10 @@ source.
 
 ## Configure Tagging
 
-You can instruct the program to write classification attributes back to to the document properties
-in the Google Drive repository. Each taxonomy can be mapped to a single property.
+You can configure the program to write classifications to document properties in the Google Drive repository. Each taxonomy maps to a single property.
 
 :::note
-Custom properties are not exposed to end users and are only available to other
+Custom properties aren't exposed to end users and are only available to other
 applications using the API.
 :::
 
@@ -32,7 +31,7 @@ See [this article](https://developers.google.com/drive/api/v3/properties) for de
 
 
 To overcome these limitations, Google Drive tagging implemented in the solution supports appending a
-counter to the field name. So, it is possible to split classifications across multiple fields if a
+counter to the field name. So, split classifications across multiple fields if a
 text limit is hit within the source system. For example, you may have classifications written to the
 fields “_Agriculture_” and “_Agriculture_1_”.
 
@@ -61,9 +60,9 @@ Related content source settings can be configured at a global level (default), o
 | **Enabled**              | Use to enable / disables the writing of classifications for the selected taxonomy.                                                        | Cleared by default                                                                                                                                        |
 | **Field Name**           | Defines the attribute name to be used when persisting the classifications (metadata property name).                                       |                                                                                                                                                           |
 | **Single Value Field**   | If selected, this option will cause only the highest scoring classification to be written to the field.                                   |                                                                                                                                                           |
-| **Maximum Field**        | Specifies the maximum number of properties which can be used to write classifications. Property names will be in the format 'FieldName_X' | This allows more classifications to be written for sources where there is a limit on field length, by writing classifications across multiple properties. |
+| **Maximum Field**        | Specifies the maximum number of properties to use for writing classifications. Property names will be in the format 'FieldName_X' | This allows more classifications to be written for sources where there is a limit on field length, by writing classifications across multiple properties. |
 | **Format**               | How the classifications should be formatted.                                                                                              | You can create a custom delimited combination of the labels / GUIDs.                                                                                      |
-| **Name/ID** or **Class** | Depending on the format, take the term labels, IDs or a combination of both                                                               | The corresponding Delimiter must be a string or array type with a maximum length of 3.                                                                    |
+| **Name/ID** or **Class** | Depending on the format, take the term labels, IDs, or a combination of both                                                              | The corresponding Delimiter must be a string or array type with a maximum length of 3.                                                                    |
 | **Prefix/** **Suffix**   | Will be appended to the formatted string of classifications.                                                                              |                                                                                                                                                           |
 
 ![googledrivewriteconfiguration_thumb_0_0](/images/dataclassification/5.7/admin/sources/googledrive/googledrivewriteconfiguration_thumb_0_0.webp)
@@ -98,14 +97,14 @@ _gdrive://corp/Year2020/\*.xlsx_
 3. To verify exclusion location, enter its path in the **Test Path** field and click **Test**.
 4. If needed, you can use metadata conditions to restrict when an exclusion filter should be
    applied. For that, click **Condition** tab and click **Add**. Then select how the exclusion
-   conditions will work: it can check if metadata field of the document has any value, is not
+   conditions will work: it can check if metadata field of the document has any value, isn't
    specified, or matches a specific metadata value.
 
     | Criteria      | Condition                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
     | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Comparison    | Compare a value in the document metadata field with the value set by condition. With this criteria selected, you will then need to specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "does not contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
+    | Comparison    | Compare a value in the document metadata field with the value set by condition. With this criteria selected, you will then need to specify: - **Field name** — document metadata field to check - **Comparison** — operator to use (for example, "doesn't contain") - **Value** — value to compare against For example, to exclude documents tagged with year 2018, set the condition as follows: - **Field Name** — _DocYear_ - **Comparison** — _equals_ - **Value** — _2018_ |
     | Has any value | Exclude the document if its metadata field has any value. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                                   |
-    | Has no values | Exclude the document if metadata field value is not specified. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
+    | Has no values | Exclude the document if metadata field value isn't specified. With this criteria selected, specify **Field Name**.                                                                                                                                                                                                                                                                                                                                                              |
 
     ![gdrive_exclusion_condition_2_thumb_0_0](/images/dataclassification/5.7/admin/sources/box/gdrive_exclusion_condition_2_thumb_0_0.webp)
 

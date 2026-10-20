@@ -12,7 +12,7 @@ The navigation bar provides the following functions.
 
 1. Filter
 
-This function can be used to switch the view to the filter in the left section. You also have the
+Use this function to switch the view to the filter in the left section. You also have the
 possibility to switch from filter to structure.
 
 2. Tabs

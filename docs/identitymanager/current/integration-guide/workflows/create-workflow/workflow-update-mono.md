@@ -1,4 +1,4 @@
-﻿---
+---
 title: "For Resource Update (Mono Record)"
 description: "For Resource Update (Mono Record)"
 sidebar_position: 40
@@ -64,7 +64,7 @@ The `MainControl` attribute is here an empty container, because it is a mandator
 </WorkflowAddAndEndRecordEntityForm>
 ```
 
-![UI Form](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-mono/howto_resourceupdatemono_form_v603.webp)
+![UI Form](/images/identitymanager/howto_resourceupdatemono_form_v603.webp)
 
 `End of transition` sets the date for the change of records scheduled by this form.
 
@@ -84,7 +84,7 @@ Below is an example of an access control rule where the `Administrator` profile 
 
 Updating an existing resource, this workflow manages one given resource at a time. Hence an interesting location for this workflow could be the individual view page of users.
 
-![Workflow Menu Items - User's Page](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-mono/menuitems_userview_v603.webp)
+![Workflow Menu Items - User's Page](/images/identitymanager/menuitems_userview_v603.webp)
 
 To create a menu item here for the new workflow, you can add the following XML configuration to the existing menu items list:
 

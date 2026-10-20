@@ -1,0 +1,45 @@
+@startuml component
+package "ResourceTypeRule" {
+	class ResourceTypeRule {
+		BaseRule : Int64
+		IsDenied : Boolean
+		L0 : Boolean
+		TimeOffsetAfterReference : Int32
+		TimeOffsetBeforeReference : Int32
+		TimeOffsetReference : Int32
+		Type : Int32
+		--
+		D0 : Resource
+		EntityType : EntityType
+		Policy : Policy
+		ResourceType : ResourceType
+		SingleRole : SingleRole
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+ResourceTypeRule "0..*" --  "0..1"Resource
+ResourceTypeRule "0..*" --  "1"EntityType
+ResourceTypeRule "0..*" --  "1"Policy
+ResourceTypeRule "0..*" --  "1"ResourceType
+ResourceTypeRule "0..*" --  "0..1"SingleRole
+hide empty members
+@enduml

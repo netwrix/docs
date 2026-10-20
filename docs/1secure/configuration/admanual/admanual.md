@@ -11,13 +11,13 @@ You can configure your Active Directory domain for monitoring in one of the fol
 - Automatically when creating an organization
 
     This method is recommended for evaluation purposes in test environments. If any conflicts are
-    detected with your current audit settings, automatic audit configuration will not be
-    performed.For a full list of audit settings required for Netwrix 1Secure to collect
-    comprehensive audit data and instructions on how to configure them, refer to
+    detected with your current audit settings, automatic audit configuration doesn't run. For a
+    full list of audit settings required for Netwrix 1Secure to collect comprehensive audit data
+    and instructions on how to configure them, refer to
     [Configure IT Infrastructure for Auditing and Monitoring](/docs/1secure/configuration/configureitinfrastructure.md).
 
-    If you select to automatically configure audit in the target environment, your current audit
-    settings will be checked on each data collection and adjusted if necessary.
+    If you select to automatically configure audit in the target environment, 1Secure checks your
+    current audit settings on each data collection and adjusts them if necessary.
 
 - Manually.
 

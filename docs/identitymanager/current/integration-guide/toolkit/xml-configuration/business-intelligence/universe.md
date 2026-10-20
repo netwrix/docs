@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Universe"
 description: ""
 sidebar_position: 1
@@ -23,10 +23,10 @@ The following example builds a universe called `Universe1`:
 </Universe>
 ```
 
-![Universe - Basic Example](/images/identitymanager/integration-guide/toolkit/xml-configuration/business-intelligence/universe/bi_universeexampledisplaynames.webp)
+![Universe - Basic Example](/images/identitymanager/bi_universeexampledisplaynames.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (Display Names)](/images/identitymanager/integration-guide/datamodel/Universe_columnNameDisplayName.webp)
+![Universe (Display Names)](/images/identitymanager/universe_columnnamedisplayname.webp)
 
 ##### Basic universe with identifiers instead of display names
 
@@ -43,10 +43,10 @@ The following example builds a universe called `Universe1` with identifiers as l
     &lt;/Universe&gt;
 ```
 
-![Universe - Basic Example](/images/identitymanager/integration-guide/datamodel/BI_universeExample.webp)
+![Universe - Basic Example](/images/identitymanager/bi_universeexample.webp)
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (Identifiers)](/images/identitymanager/integration-guide/datamodel/Universe_columnNameIdentifier.webp)
+![Universe (Identifiers)](/images/identitymanager/universe_columnnameidentifier.webp)
 
 
 ## Properties

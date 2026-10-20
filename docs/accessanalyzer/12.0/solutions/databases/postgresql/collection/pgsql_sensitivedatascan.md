@@ -24,18 +24,18 @@ The query is:
 ### Configure the SensitiveDataScan Query
 
 The PgSQL_SensitiveDataScan Job is preconfigured to run using the default settings for the Sensitive
-Data Collection category. Follow the steps to customize configurations.
+Data Collection category. To customize configurations, complete the following steps.
 
 **Step 1 –** Navigate to the **Databases** > **0.Collection** > **PostgreSQL** >
 **PgSQL_SensitiveDataScan** > **Configure** node and select Queries.
 
-**Step 2 –** In the Query Selection view, select the **PostgreSQL** query click on Query Properties.
+**Step 2 –** In the Query Selection view, select the **PostgreSQL** query click Query Properties.
 The Query Properties window appears.
 
 **Step 3 –** Select the Data Source tab, and click Configure. The SQL Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for this
+Don't make changes to other wizard pages as they have been pre-configured for this
 job.
 :::
 
@@ -43,8 +43,8 @@ job.
 ![Sensitive Data Scan Settings](/images/accessanalyzer/12.0/solutions/databases/postgresql/collection/datascanjobsettings.webp)
 
 **Step 4 –** To modify sensitive data scan options, navigate to the
-[SQL Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/sql/overview.md) page. Select the desired scan
-options.
+[SQL Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/sql/overview.md) page. Select the scan
+options you want.
 
 :::note
 The Sensitive Data Scan Settings are pre-configured for optimal performance for a
@@ -64,8 +64,8 @@ topic for additional information.
 
 ![Filters page](/images/accessanalyzer/12.0/solutions/databases/postgresql/collection/sensitivedatascanfilter.webp)
 
-**Step 6 –** PostgreSQL databases must be added to the query before they can be scanned. Navigate to
-the **Filter** page and click **Connections** to open the Manage Connections window.
+**Step 6 –** Add PostgreSQL databases to the query before you scan them. Navigate to the
+**Filter** page and click **Connections** to open the Manage Connections window.
 
 ![Manage Connections](/images/accessanalyzer/12.0/solutions/databases/postgresql/collection/manageconnectionspgsql.webp)
 
@@ -83,9 +83,9 @@ Exit the Manage Connections window to return to the Filter page.
 **Step 8 –** On the Filter page, the query is configured by default to target Only select database
 objects. Click Retrieve. The Available database objects box will populate. The default filter will
 scan all PostgreSQL databases returned, excluding the listed system or default schemas and tables in
-red. Databases and instances can be added in the following ways:
+red. Add databases and instances in the following ways:
 
-- Select the desired database objects and click Add.
+- Select the database objects you want and click Add.
 - Use the Import CSV button to import a list from a CSV file, if desired.
 - Use the Add Custom Filter button to create and apply a custom filter.
 
@@ -100,7 +100,7 @@ Navigate to the **Databases** > **0.Collection** > **PostgreSQL** > **PgSQL_Sen
 **Configure** node and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

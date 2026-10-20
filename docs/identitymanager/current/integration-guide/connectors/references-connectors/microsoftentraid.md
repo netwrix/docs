@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Microsoft Entra ID"
 description: "Microsoft Entra ID"
 sidebar_position: 30
@@ -10,7 +10,7 @@ This connector exports and fulfills user and groups from/to a [Microsoft Entra I
 
 See the[Microsoft Entra ID](../../../integration-guide/connectors/references-packages/azure-active-directory)topic for additional information.
 
-![Package: Directory/Microsoft Entra ID](/images/identitymanager/integration-guide/connectors/references-connectors/microsoftentraid/packages_azuread_v603.webp)
+![Package: Directory/Microsoft Entra ID](/images/identitymanager/packages_azuread_v603.webp)
 
 ## Overview
 

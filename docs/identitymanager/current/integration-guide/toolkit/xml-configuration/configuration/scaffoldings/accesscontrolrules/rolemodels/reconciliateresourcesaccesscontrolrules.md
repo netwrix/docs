@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ReconciliateResourcesAccessControlRules"
 description: "Generates the permissions to access the resource reconciliation pages for a given entity type and profile."
 sidebar_position: 9
@@ -10,7 +10,7 @@ Gives access to a shortcut on the dashboard to access this page.
 
 Also create the rights to view the TargetEntityTypes of all ResourceTypes whose source is the EntityType to be filled in the Scaffolding.
 
-![Resource Reconciliation](/images/identitymanager/user-guide/administrate/orphan-unused-account-review/home_resourcereconciliation_v523.webp)
+![Resource Reconciliation](/images/identitymanager/home_resourcereconciliation_v523.webp)
 
 
 

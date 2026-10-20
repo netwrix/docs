@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WorkflowCreateSeveralRecordsEntityForm"
 description: "Displays a form to create a new resource with one or several records."
 sidebar_position: 5
@@ -68,7 +68,7 @@ And with the following form for the data specific to each record:
 ```
 
 The contents of `MainControl`, `RecordControl` and `RecordUniqueItemControl` are visible during the workflow's execution:
-![Form Example - New User from Helpdesk](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workflowcreateseveralrecordsentityform/formexample_workflowcreateseveralrecordsentityform_v603.webp)
+![Form Example - New User from Helpdesk](/images/identitymanager/formexample_workflowcreateseveralrecordsentityform_v603.webp)
 
 <!-- The content of `SummaryControl` is visible after the workflow's execution:
 TODO:the summaries MainSummaryControl and RecordSummaryControl are not meant to be in this form, a conf check throws an error.-->

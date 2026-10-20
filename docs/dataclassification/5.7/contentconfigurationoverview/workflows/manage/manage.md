@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Managing Workflows
 
-Authorized users can create, modify or delete automated workflows that apply to the certain content.
+Authorized users can create, modify, or delete automated workflows that apply to certain content.
 For that, in the administrative web console select Content from the top menu and go to the
 **Workflows** tab.
 
@@ -43,10 +43,10 @@ section.
 
 To delete a workflow, follow the steps described in the [Delete Workflow](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/manage/delete.md)section.
 
-## Cloning, Enabling or Renaming a Workflow
+## Cloning, Enabling, or Renaming a Workflow
 
-1. Click the link in the **Name** column for the required workflow ( e.g. Global for Google Drive in
-   the figure below):
+1. Click the link in the **Name** column for the required workflow (e.g., Global for Google Drive in
+   the following figure):
 
 ![workflow_delete_single_thumb_0_0](/images/dataclassification/5.7/admin/workflows/workflow_delete_single_thumb_0_0.webp)
 

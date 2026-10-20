@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # EWSMailbox: SDD Options
 
-The Sensitive data scan options page is where options to be used for discovering sensitive data are
-configured. It is a wizard page for the Sensitive Data category.
+Use the Sensitive data scan options page to configure options for discovering sensitive data. It is
+a wizard page for the Sensitive Data category.
 
 The Sensitive Data Discovery Add-on is required to use the sensitive data collection option. See the
 [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)

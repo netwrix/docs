@@ -22,16 +22,15 @@ You can define and save your own reports.
 - Customization objects have additional data to enable searching with complex queries. For example,
   search for _all objects with script dependencies that have not been used for six months_, _or all
   objects used by workflows_.
-- You can filter test scripts from regular scripts. Test scripts can be queried to review test
-  coverage and determine if they being used.
+- You can filter test scripts from regular scripts. You can query test scripts to review test coverage and determine whether they're in use.
 
 :::note
-To access all reports, the following setting must be enabled:
+To access all reports, enable the following setting:
 Open **Strongpoint**  **Scanner**  **Scheduler**
 
-**PermissionSet Assignment** and **System Permission** must be **Enabled**, and the **Frequency** set to **Daily**.
+Set **PermissionSet Assignment** and **System Permission** to **Enabled**, and set the **Frequency** to **Daily**.
 
-If you have questions, contact your CSM or Salesforce Specialist.
+If you have questions, contact your Customer Success Manager (CSM) or Salesforce Specialist.
 
 ![Enabling reports](/images/platgovsalesforce/reports/access_reports_enabled.webp)
 :::
@@ -40,13 +39,12 @@ If you have questions, contact your CSM or Salesforce Specialist.
 
 These reports are available from **Netwrix Dashboard**  **Reports**  **Access Reports**.
 
-Filters can be used on this report. Use **Save As** for a new version following your company naming
-conventions. An elevated access example is to filter **Permissionset/Profile** by the name of the
+You can use filters on this report. Use **Save As** for a new version following your company naming
+conventions. For example, to review elevated access, filter **Permissionset/Profile** by the name of the
 elevated access profile or permission set, such as **Admin**.
 
-You can focus on sensitive objects by filtering by object name and adding the names of the objects
-in the filter using the **contains** keyword plus the name of the object as it appears in object
-name. Separate each name with a comma.
+You can focus on sensitive objects by filtering by object name: use the **contains** keyword plus
+the name of the object as it appears in the object name. Separate each name with a comma.
 
 - **Permissions by Object**: Displays the permissions on each object for all Permission Sets and
 Profiles.
@@ -58,19 +56,6 @@ Set and Profile.
 
 ![Access report by PermissionSet/Profile](/images/platgovsalesforce/reports/access_reports_permission_by_permset.webp)
 
-- **Users to Profiles/PermissionSets**: Displays the Profile, PermissionSet and PermissionSet Group
-assigned to each user. You can filter the report information. For example, if you want a list of
-users that have Admin profiles, you can set two filters:
-
-    - Customization Name Contains **Admin**
-    - Salesforce type Equals Profile
-
-- **Date Assigned** and **Expires on** are only relevant for PermissionSets. They are blank for
-Profiles. If your org does not use the **Expires on** feature, you can remove the column from the
-report.
-
-![Users to Profile/PermissionSets](/images/platgovsalesforce/reports/access_reports_users_to_profile.webp)
-
 - **Profiles to PermissionsSets Changes**: Displays the changes made to your Profiles,
 PermissionSets,and PermissionSet Groups. If there is an active policy, the **Compliance** column
 displays whether the change was Compliant or Non-Compliant. If no policy, all changes are
@@ -78,10 +63,10 @@ Compliant.
 
 ![Access Report Profile Permissions Changes](/images/platgovsalesforce/reports/access_reports_profile_changes.webp)
 
-- **Changes to Users**: Displays the changes to tracked user data fields. Refer to
-[Enhanced CPQ Support](/docs/platgovsalesforce/changemanagement/enhanced_cpq_support.md) for more information on
-setting up tracking.<br /><br />If you see the message: _--String too long - Skipped lines due to CPU limit reached--_ it
-means the governor limits have been reached. Profiles and PermissionSets are very data heavy.
+- **Changes to Users**: Displays the changes to tracked user data fields. See
+[Enhanced Configure, Price, Quote (CPQ) Support](/docs/platgovsalesforce/changemanagement/datatracking/enhanced_cpq_support.md) for instructions on
+setting up tracking.<br /><br />If you see the message _--String too long - Skipped lines due to CPU limit reached--_, you have
+reached the governor limits. Profiles and PermissionSets are very data heavy.
 Platform Governance for Salesforce skips the record and continues the scan the next day to ensure
 there is no impact to your org.
 
@@ -112,12 +97,12 @@ To generate this report:
 5. Click **Scan**.
 
 This pushes the new list of fields to the report. If you select other fields and repeat the
-process, the previous report is overwritten. Export any reports you want to keep.
+process, the system overwrites the previous report. Export any reports you want to keep.
 
 ## Security Reports
 
-These reports are related to the Salesforce Health Check. It tracks if this feature of the health
-check is **Enabled** or **Disabled** for your Salesforce Organization. For full detail compare the
+These reports are related to the Salesforce Health Check. The reports track whether each health
+check feature is **Enabled** or **Disabled** for your Salesforce Organization. For full detail, compare the
 report to the health check section in Salesforce Setup.
 
 These reports are available from **Netwrix Dashboard**  **Reports**  **Security Reports**.
@@ -146,7 +131,7 @@ security option selected.
     - Require identity verification during multi-factor authentication (MFA) registration
     - Allow redirection to untrusted external URLs without warning
 
-- **Health Check Certificates**: tracks CKM Certificate name, Expiration date, expiration status,
+- **Health Check Certificates**: tracks Certificate and Key Management (CKM) Certificate name, Expiration date, expiration status,
 CKM Key Size and related Policy if applicable.
 - **Health Check Changes**: tracks the changes to the items related to the health check settings.
 
@@ -168,8 +153,7 @@ including:
 
 These reports are available from **Netwrix Dashboard**  **Reports**  **Customizations**.
 
--  **All Customizations**: This enables you to use Salesforce functionality to filter searches
-quickly for specific customizations.
+-  **All Customizations**: Use Salesforce functionality to filter searches quickly for specific customizations.
 -  **Customization Impact**: This report shows your customizations and how they impact other objects.
 
 ## Clean Up
@@ -184,7 +168,6 @@ These reports are available from **Netwrix Dashboard**  **Reports**  **Clean Up*
 - [Unused Apex Code](/docs/platgovsalesforce/cleanup/cleanup_reports.md#unused-apex-code)
 - [Unused Reports](/docs/platgovsalesforce/cleanup/cleanup_reports.md#unused-reports)
 - [Customizations with Inactive Owners](/docs/platgovsalesforce/cleanup/cleanup_reports.md#customizations-with-inactive-owners)
-- [Customizations without Related Processes](/docs/platgovsalesforce/cleanup/cleanup_reports.md#customizations-without-related-processes)
 - [Custom Fields without Help Text](/docs/platgovsalesforce/cleanup/cleanup_reports.md#custom-fields-without-help-text)
 - [Custom Fields without Description](/docs/platgovsalesforce/cleanup/cleanup_reports.md#custom-fields-without-description)
 
@@ -195,23 +178,21 @@ These reports are available from **Netwrix Dashboard**  **Reports**  **Change En
 -  **Approval Override**: shows all changes approved with an approval override.
 -  **What Changed?**: shows all changes that have occurred.
 -  **Unresolved Non-Compliant Changes**: displays open non-compliant changes. A non-compliant change
-indicates something was changed without the required approvals. By looking at this report, you can
-investigate changes and get an understanding of what the impacts are and see if any additional
-changes need to be made. This report is used to track changes that require action.
+indicates that a change occurred without the required approvals. Use this report to investigate changes, understand their impacts, and determine whether additional changes are necessary. Use this report to track changes that require action.
 -  **Managed Package Updates**: displays managed package update details for auditing.
 -  **Resolved Non-Compliant Changes**: displays resolved non-compliant changes with the change
 overview and the difference summary.
--  **Compliant Changes**: displays all compliant changes. Compliant changes are automatically marked
-as closed. This report is used to review changes that have been automatically cleared.
+-  **Compliant Changes**: displays all compliant changes. The system automatically marks compliant
+changes as closed. Use this report to review the changes the system automatically cleared.
 -  **Consolidated Change By Type**: displays changes summarized and grouped by Salesforce Type.
--  **Deployed Changes**: displays an end to end summary of deployed changes to enable tracking and
-reporting of changes to the system.
+-  **Deployed Changes**: displays an end-to-end summary of deployed changes for tracking and
+reporting.
 -  **Data Tracking Change Logs**: displays changes on objects set for data tracking.
--  **Change/Approval Policy Changes**: this report is based on Field History Tracking. You can track
-up to 20 fields from the Policy Record. Salesforce starts tracking field history from the date and
-time you turn it on a field.
--  **Fast Scan for Permissions Changes**: displays all changes detected in PermissionSet,
-PermissionSetGroup, and Profiles by the Fast Scan.
+-  **Change/Approval Policy Changes**: this report uses Field History Tracking. You can track
+up to 20 fields from the Policy Record. Salesforce tracks field history from the date and
+time you enable it on a field.
+-  **Fast Scan for Permissions Changes**: displays all changes the Fast Scan detects in
+PermissionSet, PermissionSetGroup, and Profiles.
 
 ## Release and Deployment
 
@@ -225,17 +206,15 @@ These reports are available from **Netwrix Dashboard**  **Reports**  **Release a
 ## Audit Reports
 
 -  **Unresolved Non-Compliant Changes**: displays open non-compliant changes. A non-compliant change
-indicates something was changed without the required approvals. By looking at this report, you can
-investigate changes and get an understanding of what the impacts are and see if any additional
-changes need to be made. This report is used to track changes that require action.
+indicates that a change occurred without the required approvals. Use this report to investigate changes, understand their impacts, and determine whether additional changes are necessary. Use this report to track changes that require action.
 -  **Managed Package Updates**: displays managed package update details for auditing.
 -  **Resolved Non-Compliant Changes**: displays managed package update details for auditing.
--  **Compliant Changes**: displays all compliant changes. Compliant changes are automatically marked as
-closed. This report is used to review changes that have been automatically cleared.
+-  **Compliant Changes**: displays all compliant changes. The system automatically marks compliant
+changes as closed. Use this report to review the changes the system automatically cleared.
 -  **Platform Changes**: displays any platform changes that have occurred.
 -  **Consolidated Changes By Type**: displays changes summarized and grouped by Salesforce Type.
--  **Deployed Changes**: displays an end to end summary of deployed changes to enable tracking and
-reporting of changes to the system.
+-  **Deployed Changes**: displays an end-to-end summary of deployed changes for tracking and
+reporting.
 -  **Unresolved Control Incidents**: Deprecated item
 -  **Resolved Control Incidents**: Deprecated item
 -  **Pre-Approved Control Incidents**: Deprecated item

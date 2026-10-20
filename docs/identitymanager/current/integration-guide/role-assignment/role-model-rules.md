@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Assignment Policy"
 description: "Assignment Policy"
 sidebar_position: 30
@@ -159,7 +159,7 @@ provisioned to materialize `SRa`.
 
 This series of steps is actually a very simplified version of the [Evaluate Policy](../../integration-guide/role-assignment/evaluate-policy) algorithm.
 
-![Cascading From Dimensions To Roles To Provisioning Orders](/images/identitymanager/integration-guide/role-model/role-model-rules/enforce-assignment-policy-summary.webp)
+![Cascading From Dimensions To Roles To Provisioning Orders](/images/identitymanager/enforce-assignment-policy-summary.webp)
 
 **---**
 

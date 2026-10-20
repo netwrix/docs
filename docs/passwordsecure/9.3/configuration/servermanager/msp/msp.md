@@ -10,6 +10,6 @@ Whether you are a partner or an end user of Netwrix Password Secure - this help 
 getting started with MSP and guide you safely through the configuration and operation of the
 software.
 
-We are pleased that you have chosen Netwrix Password Secure for your password protection needs.
+Thank you for choosing Netwrix Password Secure for your password protection needs.
 
-We hope you enjoy discovering your new password manager!
+Enjoy discovering your new password manager.

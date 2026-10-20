@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Expressions"
 description: "Expressions"
 sidebar_position: 40
@@ -27,15 +27,15 @@ In the UI, the attributes that can be defined with an expression show two fields
 
 For example, the source object of a scalar rule based on user records is displayed:
 
-![Property Path and Expression](/images/identitymanager/integration-guide/toolkit/expressions/expression-propertypath_v602.webp)
+![Property Path and Expression](/images/identitymanager/expression-propertypath_v602.webp)
 
 The field Property Path is usually filled in with the + button only when the rule involves one single attribute. If the object involves more than one attribute, then the attributes are to be written in Expression (C#), with the help of predefined simple transformations. See the [Predefined functions](../../../integration-guide/toolkit/expressions/predefined-functions.md) topic for additional information.
 
 The first example defines the source object as simply the user record's Login property, while the second defines the source object with an expression based on the user record's first and last names:
 
-![Property Path Example](/images/identitymanager/integration-guide/toolkit/expressions/expression-propertypath-example1_v602.webp)
+![Property Path Example](/images/identitymanager/expression-propertypath-example1_v602.webp)
 
-![Expression Example](/images/identitymanager/integration-guide/toolkit/expressions/expression-propertypath-example2_v602.webp)
+![Expression Example](/images/identitymanager/expression-propertypath-example2_v602.webp)
 
 ### Expressions in XML
 
@@ -138,7 +138,7 @@ C#:resource:logger.LogDebug("Name={0}", resource.Name); return resource.Name;
 
 ### White list
 
-The following .NET libraries from the white list can be used.
+The following .NET libraries from the white list can be used in C# expressions and [Razor notification templates](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate).
 
 **Authorized Namespaces**
 
@@ -191,7 +191,7 @@ Beyond the authorized classes, the following methods can be used:
 
 Trying to use code from outside this white list would yield the following error during computation:
 
-`the Method Name : ... Parent Class : ... NameSpace : ... used are not authorized`
+`The C# method named ... is not authorized. Please refer to the documentation for a list of authorized methods.`
 
 Method ... cannot be called with entities as arguments.
 
@@ -244,6 +244,19 @@ However, here is a whitelist of methods that can be called with these kinds of a
 - `System.Linq.Enumerable.ToArray()`
 - `System.Linq.Enumerable.ToHashSet()`
 - `System.Collections.Generic.List.ToArray()`
+
+### Razor template white list
+
+[Razor notification templates](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate) share the same white list as C# expressions, with the following additions:
+
+**Additional authorized classes:**
+
+- `System.TimeZoneInfo`
+- `Usercube.Notification.Templating.Entities.HtmlHelper`
+
+**Additional authorized methods:**
+
+- `System.DateTime.ToLocalTime`
 
 ## Literal Expression
 

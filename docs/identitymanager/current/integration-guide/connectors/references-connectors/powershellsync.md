@@ -1,7 +1,7 @@
-﻿---
+---
 title: "PowerShellSync"
 description: "PowerShellSync"
-sidebar_position: 200
+sidebar_position: 210
 ---
 
 # PowerShellSync
@@ -10,7 +10,7 @@ This connector exports data from an external system via a [PowerShell](https://l
 
 This page is about [PowerShellSync](../../../integration-guide/connectors/references-packages/powershellsync).
 
-![Package: Custom/PowerShellSync](/images/identitymanager/integration-guide/connectors/references-connectors/powershellsync/packages_powershellsync_v603.webp)
+![Package: Custom/PowerShellSync](/images/identitymanager/packages_powershellsync_v603.webp)
 
 ## Overview
 

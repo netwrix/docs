@@ -1,7 +1,7 @@
-﻿---
+---
 title: "OpenLDAP"
 description: "OpenLDAP"
-sidebar_position: 180
+sidebar_position: 190
 ---
 
 # OpenLDAP
@@ -10,7 +10,7 @@ This connector exports and fulfills entries from/to an [OpenLDAP](https://www.op
 
 This page is about [OData](../../../integration-guide/connectors/references-packages/odata).
 
-![Package: Directory/Open LDAP](/images/identitymanager/integration-guide/connectors/references-connectors/openldap/packages_ldapopen_v603.webp)
+![Package: Directory/Open LDAP](/images/identitymanager/packages_ldapopen_v603.webp)
 
 ## Overview
 

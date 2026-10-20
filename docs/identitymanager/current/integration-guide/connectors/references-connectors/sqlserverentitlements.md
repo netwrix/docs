@@ -1,7 +1,7 @@
-﻿---
+---
 title: "Sql Server Entitlements"
 description: "Sql Server Entitlements"
-sidebar_position: 310
+sidebar_position: 320
 ---
 
 # Sql Server Entitlements
@@ -10,7 +10,7 @@ This connector exports entitlements from [Microsoft SQL Server](https://www.micr
 
 This page is about [SQL Server Entitlements](../../../integration-guide/connectors/references-packages/sql-server-entitlements).
 
-![Package: Database/Microsoft SQL Server Entitlements](/images/identitymanager/integration-guide/connectors/references-connectors/sqlserverentitlements/packages_sqlservermanagement_v603.webp)
+![Package: Database/Microsoft SQL Server Entitlements](/images/identitymanager/packages_sqlservermanagement_v603.webp)
 
 ## Overview
 

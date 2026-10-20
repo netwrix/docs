@@ -1,4 +1,4 @@
-﻿---
+---
 title: "DisplayPropertyGroup"
 description: ""
 sidebar_position: 3
@@ -28,7 +28,7 @@ Knowing that we have the following properties:
 </DisplayEntityType>
 ```
 
-![Display Property Group - Example](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/displaypropertygroup/displaypropertygroup_example_v603.webp)
+![Display Property Group - Example](/images/identitymanager/displaypropertygroup_example_v603.webp)
 
 :::info
 Any property without a value is not displayed.

@@ -25,7 +25,7 @@ In Directory Manager, history for an identity store is tracked at two levels:
     tracking function collects for objects. History for individual objects is also displayed in the
     respective object’s properties.
 
-- **When changes are made to an identity store’s configurations** - Directory Manager enables you to
+- **When changes are made to an identity store’s configurations** - Directory Manager lets you
   track the changes made to an identity store’s configurations, which include the following:
 
     - identity store properties
@@ -68,11 +68,11 @@ configurations, workflows, and security roles are also tracked.
 4. Use the toggle button in the top right corner to enable or disable history tracking for the
    identity store.
 
-    - On enabling, _All Actions_ is auto selected in the **Track** drop-down list. This indicates
+    - On enabling, _All Actions_ is auto selected in the **Track** dropdown list. This indicates
       that (a) all actions that users perform on directory objects and (b) changes made to identity
       store configurations, workflows, and security roles are tracked for the identity store.  
       To track specific actions, see the Track Specific Actions for an Identity Store topic.
-    - Disabling history tracking does not delete already recorded history data.
+    - Disabling history tracking doesn't delete already recorded history data.
 
 5. Click **Save**.
 
@@ -87,23 +87,23 @@ actions, such as changes to a group’s primary owner and object creation.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **History**.
-4. On the **History** page, make sure history tracking is enabled. Them select _Selected Actions_ in
-   the **Track** drop-down list. This enables the **Actions** area, where the following actions are
+4. On the **History** page, ensure history tracking is enabled. Then select _Selected Actions_ in
+   the **Track** dropdown list. This enables the **Actions** area, where the following actions are
    listed:
 
     | Action                   | Description                                                                                                                                                                                                                                    |
     | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | Ownership Change         | Changes to a group's primary ownership                                                                                                                                                                                                         |
-    | Additional Owner Change  | Addition and removal of a group's additional owner(s)                                                                                                                                                                                          |
+    | Additional Owner Change  | Addition and removal of a group's additional owners                                                                                                                                                                                          |
     | Expiration Policy Change | Any change to a group's expiry policy                                                                                                                                                                                                          |
     | Group Expire/Renew       | Expiration of a group and renewal of an expired group                                                                                                                                                                                          |
     | Query Change             | Changes to the query of a Smart Group or Dynasty                                                                                                                                                                                               |
     | Object Created           | Creation of a new object                                                                                                                                                                                                                       |
     | Object Deleted           | Deletion of an object                                                                                                                                                                                                                          |
-    | Workflows history        | Addition, deletion, or modification made to a workflow. It does not track the deletion of workflow requests, that is tracked under the **Identity Store history** option.                                                                      |
+    | Workflows history        | Addition, deletion, or modification made to a workflow. It doesn't track the deletion of workflow requests, that is tracked under the **Identity Store history** option.                                                                      |
     | Security Roles history   | Addition, deletion, or modification made to a security role                                                                                                                                                                                    |
     | Security Type Change     | Changes to a group's security type                                                                                                                                                                                                             |
-    | Identity Store history   | Changes to an identity store’s settings. This includes the configurations available for an identity store. This option does not track changes made to workflows and security roles. It does, however, track the deletion of workflow requests. |
+    | Identity Store history   | Changes to an identity store’s settings. This includes the configurations available for an identity store. This option doesn't track changes made to workflows and security roles. It does, however, track the deletion of workflow requests. |
 
 5. Click an action to track it for the identity store. The tile for the action changes to blue,
    indicating that it is tracked.
@@ -120,7 +120,7 @@ database forever.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **History**.
-4. On the **History** page, select _All_ in the **History Options** drop-down list to retain all
+4. On the **History** page, select _All_ in the **History Options** dropdown list to retain all
    tracked history data in the database.
 
     :::note
@@ -144,7 +144,7 @@ this data by moving it from the database to CSV files. See the
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **History**.
-4. On the **History** page, select one of the following options in the **History Options** drop-down
+4. On the **History** page, select one of the following options in the **History Options** dropdown
    list:
 
     - Last 30 Days
@@ -160,8 +160,8 @@ this data by moving it from the database to CSV files. See the
 
 ## Disable History Tracking
 
-On disabling history tracking for an identity store, Directory Manager does not log the history for
-actions performed in the identity store. Disabling history tracking does not delete any already
+On disabling history tracking for an identity store, Directory Manager doesn't log the history for
+actions performed in the identity store. Disabling history tracking doesn't delete any already
 recorded history data.
 
 **To disable history tracking:**

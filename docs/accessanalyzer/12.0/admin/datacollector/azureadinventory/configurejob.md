@@ -6,14 +6,14 @@ sidebar_position: 20
 
 # Microsoft Entra ID Connection Profile & Host List
 
-The AzureADInventory Data Collector requires a custom Connection Profile and host list to be created
-and assigned to the job or job group conducting the data collection. The host inventory option
-during host list creation makes it necessary to configure the Connection Profile first.
+The AzureADInventory Data Collector requires you to create a custom Connection Profile and host
+list, and assign them to the job or job group conducting the data collection. The host inventory
+option during host list creation requires you to configure the Connection Profile first.
 
 ## Connection Profile
 
-Creating the Connection Profile requires having the Client ID and Key that was generated when Access
-Analyzer was registered as a web application with Microsoft Entra ID. See the
+To create the Connection Profile, you need the Client ID and Key generated when you registered
+Access Analyzer as a web application with Microsoft Entra ID. See the
 [Microsoft Entra ID Auditing Configuration](/docs/accessanalyzer/12.0/requirements/entraid/entraid/access.md) for additional
 information.
 
@@ -32,7 +32,7 @@ Create a Connection Profile and set the following information on the User Creden
   [Generate the Client Secret Key](/docs/accessanalyzer/12.0/requirements/entraid/entraid/access.md#generate-the-client-secret-key)
   topic for additional information.
 
-Once the Connection Profile is created, it is time to create the custom host list. See the
+After you create the Connection Profile, create the custom host list. See the
 [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional information.
 
 ## Custom Host List

@@ -138,4 +138,4 @@ Once the *Steps for AD FS* have been completed, take the following steps in Netw
 
    ![User-added image](./../0-images/ka04u000000HcZn_0EM4u000004bUgl.png)
 
-When using the OIDC log-in option, the user will be redirected to log in to AD FS. Upon successful authentication, the user will be redirected to the Netwrix Privilege Secure UI as their now logged-in user.
+When using the OIDC log-in option, the user is redirected to log in to AD FS. Upon successful authentication, the user is redirected to the Netwrix Privilege Secure UI as their now logged-in user.

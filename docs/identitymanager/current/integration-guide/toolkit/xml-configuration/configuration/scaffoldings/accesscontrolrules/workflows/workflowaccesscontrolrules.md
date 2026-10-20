@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WorkflowAccessControlRules"
 description: "Generates the permissions to access the task page and visualize the workflows to be executed for a given entity type and profile."
 sidebar_position: 3
@@ -8,9 +8,9 @@ Generates the rights to access the task page and visualize the different workflo
 
 Gives access to a shortcut on the dashboard and on the top bar to access this page.
 
-Top bar shortcut: ![Tasks in Top Bar](/images/identitymanager/buttons/Home_topBar_V601.webp)
+Top bar shortcut: ![Tasks in Top Bar](/images/identitymanager/home_topbar_v601.webp)
 
-DashBoard shortcut: ![](/images/identitymanager/user-guide/set-up/configure-workflows/home_topbar_v601.webp)
+DashBoard shortcut: ![](/images/identitymanager/home_topbar_v601.webp)
 
 
 

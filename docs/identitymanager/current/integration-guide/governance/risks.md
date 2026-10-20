@@ -1,4 +1,4 @@
-﻿---
+---
 title: "**Risk Management**"
 description: "**Risk Management**"
 sidebar_position: 40
@@ -51,25 +51,25 @@ All risks are assigned an exemption policy that defines the behavior of Identity
 
 Risk-triggering permission requests can be forbidden with the **blocking** exemption policy. If at least one of the detected risks in the requested entitlement set has the **blocking** exemption policy, then Identity Manager does not allow the set to be requested at all. A message is displayed and the request must be cancelled:
 
-![Exemption Policy - **blocking**](/images/identitymanager/integration-guide/governance/risks/risks_blocking_v522.webp)
+![Exemption Policy - **blocking**](/images/identitymanager/risks_blocking_v522.webp)
 
 ### **approval required**
 
 Yet, instead of being unilaterally forbidden, risk-triggering permission requests can be authorized with an additional role review approval with the **approval required** exemption policy. If at least one of the detected risks in the requested entitlement set has the **approval required** exemption policy, then Identity Manager adds a step where this new set must be reviewed by a knowledgeable user like a security officer. A message is displayed and the request can be continued or cancelled:
 
-![Exemption Policy - **approval required**](/images/identitymanager/integration-guide/governance/risks/risks_requiredapproval_v522.webp)
+![Exemption Policy - **approval required**](/images/identitymanager/risks_requiredapproval_v522.webp)
 
 If the request is performed, then a line appears on the **Role Review** screen.
 
 The workflow state of said request is `Manual`, `Pending approval (risks)` and shows the following risk icon.
 
-![Home Page - Role Review](/images/identitymanager/integration-guide/governance/risks/risks_riskicon_v522.svg)
+![Home Page - Role Review](/images/identitymanager/risks_riskicon_v522.svg)
 
 ### **warning**
 
 Risk-triggering permissions can also be allowed with only a **warning** with the **warning** exemption policy. If all detected risks in the requested entitlement set has the **warning** exemption policy, then Identity Manager displays a message and the request can be continued or cancelled:
 
-![Exemption Policy - **warning**](/images/identitymanager/integration-guide/governance/risks/risks_warning_v522.webp)
+![Exemption Policy - **warning**](/images/identitymanager/risks_warning_v522.webp)
 
 ### Upon Profile
 
@@ -119,5 +119,5 @@ During access certification, assignments that are responsible for triggering the
 
 The risk score computation is performed by the risk score task.
 
-![Compute Risk Score Task](/images/identitymanager/integration-guide/governance/risks/risks_riskcomputetask_v522.webp)
+![Compute Risk Score Task](/images/identitymanager/risks_riskcomputetask_v522.webp)
 

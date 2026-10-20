@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Get-AvailableMessagingServers
 
-The commandlet Get-AvailableMessagingServers retrieves the messaging server(s) available for the
+The commandlet Get-AvailableMessagingServers retrieves the messaging servers available for the
 configured messaging provider.
 
 ## Syntax
@@ -33,7 +33,7 @@ Get-AvailableMessagingServers
 
 Example 1:
 
-This example retrieves the available messaging server(s) configured in AdStore1 identity store for
+This example retrieves the available messaging servers configured in AdStore1 identity store for
 Exchange 2013 messaging provider.
 
 ```
@@ -42,7 +42,7 @@ Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider exchange2013
 
 Example 2:
 
-This example retrieves the available messaging server(s) configured in Adstore1 identity store for
+This example retrieves the available messaging servers configured in Adstore1 identity store for
 Office365 messaging provider.
 
 ```
@@ -51,7 +51,7 @@ Get-AvailableMessagingServers -IdentityStoreName AdStore1 -Provider o365 -UserNa
 
 Example 3:
 
-This example retrieves the available messaging server(s) in AdStore1 identity store for GSuite
+This example retrieves the available messaging servers in AdStore1 identity store for GSuite
 (Google Apps) messaging provider.
 
 ```

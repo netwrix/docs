@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Netwrix Auditor Operations and Health
 
-This topic describes how you can monitor Auditor operations, health and resource usage. See the
+This topic describes how you can monitor Auditor operations, health, and resource usage. See the
 following topics for additional information:
 
 - [Health Status Dashboard](/docs/auditor/10.8/admin/healthstatus/dashboard/overview.md)

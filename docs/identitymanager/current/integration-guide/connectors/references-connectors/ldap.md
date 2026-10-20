@@ -1,4 +1,4 @@
-﻿---
+---
 title: "LDAP"
 description: "LDAP"
 sidebar_position: 120
@@ -15,13 +15,13 @@ This page is about:
 - [Apache Directory](../../../integration-guide/connectors/references-packages/apache-directory);
 - [Red Hat Directory Server](../../../integration-guide/connectors/references-packages/red-hat-directory-server).
 
-![Package: Directory/Generic LDAP](/images/identitymanager/integration-guide/connectors/references-connectors/ldap/packages_ldapgeneric_v603.webp)
+![Package: Directory/Generic LDAP](/images/identitymanager/packages_ldapgeneric_v603.webp)
 
-![Package: Directory/Oracle LDAP](/images/identitymanager/integration-guide/connectors/references-connectors/ldap/packages_ldaporacle_v603.webp)
+![Package: Directory/Oracle LDAP](/images/identitymanager/packages_ldaporacle_v603.webp)
 
-![Package: Directory/Apache Directory](/images/identitymanager/integration-guide/connectors/references-connectors/ldap/packages_ldapapache_v603.webp)
+![Package: Directory/Apache Directory](/images/identitymanager/packages_ldapapache_v603.webp)
 
-![Package: Directory/Red Hat Directory Server](/images/identitymanager/integration-guide/connectors/references-connectors/ldap/packages_ldapredhat_v603.webp)
+![Package: Directory/Red Hat Directory Server](/images/identitymanager/packages_ldapredhat_v603.webp)
 
 ## Overview
 

@@ -11,7 +11,7 @@ the Netwrix Auditor Access Reviews application, see the Special Considerations t
 steps.
 
 To upgrade the Access Reviews application to a newer version, simply run the new `AccessReviews.msi`
-executable. It is not necessary to uninstall the existing version. See the [Install](/docs/auditor/10.7/accessreviews/installation/install.md)
+executable. It isn't necessary to uninstall the existing version. See the [Install](/docs/auditor/10.7/accessreviews/installation/install.md)
 topic for additional information.
 
 _Remember,_ the Access Reviews version must align to the compatible Netwrix Auditor version.
@@ -39,8 +39,7 @@ When the installer is run over an existing version, the following is happening i
 
 The originally released Netwrix Access Information Center has been rebranded to Netwrix Auditor
 Access Reviews. This rebranding project included changing the installation directory, the name of
-the service, and the default name of the database created by the installer. Follow the steps to
-replace Netwrix Access Information Center with Netwrix Auditor Access Reviews.
+the service, and the default name of the database created by the installer.
 
 **Step 1 –** Install the Netwrix Auditor Access Reviews application on the same server where the
 Netwrix Access Information Center was installed. See the [Install](/docs/auditor/10.7/accessreviews/installation/install.md) topic for additional

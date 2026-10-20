@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Create **roles** in Bulk"
 description: "Create **roles** in Bulk"
 sidebar_position: 10
@@ -43,20 +43,20 @@ Create a role naming rule by proceeding as follows:
 
 1. On the home page, click on **Access **rules**** in the **Configuration** section.
 
-    ![Home Page - Access **rules**](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+    ![Home Page - Access **rules**](/images/identitymanager/home_rules_v602.webp)
 
 2. In the dropdown menu at the top left, choose the entity type to which the future naming rule will
 be applied.
 
-    ![Entity Type Choice](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/provrules_entitytype_v602.webp)
+    ![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
 3. Click on the **Role Naming Conventions** tab and on the addition button at the top right corner.
 
-    ![Addition Icon](/images/identitymanager/user-guide/set-up/categorization/classification/iconadd_v602.svg)
+    ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
 
 4. Fill in the fields.
 
-    ![Create a Naming Rule](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_newrule_v602.webp)
+    ![Create a Naming Rule](/images/identitymanager/namingrulecreation_newrule_v602.webp)
 
     - `Policy`:
 [Policy](../../../integration-guide/toolkit/xml-configuration/provisioning/policy) in which the rule exists.
@@ -100,7 +100,7 @@ Permissions** dialog. This setting does not apply to **roles** which are either 
     - `Comment Management on Permission Review`: to change if different from the role policy.
         > Our example would look like:
 >
-        > ![Example - Naming Rule](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_example_v602.webp)
+        > ![Example - Naming Rule](/images/identitymanager/namingrulecreation_example_v602.webp)
 
 5. Click on **Create** and see a line added on the **rules** page.
 
@@ -115,31 +115,31 @@ In order to verify the process:
 1. to take the changes into account, on the appropriate connector's overview page click on
 **Jobs** > **Apply Naming Conventions**;
 
-    ![Resource Type Jobs](/images/identitymanager/user-guide/set-up/categorization/classification/synchro_resourcetype_v602.webp)
+    ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 2. check that the correct **roles** and **rules** were created.
 
 For **roles**, click on **Access **roles**** on the home page in the **Configuration** section.
 
-![Home Page - Access **roles**](/images/identitymanager/user-guide/set-up/categorization/resource-type-creation/home_roles_v602.webp)
+![Home Page - Access **roles**](/images/identitymanager/home_roles_v602.webp)
 
 Select single **roles** and find the role(s) you created inside the right category and with the right parameters.
 
-![Access Single **roles**](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_testroles_v602.webp)
+![Access Single **roles**](/images/identitymanager/namingrulecreation_testroles_v602.webp)
 
 > Our example would look like:
 >
-> ![Example - Generated Role](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_exampleroleresult_v602.webp)
+> ![Example - Generated Role](/images/identitymanager/namingrulecreation_exampleroleresult_v602.webp)
 
 For **rules**, click on **Access **rules**** on the home page in the **Configuration** section.
 
-![Home Page - Access **rules**](/images/identitymanager/user-guide/set-up/categorization/classification/home_rules_v602.webp)
+![Home Page - Access **rules**](/images/identitymanager/home_rules_v602.webp)
 
 Select navigation **rules** and find the rule(s) you created with the right parameters.
 
-![Access Navigation **rules**](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_testrules_v602.webp)
+![Access Navigation **rules**](/images/identitymanager/namingrulecreation_testrules_v602.webp)
 
 > Our example would look like:
 >
-> ![Example - Generated Rule](/images/identitymanager/user-guide/set-up/single-roles-catalog-creation/role-naming-rule-creation/namingrulecreation_exampleruleresult_v523.webp)
+> ![Example - Generated Rule](/images/identitymanager/namingrulecreation_exampleruleresult_v523.webp)
 

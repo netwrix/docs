@@ -23,5 +23,5 @@ The jobs in the Local Administrators group are:
   article for additional information.
 - [SG_Sessions Job](/docs/accessanalyzer/11.6/solutions/windows/privilegedaccounts/localadministrators/sg_sessions.md)
   – This job lists sessions and logged on users from all targeted hosts. These active sessions and
-  logged on users may have their hashes stored in memory on the target machine, which could be
-  leveraged in a Pass the Hash attack.
+  logged on users may have their hashes stored in memory on the target machine, which an attacker
+  could use in a Pass the Hash attack.

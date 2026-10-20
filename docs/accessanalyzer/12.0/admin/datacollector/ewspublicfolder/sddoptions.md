@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # EWSPublicFolder: SDD Options
 
-Use the Sensitive data scan options page to configure options to for discovering sensitive data. It
-is a wizard page for the Sensitive Data category.
+Use the Sensitive data scan options page to configure sensitive data discovery options. It is a
+wizard page for the Sensitive Data category.
 
 ![EWS Public Folder Data Collector Wizard SDD Options page](/images/accessanalyzer/12.0/admin/datacollector/ewspublicfolder/sddoptions.webp)
 

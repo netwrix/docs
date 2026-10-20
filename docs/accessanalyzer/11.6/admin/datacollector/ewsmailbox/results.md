@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # EWSMailbox: Results
 
-Use the Results page to select which properties are gathered out of those available for the
+Use the Results page to select which properties to gather out of those available for the
 category. It is a wizard page for all of the categories.
 
 ![EWS Mailbox Data Collector Wizard Results page](/images/accessanalyzer/11.6/admin/datacollector/ewsmailbox/results.webp)

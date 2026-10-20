@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Conclusion
 
-Congratulations! You have successfully installed, configured, and used Netwrix Password Reset. This
+You have successfully installed, configured, and used Netwrix Password Reset. This
 brief guide has introduced you to Password Reset, but you can do much more with it. The
 Administrator's Guide covers many more topics, including:
 
@@ -19,7 +19,7 @@ Administrator's Guide covers many more topics, including:
 - Creating complex filters in the Data Console.
 - Modifying the user interface and error messages.
 
-You can learn more about Password Reset and Password Policy Enforcer at
-[www.netwrix.com/password_policy_enforcer](https://www.netwrix.com/password_policy_enforcer.html).
+Visit the [Netwrix Password Policy Enforcer product page](https://www.netwrix.com/password_policy_enforcer.html)
+to learn about Password Reset and Password Policy Enforcer features, licensing, and downloads.
 
-Please [contact Netwrix support](mailto:support@netwrix.com) if you have any questions.
+[Contact Netwrix support](mailto:support@netwrix.com) if you have any questions.

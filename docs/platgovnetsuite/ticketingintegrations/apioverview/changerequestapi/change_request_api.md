@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The Change Request API provides external access to retrieve customization from a NetSuite account.
 
-Here are the Change Request API commands:
+The following are the Change Request API commands:
 
 - [Get Change Request](/docs/platgovnetsuite/ticketingintegrations/apioverview/changerequestapi/get_change_request.md): Returns the change request associated with an
   External ID.

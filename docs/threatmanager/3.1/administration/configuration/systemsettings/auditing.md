@@ -30,6 +30,6 @@ The Audit History table displays the following information:
 - Resource – Where applicable, identifies the related resource that was changed or accessed
 
 The table is designed to display 10 records at a time, by default. However, you can set this to 50,
-100, or 1,000 rows with the drop-down menu above the right corner of the table. There is a search
+100, or 1,000 rows with the dropdown above the right corner of the table. There is a search
 box above the left corner of the table. Page navigation buttons are below the table. You can also
 export the data from the current page using the **Export CSV** button.

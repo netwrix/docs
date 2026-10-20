@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # AWS: Sensitive Data Settings
 
-The Sensitive Data Settings page is where sensitive data discovery settings are configured. It is a
+Use the Sensitive Data Settings page to configure sensitive data discovery settings. It is a
 wizard page for the category of Collect SDD Data.
 
 ![Sensitive Data Settings page](/images/accessanalyzer/11.6/admin/datacollector/aws/sensitivedata.webp)
@@ -46,7 +46,7 @@ Configure the following options:
         - Spreadsheets
         - Text/Markup files
 
-- Perform differential scan of – Enables you to choose whether to employ incremental scanning:
+- Perform differential scan of – Choose whether to employ incremental scanning:
 
     - Files modified since last scan – Scans only files modified since the last scan
     - Files modified since [date] – Only scans files modified after the specified date
@@ -54,7 +54,7 @@ Configure the following options:
       of days
 
 - Number of SDD scan processes [number] – Increases the number of SDD scanner processes that spawn
-  as part of a scan, increasing parallel scanning. The value should not exceed 2x the number of CPU
+  as part of a scan, increasing parallel scanning. The value shouldn't exceed 2x the number of CPU
   threads available.
 
 :::tip

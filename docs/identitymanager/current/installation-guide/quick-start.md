@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Quick Start Guide"
 description: "Quick Start Guide"
 sidebar_position: 30
@@ -23,7 +23,7 @@ If the certificate is named something other than Usercube.pfx, remember to chang
 
 **Step 1 –** Go on the Netwrix Identity Manager (formerly Usercube) [portal](https://www.netwrix.com/sign_in.html?rf=my_products.html) and download the artifacts of the expected version.
 
-![Extranet Artifacts](/images/identitymanager/installation-guide/quick-start/extranet_v601.webp)
+![Extranet Artifacts](/images/identitymanager/extranet_v601.webp)
 
 **Step 2 –** Extract from SDK the folder Usercube Bootstrap anywhere on the computer.
 
@@ -31,7 +31,7 @@ If the certificate is named something other than Usercube.pfx, remember to chang
 
 When extracting Usercube Bootstrap to the root of the computer, it looks like:
 
-![Project Directory](/images/identitymanager/installation-guide/quick-start/directory_v602.webp)
+![Project Directory](/images/identitymanager/directory_v602.webp)
 
 **Step 4 –** Move or copy your certificate inside the Runtime folder.
 
@@ -67,7 +67,7 @@ In our example, the command would be, still in the Runtime folder:
 
 **Step 10 –** Open a browser and navigate to http://localhost:5000. Authenticate with administrator as a username and the password specified in the Runtime/appsettings.json file, in the Authentication section.
 
-![Authentication Dialog](/images/identitymanager/installation-guide/quick-start/authentication_v601.webp)
+![Authentication Dialog](/images/identitymanager/authentication_v601.webp)
 
 Now you can start using the application.
 
@@ -75,7 +75,7 @@ Now you can start using the application.
 
 From there, you can start setting up Identity Manager via the **Settings** page which is accessible from the **Configuration** section of the home page.
 
-![Home Page - Settings](/images/identitymanager/user-guide/set-up/user-profile-configuration/home_settings_v523.webp)
+![Home Page - Settings](/images/identitymanager/home_settings_v523.webp)
 
 Then, Netwrix recommends following the user guide to start the configuration of your IGA project from scratch. See the [User Guide](../user-guide) topic for additional information.
 

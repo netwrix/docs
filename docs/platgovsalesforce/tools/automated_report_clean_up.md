@@ -8,9 +8,9 @@ sidebar_position: 110
 
 Reports are powerful tools used throughout Salesforce and interconnected to other customizations. As
 user-created Reports proliferate, Salesforce accounts become inefficient and overall performance
-degrades. This rules-based tool provides administrators the ability to identify and archive Reports
-and keep Salesforce accounts organized, easy to understand, and improve efficiency and performance.
-Archived reports can be restored.
+degrades. This rules-based tool lets administrators identify and archive Reports
+and keep Salesforce accounts organized, efficient, and high-performing.
+You can restore archived reports.
 
 The **Automated Report Clean Up** tool has two operating modes:
 
@@ -30,8 +30,8 @@ Menu options are available to access the rules and lists:
 
 ## Report Clean Up Rules
 
-Report Clean Up rules are created by the administrator and used to locate Reports matching the rule
-criteria. Report Clean Up rules are used for both **Automatic** and **Run Now**.
+Administrators create Report Clean Up rules to locate Reports matching the rule
+criteria. Report Clean Up rules apply to both **Automatic** and **Run Now** modes.
 
 To create or edit rules, access **Netwrix Dashboard** > **Tools** > **Automated Report Clean Up Tool**
 and select **New Rule** or **Report Clean Up Rules**.
@@ -45,12 +45,12 @@ and select **New Rule** or **Report Clean Up Rules**.
 - **Name** is the assigned name for the **Report Clean Up Rule**.
 - **Description** is the purpose of the rule record. An informative description helps administrators
   maintain and identify rules.
-- **Notify Report Owners Prior to Archive** check to send email to report owners prior to archive.
+- **Notify Report Owners Before Archive** check to send email to report owners before archive.
   Default is checked.
 - **Automatic** check to include the rule in the automated report clean up.
 - **Inactive** check to disable this Report Clean Up Rule.
 
-The following reports are excluded from clean up:
+The tool excludes the following reports from clean up:
 
 - Reports in private folders
 - Reports with Change/Approval Policy that requires a Change Record
@@ -58,12 +58,12 @@ The following reports are excluded from clean up:
 
 ### Schedule
 
-When **Automatic** is enabled, configure the schedule for the rule.
+When you enable **Automatic**, configure the schedule for the rule.
 
 - **Weekly Event**
 - **Monthly Event**
 - **Yearly Event**
-- **Repeat Every "N" Week(s)** (weekly schedule)
+- **Repeat Every "N" Weeks** (weekly schedule)
 - **End By**:
   - **Date**
   - **Time**
@@ -74,32 +74,31 @@ When **Automatic** is enabled, configure the schedule for the rule.
 
 #### Basic Filters
 
-- **Report Name** filters reports to clean-up by name. Filter operator is _startswith_ and the
-  wildcard _%_ may be used. Default is blank.
+- **Report Name** filters reports to clean-up by name. Filter operator is _startswith_, and you can
+  use the wildcard _%_. Default is blank.
   Example: _Custom % Report%_ returns all reports with a name starting with '_Custom_' followed by
   any character and containing '_Report_'.
-- **Report API Name** filters reports to clean-up by API Name. Filter operator is _startswith_ and
-  the wildcard _%_ may be used. Default is blank.
+- **Report API Name** filters reports to clean-up by API Name. Filter operator is _startswith_, and
+  you can use the wildcard _%_. Default is blank.
   Example: _%testing_ returns all reports with an API Name containing '_testing_'.
 - **Months Since Date Last Used, Retained** filters reports by the most recent activity date (last
-  run date, retained, or restored). Reports used within the specified timeframe are excluded.
+  run date, retained, or restored). The rule excludes reports used within the specified timeframe.
   Default is **6** months.
-- **Exclude Reports Less Than A Month Old** excludes new reports that have not been run. Default is
+- **Exclude Reports Less Than A Month Old** excludes new reports that have never run. Default is
   checked.
 
 #### Advanced Filters
 
-- **Select/Selected Report Owner(s)** filters reports by matching selected owners for the rule or if
-  **Exclude Owner(s)** is checked, to exclude matching owners.
-- **Select/Selected Inactive Owner(s)** filters reports by matching selected inactive owners.
-  **All Inactive Owner(s)** includes all inactive owners.
+- **Select/Selected Report Owners** filters reports by matching selected owners for the rule or, if
+  you check **Exclude Owners**, excludes matching owners.
+- **Select/Selected Inactive Owners** filters reports by matching selected inactive owners.
+  **All Inactive Owners** includes all inactive owners.
 
 ### Rule Preview
 
-The **Preview** function provides a quick method to validate the rule and review the list of
-matching reports.
+The **Preview** function lets you validate the rule and review the list of matching reports.
 
-1. Administrators can click **Preview** on a Report Clean Up Rule.
+1. Click **Preview** on a Report Clean Up Rule.
 2. Review the rule summary including **Rule Name**, **Number of Reports to Clean Up**, and
    **Rule Filters**.
 3. Review the **Report List**, which includes:
@@ -114,6 +113,8 @@ matching reports.
    - **Save & Run**
    - **Delete**
 
+The **Rule Name** in the preview is a link. Click it to open the Report Clean Up Rule record directly.
+
 ![automated_report_cleanup_preview](/images/platgovsalesforce/tools/automated_report_cleanup_preview.webp)
 
 ### Run Now
@@ -122,32 +123,32 @@ The **Save & Run** option immediately begins a Report Clean Up using the current
 
 If a Report matches the Clean Up Rule:
 
-1. Summary notification of all matching reports is sent to the rule owner.
-2. Immediate notice is sent to all report owners. Notifications include a **Retain this Report**
+1. The system sends a summary notification of all matching reports to the rule owner.
+2. The system sends an immediate notice to all report owners. Notifications include a **Retain this Report**
    link and a **Preview** link.
-3. If the report is not retained and not used, a final notification is sent prior to the archive
+3. If no one retains or uses the report, the system sends a final notification before the archive
    date.
-4. If the report is not retained and not used by the archive date:
-   - Report is archived.
-   - Archive notifications are sent to rule owner and report owners.
-   - Report is added to **Archived Reports**.
-   - Summary notification is sent to the rule owner.
+4. If no one retains or uses the report by the archive date:
+   - The system archives the report.
+   - The system sends archive notifications to the rule owner and report owners.
+   - The system adds the report to **Archived Reports**.
+   - The system sends a summary notification to the rule owner.
 
 ## Automated Run Workflow
 
 **Automated Report Clean Up** runs based on the schedule of rules marked **Automatic**.
 
 1. When a Report matches a Clean Up Rule:
-   - Notification is emailed to the rule owner.
-   - Notification is emailed to report owners unless disabled.
+   - The system emails a notification to the rule owner.
+   - The system emails a notification to report owners unless you disable the notification.
    - All notifications include a **Retain this Report** link.
-   - Report is added to **Reports to be Archived**.
-2. If the report is not retained and not used:
-   - Final notifications are sent.
-3. If the report is not retained and not used by the archive date:
-   - Report is archived.
-   - Notifications are sent.
-   - Report is added to **Archived Reports**.
+   - The system adds the report to **Reports to be Archived**.
+2. If no one retains or uses the report:
+   - The system sends final notifications.
+3. If no one retains or uses the report by the archive date:
+   - The system archives the report.
+   - The system sends notifications.
+   - The system adds the report to **Archived Reports**.
 
 ## Report Clean Up Status
 
@@ -173,13 +174,13 @@ Notification emails contain a **Retain this Report** link.
 
 ## Auto Archiving a Report
 
-If a report is not retained:
+If no one retains a report:
 
-- Report is archived.
-- Customization record is marked **Inactive**.
-- Report is added to **Archived Reports**.
+- The system archives the report.
+- The system marks the customization record **Inactive**.
+- The system adds the report to **Archived Reports**.
 - A **Restore** option becomes available.
-- Notifications are sent to rule owner and administrators.
+- The system sends notifications to the rule owner and administrators.
 
 ![automated_report_cleanup_archive](/images/platgovsalesforce/tools/automated_report_cleanup_archive.webp)
 
@@ -188,14 +189,13 @@ If a report is not retained:
 A Salesforce Administrator can restore an archived report from **Archived Reports**,
 **Reports to Restore**, or using the **Restore** link in notification emails.
 
-- Report is restored with a new internal ID.
-- **Date Last Used, Retained/Restored** is updated.
-- Report is added to **Retained Reports**.
+- Salesforce restores the report with a new internal ID.
+- The system updates **Date Last Used, Retained/Restored**.
+- The system adds the report to **Retained Reports**.
 
 ## Report Clean Up Reports
 
-The Automated Report Clean Up tool includes Salesforce reports that allow administrators to monitor
-the clean up process.
+The Automated Report Clean Up tool includes Salesforce reports for monitoring the clean up process.
 
 ### Reports to Restore
 

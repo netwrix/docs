@@ -46,7 +46,7 @@ distribute those to your admin team. Sometimes the latest helper tool must match
 the MMC editor.
 
 **Step 4 –** Update the PolicyPak ADMX (troubleshooting) files. (Video tip:
-[Troubleshooting with ADMX files](/docs/policypak/gettingstarted/misc/videos/troubleshooting/admxfiles.md))
+[Troubleshooting with ADMX files](/docs/policypak/misc/videos/troubleshooting/admxfiles.md))
 
 **Step 5 –** Roll out the CSE in a controlled fashion to your endpoints using the ring methodology.
 
@@ -65,9 +65,9 @@ If you're using PolicyPak with Group Policy Objects (GPOs), you should also
 be making backups from time to time. Inside the GPMC, find the Group Policy Objects node,
 right-click, select Backup, and then follow the prompts. For additional information on how to
 preform a Group Policy backup, see the
-[PolicyPak: Backup and Restore Options to Recover from nearly any problem](/docs/policypak/gettingstarted/misc/videos/upgradingmaintenance/backupoptions.md)
+[PolicyPak: Backup and Restore Options to Recover from nearly any problem](/docs/policypak/misc/videos/upgradingmaintenance/backupoptions.md)
 and
-[PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/gettingstarted/misc/videos/upgradingmaintenance/backup.md)
+[PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/misc/videos/upgradingmaintenance/backup.md)
 video demos.
 
 :::

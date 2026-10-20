@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ResourceType"
 description: ""
 sidebar_position: 13
@@ -57,27 +57,27 @@ Suppose a resource type managing the provisioning of Active Directory nominative
 
 The following scenario is about a user named Cedric Blanc, whose AD's `sn` property is set by the scalar rule to `Blanc`.
 
-![Example - State 0](/images/identitymanager/integration-guide/toolkit/xml-configuration/resourcetypes/DiscardManualAssignments_state0_V602.webp)
+![Example - State 0](/images/identitymanager/DiscardManualAssignments_state0_V602.webp)
 
 Let's see what happens when the user's name is changed manually directly in the AD.
 
 Suppose that we change in the AD the last name to `White`. As the scalar rule computes the `sn` value based on the user's data which still states the last name `Blanc`, such a change induces a difference between the value calculated by the rule and the actual value in the AD. This difference is spotted by the next synchronization, triggering a non-conforming assignment on the **Resource Reconciliation** page.
 
-![Example - State 1](/images/identitymanager/integration-guide/toolkit/xml-configuration/resourcetypes/DiscardManualAssignments_state1_V602.webp)
+![Example - State 1](/images/identitymanager/DiscardManualAssignments_state1_V602.webp)
 
-![Example - Step 1](/images/identitymanager/integration-guide/toolkit/xml-configuration/resourcetypes/DiscardManualAssignments_step1_V602.webp)
+![Example - Step 1](/images/identitymanager/DiscardManualAssignments_step1_V602.webp)
 
-![Example - Step 2](/images/identitymanager/integration-guide/toolkit/xml-configuration/resourcetypes/DiscardManualAssignments_step2_V602.webp)
+![Example - Step 2](/images/identitymanager/DiscardManualAssignments_step2_V602.webp)
 
 Once this manual new value is confirmed, the property is stated as `Approved`.
 
-![Example - State 2](/images/identitymanager/integration-guide/toolkit/xml-configuration/resourcetypes/DiscardManualAssignments_state2_V602.webp)
+![Example - State 2](/images/identitymanager/DiscardManualAssignments_state2_V602.webp)
 
 Now suppose that the user's last name is changed to `Black` via Identity Manager's workflows. As the source data is changed, the scalar rule computes a new value for `sn`. There are two options:
 
 * The default configuration (`DiscardManualAssignments` set to `false`) considers manual assignments, i.e. changes made directly in the managed system, as authoritative. So there will be no provisioning of the newly computed value for `sn`. The current `sn` value that was written manually in the AD stays as is, no matter the changes in the source data (here the user's last name). Identity Manager only states the property's value as `Questioned`.
 
-  ![Example - State 3](/images/identitymanager/integration-guide/toolkit/xml-configuration/resourcetypes/DiscardManualAssignments_state3_V602.webp)
+  ![Example - State 3](/images/identitymanager/DiscardManualAssignments_state3_V602.webp)
 
   :::note
   No change in the source data can affect the property's value. However, any manual change made in the managed system will trigger a non-conforming assignment. Then, reconciling the property by choosing to keep Identity Manager's suggested value will make the property's value go back to `Calculated` and thus follow the changes in the source data.
@@ -85,10 +85,10 @@ Now suppose that the user's last name is changed to `Black` via Identity Manager
 
 * If `DiscardManualAssignments` is set to `true`, then the state of the property's value does not matter. Identity Manager applies the rules of the role model, and generates a provisioning order to overwrite the manual change `White` with the newly computed value `Black`.
 
-  ![Example - State 4](/images/identitymanager/integration-guide/toolkit/xml-configuration/resourcetypes/DiscardManualAssignments_state4_V602.webp)
+  ![Example - State 4](/images/identitymanager/DiscardManualAssignments_state4_V602.webp)
 
 In this scenario for Cedric Blanc, these behaviors can be summed up like the following:
-![Discardmanualassignments State0 V602](/images/identitymanager/integration-guide/toolkit/xml-configuration/provisioning/resourcetype/discardmanualassignments_state0_v602.webp)
+![Discardmanualassignments State0 V602](/images/identitymanager/DiscardManualAssignments_state0_V602.webp)
 
 
 ## Properties
@@ -351,7 +351,7 @@ A scalar rule is applied according to reference start and end dates (configured 
 A time offset adjusts the period for which the rule applies and computes a property's value.
 :::
 
-![Schema - Default Application Period](/images/identitymanager/integration-guide/datamodel/datamodel_scalarRule_timeOffsetDefault.webp)
+![Schema - Default Application Period](/images/identitymanager/datamodel_scalarrule_timeoffsetdefault.webp)
 
 The following example impacts the property for the activation of nominative AD accounts:
 * the first rule deactivates the account from its creation, i.e. 1 month before the user's arrival day, until the arrival day;
@@ -367,7 +367,7 @@ The following example impacts the property for the activation of nominative AD a
 &lt;/ResourceType&gt;
 ```
 
-![Schema - Default Application Period](/images/identitymanager/integration-guide/toolkit/xml-configuration/provisioning/resourcetype/datamodel_scalarrule_timeoffsetdefault.webp)
+![Schema - Default Application Period](/images/identitymanager/datamodel_scalarrule_timeoffsetdefault.webp)
 
 :::info
 If the time period of property computation exceeds the limits of the period of resource type assignment, then the period of resource type assignment is extended accordingly.
@@ -375,7 +375,7 @@ If the time period of property computation exceeds the limits of the period of r
 
 Note that the rules are applied in a specific order according to their offset reference: `After`, `Before`, `Around` and `Default`. Each rule overwrites pre-existing values. Thus in case of overlapping rules, `Default`-offset rules overwrite the values of `Around`-offset rules, which overwrite the values of `Before`-offset rules, which overwrite the values of `After`-offset rules. We could have the following:
 
-![Schema - Overlapping Offsets](/images/identitymanager/integration-guide/toolkit/xml-configuration/provisioning/resourcetype/datamodel_scalarrule_timeoffsetoverlap.webp)
+![Schema - Overlapping Offsets](/images/identitymanager/datamodel_scalarrule_timeoffsetoverlap.webp)
 
 
 ### Properties

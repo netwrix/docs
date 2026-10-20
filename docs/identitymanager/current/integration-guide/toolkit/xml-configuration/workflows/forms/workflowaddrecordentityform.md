@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WorkflowAddRecordEntityForm"
 description: "Displays a form to add a new record for an existing resource, by duplicating and adjusting an existing record."
 sidebar_position: 2
@@ -46,14 +46,14 @@ And with the following form for the data that groups records together:
 ```
 
 The contents of `MainControl` and `RecordControl` are visible during the workflow's execution:
-![Form Example - Computer Request](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/FormExample_WorkflowAddRecordEntityForm_V603.webp)
+![Form Example - Computer Request](/images/identitymanager/formexample_workflowaddrecordentityform_v603.webp)
 
 :::note
 The content of `RecordUniqueItemControl` is not visible. The user's records that have the same values for all the properties in `RecordUniqueItemControl` will be displayed, and potentially modified, as one.
 :::
 
 The contents of `MainSummaryControl` and `RecordSummaryControl` are visible after the workflow's execution:
-![Formexample Workflowaddrecordentityform V603](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workflowaddrecordentityform/formexample_workflowaddrecordentityform_v603.webp)
+![Formexample Workflowaddrecordentityform V603](/images/identitymanager/formexample_workflowaddrecordentityform_v603.webp)
 
 
 ## Properties

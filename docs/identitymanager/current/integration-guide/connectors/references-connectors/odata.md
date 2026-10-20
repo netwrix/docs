@@ -1,7 +1,7 @@
-﻿---
+---
 title: "OData"
 description: "OData"
-sidebar_position: 160
+sidebar_position: 170
 ---
 
 # OData
@@ -10,7 +10,7 @@ This connector exports and fulfills data from/to an [OData](https://www.odata.or
 
 This page is about [OData](../../../integration-guide/connectors/references-packages/odata).
 
-![Package: Custom/OData](/images/identitymanager/integration-guide/connectors/references-connectors/odata/packages_odata_v603.webp)
+![Package: Custom/OData](/images/identitymanager/packages_odata_v603.webp)
 
 ## Overview
 

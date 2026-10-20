@@ -17,15 +17,15 @@ Scripts and Triggers Manager is a component of PolicyPak (PolicyPak) that allows
 
 ## Documentation Sections
 
-- Manual - Configuration guides and scripting reference
-- Videos - Video tutorials and examples
-- Tech Notes - Technical guidance and troubleshooting
+- [Manual](/docs/policypak/components/scriptstriggers/manual/overview.md) - Configuration guides and scripting reference
+- [Videos](/docs/policypak/components/scriptstriggers/videolearningcenter/videolearningcenter.md) - Video tutorials and examples
+- [Tech Notes](/docs/policypak/components/scriptstriggers/knowledgebase/knowledgebase.md) - Technical guidance and troubleshooting
 
 ## Quick Links
 
-- Script Configuration
-- Getting Started Videos
-- Trigger Examples
-- Troubleshooting
+- [Script Configuration](/docs/policypak/components/scriptstriggers/manual/configuration/insouts.md)
+- [Getting Started Videos](/docs/policypak/components/scriptstriggers/videolearningcenter/gettingstarted/cloud.md)
+- [Trigger Examples](/docs/policypak/components/scriptstriggers/videolearningcenter/triggersexamples/anyconnect.md)
+- [Troubleshooting](/docs/policypak/components/scriptstriggers/knowledgebase/troubleshooting/adminapproval.md)
 
 

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Policy Templates
 
-Password Policy Enforcer contains Out-of-the-box Policy Templates based on the requirements of the
+Password Policy Enforcer includes built-in Policy Templates based on the requirements of the
 most popular regulatory frameworks.
 
 - CIS Password Policy Guide — See the

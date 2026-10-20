@@ -16,8 +16,8 @@ Before heading down this path please watch the backup / restore videos:
 :::
 
 
-- [PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/gettingstarted/misc/videos/upgradingmaintenance/backup.md)
-- [PolicyPak: Backup and Restore Options to Recover from nearly any problem](/docs/policypak/gettingstarted/misc/videos/upgradingmaintenance/backupoptions.md)
+- [PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/misc/videos/upgradingmaintenance/backup.md)
+- [PolicyPak: Backup and Restore Options to Recover from nearly any problem](/docs/policypak/misc/videos/upgradingmaintenance/backupoptions.md)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/j8NnBbMuaUQ" title="Least Privilege Manager Admin Approval: Using Email / Long Codes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

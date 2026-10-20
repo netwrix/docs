@@ -122,7 +122,7 @@ If neither of these are configured, you may proceed with a standard Netwrix Priv
 
 ### Upgrading from 3.6 or Higher to 3.7CU1 (3.7.1250) or Higher
 
-When upgrading from 3.6, it is assumed that all of your encryption keys are in agreement on all Netwrix Privilege Secure servers and remote service nodes. The 3.7CU1 installer will retain the existing encryption keys on each server, and you can omit any steps in the below instructions involving the export and import of encryption keys.
+When upgrading from 3.6, it is assumed that all of your encryption keys are in agreement on all Netwrix Privilege Secure servers and remote service nodes. The 3.7CU1 installer will retain the existing encryption keys on each server, and you can omit any steps in the following instructions involving the export and import of encryption keys.
 
 ## HA Upgrade Instructions
 
@@ -180,7 +180,7 @@ Each host in the active/passive configuration must be upgraded, starting with th
    cd "C:\Program Files\Stealthbits\PAM\KeyTools"
    .\SbPAM.RotateKey.exe import -n keys.exp 
    ```
-7. You will be prompted for the password.
+7. You are prompted for the password.
 8. Delete the export file from both the primary and secondary servers.
 
 ### Re-establish HA on the Secondary
@@ -250,7 +250,7 @@ For each remote host running a remote service, do the following:
    cd "C:\Program Files\Stealthbits\PAM\KeyTools"
    .\SbPAM.RotateKey.exe import -n keys.exp 
    ```
-3. You will be prompted for the password.
+3. You are prompted for the password.
 4. Delete the export file from the remote host.
 
 Once all remote hosts have the correct encryption keys, delete the export file from the Netwrix Privilege Secure server.

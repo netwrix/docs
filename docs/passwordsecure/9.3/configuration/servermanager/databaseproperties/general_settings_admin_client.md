@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # General settings
 
-## What are general settings?
+## General settings overview
 
 Within the general settings, surface settings regarding the colour scheme as well as the language
 used are configured. The password for logging in to the Server Manager can also be changed here.

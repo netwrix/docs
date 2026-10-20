@@ -1,13 +1,11 @@
+---
+sidebar_position: 5
+---
 # PingCastle Pro Installation and Configuration
 
 ## Description
 
-PingCastle Pro is a tool designed to improve and follow the Active
-Directory overall security level. This software has been developed to be
-compatible with most of the possible existing configurations. The goal
-(when the tool was created) was not to aim for perfection, but to
-provide reliable data to present the situation to the management, thus
-improving over time.
+PingCastle Pro is a tool that helps you improve and follow your overall Active Directory security level. The software is compatible with most existing configurations. The goal of the tool isn't perfection, but to provide reliable data that presents the situation to management for improvement over time.
 
 # Requirements
 
@@ -25,8 +23,8 @@ The Operating systems supported are:
     (with extended security updates) or subsequent, where the asp.net
     8.0 is supported
 
-  - On demand, it is possible to include any operating systems,
-    including Linux, if it is supported by asp.net core 8.0
+  - On demand, you can include any operating systems,
+    including Linux, if supported by asp.net core 8.0
 
 See the [Windows Lifecycle Fact Sheet](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)
 for details regarding each Windows release lifecycle.
@@ -35,7 +33,7 @@ See the .NET 8.0 Supported Operating System documentation [here](https://learn.m
 
 ## Database
 
-PingCastle Pro is using a database to store its data.
+PingCastle Pro uses a database to store its data.
 
 The current supported databases are:
 
@@ -44,7 +42,7 @@ The current supported databases are:
 - Any supported editions of PostGres
 
 1.  Any database supported by \"Entity Framework Core 2\" (SQLite,
-    MySQL, \...) may be supported on demand. Please contact us for more
+ MySQL, \...) may be supported on demand. Contact Netwrix for more
     information.
 
 ## External System Dependencies
@@ -52,20 +50,18 @@ The current supported databases are:
 PingCastle Basic and PingCastle Professional require \"dotnet framework
 2.0\" or subsequent versions.
 
-PingCastle Enterprise is using the \"asp.net core 8.0 framework\" still
-relying on \"dotnet standard 2.0\".
+PingCastle Enterprise uses the "asp.net core 8.0 framework" but still relies on "dotnet standard 2.0".
 
-1.  It is recommended to not expose web application but to use reverse
-    proxy like IIS, Apache2 or Nginx.
+1.  Netwrix recommends not exposing the web application directly. Use a reverse proxy such as IIS, Apache2, or Nginx.
 
 ## Third party authentication system
 
-PingCastle relies on the Windows account to perform scans and does not
+PingCastle relies on the Windows account to perform scans and doesn't
 use third party authentication system.
 
-PingCastle Pro requires Azure AD or a Windows Active Directory to
-perform authentication. If AzureAD is used, the application must be
-allowed to get the token from AAD (typically login.microsoftonline.com).
+PingCastle Pro requires Azure Active Directory (Azure AD) or a Windows Active Directory to
+perform authentication. If Azure AD is used, the application must be
+allowed to get the token from Azure AD (typically `login.microsoftonline.com`).
 
 ## License
 
@@ -73,25 +69,19 @@ PingCastle Pro is licensed based on the number of domains managed and
 allows up to a maximum of five domains to be managed. The number of
 domains include subdomains of a forest.
 
-2.  The number of Domain Controllers are not used for licensing, only
+2.  The number of Domain Controllers aren't used for licensing, only
     domains.
 
 **Example**
 
-If you have consto.com with two subdomains called uk.consto.com and
-us.consto.com, then you would require three licenses.
+If you have `consto.com` with two subdomains called `uk.consto.com` and
+`us.consto.com`, then you would require three licenses.
 
 # Architecture
 
-PingCastle is using a distributed architecture.
+PingCastle uses a distributed architecture.
 
-The PingCastle Basic can be considered as a stand alone agent. The
-program executes an assessment of the Active Directory and produces a
-report. This report is in two forms: a xml file and a html file. These
-two files provide two representations of the same data. By default the
-.xml file is being filtered to remove potential private data such as
-account name from this collected data. This filter can be deactivated by
-running the program with the flag \--level Full.
+PingCastle Basic acts as a standalone agent. The program assesses the Active Directory and produces a report in two forms: an XML file and an HTML file. These two files provide two representations of the same data. By default, PingCastle filters the XML file to remove potential private data such as account names from this collected data. To deactivate this filter, run the program with the `--level Full` flag.
 
 Then the data contained in the xml file is pushed into PingCastle Pro
 directly via the API, or indirectly via an indirect import such as
@@ -100,12 +90,11 @@ confidentiality of the data.
 
 ![](/images/pingcastle/proinstall/image3.webp)
 
-Then the PingCastle Pro provide the services around the data and store
-it in the database.
+PingCastle Pro then provides services around the data and stores it in the database.
 
 # Minimal AzureAD Configuration
 
-Add the end of the procedure, you will get "Tenant ID" and "Client ID".
+At the end of the procedure, you receive a **Tenant ID** and a **Client ID**.
 
 **Connect to \"Azure Portal\" located at https://portal.azure.com**
 
@@ -117,14 +106,15 @@ Select the App Registrations pane.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image5.webp)
 
-And then click on New registration from the toolbar in the top. That
-will open a dialog "Register and app".
+Click **New registration** from the toolbar at the top. A **Register an app** dialog opens.
 
 ![](/images/pingcastle/proinstall/image6.webp)
 
-Add a name but also the redirect Uri. Please note that the redirect URI
-must point to the FQDN of the server that will be accessed. It MUST
-starts with HTTPS and MUST ends with /signin-oidc
+Add a name but also the redirect Uri.
+
+:::note
+The redirect URI must point to the fully qualified domain name (FQDN) of the server that is being accessed. It must start with HTTPS and end with `/signin-oidc`.
+:::
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image7.webp)
 
@@ -145,8 +135,11 @@ connecting to the application.
 
 # SQL Express installation
 
-This chapter describe the installation of SQL Express. Please note that
-any edition of SQL Server is working.
+This chapter describe the installation of SQL Express.
+
+:::note
+Any edition of SQL Server is compatible.
+:::
 
 Download SQL Express 2019 here:
 
@@ -164,7 +157,7 @@ Select "Basic"and let the installation proceed.
 
 PingCastle Pro supports a setup where the requirements and manipulations
 have been minimized. This scenario is recommended for tests but not in
-production because all IIS and SQL Server upgrade mechanisms are not
+production because all IIS and SQL Server upgrade mechanisms aren't
 supported.
 
 ## Requirements
@@ -191,8 +184,7 @@ It requires:
 
 ## API Key and endpoint
 
-Before starting the setup, the admin is required to provide the Tenant
-ID, the Client ID of the application.
+Before starting the setup, provide the Tenant ID and Client ID of the application.
 
 The Client Secret, Notification group, and SMTP configuration is
 optional and can be modified later in the appsettings.Production.json
@@ -200,13 +192,13 @@ file.
 
 ## Procedure
 
-The MSI file guides the installation of the software:
+The Windows Installer (MSI) file guides the installation of the software:
 
 ![](/images/pingcastle/proinstall/image15.webp)
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image16.webp)
 
-Once the license terms are accepted, the software requires a license key
+After the license terms are accepted, the software requires a license key
 which should have been distributed alongside the MSI files.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image17.webp)
@@ -235,7 +227,7 @@ Then the authentication configuration is asked.
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image21.webp)
 
 For Windows, default group which is allowed to PingCastle is everyone.
-To change the group, select the browse button. A new dialog is shown.
+To change the group, select the browse button. A new dialog appears.
 
 2.  If you select "Domain admins" this group won't work. Indeed, it will
     be stripped in the restricted token and the user won't be seen as
@@ -265,18 +257,17 @@ The setup configures automatically the website, the database, the
 application and if the database is being created, grant the permission
 to the database to IIS (application pool)
 
-4.  When the software is removed, the setup DOES NOT remove the
+4.  When the software is removed, the setup doesn't remove the
     database.
 
 # Post installation
 
-In order to have the Azure authentication working, HTTPS must be
-enabled.
+To use Azure authentication, enable HTTPS.
 
 Check that the PingCastlePro website is installed.
 
-Sometimes, the PingCastlePro is not started because the Default WebSite
-is. Please not the back square at the right of the PingCastlePro
+Sometimes, the PingCastlePro isn't started because the Default WebSite
+is. not the back square at the right of the PingCastlePro
 website.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image27.webp)
@@ -286,7 +277,7 @@ website.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image28.webp)
 
-Make sure you have a certificate installed. If this is not the case, you
+ensure you have a certificate installed. If this isn't the case, you
 can create one with the Server Certificates configuration option.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image29.webp)
@@ -326,7 +317,7 @@ Microsoft has procedures to install the dotnet core 2 framework:
 - Windows installation\
   https://docs.microsoft.com/en-us/dotnet/core/windows-prerequisites?tabs=netcore2x
 
-Microsoft has procedures to setup the hosting of the application that
+Microsoft has procedures to set up the hosting of the application that
 are referenced bellow:
 
 > Host ASP.NET Core on Windows with IIS\
@@ -341,8 +332,9 @@ are referenced bellow:
 5.  Upload quota may be changed to allow large file upload in the
     Interoperability mode
 
-For IIS, please note that by default a \"Default Web Site\" is installed
-and may conflict with the PingCastle Pro application.
+:::note
+For IIS, a \"Default Web Site\" is installed by default and may conflict with the PingCastle Pro application.
+:::
 
 The solution is to stop the default website and configure it to not
 start automatically.
@@ -366,8 +358,11 @@ is provided to apply database change before a software update is
 applied.
 
 When run on IIS, PingCastle run in an application pool which needs to be
-granted privileges on the database. Note that the application pool is
-using a special Windows account which needs to be created manually.
+granted privileges on the database.
+
+:::note
+The application pool uses a special Windows account that needs to be created manually.
+:::
 
 The following SQL can grant these permissions:
 
@@ -399,7 +394,7 @@ alter user pingcastle with password 'pingcastle';
 sudo -u postgres createdb -O pingcastle pingcastle
 ```
 
-6.  On PostGres the collation (sort) does not take some special
+6.  On PostGres the collation (sort) doesn't take some special
     characters in account, which puts the \[Default\] container at
     different position that the start of the list of entities
 
@@ -414,7 +409,7 @@ You first need to create a local account inside Sql Server.
 Select SQL Server authentication.
 
 Be sure to uncheck "user must change password at the next login" as
-PingCastleEnterprise does not support password rotation. (you can change
+PingCastleEnterprise doesn't support password rotation. (you can change
 later the password inside the application.Production.json file)
 
 ![Une image contenant texte, capture d'écran, logiciel, Icône d'ordinateur Description générée automatiquement](/images/pingcastle/proinstall/image36.webp)
@@ -427,10 +422,10 @@ Then create a database.
 
 ![](/images/pingcastle/proinstall/image38.webp)
 
-Do not forget to set the owner as the user you created before.
+Set the owner as the user you created earlier.
 
-You should verify that the credentials and that the server is available
-before going further.
+Verify that the credentials are correct and that the server is available
+before continuing.
 
 ![Une image contenant texte, capture d'écran, nombre, affichage Description générée automatiquement](/images/pingcastle/proinstall/image39.webp)
 
@@ -451,12 +446,8 @@ Specify the following:
 Server=tcp:server.fqdn.com;Database=PingCastle;User Id=pingcastle;password=pingcastle;Trusted_Connection=True;MultipleActiveResultSets=true
 ```
 
-Unfortunately, the server will not create the database at the
-installation time. You will discover any issue at the first run. Dont
-forget to check the event log to have the full error message. You can
-change the connection string after the installation by editing the file
-appsettings.production.json. Do not forget that special characters may
-need to be escaped as they are located inside a json string.
+The server doesn't create the database at installation time. Any issues appear on first run. Check the event log for the full error message. You can
+change the connection string after installation by editing `appsettings.production.json`. Special characters in the connection string must be escaped because the value is inside a JSON string.
 
 ![Une image contenant texte, capture d'écran, Police Description générée automatiquement](/images/pingcastle/proinstall/image42.webp)
 
@@ -490,7 +481,7 @@ Specify the following:
 Server=tcp:server.fqdn.com;Database=PingCastle;Trusted_Connection=True;MultipleActiveResultSets=true
 ```
 
-The installation will continue.
+The installation continues.
 
 After the installation, another steep need to be done: you need to
 change the Application Pool identity.\
@@ -514,7 +505,7 @@ the root of the application folder.
 Two settings are needed for the application: the database and the
 license information.
 
-To change the database type, change the \"database\" settings. Currently
+To change the database type, change the \"database\" settings. 
 the following values are supported:
 
 - sqlserver
@@ -554,7 +545,7 @@ It is located in the appsettings.Production.json file.
 The Email is the address used to send email,.
 
 The login and password is the credential use to connect to the smtp
-server. This is not mandatory.
+server. This isn't mandatory.
 
 The host and port is the address of the smtp server.
 
@@ -569,7 +560,7 @@ application has to be created and a database.
 Then the configuration of the application needs to be replicated into
 the Azure Configuration page.
 
-The minimal required fields to be configured are: database, license and
+The minimal required fields to be configured are: database, license, and
 the connection string, named as "DefaultConnection".
 
 ![](/images/pingcastle/proinstall/image50.webp)
@@ -578,7 +569,7 @@ the connection string, named as "DefaultConnection".
 
 At the first run of the application, the database is created. If there
 is an error with the database (missing right, invalid connection string)
-or hosting, the next screen will not be displayed.
+or hosting, the next screen doesn't appear.
 
 For Azure configuration, the application asks you to connect using
 Azure.
@@ -591,7 +582,7 @@ Azure.
 
 # Initial configuration
 
-For more details please see the user documentation.
+For more details see the user documentation.
 
 ## Encryption
 
@@ -612,7 +603,7 @@ is a feature of the command line client. You need to create an API key
 You can configure PingCastle program to send their report to the
 program.
 
-You need to setup an API key for an agent using the Advanced -\> Agent
+You need to set up an API key for an agent using the Advanced -\> Agent
 feature.
 
 Then use the command switches `--api-endpoint <endpoint>` and
@@ -633,7 +624,7 @@ PingCastle allows the possibility to the administrator of the
 application to schedule scans. It is useful when the solution is
 installed in a central forest and the need is to scan all child domains.
 
-By default, PingCastle is running as a limited user. It cannot access
+By default, PingCastle is running as a limited user. It can't access
 the network nor modify system settings. To use the scheduler,
 permissions need to be changed.
 
@@ -656,14 +647,12 @@ Then restart the application pool.
 If you are using a custom identity for the application pool (to access a
 database hosted in another server), you have to promote this user as
 local admin. This is a Windows restriction of the permission model and
-the access to the task scheduler cannot be delegated.
+the access to the task scheduler can't be delegated.
 
 ## Custom installation
 
 :::note
-PingCastle is using behing the hood a folder named "PingCastle" in
-the task scheduler. We will use the COM api as it exposes the security
-descriptor -- which is not the case of the native PowerShell APIL
+PingCastle uses a folder named "PingCastle" in the task scheduler. The COM API exposes the security descriptor, which the native PowerShell API doesn't.
 :::
 
 If you want PingCastle to be able to start or stop tasks but not being
@@ -709,14 +698,13 @@ PingCastle Enterprise.
 
 ## Program
 
-It is recommended to run the latest official version of PingCastle. The
+Run the latest official version of PingCastle. The
 PingCastle.exe program delivered in the same directory than the
 PingCastleEnterprise is suitable for use.
 
-Please note that PingCastle Enterprise support to run the PingCastle
-audit program at a higher or lower version. If new features have been
-added, they will not be visible unless the PingCastle Enterprise program
-is updated, but no data will be lost in the mean time.
+:::note
+PingCastle Enterprise supports running the PingCastle audit program at a higher or lower version. If new features have been added, they will not be visible unless the PingCastle Enterprise program is updated, but no data will be lost in the mean time.
+:::
 
 ## Schedule
 
@@ -749,7 +737,7 @@ installing the TLS1.2 client package on the server running the audit.
 
 # Troubleshooting
 
-We recommend starting the application manually to view any problem such
+Netwrix recommends starting the application manually to view any problem such
 as:
 
 - TCP port already used
@@ -774,11 +762,7 @@ dotnet.exe PingCastlePro.dll --server.urls=http://*:8080
 However, if there is a permission problem in the database, this method
 won\'t display an error because the database will be connected under the
 user context and not the system context. Typically on Windows, the IIS
-service connect under IIS APPPool\\AppName. We recommend to look at the
-following page to grant right to the application pool account on Sql
-Server:
-
-**https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login**
+service connect under IIS APPPool\\AppName. To grant rights to the application pool account on SQL Server, see [How to add the ApplicationPoolIdentity to a SQL Server login](https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login).
 
 Then depending on the platform additional logs can be stored.
 
@@ -818,7 +802,7 @@ And the message when running on the command line:
 
 ![](/images/pingcastle/proinstall/image62.webp)Solution:
 
-identify the correct version of the framework and install it. Do not
+identify the correct version of the framework and install it. Don't
 forget to install the IIS middleware is you are installing on IIS.
 
 :::note
@@ -845,7 +829,7 @@ file appsettings.Production.json.
 ## Accurate permissions on the database
 
 When the database doesn\'t contain the table needed, the application
-tries to create them. If the permissions are not granted, a message will
+tries to create them. If the permissions aren't granted, a message will
 be generated and the application will not be able to start.
 
 ![C:\Users\Adiant\AppData\Local\Temp\sql_auth_error.webp](/images/pingcastle/proinstall/image66.webp)
@@ -855,14 +839,12 @@ Solution:
 Grant the right to create tables in the database or run a SQL script to
 create this table. This script is available on demand.
 
-Do not forget that the inability to create table can be seen of a
-symptom of a lack of permissions. The inability to add or remove records
-in the database will prohibit the use of the application.
+The inability to create tables is a symptom of insufficient permissions. If the application pool identity can't add or remove records in the database, the application can't start.
 
 If you are running PingCastle from another SQL Server, the default
 identity used by the application pool will not be granted access.
 
-Be sure you are able to connect from another computer than your SQL
+Be sure you can connect from another computer than your SQL
 database server. Indeed, by default you have a firewall preventing
 remote connection and that the database may not be exposed. Be sure that
 it is available through TCP. (in the following case, remote access is
@@ -894,16 +876,13 @@ add `;User ID=sa;Password=pass123`
 
 ## Enable Debug Logging
 
-Follow the steps to enable debug logging.
-
 1.  Log in to the PingCastle Pro Server.
 
 2.  Locate the appsettings.json file.
 
 3.  This is usually located at: C:\\PingCastlePro
 
-4.  Edit the **Appsettings.json** file so the Logging Section looks like
-    the example below:
+4.  Edit the **Appsettings.json** file so the Logging section matches the following:
 
 ```json
 "Logging": {

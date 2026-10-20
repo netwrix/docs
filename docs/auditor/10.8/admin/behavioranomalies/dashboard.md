@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Review Behavior Anomalies Dashboard
 
-To review the Behavior Anomalies dashboard, process and filter anomalies in user profiles, you must
+To review the Behavior Anomalies dashboard, process, and filter anomalies in user profiles, you must
 be assigned the Global administrator or Global reviewer role in the product. See the
 [Role-Based Access and Delegation](/docs/auditor/10.8/admin/monitoringplans/delegation.md) topic for additional
 information.
@@ -30,9 +30,9 @@ The dashboards includes the following sections:
   chart, click the pie chart icon in the upper left corner of the page.
 - The user list with all users who provoked alerts and their total risk scores.
 
-Once you reviewed the general anomaly trend and identified users that merit your special attention,
-review their profiles and process anomalies. Click View Profile next to a user name to dive into
-user activity and investigate each action in details.
+After you review the general anomaly trend and identify users that merit special attention, review
+their profiles and process anomalies. Click View Profile next to a user name to explore user activity
+and investigate each action in detail.
 [Review User Profiles and Process Anomalies](/docs/auditor/10.8/admin/behavioranomalies/userprofile.md)
 
 [Review User Profiles and Process Anomalies](/docs/auditor/10.8/admin/behavioranomalies/userprofile.md)

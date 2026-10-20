@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Inheriting permissions
 
-## What is inherited in organisational structures?
+## Inheritance in organisational structures
 
-If you open the permissions for an organisational structure, the currently configured permissions
+If you open the permissions for an organisational structure, the configured permissions
 will be visible. In the following example, there are a total of four roles with varying permissions
 for the organisational structure.
 
@@ -34,5 +34,7 @@ The two highlighted options are now available on the ribbon.
 Both mechanisms are protected by a confirmation prompt. If both "inherit" and also "overwrite" are
 selected, "overwrite" is considered the overriding function.
 
-**CAUTION:** Both mechanisms are not protected by user rights. The **authorize** right for the
+:::warning
+Both mechanisms aren't protected by user rights. The **authorize** right for the
 organisational structure is required to activate the inheritance or overwrite functions.
+:::

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ConnectorsAccessControlRules"
 description: "Gives the permissions to manage the connector pages."
 sidebar_position: 1
@@ -10,7 +10,7 @@ Generates the permissions to access the connectors pages, the policies page, the
 
 Gives access to shortcuts on the dashboard to access these pages.
 
-![Connectors](/images/identitymanager/user-guide/set-up/synchronization/home_connectors_v602.webp)
+![Connectors](/images/identitymanager/home_connectors_v602.webp)
 
 
 The scaffolding generates the following scaffoldings:

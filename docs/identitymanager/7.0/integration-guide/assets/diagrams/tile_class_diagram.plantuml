@@ -1,0 +1,46 @@
+@startuml component
+package "Tile" {
+	class Tile {
+		DisplayName_L1 : String
+		Identifier : String
+		--
+		Columns : DisplayTableColumn[]
+		Controls : FormControl[]
+		DisplayEntityProperties : DisplayEntityProperty[]
+		EntityType : EntityType
+		Items : TileItem[]
+		TileDesignElement : TileDesignElement
+	}
+}
+package "DisplayTableColumn" {
+	class DisplayTableColumn {
+	}
+}
+package "FormControl" {
+	class FormControl {
+	}
+}
+package "DisplayEntityProperty" {
+	class DisplayEntityProperty {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "TileItem" {
+	class TileItem {
+	}
+}
+package "TileDesignElement" {
+	class TileDesignElement {
+	}
+}
+Tile "0..1" --  "0..*"DisplayTableColumn
+Tile "0..1" --  "0..*"FormControl
+Tile "0..1" --  "0..*"DisplayEntityProperty
+Tile "0..*" --  "1"EntityType
+Tile "1" --  "0..*"TileItem
+Tile "0..*" --  "1"TileDesignElement
+hide empty members
+@enduml

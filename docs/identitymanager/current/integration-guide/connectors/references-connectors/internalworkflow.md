@@ -1,4 +1,4 @@
-﻿---
+---
 title: "InternalWorkflow"
 description: "InternalWorkflow"
 sidebar_position: 90
@@ -10,7 +10,7 @@ This connector triggers workflows in Identity Manager for a system's provisioni
 
 This page is about Identity Manager Internal Workflow. See the [Workflow](../../../integration-guide/connectors/references-packages/workflow) topic for additional information.
 
-![Package: Usercube/Workflow](/images/identitymanager/integration-guide/connectors/references-connectors/internalworkflow/packages_workflow_v603.webp)
+![Package: Usercube/Workflow](/images/identitymanager/packages_workflow_v603.webp)
 
 ## Overview
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "LDIF"
 description: "LDIF"
 sidebar_position: 130
@@ -10,7 +10,7 @@ This connector exports entries from an [LDIF](https://en.wikipedia.org/wiki/LDAP
 
 This page is about [LDIF](../../../integration-guide/connectors/references-packages/ldif).
 
-![Package: Directory/LDIF](/images/identitymanager/integration-guide/connectors/references-connectors/ldif/packages_ldif_v603.webp)
+![Package: Directory/LDIF](/images/identitymanager/packages_ldif_v603.webp)
 
 ## Overview
 

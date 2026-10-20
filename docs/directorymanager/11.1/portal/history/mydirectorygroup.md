@@ -76,11 +76,11 @@ Directory Manager enables a user to add notes to history items that were logged 
 change they made. A note may explain the reason for making a certain change, such as why they
 changed the security type for a group.
 
-Only the user who added the note can update it. Other users can only view this note; they cannot
+Only the user who added the note can update it. Other users can only view thisn'te; they can't
 edit or add comments.
 
 - The Add Note button is available next to a history item listed.
-- Once you add a note, the Add Note button changes to View Note. All portal users can use this
+- After you add a note, the Add Note button changes to View Note. All portal users can use this
   button to view the note.
 
 ### Add a note
@@ -97,7 +97,7 @@ Your note can have a maximum of 500 characters.
 
 ### Edit a note
 
-You can only edit the note that you have added.
+You can only edit the you have added.
 
 Step 1 – Click the **View Note** button next to a history item to view or edit the note for it.
 
@@ -107,7 +107,7 @@ Step 3 – Click **Update Note** to save the changes.
 
 ### View a note
 
-Once a note is added, other users can view it, but they cannot edit it or add comments to it.
+Once a note is added, other users can view it, but they can't edit it or add comments to it.
 
 - In the Detailed view:
 
@@ -119,7 +119,7 @@ Once a note is added, other users can view it, but they cannot edit it or add co
 
 ### Remove a note
 
-You can only remove the note that you have added.
+You can only remove the you have added.
 
 Step 1 – Click the **View Note** button next to a history item to view or remove the note for it.
 

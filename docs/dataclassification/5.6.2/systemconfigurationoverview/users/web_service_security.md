@@ -6,13 +6,13 @@ sidebar_position: 40
 
 # Web Service Security
 
-Web Service Security can be used to restrict external access to the Netwrix Data Classification
-APIs, we recommend when using this functionality that you list the Netwrix Data Classification
-service account under the Allow Only Listed records. When Block All is selected certain
-functionality within Netwrix Data Classification will be impacted (if there is API use).
+Use Web Service Security to restrict external access to the Netwrix Data Classification
+APIs. List the Netwrix Data Classification
+service account under **Allow Only Listed**. When you select **Block All**, certain
+Netwrix Data Classification functionality may be affected if there is API use.
 
 Certain methods must be individually enabled for security reasons, such as GetSourceItemContent
-which allows you to retrieve the binary content of a crawled item.
+which lets you retrieve the binary content of a crawled item.
 
 There are three modes available:
 

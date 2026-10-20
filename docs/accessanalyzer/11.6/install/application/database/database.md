@@ -7,19 +7,19 @@ sidebar_position: 10
 # Enterprise Auditor Database
 
 The Enterprise Auditor database is dynamic in nature. There are a handful of required system tables
-which are created at installation time or when individual features are used the first time. All
-other data tables in the Enterprise Auditor database are created and bound to individual jobs which
-are added to the Enterprise Auditor Console. As jobs are created and modified, corresponding tables
-are created and modified in the database. A job can generate one or more tables.
+that Enterprise Auditor creates at installation time or when you use individual features for the
+first time. Enterprise Auditor creates and binds all other data tables in the database to individual
+jobs that you add to the Enterprise Auditor Console. As you create and modify jobs, Enterprise
+Auditor creates and modifies corresponding tables in the database. A job can generate one or more tables.
 
-The structure and schema of each data table is controlled by the Enterprise Auditor data collector
-used to collect data and write results to the table. There is a one-to-one relationship between a
+The Enterprise Auditor data collector that collects data and writes results to the table controls
+the structure and schema of each data table. There is a one-to-one relationship between a
 task created within a Enterprise Auditor job and the table to which the task writes results.
 Creating tasks or adding and removing properties within a task modifies the schema of the table on
 subsequent execution of the job.
 
 Enterprise Auditor offers users the ability to modify its preconfigured jobs or create custom jobs
-and tasks as needed. Therefore, precise schema information for data tables cannot be predicted,
+and tasks as needed. Therefore, precise schema information for data tables can't be predicted,
 restricted, or locked down.
 
 ## Database Permissions
@@ -34,8 +34,8 @@ access to the database.
 :::
 
 
-If database owner rights cannot be obtained, the following SQL script can be executed by a database
-administrator (DBA) against the Enterprise Auditor database to grant the necessary permissions to
+If you can't obtain database owner rights, a database administrator (DBA) can execute the following
+SQL script against the Enterprise Auditor database to grant the necessary permissions to
 the appropriate users (replacing `<SA User ID>` and `<SA Database>` with the appropriate values):
 
 ```
@@ -85,17 +85,17 @@ Enterprise Auditor.
   user-configured time frame
 - Reporting Needs – Anticipated data needed to generate reports
 
-Recommended SQL Server database sizes are provided for specific solutions in the
+The
 [Requirements](/docs/accessanalyzer/11.6/requirements/overview.md)
-topics. These recommendations are based on environmental factors, the number of target objects
-within an environment (users, hosts, mailboxes, etc.), and the applicable factors listed above for
-the specific solution.
+topics provide recommended SQL Server database sizes for specific solutions. These recommendations
+are based on environmental factors, the number of target objects within an environment (users,
+hosts, mailboxes, etc.), and the applicable factors described earlier for the specific solution.
 
 ### Customer Examples of Database Sizing
 
-The overall database size is ultimately governed by an organization’s auditing objectives. The
-examples below provide a glimpse into how these objectives combine with the applicable factors above
-to impact the Enterprise Auditor database resource consumption.
+An organization's auditing objectives ultimately govern the overall database size. The
+following examples provide a glimpse into how these objectives combine with the applicable factors
+described earlier to impact the Enterprise Auditor database resource consumption.
 
 - Example from an Active Directory Solution Customer
     - An Active Directory (AD) customer intends to collect AD User/Group/Membership information and
@@ -115,8 +115,8 @@ to impact the Enterprise Auditor database resource consumption.
       information on file permissions and ages (and possibly, ad hoc, information on file system
       activity) with an overall plan to identify stale data, consolidate active data on a subset of
       the organization’s file system infrastructure, and to move that active data to a cloud-based
-      platform like SharePoint Online. Activity monitoring (FSAC) is to be used ad hoc against open
-      shares to profile resource ownership and also to validate the “staleness” of certain
+      platform like SharePoint Online. The customer plans to use Activity monitoring (FSAC) ad hoc against open
+      shares to profile resource ownership and validate the “staleness” of certain
       resources. The database sizing for a project of this scope could be up to 750 GB for the
       database, 240 GB for the transaction log, and 380 GB of TEMPDB space.
 - Example from an Exchange Solution Customer
@@ -131,12 +131,12 @@ to impact the Enterprise Auditor database resource consumption.
 
 ## Securing the Enterprise Auditor Database
 
-The typical database configuration is to have **sysadmin Server Role** assigned to the ID used to
-connect to the SQL instance. It will allow full control over the instance where the Enterprise
-Auditor database resides. This configuration is chosen because Enterprise Auditor requires some
-interaction with the master database in order to install and configure the initial Enterprise
-Auditor database. When it is necessary to secure the Enterprise Auditor database, the following
-steps should be followed to achieve the minimum SQL security levels without breaking core Enterprise
+The typical database configuration assigns the **sysadmin Server Role** to the ID used to
+connect to the SQL instance, which allows full control over the instance where the Enterprise
+Auditor database resides. Administrators typically choose this configuration because Enterprise
+Auditor requires some interaction with the master database to install and configure the initial
+Enterprise Auditor database. To secure the Enterprise Auditor database, follow these
+steps to achieve the minimum SQL security levels without breaking core Enterprise
 Auditor functionality.
 
 ### Database Creation & First Level of Security
@@ -146,7 +146,7 @@ settings for the server roles and user mappings.
 
 ![SQL Server Management Studio create New Database](/images/accessanalyzer/11.6/install/application/createnewdatabase.webp)
 
-**Step 1 –** Create a new database for use with Enterprise Auditor. Right-click on the **Databases**
+**Step 1 –** Create a new database for use with Enterprise Auditor. Right-click the **Databases**
 node and choose **New Database**.
 
 ![SQL Server Management Studio New Database window](/images/accessanalyzer/11.6/install/application/newdatabase.webp)
@@ -170,17 +170,17 @@ authentication.
 
 ![SQL Server Management Studio new login with Windows authentication](/images/accessanalyzer/11.6/install/application/loginwindows.webp)
 
-- If **Windows authentication** is desired, then click **Search** and select the desired Windows
-  account, which has been set up for use with Enterprise Auditor.
+- If you want **Windows authentication**, click **Search** and select the Windows
+  account you want, which is set up for use with Enterprise Auditor.
 
 ![SQL Server Management Studio new login with SQL Server authentication](/images/accessanalyzer/11.6/install/application/loginsql.webp)
 
-- **_RECOMMENDED:_** If **SQL Server authentication** is desired, use a login name called Enterprise
+- **_RECOMMENDED:_** If you want **SQL Server authentication**, use a login name called Enterprise
   Auditor.
 
 :::note
-Set the **Default Database** as Enterprise Auditor (or the desired Enterprise Auditor
-database) and choose English as the **Default Language**.
+Set the **Default Database** as Enterprise Auditor (or the Enterprise Auditor
+database you want) and choose English as the **Default Language**.
 :::
 
 
@@ -216,24 +216,24 @@ topic for instructions.
 
 ![Connection report window](/images/accessanalyzer/11.6/install/application/connectionreport.webp)
 
-- Click **Apply** and a Connection report window will open. Verify that the connection and test
-  table drop were performed successfully.
+- Click **Apply** and a Connection report window will open. Verify that Enterprise Auditor
+  performed the connection and test table drop successfully.
 - Click **Close** on the Connection report window and then **Save** the new Storage Profile.
 
 ![Change storage profile dialog](/images/accessanalyzer/11.6/install/application/changestorageprofile.webp)
 
 :::note
-If previously connected to another database which already had the Enterprise Auditor DB
-schema applied, then a prompt should appear to merge the host management data. Choose the
+If you previously connected to another database that already had the Enterprise Auditor DB
+schema applied, a prompt should appear to merge the host management data. Choose the
 appropriate options and then click **OK** to migrate data.
 :::
 
 
-**Step 9 –** Make sure to close and re-open the Enterprise Auditor Console before continuing to
-configure or use Enterprise Auditor if a new database Storage Profile was chosen as the default.
+**Step 9 –** Close and reopen the Enterprise Auditor Console before continuing to
+configure or use Enterprise Auditor if you chose a new database Storage Profile as the default.
 
-The **blue arrow** signifies the default profile was changed but does not take effect until the
-required restart of the Enterprise Auditor Console.
+The **blue arrow** signifies that you changed the default profile, but the change doesn't take
+effect until you restart the Enterprise Auditor Console.
 
 See the
 [Enterprise Auditor Initial Configuration](/docs/accessanalyzer/11.6/install/application/firstlaunch.md)

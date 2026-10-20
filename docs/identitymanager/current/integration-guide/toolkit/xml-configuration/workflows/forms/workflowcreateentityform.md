@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WorkflowCreateEntityForm"
 description: "Displays a form to create a new resource, without a record."
 sidebar_position: 3
@@ -58,7 +58,7 @@ The content of `MainControl` is visible during the workflow's execution:
 ![Form Example - Site Creation]
 
 The content of `SummaryControl` is visible after the workflow's execution:
-![Formexample Workflowcreateentityform V603](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workflowcreateentityform/formexample_workflowcreateentityform_v603.webp)
+![Formexample Workflowcreateentityform V603](/images/identitymanager/formexample_workflowcreateentityform_v603.webp)
 
 
 ## Properties

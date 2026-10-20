@@ -6,6 +6,7 @@
  *
  * Features:
  * - Copies KB articles from central location to versioned docs folders
+ * - Skips versions that opt out of the KB (kb: false in products.js) and removes their stale copies
  * - Rewrites absolute KB links to relative paths during copy
  * - Removes .md extensions from links (Docusaurus best practice)
  * - Generates _category_.json files for proper category labeling
@@ -26,7 +27,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { PRODUCTS } from '../src/config/products.js';
+import { PRODUCTS, getActiveVersions } from '../src/config/products.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -60,6 +61,19 @@ function buildConfig() {
       return v.version;
     });
 
+    // Build per-version KB source overrides (from optional kbSource field on each version entry)
+    const versionSources = {};
+    product.versions.forEach(v => {
+      if (v.kbSource) {
+        versionSources[v.version] = v.kbSource;
+      }
+    });
+
+    // Versions that opt out of the KB entirely (kb: false on the version entry)
+    const noKbVersions = product.versions
+      .filter(v => v.kb === false)
+      .map(v => v.version);
+
     // Special handling: KB folder name mapping (for legacy naming)
     const kbFolderName =
       productId === 'recoveryforactivedirectory' ? 'recoveryad' :
@@ -75,6 +89,8 @@ function buildConfig() {
 
     config[productId] = {
       versions: versions,
+      versionSources: versionSources,
+      noKbVersions: noKbVersions,
       source: `docs/kb/${kbFolderName}`,
       destinationPattern: destinationPattern
     };
@@ -252,6 +268,16 @@ function validateConfig(CONFIG) {
 
     // Validate source path stays under repo root
     validateDestinationPath(productConfig.source);
+
+    // Validate per-version source overrides
+    if (productConfig.versionSources) {
+      for (const [ver, src] of Object.entries(productConfig.versionSources)) {
+        if (typeof src !== 'string') {
+          throw new Error(`Invalid versionSources[${ver}] for product ${product}: expected string`);
+        }
+        validateDestinationPath(src);
+      }
+    }
 
     // Validate destination pattern stays under repo root (sample substitution)
     const testDest = productConfig.destinationPattern.replace('{version}', '1.0');
@@ -541,19 +567,30 @@ function main() {
   let totalFileErrors = 0;
   let totalVersionErrors = 0;
   let totalSuccess = 0;
+  let totalSkipped = 0;
 
   try {
     // Acquire lock
     acquireLock(isDryRun);
 
-    // Read environment filters (CLI flags override env vars)
+    // Read environment filters (CLI flags override env vars).
+    // COPY_KB_PRODUCTS/COPY_KB_VERSIONS win if explicitly set; otherwise derive
+    // defaults from DOCS_PRODUCT/DOCS_PRODUCT_LATEST_ONLY so a single-product
+    // build scopes KB copy automatically without a separate env var.
     let filterProducts = process.env.COPY_KB_PRODUCTS
       ? process.env.COPY_KB_PRODUCTS.split(',').map(p => p.trim()).filter(Boolean)
-      : null;
+      : (process.env.DOCS_PRODUCT && process.env.DOCS_PRODUCT !== 'kb'
+          ? [process.env.DOCS_PRODUCT]
+          : null);
 
     let filterVersions = process.env.COPY_KB_VERSIONS
       ? process.env.COPY_KB_VERSIONS.split(',').map(v => v.trim()).filter(Boolean)
-      : null;
+      : (filterProducts?.length === 1 && process.env.DOCS_PRODUCT_LATEST_ONLY === 'true'
+          ? (() => {
+              const targetProduct = PRODUCTS.find(p => p.id === filterProducts[0]);
+              return targetProduct ? getActiveVersions(targetProduct).map(v => v.version) : null;
+            })()
+          : null);
 
     // CLI flags override environment variables
     args.forEach(arg => {
@@ -600,13 +637,6 @@ function main() {
       console.log(`\n📚 Product: ${product}`);
       console.log('-'.repeat(60));
 
-      // Check if source exists
-      if (!fs.existsSync(config.source)) {
-        console.log(`⚠️  Source not found: ${config.source}`);
-        totalVersionErrors++;
-        continue;
-      }
-
       // Process each version (isolated)
       for (const version of config.versions) {
         // Skip if filtered out
@@ -618,14 +648,47 @@ function main() {
           // Validate version format
           validateVersionFormat(version);
 
+          // Resolve KB source: use per-version override if defined, otherwise fall back to product default
+          const versionSource = config.versionSources?.[version] ?? config.source;
+
           const destination = config.destinationPattern.replace('{version}', version);
 
           // Validate destination path
           validateDestinationPath(destination);
 
           console.log(`\n  📖 Version: ${version}`);
-          console.log(`     Source: ${config.source}`);
+
+          // A version can opt out of the KB (kb: false in products.js). Skip it
+          // and remove any copy left behind from before the opt-out, so a stale
+          // Knowledge Base section doesn't keep showing up in local builds.
+          if (config.noKbVersions?.includes(version)) {
+            console.log(`     ℹ️  KB disabled for this version (kb: false) — skipping`);
+            if (fs.existsSync(destination)) {
+              if (!isDryRun) {
+                if (!removeDirectorySync(destination)) {
+                  throw new Error('Failed to remove KB folder for a version with kb: false');
+                }
+                console.log(`     🗑️  Removed previously copied KB folder: ${destination}`);
+              } else {
+                console.log(`     🔍 [dry-run] Would remove previously copied KB folder: ${destination}`);
+              }
+            }
+            totalSkipped++;
+            continue;
+          }
+
+          console.log(`     Source: ${versionSource}`);
           console.log(`     Dest:   ${destination}`);
+
+          // Check if source exists (per-version, since sources may differ).
+          // A missing docs/kb/<id> folder means this product simply has no KB
+          // content — that's a legitimate state (e.g. `customer`, `partner`),
+          // not a failure, so skip it without counting it as a version error.
+          if (!fs.existsSync(versionSource)) {
+            console.log(`     ℹ️  No KB content for this product/version (${versionSource} does not exist) — skipping`);
+            totalSkipped++;
+            continue;
+          }
 
           // If --clean is set, remove destination first
           if (isClean && fs.existsSync(destination)) {
@@ -644,7 +707,7 @@ function main() {
           // Copy KB content (always happens, regardless of --clean)
           if (!isDryRun) {
             const errorCount = { count: 0 };
-            const result = copyDirectorySync(config.source, destination, config.source, product, errorCount);
+            const result = copyDirectorySync(versionSource, destination, versionSource, product, errorCount);
 
             if (errorCount.count > 0) {
               console.log(`     ⚠️  Copied with ${errorCount.count} file errors`);
@@ -723,7 +786,7 @@ function main() {
       console.log('Note: No files were modified. Re-run without --dry to apply changes.');
     } else {
       console.log('✅ Copy complete');
-      console.log(`Total: ${totalSuccess} successful, ${totalFileErrors} file errors, ${totalVersionErrors} version errors`);
+      console.log(`Total: ${totalSuccess} successful, ${totalSkipped} skipped (no KB content), ${totalFileErrors} file errors, ${totalVersionErrors} version errors`);
     }
     console.log('='.repeat(60));
 
@@ -736,8 +799,11 @@ function main() {
   }
 
   // Single exit point
-  // Exit with success if ANY products copied successfully
-  // Only fail if there were no successes at all
+  // Exit with success if ANY products copied successfully, or if nothing
+  // failed (a run where every processed version was skipped for lacking a
+  // KB folder — e.g. a single-product build for a KB-less product — is not
+  // a failure). Only fail if there were no successes AND something actually
+  // errored.
   if (totalSuccess === 0 && (totalFileErrors > 0 || totalVersionErrors > 0)) {
     process.exit(1);
   }

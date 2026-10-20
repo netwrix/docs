@@ -23,7 +23,7 @@ topic for additional information.
 ## Sensitive Data Discovery Add-on
 
 The Sensitive Data Discovery Add-On enables Enterprise Auditor to scan files for criteria matches
-which indicate the existence of sensitive data. Sensitive Data Discovery scans can be run against
+which indicate the existence of sensitive data. You can run Sensitive Data Discovery scans against
 Windows file system servers, Network Attached Storage (NAS) devices, SharePoint on-premises,
 SharePoint Online, OneDrive for Business, DropBox for Business, SQL Server databases, and Exchange
 mailboxes.
@@ -34,7 +34,7 @@ topic for additional information.
 
 ## File System Proxy Service
 
-The File System Solution can be enabled to use proxy servers for scanning targeted file systems in
+You can enable the File System Solution to use proxy servers for scanning targeted file systems in
 very large or widely dispersed environments. The File System Proxy installer is designed to simplify
 the process of setting up File System Scanning Proxy as a service on the designated proxy server.
 

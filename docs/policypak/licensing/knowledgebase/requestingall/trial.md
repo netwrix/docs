@@ -21,7 +21,7 @@ The details in this article get you started without having to count the number o
 computers, which means we cannot get you a formal quote. Only when you count the computers are we
 able to provide you a formal quote. This process is slower and optional, but does mean we can get
 you a formal quote.
-See [How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/requestall/licenserequestkey.md)
+See [How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/licenserequestkey.md)
 for additional information. Then send your License Request Key XML to your sales person to get a
 formal quote generated.
 :::
@@ -99,7 +99,7 @@ license key.
 ![812_3_get-fqdn-with-powershell](/images/policypak/license/812_3_get-fqdn-with-powershell.webp)
 
 Once we generate the key, it will be in the PolicyPak
-Portal.[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md)Then
+Portal.[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md)Then
 follow these directions to get started with on-Prem Active Directory/ Group Policy: Group
 Policy > [Knowledge Base](/docs/policypak/)
 
@@ -119,7 +119,7 @@ Get-Organization | Select @{N = 'CompanyName'; E = { $_.displayName } } | out-fi
 
 Once we generate the key, it will be in the PolicyPak Portal. Download the key and
 install it using theinstructions found
-here: [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md)
+here: [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md)
 
 Then follow these directions to get started with PolicyPak and Intune (making sure to
 follow the "Walk Before You Run" video): Getting Started with MDM >
@@ -135,7 +135,7 @@ you take a screenshot of this page from an enrolled Windows 10 machine, and then
 
 Once we generate the key, it will be in the PolicyPak Portal. Download the key and
 install it using these
-instructions: [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md)
+instructions: [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md)
 
 Then follow these directions to get started with PolicyPak and your MDM service,
 making sure to follow the "Walk Before You Run" video: Getting Started with MDM >

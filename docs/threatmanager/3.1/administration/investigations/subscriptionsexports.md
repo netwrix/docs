@@ -7,7 +7,7 @@ sidebar_position: 80
 # Subscriptions and Exports Page
 
 A subscription sends the report results for an investigation to recipients via email as an
-attachment. An export puts the report results for an investigation into a desired format. The
+attachment. An export puts the report results for an investigation into the format you choose. The
 Subscriptions and Exports page provides a list of investigations that are either subscribed to or
 scheduled for export.
 
@@ -27,7 +27,7 @@ The table has the following columns:
 - Next Run – Date timestamp of the next scheduled report
 - Recipients – List of email recipients subscribed to the report
 - Shared folder – Display name for the configured shared folder where scheduled exports are stored
-- Actions – Menu option per table row. This column does not have a header. It is represented by
+- Actions – Menu option per table row. This column doesn't have a header. It is represented by
   three dots and shows up when you hover over a row.
 
 See the [Add Subscription](/docs/threatmanager/3.1/administration/investigations/options/subscription.md) topic and [Export Report](/docs/threatmanager/3.1/administration/investigations/options/export.md)
@@ -61,17 +61,17 @@ The Table Filter window opens from the table column menu.
 
 ![Table Filter window](/images/threatprevention/7.5/reportingmodule/investigations/filterwindow.webp)
 
-Follow the steps to build a filter statement.
+To build a filter statement:
 
-**Step 1 –** Select a table column from the **Columns** drop-down menu.
+**Step 1 –** Select a table column from the **Columns** dropdown.
 
-**Step 2 –** Select an operator from the **Operator** drop-down menu. Options include: contains,
-equals, starts with, ends with, is empty, is not empty, and is any of.
+**Step 2 –** Select an operator from the **Operator** dropdown. Options include: contains,
+equals, starts with, ends with, is empty, isn't empty, and is any of.
 
 **Step 3 –** Enter the text string for the filter value in the **Value** box.
 
 **Step 4 –** To build a complex filter statement, click **Add filter**. A new row appears with an
-additional drop-down menu for creating an _AND_ or an _OR_ statement. Then repeat Steps 1-3 for the
+additional dropdown for creating an _AND_ or an _OR_ statement. Then repeat Steps 1-3 for the
 row.
 
 The table is filtered to matches of the filter.

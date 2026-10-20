@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Architecture"
 description: "Architecture"
 sidebar_position: 220
@@ -19,7 +19,7 @@ specific API called by the web client application.
 
 Agent and server are [ASP.Net](https://docs.microsoft.com/en-us/aspnet/core/) applications running on Windows. Identity Manager's database is a [Microsoft SQLServer](https://www.microsoft.com/en-us/sql-server) relational database.
 
-![Architecture](/images/identitymanager/integration-guide/architecture/architecture.webp)
+![Architecture](/images/identitymanager/architecture.webp)
 
 See the [SaaS Environment](../../integration-guide/architecture/saas) topic for additional information on Netwrix Identity Manager (formerly Usercube) recommended architecture when working in a SaaS environment.
 

@@ -16,12 +16,11 @@ The Configuration Console has a tabbed layout. Click the tabs along the top to s
 settings. Most of the settings are self-explanatory. Press **F1** on any of the tabs to see the help
 page for the current tab.
 
-Configuration changes are applied when you click **Apply** or **OK**. Clicking **OK** also closes
-the Configuration Console.
+Password Reset applies configuration changes when you click **Apply** or **OK**. Clicking **OK** also closes the Configuration Console.
 
 :::note
 Password Reset includes a 30-day evaluation license for up to 50 users.
-Please[ contact Netwrix support](mailto:support@netwrix.com) if you would like to evaluate Netwrix
+[Contact Netwrix support](mailto:support@netwrix.com) if you would like to evaluate Netwrix
 Password Reset with more than 50 users.
 
 :::

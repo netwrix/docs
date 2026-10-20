@@ -7,7 +7,7 @@ sidebar_position: 10
 # 0.Collection > UX_UsersAndGroups Job
 
 The UX_UsersAndGroups job collects user and group information from /etc/passwd, /etc/shadow, and
-their equivalents in order to provide details on user and group conditions to help pinpoint
+their equivalents to provide details on user and group conditions to help pinpoint
 potential areas of administrative concern.
 
 ![0.Collection > UX_UsersAndGroups Job in the Jobs Tree](/images/accessanalyzer/12.0/solutions/unix/usersgroups/collectionjobstree.webp)
@@ -44,7 +44,7 @@ Navigate to the **Unix** > **1.Users and Groups** > **0.Collection** > **UX_User
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

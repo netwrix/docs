@@ -6,12 +6,12 @@ sidebar_position: 60
 
 # Rollback
 
-## What is a rollback?
+## Rollback overview
 
 If an error occurs while running a script, a rollback is initiated. This ensures that the original
 password is restored.
 
-## When does a rollback run?
+## Rollback execution conditions
 
 The following diagram shows when and according to which criteria a rollback is initiated:
 
@@ -25,5 +25,5 @@ rollback.
 
 ## Logbook
 
-The logbook can be used to see if a rollback has been run and if it was successful. After a
+The logbook lets you see if a rollback has been run and if it was successful. After a
 rollback, the password should be checked once again as a precaution.

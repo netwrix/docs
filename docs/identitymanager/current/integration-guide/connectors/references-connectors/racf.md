@@ -1,7 +1,7 @@
-﻿---
+---
 title: "RACF"
 description: "RACF"
-sidebar_position: 210
+sidebar_position: 220
 ---
 
 # RACF
@@ -10,7 +10,7 @@ This connector exports users and profiles from a [RACF](https://www.ibm.com/docs
 
 This page is about [RACF](../../../integration-guide/connectors/references-packages/racf).
 
-![Package: MainFrame/RACF](/images/identitymanager/integration-guide/connectors/references-connectors/racf/packages_racf_v603.webp)
+![Package: MainFrame/RACF](/images/identitymanager/packages_racf_v603.webp)
 
 ## Overview
 

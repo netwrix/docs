@@ -22,8 +22,8 @@ The SensitiveDataScan Query uses the SQL Data Collector for the following query:
 ### Configure the 2-Oracle_SensitiveDataScan Query
 
 The 2-Oracle_SensitiveDataScan job is preconfigured to run using the default settings for the
-Sensitive Data Collection category in the SQL Data Collector. Follow the steps to customize
-configurations:
+Sensitive Data Collection category in the SQL Data Collector. To customize
+configurations, complete the following steps:
 
 **Step 1 –** Navigate to the **Databases** > **0.Collection** > **Oracle** >
 **2-Oracle_SensitiveDataScan** > **Configure** node and select **Queries**.
@@ -35,7 +35,7 @@ Properties**. The Query Properties window opens.
 opens.
 
 :::warning
-Do not make changes to wizard pages not listed in these steps. They have been
+Don't make changes to wizard pages not listed in these steps. They have been
 pre-configured for this job.
 :::
 
@@ -57,7 +57,7 @@ query target is **All Databases**. The default query scope is **Only select data
 Click **Retrieve**. The Available database objects section will be populated. Databases and
 instances can be added in the following ways:
 
-- Select the desired database objects and click **Add**
+- Select the database objects you want and click **Add**
 - Use the **Import CSV** button to import a list from a CSV file, if desired
 - Optionally, use the **Add Custom Filter** button to create and apply a custom filter
 
@@ -72,7 +72,7 @@ Navigate to the **Databases** > **0.Collection** > **Oracle** > **2-Oracle_Sensi
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

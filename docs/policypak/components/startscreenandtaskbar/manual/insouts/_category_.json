@@ -1,10 +1,9 @@
-{
+﻿{
   "label": "Ins and Outs",
   "position": 10,
   "collapsed": true,
   "collapsible": true,
   "link": {
-    "type": "doc",
-    "id": "overview"
+    "type": "generated-index"
   }
 }

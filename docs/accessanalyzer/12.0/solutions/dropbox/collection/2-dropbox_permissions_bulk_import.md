@@ -10,7 +10,7 @@ The 2-Dropbox_Permissions Bulk Import job imports the data collected by the 1-Dr
 Scan job to the Access Analyzer database for use by the analysis tasks.
 
 :::warning
-This job should not be run if running sensitive data scans against the Dropbox Business
+This job shouldn't be run if running sensitive data scans against the Dropbox Business
 environment.
 :::
 
@@ -27,6 +27,6 @@ The query for the 2-Dropbox_Permissions Bulk Import job is:
 - Dropbox Bulk Import – Imports data collected by the 1-Dropbox_Permissions Scan job to the Access
   Analyzer database
 
-There are no customization options available for this job. The Summary page of the Dropbox Access
-Auditor Data Collector wizard can be viewed at the **Jobs** > **Dropbox** > **0.Collection** >
+There are no customization options available for this job. View the Summary page of the Dropbox
+Access Auditor Data Collector wizard at the **Jobs** > **Dropbox** > **0.Collection** >
 **2-Dropbox_Permissions Bulk Import** > **Configure** > **Queries** node.

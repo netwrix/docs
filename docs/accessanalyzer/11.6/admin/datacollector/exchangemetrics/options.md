@@ -43,7 +43,7 @@ Available options vary depending on Category selected.
 - Applet Logging
 
     - Enable Logging – Enables the applet to log
-    - Applet log level – Select the desired log level using the dropdown list:
+    - Applet log level – Select the log level you want using the dropdown list:
 
         - None
         - Debug
@@ -55,9 +55,9 @@ Available options vary depending on Category selected.
 
 - Applet History
 
-    - Enable Persistent Log State – Search the log from where the previous search left off. A state
-      file is created for each host configured in the query. State files can be viewed within
-      Enterprise Auditor and are named by the query GUID. State files display the record the
+    - Enable Persistent Log State – Search the log from where the previous search left off. The job
+      creates a state file for each host configured in the query. You can view state files within
+      Enterprise Auditor, where they're named by the query GUID. State files display the record the
       previous search left off on, the event log, and the date of the last entry.
 
 - AD Database Creation

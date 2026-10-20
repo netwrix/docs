@@ -17,20 +17,20 @@ and managing entitlements and exclude a shared folder on a file server from repl
 ## Specify File Servers for Entitlement Management
 
 To select file servers for entitlement management, you have to specify an OU or group as criterion.
-Directory Manager fetches server objects from the specified OU or group. Once you save it, you also
+Directory Manager fetches server objects from the specified OU or group. After you save it, you also
 get an option to add servers from outside the criterion, such as from a different OU.
 
 You can also change the criterion, such as specify a different OU or group for fetching file
 servers.
 
-**To specify a criterion for fetching file server(s):**
+**To specify a criterion for fetching file servers:**
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Entitlement** under **Settings** in the left pane to launch the **Entitlement** page.
    When no file server is defined, you land on a blank page.
-4. Click **Set up File Server(s)**.
+4. Click **Set up File Servers**.
 5. In the **Search Criteria** area, specify a _group or container_ to fetch the server objects from.
    These server objects are essentially joined to the domain the identity store is connected to.
 
@@ -60,7 +60,7 @@ The following information is displayed for a file server in the **Included File 
 - **User Name:** the user account used to connect to the file server to read and update permissions
   on shared files and folders residing on the server.
 
-    - If the service account specified for the identity store is used, the column does not display
+    - If the service account specified for the identity store is used, the column doesn't display
       anything.
     - If you have designated a different account for this purpose, the username of the account is
       displayed here. See the Connect to a File Server Using a Different Account topic.
@@ -88,7 +88,7 @@ The following information is displayed for a file server in the **Included File 
 - **Status**: Click **Get Status** to check the status of the file server, represented by the
   following colors:
 
-    - Red: The server is inactive, decommissioned, or cannot be accessed.
+    - Red: The server is inactive, decommissioned, or can't be accessed.
     - Green: The server is active and accessible.
 
 - **Actions**: Click the ellipsis button in the **Actions** column and do one of the following:
@@ -97,19 +97,19 @@ The following information is displayed for a file server in the **Included File 
       entitlement management, and change the service account used to connect to the server for
       reading and updating entitlements.
     - Click **Add to Exclude Server List** to exclude the file server from entitlement management.
-      Directory Manager does not read and display entitlement data for an excluded server.
+      Directory Manager doesn't read and display entitlement data for an excluded server.
 
 #### Search File Servers
 
 The _Search Filters_ area is available in both the **Included File Servers** and **Excluded File
 Servers** sections. Use it to search for a file server in the respective listing.
 
-1. Click on the _Search Filters_ bar to expand the filter area.
+1. Click the _Search Filters_ bar to expand the filter area.
 2. Specify a filter expression to search a server by name.
 
-    1. Select _Name_ in the **Attributes** drop-down list. This is the only attribute available for
+    1. Select _Name_ in the **Attributes** dropdown list. This is the only attribute available for
        performing a search.
-    2. Select an option in the **Operators** drop-down list.
+    2. Select an option in the **Operators** dropdown list.
 
         - _Is exactly:_ Displays the server with exactly the same name as you enter in the **Value**
           box.
@@ -126,10 +126,9 @@ Servers** sections. Use it to search for a file server in the respective listing
 
 ## Specify File Servers Outside the Criteria
 
-Directory Manager allows you to specify a group or container as criterion to fetch file servers from
-there for entitlement management. But since only a single group or container can be specified as
-criterion, there may be a situation where you want to specify a server from outside this criterion.
-To facilitate this, Directory Manager enables you to search and select file servers in the domain
+You can specify a group or container as criterion to fetch file servers from there for entitlement
+management. Since only a single group or container can be specified as criterion, you may want to
+specify a server from outside this criterion. You can search and select file servers in the domain
 for entitlement management.
 
 **To specify a file server outside of criteria:**
@@ -142,7 +141,7 @@ for entitlement management.
 5. The **Find Servers** dialog box, by default, displays file servers from the entire directory that
    reside outside the container or group specified as criteria. Click in the box and select an OU to
    narrow down the server listing.
-   Select the check boxes for the file server(s) to include them for entitlement management.
+   Select the checkboxes for the file servers to include them for entitlement management.
 6. Click **Save**. The selected servers are displayed in the **Included File Servers** area on the
    **Entitlement** page.
 7. Click **Save**.
@@ -153,7 +152,7 @@ for entitlement management.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Entitlement** under **Settings** in the left pane.
-4. On the **Entitlement** page, select the **Include all future servers** check box to ensure that
+4. On the **Entitlement** page, select the **Include all future servers** checkbox to ensure that
    all server objects that are added to the group/container (specified in the **Search Criteria**
    area) in the future are automatically displayed in the **Included File Servers** area for
    entitlement data replication.
@@ -189,7 +188,7 @@ When a folder is excluded, its entitlement data replicated to-date is also clear
 4. In the **Included File Servers** area on the **Entitlement** page, click the ellipsis button for
    a server and select **Edit**.
 5. On the **Edit Server** dialog box, the **Server Shares** area displays the shared folders on the
-   server. Clear the check box for a folder to exclude it from replication and click **Apply
+   server. Clear the checkbox for a folder to exclude it from replication and click **Apply
    Changes**.
 6. Click **Save** on the **Entitlement** page.
 
@@ -214,9 +213,9 @@ can designate a different account for this activity.
    [Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlementtemporarypermissions.md)
    run in the context of the account specified here.
 
-    - The **Use Identity Store Service Account** check box is selected by default, indicating that
+    - The **Use Identity Store Service Account** checkbox is selected by default, indicating that
       the service account specified for the identity store is used to connect to the server.
-    - To change the account, clear the **Use Identity Store Service Account** check box and specify
+    - To change the account, clear the **Use Identity Store Service Account** checkbox and specify
       the credentials of an account in the **User name** and **Password** boxes. This account must
       have elevated permissions to manage the effective NTFS permissions for the shared resources on
       the server.
@@ -247,8 +246,8 @@ section on the **Entitlement** page.
     - **To replicate permissions for a server:**Select a file server in the **Included File
       Servers** area and click **Replicate**.
     - **To replicate permissions for multiple servers:**In the **Included File Servers** area,
-      select the check boxes for the servers you want to replicate. To replicate all servers, select
-      the check box in the header row. This displays the following icons:
+      select the checkboxes for the servers you want to replicate. To replicate all servers, select
+      the checkbox in the header row. This displays the following icons:
 
         **![replicate_permissions](/images/directorymanager/11.1/admincenter/entitlement/ad/replicate_permissions.webp)**
 
@@ -256,7 +255,7 @@ section on the **Entitlement** page.
 
     This triggers the GroupID Entitlement schedule for the identity store, which computes and
     replicates the effective NTFS permissions granted to directory objects on shared resources on
-    the server(s). This process may take some time.
+    the servers. This process may take some time.
 
     The **Last Replicated** column displays the date and time the GroupID Entitlement schedule last
     ran.
@@ -278,8 +277,8 @@ You can exclude a file server in the identity store from replication and entitle
       Servers** area.
     - **To exclude multiple servers:**
 
-        In the **Included File Servers** area, select the check boxes for the servers you do not
-        want to replicate. To exclude all servers, select the check box in the header row. This
+        In the **Included File Servers** area, select the checkboxes for the servers you don't
+        want to replicate. To exclude all servers, select the checkbox in the header row. This
         displays the following icons:
 
         ![replicate_permissions](/images/directorymanager/11.1/admincenter/entitlement/ad/replicate_permissions.webp)

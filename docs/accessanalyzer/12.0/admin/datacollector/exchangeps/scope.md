@@ -19,7 +19,7 @@ Available scoping options vary based on the category selected. Scoping options i
       on the Summary page. See the [ExchangePS: Summary](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/summary.md) topic for additional
       information.
     - When using the applet, the data collector gathers information about the Exchange Forest in
-      which the Access Analyzer Console currently resides
+ which the Access Analyzer Console resides
     - For Remote PowerShell, the data collector gathers information about the Exchange Organization
       to which the Remote PowerShell connection was made. This refers to the server entered in the
       Client Access Server (CAS) field of the global configuration from the **Settings** >
@@ -36,7 +36,7 @@ Available scoping options vary based on the category selected. Scoping options i
 
     - When using the applet, the data collector deploys a process to the targeted host to run the
       PowerShell on that server
-    - For Remote PowerShell, the data collector does not deploy anapplet and utilizes the WinRM
+    - For Remote PowerShell, the data collector doesn't deploy anapplet and uses the WinRM
       protocol to gather information about the objects on that server. See the
       [Remote PowerShell](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/overview.md#remote-powershell) and
       [The Exchange Applet](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/overview.md#the-exchange-applet) topics for additional information.

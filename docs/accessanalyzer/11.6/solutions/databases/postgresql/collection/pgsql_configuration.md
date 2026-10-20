@@ -14,7 +14,7 @@ PostgreSQL servers.
 The PgSQL_Configuration Job uses the SQL Data Collector.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 

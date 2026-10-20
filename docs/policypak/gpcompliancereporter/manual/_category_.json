@@ -1,2 +1,9 @@
-{"label":"Manual","position":1,"collapsed":true,"collapsible":true}
-
+{
+  "label": "Manual",
+  "position": 1,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

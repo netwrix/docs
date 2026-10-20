@@ -9,15 +9,15 @@ sidebar_position: 10
 You can fine-tune Netwrix Auditor by specifying users that you want to exclude from the Oracle
 Database monitoring scope.
 
-Follow the steps to exclude data from the Oracle Database monitoring scope:
+## Exclude Data from the Oracle Database Monitoring Scope
 
-**Step 1 –** In Auditor, navigate to your Oracle Database monitoring plan and click Edit.
+1. In Auditor, navigate to your Oracle Database monitoring plan and click Edit.
 
-**Step 2 –** In the right pane, select Edit data source.
+2. In the right pane, select Edit data source.
 
-**Step 3 –** Navigate to Users tab and click Add next to Exclude.
+3. Navigate to Users tab and click Add next to Exclude.
 
-**Step 4 –** In the Add User dialog, type name of the user you want to exclude and select its type
+4. In the Add User dialog, type name of the user you want to exclude and select its type
 (OS user or Database user).
 
-**Step 5 –** Click Add to exclude selected user from being monitored.
+5. Click Add to exclude selected user from being monitored.

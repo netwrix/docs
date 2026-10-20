@@ -1,4 +1,4 @@
-﻿---
+---
 title: "AppDisplaySetting"
 description: "This setting is used to customize the application display."
 sidebar_position: 1
@@ -20,23 +20,23 @@ The following example sets:
 <AppDisplaySetting ApplicationName="Netwrix Identity Manager" LogoFile="logo.webp" FaviconFile="favicon.ico" BannerColor="#512E5F" BannerGradientColor="#76D7C4" BannerSelectedTabColor="#E74C3C" BannerTextColor="#F1C40F" PrimaryColor="#0E6655" SecondaryColor="#85C1E9" />
 ```
 
-![AppDisplay - Tab](/images/identitymanager/integration-guide/toolkit/xml-configuration/metadata/AppDisplaySetting_tab_V603.webp)
+![AppDisplay - Tab](/images/identitymanager/AppDisplaySetting_tab_V603.webp)
 
-![Appdisplaysetting Tab V603](/images/identitymanager/integration-guide/toolkit/xml-configuration/metadata/AppDisplaySetting_tab_V603.webp)
+![Appdisplaysetting Tab V603](/images/identitymanager/AppDisplaySetting_tab_V603.webp)
 
-![AppDisplay - Authentication](/images/identitymanager/integration-guide/toolkit/xml-configuration/metadata/settings/appdisplaysetting/appdisplaysetting_screen1_v603.webp)
+![AppDisplay - Authentication](/images/identitymanager/appdisplaysetting_screen1_v603.webp)
 
 ### Disable counters
 
 The following example disables the counters that are usually visible on the dashboard:
 
-> ![AppDisplay - Without Counters](/images/identitymanager/integration-guide/toolkit/xml-configuration/metadata/settings/appdisplaysetting/appdisplaysetting_counters_v603.webp)
+> ![AppDisplay - Without Counters](/images/identitymanager/appdisplaysetting_counters_v603.webp)
 
 ```xml
 <AppDisplaySetting DisableProvisioningCounters="true" />
 ```
 
-![AppDisplay - Without Counters](/images/identitymanager/integration-guide/toolkit/xml-configuration/metadata/settings/appdisplaysetting/appdisplaysetting_nocounters_v603.webp)
+![AppDisplay - Without Counters](/images/identitymanager/appdisplaysetting_nocounters_v603.webp)
 
 
 ## Properties

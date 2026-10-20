@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Nutanix Tab
 
-The Nutanix tab allows users to modify settings after a Nutanix host has been configured. Once a
+Use the Nutanix tab to modify settings after a Nutanix host has been configured. Once a
 Nutanix host is added to the monitored hosts table, the configuration can be edited in the host
 Properties.
 
@@ -17,7 +17,7 @@ The configurable options are:
 - Nutanix Filer – Enter the name of the filer
 - Username – Enter the user name for the Nutanix account with REST API access
 - Password – Enter the password for the user name
-- Protocol – Select a protocol for the REST API access from the drop-down menu:
+- Protocol – Select a protocol for the REST API access from the dropdown menu:
 
     - Auto Detect
     - HTTPS
@@ -25,8 +25,9 @@ The configurable options are:
 
 - Connect – Click to connect using the selected protocol and validate the connection with Nutanix
 
-![Trusted Server Certificate popup window](/images/activitymonitor/7.1/admin/monitoredhosts/add/trustedservercertificate.webp)-
-HTTPS Options – Opens the Trusted server certificate window to customize the certificate
+![Trusted Server Certificate popup window](/images/activitymonitor/7.1/admin/monitoredhosts/add/trustedservercertificate.webp)
+
+- HTTPS Options – Opens the Trusted server certificate window to customize the certificate
 verification during a TLS session
 
 - Import – Click to browse for a trusted server certificate
@@ -36,7 +37,7 @@ verification during a TLS session
 - Click **OK** to close the window and save the modifications.
 
 :::note
-Nutanix Files does not report events for activity originating from a server where the
+Nutanix Files doesn't report events for activity originating from a server where the
 Activity Monitor Agent is installed.
 
 :::

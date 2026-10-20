@@ -1,7 +1,7 @@
-﻿---
+---
 title: "SharePoint"
 description: "SharePoint"
-sidebar_position: 280
+sidebar_position: 300
 ---
 
 # SharePoint
@@ -10,7 +10,7 @@ This connector exports sites, folders, groups and permissions from a [SharePoint
 
 This page is about Storage/SharePoint.
 
-![Package: Storage/SharePoint](/images/identitymanager/integration-guide/connectors/references-connectors/sharepoint/packages_sharepoint_v603.webp)
+![Package: Storage/SharePoint](/images/identitymanager/packages_sharepoint_v603.webp)
 
 ## Overview
 

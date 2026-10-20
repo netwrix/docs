@@ -94,7 +94,7 @@ you must open each Group Policy Object one by one and manually look for FF23 App
 
 Overview of using the PolicyPak PowerShell cmdlets to discover PolicyPak
 data within GPOs see the
-[PolicyPak User PowerShell to find all PolicyPak GPOs](/docs/policypak/gettingstarted/misc/videos/troubleshooting/powershell.md)
+[PolicyPak User PowerShell to find all PolicyPak GPOs](/docs/policypak/misc/videos/troubleshooting/powershell.md)
 topic for additional information.
 
 ![939_1_image-20231101213809-1_950x372](/images/policypak/applicationsettings/preconfigured/firefox/939_1_image-20231101213809-1_950x372.webp)
@@ -128,7 +128,7 @@ regards to your settings.
 ### Back Up 2: Backing up the Group Policy Object (or all GPOs.)
 
 For backing up the GPO or all GPOs see the
-[PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/gettingstarted/misc/videos/upgradingmaintenance/backup.md)
+[PolicyPak Application Settings Manager: Backup, Restore, Export, Import](/docs/policypak/misc/videos/upgradingmaintenance/backup.md)
 topic for additional information.
 
 ### Back up 3: Export the settings for each FF23 AppSet you already have.

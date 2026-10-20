@@ -1,0 +1,31 @@
+@startuml component
+package "ResourcePropertyMapping" {
+	class ResourcePropertyMapping {
+		C0 : String
+		C1 : String
+		C10 : String
+		C2 : String
+		C3 : String
+		C4 : String
+		C5 : String
+		C6 : String
+		C7 : String
+		C8 : String
+		C9 : String
+		--
+		Property : EntityProperty
+		ResourceTypeMapping : ResourceTypeMapping
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "ResourceTypeMapping" {
+	class ResourceTypeMapping {
+	}
+}
+ResourcePropertyMapping "0..*" --  "1"EntityProperty
+ResourcePropertyMapping "0..*" --  "1"ResourceTypeMapping
+hide empty members
+@enduml

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # SIEM Server Page
 
-The SIEM Server page is accessible from the Navigation pane under Configuration > SIEM. Privilege
+The SIEM Server page is accessible from the Navigation pane under Configuration > SIEM. Privilege
 Secure can output events to third-party SIEM solutions for reporting, correlation, and notification.
 The SIEM Servers page define the SIEM endpoint, the method of connection, and the SIEM template to
 be used.

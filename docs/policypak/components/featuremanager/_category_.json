@@ -2,5 +2,8 @@
   "label": "Feature Manager For Windows",
   "position": 6,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

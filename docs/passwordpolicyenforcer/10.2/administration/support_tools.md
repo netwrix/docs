@@ -11,10 +11,10 @@ to directly edit Password Policy Enforcer's configuration settings.
 
 ## Configuration Report
 
-Create a Configuration Report and e-mail it to Netwrix Support if Password Policy Enforcer is not
-working as expected. The Configuration Report will help us to diagnose the problem.
+Create a Configuration Report and e-mail it to Netwrix Support if Password Policy Enforcer isn't
+working as expected. The Configuration Report helps Netwrix Support diagnose the problem.
 
-Follow the steps below to create a Configuration Report.
+Complete the following steps to create a Configuration Report.
 
 **Step 1 –** Click the **Password Policy Server** item to display the Password Policy Server view.
 
@@ -28,21 +28,17 @@ Follow the steps below to create a Configuration Report.
 
 ### Create Configuration Report as Text or HTML for Auditors
 
-As of the release of Password Policy Enforcer 10.2, there is currently no way to export reports.
+Password Policy Enforcer 10.2 doesn't support exporting reports.
 However, you can export Password Policy Enforcer's domain configuration with the following command:
 
 ldifde -f PPE10.1.txt -d "CN=Password Policy Enforcer 10.0,CN=System,DC=netwrix,DC=net" -l
 url,wWWHomePage
 
-You will need to change the new domain name to match your domain. Your user, group, and OU
-assignments will not be valid in the new domain, so they will need to be updated after the import in
-the new domain. This is easily done after the import from the PPE Management Console in the Policy
-Properties page for each policy. See the
+Change the domain name in the command to match your domain. User, group, and OU assignments aren't valid in the new domain and must be updated after the import. Do this from the PPE Management Console in the Policy Properties page for each policy. See the
 [Assigning Policies](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/assigning_policies.md)
-topic for additional information. Your license will also most likely need to be imported into the
-new domain. This is done from the About tab on the PPS Properties page.
+topic for additional information. You must also import your license into the new domain from the About tab on the PPS Properties page.
 
-Follow the steps below to edit the edit the PPE10.1.txt file .
+Complete the following steps to edit the edit the PPE10.1.txt file .
 
 **Step 1 –** Open the **PPE10.1.txt** file in a text editor.
 
@@ -70,7 +66,7 @@ PPE Management Console to ensure that configuration has been maintained.
 
 ## Property Editor Tab
 
-The Property Editor allows you to directly edit the Password Policy Enforcer configuration. You
+Use the Property Editor to directly edit the Password Policy Enforcer configuration. You
 should only use the Property Editor if instructed to by Netwrix Support.
 
 :::warning
@@ -79,7 +75,7 @@ Only configure the settings on the Property Editor tab if instructed to do so by
 :::
 
 
-Follow the steps below to open and configure the Property Editor.
+Complete the following steps to open and configure the Property Editor.
 
 **Step 1 –** Click the **Password Policy Server** item to display the Password Policy Server view.
 
@@ -89,9 +85,9 @@ Follow the steps below to open and configure the Property Editor.
 
 **Step 3 –** Click the **Property Editor** tab.
 
-**Step 4 –** Select the desired policy from the drop-down list.
+**Step 4 –** Select the policy you want from the dropdown list.
 
-**Step 5 –** Select property from the drop-down list.
+**Step 5 –** Select property from the dropdown list.
 
 **Step 6 –** Enter a value directly related to the Property ID.
 

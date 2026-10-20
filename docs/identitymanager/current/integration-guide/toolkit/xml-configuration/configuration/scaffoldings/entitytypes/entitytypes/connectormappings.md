@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ConnectorMappings"
 description: "Generates the mapping of an entity in a given connector."
 sidebar_position: 1
@@ -58,7 +58,7 @@ The following example generates a universe `U8_Users` based on the entity type `
 ```
 
 When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
-![Universe (ExcludedProperty)](/images/identitymanager/integration-guide/toolkit/xml-configuration/configuration/scaffoldings/queries/universedatamodel/universe_excluded.webp)
+![Universe (ExcludedProperty)](/images/identitymanager/universe_excluded.webp)
 
 ### MappingPath
 

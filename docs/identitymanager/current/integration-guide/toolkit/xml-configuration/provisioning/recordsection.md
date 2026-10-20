@@ -1,4 +1,4 @@
-﻿---
+---
 title: "RecordSection"
 description: ""
 sidebar_position: 10
@@ -102,7 +102,7 @@ Contract section:
 
 There can be some time gap where no context is defined, for example a time gap with a position but no contract or vice versa. Identity Manager offers the possibility to choose whether an existing context is to be extended to the period without context. And in case we decide to use another context and extend its values, which context should it be?
 
-![Schema - ExtensionKind](/images/identitymanager/integration-guide/toolkit/xml-configuration/provisioning/recordsection/recordsection_extensionkind.webp)
+![Schema - ExtensionKind](/images/identitymanager/recordsection_extensionkind.webp)
 
 Here, we decide to extend an existing contract to the gap, for example because users' email addresses are built using the contract type to add `-ext` for external users. And we decide to not extend the position.
 

@@ -2,5 +2,8 @@
   "label": "Features Tech Support And How To",
   "position": 40,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

@@ -7,17 +7,17 @@ sidebar_position: 40
 # Date Last Used
 
 Date Last Used (DLU) captures changes triggered by users or other customizations. Specifically, the
-last date the Customization, or the data it contains, was created, changed, accessed, processed or
-used.The DLU value indicates that the customization was used at least as late as the DLU. It does
-not indicate if it was used earlier. If DLU is blank, it indicates there in no verified date.
+last date the Customization, or the data it contains, was created, changed, accessed, processed, or
+used. The DLU value indicates that the customization was used at least as recently as the DLU date. It does
+not indicate whether it was used earlier. If DLU is blank, there is no verified date.
 
-- DLU CustomField Details
-- Setting the DLU Expiration
-- DLU Metadata Types
+- DLU CustomField Details
+- Setting the DLU Expiration
+- DLU Metadata Types
 - Excluded Metadata Extended Types
 - DLU Scheduler
 
-## DLU CustomField Details
+## DLU CustomField Details
 
 CustomField usage data improves the accuracy and usefulness of the Date Last Used, enabling you to
 make better decisions about the value of maintaining specific CustomFields. Usage data includes:
@@ -26,7 +26,7 @@ make better decisions about the value of maintaining specific CustomFields. Usag
 - how recently the field has been used (_recency_)
 
 :::note
-DLU analysis should only be performed in Production orgs. Sandbox orgs do not reflect actual usage.
+DLU analysis should only be performed in Production orgs. Sandbox orgs don't reflect actual usage.
 :::
 
 **Usage data fields:**
@@ -36,8 +36,8 @@ DLU analysis should only be performed in Production orgs. Sandbox orgs do not re
   there is only data on 400 of the records, it is 40% populated.
 - **DLU** is now defined to be the last time the field was updated with **Field History Tracking**
   enabled. Field History Tracking ensures the DLU is accurate. If Field History Tracking is later
-  disabled, the DLU no longer updates and the data may not be accurate. The new Date DLU Analyzed
-  and DLU Status provide additional insight.
+  disabled, the DLU no longer updates and the data may not be accurate. The new Date DLU Analyzed
+  and DLU Status provide additional insight.
 - **Date DLU Analyzed** displays the last time the scanner was run with Field History Tracking
   enabled.
 - **Parent Last Update Date** is set to the **CreatedDate** of the most-recently-created Record with
@@ -46,33 +46,33 @@ DLU analysis should only be performed in Production orgs. Sandbox orgs do not re
   the record.
 - **DLU Status** displays the current status:
 
-  | DLU Status | DLU | Field History Tracking | Date DLU Analyzed | Parent Last Update Date |
+  | DLU Status | DLU | Field History Tracking | Date DLU Analyzed | Parent Last Update Date |
   | --- | --- | --- | --- | --- |
   | Unavailable | Blank | Never enabled for this field. | Blank | Populated |
   | Pending | Blank | Enabled. Waiting for the scanner to run. | Blank | Populated |
   | Current | Populated | Enabled. DLU is current and accurate using automated nightly scans. | Today | Blank |
-  | Recent | Populated, May be stale | Disabled. Last scan when enabled was within the past three months. Three months is the default time period. See [Setting the DLU Expiration](#setting-the-dluexpiration). | Within set time period | Populated |
-  | Expired | Populated, May be stale | Disabled. Last scan when enabled was longer than three months ago. Three months is the default time period. See [Setting the DLU Expiration](#setting-the-dluexpiration). | Older than set time period | Populated |
+  | Recent | Populated, May be stale | Disabled. Last scan when enabled was within the past three months. Three months is the default time period. See [Setting the DLU Expiration](#setting-the-dlu-expiration). | Within set time period | Populated |
+  | Expired | Populated, May be stale | Disabled. Last scan when enabled was longer than three months ago. Three months is the default time period. See [Setting the DLU Expiration](#setting-the-dlu-expiration). | Older than set time period | Populated |
 
-If **Field History Tracking** is enabled for a CustomField with a **DLU Status** of either
-**Recent** or **Expired**, the status is changed to **Pending**. Here is an example:
+If **Field History Tracking** is enabled for a CustomField with a **DLU Status** of either
+**Recent** or **Expired**, the status changes to **Pending**. The following example shows this:
 
 ![Example of the DLU status fields for a CustomField](/images/platgovsalesforce/clean_up/dlu_status_example_customfield.webp)
 
 ### Notes
 
-- When Field History Tracking is enabled, the **DLU** is accurate, and the **Parent Last Update
+- When Field History Tracking is enabled, the **DLU** is accurate, and the **Parent Last Update
   Date** is blank.
 - If Field History Tracking has never been enabled, only **Parent Last Update Date** has a value.
   Use **Parent Last Update Date** and **% Populated** together to get a sense of the usage.
 - If Field History Tracking was enabled and later disabled, there are values in **DLU** and **Parent
-  Last Update Date**. Generally, you would use the most recent of the two together with **%
-  Populated** to get a sense of usage. If **DLU Status** is Expired, it is probably safe to ignore
+  Last Update Date**. Use the most recent of the two together with **%
+  Populated** to get a sense of usage. If **DLU Status** is Expired, ignore
   **DLU**.
 
-### Setting the DLU Expiration
+### Setting the DLU Expiration
 
-The DLU Parameters specify the number of months to wait before changing the DLU Status from Recent
+The DLU Parameters specify the number of months to wait before changing the DLU Status from Recent
 to Expired for a CustomField. This only applies to a CustomField where **Field Tracking History**
 has been disabled. To change the time period:
 
@@ -86,17 +86,17 @@ has been disabled. To change the time period:
 
     ![Click Manage Records to open the record](/images/platgovsalesforce/clean_up/custom_metadata_types_dlu_exp.webp)
 
-5. Click **Edit** by **DLU Expiration**
+5. Click **Edit** by **DLU Expiration**
 
     ![Edit the parameters](/images/platgovsalesforce/clean_up/custom_metadata_types_dlu_para.webp)
 
-6. Set the **DLU Expiration (Months)**. The default is three.
+6. Set the **DLU Expiration (Months)**. The default is three.
 7. Click **Save**.
 
-## DLU Metadata Types
+## DLU Metadata Types
 
 Metadata types marked with an **\*** must have the **Event Logs** enabled to gather DLU information.
-DLU can be used for the following metadata types:
+Use DLU for the following metadata types:
 
 | Salesforce Family Types & Joins                | Metadata Types                                                                                       | DLU                                                                                               |
 | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
@@ -157,7 +157,7 @@ DLU can be used for the following metadata types:
 
 ## Excluded Metadata Extended Types
 
-DLU is not used for the following metadata Extended Types:
+DLU isn't used for the following metadata Extended Types:
 
 |                             |                          |
 | --------------------------- | ------------------------ |
@@ -179,12 +179,12 @@ DLU is not used for the following metadata Extended Types:
 
 ## DLU Scheduler
 
-The [Scheduler](/docs/platgovsalesforce/scanner/scheduler.md) is where you can add frequency, day and time for processes
+The [Scheduler](/docs/platgovsalesforce/scanner/scheduler.md) is where you can add frequency, day, and time for processes
 to run. Under **Field Usage and DLU**, you can set up the scheduler to update the last used date
 field on customizations with the date the metadata was last used. It populates information for field
 usage on custom fields and custom objects and catch any permission set assignments related to users.
 
 ![scheduler](/images/platgovsalesforce/clean_up/scheduler.webp)
 
-Once the scheduler has been set up, you can view the DLU under the **Metadata** tab on the
+After the scheduler has been set up, you can view the DLU under the **Metadata** tab on the
 customization record.

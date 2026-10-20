@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Azure"
 description: "Azure"
 sidebar_position: 20
@@ -10,7 +10,7 @@ This connector exports [Azure](https://azure.microsoft.com/en-us/resources/cloud
 
 This page is about [Azure](../../../integration-guide/connectors/references-packages/azure).
 
-![Package: Cloud/Azure](/images/identitymanager/integration-guide/connectors/references-connectors/azure/packages_azure_v603.webp)
+![Package: Cloud/Azure](/images/identitymanager/packages_azure_v603.webp)
 
 ## Prerequisites
 

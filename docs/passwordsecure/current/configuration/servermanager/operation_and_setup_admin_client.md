@@ -13,8 +13,10 @@ The control elements such as the ribbon and the info and detail areas can be der
 section dealing with the
 client([Operation and Setup](/docs/passwordsecure/current/configuration/advancedview/operationandsetup/operation_and_setup.md)).
 
-NOTE: An initial password is required for the first login on Server Manager. The password is
+:::note
+An initial password is required for the first login on Server Manager. The password is
 “admin”. This password should be changed directly after login and carefully documented.
+:::
 
 #### Status module
 
@@ -58,7 +60,7 @@ column headings. The period shown can be limited using .
 # Databases module
 
 Databases are managed in a dedicated module. All relevant information on the existing databases can
-also be called up – completely without accessing the SQL server.
+also be opened – completely without accessing the SQL server.
 
 ![Databases Admin Client](/images/passwordsecure/9.2/configuration/server_manager/operation_and_setup/installation_with_parameters_252-en.webp)
 
@@ -67,12 +69,12 @@ also be called up – completely without accessing the SQL server.
 2. Database overview
 
 In the database overview, all databases listed alphabetically. This section can be minimised using
-the arrow symbol on the top, left edge. Right-click on one of the databases to display a context
+the arrow symbol on the top, left edge. Right-click one of the databases to display a context
 menu with all available functions.
 
 3. Notification area
 
-The Info area displays all the information about the database currently selected in the database
+The Info area displays all the information about the database selected in the database
 overview. This information is ivided into the three subsections “Database summary, Data sets and
 Database tables”.
 
@@ -84,7 +86,7 @@ List of recent backups. Can be sorted by date
 
 The database log is used to monitor and control the specific databases. All relevant actions for the
 selected database are displayed in a comprehensible manner in one list. The categorisation is
-carried out in the same way as the server log according to the colours applied.
+performed in the same way as the server log according to the colours applied.
 
 #### Backups module
 

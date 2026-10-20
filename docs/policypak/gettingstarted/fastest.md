@@ -81,20 +81,8 @@ A detailed MDM & UEM tools (like Intune) topic can be found here:
 A detailed PolicyPak Least Privilege Manager Implementation Quickstart Guide that is project
 oriented to get you to the success line quickly.
 
-[Least Privilege Manager Implementation QuickStart Guide](/docs/policypak/components/leastprivilegemanager/technotes/implementationguide.md)
+[Least Privilege Manager Implementation QuickStart Guide](/docs/policypak/components/leastprivilegemanager/implementationguide.md)
 
-## Refer to Documentation in the Netwrix Technical Knowledge Center
-
-PolicyPak has an extensive library of detailed manuals and Knowledge Base and Videos.
-Consider bookmarking these important pages:
-
-- [Netwrix PolicyPak Knowledge Base Articles](/docs/policypak/)
-- [Netwrix PolicyPak User Manuals](/docs/policypak/)
-
-Finding what youare looking for comes down to Knowledge Base & Videos and User Manuals. Here is a
-way to get oriented on the navigation.
-
-![gs2](/images/policypak/gettingstarted/gs2.webp)
 
 ## Get Help from Support
 

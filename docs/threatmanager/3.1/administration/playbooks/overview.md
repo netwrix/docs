@@ -6,48 +6,45 @@ sidebar_position: 60
 
 # Playbooks
 
-The first step in designating steps to run in response to a threat is to add a playbook. A playbook
-is used to tie a threat or "trigger type" to the desired step(s) to take in response to that threat.
+The first step in designating steps to run in response to a threat is to add a playbook. A playbook ties a threat or "trigger type" to the steps to take in response to that threat.
 A threat response can be assigned to a playbook on the
-[Threat Detection Page](/docs/threatmanager/3.1/administration/configuration/threatdetection/threatdetection.md). Once a playbook has been created,
-steps that specify the desired action for the threat response are then added.
+[Threat Detection Page](/docs/threatmanager/3.1/administration/configuration/threatdetection/threatdetection.md). After a playbook is created,
+add steps that specify the action for the threat response.
 
 :::info
-Execute playbooks in a test environment and review the results prior to executing
+Execute playbooks in a test environment and review the results before executing
 them in the production environment.
 :::
 
 
-When testing or just getting started with playbooks in Threat Manager, trigger playbooks manually
-instead of automatically. Once the playbooks have been manually tested and you have familiarity with
-Threat Manager threats and threat responses, automatic triggering of playbooks can be enabled.
+When testing or first configuring playbooks in Threat Manager, trigger playbooks manually
+instead of automatically. After the playbooks have been manually tested and you have familiarity
+with Threat Manager threats and threat responses, enable automatic triggering of playbooks.
 
 ## Add a Playbook
 
-Follow the steps to add a playbook.
+To add a playbook:
 
 ![threatresponse](/images/threatmanager/3.0/administration/playbooks/threatresponse.webp)
 
 **Step 1 –** In the Threat Response box, click New Playbook. A new playbook called "My Playbook 1"
 is created. As additional Playbooks are added, sequential numbers are appended to My Playbook.
 
-It is recommend to change the name of the playbook immediately after creation for organizational
-purposes.
+Change the name of the playbook immediately after creation for organizational purposes.
 
 **Step 2 –** Select the newly-created playbook from the Playbooks tab and click the Edit button.
-Rename My Playbook with the desired name and optionally enter a description for the playbook in the
-Description field.
+Rename My Playbook and optionally enter a description for the playbook in the Description field.
 
 **Step 3 –** Configure the Playbook using the configuration tabs.
 
 **Step 4 –** Click the Save button.
 
-The new playbook now has the desired name and steps can be added to the playbook. See the Actions
+The new playbook is named and ready for steps to be added. See the Actions
 Tab topic for additional information.
 
 ## Configure a Playbook
 
-Playbooks are configured using the tabs on the Threat Response page.
+Playbooks are configured using the tabs on the Threat Response page:
 
 ![playbooktabs](/images/threatmanager/3.0/administration/playbooks/playbooktabs.webp)
 
@@ -60,21 +57,19 @@ The Threat Response page contains the following configuration tabs:
 
 ### General Tab
 
-The General Tab contains the Allowed Threats box which allows customization of which threats are
-applicable for the selected playbook.
+The General Tab contains the Allowed Threats box for configuring which threats are applicable for
+the selected playbook.
 
 ![generaltab](/images/threatmanager/3.0/administration/playbooks/generaltab.webp)
 
 The General tab has the following configuration options:
 
-- Allowed for all threat response – Allows customization of which threats are applicable for this
-  playbook. (All threats are allowed by default). If a threat is excluded from Allowed Threats, it
-  will not be available to run ad hoc on the Threat Details page nor available for automated threat
+- Allowed for all threat response – Configures which threats are applicable for this playbook. (All threats are allowed by default). If a threat is excluded from Allowed Threats, it
+  won't be available to run ad hoc on the Threat Details page nor available for automated threat
   response.
-- Send Email on Execution of Playbook – An email notification will be sent after the playbook has
-  been executed.
+- Send Email on Execution of Playbook – An email notification is sent after the playbook runs.
 - Search Threats – Select the threats that are allowed to be used as a threat response for this
-  playbook from the drop-down list.
+  playbook from the dropdown.
 
 ### Actions Tab
 
@@ -83,7 +78,7 @@ actions that are taken in response to a threat. See the
 [Preconfigured Actions](/docs/threatmanager/3.1/administration/configuration/threatresponse.md#preconfigured-actions) topic for
 additional information.
 
-Follow the instructions to add steps to a Playbook.
+To add steps to a playbook:
 
 ![actionstab](/images/threatmanager/3.0/administration/playbooks/actionstab.webp)
 
@@ -97,9 +92,9 @@ playbook.
 
 ![addstep](/images/threatmanager/3.0/administration/playbooks/addstep.webp)
 
-- Display Name – The desired name for the step
-- Action Type – The type of action to take for the threat response. Select the desired action from
-  the drop-down list. Additional configuration information is required depending upon the type of
+- Display Name – The name for the step
+- Action Type – The type of action to take for the threat response. Select the action from the
+  dropdown. Additional configuration information is required depending upon the type of
   action selected. See the [Action Configuration for Playbook Steps](/docs/threatmanager/3.1/administration/playbooks/action/overview.md) topic for
   additional information.
 - Continue on Error – Select this checkbox to execute the next step if the current step fails
@@ -110,25 +105,25 @@ The step is added to the playbook.
 
 ### Follow-Up Tab
 
-Follow-Up Playbooks can be configured on the Follow-Up tab. Follow-Up playbooks allow additional
-playbooks to run once the playbook has completed. This allows a Threat Manager administrator to 
-sequence a series of playbooks together as part of a threat response.
+Follow-Up Playbooks can be configured on the Follow-Up tab. Follow-Up playbooks let additional
+playbooks run after the playbook completes. This lets a Threat Manager administrator sequence a
+series of playbooks together as part of a threat response.
 
 ![followuptab](/images/threatmanager/3.0/administration/playbooks/followuptab.webp)
 
 The Follow-Up tab has the following configuration options:
 
 - Send Email on Follow-up – Send an email notification when a follow-up playbook runs
-- On Fail – If the current playbook fails, run the selected playbook from the drop-down list
+- On Fail – If the current playbook fails, run the selected playbook from the dropdown
 - On Success – If the current playbook runs successfully, run the selected playbook from the
-  drop-down list
+  dropdown
 
 Click **Save** to save the configured settings.
 
 ### Logs Tab
 
 Click the Logs tab to access the Playbook Execution History table. The table lists all playbook
-executions and also provides the ability to search the table.
+executions and lets you search the table.
 
 ![This screenshot displays the Logs tab on the Threat Response page.](/images/threatmanager/3.0/administration/playbooks/logstab.webp)
 

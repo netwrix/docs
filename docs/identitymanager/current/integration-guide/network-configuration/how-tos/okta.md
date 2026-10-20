@@ -1,4 +1,4 @@
-﻿# Configure Okta
+# Configure Okta
 
 This guide shows how to configure the OIDC to set up the authentication to Identity Manager.
 
@@ -6,15 +6,15 @@ This guide shows how to configure the OIDC to set up the authentication to Ident
 
 On the Okta dashboard:
 
-![Add Application](/images/identitymanager/integration-guide/network-configuration/how-tos/okta/okta_addapplication.webp)
+![Add Application](/images/identitymanager/okta_addapplication.webp)
 
 **Step 1 –** Select the **Applications** section and click on the **Add Application** button.
 
-![Create New App](/images/identitymanager/integration-guide/network-configuration/how-tos/okta/okta_createnewapp.webp)
+![Create New App](/images/identitymanager/okta_createnewapp.webp)
 
 **Step 2 –** Then click on the **Create New App** button.
 
-![Create Native App](/images/identitymanager/integration-guide/network-configuration/how-tos/okta/okta_createnativeapp.webp)
+![Create Native App](/images/identitymanager/okta_createnativeapp.webp)
 
 **Step 3 –** Select the platform **Native app**. The only sign-on method is the OpenID Connect. Click on **Create**.
 
@@ -25,19 +25,19 @@ On the Okta dashboard:
 :::note
  The **Logout redirect URLs** section is marked as optional but it is mandatory for Identity Manager. 
 :::
-![Save Application](/images/identitymanager/integration-guide/network-configuration/how-tos/okta/okta_saveapplication.webp)
+![Save Application](/images/identitymanager/okta_saveapplication.webp)
 
 ## Configure the Client Credentials
 
 The client secret in Identity Manager is required for the OIDC connection. You must therefore configure this OIDC connection option in the application. In the Application Dashboard, click on **Edit** in the **Client Credentials** section. Select the option **Use Client Authentication** and save the changes.
 
-![Client Credentials](/images/identitymanager/integration-guide/network-configuration/how-tos/okta/okta_clientcredentials.webp)
+![Client Credentials](/images/identitymanager/okta_clientcredentials.webp)
 
 ## Configure the Application Settings
 
 In the **Application** section, check the box **Implicit (Hybrid)** so that the connection with Identity Manager can operate correctly. **Allow ID Token with implicit grant type** is optional.
 
-![Application Section](/images/identitymanager/integration-guide/network-configuration/how-tos/okta/okta_applicationsection.webp)
+![Application Section](/images/identitymanager/okta_applicationsection.webp)
 
 ## Configure the appsettings.json
 

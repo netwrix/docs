@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Extras
 
-## What are Extras?
+## Extras overview
 
-Netwrix Password Secure provides a diverse range of supporting features that do not directly provide
+Netwrix Password Secure provides a diverse range of supporting features that don't directly provide
 added value but mostly build on existing approaches and expand their functionalities. They are
 work-saving features that in total simplify the process of working with Netwrix Password Secure.
 

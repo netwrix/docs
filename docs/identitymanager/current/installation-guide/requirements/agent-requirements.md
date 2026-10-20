@@ -12,7 +12,7 @@ This section identifies the requirements for an Identity Manager agent.
 
 The agent is a .NET application.
 
-Running an agent requires installing the [Windows hosting bundle for ASP**.NET** Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+Running an agent requires installing the [Windows hosting bundle for ASP**.NET** Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
 
 ## Hosting
 

@@ -1,6 +1,6 @@
 ---
 title: Netwrix Data Classification Professional Services Engineer
-sidebar_position: 1730
+sidebar_position: 1460
 tags: [certification, partners, professional-services, data-classification]
 keywords: [training, course, certification, partners, professional services, data classification]
 description: "Become a certified Professional Services Engineer for Netwrix Data Classification"

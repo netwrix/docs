@@ -181,7 +181,7 @@ Review the `HTTPS_PROXY` value, check that it does not:
 
 ## Reference Documentation
 
-- [HttpClient.DefaultProxy](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient.defaultproxy?view=net-8.0&viewFallbackFrom=netcore-8.0#httpclientdefaultproxy):
+- [HttpClient.DefaultProxy](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient.defaultproxy?view=net-10.0#httpclientdefaultproxy):
 reference for environment variables.
 - NO_PROXY: [unofficial documentation](https://stackoverflow.com/a/62663469) for wildcard domain
 exclusion

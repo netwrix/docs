@@ -9,8 +9,7 @@ sidebar_position: 20
 Change management is one of the critical processes for many companies referring to such areas as
 requesting, planning, implementing, and evaluating changes to various systems. For your change
 management workflow, Netwrix Auditor offers several reports with interactive capabilities – not only
-they list changes in your infrastructure but also allow you to track, analyze, assign appropriate
-status and comment on these changes.
+they list changes in your infrastructure but also let you track, analyze, assign appropriate status, and comment on these changes.
 
 This capability can supplement your organization's workflow of monitoring and resolving potential
 issues through the following automated course of action:
@@ -21,7 +20,7 @@ issues through the following automated course of action:
    ![reviewstatus_thumb_0_0](/images/auditor/10.8/admin/reports/reviewstatus_thumb_0_0.webp).
    In the **Review status** dialog for the selected change, set its status to In Review and provide a
    reason.
-3. Once the change has been approved or rolled back, you can set its status to Resolved.
+3. When the change has been approved or rolled back, you can set its status to Resolved.
 
 This capability is supported for the following reports:
 

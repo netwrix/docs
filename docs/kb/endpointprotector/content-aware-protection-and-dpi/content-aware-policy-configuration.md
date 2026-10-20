@@ -15,10 +15,11 @@ keywords:
   - OneDrive
   - printers
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Content Aware Policy Configuration
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Content Aware Policy Configuration"
 knowledge_article_id: kA0Qk0000002BCYKA2
 ---
@@ -29,7 +30,15 @@ knowledge_article_id: kA0Qk0000002BCYKA2
 
 Content Aware Policies are rules for sensitive content detection that manage file transfers for users, computers, groups, or departments. You can create, edit, or delete policies, or apply predefined policies to address your organization’s data protection needs. Policies can be prioritized, and multiple policies can be enforced on the same entity.
 
-> **NOTE:** Content Aware Policies also apply to the File Allowlist. All files previously allowed will now be inspected for sensitive content and, depending on the policy configuration, either reported, blocked, or allowed.
+For a full overview of the Content Aware Protection module, including activation and licensing requirements, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule).
+
+:::note
+Content Aware Protection is a separate module from Device Control and eDiscovery, and requires separate licensing and activation before you can create policies.
+:::
+
+:::note
+Content Aware Policies also apply to the File Allowlist. All files previously allowed will now be inspected for sensitive content and, depending on the policy configuration, either reported, blocked, or allowed.
+:::
 
 ## Policy Information and Configuration
 
@@ -51,7 +60,9 @@ When creating a Content Aware Policy, provide the following information:
 - **Threat Threshold:** Set the maximum allowed content violations for a file transfer.
 - **File Size Threshold:** Set the file size (in MB) for blocking or reporting transfers.
 
-> **NOTE:** If a File Size Threshold is set, it applies to the entire policy, regardless of file types or custom content. The value must be a positive, whole number. For best results, start with the **Report only** action to monitor data use without interrupting activity. To enforce Outside Hours or Outside Network options, enable the setting on the specific device after saving the policy.
+:::note
+If a File Size Threshold is set, it applies to the entire policy, regardless of file types or custom content. The value must be a positive, whole number. For best results, start with the **Report only** action to monitor data use without interrupting activity. To enforce Outside Hours or Outside Network options, enable the setting on the specific device after saving the policy.
+:::
 
 ## Thresholds and Use Cases
 
@@ -68,12 +79,16 @@ Policy Exit Points allow you to monitor and control the transfer of sensitive da
 - **Clipboard:** Monitor content captured through copy, cut, and paste operations. Applies to confidential content defined in the policy. Copy operations are always monitored; paste restrictions can be extended to specific applications.
 - **Additional Exit Points:** Network shares, thin clients, print screen, and printers.
 
-> **NOTE:** When printers are enabled as an exit point, also enable the **Advanced Printer** and **MTP Scanning** options in Settings (Global, Groups, Computers, etc.).
+:::note
+When printers are enabled as an exit point, also enable the **Advanced Printer** and **MTP Scanning** options in Settings (Global, Groups, Computers, etc.).
+:::
 
 ## Limitations and Special Cases
 
+- **Encrypted content:** Endpoint Protector can't scan encrypted files or applications that use encryption to secure communication.
 - **Universal Windows Platform applications** (e.g., Windows 10 Mail) run in isolated environments, limiting add-on use and blocking by Content Aware policies.
 - **Linux:** Paste functionality is limited to Xorg GNOME sessions. On Wayland, content blocking occurs during copy operations. Snap-based applications may affect file event detection.
 - **Adobe Flash:** Select Adobe Flash Player from the Web Browser category to block sites using Adobe Flash Active X.
 - **OneDrive for Business:** Enable Deep Packet Inspection (DPI) to distinguish from OneDrive.
 - **Block CD/DVD Burning:** Available only for Windows, for both built-in and third-party burning features.
+- **Zoho WorkDrive and GDrive (Google Drive) sync applications:** Reported or blocked file names display internal cache paths instead of the original file name, which prevents location-based and file name denylists from working reliably. Block and Report log entries may be duplicated due to application-level transfer retries, and reported file sizes may be inaccurate. File shadowing works intermittently — shadows may contain corrupted content or be created without a hash, preventing download from the server.

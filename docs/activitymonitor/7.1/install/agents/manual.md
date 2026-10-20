@@ -8,8 +8,6 @@ sidebar_position: 10
 
 The Netwrix Activity Monitor Agent can be deployed via the console or manually.
 
-Follow the steps to manually install the agent.
-
 **Step 1 –** Navigate to the Activity Monitor Console installation path and locate the agent
 installation package. The default location is:
 
@@ -67,7 +65,7 @@ The Activity Monitor Agent command line has the following parameters:
 - MANAGEMENT_GROUP
 
     - To specify the Activity Monitor Agent Management Group (This allows user to limit users in the
-      specified group to manage agents, but does not allow users in specified group to install,
+      specified group to manage agents, but doesn't allow users in specified group to install,
       upgrade, or uninstall agents).
     - Default value: “BUILTIN\Administrators”
     - MANAGEMENT_GROUP=AMDOMAIN\AMGROUP
@@ -99,7 +97,7 @@ have been met, including those for NAS devices when applicable.
 
 :::note
 These steps are specific to deploying activity agents for monitoring file systems,
-SharePoint, SQL Server, Azure and Office 365 environments. See the
+SharePoint, SQL Server, Azure, and Office 365 environments. See the
 [Active Directory Agent Deployment](/docs/activitymonitor/7.1/admin/agents/activedirectory.md)
 section for instruction on deploying the AD agent. See the
 [Linux Agent Deployment](/docs/activitymonitor/7.1/admin/agents/linux.md)
@@ -107,11 +105,9 @@ topic for instructions on deploying agents to Linux servers.
 :::
 
 
-Follow the steps to deploy the activity agent to a single Windows server.
-
 **Step 1 –** Open the Activity Monitor Console.
 
-**Step 2 –** On the Agents tab, click **Add Agent**. The Add New Agent(s) window opens.
+**Step 2 –** On the Agents tab, click **Add Agent**. The Add New Agents window opens.
 
 ![Install New Agent Page](/images/activitymonitor/7.1/install/agent/installnew.webp)
 
@@ -126,7 +122,7 @@ topic for additional information. Click **Next**.
 
 ![Credentials to connect to servers](/images/activitymonitor/7.1/install/agent/credentials.webp)
 
-**Step 5 –** On the Credentials to Connect to the Server(s) page, specify the credentials for the
+**Step 5 –** On the Credentials to Connect to the Servers page, specify the credentials for the
 server to which the agent is deployed. See the
 [Single Activity Agent Deployment](/docs/activitymonitor/7.1/admin/agents/single.md)
 topic for additional information on credential options. Click **Connect**.
@@ -139,7 +135,7 @@ installed.
 :::
 
 
-**Step 6 –** Regardless of the warning messages that the agent cannot be installed or upgraded,
+**Step 6 –** Regardless of the warning messages that the agent can't be installed or upgraded,
 click **Next**. The console will automatically detect the agent as it is already installed.
 
 ![Agent Install Location](/images/activitymonitor/7.1/install/agent/installlocation.webp)
@@ -153,7 +149,7 @@ click **Next**. The console will automatically detect the agent as it is already
 
 :::note
 The Activity Monitor Agent Management Group allows users in the specified group to manage
-agents, but does not allow users in specified group to install, upgrade, or uninstall agents.
+agents, but doesn't allow users in specified group to install, upgrade, or uninstall agents.
 :::
 
 

@@ -7,9 +7,9 @@ sidebar_position: 10
 # Email Delivery Options
 
 You must configure the email delivery options in the PPS Properties page before the Password Policy
-Enforcer Mailer will send email notification to users.
+Enforcer Mailer can send email notifications to users.
 
-Follow the steps below to configure the email delivery options.
+Complete the following steps to configure the email delivery options.
 
 **Step 1 –** Click the **Password Policy Server** item to display the Password Policy Server view.
 
@@ -22,7 +22,7 @@ Follow the steps below to configure the email delivery options.
 **Step 4 –** Select the **Disable email reminders** option to disable email delivery.
 
 Select the **Send email to an SMTP server** option to have the Password Policy Enforcer Mailer send
-email notification directly to an SMTP server. Type the name or IP address of an SMTP server in the
+email notification directly to an SMTP server. Enter the name or IP address of an SMTP server in the
 **Server** text box, and the SMTP port number in the **Port** text box. Enter credentials for the
 SMTP server in the Username and Password fields.
 

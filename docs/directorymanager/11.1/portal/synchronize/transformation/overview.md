@@ -32,7 +32,7 @@ Synchronize provides these transformations:
 During synchronization, the static transformation copies specified text to the destination field and
 ignores the value in the source field mapped to it.
 
-- Type the text in the **Static text** box. This text is copied for the field at the destination.
+- Enter the text in the **Static text** box. This text is copied for the field at the destination.
 
     You can also specify Windows environment variables as static text. While transferring the data
     during a job run, the job obtains the current value of the variable and saves it to the
@@ -98,7 +98,7 @@ value. You can use a Left transformation to pull characters from a value to crea
 or an alias.
 
 For example, your requirement is to set the first three characters of a user's logon name as their
-initials. You can easily achieve this by applying the settings shown in the following figure.
+initials. You can achieve this by applying the settings shown in the following figure.
 
 The following table lists the two parameters the Left transformation requires:
 
@@ -142,7 +142,7 @@ this would extract 92 from the number and save it to the destination field.
 
 ## Script
 
-Unlike the built-in transforms described above, the Script transformation is a template for writing
+Unlike the preceding built-in transforms, the Script transformation is a template for writing
 custom scripts. Use the **Script** template by selecting a built-in transform that provides most of
 the functionality you need, select parameters, if any, and then switch the transform type to
 **Script** to view the resulting script. You can then modify the script to add the functionality you

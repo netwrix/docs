@@ -11,8 +11,8 @@ directory. The Smart Groups that a Dynasty creates are called child groups that 
 their respective parent Dynasties.
 
 A Dynasty retrieves data from the directory on the same pattern as a Smart Group does, but it has
-its own mechanism of dividing the query results into child groups. To learn more about Dynasties,
-see the [Dynasties](/docs/directorymanager/11.1/admincenter/general/concepts.md#dynasties) topic.
+its own mechanism of dividing the query results into child groups. For more information, see the
+[Dynasties](/docs/directorymanager/11.1/admincenter/general/concepts.md#dynasties) topic.
 
 You can control how Directory Manager processes Dynasties through the following settings:
 
@@ -60,9 +60,9 @@ like a single Smart Group.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Dynasties**.
-4. On the **Dynasties** page, select the **Update Dynasty Children** check box. This will update the
+4. On the **Dynasties** page, select the **Update Dynasty Children** checkbox. This will update the
    child groups every time the parent Dynasty is updated.  
-   Clear this check box to prevent Dynasty children from getting updated with the parent Dynasty.
+   Clear this checkbox to prevent Dynasty children from getting updated with the parent Dynasty.
 5. Click **Save**.
 
 ## Auto Delete Empty and Orphan Dynasty Children
@@ -70,7 +70,7 @@ like a single Smart Group.
 An empty child Dynasty is one with no member and an orphan child Dynasty is one whose parent Dynasty
 has been removed.
 
-By default, empty and orphan Dynasty children are auto deleted from the identity store. However, you
+By default, empty, and orphan Dynasty children are auto deleted from the identity store. However, you
 can disable this setting to retain empty and orphan Dynasty children in the identity store.
 
 **To auto delete empty and orphan Dynasty children:**
@@ -79,10 +79,10 @@ can disable this setting to retain empty and orphan Dynasty children in the iden
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Dynasties**.
-4. On the **Dynasties** page, select the **Delete Empty and Orphan Dynasty Children** check box.
+4. On the **Dynasties** page, select the **Delete Empty and Orphan Dynasty Children** checkbox.
    This ensures that empty and orphan Dynasty children are automatically deleted from the identity
    store.  
-   When this check box is not selected, empty and orphan Dynasty children are retained in the
+   When this checkbox isn't selected, empty, and orphan Dynasty children are retained in the
    identity store.
 5. Click **Save**.
 
@@ -95,9 +95,9 @@ By default, the values of the following attributes are passed on from the parent
 
 | Attribute        | Description                                                                               |
 | ---------------- | ----------------------------------------------------------------------------------------- |
-| unauthOrig       | Contains the list of DNs of users who do not have permissions to send email to the group. |
+| unauthOrig       | Contains the list of DNs of users who don't have permissions to send email to the group. |
 | authOrig         | Contains the list of DNs of users who have permissions to send email to the group.        |
-| dLMemRejectPerms | Contains the DNs of groups that do not have permissions to send email to the group.       |
+| dLMemRejectPerms | Contains the DNs of groups that don't have permissions to send email to the group.       |
 | dLMemSubmitPerms | Contains the DNs of groups that have permissions to send email to the group.              |
 | delivContLength  | Contains the maximum limit for incoming messages to the group.                            |
 | managedBy        | Contains information about the group’s primary owner.                                     |

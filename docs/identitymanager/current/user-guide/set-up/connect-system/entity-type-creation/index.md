@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Create an Entity Type"
 description: "Create an Entity Type"
 sidebar_position: 40
@@ -14,7 +14,7 @@ An entity type is a model of a managed system's data. It defines the shape of th
 
 In other words, an entity type is supposed to model the representation of a certain group of resources inside Identity Manager. It is a relational model, made of properties ([Define Scalar Properties](../../../../user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition)) and links between entity types ([Define Navigation Properties](../../../../user-guide/set-up/connect-system/entity-type-creation/navigation-property-definition)), both described later.
 
-![Entity Type - Schema](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/entitytypecreation_schema.webp)
+![Entity Type - Schema](/images/identitymanager/entitytypecreation_schema.webp)
 
 The configuration of entity types depends entirely on the previously established by [Model the Data](../../../../user-guide/set-up/connect-system/connector-modeling).
 
@@ -47,7 +47,7 @@ For some connectors, Identity Manager provides a template to automatically creat
 > resource types for a standard AD connector. The template is available for a connector with an AD
 > connection but no entity types.
 >
-> ![Entity Type - AD Template](/images/identitymanager/user-guide/set-up/connect-system/entity-type-creation/entitytype_template_v602.webp)
+> ![Entity Type - AD Template](/images/identitymanager/entitytype_template_v602.webp)
 
 ## Verify the Entity Type
 

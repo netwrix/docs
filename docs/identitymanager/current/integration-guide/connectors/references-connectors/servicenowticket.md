@@ -1,7 +1,7 @@
-﻿---
+---
 title: "ServiceNowTicket"
 description: "ServiceNowTicket"
-sidebar_position: 270
+sidebar_position: 280
 ---
 
 # ServiceNowTicket
@@ -10,7 +10,7 @@ This connector opens tickets in [ServiceNow](https://www.servicenow.com/) for ma
 
 This page is about [ServiceNow Ticket](../../../integration-guide/connectors/references-packages/servicenow-ticket).
 
-![Package: Ticket/ServiceNow](/images/identitymanager/integration-guide/connectors/references-connectors/servicenowticket/packages_servicenowticket_v603.webp)
+![Package: Ticket/ServiceNow](/images/identitymanager/packages_servicenowticket_v603.webp)
 
 ## Overview
 

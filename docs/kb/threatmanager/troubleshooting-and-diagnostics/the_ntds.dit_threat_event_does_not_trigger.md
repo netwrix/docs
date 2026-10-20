@@ -1,6 +1,6 @@
 ---
 description: >-
-  This article explains the issue where the NTDS.dit threat event does not trigger in Netwrix Threat Manager and provides steps to resolve it.
+  This article explains the issue where the NTDS.dit threat event doesn't trigger in Netwrix Threat Manager and provides steps to resolve it.
 keywords:
   - NTDS.dit
   - Netwrix Threat Manager
@@ -21,7 +21,7 @@ When attempting to access the `NTDS.dit` file on a domain controller, the expect
 
 ## Cause
 
-By default, the `NTDS.dit` event in **Netwrix Threat Prevention** only tracks one domain controller. If the file is accessed from a system other than the one being tracked by default, the event is not captured or forwarded to **Threat Manager**.
+By default, the `NTDS.dit` event in **Netwrix Threat Prevention** only tracks one domain controller. If the file is accessed from a system other than the one being tracked by default, **Threat Prevention** does not capture or forward the event to **Threat Manager**.
 
 ## Resolution
 

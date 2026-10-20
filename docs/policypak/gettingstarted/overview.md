@@ -13,15 +13,15 @@ working with Netwrix PolicyPak quickly.
 
 Select the deployment method that matches your environment:
 
-- **Cloud** - For PolicyPak Cloud deployments
-- **Group Policy** - For traditional Active Directory environments
-- **MDM** - For mobile device management and modern management
-- **Misc** - General getting started information and support resources
+- [**Cloud**](/docs/policypak/gettingstarted/cloudmanual/overview.md) - For PolicyPak Cloud deployments
+- [**Group Policy**](/docs/policypak/deliverymethods/grouppolicy/knowledgebase/knowledgebase.md) - For traditional Active Directory environments
+- [**MDM**](/docs/policypak/gettingstarted/mdmmanual/overview.md) - For mobile device management and modern management
+- [**Misc**](/docs/policypak/misc/knowledgebase/knowledgebase.md) - General getting started information and support resources
 
 ## Quick Resources
 
-- **Support and Resources** - Fast support options and important resources
-- **General Getting Started Information** - Basic concepts, tips, and FAQs
+- [**Support and Resources**](/docs/policypak/gettingstarted/quickstart/overview.md) - Fast support options and important resources
+- [**General Getting Started Information**](/docs/policypak/gettingstarted/basicconcepts/basicconcepts.md) - Basic concepts, tips, and FAQs
 
 ## The Portal and Downloads
 
@@ -109,11 +109,11 @@ the following:
 
 **Step 1 –** Request a license and send that key to Sales for processing. You can watch a video on
 how to request a license at the following link:
-[How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/requestall/licenserequestkey.md).
+[How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/licenserequestkey.md).
 
 **Step 2 –** Receive a license and install it. You can watch a video on how to install the license
 you receive at the following
-link:[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md).
+link:[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md).
 
 ## Get Started with the GPO Method
 

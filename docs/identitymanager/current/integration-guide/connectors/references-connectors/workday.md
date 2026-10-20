@@ -1,7 +1,7 @@
-﻿---
+---
 title: "Workday"
 description: "Workday"
-sidebar_position: 330
+sidebar_position: 340
 ---
 
 # Workday
@@ -10,7 +10,7 @@ This connector exports users and groups from a [Workday](https://www.workday.com
 
 This page is about [Workday](../../../integration-guide/connectors/references-packages/workday).
 
-![Package: ERP/Workday](/images/identitymanager/integration-guide/connectors/references-connectors/workday/packages_workday_v603.webp)
+![Package: ERP/Workday](/images/identitymanager/packages_workday_v603.webp)
 
 ## Prerequisites
 

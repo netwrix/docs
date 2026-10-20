@@ -35,7 +35,7 @@ This document provides an outline and guide for Netwrix Privilege Secure integra
 
 - Group Policy to configure **Offer Remote Assistance**
 - Domain group to be mapped to Configure Offer Remote Assistance policy
-- Domain group that will be member of RDS server local Administrator group
+- Domain group that is a member of the RDS server local Administrator group
 - Remote Assistance Feature added to RDS server
 
 ## Instructions
@@ -56,7 +56,7 @@ Enable the policy and assign a domain group to control access.
 
 ### Activity Setup
 
-Create an Interactive App Launch Activity making note of the highlighted areas below.
+Create an Interactive App Launch Activity making note of the following highlighted areas.
 
 **NOTE:** The Domain groups for Group Policy and RDS server local admin will have been created in the previous steps.
 

@@ -32,7 +32,7 @@ learn to do the following:
 
 Optionally, if you don't want to use Group Policy, read the section on Advanced Concepts on Group
 Policy and non–Group Policy methods (MEMCM, KACE, and MDM service or Netwrix PolicyPak Cloud), located in the
-[Least Privilege Manager Implementation QuickStart Guide](/docs/policypak/components/leastprivilegemanager/technotes/implementationguide.md)
+[Least Privilege Manager Implementation QuickStart Guide](/docs/policypak/components/leastprivilegemanager/implementationguide.md)
 to deploy your directives.
 
 PolicyPak File Associations Manager enables you to perform the following operations in

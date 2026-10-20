@@ -15,16 +15,16 @@ button or also via the ribbon.
 
 ## Database settings
 
-All database settings are saved in the database. It is necessary to log in to the database before
-editing the settings. Any user that exists in the database can be used for this purpose. You can
+All database settings are saved in the database. you must log in to the database before
+editing the settings. Any user that exists in the database can log in for this purpose. You can
 always restore Global settings via the ribbon.
 
 Multifactor authentication
 
-This area can be used to configure which services will be used for multi-factor authentication. The
+Use this area to configure which services are used for multi-factor authentication. The
 available services are: RSA Secure ID, SafeNet, YubiKey NEO, and YubiKey Nano. After selecting the
 required service, specify the respective access data. You must also configure various services. In
-this case, you can specify on the client which methods will be used by the individual users.
+this case, you can specify on the client which methods are used by the individual users.
 
 Further information on this subject can be found in the
 section[Multifactor Authentication](/docs/passwordsecure/9.2/configuration/servermanager/managingdatabases/databasesettings/multifactor_authentication_ac.md).
@@ -40,28 +40,30 @@ If desired, the logbook, **notifications, session recordings** and also the **hi
 can be automatically cleaned up here. You merely have to enter how old the data needs to be before
 it is deleted. Logbook entries can be exported before the deletion process.
 
-**CAUTION:** It is important to note that the logbook is also used for the filter functions. If the
-logbook is regularly cleaned up, it is possible that the full functions of the filter will no longer
-be available.
+:::warning
+The logbook is also used for the filter functions. If the
+logbook is regularly cleaned up, it is possible that the full functions of the filter are no longer
+available.
+:::
 
 #### Database actions
 
 Show connection locks
 
 In the ribbon, all connection locks can be displayed. To do this, you must first log in to the
-database. All locked users will be displayed in a list. The following is displayed:
+database. All locked users are displayed in a list. The following is displayed:
 
 - User name (if known)
 - Reason for lock
 - Number of login attempts
 - Expiry of the lock. The user can be unlocked by right-clicking on an entry.
 
-A user can be locked manually using the corresponding button. It is necessary to select the user,
+A user can be locked manually using the corresponding button. you must select the user,
 configure the expiration of the lock and specify a reason.
 
 Show / disconnect sessions
 
-You can use the corresponding button to display all currently connected clients. After selecting a
+You can use the corresponding button to display all connected clients. After selecting a
 session, the connection can be disconnected.
 
 Migration
@@ -69,10 +71,12 @@ Migration
 Once a database has been selected, the can be started via the ribbon. This also allows multiple
 version 7 databases to be merged into one.
 
-**CAUTION:** When the migration is started, the database is set to migration mode. For the duration
-of the migration, it is not possible to log in to the database – users who are already logged in
-will be sent a corresponding message. The sessions will, however, remain open so that users can
+:::warning
+When the migration is started, the database is set to migration mode. For the duration
+of the migration, it isn't possible to log in to the database – users who are already logged in
+are sent a corresponding message. The sessions, however, remain open so that users can
 continue working as soon as the migration is complete.
+:::
 
 Certificates
 
@@ -80,8 +84,8 @@ Management of the certificates is very important. This is described in the secti
 
 Display database users
 
-This button can be used to call up statistics about the users in the respective databases. It shows
-you which users are active in which database. Naturally, this list can also be exported.
+Use this button to open statistics about the users in the respective databases. It shows
+you which users are active in which database. This list can also be exported.
 
 #### Data backup
 

@@ -9,7 +9,7 @@ sidebar_position: 30
 ## Available scripts
 
 The following scripts are supplied and can be directly used. In all scripts, a password is firstly
-selected in the upper section. This is not the password that will be reset on the target system.
+selected in the upper section. This isn't the password that is reset on the target system.
 Instead, a user should be entered here that can complete the rest of the process on the target
 system. This password thus requires administrative rights to the target system.
 
@@ -32,7 +32,7 @@ changed. The **host name** – i.e. the target computer – and the **service na
 
 ![Service accounts scripts](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_3-en.webp)
 
-Please note that the **display name** for the **service** needs to be used.
+The **display name** for the **service** needs to be used.
 
 ![display name service](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_4-en.webp)
 
@@ -48,7 +48,7 @@ The access data in the associated password can be saved as follows:
 
 ## Windows user
 
-This script can be used to reset the passwords for local Windows users. Only the **host name** needs
+Use this script to reset the passwords for local Windows users. Only the **host name** needs
 to be saved here.
 
 ![Windows user script](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_5-en.webp)
@@ -77,6 +77,6 @@ script **Active Directory user**.
 ## Planned task
 
 The passwords for users of Windows Task Scheduler can be changed using this script. The **host
-name** of the computer on which the task will run and the **name** of the task itself are entered.
+name** of the computer on which the task runs and the **name** of the task itself are entered.
 
 ![planned task](/images/passwordsecure/9.2/configuration/advanced_view/clientmodule/passwordreset/scripts/password_safe_scripts_9-en.webp)

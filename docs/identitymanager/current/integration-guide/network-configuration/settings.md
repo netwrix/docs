@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Various XML Settings"
 description: "Various XML Settings"
 sidebar_position: 60
@@ -64,13 +64,13 @@ To navigate to the custom links from the user interface, NETWRIX recommends conf
     <MenuItem Identifier="UserMenu_CustomLink1" DisplayName_L1="Legal Notice" DisplayName_L2="Mentions lï¿½gales" IconCode="List" URI="/LegalNotice" ParentMenuItem="UserMenu" />    <MenuItem Identifier="UserMenu_CustomLink2" DisplayName_L1="Terms of Service" DisplayName_L2="Conditions d'utilisation" IconCode="List" URI="/TermsOfService" ParentMenuItem="UserMenu" />
 ```
 
-![LCustomLinksUserMenu.webp](/images/identitymanager/integration-guide/network-configuration/settings/customlinksusermenu_v523.webp)
+![LCustomLinksUserMenu.webp](/images/identitymanager/customlinksusermenu_v523.webp)
 
 ## DashboardItemNumber
 
 Some sections on the dashboard contain multiple links. These links are quick links with counters to the review page filtered by entity type. The links are sorted by entity type priority.
 
-![LDashboardItemNumber.webp](/images/identitymanager/integration-guide/network-configuration/settings/dashboarditemnumber.webp)
+![LDashboardItemNumber.webp](/images/identitymanager/dashboarditemnumber.webp)
 
 By default, 3 links are displayed. If more than 3 entity type links exist, a link "Others" is displayed with the concatenation of remaining counters.
 

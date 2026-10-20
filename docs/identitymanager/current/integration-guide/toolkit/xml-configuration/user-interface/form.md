@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Form"
 description: ""
 sidebar_position: 5
@@ -36,19 +36,19 @@ The following example shows a form called `Directory_UserRecord_View` that invol
 
 When `HideRoles` is set to `true`, then the **Access Permissions** tab is not accessible.
 
-![Access Permissions](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/Form_hideRoles_V603.webp)
+![Access Permissions](/images/identitymanager/Form_hideRoles_V603.webp)
 
 #### Adjust the request type
 
 When `WorkflowRequestType` is set to `Self`, then the finalization step looks like:
-![Form Hideroles V603](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/form_hideroles_v603.webp)
+![Form Hideroles V603](/images/identitymanager/Form_hideRoles_V603.webp)
 
 When `WorkflowRequestType` is set to `Helpdesk`, then the finalization step looks like:
-![WorkflowRequestType = Helpdesk](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/Form_requestTypeHelpdesk_V603.webp)
+![WorkflowRequestType = Helpdesk](/images/identitymanager/Form_requestTypeHelpdesk_V603.webp)
 
 #### Display records in a table
 
-![Form Requesttypehelpdesk V603](/images/identitymanager/integration-guide/toolkit/xml-configuration/user-interface/form/form_requesttypehelpdesk_v603.webp)
+![Form Requesttypehelpdesk V603](/images/identitymanager/Form_requestTypeHelpdesk_V603.webp)
 
 
 ## Properties

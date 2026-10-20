@@ -15,7 +15,7 @@ Navigate to the **AWS** > **2.Users** > **AWS_RootAccounts** > **Configure** nod
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

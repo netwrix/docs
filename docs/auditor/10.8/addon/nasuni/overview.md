@@ -36,8 +36,6 @@ follows:
 
 ### Configure Logging for
 
-Follow the steps to configure the syslog integration.
-
 **Step 1 –** Log in to the Nasuni Management Console and go to the **Console Settings** > **Syslog
 Exports**.
 
@@ -53,8 +51,8 @@ configuration.
 **Step 4 –** Enable auditing:
 
 1. On the Volumes tab, open **Auditing**.
-2. Choose the volume you wish to be audited and click **Edit Volumes**.
-3. Select the **Auditing Enabled** option and choose which Event Types you wish to be reported.
+2. Choose the volume you want to be audited and click **Edit Volumes**.
+3. Select the **Auditing Enabled** option and choose which Event Types you want to be reported.
 4. Hit the **Save Auditing Settings** button.
 
 ### Accounts and Rights
@@ -77,5 +75,4 @@ admin privileges.
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
-leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
+Ensure to check your product version, and then review and update your add-ons and scripts that work with Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

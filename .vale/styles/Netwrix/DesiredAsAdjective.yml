@@ -1,0 +1,6 @@
+extends: existence
+message: "Avoid '%s' — name the specific item or write 'the [noun] you want'."
+level: suggestion
+ignorecase: true
+tokens:
+  - 'the desired \w+'

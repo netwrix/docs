@@ -1,6 +1,6 @@
 ---
 title: Netwrix Endpoint Protector Presales Engineer
-sidebar_position: 1460
+sidebar_position: 1290
 tags: [certification, partners, presales, endpoint-protector]
 keywords: [training, course, certification, partners, presales, endpoint protector]
 description: "Become a certified Presales Engineer for Netwrix Endpoint Protector"

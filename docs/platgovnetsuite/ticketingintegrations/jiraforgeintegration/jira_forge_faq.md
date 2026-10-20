@@ -6,21 +6,21 @@ sidebar_position: 4
 
 # Jira Forge FAQs and Basic Troubleshooting
 
-This section will discuss frequently asked questions and basic troubleshooting for Platform Governance's Jira Forge app.
+This section covers frequently asked questions and basic troubleshooting for Platform Governance's Jira Forge app.
 
-1. I already have Strongpoint Connect app installed in my instance. Is it okay to install the Forge app as well?
-    - **Yes**, it is perfectly okay to install the Forge app even though you currently have the Connect app. They should not cause any conflicts during installation and during using either one of them or both of them at the same time.
+1. The Strongpoint Connect app is already installed. Can the Forge app be installed alongside it?
+    - **Yes**, it is fine to install the Forge app even though the Connect app is installed. They shouldn't cause any conflicts during installation or while using either app or both at the same time.
 
-2. What will happen to the data in Netwrix Settings page in Connect app once I have installed the Forge app?
-    - Data in the Netwrix Settings page in Connect app does not get migrated to the Netwrix NetSuite Settings page in the Forge app. Since these are 2 different implementation/apps, you will have to manually migrate the Connect app data to Forge app.
+2. What happens to the data in the Netwrix Settings page in Connect app after the Forge app is installed?
+    - Data in the Netwrix Settings page in Connect app doesn't get migrated to the Netwrix NetSuite Settings page in the Forge app. Since these are 2 different implementations/apps, the Connect app data must be manually migrated to Forge app.
 
-3. Is it normal that I see two (2), Netwrix NetSuite tabs in my issues panel if my instance has both Connect and Forge apps?
+3. Is it normal to see two (2) Netwrix NetSuite tabs in the issues panel when both Connect and Forge apps are installed?
     - **Yes**, it is normal. Two (2) separate apps have separate file descriptors that show separate tabs in the issue panel.
 
-4. Why did all my data in Netwrix NetSuite Settings page in Forge app disappear when I updated to a new version?
-    - This is Atlassian's way of securing your data, every install or update is a fresh start. However, there are 2 ways to retrieve your data: (1) You will have to raise a ticket to Atlassian support to restore the data in your instance when the Jira Forge app was installed or updated. (2) You can manually input them back yourself.
+4. Why did all the data in the Netwrix NetSuite Settings page in the Forge app disappear after updating to a new version?
+    - This is Atlassian's way of securing data. Every install or update is a fresh start. However, there are 2 ways to retrieve the data: (1) Raise a ticket to Atlassian support to restore the data in the instance for when the Jira Forge app was installed or updated. (2) Manually re-enter the data.
 
-5. Is there impact to existing connect tickets if forge is being used?
-    - **No**. Since the change request information is being pulled from the NetSuite account that Jira Forge is currently connected to, there should be no impact when switching to the Forge app.
+5. Is there impact to existing Connect tickets if Forge is being used?
+    - **No**. Since the change request information is being pulled from the NetSuite account that Jira Forge is connected to, switching to the Forge app has no impact on existing tickets.
 
 **Back to:** [Jira Forge Walkthrough Example](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_walkthrough)

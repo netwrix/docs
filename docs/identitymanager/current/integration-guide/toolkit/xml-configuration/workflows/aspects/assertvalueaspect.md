@@ -1,4 +1,4 @@
-﻿---
+---
 title: "AssertValueAspect"
 description: "Checks whether the value of a given property satisfies a given condition."
 sidebar_position: 2
@@ -71,7 +71,7 @@ A pointcut is a mechanism telling Identity Manager when to execute the linked [a
 
 The position of the pointcut is specified by an activity state and a mode (before or after).
 
-![pointcut Schema](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/aspects/addchangeaspect/pointcut.webp)
+![pointcut Schema](/images/identitymanager/pointcut.webp)
 
 
 |Property|Details|

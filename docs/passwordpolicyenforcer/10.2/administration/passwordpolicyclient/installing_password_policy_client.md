@@ -25,7 +25,7 @@ Netwrix no longer provides technical support for these versions.
 
 You can install the Password Policy Client manually by running the Password Policy Enforcer
 installer (PPE10.2.exe) and choosing the Express Setup option if you only need to install it on a
-few computers. If you have many computers, then follow the instructions below to perform an
+few computers. If you have many computers, then follow the following instructions to perform an
 automated installation with Group Policy, or use your regular software distribution tool to do the
 same.
 
@@ -37,9 +37,9 @@ distribute the Password Policy Client. See the
 [Installation](/docs/passwordpolicyenforcer/10.2/administration/installation/installation.md)
 topic for additional information.
 
-If you did not create a distribution point for Password Policy Enforcer, then create one now.
+If you didn't create a distribution point for Password Policy Enforcer, then create one now.
 
-Follow the steps below to create a Password Policy Client distribution point.
+Complete the following steps to create a Password Policy Client distribution point.
 
 **Step 1 –** Log on to a server as an administrator.
 
@@ -50,7 +50,7 @@ access to authorized personnel only.
 
 ### Copy PPECIt10.2.msi into the Distribution Point
 
-Follow the steps below to copy the .msi file into the distribution point.
+Complete the following steps to copy the .msi file into the distribution point.
 
 **Step 1 –** Start the Password Policy Enforcer installer (PPE10.2.exe).
 
@@ -71,7 +71,7 @@ the distribution point.
 
 ## Create a Group Policy Object
 
-Follow the steps below to create a group policy object.
+Complete the following steps to create a group policy object.
 
 **Step 1 –** Start the **Group Policy Management Console** (gpmc.msc).
 
@@ -86,7 +86,7 @@ this domain, and Link it here...**.
 
 ## Edit the Group Policy Object
 
-Follow the steps below to edit a group policy object.
+Complete the following steps to edit a group policy object.
 
 **Step 1 –** Right-click the **Password Policy Client GPO**, then click the **Edit...** edit.
 
@@ -119,13 +119,13 @@ during startup.
 ## Testing the Password Policy Client
 
 Test the Password Policy Client by logging on to a computer and pressing the CTRL + ALT + DEL keys
-and clicking the **Change a password** item. If you do not see the password policy, it could be
-because a Password Policy Enforcer policy has not been assigned to you, or because the firewall
-rules have not been created.
+and clicking the **Change a password** item. If you don't see the password policy, it could be
+because a Password Policy Enforcer policy hasn't been assigned to you, or because the firewall
+rules haven't been created.
 
 :::note
-The Password Policy Client does not store or send passwords or password hashes over the
-network. An attacker cannot determine user passwords by sniffing the communication protocol. The
+The Password Policy Client doesn't store or send passwords or password hashes over the
+network. An attacker can't determine user passwords by sniffing the communication protocol. The
 protocol is also encrypted by default for additional protection.
 :::
 
@@ -134,7 +134,7 @@ protocol is also encrypted by default for additional protection.
 
 You may need to create firewall rules for the Password Policy Client if your domain controllers are
 running a software (host) firewall, or if the Password Policy Client and Password Policy Server
-communicate through a firewall. Firewall rules are not necessary for local policies because the
+communicate through a firewall. Firewall rules aren't necessary for local policies because the
 Password Policy Client and Password Policy Server are on the same computer.
 
 ### Windows Firewall
@@ -143,7 +143,7 @@ If Windows Firewall is enabled on your domain controllers, then you must create 
 allow connections to the Password Policy Server. Windows Firewall is enabled by default on Windows
 Server 2008 and later.
 
-Follow the steps below to create the port exception on all domain controllers.
+Complete the following steps to create the port exception on all domain controllers.
 
 **Step 1 –** Use the **Group Policy Management Console** (gpmc.msc) to display the GPOs linked to
 the Domain Controllers OU.

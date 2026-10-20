@@ -6,8 +6,8 @@ sidebar_position: 80
 
 # Notification: Command Line
 
-The Command Line properties page is available when the Command-line Executable notification type is
-selected on the Type page.
+The Command Line properties page is available when you select the Command-line Executable
+notification type on the Type page.
 
 ![Notification Data Analysis Module wizard Command Line properties page](/images/accessanalyzer/12.0/admin/analysis/notification/commandline.webp)
 
@@ -17,7 +17,7 @@ The following options are available:
   view and select from a list of executable files.
 - Arguments – If required, specify command line inputs for the application in the text box. If the
   argument must come from a value in the database (for example, a timeout value), insert it here via
-  the Fields drop-down menu above.
+  the Fields dropdown menu above.
 
-    - Fields – To pass one or more fields into the command line arguments, click the drop-down menu,
+    - Fields – To pass one or more fields into the command line arguments, click the dropdown menu,
       select a field from the lists, and click **Add**

@@ -1,0 +1,128 @@
+---
+title: "EPP Server Migration & Upgrade Guide"
+description: "Netwrix Endpoint Protector — Server Migration & Upgrade Guide"
+sidebar_position: 10
+---
+
+<small><em>Document version: 3.2</em></small>
+
+---
+
+:::warning
+**Action Required**
+
+Netwrix discontinued support for Endpoint Protector Server version **5.9.4.2 and all older versions** as of **14 February 2026**. Customers still running any 5.x version are no longer receiving security patches, bug fixes, or technical support.
+
+**Complete migration to the new image-based platform immediately.**
+
+For the full support lifecycle and version status, see: [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability)
+:::
+
+:::note
+This guide covers **on-premises (Self-Hosted)** deployments only. The Netwrix team migrates Netwrix-hosted **SaaS** appliances directly, so customers don't need to take any action. Unlike the self-hosted paths in this guide, SaaS migrations **do** carry historical log data over as part of that Netwrix-managed process — after migration, SaaS customers see two tabs in the Reports menu: one for historical data still held in MySQL, and one for current data captured and stored in CrateDB going forward. See [Deployment Models: SaaS vs. Self-Hosted Update Cadence](/docs/endpointprotector/supportability/server-supportability#deployment-models-saas-vs-self-hosted-update-cadence).
+:::
+
+---
+
+## Overview
+
+Endpoint Protector's server platform requires a full image migration rather than a simple in-place patch whenever the underlying base image changes. Netwrix is releasing a new base image, **2608**, that refreshes the entire server stack: Ubuntu 26.04 LTS, PHP 8.5, and updated MySQL and OpenSSL components. The 2608 image also introduces **CrateDB**, a new database component dedicated to storing log data going forward, alongside MySQL, which continues to own server configuration and EPP objects (Computers, Users, and Groups).
+
+Every on-premises EPP Server — whether it's still on a legacy 5.x release or already on the current image-based platform (2509–2604) — needs to complete this migration to reach 2608.
+
+:::warning 2608 Requires a Full Migration, Not a Patch
+You can't apply 2608 as a cumulative or offline patch on top of an existing 2509–2604 server, the way you move between patches within that platform (for example, 2509 → 2510 → 2604). 2608 is a new base image, so reaching it always requires the full migration procedure described in this guide: deploy a new 2608 VM, then restore your configuration backup onto it. There's no in-place upgrade path to 2608.
+:::
+
+:::note
+CrateDB ships empty on a freshly deployed 2608 server. The migration doesn't move any historical log data into it — this matches today's behavior, where System Configuration Backup carries over policies, users, groups, and device rules, but never log data or file shadows. If you need historical logs for compliance or forensics, export them separately (see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup)) or retain your old server VM, exactly as described in each migration article's prerequisites.
+:::
+
+:::warning Use an FQDN Instead of an IP Address
+Always address the EPP Server by a fully qualified domain name (FQDN), and configure your EPP Clients and single sign-on (SSO) integrations to use it. When you bind clients or SSO response URLs to an IP address, any migration that changes the server address, including this one, breaks them: SSO logins fail until you correct the response URL, and clients can't reach the new server until you reconfigure them. With an FQDN, you repoint a single DNS record to the new server. Netwrix-hosted SaaS deployments receive an FQDN by default. See [Use an FQDN Instead of an IP Address](/docs/endpointprotector/install/overview#use-an-fqdn-instead-of-an-ip-address).
+:::
+
+The migration path depends on where you're starting from:
+
+```mermaid
+flowchart TD
+    Start["Your current EPP Server"] --> Q{"What version are you on?"}
+
+    Q -->|"5.7.0.0 – 5.9.4.1"| Patch["Phase 1: Cumulative Patch<br/>Upgrade to 5.9.4.2<br/>→ apply the 5.9.4.2 offline patch"]
+    Patch --> Backup1["Create full backup at 5.9.4.2<br/>→ only 5.9.4.2 backups are accepted"]
+    Q -->|"Already on 5.9.4.2"| Backup1
+
+    Q -->|"2509, 2510, 2601, 2602, or 2604"| Backup2["Create backup<br/>→ System Backup v2 export"]
+
+    Backup1 --> Deploy["Phase 2: Deploy the 2608 base image<br/>→ fresh VM, same or new IP/FQDN"]
+    Backup2 --> Deploy
+
+    Deploy --> Trial["Activate trial license<br/>→ required before the server can apply patches"]
+    Trial --> Restore["Restore backup onto 2608<br/>Upload client packages<br/>→ imports your configuration backup"]
+    Restore --> License["Import license on the restored server<br/>→ verify it imported successfully"]
+    License --> Verify["Post-Migration Verification"]
+    Verify --> ClientUpgrade["Client Upgrade to 2608, then<br/>restore client connectivity"]
+    ClientUpgrade --> Done(["✅ Done — running on 2608"])
+
+    classDef startPoint fill:#fdebd3,stroke:#d68910,color:#7e5109
+    classDef upgraded fill:#e8f8f0,stroke:#28a745,color:#1e7e34
+    classDef backup fill:#fdf6d8,stroke:#d4ac0d,color:#7d6608
+
+    class Start startPoint
+    class Backup1,Backup2 backup
+    class Done upgraded
+```
+
+## Which Article Applies to You
+
+Check your current server version under **Appliance → Server Information**, then follow the matching article.
+
+| Your Current Version | Article to Follow |
+|---|---|
+| Any version from **5.7.0.0 to 5.9.4.2** (5700, 5710, 5800, 5810, 5820, 5900, 5910, 5920, 5930, 5940, 5941, 5942) | [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) |
+| Any version from **2509 to 2604** (2509, 2510, 2601, 2602, 2604) | [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image) |
+
+Both articles converge on the same two final phases, common to every migration regardless of your starting version:
+
+1. [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade) — upgrading EPP and Enforced Encryption (EE) clients to the 2608 release.
+2. Post-Migration Verification — see the final section of [your migration article](#which-article-applies-to-you).
+
+## Understanding the Migration Architecture
+
+### Why an Intermediate Version Is Required for Legacy 5.x Servers
+
+The 2608 base image accepts configuration backups only from a fixed set of source versions. If you're on any version older than 5.9.4.2, you must reach 5.9.4.2 first. This is because:
+
+- The internal database schema at 5.9.4.2 is the last known-compatible schema for import into the new image platform.
+- The migration process validates the backup format and version checksum before restoring.
+
+After you reach exactly 5.9.4.2, you deploy the 2608 image directly and restore your backup there — there's no need to route through the older 2510/2604 platform first.
+
+:::note
+If you're already on the current image-based platform (2509–2604), a different rule applies — see [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image#backup-compatibility).
+:::
+
+**Version compatibility matrix:**
+
+| Backup Source Version | Can Be Restored to 2608 |
+|---|---|
+| Older than 5.7.0.0 | ❌ Step-by-step upgrade path required first |
+| 5.7.0.0 – 5.9.4.1 (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0, 5.8.2.0, 5.9.0.0, 5.9.1.0, 5.9.2.0, 5.9.3.0, 5.9.4.0, 5.9.4.1) | ❌ Must reach 5.9.4.2 first via cumulative patch |
+| **5.9.4.2** | ✅ **Yes — direct to 2608** |
+| **2509, 2510, 2601, 2602, or 2604** | ✅ **Yes — direct to 2608** |
+
+:::tip
+2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. It's still good practice to upgrade to 2604 before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs.
+:::
+
+### New EPP Client and Server Versioning
+
+Starting with the 2509 EPP Server release in October 2025, Netwrix introduced a new versioning scheme. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md#unified-epp-clients-and-server-versioning). With the 2608 release, EPP Server and EPP/EE Client versions share the same number for the first time — Netwrix releases both as **2608**.
+
+---
+
+## Prerequisites, Procedures, and Post-Migration Verification
+
+Prerequisites and the exact migration procedure differ depending on your starting version — see [Which Article Applies to You](#which-article-applies-to-you). Both articles end with their own Post-Migration Verification checklist, since a small number of checks (for example, license validation) apply identically regardless of your starting point.
+
+After completing your migration article, continue to [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade) to bring EPP and EE clients up to the 2608 release.

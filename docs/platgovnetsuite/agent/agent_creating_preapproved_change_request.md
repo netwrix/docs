@@ -10,7 +10,7 @@ You can create a custom change request form for an Agent Preapproved Change Requ
 [Using Custom Change Request Forms](/docs/platgovnetsuite/changemanagement/use_custom_cr_forms.md) for information on
 implementing your custom form.
 
-Here are the steps to create a pre-approved change request for a control:
+To create a pre-approved change request for a control:
 
 1. Open **Strongpoint** > **Financial Controls** > **New Agent Control Approval**
 
@@ -46,12 +46,8 @@ Here are the steps to create a pre-approved change request for a control:
     - External Link
     - Parent Change Request
 
-7. Click **Pending Approval** in the status bar when you are finished with the Change Request. A
-   confirmation prompt is displayed. When confirmed, Approval Notifications are sent to the
-   approvers.
-8. Once approved, click **Completed** in the status bar to finish the Change Request. If rejected,
-   you can return the Change Request to **In Progress**, fix any issues, and resubmit it to
-   **Pending Approval**.
+7. Click **Pending Approval** in the status bar when you finish the Change Request. A confirmation prompt appears. After you confirm, Approval Notifications are sent to the approvers.
+8. After approval, click **Completed** in the status bar to finish the Change Request. If rejected, return the Change Request to **In Progress**, fix any issues, and resubmit it for **Pending Approval**.
 
 ### Status Bar States
 
@@ -75,7 +71,7 @@ Approvers are notified.
 
 Status can be demoted.
 
-Status promoted based on Approvers actions.
+Status advances based on approver actions.
 
 ![change_request_bar_approved](/images/platgovnetsuite/change_management/change_request_bar_approved.webp)
 

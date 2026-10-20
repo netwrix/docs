@@ -13,7 +13,7 @@ Click **Entra ID** in the left pane to open the Entra ID page.
 
 ![Entra ID page](/images/identityrecovery/3.1/product/entra_id/entra_id.png)
 
-Select a tenant from the drop-down menu and expand it to view the domain tree and container
+Select a tenant from the dropdown menu and expand it to view the domain tree and container
 structure, which is exactly the same as you get in Active Directory Users and Computers. Objects in
 the domain are also available in the same hierarchical structure.
 
@@ -21,7 +21,7 @@ The page displays the following information:
 
 - Name – The display name of the object
 - Description – A description of the object
-- Backup Time – The date and time of the last the backup
+- Backup Time – The date and time of the last backup
 
 You can perform the rollback and recover operations for objects.
 
@@ -42,5 +42,5 @@ this object and select **Rollback** on the menu. See the [Rollback Objects](/doc
 
 Recover Deleted Objects
 
-On expanding a tenant in the left pane, you will notice a Recycle Bin. This is a virtual container specific to Identity Recovery. Use the Recycle Bin to recover deleted objects in Entra. See the [Recover Objects](/docs/identityrecovery/3.1/admin/entraid/recover.md) topic for
+When you expand a tenant in the left pane, you'll see a Recycle Bin. This is a virtual container specific to Identity Recovery. Use the Recycle Bin to recover deleted objects in Entra. See the [Recover Objects](/docs/identityrecovery/3.1/admin/entraid/recover.md) topic for
 additional information.

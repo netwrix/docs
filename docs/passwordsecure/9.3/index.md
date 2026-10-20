@@ -4,7 +4,7 @@ description: "Why Netwrix Password Secure?"
 sidebar_position: 1
 ---
 
-# Why Netwrix Password Secure?
+# Netwrix Password Secure overview
 
 ## Users depend on passwords
 

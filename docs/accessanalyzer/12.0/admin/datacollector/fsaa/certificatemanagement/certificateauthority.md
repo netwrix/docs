@@ -19,11 +19,11 @@ custom CA to generate and sign client certificates dynamically.
 
 ## How Provide Certificate Authority Works
 
-When **Provide Certificate Authority** is selected:
+When you select **Provide Certificate Authority**:
 
 1. FSAA loads the provided CA certificate from a `.pfx` file.
 2. FSAA generates client certificates and signs them using the supplied CA.
-3. Generated certificates are stored securely by FSAA.
+3. FSAA stores generated certificates securely.
 4. The FSAA applet presents its client certificate during HTTPS communication.
 5. The data collector validates the certificate and establishes a secure connection.
 
@@ -36,10 +36,10 @@ The CA certificate must meet the following requirements:
 - **Basic Constraints:** `CA=TRUE`
 - **Key Usage:** certificate signing (`CertSign`)
 - Certificate is within its valid date range
-- PFX file is not password-protected
+- PFX file isn't password-protected
 
 :::note
-FSAA cannot load password-protected PFX files.
+FSAA can't load password-protected PFX files.
 :::
 
 ## Creating the CA Certificate

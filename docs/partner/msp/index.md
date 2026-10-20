@@ -1,6 +1,6 @@
 ---
 title: MSP Engineer Certification Learning Paths
-sidebar_position: 1870
+sidebar_position: 1600
 tags: [certification, partners, msp]
 keywords: [training, course, certification, partners, msp]
 description: "Learn about the Netwrix MSP Engineer certification options"

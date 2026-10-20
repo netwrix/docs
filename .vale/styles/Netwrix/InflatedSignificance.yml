@@ -1,0 +1,13 @@
+extends: existence
+message: "Remove the inflated-significance phrase '%s'. State what the feature does."
+level: warning
+ignorecase: true
+tokens:
+  - '\b(?:plays?|played|playing) an? (?:crucial|vital|key|critical|pivotal|significant|essential|important) role\b'
+  - '\bserves? as an? (?:cornerstone|foundation|testament|backbone|linchpin)\b'
+  - '\b(?:cornerstone|linchpin) of\b'
+  - '\ba testament to\b'
+  - '\b(?:is|are) (?:essential|crucial|vital|critical) (?:to|for) ensuring\b'
+  - '\b(?:is|are) (?:essential|crucial|vital) in ensuring\b'
+  - '\bin ensuring that\b'
+  - '\bplays? a (?:pivotal|crucial|vital) part\b'

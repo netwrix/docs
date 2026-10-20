@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Supported Data Sources
 
-This section lists platforms and systems that can be monitored with Netwrix Auditor.
+This section lists platforms and systems that Netwrix Auditor can monitor.
 
 ## Active Directory
 
@@ -37,7 +37,7 @@ information.
 
 Auditor supports monitoring Azure Files with the following requirements:
 
-- Azure Storage Account with File Shares (SMB protocol)
+- Azure Storage Account with File Shares (Server Message Block (SMB) protocol)
 - identity sources:
   - Active Directory Domain Services (AD DS)
   - Microsoft Entra Kerberos
@@ -72,7 +72,9 @@ versions:
 - Dell VNX/VNXe/Celerra families
 - Dell PowerStore family
 
-> **NOTE:** Only CIFS configuration is supported.
+:::note
+Netwrix Auditor supports only Common Internet File System (CIFS) configuration.
+:::
 
 See the [Dell Data Storage](/docs/auditor/10.8/configuration/fileservers/delldatastorage/overview.md) topic for
 additional information.
@@ -83,10 +85,13 @@ Auditor supports monitoring the following device versions:
 
 - Dell Isilon/PowerScale versions 7.2 – 9.12
 
-> **NOTE:** Only CIFS configuration is supported.
+:::note
+Netwrix Auditor supports only CIFS configuration.
+:::
 
-> **IMPORTANT:** Auditing of _System_ zone is not supported. As stated by Dell, this zone should be reserved for
-configuration access only. Current data should be stored in other access zones. See the
+:::warning
+Netwrix Auditor doesn't support auditing of the _System_ zone. Dell designates this zone for configuration access only. Store current data in other access zones.
+:::
 
 See the [Dell Isilon/PowerScale](/docs/auditor/10.8/configuration/fileservers/dellisilon/overview.md) topic for
 additional information.
@@ -99,7 +104,9 @@ Auditor supports monitoring the following device versions:
     - 9.0 – 9.17
     - 8.3
 
-> **NOTE:** Only CIFS configuration is supported.
+:::note
+Netwrix Auditor supports only CIFS configuration.
+:::
 
 See the [NetApp Data ONTAP](/docs/auditor/10.8/configuration/fileservers/netappcmode/overview.md) topic for
 additional information.
@@ -125,7 +132,7 @@ See the [Qumulo](/docs/auditor/10.8/configuration/fileservers/qumulo/overview.md
 
 Auditor supports monitoring the following device versions:
 
-- DSM 7.2.1
+- DiskStation Manager (DSM) 7.2.1
 - DSM 7.1
 - DSM 7.0
 - DSM 6.2.3
@@ -188,7 +195,9 @@ Auditor supports monitoring the following versions:
 - Exchange Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** DoD tenant types are not supported.
+:::note
+Netwrix Auditor doesn't support Department of Defense (DoD) tenant types.
+:::
 
 See the [Exchange Online](/docs/auditor/10.8/configuration/microsoft365/exchangeonline/overview.md) topic for
 additional information.
@@ -200,7 +209,9 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** DoD tenant types are not supported.
+:::note
+Netwrix Auditor doesn't support DoD tenant types.
+:::
 
 See the
 [Microsoft Entra ID (formerly Azure AD)](/docs/auditor/10.8/configuration/microsoft365/microsoftentraid/overview.md)
@@ -213,7 +224,9 @@ Auditor supports monitoring the following versions:
 - Microsoft Entra ID version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** DoD tenant types are not supported.
+>:::note
+Netwrix Auditor doesn't support DoD tenant types.
+:::
 
 See the [MS Teams](/docs/auditor/10.8/configuration/microsoft365/teams/overview.md) topic for additional
 information.
@@ -225,7 +238,9 @@ Auditor supports monitoring the following versions:
 - SharePoint Online version provided within Microsoft Office 365
 - Microsoft GCC (government community cloud) and GCC High
 
-> **NOTE:** DoD tenant types are not supported.
+>:::note
+Netwrix Auditor doesn't support DoD tenant types.
+:::
 
 See the [SharePoint Online](/docs/auditor/10.8/configuration/microsoft365/sharepointonline/overview.md) topic for
 additional information.
@@ -364,7 +379,9 @@ Auditor supports monitoring the following versions:
 - Microsoft SQL Server 2014
 - Microsoft SQL Server 2012
 
-> **NOTE:** Linux-based versions are not supported.
+:::note
+Netwrix Auditor doesn't support Linux-based versions.
+:::
 
 See the [SQL Server](/docs/auditor/10.8/configuration/sqlserver/overview.md) topic for additional information.
 
@@ -387,12 +404,10 @@ Auditor supports monitoring the following versions:
 User Activity data source can support around 300 targets with one user session per target without
 scalability issues:
 
-- Depending on how dense is the actual user activity, the number can be more for servers but less
-  for workstations.
+- Depending on user activity density, the number may be higher for servers and lower for workstations.
 - 50-100 concurrent sessions per terminal server.
 
-Netwrix recommends using the User Activity auditing only for those infrastructure areas that require
-more attention due to their sensitivity or criticality. Applicable usage scenarios include, for
+Netwrix recommends User Activity auditing only for sensitive or critical infrastructure areas. Applicable usage scenarios include, for
 example:
 
 - Terminal servers where users can log in from external locations
@@ -440,9 +455,13 @@ Auditor supports monitoring the following operating system versions:
 - Windows Server 2012 R2
 - Windows Server 2012
 
-> **NOTE:** DNS support is limited on Windows Server 2008 to Windows Server 2008 SP2 (32 and 64-bit).
+:::note
+DNS support on Windows Server 2008 is limited to Windows Server 2008 SP2 (32 and 64-bit).
+:::
 
-> **NOTE:** DHCP is not supported on Windows Server 2008.
+:::note
+Netwrix Auditor doesn't support DHCP on Windows Server 2008.
+:::
 
 Internet Information Services (IIS)
 
@@ -460,7 +479,6 @@ leveraging its API. Download free add-ons from
 [Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) to enrich your audit
 trails with activity from the following systems and applications.
 
-Also, there are even add-ons that can export data collected by Auditor to other systems (e.g.,
-ArcSight and ServiceNow).
+Add-ons are also available to export data collected by Auditor to other systems (e.g., ArcSight and ServiceNow).
 
 See the [Integration API](/docs/auditor/10.8/api/overview.md) topic for additional information.

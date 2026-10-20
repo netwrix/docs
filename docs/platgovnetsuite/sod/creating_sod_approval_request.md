@@ -29,11 +29,11 @@ To create an SoD Approval request:
 
 4. Enter information for **Scope**:
 
-    - For **Cross Role Exemption**, select one or more of the **Affected Employee(s)**, **Affected
-      Rule(s)** or **Affected Role(s)**.
+    - For **Cross Role Exemption**, select one or more of the **Affected Employees**, **Affected
+      Rules** or **Affected Roles**.
     - For **Role Exemption**
 
-        - Select one or more of the **Affected Employee(s)** and **Affected Rule(s)**.
+        - Select one or more of the **Affected Employees** and **Affected Rules**.
         - Select one or more options for applying the exemption. If you choose **Select Current
           Employees**, the **Affected Employee** entry is enabled.
 
@@ -52,7 +52,7 @@ SoD Exemption** button is available after the request is Approved.
 ![Add Employees to Approved SoD Exemption](/images/platgovnetsuite/sod/sod_add_employee.webp)
 
 1. Click **Add Employees to SoD Exemption**.
-2. Select one or more **Affected Employee(s)** to add.
+2. Select one or more **Affected Employees** to add.
 
     ![Select Affected Employees](/images/platgovnetsuite/sod/sod_add_employee_select.webp)
 

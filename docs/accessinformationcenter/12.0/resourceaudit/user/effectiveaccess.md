@@ -30,9 +30,7 @@ to load until all data has been analyzed for the audited user.
 :::
 
 
-The scoping options allow Access Information Center users to specifying what collected data should
-be analyzed in order to generate this report. Unlike other filter options, this can impact the
-loading time depending on the scoping options selected. See the
+The scoping options let Access Information Center users specify what collected data to analyze when generating this report. Unlike other filter options, scoping choices can impact loading time. See the
 [Scope an Effective Access Report](/docs/accessinformationcenter/12.0/resourceaudit/navigate/scopeeffectiveaccess.md) topic for instructions on
 using this feature.
 
@@ -56,13 +54,11 @@ The following rights are a normalized representation of the permissions granted 
 - Delete – Right to delete resources
 - Manage – Equivalent to full control over resources
 
-There is one table at the bottom displaying Permission Source for the select resource. It contains
-all of the ways the audited user has been granted rights to the selected resource.
+The Permission Source table at the bottom displays all the ways the audited user has been granted rights to the selected resource.
 
 ![Permission Source table](/images/accessinformationcenter/12.0/resourceaudit/user/effectiveaccesstable.webp)
 
-The number of rows for this table indicates the number of ways this audited user has been granted
-access. This table is comprised of the following columns:
+The row count shows how many ways this audited user has been granted access. This table includes the following columns:
 
 - Source Path – Location for which the audited object was granted rights to the selected resource,
   which can be represented two ways:

@@ -94,7 +94,7 @@ Updates an activity.
 #### Delete
 ##### Summary:
 
-Deletes a activity.
+Deletes an activity.
 
 ##### Parameters:
 
@@ -194,7 +194,7 @@ Returns all the activityTemplates according to the provided query.
 #### Get
 ##### Summary:
 
-Returns a activityTemplate corresponding to the provided identifier and its information according to the provided query.
+Returns an activityTemplate corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -247,7 +247,7 @@ Returns all the activityTemplateStates according to the provided query.
 #### Get
 ##### Summary:
 
-Returns a activityTemplateState corresponding to the provided identifier and its information according to the provided query.
+Returns an activityTemplateState corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 
@@ -300,7 +300,7 @@ Returns all the activityTemplateTransitions according to the provided query.
 #### Get
 ##### Summary:
 
-Returns a activityTemplateTransition corresponding to the provided identifier and its information according to the provided query.
+Returns an activityTemplateTransition corresponding to the provided identifier and its information according to the provided query.
 
 ##### Parameters:
 

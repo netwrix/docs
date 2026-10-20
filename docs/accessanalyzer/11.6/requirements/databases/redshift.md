@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Target Redshift Requirements, Permissions, and Ports
 
-The Enterprise Auditor for Databases Solution provides the ability to audit and monitor Redshift
+The Enterprise Auditor for Databases Solution lets you audit and monitor Redshift
 database environments to collect permissions and sensitive data. It scans:
 
 - Amazon AWS Redshift

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WorkflowAddAndEndRecordEntityForm"
 description: "Displays a form to define the end date of an existing record, and replace it with a new record at said date, by duplicating and adjusting the old record."
 sidebar_position: 1
@@ -41,14 +41,14 @@ And with the following form for the record data's content and summary, and for t
 ```
 
 The contents of `MainControl` and `RecordControl` are visible during the workflow's execution:
-![Form Example - Update Position](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/FormExample_WorkflowAddAndEndRecordEntityForm_V603.webp)
+![Form Example - Update Position](/images/identitymanager/formexample_workflowaddandendrecordentityform_v603.webp)
 
 :::note
 The content of `RecordUniqueItemControl` is not visible. The user's records that have the same values for all the properties in `RecordUniqueItemControl` will be displayed, and potentially modified, as one.
 :::
 
 The contents of `MainSummaryControl` and `RecordSummaryControl` are visible after the workflow's execution:
-![Formexample Workflowaddandendrecordentityform V603](/images/identitymanager/integration-guide/toolkit/xml-configuration/workflows/forms/workflowaddandendrecordentityform/formexample_workflowaddandendrecordentityform_v603.webp)
+![Formexample Workflowaddandendrecordentityform V603](/images/identitymanager/formexample_workflowaddandendrecordentityform_v603.webp)
 
 
 ## Properties

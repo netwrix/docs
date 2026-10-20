@@ -1,4 +1,4 @@
-﻿---
+---
 title: "EasyVista Ticket"
 description: "EasyVista Ticket"
 sidebar_position: 60
@@ -10,7 +10,7 @@ This connector opens tickets in [EasyVista](https://wiki.easyvista.com/xwiki/bin
 
 This page is about [EasyVista Ticket](../../../integration-guide/connectors/references-packages/easyvistaticket).
 
-![Package: Ticket/EasyVista](/images/identitymanager/integration-guide/connectors/references-connectors/easyvistaticket/packages_easyvistaticket_v603.webp)
+![Package: Ticket/EasyVista](/images/identitymanager/packages_easyvistaticket_v603.webp)
 
 ## Overview
 

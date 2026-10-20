@@ -1,4 +1,4 @@
-﻿---
+---
 title: "SaaS Environment"
 description: "SaaS Environment"
 sidebar_position: 10
@@ -12,7 +12,7 @@ When working in a SaaS environment, Identity Manager needs a specific architect
 
 Identity Manager recommends the following architecture:
 
-![SaaS Recommended Architecture](/images/identitymanager/integration-guide/architecture/saas/architecture_saas.webp)
+![SaaS Recommended Architecture](/images/identitymanager/architecture_saas.webp)
 
 ### Agent(s)
 

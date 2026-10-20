@@ -1,10 +1,10 @@
 ---
-title: "Get a Data Source by Type and Name"
-description: "Get a Data Source by Type and Name"
+title: "Get a Data Source by Enter and Name"
+description: "Get a Data Source by Enter and Name"
 sidebar_position: 40
 ---
 
-# Get a Data Source by Type and Name
+# Get a Data Source by Enter and Name
 
 Using this API you can retrieve information of specific type data source, let's say a Text/CSV based
 data source, with a specific name.

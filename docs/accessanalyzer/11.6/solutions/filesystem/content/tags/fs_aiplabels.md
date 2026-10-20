@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # FS_AIPLabels Job
 
-The FS_AIPLabels job is designed to report on resources classified by AIP labels from targeted file
-servers.
+The FS_AIPLabels job is designed to report on resources classified by Azure Information Protection
+(AIP) labels from targeted file servers.
 
 ## Analysis Tasks for the FS_AIPLabels Job
 
@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **FileSystem** > **4.Content** > **
 **FS_AIPLabels** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Home Folder"
 description: "Home Folder"
 sidebar_position: 80
@@ -10,7 +10,7 @@ This connector exports [home folders](https://en.wikipedia.org/wiki/Home_directo
 
 This page is about [Home Folders](../../../integration-guide/connectors/references-packages/home-folders).
 
-![Package: Storage/Home Folders](/images/identitymanager/integration-guide/connectors/references-connectors/homefolder/packages_homefolders_v603.webp)
+![Package: Storage/Home Folders](/images/identitymanager/packages_homefolders_v603.webp)
 
 ## Overview
 

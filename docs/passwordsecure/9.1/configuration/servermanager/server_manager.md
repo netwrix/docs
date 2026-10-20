@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Server Manager
 
-## What is the Server Manager?
+## Server Manager overview
 
 The Server Manager takes care of the central administration of the databases as well as the
 configuration of the backup profiles. In addition, it provides the very important interface to the

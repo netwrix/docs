@@ -1,4 +1,4 @@
-﻿---
+---
 title: "AssignProfileAccessControlRules"
 description: "Gives to a given profile the rights to create, update, delete and query any assigned profile."
 sidebar_position: 1
@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Gives to a given profile the rights to create, update, delete and query any assigned profile, from the **Assigned Profiles** screen.
 
-![Assigned Profiles](/images/identitymanager/user-guide/set-up/user-profile-assignment/home_assignedprofiles_v602.webp)
+![Assigned Profiles](/images/identitymanager/home_assignedprofiles_v602.webp)
 
 
 

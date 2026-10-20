@@ -49,7 +49,7 @@ endpoint data
   can be seen
   at[PolicyPak Cloud + PPLPM + Events: Collect Events in the Cloud](/docs/policypak/components/leastprivilegemanager/videolearningcenter/eventing/cloudevents.md)
   and details about specific event types (for example) can be found here:
-  [List of PolicyPak Event Categories and IDs](/docs/policypak/gettingstarted/misc/knowledgebase/tipstricksandfaqs/eventcategories.md)
+  [List of PolicyPak Event Categories and IDs](/docs/policypak/misc/knowledgebase/tipstricksandfaqs/eventcategories.md)
 
 #### How is data is stored at rest with PolicyPak Cloud:
 

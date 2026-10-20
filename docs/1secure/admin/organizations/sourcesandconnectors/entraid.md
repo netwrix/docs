@@ -6,12 +6,12 @@ sidebar_position: 20
 
 # Add a Source and Connectors for Microsoft Entra ID
 
-Follow the steps to add a Microsoft Entra ID data source and connector(s) to your organization.
+**To add a Microsoft Entra ID data source and connectors to your organization:**
 
 **Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
 that lists the managed organizations defined in 1Secure.
 
-**Step 2 –** Click an organization to define a data source and connector(s) for it. The properties
+**Step 2 –** Click an organization to define a data source and connectors for it. The properties
 page for the organization is displayed with the Sources tab selected by default.
 
 **Step 3 –** On the Sources tab, click **Add** to add a source. The Select Data Source (Step 1 of 3)
@@ -33,13 +33,13 @@ pane is displayed.
   for additional information.
 - Crawl Source – Toggle this option to ON to enable data collection for the source
 - Service Account Entra ID Groups – Specify Microsoft Entra ID groups to exclude their service
-  accounts from billable domain accounts so that they are not audited. To specify a Microsoft Entra
+  accounts from billable domain accounts so that they aren't audited. To specify a Microsoft Entra
   ID group, enter its name and click the **Add** icon. To specify multiple Microsoft Entra ID
   groups, add them one by one.
 - Credentials – Displays the crdentials that have already been added, while also providing the
   option to add new credentials. Netwrix 1Secure uses these credentials to connect to the data
   source. You can select existing credentials or add new ones. To add new credentials, select **Add
-  new Credentials** from the drop-down menu or click the **Add** icon, then specify the following:
+  new Credentials** from the dropdown menu or click the **Add** icon, then specify the following:
 
     - Client ID – The client ID of the app registered in Microsoft Entra ID. See the
       [App Registration and Configuration in Microsoft Entra ID](/docs/1secure/configuration/registerconfig/registerconfig.md) topic
@@ -52,7 +52,7 @@ pane is displayed.
       it to the app registered in Microsoft Entra ID. See the
       [Upload a Certificate](/docs/1secure/configuration/registerconfig/registerconfig.md#upload-a-certificate) topic
       for additional information.
-    - Display Name – Specify a name you want to show for your credentials. It will be displayed on
+    - Display Name – Specify a name to display for your credentials. The name appears on
       the Credentials tab of the Managed Organizations page.
 
 **Step 6 –** Click **Next**.
@@ -83,4 +83,4 @@ ID. Specify the following:
 
 **Step 8 –** Click **Finish**.
 
-The Microsoft Entra ID data source and connector(s) have been configured.
+The Microsoft Entra ID data source and connectors have been configured.

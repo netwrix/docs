@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Troubleshoot Connector Jobs"
 description: "Troubleshoot Connector Jobs"
 sidebar_position: 50
@@ -12,7 +12,7 @@ This guide helps understand the behavior of synchronization and provisioning tas
 
 A managed system is synchronized and provisioned to/from Identity Manager with the following task sequence:
 
-![Synchronization/Provisioning Schema](/images/identitymanager/integration-guide/tasks-jobs/how-tos/troubleshoot-connector-jobs/troubleshoot_synchroprovschema.webp)
+![Synchronization/Provisioning Schema](/images/identitymanager/troubleshoot_synchroprovschema.webp)
 
 ### Export data
 

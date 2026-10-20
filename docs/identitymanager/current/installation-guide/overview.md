@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Overview"
 description: "Overview"
 sidebar_position: 10
@@ -10,7 +10,7 @@ This section will give you an overview of Identity Manager's components, their r
 
 ## Components and Data Flow
 
-![Components & Data Flow](/images/identitymanager/installation-guide/overview/components_data_flow.webp)
+![Components & Data Flow](/images/identitymanager/components_data_flow.webp)
 
 ### Components
 
@@ -79,13 +79,13 @@ Two scenarios unfold:
 
 This approach is useful when managed systems need to run on separate and isolated networks.
 
-![Server & Agents isolated](/images/identitymanager/installation-guide/overview/distribution_1.webp)
+![Server & Agents isolated](/images/identitymanager/distribution_1.webp)
 
 **2.** The Server and **One** Agent are installed on the same workstation
 
 In that case, the Identity Manager Agent can run directly within the Identity Manager Server process. The hosting workstation would **only host a Identity Manager Server process** (**with the integrated agent**) and no separate agent needs to be installed. The database could be installed on the same workstation or on a separate **One**.
 
-![Server & Agent together](/images/identitymanager/installation-guide/overview/distribution_2.webp)
+![Server & Agent together](/images/identitymanager/distribution_2.webp)
 
 ## Authentication
 

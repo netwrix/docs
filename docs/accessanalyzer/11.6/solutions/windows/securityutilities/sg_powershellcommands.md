@@ -33,8 +33,8 @@ The queries for the SG_PowerShellCommands job are:
 
 ### Configure the Check PowerShell log Query
 
-The Check PowerShell log query has been preconfigured to run with the default settings. However, the
-new criteria can optionally be added on the Criteria page in the Smart Log Data Collector Wizard.
+The Check PowerShell log query has been preconfigured to run with the default settings. However, you
+can add new criteria on the Criteria page in the Smart Log Data Collector Wizard.
 
 **Step 1 –** Navigate to the **Jobs** > **Windows** > **Security Utilities** >
 **SG_PowerShellCommands** > **Configure** node and select **Queries**. Select the **Check PowerShell
@@ -53,7 +53,7 @@ is accessible.
 
 **Step 5 –** On the Criteria page, click the **press the button to add a new condition** box.
 
-**Step 6 –** Enter the desired conditions.
+**Step 6 –** Enter the conditions you want.
 
 **Step 7 –** Click **Next** to navigate to the Summary page and click **Finish**.
 
@@ -65,7 +65,7 @@ View the analysis tasks by navigating to the **Windows** > **Security Utilities*
 **SG_PowerShellCommands** > **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -79,7 +79,7 @@ The default analysis tasks are:
 - Summarize PowerShell commands – Creates the SA_PowerShellCommands_HostSummary table accessible
   under the job’s Results node
 
-The optional analysis tasks is:
+The optional analysis task is:
 
 - Notify on suspicious commands – Enable this analysis task and the select Analysis Configuration to
   open the Notification Data Analysis Module Wizard to configure it to send notifications on
@@ -87,17 +87,17 @@ The optional analysis tasks is:
   [Configure the Notify on Suspicious Commands Analysis Task](#configure-the-notify-on-suspicious-commands-analysis-task)
   topic for additional information.
 
-In addition to the tables and views created by the analysis tasks, the EX_DeliveryTimes job produces
+In addition to the tables and views created by the analysis tasks, the SG_PowerShellCommands job produces
 the following pre-configured report.
 
 | Report                         | Description                                                                                                       | Default Tags | Report Elements                                                                                                                                                                                                         |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Suspicious PowerShell Commands | This report highlights instances where suspicious PowerShell commands have been found in a host's PowerShell log. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays suspicious commands by host</li><li>Table – Provides details on suspicious commands by host</li><li>Table – Provides command details</li></ul> |
+| Suspicious PowerShell Commands | This report highlights suspicious PowerShell commands found in a host's PowerShell log. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays suspicious commands by host</li><li>Table – Provides details on suspicious commands by host</li><li>Table – Provides command details</li></ul> |
 
 
 ### Configure the Notify on Suspicious Commands Analysis Task
 
-Follow these steps to configure the notification analysis task.
+To configure the notification analysis task:
 
 **Step 1 –** Navigate to the **Jobs** > **Windows** > **Security Utilities** >
 **SG_PowerShellCommands** > **Configure** node and select **Analysis**.
@@ -107,14 +107,14 @@ task and click **Analysis Configuration**. The Notification Data Analysis Module
 
 ![Notification Data Analysis Module wizard SMTP properties page](/images/accessanalyzer/11.6/solutions/windows/securityutilities/powershellcommandsnotifysmtp.webp)
 
-**Step 3 –** Use the **Next** button to navigate to the SMTP page. Do not make changes to the
+**Step 3 –** Use the **Next** button to navigate to the SMTP page. Don't make changes to the
 preceding pages.
 
 ![Recipients section](/images/accessanalyzer/11.6/solutions/windows/securityutilities/powershellcommandsnotifyrecipients.webp)
 
 **Step 4 –** In the Recipients section, provide the email addresses or distribution lists (fully
-qualified address) for those who are to receive this notification. Multiple addresses can be
-provided. You can use the following options:
+qualified address) for the people who receive this notification. You can provide multiple
+addresses. You can use the following options:
 
 - Add – Add an email address to the E-mail field
 - Remove – Remove an email address from the Recipients list
@@ -123,16 +123,16 @@ provided. You can use the following options:
 
 ![Message section](/images/accessanalyzer/11.6/solutions/windows/securityutilities/powershellcommandsnotifymessage.webp)
 
-**Step 5 –** In the Message section, edit the **Subject**. It is not recommended to remove any
+**Step 5 –** In the Message section, edit the **Subject**. Don't remove any
 parameters. Then, customize the email content in the textbox to provide an explanation of the
 notification to the recipients.
 
-**Step 6 –** To save these configuration changes, use the **Next** to navigate to the Summary page.
-Do not make changes to any other pages. Click **Finish**. The Notification Data Analysis Module
+**Step 6 –** To save these configuration changes, use the **Next** button to navigate to the Summary page.
+Don't make changes to any other pages. Click **Finish**. The Notification Data Analysis Module
 window closes.
 
 **Step 7 –** This notification analysis task is now configured to send emails. In the Analysis
-Selection view, select this task so that notifications can be sent automatically during the
-execution of the SG_PowerShellCommands job.
+Selection view, select this task so that the SG_PowerShellCommands job sends notifications
+automatically when it runs.
 
 The Notify on suspicious commands analysis task is now configured to send notifications.

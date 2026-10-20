@@ -38,7 +38,7 @@ The following columns display the combined direct and inherited rights:
 
 - Allow Mask – Bitmask corresponding to Windows ACE permission bits for combined direct and
   inherited allow rights
-- Deny Mask – Bitmask corresponding to Windows ACE permission bits for combined direct inherited
+- Deny Mask – Bitmask corresponding to Windows ACE permission bits for combined direct and inherited
   deny rights
 
 The table data grid functions the same way as other table grids. See the

@@ -11,7 +11,7 @@ be added automatically.
 
 ![NPWS Server Encryption](/images/passwordsecure/9.1/configuration/server_manager/certificates/nps-server-encryption_1014x771.webp)
 
-This certificate is important if you will activate an offline license. In future there will be more
+This certificate is important if you'll activate an offline license. In future there will be more
 features for which this certificate is relevant.
 
-RECOMMENDED: **Please export this certificate separately!!!**
+RECOMMENDED: **export this certificate separately.**

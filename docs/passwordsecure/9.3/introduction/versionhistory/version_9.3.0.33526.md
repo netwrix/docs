@@ -33,7 +33,7 @@ sidebar_position: 4
 
 #### Server
 - An error was resolved, which caused non-migratable documents being unable to be deleted permanently.
-- Users provisioned via Entra ID can now login to the browser extension again.
+- Users provisioned via Entra ID can now log in to the browser extension again.
 - WebViewer exports can no longer be created with invalid configuration.
 
 #### Server Manager

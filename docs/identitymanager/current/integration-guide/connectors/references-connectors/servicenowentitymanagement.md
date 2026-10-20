@@ -1,7 +1,7 @@
-﻿---
+---
 title: "ServiceNow"
 description: "ServiceNow"
-sidebar_position: 260
+sidebar_position: 270
 ---
 
 # ServiceNow
@@ -10,7 +10,7 @@ This connector exports and fulfills any data, including users and roles, from/to
 
 This page is about [ServiceNow](../../../integration-guide/connectors/references-packages/servicenow).
 
-![Package: ITSM/ServiceNow](/images/identitymanager/integration-guide/connectors/references-connectors/servicenowentitymanagement/packages_servicenow_v603.webp)
+![Package: ITSM/ServiceNow](/images/identitymanager/packages_servicenow_v603.webp)
 
 ## Overview
 

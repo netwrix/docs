@@ -15,14 +15,14 @@ protection policy schedule is run based on the platform type configuration on th
 The Schedule tab has the following features:
 
 - Search — Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - View Logs — View the log for the selected task
 - Refresh — Reload the information displayed
 
 The table has the following columns:
 
 - Task Name — Displays the name of the scheduled task. See the
-  [Schedule Policies Page](/docs/privilegesecure/4.2/admin/interface/platforms/schedulepolicies/schedulepolicies.md) topic for additional information.
+[Schedule Policies Page](/docs/privilegesecure/4.2/admin/interface/platforms/schedulepolicies/schedulepolicies.md) topic for additional information.
 - Last Run Time — Date timestamp of the previous scheduled task
 - Next Run Time — Date timestamp of the next scheduled task
 - Recurrence — Indicates the scheduled recurrence

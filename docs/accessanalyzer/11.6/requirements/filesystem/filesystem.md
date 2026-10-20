@@ -27,8 +27,8 @@ The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor 
 which enables Sensitive Data criteria for scans.
 
 :::note
-If proxy server scan options are used, it may also be necessary for the Sensitive Data
-Discovery Add-On to be installed on those servers as well.
+If you use proxy server scan options, you may also need to install the Sensitive Data
+Discovery Add-On on those servers as well.
 :::
 
 
@@ -50,26 +50,26 @@ These are dependent upon the size of the target environment:
 | Cores       | 8 CPU                          | 8 CPU                               | 8 CPU                               | 4 CPU                               | 2 CPU                               |
 | Disk Space  | 1.5 TB                         | 770 GB                              | 470 GB                              | 270 GB                              | 130 GB                              |
 
-The above recommended disk space sizing information is based on the needs of Enterprise Auditor as
+This recommended disk space sizing information is based on the needs of Enterprise Auditor as
 well as the File System solution for running Permission scans with default configuration (500 MB per
 million files and folders), that means no tag collection, file-level scanning, activity, or
 sensitive data.
 
-- For tag collection, add 125 MB per million documents to the totals above
+- For tag collection, add 125 MB per million documents to those totals
 - For activity collection, add 250 MB per million files and folders and another 125 MB per million
-  activity events to the totals above
+  activity events to those totals
 - For sensitive data collection, add 500 MB per million files and folders and another 1%-10% of the
   total size of the documents scanned for sensitive data (depending on targeted document types and
-  selected criteria) to the totals above
+  selected criteria) to those totals
 
-For example, in order to scan 200 million files and folders, of which 10 million files will be
+For example, to scan 200 million files and folders, of which 10 million files will be
 scanned for tag collection and sensitive data with a total size of 6 TB, you would need: 160 GB for
 permission collection + 1.25 GB for tag collection (10x125 MB) + 100 GB for sensitive data
 collection (200x500 MB) + 600 GB additional for sensitive data collection (10% of 6 TB) = 861.25 GB
 total disk space.
 
 :::note
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the
+If running Sensitive Data Discovery (SDD) scans, you must increase the
 minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. By
 default, SDD scans are configured to run two concurrent threads. For example, if the job is
 configured to scan 8 hosts at a time with two concurrent SDD threads, then an extra 32 GB of RAM are
@@ -81,7 +81,7 @@ required (8x2x2=32).
 
 If Data Activity Tracking for NAS is required or if NetApp Filers running Clustered Data ONTAP are
 in scope, reducing latency between the scanning server and the target device is highly recommended.
-Additional hardware may be required, especially if the target NAS devices are not collocated with
+Additional hardware may be required, especially if the target NAS devices aren't collocated with
 the Enterprise Auditor Console server.
 
 **Sensitive Data Discovery Auditing Requirement**
@@ -92,7 +92,7 @@ The following is required to run Sensitive Data Discovery scans:
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
 configuration; it has been preconfigured to work with Enterprise Auditor and should never be
 customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
 environment.
@@ -113,7 +113,7 @@ mode, applet mode, or proxy mode with applet:
     - Administrators
 
 These permissions grant the credential the ability to create a high integrity token capable of
-leveraging the “Back up files and directories” from where the Enterprise Auditor executable is run.
+using the “Back up files and directories” right from where the Enterprise Auditor executable is run.
 
 Additionally, the credential must have `WRITE` access to the `…\StealthAUDIT\FSAA` folder in the
 installation directory. This is required by either the user account running the Enterprise Auditor

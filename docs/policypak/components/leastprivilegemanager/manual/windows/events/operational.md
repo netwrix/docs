@@ -13,7 +13,7 @@ Events in section are divided into the following categories:
 - Audit/Discovery events (Event ID 6200+)
 - Admin Approval events (Event ID 6300+)
 
-See the [List of PolicyPak Event Categories and IDs](/docs/policypak/gettingstarted/misc/knowledgebase/tipstricksandfaqs/eventcategories.md)
+See the [List of PolicyPak Event Categories and IDs](/docs/policypak/misc/knowledgebase/tipstricksandfaqs/eventcategories.md)
 topic for all event IDs.
 
 Each event ID will have the following fields:

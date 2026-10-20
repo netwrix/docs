@@ -7,7 +7,7 @@ sidebar_position: 20
 # Administration
 
 Netwrix Password Policy Enforcer helps you to secure your network by ensuring that users choose
-strong passwords. When a user chooses a password that does not comply with the password policy,
+strong passwords. When a user chooses a password that doesn't comply with the password policy,
 Password Policy Enforcer immediately rejects the password and tells them why their password was
 rejected.
 

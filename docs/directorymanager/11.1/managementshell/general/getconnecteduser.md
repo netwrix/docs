@@ -31,7 +31,7 @@ Get-ConnectedUser
 Example 1:
 
 The example displays the logon name of the connected user, account locked information, identity
-store name, role name(s), and ObjectGuid.
+store name, role names, and ObjectGuid.
 
 ```
 Get-ConnectedUser

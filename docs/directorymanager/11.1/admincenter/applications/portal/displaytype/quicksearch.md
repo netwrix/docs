@@ -27,7 +27,7 @@ the search string.
    values will be matched when portal users perform a search using the quick search box.  
    Click **Add** to add an attribute to this list.
 6. On the **Add Search Attribute** dialog box, select a schema attribute in the **Attribute**
-   drop-down list and click **OK**.  
+   dropdown list and click **OK**.  
    The attribute is displayed in the **Name** column on the **Quick Search Attributes** tab.  
    To remove an attribute, click **Remove** for it.
 7. Click **Save**.
@@ -41,7 +41,7 @@ the search string.
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Search Forms** in the left pane. Then click the **Quick Search Attributes** tab.
-5. In the **Quick Search Operator** drop-down list, select an option.
+5. In the **Quick Search Operator** dropdown list, select an option.
 
     - **Equal** - looks up the values of the attributes listed in the _Name_ column and returns
       records with values that exactly match the search string.
@@ -63,8 +63,8 @@ the search string.
    All identity stores linked with the portal are listed under **Design Settings**. You can design a
    different portal for each of these.
 4. Click **Search Forms** in the left pane. Then click the **Quick Search Attributes** tab.
-5. You can specify the object type(s) to be searched when users perform a search using the quick
+5. You can specify the object types to be searched when users perform a search using the quick
    search function in the portal.  
-   Select any or all three **User**, **Group**, and **Contact** check boxes next to **Quick Search
+   Select any or all three **User**, **Group**, and **Contact** checkboxes next to **Quick Search
    Objects** to make that object type searchable in quick search.
 6. Click **Save**.

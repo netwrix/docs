@@ -1,4 +1,4 @@
-﻿---
+---
 title: "For Resource Update (No Record)"
 description: "For Resource Update (No Record)"
 sidebar_position: 30
@@ -49,7 +49,7 @@ A `WorkflowEditEntityForm` requires one child element `MainControl` that defines
 </WorkflowEditEntityForm>
 ```
 
-![UI Form](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-resource/howto_resourceupdateno_form_v603.webp)
+![UI Form](/images/identitymanager/howto_resourceupdateno_form_v603.webp)
 
 ### Add a summary (Optional)
 
@@ -61,7 +61,7 @@ Another child element `SummaryControl` can be added to insert a summary part, i.
 </WorkflowEditEntityForm>
 ```
 
-![UI Summary](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-resource/howto_resourceupdateno_summary_v603.webp)
+![UI Summary](/images/identitymanager/howto_resourceupdateno_summary_v603.webp)
 
 ## Assign the Right Permissions
 
@@ -79,7 +79,7 @@ Below is an example of an access control rule where the `Administrator` profile 
 
 Updating an existing resource, this workflow manages one given resource at a time. Hence an interesting location for this workflow could be the individual view page of users.
 
-![Workflow Menu Items - User's Page](/images/identitymanager/integration-guide/workflows/how-to/workflow-update-mono/menuitems_userview_v603.webp)
+![Workflow Menu Items - User's Page](/images/identitymanager/menuitems_userview_v603.webp)
 
 To create a menu item here for the new workflow, you can add the following XML configuration to the existing menu items list:
 

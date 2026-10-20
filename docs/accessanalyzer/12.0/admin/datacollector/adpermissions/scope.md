@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # ADPermissions: Scope
 
-The Scope page is where the scope for the Active Directory permissions scan is configured. It is a
+Use the Scope page to configure the scope for the Active Directory permissions scan. It is a
 wizard page for the categories of:
 
 - Scan Active Directory Permissions

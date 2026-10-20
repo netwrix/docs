@@ -1,6 +1,6 @@
 ---
 title: Netwrix Identity Manager Sales Professional
-sidebar_position: 1170
+sidebar_position: 1110
 tags: [certification, partners, sales, identity-manager]
 keywords: [training, course, certification, partners, sales, identity manager]
 description: "Become a certified Sales Professional for Netwrix Identity Manager"
