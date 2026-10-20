@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Product
 
-**Platform Governance for Salesforce** (formerly Strongpoint) is a Salesforce managed package that auto-documents customizations and enforces change management and compliance workflows. It is a single-version SaaS product (`version: "current"`), so all edits apply to the one live version.
+**Strongpoint** (formerly Platform Governance for Salesforce) is a Salesforce managed package that auto-documents customizations and enforces change management and compliance workflows. It is a single-version SaaS product (`version: "current"`), so all edits apply to the one live version.
 
-The legacy product name "Strongpoint" still appears in some directory names (`installingstrongpoint/`), internal Salesforce UI labels (e.g., "Strongpoint DLU Parameter", "Strongpoint Home Page"), and older content. When writing or editing docs, use "Platform Governance for Salesforce" — not "Strongpoint" — except when referring to a specific UI element that literally says "Strongpoint."
+The product was rebranded from "Platform Governance for Salesforce" back to "Strongpoint." Directory names (`installingstrongpoint/`) and internal Salesforce UI labels (e.g., "Strongpoint DLU Parameter", "Strongpoint Home Page") already used the "Strongpoint" name. When writing or editing docs, use "Strongpoint" going forward. Older content still referencing "Platform Governance for Salesforce" hasn't been fully migrated yet — update it to "Strongpoint" when you touch a page for another reason, but a repo-wide rename is a separate, deliberate effort.
 
 The app is accessed in Salesforce via **App Launcher > Netwrix Lightning**.
 

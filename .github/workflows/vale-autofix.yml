@@ -38,6 +38,17 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Set up Node.js
+        if: steps.scripts-changed.outputs.changed == 'true'
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22.x'
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.scripts-changed.outputs.changed == 'true'
+        run: npm ci --ignore-scripts
+
       - name: Test anchor/slugify scripts
         if: steps.scripts-changed.outputs.changed == 'true'
         run: npm run test:scripts
@@ -104,13 +115,16 @@ jobs:
             echo "$CHANGED_MD_FILES" > /tmp/changed-files.txt
           fi
 
+      # Same Vale version the local git hooks use (.config/mise.toml).
       - name: Install Vale
         if: steps.changed-files.outputs.count > 0
-        run: |
-          wget -q https://github.com/errata-ai/vale/releases/download/v3.9.5/vale_3.9.5_Linux_64-bit.tar.gz -O /tmp/vale.tar.gz
-          tar -xzf /tmp/vale.tar.gz -C /tmp
-          chmod +x /tmp/vale
-          /tmp/vale --version
+        uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
+        with:
+          install_args: vale
+
+      - name: Show Vale version
+        if: steps.changed-files.outputs.count > 0
+        run: vale --version
 
       - name: Run Vale on changed files
         id: vale-initial
@@ -120,7 +134,7 @@ jobs:
 
           while IFS= read -r file; do
             if [ -f "$file" ]; then
-              RESULT=$(/tmp/vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
+              RESULT=$(vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
               if [ -n "$RESULT" ] && [ "$RESULT" != "{}" ]; then
                 echo "$RESULT" | jq --arg f "$file" '
                   [to_entries[] | .value[] | {path: $f, line: .Line, check: .Check, message: .Message}]
@@ -154,7 +168,7 @@ jobs:
 
           while IFS= read -r file; do
             if [ -f "$file" ]; then
-              RESULT=$(/tmp/vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
+              RESULT=$(vale --output JSON "$file" 2>>/tmp/vale-stderr.log || true)
               if [ -n "$RESULT" ] && [ "$RESULT" != "{}" ]; then
                 echo "$RESULT" | jq --arg f "$file" '
                   [to_entries[] | .value[] | {path: $f, line: .Line, check: .Check, message: .Message}]
@@ -173,7 +187,7 @@ jobs:
         id: phase2
         if: steps.vale-remaining.outputs.remaining > 0
         continue-on-error: true
-        uses: anthropics/claude-code-action@9c5ddab2e6d17b83ea679153b31f1d5f023cf636 # v1
+        uses: anthropics/claude-code-action@1d6de8cb0c237e7c15e9e1bdf973826ebae490cc # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -219,7 +233,7 @@ jobs:
         id: phase3
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
         continue-on-error: true
-        uses: anthropics/claude-code-action@9c5ddab2e6d17b83ea679153b31f1d5f023cf636 # v1
+        uses: anthropics/claude-code-action@1d6de8cb0c237e7c15e9e1bdf973826ebae490cc # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

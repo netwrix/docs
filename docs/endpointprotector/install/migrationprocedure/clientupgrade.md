@@ -48,6 +48,13 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 | 5.9.4.3 Hotfix 1 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
 | 2511 and newer (including 2608) | Netwrix only | The server can't push these to 5.9.4.1 clients directly |
 
+Older Endpoint Protector releases identified client versions by a single release version number (for example, **5.9.4.3 Hotfix 1**) across documentation, but each platform's installed package uses its own internal build number. When checking an endpoint's installed client version, use the following table to confirm which release it corresponds to:
+
+| Release Version | Windows Client Build | macOS Client Build | Linux Client Build |
+|---|---|---|---|
+| 5.9.4.1 and older | 6.2.4.xxxx and older | 3.0.4.xxxx and older | 2.4.4.xxxx and older |
+| 5.9.4.3 Hotfix 1 | 6.2.5.3000 | 3.0.5.3000 | 2.4.5.1002 |
+
 This certificate bridge applies to any endpoint **still running** an old CoSoSys-signed client (5.9.4.1 or older). If all your endpoints are already on 5.9.4.3 Hotfix 1 or later, you can skip the rest of this section.
 
 Clients on 5.9.4.1 or older **can't** upgrade directly to 2608. They must first upgrade to **5.9.4.3 Hotfix 1** (which trusts both signature types), then proceed directly to 2608:
@@ -114,7 +121,7 @@ Starting with the Windows 2608 client, Endpoint Protector uses a custom bundled 
 
 ## Obsolete OS Limitations
 
-As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), the latest EPP Client versions don't support obsolete and discontinued operating systems. If you must continue using the EPP Client on an unsupported operating system, use the last available Client version compatible with that operating system. While such Client versions may retain the ability to communicate with the EPP Server, the standard support agreement no longer covers them. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Netwrix provides support in such cases on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
+As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), the latest EPP Client versions don't support obsolete and discontinued operating systems. If you must continue using the EPP Client on an unsupported operating system, use the last available Client version compatible with that operating system. While such Client versions may retain the ability to communicate with the EPP Server, the standard support agreement no longer covers them. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Netwrix provides support in such cases on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000). Maintaining communication between such legacy clients and the latest EPP Server version might require enabling obsolete communication ciphers in the server's configuration. Contact Netwrix Support before making this change.
 
 ## Deploying Client Upgrades
 

@@ -37,7 +37,7 @@ The table lists the cards in the order they appear, top to bottom and left to ri
 | Card | What it shows | How to read it |
 |---|---|---|
 | **Total Data Repositories** | The number of file shares plus SharePoint Online site collections your scans have covered | The breadth of coverage; if you expect 40 shares and see 12, you haven't scanned some sources yet |
-| **Total Objects Scanned** | The number of objects collected from file servers and SharePoint Online | Rises with each newly scanned source |
+| **Total Objects Scanned** | The number of shares, folders, and files on file servers, plus site collections, sites, document libraries, folders, and files in SharePoint Online, in the latest inventory | Counts each object once, however many runs read it; see [Objects and identities](../../key-concepts.md#objects-and-identities). Rises with each newly scanned source |
 | **Sensitive Data Findings** | The total number of pattern matches across both source types | Zero until a Sensitive data scan has run; a single file can contribute several matches |
 | **Permissions Analyzed** | The number of permission entries collected | A rough measure of how much data the permission reports draw on |
 | **Objects by Data Source** | A bar chart comparing object counts for File Servers and SharePoint Online | Shows where the bulk of your data sits |

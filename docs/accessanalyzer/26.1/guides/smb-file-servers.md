@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Connect one SMB file server to Access Analyzer and run the two scans that matter for file data: an Access scan that inventories shares, folders, and permissions, and a Sensitive data scan that classifies the files the Access scan found. At the end you'll have data in the Data security dashboard and the File system reports.
 
-In the UI the source type is called **File Server**. It covers Windows file servers, NetApp, Dell PowerScale (formerly Isilon), and Nutanix Files over SMB 2 or SMB 3.
+The UI calls the source type **File Server**. It covers Windows file servers, NetApp, Dell PowerScale (formerly Isilon), and Nutanix Files over SMB 2 or SMB 3.
 
 ## Before You Start
 
@@ -96,7 +96,7 @@ Go to **Configuration > Scan executions** and find the row for your scan. The li
 
 ![Scan executions list showing a completed File Server Access scan](/images/accessanalyzer/26.1/scans/executions-list.webp)
 
-The status moves from **Pending** to **Running** and ends at **Completed**, **Completed with errors**, or **Failed**. The **Objects** and **Duration** columns fill in as the scan works. To follow along, open the row's actions menu and click **View logs**: the **Overview** tab shows milestones such as when the scan started and how long it took, and the **Detailed logs** tab shows every message.
+The status moves from **Pending** to **Running** and ends at **Completed**, **Completed with errors**, or **Failed**. The **Progress** and **Duration** columns fill in as the scan works. To follow along, open the row's actions menu and click **View logs**: the **Overview** tab shows milestones such as when the scan started and how long it took, and the **Detailed logs** tab shows every message.
 
 ![Execution logs dialog on the Overview tab](/images/accessanalyzer/26.1/scans/execution-logs-overview.webp)
 
@@ -122,7 +122,7 @@ After the Access scan shows **Completed**, create the second scan. It classifies
 
 :::note
 
-On a fresh install no pattern group is marked **Scanned by default**. A scan that inherits the global configuration with no groups enabled, or that has no groups selected, classifies against every pattern group, built-in and custom. Select groups when you want the findings limited to the categories you care about.
+On a fresh install no pattern group carries **Scanned by default**. A scan that inherits the global configuration with no groups enabled, or that has no groups selected, classifies against every pattern group, built-in and custom. Select groups when you want the findings limited to the categories you care about.
 
 :::
 
@@ -142,7 +142,7 @@ Dashboards and reports don't refresh on their own. Open one and click **Refresh*
 |--------|-------|---------------|
 | **Open Access** | Access scan | Shares that Everyone or Domain Users can reach without restriction |
 | **High Risk ACLs** | Access scan | Shares and folders with overly permissive ACLs |
-| **Broken Inheritance** | Access scan | Folders where inheritance is broken and explicit permissions are applied |
+| **Broken Inheritance** | Access scan | Folders with broken inheritance and explicit permissions |
 | **Share Audit** | Access scan | Effective permissions on one share; select a **Share** in the filters first |
 | **Sensitive Data Overview** | Sensitive data scan | Findings across the scanned locations, filtered by host, share, pattern group, or pattern |
 

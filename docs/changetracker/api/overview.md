@@ -6,11 +6,13 @@ sidebar_position: 20
 
 # API
 
-Netwrix Change Tracker provides a comprehensive REST API that customers can use to integrate with the platform programmatically. This is particularly useful for customers who run multiple instances of Netwrix Change Tracker in multiple regions, as they can use the API to pull data from each instance and build global reports.
+Netwrix Change Tracker provides a comprehensive REST API that customers can use to integrate with the platform programmatically. Customers who run multiple instances of Netwrix Change Tracker across regions can use the API to pull data from each instance and build global reports.
 
 ## Authentication
 
-All API endpoints require authentication. See [Authentication](/docs/changetracker/api/authentication.md) for an example script.
+All API endpoints require authentication. See [Authentication](/docs/changetracker/api/authentication.md)
+for a credentials-based example, or [API Keys](/docs/changetracker/api/api-keys.md) for
+automation that shouldn't disturb an active UI session.
 
 ## API Reference
 
@@ -34,7 +36,7 @@ When working with the Change Tracker API, consider the following best practices:
 
 1. **Rate Limiting**: Implement appropriate rate limiting in your applications to avoid overwhelming the API.
 
-2. **Error Handling**: Always implement proper error handling in your code to gracefully handle API errors.
+2. **Error Handling**: Always include error handling in your code so it responds to API errors gracefully.
 
 3. **Authentication**: Store API credentials securely and never expose them in client-side code.
 
@@ -44,11 +46,14 @@ When working with the Change Tracker API, consider the following best practices:
 
 ## Example Usage
 
-The following example shows how to use the API with PowerShell:
+The following example shows how to use the API with PowerShell, authenticating with an API
+key as a Bearer token rather than `/auth/credentials` — a credentials login signs the account
+out of any other active session, while an API key doesn't. See [API Keys](/docs/changetracker/api/api-keys.md)
+for how to create one; this example assumes you already have one in the `API_KEY`
+environment variable.
 
 ```powershell
-# Set up a session variable for the Admin user
-$myWebSession = GetAdminUserSession
+$apiKey = $env:API_KEY
 
 # Define the API endpoint
 $uri = "https://changetracker.example.com/api/agentsRanked"
@@ -66,8 +71,9 @@ $requestBody = @{
     GetRelatedTemplates = $true
 } | ConvertTo-Json
 
-# Make the API request
-$result = Invoke-RestMethod -Method Post -ContentType application/json -Uri $uri -WebSession $myWebSession -Body $requestBody
+# Make the API request using the key as a Bearer token
+$result = Invoke-RestMethod -Method Post -ContentType application/json -Uri $uri `
+    -Headers @{ Authorization = "Bearer $apiKey" } -Body $requestBody
 ```
 
 See the [Available Endpoints](#available-endpoints) section for documentation pages covering each API endpoint.
