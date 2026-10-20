@@ -36,8 +36,20 @@ Only software obtained from the sources detailed here is authentic.
 
 Netwrix uses industry-standard code signing technologies to provide evidence of the authenticity and integrity of the software we publish. The following certificates are used:
 
-- Windows binaries are signed with a code signing certificate issued to "Netwrix Corporation" with extended validation by Digicert. The certificate fingerprint is `1209C367CE3469CBF559C20AA2B930BA9FB79235`.
+- Windows binaries are signed with a code signing certificate issued to "Netwrix Corporation" with extended validation by Digicert. The current certificate fingerprint is `2B50F15103B002DFA3809C84A8394B3E023D7269`. The certificate is renewed annually. For Netwrix Windows binaries signed with an earlier certificate, see [Previous Windows Code Signing Certificates](#previous-windows-code-signing-certificates).
 - Linux and UNIX packages (RPM, deb, etc.) are signed with the "Netwrix Corporation (PGP Signing Key) productsecurity@netwrix.com" PGP key. The public key fingerprint is `3F5EB22771A2BD66D1AA011A43E7B9B0AE7B49D8` and can be obtained at https://releases.netwrix.com/netwrixcorporation-pgp-signing.asc.
+
+### Previous Windows Code Signing Certificates
+
+Each renewal of the Windows code signing certificate produces a new fingerprint. Software signed before a renewal continues to show the fingerprint of the certificate that was valid when it was signed. Use the following table to match the fingerprint of the signature on your file to the certificate that was valid at signing time.
+
+| Valid From | Valid Until | Certificate Fingerprint |
+|---|---|---|
+| October 24, 2025 | October 27, 2026 | `1209C367CE3469CBF559C20AA2B930BA9FB79235` |
+| October 18, 2024 | October 25, 2025 | `80E18E3389CE740D3F124CC45D5CF83A55FD472A` |
+| October 16, 2023 | October 22, 2024 | `BD6F08224A0E66CED5DEA63AB7CC1C89CB7355D7` |
+
+> **NOTE:** A signature made while its certificate was valid remains trustworthy after that certificate expires, because every Netwrix signed binary carries a trusted timestamp proving when it was signed.
 
 ## Verifying Software Integrity
 
