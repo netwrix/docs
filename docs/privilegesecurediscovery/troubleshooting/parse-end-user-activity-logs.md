@@ -103,7 +103,7 @@ tail -f <api-log-file> | grep -i "Successfully added user"
 
 ## Find a denied access request
 
-When a user requests access to a system that the user isn't permitted to access, the UI shows a 403 Forbidden error.
+When a user requests access to a system that the user has no permission to access, the UI shows a 403 Forbidden error.
 
 ![Forbidden error that states the user doesn't have access to this resource](/images/privilegesecure/4.2/discovery/admin/reporting/1500000515721_mceclip2.webp)
 

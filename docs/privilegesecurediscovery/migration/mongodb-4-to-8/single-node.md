@@ -85,7 +85,7 @@ A `FAIL` message identifies the failed condition, and the command exits without 
    [5/5] Verifying migration...
    ```
 
-   Large collections report document counters as they are processed. A copy that takes hours doesn't indicate a problem. The initial `run` has no confirmation prompt.
+   Large collections report document counters during processing. A copy that takes hours doesn't indicate a problem. The initial `run` has no confirmation prompt.
 
 2. To monitor a long copy without keeping a terminal open, you can start `run` with `nohup`, then monitor it with `status` and the log:
 

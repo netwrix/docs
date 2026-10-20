@@ -33,7 +33,7 @@ Use the `s1 db` command to open a shell on the database that Netwrix Privilege S
 
    For a custom stack name, place `--stack <stack-name>` before `db`.
 
-The shell opens on the `SecureONE` database. To run a JavaScript file, add `--file <filename>`. The file must be mounted in the container under `/data/db`.
+The shell opens on the `SecureONE` database. To run a JavaScript file, add `--file <filename>`. Mount the file in the container under `/data/db`.
 
 To check the database state without opening a shell, run `s1 database-status`. The output shows the active database service and the live MongoDB version. For a cluster, it also lists the replica-set members.
 

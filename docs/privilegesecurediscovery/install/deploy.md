@@ -80,7 +80,7 @@ The setup script creates the `/secureone/` directory to store the deployment con
 
 ## Run the deployment script
 
-All deployment operations use `secureone.sh`. Run the script as root with `sudo -E` so that your environment variables, including the registry credentials you configured earlier, are preserved.
+All deployment operations use `secureone.sh`. Run the script as root with `sudo -E` so that the script keeps your environment variables, including the registry credentials you configured earlier.
 
 ### Deploy a single node
 
@@ -114,7 +114,7 @@ If the `s1` installation fails, for example because the registry login expired, 
    ```
 
 2. Follow the prompts. The script initializes the swarm, deploys the stack, and prints the exact command to run on each secondary node.
-3. Run the command that the primary node printed on each secondary node. The command has the following form:
+3. On each secondary node, run the command that the primary node printed. The command has the following form:
 
    ```bash
    sudo -E bash secureone.sh setup --cluster --join-token <token>@<host>:<port> --version <version>

@@ -4,7 +4,7 @@ description: "Find installation, configuration, administration, and integration 
 sidebar_position: 1
 ---
 
-Netwrix Privilege Secure for Discovery (formerly Remediant SecureONE) discovers privileged accounts across Windows and Linux systems and lets administrators manage them from a single interface. Users request just-in-time access to the systems they need, for as long as they need it, so standing privileges are removed and the attack surface shrinks. The product is for IT administrators and security analysts who want continuous visibility into privileged access and a way to reduce it.
+Netwrix Privilege Secure for Discovery (formerly Remediant SecureONE) discovers privileged accounts across Windows and Linux systems and lets administrators manage them from a single interface. Users request just-in-time access to the systems they need, for as long as they need it, so standing privileges disappear and the attack surface shrinks. The product is for IT administrators and security analysts who want continuous visibility into privileged access and a way to reduce it.
 
 Privilege Secure for Discovery runs as a set of containers on Ubuntu Server 24.04 LTS, on a single node or a three-node cluster. Container-based deployment is the recommended installation method. New installations use MongoDB 8.0.
 

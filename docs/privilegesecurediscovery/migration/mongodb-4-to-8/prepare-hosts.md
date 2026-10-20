@@ -83,7 +83,7 @@ Confirm each item before you continue:
 1. The application runs 26.09.1 and the Docker Swarm and all services are healthy.
 2. Every database node reports the same `s1` version.
 3. An independent backup exists and is restorable. See [Plan the MongoDB migration](./plan.md).
-4. Storage capacity is confirmed.
+4. You confirmed the storage capacity.
 5. Long-running jobs can finish before cutover.
 6. The operator can manage Docker Swarm services on a manager node.
 

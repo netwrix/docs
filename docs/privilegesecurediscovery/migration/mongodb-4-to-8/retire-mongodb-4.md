@@ -20,7 +20,7 @@ The `retire` command never deletes the MongoDB 4.0 data. It renames that data as
 
 | Item | Single node | Three-node cluster |
 |------|-------------|--------------------|
-| Services | `<stack>_db` runs MongoDB 8.0 on the canonical data path. `<stack>_db8` is removed. | `<stack>_mongo1`, `<stack>_mongo2`, and `<stack>_mongo3` run MongoDB 8.0. The `-8` services are removed. |
+| Services | `<stack>_db` runs MongoDB 8.0 on the canonical data path. The command removes `<stack>_db8`. | `<stack>_mongo1`, `<stack>_mongo2`, and `<stack>_mongo3` run MongoDB 8.0. The command removes the `-8` services. |
 | Data path | MongoDB 8.0 data moves to `/secureone/data/db`. | The same, on each node, one member at a time. |
 | MongoDB 4.0 data | Renamed to `/secureone/data/db.mongo4.<timestamp>`. | Renamed beside the canonical path on each node. |
 | Replica set | Not applicable. | Stays `secureone8`. The tool renames hosts, not the replica set. |
