@@ -66,7 +66,7 @@ Each flag also has an environment variable (`CERT_MANAGER_ISSUER_MODE`, `ACME_EM
 The install proceeds exactly as [Install Access Analyzer](run-the-installer.md) describes. When the services are up, the cluster requests the certificate from Let's Encrypt; issuance typically completes within a minute or two. Browsers connecting during that window see the self-signed bootstrap certificate and show a trust warning — the warning stops when the Let's Encrypt certificate is in place.
 
 :::note
-The installer doesn't save the issuance mode to `/etc/dspm/installer.yaml`. Every installer run uses exactly the `--cert-manager-issuer-mode` you pass it; omitting the flag means manual certificates. Upgrading never changes the mode.
+The installer saves the issuance mode to `/etc/dspm/installer.yaml`. A later run that omits `--cert-manager-issuer-mode` uses the saved mode. Upgrading never changes the mode.
 :::
 
 ## Confirm the certificate
@@ -124,4 +124,4 @@ Let's Encrypt's **staging** environment (`https://acme-staging-v02.api.letsencry
 
 **From manual certificates to ACME** — re-run the installer with the `acme` flags. The new certificate replaces the existing one automatically at first issuance; you don't need any manual cleanup, and the web server loads it without a restart. If the previous setup used `--ca-bundle` and you're moving to public Let's Encrypt, also delete the `ca-bundle` line from `/etc/dspm/installer.yaml` so the installer doesn't reapply the old trust anchor.
 
-**From ACME back to manual certificates** — re-run the installer without `--cert-manager-issuer-mode` (or with `none`), supplying `--tls-cert`/`--tls-key` as usual, plus `--ca-bundle` if a private CA issued the certificate. From then on you rotate it yourself with [`update-cert`](rotate-the-tls-certificate.md).
+**From ACME back to manual certificates** — delete the `cert-manager-issuer-mode` line from `/etc/dspm/installer.yaml`, then re-run the installer without `--cert-manager-issuer-mode`, supplying `--tls-cert`/`--tls-key` as usual, plus `--ca-bundle` if a private CA issued the certificate. From then on you rotate it yourself with [`update-cert`](rotate-the-tls-certificate.md).
