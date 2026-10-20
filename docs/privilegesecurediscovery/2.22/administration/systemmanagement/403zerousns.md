@@ -10,12 +10,12 @@ sidebar_position: 40
 
 # 403 - Zero USNs by Domain
 
-Privilege Secure must point to a single Domain Controller (DC). This is because Privilege Secure
-uses the USN values from Active Directory to determine when a group changes. These do no
+Privilege Secure must point to a single Domain Controller (DC) because it
+uses the Update Sequence Number (USN) values from Active Directory to determine when a group changes. These do no
 propagate between DCs.
 
 When a DC is unavailable, you can connect to a new one using the Privilege Secure UI.
-However, when this occurs, if the USN number is lower, Privilege Secure will not be aware of changes
+However, if the new DC has a lower USN, Privilege Secure isn't aware of changes
 to groups. This will impact access from changed groups.
 
 ![image.webp](/images/privilegesecure/4.2/discovery/admin/systemmanagement/4405051526935_image_384x376.webp)
@@ -65,8 +65,8 @@ sudo /secureone/setup/zero_domain_usns.sh
 
 The Customer Success Team can assist with setting this up before use.
 
-Here is an example of a successful run against the CSTEST domain in one of the Customer Support
-labs:
+The following example shows a successful run against the CSTEST domain in a Customer Support
+lab:
 
 ```
 secureone@ip-10-100-11-40:~$ sudo /secureone/setup/zero_domain_usns.shDetected domain_netbios entries:1) CSTESTEnter number for domain to zero USNs: 1Current USN values for CSTESTdomain_netbios : CSTEST, highest_usn : 2405725, previous_usn : 2405725Zero USNs for CSTEST, are you sure?[ Y ] to continue, any other key to abort.y{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }domain_netbios : CSTEST, highest_usn : 0, previous_usn : 0Completed zeroing USNs for CSTESTsecureone@ip-10-100-11-40:~$
