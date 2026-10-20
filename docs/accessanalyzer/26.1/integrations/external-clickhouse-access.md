@@ -28,7 +28,7 @@ These ports are unencrypted. Credentials and query results cross the network in 
 
 Access Analyzer's bundled k3s cluster includes ServiceLB, its built-in load balancer. Use `LoadBalancer` with a list of allowed client address ranges in Classless Inter-Domain Routing (CIDR) notation. ServiceLB binds ports 9000 and 8123 on the server, so those ports must be free.
 
-`NodePort` has no access control in Access Analyzer, so restrict it with the server's firewall. Use it only if you disabled ServiceLB or ports 9000 and 8123 are already in use.
+`NodePort` has no access control in Access Analyzer, so restrict it with the server's firewall. Kubernetes opens the node ports on every node in the cluster, including agent hosts. The `NodePort` command in [Open the ports](#open-the-ports) sets `externalTrafficPolicy=Local`, so only the server, which runs the analytics store, answers on those ports. Use `NodePort` only if you disabled ServiceLB or ports 9000 and 8123 are already in use.
 
 A list of allowed address ranges works only with `LoadBalancer`. Setting it with `NodePort` fails.
 
@@ -51,6 +51,7 @@ A list of allowed address ranges works only with `LoadBalancer`. Setting it with
    sudo dspmctl set-helm-param netwrix \
      config.clickhouse.externalAccess.enabled=true \
      config.clickhouse.externalAccess.type=NodePort \
+     config.clickhouse.externalAccess.externalTrafficPolicy=Local \
      config.clickhouse.externalAccess.nodePorts.native=30900 \
      config.clickhouse.externalAccess.nodePorts.http=30823
    ```
@@ -111,7 +112,7 @@ Give external tools only this user. Don't share the analytics store's administra
   sudo dspmctl set-helm-param netwrix config.clickhouse.externalAccess.allocateLoadBalancerNodePorts=false
   ```
 
-- Access Analyzer runs one analytics store. With `NodePort`, connections reach it through any node in the cluster. To change how the cluster routes traffic, set `config.clickhouse.externalAccess.externalTrafficPolicy` to `Cluster` or `Local`.
+- With `NodePort` and no `externalTrafficPolicy=Local` line, every node in the cluster, including agent hosts, forwards connections on the node ports to the analytics store. The server's firewall doesn't protect agent hosts. If you opened `NodePort` access without that line, add it with `sudo dspmctl set-helm-param netwrix config.clickhouse.externalAccess.externalTrafficPolicy=Local`, then repeat steps 2 and 3 of [Open the ports](#open-the-ports). If you keep the default instead, block the node ports on every agent host's firewall too.
 
 ## Rotate the password
 
