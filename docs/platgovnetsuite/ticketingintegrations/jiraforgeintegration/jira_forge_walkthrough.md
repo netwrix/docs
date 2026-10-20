@@ -292,7 +292,7 @@ After completing this section, you can:
 
 ## Other Notable Features
 
-The following features are less common but equally important in the integration app.
+The integration app also includes the following less common features.
 
 1. **Add Bundle ID** — The **+** button beside the Affected Bundle ID field. Use it to add NetSuite bundle IDs to the change request. You can add one bundle ID at a time. To remove a bundle ID from the change request, contact a NetSuite Administrator.
 
@@ -306,7 +306,7 @@ The following features are less common but equally important in the integration 
 
     ![Jira Forge Push External Modal](/images/platgovnetsuite/integrations/jira_forge_push_external_modal.webp)
 
-3. **Settings** — The **Settings** dropdown button lets you switch the NetSuite account to connect to. When you click **Settings**, a **Change Account** option appears. When you click **Change Account**, the app disconnects the session and stops the connection to the NetSuite account. The connection form then appears so you can connect to another NetSuite account.
+3. **Settings** — The **Settings** dropdown button lets you switch the NetSuite account to connect to. When you click **Settings**, a **Change Account** option appears. When you click **Change Account**, the app disconnects the session from the NetSuite account. The connection form then appears so you can connect to another NetSuite account.
 
     ![Jira Forge Settings Button](/images/platgovnetsuite/integrations/jira_forge_settings_change_account.webp)
 
