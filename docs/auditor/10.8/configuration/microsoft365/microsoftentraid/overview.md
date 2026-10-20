@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -110,7 +110,7 @@ ServicePrincipals properties:
 
 | Data source                                                                                                                                                              | Data usage                                                                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Audit logs Collected via MS Graph on endpoint _/auditLogs/directoryaudits_                                                                                               | Activity Record: who, when and some event-based Activity Record                                                                                             |
+| Audit logs Collected via MS Graph on endpoint _/auditLogs/directoryaudits_                                                                                               | Activity Record: who, when, and some event-based Activity Record                                                                                             |
 | Sign-in logs Collected via MS Graph on endpoint _/auditLogs/signIns_                                                                                                     | Logon Activity Record                                                                                                                                       |
 | Users changes Collected via MS Graph on endpoint _/users/delta/…_                                                                                                        | Activity Record for users                                                                                                                                   |
 | Groups changes Collected via MS Graph on endpoint _/groups/delta/…_                                                                                                      | Activity Record for groups                                                                                                                                  |

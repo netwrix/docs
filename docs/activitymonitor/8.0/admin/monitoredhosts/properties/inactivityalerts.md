@@ -6,19 +6,19 @@ sidebar_position: 60
 
 # Inactivity Alerts Tab
 
-The Inactivity Alerts tab on a host's Properties window is used to configure alerts that are sent
+The Inactivity Alerts tab on a host's Properties window lets you configure alerts to send
 when monitored hosts receive no events for a specified period of time.
 
 ![inactivityalertstab](/images/activitymonitor/8.0/admin/monitoredhosts/properties/inactivityalertstab.webp)
 
 The configurable options are:
 
-- Customize inactivity alerting for this host. Otherwise, the agent's settings will be used – Check
+- Customize inactivity alerting for this host. Otherwise, the system uses the agent's settings – Check
   this box to enable customization of alert settings for Monitored Hosts
 - Enable inactivity alerting for this host – Check this box to enable inactivity alerts for host.
-- Length of inactivity – Specify how much time must pass before an inactivity alert is sent out. The
+- Length of inactivity – Specify how long the system waits before sending an inactivity alert. The
   default is **6 hours**.
-- Repeat an alert every – Specify how often an alert is sent out during periods of inactivity. The
+- Repeat an alert every – Specify how often the system sends an alert during periods of inactivity. The
   default is **6 hours**.
 
 ## Syslog Alerts Tab
@@ -29,7 +29,7 @@ Configure Syslog alerts using the Syslog Alerts Tab.
 
 The configurable options are:
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
 - Syslog protocol – Identify the Syslog protocol to be used for the alerts
 

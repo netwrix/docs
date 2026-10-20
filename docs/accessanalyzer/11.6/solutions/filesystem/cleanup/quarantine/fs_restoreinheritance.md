@@ -14,7 +14,7 @@ Navigate to the **FileSystem** > **Cleanup** > **3. Quarantine** > **FS_RestoreI
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -32,13 +32,13 @@ Navigate to the **FileSystem** > **Cleanup** > **3. Quarantine** > **FS_RestoreI
 **Configure** node and select **Actions** to view the action tasks.
 
 :::warning
-Do not enable the action unless it is required. Disable the action after execution to
+Don't enable the action unless it is required. Disable the action after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 :::
 
 
 :::warning
-Do not modify the action task. The action task is preconfigured for this job.
+Don't modify the action task. The action task is preconfigured for this job.
 :::
 
 

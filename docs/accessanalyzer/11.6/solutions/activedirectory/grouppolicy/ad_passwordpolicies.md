@@ -15,7 +15,7 @@ different password policies within a single domain.
 The AD_PasswordPolicies Job uses the LDAP Data Collector for the following query:
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 
@@ -36,7 +36,7 @@ Navigate to the **Active Directory** > **4.GroupPolicy** > **AD_PasswordPolicies
 node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -48,7 +48,7 @@ The default analysis tasks are:
 - Determine fine-grained password policy details – Creates the SA_AD_PasswordPolicies_Details table
   accessible under the job’s Results node
 
-In addition to the tables and views created by the analysis task, the AD_UserDelegation Job produces
+In addition to the tables and views created by the analysis task, the AD_PasswordPolicies Job produces
 the following pre-configured report:
 
 | Report                         | Description                                                                               | Default Tags | Report Elements                                                                                                             |

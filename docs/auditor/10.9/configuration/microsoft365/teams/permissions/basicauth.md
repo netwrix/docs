@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Using Basic Authentication with MS Teams
 
-With basic authentication, your MS Teams organization will be accessed on behalf of a user. You will
+With basic authentication, Auditor accesses your MS Teams organization on behalf of a user. You will
 need to provide user name and password in the monitored item properties. Auditor will use this
 account to access the Microsoft Entra ID (formerly Azure AD) organization, automatically create a
 Microsoft Entra ID app with required permissions, and perform initial data collection. For that, the
@@ -36,10 +36,7 @@ following approaches:
 
 **NOTE:** If you previously used a non-privileged account for Microsoft Entra ID data collection in
 your Netwrix Auditor, consider that after the upgrade you will have to perform the role assignment
-procedure again, selecting one of these approaches. Until then, data collection will not be
-performed.
-
-Follow the steps to assign a privileged role to the account.
+procedure again, selecting one of these approaches. Until then, Auditor doesn't collect data.
 
 **Step 1 –** Sign in to Microsoft Entra ID portal using your Microsoft account.
 
@@ -48,7 +45,7 @@ Follow the steps to assign a privileged role to the account.
 **Step 3 –** Select the account that you want to use as data collecting account, or create a new
 user.
 
-**Step 4 –** Make sure you have disabled multi-factor authentication for this account.
+**Step 4 –** ensure you have disabled multi-factor authentication for this account.
 
 **Step 5 –** Expand Directory role and select the role you need (for example, Global admin or any
 other privileged role).
@@ -67,7 +64,7 @@ account with this privileged role on the Specify the account for collecting data
 
 **Step 10 –** Assign a less-privileged role to this account.
 
-A less privileged role has now been assigned to the account.
+You have now assigned a less-privileged role to the account.
 
 See the [Permissions for Microsoft Entra ID Auditing](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/permissions/permissions.md) topic for
 additional information.

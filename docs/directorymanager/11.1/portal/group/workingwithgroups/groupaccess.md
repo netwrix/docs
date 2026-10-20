@@ -19,8 +19,7 @@ required.
 ## Changing the security type for a group
 
 1. In Directory Manager Portal, select **Groups**> [required group node].
-2. In the groups list, click the required group and select **Set Security Type** from the above
-   pane. Select any of the following:
+2. In the groups list, click the required group and select **Set Security Type**. Select any of the following:
 
     - Private
     - Semi-Private
@@ -31,8 +30,7 @@ required.
 ## Changing the security type for multiple groups
 
 1. In Directory Manager Portal, select **Groups > [required group node]**.
-2. In the groups list, select the required groups and select **Set Security Type** from the above
-   pane. Select any of the following:
+2. In the groups list, select the required groups and select **Set Security Type**. Select any of the following:
 
     - Private
     - Semi-Private

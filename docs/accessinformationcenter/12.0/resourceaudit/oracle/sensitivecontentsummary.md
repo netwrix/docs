@@ -11,7 +11,7 @@ criteria matches were found in the targeted environment. This report includes a 
 
 ![Sensitive Content Summary report at the Oracle node](/images/accessinformationcenter/12.0/resourceaudit/oracle/sensitivecontentsummary.webp)
 
-This report is comprised of the following columns:
+The following columns comprise this report:
 
 - Server Name – Oracle host name or cluster name
 - Criteria Name – Type of potentially sensitive criteria matches found

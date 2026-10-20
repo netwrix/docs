@@ -38,7 +38,7 @@ schedule it.
 
 **Targeted Hosts**
 
-The 0.Collection Job Group has been set to run against the following default dynamic host list:
+By default, the 0.Collection Job Group runs against the following dynamic host list:
 
 - All targeted Azure SQL Tenants
 

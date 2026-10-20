@@ -19,7 +19,7 @@ inbound connections to local 139 TCP port.
 
 | Port                       | Protocol | Source                                                                         | Target                 | Purpose                                                                                                             |
 | -------------------------- | -------- | ------------------------------------------------------------------------------ | ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| 139 445                    | TCP      | Netwrix Auditor Server                                                         | Monitored computer     | Service Control Manager Remote Protocol (RPC) Remote registry                                                       |
+| 139, 445                   | TCP      | Netwrix Auditor Server                                                         | Monitored computer     | Service Control Manager Remote Protocol (RPC) Remote registry                                                       |
 | 135 + Dynamic: 1024 -65535 | TCP      | Netwrix Auditor Server                                                         | Monitored computer     | Windows Management Instrumentation Collect objects                                                                  |
 | 135 + Dynamic: 1024 -65535 | TCP      | Netwrix Auditor Server                                                         | Monitored computer     | Collect removable storage insertions. Allow the following process to use the port: %systemroot%\system32\plasrv.exe |
 | 135                        | TCP      | Netwrix Auditor Server                                                         | Monitored computer     | Service Control Manager Remote Protocol (RPC) Core Service installation                                             |
@@ -63,7 +63,7 @@ left.
 - Performance Logs and Alerts (Tcp-In)
 
 If you plan to audit Windows Server 2019 or Windows 10 Update 1803 without network compression
-service, make sure the following inbound connection rules are enabled:
+service, ensure the following inbound connection rules are enabled:
 
 - Remote Scheduled Tasks Management (RPC)
 - Remote Scheduled Tasks Management (RPC-EMAP)

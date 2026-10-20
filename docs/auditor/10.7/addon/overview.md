@@ -7,8 +7,8 @@ sidebar_position: 80
 # Add-Ons
 
 The [Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) contains free
-add-ons developed by Netwrix and your peers in the community. The add-ons help you leverage
-integration between your on-premises or cloud applications and Netwrix Auditor.
+add-ons developed by Netwrix and your peers in the community. The add-ons help you integrate
+your on-premises or cloud applications with Netwrix Auditor.
 
 The list of available add-ons keeps growing because with the new RESTful API, the integration
 capabilities of Netwrix Auditor are unlimited. Netwrix encourages users to develop add-ons, upload
@@ -17,7 +17,7 @@ them to Netwrix website, and share with community.
 Benefits:
 
 - Centralize auditing and reporting of your IT environment — Netwrix unifies auditing of all IT
-  systems across your on-premises, cloud or hybrid environment, and enables centralized reporting
+  systems across your on-premises, cloud, or hybrid environment, and enables centralized reporting
   for security and compliance.
 - Get the most from your SIEM investment — To maximize SIEM value, Netwrix increases the
   signal-to-noise ratio and feeds your HP ArcSight, Splunk, IBM QRadar or any other SIEM solution
@@ -52,10 +52,8 @@ Before your start working with the add-on, go through its quick-start guide at
 Each guide contains detailed instructions for deploying and running the add-on, as well as
 prerequisites and configuration settings. Generic steps are described below.
 
-Follow the steps to use the add-on.
-
 **Step 1 –** Check prerequisites. Since the add-ons work only in combination with Netwrix Auditor,
-make sure that Netwrix Auidtor and its Audit Database are configured, and roles are assigned
+Ensure that Netwrix Auidtor and its Audit Database are configured, and roles are assigned
 properly.
 
 **Step 2 –** Specify parameters required for add-on operation. Before running or scheduling the

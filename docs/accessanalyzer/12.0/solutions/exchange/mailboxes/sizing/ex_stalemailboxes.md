@@ -14,7 +14,7 @@ View the analysis tasks by navigating to the **Exchange** > **4. Mailboxes** > *
 **EX_StaleMailboxes** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -35,5 +35,5 @@ produces the following pre-configured reports:
 
 | Report                                                    | Description                                                                                                           | Default Tags | Report Elements                                                                                                                                                                                                                   |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Orphaned Mailboxes                                        | Orphaned Mailboxes do not have an Active Directory account associated with them, and generally can be safely deleted. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays orphan mailbox storage</li><li>Table – Provides details on all orphaned mailboxes</li><li>Table – Provides details on orphan mailbox storage</li></ul>   |
+| Orphaned Mailboxes                                        | Orphaned Mailboxes don't have an Active Directory account associated with them, and generally can be safely deleted. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays orphan mailbox storage</li><li>Table – Provides details on all orphaned mailboxes</li><li>Table – Provides details on orphan mailbox storage</li></ul>   |
 | Stale Users (Mailboxes associated with Stale AD Accounts) | This report shows mailboxes which are tied to stale user accounts.                                                    | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays stale user mailboxes</li><li>Table – Provides details stale user mailboxes</li><li>Table – Provides additional details on stale user mailboxes</li></ul> |

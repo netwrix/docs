@@ -8,15 +8,14 @@ sidebar_position: 160
 
 Sensitive Content reports are accessed through the Content Audit interface. You can access Sensitive
 Content reports by searching for sensitive data criterion or values on the Home page. These searches
-must be preceded by `SDD` and a space, for example `SDD credit cards`. Searches are not case
+must be preceded by `SDD` (Sensitive Data Discovery) and a space, for example `SDD credit cards`. Searches aren't case
 sensitive. See the [Search Features](/docs/accessinformationcenter/12.0/resourceaudit/navigate/search.md) topic for additional information. The
-sensitive data being reviewed is identified in the upper-left corner. The data within these reports
-is collected by the Access Analyzer solutions which provide data to the Resource reports. See the
+sensitive data being reviewed is identified in the upper-left corner. Access Analyzer solutions collect the data within these reports and provide it to the Resource reports. See the
 desired solution topic in the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 
-In order to view populated Content reports, it is necessary to enable the **Store discovered
+To view populated Content reports, enable the **Store discovered
 sensitive data** option within Access Analyzer. This is a setting configured within the solutions’
 collection query:
 

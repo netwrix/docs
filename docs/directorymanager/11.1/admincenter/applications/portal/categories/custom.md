@@ -11,8 +11,8 @@ template. To customize the portal, you can use the predefined custom display typ
 new ones.
 
 - [Text Box Display Type](/docs/directorymanager/11.1/admincenter/applications/portal/categories/textbox.md)
-- [Drop-down List Display Type](/docs/directorymanager/11.1/admincenter/applications/portal/categories/dropdownlist.md)
-- [Linked Field Drop-down List Display Type](/docs/directorymanager/11.1/admincenter/applications/portal/categories/linkeddropdown.md)
+- [Dropdown List Display Type](/docs/directorymanager/11.1/admincenter/applications/portal/categories/dropdownlist.md)
+- [Linked Field Dropdown List Display Type](/docs/directorymanager/11.1/admincenter/applications/portal/categories/linkeddropdown.md)
 - [Image Display Type](/docs/directorymanager/11.1/admincenter/applications/portal/categories/image.md)
 - [Grid Display Type](/docs/directorymanager/11.1/admincenter/applications/portal/categories/grid.md)
 - [Radio Button Display Type](/docs/directorymanager/11.1/admincenter/applications/portal/categories/radio.md)
@@ -33,7 +33,7 @@ value for the linked attribute.
 You can delete custom display types, including linked combos.
 
 :::note
-You cannot delete a custom display type that has been linked to a field in the portal.
+You can't delete a custom display type that has been linked to a field in the portal.
 :::
 
 

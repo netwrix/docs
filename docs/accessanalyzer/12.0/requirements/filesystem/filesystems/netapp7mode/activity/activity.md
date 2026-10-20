@@ -6,30 +6,30 @@ sidebar_position: 20
 
 # NetApp Data ONTAP 7-Mode Activity Auditing Configuration
 
-The Activity Monitor agent employed to monitor NetApp leverages 128-bit encrypted Remote Procedure
+The Activity Monitor agent employed to monitor NetApp uses 128-bit encrypted Remote Procedure
 Calls (RPC), NetApp ONTAP-API, and NetApp FPolicy to monitor file system events. This includes both
-NetApp 7-Mode and Cluster-Mode configurations. To learn more about FPolicy please visit the NetApp
+NetApp 7-Mode and Cluster-Mode configurations. For more information about FPolicy, visit the NetApp
 website and read the
 [What FPolicy is](https://library.netapp.com/ecmdocs/ECMP1401220/html/GUID-54FE1A84-6CF0-447E-9AAE-F43B61CA2138.html)
 article.
 
-If the activity agent is stopped, a notification will be sent to the NetApp device to disconnect and
-disable the associated FPolicy policy, but it will not be removed.
+If the activity agent stops, it sends a notification to the NetApp device to disconnect and
+disable the associated FPolicy policy, but it doesn't remove the policy.
 
-If the network connection is lost between the activity agent and the NetApp device, the NetApp
-device is configured with a default timeout to wait for a response. If a response is not received
-from the Activity Agent within the timeout, then the NetApp device will disconnect and disable the
-FPolicy policy. The Activity Agent will check every minute by default to see if the FPolicy policy
-has been disabled and will enable it (if the auto-enable functionality is enabled for the agent).
-The default setting to check every minute is configurable.
+If the network connection between the activity agent and the NetApp device drops, the NetApp
+device waits for a response for a default timeout period. If the NetApp device doesn't receive a
+response from the Activity Agent within the timeout, it disconnects and disables the
+FPolicy policy. By default, the Activity Agent checks every minute to see if the FPolicy policy
+is disabled and re-enables it (if the auto-enable functionality is enabled for the agent).
+The default check interval of one minute is configurable.
 
-The NetApp FPolicy uses a “push” mechanism such that notification will only be sent to the activity
-agent when a transaction occurs. Daily activity log files are created only if activity is performed.
-No activity log file will be created if there is no activity for the day.
+The NetApp FPolicy uses a “push” mechanism, so it sends a notification to the activity
+agent only when a transaction occurs. The Activity Agent creates daily activity log files
+only when activity occurs. It doesn't create an activity log file for a day with no activity.
 
 **Configuration Checklist**
 
-Complete the following checklist prior to configuring activity monitoring of NetApp Data ONTAP
+Complete the following checklist before configuring activity monitoring of NetApp Data ONTAP
 7-Mode devices. Instructions for each item of the checklist are detailed within the following
 topics.
 
@@ -37,7 +37,7 @@ topics.
 
 - Gather the following information:
     - Names of the vFiler™(s) to be monitored
-    - DNS name of the CIFS shares(s) to be monitored
+    - DNS name of the CIFS sharess to be monitored
 
 **Checklist Item 2: [Provision FPolicy Account](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/netapp7mode/activity/provisionactivity.md)**
 

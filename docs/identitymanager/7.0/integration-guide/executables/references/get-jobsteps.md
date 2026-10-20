@@ -69,7 +69,7 @@ Task : InitializationJob_51_SavePreExistingAccessRights, Order : 49
 
  | Argument Name | Details | 
  | --- | --- | 
- | --api-client-id optional | **Type** String **Description** Login to Identity Manager server. | 
+ | --api-client-id optional | **Type** String **Description** log in to Identity Manager server. | 
  | --api-secret optional | **Type** String **Description** Password to Identity Manager server. | 
  | --api-url optional | **Type** String **Description** URL of Identity Manager server. | 
  | --job-identifier required | **Type** String **Description** Identifier of the job whose tasks/steps are to be listed. | 

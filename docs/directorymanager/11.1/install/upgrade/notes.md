@@ -31,7 +31,7 @@ The source version file system is required for the following:
 - In the source version, you specified a list of attributes to replicate for an identity store.
   These attributes are saved to a file on the file system.  
   To upgrade on a different box, the file containing the selected attributes for each identity store
-  must be present on the Directory Manager 11 server. If the wizard does not find it, Directory
+  must be present on the Directory Manager 11 server. If the wizard doesn't find it, Directory
   Manager 11 will display the default attributes for identity store replication (rather than your
   selected attributes).
 
@@ -62,7 +62,7 @@ box, remember the following:
 
 - Design settings for the toolbars and navigation bars will not be imported due to architectural
   changes in Directory Manager 11.
-- The Group Search and User Search forms will not be upgraded as they are not available in Directory
+- The Group Search and User Search forms will not be upgraded as they aren't available in Directory
   Manager 11.
 - Portal branding, logo, and any customizations to a Self-Service portal will be lost.
 
@@ -71,7 +71,7 @@ remember the following:
 If, in the source version, you have set the value of the Self-Service portal’s advanced setting
 _Default Startup Page_ to ‘Group Search’ or ‘Organizational Hierarchy’, then it will not be
 upgraded. The ‘Group Search’ page has been removed from Directory Manager 11 while the
-‘Organizational Hierarchy’ page is not supported as a startup page.
+‘Organizational Hierarchy’ page isn't supported as a startup page.
 
 Step 5 – Any notifications pending in the notification queue in the source version will not be
 upgraded.
@@ -79,7 +79,7 @@ upgraded.
 Step 6 – An identity store created for G Suite will not be upgraded.
 
 Step 7 – In case of upgrade on a different box, the DC Priority settings for an Active Directory
-domain are not upgraded to Directory Manager version 11.0.23315.04.
+domain aren't upgraded to Directory Manager version 11.0.23315.04.
 
 Step 8 – In the source version, the debug logs for upgrade were created in a temporary folder for
 the logged-on user, that could be accessed using the %TEMP% environment variable.  
@@ -92,8 +92,7 @@ File name: directorymanager11_Upgrade.log
 
 Step 9 – In the source version, Replication service logs were captured under the _debug_ mode, with
 no user interface to change this setting. On upgrade to Directory Manager 11, the file logging and
-Windows logging mode is set to default, i.e., ‘Error’. After upgrade, it is recommended that you go
-to Replication service settings and change file logging to the ‘Debug’ mode (if required). See the
+Windows logging mode is set to default, i.e., ‘Error’. After upgrade, change file logging to the ‘Debug’ mode (if required) in the Replication service settings. See the
 [Specify Log Settings for a Service](/docs/directorymanager/11.1/admincenter/service/dataservice/manage.md#specify-log-settings-for-a-service)
 topic.
 
@@ -122,7 +121,7 @@ locations will move to the data sources created for them on the Directory Manage
 
 Step 15 – During upgrade, scripts for Smart Groups and Synchronize jobs are upgraded to Directory
 Manager 11 without any change. If a script contains a location in a variable (for example, for
-exporting files), that setting will not work in case of upgrade on a different box. Make sure you
+exporting files), that setting will not work in case of upgrade on a different box. Ensure you
 change the location after upgrade.
 
 Step 16 – In the source version, source and destination providers in Synchronize jobs were saved as
@@ -147,5 +146,5 @@ renamed to ‘GroupID Entitlement’. Directory Manager 11 will also have two ne
 Entitlement; ‘Entitlement Scope’ and ‘Entitlement Temporary Permissions’. These new schedules will
 be auto created for identity stores that have Entitlement settings defined.
 
-Step 19 – You cannot run the Configuration Tool and the Upgrade wizard more than once using the same
+Step 19 – You can't run the Configuration Tool and the Upgrade wizard more than once using the same
 database (for upgrade to Directory Manager version 11.0.23315.04).

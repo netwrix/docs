@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Remote Registry service must be enabled on the target computers.
 
-Follow the steps to enable the Remote Registry service.
+To enable the Remote Registry service, complete the following steps:
 
 **Step 1 –** Navigate to Start > Windows Administrative Tools > Services.
 
@@ -17,7 +17,7 @@ Follow the steps to enable the Remote Registry service.
 **Step 2 –** In the Services window, locate the Remote Registry service, right-click it and select
 **Properties**.
 
-**Step 3 –** In the Remote Registry Properties dialog box, make sure the Startup type parameter is
+**Step 3 –** In the Remote Registry Properties dialog box, ensure the Startup type parameter is
 set to _Automatic_ and click **Start**.
 
 ![Remote Registry Properties dialog box](/images/1secure/configuration/computer/manualconfig_genevents_remoteregistry_start2016.webp)

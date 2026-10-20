@@ -21,13 +21,14 @@ most popular regulatory frameworks.
 - Defense Federal Acquisition Regulation Supplement (DFARS)
 - Gramm-Leach-Bliley Act (FedRAMP)
 - Federal Information Security Management Act (FISMA)
-- Health Insurance Portability and Accountability Act (HIPPA) – HIPAA Security Rule requires that
-  organizations must implement procedures for creating, changing, and safeguarding passwords.
+- Health Insurance Portability and Accountability Act (HIPPA) – HIPAA Security Rule requires
+  organizations to implement procedures for creating, changing, and safeguarding passwords.
 
     - It also recommends training the workforce on ways to safeguard password information and
       establish guidelines to create and change passwords in a periodic cycle.
     - HIPAA doesn’t offer any specific password complexity guidelines. To comply with HIPAA,
-      organizations are better off following NIST password guidelines.
+      organizations should follow National Institute of Standards and Technology (NIST)
+      password guidelines.
     - Most of healthcare institutions use the NIST framework.
 
 - International Organization for Standardization (ISO/IEC) 27002 – See the

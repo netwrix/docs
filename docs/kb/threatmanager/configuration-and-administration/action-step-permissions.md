@@ -1,6 +1,6 @@
 ---
 description: 'Lists the exact permissions required for each Action Step in Netwrix Threat Manager so you can configure accounts and scopes correctly.'
-keywords: [action step, permissions, Active Directory, SMB, WMI, WinRM, Remote Desktop, Netwrix Threat Manager]
+keywords: [action step, permissions, Active Directory, Entra ID, Microsoft Graph, SMB, WMI, WinRM, Remote Desktop, Netwrix Threat Manager]
 products:
 - threat-manager
 title: 'Action Step Permissions'
@@ -83,3 +83,39 @@ The following permissions are required for each Action Step:
    - Scope to user objects
      - `Read all properties`
    - Ensure that the account can modify policies such as `SeDenyRemoteInteractiveLogonRight`.
+
+### Entra ID Group Membership
+All permissions must be granted as **Application** permissions on the app registration and require admin consent.
+- `Group.Read.All` — read group properties to locate the target group
+- `GroupMember.ReadWrite.All` — add and remove members from the group
+
+:::note
+`GroupMember.ReadWrite.All` does not apply to role-assignable groups. To manage membership of groups with **Is assignable to a role** enabled, the app registration additionally requires `RoleManagement.ReadWrite.Directory`.
+:::
+
+### Disable Entra ID User
+All permissions must be granted as **Application** permissions on the app registration and require admin consent.
+- `User.ReadWrite.All` — set the user's `accountEnabled` property to false
+
+### Reset Entra ID Password
+All permissions must be granted as **Application** permissions on the app registration and require admin consent.
+- `User.ReadWrite.All` — update the user's `passwordProfile`
+
+:::note
+`User.ReadWrite.All` alone is not sufficient to reset passwords for users assigned Entra ID admin roles. The app registration's service principal must additionally be assigned the **Privileged Authentication Administrator** directory role in Entra ID. Resetting passwords for Global Administrators requires the **Global Administrator** role and is not recommended for automated playbook use.
+:::
+
+### Revoke Entra ID Sessions
+All permissions must be granted as **Application** permissions on the app registration and require admin consent.
+- `User.RevokeSessions.All` — invalidate all active sign-in sessions for a user
+
+### Flag Entra ID User as Confirmed Compromised
+All permissions must be granted as **Application** permissions on the app registration and require admin consent.
+- `Directory.Read.All` — read directory information
+- `IdentityRiskyUser.ReadWrite.All` — confirm a user as compromised in Entra ID Identity Protection
+- `IdentityRiskyAgent.ReadWrite.All` — confirm agents as compromised
+- `IdentityRiskyServicePrincipal.ReadWrite.All` — confirm service principals as compromised
+
+:::note
+This action requires **Microsoft Entra ID P2** licensing (included in Microsoft 365 E5). It will fail in tenants without an active Entra ID P2 plan.
+:::

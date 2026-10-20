@@ -30,9 +30,7 @@ The Administration Console has the following components:
 
 There are also right-click commands available within different sections of the Policy Center.
 
-If the Administration Console user interface or windows do not display properly, see the
-[Troubleshooting FAQs](/docs/threatprevention/7.5/troubleshooting/overview.md#troubleshooting-faqs) topic for
-information.
+If the Administration Console user interface or windows don't display properly, see the [Troubleshooting FAQs](/docs/threatprevention/7.5/troubleshooting/overview.md#troubleshooting-faqs) topic for information.
 
 ## Menu
 
@@ -42,16 +40,16 @@ The Menu contains the following selections:
 
 | Menu Item     | Option          | Description       |
 | ------------- | ------------------- | ------------------- |
-| File          | New             | Create new policies (Ctrl+P), new templates (Ctrl+T), or new folders (Ctrl+F) in the selected location of the Policy Center        |
-|               | Rename          | Opens a textbox to rename the selected policy, template, or folder in the Policy Center         |
-|               | Remove          | Removes the selected policy, template, or folder from the Policy Center   |
+| File          | New             | Create new policies (Ctrl+P), new templates (Ctrl+T), or new folders (Ctrl+F) in the selected location of the Policy Center.        |
+|               | Rename          | Rename the selected policy, template, or folder in the Policy Center.         |
+|               | Remove          | Remove the selected policy, template, or folder from the Policy Center.   |
 |               | Exit             | Exit the Administration Console       |
 | Tools         | Export …         | Export (Alt+X) policies and templates through the [Export Policies and Templates Window](/docs/threatprevention/7.5/admin/tools/exportpoliciestemplates.md)           |
 |               | Import …          | Import (Alt+I) policies/templates, collections, and event consumers/alerts from an exported file through the [Import Window](/docs/threatprevention/7.5/admin/tools/import.md)        |
 | Configuration | Alerts         | Configure and manage all email, event log, and SEIM alerts in the [System Alerting Window](/docs/threatprevention/7.5/admin/configuration/systemalerting/overview.md)        |
 |               | Users          | A security feature for configuring access to the Administration Console. Users are added and assigned rights through the [Users and Roles Window](/docs/threatprevention/7.5/admin/configuration/userroles/overview.md).       |
-|               | Database > Server        | Manage the events database in the [Events Database Configuration Window](/docs/threatprevention/7.5/admin/configuration/eventsdatabaseconfiguration.md). You can view the information, but cannot make changes.       |
-|               | Database > Maintenance          | Use database maintenance to automatically groom the database to optimize performance by archiving and/or deleting data aged beyond a specified threshold. This can be configured to run by Event Type, Analytic, or Policy. It is configured in the [Database Maintenance Window](/docs/threatprevention/7.5/admin/configuration/databasemaintenance/overview.md).          |
+|               | Database > Server        | Manage the events database in the [Events Database Configuration Window](/docs/threatprevention/7.5/admin/configuration/eventsdatabaseconfiguration.md). You can view the information, but can't make changes.       |
+|               | Database > Maintenance          | Use database maintenance to automatically groom the database to optimize performance by archiving and/or deleting data aged beyond a specified threshold. This can be configured to run by Event Type, Analytic, or Policy. It's configured in the [Database Maintenance Window](/docs/threatprevention/7.5/admin/configuration/databasemaintenance/overview.md).          |
 |               | Collections            | Manage all Microsoft Collections in the [Collection Manager Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/overview.md)         |
 |               | Event Filtering           | Filters Active Directory events to remove “noise” from collected event data and/or exclude logins from machine accounts. Both settings are ON by default. It also allows authentication events from selected hosts or from selected accounts to be excluded, which require configuration before being enabled. A latency threshold can be set to generate alerts when the delivery of AD Events are delayed beyond the threshold. These options are configured in the [Event Filtering Configuration Window](/docs/threatprevention/7.5/admin/configuration/eventfilteringconfiguration.md). |
 |               | Netwrix Threat Manager Configuration                   | Enables integration between Threat Prevention and Threat Manager in a global setting. The Threat Manager URI is set in the [Netwrix Threat Manager Configuration Window](/docs/threatprevention/7.5/admin/configuration/threatmanagerconfiguration.md). Choose policies through the Policy checkboxes in this window or the Actions tab of each policy for sending event data to Threat Manager.      |
@@ -91,7 +89,7 @@ can be expanded and collapsed.
 
 The Agents interface provides data about the Agents within the environment. This includes what
 domain the Agent is in, what machine it is deployed on, its current status, and other details. This
-interface also indicates if a domain controller does NOT have an Agent deployed on it. Through this
+interface also indicates if a domain controller doesn't have an Agent deployed on it. Through this
 interface, Agents can be deployed, updated, and managed; logging levels can be configured; logs can
 be accessed; and Agent information can be exported.
 
@@ -118,15 +116,9 @@ on incidents identified by the analytic policies.
 
 The Policies interface provides a central location for creating and configuring all policies. On
 selecting the Policy node, the policies are listed in the Display area. In the Navigation pane, the
-policies are organized into folders. By default, the folder structure is comprised of but not
-limited to three folders: Auditing, Blocking, and Notifications, representing the most common types
-of policies enabled by users. Policies can be configured to monitor or block Windows Active
-Directory events, Windows Exchange Server 2010, 2013, 2016 and 2019 events, Windows File System
-events, NetApp File System events, EMC File System events, and Group Policy Objects events.
+policies are organized into folders. By default, the folder structure is comprised of but not limited to three folders: Auditing, Blocking, and Notifications, representing the most common types of policies enabled by users. Policies can be configured to monitor or block Windows Active Directory events, Windows Exchange Server 2010, 2013, 2016, and 2019 events, Windows File System events, NetApp File System events, EMC File System events, and Group Policy Objects events.
 
-A folder can be protected, which controls access to any policy within the folder. A protected policy
-cannot be viewed, edited, or deleted by other Administration Console users without explicit
-permissions being granted.
+A folder can be protected, which controls access to any policy within the folder. A protected policy can't be viewed, edited, or deleted by other Administration Console users without explicit permissions being granted.
 
 **Templates**
 
@@ -137,10 +129,7 @@ templates which can be imported.
 
 **TAGS**
 
-The TAGS node provides an organizational feature for templates. Many preconfigured templates have
-tags which enable users to quickly find a desired template though various groupings. Tags do not
-create a duplicate template, but rather display the template in different folders under the TAGS
-node.
+The TAGS node provides an organizational feature for templates. Many preconfigured templates have tags which let users quickly find a template they want through various groupings. Tags don't create a duplicate template, but rather display the template in different folders under the TAGS node.
 
 ## Status Bar
 

@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The 10.0 API model consists of the following resources:
 
-- Agent – Represents an Activity Monitor Agent. API allows you to view existing agents and their
+- Agent – Represents an Activity Monitor Agent. Use the API to view existing agents and their
   status, register, modify, or remove agents. You can list all the agents or the agents of a domain 
   (AD-monitoring agents on the domain controllers).  
   Children: Host, Domain  
@@ -42,14 +42,14 @@ The 10.0 API model consists of the following resources:
 - File - Represents a log file created by a File Output - an actual .tsv, .json, or .zip file stored on 
   the agent or on a network share. A file can be downloaded.
   
-- Policy - Represents an Active Directory nonitoring policy. The API allows you to create new
+- Policy - Represents an Active Directory nonitoring policy. Use the API to create new
   policies, list, modify, and delete existing.
   
 
 
 Data is transmitted as JSON objects or as JSON Merge Patch for PATCH requests. Dates are formatted
 in UTC using the `YYYY-MM-DDTHH:MM:SS` DateTime format. Security-sensitive data like passwords,
-certificates, and access tokens are not returned by the GET requests but can be set using POST and
+certificates, and access tokens aren't returned by the GET requests but can be set using POST and
 PATCH requests.
 
 ## API
@@ -271,7 +271,7 @@ Response Example:
 
 **POST /api/v1/agents**
 
-Adds a new agent but does not install it. The host attribute must be unique.
+Adds a new agent but doesn't install it. The host attribute must be unique.
 
 - Permission – Modify agents
 - Response Body – Agent
@@ -642,7 +642,7 @@ Response Example:
 
 **GET /api/v1/domains/«domainId»**
 
-Returns the domain by its ID, or a 404 error if it is not found or the client lacks sufficient
+Returns the domain by its ID, or a 404 error if it isn't found or the client lacks sufficient
 permissions.
 
 - Permission – Read or Access activity data
@@ -654,8 +654,8 @@ Response: Domain
 
 **GET /api/v1/agents/«agentId»/domain**
 
-Returns a domain monitored by the specified agent, or a 404 error if the domain is not found, the
-client lacks the necessary permissions, or the agent is not monitoring AD activity.
+Returns a domain monitored by the specified agent, or a 404 error if the domain isn't found, the
+client lacks the necessary permissions, or the agent isn't monitoring AD activity.
 
 This endpoint is useful to get `Output` settings specific to the agent. Domain outputs are logical,
 they are described once and used by all the domain controllers to create actual files/syslog/amqp
@@ -672,7 +672,7 @@ Response: Domain
 **GET /api/v1/domains/«domainId»/agents**
 
 Returns the domain controllers (agents) monitoring the specified domain, or a 404 error if the
-domain is not found or the client lacks the necessary permissions.
+domain isn't found or the client lacks the necessary permissions.
 
 - Permission – Read or Access activity data
 - Response – Array of Agent
@@ -684,7 +684,7 @@ Response: Array of Agent
 **GET /api/v1/domains/«domainId»/outputs**
 
 Returns the configured outputs for the specified domain, or 404 if no rights for the domain or the
-domain was not found.
+domain wasn't found.
 
 - Permission – Read or Access activity data
 - Response – Array of Output
@@ -752,7 +752,7 @@ Response Example:
 
 **GET /api/v1/domains/«domainId»/outputs/«outputId»**
 
-Returns the output for the specified domain, or a 404 error if the domain is not found or the client
+Returns the output for the specified domain, or a 404 error if the domain isn't found or the client
 lacks the necessary permissions.
 
 - Permission –Read or Access activity data
@@ -1106,7 +1106,7 @@ Response: Array of Status
 
 **GET /api/v1/agents/«agentId»/hosts**
 
-Returns a list of hosts for the specified agent. If the agent is not found or the client lacks the
+Returns a list of hosts for the specified agent. If the agent isn't found or the client lacks the
 necessary permissions, a 404 error is returned.
 
 - Permission – Read or Access activity data
@@ -1369,7 +1369,7 @@ Response: 204
 
 **GET /api/v1/hosts/«hostId»/outputs**
 
-Returns a list of outputs for the specified host. If the host is not found or the client lacks the
+Returns a list of outputs for the specified host. If the host isn't found or the client lacks the
 necessary permissions, a 404 error is returned.
 
 - Permission – Read or Access activity data
@@ -1417,7 +1417,7 @@ Request Body Structure:
 **POST /api/v1/agents/«agentId»/hosts/«hostId»/outputs**
 
 Adds a new output for the specified host on the specified agent only. The method may be useful to
-have agent-specific outputs but is not recommended.
+have agent-specific outputs but isn't recommended.
 
 - Permission – Modify hosts
 - Response – 201, Output
@@ -1452,7 +1452,7 @@ Request Body Structure:
 
 **GET /api/v1/hosts/«hostId»/outputs/«outputId»**
 
-Returns the specified output of the host. If the host or output is not found, or the client lacks
+Returns the specified output of the host. If the host or output isn't found, or the client lacks
 the necessary permissions, a 404 error is returned.
 
 - Permission – Read or Access activity data
@@ -1586,7 +1586,7 @@ The following attributes can be modified:
 - `windows.discardReorderedAcl`
 - `windows.vssActivity`
 - `windows.vssCreation`
-- `amqp.server` - must be a a vaild hostname or ip4/ip6 address.
+- `amqp.server` - must be a vaild hostname or ip4/ip6 address.
 - `amqp.userName`
 - `amqp.password`
 - `amqp.vhost`
@@ -1674,7 +1674,7 @@ The following attributes can be modified:
 - `windows.discardReorderedAcl`
 - `windows.vssActivity`
 - `windows.vssCreation`
-- `amqp.server` ¬ must be a a vaild hostname or ip4/ip6 address.
+- `amqp.server` ¬ must be a vaild hostname or ip4/ip6 address.
 - `amqp.userName`
 - amqp.password
 - `amqp.vhost`
@@ -1870,7 +1870,7 @@ Required attributes:
 
 **PATCH /api/v1/domains/«domainId»/policies/«policyId»**
 
-Modifies attributes of the policy. If XML is updated, ID and GUID attributes in the XML are ignored,
+Modifies attributes of the policy. If XML is updated, ID, and GUID attributes in the XML are ignored,
 and existing values are preserved.
 
 **Permission: Policy change**

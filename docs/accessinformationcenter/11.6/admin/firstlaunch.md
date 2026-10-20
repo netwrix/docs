@@ -44,7 +44,7 @@ interface. See the
 [Console Access Page](/docs/accessinformationcenter/11.6/admin/configuration/consoleaccess.md)
 topic for additional information.
 
-Once console access to the has been configured, there are a few login methods you can offer users.
+Once console access to the Access Information Center has been configured, there are a few login methods you can offer users.
 The features available to users are controlled by the role assigned and your license key. See the
 [URL & Login](/docs/accessinformationcenter/11.6/admin/login/login.md)
 topic for information on how users will log in and where they are directed after login.

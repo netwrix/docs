@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # General Portal Features
 
-Directory Manager portal encompasses various functionalities available for the users that are:
+Directory Manager portal provides the following functionalities for users:
 
 - Directory Search
 - Find Dialog Box
@@ -25,8 +25,8 @@ See the [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/se
 
 ## Find Dialog Box
 
-The Find dialog box enables you to search User, Group, and Contact objects in the connected identity
-store. The object types av ailable for search may vary, depending on the page you launch the
+With the Find dialog box, you can search User, Group, and Contact objects in the connected identity
+store. The object types available for search may vary, depending on the page you launch the
 **Find** dialog box from.
 
 See the [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md) topic for additional information.

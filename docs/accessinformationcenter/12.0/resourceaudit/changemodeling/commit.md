@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Commit Modeled Changes
 
-Once all changes are decided upon, it is time to commit the modeled changes to Active Directory.
-This can be done manually by an organization’s IT team, or it can be automated by enabling the
-Access Information Center to commit changes in the targeted Active Directory environment.
+Once all changes are decided, you can commit the modeled changes to Active Directory.
+Your organization’s IT team can commit the changes manually, or you can enable the
+Access Information Center to automate the commit process in the targeted Active Directory environment.
 
 The following user roles can commit changes:
 
@@ -21,7 +21,7 @@ The following user roles can commit changes:
 
 :::note
 All users with access to the Resource Audit interface can model changes. The **Commit**
-button in the Group Membership Changes window is not available to users with the Reader role or
+button in the Group Membership Changes window isn't available to users with the Reader role or
 owners with no assigned role. A resource owner can use the **Change Access** button in the Owner
 portal.
 :::
@@ -37,15 +37,14 @@ Additional changes can be modeled using the **Add** and **Remove** buttons.
 **Manually Commit Changes**
 
 You can export the list of modeled changes as either a CSV or Excel file, which can be sent to your
-organization’s IT team. Select between the **CSV Export** and **Excel Export** buttons above the
-table. See the [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.
+organization’s IT team. Click the **CSV Export** or **Excel Export** button to export the list.
+See the [Data Grid Features](/docs/accessinformationcenter/12.0/admin/navigate/datagrid.md) topic for additional information.
 
 **Access Information Center Automatically Commits Changes**
 
 If the Access Information Center has been configured to commit changes in Active Directory, then the
 **Commit** button is available at the bottom of the window.
 
-Click **Commit**. The Action Running window opens while the changes listed in the table are pushed
+Click **Commit**. The Action Running window opens while it pushes the changes in the table
 to the targeted domain. When the **Action completed successfully** message displays, click
-**Close**. The changes that were just committed are reflected immediately in the Resource Audit
-interface reports.
+**Close**. The Resource Audit interface reports immediately show the changes that the system committed.

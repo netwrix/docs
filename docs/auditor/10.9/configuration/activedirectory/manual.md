@@ -16,12 +16,12 @@ To configure your domain for monitoring manually, you will need:
 - ADSI Edit — Required if you plan to perform configuration steps from a server other than domain
   controller
 
-**NOTE:** If these tools are not installed, refer to the following Microsoft articles:
+**NOTE:** If these tools aren't installed, see the following Microsoft articles:
 
 - [Group Policy Management Console](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265969(v=ws.11))
 - [ADSI Edit](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc773354(v=ws.10)?redirectedfrom=MSDN)
 
-Follow the steps to configure your domain for monitoring.
+## Configure Your Domain for Monitoring
 
 **Step 1 –** Configure effective domain controllers policy (by default, Default Domain Controllers
 Policy). See the [Configure Basic Domain Audit Policies](/docs/auditor/10.9/configuration/activedirectory/basicpolicy.md) or
@@ -31,11 +31,11 @@ Policy). See the [Configure Basic Domain Audit Policies](/docs/auditor/10.9/conf
 [Configure Object-Level Auditing](/docs/auditor/10.9/configuration/activedirectory/objectlevel.md) topic for additional information.
 
 **Step 3 –** Adjust the security event log size and retention settings. See the
-[Adjust Security Event Log Size and Retention](/docs/auditor/10.9/configuration/activedirectory/securitylog.md)topic for additional information.
+[Adjust Security Event Log Size and Retention](/docs/auditor/10.9/configuration/activedirectory/securitylog.md) topic for additional information.
 
 **Step 4 –** If you have an on-premises Exchange server in your Active Directory domain, consider
-that some changes to AD can be made via that Exchange server. To be able to audit and report who
-made those changes, perform configuration steps as described in the
+that administrators can make some changes to AD via that Exchange server. To be able to audit and
+report who made those changes, perform configuration steps as described in the
 [Exchange Administrator Audit Logging Settings](/docs/auditor/10.9/configuration/exchange/auditlog.md) topic.
 
 Optionally, you can adjust the Active Directory Tombstone Lifetime. See the
@@ -54,12 +54,10 @@ Also, remember to perform the following steps for AD auditing:
 
 ## Enable Secondary Logon Service
 
-Follow the steps to Enable Secondary Logon Service.
-
 **Step 1 –** On the computer where Auditor Server resides, navigate to Start > Windows
 Administrative Tools > **Services**.
 
 **Step 2 –** In the **Services** dialog, locate the **Secondary Logon** service.
 
-**Step 3 –** Right-click the service and on the **General** tab make sure that **Startup type** for
+**Step 3 –** Right-click the service and on the **General** tab ensure that **Startup type** for
 this service is other than _Disabled_. The startup type can be either _Automatic_ or _Manual_.

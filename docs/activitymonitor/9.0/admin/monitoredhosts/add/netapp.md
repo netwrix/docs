@@ -13,7 +13,7 @@ The Activity Monitor can be configured to monitor the following:
 - Ability to collect all or specific file activity for specific values or specific combinations of
   values
 
-It provides the ability to feed activity data to SIEM products. The following dashboards have been
+It lets you feed activity data to SIEM products. The following dashboards have been
 specifically created for Activity Monitor event data:
 
 - For IBM® QRadar®, see the
@@ -22,13 +22,13 @@ specifically created for Activity Monitor event data:
 - For Splunk®, see the [File Activity Monitor App for Splunk](/docs/activitymonitor/9.0/siem/splunk/overview.md) for
   additional information.
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Access Analyzer
 - Netwrix Threat Prevention
 - Netwrix Threat Manager
 
-Prior to adding a NetApp Data ONTAP host to the Activity Monitor, the prerequisites for the target
+Before adding a NetApp Data ONTAP host to the Activity Monitor, the prerequisites for the target
 environment must be met. See the
 [NetApp Data ONTAP Cluster-Mode Activity Auditing Configuration](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/ontap-cluster-aac/ontap-cluster-activity.md)
 topic or the
@@ -36,14 +36,12 @@ topic or the
 topic in the for additional information.
 
 :::tip
-Remember, the Activity Agent must be deployed to a Windows server that acts as a proxy for
+Remember, deploy the Activity Agent to a Windows server that acts as a proxy for
 monitoring the target environment.
 :::
 
 
 ## Add NetApp Host
-
-Follow the steps to add a NetApp Data ONTAP host to be monitored.
 
 **Step 1 –** In Activity Monitor, go to the Monitored Hosts & Services tab and click Add. The Add New Host
 window opens.
@@ -59,8 +57,7 @@ window opens.
 textbox, enter the following information:
 
 - Cluster-Mode devices – Enter the NetApp Filer/SVM
-- 7-Mode devices – Enter the NetApp DNS name. If using vFilers, then it is necessary to use the
-  vFiler name here.
+- 7-Mode devices – Enter the NetApp DNS name. If using vFilers, use the vFiler name here.
 
 Click **Next**.
 
@@ -76,10 +73,10 @@ how it is in NetApp's FPolicy configuration.
 
 - NetApp Filer or SVM – Enter the name of the NetApp Filer or SVM. The name is case sensitive.
 - Management LIF – _(Optional)_ If using Cluster Management LIF, a Management LIF can be specified
-  if SVM Management LIF is not used (Vserver Tunneling)
+  if SVM Management LIF isn't used (Vserver Tunneling)
 - User name – Enter the user name for the credentials to connect to the NetApp server
 - User password – Enter the password for the credentials to connect to the NetApp server
-- Protocol – Select from the following options in the drop-down list:
+- Protocol – Select from the following options in the dropdown list:
     - Auto Detect
     - HTTPS
     - HTTPS, ignore certificate errors
@@ -100,7 +97,7 @@ Click **Next**.
 
 ![NetApp FPolicy Configuration page](/images/activitymonitor/9.0/admin/monitoredhosts/add/netappfpolicyconfiguration.webp)
 
-**Step 5 –** On the NetApp Mode FPolicy Configuration page, choose whether or not to automatically
+**Step 5 –** On the NetApp Mode FPolicy Configuration page, choose whether to automatically
 configure FPolicy through Activity Monitor. If that is desired, check the Configure FPolicy option.
 Any additional permissions required are listed. Be sure to select the appropriate file protocol to
 configure the FPolicy.
@@ -123,7 +120,7 @@ Click **Next**.
 
 :::info
 For NetApp Cluster-Mode, create a tailored FPolicy manually. If manually
-configuring the FPolicy, do not select the ConfigureFPolicy checkbox.
+configuring the FPolicy, don't select the ConfigureFPolicy checkbox.
 :::
 
 
@@ -137,7 +134,7 @@ minimum, the less privileged permissions. For Cluster-mode devices, the credenti
 as ‘Employing the “Enable and connect FPolicy” Option’.
 
 :::warning
-On the NetApp FPolicy Enable and Connect page, choose whether or not to Enable and
+On the NetApp FPolicy Enable and Connect page, choose whether to Enable and
 connect FPolicy, which will “Ensure everything is active with periodic checks.”
 :::
 
@@ -152,9 +149,7 @@ Additional permissions that are required if enabling **Enable and connect FPolic
 **Important Notes**
 
 :::info
-Enable this functionality. Without this option enabled, it is necessary to
-manually connect the FPolicy every time it is disconnected for any reason. For reliable, high
-availability file monitoring, use this option.
+Enable this functionality. Without this option enabled, you must manually connect the FPolicy whenever it disconnects. For reliable, high availability file monitoring, use this option.
 :::
 
 
@@ -184,7 +179,7 @@ properties > Operations tab.
 
 
 If the Configure FPolicy option is enabled, then Activity Monitor updates the FPolicy according to
-these settings. If it was not enabled, then the manually configured FPolicy must be set to monitor
+these settings. If it wasn't enabled, then the manually configured FPolicy must be set to monitor
 these operations. Only operations being monitored by the FPolicy are available to the activity
 agent.
 
@@ -208,7 +203,7 @@ Click **Next**.
 ![Configure Basic Options page for NetApp](/images/activitymonitor/9.0/admin/monitoredhosts/add/configurebasicoptionsnetapp.webp)
 
 **Step 8 –** On the Configure Basic Options page, choose which settings to enable. The “Log files”
-are the activity logs created by the activity agent on the proxy host. Select the desired options:
+are the activity logs created by the activity agent on the proxy host. Select which options to enable:
 
 - Report account names – Adds an Account Name column in the generated TSV files
 - Add C:\ to the beginning of the reported file paths – Adds ‘C:\” to file paths to be displayed
@@ -267,26 +262,26 @@ Click **Next**.
 **Step 11 –** If Syslog Server is selected on the **Where To Log The Activity** page, the Syslog
 Output page can be configured.
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used. The Event stream is the activity
       being monitored according to this configuration for the monitored host.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the Message framing drop-down menu. See the
+    The TCP and TLS protocols add the Message framing dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/9.0/admin/outputs/syslog/syslog.md) topic for additional information.
 
 - The Test button sends a test message to the Syslog server to check the connection. A green check
   mark or red will determine whether the test message has been sent or failed to send. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -297,23 +292,22 @@ Click **Finish**.
 ![Activity Monitor with NetApp Host added](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitornetapp.webp)
 
 The added NetApp host is displayed in the monitored hosts/services table. Once a host has been added for
-monitoring, configure the desired outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
+monitoring, configure the outputs you want. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 :::tip
-Remember, if automatic configuration of the FPolicy was selected, it is necessary to Configure
-Privileged Access.
+Remember, if you selected automatic FPolicy configuration, configure Privileged Access.
 :::
 
 
 ## Configure Privileged Access
 
 If automatic configuration of the FPolicy is used for NetApp Data ONTAP Cluster-Mode devices, it is
-necessary to configure privileged access. Follow the steps to configure privileged access. Remember,
+necessary to configure privileged access. Remember,
 this requires the provisioned user account to have full permissions, identified as the credentials
 ‘Employing the “Configure FPolicy” Option’.
 
-**Step 1 –** On to the Monitored Hosts & Services tab, select the desired host and click Edit. The host’s
+**Step 1 –** On to the Monitored Hosts & Services tab, select the host you want to edit and click Edit. The host’s
 Properties window opens.
 
 ![NetApp Host Properties FPolicy Tab](/images/activitymonitor/9.0/admin/monitoredhosts/add/netappfpolicytab.webp)
@@ -326,8 +320,8 @@ This option is only available if the Configure FPolicy option is enabled.
 :::
 
 
-Privileged access must be allowed and configured with appropriate credentials to leverage Access
-Analyzer permission (FSAA) scans for this NetApp device
+Allow and configure privileged access with appropriate credentials to enable Access
+Analyzer permission (FSAA) scans for this NetApp device.
 
 For information on the other options for this tab, see the [FPolicy Tab](/docs/activitymonitor/9.0/admin/monitoredhosts/properties/fpolicy.md)
 section.

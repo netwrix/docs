@@ -12,11 +12,12 @@ keywords:
   - device rights
   - deny access but allow charging
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: How to Charge an iPhone on a Computer Controlled b
 tags:
   - device-control-and-access-management
+  - kb
 title: "How to Charge an iPhone on a Computer Controlled by Netwrix Endpoint Protector"
 knowledge_article_id: kA0Qk0000002BHNKA2
 ---

@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # FSAA: Scan Server Selection
 
-The Scan Server Selection page is where the server that executes the scan is configured. It is a
+Use the Scan Server Selection page to configure the server that executes the scan. It is a
 wizard page for the categories of:
 
 - File System Access/Permission Auditing Scan
@@ -15,7 +15,7 @@ wizard page for the categories of:
 
 ![FSAA Data Collector Wizard Scan Server Selection page](/images/accessanalyzer/12.0/admin/datacollector/fsaa/scanserverselection.webp)
 
-Using the radio buttons, select where the execution of the applet will take place:
+Using the radio buttons, select where the applet runs:
 
 - Automatic (Local for NAS device hosts, Remote for Windows hosts) – Applet is deployed to all
   targeted Windows servers. Other targeted devices, for example NAS, are scanned locally by the
@@ -44,16 +44,16 @@ Using the radio buttons, select where the execution of the applet will take plac
   choose from. If more than one list is selected, scanning is distributed across each host.
 
 :::info
-It is best practice in global implementations to utilize a specific remote server or proxy scanner
+It is best practice in global implementations to use a specific remote server or proxy scanner
 that is located in the same data center as the target hosts. This is particularly beneficial if the
 Access Analyzer Console server is in a different data center. See the
 [Proxy Scanning Architecture](/docs/accessanalyzer/12.0/install/filesystemproxy/overview.md#proxy-scanning-architecture)
 topic for additional information.
 :::
 
-In the bottom section, the checkbox options affect the execution of the applet:
+In the bottom section, the checkbox options affect how the applet runs:
 
-- Fallback to local mode if applet can't start – If the applet cannot be deployed on the target
+- Fallback to local mode if applet can't start – If the applet can't be deployed on the target
   host, it is deployed locally on the same server as the Access Analyzer Console and the scan
   collects data across the network
 - Run remote applet with normal priority (non-proxy applet server uses background priority by

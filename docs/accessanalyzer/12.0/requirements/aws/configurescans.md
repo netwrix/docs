@@ -6,13 +6,12 @@ sidebar_position: 20
 
 # Configure AWS for Scans
 
-In order to scan multiple AWS accounts using one account you need to create a role in each target
-account, so that It can provide the designated scanning account permissions to scan resources it
-controls. This is achieved through the following steps which will need to be completed leveraging a
-user with administrative access to each target account:
+To scan multiple AWS accounts using one account, create a role in each target account so it
+can grant the designated scanning account permission to scan the resources it controls. Complete
+the following steps using a user with administrative access to each target account:
 
 **Step 1 –** Create a Managed Policy in each target account that will be used to allow access to
-account (S3, Org and IAM).
+account (S3, Org, and IAM).
 
 **Step 2 –** Create a Role in each target account that will be used to allow access to listing IAM
 users.
@@ -20,16 +19,16 @@ users.
 **Step 3 –** Create a Managed Policy in the designated scanning account that will be used to allow
 the service account to assume the configured role in each target account.
 
-**Step 4 –** Add Role to Access Analyzer. The Role created in the scanning account will need to be
-added to the **1-AWS_OrgScan**, **2-AWS_S3Scan**, and **3-AWS_IAMScan** job query configurations.
+**Step 4 –** Add the role created in the scanning account to Access Analyzer's
+**1-AWS_OrgScan**, **2-AWS_S3Scan**, and **3-AWS_IAMScan** job query configurations.
 See the [AWS: Login Roles](/docs/accessanalyzer/12.0/admin/datacollector/aws/loginroles.md) topic for additional
 information.
 
-Once these steps are completed, the role must be added to the AWS queries within Access Analyzer.
+After you complete these steps, add the role to the AWS queries within Access Analyzer.
 
 ## Create a Managed Policy in Each Target Account
 
-The following steps will need to be completed in each target account.
+Complete the following steps in each target account.
 
 **Step 1 –** Sign into the Identity and Access Management Console (IAM) as an administrator of the
 Trusting account.
@@ -86,7 +85,7 @@ and click **Create policy**.
 **Step 7 –** Click **Create Policy**.
 
 :::note
-If the designated scanning account is not in Root (Master Account), create a second policy
+If the designated scanning account isn't in Root (Master Account), create a second policy
 in the Master Account with the following JSON definition:
 :::
 
@@ -109,12 +108,11 @@ in the Master Account with the following JSON definition:
 }
 ```
 
-The next step is to create a role in each target account that will be used to allow access to
-listing IAM users.
+The next step is to create a role in each target account that allows access to list IAM users.
 
 ## Create a Role in Each Target Account
 
-The following steps will need to be completed in each target account. For this, you will need the
+Complete the following steps in each target account. For this, you need the
 Account ID of the designating scanning account.
 
 :::note
@@ -133,7 +131,7 @@ target account.
 ![Create role page Another AWS account option](/images/accessanalyzer/12.0/requirements/target/config/createrole.webp)
 
 **Step 3 –** Select the **Another AWS Account** option and add the Account ID of the scanning
-account that will be leveraged within Access Analyzer.
+account that Access Analyzer uses.
 
 **Step 4 –** Click **Next: Permissions**.
 
@@ -151,13 +149,13 @@ account that will be leveraged within Access Analyzer.
 
 **Step 9 –** Click **Create Role**.
 
-The next step is to create a Managed Policy in the designated scanning account that will be used to
-allow the service account to assume the configured role in each target account.
+The next step is to create a Managed Policy in the designated scanning account that lets the
+service account assume the configured role in each target account.
 
 ## Configure the Scanning Account
 
-Create a Managed Policy in the scanning account that will be used to allow the user to assume the
-roles configured in each target account.
+Create a Managed Policy in the scanning account that lets the user assume the roles configured in
+each target account.
 
 **Step 1 –** Sign into the Identity and Access Management Console (IAM) as an administrator of the
 scanning account.
@@ -197,8 +195,8 @@ scanning account.
 ```
 
 :::note
-Replace `ROLENAME` with the name of the role that was created. If the `ROLENAME` is
-different in each account, then a policy will need to be created for each distinct role name.
+Replace `ROLENAME` with the name of the role you created. If `ROLENAME` differs across
+accounts, create a policy for each distinct role name.
 :::
 
 
@@ -216,8 +214,8 @@ different in each account, then a policy will need to be created for each distin
 
 ![Security credentials tab](/images/accessanalyzer/12.0/requirements/target/config/securitycredentials.webp)
 
-**Step 10 –** In the Security credentials tab, click **Create access key**. Make sure to note the
-Access key ID and Secret access key which need to be input into Access Analyzer.
+**Step 10 –** In the Security credentials tab, click **Create access key**, and note the Access
+key ID and Secret access key. Enter both into Access Analyzer.
 
 You can now create the Connection Profile for the AWS Solution. See the
 [Amazon Web Services for User Credentials](/docs/accessanalyzer/12.0/admin/settings/connection/create/aws.md) topic

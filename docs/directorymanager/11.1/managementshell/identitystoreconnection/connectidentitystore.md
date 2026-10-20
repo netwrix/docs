@@ -7,7 +7,7 @@ sidebar_position: 10
 # Connect-IdentityStore
 
 If an identity store of the connected domain is available, then Directory Manager Management Shell
-gets connected to that identity store upon its launch. In case it does not exist the
+gets connected to that identity store upon its launch. In case it doesn't exist the
 Connect-IdentityStore commandlet establishes a connection with the required identity store.
 
 After a connection is established with the identity store you can then perform functions in

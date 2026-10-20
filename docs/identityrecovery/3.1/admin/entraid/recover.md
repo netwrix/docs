@@ -8,8 +8,6 @@ sidebar_position: 11
 
 You can revert an Entra ID object to its previous state.
 
-Follow the steps to restore an Entra ID object.
-
 **Step 1 –** Click Entra ID in the left pane to open the
 [Entra ID Page](/docs/identityrecovery/3.1/admin/entraid/overview.md).
 
@@ -33,8 +31,8 @@ to finish the wizard.
 ![Object Restore wizard - Confirm page](/images/identityrecovery/3.1/product/entra_id/restore/entra_id_restore_page2.png)
 
 
-**Step 5 –** A completed message is displayed when the rollback is successful. Click **OK**.
+**Step 5 –** When the restore is successful, a completion message appears. Click **OK**.
 
 ![Object Restore Sucessful message](/images/identityrecovery/3.1/product/entra_id/restore/entra_id_restore_finished.png)
 
-The object has been restored.
+The system has restored the object.

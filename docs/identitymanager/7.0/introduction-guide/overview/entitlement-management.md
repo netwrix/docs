@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Entitlement Management
 
-Managing identities' entitlements requires managing entitlements and assigning them to identities. This page is about the role model.
+To manage identities' entitlements, manage the entitlements and assign them to identities. This page is about the role model.
 
 ## Role Model Overview
 
@@ -28,7 +28,7 @@ systems' resources. Some of them act as link between Identity Manager's **roles*
 
 ![Role Model](/images/identitymanager/entitlements_rolemodel.webp)
 
-The role model is a subset of a **policy** that also includes [Governance](../../introduction-guide/overview/governance) data such as risk definition. So, at a higher level, distinct policies can be used to implement distinct behaviors.
+The role model is a subset of a **policy** that also includes [Governance](../../introduction-guide/overview/governance) data such as risk definition. Use distinct policies to implement distinct behaviors at a higher level.
 
 ## A Role Catalog
 
@@ -44,7 +44,7 @@ Each individual entitlement should usually be modeled by a **single role**, and 
 
 ## A Rule Set
 
-**roles** alone are not enough to give identities the systems' technical entitlements. We need **rules** to have Identity Manager write users' entitlements in the managed systems. **rules** are further used to automatically assign **roles** to users, or to categorize users and accounts, etc.
+**roles** alone aren't enough to give identities the systems' technical entitlements. Use **rules** to have Identity Manager write users' entitlements in the managed systems. **rules** are further used to automatically assign **roles** to users, or to categorize users and accounts, etc.
 
 ### Provisioning **rules**
 
@@ -56,8 +56,8 @@ Just like identities, accounts are represented in Identity Manager by an [Identi
 
 Provisioning **rules** write the actual entitlements to the managed systems, most often based on users' **roles**.
 
-> For example, to give an AD entitlement to a user, we usually need to give them a group membership.
-> Thus, we should have a rule that, when a user is assigned a specific role, adds the user to the
+> For example, to give an AD entitlement to a user, typically grant a group membership.
+> Thus, create a rule that, when a user is assigned a specific role, adds the user to the
 > member list of a specific AD group.
 
 ![Provisioning **rules**](/images/identitymanager/entitlements_provisioningrules.webp)
@@ -72,14 +72,14 @@ Identity Manager's provisioning **rules** are:
 
 ### Assignment **rules**
 
-While the role catalog and provisioning **rules** are together enough to manually give users their access rights, we often want Identity Manager to do this automatically. Assignment **rules** automatically assign **roles** to identities based on specific criteria.
+While the role catalog and provisioning **rules** are together enough to manually give users their access rights, often Identity Manager can do this automatically. Assignment **rules** automatically assign **roles** to identities based on specific criteria.
 
-> For example, we can choose to assign the role `Benefits Manager - FR` to any user whose job title
+> For example, assign the role `Benefits Manager - FR` to any user whose job title
 > is benefits manager and whose location is in France.
 
 ![Assignment **rules**](/images/identitymanager/entitlements_assignmentrules.webp)
 
-Once all assignment **rules** are created, Identity Manager is able to spot existing assignments that are not supported by any rule, marking them as non-conforming.
+Once all assignment **rules** are created, Identity Manager can spot existing assignments that aren't supported by any rule, marking them as non-conforming.
 
 Identity Manager's assignment **rules** are:
 
@@ -90,10 +90,10 @@ Identity Manager's assignment **rules** are:
 
 Different resources can be managed through different **rules**, by being part of different **resource types**. So a resource type is a group a resources that have the same IGA-related purposes. Categorization **rules** categorize resources into **resource types** and link identities to the accounts they own.
 
-> For example, we might need to differentiate AD's standard accounts from administration accounts.
-> This way, we can configure different email addresses for privileged accounts, for example
-> [adm.john.smith@contoso.com](mailto:adm.john.smith@contoso.com). We can also add more approval
-> steps in the workflows related to privileged accounts, for more security than for standard
+> For example, differentiate AD's standard accounts from administration accounts.
+> This way, you can configure different email addresses for privileged accounts, for example
+> [adm.john.smith@contoso.com](mailto:adm.john.smith@contoso.com). You can also add more approval
+> steps in the workflows related to privileged accounts for more security than for standard
 > accounts.
 
 ![Categorization **rules**](/images/identitymanager/entitlements_categorizationrules.webp)
@@ -105,7 +105,7 @@ Identity Manager's categorization **rules** are:
 
 ### More **rules**
 
-Identity Manager provides more kinds of **rules** for optimization purposes, for example **role naming conventions** to help build the role catalog by generating **roles** and navigation **rules** based on the entitlements' names, or automation **rules** to help with governance by automating the review of the assignments that do not comply with the configured **rules**.
+Identity Manager provides more kinds of **rules** for optimization purposes, for example **role naming conventions** to help build the role catalog by generating **roles** and navigation **rules** based on the entitlements' names, or automation **rules** to help with governance by automating the review of the assignments that don't comply with the configured **rules**.
 
 ### **dimensions**
 
@@ -117,7 +117,7 @@ The [Identity Management](../../introduction-guide/overview/identity-management)
 > benefits manager and their location is in France. In this case, users' attributes "job title" and
 > "location" are the **dimensions** that trigger the assignment rule.
 
-In a nutshell, **dimensions** determine who should be assigned the entitlements.
+**dimensions** determine who should be assigned the entitlements.
 
 Identity Manager's name and logo are based on this dimension concept: entitlement assignment is governed by users' attributes defined as **dimensions**. Let's schematize users around these **dimensions**:
 
@@ -140,19 +140,19 @@ dimension, and identities are distributed along the line.
 
 See the [Governance](../../introduction-guide/overview/governance) topic for additional information.
 
-## Learn More
+## Related Resources
 
-Learn more on the [Role Model](../../integration-guide/role-model).
+See the [Role Model](../../integration-guide/role-model) topic for more information.
 
 Learn how to [Create **roles** in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation).
 
-Learn more on how to [Create a Composite Role](../../user-guide/optimize/composite-role-creation).
+See how to [Create a Composite Role](../../user-guide/optimize/composite-role-creation).
 
-Learn more on [Role Assignment](../../integration-guide/role-assignment).
+See the [Role Assignment](../../integration-guide/role-assignment) topic for more information.
 
-Learn more on [Create a Provisioning Rule](../../user-guide/set-up/provisioning-rule-creation).
+See how to [Create a Provisioning Rule](../../user-guide/set-up/provisioning-rule-creation).
 
-Learn more on [Automate Role Assignments](../../user-guide/optimize/assignment-automation/automate-role-assignment) **rules**.
+See the [Automate Role Assignments](../../user-guide/optimize/assignment-automation/automate-role-assignment) **rules** topic for more information.
 
-Learn more on the **rules** of [Categorize Resource ](../../user-guide/set-up/categorization).
+See the **rules** of the [Categorize Resource](../../user-guide/set-up/categorization) topic for more information.
 

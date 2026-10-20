@@ -10,7 +10,7 @@ This tool anonymizes data based on a certain knowledge of the database and the d
 
 ## Overview
 
-Anonymizing data helps unlock situations where it is necessary to send data to varied teams while guaranteeing the privacy of the data owners.
+Anonymizing data helps unlock situations where data must be sent to varied teams while guaranteeing the privacy of the data owners.
 
 > For example, it can be necessary to transmit data to an integration team that needs to set up
 > tests or a development environment to work on the applicative configuration. For example, users
@@ -24,7 +24,7 @@ Anonymizing can be performed on data:
 - from a CSV file, with the output written to a new CSV file;
 - directly inside a SQL database, overwriting existing data with the anonymized data.
 
-In this case, the plain data is lost. So make sure to work on a copy of the original database.
+In this case, the plain data is lost. So ensure to work on a copy of the original database.
 
 Several types of data can be anonymized, according to distinct substitution methods that are deterministic and non-reversible:
 
@@ -105,7 +105,7 @@ The following example **overwrites** the `UR_Resources` table of Identity Manage
  | --connection-string optional | **Type** String **Description** Connection string to the SQL Server database to be anonymized. **Note:** required when anonymizing a database. | 
  | --csv-separator (-s) default value: ; | **Type** String **Description** Separator of the input CSV file, provided between simple quotes. **Note:** used **only when** anonymizing a CSV file. | 
  | --entry-file (-n) optional | **Type** String **Description** Path to the input CSV file to anonymize. **Note:** required when anonymizing a CSV file. | 
- | --no-transaction optional | **Type** No Value **Description** Disables the SQL transaction for the request made by the anonymizing tool to the target SQL Server database. **Warning:** NETWRIX recommends using this option **only when** using transactions leads to a failure (exceeded RAM usage, exceeded CPU usage), because it could corrupt the data from the database. Make sure to prepare a backup of the database before using this option. **Note:** used **only when** anonymizing a database. | 
+ | --no-transaction optional | **Type** No Value **Description** Disables the SQL transaction for the request made by the anonymizing tool to the target SQL Server database. **Warning:** NETWRIX recommends using this option **only when** using transactions leads to a failure (exceeded RAM usage, exceeded CPU usage), because it could corrupt the data from the database. ensure to prepare a backup of the database before using this option. **Note:** used **only when** anonymizing a database. | 
  | --output (-o) default value: STDOUT | **Type** String **Description** Path of the output CSV file to write the anonymized data. **Note:** used **only when** anonymizing a CSV file. | 
  | --select-query (-q) optional | **Type** String **Description** SQL query to filter the rows to be anonymized. **Note:** used **only when** anonymizing a database, and useful **only when** the query includes a "WHERE" condition, otherwise the `--table` and `--columns` arguments are enough. **Usage** The table targeted by the query must be on the table specified in `--table`. **Examples** `SELECT Id, name, firstName FROM Resources WHERE resourceType = 'Person'` is a query with a simple condition. `SELECT * FROM Persons WHERE resourceType = 'Person' AND specialFlag = 'TopSecret'` selects all columns, and adds a specific condition. | 
  | --table (-t) optional | **Type** String **Description** Name of the table from the SQL Server database to be anonymized. **Note:** required when anonymizing a database. | 

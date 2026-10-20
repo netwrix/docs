@@ -18,21 +18,21 @@ for long passwords.
 - The Dictionary file box displays name **Dict.txt** of a sample file, it is installed in the
   **\Program Files\Password Policy Enforcer** folder. This file is sorted and ready to use. It
   contains approximately 257,000 words, names, and acronyms.
-- If you wish to add a secondary dictionary, **Click** +Add Dictionary to add a secondary
+- If you want to add a secondary dictionary, **Click** +Add Dictionary to add a secondary
   dictionary.
-- **Type** a path of the secondary dictionary file in the Secondary dictionary box.  
+- **Enter** a path of the secondary dictionary file in the Secondary dictionary box.  
   You can specify rules for both the dictionaries as follows:
 
-    - Select the **Detect inclusion of non-alpha characters** check box if Password Policy Enforcer
+    - Select the **Detect inclusion of non-alpha characters** checkbox if Password Policy Enforcer
       should remove all non-alphabetic characters during analysis. This allows Password Policy
       Enforcer to reject passwords such as "myp8asswor8d."
-    - Select the **Detect character substitution** check box if Password Policy Enforcer should
+    - Select the **Detect character substitution** checkbox if Password Policy Enforcer should
       reject passwords that rely on character substitution to comply with this rule.
-    - Select the **Bi-directional analysis** check box if Password Policy Enforcer should
+    - Select the **Bi-directional analysis** checkbox if Password Policy Enforcer should
       additionally test passwords with their characters reversed. Enabling bi-directional analysis
       stops users from circumventing this rule by reversing the order of characters in their
       password. For example, a user may enter "drowssapym" instead of "mypassword".
-    - Select the **Wildcard analysis** check box if Password Policy Enforcer should search for
+    - Select the **Wildcard analysis** checkbox if Password Policy Enforcer should search for
       wildcard templates in the dictionary file. Wildcard templates are specially formatted
       dictionary words that Password Policy Enforcer uses to reject a range of passwords. The
       Dictionary rule supports two wildcard template formats:
@@ -97,9 +97,9 @@ for long passwords.
 
         Enabling Wildcard analysis slightly increases search times, so only enable this option if
         the dictionary file contains wildcard templates. The sample dictionary file included with
-        Password Policy Enforcer does not contain any wildcard templates.
+        Password Policy Enforcer doesn't contain any wildcard templates.
 
-    - Choose a value from the Tolerance drop-down list to specify the maximum number of consecutive
+    - Choose a value from the Tolerance dropdown list to specify the maximum number of consecutive
       matching characters that Password Policy Enforcer will tolerate before rejecting a password.
       For example, the dictionary word "**sword**", and the password "4my**sword**%" contain five
       consecutive matching characters (shown in bold type). Password Policy Enforcer will reject

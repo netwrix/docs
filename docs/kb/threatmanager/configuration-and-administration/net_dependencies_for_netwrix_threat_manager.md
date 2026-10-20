@@ -44,3 +44,7 @@ Example:
 ## Related Articles
 
 - [Netwrix Threat Manager Requirements](https://docs.netwrix.com/docs/threatmanager/3_0/requirements/server)
+- [.NET Dependencies for Netwrix Access Analyzer](/docs/kb/accessanalyzer/installation-and-upgrades/net_dependencies_for_netwrix_access_analyzer)
+- [.NET Dependencies for Netwrix Activity Monitor](/docs/kb/activitymonitor/best-practices-and-reference/net_dependencies_for_netwrix_activity_monitor)
+- [.NET Dependencies for Netwrix Threat Prevention](/docs/kb/threatprevention/configuration-and-administration/net_dependencies_for_netwrix_threat_prevention)
+- [.NET Dependencies for Netwrix Recovery for Active Directory](/docs/kb/recoveryad/configuration-and-administration/net_dependencies_for_netwrix_recovery_for_active_directory)

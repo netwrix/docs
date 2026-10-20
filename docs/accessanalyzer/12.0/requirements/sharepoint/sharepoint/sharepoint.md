@@ -10,7 +10,7 @@ Netwrix products audit and monitor Microsoft® SharePoint® environments. Access
 the SharePoint solution to execute Access Auditing (SPAA) and Sensitive Data Discovery Auditing
 scans against SharePoint on-premise and SharePoint Online. Through integration with Activity
 Monitor, Access Analyzer can also execute Activity Auditing (SPAC) scans against SharePoint
-on-premise and SharePoint online environments. Additionally, Activity Monitor can be configured to
+on-premise and SharePoint online environments. Additionally, you can configure Activity Monitor to
 provide activity data to various SIEM products.
 
 Ports and permissions vary based on the scan mode option selected as well as the target environment.

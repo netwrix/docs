@@ -6,10 +6,10 @@ sidebar_position: 10
 
 # Configure destinations for Migration action
 
-To use **Migration** as a workflow automated action, make sure you have migration sources and
+To use **Migration** as a workflow automated action, ensure you have migration sources and
 destinations properly configured.
 
-Currently, the product supports migration for the following sources:
+The product supports migration for the following sources:
 
 - Databases
 - Exchange (_.eml_ items)
@@ -26,7 +26,7 @@ The following targets are supported as destinations:
 - Google Drive
 - SharePoint
 
-Supported migration options are described in the table below.
+The following table describes the supported migration options.
 
 | Source Type    | Source | Update Source Item | Move | Mark source Read Only | Structured Migration | Destination | Migration Config Type |
 | -------------- | ------ | ------------------ | ---- | --------------------- | -------------------- | ----------- | --------------------- |
@@ -42,13 +42,13 @@ Supported migration options are described in the table below.
 | SharePoint     |        |                    |      |                       |                      |             |                       |
 | Sql            |        |                    |      |                       |                      |             |                       |
 
-location to migrate to must be added as a source
+Add the migration location as a source.
 
 **To configure migration destination**
 
 Under the **Workflows** menu click **Configs**, then click **Migration Configs** on the right.
 
-Migration providers that already have contain configured destinations are indicated with the
+Migration providers that already have configured destinations are indicated with the
 three-gears icon in the tab header:
 
 ![migration_destination_ready_thumb_0_48](/images/dataclassification/5.7/admin/workflows/migration_destination_ready_thumb_0_48.webp)
@@ -61,5 +61,4 @@ To modify existing configuration, click Edit.
 
 To remove a configuration from the list, click Delete.
 
-Type is ‘Source’ the location to migrate to must be added as a source to be included. Custom configs
-allow a location to be specified without adding it as a source
+If the type is ‘Source’, add the migration location as a source. With custom configs, you can specify a location without adding it as a source.

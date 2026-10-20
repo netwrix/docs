@@ -1,10 +1,10 @@
 ---
 title: "DeployConfigurationTask"
-description: "From a folder, retrieves all configuration xml files to calculate the configuration items to insert, update or delete."
+description: "From a folder, retrieves all configuration xml files to calculate the configuration items to insert, update, or delete."
 sidebar_position: 5
 ---
 
-From a folder, retrieves all configuration xml files to calculate the configuration items to insert, update or delete.
+From a folder, retrieves all configuration xml files to calculate the configuration items to insert, update, or delete.
 
 
 ## Examples

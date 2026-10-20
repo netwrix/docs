@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Workflow Homonym
 
-In this section we configure the homonym detection that checks if a resource already exists in the system, preventing duplicates.
+This section describes how to configure the homonym detection that checks if a resource already exists in the system, preventing duplicates.
 
 ## Process
 
@@ -89,7 +89,7 @@ Before performing the comparison, the flexible expression of the comparison prop
 
 Here:
 
-- In the first filter, `Property1` and `Expression1` are not set, so the detection value is computed
+- In the first filter, `Property1` and `Expression1` aren't set, so the detection value is computed
 by applying the expression defined for `ComparisonProperty1` from the input values, eg. `(record.<b>FirstName</b> + ' ' + record.<b>LastName</b>).Appproximate()`.
 - In the second filter, `Expression1` is set, so the detection value is computed by applying the
 `Expression1` from the input values. This filter allows checking the homonyms on the **reversed** full name (to manage the case where the user reverses the first and last name for example).

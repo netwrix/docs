@@ -8,7 +8,7 @@ sidebar_position: 20
 
 This topic describes the recommended configuration of the servers needed to install the application
 in a production environment. Depending on the size of the organization, it is recommended to review
-your environment and requirements with a Netwrix engineer prior to deployment to ensure all
+your environment and requirements with a Netwrix engineer before deployment to ensure all
 exceptions are covered.
 
 ## Architecture Overview
@@ -26,7 +26,7 @@ The following servers are required for installation of the application:
     :::
 
 
-- **Agents** – There are three deployment scenarios that that differ in their requirements:
+- **Agents** – There are three deployment scenarios that differ in their requirements:
 
     - Activity monitoring of Windows file servers, Network Attached Storage (NAS) devices, Azure Files, Microsoft Entra ID, SharePoint On-premise, 
       SharePoint Online, Exchange Online, and SQL Server. The agent is deployed on a Windows Server. 
@@ -44,7 +44,7 @@ Activity Monitor. Most solutions have additional target requirements.
 
 ## Activity Monitor Console Machine Requirements
 
-The machine can be a Windows Server or desktop, as well as physical or virtual. The Console can be installed on serveral machines to manage the same agents.
+The machine can be a Windows Server or desktop, as well as physical or virtual. You can install the Console on multiple machines to manage the same agents.
 The following Windows Server operating systems are supported:
 
 - Windows Server 2025

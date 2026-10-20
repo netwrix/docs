@@ -13,7 +13,7 @@ The Activity Monitor can be configured to monitor the following:
 - Ability to collect all or specific file activity for specific values or specific combinations of
   values
 
-It provides the ability to feed activity data to SIEM products. The following dashboards have been
+It lets you feed activity data to SIEM products. The following dashboards have been
 specifically created for Activity Monitor event data:
 
 - For IBM® QRadar®, see the
@@ -23,12 +23,12 @@ specifically created for Activity Monitor event data:
   [File Activity Monitor App for Splunk](/docs/activitymonitor/7.1/siem/splunk/overview.md)
   for additional information.
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Threat Prevention
 - Netwrix Threat Manager
 
-Prior to adding a Dell PowerStore host to the Activity Monitor, the prerequisites for the target
+Before adding a Dell PowerStore host to the Activity Monitor, the prerequisites for the target
 environment must be met. See the
 [Dell PowerStore Activity Auditing Configuration](/docs/activitymonitor/7.1/requirements/activityagent/nasdeviceconfiguration/powerstore-aac/powerstore-activity.md)
 topic for additional information.
@@ -40,8 +40,6 @@ monitoring the target environment.
 
 
 ## Add Dell PowerStore Host
-
-Follow the steps to add a Dell PowerStore host to be monitored.
 
 **Step 1 –** In Activity Monitor, go to the Monitored Hosts tab and click **Add**. The Add New Host
 window opens.
@@ -58,7 +56,7 @@ name. Click **Next**.
 
 :::note
 All Dell event source types must have the CEE Monitor Service installed on the agent in
-order to collect events. Activity Monitor will detect if the CEE Monitor is not installed and
+order to collect events. Activity Monitor will detect if the CEE Monitor isn't installed and
 display a warning to install the service. If the CEE Monitor service is installed on a remote
 machine, manual configuration is required. See the
 [Dell CEE Options Tab](/docs/activitymonitor/7.1/admin/agents/properties/dellceeoptions.md)
@@ -145,7 +143,7 @@ be configured.
 - Add header to Log files – Adds headers to TSV files. This is used to feed data into Splunk.
 
     :::note
-    Enterprise Auditor does not support log files with the header.
+    Enterprise Auditor doesn't support log files with the header.
     :::
 
 
@@ -156,18 +154,18 @@ Click **Next**.
 **Step 9 –** If Syslog Server is selected on the Where To Log The Activity page, the Syslog Output
 page can be configured.
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the **Message framing** drop-down menu. See the
+    The TCP and TLS protocols add the **Message framing** dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/7.1/admin/outputs/syslog/syslog.md) topic
     for additional information.
 
@@ -175,7 +173,7 @@ page can be configured.
   mark or red will determine whether the test message has been sent or failed to send. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -188,7 +186,7 @@ Click **Finish**.
 ![powerstoreaddhost08](/images/activitymonitor/7.1/admin/monitoredhosts/add/powerstoreaddhost08.webp)
 
 The added Dell PowerStore host is displayed in the monitored hosts table. Once a host has been added
-for monitoring, configure the desired ouptuts. See the
+for monitoring, configure the outputs. See the
 [Output for Monitored Hosts](/docs/activitymonitor/7.1/admin/monitoredhosts/output/output.md)
 topic for additional information.
 

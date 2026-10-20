@@ -20,7 +20,7 @@ it triggers a host inventory query according to the global settings. The host wi
 any individual host lists. See the [Manually Add Hosts to a Job](#manually-add-hosts-to-a-job) topic
 for additional information.
 
-Click **Save** to apply any changes to the host selection. Changes are not implemented unless they
+Click **Save** to apply any changes to the host selection. Changes aren't implemented unless they
 are saved.
 
 ## Manually Add Hosts to a Job

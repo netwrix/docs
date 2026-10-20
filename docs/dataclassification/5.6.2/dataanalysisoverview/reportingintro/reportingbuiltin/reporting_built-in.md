@@ -6,9 +6,7 @@ sidebar_position: 30
 
 # Built-in Reports
 
-Netwrix Data Classification offers a number of built-in reports and charts that refer to indexing
-and classification process and results, as well to the system operation. They can be run in browser,
-as well as exported to Excel or CSV files. See Manage Reports for more information.
+Netwrix Data Classification offers a number of built-in reports and charts that cover the indexing and classification processes, results, and system operation. You can run them in your browser or export them to Excel or CSV files. See Manage Reports for more information.
 
 **NOTE:** For some reports, **Auto-classification change logging** must be enabled to supply the
 reports with the required data.

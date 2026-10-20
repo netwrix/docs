@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # AD_ContainerPermissions Job
 
-The AD_ContainerPermissions Job is responsible for reporting on all Active Directory permissions
+The AD_ContainerPermissions Job reports on all Active Directory permissions
 applied to container objects within the targeted domains.
 
 ## Analysis Tasks for the AD_ContainerPermissions Job
@@ -15,7 +15,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **7.Containers** >
 **AD_ContainerPermissions** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

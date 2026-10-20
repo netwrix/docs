@@ -6,20 +6,19 @@ sidebar_position: 120
 
 # Panzura Tab
 
-After a Panzura host is added to the monitored hosts/services table, the configuration settings are edited
+After you add a Panzura host to the monitored hosts/services table, you edit the configuration settings
 using the tabs in the Properties window of the host.
 
 ![panzuratab](/images/activitymonitor/9.0/admin/monitoredhosts/properties/panzuratab.webp)
 
-The **Panzura** tab allows users to modify settings which were populated with the information
-entered when the Panzura host was added.
+Use the **Panzura** tab to modify settings with the information you entered when you added the Panzura host.
 
 The configurable options are:
 
 - Panzura Filer – Enter the name of the filer
 - Username – Enter the user name for the Panzura account
 - Password – Enter the password for the user name
-- Protocol – Select from the following options in the drop-down list:
+- Protocol – Select from the following options in the dropdown list:
 
     - Auto Detect
     - HTTPS

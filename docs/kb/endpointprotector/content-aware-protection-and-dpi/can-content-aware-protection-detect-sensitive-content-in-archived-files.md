@@ -14,11 +14,12 @@ keywords:
   - file type filter
   - data leak
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: Can Content Aware Protection Detect Sensitive Cont
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Can Content Aware Protection Detect Sensitive Content in Archived Files?"
 knowledge_article_id: kA0Qk0000002BNeKAM
 ---

@@ -14,7 +14,7 @@ This page is about [ServiceNow](../../../integration-guide/connectors/references
 
 ## Overview
 
-ServiceNow is a cloud-based company that provides software as a service (SaaS) for technical management support. The company specializes in IT service management (ITSM), IT operations management (ITOM) and IT business management (ITBM), allowing users to manage projects, teams and customer interactions via a variety of apps and plugins. This section focuses on ServiceNow Entity Management. To learn about how to use this connector to **create** tickets for other resources, see [ServiceNow Ticket](../../../integration-guide/connectors/references-packages/servicenow-ticket).
+ServiceNow is a cloud-based company that provides software as a service (SaaS) for technical management support. The company specializes in IT service management (ITSM), IT operations management (ITOM), and IT business management (ITBM), allowing users to manage projects, teams, and customer interactions via a variety of apps and plugins. This section focuses on ServiceNow Entity Management. To learn about how to use this connector to **create** tickets for other resources, see [ServiceNow Ticket](../../../integration-guide/connectors/references-packages/servicenow-ticket).
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ Implementing this connector requires:
 - a service account with the **snc_platform_rest_api_access** role, as well as reading and writing
 permissions on the target ServiceNow instance;
 - the version ServiceNow London or later;
-- the appropriate configuration in ServiceNow of authentication, Basic or OAuth.
+- the appropriate configuration in ServiceNow of authentication, Basic, or OAuth.
 
 ## Export
 
@@ -134,7 +134,7 @@ For the connector to work properly, the connection tables must follow the naming
 >
 > ```
 >
-> We would have:
+> The example would include:
 >
 > ```
 > *ServiceNowExportFulfillment_sys_user.csv*
@@ -212,7 +212,7 @@ Same as for export, fulfill is configured through connections.
 
 ### Password reset
 
-See the [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) topic to learn more on how to configure password reset settings.
+See [Configure password reset](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) for how to configure password reset settings.
 
 When setting a password for an ServiceNow user, the password attribute is defined by the password specified in the corresponding [Resource Type Mappings](../../../integration-guide/toolkit/xml-configuration/connectors/resourcetypemappings).
 

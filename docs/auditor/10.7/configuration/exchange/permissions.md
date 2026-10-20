@@ -22,7 +22,7 @@ The account used for data collection must meet the following requirements:
     OR
 
 - The combination of the following rights and permissions if you plan to disable network traffic
-  compression for your monitoring plan or, for some reasons, do not want to add this account to the
+  compression for your monitoring plan or, for some reasons, don't want to add this account to the
   Domain Admins group:
 
     - The Manage auditing and security log policy must be defined for this account. See the
@@ -52,8 +52,6 @@ The following is required if auto-backup is _enabled_ for the domain controller 
 
 ## Add Account to the Organization Management Group
 
-Follow the steps to add account to the Organization Management group.
-
 **Step 1 –** Navigate to **Start > Active Directory Users and Computers** on any domain controller
 in the root domain of the forest where Microsoft Exchange 2019, 2016, or 2013 is installed.
 
@@ -66,18 +64,16 @@ tab and click **Add**.
 
 ![manualconfig_orgmanagement2016](/images/auditor/10.7/configuration/exchange/manualconfig_orgmanagement2016.webp)
 
-If for some reason you do not want this account to belong to the Organization Management group, you
+If for some reason you don't want this account to belong to the Organization Management group, you
 can add it to the Records Management group in the same way. The Records Management group is less
 powerful, and accounts belonging to it have fewer rights and permissions.
 
 ## Assign Management Roles
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 **Organization Management** or the **Records Management** group.
 
-Follow the steps to assign management roles.
-
-**Step 1 –** On the computer where Microsoft Exchange 2019, 2016, 2013 or is installed, open the
+**Step 1 –** On the computer where Microsoft Exchange 2019, 2016, 2013, or is installed, open the
 **Exchange Management Shell** under an account that belongs to the **Organization Management**
 group.
 
@@ -93,7 +89,7 @@ In this example, the user _CORP\jsmith_ has been assigned the **Audit Logs** rol
 
 ## Assign Permission to Read the Registry Key
 
-This permission is required only if the account selected for data collection is not a member of the
+This permission is required only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
 This permission should be assigned on each domain controller in the audited domain, so if your
@@ -105,8 +101,6 @@ To assign permissions manually, use the Registry Editor snap-in or the Group Pol
 console.
 
 ### Assign Permission Via the Registry Editor Snap-in
-
-Follow the steps to assign permission via the Registry Editor snap-in.
 
 **Step 1 –** On your target server, open Registry Editor: navigate to **Start > Run** and type
 _"regedit"_.
@@ -124,8 +118,6 @@ Set\Services\EventLog\Security_.
 _HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv_ registry key.
 
 ### Assign Permission Using the Group Policy Management Console
-
-Follow the steps to assign permission using the Group Policy Management console.
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools

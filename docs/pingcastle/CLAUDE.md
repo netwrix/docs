@@ -10,8 +10,6 @@ PingCastle documentation covers three product tiers for Active Directory securit
 - **PingCastle Pro** — Mid-tier with web UI and API features
 - **PingCastle Standard/Basic** — Command-line assessment tool (no web server)
 
-The current version is **3.5** (only one version exists).
-
 ## File Structure
 
 Each tier has a consistent set of docs under `3.5/`:

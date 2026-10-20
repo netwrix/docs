@@ -12,5 +12,5 @@ This page is about [TSS](../../../integration-guide/connectors/references-packag
 
 ![Package: Mainframe/Top Secret](/images/identitymanager/packages_tss_v603.webp)
 
-The documentation is not yet available for this page and will be completed in the near future.
+The documentation isn't yet available for this page and will be completed in the near future.
 

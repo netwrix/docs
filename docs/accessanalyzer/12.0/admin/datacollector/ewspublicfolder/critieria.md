@@ -20,8 +20,8 @@ The options on the Criteria page are:
   sensitive data criteria to scan for
 - Select All - Click **Select All** to enable all sensitive data criteria for scanning
 - Clear All - Click **Clear All** to remove all selections from the table
-- Select the checkboxes next to the sensitive data criteria options to enable it to be scanned for
-  during job execution
+- Select the checkboxes next to the sensitive data criteria options you want to scan for during job
+  execution
 
 The table contains the following types of criteria:
 

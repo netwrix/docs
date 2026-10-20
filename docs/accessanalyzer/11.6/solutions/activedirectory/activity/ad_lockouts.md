@@ -7,7 +7,7 @@ sidebar_position: 60
 # Lockouts > AD_Lockouts Job
 
 The **Lockouts** > **AD_Lockouts** Job provides a listing of all account lockouts. For any lockout
-occurring in the past 30 days, failed authentications and host information is provided to aid
+occurring in the past 30 days, it also provides failed authentications and host information to aid
 troubleshooting.
 
 ![AD_Lockouts Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/activedirectory/activity/lockoutsjobstree.webp)
@@ -23,7 +23,7 @@ Navigate to the **Active Directory** > **6.Activity** > **Lockouts** > **AD_Lock
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -42,4 +42,4 @@ pre-configured reports:
 
 | Report   | Description                                                                                                                                                                        | Default Tags                                               | Report Elements                                                                                                                                                            |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Lockouts | This report tracks all lockouts for user accounts. For any lockout occurring in the past 30 days, failed authentications and host information are provided to aid troubleshooting. | CCPA GDPR SOX HIPPA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of two elements: <ul><li>Table – Displays account lockouts details</li><li>Table –  Displays failed authentications in the past 30 days</li></ul> |
+| Lockouts | This report tracks all lockouts for user accounts. For any lockout occurring in the past 30 days, it also lists failed authentications and host information to aid troubleshooting. | CCPA GDPR SOX HIPPA PCI-DSS GLBA ITAR FERPA FISMA ISO27001 | This report is comprised of two elements: <ul><li>Table – Displays account lockouts details</li><li>Table –  Displays failed authentications in the past 30 days</li></ul> |

@@ -107,7 +107,8 @@ jobs:
 
             // 4. Set project fields
             await setField('PVTSSF_lADOB435Ds4A7py9zg_TaXU', 'c0f74161', 'Work Category = Admin Support');
-            await setField('PVTSSF_lADOB435Ds4A7py9zgv4xOU', '5280356b', 'Priority = P2');
+            await setField('PVTSSF_lADOB435Ds4A7py9zgv4xOU', 'c2ae6a84', 'Priority = P1');
+            await setField('PVTSSF_lADOB435Ds4A7py9zgv4xF8', 'f75ad846', 'Status = Backlog');
 
             console.log(`✓ Created issue #${issue.number} linked to PR #${pr.number}`);
 
@@ -214,7 +215,8 @@ jobs:
 
             // 4. Set project fields
             await setField('PVTSSF_lADOB435Ds4A7py9zg_TaXU', '7d3f2431', 'Work Category = Publishing Pipeline');
-            await setField('PVTSSF_lADOB435Ds4A7py9zgv4xOU', '5280356b', 'Priority = P2');
+            await setField('PVTSSF_lADOB435Ds4A7py9zgv4xOU', 'c2ae6a84', 'Priority = P1');
             await setField('PVTSSF_lADOB435Ds4A7py9zg_TaXY', '8f39fde1', 'Pipeline Stage = PR Open');
+            await setField('PVTSSF_lADOB435Ds4A7py9zgv4xF8', 'f75ad846', 'Status = Backlog');
 
             console.log(`✓ Created issue #${issue.number} linked to PR #${pr.number}`);

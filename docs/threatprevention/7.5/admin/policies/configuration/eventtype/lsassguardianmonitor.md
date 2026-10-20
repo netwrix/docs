@@ -7,7 +7,7 @@ sidebar_position: 190
 # LSASS Guardian – Monitor Event Type
 
 Based on policy rules, the LSASS Guardian – Monitor event type generates an event when a process not
-in the ‘white list’ attempts to access the LSASS process. Access options include Write, Read and
+in the ‘white list’ attempts to access the LSASS process. Access options include Write, Read, and
 Create Thread.
 
 The event filters for the LSASS Guardian – Monitor event type are:
@@ -44,10 +44,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -73,10 +73,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -84,7 +84,7 @@ for additional information.
 
 ## Processes Filter
 
-magUse the Processes filter to set the scope of the policy to only monitor specific processes or
+Use the Processes filter to set the scope of the policy to only monitor specific processes or
 exclude specific processes from being monitored.
 
 :::info
@@ -95,17 +95,17 @@ applications, to the Exclude Process list.
 
 ![Processes Monitoring filter](/images/threatprevention/7.5/admin/policies/eventtype/processesmonitoring.webp)
 
-Type the process in the textbox for the desired option: Include Process or Exclude Process. Use the
+Enter the process in the textbox for the option you want: Include Process or Exclude Process. Use the
 buttons in the respective areas to edit the lists.
 
 - The Process **Add** (+) button adds a textbox to the list to add an additional process.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::warning
 In a production environment, only exclude processes using the Exclude Process area.
-While there is an option to include processes, it is NOT recommended in a policy that is monitoring
+While there is an option to include processes, it isn't recommended in a policy that is monitoring
 a production environment. Adding a process in the Include Process area limits the policy to only
-monitoring that process. Unknown malicious processes would not be monitored by the policy. In a
+monitoring that process. Unknown malicious processes wouldn't be monitored by the policy. In a
 sandbox environment, the Include Process option can be useful for testing/capturing the LSASS
 activity for specific processes to see what access they are requesting.
 :::
@@ -118,7 +118,7 @@ maliciously impact LSASS.
 
 ![openprocessflagsmonitoring](/images/threatprevention/7.5/admin/policies/eventtype/openprocessflagsmonitoring.webp)
 
-Check the box to select the process flag(s) to be monitored. This will trigger an event if the
+Check the box to select the process flags to be monitored. This will trigger an event if the
 request for an LSASS handle contains one or more of the selected process flags.
 
 - PROCESS_VM_WRITE – Select this checkbox to write to memory in a process
@@ -131,6 +131,6 @@ request for an LSASS handle contains one or more of the selected process flags.
     requests LSASS memory read access.
 
 :::info
-Leave these filters enabled. Do not deselect these options.
+Leave these filters enabled. Don't deselect these options.
 
 :::

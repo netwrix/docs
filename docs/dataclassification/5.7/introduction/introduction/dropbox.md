@@ -25,7 +25,7 @@ more information on the accounts and rights.
    [https://www.dropbox.com/developers/apps/create](https://www.dropbox.com/developers/apps/create)
 2. Select **Create apps**.
 3. On the Choose an API step, select Scoped Access.
-4. On the Choose the type of access you needstep, select Full Dropbox type.
+4. On the Choose the type of access you need step, select Full Dropbox type.
 5. Provide a name for your App. For example, Netwrix Data Classification.
 
     :::note

@@ -13,23 +13,21 @@ The Activity Monitor can be configured to monitor the following:
 - Ability to collect all or specific file activity for specific values or specific combinations of
   values
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Enterprise Auditor
 - Netwrix Threat Manager
 
-Prior to adding a Windows host to the Activity Monitor, the prerequisites for the target environment
+Before adding a Windows host to the Activity Monitor, the prerequisites for the target environment
 must be met. See the
 [Linux Agent Server Requirements](/docs/activitymonitor/7.1/requirements/linuxagent.md) topic
 for additional information.
 
 ## Deploy Linux Agent
 
-Follow the steps to deploy the agent to the Linux host.
+**Step 1 –** On the Agents tab, click Add agent to open the Add New Agents window.
 
-**Step 1 –** On the Agents tab, click Add agent to open the Add New Agent(s) window.
-
-![Install New Agent page of the Add New Agent(s) Wizard](/images/activitymonitor/7.1/install/agent/installnew.webp)
+![Install New Agent page of the Add New Agents Wizard](/images/activitymonitor/7.1/install/agent/installnew.webp)
 
 **Step 2 –** On the Install New Agent page, enter the server name for the Linux host. Click
 **Next**.
@@ -41,7 +39,7 @@ is **4498**. Click **Next**.
 
 ![Credentials to Connect](/images/activitymonitor/7.1/admin/agents/add/credentialsservers.webp)
 
-**Step 4 –** On the Credentials To Connect To The Server(s) page, connect to the Linux Server using
+**Step 4 –** On the Credentials To Connect To The Servers page, connect to the Linux Server using
 either a **User name** and **Password**, or a Public Key.
 
 The options for connecting with a Password are:
@@ -102,7 +100,7 @@ the failed connection.
 **Step 6 –** On the Linux Agent Options page, select which user name to use to run the daemon. To
 use root, leave the **Service user name** field blank. Click **Test** to test the connection.
 
-**Step 7 –** Click **Finish**. The Add New Agent(s) window closes, and the activity agent is
+**Step 7 –** Click **Finish**. The Add New Agents window closes, and the activity agent is
 deployed to and installed on the target host.
 
 During the installation process, the status will be **Installing**. If there are any errors,
@@ -115,7 +113,7 @@ Host is also configured, and the added Linux host is displayed in the monitored 
 [Monitored Hosts Tab](/docs/activitymonitor/7.1/admin/monitoredhosts/overview.md)
 topic for additional information.
 
-Once a host has been added for monitoring, configure the desired outputs. See the
+Once a host has been added for monitoring, configure the outputs you want. See the
 [Output for Monitored Hosts](/docs/activitymonitor/7.1/admin/monitoredhosts/output/output.md)
 topic for additional information.
 

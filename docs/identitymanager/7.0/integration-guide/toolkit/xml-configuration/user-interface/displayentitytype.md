@@ -33,7 +33,7 @@ By default, the entity type with the highest priority is selected first. The end
 
 ![Change Selection](/images/identitymanager/ui_displaypriorities_changeselection_v521beta.webp)
 
-Priorities are integer values, positive or negative. The most important priority is assigned to the lowest value.
+Priorities are integer values, positive, or negative. The most important priority is assigned to the lowest value.
 
 Entity Types with the same priority are sorted by `Identifier`, in the alphabetical order, where relevant.
 
@@ -87,13 +87,13 @@ But the order in which "Workflow for Directory_User" and "Workflow for Directory
 
 The `AddedMinutes` property on display properties allows adding or subtracting minutes from `DateTime` fields for timezone adjustments or display purposes.
 
-**Important:** `AddedMinutes` is only applicable to properties of type `DateTime`. It is not compatible with properties of type `DateOnly`.
+**Important:** `AddedMinutes` is only applicable to properties of type `DateTime`. It isn't compatible with properties of type `DateOnly`.
 
-When a property uses the `DateOnly` type, any `AddedMinutes` configuration will be ignored because date-only fields do not have a time component to adjust.
+When a property uses the `DateOnly` type, any `AddedMinutes` configuration will be ignored because date-only fields don't have a time component to adjust.
 
 **Behavior during configuration import/export:**
 
-- **On Import:** If `AddedMinutes` is specified for a `DateOnly` property, the setting will be ignored and a warning will be displayed indicating that it is not applicable to Date Only properties.
+- **On Import:** If `AddedMinutes` is specified for a `DateOnly` property, the setting will be ignored and a warning will be displayed indicating that it isn't applicable to Date Only properties.
 - **On Export:** If `AddedMinutes` exists on a `DateOnly` property, it will be removed from the exported configuration and a warning will notify you of the removal.
 
 
@@ -107,9 +107,9 @@ When a property uses the `DateOnly` type, any `AddedMinutes` configuration will 
 | HideRoles <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to skip the **Access Permissions** step (the one containing the roles) in the default forms for this entity type. |
 | IconCode optional | **Type:** String **Description:** Defines the icode code ("People", "MapPin", "Suitcase"...). |
 | IsHierarchical <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is hierarchical entity type. |
-| MinSearchLength optional | **Type:** Int32 **Description:** Defines the minimum number of characters from which the search in the auto complete picker starts - 4 if it is not defined (the AutocompleteBinding must be defined). |
+| MinSearchLength optional | **Type:** Int32 **Description:** Defines the minimum number of characters from which the search in the auto complete picker starts - 4 if it isn't defined (the AutocompleteBinding must be defined). |
 | PluralDisplayName_L1 optional | **Type:** String **Description:** Display name of the entity type in plural in language 1 (up to 16). |
-| Priority <span class="optionalAttribute">default value: 2147483647</span> | **Type:** Int32 **Description:** Sets the display priority of the Entity Type in the administration screens dropdown and the dashboard. A priority is an integer value, positive or negative. The highest priority is assigned to the lowest number. See the Priority section above. |
+| Priority <span class="optionalAttribute">default value: 2147483647</span> | **Type:** Int32 **Description:** Sets the display priority of the Entity Type in the administration screens dropdown and the dashboard. A priority is an integer value, positive, or negative. The highest priority is assigned to the lowest number. See the Priority section above. |
 
 ## Child Element: Property
 Entity referencing the Entity properties (with which it share the same ID) that can be displayed in the Identity Manager interface.
@@ -129,7 +129,7 @@ Entity referencing the Entity properties (with which it share the same ID) that 
 | IsHidden <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Property is hidden. |
 | IsReadOnly <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Property is readOnly. |
 | IsRequired <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Property is required. |
-| MinSearchLength optional | **Type:** Int32 **Description:** Defines the minimum number of characters from which the search in the auto complete picker starts - 4 if it is not defined (the input type of the display property must be a picker and the AutocompleteBinding must be defined). |
+| MinSearchLength optional | **Type:** Int32 **Description:** Defines the minimum number of characters from which the search in the auto complete picker starts - 4 if it isn't defined (the input type of the display property must be a picker and the AutocompleteBinding must be defined). |
 | NavigationBinding optional | **Type:** Int64 **Description:** Defines the binding of the resource on which the user will be redirected when he clicks on an element of a BasicCollection. |
 | OutputType <span class="optionalAttribute">default value: Auto</span> | **Type:** Enumeration **Description:** Identifier of the output type. |
 | PlaceHolderText_L1 optional | **Type:** String **Description:** Property place holder text. |

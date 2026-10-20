@@ -8,7 +8,7 @@ sidebar_position: 10
 
 **Dependencies**
 
-The .Active Directory Inventory job group needs to be executed prior to running the Windows
+The .Active Directory Inventory job group needs to be executed before running the Windows
 Solution.
 
 See individual sub-groups and jobs for the dependencies.

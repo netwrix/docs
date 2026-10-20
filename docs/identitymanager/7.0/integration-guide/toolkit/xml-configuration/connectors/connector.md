@@ -4,11 +4,11 @@ description: ""
 sidebar_position: 4
 ---
 
-Connectors provide the means by which Identity Manager communicates with managed platforms, applications and systems. They describe how the data from these systems are mapped to the [entity model](/docs/identitymanager/current/integration-guide/entity-model).
+Connectors provide the means by which Identity Manager communicates with managed platforms, applications, and systems. They describe how the data from these systems are mapped to the [entity model](/docs/identitymanager/current/integration-guide/entity-model).
 
 A connector in most case represents an application model. It is composed of entities and associations.
 
-> For example we can define an HR connector, with the following entities: Person, Department, Function, Location, etc. and with the following associations: Person-Department, Person-Site, Person-Manager(Person), etc.
+> For example, you can define an HR connector with the following entities: Person, Department, Function, Location, and so on, and with the following associations: Person-Department, Person-Site, Person-Manager(Person), and so on.
 
 A connector is used to synchronize each of its entities and associations in Identity Manager's physical model. A connector is defined with:
 * [entity types](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype);
@@ -19,7 +19,7 @@ A connector is used to synchronize each of its entities and associations in Iden
 ## Examples
 The following example creates a `HR` connector on the agent called `Local` previously declared by [an `<Agent>` element](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/agent).
 
-We create the right [connections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/connection) to use the connector as a [CSV connector](/docs/identitymanager/current/integration-guide/connectors/references-connectors/csv) aiming to export HR CSV files into new CSV files in Identity Manager's format.
+You create [connections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/connection) to use the connector as a [CSV connector](/docs/identitymanager/current/integration-guide/connectors/references-connectors/csv), which exports HR data into CSV files in Identity Manager's format.
 
 The [entity types](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/metadata/entitytype) model the resources as `HR_Person` or `HR_Organization`, defining properties.
 
@@ -105,10 +105,10 @@ The [entity association mapping](/docs/identitymanager/current/integration-guide
 |Property|Details|
 |---|---|
 | Agent optional | **Type:** Int64 **Description:** Identifier of the agent where the connector's tasks are launched. |
-| CompleteJob <span class="optionalAttribute">default value: 0</span> | **Type:** JobIntegrationRule **Description:** Indicates how the connector should be used in the complete job (scaffolding): `0` - Used `1` - NotUsed `2` - OnlySynchronization `3` - OnlyProvisioning Warning: The job scaffolding has priority over the connector's decision. For example, if your job scaffolding specifies that the Microsoft Entra ID is `NotUsed` for the complete job, setting that connector to `Used` for the complete job will not activate it. You should not only add the `Used` to the connector but also remove the `NotUsed` from the configuration of the job scaffolding. |
+| CompleteJob <span class="optionalAttribute">default value: 0</span> | **Type:** JobIntegrationRule **Description:** Indicates how the connector should be used in the complete job (scaffolding): `0` - Used `1` - NotUsed `2` - OnlySynchronization `3` - OnlyProvisioning Warning: The job scaffolding has priority over the connector's decision. For example, if your job scaffolding specifies that the Microsoft Entra ID is `NotUsed` for the complete job, setting that connector to `Used` for the complete job will not activate it. You shouldn't only add the `Used` to the connector but also remove the `NotUsed` from the configuration of the job scaffolding. |
 | DisplayName_L1 required | **Type:** String **Description:** Connector DisplayName. |
 | Identifier required | **Type:** String **Description:** Connector Identifier. |
-| IncrementalJob <span class="optionalAttribute">default value: 0</span> | **Type:** JobIntegrationRule **Description:** Indicates how the connector should be used in the incremental job (scaffolding): `0` - Used `1` - NotUsed `2` - OnlySynchronization `3` - OnlyProvisioning Warning: The job scaffolding has priority over the connector's decision. For example, if your job scaffolding specifies that the Microsoft Entra ID is `NotUsed` for the incremental job, setting that connector to `Used` for the incremental job will not activate it. You should not only add the `Used` to the connector but also remove the `NotUsed` from the configuration of the job scaffolding. |
+| IncrementalJob <span class="optionalAttribute">default value: 0</span> | **Type:** JobIntegrationRule **Description:** Indicates how the connector should be used in the incremental job (scaffolding): `0` - Used `1` - NotUsed `2` - OnlySynchronization `3` - OnlyProvisioning Warning: The job scaffolding has priority over the connector's decision. For example, if your job scaffolding specifies that the Microsoft Entra ID is `NotUsed` for the incremental job, setting that connector to `Used` for the incremental job will not activate it. You shouldn't only add the `Used` to the connector but also remove the `NotUsed` from the configuration of the job scaffolding. |
 | IsDeactivated <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Indicates that the export and the provisioning are deactivated for this connector. |
 | MaxLinkPercentageDeletedLines <span class="optionalAttribute">default value: 5</span> | **Type:** Int32 **Description:** Deleted association links threshold in percent. |
 | MaxLinkPercentageInsertedLines <span class="optionalAttribute">default value: 5</span> | **Type:** Int32 **Description:** Inserted association links threshold in percent. |

@@ -107,8 +107,8 @@ See [Set Up Data Tracking](/docs/platgovsalesforce/changemanagement/datatracking
 
 Health Check Changes affect how Platform Governance handles changes for the customization records for each Salesforce Health Check group
 (session settings, file upload and security settings), so you can track and report on current
-settings. There is a [Health Settings](/docs/platgovsalesforce/customizations/understanding_customization_record.md) tab
-for the specific records on the customization record.
+settings. The customization record has a [Health Settings](/docs/platgovsalesforce/customizations/understanding_customization_record.md) tab
+for these specific records.
 
 ![Health Check Changes](/images/platgovsalesforce/change_management/policy_new16_a.webp)
 
@@ -118,14 +118,14 @@ for the specific records on the customization record.
 ![Set IT Policies](/images/platgovsalesforce/change_management/policy_new10.webp)
 
 Specify the **Preliminary Approver**. Enter part of the name to see a matching list. For critical
-changes, you can also set a **Final Approver**. This person must approve all changes affected by the
-rule.
+changes, you can also set a **Final Approver**. This person must approve all changes the rule
+affects.
 
 ### Uncategorized Changes
 
 ![Uncategorized Changes](/images/platgovsalesforce/change_management/policy_new12.webp)
 
-This change control level applies to any components not included in the other categories.
+This change control level applies to any components that don't fall into the other categories.
 
 ### Management Policies
 
@@ -135,8 +135,8 @@ This change control level applies to any components not included in the other ca
 
 **Maximum number of Approvals Required**: Platform Governance grants approval when the specified number of approvers have approved. If this field is blank, all approvers must approve.
 
-**No Order Required**: select this option to allow approvals in any order. If it isn't checked,
-approvals occur in the order specified.
+**No Order Required**: select this option to allow approvals in any order. If you don't select it,
+approvals occur in the specified order.
 
 
 ## Related
@@ -152,7 +152,8 @@ The scanner creates Change Logs when you add or remove customizations.
 ### Add or Remove Customizations
 
 You can add or remove customizations from the **Related** tab on the policy. Custom Fields inherit
-the CustomObject Policy when you add them.
+the CustomObject Policy when you add them. See [Policy Inheritance](/docs/platgovsalesforce/changemanagement/policy_inheritance.md)
+for how this works for new and existing fields.
 
 - Platform Governance automatically adds new Custom Fields to the parent **CustomObject** Policy if it exists.
 - Platform Governance adds existing Custom Fields to the parent **CustomObject** Policy from the Custom Object customization record.

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # System Security
 
-This section enables you to configure various security settings, including client uninstall
+Configure various security settings in this section, including client uninstall
 passwords, restricted access to sensitive information (limited to super administrators), data
 protection, and enforcement of password security for all administrators at the next login.
 Additionally, you can set password expiration policies.
@@ -15,8 +15,8 @@ Additionally, you can set password expiration policies.
 
 ## Security Password for Uninstall Protection
 
-From this section, you can set a password that will be required when the user performs an Endpoint
-Protector Client uninstall action.
+From this section, you can set a password that Endpoint Protector requires when a user performs an
+Endpoint Protector Client uninstall action.
 
 :::note
 At the top of the page, you will view a message informing you if a password is set for
@@ -63,7 +63,7 @@ your changes to add an extra layer of security, for a more secure and controlled
 
 ![Backend Console Setup Password](backendconsolesetuppassword.webp)
 
-If a backend console password is configured, you will need to enter the password when accessing the backend console view.
+If you configure a backend console password, you must enter it when accessing the backend console view.
 
 ![Provide Backend Console Setup Password](backendconsolepassword.webp)
 
@@ -73,7 +73,7 @@ On Ubuntu 22 base image, pressing 'Exit' prompts for the password again.
 
 :::note
 To enforce password protection, a reboot of the Endpoint Protector Server appliance is
-required. Please be aware of this when changing passwords.
+required. be aware of this when changing passwords.
 :::
 
 
@@ -88,16 +88,16 @@ From this section, you can require all administrators to use their security pass
 login session.
 
 :::note
-Once you have enabled the “Enforce all administrator password security at next login”
-setting, the feature cannot be disabled.
+After you enable the “Enforce all administrator password security at next login”
+setting, you can't disable it.
 :::
 
 
-If enabled, only complex passwords can be deﬁned, complying with the below rules:
+If enabled, you must define only complex passwords that comply with the following rules:
 
 - the minimum length is 9 characters
-- must contain small and capital letters, numbers and special characters
-- consecutive characters and numbers in ascending order cannot be used
+- must contain small and capital letters, numbers, and special characters
+- consecutive characters and numbers in ascending order can't be used
 
 :::warning
 The Enforce all administrator password security at next login setting will have
@@ -122,7 +122,7 @@ Password setting and then provide the following information:
 
 If you enforce a password that expires, provide the following information:
 
-- Set **password validity** up to 30 day(s)
+- Set **password validity** up to 30 days
 - Select if the new **password must be different** from the previous 4 entries
 
 These are mandatory requirements when creating a new Administrator from the System Administrators

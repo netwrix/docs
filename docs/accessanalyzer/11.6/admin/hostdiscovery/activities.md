@@ -19,7 +19,7 @@ The options are:
     - A confirmation window displays. Click **Yes** to complete the deletion
 
 - Run Query – Begins an immediate execution of the selected query
-- Stop Query – Stops the selected query which is currently running
+- Stop Query – Stops the selected query which is running
 
     - No action occurs if the query is **Idle**
 
@@ -38,6 +38,6 @@ The options are:
   [Host Management](/docs/accessanalyzer/11.6/admin/hostmanagement/overview.md)
   node directly to the selected query’s generated host list
 
-These options are also available through a pop-up menu accessed by right-clicking on a query.
-**Create Query** and **Suspend Query Queue** are additionally available through a pop-up menu
-accessed by right-clicking on the **Host Discovery** node.
+You can also access these options through a pop-up menu by right-clicking a query. You can also
+access **Create Query** and **Suspend Query Queue** through a pop-up menu by right-clicking the
+**Host Discovery** node.

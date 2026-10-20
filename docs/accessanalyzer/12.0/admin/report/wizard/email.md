@@ -26,7 +26,7 @@ for additional information.
 :::
 
 
-To configure the setting for the report, use the Settings drop-down menu to select one of the
+To configure the setting for the report, use the Settings dropdown menu to select one of the
 following options:
 
 - Use default setting – The default option. Applies the Global notification settings, or whatever
@@ -34,9 +34,9 @@ following options:
   **Email this report** is enabled by default, then using this option sends the report to the
   recipients configured at the parent level where the inheritance begins.
 - Email this report – Select this option if you want to email the report and the inherited setting
-  is **Do not email this report**, or if you want to configure specific email settings for the
+  is **Don't email this report**, or if you want to configure specific email settings for the
   report. If it is selected, you must then configure the additional fields below.
-- Do not email this report – Select this option to not email the report
+- Don't email this report – Select this option to not email the report
 
 ![Settings configured to email the report](/images/accessanalyzer/12.0/admin/report/wizard/emailconfigured.webp)
 
@@ -55,7 +55,7 @@ configure:
   `[ReportName]`variable being automatically populated.
 - Send-To / Send-Cc / Send-Bcc – Enter the email addresses of the required recipients for the email
   notification. Use a semicolon (;) to separate multiple recipients.
-- Do not e-mail this report if blank – Select this checkbox to not email the report if all elements
+- Don't e-mail this report if blank – Select this checkbox to not email the report if all elements
   of it are blank when it is generated
     - A blank report can occur if there is an error in data collection or if the report is
       configured for data which might not always be present (for example, new computer objects

@@ -13,12 +13,12 @@ this job.
 
 ![Report Settings tab of Job Properties](/images/accessanalyzer/11.6/admin/jobs/job/properties/reportsettings.webp)
 
-Use the Publish Options drop-down menu to customize the publish setting for the job. To configure
+Use the Publish Options dropdown menu to customize the publish setting for the job. To configure
 custom Email settings for the job, select the **Use These Email Settings** option and then provide
-the desired Email information. Multiple email addresses can be input by adding a semicolon (;) and
-space between entries. See the
+the Email information you want. You can input multiple email addresses by adding a semicolon (;)
+and space between entries. See the
 [Reporting Node](/docs/accessanalyzer/11.6/admin/jobs/group/settings/reporting.md)
 topic for additional information on the Publish and Email options.
 
 Click **OK** to save configuration changes and close the Job Properties window. Click **Cancel** if
-no changes were made.
+you didn't make changes.

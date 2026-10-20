@@ -14,7 +14,7 @@ Identity Manager provides demo applications [Run the Banking Demo Application](
 
 Connectors are the mechanisms that enable Identity Manager to read and write data to/from your organization's systems. The feedback mechanism ensures Identity Manager's reliability.
 
-In this documentation, we talk about managed systems (sometimes called external systems) to refer to third-party applications, i.e. the applications used in your organization, such as Active Directory, ServiceNow, EasyVista, SAP, SharePoint, etc.
+This documentation uses the term managed systems (sometimes called external systems) to refer to third-party applications, i.e. the applications used in your organization, such as Active Directory, ServiceNow, EasyVista, SAP, SharePoint, etc.
 
 A connector, therefore, acts as an interface between Identity Manager and a managed system.
 
@@ -26,12 +26,12 @@ NETWRIX strongly recommends the creation of one connector for one application.
 > Directory's data into Identity Manager, and writing to the Active Directory from Identity Manager,
 > either manually for administration accounts, or automatically for basic accounts.
 >
-> Integrators may create a `SharePoint` connector in order to manage read and write entitlements for
+> Integrators may create a `SharePoint` connector to manage read and write entitlements for
 > users in SharePoint.
 
 ### Data Flows
 
-In the early steps of a project, we'll consider most of our connectors to be outbound, i.e. Identity Manager will feed data into connected managed systems.
+In the early steps of a project, most connectors are outbound, i.e. Identity Manager feeds data into connected managed systems.
 
 ![Outbound System=](/images/identitymanager/connectorcreation_outbound.webp)
 
@@ -44,50 +44,50 @@ For a connector's synchronization, Identity Manager provides tools to perform a
 
 For provisioning, Identity Manager generates provisioning orders and the connector provides tools to either automatically write these orders to the managed system or to create a ticket for manual provisioning.
 
-> For example, we can use the data from Identity Manager's Identity repository to fill in later the
+> For example, use the data from Identity Manager's Identity repository to fill in the
 > AD's fields, such as users' display names based on their first names and last names from the
 > repository. See the [Create the Workforce Repository](../../../user-guide/set-up/initial-identities-loading) topic for additional information.
 
-Identity Manager can also benefit from inbound connectors, that will write data to Identity Manager's central identity repository. While both inbound and outbound connectors allow data to flow both ways, they do not work in the same manner.
+Identity Manager can also benefit from inbound connectors, that will write data to Identity Manager's central identity repository. While both inbound and outbound connectors allow data to flow both ways, they don't work in the same manner.
 
 ### Technical principles
 
 Identity Manager's connectors all operate on the same basic principles. Technically speaking:
 
-> For example, let's say that we want to connect Identity Manager to our Active Directory, or AD.
+> For example, consider connecting Identity Manager to an Active Directory (AD) instance.
 
 - a connector must be created, first as a named container which will include the connections and
 entity types related to one managed system;
 
-    > We create a connector named `AD` (so far, an empty shell).
+    > Create a connector named `AD` (so far, an empty shell).
 
 - A [Connector](../../../integration-guide/toolkit/xml-configuration/connectors/connector)
 is linked to an agent which acts as the go-between for Identity Manager's server and the managed system;
 
-    > Our `AD` connector uses the provided SaaS agent.
+    > The `AD` connector uses the provided SaaS agent.
 
 - A  [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection)
 describes the technology used that enables data to flow back and forth between Identity Manager and the managed system;
 
-    > We want to use a connection `Directory/Active Directory` to perform synchronization and
+    > Use a connection `Directory/Active Directory` to perform synchronization and
     > automated provisioning, and a second connection `Ticket/identitymanager` to perform manual
     > provisioning through Identity Manager.
 
 You can find standard connections dedicated to one application (AD, Microsoft Entra ID, etc.), and generic connections to communicate with any application (CSV, Powershell, RobotFramework, SQL, etc.).
 
-- the shape of the extracted managed system's data is modeled by [Entity Type](../../../integration-guide/toolkit/xml-configuration/metadata/entitytype) (we will use the term resource to refer to an entity type that has been instantiated);
+- the shape of the extracted managed system's data is modeled by [Entity Type](../../../integration-guide/toolkit/xml-configuration/metadata/entitytype) (this documentation uses the term resource to refer to an entity type that has been instantiated);
 
-    > We create a single entity type `AD - Entry` which contains all the attributes that will
+    > Create a single entity type `AD - Entry` which contains all the attributes that
     > describe its resources, i.e. AD groups and users. The attributes include the department, the
     > employee identifier, the manager, the group membership (`member`/`memberOf`), the dn, the
     > parent dn, etc.
 
 - The intent of resources within the managed system is made clear by categorizing resources into [Create a Resource Type](../../../user-guide/set-up/categorization/resource-type-creation). See the [Categorize Resources](../../../user-guide/set-up/categorization) topic for additional information.
 
-    > We categorize AD resources into distinct resource types: `AD User (nominative)` for basic
-    > accounts, which we want Identity Manager to provision automatically;
-    > `AD User (administration)` for sensitive administration accounts, which we want to provision
-    > manually through Identity Manager.
+    > Categorize AD resources into distinct resource types: `AD User (nominative)` for basic
+    > accounts, which Identity Manager provisions automatically;
+    > `AD User (administration)` for sensitive administration accounts, which require manual
+    > provisioning through Identity Manager.
 
 ![Connector Technical Schema](/images/identitymanager/connectorcreation_connectortechnicalschema.webp)
 
@@ -116,7 +116,7 @@ For one managed system, create a connector by proceeding as follows:
 3. Enable the technical transfer of data by creating and configuring [Create a Connection](../../../user-guide/set-up/connect-system/connection-creation).
 4. Set up [Create an Entity Type](../../../user-guide/set-up/connect-system/entity-type-creation) to represent the data model decided upon in step 1.
 
-**Connector modification:** The process for modifying a connector is not so different from the process for creating a connector, as you mainly modify the fields specified during creation. However, keep in mind that **a connector must be deactivated before modification**, in order to withdraw the connector's synchronization- and provisioning-related tasks from any jobs. See below this note.
+**Connector modification:** The process for modifying a connector isn't so different from the process for creating a connector, as you mainly modify the fields specified during creation. However, **a connector must be deactivated before modification** to withdraw the connector's synchronization- and provisioning-related tasks from any jobs.
 
 You can activate the connector again at any time using the same button.
 
@@ -124,5 +124,5 @@ You can activate the connector again at any time using the same button.
 
 ## Next Steps
 
-Once the connector has been created, you can start to [Synchronize Data](../../../user-guide/set-up/synchronization).
+After you create the connector, you can start to [Synchronize Data](../../../user-guide/set-up/synchronization).
 

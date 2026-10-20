@@ -6,12 +6,12 @@ sidebar_position: 10
 
 # Exchange Custom Connection Profile & Host List
 
-The ExchangePS Data Collector requires a custom Connection Profile and host list to be created and
-assigned to the job conducting the data collection. The host inventory option during host list
+The ExchangePS Data Collector requires a custom Connection Profile and host list, which you create
+and assign to the job that collects the data. The host inventory option during host list
 creation makes it necessary to configure the Connection Profile first.
 
 :::note
-It is not possible to target both Exchange Online and on-premises Exchange environments
+You can't target both Exchange Online and on-premises Exchange environments
 from the same job. Therefore, the Connection Profile should only contain the credentials for one
 type of environment.
 :::
@@ -28,17 +28,17 @@ The provisioned credential used should be an Active Directory account. Create a 
 and set the following information on the User Credentials window:
 
 - Select Account Type – Active Directory Account
-- Domain – Drop-down menu with available trusted domains will appear. Either type the short domain
+- Domain – dropdown menu with available trusted domains will appear. Either enter the short domain
   name in the textbox or select a domain from the menu.
-- User name – Type the user name
+- User name – Enter the user name
 - Password Storage – Choose the for credential password storage:
 
     - Application – Uses the configured Profile Security setting as selected at the **Settings** >
       **Application** node
     - CyberArk – Uses the CyberArk Enterprise Password Vault
 
-- Password – Type the password
-- Confirm – Re-type the password
+- Password – Enter the password
+- Confirm – Re-enter the password
 
 ### Exchange On-Premise Host List
 
@@ -53,18 +53,18 @@ Exchange Online.
 
 ### Exchange Online Credential for a Connection Profile
 
-The provisioned credential must be created with the Exchange Modern Authentication account type.
+Create the provisioned credential with the Exchange Modern Authentication account type.
 Create a Connection Profile and set the following information on the User Credentials window:
 
 - Select Account Type – Exchange Modern Authentication
 - Password Storage – Application (Uses the configured Profile Security setting as selected at the
   **Settings** > **Application** node. See the [Application](/docs/accessanalyzer/12.0/admin/settings/application/overview.md)
   topic for additional information.)
-- Organization – The primary domain name of the Microsoft Entra tenant being leveraged to make the
+- Organization – The primary domain name of the Microsoft Entra tenant used to make the
   connection. See the
   [Identify the Tenant's Name](/docs/accessanalyzer/12.0/requirements/exchange/exchangeonline/access.md#identify-the-tenants-name)
   topic for additional information.
-- Email Address – The email address for the mailbox to be leveraged in Exchange Online environment
+- Email Address – The email address for the mailbox used in Exchange Online environment
   scans. The mailbox must belong to the primary domain used in the Organization field.
 - AppID – Application (client) ID of the Access Analyzer application registered with Microsoft Entra
   ID. See the

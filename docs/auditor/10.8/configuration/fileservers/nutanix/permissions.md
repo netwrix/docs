@@ -39,25 +39,14 @@ See the section below for the instructions on user role assignment.
 
 ## Role Assignment Procedure
 
-Before starting the role assignment, make sure your Nutanix File Server is included in the AD
-domain.
+Before starting the role assignment, ensure your Nutanix File Server is included in the AD domain.
 
-Follow the steps to assign the required roles to the corresponding accounts using Nutanix Prism.
-
-**Step 1 –** Open Nutanix Prism web portal.
-
-**Step 2 –** Select **File Server** category. In the list of servers, select the server you want to
-audit.
-
-**Step 3 –** Click **Manage roles**.
-
-**Step 4 –** In the **Manage roles** dialog locate the **Add admins** section and click **+New
-user**.
-
-**Step 5 –** Enter the AD user account (to be used as data collection account) in the _domain\name_
-format and select the **File Server Admin** or **Backup Admin** role to assign
-
-**Step 6 –** Click **Save** next to these cells to save the settings.
+1. Open Nutanix Prism web portal.
+2. Select **File Server** category. In the list of servers, select the server you want to audit.
+3. Click **Manage roles**.
+4. In the **Manage roles** dialog, locate the **Add admins** section and click **+New user**.
+5. Enter the AD user account (to be used as data collection account) in the `domain\name` format and select the **File Server Admin** or **Backup Admin** role to assign.
+6. Click **Save** next to these cells to save the settings.
 
 **Step 7 –** Next, in the **REST API access users** section click **+New user**.
 

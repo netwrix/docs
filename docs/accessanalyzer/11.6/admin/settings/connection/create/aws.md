@@ -13,17 +13,17 @@ type in the User Credentials window.
 
 The required credentials for Amazon Web Services are:
 
-- Access Key ID — Used to sign programmatic requests made to AWS. If access keys are not available,
+- Access Key ID — Used to sign programmatic requests made to AWS. If access keys aren't available,
   create them with the IAM console.
 - Password Storage: Application – Uses the configured Profile Security setting as selected at the
   **Settings >** **Application** node
-- Secret Key — Used to sign programmatic requests made to AWS. If secret keys are not available,
+- Secret Key — Used to sign programmatic requests made to AWS. If secret keys aren't available,
   create them with the IAM console.
 - Scan Roles — Role used to scan other organization accounts
 
 ## Create a Connection Profile for AWS
 
-A new connection profile will need to be created to be leveraged in the AWS Solution.
+Create a new connection profile to use in the AWS Solution.
 
 **Step 1 –** Under Settings > Connection, click Add Connection profile.
 
@@ -33,7 +33,7 @@ A new connection profile will need to be created to be leveraged in the AWS Solu
 Access Token section.
 
 :::tip
-Remember, these are obtained from AWS when the permissions are configured. See the
+Remember, you obtain these from AWS when you configure the permissions. See the
 [Configure AWS for Scans](/docs/accessanalyzer/11.6/requirements/aws/configurescans.md)
 topic for additional information.
 :::
@@ -41,4 +41,4 @@ topic for additional information.
 
 **Step 4 –** Click OK in the User Credentials modal, name the Connection Profile, and click Save.
 
-This connection profile can now be assigned to the AWS Solution.
+You can now assign this connection profile to the AWS Solution.

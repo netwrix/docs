@@ -17,13 +17,13 @@ properties. You can delete or restore a group from the Recycle Bin. The restorat
 restores the group to its original container, but it also reinstates the home container for the
 group, if deleted.
 
-When restored, a physically deleted group is restored with limited attributes; its membership is not
+When restored, a physically deleted group is restored with limited attributes; its membership isn't
 restored.
 
 A Smart Group and Dynasty is restored as a static group with no members and no query.
 
 :::note
-Tombstone groups are not available in Microsoft Entra ID.
+Tombstone groups aren't available in Microsoft Entra ID.
 :::
 
 
@@ -39,7 +39,7 @@ time of deletion. The restoration process not only restores the group to the con
 was deleted but it also reinstates the home container for the group, if deleted.
 
 You can also manually delete a logically deleted group in the Recycle Bin, making it physically
-deleted. Simply select the required group and select Delete on the shortcut menu.
+deleted. Select the required group and select Delete on the shortcut menu.
 
 ## Deletion notifications
 
@@ -72,7 +72,7 @@ Groups.
 
 ## Delete a group from Recycle Bin
 
-Follow the steps to delete a group from Recycle Bin.
+To delete a group from Recycle Bin.
 
 1. In Directory Manager portal, select **Groups > Deleted Groups** from the left pane.
 2. From the groups list, select one or more groups.
@@ -82,7 +82,7 @@ The group / groups will be permanently deleted from the recycle bin.
 
 ## Restore a deleted group
 
-Follow the steps to restore a deleted group.
+To restore a deleted group.
 
 1. In Directory Manager portal, select **Groups > Deleted Groups** from the left pane.
 2. From the groups list, select one or more groups.
@@ -103,6 +103,6 @@ an exception, as it fetches data from the directory.
 
 
 :::note
-The Recycle Bin does not display data for a Microsoft Entra ID based identity store.
+The Recycle Bin doesn't display data for a Microsoft Entra ID based identity store.
 
 :::

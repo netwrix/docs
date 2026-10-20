@@ -6,12 +6,12 @@ sidebar_position: 1
 
 # Connection Tab
 
-The Connection tab allows users to modify the agent host server name and the credentials used for
+The Connection tab lets you modify the agent host server name and the credentials used for
 installation and communication. The tab varies based on the type of agent selected.
 
 ## For Activity Agent
 
-The server name can be modified in the text box. Modifying the name value does not move the activity
+The server name can be modified in the text box. Modifying the name value doesn't move the activity
 agent to a new server. The credentials can be updated or modified as well.
 
 :::tip
@@ -37,14 +37,14 @@ This account must be:
 
 - Membership in the local Administrators group
 
-If the user name is not specified, the currently logged in user's account will be used.
+If the user name isn't specified, the logged in user's account will be used.
 
 **Less Privileged Permissions Option**
 
 By default, the agent accepts commands only from members of the local Administrators group. You can
 allow less privileged accounts to manage the agent with the **Management Group** option. Keep in
 mind that you still need to be an administrator to install, upgrade, or uninstall the agent. The
-Management Group applies to the users of the console and API servers. The Management Group does not
+Management Group applies to the users of the console and API servers. The Management Group doesn't
 restrict access to the agents, but grants access to its members in addition to existing members of
 the local Administrators group.
 
@@ -52,9 +52,9 @@ The Specify account or group window is opened from a field where a Windows accou
 
 ![Specify Account or Group popup window](/images/activitymonitor/9.0/admin/agents/properties/windowsspecifyaccountorgroup.webp)
 
-Follow the steps to use this window.
+To use this window:
 
-**Step 1 –** Select the Domain from the drop-down menu.
+**Step 1 –** Select the Domain from the dropdown menu.
 
 **Step 2 –** Enter the Account in the textbox.
 
@@ -62,7 +62,7 @@ Follow the steps to use this window.
 - Use the ellipsis (…) button to open the Select Users, Computers, Service Accounts, or Groups
   window to browse for an account.
 
-**Step 3 –** Then click Resolve. A message displays indicating whether or not the account could be
+**Step 3 –** Then click Resolve. A message displays indicating whether the account could be
 resolved.
 
 **Step 4 –** If successful, click OK.
@@ -75,7 +75,7 @@ Properties window closes.
 
 ## For Linux Agent
 
-The server name can be modified in the text box. Modifying the name value does not move the Linux
+The server name can be modified in the text box. Modifying the name value doesn't move the Linux
 agent to a new server. The credentials can be updated or modified as well.
 
 :::tip

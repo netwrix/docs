@@ -7,9 +7,9 @@ sidebar_position: 40
 # AD_LoadBalancing Job
 
 The AD_LoadBalancing Job analyzes each domain controller's traffic to show what percent of all LDAP,
-Replication, Authentication and Changes are being handled by that particular machine. This helps to
-highlight domain controllers which are over utilized relative to others within the domain, or unused
-domain controllers which may be decommissioned.
+Replication, Authentication, and Changes traffic that particular machine handles. This helps you
+identify domain controllers that are overused relative to others in the domain, or unused domain
+controllers that you can decommission.
 
 ## Analysis Task for the AD_LoadBalancing Job
 
@@ -17,7 +17,7 @@ Navigate to the **Active Directory** > **6.Activity** > **Operations** > **AD_Lo
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

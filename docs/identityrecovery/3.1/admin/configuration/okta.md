@@ -37,8 +37,6 @@ additional information.
 
 To add a tenant, provide tenant details and configure the backup schedule.
 
-Follow the steps to add a tenant.
-
 **Step 1 –** Click the **Add tenant configuration** button on the Okta page to launch the Add
 Tenant Configuration wizard.
 
@@ -52,28 +50,28 @@ Tenant Configuration wizard.
 
 ![Add Tenant Configuration wizard - Backup Schedule page](/images/identityrecovery/3.1/product/configuration/okta/okta_configuration_page2.png)
 
-**Step 5 –** Select the days of the week in the Run the backup on section to indicate the days when backups will be run.
+**Step 5 –** Select the days of the week in the Run the backup on section to indicate when the system will run backups.
 
 **Step 6 –** Select a start time (UTC) in the Start the backup at field to begin the backup. The
 default time is 12:00 AM.
 
-**Step 7 –** In the Repeat every field, enter a frequency, in minutes, to set the time between the start of each backup. Keep in mind the size of the environment when configuring this option.
+**Step 7 –** In the Repeat every field, enter a frequency, in minutes, to set the time between the start of each backup. Consider the size of the environment when configuring this option.
 Click **Next**.
 
 :::note
 If the start time is changed from the default and a frequency is selected (in minutes),
-the backups will run at the desired frequency but will skip from midnight until the selected start
+the backups will run at the frequency you want but will skip from midnight until the selected start
 time.
 :::
 
 ![Add Tenant Configuration wizard - Notifications page](/images/identityrecovery/3.1/product/configuration/okta/okta_configuration_page3.png)
 
-**Step 8 –** To set notifications, select the Send email notifications check box and enter the
+**Step 8 –** To set notifications, select the Send email notifications checkbox and enter the
 email address of one or more users and/or groups to receive the job start and end notifications. Use
 a semicolon (;) to separate multiple recipients. See the [Notifications Page](/docs/identityrecovery/3.1/admin/configuration/notifications.md)
 topic for additional information.
 
-If notifications are not desired, skip this step.
+If notifications aren't desired, skip this step.
 
 **Step 9 –** Click **Next**.
 
@@ -83,19 +81,17 @@ If notifications are not desired, skip this step.
 **Done**
 to finish the wizard.
 
-A new tenant is added and displayed on the Okta page.
+The system adds the new tenant and displays it on the Okta page.
 
-Backups will begin as scheduled. On the first scheduled instance, a complete backup of the tenant is performed. Then, subsequent backups only include the incremental changes that occurred since the
+Backups will begin as scheduled. On the first scheduled instance, the system performs a complete backup of the tenant. Then, subsequent backups only include the incremental changes that occurred since the
 previous backup.
 
 ### Edit Tenant Configuration
 
-Follow the steps to edit a tenant.
-
 **Step 1 –** On the Okta page, click the **Edit configuration** icon for a tenant. The Edit
 Tenant Configuration wizard opens.
 
-**Step 2 –** Modify the desired settings for the tenant configuration
+**Step 2 –** Modify the settings you want for the tenant configuration
 
 **Step 3 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click **Done** to finish the wizard.
 

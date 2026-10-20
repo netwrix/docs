@@ -11,7 +11,7 @@ default settings. It can be run directly or scheduled.
 
 **Dependencies**
 
-This job group does not have dependencies.
+This job group doesn't have dependencies.
 
 **Targeted Hosts**
 
@@ -50,7 +50,7 @@ entire job group, instead of the individual jobs.
 **Query Configuration**
 
 The 5.Domains > 0.Collection > AD_DomainControllers job should be run with the default query
-configurations. Most of these queries are preconfigured for this Job Group and should not be
+configurations. Most of these queries are preconfigured for this Job Group and shouldn't be
 modified.
 
 The following query can be modified to use a secure connection with TLS/SSL:

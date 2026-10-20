@@ -8,7 +8,7 @@ Generates the permissions to view an entity type's resources.
 
 
 ## Examples
-The following example gives to the `Administrator` profile the permissions to access the page that displays the resources of the `Directory_UserType` entity type, as well as its source resources.
+The following example gives the `Administrator` profile the permissions to access the page that displays the resources of the `Directory_UserType` entity type, as well as its source resources.
 
 ```xml
   <ViewAccessControlRules EntityType="Directory_UserType" Profile="Administrator"/>
@@ -26,7 +26,7 @@ The following example gives to the `Administrator` profile the permissions to ac
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_AssignedCompositeRole_Custom_Resources_Directory_UserType_ViewTargetResources" DisplayName_L1="Administrator_AssignedCompositeRole_Custom_Resources_Directory_UserType_ViewTargetResources" EntityType="AssignedCompositeRole" Profile="Administrator">

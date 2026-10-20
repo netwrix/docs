@@ -12,7 +12,7 @@ Agent and server expose a REST API.
 
 This feature is optional and must be activated by the Swagger settings section. See the [Application Settings](../../integration-guide/network-configuration/server-configuration/general-purpose) topic for additional information.
 
-The page `[Usercube application's URL]/swagger` can be used to explore and test the API.
+Use the page `[Usercube application's URL]/swagger` to explore and test the API.
 
 This page is built by the [Swagger UI tool](https://swagger.io/tools/swagger-ui/) from the Identity Manager [OpenAPI](https://swagger.io/specification/) definition.
 

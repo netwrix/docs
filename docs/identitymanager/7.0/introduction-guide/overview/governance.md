@@ -12,7 +12,7 @@ Identity Manager not only gives the right entitlements to the right identities,
 
 By reading entitlement data from the managed systems, Identity Manager builds an exhaustive list of **existing** assignments for all identities in all managed systems.
 
-Rules and roles define a policy. By definition, assignments not supported by a rule do not comply with the policy. These assignments are identified as **non-conforming** in order to be acted upon by knowledgeable users who can decide whether the assignment is warranted, such as security officers.
+Rules and roles define a policy. By definition, assignments not supported by a rule don't comply with the policy. These assignments are identified as **non-conforming** to be acted upon by knowledgeable users who can decide whether the assignment is warranted, such as security officers.
 
 ![**non-conforming** Assignments](/images/identitymanager/governance_nonconforming.webp)
 
@@ -20,7 +20,7 @@ A **non-conforming** assignment must be reviewed in Identity Manager by a knowle
 
 - either removed if Identity Manager correctly spotted it and the owner should indeed not possess
 this permission;
-- or kept as an **exception** if the configured rules do not apply to this particular case.
+- or kept as an **exception** if the configured rules don't apply to this particular case.
 
 ## Other Governance Tools
 
@@ -30,13 +30,13 @@ Identity Manager provides a set of governance tools to help enforce the policy, 
 
 Let's read some [Use Case Stories](../../introduction-guide/overview/use-cases).
 
-## Learn More
+## Related Resources
 
-Learn more on [Governance](../../integration-guide/governance).
+See the [Governance](../../integration-guide/governance) topic for more information.
 
-Learn more on how to [Generate Reports](../../user-guide/administrate/reporting).
+See how to [Generate Reports](../../user-guide/administrate/reporting).
 
-Learn more on [Perform Access Certification](../../user-guide/administrate/access-certification).
+See the [Perform Access Certification](../../user-guide/administrate/access-certification) topic for more information.
 
-Learn more on how to [Manage Risks](../../user-guide/optimize/risk-management).
+See how to [Manage Risks](../../user-guide/optimize/risk-management).
 

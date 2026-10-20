@@ -21,12 +21,14 @@ KB articles follow one of two primary types.
 
 How-to articles provide step-by-step guidance for accomplishing specific tasks.
 
-**Title format:** `[Action Gerund] [Specific Task]` — start with a gerund, no "How to" prefix, no question mark.
+**Title format (Instructions format only):** `[Action Gerund] [Specific Task]` — start with a gerund, no "How to" prefix, no question mark.
 
 - Good: `Modifying SSRS Report Timeouts`
 - Good: `Auditing a Non-trusted Domain`
 - Bad: `How to Modify SSRS Report Timeouts?` (starts with "How to", ends with question mark)
 - Bad: `Auditing a non-trusted domain` (sentence case)
+
+**Title format (Question and Answer format only):** not required to use gerund/action form, unlike Instructions-format titles. A topic-descriptive title, a "How to..." title, or a question-form title are all valid — none is a gerund violation. The interrogative form doesn't have to live in the title; it can instead appear in the `## Question` section itself.
 
 **Formats:**
 
@@ -50,7 +52,7 @@ Resolution articles help customers troubleshoot specific errors or unexpected be
 - Good: `Active Directory Users Missing from Search Results`
 - Bad: `AD not working right` (too vague)
 
-Both resolution article formats use sections: `## Symptom` (or `## Symptoms`), `## Cause` (or `## Causes`), `## Resolution` (or `## Resolutions`).
+Both resolution article formats use sections: `## Symptom`, `## Cause`, `## Resolution` — always singular, even when the section describes multiple items.
 
 ---
 

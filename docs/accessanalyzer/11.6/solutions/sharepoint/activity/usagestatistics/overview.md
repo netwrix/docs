@@ -14,7 +14,7 @@ environment highlighting most active sites and users as well as stale sites.
 The jobs in the Usage Statistics Job Group are:
 
 - [SP_InactiveSites Job](/docs/accessanalyzer/11.6/solutions/sharepoint/activity/usagestatistics/sp_inactivesites.md)
-  – Highlights your environments least active Sites or Site Collections
+  – Highlights your environment's least active Sites or Site Collections
 - [SP_MostActiveSites Job](/docs/accessanalyzer/11.6/solutions/sharepoint/activity/usagestatistics/sp_mostactivesites.md)
   – Identifies the top five most active sites monitored by Enterprise Auditor
 - [SP_MostActiveUsers Job](/docs/accessanalyzer/11.6/solutions/sharepoint/activity/usagestatistics/sp_mostactiveusers.md)

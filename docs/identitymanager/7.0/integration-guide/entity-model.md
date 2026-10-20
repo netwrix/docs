@@ -95,7 +95,7 @@ _Manager_.
 
 #### Locatable property
 
-Some property values must be available in several languages. In this case, we define a **neutral property** and as many corresponding properties as languages.
+Some property values must be available in several languages. In this case, define a **neutral property** and as many corresponding properties as languages.
 
 The built-in _InternalDisplayName_ property is a neutral property. Its associated properties are named \_`InternalDisplayName___L{Index}`_ where \_Index_ reference the [Languages](../integration-guide/toolkit/languages).
 
@@ -103,11 +103,11 @@ The built-in _InternalDisplayName_ property is a neutral property. Its associate
 
 A property can be calculated from other properties. The [Entity Type](../integration-guide/toolkit/xml-configuration/metadata/entitytype) property expression element allows the expression of a computed property. It references the property (specifying the entity type's identifier and the property's identifier) and expresses the calculation based on a given entity using the calculation [Expressions](../integration-guide/toolkit/expressions) syntax.
 
-An element `<EntityPropertyExpression>` can be used to calculate a scalar property or a mono-valued navigation property. In the latter case, the expression must return an integer that corresponds to the primary key of the target entity.
+Use an element `<EntityPropertyExpression>` to calculate a scalar property or a mono-valued navigation property. In the latter case, the expression must return an integer that corresponds to the primary key of the target entity.
 
 #### Display name
 
-Every declared **EntityType** automatically has the `InternalDisplayName` property even if it is not explicitly declared in the applicative configuration.
+Every declared **EntityType** automatically has the `InternalDisplayName` property even if it isn't explicitly declared in the applicative configuration.
 
 It represents a user-friendly name for **EntityType** that is used in the UI if needed.
 
@@ -147,18 +147,18 @@ Every [Entity Association Mapping](../integration-guide/toolkit/xml-configuratio
 
 When exporting entries from an external system, the results are usually retrieved as simple strings, written in a CSV file, and imported into the Identity Manager�Database as-is. But an external system will rarely uses the same format as Identity Manager to store objects such as dates.
 
-Let's take, for example, a case where we want to store an employee's start date:
+Consider a case where an employee's start date needs to be stored:
 
 - In the external system, the date is stored as a string with the format `2020-09-29 22:00:00`.
 - In Identity Manager, dates are stored as strings in the format `20200929220000`
 
-We need to transform the input data, from the export, into something readable by Identity Manager�and, when writing to the external system, transform Identity Manager's data back into something readable by the external system.
+Transform the input data from the export into something readable by Identity Manager�and, when writing to the external system, transform Identity Manager's data back into something readable by the external system.
 
 ![Export and Fulfill Data transformation](/images/identitymanager/entitypropertymapping-format-flowchart.webp)
 
 The format used in the external system can be provided through the [Entity Type Mapping](../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) using the [References: Format for the EntityPropertyMapping](../integration-guide/connectors/entitypropertymapping-format) attribute to help Identity Manager�to convert data appropriately.
 
-If the field in the external system is not forced to a specific value type, but is free-form (example: a string field in which date values are stored but which can sometimes hold other values), we strongly recommend not using the `Format` attribute to prevent inconsistent user input in the external system.
+If the field in the external system isn't forced to a specific value type, but is free-form (example: a string field in which date values are stored but which can sometimes hold other values), avoid using the `Format` attribute to prevent inconsistent user input in the external system.
 
 #### Primary key
 
@@ -166,13 +166,13 @@ When writing an [Entity Type Mapping](../integration-guide/toolkit/xml-configura
 
 ### SQL views
 
-The `UR_Resource` table contains resources from all the connectors, for all the Entity Types. Columns names are not semantically meaningful because they have generic I\*/C\* names. For this reason, Identity Manager�provides SQL views to help the user explore the resource repository from the database. The views are useful to understand how Identity Manager�works or to debug a faulty configuration.
+The `UR_Resource` table contains resources from all the connectors, for all the Entity Types. Columns names aren't semantically meaningful because they have generic I\*/C\* names. For this reason, Identity Manager�provides SQL views to help the user explore the resource repository from the database. The views are useful to understand how Identity Manager�works or to debug a faulty configuration.
 
 SQL Views are built by the [Create Database Views Task](../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/createdatabaseviewstask).
 
 SQL Views created by this tool are identified in the database by a `zz_` prefix.
 
-Created views are not used by the Identity Manager�engine directly. Identity Manager's engine always creates, reads, updates and deletes from the `UR_*` tables.
+Created views aren't used by the Identity Manager�engine directly. Identity Manager's engine always creates, reads, updates, and deletes from the `UR_*` tables.
 
 ## Records
 

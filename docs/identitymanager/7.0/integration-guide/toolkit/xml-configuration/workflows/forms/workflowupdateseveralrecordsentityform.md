@@ -1,14 +1,14 @@
 ---
 title: "WorkflowUpdateSeveralRecordsEntityForm"
-description: "Displays a form to create, update or delete one or several records."
+description: "Displays a form to create, update, or delete one or several records."
 sidebar_position: 9
 ---
 
-Displays a form to create, update or delete one or several records.
+Displays a form to create, update, or delete one or several records.
 
 
 ## Examples
-The following example is a form to create, update and/or delete one or several positions for a given user.
+The following example is a form to create, update, and/or delete one or several positions for a given user.
 
 ```xml
 <WorkflowUpdateSeveralRecordsEntityForm Identifier="Workflow_Directory_User_ManagePositions" EntityType="Workflow_Directory_User" MainProperty="Workflow_Directory_User:Directory_User" RecordProperty="Directory_User:Records" RecordTable="Directory_UserRecord_ManagePositions" WorkflowRequestType="Self" Activity="Directory_User_ManagePositions:Request" FormTitle_L1="Manage Positions" TableTitle_L1="Positions" AddRowLabel_L1="Add Position" RemoveRowLabel_L1="Remove Position" RecordStartProperty="Directory_UserRecord:PositionStartDate" RecordEndProperty="Directory_UserRecord:PositionEndDate">
@@ -70,11 +70,11 @@ And with the following form for the data that groups records together:
 The contents of `MainControl`, `RecordControl`, `RecordSlaveUniqueItemControl` and `RecordSlaveControl` are visible during the workflow's execution:
 ![Form Example - Manage a User's Positions](/images/identitymanager/formexample_workflowupdateseveralrecordsentityform_v603.webp)
 
-When adding a new position, we decide to make `Title` available, in addition to the fields used to update existing records:
+When adding a new position, `Title` is made available in addition to the fields used to update existing records:
 ![Formexample Workflowupdateseveralrecordsentityform V603](/images/identitymanager/formexample_workflowupdateseveralrecordsentityform_v603.webp)
 
 :::note
-The content of `RecordUniqueItemControl` is not visible. The user's records that have the same values for all the properties in `RecordUniqueItemControl` will be displayed, and potentially modified, as one.
+The content of `RecordUniqueItemControl` isn't visible. The user's records that have the same values for all the properties in `RecordUniqueItemControl` will be displayed, and potentially modified, as one.
 :::
 
 <!-- The content of `SummaryControl` is visible after the workflow's execution:

@@ -14,7 +14,7 @@ This page is about [RACF](../../../integration-guide/connectors/references-packa
 
 ## Overview
 
-Resource Access Control Facility (RACF) is a security program from IBM OS/390 used to protect users' resources by controlling their accesses. The RACF connector exports the information saved by RACF about users, groups and access authorities.
+Resource Access Control Facility (RACF) is a security program from IBM OS/390 used to protect users' resources by controlling their accesses. The RACF connector exports the information saved by RACF about users, groups, and access authorities.
 
 ## Prerequisites
 
@@ -86,8 +86,8 @@ The identifier of the connection and thus the name of the subsection must:
 This connector is meant to generate to the [Application Settings](../../../integration-guide/network-configuration/agent-configuration/appsettings)Export Output folder one CSV file per record type (0100, 0200, etc.), named `<connectionIdentifier>_<type>.csv`.
 
 > For example, consider an export with a connection named `ExportRacf`, and a source file containing
-> the record types 0100, 0120, 0203. Then we will have three output files named
-> `ExportRacf_0100.csv`, `ExportRacf_0120.csv` and `ExportRacf_0203.csv`.
+> the record types 0100, 0120, 0203. This produces three output files named
+> `ExportRacf_0100.csv`, `ExportRacf_0120.csv`, and `ExportRacf_0203.csv`.
 
 ## Fulfill
 
@@ -97,11 +97,11 @@ There are no fulfill capabilities for this connector.
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 
-This connector has no credential attributes, and therefore does not use [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection), nor a [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection).
+This connector has no credential attributes, and therefore doesn't use [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection), nor a [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection).
 
 Still, data protection can be ensured through an [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) safe.
 

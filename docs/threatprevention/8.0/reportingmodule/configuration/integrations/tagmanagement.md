@@ -6,8 +6,8 @@ sidebar_position: 70
 
 # Tag Management Page
 
-The Tag Management page displays all tags that are currently managed by the application, including
-out-of-the-box and custom tags. You can add tags and assign objects to those tags.
+The Tag Management page displays all tags that are managed by the application, including
+pre-configured and custom tags. You can add tags and assign objects to those tags.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
 select **Integrations** to open the Integrations interface.
@@ -16,7 +16,7 @@ Click **Tag Management** in the navigation pane to view a list of the already de
 
 ![Integrations interface on the Tag Management page](/images/threatprevention/8.0/reportingmodule/configuration/integrations/page_5.webp)
 
-The out-of-the-box tags include:
+The pre-configured tags include:
 
 - Administrator – An administrator user account
 - Automated Account – An account with automated authentication behavior detected
@@ -46,8 +46,6 @@ The table displays the following information for available tags:
 
 ## Add New Tags
 
-Follow the steps to add a custom tag.
-
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
 
@@ -56,7 +54,7 @@ Add New Integration window opens.
 
 ![Add New Integration window with Tag type selected](/images/threatprevention/8.0/reportingmodule/configuration/integrations/tagmanagement.webp)
 
-**Step 3 –** In the Type drop-down menu, select Tag.
+**Step 3 –** In the Type dropdown menu, select Tag.
 
 **Step 4 –** Enter the following information:
 
@@ -68,8 +66,6 @@ Add New Integration window opens.
 The tag is listed in the Integrations navigation pane. It can now be applied to objects.
 
 ## Tag Details Page
-
-Follow the steps to view the details of a tag.
 
 **Step 6 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -85,26 +81,26 @@ This page provides the following information:
 
 - Name – The tag name. Type in the field to modify the name.
 - Description – The tag description. Type in the field to modify the description.
-- Delete Tag button – This button is only enabled for custom tags. Out-of-the-box tags cannot be
+- Delete Tag button – This button is only enabled for custom tags. Pre-configured tags can't be
   deleted. You will be asked to confirm the action.
 - Search box – Search for objects in the Untagged Items box and the Tagged Items box by typing in
   the textbox. You can search for user objects, group objects, file objects, or computer objects.
-- Types – The drop-down menu provides object type filter options that apply to the search box
-  results. When a search is not being conducted, the filter types apply to the Tagged Items box.
+- Types – The dropdown menu provides object type filter options that apply to the search box
+  results. When a search isn't being conducted, the filter types apply to the Tagged Items box.
 - Untagged Items box – Displays objects that match the search text. This box is blank when a search
-  is not performed.
+  isn't performed.
 - Tagged Items box – Lists objects with this tag applied
 
 ## Use the Type Filter
 
-On the tag details window, click the Type drop-down menu to apply a filter.
+On the tag details window, click the Type dropdown menu to apply a filter.
 
 :::info
-Apply the desired Type filters when searching for objects to tag.
+Apply the Type filters you want when searching for objects to tag.
 :::
 
 
-![Honeypot tag with the Types drop-down menu open](/images/threatprevention/8.0/reportingmodule/configuration/integrations/typefilters.webp)
+![Honeypot tag with the Types dropdown menu open](/images/threatprevention/8.0/reportingmodule/configuration/integrations/typefilters.webp)
 
 The following types are available:
 
@@ -118,8 +114,6 @@ types.
 
 ## Apply Tags to Objects
 
-Follow the steps to apply tags to objects.
-
 ![Tag details page showing search results](/images/threatprevention/8.0/reportingmodule/configuration/integrations/searchselect.webp)
 
 **Step 1 –** On the Integrations interface, click **Tag Managemetn** in the navigation pane to view
@@ -129,19 +123,17 @@ a list of tags.
 
 **Step 3 –** On the Tag details page, use the search box to conduct a search for the object name.
 
-**Step 4 –** Use the Type drop-down menu to apply the desired object type filter to the search
+**Step 4 –** Use the Type dropdown menu to apply the object type filter you want to the search
 results.
 
-**Step 5 –** In the Untagged Items box, check the box to the left of the desired object(s).
+**Step 5 –** In the Untagged Items box, check the box to the left of the objects you want.
 
 **Step 6 –** Click the arrow (`>`) between the Untagged Items box and the Tagged Items box to add
-the tag to the selected object(s).
+the tag to the selected objects.
 
 The tag is applied to the selected objects.
 
 ## Remove Tags From Objects
-
-Follow the steps to remove tags from objects.
 
 ![Tag details page showing search results](/images/threatprevention/8.0/reportingmodule/configuration/integrations/search.webp)
 
@@ -152,12 +144,12 @@ a list of tags.
 
 **Step 3 –** On the Tag details page, use the search box to conduct a search for the object name.
 
-**Step 4 –** Use the Type drop-down menu to apply the desired object type filter to the search
+**Step 4 –** Use the Type dropdown menu to apply the object type filter you want to the search
 results.
 
-**Step 5 –** In the Tagged Items box, check the box to the left of the desired object(s).
+**Step 5 –** In the Tagged Items box, check the box to the left of the objects you want.
 
 **Step 6 –** Click the arrow (`<`) between the Untagged Items box and the Tagged Items box to remove
-the tag from the selected object(s).
+the tag from the selected objects.
 
 The tag is removed from the selected objects.

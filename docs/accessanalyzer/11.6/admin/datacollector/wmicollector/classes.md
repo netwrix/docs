@@ -10,6 +10,6 @@ On the Classes page, configure the WMICollector namespaces and classes to use as
 
 ![WMI Browser wizard Classes page](/images/accessanalyzer/11.6/admin/datacollector/wmicollector/classes.webp)
 
-Select the **Namespace** and **Class** from the drop-down lists to use as a data source. The default
-namespace, **root\CIMV2**, is typically what should be used. Select the **Win32 classes only**
-checkbox to use only Win32 classes.
+Select the **Namespace** and **Class** from the dropdown lists to use as a data source. Typically, use
+the default namespace, **root\CIMV2**. Select the **Win32 classes only** checkbox to use only Win32
+classes.

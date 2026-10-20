@@ -23,7 +23,7 @@ The following components comprise the 4.Group Policy Job Group:
   malicious insider or attacker can search for the cPassword file inside XML files shared through
   SYSVOL to decrypt them. GPOs can be stored in the `%ProgramData%\Microsoft\Group Policy\History`
   folder on each machine, meaning any results found by this job should be deleted off every computer
-  once this policy has been removed.
+  after this policy has been removed.
 - [AD_GroupPolicy Job](/docs/accessanalyzer/11.6/solutions/activedirectory/grouppolicy/ad_grouppolicy.md)
   – Audits all Group Policies that are present on the Domain Controller, and provides details on the
   containers they are linked to and the settings that are configured

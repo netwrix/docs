@@ -11,10 +11,11 @@ keywords:
   - epp2011
   - endpoint protector
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Locating the Default Username and Password for the
 tags:
   - features-and-operations
+  - kb
 title: "Locating the Default Username and Password for the Reporting and Administration Tool"
 knowledge_article_id: kA0Qk0000002BNcKAM
 ---

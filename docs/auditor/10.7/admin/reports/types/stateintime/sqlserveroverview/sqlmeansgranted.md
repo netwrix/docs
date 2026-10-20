@@ -13,7 +13,7 @@ investigate how permissions are granted.
 Supported object types and attributes are listed in the
 [SQL Server](/docs/auditor/10.7/configuration/sqlserver/overview.md) section.
 
-To instruct Netwrix Auditor to collect data needed for this report, make sure that **Collect data
+To instruct Netwrix Auditor to collect data needed for this report, ensure that **Collect data
 for state-in-time reports** option is selected in the monitoring plan properties.
 
 ![sqlservermeansgranted](/images/auditor/10.7/admin/reports/types/stateintime/sqlservermeansgranted.webp)
@@ -49,7 +49,7 @@ The detailed information under summary includes:
 - **Type**— the security principal type, e.g. _Server role_.
 - **Grant** —the set of permissions granted to this account on the selected object by all means.
 
-Covering rules do not need to be applied, since **Grant** permissions are reported automatically
+Covering rules don't need to be applied, since **Grant** permissions are reported automatically
 using these rules.
 
 ## Filters
@@ -62,7 +62,7 @@ This report has the following filters:
   value is filled in automatically.
 - **Snapshot date** —select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
-  To report on other snapshots, make sure they are available through import. For details, see
+  To report on other snapshots, ensure they are available through import. For details, see
   **Manage historical snapshots** option description in the SQL Server monitoring plan
   documentation.
 - **Item**—name of the SQL Server instance monitored with selected monitoring plan.
@@ -77,11 +77,11 @@ This report has the following filters:
 
 ## Considerations and limitations
 
-- Reporting is not supported for the following objects:
+- Reporting isn't supported for the following objects:
     - Case-sensitive SQL Servers and databases
     - Read-only Filegroups
     - Contained databases.
-- Permissions assigned using **With Grant option** are not reported (see
+- Permissions assigned using **With Grant option** aren't reported (see
   [this Microsoft article](https://docs.microsoft.com/en-us/sql/t-sql/statements/grant-object-permissions-transact-sql?view=sql-server-ver15)
   on that means).
 - When calculating effective rights and permissions, the following will not be considered:
@@ -95,7 +95,7 @@ This report has the following filters:
 
 When examining the **Object Permissions in SQL Server** report, database administrators in the
 _Corp_ organization discovered that the accounts with Contractor job title has access to the
-**SQLSrv01\SQLServer2016** instance. To explore how this could happen, they drilled down to the
+**SQLSrv01\SQLServer2016** instance. To explore how this could happen, they navigated to the
 **SQL Server Means Granted** report for that account by clicking the link in the **Means granted**
 field for that account.
 

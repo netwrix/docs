@@ -19,9 +19,9 @@ Directory Manager supports the following versions of SQL Servers:
 | Microsoft SQL Server 2022 | Express, Standard, Enterprise <br />Express edition available at: <br />[SQL Server 2022 Express edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) |
 
 The SQL Server Browser service is required and during the installation of SQL Server, you can set
-its start mode either as Automatic, Disabled or Manual. If it is disabled, SQL Servers are not
+its start mode either as Automatic, Disabled, or Manual. If it is disabled, SQL Servers aren't
 listed in the **SQL Server** box on the Database settings page of the Configuration Tool. In that
-case, you have to type the server name in the **SQL Server** box to select the required server
+case, you have to enter the server name in the **SQL Server** box to select the required server
 manually.
 
 To enable the SQL Server Browser service, see

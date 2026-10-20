@@ -12,11 +12,11 @@ Use the Input Scope page to specify the input scope of the data source.
 
 Identify the scope of the data source from the following options:
 
-- Tables from Current Job – Select tables from only the currently selected job
+- Tables from Current Job – Select tables from only the selected job
 - All Access Analyzer Tables – Select from all Access Analyzer tables within the SQL Server database
 - All tables in the database – Select all tables within the SQL Server database
 
 :::note
-This selection affects the tables that are available for selection on the Input page.
+This selection affects the tables available to select on the Input page.
 
 :::

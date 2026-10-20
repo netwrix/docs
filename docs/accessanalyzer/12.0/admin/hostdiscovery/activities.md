@@ -19,7 +19,7 @@ The options are:
     - A confirmation window displays. Click **Yes** to complete the deletion
 
 - Run Query – Begins an immediate execution of the selected query
-- Stop Query – Stops the selected query which is currently running
+- Stop Query – Stops the selected query which is running
 
     - No action occurs if the query is **Idle**
 

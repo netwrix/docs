@@ -11,7 +11,7 @@ Reviews installation directory:
 
 ...\Netwrix\Access Reviews
 
-Follow the steps to modify the log level.
+To modify the log level:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exe.Config` file in a text editor, e.g.
 Notepad.
@@ -20,7 +20,7 @@ Notepad.
 
 **Step 2 –** The level value is set in the `LogLevel` parameter, where "2" is the default level. As
 the logging level increases from 0 to 3, the types of information and level of detail included
-within the log file also increase. Change to the desired log level:
+within the log file also increase. Change to the log level you want:
 
 <add key="LogLevel" value="2" />
 

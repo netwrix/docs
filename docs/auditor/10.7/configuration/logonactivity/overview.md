@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -61,13 +61,13 @@ See the following topics for additional information:
 
 Review a full list of actions captured when monitoring Logon Activity with Netwrix Auditor.
 
-**NOTE:** Please consider the following:
+**NOTE:** consider the following:
 
-- Logon activity by local accounts is not reported
-- Logoff activity from workstations is not reported
+- Logon activity by local accounts isn't reported
+- Logoff activity from workstations isn't reported
 - Logoff activity from Domain Controllers is reported
 
-For the attributes marked with asterisk (\*) _what_ changed is not reported.
+For the attributes marked with asterisk (\*) _what_ changed isn't reported.
 
 | Action            | Object Type                | Attributes                                                                                                                |
 | ----------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------- |

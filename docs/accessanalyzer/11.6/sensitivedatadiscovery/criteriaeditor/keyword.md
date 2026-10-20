@@ -21,8 +21,8 @@ The options on the Keywords window are:
 - Match Type – Choose whether keyword matches for the Keyword criteria **Must match** or **Must not
   match**
 - Case Sensitive Keywords – If enabled, checks letter case when matching keywords
-- Count only distinct occurrences – Select the checkbox to enable only distinct occurrences to be
-  counted during scan jobs
+- Count only distinct occurrences – Select the checkbox to count only distinct occurrences during
+  scan jobs
 - Apply these keywords to these file components – Select which file components the keywords apply
   to:
 

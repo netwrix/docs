@@ -9,7 +9,7 @@ Gives access to the **Manage Accounts** buttons for the users of a given entity 
 ![ManageAccounts Button](/images/identitymanager/accesscontrol_manageaccounts_v603.webp)
 
 :::note
-The scaffolding gives access to the button, but you need to get the permissions on said accounts in order to see anything once you click on the button.
+The scaffolding gives access to the button, but you need to get the permissions on said accounts to see anything when you click the button.
 :::
 
 
@@ -42,7 +42,7 @@ In order to see AD accounts once clicking on the button:
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Workforce/Administration/Directory_User_ManageAccounts_ManageAccounts_Directory_User" DisplayName_L1="Workforce/Administration/Directory_User_ManageAccounts_ManageAccounts_Directory_User" EntityType="Directory_User" Profile="Administrator">

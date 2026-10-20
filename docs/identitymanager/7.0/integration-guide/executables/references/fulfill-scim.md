@@ -6,7 +6,7 @@ sidebar_position: 180
 
 # Usercube-Fulfill-Scim
 
-This executable creates, updates and deleles entries in an application using the SCIM API.
+This executable creates, updates, and deletes entries in an application using the SCIM API.
 
 ## Examples
 

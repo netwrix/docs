@@ -14,7 +14,7 @@ On a high level, the add-on works as follows:
 
 **Step 1** – The add-on listens to the specified UDP ports and captures designated Syslog messages.
 
-**Step 2** – Out of the box, messages from Red Hat Enterprise Linux 6, 7, 8, 9, SUSE Linux Enterprise Server 12, openSUSE 42, and Ubuntu 16 are supported. For other distributions, deployment of the rsyslog package may be required. You can edit the add-on configuration to extend the captured message list.
+**Step 2** – By default, messages from Red Hat Enterprise Linux 6, 7, 8, 9, SUSE Linux Enterprise Server 12, openSUSE 42, and Ubuntu 16 are supported. For other distributions, deployment of the rsyslog package may be required. You can edit the add-on configuration to extend the captured message list.
 
 **Step 3** – The add-on processes these events into Netwrix Auditor-compatible format (Activity Records). Each Activity Record contains the user account, action, time, and other details.
 

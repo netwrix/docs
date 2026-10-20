@@ -32,8 +32,6 @@ This section will be helpful for any case below:
 - You encountered errors related to the ExchangeOnlineManagement PowerShell module
 - You want to install the module manually
 
-Follow the steps to install the module.
-
 **Step 1 –** Install the Windows Management Framework for your OS:
 [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 

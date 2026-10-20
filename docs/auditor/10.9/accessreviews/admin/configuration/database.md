@@ -7,8 +7,8 @@ sidebar_position: 40
 # Database Page
 
 The Access Reviews application must have access to the SQL Server hosting the database. It is
-configured during installation. If it is necessary to modify these setting after installation, that
-is done on the Database Page of the Configuration interface.
+configured during installation. If you need to modify these settings after installation, do so on
+the Database page of the Configuration interface.
 
 ![Configuration interface showing the Database page](/images/auditor/10.7/access/reviews/admin/configuration/database.webp)
 
@@ -45,8 +45,7 @@ _Remember,_ click **Save** when any changes are made to this page.
 
 ## Update the Database Service Account Password
 
-Follow the steps to update the Database service account password. These steps only apply for the SQL
-Authentication option.
+These steps apply only to the SQL Authentication option.
 
 **Step 1 –** On the Database page, enter the new password in the correct field.
 

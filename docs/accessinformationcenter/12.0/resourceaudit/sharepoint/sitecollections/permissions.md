@@ -12,7 +12,7 @@ trustee access levels Compared to Parent.
 
 ![Permissions report at the site collection, site, list, library, and folder levels](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/sitecollections/sitepermissions.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Trustee Name – Owner of the trustee account
 - Trustee Account:
@@ -51,12 +51,12 @@ Roles) granted to the trustee:
 If the selected trustee in the top section of the report is a group, the Group Membership pane
 displays the group membership, including nested groups.
 
-There is one table at the bottom displaying Compared to Parent permissions for the select trustee.
-It contains information on explicit permissions granted for the selected resource.
+One table displays Compared to Parent permissions for the selected trustee.
+It shows information on explicit permissions granted for the selected resource.
 
 ![Compared to Parent table](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/sitecollections/sitepermissionstable.webp)
 
 This table is blank unless an **Explicit Permissions** icon is attached to the resource in the
 Resources pane. See the [Resources Pane](/docs/accessinformationcenter/12.0/resourceaudit/navigate/resource.md#resources-pane) topic for
 additional information. This table is comprised of the same columns as the primary report, with the
-exception that it does not have the **Roles** column.
+exception that it doesn't have the **Roles** column.

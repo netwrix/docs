@@ -8,7 +8,7 @@ sidebar_position: 100
 
 The Repetition rule rejects passwords that contain excessive character or pattern repetition.
 Reducing repetition increase resistance to both brute-force and dictionary cracking algorithms. The
-Repetition rule is not case sensitive, so "mypaSssSword" contains four consecutive repeating
+Repetition rule isn't case sensitive, so "mypaSssSword" contains four consecutive repeating
 characters (SssS).
 
 - Enable the **Repetition** button to enable the repetition rule.
@@ -26,7 +26,7 @@ characters (SssS).
   reversing the order of characters in their password. For example, a user may enter "edcba" instead
   of "abcde".
 
-- Tolerance – Choose a value from the drop-down list to specify the longest pattern that Password
+- Tolerance – Choose a value from the dropdown list to specify the longest pattern that Password
   Policy Enforcer allows before rejecting a password. For example, the password "password**wxyz**"
   contains a four-character pattern. Password Policy Enforcer rejects this password if the tolerance
   is set to three (or lower), and accept it if the tolerance is set to four (or higher).

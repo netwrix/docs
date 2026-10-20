@@ -8,8 +8,8 @@ sidebar_position: 60
 
 The Validate method validates the following:
 
-- Message length should not be zero.
-- Message length should not be greater than what is specified in the MacLength property.
+- Message length shouldn't be zero.
+- Message length shouldn't be greater than what is specified in the MacLength property.
 - PhoneNumbers must be provided.
 - PhoneNumber should be valid.
 

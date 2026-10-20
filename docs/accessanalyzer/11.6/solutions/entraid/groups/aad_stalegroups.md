@@ -17,7 +17,7 @@ Navigate to the **Jobs** > **Entra ID** > **1.Groups** > **AAD_StaleGroups** > *
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -38,4 +38,4 @@ following pre-configured report.
 
 | Report                                    | Description                                                                                                                                                                    | Default Tags | Report Elements                                                                                                                                                                                               |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Stale Effective Membership (Stale Groups) | This report identifies groups with stale effective membership. A stale user is defined as someone who has not logged into the domain in over 30 days or is currently disabled. | None         | This report is comprised of three elements: <ul><li>Chart – Displays group membership</li><li>Table – Provides group membership details</li><li>Tables – Provides stale groups organization summary</li></ul> |
+| Stale Effective Membership (Stale Groups) | This report identifies groups with stale effective membership. A stale user is defined as someone who has not logged into the domain in over 30 days or is disabled. | None | This report is comprised of three elements: <ul><li>Chart – Displays group membership</li><li>Table – Provides group membership details</li><li>Tables – Provides stale groups organization summary</li></ul> |

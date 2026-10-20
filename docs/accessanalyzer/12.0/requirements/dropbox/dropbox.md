@@ -10,8 +10,8 @@ The core components for Netwrix Access Analyzer (formerly Enterprise Auditor) ar
 Analyzer Console server, SQL Server, and Access Information Center. See the
 [Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topic for the core requirements.
 
-In addition to these, integration with either the Netwrix Activity Monitor or the Netwrix Threat
-Prevention is required for event activity data to be scanned. See the
+In addition to these, you need to integrate either the Netwrix Activity Monitor or the Netwrix
+Threat Prevention to scan event activity data. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor) or
 the
 [Netwrix Threat Prevention Documentation](https://helpcenter.netwrix.com/category/threatprevention)
@@ -24,7 +24,7 @@ environment requirements.
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment:
+These depend on the size of the target environment:
 
 | Environment | Large                   | Medium – Small         |
 | ----------- | ----------------------- | ---------------------- |
@@ -34,20 +34,19 @@ These are dependent upon the size of the target environment:
 | Disk Space  | 30 GB                   | 30 GB                  |
 
 :::note
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the
-minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host.For
-example, if the job is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are
-required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each
+thread requires a minimum of 2 additional GB of RAM per host. For example, if you configure the
+job to scan 8 hosts at a time, you need an extra 16 GB of RAM (8x2=16).
 :::
 
 
 **Sensitive Data Discovery Auditing Requirement**
 
 :::note
-The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and does not require any configuration; it has been
-preconfigured to work with Access Analyzer and should never be customized through Java. It will not
-conflict with other JDKs or Java Runtimes in the same environment.
+Access Analyzer installs the appropriate JDK (Java) version for Sensitive Data Discovery on
+the server. This JDK comes prepackaged and preconfigured to work with Access Analyzer, requires no
+additional configuration, and you should never customize it through Java. It doesn't conflict with
+other JDKs or Java Runtimes in the same environment.
 :::
 
 
@@ -55,7 +54,7 @@ conflict with other JDKs or Java Runtimes in the same environment.
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment.
+These depend on the size of the target environment.
 
 | Environment              | Large                   | Medium – Small         |
 | ------------------------ | ----------------------- | ---------------------- |

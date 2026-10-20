@@ -6,15 +6,14 @@ sidebar_position: 20
 
 # Edit Notes Window
 
-The Edit Note window can be opened from a variety of interfaces. Follow the steps to add or edit a
-note.
+The Edit Note window can be opened from a variety of interfaces.
 
-**Step 1 –** Select the item in the interface and click Edit Notes. The Edit Notes window opens.
+1. Select the item in the interface and click Edit Notes. The Edit Notes window opens.
 
 ![Edit Notes window showing note entry field](/images/accessinformationcenter/12.0/general/editnotes.webp)
 
-**Step 2 –** Type or edit the note in the textbox.
+2. Type or edit the note in the textbox.
 
-**Step 3 –** Click OK when finished. The Edit Notes window closes.
+3. Click OK when finished. The Edit Notes window closes.
 
 The user name and a date timestamp will appear at the beginning of each note added.

@@ -45,14 +45,14 @@ The information displayed in the table includes:
 
     - Responses awaiting review — Owners completed reviews. Waiting on Review Administrator's
       approval.
-    - All responses processed — Reviews have been approved by Review Administrators. The review can
-      be marked as completed.
+    - All responses processed — Review Administrators have approved the reviews. You can mark the
+      review as completed.
     - Stopped — Indicates that the review was stopped and is considered complete even if all of the
       responses have not been received or processed. The review remains static until it is run
       again.
     - Completed — Indicates the Review Administrator has processed the owners' responses. The review
-      remains static until it is run again. This status can appear by accepting the review as-is
-      with the Mark Completed button.
+      remains static until it is run again. This status appears when you accept the review as-is by
+      clicking **Mark Completed**.
 
 - Created By — Name of the Review Administrator who create the review
 - Created On — Date timestamp for when the review was created. If it has been run multiple times,
@@ -69,7 +69,7 @@ Use the buttons at the bottom to conduct the following actions:
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Create         | Launches the Create Review wizard for creating a new review. See the [Create Review Wizard](/docs/auditor/10.9/accessreviews/entitlementreviews/create/create.md) topic for additional information.                                                                                                     |
 | Rename         | Opens the Rename Review window for modifying the review name. See the [Rename Review Window](/docs/auditor/10.9/accessreviews/entitlementreviews/interface/renamereview.md) topic for additional information.                                                                                              |
-| Delete         | Opens the Delete Review window to delete review and its instance history, which asks for confirmation of the action. See the [Delete Review Window](/docs/auditor/10.9/accessreviews/entitlementreviews/interface/deletereview.md) topic for additional information.                                       |
+| Delete         | Opens the Delete Review window to delete the review and its instance history, which asks for confirmation of the action. See the [Delete Review Window](/docs/auditor/10.9/accessreviews/entitlementreviews/interface/deletereview.md) topic for additional information.                                       |
 | Stop           | Opens the Stop Review window, which asks for confirmation of the action. See the [Stop Review Window](/docs/auditor/10.9/accessreviews/entitlementreviews/interface/stopreview.md) topic for additional information.                                                                                       |
 | View Details   | Opens the Review Details page for the selected review. See the Review Details Page topic for additional information.                                                                                                                                |
 | Mark Completed | Closes the selected review as-is and marks it as completed. Requires the owners to have responded. **CAUTION:** No confirmation is requested for this action.                                                                                     |
@@ -127,5 +127,5 @@ Use the buttons at the top and bottom to conduct the following actions:
 | Export CSV      | Exports the selected review instance information to a CSV file. This automatically downloads the file. See the [Data Grid Features](/docs/auditor/10.9/accessreviews/admin/navigate/datagrid.md) topic for additional information.                                                                                                                                                                                         |
 | Edit Notes      | Opens the Edit Notes window for the selected resource and allows free-text editing of the notes. See the [Edit Notes Window](/docs/auditor/10.9/accessreviews/admin/navigate/editnotes.md) topic for additional information.                                                                                                                                                                                               |
 | View Responses  | Opens the View Responses window, which is only available if the owner has recommended changes for the resource. This window displays all recommended changes, notes provided by the owner for the recommended change, and action buttons to Accept, Decline, or Defer the recommended change. See the [View Responses Window](/docs/auditor/10.9/accessreviews/entitlementreviews/interface/viewresponses.md) topic for additional information. |
-| Process Changes | Opens a dropdown menu to Accept, Decline, or Defer all owner-recommended changes for the selected resource. This option allows the Review Administrator to process responses in batches, so all owner-recommended changes for the selected resource will be processed with the same action.                                                                                             |
+| Process Changes | Opens a dropdown menu to Accept, Decline, or Defer all owner-recommended changes for the selected resource. This option allows the Review Administrator to process responses in batches, applying the same action to all owner-recommended changes for the selected resource.                                                                                             |
 | Remove Changes  | Opens the Remove changes window. Clears all requested changes for the selected resource. The resource is returned to a ‘Waiting’ status, requiring the owner to review the resource again. See the [Remove Changes Window](/docs/auditor/10.9/accessreviews/entitlementreviews/approvalprocess/removechanges.md) topic for additional information.                                                                                             |

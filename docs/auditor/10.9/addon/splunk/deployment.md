@@ -8,15 +8,13 @@ sidebar_position: 10
 
 ## Download and install the add-on
 
-Follow the steps below.
-
 **Step 1 –** Download the distribution package.
 
 **Step 2 –** Unpack it to a folder on the computer from which you can access Splunk Web.
 
-**Step 3 –** Login to Splunk Web using Splunk Administrator account.
+**Step 3 –** log in to Splunk Web using Splunk Administrator account.
 
-**Step 4 –** Expand the drop-down list at the top panel and choose **Manage Apps**.
+**Step 4 –** Expand the dropdown list at the top panel and choose **Manage Apps**.
 
 **Step 5 –** On the **Apps** screen, click **Install app from file**.
 
@@ -29,9 +27,9 @@ The installed add-on should appear in the Apps list. Splunk might not display ad
 
 ## Configure the add-on
 
-Follow the steps to configure the add-on.
+To configure the add-on:
 
-**Step 1 –** Open **Netwrix Auditor Add-on for Splunk** from the drop-down list at the top panel and navigate to the **Configuration** page.
+**Step 1 –** Open **Netwrix Auditor Add-on for Splunk** from the dropdown list at the top panel and navigate to the **Configuration** page.
 
 **Step 2 –** Configure the account:
 
@@ -42,7 +40,7 @@ Follow the steps to configure the add-on.
     - For the Account name provide a unique name for the account that will be visible to the add-on
       users
     - In the Username field insert the user name of the account that will be used to access Netwrix
-      Auditor Integration API. If a domain account is used, make sure to use the _DOMAIN\User_
+      Auditor Integration API. If a domain account is used, ensure to use the _DOMAIN\User_
       format.
     - In the Password field insert the account password
 
@@ -63,13 +61,13 @@ Follow the steps to configure the add-on.
 ## Configure Data Input
 
 Splunk uses indexes to store data and manage access to it. While you can send Netwrix Auditor data
-to one of the existing indexes it is strongly recommended to create a separate index.
+to one of the existing indexes, Netwrix strongly recommends creating a separate index.
 
-Follow the steps to configure data input.
+To configure data input:
 
 **Step 1 –** Create a new index to store data from Netwrix Auditor:
 
-1. In Splunk expand the **Settings** drop-down menu and click on the **Indexes** option under the **DATA**
+1. In Splunk expand the **Settings** dropdown menu and click the **Indexes** option under the **DATA**
    section.
 2. Press the **New Index** button to create an index.
 3. Provide the new index parameters:
@@ -95,7 +93,7 @@ Follow the steps to configure data input.
 
         **CAUTION:** This field should never be empty.
 
-    - Checkpoint type specifies location for continuation mark data. Do not change this setting unless advised by your Splunk Administrator.
+    - Checkpoint type specifies location for continuation mark data. Don't change this setting unless advised by your Splunk Administrator.
 
 4. Click the **Add** button.
 
@@ -121,16 +119,16 @@ The index name must exactly match the index created in Splunk Cloud.
 
 ### CIM data model support
 
-To use CIM data models in Splunk Cloud, install the Netwrix Auditor Add-on for Splunk in Splunk Cloud. No input or account configuration is required. The add-on is installed only to provide CIM field extractions and data model mappings.
+To use CIM data models in Splunk Cloud, install the Netwrix Auditor Add-on for Splunk in Splunk Cloud. The add-on doesn't require input or account configuration; you install it only to provide CIM field extractions and data model mappings.
 > For additional information on configuring Splunk Cloud and forwarders, refer to the official Splunk documentation.
 
 ## Migrating from the legacy Event Log add-on
 
 If you were using the older (Windows event log-based) version of Netwrix Auditor add-on for Splunk
-and plan to migrate to the new version, remember to take the additional steps described below. They
-will help to ensure imported data consistency and avoid excessive operations. Otherwise, the new
-add-on will pull Netwrix Auditor’s activity data that had already been imported into your Splunk
-system by the old add-on.
+and plan to migrate to the new version, take the following additional steps. They
+help ensure imported data consistency and avoid excessive operations. Otherwise, the new
+add-on pulls Netwrix Auditor’s activity data that the old add-on already imported into your Splunk
+system.
 
 **Step 1 –** Stop the old version of Netwrix Auditor add-on for Splunk. You can do this with the
 Windows Scheduled Tasks.

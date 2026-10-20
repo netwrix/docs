@@ -9,9 +9,9 @@ sidebar_position: 10
 This section discusses the Directory Manager application registration and permission assignment
 procedure.
 
-Step 1 – Login to Microsoft Entra Admin Center (https://portal.azure.com/) with a user that is part
+Step 1 – Log in to Microsoft Entra Admin Center (https://portal.azure.com/) with a user that is part
 of the “Global Administrator” role or any role that has rights to register an app, such as the
-“Application administrator” role. This is required in order to give consent to certain permissions
+“Application administrator” role. This is required to give consent to certain permissions
 in the application.
 
 Step 2 – In the Microsoft Entra Admin Center, go to Microsoft Entra ID > **App registration** and
@@ -73,7 +73,7 @@ Step 10 – On the **All roles** page, add your registered application to a dire
     - **User administrators**: (User Account Administrator) can manage all aspects of users and
       groups, including resetting passwords for limited administrators.
 
-        For example, this role does not allow deleting a global administrator. User Account
+        For example, this role doesn't allow deleting a global administrator. User Account
         Administrators can change passwords for users, Helpdesk administrators, and other User
         Account Administrators only.
 
@@ -100,7 +100,7 @@ Step 14 – Click the **Application permissions** tab:
 ![Application permissions tab](/images/directorymanager/11.1/configureentraid/register/application_permission.webp)
 
 Permissions get listed on the page. See the [Microsoft Entra ID Permissions](/docs/directorymanager/11.1/configureentraid/register/apppermissions.md)
-topic for the mandatory permissions that are required for creating the desired directory object.
+topic for the mandatory permissions that are required for creating the directory object you want.
 
 Step 15 – [Optional] To add a permission from Office 365 Exchange Online API, click the **Add a
 permission** button (before the Grant admin consent for `username` button in the snapshot given in

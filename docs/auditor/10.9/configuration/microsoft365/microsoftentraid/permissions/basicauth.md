@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Using Basic Authentication with Microsoft Entra ID
 
-With basic authentication, your Microsoft Entra ID organization will be accessed on behalf of a
+With basic authentication, Auditor accesses your Microsoft Entra ID organization on behalf of a
 user. You will need to provide user name and password in the monitored item properties. Auditor will
 use this account to access the Microsoft Entra ID organization, automatically create an Microsoft
 Entra ID app with required permissions, and perform initial data collection. For that, the user
@@ -14,11 +14,11 @@ account will need an administrative role in the cloud-based infrastructure.
 
 Further permission assignment will depend on the data you plan to collect:
 
-- To collect activity data including **logon attempts**, the administrative role is required, as
-  well as the Premium Plan license.
+- To collect activity data, including **logon attempts**, you need the administrative role and the
+  Premium Plan license.
 - To collect activity data without logons, the privileged role can be revoked from the specified
-  account after the initial data collection. Ongoing audit data collection will leverage Microsoft
-  APIs access permissions granted to Microsoft Entra ID app and, therefore, requires no tenant-level
+  account after the initial data collection. Ongoing audit data collection uses the Microsoft API
+  access permissions granted to the Microsoft Entra ID app and, therefore, requires no tenant-level
   administrative permissions.
 
 ## Required Roles and Permissions
@@ -27,7 +27,7 @@ Further permission assignment will depend on the data you plan to collect:
 | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Create Microsoft Entra ID application, run initial data collection, and perform Auditor upgrade from previous version | Any of the following role combinations: - Application Administrator & Privileged Role Administrator OR - Cloud Application Administrator & Privileged Role Administrator OR - _Global Admin_ | Prepare a user account and specify it in the monitored item properties. See the and [Microsoft Entra ID](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/overview.md) topics for additional information. |
 | Collect audit data, including _Successful Logons_ and/or _Failed Logons_                                              | - _Security Reader_ OR - _Security Administrator_ OR - _Application Administrator_ OR - _Cloud Application Administrator_ OR - _Global Administrator_                                        | To assign the non-privileged role, see                                                                                                                   |
-| Collect audit data (without logons)                                                                                   | Any of the following roles: - _Security Reader_ OR - _Application Administrator_ OR - _Cloud Application Administrator_ OR - _Global Admin_                                                  | Assign the role you need, as explained above.                                                                                                            |
+| Collect audit data (without logons)                                                                                   | Any of the following roles: - _Security Reader_ OR - _Application Administrator_ OR - _Cloud Application Administrator_ OR - _Global Admin_                                                  | Assign the role you need. See Assigning 'Security Administrator' or 'Security Reader' Role for the procedure.                                                                                                            |
 
 ## Assigning a Privileged Role for Microsoft Entra ID and Office 365
 
@@ -46,10 +46,7 @@ following approaches:
 
 **NOTE:** If you previously used a non-privileged account for Microsoft Entra ID data collection in
 your Netwrix Auditor, consider that after the upgrade you will have to perform the role assignment
-procedure again, selecting one of these approaches. Until then, data collection will not be
-performed.
-
-Follow the steps to assign a privileged role to the account.
+procedure again, selecting one of these approaches. Until then, Auditor doesn't collect data.
 
 **Step 1 –** Sign in to Microsoft Entra ID portal using your Microsoft account.
 
@@ -58,7 +55,7 @@ Follow the steps to assign a privileged role to the account.
 **Step 3 –** Select the account that you want to use as data collecting account, or create a new
 user.
 
-**Step 4 –** Make sure you have disabled multi-factor authentication for this account.
+**Step 4 –** ensure you have disabled multi-factor authentication for this account.
 
 **Step 5 –** Expand Directory role and select the role you need (for example, Global admin or any
 other privileged role).
@@ -77,12 +74,12 @@ account with this privileged role on the Specify the account for collecting data
 
 **Step 10 –** Assign a less-privileged role to this account.
 
-A less privileged role has now been assigned to the account.
+You have now assigned a less-privileged role to the account.
 
 ## Assigning 'Security Administrator' or 'Security Reader' Role
 
-To audit _Successful_ and/or _Failed Logons_ in Microsoft Entra ID, the Security Administrator or
-Security Reader role is required. Follow the steps to assign the role you need:
+To audit _Successful_ and/or _Failed Logons_ in Microsoft Entra ID, you need the Security
+Administrator or Security Reader role:
 
 **Step 1 –** Sign in to [Microsoft Entra ID portal](https://portal.azure.com/) using your Microsoft
 account.
@@ -95,6 +92,6 @@ account.
 
 **Step 5 –** Click Add member and select the account that you want to assign the role to.
 
-Refer to the following Microsoft article:
-[Microsoft Entra built-in roles](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles)
-for additional information on the Administrator role permissions.
+See the following Microsoft article for additional information on the Administrator role
+permissions:
+[Microsoft Entra built-in roles](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles).

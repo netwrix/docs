@@ -7,7 +7,7 @@ sidebar_position: 40
 # Microsoft Entra ID Search Query
 
 You can search activity in Microsoft Entra ID (Azure AD) that has been monitored and recorded to a
-File output. When you select **Azure AD / Entra ID** from the magnifying glass drop-down menu, a New
+File output. When you select **Azure AD / Entra ID** from the magnifying glass dropdown menu, a New
 Search tab opens with the applicable query filters.
 
 ![Search Query - Entra ID](/images/activitymonitor/9.0/admin/search/query/searchquery.webp)
@@ -31,15 +31,15 @@ headers. Below the Search button is the [Export](/docs/activitymonitor/10.0/admi
 
 **Filter Value Entry**
 
-When the drop-down menu is in front of a query filter, it is used to show or hide the filter entry
+When the dropdown menu is in front of a query filter, it is used to show or hide the filter entry
 field. Field options vary based on the selected query filter:
 
-- Textbox – Enter the filter value. If the field has a drop-down arrow, then you can select from
+- Textbox – Enter the filter value. If the field has a dropdown arrow, then you can select from
   values known to the application.
-- Gray drop-down menu – Provides options to match the value against on of the following, which vary
+- Gray dropdown menu – Provides options to match the value against on of the following, which vary
   based on the filter:
 
-    - Selected values – Filters by the value selected from the drop-down menu for the textbox
+    - Selected values – Filters by the value selected from the dropdown menu for the textbox
     - Simple string with wildcards – Filters by the value entered into the textbox, which contains
       an asterisk (\*) as the wildcard
     - Regular expression – Filters by the Regex entered into the textbox
@@ -53,11 +53,11 @@ must be configured for every search query.
 
 This section has the following filters:
 
-- From – Set the date and timestamp for the start of the activity range. The drop-down menu opens a
+- From – Set the date and timestamp for the start of the activity range. The dropdown menu opens a
   calendar.
-- To – Set the date and timestamp for the end of the activity range. The drop-down menu opens a
+- To – Set the date and timestamp for the end of the activity range. The dropdown menu opens a
   calendar.
-- Source – Set which query categories will be used. The drop-down menu displays a checkbox list of
+- Source – Set which query categories will be used. The dropdown menu displays a checkbox list of
   categories.
 - Event Result – Filter the data for a specific event result: Any, Success, or Failure
 - Reason

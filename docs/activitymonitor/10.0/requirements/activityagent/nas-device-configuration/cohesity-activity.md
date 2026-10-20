@@ -6,7 +6,7 @@ sidebar_position: 8
 
 # Cohesity SmartFiles Activity Auditing Configuration
 
-The Netwrix Activity Monitor can be configured to monitor file activity on Cohesity SmartFiles
+Configure the Netwrix Activity Monitor to monitor file activity on Cohesity SmartFiles
 devices. Activity Monitor reads activity from audit logs produced by the **File Services Audit
 Logs** feature in Cohesity SmartFiles.
 
@@ -29,11 +29,11 @@ Monitoring Cohesity SmartFiles requires access by two methods:
   optionally, to enable auditing.
 - **SMB/CIFS** — to read audit logs.
 
-An API key is required for Cohesity API access. Unlike passwords, API keys bypass the Password
+Generate an API key for Cohesity API access. Unlike passwords, API keys bypass the Password
 Policy and stay active for a set duration without expiring, which avoids disruption caused by
 password rotation.
 
-The API key can be created directly from the Activity Monitor Console using the built-in
+Create the API key directly from the Activity Monitor Console using the built-in
 instruction available at the API key step of the Add Host wizard — this is the recommended
 approach. Alternatively, create the API key manually using the steps in the
 [Create an API Key](#create-an-api-key) section.
@@ -104,8 +104,8 @@ wizard. Enter the username, password, a name for the key, and the duration in da
 select **Create API Key**. The Console will generate the key automatically.
 
 :::note
-The credentials entered in the Console are used only once to retrieve the API key and aren't
-saved or cached.
+The Console uses the credentials you enter only once to retrieve the API key and doesn't
+save or cache them.
 :::
 
 Alternatively, create the API key manually using the following curl or PowerShell commands. Replace
@@ -212,7 +212,7 @@ additional information.
 
 By default, all clients in the Global Allowlist set at the cluster level can access audit logs.
 Use the **Override Allowlist** option to restrict access to a specific subnet. SMB permissions
-on the view also control access for AD or local principals. Both settings can be managed on the
+on the view also control access for AD or local principals. Manage both settings on the
 **System** > **Audit Logs** > **Log Settings** page.
 
 **Override global IP allowlist**
@@ -243,7 +243,7 @@ The Activity Monitor Agent reads the audit logs via SMB.
 
 ### Enable Auditing for Views
 
-Auditing can be enabled or disabled per view.
+Enable or disable auditing per view.
 
 **Step 1 –** Open the Cohesity web interface.
 
@@ -287,6 +287,6 @@ This delay is by design: Cohesity prioritizes active workloads over audit log fl
 result, with the default configuration, audit logs are suitable for historical analysis but not
 real-time monitoring.
 
-An internal configuration option exists in Cohesity that can reduce this latency by forcing audit
-logs to be written more frequently. If you need to reduce latency, contact Cohesity Support.
+An internal configuration option exists in Cohesity that reduces this latency by writing audit
+logs more frequently. If you need to reduce latency, contact Cohesity Support.
 :::

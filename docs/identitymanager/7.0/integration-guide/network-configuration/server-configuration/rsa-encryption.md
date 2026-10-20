@@ -23,7 +23,7 @@ Once encrypted, sensitive values can be added to the `appsettings.encrypted.json
 
 These methods require an [X.509 public key certificate](https://en.wikipedia.org/wiki/X.509) (the same for the encrypted appsettings file and the tools).
 
-The value encryption tool can be used to encrypt specific values to be added to the encrypted appsettings file without having to encrypt the whole file again.
+The value encryption tool Use encrypt specific values to be added to the encrypted appsettings file without having to encrypt the whole file again.
 
 ## Focus on the Encrypted Appsettings File
 
@@ -33,9 +33,9 @@ This file follows the exact same structure as the [Server Configuration](../../.
 
 ### Read the Encrypted File
 
-Identity Manager can use an RSA decoding algorithm fed by a [public-key certificate](https://en.wikipedia.org/wiki/X.509) in order to read the encrypted application settings.
+Identity Manager can use an RSA decoding algorithm fed by a [public-key certificate](https://en.wikipedia.org/wiki/X.509) to read the encrypted application settings.
 
-This requires the usual appsettings file(s) to have `UseEncryptedAppsettings` set to `true`. See below.
+This requires the usual appsettings files to have `UseEncryptedAppsettings` set to `true`. See below.
 
 ```
 appsettings.json and/or appsettings.agent.json

@@ -50,7 +50,7 @@ information to begin monitoring.
 
 :::warning
 Use extreme caution when enabling lockdown policies to ensure that the required events
-do not unintentionally get blocked.
+don't get blocked unintentionally.
 :::
 
 

@@ -11,14 +11,13 @@ The Resource Reviews interface is where users with either the Security Team or A
 business users or data custodians (to be referred to as Owners) to attest to the access and
 privileges users have to their resources.
 
-For the purpose of the Access Information Center, a “resource” refers to the file system shared
+To define terms used in the Access Information Center, a “resource” refers to the file system shared
 folders, SharePoint sites, Active Directory (AD) groups, AD distribution lists, and/or local
 Administrators groups. All data available within the Access Information Center is collected by
 Netwrix Access Analyzer (formerly Enterprise Auditor) according to the targeted environments.
 
 :::tip
-Remember, Owners are assigned to resources in the Resource Owners interface. Only resources with
-assigned Owners can be included in a Resource Review.
+Owners are assigned to resources in the Resource Owners interface. Only resources with assigned Owners can be included in a Resource Review.
 :::
 
 
@@ -26,19 +25,16 @@ assigned Owners can be included in a Resource Review.
 
 - Console Users with Administrator role
 
-    - Can complete the Review Administrator's approval process without impacting the visibility into
-      the review created by a Review Administrator with the Security Team role
+    - Can complete the Review Administrator's approval process without affecting visibility of reviews created by Review Administrators with the Security Team role
 
         :::warning
-        Visibility into a review created by a Review Administrator with the Security
-        Team role is blocked if a Review Administrator with the Administrator role starts a new
-        instance.
+        If a Review Administrator with the Administrator role starts a new instance, you can't see reviews created by Review Administrators with the Security Team role.
         :::
 
 
 - Console Users with Security Team role
 
-    - Visibility into only those reviews personally created
+    - Can see only reviews they personally created
 
 **Who Participates in Resource Reviews?**
 
@@ -75,7 +71,7 @@ will still show in these reviews.
 Prerequisites:
 
 - Entitlement Reviews License
-- The Access Information Center is configured to send Notifications. See the
+- Configure the Access Information Center to send Notifications. See the
   [Notifications Page](/docs/accessinformationcenter/12.0/admin/configuration/notifications.md) topic for additional information.
 
     :::note
@@ -98,7 +94,7 @@ Workflow:
 
 :::info
 When deploying the Access Information Center in an organization to process
-reviews, owners should be notified prior to launching the first set of reviews. See the
+reviews, owners should be notified before launching the first set of reviews. See the
 [Notification to Owners](/docs/accessinformationcenter/12.0/resourceowners/overview.md#notification-to-owners) topic for additional
 information.
 :::

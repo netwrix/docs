@@ -36,7 +36,7 @@ Decrypts an input file to save it into an output file or an OutPutConsole that c
 
 - [ Usercube-Deploy Configuration](../../../integration-guide/executables/references/deploy-configuration)
 
-Retrieves all XML configuration files from a given folder, in order to calculate the configuration items to insert, update or delete in the application.
+Retrieves all XML configuration files from a given folder, to calculate the configuration items to insert, update, or delete in the application.
 
 - [Usercube-EasyVistaTicket-UpdateFulfillmentState](../../../integration-guide/executables/references/easyvistaticket-updatefulfillmentstate)
 
@@ -76,11 +76,11 @@ Fills the `BankingSystem` database for the Banking demo application.
 
 - [Usercube-Fulfill-EasyVista](../../../integration-guide/executables/references/fulfill-easyvista)
 
-Creates, updates and archives employees in an EasyVista instance.
+Creates, updates, and archives employees in an EasyVista instance.
 
 - [Usercube-Fulfill-Scim ](../../../integration-guide/executables/references/fulfill-scim)
 
-Creates, updates and deleles entries in an application using the SCIM API.
+Creates, updates, and deletes entries in an application using the SCIM API.
 
 - [Usercube-Fulfill-ToEasyVistaTicket ](../../../integration-guide/executables/references/fulfill-toeasyvistaticket)
 

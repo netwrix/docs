@@ -6,8 +6,8 @@ sidebar_position: 70
 
 # Interactive Grids
 
-Interactive grids in the table section of a report provide the ability to interact with the data and
-filter it as required. Interactive grids allow you to perform the following actions:
+Interactive grids in the table section of a report let you interact with the data and
+filter it as required. With interactive grids, you can perform the following actions:
 
 - Group data
 - Search and filter data
@@ -19,7 +19,7 @@ filter it as required. Interactive grids allow you to perform the following acti
 The toolbar in an interactive grid can display the following options:
 
 - Filter icon – Click this icon to activate searching and filter the data
-- Group by – Provides a drop-down list of available categories to select for grouping. When grouping
+- Group by – Provides a dropdown list of available categories to select for grouping. When grouping
   is enabled, searching is disabled.
 - Up arrow and down arrow – Click to expand or collapse the groups
 - Download Data – Click to download all data to a CSV file. This option is displayed when the

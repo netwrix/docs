@@ -4,7 +4,7 @@ description: "Creates a displaytable for the given entity."
 sidebar_position: 5
 ---
 
-Creates a displaytable for the given entity. If there are less than 4 scalar properties, the scaffolding adds all the properties in the table otherwise there is only the internaldisplayname. The design element for this displaytable is resourcetable.
+Creates a displaytable for the given entity. The scaffolding adds all properties if the entity type has fewer than 4 scalar properties, or only the internal display name if it has more. The design element for this displaytable is resourcetable.
 
 
 ## Examples
@@ -25,7 +25,7 @@ Creates a displaytable for the given entity. If there are less than 4 scalar pro
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <DisplayTable Identifier="SAB_User" DisplayTableDesignElement="resourcetable" EntityType="SAB_User" IsEntityTypeDefault="true">

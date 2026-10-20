@@ -12,13 +12,12 @@ leave environments at risk or add unnecessary administrative overhead.
 ## Analysis Tasks for the 2-AAD_Exceptions Job
 
 Navigate to the **.Entra ID Inventory** > **2-AAD_Exceptions** > **Configure** node and select
-**Analysis**. Analysis tasks with configuration parameters that define security concerns can be
-modified.
+**Analysis**. You can modify analysis tasks with configuration parameters that define security
+concerns.
 
 :::warning
-Most of these analysis tasks are preconfigured and should not be modified and not be
-deselected. There are a few which are deselected by default, as they are for troubleshooting
-purposes.
+Most of these analysis tasks are preconfigured. Don't modify or deselect them. A few
+are deselected by default because they're for troubleshooting.
 :::
 
 
@@ -88,9 +87,9 @@ topic for an explanation of Exception Types.
 ### Configure the Analysis Tasks for the 2-AAD_Exceptions Job
 
 Customizable parameters enable Enterprise Auditor users to set the values used to classify user and
-group objects during this job’s analysis. The parameters can be customized and are listed in a
-section at the bottom of the SQL Script Editor. Follow the steps to customize an analysis task’s
-parameters.
+group objects during this job’s analysis. You can customize the parameters, which are listed in a
+section at the bottom of the SQL Script Editor. To customize an analysis task’s
+parameters:
 
 :::warning
 Modifying these parameters affects solutions with .Entra ID Inventory Job Group
@@ -113,7 +112,7 @@ Configuration**. The SQL Script Editor opens.
 **Step 4 –** Double-click in a field in the Value column and enter a custom value.
 
 :::warning
-Do not change any parameters where the Value states **Created during execution**.
+Don't change any parameters where the Value states **Created during execution**.
 :::
 
 

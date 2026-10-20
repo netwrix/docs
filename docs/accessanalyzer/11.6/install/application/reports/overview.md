@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Reports via the Web Console
 
-The Web Console is where any reports which have been published can be viewed outside of the
-Enterprise Auditor Console.
+The Web Console is where you can view any reports that Enterprise Auditor has published, outside
+of the Enterprise Auditor Console.
 
 - Web Console – This console uses an embedded website for published reports. It provides a
   consolidated logon feature for viewing published reports, and accessing the Netwrix Access
@@ -41,25 +41,25 @@ topic for additional information on configuring security polices to allow Kerber
 
 ## Log into the Web Console
 
-In order for a user to log into the Web Console, the user’s account must have the User Principal
+To log into the Web Console, a user's account must have the User Principal
 Name (UPN) attribute populated within Active Directory. Then the user can login using domain
-credentials. If multiple domains are being managed by the Netwrix Access Information Center, then
+credentials. If the Netwrix Access Information Center manages multiple domains,
 the username needs to be in the `domain\username` format.
 
-Access to reports in the Web Console can be managed through the Role Based Access feature of
+You can manage access to reports in the Web Console through the Role Based Access feature of
 Enterprise Auditor (**Settings** > **Access**). The Web Administrator role and the Report Viewer
 role grant access to the published reports. See the
 [Role Based Access](/docs/accessanalyzer/11.6/admin/settings/access/rolebased/overview.md)
 topic for addition information.
 
 :::note
-Access to the AIC and other Netwrix products is controlled from within those products.
+You control access to the AIC and other Netwrix products from within those products.
 :::
 
 
-The address to the Web Console can be configured within the Enterprise Auditor Console
+You can configure the address to the Web Console within the Enterprise Auditor Console
 (**Settings** > **Reporting**). The default address is `http://[hostname.domain.com]:8082`. From the
-Enterprise Auditor Console server, it can be accessed at `http://localhost/` with any standard
+Enterprise Auditor Console server, you can access it at `http://localhost/` with any standard
 browser. To access the Web Console from another machine in or connected to the environment, replace
 localhost with the name of the Enterprise Auditor Console. See the
 [Update Website URLs](/docs/accessanalyzer/11.6/install/application/reports/secure.md#update-website-urls)
@@ -73,7 +73,7 @@ topic for additional information.
 :::
 
 
-Follow the steps to login to the Web Console.
+To log in to the Web Console:
 
 **Step 1 –** To open the Web Console page, use one of the following methods:
 
@@ -84,7 +84,7 @@ Follow the steps to login to the Web Console.
   - `https://[machinename]:8082`
 
 :::note
-The URL that is used may need to be added to the browser’s list of trusted sites.
+You may need to add the URL you use to the browser’s list of trusted sites.
 :::
 
 

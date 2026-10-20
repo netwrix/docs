@@ -14,7 +14,7 @@ configuration settings for use in the following analysis jobs and respective rep
 The MongoDB_Configuration Job uses the NoSQL Data Collector for queries.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 

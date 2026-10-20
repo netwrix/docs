@@ -17,7 +17,7 @@ When **OAuth** is selected as the E-mail Authentication Type, authorization is r
 
 ## Administrator E-mail
 
-The test email is sent to the address configured for your administrator account. If no email address is set, the message *"There is no e-mail defined for your Administrator Account. You must setup the e-mail address from System Administrators > Edit info"* is displayed.
+Endpoint Protector sends the test email to the address configured for your administrator account. If no email address is set, you see the message: *"There is no e-mail defined for your Administrator Account. You must set up the e-mail address from System Administrators > Edit info"*.
 
 To set an email address, go to **System Configuration** > **System Administrators** and select **Edit info**.
 
@@ -33,7 +33,7 @@ An active Internet connection is required to use this feature.
 
 Use the **E-mail Authentication Type** dropdown to select how Endpoint Protector authenticates with the email server:
 
-- **Basic** — standard username and password authentication. Supports native and SMTP email types, with TLS 1.3.
+- **Basic** — standard username and password authentication. Supports native and SMTP email types. Endpoint Protector negotiates TLS automatically, using TLS 1.3 where available and falling back to TLS 1.2 otherwise.
 - **OAuth** — OAuth 2.0 authentication for Microsoft Exchange Online. Use this option to comply with Microsoft's deprecation of Basic Auth for SMTP AUTH.
 
 ### Basic authentication
@@ -95,7 +95,7 @@ Access the logs from **System Configuration** > **Mail Settings** > **Mail Serve
 | Column | Description |
 |---|---|
 | Authentication Type | Whether the send attempt used **Basic** or **OAuth** authentication |
-| Status | Status of the captured event (currently `error` for all entries) |
+| Status | Status of the captured event (`error` for all entries) |
 | Log Message | Human-readable error, including the SMTP return code or OAuth error code reported by the server |
 | Registered at | Server timestamp when the error was captured |
 | Mail Settings | Click the row to expand and review the mail server configuration in effect at the time of the error |
@@ -104,7 +104,7 @@ Access the logs from **System Configuration** > **Mail Settings** > **Mail Serve
 
 The tab captures the following error categories when encountered during a send attempt:
 
-- **DNS / hostname resolution failures** — for example, *Could not resolve hostname `smtp.office365.com`*
+- **DNS / hostname resolution failures** — for example, *Couldn't resolve hostname `smtp.office365.com`*
 - **Connection timeouts** — for example, *Connection timed out after 30 seconds while connecting to `smtp.office365.com:587`*
 - **TLS/SSL handshake failures** — for example, *TLS handshake failed - peer certificate validation error*
 - **SMTP server return codes** — including authentication failures (`535`), invalid recipients (`550`), service throttling (`421`), and policy rejections (`554`)
@@ -131,7 +131,7 @@ Errors are also written to log files on the appliance for additional context and
 | Basic authentication using SMTP with TLS 1.3 | `/var/log/mail.log` |
 
 :::note
-Basic authentication errors that occur over SMTP with TLS 1.3 are written only to `/var/log/mail.log` and are not shown in the Mail Server Logs tab. To review those errors, open the file directly on the appliance.
+Basic authentication errors that occur over SMTP with TLS 1.3 are written only to `/var/log/mail.log` and aren't shown in the Mail Server Logs tab. To review those errors, open the file directly on the appliance.
 :::
 
 
@@ -142,9 +142,9 @@ The following messages are displayed during email configuration and testing:
 | Situation | Message |
 |---|---|
 | Test email sent successfully | A test e-mail was sent to `<address>` |
-| No administrator email configured | There is no e-mail defined for your Administrator Account. You must setup the e-mail address from System Administrators > Edit info |
-| Test email failed to send | Failed to send the test e-mail! Please verify if the E-mail Server Settings are correct! |
-| OAuth authorization failed | Email authorization failed! Please check the provided credentials and try again! |
+| No administrator email configured | There is no e-mail defined for your Administrator Account. You must set up the e-mail address from System Administrators > Edit info |
+| Test email failed to send | Failed to send the test e-mail! verify if the E-mail Server Settings are correct! |
+| OAuth authorization failed | Email authorization failed! check the provided credentials and try again! |
 | Settings saved successfully | Changes have been saved! |
 | OAuth authorization completed | Your email has been verified. Authorization complete! |
-| Error saving settings | Cannot execute command! An error occurred! |
+| Error saving settings | Can't execute command! An error occurred! |

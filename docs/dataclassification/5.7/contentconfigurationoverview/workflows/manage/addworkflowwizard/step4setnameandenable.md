@@ -10,10 +10,9 @@ At this step, you need to provide workflow name, review its settings, and disabl
 workflow (to start immediate processing). Do the following:
 
 1. Enter workflow name. It should contain at least 3 characters.
-2. Review the workflow settings you have configured at the previous steps.
-3. If you want the documents to be processed immediately after you finish the wizard, select
-   **Enabled** option. Otherwise, you can select **Disabled** and change this settings later on
-   using the UI.
+2. Review the workflow settings you configured in the previous steps.
+3. To process documents immediately after finishing the wizard, select
+   **Enabled**. Otherwise, select **Disabled** and change this setting later in the UI.
 
     :::note
     Documents that have already been classified will be re-classified before applying this

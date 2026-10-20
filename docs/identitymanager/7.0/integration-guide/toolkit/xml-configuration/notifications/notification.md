@@ -15,7 +15,7 @@ The notification is built based on:
 * the styles `Notification.css`;
 * the subject defined by `TitleExpression`.
 
-The notification is sent for each new user, i.e. each user whose contract start date is in the future. The notification is sent to the new user's manager(s).
+The notification is sent for each new user, i.e. each user whose contract start date is in the future. The notification is sent to the new user's managers.
 
 The notification will be sent again as a reminder after 7 days, by the next `SendNotificationsTask`.
 
@@ -28,11 +28,11 @@ The notification will be sent again as a reminder after 7 days, by the next `Sen
 
 |Property|Details|
 |---|---|
-| CssTemplate optional | **Type:** String **Description:** Path to the css file that defines the styles for the email. **Note:** the path must be relative to the configuration folder, and the file must be inside it. **Note:** required when creating a customized notification with ``. |
+| CssTemplate optional | **Type:** String **Description:** Path to the CSS file that defines the styles for the email. **Note:** the path must be relative to the configuration folder, and the file must be inside it. **Note:** required when creating a customized notification. |
 | Identifier required | **Type:** String **Description:** Unique identifier of the notification. |
 | OwnerEntityType required | **Type:** Int64 **Description:** Identifier of the entity type that represents the population affected by the notification, and the variable type used in `TitleExpression` and `QueryFilterExpression`. |
-| QueryFilterExpression optional | **Type:** String **Description:** C# expression that returns a Identity Manager Squery in order to define the sending condition of the notification. The expression's variable type is defined in `OwnerEntityType`. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
-| RazorTemplate optional | **Type:** String **Description:** Path to the Razor cshtml file that defines the email's body template. **Note:** the path must be relative to the configuration folder, and the file must be inside it. **Note:** required when creating a customized notification with ``. |
+| QueryFilterExpression optional | **Type:** String **Description:** C# expression that returns a Identity Manager Squery to define the sending condition of the notification. The expression's variable type is defined in `OwnerEntityType`. See [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions) for details. |
+| RazorTemplate optional | **Type:** String **Description:** Path to the Razor cshtml file that defines the email's body template. **Note:** the path must be relative to the configuration folder, and the file must be inside it. **Note:** required when creating a customized notification. |
 | RecipientMailBinding optional | **Type:** Int64 **Description:** Binding of the property that corresponds to the email addresses that will receive the notification. |
 | ReminderInterval <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Time period (in minutes) after which a reminder of the original notification should be sent. **Note:** the notification reminder will be sent by the first `SendNotificationsTask` after the reminder interval is exceeded. |
-| TitleExpression optional | **Type:** String **Description:** C# expression that defines the email's subject. The expression's variable type is defined in `OwnerEntityType`. **Note:** This property is only supported for custom notifications. Typed notifications (such as AccessCertificationNotification, RoleReviewNotification, ProvisioningReviewNotification, and ManualProvisioningNotification) use predefined templates and do not support title customization via this property. Use [`NotificationTemplate`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate) for customizing typed notifications instead. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| TitleExpression optional | **Type:** String **Description:** C# expression that defines the email's subject. The expression's variable type is defined in `OwnerEntityType`. **Note:** This property is only supported for custom notifications. Typed notifications (such as AccessCertificationNotification, RoleReviewNotification, ProvisioningReviewNotification, and ManualProvisioningNotification) use predefined templates and don't support title customization via this property. Use [`NotificationTemplate`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate) for customizing typed notifications instead. See [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions) for details. |

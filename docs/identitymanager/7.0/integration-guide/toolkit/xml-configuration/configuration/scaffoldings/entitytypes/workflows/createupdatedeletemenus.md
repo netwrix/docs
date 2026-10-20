@@ -1,15 +1,15 @@
 ---
 title: "CreateUpdateDeleteMenus"
-description: "Creates creation, update and delete menus for an entity."
+description: "Creates creation, update, and delete menus for an entity."
 sidebar_position: 1
 ---
 
-Creates creation, update and delete menus for an entity. Read these menuItems again on the main menuItems of the entity with the following naming rule:
+Creates creation, update, and delete menus for an entity. Read these menuItems again on the main menuItems of the entity with the following naming rule:
 "Search_" + Identifier of entity type.
-if this menuItem does not exist, create it in the database.
+if this menuItem doesn't exist, create it in the database.
 
 :::warning
-The workflows for adding, deleting and modifying the entity must be created beforehand. For this scaffolding, the names of these 3 workflows must comply with the following standard:
+The workflows for adding, deleting, and modifying the entity must be created beforehand. For this scaffolding, the names of these 3 workflows must comply with the following standard:
 - entity type identifier + "_Create"
 - entity type identifier + "_Update"
 - entity type identifier + "_Delete"
@@ -34,7 +34,7 @@ The workflows for adding, deleting and modifying the entity must be created befo
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <MenuItem Identifier="Search_Directory_Country" DisplayName_L1="Country" DisplayName_L2="Pays">

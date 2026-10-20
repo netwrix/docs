@@ -10,7 +10,7 @@ How to troubleshoot Identity Manager when facing technical issues.
 
 ## Overview
 
-Daily technical issues can lead to some unexpected results in Identity Manager. This page is meant to give some clues and use cases in order to solve usual issues.
+Daily technical issues can lead to some unexpected results in Identity Manager. This page is meant to give some clues and use cases to solve usual issues.
 
 > For example, the issues described below can happen when there is a network cut, or an application
 > IP address is being changed, or an important password is being modified.
@@ -19,7 +19,7 @@ See the [Troubleshoot Connector Jobs](../../integration-guide/tasks-jobs/trouble
 
 ### Prerequisites
 
-In order to troubleshoot Identity Manager efficiently, the user, usually an application administrator, must have access to:
+To troubleshoot Identity Manager efficiently, the user, usually an application administrator, must have access to:
 
 - the connector screens, especially the jobs available there;
 
@@ -55,7 +55,7 @@ Netwrix Identity Manager (formerly Usercube) recommends scheduling an incrementa
 
 If a synchronization threshold is exceeded, then check whether the threshold is legitimate. If not, it means that the warning comes from a change in the managed system, so you should fix the data directly in the managed system.
 
-See more details on [Synchronize Data](../../user-guide/set-up/synchronization) thresholds.
+Learn about [Synchronize Data thresholds](../../user-guide/set-up/synchronization).
 
 ## Troubleshoot Provisioning Issues
 
@@ -68,23 +68,23 @@ If provisioning orders are blocked while expected to be automatic, it can come f
 [Compute Role Model Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask) or the corresponding executable, with the block provisioning option;
 - a provisioning order being already blocked for the same resource due to a prior operation;
 - a correlation/classification rule with a confidence rate below 100%, which means that either
-important data is missing or the rule is not right.
+important data is missing or the rule isn't right.
 
 **Verify:** After debugging the blocked-order situation, the related blocked orders must be reviewed on the **Provisioning Review** screen to be unblocked.
 
 ### Errored provisioning orders
 
 > For example, consider a provisioning task supposed to delete 150 accounts, while the relevant
-> service account does not have the relevant writing rights. Thus it ends up with 150 errored
+> service account doesn't have the relevant writing rights. Thus it ends up with 150 errored
 > provisioning orders.
 
 If provisioning orders end up with an error, then you should check the errors' details in **Provisioning Review** to determine where the error comes from.
 
-**Verify:** After debugging the errored-order situation, unblock one provisioning order and relaunch provisioning to make sure the fix gives the expected result. Only then, unblock all related errored orders and relaunch provisioning.
+**Verify:** After debugging the errored-order situation, unblock one provisioning order and relaunch provisioning to ensure the fix gives the expected result. Only then, unblock all related errored orders and relaunch provisioning.
 
 If the error comes from miscalculated properties, for example missing parent dn or duplicated logins, then you should review scalar and/or query rules.
 
-**Verify:** After debugging the situation, recompute the role model for only one user to make sure the fix gives the expected result. Only then, recompute the role model for all users through the **Compute Role Model** job of connector screens.
+**Verify:** After debugging the situation, recompute the role model for only one user to ensure the fix gives the expected result. Only then, recompute the role model for all users through the **Compute Role Model** job of connector screens.
 
 To recompute the role model for only one user, you can use the helpdesk workflow. It will give you access to the user's entitlements via the workflow's **Access Permissions** step, where you can check the changes without having to validate.
 
@@ -92,11 +92,11 @@ To recompute the role model for only one user, you can use the helpdesk workflow
 
 If provisioning orders produce incorrect values, then it can come from:
 
-- incorrect identity data, in which case you should select a test user, click on **View Sources** to
-see which sources contributed to the data, and click on **View History** to see when the data changed.
-- wrong provisioning rules, i.e. scalar, navigation and/or query rules;
+- incorrect identity data, in which case you should select a test user, click **View Sources** to
+see which sources contributed to the data, and click **View History** to see when the data changed.
+- wrong provisioning rules, i.e. scalar, navigation, and/or query rules;
 
-**Verify:** After debugging the situation, use the helpdesk workflow to edit a field and check the changes for only one user to make sure the fix gives the expected result. Only then, recompute the role model for all users through the **Compute Role Model** job of connector screens. See more details on how to use the Troubleshoot workflow for debug purposes.
+**Verify:** After debugging the situation, use the helpdesk workflow to edit a field and check the changes for only one user to ensure the fix gives the expected result. Only then, recompute the role model for all users through the **Compute Role Model** job of connector screens. For details on using the Troubleshoot workflow for debug purposes, refer to your system documentation.
 
 > For example, if identity data has changed and HR data has not, then it must come from the rules.
 
@@ -104,13 +104,13 @@ see which sources contributed to the data, and click on **View History** to see 
 
 If a provisioning threshold is exceeded, then check whether the threshold is legitimate. If not, it means that the warning can come from:
 
-- incorrect identity data, in which case you should select a test user, click on **View Sources** to
-see which sources contributed to the data, and click on **View History** to see when the data changed.
-- wrong provisioning rules, i.e. scalar, navigation and/or query rules;
+- incorrect identity data, in which case you should select a test user, click **View Sources** to
+see which sources contributed to the data, and click **View History** to see when the data changed.
+- wrong provisioning rules, i.e. scalar, navigation, and/or query rules;
 
-**Verify:** After debugging the situation, use the helpdesk workflow to edit a field and check the changes for only one user to make sure the fix gives the expected result. Only then, recompute the role model for all users through the **Compute Role Model** job of connector screens. See more details on how to use the helpdesk Troubleshoot workflow for debug purposes.
+**Verify:** After debugging the situation, use the helpdesk workflow to edit a field and check the changes for only one user to ensure the fix gives the expected result. Only then, recompute the role model for all users through the **Compute Role Model** job of connector screens. For details on using the helpdesk Troubleshoot workflow for debug purposes, refer to your system documentation.
 
 ## Troubleshoot Entitlement Issues
 
-If users have unexpected entitlements, then you should click on an entitlement and/or access **Workflow Overview** to see the entitlements' details, for example who requested them, etc.
+If users have unexpected entitlements, then you should click an entitlement and/or access **Workflow Overview** to see the entitlements' details, for example who requested them, etc.
 

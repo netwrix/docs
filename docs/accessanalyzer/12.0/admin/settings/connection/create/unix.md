@@ -20,12 +20,12 @@ The required credentials for the Unix Account are:
 - Password/Confirm
 
     - If not using a private key, enter the **Password** and re-type in the **Confirm** field
-    - If using a private key, then the password is not needed. Provide the private key information
+    - If you use a private key, the password isn't needed. Provide the private key information
       in the **Use the following private key when connecting** field.
 
 - Use the following port/ports (CSV) for SSH
 
-    - The SSH port needs to be opened in software and hardware firewalls
+    - You need to open the SSH port in software and hardware firewalls
     - If desired, select this option and provide the port value
 
 - Use the following private key when connecting

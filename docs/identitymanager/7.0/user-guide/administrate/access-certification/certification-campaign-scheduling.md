@@ -10,7 +10,7 @@ How to create and schedule access certification campaigns, defining their scope.
 
 ## Overview
 
-The aim of an access certification campaign is to review specific access and entitlements for specific identities, in order to certify them and express an audit opinion that justifies their necessity.
+The aim of an access certification campaign is to review specific access and entitlements for specific identities, to certify them and express an audit opinion that justifies their necessity.
 
 Here, you will learn how to create and schedule a certification campaign, defining its scope via the filters specifying the reviewers and items to be reviewed.
 
@@ -20,7 +20,7 @@ This operation should be performed in cooperation with the staff in charge of au
 
  | Input | Output | 
  | --- | --- | 
- | Identity Repository (required) [Create Roles in the Role Catalog](../../../user-guide/set-up/single-roles-catalog-creation)<br />(optional) [Manage Risks](../../../user-guide/optimize/risk-management) | Scheduled certification campaign(s) | 
+ | Identity Repository (required) [Create Roles in the Role Catalog](../../../user-guide/set-up/single-roles-catalog-creation)<br />(optional) [Manage Risks](../../../user-guide/optimize/risk-management) | Scheduled certification campaigns | 
 
 See the [Create the Workforce Repository](../../../user-guide/set-up/initial-identities-loading) topic for additional information.
 
@@ -28,11 +28,11 @@ See the [Create the Workforce Repository](../../../user-guide/set-up/initial-ide
 
 Create an access certification campaign by proceeding as follows:
 
-1. Click on **Access Certification Campaigns** in the **Administration** section on the home page.
+1. Click **Access Certification Campaigns** in the **Administration** section on the home page.
 
     ![Home - Access Certification Campaigns](/images/identitymanager/home_accesscertificationcampaigns_v602.webp)
 
-2. Click on the addition button at the top right and fill in the fields.
+2. Click the addition button at the top right and fill in the fields.
 
     ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
 
@@ -41,7 +41,7 @@ Create an access certification campaign by proceeding as follows:
     - `Identifier`: Must be unique among certification campaigns and must not contain whitespace.
     - `Name`: Will be displayed in the UI to identify the campaign.
     - `Start Date`: Date when the campaign begins and becomes visible on the reviewers' **Access
-Certification** screen. The campaign will review access existing at this date; changes after this date are not included.
+Certification** screen. The campaign will review access existing at this date; changes after this date aren't included.
     - `End Date`: Date when the campaign ends.
     - `Target Entity Type`: Entity type targeted by the campaign.
     - `Target Reviewers`: Set of identities responsible for the access review. Available reviewers

@@ -16,8 +16,8 @@ All Windows Servers
 
 **Connection Profile**
 
-Configure a Connection Profile that is not part of the Domain Admin group. The report should be run
-with a non-privileged user account.
+Configure a Connection Profile that isn't part of the Domain Admin group. Run the report with a
+non-privileged user account.
 
 **Schedule Frequency**
 
@@ -25,7 +25,7 @@ This job in this job group should be scheduled to run daily.
 
 **Workflow**
 
-**Step 1 –** Configure a Connection Profile that is not part of the Domain Admin group.
+**Step 1 –** Configure a Connection Profile that isn't part of the Domain Admin group.
 
 **Step 2 –** Assign All Windows Servers under Hosts List Assignment.
 

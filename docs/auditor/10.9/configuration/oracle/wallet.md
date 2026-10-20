@@ -6,10 +6,10 @@ sidebar_position: 50
 
 # Create and Configure Oracle Wallet
 
-Oracle Wallet is a file that stores database authentication and signing credentials. It allows users
-to securely access databases without providing credentials to third-party software (for example,
-Netwrix Auditor), and easily connect to Oracle products, including located in the clouds (e.g.
-Autonomous Data Warehouse).
+Oracle Wallet is a file that stores database authentication and signing credentials. It lets users
+securely access databases without providing credentials to third-party software (for example,
+Netwrix Auditor) and easily connect to Oracle products, including those hosted in the cloud (for
+example, Autonomous Data Warehouse).
 
 A configured Wallet consists of two files, `cwallet.sso` and `ewallet.p12` stored in a secure Wallet
 directory
@@ -18,21 +18,20 @@ directory
 
 There are multiple methods to create Oracle Wallet files. For example:
 
-- Using Oracle Wallet Manager. Refer to the following Oracle help article for more information:
-  [Creating a New Oracle Wallet](https://docs.oracle.com/database/121/DBIMI/walet.htm#creating-a-new-oracle-wallet).
-- Using a console. As an example, refer to the following Oracle help article for WebLogic JDBC:
-  [Creating and Managing Oracle Wallet](https://docs.oracle.com/middleware/1213/wls/JDBCA/oraclewallet.htm#creating-and-managing-oracle-wallet).
-- Using other Oracle products. For example, Autonomous Data Warehouse. Refer to the following Oracle
-  help article for more information:
-  [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#download-client-credentials-wallets).
+- Using Oracle Wallet Manager. See
+  [Creating a New Oracle Wallet](https://docs.oracle.com/database/121/DBIMI/walet.htm#creating-a-new-oracle-wallet)
+  for more information.
+- Using a console. For example, see
+  [Creating and Managing Oracle Wallet](https://docs.oracle.com/middleware/1213/wls/JDBCA/oraclewallet.htm#creating-and-managing-oracle-wallet)
+  for WebLogic JDBC.
+- Using other Oracle products, for example, Autonomous Data Warehouse. See
+  [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#download-client-credentials-wallets)
+  for more information.
 
 ## Install Oracle Instant Client
 
-To perform clear install of Oracle Instant Client, follow the instructions below. If you have Oracle
-Client installed, see the Update Existing Oracle Client Installation topic for additional
-information.
-
-Follow the steps to install Oracle Instant Client
+To install Oracle Instant Client, follow these steps. If you already have Oracle Client installed,
+see the Update Existing Oracle Client Installation topic for additional information instead.
 
 **Step 1 –** Download the appropriate package from Oracle website:
 [Instant Client Packages](https://www.oracle.com/database/technologies/instant-client/downloads.html).
@@ -61,13 +60,13 @@ SSL_SERVER_DN_MATCH=yes
 **Step 6 –** Create the `TNS_ADMIN` environment variable and set it to the location of the
 credentials file.
 
-This variable is used to change the directory path of Oracle Net Services configuration files from
+Use this variable to change the directory path of Oracle Net Services configuration files from
 the default location of `ORACLE_HOME\network\admin` to the location of the secure folder containing
 the credentials file you saved in Step 2. Set the `TNS_ADMIN` environment variable to the directory
 where the unzipped credentials files are, not to the credentials file itself.
 
 **Step 7 –** Navigate to a folder where you unzipped your credentials and locate the tnsnames.ora
-file. The file is used to map connection information for each Oracle service to a logical alias.
+file. Use this file to map connection information for each Oracle service to a logical alias.
 
 **Step 8 –** Review sample tnsnames.ora file where `myOracle` – is a logical alias for the wallet:
 
@@ -83,8 +82,7 @@ myOracle =
 
 )
 
-Keep in mind that the wallet alias in the configuration file must equal to Netwrix Auditor item
-name.
+The wallet alias in the configuration file must equal the Netwrix Auditor item name.
 
 ## Configure Oracle Instant Client for HTTP Proxy Connections
 

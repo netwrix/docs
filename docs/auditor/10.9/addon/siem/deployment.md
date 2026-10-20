@@ -28,11 +28,11 @@ and use it for running the script.
 
 ## Alerts to Event Log Add-on
 
-The script will be executed on Auditor Server.
+The script executes on Auditor Server.
 
 By default, Auditor uses the _LocalSystem_ account to run PowerShell scripts. If you want to use
 another account, in the alert settings go to **Response Action**, select the **Use custom
-credentials** checkbox and specify user name and password. Make sure this account has **Log on as
+credentials** checkbox and specify user name and password. Ensure this account has **Log on as
 batch job** privilege. See the
 [Configure a Response Action for Alert](/docs/auditor/10.9/admin/alertsettings/responseaction.md) topic for
 additional information.

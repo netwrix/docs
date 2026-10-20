@@ -10,11 +10,11 @@ Enter the following details about the linked combo on the **Details** page of th
 Display Type** wozard:
 
 1. Enter a name for the linked combo in the **Linked Combo Name** box.  
-   You cannot change the name of a custom display type once you have created it.
+   You can't change the name of a custom display type after you've created it.
 2. Next, specify the data source for the linked combo. You can either use an already uploaded file
    or upload a new one.
 
-    - Use the **Available Data Sources** drop-down list to select an already uploaded file. This may
+    - Use the **Available Data Sources** dropdown list to select an already uploaded file. This may
       be required, for example, when your source file contains the data and relationships for
       several fields, and you want to manage those relationships using multiple linked combos rather
       than one combo. Hence the need to upload the same file for multiple linked combos.  

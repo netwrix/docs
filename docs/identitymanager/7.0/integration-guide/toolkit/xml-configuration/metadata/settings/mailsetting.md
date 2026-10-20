@@ -20,6 +20,6 @@ The following example indicates that notifications for users from `Directory_Use
 |Property|Details|
 |---|---|
 | Identifier <span class="optionalAttribute">default value: MailSettings</span> | **Type:** String **Description:** Unique identifier of the setting. |
-| LanguageCode optional | **Type:** String **Description:** Language code for the notifications sent by server-side tasks, using the ISO 639-1 standard. For example, "en-US" represents American English. |
+| LanguageCode optional | **Type:** String **Description:** Language code for the notifications sent by server-side tasks, formatted using the ISO 639-1 standard. For example, "en-US" represents American English. |
 | MailProperty optional | **Type:** String **Description:** Property whose values are to be used by Usercube to send emails. |
 

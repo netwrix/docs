@@ -26,7 +26,7 @@ sidebar_position: 7
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <DisplayEntityType Identifier="Workflow_Directory_Country" />

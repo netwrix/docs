@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Install the Access Information Center
 
-Once the prerequisites have been met, follow the steps to install the Access Information Center.
+After meeting the prerequisites, to install the Access Information Center:
 
 :::note
 To enable SSL during the installation, a password-enabled certificate with a private key
@@ -57,7 +57,7 @@ opens.
 
 - Database – Enter the name of the existing database
 
-- Authentication – Select the Database service account type from the drop-down menu. Then enter the
+- Authentication – Select the Database service account type from the dropdown menu. Then enter the
   account information in the **User Name** and **Password** fields.
     - For Windows Authentication – **User Name** format must be `[DOMAIN]\[username]` , for example
       `NWXTECH\ad.bruce`
@@ -83,7 +83,7 @@ application will be accessible.
 
 :::note
 For new installations, the default configuration is https and 481. If you are upgrading an
-existing installation, the protocol and port are by default set to what is currently used by the
+existing installation, the protocol and port are by default set to what is used by the
 Access Information Center.
 :::
 
@@ -109,8 +109,8 @@ to step 8.
     ![Certificate Missing Private Key window](/images/accessinformationcenter/12.0/installation/certificatemissingprivatekey.webp)
 
     :::note
-    If the selected certificate resides in any of the Local Computer stores but does not
-    have a private key, or if the certificate is not found in any of the stores, then it cannot be
+    If the selected certificate resides in any of the Local Computer stores but doesn't
+    have a private key, or if the certificate isn't found in any of the stores, then it can't be
     bound to the port. In these cases, the Certificate Missing Private Key warning message displays
     informing you that it will be imported to the Personal store. This means that the Import option
     is selected by default and grayed out to mandate the import of the certificate.
@@ -128,7 +128,7 @@ to step 8.
 - If an expired certificate is detected, the certificate information is populated, but a warning
   message is displayed. You must provide a new valid certificate, before you can continue.
 
-Once the certificate has been provided, click **Next** to continue.
+After providing the certificate, click **Next** to continue.
 
 ![AIC Setup Wizard Ready to install page](/images/accessinformationcenter/12.0/installation/ready.webp)
 
@@ -136,7 +136,7 @@ Once the certificate has been provided, click **Next** to continue.
 
 ![AIC Setup Wizard Completed page](/images/accessinformationcenter/12.0/installation/completed.webp)
 
-**Step 9 –** Once the installation has successfully completed, click **Finish** to exit the wizard.
+**Step 9 –** After installation completes successfully, click **Finish** to exit the wizard.
 
 The installation wizard placed an Netwrix Access Information Center icon on the desktop. Now proceed
 to the [First Launch](/docs/accessinformationcenter/12.0/admin/firstlaunch.md) topic for next steps.

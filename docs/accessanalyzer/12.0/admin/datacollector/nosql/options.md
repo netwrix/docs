@@ -21,13 +21,13 @@ The sensitive data scan settings are:
       database or cluster
     - Limit of documents to scan — Scan limited number of documents in each database or cluster.
       This option is ideal when discovering sensitive data and has minimal impact on the MongoDB
-      cluster performance. However, if the Subject Profile Request feature is being leveraged, then
-      all the documents in all the database or cluster need to be scanned.
+      cluster performance. However, if you use the Subject Profile Request feature, Access Analyzer
+      must scan all the documents in the database or cluster.
     - Scan documents randomly — Access Analyzer requests a set of documents from each database when
-      scanning for sensitive data. The database engine does not return random data from a
-      collection. Instead, Access Analyzer returns sequential documents in a collection. In order to
-      ensure a statistical discrete uniform distribution of data being scanned, this option can be
-      selected. When selected, the Access Analyzer sensitive data scanner requests randomized
+      scanning for sensitive data. The database engine doesn't return random data from a
+      collection. Instead, Access Analyzer returns sequential documents in a collection. To
+      ensure a statistical discrete uniform distribution of the scanned data, select this option.
+      When selected, the Access Analyzer sensitive data scanner requests randomized
       documents from each collection in all the targeted databases.
 
 - Scan database names for sensitive data – Scans database names for sensitive data if the database
@@ -40,10 +40,10 @@ The sensitive data scan settings are:
 
 - Store discovered sensitive data – Stores potentially sensitive data in the Access Analyzer
   database. Any sampled sensitive data discovered based on the matched criteria is stored in the
-  Access Analyzer database. This functionality can be disabled by clearing this checkbox.
+  Access Analyzer database. Clear this checkbox to disable this functionality.
 
     :::note
-    The **Store discovered sensitive data** option is required to view Content Audit
+    You must select the **Store discovered sensitive data** option to view Content Audit
     reports in the Access Information Center for MongoDB data.
     :::
 
@@ -54,10 +54,10 @@ The sensitive data scan settings are:
     :::
 
 
-- Resume scan from last point on error — Resumes scan from where the previous scan left off when the
-  scan was stopped as a result of an error
+- Resume scan from last point on error — Resumes scan from where the previous scan left off when an
+  error stops the scan
 
 :::tip
-Remember, the Sensitive Data Discovery Add-on is required to use the sensitive data collection
+Remember, you need the Sensitive Data Discovery Add-on to use the sensitive data collection
 option.
 :::

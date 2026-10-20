@@ -10,10 +10,11 @@ keywords:
 sidebar_label: User Remediation Reporting
 tags:
   - features-and-operations
+  - kb
 title: "User Remediation Reporting"
 knowledge_article_id: kA0Qk0000002B94KAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # User Remediation Reporting

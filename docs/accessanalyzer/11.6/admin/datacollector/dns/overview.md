@@ -25,7 +25,7 @@ special Enterprise Auditor license.
 
 ## DNS Query Configuration
 
-The DNS Data Collector is configured through the Domain Name System Data Collector Wizard, which
+Configure the DNS Data Collector through the Domain Name System Data Collector Wizard, which
 contains the following wizard pages:
 
 - Welcome
@@ -35,5 +35,5 @@ contains the following wizard pages:
 
 ![Domain Name System Data Collector Wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/dns/welcome.webp)
 
-The Welcome page can be hidden by selecting the Do not display this page the next time checkbox when
-the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the Don't display this page the next time checkbox while the
+wizard is open, and save the configuration settings.

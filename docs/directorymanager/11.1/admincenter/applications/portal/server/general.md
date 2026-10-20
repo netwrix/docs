@@ -40,13 +40,13 @@ a user must select an identity store to connect to, for performing password mana
    portal from the portal logo, as each portal type has its own logo.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. The **Identity Stores** area on the **General Settings** page lists the identity stores in
-   Directory Manager. It displays the provider type the identity store is created for, and whether
+   Directory Manager. It displays the provider type for the identity store and whether
    the identity store is enabled.
 
-    - Select the check box for an identity store to associate it with the portal.
-    - Clear the check box for an identity store to dissociate it.
+    - Select the checkbox for an identity store to associate it with the portal.
+    - Clear the checkbox for an identity store to dissociate it.
 
-    All instances of this portal serve the identity store(s) you select here.
+    All instances of this portal serve the identity stores you select here.
 
 4. Click **Save.**
 
@@ -60,12 +60,12 @@ You may observe the following message on the **Server Settings – General** pag
 It relates to the scenario when identity stores in Directory Manager have been linked, as discussed
 in the
 [Linked Identity Stores and the Directory Manager Portal](/docs/directorymanager/11.1/admincenter/identitystore/link/overview.md#linked-identity-stores-and-the-directory-manager-portal)
-topic. Hence, when two identity stores, IdentityStoreA and IdentityStoreB, are linked and you
+topic. Hence, when two identity stores, IdentityStoreA, and IdentityStoreB, are linked and you
 associate IdentityStoreA with the portal, this message is displayed. It alerts you to associate the
-second identity store in the linked pair (dentityStoreB) with the portal too, in order to benefit
+second identity store in the linked pair (dentityStoreB) with the portal too, to benefit
 from the linking.
 
-## View the Deployment(s) for a Portal
+## View the Deployments for a Portal
 
 A portal can have multiple deployments in the same or different web servers. You can update certain
 settings for each deployment instance of a portal.

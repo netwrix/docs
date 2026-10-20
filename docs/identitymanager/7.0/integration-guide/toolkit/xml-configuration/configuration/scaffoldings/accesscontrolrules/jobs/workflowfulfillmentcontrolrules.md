@@ -25,7 +25,7 @@ Generates the execution rights to launch Fulfillment workflow for a given profil
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_[ActivityTemplateTransition, /Workflows/ActivityTemplateTransition/Query]" DisplayName_L1="Administrator_ActivityTemplateTransition" DisplayName_L2="Administrator_ActivityTemplateTransition" EntityType="ActivityTemplateTransition" Profile="Administrator">

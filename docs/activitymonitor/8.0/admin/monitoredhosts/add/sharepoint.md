@@ -23,11 +23,11 @@ The Activity Monitor can be configured to monitor the following SharePoint chang
 - Security principal is added to a security group
 - Security principal is removed from a security group
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Access Analyzer (formerly Enterprise Auditor)
 
-Prior to adding a SharePoint host to the Activity Monitor, the prerequisites for the target
+Before adding a SharePoint host to the Activity Monitor, the prerequisites for the target
 environment must be met. See the
 [SharePoint On-Premise Activity Auditing Configuration](/docs/activitymonitor/8.0/requirements/activityagent/sharepoint-onprem-activity.md)
 topic for additional information.
@@ -40,7 +40,7 @@ Remember, the Activity Agent must be deployed to the SharePoint Application serv
 
 ## Add SharePoint Host
 
-Follow the steps to add a SharePoint host to be monitored.
+To add a SharePoint host to be monitored, complete these steps:
 
 **Step 1 –** In Activity Monitor, go to the Monitored Hosts tab and click Add. The Add New Host
 window opens.
@@ -58,7 +58,7 @@ Click **Next**.
 ![Add Host - SharePoint Options page](/images/activitymonitor/8.0/admin/monitoredhosts/add/sharepointoptions.webp)
 
 **Step 4 –** On the SharePoint Options page, choose to audit all sites or scope the monitoring to
-specific site(s):
+specific sites:
 
 - Enable auditing on selected site collections – Enabling this option will ensure that auditing is
   enabled for all monitored site collections with periodic checks
@@ -95,10 +95,9 @@ Output** page can be configured.
 - Specify output file path – Specify the file path where log files are saved. Click the ellipses
   button (**...**) to open the Windows Explorer to navigate to a folder destination. Click **Test**
   to test if the path works.
-- Period to keep Log files – Log files will be deleted after the period entered number of days
-  entered. The default is 10 days. Use the dropdown to specify whether to keep the Log files for a
+- Period to keep Log files – The system deletes log files after the period you enter, in days. The default is 10 days. Use the dropdown to specify whether to keep the Log files for a
   set amount of Minutes, Hours, or Days.
-- Log file format – Select whether the log file will be saved as a JSON or TSV file
+- Log file format – Select whether to save the log file as a JSON or TSV file
 - This log file is for Access Analyzer – Enable this option to have Access Analyzer collect this
   monitored host configuration
 
@@ -118,26 +117,26 @@ Click **Next**.
 **Step 8 –** If Syslog Server is selected on the **Where To Log The Activity** page, the Syslog
 Output page can be configured. The configurable options are:
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the textbox.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used. The Event stream is the activity
       being monitored according to this configuration for the monitored host.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the Message framing drop-down menu. See the
+    The TCP and TLS protocols add the Message framing dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/8.0/admin/outputs/syslog/syslog.md) topic for additional information.
 
 - The Test button sends a test message to the Syslog server to check the connection. A green check
   mark or red will determine whether the test message has been sent or failed to send. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -148,7 +147,7 @@ Click Finish.
 ![Activity Monitor with SharePoint host added](/images/activitymonitor/8.0/admin/monitoredhosts/add/activitymonitorsharepoint.webp)
 
 The added SharePoint host is displayed in the monitored hosts table. Once a host has been added for
-monitoring, configure the desired ouptuts. See the [Output for Monitored Hosts](/docs/activitymonitor/8.0/admin/monitoredhosts/output/output.md) topic
+monitoring, configure the outputs. See the [Output for Monitored Hosts](/docs/activitymonitor/8.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 ## Host Properties for SharePoint

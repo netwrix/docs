@@ -27,7 +27,7 @@ This query must be modified. See the
 ### Configure the NIS Scan Query
 
 The NIS Scan job has been preconfigured to run with the default settings with the category of **Scan
-NIS Users and Groups**. However, it is necessary to configure the targeted NIS domain. Follow the
+NIS Users and Groups**. However, you must configure the targeted NIS domain. Follow the
 steps to set the target NIS domain and any desired customizations.
 
 **Step 1 –** Navigate to the **.NIS Inventory** > **NIS Scan** > **Configure** node and select
@@ -40,7 +40,7 @@ opens.
 opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -48,7 +48,7 @@ purpose of this job.
 ![NIS Settings page](/images/activitymonitor/8.0/config/dellpowerscale/settings.webp)
 
 **Step 4 –** On the NIS Settings page, enter the **NIS Domain Name** for the targeted NIS domain.
-This step is required prior to running this query. See the
+This step is required before running this query. See the
 [NIS: NIS Settings](/docs/accessanalyzer/12.0/admin/datacollector/nis/settings.md) topic for additional information.
 
 - Optional: Test the connection to the domain using the Sample NIS Server section of the page
@@ -69,7 +69,7 @@ View the analysis tasks by navigating to the **.NIS Inventory** > **NIS Scan** >
 and select **Analysis**.
 
 :::warning
-Most of these analysis tasks are preconfigured and should not be modified or
+Most of these analysis tasks are preconfigured and shouldn't be modified or
 deselected. There is one that is deselected by default, as it is for troubleshooting purposes.
 :::
 
@@ -87,7 +87,7 @@ the database:
 
 :::warning
 This analysis task is for troubleshooting and cleanup only. Data will be deleted from
-the database. Do not execute this task with the other analysis tasks, as that results in the
+the database. Don't execute this task with the other analysis tasks, as that results in the
 deletion of data that was just collected.
 :::
 
@@ -113,7 +113,7 @@ task.
 SQL database.
 
 :::warning
-Do not forget to clear the Drop NIS Tables analysis task and reselect all of the other
+Don't forget to clear the Drop NIS Tables analysis task and reselect all of the other
 analysis tasks.
 :::
 

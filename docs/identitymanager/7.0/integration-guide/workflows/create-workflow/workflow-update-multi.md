@@ -30,7 +30,7 @@ The example below creates a workflow to update the records of an existing user:
 
 The XML configuration below represents the creation of a [Form](../../../integration-guide/toolkit/xml-configuration/user-interface/form) that defines the elements to display in the workflow.
 
-Here we create three structured forms, all to be called in our final workflow form:
+Create three structured forms, all to be called in the final workflow form:
 
 ```
 First form for the user's record data, shared with all records:
@@ -42,7 +42,7 @@ Second form for the user's record data, specific to each record individually:
 
 ## Link the Forms to the Workflow
 
-After creating a workflow with given activities, it is necessary to create the form to be displayed when launching the workflow. It has the type corresponding to a resource's update with several records, i.e. `WorkflowUpdateSeveralRecordEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
+After creating a workflow with given activities, create the form to be displayed when launching the workflow. It has the type corresponding to a resource's update with several records, i.e. `WorkflowUpdateSeveralRecordEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
 
 ```
 <WorkflowUpdateSeveralRecordsEntityForm RecordFilter="CurrentAndFuture" Identifier="Directory_User_UpdateSeveralRecords" EntityType="Workflow_Directory_User" MainProperty="Workflow_Directory_User:Directory_User" RecordProperty="Directory_User:Records" WorkflowRequestType="Self" Activity="Directory_User_UpdateSeveralRecords:Request" FormTitle_L1="Manage positions" RecordTable="Directory_User_UpdateSeveralRecords"></WorkflowUpdateSeveralRecordsEntityForm>
@@ -60,7 +60,7 @@ A `WorkflowUpdateSeveralRecordEntityForm` requires the following child elements:
 </WorkflowUpdateSeveralRecordsEntityForm>
 ```
 
-The `MainControl` attribute is here an empty container, because it is a mandatory attribute that is not involved in the changes of this workflow.
+The `MainControl` attribute is here an empty container, because it is a mandatory attribute that isn't involved in the changes of this workflow.
 
 - `RecordControl` that defines the record data shared with all records and calls the firstform
 created previously;
@@ -130,7 +130,7 @@ To create a menu item here for the new workflow, you can add the following XML c
 
 ## Add Aspects
 
-For each workflow, it is possible to add aspects according to the workflow's purpose.
+For each workflow, add aspects according to the workflow's purpose.
 
 ## Homonym Detection (Optional)
 

@@ -36,7 +36,7 @@ Only software obtained from the sources detailed here is authentic.
 
 Netwrix uses industry-standard code signing technologies to provide evidence of the authenticity and integrity of the software we publish. The following certificates are used:
 
-- Windows binaries are signed with a code signing certificate issued to "Netwrix Corporation" with extended validation by Digicert. The certificate fingerprint is `80E18E3389CE740D3F124CC45D5CF83A55FD472A`.
+- Windows binaries are signed with a code signing certificate issued to "Netwrix Corporation" with extended validation by Digicert. The certificate fingerprint is `1209C367CE3469CBF559C20AA2B930BA9FB79235`.
 - Linux and UNIX packages (RPM, deb, etc.) are signed with the "Netwrix Corporation (PGP Signing Key) productsecurity@netwrix.com" PGP key. The public key fingerprint is `3F5EB22771A2BD66D1AA011A43E7B9B0AE7B49D8` and can be obtained at https://releases.netwrix.com/netwrixcorporation-pgp-signing.asc.
 
 ## Verifying Software Integrity

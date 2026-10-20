@@ -8,13 +8,13 @@ sidebar_position: 10
 
 This section describes the steps needed to create a user account with the privileges required to
 execute Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans from Access Analyzer.
-It is necessary to:
+Complete the following steps:
 
 - Create Role
 - Create a Group & Assign Role
 - Add User to Group
 
-Relevant NetApp Documentation: To learn more about node access controls, please visit the NetApp
+Relevant NetApp Documentation: For more information about node access controls, visit the NetApp
 website and read the
 [na_useradmin – Administers node access controls](https://library.netapp.com/ecmdocs/ECMP1511537/html/man1/na_useradmin.1.html)
 article.
@@ -47,7 +47,7 @@ After the role is created, Create a Group & Assign Role.
 
 ## Create a Group & Assign Role
 
-Once the role has been created, it must be attached to a group. The following command needs to be
+After the role is created, it must be attached to a group. The following command needs to be
 run to create a group and assign the role to it.
 
 ```

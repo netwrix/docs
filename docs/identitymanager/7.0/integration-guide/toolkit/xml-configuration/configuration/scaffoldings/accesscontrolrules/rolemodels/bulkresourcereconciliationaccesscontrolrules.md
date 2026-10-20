@@ -5,7 +5,7 @@ sidebar_position: 4
 ---
 
 
-The following example assigns to the `Administrator` profile the rights to reconcile simultaneously several resources from the `Directory_User` entity type.
+The following example assigns the `Administrator` profile the rights to reconcile simultaneously several resources from the `Directory_User` entity type.
 
 ```xml
   <MassReconciliateResourcesAccessControlRules Profile="Administrator" EntityType="Directory_User"/>
@@ -29,7 +29,7 @@ Generates the permissions to access the resource reconciliation pages for a give
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 

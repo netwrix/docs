@@ -30,15 +30,15 @@ connector with its connections and entity types.
 
 Based on this, you can [Generate Reports](../../user-guide/administrate/reporting), for example the list of resources in the system. A few predefined reports are available from the start, you can generate any report from this list as soon as it makes sense according to the integration progress.
 
-3. [Categorize Resources](../../user-guide/set-up/categorization) in order to classify them
+3. [Categorize Resources](../../user-guide/set-up/categorization) to classify them
 according to their intent, and correlate these resources with their owners.
-4. [Create a Provisioning Rule](../../user-guide/set-up/provisioning-rule-creation) to write to the system in order to update the resources' properties directly in the system.
+4. [Create a Provisioning Rule](../../user-guide/set-up/provisioning-rule-creation) to write to the system to update the resources' properties directly in the system.
 5. Adjust the rules by [Reconcile a Property](../../user-guide/administrate/non-conforming-assignment-review/property-reconciliation) resources, i.e. analyze the differences spotted between the reality of resources' properties and those computed by the previously established rules. Especially, verify that accounts are
 correlated to the right owners and that their properties have the right values.
 
 Either the integrator handles the customization of the rules and the review of non-conforming resources, or they can assign an application administrator profile to a given user to perform it. Assigning this profile requires profile configuration, see steps 11 and 12.
 
-After connecting Identity Manager to an external system, two process options are available according to your needs: either aim directly to the implementation in production environment, or first build the role model in order to enable more administration activities. Both options can be started simultaneously.
+After connecting Identity Manager to an external system, two process options are available according to your needs: either aim directly to the implementation in production environment, or first build the role model to enable more administration activities. Both options can be started simultaneously.
 
 ### Option A: Straight to production implementation
 

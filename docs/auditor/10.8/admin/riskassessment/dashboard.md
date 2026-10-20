@@ -29,16 +29,15 @@ displayed with the color indicators in accordance with the level:
 
 ![dashboard_thumb_0_0](/images/auditor/10.8/admin/riskassessment/dashboard_thumb_0_0.webp)
 
-After reviewing general risks assessment results in each category, you can drill-down to details
+After reviewing general risk assessment results in each category, you can view details
 covered in the underlying report. To do so, double-click the selected metric or use the View Report
 button.
 
 ## Customizing Metrics for Your Organization
 
 Default threshold values for risk levels are set in accordance with recommendations of
-Netwrix industry experts, as described in the [How Risk Levels Are Estimated ](/docs/auditor/10.8/admin/riskassessment/levels.md) topic. They
-can be, however, easily customized to reflect your organization's internal security policies and
-standards. Follow the steps to customize the metrics.
+Netwrix industry experts, as described in the [How Risk Levels Are Estimated ](/docs/auditor/10.8/admin/riskassessment/levels.md) topic. You can customize these values to reflect your organization's internal security policies and
+standards.
 
 **Step 1 –** In the dashboard pane, select the metric you need and in the **Actions** section on the
 right click Modify thresholds.
@@ -59,9 +58,9 @@ Also, for several metrics the Customize risk indicators command is available.
 | Servers with unauthorized antivirus software    | Edit the whitelist of permitted antivirus tools. Any other antivirus will be considered a risk factor.                                               |
 | Administrative group membership sprawl          | Edit the whitelist of permitted accounts that can be the members of local administrative groups. Any other account will be considered a risk factor. |
 
-**Note:** Special characters such as %, *, and ? are not interpreted as wildcards in risk indicator customization and are treated as literal characters. The only exception is the domain portion of
-domain\account entries in Administrative group membership sprawl, where % can be used to represent any domain. In all other cases (for example, account names, file names, operating system names, and antivirus names),
-values must be entered explicitly and are not matched using wildcard patterns.
+**Note:** Special characters such as %, *, and ? aren't interpreted as wildcards in risk indicator customization and are treated as literal characters. The only exception is the domain portion of
+domain\account entries in Administrative group membership sprawl, where % represents any domain. In all other cases (for example, account names, file names, operating system names, and antivirus names),
+values must be entered explicitly and aren't matched using wildcard patterns.
 
 New settings will be applied/risk level thresholds will be refreshed after the next data collection
 session.

@@ -10,7 +10,7 @@ The 3-FSAC Exceptions job is designed to analyze collected access information fo
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
@@ -25,7 +25,7 @@ View the analysis tasks by navigating to the **FileSystem** > **0.Collection** >
 Exceptions** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -44,7 +44,7 @@ The following analysis tasks are selected by default:
 - Ransomware – Spikes in updates by user
 - Unusual user stale data activity – Spikes in stale data activity by user
 
-While it is possible to deselect particular tasks as specified, it is not recommended. The following
+You can deselect particular tasks as specified, but it isn't recommended. The following
 analysis tasks are deselected by default:
 
 - Show view – Displays the SA_FSAC_ExceptionsView within the Results node of the Access Analyzer
@@ -54,7 +54,7 @@ analysis tasks are deselected by default:
 
 ### Customizable Analysis Tasks for the 3-FSAC Exceptions Job
 
-Customizable parameters enable users to set the values used for classification during the job’s
+Use customizable parameters to set the values used for classification during the job’s
 analysis. The 3-FSAC Exceptions job contains the following customizable parameters:
 
 | Analysis Task                        | Customizable Parameter Name | Default Value | Value Indicates                                                                 |

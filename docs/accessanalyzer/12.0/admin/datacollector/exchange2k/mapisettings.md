@@ -6,11 +6,11 @@ sidebar_position: 40
 
 # Exchange2K: MAPI Settings
 
-The MAPI Settings page is used to enter configurations to connect to target Exchange servers. By
-default, Access Analyzer connects to Exchange using System Attendant. For Exchange 2010 and 2013, a
-mailbox and a client access server need to be entered in order to make a MAPI connection. These
-settings only need to be configured if not configured at the Global Settings level. It is a wizard
-page for the categories of:
+Use the MAPI Settings page to enter configurations to connect to target Exchange servers. By
+default, Access Analyzer connects to Exchange using System Attendant. For Exchange 2010 and 2013,
+enter a mailbox and a client access server to make a MAPI connection. Configure these settings only
+if you haven't configured them at the Global Settings level. It is a wizard page for the categories
+of:
 
 - Exchange Organization > Users
 - Mailbox Stores

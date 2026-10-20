@@ -14,7 +14,7 @@ Here you will learn how to change a **resource's display name**, which is the na
 
 ![Display Name - Example](/images/identitymanager/entitytypecreation_displaynameexample_v600.webp)
 
-If you do not set your own display name, Identity Manager provides a default value based on the first scalar property after alphabetizing all the properties whose name contains `name`.
+If you don't set your own display name, Identity Manager provides a default value based on the first scalar property after alphabetizing all the properties whose name contains `name`.
 
 ## Set the **resource's display name**
 
@@ -22,7 +22,7 @@ Set the **resource's display name** by proceeding as follows:
 
 1. Start by creating the entity type with its calar properties and keys. See the [Define Scalar Properties](../../../../user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition) and [Select Primary Keys](../../../../user-guide/set-up/connect-system/entity-type-creation/key-selection) topics for additional information.
 2. Ensure that the created properties are saved by clicking on **Save & Close** > **Save** at the top right corner.
-3. On the entity type's definition page, click on the **Settings** tab.
+3. On the entity type's definition page, click the **Settings** tab.
 
     ![Display Name - Property Path](/images/identitymanager/entitytypecreation_displayname_v603.webp)
 
@@ -41,13 +41,13 @@ Set the **resource's display name** by proceeding as follows:
 >
     > ![HR User Entity Type - Display Name Result](/images/identitymanager/entitytypecreation_examplehr-result_v602.webp)
 
-5. Click on **Save & Close**.
+5. Click **Save & Close**.
 
 Changes inside connectors won't take effect until the next [Synchronize Data](../../../../user-guide/set-up/synchronization). More specifically, changes in display names won't take effect until the next [Update Entity Property Expressions Task](../../../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/updateentitypropertyexpressionstask) runs.
 
 ## Reload
 
-Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You do not need to click on the button every time. It is essential though to reload after the final changes are made.
+Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You don't need to click the button every time. It is essential though to reload after the final changes are made.
 
 ![Reload](/images/identitymanager/entitytypecreation_reload_v522.webp)
 

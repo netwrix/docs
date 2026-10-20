@@ -18,9 +18,9 @@ Set the account expiry policy for the user.
 
 **Account is disabled**
 
-Select this check box to disable the user account, so that the user cannot log-on with it.
+Select this checkbox to disable the user account, so that the user can't log-on with it.
 
 **Account is locked out**
 
-This check box will be selected when this user account is locked, for example, due to failed logon
-attempts. Clear this check box to unlock the account.
+This checkbox will be selected when this user account is locked, for example, due to failed logon
+attempts. Clear this checkbox to unlock the account.

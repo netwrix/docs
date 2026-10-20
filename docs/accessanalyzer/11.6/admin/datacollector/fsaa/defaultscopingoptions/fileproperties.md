@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # File Properties (Folder Summary) Tab
 
-The File Properties (Folder Summary) tab is where file property collection settings for the scan is
-configured.
+Use the File Properties (Folder Summary) tab to configure file property collection settings for the
+scan.
 
 ![FSAA Data Collector Wizard Default Scoping Options page File Properties (Folder Summary) tab](/images/accessanalyzer/11.6/admin/datacollector/fsaa/defaultscopingoptions/fileproperties.webp)
 
