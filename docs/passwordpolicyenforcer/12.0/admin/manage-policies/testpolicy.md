@@ -37,7 +37,7 @@ Use the **Password bulk test** to test a password policy against a list of passw
 
 Select a policy to test from the dropdown, then click **Browse** to select the text file. The file should have one password on every line.
 
-The default test report includes all accepted and rejected passwords, and PPE saves the report to the `%ProgramFiles%\Netwrix\Password Policy Enforcer\` folder. Click **Report settings** if you want to change the defaults.
+The default test report includes all accepted and rejected passwords, and PPE saves the report to the `%ProgramFiles%\Netwrix\Password Policy Enforcer\` folder. To change the defaults, click **Report settings**.
 
 Click **Test passwords** to begin the test. The Configuration Console shows a progress bar along with some statistics in the right pane. You can click **Cancel** to terminate the test.
 
@@ -53,3 +53,24 @@ Policy testing simulates a password change, but it may not always reflect what h
 - Policy testing simulates the policy even if PPE or the policy are disabled. Use this behavior to test your configuration before enabling PPE or a new password policy.
 - Policy testing occurs on the computer that the Configuration Console is running on. If the Configuration Console is [connected to a domain configuration](../configconsole.md#connect-to-a-configuration), then it may not find the [dictionary](./rules/dictionary_rule.md) file or [compromised](./rules/compromised_rule.md) database on the local computer, or they may be different from the ones on the domain controller. Copy the files onto the local computer (in the same paths as the domain controller) to avoid this problem.
 - If the Configuration Console is [connected to a domain configuration](../configconsole.md#connect-to-a-configuration) and you recently modified the PPE configuration, then Active Directory may still be replicating the new configuration to the other domain controllers.
+## Installing and Deploying the Policy Tester Module
+
+You can install the Policy Tester .EXE to a moveable folder and distribute it to a location that Helpdesk Engineers can access.
+
+:::note
+Engineers must open the .EXE using a user account with Read access to the Active Directory object that stores the Password Policy Enforcer configuration. The object name is "Password Policy Enforcer X.0" (where X is the major version number), and it resides in Active Directory Users and Computers > System. To view it, enable Advanced Features under the View menu in Active Directory Users and Computers.
+:::
+
+**Step 1 –** Navigate to the installation folder at Program Files > Netwrix > Password Policy Enforcer.
+
+**Step 2 –** Run PPEPolicyTestInst.exe and select an installation location.
+
+:::note
+This installation requires .NET, per the Server section of the installation documentation. The machine that runs the Test Policy Module also requires .NET.
+:::
+
+**Step 3 –** If you install the module to a location other than where Engineers will access it, move the installed files to the accessible location.
+
+**Step 4 –** Engineers can then launch PPEPolicyTest.exe to run the module.
+
+Join the machine running the Test Policy Module to the same domain so that the module can retrieve the required information.

@@ -17,6 +17,7 @@ Access Analyzer installs on a single physical or virtual Linux server.
 | Access | Root, either directly or through `sudo`. |
 | Free disk on the storage volume | See [size](#size) for storage requirements. Access Analyzer stores its data under `/var/lib` by default. To put it on a different mount, pass `--storage-dir` at install time. See [Storage Location](installer-reference.md#storage-location). Keep about 10 GB free on `/var/lib` either way, because the platform keeps pod-local storage there. |
 | Free disk for the install media | About 16 GB free on the volume that holds the media. See [Install media](#install-media). |
+| Free disk for an air-gapped install | 25 GB free on the volume that holds the media directory (`/var/lib/dspm/media` by default), where the installer expands the media. Pass `--tmp-dir` to move it. See [Install media](#install-media). |
 
 On a distribution the installer doesn't recognize, the preflight check reports a warning instead of stopping, and you can choose to continue at your own risk.
 
