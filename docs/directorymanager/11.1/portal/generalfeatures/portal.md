@@ -81,7 +81,7 @@ The portal displays history if the administrator has enabled history tracking fo
 Set the number of history items to display on the History tab. This tab appears when you view
 the properties of a User, Group, Contact, or Mailbox.
 
-This setting also controls the number of history items displayed on the
+This setting also controls the number of history items that appear on the
 [My History](/docs/directorymanager/11.1/portal/history/myhistory.md), [My Direct Reports' History](/docs/directorymanager/11.1/portal/history/mydirectreport.md),
 and [My Groups' History](/docs/directorymanager/11.1/portal/history/mydirectorygroup.md) pages.
 
@@ -112,9 +112,9 @@ Step 3 – Click **Save**.
 You can specify the default domains to search when you search in the portal. If
 portal is running in:
 
-- **Stand-alone mode**: domain of the associated identity store is listed.
+- **Stand-alone mode**: the portal lists the domain of the associated identity store.
 
-- **Linked mode**: domains of all the linked identity stores are listed.
+- **Linked mode**: the portal lists the domains of all the linked identity stores.
 
 To select domains for searches:
 
@@ -138,8 +138,8 @@ Step 3 – Click **Save**.
 
 ## Show additional group ownership in My Groups
 
-By default, the **My Groups** page displays the groups that you are a primary owner for. You can,
-however, set this page to display those groups too for which you are an additional owner.
+By default, the **My Groups** page displays the groups that you are a primary owner for. You can
+also set this page to display groups for which you are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -153,7 +153,7 @@ Step 4 – Click **Save**.
 ## Show additional group ownership in My Expiring Groups
 
 By default, the **My Expiring Groups** page displays the soon-to-expire groups that you are the
-primary owner of. You can, however, set this page to display those expiring groups too for which you
+primary owner of. You can also set this page to display expiring groups for which you
 are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -165,7 +165,7 @@ Step 3 – Click **Save**.
 ## Show additional group ownership in My Expired Groups
 
 By default, the **My Expired Groups** page displays the expired groups that you are the primary
-owner for. You can, however, set this page to display those expired groups too for which you are an
+owner for. You can also set this page to display expired groups for which you are an
 additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -177,7 +177,7 @@ Step 3 – Click **Save**.
 ## Show additional group ownership in My Deleted Groups
 
 By default, the **My Deleted Groups** page displays the deleted groups that you are the primary
-owner for. You can, however, set this page to display those deleted groups too for which you are an
+owner for. You can also set this page to display deleted groups for which you are an
 additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -189,7 +189,7 @@ Step 3 – Click **Save**.
 ## Display additional group ownership in Smart Groups
 
 By default, the **My Smart Groups** page displays the Smart Group that you are the primary owner
-for. You can, however, set this page to display those Smart Groups too for which you are an
+for. You can also set this page to display Smart Groups for which you are an
 additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
@@ -201,7 +201,7 @@ Step 3 – Click **Save**.
 ## Display additional group ownership in Dynasties
 
 By default, the My Dynasties page displays the Dynasties that you are the primary owner for. You
-can, however, set this page to display those Dynasties too for which you are an additional owner.
+can also set this page to display Dynasties for which you are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -212,7 +212,7 @@ Step 3 – Click **Save**.
 ## Display Additional Manager Direct Reports
 
 By default, the **My Direct Reports** page displays the users that you are the primary manager for.
-You can, however, set this page to display those users too for which you are an additional manager.
+You can also set this page to display users for whom you are an additional manager.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -222,8 +222,8 @@ Step 3 – Click **Save**.
 
 ## Display exchange co-managed groups
 
-By default, the **My Groups** page displays the groups that you are the primary owner for. You can,
-however, set this page to display those groups too for which you are an Exchange co-managed owner.
+By default, the **My Groups** page displays the groups that you are the primary owner for. You can
+also set this page to display groups for which you are an Exchange co-managed owner.
 A co-managed owner is an additional owner added in Microsoft Exchange. Exchange lists such owners in
 the `msExchCoManagedByLink` attribute of the group.
 
@@ -251,7 +251,7 @@ Step 1 – Click the **Settings** icon at the top of the page.
 
 Step 2 – On the **User Settings** page, click **Reset Defaults**.
 
-The following table lists the default values that are reset:
+The following table lists the default values that **Reset Defaults** restores:
 
 | Option                                         | Default Value                                    |
 | ---------------------------------------------- | ------------------------------------------------ |
