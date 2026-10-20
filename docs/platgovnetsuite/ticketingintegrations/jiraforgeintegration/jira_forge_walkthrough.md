@@ -239,7 +239,7 @@ When development is done and the Change Request reaches Approved status under yo
 
     ![Jira Forge Change Request Approved Flag Successful](/images/platgovnetsuite/integrations/jira_forge_push_successful.webp)
 
-4. If you used Ready for Deployment, update your Jira status to Done after your deployment and verification activities are complete.
+4. If you used Ready for Deployment, update your Jira status to Done after you complete deployment and verification.
 
 ### Review the Change Request in NetSuite
 
