@@ -109,7 +109,7 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 | `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
 | `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all Access Analyzer data. Prompts for confirmation unless you pass `--force`. |
 | `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
-| `--tmp-dir` | `DSPM_TMP_DIR` | none | Hidden from `--help`. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](requirements.md#install-media). |
+| `--tmp-dir` | `DSPM_TMP_DIR` | none | `--help` doesn't list this flag. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](requirements.md#install-media). |
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 

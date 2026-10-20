@@ -39,7 +39,7 @@ The commands search the `access-analyzer` and `argocd` namespaces by default. To
 | Flag | Effect |
 |---|---|
 | `-n`, `--namespace <name>` | Search only this namespace. Repeat the flag for more than one. Replaces the default namespaces. |
-| `--all` | Also search `cert-manager`, `adcs-issuer`, and `kube-system`. Ignored when you pass `--namespace`. |
+| `--all` | Also search `cert-manager`, `adcs-issuer`, and `kube-system`. The commands ignore this flag when you pass `--namespace`. |
 | `--since <duration>` | Only include lines newer than this duration, such as `30m` or `2h`. |
 | `--argocd-namespace <name>` | The ArgoCD namespace, if it isn't `argocd`. |
 | `--kubeconfig <path>` | The cluster credentials file, if it isn't `/etc/rancher/k3s/k3s.yaml`. |
