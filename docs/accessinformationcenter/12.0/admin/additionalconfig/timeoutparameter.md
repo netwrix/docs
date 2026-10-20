@@ -6,8 +6,7 @@ sidebar_position: 50
 
 # Timeout Parameter
 
-A user session will end when the timeout parameter for inactivity has been reached, and the user
-will be logged out. By default this is set to 15 minutes.
+A user session ends when the timeout parameter for inactivity is reached, and the system logs out the user. By default this is 15 minutes.
 
 :::note
 When accessing the Access Information Center through the Web Console, its timeout
@@ -18,20 +17,20 @@ instructions on modifying its timeout parameter value.
 :::
 
 
-The timeout parameter is configured within the `AccessInformationCenter.Service.exe.config` file in
+Configure the timeout parameter within the `AccessInformationCenter.Service.exe.config` file in
 the Access Information Center installation directory:
 
 **…\STEALTHbits\Access Information Center**
 
-Follow the steps to modify the timeout parameter.
+To modify the timeout parameter:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exe.config` file with a text editor, for
 example Notepad.
 
 ![Timeout Parameter in the config file](/images/accessinformationcenter/12.0/admin/additionalconfig/configfiletimeoutparameter.webp)
 
-**Step 2 –** Change the value for the `AuthSessionTimeout` parameter to the desired number of
-minutes. For example:
+**Step 2 –** Change the value for the `AuthSessionTimeout` parameter to the number of
+minutes you want. For example:
 
 ```
 <add key="AuthSessionTimeout" value="20"/>

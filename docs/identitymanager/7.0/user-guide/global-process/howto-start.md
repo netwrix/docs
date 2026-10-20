@@ -14,7 +14,7 @@ When starting with Identity Manager, several process paths can be taken accordin
 
 The **option 1** leads quickly to identity management, i.e. users' on-boarding/movement/off-boarding without needing a periodic synchronization. See the [Update Identity Data](../../user-guide/maintain/identity-data-modification) topic for additional information.
 
-The **option 2A** takes more time as it requires the installation of an agent on your network in order to connect Identity Manager to the system and use the AD's data, but it leads to more gain as you can also [Review Orphaned and Unused Accounts](../../user-guide/administrate/orphan-unused-account-review), [Provision](../../user-guide/administrate/provisioning) the AD, [Reconcile a Property](../../user-guide/administrate/non-conforming-assignment-review/property-reconciliation)properties, and [Generate Reports](../../user-guide/administrate/reporting), for example the list of profiles assigned to users.
+The **option 2A** takes more time as it requires the installation of an agent on your network to connect Identity Manager to the system and use the AD's data, but it leads to more gain as you can also [Review Orphaned and Unused Accounts](../../user-guide/administrate/orphan-unused-account-review), [Provision](../../user-guide/administrate/provisioning) the AD, [Reconcile a Property](../../user-guide/administrate/non-conforming-assignment-review/property-reconciliation)properties, and [Generate Reports](../../user-guide/administrate/reporting), for example the list of profiles assigned to users.
 
 The **option 2B** takes even more time as it goes through the creation of the role model based on the system's entitlements, but it leads to even more gain as you can also [Reconcile a Role](../../user-guide/administrate/non-conforming-assignment-review/role-reconciliation), [Perform Access Certification](../../user-guide/administrate/access-certification) and [Request Entitlement Assignment](../../user-guide/administrate/manual-assignment-request), and also [Generate Reports](../../user-guide/administrate/reporting), for example the list of assigned single roles.
 
@@ -32,11 +32,11 @@ Netwrix Identity Manager (formerly Usercube) recommends the option 1 to be able 
 2. [Create the Workforce Repository](../../user-guide/set-up/initial-identities-loading): configure
 the generation of unique properties; load workforce identities to Identity Manager; adjust the data model.
 
-After these first steps, two process options are available according to your needs: either aim directly to identity management and the opening of Identity Manager to end-users, or first connect Identity Manager to an external system in order to enable more administration activities. Both options can be started simultaneously.
+After these first steps, two process options are available according to your needs: either aim directly to identity management and the opening of Identity Manager to end-users, or first connect Identity Manager to an external system to enable more administration activities. Both options can be started simultaneously.
 
 ### Option 1: Based on the workforce directory
 
-Starting with the workforce directory **does not** require the installation of a local agent.
+Starting with the workforce directory **doesn't** require the installation of a local agent.
 
 Go directly to the common final steps (step 10).
 
@@ -51,16 +51,16 @@ Manager.
 
 Based on this, you can [Generate Reports](../../user-guide/administrate/reporting), for example the list of resources in the system. A few predefined reports are available from the start, you can generate any report from this list as soon as it makes sense according to the integration progress.
 
-5. [Categorize Resources](../../user-guide/set-up/categorization) in order to classify them
+5. [Categorize Resources](../../user-guide/set-up/categorization) to classify them
 according to their intent, and correlate these resources with their owners.
 6. [Create a Provisioning Rule](../../user-guide/set-up/provisioning-rule-creation) to write to the
-system in order to update the resources' properties directly in the system.
+system to update the resources' properties directly in the system.
 7. Adjust the rules by reconciling resources, i.e. analyze the differences spotted between the
 reality of resources' properties and those computed by the previously established rules. Especially, verify that accounts are correlated to the right owners and that their properties have the right values. See the [Reconcile a Property](../../user-guide/administrate/non-conforming-assignment-review/property-reconciliation) topic for additional information.
 
 Either the integrator handles the customization of the rules and the review of non-conforming resources, or they can assign an application administrator profile to a given user to perform it. Assigning this profile requires profile configuration, see steps 11 and 12.
 
-After connecting Identity Manager to an external system, two process options are available according to your needs: either aim directly to identity management and the opening of Identity Manager to end-users, or first build the role model in order to enable more administration activities. Both options can be started simultaneously.
+After connecting Identity Manager to an external system, two process options are available according to your needs: either aim directly to identity management and the opening of Identity Manager to end-users, or first build the role model to enable more administration activities. Both options can be started simultaneously.
 
 ### Option 2A: Straight to identity management
 

@@ -12,8 +12,6 @@ method) or manually. Instructions for each method are provided in this topic.
 
 ## Uninstall Agent Wizard
 
-Follow the steps to uninstall a deployed Agent through the Uninstall Agent wizard.
-
 **Step 1 –** Click Agents in the left pane to launch the Agents interface.
 
 **Step 2 –** Right-click a server/Agent and select **Uninstall Agent** on the menu.
@@ -26,10 +24,10 @@ on the target machine should have access to the system shares. Click **OK** afte
 credentials.
 
 :::note
-The wizard does not block access to the Administration Console and can be minimized while
+The wizard doesn't block access to the Administration Console and can be minimized while
 actions are in progress. If this wizard is hidden by clicking outside of the dialog box, a flashing
 blue link displays on the upper right corner of the interface with the action name displayed. Click
-this link to bring back the focus to the wizard.
+the flashing link to bring back the focus to the wizard.
 :::
 
 
@@ -37,7 +35,7 @@ this link to bring back the focus to the wizard.
 check that can fail or succeed.
 
 - Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of prior to the next attempt.
+  of before the next attempt.
 - Success – Click **Next** to begin uninstalling the Agent
 - If some but not all items fail, you can click **Next** to continue the action on those where
   access verification was successful.
@@ -58,9 +56,7 @@ right-click menu to reinstall the Agent on that machine.
 
 ## Manual Uninstall on the Agent Server
 
-Follow the steps to manually uninstall a deployed Agent from a server.
-
-**Step 1 –** On the desired server, navigate to Start > Control Panel > Programs > Programs and
+**Step 1 –** On the server you want, navigate to Start > Control Panel > Programs > Programs and
 Features.
 
 **Step 2 –** Uninstall the Netwrix Threat Prevention Windows Agent program from the list and close

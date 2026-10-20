@@ -15,10 +15,11 @@ keywords:
   - client software
   - upgrade interface
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Greyed Out Computer in the Client Software Upgrade
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "Greyed Out Computer in the Client Software Upgrade"
 knowledge_article_id: kA0Qk0000002B5pKAE
 ---

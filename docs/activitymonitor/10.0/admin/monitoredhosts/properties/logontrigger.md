@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Logon Trigger Tab
 
-The Logon trigger tab on a SQL Server host's properties window is used to configure logon triggers
+The Logon trigger tab on a SQL Server host's properties window to configure logon triggers
 for SQL activity monitoring.
 
 ![logontriggertab](/images/activitymonitor/9.0/admin/monitoredhosts/properties/logontriggertab.webp)

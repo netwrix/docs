@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **FileSystem** > **5.Activity** > *
 **FS_Deletions** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -57,15 +57,14 @@ following pre-configured report:
 A Notification analysis task sends email notification to recipients when the job is executed. It
 requires the global **Notification** settings to be configured (**Settings** > **Notifications**)
 for SMTP server information, but it uses the recipient list provided through the analysis task.
-Follow the steps to configure a notification analysis task.
 
 **Step 1 –** Navigate to the job’s **Configure** node and select **Analysis**.
 
 **Step 2 –** In the Analysis Selection view, select the Notification analysis task and click
-**Analysis Configuration** . The Notification Data Analysis Module wizard opens.
+**Analysis Configuration**. The Notification Data Analysis Module wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -92,7 +91,7 @@ provided. You can use the following options:
 
 ![Message section](/images/accessanalyzer/11.6/solutions/filesystem/activity/forensics/notificationsmtpmessage.webp)
 
-**Step 5 –** In the Message section, edit the **Subject**. It is not recommended to remove any
+**Step 5 –** In the Message section, edit the **Subject**. It isn't recommended to remove any
 parameters. Then, customize the email content in the textbox to provide an explanation of the
 notification to the recipients.
 
@@ -105,9 +104,9 @@ automatically during the execution of the job.
 
 :::tip
 Remember, all of the analysis tasks should remain in the default order indicated by the numbering.
-Do not deselect any of the SQLscripting analysis tasks.
+Don't deselect any of the SQL scripting analysis tasks.
 :::
 
 
-Once the Notification analysis task is configured and enabled alerts are sent when the trigger has
-been identified by this job.
+After you configure and enable the Notification analysis task, the job sends alerts when it
+identifies the trigger.

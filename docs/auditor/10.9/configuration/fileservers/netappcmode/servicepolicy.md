@@ -9,9 +9,9 @@ sidebar_position: 30
 **NOTE:** This section only applies to NetApp ONTAP version 9.10.1 and higher.
 For older NetApp ONTAP versions use [System Service Firewall Policies](#configure-system-service-firewall-policies) instead.
 
-By default, the 'default-data-files' policy is applied to the SVM CIFS/SMB interface and HTTP/HTTPS
-options are not available. To make the ONTAPI available through HTTP/HTTPS ports on your SVM
-interface for Netwrix Auditor Server, configure the 'interface service'-policy. Below is an example
+By default, the 'default-data-files' policy is applied to the Storage Virtual Machine (SVM) CIFS/SMB
+interface and HTTP/HTTPS options aren't available. To make the ONTAPI available through HTTP/HTTPS
+ports on your SVM interface for Netwrix Auditor Server, configure the 'interface service'-policy. Below is an example
 of the configuration:
 
 1. Navigate to your cluster command prompt through the SSH/Telnet connection.

@@ -6,10 +6,10 @@ sidebar_position: 70
 
 # AWS Solution
 
-Access Analyzer for AWS allows organizations to secure their data residing in Amazon Web Services
-(AWS) S3 platform, reducing their risk exposure through proactive, automated auditing and reporting
-of S3 permissions, sensitive data, and ultimately a consolidated view of user access rights across
-dozens of structured and unstructured data resources both on-premises and in the cloud.
+Access Analyzer for AWS helps organizations secure data stored in the Amazon Web Services (AWS) S3
+platform. It reduces risk exposure through proactive, automated auditing and reporting of S3
+permissions and sensitive data, giving you a consolidated view of user access rights across dozens
+of structured and unstructured data resources, both on-premises and in the cloud.
 
 The AWS Solution is designed to provide information about data access such as:
 
@@ -17,11 +17,11 @@ The AWS Solution is designed to provide information about data access such as:
 - Who is accessing your data
 - What sensitive data is being stored and accessed
 
-The AWS Solution provides the ability to audit AWS IAM and S3. Access Analyzer uses the AWS solution
+The AWS Solution lets you audit AWS IAM and S3. Access Analyzer uses the AWS solution
 to collect IAM users, groups, roles, and policies, as well as S3 permissions, content, and sensitive
-data from target AWS accounts. The solution requires a special Access Analyzer license. It can be
-focused to only conduct auditing of AWS IAM. Additionally, the Sensitive Data Discovery Add-On
-enables the solution to search AWS S3 content for sensitive data.
+data from target AWS accounts. The solution requires a special Access Analyzer license. You can focus it to audit only AWS IAM.
+Additionally, the Sensitive Data Discovery Add-On enables the solution to search AWS S3 content for
+sensitive data.
 
 **Supported Platforms**
 
@@ -36,25 +36,25 @@ topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each thread
+requires a minimum of 2 additional GB of RAM per host. For example, a job configured to scan 8
+hosts at a time requires an extra 16 GB of RAM (8x2=16).
 
 :::note
-The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and does not require any configuration; it has been
-preconfigured to work with Access Analyzer and should never be customized through Java. It will not
+Access Analyzer installs the appropriate JDK (Java) version for Sensitive Data Discovery on the
+server. The deployed JDK is prepackaged and doesn't require any configuration. Access Analyzer
+preconfigures it to work with the product, so never customize it through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.
 :::
 
 
 **Location**
 
-The AWS Solution requires a special Access Analyzer license. It can be installed from the Access
+The AWS Solution requires a special Access Analyzer license. You can install it from the Access
 Analyzer Instant Job Wizard. See the [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md)
 topic for information on installing instant solutions from the Access Analyzer Library.
 
-Once it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **AWS**.
+After you install it into the Jobs tree, navigate to the solution: **Jobs** > **AWS**.
 
 ## Job Groups
 

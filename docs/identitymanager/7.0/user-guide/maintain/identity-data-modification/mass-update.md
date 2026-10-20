@@ -8,13 +8,13 @@ sidebar_position: 30
 
 How to perform a mass change in identity data, by uploading an incremental version of the identity repository.
 
-This part is not about changing the data model, but data itself.
+This part isn't about changing the data model, but data itself.
 
-Here we describe the incremental update of identities, but the update of any other File/CSV works the same.
+The incremental update of identities is described here, but the update of any other File/CSV works the same.
 
 ## Overview
 
-When the number of changes gets high, identity data update through the UI becomes tedious. Therefore, Identity Manager offers the possibility to fill a predefined file with data to be modified, in order to perform all changes simultaneously.
+When the number of changes gets high, identity data update through the UI becomes tedious. Therefore, Identity Manager offers the possibility to fill a predefined file with data to be modified, to perform all changes simultaneously.
 
 Data update can be performed in complete mode or incremental mode.
 
@@ -44,15 +44,15 @@ section.
 
 4. Update the data that needs change.
 5. Ensure that the field `Path (Complete mode)` is filled with the path of the source file.
-6. Click on **Upload** and choose the file you modified with new data.
+6. Click **Upload** and choose the file you modified with new data.
 
     ![Upload](/images/identitymanager/connection_upload_v602.webp)
 
-7. Click on **Check Connection** to verify the path.
+7. Click **Check Connection** to verify the path.
 
     ![Check Connection](/images/identitymanager/connectioncreation_checkconnection_v602.webp)
 
-8. Click on **Save & Close**.
+8. Click **Save & Close**.
 9. Back on the connector's page, launch synchronization. See the
 [Synchronize Data](../../../user-guide/set-up/synchronization) topic for additional information.
 
@@ -91,15 +91,15 @@ already exists, create a new identity otherwise.
         > `Command` with `Modify`. The rest will not be changed.
 
 5. Ensure that the field `Path (Incremental mode)` is filled with the path of the source file.
-6. Click on **Upload** and choose the file you modified with new data.
+6. Click **Upload** and choose the file you modified with new data.
 
     ![Upload](/images/identitymanager/connection_upload_v602.webp)
 
-7. Click on **Check Connection** to verify the path.
+7. Click **Check Connection** to verify the path.
 
     ![Check Connection](/images/identitymanager/connectioncreation_checkconnection_v602.webp)
 
-8. Click on **Save & Close**.
+8. Click **Save & Close**.
 9. Back on the connector's page, launch synchronization. See the
 [Synchronize Data](../../../user-guide/set-up/synchronization) topic for additional information.
 
@@ -107,7 +107,7 @@ Be cautious about thresholds.
 
 ## Verify Data Update
 
-In order to verify the process:
+To verify the process:
 
 - **Check manually a sample** in the `User` directory accessible from the home page. You should verify
 at least your own sheet and the sheets for your hierarchy.
@@ -124,5 +124,5 @@ at least your own sheet and the sheets for your hierarchy.
 If the system contains many organizations, then it is also possible to list them with their managers through the Query module.
 
 - Create reports with indicators on the workers number per type or per organization for example
-(through Identity Manager' predefined reports, the Query module or Power BI), in order to ensure that Identity Manager's content sticks to reality. See the [Generate Reports](../../../user-guide/administrate/reporting) topic for additional information.
+(through Identity Manager' predefined reports, the Query module or Power BI), to ensure that Identity Manager's content sticks to reality. See the [Generate Reports](../../../user-guide/administrate/reporting) topic for additional information.
 

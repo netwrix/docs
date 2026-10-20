@@ -37,14 +37,14 @@ The items in the Navigation Pane are:
   [Jobs Tree](/docs/accessanalyzer/11.6/admin/jobs/overview.md) topic
   for additional information.
 
-The title above the Navigation Pane will change depending on what is selected. There are also
+The title above the Navigation Pane will change depending on what you select. There are also
 several right-click or context menus available throughout the console. See the
 [Navigation Pane Right-click Menus](#navigation-pane-right-click-menus) topic for additional
 information.
 
 ## Navigation Pane Right-click Menus
 
-There are several contextual right-click menus that are accessed by right-clicking on individual
+You can access several contextual right-click menus by right-clicking on individual
 nodes or sub-nodes in the Navigation Pane. The different right-click menus are:
 
 - Host Management Right-click Menus
@@ -60,7 +60,7 @@ topic for additional information on these actions.
 
 #### Discovery Node
 
-The Discovery node right click-menu can be accessed in the Host Management node in the Navigation
+You can access the Discovery node right-click menu in the Host Management node in the Navigation
 Pane.
 
 ![Discovery Node options](/images/accessanalyzer/11.6/admin/navigate/navigationpane1.webp)
@@ -73,7 +73,7 @@ The Discovery node right-click menu options are:
 
 #### All Hosts Node
 
-The All Hosts node right-click menu can be accessed in the Host Management node in the Navigation
+You can access the All Hosts node right-click menu in the Host Management node in the Navigation
 Pane.
 
 ![All Hosts Node options](/images/accessanalyzer/11.6/admin/navigate/navigationpane2.webp)
@@ -96,7 +96,7 @@ The All Hosts right-click menu options are:
 
 #### All Hosts > [Host List] Node
 
-The All Hosts > [Host List] right-click menu can be accessed in the Host Management node in the
+You can access the All Hosts > [Host List] right-click menu in the Host Management node in the
 Navigation Pane.
 
 ![Host List Node options](/images/accessanalyzer/11.6/admin/navigate/navigationpane3.webp)
@@ -156,7 +156,7 @@ Menu items include:
   job. This option only applies to Role Based Access. See the
   [Role Based Access](/docs/accessanalyzer/11.6/admin/settings/access/rolebased/overview.md)
   for additional information.
-- Enable/Disable Job(s) – Disables the selected job or job group and skips them during scan
+- Enable/Disable Jobs – Disables the selected job or job group and skips them during scan
   execution. When a job group is disabled, all existing jobs within the job group are disabled. See
   the
   [Disable or Enable a Job](/docs/accessanalyzer/11.6/admin/jobs/job/disableenable.md) topic
@@ -193,9 +193,9 @@ Menu items include:
   and/or the job log and SA_Debug log.
     - Save the ZIP file to a desired location, and optionally attach it to an email to
       [Netwrix Support](https://www.netwrix.com/support.html).
-    - Email option requires
+    - Email option requires you to configure
       [Notification](/docs/accessanalyzer/11.6/admin/settings/notification.md)
-      settings to be configured.
+      settings.
 - Create Job (Ctrl+Alt+A) – Creates a new job at the same location as the selected job group or job.
   See the
   [Create a New Job](/docs/accessanalyzer/11.6/admin/jobs/job/create.md)

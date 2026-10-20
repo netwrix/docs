@@ -26,7 +26,7 @@ sidebar_position: 1
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="PolicySimulation_Administrator_Category" DisplayName_L1="Administrator_Category" DisplayName_L2="Administrator_Category" EntityType="Category" Profile="Administrator">

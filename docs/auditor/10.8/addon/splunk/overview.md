@@ -7,7 +7,7 @@ sidebar_position: 250
 # Splunk
 
 **Netwrix Auditor** is a visibility platform for user behavior analysis and risk mitigation that enables
-control over changes, configurations and access in hybrid IT environments to protect data regardless
+control over changes, configurations, and access in hybrid IT environments to protect data regardless
 of its location. The platform provides security analytics to detect anomalies in user behavior and
 investigate threat patterns before a data breach occurs.
 
@@ -55,8 +55,8 @@ index.
 
 ![diagram](/images/auditor/10.8/addon/splunk/diagram.webp)
 
-To learn more about Netwrix Auditor activity records, see the
-[Activity Records](/docs/auditor/10.8/api/postdata/activityrecords.md) topic for additional information.
+See the [Activity Records](/docs/auditor/10.8/api/postdata/activityrecords.md) topic for additional
+information.
 
 For this data to be provided to Splunk, it adds a new Splunk source type, performing additional data
 parsing and field extraction. The audit data is also mapped into the Common Information Model (CIM)
@@ -95,7 +95,7 @@ Before running the add-on, ensure that all the necessary components and policies
 ### Auditor Server side
 
 1. Auditor version is 9.96 or higher.
-2. Netwrix Auditor Integration API and Audit Database are configured. Make sure that Netwrix Auditor Integration API is configured to use HTTPS protocol.  
+2. Netwrix Auditor Integration API and Audit Database are configured. Ensure that Netwrix Auditor Integration API is configured to use HTTPS protocol.  
 See the [Prerequisites](/docs/auditor/10.8/api/prerequisites.md) and [Audit Database](/docs/auditor/10.8/admin/settings/auditdatabase.md) topics for additional information.
 3. The user retrieving data from the Audit Database is granted the Global reviewer role in Auditor or is a member of the Netwrix Auditor Client Users group. It is recommended to create a dedicated account for that purpose.  
 Alternatively, you can grant the Global administrator role or add the user to the Netwrix Auditor Administrators group. In this case, this user will have the most extended permissions in the product.  
@@ -110,7 +110,7 @@ See the [Role-Based Access and Delegation](/docs/auditor/10.8/admin/monitoringpl
 
 ### HTTPS certificate requirements
 
-Starting with version **1.7.0**, the Netwrix Auditor add-on for Splunk requires the HTTPS certificate used by the Netwrix Auditor Integration API to be trusted by the Splunk add-on. If the certificate is not trusted, the add-on will not be able to retrieve data from the Integration API.
+Starting with version **1.7.0**, the Netwrix Auditor add-on for Splunk requires the HTTPS certificate used by the Netwrix Auditor Integration API to be trusted by the Splunk add-on. If the certificate isn't trusted, the add-on will not be able to retrieve data from the Integration API.
 
 You can satisfy this requirement using one of the following options:
 
@@ -133,7 +133,7 @@ After updating the trust store, proceed with add-on configuration.
 
 ## Considerations and limitations
 
-- If the information is not available in the activity record received from Auditor, it will also not
+- If the information isn't available in the activity record received from Auditor, it will also not
   be available in Splunk.
 - CIM might not have data models for some of the activity records received from Auditor; such
   information can only be accessed in Splunk using search by index.

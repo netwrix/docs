@@ -6,31 +6,31 @@ sidebar_position: 20
 
 # Configure AWS for Scans
 
-In order to scan multiple AWS accounts using one account you need to create a role in each target
-account, so that It can provide the designated scanning account permissions to scan resources it
-controls. This is achieved through the following steps which will need to be completed leveraging a
-user with administrative access to each target account:
+To scan multiple AWS accounts using one account, create a role in each target
+account so it can grant the designated scanning account permission to scan the resources it
+controls. Complete the following steps using a user with administrative access to each target
+account:
 
-**Step 1 –** Create a Managed Policy in each target account that will be used to allow access to
-account (S3, Org and IAM).
+**Step 1 –** Create a Managed Policy in each target account to allow access to
+account (S3, Org, and IAM).
 
-**Step 2 –** Create a Role in each target account that will be used to allow access to listing IAM
+**Step 2 –** Create a Role in each target account to allow access to listing IAM
 users.
 
-**Step 3 –** Create a Managed Policy in the designated scanning account that will be used to allow
+**Step 3 –** Create a Managed Policy in the designated scanning account to allow
 the service account to assume the configured role in each target account.
 
-**Step 4 –** Add Role to Enterprise Auditor. The Role created in the scanning account will need to
-be added to the **1-AWS_OrgScan**, **2-AWS_S3Scan**, and **3-AWS_IAMScan** job query configurations.
+**Step 4 –** Add Role to Enterprise Auditor. Add the Role created in the scanning account
+to the **1-AWS_OrgScan**, **2-AWS_S3Scan**, and **3-AWS_IAMScan** job query configurations.
 See the
 [AWS: Login Roles](/docs/accessanalyzer/11.6/admin/datacollector/aws/loginroles.md)
 topic for additional information.
 
-Once these steps are completed, the role must be added to the AWS queries within Enterprise Auditor.
+After you complete these steps, add the role to the AWS queries within Enterprise Auditor.
 
 ## Create a Managed Policy in Each Target Account
 
-The following steps will need to be completed in each target account.
+Complete the following steps in each target account.
 
 **Step 1 –** Sign into the Identity and Access Management Console (IAM) as an administrator of the
 Trusting account.
@@ -87,7 +87,7 @@ and click **Create policy**.
 **Step 7 –** Click **Create Policy**.
 
 :::note
-If the designated scanning account is not in Root (Master Account), create a second policy
+If the designated scanning account isn't in Root (Master Account), create a second policy
 in the Master Account with the following JSON definition:
 :::
 
@@ -110,12 +110,11 @@ in the Master Account with the following JSON definition:
 }
 ```
 
-The next step is to create a role in each target account that will be used to allow access to
-listing IAM users.
+Next, create a role in each target account to allow access to listing IAM users.
 
 ## Create a Role in Each Target Account
 
-The following steps will need to be completed in each target account. For this, you will need the
+Complete the following steps in each target account. For this, you will need the
 Account ID of the designating scanning account.
 
 :::note
@@ -134,7 +133,7 @@ target account.
 ![Create role page Another AWS account option](/images/accessanalyzer/11.6/requirements/target/config/createrole.webp)
 
 **Step 3 –** Select the **Another AWS Account** option and add the Account ID of the scanning
-account that will be leveraged within Enterprise Auditor.
+account that Enterprise Auditor will use.
 
 **Step 4 –** Click **Next: Permissions**.
 
@@ -152,12 +151,12 @@ account that will be leveraged within Enterprise Auditor.
 
 **Step 9 –** Click **Create Role**.
 
-The next step is to create a Managed Policy in the designated scanning account that will be used to
-allow the service account to assume the configured role in each target account.
+Next, create a Managed Policy in the designated scanning account to allow the service account to
+assume the configured role in each target account.
 
 ## Configure the Scanning Account
 
-Create a Managed Policy in the scanning account that will be used to allow the user to assume the
+Create a Managed Policy in the scanning account to allow the user to assume the
 roles configured in each target account.
 
 **Step 1 –** Sign into the Identity and Access Management Console (IAM) as an administrator of the
@@ -199,7 +198,7 @@ scanning account.
 
 :::note
 Replace `ROLENAME` with the name of the role that was created. If the `ROLENAME` is
-different in each account, then a policy will need to be created for each distinct role name.
+different in each account, then create a policy for each distinct role name.
 :::
 
 
@@ -217,8 +216,8 @@ different in each account, then a policy will need to be created for each distin
 
 ![Security credentials tab](/images/accessanalyzer/11.6/requirements/target/config/securitycredentials.webp)
 
-**Step 10 –** In the Security credentials tab, click **Create access key**. Make sure to note the
-Access key ID and Secret access key which need to be input into Enterprise Auditor.
+**Step 10 –** In the Security credentials tab, click **Create access key**, and note the
+Access key ID and Secret access key. You'll need to enter them into Enterprise Auditor.
 
 You can now create the Connection Profile for the AWS Solution. See the
 [Amazon Web Services for User Credentials](/docs/accessanalyzer/11.6/admin/settings/connection/create/aws.md)

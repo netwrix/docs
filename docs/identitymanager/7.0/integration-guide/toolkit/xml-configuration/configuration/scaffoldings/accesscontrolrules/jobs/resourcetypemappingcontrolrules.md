@@ -26,7 +26,7 @@ Scaffolding to create the right for a profile to start the Fulfillment to an ext
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_ResourceTypeMapping" DisplayName_L1="Administrator_ResourceTypeMapping" DisplayName_L2="Administrator_ResourceTypeMapping" EntityType="ResourceTypeMapping" Profile="Administrator">

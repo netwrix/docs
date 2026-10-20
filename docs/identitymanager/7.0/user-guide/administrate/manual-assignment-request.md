@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Request Entitlement Assignment
 
-How to send a manual request to add, update or remove an entitlement for an identity.
+How to send a manual request to add, update, or remove an entitlement for an identity.
 
 ## Overview
 
@@ -34,11 +34,11 @@ View the identity's entitlements by proceeding as follows:
 
     ![Home Page - Directory **user**](/images/identitymanager/home_directoryuser_v523.webp)
 
-2. Click on the **user** to be checked.
+2. Click the **user** to be checked.
 
     ![Workflow - **user**](/images/identitymanager/datamodif_user_v602.webp)
 
-3. Click on **View Permissions** to access the entitlement list.
+3. Click **View Permissions** to access the entitlement list.
 
     ![View Permissions Tab](/images/identitymanager/viewpermissions_v602.webp)
 
@@ -50,11 +50,11 @@ Act on an existing identity by proceeding as follows:
 
     ![Home Page - Directory **user**](/images/identitymanager/home_directoryuser_v523.webp)
 
-2. Click on the **user** to be modified.
+2. Click the **user** to be modified.
 
     ![Workflow - **user**](/images/identitymanager/datamodif_user_v602.webp)
 
-3. Click on **Actions** > **Modify Permissions** to launch the workflow for a manual entitlement
+3. Click **Actions** > **Modify Permissions** to launch the workflow for a manual entitlement
 request.
 
     ![Workflow - Modify Permissions](/images/identitymanager/datamodif_changeuser_v602.webp)

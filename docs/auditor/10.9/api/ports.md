@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Integration API Ports
 
-Review a full list of protocols and ports required for add-ons or any queries leveraging Netwrix
+Review a full list of protocols and ports required for add-ons or any queries that use Netwrix
 Auditor Integration API.
 
 - Allow outbound connections from the dynamic (1024 - 65535) local port on the computer where

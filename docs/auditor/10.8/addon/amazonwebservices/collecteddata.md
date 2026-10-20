@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Work with Collected Data
 
-Follow the steps to work with collected data.
+To work with collected data:
 
 **Step 1 –** Start the Auditor client and navigate to **Search**.
 

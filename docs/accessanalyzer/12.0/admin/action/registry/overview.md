@@ -6,13 +6,13 @@ sidebar_position: 70
 
 # Registry Action Module
 
-The Registry action module allows users to make bulk changes to the Microsoft Windows Registry. Use
+Use the Registry action module to make bulk changes to the Microsoft Windows Registry. Use
 the Registry Action Module Wizard to choose the data table column that identifies the folders and to
 configure the operations performed against the selected folders. The Registry action module requires
-a column containing the hosts to be targeted.
+a column containing the hosts to target.
 
-Prior to configuring the Registry Action Module Wizard, scope the source data table to ensure the
-actions apply only to the desired hosts.
+Before configuring the Registry Action Module Wizard, scope the source data table to ensure the
+actions apply only to the hosts you want to target.
 
 :::warning
 Unexpected values in the registry can cause major system failures when deleting or
@@ -28,9 +28,9 @@ module.
 
 ## Registry Action Source Table Configuration
 
-All data tables used in Access Analyzer action modules require the presence of certain data columns.
+All data tables used in Access Analyzer action modules require certain data columns.
 In addition, individual action modules including Registry may have their own column requirements.
-The Registry action module requires a column containing the hosts that are going to be targeted.
+The Registry action module requires a column containing the hosts you want to target.
 
 ## Configuration
 

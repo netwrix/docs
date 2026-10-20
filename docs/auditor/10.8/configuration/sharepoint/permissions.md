@@ -21,9 +21,7 @@ These group Managed Service Accounts should meet the related requirements.
 **On the target SharePoint farm:**
 
 1. On the SharePoint server where the Netwrix Auditor Core Service will be deployed: the account
-   must be a member of the local Administrators group.  
-   To learn more about Netwrix Auditor Core Services, refer to
-   [Installation](/docs/auditor/10.8/install/overview.md) topic.
+   must be a member of the local Administrators group. See the [Installation](/docs/auditor/10.8/install/overview.md) topic for details.
 2. On the SQL Server hosting SharePoint database: the SharePoint_Shell_Access role.  
    See the Assigning 'SharePoint_Shell_Access' Role topic for additional information.
 3. If you plan to collect state-in-time data from a SharePoint farm, the account should also meet
@@ -61,7 +59,7 @@ a service policy defined locally or on the domain level, the local Log on as a s
 be reset. In this case, redefine the Deny log on as a service policy through the Local Security
 Policy console on your computer or on the domain level through the Group Policy Management console.
 
-Follow the steps to define log on as a service policy:
+To define log on as a service policycomplete these steps:
 
 **Step 1 –** On the computer where Auditor Server is installed, open the **Local Security Policy**
 snap-in: navigate to Start > Windows Administrative Tools and select Local Security Policy.

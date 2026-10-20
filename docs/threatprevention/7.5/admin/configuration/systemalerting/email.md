@@ -6,17 +6,13 @@ sidebar_position: 10
 
 # Email Tab
 
-Alert notification via email sends messages through an SMTP gateway. Alerts are designed to send
-email notifications to individuals or groups.
+Alert notification via email sends messages through an SMTP gateway. Alerts are designed to send email notifications to individuals or groups.
 
-Follow the steps to configure the Email tab of the System Alerting window.
-
-**Step 1 –** Click **Configuration** > **Alerts** on the menu. The Netwrix Threat Prevention System
-Alerting window opens. The Email tab is displayed by default.
+**Step 1 –** Click **Configuration** > **Alerts** on the menu. The Netwrix Threat Prevention System Alerting window opens. The Email tab is displayed by default.
 
 ![Netwrix Threat Prevention System Alerting window](/images/threatprevention/7.5/admin/configuration/systemalerting/systemalerting.webp)
 
-**Step 2 –** Configure the following prior to enabling email alerting:
+**Step 2 –** Configure the following before enabling email alerting:
 
 - Configure SMTP Host Information
 - Create Message Profiles
@@ -32,13 +28,9 @@ the left pane.
 **Step 6 –** Check the checkbox for the event/incident/policy for which you want to trigger email
 notifications.
 
-**Step 7 –** Click the **Select Profile, please** option for an event/incident/policy and select a
-Message Profile from the drop-down menu to assign it to the event/incident/policy. When an alert is
-generated for the event/incident/policy, an email will be sent to all recipients specified in the
-Message Profile.
+**Step 7 –** Click the **Select Profile** option for an event/incident/policy and select a Message Profile from the dropdown menu to assign it to the event/incident/policy. When an alert is generated for the event/incident/policy, an email is sent to all recipients specified in the Message Profile.
 
-- For policies, multiple profiles can be assigned by either checking the desired profile(s) or the
-  Select All option. Click **OK** in the drop-down menu to confirm the selection.
+- For policies, assign one or more profiles by checking the profile you want or the Select All option. Click **OK** in the dropdown menu to confirm the selection.
 
 You can assign a profile to as many events as required.
 
@@ -47,7 +39,7 @@ option is also available for each event. Use it to prevent Threat Prevention fro
 for an event for a specified time period. This limits the volume of repeat alerts for the respective
 event.
 
-Click **Suppression time** for an event and select an option from the drop-down menu:
+Click **Suppression time** for an event and select an option from the dropdown menu:
 
 - A duration ( 1 min, 2 min, 5 min, 10 min, 30 min, 60 min) – Once an alert is generated for the
   event, Threat Prevention will not generate another alert for it during the next X minutes (X is
@@ -59,13 +51,9 @@ Click **Suppression time** for an event and select an option from the drop-down 
 You select a suppression time of 30 minutes for an event. Next, an alert is generated for that
 event. If the event occurs again within the next 30 minutes, an alert will not be generated.
 
-The suppression time feature enables you to tackle situations where numerous alerts are generated
-for an event, such as Agent Latency, causing the Enterprise Manager and Administration Console to
-freeze.
+Use the suppression time feature to tackle situations where numerous alerts are generated for an event, such as Agent Latency, causing the Enterprise Manager and Administration Console to freeze.
 
-**Step 9 –** For Analytics, choose whether or not to enable Ongoing Attack Alerts. When checked,
-Threat Prevention sends periodic reminders of an ongoing attack if it continues after the initial
-notification has been sent.
+**Step 9 –** For Analytics, choose whether to enable Ongoing Attack Alerts. When checked, Threat Prevention sends periodic reminders of an ongoing attack if it continues after the initial notification is sent.
 
 **Step 10 –** Click **OK** to save the settings.
 
@@ -73,8 +61,6 @@ Threat Prevention now sends email notifications for the selected events/incident
 recipients of the selected Message Profiles.
 
 ### Configure SMTP Host Information
-
-Follow the steps to configure the SMTP host information for email alerting.
 
 :::tip
 Remember, this is a one-time setting to enable email alerts from the Administration Console.
@@ -105,8 +91,7 @@ checkbox and provide a username and password in the boxes that appear.
 
 ### Create Message Profiles
 
-Message Profiles are associated with events for email alerting. Follow the steps to create a Message
-Profile.
+Message Profiles are associated with events for email alerting.
 
 :::note
 When the Message Profile is modified for an alert, all policies referencing the alert use
@@ -139,24 +124,19 @@ between:
 
 - Yes – Loads the default message template for the selected format. This overwrites the current
   message template.
-- No – Leads the current message body
+- No – Keeps the current message body
 
 **Step 5 –** In the To box, provide an email address for each recipient of the email alert. This can
 be individuals, distribution lists, or a combination. To send alerts to multiple recipients,
 separate the addresses with either a comma (,) or a semi-colon (;). Example: IT@netwrix.com;
 ITdl@netwrix.com
 
-**Step 6 –** Click the Send Test Email link to send a test email. It sends an unformatted sample
-message to all recipients. Threat Prevention informs you if the message is successfully sent, but is
-not able to tell if it was received.
+**Step 6 –** Click the Send Test Email link to send a test email. It sends an unformatted sample message to all recipients. Threat Prevention tells you if it sends the message, but doesn't know whether the recipient received it.
 
 **Step 7 –** In the Subject box, keep the default subject line for the email or provide one that is
 more suitable for the alerts these recipients receive.
 
-**Step 8 –** The Body box contains the default message, which includes all event data types
-available for notification. To customize it for the specific alerts, simply remove the Event Data
-Fields not desired. Customization can also include reformatting the message as desired. The default
-message is:
+**Step 8 –** The Body box contains the default message, which includes all event data types available for notification. To customize it for the specific alerts, remove the Event Data Fields you don't want. You can also reformat the message as needed. The default message is:
 
 - Plain Text – An event has occurred in which you are on the notification list.
 - HTML – The following Event has occurred at %TIME_STAMP% for which you requested notification
@@ -196,9 +176,7 @@ The available Event Data Fields and their associated tokens are:
 | Attribute Operations         | %OPERATION%                    |
 
 :::warning
-The tokens used within the message Body, the information between and including the %
-symbols (e.g. %TIME_STAMP%), must be present to retrieve that event data from the database. Tokens
-can be removed, but partial tokens do not retrieve data from the database.
+The tokens used within the message Body, the information between and including the % symbols (e.g. %TIME_STAMP%), must be present to retrieve that event data from the database. You can remove tokens, but partial tokens don't retrieve data from the database.
 :::
 
 

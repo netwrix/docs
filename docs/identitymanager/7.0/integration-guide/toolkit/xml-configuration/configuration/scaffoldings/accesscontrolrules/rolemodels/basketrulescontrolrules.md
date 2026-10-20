@@ -26,7 +26,7 @@ Generates the permissions to execute the different requests to display the infor
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Workforce/Workflows/Directory_User_UpdatePersonalData/Request_AssignedCompositeRole" DisplayName_L1="Workforce/Workflows/Update Personal Data_AssignedCompositeRole" DisplayName_L2="Workforce/Workflows/Directory_User_UpdatePersonalData/Request_AssignedCompositeRole" EntityType="AssignedCompositeRole" Profile="Administrator">

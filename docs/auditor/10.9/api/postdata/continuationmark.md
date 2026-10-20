@@ -20,8 +20,8 @@ Send a POST request containing Continuation mark to the following endpoints:
 | POST   | [/netwrix/api/v1/activity_records/enum ](/docs/auditor/10.9/api/retrieveactivityrecords.md) | Returns next Activity Records.                            |
 | POST   | [/netwrix/api/v1/activity_records/search](/docs/auditor/10.9/api/searchactivityrecords.md)  | Returns next Activity Records matching a filter criteria. |
 
-Ensure to pass information about transferred data, including `Content-Type:application/xml` or
-`application/json `and encoding. The syntax greatly depends on the tool you use.
+Pass information about transferred data, including `Content-Type:application/xml` or
+`application/json` and encoding. The syntax greatly depends on the tool you use.
 
 You can send as many POST requests as you want. A new response returns next Activity Records and a
 new Continuation mark. Once all the Activity Records are retrieved, you will receive a 200 OK
@@ -37,7 +37,7 @@ Copy the contents of `ContinuationMark` to a separate XML or JSON file (e.g., Co
 | XML    | The file must be compatible with the XML schema. On the computer where Auditor Server resides, you can find XSD file under _Netwrix_Auditor_installation_folder\Audit Core\API Schemas_. The `ContinuationMark` root element contains a value previously returned by Netwrix Auditor Integration API. |
 | JSON   | JSON-formatted Continuation mark includes the field value in quotes.                                                                                                                                                                                                                                  |
 
-If you want to retrieve next Activity Records for your search, include the Continuation mark to your
+If you want to retrieve next Activity Records for your search, include the Continuation mark in your
 Search parameters file. [Search Parameters](/docs/auditor/10.9/api/postdata/searchparameters.md)
 
 ## Example

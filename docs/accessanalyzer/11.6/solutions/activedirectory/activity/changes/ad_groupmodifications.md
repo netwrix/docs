@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # AD_GroupModifications Job
 
-The AD_GroupModifications Job provides a report of all changes to group objects. A separate report
-is provided to highlight group membership changes. The list of top perpetrators can be used to
-identify out of band changes.
+The AD_GroupModifications Job provides a report of all changes to group objects, and a separate
+report to highlight group membership changes. Use the list of top perpetrators to identify
+out of band changes.
 
 ## Analysis Tasks for the AD_GroupModifications Job
 
@@ -16,7 +16,7 @@ Navigate to the **Jobs** > **Active Directory** > **6.Activity** > **Changes** >
 **AD_GroupModifications** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

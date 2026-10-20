@@ -14,7 +14,7 @@ This page is about Identity Manager Internal Workflow. See the [Workflow](../..
 
 ## Overview
 
-This connector is singular because it does **not** connect Identity Manager to an external system.
+This connector is singular because it doesn't connect Identity Manager to an external system.
 
 Instead, it is made to read the provisioning orders of a given connector or resource type, **and** launch specific workflows still within Identity Manager, depending on each order's type (creation, update, deletion).
 
@@ -41,7 +41,7 @@ This connector retrieves the files containing provisioning orders that correspon
 
 This process is configured through a connection in the UI **and**/or the XML configuration, **and** in the *appsettings.agent.json* > **Connections** section:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -65,7 +65,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -92,7 +92,7 @@ The file specified in WorkflowJsonPath must have a specific structure.
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *FulfillInternalWorkflow.json*
@@ -156,14 +156,14 @@ The table below summarizes the setting attributes.
  | ChangeType required | String | Type of the provisioning order: Added; Modified; Deleted. | 
  | DateProperties optional | DateTime List | List of the properties corresponding to the dates that the workflow is to fill in. **NOTE:** When **not** specified **and** ChangeType is set to Deleted, then the dates are filled with the workflow's execution date. | 
  | Message required | String | Message sent to the accounts impacted by the workflow. | 
- | NavigationProperties optional | String List | List of the navigation properties to get from the provisioning orders in order to complete the workflow. | 
+ | NavigationProperties optional | String List | List of the navigation properties to get from the provisioning orders to complete the workflow. | 
  | NavigationTargetToSource optional | String | Navigation property that makes the link from the target entity type to the source entity type. **NOTE:** Required when using records. For example, it's **not** required when working with departments or sites. See the[Position Change via Records](../../../integration-guide/identity-management/joiners-movers-leavers/position-change) topic for additional information. | 
  | NavigationToTargetEntity optional | String | Navigation property that makes the link from the source entity type to the target entity type. **NOTE:** Required when using records. For example, it's **not** required when working with departments or sites. See the[Position Change via Records](../../../integration-guide/identity-management/joiners-movers-leavers/position-change) topic for additional information. | 
- | ScalarProperties optional | String List | List of the scalar properties to get from the provisioning orders in order to complete the workflow. | 
+ | ScalarProperties optional | String List | List of the scalar properties to get from the provisioning orders to complete the workflow. | 
  | SourceEntityIdentifier required | String | Identifier of the source entity type of the workflow. | 
  | TransitionIdentifier required | String | Identifier of the workflow's transition after execution. | 
  | TargetEntityTypeIdentifier required | String | Identifier of the target entity type of the workflow. | 
- | WorkflowIdentifier optional | String | Identifier of the workflow to be started. **NOTE:** Optional but **recommended** because it acts as default value when there is no related ArgumentsExpression or it does **not** return a valid identifier. See the[Resource Type](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) topic for additional information. | 
+ | WorkflowIdentifier optional | String | Identifier of the workflow to be started. **NOTE:** Optional but **recommended** because it acts as default value when there is no related ArgumentsExpression or it doesn't return a valid identifier. See the[Resource Type](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) topic for additional information. | 
 
 The table below summarizes the variables for messages **and** bodies.
 
@@ -174,7 +174,7 @@ The table below summarizes the variables for messages **and** bodies.
 
 ### Output details
 
-All three types of workflows (onboarding, update **and** off-boarding) can be completed with the fulfill Internal Workflow.
+All three types of workflows (onboarding, update, and off-boarding) can be completed with the fulfill Internal Workflow.
 
 ## Authentication
 
@@ -182,11 +182,11 @@ See the following to figure out authentication.
 
 **Password reset**
 
-This connector does **not** reset passwords.
+This connector doesn't reset passwords.
 
 **Credential protection**
 
-This connector has no credential attributes, **and** therefore does **not** use RSA encryption, nor a CyberArk Vault. See the [RSA Encryption](../../../integration-guide/network-configuration/agent-configuration/rsa-encryption) **and** [CyberArk's AAM Credential Providers ](../../../integration-guide/network-configuration/agent-configuration/cyberark-application-access-manager-credential-providers) topics for additional information.
+This connector has no credential attributes, **and** therefore doesn't use RSA encryption, nor a CyberArk Vault. See the [RSA Encryption](../../../integration-guide/network-configuration/agent-configuration/rsa-encryption) **and** [CyberArk's AAM Credential Providers ](../../../integration-guide/network-configuration/agent-configuration/cyberark-application-access-manager-credential-providers) topics for additional information.
 
 Still, data protection can be ensured through an Azure Key Vault safe. See the [Azure Key Vault](../../../integration-guide/network-configuration/agent-configuration/azure-key-vault)topic for additional information.
 

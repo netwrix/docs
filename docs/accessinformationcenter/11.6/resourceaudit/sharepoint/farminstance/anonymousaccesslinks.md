@@ -11,7 +11,7 @@ generated to be shared with people outside the organization (guest/anonymous use
 
 ![Anonymous Access Links report at the online instance level](/images/accessinformationcenter/11.6/resourceaudit/sharepoint/farminstance/instanceanonymousaccesslinks.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Site Collection – Site collection where the shared file resides
 - File Name – Name of the shared file

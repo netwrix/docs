@@ -26,7 +26,7 @@ sidebar_position: 4
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_ActivityInstanceAspectsQuery" DisplayName_L1="Administrator_ActivityInstance" DisplayName_L2="Administrator_ActivityInstance" EntityType="ActivityInstance" Profile="Administrator">

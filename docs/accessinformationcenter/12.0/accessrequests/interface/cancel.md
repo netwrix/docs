@@ -20,7 +20,7 @@ See the Cancel an Access Request topic for additional information.
 
 ## Cancel an Access Request
 
-Follow the steps to cancel an access request.
+To cancel an access request:
 
 **Step 1 –** On the Pending Requests tab of the Access Requests interface, select the request and
 click **Cancel**. The Cancel Request wizard opens.

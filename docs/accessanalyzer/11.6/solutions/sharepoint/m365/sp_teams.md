@@ -15,14 +15,14 @@ Navigate to the **Jobs** > **SharePoint** > **8.M365** > **SP_Teams** > **Config
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
 
 ![Analysis Tasks for the SP_Teams Job](/images/accessanalyzer/11.6/solutions/sharepoint/m365/teamsanalysis.webp)
 
-The default analysis task is:
+The default analysis tasks are:
 
 - Teams Details and Summary – Creates the SA_SP_TeamsSummary table to populate the Teams Activity
   and Teams Summary reports

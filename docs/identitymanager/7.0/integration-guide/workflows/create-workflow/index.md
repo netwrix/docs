@@ -36,7 +36,7 @@ How to create a workflow to create a new resource with several records.
 
 - [For Resource Update (No Record)](../../../integration-guide/workflows/create-workflow/workflow-update-resource)
 
-How to create a workflow to update an existing simple resource, i.e. to update, within a given existing resource, properties that do not involve records.
+How to create a workflow to update an existing simple resource, i.e. to update, within a given existing resource, properties that don't involve records.
 
 - [For Resource Update (Mono Record)](../../../integration-guide/workflows/create-workflow/workflow-update-mono)
 

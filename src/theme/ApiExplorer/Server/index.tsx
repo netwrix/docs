@@ -6,7 +6,6 @@ import FormItem from "@theme/ApiExplorer/FormItem";
 import FormSelect from "@theme/ApiExplorer/FormSelect";
 import FormTextInput from "@theme/ApiExplorer/FormTextInput";
 import { useTypedDispatch, useTypedSelector } from "@theme/ApiItem/hooks";
-import { OPENAPI_SERVER } from "@theme/translationIds";
 
 import {
   setServer,
@@ -79,7 +78,7 @@ function Server({ labelId }: ServerProps) {
     return (
       <FloatingButton
         onClick={handleEditClick}
-        label={translate({ id: OPENAPI_SERVER.EDIT_BUTTON, message: "Edit" })}
+        label={translate({ id: "theme.openapi.server.editButton", message: "Edit" })}
       >
         <FormItem>
           <span className="openapi-explorer__server-url" title={url}>

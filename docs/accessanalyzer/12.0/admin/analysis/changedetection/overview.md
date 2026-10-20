@@ -13,7 +13,7 @@ most recent collection.
 
 This module compares values collected for two different query instances. Therefore, as change
 detection depends on the existence of a **JobRunTimeKey**, history must be enabled and data
-collected at least twice to produce the desired results. Configure History settings under the job’s
+collected at least twice to produce comparison results. Configure History settings under the job’s
 **Settings** > **History** node. See the [History](/docs/accessanalyzer/12.0/admin/settings/history.md) topic for additional
 information.
 

@@ -10,19 +10,19 @@ Long-Term Archive is a file-based repository for keeping activity records collec
 
 ## Location
 
-Long-Term Archive can be located on the same computer with Auditor Server, or separately - in this
-case ensure that the Auditor Server can access the remote machine. By default, the Long-Term Archive
-(repository) and Auditor working folder are stored on the system drive. Default path to the
+You can locate Long-Term Archive on the same computer as Auditor Server, or on a separate machine — in this
+case, ensure that Auditor Server can access the remote machine. By default, Auditor stores the Long-Term Archive
+(repository) and working folder on the system drive. Default path to the
 Long-Term Archive is `%ProgramData%\NetwrixAuditor\Data`.
 
-To reduce the impact on the system drive in large and extra-large environments, it is recommended to
-move Long-Term Archive to another disk. For that, you should estimate the required capacity using
+To reduce the impact on the system drive in large and extra-large environments, Netwrix recommends
+moving Long-Term Archive to another disk. Estimate the required capacity using the
 recommendations in the next section.
 
-Then you should prepare the new folder for repository, target Netwrix Auditor at that folder, and,
-if necessary, move repository data from the old to the new location.
+Then prepare the new folder for the repository, target Netwrix Auditor at that folder, and,
+if necessary, move repository data from the old location to the new one.
 
-Follow the steps to modify Long-Term Archive location and other settings.
+To modify the Long-Term Archive location and other settings:
 
 **Step 1 –** In Auditor client, click Settings > Long-Term Archive; alternatively, if you are
 viewing the Long-Term Archive widget of the Health Status dashboard, click Open settings.
@@ -45,17 +45,17 @@ procedure.
 ## Retention
 
 Default retention period for repository data is **120 months**. You can specify the value you need
-in the Long-Term Archive settings. When retention period is over, data will be deleted
+in the Long-Term Archive settings. When the retention period ends, Auditor deletes the data
 automatically.
 
-If the retention period is set to **0**, the following logic will be applied:
+If you set the retention period to **0**, Auditor applies the following logic:
 
-- **Audit data for SQL Server, file servers, Windows Server:** only data stored by the last **2**
-  data collection sessions will be preserved.
-- **User activity data:** only data stored by the last **7** data collection sessions will be
-  preserved.
-- **Other data sources:** only data stored by the last **4** data collection sessions will be
-  preserved.
+- **Audit data for SQL Server, file servers, Windows Server:** Auditor preserves only data from
+  the last **2** data collection sessions.
+- **User activity data:** Auditor preserves only data from the last **7** data collection
+  sessions.
+- **Other data sources:** Auditor preserves only data from the last **4** data collection
+  sessions.
 
 ## Capacity
 
@@ -66,21 +66,21 @@ Health Status dashboard.
 
 To estimate the amount of activity records collected and stored to the repository day by day, use
 the [Activity Records Statistics](/docs/auditor/10.9/admin/healthstatus/dashboard/activityrecordstatistics.md)
-widget. Click View details to see how many activity records were produced by each data source,
-collected and saved to the Long-Term Archive and to the database.
+widget. Click **View details** to see how many activity records each data source produced, and how
+many records Auditor collected and saved to the Long-Term Archive and the database.
 
 Netwrix Auditor will inform you if you are running out of space on a system disk where the
 repository is stored by default — you will see this information in the Health Status dashboard, in
 the health summary email, and also in the events in the Netwrix Auditor health log.
 
-When free disk space is less than **3 GB**, the Netwrix services responsible for audit data
-collection will be stopped.
+When free disk space drops below **3 GB**, Auditor stops the services responsible for audit data
+collection.
 
 ## Configure Long-Term Archive Account
 
-An account used to write data to the Long-term Archive and upload report subscriptions to shared
-folders. By default, the LocalSystem account is used for the archive stored locally and the computer
-account is used for archive stored on a file share.
+Auditor uses an account to write data to the Long-Term Archive and upload report subscriptions to
+shared folders. By default, Auditor uses the LocalSystem account for archives stored locally and
+the computer account for archives stored on a file share.
 
 If you want to store the Long-term Archive on a file share, you can specify custom account in
 Settings>**Long-Term Archive** in Auditor.
@@ -88,7 +88,7 @@ Settings>**Long-Term Archive** in Auditor.
 Starting with version 9.96, you can use Group Managed Service Account (gMSA) as the account for
 accessing Long-term Archive.
 
-The custom account must be granted the following rights and permissions:
+Grant the custom account the following rights and permissions:
 
 - Advanced permissions on the folder where the Long-term Archive is stored:
     - List folder / read data
@@ -105,16 +105,16 @@ The custom account must be granted the following rights and permissions:
     - Change share permission
     - Create files / write data folder permission
 
-    Subscriptions created in the Auditor client  are uploaded to file servers under the Long-Term
+    Auditor uploads subscriptions created in the Auditor client to file servers under the Long-Term
     Archive service account as well. See the [Subscriptions](/docs/auditor/10.9/admin/subscriptions/overview.md)
     topic for additional information.
 
 ### Assign Permissions on the Long-Term Archive Folder
 
-The procedure below applies to Windows Server 2012 R2 and above and may vary slightly depending on
-your OS.
+The following procedure applies to Windows Server 2012 R2 and later and may vary slightly
+depending on your OS.
 
-Follow the steps to assign permissions on the Long-Term Archive folder:
+To assign permissions on the Long-Term Archive folder:
 
 **Step 1 –** Navigate to a folder where the Long-Term Archive will be stored, right-click it and
 select Properties.
@@ -128,7 +128,7 @@ select Properties.
 
 - Specify an account as principal.
 - Set Type to _"Allow"_.
-- Set Applies to to _"This folder, subfolders and files"_.
+- Set the **Applies to** field to _"This folder, subfolders, and files"_.
 - Switch to the Advanced permissions section.
 - Check the following permissions:
     - List folder / read data
@@ -143,11 +143,11 @@ select Properties.
 
 ### Assign Change and Create Files/Write Data Permissions to Upload Subscriptions to File Shares
 
-The procedure below applies to Windows Server 2012 R2 and above and may vary slightly depending on
-your OS.
+The following procedure applies to Windows Server 2012 R2 and later and may vary slightly
+depending on your OS.
 
-Follow the steps to assign the **Change** and **Create Files/Write Data** permissions to upload
-subscriptions to file shares:
+To assign the **Change** and **Create Files/Write Data** permissions to upload subscriptions to
+file shares:
 
 **Step 1 –** Navigate to a folder where report subscriptions will be stored, right-click it and
 select Properties.
@@ -172,22 +172,22 @@ check the Allow flag next to Change.
 
 - Specify a Netwrix Auditor user as principal.
 - Set Type to _"Allow"_.
-- Set Applies to to _"This folder, subfolders and files"_.
+- Set the **Applies to** field to _"This folder, subfolders, and files"_.
 - Check Create files / write data in the Advanced permissions section.
 
-The users who are going to access report subscriptions must be granted read access to these shares.
+Grant users who access report subscriptions read access to these shares.
 Netwrix recommends you to create a dedicated folder and grant access to the entire Netwrix Auditor
 Client Users group or any other group assigned the Global reviewer role in Auditor.
 
 ## System Health
 
 Long-Term Archive is a file-based storage where Auditor saves the collected activity records. By
-default, it is located on the system drive at `%PROGRAMDATA%\Netwrix Auditor\Data` and keeps data
-for 120 months. You may want to modify these settings, for example, move the storage from the system
-drive to another location. The Long-Term Archive widget will help you to monitor the Long-Term
+default, Auditor stores it on the system drive at `%PROGRAMDATA%\Netwrix Auditor\Data` and keeps
+data for 120 months. You may want to modify these settings, for example, move the storage from the
+system drive to another location. The Long-Term Archive widget helps you monitor the Long-Term
 Archive capacity. The widget displays the current size and daily increase of the Long-Term Archive,
 and the remaining free space on the target drive.
 
-To open the Long-Term Archive settings, click the corresponding link. Then you will be able to
-adjust the settings as necessary. See the [Long-Term Archive](/docs/auditor/10.9/admin/settings/longtermarchive.md)
+To open the Long-Term Archive settings, click the corresponding link. Then you can adjust the
+settings as necessary. See the [Long-Term Archive](/docs/auditor/10.9/admin/settings/longtermarchive.md)
 topic for additional information.

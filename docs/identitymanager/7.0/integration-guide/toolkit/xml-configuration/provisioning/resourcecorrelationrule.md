@@ -4,7 +4,7 @@ description: ""
 sidebar_position: 12
 ---
 
-A correlation rule is used to [correlate](/docs/identitymanager/current/introduction-guide/overview/entitlement-management) the resources, i.e. link resources to their owners.
+A correlation rule [correlates](/docs/identitymanager/current/introduction-guide/overview/entitlement-management) resources, linking them to their owners.
 
 
 ## Examples
@@ -36,7 +36,7 @@ The following example creates an Active Directory correlation rule based on the 
 <ResourceCorrelationRule ResourceType="AD_Entry_NominativeUser" TargetBinding="displayName" TargetExpression="Simplify" Policy="Default" SourceMatchedConfidenceLevel="80" SourceExpression="C#:person:return (person.LastName + person.FirstName).Simplify();" />
 ```
 
-This example also uses a confidence rate equals to 80%.
+This example also uses a confidence rate of 80%.
 
 
 ## Properties
@@ -46,7 +46,7 @@ This example also uses a confidence rate equals to 80%.
 | Policy required | **Type:** Int64 **Description:** Identifier of the policy that the rule is part of. |
 | ResourceType required | **Type:** Int64 **Description:** Identifier of the resource type. |
 | SourceBinding optional | **Type:** Int64 **Description:** Binding property from the source system. |
-| SourceExpression optional | **Type:** String **Description:** Binding expression based on properties from the source system. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
-| SourceMatchedConfidenceLevel <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Defines the correlation confidence rate of this rule. If the value is less than 100, we process a manual review step to confirm the choice. |
+| SourceExpression optional | **Type:** String **Description:** Binding expression based on properties from the source system. See [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions) for details. |
+| SourceMatchedConfidenceLevel <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Defines the correlation confidence rate of this rule. If the value is less than 100, a manual review step confirms the choice. |
 | TargetBinding optional | **Type:** Int64 **Description:** Binding property from the target system. |
-| TargetExpression optional | **Type:** String **Description:** Binding expression based on properties from the target system. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| TargetExpression optional | **Type:** String **Description:** Binding expression based on properties from the target system. See [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions) for details. |

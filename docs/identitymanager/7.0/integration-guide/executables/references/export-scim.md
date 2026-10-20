@@ -12,7 +12,7 @@ This tool is made to export entries from a SCIM API to CSV files.
 
 ### Exporting entities by specifying attributes
 
-It is possible to export data by specifying the attribute names to fetch, for each exported table:
+Export data by specifying the attribute names to fetch for each exported table:
 
 ```text
 --server "https://scim-server.com" --connection-identifier "ConnectionSCIM" --output-path "C:/SCIMExport" --cookie-path "C:/SCIMExport" --log-level Verbose --login "usercube" --password "usercube2021" --filter-entities "Users|username eq \"john\";username name:givenName|familyName"
@@ -30,7 +30,7 @@ The server has to be running.
 
 ### Exporting entities with a token authentication
 
-It is possible to export data by specifying the attribute names to fetch, for each exported table:
+Export data by specifying the attribute names to fetch for each exported table:
 
 ```text
 --server "https://scim-server.com" --connection-identifier "ConnectionSCIM" --output-path "C:/SCIMExport" --cookie-path "C:/SCIMExport" --log-level Verbose --oauth-token "MyToken" --filter-entities "Users|username eq \"john\";username name:givenName|familyName"
@@ -43,7 +43,7 @@ It is possible to export data by specifying the attribute names to fetch, for ea
  | --cookie-path required | **Type** String **Description** Path of the cookie file for incremental export. | 
  | --filter-entities optional | **Type** String **Description** List of the non group entities and corresponding attributes to export. Syntax: EntityNameInSCIM1 | 
  | --filter-entities-group optional | **Type** String **Description** Works as ï¿½filter-entities but for entities with members. Syntax: EntityNameInSCIM1 | 
- | --attributes-in-filter optional | **Type** No Value **Description** Specifies true if the server is not available and the entities and their attributes to export are given in the filter-entities and filter-entities-group arguments. | 
+ | --attributes-in-filter optional | **Type** No Value **Description** Specifies true if the server isn't available and the entities and their attributes to export are given in the filter-entities and filter-entities-group arguments. | 
  | --- | --- | 
  | --- | --- | 
  | --connection-identifier optional | **Type** String **Description** Connector's connection identifier. The output file will have this identifier as name. | 

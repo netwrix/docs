@@ -1,0 +1,10 @@
+{
+  "label": "Policies Interface",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

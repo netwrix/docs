@@ -4,6 +4,8 @@ import { NEP } from '@site/src/training/products';
 
 The following courses are available for self-enrollment through the Learning Library:
 
+* What's New in <NEP /> v2608 Client
+* What's New in <NEP /> v2608 Server
 * What's New in <NEP /> v2605
 * What's New in <NEP /> v2604
 * What's New in <NEP /> v2602

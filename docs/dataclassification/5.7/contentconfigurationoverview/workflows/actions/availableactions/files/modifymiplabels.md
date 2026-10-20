@@ -7,11 +7,11 @@ sidebar_position: 20
 # Modify MIP Label
 
 This action applies or removes a Microsoft Information Protection label for the classified file. You
-can use this approach to automatically apply protection policies, based upon the document's
+can use this approach to automatically apply protection policies based on the document's
 classifications.
 
-When running the Workflow wizard and having selected **Modify MIP Label** as an action, you will be
-prompted to configure related settings
+When running the Workflow wizard and having selected **Modify MIP Label** as an action, you configure the
+related settings
 
 When finished, click **Next** to proceed with the wizard.
 

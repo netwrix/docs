@@ -6,10 +6,11 @@ keywords:
   - software updates
   - upgrade process
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Upgrade When Apply Updates Button Is Grayed Out
 tags:
   - troubleshooting-and-errors
+  - kb
 title: How to Upgrade When "Apply Updates" Button Is Grayed Out
 knowledge_article_id: kA0Qk0000002BDvKAM
 ---
@@ -19,6 +20,10 @@ knowledge_article_id: kA0Qk0000002BDvKAM
 ## Overview
 
 This article explains how to upgrade from Endpoint Protector Server v5.8.0.0 to v5.8.1.0 when the **Apply Updates** button is grayed out after selecting available Endpoint Protector (EPP) software updates.
+
+:::important
+This article applies to the **Live Update** feature, which Netwrix discontinued starting with EPP Server version 2509. If you're running EPP Server 2509 or later, this workaround doesn't apply — Live Update no longer exists on this platform, and the **Offline Patch Uploader** is the only available update method. See [How to Apply an Offline Patch or Upgrade](/docs/kb/endpointprotector/deployment-and-installation/how_to_apply_an_offline_patch_or_upgrade) for the current procedure.
+:::
 
 ## Instructions
 
@@ -40,7 +45,9 @@ This article explains how to upgrade from Endpoint Protector Server v5.8.0.0 to 
 
 7. Refresh the page. The new version of the server will be displayed in the bottom right corner.
 
-> **NOTE:** Starting with version 5.9.4.2, all older Endpoint Protector servers can be upgraded with a cumulative patch.
+:::note
+Starting with version 5.9.4.2, all older Endpoint Protector servers can be upgraded with a cumulative patch.
+:::
 
 ## Related Links
 

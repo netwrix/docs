@@ -23,15 +23,15 @@ You can also include the username and/or domain in the URL:
 `http://[server]/ppeweb/ppeweb.dll?username=maryjones&domain=ANIXIS`
 
 :::info
-Install the SSL Certificate the web server and use the HTTPS protocol if Password
-Policy Enforcer Web is used on an unencrypted network. See the
+Install the SSL Certificate the web server and use the HTTPS protocol if you use Password
+Policy Enforcer Web on an unencrypted network. See the
 [Install an SSL Certificate](/docs/passwordpolicyenforcer/11.2/web-overview/securing_web.md) topic for additional
 information.
 :::
 
 
 :::note
-A license reminder message is shown occasionally when Password Policy Enforcer Web is used
+Password Policy Enforcer Web occasionally shows a license reminder message when you use it
 without a license key. Contact Netwrix support if you would like to evaluate Password Policy
 Enforcer Web without the reminder message.
 :::
@@ -54,25 +54,25 @@ To change a password with Password Policy Enforcer Web:
 
 :::note
 Windows increments the bad password count in Active Directory every time a user enters
-their old password incorrectly. This may trigger a lockout if the Windows account lockout policy is
-enabled.
+their old password incorrectly. This may trigger a lockout if you enable the Windows account lockout
+policy.
 :::
 
 
 ## Error Messages
 
-Validation errors are shown in a yellow box below the page instructions. Validation errors are
-normally caused by invalid user input. They can often be overcome by changing the value of one or
-more input fields and resubmitting the form.
+Password Policy Enforcer Web shows validation errors in a yellow box below the page instructions.
+Invalid user input normally causes validation errors. You can often overcome them by changing the
+value of one or more input fields and resubmitting the form.
 
 ![using_ppe_web_1](/images/passwordpolicyenforcer/11.2/web/using_ppe_web_1.webp)
 
-Critical errors are shown on their own page. These errors are mostly a result of configuration or
-system errors. Users can sometimes overcome a critical error by following the instructions in the
+Password Policy Enforcer Web shows critical errors on their own page. Configuration or system
+problems usually cause these errors. Users can sometimes overcome a critical error by following the instructions in the
 error message, but most critical errors are beyond the user's control.
 
 ![using_ppe_web_2](/images/passwordpolicyenforcer/11.2/web/using_ppe_web_2.webp)
 
-Validation and critical error messages are stored in the HTML templates. You can modify the default
+The HTML templates store validation and critical error messages. You can modify the default
 messages by editing the templates. See the [Edit HTML Templates](/docs/passwordpolicyenforcer/11.2/web-overview/editing_html_templates.md) topic
 for additional information.

@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Mailbox: Trusted Users
 
-Use the Trusted Users page to select delegates to add. Users can be added individually or from a
+Use the Trusted Users page to select delegates to add. You can add users individually or from a
 server with a mailbox environment. It is a wizard page for the following operations:
 
 - Add Delegates
@@ -18,7 +18,7 @@ Select Trusted User delegates using the following options:
 
 - Users found in the following column – Select this option to identify users via a data table column
 
-    - Use the drop-down menu to select a data table column containing either the Mailbox display
+    - Use the dropdown menu to select a data table column containing either the Mailbox display
       name or email address
     - Select a data type for the selected field using the following options:
 
@@ -50,7 +50,6 @@ The following additional options are available for the Remove Delegates operatio
 - Remove Permissions from Child Folders – Removes permissions from child folders
 
     :::note
-    This option is only enabled if the **Remove Permissions for Delegate** option is
-    selected.
-
+    This option is only enabled if you select the **Remove Permissions for Delegate**
+    option.
     :::

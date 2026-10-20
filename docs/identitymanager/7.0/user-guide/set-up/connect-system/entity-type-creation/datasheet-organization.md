@@ -12,7 +12,7 @@ How to change the default display of the resource data from this entity type, by
 
 Here you will learn how to change how a resource's data is organized in the UI, by creating display groups.
 
-If you do not add display groups, Identity Manager displays the data of this entity type's resources in alphabetic order.
+If you don't add display groups, Identity Manager displays the data of this entity type's resources in alphabetic order.
 
 > For example, for an HR user without any display groups:
 >
@@ -26,18 +26,18 @@ Organize resources' datasheets by proceeding as follows:
 [Define Scalar Properties](../../../../user-guide/set-up/connect-system/entity-type-creation/scalar-property-definition) and [Select Primary Keys](../../../../user-guide/set-up/connect-system/entity-type-creation/key-selection) topics for additional information.
 2. Ensure that the created properties are saved by clicking on **Save & Close** > **Save** at the
 top right corner.
-3. On the entity type's definition page, click on the **Display** tab.
+3. On the entity type's definition page, click the **Display** tab.
 
     ![Display Groups](/images/identitymanager/entitytypecreation_displaygroups_v603.webp)
 
-4. Click on the arrow to see the entity type's properties listed in the alphabetical order, and drag
+4. Click the arrow to see the entity type's properties listed in the alphabetical order, and drag
 and drop the properties to customize the order.
 
     > For example:
 >
     > ![Display Example](/images/identitymanager/entitytypecreation_displaygroups_example1_v603.webp)
 
-5. When needing to group properties together, click on **Add Display Group**, fill in the fields and
+5. When needing to group properties together, click **Add Display Group**, fill in the fields and
 select from the pop-up window the properties to be grouped.
 
     ![Display Group Fields](/images/identitymanager/entitytypecreation_displaygroups_fields_v603.webp)
@@ -53,13 +53,13 @@ C#-compatible. [See Microsoft lexical structure](https://learn.microsoft.com/en-
 >
         > ![Display Example](/images/identitymanager/entitytypecreation_displaygroups_example2results_v603.webp)
 
-6. Click on **Save & Close**.
+6. Click **Save & Close**.
 
 Changes in display groups won't take effect until the next [Update Entity Property Expressions Task](../../../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/updateentitypropertyexpressionstask) runs.
 
 ## Reload
 
-Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You do not need to click on the button every time. It is essential though to reload after the final changes are made.
+Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You don't need to click the button every time. It is essential though to reload after the final changes are made.
 
 ![Reload](/images/identitymanager/entitytypecreation_reload_v522.webp)
 

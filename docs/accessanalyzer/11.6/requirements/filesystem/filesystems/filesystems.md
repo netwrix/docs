@@ -19,7 +19,7 @@ Access Auditing and Sensitive Data Discovery Auditing support CIFS and NFSv3.
 :::
 
 
-Ports and permissions vary based on the scan mode option selected as well as the target environment.
+Ports and permissions vary based on the selected scan mode option and the target environment.
 
 **Data Collectors**
 
@@ -30,7 +30,7 @@ This solution employs the following data collector to scan the target environmen
 
 **Permissions and Ports for ADInventory Data Collector Prerequisite**
 
-The following permissions are needed:
+The ADInventory Data Collector requires the following permissions:
 
 - Read access to directory tree
 - List Contents & Read Property on the Deleted Objects Container
@@ -44,7 +44,7 @@ The following permissions are needed:
     :::
 
 
-The following firewall ports are needed:
+The ADInventory Data Collector requires the following firewall ports:
 
 - TCP 389
 - TCP 135-139
@@ -52,13 +52,14 @@ The following firewall ports are needed:
 
 **Permissions and Ports for FileSystemAccess Data Collector**
 
-- Permissions vary based on the Scan Mode Option selected. See the File System Supported Platforms
+- Permissions vary based on the selected Scan Mode Option. See the File System Supported Platforms
   topic for additional information.
 
 ## Supported Windows Platforms
 
 The following are supported Microsoft® Windows® operating systems:
 
+- Windows Server 2025
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
@@ -66,6 +67,10 @@ The following are supported Microsoft® Windows® operating systems:
 See the
 [Windows File Server Target Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/windowsfile/overview.md)
 topic for target environment requirements.
+
+:::info
+Netwrix doesn't recommend workstations for scanning and doesn't support them as a scan source.
+:::
 
 **Windows File System Clusters**
 
@@ -111,7 +116,7 @@ See the
 [Hitachi Target Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/hitachi/overview.md)
 topic for target environment requirements.
 
-**Nasuni Nasuni Edge Appliances**
+**Nasuni Edge Appliances**
 
 - 8.0+
 
@@ -125,7 +130,7 @@ for target environment requirements.
 - Cluster-Mode 8.2+
 
     :::note
-    The Resiliency feature introduced in ONTAP 9.0 is not supported.
+    Enterprise Auditor doesn't support the Resiliency feature introduced in ONTAP 9.0.
     :::
 
 

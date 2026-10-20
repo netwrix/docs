@@ -6,11 +6,7 @@ sidebar_position: 30
 
 # Manage Alerts
 
-For your convenience, Netwrix provides you with a set of predefined alerts that are commonly used
-for IT infrastructure monitoring. The out-of-the-box alerts include those that help you detect
-suspicious activity and inform you on critical changes to your environment. The alerts contain
-pre-configured filters and in most cases you only need to enable an alert and select who will
-receive notifications.
+For your convenience, Netwrix provides you with a set of predefined alerts commonly used for IT infrastructure monitoring. These default alerts help you detect suspicious activity and inform you of critical changes to your environment. Most predefined alerts include pre-configured filters, so you typically only need to enable an alert and select recipients.
 
 You can add any elements (a dashboard, report, alert, risk, etc.) to the Auditor Home screen to
 access them instantly. See the [Navigation](/docs/auditor/10.7/admin/navigation/overview.md) and

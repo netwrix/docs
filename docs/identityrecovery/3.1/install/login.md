@@ -40,8 +40,6 @@ process, use the port and protocol configured from the install.
 
 On [First Launch](/docs/identityrecovery/3.1/install/firstlaunch.md) of the Recovery Console, the administrator must add users who can sign into the application and use it.
 
-Follow the steps to sign into the Recovery Console.
-
 **Step 1 –** Launch the Recovery Console.
 
 :::note
@@ -58,7 +56,7 @@ following format:
 
 **Step 3 –** Click Log in.
 
-If you have enabled multi-factor authentication for your account, the following is displayed:
+If you have enabled multi-factor authentication (MFA) for your account, the following is displayed:
 
 ![MFA at Login](/images/identityrecovery/3.1/install/loginmfa.webp)
 

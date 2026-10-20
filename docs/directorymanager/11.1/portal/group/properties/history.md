@@ -48,17 +48,17 @@ Directory Manager enables a user to add notes to history items that were logged 
 change they made. A note may explain the reason for making a certain change, such as why they
 changed the security type for a group.
 
-Only the user who added the note can update it. Other users can only view this note; they cannot
+Only the user who added the note can update it. Other users can only view this note; they can't
 edit or add comments.
 
 - The Add Note button is available next to a history item listed.
-- Once you add a note, the Add Note button changes to View Note. All portal users can use this
+- After you add a note, the Add Note button changes to View Note. All portal users can use this
   button to view the note.
 
 ### Add a note
 
 The option to add a note is available on the My Account History card on Dashboard, and all History
-pages i.e.[My History](/docs/directorymanager/11.1/portal/history/myhistory.md),
+pages (i.e., [My History](/docs/directorymanager/11.1/portal/history/myhistory.md)),
 [My Direct Reports' History](/docs/directorymanager/11.1/portal/history/mydirectreport.md) and
 [My Groups' History](/docs/directorymanager/11.1/portal/history/mydirectorygroup.md) pages.
 
@@ -80,7 +80,7 @@ Step 3 – Click **Update Note** to save the changes.
 
 ### View a note
 
-Once a note is added, other users can view it, but they cannot edit it or add comments to it.
+Once a note is added, other users can view it, but they can't edit it or add comments to it.
 
 - In the Detailed view:
 

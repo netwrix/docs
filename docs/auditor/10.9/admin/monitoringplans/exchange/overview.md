@@ -6,8 +6,8 @@ sidebar_position: 70
 
 # Exchange
 
-**NOTE:** Before configuring your monitoring plan, read and complete the instructions in
-the following topics:
+**NOTE:** Read and complete the instructions in the following topics before configuring your
+monitoring plan:
 
 - [Protocols and Ports Required](/docs/auditor/10.9/requirements/ports.md) – To ensure successful data
   collection and activity monitoring configure necessary protocols and ports for inbound and

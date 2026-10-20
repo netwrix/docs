@@ -8,13 +8,12 @@ sidebar_position: 40
 
 The extraction and correlation of user, group, and computer attributes drastically transforms the
 meaning of data collected across the many systems and applications that are linked to Active
-Directory. The ADInventory Data Collector is designed as a highly scalable and useful data
-collection mechanism to catalogue user, group, and computer object information that can be used by
-other solutions within Access Analyzer.
+Directory. The ADInventory Data Collector is a highly scalable data collection mechanism that catalogues user,
+group, and computer object information for other solutions within Access Analyzer to use.
 
-The ADInventory Data Collector is a core component of Access Analyzer and has been preconfigured to
-be used within the .Active Directory Inventory Solution. Both this data collector and the solution
-are available with all Access Analyzer license options. See the
+The ADInventory Data Collector is a core component of Access Analyzer. The .Active Directory
+Inventory Solution includes this data collector preconfigured. Both this data collector and the
+solution are available with all Access Analyzer license options. See the
 [.Active Directory Inventory Solution](/docs/accessanalyzer/12.0/solutions/activedirectoryinventory/overview.md)
 topic for additional information.
 
@@ -44,9 +43,9 @@ topic for additional information.
 
 ## Functional Design of the ADInventory Data Collector
 
-The ADInventory Data Collector has been designed to update incrementally. Once it has run against a
-domain controller, additional collections gather changes made since the last scan. This enables the
-ADInventory Data Collector to function efficiently within large environments. Each time it is run
+The ADInventory Data Collector updates incrementally. After it has run against a domain controller,
+additional collections gather the changes that occurred since the last scan. This enables the
+ADInventory Data Collector to function efficiently within large environments. Each time you run it
 against different domain controllers, it restarts the cycle.
 
 ## ADInventory Query Configuration
@@ -64,5 +63,5 @@ contains the following wizard pages:
 
 ![Active Directory Inventory DC Wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/adinventory/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the **Don't display this page the next time** checkbox while the
+wizard is open, then save the configuration settings.

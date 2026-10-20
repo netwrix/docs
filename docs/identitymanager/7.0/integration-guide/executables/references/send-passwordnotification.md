@@ -12,9 +12,9 @@ sidebar_position: 340
 
 Consider a user who needs an account in an external system. Consider that this account requires a password.
 
-As an example, we will consider that the id of the [Resource Type Mappings](../../../integration-guide/toolkit/xml-configuration/connectors/resourcetypemappings) associated with the external system is 10, and the id of the assigned resource type associated with the user is 1000.
+As an example, the id of the [Resource Type Mappings](../../../integration-guide/toolkit/xml-configuration/connectors/resourcetypemappings) associated with the external system is 10, and the id of the assigned resource type associated with the user is 1000.
 
-Once the password is set, we need to communicate this password to the user. We send a mail notification to inform the user.
+After the password is set, communicate this password to the user. Send a mail notification to inform the user.
 
 `--password true --assigned-resource-type 1000 --resource-type-mapping 10`
 

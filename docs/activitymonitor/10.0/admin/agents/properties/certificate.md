@@ -9,7 +9,7 @@ sidebar_position: 5
 Activity Monitor Agent uses certificates to secure the connection between the Linux Agent and the Console / API Server; 
 between NAS devices and the Agent; between the Agent and REST API users.
 
-By default, the Agent uses an automatically generated self-signed certificate. The Console and the API Server do not enforce 
+By default, the Agent uses an automatically generated self-signed certificate. The Console and the API Server don't enforce 
 validity checks on these self-signed agent certificates.
 
 This self-signed certificate can be replaced with one issued by a Certification Authority. Once replaced, the Console and 
@@ -57,7 +57,7 @@ This CSR file will contain the agent’s hostname, FQDN, static IP addresses, op
 
 The CSR files generated in the previous step must be manually submitted by a user to their Certification Authority. This process must be performed manually, outside of the Activity Monitor, due to the varying workflows and policies inherent to different Certification Authorities.
 This step yields a set of certificate files for the agents issued by the Certification Authority based on the CSRs. The CA certificate itself also needs to be collected. 
-Make sure that the agent certificates have the `Server Authentication` purpose listed in the Extended Key Usage extension and have DER or PEM encoding.  
+ensure that the agent certificates have the `Server Authentication` purpose listed in the Extended Key Usage extension and have DER or PEM encoding.  
 
 If you are using OpenSSL’s Micro CA, you can generate a certificate from a CSR file using the `x509 -req` command.
 
@@ -80,19 +80,19 @@ If your deployment includes multiple Console instances, each instance must be up
 
 ## Using Self-Signed Certificates
 
-The **Manage certificates** wizard can be used to switch to automatically generated self-signed certificates. The wizard presents two options:
+Use the **Manage certificates** wizard to switch to automatically generated self-signed certificates. The wizard presents two options:
 
 1. **Use existing self-signed certificates**
 2. **Generate new private key and self-signed certificate** 
 
 The first option attempts to locate and apply a previously generated self-signed certificate, if one exists, that was in use prior 
-to application of a CA-issued certificate. If the certificate does not exist, a new one will be created. 
+to application of a CA-issued certificate. If the certificate doesn't exist, a new one will be created. 
 
 This approach may be beneficial in deployments with multiple instances of the Console or API Server that still rely on this specific 
 self-signed certificate, so its restoration would reinstate their operational status.  
 
 The second option will generate a new private key and a corresponding self-signed certificate for the agent. 
-In the event of a suspected compromise of the agent's private key, this option should be employed.
+If there is a suspected compromise of the agent's private key, use this option.
 
 The **Apply Changes** button immediately applies the changes to the agents.
 
@@ -142,7 +142,7 @@ Parameters:
 
 * `ca-file` - Path to the CA certificate file.
 * `file` - Path to the agent's certificate file to apply.
-* `what-if` (optional) - If specified, the CA and agent certificates are validated, but the new certificate is not applied. 
+* `what-if` (optional) - If specified, the CA and agent certificates are validated, but the new certificate isn't applied. 
 Use this option to check the certificates before applying. 
 
 ### **Use Self-Signed Certificate**

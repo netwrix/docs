@@ -14,7 +14,7 @@ Configure the credentials with the following rights on the proxy servers:
 - Granted the Backup files and directories local policy privilege
 - Granted the Log on as a batch privilege
 
-Additionally, the credential must have `WRITE` access to the `…\StealthAUDIT\FSAA` folder in the installation directory on the proxy server as well as on the Access Analyzer Console server. This is required by either the user account running the Access Analyzer application, when manually executing jobs within the console, or the Schedule Service Account assigned within Access Analyzer, when running jobs as a scheduled tasks.
+Additionally, the credential must have `WRITE` access to the `…\StealthAUDIT\FSAA` folder in the installation directory on the proxy server as well as on the Access Analyzer Console server. Whichever account runs the job needs this access — either the user account running the Access Analyzer application, when you execute jobs manually within the console, or the Schedule Service Account assigned within Access Analyzer, when jobs run as scheduled tasks.
 
 :::tip
 Remember, Remote Registry Service must be enabled on the host where the applet is deployed (for
@@ -29,9 +29,8 @@ for network authentication” must be disabled for the applet to start.
 :::
 
 
-Sensitive Data Discovery Auditing scans require .NET Framework 4.7.2 or later to be installed on the
-server where the applet is to be deployed in order for Sensitive Data Discovery collections to
-successfully occur.
+Sensitive Data Discovery Auditing scans require .NET Framework 4.7.2 or later on the server where
+the applet is deployed.
 
 
 See the [Proxy Mode with Applet Port Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/scanoptions/proxy-mode-scans/with-applet/proxymodeappletports.md) topic for firewall rule
@@ -40,14 +39,14 @@ information.
 **Secure Proxy Communication Considerations**
 
 For Proxy Mode with Applet scans, the certificate exchange mechanism and certificate exchange port
-must be configured via the File System Access Auditing Data Collector Wizard before executing a
-scan. See the
+must be configured via the File System Access Auditing (FSAA) Data Collector Wizard before executing
+a scan. See the
 [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md)
 topic for additional information.
 
 ## Accounts Used
 - **Job Execution:** Scheduled Task or Console User (launches the job)
-- Console ↔ Applet: **NAA** **Computer Account (Kerberos)**
+- Console ↔ Applet: **Netwrix Access Analyzer (NAA) Computer Account (Kerberos)**
 - Target Access (Applet ↔ Targets): Connection Profile Account
 
 :::note

@@ -13,21 +13,21 @@ documents only, or with any documents from the content source, etc.
 
 The following options are available:
 
-- **Any Document** — with this option selected, the workflow will be applied to all documents in the
+- **Any Document** — with this option selected, the system applies the workflow to all documents in the
   specified content source
-- **Any Classified Document** — with this option selected, the workflow will be applied to the
+- **Any Classified Document** — with this option selected, the system applies the workflow to the
   documents in the specified source if they were tagged by any classification
 - **Specific Classification** — with this option selected, you need to specify whether to apply the
   workflow to the classified or non-classified documents
 
     - To process only documents classified by specific classification, select **Classified** (this
-      will act as including filter)
+      acts as an including filter)
     - To process only non-classified documents, select **Not Classified**.
 
-    If you have selected any of the **Specific Classification** variants, you should then specify
-    taxonomy terms that will be applied to filter out the documents for your workflow.
+    If you have selected any of the **Specific Classification** variants, specify
+    taxonomy terms to filter documents for your workflow.
 
-- Document Age - with this option selected, the workflow will be applied to the documents with a
+- Document Age - with this option selected, the system applies the workflow to the documents with a
   certain age requirement.
 
     You can select property to determine the file age:
@@ -49,11 +49,10 @@ The following options are available:
 
     1. **Taxonomy** - select what classification taxonomy from the existing ones should be used.
     2. **All Terms** - select this option if you want to filter by all terms in the taxonomy. If
-       this option is cleared, then after selecting the necessary taxonomy, you will be presented
-       the list of its terms. Select the one you plan to use for filtering.
+       this option is cleared, the system displays the list of available terms after you select the taxonomy. Select the one you plan to use for filtering.
 
     :::note
-    Multiple selection is not supported: to configure several filter values, you should
+    Multiple selection isn't supported: to configure several filter values, you should
     repeat this procedure for each filter value you need.
     :::
 

@@ -19,14 +19,14 @@ trigger when their associated events occur:
 
 |     | Workflow Name                              | Description                                                                                                                                                              | Default Approver                                     |
 | --- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
-| 1.  | Workflow to Reset Password                 | When a user resets his or her password. It does not apply when helpdesk users reset the passwords of other users.                                                        | Primary and additional managers of the user          |
+| 1.  | Workflow to Reset Password                 | When a user resets his or her password. It doesn't apply when helpdesk users reset the passwords of other users.                                                        | Primary and additional managers of the user          |
 | 2.  | Workflow to Change Group Expiration Policy | When a user changes the expiry policy of a group. By default, this workflow is disabled and no approver is specified. You can edit the workflow to add an approver.      | None                                                 |
 | 3.  | Workflow to Nest a Group                   | When a user adds a group (Group A) to the membership of another group (Group B).                                                                                         | Primary and additional owners of Group A             |
 | 4.  | Workflow to Join a Group                   | When a user joins a semi-private group.                                                                                                                                  | Primary and additional owners of the group           |
 | 5.  | Workflow to Leave a Group                  | When a user leaves a semi-private group.                                                                                                                                 | Primary and additional owners of the group           |
 | 6.  | Workflow to Transfer a User                | When a user transfers his or her direct report.                                                                                                                          | The new manager                                      |
 | 7.  | Workflow to Terminate a User               | When a manager terminates a direct report. By default, this workflow is disabled and no approver is specified. You can edit the workflow to add an approver.             | None                                                 |
-| 8.  | Workflow to Change Manager                 | When a user changes his or her primary or additional manager. If the user does not have a primary manager, and no default approver is set, the request is auto approved. | Existing primary and additional managers of the user |
+| 8.  | Workflow to Change Manager                 | When a user changes his or her primary or additional manager. If the user doesn't have a primary manager, and no default approver is set, the request is auto approved. | Existing primary and additional managers of the user |
 
 The administrator can also define more workflows for the identity store.
 
@@ -51,7 +51,7 @@ Requests_ tab.
 
 ## Workflow Implementation
 
-Directory Manager workflows are carried out in a standard action sequence:
+Directory Manager workflows are performed in a standard action sequence:
 
 - When a user performs an action in Directory Manager, it is evaluated according to the workflow
   settings.
@@ -61,7 +61,7 @@ Directory Manager workflows are carried out in a standard action sequence:
   and a 'request sent' notification is send to the requester. When the request is approved, the
   requested changes are made in the directory and change notifications go to the requester and
   approvers (except the one who has approved the request) by email.
-- If the request is denied, information is not updated in the directory and an email notification is
+- If the request is denied, information isn't updated in the directory and an email notification is
   sent to the requester and th pe approvers (except the one who has approved the request) with an
   explanation of why it was denied.
 
@@ -78,30 +78,30 @@ Email notifications are sent when an SMTP server has been configured for the ide
 ## Approving authority for a Workflow Request (without Workflow Acceleration)
 
 For each workflow, an approving authority is also specified. The following scenarios are valid when
-workflow approver acceleration settings are not applied:
+workflow approver acceleration settings aren't applied:
 
-- If the object specified as an approver in a workflow route is not available (such as if it is
+- If the object specified as an approver in a workflow route isn't available (such as if it is
   disabled or not specified), the workflow request would be routed to the default approver. If the
-  default approver is not specified or disabled, the request is auto approved.
+  default approver isn't specified or disabled, the request is auto approved.
 
     See the
     [Specify a Default Approver](/docs/directorymanager/11.1/admincenter/workflow/advancedsettings.md#specify-a-default-approver)
     topic.
 
 - If the requester is also the approver for that workflow, the request is auto-approved.
-- When a Synchronize job runs to set the manager for a user who does not already have a manager, the
+- When a Synchronize job runs to set the manager for a user who doesn't already have a manager, the
   following happens:
 
     - The _Workflow to Change Manager_ will trigger if a default approver is set in advanced
       workflow settings.
-    - If the default approver is not set, the workflow will not trigger and the user's manager will
+    - If the default approver isn't set, the workflow will not trigger and the user's manager will
       be set without requiring any approval.
 
 ## Workflow Acceleration
 
 The workflow approver acceleration feature in Directory Manager ensures that no workflow request
 remains unnoticed and undecided. Based on certain rules, it automatically accelerates a request to
-another approver if the current approver does not act on it for a certain number of days.
+another approver if the current approver doesn't act on it for a certain number of days.
 
 The administrator can enable and configure workflow approver acceleration for an identity store in
 Directory Manager Admin Center.

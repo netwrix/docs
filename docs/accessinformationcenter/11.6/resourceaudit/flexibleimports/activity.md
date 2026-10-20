@@ -16,7 +16,7 @@ topic for information on changing this option.
 This report is comprised of the following columns:
 
 - Access Time – Date and timestamp for when the operation occurred
-- Trustee Name – Owner of the trustee account
+- Trustee Name – Name of the trustee
 - Trustee Account – Account associated with the trustee
 - Department – Department to which the trustee account belongs
 - Title – Trustee’s title

@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The reason for assigning owners to resources is to enable those resources to be included in reviews,
 or attestations, conducted through the application. In order for this to work, the assigned owner
-needs to claim that ownership responsibility. Resources that do not have confirmed owners may fall
+needs to claim that ownership responsibility. Resources that don't have confirmed owners may fall
 through the cracks.
 
 **NOTE:** This does require the Notification settings to be configured for the Access Reviews
@@ -27,7 +27,7 @@ this column to indicate the owner confirmation status:
 | ![Green circle with white checkmark](/images/accessinformationcenter/12.0/resourceowners/statusconfirmed.webp)    | Confirmed | Indicates the assigned owner confirmed ownership of the resource. Hover over the icon to view the date timestamp of the confirmation.                                                                                                                                                                                                                                                                                                              |
 | ![Red circle with white X](/images/accessinformationcenter/12.0/resourceowners/statusdeclined.webp)               | Declined  | Indicates the assigned owner declined ownership of the resource. These individuals would have been asked to suggest an alternative owner. Check the Notes for the resource to view this information. Hover over the icon to view the date timestamp of the decline. _Remember,_ a resource with declined ownership needs to be updated to assign a new owner. See the [Update Resource Wizard](/docs/auditor/10.7/accessreviews/resourceowners/interface/update.md) topic for additional information. |
 
-If multiple owners have been assigned, there is a choice for which assigned owner(s) should receive
+If multiple owners have been assigned, there is a choice for which assigned owners should receive
 the confirmation. If multiple owners were sent the request, the column remains as a waiting symbol
 until the assigned Primary owner replies.
 

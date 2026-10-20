@@ -37,13 +37,12 @@ topic for additional information.
 ![Home page for the Builtin Admin account on first launch](/images/accessinformationcenter/12.0/admin/builtinadminhome.webp)
 
 After changing the Builtin Administrator password at first launch, you will be asked to login again.
-The Home page opens. The first thing that should be done is to configure console access for domain
-users. Additionally, other settings can be configured or modified through the Configuration
+The Home page opens. First, configure console access for domain users. Additionally, other settings can be configured or modified through the Configuration
 interface. Click **Configure Console** in the Your Links section to open the Configuration
 interface. See the [Console Access Page](/docs/accessinformationcenter/12.0/admin/configuration/consoleaccess.md) topic for additional
 information.
 
-Once console access to the has been configured, there are a few login methods you can offer users.
+After you configure console access, there are a few login methods you can offer users.
 The features available to users are controlled by the role assigned and your license key. See the
 [URL & Login](/docs/accessinformationcenter/12.0/admin/login/login.md) topic for information on how users will log in and where they are directed
 after login.

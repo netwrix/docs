@@ -60,7 +60,7 @@ Creates the AccessCertification Job.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Job Identifier="New_Access_Certif" DisplayName_L1="95: Execute Access Reviews" DisplayName_L2="95: Exécution des campagnes de certification" CronTabExpression="*/15 * * * *" CronTimeZone="ServerTime">

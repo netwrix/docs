@@ -7,7 +7,7 @@ sidebar_position: 120
 # Additional Properties Tab
 
 The Additional Properties tab on an output Properties window is where comments and displayed host
-name can be modified. These settings are initially configured when the output is added.
+name you can modify. These settings are initially configured when the output is added.
 
 Select an output from the Monitored Hosts & Services tab and click **Edit** to open the output Properties
 window.
@@ -32,7 +32,7 @@ Properties window closes.
 
 **Integration with Netwrix Threat Prevention for NAS Monitoring**
 
-If a Threat Prevention Agent has been deployed to the same Windows proxy server where and activity
-agent is deployed to monitor NAS devices, then the **Comment** column in the monitored hosts/services table
-identifies the host as being “Managed by Threat Prevention”, and that output
-isn't editable through the Activity Monitor Console. Add another output if needed.
+If you deploy a Threat Prevention Agent to the same Windows proxy server where an activity
+agent monitors NAS devices, the **Comment** column in the monitored hosts/services table
+identifies the host as “Managed by Threat Prevention”, and that output
+you can't edit through the Activity Monitor Console. Add another output if needed.

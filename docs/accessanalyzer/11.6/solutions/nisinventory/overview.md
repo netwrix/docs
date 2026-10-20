@@ -28,12 +28,12 @@ when auditing NFS shares. This information can also be used in the Unix Solution
 **Location**
 
 The .NIS Inventory Solution is a core component of all Enterprise Auditor installations. It can be
-installed from the Enterprise Auditor Instant Job Wizard..
+installed from the Enterprise Auditor Instant Job Wizard.
 
 ![.NIS Inventory Solution in the Jobs Tree](/images/accessanalyzer/11.6/solutions/nisinventory/jobstree.webp)
 
-Once it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **.NIS
-Inventory**. This group has been named in such a way to keep it at the top of the Jobs tree.
+After it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **.NIS
+Inventory**. This group's name keeps it at the top of the Jobs tree.
 
 ## NIS Scan Job
 

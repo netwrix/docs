@@ -6,10 +6,10 @@ sidebar_position: 20
 
 # Self-Audit
 
-Built-in Netwrix Auditor self-audit allows you to track changes to the product configuration,
-including monitoring plans, data sources, audit scope and details about it (before-after values).
-This helps you to ensure that monitoring scope is complete and changed only in line with the
-workflows adopted by our organization.
+The built-in Netwrix Auditor self-audit feature tracks changes to the product configuration,
+including monitoring plans, data sources, audit scope, and details about it (before-after values).
+This helps ensure that monitoring scope is complete and changes align with your organization's
+workflows.
 
 The corresponding option is available on the General tab of Netwrix AuditorSettings. By default, the
 **Collect data for self-audit checkbox** is selected (enabled).
@@ -19,8 +19,6 @@ The corresponding option is available on the General tab of Netwrix AuditorSetti
 ### Search for Self-audit Results
 
 All Auditor self-audit Activity Records can be found quickly using AuditIntelligence Search.
-
-Follow the steps to search for self-audit results.
 
 **Step 1 –** In Auditor, navigate to Search.
 
@@ -38,11 +36,9 @@ the [View and Search Collected Data](/docs/auditor/10.8/admin/search/overview.md
 
 ### Review Auditor Self-Audit Report
 
-Also, there is a new Netwrix Auditor Self-Audit report available under Organization Level Reports in
-the predefined set of reports. This report shows detailed information on changes to Auditor
-monitoring plans, data sources and audited items.
-
-Follow the steps to review the Self-audit report.
+A Netwrix Auditor Self-Audit report is available under Organization Level Reports in the predefined
+set of reports. This report shows detailed information on changes to Auditor monitoring plans, data
+sources, and audited items.
 
 **Step 1 –** In Auditor, navigate to Reports > Organization Level Reports.
 

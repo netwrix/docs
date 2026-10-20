@@ -26,11 +26,11 @@ This guide leads the reader through the steps to install Identity Manager for p
 - Identity Manager Server running with IIS
 - Identity Manager Database connection with Windows authentication
 
-This guide will allow you to **extrapolate** less common configurations and will provide links to the relevant [Network Configuration](../../integration-guide/network-configuration) sections.
+With this guide, you can **extrapolate** less common configurations and find links to the relevant [Network Configuration](../../integration-guide/network-configuration) sections.
 
-Our examples use the fabled [Contoso Corporation](https://docs.microsoft.com/en-us/microsoft-365/enterprise/contoso-overview?view=o365-worldwide) as target organization.
+The examples use the fabled [Contoso Corporation](https://docs.microsoft.com/en-us/microsoft-365/enterprise/contoso-overview?view=o365-worldwide) as target organization.
 
-## What's Next?
+## What's Next
 
 The first step consists in [Create a Working Directory](../../installation-guide/production-ready/working-directory).
 

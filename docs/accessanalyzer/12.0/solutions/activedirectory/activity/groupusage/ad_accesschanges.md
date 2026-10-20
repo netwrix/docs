@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # AD_AccessChanges Job
 
-The AD_AccessChanges Job highlights the type and number of resources across the environment where
-access has been affected. Groups which have historically been the cause of most access changes are
-highlighted, to show potential issues in access sprawl and provisioning.
+The AD_AccessChanges Job highlights the type and number of resources in the environment affected by
+access changes. It also highlights groups that have historically caused the most access changes,
+revealing potential issues in access sprawl and provisioning.
 
 ## Analysis Tasks for the AD_AccessChanges Job
 
@@ -16,7 +16,7 @@ Navigate to the **Jobs** > **Active Directory** > **6.Activity** > **Group Usage
 **AD_AccessChanges** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -21,9 +21,9 @@ similarity may indicate that a user is serializing their passwords. For example,
 
 For each option enabled, set the rules:
 
-- Character substitution – Select the check box to reject passwords that rely on character
+- Character substitution – Select the checkbox to reject passwords that rely on character
   substitution to comply with this rule.
-- Words typed backward – Select the check box too additionally test passwords with their characters
+- Words typed backward – Select the checkbox too additionally test passwords with their characters
   reversed. Enabling bi-directional analysis stops users from circumventing this rule by reversing
   the order of characters in their password. For example, a user may enter "drowssapdloym" instead
   of "myoldpassword".

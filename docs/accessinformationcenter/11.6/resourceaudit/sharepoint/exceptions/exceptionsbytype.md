@@ -12,7 +12,7 @@ Permission Source table.
 
 ![Exceptions report at the exception type level](/images/accessinformationcenter/11.6/resourceaudit/sharepoint/exceptions/exceptionsbytype.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Trustee Name – Owner of the trustee account
 - Path – Location of the resource where the exception exists
@@ -20,13 +20,12 @@ This report is comprised of the following columns:
 If the selected trustee in the top section of the report is a group, the Group Membership pane
 displays the group membership, including nested groups.
 
-There is one table at the bottom displaying Permission Source for the select trustee. It contains
-all of the ways the selected trustee has been granted rights to the selected resource.
+A table displays Permission Source for the select trustee. It shows the ways the selected trustee has been granted rights to the selected resource.
 
 ![Permission Source table](/images/accessinformationcenter/11.6/resourceaudit/sharepoint/exceptions/exceptionsbytypetable.webp)
 
 The number of rows for this table indicates the number of ways this trustee has been granted access.
-This table is comprised of the following columns:
+This table includes the following columns:
 
 - Source Path – Location for which the trustee was granted rights to the selected resource, which
   can be represented two ways:

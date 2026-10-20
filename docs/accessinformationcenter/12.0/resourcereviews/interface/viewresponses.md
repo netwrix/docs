@@ -17,7 +17,7 @@ The information displayed in the table includes:
 - Item Reviewed — Item upon which changes were suggested by the owner
 - Current — Current state of the item at the time of the review
 - Desired — Change suggested by the owner
-- Notes — Icon indicates a Note has been added. Click on the icon to read the attached note(s).
+- Notes — Icon indicates a Note has been added. Click the icon to read the attached notes.
 - Approval — Status of the Review Administrator's approval
 
     - Clock — Indicates waiting on the Review Administrator to make an official decision
@@ -38,15 +38,13 @@ been met.
 :::
 
 
-If the Access Information Center has been configured to commit Active Directory changes, the icon at
-the front of the Item Reviewed column is yellow. The selected action is automatically committed
-according to the type of review:
+If the Access Information Center is configured to commit Active Directory changes, the icon at the front of the Item Reviewed column is yellow. The selected action is automatically committed according to the type of review:
 
-- Membership — Clicking accept removes group membership from the trustee
+- Membership — Clicking Accept removes the trustee from the group
 - Access and Permissions — If the prerequisite of resource based groups are set up for the
-  resources, click accept will change group membership for the trustee. If the desire is to change
-  access, the trustee is moved to the group with the desired access or permissions and removed from
-  the group granting the current access or permissions. If the desire is to remove access, the
+  resources, click accept will change group membership for the trustee. If you want to change
+  access, the trustee is moved to the group with the access or permissions you want and removed from
+  the group granting the current access or permissions. If you want to remove access, the
   trustee is removed from the group granting the current access or permissions.
 - Sensitive Data — The only action that can be committed is to flag a file as a false positive for
   the selected criteria

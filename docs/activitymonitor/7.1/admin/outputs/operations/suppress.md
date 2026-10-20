@@ -14,7 +14,7 @@ actions that have not been explicitly triggered by users.
 One of the most prominent examples is the Windows File Explorer - the standard application for file
 system browsing on the Windows family of operating systems. Over the years, File Explorer has had a
 number of improvements and new features. File Explorer displays various information about files to
-provide a better user experience. This allows users to view file content without having to open
+provide a better user experience. This lets you view file content without having to open
 them.
 
 File Explorer displays icons for certain file types like executable (.exe) files. Depending on the
@@ -25,7 +25,7 @@ thumbnail of the files contained within the sub-folder on top of the sub-folder 
 additional functionality is executed automatically, mostly without the user's explicit action or
 intention.
 
-As an example, a user may wish to open the MySampleReport.docx document located in the
+As an example, a user may want to open the MySampleReport.docx document located in the
 MyTestDepartment folder. The user opens the folder, locates the file and double-clicks to open it.
 From the user's perspective, only two actions were performed:
 
@@ -50,7 +50,7 @@ teams and IT auditing software. At the file system level, preview reads are perc
 operations, like file copying or opening a file in an application. There exists no distinguishing
 factor between explicit user activity and implicit actions by File Explorer. Whether it is a preview
 read, opening the file in Notepad, or copying the file, all these operations are perceived as the
-same Read operation at the file system level. Therefore, it is not possible to reliably filter
+same Read operation at the file system level. Therefore, it isn't possible to reliably filter
 unintentional activity without the risk of suppressing genuine user actions.
 
 The Activity Monitor employs various techniques to minimize noise. These methods all rely on

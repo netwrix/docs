@@ -7,7 +7,7 @@ sidebar_position: 50
 # Reporting Module Server Requirements
 
 :::warning
-Netwrix Threat Manager cannot be installed on the same server as Netwrix Threat Manager
+Netwrix Threat Manager can't be installed on the same server as Netwrix Threat Manager
 Reporting Module.
 :::
 

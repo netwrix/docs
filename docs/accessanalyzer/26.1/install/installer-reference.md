@@ -1,0 +1,474 @@
+---
+title: Installer Reference
+description: The dspm-installer flags, environment variables, configuration file keys, exit codes, preflight checks, upgrade command, and log locations.
+sidebar_position: 6
+---
+
+`dspm-installer` takes its settings from four places. A flag overrides an environment variable, an environment variable overrides the configuration file, and the configuration file overrides the built-in default. When the installer runs in a terminal, it prompts for any required value still missing; without a terminal, a missing required value is an error.
+
+```bash
+dspm-installer [flags]
+dspm-installer wait-for-apps [flags]
+dspm-installer upgrade --bundle-dir <path> [flags]
+dspm-installer upgrade --download [flags]
+dspm-installer upgrade --download --migrate [flags]
+dspm-installer upgrade --connect [flags]
+dspm-installer install-agent --server <url> --token <bundle> --name <name> [flags]
+dspm-installer update-cert [flags]
+dspm-installer rollback-cert [flags]
+dspm-installer --help
+dspm-installer --version
+```
+
+There are no single-letter flags.
+
+## Flags
+
+Two environment variable names need care: `--hostname` reads `DSPM_HOSTNAME`, not `HOSTNAME`, because the shell sets `HOSTNAME` itself, and `--assume-yes` reads `DSPM_ASSUME_YES`, not `ASSUME_YES`.
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--license-key` | `LICENSE_KEY` | none | Netwrix license key. Required unless you pass `--airgap`. The installer validates it online before the install starts. Prefer the `LICENSE_KEY` environment variable: a flag value is visible in the process list. |
+| `--airgap` | `DSPM_AIRGAP` | `false` | Install fully offline from the media at `--bundle-dir`, with no network calls and no license key needed at install time. Requires `--bundle-dir`. Mutually exclusive with `--license-key`, `--local-charts-dir`, and `--use-mirrored-images`, since air-gapped mode sources software and images from the media itself. |
+| `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the offline install media: the downloaded `.tar.gz` archive or an extracted directory. Required when you pass `--airgap`. Netwrix publishes media for both `amd64` and `arm64`; download the media that matches the host's architecture, since the installer rejects media built for the wrong one. The installer reads the version and architecture from the archive's file name, so keep the name as downloaded. |
+| `--hostname` | `DSPM_HOSTNAME` | none | Fully qualified domain name users open in their browsers. The installer lowercases it before use. |
+| `--first-admin-email` | `FIRST_ADMIN_EMAIL` | none | Email address of the first administrator. Required. Becomes that person's username. |
+| `--first-admin-name` | `FIRST_ADMIN_NAME` | none | Full name of the first administrator. |
+| `--tls-cert` | `TLS_CERT_FILE` | `/etc/dspm/tls.crt` | PEM TLS certificate file, full chain with the leaf certificate first. Requires `--tls-key`. |
+| `--tls-key` | `TLS_KEY_FILE` | `/etc/dspm/tls.key` | PEM TLS private key file. Requires `--tls-cert`. |
+| `--ca-bundle` | `TLS_CA_BUNDLE_FILE` | none | PEM certificate authority (CA) bundle. Needed when a private CA issued the certificate. |
+| `--generate-self-signed-cert` (alias `--self-signed`) | `DSPM_GENERATE_SELF_SIGNED_CERT` | `false` | Generate a one-time self-signed certificate and key pair at the resolved TLS paths instead of requiring one on disk. Requires `--hostname`. The installer only generates a certificate when none already exists at those paths — it never overwrites an existing one — and skips this under `--dry-run`. |
+| `--tls-cert-validity-days` (alias `--cert-days`) | `DSPM_TLS_CERT_VALIDITY_DAYS` | `365` | Validity period, in days, for a certificate `--generate-self-signed-cert` generates. Maximum `36500`. |
+| `--cert-manager-issuer-mode` (alias `--issuer-mode`) | `CERT_MANAGER_ISSUER_MODE` | `none` | Hand issuance and renewal of the `dspm-tls` certificate to cert-manager instead of managing it yourself: `none`, `selfsigned`, `adcs`, or `acme`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for the `acme` mode. The installer doesn't save this to `/etc/dspm/installer.yaml` — see [Configuration File](#configuration-file). |
+| `--size` | `SIZE` | `medium` | Deployment size: `small`, `medium`, `large`, or `enterprise`. Case-insensitive. See [Size](requirements.md#size) for the CPU, RAM, and disk each size requires. |
+| `--target-revision` | `TARGET_REVISION` | `1.*` | Release version to install, such as `1.5.0`. The default installs the latest 1.x release. The installer refuses a release older than itself and exits with code `16`. Also appears as **Target Revision** under **Show advanced settings?**. |
+| `--progress` | `DSPM_PROGRESS` | `auto` | Download progress style: `auto`, `bar`, `ascii`, or `lines`. Also applies to `upgrade`. See [Download progress](run-the-installer.md#download-progress). |
+| `--storage-dir` | `DSPM_STORAGE_DIR` | `/var/lib` | Directory holding everything the Kubernetes platform writes: container image layers, the server datastore, and every persistent volume. Set it at install time only. It also moves the install media to `<dir>/dspm/media`. Also appears as **Storage Directory** under **Show advanced settings?**. See [Install media](requirements.md#install-media). |
+| `--accept-warnings` | `ACCEPT_WARNINGS` | `false` | Continue past preflight warnings without asking. |
+| `--assume-yes` | `DSPM_ASSUME_YES` | `false` | Skip the review screen that appears when the configuration file already supplies every required value. |
+| `--dry-run` | `DRY_RUN` | `false` | Print the planned actions and exit without installing. Needs no TLS files and writes no configuration file. |
+| `--log-level` | `LOG_LEVEL` | `info` | Detail the installer writes to the log file: `debug`, `info`, `warn`, or `error`. |
+| `--log-path` | `LOG_PATH` | `/var/log/dspm-installer.log` | Path to the installer's log file. If you set this explicitly (flag, environment variable, or configuration file) and the path isn't writable or is a symlink, the installer stops with an error instead of falling back to the terminal. |
+| `--storage-dir` | `DSPM_STORAGE_DIR` | `/var/lib` | Directory holding everything the Kubernetes platform writes: container image layers, the server datastore, and every persistent volume. Set it at install time only. Also appears as **Storage Directory** under **Show advanced settings?**. See [Storage Location](#storage-location). |
+| `--postgres-data-dir` | `POSTGRES_DATA_DIR` | none | Custom directory for the application database's data. |
+| `--clickhouse-data-dir` | `CLICKHOUSE_DATA_DIR` | none | Custom directory for the analytics store's data. |
+| `--log-exports-storage` | `LOG_EXPORTS_STORAGE` | none | Persistent volume claim (PVC) size for log exports, such as `10Gi`. |
+| `--skip-preflight` | `SKIP_PREFLIGHT` | `false` | Skip the preflight checks. For testing only. |
+| — | `DSPM_MEDIA_INSTALL` | on | Set to `false` to install from the Netwrix registry instead of downloaded media. |
+| `--preflight` | `DSPM_PREFLIGHT` | `false` | Run the preflight checks only, then exit without installing. See [Preflight-only mode](#preflight-only-mode). |
+| `--version` | — | — | Print the installer version and exit. |
+| `--help` | — | — | Print flag help and exit. |
+
+The defaults for `--tls-cert` and `--tls-key` apply only when you omit both flags. Supplying one without the other is an error: `--tls-cert and --tls-key must both be provided together`.
+
+### Storage Location
+
+By default, everything the Kubernetes platform writes lands under `/var/lib/rancher/k3s`: extracted container image layers and every container's writable layer, the server datastore, and, under `storage/`, every persistent volume in the cluster (PostgreSQL, ClickHouse, NATS, Redis, Prometheus, Metabase, log exports, and PostgreSQL backups). The image layers alone take about 13 GB, and the volumes then grow toward the disk figure for the chosen `--size`.
+
+`--storage-dir` replaces `/var/lib`, so the whole tree moves to a mount you choose and you don't have to add space to `/var/lib`:
+
+```bash
+sudo dspm-installer \
+  --license-key "$LICENSE_KEY" \
+  --hostname dspm.corp.example.com \
+  --storage-dir /data
+```
+
+This puts the platform's data directory at `/data/rancher/k3s` and the volumes at `/data/rancher/k3s/storage`. The `rancher/k3s` tail mirrors the default layout and means the installer owns a subdirectory of your mount rather than the mount itself, so `--uninstall` can clean up completely without touching anything else you keep on `/data`.
+
+- **The directory doesn't need to exist, but some ancestor of it must.** The installer accepts `--storage-dir /data/dspm/storage` when only `/data` exists and rejects the path when nothing above it does. A mistyped path whose volume isn't mounted would otherwise fill the root filesystem, which is the problem this flag exists to avoid.
+- **The installer rejects some paths.** The path must be absolute and can't be `/`. It can't be, or sit under, `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, so `/usr/local/dspm` and `/root/dspm` both fail. It can't contain quotes, backslashes, `$`, spaces, tabs, newlines, or the characters `*`, `?`, `[`, and `]`. The nearest existing ancestor must be a directory the installer can write to.
+- **A small residual stays on `/var/lib`.** The platform hardcodes the kubelet root at `/var/lib/kubelet`, so pod-local `emptyDir` volumes and rotated container logs under `/var/log` don't move. The charts cap each workload's ephemeral storage at 2 GiB, so preflight only warns when `/var/lib` has less than 10 GB free, while free space on the storage mount is a hard requirement.
+- **Set it at install time.** On a server that already has a cluster, the installer compares `--storage-dir` with the directory the cluster uses. If they differ, it exits with code 21 and changes nothing. That includes re-running a relocated install without `--storage-dir`, because the default `/var/lib` no longer matches. The check is best-effort and doesn't run when the installer can't read the installed data directory. Without it, pointing an existing install at a new directory wouldn't migrate anything: the platform would come up as a new, empty cluster and leave every volume, secret, and database stranded at the old path. To move deliberately, run `--uninstall` first, then install again with the new `--storage-dir`.
+- **`--uninstall` deletes it.** The uninstall removes the relocated data directory and its volumes but leaves the `--storage-dir` parent itself in place. It preserves any directory that's a mountpoint, so it can leave the tree behind; the installer checks afterward and names the path if it survived instead of reporting a clean uninstall.
+- **`--postgres-data-dir` and `--clickhouse-data-dir` are independent.** Each replaces one service's volume with a static host-path volume, so a service with its own directory doesn't use the storage directory at all. `--uninstall` leaves those directories behind and says so.
+
+The interactive wizard asks for the value under **Show advanced settings?** as **Storage Directory**, and the installer saves it to the [configuration file](#configuration-file) as `storage-dir`, so re-runs keep it.
+
+### Advanced Flags
+
+These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart the installer manages. Most installs never need them — they exist for troubleshooting, custom environments, and uninstalling.
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--k3s-version` | none | `v1.33.4+k3s1` | K3s version to install. |
+| `--k3s-name` | none | `dspm` | K3s service and instance name. |
+| `--kubeconfig` | `KUBECONFIG` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-version` | none | `3.2.0` | ArgoCD image tag. |
+| `--argocd-namespace` | none | `argocd` | Kubernetes namespace for ArgoCD. A media install doesn't support a non-default value. |
+| `--argocd-reconciliation-timeout` | none | `1h` | How often ArgoCD self-heals configuration drift. The version-poller CronJob detects new releases separately. |
+| `--disable-dex` | none | `true` | Disable the Dex identity provider. |
+| `--disable-notifications` | none | `true` | Disable the ArgoCD notifications controller. |
+| `--helm-namespace` | none | `default` | Kubernetes namespace for the Helm chart. |
+| `--helm-values` | none | none | Path to a Helm values YAML file. |
+| `--chart` | none | none | Chart name, for custom chart sources. |
+| `--repo` | none | none | Helm repository URL, for custom chart sources. |
+| `--release` | none | none | Helm release name, for custom chart sources. |
+| `--local-charts-dir` | `LOCAL_CHARTS_DIR` | none | Mount a local Helm chart directory into `argocd-repo-server` and install from it with a `file://` source, instead of a remote repository. |
+| `--use-mirrored-images` | none | `true` | Pull container images from the Netwrix mirror registry. A media install rejects this flag. |
+| `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
+| `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all Access Analyzer data. Prompts for confirmation unless you pass `--force`. |
+| `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
+| `--tmp-dir` | `DSPM_TMP_DIR` | none | Hidden from `--help`. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](requirements.md#install-media). |
+
+A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
+
+### Certificate Manager Flags
+
+The installer only reads the following flags when `--cert-manager-issuer-mode` selects the matching mode: the Automatic Certificate Management Environment (ACME) flags apply to `acme`, and the Active Directory Certificate Services (AD CS) flags apply to `adcs`. See [Automatic TLS Certificates](automatic-tls-certificates.md) for `acme` and `selfsigned`, and [AD CS TLS Certificates](adcs-tls-certificates.md) for `adcs`.
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--acme-email` | `ACME_EMAIL` | none | Email address for the ACME account. Required in `acme` mode. |
+| `--acme-server` | `ACME_SERVER` | Let's Encrypt production | ACME directory URL. Point this at a private ACME certificate authority (CA) for internal issuance. |
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--adcs-url` | `ADCS_URL` | none | The Active Directory Certificate Services (AD CS) server's `/certsrv` web enrollment endpoint URL. Required in `adcs` mode. |
+| `--adcs-username` | `ADCS_USERNAME` | none | NT LAN Manager (NTLM) enrollment account for the AD CS server. Required in `adcs` mode. |
+| `--adcs-password` | `DSPM_ADCS_PASSWORD` | none | Password for `--adcs-username`. Required in `adcs` mode. The installer never persists it to the configuration file or logs it. |
+| `--adcs-template` | `ADCS_TEMPLATE` | `WebServer` | Certificate template to request from the AD CS server. |
+| `--adcs-ca-bundle` | `ADCS_CA_BUNDLE` | none | PEM bundle for TLS to the AD CS server itself. This is separate from `--ca-bundle`, which covers Access Analyzer's own certificate chain. |
+
+:::warning
+Set Extended Protection for Authentication (EPA) on the AD CS server's `/certsrv` endpoint to **Off** or **Allow**, not **Required**. The `adcs` issuer authenticates over NTLM without channel-binding tokens, so a `/certsrv` endpoint that requires EPA rejects every enrollment attempt with HTTP 401.
+:::
+
+:::note
+cert-manager's certificate signing request carries only Common Name and Organization in the subject. If the AD CS certificate template you name with `--adcs-template` requires Organizational Unit, Country, State, or Locality, AD CS rejects the enrollment.
+:::
+
+There's no interactive wizard step for `adcs` mode — configure it with flags only.
+
+### Value Checks
+
+The installer rejects bad values before it changes anything on the server.
+
+| Value | Rules |
+|---|---|
+| License key | Letters, digits, hyphens, and underscores only. The installer checks it online; an expired, suspended, unknown, or invalid key stops the install with exit code 10. If the installer can't reach the licensing service, it warns and continues. |
+| Hostname | Must contain a dot, must not be an IP address, must not end in `.localhost`, and must not exceed 253 characters. Each dot-separated part is 1 to 63 letters, digits, or hyphens and can't start or end with a hyphen. |
+| First administrator email | A plain address such as `admin@corp.example.com`, with a dotted domain and without a display name, quotes, backslashes, or spaces. The installer lowercases it before use. |
+| TLS certificate and key | PEM. The pair must match, the certificate must not be expired, and its Subject Alternative Names must include the hostname. A certificate that expires within 30 days produces a warning in the log. |
+| CA bundle | PEM with at least one certificate. The TLS certificate must chain to it. If the TLS certificate is self-signed and you give no bundle, the installer uses the certificate as its own bundle. |
+
+## Configuration File
+
+The installer keeps its answers in `/etc/dspm/installer.yaml`. It writes the file itself: after every confirmed prompt in an interactive run, or once after license validation in a flag-driven run. On the first save it prints `Progress saved to /etc/dspm/installer.yaml — future runs will pre-fill these values.` A later run reads the file and asks only for what's still missing, so a canceled install resumes where it stopped.
+
+Keys are the flag names. The installer writes `license-key`, `hostname`, `first-admin-email`, `first-admin-name`, `tls-cert`, `tls-key`, and `ca-bundle`, plus `target-revision` when you pin a version other than `1.*` and `storage-dir` when you set one other than `/var/lib`. It keeps any keys you add, and never saves operational flags such as `--accept-warnings`, `--assume-yes`, `--dry-run`, `--skip-preflight`, `--preflight`, and `--cert-manager-issuer-mode`. You can also write the file by hand before the first run.
+
+```yaml title="/etc/dspm/installer.yaml"
+license-key: XXXX-XXXX-XXXX-XXXX-XXXX-V3
+hostname: dspm.corp.example.com
+first-admin-email: admin@corp.example.com
+first-admin-name: Alice Smith
+tls-cert: /etc/dspm/tls.crt
+tls-key: /etc/dspm/tls.key
+ca-bundle: /etc/dspm/ca-bundle.pem
+```
+
+The file holds the license key, so the installer creates it owned by root with mode `0600` inside a `0755` directory. A later run without `sudo` can't read it; the error ends with `re-run with sudo, or remove the file`. If `/etc/dspm/installer.yaml` doesn't exist, the installer also looks for `~/.dspm/installer.yaml`. `--dry-run` never writes the file.
+
+When the file supplies every required value and the installer runs in a terminal, it first asks **Show advanced settings?** (the default is **No**), then shows the review screen and asks **Everything look good?** before it starts. Declining the review prints `Config file /etc/dspm/installer.yaml was loaded — edit or delete that file, or override individual values with flags.` Pass `--assume-yes` to skip both questions.
+
+## Exit Codes
+
+| Code | Meaning |
+|---|---|
+| 0 | Success. |
+| 1 | General failure: an invalid flag value, a hostname or TLS validation error, a required value missing in a non-interactive run, or you canceled the prompts with Esc or Ctrl-C (`installation cancelled`). |
+| 10 | License key error. The key is expired, suspended, unknown, or invalid. |
+| 15 | The installer rejected the air-gapped flags, or couldn't load the media: `--airgap` without `--bundle-dir`, `--bundle-dir` without `--airgap`, or media with no valid `manifest.json`. Also, this host already has a registry install. Use `sudo dspm-installer upgrade --download --migrate` instead. |
+| 16 | A precondition failed and nothing changed, such as too little free space for the media, or a release older than the installer. |
+| 17 | Connected installs only. The installer couldn't download, verify, or unpack the media. Run the command again to resume. |
+| 20 | Connected installs only. The release version you requested with `--target-revision` isn't available for this license key, or the release has no media for this architecture. |
+| 21 | This server already has a cluster, and `--storage-dir` differs from the directory it uses. That includes re-running a relocated install without passing `--storage-dir` again. The installer changed nothing. See [Storage Location](#storage-location). |
+| 50 | The installer couldn't install the platform, or the platform didn't become ready within 5 minutes. |
+| 60 | The installer couldn't install a platform component. |
+| 70 | The Access Analyzer services didn't all become healthy within 30 minutes, or you pressed Ctrl-C while waiting for them. |
+| 71 | A service stayed in a failed state for 5 minutes. Only `wait-for-apps` returns this code; during an install the same condition exits 70. |
+| 80 | Preflight checks failed (`preflight checks failed`), or you didn't accept warnings (`preflight warnings detected; use --accept-warnings to continue` or `installation stopped at preflight warnings`). |
+
+The `upgrade`, `update-cert`, and `rollback-cert` commands return their own codes. See [The `upgrade` command](#the-upgrade-command), [The `update-cert` command](#the-update-cert-command), and [The `rollback-cert` command](#the-rollback-cert-command).
+
+## Preflight Checks
+
+The following checks run before the installer changes anything on the server, in the order the table lists them. Which disk checks run depends on the install: a connected install adds `media-disk`, and setting `--storage-dir` adds `kubelet-disk`. Each ends as PASS, WARN, or FAIL. The installer prints only WARN and FAIL results, as `  [FAIL] <check> <message>` or `  [WARN] <check> <message>`. Any FAIL stops the install; `--accept-warnings` doesn't override it. Any WARN stops it too unless you answer **Yes** to **Continue despite these warnings?** or pass `--accept-warnings`.
+
+The installer compares RAM and disk against their thresholds with a 5% tolerance, so a virtual machine provisioned at exactly the stated figure passes. It compares CPU cores exactly.
+
+| Check | What it tests | Result when not met | Message |
+|---|---|---|---|
+| `ram` | Total RAM against the minimum for the chosen size. | FAIL | `<n> GB RAM; the <size> size requires <n> GB` |
+| `cpu` | CPU cores against the minimum for the chosen size. | FAIL | `<n> CPU cores; the <size> size requires <n>` |
+| `disk` | Free space on the storage volume (`--storage-dir`, or `/var/lib` by default) against the 40 GB floor. The installer measures the nearest existing parent, since it creates the directory itself during install. | FAIL | `<n> GB free on <path>; at least 40 GB is needed to install` |
+| `disk` | Free space on the storage volume against the size's recommended disk. | WARN | `<n> GB free on <path>; the <size> size is designed to hold <n> GB, so it will run out as data accumulates` |
+| `kubelet-disk` | Runs only with `--storage-dir`. Free space on `/var/lib` against 10 GB, because the platform keeps pod-local storage there wherever the storage directory points. | WARN | `<n> GB free on /var/lib; kubelet keeps pod-local storage there whatever --storage-dir is set to…` |
+| `media-disk` | Connected installs only. Free space for the install media, about 16 GB, on the volume that holds the [media directory](requirements.md#install-media). | WARN | `<n> GB free on <path>; the install media is downloaded and expanded there and wants about 16 GB, checked exactly before the download — point --tmp-dir or --storage-dir at a larger volume` |
+| `cgroups` | The kernel exposes cgroups at `/sys/fs/cgroup`. | FAIL | `cgroups not available at /sys/fs/cgroup` |
+| `kernel-modules` | The kernel has the `br_netfilter` and `overlay` modules loaded or built in. The install loads missing modules itself, so this check warns only when it can't inspect a module, or during a dry run when a module isn't loaded. | WARN | `kernel module issues: <module>: could not check module: <error>` or `kernel module issues: <module>: not loaded (dry run; will not be modprobed)` |
+| `os` | The Linux distribution belongs to a recognized family. | WARN | `unrecognised Linux distribution; installation may not be supported` |
+| `selinux` | SELinux isn't in enforcing mode. | WARN | The message says SELinux is enforcing and asks you to allow the platform's container policy or set SELinux to permissive. |
+| `antivirus` | The server has no known antivirus product installed or running: `mdatp`, CrowdStrike, ClamAV, Sophos, Carbon Black, or Trend Micro. | WARN | `antivirus software detected: <product> (exclusion hint: <hint>)` |
+| `network` | Each required host resolves in DNS and accepts a connection on port 443 within 5 seconds. The hosts are `api.keygen.sh` and the media download host. On an SELinux-enforcing host, the check also tests `api.github.com` and `rpm.rancher.io`. | FAIL when a name doesn't resolve; WARN when a connection times out or the host refuses it | `DNS resolution failed for: <hosts>` or `connection failed (timeout/refused) for: <hosts>` |
+| `domain-join` | Whether the server belongs to an Active Directory domain. Informational only. | — | `no AD domain detected`, or a message naming the detected domain |
+| `clock-sync` | A time-sync service (`chronyd`, `ntpd`, or `systemd-timesyncd`) is running. | WARN | `no clock sync daemon detected; Kerberos authentication requires clocks within 5 minutes of the AD domain controller — install chronyd, ntpd, or systemd-timesyncd to eliminate clock-skew risk` |
+
+When the `antivirus` check finds a product, add these paths to that product's exclusion list: `<storage-dir>/rancher/k3s/agent/containerd`, `<storage-dir>/rancher/k3s/data`, and `/run/k3s/containerd`. `<storage-dir>` is `/var/lib` unless you set `--storage-dir`. See [Storage Location](#storage-location). The hint in the message names the product's own command or console for adding exclusions.
+
+The [Requirements](requirements.md) page lists the hosts the `network` check connects to and the CPU, RAM, and disk figures for each size.
+
+### Preflight-only mode
+
+Pass `--preflight` to run the preflight checks and exit, without installing k3s, creating the cluster, or writing a configuration file. Use it to validate a server before you commit to an install.
+
+`--preflight` runs the same checks this section lists, plus a certificate check: the PEM certificate and key at the resolved TLS paths must exist, match, and not be expired. A certificate expiring within 30 days still passes, because a real install would also proceed on it. Pass `--hostname` to also verify the certificate's Subject Alternative Names cover it, and `--size` to check RAM, CPU, and disk against the size you intend to install. Under `--dry-run`, the installer skips the certificate check, matching a dry-run install.
+
+You can't combine `--preflight` with `--uninstall` or `--skip-preflight`. It writes the same `/var/log/dspm-installer.log` and `/var/log/dspm-preflight.json` files a regular install writes, except under `--dry-run`, where the installer doesn't write the JSON report.
+
+Pass `--airgap` and `--bundle-dir <path>` along with `--preflight` to check an offline host. The installer runs the same checks, except it skips the `network` check, since an air-gapped host can't reach anything.
+
+| Code | Meaning |
+|---|---|
+| 0 | Every check passed, or the installer raised only warnings and you passed `--accept-warnings`. |
+| 80 | A check failed, or the installer raised warnings and you didn't pass `--accept-warnings`. |
+| 1 | You combined `--preflight` with `--uninstall` or `--skip-preflight`, or the checks themselves couldn't run. |
+
+## RHEL and CentOS Preparation
+
+Complete these steps on a Red Hat Enterprise Linux (RHEL) or CentOS server before you run the installer.
+
+### RHEL 10
+
+RHEL 10 splits a kernel module the platform needs into a separate package. Install it first:
+
+```bash
+sudo dnf install -y kernel-modules-extra
+```
+
+Without it, the `kernel-modules` preflight check can't load `br_netfilter` or `overlay`.
+
+### Firewalld
+
+Turn off `firewalld`:
+
+```bash
+systemctl disable firewalld --now
+```
+
+To keep it enabled instead, add these rules before you install:
+
+```bash
+firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --permanent --zone=trusted --add-source=10.42.0.0/16
+firewall-cmd --permanent --zone=trusted --add-source=10.43.0.0/16
+firewall-cmd --reload
+```
+
+These open the platform's internal API port and trust its pod and service networks. Also open the ports that [Requirements](requirements.md#inbound) lists for Access Analyzer itself.
+
+### Older RHEL and CentOS Releases
+
+RHEL and CentOS releases before 8.4 ship a version of NetworkManager with a bug that interferes with the platform's networking. Disable `nm-cloud-setup` and reboot before you install:
+
+```bash
+systemctl disable nm-cloud-setup.service nm-cloud-setup.timer
+reboot
+```
+
+## The `wait-for-apps` Command
+
+`wait-for-apps` repeats the readiness wait without reinstalling anything. Use it when an install stopped while waiting for the services, or to check whether they're all ready.
+
+```bash
+sudo dspm-installer wait-for-apps
+```
+
+It prints `Waiting for applications to become Synced and Healthy…` and exits when every service is healthy.
+
+| Flag | Default | Description |
+|---|---|---|
+| `--timeout` | `30m0s` | Maximum time to wait. |
+
+Exit codes: 0 when everything is healthy, 70 when the timeout passes, 71 when a service stays in a failed state for 5 minutes, and 1 for any other error. Ctrl-C exits 1.
+
+## The `upgrade` Command
+
+`upgrade` moves an install to a newer release. It has four forms.
+
+| Form | Use it to |
+|---|---|
+| `upgrade --download` | Download the release's media from Netwrix and upgrade a connected install. |
+| `upgrade --bundle-dir <path>` | Upgrade from media you downloaded, such as on an air-gapped install. |
+| `upgrade --download --migrate` | Convert a registry install onto downloaded media. |
+| `upgrade --connect` | Connect an air-gapped install so it can download upgrades. |
+
+Pass exactly one of `--bundle-dir` or `--download`, except for `--connect`. A bare `upgrade` exits with code `16`.
+
+An upgrade loads the new release's charts and container images into the cluster, applies the bundled ArgoCD manifest and the installer's ArgoCD overlay, re-seeds the registry pull secret into every application namespace, re-pins the `netwrix` ArgoCD application to the new version, and waits for every application to become Synced and Healthy. It records the previous version in the `dspm.netwrix.com/previous-target-revision` annotation on the `netwrix` application. See [Upgrade to a New Version](upgrade-to-a-new-version.md) for the full procedure, including the media download and rollback, and [Convert or Connect an Install](convert-or-connect-an-install.md) for `--migrate` and `--connect`.
+
+```bash
+sudo dspm-installer upgrade --download
+sudo dspm-installer upgrade --bundle-dir /etc/dspm/media/dspm-airgap-media-v<version>-<arch>.tar.gz
+```
+
+Run it with the `dspm-installer` binary from the release you're upgrading to. It doesn't run the prompts, preflight checks, or platform setup. It upgrades the Access Analyzer services and ArgoCD but not the k3s platform or the offline package manager. If the media targets a different version of either, it prints a warning that names both versions and continues with the installed ones.
+
+Before it changes anything, it checks that the kubeconfig reaches a cluster with a `netwrix` application installed from offline media, that automated sync is on for that application, and that the release is newer than the installed one. A registry install needs `--migrate` first, or `dspmctl` as [Upgrade to a New Version](upgrade-to-a-new-version.md) describes.
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--download` | none | `false` | Download the release's media instead of reading `--bundle-dir`. Needs a license key. |
+| `--bundle-dir` | `DSPM_BUNDLE_DIR` | none | Path to the offline media of the release to upgrade to: the `.tar.gz` archive or an extracted directory. |
+| `--target-revision` | `TARGET_REVISION`* | newest stable | Release to upgrade to. Needs `--download`. |
+| `--license-key` | `LICENSE_KEY` | the saved key | License key. Needs `--download`. |
+| `--migrate` | `DSPM_UPGRADE_MODE=migrate` | `false` | Convert a registry install onto downloaded media. Needs `--download`. |
+| `--connect` | none | `false` | Connect an air-gapped install. Takes only the license key, `--dry-run`, `--kubeconfig`, and `--timeout`. |
+| `--in-cluster` | `DSPM_IN_CLUSTER` | `false` | Run as the in-cluster upgrade Job. The app uses this flag. Don't run it on the host. |
+| `--tmp-dir` | `DSPM_TMP_DIR`* | none | Where to keep the media. |
+| `--allow-downgrade` | `DSPM_ALLOW_DOWNGRADE`* | `false` | Accept a release equal to or older than the installed release, for a redeploy or an intentional downgrade. |
+| `--progress` | `DSPM_PROGRESS` | `auto` | Download progress style: `auto`, `bar`, `ascii`, or `lines`. |
+| `--dry-run` | none | `false` | Validate the media and preconditions, check free space, and print the planned changes without changing the cluster or downloading anything. |
+| `--timeout` | none | `30m0s` | Maximum time to wait for applications to become healthy after the re-pin. |
+| `--cert-manager-issuer-mode` | none | none | Pass `adcs` to force re-seeding the registry pull secret into the `adcs-issuer` namespace. Usually unnecessary, because the command detects that namespace on its own. |
+| `--kubeconfig` | `KUBECONFIG` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-namespace` | none | `argocd` | Kubernetes namespace for ArgoCD. |
+
+\* Only the in-cluster Job reads this variable. On the host, pass the flag.
+
+| Code | Meaning |
+|---|---|
+| 0 | The cluster runs the new release and every application is Synced and Healthy, or the cluster already runs the newest release. |
+| 1 | Unexpected error. |
+| 10 | Netwrix rejected the license key. |
+| 15 | The command couldn't load or deploy the media, and the cluster is still on the previous release. With `--migrate`, the command also exits with this code when an agent node runs on a different CPU architecture from the server. Run the command again after you fix the cause. |
+| 16 | A precondition failed. Nothing changed. |
+| 17 | The command couldn't download, verify, or unpack the media. Nothing changed. Run the command again to resume. |
+| 20 | No release matches `--target-revision`, or the release has no media for this architecture. |
+| 60 | The command couldn't apply the new version or the switch to the in-cluster source, or couldn't turn automated sync back on. Run `sudo dspmctl enable-auto netwrix`. |
+| 70 | The new version applied but didn't become healthy in time. Run `sudo dspm-installer wait-for-apps`, or roll back. |
+| 71 | A pod failed to start. |
+
+### Check Upgrade Status
+
+Each upgrade records its progress in the `media-upgrade-status` ConfigMap in the `argocd` namespace:
+
+```bash
+sudo kubectl -n argocd get configmap media-upgrade-status -o jsonpath='{.data.status}' | jq
+```
+
+The output shows the state (`running`, `succeeded`, or `failed`), the phase, the target and previous versions, the exit code, a one-line message, and the start and finish times.
+
+## The `install-agent` Command
+
+`install-agent` joins the host you run it on to an existing installation as an agent node. You don't write the command by hand: the **Deploy agent** panel generates it with a registration bundle, as [Deploy an agent](../agents/deploy-agent.md) describes. Run it as root on a separate Linux host, not on the Access Analyzer server.
+
+```bash
+sudo dspm-installer install-agent \
+  --server=https://aa.corp.example.com:6443 \
+  --token=<registration-bundle> \
+  --name='Edge agent' \
+  --label=region=eu
+```
+
+The bundle expires 30 minutes after the panel generates it, and `install-agent` refuses a bundle with less than 10 minutes left. The `--token` value is visible in the process list while the command runs, and a bundle for a server that isn't air-gapped contains the license key. Treat the command as a credential.
+
+| Flag | Environment variable | Default | Description |
+|---|---|---|---|
+| `--server` | none | none | Required. The Kubernetes API server URL that the host joins, such as `https://aa.corp.example.com:6443`. It overrides the address in the bundle. It isn't the URL of the web application. |
+| `--token` | none | none | Required. The registration bundle from the **Deploy agent** panel. |
+| `--name` | none | none | Required. The agent's display name. |
+| `--label` | none | none | An agent label as `key=value`. Repeat the flag for more labels. |
+| `--bundle-dir` | none | none | Offline media already on the host: the extracted directory, or the `dspm-airgap-media-v<version>-<arch>.tar.gz` archive, which the installer unpacks. Required for a server installed with `--airgap`. Refused for a server that pulls from the registry. Without it, an agent for a connected media install downloads the media. |
+| `--accept-warnings` | none | `false` | Continue past preflight warnings without the prompt. |
+
+Before it changes the host, `install-agent` stops if the host runs the Access Analyzer server, if you don't run it as root, if the host's CPU architecture differs from the server's on a media install, or if the server's certificate doesn't cover the address in `--server`. It then runs the agent preflight, opens the firewall ports on a host that runs firewalld or ufw, and joins the host. On a media install, it downloads or unpacks the release's media first, keeps it in `/var/lib/dspm/media`, and deletes the media it unpacked or downloaded after the agent joins.
+
+| Check | Minimum |
+|---|---|
+| Memory | 4 GB |
+| CPU cores | 2 |
+| Free disk | 5 GB. A media install needs about 7 GB for the media and its unpacked copy, and preflight warns below 8 GB. |
+
+| Code | Meaning |
+|---|---|
+| 0 | The agent joined and registered under its name. |
+| 1 | General failure, such as an invalid flag or bundle, an expired bundle, or a refusal listed in [Deploy an agent](../agents/deploy-agent.md#the-command-refuses-to-run). |
+| 10 | License key error while downloading the media. |
+| 16 | A precondition failed and nothing changed: too little free space for the media, or the media's k3s is newer than the server's. |
+| 17 | The installer couldn't download, verify, or unpack the media. Run the command again to resume. |
+| 20 | The release's media isn't available for this license key or this architecture. |
+| 80 | Preflight failed, you didn't accept its warnings, or the installer couldn't open the host firewall for firewalld or ufw. |
+
+## The `update-cert` Command
+
+`update-cert` installs a new TLS certificate on a running Access Analyzer installation, without re-running the full installer. Use it to replace a certificate that's expiring or expired, to replace one that pods don't trust, or to swap a self-signed certificate for a CA-issued one.
+
+```bash
+sudo dspm-installer update-cert \
+  --tls-cert /etc/dspm/tls.crt \
+  --tls-key /etc/dspm/tls.key \
+  --ca-bundle /etc/dspm/internal-root-ca.pem
+```
+
+`update-cert` validates the certificate and key pair, confirms the certificate's Subject Alternative Names cover the installed hostname, snapshots the certificate the cluster serves, applies the new certificate and CA bundle, restarts every workload that mounts the CA bundle, and verifies the result before it exits. See [Rotate the TLS certificate](rotate-the-tls-certificate.md) for the full procedure, including how to roll back with `rollback-cert`.
+
+| Flag | Default | Description |
+|---|---|---|
+| `--tls-cert` | (required) | PEM certificate file, full chain with the leaf certificate first. |
+| `--tls-key` | (required) | PEM private key file matching `--tls-cert`. |
+| `--ca-bundle` | none | PEM CA bundle the certificate chains to. Required unless the certificate is self-signed. |
+| `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the certificate must cover. |
+| `--port` | `443` | External HTTPS port for probing the certificate the cluster serves. |
+| `--timeout` | `30m0s` | Time budget for the whole rotation. A rollback, if needed, gets its own budget of the same size. |
+| `--dry-run` | `false` | Validate the certificate and print the plan without changing the cluster. Doesn't need cluster access. |
+| `--no-rollback` | `false` | Leave the new certificate in place if verification fails, instead of restoring the previous one automatically. |
+| `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
+
+If verification fails, `update-cert` restores the previous certificate from its snapshot—unless you passed `--no-rollback`, or it couldn't reach the ingress at all. It exits with a code that tells you what state the cluster is in:
+
+| Code | Meaning |
+|---|---|
+| 0 | `update-cert` applied and verified the new certificate. |
+| 1 | A check failed before `update-cert` wrote anything. The cluster is unchanged. |
+| 72 | Verification failed; `update-cert` restored and verified the previous certificate. `update-cert` also returns 72 when you pass `--no-rollback` (nothing restored) or when it can't load the saved snapshot. |
+| 73 | Verification failed; `update-cert` restored the previous certificate but couldn't verify it. |
+| 74 | Verification failed and `update-cert` couldn't apply the rollback. |
+| 75 | `update-cert` couldn't reach the ingress, so it verified nothing and rolled nothing back. The new certificate is still in place. |
+
+## The `rollback-cert` Command
+
+`rollback-cert` restores a certificate from a snapshot `update-cert` saved during an earlier rotation. Snapshots live under `/etc/dspm/cert-snapshots/`, and Access Analyzer never prunes them automatically. Snapshots contain private key material. See [Roll back a certificate](rotate-the-tls-certificate.md#roll-back-a-certificate) for how to remove ones you no longer need.
+
+```bash
+sudo dspm-installer rollback-cert --latest
+```
+
+| Flag | Default | Description |
+|---|---|---|
+| `--list` | `false` | List available snapshots: timestamp, hostname, leaf certificate fingerprint, and expiry. Doesn't need cluster access. |
+| `--latest` | `false` | Restore the most recent snapshot. |
+| `--snapshot` | none | Restore the snapshot at the given path, such as `/etc/dspm/cert-snapshots/<timestamp>`. |
+| `--hostname` | from `/etc/dspm/installer.yaml` | Hostname the restored certificate must cover. |
+| `--port` | `443` | External HTTPS port for verifying the restore. |
+| `--timeout` | `30m0s` | Time budget for the restore. |
+| `--kubeconfig` | `/etc/rancher/k3s/k3s.yaml` | Path to the kubeconfig file. |
+| `--argocd-namespace` | `argocd` | Kubernetes namespace for ArgoCD. |
+
+`--list`, `--latest`, and `--snapshot` are mutually exclusive.
+
+| Code | Meaning |
+|---|---|
+| 0 | `rollback-cert` applied and verified the restore. |
+| 1 | A check failed before `rollback-cert` wrote anything, such as combining mutually exclusive flags or naming a snapshot that doesn't exist. |
+| 73 | `rollback-cert` applied the restore, but verification failed. |
+| 74 | `rollback-cert` couldn't apply the restore. |
+
+## Logs
+
+| File | Contents |
+|---|---|
+| The `--log-path` file (default `/var/log/dspm-installer.log`) | Everything the installer does, as one JavaScript Object Notation (JSON) object per line, at the detail `--log-level` sets. The installer appends to the file on every run, with mode `0640`, and rejects a symlink at that path. At the default path, a write failure is non-fatal and the installer sends the same output to the terminal's standard error as text instead; with `--log-path` set explicitly, the same failure stops the installer with an error. |
+| `/var/log/dspm-preflight.json` | The full result of the most recent preflight run: `timestamp`, `overallStatus`, and a `checks` list with `name`, `status`, and `message` for every check, including the ones that passed. `--dry-run` doesn't write it. |

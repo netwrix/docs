@@ -12,7 +12,7 @@ The following Enterprise Auditor job groups need to be successfully run:
 
 - .Active Directory Inventory Job Group
 
-The following jobs need to be run prior to running the
+The following jobs need to be run before running the
 [AD_ShadowAccess Job](/docs/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/ad_shadowaccess.md):
 
 - .Active Directory Inventory >1-AD_Scan > ADInventory

@@ -6,18 +6,18 @@ sidebar_position: 6
 
 A context rule configures, for the identities of a given entity type, the generation of contexts which are used in provisioning to simplify the application of the role model's rules.
 
-A context rule should be created for each entity type for which we want to assign entitlements automatically based on users' attributes.
+Create a context rule for each entity type for which you want to assign entitlements automatically based on users' attributes.
 
-Without a context rule, automatic entitlements (assigned via the role model's rules):
-* cannot be assigned based on users' attributes;
-* don't have specific start and end dates, so they are valid from the resource creation until its deletion.
+Without a context rule, automatic entitlements (assigned via the role model's rules) have these limitations:
+* Can't be assigned based on users' attributes.
+* Don't have specific start and end dates, so they're valid from resource creation until deletion.
 
-[See more information about context generation](/docs/identitymanager/current/integration-guide/identity-management/joiners-movers-leavers/position-change#contexts).
+See [context generation](/docs/identitymanager/current/integration-guide/identity-management/joiners-movers-leavers/position-change#contexts) for details.
 
 :::note
 A context rule can be configured with [record sections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection) in situations where a user needs to be modeled by several contexts over time or simultaneously.
 
-Without record sections, a context rule can generate only one context per user. This means that users cannot have more than one contract, or position, at a time, and that data changes cannot be anticipated.
+Without record sections, a context rule generates only one context per user. Users can't have multiple contracts or positions simultaneously, and data changes can't be anticipated.
 :::
 
 
@@ -43,7 +43,7 @@ All contexts are to be made of the properties specified by the bindings `B0` to 
 
 ### ExcludeExpression
 
-The following example is similar to the previous one, except that we choose to exclude users declared as "draft" from the role model and provisioning calculations.
+The following example is similar to the previous one, except that it excludes users declared as "draft" from the role model and provisioning calculations.
 
 ```xml
 <ContextRule Identifier="Directory_User" DisplayName_L1="Directory_User" Policy="Default" SourceEntityType="Directory_User" ResourcesBinding="Records" ResourcesStartExpression="C#:record:return record.StartDate ?? record.PositionStartDate ?? record.ContractStartDate;" ResourcesEndExpression="C#:record:return record.EndDate ?? record.PositionEndDate ?? record.ContractEndDate;" ExcludeExpression="C#:record:return record.IsDraft.GetValueOrDefault();"
@@ -59,12 +59,12 @@ The following example is similar to the previous one, except that we choose to e
 ```
 
 :::info
-This option can exclude workers who are not validated yet, or who have left the company, for example.
+This option can exclude workers who aren't validated yet, or who have left the company, for example.
 :::
 
 ### RiskFactorType
 
-The following example is similar to the previous one, except that we force the final risk score of a user to be the maximum value of all their risk scores.
+The following example is similar to the previous one, except that it forces the final risk score of a user to be the maximum value of all their risk scores.
 <!-- TODO:Default behavior? -->
 
 ```xml
@@ -84,17 +84,17 @@ The following example is similar to the previous one, except that we force the f
 
 Context rules also contain some parameters for [role mining](/docs/identitymanager/current/user-guide/optimize/assignment-automation/role-mining).
 
-Users are distributed in a hypercube made of all dimensions, like in the following table (left) when we have only 2 dimensions, where for example `1`, `2`, `3`, etc. are users' possible locations, and `A`, `B`, `C`, etc. are users' possible departments in the company. When considering one dimension and sorting the dimension values per user percentage, we get the following table (right).
+Users are distributed in a hypercube made of all dimensions, like in the following table (left) when there are only 2 dimensions, where for example `1`, `2`, `3`, etc. are users' possible locations, and `A`, `B`, `C`, etc. are users' possible departments in the company. When considering one dimension and sorting the dimension values per user percentage, the following table (right) shows the result.
 
 ![Role Mining Tables](/images/identitymanager/contextrules_rolemining.webp)
 
 The tables here represent a simple situation with few dimensions. But the higher the number of dimensions, the more complex are role mining's computations. This is known as the curse of dimensionality.
 
-The following example is similar to the first one, except that we customize some role mining parameters which help tackle the curse of dimensionality:
+The following example is similar to the first one, except that it customizes some role mining parameters which help tackle the curse of dimensionality:
 * `MinIdentitiesCount` establishes that the role mining's engine will generate a role assignment rule only when the rule is applicable to at least 5 users;
 * `ReductionOutlierPercentage` establishes that the role mining's engine will consider the last 2.0% dimension values (from `Y` to `Z` in the table above) to be grouped together in a single category "Others".
     :::info
-    The definition of the outlier percentage is particularly useful when managing, for example a services company with thousands of distinct organizations, where many organizations contain only one or two users. We can safely choose to group into a single fictitious organization the 2% of all users that involve the smallest organizations.
+    The definition of the outlier percentage is particularly useful when managing, for example a services company with thousands of distinct organizations, where many organizations contain only one or two users. Safely group into a single fictitious organization the 2% of all users that involve the smallest organizations.
     :::
 
 ```xml
@@ -113,7 +113,7 @@ The following example is similar to the first one, except that we customize some
 ### Certification items
 
 :::info
-Unlike `ResourcesStartBinding` and `ResourcesEndBinding`, `ResourcesStartExpression` and `ResourcesEndExpression` cannot be used to define the resources to include in the related certification campaigns. Thus, when needing to define which resources to include with more than start/end bindings, add a comparison based on `ResourceCertificationComparisonBinding`, `ResourceCertificationComparisonOperator` and `ResourceCertificationComparisonValue`.
+Unlike `ResourcesStartBinding` and `ResourcesEndBinding`, `ResourcesStartExpression` and `ResourcesEndExpression` can't be used to define the resources to include in the related certification campaigns. Thus, when needing to define which resources to include with more than start/end bindings, add a comparison based on `ResourceCertificationComparisonBinding`, `ResourceCertificationComparisonOperator` and `ResourceCertificationComparisonValue`.
 :::
 
 The following example includes in certification campaigns only the resources that have their `IsActivePosition` property set to `1`.
@@ -132,7 +132,7 @@ The following example includes in certification campaigns only the resources tha
 ```
 
 **Note:** must be configured together with the other `ResourceCertificationComparison` properties.
-**Note:** when not specified, certification items are defined by `ResourcesStartBinding` and `ResourcesStartBinding`. And when they are not specified either, TODO:
+**Note:** when not specified, certification items are defined by `ResourcesStartBinding` and `ResourcesStartBinding`. And when they aren't specified either, TODO:
 
 
 ## Properties
@@ -141,19 +141,19 @@ The following example includes in certification campaigns only the resources tha
 |---|---|
 | B0 optional | **Type:** Int64 **Description:** Binding of the dimension 0 (up to 3V in [base32hex](/docs/identitymanager/current/integration-guide/toolkit/parameter-names)). The dimension can then be used in rules to filter the rules' targets. |
 | DisplayName_L1 required | **Type:** String **Description:** Display name of the context rule in language 1 (up to 16). |
-| ExcludeExpression optional | **Type:** String **Description:** C# expression that defines the resources to exclude from context generation, because they should not be part of the role model and provisioning calculations. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| ExcludeExpression optional | **Type:** String **Description:** C# expression that defines the resources to exclude from context generation, because they shouldn't be part of the role model and provisioning calculations. See [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions) for details. |
 | Identifier required | **Type:** String **Description:** Unique identifier of the context rule. |
 | MinIdentitiesCount <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Minimum number of identities to take into account to generate a rule by the role mining engine. |
 | Policy required | **Type:** Int64 **Description:** Identifier of the policy that the rule is part of. |
 | ReductionOutlierPercentage <span class="optionalAttribute">default value: 0.0</span> | **Type:** Float **Description:** Proportion of identities that are grouped together by role mining to aggregate all the small entities in one "other" category. This is used to speed up the mining process as the number of groups can be greatly reduced. |
-| ResourceCertificationComparisonBinding optional | **Type:** Int64 **Description:** import ContextruleCertification from '@site/docs/identitymanager/current/_partials/contextrule-certification.mdx'; Binding of the property whose value is to be compared to `ResourceCertificationComparisonValue` in order to specify the resources to include in the related certification campaigns. |
+| ResourceCertificationComparisonBinding optional | **Type:** Int64 **Description:** import ContextruleCertification from '@site/docs/identitymanager/current/_partials/contextrule-certification.mdx'; Binding of the property whose value is to be compared to `ResourceCertificationComparisonValue` to specify the resources to include in the related certification campaigns. |
 | ResourceCertificationComparisonOperator optional | **Type:** QueryComparisonOperator **Description:** import ContextruleCertification from '@site/docs/identitymanager/current/_partials/contextrule-certification.mdx'; Operator of the comparison that specifies the resources to include in the related certification campaigns. |
-| ResourceCertificationComparisonValue optional | **Type:** String **Description:** import ContextruleCertification from '@site/docs/identitymanager/current/_partials/contextrule-certification.mdx'; Value to be compared to the value of `ResourcesCertificationComparisonBinding` in order to specify the resources to include in the related certification campaigns. |
+| ResourceCertificationComparisonValue optional | **Type:** String **Description:** import ContextruleCertification from '@site/docs/identitymanager/current/_partials/contextrule-certification.mdx'; Value to be compared to the value of `ResourcesCertificationComparisonBinding` to specify the resources to include in the related certification campaigns. |
 | ResourcesBinding optional | **Type:** Int64 **Description:** Binding that represents the entity type of the contexts to be created from the `SourceEntityType`. It can also be defined via `ResourcesExpression`. |
 | ResourcesEndBinding optional | **Type:** Int64 **Description:** Binding of the date property among those from `ResourcesBinding` which specifies the end of validity for all [properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection#child-element-property) of the context. It can also be defined via `ResourcesEndExpression`. **Note:** a context rule's start and end dates are ignored when the related identities are also configured with [record sections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection). |
-| ResourcesEndExpression optional | **Type:** String **Description:** Expression based on the `ResourcesBinding` entity type that defines the end of validity for all [properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection#child-element-property) of the context. It can also be defined via `ResourcesEndBinding`. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). **Note:** a context rule's start and end dates are ignored when the related identities are also configured with [record sections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection). |
-| ResourcesExpression optional | **Type:** String **Description:** Expression based on `SourceEntityType` that defines the entity type of the contexts to be created. It can also be defined via `ResourcesBinding`. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| ResourcesEndExpression optional | **Type:** String **Description:** Expression based on the `ResourcesBinding` entity type that defines the end of validity for all [properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection#child-element-property) of the context. It can also be defined via `ResourcesEndBinding`. See [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions) for details. **Note:** a context rule's start and end dates are ignored when the related identities are also configured with [record sections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection). |
+| ResourcesExpression optional | **Type:** String **Description:** Expression based on `SourceEntityType` that defines the entity type of the contexts to be created. It can also be defined via `ResourcesBinding`. See [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions) for details. |
 | ResourcesStartBinding optional | **Type:** Int64 **Description:** Binding of the date property among those from `ResourcesBinding` which specifies the beginning of validity for all [properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection#child-element-property) of the context. It can also be defined via `ResourcesStartExpression`. **Note:** a context rule's start and end dates are ignored when the related identities are also configured with [record sections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection). |
-| ResourcesStartExpression optional | **Type:** String **Description:** Expression based on the `ResourcesBinding` entity type that defines the beginning of validity for all [properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection#child-element-property) of the context. It can also be defined via `ResourcesStartBinding`. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). **Note:** a context rule's start and end dates are ignored when the related identities are also configured with [record sections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection). |
+| ResourcesStartExpression optional | **Type:** String **Description:** Expression based on the `ResourcesBinding` entity type that defines the beginning of validity for all [properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection#child-element-property) of the context. It can also be defined via `ResourcesStartBinding`. See [C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions) for details. **Note:** a context rule's start and end dates are ignored when the related identities are also configured with [record sections](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection). |
 | RiskFactorType optional | **Type:** RiskFactorType **Description:** Operator used to aggregate a user's risk scores together to compute the user's global risk score. `0` - **None**. `1` - **Max**: a user's final risk score is the maximum value among all their risk scores. `2` - **Average**: a user's final risk score is the average value of all their risk scores. |
 | SourceEntityType required | **Type:** Int64 **Description:** Identifier of the entity type of the parent resource. |

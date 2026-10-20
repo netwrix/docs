@@ -27,7 +27,7 @@ The 6.Activity Job Group is comprised of the following jobs:
   – Imports data from the Netwrix Activity Monitor logs into the Enterprise Auditor Database.
   Retention can be modified in the query (120 days default).
 - [Changes Job Group](/docs/accessanalyzer/11.6/solutions/activedirectory/activity/changes/overview.md)
-  – Provides an audit trail for changes made to Computer, Group and User objects within the
+  – Provides an audit trail for changes made to Computer, Group, and User objects within the
   environment
 - [Group Usage Job Group](/docs/accessanalyzer/11.6/solutions/activedirectory/activity/groupusage/overview.md)
   – Shows how group membership changes have affected access across the entire environment, the
@@ -35,10 +35,10 @@ The 6.Activity Job Group is comprised of the following jobs:
   in applications
 - [LDAP > AD_LDAPQueries Job](/docs/accessanalyzer/11.6/solutions/activedirectory/activity/ad_ldapqueries.md)
   – Analyzes LDAP traffic to determine trends such as most expensive queries, most active servers
-  and users, successful/failed and signing status. This data can be used to troubleshoot performance
+  and users, successful/failed and signing status. Use this data to troubleshoot performance
   issues, load balancing, and poorly configured services.
 - [Lockouts > AD_Lockouts Job](/docs/accessanalyzer/11.6/solutions/activedirectory/activity/ad_lockouts.md)–
-  Provides a listing of all account lockouts with relevant details which can be used to aid
+  Provides a listing of all account lockouts with relevant details to aid
   troubleshooting
 - [Operations Job Group](/docs/accessanalyzer/11.6/solutions/activedirectory/activity/operations/overview.md)
   – Reports on Active Directory activity events related to operational activity. This group can help

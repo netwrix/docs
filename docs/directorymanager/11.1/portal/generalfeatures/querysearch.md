@@ -6,15 +6,14 @@ sidebar_position: 40
 
 # Query Based Advanced Search
 
-Directory Manager portal enables you to search directory objects (users, mailboxes, contacts,
-groups) in the identity store based on a query. You can create queries and save them for later
-directory objects searches.
+Use the Directory Manager portal to search directory objects (users, mailboxes, contacts,
+groups) in the identity store based on a query. You can create queries and save them for future use.
 
 The Query Designer option on the Advanced Search page is available which presents you the
 [Query Designer](/docs/directorymanager/11.1/portal/group/querydesigner/overview.md) dialog box similar to the query designer dialog
 box used for creating queries for Smart Groups and Dynasties.
 
-In Linked mode – Query based searches cannot be performed.
+In Linked mode – Query based searches can't be performed.
 
 ## Create a query
 
@@ -22,7 +21,7 @@ The Query Designer dialog box provides you a visual interface for creating searc
 
 Step 1 – Click **Advanced Search** at the top.
 
-Step 2 – On the **Advanced Search** page, click **Or use the new query based search** link.
+Step 2 – On the **Advanced Search** page, click **Or**, then use the new query based search link.
 
 The **Queries** page is displayed.
 
@@ -37,11 +36,11 @@ Step 3 – Click **Query Designer** to create queries to search directory object
 Step 4 – Select an option from the [Query Designer - General tab](/docs/directorymanager/11.1/portal/group/querydesigner/general.md)
 list to specify the type of object the query should fetch.
 
-Step 5 – You must specify the containers that the query should search for retrieving the directory
+Step 5 – You must specify the containers where the query should search for directory
 objects.
 
 Click the **Start in** button and select a container on the Select Container dialog box. The query
-would search for objects only in this container and its sub-containers.
+searches for objects only in this container and its sub-containers.
 
 Step 6 – The **Query Designer** dialog box groups similar query options by tabs.
 
@@ -65,16 +64,16 @@ Step 6 – The **Query Designer** dialog box groups similar query options by tab
    Include and Exclude sections respectively. See the
    [Query Designer - Include/Exclude tab](/docs/directorymanager/11.1/portal/group/querydesigner/includeexclude.md) topic for
    additional information.
-5. **Database tab**: enables you to combine an external data source with the directory to search
+5. **Database tab**: Combine an external data source with the directory to search
    directory objects. See the [Query Designer - Database tab](/docs/directorymanager/11.1/portal/group/querydesigner/database.md)
    topic for additional information.
 
 Step 7 – Click the **LDAP Query** button to view the query generated from the settings you have
 entered so far.
 
-Step 8 – In the **Query name** box, type a name for the query.
+Step 8 – In the **Query name** box, enter a name for the query.
 
-Step 9 – Select the **Global Query** check box, if you want to share this query with other users in
+Step 9 – Select the **Global Query** checkbox, if you want to share this query with other users in
 the connected identity store.
 
 Step 10 – Click the **Save Query** button to save the query.

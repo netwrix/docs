@@ -12,17 +12,17 @@ Data Collector writes data to these tables regardless of the job executing the q
 
 ## SharePoint Access Auditing Tables & Views
 
-The tables and their associated views are grouped by types.
+This section groups the tables and their associated views by type.
 
 **Structure Tables**
 
 | Tables                  | Details                                                                                                                                                                                                                                             |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPAA_Hosts           | Contains the names and ID of all SharePoint hosts that have been scanned for permissions.                                                                                                                                                           |
+| SA_SPAA_Hosts           | Contains the names and ID of all SharePoint hosts that Access Analyzer scanned for permissions.                                                                                                                                                           |
 | SA_SPAA_Resources       | Contains information about all audited resources, which can be site collections, sites, libraries, lists, or folders. This provides information on the hierarchy relationship, as well as references to the name and rights applied to that folder. |
 | SA_SPAA_Sharing         | Contains the view and edit links for anonymously shared resources, indicates if a resource is shared directly with trustees, and indicates whether a resource has a pending sharing request.                                                        |
 | SA_SPAA_SharingUsers    | Contains information about the users to whom resources are shared with such as their email, login name, title, department, and describes whether the sharing grants is view only or edit permissions.                                               |
-| SA_SPAA_SiteCollections | Contains a list of site collections that were audited and references the SA_SPAA_Resources and SA_SPAA_Trustees tables for the administrators of each site collection.                                                                              |
+| SA_SPAA_SiteCollections | Contains a list of audited site collections and references the SA_SPAA_Resources and SA_SPAA_Trustees tables for the administrators of each site collection.                                                                              |
 | SA_SPAA_WebApplications | Contains a list of web applications audited.                                                                                                                                                                                                        |
 | SA_SPAA_WebAppURls      | Contains a list of URLs for each web application audited.                                                                                                                                                                                           |
 
@@ -30,14 +30,14 @@ The tables and their associated views are grouped by types.
 
 | Tables                      | Details                                                                                                                                                                                                                             |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPAA_Trustees            | Contains information about any domain user, group, or security principal that has been assigned permissions. This table does not contain local user and groups, as none of the trustees in this table are specific to any one host. |
+| SA_SPAA_Trustees            | Contains information about any domain user, group, or security principal with assigned permissions. This table doesn't contain local user and groups, as none of the trustees in this table are specific to any one host. |
 | SA_SPAA_TrusteeGroupMembers | Table contains information on SharePoint group membership.                                                                                                                                                                          |
 
 **Access Calculation Tables**
 
 | Tables                 | Details                                                                                                                                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPAA_Permissions    | Contains information on the actual permissions that have been granted to resources. Each entry summarizes the rights assigned to every trustee that would appear on the permissions of a SharePoint resource. |
+| SA_SPAA_Permissions    | Contains information on the actual permissions granted to resources. Each entry summarizes the rights assigned to every trustee that would appear on the permissions of a SharePoint resource. |
 | SA_SPAA_Roles          | Contains information about all of the roles on all of the site collections.                                                                                                                                   |
 | SA_SPAA_RolesProxy     | Contains a mapping of role sets to individually assigned role definitions. A role set is a distinct set of roles that are applied to one or more resources.                                                   |
 | SA_SPAA_WebAppPolicies | Contains summarized rights for every trustee in a web application policy. Each policy refers to a specific URL within that web application.                                                                   |
@@ -46,7 +46,7 @@ The tables and their associated views are grouped by types.
 
 | Tables                 | Details                                                                                                                                                                                                                                     |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPAA_Exceptions     | Contains information about security issues and concerns. One out-of-the-box exception stored inside this table is the Open Resource exception, which identifies where resources are open to Everyone, Authenticated Users, or Domain Users. |
+| SA_SPAA_Exceptions     | Contains information about security issues and concerns. One built-in exception stored inside this table is the Open Resource exception, which identifies where resources are open to Everyone, Authenticated Users, or Domain Users. |
 | SA_SPAA_ExceptionTypes | Contains summary information about exceptions. It details how many exceptions are found on each host scanned and breaks them down by exception type.                                                                                        |
 
 **Content Tables**
@@ -59,7 +59,7 @@ The tables and their associated views are grouped by types.
 | SA_SPAA_Tags             | Contains the individual tags which were found in documents.                                                                                                                                                                                   |
 
  Views are the recommended way for Access Analyzer users to obtain the information gathered by the
-SPAA Data Collector. They contain additional information for building queries easily. The following
+SPAA Data Collector. They contain additional information for building queries. The following
 is an explanation of the corresponding views created for some of the tables generated by the SPAA
 Data Collector:
 
@@ -67,8 +67,8 @@ Data Collector:
 
 | Views                         | Details                                                                                                                                                                                                                                                                                                                                                       |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPAA_PermissionsView       | Provides any object permission, regardless of whether they have been made directly to folders or are inherited. An object includes site, site collection, list, library, folder, and so on.                                                                                                                                                                   |
-| SA_SPAA_DirectPermissionsView | Provides permissions that are directly applied to resources.                                                                                                                                                                                                                                                                                                  |
+| SA_SPAA_PermissionsView       | Provides any object permission, regardless of whether Access Analyzer made them directly to folders or inherited them. An object includes site, site collection, list, library, folder, and so on.                                                                                                                                                                   |
+| SA_SPAA_DirectPermissionsView | Provides permissions directly applied to resources.                                                                                                                                                                                                                                                                                                  |
 | SA_SPAA_EffectiveAccessView   | Provides information on every trustee with access to a resource and the trustee’s level of access. This will do complete group expansion, but also take into account security principals such as Authenticated Users. Also, this view will not just expand permissions; it will calculate access by making sure every user has access to the web application. |
 | SA_SPAA_WebAppPoliciesView    | Provides details around the web application policies that are applied to the audited SharePoint environment. These policies allow or deny access to the entire web application for the specified trustees.                                                                                                                                                    |
 
@@ -83,7 +83,7 @@ Data Collector:
 
 | Views                  | Details                                                                                                                                                                                                                                                                                  |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPAA_ExceptionsView | Provides information on instances of exceptions that exist on the audited hosts. This view will contain a row for each exception type for each host. Exceptions are specific conditions set forth by Access Analyzer that are considered to be issues, such as folders with open access. |
+| SA_SPAA_ExceptionsView | Provides information on instances of exceptions that exist on the audited hosts. This view will contain a row for each exception type for each host. Exceptions are specific conditions that Access Analyzer flags as issues, such as folders with open access. |
 
 **Additional Views**
 
@@ -95,7 +95,7 @@ Data Collector:
 
 | Views                            | Details                                                                                                                                                                                                       |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPAA_PermissionScopeResources | Provides information on the actual permissions that have been granted to resources. Each entry summarizes the rights assigned to every trustee that would appear on the permissions of a SharePoint resource. |
+| SA_SPAA_PermissionScopeResources | Provides information on the actual permissions granted to resources. Each entry summarizes the rights assigned to every trustee that would appear on the permissions of a SharePoint resource. |
 
 ## SharePoint Activity Auditing Tables & Views
 
@@ -111,7 +111,7 @@ The tables and their associated views are:
 | SA_SPAC_EventNames      | Contains a list of SharePoint event names, their IDs, and a description of each event. |
 
 Views are the recommended way for Access Analyzer users to obtain the information gathered by the
-SPAA Data Collector. They contain additional information for building queries easily. The following
+SPAA Data Collector. They contain additional information for building queries. The following
 is an explanation of the corresponding views created for some of the tables generated by the SPAA
 Data Collector:
 
@@ -126,7 +126,7 @@ Data Collector:
 The tables and their associated views are:
 
 :::note
-Lists and libraries are excluded from Sensitive Data Discovery Auditing.
+Access Analyzer excludes lists and libraries from Sensitive Data Discovery Auditing.
 :::
 
 
@@ -134,12 +134,12 @@ Lists and libraries are excluded from Sensitive Data Discovery Auditing.
 
 | Tables             | Details                                                                                                                                                                                                                             |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPDLP_Criteria  | Contains the sensitive data criteria which are selected for collection by the scan engine (data collector configuration).                                                                                                           |
+| SA_SPDLP_Criteria  | Contains the sensitive data criteria selected for collection by the scan engine (data collector configuration).                                                                                                           |
 | SA_SPDLP_Matches   | Contains rolled up aggregate counts of the sensitive data criteria matches found during the scan.                                                                                                                                   |
 | SA_SPDLP_MatchHits | Contains the actual sensitive data within files that matched selected criteria. For example, if the credit card criteria is used, this table will contain the potential credit card numbers identified within each files with hits. |
 
 Views are the recommended way for Access Analyzer users to obtain the information gathered by the
-SPAA Data Collector. They contain additional information for building queries easily. The following
+SPAA Data Collector. They contain additional information for building queries. The following
 is an explanation of the corresponding views created for some of the tables generated by the SPAA
 Data Collector:
 

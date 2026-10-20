@@ -31,7 +31,7 @@ Enhanced database monitoring capabilities for Azure SQL environments:
 ## Enhanced Search and Monitoring Capabilities
 
 ### Advanced Search Features
-- **"Does not contain" Filter**: New filter option for the Details field provides more precise search capabilities
+- **"Doesn't contain" Filter**: New filter option for the Details field provides more precise search capabilities
 - **Cancellable Searches**: Improved user experience with the ability to cancel long-running searches on large datasets
 
 ### Exchange Online Enhancements

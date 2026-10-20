@@ -19,7 +19,7 @@ status of object types for each domain in an identity store and alerts you to an
 have occurred during the replication process.
 
 :::note
-The Replication service does not replicate excluded domains for an identity store. See the
+The Replication service doesn't replicate excluded domains for an identity store. See the
 [Exclude an Active Directory Domain from Replication](/docs/directorymanager/11.1/admincenter/identitystore/manage.md#exclude-an-active-directory-domain-from-replication)
 topic.
 :::
@@ -29,8 +29,8 @@ topic.
 
 Possible actions to eliminate replication errors are:
 
-- Make sure the Replication service and Elasticsearch service are running.
-- Make sure Search Guard or any other security plugin you use for Elasticsearch is operational.
+- Ensure the Replication service and Elasticsearch service are running.
+- Ensure Search Guard or any other security plugin you use for Elasticsearch is operational.
 - Consult the Replication service logs. They provide elaborate information about the object type in
   the specific domain of the identity store the error occurred for, and whether that error comes
   from the identity provider or Elasticsearch. See the
@@ -38,7 +38,7 @@ Possible actions to eliminate replication errors are:
 
 ## Monitor Elasticsearch Health Status
 
-Directory Manager enables you to monitor the Elasticsearch service for the following:
+With Directory Manager, you can monitor the Elasticsearch service for the following:
 
 - The status of the Elasticsearch service. See the
   [Elasticsearch Service](/docs/directorymanager/11.1/admincenter/general/dashboard.md#elasticsearch-service) card on the Admin Center
@@ -63,7 +63,7 @@ the cluster is intact. It also checks the health of each index.
 
     - **Health:** the cluster health status denoted by the following colors:
 
-        - Green – the service is running and the cluster is intact. Moreover, two or more nodes
+        - Green – the service is running and the cluster is intact. Moreover, two, or more nodes
           exist within the cluster.
         - Yellow – the cluster is running but with warnings. It also indicates that a single node
           exists within the cluster. Elasticsearch recommends a three-node topology for improved
@@ -98,7 +98,7 @@ the cluster is intact. It also checks the health of each index.
 
         - Green – the index is replicated to all nodes within the cluster.
         - Yellow – the index is replicated to some but not all nodes within the cluster.
-        - Red – the index is not replicated to any node within the cluster.
+        - Red – the index isn't replicated to any node within the cluster.
 
     - The **Document** column shows the number of documents in the index.
 
@@ -159,11 +159,11 @@ and which ones failed to replicate.
           Replication Error Notifications topic.
 
         These alerts are triggered when replication fails in the last run of the Replication
-        service, or if the service does not run at the required triggering interval. To resolve
+        service, or if the service doesn't run at the required triggering interval. To resolve
         replication errors, see the How to Resolve Replication Errors topic.
 
-    2. The ‘Never replicated’ status indicates that the particular object type is not replicated
-       yet. Similarly, a child domain that is not being used will have its status marked in red. To
+    2. The ‘Never replicated’ status indicates that the particular object type isn't replicated
+       yet. Similarly, a child domain that isn't being used will have its status marked in red. To
        avoid these recurring errors, set the dates for these objects to a distant future date in the
        Directory Manager database. Or you can exclude a domain from replication. See the
        [Exclude an Active Directory Domain from Replication](/docs/directorymanager/11.1/admincenter/identitystore/manage.md#exclude-an-active-directory-domain-from-replication)
@@ -178,7 +178,7 @@ that the service is triggered every 60 minutes. As a result, objects deleted in 
 the last 60 minutes are removed from Elasticsearch.
 
 To identify objects that have been deleted in the directory but exist in Elasticsearch, the
-Replication service compares the objects in both, and deletes objects that do not exist in the
+Replication service compares the objects in both, and deletes objects that don't exist in the
 directory anymore.
 
 **To specify an interval:**
@@ -228,7 +228,7 @@ following for all identity stores in Directory Manager:
 
 Directory Manager stores object attributes and their values in Elasticsearch, where each object type
 in an identity store is distinctly indexed. In a situation where an identity store is deleted from
-Directory Manager, its indices are not required anymore. So, you can clear them from Elasticsearch
+Directory Manager, its indices aren't required anymore. So, you can clear them from Elasticsearch
 to avoid glut.
 
 **To clear unused indices:**
@@ -247,7 +247,7 @@ to avoid glut.
 
 Search Guard is a security plugin used to induce an authentication mechanism in Elasticsearch. The
 option to change the Search Guard password is available when you install and manage Elasticsearch
-with Directory Manager. Users who use their own instance of Elasticsearch cannot change the Search
+with Directory Manager. Users who use their own instance of Elasticsearch can't change the Search
 Guard password using Directory Manager.
 
 You can change the password of the admin account that Directory Manager uses to access

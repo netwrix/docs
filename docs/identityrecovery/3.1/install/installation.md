@@ -13,8 +13,6 @@ The installer is located in the following installation directory on the Recovery
 
 ...Netwrix\Identity Recovery\RSAT Extension\NetwrixRecovery_RSAT_Extension.msi
 
-Follow the steps to install the RSAT Extension.
-
 **Step 1 –** Copy the `NetwrixRecovery_RSAT_Extension.msi` file to the machine where you want to
 install it.
 
@@ -27,7 +25,7 @@ install it.
 ![RSAT Extension Installation Wizard - License Agreement page](/images/identityrecovery/3.1/product/installers/rsat_page2.png)
 
 **Step 4 –** On the End-User License Agreement page, read the End User License Agreement and check
-the **I accept the terms in the License Agreement** box. Click **Next**.
+the box to accept the terms, then click **Next**.
 
 ![RSAT Extension Installation Wizard - Destination Folder page](/images/identityrecovery/3.1/product/installers/rsat_page3.png)
 
@@ -58,5 +56,5 @@ Click **Next**.
 installation is complete, click Finish to exit the wizard.
 
 After installation has completed, open a new instance of ADUC and verify that the RSAT Extension has
-been successfully installed. Right-click on an object and ensure the **Rollback** option has been
+been successfully installed. Right-click an object and ensure the **Rollback** option has been
 added to the right-click menu. Also, a Recycle Bin node should be added to the root tree view.

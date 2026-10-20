@@ -17,7 +17,7 @@ This report is comprised of the following columns:
 - Collector – Refers to the collection source for the permission (for example, **FileSystem** for
   the Enterprise Auditor File System Solution, **SharePoint** for the Enterprise Auditor SharePoint
   Solution, and so on)
-- Server Name – Name of the file system server or SharePoint farm/instanceS where the activity event
+- Server Name – Name of the file system server or SharePoint farm/instance where the activity event
   occurred
 - Path – Location of the resource where the activity event occurred
 - Reads – Count of view/read operations on resource

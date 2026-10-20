@@ -11,8 +11,8 @@ environment, as described in this section.
 
 ## System requirements
 
-Make sure that the machine where you plan install the solution meets the system requirements listed
-below.
+Ensure that the machine where you plan to install the solution meets the following system
+requirements.
 
 **Hardware:**
 
@@ -43,15 +43,15 @@ domains.
 
 ## Licensing
 
-Account Lockout Examiner is shipped with a free pre-configured license that will be valid until a
-newer version becomes available. You will be notified on the new version release by the
-corresponding message displayed in the product. Then you will need to download that new version.
+Netwrix ships Account Lockout Examiner with a free pre-configured license that's valid until a
+newer version becomes available. The product notifies you of the new version release with a
+corresponding message. Then you'll need to download the new version.
 
 ## Target infrastructure
 
 For the solution to connect to and retrieve the necessary information from the Windows machines that
-may become the potential lockout reasons, your infrastructure should meet the requirements listed
-below.
+may become the potential lockout reasons, your infrastructure should meet the following
+requirements.
 
 ### Target systems and platforms
 
@@ -73,7 +73,7 @@ lockout reason detection:
 
 ### Inbound firewall rules
 
-Make sure the following **Inbound** firewall rules are enabled on the Domain Controllers and domain
+Ensure the following **Inbound** firewall rules are enabled on the Domain Controllers and domain
 computers:
 
 - File and Printer Sharing (Echo Request - ICMPv4-In)
@@ -92,16 +92,16 @@ The following **TCP** ports should be open on the Domain Controllers and domain 
 
 ### Recommended network security settings
 
-Security researches revealed that NTLM and NTLMv2 authentication is vulnerable to a variety of
+Security research has revealed that NTLM and NTLMv2 authentication is vulnerable to a variety of
 malicious attacks, including SMB replay, man-in-the-middle attacks, and brute force attacks.
 
-To make Windows operating system use more secure protocols (e.g. Kerberos version 5), the outgoing
-NTLM authentication traffic should be disabled for the machine where Netwrix Account Lockout
-Examiner will run. (See also
+To make the Windows operating system use more secure protocols (e.g. Kerberos version 5), disable
+the outgoing NTLM authentication traffic for the machine where Netwrix Account Lockout Examiner
+runs. (See also
 [this Microsoft article](https://docs.microsoft.com/en-us/windows/win32/secauthn/microsoft-negotiate).)
 
 For that, you need to set the **Network Security: Restrict NTLM: Outgoing NTLM traffic to remote
-servers** policy setting to **Deny All**. This can be done locally on the machine hosting Netwrix
+servers** policy setting to **Deny All**. You can do this locally on the machine hosting Netwrix
 Account Lockout Examiner, or via Group Policy.
 
 To disable outgoing NTLM authentication traffic locally:

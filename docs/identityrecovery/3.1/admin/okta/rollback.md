@@ -8,9 +8,6 @@ sidebar_position: 10
 
 You can revert an Okta object to its previous state.
 
-Follow the steps to roll back an Okta object, including users, groups, and
-devices.
-
 **Step 1 –** Click Okta in the left pane to open the
 [Okta Page](/docs/identityrecovery/3.1/admin/okta/overview.md).
 
@@ -32,8 +29,8 @@ to finish the wizard.
 ![Object Rollback wizard - Confirm page](/images/identityrecovery/3.1/product/okta/rollback/okta_rollback_page2.png)
 
 
-**Step 5 –** A completed message is displayed when the rollback is successful. Click **OK**.
+**Step 5 –** The system displays a message confirming the rollback is complete. Click **OK**.
 
 ![Object Rollback Sucessful message](/images/identityrecovery/3.1/product/okta/rollback/okta_rollback_finished.png)
 
-The object has been rolled back.
+The rollback is complete.

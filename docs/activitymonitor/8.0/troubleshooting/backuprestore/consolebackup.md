@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Console Backup
 
-Follow the steps to back up the list of agents managed on the Activity Monitor Console.
+Use the following steps to back up the list of agents managed on the Activity Monitor Console.
 
 **Step 1 –** Back up the configuration file:
 

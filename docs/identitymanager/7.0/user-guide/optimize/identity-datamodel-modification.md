@@ -27,7 +27,7 @@ This part is about integrating these changes in the existing data model.
 
 ### **dimensions**
 
-Identity Manager calls **dimensions** the attributes that assignment rules rely on. They are essential criteria that differentiate users in order to give them the appropriate roles. See the [Conforming Assignments](../../integration-guide/role-assignment/conformingassignmentcomputation) topic for additional information.
+Identity Manager calls **dimensions** the attributes that assignment rules rely on. They are essential criteria that differentiate users to give them the appropriate roles. See the [Conforming Assignments](../../integration-guide/role-assignment/conformingassignmentcomputation) topic for additional information.
 
 ### Personal data security
 
@@ -35,7 +35,7 @@ Only professional data should be used in the identity data model, not personal d
 
 ## Participants and Artifacts
 
-Integrators are able to perform an identity update if they master the new data model.
+Integrators can perform an identity update if they master the new data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -48,9 +48,9 @@ See the [Create the Workforce Repository](../../user-guide/set-up/initial-identi
 The data model can be updated in the UI via a feature scanning the data model. This scan performs an analysis on the data previously imported through the Excel file. It detects properties which are always empty and suggests to remove them from the data model, for clarity purposes.
 
 > For example, some systems don't store phone numbers. Then, scanning the data model will allow
-> Identity Manager to suggest removing the property about phone numbers. Note that Identity Manager
+> Identity Manager to suggest removing the property about phone numbers. Identity Manager
 > only provides suggestions but makes no decision. You could choose to keep the phone number
-> property anyway in order to fill it later.
+> property anyway to fill it later.
 
 **NETWRIX recommends updating the data model through the scan feature**, as this feature is driven by Identity Manager's suggestions.
 
@@ -60,7 +60,7 @@ However, the identity data model can also be updated through the directory's ent
 
 Add or modify properties within the identity data model by proceeding as follows:
 
-1. On the home page, click on **Settings** in the **Configuration** section.
+1. On the home page, click **Settings** in the **Configuration** section.
 
     ![Home Page - Configuration](/images/identitymanager/home_settings_v523.webp)
 
@@ -69,23 +69,23 @@ Add or modify properties within the identity data model by proceeding as follows
 
     ![Scan Data Model - Display Option](/images/identitymanager/datamodelmodif_scan_v600.webp)
 
-4. After your changes are complete, click on the Save icon at the top.
+4. After your changes are complete, click the Save icon at the top.
 
     ![Save Icon](/images/identitymanager/iconsave_v602.svg)
 
-5. Click on the **Reload** button to apply the recent changes to the application.
+5. Click the **Reload** button to apply the recent changes to the application.
 
     ![Reload Button](/images/identitymanager/reload_v603.webp)
 
 ## Delete Properties
 
-Integrators should keep in mind that the fields that they want to delete might be used in connectors or other places they didn't think about. Existing assignments might be impacted.
+Integrators should remember that the fields they want to delete might be used in connectors or other places they didn't think about. Existing assignments might be impacted.
 
 Identity Manager suggests the removal only of empty fields. In this case, there is nothing to worry about.
 
 ## Verify Data Model Modification
 
-In order to verify the process:
+To verify the process:
 
 - **Check manually a sample** in the user directory accessible from the home page. You should verify at
 least your own sheet and the sheets assigned to your hierarchy.

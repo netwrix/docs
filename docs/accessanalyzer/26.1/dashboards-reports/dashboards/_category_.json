@@ -1,0 +1,11 @@
+{
+  "label": "Dashboards",
+  "position": 1,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "description": "The two summary dashboards: Data security for file servers and SharePoint Online, and Active Directory for domains, users, groups, and risks.",
+    "slug": "/dashboards-reports/dashboards"
+  }
+}

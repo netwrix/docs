@@ -7,13 +7,13 @@ sidebar_position: 20
 # Resources
 
 This page provides an overview of various REST APIs for Activity Monitor, outlining their attributes
-and functionality. The information includes examples to help you understand and utilize REST APIs
+and functionality. The information includes examples to help you understand and use REST APIs
 effectively.
 
 ## Agent
 
-Agent represents an Activity Monitor Agent. The API allows you to view existing agents and their
-statuses; register, modify or remove agents. The following table displays the attributes for Agent
+Agent represents an Activity Monitor Agent. The API lets you view existing agents and their
+statuses; register, modify, or remove agents. The following table displays the attributes for Agent
 API:
 
 | Attribute                     | Type          | Detailed Only | Description                                                                                                                                                                                      |
@@ -22,7 +22,7 @@ API:
 | url                           | string        |               | Self URL                                                                                                                                                                                         |
 | host                          | string        |               | Host name/address as specified by user                                                                                                                                                           |
 | netbiosName                   | string        |               | NETBIOS name                                                                                                                                                                                     |
-| userName                      | string        |               | Account for connecting to the agent. Password is not exposed.                                                                                                                                    |
+| userName                      | string        |               | Account for connecting to the agent. Password isn't exposed.                                                                                                                                    |
 | domain                        | string        |               | Domain name of the agent                                                                                                                                                                         |
 | machineSid                    | string        |               |                                                                                                                                                                                                  |
 | osVersion                     | string        |               | OS "version" or "version servicepack"                                                                                                                                                            |
@@ -41,7 +41,7 @@ API:
 | safeModeMessage               | string        | yes           | If in the safe mode, contains a reason why the agent switched to the mode.                                                                                                                       |
 | archiveIsEnabled              | bool?         | yes           | Whether the archiving feature is enabled                                                                                                                                                         |
 | archivePath                   | string        | yes           | UNC path of the archival location                                                                                                                                                                |
-| archiveUserName               | string        | yes           | An account to access the archival location. Password is not exposed.                                                                                                                             |
+| archiveUserName               | string        | yes           | An account to access the archival location. Password isn't exposed.                                                                                                                             |
 | archiveMaxLocalSize           | string        | yes           | Maximum space the agent is allowed to use on the local drives.                                                                                                                                   |
 | fpolicyPort                   | int?          | yes           | NetApp c-mode fpolicy port                                                                                                                                                                       |
 | fpolicyAuth                   | string        | yes           | `NoAuth`, `Server`, `Mutual`                                                                                                                                                                     |
@@ -216,7 +216,7 @@ Example:
 
 Host represents a host or platform monitored by the product (Windows, NetApp, SharePoint, SQL
 Server, etc). It is a Monitored Host in the Console. The API provides access to the settings of the
-host and its status. It allows you to create new hosts, modify, enable/disable, or delete
+host and its status. Use it to create new hosts, modify, enable/disable, or delete
 exisisting. The following table displays the attributes for Host API:
 
 | Attribute             | Type     | Detailed Only | Description                                                                                                                                                            |
@@ -465,7 +465,7 @@ table displays the attributes for Output API:
 | domainId         | string           |               | AD only: ID of the owning domain                                                                             |
 | domainUrl        | string           |               | AD only: Link to the owning domain                                                                           |
 | logsUrl          | string           |               | Link to the file output log files (for the local agent only)                                                 |
-| isEnabled        | bool             |               | Whether or not the output is enabled. If disabled, no activity is forwarded to it.                           |
+| isEnabled        | bool             |               | Whether the output is enabled. If disabled, no activity is forwarded to it.                           |
 | type             | string           |               | `LogFile`,`Syslog`,`Amqp`                                                                                    |
 | logFile          | FileOutput       |               | Log file settings                                                                                            |
 | syslog           | SyslogOutput     |               | Syslog settings                                                                                              |
@@ -642,8 +642,8 @@ be downloaded. The following table displays the attributes for File API:
 | isArchived   | bool     |               | Determines whether the file is on a local drive of the agent or moved to the archival location. |
 | type         | string   |               | `Tsv`, `Json`                                                                                   |
 | updatedAt    | DateTime |               | Last time the file was updated                                                                  |
-| activityFrom | DateTime |               | Activity events in the file are not younger than the date.                                      |
-| activityTo   | DateTime |               | Activity events in the file are not older than the date.                                        |
+| activityFrom | DateTime |               | Activity events in the file aren't younger than the date.                                      |
+| activityTo   | DateTime |               | Activity events in the file aren't older than the date.                                        |
 | outputId     | string   |               | ID of the output that produced the file.                                                        |
 | contentUrl   | string   |               | Link to the file content. MIME type `application/x-msdownload`                                  |
 
@@ -695,7 +695,7 @@ Example:
 
 ## Policy
 
-Policy represents an Active Directory monitoring policy. The API allows you to create new policies,
+Policy represents an Active Directory monitoring policy. Use the API to create new policies,
 list, modify, and delete existing. The following table displays the attributes for Policy API:
 
 | Attribute   | Type     | Detailed Only | Read-Only | Description                                                                           |
@@ -919,7 +919,7 @@ Example:
 
 **POST /api/v1/agents**
 
-Adds a new agent (but does not install it). The `host` attribute must be unique.
+Adds a new agent (but doesn't install it). The `host` attribute must be unique.
 
 Permission: `Modify agents`
 
@@ -997,7 +997,7 @@ The following attributes can be modified:
 
 **DELETE /api/v1/agents/«id»**
 
-Removes the agent. Does not uninstall.
+Removes the agent. Doesn't uninstall.
 
 Permission: `Modify agents`
 
@@ -1091,7 +1091,7 @@ Permission: `Read` or `Access activity data`
 GET /api/v1/agents/«agentId»/domain
 
 Returns a domain monitored by the specified agent. Or 404 if no rights or not found or the agent
-does not monitor AD activity.
+doesn't monitor AD activity.
 
 This endpoint is useful to get `Output` settings specific to the agent. Domain outputs are
 _logical_ - they are described once and used by all the domain controllers to create actual
@@ -1105,7 +1105,7 @@ Permission: `Read` or `Access activity data`
 GET /api/v1/domains/«domainId»/agents
 
 Returns the domain controllers (agents) having this domain monitored. Or 404 if no rights or the
-domain was not found.
+domain wasn't found.
 
 Permission: `Read` or `Access activity data`
 
@@ -1114,7 +1114,7 @@ Permission: `Read` or `Access activity data`
 GET /api/v1/domains/«domainId»/outputs
 
 Returns the configured outputs for the specified domain, or 404 if no rights for the domain or the
-domain was not found.
+domain wasn't found.
 
 Permission: `Read` or `Access activity data`
 
@@ -1178,7 +1178,7 @@ Example:
 
 **GET /api/v1/domains/«domainId»/outputs/«id»**
 
-Returns the specified domain's output. Or 404 if no rights for the domain or the domain was not
+Returns the specified domain's output. Or 404 if no rights for the domain or the domain wasn't
 found.
 
 Permission: `Read` or `Access activity data`
@@ -1453,7 +1453,7 @@ Example:
 
 **GET /api/v1/agents/«agentId»/hosts**
 
-Returns a list of hosts of the specified agent. If the agent was not found or no rights - 404.
+Returns a list of hosts of the specified agent. If the agent wasn't found or no rights - 404.
 
 Permission: `Read` or `Access activity data`
 
@@ -1534,7 +1534,7 @@ Permission: `Modify hosts`
 
 GET /api/v1/hosts/«hostId»/outputs
 
-Returns a list of outputs of the specified host. If the host was not found or no rights - 404.
+Returns a list of outputs of the specified host. If the host wasn't found or no rights - 404.
 
 Permission: `Read` or `Access activity data`
 
@@ -1571,7 +1571,7 @@ Required attributes:
 
 **GET /api/v1/hosts/«hostId»/outputs/«id»**
 
-Returns the specified output of the host. If the host was not found or no rights, or the output was
+Returns the specified output of the host. If the host wasn't found or no rights, or the output was
 not found - 404.
 
 Permission: `Read` or `Access activity data`
@@ -1677,7 +1677,7 @@ The following attributes can be modified:
 - `windows.discardReorderedAcl`
 - `windows.vssActivity`
 - `windows.vssCreation`
-- `amqp.server` - must be a a vaild hostname or ip4/ip6 address.
+- `amqp.server` - must be a valid hostname or ip4/ip6 address.
 - `amqp.userName`
 - `amqp.vhost`
 - `amqp.queue`

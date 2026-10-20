@@ -13,7 +13,7 @@ How to structure roles into categories. See the [Category](../../../integration-
 A category is usually created to:
 
 - **reflect the validation process**, i.e. represent groups of roles that follow the same validation
-process with the same validator(s);
+process with the same validators;
 - help users find intuitively the entitlement that they are looking for.
 
 > For example, creating one category per application often fulfills both requirements.
@@ -24,7 +24,7 @@ There can be several category levels. For example, integrators can choose to cre
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the **application owners** who know the application's users, entitlements and data model.
+For a given managed system, integrators may need the help of the **application owners** who know the application's users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -34,16 +34,16 @@ See the [Create Roles in the Role Catalog](../../../user-guide/set-up/single-rol
 
 ## Create a Category
 
-Categories are not mandatory to create roles, but they are highly recommended to organize single roles.
+Categories aren't mandatory to create roles, but they are highly recommended to organize single roles.
 
 Create a category by proceeding as follows:
 
-1. On the home page in the **Configuration** section, click on **Access Roles** to access the roles
+1. On the home page in the **Configuration** section, click **Access Roles** to access the roles
 page.
 
     ![Home Page - Access Roles](/images/identitymanager/home_roles_v602.webp)
 
-2. All existing categories are shown in the menus on the left. To create a new category, click on
+2. All existing categories are shown in the menus on the left. To create a new category, click
 **+**.
 
     ![Add a New Category](/images/identitymanager/singlerolescatalog_newcategory_v602.webp)
@@ -59,13 +59,13 @@ tree.
     - `Parent category`: optional link to an existing category that would contain the created
 category.
 
-4. Click on **Create** and see the category added in the menus.
+4. Click **Create** and see the category added in the menus.
 
-When creating a category, you must be cautious about the associated validators that are not yet defined.
+When creating a category, you must be cautious about the associated validators that aren't yet defined.
 
 ## Verify Category Creation
 
-In order to verify the process, check on the **Access Roles** screen that the category is created with the right parameters.
+To verify the process, check on the **Access Roles** screen that the category is created with the right parameters.
 
 ![Verify Category](/images/identitymanager/categorycreation_test_v602.webp)
 

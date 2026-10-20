@@ -38,7 +38,7 @@ The tab includes:
 - Status – Execution status, for example **Queued**, **Running**, **Success**, or **Warning**.
 - Message – Access Analyzer message regarding runtime activity
 - Runtime – Duration of task execution
-- Stop – Aborts all currently running instances
+- Stop – Aborts all running instances
 
 ## History Tab
 

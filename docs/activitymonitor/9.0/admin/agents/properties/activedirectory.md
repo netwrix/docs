@@ -12,7 +12,7 @@ be enabled for agents on domain controllers.
 
 ![Agent Properties - Active Directory Tab](/images/activitymonitor/9.0/admin/agents/properties/mainimage.webp)
 
-The Agent Settings allow users to control the AD agent’s properties:
+Use the Agent Settings to control the AD agent’s properties:
 
 - Harden the Agent – Protects the AD agent from being altered, stopped, or started from within the
   local Service Control Manager
@@ -22,8 +22,8 @@ The Agent Settings allow users to control the AD agent’s properties:
     :::note
     This is a safety measure that disables monitoring if the environment changes as in
     rare cases the instrumentation may cause LSASS crashes. Should the version change occur, a
-    warning will be shown next to the agent on the Agents page. The **Start pending AD Module** button
-    allows you to force the agent to enable monitoring.
+    warning will be shown next to the agent on the Agents page. Use the **Start pending AD Module** button
+    to force the agent to enable monitoring.
     :::
 
 
@@ -32,7 +32,7 @@ The Agent Settings allow users to control the AD agent’s properties:
 
     :::note
     This provides more uniform data, but may have a performance impact on the machine
-    where the AD agent is deployed, especially if that machine does not handle the name resolution
+    where the AD agent is deployed, especially if that machine doesn't handle the name resolution
     locally.
     :::
 
@@ -50,7 +50,7 @@ See the following sections for additional information:
 
 ## Configuring Threat Prevention to Send Active Directory Activity to Activity Monitor
 
-Once the activity agent is deployed to a domain controller with an existing Threat Prevention agent,
+After the activity agent is deployed to a domain controller with an existing Threat Prevention agent,
 a connection can be secured between both agents. Follow these instructions to configure the policy
 used for Active Directory Activity Monitoring from the Threat Prevention Admin Console.
 

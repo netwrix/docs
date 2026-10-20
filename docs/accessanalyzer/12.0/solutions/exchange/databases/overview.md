@@ -22,7 +22,7 @@ The following comprise the 3. Databases Job Group:
 
 The 3. Databases Job Group uses a MAPI-based data collector, Exchange2K. Therefore, it requires both
 Access Analyzer MAPI CDO and Microsoft Exchange MAPI CDO to be installed on the Access Analyzer
-Console server. Once these have been installed, the **Settings** > **Exchange** node must be
+Console server. After these are installed, the **Settings** > **Exchange** node must be
 configured for proper connection to the Exchange server.
 
 See the [Exchange](/docs/accessanalyzer/12.0/admin/settings/exchange.md) topic for additional information.

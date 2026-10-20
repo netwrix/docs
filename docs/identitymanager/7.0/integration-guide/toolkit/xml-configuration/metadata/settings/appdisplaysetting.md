@@ -8,7 +8,7 @@ This setting is used to customize the application display.
 
 
 ## Examples
-### Set colors, logos and names
+### Set colors, logos, and names
 
 The following example sets:
 * "Netwrix Identity Manager" as name of the application visible on the tabs;

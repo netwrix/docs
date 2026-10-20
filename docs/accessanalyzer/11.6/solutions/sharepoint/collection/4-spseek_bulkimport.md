@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # 4-SPSEEK_BulkImport Job
 
-This job is responsible for retrieving the Tier 2 SPDLP database information and importing it to the
-SQL Server where Enterprise Auditor stores data.
+This job retrieves the Tier 2 SPDLP database information and imports it to the SQL Server where
+Enterprise Auditor stores data.
 
 ## Queries for the 4-SPSEEK_BulkImport Job
 
@@ -22,7 +22,7 @@ The query for the 4-SPSEEK Bulk Import Job is:
 ### Configure 4-SPSEEK_BulkImport Job
 
 The 4-SPSEEK_BulkImport Job has been preconfigured to run with the default settings with the SPAA
-Data Collector category of **Bulk Import Sensitive Content Scan Results**, which is not visible
+Data Collector category of **Bulk Import Sensitive Content Scan Results**, which isn't visible
 within the SharePoint Access Auditor Data Collector Wizard when opened from within this job. Follow
 the steps to set any desired customizations.
 
@@ -38,16 +38,16 @@ displays.
 
 **Step 4 –** On the
 [SPAA: Bulk Import Settings](/docs/accessanalyzer/11.6/admin/datacollector/spaa/bulkimportsettings.md)
-page, the **Set Host Identifier** is not configured by default. Click **Next**.
+page, the **Set Host Identifier** isn't configured by default. Click **Next**.
 
 :::note
-Unless SQL Server Replication is used, it should not be necessary to adjust the **Host
+Unless SQL Server Replication is used, it shouldn't be necessary to adjust the **Host
 Identifier** seed.
 :::
 
 
 :::warning
-Do not configure the options on the Results page.
+Don't configure the options on the Results page.
 :::
 
 
@@ -81,6 +81,6 @@ The default analysis tasks are:
 -   **5. Create DLP views** – Creates the SA_SPDLP_MatchesView
 -   **6. Create exceptions view** – Creates the SA_SPAA_ExceptionsView
 
-The following analysis task is not selected by default, but can be enabled:
+The following analysis task isn't selected by default, but can be enabled:
 
 - Display Match Hits – Displays the SA_SPDLP_MatchesHitsView within Enterprise Auditor.

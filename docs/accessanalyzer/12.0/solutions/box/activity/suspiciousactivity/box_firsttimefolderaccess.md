@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **Box** > **1.Activity** > **Suspic
 **Box_FirstTimeFolderAccess** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

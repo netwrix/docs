@@ -8,7 +8,7 @@ sidebar_position: 60
 
 - [Update Identity Data](../../user-guide/maintain/identity-data-modification)
 
-How to perform modifications in the identity repository, to manage onboarding, offboarding and position changes.
+How to perform modifications in the identity repository, to manage onboarding, offboarding, and position changes.
 
     - [Update an Individual Identity](../../user-guide/maintain/identity-data-modification/individual-update)
 

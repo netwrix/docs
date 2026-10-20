@@ -1,10 +1,10 @@
 ---
 title: "PendingAssignedResourceTypesAccessControlRules"
-description: "Generates the access control rules which give to a profile the permissions to call the API Pending AssignedResourceTypes."
+description: "Generates the access control rules which give a profile the permissions to call the API Pending AssignedResourceTypes."
 sidebar_position: 4
 ---
 
-Generates the access control rules which give to a profile the permissions to call the API Pending AssignedResourceTypes.
+Generates the access control rules which give a profile the permissions to call the API Pending AssignedResourceTypes.
 
 
 
@@ -26,7 +26,7 @@ Generates the access control rules which give to a profile the permissions to ca
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Custom_PendingAssignedResourceTypes_AD_Entry_AdministrationUser" DisplayName_L1="Administrator - PendingAssignedResourceTypes - " DisplayName_L2="Administrator - PendingAssignedResourceTypes - " EntityType="AssignedResourceType" Profile="Administrator">

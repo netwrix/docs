@@ -4,7 +4,7 @@ description: "Gives the rights to create and update resource types, generate pro
 sidebar_position: 1
 ---
 
-Generates the access control rules which give to a profile the permission to create and update resource types, and launch generate provisioning orders and fulfillment from the connector screen.
+Generates the access control rules which give a profile the permission to create and update resource types, and launch generate provisioning orders and fulfillment from the connector screen.
 
 
 
@@ -26,7 +26,7 @@ Generates the access control rules which give to a profile the permission to cre
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
   <AccessControlRule Identifier="ConnectorResourceType_Administrator_Category" DisplayName_L1="Administrator_Category" DisplayName_L2="Administrateur_Category" EntityType="Category" Profile="Administrator">

@@ -13,7 +13,7 @@ This guide shows how to set up and run the Banking demo application.
 The Banking application is a demo application that represents a web based external system. The Banking application contains:
 
 - A main page
-- A list of users, accessible by clicking on **Users** at the top of the page. It is possible to add
+- A list of users, accessible by clicking on **Users** at the top of the page. Add
 a user by clicking on **Create New User**
 
     ![Users list](/images/identitymanager/demoapps_banking_userslist.webp)
@@ -25,7 +25,7 @@ list
 
     ![User details](/images/identitymanager/demoapps_banking_userdetails.webp)
 
-The most interesting part of the Banking application is a user's page. On a user's page, it is possible to:
+The most interesting part of the Banking application is a user's page. On a user's page, you can:
 
 - Edit the user's information
 - Delete the user
@@ -37,7 +37,7 @@ The Banking application uses a database named BankingSystem as a data source. Th
 
 The Banking application exposes an API that complies with SCIM 2.0 (RFC 7643 & RFC 7644) standards. This API provides:
 
-- Token retrieval in two different ways — Login/Password and Client Credentials. This is not real
+- Token retrieval in two different ways — Login/Password and Client Credentials. This isn't real
 authentication so you can input any values, as the system only verifies if the fields are empty.
 - A schema endpoint (/Schemas) that returns metadata describing SCIM resource types. This includes
 attributes, types, mutability, and required fields for Users and Groups, following SCIM 2.0 specifications.
@@ -79,4 +79,4 @@ The Banking application is running, and the web browser is on the Banking home p
 
 To set the Banking application to another port, run `/Banking.exe --urls http://localhost:{port number}`. To access the application, enter the URL `localhost:{port number}` in a web browser.
 
-Some ports are not recognized by web browsers, or may already be used. Choose a port wisely.
+Some ports aren't recognized by web browsers, or may already be used. Choose a port wisely.

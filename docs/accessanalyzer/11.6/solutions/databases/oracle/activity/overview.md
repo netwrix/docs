@@ -33,7 +33,7 @@ The jobs in the 2.Activity Job Group are:
   TRUNCATE) against objects containing sensitive data
 - [Oracle_SuspiciousActivity Job](/docs/accessanalyzer/11.6/solutions/databases/oracle/activity/oracle_suspiciousactivity.md)
   – This job is designed to provide insight into suspicious behavior based on user activity that
-  does not conform to normal database activity
+  doesn't conform to normal database activity
 - [Oracle_UnusualActivity Job](/docs/accessanalyzer/11.6/solutions/databases/oracle/activity/oracle_unusualactivity.md)
   – This job is designed to analyze user activity based on the audited actions and identify any
   outliers based on a modified z-score. Modified z-scores of 3.5 or higher are considered to be

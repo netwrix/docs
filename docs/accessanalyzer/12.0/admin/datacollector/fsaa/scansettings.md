@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # FSAA: Scan Settings
 
-The Scan Settings page is where additional scan protocols and settings are configured. It is a
+Use the Scan Settings page to configure additional scan protocols and settings. It is a
 wizard page for the categories of:
 
 - System Access/Permission Auditing Scan
@@ -14,21 +14,21 @@ wizard page for the categories of:
 
 ![FSAA Data Collector Wizard Scan Settings page](/images/accessanalyzer/12.0/admin/datacollector/fsaa/scansettings_1.webp)
 
-In the Scan Protocols section, select the desired checkboxes for including certain types of shared
+In the Scan Protocols section, select the checkboxes you want for including certain types of shared
 folders:
 
 - Scan Windows (SMB/CIFS) shares – Includes types of Windows and NAS shares
 - Scan NFS exports (shares) – Includes this type of UNIX and NAS shares
 
-In the middle section, select the desired checkboxes for additional settings:
+In the middle section, select the checkboxes you want for additional settings:
 
 - Enable file system scan streaming – Sends the streamed data directly to the Access Analyzer
-  database. A bulk import query is not required when this option is selected
-- Enable scanning of files protected by Azure Information Protection – Adds additional options to
-  this wizard to scan for protection labels and encrypted files for sensitive data
+  database. A bulk import query isn't required when you select this option
+- Enable scanning of files protected by Microsoft Information Protection – Adds options
+  to this wizard to scan for sensitivity labels and to scan encrypted files for sensitive data
 
     - See the
-      [Azure Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/azureinformationprotection.md)
+      [Microsoft Information Protection Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/microsoftinformationprotection.md)
       for additional information.
 
 - Use SQL query to manually specify shares – For advanced SQL users. This option provides a least
@@ -37,7 +37,7 @@ In the middle section, select the desired checkboxes for additional settings:
   permissions. Click **Configure Query** to open the Manual Shares Query window. See the
   [Enable the Use SQL Query to Manually Specify Shares](#enable-the-use-sql-query-to-manually-specify-shares)
   topic for additional information.
-- NetApp communication security – This option provides the ability to choose levels of encryption
+- NetApp communication security – This option lets you choose levels of encryption
   and authentication applied during Access Auditing scans of NetApp devices
 
     ![NetApp communication security options](/images/accessanalyzer/12.0/admin/datacollector/fsaa/scansettingsnetapp.webp)
@@ -45,9 +45,8 @@ In the middle section, select the desired checkboxes for additional settings:
     - HTTPS – Encrypts communication and verifies the targeted server’s SSL certificate
     - HTTPS, Ignore Certificate Errors – Encrypts communication but ignores certificate errors
 
-        - This option is primarily used for troubleshooting
-        - Alternative use for this option would be for access scans within a trusted and secured
-          network
+        - This option is primarily for troubleshooting
+        - You can also use this option for access scans within a trusted and secured network
 
     - HTTP – Applies no encryption or authentication of communication
 
@@ -61,13 +60,13 @@ In the middle section, select the desired checkboxes for additional settings:
 The bottom section is only available for the File System Access/Permission Auditing Scan and
 Sensitive Data Scan categories and contains the following options:
 
-- Restart incomplete scans after (0 always restarts) [number] days – Determines when the saved
-  progress should be discarded and the scan restarted
-- Rescan unimported hosts after (0 always rescans) [number] days – Controls when the host is
-  rescanned even if its data has not been imported yet
+- Restart incomplete scans after (0 always restarts) [number] days – Determines when to discard
+  the saved progress and restart the scan
+- Rescan unimported hosts after (0 always rescans) [number] days – Controls when to rescan the
+  host even if Access Analyzer hasn't imported its data yet
 
-    - When this option is enabled, set to a value higher than zero, and results in a host not being
-      scanned, a warning message is logged
+    - When you set this option to a value higher than zero and it causes Access Analyzer to skip a
+      host, Access Analyzer logs a warning message
     - The Messages table records the
       `No need to scan, Tier 2 DB USN > Tier 1 DB USN, needs to bulk import` warning
 
@@ -77,14 +76,14 @@ If desired, enable this feature and click **Configure Query** to open the Manual
 
 ![Maual Shares Query window](/images/accessanalyzer/12.0/admin/datacollector/fsaa/maualsharesquery.webp)
 
-The SQL query provided by a user should return a list of all shares in the target environment. The
+The SQL query you provide should return a list of all shares in the target environment. The
 target tables must reside within the Access Analyzer database and contain at least the following
 columns for all shares in the target environment:
 
 - Host – Name of host where the share resides matching the Host Master table Name field value
 
     :::info
-    Use this column but it is not required.
+    Use this column but it isn't required.
     :::
 
 
@@ -95,8 +94,8 @@ columns for all shares in the target environment:
     - 0 = CIFS share
     - 1 = NFS share
 
-For example, if the share has a path of `\\cec-fs01\Documentation`, then the columns are populated
-in this way:
+For example, if the share has a path of `\\cec-fs01\Documentation`, the query populates the columns
+as follows:
 
 - Host – `cec-fs01`
 - Share – `Documentation`
@@ -104,8 +103,8 @@ in this way:
 - ShareType – `0`
 
 :::warning
-If the FSAA Data Collector has identified a share in a previous scan, but that share is
-not in a table targeted by this query, then it is marked as a deleted share.
+If the FSAA Data Collector identified a share in a previous scan, but that share isn't
+in a table targeted by this query, the data collector marks it as a deleted share.
 :::
 
 
@@ -116,13 +115,13 @@ _(Optional)_ Enter a host in the Host parameter value (@host) textbox to test th
 the data for that host.
 
 Select **Test Query** to open a preview of the results in the Query Results window. Ensure that the
-data being retrieved by the query is expected.
+query retrieves the expected data.
 
-When this option is selected, the data collector runs against the target table to enumerate shares
+When you select this option, the data collector runs against the target table to enumerate shares
 in the environment.
 
 :::tip
-Remember, if a share is not in the target table, the data collector assumes that the share does
+Remember, if a share isn't in the target table, the data collector assumes that the share does
 not exist and marks it as deleted.
 :::
 
@@ -131,24 +130,24 @@ not exist and marks it as deleted.
 
 The HTTPS encryption options for the NetApp communication security setting of the global Remote Data
 Collection Configuration page in the File System Access Auditor Data Collector Wizard requires a
-certificate. If the organization uses a self-signed certificate, it is necessary to add this
+certificate. If the organization uses a self-signed certificate, add this
 certificate to enable HTTPS encryption of Access Analyzer communications.
 
-The certificate (`cacert.pem`) which is shipped with Access Analyzer is in the DC folder of the
+The certificate (`cacert.pem`) that ships with Access Analyzer is in the DC folder of the
 installation directory. The default location is:
 
 **…\STEALTHbits\StealthAUDIT\DC**
 
-If employing remote applet mode or proxy servers, then the certificate (`cacert.pem`) must exist in
+If you use remote applet mode or proxy servers, the certificate (`cacert.pem`) must exist in
 the FSAA folder where the `FSAAAppletServer.exe` process is running (applet/proxy host). Therefore,
-it is necessary to also copy it to the FSAA folder on the target hosts andr proxy servers. This is
-done at runtime when using remote applet mode, but any updates or custom certificates must be copied
-manually. The default location is:
+also copy it to the FSAA folder on the target hosts and proxy servers. The system copies it
+automatically at runtime when you use remote applet mode, but you must copy any updates or custom
+certificates manually. The default location is:
 
 **…\STEALTHbits\StealthAUDIT\FSAA**
 
 :::info
-Do not overwrite this certificate. It is fully trusted by Netwrix. Instead, add
+Don't overwrite this certificate. Netwrix fully trusts it. Instead, add
 an underscore (\_) character to the start of the file name. Then copy the organization’s self-signed
 certificate to this location with the name `cacert.pem`.
 :::
@@ -156,4 +155,4 @@ certificate to this location with the name `cacert.pem`.
 
 There is another `cacert.perm` file within the Access Analyzer installation directory used by the
 Notification SSL encryption options. While these files have the same name, they serve different
-purposes and are stored in different locations.
+purposes and reside in different locations.

@@ -20,15 +20,15 @@ initiated the activity. The stored events are then forwarded by the node to the 
 concurrently to several instances. At this point, Dell CEE forwards the audit event to a defined
 endpoint, such as Activity Monitor agent.
 
-Complete the following checklist prior to configuring Activity Monitor to monitor the host.
+Complete the following checklist before configuring Activity Monitor to monitor the host.
 Instructions for each item of the checklist are detailed within the following sections.
 
 **Checklist Item 1: Plan Deployment**
 
-- Prior to beginning the deployment, gather the following:
+- Before beginning the deployment, gather the following:
 
-    - DNS name of Isilon/PowerScale CIFS share(s) to be monitored
-    - Access Zone(s) containing the CIFS shares to be monitored
+    - DNS name of Isilon/PowerScale CIFS shares to be monitored
+    - Access Zones containing the CIFS shares to be monitored
     - Account with access to the OneFS UI or CLI
     - Download the Dell CEE from:
 
@@ -36,8 +36,8 @@ Instructions for each item of the checklist are detailed within the following se
 
 :::info
 You can achieve higher throughput and fault tolerance by monitoring the
-Isilon/PowerScale cluster with more than one pair of Dell CEE and Activity Monitor Agent. The
-activity will be evenly distributed between the pairs.
+Isilon/PowerScale cluster with more than one pair of Dell CEE and Activity Monitor Agent. Activity
+Monitor evenly distributes the activity between the pairs.
 :::
 
 
@@ -79,20 +79,20 @@ Checklist Item 3: Configure Auditing on the Dell Isilon/PowerScale Cluster
 - Important:
 
     - Value of the **Storage Cluster Name** field must exactly match the name entered for the
-      monitored host in the Activity Monitor Console. If the Storage Cluster Name cannot be modified
+      monitored host in the Activity Monitor Console. If the Storage Cluster Name can't be modified
       (for example, another 3rd party depends on it), you need to set the Host Aliases parameter in
       the Activity Monitor Console. Otherwise, if for some reason the Storage Cluster Name must be
-      left empty, one can list OneFS cluster node names in the Host Aliases.
+      left empty, you can list OneFS cluster node names in the Host Aliases.
 
-        - If the Storage Cluster Name is not empty, set the Host Aliases parameter to its value
+        - If the Storage Cluster Name isn't empty, set the Host Aliases parameter to its value
         - If the Storage Cluster Name is empty, set the Host Aliases to a semicolon-separated list
           of OneFS node names
 
     - Include all Access Zones to be monitored in the auditing configuration
     - As soon as the first CEE is installed, Isilon/PowerScale will start to send all activity,
       including all previous audit events, to the agent. The start time can be modified to exclude
-      previously recorded audit events to prevent the agent from becoming overloaded with data. It
-      can be done using OneFS CLI only with isi audit modify command to edit the start time.
+      previously recorded audit events to prevent the agent from becoming overloaded with data. You
+      can only do this using the OneFS CLI with the isi audit modify command to edit the start time.
 
         - Start time command:
 
@@ -123,7 +123,7 @@ For automatic configuration, an account needs to be provisioned with the followi
 
 - ISI_PRIV_AUDIT
 
-Privileges can be added to a role and then the role can be assigned to an account. Use the following
+You can add privileges to a role and then assign the role to an account. Use the following
 commands to create a role, add privileges, and assign the role to an account:
 
 ```
@@ -133,7 +133,7 @@ isi auth roles modify activity_monitor --add-priv-write="ISI_PRIV_AUDIT"
 isi auth roles modify activity_monitor --add-user="ACCOUNT_NAME"
 ```
 
-Assigned privileges can be verified with the following command:
+Verify assigned privileges with the following command:
 
 ```
 isi auth mapping token "ACCOUNT_NAME"

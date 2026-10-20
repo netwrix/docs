@@ -10,20 +10,20 @@ Alerts are configurable notifications triggered by certain events and sent to th
 recipients. You can enable or disable, and modify existing alerts, and create new alerts. To do it,
 click Configure next to Alerts.
 
-Follow the steps to create new alert.
+To create a new alert:
 
 **Step 1 –** In the Alerts window, click Add to start new alert.
 
 **Step 2 –** On the Alert Properties step, specify the alert name and enter alert description
-(optional). Specify the number alerts per email. Grouped alerts for different computers will be
-delivered in separate email messages. This value is set to 1 by default, which means that each alert
-will be delivered as a separate email message.
+(optional). Specify the number alerts per email. Auditor delivers grouped alerts for different
+computers in separate email messages. This value is set to 1 by default, so Auditor delivers each
+alert as a separate email message.
 
 **Step 3 –** On the Notifications step, configure email notifications and customize the notification
 template, if needed. Click Edit next to Customize notifications template. Edit the template by
 deleting or inserting information fields.
 
-The %ManagedObjectName% variable will be replaced with your monitoring plan name.
+Auditor replaces the %ManagedObjectName% variable with your monitoring plan name.
 
 **Step 4 –** On the Event filters step, specify an event that will trigger the alert.
 
@@ -35,7 +35,7 @@ The %ManagedObjectName% variable will be replaced with your monitoring plan name
     | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | Name        | Specify the filter name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
     | Description | Enter the description for this filter (optional).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-    | Event Log   | Select an event log from the drop-down list. You will be alerted on events from this event log. You can also input a different event log. To find out a log’s name, navigate to Start > Windows Administrative Tools > **Event Viewer** > **Applications and Services Logs** > Microsoft > Windows and expand the required Log_Name node, right-click the file under it and select Properties. Find the event log’s name in the Full Name field. Auditor does not collect the Analytic and Debug logs, so you cannot configure alerts for these logs. You can use a wildcard (\*). In this case you will be alerted on events from all Windows logs except for the ones mentioned above. |
+    | Event Log   | Select an event log from the dropdown list. You will be alerted on events from this event log. You can also input a different event log. To find out a log’s name, navigate to Start > Windows Administrative Tools > **Event Viewer** > **Applications and Services Logs** > Microsoft > Windows and expand the required Log_Name node, right-click the file under it and select Properties. Find the event log’s name in the Full Name field. Auditor doesn't collect the Analytic and Debug logs, so you can't configure alerts for these logs. You can use a wildcard (\*). In this case you will be alerted on events from all Windows logs except for the ones mentioned above. |
 
 - In the Event Fields tab:
 

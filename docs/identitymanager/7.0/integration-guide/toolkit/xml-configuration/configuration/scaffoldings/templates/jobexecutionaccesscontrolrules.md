@@ -10,7 +10,7 @@ The scaffolding generates the following scaffoldings:
 
 - [Job View Access Control Rules](../templates/jobviewaccesscontrolrules)
 
-Scaffolding to generate a set of rights to view all JobInstances, TaskInstances and logs.
+Scaffolding to generate a set of rights to view all JobInstances, TaskInstances, and logs.
 - [Run Job Administration Access Control Rules](../accesscontrolrules/jobs/runjobadministrationaccesscontrolrules)
 
 Generates the permissions to launch jobs from UI for a given profile.
@@ -43,7 +43,7 @@ The following example assigns to the `Administrator` profile the rights to execu
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <JobViewAccessControlRules Id="6" Profile="Administrator" />

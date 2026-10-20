@@ -27,7 +27,7 @@ the application in their default browser. Alternatively, the localhost URL can b
 
 Remote Access
 
-Since Access Reviews is a browser-based application, it is possible to access the web interface
+Since Access Reviews is a browser-based application, access the web interface
 remotely. It is up to the Administrator to provide users with the correct URL for access.
 
 Depending on your network environment, you may need to use the NetBIOS name, FQDN, or IP Address of

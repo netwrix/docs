@@ -32,8 +32,6 @@ advanced filtering of Microsoft Office activity also requires the JSON format.
 The JSON format for audit events was introduced in Qumulo Core 6.0.1. The new format can be enabled
 via an SSH session to the Qumulo cluster.
 
-Follow the steps to verify that audit event format and change the format, if needed.
-
 **Step 1 –** Connect to the Qumulo cluster with SSH.
 
 **Step 2 –** Execute the following command to log in:
@@ -53,5 +51,5 @@ __Step 4 –__ Execute the following command to change the format, if needed:
 
 **qq audit_set_syslog_config --json**
 
-The change willshould be reflected in the __format__ field.
+The change should be reflected in the __format__ field.
 ```

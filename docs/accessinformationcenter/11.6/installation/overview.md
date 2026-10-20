@@ -19,7 +19,7 @@ information.
 
 ### Enterprise Auditor Solutions
 
-The .Active Directory Inventory Solution must be successfully executed prior to installing the
+The .Active Directory Inventory Solution must be successfully executed before installing the
 Access Information Center.
 
 :::info
@@ -31,7 +31,7 @@ supply the data for Resource Audits.
 ### Permissions
 
 Permissions are needed to the Enterprise Auditor database and to Active Directory. This can be one
-account with sufficient rights to each or two separate accounts. For the purpose of this document,
+account with sufficient rights to each or two separate accounts. To document this,
 these will be referred to as the Database service account and the Active Directory service account.
 
 - Database service account – Typically, this is the same account used by Enterprise Auditor for a
@@ -71,7 +71,7 @@ topic for additional information and best practices.
 
 ### Remote AIC Console Sever Requirements
 
-If it is necessary to install the Access Information Center on a server separate from the Enterprise
+To install the Access Information Center on a server separate from the Enterprise
 Auditor Console, the following minimal server requirements are needed for Access Reporting:
 
 - Windows Server 2016 through Windows Server 2022
@@ -85,7 +85,7 @@ Auditor Console, the following minimal server requirements are needed for Access
 - .NET Framework 4.7.2+
 
 :::note
-If utilizing any of the Access Information Center workflows (Resource Reviews or
+If using any of the Access Information Center workflows (Resource Reviews or
 Self-Service Access Requests), additional CPU cores, memory, and disk space may be needed.
 :::
 

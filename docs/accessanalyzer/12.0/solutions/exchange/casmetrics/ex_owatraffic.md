@@ -18,7 +18,7 @@ View the analysis tasks by navigating to the **Exchange** > **2. CAS Metrics** >
 Access** > **EX_OWATraffic** > **Configure** node and select **Analysis**.
 
 :::warning
-Most of these analysis tasks are preconfigured and should not be modified ordeselected.
+Most of these analysis tasks are preconfigured and shouldn't be modified ordeselected.
 There is one that is deselected by default, as it is for troubleshooting purposes.
 :::
 
@@ -46,7 +46,7 @@ The following analysis task deletes table data from data collection and analysis
 task should remain cleared unless specifically needed:
 
 :::warning
-Do not select the **00. Delete all History** option. This analysis task is for
+Don't select the **00. Delete all History** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database.
 :::
 

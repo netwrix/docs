@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # AD_DuplicateUsers Job
 
-The AD_DuplicateUsers Job helps to identify multiple user accounts which may be owned by a single
-employee. A user may have accounts in multiple domains or administrative accounts with greater
-access than their normal account.
+The AD_DuplicateUsers Job identifies multiple user accounts that a single employee may own. A user
+may have accounts in multiple domains or administrative accounts with greater access than their
+normal account.
 
 ## Analysis Tasks for the AD_DuplicateUsers Job
 
@@ -16,7 +16,7 @@ Navigate to the **Active Directory** > **2.Users** > **AD_DuplicateUsers** > **C
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

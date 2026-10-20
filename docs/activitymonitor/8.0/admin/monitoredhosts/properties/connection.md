@@ -16,7 +16,7 @@ Configure App Registration information for a Microsoft Entra ID host in the Conn
 host's Properties window. Click **Open instructions...** for steps on registering the
 Activity Monitor. Click **Sign out** to sign out of the Azure account.
 
-The options that can be configured on the Connection Tab are:
+You can configure the following options on the Connection Tab:
 
 - Domain
 - Azure Cloud

@@ -14,7 +14,7 @@ The scaffolding generates the following scaffoldings:
 Generates execution rights for the create, update, delete workflows.
 - [Create Update Delete Menus](../entitytypes/workflows/createupdatedeletemenus)
 
-Creates creation, update and delete menus for an entity.
+Creates creation, update, and delete menus for an entity.
 - [Create Update Delete Workflows](../entitytypes/workflows/createupdatedeleteworkflows)
 
  
@@ -55,7 +55,7 @@ Creates an entity that will be the source of all workflows that manipulate the g
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <CreateUpdateDeleteAccessControlRules Id="49" EntityType="Directory_UserType" Profile="Administrator" />

@@ -6,7 +6,8 @@ sidebar_position: 30
 
 # ExchangePS: Scope
 
-The Scope page establishes how mailboxes are scoped. It is a wizard page for all of the categories.
+The Scope page establishes how the data collector scopes mailboxes. It is a wizard page for all of
+the categories.
 
 ![ExchangePS Data Collector Wizard Scope page](/images/accessanalyzer/11.6/admin/datacollector/exchangeps/scope.webp)
 
@@ -15,14 +16,14 @@ Available scoping options vary based on the category selected. Scoping options i
 - No Scoping Target Host: Local Host – Returns all results for the entire targeted Exchange
   Organization
 
-    - If this option is selected, then the data collector should be run against the host specified
+    - If you select this option, run the data collector against the host specified
       on the Summary page. See the
       [ExchangePS: Summary](/docs/accessanalyzer/11.6/admin/datacollector/exchangeps/summary.md) topic
       for additional information.
     - When using the applet, the data collector gathers information about the Exchange Forest in
-      which the Enterprise Auditor Console currently resides
+ which the Enterprise Auditor Console resides
     - For Remote PowerShell, the data collector gathers information about the Exchange Organization
-      to which the Remote PowerShell connection was made. This refers to the server entered in the
+      to which you made the Remote PowerShell connection. This refers to the server entered in the
       Client Access Server (CAS) field of the global configuration from the **Settings** >
       **Exchange** node or on the this page.
 
@@ -39,7 +40,7 @@ Available scoping options vary based on the category selected. Scoping options i
 
     - When using the applet, the data collector deploys a process to the targeted host to run the
       PowerShell on that server
-    - For Remote PowerShell, the data collector does not deploy anapplet and utilizes the WinRM
+    - For Remote PowerShell, the data collector doesn't deploy anapplet and uses the WinRM
       protocol to gather information about the objects on that server. See the
       [Remote PowerShell](/docs/accessanalyzer/11.6/admin/datacollector/exchangeps/overview.md#remote-powershell)
       and

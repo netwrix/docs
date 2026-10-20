@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Create a Working Directory
 
-The working directory is a simple Windows directory where Identity Manager's Server and/or Agent executable(s) and dependencies are stored on the workstation. This section shows how to set up the directory for the rest of the installation and Identity Manager's lifespan.
+The working directory is a simple Windows directory where Identity Manager's Server and/or Agent executables and dependencies are stored on the workstation. This section shows how to set up the directory for the rest of the installation and Identity Manager's lifespan.
 
 The following steps are to be performed on the Server workstation. They will also have to be executed on the Agent workstation if a separate Agent setup has been chosen.
 
@@ -14,7 +14,7 @@ The following steps are to be performed on the Server workstation. They will als
 
 ### 1. Create the working directory
 
-The recommended naming convention is `C:/identitymanager<Organization>`, where `<Organization>` is the name of the organization targeted by this installation.
+Netwrix recommends naming it `C:/identitymanager<Organization>`, where `<Organization>` is the name of the organization targeted by this installation.
 
 ### 2. Extract the content of the runtime archive
 
@@ -49,7 +49,7 @@ you choose to install a separate agent.
 - `appsettings.*.json`:
 [Network Configuration](../../integration-guide/network-configuration).
 
-## What's Next?
+## What's Next
 
 Next section shows how to install the Identity Manager Database. See the [Install the Database](../../installation-guide/production-ready/database)topic for additional information.
 

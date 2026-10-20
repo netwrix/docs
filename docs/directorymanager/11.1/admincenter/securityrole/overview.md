@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Security Roles
 
-Security roles enable you to control access to Directory Manager and the directory. An identity
+Use security roles to control access to Directory Manager and the directory. An identity
 store in Directory Manager has the following built-in roles that you can assign to users:
 
 - **Administrator:** By default, this role has permissions on all functions that can be performed in
@@ -16,7 +16,7 @@ store in Directory Manager has the following built-in roles that you can assign 
   by default, is available in the Helpdesk mode only.
 
     :::note
-    The Helpdesk role is not available by default for a Microsoft Entra ID identity store.
+    The Helpdesk role isn't available by default for a Microsoft Entra ID identity store.
     :::
 
 
@@ -24,7 +24,7 @@ store in Directory Manager has the following built-in roles that you can assign 
   groups, update their directory profiles, and manage their direct reports.
 
 These roles are highly customizable. You can modify their display name, priority level, permissions,
-policies, and more. If the built-in roles do not meet your specific needs, you can create custom
+policies, and more. If the built-in roles don't meet your specific needs, you can create custom
 security roles. See the [Manage Security Roles](/docs/directorymanager/11.1/admincenter/securityrole/manage.md) and [Create a Security Role](/docs/directorymanager/11.1/admincenter/securityrole/create.md)
 topics for additional information.
 
@@ -56,7 +56,7 @@ Consider the following scenario:
 
 - For the Administrator role, you allow role members to access one Directory Manager client:
   Directory Manager Management Shell. User A is a member of the Administrator role, so it gets
-  access to Management Shell as an admin. User A cannot access any other Directory Manager client.
+  access to Management Shell as an admin. User A can't access any other Directory Manager client.
 - For the User role, you allow role members to access the Directory Manager portal only. User A is a
   member of the User role, so it gets access to the portal as a standard user.
 

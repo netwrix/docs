@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Model Changes in the AIC
 
-Follow the steps to model resource access changes for a single trustee or multiple trustees.
+To model resource access changes for a single trustee or multiple trustees:
 
 **Step 1 –** Navigate to a desired file system resource and select the **Effective Access** report
 in the Reports pane.
@@ -20,7 +20,7 @@ access through three sources on policies, shares, and folders.
 ![Select Group in Group Membership pane of Effective Access report](/images/accessinformationcenter/11.6/resourceaudit/changemodeling/effectiveaccessreportgroup.webp)
 
 **Step 3 –** In the Group Membership pane, begin to enter the name of the group that grants the
-access to be changed. Select it from the list that shows in the drop-down menu. The group’s
+access to be changed. Select it from the list that shows in the dropdown menu. The group’s
 membership list opens.
 
 ![Group Membership pane](/images/accessinformationcenter/11.6/resourceaudit/changemodeling/groupmembershippane.webp)
@@ -51,7 +51,7 @@ Click **Next**.
 ![Add Membership Change wizard Add Members page](/images/accessinformationcenter/11.6/resourceaudit/changemodeling/addmembershipchangeaddmembers.webp)
 
 **Step 8 –** Begin to enter the trustee name in the search box. Available groups and users
-auto-populate in the drop-down menu. Select the desired trustee and the new member is added in the
+auto-populate in the dropdown menu. Select the trustee you want and the new member is added in the
 user list. Repeat as desired to add multiple members.
 
 ![Add Members page User Name table](/images/accessinformationcenter/11.6/resourceaudit/changemodeling/addmembershipchangememberadded.webp)

@@ -12,12 +12,12 @@ Entitlements can be assigned to users manually or automatically, but not on any 
 
 During the manual assignment of an entitlement, i.e. role or resource type, to a user, the start and end dates of the entitlement must follow simple rules:
 
-- the start date cannot be earlier than the earliest start date in all records of the user;
-- the end date cannot be later than the latest end date in all records of the user.
+- the start date can't be earlier than the earliest start date in all records of the user;
+- the end date can't be later than the latest end date in all records of the user.
 
 This means that requesting an entitlement without any start/end dates will actually assign the entitlement from the records' earliest start date to the latest end date.
 
-An entitlement cannot be requested with a start date earlier than today's date. But when requesting a role with an end date later than the records' latest end date, then the role will be assigned with its end date equal to the records' latest end date.
+An entitlement can't be requested with a start date earlier than today's date. But when requesting a role with an end date later than the records' latest end date, then the role will be assigned with its end date equal to the records' latest end date.
 
 ## For Automatic Assignments
 

@@ -11,7 +11,7 @@ select to decline an access request to your resource. See the
 [Pending Access Requests](/docs/accessinformationcenter/12.0/owneroverview/owners/pendingrequests/pendingrequests.md) topic for additional information. Follow the
 steps to decline an access request.
 
-**Step 1 –** On the Pending Access Requests Page, select the desired request and click **Decline**.
+**Step 1 –** On the Pending Access Requests Page, select the request you want and click **Decline**.
 The Decline Access window opens.
 
 ![Decline Access window](/images/accessinformationcenter/12.0/accessrequests/window/declineaccess.webp)
@@ -32,6 +32,6 @@ You can click **Cancel** to close the window without denying the request.
 request window. When the action completes successfully, click **OK** to close the Saving request
 window.
 
-The access request has been declined and the requester sent an email notification informing them.
+The system declines the access request and sends the requester an email notification.
 The request is visible on the Access Request History Page. See the
 [Access Request History](/docs/accessinformationcenter/12.0/owneroverview/owners/requesthistory.md) topic for additional information.

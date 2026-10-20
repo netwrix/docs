@@ -62,7 +62,7 @@ How to execute access certification campaigns, i.e. review specific entitlement 
 
 - [Request Entitlement Assignment](../../user-guide/administrate/manual-assignment-request)
 
-How to send a manual request to add, update or remove an entitlement for an identity.
+How to send a manual request to add, update, or remove an entitlement for an identity.
 
 - [Review and Modify Assigned Roles](../../user-guide/administrate/assigned-roles)
 

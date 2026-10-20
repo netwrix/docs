@@ -10,7 +10,7 @@ Identity Manager server or agent can be configured to go through a proxy server
 
 ## Introduction
 
-A Identity Manager agent often needs to access internal or external systems using the HTTP protocol. It may easily be configured to use a proxy server through which all or part of the HTTP traffic will be routed.
+An Identity Manager agent often needs to access internal or external systems using the HTTP protocol. Configure it to use a proxy server through which all or part of the HTTP traffic will be routed.
 
 ## Proxy Related Environment Variables
 

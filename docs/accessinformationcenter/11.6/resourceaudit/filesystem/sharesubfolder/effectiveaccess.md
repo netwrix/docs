@@ -7,7 +7,7 @@ sidebar_position: 30
 # Effective Access Report
 
 The Effective Access report at the share and subfolder levels provides insight into who has what
-level of access to this resource through a calculation that encompasses server policies, share and
+level of access to this resource through a calculation that encompasses server policies, share, and
 folder permissions, and group membership. It contains a list of all trustees with access to the
 selected resource and specifies the effective access level. This report includes a Permission Source
 table.
@@ -80,7 +80,7 @@ The following columns display the combined direct and inherited rights:
 - Deny Mask – Bitmask corresponding to Windows ACE permission bits for combined direct inherited
   deny rights
 
-In the example above, the selected trustee has three sources of access to the selected resource. One
+In this scenario, the selected trustee has three sources of access to the selected resource. One
 source is directly applied, one is through share permissions, one is through a policy. In order for
 this trustee’s access to the selected resource to be changed, each of these source paths must be
 taken into consideration.

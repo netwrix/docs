@@ -46,7 +46,7 @@ Review**, **Provisioning Review**, **Role Reconciliation**, **Resource Reconcili
 
 This setting enables the configuration of custom links that let the user navigate to a custom static HTML page. Only two CustomLinkSetting can be configured.
 
-The example below defines two custom links accessible through the URLs "_your-Identity Manager-domain_/LegalNotice" and "your-Identity Manager-domain/TermsOfService", each showing the content of the corresponding HTML file depending on the currently selected language.
+The example below defines two custom links accessible through the URLs "_your-Identity Manager-domain_/LegalNotice" and "your-Identity Manager-domain/TermsOfService", each showing the content of the corresponding HTML file depending on the selected language.
 
 ```
     <CustomLink1Setting Url="/LegalNotice" Path_L1="LegalNotice_en.html" Path_L2="LegalNotice_fr.html" />    <CustomLink2Setting Url="/TermsOfService" Path_L1="TermsOfService_en.html" Path_L2="TermsOfService_fr.html" />
@@ -54,9 +54,9 @@ The example below defines two custom links accessible through the URLs "_your-Id
 
 - **Url\_**(required)\_ defines the url address from which to access the custom page.
 - **Path*L1***(required)\_ defines the path (from the configuration root) to the HTML file to be
-rendered depending on the currently selected language in the user interface (`Path_L1` to `Path_L16` are available). Only `Path_L1` is required. While navigating to a custom link, if no HTML path was defined for the current language, then `Path_L1` is taken as default.
+rendered depending on the selected language in the user interface (`Path_L1` to `Path_L16` are available). Only `Path_L1` is required. While navigating to a custom link, if no HTML path was defined for the current language, then `Path_L1` is taken as default.
 
-To be displayed correctly, images should be embedded in the HTML files as Base64 images using the `src` attribute like this : `<img src="data:image/png;base64,iVBORw0...=" />`. You can easily convert your images using this [Base64 Image Encoder](https://elmah.io/tools/base64-image-encoder/).
+To be displayed correctly, images should be embedded in the HTML files as Base64 images using the `src` attribute like this : `<img src="data:image/png;base64,iVBORw0...=" />`. Convert your images using this [Base64 Image Encoder](https://elmah.io/tools/base64-image-encoder/).
 
 To navigate to the custom links from the user interface, NETWRIX recommends configuring a `MenuItem` with a `URI` value matching the custom link `URL`. The following example defines two menu items, accessible from the user account tab in the top right corner of the interface, that allows the user to navigate to the defined URI addresses.
 
@@ -185,7 +185,7 @@ If the default value for the Task CleanDataBase needs to be overridden, define t
 
 #### 7. Password Generation Setting
 
-It is possible to override some aspects of the password generation (used in password reset features) using the following setting:
+override some aspects of the password generation (used in password reset features) using the following setting:
 
 ```
 **<PasswordGenerationSetting AllowedSymbolChars="*@!^-_" />**

@@ -7,10 +7,10 @@ sidebar_position: 20
 # Amazon Web Services
 
 Amazon Web Services (AWS) provides a wide range of cloud-based services, including solutions and
-management tools for virtualization, data storage and hosting, private networking, relational and
-NoSQL databases, and many more. AWS CloudTrail is an internal tracking service that records AWS API
-calls. Companies leverage this information for analyzing user activity patterns and detecting
-potential threats. Unfortunately, collected audit data cannot be used for future reference: AWS
+management tools for virtualization, data storage and hosting, private networking, relational, and
+NoSQL databases, and many other features. AWS CloudTrail is an internal tracking service that records AWS API
+calls. Companies use this information to analyze user activity patterns and detect
+potential threats. Unfortunately, collected audit data can't be used for future reference: AWS
 CloudTrail stores events for 7 days allowing administrators and security analysts to review data for
 only short time periods.
 
@@ -30,7 +30,7 @@ On a high level, the add-on works as follows:
 - The add-on processes these events into Netwrix Auditor-compatible format (Activity Records). Each
   Activity Record contains the user account, action, time, and other details.
 
-    Currently, Netwrix Auditor processes details for the following AWS events (other events can be
+ Netwrix Auditor processes details for the following AWS events (other events can be
     imported without details):
 
     |                |                     |                    |                 |
@@ -46,7 +46,7 @@ See the [Integration API](/docs/auditor/10.8/api/overview.md) topic for addition
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
+Ensure to check your product version, and then review and update your add-ons and scripts
 leveraging the Integration API. Download the latest add-on version in the Add-on Store.
 
 See the [Integration API](/docs/auditor/10.8/api/overview.md) topic for additional information about schema

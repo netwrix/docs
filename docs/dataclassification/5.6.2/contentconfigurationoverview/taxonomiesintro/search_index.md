@@ -23,11 +23,11 @@ appear has a great effect on meaning.
 Nevertheless, the vast majority of retrieval systems available today would regard a document
 containing all words from a user’s query to be 100% relevant – especially if all of the words are in
 close proximity. However, this is much too simplistic an approach for effective concept
-identification. For example, just because a sentence contains the words “money” and “order” does not
+identification. For example, just because a sentence contains the words “money” and “order” doesn't
 necessarily mean that the topic is about “money orders”.
 
 Shannon’s information theory states that the more frequently a sequence appears the less
 information, or entropy, it contains. Netwrix Data Classification uses this model to compute the
-incremental value of compound terms over their lower order components. In this way we are able to
+incremental value of compound terms over their lower order components. In this way you can
 identify the word sequences that convey the most meaning and adjust the standard weightings
 accordingly.

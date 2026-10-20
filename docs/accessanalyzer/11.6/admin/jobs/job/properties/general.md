@@ -14,13 +14,14 @@ The following options are available:
 
 - Job Name
 - Description
-- Log Level – Indicates the job log level, which can be inherited from the global **Settings** >
-  **Application** log level or customized here. See below for additional information.
+- Log Level – Indicates the job log level, which you can inherit from the global **Settings** >
+  **Application** log level or customize here. See the following Log Level section for additional
+  information.
 - Write CSV Files To Job Output Directory – Exports the native data table created by a query to a
   CSV file in the job’s output directory. If there are multiple tables in the job, this option
   creates one file per table.
 - Timeout [value] minutes – Job’s thread timeout value
-- Command – Provides the ability to enter a command that will be executed from the command line upon
+- Command – lets you enter a command that runs from the command line upon
   job completion
 
 ## Log Level
@@ -30,7 +31,7 @@ The log level feature includes the following options:
 - Use global setting – use the Application log level feature, configured at the global level.
 
     :::note
-    By selecting the another option from the drop-down list, you break inheritance for
+    By selecting the another option from the dropdown list, you break inheritance for
     this job.
     :::
 
@@ -39,8 +40,8 @@ The log level feature includes the following options:
     - Records all Info level information
     - Records everything else that happens
     - Creates the largest file
-- Info – Records information about what stage of the job is being performed when errors or warnings
-  occurred
+- Info – Records information about what stage the job is in when errors or warnings
+  occur
     - Records all Warning level information
     - Records job progress information
 - Warning – Records all warnings which occur during job execution

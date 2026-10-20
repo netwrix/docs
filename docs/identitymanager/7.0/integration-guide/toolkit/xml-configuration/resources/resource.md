@@ -31,7 +31,7 @@ The two new resources are inserted in the database using the `<Resource>` tag.
 
 They are assigned the ids `300` and `301`, they are positive integers (since User type resources are resource-identity) and not yet used in the **UR_Resource** table.
 
-The `User` resource properties (FirstName, LastName and Manager) are matched to a **UR_Resource** table column, such as `C4`, `C5` or `I40` according to their data column index, in the above **Entity Type** definition.
+The `User` resource properties (FirstName, LastName, and Manager) are matched to a **UR_Resource** table column, such as `C4`, `C5` or `I40` according to their data column index, in the above **Entity Type** definition.
 
 * FirstName: index 4 => column C4
 * LastName: index 5 => column C5
@@ -54,5 +54,5 @@ Most encountered use cases in real life is populating very tiny datasets like em
 | C0 optional | **Type:** String **Description:** A column of storage. Going from 0 to 127. |
 | Dirty <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Flag set by the Usercube-Set-RecentlyModifiedFlag task. |
 | DisplayName_L1 optional | **Type:** String **Description:** Display name of the resource in language 1 (up to 16). |
-| I40 optional | **Type:** Int64 **Description:** This columns are used to store the id of an linked entity. When an entity type has a mono-valued association we usually use this columns to store the information. By default there are 10 columns for the storage of the mono-valued associations. |
+| I40 optional | **Type:** Int64 **Description:** This columns are used to store the id of an linked entity. When an entity type has a mono-valued association, this column is usually used to store the information. By default there are 10 columns for the storage of the mono-valued associations. |
 | Type required | **Type:** Int64 **Description:** The type of the resource. References the internal id of an EntityType. |

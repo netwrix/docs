@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Application Server Requirements
 
-This topic lists the requirements for the Threat Prevention server, where Enterprise Manager has to
-be installed.
+This topic lists the requirements for the Threat Prevention server, where Enterprise Manager must be
+installed.
 
 **Windows Server Requirements**
 
@@ -52,7 +52,7 @@ The disk space calculation formula is: Enterprise Manager GBs + 2(RAM size):
 
 **Additional Enterprise Password Enforcement Solution Requirements**
 
-The Have I Been Pwnd (HIBP) database, which is an optional feature of the Enterprise Password
+The Have I Been Pwned (HIBP) database, which is an optional feature of the Enterprise Password
 Enforcement solution, is deployed on the server where the Enterprise Manager resides. It requires:
 
 - Additional 66 GB of disk space to deploy
@@ -61,7 +61,7 @@ Enforcement solution, is deployed on the server where the Enterprise Manager res
 
 The following are additional requirements for the Threat Prevention server:
 
-- .NET 4.7.2 or .NET 4.8.x installed. If the installer does not find it already installed, it will
+- .NET 4.7.2 or .NET 4.8.x installed. If the installer doesn't find it already installed, it will
   install .NET Framework 4.7.2.
 
 **Additional Server Considerations**
@@ -92,7 +92,7 @@ The following permissions are required to install and use the application:
 ## Virtual Environment Recommendations
 
 While physical machines are always preferred, Threat Prevention fully supports the use of virtual
-machines. Consider the following when leveraging virtualization.
+machines. Consider the following when using virtualization.
 
 - VMWare ESX – If using ESX, the following specifications are recommended:
 

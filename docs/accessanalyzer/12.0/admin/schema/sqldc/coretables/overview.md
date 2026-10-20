@@ -49,7 +49,7 @@
 |---|---|---|---|---|---|---|---|
 | id | int | | No | PK | | IDENTITY | Surrogate primary key |
 | instance_id | int | | No | | | | Reference to the hosting SQL Server instance |
-| active_database_id | int | | Yes | | FK | | FK to `SA_SQLServer_Databases.id`; links to the currently active database record |
+| active_database_id | int | | Yes | | FK | | FK to `SA_SQLServer_Databases.id`; links to the active database record |
 | name | nvarchar | 128 | No | | | | Database name as recorded in audit events |
 | minimum_event_datetime | datetime2 | | Yes | | | | Earliest event timestamp recorded for this database |
 
@@ -715,7 +715,7 @@
 
 **Indexes:** `UQ_SA_SQLServer_Events_StaleDataLookup` on `(file_id, event_time)` (nonclustered, non-unique despite UQ_ prefix)
 
-> **Note:** Despite the `UQ_` prefix used in some environments, this index is **not unique** per the live schema (`is_unique = 0`).
+> **Note:** Despite the `UQ_` prefix used in some environments, this index **isn't unique** per the live schema (`is_unique = 0`).
 
 ---
 
@@ -950,7 +950,7 @@
 | instance_id | int | | No | PK | | IDENTITY | Auto-incrementing surrogate primary key |
 | instance_label | nvarchar | 256 | No | | | | Unique display label for the instance |
 | service_name | nvarchar | 128 | Yes | | | | Named instance or service/database name |
-| is_active | bit | | No | | | `1` | Whether the instance is currently active for data collection |
+| is_active | bit | | No | | | `1` | Whether the instance is active for data collection |
 | enable_impersonation | bit | | No | | | `0` | Whether Windows impersonation is enabled for connecting to this instance |
 | database_type | int | | No | | | | Database platform type (see Section 6.11) |
 | host_name | nvarchar | 150 | No | | | | Server hostname or IP address |

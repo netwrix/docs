@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Onboarding and Offboarding
 
-In Identity Manager, onboarding and offboarding are done through workflows or through synchronization to the HR system.
+Onboarding and offboarding in Identity Manager are done through workflows or through synchronization to the HR system.
 
 ## Onboarding
 
@@ -21,7 +21,7 @@ user, without any more human input.
 
 See the [Role Assignment](../../../integration-guide/role-assignment) topic for additional information on entitlement assignment.
 
-The automation of the entitlement assignment processes can be really helpful. However, you should not be looking for a full automation, but rather the smart automation of basic assignments such as "birthrights", while the sensitive ones keep a manual process.
+The automation of the entitlement assignment processes can be really helpful. However, you shouldn't be looking for a full automation, but rather the smart automation of basic assignments such as "birthrights", while the sensitive ones keep a manual process.
 
 See the [Automate Assignments](../../../user-guide/optimize/assignment-automation) topic for additional information about the assignment automation.
 
@@ -37,7 +37,7 @@ The joining and leaving of an identity are materialized by the identity's **peri
 
 These start and end dates can be configured to be different from the actual start and end dates of the user's contract in the company.
 
-These dates should then be part of entity types' properties (for example as `StartDate` and `EndDate`), in order to be used in [Record Section](../../../integration-guide/toolkit/xml-configuration/provisioning/recordsection) and [Context Rule](../../../integration-guide/toolkit/xml-configuration/provisioning/contextrule).
+These dates should then be part of entity types' properties (for example as `StartDate` and `EndDate`), to be used in [Record Section](../../../integration-guide/toolkit/xml-configuration/provisioning/recordsection) and [Context Rule](../../../integration-guide/toolkit/xml-configuration/provisioning/contextrule).
 
 ![Identities - Validity Period](/images/identitymanager/validityperiod.webp)
 
@@ -47,7 +47,7 @@ Between the start and end dates, the identity is part of all of Identity Manager
 
 At the end date, all the entitlements previously assigned to the identity are removed.
 
-After the end date and until its explicit deletion, the resource is still in the identity repository, but it is not part of any calculation anymore.
+After the end date and until its explicit deletion, the resource is still in the identity repository, but it isn't part of any calculation anymore.
 
 Keeping track of former employees usually helps solve issues involving orphan accounts.
 

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Filters
 
-Review the table below to learn more about filters. The filters correspond to Activity Record
+The following table describes the available filters. The filters correspond to Activity Record
 fields.
 
 | Filter            | Description                                                                                                                                                                                                                                                       | Supported Operators                                                                                                                                                                                                  |

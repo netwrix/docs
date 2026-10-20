@@ -1,6 +1,6 @@
 ---
 description: >-
-  This article explains how to select multiple computers and users within a group using the multi-selection feature in the Endpoint Protector console.
+  This article explains how to select multiple computers and users within a static group using the multi-selection feature in the Endpoint Protector console.
 keywords:
   - multi-selection
   - Endpoint Protector
@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Select Multiple Computers and Users
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "How to Select Multiple Computers and Users Within Groups"
 knowledge_article_id: kA0Qk0000002B6FKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Select Multiple Computers and Users Within Groups

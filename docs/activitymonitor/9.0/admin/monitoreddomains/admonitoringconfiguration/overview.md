@@ -11,8 +11,8 @@ Configuration window.
 
 ![AD Monitoring Configuration - Global Filters Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/globalfilterstab.webp)
 
-This initially configured when the AD Agent is deployed to a domain controller. However, the
-monitoring configuration can be edited after that. Use the following tabs to modify monitoring of AD
+This is configured initially when the AD Agent is deployed to a domain controller. However, you
+can edit the monitoring configuration after deployment. Use the following tabs to modify monitoring of AD
 events:
 
 - [Global Filters Tab](/docs/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/globalfilters.md)

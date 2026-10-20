@@ -21,7 +21,7 @@ The following example sends the exact same notification as the previous example,
 ```
 
 :::note
-The `TitleExpression` property on typed notifications is not used. To customize notification subject and body, use [`RazorTemplate` and `CssTemplate`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate) instead, or use the [`NotificationTemplate`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate) configuration element.
+The `TitleExpression` property on typed notifications isn't used. To customize notification subject and body, use [`RazorTemplate` and `CssTemplate`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate) instead, or use the [`NotificationTemplate`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/notifications/notificationtemplate) configuration element.
 :::
 
 

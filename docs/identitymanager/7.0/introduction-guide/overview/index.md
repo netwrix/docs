@@ -19,13 +19,13 @@ Identity Governance and Administration (IGA) is a combination of Identity Access
 
 ## Why Identity Manager
 
-We could explain Identity Manager's purpose like this:
+Identity Manager's purpose can be explained like this:
 
 Typically, Identity Manager manages entitlements automatically according to a user's needs, for example Active Directory group memberships.
 
-**First, we need to manage identities.**
+**First, manage identities.**
 
-To do so, Identity Manager capitalizes on information from several source systems in order to build a central repository. This repository should contain all the organizational data relevant for access management for all users, meaning not only employees but also contractors, bots, or any kind of identity.
+To do so, Identity Manager capitalizes on information from several source systems to build a central repository. This repository should contain all the organizational data relevant for access management for all users, meaning not only employees but also contractors, bots, or any kind of identity.
 
 ![Synchronization](/images/identitymanager/overview_synchronization.webp)
 
@@ -35,9 +35,9 @@ Access management requires reading/writing data to/from varied systems and appli
 
 ![Connectors](/images/identitymanager/overview_connectors.webp)
 
-See more details on [Identity Management](../../introduction-guide/overview/identity-management) and connection between systems.
+Learn about [Identity Management](../../introduction-guide/overview/identity-management) and connection between systems.
 
-**Then, we need to manage entitlements, in other words access rights, or permissions.**
+**Then, manage entitlements, in other words access rights, or permissions.**
 
 Identity Manager helps you build a role catalog that lists all entitlements from all managed systems. The technical entitlements can then associated with new, functional names that more clearly represent a business-oriented view point.
 
@@ -47,9 +47,9 @@ As each working environment has its own particularities, you will be able to ref
 
 ![Calculation](/images/identitymanager/overview_calculation.webp)
 
-**Finally, we need to actually give identities their entitlements and then govern them.**
+**Finally, give identities their entitlements and then govern them.**
 
-Identity Manager can be configured to provision the managed systems in order to apply the changes dictated by the role model. This provisioning can be done either directly, with automatic provisioning, or by notifying system administrators of the needed changes. Thus, identities finally get their entitlements.
+Identity Manager can be configured to provision the managed systems to apply the changes dictated by the role model. This provisioning can be done either directly, with automatic provisioning, or by notifying system administrators of the needed changes. Thus, identities finally get their entitlements.
 
 ![Provisioning](/images/identitymanager/overview_provisioning.webp)
 

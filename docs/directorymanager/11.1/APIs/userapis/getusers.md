@@ -6,7 +6,7 @@ sidebar_position: 160
 
 # Get Users
 
-Use this API to retrieve information of multiple users from the specified identity store.
+Use this API to retrieve information about multiple users from the specified identity store.
 
 ## Endpoint
 

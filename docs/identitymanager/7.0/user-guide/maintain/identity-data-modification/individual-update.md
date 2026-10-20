@@ -8,7 +8,7 @@ sidebar_position: 10
 
 How to manage onboarding, position changes and offboarding through the UI, for a single identity.
 
-This part is not about changing the data model, but data itself.
+This part isn't about changing the data model, but data itself.
 
 ## Overview
 
@@ -36,7 +36,7 @@ Declare a new worker by proceeding as follows:
 
     ![Home Page - Directory User](/images/identitymanager/home_directoryuser_v523.webp)
 
-2. According to the type of the user to be declared, click on the corresponding button.
+2. According to the type of the user to be declared, click the corresponding button.
 
     ![Workflow - New User](/images/identitymanager/datamodif_newuser_v602.webp)
 
@@ -51,11 +51,11 @@ Act on an existing identity by proceeding as follows:
 
     ![Home Page - Directory User](/images/identitymanager/home_directoryuser_v523.webp)
 
-2. Click on the user to be modified.
+2. Click the user to be modified.
 
     ![Workflow - User](/images/identitymanager/datamodif_user_v602.webp)
 
-3. Click on **Actions** or **Helpdesk** to select the action to perform.
+3. Click **Actions** or **Helpdesk** to select the action to perform.
 
     ![Workflow - Modify Permissions](/images/identitymanager/datamodif_changeuser_v602.webp)
 
@@ -67,7 +67,7 @@ If the workflow has been configured in this way, the update request may require 
 
 ## Verify Data Update
 
-In order to verify the process, check that the right data is displayed in the directory for the involved user.
+To verify the process, check that the right data is displayed in the directory for the involved user.
 
 ![Home Page - Directory User](/images/identitymanager/home_directoryuser_v523.webp)
 

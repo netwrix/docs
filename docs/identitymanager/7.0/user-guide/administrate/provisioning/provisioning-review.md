@@ -10,7 +10,7 @@ How to review provisioning orders before generation.
 
 ## Overview
 
-For security purposes, provisioning orders sometimes need to be reviewed before being computed and actually generated. Then, a user with the right permissions accesses the **Provisioning Review** page. They can either approve provisioning orders that will then be computed, generated and finally ready for actual provisioning, or they can decline orders that will subsequently be ignored. See the [Configure a User Profile](../../../user-guide/set-up/user-profile-configuration) topic for additional information.
+For security purposes, provisioning orders sometimes need to be reviewed before being computed and actually generated. Then, a user with the right permissions accesses the **Provisioning Review** page. They can either approve provisioning orders that will then be computed, generated, and finally ready for actual provisioning, or they can decline orders that will subsequently be ignored. See the [Configure a User Profile](../../../user-guide/set-up/user-profile-configuration) topic for additional information.
 
 ### Provisioning states
 
@@ -39,14 +39,14 @@ Provisioning review can also be triggered when a fulfillment error occurs. See t
 
 Review provisioning orders by proceeding as follows:
 
-1. On the home page, click on the entity type that you want to manage in the **Provisioning Review**
+1. On the home page, click the entity type that you want to manage in the **Provisioning Review**
 section.
 
     ![Home Page - Provisioning Review](/images/identitymanager/home_provisioningreview_v523.webp)
 
     ![Provisioning Review](/images/identitymanager/provmanual_provreview_v602.webp)
 
-2. Click on a line to access details and handle addition, association, update or deletion orders.
+2. Click a line to access details and handle addition, association, update, or deletion orders.
 
 Once reviewed, provisioning orders are to be executed by Identity Manager during the next **Fulfill** task, accessible from the corresponding connector's overview page, in the **Resource Types** frame.
 
@@ -73,15 +73,15 @@ Handle an addition order by proceeding as follows:
 
 1. For all resource properties to be verified, choose one of the possibilities:
 
-    - Either click on the approval icon to order the property creation with the proposed value.
+    - Either click the approval icon to order the property creation with the proposed value.
 
     ![Addition - Approval Icon](/images/identitymanager/provmanual_iconapprove_v602.svg)
 
-    - Or click on the decline icon to refuse the property creation.
+    - Or click the decline icon to refuse the property creation.
 
     ![Addition - Decline Icon](/images/identitymanager/provmanual_icondecline_v522.svg)
 
-    - Or click on the postponement icon to delay the decision.
+    - Or click the postponement icon to delay the decision.
 
     ![Addition - Postponement Icon](/images/identitymanager/provmanual_iconpostpone_v522.svg)
 
@@ -95,7 +95,7 @@ Identity Manager displays a given owner and a given resource to be associated wi
 
 - `Confidence rate of proposed resource`: rate expressing the confidence in this [Correlate Resources](../../../user-guide/set-up/categorization/correlation).
 - `Proposed Value`: value proposed by Identity Manager.
-- `Current Value`: value currently in the managed system.
+- `Current Value`: value in the managed system.
 - `Provisioning State`
 - `Start Date`: date for the beginning of the property value existence.
 - `End Date`: date for the end of the property value existence.
@@ -108,7 +108,7 @@ Handle an association order by proceeding as follows:
 
 1. For all resource properties to be verified, choose one of the possibilities:
 
-    - Either click on the approval icon to validate the proposed property value.
+    - Either click the approval icon to validate the proposed property value.
 
         ![Addition Icon](/images/identitymanager/provmanual_iconapprove_v602.svg)
 
@@ -116,11 +116,11 @@ Handle an association order by proceeding as follows:
 
         ![Deletion Icon](/images/identitymanager/reviewrole_icondelete_v602.svg)
 
-    - Or click on the decline icon to refuse the property association.
+    - Or click the decline icon to refuse the property association.
 
         ![Addition - Decline Icon](/images/identitymanager/provmanual_icondecline_v522.svg)
 
-    - Or click on the postponement icon to delay the decision.
+    - Or click the postponement icon to delay the decision.
 
         ![Addition - Postponement Icon](/images/identitymanager/provmanual_iconpostpone_v522.svg)
 
@@ -133,7 +133,7 @@ Identity Manager shows a given resource and all resource properties to be verif
 ![Edition Order Review](/images/identitymanager/provmanual_reviewedition_v602.webp)
 
 - `Proposed Value`: value proposed by Identity Manager.
-- `Current Value`: value currently in the managed system.
+- `Current Value`: value in the managed system.
 - `Provisioning State`
 - `Start Date`: date for the beginning of the property value existence.
 - `End Date`: date for the end of the property value existence.
@@ -146,21 +146,21 @@ Handle an update order by proceeding as follows:
 
 1. For all resource properties to be verified, choose one of the possibilities:
 
-    - Either click on the approval icon to order the property update with the proposed value.
+    - Either click the approval icon to order the property update with the proposed value.
 
         ![Edition - Addition Icon](/images/identitymanager/provmanual_iconapprove_v602.svg)
 
         ![Edition Icon](/images/identitymanager/provmanual_iconedit_v602.svg)
 
-    - Or click on the decline icon to refuse the property update.
+    - Or click the decline icon to refuse the property update.
 
         ![Addition - Decline Icon](/images/identitymanager/provmanual_icondecline_v522.svg)
 
-    - Or click on the postponement icon to delay the decision.
+    - Or click the postponement icon to delay the decision.
 
         ![Addition - Postponement Icon](/images/identitymanager/provmanual_iconpostpone_v522.svg)
 
-2. Click on **Confirm Property Values**.
+2. Click **Confirm Property Values**.
 
 ### Handle a deletion order
 
@@ -172,7 +172,7 @@ Handle a deletion order by choosing either to confirm the deletion or to keep th
 
 ### Use property view
 
-By default, provisioning orders are listed by resource. It is possible to click on a resource and then access the list of all provisioning orders for that resource.
+By default, provisioning orders are listed by resource. Click a resource to access the list of all provisioning orders for that resource.
 
 ![Resource View](/images/identitymanager/provreview_resourceview_v603.webp)
 
@@ -186,11 +186,11 @@ Once enabled, select a resource type to display all provisioning orders linked t
 
 ![Property View](/images/identitymanager/provreview_propertyview_v603.webp)
 
-The review process is similar on both views. However with property view, reviewers don't click on a given line, but choose a decision directly on the left of the property line.
+The review process is similar on both views. However with property view, reviewers don't click a given line, but choose a decision directly on the left of the property line.
 
 ## Verify Provisioning Review
 
-In order to verify the process:
+To verify the process:
 
 1. Select a test user in the directory, accessible from the home page.
 
@@ -201,7 +201,7 @@ In order to verify the process:
 
     ![View Permissions Tab](/images/identitymanager/viewpermissions_v602.webp)
 
-4. Click on **Jobs** > **Fulfill** on the corresponding connector's overview page, in the **Resource
+4. Click **Jobs** > **Fulfill** on the corresponding connector's overview page, in the **Resource
 Types** frame, to execute the provisioning orders.
 
     ![Home Page - Job Execution](/images/identitymanager/synchro_resourcetype_v602.webp)

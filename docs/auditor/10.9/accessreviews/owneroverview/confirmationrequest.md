@@ -6,19 +6,19 @@ sidebar_position: 10
 
 # Ownership Confirmation Request Email
 
-The Ownership Administrator may request ownership confirmation for a resource being managed through
-the Access Reviews application. As an assigned owner, you will receive the following email.
+When an Ownership Administrator requests ownership confirmation for a resource being managed
+through the Access Reviews application, you, as the assigned owner, receive the following email.
 
 ![Ownership Confirmation Request Email with Yes and No buttons for responding](/images/auditor/10.7/access/reviews/resourceowners/email/confirmemail.webp)
 
 The Ownership Confirmation Request email provides buttons for confirming (Yes) or declining (No)
-ownership of the listed resource. You will be asked to authenticate for your response to be
-processed. The application will launch in your default browser. Enter your domain credentials to
-complete the process. One of two messages will appear according to if you confirmed or declined.
+ownership of the listed resource. To process your response, you must authenticate. The application
+launches in your default browser. Enter your domain credentials to complete the process. One of two
+messages appears, depending on whether you confirmed or declined.
 
 ## Confirmed Ownership Message
 
-If you have accepted ownership for the assigned resource, the browser will display the following
+If you accept ownership for the assigned resource, the browser displays the following
 message after authentication:
 
 ![confirmemailaccept](/images/auditor/10.7/access/reviews/resourceowners/email/confirmemailaccept.webp)
@@ -28,7 +28,7 @@ e-mail."
 
 ## Declined Ownership Message
 
-If you have declined ownership for the assigned resource, the browser will display the following
+If you decline ownership for the assigned resource, the browser displays the following
 message after authentication:
 
 ![Ownership declined browser message](/images/auditor/10.7/access/reviews/resourceowners/email/confirmemaildecline.webp)

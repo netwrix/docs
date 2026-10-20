@@ -23,13 +23,13 @@ are discussed in the [Configure an Identity Store](/docs/directorymanager/11.1/a
 
 ## Create an Identity Store for Active Directory
 
-Follow the steps to create an identity store for Active Directory.
+To create an identity store for Active Directory:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
 Step 2 – On the Identity Stores page, click **Create Identity Store** in the top right corner.
 
-Step 3 – On the Create Identity Store page, use the Store Type drop-down list to select an identity
+Step 3 – On the Create Identity Store page, use the Store Type dropdown list to select an identity
 provider to create an identity store for.  
 This list displays the supported providers. By default, Active Directory is selected. Fields on this
 page vary, depending on the provider you select.
@@ -50,13 +50,13 @@ service account (gMSA) to connect to Active Directory.
 - For a gMSA – If you provide a service account with
   ‘$’ as its last character (as in MyAdminAccounts$), Directory Manager entertains it as a Group
   Managed Service Account (gMSA). To use a gMSA to connect an identity store to Active Directory,
-  make sure the gMSA is configured properly and has sufficient permissions. See the
+  ensure the gMSA is configured properly and has sufficient permissions. See the
   [gMSA for Active Directory](/docs/directorymanager/11.1/requirements/permissions/gmsarequirements.md) topic.
 
 Step 7 – In the **Service Account Password** box, enter the service account password.  
 Skip this box for a gMSA.
 
-Step 8 – Select the **SSL Enabled** check box if the directory server is LDAP over SSL enabled.
+Step 8 – Select the **SSL Enabled** checkbox if the directory server is LDAP over SSL enabled.
 
 :::note
 Directory Manager 11 supports LDAPS; however, the Replication Service will still connect to
@@ -81,13 +81,13 @@ In Admin Center, click **Identity Stores** in the left pane.
 
 Step 1 – On the Identity Stores page, click **Create Identity Store** in the top right corner.
 
-Step 2 – On the Identity Stores page, use the Store Type drop-down list to select an identity
+Step 2 – On the Identity Stores page, use the Store Type dropdown list to select an identity
 provider to create an identity store for.  
 This list displays the supported providers. Select _Microsoft Azure_.
 
 Step 3 – Enter a name for the identity store in the Name box.
 
-Step 4 – From the Cloud drop-down list, select the cloud where your Microsoft Entra ID tenant
+Step 4 – From the Cloud dropdown list, select the cloud where your Microsoft Entra ID tenant
 exists.
 
 Step 5 – In the Domain Name box, enter the fully qualified name of the Microsoft Entra ID domain you
@@ -136,16 +136,16 @@ service.
 ## Create an Identity Store for Generic LDAP
 
 Create a Generic LDAP identity store to connect to any LDAP version 3-compliant directory server,
-such as Sun ONE directory server. This provider does not support dynamic schema detection. The
+such as Sun ONE directory server. This provider doesn't support dynamic schema detection. The
 schema included for this provider mostly contains commonly used fields.
 
-**Follow the steps to create an identity store**
+**To create an identity store:**
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
 Step 2 – On the **Identity Stores** page, click **Create Identity Store** in the top right corner.
 
-Step 3 – On the **Create Identity Store** page, use the **Store Type** drop-down list to select an
+Step 3 – On the **Create Identity Store** page, use the **Store Type** dropdown list to select an
 identity provider to create an identity store for.  
 This list displays the supported providers. Select _Generic LDAP_.
 
@@ -183,7 +183,7 @@ Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
 Step 2 – On the Identify Stores page, click **Create Identity Store** in the top right corner.
 
-Step 3 – On the Create Identity Store page, use the Store Type drop-down list to select an identity
+Step 3 – On the Create Identity Store page, use the Store Type dropdown list to select an identity
 provider to create an identity store for.  
 This list displays the supported providers. Select _Google Workspace_.
 

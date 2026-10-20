@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Work with Collected Data
 
-Follow the steps to work with collected data:
+To work with collected data:
 
 **Step 1 –** On the computer where you executed the add-on, navigate to **Start** > **All
 Programs** > **Event Viewer**.

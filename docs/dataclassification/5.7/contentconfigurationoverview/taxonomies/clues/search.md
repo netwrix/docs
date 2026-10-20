@@ -30,12 +30,12 @@ tab and configure search settings.
     - Use custom filter to specify a number of complex filters: boolean, datetime, and numeric.
 
     :::note
-    Full description of all filters can be found in the API Reference Guide.
+    See the API Reference Guide for a full description of all filters.
     :::
 
 
 3. To view how recent changes to the term will affect the document classifications, select Show
-   document movements. When selected, the results will show any change in scoring of each document since the last time that document was classified. 
+   document movements. When selected, the results show any change in scoring of each document since the system last classified that document. 
    For example:
 
 ![movementskey](/images/dataclassification/5.7/admin/taxonomies/movementskey.webp)

@@ -29,7 +29,7 @@ The starting entity must have a Display table and create the workflow entity typ
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Tile Identifier="Workflow_Directory_User_Tile1" DisplayName_L1="User: first/last name" EntityType="Workflow_Directory_User" TileDesignElement="picture-text">

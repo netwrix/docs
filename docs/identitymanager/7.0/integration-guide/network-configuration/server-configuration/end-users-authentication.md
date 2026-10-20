@@ -12,7 +12,7 @@ Before end-users can connect to Identity Manager through the UI, they will have 
 
 Identity Manager supports seven **authentication** methods organized into two categories: Internal methods and External methods.
 
-It is highly **recommended** that you use an External method. Internal methods are mostly used for debug, test and development purposes.
+It is highly **recommended** that you use an External method. Internal methods are mostly used for debug, test, and development purposes.
 
 **Internal methods**
 
@@ -37,7 +37,7 @@ The types of **authentication** providers supported by Identity Manager are:
 
 **Using more than one provider**
 
-For each **authentication** method, one or several **authentication** providers can be set up. If several **authentication** providers are set up, end-users will be prompted to choose their preferred method of **authentication**.
+For each **authentication** method, one, or several **authentication** providers can be set up. If several **authentication** providers are set up, end-users will be prompted to choose their preferred method of **authentication**.
 
 Internal method & test mode form:
 
@@ -69,7 +69,7 @@ password.
 
 **Example**
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
  "<IdentityServer>": {
@@ -91,7 +91,7 @@ The certificate from a Windows certificate store is set up using these attribute
 
 **Example**
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 "<IdentityServer>": {
@@ -124,7 +124,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The **authentication** section mostly fits the following pattern:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 "<**authentication**>":{
@@ -173,7 +173,7 @@ The Identity Server section allows the following attributes:
  | --- | --- | --- |
  | Enabled (default value: true) | Boolean | Enables or disables the Identity Server. |
  | AllowWindowsAuthentication (default value: false) | Boolean | Allows Windows **authentication**. Will work only when the **Active Directory User Store** is enabled. |
- | ShowPII (default value: false) | Boolean | Sets whether or not PII is shown in logs. For security reasons, this setting should be used sparingly. |
+ | ShowPII (default value: false) | Boolean | Sets whether PII is shown in logs. For security reasons, this setting should be used sparingly. |
  | ValidationKeys (optional) | String Array | Allows the definition of public certificate paths for token validation. |
  | IssuerURI (optional) | String | Sets the unique name of this server instance. |
  | PostLogoutRedirectUri (optional) | String | Sets a specific URI to which the user will be redirected after a successful logout. |
@@ -210,7 +210,7 @@ Then, a subsection for every **authentication** method is used. Supported subsec
 
 ## Set Up Integrated Windows **authentication** (IWA)
 
-This **authentication** method can be used to authenticate users within an Active Directory domain using their respective domain account.
+This **authentication** method Use authenticate users within an Active Directory domain using their respective domain account.
 
 This **authentication** is **silent**: when an end-user tries to access Identity Manager, the browser retrieves identity credentials from the Windows session where the user is logged in and sends them to the domain controller for **authentication**. The domain controller confirms the user's identity and validates it for Identity Manager. The end-user doesn't have to input any credentials.
 
@@ -241,7 +241,7 @@ Integrated Windows **authentication** is configured using the following sections
 > The following example sets up Windows **authentication**. Windows Server and IIS requirements have
 > been checked.
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```json
@@ -283,18 +283,18 @@ An OpenID Connect provider is identified by its Authority, according to the [Ope
 
 **NameClaimType**
 
-To authorize an end-user, Identity Manager Server retrieves a specific claim (a key-value pair, transmitted through the OIDC-issued JWT token) returned by the provider and looks for a resource that matches this claim's value. The comparison is carried out according to the resource and property set as the end-user's identity in the applicative configuration. See the [Select User by Identity Query Handler Setting](../../../integration-guide/toolkit/xml-configuration/metadata/settings/selectuserbyidentityqueryhandlersetting)
+To authorize an end-user, Identity Manager Server retrieves a specific claim (a key-value pair, transmitted through the OIDC-issued JWT token) returned by the provider and looks for a resource that matches this claim's value. The comparison is performed according to the resource and property set as the end-user's identity in the applicative configuration. See the [Select User by Identity Query Handler Setting](../../../integration-guide/toolkit/xml-configuration/metadata/settings/selectuserbyidentityqueryhandlersetting)
 
 The name of the claim that is retrieved for this purpose defaults to `sub` which is one of the standard [Claim names for the OpenID Connect protocol](https://openid.net/specs/openid-connect-core-1_0.html#claim-names-for-the-openid-connect-protocol). However, some providers might not fill the `sub` value with meaningful data, or use non-standard Claim names.
 
 For this reason, the name of the claim that is retrieved by Identity Manager for **Authorization** purposes can be set up according to the provider's specifics.
 
 :::note
- Users should be able to get a list of the claim names used by their **authentication** providers from their providers' portal website, documentation or administrators.
+ Users should be able to get a list of the claim names used by their **authentication** providers from their providers' portal website, documentation, or administrators.
 :::
 For example, the following claim provides no meaningful `sub` value.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -304,9 +304,9 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 }
 ```
 
-Using the following applicative configuration setting that sets `Ad_Entry:userPrincipalName` as the value to be matched against a claim in order to identify a user's profile, the `preferred_username` NameClaimType should be used.
+Using the following applicative configuration setting that sets `Ad_Entry:userPrincipalName` as the value to be matched against a claim to identify a user's profile, the `preferred_username` NameClaimType should be used.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 <SelectUserByIdentityQueryHandlerSetting
@@ -335,9 +335,9 @@ Under the new subsection, the following parameters are used to configure the **a
  | ClientSecret required | String | Is the Client Secret issued during the registration of Identity Manager to the chosen OpenID Connect provider. |
  | Authority required | String | This URL identifies the OpenID Connect provider for Identity Manager according to the [OpenID Connect specifications](https://openid.net/connect/). It can be retrieved from the target OpenID Connect provider documentation. For example, [Microsoft's documentation ](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc)indicates the Microsoft Identity Platform OpenID Connect[ ](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc)authority. |
  | NameClaimType optional | String | Sets the type of the claim that will be retrieved by Identity Manager to identify the end-user. The retrieved claim will be compared against the resource and property set as the end-user's identity in the applicative configuration. See the [Select User by Identity Query Handler Setting](../../../integration-guide/toolkit/xml-configuration/metadata/settings/selectuserbyidentityqueryhandlersetting)topic for additional information. |
- | Scopes optional | String | Sets the list of the requested [scopes](https://auth0.com/docs/scopes/openid-connect-scopes). By default, the requested scopes are: openid, profile and email. |
+ | Scopes optional | String | Sets the list of the requested [scopes](https://auth0.com/docs/scopes/openid-connect-scopes). By default, the requested scopes are: openid, profile, and email. |
  | SaveTokens default value: false | Boolean | Only for Okta providers. Set to `true if **authentication** uses an Okta provider. See the [Configure Okta](../../../integration-guide/network-configuration/how-tos/okta)topic for additional information. |
- | MetadataAddress optional | String | URL address of a copy of the metadata, used when the authority metadata cannot be accessed from the Identity Manager server, for example because of a firewall. |
+ | MetadataAddress optional | String | URL address of a copy of the metadata, used when the authority metadata can't be accessed from the Identity Manager server, for example because of a firewall. |
  | RequireHttpsMetadata default value: true | Boolean | By default the authority metadata must use HTTPS. Set to `false to use a simple HTTP metadata, in case a local copy of the metadata is used or for test environment. |
  | ResponseMode optional | String | Response mode for OpenIdConnect. - Query - FormPost - Fragment [See OpenId documentation](https://openid.net/specs/openid-connect-core-1_0.html). |
  | ResponseType optional | String | Response type for OpenIdConnect. - Code - CodeIdToken - CodeIdTokenToken - CodeToken - IdToken - IdTokenToken - None - Token See examples in the [OpenId documentation.](https://openid.net/specs/openid-connect-core-1_0.html#openid-documentation) |
@@ -352,7 +352,7 @@ Within Identity Manager, it will be identified with the **authentication** schem
 
 It will be displayed as Connection Microsoft Entra ID with OIDC protocol in the UI external login prompt.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -393,7 +393,7 @@ The target OAuth provider needs to be aware of the URI where to send the **authe
 
 During the registration process, the provider will ask for the URL.
 
-Identity Manager's callback URL for OAuth is `<usercube-server-address>`/`<callback-path>` where `<usercube-server-address>` is the address of your Identity Manager Server such as https://identitymanager.contoso.com and `<callback-path>` can be set up to any value chosen by the user using the CallbackPath configuration attribute. The only constraint is to make sure the CallbackPath value in Identity Manager's configuration is the same as in the OAuth provider registration screen for Identity Manager.
+Identity Manager's callback URL for OAuth is `<usercube-server-address>`/`<callback-path>` where `<usercube-server-address>` is the address of your Identity Manager Server such as https://identitymanager.contoso.com and `<callback-path>` can be set up to any value chosen by the user using the CallbackPath configuration attribute. The only constraint is to ensure the CallbackPath value in Identity Manager's configuration is the same as in the OAuth provider registration screen for Identity Manager.
 
 ### Configuration
 
@@ -430,7 +430,7 @@ Identity Manager Server marks received claims using [https://accounts.google.com
 
 /signin-oauth has been chosen as CallbackPath and set up as such in the OAuth provider's portal during Identity Manager's registration.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -511,7 +511,7 @@ Within Identity Manager, it will be identified with the **authentication** schem
 
 It will be displayed as _Connection Microsoft Entra ID with WS-Federation protocol_ in the UI external login prompt.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -535,7 +535,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 One or several **SAML2** **authentication** providers can be set up under the **authentication** > SAML2 section.
 
-Identity Manager does not provide a signature for SAML2 **authentication**.
+Identity Manager doesn't provide a signature for SAML2 **authentication**.
 
 **Multiple providers**
 
@@ -553,7 +553,7 @@ During the registration process, the provider will ask for the URL.
 
 Identity Manager's **Reply URL** for **SAML2** is `<usercube-server-address>`/Saml2/Acs where `<usercube-server-address>` is the address of your Identity Manager Server such as https://identitymanager.contoso.com.
 
-Make sure to enter this exact URL which is treated case sensitively.
+Ensure to enter this exact URL which is treated case sensitively.
 
 **Configuration**
 
@@ -583,7 +583,7 @@ Each section is configured with the following settings:
 > It will be displayed as Connection Azure ActiveDirectory with SAML2 protocol in the UI external
 > login prompt.
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```json
@@ -621,7 +621,7 @@ This information can be set one of two ways:
 :::
 On the other hand, the PFX file takes priority over Windows' certificate, which means that when `File` is specified then the PFX certificate is used, even if the options for Windows' certificate are specified too.
 
-In both ways, missing and/or incorrect settings trigger an error and no certificate is loaded.
+In both ways, missing, and/or incorrect settings trigger an error, and no certificate is loaded.
 
 :::tip
  Remember, the AzureKeyVault section is mandatory when using CertificateAzureKeyVault. Identity Manager server loads the encryption certificate from Azure Key Vault only if the AzureKeyVault and EncryptionCertificate are defined at the same level in the configuration file.
@@ -630,7 +630,7 @@ In both ways, missing and/or incorrect settings trigger an error and no certific
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -662,7 +662,7 @@ The archive is set using the following attributes:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -679,19 +679,19 @@ The Windows certificate is set using these attributes:
 
  | Name | Type | Description |
  | --- | --- | --- |
- | DistinguishedName (optional) | String | SubjectDistinguishedName of the store certificate. **NOTE:** This is required when Thumbprint is not specified. |
- | Thumbprint (optional) | String | Thumbprint of the store certificate. **NOTE:** This is required when DistinguishedName is not specified. |
+ | DistinguishedName (optional) | String | SubjectDistinguishedName of the store certificate. **NOTE:** This is required when Thumbprint isn't specified. |
+ | Thumbprint (optional) | String | Thumbprint of the store certificate. **NOTE:** This is required when DistinguishedName isn't specified. |
  | StoreLocation (required) | String | Location of the relevant Windows certificate store: LocalMachine or CurrentUser. |
  | StoreName (required) | String | Name of the relevant Windows certificate store. |
 
 ##### Using Azure Key Vault
 
-If the certificate is saved in Azure Key Vault, we must define the certificate identifier and the Vault connection. See the [Azure Key Vault](../../../integration-guide/network-configuration/agent-configuration/azure-key-vault) topic for additional information.
+If the certificate is saved in Azure Key Vault, must define the certificate identifier and the Vault connection. See the [Azure Key Vault](../../../integration-guide/network-configuration/agent-configuration/azure-key-vault) topic for additional information.
 
 :::tip
  Remember, the AzureKeyVault section is mandatory when using CertificateAzureKeyVault. Identity Manager server loads the encryption certificate from Azure Key Vault only if the AzureKeyVault and EncryptionCertificate are defined at the same level in the configuration file.
 :::
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -716,11 +716,11 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 ## Set Up Internal Methods
 
-When Internal Methods is enabled, the end-user is prompted via a form to input a login and a password. The login to be used is defined within the applicative configuration's Select User By Identity Query Handler Setting element. See the [Various XML Settings](../../../integration-guide/network-configuration/settings) topic for additional information.
+When Internal Methods is enabled, the end-user is prompted via a form to input a login and a password. The log in to be used is defined within the applicative configuration's Select User By Identity Query Handler Setting element. See the [Various XML Settings](../../../integration-guide/network-configuration/settings) topic for additional information.
 
 First, the AllowLocalLogin parameter needs to be set to true in the **authentication** section.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 "<**authentication**>":{
@@ -732,7 +732,7 @@ Then, **Active Directory User Store** or Test User Store can be enabled.
 
 ### **Active Directory User Store**
 
-The **Active Directory User Store** allows users to authenticate with a login and password that will be compared against the Active Directory content.
+The **Active Directory User Store** lets you authenticate with a login and password that will be compared against the Active Directory content.
 
 Several forests can be set up as identity providers for **authentication**. This allows, for example, the **authentication** of users that belong to different **Active Directory forests**.
 
@@ -740,7 +740,7 @@ It is configured under the **authentication** > ActiveDirectoryUserStore section
 
 First, the ActiveDirectoryUserStore must be enabled.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 "<**authentication**>":{
@@ -760,7 +760,7 @@ In the same section, several **authentication** providers can be defined, each o
 
 For each **forest**, a new section is added under ActiveDirectoryUserStore. Any name may be chosen for the **forest** section as long as it is unique. Two **forest** sections can't be identical though.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 "<ActiveDirectoryUserStore>": {
@@ -779,7 +779,7 @@ Under the new **forest** section, the following parameters are used to configure
 > controller is located at 127.168.0.1. If the user enters the login MyLogin, the resulting logon
 > will be CONTOSO\paris\MyLogin. The Postfix won't be used as a Prefix is already provided.
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```json
@@ -798,7 +798,7 @@ Under the new **forest** section, the following parameters are used to configure
 > In the following example, if the user enters the login MyLogin, the resulting logon will be
 > MyLogin@Identity Manager.contoso.
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```json
@@ -816,7 +816,7 @@ Under the new **forest** section, the following parameters are used to configure
 > **forest**,by checking not only the password and account activation, but also whether the password is
 > expired.
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```json
@@ -859,7 +859,7 @@ The following parameters are available under the **authentication** > TestUserSt
 
 **Example**
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {

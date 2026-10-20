@@ -14,7 +14,7 @@ database or it will be blank.
 
 ![Sensitive Content Details report at the instance level](/images/accessinformationcenter/12.0/resourceaudit/oracle/instance/instancesensitivecontentdetails.webp)
 
-This report is comprised of the following columns:
+The following columns comprise this report:
 
 - Criteria Name – Type of potentially sensitive criteria matches found
 - Criteria Type – Pattern for pattern based matches (System Criteria), and subject type based on

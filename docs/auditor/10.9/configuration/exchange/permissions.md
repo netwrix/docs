@@ -6,9 +6,9 @@ sidebar_position: 60
 
 # Permissions for Exchange Auditing
 
-Before creating a monitoring plan to audit your Exchange server, you need to plan for the account
-that will be used for data collection. This account should meet the requirements listed below. You
-will specify this account in the monitoring plan wizard (or in the monitored item settings).
+Before creating a monitoring plan to audit your Exchange server, plan for the account you'll use for
+data collection. This account must meet the following requirements. You specify this account in the
+monitoring plan wizard, or in the monitored item settings.
 
 ## Account Requirements
 
@@ -31,8 +31,8 @@ The account used for data collection must meet the following requirements:
 
 - Member of the **Domain Admins** group on the target server.
 
-    **NOTE:** This covers all the required permissions above and is a mandatory setting if you want
-    to use network traffic compression for data collection.
+    **NOTE:** This covers all the permissions required in the preceding list and is mandatory if you
+    want to use network traffic compression for data collection.
 
 ### Exchange Permissions
 
@@ -61,8 +61,6 @@ The following is required if auto-backup is _enabled_ for the domain controller 
 
 ## Add Account to the Organization Management Group
 
-Follow the steps to add account to the Organization Management group.
-
 **Step 1 –** Navigate to **Start > Active Directory Users and Computers** on any domain controller
 in the root domain of the forest where Microsoft Exchange 2019, 2016, or 2013 is installed.
 
@@ -75,18 +73,16 @@ tab and click **Add**.
 
 ![manualconfig_orgmanagement2016](/images/auditor/10.7/configuration/exchange/manualconfig_orgmanagement2016.webp)
 
-If for some reason you do not want this account to belong to the Organization Management group, you
+If for some reason you don't want this account to belong to the Organization Management group, you
 can add it to the Records Management group in the same way. The Records Management group is less
 powerful, and accounts belonging to it have fewer rights and permissions.
 
 ## Assign Management Roles
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 **Organization Management** or the **Records Management** group.
 
-Follow the steps to assign management roles.
-
-**Step 1 –** On the computer where Microsoft Exchange 2019, 2016, 2013 or is installed, open the
+**Step 1 –** On the computer where Microsoft Exchange 2019, 2016, or 2013 is installed, open the
 **Exchange Management Shell** under an account that belongs to the **Organization Management**
 group.
 
@@ -98,24 +94,22 @@ For example:
 
 New-ManagementRoleAssignment -Name "AuditLogsNetwrixRole" -User Corp\\jsmith -Role "Audit Logs"
 
-In this example, the user _CORP\jsmith_ has been assigned the **Audit Logs** role.
+In this example, the command assigns the **Audit Logs** role to the user _CORP\jsmith_.
 
 ## Assign Permission to Read the Registry Key
 
-This permission is required only if the account selected for data collection is not a member of the
+You need this permission only if the account you select for data collection isn't a member of the
 Domain Admins group.
 
-This permission should be assigned on each domain controller in the audited domain, so if your
-domain contains multiple domain controllers, it is recommended to assign permissions through Group
-Policy, or automatically using
-[Audit Configuration Assistant](/docs/auditor/10.9/tools/auditconfigurationassistant.md).
+Assign this permission on each domain controller in the audited domain. If your domain contains
+multiple domain controllers, assign permissions through Group Policy, or use the
+[Audit Configuration Assistant](/docs/auditor/10.9/tools/auditconfigurationassistant.md) to assign
+them automatically.
 
 To assign permissions manually, use the Registry Editor snap-in or the Group Policy Management
 console.
 
 ### Assign Permission Via the Registry Editor Snap-in
-
-Follow the steps to assign permission via the Registry Editor snap-in.
 
 **Step 1 –** On your target server, open Registry Editor: navigate to **Start > Run** and type
 _"regedit"_.
@@ -133,8 +127,6 @@ Set\Services\EventLog\Security_.
 _HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv_ registry key.
 
 ### Assign Permission Using the Group Policy Management Console
-
-Follow the steps to assign permission using the Group Policy Management console.
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools
@@ -166,8 +158,8 @@ OK.
 
 **Step 10 –** Close Group Policy Management console.
 
-**Step 11 –** Navigate to Start > Run and type "_cmd_". Input the `gpupdate /force` command and
-press Enter. The group policy will be updated.
+**Step 11 –** Navigate to Start > Run and type "_cmd_". Run the `gpupdate /force` command and press
+Enter to update the group policy.
 
 **Step 12 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
 domain controllers.

@@ -6,23 +6,24 @@ sidebar_position: 20
 
 # Using Modern Authentication with MS Teams
 
-Modern authentication allows you to audit MS Teams environments without using an account with basic
-authentication. The configuration procedure includes several manual steps, as described below.
+With modern authentication, you can audit MS Teams environments without using an account with basic
+authentication. The following sections describe the configuration procedure, which includes several
+manual steps.
 
 ### Access MS Teams Using Modern Authentication
 
 This option is recommended for organizations that use modern authentication as the identity
 management approach, having multi-factor authentication (MFA) enabled for their user accounts. In
-this scenario, Auditor will access the cloud-based infrastructure via Microsoft Graph and other
-modern APIs, being authenticated through a preconfigured Microsoft Entra ID (formerly Azure AD)
-application with appropriate access permissions.
+this scenario, Auditor accesses the cloud-based infrastructure via Microsoft Graph and other modern
+APIs, authenticating through a preconfigured Microsoft Entra ID (formerly Azure AD) application with
+appropriate access permissions.
 
 If you plan to implement this scenario, you should register an Microsoft Entra ID app manually and
 provide its settings to Netwrix Auditor when configuring a monitored item.
 
 ## Configure the Microsoft Entra ID App for Auditing MS Teams
 
-Follow the steps to use a data collecting account with modern authentication:
+Use a data collecting account with modern authentication:
 
 **Step 1 –** Create an Microsoft Entra ID app that will be used for modern authentication. See the
 Create and Register a New App in Microsoft Entra ID section for additional information.
@@ -47,7 +48,7 @@ You will need to create a dedicated app for each cloud-based data source you pla
 
 If you plan to audit all of them, you need to create 4 apps.
 
-Follow the steps to register a new Microsoft Entra ID application.
+Register a new Microsoft Entra ID application:
 
 **Step 1 –** Sign into the **Microsoft 365 Admin Center** with your _Global Administrator_,
 _Application Administrator_ or _Cloud Application Administrator_ account and go to the **Microsoft
@@ -77,7 +78,7 @@ can be assigned _Delegated_ or _Application_ permissions:
 
 - _Delegated_ permissions require a signed-in user present who consents to the permissions every
   time an API call is sent.
-- _Application_ permissions are consented by an administrator once granted.
+- An administrator grants consent for _Application_ permissions once, rather than per API call.
 
 For the newly created app, you should use the _Application_ permissions.
 
@@ -112,7 +113,7 @@ Go back to the **Microsoft Entra ID admin center** > **Applications** > **App re
 confirm, click **Yes**.
 
 **NOTE:** For Office 365 permissions, go to **Request API Permissions** > **APIs my organization
-users** and type "Office 365" in the search bar.
+uses** and type "Office 365" in the search bar.
 
 See the following Microsoft article for additional information on how to create an application and
 service principal using Microsoft Entra ID Admin portal:
@@ -120,7 +121,7 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Configure Client Secret
 
-Follow the steps to create a new client secret to be used by the app.
+Create a new client secret for the app:
 
 **Step 1 –** Go to **Manage** > **Certificates & secrets** and click **New client secret**.
 
@@ -136,7 +137,7 @@ See the following Microsoft article for more information on how to add a client 
 
 ### Add MS Teams monitoring plan
 
-Follow the steps to add MS Teams monitoring plan in the Netwrix Auditor.
+Add the MS Teams monitoring plan in Netwrix Auditor:
 
 **Step 1 –** In the Monitoring Plans, click **Add Plan** button.
 
@@ -158,7 +159,7 @@ MS Teams monitoring plan has been added to Auditor and initial data collection 
 
 ### Obtain Tenant Name
 
-Follow the steps to obtain the tenant name.
+Obtain the tenant name:
 
 **Step 1 –** Navigate to **Microsoft Entra ID** > **Overview**.
 

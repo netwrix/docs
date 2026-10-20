@@ -7,8 +7,8 @@ sidebar_position: 380
 # TextSearch Data Collector
 
 The TextSearch Data Collector enables searches through text based log files. The TextSearch Data
-Collector is a core component of Access Analyzer, but it has been preconfigured within the Windows
-Solution. While the data collector is available with all Access Analyzer license options, the
+Collector is a core component of Access Analyzer, but Access Analyzer preconfigures it within the
+Windows Solution. While the data collector is available with all Access Analyzer license options, the
 Windows Solution is only available with a special Access Analyzer license. See the
 [Windows Solution](/docs/accessanalyzer/12.0/solutions/windows/overview.md) topic for additional information.
 
@@ -27,7 +27,7 @@ Windows Solution is only available with a special Access Analyzer license. See t
 
 ## TextSearch Query Configuration
 
-The TextSearch Data Collector is configured through the Text Search Data Collector Wizard, which
+You configure the TextSearch Data Collector through the Text Search Data Collector Wizard, which
 contains the following wizard pages:
 
 - Welcome
@@ -39,5 +39,5 @@ contains the following wizard pages:
 
 ![Text Search Data Collector Wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/textsearch/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+You can hide the Welcome page by selecting the **Don't display this page the next time** checkbox
+when the wizard is open and you save configuration settings.

@@ -33,7 +33,7 @@ You can use these buttons to either accept or decline the request from the email
 
 ### Accept Request
 
-Follow the steps to accept the request using the email buttons.
+To accept the request using the email buttons:
 
 **Step 1 –** Click **Yes** to approve the request. The Access Information Center launches in the
 default browser for security authentication.
@@ -55,7 +55,7 @@ topic for additional information.
 
 ### Decline Request
 
-Follow the steps to decline the request using the email buttons.
+To decline the request using the email buttons:
 
 **Step 1 –** Click **No** to decline the request. The Access Information Center launches in the
 default browser for security authentication.
@@ -65,7 +65,7 @@ default browser for security authentication.
 ![Decline access message](/images/accessinformationcenter/11.6/accessrequests/email/requestdecline.webp)
 
 **Step 3 –** A message displays giving you the option to add an explanation for the user before the
-response is processed. Any note added here is included in the email nonfiction to the requesting
+response is processed. Any note added here is included in the email notification to the requesting
 user. Optionally enter an explanation into the Notes box, and click **Submit**.
 
 ![Access declined message](/images/accessinformationcenter/11.6/accessrequests/email/requestdeclined.webp)

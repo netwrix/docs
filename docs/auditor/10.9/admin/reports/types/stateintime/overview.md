@@ -10,7 +10,7 @@ The state-in-time reports functionality allows generating reports on the system'
 specific moment of time in addition to change and activity reports. State-in-time reports are based
 on the daily configuration snapshots, and reflect a particular aspect of the audited environment.
 
-This functionality is currently available for the following data sources:
+This functionality is available for the following data sources:
 
 - Active Directory
 - Microsoft Entra ID
@@ -24,7 +24,7 @@ This functionality is currently available for the following data sources:
 - Group Policy
 - VMware
 
-**NOTE:** The State-in-Time functionality is not available for SQL Server Availability Groups.
+**NOTE:** The State-in-Time functionality isn't available for SQL Server Availability Groups.
 
 To provide data for state-in-time reports, remember to select the **Collect data for state-in-time
 reports** option when you configure a monitoring plan for the selected data source. See the
@@ -51,9 +51,9 @@ corresponding snapshot from the Snapshot Date filter.
 
 To be able to generate reports based on different snapshots, ask your Auditor Global administrator
 to import historical snapshots to the Audit Database, otherwise only the Current Session option is
-available in the drop-down list.
+available in the dropdown list.
 
-**NOTE:** Importing historical snapshots is not available for Office 365.
+**NOTE:** Importing historical snapshots isn't available for Office 365.
 
 When auditing file servers, changes to both access and audit permissions are tracked. To exclude
 information on access permissions, contact your Auditor Global administrator or Configurator of this
@@ -61,7 +61,7 @@ plan.
 
 ## Baseline Reports
 
-Most reports in Windows Server—State-in-Time folder allow you to specify baselines. A _baseline_
+With most reports in the Windows Server—State-in-Time folder, you can specify baselines. A _baseline_
 defines a certain safe level or state. If a server parameter falls below it, it is a considered a
 threat or at least merits your special attention. With baselines specified right in report filters,
 you can easily identify servers that are different from your corporate policies or best practices.

@@ -22,7 +22,7 @@ The following prerequisites are required for reviews of file system data.
 **Sensitive Data Reviews Requirement**
 
 Sensitive Data reviews of file system data requires the following setting be configured in the
-**FileSystem** > **0.Collection** Job Group in Netwrix Enterprise Auditor:
+**FileSystem** > **0.Collection** Job Group in Netwrix Enterprise Auditor:
 
 - In the 1-FSAA System Scans Job, configure the Query by selecting the **Scan file-level details**
   checkbox on the File Details tab on the Default Scoping Options page of the File System Access
@@ -30,8 +30,8 @@ Sensitive Data reviews of file system data requires the following setting be con
 
 **View Sensitive Content within Reviews Requirement**
 
-In order to view the potentially sensitive data during a review, the following setting must also be
-configured in the **FileSystem** > **0.Collection** Job Group in Netwrix Enterprise Auditor:
+to view the potentially sensitive data during a review, the following setting must also be
+configured in the **FileSystem** > **0.Collection** Job Group in Netwrix Enterprise Auditor:
 
 - In the 1-SEEK System Scans Job, configure the Query by selecting the **Store discovered sensitive
   data** checkbox on the -Sensitive Data Settings page of the File System Access Auditor Data
@@ -43,11 +43,10 @@ The following prerequisites are required for reviews of SharePoint data.
 
 **View Sensitive Content within Reviews Requirement**
 
-In order to view the potentially sensitive data during a review, the following setting must be
-configured in the **SharePoint** > **0.Collection** Job Group:
+To view potentially sensitive data during a review, configure the following setting in the **SharePoint** > **0.Collection** Job Group:
 
 - In the 1-SPSEEK System Scans Job, configure the Query by selecting the **Store discovered
-  sensitive data** checkbox on the DLP Audit Settings page of the SharePoint Access Auditor Data
+  sensitive data** checkbox on the DLP Audit Settings page of the SharePoint Access Auditor Data
   Collector Wizard.
 
 **False Positive Sensitive Data**
@@ -59,14 +58,14 @@ node of the Netwrix Enterprise Auditor Console. This removes the file from repor
 until it has been un-flagged or the file has been modified and rescanned.
 
 :::note
-A false positive is a file which matches the sensitive data criteria but does not contain
+A false positive is a file which matches the sensitive data criteria but doesn't contain
 actual sensitive data.
 :::
 
 
 ## Automation Prerequisites
 
-When the Access Information Center has been configured to commit Active Directory group membership
+When the Access Information Center has been configured to commit Active Directory group membership
 changes, the Review Administrator approval process will automatically commit approved changes
 recommended by owners during the review. Each type of review has additional requirements for
 automation of approved changes.
@@ -82,7 +81,7 @@ automation of approved changes.
 
     :::warning
     Of the three possible actions of Keep, Remove, and Not Sensitive for a Sensitive
-    Data review, the Remove action cannot be automated through the Access Information Center. It
+    Data review, the Remove action can't be automated through the Access Information Center. It
     must be manually done outside of the application. See the
     [Sensitive Data Review Automation](#sensitive-data-review-automation) topic for additional
     information.
@@ -98,10 +97,9 @@ topic for additional information.
 When approving changes in a Sensitive Data review, only Not Sensitive (flag as False Positive)
 requests can be automatically committed.
 
-Removing a file from a resource cannot be done through the Access Information Center.
+Removing a file from a resource can't be done through the Access Information Center.
 
-Approving a Keep request has no action associated to it. The file does contain sensitive data and is
-to remain where it is.
+Approving a Keep request takes no action. The file contains sensitive data and remains where it is.
 
 Approving a Not Sensitive request to flag a file as a False Positive means the file is removed from
 Access Information Center and Netwrix Enterprise Auditor reports, which identify it as containing

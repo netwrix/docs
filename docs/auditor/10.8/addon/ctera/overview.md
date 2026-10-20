@@ -36,7 +36,7 @@ follows:
 
 ### Configure Logging for CTERA Edge Filer
 
-Prior to start using the Add-On, configure syslog logging settings on your CTERA Edge Filers. See
+Before using the Add-On, configure syslog logging settings on your CTERA Edge Filers. See
 the
 [Configuring Syslog Settings](https://kb.ctera.com/docs/configuring-logging#configuring-syslog-settings)
 article on the CTERA product documentation portal for detailed instructions.
@@ -59,5 +59,5 @@ installed on the same server.
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
+Ensure to check your product version, and then review and update your add-ons and scripts
 leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

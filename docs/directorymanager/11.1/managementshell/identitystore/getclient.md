@@ -7,7 +7,7 @@ sidebar_position: 50
 # Get-Client
 
 The commandlet Get-Client gets information about the Directory Manager clients such as Admin center,
-Directory Manager portal(s), management shell, Directory Manager services such as replication
+Directory Manager portals, management shell, Directory Manager services such as replication
 service, scheduler service, data service and so on. The information includes client name, client
 type, and its status whether enabled or disabled.
 

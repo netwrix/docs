@@ -14,16 +14,24 @@ sidebar_label: How to Change epproot Password and Optimize Endpoint Protector On
 title: How to Change epproot Password and Optimize Endpoint Protector On-Prem Appliance
 knowledge_article_id: kA0Qk000000XXXXKAA
 products:
-  - endpoint-protector
+  - endpointprotector
+tags:
+  - deployment-and-installation
+  - kb
 ---
 
-| The procedures and instructions provided in this document are intended for use by experienced administrators. Proceeding with these steps is done entirely at your own risk. Netwrix is not responsible for any data loss, system instability, or other issues that may arise from following these instructions. Ensure that you have a complete backup of your system before making any changes. |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+:::danger
+The procedures and instructions provided in this document are intended for use by experienced administrators. Proceeding with these steps is done entirely at your own risk. Netwrix is not responsible for any data loss, system instability, or other issues that may arise from following these instructions. Ensure that you have a complete backup of your system before making any changes.
+:::
 
 ## Overview
 
 This article outlines the steps to boot the Endpoint Protector (EPP) On-Prem appliance into single-user (recovery) mode to change the `epproot` user password and optimize appliance performance. These steps apply only to **on-premises** deployments.  
 They do **not** work for appliances hosted in cloud environments.
+
+:::note
+This procedure changes the `epproot` Linux user account password used for SSH and console access to the appliance. It's separate from the **Backend Console Setup Password**, an optional web UI safeguard that gates access to the Backend Console view. See [Backend Console Setup Password](/docs/endpointprotector/admin/systemconfiguration/systemsecurity#backend-console-setup-password) for that feature — don't confuse the two when troubleshooting access issues.
+:::
 
 ---
 
@@ -48,7 +56,9 @@ They do **not** work for appliances hosted in cloud environments.
    passwd epproot
    ```
 
-   > **NOTE:** When requested, input the new password.
+   :::note
+   When requested, input the new password.
+   :::
 
 5. Reboot the appliance with the command:
 
@@ -64,7 +74,9 @@ They do **not** work for appliances hosted in cloud environments.
    sudo su
    ```
 
-   > **NOTE:** When requested, use the password for the `epproot` user.
+   :::note
+   When requested, use the password for the `epproot` user.
+   :::
 
 8. Backup the **Nginx**, **MySQL**, and **PHP-FPM** configuration files:
 
@@ -74,7 +86,9 @@ They do **not** work for appliances hosted in cloud environments.
    cp -p /opt/alt/php56/etc/php-fpm.conf{,.bkp}
    ```
 
-   > **NOTE:** The `{,.bkp}` syntax creates a copy of each file in the same location with `.bkp` appended, preserving metadata (permissions, ownership, and timestamps).
+   :::note
+   The `{,.bkp}` syntax creates a copy of each file in the same location with `.bkp` appended, preserving metadata (permissions, ownership, and timestamps).
+   :::
 
 9. Run the following command and note down the number of CPU cores and the memory assigned to the VM:
 
@@ -207,6 +221,8 @@ They do **not** work for appliances hosted in cloud environments.
 
 14. If any of the services fail to start, review the relevant configuration files for errors.  
 
-    > **NOTE:** You can restore the backup files created in Step 8 if necessary.
+    :::note
+    You can restore the backup files created in Step 8 if necessary.
+    :::
 
 ---

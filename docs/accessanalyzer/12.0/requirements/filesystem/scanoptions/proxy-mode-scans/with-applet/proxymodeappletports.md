@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Proxy Mode with Applet Port Requirements
 
-The following are the firewall settings are required when executing the Access Auditing (FSAA)
-and/or Sensitive Data Discovery Auditing scans in proxy mode with applet for communication between
-Access Analyzer and the proxy server:
+The following firewall settings are required for communication between Access Analyzer and the
+proxy server when running Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans in
+proxy mode with applet:
 
 | Communication Direction                                  | Protocol | Ports | Description                              |
 | -------------------------------------------------------- | -------- | ----- | ---------------------------------------- |
@@ -23,9 +23,9 @@ Data Collector Wizard.
 :::
 
 
-The following are the firewall settings are required when executing the Access Auditing (FSAA)
-and/or Sensitive Data Discovery Auditing scans in proxy mode with applet for communication between
-the proxy server and the target host:
+The following firewall settings are required for communication between the proxy server and the
+target host when running Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans in
+proxy mode with applet:
 
 | Communication Direction                    | Protocol | Ports | Description |
 | ------------------------------------------ | -------- | ----- | ----------- |

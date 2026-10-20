@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The FS_OpenAccess job is designed to report on Open Access information from targeted file servers.
 The definition of Open Access is when a security principal, such as Everyone, Authenticated Users,
-or Domain Users, have permissions on a resource.
+or Domain Users, has permissions on a resource.
 
 ![1.Open Access > FS_OpenAccess Job in the Jobs Tree](/images/accessanalyzer/12.0/solutions/filesystem/openaccessjobstree.webp)
 
@@ -20,7 +20,7 @@ View the analysis tasks by navigating to the **FileSystem** > **1.Open Access**
 **FS_OpenAccess** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

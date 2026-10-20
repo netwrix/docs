@@ -12,7 +12,7 @@ Details table.
 
 ![Sensitive Content Summary report at the on-premise farm and online instance levels](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/farminstance/instancesensitivecontentsummary.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Site Collection – Name of the site collection
 - Criteria Name – Type of potentially sensitive criteria matches found
@@ -20,8 +20,7 @@ This report is comprised of the following columns:
   Subject Profile matches (for example, Customer, Employee, and so on)
 - Count – Number of files with criteria matches
 
-There is one table at the bottom displaying Details on the files where the selected criterion
-matches were found:
+One table displays Details on the files where the selected criterion matches were found:
 
 - Source — For System Criteria this shows the criteria name (for example, Credit Cards). For Subject
   Profiles criteria it shows the individual identities (for example, Jon Doe).

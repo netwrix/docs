@@ -17,7 +17,7 @@ The information displayed in the table includes:
 - Item Reviewed — Item upon which changes were suggested by the owner
 - Current — Current state of the item at the time of the review
 - Desired — Change suggested by the owner
-- Notes — Icon indicates a Note has been added. Click on the icon to read the attached note(s).
+- Notes — Icon indicates a Note has been added. Click the icon to read the attached notes.
 - Approval — Status of the Review Administrator's approval
 
     - Clock — Indicates waiting on the Review Administrator to make an official decision
@@ -27,8 +27,8 @@ The information displayed in the table includes:
       later time
 
 The **Show Only Changes** checkbox is selected by default to show only the items with
-owner-recommended changes. If deselected, all items included in the review are displayed. When
-selecting the items with no changes in the grid, the change buttons at the bottom of the page are
+owner-recommended changes. If deselected, the table displays all items included in the review. When
+you select items with no changes in the grid, the change buttons at the bottom of the page are
 disabled.
 
 The table data grid functions the same way as other table grids. See the

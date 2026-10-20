@@ -46,7 +46,7 @@ Refer to the relevant resolution for the cause in your environment:
 2. Configure your third-party credential provider to work with Netwrix Password Policy Enforcer if necessary. Refer to the following articles for additional information:
 
    - For additional information on Cisco DUO Authentication setup, refer to the following article: Set Up Netwrix Password Policy Enforcer to Work with Cisco DUO Authentication.
-   - Learn more about setting up GlobalProtect to work with Netwrix Password Policy Enforcer in [Enable SSO Wrapping for Third-Party Credentials with the Windows Registry ⸱ GlobalProtect](https://docs.paloaltonetworks.com/globalprotect/9-1/globalprotect-admin/globalprotect-apps/deploy-app-settings-transparently/deploy-app-settings-to-windows-endpoints/enable-sso-wrapping-for-third-party-credentials-with-the-windows-registry).
+   - Learn more about setting up GlobalProtect to work with Netwrix Password Policy Enforcer in [Enable SSO Wrapping for Third-Party Credentials with the Windows Registry ⸱ GlobalProtect](https://docs.paloaltonetworks.com/globalprotect/10-1/globalprotect-admin/globalprotect-apps/deploy-app-settings-transparently/deploy-app-settings-to-windows-endpoints/enable-sso-wrapping-for-third-party-credentials-with-the-windows-registry).
 
    > **NOTE:** Refer to the Password Policy Enforcer Client GUID provided below:
    >
@@ -68,6 +68,6 @@ Refer to the relevant resolution for the cause in your environment:
 
 - Upgrade Checklist in Netwrix Password Policy Enforcer
 - Set Up Netwrix Password Policy Enforcer to Work with Cisco DUO Authentication
-- [Enable SSO Wrapping for Third-Party Credentials with the Windows Registry ⸱ GlobalProtect](https://docs.paloaltonetworks.com/globalprotect/9-1/globalprotect-admin/globalprotect-apps/deploy-app-settings-transparently/deploy-app-settings-to-windows-endpoints/enable-sso-wrapping-for-third-party-credentials-with-the-windows-registry)
+- [Enable SSO Wrapping for Third-Party Credentials with the Windows Registry ⸱ GlobalProtect](https://docs.paloaltonetworks.com/globalprotect/10-1/globalprotect-admin/globalprotect-apps/deploy-app-settings-transparently/deploy-app-settings-to-windows-endpoints/enable-sso-wrapping-for-third-party-credentials-with-the-windows-registry)
 - Installing Password Policy Client − Creating Firewall Rules for the Password Policy Client v10.2
 - Communication Protocols in Password Policy Enforcer

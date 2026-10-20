@@ -6,16 +6,13 @@ sidebar_position: 11
 
 # Add Azure Files Storage Accounts
 
-Prior to adding Azure Files storage accounts to the Activity Monitor, the prerequisites for the target environment
-must be met. See the [Azure Files Requirements](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/azure-files/azurefiles-activity.md) 
+Before adding Azure Files storage accounts to the Activity Monitor, you must meet the prerequisites for the target environment. See the [Azure Files Requirements](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/azure-files/azurefiles-activity.md) 
 topic for additional information.
-
-Follow the steps to add Azure Files storage accounts to be monitored.
 
 1. On the **Monitored Hosts & Services** page, select **Add Host/Service**.  
 2. Select the agent that will be monitoring Azure Files, and then select **Next**.  
 3. Select **Azure Files**, specify the tenant’s domain name, and then select **Next**.  
-4. On the **Connection** page, specify the Tenant ID (if it was not resolved automatically), Client ID, and Client Secret—values  
+4. On the **Connection** page, specify the Tenant ID (if it wasn't resolved automatically), Client ID, and Client Secret—values  
 copied in the previous steps during application registration.  
 5. Select **Connect**.  
 The button will verify the connection to Azure, enumerate all storage accounts, and retrieve their settings visible to the registered application.  

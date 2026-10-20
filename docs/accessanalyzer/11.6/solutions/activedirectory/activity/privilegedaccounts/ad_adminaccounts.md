@@ -14,7 +14,7 @@ Navigate to the **Jobs** > **Active Directory** > **6.Activity** > **Privileged 
 **AD_AdminAccounts** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -41,9 +41,9 @@ follow pre-configured reports:
 
 ### Configure the Summarize Administrative Account Activity Analysis Task
 
-Customizable parameters enable you to set the values used to include the NT Account name for admin
-groups during this job’s analysis. The parameters can be customized and are listed in a section at
-the bottom of the SQL Script Editor. Follow the steps to customize an analysis task’s parameters.
+With the customizable parameters, you can set the values used to include the NT Account name for admin
+groups during this job’s analysis. The parameters are listed in a section at
+the bottom of the SQL Script Editor. Complete the following steps to customize an analysis task’s parameters.
 
 **Step 1 –** Navigate to the **Active Directory** > **6.Activity** > **Privileged Accounts** >
 **AD_AdminAccounts** > **Configure** node and select **Analysis**.
@@ -54,7 +54,7 @@ the bottom of the SQL Script Editor. Follow the steps to customize an analysis t
 Activity** analysis task and click **Analysis Configuration**. The SQL Script Editor opens.
 
 :::warning
-Do not change any parameters where the Value states `Created during execution`.
+Don't change any parameters where the Value states `Created during execution`.
 :::
 
 

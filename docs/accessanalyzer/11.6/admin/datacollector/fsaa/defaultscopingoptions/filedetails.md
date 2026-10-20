@@ -6,11 +6,11 @@ sidebar_position: 20
 
 # File Details Tab
 
-The File Details tab allows configuration of settings for file detail collection.
+Use the File Details tab to configure settings for file detail collection.
 
 ![FSAA Data Collector Wizard Default Scoping Options page File Details tab](/images/accessanalyzer/11.6/admin/datacollector/fsaa/defaultscopingoptions/filedetails.webp)
 
-Select the desired settings for additional scoping:
+Select the settings you want for additional scoping:
 
 - Scan file-level details – Turns on file-level scanning and collects a full list of files, file
   size, last modified, and last accessed
@@ -35,11 +35,10 @@ provides a count for the number of occurrences of each tag.
 
 **Scan filter settings**
 
-The Scan filter settings options are enabled if the **Scan file-level details** checkbox is
-selected.
+You enable the Scan filter settings options by selecting the **Scan file-level details** checkbox.
 
 - Only files larger than [number] [size unit] – Filters the results to only collect file data on
-  files larger than the set value. If this option is not set, all file sizes are collected.
+  files larger than the set value. If this option isn't set, all file sizes are collected.
 - Only files last modified more than [number] [time period] ago – Filters results to only collect
   file data on files modified older than the set value
 - Only files last modified less than [number] [time period] ago – Filters results to only collect
@@ -49,7 +48,7 @@ selected.
   not set, all file types are collected.
 
 :::warning
-Be careful when configuring these settings. If no filters are applied when file detail
-scanning has been enabled, it can result in returning large amounts of data to the database.
+Be careful when configuring these settings. If you don't apply filters after enabling file
+detail scanning, the scan can return large amounts of data to the database.
 
 :::

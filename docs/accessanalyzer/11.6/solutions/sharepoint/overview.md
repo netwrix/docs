@@ -46,14 +46,14 @@ topic for additional information.
 **Sensitive Data Discovery Considerations**
 
 The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time ,
-then an extra 16 GB of RAM are required (8x2=16).
+which enables Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans,
+increase the minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per
+host. For example, if the job is configured to scan 8 hosts at a time, then an extra 16 GB of RAM
+are required (8x2=16).
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
 configuration; it has been preconfigured to work with Enterprise Auditor and should never be
 customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
 environment.
@@ -61,15 +61,15 @@ environment.
 
 
 :::tip
-Remember, if employing the Enterprise Auditor SharePoint Agent, it is also necessary for the
-Sensitive Data Discovery Add-on to be installed on the server where the agent is installed.
+If you use the Enterprise Auditor SharePoint Agent, also install the Sensitive Data Discovery
+Add-on on the server where the agent is installed.
 :::
 
 
 **Location**
 
 The SharePoint Solution requires a special Enterprise Auditor license. It can be installed from the
-Enterprise Auditor Instant Job Wizard. Once it has been installed into the Jobs tree, navigate to
+Enterprise Auditor Instant Job Wizard. After it has been installed into the Jobs tree, navigate to
 the solution: **Jobs** > **SharePoint**.
 
 The 0.Collection Job Group collects the data. The other job groups and the SP_Overview Job run
@@ -95,15 +95,15 @@ The following types of auditing can be conducted with the SharePoint Solution:
 Each type of auditing depends on specific jobs within the 0.Collection Job Group to collect the data
 and its corresponding analysis/reporting job groups. The Access Auditing components represent the
 core of the SharePoint Solution. However, the Sensitive Data Discovery Auditing components also
-collect the Access Auditing data; therefore it is not necessary to run both sets of collection jobs.
+collect the Access Auditing data; therefore it isn't necessary to run both sets of collection jobs.
 The data collection query options for each type are explained within the 0.Collection Job Group
 section. Additionally, the corresponding analysis/reporting job groups are listed for each auditing
 type.
 
-If intending to run two or all auditing types, see each auditing type section within the
+If you intend to run two or all auditing types, see each auditing type section within the
 0.Collection Job Group section for information on query options and requirements. It is recommended
-to first run the 0.Collection Job Group components in the default order for the desired auditing
-types to ensure successful data collection, and then to run the desired sub-groups for reports.
+to first run the 0.Collection Job Group components in the default order for the auditing types you want
+to ensure successful data collection, and then to run the sub-groups you want for reports.
 
 See the
 [Recommended Configuration for the SharePoint Solution](/docs/accessanalyzer/11.6/solutions/sharepoint/recommended.md)
@@ -113,7 +113,7 @@ The SharePoint Solution is available with the SharePoint Reports license feature
 the following job groups and jobs:
 
 - [0.Collection Job Group](/docs/accessanalyzer/11.6/solutions/sharepoint/collection/overview.md)
-  – Designed to collect high level summary information from SharePoint servers. This information is
+  – Collects high level summary information from SharePoint servers. This information is
   used to populate the SMP Reports based around the SharePoint and is a requirement for the Access
   Information Center – SharePoint reports.
 
@@ -130,15 +130,14 @@ the following job groups and jobs:
   principles such as NT AUTHORITY\Authenticated Users, Everyone, and Everyone Except External Users.
   This data must be monitored closely because of its exposure.
 - [3.Broken Inheritance > SP_BrokenInheritance Job](/docs/accessanalyzer/11.6/solutions/sharepoint/sp_brokeninheritance.md)
-  – Keeping track of directly applied permissions at mass is not realistic, this job is responsible
-  for performing data analysis and generating SharePoint broken inheritance reports at the site
-  level. This includes looking at site broken inheritance and the trustees who are assigned to those
-  sites where inheritance is broken so that you can remove that access in favor of providing access
-  via group membership.
+  – Keeping track of directly applied permissions at scale isn't realistic. This job performs data
+  analysis and generates SharePoint broken inheritance reports at the site level. This includes
+  looking at site broken inheritance and the trustees assigned to those sites where inheritance is
+  broken so that you can remove that access in favor of providing access via group membership.
 - [4.Content Job Group](/docs/accessanalyzer/11.6/solutions/sharepoint/content/overview.md)
-  – Provides insight into content stored across SharePoint farms in order to help more efficiently
+  – Provides insight into content stored across SharePoint farms to help more efficiently
   manage that content. It will provide information on the content taking up the most space, the
-  content that has not been accessed for extended periods of time, and additional data describing
+  content that hasn't been accessed in a long time, and additional data describing
   SharePoint content and the configuration of the repositories such as lists and libraries which
   store that content.
 - [5.Probable Owner > SP_ProbableOwner Job](/docs/accessanalyzer/11.6/solutions/sharepoint/sp_probableowner.md)
@@ -151,12 +150,12 @@ the following job groups and jobs:
     - Requires the Data Governance Sensitive Data Discovery Add-on
 
 - [7.Activity Job Group](/docs/accessanalyzer/11.6/solutions/sharepoint/activity/overview.md)–
-  Generates summary and detail reports of SharePoint activity on the specified sites. These reports
-  can be used for identifying file, folder, and user related activity across your SharePoint
+  Generates summary and detail reports of SharePoint activity on the specified sites. Use these
+  reports to identify file, folder, and user related activity across your SharePoint
   environment.
 - [8.M365 Job Group](/docs/accessanalyzer/11.6/solutions/sharepoint/m365/overview.md)
-  – Generates summary and detail reports of SharePoint Activity on the specified Teams sites. These
-  reports can be used for identifying file, folder, and user related activity across your SharePoint
+  – Generates summary and detail reports of SharePoint Activity on the specified Teams sites. Use
+  these reports to identify file, folder, and user related activity across your SharePoint
   environment.
 - [Effective Access Audits Job Group](/docs/accessanalyzer/11.6/solutions/sharepoint/effectiveaccessaudits/overview.md)
   – Returns reports identifying specific trustees’ effective access across the entire SharePoint

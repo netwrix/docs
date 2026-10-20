@@ -37,7 +37,7 @@ This operation should be performed in cooperation with application owners who ar
 
 The assignments specified as non-conforming during the very first execution of the role model are called **pre-existing** assignments. **pre-existing** assignments are tagged differently from other non-conforming assignments by the [Save **pre-existing** Access Rights Task](../../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/savepreexistingaccessrightstask) because they can indicate that:
 
-- The rules are not optimal yet.
+- The rules aren't optimal yet.
 - Data in the managed system needs more cleanup.
 
 Obviously, **pre-existing** assignments can also prove to be exceptions to the rules, like non-conforming assignments, and need to be validated as such.
@@ -50,5 +50,5 @@ While there can be dependencies between the review of **Non-conforming roles** a
 - Review [Reconcile a Property](../../../user-guide/administrate/non-conforming-assignment-review/property-reconciliation).
 - [Review an Unauthorized Account](../../../user-guide/administrate/non-conforming-assignment-review/unauthorized-account-review).
 
-[Manage Risks](../../../user-guide/optimize/risk-management) can be defined to highlight the most sensitive accounts/permissions, in order to establish a priority order in the review of non-conforming assignments.
+[Manage Risks](../../../user-guide/optimize/risk-management) can be defined to highlight the most sensitive accounts/permissions, to establish a priority order in the review of non-conforming assignments.
 

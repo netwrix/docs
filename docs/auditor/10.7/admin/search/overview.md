@@ -7,8 +7,8 @@ sidebar_position: 40
 # View and Search Collected Data
 
 Netwrix Auditor delivers complete visibility into your IT infrastructure. Its convenient interactive
-search interface enables you to investigate incidents and browse data collected across the entire IT
-infrastructure. When running a search, you are not limited to a certain data source, change type, or
+search interface lets you investigate incidents and browse data collected across the entire IT
+infrastructure. When running a search, you aren't limited to a certain data source, change type, or
 object name. You can create flexible searches that provide you with precise results on _who_ changed
 _what_, and _when_ and _where_ each change was made.
 
@@ -18,7 +18,7 @@ access to data—only within their delegated scope. See the
 [Role-Based Access and Delegation](/docs/auditor/10.7/admin/monitoringplans/delegation.md) topic for additional
 information.
 
-This functionality is currently available for the following data sources:
+This functionality is available for the following data sources:
 
 - Active Directory
 - Microsoft Entra ID (formerly Azure AD)
@@ -48,9 +48,9 @@ Archive. See [Investigations](/docs/auditor/10.7/admin/settings/investigations.m
 
 ## Browsing Your Audit Data
 
-On the main Netwrix Auditor page, click
+On the main Netwrix Auditor page, to the left, click the search tile:
+
 ![search_tile](/images/auditor/10.7/admin/search/search_tile.webp)
-on the left.
 
 You can add any elements (a dashboard, report, alert, risk, etc.) to the Auditor Home screen to
 access them instantly. See the [Navigation](/docs/auditor/10.7/admin/navigation/overview.md) and
@@ -114,7 +114,7 @@ a column or change its position, or hide the Details pane on the right.
 To modify view:
 
 1. Navigate to Tools
-2. Click Select columns. The dialog that opens shows the search columns currently selected for
+2. Click Select columns. The dialog that opens shows the search columns selected for
    display.
 3. Check the columns you want to include and clear unwanted ones.
 4. Set the order of displayed columns using arrows on the right.
@@ -151,15 +151,15 @@ Navigate to Tools in the top right corner of the Search window and select the re
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Save as report | Save your search results as custom reports.                                                                                                                                                                                                                                                                                                         |
 | Create alert   | Create an alert with the same set of filters you have just specified for your search.                                                                                                                                                                                                                                                               |
-| Subscribe      | Create subscription for periodic delivery of the search query results. Subscription to the search results is not the same as creation of a custom report using this search.                                                                                                                                                                         |
+| Subscribe      | Create subscription for periodic delivery of the search query results. Subscription to the search results isn't the same as creation of a custom report using this search.                                                                                                                                                                         |
 | Export data    | Save your search results as a _.pdf_ or _.csv_ file. All audit data from your search query results will be exported (unlike the interactive view which is limited to the top 2,000 entries). When exporting large amount of data (e.g., changes made by a newly retired employee during the last 8 months), it is recommended to use _.csv_ format. |
 
 ## Troubleshooting Tips
 
-If you do not see the expected information in search results, try the following:
+If you don't see the expected information in search results, try the following:
 
 - Verify the Audit Database retention and SQL Server settings.
-- Make sure that data collection is configured properly in the monitoring plan settings.
+- Ensure that data collection is configured properly in the monitoring plan settings.
 - Check the required audit settings in your monitored infrastructure.
 - Verify the data collecting account.
 

@@ -15,8 +15,10 @@ keywords:
   - Hub
   - deployment
   - phased rollout
+  - IIS
+  - maxAllowedContentLength
 products:
-  - change-tracker
+  - changetracker
 sidebar_label: Updating Agents from the Console
 tags:
   - kb
@@ -29,13 +31,11 @@ knowledge_article_id: ka0Qk000000DkufIAC
 
 ## Overview
 
-When a new Netwrix Change Tracker agent version is released, you can deploy it automatically from the Change Tracker Hub console. This article provides a comprehensive guide for downloading, uploading, and deploying agent updates, along with best practices for phased rollouts and troubleshooting common issues.
+This article describes how to download, upload, and deploy Netwrix Change Tracker agent updates from the Hub console. When a new agent version is released, you can deploy it automatically from the console. The article also covers best practices for phased rollouts and troubleshooting common issues.
 
-> **NOTE:** For the most current agent update procedures and screenshots, refer to the official documentation: [Agent Updates](/docs/changetracker/8_0/admin/settingstab/agentsanddevices/agentupdates)
+> **NOTE:** For the most current agent update procedures and screenshots, refer to the official documentation: [Agent Updates](/docs/changetracker/admin/settingstab/agentsanddevices/agentupdates)
 
-> **END OF SUPPORT NOTICE**
->
-> Gen 7 Agent v7.0.0 reached End of Support on **October 1, 2024**.
+> **IMPORTANT:** Gen 7 Agent v7.0.0 reached End of Support on **October 1, 2024**.
 >
 > Ensure all agents are upgraded to Gen 7 Agent v7.1 or later for continued support and security updates.
 
@@ -43,34 +43,34 @@ When a new Netwrix Change Tracker agent version is released, you can deploy it a
 
 Before updating agents, ensure you have:
 
-1. **Downloaded the agent update files** from the Netwrix customer portal:
-   - **Path:** Netwrix > Members > Member Downloads > Latest Versions of Software and Support Information for Existing Customers > 01. Netwrix Change Tracker Gen 7 > Hub and Agent Downloads
+- **Downloaded the agent update files** from the Netwrix customer portal:
+  - **Path:** Netwrix > Members > Member Downloads > Latest Versions of Software and Support Information for Existing Customers > 01. Netwrix Change Tracker Gen 7 > Hub and Agent Downloads
 
-2. **Required files:**
-   - Netwrix Change Tracker Gen 7 Windows Agent Only Installer (`.zip`)
-   - Netwrix Change Tracker Gen 7 Windows Agent Control File for Auto Updates (`.upd` file)
+- **Required files:**
+  - Netwrix Change Tracker Gen 7 Windows Agent Only Installer (`.zip`)
+  - Netwrix Change Tracker Gen 7 Windows Agent Control File for Auto Updates (`.upd` file)
 
-3. **Important:** Do NOT extract the zip files. They must be uploaded as zip archives to the Change Tracker console.
+  > **IMPORTANT:** Do not extract the zip files. Upload them to the Change Tracker console as zip archives.
 
-4. **Permissions:** Administrator access to the Change Tracker console and IIS (for troubleshooting)
+- **Permissions:** Administrator access to the Change Tracker console and IIS (for troubleshooting)
 
-5. **Linux agents only:** The `at` command must be installed on Linux devices for automatic agent updates to function.
-   - To install: `sudo yum install at` or `sudo apt-get install at`
-   - See [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command) for more information.
+- **Linux agents only:** The `at` command must be installed on Linux devices for automatic agent updates to function.
+  - To install: `sudo yum install at` or `sudo apt-get install at`
+  - See [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command) for more information.
 
 ### Security Considerations
 
 - **Update Integrity:** The `.upd` control file cryptographically signs the update to prevent tampering.
-- **HTTPS Communication:** All agent-to-Hub communication is encrypted via HTTPS.
+- **HTTPS Communication:** HTTPS encrypts all agent-to-Hub communication.
 - **Scheduled Updates:** Consider deploying during maintenance windows to minimize disruption.
 - **Network Security:** Ensure only authorized agents can access the Hub (use IP restrictions or VPN if needed).
-- **Credential Protection:** Agent credentials are encrypted in HubDetails.xml.
+- **Credential Protection:** Change Tracker encrypts agent credentials in `HubDetails.xml`.
 
 ## Instructions
 
-### Step 1: Upload Agent Update Files
+### Step 1 — Upload Agent Update Files
 
-1. Log in to the **Change Tracker console** through a web browser.
+1. Log in to the Change Tracker console through a web browser.
 
 2. Navigate to **Settings > Agent Updates**.
 
@@ -84,7 +84,7 @@ Before updating agents, ensure you have:
 
 6. Verify that both files appear in the Agent Updates list.
 
-### Step 2: Create or Select a Device Group
+### Step 2 — Create or Select a Device Group
 
 For organized deployments, use device groups to control which agents receive updates and when.
 
@@ -92,9 +92,9 @@ For organized deployments, use device groups to control which agents receive upd
 
 2. Then, either select an existing group for the update, or click **+ Add** to create a new group.
 
-   > **Note:** If creating a new group, provide a descriptive name that indicates the update phase or target devices (e.g., "Agent Update - Pilot").
+    > **NOTE:** If creating a new group, provide a descriptive name that indicates the update phase or target devices (e.g., "Agent Update - Pilot").
 
-### Step 3: Configure the Update Schedule
+### Step 3 — Configure the Update Schedule
 
 1. Navigate to the group you created or selected.
 
@@ -105,13 +105,13 @@ For organized deployments, use device groups to control which agents receive upd
 4. Configure the deployment:
    - **Agent version:** Select the uploaded agent version from the dropdown.
    - **Schedule:** Choose when the update should deploy:
-     - **Update Start** Specify when the change window should start i.e. from what time agents can start to update.
-     - **Update End** Specify when the change window should end i.e. from what time agents can no longer update.
-   - **Upgrade to .NET Core** Select this option if you are upgrading your agent(s) from Gen7 to Gen7NetCore. If this option is not selected for that type of upgrade, the upgrade will fail.
+     - **Update Start:** Specify when the change window should start i.e. from what time agents can start to update.
+     - **Update End:** Specify when the change window should end i.e. from what time agents can no longer update.
+   - **Upgrade to .NET Core:** Select this option if you are upgrading your agent(s) from Gen7 to Gen7NetCore. If this option is not selected for that type of upgrade, the upgrade will fail.
     
 5. Click **Save** to save the schedule.
 
-### Step 4: Assign Agents to the Update Group
+### Step 4 — Assign Agents to the Update Group
 
 1. Navigate to **Settings > Agents & Devices**.
 
@@ -123,11 +123,11 @@ For organized deployments, use device groups to control which agents receive upd
 
 5. Click **Save** to save the changes.
 
-6. The assigned agents will receive the update according to the defined schedule.
+The assigned agents receive the update according to the defined schedule.
 
 > **NOTE:** Linux devices require the `at` command to be installed for automatic updates to function. See [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command) for installation instructions.
 
-### Step 5: Verify Update Deployment
+### Step 5 — Verify Update Deployment
 
 1. Navigate to **Settings > Groups**.
 
@@ -195,19 +195,19 @@ If issues occur during deployment:
    - Delete or modify the update schedule.
 
 2. **Assess Impact:**
-   - Check affected agent rolling-log.txt.
+   - Check affected agent `rolling-log.txt`.
    - Review Hub server logs.
    - Identify common failure patterns.
 
 3. **Manual Intervention:**
    - Uninstall problematic agent version.
    - Reinstall previous stable version.
-   - Reconfigure HubDetails.xml if needed.
+   - Reconfigure `HubDetails.xml` if needed.
 
 4. **Contact Support:**
    - Gather rolling logs from affected agents.
    - Document error messages.
-   - Open a [support ticket with Netwrix](https://netwrix.com/en/support/).
+   - Open a support ticket with [Netwrix Support](https://www.netwrix.com/support.html).
 
 ## Troubleshooting
 
@@ -227,7 +227,7 @@ The default IIS maxAllowedContentLength is too low for agent update files.
    iisreset /stop
    ```
 
-2. Open the Web.config file:
+2. Open the `Web.config` file:
    ```text
    C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub\Web.config
    ```
@@ -253,7 +253,7 @@ The default IIS maxAllowedContentLength is too low for agent update files.
 - Update schedule is active and not expired
 - Agent can communicate with Hub (check agent status)
 - Agent has sufficient disk space for update
-- Review agent rolling-log.txt for errors
+- Review agent `rolling-log.txt` for errors
 
 **Verify:**
 - Hub server has outbound connectivity (if agents are remote)
@@ -269,7 +269,7 @@ The default IIS maxAllowedContentLength is too low for agent update files.
 - OS version incompatibility
 
 **Actions:**
-1. Check agent rolling-log.txt for specific error messages.
+1. Check agent `rolling-log.txt` for specific error messages.
 2. Verify OS compatibility with new agent version.
 3. Add Netwrix agent paths to antivirus exclusions.
 4. Free up disk space (minimum 500MB recommended).
@@ -278,8 +278,8 @@ The default IIS maxAllowedContentLength is too low for agent update files.
 
 **Immediate steps:**
 1. Check if agent service is running.
-2. Review rolling-log.txt for startup errors.
-3. Verify HubDetails.xml configuration is intact.
+2. Review `rolling-log.txt` for startup errors.
+3. Verify `HubDetails.xml` configuration is intact.
 4. Test network connectivity to Hub.
 5. Check Windows Event Viewer for service errors.
 
@@ -296,15 +296,15 @@ The default IIS maxAllowedContentLength is too low for agent update files.
 | v7.0.0.x | v7.x, v8.0 | 2017-2019 | ❌ EOS Oct 1, 2024 |
 | v6.5.x | v6.5, v7.x | Pre-2017 | ❌ End of Life |
 
-> **Important:** Always verify compatibility in the release notes before deploying updates.
+> **IMPORTANT:** Always verify compatibility in the release notes before deploying updates.
 
 ### FAQ
 
-**Q: How often should I update agents?**
+**Q: How often should you update agents?**
 A: Update agents when new versions address security vulnerabilities or critical bugs. Review release notes for each version.
 
-**Q: Can I schedule updates for specific times?**
-A: Yes, use the schedule feature in the Agent Updates tab to specify deployment date and time.
+**Q: Can you schedule updates for specific times?**
+A: Yes, use the schedule feature in the **Agent Updates** tab to specify deployment date and time.
 
 **Q: What happens if an agent is offline during the scheduled update?**
 A: The agent will not receive the update. The agent needs to be online during the scheduled update time.
@@ -312,16 +312,15 @@ A: The agent will not receive the update. The agent needs to be online during th
 **Q: Do agents need to reboot after updating?**
 A: Typically no, the agent service restarts automatically. However, some updates may require a system reboot (check release notes).
 
-**Q: Can I cancel an in-progress update?**
+**Q: Can you cancel an in-progress update?**
 A: Once an agent begins installing an update, you cannot cancel it. However, you can remove devices from the update group to prevent additional deployments.
 
-**Q: Where can I see the current agent version?**
-A: Navigate to Settings > Agents & Devices. The version is displayed in the Devices tab for each agent.
+**Q: Where can you see the current agent version?**
+A: Navigate to **Settings > Agents & Devices**. The **Devices** tab displays the version for each agent.
 
 ## Related Links
 
-- [Agent Updates (Official Documentation)](/docs/changetracker/8_0/admin/settingstab/agentsanddevices/agentupdates)
-- [Device Groups](/docs/changetracker/8_0/admin/settingstab/devicegroups)
-- [Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
-- [Component Release History](/docs/changetracker/8_0/componentreleases)
+- [Agent Updates (Official Documentation)](/docs/changetracker/admin/settingstab/agentsanddevices/agentupdates)
+- [Device Groups](/docs/changetracker/admin/settingstab/devicegroups)
+- [Agent and Device Ports](/docs/changetracker/requirements/agentdeviceports)
 - [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command)

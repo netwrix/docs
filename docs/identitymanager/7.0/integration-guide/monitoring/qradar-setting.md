@@ -16,7 +16,7 @@ Supported log management systems are:
 
 ## Overview
 
-Typically, a Serilog configuration includes three parts: **MinimumLevel**, **Using** and **WriteTo**. See the [Monitoring](../../integration-guide/monitoring) topic for additional information.
+Typically, a Serilog configuration includes three parts: **MinimumLevel**, **Using**, and **WriteTo**. See the [Monitoring](../../integration-guide/monitoring) topic for additional information.
 
 ### Identity Manager's DSM in QRadar
 
@@ -24,14 +24,14 @@ Identity Manager's Device Support Module is a plug-in that allows your QRadar sy
 
 Logs can be sent into QRadar without using Identity Manager's DSM in QRadar, but the logs just won't be parsed. Not all Identity Manager's logs can be sent to QRadar. See the [References: Logs](../../integration-guide/monitoring/references) topic for additional information.
 
-In order to get Identity Manager's DSM, import from QRadar the `Usercube_1.0.0.zip` file, accessible in the `Runtime` folder. Identity Manager's DSM is set to automatically detect the source. This means that, once Serilog is configured to send logs to QRadar, performing a few actions in Identity Manager should make the detection possible.
+To get Identity Manager's DSM, import from QRadar the `Usercube_1.0.0.zip` file, accessible in the `Runtime` folder. Identity Manager's DSM is set to automatically detect the source. This means that, once Serilog is configured to send logs to QRadar, performing a few actions in Identity Manager should make the detection possible.
 
 ## Export Logs to a Log Management System
 
 Export logs to a log management system by proceeding as follows:
 
 1. In
-[Application Settings](../../integration-guide/network-configuration/agent-configuration/appsettings), make sure to have a **Serilog** section:
+[Application Settings](../../integration-guide/network-configuration/agent-configuration/appsettings), ensure to have a **Serilog** section:
 
 ```json
 { ... "Serilog": { ... } ... }
@@ -74,9 +74,9 @@ appsettings.json
 ```
 3. Add a **MinimumLevel** section to define which logs are to be sent to the log management system.
 
-In order to be sent to any system, Identity Manager's logs must be configured with **MinimumLevel** set to `Information`, or lower.
+To be sent to any system, Identity Manager's logs must be configured with **MinimumLevel** set to `Information`, or lower.
 
-For example, we can define the logs' minimum level to `Information`. This way, all logs from
+For example, define the logs' minimum level to `Information`. This way, all logs from
 the [References: Logs](../../integration-guide/monitoring/references) with `Information` level or higher are
 sent.
 ```json
@@ -132,7 +132,7 @@ appsettings.json
 
 ```
 For example, to produce an RFC5424 output for QRadar
-([see more information about UdpSyslog attributes](https://github.com/IonxSolutions/serilog-sinks-syslog#see-more-information-about-udpsyslog-attributes)):
+([UdpSyslog attributes](https://github.com/IonxSolutions/serilog-sinks-syslog#see-more-information-about-udpsyslog-attributes)):
 ```
 appsettings.json
 
@@ -195,7 +195,7 @@ appsettings.json
 5. When needing to restrict the logs sent to the system, add a filter and wrap all **WriteTo**
 configuration into a sub-logger, in which case the **Name** at **WriteTo**'s root must be `Logger`. See the [Monitoring](../../integration-guide/monitoring) topic for additional information.
 
-For all formats, in order to send only the right logs using the specified filter, the **WriteTo** part must contain a sub-logger with its own filter. Otherwise, the filter will be applied to all sinks.
+For all formats, to send only the right logs using the specified filter, the **WriteTo** part must contain a sub-logger with its own filter. Otherwise, the filter will be applied to all sinks.
 
 For example, among Identity Manager's logs, only the logs described in the e [References: Logs](../../integration-guide/monitoring/references) can be parsed by QRadar's DSM and should be used by a SIEM system. Hence the importance of having a filter and a sub-logger.
 

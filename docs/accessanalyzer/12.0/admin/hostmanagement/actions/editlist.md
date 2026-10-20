@@ -19,7 +19,7 @@ the Specify Host List Properties page where you can modify the following:
 - Host List Name
 
     :::warning
-    Changing the name of a host list that has been assigned to a job can cause the job
+    Changing the name of a host list assigned to a job can cause the job
     to fail.
     :::
 

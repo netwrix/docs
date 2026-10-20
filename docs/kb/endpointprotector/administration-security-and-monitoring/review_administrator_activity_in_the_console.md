@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Review Admin Activity
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "Review Administrator Activity in the Console"
 knowledge_article_id: kA0Qk0000002B6hKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Review Administrator Activity in the Console
@@ -19,6 +20,8 @@ products:
 ## Overview
 
 This article explains how to review the activity of administrators in the Endpoint Protector console. You can use the built-in reports to track actions performed by specific administrators.
+
+For more information, see [Admin Actions](/docs/endpointprotector/admin/reports#admin-actions) in the Reports and Analysis documentation.
 
 ## Instructions
 

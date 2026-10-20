@@ -39,7 +39,7 @@ To manually install one or more server components:
 
    ![Server Setup](/images/passwordpolicyenforcer/11.2/install/serversetup5.webp)
 
-6. Click **Finish** when installation is complete. If prompted to restart the computer, then restart before using the installed components.
+6. Click **Finish** when installation is complete. If the installer prompts you to restart the computer, then restart before using the installed components.
 
 ## Automated deployment
 

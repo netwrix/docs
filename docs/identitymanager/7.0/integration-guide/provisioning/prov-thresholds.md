@@ -10,9 +10,9 @@ Thresholds are essential safety guards controlling all changes, for example prev
 
 Thresholds are by default activated to warn users when synchronization or provisioning triggers too many modifications. If the number of modifications exceeds the specified threshold, Identity Manager stops the synchronization/provisioning and displays a warning on the log page.
 
-Thresholds can be deactivated via the value `0`, though **they should not all be**. Each action must be "guarded" by at least one threshold.
+Thresholds can be deactivated via the value `0`, though **they shouldn't all be**. Each action must be "guarded" by at least one threshold.
 
-Once the changes have been reviewed, the blocked job can be resumed (or not). See the [Synchronize Data](../../user-guide/set-up/synchronization) topic for additional information.
+After the changes have been reviewed, the blocked job can be resumed (or not). See the [Synchronize Data](../../user-guide/set-up/synchronization) topic for additional information.
 
 ## Thresholds for Provisioning
 

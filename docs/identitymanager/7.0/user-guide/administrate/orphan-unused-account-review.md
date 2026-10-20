@@ -27,17 +27,17 @@ In the ****Orphan**** field, select **Yes** to see all existing resources withou
 In addition, filters can be configured in the reporting module to list orphaned accounts. See the [Generate Reports](../../user-guide/administrate/reporting) topic for additional information. Choose to display **User** and **AD User** (nominative) with a filter on void user's display names.
 
 :::note
- Some accounts are considered orphaned because of an error in the account data or assignment rule. For an entity that is never the target of a resource type, the concept of an **Orphan** does not apply because the **Owner / Resource Type** column will be hidden. When using a display table to display these entities, use DisplayTableDesignElement``(/integration-guide/toolkit/xml-configuration/user-interface/displaytable#properties) `"table"`` or `"adaptable"`. 
+ Some accounts are considered orphaned because of an error in the account data or assignment rule. For an entity that is never the target of a resource type, the concept of an **Orphan** doesn't apply because the **Owner / Resource Type** column will be hidden. When using a display table to display these entities, use DisplayTableDesignElement``(/integration-guide/toolkit/xml-configuration/user-interface/displaytable#properties) `"table"`` or `"adaptable"`. 
 :::
 ### **unused** accounts list
 
-The way to identify activity in a managed system is highly dependent on said system. Thus, activity identification cannot be generalized, and the absence of activity in accounts isn't recognizable with the configuration as is. Integrators must configure a specific property fulfilling this purpose.
+The way to identify activity in a managed system is highly dependent on said system. Thus, activity identification can't be generalized, and the absence of activity in accounts isn't recognizable with the configuration as is. Integrators must configure a specific property fulfilling this purpose.
 
-For example in the AD, we can compute a Boolean property **<b>isUnused</b>** based on other AD accounts' properties. Below is an example that you can use and adjust to your specific configuration:
+For example in the AD, compute a Boolean property **<b>isUnused</b>** based on other AD accounts' properties. The following example shows what you can use and adjust to your specific configuration:
 
-Here we write an expression for <b>isUnused</b> based on the bits of <b>userAccountControl</b>, the value of **<b>accountExpires</b>** and the value of <b>LastLogonTimeStamp</b>:
+Write an expression for <b>isUnused</b> based on the bits of <b>userAccountControl</b>, the value of **<b>accountExpires</b>**, and the value of <b>LastLogonTimeStamp</b>:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <EntityPropertyExpression Identifier="AD_Entry_<b>isUnused</b>"Expression="C#:resource:
@@ -61,7 +61,7 @@ return ((resource.<b>LastLogonTimeStamp</b> == null) ||
   " EntityType="AD_Entry" Property="<b>isUnused</b>" />
 ```
 
-Once this "**unused**" property is created, a list of all **unused** accounts can be displayed thanks to the filters in the query module, based on said property. See the [Generate Reports](../../user-guide/administrate/reporting) topic for additional information.
+After this "**unused**" property is created, a list of all **unused** accounts can be displayed thanks to the filters in the query module, based on said property. See the [Generate Reports](../../user-guide/administrate/reporting) topic for additional information.
 
 The previous example about the AD's **<b>isUnused</b>** property can be complemented in the query module by displaying this property alongside users' **EmployeeId**.
 
@@ -89,17 +89,17 @@ Review an orphaned account by proceeding as follows:
 
 **Step 3 –** Choose the default resource view or the property view with the top right toggle.
 
-**Step 4 –** Click on the line of an account without an owner.
+**Step 4 –** Click the line of an account without an owner.
 
 ![Select Owner](/images/identitymanager/orphan_revieworphans_v602.webp)
 
 In the following example, the nominative AD account linked to the email address nathan.smith@acme.com has no owner.
 
-You can **Select owner** from the list by clicking on the check box.
+You can **Select owner** from the list by clicking on the checkbox.
 
 ![Owners List](/images/identitymanager/orphan_revieworphans-owners_v602.webp)
 
-**Step 5 –** Answer the following questions in order to understand the situation.
+**Step 5 –** Answer the following questions to understand the situation.
 
 - Has the account been used recently?
 - Why is it **Orphan**?
@@ -119,27 +119,26 @@ deactivated.
 there a rule to change?
 
 :::note
- We said that useful service accounts must be connected to their owners due to the fact that an orphaned account cannot be certified. See the [Perform Access Certification](../../user-guide/administrate/access-certification) topic for additional information. But a service account must not be linked to a person, for the departure of said person from the company may trigger the loss of the service account. This is why we create identities with **Application** as their **UserType**, each application-identity linked to a person supposed to manage it. Thus,**service accounts must be connected to application identities, themselves owned by people**. That way, if the owner of the application leaves, the application-identity is not deleted, and the service accounts it owns are not deprovisioned. 
+Useful service accounts must be connected to their owners because an orphaned account can't be certified. See the [Perform Access Certification](../../user-guide/administrate/access-certification) topic for additional information. However, a service account must not be linked to a person, because the departure of that person from the company may trigger the loss of the service account. Create identities with **Application** as their **UserType**, each application-identity linked to a person supposed to manage it. Thus, service accounts must be connected to application identities, themselves owned by people. This way, if the owner of the application leaves, the application-identity isn't deleted, and the service accounts it owns aren't deprovisioned. 
 :::
-See the schema below this note.
 
 ![Schema - Service Accounts](/images/identitymanager/orphan_serviceaccounts.webp)
 
 **Step 6 –** Select the appropriate owner or no owner at all, according to the previous analysis.
 
 :::tip
- Remember, decisions must be made with caution as they cannot be undone. 
+ Remember, decisions must be made with caution as they can't be undone. 
 :::
 :::note
  When binding an orphaned account to an existing owner, properties might need to be reconciled. 
 :::
-**Step 7 –** Click on **Confirm Account Deletion** or **Authorize Account** according to the previous decision.
+**Step 7 –** Click **Confirm Account Deletion** or **Authorize Account** according to the previous decision.
 
 By taking the necessary steps the **Orphan** account will be delete or authorized.
 
 ### Use property view
 
-By default, non-conforming assignments are listed by resource. It is possible to click on a resource and then access the list of all unreconciled properties for said resource.
+By default, non-conforming assignments are listed by resource. Click a resource to access the list of all unreconciled properties for said resource.
 
 ![Resource View](/images/identitymanager/orphan_resourceview_v523.webp)
 
@@ -149,7 +148,7 @@ Once enabled, select a resource type to display all unreconciled properties link
 
 ![Property View](/images/identitymanager/orphan_propertyview_v603.webp)
 
-The review process is the same with both views. However with property view, reviewers don't click on a given line, but choose a decision directly on the left of the property line.
+The review process is the same with both views. However with property view, reviewers don't click a given line, but choose a decision directly on the left of the property line.
 
 ![Bulk Reconcile](/images/identitymanager/orphan_bulkreconcile_v603.webp)
 
@@ -157,7 +156,7 @@ In addition, using property view enables bulk reconciliation to approve the prop
 
 ## Verify Review
 
-In order to verify the process, check that the line for your reviewed item has been removed from the **Resource Reconciliation** screen.
+To verify the process, check that the line for your reviewed item has been removed from the **Resource Reconciliation** screen.
 
 ![View Permissions Tab](/images/identitymanager/viewpermissions_v602.webp)
 

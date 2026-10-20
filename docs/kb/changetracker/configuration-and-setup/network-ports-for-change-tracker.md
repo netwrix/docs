@@ -28,7 +28,7 @@ knowledge_article_id: ka04u000000Hd8zAAC
 
 This article describes the network ports required for Netwrix Change Tracker to function properly. Use this information when configuring firewall rules for new deployments or troubleshooting connectivity issues.
 
-> **NOTE:** For the most current port requirements and network architecture details, refer to the official documentation: [Change Tracker 8.0 - Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
+> **NOTE:** For the most current port requirements and network architecture details, refer to the official documentation: [Change Tracker - Agent and Device Ports](/docs/changetracker/requirements/agentdeviceports)
 
 Although agents can be configured to connect to Change Tracker using custom ports (e.g. HTTPS, port 8443), and these can be set in the agent's HubDetails.xml file, the following are the default and recommended ports for Change Tracker.
 
@@ -101,6 +101,6 @@ For a typical Change Tracker deployment, ensure the following firewall rules are
 
 ## Related Links
 
-- [Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
-- [Gen 7 Agent Requirements - Windows](/docs/changetracker/8_0/requirements/gen7agentwindows)
-- [Gen 7 Agent Requirements - Linux](/docs/changetracker/8_0/requirements/gen7agentlinux)
+- [Agent and Device Ports](/docs/changetracker/requirements/agentdeviceports)
+- [Gen 7 Agent Requirements - Windows](/docs/changetracker/requirements/gen7agentwindows)
+- [Gen 7 Agent Requirements - Linux](/docs/changetracker/requirements/gen7agentlinux)

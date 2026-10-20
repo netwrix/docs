@@ -19,7 +19,7 @@ Takes as input an SQL file or an SQL command to output several CSV files that ca
 |---|---|
 | DisplayName_L1 required | **Type:** String **Description:** Display name of the task in language 1 (up to 16). |
 | Agent optional | **Type:** String **Description:** Identifier of the agent on which the job will be launched.**Note:** when not specified, the task is to be launched on the server.**Warning:** all jobs containing the task must be launched on the same agent or on the server. |
-| ContinueOnError <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` if the execution of the Task returning an error should not stop the job machine state. |
+| ContinueOnError <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` if the execution of the Task returning an error shouldn't stop the job machine state. |
 | DatabaseIdentifier optional | **Type:** String **Description:** Identifier of the Database to connect to |
 | Encoding optional | **Type:** String **Description:** Encoding for the output files. [See the list of available encodings](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding#list-of-encodings). |
 | Identifier optional | **Type:** String **Description:** Unique identifier of the task. |

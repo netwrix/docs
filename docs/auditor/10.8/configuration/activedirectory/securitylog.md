@@ -15,7 +15,7 @@ method for this log to “_Overwrite events as needed_”.
 
 To adjust your Security event log size and retention method, follow the procedure described below.
 
-To read about event log settings recommended by Microsoft, refer to the following article:
+To read about event log settings recommended by Microsoft, see the following article:
 [Event Log](https://support.microsoft.com/en-us/help/957662/recommended-settings-for-event-log-sizes-in-windows).
 
 To increase the maximum size of the Security event log and set its retention method
@@ -39,7 +39,7 @@ To increase the maximum size of the Security event log and set its retention met
 
     `gpupdate /force`
 
-If "Overwrite" option is not enough to meet your data retention requirements, you can use
+If "Overwrite" option isn't enough to meet your data retention requirements, you can use
 _auto-archiving_ option for Security event log to preserve historical event data in the archive
 files. With that option enabled, you may want to adjust the retention settings for log archives
 (backups). Related procedures are described in the

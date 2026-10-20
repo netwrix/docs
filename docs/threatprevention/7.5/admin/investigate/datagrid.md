@@ -8,8 +8,6 @@ sidebar_position: 30
 
 Events are displayed in the data grid on the Investigate interface.
 
-Follow the steps to view events in the data grid.
-
 **Step 1 –** Click **Investigate** in the left pane to launch the Investigate interface.
 
 **Step 2 –** To expand the grid view, do either of the following:
@@ -30,15 +28,11 @@ be queried from the Administration Console. See the
 **Step 4 –** Use the **Get Top [number] Events** box to specify the number of events to be
 displayed.
 
-**Step 5 –** Check the For Each Policy checkbox to view the specified number of events on a per
-policy basis. If unchecked, the specified number of events displayed are solely based on the time
-the event was logged.
+**Step 5 –** Check the For Each Policy checkbox to view the specified number of events on a per policy basis. If unchecked, the specified number of events displayed are solely based on the time the event was logged.
 
-**Step 6 –** Use the Refresh button to repopulate the data grid with the current information for the
-selected options.
+**Step 6 –** Use the Refresh button to repopulate the data grid with the current information for the selected options.
 
-The Show All Columns link automatically adds any columns to the data grid that are currently hidden
-from view.
+The Show All Columns link automatically adds any columns to the data grid that are hidden from view.
 
 Each column in the data grid has a prefix identifying the type of information displayed.
 Double-click a populated grid column to access the
@@ -46,25 +40,20 @@ Double-click a populated grid column to access the
 event. The columns display the following information for each event:
 
 - Event: Policy Name – Policy which monitored or blocked the event
-- Event: Time Logged – Timestamp for when the event was monitored/blocked. The specified time is the
-  local time for the server where the Agent is deployed.Hover over the data in this column to view
-  the local time (of the Enterprise Manager) and UTC time simultaneously.
+- Event: Time Logged – Timestamp for when the event was monitored/blocked. The time is local to the server where the Agent is deployed. Hover over the data in this column to view the local time (of the Enterprise Manager) and UTC time simultaneously.
 - Event: UTC Time Logged – UTC Timestamp for when the event was monitored/blocked by the Agent.
   Hover over the data in this column to view the local time (of the Enterprise Manager) and UTC time
   simultaneously.
 - Affected Object: Path – Name of the affected object according to the type of monitoring/blocking
 
-  - Active Directory monitoring/blocking – Active Directory distinguished name for the affected
-    object
-  - Effective Group Membership monitoring – Active Directory distinguished name for the affected
-    group. A double asterisk (\*\*) at the beginning indicates that the path is to the nested
-    group where the actual membership change occurred.
+  - Active Directory monitoring/blocking – Active Directory distinguished name for the affected object
+  - Effective Group Membership monitoring – Active Directory distinguished name for the affected group. A double asterisk (\*\*) at the beginning indicates that the path is to the nested group where the actual membership change occurred.
   - Exchange monitoring/blocking – Name of the affected Exchange mailbox
   - File System monitoring/blocking – Original path of the affected file or folder
   - Authenticate – DN of the user object making the request
 
   :::note
-  For LDAP bind/monitoring/blocking, Affected Object Path is not used
+  For LDAP bind/monitoring/blocking, Affected Object Path isn't used
   :::
 
 
@@ -118,7 +107,7 @@ The following information (as applicable to the event) is displayed:
 
 - Attribute Name – The name of the object attribute that is affected
 - Operation – The operation performed on the attribute
-- Old Value – Value prior to the monitored change
+- Old Value – Value before the monitored change
 - New Value – Value after the monitored change
 
 This data grid employs features for sorting, filtering, searching, and more. See the

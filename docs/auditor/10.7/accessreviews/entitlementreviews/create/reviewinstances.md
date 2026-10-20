@@ -9,7 +9,7 @@ sidebar_position: 10
 After a review has been completed, it can be run again, which creates multiple instances of the
 review. Each instance is identified by date timestamps indicating its start and end times.
 
-**_RECOMMENDED:_** Prior to running another review instance, ensure the most up to date information
+**_RECOMMENDED:_** Before running another review instance, ensure the most up to date information
 is available to owners for review.
 
 ![Entitlement Reviews interface showing the Manage Review page](/images/auditor/10.7/access/reviews/entitlementreviews/managereviewspage.webp)

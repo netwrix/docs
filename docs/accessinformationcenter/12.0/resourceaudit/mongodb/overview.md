@@ -6,15 +6,15 @@ sidebar_position: 80
 
 # MongoDB Reports
 
-MongoDB reports are accessed through the Resource Audit interface. Explore the MongoDB resources by
-expanding the levels within the Resources pane and selecting the desired resource. The data within
-these reports is collected by the Access Analyzer MongoDB solution. See the MongoDB Solution topic
+Access MongoDB reports through the Resource Audit interface. Explore the MongoDB resources by
+expanding the levels within the Resources pane and selecting the resource you want. The Access
+Analyzer MongoDB solution collects the data within these reports. See the MongoDB Solution topic
 in the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 
-A single MongoDB Server can have multiple instances. Each instance where data is collected has its
-own node in the Access Information Center. MongoDB reports fall into the following categories:
+A single MongoDB Server can have multiple instances. Each instance from which the system collects
+data has its own node in the Access Information Center. MongoDB reports fall into the following categories:
 
 - Permissions reports
 - Sensitive Data Content reports
