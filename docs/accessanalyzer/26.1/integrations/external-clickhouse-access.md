@@ -82,7 +82,9 @@ The installer doesn't save these settings. If you run the installer again on thi
 
 ## Get the credentials
 
-Opening access creates a dedicated analytics store user, `access_analyzer_external`, with a generated password. The user has read-only access to the `access_analyzer` and `access_analyzer_sample` databases, with the same per-query memory limits as the user Access Analyzer's own reports use. It can run at most four queries at once, and Access Analyzer caps its total memory across them. Clients can't override these limits.
+Opening access creates a dedicated analytics store user, `access_analyzer_external`, with a generated password. The user has read-only access to the `access_analyzer`, `access_analyzer_sample`, `access_analyzer_landing`, and `access_analyzer_reporting` databases, with the same per-query memory limits as the user Access Analyzer's own reports use. It can run at most four queries at once, and Access Analyzer caps its total memory across them. Clients can't override these limits.
+
+Scan results from File Server, Active Directory, Entra ID, and SharePoint Online sources are in `access_analyzer_landing`, which holds the collected data, and `access_analyzer_reporting`, which holds the tables the reports read.
 
 Give external tools only this user. Don't share the analytics store's administrator credentials: the exposed port reaches the administrator like any other user, so its password is the only thing protecting it.
 
@@ -94,7 +96,7 @@ Give external tools only this user. Don't share the analytics store's administra
 
    Omit `password` to print the username and password together. Print one key at a time when you capture the value in a variable, because the two-key form adds a carriage return.
 
-2. In the external tool, connect with the username `access_analyzer_external`, this password, and the `access_analyzer` database.
+2. In the external tool, connect with the username `access_analyzer_external`, this password, and one of the four databases the user can read as the default database. To query a table in another database, prefix the table name with the database name, for example `access_analyzer_landing.entities`.
 
 ## Verify access
 
