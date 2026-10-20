@@ -5,7 +5,7 @@ description: Agents are the Linux machines that run scans; the System agent is b
 
 An agent is a Linux machine that runs scans. Every installation has one from the moment setup finishes: the System agent, which runs on the Access Analyzer server itself. Unless you route a scan, or one of its sources, to other agents with a label, every scan runs there.
 
-You can deploy more agents on other Linux hosts. Access Analyzer connects to the host over SSH, installs the agent software, and adds the agent to the list. From then on you steer scans to it with labels. [Deploy an agent](deploy-agent.md) covers the host requirements and the procedure; [Agent labels and scan routing](agent-labels.md) explains how a scan chooses where to run.
+You can deploy more agents on other Linux hosts. You generate an install command in Access Analyzer and run it on the host. The host then installs the agent software and registers itself in the list. From then on you steer scans to it with labels. [Deploy an agent](deploy-agent.md) covers the host requirements and the procedure; [Agent labels and scan routing](agent-labels.md) explains how a scan chooses where to run.
 
 ## The System Agent
 
@@ -34,8 +34,6 @@ Deploying, editing, and deleting agents requires the Admin role. Viewers can ope
 ## The Agents Page
 
 Go to **Configuration > Agents**.
-
-![Agents list with Name, Health Status, Last Heartbeat, and Labels columns](/images/accessanalyzer/26.1/agents/list.webp)
 
 | Column | Meaning |
 |---|---|

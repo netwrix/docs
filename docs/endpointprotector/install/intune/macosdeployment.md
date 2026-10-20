@@ -10,76 +10,80 @@ To deploy the Endpoint Protector package for macOS using Intune, follow these st
 
 **Step 1 –** Open and log in to Endpoint Protector.
 
-**Step 2 –** Go to the System Configuration, Client Software and download the macOS Endpoint
+**Step 2 –** Go to **System Configuration** > **Client Software**, select the macOS client version
+from the **EPP Mac Version** dropdown, and click **Generate** to download the macOS Endpoint
 Protector package.
 
 ![Downloading the macOS Endpoint Protector package](packagedownload.webp)
 
-**Step 3 –** Convert the Endpoint Protector client to an .intunemac file – for more information and
-procedure, visit the Microsoft Docs portal;
+**Step 3 –** Go to the Microsoft Intune admin center (also known as Microsoft Endpoint Manager) and
+sign in.
 
-**Step 4 –** Go to the Microsoft Endpoint Manager admin center and sign in
+**Step 4 –** Go to **Apps** from the left-hand side menu, and on the **Apps | Overview** page,
+select the **macOS** platform.
 
-**Step 5 –** Go to Apps from the left-hand side menu, and on the Apps Overview page, select the
-macOS platform;
+**Step 5 –** On the **macOS apps** page, click **Create**, select **Line-of-business app** as the
+app type, and then click **Select**.
 
-**Step 6 –** On the macOS apps page, click Add, select the Line of business app type, and then click
-**Select**.
+![Creating a macOS line-of-business app](macappsoverview.webp)
 
-![macOS configurations on the Apps Overview page](macappsoverview.webp)
+**Step 6 –** Click **Select app package file** and, from the right-hand side, select the Endpoint
+Protector **.pkg** file (for example, `EndpointProtectorClient2608.2.1.3.pkg`), upload it, and click
+**OK**.
 
-**Step 7 –** Click Select app package file and from the right-hand side, select the Endpoint
-Protector intunemac file, upload it, and click **OK.**
+![Selecting the Endpoint Protector .pkg app package file](macaddapp.webp)
 
-![Information about the app package file](macaddapp.webp)
-
-**Step 8 –** On the App information page, fill in the mandatory fields and then click **Next**.
+**Step 7 –** On the App information page, fill in the mandatory fields and then click **Next**:
 
 - Name – add Endpoint Protector Client
 - Description – add Endpoint Protector Client
 - Publisher – add Netwrix Ltd.
 
-![Completing Mandatory Fileds under App inforamtion page](appinformation.webp)
+The **App bundle ID** and **App version** fields populate automatically from the uploaded package.
+Optionally, set **Show this as a featured app** to **Yes** to surface the app in the Company Portal,
+and configure Category, Information URL, Privacy URL, Developer, Owner, Notes, and Logo as needed.
 
-**Step 9 –** On the Assignments page, in the Required section, select the group for which you want
-to deploy the Endpoint Protector client and then click **Next**.
+![Completing the App information page, including the featured app option](appinformation.webp)
+
+**Step 8 –** On the Assignments page, in the Required section, select the group to deploy the Endpoint
+Protector client to, and then click **Next**.
 
 ![Selecting the group for which you want to deploy the Endpoint Protector client](macassignments.webp)
 
-**Step 10 –** On the Review + create page, click Create - this will start the Endpoint Protector
-package upload.
+**Step 9 –** On the Review + create page, review the summary and click **Create** – this starts the
+Endpoint Protector package upload.
 
-![Inititating the Endpoint Protector package Download](macreviewpage.webp)
+![Reviewing the app information and creating the app](macreviewpage.webp)
 
-**Step 11 –** Go to Devices from the left-hand menu, select macOS, Shell scripts and then click
+**Step 10 –** Go to Devices from the left-hand menu, select macOS, Shell scripts and then click
 **Add**.
 
 :::note
-contact the Customer Support department to provide the script.
+Contact Customer Support to get the script.
 :::
 
 
 ![Adding scripts on shell scripts page](shellscripts.webp)
 
-**Step 12 –** On the Add script page, fill in the mandatory information and then click **Next**.
+**Step 11 –** On the Add script page, fill in the mandatory information and then click **Next**.
 
 - Name (mandatory) – add a name for the script (Post install script)
 - Description – add a description for the script
 
 ![Completing mandatory inforamtion for Shell Scripts](addscript.webp)
 
-**Step 13 –** On the Script settings tab, add the following information and then click Next:
+**Step 12 –** On the Script settings tab, add the following information and then click Next:
 
 - Upload and select the New Jamf PostInstall script from your computer
 - Set the Run script as sign-in user setting to No
 
 ![Adding inforamtion on the script settings page](scriptsettings.webp)
 
-**Step 14 –** On the Assignments tab, include the groups you prefer (Add groups, all users, or all
+**Step 13 –** On the Assignments tab, include the groups you prefer (Add groups, all users, or all
 devices) and then click **Next**.
 
 ![Including the groups you prefer](includegroups.webp)
 
-**Step 15 –** On the Review + add tab, you can view the script information and click **Add**.
+**Step 14 –** On the Review + add tab, review the script information and click **Add**.
 
 ![Viewing the script information](scriptinformation.webp)

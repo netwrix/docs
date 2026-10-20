@@ -1,0 +1,40 @@
+---
+title: "Add a Content Source"
+description: "Add a Content Source"
+sidebar_position: 10
+---
+
+# Add a Content Source
+
+To start processing your data, you need to add a corresponding content source to the Netwrix Data
+Classification scope.
+
+To add a content source:
+
+**Step 1 –** In administrative web console, navigate to **Content** →Sources → General and click
+**Add** to launch the Add source wizard.
+
+**Step 2 –** Select the source you need and configure its settings. See detailed instructions for
+the sources:
+
+- [Box](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/addbox.md)
+- [Add Single Database](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/addsingledatabase/addsingledatabase.md) (Microsoft SQL Server, MySQL, PostgreSQL, or Oracle database)
+- [Add SQL Server](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md) (All Microsoft SQL Server, MySQL, PostgreSQL, or Oracle databases on a server)
+- [Dropbox](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/adddropbox.md)
+- [Exchange Server (EWS)](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/exchangeserverews.md) or
+  [Exchange Mailbox (EWS)](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/exchangemailboxews.md)
+- [Exchange Server (Graph)](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/exchangeservergraph.md) or
+  [Exchange Mailbox (Graph)](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/exchangemailboxgraph.md)
+- [File System](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/overview.md) (includes Folder and File)
+- [Google Drive Source](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/addgdsource.md)
+- [Outlook Mail Archive](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/outlookmailarchive.md)
+- [SharePoint](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/overview_1.md) or [SharePoint Online](/docs/dataclassification/5.8/contentconfigurationoverview/introduction/addsource/sharepointonline.md)
+
+The **Sources** section lists all your content sources.
+
+:::note
+When you add a source or manage source configuration, the console displays the most commonly used
+source settings by default. However, some source types have additional configuration options
+that appear when you click the Advanced Settings ("wrench" icon). You can
+set the Advanced Settings to display by default in User Preferences, which you open by clicking the username.
+:::

@@ -82,7 +82,7 @@ Click **Next** to move from one step to the next.
 
 ## 5. Watch the Execution
 
-Go to **Configuration > Scan executions** and find the new scan in the list. The list refreshes on its own; the status moves from **Pending** through **Running** to **Completed**, and **Objects** shows how many directory objects the sync read.
+Go to **Configuration > Scan executions** and find the new scan in the list. The list refreshes on its own; the status moves from **Pending** through **Running** to **Completed**, and **Progress** shows how many directory objects the sync read.
 
 ![Scan executions list](/images/accessanalyzer/26.1/scans/executions-list.webp)
 

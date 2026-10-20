@@ -15,7 +15,8 @@ This file scopes guidance to the **Password Policy Enforcer (PPE)** product docu
 
 | Version | Status | Notes |
 |---|---|---|
-| `12.0` | Latest (default) | Active version — most edits land here |
+| `12.1` | Latest (default) | Active version — most edits land here |
+| `12.0` | Previous release | Previous release; still fully built and linkable |
 | `11.2` | Hidden | Previous release; still fully built and linkable |
 | `11.1` | Hidden | Previous minor; don't surface in navigation |
 | `11.0` | Hidden | Kept for users on 11.0; don't surface in navigation |
