@@ -12,7 +12,7 @@ A rollback changes your database schema. The database setup job (`db-seeds`) run
 
 ## Before You Roll Back
 
-1. **Confirm the last upgrade finished cleanly.** If an earlier upgrade failed partway through its database migrations, the schema is marked dirty and `db-seeds` refuses to roll back. Fix that failure first, or contact Netwrix Support.
+1. **Confirm the last upgrade finished cleanly.** If an earlier upgrade failed partway through its database migrations, `db-seeds` treats the schema as dirty and refuses to roll back. Fix that failure first, or contact Netwrix Support.
 2. **Take a database backup.** Trigger an on-demand Postgres backup and wait for it to finish:
 
    ```bash
