@@ -47,6 +47,6 @@ With **Every Scan**, the scanner enforces OAM each time it scans a system. A low
 
 ## Recover access when the alternate administrator account is locked
 
-The alternate administrator account that the product creates is a local account. The product doesn't use the account to sign in, and it can't lock the account. An administrator or a failed sign-in threshold can lock it.
+If a system leaves the domain or loses trust with it, the product can display the error `Offline Access Management (OAM) alternate administrator account is locked and the local Administrator (RID 500) account is disabled`. The alternate administrator account that the product creates is a local account. The product doesn't use the account to sign in, and it can't lock the account. An administrator or a failed sign-in threshold can lock it.
 
 If you can't reach a system with a domain account because it lost trust or left the domain, and the alternate account is locked, start Windows in Safe Mode. In Safe Mode, sign in with the disabled built-in Administrator (RID 500) account.

@@ -22,11 +22,9 @@ Use this page to find the article for an error or message that you see in the we
 - [4Domain only applies with name](/docs/kb/privilegesecurediscovery/troubleshooting-and-errors/error-4domain-only-applies-with-name): An error on the **Grant Access** page caused by an invalid local group member.
 - [9999 Mismatch in service account username when attempting to rotate service password](/docs/kb/privilegesecurediscovery/troubleshooting-and-errors/error-9999-mismatch-in-service-account-username-when-attempting-to-rotate-service-password): An error during a scan of an endpoint.
 - ['module' object has no attribute 'MODE_CCM'](/docs/kb/privilegesecurediscovery/troubleshooting-and-errors/error-module-object-has-no-attribute-mode-ccm): An error in the Access History or during a rescan, caused by Server Message Block (SMB) encryption.
-- [Offline Access Management (OAM) alternate administrator account is locked and the local Administrator (RID 500) account is disabled](/docs/kb/privilegesecurediscovery/troubleshooting-and-errors/error-offline-access-management-oam-alternate-administrator-account-is-locked-and-the-local-administ): The system left the domain or lost trust.
+- [Offline Access Management (OAM) alternate administrator account is locked and the local Administrator (RID 500) account is disabled](../configuration/endpoint-preparation/oam-password-configuration.md#recover-access-when-the-alternate-administrator-account-is-locked): The system left the domain or lost trust.
 
 ## Linux registration
-
-For an overview of the registration errors, see [Troubleshooting Linux registration](/docs/kb/privilegesecurediscovery/linux-and-ssh-integration/troubleshooting-linux-registration).
 
 - [Invalid SSH Credentials Authentication Failed](/docs/kb/privilegesecurediscovery/linux-and-ssh-integration/error-invalid-ssh-credentials-authentication-failed): Registration fails because of the registration account or the sudoers configuration.
 - [Unhandled error: MODULE FAILURE See stdout/stderr for the exact error](/docs/kb/privilegesecurediscovery/linux-and-ssh-integration/unhandled-error-module-failure): An error with code 1779 when you scan or register a Linux system.
@@ -59,4 +57,4 @@ For an overview of the registration errors, see [Troubleshooting Linux registrat
 The following articles explain how a feature or a check works:
 
 - [How Netwrix Privilege Secure for Discovery determines a host is offline](/docs/kb/privilegesecurediscovery/security-and-compliance/how-netwrix-privilege-secure-for-discovery-determines-a-host-is-offline)
-- [How to access MongoDB](/docs/kb/privilegesecurediscovery/database-and-backend/how-to-access-mongodb)
+- [Open the MongoDB shell](../admin/maintenance/open-the-mongodb-shell.md)

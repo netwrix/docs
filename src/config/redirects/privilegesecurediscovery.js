@@ -151,6 +151,10 @@ const REMOVED_KB_ARTICLES = {
   'system-configuration-and-requirements/generate-license-counts-with-cli-command': '/docs/privilegesecurediscovery/admin/licensing',
   'authentication-and-access/saml-assertion-not-yet-valid': '/docs/privilegesecurediscovery/configuration/authentication-and-sso/saml-sso-reference',
   'security-and-compliance/log4j-vulnerability-no-impact': '/docs/privilegesecurediscovery/',
+  'database-and-backend/how-to-access-mongodb': '/docs/privilegesecurediscovery/admin/maintenance/open-the-mongodb-shell',
+  'troubleshooting-and-errors/error-offline-access-management-oam-alternate-administrator-account-is-locked-and-the-local-administ': '/docs/privilegesecurediscovery/configuration/endpoint-preparation/oam-password-configuration',
+  'security-and-compliance/forward-logs-to-siem-fluentd': '/docs/privilegesecurediscovery/integrations/siem/forward-logs',
+  'linux-and-ssh-integration/troubleshooting-linux-registration': '/docs/privilegesecurediscovery/troubleshooting/errors-and-messages',
   'system-configuration-and-requirements/netwrix-privilege-secure-for-discovery-port-firewall-and-datacenter-requirements': '/docs/privilegesecurediscovery/requirements/ports-and-firewall',
   'system-configuration-and-requirements/netwrix-privilege-secure-for-discovery-best-practices': '/docs/privilegesecurediscovery/',
 };
