@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Using Basic Authentication with SharePoint Online
 
-With basic authentication, your SharePoint Online will be accessed on behalf of a user. You will
+With basic authentication, Auditor accesses your SharePoint Online on behalf of a user. You will
 need to provide Office 365 user name and password in the monitored item properties. To access the
 Microsoft Entra ID (formerly Azure AD)/Office 365 organization and perform initial data collection,
 the user account will need an administrative role in the cloud-based infrastructure.
@@ -15,17 +15,17 @@ The user account should be a _Cloud-only_ account.
 
 Further permission assignment will depend on the data you plan to collect:
 
-- To collect both activity and state-in-time data, the administrative role will be still needed. See
-  the table below for details.
+- To collect both activity and state-in-time data, you still need the administrative role. See the
+  Required Roles and Permissions table for details.
 - To collect activity data only, the privileged role can be revoked from the specified account after
   the initial data collection.
 
 ## Required Roles and Permissions
 
-| To...                                   | Requirement                                                                                                                                                                                                                                                          | Comment                                                                                                                                                           |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Collect activity and state-in-time data | Any of the following role combinations: - Application Administrator & Privileged Role Administrator OR - Cloud Application Administrator & Privileged Role Administrator OR - _Global Admin_ (_Company Administrator_ in Microsoft Entra ID PowerShell terms)        | Prepare a **Cloud-only** user account and specify it in the monitored item properties. See the [SharePoint Online](/docs/auditor/10.8/configuration/microsoft365/sharepointonline/overview.md) topic for additional information. |
-| Collect activity data only              | 1. For initial connection to SharePoint Online, initial data collection, and Netwrix Auditor upgrade from previous version — any of the role combinations listed above. 2. After the initial data collection, the privileged roles can be revoked from this account. |                                                                                                                                                                   |
+| To...                                   | Requirement | Comment |
+| --------------------------------------- | ----------- | ------- |
+| Collect activity and state-in-time data | Any of the following role combinations:<br/>- Application Administrator & Privileged Role Administrator<br/>- Cloud Application Administrator & Privileged Role Administrator<br/>- _Global Admin_ (_Company Administrator_ in Microsoft Entra ID PowerShell terms) | Prepare a **Cloud-only** user account and specify it in the monitored item properties. See the [SharePoint Online](/docs/auditor/10.8/configuration/microsoft365/sharepointonline/overview.md) topic for additional information. |
+| Collect activity data only              | 1. For initial connection to SharePoint Online, initial data collection, and Netwrix Auditor upgrade from previous version — any of the role combinations required to collect activity and state-in-time data.<br/>2. After the initial data collection, the privileged roles can be revoked from this account. | |
 
 ## Assigning a Privileged Role for SharePoint and Office 365
 
@@ -44,9 +44,7 @@ following approaches:
 
 **NOTE:** If you previously used a non-privileged account for Microsoft Entra ID data collection in
 your Netwrix Auditor, consider that after the upgrade you will have to perform the role assignment
-procedure again, selecting one of these approaches. Until then, data collection will not be
-performed.
-
+procedure again, selecting one of these approaches. Until then, Auditor doesn't collect data.
 
 **Step 1 –** Sign in to Microsoft Entra ID portal using your Microsoft account.
 
@@ -55,7 +53,7 @@ performed.
 **Step 3 –** Select the account that you want to use as data collecting account, or create a new
 user.
 
-**Step 4 –** ensure you have disabled multi-factor authentication for this account.
+**Step 4 –** Ensure you have disabled multi-factor authentication for this account.
 
 **Step 5 –** Expand Directory role and select the role you need (for example, Global admin or any
 other privileged role).
@@ -74,4 +72,4 @@ account with this privileged role on the Specify the account for collecting data
 
 **Step 10 –** Assign a less-privileged role to this account.
 
-A less privileged role has now been assigned to the account.
+You have now assigned a less-privileged role to the account.

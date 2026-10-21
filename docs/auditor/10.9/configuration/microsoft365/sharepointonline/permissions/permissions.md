@@ -42,7 +42,7 @@ information.
 
     - Netwrix Auditor automatically creates a Microsoft Entra ID application named **Netwrix
       Auditor for Microsoft Entra ID** when it connects to the monitored item (Office 365 tenant)
-      for the first time. Thus, you will need to prepare an Office 356 user account with an
+      for the first time. Thus, you will need to prepare an Office 365 user account with an
       administrative role in Microsoft Entra ID — to create an app and perform initial data
       collection.
     - Provide this user name and password in the monitored item properties. See the

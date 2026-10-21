@@ -22,10 +22,10 @@ Further permission assignment will depend on the data you plan to collect:
 
 ## Required Roles and Permissions
 
-| To...                                   | Requirement                                                                                                                                                                                                                                                          | Comment                                                                                                                                                           |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Collect activity and state-in-time data | Any of the following role combinations: - Application Administrator & Privileged Role Administrator OR - Cloud Application Administrator & Privileged Role Administrator OR - _Global Admin_ (_Company Administrator_ in Microsoft Entra ID PowerShell terms)        | Prepare a **Cloud-only** user account and specify it in the monitored item properties. See the [SharePoint Online](/docs/auditor/10.9/configuration/microsoft365/sharepointonline/overview.md) topic for additional information. |
-| Collect activity data only              | 1. For initial connection to SharePoint Online, initial data collection, and Netwrix Auditor upgrade from previous version — any of the role combinations required to collect activity and state-in-time data. 2. After the initial data collection, the privileged roles can be revoked from this account. |                                                                                                                                                                   |
+| To...                                   | Requirement | Comment |
+| --------------------------------------- | ----------- | ------- |
+| Collect activity and state-in-time data | Any of the following role combinations:<br/>- Application Administrator & Privileged Role Administrator<br/>- Cloud Application Administrator & Privileged Role Administrator<br/>- _Global Admin_ (_Company Administrator_ in Microsoft Entra ID PowerShell terms) | Prepare a **Cloud-only** user account and specify it in the monitored item properties. See the [SharePoint Online](/docs/auditor/10.9/configuration/microsoft365/sharepointonline/overview.md) topic for additional information. |
+| Collect activity data only              | 1. For initial connection to SharePoint Online, initial data collection, and Netwrix Auditor upgrade from previous version — any of the role combinations required to collect activity and state-in-time data.<br/>2. After the initial data collection, the privileged roles can be revoked from this account. | |
 
 ## Assigning a Privileged Role for SharePoint and Office 365
 
@@ -53,7 +53,7 @@ procedure again, selecting one of these approaches. Until then, Auditor doesn't 
 **Step 3 –** Select the account that you want to use as data collecting account, or create a new
 user.
 
-**Step 4 –** ensure you have disabled multi-factor authentication for this account.
+**Step 4 –** Ensure you have disabled multi-factor authentication for this account.
 
 **Step 5 –** Expand Directory role and select the role you need (for example, Global admin or any
 other privileged role).
