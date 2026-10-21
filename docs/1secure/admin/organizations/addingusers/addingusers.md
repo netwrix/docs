@@ -111,7 +111,7 @@ Resend Invite to re-notify this user.
 
 ![Users List](/images/1secure/admin/organizations/users_status.webp)
 
-When logging in, the users see the Home screen, on which they can do the following actions:
+When users log in, they see the Home screen, where they can do the following:
 
 - Add organization here by selecting **Add Organization**
 - Find the organization by populating the **Filtering the keyword** field
@@ -125,8 +125,8 @@ This option isn't available for End Customer Organizations.
 :::
 
 
-Add a Business Viewer role using the Managed Organizations page. The Business viewer is the
-organization user, which can be added by the System Administrator to access the reports and other
+Add a Business Viewer role using the Managed Organizations page. The Business viewer is an
+organization user that the System Administrator adds to give access to the reports and other
 data of the organization.
 
 The Business viewer role:
@@ -142,7 +142,7 @@ Business viewers can't add reports on their own. When creating the report, selec
 with business users**. This way, all business users can view the shared reports. See the
 [ Custom Reports](/docs/1secure/admin/searchandreports/customreports.md) topic for additional information.
 
-When you add the business viewer, the created reports are automatically displayed.
+When you add the business viewer, 1Secure automatically displays the created reports.
 
 ![Add Users pane](/images/1secure/admin/organizations/businessusers.webp)
 
@@ -177,8 +177,8 @@ select the one you want to access.
 ## Add the Co-Managing Administrator Role
 
 Add a Co-Managing Administrator role using the Managed Organizations page. The Co-Managing
-Administrator extends the permissions available with the Business Viewer role, which can be added by
-the System Administrator to access the reports and other data of the organization.
+Administrator role extends the permissions available with the Business Viewer role. The System
+Administrator adds this role to give access to the reports and other data of the organization.
 
 The Co-Managing Administrator role:
 
@@ -224,18 +224,18 @@ organization.
 **To delete a user from a managed organization:**
 
 
-**Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
-that lists the managed organizations defined in 1Secure.
+**Step 1 –** Click **Configuration** in the top bar. The Managed organizations page opens and
+lists the managed organizations defined in 1Secure.
 
 **Step 2 –** Click the name of an organization from the list. The properties page for the
-organization is displayed.
+organization opens.
 
-**Step 3 –** Click the **Users** tab. The users for the organization are listed here.
+**Step 3 –** Click the **Users** tab. The tab lists the users for the organization.
 
 **Step 4 –** Click the **Delete** icon for a user to delete it.
 
-A dialog box is displayed, prompting you to confirm the deletion of the user.
+A dialog box prompts you to confirm the deletion of the user.
 
 **Step 5 –** Click **Yes**.
 
-The user is deleted.
+1Secure deletes the user.
