@@ -4,12 +4,6 @@ description: "Install the s1 command-line tool and use it to check services, rea
 sidebar_position: 60
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm whether the standalone installer from the previous documentation (`s1_install.sh`, downloaded from the legacy deployment domain) is still published and supported, or whether `secureone.sh install-cli` is the only supported path. Evidence: the script still ships inside the s1tool image at /app/s1_install.sh; the 26.09.1 deployment repository doesn't reference the legacy download.
-
-TODO: Confirm whether customers should run `s1 deploy`, `s1 undeploy`, `s1 pull`, and the `s1 docker-daemon-*` commands directly, or only on Netwrix Support's direction. Evidence: docker/s1tool/src/s1.py defines them as public commands; the installation guide uses `secureone.sh` for deployment and upgrade.
-:::
-
 The `s1` tool is a command-line helper for the Docker Swarm that runs Netwrix Privilege Secure for Discovery. It shows service status, follows logs, opens a database shell, and wraps other maintenance tasks. The launcher at `/usr/local/bin/s1` runs the matching `s1tool` container image from the Netwrix container registry, so the tool always matches your release.
 
 ## Install the tool
@@ -130,14 +124,15 @@ The following commands cover less frequent tasks.
 | Command | Effect |
 | --- | --- |
 | `s1 healthcheck-report` | Runs the domain health check reports in the `internal_api` container. |
-| `s1 set-password` | Prompts for a new password and updates the stored password hash of the product's built-in `svc_login` account. The password must have at least 15 characters. |
+| `s1 set-password` | Prompts for a new password and updates the stored password hash of the built-in `secureone` administrator account. The password must have at least 15 characters. |
 | `s1 migrate status`, `s1 migrate apply`, `s1 migrate revert` | Show, apply, or revert database schema migrations. The `--to <number>` option limits `apply` and `revert`. |
 | `s1 mongo-upgrade check`, `run`, `status`, `cutover`, `finish-cutover`, `retire` | Move the database from MongoDB 4.0 to 8.0. Follow [Migrate from MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md) instead of running these commands on their own. |
-| `s1 deploy`, `s1 undeploy` | Deploy the stack from `/secureone/docker-stack.yml`, or remove it. |
-| `s1 pull <service> --version <version>` | Pulls the image of one or more services. Without `--version`, the command pulls the `latest` tag. The `--all` option pulls every service image. |
-| `s1 docker-daemon-check`, `docker-daemon-validate`, `docker-daemon-configure` | Check or set the Docker daemon limits that the `windows-bridge-proxy` service needs in `/etc/docker/daemon.json`. The `configure` command accepts `--dry-run`. Run it without `sudo`, like every other `s1` command, because the tool container runs as root. |
+| `s1 deploy` | Deploys the stack from `/secureone/docker-stack.yml`. It has built-in guards. Run it only when the output of `secureone.sh` or Netwrix Support tells you to. |
+| `s1 undeploy` | Removes the stack. Run it only when Netwrix Support directs you to. |
+| `s1 pull <service> --version <version>` | Pulls the image of one or more services. Without `--version`, the command pulls the `latest` tag. Run it only when Netwrix Support directs you to. |
+| `s1 docker-daemon-check`, `docker-daemon-validate`, `docker-daemon-configure` | Check or set the Docker daemon limits that the `windows-bridge-proxy` service needs in `/etc/docker/daemon.json`. The `configure` command accepts `--dry-run`. Run it without `sudo`, like every other `s1` command, because the tool container runs as root. Run these commands only when Netwrix Support directs you to. |
 
-Before `s1 deploy` runs, it checks the database state and the Docker daemon limits. If the limits are too low, the command raises them in `/etc/docker/daemon.json`, deploys anyway, and prints `sudo systemctl restart docker`. Restart Docker to apply the change.
+Use `secureone.sh` for deployment and upgrade. Before `s1 deploy` runs, it checks the database state and the Docker daemon limits. If the limits are too low, the command raises them in `/etc/docker/daemon.json`, deploys anyway, and prints `sudo systemctl restart docker`. Restart Docker to apply the change.
 
 ## Update the tool
 

@@ -6,7 +6,7 @@ sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: State the SentinelOne role or permissions that the API user needs. The product lists agents, sites, and API token details, and uploads, deletes, and runs remote scripts, then downloads script output. The old page didn't name a role. Evidence: docker/shared/python/src/remediant/integrations/sentinelone/api/api_calls.py:235-600 (endpoints /users/api-token-details, /sites, /agents, /remote-scripts, /remote-scripts/execute, /remote-scripts/status, /remote-scripts/fetch-files).
+TODO: Verify the exact role labels in a SentinelOne tenant.
 :::
 
 The SentinelOne integration lets Netwrix Privilege Secure for Discovery scan Windows systems and grant just-in-time administrator access through the SentinelOne agent. The product doesn't need a direct network connection to the endpoint, and the endpoint doesn't need to be on the domain.
@@ -27,7 +27,13 @@ The following steps use the SentinelOne management console. Menu names can chang
 
 ### Generate an API token
 
-Use a dedicated service user, so that the token doesn't depend on a person's account.
+Use a dedicated service user, so that the token doesn't depend on a person's account. The user needs permission to do the following:
+
+- View sites and endpoints.
+- View, upload, delete, and run remote scripts.
+- Fetch files from endpoints.
+
+Use a service-user token whose scope covers the sites that you manage.
 
 1. Sign in to the SentinelOne management console.
 2. Select **Settings** > **Users**.
@@ -91,7 +97,7 @@ Test Connection fails with `Invalid <name> EDR Integration configuration`. The p
 
 | Reason | Fix |
 | --- | --- |
-| `No sites available` | The token has no access to the account. Check the account ID and the role of the user. |
+| `No sites available` | The token has no access to the account. Check the account ID and the permissions and scope of the user. |
 | The account ID doesn't match | Enter the account ID that owns the sites that the token can see. |
 | `a site-scoped token was provided without a valid site ID` | Enter the **Site ID**. |
 | `a site ID was provided but the token is not a site-scoped token` | Clear the **Site ID**, or generate a token for a site-level user. |

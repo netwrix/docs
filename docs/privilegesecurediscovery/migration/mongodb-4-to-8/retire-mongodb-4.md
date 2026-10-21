@@ -4,14 +4,14 @@ description: "Use s1 mongo-upgrade retire to give the canonical MongoDB service 
 sidebar_position: 80
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Is the failure of `s1 db`, `s1 set-password`, and `s1 database-status` after a multi-node `retire` a known issue to document, and in which release does a fix ship? Evidence: s1.py:6729 `get_db_info` finds no `mongoN-8` service after `retire` and falls back to `MONGO_UPGRADE_MULTI_NODE_SOURCE_URI`, which hardcodes `replicaSet=secureone` (s1.py:1164), while the set is named `secureone8`.
-:::
-
 After `cutover`, the application runs on MongoDB 8.0 under the temporary names `<stack>_db8` or `<stack>_mongoN-8`. The `retire` command gives the canonical names back to the MongoDB 8.0 data, so the deployment matches a new MongoDB 8.0 installation. Run it after the application has run on MongoDB 8.0 long enough for you to trust it.
 
 :::warning
-Known issue: on a three-node cluster after `retire`, the `s1 db`, `s1 set-password`, and `s1 database-status` commands can't reach the replica set. They look for the replica set `secureone`, but the replica set's name is `secureone8`. The application still works. Open a shell with the manual method in [Open a shell manually](../../admin/maintenance/open-the-mongodb-shell.md#open-a-shell-manually), and use the third connection string.
+On a three-node cluster after `retire`, the `s1 db`, `s1 set-password`, and `s1 database-status` commands fail, because they look for the replica set `secureone`, but the replica set's name is `secureone8`. The application still works.
+
+* To open a shell, use the manual method in [Open a shell manually](../../admin/maintenance/open-the-mongodb-shell.md#open-a-shell-manually), and use the third connection string.
+* `s1 database-status` reports nothing useful here. Use the shell to inspect the database.
+* To change the password of the built-in `secureone` administrator account, contact Netwrix Support. The workaround for the shell doesn't cover `s1 set-password`.
 :::
 
 The `retire` command never deletes the MongoDB 4.0 data. It renames that data aside, so a rollback remains possible until you remove the archive.
@@ -40,8 +40,10 @@ The command refuses to run, and changes nothing, in the following cases:
 
 * The write-path services aren't all on MongoDB 8.0, or the stale-reference scan finds a reference to MongoDB 4.0. Finish the cutover first.
 * `/secureone/s1.env` isn't writable.
-* `<stack>_db8` isn't running.
+* On a single node, `<stack>_db8` isn't running.
+* On a three-node cluster, the three `secureone8` members aren't all healthy.
 * The stack file pins the MongoDB image to a fixed tag, or the redeployed image isn't available on the host.
+* On a three-node cluster, the stack file hardcodes the MongoDB version or the replica set name. The stack file must read `MONGO_VERSION` and `MONGO_REPLICA_SET` instead.
 
 ## Preview the changes
 
@@ -89,6 +91,8 @@ The command accepts the following options:
 | `--yes`, `--non-interactive` | Skips the confirmation prompt. All checks still run. |
 | `--allow-copy` | Proceeds when the data and `/secureone/data` are on different filesystems, which turns the move into a full copy. |
 
+Before it changes `/secureone/s1.env`, the command saves a backup copy named `/secureone/s1.env.pre-retire.<timestamp>`.
+
 On a single node, the command performs the following actions:
 
 1. Pins `MONGO_VERSION` in `/secureone/s1.env`.
@@ -121,7 +125,7 @@ If you can't resolve the failure, preserve the log and contact Netwrix Support. 
 
 The tool keeps the MongoDB 4.0 data in the archive. Until you remove it, the archive is the only thing that keeps a rollback possible, and it uses disk space. When you're satisfied with the retired deployment, for example after a full backup cycle and a business day of normal use, remove the archive.
 
-At the end of a successful run, `retire` prints the exact commands for each node: a `sudo rm -rf <archive-path>` command, `docker volume rm <volume>` commands, and a command for the checkpoint volume on the node where you ran `run`. The tool never runs these commands for you. Run the `docker` commands with `sudo`.
+At the end of a successful run, `retire` prints the exact commands for each node: a `sudo rm -rf <archive-path>` command, `docker volume rm <volume>` commands, and a command for the checkpoint volume on the node where you ran `run`. On a cluster, the checkpoint volume exists only on that node. The tool never runs these commands for you. Run the `docker` commands with `sudo`.
 
 :::warning
 These commands are irreversible. After you run them, you can't roll back to MongoDB 4.0. Confirm that you have a verified, independent backup first.

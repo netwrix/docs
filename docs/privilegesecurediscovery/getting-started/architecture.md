@@ -4,10 +4,6 @@ description: "Learn how Privilege Secure for Discovery is built from container s
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm whether customers may use the Windows bridge services (`windows-bridge` and `windows-bridge-proxy`) and who enables them. Evidence: the `windows_bridge` release toggle is `enabled: false` on a 26.09.1 stack, and the bridge README calls it a preview feature that is disabled by default.
-:::
-
 Privilege Secure for Discovery runs as a set of Docker services, deployed as the `s1` stack on Docker Swarm. A single-node deployment runs every service on one Ubuntu Server host. A three-node cluster runs the same services across three hosts and adds a three-member MongoDB replica set. This page describes the services and how to check them.
 
 ## Deployment diagrams
@@ -35,7 +31,7 @@ The deployment stack defines the following services. In the stack, each service 
 | `s1_fluentd` | Collects, formats, and forwards logs. |
 | `s1_analytics_engine` | Calculates access risk, license usage, and the history behind the dashboard. |
 | `s1_health_reporter` (one per node in a cluster) | Reports service health to the API. |
-| `s1_windows-bridge` and `s1_windows-bridge-proxy` | Run Windows system connections in a separate process when you turn on the Windows bridge. The bridge stays off by default. |
+| `s1_windows-bridge` and `s1_windows-bridge-proxy` | Support the Windows bridge, a preview feature that Netwrix Support enables on request. The bridge is off by default, and the interface has no setting to turn it on. The services deploy with the stack even while the bridge is off. |
 
 ### API service
 

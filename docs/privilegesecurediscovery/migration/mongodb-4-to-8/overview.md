@@ -4,10 +4,6 @@ description: "Decide whether you need the MongoDB 4.0 to 8.0 migration, and see 
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Can an ISO-based (non-container) installation run `s1 mongo-upgrade`? Evidence: none; the commands target Docker Swarm stacks, and the ISO installation is deprecated.
-:::
-
 Netwrix Privilege Secure for Discovery 26.09.1 provides the supported path for moving an existing deployment from MongoDB 4.0 to MongoDB 8.0. Use this set of pages if your deployment still runs MongoDB 4.0. New installations use MongoDB 8.0 and don't need a migration.
 
 :::warning
@@ -44,7 +40,7 @@ Release 26.09.1 is the bridge release for this migration. It supports both Mongo
 | `finish-cutover` | Repeats only the final check and stop of MongoDB 4.0 when `cutover` left it running. |
 | `retire` | Gives the canonical service names back to the MongoDB 8.0 data and removes the temporary 8.0 services. |
 
-The `s1 db`, `s1 set-password`, and `s1 database-status` commands follow the active database before, during, and after the migration.
+The `s1 db`, `s1 set-password`, and `s1 database-status` commands follow the active database before, during, and after the migration. The exception is a three-node cluster after `retire`, where these commands can't reach the replica set. See [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md).
 
 ## Supported topologies
 
@@ -54,6 +50,8 @@ The migration supports the following topologies:
 * A three-node cluster with a three-member MongoDB replica set.
 
 If the result of the earlier service check doesn't match either topology, don't continue. Contact Netwrix Support.
+
+If you installed from the ISO image, contact Netwrix Support before you start. An ISO installation runs the same Docker Swarm stack, but `secureone.sh upgrade` doesn't refresh an ISO stack file automatically, and `retire` refuses a stack file that hardcodes the MongoDB image tag or the `--replSet` name.
 
 ## How the side-by-side migration works
 

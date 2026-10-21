@@ -4,10 +4,6 @@ description: "Plan storage capacity, the maintenance window, and backups before 
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the support position for backing up before the migration. No backup or restore tooling ships with the product, so this page points to the customer's own procedure or Netwrix Support. Evidence: none (r05-backup-dr.md).
-:::
-
 The migration keeps the MongoDB 4.0 database in place and creates a complete MongoDB 8.0 copy. Plan the storage, the maintenance window, and a verified backup before you start. This page applies to single-node deployments and three-node clusters.
 
 ## Plan storage capacity
@@ -58,7 +54,7 @@ The `retire` command is a separate step with its own, shorter application downti
 
 ## Back up before you start
 
-Take and verify an independent backup of the MongoDB 4.0 data before you start, by using your established backup and restore procedure or the procedure that Netwrix Support provides for the deployment. Export a copy of the `key.txt` encryption key and keep it with the backup, but not in the same location. See [Protect and recover your deployment](../../admin/maintenance/protect-and-recover-your-deployment.md) and [Manage Docker secrets](../../install/docker-secrets.md).
+Take and verify an independent backup of the MongoDB 4.0 data before you start, by using your established backup and restore procedure. No backup tooling ships with the product. For the `mongodump` method and the `key.txt` encryption key, see [Back up the database of a single node](../../admin/maintenance/protect-and-recover-your-deployment.md#back-up-the-database-of-a-single-node) and [Back up and restore a three-node deployment](../../admin/maintenance/protect-and-recover-your-deployment.md#back-up-and-restore-a-three-node-deployment). Export a copy of the `key.txt` encryption key and keep it with the backup, but not in the same location. See [Protect and recover your deployment](../../admin/maintenance/protect-and-recover-your-deployment.md) and [Manage Docker secrets](../../install/docker-secrets.md).
 
 If a backup procedure isn't available or the restore path is unverified, don't run `cutover`. Contact Netwrix Support first. The retained MongoDB 4.0 services aren't a substitute for an independent backup.
 

@@ -5,16 +5,14 @@ sidebar_position: 60
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: The former page told readers not to update when the installed Docker version is 29.x or later and to contact Support. The page no longer says this. Confirm the Docker versions that are supported with 26.09.1 and whether the hold on the docker-ce, docker-ce-cli, and containerd.io packages is still required. Evidence: none.
-
-TODO: The replication check uses the `s1 db` shell and `rs.printSlaveReplicationInfo()`, which is valid on MongoDB 4.0 only. Confirm the 4.0 behavior for ISO-based deployments. Evidence: none.
+TODO: Netwrix doesn't pin a Docker version, and test labs upgrade without problems on Docker 29.x. Decide as a policy call (product management or Support) whether to keep the hold on the docker-ce, docker-ce-cli, and containerd.io packages in this procedure.
 :::
 
 This page applies to the deprecated ISO appliance. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 Install operating system updates during a scheduled maintenance window, because an update can require a reboot of the server or the Docker service. The downtime depends on the deployment:
 
-- **Three-node cluster:** No downtime. Update one node at a time.
+- **Three-node cluster:** No data loss. The API and background services restart briefly when a node reboots. Update one node at a time.
 - **Single node:** Downtime during the reboot, usually 30 to 60 minutes.
 
 ## Prerequisites
@@ -37,7 +35,18 @@ Update one node at a time.
 
    ```javascript
    rs.status().members.forEach(function (m) { print(m.name, m.stateStr) })
+   ```
+
+   Then check the replication lag. On MongoDB 4.0, run:
+
+   ```javascript
    rs.printSlaveReplicationInfo()
+   ```
+
+   On MongoDB 8.0, run:
+
+   ```javascript
+   rs.printSecondaryReplicationInfo()
    ```
 
    If replication isn't healthy, resolve the problem before you continue.

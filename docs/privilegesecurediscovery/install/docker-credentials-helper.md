@@ -5,7 +5,7 @@ sidebar_position: 40
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the full flow with the real registry. The helper chain (install, key, store, `sudo -E` store and get) ran in a throwaway Ubuntu 24.04 container, but `docker login` and `docker stack deploy --with-registry-auth` weren't run against the Netwrix registry. Evidence: secureone.sh:2022 deploys with `--with-registry-auth`; no registry access from the test stack.
+TODO: Verify `docker login` and `docker stack deploy --with-registry-auth` with the credential helper against the Netwrix registry.
 :::
 
 By default, `docker login` writes the registry credential to `~/.docker/config.json` as base64-encoded text. This page describes how to install the official Docker `docker-credential-pass` helper with `gopass` as the back end. GNU Privacy Guard (GPG) encrypts the credential, and Docker keeps no readable credential in its configuration file.
@@ -212,6 +212,10 @@ Use `credsStore`, not `credHelpers`. The `s1` tool mounts your `config.json` fil
 After the sign-in is in place, run the deployment or upgrade. See [Deploy Privilege Secure for Discovery with Docker](./deploy.md). The deployment script deploys the stack with `--with-registry-auth`, so Docker Swarm passes the registry credential to the nodes that pull images.
 
 Because the token expires after 12 hours, repeat the sign-in before each deployment or upgrade.
+
+:::important
+On a three-node cluster, the script pulls the images only on the primary node. If a service restarts on another node after the token expires, and that node never pulled the image, the pull can fail. To fix it, sign in again with a fresh token, and then run `deploy` again.
+:::
 
 ## Manage the stored credential
 

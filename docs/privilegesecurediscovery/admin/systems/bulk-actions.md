@@ -4,10 +4,6 @@ description: "Select systems on the Systems screen, by filter or by file, and ap
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: The **Scan Policy** bulk action shows the warning "Disabling scan mode on systems with OAM enabled will disable OAM on them." The executor only sets `policy.scan` to `false`, and the single-system API rejects the same change while Offline Access Management (OAM) is enabled. Confirm what the bulk action does to OAM on those systems. Evidence: selectBulkActionsView.html (scan policy section), executors/database_policy_executor.py (SetScanExecutor sets only `policy.scan` and no other code path changes OAM), lib-api-common/route-handlers/computers/single.js:67.
-:::
-
 Bulk actions apply one change to many systems at once. In Netwrix Privilege Secure for Discovery, use them to set scan and Protect Mode policies, request just-in-time administration (JITA) sessions, manage accounts, and archive systems without opening each system.
 
 Administrators can run every bulk action. Other users see only **JITA**, **Expire**, and **Extend**.
@@ -74,7 +70,7 @@ A bulk action changes every selected system as soon as you select **Execute Bulk
 | **Expire** | Ends your JITA session on each selected system. | Systems where you have no active session. |
 | **Extend** | Extends your JITA session by the time you choose. | Systems where you have no session, and sessions that have more than 60 minutes left. |
 | **Scan Systems** | Queues a scan of each selected system. | None. |
-| **Scan Policy** | Enables or disables **Scan Mode**. | Domain controllers. |
+| **Scan Policy** | Enables or disables **Scan Mode**. When you disable **Scan Mode**, the action also sets Offline Access Management to disabled on those systems. | Domain controllers. |
 | **Protect Policy** | Sets **Protect Mode** to **New Accounts: Deny**, **New Accounts: JITA**, or **Disable**. | Domain controllers, and systems that no scan has reached when you enable Protect Mode. |
 | **Set EDR Configuration** | Assigns an endpoint detection and response (EDR) configuration to each system, or disables EDR. | Domain controllers. |
 | **Set Offline Access** | Sets the Offline Access Management policy on each system. | Domain controllers, and systems that don't run Windows or that no scan has reached when you enable Offline Access. The menu entry appears only to administrators, and only when Offline Access Management is enabled on **Configure** > **Server**. |
@@ -99,7 +95,7 @@ Skipping 1 - Insufficient permission, existing session found, or JITA requested 
 
 ### Change scan and Protect Mode
 
-**Scan Policy** and **Protect Policy** change the policy on each selected system without a rescan. The default choice for **Protect Policy** is **Disable**. Before you disable **Scan Mode**, set Offline Access Management to **Unmanaged** on systems that use it.
+**Scan Policy** and **Protect Policy** change the policy on each selected system without a rescan. The default choice for **Protect Policy** is **Disable**. Disabling **Scan Mode** with **Scan Policy** also turns off Offline Access Management on the selected systems. The single-system API blocks that change instead. To keep Offline Access Management on a system, leave the system out of the selection.
 
 When you enable Protect Mode, the product skips systems that it never scanned and reports `Not enabling Protect Mode on 2 unscanned systems.` Scan those systems first. To plan a rollout, see [Add multiple systems to Protect Mode](../../configuration/onboard-systems/add-multiple-systems-to-protect-mode.md).
 

@@ -50,7 +50,7 @@ The MongoDB driver discovers the current primaries through the replica-set conne
 
    Each run checks the MongoDB member and free space local to that node. Passing on one node doesn't establish readiness on the other two.
 
-   Output can include an informational message such as `<stack>_mongo1 service is not running on this node`. Each node hosts only one local member, so messages about the other members aren't failures.
+   Each node hosts only one local member. The command can suggest that you run `check` on the other nodes.
 
 2. Confirm that each node reports MongoDB `4.0.x` and ends with the following line:
 

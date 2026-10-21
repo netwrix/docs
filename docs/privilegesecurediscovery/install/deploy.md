@@ -4,12 +4,6 @@ description: "Download the quickstart bundle and run secureone.sh to deploy Netw
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that running `setup` again on a node after a failed or interrupted run is safe, and state what to do after a failure. Evidence: the script only promises that a failed `s1` tool step leaves the application deployed and prints the command to re-run.
-
-TODO: Confirm why the cluster primary setup comments out `Defaults use_pty` in `/etc/sudoers`, and why a single node and a secondary node don't need the change. Evidence: secureone.sh:1773-1776 makes the change and :1879 calls it only on the cluster primary path; the script states no reason.
-:::
-
 This page covers how to download the Netwrix Privilege Secure for Discovery quickstart bundle from the Netwrix releases server, distribute it to every node, and run the deployment script. The same script upgrades an existing deployment and removes a deployment before a reinstall. For every command and option, see the [secureone.sh script reference](../appendix/secureone-script-reference.md).
 
 :::important MongoDB 4.0 and a future release
@@ -94,7 +88,6 @@ The `setup` command prepares the host as well as the product. Before it deploys 
 - Prompts you for a host name. You can keep the current name. The script sets the host name and the `127.0.1.1` entry in `/etc/hosts` to match.
 - Sets the Docker bridge network to `169.254.47.1/24` in `/etc/docker/daemon.json`, re-creates the `docker_gwbridge` network on `169.254.48.0/24`, and restarts Docker.
 - Installs Docker and Python 3 with `apt-get` if they are missing.
-- On the primary node of a cluster only, comments out `Defaults use_pty` in `/etc/sudoers`.
 
 Setup needs an interactive terminal because it prompts you. It can take several minutes. The script waits for Docker, the stack, the database, and the API to become ready. On the primary node of a cluster, the script also pauses with a `Press Enter to continue` prompt while you join the secondary nodes.
 
@@ -150,6 +143,18 @@ If a secondary node joins after the primary node passes the prompt, promote it f
 ```bash
 sudo -E bash secureone.sh promote
 ```
+
+### Known issue: clients on 10.0.0.0/24 and 10.0.1.0/24
+
+In release 26.09.1, clients on the 10.0.0.0/24 or 10.0.1.0/24 network lose HTTP and HTTPS access to the product, because those ranges overlap the Docker overlay network. To work around the issue, place the clients outside those ranges.
+
+### If setup fails
+
+Don't run `setup` again unless the first installation failed. Each run rebuilds the swarm, generates a new `key.txt` secret that can't decrypt your stored credentials, and resets the `secureone` account password to its default. Choose the case that matches your situation:
+
+- **A later step failed, for example `install-cli`:** run only the command that the script prints.
+- **You want to start over:** run `teardown` on every node, and then follow this page again from [Download the quickstart bundle](#download-the-quickstart-bundle).
+- **The deployment is live:** never run `setup` again.
 
 ## Upgrade an existing deployment
 

@@ -5,9 +5,7 @@ sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm whether a single node is supported for production use or only for a proof of concept. Evidence: none; the previous wording of this page recommended a single node for a low-risk environment.
-
-TODO: Confirm that a three-node cluster has no downtime during an operating system update of one node. Evidence: none; see the matching question on the high availability page.
+TODO: Confirm whether a single node is supported for production use or only for a proof of concept.
 :::
 
 Container-based deployment is the installation method for Netwrix Privilege Secure for Discovery. You deploy the product as a Docker Swarm stack on Ubuntu Server 24.04 LTS machines. A single shell script, `secureone.sh`, and a configuration package, `secureone.tar.gz`, do the work. Netwrix bundles both files in a versioned quickstart archive that you download from the Netwrix releases server.
@@ -30,8 +28,8 @@ The method supports a single-node deployment and a three-node high-availability 
 | Machines required | 1 | 3 |
 | High availability | No | Yes |
 | Database | One MongoDB service | A three-member MongoDB replica set |
-| Behavior when a node fails | The product is unavailable until you restore the node. | The product continues to run when one node fails. |
-| Downtime during an operating system update | Yes | No |
+| Behavior when a node fails | The product is unavailable until you restore the node. | A brief outage while Swarm restarts the services that ran on the failed node. MongoDB keeps quorum and elects a new primary. |
+| Effect of an operating system update on one node | The product is unavailable while the node restarts. | No data loss. The API and background services restart briefly. |
 
 Use a single node for a proof of concept or a low-risk environment. Use a three-node cluster for production environments that require high availability. For recovery planning, see [High availability and disaster recovery](../getting-started/high-availability-and-disaster-recovery.md).
 

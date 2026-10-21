@@ -5,9 +5,7 @@ sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Define the supported disaster recovery (DR) approach for customers, such as a standby deployment restored from a database backup. Evidence: no backup, restore, or DR tooling in the application, deployment, or infrastructure repositories.
-
-TODO: Confirm that a three-node cluster continues to run without interruption when any one node fails, including the MongoDB election time. Evidence: docker-stack.prod.cluster.yml defines mongo1 to mongo3 with --replSet secureone; failover timing not documented.
+TODO: Define the supported disaster recovery (DR) position for customers, such as a standby deployment restored from a database backup. The product ships no backup, restore, or DR tooling, so the supported approach needs a product management decision.
 :::
 
 Privilege Secure for Discovery supports two deployment layouts: a single node and a three-node cluster. This page explains how each layout handles a failure and what to plan for disaster recovery (DR). Contact Netwrix Support to discuss the approach that fits your environment.
@@ -17,25 +15,30 @@ Privilege Secure for Discovery supports two deployment layouts: a single node an
 | Layout | Database | Behavior when a node fails |
 | --- | --- | --- |
 | Single node | One standalone MongoDB service (`s1_db`) with no replica set | The product is unavailable until you restore the node or recover on another host. |
-| Three-node cluster | A three-member MongoDB replica set (`s1_mongo1`, `s1_mongo2`, and `s1_mongo3`) on a Docker Swarm of three nodes | The product continues to run when any one node fails. |
+| Three-node cluster | A three-member MongoDB replica set (`s1_mongo1`, `s1_mongo2`, and `s1_mongo3`) on a Docker Swarm of three nodes | The product survives the failure of any one node, with a brief outage while the database elects a new primary and Docker Swarm restarts services on the surviving nodes. |
 
 A single node provides no high availability. Plan for recovery from a backup.
 
 ## High availability
 
-A three-node cluster uses Docker Swarm. A swarm needs an odd number of nodes so that a majority of nodes can agree on the cluster state. With three nodes, any one node can fail and the product continues to run. For more information, see the Docker documentation on [administering a swarm](https://docs.docker.com/engine/swarm/admin_guide/).
+A three-node cluster uses Docker Swarm. A swarm needs an odd number of nodes so that a majority of nodes can agree on the cluster state. With three nodes, the swarm keeps its quorum when any one node fails, and the product recovers on the other two nodes. The recovery isn't instant:
+
+- If the failed node held the MongoDB primary, the replica set elects a new primary in about 10 to 12 seconds.
+- Docker Swarm restarts the services that run as a single replica on the surviving nodes.
+
+Expect a brief outage while these steps finish. For more information, see the Docker documentation on [administering a swarm](https://docs.docker.com/engine/swarm/admin_guide/).
 
 Place the three nodes of a cluster in the same location. The nodes exchange a large amount of traffic to stay synchronized, and nodes at different sites add latency and risk network interruptions.
 
 ### Load balancing
 
-Docker Swarm balances the services across the nodes and moves them between nodes based on load and availability. Publish the product behind a single DNS name, and configure the DNS entry or a load balancer to distribute requests across the nodes. A load balancer is a recommended practice for managing traffic. It isn't required to run the product.
+Docker Swarm places each service on a node when it schedules the service. It moves a service to another node only when a node fails. It doesn't rebalance services by load. Publish the product behind a single DNS name, and configure the DNS entry or a load balancer to distribute requests across the nodes. A load balancer is a recommended practice for managing traffic. It isn't required to run the product.
 
 Three nodes work for a wide range of environment sizes. For the host requirements of each node, see [Sizing](../requirements/sizing.md).
 
 ## Disaster recovery
 
-Disaster recovery covers a failure that affects the whole deployment, such as the loss of a site or of every node. Privilege Secure for Discovery doesn't include built-in scheduled backups, database replication to a second site, or an automated failover. Plan and test these steps yourself, or work with Netwrix Support.
+Disaster recovery covers a failure that affects the whole deployment, such as the loss of a site or of every node. Privilege Secure for Discovery ships no backup, restore, or disaster recovery tooling. The only pieces are a manual `mongodump` of the database and a saved copy of the encryption key, `key.txt`. The product has no scheduled backups, database replication to a second site, or automated failover. Plan and test these steps yourself, or work with Netwrix Support.
 
 ### What a recovery needs
 

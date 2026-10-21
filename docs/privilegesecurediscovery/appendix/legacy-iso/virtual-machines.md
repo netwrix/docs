@@ -5,7 +5,7 @@ sidebar_position: 50
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm which Ubuntu version the ISO-based installation used. The former page stated Ubuntu 20.04 LTS. Evidence: none.
+TODO: The VM table on this page conflicts with the storage tiers on the Sizing page. Reconcile the two.
 :::
 
 This page applies to the deprecated ISO appliance on virtual machines. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
@@ -21,7 +21,7 @@ An ISO-based installation can run on a VMware virtual machine (VM) instead of de
 | Disk | 1 TB |
 | Network | A dedicated network adapter of the Intel E1000 type (E1000E, E1000, or Intel PRO/1000) |
 
-Install the VM with Ubuntu Server from the ISO image, and allocate most of the storage to the root (`/`) partition.
+Install the VM with Ubuntu Server from the ISO image, and allocate most of the storage to the root (`/`) partition. Current ISO builds use Ubuntu Server 22.04 LTS. Earlier ISO builds used 20.04 LTS, and the earliest used 18.04 LTS.
 
 :::note
 The ISO-based installation is deprecated. Don't use it for new deployments.

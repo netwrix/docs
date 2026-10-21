@@ -4,10 +4,6 @@ description: "Set one Linux service account on a domain so Privilege Secure for 
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: What is the supported way to move a Linux system that has its own stored credentials to the domain Linux service account? Evidence: remediant/db_data/linux/system_info.py `service_acct` returns the system's own `auth` first, then the domain account, then the global account; svc_worker.py (registerHostCreds) saves `auth` at registration only when no domain or global account exists, and nothing in 26.09.1 clears an existing `auth`. Registering the system again creates the domain account on the endpoint (scan_strategy.py `register_service_account`, where the domain account overrides the registration account), but later scans still read the stored `auth`.
-:::
-
 You can set one Linux service account for a domain. Netwrix Privilege Secure for Discovery then uses that account for every Linux system in the domain that you register without credentials, so you don't enter a user name and password for each system.
 
 ## Prerequisites
@@ -42,7 +38,7 @@ Fill in both fields or leave both empty. If you fill in only one, the product sh
 
 Register a Linux system and leave out the registration user name and password. Only administrators can do this. If the domain has no Linux service account, registration fails and asks for credentials. For the methods, see [Register Linux systems by using the API](../bulk-onboarding/register-linux-systems.md).
 
-A system keeps its own credentials if it already has them. Systems that you registered with credentials before you set the domain account continue to use those credentials.
+A system keeps its own credentials if it already has them. Systems that you registered with credentials before you set the domain account continue to use those credentials. There is no supported way to move a system's own stored credentials to the domain service account: scans keep using the system's own credentials, even if you register the system again. Contact Netwrix Support.
 
 ## Set the directory bridging solution
 

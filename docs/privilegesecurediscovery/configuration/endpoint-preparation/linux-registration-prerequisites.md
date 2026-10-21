@@ -5,7 +5,7 @@ sidebar_position: 40
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: The previous page told RHEL and CentOS users to disable SELinux. Confirm whether SELinux in enforcing mode blocks registration or scans. Evidence: the remote program only reads the SELinux status (remote_executor_src/actions/info.py:25-39) and nothing in the product requires it off; no test with SELinux enforcing was found.
+TODO: Verify on Ubuntu 22.04 and 24.04 endpoints whether registration with an RSA key needs PubkeyAcceptedKeyTypes +ssh-rsa; this page and the knowledge base article disagree.
 :::
 
 This page lists what a Linux system must provide before you register it with Netwrix Privilege Secure for Discovery. For the supported distributions and versions, see [Supported platforms](../../requirements/supported-platforms.md). To understand why the product needs these items, see [Linux systems overview](./linux-registration-modes.md).
@@ -26,7 +26,7 @@ Back up `/etc/sudoers` and `/etc/sudoers.d` on each endpoint first, because the 
 - The endpoint has Python 2.7 or Python 3. The product looks for `python3`, then `python`, then `python2`. If it finds none, it reports `Could not find a Python interpreter on the remote system`. Install a vendor-supported `python3` package on minimal images.
 - The `visudo` command is installed. The product uses it to validate every sudoers file before it installs the file.
 
-RSA, ECDSA, and Ed25519 SSH keys work with the default `sshd` settings on Ubuntu 24.04. You don't need to change the accepted key types.
+The product doesn't require you to change the SELinux mode on RHEL or CentOS endpoints. It only reads the SELinux status.
 
 ## Service account
 

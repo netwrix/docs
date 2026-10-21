@@ -8,8 +8,6 @@ sidebar_position: 40
 TODO: Verify in an Okta tenant, after you create the application, the labels on the **Sign On** tab: **SAML Signing Certificates**, **View SAML setup instructions**, and the values **Identity Provider Single Sign-On URL**, **Identity Provider Issuer**, and **X.509 Certificate**. Evidence: the wizard fields and the signing defaults on this page were read from an Okta tenant (2026.42.1 E). The setup instructions page wasn't opened, because no application exists.
 
 TODO: Verify the **Authentication policy** location and the **Any two factors** policy name on the **Sign On** tab of an Okta Identity Engine application. Evidence: carried over from the earlier version of this page.
-
-TODO: Confirm that a user whose Okta username is the AD user principal name signs in with the `nameID` and `${sAMAccountName}@${domain_fqdn}` settings. Evidence: the match code in saml.js; no end-to-end test with Okta.
 :::
 
 Okta can act as the SAML identity provider (IdP) for Netwrix Privilege Secure for Discovery, with Okta enforcing multifactor authentication (MFA). Read the [SAML SSO configuration reference](./saml-sso-reference.md) first. This page shows the values for the Okta application and for the product. For the Okta screens, see the Okta documentation: [Create SAML app integrations](https://help.okta.com/oie/en-us/Content/Topics/apps/apps_app_integration_wizard_saml.htm) and the [SAML field reference](https://help.okta.com/oie/en-us/Content/Topics/apps/aiw-saml-reference.htm).
@@ -20,7 +18,7 @@ In the following steps, `<fqdn>` is the fully qualified domain name of Privilege
 
 - Administrator access to Okta and to Privilege Secure for Discovery.
 - Okta users that match your Active Directory (AD) users. If AD is the source of your Okta users, install the Okta AD Agent. See [Okta AD agent integration](https://help.okta.com/en/prod/Content/Topics/Directory/ad-agent-new-integration.htm).
-- Okta usernames that equal the AD user principal name (UPN) of each user, for example `jsmith@example.com`. The product matches the user from this value.
+- Okta usernames that equal `<sAMAccountName>@<AD domain FQDN>` for each user, for example `jsmith@example.com`. An alternate UPN suffix doesn't match. The product matches the user from this value.
 - The users or groups added to the product. See [Add users to Privilege Secure for Discovery](../onboard-systems/add-users-to-privilege-secure.md).
 
 ## Create the Okta application
@@ -80,6 +78,8 @@ Okta is the only place where MFA happens for SSO users. The product doesn't ask 
    | **Match User By** | `${sAMAccountName}@${domain_fqdn}` |
 
 3. Save the configuration, review the saved values, then set **SSO Enabled** to **Enabled**.
+
+These settings work only when the Okta username is exactly `sAMAccountName@<AD domain FQDN>`. The match is case-sensitive, and the product has no UPN field to match against. A user whose UPN has an alternate suffix, or whose username differs in case, can't sign in.
 
 ## Sign in with Okta
 

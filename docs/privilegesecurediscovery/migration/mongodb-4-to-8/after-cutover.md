@@ -52,7 +52,7 @@ The following table shows how to recognize each state, and which names and shell
 | Cut over, not retired | The `-8` services run. The MongoDB 4.0 services have zero replicas. | `<stack>_db8` or `<stack>_mongo1-8` to `<stack>_mongo3-8` | `secureone8` | `mongosh` |
 | Retired | The canonical services run MongoDB 8.0. The `-8` services are gone. A `.mongo4.<timestamp>` archive exists. | `<stack>_db` or `<stack>_mongo1` to `<stack>_mongo3` | `secureone8` | `mongosh` |
 
-The `s1 db` and `s1 database-status` commands select the active database and the correct shell for you in every state. Use them instead of building a `docker exec` command by hand.
+The `s1 db` and `s1 database-status` commands select the active database and the correct shell for you in every state except a three-node cluster after `retire`, where they fail (see [Retire MongoDB 4.0](./retire-mongodb-4.md)). Use them instead of building a `docker exec` command by hand.
 
 ## What persists after cutover
 

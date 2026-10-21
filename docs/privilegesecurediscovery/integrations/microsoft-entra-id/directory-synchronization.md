@@ -6,7 +6,7 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: What should an EDR-only deployment, with no direct Windows accounts, enter in the required Scan Mode and Protect Mode account fields of the Microsoft Entra ID domain form? Evidence: the fields are required by the form and by the entraid_config schema (lib-api-common/schemas/entraidConfig.js, scan_config.read_acct and write_acct: user and pass required), and no code path documents a placeholder convention.
+TODO: PM to approve the placeholder-account convention for EDR-only deployments.
 :::
 
 Configure a dedicated Microsoft Entra app registration so that Netwrix Privilege Secure for Discovery can read users, groups, devices, and the default domain through Microsoft Graph. Complete the [integration prerequisites](./overview.md#prerequisites) before you start.
@@ -69,6 +69,14 @@ Microsoft Entra shows the secret value only once. Don't include it in screenshot
    ![The Microsoft Entra ID domain form with the connection settings, Windows service accounts, and default policies](/images/privilegesecurediscovery/integrations/ent-entra-domain-form.webp)
 
    The form requires the Scan Mode and Protect Mode account fields even when both modes are disabled. For the NTLM method, enter `<NETBIOS>\<user>`. For Kerberos, enter `<user>@<realm>` and the NetBIOS domain name.
+
+   If you use only an EDR integration and have no direct Windows accounts, enter an obviously fake but valid placeholder, such as `placeholder-not-used`, in the required account fields. EDR integrations don't use these accounts to connect.
+
+   :::warning
+   If **Scan Mode** or **Protect Mode** is on, the placeholder user name appears in the administrator list of each device.
+
+   If you use the Tanium integration and the scanner falls back to a direct RPC connection, the scanner tries the placeholder account and fails.
+   :::
 
 4. Select **Test Connection**.
 

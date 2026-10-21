@@ -5,9 +5,7 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: On a rebuilt single-node host, `secureone.sh setup` runs `docker swarm leave --force` and then creates a new `key.txt` secret, so a secret that you created earlier is lost. What is the supported way to put the backed-up key in place afterward (remove the stack, replace the secret, redeploy)? Evidence: secureone.sh:1954-1958 (`swarm-init`) and :1610-1620 (`create-secret` skips only a secret that exists).
-
-TODO: Is a swarm-level backup needed to rebuild a three-node cluster, or is `setup`, join, and relabeling enough? Evidence: none; node labels live in swarm state and `node-labels` in secureone.sh sets them in `docker node ls` order.
+TODO: Confirm whether the internal API's second database, remediant, holds anything on-premises, because mongodump --db SecureONE doesn't include it.
 :::
 
 Netwrix Privilege Secure for Discovery stores its data in MongoDB and encrypts stored credentials with a key that exists only on the deployment. A usable backup must include both. This page describes what to protect, how to back up and restore the database of a single-node or three-node deployment, and how a recovery works.
@@ -129,7 +127,7 @@ sudo sh -c 'docker exec -i $(docker ps -q -f "name=^s1_<service>\.") mongorestor
 
 Start the services again with `s1 start`, and run the checks in [Verify the deployment](#verify-the-deployment).
 
-Back up the stack file and the node assignments along with the database so that you can rebuild the cluster. The node labels live in the Docker Swarm state. After you rebuild a swarm, label the nodes again. `secureone.sh` does that in `docker node ls` order. For a restore from a logical dump, it doesn't matter which node holds replica 1.
+You don't need a backup of the Docker Swarm state to rebuild a three-node cluster. Run `setup` on the primary node, join the other nodes, and label the nodes again. If you reattach the existing data directories, label the nodes by hand so that the node that holds the `mongoN` data gets label `N`. The `node-labels` command assigns labels in `docker node ls` order, which isn't stable. For a restore from a logical dump, the label order doesn't matter.
 
 ## Hypervisor snapshots
 
@@ -144,7 +142,7 @@ Removing the deployment with the teardown option deletes the stack, the data, th
 A recovery onto a new or rebuilt host follows these stages:
 
 1. Install the same product version on the new or rebuilt host.
-1. Restore the encryption key.
+1. Restore the encryption key. On a rebuilt single node, `setup` deletes a key that you create before you run it, so contact Netwrix Support for the procedure.
 1. Restore the database.
 1. Verify the deployment.
 

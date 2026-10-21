@@ -5,10 +5,6 @@ sidebar_label: "SAML SSO reference"
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: What text does the sign-in page show for an invalid signature, and does a stale **Issuer Cert** produce it? Evidence: node-saml throws `Invalid document signature` or `Invalid signature`, and saml.js passes the error to `next(err)`; the text that reaches the browser wasn't observed because no identity provider was available.
-:::
-
 Netwrix Privilege Secure for Discovery supports Security Assertion Markup Language (SAML) single sign-on (SSO) through an identity provider (IdP). This page is the single reference for the settings and sign-in behavior that every IdP shares. Use it with the provider-specific pages.
 
 For Microsoft Entra ID, follow [Configure SAML SSO with Microsoft Entra ID](../../integrations/microsoft-entra-id/saml-sso.md). For other providers, see [Okta](./okta.md) and [Duo](./duo.md). Any IdP that supports SAML 2.0 and meets the requirements in the next section can work.
@@ -74,11 +70,13 @@ Keep and test the local recovery path, and test sign-in with a second browser se
 
 ## Troubleshoot SAML sign-in
 
+The product doesn't show these errors on its sign-in page. The browser shows the raw response to the sign-in request, such as `{"error":"Invalid document signature"}`.
+
 | Message or symptom | Cause | Fix |
 | --- | --- | --- |
-| `Required field '<claim>' missing in SAML profile. Available claims: …` | **ID Claim** names a claim that the IdP doesn't send. | Enter one of the available claims that the message lists, or add the claim in the IdP application. |
-| `User not found with <claim>: <value> in field "<field>"`, or `… using template "<template>"` | No user record equals the claim value. | Compare the value in the message with the user record. Check the case, the domain, and that you added the user or a group of the user. Fix **Match User By** or the claim. |
-| A signature error, or the product rejects the response | The IdP doesn't sign both the response and the assertion, doesn't use SHA-256, or the **Issuer Cert** differs from the current signing certificate. | Set the IdP to sign the response and the assertion with SHA-256, and paste the current certificate. |
+| HTTP 500 with `Required field '<attr>' missing in SAML profile. Available claims: …` | **ID Claim** names an attribute that the IdP doesn't send. | The message lists the claim names that the IdP sent. Use it to find the right attribute name for **ID Claim**, or add the attribute in the IdP application. |
+| HTTP 401 with `User not found with <attr>: <value> …` | No user record equals the claim value. | Compare the value in the message with the user record. Check the case, the domain, and that you added the user or a group of the user. Fix **Match User By** or the claim. |
+| HTTP 500 with `{"error":"Invalid document signature"}`, or `{"error":"Invalid signature"}` for a bad assertion signature | The IdP doesn't sign both the response and the assertion, doesn't use SHA-256, or the **Issuer Cert** differs from the current signing certificate. A stale **Issuer Cert** after the IdP rolls its certificate is a common cause. | Set the IdP to sign the response and the assertion with SHA-256, and paste the current certificate. |
 | The sign-in returns to the IdP repeatedly | **SSO Flow** doesn't match the flow of the IdP. | Match the setting to the flow that you configured. |
 
 ### Fix "SAML assertion not yet valid"

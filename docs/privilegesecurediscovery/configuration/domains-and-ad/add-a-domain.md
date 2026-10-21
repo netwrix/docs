@@ -4,17 +4,13 @@ description: "Connect Netwrix Privilege Secure for Discovery to an Active Direct
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that a load-balanced domain controller address still causes the product to miss group updates, and that a static domain controller is still required. Evidence: none; carried over from the earlier documentation.
-:::
-
 Add each Active Directory domain that Netwrix Privilege Secure for Discovery manages. The domain connection lets the product read users, groups, and computers, and scan and protect Windows systems with service accounts.
 
 ## Prerequisites
 
 - Administrator access to Privilege Secure for Discovery.
 - A bind account that can read the directory, a scan mode account, and a protect mode account for the domain. See [Service accounts](../../requirements/service-accounts.md) for the permissions that each account needs.
-- A static domain controller (DC) address for the LDAP server. A load-balanced connection prevents the product from recognizing group updates correctly.
+- A static domain controller (DC) address for the LDAP server. The product tracks changes with the highest committed update sequence number (USN) of one domain controller, and each domain controller counts USNs separately. If a load-balanced connection sends a request to a different domain controller, the product can miss group updates until the next daily full sync.
 
 ## Add a domain
 

@@ -6,9 +6,7 @@ sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the minimum Carbon Black Cloud permissions for the custom access level. The table in this page comes from the old documentation. The product code calls device search, device policy actions, policy create, update, and delete, and Live Response session, file, and command endpoints. It doesn't call any Live Query endpoint, so `livequery.manage` may not be needed. Evidence: docker/shared/python/src/remediant/integrations/carbon_black/api.py (lines 123-360); no match for "livequery" in the 26.09.1 tree.
-
-TODO: Does the scanner or worker use the Live Response API key at run time? The Python integration signs every request with the custom key, but the form requires both keys. Evidence: api.py:46-47 and :185-189 (custom credentials only); edrConfiguration.js `validateCarbonBlackIntegrationConfig` (both required).
+TODO: Verify the exact Carbon Black Cloud permission names in a tenant.
 :::
 
 The Carbon Black Cloud integration lets Netwrix Privilege Secure for Discovery scan Windows systems and grant just-in-time administrator access through the Carbon Black sensor. The product doesn't need a direct network connection to the endpoint, and the endpoint doesn't need to be on the domain.
@@ -33,7 +31,7 @@ The following steps use the Carbon Black Cloud console. Menu names can change be
 
 ### Create a custom access level
 
-The product uses two API keys. One key has the **Live Response** access level type. The other key has a custom access level that you create in this section.
+The product signs every request with the custom API key, so the custom access level must include the Live Response permissions in the following table. You create that access level in this section.
 
 1. On the **API Access** page, select the **Access Levels** tab.
 2. Select **Add Access Level**.
@@ -44,7 +42,6 @@ The product uses two API keys. One key has the **Live Response** access level ty
    | --- | --- | --- | --- |
    | Device | General information | `device` | Read |
    | Device | Policy assignment | `device.policy` | Update |
-   | Live Query | Manage queries | `livequery.manage` | Create, Read, Update, Delete |
    | Live Response | Live Response Session | `org.liveresponse.session` | Create, Read, Delete |
    | Live Response | Live Response File | `org.liveresponse.file` | Create, Read, Delete |
    | Live Response | Disable Live Response | `org.liveresponse` | Delete |
@@ -55,11 +52,13 @@ The product uses two API keys. One key has the **Live Response** access level ty
 
 ### Create the API keys
 
+The form has fields for two API keys and requires both. The product uses only the custom key at run time, including for **Test Connection**. It doesn't use the Live Response key.
+
 1. On the **API Access** page, select **Add API Key**.
-2. Enter a name and a description for the first key, and set **Access Level type** to **Live Response**.
-3. Select **Save**, and copy the **API ID** and **API Secret Key**.
-4. Select **Add API Key** again, enter a name and a description for the second key, and set **Access Level type** to **Custom**.
-5. Select the access level that you created.
+2. Enter a name and a description for the first key, and set **Access Level type** to **Custom**.
+3. Select the access level that you created.
+4. Select **Save**, and copy the **API ID** and **API Secret Key**.
+5. Select **Add API Key** again, enter a name and a description for the second key, and set **Access Level type** to **Live Response**.
 6. Select **Save**, and copy the **API ID** and **API Secret Key**.
 
 Carbon Black Cloud shows each secret key only when you create the key. Store both secrets in a secret manager.
@@ -74,8 +73,8 @@ Carbon Black Cloud shows each secret key only when you create the key. Store bot
 6. Set **Use Proxy Configuration** to **Enabled** if the server reaches Carbon Black Cloud through a proxy.
 7. Enter the **API Base URL** of your Carbon Black Cloud console, for example `https://defense.conferdeploy.net`.
 8. Enter the **Org Key**.
-9. Under **Live Response APIs Credentials**, enter the **API ID** and **API Secret Key** of the Live Response key.
-10. Under **Custom API Credentials**, enter the **API ID** and **API Secret Key** of the custom key.
+9. Under **Live Response APIs Credentials**, enter the **API ID** and **API Secret Key** of the Live Response key. The form requires these values, but the product doesn't use them at run time.
+10. Under **Custom API Credentials**, enter the **API ID** and **API Secret Key** of the custom key. The product signs every request with this key.
 
     ![The Carbon Black Cloud provider form with the API Base URL, Org Key, Live Response APIs Credentials, and Custom API Credentials fields](/images/privilegesecurediscovery/integrations/edr-carbonblack-credentials.webp)
 
@@ -105,7 +104,6 @@ Test Connection fails with `Invalid <name> EDR Integration configuration` follow
 
 | Symptom | Check |
 | --- | --- |
-| The reason names the Custom API Credentials | Confirm the API ID and secret, the org key, and that the access level includes the permissions in this page. |
-| The reason names the Live Response API Credentials | Confirm that the key has the **Live Response** access level type. |
+| The reason names the Custom API Credentials | Confirm the API ID and secret, the org key, and that the access level includes the permissions in this page, including the Live Response permissions. |
 | The test fails although both keys are correct | Confirm that at least one sensor in the organization is active and has Live Response enabled. The test creates a Live Response session on such a device. |
 | The test can't connect | Confirm the **API Base URL** and the network path, and enable **Use Proxy Configuration** if the server needs a proxy. |

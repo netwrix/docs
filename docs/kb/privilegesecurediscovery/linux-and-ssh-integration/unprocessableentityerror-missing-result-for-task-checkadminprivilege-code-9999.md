@@ -21,10 +21,6 @@ tags:
 - linux-and-ssh-integration
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that s1 --single-node db is the correct command for opening the database shell on a single-node deployment at 26.09.1, and that s1 db works for a cluster. Evidence: none.
-:::
-
 ## Symptom
 
 When you register a Linux system with the Quickstart reporting tool, the following error is displayed. The host names and addresses in the example are placeholders:
@@ -69,7 +65,7 @@ Remove the system from the product database, and then restart the worker and sca
 
 > **IMPORTANT:** This procedure deletes data from the product database. Back up the database before you continue, and confirm the system name before you run the delete command.
 
-1. Connect to a node over SSH, and open the database shell:
+1. Connect to a node over SSH, and [open the database shell](/docs/privilegesecurediscovery/admin/maintenance/open-the-mongodb-shell):
 
    - For a cluster deployment, run `s1 db`.
    - For a single-node deployment, run `s1 --single-node db`.

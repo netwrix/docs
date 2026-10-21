@@ -6,7 +6,7 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the API client scopes. The table in this page comes from the old documentation. The product calls host search and detail, Real Time Response (RTR) session start and delete, RTR script create, update, and delete, put-file upload, and RTR admin commands. Confirm whether session start needs **Real time response** Write instead of Read, and whether **Real time response (admin)** needs Read as well as Write. Evidence: docker/shared/python/src/remediant/integrations/crowdstrike/api/api_calls.py:130-520.
+TODO: Verify the exact scope labels in a Falcon tenant.
 :::
 
 The CrowdStrike Falcon integration lets Netwrix Privilege Secure for Discovery scan Windows systems and grant just-in-time administrator access through the Falcon sensor. The product doesn't need a direct network connection to the endpoint, and the endpoint doesn't need to be on the domain.
@@ -34,13 +34,15 @@ The following steps use the Falcon console. Menu names can change between consol
    | Scope | Permission |
    | --- | --- |
    | Hosts | Read |
-   | Real time response | Read |
+   | Real time response | Write |
    | Real time response (admin) | Write |
 
 6. Select **Create**.
 7. Copy the **Client ID**, **Secret**, and **Base URL**.
 
 Falcon shows the secret only once. Store it in a secret manager.
+
+The product calls the Falcon API to search host details, start and delete Real Time Response sessions, create, update, and delete RTR scripts and put-files, and run RTR commands as an administrator.
 
 ## Add the provider configuration
 
@@ -72,4 +74,4 @@ Test Connection fails with `Invalid <name> EDR Integration configuration` when t
 - The **Client ID** and **Client Secret** belong to the same API client, and the client has the **Hosts** Read scope.
 - The server can reach the base URL, and **Use Proxy Configuration** is on if the server needs a proxy.
 
-Test Connection checks host search only. A scan or a session can still fail if the API client lacks a Real Time Response scope.
+Test Connection checks host search only. A scan or a session can still fail if the API client lacks a Real Time Response scope. Starting a Real Time Response session needs **Real time response** Write, and running the management script needs **Real time response (admin)** Write.

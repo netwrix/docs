@@ -4,12 +4,6 @@ description: "Learn which Docker secrets Netwrix Privilege Secure for Discovery 
 sidebar_position: 50
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Can the key be rotated, and does a rotation re-encrypt the stored credentials? Evidence: none; no migration or rotation command found in secureone.sh or s1.py.
-
-TODO: What is the supported way to apply an existing `key.txt` to a new single-node deployment? Evidence: secureone.sh:1954-1958 runs `docker swarm leave --force` (which deletes swarm secrets) before `create-secret`, and the single-node path has no pause; the cluster primary path pauses after the swarm exists (:1880-1885).
-:::
-
 Netwrix Privilege Secure for Discovery uses a Docker secret to encrypt sensitive data that it stores, such as the passwords of managed accounts, directory bind passwords, and client secrets. The deployment creates this secret during installation. If you lose the secret, you can't decrypt the stored credentials, even from a valid database backup.
 
 For more information about how Docker handles secrets in swarm mode, see [Manage sensitive data with Docker secrets](https://docs.docker.com/engine/swarm/secrets/).
@@ -18,7 +12,7 @@ For more information about how Docker handles secrets in swarm mode, see [Manage
 
 | Secret | Created by | Purpose |
 |---|---|---|
-| `key.txt` | `secureone.sh setup` | The encryption key and salt for stored credentials. The services that read stored credentials, such as `api`, `worker`, `scanner`, and `ldapsync`, mount it at `/run/secrets/key.txt`. |
+| `key.txt` | `secureone.sh setup` | The encryption key and salt for stored credentials. The services that read stored credentials, such as `api`, `worker`, `worker-secondary`, `scanner`, `ldapsync`, and `windows-bridge`, mount it at `/run/secrets/key.txt`. |
 
 The `key.txt` secret has the following properties:
 
@@ -27,7 +21,7 @@ The `key.txt` secret has the following properties:
 - The `teardown` command destroys it, because leaving the swarm deletes the swarm secrets.
 - The services need it to decrypt the credentials in the database. A restored database that runs with a different `key.txt` can't decrypt those credentials.
 
-The file has exactly two lines: the secret on line 1 (50 characters) and the salt on line 2 (17 characters). Use LF line endings and no line ending after the second line. The services derive the encryption key from both lines, and only the secret signs the sign-in tokens. A file with different bytes, including Windows (CRLF) line endings, produces a different key. Services written in different languages then derive different keys. A different key signs out every user and leaves every stored credential unreadable. The application doesn't validate the file, so a missing line produces a wrong key without an error. Don't replace the key on a running deployment.
+The file has exactly two lines: the secret on line 1 (50 characters) and the salt on line 2 (17 characters). Use LF line endings and no line ending after the second line. The services derive the encryption key from both lines, and only the secret signs the sign-in tokens. A file with different bytes, including Windows (CRLF) line endings, produces a different key. Services that use different languages then derive different keys. A different key signs out every user and leaves every stored credential unreadable. The application doesn't validate the file, so a missing line produces a wrong key without an error. Don't replace the key on a running deployment. Netwrix doesn't support key rotation, so contact Netwrix Support if you need to change the key.
 
 ## Protect the key
 
@@ -69,7 +63,7 @@ Export the key when you need to keep a copy, or when a new deployment must use t
 
 The setup script creates the `key.txt` secret itself, and skips this step if a secret with that name already exists. To use an existing key on a cluster, create the secret yourself before the script reaches that step. The primary node setup pauses with a `Press Enter to continue` prompt after it initializes the swarm and prints the join command. Create the secret in a second SSH session while the script waits at that prompt.
 
-The script initializes the swarm again when it starts, which deletes any secret that you create before you run `setup`. A single-node setup has no pause, so this procedure doesn't apply to it. To restore a single-node deployment with an existing key, contact Netwrix Support.
+The script initializes the swarm again when it starts, which deletes any secret that you create before you run `setup`. A single-node setup has no pause, and `setup` can't apply an existing key to a single node. To use an existing key on a single node, contact Netwrix Support.
 
 1. On the primary node of the new cluster, create a key file that only root can read.
 

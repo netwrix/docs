@@ -4,15 +4,11 @@ description: "Install a CA-signed or self-signed TLS certificate on Privilege Se
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Does each node of a cluster serve the certificate, or only the node that runs the API service? Evidence: none; the API service publishes port 443 in host mode (docker/docker-compose.swarm.yml:94-103), and the cluster stack file isn't in the 26.09.1 source.
-:::
-
 A new installation uses a default certificate for the name `localhost`, so browsers show a warning when users open the product by its real name. Install a certificate for the name that users use. The certificate must come from a certificate authority (CA) that your users' browsers trust, such as the CA that your organization runs. The product accepts RSA keys only, and TLS 1.2 or later.
 
 ## Prerequisites
 
-- A certificate and an unencrypted RSA key in PEM format, with the names that users use in the Subject Alternative Names (SANs). To create the request, see [Create a CSR](./create-a-csr.md). To convert the files that the CA returned, see [Prepare the certificate and key files](./certificate-files.md).
+- A certificate and an unencrypted RSA key in PEM format, with the names that clients use in the Subject Alternative Names (SANs). Include every name or IP address that clients use: the DNS name, the load balancer virtual IP address, and any node addresses that clients connect to directly. To create the request, see [Create a CSR](./create-a-csr.md). To convert the files that the CA returned, see [Prepare the certificate and key files](./certificate-files.md).
 - A copy of the key and certificate that the product uses now, if you have them. The product keeps the previous certificate internally, but the interface can't restore it or show its key.
 - Administrator access to Privilege Secure for Discovery.
 
@@ -32,6 +28,8 @@ openssl x509 -in fullchain.crt -noout -subject -dates -ext subjectAltName
 ```
 
 ## Install the certificate
+
+Every node in the cluster answers on port 443, and the API service serves the one certificate that the product stores in its database. Clients get the same certificate whichever node they reach, so install it once.
 
 1. Sign in to Privilege Secure for Discovery as an administrator.
 2. Select **Configure** > **Server**.

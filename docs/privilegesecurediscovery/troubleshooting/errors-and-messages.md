@@ -38,10 +38,9 @@ Use this page to find the article for an error or message that you see in the we
 
 - `rpc_s_access_denied`
 - 403 Error: Forbidden from viewing this resource
-- Failed to Connect with Credentials
 - `STATUS_NONE_MAPPED`
 - `STATUS_SPECIAL_ACCOUNT`
-- Maximum Attempts Exceeded
+- Your request is taking longer than usual to process
 - Unable to connect to system: Host is offline
 - `STATUS_LOGON_FAILURE`, `STATUS_ACCOUNT_LOCKED_OUT`, and `STATUS_LOGON_TYPE_NOT_GRANTED`
 - `STATUS_ACCESS_DENIED`

@@ -4,10 +4,6 @@ description: "Confirm that Netwrix Privilege Secure for Discovery deployed succe
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: What is the initial password of the `secureone` account that `secureone.sh setup` creates, and should this page state it or direct readers to Netwrix Support? Evidence: secureone.sh:1739-1770 writes a fixed password hash for the user `secureone`; the plain-text password isn't in the code.
-:::
-
 After `secureone.sh setup` finishes, run these checks to confirm that Netwrix Privilege Secure for Discovery is healthy. If a check fails, see [Inspect and troubleshoot the deployment](../troubleshooting/inspect-and-troubleshoot-the-deployment.md). Run all commands on a swarm manager node. Run `s1` without `sudo`, and run `docker` with `sudo`, because the setup doesn't add your user to the `docker` group.
 
 ## Check the node setup
@@ -76,9 +72,10 @@ A message count that keeps growing in the `worker-primary` or `worker-secondary`
 
 1. In a browser, go to `https://<host>/`, where `<host>` is the host name or IP address of the node. On a cluster, use any node.
 2. Accept the certificate warning if the deployment uses a self-signed certificate.
-3. Sign in as the default administrator, `secureone`.
+3. Sign in as the default administrator, `secureone`. The account has a default password that is the same on every installation. Get it from Netwrix Support.
+4. Change the password immediately. Go to **Configure** > **Server** > **Appliance Admin Password**, or run `s1 set-password` on a swarm manager node. The password must have at least 15 characters.
 
-The dashboard loads after you sign in. Change the password of the default administrator in the **Appliance Admin Password** pane under **Configure** > **Server**. Then add your domain. See [Add a domain](../configuration/domains-and-ad/add-a-domain.md).
+The dashboard loads after you sign in. Then add your domain. See [Add a domain](../configuration/domains-and-ad/add-a-domain.md).
 
 ## Check the disk space
 

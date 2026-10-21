@@ -77,6 +77,8 @@ In the **Metadata** section of the application, copy the **Single Sign-On URL** 
 
    The value must equal the product user record exactly, including the case. With several domains, use a value that includes the domain.
 
+   **Match User By** accepts any attribute name that is present in the SAML assertion. The missing-attribute error in [Troubleshoot SAML sign-in](./saml-sso-reference.md#troubleshoot-saml-sign-in) lists the attributes that Duo actually sent.
+
 3. Save the configuration, review the saved values, then set **SSO Enabled** to **Enabled**.
 
 ## Sign in with Duo

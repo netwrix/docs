@@ -23,10 +23,6 @@ tags:
 knowledge_article_id: kA04u00000110pVCAQ
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that s1 --single-node db is the correct command for opening the database shell on a single-node deployment at 26.09.1. Evidence: none.
-:::
-
 ## Symptom
 
 When you register a Linux system through the API, the registration returns the following error:
@@ -69,7 +65,7 @@ Either change the configuration to allow SSH access for all users, or add the se
    sudo rm -r /home/secureone
    ```
 
-3. Connect to a node over SSH, and open the database shell:
+3. Connect to a node over SSH, and [open the database shell](/docs/privilegesecurediscovery/admin/maintenance/open-the-mongodb-shell):
 
    - For a cluster deployment, run `s1 db`.
    - For a single-node deployment, run `s1 --single-node db`.

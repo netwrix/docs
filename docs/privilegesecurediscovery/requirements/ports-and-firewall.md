@@ -4,10 +4,6 @@ description: "Open the network ports, load balancer settings, and certificates t
 sidebar_position: 50
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that Kerberos needs UDP/88 as well as TCP/88. Evidence: the Windows scan connector opens only a TCP socket to port 88 (windows_rpc/impacket_overrides/kerberosv5.py:59); the Kerberos (SASL) directory bind uses the system Kerberos library, which this repository doesn't show.
-:::
-
 This page lists the network ports, load balancer settings, and certificate requirements for Netwrix Privilege Secure for Discovery. Use it to prepare firewalls before you install the product.
 
 ## Load balancers
@@ -46,7 +42,7 @@ Before the product connects to an endpoint, it pings the endpoint by name and by
 ### Privilege Secure for Discovery to domain controllers
 
 - Lightweight Directory Access Protocol (LDAP) on TCP/389, or LDAP over TLS (LDAPS) on TCP/636.
-- Kerberos (TCP/88 and UDP/88).
+- Kerberos: TCP/88 is required. Allow UDP/88 too when the product binds to LDAP with Kerberos.
 
 ### Privilege Secure for Discovery to the time source
 

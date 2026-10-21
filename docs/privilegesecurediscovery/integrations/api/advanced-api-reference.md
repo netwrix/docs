@@ -4,10 +4,6 @@ description: "Learn the query syntax of the Netwrix Privilege Secure for Discove
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: With the advanced flag, the `sort` parameter has no effect on computers, users, and groups (the results always come back in database order), and the standard query rejects `select`. Confirm whether this is intended. Evidence: docker/node/packages/lib-api-common/utils/paginateAggregate.js:21-27 passes the option as `sortBy`, but mongoose-aggregate-paginate-v2 reads `options.sort`. A request with `?advanced&sort=-cn` returned the same order as `?advanced&sort=cn` on the 26.09.1 test stack.
-:::
-
 The Netwrix Privilege Secure for Discovery advanced API supports comparison operators, date queries, and field selection on query strings. Use it to retrieve exactly the records that you need, for example in reports and scripts. All requests require authentication. See [Authenticate with an API key](./authenticate-with-an-api-key.md).
 
 ## Choose the advanced or the standard query
@@ -25,7 +21,9 @@ Without `advanced`, the API runs the standard query, which works differently:
 - A value can contain regular expression characters. `?cn=AP.*01` matches `APP01`. A complex expression slows the query.
 - Operators such as `>` and `!` aren't available.
 - A date or number field with an operator fails with a `CastError` message.
-- The `select` parameter fails with the message `field "select": field name or value not allowed`.
+- The `select` parameter fails with the message `field "select": field name or value not allowed`. The `select` parameter works only with `advanced`.
+
+With `advanced`, the API doesn't guarantee the sort order of the results. This applies to the computers, users, and groups endpoints and to the bulk action jobs list. The `sort` parameter has no reliable effect.
 
 The advanced query is case-sensitive: `?advanced&cn=app01` finds nothing, and `?advanced&cn=APP01` finds the computer. Use the `^`, `$`, or `~` operators for case-insensitive matching. The advanced query returns an `InvalidQuery` error for a field that doesn't exist.
 
@@ -59,6 +57,8 @@ To put the paging information in the response body, add `inlinePageInfo`. The re
 ```
 
 ## Select fields
+
+The `select` parameter works only with `advanced`.
 
 `?advanced&select=cn,last_ip` returns only the fields `cn`, `last_ip`, and the record ID.
 

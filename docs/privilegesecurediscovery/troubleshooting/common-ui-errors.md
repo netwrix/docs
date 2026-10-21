@@ -4,11 +4,6 @@ description: "Identify the cause of common scan, access, and connection errors i
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Do the messages "Failed to Connect with Credentials" and "Maximum Attempts Exceeded" still appear in 26.09.1, and with what text? Evidence: neither string occurs in the 26.09.1 web, API, or Python source, so the sections that name them rest on the old documentation only.
-
-TODO: Does the NTLM restriction still cause STATUS_NOT_SUPPORTED, and is **Allow all** still the recommended policy value? Evidence: none; the row rests on the Microsoft articles that it links.
-:::
 This page explains errors that the web UI and the Access History show during scans and access requests, and how to resolve them. Many of the errors result from incorrect or outdated DNS entries, especially slow updates to dynamic DNS records, or from incorrect credentials. For errors that have their own article, see [Errors and messages](./errors-and-messages.md).
 
 ## rpc_s_access_denied
@@ -29,18 +24,6 @@ The scan account can't read the local Administrators group of the system.
 
 **Resolution:** Add the user or a group of the user to the account inventory. See [Add a user or group to an account inventory](../admin/systems/add-a-user-or-group-to-an-account-inventory.md).
 
-## Failed to Connect with Credentials
-
-This error usually indicates a DNS problem. The product connects to the IP address that DNS returns for the system. If that connection fails, or the connection succeeds but returns an error such as a failed host verification (the computer has a different host name than the name in DNS) or another session error, the product tries the backup IP address, if one exists. If there is no backup address, or the backup address also fails, the product shows this error.
-
-**Cause 1:** The DNS entry for the system points to an IP address that belongs to another computer.
-
-**Resolution 1:** Run `ipconfig /all` on the system and compare the returned host name with the system name in the product. If they differ, correct the DNS entry and retry.
-
-**Cause 2:** The AD attributes Computer Name (CN) and Computer (NetBIOS) Name of the computer don't match, as shown in Active Directory Administrative Center. This happens when the NetBIOS name is longer than 15 characters.
-
-**Resolution 2:** Shorten the NetBIOS name to 15 characters. For more information, see Microsoft's [naming conventions in Active Directory](https://learn.microsoft.com/en-us/troubleshoot/windows-server/identity/naming-conventions-for-computer-domain-site-ou).
-
 ## STATUS_NONE_MAPPED
 
 **Cause 1:** The local Administrators group contains a duplicate or redundant built-in administrator account, which causes an error when OAM scans the system.
@@ -59,13 +42,15 @@ This status indicates that an operation isn't allowed on a built-in (special) SA
 
 **Resolution:** Contact Netwrix Support. While OAM is set to **Unmanaged**, Support removes the stale account entries that end in `-500` for the system. Afterward, leave OAM unmanaged, or enable it with an alternate administrator name that differs from the name of the RID 500 account.
 
-## Maximum Attempts Exceeded
+## Your request is taking longer than usual to process
+
+The full message is "Your request is taking longer than usual to process. Check back in a few minutes." The web UI shows it as a warning.
 
 **Cause 1:** The product exceeded the time limit to communicate with the system. The process keeps trying to complete the action, such as a rescan, a just-in-time access (JITA) request, an extension, or an expiration.
 
 If the signed-in user has a JITA session that doesn't expire, because it is overdue or a manual expiration failed, **Access** > **Overview** > **Overdue Users with Admin Access** shows the message "Pending expiration run" and offers no button to dismiss it.
 
-**Resolution 1:** Wait one minute, refresh the **Grant Access** page for the system, and repeat the action.
+**Resolution 1:** Wait a few minutes, refresh the **Grant Access** page for the system, and repeat the action.
 
 **Cause 2:** The worker service stopped responding or restarted, and the queue record for the JITA request on the system stayed in progress.
 
@@ -77,11 +62,11 @@ The full message is "Unable to connect to system: Host is offline". When DNS ret
 
 **Cause:** The product found no IP address for the system that answers a ping.
 
-**Resolution:** Verify that the system is running and reachable from the node. Verify that DNS returns the current address of the system. For how the product determines that a host is offline, see the [knowledge base article](/docs/kb/privilegesecurediscovery/security-and-compliance/how-netwrix-privilege-secure-for-discovery-determines-a-host-is-offline).
+**Resolution:** Verify that the system is running and reachable from the node. Verify that DNS returns the current address of the system, because stale or slow-updating DNS records often cause this message. For how the product determines that a host is offline, see the [knowledge base article](/docs/kb/privilegesecurediscovery/security-and-compliance/how-netwrix-privilege-secure-for-discovery-determines-a-host-is-offline).
 
 ## Windows authentication and connection errors
 
-The following table lists errors that the product reports when it connects to a Windows system.
+When the product can't authenticate to a Windows system, it shows the SMB error that the system returns. The following table lists errors that the product reports when it connects to a Windows system.
 
 | Error | Cause | Resolution |
 | --- | --- | --- |
@@ -90,14 +75,14 @@ The following table lists errors that the product reports when it connects to a 
 | `STATUS_LOGON_TYPE_NOT_GRANTED`: A user has requested a type of logon that has not been granted. | The product most likely connects to the wrong system, for the same reasons as `STATUS_LOGON_FAILURE`. | Correct the DNS entry for the system. |
 | `STATUS_MEMBER_IN_ALIAS`: The specified account name is already a member of the group. | The product tried to add a user to the local administrators group, and the account was already a member. | None required. |
 | `STATUS_MEMBER_NOT_IN_ALIAS`: The specified account name isn't a member of the group. | The product tried to remove a user from the local administrators group, and the user wasn't a member. | None required. |
-| `System hostname does not match` | DNS isn't up to date, so the product connects to the wrong IP address. | Correct the DNS entry for the system. |
+| `System hostname does not match` | DNS isn't up to date, so the product connects to the wrong IP address. Alternatively, the AD attributes Computer Name (CN) and Computer (NetBIOS) Name of the computer don't match, which happens when the NetBIOS name is longer than 15 characters. | Run `ipconfig /all` on the system and compare the returned host name with the system name in the product. If they differ, correct the DNS entry. Otherwise, shorten the NetBIOS name to 15 characters. See Microsoft's [naming conventions in Active Directory](https://learn.microsoft.com/en-us/troubleshoot/windows-server/identity/naming-conventions-for-computer-domain-site-ou). |
 | `Kerberos authentication failed, could not issue ticket, check user/pass.` | The domain controller rejected the user name or password of the account that the product uses. | Verify the credentials of the scan or Protect service account, and unlock the account if it's locked out. |
 | `Kerberos encryption type negotiation failed (RC4/AES mismatch)` | The account has only RC4 keys but the domain controller requires AES, or the domain controller disabled RC4. | Check `msDS-SupportedEncryptionTypes` on the account and `SupportedEncryptionTypes` on the domain controller, and align them. |
 | `STATUS_ACCESS_DENIED`: A process has requested access to an object and has not been granted those access rights. | The service account authenticated, but doesn't have the required access. | Verify that the service account is in the local administrators group. See the following note. |
 | `STATUS_PASSWORD_RESTRICTION` (`0xc000006c`): Some password update rule has been violated, for example the password doesn't meet length criteria. | The OAM password complexity setting conflicts with the domain password policy. | Align the OAM password settings with the domain password policy. |
 | `STATUS_TRUSTED_RELATIONSHIP_FAILURE`: The logon request failed because the trust relationship between this workstation and the primary domain failed. | AD has no trust relationship with the system. This happens when someone deletes a computer from AD and adds it again. | On the system, leave the domain, restart, and join the domain again. |
 | `STATUS_NO_LOGON_SERVERS`: No logon servers are available to service the logon request. | The system can't reach a DC. | Fix network path problems such as the firewall, routing, or VPN. Restart the system. |
-| `STATUS_NOT_SUPPORTED` during a scan | A Microsoft update that mitigates an NTLM relay vulnerability blocks incoming NTLM traffic. See Microsoft's [KB5005413](https://support.microsoft.com/en-gb/topic/kb5005413-mitigating-ntlm-relay-attacks-on-active-directory-certificate-services-ad-cs-3612b773-4043-4aa9-b23d-b87910cd3429). | Set the policy **Network security: Restrict NTLM: Incoming NTLM traffic** to **Allow all**. Microsoft recommends auditing incoming NTLM traffic first. See [Network security: Restrict NTLM: Incoming NTLM traffic](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-incoming-ntlm-traffic). |
+| `STATUS_NOT_SUPPORTED` during a scan | A Microsoft update that mitigates an NTLM relay vulnerability blocks incoming NTLM traffic. See Microsoft's [KB5005413](https://support.microsoft.com/en-gb/topic/kb5005413-mitigating-ntlm-relay-attacks-on-active-directory-certificate-services-ad-cs-3612b773-4043-4aa9-b23d-b87910cd3429). The product shows the error as the system returns it. | Set the policy **Network security: Restrict NTLM: Incoming NTLM traffic** to **Allow all**. Microsoft recommends auditing incoming NTLM traffic first. See [Network security: Restrict NTLM: Incoming NTLM traffic](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-incoming-ntlm-traffic). Alternatively, switch the domain to Kerberos authentication, which requires TCP port 88. See [Choose the Windows authentication method](../configuration/domains-and-ad/add-a-domain.md#choose-the-windows-authentication-method). |
 | `SAMR SessionError: unknown error code: 0xc000a08b` | Microsoft Local Administrator Password Solution (LAPS) prevents password changes to the local Administrator (RID 500) account. Windows generates this error on the endpoint. To verify, check the LAPS operational log in Event Viewer under **Applications and Services Logs** > **Microsoft** > **Windows** > **LAPS** > **Operational**. | Prevent the LAPS GPO from applying to the system. As a workaround, disable OAM rotation of the local Administrator password. The product keeps the account disabled and manages an alternate administrator account. |
 | `SAMR SessionError: unknown error code: 0xc000030c` | Nobody set a password for the local Administrator (RID 500) account, so the password is blank. Windows generates this error on the endpoint. | Set a password for the local Administrator (RID 500) account. |
 | Error 9999: Connection reset by peer | File and Printer Sharing for Microsoft Networks is disabled, which blocks connections on port 445. | Enable File and Printer Sharing for Microsoft Networks on the system. |

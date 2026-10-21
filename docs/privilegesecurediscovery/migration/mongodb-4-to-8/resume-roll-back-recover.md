@@ -5,9 +5,7 @@ sidebar_position: 90
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the supported procedure and Support guidance for rolling back to MongoDB 4.0 after the application accepted writes on MongoDB 8.0 (before and after `retire`). The tool preserves the MongoDB 4.0 data but provides no rollback command. Evidence: s1.py `retire` docstring says rollback stays available, no command exists.
-
-TODO: Confirm how to remove an abandoned MongoDB 8.0 target (`<stack>_db8` or `<stack>_mongoN-8` and their volumes) before cutover. Evidence: none.
+TODO: Netwrix Support to confirm that customers may run the abandoned-target removal commands before this section is published.
 :::
 
 The correct recovery action depends on the stage at which the migration stopped. Find your stage in the following sections. If you can't determine the stage, preserve the logs and contact Netwrix Support.
@@ -42,7 +40,40 @@ Before cutover, the application still uses MongoDB 4.0, so an interrupted or fai
 
 3. Confirm a new validation summary with **Checks failed: 0**.
 
-If you can't complete `run`, leave the MongoDB 8.0 target in place for troubleshooting, and the application continues on MongoDB 4.0. To remove the target, use your standard Docker and storage administration process, or the steps that Netwrix Support provides.
+If you can't complete `run`, leave the MongoDB 8.0 target in place for troubleshooting, and the application continues on MongoDB 4.0. To remove the target, see [Remove an abandoned MongoDB 8.0 target](#remove-an-abandoned-mongodb-80-target).
+
+## Remove an abandoned MongoDB 8.0 target
+
+Use these steps only before cutover, when you decide not to continue the migration. The application still uses MongoDB 4.0, and these steps don't touch it. Don't run them after `cutover`.
+
+For a single-node deployment, remove the target service, and then its volumes:
+
+```bash
+sudo docker service rm s1_db8
+sudo docker volume rm s1_db8_data s1_db8_checkpoints
+```
+
+For a three-node cluster, remove the three target services from a manager node:
+
+```bash
+sudo docker service rm s1_mongo1-8 s1_mongo2-8 s1_mongo3-8
+```
+
+Then remove the data volume on each node that hosted a member, where `N` is the member number on that node:
+
+```bash
+sudo docker volume rm s1_mongoN-8_data
+```
+
+On the node where you ran `run`, also remove the checkpoint volume:
+
+```bash
+sudo docker volume rm s1_mongo8_checkpoints
+```
+
+Wait until the services are gone before you remove the volumes. Confirm with `sudo docker service ls | grep -i mongo`. A custom stack name replaces `s1` in each name.
+
+Remove the checkpoint volume too. A stale checkpoint can make a later `run --resume` skip collections.
 
 ## Recover from a failed cutover
 
@@ -104,7 +135,9 @@ s1 --multi-node mongo-upgrade finish-cutover
 
 The command asks for confirmation. To skip the prompt in automation, add `--yes` or `--non-interactive`.
 
-The command exits with `1` and changes nothing when the write path isn't fully switched to MongoDB 8.0. In that case, see [Cut over to MongoDB 8.0](./cut-over.md). It exits with `2` when the switch is serving but isn't durable, or when it still can't confirm that stopping MongoDB 4.0 is safe.
+The command exits with `1` and changes nothing when the write path isn't fully switched to MongoDB 8.0. In that case, see [Cut over to MongoDB 8.0](./cut-over.md). It exits with `2` only when it can't pin a setting in `/secureone/s1.env`, or when the stopped state isn't durable.
+
+A failed stale-reference scan or a remaining reference doesn't change the exit code. The command exits with `0` and prints `Cutover complete` followed by a message that the old database was deliberately not stopped. Don't rely on the exit code. Confirm that the output includes `Stopping old db...` and the sweep result described in [Cut over to MongoDB 8.0](./cut-over.md).
 
 ## Recover from a setting that couldn't be saved
 
@@ -132,9 +165,13 @@ See [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md#recover-from-a-fail
 
 ## Roll back
 
-* **Before cutover.** The application still uses MongoDB 4.0. Leave the migration unfinished or remove the target with Support guidance.
-* **After cutover.** The MongoDB 4.0 data remains, but stopped. After the application accepts writes on MongoDB 8.0, a rollback needs data reconciliation. It isn't an automated, one-command operation. Don't change replica counts, connection strings, or replica-set configuration without Netwrix Support guidance.
-* **After retire.** The tool keeps the MongoDB 4.0 data in an archive until you delete it, so a rollback remains possible until then. Contact Netwrix Support before you attempt it.
+* **Before cutover.** The application still uses MongoDB 4.0. Leave the migration unfinished, or remove the target. See [Remove an abandoned MongoDB 8.0 target](#remove-an-abandoned-mongodb-80-target).
+* **After cutover.** No command and no supported procedure rolls back to MongoDB 4.0 after the application accepted writes on MongoDB 8.0. Contact Netwrix Support. Don't change replica counts, connection strings, or replica-set configuration yourself.
+* **After retire.** No command and no supported procedure exists. Contact Netwrix Support. On a three-node cluster, no rollback procedure exists at all.
+
+:::warning
+A rollback after cutover can lose data. Before `retire`, the MongoDB 4.0 data stays as it was at the moment of cutover, so anything written on MongoDB 8.0 exists only on MongoDB 8.0. After `retire`, the archive is a snapshot from before cutover, so a rollback loses every write since cutover.
+:::
 
 ## Collect information for Netwrix Support
 
