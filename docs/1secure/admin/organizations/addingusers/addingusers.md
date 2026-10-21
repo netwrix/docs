@@ -88,13 +88,21 @@ Administrators have access to all tenancies regardless of the organization group
 :::
 
 
-**Step 5 –** Click Add.
+**Step 5 –** Click **Add**.
+
+If you enter an email address that isn't valid, 1Secure lists the invalid addresses in the message "The following email addresses are invalid: <addresses>". Correct them and click **Add** again.
 
 **To review main options and statuses:**
 
 **Step 1 –** To delete the user, select the **Bin icon** for that user.
 
 **Step 2 –** To edit the user data, select the **Edit icon** for that user.
+
+The Users list shows a dropdown filter only when it has more than one option. For example, if your tenant has no organization groups, the list shows no group filter.
+
+{/* TODO: confirm the default sort order of the Users list (Last Active or Role). The PR marks it unverified and blocking merge. */}
+
+The list hides the **Edit** and **Delete** icons for a user when 1Secure would reject the action. For example, you can't edit your own account or a user with a higher role than yours. The list also hides the **Edit** icon and the **Add Users** button when the organization isn't active.
 
 If the user received an invitation from your tenant and registered, the status is Verified.
 
