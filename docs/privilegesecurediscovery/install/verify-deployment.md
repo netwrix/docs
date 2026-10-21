@@ -9,7 +9,7 @@ TODO: Confirm the sign-in step. State the default user that `secureone.sh setup`
 
 TODO: Confirm what a healthy `docker stack services s1` shows on a new install: every service at its full replica count, for example `1/1`, and the expected number of services on a single node and on a cluster. Evidence: none; the test stack here runs under Docker Compose, not Swarm.
 
-TODO: Confirm that `sudo s1 database-status` on a healthy cluster shows one primary, two secondaries, and no replication lag, and on a single node shows the version `8.0`. Evidence: s1.py `database_status` prints the live `db.version()`; no cluster output seen.
+TODO: Confirm that `s1 database-status` on a healthy cluster shows one primary, two secondaries, and no replication lag, and on a single node shows the version `8.0`. Evidence: s1.py `database_status` prints the live `db.version()`; no cluster output seen.
 
 TODO: Confirm that `secureone.sh verify` is meant for customers to run after setup. Evidence: secureone.sh `verify` checks the `s1` tool, `s1.env` and the stack templates. It doesn't check that the services run.
 :::
@@ -63,7 +63,7 @@ A healthy API returns a JSON response with the message `pong`:
 Confirm which database the application uses and that it is reachable:
 
 ```bash
-sudo s1 database-status
+s1 database-status
 ```
 
 The output names the active database service and the MongoDB version, which is 8.0 on a new installation. On a cluster, the output also lists the replica set members and the replication lag. One member is the primary and the others are secondaries.

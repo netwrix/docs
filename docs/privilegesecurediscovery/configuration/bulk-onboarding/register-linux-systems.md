@@ -4,7 +4,7 @@ description: "Register a Linux system by calling the registration API with curl,
 sidebar_position: 40
 ---
 
-Registering a Linux system adds it to Netwrix Privilege Secure for Discovery and creates the service account that the product uses to manage it. You can register one system by calling the registration API, or register many systems from an Excel file with the Quickstart tool.
+Registering a Linux system adds it to Netwrix Privilege Secure for Discovery. The product connects with the registration account that you supply, and that account becomes the service account that the product uses to manage the system. If you set a domain Linux service account, the product uses that account instead. You can register one system by calling the registration API, or register many systems from an Excel file with the Quickstart tool.
 
 :::caution
 Always back up the `/etc/sudoers` file before you scan a Linux system or enable Scan mode on it. Scanning a Linux system flattens the `/etc/sudoers` file, regardless of the Protect mode setting. Flattening pulls all permissions from other sources, such as files in `/etc/sudoers.d`, into `/etc/sudoers` and disables sudo permissions from those sources.
@@ -13,7 +13,7 @@ Always back up the `/etc/sudoers` file before you scan a Linux system or enable 
 ## Prerequisites
 
 - The Linux endpoint meets the requirements in [Linux registration prerequisites](../endpoint-preparation/linux-registration-prerequisites.md).
-- An API key that links to an administrator, and the ID of that administrator. For the procedure, see [Create and manage API keys](../../integrations/api/api-key-management.md). For `curl`, the key can have the **Registration** permission. For the Quickstart tool, the key needs the **All API's** permission. If the linked user isn't an administrator, the product rejects the request with `User does not have access to this resource.`
+- An API key that links to an administrator, and the ID of that administrator. For the procedure, see [Create and manage API keys](../../integrations/api/api-key-management.md). For `curl`, the key can have the **Registration** permission. The Quickstart tool needs **All API's**, because it also reads data from the product. With a **Registration** key, the tool fails with `Scope not allowed by token`. If the linked user isn't an administrator, the product rejects the request with `User does not have access to this resource.`
 - A computer with `curl` that can reach the Privilege Secure for Discovery server.
 - The ID of each user or group to add as an administrator of the system, if you use the `admins` field. See the following section.
 
@@ -77,17 +77,19 @@ After the first registration succeeds, reuse the request as a template for more 
 | --- | --- |
 | `system` | Name of the Linux system. Required. Use the fully qualified domain name (FQDN) for a system that is joined to a domain. The domain must be one that you added to the product, or the request fails with `Unknown domain specified`. |
 | `os_type` | Set to `linux`. If you omit it, the API treats the system as Linux only when `nondomain` is `true`. |
-| `username`, `password` | User name and password of an account that exists on the endpoint and has sudo privileges. Privilege Secure for Discovery uses it to create its own service account. Required, unless a domain Linux service account is set for the domain. For more information, see [Register Linux systems with a domain service account](../endpoint-preparation/linux-simplified-registration.md). Without credentials, the request fails with `Must provide username and password for registration.` |
+| `username`, `password` | User name and password of an account that exists on the endpoint and has sudo privileges. Privilege Secure for Discovery connects with it and keeps it as the service account of the system, unless you set a domain Linux service account. Required for a system that isn't joined to a domain. For a domain system, you can leave it out if you set a domain Linux service account, and only an administrator can do so. For more information, see [Register Linux systems with a domain service account](../endpoint-preparation/linux-simplified-registration.md). Without credentials, the request fails with `Must provide username and password for registration.` |
 | `admins` | List of IDs of the users or groups to add as administrators. See [Find an account ID](#find-an-account-id). The Excel file uses a separate column for each ID. |
 | `persistent` | Comma-separated list of account names, without the domain, to mark as persistent. Use an empty string for none. |
 | `scan` | `true` to turn on scan mode for the system. The API doesn't turn it off. |
 | `secure` | `true` to turn on Protect mode with just-in-time administration (JITA) for the system. The API doesn't turn it off. |
 | `nondomain` | `true` if the system isn't joined to the Active Directory domain. If `false`, the system name must include the domain. |
-| `directory_bridging` | Directory bridging strategy: `secureone` (lightweight directory bridging), `centrify`, `powerbroker`, or `sssd`. The default is `secureone` for a system with `nondomain` set to `true`. Otherwise the default comes from the domain settings. |
+| `directory_bridging` | Directory bridging strategy: `secureone` (lightweight directory bridging), `centrify`, `powerbroker`, or `sssd`. A system with `nondomain` set to `true` uses `secureone` unless you set another value. A domain system takes the default strategy of its domain. The system's domain comes from its FQDN. |
 
 Linux user names and passwords are case sensitive.
 
 If the system is already in the inventory, the request registers it again. Only an administrator can change its `nondomain` or `directory_bridging` value this way.
+
+To change the directory bridging strategy of a registered system to `centrify`, `powerbroker`, or `sssd`, set the strategy and its domain together. In the Quickstart report, fill in both **Set Directory Bridging Strategy** and **Set Directory Bridging Domain**. See [Report and update systems](./report-and-update-systems.md#set-the-directory-bridging-strategy). On the **Grant Access** screen, the UI requires a domain for these strategies, too.
 
 ## Register many systems from an Excel file
 
@@ -99,7 +101,7 @@ The Quickstart tool reads an Excel file with one row for each system and registe
    | Column | Description |
    | --- | --- |
    | `system` | Host name of the Linux system. Use the FQDN for a system that is joined to a domain. |
-   | `username`, `password` | Credentials of the account that the tool uses to sign in and create the service account. |
+   | `username`, `password` | Credentials of the registration account. It must exist on the endpoint and have sudo privileges. It becomes the service account, unless you set a domain Linux service account. |
    | `admins[0]` | ID of a user or group to add as an administrator. Add more administrators with `admins[1]`, `admins[2]`, and so on. |
    | `persistent` | Comma-separated list of account names to mark as persistent. |
    | `scan` | `TRUE` to turn on scan mode. |

@@ -10,6 +10,8 @@ Netwrix Privilege Secure for Discovery sends the logs of its services to Fluentd
 
 The API, analytics engine, health reporter, Worker, Secondary Worker, Expire, Scanner, directory sync, internal API, and Windows bridge services use the Docker `fluentd` logging driver. The driver tags each message `docker.<container-name>` and sends it to the Fluentd service on the same node at `127.0.0.1:24224`. Fluentd listens on the loopback address only, so you don't open an inbound port for it. Fluentd then sends the messages to the destination in its configuration file.
 
+The port `24224` belongs to the local logging path and isn't the syslog port. The destination port is the port that your collector listens on, such as `514` for syslog or `8088` for a Splunk HTTP Event Collector. You set it in the `port` option of the output, and the node must be able to reach it. For the ports that the product uses, see [Ports and firewall](../../requirements/ports-and-firewall.md).
+
 The image includes the plugins for syslog (`remote_syslog`), Splunk HTTP Event Collector (`splunk_hec`), `concat`, `rewrite_tag_filter`, and `stdout_pp`.
 
 ## Prerequisites
@@ -20,7 +22,7 @@ The image includes the plugins for syslog (`remote_syslog`), Splunk HTTP Event C
 
 ## Configure Fluentd to forward to syslog
 
-The `fluentd` service reads `/secureone/conf/fluentd/fluent.conf` on the node. The default file prints the parsed logs to standard output. To forward them, replace its contents with a configuration that adds a syslog output.
+The `fluentd` service reads `/secureone/conf/fluentd/fluent.conf` on the node. The default file has a `<source>` for the forward input, a `<filter docker.**>` that parses the JSON body, and a `<match **>` that prints every message to standard output. It has no `<match docker.**>` section. To forward the logs, replace its contents with a configuration that adds a syslog output.
 
 1. Connect to the node over SSH.
 2. Back up the current configuration file.
@@ -93,9 +95,49 @@ The example forwards to a syslog server at `192.0.2.13` over TCP on port 514. Th
 | `program` | The program name in the syslog header. The example uses `secureone`. |
 | `hostname` | The host name in the syslog header. See [Hostname in the syslog output](#hostname-configuration). |
 | `severity` | The syslog severity of every forwarded message. The plugin default is `notice`. The severity doesn't follow the log level, so filter on the `levelname` or `level` field in the JSON body. |
-| `tls`, `ca_file`, `verify_mode` | Settings for syslog over TLS. Set `tls true`, give the path of the CA certificate bundle in `ca_file`, and set `verify_mode` to `2` to require a valid certificate. |
+| `tls`, `ca_file`, `verify_mode` | Settings for syslog over TLS. Set `tls true`, give the path of the CA certificate bundle in `ca_file` (a path inside the container), and set `verify_mode` to `2` to require a valid certificate. |
 
 For all options, see the [fluent-plugin-remote_syslog documentation](https://github.com/dlackty/fluent-plugin-remote_syslog).
+
+## Configure Fluentd to forward to Splunk
+
+To send the logs to a Splunk HTTP Event Collector (HEC) instead, use the `splunk_hec` output that the image includes. Follow the steps in [Configure Fluentd to forward to syslog](#configure-fluentd-to-forward-to-syslog), but use the following configuration in step 4. Replace `splunk.example.test` with the host name of your Splunk server and `<hec-token>` with the token of your HEC input.
+
+```text
+<source>
+  @type forward
+</source>
+<filter docker.**>
+  @type parser
+  time_key key3
+  format json
+  key_name log
+  reserve_data true
+</filter>
+<match docker.**>
+  @type copy
+  <store>
+    @type splunk_hec
+    protocol https
+    hec_host splunk.example.test
+    hec_port 8088
+    hec_token <hec-token>
+    <buffer>
+      flush_interval 5s
+    </buffer>
+  </store>
+  <store>
+    @type stdout_pp
+    pp true
+  </store>
+</match>
+<match **>
+  @type stdout_pp
+  pp true
+</match>
+```
+
+The `splunk_hec` output verifies the certificate of the Splunk server by default. Keep `protocol https`, and don't set `insecure_ssl true`, which turns verification off. The Splunk server needs a certificate that a public certificate authority signed. The `fluentd` service mounts only `fluent.conf` and the log folder, so a certificate bundle from a private authority isn't available to the `ca_file` option unless you add it to the service. If you don't set `sourcetype` in the output, the source type of the HEC token applies, so set it to `_json` on the token as described in [Parse events with the Splunk JSON source type](./splunk-json-source-type.md). For all options, see the [fluent-plugin-splunk-hec documentation](https://github.com/splunk/fluent-plugin-splunk-hec).
 
 ## Verify the configuration
 
@@ -119,13 +161,13 @@ sudo docker exec -it $(sudo docker ps --filter name=fluentd --quiet) fluent-gem 
 
 ## Services in the SIEM
 
-After you set up forwarding, the collector receives the messages of the services listed in [How log forwarding works](#how-log-forwarding-works). The `<match docker.**>` section matches every message that carries the `docker.` tag. The `single_value` format in the example sends only the JSON body of each message. To identify the service in the SIEM, use fields in that body: the Python services write `service` or `name`, and the API service writes `"name": "api"`. A store that sends the whole Fluentd record, such as a Splunk HTTP Event Collector store, also receives the `container_name` field that the Docker driver adds.
+After you set up forwarding, the collector receives the messages of the services listed in [How log forwarding works](#how-log-forwarding-works). The `<match docker.**>` section in the examples matches every message that carries the `docker.` tag. The `single_value` format in the example sends only the JSON body of each message. To identify the service in the SIEM, use fields in that body: the Python services write `service` or `name`, and the API service writes `"name": "api"`. A store that sends the whole Fluentd record, such as a Splunk HTTP Event Collector store, also receives the `container_name` field that the Docker driver adds.
 
 ## Hostname in the syslog output {#hostname-configuration}
 
-By default, the syslog header carries the host name of the node. Docker Swarm passes the node host name to the Fluentd container, so logs show the node name instead of a container ID. Correlation in the SIEM then uses a name you recognize. Fluentd resolves the host name in this order:
+With the example configuration, the syslog header carries the host name of the node. Docker Swarm passes the node host name to the Fluentd container, so logs show the node name instead of a container ID. Correlation in the SIEM then uses a name you recognize. Fluentd resolves the host name in this order:
 
-1. The `S1_NODE_HOSTNAME` environment variable, if it's set.
+1. The `S1_NODE_HOSTNAME` environment variable, if it's set. The default service definition doesn't set it.
 2. `Socket.gethostname`, the host name of the container, which Swarm sets to the node host name.
 
 The following example shows the syslog output for one message. The fields before the colon are the syslog priority (`<13>`), the time, the host name, and the program name.
@@ -134,7 +176,7 @@ The following example shows the syslog output for one message. The fields before
 <13>Oct 21 06:41:41 psd-node-01 secureone: {"asctime": "2026-01-01 00:00:00,000", "levelname": "INFO", "message": "test"}
 ```
 
-The body after the program name is the JSON object that the service wrote. To use a custom host name or IP address, set `S1_NODE_HOSTNAME` for the Fluentd service. The following directive in `fluent.conf` reads it.
+The body after the program name is the JSON object that the service wrote. To use a custom host name or IP address, set `S1_NODE_HOSTNAME` in the environment of the `fluentd` service, or replace the value of the `hostname` option with a fixed string. The `hostname` directive in the example reads the variable.
 
 ```text
 hostname "#{ENV['S1_NODE_HOSTNAME'] || Socket.gethostname}"

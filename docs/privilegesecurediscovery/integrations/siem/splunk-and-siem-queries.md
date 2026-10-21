@@ -13,7 +13,7 @@ The Splunk examples assume that Splunk parses each event as JSON, so every field
 Two services write most of the events in this page:
 
 - The Application Programming Interface (API) service writes sign-in, token, policy, and Just-In-Time Access (JITA) request events. Its events carry `name=api`.
-- The worker service grants and removes administrator privileges on systems. Its events carry `name=remediant` and `service=svc-worker`.
+- The worker services grant and remove administrator privileges on systems. Their events carry `name=remediant` and `service=svc-worker` (Worker) or `service=svc-worker-secondary` (Secondary Worker). The searches in this page use `service=svc-worker*` to match both.
 
 Searches that start with `name=api` return nothing for worker events, and the reverse is also true.
 
@@ -94,7 +94,7 @@ After a successful sign-in, the product issues a JSON Web Token (JWT) that authe
 index="<index>" name=api message="token create"
 ```
 
-Find tokens by the role of the user. The role is `superadmin` for the built-in account, or `admin`, `operator`, or `user`.
+Find tokens by the role of the user. The role is `superadmin` for the built-in account, or `admin` or `user`.
 
 ```text
 index="<index>" name=api message="token create" "authData.access.role"=admin
@@ -182,7 +182,7 @@ index="<index>" name=api (message="Extended session by*" OR message="User * exte
 Find the moments when the worker adds and removes administrator privileges. The message starts with the host name of the system:
 
 ```text
-index="<index>" name=remediant service=svc-worker ("Adding admin privileges" OR "Removing admin privileges")
+index="<index>" name=remediant service=svc-worker* ("Adding admin privileges" OR "Removing admin privileges")
 ```
 
 ### Measure JITA grant time {#measure-jit-access-time}
@@ -190,7 +190,7 @@ index="<index>" name=remediant service=svc-worker ("Adding admin privileges" OR 
 Measure how long the product takes to grant a session. Use this search to find slow privilege elevation. The API request event and the worker event share the request identifier: `request.id` in the API event and `queue._id` in the worker event.
 
 ```text
-index="<index>" ((name=api (message="Access request granted." OR message="User * requested access for user *")) OR (name=remediant service=svc-worker "Adding admin privileges"))
+index="<index>" ((name=api (message="Access request granted." OR message="User * requested access for user *")) OR (name=remediant service=svc-worker* "Adding admin privileges"))
 | eval request_id=coalesce('request.id', 'queue._id')
 | stats earliest(_time) AS requested, latest(_time) AS granted, count BY request_id
 | where count>=2

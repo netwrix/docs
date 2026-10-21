@@ -46,6 +46,8 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
+This procedure doesn't add your user to the `docker` group, so Docker commands need `sudo`. Run the registry sign-in and `secureone.sh` with `sudo -E`, which keeps your home directory. See [Configure registry access](./registry-access.md).
+
 ## Install the AWS CLI
 
 The AWS Command Line Interface (AWS CLI) version 2 authenticates with the Netwrix Amazon Elastic Container Registry (ECR) so that the host can pull the container images.

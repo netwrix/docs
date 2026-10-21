@@ -4,12 +4,6 @@ description: "Remove persistent administrator access for interactive Active Dire
 sidebar_position: 40
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that **Add/Update Account** with **Just-In-Time** sets an existing persistent group to non-persistent on every selected system, and that it doesn't add the group to a selected system that doesn't have it. Evidence: bulk_action/executors/add_update_account_policy_executor.py updates `persistent` on systems that already have the account and adds the account to the other selected systems; the filter in step 2 selects only systems that have the group.
-
-TODO: Confirm that **Account with access** for a group matches the systems that have the group directly in their account inventory. Evidence: the filter key is `admins.current.sid` (mgmtSystemsCtrl.js:257).
-:::
-
 After you enable [Freeze mode](../onboard-systems/freeze-mode.md), reduce persistent access in a risk-based way. Start with the groups that convey the most access. You can handle workstations and laptops separately from servers if that suits your organization. Removing persistent access for each group in turn limits lateral movement.
 
 ## Prerequisites
@@ -45,7 +39,7 @@ Remove a group's persistence from all machines at once. A single change date, su
 
    ![The Systems filters with the Account with access filter set to a group](/images/privilegesecurediscovery/domains-and-ad/domains-systems-account-filter.webp)
 
-3. Select the systems. You can select up to 1,000 systems at a time, so repeat the steps for more systems.
+3. Select the check box in the table header. If the filter matches more than 1,000 systems, select **Select all systems based on this filter**.
 4. Select **Bulk Actions**, select **Select Action**, and then select **Add/Update Account**.
 5. In **User or Group**, enter the same group. Set **Access Permission** to **Just-In-Time**, and select **Save**.
 
@@ -53,30 +47,32 @@ Remove a group's persistence from all machines at once. A single change date, su
 
 6. Select **Execute Bulk Action**, and follow the job on **Monitor** > **Jobs**.
 
-The action applies to Windows systems only. For Linux systems, use the Quickstart tool in the next section. The members of the group must now use Privilege Secure for Discovery on every system that you changed. Tell them that the change is done, and give them the training and the contact information for problems.
+On each selected system that already has the group in its account inventory, the action sets the group to non-persistent. The action applies to Windows systems only. For Linux systems, use the Quickstart tool in the next section. The members of the group must now use Privilege Secure for Discovery on every system that you changed. Tell them that the change is done, and give them the training and the contact information for problems.
 
 ## Remove persistence with Quickstart
 
-Use the Quickstart reporting tool for Linux systems or for more than 1,000 systems. Install it first. See [Install the Quickstart tools](../bulk-onboarding/install-the-quickstart-tools.md).
+Use the Quickstart reporting tool for Linux systems or to review the changes in Excel before you apply them. Install it first. See [Install the Quickstart tools](../bulk-onboarding/install-the-quickstart-tools.md).
 
 1. Run the report. It creates an Excel file with the **Computer Data** and **Admin List** sheets.
 
    ```bash
-   python reports.py --insecure
+   python reports.py
    ```
 
 2. On the **Admin List** sheet, filter the **user** column for the group, such as `Domain Admins`.
 3. In the **Persistent** column, the upload column at the right of the sheet, enter `FALSE` for each row. The lowercase **persistent** column shows the current value, and the upload ignores it.
-4. Remove the filters and any formatting, and save the file with a name that shows the change, such as `remove_persistence_<date>.xlsx`.
+4. Save the file with a name that shows the change, such as `remove_persistence_<date>.xlsx`. The upload skips rows that the filter hides, so you can leave the filter on.
 5. Preview the upload:
 
    ```bash
-   python reports.py --insecure --protect-mode-file remove_persistence_<date>.xlsx --dry-run
+   python reports.py --protect-mode-file remove_persistence_<date>.xlsx --dry-run
    ```
 
 6. When the preview shows the changes that you intend, run the command again without `--dry-run`.
 
-If Excel is slow, delete the rows for machines with no scan date. Sort the file by the `last_scanned` column and delete the rows together.
+If the tool stops with `Use --insecure option to ignore certificate checks`, the server uses a self-signed certificate. See [Report and update systems](../bulk-onboarding/report-and-update-systems.md#command-line-arguments) before you add `--insecure`.
+
+If Excel is slow, delete the **Admin List** rows for other accounts. A blank **Persistent** cell changes nothing, so you can also leave them.
 
 ## Tips
 

@@ -35,11 +35,11 @@ A rollout moves from visibility to enforcement in stages.
 1. Plan the deployment. Decide whether to use a single node or a three-node cluster, and decide how to recover from a serious failure. See [High availability and disaster recovery](./high-availability-and-disaster-recovery.md).
 2. Review the [requirements](../requirements/overview.md) and [install](../install/overview.md) the containers.
 3. Add the domain and the service accounts. See [Add a domain](../configuration/domains-and-ad/add-a-domain.md) and [Service accounts](../requirements/service-accounts.md).
-4. [Set up scan mode](../configuration/onboard-systems/set-scan-mode.md) and review the results on the [dashboard](../admin/dashboard.md).
+4. [Set up scan mode](../configuration/onboard-systems/set-scan-mode.md) and review the results on the [dashboard](../admin/dashboard.md) and on **Insight** > **Overview**.
 5. [Add users to Privilege Secure for Discovery](../configuration/onboard-systems/add-users-to-privilege-secure.md) before you enable protect mode.
 6. [Add the protect account to the local Administrators group](../configuration/onboard-systems/add-the-protect-account-to-local-administrators.md) on the systems to protect.
 7. [Add a test system to protect mode](../configuration/onboard-systems/add-a-test-system-to-protect-mode.md) to confirm that just-in-time access works as expected.
-8. [Add multiple systems to protect mode](../configuration/onboard-systems/add-multiple-systems-to-protect-mode.md). For a large deployment, use [bulk onboarding and reporting](../configuration/bulk-onboarding/bulk-onboarding-and-reporting.md).
+8. [Add multiple systems to protect mode](../configuration/onboard-systems/add-multiple-systems-to-protect-mode.md) with [Bulk Actions](../admin/systems/bulk-actions.md) on **Management** > **Systems**. For a large deployment, you can also use [bulk onboarding and reporting](../configuration/bulk-onboarding/bulk-onboarding-and-reporting.md).
 9. Optionally, roll out protect mode one group at a time. See [Freeze mode](../configuration/onboard-systems/freeze-mode.md).
 
 ## Next steps

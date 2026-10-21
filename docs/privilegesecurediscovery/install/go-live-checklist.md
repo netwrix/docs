@@ -71,11 +71,11 @@ Workstations are more numerous and change more often, so plan for support as wel
 - [ ] You divided the workstations into rollout groups. A geographic rollout is often the easiest.
 - [ ] You identified the service accounts that the workstations use, collected input from the owning teams, defined a process for missed accounts, and made the accounts persistent, where required.
 - [ ] You decided and scheduled the go-live dates.
-- [ ] You decided the policy for offline access management (OAM). See [Configure Offline Access Management passwords](../configuration/endpoint-preparation/oam-password-configuration.md). Decide the following:
+- [ ] You decided the policy for offline access management (OAM). See [Manage offline access to local administrator accounts](../admin/systems/offline-access-management.md#choose-a-policy). Decide the following:
   - Whether to disable the local built-in Administrator accounts.
   - Whether Privilege Secure for Discovery manages the passwords of the local built-in Administrator accounts.
-  - The name of the alternate administrator account. You can randomize part or all of the name.
-  - Whether just-in-time access (JITA) users get access.
+  - The name template of the alternate administrator account. A question mark in the template becomes a random letter or digit.
+  - Whether just-in-time access (JITA) and persistent users can reveal the passwords. See [Let non-administrators retrieve passwords](../admin/systems/offline-access-management.md#let-non-administrators-retrieve-passwords).
 - [ ] You tested access over a VPN.
 - [ ] You informed the service desk, and users know whom to contact for support.
 - [ ] You defined a hypercare process and assigned people to it.

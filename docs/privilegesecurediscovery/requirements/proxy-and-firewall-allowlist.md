@@ -4,14 +4,6 @@ description: "Allow the Netwrix, Ubuntu, Docker, AWS, and Microsoft hosts that a
 sidebar_position: 60
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the Ubuntu hosts that a 24.04 host needs during an install or upgrade. The list keeps the archive, regional mirror, EC2 mirror, and security hosts, and `esm.ubuntu.com` for hosts with Ubuntu Pro. It drops `www.ubuntu.com/usn` and `changelogs.ubuntu.com`, which the earlier ISO-based list included. Evidence: secureone.sh runs `apt-get` only to install Docker prerequisites and Python 3 when they are missing (lines 354-373).
-
-TODO: Confirm that the registry host (`176947481038.dkr.ecr.us-west-2.amazonaws.com`) and its S3 layer bucket are the only registry hosts in 26.09.1, and whether any customer needs a different AWS Region. Evidence: secureone.sh line 112 sets `S1_REPO_DOMAIN` to the us-west-2 host and lets an environment variable override it.
-
-TODO: Confirm whether Microsoft national clouds (for example, `login.microsoftonline.us` and `graph.microsoft.us`) are supported for Microsoft Entra ID. Evidence: the code calls `login.microsoftonline.com` and `graph.microsoft.com` only.
-:::
-
 Some organizations route internet traffic through a proxy server. The hosts for Netwrix Privilege Secure for Discovery download packages and container images from external locations when you install and upgrade the product. Make the following hosts reachable by adding specific proxy entries or by opening a tunnel for the installation period. Do the same for each upgrade.
 
 ## Netwrix hosts
@@ -28,6 +20,8 @@ https://prod-<region>-starport-layer-bucket.s3.<region>.amazonaws.com
 https://api.ecr.<region>.amazonaws.com
 ```
 
+The `secureone.sh` script and the `s1` tool use the `us-west-2` registry by default. The `S1_REPO_DOMAIN` value in `/secureone/s1.env` sets the registry domain. If Netwrix Support directs you to use another registry domain, allow that host and its matching layer bucket instead.
+
 ## Ubuntu and Docker hosts
 
 - `http://archive.ubuntu.com/ubuntu`
@@ -37,7 +31,7 @@ https://api.ecr.<region>.amazonaws.com
 - `https://esm.ubuntu.com` (for hosts that use Ubuntu Pro)
 - `https://download.docker.com/linux/ubuntu`
 
-Instead of listing each Ubuntu host, you can allow `ubuntu.com` and its subdomains.
+The `setup` command installs Docker and Python 3 with `apt-get` when they're missing, so the host needs the Ubuntu package sources that its apt configuration lists, and the Docker repository. Instead of listing each Ubuntu host, you can allow `ubuntu.com` and its subdomains.
 
 ## AWS CLI host
 
@@ -47,7 +41,7 @@ Allow this host to download the AWS Command Line Interface (AWS CLI) installer. 
 
 ## Microsoft Entra ID hosts
 
-Allow these hosts only if you use the Microsoft Entra ID integration. The product connects to them while it runs, and not only during an install.
+Allow these hosts only if you use the Microsoft Entra ID integration. The product connects to them while it runs, and not only during an install. The product uses these public cloud hosts for the integration.
 
 - `https://login.microsoftonline.com`
 - `https://graph.microsoft.com`

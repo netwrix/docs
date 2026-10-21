@@ -16,13 +16,14 @@ If your deployment still uses MongoDB 4.0, complete [Upgrade MongoDB 4.0 to 8.0]
 
 ## Where to go next
 
-- [Release notes](./release-notes/whats-new.md): Find new features and fixes.
-- [Getting started](./getting-started/overview.md): Learn what the product does, its key concepts, and how a rollout proceeds.
+- [What's new](./release-notes/whats-new.md): Find new features and fixes for each release.
+- [Getting started](./getting-started/overview.md): Learn the key concepts and how a rollout proceeds.
 - [Requirements](./requirements/overview.md): Check the host and network prerequisites before you install.
-- [Install](./install/overview.md): Deploy the containers on a single node or a three-node cluster.
+- [Install and update](./install/overview.md): Deploy the containers on a single node or a three-node cluster.
 - [Migration](./migration/mongodb-4-to-8/overview.md): Move an existing deployment from MongoDB 4.0 to MongoDB 8.0.
-- [Configuration](./configuration/domains-and-ad/add-a-domain.md): Add domains and onboard systems.
+- [Configuration](./configuration/domains-and-ad/add-a-domain.md): Add domains and onboard systems to scan and protect modes.
 - [Administration](./admin/dashboard.md): Review the dashboard and manage systems.
 - [Integrations](./integrations/microsoft-entra-id/overview.md): Connect the product to Microsoft Entra ID and your security tools.
 - [Troubleshooting](./troubleshooting/common-ui-errors.md): Diagnose and fix common problems.
+- [Appendix](./appendix/secureone-script-reference.md): Look up the deployment script commands and the legacy ISO appliance procedures.
 - [Knowledge base](./kb/index.md): Browse troubleshooting guides and configuration articles.

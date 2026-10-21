@@ -20,9 +20,7 @@ Some organizations question the security of using a single Active Directory (AD)
   4. Add the accounts to **Deny log on locally**.
   5. Add the accounts to **Deny log on through Remote Desktop Services**. On older versions of Windows, this policy is named **Deny log on through Terminal Services**.
 
-The deny log on policies stop the accounts from signing in at the console or through Remote Desktop, so Windows doesn't cache their credentials.
-
-![The User Rights Assignment policies in Group Policy, with the deny log on policies for the service accounts](/images/privilegesecure/4.2/discovery/5773725444759_image__18__746x366.webp)
+The deny log on policies stop the accounts from signing in at the console or through Remote Desktop, so Windows doesn't cache their credentials. For example, add `CORP\svc-scan` and `CORP\svc-protect` to both policies.
 
 ## Kerberos authentication to Windows systems
 

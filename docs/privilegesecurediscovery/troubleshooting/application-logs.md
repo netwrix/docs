@@ -14,7 +14,7 @@ Netwrix Privilege Secure for Discovery writes some service logs to local files o
 | Fluentd output | All services except the database, the message queue, and Fluentd itself | Run `s1 logs`. |
 | Docker service logs | The database and message queue | Run `docker service logs <stack>_<service>`, for example `docker service logs s1_db`. |
 
-The web and API service doesn't write a local log file. To see its events, stream the Fluentd output. The directory sync service, which synchronizes your domains, also doesn't write a local log file by default.
+The web and API service doesn't write a local log file. To see its events, stream the Fluentd output. The directory sync service (`ldapsync`), which synchronizes your domains and Microsoft Entra ID tenants, doesn't write a local log file either, so use the Fluentd output for it too.
 
 ## Set the log level
 
@@ -79,7 +79,7 @@ For a description of the fields in each service log, see [Logs](../integrations/
 
 ## Stream the Fluentd output
 
-Fluentd receives the events of the services that use the Docker `fluentd` logging driver and prints them as color-coded JSON. To follow the events, run the following command on a manager node:
+Fluentd receives the events of the services that use the Docker `fluentd` logging driver and prints them as color-coded JSON. The command reads the Docker service logs of the `fluentd` service, so it works only on a swarm manager node. Run it without `sudo`, because the launcher calls `sudo` itself. To follow the events, run the following command:
 
 ```bash
 s1 logs

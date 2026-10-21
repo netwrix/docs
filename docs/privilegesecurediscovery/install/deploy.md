@@ -5,15 +5,9 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that `sudo -E` keeps the HOME of the calling user, or state which user's Docker configuration `secureone.sh` reads for the registry login. Evidence: none.
-
-TODO: Confirm that the bundle ships only the two files in the zip (`secureone.sh`, `secureone.tar.gz`) with no other contents at 26.09.1. Evidence: none.
-
 TODO: Confirm that running `setup` again on a node after a failed or interrupted run is safe, and state what to do after a failure. Evidence: the script only promises that a failed `s1` tool step leaves the application deployed and prints the command to re-run.
 
-TODO: Confirm the sudoers change. `update-sudoers` comments out `Defaults use_pty` in `/etc/sudoers`; state why the product needs it. Evidence: secureone.sh:1773-1776.
-
-TODO: Confirm the bridge range. `update-network` sets `bip` to `169.254.47.1/24` in `/etc/docker/daemon.json`; confirm that it is fixed and that it restarts Docker. Evidence: secureone.sh:1815-1829.
+TODO: Confirm why the product needs `Defaults use_pty` commented out in `/etc/sudoers`. Evidence: secureone.sh:1773-1776 makes the change without a stated reason.
 :::
 
 This page covers how to download the Netwrix Privilege Secure for Discovery quickstart bundle from the Netwrix releases server, distribute it to every node, and run the deployment script. The same script upgrades an existing deployment and removes a deployment before a reinstall. For every command and option, see the [secureone.sh script reference](../appendix/secureone-script-reference.md).
@@ -26,7 +20,7 @@ A future release will update the backend to Python 3.13 and supported library ve
 
 - Every node meets the requirements in [Requirements](../requirements/overview.md).
 - Every node has the operating system prerequisites installed. See [Install host prerequisites](../requirements/host-prerequisites.md).
-- Every node has signed in to the Netwrix container registry. See [Configure registry access](../requirements/registry-access.md).
+- Every node has signed in to the Netwrix container registry, as the user that runs the script. See [Configure registry access](../requirements/registry-access.md).
 - You can sign in to each node over SSH with an account that can run `sudo`.
 - You know the release to install. See the [release notes](../release-notes/whats-new.md). The release number has the form `<major.minor>.<patch>`, for example `26.09.1`, where `<major.minor>` is `26.09`.
 
@@ -51,9 +45,13 @@ A future release will update the backend to Python 3.13 and supported library ve
    wget https://releases.netwrix.com/products/privilegesecure-discovery/26.09/privilegesecure-discovery-quickstart-26.09.1.zip
    ```
 
+:::note
+This bundle deploys the product. The Quickstart tools, which export reports and push bulk changes, are a different download named `privilegesecure-discovery-quickstart-tools-<version>.zip`. See [Install the Quickstart tools](../configuration/bulk-onboarding/install-the-quickstart-tools.md).
+:::
+
 ## Extract the bundle
 
-The archive contains two files: `secureone.sh` and `secureone.tar.gz`. The setup script looks for `secureone.tar.gz` in the directory you run it from, so keep both files together in one directory on every node. This page uses your home directory.
+The archive contains exactly two files: `secureone.sh` and `secureone.tar.gz`. The setup script looks for `secureone.tar.gz` in the directory you run it from, so keep both files together in one directory on every node. This page uses your home directory.
 
 1. Extract the archive on the primary node.
 
@@ -85,7 +83,7 @@ The setup script creates the `/secureone/` directory to store the deployment con
 
 ## Run the deployment script
 
-All deployment operations use `secureone.sh`. Run the script as root with `sudo -E` so that the script keeps your environment, including your home directory, where Docker stores the registry sign-in that you made earlier.
+All deployment operations use `secureone.sh`. Run the script as root with `sudo -E`. The `-E` option keeps your environment, including `HOME`, so the script reads the Docker registry sign-in that you saved in your own `~/.docker` directory. Plain `sudo` and `sudo -i` reset `HOME` to `/root`, where the script finds no sign-in and the image pull fails.
 
 ### What setup changes on the host
 

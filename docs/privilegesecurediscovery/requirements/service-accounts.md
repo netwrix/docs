@@ -18,7 +18,7 @@ For the account hardening that applies to all of them, see [Service account secu
 The `ldapsync` service uses this account to connect to the configured domain controller and continuously synchronize the information in AD. Set the account in the domain settings, as follows:
 
 - Set **Directory Authentication Method** to **Simple Bind**, which is the default. Enter the account in the `DOMAIN\Username` format in **Bind DN**, and its password in **Bind Password**.
-- Set **Directory Authentication Method** to **SASL: Kerberos**. The field is then named **Kerberos User**. Enter the account in the `user@REALM` format.
+- Set **Directory Authentication Method** to **SASL: Kerberos**. The **Bind DN** field then becomes **Kerberos User**. Enter the account in the `user@REALM` format.
 
 ![The Directory Authentication Method set to Simple Bind, with the Bind DN and Bind Password fields](/images/privilegesecurediscovery/requirements/svcacct-bind-dn.webp)
 
@@ -60,8 +60,14 @@ The **Default Policies** section sets the starting policy for new systems.
 
 ## Linux Service Account
 
-Linux systems use one account for both scan and protect modes. Enter it as **Scan & Protect Mode Account**, in the `DOMAIN\Username` format for a domain account or as `Username` for a local account, and enter its password. For the sudo and SSH requirements of this account, see [Linux registration prerequisites](../configuration/endpoint-preparation/linux-registration-prerequisites.md).
+Linux systems use one account for both scan and protect modes. In **Scan & Protect Mode Account**, enter the user name in **Username (Domain or Local)** and the password in **Password**. The format of the user name decides who creates the account:
 
+| Format | Meaning |
+| --- | --- |
+| `DOMAIN\Username` | A domain account. The account must already exist, and the product doesn't create it. |
+| `Username` | A local account. The product creates it on each system, or uses it if it already exists. |
+
+For the sudo and SSH requirements of this account, see [Linux registration prerequisites](../configuration/endpoint-preparation/linux-registration-prerequisites.md). To set one account for every Linux system in a domain, see [Register Linux systems with a domain service account](../configuration/endpoint-preparation/linux-simplified-registration.md).
 
 ![The Linux Service Account with the Scan & Protect Mode Account username and password](/images/privilegesecurediscovery/requirements/svcacct-linux-account.webp)
 

@@ -5,22 +5,12 @@ sidebar_position: 5
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that `s1 db` runs `mongosh` interactively on a MongoDB 8.0 deployment and that `db.stats()` and `db.systems.countDocuments({})` return results there. Evidence: s1.py `mongo_shell_bin` selects `mongosh` when present; no test output seen.
-
-TODO: Confirm the `rs.status()` and `rs.hello()` commands in the replica set section run unchanged in `mongosh` against the MongoDB 8.0 image. Evidence: none; `rs.isMaster()` is deprecated in `mongosh`, so this page uses `rs.hello()`.
+TODO: Confirm that `rs.status()` runs unchanged in `mongosh` against a three-member MongoDB 8.0 replica set. Evidence: `db.stats()` and `rs.hello()` ran in `mongosh` on a standalone MongoDB 8.0 test container; no replica set was available.
 
 TODO: Dev confirmed that the replica set is `secureone8` after `s1 mongo-upgrade retire`, and that `s1 db` and `s1 database-status` look for `secureone`. Remove the note when a release fixes it. Evidence: s1.py:6729 and :1164.
-
-TODO: Confirm that customers are expected to run `yarn run migrator up onprem` inside the API container. Evidence: secureone.sh:1717 prints the command when migrations must run on the API node.
-
-TODO: Confirm the Docker log-driver size limits in the stack files for the log limits table. Evidence: none; values carried over from the previous version of this page.
-
-TODO: Confirm that only ports 443 and 80 are published on the swarm, so the connectivity check no longer looks for 5672 and 24224. Evidence: none; the earlier check looked for 5672 and 24224.
-
-TODO: Confirm that `nc` exists in the API container image for the connectivity checks. Evidence: none.
 :::
 
-Use the commands on this page to inspect a running Netwrix Privilege Secure for Discovery deployment and to find the cause of common failures. To confirm that a new deployment is healthy, see [Verify the deployment](../install/verify-deployment.md). Run all commands on a swarm manager node unless a section says otherwise.
+Use the commands on this page to inspect a running Netwrix Privilege Secure for Discovery deployment and to find the cause of common failures. To confirm that a new deployment is healthy, see [Verify the deployment](../install/verify-deployment.md). Run all commands on a swarm manager node unless a section says otherwise. Run `s1` without `sudo`, because the launcher calls `sudo` itself.
 
 ## Identify the services
 
@@ -38,7 +28,7 @@ For the service names, replica set, and shell that apply in each state, see [Mon
 To see which state applies, run the following command:
 
 ```bash
-sudo s1 database-status
+s1 database-status
 ```
 
 The command prints the active database service and the MongoDB version that the application uses. For the migration procedure, see [Upgrade MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md).
@@ -126,12 +116,14 @@ Use the following flags to control the output:
 | `--timestamps` | Includes timestamps. |
 | `--no-task-ids` | Produces cleaner output when a service has multiple replicas. |
 
-To read the log files that Fluentd writes to disk:
+Fluentd prints the records and doesn't write them to disk. The Expire, Scanner, Worker, and Secondary Worker services also write local log files. To read them:
 
 ```bash
 ls /secureone/data/logs/
 tail -f /secureone/data/logs/<logfile>
 ```
+
+For the file names and for the `s1 logs` command, see [View application logs](./application-logs.md).
 
 ## Open a shell in a container
 
@@ -160,7 +152,7 @@ Use the `s1` tool instead of hand-typed `docker exec` commands. The tool selects
 Check the database status:
 
 ```bash
-sudo s1 database-status
+s1 database-status
 ```
 
 On a cluster, the output also lists the replica set members and the replication lag.
@@ -168,72 +160,60 @@ On a cluster, the output also lists the replica set members and the replication 
 Open a database shell:
 
 ```bash
-sudo s1 db
+s1 db
 ```
 
 At the shell prompt, run a command such as the following:
 
 ```javascript
 db.stats()
-db.systems.countDocuments({})
+db.getCollectionNames()
 ```
 
 On a cluster, the replica set is `secureone`, with the members `mongo1:27017`, `mongo2:27017`, and `mongo3:27017`. All three members must run before the API connects. To check the replica set from the shell that `s1 db` opens, run `rs.status()` and `rs.hello()`.
 
 :::note
-After a migration to MongoDB 8.0, the cluster replica set is named `secureone8`, and the connection string uses `replicaSet=secureone8`.
+After a migration to MongoDB 8.0, the cluster replica set has the name `secureone8`, and the connection string uses `replicaSet=secureone8`.
 :::
 
 ## Check the message queue
 
-1. Open a shell in the `mq` container.
+1. List the queues, message counts, and consumers.
 
    ```bash
-   docker exec -it $(docker ps -q -f name=s1_mq) bash
+   docker exec $(docker ps -q -f name=s1_mq) rabbitmqctl list_queues name messages consumers
    ```
 
-2. List the queues, message counts, and consumers.
+   The output lists the `worker-primary` and `worker-secondary` queues, which carry the requests for the `worker` and `worker-secondary` services, and a `hello` queue.
+
+2. Check the node health.
 
    ```bash
-   rabbitmqctl list_queues name messages consumers
+   docker exec $(docker ps -q -f name=s1_mq) rabbitmqctl status
    ```
 
-3. Check the node health.
-
-   ```bash
-   rabbitmqctl status
-   ```
-
-4. Check whether the `hello` queue, which the `worker`, `scanner`, and `expire` services use, has a backlog.
-
-   ```bash
-   rabbitmqctl list_queues name messages | grep hello
-   ```
-
-A large message count in the `hello` queue with no consumers usually means that `worker` or `scanner` is down.
+A growing message count in `worker-primary` or `worker-secondary` with no consumers means that the `worker` or `worker-secondary` service is down. See [Check the stack and services](#check-the-stack-and-services).
 
 ## Check connectivity
 
 Check that the HTTP endpoint responds and that the published ports are bound:
 
 ```bash
-curl -s http://localhost:80/
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:80/
 ss -tlnp | grep -E ':443|:80'
 ```
+
+The API service publishes ports 443 and 80. The `fluentd` service publishes port 24224 on the loopback address only.
 
 From inside the API container, check the connection to other services:
 
 ```bash
 # Check that the API container can reach the message queue
-docker exec -it $(docker ps -q -f name=s1_api) sh -c \
-  'nc -zv mq 5672 && echo "mq reachable"'
-
-# Check that the API container can reach windows-bridge-proxy
-docker exec -it $(docker ps -q -f name=s1_api) sh -c \
-  'nc -zv windows-bridge-proxy 80 && echo "proxy reachable"'
+docker exec $(docker ps -q -f name=s1_api) node -e \
+  'require("net").connect(5672, "mq").on("connect", () => { console.log("mq reachable"); process.exit(0); }).on("error", (e) => { console.log(e.message); process.exit(1); })'
 ```
 
-To confirm that the application reaches the database, run `sudo s1 database-status`.
+To confirm that the application reaches the database, run `s1 database-status`.
 
 ## Check resource usage
 
@@ -250,7 +230,7 @@ du -sh /secureone/data/db/
 ```
 
 :::note
-The `/secureone/data/db/` directory holds the MongoDB 4.0 data. After a migration to MongoDB 8.0, the live data is in a Docker volume, and the directory no longer shows the live database size.
+The `/secureone/data/db/` directory holds the live database on a new installation and on a deployment that hasn't migrated. After a migration from MongoDB 4.0 to 8.0, the live data is in a Docker volume, and the directory no longer shows the live database size.
 :::
 
 Docker limits the log file size for each component:
@@ -320,10 +300,10 @@ docker service ps s1_fluentd --no-trunc
 
 ### Migrations fail after a deployment
 
-Check the `s1_api` logs for the migration that failed before you take further action. To run the migrations again, run the following command on the node that hosts the `s1_api` task:
+Check the `s1_api` logs for the migration that failed before you take further action. To check the migration state, run `s1 migrate status`. To run the pending migrations again, run the following command on the node that hosts the `s1_api` task:
 
 ```bash
-docker exec -it $(docker ps -q -f name=s1_api) yarn run migrator up onprem
+s1 migrate apply
 ```
 
 If the migrations still fail, contact Netwrix Support.
@@ -349,7 +329,7 @@ Confirm the following:
 2. The replica set has a primary.
 
    ```bash
-   sudo s1 database-status
+   s1 database-status
    ```
 
 3. Each node carries its Swarm node labels.

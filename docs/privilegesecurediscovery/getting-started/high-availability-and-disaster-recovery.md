@@ -5,7 +5,7 @@ sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Define the supported disaster recovery (DR) approach for customers, such as a standby deployment restored from a database backup. Evidence: no backup, restore, or DR tooling in the application, deployment, or infrastructure repositories (r05-backup-dr.md).
+TODO: Define the supported disaster recovery (DR) approach for customers, such as a standby deployment restored from a database backup. Evidence: no backup, restore, or DR tooling in the application, deployment, or infrastructure repositories.
 
 TODO: Confirm that a three-node cluster continues to run without interruption when any one node fails, including the MongoDB election time. Evidence: docker-stack.prod.cluster.yml defines mongo1 to mongo3 with --replSet secureone; failover timing not documented.
 :::
@@ -23,7 +23,7 @@ A single node provides no high availability. Plan for recovery from a backup.
 
 ## High availability
 
-A three-node cluster uses Docker Swarm. A swarm needs an odd number of nodes so that a majority of nodes can agree on the cluster state. With three nodes, any one node can fail and the product continues to run without interruption. For more information, see the Docker documentation on [administering a swarm](https://docs.docker.com/engine/swarm/admin_guide/).
+A three-node cluster uses Docker Swarm. A swarm needs an odd number of nodes so that a majority of nodes can agree on the cluster state. With three nodes, any one node can fail and the product continues to run. For more information, see the Docker documentation on [administering a swarm](https://docs.docker.com/engine/swarm/admin_guide/).
 
 Place the three nodes of a cluster in the same location. The nodes exchange a large amount of traffic to stay synchronized, and nodes at different sites add latency and risk network interruptions.
 

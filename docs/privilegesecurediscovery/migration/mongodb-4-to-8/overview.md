@@ -21,7 +21,7 @@ MongoDB 4.0 will no longer be supported and the backend will move to Python 3.13
 Run the following command on the primary node, or on any node of a cluster:
 
 ```bash
-sudo s1 database-status
+s1 database-status
 ```
 
 The output names the active database service and the live MongoDB version. To see the services too, run `docker service ls | grep -i mongo`. Match the result to the following table.

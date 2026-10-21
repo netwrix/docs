@@ -38,7 +38,7 @@ On a cluster's secondary nodes, which have no `docker-stack.yml` file, add the `
 
 ## Run the tool
 
-Run `s1` as the user that deploys the product, without `sudo`. The launcher calls `sudo` itself. The tool authenticates to the registry with the AWS credentials in the `~/.aws` directory of the user who runs it, so run `aws configure` as that same user. See [Configure registry access](../requirements/registry-access.md).
+Run `s1` as the user that deploys the product, without `sudo`. The launcher calls `sudo -E docker run` itself, so the user needs `sudo` rights but doesn't type `sudo`. Don't run `sudo s1`: plain `sudo` resets `HOME` to `/root`, and the tool then looks for the AWS credentials and the Docker sign-in in the root user's home directory instead of yours. The tool authenticates to the registry with the AWS credentials in the `~/.aws` directory of the user who runs it, so run `aws configure` as that same user. See [Configure registry access](../requirements/registry-access.md).
 
 The tool runs in the Docker Swarm. Run it on a node where `docker node ls` works. To display all commands and options, run:
 
@@ -135,7 +135,7 @@ The following commands cover less frequent tasks.
 | `s1 mongo-upgrade check`, `run`, `status`, `cutover`, `finish-cutover`, `retire` | Move the database from MongoDB 4.0 to 8.0. Follow [Upgrade MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md) instead of running these commands on their own. |
 | `s1 deploy`, `s1 undeploy` | Deploy the stack from `/secureone/docker-stack.yml`, or remove it. |
 | `s1 pull <service> --version <version>` | Pulls the image of one or more services. Without `--version`, the command pulls the `latest` tag. The `--all` option pulls every service image. |
-| `s1 docker-daemon-check`, `docker-daemon-validate`, `docker-daemon-configure` | Check or set the Docker daemon limits that the `windows-bridge-proxy` service needs in `/etc/docker/daemon.json`. The `configure` command accepts `--dry-run`, and needs `sudo`. |
+| `s1 docker-daemon-check`, `docker-daemon-validate`, `docker-daemon-configure` | Check or set the Docker daemon limits that the `windows-bridge-proxy` service needs in `/etc/docker/daemon.json`. The `configure` command accepts `--dry-run`. Run it without `sudo`, like every other `s1` command, because the tool container runs as root. |
 
 Before `s1 deploy` runs, it checks the Docker daemon limits and the database state. If Docker needs a restart, the command prints `sudo systemctl restart docker`.
 
@@ -147,7 +147,7 @@ To change the tool to another release, run `secureone.sh install-cli --version <
 
 ### The image pull is denied
 
-If the installation fails with `Could not pull` followed by an image name, or Docker reports `pull access denied ... repository does not exist or may require 'docker login'`, the node has no sign-in to the Netwrix container registry, or the registry doesn't hold that release. Sign in as the same user that runs the script, and then run the installation again:
+If the installation fails with `Could not pull` followed by an image name, or Docker reports `pull access denied ... repository does not exist or may require 'docker login'`, the node has no sign-in to the Netwrix container registry, or the registry doesn't hold that release. Sign in as the same user that runs the script, with `sudo -E` so that Docker saves the sign-in in your home directory. Then run the installation again:
 
 ```bash
 aws ecr get-login-password --region us-west-2 \

@@ -257,9 +257,9 @@ Use these columns on the **Computer Data** sheet for Linux systems. The product 
 | Column | Values |
 | --- | --- |
 | **Set Directory Bridging Strategy** | `secureone` (lightweight directory bridging), `centrify`, `powerbroker`, or `sssd`. Enter the value in lowercase. |
-| **Set Directory Bridging Domain** | The fully qualified domain name (FQDN) of a domain that you added to the product. Required for `centrify`, `powerbroker`, and `sssd`. |
+| **Set Directory Bridging Domain** | The fully qualified domain name (FQDN) of a domain that you added to the product. Fill it in on every row where the strategy is `centrify`, `powerbroker`, or `sssd`. |
 
-For `centrify`, `powerbroker`, and `sssd`, the product rejects a domain that it doesn't know with `Invalid domain specified for the system`. For `secureone`, the product treats the system as not joined to the domain and ignores the domain cell.
+The `centrify`, `powerbroker`, and `sssd` strategies need a domain. If the domain cell is blank or names a domain that the product doesn't know, the product rejects the change with `Invalid domain specified for the system`. The **Grant Access** screen requires a domain for these strategies, too. For `secureone`, the product treats the system as not joined to the domain and ignores the domain cell.
 
 ## Assign a sudoers file to Linux systems
 

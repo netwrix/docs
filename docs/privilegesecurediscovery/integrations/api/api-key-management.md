@@ -11,7 +11,7 @@ An API key lets a script or tool call the Netwrix Privilege Secure for Discovery
 Each key has a unique name, a list of linked users, and a permission setting.
 
 - **Linked users:** The key can sign in only as one of its linked users. The access token that the key produces carries the role of that user, so the key can do what the user can do. A key linked to a user with the User role can't create or revoke API keys, for example. Link the key to the least privileged user that can do the job.
-- **Permissions:** **All API's** lets the key call every endpoint that the linked user can call. **Registration** limits the key to the endpoint that registers computers, `POST /api/v1/computers/register`. Use **Registration** for keys that you give to onboarding scripts.
+- **Permissions:** **All API's** lets the key call every endpoint that the linked user can call. **Registration** limits the key to the endpoint that registers computers, `POST /api/v1/computers/register`. Use **Registration** for keys that you give to onboarding scripts that call the registration endpoint directly. The Quickstart tools need **All API's**: with a **Registration** key, they fail with `Scope not allowed by token`.
 - **Name:** The name must be unique. You can't reuse the name of a revoked key, because the product keeps the record of a revoked key.
 
 ## Create an API key in the interface

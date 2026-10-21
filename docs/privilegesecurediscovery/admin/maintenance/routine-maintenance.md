@@ -15,7 +15,7 @@ After you deploy Netwrix Privilege Secure for Discovery, perform the following t
 | [Check database health](#check-database-health) | Weekly |
 | [Plan for updates](#plan-for-updates) | At least quarterly |
 
-The commands on this page use the `s1` helper tool. To install it, see [Install the s1 CLI helper utility](../../install/s1-cli-helper.md).
+The commands on this page use the `s1` helper tool. Run `s1` without `sudo`, because the launcher calls `sudo` itself. To install the tool, see [Install the s1 CLI helper utility](../../install/s1-cli-helper.md).
 
 ## Check service status
 
@@ -25,7 +25,7 @@ The commands on this page use the `s1` helper tool. To install it, see [Install 
    s1 status
    ```
 
-   The command lists every service in the Docker stack with its replica count, current and desired state, node, version, and ports. Each service shows its running replicas over its desired replicas, such as `1/1`. By default, the `windows-bridge` service runs six replicas and shows `6/6`.
+   The command lists every service in the Docker stack with its replica count, current and desired state, node, version, and ports. Each service shows its running replicas over its desired replicas. Most services show `1/1`. By default, the `windows-bridge` service runs six replicas and shows `6/6`.
 
 1. List the nodes by running the following command:
 
@@ -39,7 +39,7 @@ Investigate any service that doesn't show its full replica count, and any node t
 
 ## Check disk space
 
-The deployment stores its data under `/secureone/data` on each node. The `db` directory holds the database, and the `logs` directory holds the service logs and Fluentd files. Service log files rotate at 10 MB and keep five older files for each service, but the database grows with your inventory and history.
+The deployment stores its data under `/secureone/data` on each node. The `db` directory holds the database, and the `logs` directory holds the local service log files. Service log files rotate at 10 MB and keep five older files for each service, but the database grows with your inventory and history.
 
 1. Check the free disk space on the node by running the following command:
 
@@ -63,7 +63,7 @@ A security information and event management (SIEM) solution is the best place to
 - Review the policy changes with the search in [Find system policy changes](../../integrations/siem/splunk-and-siem-queries.md#find-system-policy-changes) for any removal of Protect Mode.
 - Review the search in [Measure JIT access time](../../integrations/siem/splunk-and-siem-queries.md#measure-jit-access-time) to find out whether users experience slow privilege elevation.
 
-Without a SIEM, read the local service logs and the Fluentd output. See [View application logs](../../troubleshooting/application-logs.md).
+Without a SIEM, read the local service log files and the Fluentd output. See [View application logs](../../troubleshooting/application-logs.md).
 
 ## Check database health
 
@@ -96,7 +96,7 @@ To run your own queries, open a database shell. See [Open the MongoDB shell](./o
 
 Review updates to the product version and to the operating system at least quarterly. You can apply operating system patches monthly. Contact Netwrix Support before an update to confirm that no known issues affect your version.
 
-For information about how to pull images from the private registry during deployment and upgrades, see [Docker credentials helper](../../install/docker-credentials-helper.md).
+For information about how to pull images from the private registry during deployment and upgrades, see [Set up the Docker credential helper](../../install/docker-credentials-helper.md).
 
 ## Back up and recover
 

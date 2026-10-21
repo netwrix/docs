@@ -5,9 +5,7 @@ sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: The **Scan Policy** bulk action shows the warning "Disabling scan mode on systems with OAM enabled will disable OAM on them." The executor only sets `policy.scan` to `false`, and the single-system API rejects the same change while Offline Access Management (OAM) is enabled. Confirm what the bulk action does to OAM on those systems. Evidence: selectBulkActionsView.html (scan policy section), executors/database_policy_executor.py (SetScanExecutor), lib-api-common/route-handlers/computers/single.js:67.
-
-TODO: The **Status** column on **Monitor** > **Jobs** shows the raw job state for non-JITA jobs. Confirm the possible values for customers. Evidence: mgmtMonitorCtrl.js shows `status` unchanged unless the job is a JITA request; the test stack has no jobs.
+TODO: The **Scan Policy** bulk action shows the warning "Disabling scan mode on systems with OAM enabled will disable OAM on them." The executor only sets `policy.scan` to `false`, and the single-system API rejects the same change while Offline Access Management (OAM) is enabled. Confirm what the bulk action does to OAM on those systems. Evidence: selectBulkActionsView.html (scan policy section), executors/database_policy_executor.py (SetScanExecutor sets only `policy.scan` and no other code path changes OAM), lib-api-common/route-handlers/computers/single.js:67.
 :::
 
 Bulk actions apply one change to many systems at once. In Netwrix Privilege Secure for Discovery, use them to set scan and Protect Mode policies, request just-in-time administration (JITA) sessions, manage accounts, and archive systems without opening each system.
@@ -79,7 +77,7 @@ A bulk action changes every selected system as soon as you select **Execute Bulk
 | **Scan Policy** | Enables or disables **Scan Mode**. | Domain controllers. |
 | **Protect Policy** | Sets **Protect Mode** to **New Accounts: Deny**, **New Accounts: JITA**, or **Disable**. | Domain controllers, and systems that no scan has reached when you enable Protect Mode. |
 | **Set EDR Configuration** | Assigns an endpoint detection and response (EDR) configuration to each system, or disables EDR. | Domain controllers. |
-| **Set Offline Access** | Sets the Offline Access Management policy on each system. | Domain controllers, and systems that don't run Windows or that no scan has reached when you enable Offline Access. The menu entry appears only when Offline Access Management is enabled on **Configure** > **Server**. |
+| **Set Offline Access** | Sets the Offline Access Management policy on each system. | Domain controllers, and systems that don't run Windows or that no scan has reached when you enable Offline Access. The menu entry appears only to administrators, and only when Offline Access Management is enabled on **Configure** > **Server**. |
 | **Set Accounts Persistent** | Sets every account in each system's inventory to persistent. | Systems that no scan has reached. |
 | **Add/Update Account** | Adds a user or group to the inventory, or updates it. | Systems that don't run Windows. |
 | **Remove Account** | Removes a user or group from the inventory. | Systems where the account isn't in the inventory. |
@@ -89,7 +87,7 @@ A bulk action changes every selected system as soon as you select **Execute Bulk
 
 **JITA**, **Expire**, and **Extend** act on your own sessions. The user shown on the screen is the signed-in user, and the product rejects a request for another user. To act for someone else, see [Start and manage JITA sessions for another user](./start-and-manage-jita-sessions.md).
 
-For **JITA**, set the access duration with the options, the slider, or the minutes box. The duration can't exceed the maximum session duration on **Configure** > **Server**. Select **Add Comment** to enter a comment. If any selected system is a Linux system that uses Privilege Secure for Discovery directory bridging, the screen asks for your Active Directory password before it saves the action.
+For **JITA**, set the access duration with the options, the slider, or the minutes box. The duration can't exceed the maximum session duration on **Configure** > **Server**. Select **Add Comment** to enter a comment. If any selected system is a Linux system that uses Privilege Secure for Discovery directory bridging, selecting **Save** can open the section **Set the password for SecureONE Bridged Linux Systems**. In **Please enter your password**, enter your Active Directory password for the account that the screen names, in the form `<DOMAIN>\<user>`, and select **Submit**. The screen then saves the action.
 
 The job reports the result in plain text, for example:
 
@@ -132,7 +130,7 @@ On a system that already has the account, the action updates the **Persistent** 
 | **Job Name** | The title that you entered. |
 | **Job Type** | The action, for example **Protect Policy Change** or **JITA Request**. |
 | **Message** | The result of the action, such as `Enabled Protect-JITA Mode on 5 systems.` |
-| **Status** | For a JITA job, the counts of **Pending**, **Active**, **Expired**, and **Error(s)** sessions. |
+| **Status** | For a JITA job, the counts of **Pending**, **Active**, **Expired**, and **Error(s)** sessions. For the other jobs, `not-started`, `in-progress`, or `done`. |
 | **Created At** and **Created By** | When the job ran and who ran it. |
 
 Select **Back to Systems** to return to the **Systems** screen.

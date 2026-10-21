@@ -1,122 +1,86 @@
 ---
 title: "Parse end-user activity logs"
-description: "Find sign-in, system search, access grant, and access denied events in the API log by filtering the Fluentd output or local log files."
+description: "Find sign-in, system lookup, access grant, and access denied events by filtering the Fluentd output of the API and worker services."
 sidebar_position: 50
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the API log message strings still match at 26.09.1: "Successful authentication by", "Invalid username/password", "Admin list lookup", "Successfully added user", "User does not have access to this resource". Evidence: none; the strings came from 2020-era samples.
-
-TODO: Confirm where the local API log file is written, how to enable it in the container deployment, and its file name pattern (the former text used `svc-api.<date>.log` in an api subdirectory of the log directory). Evidence: none.
-
-TODO: Re-capture the three end-user message screenshots with the current UI and remove any user or domain names. Evidence: /images/privilegesecure/4.2/discovery/admin/reporting/1500000515721_mceclip0.webp, _mceclip1.webp, _mceclip2.webp.
-:::
-
-The API service records every user action in the web UI as a series of JSON events. This page shows how to find five common end-user events: a successful sign-in, a failed sign-in, a system search, a granted access request, and a denied access request. For the fields that each API event contains, see [Logs](../integrations/siem/logs.md).
+The API service records every user action in the web UI as a series of JSON events. This page shows how to find five common end-user events: a successful sign-in, a failed sign-in, a system lookup, a granted access request, and a denied access request. For the fields that each event contains, see [Logs](../integrations/siem/logs.md).
 
 A single user action can produce 3 to 30 or more events. The examples show only the event that identifies the action. In the examples, the user is `jsmith` and the target system is `server01.example.com`.
 
-## Choose how to view the events
+## Read the events
 
-You can view the API events in two ways:
+The API service writes no local log file, so read its events in the Fluentd output. The worker service, which grants and removes access, writes its events to the Fluentd output and to a local file. For details, see [View application logs](./application-logs.md).
 
-- **Fluentd output.** The default method. Run `s1 logs` from any node. This method shows only recent events, so start the command before you repeat the action. For details, see [View application logs](./application-logs.md).
-- **Local log file.** The API service doesn't write a local log file by default. If you enable local API logging, filter the API log file in the log directory (`/secureone/data/logs`) with `tail` and `grep`.
+Run `s1 logs` on a swarm manager node, without `sudo`. The command reads the Docker service logs of the `fluentd` service, so it doesn't work on a node that isn't a swarm manager. It shows only recent events, so start the command before you repeat the action.
 
-The Fluentd service runs on one node. To find it, open **Configure** > **Services** in the UI, or run `s1 status` on any node.
+Fluentd prints each event as a record of several lines, with one field on each line. A `grep` command that matches the `message` field prints only that line. Add the `-B` and `-A` options to print the lines around it, which include the tag of the service task, the timestamp, and the other fields of the event. For example, `-B 8 -A 4` prints the full record in most cases.
+
+The tag at the start of the record names the service and the task. API events start with `docker.s1_api.1.<task-id>`, and worker events start with `docker.s1_worker.1.<task-id>`.
 
 ## Find a successful sign-in
 
 The sign-in event contains the text `Successful authentication by` and the user name.
 
 ```bash
-s1 logs --tail 50 | grep "Successful authentication by"
+s1 logs --tail 500 --no-follow | grep -B 8 -A 4 "Successful authentication by"
 ```
 
-For a local log file, replace `<api-log-file>` with the name of the log file that covers the time of the event:
-
-```bash
-tail -f <api-log-file> | grep -i "Successful authentication by"
-```
-
-The event resembles the following:
+The matching `message` field resembles the following:
 
 ```text
-2026-09-15 15:01:56 +0000 docker.s1_api.1.<task-id>: { "source": "stdout", "log": "{\"name\":\"api\",\"hostname\":\"<container-id>\",\"req_id\":\"<request-id>\",\"level\":30,\"message\":\"Successful authentication by: jsmith\",\"time\":\"2026-09-15T15:01:56.227Z\"}" }
+"message": "Successful authentication by: jsmith",
 ```
 
 ## Find a failed sign-in
 
-A sign-in with a wrong password shows an error in the UI.
+A sign-in with a wrong user name or password shows an error on the sign-in page, and the API returns the HTTP status 401 with the message `Sign In Failed.` A sign-in with a wrong password for the built-in `secureone` account returns the message `Password failed for secureone`.
 
-![Sign-in page with an invalid user name or password error](/images/privilegesecure/4.2/discovery/admin/reporting/1500000515721_mceclip0.webp)
-
-The event contains the text `Invalid username/password`:
+Search for the message in the output:
 
 ```bash
-s1 logs --tail 50 | grep -i "Invalid username/password"
+s1 logs --tail 500 --no-follow | grep -i -B 8 -A 4 "Sign In Failed"
 ```
 
-For a local log file:
+When the user name doesn't exist, the API also records an event with the message `User Not Found` for the same request. The `req_id` field is the same in both events.
+
+## Find a system lookup
+
+When a user opens the administrator list of a system on the **Grant Access** page, the API records an `Admin list lookup` event that includes the system name:
 
 ```bash
-tail -f <api-log-file> | grep -i "Invalid username/password"
-```
-
-## Find a system search
-
-A search for a system on the **Grant Access** page produces an `Admin list lookup` event that includes the system name:
-
-```bash
-s1 logs --tail 50 | grep -i "Admin list lookup"
-```
-
-For a local log file:
-
-```bash
-tail -f <api-log-file> | grep -i "Admin list lookup"
+s1 logs --tail 500 --no-follow | grep -i -B 4 -A 4 "Admin list lookup"
 ```
 
 The event resembles the following:
 
 ```text
-2026-09-15 15:56:40 +0000 docker.s1_api.1.<task-id>: { "source": "stdout", "log": "{\"name\":\"api\",\"req_id\":\"<request-id>\",\"level\":30,\"message\":\"Admin list lookup\",\"system\":\"server01.example.com\",\"time\":\"2026-09-15T15:56:40.000Z\"}" }
+"message": "Admin list lookup",
+"system": "server01.example.com",
 ```
 
 ## Find a granted access request
 
-When a user receives access to a system, the UI shows a confirmation message. The domain and user name in the message are specific to your environment.
-
-![Confirmation message after a user is granted access to a system](/images/privilegesecure/4.2/discovery/admin/reporting/1500000515721_mceclip1.webp)
-
-The event contains the text `Successfully added user`:
+The worker service records the event when it adds a user to the administrators of a system. The event comes from the worker, not the API. The message starts with `Successfully added user`. It ends with the domain and name of the user who receives access:
 
 ```bash
-s1 logs --tail 50 | grep -i "Successfully added user"
+s1 logs --tail 500 --no-follow | grep -i -B 8 -A 4 "Successfully added user"
 ```
 
-For a local log file:
+The worker also writes the event to the local file `/secureone/data/logs/svc-worker.log` on the node that ran the request. A secondary worker writes to `svc-worker-secondary.log`.
 
 ```bash
-tail -f <api-log-file> | grep -i "Successfully added user"
+grep -i "Successfully added user" /secureone/data/logs/svc-worker.log
 ```
 
 ## Find a denied access request
 
-When a user requests access to a system that the user has no permission to access, the UI shows a 403 Forbidden error.
+When a user requests something that the user has no permission to do, the API returns the HTTP status 403 and the message `User does not have access to this resource.` The web UI shows a Forbidden error.
 
-![Forbidden error that states the user doesn't have access to this resource](/images/privilegesecure/4.2/discovery/admin/reporting/1500000515721_mceclip2.webp)
-
-The event contains the HTTP status 403 and the phrase `User does not have access to this resource`. You can also search for the word `Forbidden`.
+The event contains the phrase `User does not have access to this resource`. You can also search for the word `Forbidden`.
 
 ```bash
-s1 logs --tail 50 | grep -i "User does not have access to this resource"
+s1 logs --tail 500 --no-follow | grep -i -B 8 -A 4 "User does not have access to this resource"
 ```
 
-For a local log file:
-
-```bash
-tail -f <api-log-file> | grep -i "User does not have access to this resource"
-```
-
-The `res` object of the event contains the response with `"statusCode":403`.
+The `res` object of the event contains the response with `"statusCode": 403`.

@@ -14,22 +14,16 @@ Use the `s1 db` command to open a shell on the database that Netwrix Privilege S
 
 ## Open the shell with s1 db
 
-1. Sign in to a database host. For a cluster, use a node that hosts a MongoDB member.
-2. Run the command for your topology.
-
-   For a single-node deployment:
+1. Sign in to a swarm manager node. For a cluster, use a node that hosts a MongoDB member.
+2. Run the following command:
 
    ```bash
-   sudo s1 db
+   s1 db
    ```
 
-   For a three-node cluster:
+   The `s1` tool detects a single-node deployment or a cluster from the number of nodes in the swarm. To select the topology yourself, add `--single-node` or `--multi-node` before `db`, as in `s1 --multi-node db`. For a custom stack name, place `--stack <stack-name>` before `db`.
 
-   ```bash
-   sudo s1 --multi-node db
-   ```
-
-   For a custom stack name, place `--stack <stack-name>` before `db`.
+Run `s1` without `sudo`. The launcher calls `sudo` itself, and a `sudo s1` command reads the registry credentials of the root user instead of yours. See [Install the s1 CLI helper utility](../../install/s1-cli-helper.md).
 
 The shell opens on the `SecureONE` database. To run a JavaScript file, add `--file <filename>`. Mount the file in the container under `/data/db`.
 
@@ -82,7 +76,13 @@ Use this method only when `s1 db` isn't available. Take care with the container 
    docker exec -it <container-id> mongo mongodb://db:27017/SecureONE
    ```
 
-   For a single node on MongoDB 8.0 after cutover:
+   For a single node on MongoDB 8.0 in a new installation, or after `retire`:
+
+   ```bash
+   docker exec -it <container-id> mongosh mongodb://db:27017/SecureONE
+   ```
+
+   For a single node on MongoDB 8.0 after cutover and before `retire`:
 
    ```bash
    docker exec -it <container-id> mongosh mongodb://db8:27017/SecureONE
@@ -96,7 +96,7 @@ Use this method only when `s1 db` isn't available. Take care with the container 
    mongodb://mongo1,mongo2,mongo3/SecureONE?replicaSet=secureone8
    ```
 
-   Use the first string while the application uses MongoDB 4.0, the second string after cutover and before retire, and the third string after retire.
+   Use the first string while the application uses MongoDB 4.0 and on a new MongoDB 8.0 installation, the second string after cutover and before retire, and the third string after retire. Run the first string with `mongo` on MongoDB 4.0 and with `mongosh` on MongoDB 8.0. Run the second and third strings with `mongosh`.
 
 ## Related pages
 

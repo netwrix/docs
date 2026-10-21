@@ -16,7 +16,7 @@ For each scan or access change, the product does the following:
 
 1. Resolves the system's fully qualified domain name (FQDN) and pings the address. The endpoint must answer ping.
 2. Opens an SSH connection to TCP port 22 with the service account.
-3. Uploads a small Python program over SFTP to a directory named `/tmp/.secureone_remote_executor-<run-id>` that only the service account can read.
+3. Uploads a small Python program over SFTP to a directory named `/tmp/secureone_remote_executor-<run-id>` that only the service account can read.
 4. Runs the program, with `sudo -i` for steps that need root, to read `/etc/passwd`, `/etc/group`, `/etc/sudoers`, and the files that `/etc/sudoers` includes. For systems that use SSSD or PowerBroker, it also reads the directory bridging configuration.
 5. Removes the uploaded files when the scan ends.
 

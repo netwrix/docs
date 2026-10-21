@@ -58,10 +58,10 @@ A single node runs a standalone MongoDB server without a replica set, so a live 
 1. Stop the services that write to MongoDB:
 
    ```bash
-   sudo s1 stop api worker worker-secondary expire scanner ldapsync analytics_engine internal_api
+   s1 stop api worker worker-secondary expire scanner ldapsync analytics_engine internal_api
    ```
 
-   The `health_reporter`, `windows-bridge`, `mq`, and `fluentd` services can keep running.
+   Run `s1` without `sudo`, because the launcher calls `sudo` itself. The `health_reporter`, `windows-bridge`, `mq`, and `fluentd` services can keep running.
 
 2. Run the dump with the tools in the database container. The hostnames of the deployment resolve only on the Docker network, so run the tools inside the container. Replace `<backup-directory>` with a directory that only root can read.
 
@@ -74,7 +74,7 @@ A single node runs a standalone MongoDB server without a replica set, so a live 
 3. Start the services again:
 
    ```bash
-   sudo s1 start api worker worker-secondary expire scanner ldapsync analytics_engine internal_api
+   s1 start api worker worker-secondary expire scanner ldapsync analytics_engine internal_api
    ```
 
 4. Copy the archive to storage outside the host, apart from the key.
@@ -88,7 +88,7 @@ Restore into a running deployment that has the same release and the same encrypt
 1. Stop the services that write to MongoDB:
 
    ```bash
-   sudo s1 stop api worker worker-secondary expire scanner ldapsync analytics_engine internal_api
+   s1 stop api worker worker-secondary expire scanner ldapsync analytics_engine internal_api
    ```
 
 2. Restore the archive. The `--drop` option replaces the existing collections.
@@ -102,10 +102,10 @@ Restore into a running deployment that has the same release and the same encrypt
 3. Start the services again:
 
    ```bash
-   sudo s1 start api worker worker-secondary expire scanner ldapsync analytics_engine internal_api
+   s1 start api worker worker-secondary expire scanner ldapsync analytics_engine internal_api
    ```
 
-4. Confirm that the `health_reports` collection is capped, because a restore can bring it back without its size cap. Open a shell with `sudo s1 db` and run the following command:
+4. Confirm that the `health_reports` collection is capped, because a restore can bring it back without its size cap. Open a shell with `s1 db` and run the following command:
 
    ```javascript
    db.health_reports.isCapped()

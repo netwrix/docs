@@ -1,15 +1,11 @@
 ---
 title: "SAML SSO configuration reference"
-description: "Reference for the SAML settings, sign-in flows, user matching, and recovery behavior that apply to every identity provider in Netwrix Privilege Secure for Discovery."
+description: "Reference for the SAML settings, sign-in flows, user matching, and recovery behavior that apply to every identity provider in Privilege Secure for Discovery."
 sidebar_label: "SAML SSO reference"
 sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the product doesn't validate the **Issuer** value against the identity provider's issuer in either flow. Evidence: `saml.js` sets `issuer` and `audience: false` and passes no `idpIssuer`; the **Issuer** is sent in the authentication request of the SP-initiated flow.
-
-TODO: Confirm the fields that **Match User By** can use for a directory user at 26.09.1: `sAMAccountName`, `distinguishedName`, `objectSid`, `objectGUID`, `cn`, `displayName`, `givenName`, `sn`, `domain_netbios`, and `domain_fqdn`. Evidence: ldap_sync/consts.py USER_ATTRIBUTES and the stored user record; the template code (`saml.js`) replaces `${field}` with any field of the user record.
-
 TODO: Confirm the exact error text for an invalid signature, and whether a stale **Issuer Cert** produces it. Evidence: none; the product uses `@node-saml/passport-saml` with `wantAuthnResponseSigned` and `wantAssertionsSigned` on.
 :::
 
@@ -35,14 +31,14 @@ Open **Configure** > **Server** > **SAML Configuration**.
 | Setting | Description |
 | --- | --- |
 | **Entrypoint** | The URL of the IdP where sign-in starts. For the service provider-initiated (SP-initiated) flow, it is the single sign-on URL of the IdP application. For the IdP-initiated flow, it is the URL that starts sign-in from the IdP. |
-| **Issuer** | The entity ID of the product. In the SP-initiated flow, the product sends it to the IdP in the authentication request, and the IdP application must use the same value as its audience or entity ID. In the IdP-initiated flow, the product doesn't check it. Use the product URL, for example `https://<fqdn>`, in both flows. |
+| **Issuer** | The entity ID of the product. In the SP-initiated flow, the product sends it to the IdP in the authentication request, and the IdP application must use the same value as its audience or entity ID. In the IdP-initiated flow, the product doesn't use it. Use the product URL, for example `https://<fqdn>`, in both flows. |
 | **Issuer Cert** | The Base64 body of the signing certificate of the IdP application. Leave out the `BEGIN CERTIFICATE` and `END CERTIFICATE` lines. Update it when the IdP rolls the certificate. |
 | **SSO Enabled** | Turns SAML authentication on. Keep a tested local administrator session open while you stage or change the configuration. |
 | **SSO Flow** | **SP-Initiated** or **IdP-Initiated**. A new configuration starts as **SP-Initiated**. |
-| **force IdP reauthentication** | For the SP-initiated flow only. Asks the IdP to authenticate the user again, even if the user has an active IdP session. Selecting **SP-Initiated** turns it on. |
-| **Auto-Redirect to IdP** | Sends users to the IdP when they open the sign-in page, instead of showing the local sign-in form first. Available in 26.09.0 and later. |
-| **ID Claim** | The name of the SAML claim that identifies the user. The default is `dn`. Use `nameID` for the NameID of the assertion. |
-| **Match User By** | The field of the product user record that the claim value must equal. The default is `distinguishedName`. It can also be a template. |
+| **force IdP reauthentication** | For the SP-initiated flow only. Asks the IdP to authenticate the user again, even if the user has an active IdP session. It is off in a new configuration. When you select **SP-Initiated** in the **SSO Flow** list, the product also selects this check box. When you select **IdP-Initiated**, the product clears the check box and disables it. |
+| **Auto-Redirect to IdP** | Sends users to the IdP when they open the sign-in page, instead of showing the local sign-in form first. |
+| **ID Claim** | The name of the SAML claim that identifies the user. The default is `dn`, so with the default settings the IdP must send a claim named `dn`. Use `nameID` for the NameID of the assertion. |
+| **Match User By** | The field of the product user record that the claim value must equal. The default is `distinguishedName`, which is the Active Directory (AD) distinguished name of the user. It can also be a template. |
 | **Non-SSO sign-in URL** | The address of the local sign-in page. Use it to sign in without SSO. |
 
 ## Choose an SSO flow
@@ -56,13 +52,13 @@ The flow in the product must match what the IdP sends. If the product expects th
 
 After the IdP signs the user in, the product reads the claim that **ID Claim** names, and finds the user record whose **Match User By** field equals the claim value. The comparison is exact and case-sensitive. The user must be a user or a member of a group that you added in **Configure** > **Users and Groups**. See [Add users to Privilege Secure for Discovery](../onboard-systems/add-users-to-privilege-secure.md).
 
-**Match User By** accepts a field name or a template. In a template, `${<field>}` takes the value of a field of the user record. Useful fields are `sAMAccountName`, `distinguishedName`, `domain_netbios`, and `domain_fqdn`.
+**Match User By** accepts a field name or a template. In a template, `${<field>}` takes the value of a field of the user record. The fields of a user record are `sAMAccountName`, `distinguishedName`, `cn`, `displayName`, `sn`, `objectSid`, `domain_netbios`, and `domain_fqdn`.
 
 | Your IdP sends | ID Claim | Match User By |
 | --- | --- | --- |
 | The user principal name (UPN) as the NameID, when the UPN suffix is the domain name | `nameID` | `${sAMAccountName}@${domain_fqdn}` |
 | The user name with the domain, such as `CORP\jsmith`, in a claim named `username` | `username` | `${domain_netbios}\${sAMAccountName}` |
-| The Active Directory (AD) distinguished name in a claim named `dn` | `dn` | `distinguishedName` |
+| The AD distinguished name in a claim named `dn` (the defaults) | `dn` | `distinguishedName` |
 
 Older configurations send the distinguished name in a claim named `dn`. That mapping still works, but it needs a custom attribute in the IdP. Prefer the NameID.
 

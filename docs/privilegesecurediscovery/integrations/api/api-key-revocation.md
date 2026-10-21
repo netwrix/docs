@@ -4,7 +4,7 @@ description: "Revoke a Netwrix Privilege Secure for Discovery API key in the int
 sidebar_position: 30
 ---
 
-Revoke an API key when you no longer need it or when its secret leaks. A revoked key can't get an access token. Revoking a key doesn't cancel access tokens that the key already produced. Those tokens keep working until they expire, which takes up to 8 hours by default.
+Revoke an API key when you no longer need it or when its secret leaks. A revoked key can't get a new access token.
 
 ## Revoke a key in the interface
 
