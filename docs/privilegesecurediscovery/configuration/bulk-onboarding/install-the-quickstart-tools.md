@@ -1,52 +1,54 @@
 ---
 title: "Install the Quickstart tools"
-description: "Download the Quickstart tools, install Python 3.10 or later and the dependencies, and configure the tool to connect to Privilege Secure for Discovery."
+description: "Download the Quickstart tools, install Python and the dependencies, create an API key, and configure the tool to connect to Privilege Secure for Discovery."
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Explain how an administrator finds the user ID to enter as userId. Evidence: none; the API key screen and reports.py (config block) both ask for it without describing where to find it.
-
-TODO: Confirm that the tool runs on an Ubuntu node of the deployment, and that the OS keyring is available there. Evidence: none; reports.py uses the keyring package to store the API key.
-:::
-
-The Quickstart tool is a Python script that generates reports and pushes changes to Netwrix Privilege Secure for Discovery. This page covers installing the tool and connecting it to the product.
+The Quickstart tool is a Python script, `reports.py`, that exports reports from Netwrix Privilege Secure for Discovery and pushes changes back. This page covers installing the tool and connecting it to the product.
 
 ## Prerequisites
 
-- Python 3.10 or later, with `pip`. The tool exits with an error on earlier versions.
-- A computer that can reach the Privilege Secure for Discovery API.
-- An administrator account in Privilege Secure for Discovery and an API key for it.
+- A Windows or Linux workstation with Python 3.10 or later and `pip`. The tool exits with an error on earlier versions.
+- A desktop session on that workstation. The tool stores the API key in the operating system keyring, such as Windows Credential Manager. On a server without a keyring, for example a headless Ubuntu Server, the tool stops with a `NoKeyringError`.
+- Network access from the workstation to the Privilege Secure for Discovery server over HTTPS.
+- An administrator in Privilege Secure for Discovery, and an API key linked to that administrator.
 
 ## Download the tools
 
-1. Download the Quickstart tools archive from the Netwrix releases server. Replace `<major.minor>` and `<version>` with the release you run, for example `26.09` and `26.09.1`.
+1. Download the Quickstart tools archive. Replace `<major.minor>` and `<version>` with the release that you run, for example `26.09` and `26.09.1`.
 
    ```text
-   https://releases.netwrix.com/products/privilegesecure-discovery/<major.minor>/`privilegesecure-discovery-quickstart-tools-<version>.zip`
+   https://releases.netwrix.com/products/privilegesecure-discovery/<major.minor>/privilegesecure-discovery-quickstart-tools-<version>.zip
    ```
 
-2. Extract the archive. It contains `reports.py`, `requirements.txt`, and a usage guide.
+2. Extract the archive. The `quickstart` folder contains `reports.py`, `requirements.txt`, a `README.md` file, and an HTML usage guide.
 
 ## Install Python
 
 1. Download Python 3.10 or later from [python.org](https://www.python.org/downloads/).
-2. Start the installer. On Windows, verify on the **Customize Python** page that **pip** will be installed on the local hard drive, and select the option to add Python to the `PATH` environment variable.
-
-   ![The Customize Python page of the Python installer with pip selected](/images/privilegesecure/4.2/discovery/admin/configuration/360044200374_image.webp)
+2. Run the installer. On Windows, select the option to add Python to the `PATH` environment variable, and make sure the installer includes `pip`.
 
 ## Install the dependencies
 
-1. Open a command prompt in the folder where you extracted the archive.
-2. Install the required modules:
+The tool needs the `keyring`, `XlsxWriter`, `requests`, and `pyexcel-xlsx` packages. The `requirements.txt` file lists them.
+
+1. Open a command prompt in the `quickstart` folder.
+2. On Linux, create and activate a virtual environment. Recent Ubuntu releases refuse to install packages into the system Python.
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. Install the packages:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-If the command returns a `NewConnectionError` with an `[Errno 100XX]` code, a firewall or proxy is blocking `python.exe` from reaching the internet.
+If the command returns a `NewConnectionError` with an `[Errno 100XX]` code, a firewall or proxy blocks Python from reaching the internet.
 
-If your network uses a proxy that inspects TLS traffic and `pip` fails certificate verification, you can add trusted hosts. Use this option only in that case, because it turns off certificate verification for those hosts:
+If your network uses a proxy that inspects TLS traffic and `pip` fails certificate verification, you can add trusted hosts. This option turns off certificate verification for those hosts, so use it only in that case:
 
 ```bash
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
@@ -54,33 +56,26 @@ pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r req
 
 ## Create an API key
 
-Create an API key in the UI. For the procedure, see [API key management](../../integrations/api/api-key-management.md). The first time you run the tool, it prompts for the API key. By default, the tool saves the key in the operating system keyring. To avoid saving it, run the tool with `--no-save-api`. To remove a saved key, run it with `--rm-api-key`.
+1. Select **Configure** > **API Keys**, and then select **Create API Key**.
+2. Enter an **App Name**.
+3. Set **Permissions** to **All API's**. A key with the **Registration** permission can't run the tool. The tool fails with the response `Scope not allowed by token`.
+4. In **Linked Users**, search for an administrator and select the user.
+5. Select **Save**.
+6. Copy the **API Key Secret** to a secret manager.
 
 :::warning
-Store the API key securely. You can't view the key again after you close the dialog box. If you didn't save it, revoke the key in the UI and create a new one.
+You can't view the API key secret again after you close the dialog box. If you didn't save it, revoke the key and create a new one.
 :::
+
+The first time you run the tool, it prompts for the API key and saves it in the operating system keyring. Run the tool with `--no-save-api` to avoid saving the key. Run it with `--rm-api-key` to remove a saved key. For more information about keys, see [Create and manage API keys](../../integrations/api/api-key-management.md).
+
+### Find the user ID
+
+The tool needs the ID of the linked user. On the **Configure** > **API Keys** page, the **Linked Users** column shows the ID of each linked user. Hover over the ID to see the user name. Select the ID to copy it.
 
 ## Configure the tool
 
-Edit the `config` block near the top of `reports.py`:
-
-```python
-config = {
-    'baseUrl': 'https://<server-fqdn>/api/v1',
-    'userId': '<admin-user-id>',
-    'provisionUser': '<account-name>'
-}
-```
-
-| Field | Description |
-| --- | --- |
-| `baseUrl` | URL of the Privilege Secure for Discovery API. The default is `https://localhost/api/v1`, which works only when you run the tool on the same host. |
-| `userId` | ID of the Privilege Secure for Discovery administrator user that the API key belongs to. |
-| `provisionUser` | Optional. An account name to look for in the report. The **Computer Data** sheet gets a column with this name that shows `TRUE` for systems that have a matching administrator account. |
-
-### Use a config.json file
-
-You can move the configuration to a `config.json` file in the same folder as `reports.py`. When the file exists, the tool uses it instead of the `config` block. The file stays in place when you replace the tool files with a newer release.
+The tool reads its settings from a `config.json` file in the same folder as `reports.py`. Create the file with the following content:
 
 ```json
 {
@@ -90,7 +85,15 @@ You can move the configuration to a `config.json` file in the same folder as `re
 }
 ```
 
-The `config.json` file requires double quotes around all keys and string values.
+| Field | Description |
+| --- | --- |
+| `baseUrl` | URL of the Privilege Secure for Discovery API. |
+| `userId` | ID of the administrator that the API key links to. |
+| `provisionUser` | An account name to look for in the report. The **Computer Data** sheet gets a column with this name that shows `TRUE` for systems that have a matching administrator account. |
+
+All three fields are required, and the file needs double quotes around every key and string value. The tool ignores the built-in defaults when `config.json` exists. The `config.json` file stays in place when you replace the tool files with a newer release.
+
+If you don't create the file, the tool uses the `config` block near the top of `reports.py`. Its defaults are `https://localhost/api/v1`, which works only on the server itself, and a placeholder user ID. Edit the block if you prefer not to use a file.
 
 ## Verify the installation
 
@@ -100,4 +103,4 @@ Run the tool with the help option:
 python reports.py --help
 ```
 
-The output lists the available arguments. To generate your first report and make changes, see [Report and update systems](./report-and-update-systems.md).
+The output lists the available arguments. To export your first report and make changes, see [Report and update systems](./report-and-update-systems.md).

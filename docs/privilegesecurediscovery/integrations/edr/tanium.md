@@ -1,284 +1,218 @@
 ---
 title: "Configure the Tanium Cloud integration"
 sidebar_label: "Tanium"
-description: "Create the Tanium Cloud sensor, package, and API token, configure the EDR provider, and enable bulk scanning in Netwrix Privilege Secure for Discovery."
+description: "Create the Tanium Cloud sensor, package, and API token, add the EDR provider, and enable bulk scanning in Netwrix Privilege Secure for Discovery."
 sidebar_position: 40
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: The old page told administrators to paste secureone_management.ps1 into the Tanium sensor and package, but the script isn't provided to customers. Supply the script (or a download) and decide how customers obtain it. Evidence: docker/shared/python/src/remediant/integrations/powershell/secureone_management.ps1 at v26.09.1-rc (internal repository path).
+TODO: Decide how customers obtain the management script that goes into the Tanium sensor and package. The script isn't published, and the product doesn't create the sensor or package for you by default (the `maintain_sensor` and `maintain_package` options default to off and have no setting in the interface). Evidence: docker/shared/python/src/remediant/integrations/powershell/secureone_management.ps1 (560 lines); windows/connector/strategies/tanium/config.py:58-59.
 
-TODO: The old page named the sensor "NPS Admin Members", but the product default is "NPSD Admin Members" and the sensor name isn't editable in the UI or API. This page uses the defaults. Confirm. Evidence: docker/node/packages/lib-api-common/schemas/edrIntegrationsConfig/taniumCloudConfig.js (sensor_name, package_name).
+TODO: Confirm the minimum Tanium API token permissions and persona. The old page said "Full API access (or minimum required)". Evidence: none.
 
-TODO: Confirm the sensor settings table (result type, max sensor age, ignore case, split into columns) against the sensor that the product expects. Evidence: none.
+TODO: Confirm the supported Windows versions and PowerShell requirements on target devices (PowerShell 5.1 and the `Microsoft.PowerShell.LocalAccounts` module came from the old page). Evidence: none.
 
-TODO: Confirm the exact menu path of the Bulk Scans page in the interface. Evidence: docker/web/cloud/mgmt/config.js (url /mgmt/bulk-scans, title Bulk Scans).
+TODO: Confirm that Offline Access Management isn't supported with Tanium. The old page said so. Evidence: none found in the Tanium strategy code.
 
-TODO: Confirm the minimum Tanium API token permissions. The old page said "Full API access (or minimum required)". Evidence: none.
-
-TODO: Confirm the supported Windows versions and the PowerShell requirements on target devices. Evidence: none.
-
-TODO: Confirm that offline access management isn't supported with Tanium. Evidence: none (carried over from the old page).
-
-TODO: Confirm the bulk scan scale statement (10,000 or more devices) and the monitoring thresholds that this page doesn't state. Evidence: none.
+TODO: Confirm the single-device action timeout that the product uses. The schema default is 1200 seconds and the code default is 120 seconds. Evidence: node/packages/lib-api-common/schemas/edrIntegrationsConfig/taniumCloudConfig.js (action_timeout_seconds 1200); windows/connector/strategies/tanium/config.py:62 (2 minutes).
 :::
 
-The Tanium Cloud integration lets Netwrix Privilege Secure for Discovery scan Windows devices and manage local Windows accounts through Tanium's remote execution capabilities. The product doesn't need a direct network connection to the target devices.
+The Tanium Cloud integration lets Netwrix Privilege Secure for Discovery scan Windows systems and manage local administrator access through Tanium. The product doesn't need a direct network connection to the target devices.
 
-## Supported use cases
+The integration uses two objects in Tanium that you create:
 
-| Use case | Description | Mode |
-| --- | --- | --- |
-| Privileged account discovery | Enumerate local administrator accounts on Windows systems | Scan, Protect |
-| Account lifecycle management | Create, modify, and delete local Windows accounts | Protect |
-| Password rotation | Change passwords automatically, with RSA encryption of the password in transit | Protect |
-| Security compliance scanning | Gather system configuration and security posture data | Scan |
-| Access control | Enable or disable local accounts based on policy | Protect |
-| Group membership management | Add users to and remove users from local Windows groups | Protect |
-| Bulk scanning | Scan an entire computer group in one operation | Scan |
+- A sensor named `NPSD Admin Members` that reports the members of the local Administrators group. The scan reads the sensor value.
+- A package named `NPSD Management` that runs the management script. The product starts it as a Tanium action to change access on a device. You need the package only if you use just-in-time access (JITA).
 
-## How the integration works
+For a single device, the product finds the device in Tanium, reads the sensor value or starts an action, waits for the action to finish, and parses the action log. For a bulk scan, the product starts one action against a whole computer group and parses the combined results.
 
-For a single device, the product:
-
-1. Queries Tanium to find the target device and obtain a temporary group ID.
-2. Creates an action that runs a PowerShell script with encrypted parameters.
-3. Monitors the action until it completes.
-4. Retrieves and parses the action logs.
-5. Updates the device record.
-
-For a bulk scan, the product:
-
-1. Queries Tanium for the members of a computer group.
-2. Creates one action that targets the whole group.
-3. Monitors the action until it completes.
-4. Parses the consolidated results.
-5. Updates all device records in a batch.
+For a system that uses this integration, the product scans through Tanium first. If that scan fails, it tries a direct connection.
 
 ## Prerequisites
 
-### Privilege Secure for Discovery
+In Privilege Secure for Discovery:
 
-- Release 26.06 or later.
-- Network access from the server to your Tanium Cloud API endpoint.
-- Tanium Cloud is available as an EDR provider by default. You don't need to enable a feature toggle.
+- Tanium Cloud appears in the provider list by default. You don't need to turn on a feature.
+- HTTPS access (TCP 443) from the server to your Tanium Cloud API host. If the server uses a proxy, configure it under **Configure** > **Server** > **Proxy Configuration**.
 
-### Tanium
+In Tanium Cloud:
 
-- Tanium Cloud with API v2 access.
-- Administrator permissions for the configuration.
-- Content Set permissions (Base or a custom content set).
-- Permission to create sensors and packages.
-- The Tanium agent installed on the target Windows devices.
+- An account that can create sensors, packages, and API tokens.
+- The Tanium client on the target Windows devices, checking in to Tanium. The product rejects a device that hasn't checked in within the last 30 minutes.
+- An action group named `Default - All Computers`. The product starts every action in that group.
 
-### Target devices
+## Create the sensor
 
-- A vendor-supported version of Windows or Windows Server.
-- PowerShell 5.1 or later.
-- The `Microsoft.PowerShell.LocalAccounts` module.
-- A Tanium agent that is installed and communicating.
+The product looks up the sensor by name, so the name must match exactly.
 
-## Prepare Tanium Cloud
+1. In the Tanium Cloud console, select **Administration** > **Content** > **Sensors**, and select **Create New Sensor**.
+2. Enter the properties in the following table.
 
-A Tanium administrator performs the following configuration. The names in this section must match exactly, because the product looks up the sensor and the package by name.
+   | Property | Value |
+   | --- | --- |
+   | **Name** | `NPSD Admin Members` (case-sensitive) |
+   | **Result Type** | Text |
+   | **Max Sensor Age** | 10 minutes. The product expects 600 seconds. |
+   | **Ignore case in results** | Disabled |
+   | **Hide sensor** | Disabled |
+   | **Split into columns** | Disabled |
 
-### Create the NPSD Admin Members sensor
+3. For Windows, set the script type to **PowerShell**, and paste the management script.
+4. For other operating systems, set the script to **Disabled**.
+5. Select **Preview** on a few Windows devices, confirm that JSON results appear, and select **Save Sensor**.
 
-1. In the Tanium Cloud console, go to **Administration > Content > Sensors**, and select **Create New Sensor**.
-2. Configure the sensor properties.
+### Collect the sensor in the background
 
-   | Property | Value | Notes |
-   | --- | --- | --- |
-   | **Name** | `NPSD Admin Members` | Must match exactly (case-sensitive) |
-   | Description | Administrator discovery sensor | Can be customized |
-   | Content Set | Base or a custom set | Use the same content set as the package |
-   | Category | Security | Recommended |
-   | **Result Type** | Text | Required |
-   | **Max Sensor Age** | 10 minutes | Minimum that Tanium recommends |
-   | Max String Age | Disabled, or 86400 | Use a large value |
-   | Max Strings | Disabled, or 10000 | Use a large value |
-   | Ignore case in results | Disabled | Required |
-   | Hide sensor | Disabled | The sensor must be visible |
-   | Split into columns | Disabled | Required |
+1. Select **Modules** > **Interact** > **Overview** > **Settings**.
+2. Find **NPSD Admin Members**, and select **Actions** > **Add**.
+3. Preview the results, and select **Confirm**.
+4. Optionally, select **Collect Now**.
 
-3. Set the script type for Windows to `PowerShell`, and paste the management script.
-4. For other operating systems, set the script to `Disabled` or return an error message, such as `Not available on Linux`.
-5. Select **Preview** on several Windows computers, verify that JSON results appear for most of them, and select **Save Sensor**.
+## Create the package
 
-:::warning[Needs dev input: remove before publishing]
-TODO: The management script (secureone_management.ps1) isn't provided. See the note at the top of this page.
-:::
+Create the package only if you use JITA.
 
-### Enable the sensor for background collection
+1. Select **Administration** > **Content** > **Packages**, and select **Create New Package**.
+2. Enter the properties in the following table.
 
-1. Go to **Modules > Interact > Overview > Settings**.
-2. Find **NPSD Admin Members** in the sensor list, and select **Actions > Add**.
-3. Preview the results to verify that JSON results appear, and select **Confirm**.
-4. Optionally, select **Collect Now** to start collection immediately.
+   | Property | Value |
+   | --- | --- |
+   | **Package Name** | `NPSD Management` (case-sensitive) |
+   | **Command** | `cmd.exe /d /c powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -NonInteractive -NoProfile -File expand_params.ps1 $0` |
+   | **Command Timeout** | 60 seconds |
 
-### Create the NPSD Management package
-
-You need this package only for Protect mode (Just-In-Time Access) and Deny. For scan-only operations, skip this section.
-
-1. Go to **Administration > Content > Packages**, and select **Create New Package**.
-2. Configure the package properties.
-
-   | Property | Value | Notes |
-   | --- | --- | --- |
-   | **Package Name** | `NPSD Management` | Must match exactly |
-   | Display Name | Management package | Can be customized |
-   | Content Set | Base or a custom set | Same as the sensor |
-   | **Command** | `cmd.exe /d /c powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -NonInteractive -NoProfile -File expand_params.ps1 $0` | Required |
-   | Command Timeout | 3 minutes | Adjust as needed |
-   | Download Timeout | 10 minutes | Adjust as needed |
-   | Ignore Action Lock | Disabled | Default |
-   | Launch in process group | Enabled | Required |
-
-3. Add the package files `expand_params.ps1` and the management script.
-
-   The `expand_params.ps1` wrapper decodes the Base64-encoded parameters from Tanium and runs the decoded command:
+3. Add two files: the management script and `expand_params.ps1`. The `expand_params.ps1` wrapper accepts one JSON argument, runs the management script with the parameters in that argument, and wraps the output in `NPSD_OUTPUT_START` and `NPSD_OUTPUT_END` markers:
 
    ```powershell
-   param([string]$EncodedCommand)
+   # NPSD Management: expand_params.ps1
+   $argString = [System.Uri]::UnescapeDataString($args[0])
+   $commandInfo = $argString | ConvertFrom-Json
+   $scriptPath = $commandInfo.script_path
+   $paramInfo = $commandInfo.params
 
-   $decodedBytes = [System.Convert]::FromBase64String($EncodedCommand)
-   $decodedCommand = [System.Text.Encoding]::UTF8.GetString($decodedBytes)
+   $params = @{ }
+   foreach ($property in $paramInfo.PSObject.Properties) {
+       $params[$property.Name] = $property.Value
+   }
 
-   Invoke-Expression $decodedCommand
+   Write-Output "Running: powershell.exe -NonInteractive -NoProfile -ExecutionPolicy Bypass $scriptPath ..."
+   $out = & powershell.exe -NonInteractive -NoProfile -ExecutionPolicy Bypass $scriptPath @params
+
+   Write-Output "NPSD_OUTPUT_START"
+   Write-Output $out
+   Write-Output "NPSD_OUTPUT_END"
+
+   exit $LASTEXITCODE
    ```
 
-4. Add one text parameter with the label `EncodedCommand`. Verify that the parameter appears as `$0`.
-5. Review the settings, and select **Save Package**.
+4. Add one text parameter with the label `EncodedCommand`. Confirm that the parameter appears as `$0` in the command.
+5. Select **Save Package**.
 
-If Tanium numbers the parameter `$1`, change `$0` to `$1` in the command. Netwrix Support can help you set the matching package parameter offset in the product.
+Tanium doesn't always number the first package parameter `$0`. If your console numbers it `$1`, change the command to use `$1`, and contact Netwrix Support to set the matching package parameter offset in the product.
 
-### Identify the computer groups
+## Create an API token
 
-For standard scanning, use the **All Windows Computers** group or a custom group.
+1. In Tanium Cloud, select **Administration** > **Permissions** > **API Tokens**, and select **New API Token**.
+2. Enter a note that describes the token, such as `Privilege Secure for Discovery`.
+3. Set an expiration that follows your security policy.
+4. Select the permissions that the integration needs to read sensors, read computer groups, run questions, and create and run actions.
+5. Copy the token to a secret manager. Tanium doesn't show it again.
 
-For bulk scanning, use an existing computer group or create one that contains the Windows devices to scan. Record the exact group name. A custom group such as `Managed Devices` that contains only the devices loaded in Privilege Secure for Discovery avoids unnecessary scans. See [Match the computer group to your inventory](#match-the-computer-group-to-your-inventory).
+See the Tanium [authentication documentation](https://developer.tanium.com/site/global/docs/how_tos/auth/index.gsp) for the token options.
 
-### Create an API token
+## Add the provider configuration
 
-1. Go to **Administration > Permissions > API Tokens**, and select **New API Token**.
-2. Enter a name, such as `Privilege Secure Integration`.
-3. Select the permissions that the integration requires.
-4. Set an expiration that follows your security policy.
-5. Copy the token to a secret manager. Tanium doesn't display the token again.
+1. In Privilege Secure for Discovery, select **Configure** > **Server**.
+2. In **EDR Provider Configuration**, select **Add Provider**.
+3. Set **Provider** to **Tanium Cloud**.
+4. Enter a **Configuration Name**.
+5. Under **Remote Systems Management**, set **Enable** to **Enabled**.
+6. Set **Use Proxy Configuration** to **Enabled** if the server reaches Tanium through a proxy.
+7. Enter the **API Base URL**, in the form `https://<customer-name>-api.cloud.tanium.com`.
+8. Enter the **API Key**, the token from Tanium.
 
-## Configure the EDR provider
+   ![The Tanium Cloud provider form with the Use Proxy Configuration, API Base URL, and API Key fields](/images/privilegesecurediscovery/integrations/edr-tanium-credentials.webp)
 
-1. In Privilege Secure for Discovery, go to **Configure > Server > EDR Provider Configuration**, and select **Add Provider**.
-2. Select **Tanium Cloud**.
-3. Enter the settings.
+9. Enter the **Token Expiry**, the expiration date of the token. Privilege Secure for Discovery can't read the date from Tanium.
+10. Select **Test Connection**. The product shows `<name> EDR Integration configuration validated successfully.` when the connection works.
+11. Select **Save**.
 
-   | Field | Value |
-   | --- | --- |
-   | Configuration Name | A descriptive name, such as `Tanium Cloud production`. |
-   | Remote Systems Management: Enable | Select **Enabled**. |
-   | Use Proxy Configuration | Select **Enabled** if the server reaches Tanium through a proxy. |
-   | API Base URL | The URL of your Tanium Cloud API, in the form `https://<customer-name>-api.cloud.tanium.com`. |
-   | API Key | The API token from Tanium. |
-   | Token Expiry | The expiration date of the API token. |
+The provider list shows a warning label when the token expires within 14 days, and a red label within 5 days. Administrators also see an alert after sign-in when a token expires within 5 days. Create a new token and update the configuration before the old one expires.
 
-4. Select **Test Connection**, and verify that the connection succeeds.
-5. Save the configuration.
+### Set connection options
 
-### Configure rate limiting and connection options
-
-The configuration also includes the following optional settings.
-
-| Setting | Purpose |
-| --- | --- |
-| Skip Direct Connection | Connects through Tanium Cloud without first trying to reach the device directly. Enable this when the server can't reach the devices. |
-| Hostname Fallback | Matches a device by host name only when the fully qualified domain name isn't found in Tanium. |
-| Rate Limiting Enabled | Limits the API request rate to avoid overloading Tanium Cloud during bulk operations. |
-| Rate Limit (requests/second) | The maximum requests per second. The default is 5.0. |
-| Burst Capacity | The maximum requests in a short burst. The default is 10. |
-| Max Wait Time (seconds) | The maximum time to wait for a rate-limit token. The default is 30.0. |
-
-### Configure the devices
-
-Configure each device in the interface or through the API.
-
-| Setting | Value | Purpose |
+| Setting | Default | Purpose |
 | --- | --- | --- |
-| Scan | Enabled | Background scanning |
-| Protect | Disabled or Enabled | Disabled uses cached data. Enabled performs real-time operations. |
-| Offline Access | Unmanaged | Not supported with Tanium |
-| EDR Integration | The Tanium Cloud configuration | Selects the provider |
+| **Skip Direct Connection** | Disabled | Connects through Tanium Cloud without first trying to reach the device. Enable it when the server can't reach the devices. |
+| **Hostname Fallback** | Disabled | Matches a device by host name when Tanium doesn't find its fully qualified domain name. |
+| **Rate Limiting Enabled** | Enabled | Limits API requests during bulk operations. |
+| **Rate Limit (requests/second)** | 5.0 | The maximum sustained request rate. |
+| **Burst Capacity** | 10 | The maximum number of requests in a short burst. |
+| **Max Wait Time (seconds)** | 30.0 | The longest that a request waits for a rate limit slot. |
 
-You can't delete an EDR provider configuration while it is assigned to a domain or a system.
+## Assign the configuration
+
+A configuration has no effect until you assign it. You can assign it in three places:
+
+- As the **EDR Configuration** of a domain. Select **Configure** > **Server**, and edit the domain.
+- To one system. Select **Access** > **Grant Access**, select the Windows system, and choose the configuration in the **EDR Integration** list. Only administrators see this list.
+- To many systems. Use the **Set EDR Configuration** bulk action. See [Bulk actions](../../admin/systems/bulk-actions.md).
+
+You can't delete a configuration while a domain or a system uses it. The product shows `You cannot delete this EDR configuration as it is in use on one or more domains` (or `systems`). Assign a different configuration or **Disabled** first.
 
 ## Configure bulk scanning
 
-Bulk scanning scans all Windows devices in a Tanium computer group with one action, instead of scanning each device in turn. It reduces the number of Tanium API calls to a small, fixed number regardless of the number of devices, and it scales to environments with 10,000 or more devices.
+A bulk scan reads every device in a Tanium computer group with one action instead of scanning each device in turn. The number of Tanium API calls stays small no matter how many devices the group holds.
 
-### Match the computer group to your inventory
+The scan targets every device in the group. If the group holds more Windows devices than Privilege Secure for Discovery manages, the product scans the extra devices and discards their results. For example, if **All Windows Computers** has 10,000 devices and the product manages 9,500 of them, the bulk scan reads all 10,000 and keeps 9,500. To avoid the extra scans, create a Tanium computer group that holds only the managed devices.
 
-The bulk scan targets every device in the Tanium computer group. If Tanium contains more Windows devices than Privilege Secure for Discovery, the product scans the extra devices and discards their results. The scan still works, but it uses Tanium resources unnecessarily.
+1. Edit the Tanium Cloud configuration.
+2. Set **Enable Bulk Scan** to **Enabled**.
+3. Enter the **Computer Group Name**. The group must exist in Tanium Cloud. The form requires a name when bulk scanning is on.
+4. Adjust the optional settings.
 
-For example, if the **All Windows Computers** group contains 10,000 devices and 9,500 devices are loaded in the product, the bulk scan scans all 10,000 devices and processes results for 9,500.
+   ![The Bulk Scan section of the Tanium Cloud provider form](/images/privilegesecurediscovery/integrations/edr-tanium-bulk-scan.webp)
 
-To avoid the extra scans, create a custom Tanium computer group that contains only the devices loaded in the product, and use it as the bulk scan group. If the difference is small, you can use the default group.
-
-### Enable bulk scanning
-
-1. In the Tanium Cloud configuration, set **Enable Bulk Scan** to **Enabled**.
-2. Enter the **Computer Group Name**. The group must exist in Tanium Cloud.
-3. Optionally, adjust the following settings.
-
-   | Setting | Description | Default |
+   | Setting | Default | Purpose |
    | --- | --- | --- |
-   | Bulk Scan Timeout (seconds) | How long to wait for a bulk scan to complete | 600 |
-   | Status Check Interval (seconds) | How often to check the status of a running bulk scan | 30 |
-   | Bulk Scan Interval (hours) | The minimum time between automatic bulk scans. Set 0 to run on every scan cycle. | 4 |
-   | Retry Failed Devices Individually | Retries devices that fail with execution errors, timeouts, or parse errors by using individual scans. Offline devices aren't retried. | Disabled |
+   | **Bulk Scan Timeout (seconds)** | 600 | How long to wait for a bulk scan to finish. |
+   | **Status Check Interval (seconds)** | 30 | How often to check a running bulk scan. |
+   | **Bulk Scan Interval (hours)** | 4 | The minimum time between automatic bulk scans. Enter 0 to run on every scan cycle. |
+   | **Retry Failed Devices Individually** | Disabled | Retries devices that fail with execution errors, timeouts, or parse errors by scanning them one at a time. The product skips offline devices. |
 
-4. Save the configuration.
+5. Select **Save**.
 
-Bulk scans run automatically as part of the regular scan cycle. They run before individual device scans, the product removes successfully scanned devices from the individual scan queue, and devices that fail return to individual scanning.
-
-Bulk Scan is an inventory path. It doesn't replace the standard per-device path for Protect, Deny, Just-In-Time Access, or password-management operations.
+Bulk scans run as part of the regular scan cycle, before the per-device scans. The product removes devices that a bulk scan read from the per-device queue, and devices that fail return to per-device scanning. A bulk scan covers inventory only. Protect, deny, and JITA operations still use the per-device path.
 
 ### Monitor bulk scans
 
-Use the **Bulk Scans** page in the management area of the interface to review scan progress, success rate, and failures. Review the counts of completed devices, offline devices, and devices with no match after each run. If many devices fail, check the health of the Tanium agent on those devices, the API token, and the network path to Tanium Cloud.
+Select **Management** > **Bulk Scans** to see the history of bulk scans, including start and end times, device counts, duration, and status. A scan has the status Completed, Partial, or Failed. Each device in a scan has one of the following results.
+
+| Result | Meaning |
+| --- | --- |
+| `SUCCESS` | The device returned valid administrator data. |
+| `OFFLINE` | The device is in the group but didn't respond. |
+| `EXECUTION_FAILED` | The script ran and returned an error. |
+| `TIMEOUT` | The device started but didn't finish in time. |
+| `PARSE_ERROR` | The product couldn't parse the response. This can mean a script version mismatch. |
+
+If many devices fail, check the Tanium client on those devices, the API token, and the network path to Tanium Cloud.
 
 ## Validate the integration
 
-### Validate Tanium
-
-1. Sensor test: in Tanium **Interact**, ask the question `Get NPSD Admin Members from all machines`, and verify that JSON results appear for Windows machines.
-2. Package test, for Protect mode: go to **Actions > Deploy Action**, select the **NPSD Management** package, target a test machine, enter the test parameter `Get-Date`, and verify that the action completes.
-3. API token test: run the following command, and verify that it returns the sensor list.
-
-   ```bash
-   curl -H "session: <token>" \
-     https://<customer-name>-api.cloud.tanium.com/api/v2/sensors
-   ```
-
-### Validate Privilege Secure for Discovery
-
-1. In **Configure > Server > EDR Provider Configuration**, select the Tanium Cloud configuration, select **Test Connection**, and verify that the connection succeeds.
-2. Scan one device, and verify that its local administrators are discovered.
-3. If you enabled bulk scanning, run a scan cycle, and verify that multiple devices update.
-4. If you use Protect mode, grant access to a test user, and verify that the user is added. Rotate a test password, and verify that the password changes.
+1. In Tanium **Interact**, ask `Get NPSD Admin Members from all machines`, and confirm that JSON results appear for Windows devices.
+2. To test the package, deploy **NPSD Management** to a test device with the parameter `Get-Date`, and confirm that the action completes.
+3. In Privilege Secure for Discovery, select **Test Connection** on the configuration.
+4. Scan one system that uses the configuration, and confirm that its local administrators appear.
 
 ## Troubleshoot the integration
 
-| Symptom | Cause and solution |
+| Symptom | Cause and fix |
 | --- | --- |
-| Sensor not found | The sensor name doesn't match. Verify that the sensor is named exactly `NPSD Admin Members` (case-sensitive) and that it is in the content set that the product uses. |
-| Bulk scan completes but no devices update | The computer group name doesn't match, or the group is empty. Verify that the group name in Tanium matches the **Computer Group Name** setting exactly and that the group contains Windows devices. |
-| Action timeouts or API timeout errors | Network issues or large result sets. Increase **Bulk Scan Timeout (seconds)**, or contact Netwrix Support to adjust the single-device action timeout. |
-| Package parameter error (`$0` or `$1`) | Tanium numbers the first package parameter inconsistently. Check the parameter number in the package and adjust the command and the package parameter offset to match. |
-| Devices not found in Tanium | The device is registered in Tanium without its domain suffix. Enable **Hostname Fallback**. |
-
-## Security considerations
-
-- The product encrypts API tokens at rest.
-- Passwords use session-specific RSA key pairs.
-- All API communication uses Transport Layer Security (TLS).
-- The product doesn't log sensitive data in plain text.
-- The product supports an HTTP proxy with authentication.
+| `No matches for computer name '<name>'` | Tanium doesn't know the device by its fully qualified domain name. Enable **Hostname Fallback**. |
+| `Computer <name> has not checked in within 30 minutes` | The Tanium client on the device is offline or not reporting. Check the client. |
+| `Sensor 'NPSD Admin Members' has no results for computer` or `results are unavailable` | Tanium hasn't collected the sensor on the device yet. Enable background collection, and select **Collect Now**. |
+| A package parameter error | Tanium numbered the first parameter `$1` instead of `$0`. See [Create the package](#create-the-package). |
+| A bulk scan finishes but no devices update | The computer group name doesn't match, or the group is empty. Compare **Computer Group Name** with the group in Tanium. |
+| `Circuit breaker is open` in the logs | Repeated Tanium API failures paused bulk scans for 60 seconds. Fix the cause, then wait for the next scan cycle. |
+| Timeouts during a bulk scan | Increase **Bulk Scan Timeout (seconds)**, or ask Netwrix Support about the single-device action timeout. |

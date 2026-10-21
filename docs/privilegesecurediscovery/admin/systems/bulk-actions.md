@@ -1,97 +1,157 @@
 ---
 title: "Run bulk actions on systems"
-description: "Select systems by filter or by file and apply an action such as Bulk JITA, scan policy, or Protect policy to all of them at once."
+description: "Select systems on the Systems screen, by filter or by file, and apply one action such as JITA, scan policy, Protect Mode, or account changes to all of them."
 sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Verify that bulk actions support only domain-joined machines at 26.09.1 (an upload that includes non-domain endpoints returns an error), and that not all bulk actions complete on non-Windows endpoints. The page states both as limits. Evidence: none.
+TODO: The **Scan Policy** bulk action shows the warning "Disabling scan mode on systems with OAM enabled will disable OAM on them." The executor only sets `policy.scan` to `false`, and the single-system API rejects the same change while Offline Access Management (OAM) is enabled. Confirm what the bulk action does to OAM on those systems. Evidence: selectBulkActionsView.html (scan policy section), executors/database_policy_executor.py (SetScanExecutor), lib-api-common/route-handlers/computers/single.js:67.
 
-TODO: Confirm the bulk action list (Bulk JITA, Scan Policy, Protect Policy, Set EDR Configuration, Set Offline Access, Set Accounts Persistent, Add/Update Account, Remove Account, Bulk Expire and Extend, Bulk Archive, Bulk Restore) and Linux Bulk JITA support at 26.09.1. Evidence: none.
-
-TODO: The old page referred to minimum example files attached to it for **Select By File**; they aren't available. Provide them or describe the required columns. Evidence: none.
+TODO: The **Status** column on **Monitor** > **Jobs** shows the raw job state for non-JITA jobs. Confirm the possible values for customers. Evidence: mgmtMonitorCtrl.js shows `status` unchanged unless the job is a JITA request; the test stack has no jobs.
 :::
 
-Bulk actions apply one change to many systems at once. Use them to set scan and Protect Mode policies, grant just-in-time administration (JITA), manage accounts, and more, without opening each system.
+Bulk actions apply one change to many systems at once. In Netwrix Privilege Secure for Discovery, use them to set scan and Protect Mode policies, request just-in-time administration (JITA) sessions, manage accounts, and archive systems without opening each system.
+
+Administrators can run every bulk action. Other users see only **JITA**, **Expire**, and **Extend**.
 
 ## Select the systems
 
-1. In the left-hand menu, select **Management** > **Systems**.
+1. Select **Management** > **Systems**.
+1. Select **Show Filters**, and then filter the list by system name, domain, organizational unit (OU), operating system, active JITA sessions, Offline Access settings, or time since the system was added, last logged on, or last scanned.
+1. To find the systems that one user or group can reach, enter the account in **Account with access**. Use **Access Path** and **Access Type** to narrow the result.
+1. Select the check box for each system, or select the check box in the table header to select every system in the table.
 
-   ![The Management menu with the Systems option](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-06-01_at_8.16.18_am.webp)
+   ![The Systems screen with filters open and three systems selected](/images/privilegesecurediscovery/admin/systems-filters-and-selection.webp)
 
-   The **Systems** screen shows up to 1,000 systems based on the selected views and filters. Use the option at the top right to hide or clear the filters.
+The table loads up to 1,000 systems, and the counter over the table reads `<n> systems selected of 1000 limit`. If you need more than 1,000 systems, select them in groups, for example by OU.
 
-1. Use the views and filters to find the systems you need.
+### Select every system that matches a filter
 
-   ![The Systems screen filtered to a set of systems](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-06-01_at_8.22.45_am.webp)
+When you apply at least one filter and select all 1,000 systems in the table, an administrator sees the message **All 1000 systems on this table are selected** and the link **Select all systems based on this filter**. Select the link to run the action on every system that matches the filter, not only the systems in the table. Select **Clear selection** to undo it.
 
-   If you need more than 1,000 systems, select them as separate groups, for example by organizational unit (OU).
+If no filter is active, the message tells you to apply filters to select more systems.
 
-1. Select all of the filtered systems or a subset.
+The following limits still apply to a selection by filter:
 
-   ![Systems selected on the Systems screen](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-06-01_at_8.24.07_am.webp)
+- **JITA**, **Expire**, **Extend**, and **Scan Systems** stop with an error when the filter matches more systems than the limits in [Change the bulk action limits](#change-the-bulk-action-limits). For example, `Filter matches to 120 systems which is above the maximum of 50 for jita requests`.
+- The other actions apply to every match.
 
-   The **Bulk Actions** button becomes available when systems are selected.
+### Select systems from a file
 
-## Select the systems by filter
+Select **Select By File** to upload a list of systems. The file can be a CSV or Excel export from the **Systems** screen, or a Quickstart report. See [Install the Quickstart tools](../../configuration/bulk-onboarding/install-the-quickstart-tools.md).
 
-Bulk actions by filter apply an action to every system that meets the filter criteria on the **Systems** screen. The default limit for bulk actions is 1,000 systems, but a bulk action by filter runs on all matching systems.
+The accepted file types are `.csv` and `.xlsx`. The product matches each row to a system by name and domain:
 
-## Select the systems by file
+| File type | Columns that the product reads |
+|---|---|
+| `.csv` | A quoted header row with `"Name"` and `"Domain"`. |
+| `.xlsx` | The first worksheet, with `Name` and `Domain`, or `cn` and `domain_fqdn`. |
 
-You can upload a file to select systems. The file can be a copy of a Quickstart report or an export from the **Systems** screen. The accepted formats are `.csv` and `.xlsx`. The export from the **Systems** screen doesn't need to include all of the details.
+Edit a CSV file only in a text editor. Saving it in Excel can change the header quoting, and the upload then fails with `The file does not have a header with value "Name"`. You can save the file as `.xlsx` and upload that file instead.
 
-:::warning
-Not all fields are required to have data, but the headers must remain intact so the product can identify the information in the file. Edit CSV files only in a text editor or an integrated development environment (IDE). Editing and saving a CSV file in Excel can cause formatting problems. You can also save the CSV file as an Excel `.xlsx` file and upload that.
-:::
-
-Bulk actions support domain-joined machines only. If the file includes non-domain endpoints, the upload returns an error that the product couldn't identify a machine.
+After the upload, the screen shows the number of systems found. A warning reports the number of rows that match no system. The upload fails when the file holds more systems than the **Maximum number of bulk JITA (start, extend, or expire) per request** setting allows (50 by default).
 
 ## Choose and run a bulk action
 
-1. Select **Bulk Actions**.
-1. Select the bulk action.
+1. Select the systems, and then select **Bulk Actions**.
+1. In **Title**, keep the generated name or enter a name that identifies the job.
+1. Select **Select Action**, and then select the action.
 
-   ![The Bulk Action screen listing the available actions](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-10-03_at_12.55.29_pm.webp)
+   ![The Select Action menu on the Bulk Action screen](/images/privilegesecurediscovery/admin/bulk-action-select-action.webp)
 
-   The available bulk actions include:
-
-   - Bulk JITA, including for Linux endpoints
-   - Scan Policy
-   - Protect Policy
-   - Set EDR Configuration
-   - Set Offline Access
-   - Set Accounts Persistent
-   - Add/Update Account
-   - Remove Account
-   - Bulk Expire and Extend
-   - Bulk Archive and Bulk Restore
-
-1. Set the configuration for the action, and then save it.
-
-   ![The configuration options for a selected bulk action](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-06-01_at_8.33.03_am.webp)
-
+1. Set the options for the action, and then select **Save**. Select **Edit** to change a saved action, or **Delete** to discard it.
 1. Select **Execute Bulk Action**.
 
-   ![The Execute Bulk Action button](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-06-01_at_8.37.36_am.webp)
+The product creates the job and opens **Monitor** > **Jobs** after about two seconds. You can run one bulk action at a time.
 
-   A pop-up window confirms the action.
+:::warning
+A bulk action changes every selected system as soon as you select **Execute Bulk Action**. Review the **Details** list of selected systems first.
+:::
 
-   ![The confirmation pop-up displayed after a bulk action runs](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-06-01_at_8.41.53_am.webp)
+## Bulk actions reference
 
-   The product then opens **Monitor** > **Jobs**, where you can see the status of the bulk action.
+| Action | What it does | What it skips |
+|---|---|---|
+| **JITA** | Starts a JITA session for you on each selected system. | Systems where you aren't in the account inventory, systems where you already have a session, and domain controllers. |
+| **Expire** | Ends your JITA session on each selected system. | Systems where you have no active session. |
+| **Extend** | Extends your JITA session by the time you choose. | Systems where you have no session, and sessions that have more than 60 minutes left. |
+| **Scan Systems** | Queues a scan of each selected system. | None. |
+| **Scan Policy** | Enables or disables **Scan Mode**. | Domain controllers. |
+| **Protect Policy** | Sets **Protect Mode** to **New Accounts: Deny**, **New Accounts: JITA**, or **Disable**. | Domain controllers, and systems that no scan has reached when you enable Protect Mode. |
+| **Set EDR Configuration** | Assigns an endpoint detection and response (EDR) configuration to each system, or disables EDR. | Domain controllers. |
+| **Set Offline Access** | Sets the Offline Access Management policy on each system. | Domain controllers, and systems that don't run Windows or that no scan has reached when you enable Offline Access. The menu entry appears only when Offline Access Management is enabled on **Configure** > **Server**. |
+| **Set Accounts Persistent** | Sets every account in each system's inventory to persistent. | Systems that no scan has reached. |
+| **Add/Update Account** | Adds a user or group to the inventory, or updates it. | Systems that don't run Windows. |
+| **Remove Account** | Removes a user or group from the inventory. | Systems where the account isn't in the inventory. |
+| **Archive Systems** | Moves each system to **Retired Systems**. | Domain controllers. |
 
-   ![The Jobs screen showing the status of the bulk action](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2022-06-01_at_8.39.56_am.webp)
+### Start, extend, and expire sessions
 
-You can open the job monitor at any time from the **Management** menu to review the status of jobs.
+**JITA**, **Expire**, and **Extend** act on your own sessions. The user shown on the screen is the signed-in user, and the product rejects a request for another user. To act for someone else, see [Start and manage JITA sessions for another user](./start-and-manage-jita-sessions.md).
 
-## Configure bulk action limits
+For **JITA**, set the access duration with the options, the slider, or the minutes box. The duration can't exceed the maximum session duration on **Configure** > **Server**. Select **Add Comment** to enter a comment. If any selected system is a Linux system that uses Privilege Secure for Discovery directory bridging, the screen asks for your Active Directory password before it saves the action.
 
-Limits for bulk actions are on the **Configuration** > **Server** screen. They prevent a large number of bulk actions from overloading the system.
+The job reports the result in plain text, for example:
 
-![The bulk action limits on the Server configuration screen](/images/privilegesecure/4.2/discovery/admin/systemmanagement/screen_shot_2023-02-14_at_10.03.04_am.webp)
+```text
+JITA requested for 3 systems:
+Attempting 2;
+Skipping 1 - Insufficient permission, existing session found, or JITA requested on domain controller.
+```
+
+### Change scan and Protect Mode
+
+**Scan Policy** and **Protect Policy** change the policy on each selected system without a rescan. The default choice for **Protect Policy** is **Disable**. Before you disable **Scan Mode**, set Offline Access Management to **Unmanaged** on systems that use it.
+
+When you enable Protect Mode, the product skips systems that it never scanned and reports `Not enabling Protect Mode on 2 unscanned systems.` Scan those systems first. To plan a rollout, see [Add multiple systems to Protect Mode](../../configuration/onboard-systems/add-multiple-systems-to-protect-mode.md).
+
+### Add, update, and remove accounts
+
+**Add/Update Account** applies to Windows systems only. The heading reads **Add or Update Account (Windows Only)**, and the menu entry shows how many selected systems run Windows. If you select Linux systems too, the screen warns that the action skips them.
+
+1. In **User or Group**, enter at least two characters, and then select the account.
+1. For **Access Permission**, select **Just-In-Time** or **Persistent**.
+1. Select **Save**.
+
+![The Add or Update Account bulk action with the Access Permission options](/images/privilegesecurediscovery/admin/bulk-action-add-update-account.webp)
+
+On a system that already has the account, the action updates the **Persistent** setting. On a system that doesn't have the account, it adds the account. To remove persistence for a group on many systems, see [Remove persistence on machines](../../configuration/domains-and-ad/remove-persistence.md).
+
+**Remove Account** removes the account that you select from the inventory of every selected system. If you filtered by **Account with access**, the screen fills in that account for you.
+
+### Archive systems
+
+**Archive Systems** moves each selected system to the **Retired Systems** view and shows the label **Permanently Archive**. An archived system stays archived even if it still exists in Active Directory, until an administrator restores it. See [Restore a system](./restore-a-system.md).
+
+## Follow a job
+
+**Monitor** > **Jobs** lists every bulk action job, newest first. Select **Management** > **Monitor** to open it at any time. Administrators see all jobs, and other users see their own.
+
+| Column | Content |
+|---|---|
+| **Job Name** | The title that you entered. |
+| **Job Type** | The action, for example **Protect Policy Change** or **JITA Request**. |
+| **Message** | The result of the action, such as `Enabled Protect-JITA Mode on 5 systems.` |
+| **Status** | For a JITA job, the counts of **Pending**, **Active**, **Expired**, and **Error(s)** sessions. |
+| **Created At** and **Created By** | When the job ran and who ran it. |
+
+Select **Back to Systems** to return to the **Systems** screen.
+
+## Change the bulk action limits
+
+Two limits protect the system from large requests. Change them on **Configure** > **Server**.
+
+![The bulk action limits on the Server screen](/images/privilegesecurediscovery/admin/server-bulk-action-limits.webp)
+
+| Setting | Default | Maximum | Applies to |
+|---|---|---|---|
+| **Maximum number of bulk JITA (start, extend, or expire) per request** | 50 | 1,000 | **JITA**, **Expire**, **Extend**, and the number of systems in an uploaded file. |
+| **Maximum systems scanned per bulk request** | 50 | 1,000 | **Scan Systems**. |
+
+The other actions have no separate limit. The selection limit of 1,000 systems in the table still applies.
 
 ## Limits
 
-Not all bulk actions can be completed on endpoints that run an operating system other than Windows.
+- Bulk actions work on systems that the product knows by name and domain. The product skips a file row that matches no system and shows a warning.
+- **Add/Update Account** changes Windows systems only.
+- **Scan Policy**, **Protect Policy**, **Set EDR Configuration**, **Set Offline Access**, **JITA**, and **Archive Systems** skip domain controllers.

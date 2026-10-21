@@ -4,11 +4,7 @@ description: "Connect to a node of an ISO-based Privilege Secure for Discovery d
 sidebar_position: 70
 ---
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: The former page referred to a PuTTY security alert for the first connection but contained no screenshots. Capture screenshots of the PuTTY configuration window and the security alert, with no real host names or IP addresses. Evidence: none.
-:::
-
-This page applies to ISO-based installations. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
+This page applies to the deprecated ISO appliance. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 Use a Secure Shell (SSH) client to open a terminal session on a node. A Windows computer needs an SSH client, such as PuTTY. Linux computers have a native SSH client.
 
@@ -16,7 +12,7 @@ Use a Secure Shell (SSH) client to open a terminal session on a node. A Windows 
 
 - An SSH client on the computer that you connect from. This procedure uses [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 - The user name and password of the administrative account for the node.
-- The IP address of the node. To view the IP addresses of the nodes, sign in to the UI and open **Configure** > **Server**. The addresses are at the top of the page.
+- The IP address of the node.
 
 ## Connect to a node
 

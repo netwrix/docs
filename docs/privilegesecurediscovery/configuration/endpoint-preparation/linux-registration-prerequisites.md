@@ -1,47 +1,57 @@
 ---
 title: "Linux registration prerequisites"
-description: "Review the SSH, sudo, and Python requirements that a Linux system must meet before you register it with Privilege Secure for Discovery."
+description: "Review the network, SSH, sudo, and Python requirements that a Linux system must meet before you register it with Privilege Secure for Discovery."
 sidebar_position: 40
 ---
 
-A Linux system must meet the following requirements before it can register with Netwrix Privilege Secure for Discovery. Verify them on each endpoint before you register it.
-
-:::caution
-Always back up the `/etc/sudoers` file before you scan a Linux system or enable Scan mode on it. Scanning a Linux system flattens the `/etc/sudoers` file, regardless of the Protect mode setting. Flattening pulls all permissions from other sources, such as files in `/etc/sudoers.d`, into `/etc/sudoers` and disables sudo permissions from those sources.
+:::warning[Needs dev input: remove before publishing]
+TODO: The previous page told RHEL and CentOS users to disable SELinux. Confirm whether SELinux in enforcing mode blocks registration or scans. Evidence: the remote program only reads the SELinux status (remote_executor_src/actions/info.py:25-39) and nothing in the product requires it off; no test with SELinux enforcing was found.
 :::
 
-## Requirements
+This page lists what a Linux system must provide before you register it with Netwrix Privilege Secure for Discovery. For the supported distributions and versions, see [Supported platforms](../../requirements/supported-platforms.md). To understand why the product needs these items, see [Linux systems overview](./linux-registration-modes.md).
 
-- SSH connectivity. The machine must be reachable by DNS: a ping to the fully qualified domain name (FQDN) must resolve to an IP address.
-  - If you limit SSH access by user or group, allow the Privilege Secure for Discovery service account, `secureone` by default, to connect over SSH.
-- A temporary user account with administrator (sudo) privileges.
-  - The account must be in the `/etc/sudoers` file on each Linux system that you register.
-  - If sudo requires a password, ensure sudo prompts for the user password, not the root password. For example, on SUSE Linux Enterprise Server, comment out the following lines by using `sudo visudo`:
+Back up `/etc/sudoers` and `/etc/sudoers.d` on each endpoint first, because the first scan rewrites `/etc/sudoers`.
 
-    ```text
-    Defaults targetpw # ask for the password of the target user i.e. root
-    ALL ALL=(ALL) ALL # WARNING! Only use this together with 'Defaults targetpw'!
-    ```
+## Network
 
-  - You can remove this account from the sudoers file, or from the system, after registration.
-- Python 2.7 or Python 3 on the endpoint. Privilege Secure for Discovery looks for `python3`, then `python`, then `python2`. Most Linux distributions install Python by default. If yours doesn't, install a vendor-supported Python 3 package.
+- The FQDN of the endpoint resolves in DNS from the Privilege Secure for Discovery server.
+- The endpoint answers ping (ICMP echo request). If it doesn't, the product reports that it can't reach the system.
+- TCP port 22 is open from the server to the endpoint. The SSH port is the same for all systems.
+- If you restrict SSH access by user or group (for example with `AllowUsers` in `sshd_config`), allow the service account.
 
-Linux user names and passwords are case sensitive. Credentials that you use through Active Directory lightweight bridging or locally on the Linux endpoint must match exactly the case in which they were created.
+## SSH and Python
 
-## Distribution-specific checks
+- The SSH server has the SFTP subsystem enabled. Check that `sshd_config` has a `Subsystem sftp` line. Without it, the product reports `SSH connection error: Channel closed.`
+- The service account can write to `/tmp`.
+- The endpoint has Python 2.7 or Python 3. The product looks for `python3`, then `python`, then `python2`. If it finds none, it reports `Could not find a Python interpreter on the remote system`. Install a vendor-supported `python3` package on minimal images.
+- The `visudo` command is installed. The product uses it to validate every sudoers file before it installs the file.
 
-For the supported Linux distributions and versions, see [Supported platforms](../../requirements/supported-platforms.md). Confirm the following items for your distribution.
+RSA, ECDSA, and Ed25519 SSH keys work with the default `sshd` settings on Ubuntu 24.04. You don't need to change the accepted key types.
 
-| Distribution | Checks |
-| --- | --- |
-| Debian | Python is installed (default installation). |
-| Red Hat Enterprise Linux (RHEL) and CentOS | Disable SELinux. Install Python 3 if the system image doesn't include it. |
-| SUSE | Python is installed. Sudo commands request the registration user's password, not the root password, or the registration account has passwordless sudo for all commands. The `/tmp` directory exists with open permissions. |
-| Ubuntu | Python is installed. SSH is installed on the endpoint. On Ubuntu 22.04 and later, add `PubkeyAcceptedKeyTypes +ssh-rsa` to the bottom of `/etc/ssh/sshd_config`, then restart the SSH service with `sudo systemctl restart sshd`. |
+## Service account
+
+The account that you give at registration becomes the service account that the product uses for every later scan. Don't delete it, and don't remove its sudo rights, after registration. If you set a domain or global Linux service account, the product uses that account instead. For the domain setting, see [Register Linux systems with a domain service account](./linux-simplified-registration.md).
+
+The account must meet these requirements:
+
+- It exists on the endpoint and can sign in over SSH with a password or an SSH key.
+- It can run any command as root with `sudo`. To create it, see [Add a sudo user on an Ubuntu system](./linux-add-a-sudo-user.md).
+- With password authentication, `sudo` asks for the account's own password, not the password of root. The product sends the account password when `sudo` prompts for it.
+- With key authentication, `sudo` doesn't ask for a password, because the product has none to send. Use a `NOPASSWD` rule. Otherwise the product reports `Sudo permissions error`.
+
+After the first successful scan, the product adds the rule `<service-account> ALL=(ALL) NOPASSWD:ALL # S1 Service Account` to `/etc/sudoers`.
+
+User names and passwords on Linux are case sensitive. Enter them exactly as they exist on the endpoint.
+
+## Distribution-specific settings
+
+On SUSE Linux Enterprise Server, the default `/etc/sudoers` asks for the password of root. Open the file with `sudo visudo` and comment out these two lines. Then `sudo` asks for the password of the account that runs it:
+
+```text
+Defaults targetpw   # ask for the password of the target user i.e. root
+ALL   ALL=(ALL) ALL   # WARNING! Only use this together with 'Defaults targetpw'!
+```
 
 ## Register the system
 
-After the endpoint meets these requirements, register it in one of the following ways:
-
-- Register one system by using the API. For more information, see [Register Linux systems by using the API](../bulk-onboarding/register-linux-systems.md).
-- Register systems by using a domain Linux service account. For more information, see [Register Linux systems with a domain service account](./linux-simplified-registration.md).
+After the endpoint meets these requirements, register it with one of the methods in [Linux systems overview](./linux-registration-modes.md#register-linux-systems).

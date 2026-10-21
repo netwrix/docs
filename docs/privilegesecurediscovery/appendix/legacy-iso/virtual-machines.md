@@ -8,7 +8,7 @@ sidebar_position: 50
 TODO: Confirm which Ubuntu version the ISO-based installation used. The former page stated Ubuntu 20.04 LTS. Evidence: none.
 :::
 
-This page applies to ISO-based installations on virtual machines. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
+This page applies to the deprecated ISO appliance on virtual machines. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 An ISO-based installation can run on a VMware virtual machine (VM) instead of dedicated hardware.
 

@@ -11,17 +11,19 @@ Validate each integration layer separately before you expand the scope to produc
 
 | Symptom | Action |
 | --- | --- |
-| **Test Connection** fails | Verify the tenant ID, application (client) ID, secret **Value**, credential expiration, required application permissions, and administrator consent. |
-| **Test Connection** succeeds, but synchronization fails | Verify consent and credential validity. Review the user, group, device, and relationship synchronization logs. |
+| **Test Connection** fails with **Failed to check Entra ID credentials** or **The credentials provided are not valid.** | Verify the tenant ID, application (client) ID, secret **Value**, credential expiration, and administrator consent. The test also fails when the token lacks `Device.Read.All`, so confirm that you granted it as an application permission. |
+| The domain **Status** shows **Please Check Credentials** | The product couldn't get a Microsoft Graph token during synchronization. Verify the tenant ID, client ID, secret value, and expiration date. |
+| **Test Connection** succeeds, but synchronization fails | Verify that `Directory.Read.All` has administrator consent. The test doesn't check that permission. Review the synchronization logs. |
 | Users or groups are absent | Confirm that the full synchronization completed. Verify the required Graph permissions, group memberships, and delta-cycle results. |
 | `AADSTS50011` | Correct the Reply URL so that the scheme, host, path, case, and trailing slash match exactly. |
-| `AADSTS50010` | Make the Microsoft Entra Identifier and the Privilege Secure for Discovery Issuer identical. |
+| `AADSTS700016` or `AADSTS50010` | Make the Microsoft Entra Identifier and the Privilege Secure for Discovery Issuer identical. |
 | `AADSTS50105` | Assign the user or group to the enterprise application. |
-| The browser returns 404 at `/api/v1/saml/callback` or `/api/login` | Use the documented Reply URL path: `/api/v1/login`. |
-| Privilege Secure for Discovery reports an invalid SAML signature | Use the active certificate from this enterprise application. Sign both the response and assertion with SHA-256. |
-| Privilege Secure for Discovery doesn't find the user | For Entra Native, complete Microsoft Graph synchronization. For Hybrid, confirm that the LDAP identity exists and both synchronization paths completed. Compare the NameID to `${sAMAccountName}@${domain_fqdn}` exactly, including case and suffix. |
+| The browser fails at a Reply URL other than `/api/v1/login` | Set the Reply URL to `https://<fqdn>/api/v1/login`. |
+| Privilege Secure for Discovery reports an invalid SAML signature | Paste the active certificate from this enterprise application into **Issuer Cert**. Sign both the response and the assertion with SHA-256. |
+| The product displays **User not found with nameID: `<value>` using template "`<template>`"** | For Entra Native, complete Microsoft Graph synchronization. For Hybrid, confirm that the LDAP identity exists and both synchronization paths completed. Compare the NameID to the **Match User By** template exactly, including case and the domain suffix. A UPN suffix other than the tenant's default domain doesn't match `${sAMAccountName}@${domain_fqdn}`. |
+| The product displays **Required field 'nameID' missing in SAML profile** | Confirm that the enterprise application sends a Name ID claim and that **ID Claim** is `nameID`. |
 | The user matches but doesn't have access | Assign an effective role directly or through an authorized group. |
-| Local login appears instead of automatic SSO | Confirm that **SSO Enabled** is on and **Auto-Redirect to IdP** is enabled. Test an unauthenticated request to a protected route in a new private browser session. A direct visit to `/#/login` doesn't by itself prove protected-route redirection. |
+| Local login appears instead of automatic SSO | Confirm that **SSO Enabled** is **Enabled** and **Auto-Redirect to IdP** is selected. Test an unauthenticated request to a protected route in a new private browser session. A direct visit to `/#/login` doesn't by itself prove protected-route redirection. |
 | SSO starts again after sign-out | Privilege Secure for Discovery doesn't initiate SAML Single Logout. If **Auto-Redirect to IdP** is enabled, a later unauthenticated protected-route request can start SSO while the Microsoft Entra session remains active. Apply your Microsoft Entra session and Conditional Access controls. |
 
 For local recovery, open `https://psd.example.com/#/login`, select **Show local login**, and use the local administrator credentials. If required, use a preserved administrator session to clear **redirect to IdP on login page**.
@@ -35,11 +37,11 @@ For the Entra Native baseline, validation ends after read-only inventory succeed
 ### Scan and inventory
 
 1. Select a small, representative Windows pilot group.
-2. Enable Scan Mode.
+2. Set **Scan Mode** to **Enabled**.
 3. Confirm that each endpoint maps to the expected device record.
 4. Run a scan.
 5. Verify local users, local groups, and local Administrators membership.
-6. Confirm that scan timestamps and audit events are recorded.
+6. Confirm that the scan records timestamps and audit events.
 7. Resolve account exceptions before you enable write operations.
 
 ### Protect and Deny
@@ -48,7 +50,7 @@ Use this procedure only after the selected EDR or Active Directory (AD) Hybrid p
 
 1. Select a test endpoint with a test administrator account.
 2. Confirm the intended persistent and authorized membership.
-3. Select the required Protect behavior.
+3. Select the required **Protect Mode** behavior.
 4. Run the operation through the configured EDR or Hybrid execution path.
 5. Confirm that Privilege Secure for Discovery removes unauthorized membership and retains authorized membership.
 6. Review the audit events and, for an EDR path, the provider-side events.
@@ -93,8 +95,8 @@ Rotate one integration credential at a time. Complete its connection and functio
 ### Rotate a Graph credential
 
 1. Create a second client secret in the app registration, and store it in your secret manager.
-2. Update the Microsoft Entra ID domain in Privilege Secure for Discovery, and select **Test Connection**.
-3. Complete a full or delta synchronization, and validate relationships.
+2. Open the Microsoft Entra ID domain in **Domain Configuration**, enter the new **Client Secret**, and select **Test Connection**. Save the domain.
+3. Wait for the next synchronization, and confirm that the domain status shows no error.
 4. Revoke the old credential after an overlap period and successful validation.
 
 ### Roll over a SAML certificate
@@ -112,27 +114,27 @@ Rotate one integration credential at a time. Complete its connection and functio
 | Graph synchronization succeeds, but endpoint inventory is empty | Graph synchronization doesn't prove endpoint reachability. For the baseline, verify Domain Name System (DNS) or IP resolution, required ports and protocols, the Scan account, and Scan Mode. For EDR, verify agent health and provider assignment. For Hybrid, verify the direct AD and Windows path. |
 | EDR **Test Connection** succeeds, but the endpoint scan fails | Verify that the device is active and visible in the provider, its identifier maps to the expected device record, the EDR configuration is enabled and assigned, and the provider credential has the permissions that the provider guide requires. |
 | New devices use the EDR configuration, but existing devices don't | Domain defaults apply to newly discovered devices. Assign the EDR configuration to existing devices individually or through **Bulk Actions**. |
-| An EDR configuration can't be deleted | The configuration is assigned to a Microsoft Entra ID domain, another domain, or a system. Remove the assignment, and then delete the configuration. |
+| The product refuses to delete an EDR configuration | You still assign the configuration to a Microsoft Entra ID domain, another domain, or a system. Remove the assignment, and then delete the configuration. |
 | Protect, JIT/JITA, or OAM is unavailable or fails | Confirm that the selected connector and installed release support the action. Verify the device policy and provider-side prerequisites. Don't enable the action until its pilot succeeds. |
 | Tanium Bulk Scan omits devices | Verify the exact computer-group name, group membership, agent health, EDR assignment, and the counts of completed devices, offline devices, and devices with no match. |
-| Hybrid objects appear twice or don't correlate | Confirm that both LDAP and Microsoft Entra sources are configured. Complete both synchronizations, and verify that Microsoft Entra contains the expected on-premises synchronization attributes. |
+| Hybrid objects appear twice or don't correlate | Add both an LDAP domain and a Microsoft Entra ID domain. Complete both synchronizations, and verify that the Microsoft Entra users carry the on-premises security identifier (SID) attribute. |
 
 ## Complete a final check
 
-Before you hand the integration to operations, confirm that:
+Before you hand the integration to operations, confirm that you:
 
-- The endpoint operating model is recorded.
-- The stable fully qualified domain name (FQDN), trusted Transport Layer Security (TLS) certificate, and time synchronization are verified.
-- Dedicated least-privilege credentials have owners.
-- Full synchronization, later delta cycles, identity mapping, and roles are verified.
-- Positive and negative SAML tests are complete.
-- The local recovery login is retested after you enable SSO and after every change to **Auto-Redirect to IdP**.
-- Read-only inventory is accepted for the Entra Native baseline, or each endpoint action is accepted separately for the EDR or Hybrid model.
-- Protect, Deny, JIT/JITA, and OAM remain disabled wherever they are unsupported or haven't been enabled deliberately.
-- Domain and per-device policies are documented.
-- The EDR provider and device-policy assignments are recorded, when applicable.
-- The direct and EDR connection strategy is documented when you use both paths.
-- Operations has a list of directly unreachable endpoints, provider-offline endpoints, and endpoints with no match.
-- Conditional Access and multifactor authentication follow your organization's policy.
-- Credential and certificate expiration monitoring is assigned.
-- Operations has the rollback, break-glass, and credential-rotation procedures.
+- Record the endpoint operating model.
+- Verify the stable fully qualified domain name (FQDN), the trusted Transport Layer Security (TLS) certificate, and time synchronization.
+- Assign an owner to each dedicated least-privilege credential.
+- Verify full synchronization, later change cycles, identity mapping, and roles.
+- Complete positive and negative SAML tests.
+- Retest the local recovery login after you enable SSO and after every change to **Auto-Redirect to IdP**.
+- Accept read-only inventory for the Entra Native baseline, or accept each endpoint action separately for the EDR or Hybrid model.
+- Keep Protect, Deny, JIT/JITA, and OAM disabled wherever the path doesn't support them or you haven't enabled them deliberately.
+- Document the domain and per-device policies.
+- Record the EDR provider and device-policy assignments, when applicable.
+- Document the direct and EDR connection strategy when you use both paths.
+- Give operations a list of directly unreachable endpoints, provider-offline endpoints, and endpoints with no match.
+- Align Conditional Access and multifactor authentication with your organization's policy.
+- Assign credential and certificate expiration monitoring.
+- Give operations the rollback, break-glass, and credential-rotation procedures.

@@ -1,34 +1,40 @@
 ---
 title: "Parse events with the Splunk JSON source type"
-description: "Configure the Splunk _json source type so that Netwrix Privilege Secure for Discovery JSON events are parsed into searchable fields."
+description: "Set the Splunk _json source type on an HTTP Event Collector token so Privilege Secure for Discovery events become searchable fields."
 sidebar_position: 40
 ---
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: 7742334174999_mceclip0.webp and 7742334174999_mceclip1.webp: show an Active Directory domain SID, user IDs, and host names. Redact or replace with example data.
+Netwrix Privilege Secure for Discovery writes its event logs as JSON objects. To search the fields of these events in Splunk, set the Splunk `_json` source type on the input that receives them. Without it, Splunk indexes each event as one line of text, and you can only search for strings.
 
-TODO: 7742334174999_blobid0.webp and 7742334174999_blobid1.webp: show the same event with real identifiers. Redact or replace.
+The `fluentd` service in the product image includes the [`splunk_hec` output plugin](https://github.com/splunk/fluent-plugin-splunk-hec), which sends events to a Splunk HTTP Event Collector (HEC) token. For the forwarding configuration of the `fluentd` service, see [Forward logs to a syslog server or SIEM](./forward-logs.md). For searches to run after Splunk parses the events, see [Splunk and SIEM queries](./splunk-and-siem-queries.md).
+
+## Set the source type
+
+1. In Splunk, go to **Settings** > **Data Inputs** > **HTTP Event Collector**.
+2. Select the token that receives the Privilege Secure for Discovery events.
+3. In the **Source Type** list, select `_json`.
+4. Save the token.
+
+The token name doesn't matter. Use any name that identifies the product in Splunk, for example `privilege-secure-for-discovery`.
+
+:::note
+A `sourcetype` value inside the event that the sender posts takes precedence over the token setting. If Splunk doesn't extract the fields after you set the token, check whether the sender sets its own `sourcetype`.
 :::
 
-Netwrix Privilege Secure for Discovery writes all event logs in JSON format by default. To search the fields of these events in Splunk, set the Splunk `_json` source type on the input that receives the events. This article compares the raw event with the parsed event in Splunk. For useful searches, see [Splunk and SIEM queries](./splunk-and-siem-queries.md).
+For more information, see [Set up and use HTTP Event Collector in Splunk Web](https://docs.splunk.com/Documentation/Splunk/latest/Data/UsetheHTTPEventCollector) and [Why source types matter](https://docs.splunk.com/Documentation/Splunk/latest/Data/Whysourcetypesmatter) in the Splunk documentation.
 
 ## Compare a raw event with a parsed event
 
-The following examples show the same event from the worker service: a successful JIT access grant with the message `WS-001.contoso.com - Adding admin privileges: CONTOSO\asmith`. The service generates this message when a user selects **Access System** on the **Grant Access** page of a system and the product grants the request.
+The following example is the raw event for a successful Just-In-Time Access (JITA) grant. The worker service writes it when it adds a user to the local administrators of a system. Docker adds the `container_id`, `container_name`, and `source` fields. The `message` field starts with the host name of the system.
 
-![A JIT access granted event in Splunk](/images/privilegesecure/4.2/discovery/integrations/siem/7742334174999_mceclip0.webp)
-
-The following example shows the raw event log of the JIT access granted event, as the application writes it.
-
-```text
-2026-01-01 19:08:54 +0000 docker.s1_worker.1.<task-id>: {
+```json
+{
   "container_id": "<container-id>",
   "container_name": "/s1_worker.1.<task-id>",
   "source": "stderr",
-  "log": "REMOVED_FOR_DISPLAY_PURPOSES",
   "jobId": "<job-id>",
   "levelname": "INFO",
-  "message": "WS-001.contoso.com - Adding admin privileges: CONTOSO\\asmith",
+  "message": "app01.corp.example.test - Adding admin privileges: CORP\\jpatel",
   "name": "remediant",
   "queue": {
     "_id": "<queue-id>",
@@ -38,58 +44,45 @@ The following example shows the raw event log of the JIT access granted event, a
     },
     "requested_by": "<user-id>",
     "requested_by_info": {
-      "distinguishedName": "CN=asmith,CN=Users,DC=contoso,DC=com",
-      "domain_fqdn": "contoso.com",
-      "domain_netbios": "CONTOSO",
-      "sAMAccountName": "asmith"
+      "distinguishedName": "CN=Jordan Patel,OU=Users,DC=corp,DC=example,DC=test",
+      "domain_fqdn": "corp.example.test",
+      "domain_netbios": "CORP",
+      "sAMAccountName": "jpatel"
     }
   },
   "requestedByUser": {
     "_id": "<user-id>",
-    "domain_netbios": "CONTOSO",
-    "objectSid": "S-1-5-21-1111111111-2222222222-3333333333-1001",
-    "sAMAccountName": "asmith"
+    "domain_netbios": "CORP",
+    "objectSid": "S-1-5-21-1111111111-2222222222-3333333333-1101",
+    "sAMAccountName": "jpatel"
   },
   "service": "svc-worker",
   "system": "Main",
   "targetSystem": {
     "_id": "<system-id>",
-    "cn": "WS-001",
-    "distinguishedName": "CN=WS-001,OU=Servers,DC=contoso,DC=com",
-    "domain_netbios": "CONTOSO",
+    "cn": "APP01",
+    "distinguishedName": "CN=APP01,OU=Servers,DC=corp,DC=example,DC=test",
+    "domain_netbios": "CORP",
     "policy": {
-      "manage_local_sids": true,
-      "scan": false,
+      "scan": true,
       "secure": true,
       "strict_secure": false
     }
   },
   "targetUser": {
     "_id": "<user-id>",
-    "domain_netbios": "CONTOSO",
-    "objectSid": "S-1-5-21-1111111111-2222222222-3333333333-1001",
-    "sAMAccountName": "asmith"
+    "domain_netbios": "CORP",
+    "objectSid": "S-1-5-21-1111111111-2222222222-3333333333-1101",
+    "sAMAccountName": "jpatel"
   },
   "threadName": "Worker-23"
 }
 ```
 
-The following screenshot shows the same event as it appears on the command line.
+With the `_json` source type, Splunk extracts each nested key as a field with a dotted name. For example, the preceding event gives you `targetSystem.cn`, `requestedByUser.sAMAccountName`, and `queue.request.type`. Search them directly:
 
-![The raw JIT access granted event on the command line](/images/privilegesecure/4.2/discovery/integrations/siem/7742334174999_blobid0.webp)
+```text
+index="<index>" service=svc-worker targetSystem.cn=APP01 levelname=INFO
+```
 
-The following screenshot shows the event in Splunk after Splunk parses the JSON message.
-
-![The JIT access granted event in Splunk with parsed JSON fields](/images/privilegesecure/4.2/discovery/integrations/siem/7742334174999_blobid1.webp)
-
-## Set the source type
-
-1. In Splunk, go to **Settings > Data Inputs > HTTP Event Collector**.
-2. Select the token that receives the Privilege Secure for Discovery events.
-3. In the **Source Type** list, select `_json`.
-
-   ![The HTTP Event Collector token settings with the _json source type selected](/images/privilegesecure/4.2/discovery/integrations/siem/7742334174999_mceclip1.webp)
-
-The token name in the screenshot is `secureone`. You can use any name that identifies the product in Splunk.
-
-For more information, see [Why source types matter](https://docs.splunk.com/Documentation/SplunkCloud/8.2.2203/Data/Whysourcetypesmatter) in the Splunk documentation.
+To see the raw event on the server, run `s1 logs`. The command follows the output of the `fluentd` service.

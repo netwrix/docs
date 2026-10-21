@@ -4,7 +4,7 @@ description: "Find the Dell references for provisioning a PowerEdge server throu
 sidebar_position: 30
 ---
 
-This page applies to ISO-based installations on Dell PowerEdge hardware. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
+This page applies to the deprecated ISO appliance on Dell PowerEdge hardware. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 The following Dell article describes how to set up and manage the integrated Dell Remote Access Controller (iDRAC) or the Chassis Management Controller (CMC) for Dell PowerEdge servers and blades: [How to set up and manage your iDRAC or CMC for Dell PowerEdge servers and blades](https://www.dell.com/support/kbdoc/en-us/000134243/how-to-setup-and-manage-your-idrac-or-cmc-for-dell-poweredge-servers-and-blades).
 

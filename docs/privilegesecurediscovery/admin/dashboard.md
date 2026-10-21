@@ -1,53 +1,66 @@
 ---
 title: "Dashboard reference"
-description: "Learn what each number on the Netwrix Privilege Secure for Discovery dashboard means and how it is calculated."
+description: "Learn what each tile on the Netwrix Privilege Secure for Discovery dashboard counts, where the number comes from, and how to read scan performance."
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Define **Scan Performance | Scan Completion** (the tile isn't described on this page); the previous page gave no definition. Evidence: none.
+The dashboard in Netwrix Privilege Secure for Discovery summarizes your inventory, scan results, access requests, and privileged access in one screen. Select **Dashboard** in the left-hand menu to open it. Use this reference to understand what each tile counts.
+
+At the top right of the page title, three totals show the number of systems, groups, and users that the product has imported from your directories. The **Summary**, **LDAP Domains**, and **Scan Performance** panels follow, then the **Highest Privileged Accounts**, **High Risk Systems**, and **Operating Systems** tiles, then the **Overdue Requests** and **Failed Hosts** lists.
+
+:::note
+An administrator can restrict the dashboard to administrators only. The setting is **Restrict Dashboard page to Admins only** in the **Web Application Settings** section of **Configure** > **Server**.
 :::
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: /images/privilegesecure/4.2/discovery/admin/reporting/360058765294_blobid0.webp shows user names and large system counts. Redact or replace with a capture that uses demo data.
-:::
+## Summary
 
-The dashboard in Netwrix Privilege Secure for Discovery summarizes scan results, access requests, and privileged access across your domains. Use this reference to understand what each tile counts and where the number comes from.
+The **Summary** panel counts systems by their state.
 
-![The dashboard showing summary tiles for systems scanned, scan performance, inactive systems, overdue requests, failed hosts, highest privileged accounts, and high risk systems](/images/privilegesecure/4.2/discovery/admin/reporting/360058765294_blobid0.webp)
+![The Summary panel showing the counts for systems scanned, active sessions, inactive systems, Scan Mode, and Protect Mode](/images/privilegesecurediscovery/admin/dashboard-summary.webp)
 
-## Summary tiles
+- **Total Systems Scanned**: The number before the slash is the count of systems that have a last-scanned time, which means the product scanned them at least once. The number after the slash is the count of all computer objects that the product imported from your directories. If the first number is lower than the second, the product hasn't scanned some systems yet.
+- **Active Sessions**: The number of just-in-time administration (JITA) sessions that are active and counting down to expiration.
+- **Inactive Systems**: The number of computer objects with a last logon time that is more than 90 days old.
+- **Scan Mode Enabled**: The number of systems with Scan Mode turned on.
+- **Protect Mode Enabled**: The number of systems with Protect Mode turned on.
 
-- **Summary | Total Systems Scanned**: The number before the slash is the count of systems that the product attempted to scan in the most recent run. The number after the slash is the total count of computer objects imported from your directory. Compare the total with **Summary | Scan Mode Enabled**, which is the number of systems that the product attempts to scan.
+## LDAP Domains
 
-- **Summary | Scan Mode Enabled**: The number of systems with the scan policy enabled.
+The **LDAP Domains** panel lists each domain that you configured, with the result of its last directory synchronization. A domain that synchronized successfully shows **Last sync** with the time elapsed since the sync started. A domain that failed shows the error message from the sync, or **Not Synced** when no sync has completed.
 
-- **Summary | Protect Mode Enabled**: The number of systems with Protect Mode enabled.
-
-- **Summary | Active Sessions**: The number of just-in-time administration (JITA) sessions that are active and counting down to expiration.
-
-- **Summary | Inactive Systems**: Computer objects with a last logon timestamp older than 90 days.
+Only administrators see this panel. Other users see the message "Domains are not visible to your Account Type".
 
 ## Scan performance
 
-- **Scan Performance | Successful Systems**: The number of systems that the product reached and scanned.
+The **Scan Performance** panel reports on the scan that runs now. Select **Prev** to switch to the **Previous Scan** view, and select **Live** to switch back.
 
-- **Scan Performance | Offline Systems**: The number of systems that were offline at the time of the scan.
+![The Scan Performance panel showing scan completion, successful systems, offline systems, and systems that encountered an error](/images/privilegesecurediscovery/admin/dashboard-scan-performance.webp)
 
-- **Scan Performance | Encountered Error**: The number of systems that had a connection error or another unhandled exception.
+- **Scan Completion**: The number of systems that the scan has processed, out of the number of systems that the scan includes. The bar fills as the scan progresses.
+- **Successful Systems**: The number of systems that the product reached and scanned.
+- **Offline Systems**: The number of systems that were offline during the scan.
+- **Encountered Error**: The number of systems that returned a connection error or another unhandled error.
 
-Systems for which the product couldn't verify that it reached the correct host (a host verification error) don't appear to be counted in these tiles.
+The **Previous Scan** view summarizes the last completed scan.
 
-## Requests and failures
+![The Previous Scan view showing result counts, average time per system, start and end times, and total duration](/images/privilegesecurediscovery/admin/dashboard-previous-scan.webp)
 
-- **Overdue Requests**: Access requests that are more than 2 minutes past their expiration time.
-
-- **Failed Hosts**: Systems whose most recent scan attempt was unsuccessful. This count includes systems that previously failed to scan and are no longer set to be scanned. It doesn't include systems that haven't been scanned yet, such as systems that were newly imported from the directory.
+In addition to the counts for successful, offline, and error results, this view shows **Wrong Host**, which counts systems where the product reached a host that didn't match the expected computer. It also shows **Avg sec per System**, **Start Time**, **End Time**, and **Total Duration**. Select the duration to copy a detailed breakdown to the clipboard.
 
 ## Privilege and risk
 
-- **Highest Privileged Accounts**: The users who can reach the most systems to gain administrator access, in descending order.
+- **Highest Privileged Accounts**: The five accounts with administrator access to the most systems, in descending order. The number is the count of systems. By default, the product recalculates this list about every 3 minutes.
+- **High Risk Systems**: The five systems with the most accounts that have administrator access, in descending order. The number is the count of accounts. Select a system to open it on the **Access** > **Grant Access** screen.
+- **Operating Systems**: A chart of your systems by operating system. The chart shows the three most common operating systems and groups the rest as **Others**. Select the table icon to open a list with the number and percentage of systems for every operating system.
 
-- **High Risk Systems**: The systems with the largest number of users who could request administrator access, in descending order.
+Select the title of **Highest Privileged Accounts** or **High Risk Systems** to open **Insight** > **Overview**.
 
-- **LDAP Domains**: The names of all configured LDAP connections.
+## Requests and failures
+
+- **Overdue Requests**: JITA requests that are still counting down more than 2 minutes after their expiration time, which means the product hasn't removed the access yet. Each entry shows the system, the user, the expiration time, and the latest activity message. The list shows five requests per page. Use **Prev** and **Next** to move between pages. Users who aren't administrators see only their own requests.
+- **Failed Hosts**: The ten systems whose most recent scan failed, with the **Host**, **Error**, **Date**, and **Message** of the failure. A system stays in the list after you turn off Scan Mode until a later scan succeeds. A system that has no scan result yet doesn't appear.
+
+## Related information
+
+- [Use the Systems screen](./systems-screen.md)
+- [View application logs](../troubleshooting/application-logs.md)

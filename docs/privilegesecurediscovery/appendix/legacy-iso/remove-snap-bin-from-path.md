@@ -4,7 +4,7 @@ description: "Remove the /snap/bin directory from the PATH variable on a node wh
 sidebar_position: 80
 ---
 
-This page applies to ISO-based installations. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
+This page applies to the deprecated ISO appliance. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 Vulnerability scans can require that the `/snap/bin` directory isn't in the `PATH` environment variable of the node. Complete the following steps on each node.
 

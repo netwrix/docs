@@ -1,24 +1,16 @@
 ---
 title: "Reset USN values after changing domain controllers"
-description: "Reset the stored update sequence number (USN) values for a domain so the product resynchronizes group changes after you point it to a new domain controller."
+description: "Reset the stored update sequence number (USN) values for a domain so Privilege Secure for Discovery resynchronizes after you point it to a different domain controller."
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Verify the procedure on MongoDB 8.0 with mongosh, including that `s1 db` opens a shell on the SecureONE database and that NumberInt(0) is accepted. Evidence: docker/s1tool/src/s1.py:1098-1105 (`s1 db`); not run against 8.0.
+Netwrix Privilege Secure for Discovery reads one domain controller (DC) for each domain. It stores the highest update sequence number (USN) that it has read from Active Directory, and on each synchronization it asks only for objects with a higher `uSNChanged` value. USN values don't replicate between DCs, so each DC has its own numbers.
 
-TODO: Confirm that setting sync.highest_usn to 0 still triggers a full resynchronization with the svc-sync service. Evidence: docker/CHANGELOG.md:537 describes the behavior for the former ldapsync service only.
+When you point a domain to a different DC and the new DC has a lower USN than the stored value, the product asks for objects above a number that the new DC hasn't reached. It misses group and computer changes, and access that depends on the changed groups stops updating.
 
-TODO: Decide whether to provide a menu-driven script for this procedure in the container deployment. The former script (appliance paths and the legacy mongo shell) was removed.
+The product resets the stored values itself when it fails over to another DC of the domain after the configured DC stops responding. You reset them yourself only when you change the DC of a domain in **Configure** > **Server**. The nightly full synchronization doesn't correct the problem, because it reads all objects but doesn't update the stored USN values.
 
-TODO: Confirm whether a UI action now replaces this procedure. Evidence: none.
-:::
-
-Privilege Secure for Discovery reads one domain controller (DC) for each domain and uses the update sequence number (USN) values from Active Directory to detect group changes. USN values don't replicate between DCs. When you point the product to a different DC and the new DC has a lower USN, the product doesn't detect group changes, and access that depends on the changed groups stops updating.
-
-![Domain configuration page where the domain controller is changed](/images/privilegesecure/4.2/discovery/admin/systemmanagement/4405051526935_image_384x376.webp)
-
-To force a full resynchronization of the directory data, reset the stored USN values to zero after you change the DC. Run the procedure during the next maintenance window.
+To force a full resynchronization, set the stored USN values of the domain to zero. When the highest stored USN is zero, the next synchronization reads all directory data for the domain and stores the USN values of the new DC. Run the procedure during a maintenance window, because the first synchronization takes longer than usual.
 
 ## Prerequisites
 
@@ -30,10 +22,12 @@ To force a full resynchronization of the directory data, reset the stored USN va
 1. Open a database shell on a node:
 
    ```bash
-   sudo s1 db
+   s1 db
    ```
 
-2. Display the current USN values for all domains:
+   On a cluster, use the options that [Open the MongoDB shell](../admin/maintenance/open-the-mongodb-shell.md) describes.
+
+1. Display the current USN values for all domains:
 
    ```javascript
    db.secureone_config.find(
@@ -47,13 +41,13 @@ To force a full resynchronization of the directory data, reset the stored USN va
    ```text
    [
      {
-       domain_netbios: 'EXAMPLE',
-       sync: { previous_usn: 2405725, highest_usn: 2405725 }
+       sync: { previous_usn: 2405725, highest_usn: 2405725 },
+       domain_netbios: 'EXAMPLE'
      }
    ]
    ```
 
-3. Set both values to zero for one domain. Replace `<NETBIOS-NAME>` with the value of `domain_netbios` from the previous step:
+1. Set both values to zero for one domain. Replace `<NETBIOS-NAME>` with the value of `domain_netbios` from the previous step:
 
    ```javascript
    db.secureone_config.updateOne(
@@ -64,14 +58,12 @@ To force a full resynchronization of the directory data, reset the stored USN va
 
    A successful update returns `matchedCount: 1` and `modifiedCount: 1`.
 
-4. Run the command from step 2 again and confirm that `highest_usn` and `previous_usn` are `0` for the domain.
-
-5. Repeat steps 3 and 4 for each domain that you changed the DC for.
-
-6. Exit the shell:
+1. Run the command from step 2 again and confirm that `highest_usn` and `previous_usn` are `0` for the domain.
+1. Repeat steps 3 and 4 for each domain that you changed the DC for.
+1. Exit the shell:
 
    ```javascript
    exit
    ```
 
-Resetting the values makes the next synchronization read all directory data for the domain, so the first synchronization takes longer than usual.
+After the next synchronization, run the command from step 2 in a new shell session. The `highest_usn` value is now the current USN of the new DC. To follow the synchronization, see [View application logs](./application-logs.md).

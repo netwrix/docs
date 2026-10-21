@@ -1,42 +1,48 @@
 ---
 title: "Create and manage API keys"
-description: "Create an API key in Netwrix Privilege Secure for Discovery, link it to users, and use it to authenticate to the API."
+description: "Create an API key in Netwrix Privilege Secure for Discovery, link it to users, choose its permissions, and review or revoke keys."
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the available API key scopes and their names in the interface ("registration only" corresponds to the system:register scope). Evidence: docker/node/packages/lib-api-common/constants/scopes.js lists system:register and system:ground_station.
+An API key lets a script or tool call the Netwrix Privilege Secure for Discovery API without an interactive sign-in. Use API keys for the Quickstart tools and for other automation. A key doesn't call the API directly. Your script exchanges the key and the ID of a linked user for a short-lived access token. See [Authenticate with an API key](./authenticate-with-an-api-key.md).
 
-TODO: Confirm that the users endpoint accepts a filter such as `?sAMAccountName=<name>` for finding a user ID. Evidence: none.
-:::
+## How API keys work
 
-An API key lets a script or tool call the Netwrix Privilege Secure for Discovery API without an interactive sign-in. Use an API key for the Quickstart tools and for other automation. This page describes how to create a key in the interface, create a key with the API, and use a key.
+Each key has a unique name, a list of linked users, and a permission setting.
+
+- **Linked users:** The key can sign in only as one of its linked users. The access token that the key produces carries the role of that user, so the key can do what the user can do. A key linked to a user with the User role can't create or revoke API keys, for example. Link the key to the least privileged user that can do the job.
+- **Permissions:** **All API's** lets the key call every endpoint that the linked user can call. **Registration** limits the key to the endpoint that registers computers, `POST /api/v1/computers/register`. Use **Registration** for keys that you give to onboarding scripts.
+- **Name:** The name must be unique. You can't reuse the name of a revoked key, because the product keeps the record of a revoked key.
 
 ## Create an API key in the interface
 
-You manage API keys in the interface as an administrator.
+Create keys as a user with the Administrator role.
 
-1. Go to **Configure > API Keys**.
+1. Go to **Configure** > **API Keys**.
 
-   ![The API Keys page](/images/privilegesecure/4.2/discovery/integrations/api/4421422443287_screen_shot_2022-02-03_at_2.03.58_pm.webp)
+   ![The API Key Management list with three keys, showing the name, linked users, permissions, and creation details of each key](/images/privilegesecurediscovery/integrations/api-api-keys-list.webp)
 
 2. Select **Create API Key**.
+3. For **App Name**, enter a name of at least two characters, for example `example-inventory-sync`.
+4. For **Permissions**, select **All API's** or **Registration**.
+5. For **Linked Users**, enter at least two characters of a user name, and select the user from the list. Repeat to link more users.
+6. Select **Save**.
 
-   ![The New API Key page](/images/privilegesecure/4.2/discovery/integrations/api/4421422443287_screen_shot_2022-02-03_at_2.05.52_pm.webp)
+   ![The New API Key form with the name example-inventory-sync, the permission All API's, and one linked user](/images/privilegesecurediscovery/integrations/api-api-keys-create.webp)
 
-3. Enter a name for the key.
-4. Restrict the permissions to registration only, or allow all APIs.
-5. Select the users that can use the key. These are the product users that can authenticate with the key.
-6. Save the key. The **New API Key Secret** page appears.
-7. Copy the API key secret to a secret manager.
+7. In the **New API key secret** window, select **Copy** next to **API Key Secret**, and store the secret in a secret manager.
 
-The interface shows the API key secret only once. You can't retrieve it after you close the page, so handle it like any other password. If you hover over a linked user, the interface shows the Active Directory name of the user ID. The API key secret is the credential that you use for API configuration, together with the ID of a linked user.
+   ![The New API key secret window with the masked secret and the Reveal and Copy buttons](/images/privilegesecurediscovery/integrations/api-api-keys-secret.webp)
+
+The interface shows the secret only once. You can't recover it after you close the window. If you lose a secret, revoke the key and create a new one. Treat the secret like a password.
+
+If the name already exists, the interface shows the error `Failed to create API key, duplicate app name already exists`.
 
 ## Create an API key with the API
 
-If you already have an access token for an administrator, you can create more keys with a request to `/api/v1/api-keys`. To get an access token, see [Authenticate with an API key](./authenticate-with-an-api-key.md).
+If you have an access token for an administrator, you can create keys with `POST /api/v1/api-keys`. To get an access token, see [Authenticate with an API key](./authenticate-with-an-api-key.md).
 
-1. Find the ID of each user that the key links to. The following command lists users that match a name.
+1. Find the ID of each user to link. The following request lists the users whose `sAMAccountName` starts with the value.
 
    ```bash
    curl --request GET "https://<server-fqdn>/api/v1/users?sAMAccountName=<user-name>" \
@@ -52,21 +58,33 @@ If you already have an access token for an administrator, you can create more ke
      --header "Content-Type: application/json" \
      --header "X-Access-Token: <access-token>" \
      --data '{
-       "appName": "<key-name>",
+       "appName": "example-inventory-sync",
        "linkedUsers": ["<user-id>"]
      }'
    ```
 
-   The response contains the key in the `apiKey` field. To restrict the key to registration only, add `"scopes": ["system:register"]` to the request body.
+   To restrict the key to registration, add `"scopes": ["system:register"]` to the body. The response contains the key in the `apiKey` field.
+
+   ```json
+   { "apiKey": "<api-key>" }
+   ```
 
 3. Copy the `apiKey` value to a secret manager. You can't retrieve it later.
 
-The key name must be unique.
+The API requires only `appName`. Always send `linkedUsers`, because a key without a linked user can't authenticate. If the name already exists, the API returns the status `400` with the MongoDB duplicate key code `11000`.
 
-## Use an API key
+## Review keys
 
-An API key isn't sent with each request. You exchange the key and the ID of a linked user for a short-lived access token, and then you send the access token with each request. See [Authenticate with an API key](./authenticate-with-an-api-key.md).
+The **API Keys** page lists active keys. The **Last Accessed** column shows when a script last exchanged the key for an access token, which helps you find unused keys. The **Linked Users** column shows the ID of each user. Hover over an ID to see the user's name.
 
-## Review and revoke API keys
+The list doesn't show revoked keys. `GET /api/v1/api-keys` returns all keys, including revoked keys, with `isRevoked` set to `true`.
 
-The API Keys page shows each key. The **Last accessed date** column helps you find unused keys. You can revoke a key in the interface or with the API. See [Revoke an API key](./api-key-revocation.md).
+## Revoke a key
+
+On the **API Keys** page, select **Revoke** in the row of the key, and then select **Revoke API Key** to confirm. You can also revoke keys with the API. See [Revoke an API key](./api-key-revocation.md).
+
+## Related information
+
+- [Authenticate with an API key](./authenticate-with-an-api-key.md)
+- [Revoke an API key](./api-key-revocation.md)
+- [Advanced API reference](./advanced-api-reference.md)

@@ -5,7 +5,7 @@ description: "Plan Microsoft Entra ID directory synchronization, SAML single sig
 sidebar_position: 10
 ---
 
-Netwrix Privilege Secure for Discovery integrates with Microsoft Entra ID for directory synchronization and Security Assertion Markup Language (SAML) single sign-on (SSO). Windows endpoint operations require a separate connectivity path. This section helps you plan and configure each layer.
+Netwrix Privilege Secure for Discovery integrates with Microsoft Entra ID for directory synchronization and Security Assertion Markup Language (SAML) single sign-on (SSO). Windows endpoint operations need a separate connectivity path. This section helps you plan and configure each layer.
 
 The integration covers:
 
@@ -20,13 +20,25 @@ Privilege Secure for Discovery separates directory synchronization, user authent
 
 | Layer | Microsoft Entra object or endpoint channel | Credential or trust | Purpose |
 | --- | --- | --- | --- |
-| Directory synchronization | App registration | Tenant ID, client ID, and client secret | Read users, groups, devices, domains, and relationships through Microsoft Graph |
+| Directory synchronization | App registration | Tenant ID, client ID, and client secret | Read users, groups, devices, and the default domain through Microsoft Graph |
 | SAML authentication | Non-gallery enterprise application | Microsoft Entra login URL and application-specific SAML signing certificate | Authenticate an existing, authorized Privilege Secure for Discovery identity |
 | Windows endpoint operations | Direct Windows connectivity or a supported EDR connector | Dedicated Scan, Protect, or EDR credentials | Collect inventory and perform supported endpoint actions without modifying Microsoft Entra directory objects |
 
 The SAML identity must already exist in Privilege Secure for Discovery and have an effective role. In an Entra-native deployment, complete Microsoft Graph synchronization before you test SAML. In a hybrid deployment, the identity can originate from Lightweight Directory Access Protocol (LDAP) synchronization. Complete both synchronization paths and verify object correlation before you enable SSO.
 
 Microsoft Graph doesn't provide an endpoint execution channel. Scan, Protect, Deny, Just-In-Time Access (JIT/JITA), and Offline Access Management (OAM) use direct Windows connectivity or a supported EDR connector.
+
+## What synchronization reads
+
+The product reads from Microsoft Graph only. It never writes to your tenant. A synchronization pass reads:
+
+- Users, including the on-premises attributes of hybrid users
+- Groups, with their members and the groups they belong to
+- Devices
+- The tenant's default domain name, which the product uses as the domain fully qualified domain name (FQDN) for the Microsoft Entra source
+- The members of the Global Administrator directory role
+
+After the first import, the product requests changes from Microsoft Graph every 15 minutes by default. It also runs a full synchronization once a day.
 
 ## Select an endpoint operating model
 
@@ -48,10 +60,10 @@ Use Entra Native with EDR when the deployment requires a supported EDR platform 
 
 Before you make changes:
 
-- Confirm that the installed release is 26.03 or later.
 - Plan a change window, a backup, and a rollback procedure.
-- Use a stable fully qualified domain name (FQDN) for the Privilege Secure for Discovery server, covered by a trusted Transport Layer Security (TLS) certificate.
+- Use a stable FQDN for the Privilege Secure for Discovery server, covered by a trusted Transport Layer Security (TLS) certificate.
 - Verify time synchronization on the server, administrator workstations, and identity infrastructure.
+- Allow outbound HTTPS from the server to `login.microsoftonline.com` and `graph.microsoft.com`. If the server uses a proxy, configure it in **Configure** > **Server** > **Proxy Configuration**.
 - Keep a tested local administrator session.
 - Select a pilot user that synchronizes to Privilege Secure for Discovery and receives an effective role.
 - Assign at least two accountable owners to each Microsoft Entra application.

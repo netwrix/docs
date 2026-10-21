@@ -1,28 +1,50 @@
 ---
 title: "Revoke an API key"
-description: "Revoke a Netwrix Privilege Secure for Discovery API key with a DELETE request so that it can no longer authenticate."
+description: "Revoke a Netwrix Privilege Secure for Discovery API key in the interface or with a DELETE request so that it can no longer authenticate."
 sidebar_position: 30
 ---
 
-Revoke an API key when you no longer need it or when its secret is exposed. A revoked key can no longer be exchanged for an access token. You can also revoke keys in the interface. See [Create and manage API keys](./api-key-management.md).
+Revoke an API key when you no longer need it or when its secret leaks. A revoked key can't get an access token. Revoking a key doesn't cancel access tokens that the key already produced. Those tokens keep working until they expire, which takes up to 8 hours by default.
 
-## Prerequisites
+## Revoke a key in the interface
+
+1. Go to **Configure** > **API Keys**.
+2. Find the key, and select **Revoke** in its row.
+3. In the **Revoking API Key** window, check the app name, and select **Revoke API Key**.
+
+The interface confirms with the message `API key successfully revoked`, and the key disappears from the list.
+
+## Revoke a key with the API
+
+### Prerequisites
 
 - An access token for an administrator. See [Authenticate with an API key](./authenticate-with-an-api-key.md).
 - The `appId` of the key to revoke.
 
-## Find the appId of a key
+### Find the appId of a key
 
-List the issued keys.
+List the keys. The response includes revoked keys, so check that `isRevoked` is `false` for the key that you want.
 
 ```bash
 curl --request GET "https://<server-fqdn>/api/v1/api-keys" \
   --header "X-Access-Token: <access-token>"
 ```
 
-Copy the `appId` value of the key that you want to revoke.
+Each entry has the following shape. Copy the `appId` value of the key to revoke.
 
-## Revoke the key
+```json
+{
+  "appName": "example-inventory-sync",
+  "appId": "<app-id>",
+  "scopes": [],
+  "linkedUsers": ["<user-id>"],
+  "createdBy": "<user-id>",
+  "isRevoked": false,
+  "lastAccessed": "2026-10-21T06:28:42.023Z"
+}
+```
+
+### Revoke the key
 
 Send a `DELETE` request that includes the `appId`.
 
@@ -32,6 +54,17 @@ curl --request DELETE "https://<server-fqdn>/api/v1/api-keys/<app-id>" \
   --include
 ```
 
-A successful revocation returns the HTTP status `204` and no body. If you revoke a key that is already revoked, the API returns the status `410` and the message `RefreshToken is already revoked.` If the `appId` doesn't exist, the API returns the status `404`.
+A successful revocation returns the status `204` and no body.
 
-Although the command uses a `DELETE` request, the API intentionally doesn't delete the key record. The key is marked as revoked.
+| Status | Message | Meaning |
+| --- | --- | --- |
+| `204` | None | The key is revoked. |
+| `404` | `RefreshToken does not exist.` | No key has this `appId`. |
+| `410` | `RefreshToken is already revoked.` | The key is already revoked. |
+
+The `DELETE` request doesn't delete the record. The product keeps it, marked as revoked, with the ID of the user who revoked it. For this reason, you can't create a new key with the name of a revoked key.
+
+## Related information
+
+- [Create and manage API keys](./api-key-management.md)
+- [Authenticate with an API key](./authenticate-with-an-api-key.md)

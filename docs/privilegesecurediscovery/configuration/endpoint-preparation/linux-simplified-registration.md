@@ -1,48 +1,57 @@
 ---
 title: "Register Linux systems with a domain service account"
-description: "Configure an existing domain account as the Linux service account so Privilege Secure for Discovery manages Linux systems without per-system registration."
+description: "Set one Linux service account on a domain so Privilege Secure for Discovery manages Linux systems that it finds in Active Directory without per-system credentials."
 sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Step 4: the domain-level default Linux directory bridging select is commented out in the domain configuration view, so the bridging solution can't be set at the domain level in the UI. Confirm that the per-system Directory Bridging control on the Grant Access screen, the Quickstart tool, and the API are the supported ways to set it, and whether the API accepts a domain-level default (default_system_config_linux.directory_bridging.strategy). Evidence: docker/web/common/config/views/domainConfiguration.html:157-159 (commented out), docker/web/common/access/views/accessView.html:101-116, docker/node/api-legacy-onprem/tests/api.test.js:5091.
+TODO: Confirm that a Linux system that you registered with its own credentials can switch to the domain Linux service account, and give the procedure. The product prefers a system's own credentials over the domain account, and the previous page told readers to contact support. Evidence: remediant/linux/db_queries/linux_configs.py:28-29 (a system with `auth` keeps it); no documented way to clear it.
 
-TODO: Confirm that systems that were registered manually can be switched to the domain Linux service account, and the procedure. The previous page told readers to contact support. Evidence: none.
-
-TODO: Screenshots in this page show an older UI layout. Re-capture them. Evidence: img file names dated 2023-02-14.
+TODO: The domain form in the UI doesn't offer a default directory bridging setting (the control is commented out). Confirm that readers set it per system, with the Quickstart tool, or through the API only. Evidence: docker/web/common/config/views/domainConfiguration.html:157-159; the registration API reads `default_system_config_linux.directory_bridging.strategy` (strategy.linux.js:148 and 182-184).
 :::
 
-You can use the domain configuration to set an existing account on your Linux machines as the service account that Netwrix Privilege Secure for Discovery uses to manage the endpoint. This avoids registering an account on each endpoint and supports a more consistent rollout.
-
-:::caution
-Always back up the `/etc/sudoers` file before you scan a Linux system or enable Scan mode on it. Scanning a Linux system flattens the `/etc/sudoers` file, regardless of the Protect mode setting. Flattening pulls all permissions from other sources, such as files in `/etc/sudoers.d`, into `/etc/sudoers` and disables sudo permissions from those sources.
-:::
+You can set one Linux service account for a domain. Netwrix Privilege Secure for Discovery then uses that account for every Linux system in the domain that you register without credentials, so you don't enter a user name and password for each system.
 
 ## Prerequisites
 
-- A domain account that exists on the Linux machines and has sudo permission on every system that Privilege Secure for Discovery will manage.
-- Linux systems that are in Active Directory.
+- The Linux systems are in the domain and the product has found them in Active Directory (AD).
+- The account meets the requirements in [Linux registration prerequisites](./linux-registration-prerequisites.md).
+- You can sign in to the product as an administrator.
 
-## Configure the domain Linux service account
+## Choose the account type
 
-1. Verify that the domain Linux service account has sudo permission on the systems that Privilege Secure for Discovery will manage.
-2. Go to **Configure** > **Server** and expand the domain that you want to configure.
+The format of the user name decides who creates the account:
 
-   ![The Configure Server screen with a domain collapsed in the domain list](/images/privilegesecure/4.2/discovery/admin/configuration/12415682024599_screen_shot_2023-02-14_at_9.46.54_am_316x280.webp)
+| Format | Meaning |
+| --- | --- |
+| `DOMAIN\Username` | A domain account that already exists. The product doesn't create it. Systems must resolve and authenticate it, for example through SSSD. Only a password is possible; SSH keys aren't allowed. |
+| `Username` | A local account. At registration, the product creates it on each system with the password that you enter, or uses it if it exists. |
 
-3. Find the **Linux Service Account** section at the bottom right of the domain configuration.
+## Set the domain Linux service account
 
-   ![The Linux Service Account section at the bottom right of the domain configuration](/images/privilegesecure/4.2/discovery/admin/configuration/12415682024599_screen_shot_2023-02-14_at_9.47.04_am_383x384.webp)
+1. Go to **Configure** > **Server**.
+2. In **Domain Configuration**, select the arrow next to the domain to expand it.
+3. In the **Linux Service Account** section, enter the user name in **Username (Domain or Local)**, for example `CORP\svc-netwrix`.
+4. Enter the password in **Password**.
 
-4. Enter the domain Linux service account user name in the format `DOMAIN\Username` and its password.
+   ![The Linux Service Account section of a domain, with Username and Password fields](/images/privilegesecurediscovery/endpoint-preparation/linux-domain-service-account.webp)
+
 5. Click **Save**.
 
-Systems in AD that weren't registered manually use this account to manage sudo privileges. Systems that were registered manually keep using the service account from their registration. For options to move a manually registered Linux system to the domain Linux service account, contact Netwrix Support.
+Fill in both fields or leave both empty. If you fill in only one, the product shows `Linux Service Account must be filled or left blank entirely.`
+
+## Register systems with the account
+
+Register a Linux system and leave out the registration user name and password. Only administrators can do this. If the domain has no Linux service account, registration fails and asks for credentials. For the methods, see [Register Linux systems by using the API](../bulk-onboarding/register-linux-systems.md).
+
+A system keeps its own credentials if it already has them. Systems that you registered with credentials before you set the domain account continue to use those credentials.
 
 ## Set the directory bridging solution
 
-Set the directory bridging solution that the systems use, such as SSSD. You can set it in any of the following ways:
+Set the solution that the system uses, such as SSSD, with one of these methods:
 
-- In the UI, use the **Directory Bridging** control for the system on the **Grant Access** screen.
-- In the Quickstart tool, set **Set Directory Bridging Strategy** in the report spreadsheet. For more information, see [Report and update systems](../bulk-onboarding/report-and-update-systems.md).
-- By using the API.
+- On the **Grant Access** screen, use the **Directory Bridging** setting of the system.
+- In the Quickstart tool, set **Set Directory Bridging Strategy** and **Set Directory Bridging Domain** in the report. See [Report and update systems](../bulk-onboarding/report-and-update-systems.md).
+- Call the API.
+
+For the available solutions, see [Linux systems and Active Directory](./linux-with-active-directory.md).

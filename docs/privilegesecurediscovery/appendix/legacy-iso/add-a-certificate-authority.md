@@ -4,7 +4,7 @@ description: "Add the public certificate of a certificate authority to the Ubunt
 sidebar_position: 100
 ---
 
-This page applies to ISO-based installations. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
+This page applies to the deprecated ISO appliance. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 When an environment uses SSL inspection or decryption, the public certificate of the inspecting certificate authority (CA) must be in the `ca-certificates` store of Ubuntu. Without the certificate, downloads such as upgrades fail with SSL handshake errors.
 

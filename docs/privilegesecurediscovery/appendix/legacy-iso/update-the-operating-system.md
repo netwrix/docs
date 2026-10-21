@@ -5,12 +5,12 @@ sidebar_position: 60
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: The former page told readers not to update when the installed Docker version is 29.x or later and to contact Support. This isn't correct for current releases and was removed. Confirm the Docker versions that are supported with 26.09.1 and whether the hold on the docker-ce, docker-ce-cli, and containerd.io packages is still required. Evidence: none.
+TODO: The former page told readers not to update when the installed Docker version is 29.x or later and to contact Support. The page no longer says this. Confirm the Docker versions that are supported with 26.09.1 and whether the hold on the docker-ce, docker-ce-cli, and containerd.io packages is still required. Evidence: none.
 
 TODO: The replication check uses the `s1 db` shell and `rs.printSlaveReplicationInfo()`, which is valid on MongoDB 4.0 only. Confirm the 4.0 behavior for ISO-based deployments. Evidence: none.
 :::
 
-This page applies to ISO-based installations. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
+This page applies to the deprecated ISO appliance. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 Install operating system updates during a scheduled maintenance window, because an update can require a reboot of the server or the Docker service. The downtime depends on the deployment:
 
@@ -114,7 +114,7 @@ Update one node at a time.
 
 15. Repeat steps 5 through 14 for the next node.
 
-16. After all nodes are updated, check the status of the services and nodes one more time:
+16. After you update all nodes, check the status of the services and nodes one more time:
 
     ```bash
     s1 status; s1 nodes

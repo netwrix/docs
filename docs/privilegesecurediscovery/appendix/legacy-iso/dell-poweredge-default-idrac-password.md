@@ -4,7 +4,7 @@ description: "Find the default user name and password of the integrated Dell Rem
 sidebar_position: 20
 ---
 
-This page applies to ISO-based installations on Dell PowerEdge hardware. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
+This page applies to the deprecated ISO appliance on Dell PowerEdge hardware. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 Dell PowerEdge systems with an integrated Dell Remote Access Controller (iDRAC) have a default user name and password. You can also configure them with a secure password. For the source of this information, see Dell's article [What is the default username and password for iDRAC](https://www.dell.com/support/article/en-us/sln306783/dell-poweredge-what-is-the-default-username-and-password-for-idrac?lang=en).
 

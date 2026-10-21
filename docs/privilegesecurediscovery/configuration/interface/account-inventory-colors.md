@@ -1,41 +1,48 @@
 ---
-title: "Account Inventory Colors"
-description: "Learn what each color in the Administrator Accounts list means for the accounts in a system's inventory."
+title: "Account inventory colors"
+description: "Learn what each label color, icon, and type in the Administrator Accounts list means for a system's administrator accounts."
 sidebar_position: 30
 ---
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: /images/privilegesecure/4.2/discovery/admin/configuration/360050514593_screen_shot_2020-06-16_at_11.51.53_am.webp is a June 2020 capture that shows lab account names. Re-capture in the 26.09.1 UI with example names.
-:::
+The **Administrator Accounts** pane in Netwrix Privilege Secure for Discovery lists the accounts that have, or can get, local administrator rights on the selected system. Each account has a colored label so you can tell its role at a glance. This page explains the colors, icons, and columns.
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the colors and their meanings below, and the "Access" page name, match the 26.09.1 UI. Evidence: the Administrator Accounts pane is in docker/web/common/access/views/accessView.html at v26.09.1-rc; the color mapping wasn't checked.
-:::
+To see the pane, select **Access** > **Grant Access** and search for a system. The pane appears to the right of the system details.
 
-The **Administrator Accounts** pane in Netwrix Privilege Secure for Discovery uses colors to tell the administrator accounts on a system apart. This page explains the color scheme.
+![The Administrator Accounts pane showing accounts with different label colors, types, and persistence](/images/privilegesecurediscovery/configuration/ifc-admin-accounts.webp)
 
-![The Administrator Accounts pane showing accounts in different colors](/images/privilegesecure/4.2/discovery/admin/configuration/360050514593_screen_shot_2020-06-16_at_11.51.53_am.webp)
+## Label colors
 
-The list is on the right side of the **Access** page. It shows the users and groups that can get administrator rights on the selected system. An account in the **Account** column might not have local administrator rights.
+The **Type** column names the account type, and the label color follows the type. Persistent and active states override the type color. The built-in administrator, the Privilege Secure for Discovery service account, and the offline access account keep their own colors in every state.
 
-## Colors
+| Color | Type or state | Meaning |
+| --- | --- | --- |
+| Light gray | Persistent | The account has permanent administrator rights. A scan in Protect Mode doesn't remove it from the local Administrators group. |
+| Green | Active session | The user has an open just-in-time access (JITA) session on the system. The **Expiration** column shows when the session ends. |
+| Indigo | Domain user | A domain user account that the product manages. |
+| Blue | Domain group | A domain group. Members get access through the group. |
+| Rust red | Local user | A local account on the system. |
+| Amber | Local group | A local group on the system. |
+| Black | Built-in admin | The built-in local administrator account (RID 500). |
+| Dark gray | SecureONE or Offline Access | The Privilege Secure for Discovery service account, or the offline access account. |
 
-| Color | Meaning |
+Accounts of an unknown type use a plain label with dark text.
+
+## Icons
+
+Icons appear at the start of a label.
+
+| Icon | Meaning |
 | --- | --- |
-| Light gray | Persistent accounts. In Protect Mode, the product doesn't remove these accounts from the local Administrators group during a scan. |
-| Dark gray | Offline access accounts and the Privilege Secure for Discovery service account. A key symbol means that the product manages the password rotation. |
-| Black | The Windows RID 500 local account. A circle with a diagonal line means that the account is disabled. A key symbol means that the product manages the password rotation through Offline Access Management (OAM). |
-| Blue | Groups that were assigned to the inventory directly. |
-| Dark green | Users that were assigned to the inventory directly and aren't part of a group. |
-| Light green | Users that have an open administrative access session on the system. A session starts when you select **Access System** on the Grant Access page. |
-| Red | A local administrator account that isn't a domain account or a special account (RID 500 or a product-specific account). |
+| Circle with a diagonal line | The account is disabled. |
+| Key | The product manages the account password. Only users who can retrieve passwords see this icon. |
+| User with an x | The account has no matching user account in the directory. |
 
-Persistence is described in [Remove persistence on machines](../domains-and-ad/remove-persistence.md).
+If an account has access through a group, the label shows **Access via group** and the group name beneath it.
 
-## Why an account is blue or dark green
+## Columns
 
-Blue and dark green accounts are in the inventory for one of the following reasons:
+- **Persistent** shows **Yes** when the account has permanent administrator rights. Select **Action** > **Set Persistent** or **Remove Persistent** to change it. For details, see [Remove persistence on machines](../domains-and-ad/remove-persistence.md).
+- **On System** shows **Yes** when the account is a member of the local Administrators group on the system at the last scan, and **No** when it isn't.
+- **Expiration** shows the end of an active JITA session.
 
-- The account was in the local Administrators group when the system was put into Protect Mode. The product removed it from the group at that time, but it stays in the inventory list.
-- The account was added to the administrator account and group inventory through the API.
-- The account was added to the local Administrators group on the system. Depending on the configuration, the product might remove the entry from the local Administrators group during the next scan, and the account might stay in the inventory.
+The list sorts persistent accounts first, then active sessions, then groups, users, the built-in administrator, offline access accounts, and the service account.

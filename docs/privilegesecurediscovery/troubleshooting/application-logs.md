@@ -1,37 +1,39 @@
 ---
 title: "View application logs"
-description: "Find, read, and stream the local service logs and the Fluentd output of Privilege Secure for Discovery to troubleshoot problems."
+description: "Find, read, and stream the local service logs and the Fluentd output of Privilege Secure for Discovery to troubleshoot scans, access requests, and services."
 sidebar_position: 40
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the API service has no local log file by default and document how to enable it in the container deployment (the former text said it required a Fluentd restart). Evidence: none; docker-stack.prod.single.yml mounts ./data/logs into the api service but no API log file path was found in the code.
+Netwrix Privilege Secure for Discovery writes some service logs to local files on the host and sends the output of most services to Fluentd, which prints it. Use these logs to troubleshoot a failed scan, a failed access request, or a service that doesn't start. To send the logs to a SIEM, see [Forward logs to syslog servers and SIEM solutions](../integrations/siem/forward-logs.md).
 
-TODO: Confirm the current service log file names (svc-expire.log, svc-scan.log, svc-worker.log, and whether svc-sync.log replaces svc-ldap.log). Evidence: docker/node/packages/lib-api-onprem/schemas/serviceSettings.js:29-34 lists svc-expire, svc-scan, svc-worker, svc-worker-secondary, svc-sync; file names not confirmed.
+## Choose where to look
 
-TODO: Confirm that the log level setting is available per service in the UI at 26.09.1. Evidence: none.
-:::
+| Source | Services | How to read it |
+| --- | --- | --- |
+| Local log files | Expire, Scanner, Worker, and Secondary Worker | Read the files in `/secureone/data/logs` on the node that runs the service. |
+| Fluentd output | All services except the database, the message queue, and Fluentd itself | Run `s1 logs`. |
+| Docker service logs | The database and message queue | Run `docker service logs <stack>_<service>`, for example `docker service logs s1_db`. |
 
-Netwrix Privilege Secure for Discovery writes service logs to local files on the host and streams the combined output of all services through Fluentd. Use these logs to troubleshoot a failed scan, a failed access request, or a service that doesn't start. To send the logs to a SIEM, see [Forward logs to syslog servers and SIEM solutions](../integrations/siem/forward-logs.md).
+The web and API service doesn't write a local log file. To see its events, stream the Fluentd output. The directory sync service, which synchronizes your domains, also doesn't write a local log file by default.
 
-## Services that log locally
+## Set the log level
 
-By default, the following services write local log files:
+Each service logs events at or above its log level. The default level is `INFO`. To change it, select **Configure** > **Services**. In the **Service Settings** section, find the service and select the value of **Log Level**. Choose `DEBUG`, `INFO`, `WARN`, `ERROR`, or `CRITICAL`. The Scanner and Expire services read the setting each time they start a run, so a change applies within the run interval of the service. Use `DEBUG` only while you troubleshoot, because it increases the log volume.
 
-- Expire
-- Scanner
-- Worker
-- Sync
-
-The API service, which records the web UI and API activity, doesn't write a local log file by default. To see API events, stream the Fluentd output as described in [Stream the Fluentd output](#stream-the-fluentd-output).
-
-Fluentd is the log collector for all services. Enabling local API logging restarts the Fluentd service. Plan the change for a maintenance window.
-
-## Log file location and rotation
+## Find the local log files
 
 The services write log files to the `data/logs` directory of the deployment. In a container-based deployment, the deployment directory is `/secureone`, so the full path is `/secureone/data/logs`. On a multi-node cluster, each node holds the log files of the services that run on that node.
 
-Log file names start with `svc-`, followed by the service name. Each log file rotates when it reaches 10 MB. The active file keeps its name, and the rotated files get the suffix `.1` through `.5`. The product keeps the active file plus five rotated files for each service.
+Log file names start with `svc-`, followed by the service name:
+
+| Service | Log file |
+| --- | --- |
+| Expire | `svc-expire.log` |
+| Scanner | `svc-scan.log` |
+| Worker | `svc-worker.log` |
+| Secondary Worker | `svc-worker-secondary.log` |
+
+Each log file rotates when it reaches 10 MB. The active file keeps its name, and the rotated files get the suffix `.1` through `.5`. The product keeps the active file plus five rotated files for each service. A service creates its file when it first logs an event, so a file can be missing on a quiet system.
 
 The following command lists the service log files:
 
@@ -77,23 +79,27 @@ For a description of the fields in each service log, see [Logs](../integrations/
 
 ## Stream the Fluentd output
 
-Fluentd receives the events of all services, including the API, and writes them to its standard output. To follow the events from any node, run the following command:
+Fluentd receives the events of the services that use the Docker `fluentd` logging driver and prints them as color-coded JSON. To follow the events, run the following command on a manager node:
 
 ```bash
 s1 logs
 ```
 
-Fluentd prints each event as color-coded JSON. The command shows events within about 3 to 5 minutes of when they occur, and it doesn't keep history. Use the local log files to review earlier events.
-
-By default, `s1 logs` follows the output of the last 30 seconds. Use the following options to change this behavior:
+By default, `s1 logs` shows the output of the last 30 seconds and keeps following new lines. Press Ctrl+C to stop. Docker keeps the Fluentd service output in up to three files of 1 GB each, so you can read back further than 30 seconds. Use the following options to change the behavior:
 
 | Option | Description |
 | --- | --- |
 | `--since <time>` | Shows the output since a timestamp such as `2026-09-15T13:23:37` or a relative time such as `42m`. |
-| `--tail <number>` | Shows the specified number of lines from the end of the output. |
+| `--tail <number>` | Shows the specified number of lines from the end of the output. The default is `all`. |
 | `--no-follow` | Prints the output and exits instead of following it. |
 
-The following example shows an event from the analytics engine service:
+For example, to print the last 200 lines from the past hour and exit:
+
+```bash
+s1 logs --since 1h --tail 200 --no-follow
+```
+
+Each entry starts with the Docker tag of the service task, followed by the record. The `container_name` and `source` fields identify where the event came from. The following example shows an event from the analytics engine service:
 
 ```text
 2026-09-15 19:04:01 +0000 docker.s1_analytics_engine.1.<task-id>: {
@@ -108,4 +114,4 @@ To find specific events, filter the output with `grep`. For examples, see [Parse
 
 ## Fluentd parser warnings
 
-Fluentd can print `pattern not matched with data` warnings (`fluent.warn`) for lines that a service writes to standard error and that aren't JSON, such as a library deprecation notice. These warnings don't indicate a product failure. The original line appears in the `log` field of the warning.
+Fluentd tries to parse the `log` field of each record as JSON. When a service writes a line that isn't JSON, such as a library deprecation notice, Fluentd prints a `pattern not matched with data` warning. These warnings don't indicate a product failure. The original line appears in the `log` field of the warning.

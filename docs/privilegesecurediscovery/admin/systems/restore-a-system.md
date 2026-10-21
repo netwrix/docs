@@ -1,33 +1,33 @@
 ---
 title: "Restore a system"
-description: "Restore a system that was removed from Active Directory so you can retrieve its OAM or RID 500 administrator passwords."
+description: "Restore an archived system, or one that Active Directory no longer lists, so you can open its page and retrieve its administrator passwords."
 sidebar_position: 40
 ---
 
-When a machine is removed from Active Directory (AD), the nightly LDAP sync also removes it from the main database collections in Netwrix Privilege Secure for Discovery. Occasionally you still need access to the machine even though the groups in its inventory no longer have access. You can restore the machine from the interface to retrieve its Offline Access Management (OAM) or RID 500 administrator passwords.
+When Active Directory (AD) no longer lists a machine, the daily full directory synchronization in Netwrix Privilege Secure for Discovery moves it out of the main database collections. An administrator can also archive a system with the **Archive Systems** bulk action. Either way, the system leaves the **Systems** list and appears in the **Retired Systems** view.
+
+Sometimes you still need access to such a machine even though the groups in its inventory no longer have access. Restore the machine to retrieve its Offline Access Management (OAM) or RID 500 administrator passwords. You need the administrator role.
 
 ## Restore a system
 
-1. Open the **Systems** screen.
+1. Select **Management** > **Systems**.
+1. In **Views**, select **Retired Systems**.
 
-   ![The Systems screen](/images/privilegesecure/4.2/discovery/admin/systemmanagement/4619816162327_screen_shot_2022-03-07_at_3.34.04_pm.webp)
+   ![The Retired Systems view on the Systems screen](/images/privilegesecurediscovery/admin/systems-retired-view.webp)
 
-1. Select the **Retired Systems** view.
-
-   ![The Retired Systems view selected](/images/privilegesecure/4.2/discovery/admin/systemmanagement/4619816162327_screen_shot_2022-03-07_at_3.35.06_pm.webp)
-
-1. Use the filters to find the machine to restore.
-
-   ![The filters used to find a retired system](/images/privilegesecure/4.2/discovery/admin/systemmanagement/4619816162327_screen_shot_2022-03-07_at_3.36.37_pm.webp)
-
-1. In the **Action** menu for the machine, select **Restore System**.
-
-   ![The Restore System option in the Action menu](/images/privilegesecure/4.2/discovery/admin/systemmanagement/4619816162327_screen_shot_2022-03-07_at_3.37.17_pm.webp)
-
-   The machine name becomes a link to the **Grant Access** screen, where the OAM and RID 500 administrator passwords are available.
-
-   ![The Grant Access screen for the restored system](/images/privilegesecure/4.2/discovery/admin/systemmanagement/4619816162327_screen_shot_2022-03-07_at_3.39.13_pm.webp)
+1. Select **Show Filters**, and use the filters to find the machine.
+1. Select the check box for the machine. You can select several machines.
+1. Select **Bulk Actions**. The screen reads `Restore <n> systems`.
+1. Select **Execute Bulk Action**.
+1. On **Monitor** > **Jobs**, wait for the **Restore Request** job to finish. Its message reads `Restore <n> systems.`
+1. Return to **Management** > **Systems**, and open the restored machine from the **All Active Systems** view.
+1. Select **Access** > **Grant Access** for the system to see its passwords.
 
 ## What happens after you restore a system
 
-The machine stays in the standard collections of the database, and its passwords stay available, until the next nightly sync. At that sync, the product checks AD, finds that the machine was removed, and moves it back to the stale store. If you added the machine back to the domain, it remains in the main database collections and you can administer it as usual.
+The machine returns to the standard collections of the database, with its inventory and passwords, and the product treats it as an active system again.
+
+- If the machine still exists in AD, it stays active and you administer it as usual.
+- If AD no longer lists the machine, the next daily full synchronization archives it again. Retrieve the passwords before then.
+
+If you archived the system with **Archive Systems**, a restore also lets directory synchronization manage it again.

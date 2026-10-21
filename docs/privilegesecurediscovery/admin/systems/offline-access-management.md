@@ -1,326 +1,163 @@
 ---
 title: "Manage offline access to local administrator accounts"
-description: "Configure Offline Access Management to rotate and control the built-in and alternate local administrator passwords on Windows systems."
+description: "Set an Offline Access Management policy that rotates the built-in and alternate local administrator passwords on Windows systems, and retrieve those passwords."
 sidebar_position: 60
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm Offline Access Management (OAM) behavior, strategy names, defaults, and password rotation rules at 26.09.1. Evidence: docker/shared/python/src/remediant/db_data/policies/server_config/password_rotation.py:11-12 (defaults for EXPIRY_MINUTES_AFTER_ACCESS and RID_500_ROTATION_DAYS only).
+Offline Access Management (OAM) in Netwrix Privilege Secure for Discovery manages the local administrator accounts on Windows systems. It rotates their passwords and can add an alternate administrator account in place of the built-in Administrator account. You use these accounts to sign in locally when a system is offline or can't reach the domain.
 
-TODO: State how a customer sets the RID_500_* and EXPIRY_MINUTES_AFTER_ACCESS environment variables on the stack (which services, which file), and whether the database-based `managed_sids` override is supported for customers. Evidence: none.
-
-TODO: Confirm a supported way to find systems by OAM policy with `s1 db`, and the collection and field names to document. The previous page used the `ldap_store` collection and `config.policies.offline_access_management` fields. Evidence: none.
-
-TODO: Provide the API endpoint, request body, and `curl` example for setting an OAM policy with an API key. The previous page showed only a Postman screenshot. Evidence: none.
-
-TODO: Confirm the audit log message texts in the Logging section at 26.09.1. Evidence: none.
-
-TODO: Confirm that the Quickstart OAM column names and values match the current report. Evidence: none.
-:::
-
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: /images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam_domain_config_to_db.webp is a database tool view with full object IDs. Redact or replace it.
-
-TODO: /images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam_postman.webp is no longer referenced because the Postman section was removed. Delete it if nothing else uses it.
-
-TODO: Re-capture the OAM screenshots with demo data if any show real system names.
-:::
-
-Offline Access Management (OAM) in Netwrix Privilege Secure for Discovery manages local administrator accounts on Windows systems. It rotates their passwords and can replace the built-in Administrator account with an alternate account, so that you can sign in locally when a system is offline or other administrator accounts are unavailable.
+OAM applies to Windows systems that aren't domain controllers. Privilege Secure for Discovery hides the **Offline Access** control for domain controllers, and the API rejects the request with the message "Offline Access Management is not supported on Active Directory domain controllers."
 
 ## Why manage the built-in Administrator account
 
-Every Windows system has a built-in account named Administrator that can't be removed. It provides a way to sign in with local administrator privileges when the system is offline or other administrator accounts are unavailable. Because it is a local account, the domain doesn't manage its password. This exposes several risks:
+Every Windows system has a built-in Administrator account (relative identifier 500) that you can't remove. The domain doesn't manage its password, which creates several risks:
 
-- It is a privileged account with a known name.
-- It often uses a static password.
-- The static password is often shared across systems.
-- The password must be stored without being lost, misplaced, or compromised.
+- It's a privileged account with a well-known name.
+- It often has a static password.
+- Many systems often share the same password.
+- Someone has to store the password and keep it from being lost or exposed.
 
-Microsoft recommends creating an alternate local administrator account and disabling the built-in Administrator account.
+Microsoft recommends creating an alternate local administrator account and disabling the built-in account. OAM automates this and rotates the passwords of both accounts.
 
-## What OAM does
+## Turn on OAM for the server
 
-OAM automates the following tasks:
+OAM is off until you turn it on for the whole server. Until then, the OAM controls don't appear on the **Grant Access** page, in the domain settings, or in bulk actions.
 
-- Creating an alternate administrator account
-- Disabling the built-in Administrator account
-- Rotating and managing the passwords of both accounts
+1. Go to **Configure** > **Server**.
+1. In **Additional Options**, set **Offline Access Management** to **Enabled**.
 
-You can configure OAM in the following ways:
+When **Prompt users to enter a reason/justification when retrieving an OAM password** is **Enabled** in the same panel, users must enter a comment before they can reveal a password. The audit log records the comment.
 
-- On the **Grant Access** page of the Privilege Secure for Discovery interface
-- Automatically when a system is discovered, by applying the default OAM policy of the domain
-- By using the Quickstart utility
-- By using the Privilege Secure for Discovery API
+## Choose a policy
 
-## Choose a strategy
+A policy is a preset group of options. The interface offers **Unmanaged**, **Best Practice**, and **Advanced...**. The API and the Systems page also name the strategy behind each policy.
 
-A strategy is a preset group of OAM settings. Three strategies are available.
+| Interface choice | Strategy | What it does |
+| --- | --- | --- |
+| **Unmanaged** | Not applicable | Turns OAM off. The product re-enables the built-in Administrator account and removes the alternate administrator account. |
+| **Best Practice** | `os-best-practice` | Creates an alternate administrator account, manages the passwords of both accounts, and disables the built-in Administrator account. Only administrators can reveal the passwords. |
+| **Advanced...** with **Use Built-in Local Admin Account** | `managed-built-in` | Manages the built-in Administrator password and keeps the account enabled. Doesn't create an alternate account. |
+| **Advanced...** with **Use an Alternative Admin Account** | `custom` | Creates an alternate account. You choose whether to manage the built-in password and whether to disable the built-in account. |
 
-### Best Practices
+The alternate account name comes from a template. The default is `S1_ALT_ADMIN`. A question mark in the template becomes a random letter or digit, so `ADMIN_???` can produce `ADMIN_k4Z`. If you set a name earlier, the product keeps the template when you switch policies.
 
-The **Best Practices** strategy does the following:
+:::warning
+If an account with the alternate name already exists on a system and isn't the built-in Administrator account, the scanner deletes it and creates the alternate administrator account in its place. Choose a name that no existing account uses.
+:::
 
-- Creates an alternate administrator account. The default name is `S1_ALT_ADMIN` unless a name was previously set.
-- Rotates and manages the password of the alternate administrator account.
-- Rotates and manages the password of the built-in Administrator account.
-- Disables the built-in Administrator account.
-- Reveals OAM account passwords to Privilege Secure for Discovery administrators and withholds them from JITA users and persistent non-administrator users.
+The product enforces these rules:
 
-The alternate account name isn't strictly part of the best practices. The default is a convenience. If you previously set a name by another means, the product keeps and reuses it. For example, if you set a custom strategy with a specified name and then switch to **Best Practices**, the existing name stays as it is.
+- You can't disable the built-in account unless an alternate account exists.
+- You can't stop managing the built-in password when you use the built-in account.
+- You can't enable OAM on a system while its scan mode is disabled, and you can't disable scan mode while OAM is on.
 
-### Managed Built-in
+## Set the policy on a system
 
-The **Managed Built-in** strategy does the following:
+Only Privilege Secure for Discovery administrators can change the policy.
 
-- Rotates and manages the password of the built-in Administrator account.
-- Enables the built-in Administrator account if needed.
-- Doesn't use an alternate administrator account.
+1. Go to **Access** > **Grant Access** and select the system.
+1. Next to **Offline Access**, open the list that shows the current policy.
 
-This strategy has a toggle that allows OAM passwords to be revealed to users who have JITA or persistent access to the server.
+   ![The Offline Access menu with the Unmanaged and Advanced options](/images/privilegesecurediscovery/admin/oam-grant-access-policy-menu.webp)
 
-### Custom
+1. Select **Best Practice**, or select **Advanced...** to choose the options yourself.
 
-The **Custom** strategy lets you set any OAM policy, but some combinations aren't allowed. You can configure the following:
+   ![The Offline Access Policy Options dialog with the alternate administrator account selected](/images/privilegesecurediscovery/admin/oam-policy-options-dialog.webp)
 
-- Whether the alternate administrator account name is fixed or randomized
-- Rotation and management of the alternate administrator account password
-- Rotation and management of the built-in Administrator account password
-- Whether the built-in Administrator account stays enabled when an alternate administrator exists
-- Whether OAM passwords are revealed to JITA or persistent non-administrator users
+1. In the dialog, set the account, the name template, and the built-in account options, and then select **Save**.
+1. Select **Rescan** to apply the policy now. Otherwise, the next scan applies it.
 
-The built-in account can't be disabled unless an alternate administrator account exists.
+For example, to keep the built-in account enabled and manage only its password, select **Advanced...**, select **Use Built-in Local Admin Account**, and select **Save**.
 
-## Configure OAM on a system
+## Set the policy for many systems
 
-Only Privilege Secure for Discovery administrators can configure these settings.
+On **Management** > **Systems**, select systems and start a bulk action to set Offline Access Management. The bulk action supports Windows systems only and turns on scan mode for the systems it changes. In the advanced view, only the settings you select apply. Settings you don't select keep their current values, or take the **Best Practice** values if the system has none.
 
-1. Open the **Grant Access** page for the system.
+To find systems by their policy, use the **Offline Access** filter on the Systems page (**None**, **Unmanaged**, or **Managed**) and the **Strategy** filter (**Best Practice**, **Custom**, or **Managed Built-in**). The **OAM** column shows each system's policy.
 
-   The following screenshot shows the page before a policy is applied, or after OAM is set to disabled, which is called **Unmanaged**.
+## Set the default policy for a domain
 
-   ![The Grant Access page with the OAM policy set to Unmanaged](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam-ui-test-unmanaged-default.webp)
+The default policy applies to systems that the product discovers later. It doesn't change systems that exist.
 
-1. Select a strategy. To see all of the options, select **Advanced...**.
+1. Go to **Configure** > **Server** and expand the domain.
+1. Under **Default Policies**, set **Offline Access**.
+1. Select **Advanced** for more options. If the dialog appears, set the options and select **Save**.
+1. Select **Save** at the bottom of the domain settings.
 
-   The following screenshot shows the **Best Practices** strategy with the added option to randomize the alternate administrator name.
+The domain settings display **Please SAVE your changes.** until you save.
 
-   ![The Offline Access Policy Options with the Best Practices strategy and a randomized alternate administrator name](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam-grant-access-overview2.webp)
+## Set the policy with the API or Quickstart
 
-   If you select **Best Practices**, the **Offline Access Policy Options** dialog doesn't appear. The product sets all options automatically, except that it reuses any previously set **Alternative account name template**.
+An administrator can set the policy with a `POST` request to `/api/v1/computers/<computer-id>/offline-access-management`. The body takes `enabled` and any of the following options:
 
-1. Rescan the system to apply the changes to the host.
+```json
+{
+  "enabled": true,
+  "strategy": "custom",
+  "break_glass_account_name_template": "ADMIN_???",
+  "use_alternate_admin": true,
+  "manage_built_in_admin_password": true,
+  "disable_built_in_admin": false,
+  "jita_or_persistent_users_can_access_passwords": false
+}
+```
 
-### Let non-administrators retrieve local administrator passwords
+When the system already has a policy and you send only `enabled`, the product changes the enabled state and keeps the other values. The `strategy` value is `os-best-practice`, `managed-built-in`, or `custom`, and it defaults to `os-best-practice`. The `custom` strategy requires `use_alternate_admin`, `manage_built_in_admin_password`, and `disable_built_in_admin`.
 
-By default, only Privilege Secure for Discovery administrators can retrieve the built-in Administrator or alternate administrator password. To let other users, such as help desk staff, sign in locally to a system, select the **JITA or persistent users can access passwords** option.
-
-When the option is selected, a user with JITA or persistent access sees a key icon that indicates a current password is available. The user also sees action menu items to reveal the password and to view the password history.
-
-![An administrator selecting the option on the left and a non-administrator seeing the key icon on the right](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_jita-or-persistent-modal.webp)
-
-When the option isn't selected, users who aren't administrators can't access the password.
-
-![The Grant Access page of a non-administrator user with the option cleared](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_jit-modal-2.webp)
-
-If an administrator clears the option while a non-administrator has the page open, the API protects the password and returns a "forbidden" error.
-
-![The forbidden error shown to a non-administrator after the option is cleared](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_jit-modal-api-smart-alert.webp)
-
-## Set default OAM policy for a domain
-
-You can save default settings on the domain configuration page so that any newly discovered system receives them automatically. This works like the **Grant Access** page.
-
-![The domain configuration page with the default OAM policy settings](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam-s1-1043_copy.webp)
-
-If you select **Best Practices**, the dialog doesn't appear, but the product saves all of the best practice options.
-
-![The domain default OAM policy settings saved in the database](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam_domain_config_to_db.webp)
-
-## Set OAM with Quickstart
-
-The **Computer Data** sheet of the Quickstart workbook has a group of columns that report the OAM policy of each system. **OAM (Offline Access Management) Enabled** reports `TRUE` or `FALSE` to show whether the product manages the built-in administrator account, an alternate administrator account, or both.
-
-In the exported workbook, blue cells hold exported system data and yellow cells are for values that you enter to import into Privilege Secure for Discovery.
-
-![The Quickstart Computer Data sheet with exported data in blue and import columns in yellow](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam-s1-1824.webp)
-
-The following columns describe the OAM policy of a system, if one exists.
-
-| Column name | Value |
-| --- | --- |
-| OAM (Offline Access Management) Enabled | `TRUE`, `FALSE` |
-| OAM Strategy | `OS-BEST-PRACTICE`, `MANAGED-BUILT-IN`, `CUSTOM` |
-| OAM Name Template | Alphanumeric template with `?` wildcards, for example `S1_ALT_???` |
-| OAM JITA User Can Access PW | `TRUE`, `FALSE` |
-| OAM Use Alt Admin | `TRUE`, `FALSE` |
-| OAM Manage Built-in PW | `TRUE`, `FALSE` |
-| OAM Disable Built-in Admin | `TRUE`, `FALSE` |
-
-To change the policy, set **Set OAM Enabled** to `TRUE` or `FALSE`, and then set the other values:
-
-- **Strategy:** Enter `OS-BEST-PRACTICE`, `MANAGED-BUILT-IN`, or `CUSTOM`. If you leave it blank, the current value is kept. If no policy was set before, the default is `OS-BEST-PRACTICE`.
-- **Name template:** Enter a string with `?` wildcards. If you leave it blank, the current value is kept, or the default `S1_ALT_ADMIN` is used.
-- **Remaining options:** Include them only when they don't conflict with the strategy.
-
-The following table shows the default settings for each strategy.
-
-| Option | `OS-BEST-PRACTICE` | `MANAGED-BUILT-IN` | `CUSTOM` |
-| --- | --- | --- | --- |
-| JITA User Can Access PW | `FALSE` | `FALSE` | `FALSE` |
-| Use Alt Admin | `TRUE` | `FALSE` | Required |
-| OAM Manage Built-in PW | `TRUE` | `TRUE` | Required |
-| Disable Built-in Admin | `TRUE` | `FALSE` | Required |
-
-The API rejects invalid combinations of settings.
-
-![The error returned when Quickstart settings conflict with the strategy](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_oam-s1-2343-validate_paramts_dont_conflic_using_quickstart.webp)
-
-For example, the following settings conflict with the best practices strategy:
-
-- **Set OAM Enabled:** `TRUE`
-- **Set OAM Strategy:** `OS-BEST-PRACTICE`
-- **Set OAM Disable Built-in Admin:** `FALSE`
-
-If you import a file with these settings, the API returns the following error:
+The API rejects a request that conflicts with the strategy. For example, `os-best-practice` with `disable_built_in_admin` set to `false` returns the following error:
 
 ```json
 {"name":"UnprocessableEntityError","message":"One or more conflict with named strategy: [disable_built_in_admin]"}
 ```
 
-For the full list of Quickstart columns, see [Quickstart report field reference](../../configuration/bulk-onboarding/report-field-reference.md).
+The Quickstart workbook reports and sets the same options in the OAM columns of the **Computer Data** sheet. For the column names and values, see [Quickstart report field reference](../../configuration/bulk-onboarding/report-field-reference.md).
 
-## Find systems by OAM policy
+## Let non-administrators retrieve passwords
 
-When you set an OAM policy, the product saves the fine-grained options, such as whether to disable the built-in Administrator account, even when you select a strategy. This makes it possible to find systems by what the policy does.
+By default, only administrators can reveal OAM passwords. To let other users, such as help desk staff, sign in locally, select **JITA and persistent users can access passwords** in the **Offline Access Policy Options** dialog, or set `jita_or_persistent_users_can_access_passwords` to `true`. A user with just-in-time access (JITA) or persistent access then sees a key icon on the managed accounts. The user can use these items on the **Action** menu:
 
-Querying by options is more reliable than querying by strategy. A policy can use the `custom` strategy with all of the best practice options, and a query for the `os-best-practice` strategy misses it. If the `enabled` property is `false`, the entire policy is disabled regardless of the other options.
+- **Access Password** reveals the current password.
+- **Show Password History** lists earlier passwords.
+- **Rotate Password On Next Scan** marks the password for rotation.
 
-To find systems that follow the best practices, find systems where the policy is enabled and all of the following options are `true`: use alternate administrator, disable built-in administrator, and manage built-in administrator password.
+![The Action menu for the built-in Administrator account with the password items](/images/privilegesecurediscovery/admin/oam-account-actions-menu.webp)
 
-To run such a query, open a database shell with the `s1` helper utility:
+When the option is off, the API returns a forbidden error to any non-administrator who requests a password.
 
-```bash
-s1 db
-```
+## Password rotation, retention, and complexity
 
-For the helper utility, see [Install the s1 helper utility](../../install/s1-cli-helper.md).
+The product rotates a managed password when any of these events occurs:
 
-## Password retention, rotation, and complexity
+- The product starts managing the account and has no password yet.
+- The scheduled interval passes after the previous rotation. The default is 30 days.
+- The after-use interval passes after a user first reveals the current password. The default is 60 minutes.
+- A user selects **Rotate Password On Next Scan**.
 
-OAM uses the same configuration values as the RID 500 account for password retention, rotation, and complexity. The defaults are:
+Rotation happens on a scan, so a password can outlast its interval until the next scan reaches the system. The product keeps old passwords in the password history for 90 days by default.
 
-- Retention: 90 days
-- Rotation: 30 days
-- Minimum length: 12
-- Minimum digits: 3
-- Minimum uppercase characters: 3
-- Minimum special characters: 3
-- Excluded characters: none
-- Rotation after reveal: the first scan after 1 hour from the time the password was revealed
-
-When a managed password is revealed, whether for the RID 500 account or the alternate administrator, the product rotates it on the first scan after one hour. No user action is required. You can also request that the password rotate on the next scan.
-
-### Rotation triggers
-
-The following events trigger a password rotation:
-
-- Password management for an administrator is enabled for the first time.
-- The configured number of days passes after the previous rotation (`RID_500_ROTATION_DAYS`).
-- The configured number of minutes passes after the password is revealed to a user (`EXPIRY_MINUTES_AFTER_ACCESS`).
-- You request a rotation on the **Grant Access** page. A rescan is required to rotate the password right away.
-
-![The Rotate Password menu item on the Grant Access page](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_s1-911_rotate_password_menu_item.webp)
-
-### Configure password rotation values
-
-No dedicated interface exists for all of the rotation values, but you can set the frequency for a domain. See [OAM password configuration](../../configuration/endpoint-preparation/oam-password-configuration.md).
-
-The product reads the optional values at the start of the scan or worker cycle for a system, in the following order of precedence:
-
-1. The domain configuration saved in the database
-1. Environment variables
-1. Default values
-
-A change saved in the database doesn't require a restart. A change made with environment variables requires a restart of the service.
-
-![The password rotation settings stored in the database](/images/privilegesecure/4.2/discovery/admin/systemmanagement/360043745553_password_rotation_config.webp)
-
-The following table lists the environment variables.
-
-| Environment variable | Default | Notes |
-| --- | --- | --- |
-| `EXPIRY_MINUTES_AFTER_ACCESS` | `60` | |
-| `RID_500_ROTATION_DAYS` | `30` | |
-| `RID_500_RETENTION_DAYS` | `90` | |
-| `RID_500_PW_MIN_LENGTH` | `12` | |
-| `RID_500_PW_MIN_DIGITS` | `3` | |
-| `RID_500_PW_MIN_UPPERCASE` | `3` | |
-| `RID_500_PW_MIN_SPECIAL_CHARS` | `3` | Special characters are punctuation, and the single quote isn't included. |
-| `RID_500_PW_EXCLUDE_CHARS` | Empty | Characters to leave out of generated passwords. |
-
-The minimum settings are lower bounds, not exact values. Other criteria must also be met. For example:
-
-- If you set `RID_500_PW_MIN_LENGTH=10` and `RID_500_PW_MIN_UPPERCASE=10`, and set all other minimums to 0, the password is 10 uppercase characters.
-- If you also set `RID_500_PW_MIN_DIGITS=1`, the password is 11 characters: 10 to satisfy the uppercase minimum and 1 to satisfy the digit minimum.
-- If you instead set `RID_500_PW_MIN_LENGTH=20`, 11 characters satisfy the uppercase and digit requirements, and the remaining 9 can be any letter, digit, or punctuation character that isn't excluded.
-
-The resulting password length is the greater of `RID_500_PW_MIN_LENGTH` or the sum of `RID_500_PW_MIN_DIGITS`, `RID_500_PW_MIN_UPPERCASE`, and `RID_500_PW_MIN_SPECIAL_CHARS`.
-
-An error occurs if the settings can't meet the requirements. For example, if `RID_500_PW_EXCLUDE_CHARS` is `0123456789` and `RID_500_PW_MIN_DIGITS` is `2`, the product raises the exception "Cannot meet minimum requirements of 2 digit characters".
+Set these values for each domain on **Configure** > **Server**, in the **Offline Access Management Settings** of the domain. For the settings and their defaults, see [Configure Offline Access Management passwords](../../configuration/endpoint-preparation/oam-password-configuration.md).
 
 ## How the scanner enforces the policy
 
-The scanner service enforces the OAM policy during its regular scan cycle, or when you request a rescan in the interface. For the policy to be fully enforced, OAM must be enabled, Scan Mode must be enabled, and Protect Mode must not be disabled. If Protect Mode is disabled, the product rotates passwords only. It doesn't create the alternate administrator account or disable the built-in Administrator account.
+The scanner enforces the policy during its scan cycle, and when you select **Rescan**. The **Frequency** setting in the domain limits how often a system gets OAM enforcement. A system still gets enforcement before its interval ends when a password is due for rotation or the alternate account changed.
 
-The scanner enforces the policy in the following order:
+The scanner does the following in order:
 
-1. It creates the alternate administrator account if needed. If the account exists, the scanner checks that it wasn't renamed on the host. If it was renamed, the scanner deletes the account and creates a new one with the correct name. A new account has its password created and managed immediately.
-1. It enables or disables the built-in Administrator account as configured.
-1. It rotates the passwords of the alternate and built-in Administrator accounts as needed.
+1. Creates the alternate administrator account if it's missing. If someone renamed the account on the host, the scanner deletes it and creates a new account with the correct name and a new password. The new account is persistent.
+1. Enables or disables the built-in Administrator account, as the policy requires.
+1. Rotates the passwords of the managed accounts that are due.
 
-If you change the alternate administrator account name, the scanner removes the previous alternate administrator account that is no longer in use. This fully removes the user from the system, rather than only removing it from the Administrators group.
+If you change the alternate account name, the scanner deletes the previous alternate account from the system.
 
 ## Audit log messages
 
-The product writes audit log messages for OAM actions. The following examples show the main events, with placeholders for the values that vary.
+The product records OAM events with the type `credentials`. The category and message text for each event follow.
 
-When you enable OAM through the API, the API logs a message in the `endpoint-enablement` category:
+| Event | Category | Message |
+| --- | --- | --- |
+| A user enables or disables OAM on a system | `endpoint-enablement` | `Enabled Manage Passwords for system <DOMAIN>\<computer>` or `Disabled Manage Passwords for system <DOMAIN>\<computer>` |
+| A user reveals a password | `password-history` | `Accessed most recent local account password for <computer>\<account> (<SID>)`, or `previous` in place of `most recent` for an earlier password |
+| A user requests a rotation | `password-history` | `Password rotation requested for <computer>\<account> (<SID>)` |
+| An administrator changes the server setting | `capability-enablement` | `Enabled the Local Account Password Management capability on <api-url> which supersedes individual managed system configurations.` or `Disabled` in place of `Enabled` |
 
-```json
-{
-  "name": "api",
-  "message": "Enabled Manage Passwords for system <DOMAIN>\\<computer>",
-  "category": "endpoint-enablement",
-  "type": "credentials"
-}
-```
-
-On the next scan, the scanner or worker enforces the policy and logs messages that describe the actions taken, such as creating the alternate administrator account, applying the enablement policy to the local accounts, and applying the local password policy and password history retention policy.
-
-When you disable OAM, the background service re-enables the built-in Administrator account and removes the alternate administrator account.
-
-When a user accesses a password, the API logs a message in the `password-history` category:
-
-```json
-{
-  "name": "api",
-  "category": "password-history",
-  "message": "Accessed most recent local account password for <computer>\\<account> (<SID>)",
-  "type": "credentials"
-}
-```
-
-When a user requests a password rotation, the API logs the following message:
-
-```json
-{
-  "name": "api",
-  "category": "password-history",
-  "message": "Password rotation requested for <computer>\\<account> (<SID>)",
-  "type": "credentials"
-}
-```
-
-For more information about logs, see [Splunk and SIEM queries](../../integrations/siem/splunk-and-siem-queries.md).
+Each event also records the user who acted and the target system and account. When the server requires a justification, the event records the user's comment. For more information about forwarding logs, see [Splunk and SIEM queries](../../integrations/siem/splunk-and-siem-queries.md).

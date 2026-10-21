@@ -5,79 +5,77 @@ description: "Create a CrowdStrike Falcon API client and an EDR provider configu
 sidebar_position: 20
 ---
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: 4404584855447_screen_shot_2021-07-19_at_3.08.26_pm.webp: shows a CrowdStrike client ID in the integration panel. Redact or replace.
-
-TODO: Review the remaining CrowdStrike screenshots for tenant-specific values.
+:::warning[Needs dev input: remove before publishing]
+TODO: Confirm the API client scopes. The table in this page comes from the old documentation. The product calls host search and detail, Real Time Response (RTR) session start and delete, RTR script create, update, and delete, put-file upload, and RTR admin commands. Confirm whether session start needs **Real time response** Write instead of Read, and whether **Real time response (admin)** needs Read as well as Write. Evidence: docker/shared/python/src/remediant/integrations/crowdstrike/api/api_calls.py:130-520.
 :::
 
-The CrowdStrike Falcon Remote Systems Management integration lets Netwrix Privilege Secure for Discovery protect machines and grant administrator access without a direct network connection to the endpoint. The product connects to CrowdStrike Falcon and performs these tasks through the Falcon agent, so the machine doesn't need to be on the domain.
+The CrowdStrike Falcon integration lets Netwrix Privilege Secure for Discovery scan Windows systems and grant just-in-time administrator access through the Falcon sensor. The product doesn't need a direct network connection to the endpoint, and the endpoint doesn't need to be on the domain.
 
-> **Note:** Remote Systems Management and Intelligent Session Capture are independent features. Intelligent Session Capture works regardless of whether Remote Systems Management is enabled. Enabling Remote Systems Management adds the **EDR Integration** list to endpoint configuration.
+For a system that uses this integration, the product scans through Falcon first. If that scan fails, it tries a direct connection. To manage a system, the product uploads its management script (`secureone_management.ps1`) to your Falcon Real Time Response (RTR) scripts, starts an RTR session on the device, runs the script, and closes the session.
+
+The **Intelligent Session Capture** section of the form and the **Remote Systems Management** section are independent. You can enable either one without the other. Only **Remote Systems Management** makes the **EDR Integration** list appear on a system.
 
 ## Prerequisites
 
-- A CrowdStrike Falcon account that can create API clients.
-- The Falcon agent installed on the Windows endpoints that you want to manage.
-- Network access from the Privilege Secure for Discovery server to your Falcon API base URL.
+- A CrowdStrike Falcon console account that can create API clients.
+- The Falcon sensor on the Windows systems that you want to manage, with Real Time Response available.
+- HTTPS access (TCP 443) from the Privilege Secure for Discovery server to your Falcon API base URL. If the server uses a proxy, configure it under **Configure** > **Server** > **Proxy Configuration**.
 
-## Create a CrowdStrike API client
+## Create an API client in Falcon
 
-1. Sign in to the CrowdStrike Falcon console.
-2. On the **Support** menu, select **API Clients and Keys**.
+The following steps use the Falcon console. Menu names can change between console releases. Check the CrowdStrike documentation in your Falcon console if a label differs.
 
-   ![The Support menu in the Falcon console with API Clients and Keys](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_2.39.57_pm_135x268.webp)
-
-3. Select **Add new API client**.
-
-   ![The Add API client button](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_2.42.41_pm.webp)
-
-4. Enter a client name and a description.
+1. Sign in to the Falcon console.
+2. Open **Support and resources**, and select **API clients and keys**.
+3. Select **Create API client**.
+4. Enter a **Client name** and a **Description**.
 5. Select the following scopes.
 
    | Scope | Permission |
    | --- | --- |
    | Hosts | Read |
-   | Real time response (admin) | Write |
    | Real time response | Read |
+   | Real time response (admin) | Write |
 
-6. Select **Add**.
-7. Record the **Client ID**, **Secret**, and **Base URL**.
+6. Select **Create**.
+7. Copy the **Client ID**, **Secret**, and **Base URL**.
 
-Falcon displays the secret only once. Store it in a secret manager.
+Falcon shows the secret only once. Store it in a secret manager.
 
-## Configure Privilege Secure for Discovery
+## Add the provider configuration
 
-You can create more than one EDR provider configuration and assign each one to different machines.
+1. In Privilege Secure for Discovery, select **Configure** > **Server**.
+2. In **EDR Provider Configuration**, select **Add Provider**.
+3. Set **Provider** to **CrowdStrike Falcon**.
+4. Enter a **Configuration Name**. You select this name when you assign the configuration to domains and systems.
+5. Under **Remote Systems Management**, set **Enable** to **Enabled**.
+6. Set **Use Proxy Configuration** to **Enabled** if the server reaches Falcon through a proxy.
+7. Enter the **API Base URL** from the API client, for example `https://api.crowdstrike.com`.
+8. Under **API Client Credentials**, enter the **Client ID** and **Client Secret**.
 
-1. In Privilege Secure for Discovery, open **Configure > Server > EDR Provider Configuration**.
+   ![The CrowdStrike Falcon provider form with the Use Proxy Configuration, API Base URL, and API Client Credentials fields](/images/privilegesecurediscovery/integrations/edr-crowdstrike-credentials.webp)
 
-   ![The Server configuration page with the EDR provider configuration](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.17.39_pm.webp)
+9. Select **Test Connection**. The product shows `<name> EDR Integration configuration validated successfully.` when it can search hosts with the client.
+10. Select **Save**.
 
-2. Select **Add Provider**, and select **CrowdStrike Falcon**.
+You can create more than one configuration, for example one for each Falcon tenant, and assign each one to different systems.
 
-   ![The Add Provider list with CrowdStrike Falcon](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.15.31_pm.webp)
+## Assign the configuration
 
-3. Enter a configuration name. You select this name when you assign the configuration to machines.
+A configuration has no effect until you assign it. You can assign it in three places:
 
-   ![The Configuration Name field of a new EDR configuration](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.15.45_pm.webp)
+- As the **EDR Configuration** of a domain. Select **Configure** > **Server**, and edit the domain.
+- To one system. Select **Access** > **Grant Access**, select the Windows system, and choose the configuration in the **EDR Integration** list. Only administrators see this list.
+- To many systems. Use the **Set EDR Configuration** bulk action. See [Bulk actions](../../admin/systems/bulk-actions.md).
 
-4. Under **Remote Systems Management**, set **Enable** to **Enabled**.
-5. Enter the **API Base URL** and the **Client ID** and **Client Secret** from the API client.
-6. If the server reaches the internet through a proxy, enable **Use Proxy Configuration**.
+You can't delete a configuration while a domain or a system uses it. The product shows `You cannot delete this EDR configuration as it is in use on one or more domains` (or `systems`). Assign a different configuration or **Disabled** first.
 
-   ![The CrowdStrike Falcon configuration panel with API credentials](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_3.08.26_pm.webp)
+## Troubleshoot Test Connection
 
-7. Select **Test Connection**.
+Test Connection fails with `Invalid <name> EDR Integration configuration` when the product can't search hosts. Check the following:
 
-   ![A successful CrowdStrike connection test result](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2021-07-19_at_3.09.13_pm.webp)
+- The **API Base URL** matches the cloud of your Falcon tenant.
+- The **Client ID** and **Client Secret** belong to the same API client, and the client has the **Hosts** Read scope.
+- The server can reach the base URL, and **Use Proxy Configuration** is on if the server needs a proxy.
 
-8. Save the configuration.
-
-## Assign the configuration to machines
-
-Assign the EDR provider configuration to a machine in the interface, through **Bulk Actions**, or by using the Quickstart tools. The **EDR Integration** list is tied to Remote Systems Management.
-
-![The EDR Integration list on a machine configuration](/images/privilegesecure/4.2/discovery/integrations/edr/4404584855447_screen_shot_2022-10-03_at_1.25.07_pm.webp)
-
-You can't delete an EDR provider configuration while it is assigned to a domain or a system.
+Test Connection checks host search only. A scan or a session can still fail if the API client lacks a Real Time Response scope.

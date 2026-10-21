@@ -1,22 +1,28 @@
 ---
 title: "Forward logs to a syslog server or SIEM"
-description: "Configure Fluentd to forward Netwrix Privilege Secure for Discovery application logs to a syslog server or a SIEM solution."
+description: "Configure Fluentd to forward Netwrix Privilege Secure for Discovery application logs to a syslog server or a Security Information and Event Management (SIEM) solution."
 sidebar_position: 10
 ---
 
-You can forward Netwrix Privilege Secure for Discovery application logs to a syslog server or a Security Information and Event Management (SIEM) solution, such as LogRhythm, SolarWinds, HP ArcSight, IBM QRadar, or AlienVault. For queries that you can run after the logs arrive, see [Splunk and SIEM queries](./splunk-and-siem-queries.md).
+Netwrix Privilege Secure for Discovery sends the logs of its services to Fluentd, a log collector that runs as the `fluentd` service. By default, Fluentd prints the logs and doesn't forward them. You can change its configuration to forward the logs to a syslog server or a Security Information and Event Management (SIEM) solution, such as LogRhythm, SolarWinds, HP ArcSight, IBM QRadar, or AlienVault. For searches to run after the logs arrive, see [Splunk and SIEM queries](./splunk-and-siem-queries.md).
+
+## How log forwarding works
+
+The API, analytics engine, health reporter, Worker, Secondary Worker, Expire, Scanner, directory sync, internal API, and Windows bridge services use the Docker `fluentd` logging driver. The driver tags each message `docker.<container-name>` and sends it to the Fluentd service on the same node at `127.0.0.1:24224`. Fluentd listens on the loopback address only, so you don't open an inbound port for it. Fluentd then sends the messages to the destination in its configuration file.
+
+The image includes the plugins for syslog (`remote_syslog`), Splunk HTTP Event Collector (`splunk_hec`), `concat`, `rewrite_tag_filter`, and `stdout_pp`.
 
 ## Prerequisites
 
-- A syslog collector: a syslog server or a SIEM.
+- A syslog collector, either a syslog server or a SIEM, that the Privilege Secure for Discovery node can reach.
 - The host name or IP address, port, and protocol of the collector.
-- SSH access to the server that runs the `fluentd` service, with sudo permissions.
+- SSH access to the node that runs the `fluentd` service, with `sudo` permissions.
 
-## Configure Fluentd
+## Configure Fluentd to forward to syslog
 
-The `fluentd` service reads its configuration from `/secureone/conf/fluentd/fluent.conf`.
+The `fluentd` service reads `/secureone/conf/fluentd/fluent.conf` on the node. The default file prints the parsed logs to standard output. To forward them, replace its contents with a configuration that adds a syslog output.
 
-1. Connect to the server over SSH.
+1. Connect to the node over SSH.
 2. Back up the current configuration file.
 
    ```bash
@@ -29,10 +35,9 @@ The `fluentd` service reads its configuration from `/secureone/conf/fluentd/flue
    sudo vim /secureone/conf/fluentd/fluent.conf
    ```
 
-4. Edit the `<match docker.**>` section. Keep the indentation, and change the host, port, and protocol for your collector. The following example forwards logs to a syslog server at `192.0.2.13`.
+4. Replace the contents with the following configuration. Change `host`, `port`, and `protocol` for your collector. Keep the indentation.
 
    ```text
-   #fluent.conf for fluentd version 1
    <source>
      @type forward
    </source>
@@ -51,22 +56,8 @@ The `fluentd` service reads its configuration from `/secureone/conf/fluentd/flue
        port 514
        protocol tcp
        packet_size 4096
-       #program can ingest as tag, etc.
        program secureone
-       # hostname in the syslog header - defaults to the host server's hostname.
-       # Override by setting S1_NODE_HOSTNAME on the host.
        hostname "#{ENV['S1_NODE_HOSTNAME'] || Socket.gethostname}"
-       ## TLS options
-       # tls <true or false>
-       # ca_file <path to CA cert bundle>
-       # verify_mode 0 # no certificate required
-       # verify_mode 1 # certificate optional
-       # verify_mode 2 # certificate required
-       # Memory buffer with a short flush interval.
-       # <buffer>
-       #   flush_mode interval
-       #   flush_interval 1
-       # </buffer>
        <format>
          @type single_value
          message_key log
@@ -75,88 +66,75 @@ The `fluentd` service reads its configuration from `/secureone/conf/fluentd/flue
      <store>
        @type stdout_pp
        pp true
-       time_color blue
-       tag_color yellow
-       record_colored true
      </store>
    </match>
    <match **>
      @type stdout_pp
      pp true
-     time_color blue
-     tag_color yellow
-     record_colored true
    </match>
    ```
 
-5. Restart `fluentd` to load the new configuration.
+5. Save the file.
+6. Restart the service to load the configuration.
 
    ```bash
    s1 restart fluentd
    ```
 
-### Verify the Fluentd version and configuration
+The example forwards to a syslog server at `192.0.2.13` over TCP on port 514. The second `<store>` block keeps printing the logs, so `s1 logs` still shows them.
 
-On the node that runs `fluentd`, check the Fluentd version.
+### Syslog options
+
+| Option | Description |
+| --- | --- |
+| `host`, `port` | The address of the collector. |
+| `protocol` | `tcp` or `udp`. UDP limits each message to about 1 KB, so use `tcp` for these JSON messages. Syslog over TLS requires `tcp`. |
+| `packet_size` | The maximum size of a syslog packet, including headers. |
+| `program` | The program name in the syslog header. The example uses `secureone`. |
+| `hostname` | The host name in the syslog header. See [Hostname in the syslog output](#hostname-configuration). |
+| `severity` | The syslog severity of every forwarded message. The plugin default is `notice`. The severity doesn't follow the log level, so filter on the `levelname` or `level` field in the JSON body. |
+| `tls`, `ca_file`, `verify_mode` | Settings for syslog over TLS. Set `tls true`, give the path of the CA certificate bundle in `ca_file`, and set `verify_mode` to `2` to require a valid certificate. |
+
+For all options, see the [fluent-plugin-remote_syslog documentation](https://github.com/dlackty/fluent-plugin-remote_syslog).
+
+## Verify the configuration
+
+Check the configuration that the service uses.
 
 ```bash
-sudo docker exec -it $(sudo docker ps | grep fluentd | cut -d' ' -f1) fluent-gem list | grep fluentd
+sudo docker exec -it $(sudo docker ps --filter name=fluentd --quiet) fluentd -c /fluentd/etc/fluent.conf --dry-run
 ```
 
-Check the configuration that the running service uses.
+A valid file ends with `finished dry run mode`. To watch the messages that Fluentd handles, run the following command.
 
 ```bash
-sudo docker exec -it $(sudo docker ps | grep fluentd | cut -d' ' -f1) fluentd -c /fluentd/etc/fluent.conf --dry-run
+s1 logs
 ```
 
-## Results in the SIEM
+To check the Fluentd version, run the following command.
 
-After you set up log forwarding, the product forwards the activity of each service (api, worker, scanner, ldapsync, analytics_engine, internal_api, health_reporter, and expire). The `<match docker.**>` section matches the logs of all Docker services.
+```bash
+sudo docker exec -it $(sudo docker ps --filter name=fluentd --quiet) fluent-gem list | grep fluentd
+```
 
-The following examples show the services (the `container_name` field) that arrive in different SIEMs.
+## Services in the SIEM
 
-### Splunk
-
-The following view shows the top 10 values by event count per `container_name`, so it doesn't list every service.
-
-![A Splunk view of forwarded events grouped by container_name](/images/privilegesecure/4.2/discovery/integrations/siem/360063180233_mceclip0.webp)
-
-### Humio
-
-![A Humio view of forwarded events grouped by container_name](/images/privilegesecure/4.2/discovery/integrations/siem/360063180233_mceclip1.webp)
+After you set up forwarding, the collector receives the messages of the services listed in [How log forwarding works](#how-log-forwarding-works). The `<match docker.**>` section matches every message that carries the `docker.` tag. The `single_value` format in the example sends only the JSON body of each message. To identify the service in the SIEM, use fields in that body: the Python services write `service` or `name`, and the API service writes `"name": "api"`. A store that sends the whole Fluentd record, such as a Splunk HTTP Event Collector store, also receives the `container_name` field that the Docker driver adds.
 
 ## Hostname in the syslog output {#hostname-configuration}
 
-By default, the product uses the host server's host name in the syslog header. Docker Swarm passes the node host name to the Fluentd container at runtime, so no manual configuration is required in most environments. Logs show the actual server host name instead of a Docker container ID, which makes SIEM correlation easier.
+By default, the syslog header carries the host name of the node. Docker Swarm passes the node host name to the Fluentd container, so logs show the node name instead of a container ID. Correlation in the SIEM then uses a name you recognize. Fluentd resolves the host name in this order:
 
-The following example shows syslog output.
+1. The `S1_NODE_HOSTNAME` environment variable, if it's set.
+2. `Socket.gethostname`, the host name of the container, which Swarm sets to the node host name.
+
+The following example shows the syslog output for one message. The fields before the colon are the syslog priority (`<13>`), the time, the host name, and the program name.
 
 ```text
-<13>Apr 7 11:15:14 secureone secureone: {"asctime": "2026-04-07 11:15:13,669", "levelname": "INFO", "message": "EntraId config processing", "service": "svc-scan", ...}
+<13>Oct 21 06:41:41 psd-node-01 secureone: {"asctime": "2026-01-01 00:00:00,000", "levelname": "INFO", "message": "test"}
 ```
 
-The syslog header fields map as follows.
-
-| Field | Value | Notes |
-| --- | --- | --- |
-| `hostname` | `secureone` | Host server host name, set automatically |
-| `program` | `secureone` | Fixed value declared in `fluent.conf` |
-| Log body | JSON object | Full structured log from the service |
-
-### Override the host name
-
-To use a custom host name or IP address, set the `S1_NODE_HOSTNAME` environment variable on the host before you start Docker Swarm.
-
-```bash
-export S1_NODE_HOSTNAME=<hostname-or-ip>
-```
-
-Fluentd resolves the host name in this order:
-
-1. The `S1_NODE_HOSTNAME` environment variable, if it is set.
-2. `Socket.gethostname`, the operating system host name of the node.
-
-This is the relevant directive in `fluent.conf`.
+The body after the program name is the JSON object that the service wrote. To use a custom host name or IP address, set `S1_NODE_HOSTNAME` for the Fluentd service. The following directive in `fluent.conf` reads it.
 
 ```text
 hostname "#{ENV['S1_NODE_HOSTNAME'] || Socket.gethostname}"
@@ -180,7 +158,7 @@ curl "https://192.0.2.13:8088/services/collector" -H "Authorization: Splunk <tok
 
 ### Syslog
 
-Send a test message to a syslog server. Change the IP address and port to match your server.
+Send a test message to a syslog server from the node. Change the IP address and port to match your server.
 
 ```bash
 echo '<14>source PrivilegeSecure: this is a syslog test' | nc -v -u -w 0 192.0.2.13 514
@@ -188,13 +166,13 @@ echo '<14>source PrivilegeSecure: this is a syslog test' | nc -v -u -w 0 192.0.2
 
 ### tcpdump
 
-Verify that logs leave the server by monitoring traffic on port 514. Replace `any` with a specific adapter if needed.
+Verify that logs leave the node by monitoring traffic on port 514. Replace `any` with a specific adapter if needed.
 
 ```bash
 sudo tcpdump -vv -i any port 514
 ```
 
-To filter by destination, use the following command. The options are: `-n` no DNS lookup, `-e` link-level header, `-q` quiet output, `-i` interface.
+To filter by destination, use the following command. The options are `-n` for no DNS lookup, `-e` for the link-level header, `-q` for quiet output, and `-i` for the interface.
 
 ```bash
 sudo tcpdump -n -e -q -i any dst 192.0.2.13

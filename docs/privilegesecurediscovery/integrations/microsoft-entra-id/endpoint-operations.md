@@ -24,7 +24,7 @@ A direct scan succeeds only when:
 - Privilege Secure for Discovery can resolve and reach the Windows endpoint through a supported network path.
 - The required Windows management protocols and ports are available.
 - A valid, least-privilege Scan account can authenticate to the endpoint.
-- Scan Mode is enabled for the target device or policy scope.
+- You set **Scan Mode** to **Enabled** for the target device or policy scope.
 
 Keep Protect, Deny, Just-In-Time Access (JIT/JITA), and Offline Access Management (OAM) disabled in this model.
 
@@ -48,34 +48,23 @@ Use the provider guide to configure provider-side access and the required fields
 1. Complete [Microsoft Graph directory synchronization](./directory-synchronization.md) and [SAML configuration](./saml-sso.md).
 2. Complete the provider-side prerequisites in the selected EDR guide.
 3. Confirm that each pilot Windows endpoint has an active provider agent and appears in the provider console.
-4. In Privilege Secure for Discovery, open **Configure > Server > EDR Provider Configuration**.
+4. In Privilege Secure for Discovery, open **Configure** > **Server** > **EDR Provider Configuration**.
 5. Select **Add Provider**, and select the provider.
-
-   ![The Add Provider list of supported EDR providers](/img/product_docs/privilegesecurediscovery/microsoftentraid/15-npsd-edr-provider-selector.webp)
-
 6. Enter a descriptive configuration name, the provider URL, a dedicated application programming interface (API) credential, proxy settings, and the provider-specific values.
-7. Enable the provider option for remote systems management when the configuration is ready for testing. The field label varies by provider.
-
-   The following screenshot shows a disabled CrowdStrike Falcon configuration with example values. It doesn't show a successful connection. Don't copy these values to a production configuration.
-
-   ![The CrowdStrike Falcon EDR configuration fields with example values](/img/product_docs/privilegesecurediscovery/microsoftentraid/16-npsd-edr-crowdstrike-configuration.webp)
-
+7. Set the provider's integration **Enable** option, which manages Windows systems that the server can't reach directly, to **Enabled** when the configuration is ready for testing.
 8. Select **Test Connection**, and save the provider configuration.
 
    A successful connection test verifies the provider API path. It doesn't verify an endpoint operation.
 
-9. Open the Microsoft Entra domain configuration.
-10. Under **Default Policies > EDR Configuration**, select the provider configuration.
-
-    ![The Default Policies section of the Microsoft Entra domain with an EDR configuration selected](/img/product_docs/privilegesecurediscovery/microsoftentraid/17-npsd-entra-edr-assignment.webp)
-
+9. Open the Microsoft Entra domain in **Domain Configuration**.
+10. Under **Default Policies**, select the provider configuration in **EDR Configuration**. When only one provider exists, the field shows the link **Configure an EDR Provider below.** instead of a list.
 11. Assign the EDR configuration individually or through **Bulk Actions** to devices that already exist in Privilege Secure for Discovery.
-12. Enable Scan Mode for a pilot group. Keep Protect and OAM disabled.
+12. Set **Scan Mode** to **Enabled** for a pilot group. Keep Protect and OAM disabled.
 13. Run a scan.
 14. Verify device mapping, local Administrators inventory, timestamps, and the related events in the product and in the provider console.
 15. Enable Protect, Deny, JIT/JITA, and OAM separately, and only when the connector and installed release support the required action.
 
-You can't delete an EDR provider configuration while it is assigned to a Microsoft Entra ID domain. Remove the assignment from the domain first.
+You can't delete an EDR provider configuration while a Microsoft Entra ID domain, an LDAP domain, or a system uses it. The product displays **You cannot delete this EDR configuration as it is in use on one or more Microsoft Entra ID domains** (or domains, or systems). Remove the assignment first.
 
 Use a dedicated provider-side service identity with only the required permissions. Store its credential in your secret manager. Don't reuse the Graph client secret as a Scan, Protect, LDAP, or EDR credential.
 
@@ -102,7 +91,7 @@ An Entra-joined device alone doesn't establish the hybrid model. The product mus
 
 1. Confirm that the required users, groups, and devices originate in AD and synchronize to Microsoft Entra.
 2. Verify that the synchronized Microsoft Entra objects contain the expected on-premises synchronization attributes.
-3. In Privilege Secure for Discovery, open **Configure > Server > Domain Configuration > Add Domain > LDAP**.
+3. In Privilege Secure for Discovery, open **Configure** > **Server** > **Domain Configuration** > **Add Domain** > **LDAP**.
 4. Configure the AD Domain Name System (DNS) domain, directory endpoint, secure LDAP settings, bind account, and directory search scope.
 5. Configure separate least-privilege accounts:
 
@@ -133,13 +122,12 @@ Enable a policy action only after you confirm that the selected direct or EDR pa
 
 | Setting | Purpose |
 | --- | --- |
-| **Scan Mode** | Enables scheduled administrator inventory and endpoint processing. |
+| **Scan Mode** | Defaults to **Disabled**. **Enabled** turns on scheduled administrator inventory and endpoint processing. |
 | **Protect Mode: Disabled** | Keeps the device in inventory-only mode. |
 | **Protect Mode: New Accounts: JITA** | Removes unauthorized, nonpersistent administrator membership while allowing an approved identity to remain eligible for JITA. |
 | **Protect Mode: New Accounts: Deny** | Removes unauthorized, nonpersistent administrator membership without retaining newly discovered access for JITA. |
-| **Authorization Groups** | Defines group-based administrator membership that remains persistent. |
 | **EDR Configuration** | Selects the endpoint execution provider. |
-| **Offline Access** | Selects the OAM policy and password lifecycle. |
+| **Offline Access** | Selects **Best Practice**, **Unmanaged** (the default), or **Advanced** for OAM and the password lifecycle. |
 
 Complete the administrator inventory before you enable Protect Mode. Define persistent accounts, service identities, exclusions, rollback, and break-glass access.
 

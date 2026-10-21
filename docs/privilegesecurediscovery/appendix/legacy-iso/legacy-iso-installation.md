@@ -4,9 +4,9 @@ description: "Maintain a Privilege Secure for Discovery deployment that was inst
 sidebar_position: 10
 ---
 
-This appendix applies to deployments of Netwrix Privilege Secure for Discovery that were installed with the ISO-based installation method.
+This appendix applies to deployments of Netwrix Privilege Secure for Discovery that you installed with the ISO-based installation method.
 
-The release notes for 26.09.1 state that the ISO-based installation is deprecated and will be removed in the following releases. New deployments use the container-based deployment on Ubuntu Server 24.04 LTS. For the supported method, see [Installation overview](../../install/overview.md).
+The ISO-based installation is deprecated. New deployments use the container-based deployment on Ubuntu Server 24.04 LTS. For the supported method, see [Installation overview](../../install/overview.md).
 
 If you have an existing ISO-based deployment, contact Netwrix Support to plan the migration to a container-based deployment.
 
@@ -23,3 +23,5 @@ The following pages describe tasks for ISO-based deployments:
 - [Remove /snap/bin from PATH](./remove-snap-bin-from-path.md)
 - [Change passwords](./change-passwords.md)
 - [Add a certificate authority](./add-a-certificate-authority.md)
+
+The pages in this appendix describe the deprecated ISO appliance only. They don't apply to container-based deployments.

@@ -1,59 +1,81 @@
 ---
 title: "Add a user or group to an account inventory"
-description: "Add an Active Directory or local user or group to the administrator account inventory of a Windows or Linux system in Protect Mode."
+description: "Add an Active Directory user or group, or a local account, to the administrator account inventory of a Windows or Linux system."
 sidebar_position: 20
 ---
 
-The administrator account inventory of a system lists the accounts that can receive administrator access on it. This page explains how to add an Active Directory (AD) user or group, or a local account, to that inventory for a system in Protect Mode.
+:::warning[Needs dev input: remove before publishing]
+TODO: Confirm the local-account procedure: that a system in Protect Mode **New Accounts: Deny** must change to **New Accounts: JITA** before you add a local administrator, and that the next scan imports the account. The Systems view description says Protect JITA also removes unexpected administrators. Evidence: none in the web or API code; mgmt/constants/mgmtSystemsCtrlConstants.js (PERSPECTIVES) describes both modes.
+:::
+
+The administrator account inventory of a system lists the accounts that can receive administrator access on it. In Netwrix Privilege Secure for Discovery, an administrator adds a user or group to the inventory so that the account can request just-in-time administration (JITA) sessions or keep persistent access.
 
 :::note
 Add a local administrator account to a protected system only for use cases that require the account to persist, such as service accounts.
 :::
 
-## Add an AD user or group
+## Add a directory user or group
 
-1. Locate the system on the **Access** > **Grant Access** page.
-1. Select **+Add Account** in the upper right corner of the window.
+You need the administrator role for this procedure. The search covers Active Directory (AD) and Microsoft Entra ID users and groups.
 
-   ![The Add Account button on the Grant Access page](/images/privilegesecure/4.2/discovery/admin/systemmanagement/10899393268503_mceclip0.webp)
+1. Select **Access** > **Grant Access**.
+1. Enter the system name in the search box, and select the system.
+1. Select **Add Account** next to the **Administrator Accounts** table.
 
-1. Enter a search string, and then select the AD user or group.
+   ![The JITA Session and Add Account buttons for the Administrator Accounts table](/images/privilegesecurediscovery/admin/grant-access-inventory-buttons.webp)
 
-   ![The search results for an AD user or group](/images/privilegesecure/4.2/discovery/admin/systemmanagement/10899393268503_mceclip1.webp)
+1. In **User or Group**, enter at least two characters, and then select the account. The list labels each result as **User**, **Group**, or **System**, and it hides accounts that the inventory already holds.
+1. For **Access Permission**, select **Just-In-Time** or **Persistent**.
+1. For a Linux system, set **Sudo Permissions** as described in the next section.
+1. Select **Save**, or select **Save and add another** to keep the form open for the next account.
 
-1. For a Windows system, select **Just-In-Time** or **Persistent**.
+![The Add User or Group form for a Windows system](/images/privilegesecurediscovery/admin/grant-access-add-account.webp)
 
-   ![The Just-In-Time and Persistent options for a Windows system](/images/privilegesecure/4.2/discovery/admin/systemmanagement/10899393268503_mceclip2.webp)
+On a Windows system, the search also returns computer accounts (**System**), which you can add as administrators.
 
-1. For a Linux system, select **All Sudo permission allowed** or **Specify Sudo permissions**.
+### Set sudo permissions on a Linux system
 
-   ![The sudo permission options for a Linux system](/images/privilegesecure/4.2/discovery/admin/systemmanagement/10899393268503_mceclip3.webp)
+The **Sudo Permissions** options appear for Linux systems only:
 
-   - If you add a group, all users who get JITA permission for this system through the group inherit the sudo permissions assigned to the group.
-   - If you specify sudo permissions, use sudo file syntax. An example appears in the field before you edit it.
+- **All Sudo permissions allowed** gives the account unrestricted sudo.
+- **Specify Sudo permissions** shows a text box. Enter the permissions in sudoers file syntax. The box shows an example before you edit it:
 
-1. Select **Save** or **Save and add another**.
+  ```text
+  ALL = (ALL) /sbin/ifconfig
+  ALL = (ALL) /bin/ping
+  ```
+
+If you add a group, every user who gets JITA permission on the system through that group inherits the group's sudo permissions.
+
+Two rules apply to Linux systems:
+
+- When **Directory Bridging** is **Privilege Secure for Discovery**, domain accounts can only have **Just-In-Time** access. The **Access Permission** options are unavailable, and the form explains why.
+- A domain account that you add to a Linux system needs a unique `sAMAccountName`. If another inventory entry has the same name, the form warns you.
 
 ## Add a local user or group
 
-You need the Privilege Secure for Discovery administrator role for this procedure.
+You need the administrator role for this procedure. The **Add Account** form searches the directory, so a local account has to appear through a scan.
 
-1. If the system is in Protect Mode **Deny**, temporarily change it to **JITA**. Protect Mode JITA is required.
+1. If the system is in Protect Mode **New Accounts: Deny**, change it to **New Accounts: JITA**.
 1. On the system, add the local user or group:
    - Windows: add it to the local Administrators group.
-   - Linux: add it by using `sudo visudo`.
-1. Rescan the system in Privilege Secure for Discovery.
+   - Linux: add it by running `sudo visudo`.
+1. On the **Grant Access** page, select **Rescan**.
 
-   The local user or group now appears in the administrator account inventory of the system.
+   The local user or group now appears in the administrator account inventory.
 
-1. In the inventory, select **Action** > **Set Persistent** for the added account.
-1. Rescan the system.
+1. In the **Action** column of the new entry, select **Set Persistent**.
+1. Select **Rescan** again.
+
+## Manage an entry in the inventory
+
+The **Action** menu of each entry offers **Remove Admin**, **Set Persistent** or **Remove Persistent**, and, for an active session, **Extend Session** and **Expire Session**. An entry that has access only through a group has no **Remove Admin** option. Remove the group instead.
 
 ## Add accounts to many systems
 
-Bulk actions can add and update accounts on many systems at once. See [Run bulk actions on systems](./bulk-actions.md).
+The **Add/Update Account** bulk action adds an account to many Windows systems at once. See [Run bulk actions on systems](./bulk-actions.md).
 
-You can also use Quickstart to provision users and groups to one or more systems by using the **Provision Account** column of the Computer Data sheet. For more information, see the following topics:
+You can also use Quickstart to provision users and groups to one or more systems with the **Provision Account** column of the **Computer Data** sheet. For more information, see the following topics:
 
 - [Install the Quickstart tools](../../configuration/bulk-onboarding/install-the-quickstart-tools.md)
 - [Quickstart report field reference](../../configuration/bulk-onboarding/report-field-reference.md)

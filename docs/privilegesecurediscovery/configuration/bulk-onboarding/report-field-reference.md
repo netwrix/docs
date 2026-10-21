@@ -4,15 +4,9 @@ description: "Look up every column in the Quickstart report: the Admin List and 
 sidebar_position: 50
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the exact accepted text for Set EDR Integration (integration name or Disabled), and the Provision Account behavior for accounts that don't exist in the inventory. Evidence: deploy/tools/quickstart/reports.py (release/26.09.1-rc) lines 800-935 describe the parsing; no product documentation exists.
-
-TODO: Confirm whether Delete from Inventory accepts values other than TRUE. Evidence: update_admin_changes in reports.py wasn't reviewed in full.
-:::
-
 The Quickstart report is an Excel workbook with the **Computer Data** sheet and one or more **Admin List** sheets. Columns have one of two types:
 
-- Pulled data. The tool downloads these values. Don't edit them.
+- Pulled data. The tool downloads these values. Don't edit them. The upload uses the identifier columns to find the system or account to change, and ignores the rest.
 - Change to push. You fill in these columns to change the product when you upload the file with `--protect-mode-file`.
 
 The tables use the column header names. Find columns by header, because the column positions can change. For the procedures, see [Report and update systems](./report-and-update-systems.md).
@@ -23,21 +17,21 @@ The tool starts a new sheet (**Admin List 2**, and so on) when the number of row
 
 | Column | Type | Description |
 | --- | --- | --- |
-| `is` | Pulled | Identifier of the system that the account belongs to. |
-| `system` | Pulled | Name of the computer, from LDAP or Active Directory (AD). |
-| `domain` | Pulled | NetBIOS name of the account domain. |
+| `is` | Pulled | Identifier of the system that the account belongs to. The header is `is`, not `id`. The upload needs this value. |
+| `system` | Pulled | Name of the computer, from Active Directory (AD). |
+| `domain` | Pulled | NetBIOS name of the account domain. For a local account, this is the computer name. |
 | `user` | Pulled | User name of the account (the AD `sAMAccountName` attribute). |
-| `sid` | Pulled | Security identifier (SID) of the account. |
-| `type` | Pulled | Type of account: `1` for a user, `2` for a group. |
-| `local` | Pulled | `TRUE` for a local computer account, which is the case when the computer name equals the account domain. |
+| `sid` | Pulled | Security identifier (SID) of the account. The upload needs this value. |
+| `type` | Pulled | Type of account: `user` or `group`. |
+| `local` | Pulled | `TRUE` for a local account, which is the case when the account domain equals the computer name. |
 | `onHost` | Pulled | `TRUE` if the account is in the local administrators group on the computer. |
-| `persistent` | Pulled | `TRUE` if the account is marked as persistent. Privilege Secure for Discovery doesn't remove persistent accounts from the local administrators group. |
-| `default_admin` | Pulled | `TRUE` if the account is the built-in administrator account of a Windows endpoint, for example `Administrator`. If the product manages this account, you can retrieve the current and previous passwords with the Computer Local Account Password API. |
-| `inserted_ts` | Pulled | Time at which the record was created in the product database. |
+| `persistent` | Pulled | `TRUE` if the account is persistent. The product doesn't remove persistent accounts from the local administrators group. The upload ignores this column. |
+| `default_admin` | Pulled | `TRUE` if the account is the built-in administrator account of a Windows endpoint, for example `Administrator`. |
+| `inserted_ts` | Pulled | Time at which the product added the account to the inventory. |
 | Intentionally Blank | None | Separator column. |
 | Filtered | Pulled | Copy of the **Filtered** value of the system on the **Computer Data** sheet. |
-| Persistent | Push | `TRUE` to make the account persistent, or `FALSE` to make it non-persistent. |
-| Delete from Inventory | Push | `TRUE` to delete the account from the administrator inventory of the computer. |
+| Persistent | Push | `TRUE` to make the account persistent, or `FALSE` to make it non-persistent. Leave the cell blank to change nothing. |
+| Delete from Inventory | Push | Any value, including `FALSE`, removes the account from the administrator inventory of the computer. Leave the cell blank to keep the account. |
 
 ## Computer Data sheet
 
@@ -45,30 +39,30 @@ The tool starts a new sheet (**Admin List 2**, and so on) when the number of row
 
 | Column | Description |
 | --- | --- |
-| `id` | Identifier of the computer. |
-| `cn` | Computer `cn` attribute, from LDAP or AD. |
+| `id` | Identifier of the computer. The upload needs this value. |
+| `cn` | Computer `cn` attribute, from AD. |
 | `domain_fqdn` | Fully qualified domain name (FQDN) of the computer domain. |
 | `distinguishedName` | Distinguished name of the computer. |
 | `OU` | OU of the computer, derived from its distinguished name. |
-| `operatingSystem` | Operating system of the computer, from LDAP or AD. |
+| `operatingSystem` | Operating system of the computer, from AD. |
 | `Last Logon` | Last logon timestamp of the computer. |
-| `Last Scanned` | Time of the last scan attempt by Privilege Secure for Discovery. |
-| `prev_scan_success` | Time at which the computer was last scanned successfully. |
-| `prev_scan_msg` | Message from the last scan attempt. |
-| `Scanned in last 2 weeks` | `TRUE` if the computer was scanned in the last two weeks, based on the **Last Scanned** value. |
+| `Last Scanned` | Time of the last scan of the computer. |
+| `prev_scan_success` | `TRUE` if the last scan succeeded. |
+| `prev_scan_msg` | Message from the last scan, for example `Scan complete`. |
+| `Scanned in last 2 weeks` | `TRUE` if the **Last Scanned** value is within the last 14 days. |
 | `protect_mode` | Protect mode of the computer: `JITA`, `DENY`, or `FALSE` (disabled). |
-| `scan_mode` | `TRUE` if the computer is included in active permission scans. |
-| `directory_bridging_strategy` | Directory bridging provider that is set for a Linux computer. |
-| `edr_integration` | Name of the EDR integration that is set for the computer, or `Disabled`. |
+| `scan_mode` | `TRUE` if scan mode is on for the computer. |
+| `directory_bridging_strategy` | Directory bridging provider of a Linux computer. |
+| `edr_integration` | Name of the EDR integration of the computer, or `Disabled`. |
 | `registered` | `TRUE` if the computer has a registered service account. |
-| `<provisionUser>` | A column named after the `provisionUser` value of the tool configuration. `TRUE` if the computer has a matching administrator account. |
+| `<provisionUser>` | A column named after the `provisionUser` value of the tool configuration. `TRUE` if the computer has an administrator account whose name contains that value, ignoring case. |
 | Intentionally Blank | Separator column. |
-| `Filtered` | `TRUE` if the operating system is Windows Server or isn't Windows. `FALSE` for a Windows operating system without `server` in its name. |
-| `OAM (Offline Access Management) Enabled` | `TRUE` if Offline Access Management (OAM) is managed on the computer. |
+| `Filtered` | `TRUE` if the operating system is Windows Server or isn't Windows. `FALSE` for a Windows operating system without `server` in its name, such as Windows 10 or Windows 11. |
+| `OAM (Offline Access Management) Enabled` | `TRUE` if Offline Access Management (OAM) is on for the computer. |
 | `OAM Strategy` | Current OAM strategy of the computer. |
 | `OAM Name Template` | Name template of the OAM alternate administrator account. Question marks (`?`) are wildcards. The default is `S1_ALT_ADMIN`. |
-| `OAM JITA User Can Access PW` | `TRUE` if users with JITA or persistent access to the system can access OAM passwords. |
-| `OAM Use Alt Admin` | `TRUE` if Privilege Secure for Discovery creates and uses an alternate administrator account that is named according to the OAM name template. |
+| `OAM JITA User Can Access PW` | `TRUE` if users with just-in-time administration (JITA) or persistent access to the system can read OAM passwords. |
+| `OAM Use Alt Admin` | `TRUE` if Privilege Secure for Discovery creates and uses an alternate administrator account that matches the OAM name template. |
 | `OAM Manage Built-in PW` | `TRUE` if the product manages the password of the built-in local administrator account (RID 500). |
 | `OAM Disable Built-in Admin` | `TRUE` if the product disables the built-in local administrator account (RID 500). |
 
@@ -76,17 +70,17 @@ The tool starts a new sheet (**Admin List 2**, and so on) when the number of row
 
 | Column | Values and description |
 | --- | --- |
-| `Enable Protect` | Protect mode: `JITA`, `DENY`, `TRUE` (same as `JITA`), or `FALSE` (disabled). |
-| `Enable Scan` | `TRUE` to include the computer in active permission scans, or `FALSE`. |
-| `Set EDR Integration` | Name of the EDR integration to use. The name must match the name of the integration in the product. Enter `Disabled` to turn the integration off. |
-| `Provision Account` | Accounts to add to the inventory of the computer, in `DOMAIN\sAMAccountName` format, separated by commas. To make an account persistent, add `;true` after the name. |
-| `Set OAM Enabled` | `TRUE` to manage the computer with OAM, or `FALSE` to turn it off. If you set `FALSE` and leave the other OAM columns blank, the product keeps the other OAM values and changes only the enabled state. |
-| `Set OAM Strategy` | `OS-BEST-PRACTICE`, `MANAGED-BUILT-IN`, or `CUSTOM`. Values aren't case sensitive. If blank, the strategy keeps its current value, or becomes `OS-BEST-PRACTICE` if no policy exists. |
-| `Set OAM Name Template` | Name template for the OAM alternate administrator account. Use question marks as wildcards, for example `MY_ADMIN_???`. If blank, the template keeps its current value, or becomes `S1_ALT_ADMIN`. |
+| `Enable Protect` | Protect mode: `JITA`, `DENY`, `TRUE` (same as `JITA`), or `FALSE` (disabled). Values aren't case sensitive. |
+| `Enable Scan` | `TRUE` to include the computer in permission scans, or `FALSE`. |
+| `Set EDR Integration` | Name of the EDR integration to use. The name must match the name of an EDR provider configuration exactly. Enter `Disabled` to turn the integration off. The tool stops if the name doesn't match. |
+| `Provision Account` | Accounts to add to the inventory of the computer, in `DOMAIN\sAMAccountName` format, separated by commas. To make an account persistent, add `;true` after the name. End a computer account name with `$`. The account must exist in the product directory. |
+| `Set OAM Enabled` | `TRUE` to turn OAM on for the computer, or `FALSE` to turn it off. The OAM columns apply only when this column has a value. If you leave the other OAM columns blank, the product keeps the other OAM values and changes only the enabled state. |
+| `Set OAM Strategy` | `OS-BEST-PRACTICE`, `MANAGED-BUILT-IN`, or `CUSTOM`. Values aren't case sensitive. If blank, the product uses `OS-BEST-PRACTICE` when no policy exists. |
+| `Set OAM Name Template` | Name template for the OAM alternate administrator account. Use question marks as wildcards, for example `MY_ADMIN_???`. If blank, the template keeps its current value, or becomes `S1_ALT_ADMIN`. Set the strategy as well, or the product ignores the template on a computer that has a policy. |
 | `Set OAM JITA User Can Access PW` | `TRUE` to let users with JITA or persistent access to the system access OAM passwords, or `FALSE`. |
 | `Set OAM Use Alt Admin` | `TRUE` to create and use an alternate administrator account, or `FALSE`. |
 | `Set OAM Manage Built-in PW` | `TRUE` to manage the password of the built-in local administrator account (RID 500), or `FALSE`. |
 | `Set OAM Disable Built-in Admin` | `TRUE` to disable the built-in local administrator account (RID 500), or `FALSE`. |
-| `Set Directory Bridging Strategy` | Directory bridging provider for a Linux computer: `secureone` (lightweight directory bridging), `centrify`, `powerbroker`, or `sssd`. |
-| `Set Directory Bridging Domain` | Domain for the bridging provider. Required for third-party providers. |
+| `Set Directory Bridging Strategy` | Directory bridging provider for a Linux computer: `secureone` (lightweight directory bridging), `centrify`, `powerbroker`, or `sssd`. Enter the value in lowercase. |
+| `Set Directory Bridging Domain` | FQDN of a domain that you added to the product. Required for `centrify`, `powerbroker`, and `sssd`. |
 | `Set Sudoers Representation` | ID of a sudoers file from another computer, to replicate that file to this computer. |
