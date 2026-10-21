@@ -6,11 +6,11 @@ keywords: [training, course, identity manager]
 description: "Learn to use Netwrix Identity Manager through courses"
 ---
 
-import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning, NIMIntro, NIMReport, NIMConnectors, NIMResources, NIMJobs, NIMRoleModel, NIMAccessCert, NIMRisks, NIMRoleMining } from '@site/src/training/identity-manager';
+import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlanning, NIMIntro, NIMReport, NIMConnectors, NIMResources, NIMJobs, NIMRoleModel, NIMAccessCert, NIMRisks, NIMRoleMining, NIMServerInstall, NIMAgentInstall } from '@site/src/training/identity-manager';
 import { Company, NIM } from '@site/src/training/products';
 
 
-Estimated length: 6 hours 40 minutes
+Estimated length: 7 hours 40 minutes
 
 In this learning path, you will learn how to use <NIM />. This product was formerly Netwrix Usercube. It contains the following courses:
 
@@ -28,6 +28,8 @@ In this learning path, you will learn how to use <NIM />. This product was forme
 * 3726 <NIM /> – Access Certification
 * 3727 <NIM /> – Risks
 * 3728 <NIM /> – Role Mining
+* 3729 <NIM /> – How to Install an IGA Core Solution Server On-Premises
+* 3730 <NIM /> – How to Install an Agent
 
 <NIMValue />
 
@@ -56,3 +58,7 @@ In this learning path, you will learn how to use <NIM />. This product was forme
 <NIMRisks />
 
 <NIMRoleMining />
+
+<NIMServerInstall />
+
+<NIMAgentInstall />
