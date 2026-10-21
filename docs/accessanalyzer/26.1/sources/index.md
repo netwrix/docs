@@ -22,7 +22,7 @@ Four source types are available. The first column shows the name you select in t
 
 Each type has its own page with prerequisites, the fields to fill in, the sync or scan options, and a reference list of every attribute it collects: [SMB file servers](smb-file-servers.md), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [Microsoft 365](microsoft-365.md).
 
-Identity sources do more than feed the identity reports. File Server scans record who has access as security identifiers (SIDs); an Active Directory source for the same domain is what turns those SIDs into account and group names in the reports.
+Identity sources do more than feed the identity reports. File Server scans record who has access as security identifiers (SIDs); an Active Directory source for the same domain turns those SIDs into account and group names in the reports.
 
 ## Add a Source
 

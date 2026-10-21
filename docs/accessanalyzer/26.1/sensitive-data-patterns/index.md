@@ -55,7 +55,7 @@ Use the same reasoning when you set the confidence of a [custom pattern](custom-
 
 ## Built-in and Custom Patterns
 
-Built-in patterns and groups carry a **Built-in** badge. You can't edit or delete them, and you can't add a built-in pattern to a group or remove it from one. There is no switch to turn off an individual built-in pattern; the way to narrow a scan is to choose which groups it classifies. The full list is in [Built-in patterns](built-in-patterns.md).
+Built-in patterns and groups carry a **Built-in** badge. You can't edit or delete them, and you can't add a built-in pattern to a group or remove it from one. There is no switch to turn off an individual built-in pattern; to narrow a scan, choose which groups it classifies. The full list is in [Built-in patterns](built-in-patterns.md).
 
 Custom patterns are yours to create, test, edit, and delete. A custom pattern can belong to any number of groups, including built-in ones. For example, an internal employee ID pattern can sit in the built-in **PII** (personally identifiable information) group so that any scan that classifies PII also runs it. Changes to custom patterns and their group memberships reach scans within about a minute. See [Custom patterns](custom-patterns.md).
 
