@@ -9,6 +9,7 @@ import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
+import { pingcastleSplitRedirects } from './src/config/redirects/pingcastle-split.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -195,6 +196,9 @@ const config = {
       {
         redirects: [
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...pingcastleSplitRedirects
+            .filter(({ productId }) => activeProductIds.includes(productId))
+            .map(({ from, to }) => ({ from, to })),
           ...(activeProductIds.includes('changetracker')
             ? [{ from: '/docs/changetracker/componentreleases', to: '/docs/changetracker' }]
             : []),

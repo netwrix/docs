@@ -31,6 +31,7 @@
  * @property {string} [defaultVersion] - Default version to use
  * @property {string[]} [categories] - Product categories (can belong to multiple)
  * @property {string} [icon] - Icon for the product
+ * @property {string} [navbarGroup] - Products sharing a navbarGroup are shown as one nested submenu with this label inside their category dropdown
  */
 
 /**
@@ -444,24 +445,75 @@ export const PRODUCTS = [
     defaultVersion: 'current',
   },
   {
-    id: 'pingcastle',
-    name: 'PingCastle',
-    description: 'Active Directory security assessment',
-    path: 'docs/pingcastle',
+    id: 'pingcastleenterprise',
+    name: 'PingCastle Enterprise',
+    description: 'Centralized Active Directory security assessment and monitoring',
+    path: 'docs/pingcastleenterprise',
     categories: ['Identity Threat Detection & Response (ITDR)'],
+    navbarGroup: 'PingCastle',
     icon: '',
     versions: [
       {
         version: '4.0',
         label: '4.0',
         isLatest: true,
-        sidebarFile: './sidebars/pingcastle/4.0.js',
+        sidebarFile: './sidebars/pingcastleenterprise/4.0.js',
       },
       {
         version: '3.5',
         label: '3.5',
         isLatest: false,
-        sidebarFile: './sidebars/pingcastle/3.5.js',
+        sidebarFile: './sidebars/pingcastleenterprise/3.5.js',
+      },
+    ],
+    defaultVersion: '4.0',
+  },
+  {
+    id: 'pingcastlepro',
+    name: 'PingCastle Pro',
+    description: 'Scheduled Active Directory security assessment with a central console',
+    path: 'docs/pingcastlepro',
+    categories: ['Identity Threat Detection & Response (ITDR)'],
+    navbarGroup: 'PingCastle',
+    icon: '',
+    versions: [
+      {
+        version: '4.0',
+        label: '4.0',
+        isLatest: true,
+        kbSource: 'docs/kb/pingcastleenterprise',
+        sidebarFile: './sidebars/pingcastlepro/4.0.js',
+      },
+      {
+        version: '3.5',
+        label: '3.5',
+        isLatest: false,
+        kbSource: 'docs/kb/pingcastleenterprise',
+        sidebarFile: './sidebars/pingcastlepro/3.5.js',
+      },
+    ],
+    defaultVersion: '4.0',
+  },
+  {
+    id: 'pingcastlecommunity',
+    name: 'PingCastle Community',
+    description: 'Free Active Directory security assessment tool',
+    path: 'docs/pingcastlecommunity',
+    categories: ['Identity Threat Detection & Response (ITDR)'],
+    navbarGroup: 'PingCastle',
+    icon: '',
+    versions: [
+      {
+        version: '4.0',
+        label: '4.0',
+        isLatest: true,
+        sidebarFile: './sidebars/pingcastlecommunity/4.0.js',
+      },
+      {
+        version: '3.5',
+        label: '3.5',
+        isLatest: false,
+        sidebarFile: './sidebars/pingcastlecommunity/3.5.js',
       },
     ],
     defaultVersion: '4.0',
@@ -896,7 +948,7 @@ export function hasKBContent(productId) {
     '1secure', 'accessanalyzer', 'accessinformationcenter', 'activitymonitor',
     'auditor', 'changetracker', 'dataclassification', 'directorymanager',
     'policypak', 'endpointprotector', 'passwordpolicyenforcer',
-    'passwordreset', 'pingcastle', 'privilegesecure', 'privilegesecurediscovery',
+    'passwordreset', 'pingcastleenterprise', 'pingcastlepro', 'privilegesecure', 'privilegesecurediscovery',
     'threatmanager', 'threatprevention'
   ];
   return kbProducts.includes(productId);
@@ -1130,18 +1182,31 @@ export function generateNavbarDropdowns() {
         .filter(product => !product.hideFromNavbar) // Exclude products hidden from navbar
         .filter(product => activeIds.has(product.id));
 
-      const items = categoryProducts.map((product) => {
+      const productLink = (product) => {
         const defaultVersion = getDefaultVersion(product);
         // Use override customRoutePath if present, otherwise generate it
         const link = defaultVersion.customRoutePath
           ? `/${defaultVersion.customRoutePath}/`
           : `/${generateRouteBasePath(product.path, defaultVersion.version)}`;
+        return { label: product.name, to: link };
+      };
 
-        return {
-          label: product.name,
-          to: link,
-        };
+      // Products sharing a navbarGroup collapse into one nested submenu entry
+      const items = [];
+      const groups = new Map();
+      categoryProducts.forEach((product) => {
+        if (!product.navbarGroup) {
+          items.push(productLink(product));
+          return;
+        }
+        if (!groups.has(product.navbarGroup)) {
+          const group = { type: 'custom-nestedDropdown', label: product.navbarGroup, items: [] };
+          groups.set(product.navbarGroup, group);
+          items.push(group);
+        }
+        groups.get(product.navbarGroup).items.push(productLink(product));
       });
+      groups.forEach((group) => group.items.sort((a, b) => a.label.localeCompare(b.label)));
 
       // Sort items alphabetically by label
       items.sort((a, b) => a.label.localeCompare(b.label));
