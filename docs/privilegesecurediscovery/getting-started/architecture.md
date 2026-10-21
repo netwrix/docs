@@ -5,7 +5,7 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the syslog ports (UDP 514 and TCP 6514), the NTP and RADIUS ports, and the Entra ID connection (HTTPS on TCP 443) that the cluster diagram shows. Evidence: the stack files don't state them; the Ports and firewall page carries the same open items, and only `templates/fluentd/fluent.syslog.conf` (port 514) is in the deployment repository.
+TODO: Update the cluster diagram, which still lists "NTP UDP 123", "RADIUS UDP 1812, if used", and fixed syslog ports "UDP 514 or TCP 6514". Evidence: the code sends no NTP traffic from the product, the RADIUS port is the UDP port the administrator enters, and the syslog port is the customer collector's port, as the Ports and firewall page states.
 
 TODO: Confirm whether customers may use the Windows bridge services (`windows-bridge` and `windows-bridge-proxy`) and who enables them. Evidence: the `windows_bridge` release toggle is `enabled: false` on a 26.09.1 stack, and the bridge README calls it a preview feature that is disabled by default.
 :::
@@ -37,7 +37,7 @@ The deployment stack defines the following services. In the stack, each service 
 | `s1_fluentd` | Collects, formats, and forwards logs. |
 | `s1_analytics_engine` | Calculates access risk, license usage, and the history behind the dashboard. |
 | `s1_health_reporter` (one per node in a cluster) | Reports service health to the API. |
-| `s1_windows-bridge` and `s1_windows-bridge-proxy` | Run Windows system connections in a separate process when the Windows bridge is turned on. The bridge is off by default. |
+| `s1_windows-bridge` and `s1_windows-bridge-proxy` | Run Windows system connections in a separate process when you turn on the Windows bridge. The bridge stays off by default. |
 
 ### API service
 

@@ -4,12 +4,6 @@ description: "Verify that Privilege Secure for Discovery runs on MongoDB 8.0, se
 sidebar_position: 70
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: The earlier procedure told readers to render the stack with `docker stack config --compose-file /secureone/docker-stack.yml` to confirm the retained MongoDB 4.0 services have zero replicas. From 26.09.1, `cutover` also writes `docker-stack.mongo-state.yml`, which `s1 deploy` merges as a second compose file. Confirm a supported way for customers to render the merged stack, or confirm that the `cutover` output is the only check needed. Evidence: s1.py _write_mongo_state_override (v26.09.1-rc).
-
-TODO: Dev confirmed the retired-cluster bug: `get_db_info` looks for `replicaSet=secureone` after `retire`. Remove the known-issue note when a release fixes it. Evidence: s1.py:6729 and :1164.
-:::
-
 After `cutover`, the application runs on MongoDB 8.0. Use the checks on this page to confirm the result, to understand which settings the migration saved, and to avoid commands that undo it.
 
 ## Verify the deployment
@@ -19,7 +13,7 @@ Run the following commands. For a three-node cluster, add `--multi-node` before 
 ```bash
 s1 database-status
 s1 status
-docker service ls | grep -i mongo
+sudo docker service ls | grep -i mongo
 ```
 
 The `s1 database-status` command shows which database the application uses and the live engine version on both single-node deployments and clusters. The output includes the following lines:
@@ -90,4 +84,4 @@ Never delete the stack. Don't run `docker stack rm`, and don't run `s1 undeploy`
 
 ## Next steps
 
-When the application has run on MongoDB 8.0 long enough for you to trust it, run [Retire MongoDB 4.0](./retire-mongodb-4.md).
+When the application has run on MongoDB 8.0 long enough for you to trust it, run [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md).

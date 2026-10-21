@@ -5,9 +5,7 @@ sidebar_position: 15
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that no `setFeatureCompatibilityVersion` step is needed after cutover because the MongoDB 8.0 target starts as a new instance and the tool copies the data at the application level. Evidence: none; s1.py has no reference to the feature compatibility version.
-
-TODO: Confirm the instruction for a deployment on release 26.09.0. secureone.sh treats 26.09.0 as the first release that ships `s1 mongo-upgrade`, but these pages require 26.09.1. Evidence: secureone.sh `MONGO_MIGRATION_RELEASE=26.09.0`.
+TODO: What should a deployment on release 26.09.0 do? Evidence: secureone.sh `MONGO_MIGRATION_RELEASE=26.09.0` names 26.09.0 as the first release that ships `s1 mongo-upgrade`, but these pages require 26.09.1.
 :::
 
 Use this checklist to track the whole migration from MongoDB 4.0 to MongoDB 8.0. Each step gives the command, the result to expect, and the page that explains it. Don't start a phase until every item in the earlier phases is complete.
@@ -32,7 +30,7 @@ For a three-node cluster, add `--multi-node` before `mongo-upgrade` in each `s1`
 - [ ] `sudo -E bash secureone.sh verify --version 26.09.1` reports no failures on the primary node, and `verify --cli-only` reports none on the others.
 - [ ] `s1 --version` reports 26.09.1 on every database node.
 - [ ] All services are healthy. See [Verify the deployment](../../install/verify-deployment.md).
-- [ ] You saved the output of `s1 status`, `s1 database-status`, and `docker service ls | grep -i mongo`.
+- [ ] You saved the output of `s1 status`, `s1 database-status`, and `sudo docker service ls | grep -i mongo`.
 
 ## Phase 3: Check and copy
 
@@ -78,7 +76,7 @@ Continue only if every statement is true. If any is false, stop and see [Resume,
 ## Phase 8: Retire MongoDB 4.0
 
 - [ ] You took a new independent backup.
-- [ ] You ran `s1 mongo-upgrade retire --dry-run` and resolved every `FAIL`. See [Retire MongoDB 4.0](./retire-mongodb-4.md).
+- [ ] You ran `s1 mongo-upgrade retire --dry-run` and resolved every `FAIL`. See [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md).
 - [ ] You scheduled a short window. The application stops while the command moves the data.
 - [ ] You ran `s1 mongo-upgrade retire` and it exited with `0`.
 - [ ] On a single node, `s1 database-status` reports MongoDB 8.0 on the canonical service names. On a cluster, `s1 database-status` can't reach the replica set after `retire`. Open a shell with the manual method instead. See [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md).

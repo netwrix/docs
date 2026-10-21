@@ -15,7 +15,7 @@ The product and Active Directory repeatedly undo each other's changes:
 
 ## Cause
 
-Privilege Secure for Discovery changes how privileged access is managed. Interactive accounts get access just in time and don't keep standing membership. A GPO that grants standing membership contradicts that model, so the product and the GPO each enforce a different result.
+Privilege Secure for Discovery changes how you manage privileged access. Interactive accounts get access just in time and don't keep standing membership. A GPO that grants standing membership contradicts that model, so the product and the GPO each enforce a different result.
 
 ## Fix
 

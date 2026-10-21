@@ -5,9 +5,7 @@ sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that a Linux system that you registered with its own credentials can switch to the domain Linux service account, and give the procedure. The product prefers a system's own credentials over the domain account, and the previous page told readers to contact support. Evidence: remediant/linux/db_queries/linux_configs.py:28-29 (a system with `auth` keeps it); no documented way to clear it.
-
-TODO: The domain form in the UI doesn't offer a default directory bridging setting (the control is commented out). Confirm that readers set it per system, with the Quickstart tool, or through the API only. Evidence: docker/web/common/config/views/domainConfiguration.html:157-159; the registration API reads `default_system_config_linux.directory_bridging.strategy` (strategy.linux.js:148 and 182-184).
+TODO: What is the supported way to move a Linux system that has its own stored credentials to the domain Linux service account? Evidence: remediant/db_data/linux/system_info.py `service_acct` returns the system's own `auth` first, then the domain account, then the global account; svc_worker.py (registerHostCreds) saves `auth` at registration only when no domain or global account exists, and nothing in 26.09.1 clears an existing `auth`. Registering the system again creates the domain account on the endpoint (scan_strategy.py `register_service_account`, where the domain account overrides the registration account), but later scans still read the stored `auth`.
 :::
 
 You can set one Linux service account for a domain. Netwrix Privilege Secure for Discovery then uses that account for every Linux system in the domain that you register without credentials, so you don't enter a user name and password for each system.
@@ -24,7 +22,7 @@ The format of the user name decides who creates the account:
 
 | Format | Meaning |
 | --- | --- |
-| `DOMAIN\Username` | A domain account that already exists. The product doesn't create it. Systems must resolve and authenticate it, for example through SSSD. Only a password is possible; SSH keys aren't allowed. |
+| `DOMAIN\Username` | A domain account that already exists. The product doesn't create it. Systems must resolve and authenticate it, for example through SSSD. The account can use a password only, not an SSH key. |
 | `Username` | A local account. At registration, the product creates it on each system with the password that you enter, or uses it if it exists. |
 
 ## Set the domain Linux service account

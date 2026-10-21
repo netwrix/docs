@@ -5,16 +5,10 @@ sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the sign-in step. State the default user that `secureone.sh setup` creates and how the administrator gets its first password. Evidence: the setup script reports "Sets the default user", but no page states the user name or where the password comes from.
-
-TODO: Confirm what a healthy `docker stack services s1` shows on a new install: every service at its full replica count, for example `1/1`, and the expected number of services on a single node and on a cluster. Evidence: none; the test stack here runs under Docker Compose, not Swarm.
-
-TODO: Confirm that `s1 database-status` on a healthy cluster shows one primary, two secondaries, and no replication lag, and on a single node shows the version `8.0`. Evidence: s1.py `database_status` prints the live `db.version()`; no cluster output seen.
-
-TODO: Confirm that `secureone.sh verify` is meant for customers to run after setup. Evidence: secureone.sh `verify` checks the `s1` tool, `s1.env` and the stack templates. It doesn't check that the services run.
+TODO: What is the initial password of the `secureone` account that `secureone.sh setup` creates, and should this page state it or direct readers to Netwrix Support? Evidence: secureone.sh:1739-1770 writes a fixed password hash for the user `secureone`; the plain-text password isn't in the code.
 :::
 
-After you run `secureone.sh setup`, run these checks to confirm that Netwrix Privilege Secure for Discovery is healthy. If a check fails, see [Inspect and troubleshoot the deployment](../troubleshooting/inspect-and-troubleshoot-the-deployment.md). Run all commands on a swarm manager node.
+After `secureone.sh setup` finishes, run these checks to confirm that Netwrix Privilege Secure for Discovery is healthy. If a check fails, see [Inspect and troubleshoot the deployment](../troubleshooting/inspect-and-troubleshoot-the-deployment.md). Run all commands on a swarm manager node. Run `s1` without `sudo`, and run `docker` with `sudo`, because the setup doesn't add your user to the `docker` group.
 
 ## Check the node setup
 
@@ -31,15 +25,15 @@ The command reports every failed check. It doesn't test the running services, so
 1. List the services and their replica counts.
 
    ```bash
-   docker stack services s1
+   sudo docker stack services s1
    ```
 
-   Every service shows its full replica count, for example `1/1`.
+   A single node runs 14 services and a three-node cluster runs 18. Every service shows its full replica count, for example `1/1`. The `windows-bridge` service shows `6/6`.
 
 2. List any task that isn't running.
 
    ```bash
-   docker stack ps s1 --filter "desired-state=running" | grep -v "Running"
+   sudo docker stack ps s1 --filter "desired-state=running" | grep -v "Running"
    ```
 
    The command prints only the header line.
@@ -66,30 +60,30 @@ Confirm which database the application uses and that it is reachable:
 s1 database-status
 ```
 
-The output names the active database service and the MongoDB version, which is 8.0 on a new installation. On a cluster, the output also lists the replica set members and the replication lag. One member is the primary and the others are secondaries.
+The output names the active database service and the MongoDB version, which is 8.0 on a new installation. On a single node, the output then reports that there is no replica set to query. On a cluster, the output lists each replica set member with its state: one member is `PRIMARY` and the other two are `SECONDARY`.
 
 ## Check the message queue
 
 Confirm that the queues have no growing backlog:
 
 ```bash
-docker exec -it $(docker ps -q -f name=s1_mq) rabbitmqctl list_queues name messages
+sudo docker exec $(sudo docker ps -q -f name=s1_mq) rabbitmqctl list_queues name messages
 ```
 
-A message count that keeps growing in the `hello` queue usually means that the `worker` or `scanner` service is down.
+A message count that keeps growing in the `worker-primary` or `worker-secondary` queue usually means that the `worker` or `worker-secondary` service is down.
 
 ## Sign in to the web interface
 
 1. In a browser, go to `https://<host>/`, where `<host>` is the host name or IP address of the node. On a cluster, use any node.
 2. Accept the certificate warning if the deployment uses a self-signed certificate.
-3. Sign in with the administrator account.
+3. Sign in as the default administrator, `secureone`.
 
-The dashboard loads after you sign in. Then add your domain. See [Add a domain](../configuration/domains-and-ad/add-a-domain.md).
+The dashboard loads after you sign in. Change the password of the default administrator in the **Appliance Admin Password** pane under **Configure** > **Server**. Then add your domain. See [Add a domain](../configuration/domains-and-ad/add-a-domain.md).
 
 ## Check the disk space
 
 ```bash
-du -sh /secureone/data/*
+sudo du -sh /secureone/data/*
 ```
 
 The `logs` directory grows with use. Netwrix Privilege Secure for Discovery doesn't manage the retention of the host log files. The Python services rotate each file at 10 MB and keep 5 backups. Docker also caps the log size of some services. If the disk fills up, check `/secureone/data/logs/` first.

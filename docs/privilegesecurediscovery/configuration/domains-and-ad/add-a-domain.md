@@ -5,9 +5,7 @@ sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that **Protect Mode** and **Scan Mode** start as **Disabled**, and **Offline Access** as **Unmanaged**, in the **New Domain (LDAP)** form for every new domain. Evidence: the form in the 26.09.1 test stack; the Default Policies apply only to computers that the product imports after you save them (ldap_sync/importer.py:740-766, db_queries/ldap_store.py:632-655).
-
-TODO: Confirm that the worker and scanner read the Windows authentication method from the domain configuration each time they run, so that a switch between NTLM and Kerberos needs no restart. Evidence: svc_worker.py:466-483 and windows/scanner.py:1565 read `windows_auth_type` from the database when they handle a request or a scan.
+TODO: Confirm that a load-balanced domain controller address still causes the product to miss group updates, and that a static domain controller is still required. Evidence: none; carried over from the earlier documentation.
 :::
 
 Add each Active Directory domain that Netwrix Privilege Secure for Discovery manages. The domain connection lets the product read users, groups, and computers, and scan and protect Windows systems with service accounts.
@@ -42,7 +40,7 @@ Add each Active Directory domain that Netwrix Privilege Secure for Discovery man
 5. Under **Directory Server Failover**, decide whether the product tries another domain controller when the configured one is unavailable. See [Configure directory server failover](./directory-server-failover.md).
 6. Under **Directory Search Settings**, keep the defaults unless Support advises otherwise. **Page Size** is 1000 and **Search Scope** is **Subtree**.
 7. Under **Windows Computer Authentication**, select the **Windows Authentication Method**. See [Choose the Windows authentication method](#choose-the-windows-authentication-method).
-8. Under **Windows Service Account**, enter the **Scan Mode Account** and **Protect Mode Account** user names and passwords. For a Kerberos domain, also enter the **Domain NetBIOS Name**.
+8. Under **Windows Service Account**, enter the **Scan Mode Account** and **Protect Mode Account** user names and passwords. Enter each user name as `DOMAIN\Username`, or as `user@realm` for a Kerberos domain. For a Kerberos domain, also enter the **Domain NetBIOS Name**.
 9. Under **Default Policies**, review **Scan Mode**, **Protect Mode**, and **Offline Access**.
 10. Optional: under **Linux Service Account**, enter the account that the product uses on Linux systems. See [Service accounts](../../requirements/service-accounts.md).
 11. Select **Save**.

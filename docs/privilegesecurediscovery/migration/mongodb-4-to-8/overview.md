@@ -5,9 +5,7 @@ sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the 26.09.1 release notes link to this page path, and that a redirect exists from the old installation/upgrademongodb4to8 URL. Evidence: none.
-
-TODO: Confirm whether ISO-based (non-container) installations can run `s1 mongo-upgrade`. The commands target Docker Swarm stacks, and the ISO installation is deprecated. Evidence: none.
+TODO: Can an ISO-based (non-container) installation run `s1 mongo-upgrade`? Evidence: none; the commands target Docker Swarm stacks, and the ISO installation is deprecated.
 :::
 
 Netwrix Privilege Secure for Discovery 26.09.1 provides the supported path for moving an existing deployment from MongoDB 4.0 to MongoDB 8.0. Use this set of pages if your deployment still runs MongoDB 4.0. New installations use MongoDB 8.0 and don't need a migration.
@@ -24,14 +22,14 @@ Run the following command on the primary node, or on any node of a cluster:
 s1 database-status
 ```
 
-The output names the active database service and the live MongoDB version. To see the services too, run `docker service ls | grep -i mongo`. Match the result to the following table.
+The output names the active database service and the live MongoDB version. To see the services too, run `sudo docker service ls | grep -i mongo`. Match the result to the following table.
 
 | Result | Meaning | Action |
 |--------|---------|--------|
 | One service named `<stack>_db`, version 4.0 | Single-node deployment on MongoDB 4.0 | Migrate. Follow [Migrate a single-node deployment](./single-node.md). |
 | Three services named `<stack>_mongo1`, `<stack>_mongo2`, and `<stack>_mongo3`, version 4.0 | Three-node cluster on MongoDB 4.0 | Migrate. Follow [Migrate a three-node cluster](./three-node-cluster.md). |
 | The same services running MongoDB 8.0 | New installation, or migration already finished | No migration needed. See [Verify and maintain the deployment after cutover](./after-cutover.md). |
-| Both `<stack>_db` and `<stack>_db8`, or both `<stack>_mongoN` and `<stack>_mongoN-8` | Migration in progress or finished but not retired | See [Resume, roll back, or recover a migration](./resume-roll-back-recover.md) and [Retire MongoDB 4.0](./retire-mongodb-4.md). |
+| Both `<stack>_db` and `<stack>_db8`, or both `<stack>_mongoN` and `<stack>_mongoN-8` | Migration in progress or finished but not retired | See [Resume, roll back, or recover a migration](./resume-roll-back-recover.md) and [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md). |
 
 ## What 26.09.1 provides
 
@@ -105,7 +103,7 @@ The following table shows the names at each stage, with the default stack name `
 | Replica set (cluster) | `secureone` | `secureone8` | `secureone8`. The tool renames hosts, not the replica set. |
 | Database name | `SecureONE` | `SecureONE` | `SecureONE` |
 | Single-node data | `/secureone/data/db` | Docker named volume for `s1_db8` | MongoDB 8.0 data at `/secureone/data/db`. MongoDB 4.0 data archived at `/secureone/data/db.mongo4.<timestamp>`. |
-| Cluster data | `/secureone/data/db` on each database node | MongoDB 8.0 data on each node, outside that path | MongoDB 8.0 data at `/secureone/data/db` on each node. MongoDB 4.0 data archived beside it. |
+| Cluster data | `/secureone/data/db` on each database node | Docker named volume of each `-8` service, on each node | MongoDB 8.0 data at `/secureone/data/db` on each node. MongoDB 4.0 data archived beside it. |
 
 Each MongoDB service has exactly one desired replica. A three-node cluster means three separate services with one replica each. MongoDB 4.0 and MongoDB 8.0 can't form one mixed-version replica set across this version gap, which is why the migration creates a separate `secureone8` replica set.
 
@@ -120,7 +118,7 @@ Follow the [Migration checklist](./checklist.md) from start to finish. It lists 
 3. [Migrate a single-node deployment](./single-node.md) or [Migrate a three-node cluster](./three-node-cluster.md): run `check`, `run`, and `status`.
 4. [Cut over to MongoDB 8.0](./cut-over.md): the maintenance-window step.
 5. [Verify and maintain the deployment after cutover](./after-cutover.md): validate the result.
-6. [Retire MongoDB 4.0](./retire-mongodb-4.md): restore the canonical names.
+6. [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md): restore the canonical names.
 7. [Resume, roll back, or recover a migration](./resume-roll-back-recover.md): the actions for each failure.
 
 If a step fails or stops, see [Resume, roll back, or recover a migration](./resume-roll-back-recover.md). To open a database shell on either version, see [Open the MongoDB shell](../../admin/maintenance/open-the-mongodb-shell.md).

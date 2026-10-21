@@ -4,10 +4,6 @@ description: "Add the protect account to the local Administrators group on each 
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm whether the product adds the protect account to a system automatically in any configuration. Evidence: none; the earlier documentation says to add it manually or by GPO, and windows/scanner.py:1345-1372 only flags the account as a persistent service account.
-:::
-
 Privilege Secure for Discovery uses the protect account to change the local Administrators group on a system. The product can't protect a system until the protect account is a member of that group. Add the protect account to the group on every system you plan to protect.
 
 The protect account is the account that you entered under **Protect Mode Account** when you added the domain. It must be a non-interactive account with a complex password. The product treats it as a persistent service account, so protect mode never removes it from a system. See [Service accounts](../../requirements/service-accounts.md).

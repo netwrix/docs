@@ -7,13 +7,13 @@ sidebar_position: 20
 :::warning[Needs dev input: remove before publishing]
 TODO: Confirm that running `setup` again on a node after a failed or interrupted run is safe, and state what to do after a failure. Evidence: the script only promises that a failed `s1` tool step leaves the application deployed and prints the command to re-run.
 
-TODO: Confirm why the product needs `Defaults use_pty` commented out in `/etc/sudoers`. Evidence: secureone.sh:1773-1776 makes the change without a stated reason.
+TODO: Confirm why the cluster primary setup comments out `Defaults use_pty` in `/etc/sudoers`, and why a single node and a secondary node don't need the change. Evidence: secureone.sh:1773-1776 makes the change and :1879 calls it only on the cluster primary path; the script states no reason.
 :::
 
 This page covers how to download the Netwrix Privilege Secure for Discovery quickstart bundle from the Netwrix releases server, distribute it to every node, and run the deployment script. The same script upgrades an existing deployment and removes a deployment before a reinstall. For every command and option, see the [secureone.sh script reference](../appendix/secureone-script-reference.md).
 
 :::important MongoDB 4.0 and a future release
-A future release will update the backend to Python 3.13 and supported library versions. That release will require MongoDB 8.0 and will no longer support MongoDB 4.0. New installations use MongoDB 8.0. If an existing deployment still uses MongoDB 4.0, complete [Upgrade MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md) before you upgrade to that release or any later release.
+A future release will update the backend to Python 3.13 and supported library versions. That release will require MongoDB 8.0 and will no longer support MongoDB 4.0. New installations use MongoDB 8.0. If an existing deployment still uses MongoDB 4.0, complete [Migrate from MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md) before you upgrade to that release or any later release.
 :::
 
 ## Prerequisites
@@ -79,6 +79,8 @@ Both files must be in the same directory on every node before you run the setup 
 
 :::note
 The setup script creates the `/secureone/` directory to store the deployment configuration, stack files, data volumes, and logs. This directory is separate from the home directory where you downloaded the quickstart files.
+
+The script reads the registry sign-in from your own `~/.docker` directory, so the sign-in must exist before you run it. See [Configure registry access](../requirements/registry-access.md).
 :::
 
 ## Run the deployment script
@@ -90,11 +92,11 @@ All deployment operations use `secureone.sh`. Run the script as root with `sudo 
 The `setup` command prepares the host as well as the product. Before it deploys anything, it does the following:
 
 - Prompts you for a host name. You can keep the current name. The script sets the host name and the `127.0.1.1` entry in `/etc/hosts` to match.
-- Sets the Docker bridge network to `169.254.47.1/24` in `/etc/docker/daemon.json` and restarts Docker.
-- Comments out `Defaults use_pty` in `/etc/sudoers`.
+- Sets the Docker bridge network to `169.254.47.1/24` in `/etc/docker/daemon.json`, re-creates the `docker_gwbridge` network on `169.254.48.0/24`, and restarts Docker.
 - Installs Docker and Python 3 with `apt-get` if they are missing.
+- On the primary node of a cluster only, comments out `Defaults use_pty` in `/etc/sudoers`.
 
-Setup needs an interactive terminal because it prompts you. It can take several minutes. The script waits for Docker, the stack, the database, and the API to become ready. On the primary node of a cluster, the script also pauses with a `Press Enter to continue` prompt while you prepare the secondary nodes.
+Setup needs an interactive terminal because it prompts you. It can take several minutes. The script waits for Docker, the stack, the database, and the API to become ready. On the primary node of a cluster, the script also pauses with a `Press Enter to continue` prompt while you join the secondary nodes.
 
 ### Deploy a single node
 
@@ -131,7 +133,7 @@ When setup finishes, verify the deployment. See [Verify the deployment](./verify
    sudo -E bash secureone.sh setup --cluster --primary
    ```
 
-2. Follow the prompts. The script initializes the swarm, deploys the stack, and prints the exact command to run on each secondary node.
+2. Answer the host name prompt. The script initializes the swarm, prints the exact command to run on each secondary node, and pauses at `Press Enter to continue`. Leave the primary node at this prompt.
 3. On each secondary node, run the command that the primary node printed. The command has the following form:
 
    ```bash
@@ -140,13 +142,14 @@ When setup finishes, verify the deployment. See [Verify the deployment](./verify
 
    The command includes the `--version` option, which is required on a secondary node and must match the release on the primary node.
 
-4. After all secondary nodes join the swarm, promote them to managers. Run the following command on the primary node:
-
-   ```bash
-   sudo -E bash secureone.sh promote
-   ```
-
+4. After every secondary node joins the swarm, return to the primary node and press Enter. The script deploys the stack, initializes the MongoDB replica set, runs the database migrations, promotes the secondary nodes to managers, and restarts the API.
 5. Confirm the result. See [Verify the deployment](./verify-deployment.md).
+
+If a secondary node joins after the primary node passes the prompt, promote it from the primary node:
+
+```bash
+sudo -E bash secureone.sh promote
+```
 
 ## Upgrade an existing deployment
 
@@ -175,7 +178,7 @@ On a cluster, the script prints a reminder to run `install-cli` on the other dat
 sudo -E bash secureone.sh install-cli --version <version>
 ```
 
-The upgrade stops before it changes anything if the target release needs a newer MongoDB than the deployment uses. The message names the sequence to follow. See [Upgrade MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md).
+The upgrade stops before it changes anything if the target release needs a newer MongoDB than the deployment uses. The message names the sequence to follow. See [Migrate from MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md).
 
 The upgrade also exits with a non-zero status, and reports what is outstanding, if it can't verify the `s1` tool, if the active stack file needs a manual merge, or if it can't remove the API pin.
 
@@ -219,4 +222,4 @@ After `setup` completes, the deployment files are under `/secureone/`:
   conf/fluentd/fluent.conf  Fluentd logging configuration
 ```
 
-On a deployment that moved from MongoDB 4.0 to MongoDB 8.0, the live database data is in a Docker volume instead of `/secureone/data/db/`. See [Upgrade MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md).
+On a deployment that moved from MongoDB 4.0 to MongoDB 8.0, the live database data is in a Docker volume instead of `/secureone/data/db/`. See [Migrate from MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md).

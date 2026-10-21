@@ -4,12 +4,6 @@ description: "Review the accounts on one system and move it to protect mode to c
 sidebar_position: 40
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm what **New Accounts: Deny** does to a newly found administrator account, and what a user of that account sees. Evidence: windows/scanner.py:353-367 doesn't add a new administrator to the inventory when `strict_secure` is true, and logs `Protect: New Accounts - Deny: Not adding user to inventory`. The effect on the account on the system isn't traced.
-
-TODO: Confirm the Insight > Computer page at 26.09.1. Evidence: the page title is Insight Computer, with the panels Computer Access History and Accounts with Admin Access. No test data exists for it here, so the page has no screenshot.
-:::
-
 Move one system to protect mode first to learn how just-in-time access (JITA) works before you protect many systems. Protect mode removes accounts that aren't persistent from the system and stores them in Privilege Secure for Discovery. Users can then request access to the system.
 
 ## Prerequisites
@@ -33,7 +27,7 @@ Move one system to protect mode first to learn how just-in-time access (JITA) wo
 
 1. Decide which groups and users need privileged access to the system. Nested groups often give more access than a person needs, so review and clean up the access as part of the move to protect mode.
 
-The **Insight** > **Computer** page shows the access history of a system and the accounts with administrator access at each scan.
+To see how the administrator accounts of a system changed over time, select **Insight** > **Computer** and search for the system. The **Computer Access History** chart shows the history, and the **Accounts with Admin Access** table lists the accounts.
 
 ## Choose a protect mode
 
@@ -41,7 +35,7 @@ The **Insight** > **Computer** page shows the access history of a system and the
 
 - **Disable**: The product doesn't protect the system.
 - **New Accounts: JITA**: The product removes accounts that aren't persistent and adds them to its inventory. A user can then request access through JITA. Choose this option for a test system.
-- **New Accounts: Deny**: The product doesn't add newly found administrator accounts to its inventory, so those accounts don't get access through the product.
+- **New Accounts: Deny**: The product removes accounts that aren't persistent from the system, and it doesn't add newly found administrator accounts to its inventory. Users of those accounts can't request access through the product.
 
 ## Add the system to protect mode
 

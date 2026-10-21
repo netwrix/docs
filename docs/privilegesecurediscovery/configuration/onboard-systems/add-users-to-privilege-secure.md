@@ -4,11 +4,7 @@ description: "Add an Active Directory group of users and administrators to the p
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm what each role can do at 26.09.1. Evidence: the interface shows the Action menu, EDR, offline access, and directory bridging settings on Grant Access only to administrators (accessCtrl.js, AdminDatatableData.js), and shows a user their systems. No page describes the two roles.
-:::
-
-Privilege Secure for Discovery has two levels of user accounts: **User** and **Administrator**. Add the people who need privileged access before you roll out protect mode, so that they can request just-in-time access (JITA) as soon as the product removes their standing access. Add them by Active Directory (AD) group instead of one user at a time.
+Privilege Secure for Discovery has two levels of user accounts: **User** and **Administrator**. A user at the **User** level can request access to the systems that the account inventory allows. An administrator also sees the **Configure** menu and **Management** > **Bulk Scans**, and can change the settings of a system on the **Grant Access** page, such as account persistence and offline access. Add the people who need privileged access before you roll out protect mode, so that they can request just-in-time access (JITA) as soon as the product removes their standing access. Add them by Active Directory (AD) group instead of one user at a time.
 
 For the difference between adding an AD account to the product and adding it to the account inventory of a system, see [Add a user or group to an account inventory](../../admin/systems/add-a-user-or-group-to-an-account-inventory.md).
 

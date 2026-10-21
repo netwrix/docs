@@ -4,20 +4,12 @@ description: "Configure the scan account and the default scan policy so Privileg
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the domain's Default Policies apply only to computers that the product imports after you save them, and that they don't change computers already in the inventory. Evidence: shared/python/src/remediant/ldap_sync/importer.py:740-766 passes the defaults as new_record_defaults, and db_queries/ldap_store.py:632-655 writes them with `$setOnInsert`. The existing-system path (`existing_id`) doesn't write them. Not tested live, because ldapsync doesn't run in the test stack.
-
-TODO: Decide whether to tell readers to keep the default **Protect Mode** at **Disabled** during onboarding. A default of **New Accounts: JITA** would protect every computer that the product imports afterward. Evidence: same code as above.
-
-TODO: Confirm that a static domain controller is still required and that a load-balanced connection still causes group updates to be missed. Evidence: carried over from the earlier documentation; none in code.
-:::
-
 Scan mode lets Privilege Secure for Discovery read the accounts and groups with administrator access on your Windows systems, without changing them. Set up scan mode first, so you can review the discovered access before you enable protect mode.
 
 ## Prerequisites
 
 - You added the domain with its Bind, Scan, and Protect accounts. See [Add a domain](../domains-and-ad/add-a-domain.md) and [Service accounts](../../requirements/service-accounts.md).
-- A static domain controller for the domain. Privilege Secure for Discovery detects changes to groups, organizational units (OUs), and users through this connection. A load-balanced connection prevents the product from recognizing group updates correctly.
+- A static domain controller address for the domain connection. See the prerequisites in [Add a domain](../domains-and-ad/add-a-domain.md#prerequisites).
 
 ## Check the scan account
 
@@ -45,7 +37,7 @@ Never apply this GPO to domain controllers.
 
 1. Select **Save**.
 
-The default policies apply to the computers that the product adds to its inventory from now on. To enable scan mode for systems that are already in the inventory, use the Bulk Actions **Scan Policy** action or change the system. See [Run bulk actions on systems](../../admin/systems/bulk-actions.md).
+The default policies apply to the computers that the product adds to its inventory from now on. Leave **Protect Mode** set to **Disabled** until you review the scan results: a default of **New Accounts: JITA** protects every computer that the product imports afterward. To enable scan mode for systems that are already in the inventory, use the Bulk Actions **Scan Policy** action or change the system. See [Run bulk actions on systems](../../admin/systems/bulk-actions.md).
 
 After the first scan, review the results on the dashboard. For an explanation of the dashboard, see [Dashboard](../../admin/dashboard.md).
 

@@ -4,7 +4,7 @@ description: "Check every database node, create the secureone8 replica set, copy
 sidebar_position: 50
 ---
 
-Use this procedure when `docker service ls | grep -i mongo` shows `<stack>_mongo1`, `<stack>_mongo2`, and `<stack>_mongo3`. The procedure creates a second three-member replica set named `secureone8` on the same nodes, copies the data from the `secureone` replica set, and validates the copy. The application keeps using MongoDB 4.0 until you run `cutover`.
+Use this procedure when `sudo docker service ls | grep -i mongo` shows `<stack>_mongo1`, `<stack>_mongo2`, and `<stack>_mongo3`. The procedure creates a second three-member replica set named `secureone8` on the same nodes, copies the data from the `secureone` replica set, and validates the copy. The application keeps using MongoDB 4.0 until you run `cutover`.
 
 During the migration, expect six MongoDB services across the cluster. Each MongoDB service has exactly one desired replica. Don't set `MONGO1_REPLICA_COUNT`, `MONGO2_REPLICA_COUNT`, or `MONGO3_REPLICA_COUNT` to `3`, `6`, or another value above `1`. Docker Swarm can place multiple tasks of one service on a constrained database node, where they compete for the same data path.
 

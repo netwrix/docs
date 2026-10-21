@@ -4,12 +4,6 @@ description: "Apply a service account that belongs to an interactive Active Dire
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the product places an account that a bulk action added to the inventory on the Windows system at the next scan, and whether that depends on the protect mode of the system. Evidence: the **Add/Update Account** bulk action stores the account with `persistent` set and `onHost` false (bulk_action/executors/add_update_account_policy_executor.py), and windows/scanner.py:540-591 (`addPersistentAdmins`) adds missing persistent accounts during a scan; not run against a real system.
-
-TODO: Confirm that the **Account with access** filter for a group lists the systems that have the group in their account inventory, including accounts that arrived through nesting. Evidence: the filter key is `admins.current.sid` (mgmtSystemsCtrl.js:257); **Access Path** and **Access Type** apply to users only.
-:::
-
 Interactive accounts shouldn't have standing privilege. They should use Netwrix Privilege Secure for Discovery to request administrator access when needed, and the groups that contain them should be non-persistent. Sometimes interactive accounts and service accounts are members of the same group. If you remove persistence from such a group, you break any process or application that uses the service account. This page shows how to keep the service account working by applying it directly to the machines that need it.
 
 ## Approach
@@ -30,7 +24,7 @@ In the following example, a service account is a member of the Domain Admins gro
 2. In **Administrator Accounts**, select **Add Account**.
 3. In **User or Group**, enter the service account. Set **Access Permission** to **Persistent**, and save.
 
-The product applies the account during the next scan, or immediately if you start a **Rescan**.
+On a system in protect mode, the product adds the account to the local Administrators group during the next scan, or immediately if you select **Rescan**. On a system that isn't in protect mode, the product records the account in its inventory but doesn't add it to the system. If the account is already in the inventory, the product rejects the request with the message `Administrator already exists in inventory`. In that case, select **Action** > **Set Persistent** in the row of the account instead.
 
 ## Apply the account to many machines
 
@@ -49,7 +43,7 @@ Bulk Actions apply the account to the Windows systems that you select. For Linux
 
 6. Select **Execute Bulk Action**, and follow the job on **Monitor** > **Jobs**.
 
-On the selected Windows systems that don't have the account, the action adds it as a persistent account. On systems that already have it, the action sets it to persistent. To add more than one service account, run the action again for each account.
+On the selected Windows systems that don't have the account, the action adds it to the inventory as a persistent account. The next scan adds it to the local Administrators group of each system in protect mode. On systems that already have the account in their inventory, the action sets it to persistent. To add more than one service account, run the action again for each account.
 
 ## Apply the account with Quickstart
 

@@ -38,7 +38,7 @@ Use a single node for a proof of concept or a low-risk environment. Use a three-
 ## Upgrade or migrate an existing deployment
 
 - To upgrade a container-based deployment, run the upgrade command from the quickstart bundle for the target release. See [Upgrade an existing deployment](./deploy.md#upgrade-an-existing-deployment).
-- If a deployment still uses MongoDB 4.0, move it to MongoDB 8.0 first. See [Upgrade MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md).
+- If a deployment still uses MongoDB 4.0, move it to MongoDB 8.0 first. See [Migrate from MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md).
 - If a deployment came from the ISO image, which is deprecated, contact Netwrix Support to plan the move to containers. See [Legacy ISO installation](../appendix/legacy-iso/legacy-iso-installation.md).
 
 ## Related tools

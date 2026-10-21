@@ -5,11 +5,7 @@ sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that a certificate change doesn't end signed-in sessions or interrupt a running scan. Evidence: initServerTls.js closes and restarts the HTTPS listener inside the API process when it receives the certificate change; the process and container kept running in testing, but no session or scan was running.
-
-TODO: Confirm whether each node of a cluster serves the certificate, or only the node that runs the API service. Evidence: none; the API service is pinned to one node in the cluster stack file.
-
-TODO: Confirm the TLS versions and ciphers that the web interface offers. Evidence: api-legacy-onprem/config.js sets `TLSV2_ONLY: true` and lists ECDHE-RSA and TLS 1.3 ciphers; this page says only "TLS 1.2 or later".
+TODO: Does each node of a cluster serve the certificate, or only the node that runs the API service? Evidence: none; the API service publishes port 443 in host mode (docker/docker-compose.swarm.yml:94-103), and the cluster stack file isn't in the 26.09.1 source.
 :::
 
 A new installation uses a default certificate for the name `localhost`, so browsers show a warning when users open the product by its real name. Install a certificate for the name that users use. The certificate must come from a certificate authority (CA) that your users' browsers trust, such as the CA that your organization runs. The product accepts RSA keys only, and TLS 1.2 or later.
@@ -53,7 +49,7 @@ openssl x509 -in fullchain.crt -noout -subject -dates -ext subjectAltName
 
    ![The Server Certificate panel after the new certificate is saved](/images/privilegesecurediscovery/certificates/cert-server-certificate-installed.webp)
 
-The product starts using the new certificate within seconds. You don't restart any service. Open the product in a new browser window by its DNS name to confirm that the browser trusts it. From another computer, you can check what the product sends:
+The product starts using the new certificate within seconds. You don't restart any service. Users stay signed in, because the product keeps no server-side session, and scans in progress continue. Open the product in a new browser window by its DNS name to confirm that the browser trusts it. From another computer, you can check what the product sends:
 
 ```bash
 openssl s_client -connect <fqdn>:443 -servername <fqdn> -showcerts </dev/null

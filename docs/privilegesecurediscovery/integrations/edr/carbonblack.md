@@ -8,9 +8,7 @@ sidebar_position: 10
 :::warning[Needs dev input: remove before publishing]
 TODO: Confirm the minimum Carbon Black Cloud permissions for the custom access level. The table in this page comes from the old documentation. The product code calls device search, device policy actions, policy create, update, and delete, and Live Response session, file, and command endpoints. It doesn't call any Live Query endpoint, so `livequery.manage` may not be needed. Evidence: docker/shared/python/src/remediant/integrations/carbon_black/api.py (lines 123-360); no match for "livequery" in the 26.09.1 tree.
 
-TODO: Confirm which API key (Live Response or custom) the product uses for each call. The Python code signs every request with the custom key, but the form requires both keys and Test Connection uses both. Evidence: api.py:46-47 and :185-189 (custom credentials only); edrConfiguration.js `validateCarbonBlackIntegrationConfig` (both required).
-
-TODO: Confirm that Test Connection should warn when the organization has no active, Live Response-enabled device. Evidence: node/packages/lib-api-common/features/integrations/edr/carbon-black-cloud/validate.js:35-62 (skips the Live Response check and reports a failure).
+TODO: Does the scanner or worker use the Live Response API key at run time? The Python integration signs every request with the custom key, but the form requires both keys. Evidence: api.py:46-47 and :185-189 (custom credentials only); edrConfiguration.js `validateCarbonBlackIntegrationConfig` (both required).
 :::
 
 The Carbon Black Cloud integration lets Netwrix Privilege Secure for Discovery scan Windows systems and grant just-in-time administrator access through the Carbon Black sensor. The product doesn't need a direct network connection to the endpoint, and the endpoint doesn't need to be on the domain.
@@ -99,13 +97,7 @@ The form includes rate limiting for the calls that the product makes to Carbon B
 
 ## Assign the configuration
 
-A configuration has no effect until you assign it. You can assign it in three places:
-
-- As the **EDR Configuration** of a domain. Select **Configure** > **Server**, and edit the domain.
-- To one system. Select **Access** > **Grant Access**, select the Windows system, and choose the configuration in the **EDR Integration** list. Only administrators see this list.
-- To many systems. Use the **Set EDR Configuration** bulk action. See [Bulk actions](../../admin/systems/bulk-actions.md).
-
-You can't delete a configuration while a domain or a system uses it. The product shows `You cannot delete this EDR configuration as it is in use on one or more domains` (or `systems`). Assign a different configuration or **Disabled** first.
+A configuration has no effect until you assign it to a domain or to systems. See [Assign a configuration](./overview.md#assign-a-configuration). To delete a configuration, see [Delete a configuration](./overview.md#delete-a-configuration).
 
 ## Troubleshoot Test Connection
 

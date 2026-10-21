@@ -1,5 +1,5 @@
 ---
-title: "Netwrix Privilege Secure for Discovery Documentation"
+title: "Netwrix Privilege Secure for Discovery documentation"
 description: "Find installation, configuration, administration, and integration guidance for Netwrix Privilege Secure for Discovery."
 sidebar_position: 1
 ---

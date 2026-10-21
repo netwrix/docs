@@ -20,7 +20,7 @@ The migration isn't an in-place upgrade, and it doesn't copy only changed data. 
 
 The total budget includes the existing MongoDB 4.0 data, the new MongoDB 8.0 copy, and migration headroom. Actual disk use can differ between MongoDB versions because storage formats and compression differ. Keep additional capacity for logs, temporary data, database growth, and normal host operations.
 
-MongoDB 4.0 keeps using disk space throughout the migration and after cutover. The `retire` command renames the MongoDB 4.0 data aside and never deletes it, so that space stays in use until you remove the archive. Don't subtract this future reclaimed space from the capacity requirement. See [Retire MongoDB 4.0](./retire-mongodb-4.md).
+MongoDB 4.0 keeps using disk space throughout the migration and after cutover. The `retire` command renames the MongoDB 4.0 data aside and never deletes it, so that space stays in use until you remove the archive. Don't subtract this future reclaimed space from the capacity requirement. See [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md).
 
 For a single-node deployment, confirm capacity on the database host. For a three-node cluster, apply the requirement to every database node, because each replica-set member stores a complete copy.
 
@@ -30,7 +30,7 @@ Identify the relevant filesystems with the following read-only commands:
 
 ```bash
 df -h /secureone/data/db
-docker info --format '{{.DockerRootDir}}'
+sudo docker info --format '{{.DockerRootDir}}'
 ```
 
 Run `df -h <docker-root-directory>` against the directory that Docker returns. Don't continue unless both the manual capacity review and `s1 mongo-upgrade check` pass.
@@ -54,7 +54,7 @@ Don't estimate one environment by applying a GB-per-hour or documents-per-hour f
 
 Schedule `run` to finish as close as practical to the approved `cutover` window. A long delay allows more source activity to accumulate before the final reconciliation. For a large or business-critical deployment, contact Netwrix Support to review the plan before you schedule the window.
 
-The `retire` command is a separate step with its own, shorter application downtime. See [Retire MongoDB 4.0](./retire-mongodb-4.md).
+The `retire` command is a separate step with its own, shorter application downtime. See [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md).
 
 ## Back up before you start
 

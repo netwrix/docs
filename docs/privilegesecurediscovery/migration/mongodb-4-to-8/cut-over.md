@@ -116,4 +116,4 @@ The correct action depends on the stage at which `cutover` fails. The details ar
 ## Next steps
 
 1. Verify the result. See [Verify and maintain the deployment after cutover](./after-cutover.md).
-2. After a validation period, restore the canonical service names. See [Retire MongoDB 4.0](./retire-mongodb-4.md).
+2. After a validation period, restore the canonical service names. See [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md).

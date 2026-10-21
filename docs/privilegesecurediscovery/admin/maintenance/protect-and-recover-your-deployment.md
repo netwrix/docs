@@ -1,31 +1,23 @@
 ---
 title: "Protect and recover your deployment"
-description: "Learn what a Privilege Secure for Discovery backup must contain, how to take a single-node database backup, why the encryption key matters, and how recovery works."
+description: "Learn what a Privilege Secure for Discovery backup must contain, how to back up and restore the database, why the encryption key matters, and how recovery works."
 sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Three-node cluster: should the dump come from a secondary, is --oplog required, and what are the matching restore flags? Dev: dumping from a secondary and --oplog are standard upstream behavior, untested here. --oplog needs a full-instance dump, with no --db or --collection. The replica set is secureone on 4.0 and secureone8 after cutover. Evidence: nothing in the repository runs mongodump.
+TODO: On a rebuilt single-node host, `secureone.sh setup` runs `docker swarm leave --force` and then creates a new `key.txt` secret, so a secret that you created earlier is lost. What is the supported way to put the backed-up key in place afterward (remove the stack, replace the secret, redeploy)? Evidence: secureone.sh:1954-1958 (`swarm-init`) and :1610-1620 (`create-secret` skips only a secret that exists).
 
-TODO: Can a MongoDB 4.0 dump restore into MongoDB 8.0, and does `yarn run migrator up onprem` do nothing after a restore? Evidence: dev expects both to work and tested neither. The single-node dump and restore on this page ran MongoDB 8.0 to MongoDB 8.0 only.
-
-TODO: Rebuild on a new host. Dev says a secret created before `setup` wins because the script's own create fails harmlessly, and that `setup` then deploys everything and runs migrations against an empty database. The Docker secrets page says the single-node `setup` leaves the swarm first, which deletes a secret created earlier. Resolve the conflict, then write the rebuild procedure. A possible workaround is to set the `*_REPLICA_COUNT` variables of the write services to 0 in `s1.env`; dev hasn't tried it. Evidence: secureone.sh:1613-1621 and :1880-1885.
-
-TODO: Is a swarm-level backup needed to rebuild a three-node cluster, or is a rebuild with `setup`, join, and relabeling enough? Evidence: none; dev confirms only that labels live in swarm state, so a rebuilt swarm needs relabeling (pre-deploy.sh labels nodes in `docker node ls` order).
-
-TODO: Are s1.pem and s1.pub still relevant on 26.x installs that were upgraded from version 2? Evidence: docker/s1tool/src/upgrade_v3.sh:30-31.
-
-TODO: What disaster recovery posture can Netwrix publish (cold-standby restore only, or another design)? Evidence: none. The write-path services to keep stopped on a standby are the set that `cutover` stops.
+TODO: Is a swarm-level backup needed to rebuild a three-node cluster, or is `setup`, join, and relabeling enough? Evidence: none; node labels live in swarm state and `node-labels` in secureone.sh sets them in `docker node ls` order.
 :::
 
-Netwrix Privilege Secure for Discovery stores its data in MongoDB and encrypts stored credentials with a key that exists only on the deployment. A usable backup must include both. This page describes what to protect, how to back up the database of a single-node deployment, and how a recovery works.
+Netwrix Privilege Secure for Discovery stores its data in MongoDB and encrypts stored credentials with a key that exists only on the deployment. A usable backup must include both. This page describes what to protect, how to back up and restore the database of a single-node or three-node deployment, and how a recovery works.
 
 ## What a backup must contain
 
 A backup that can rebuild a deployment includes the following items:
 
 - The MongoDB database. It includes the web server certificate and its private key.
-- The encryption key.
+- The encryption key. If `docker secret ls` also lists `s1.pem` and `s1.pub`, which a deployment upgraded from an earlier version can hold, include those secrets.
 - The `/secureone/s1.env` file.
 - The active stack file.
 - The `fluent.conf` file, if you customized log forwarding.
@@ -79,7 +71,7 @@ A single node runs a standalone MongoDB server without a replica set, so a live 
 
 4. Copy the archive to storage outside the host, apart from the key.
 
-If the deployment uses MongoDB 4.0, the same command works, because the container runs the matching tools. After a migration cutover and before `retire`, take the backup from the MongoDB 8.0 container instead. In the command, replace `^s1_db\.` with `^s1_db8\.` for a single node. See [Migrate from MongoDB 4.0 to 8.0](../../migration/mongodb-4-to-8/overview.md).
+If the deployment uses MongoDB 4.0, the same command works, because the container runs the matching tools. A dump that you took on MongoDB 4.0 also restores into MongoDB 8.0. After a migration cutover and before `retire`, take the backup from the MongoDB 8.0 container instead. In the command, replace `^s1_db\.` with `^s1_db8\.` for a single node. See [Migrate from MongoDB 4.0 to 8.0](../../migration/mongodb-4-to-8/overview.md).
 
 ## Restore a database backup to a single node
 
@@ -113,13 +105,31 @@ Restore into a running deployment that has the same release and the same encrypt
 
    The result is `true`. If it is `false`, contact Netwrix Support.
 
-## Three-node deployments
+## Back up and restore a three-node deployment
 
-A three-node deployment runs a three-member MongoDB replica set. Each member keeps its own copy of the data on its own node. A node failure doesn't need a restore. See [High availability and disaster recovery](../../getting-started/high-availability-and-disaster-recovery.md).
+A three-node deployment runs a three-member MongoDB replica set. Each member keeps its own copy of the data on its own node, so a node failure doesn't need a restore. See [High availability and disaster recovery](../../getting-started/high-availability-and-disaster-recovery.md). You still need a backup for data loss, such as a deleted domain or a damaged database.
 
-Back up the stack file and the node assignments along with the database so that you can rebuild the cluster. The node labels live in the Docker Swarm state. After you rebuild a swarm, label the nodes again. `secureone.sh` does that in `docker node ls` order. For a restore from a logical dump, it doesn't matter which node holds replica 1. For a restore from a file copy or a snapshot, which brings back the data folders, it does.
+On a replica set, take the dump from a secondary member with `--oplog`. The dump then reflects a single point in time, and you don't need to stop the services. The `--oplog` option works only on a dump of the whole instance, so don't add `--db` or `--collection`, and leave the database name out of the connection string.
 
-Contact Netwrix Support for the supported cluster backup procedure.
+1. Run `s1 database-status` to find the replica set name, and use the connection string without a database name from [Identify the service names](./open-the-mongodb-shell.md#identify-the-service-names). For example, on a new MongoDB 8.0 installation the string is `mongodb://mongo1,mongo2,mongo3/?replicaSet=secureone`.
+2. On a node that runs a MongoDB member, run the dump inside the member container. Replace `<service>` with the member service on the node, such as `mongo2`, and `<connection-string>` with the string from step 1.
+
+   ```bash
+   sudo sh -c 'umask 077; docker exec $(docker ps -q -f "name=^s1_<service>\.") mongodump --uri "<connection-string>&readPreference=secondary" --oplog --gzip --archive > <backup-directory>/secureone-$(date +%F).archive'
+   ```
+
+   The output ends with `dumped 1 oplog entry` or a similar count.
+3. Copy the archive to storage outside the host, apart from the key.
+
+To restore, stop the services that write to MongoDB with `s1 stop`, as in [Restore a database backup to a single node](#restore-a-database-backup-to-a-single-node). Then run the restore inside a member container. `mongorestore` finds the primary through the connection string.
+
+```bash
+sudo sh -c 'docker exec -i $(docker ps -q -f "name=^s1_<service>\.") mongorestore --uri "<connection-string>" --gzip --archive --drop --oplogReplay < <backup-directory>/<archive-file>'
+```
+
+Start the services again with `s1 start`, and run the checks in [Verify the deployment](#verify-the-deployment).
+
+Back up the stack file and the node assignments along with the database so that you can rebuild the cluster. The node labels live in the Docker Swarm state. After you rebuild a swarm, label the nodes again. `secureone.sh` does that in `docker node ls` order. For a restore from a logical dump, it doesn't matter which node holds replica 1.
 
 ## Hypervisor snapshots
 

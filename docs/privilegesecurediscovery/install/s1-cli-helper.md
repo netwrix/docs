@@ -82,7 +82,7 @@ s1 database-status
 
 ## Read logs
 
-The `s1 logs` command follows the logs that the `fluentd` service collects. By default, it shows the last 30 seconds and keeps following new lines. Press Ctrl+C to stop.
+The `s1 logs` command follows the logs that the `fluentd` service collects. By default, it shows the last 30 seconds and keeps following new lines. Press Ctrl+C to stop. The command works only on a Swarm manager node, because it reads the service logs from the swarm.
 
 | Option | Default | Effect |
 | --- | --- | --- |
@@ -132,12 +132,12 @@ The following commands cover less frequent tasks.
 | `s1 healthcheck-report` | Runs the domain health check reports in the `internal_api` container. |
 | `s1 set-password` | Prompts for a new password and updates the stored password hash of the product's built-in `svc_login` account. The password must have at least 15 characters. |
 | `s1 migrate status`, `s1 migrate apply`, `s1 migrate revert` | Show, apply, or revert database schema migrations. The `--to <number>` option limits `apply` and `revert`. |
-| `s1 mongo-upgrade check`, `run`, `status`, `cutover`, `finish-cutover`, `retire` | Move the database from MongoDB 4.0 to 8.0. Follow [Upgrade MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md) instead of running these commands on their own. |
+| `s1 mongo-upgrade check`, `run`, `status`, `cutover`, `finish-cutover`, `retire` | Move the database from MongoDB 4.0 to 8.0. Follow [Migrate from MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md) instead of running these commands on their own. |
 | `s1 deploy`, `s1 undeploy` | Deploy the stack from `/secureone/docker-stack.yml`, or remove it. |
 | `s1 pull <service> --version <version>` | Pulls the image of one or more services. Without `--version`, the command pulls the `latest` tag. The `--all` option pulls every service image. |
 | `s1 docker-daemon-check`, `docker-daemon-validate`, `docker-daemon-configure` | Check or set the Docker daemon limits that the `windows-bridge-proxy` service needs in `/etc/docker/daemon.json`. The `configure` command accepts `--dry-run`. Run it without `sudo`, like every other `s1` command, because the tool container runs as root. |
 
-Before `s1 deploy` runs, it checks the Docker daemon limits and the database state. If Docker needs a restart, the command prints `sudo systemctl restart docker`.
+Before `s1 deploy` runs, it checks the database state and the Docker daemon limits. If the limits are too low, the command raises them in `/etc/docker/daemon.json`, deploys anyway, and prints `sudo systemctl restart docker`. Restart Docker to apply the change.
 
 ## Update the tool
 

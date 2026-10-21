@@ -4,12 +4,6 @@ description: "Open a shell on the active Privilege Secure for Discovery database
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Dev confirmed the retired-cluster bug in `get_db_info` (s1.py:6729 and :1164). Remove the known-issue note when a release fixes it. Evidence: dev answer.
-
-TODO: Confirm that the manual connection string with `replicaSet=secureone8` opens a shell on a retired cluster, because the supported commands can't. Evidence: none; not tested on a live cluster.
-:::
-
 Use the `s1 db` command to open a shell on the database that Netwrix Privilege Secure for Discovery uses. The command selects the active database service and the correct shell binary for you, so it works on MongoDB 4.0, during a migration, and on MongoDB 8.0.
 
 ## Open the shell with s1 db
@@ -29,7 +23,7 @@ The shell opens on the `SecureONE` database. To run a JavaScript file, add `--fi
 
 To check the database state without opening a shell, run `s1 database-status`. The output shows the active database service and the live MongoDB version. For a cluster, it also lists the replica-set members.
 
-On a three-node cluster after `retire`, `s1 db` can't reach the replica set because it looks for `secureone` and the set is named `secureone8`. Use the manual method in [Open a shell manually](#open-a-shell-manually) until a fix ships.
+On a three-node cluster after `retire`, `s1 db` and `s1 database-status` can't reach the replica set, because they look for `secureone` and the set is named `secureone8`. Use [Open a shell manually](#open-a-shell-manually) on that cluster.
 
 ## Choose the shell for the MongoDB version
 

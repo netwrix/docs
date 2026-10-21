@@ -4,12 +4,6 @@ description: "Use Docker and s1 commands to inspect the Netwrix Privilege Secure
 sidebar_position: 5
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that `rs.status()` runs unchanged in `mongosh` against a three-member MongoDB 8.0 replica set. Evidence: `db.stats()` and `rs.hello()` ran in `mongosh` on a standalone MongoDB 8.0 test container; no replica set was available.
-
-TODO: Dev confirmed that the replica set is `secureone8` after `s1 mongo-upgrade retire`, and that `s1 db` and `s1 database-status` look for `secureone`. Remove the note when a release fixes it. Evidence: s1.py:6729 and :1164.
-:::
-
 Use the commands on this page to inspect a running Netwrix Privilege Secure for Discovery deployment and to find the cause of common failures. To confirm that a new deployment is healthy, see [Verify the deployment](../install/verify-deployment.md). Run all commands on a swarm manager node unless a section says otherwise. Run `s1` without `sudo`, because the launcher calls `sudo` itself.
 
 ## Identify the services
@@ -173,7 +167,7 @@ db.getCollectionNames()
 On a cluster, the replica set is `secureone`, with the members `mongo1:27017`, `mongo2:27017`, and `mongo3:27017`. All three members must run before the API connects. To check the replica set from the shell that `s1 db` opens, run `rs.status()` and `rs.hello()`.
 
 :::note
-After a migration to MongoDB 8.0, the cluster replica set has the name `secureone8`, and the connection string uses `replicaSet=secureone8`.
+After a migration to MongoDB 8.0, the cluster replica set has the name `secureone8`, and the connection string uses `replicaSet=secureone8`. After you retire the MongoDB 4.0 services on a cluster, `s1 db` and `s1 database-status` can't reach the replica set. Open a shell as [Open a shell manually](../admin/maintenance/open-the-mongodb-shell.md#open-a-shell-manually) describes.
 :::
 
 ## Check the message queue

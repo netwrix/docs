@@ -4,15 +4,11 @@ description: "Upgrade to 26.09.1, install the matching s1 command-line tool on e
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: This page uses `secureone.sh upgrade`, `install-cli`, and `verify` (present in the 26.09.1 release branch) instead of the earlier manual procedure that edited `/secureone/s1.env` and copied `/app/s1-cli` out of the s1tool image by hand. Confirm the manual procedure is no longer needed for any supported starting release. Evidence: origin/release/26.09.1-rc secureone.sh usage text (upgrade, install-cli, verify).
-:::
-
 The `s1 mongo-upgrade` commands come from the `s1` command-line tool on the host. Upgrading the application services doesn't by itself prove that every database node has the 26.09.1 tool. Prepare each database node before you run `check`.
 
 ## Before you begin
 
-Complete [Plan the MongoDB migration](./plan.md) first. Download the 26.09.1 quickstart bundle as described in [Download and deploy](../../install/deploy.md), and use the `secureone.sh` and `secureone.tar.gz` files from that bundle. Don't use a copy of `secureone.sh` kept from an earlier release.
+Complete [Plan the MongoDB migration](./plan.md) first. Download the 26.09.1 quickstart bundle as described in [Deploy Privilege Secure for Discovery with Docker](../../install/deploy.md#download-the-quickstart-bundle), and use the `secureone.sh` and `secureone.tar.gz` files from that bundle. Don't use a copy of `secureone.sh` kept from an earlier release.
 
 Every database node must authenticate to the Netwrix container registry. See [Configure registry access](../../requirements/registry-access.md).
 
@@ -85,7 +81,7 @@ For a single-node deployment, run the following commands:
 ```bash
 s1 status
 s1 database-status
-docker service ls | grep -i mongo
+sudo docker service ls | grep -i mongo
 ```
 
 For a three-node cluster, run the following commands:
@@ -93,8 +89,8 @@ For a three-node cluster, run the following commands:
 ```bash
 s1 --multi-node status
 s1 --multi-node database-status
-docker node ls
-docker service ls | grep -i mongo
+sudo docker node ls
+sudo docker service ls | grep -i mongo
 ```
 
 If the deployment uses a stack name other than `s1`, place `--stack <stack-name>` before the subcommand, for example `s1 --stack <stack-name> status`.

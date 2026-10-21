@@ -114,14 +114,14 @@ Rotate one integration credential at a time. Complete its connection and functio
 | Graph synchronization succeeds, but endpoint inventory is empty | Graph synchronization doesn't prove endpoint reachability. For the baseline, verify Domain Name System (DNS) or IP resolution, required ports and protocols, the Scan account, and Scan Mode. For EDR, verify agent health and provider assignment. For Hybrid, verify the direct AD and Windows path. |
 | EDR **Test Connection** succeeds, but the endpoint scan fails | Verify that the device is active and visible in the provider, its identifier maps to the expected device record, the EDR configuration is enabled and assigned, and the provider credential has the permissions that the provider guide requires. |
 | New devices use the EDR configuration, but existing devices don't | Domain defaults apply to newly discovered devices. Assign the EDR configuration to existing devices individually or through **Bulk Actions**. |
-| The product refuses to delete an EDR configuration | You still assign the configuration to a Microsoft Entra ID domain, another domain, or a system. Remove the assignment, and then delete the configuration. |
+| The product refuses to delete an EDR configuration | A domain or a system still uses the configuration. See [Delete a configuration](../edr/overview.md#delete-a-configuration). |
 | Protect, JIT/JITA, or OAM is unavailable or fails | Confirm that the selected connector and installed release support the action. Verify the device policy and provider-side prerequisites. Don't enable the action until its pilot succeeds. |
 | Tanium Bulk Scan omits devices | Verify the exact computer-group name, group membership, agent health, EDR assignment, and the counts of completed devices, offline devices, and devices with no match. |
 | Hybrid objects appear twice or don't correlate | Add both an LDAP domain and a Microsoft Entra ID domain. Complete both synchronizations, and verify that the Microsoft Entra users carry the on-premises security identifier (SID) attribute. |
 
 ## Complete a final check
 
-Before you hand the integration to operations, confirm that you:
+Before you hand the integration to operations, complete the following checks:
 
 - Record the endpoint operating model.
 - Verify the stable fully qualified domain name (FQDN), the trusted Transport Layer Security (TLS) certificate, and time synchronization.

@@ -4,10 +4,6 @@ description: "Set up Kerberos authentication through SASL for an LDAP domain con
 sidebar_position: 70
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the `s1_internal_api` service writes the SASL and Kerberos log entries at 26.09.1. Evidence: none; the service name comes from the earlier version of this page.
-:::
-
 Lightweight Directory Access Protocol (LDAP) domain connections in Netwrix Privilege Secure for Discovery can use the Simple Authentication and Security Layer (SASL) with Kerberos. This page covers the connection that the product uses to read the directory. For Kerberos authentication to Windows endpoints, set **Windows Authentication Method** to **Kerberos** in the same domain settings. See [Add a domain](../domains-and-ad/add-a-domain.md).
 
 ## Enable SASL
@@ -24,7 +20,7 @@ Lightweight Directory Access Protocol (LDAP) domain connections in Netwrix Privi
 
 - Enter the Kerberos domain name in all capital letters, for example `user@EXAMPLE.COM`. It is usually the Active Directory domain name. For details, see the [MIT Kerberos configuration documentation](https://web.mit.edu/Kerberos/krb5-latest/doc/admin/realm_config.html).
 - The product host must reach a domain controller for Kerberos on TCP and UDP port 88. See [Ports and firewall](../../requirements/ports-and-firewall.md).
-- SASL doesn't work with SSL. You can't combine Microsoft SASL and SSL. SASL requires port 389.
+- SASL doesn't work with SSL. Use port 389 for SASL.
 - Kerberos is sensitive to DNS and depends on working reverse DNS lookup. This is a Kerberos requirement, not specific to Privilege Secure for Discovery.
 - The product doesn't support LDAP record referrals.
 - If you switch a domain from Kerberos to NTLM, the first scan after the switch doesn't update the `last_scanned` timestamps. The next scan updates them.

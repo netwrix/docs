@@ -4,12 +4,6 @@ description: "Learn why domain controllers behave differently from other endpoin
 sidebar_position: 80
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the product hides domain controllers on **Management** > **Systems**. Evidence: the interface code adds the filter `rmd.isDomainController != true` (mgmtSystemsCtrl.js:858), but in the 26.09.1 test stack a computer flagged as a domain controller still appeared in the list.
-
-TODO: Confirm whether a manual **Rescan** on **Grant Access**, or the **Scan Systems** bulk action, scans a domain controller. Evidence: the scan scheduler (svc_scan.py:1253) and the policy and JITA bulk actions (bulk_action/executors) skip systems that are flagged as domain controllers; no such check was found for **Rescan** or **Scan Systems**.
-:::
-
 Domain controllers operate differently from desktop and server endpoints. They are the source of truth for essential elements of the directory, such as users, groups, and computers. For that reason, Netwrix Privilege Secure for Discovery can't protect them like other endpoints.
 
 ## How the product treats domain controllers
@@ -20,7 +14,7 @@ During directory synchronization, the product marks a computer as a domain contr
 - Bulk actions that change the scan or protect policy skip them, and so does a bulk just-in-time access (JITA) request.
 - Offline access management isn't available for them.
 
-The computers still appear in the directory synchronization, and an administrator can still change their settings on the **Grant Access** page.
+A manual **Rescan** on the **Grant Access** page and the **Scan Systems** bulk action don't skip them. The computers still appear in the directory synchronization, and an administrator can still change their settings on the **Grant Access** page.
 
 ## How domain controllers differ
 
@@ -39,7 +33,7 @@ Domain controllers behave as follows:
 
 ## Configure domain controllers
 
-Leave **Scan Mode** and **Protect Mode** set to **Disabled** for the domain controllers. This keeps the hostname error away, even when you change a system by hand.
+Leave **Scan Mode** and **Protect Mode** set to **Disabled** for the domain controllers. With both modes disabled, the hostname error can't occur, even when you change a system by hand.
 
 1. Select **Access** > **Grant Access**.
 2. Search for the domain controller and select it.

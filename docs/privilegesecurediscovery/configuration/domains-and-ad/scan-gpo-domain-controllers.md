@@ -4,11 +4,7 @@ description: "Create a GPO that lets the scan account read local Administrators 
 sidebar_position: 70
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the scan reads the local Administrators group through the remote SAM interface (SAMR over SMB), so that this policy is the setting that lets a non-administrator scan account work. Evidence: the Windows connector uses impacket over SMB (`windows_rpc`); the product code doesn't name the SAM interface.
-:::
-
-Starting with Windows Server 2016 and Windows 10 version 1607, Microsoft restricts remote enumeration of the members of local groups, including the local Administrators group. For Netwrix Privilege Secure for Discovery to list the local administrators of these systems, the scan account must be a local administrator of the target system or must have permission to read the group remotely.
+Netwrix Privilege Secure for Discovery reads the members of the local Administrators group through the remote Security Account Manager (SAM) interface over Server Message Block (SMB). Starting with Windows Server 2016 and Windows 10 version 1607, Microsoft restricts remote enumeration of the members of local groups, including the local Administrators group. For the product to list the local administrators of these systems, the scan account must be a local administrator of the target system or must have permission to read the group remotely.
 
 This page describes how to create a Group Policy object (GPO) that grants the scan account that permission without giving it administrator rights.
 
@@ -83,7 +79,7 @@ Windows can log the calls that the policy would deny without blocking them. This
 | **Value type** | `REG_DWORD` |
 | **Value data** | `1` |
 
-In audit-only mode, event 16968 lists each client that Windows would deny. Remove the value, or set it to `0`, to enforce the policy. A restart isn't required.
+In audit-only mode, event 16968 lists each client that Windows would deny. Remove the value, or set it to `0`, to enforce the policy. Windows doesn't need a restart.
 
 ## Undo the GPO on domain controllers
 

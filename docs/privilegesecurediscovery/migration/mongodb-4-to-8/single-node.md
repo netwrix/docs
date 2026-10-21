@@ -4,11 +4,7 @@ description: "Run the readiness check, copy data to MongoDB 8.0, validate the co
 sidebar_position: 40
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm whether `run` exits with a non-zero code when the validation summary reports failed checks, so that `status` reports FAILED. The page tells readers to check the summary line either way. Evidence: none (validation logic is in the mongo-migrate image, not s1.py).
-:::
-
-Use this procedure when `docker service ls | grep -i mongo` shows one service named `<stack>_db`. The procedure creates a MongoDB 8.0 service named `<stack>_db8`, copies the data from MongoDB 4.0, and validates the copy. The application keeps using MongoDB 4.0 until you run `cutover`.
+Use this procedure when `sudo docker service ls | grep -i mongo` shows one service named `<stack>_db`. The procedure creates a MongoDB 8.0 service named `<stack>_db8`, copies the data from MongoDB 4.0, and validates the copy. The application keeps using MongoDB 4.0 until you run `cutover`.
 
 ## Before you begin
 
@@ -118,6 +114,8 @@ The post-copy validation checks the following areas.
 
 3. Record the complete validation summary before `cutover`.
 
+A validation failure doesn't make `run` exit with an error. The command can finish, and `status` can report that the migration completed, while **Checks failed** is greater than zero. Always read the summary.
+
 If **Checks failed** is greater than zero, or you can't explain a warning, don't continue. Save the log and contact Netwrix Support.
 
 ## Check copy progress
@@ -165,7 +163,7 @@ Every `mongo-upgrade` command writes its output to the following path. The first
 Large collections can take a long time without a new high-level message. To follow progress, run the following command, and look for advancing document counters:
 
 ```bash
-tail -f /secureone/logs/mongo-upgrade/<log-file>
+sudo tail -f /secureone/logs/mongo-upgrade/<log-file>
 ```
 
 Don't assume a quiet terminal is a stopped process. If counters don't advance for an extended period, collect the log and contact Netwrix Support before you stop the process. If the tool can't create the log directory, it continues without a persistent log, so preserve the terminal output manually.

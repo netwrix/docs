@@ -35,7 +35,7 @@ The response contains the access token, its expiration time in UTC, and the scop
 }
 ```
 
-By default, an access token is valid for 8 hours, and the `expires` value shows the exact time. After it expires, repeat the request to get a new token. Each successful request also updates the **Last Accessed** value of the key.
+By default, an access token is valid for 8 hours, and the `expires` value shows the exact time. An administrator can change the lifetime with the **Token Expiration Seconds** setting under **Configure** > **Services**, from 300 seconds (5 minutes) to 604800 seconds (1 week). After it expires, repeat the request to get a new token. Each successful request also updates the **Last Accessed** value of the key.
 
 ## Send an authenticated request
 

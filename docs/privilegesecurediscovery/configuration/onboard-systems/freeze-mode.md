@@ -4,12 +4,6 @@ description: "Roll out protect mode one Active Directory group at a time by firs
 sidebar_position: 60
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the **Set Accounts Persistent** bulk action sets every current account of the selected systems to persistent, including groups, and whether it changes accounts that the product already treats as service accounts. Evidence: remediant/bulk_action/consts.py (`set_inventory_persistent` writes `admins.current.$[].persistent`). Not run against a deployment with real systems.
-
-TODO: Confirm that **Persistent** on the Admin List sheet and **Enable Protect** on the Computer Data sheet are the columns to change at 26.09.1. Evidence: deploy/tools/quickstart/reports.py (SystemUploadFields.ENABLE_PROTECT, AdminUploadFields.PERSISTENT).
-:::
-
 Freeze mode is a way to roll out protect mode with little impact on users. You place systems in protect mode with every account persistent, then remove persistence one Active Directory (AD) group at a time as you inform and train the members of each group. This page explains the rollout approach and the steps to apply it in the interface and with the Quickstart reporting tool.
 
 ## Rollout approaches
@@ -52,7 +46,7 @@ Use Bulk Actions to place many systems in freeze mode. Set the accounts to persi
 
    ![The Set Accounts Persistent bulk action for three systems](/images/privilegesecurediscovery/onboard-systems/onboard-bulk-set-persistent.webp)
 
-1. Select **Execute Bulk Action**, and wait for the job to finish on **Monitor** > **Jobs**.
+1. Select **Execute Bulk Action**, and wait for the job to finish on **Monitor** > **Jobs**. The action sets every account in the inventory of each system to persistent, and it skips systems that the product hasn't scanned. The job message names the number of skipped systems.
 1. Select the same systems again. Select **Bulk Actions** > **Select Action** > **Protect Policy**, set **Protect Mode** to **New Accounts: JITA**, and select **Save**.
 
    ![The Change Protect Policy bulk action](/images/privilegesecurediscovery/onboard-systems/onboard-bulk-protect-policy.webp)

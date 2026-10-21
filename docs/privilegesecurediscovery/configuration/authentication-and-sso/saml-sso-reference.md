@@ -6,7 +6,7 @@ sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the exact error text for an invalid signature, and whether a stale **Issuer Cert** produces it. Evidence: none; the product uses `@node-saml/passport-saml` with `wantAuthnResponseSigned` and `wantAssertionsSigned` on.
+TODO: What text does the sign-in page show for an invalid signature, and does a stale **Issuer Cert** produce it? Evidence: node-saml throws `Invalid document signature` or `Invalid signature`, and saml.js passes the error to `next(err)`; the text that reaches the browser wasn't observed because no identity provider was available.
 :::
 
 Netwrix Privilege Secure for Discovery supports Security Assertion Markup Language (SAML) single sign-on (SSO) through an identity provider (IdP). This page is the single reference for the settings and sign-in behavior that every IdP shares. Use it with the provider-specific pages.

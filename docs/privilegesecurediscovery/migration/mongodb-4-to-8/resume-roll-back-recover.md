@@ -58,7 +58,7 @@ Restoring write-path services against the OLD db (no cutover happened)
 2. Confirm that the application is using MongoDB 4.0 again.
 3. Run `cutover` again, or contact Netwrix Support when the cause isn't clear.
 
-If a write-path service didn't stop within five minutes, let the long-running job finish or stop it safely, confirm the service has zero running tasks with `docker service ps <service> --filter desired-state=running`, and retry.
+If a write-path service didn't stop within five minutes, let the long-running job finish or stop it safely, confirm the service has zero running tasks with `sudo docker service ps <service> --filter desired-state=running`, and retry.
 
 ### Partial application-service switch
 
@@ -86,7 +86,7 @@ If the scan couldn't complete, the output includes the following warning:
 WARNING: could not complete the stale-reference sweep (...)
 ```
 
-The result is unknown, not confirmed clean. Check each service manually with `docker service inspect <service>`.
+The result is unknown, not confirmed clean. Check each service manually with `sudo docker service inspect <service>`.
 
 After you correct the references, run `finish-cutover`. The command repeats only the stale-reference scan and, when the scan is clean, stops MongoDB 4.0. It doesn't repeat the freeze, copy, or switch.
 
@@ -128,7 +128,7 @@ If the output also reports that the stopped state isn't durable, fix the setting
 
 ## Recover from a failed retire
 
-See [Retire MongoDB 4.0](./retire-mongodb-4.md#recover-from-a-failed-retire).
+See [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md#recover-from-a-failed-retire).
 
 ## Roll back
 
@@ -145,7 +145,7 @@ Record the following before the migration, and include the relevant items in a s
 * Database node names and Docker Swarm manager nodes.
 * Complete output from `check` on every database node.
 * Reported database size and available storage on both relevant filesystems.
-* Output from `s1 status`, `s1 database-status`, and `docker service ls | grep -i mongo`.
+* Output from `s1 status`, `s1 database-status`, and `sudo docker service ls | grep -i mongo`.
 * The exact command and stage that failed.
 * The final validation summary, including **Checks failed** and **Warnings**.
 * The logs in `/secureone/logs/mongo-upgrade/`.

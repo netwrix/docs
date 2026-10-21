@@ -5,11 +5,9 @@ sidebar_position: 50
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that `key.txt` is the only Docker secret that the product creates. Evidence: secureone.sh `create-secret` (line 1611) creates `key.txt`; every stack file declares `key.txt` as an external secret.
+TODO: Can the key be rotated, and does a rotation re-encrypt the stored credentials? Evidence: none; no migration or rotation command found in secureone.sh or s1.py.
 
-TODO: Confirm whether the key can be rotated, and whether rotating it re-encrypts the stored credentials. Evidence: none; no migration found.
-
-TODO: Confirm that creating the secret during the `Press Enter to continue` pause of the cluster primary setup is supported, and state the supported method for a single-node setup, where `secureone.sh setup` runs `docker swarm leave --force` before it creates the secret. Evidence: secureone.sh:1880-1885 and :1954-1958; no pause exists in the single-node path. Dev says a secret created before `setup` wins because the script's own create fails harmlessly, which conflicts with the swarm leave. Confirm which is right.
+TODO: What is the supported way to apply an existing `key.txt` to a new single-node deployment? Evidence: secureone.sh:1954-1958 runs `docker swarm leave --force` (which deletes swarm secrets) before `create-secret`, and the single-node path has no pause; the cluster primary path pauses after the swarm exists (:1880-1885).
 :::
 
 Netwrix Privilege Secure for Discovery uses a Docker secret to encrypt sensitive data that it stores, such as the passwords of managed accounts, directory bind passwords, and client secrets. The deployment creates this secret during installation. If you lose the secret, you can't decrypt the stored credentials, even from a valid database backup.
@@ -47,7 +45,7 @@ For the full list of what to protect and how to recover a deployment, see [Prote
 Export the key when you need to keep a copy, or when a new deployment must use the same key as an existing deployment. Examples include restoring a database backup on a rebuilt deployment, moving from a single node to a cluster, and rebuilding the Docker swarm.
 
 1. Use SSH to sign in to the node that runs the API service. On a cluster, find the node with the `s1 status` command. See [Install the s1 CLI helper utility](./s1-cli-helper.md).
-2. Write the key to a file in the root home directory, outside `/secureone`. The setup script writes and then deletes a `key.txt` of its own in `/secureone`, and `teardown` deletes the directory.
+2. Write the key to a file in the root home directory, outside `/secureone`, because `teardown` deletes that directory.
 
    ```bash
    sudo sh -c 'umask 077; docker exec $(docker ps -q -f name=s1_api) cat /run/secrets/key.txt > /root/key.txt'
@@ -69,9 +67,11 @@ Export the key when you need to keep a copy, or when a new deployment must use t
 
 ## Apply the key to a new deployment
 
-The setup script creates the `key.txt` secret itself, and skips this step if a secret with that name already exists. To use an existing key, create the secret yourself before the script reaches that step. On a cluster, the primary node setup pauses with a `Press Enter to continue` prompt after it initializes the swarm and prints the join command. Create the secret in a second SSH session while the script waits at that prompt. The script initializes the swarm again when it starts, so the script deletes a secret that you create before you run `setup`.
+The setup script creates the `key.txt` secret itself, and skips this step if a secret with that name already exists. To use an existing key on a cluster, create the secret yourself before the script reaches that step. The primary node setup pauses with a `Press Enter to continue` prompt after it initializes the swarm and prints the join command. Create the secret in a second SSH session while the script waits at that prompt.
 
-1. On the primary node of the new deployment, create a key file that only root can read.
+The script initializes the swarm again when it starts, which deletes any secret that you create before you run `setup`. A single-node setup has no pause, so this procedure doesn't apply to it. To restore a single-node deployment with an existing key, contact Netwrix Support.
+
+1. On the primary node of the new cluster, create a key file that only root can read.
 
    ```bash
    sudo install -m 600 /dev/null /root/key.txt

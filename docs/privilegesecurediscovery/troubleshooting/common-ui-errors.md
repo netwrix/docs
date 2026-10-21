@@ -5,15 +5,10 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm that each error in this page still occurs at 26.09.1 with the same text. The Windows (SMB) errors are passed through from the endpoint, but the product wrapper text wasn't verified. Evidence: none.
+TODO: Do the messages "Failed to Connect with Credentials" and "Maximum Attempts Exceeded" still appear in 26.09.1, and with what text? Evidence: neither string occurs in the 26.09.1 web, API, or Python source, so the sections that name them rest on the old documentation only.
 
-TODO: Confirm the cause and resolution of "No sudoers file present in the UI", in particular the internal_api service and the DB environment variable in the stack file. Evidence: none.
-
-TODO: Confirm the resolution for "Maximum Attempts Exceeded" when a worker was restarted and a queue record remains in progress; the former resolution edited the database directly and was removed. Evidence: none.
-
-TODO: Confirm whether the NTLM restriction cause of STATUS_NOT_SUPPORTED still applies and whether the recommended policy value is still valid. Evidence: none.
+TODO: Does the NTLM restriction still cause STATUS_NOT_SUPPORTED, and is **Allow all** still the recommended policy value? Evidence: none; the row rests on the Microsoft articles that it links.
 :::
-
 This page explains errors that the web UI and the Access History show during scans and access requests, and how to resolve them. Many of the errors result from incorrect or outdated DNS entries, especially slow updates to dynamic DNS records, or from incorrect credentials. For errors that have their own article, see [Errors and messages](./errors-and-messages.md).
 
 ## rpc_s_access_denied
@@ -60,7 +55,7 @@ This error usually indicates a DNS problem. The product connects to the IP addre
 
 This status indicates that an operation isn't allowed on a built-in (special) SAM account, for example deleting it.
 
-**Cause:** The OAM alternate administrator account and the RID 500 account have the same name, for example `Administrator`, when OAM is enabled. When you set OAM to **Unmanaged**, the product tries to remove the alternate administrator account on the next scan, which is the RID 500 account.
+**Cause:** The OAM alternate administrator account has the same name as the RID 500 account, for example `Administrator`, while OAM is enabled. When you set OAM to **Unmanaged**, the next scan tries to remove the alternate administrator account, but that account is the RID 500 account.
 
 **Resolution:** Contact Netwrix Support. While OAM is set to **Unmanaged**, Support removes the stale account entries that end in `-500` for the system. Afterward, leave OAM unmanaged, or enable it with an alternate administrator name that differs from the name of the RID 500 account.
 
@@ -68,7 +63,7 @@ This status indicates that an operation isn't allowed on a built-in (special) SA
 
 **Cause 1:** The product exceeded the time limit to communicate with the system. The process keeps trying to complete the action, such as a rescan, a just-in-time access (JITA) request, an extension, or an expiration.
 
-If the signed-in user has a JITA session that doesn't expire, because it is overdue or a manual expiration failed, **Overview** > **Overdue Users with Admin Access** shows the message "Pending expiration run" and offers no button to dismiss it.
+If the signed-in user has a JITA session that doesn't expire, because it is overdue or a manual expiration failed, **Access** > **Overview** > **Overdue Users with Admin Access** shows the message "Pending expiration run" and offers no button to dismiss it.
 
 **Resolution 1:** Wait one minute, refresh the **Grant Access** page for the system, and repeat the action.
 
@@ -78,11 +73,11 @@ If the signed-in user has a JITA session that doesn't expire, because it is over
 
 ## Unable to connect to system: Host is offline
 
-The full message is "Unable to connect to system: Host is offline - 660240 - Last known IP is unreachable".
+The full message is "Unable to connect to system: Host is offline". When DNS returns no address for the system, the message ends with "DNS not resolving an IP" instead.
 
-**Cause:** The system doesn't respond to a ping.
+**Cause:** The product found no IP address for the system that answers a ping.
 
-**Resolution:** Verify that the system is running and reachable from the node. For how the product determines that a host is offline, see the [knowledge base article](/docs/kb/privilegesecurediscovery/security-and-compliance/how-netwrix-privilege-secure-for-discovery-determines-a-host-is-offline).
+**Resolution:** Verify that the system is running and reachable from the node. Verify that DNS returns the current address of the system. For how the product determines that a host is offline, see the [knowledge base article](/docs/kb/privilegesecurediscovery/security-and-compliance/how-netwrix-privilege-secure-for-discovery-determines-a-host-is-offline).
 
 ## Windows authentication and connection errors
 
@@ -95,7 +90,9 @@ The following table lists errors that the product reports when it connects to a 
 | `STATUS_LOGON_TYPE_NOT_GRANTED`: A user has requested a type of logon that has not been granted. | The product most likely connects to the wrong system, for the same reasons as `STATUS_LOGON_FAILURE`. | Correct the DNS entry for the system. |
 | `STATUS_MEMBER_IN_ALIAS`: The specified account name is already a member of the group. | The product tried to add a user to the local administrators group, and the account was already a member. | None required. |
 | `STATUS_MEMBER_NOT_IN_ALIAS`: The specified account name isn't a member of the group. | The product tried to remove a user from the local administrators group, and the user wasn't a member. | None required. |
-| System hostname doesn't match | DNS isn't up to date, so the product connects to the wrong IP address. | Correct the DNS entry for the system. |
+| `System hostname does not match` | DNS isn't up to date, so the product connects to the wrong IP address. | Correct the DNS entry for the system. |
+| `Kerberos authentication failed, could not issue ticket, check user/pass.` | The domain controller rejected the user name or password of the account that the product uses. | Verify the credentials of the scan or Protect service account, and unlock the account if it's locked out. |
+| `Kerberos encryption type negotiation failed (RC4/AES mismatch)` | The account has only RC4 keys but the domain controller requires AES, or the domain controller disabled RC4. | Check `msDS-SupportedEncryptionTypes` on the account and `SupportedEncryptionTypes` on the domain controller, and align them. |
 | `STATUS_ACCESS_DENIED`: A process has requested access to an object and has not been granted those access rights. | The service account authenticated, but doesn't have the required access. | Verify that the service account is in the local administrators group. See the following note. |
 | `STATUS_PASSWORD_RESTRICTION` (`0xc000006c`): Some password update rule has been violated, for example the password doesn't meet length criteria. | The OAM password complexity setting conflicts with the domain password policy. | Align the OAM password settings with the domain password policy. |
 | `STATUS_TRUSTED_RELATIONSHIP_FAILURE`: The logon request failed because the trust relationship between this workstation and the primary domain failed. | AD has no trust relationship with the system. This happens when someone deletes a computer from AD and adds it again. | On the system, leave the domain, restart, and join the domain again. |
@@ -158,7 +155,7 @@ If the problem persists, apply the following steps in order. After each step, ch
 | `Remote script exited with error: see details in log` during a scan | The Linux system is out of disk space, or the disk or the `/tmp` directory is read-only. | Free disk space, or fix the read-only state or the permissions of `/tmp`. |
 | `Remote script exited with error: see details in log` and the password of the service account has expired | The password of the service account on the Linux system has expired. | Set the password to never expire: `sudo chage -M 99999 <account>`. Replace `<account>` with the name of the service account. |
 | `Unhandled error: Host is Unreachable: Failed to connect to the host via ssh: WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!` during registration | The SSH host key of the Linux system changed, and it no longer matches the key that the worker service stored. | Restart the worker service from **Configure** > **Services** > **Worker** > **Restart**, or run `s1 restart worker` on any node. |
-| No sudoers file or no users or groups in the UI permissions | The `internal_api` service isn't deployed or isn't running, a database migration didn't finish during an upgrade, or on a cluster the stack file uses the single-node database entry for `internal_api`. | Contact Netwrix Support. |
+| No sudoers file or no users or groups in the UI permissions | The `internal_api` service, which stores the sudoers data, isn't deployed, isn't running, or can't reach the database. | Check the `internal_api` service as [Inspect and troubleshoot the deployment](./inspect-and-troubleshoot-the-deployment.md#check-the-stack-and-services) describes. If it runs, contact Netwrix Support. |
 
 For the SSH key error `SSH connection error: encountered RSA key, expected OPENSSH key`, see [Errors and messages](./errors-and-messages.md).
 

@@ -4,19 +4,13 @@ description: "Learn which certificate and key the product accepts, and use OpenS
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the minimum RSA key size that the product accepts. Evidence: none; `ssl-validator` accepted a 2048-bit key in testing, and the page recommends 2048 bits or more.
-
-TODO: Confirm that the product serves the whole text that you paste, so that the intermediate certificates reach the browser. Evidence: initServerTls.js passes the stored certificate text to `https.createServer`; a test with a server certificate followed by a CA certificate returned both certificates to a client.
-:::
-
 A certificate authority (CA) can return a certificate and key in several file formats. Privilege Secure for Discovery needs both in PEM format. This page lists what the product accepts, and shows how to convert the other formats with OpenSSL. The commands work with OpenSSL 3.0, which Ubuntu Server 24.04 includes.
 
 ## What the product accepts
 
 The **Server Certificate** panel in **Configure** > **Server** checks the key and the certificate when you paste them. The panel accepts a pair only when it meets all of the following requirements:
 
-- The key is an RSA key. The panel rejects EC keys.
+- The key is an RSA key. The panel rejects EC keys. It doesn't enforce a minimum key size, so use 2048 bits or more.
 - The key has no password. The panel rejects a key that begins with `-----BEGIN ENCRYPTED PRIVATE KEY-----`. It accepts both `-----BEGIN PRIVATE KEY-----` and `-----BEGIN RSA PRIVATE KEY-----`.
 - The key and the certificate are PEM text that starts at a `-----BEGIN` line and ends at an `-----END` line. Any other text, such as the `Bag Attributes` lines that OpenSSL writes when it extracts a PFX file, makes the panel reject the file.
 - The key matches the first certificate.

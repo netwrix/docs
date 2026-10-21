@@ -4,12 +4,6 @@ description: "Connect Privilege Secure for Discovery to a RADIUS server so that 
 sidebar_position: 50
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the effect of the fixed three retries with a long **Radius Timeout**, and whether a push request to a RADIUS proxy repeats on each retry. Evidence: secondFactor.js passes `retries: 3` and the configured timeout to `radclient`. Not tested against a RADIUS server.
-
-TODO: Confirm that a RADIUS response of Access-Challenge always fails the sign-in. Evidence: secondFactor.js returns `Challenge received from RADIUS server.` with status 401 and doesn't send a reply to the challenge.
-:::
-
 Netwrix Privilege Secure for Discovery can use a Remote Authentication Dial-In User Service (RADIUS) server as the second authentication factor. The product checks the Active Directory (AD) password itself. It sends only the second factor to the RADIUS server. This page covers the RADIUS settings and the sign-in behavior.
 
 ## How it works
@@ -40,7 +34,7 @@ When you enable RADIUS, it replaces the built-in authenticator code (Google Auth
    | **Radius Server** | The IP address or host name of the RADIUS server. |
    | **Radius Port** | The UDP port of the RADIUS server, for example `1812`. There is no default. |
    | **Radius Secret** | The shared secret. The product stores it encrypted and doesn't show it again. |
-   | **Radius Timeout** | How long the product waits for an answer, from 15 to 180 seconds. The default is 30 seconds. The product retries three times. |
+   | **Radius Timeout** | How long the product waits for an answer before it sends the request again. Choose 15, 30, 45, 60, 90, 120, or 180 seconds. The default is 30 seconds. The product makes three attempts in all. |
    | **Radius** | **Enabled** or **Disabled**. |
 
 3. Set **Radius** to **Enabled** when the other values are correct.
@@ -51,7 +45,7 @@ Before you enable RADIUS for everyone, sign in with a test account in a new brow
 
 The Duo Authentication Proxy can answer RADIUS requests. Use the proxy mode that checks only the second factor, `radius_server_duo_only`. The user enters a Duo passcode, or the word `push` or `phone`, in **Second Factor**. The challenge mode of the proxy doesn't work with the product.
 
-A push or phone approval holds the request open until the user answers. Set **Radius Timeout** to at least 60 seconds. For the proxy settings, see the Duo documentation on [RADIUS](https://duo.com/docs/radius) and the [Authentication Proxy reference](https://duo.com/docs/authproxy-reference).
+A push or phone approval holds the request open until the user answers. Set **Radius Timeout** to at least 60 seconds. If the proxy doesn't answer within the timeout, the product sends the request again, so the user can get a second push. For the proxy settings, see the Duo documentation on [RADIUS](https://duo.com/docs/radius) and the [Authentication Proxy reference](https://duo.com/docs/authproxy-reference).
 
 ## Sign in with RADIUS
 
@@ -60,11 +54,11 @@ A push or phone approval holds the request open until the user answers. Set **Ra
 3. In the **Second Factor** field, enter the value that your RADIUS service requires, such as a one-time code.
 4. Select **Sign In**.
 
-While the product waits for RADIUS, the button shows `Signing In`. If the RADIUS server doesn't answer, the sign-in fails with `No response from RADIUS server.`
+While the product waits for RADIUS, the button shows `Signing In`. If the RADIUS server doesn't answer in any of the three attempts, the sign-in fails with `Error: Maximum retries exceeded`.
 
 ## Troubleshoot RADIUS
 
 - **`Invalid token.`** The RADIUS server rejected the second factor.
 - **`Challenge received from RADIUS server.`** The server expects a reply to a challenge. Use a server mode that answers directly.
-- **`No response from RADIUS server.`** Check the address, the port, the UDP path, and the shared secret on both sides.
+- **`Error: Maximum retries exceeded`** The RADIUS server didn't answer. Check the address, the port, the UDP path, and the shared secret on both sides.
 - **Nobody can sign in.** Sign in as `secureone`, set **Radius** to **Disabled**, and then correct the settings.

@@ -64,7 +64,7 @@ Use the provider guide to configure provider-side access and the required fields
 14. Verify device mapping, local Administrators inventory, timestamps, and the related events in the product and in the provider console.
 15. Enable Protect, Deny, JIT/JITA, and OAM separately, and only when the connector and installed release support the required action.
 
-You can't delete an EDR provider configuration while a Microsoft Entra ID domain, an LDAP domain, or a system uses it. The product displays **You cannot delete this EDR configuration as it is in use on one or more Microsoft Entra ID domains** (or domains, or systems). Remove the assignment first.
+To assign or delete a configuration later, see [EDR integrations overview](../edr/overview.md).
 
 Use a dedicated provider-side service identity with only the required permissions. Store its credential in your secret manager. Don't reuse the Graph client secret as a Scan, Protect, LDAP, or EDR credential.
 

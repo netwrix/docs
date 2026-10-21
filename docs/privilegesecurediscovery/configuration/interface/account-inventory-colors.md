@@ -4,7 +4,7 @@ description: "Learn what each label color, icon, and type in the Administrator A
 sidebar_position: 30
 ---
 
-The **Administrator Accounts** pane in Netwrix Privilege Secure for Discovery lists the accounts that have, or can get, local administrator rights on the selected system. Each account has a colored label so you can tell its role at a glance. This page explains the colors, icons, and columns.
+The **Administrator Accounts** pane in Netwrix Privilege Secure for Discovery lists the accounts that have, or can get, local administrator rights on the selected system. Each account has a colored label that shows its role. This page explains the colors, icons, and columns.
 
 To see the pane, select **Access** > **Grant Access** and search for a system. The pane appears to the right of the system details.
 
@@ -23,7 +23,7 @@ The **Type** column names the account type, and the label color follows the type
 | Rust red | Local user | A local account on the system. |
 | Amber | Local group | A local group on the system. |
 | Black | Built-in admin | The built-in local administrator account (RID 500). |
-| Dark gray | SecureONE or Offline Access | The Privilege Secure for Discovery service account, or the offline access account. |
+| Dark gray | **SecureONE** or **Offline Access** | The Privilege Secure for Discovery service account, or the offline access account. |
 
 Accounts of an unknown type use a plain label with dark text.
 

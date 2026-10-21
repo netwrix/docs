@@ -62,13 +62,7 @@ You can create more than one configuration, for example one for each Falcon tena
 
 ## Assign the configuration
 
-A configuration has no effect until you assign it. You can assign it in three places:
-
-- As the **EDR Configuration** of a domain. Select **Configure** > **Server**, and edit the domain.
-- To one system. Select **Access** > **Grant Access**, select the Windows system, and choose the configuration in the **EDR Integration** list. Only administrators see this list.
-- To many systems. Use the **Set EDR Configuration** bulk action. See [Bulk actions](../../admin/systems/bulk-actions.md).
-
-You can't delete a configuration while a domain or a system uses it. The product shows `You cannot delete this EDR configuration as it is in use on one or more domains` (or `systems`). Assign a different configuration or **Disabled** first.
+A configuration has no effect until you assign it to a domain or to systems. See [Assign a configuration](./overview.md#assign-a-configuration). To delete a configuration, see [Delete a configuration](./overview.md#delete-a-configuration).
 
 ## Troubleshoot Test Connection
 

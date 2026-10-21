@@ -4,12 +4,6 @@ description: "Set up automatic failover so directory synchronization continues o
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the default of **Failover Behavior** for domains that already exist and for domains upgraded from earlier releases. Evidence: the **New Domain (LDAP)** form in the 26.09.1 test stack shows **Disabled**; the schema default is enabled (lib-api-common/schemas/ldapConfig.js:92-100) and the migration 0033_common_ldapConfig_0005.js sets the port option for domains that had failover off; the sync code treats a missing setting as off (ldap_sync/runner.py:51-55).
-
-TODO: Confirm that the **Domain Status** text starts with `Failover DC Attempt:` while a failover attempt runs, and where in the interface it appears. Evidence: ldap_sync/importer.py:555 at v26.09.1-rc.
-:::
-
 Directory server failover lets the directory synchronization service continue when the domain controller (DC) that the domain uses becomes unavailable. Without failover, a failed synchronization stops and the product doesn't try another server.
 
 ## How failover works
@@ -63,6 +57,8 @@ The output lists each domain controller with its priority and port. The product 
 3. Select **Configure** > **Server** and open the domain.
 4. Confirm that **LDAP Server** now shows a different domain controller.
 5. Restore access to the original domain controller.
+
+While a failover attempt runs, the **Status** column of the domain list shows text that starts with `Failover DC Attempt:`.
 
 ## Find failover events in the logs
 

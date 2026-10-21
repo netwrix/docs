@@ -4,10 +4,6 @@ description: "Add an Active Directory user or group, or a local account, to the 
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the local-account procedure: that a system in Protect Mode **New Accounts: Deny** must change to **New Accounts: JITA** before you add a local administrator, and that the next scan imports the account. The Systems view description says Protect JITA also removes unexpected administrators. Evidence: none in the web or API code; mgmt/constants/mgmtSystemsCtrlConstants.js (PERSPECTIVES) describes both modes.
-:::
-
 The administrator account inventory of a system lists the accounts that can receive administrator access on it. In Netwrix Privilege Secure for Discovery, an administrator adds a user or group to the inventory so that the account can request just-in-time administration (JITA) sessions or keep persistent access.
 
 :::note

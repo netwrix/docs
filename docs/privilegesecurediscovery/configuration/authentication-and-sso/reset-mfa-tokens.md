@@ -4,10 +4,6 @@ description: "Reset the authenticator token of a user in Privilege Secure for Di
 sidebar_position: 60
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that adding a user individually and then removing the user clears the token of a user who gets access through a group. Evidence: the add action in lib-api-common/route-handlers/config/secureone/index.js sets `access.ga_secret` to an empty value, and the remove action unsets `access`. Not tested against a user who signed in through a group.
-:::
-
 By default, the product asks each user who signs in with a user name and password for a six-digit code from an authenticator app, such as Google Authenticator. When a user loses the device that holds the token, an administrator resets it. At the next sign-in, the user sets up a new token.
 
 This applies only to the built-in authenticator code. Users who sign in with single sign-on (SSO) don't use it, and RADIUS replaces it when you enable RADIUS. See [SAML SSO configuration reference](./saml-sso-reference.md) and [Configure RADIUS authentication](./radius.md).
