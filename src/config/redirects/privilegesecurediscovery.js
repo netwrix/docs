@@ -150,6 +150,7 @@ const PAGE_MAP = {
 const REMOVED_KB_ARTICLES = {
   'system-configuration-and-requirements/generate-license-counts-with-cli-command': '/docs/privilegesecurediscovery/admin/licensing',
   'authentication-and-access/saml-assertion-not-yet-valid': '/docs/privilegesecurediscovery/configuration/authentication-and-sso/saml-sso-reference',
+  'security-and-compliance/log4j-vulnerability-no-impact': '/docs/privilegesecurediscovery/',
 };
 
 export const privilegeSecureDiscoveryRedirects = [
