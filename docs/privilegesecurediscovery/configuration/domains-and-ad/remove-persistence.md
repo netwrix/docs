@@ -76,7 +76,7 @@ Use the Quickstart reporting tool for Linux systems or for more than 1,000 syste
 
 6. When the preview shows the changes that you intend, run the command again without `--dry-run`.
 
-If Excel is slow, delete the rows for machines that haven't been scanned. Sort the file by the `last_scanned` column and delete the rows together.
+If Excel is slow, delete the rows for machines with no scan date. Sort the file by the `last_scanned` column and delete the rows together.
 
 ## Tips
 
