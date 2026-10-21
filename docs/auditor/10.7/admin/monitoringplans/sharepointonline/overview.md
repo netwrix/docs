@@ -70,8 +70,18 @@ To configure Office 365 tenant as a monitored item, complete the following steps
 - If you are going to use **Modern authentication**, paste the obtained name. See the
   [Using Modern Authentication with SharePoint Online](/docs/auditor/10.7/configuration/microsoft365/sharepointonline/permissions/modernauth/modernauth.md)
   topic for additional information.
-- If you are using a government tenant, click the **Tenant Environment** tab and select the
-  desired tenant environment.
+- If your tenant isn't in the commercial Microsoft 365 cloud, click the **Tenant Environment** tab
+  and select the environment that matches your tenant:
+
+    - **Default** — Commercial Microsoft 365 cloud.
+    - **US Government (GCC)** — Microsoft 365 Government Community Cloud.
+    - **US Government L4 (GCC High)** — Microsoft 365 GCC High.
+    - **US Government L5 (DoD)** — Microsoft 365 DoD.
+    - **China** — Microsoft 365 operated by 21Vianet.
+
+  Each environment uses its own Microsoft endpoints. See the
+  [SharePoint Online Ports](/docs/auditor/10.7/configuration/microsoft365/sharepointonline/ports.md#tenant-environment-endpoints)
+  topic for the list.
 
 :::note
 Basic authentication is no longer possible for Exchange Online. For the already existing tenants,
