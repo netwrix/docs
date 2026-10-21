@@ -6,7 +6,7 @@ sidebar_position: 9
 
 # Single sign-on (SSO)
 
-With Single sign-on (SSO), users provisioned from Microsoft Entra ID sign in to the Windows components of Netwrix Password Secure without authenticating again. This works when they are already authenticated on a Microsoft Entra ID joined device. The Windows components are the Windows App and the Autofill add-on.
+With Single sign-on (SSO), users provisioned from Microsoft Entra ID sign in to the Windows components of Netwrix Password Secure without authenticating again. This works when they have already authenticated on a Microsoft Entra ID joined device. The Windows components are the Windows App and the Autofill add-on.
 
 :::info
 
@@ -17,7 +17,7 @@ The information on this page is valid for version **26.10.10** and newer.
 ## Prerequisites
 
 - An existing Microsoft Entra ID profile in Netwrix Password Secure. See [Microsoft Entra ID connection](/docs/passwordsecure/current/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/entraidconnection/entra_id_connection.md).
-- An app registration for Netwrix Password Secure in Microsoft Entra ID, created as part of that connection.
+- An app registration for Netwrix Password Secure in Microsoft Entra ID, which you created as part of that connection.
 - An account with administrative permissions in Microsoft Entra ID.
 - Client devices that are Microsoft Entra ID joined.
 
@@ -61,7 +61,7 @@ To configure SSO, you expose an API on the app registration, authorize the app t
 
 ### Grant admin consent
 
-On the **API permissions** page, click **Grant admin consent for** your organization, and then confirm. The **Status** column for the `passwordsecure.sso.auth` permission shows that consent is granted.
+On the **API permissions** page, click **Grant admin consent for** your organization, and then confirm. The **Status** column for the `passwordsecure.sso.auth` permission shows that you granted consent.
 
 ![Grant admin consent](/images/passwordsecure/current/entra_id_sso/5_API-permissions_Admin-consent.webp)
 
@@ -74,7 +74,7 @@ On the **API permissions** page, click **Grant admin consent for** your organiza
 
    ![Activate Entra ID profile setting](/images/passwordsecure/current/entra_id_sso/6_Entra-Id-profile.webp)
 
-2. Grant the roles or users allowed to use Entra ID SSO authentication the user right **Can authenticate with Entra ID Single sign-on in Windows applications**.
+2. Grant the user right **Can authenticate with Entra ID Single sign-on in Windows applications** to the roles or users that can use Entra ID SSO authentication.
 
    ![User right for users and roles](/images/passwordsecure/current/entra_id_sso/7_User-right.webp)
 
