@@ -11,8 +11,8 @@ import TabItem from '@theme/TabItem';
 
 Access Analyzer supports three kinds of sign-in. Local sign-in always stays available, and you can connect one directory provider alongside it:
 
-- **Local accounts** hold a password inside Access Analyzer. The first Admin created by the installer is a local account.
-- **Active Directory (AD)** lets people sign in with their domain username and password. Access Analyzer checks them against a domain controller over Lightweight Directory Access Protocol (LDAP) secured with TLS, known as LDAPS.
+- **Local accounts** hold a password inside Access Analyzer. The first Admin that the installer creates is a local account.
+- **Active Directory (AD)** lets people sign in with their domain username and password. Access Analyzer checks them against a domain controller over Lightweight Directory Access Protocol (LDAP) secured with TLS, a combination known as LDAPS.
 - **Entra ID** lets people sign in with their Microsoft work account through a **Sign in with Microsoft** button.
 
 Connecting a directory is what the product calls single sign-on (SSO), and users who sign in that way are **Federated (SSO)** accounts in [Users and roles](users.md). You connect one provider, once, through the setup flow. After that, **Settings > System > Single sign-on** is where you rotate the AD service account password.
@@ -31,8 +31,12 @@ For **Entra ID**, gather:
 
 - Your tenant's ID as a globally unique identifier (GUID), from **Overview** in the Entra admin center.
 - An app registration in that tenant with a client secret. Access Analyzer doesn't support certificate credentials. Note its **Application (client) ID**.
-- Two redirect Uniform Resource Identifiers (URIs) added to the registration under **Authentication > Redirect URIs** before you start, both using your Access Analyzer hostname: `https://<your-access-analyzer-host>/setup/entra-consent-callback` and `https://<your-access-analyzer-host>/idps/callback`.
+- Two redirect Uniform Resource Identifiers (URIs) that you add to the registration before you start, both using your Access Analyzer hostname: `https://<your-access-analyzer-host>/setup/entra-consent-callback` and `https://<your-access-analyzer-host>/idps/callback`.
 - Someone with the Global Administrator or Privileged Role Administrator role in the tenant to approve admin consent during setup.
+
+:::note
+Add both URIs on the app registration in the Entra admin center, under **Authentication > Add a platform > Web**, or under the existing **Web** platform if the registration already has one. They then appear under **Authentication > Redirect URIs**.
+:::
 
 ## Open the Setup Flow
 
@@ -95,7 +99,7 @@ The **Authorize Access Analyzer** step asks you to sign in once as a tenant admi
 
 1. In **Tenant ID**, enter your tenant's GUID. Entering the primary domain instead shows the error "Enter the tenant's GUID, not its primary domain — find it in the Entra admin center under Overview."
 2. In **Application (client) ID**, enter the app registration's client ID.
-3. In **Client secret**, enter a secret generated under **Certificates & secrets** on the app registration.
+3. In **Client secret**, enter a secret you generated under **Certificates & secrets** on the app registration.
 4. Confirm that both URIs in the **Redirect URIs** block exist under **Authentication > Redirect URIs** on the app registration. Each URI has a copy button.
 5. Click **Sign in with Microsoft and continue**. A Microsoft window opens for admin consent, and the button reads **Waiting for Microsoft…** until it closes.
 6. In the Microsoft window, sign in as a Global Administrator or Privileged Role Administrator.
@@ -117,9 +121,9 @@ When Microsoft grants consent, the flow moves to the next step on its own. If it
 
 ## Add Administrators
 
-The **Add Access Analyzer admins** step creates or promotes Admin accounts so that at least one person can sign in through the new provider with full rights. People listed here can manage settings, integrations, and other administrators, and you can add or remove admins later from Settings.
+The **Add Access Analyzer admins** step creates or promotes Admin accounts so that at least one person can sign in through the new provider with full rights. The people you list here can manage settings, integrations, and other administrators, and you can add or remove admins later from Settings.
 
-The field under **Admin accounts** depends on the provider. With Active Directory, **Search your directory** matches name, username, or the detected sign-in attribute after you type at least three characters, and it also accepts an email address typed directly. With Entra ID, **Enter an email address** takes the address only.
+The field under **Admin accounts** depends on the provider. With Active Directory, **Search your directory** matches name, username, or the detected sign-in attribute after you type at least three characters, and it also accepts an email address you type directly. With Entra ID, **Enter an email address** takes the address only.
 
 1. Under **Admin accounts**, enter each administrator.
 2. Press Enter or comma to confirm each entry.
@@ -143,7 +147,7 @@ The user's role is the one on the row, Viewer by default. Access Analyzer doesn'
 
 ![Access Analyzer sign-in page with Username and Password fields](/images/accessanalyzer/26.1/overview/sign-in.webp)
 
-- **Active Directory** users type their `sAMAccountName` or their email attribute into **Username**, and their domain password into **Password**, on the same form local users use. There is no separate Active Directory button. After two failed directory sign-in attempts for the same username within 30 minutes, Access Analyzer refuses further attempts with the message "Too many sign-in attempts. Wait a few minutes and try again, or contact your administrator." A successful sign-in clears the count.
+- **Active Directory** users type their `sAMAccountName` or their email attribute into **Username**, and their domain password into **Password**, on the same form local users use. Active Directory has no separate sign-in button. After two failed directory sign-in attempts for the same username within 30 minutes, Access Analyzer refuses further attempts with the message "Too many sign-in attempts. Wait a few minutes and try again, or contact your administrator." A successful sign-in clears the count.
 - **Entra ID** users click **Sign in with Microsoft**, which appears below an **or** divider under the password form after you connect Entra ID. If Microsoft sends them back before sign-in completes, the form shows "Microsoft sign-in didn't complete. try again."
 
 A directory user with no matching row sees **Access denied** and "Your account isn't authorized to access this application. contact your administrator." A user whose row is Inactive sees "Your account is inactive. contact your administrator."
