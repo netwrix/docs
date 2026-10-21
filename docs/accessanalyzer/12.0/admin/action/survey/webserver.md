@@ -14,20 +14,20 @@ The configurable options are:
 
 - Web Server Name – Specify the name of the server hosting the survey
 - Web server path (Survey root path) – Specify the root path to the folder on the web server
-  containing the scripts used to build and operate the survey web page
+  containing the scripts that build and operate the survey web page
 
     - Click the ellipses (**...**) to open the Browse For Folder window to navigate to the folder on
-      the web server containing the scripts used to build and operate the survey web page
+      the web server containing the scripts that build and operate the survey web page
 
 - URL (Survey root path) – Specify the root path of the web page location
 
 ## Use HTTPS for the Survey Website
 
-By default, the survey web server (a bundled Apache Tomcat instance) only accepts HTTP connections on port 8080. To serve surveys over HTTPS, enable Tomcat's SSL connector and then use an HTTPS URL on this page.
+By default, the survey web server (a bundled Apache Tomcat instance) accepts only HTTP connections on port 8080. To serve surveys over HTTPS, enable Tomcat's SSL connector and then use an HTTPS URL on this page.
 
-You need a certificate in PFX (PKCS12) format that includes the private key. The certificate's Common Name or Subject Alternative Name must match the server name used in the survey URL.
+You need a certificate in PFX (PKCS12) format that includes the private key. The certificate's Common Name or Subject Alternative Name must match the server name in the survey URL.
 
-Follow the steps to enable HTTPS.
+To enable HTTPS:
 
 **Step 1 –** Copy the PFX file to the survey web server, for example `C:\Certs\survey.pfx`. The account that runs the **StealthAUDITSurvey** service needs read access to the file.
 
@@ -59,5 +59,5 @@ Follow the steps to enable HTTPS.
 The action now uses the HTTPS URL in the survey links it emails.
 
 :::note
-If the survey link returns a connection refused error, the HTTPS connector did not start. Check the logs in `%SAInstallDir%\Actions\Survey\Tomcat\logs` for keystore errors, such as an incorrect password or file path. If the browser shows a "Not secure" warning, confirm the server name matches the certificate and that recipients' computers trust the issuing certificate authority.
+If the survey link returns a connection refused error, the HTTPS connector didn't start. Check the logs in `%SAInstallDir%\Actions\Survey\Tomcat\logs` for keystore errors, such as an incorrect password or file path. If the browser shows a "Not secure" warning, confirm the server name matches the certificate and that recipients' computers trust the issuing certificate authority.
 :::
