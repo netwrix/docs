@@ -27,11 +27,7 @@ You need three things: an account that can read the shares, a network path to th
 |-----------|------|---------|
 | Access Analyzer or agent to file server | TCP 445 | SMB for share enumeration, permission collection, and file content |
 
-:::warning
-
 Keep **Port** at 445 unless the file server listens on another port. Access scans and Sensitive data scans both use the port you enter.
-
-:::
 
 **Names in reports** - The Access scan records permissions as security identifiers (SIDs). To see account and group names in reports, and to expand group membership, add the domain as an Active Directory source and run an Identity sync. The [Scan Active Directory](./active-directory.md) guide covers it; you can do it before or after this guide.
 

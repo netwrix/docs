@@ -6,7 +6,7 @@ sidebar_position: 3
 
 An **Entra ID** source points Access Analyzer at one Microsoft Entra ID tenant. Identity syncs sign in to the tenant as an app registration and read its users, groups, group owners, directory roles, role assignments, and memberships through Microsoft Graph. The sync is read-only.
 
-Besides feeding the identity reports, an Entra ID source completes your SharePoint Online data. After a SharePoint Online scan, Access Analyzer expands Entra ID group memberships using the most recent completed Entra ID sync of the same tenant. Without one, it calculates effective permissions from SharePoint data alone. See [Microsoft 365](microsoft-365.md).
+Besides feeding the identity reports, an Entra ID source completes your SharePoint Online data. After a SharePoint Online scan, Access Analyzer expands Entra ID group memberships using the most recent completed Entra ID sync of the same tenant. Without one, the reports can't show names for Entra ID users and groups or expand Entra ID group membership. See [Microsoft 365](microsoft-365.md).
 
 :::note
 
@@ -31,11 +31,13 @@ The sync uses the OAuth 2.0 client credentials flow, so no user signs in. In the
    | Permission | Description |
    |---|---|
    | `Directory.Read.All` | Read directory data: users, groups with their members and owners, directory roles and role assignments, the organization, and the tenant's domains |
-   | `Policy.Read.All` | Read your organization's policies |
-   | `InformationProtectionPolicy.Read.All` | Read your organization's information protection policies |
+   | `Policy.Read.All` | Read your organization's policies, such as Conditional Access and authentication method policies |
+   | `InformationProtectionPolicy.Read.All` | Read your organization's information protection policies, such as published sensitivity labels |
    | `AuditLog.Read.All` | Read your organization's audit logs, including each user's sign-in activity. Microsoft Graph returns sign-in activity only for tenants with a Microsoft Entra ID P1 or P2 license. |
 
 6. Grant admin consent for the permissions. A tenant administrator must approve the consent.
+
+The sync reads data with `Directory.Read.All` and `AuditLog.Read.All`. `Policy.Read.All` and `InformationProtectionPolicy.Read.All` are reserved for upcoming Access Analyzer features that read the tenant's policies and sensitivity labels. Granting them now means the app registration won't need new permissions and another admin consent when those features arrive.
 
 :::note
 Registering the application and granting admin consent requires a user account with the **Global Administrator**, **Application Administrator**, or **Cloud Application Administrator** role.

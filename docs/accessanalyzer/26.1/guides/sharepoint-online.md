@@ -78,14 +78,14 @@ Run the Access scan first. The Sensitive data scan in step 6 classifies document
    ![Create scan Type step with the Access, Sensitive data, and Identity sync cards](/images/accessanalyzer/26.1/scans/create-scan-1-type.webp)
 
 3. On the **Target** step, keep **Specific sources** and select the tenant.
-4. On the **Configure** step, leave **Use default configuration** selected for the first run. The defaults are **Workers** 3, **Collect OneDrive** on, and no entries in **Include site collections**, **Exclude site collections**, or **Exclude URLs**, so the scan covers every site collection and every OneDrive drive. If the app registration has service prioritization in SharePoint enabled, select **Customize this source** instead and set **Workers** to 24.
+4. On the **Configure** step, leave **Use default configuration** selected for the first run. The defaults are **Workers** 3, **Collect OneDrive** on, and no entries in **Include site collections**, **Exclude site collections**, or **Exclude URLs**, so the scan covers every site collection and every OneDrive drive. If the app registration has [service prioritization in SharePoint](https://learn.microsoft.com/en-us/sharepoint/sharepoint-prioritization) enabled, select **Customize this source** instead and set **Workers** to 24.
 5. On the **Schedule** step, leave **Manual — run on demand** for the first run. Leave the agent set to **System agent**.
 6. On the **Review** step, enter a **Name** such as `Contoso SharePoint - access`.
 7. Click **Create & run now**.
 
 ![Create scan Review step with the scan named and the summary shown](/images/accessanalyzer/26.1/scans/create-scan-5-review-named.webp)
 
-When you're ready to narrow the scan, edit it and select **Customize this source** on the **Configure** step. **Include site collections** limits the scan to the site collections you list and takes no wildcards; **Exclude site collections** and **Exclude URLs** accept the `*` wildcard. Keep **Workers** at 3 for an app registration with the regular SharePoint Online request limits, or set it to 24 when the app registration has [service prioritization in SharePoint](https://learn.microsoft.com/en-us/sharepoint/sharepoint-prioritization) enabled. Beyond those values, raise it only while scans run without throttling; when SharePoint throttles requests, every worker pauses. Every Access scan is a full crawl of the sites in scope; there is no differential option. [Scan types](../scans/scan-types.md) describes each setting.
+When you're ready to narrow the scan, edit it and select **Customize this source** on the **Configure** step. **Include site collections** limits the scan to the site collections you list and takes no wildcards; **Exclude site collections** and **Exclude URLs** accept the `*` wildcard. Keep **Workers** at 3 for an app registration with the regular SharePoint Online request limits, or set it to 24 when the app registration has service prioritization in SharePoint enabled. Beyond those values, raise it only while scans run without throttling; when SharePoint throttles requests, every worker pauses. Every Access scan is a full crawl of the sites in scope; there is no differential option. [Scan types](../scans/scan-types.md) describes each setting.
 
 ## 5. Watch the Execution
 

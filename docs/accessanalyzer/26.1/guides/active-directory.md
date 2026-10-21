@@ -23,7 +23,11 @@ The Access Analyzer server, or the agent that runs the scan, needs one Lightweig
 | 389 | LDAP with StartTLS or DIGEST-MD5 authentication | Enter the domain controller's fully qualified domain name (FQDN) in **Host**; DIGEST-MD5 authentication requires an FQDN and doesn't work with an IP address. Works with domain controllers that require LDAP signing. |
 | 636 | LDAP over TLS (LDAPS) | Access Analyzer checks the domain controller's certificate only when you turn on **Enforce strict SSL validation**. With it on, the server or agent that runs the scan must trust the certificate. |
 
-When a connection uses TLS, it uses TLS 1.2 or later. On port 389, Access Analyzer first tries StartTLS with a simple bind; if that attempt fails, it retries with DIGEST-MD5 signing, and then with a simple bind without encryption, which sends the password in cleartext. To rule out that fallback, use port 636. Access Analyzer doesn't use Kerberos. See [Active Directory](../sources/active-directory.md#network) for the details.
+When a connection uses TLS, it uses TLS 1.2 or later. On port 389, Access Analyzer first tries StartTLS with a simple bind; if that attempt fails, it retries with DIGEST-MD5 signing. Access Analyzer doesn't use Kerberos. See [Active Directory](../sources/active-directory.md#network) for the details.
+
+:::warning
+On port 389, if StartTLS and DIGEST-MD5 both fail, Access Analyzer falls back to a simple bind without encryption, which sends the password in cleartext. To rule out the fallback, use port 636.
+:::
 
 :::note
 

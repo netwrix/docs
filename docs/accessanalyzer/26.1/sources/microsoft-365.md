@@ -28,8 +28,6 @@ In the Microsoft Entra admin center, register an application in the tenant that 
 3. Grant admin consent for the tenant.
 4. Leave **Certificates & secrets** for later: you upload the certificate after creating the service account in Access Analyzer.
 
-**Test connection** checks the permissions granted to the app and names any that are missing. It also accepts a broader permission in place of each one: `Directory.ReadWrite.All` for `Directory.Read.All`, and `Sites.ReadWrite.All`, `Sites.Manage.All`, or `Sites.FullControl.All` for the Microsoft Graph `Sites.Read.All`.
-
 :::note
 Registering the application and granting admin consent requires a user account with the **Global Administrator**, **Application Administrator**, or **Cloud Application Administrator** role.
 :::
@@ -51,7 +49,7 @@ Scans can't authenticate until the certificate is on the app registration. Repea
 
 ### Entra ID Sync for Names and Group Members
 
-Access scans record a Microsoft Entra ID user or group that holds a permission by its object ID only. They don't read the account's name or a group's members. That information comes from an [Entra ID](entra-id.md) source for the same tenant: after a SharePoint Online scan, the **Refresh CDM report tables** step rebuilds the reports and expands Entra ID groups using the memberships the most recent Entra ID sync recorded. Without one, the reports can't show names for Entra ID users and groups or expand Entra ID group membership. Add an Entra ID source for the tenant and sync it before your first SharePoint Online scan.
+Access scans record a Microsoft Entra ID user or group that holds a permission by its object ID only. They don't read the account's name or a group's members. That information comes from an [Entra ID](entra-id.md) source for the same tenant: after a SharePoint Online scan, the **Refresh CDM report tables** step rebuilds the reports and expands Entra ID groups using the memberships the most recent Entra ID sync recorded. CDM stands for common data model, the shared format Access Analyzer stores every source's data in. Without one, the reports can't show names for Entra ID users and groups or expand Entra ID group membership. Add an Entra ID source for the tenant and sync it before your first SharePoint Online scan.
 
 ### Network
 
@@ -106,6 +104,8 @@ Changing **SharePoint domain** on an existing source shows the warning **Existin
 | SharePoint REST returns the root site | **SharePoint REST returned HTTP `<status>` for the root site.** |
 <!-- vale on -->
 
+The permissions check also accepts a broader permission in place of each one: `Directory.ReadWrite.All` for `Directory.Read.All`, and `Sites.ReadWrite.All`, `Sites.Manage.All`, or `Sites.FullControl.All` for the Microsoft Graph `Sites.Read.All`.
+
 Success shows the message **Connection successful**. Failure shows an alert titled **Connection failed** with the reason. When signing in fails, the reason starts with **Authentication failed:** and includes the error from the Microsoft identity platform.
 
 ## Access Scans
@@ -150,7 +150,7 @@ The scan's options control the scope:
 
 | Option | Default | Effect |
 |---|---|---|
-| **Workers** | 3, or 24 with service prioritization | Concurrent workers, from 1 to 64. Each worker sends its own SharePoint requests. Keep 3 for an app registration with the regular SharePoint Online request limits. When the app registration has service prioritization in SharePoint enabled, set **Workers** to 24; the form starts at 3 either way. |
+| **Workers** | 3, or 24 with service prioritization | Concurrent workers, from 1 to 64. Each worker sends its own SharePoint requests. Keep 3 for an app registration with the regular SharePoint Online request limits. When the app registration has [service prioritization in SharePoint](https://learn.microsoft.com/en-us/sharepoint/sharepoint-prioritization) enabled, set **Workers** to 24 yourself, because the form always fills in 3. |
 | **Include site collections** | **Scan all URLs** | Select **Include specific site collections** and enter exact site collection URLs, such as `https://contoso.sharepoint.com/sites/marketing`, to scan only those. The form doesn't accept wildcards here. Matching ignores case and a trailing slash. |
 | **Exclude site collections** | Empty | Site collections to skip. Supports the `*` wildcard. |
 | **Exclude URLs** | Empty | URL patterns for subsites, lists, libraries, folders, documents, and list items to skip within the scanned site collections. Supports the `*` wildcard. A pattern matches the whole URL, ignoring case, so a pattern without a wildcard matches only the object at exactly that URL. To skip a library or folder and everything in it, end the pattern with `/*`, for example `https://contoso.sharepoint.com/sites/hr/Shared Documents/*`. |

@@ -38,7 +38,7 @@ Enter a share name and press Enter, or type a comma, to add it to a share list. 
 
 | Setting | Default | Meaning |
 |---|---|---|
-| **Workers** | 3, or 24 with service prioritization | Concurrent workers, from 1 to 64. Each worker sends its own SharePoint requests, so more workers finish sooner but use up the app's SharePoint request budget faster. When SharePoint throttles a request, every worker pauses. Keep 3 for an app registration with the regular SharePoint Online request limits. When the app registration has [service prioritization in SharePoint](https://learn.microsoft.com/en-us/sharepoint/sharepoint-prioritization) enabled, set it to 24; the form starts at 3 either way. Beyond those values, raise it only while scans run without throttling. |
+| **Workers** | 3, or 24 with service prioritization | Concurrent workers, from 1 to 64. Each worker sends its own SharePoint requests, so more workers finish sooner but use up the app's SharePoint request budget faster. When SharePoint throttles a request, every worker pauses. Keep 3 for an app registration with the regular SharePoint Online request limits. When the app registration has [service prioritization in SharePoint](https://learn.microsoft.com/en-us/sharepoint/sharepoint-prioritization) enabled, set it to 24 yourself, because the form always fills in 3. Beyond those values, raise it only while scans run without throttling. |
 | **Include site collections** | Scan all URLs | Switch to **Include specific site collections** and enter exact site collection URLs, such as `https://contoso.sharepoint.com/sites/marketing`, to scan only those. This field doesn't accept wildcards. Matching ignores case and a trailing slash. |
 | **Exclude site collections** | Empty | Site collections to skip. Supports the `*` wildcard, for example `*.sharepoint.com/sites/archive*`. |
 | **Exclude URLs** | Empty | URL patterns for subsites, lists, libraries, folders, documents, and list items to skip inside the scanned site collections. Supports the `*` wildcard. |
@@ -128,7 +128,7 @@ An Identity sync collects the accounts and groups of a directory. From Active Di
 
 | Setting | Default | Meaning |
 |---|---|---|
-| **Workers** | 8 | Concurrent workers, from 1 to 16. The users, groups, and roles collections run as separate work items and share the tenant's Microsoft Graph throttling limits. Entra ID has no differential mode: every sync reads the whole tenant. |
+| **Workers** | 8 | Concurrent workers, from 1 to 16. The users, groups, and roles collections run as separate work items and share the tenant's Microsoft Graph throttling limits. Values above 3 don't add parallel collections, but the value also caps the Microsoft Graph requests in flight at 4 times the worker count, with a minimum of 16. Entra ID has no differential mode: every sync reads the whole tenant. |
 
 ### Reports Fed by Identity Sync
 

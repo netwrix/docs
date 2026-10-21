@@ -92,7 +92,7 @@ Access Analyzer treats an agent that connects with an unrecognized certificate a
 
 ## Connection Settings
 
-Four settings tune how the listener treats agent connections. The defaults suit most environments. To change a value, go to **Settings > Activity Monitor**, click **Settings** at the top of the tab to open the **Activity Monitor settings** dialog, edit the value, and click **Save**. Changes apply to new connections without a restart. [Application settings](../settings/application.md) describes how the settings page itself behaves, including the **Overridden** badge and the reset-to-default control.
+Four settings tune how the listener treats agent connections. The defaults suit most environments. To change a value, go to **Settings > Activity Monitor**, click **Settings** at the top of the tab to open the **Activity Monitor settings** dialog, edit the value, and click **Save**. Changes apply to new connections without a restart. The dialog lays out each setting the same way as the Application tab, including the **Overridden** badge and the reset-to-default control; see [Application settings](../settings/application.md).
 
 | Setting | Default | Range | What it controls |
 |---|---|---|---|
@@ -127,7 +127,7 @@ Match the symptom to its likely cause:
 | Symptom | Likely cause | What to do |
 |---|---|---|
 | **Enroll** fails and nothing appears in the logs for that time | TCP port 4504 is blocked between the agent host and the Access Analyzer server. | Open the port on the server's firewall and any firewall in between. Confirm the agent host can resolve the server name you entered. |
-| **Enroll** fails even though the agent reaches the server | The token is more than an hour old, or someone clicked **Generate new enrollment token** after you copied it. | Generate a new token and enroll again. After a rejected token, Access Analyzer ignores connections from that agent's IP address for `activitymonitor_enrollment_ban_duration_seconds` (10 seconds by default), so wait before retrying. |
+| **Enroll** fails even though the agent reaches the server | The token is more than an hour old, or someone clicked **Generate new enrollment token** after you copied it. | Generate a new token and enroll again. After a rejected token, Access Analyzer ignores connections from that agent's IP address for **Enrollment ban duration (seconds)** (10 seconds by default), so wait before retrying. |
 | Every agent stopped sending data at the same time | The listener is no longer running because the Access Analyzer TLS certificate has expired, or someone replaced the certificate with one that uses a different key pair, so enrolled agents no longer recognize the server. | Check **Settings > System logs** for `nam listener: bound` after the last restart. If the certificate has expired, renew it; see [Install Access Analyzer](../install/run-the-installer.md). If someone replaced it with a different key pair, generate a new token and enroll each agent again. |
 | One agent stopped sending data after a change on its host | The agent's certificate changed. | Enroll that agent again. |
 | The **Enrollment token** panel is disabled with **NAM listener certificate is not configured on this server.** | The listener has no TLS certificate to present, so Access Analyzer can't issue tokens. | The listener uses the certificate supplied during installation. Confirm the installation completed with a valid certificate and key; see [Install Access Analyzer](../install/run-the-installer.md). |
