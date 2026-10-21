@@ -21,11 +21,11 @@ The configurable options are:
 
 - URL (Survey root path) – Specify the root path of the web page location
 
-## Use HTTPS for the Survey Website
+## Use HTTPS for the survey website
 
 By default, the survey web server (a bundled Apache Tomcat instance) accepts only HTTP connections on port 8080. To serve surveys over HTTPS, enable Tomcat's SSL connector and then use an HTTPS URL on this page.
 
-You need a certificate in PFX (PKCS12) format that includes the private key. The certificate's Common Name or Subject Alternative Name must match the server name in the survey URL.
+You need a certificate in Personal Information Exchange (PFX) format, also called PKCS #12, that includes the private key. The certificate's Common Name or Subject Alternative Name must match the server name in the survey URL.
 
 To enable HTTPS:
 
@@ -35,7 +35,7 @@ To enable HTTPS:
 
 `%SAInstallDir%\Actions\Survey\Tomcat\conf\server.xml`
 
-**Step 3 –** Find the commented-out connector for port 8443. Remove the `<!--` and `-->` lines around it, and add the `keystoreFile`, `keystorePass`, and `keystoreType` attributes:
+**Step 3 –** Find the commented-out connector for port 8443 and remove the `<!--` and `-->` lines around it. Then edit the connector so it matches the following example, replacing the file path and password with your own values:
 
 ```xml
 <Connector port="8443" protocol="org.apache.coyote.http11.Http11Protocol"
@@ -50,11 +50,15 @@ To enable HTTPS:
 - `keystorePass` – Password for the PFX file
 - `keystoreType` – Must be `PKCS12` for a PFX file
 
+:::warning
+The PFX password is stored in plain text in `server.xml`. Restrict access to this file to administrators and the account that runs the **StealthAUDITSurvey** service.
+:::
+
 **Step 4 –** Save the file, then restart the **StealthAUDITSurvey** service.
 
 **Step 5 –** If survey recipients connect from other computers, allow inbound TCP port 8443 through the firewall on the survey web server.
 
-**Step 6 –** On this page, set the URL (Survey root path) to `https://<ServerName>:8443/survey/`, using the same server name as on the certificate. Run the test on the Auto Test page to confirm the survey web server responds.
+**Step 6 –** On this page, set the URL (Survey root path) to `https://<ServerName>:8443/survey/`, using the same server name as on the certificate. Then, on the [Test Survey](testsurvey.md) page, click **Start test** to confirm that the survey web server responds.
 
 The action now uses the HTTPS URL in the survey links it emails.
 
