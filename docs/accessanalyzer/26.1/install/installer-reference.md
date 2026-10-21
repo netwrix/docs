@@ -109,7 +109,7 @@ These flags control the underlying Kubernetes platform, ArgoCD, and Helm chart t
 | `--set` | none | none | Inline Helm value override in `key=value` form. Repeatable. |
 | `--uninstall` | `DSPM_UNINSTALL` | `false` | Uninstall k3s and permanently delete all Access Analyzer data. Prompts for confirmation unless you pass `--force`. |
 | `--force` | `DSPM_FORCE` | `false` | Skip the confirmation prompt for `--uninstall`. |
-| `--tmp-dir` | `DSPM_TMP_DIR` | none | Hidden from `--help`. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](requirements.md#install-media). |
+| `--tmp-dir` | `DSPM_TMP_DIR` | none | `--help` doesn't list this flag. Moves the install media to `<dir>/dspm/media`, and the directory the offline package manager expands the media into, off the `--storage-dir` volume. Takes priority over `--storage-dir` for both. Unlike `--storage-dir`, it accepts `/dev/shm`, so a host with RAM to spare can expand the media in memory. The air-gapped disk check suggests `--tmp-dir /dev/shm` when that's the case. See [Install media](requirements.md#install-media). |
 
 A custom data directory must be an absolute path to an existing, writable directory. It can't be `/`, can't sit under `/bin`, `/sbin`, `/boot`, `/dev`, `/etc`, `/lib`, `/lib64`, `/proc`, `/root`, `/run`, `/sys`, `/usr`, or `/var/log`, and can't contain quotes, backslashes, dollar signs, or backticks.
 
@@ -223,6 +223,14 @@ The [Requirements](requirements.md) page lists the hosts the `network` check con
 
 Pass `--preflight` to run the preflight checks and exit, without installing k3s, creating the cluster, or writing a configuration file. Use it to validate a server before you commit to an install.
 
+Unlike an install, `--preflight` prints every check, including the ones that pass. In this example, a server checked against the **small** size passes every check but two warnings, so the command exits with code `80`:
+
+```bash
+sudo dspm-installer --preflight --hostname dspm.corp.example.com --size small
+```
+
+![dspm-installer --preflight listing every check with two warnings, for disk and clock sync, and exiting with code 80](/images/accessanalyzer/26.1/install/preflight.webp)
+
 `--preflight` runs the same checks this section lists, plus a certificate check: the PEM certificate and key at the resolved TLS paths must exist, match, and not be expired. A certificate expiring within 30 days still passes, because a real install would also proceed on it. Pass `--hostname` to also verify the certificate's Subject Alternative Names cover it, and `--size` to check RAM, CPU, and disk against the size you intend to install. Under `--dry-run`, the installer skips the certificate check, matching a dry-run install.
 
 You can't combine `--preflight` with `--uninstall` or `--skip-preflight`. It writes the same `/var/log/dspm-installer.log` and `/var/log/dspm-preflight.json` files a regular install writes, except under `--dry-run`, where the installer doesn't write the JSON report.
@@ -285,7 +293,9 @@ reboot
 sudo dspm-installer wait-for-apps
 ```
 
-It prints `Waiting for applications to become Synced and Healthy…` and exits when every service is healthy.
+It prints `Waiting for applications to become Synced and Healthy…` and exits when every service is healthy. On a server whose services are already healthy, it exits at once with code `0`:
+
+![dspm-installer wait-for-apps returning at once with exit code 0 on a healthy server](/images/accessanalyzer/26.1/install/wait-for-apps.webp)
 
 | Flag | Default | Description |
 |---|---|---|
@@ -467,6 +477,8 @@ sudo dspm-installer rollback-cert --latest
 | 74 | `rollback-cert` couldn't apply the restore. |
 
 ## Logs
+
+For the logs of the Access Analyzer services themselves, and for support bundles, see [View and export logs](view-and-export-logs.md).
 
 | File | Contents |
 |---|---|
