@@ -127,7 +127,7 @@ other tags. By using a tag, you can display an attribute’s value in the notifi
 
 |     | Variable         | Description                                                                                                                        |
 | --- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 1.  | TARGETOBJECT     | Can be any object (user/group/contact) that is under consideration in a notification.                                              |
+| 1.  | TARGETOBJECT     | Can be any object (user/group/contact) that a notification concerns.                                                               |
 | 2.  | REQUESTER        | The user object who makes a workflow request.                                                                                      |
 | 3.  | APPROVER         | The approver in workflow notifications.                                                                                            |
 | 4.  | ANOTHER_APPROVER | An approver, other than the APPROVER, who performs an action on the workflow request (as there can be multiple approvers).         |

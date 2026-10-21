@@ -99,7 +99,7 @@ code too. Use the QR code to sign into an identity store.
 
 1. Open the GroupID app on your smartphone and connect to an identity store. This identity store
    should have the QR code feature enabled for it.  
-   Admin Center would connect to the same identity store you connect the app to.
+   Admin Center connects to the same identity store as the app.
 2. Tap **Configure Application Using QR Code** in the app.
 3. Capture the QR code through the app on your phone. One of the following happens:
 

@@ -129,7 +129,7 @@ deployment settings.
 
 ### GroupID Portal
 
-In GroupID portal, end users can perform functions according to the roles assigned to them.
+In GroupID portal, end users can perform functions according to their roles.
 
 Single portal for end-users
 
