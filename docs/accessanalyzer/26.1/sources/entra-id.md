@@ -37,7 +37,7 @@ The sync uses the OAuth 2.0 client credentials flow, so no user signs in. In the
 
 6. Grant admin consent for the permissions. A tenant administrator must approve the consent.
 
-The sync reads data with `Directory.Read.All` and `AuditLog.Read.All`. `Policy.Read.All` and `InformationProtectionPolicy.Read.All` are reserved for upcoming Access Analyzer features that read the tenant's policies and sensitivity labels. Granting them now means the app registration won't need new permissions and another admin consent when those features arrive.
+The sync reads data with `Directory.Read.All` and `AuditLog.Read.All`. Access Analyzer reserves `Policy.Read.All` and `InformationProtectionPolicy.Read.All` for upcoming features that read the tenant's policies and sensitivity labels. Granting them now means the app registration won't need new permissions and another admin consent when those features arrive.
 
 :::note
 Registering the application and granting admin consent requires a user account with the **Global Administrator**, **Application Administrator**, or **Cloud Application Administrator** role.
