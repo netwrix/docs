@@ -23,7 +23,7 @@ The information on this page is valid for version **26.10.10** and newer.
 
 ## Configure Microsoft Entra ID
 
-To configure SSO, you expose an API on the app registration, authorize the app to use it, and grant admin consent. For this, sign in to the [Azure portal](https://portal.azure.com/#azure-portal), go to **Microsoft Entra ID** > **App registrations**, and select the app registration for Netwrix Password Secure. If it isn't listed, select **All applications**.
+To configure SSO, you expose an API on the app registration, authorize the app to use it, and grant admin consent. For this, sign in to the [Azure portal](https://portal.azure.com/#azure-portal), go to **Microsoft Entra ID** > **App registrations**, and select the app registration for Netwrix Password Secure. If it doesn't appear, select **All applications**.
 
 ### Expose an API
 
