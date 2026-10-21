@@ -131,7 +131,7 @@ The old password stops working when the sync finishes, so update your external t
    sudo dspmctl enable-auto netwrix
    ```
 
-2. Delete the stored password so the next time you turn access on it generates a new one:
+2. Delete the stored password so Access Analyzer generates a new one the next time you turn access on:
 
    ```bash
    sudo kubectl delete secret clickhouse-external-secret -n access-analyzer
