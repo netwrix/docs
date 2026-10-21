@@ -14,7 +14,7 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 
 ## Sources
 
-1. Sensitive data scans read [File Server](sources/smb-file-servers.md) content only over port 445; a source on another port can run Access scans but not Sensitive data scans.
+1. [File Server](sources/smb-file-servers.md) sources sign in with NTLMv2 only, not Kerberos, so the file server must accept NTLM authentication for the service account.
 2. Access Analyzer doesn't support the SMB 1x protocol.
 3. An [Active Directory](sources/active-directory.md) source covers one domain and doesn't follow trusts, so add one source per domain.
 4. You can't delete a [source](sources/index.md) while a scan execution is running or pending on it, or once scans have run against it; stop the execution or wait for it to finish first.
@@ -35,7 +35,7 @@ Access Analyzer serves the web application only over HTTPS, and the installer ne
 ## Scans
 
 1. You can't change a [scan's](scans/index.md) type after creation; to collect something else, create another scan.
-2. A [Sensitive data scan](scans/scan-types.md) needs a completed Access scan on the same source, because it works from that inventory. It skips files above the size limit, 10 MB by default, and files with excluded extensions, both set in [Application settings](settings/application.md).
+2. A [Sensitive data scan](scans/scan-types.md) needs a completed Access scan on the same source, because it works from that inventory. By default it classifies only the file types on the include list and skips files above 10 MB, both set in [Application settings](settings/application.md#file-server-scanning-and-sharepoint-scanning).
 3. After 90 days, Access Analyzer deletes [executions](scans/scan-executions.md) that end as Completed, Failed, or Cancelled; Completed with errors and Stopped executions stay until you delete the scan. An execution's **Detailed logs** tab holds the last 1,000 entries. When a failure isn't explained there, look in [System logs](settings/system-logs.md).
 
 ## Sensitive Data Patterns
