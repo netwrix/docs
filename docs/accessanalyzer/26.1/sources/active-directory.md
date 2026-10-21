@@ -86,28 +86,7 @@ Success shows the message **Connection successful**. Failure shows **Connection 
 - On port 636, a message that starts with `LDAPS/TLS handshake` means the TLS connection failed before sign-in. If it says the server responded but not with TLS, the port isn't an LDAPS port. If it says the handshake didn't complete, the connection was reset during the handshake: a TLS-inspecting proxy or endpoint security agent between the agent and the domain controller can cause this, as can a domain controller that doesn't offer LDAPS or, with **Enforce strict SSL validation** selected, a certificate that doesn't validate. Exempt the domain controller from TLS inspection, check that it offers LDAPS on 636 with a valid certificate, clear **Enforce strict SSL validation**, or connect on port 389 instead.
 - On port 636, a message that starts with `Authentication failed` means the domain controller rejected the credentials. Check the service account's username and password.
 
-## What the Sync Collects
-
-An **Identity sync** reads the following:
-
-| Object | What Access Analyzer records |
-|---|---|
-| Users: identifiers | Account name, SID, globally unique identifier (GUID), distinguished name, canonical name, and user principal name |
-| Users: profile | Display name, first and last name, email, phone numbers, office and postal address, title, department, company, manager, and employee ID |
-| Users: security settings | Account control flags, password last set, account expiry, logon hours, allowed workstations, smart card requirement, delegation settings, supported Kerberos encryption types, service principal names, and the admin count |
-| Users: activity | Last logon, last logoff, bad password count and time, and lockout time |
-| Users: custom attributes | `extensionAttribute1` through `extensionAttribute15` |
-| Groups | Name, SID, GUID, scope, type (security or distribution), description, mail, and the number of direct members |
-| Group memberships | The direct members of each group |
-| Location | The domain and the organizational unit path of every user and group |
-
-The sync finds users and groups by walking the domain's organizational units and containers. It doesn't store organizational units as separate objects; instead, each user and group records the path of the organizational unit or container that holds it. The sync reads user accounts, meaning objects of the `user` class in the `person` category. It doesn't read computers, managed service accounts, contacts, Group Policy objects, or password hashes.
-
-Each sync records direct group memberships only, read from each group's `member` attribute, including groups with more members than one LDAP response returns. Membership in a user's primary group, usually Domain Users, isn't part of that attribute, so the sync records it only as the user's `primaryGroupId`. After each sync, a **Refresh CDM report tables** step rebuilds the report tables and expands nested groups into effective memberships.
-
-A user's last activity comes from `lastLogonTimestamp`, which Active Directory replicates to every domain controller but updates only periodically, so by default it can trail the most recent logon by up to 14 days. When `lastLogonTimestamp` is empty, Access Analyzer uses `lastLogon`, which reflects only the logons that the domain controller the source points at processed.
-
-### Sync Options
+## Sync Options
 
 | Option | Default | Effect |
 |---|---|---|
@@ -133,7 +112,11 @@ A differential sync marks users and groups as deleted when it can read the Delet
 
 ## Collected Attributes
 
-This section is a reference list of what an Identity sync reads from Active Directory and stores. The **Attribute** column shows the name Access Analyzer stores the value under, and **Source** shows the LDAP attribute it comes from. Access Analyzer stores times in Coordinated Universal Time (UTC) and leaves an attribute empty when Active Directory has no value for it. Access Analyzer stores some values as JavaScript Object Notation (JSON) list text, for example `["HTTP/web01", "HTTP/web01.corp.example.com"]`; their descriptions say JSON list.
+The sync finds users and groups by walking the domain's organizational units and containers. It doesn't store organizational units as separate objects; instead, each user and group records the path of the organizational unit or container that holds it. The sync reads user accounts, meaning objects of the `user` class in the `person` category. It doesn't read computers, managed service accounts, contacts, Group Policy objects, or password hashes.
+
+Each sync records direct group memberships only, read from each group's `member` attribute, including groups with more members than one LDAP response returns. Membership in a user's primary group, usually Domain Users, isn't part of that attribute, so the sync records it only as the user's `primaryGroupId`. After each sync, a **Refresh CDM report tables** step rebuilds the report tables and expands nested groups into effective memberships.
+
+The following tables are a reference list of what an Identity sync reads from Active Directory and stores. The **Attribute** column shows the name Access Analyzer stores the value under, and **Source** shows the LDAP attribute it comes from. Access Analyzer stores times in Coordinated Universal Time (UTC) and leaves an attribute empty when Active Directory has no value for it. Access Analyzer stores some values as JavaScript Object Notation (JSON) list text, for example `["HTTP/web01", "HTTP/web01.corp.example.com"]`; their descriptions say JSON list.
 
 Each record also carries identifiers and timestamps that Access Analyzer uses to track which source and sync wrote it and whether the object was deleted; they aren't listed.
 
@@ -194,7 +177,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `lockedDateTime` | `lockoutTime` | When the account was locked out. |
 | `badPwdCount` | `badPwdCount` | The number of failed password attempts, as counted by the domain controller the source points at. |
 | `badPasswordTime` | `badPasswordTime` | When the last failed password attempt happened on the domain controller the source points at. |
-| `lastActive` | `lastLogonTimestamp`, or `lastLogon` when that's empty | The user's last sign-in, used for the user's last activity in reports. See [What the sync collects](#what-the-sync-collects). |
+| `lastActive` | `lastLogonTimestamp`, or `lastLogon` when that's empty | The user's last sign-in, used for the user's last activity in reports. Active Directory replicates `lastLogonTimestamp` to every domain controller but updates it only periodically, so by default it can trail the most recent logon by up to 14 days. |
 | `lastLogon` | `lastLogon` | The last sign-in that the domain controller the source points at processed. |
 | `lastLogoff` | `lastLogoff` | The last sign-out. Most domains don't maintain this attribute, so it's usually empty. |
 | `workingHours` | `logonHours` | The hours the user is allowed to sign in, as a hexadecimal string of the 21-byte logon hours bitmap: one bit for each hour of the week, in UTC. Empty when sign-in isn't restricted. |

@@ -20,7 +20,7 @@ Four source types are available. The first column shows the name you select in t
 | **Entra ID** | One Microsoft Entra ID tenant | Users, groups, directory roles, group memberships and owners, and role assignments | Identity sync | Client ID/secret |
 | **SharePoint Online** | One SharePoint Online tenant | Site collections, subsites, lists, libraries, folders, documents, OneDrive personal sites (when the scan's Collect OneDrive option is on, the default), sharing settings, sharing links, permissions, and SharePoint groups; document contents matched against sensitive data patterns | Access scan, Sensitive data scan | Client ID/certificate |
 
-Each type has its own page with prerequisites, the fields to fill in, what the scans return, and a reference list of every attribute they collect: [SMB file servers](smb-file-servers.md), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [Microsoft 365](microsoft-365.md).
+Each type has its own page with prerequisites, the fields to fill in, the sync or scan options, and a reference list of every attribute it collects: [SMB file servers](smb-file-servers.md), [Active Directory](active-directory.md), [Entra ID](entra-id.md), and [Microsoft 365](microsoft-365.md).
 
 Identity sources do more than feed the identity reports. File Server scans record who has access as security identifiers (SIDs); an Active Directory source for the same domain is what turns those SIDs into account and group names in the reports.
 

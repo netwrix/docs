@@ -95,28 +95,20 @@ A successful test shows the message **Connection successful**. A failed test sho
 
 | Hint | What to check |
 |---|---|
-| Connection timed out | The host is reachable and the port is open |
-| Hostname doesn't resolve | The name in **Host** is spelled correctly and resolves in DNS from the agent |
-| Authentication failed | The username, password, and domain are correct |
-| Connection refused | An SMB service is listening on the port you entered |
-| Network unreachable | The network path and firewall rules between the agent and the server |
-| Permission denied | The account has the SMB access rights it needs on the server |
-| SMB protocol version not supported by server or client | The server allows SMB 2 or 3; Access Analyzer doesn't support SMB 1 |
-| Failed to connect to SMB share | The share exists and the account has access to it |
+| **Connection timed out** | The host is reachable and the port is open |
+| **Hostname does not resolve** | The name in **Host** is spelled correctly and resolves in DNS from the agent |
+| **Authentication failed** | The username, password, and domain are correct |
+| **Connection refused** | An SMB service is listening on the port you entered |
+| **Network unreachable** | The network path and firewall rules between the agent and the server |
+| **Permission denied** | The account has the SMB access rights it needs on the server |
+| **SMB protocol version not supported by server or client** | The server allows SMB 2 or 3; Access Analyzer doesn't support SMB 1 |
+| **Failed to connect to SMB share** | The share exists and the account has access to it |
 
 A **Port** value outside 1 to 65535 fails with **Invalid port number**.
 
-## What the Scans Collect
+## Access Scans
 
-### Access Scans
-
-Access scans list the server's shares, then walk each share's folders down to the configured depth.
-
-- **Shares**: the name, the Universal Naming Convention (UNC) path, the local path on the server when the scan lists the shares itself, the owner of the share's root folder, and two sets of permission entries: the share-level permissions and the NTFS permissions on the share's root folder.
-- **Folders**: the UNC path, name, timestamps, file system attributes, and owner. The scan records a folder's own permission entries when the folder has explicit entries or blocks inheritance; every other folder points to the nearest folder above it whose entries apply to it.
-- **Files**: the UNC path, name, extension, size, timestamps, and file system attributes. The scan records file owners and file permission entries only when you turn on **Enable File-Level Permission Scanning** in the scan's settings. With it off, each file points to the permission entries of its folder.
-
-Each permission entry records which security identifier (SID) is allowed or denied which rights, and whether the entry is inherited or explicit. Reports use these entries to flag conditions such as access granted to Everyone or Authenticated Users, explicit deny entries, and folders where inheritance is broken. [Collected Attributes](#collected-attributes) lists every value the scan stores.
+Access scans list the server's shares, then walk each share's folders down to the configured depth. They record each share, folder, and file with its attributes, owner, and permission entries; [Collected attributes](#collected-attributes) lists every value they store. A folder gets its own permission entries only when it has explicit entries or blocks inheritance; every other folder points to the nearest folder above it whose entries apply. Files get their owner and permission entries only when you turn on **Enable File-Level Permission Scanning** in the scan's settings; otherwise each file points to its folder's entries. Reports use the permission entries to flag conditions such as access granted to Everyone or Authenticated Users, explicit deny entries, and folders where inheritance is broken.
 
 Access scans always skip the `IPC$` share and shares that expose no file system, such as printer shares. By default they also skip system shares: `ADMIN$`, `PRINT$`, `FAX$`, `SYSVOL`, `NETLOGON`, and drive-letter shares such as `C$`. Other shares whose names end in `$`, such as `Finance$`, are hidden shares, which Access scans include unless you turn on **Exclude hidden shares**. **Exclude shares** matches share names exactly, including case, and doesn't support wildcards.
 
@@ -128,7 +120,7 @@ Access scans record symbolic links as objects but don't follow them. They skip f
 
 Access scans record each trustee (the account or group named in a permission entry or as an owner) as a SID. Well-known SIDs get their standard names, such as `Everyone` or `BUILTIN\Administrators`. Add an [Active Directory](active-directory.md) source for the same domain and run an Identity sync on it so that reports show names for domain accounts and groups instead. Server-local accounts and groups stay as SIDs.
 
-### Sensitive Data Scans
+## Sensitive Data Scans
 
 Sensitive data scans read the contents of the files a completed Access scan inventoried and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). Run an Access scan on the source first. The scan skips empty files, and the **File server scanning** card in [Application settings](../settings/application.md#file-server-scanning-and-sharepoint-scanning) decides which other files it reads. It skips files larger than **Maximum file size (MB)** (10 MB by default). While **Use include list** is on, the default, it reads only files whose extension is on **Include list**; with the switch off, or with an empty include list, it skips files whose extension is on **Exclude list**. Sensitive data scans match **Include shares** and **Exclude shares** without regard to case. With **Differential scan** turned on, the scan reads only files that are new, or whose last-modified time changed, since the same scan last classified them.
 

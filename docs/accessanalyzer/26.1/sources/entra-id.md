@@ -95,7 +95,7 @@ If Access Analyzer has no specific reason to report, the alert shows **Please ch
 
 **Test connection** doesn't check `Policy.Read.All`, `InformationProtectionPolicy.Read.All`, or `AuditLog.Read.All`, so a successful test doesn't confirm that the app registration has them. Grant all four permissions in [App registration](#app-registration) regardless.
 
-## What the Sync Collects
+## Sync Options
 
 An **Identity sync** reads the whole tenant on every run; there's no differential mode for this source type. It has one option:
 
@@ -103,24 +103,13 @@ An **Identity sync** reads the whole tenant on every run; there's no differentia
 |---|---|---|
 | **Workers** | 8 | Concurrent workers, from 1 to 16. The users, groups, and roles collections run as separate work items, so values above 3 don't add more parallel collections. The value also caps the Microsoft Graph requests in flight at 4 times the worker count, with a minimum of 16. All requests share the tenant's Microsoft Graph throttling limits. |
 
-| Object | What Access Analyzer records |
-|---|---|
-| Users: identity | Display name, user principal name, sign-in names, email, first name, and last name |
-| Users: organization | Job title, department, company, office, manager, address, and phone numbers |
-| Users: account | Whether the account is disabled, user type (Member or Guest), creation type, creation date, and last sign-in |
-| Users: credentials | Password last changed, calculated password expiry, whether a password change is forced at next sign-in, and whether strong passwords are required |
-| Users: licenses and sync | Assigned licenses and, for accounts synced from on-premises Active Directory, the on-premises domain, security identifier (SID), and last sync time |
-| Groups | Display name, description, email, group type, whether the group is security-enabled and mail-enabled, direct member count, on-premises sync details, and for dynamic groups, the membership rule |
-| Directory roles | Every built-in and custom role definition: display name, description, template ID, version, and whether the role is built in, enabled, and privileged |
-| Memberships | Group members (direct, and nested members expanded through member groups), group owners, and role assignments to users and groups, with the members of each role-assigned group |
+## Collected Attributes
 
 The sync reads users whose user type is **Member** or **Guest** and skips any other account, recording the count in the scan logs. It reads active role assignments, not eligible Privileged Identity Management (PIM) assignments. It also reads the tenant's organization details and initial domain to decide whether sign-in activity is available and to calculate password expiry dates, but it doesn't store them as records.
 
 The sync doesn't collect multi-factor authentication (MFA) status, account lock state, or the principal types a directory role can be assigned to, so report columns for them stay empty.
 
 After each sync, a follow-up step refreshes the report tables. The synced data drives the [Identity reports](../dashboards-reports/reports/identity.md).
-
-## Collected Attributes
 
 The following tables are a reference list of what an Identity sync reads from the tenant and stores. The **Attribute** column shows the name Access Analyzer stores the value under, and **Source** shows the Microsoft Graph property it comes from. An attribute is empty when the tenant has no value for it.
 

@@ -108,24 +108,9 @@ Changing **SharePoint domain** on an existing source shows the warning **Existin
 
 Success shows the message **Connection successful**. Failure shows an alert titled **Connection failed** with the reason. When signing in fails, the reason starts with **Authentication failed:** and includes the error from the Microsoft identity platform.
 
-## What the Scans Collect
+## Access Scans
 
-### Access Scans
-
-Access scans crawl everything within the scope you set on the scan, on every run; there is no differential mode for this source type.
-
-| Object | What Access Analyzer records |
-|---|---|
-| Tenant | Name and ID, external sharing capability for SharePoint and for OneDrive, whether the Everyone and All Users claims appear in people pickers, whether guests can access Microsoft 365 group content, and the sharing domain allow and block lists |
-| Site collections | Site and root web IDs, URL, title, description, creation and last-modified dates, type (Default, Team, Personal, or Admin), external sharing capability at that scope, read-only and lock state, whether custom scripts are blocked, and the sharing domain allow and block lists |
-| Sites | Web ID, URL, title, description, and creation and last-modified dates of each subsite |
-| Lists and libraries | List ID, title, URL, creation and last-modified dates, and whether it's a document library or a list |
-| Folders, documents, and list items | Name, URL, type, creation and last-modified dates, and, for documents, the document ID |
-| Permissions | Which principal holds which rights on each object that has its own permissions, the combined numeric permission mask, and which kinds of access that mask grants |
-| Sharing links | Link type (anyone, people in your organization, or specific people), whether it can edit, view, or review or blocks downloads, whether it's active, its expiry, password and guest settings, who created and last changed it, and the access it grants |
-| SharePoint groups and memberships | Site groups with their numeric IDs, owners, and members, plus the site collection administrators |
-
-[Collected attributes](#collected-attributes) lists every value an Access scan stores.
+Access scans crawl everything within the scope you set on the scan, on every run; there is no differential mode for this source type. [Collected attributes](#collected-attributes) lists every value they store.
 
 Access scans skip some content on every run, whatever the scope:
 
@@ -179,7 +164,7 @@ Service prioritization in SharePoint is a Microsoft 365 pay-as-you-go service th
 
 See [Scan types](../scans/scan-types.md) for how these options appear when you create a scan.
 
-### Sensitive Data Scans
+## Sensitive Data Scans
 
 Sensitive data scans read the contents of the documents an Access scan found and match them against the enabled [sensitive data patterns](../sensitive-data-patterns/index.md). Their options narrow which documents they read:
 
@@ -341,6 +326,6 @@ One record per member of each SharePoint group, and per site collection administ
 | `memberId` | `Group.Users`, or `IsSiteAdmin` site users | The member: an Entra ID user or group (by object ID) or a user that Entra ID doesn't manage. |
 | `memberSet` | Derived from the member's login name | `Owners` when the member is the owners of a Microsoft 365 group, otherwise `Members`. |
 
-### Sensitive Data Scans
+### Sensitive Data Scan Attributes
 
 Sensitive data scans locate each document by the `spoDocumentId` and URL the Access scan stored. For each document they read, they also record SharePoint's content hash for the file (`vti_streamhash`), which a **Differential scan** compares to tell whether the document changed.
