@@ -96,7 +96,7 @@ A successful test shows the message **Connection successful**. A failed test sho
 | Hint | What to check |
 |---|---|
 | Connection timed out | The host is reachable and the port is open |
-| Hostname does not resolve | The name in **Host** is spelled correctly and resolves in DNS from the agent |
+| Hostname doesn't resolve | The name in **Host** is spelled correctly and resolves in DNS from the agent |
 | Authentication failed | The username, password, and domain are correct |
 | Connection refused | An SMB service is listening on the port you entered |
 | Network unreachable | The network path and firewall rules between the agent and the server |
@@ -170,7 +170,7 @@ One record per folder and per file. Shares don't have the timestamp, size, or at
 | `encrypted` | `FileAttributes` encrypted bit (`0x4000`) | True when the object is encrypted with the Encrypting File System (EFS). |
 | `ntfsFileId` | Directory listing `FileId` | The NTFS file ID, a number unique within the volume. It stays the same when the object is renamed or moved within the volume, so Access Analyzer uses it to recognize the object across scans. |
 | `isSymlink` | Reparse point tag | `true` when the object is a symbolic link; absent otherwise. The scan doesn't follow links. |
-| `permissionSourceId` | Security descriptors of the object and the folders above it | The share, folder, or file whose permission entries apply to this object: the object itself when it has explicit entries, blocks inheritance, or has no discretionary access control list (DACL); otherwise the nearest folder above it that does. Empty when a security descriptor the value depends on couldn't be read. |
+| `permissionSourceId` | Security descriptors of the object and the folders above it | The share, folder, or file whose permission entries apply to this object: the object itself when it has explicit entries, blocks inheritance, or has no discretionary access control list (DACL); otherwise the nearest folder above it that does. Empty when the scan couldn't read a security descriptor the value depends on. |
 | `permissionSourceDepth` | Folder hierarchy | The number of levels between the object and its permission source: `0` when the object carries its own entries, `1` when they come from its parent folder, and so on. Empty when `permissionSourceId` is empty. |
 
 ### Permission Sets

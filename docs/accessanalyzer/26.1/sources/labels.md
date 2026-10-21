@@ -13,7 +13,7 @@ Labels on sources are separate from labels on agents, which decide where scans r
 - A label has a key and a value. Both are required.
 - A source can carry up to 50 labels, and each key appears at most once per source. `env=production` and `env=staging` can't both be on the same source.
 - Keys can be up to 63 characters and values up to 255. Neither can contain `=`, `;`, or `,`. Spaces, slashes, colons, and non-Latin characters are fine.
-- Access Analyzer trims leading and trailing whitespace and compares labels case-insensitively: `Env=Production` and `env=production` are the same label. When you enter a key or value that already exists in another casing, the editor snaps it to the existing form.
+- Access Analyzer trims leading and trailing whitespace and compares labels case-insensitively: `Env=Production` and `env=production` are the same label. When you enter a key or value that already exists in another casing, the editor changes it to match the existing form.
 - Labels form a shared vocabulary. Attaching `env=production` to a second source reuses the same label, and the editor suggests known keys and, after you pick a key, its known values.
 
 ### A Labeling Scheme That Works

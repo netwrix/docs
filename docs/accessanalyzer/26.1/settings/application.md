@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## What the Application Tab Holds
 
-**Settings > Application** is where deployment-wide defaults live. It has five cards: **Homepage**, **File server scanning**, **SharePoint scanning**, **Classification**, and **Audit log**. Admins can change everything on the tab. Viewers can open the tab and edit fields, but their saves fail with the message **Some settings were not saved**.
+**Settings > Application** holds the deployment-wide defaults. It has five cards: **Homepage**, **File server scanning**, **SharePoint scanning**, **Classification**, and **Audit log**. Admins can change everything on the tab. Viewers can open the tab and edit fields, but their saves fail with the message **Some settings were not saved**.
 
 The Netwrix Activity Monitor settings and the enrollment token are on the **Activity Monitor** tab instead; see [Netwrix Activity Monitor settings](#netwrix-activity-monitor-settings). Feature flags have their own tab; see [Feature flags](feature-flags.md).
 
@@ -135,7 +135,7 @@ These defaults apply to every Sensitive data scan.
 |---|---|---|---|
 | **Classification workers** | 15 | 1–50 | Default number of concurrent classification workers per scan. Applies when a Sensitive data scan doesn't set its own **Workers** value. |
 | **Report known test values** | Off | — | Reports matches on publicly documented test values, such as vendor test card numbers, test Social Security numbers, and Amazon Web Services (AWS) documentation keys, instead of suppressing them. Turn it on to evaluate Access Analyzer against synthetic data. Expect more false positives while it's on, because these values also appear in real documentation and sample files. |
-| **Decision traces** | On | — | Records a decision trace for every sensitive data finding, so the **Files** tab of a scan execution can show why a file was marked sensitive: the rule, the evidence, and the confidence. Turn it off to stop recording findings and traces; the per-file record and live progress stay on. |
+| **Decision traces** | On | — | Records a decision trace for every sensitive data finding, so the **Files** tab of a scan execution can show why Access Analyzer marked a file sensitive: the rule, the evidence, and the confidence. Turn it off to stop recording findings and traces; the per-file record and live progress stay on. |
 | **Runs that keep their file list** | 3 | 1–20 | How many of each scan's most recent runs keep their file list and findings on the **Files** tab. Older runs keep only their totals. A scan's newest completed run keeps its list for 90 days. |
 | **Days to keep file lists** | 90 | 7–90 | Runs that finished more than this many days ago lose their file list and findings, even if they're among the most recent runs. A scan's newest completed run keeps its list until it's 90 days old. Changes to this setting apply within a day. |
 
@@ -145,11 +145,11 @@ A Sensitive data scan on a File Server source has its own **Workers** field (1�
 
 | Setting | Default | Range | What it affects |
 |---|---|---|---|
-| **Retention (days)** | 365 | 90–2555 | How long the audit log keeps its entries. Entries older than this are removed from the audit log and its ClickHouse storage. |
+| **Retention (days)** | 365 | 90–2555 | How long the audit log keeps its entries. Access Analyzer removes entries older than this from the audit log and its ClickHouse storage. |
 
 When you save a shorter retention, a **Remove older audit log entries?** dialog shows how many entries the change removes. Click **Remove entries and save** to confirm; Access Analyzer removes the entries as soon as you confirm. A copy stays in the legacy audit table until that table is retired, so lengthening the retention later can bring the entries back. If the number of entries changes while the dialog is open, a **The number of entries to delete changed** message asks you to review the new count and confirm again.
 
-If Access Analyzer saves the new retention but can't reach the storage to remove the older entries, the message **Audit log retention saved, but not trimmed** appears. The audit log hides the older entries, and a notice under the setting offers **Trim now** to remove them once the storage is reachable.
+If Access Analyzer saves the new retention but can't reach the storage to remove the older entries, the message **Audit log retention saved, but not trimmed** appears. The audit log hides the older entries, and a notice under the setting offers **Trim now** to remove them when the storage is reachable.
 
 ## Netwrix Activity Monitor Settings
 

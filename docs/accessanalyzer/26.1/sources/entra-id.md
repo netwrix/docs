@@ -133,7 +133,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `sourceSystemId` | `id` | The user's object ID in Entra ID, a GUID. |
 | `name`, `displayName` | `displayName` | The user's display name. |
 | `azureAdUserPrincipalName`, `pathSegment` | `userPrincipalName` | The user principal name (UPN), the user's sign-in name, for example `jsmith@contoso.com`. |
-| `signInNames` | `identities.issuerAssignedId` | Every sign-in name the user has, such as a UPN, an email address, or a federated user name. Only identities that have an issuer, a sign-in type, and a value are included. |
+| `signInNames` | `identities.issuerAssignedId` | Every sign-in name the user has, such as a UPN, an email address, or a federated user name. Access Analyzer includes only identities that have an issuer, a sign-in type, and a value. |
 | `emailAddress` | `mail` | The user's primary email address. |
 | `firstName` | `givenName` | The user's first name. |
 | `lastName` | `surname` | The user's last name. |
@@ -151,7 +151,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `otherContactNumbers` | `businessPhones` | The user's business phone numbers, as a list. |
 | `disabled` | Derived from `accountEnabled` | `true` when the account is disabled and can't sign in. |
 | `azureAdUserType` | `userType` | `Member` for a user in the organization, or `Guest` for an external user. |
-| `azureAdCreationType` | Derived from `creationType` | How the account was created: `Standard` for a regular account, `Invitation` for an invited external user, `Local Account`, `Email Verified`, or `Self Service Sign Up`. Other values are split into words. |
+| `azureAdCreationType` | Derived from `creationType` | How the account was created: `Standard` for a regular account, `Invitation` for an invited external user, `Local Account`, `Email Verified`, or `Self Service Sign Up`. Access Analyzer splits other values into words. |
 | `createdDate` | `createdDateTime` | When the account was created. |
 | `lastActive` | `signInActivity.lastSignInDateTime` | When the user last signed in interactively. Collected only when the tenant has a Microsoft Entra ID P1 or P2 license and the app registration has `AuditLog.Read.All`. |
 | `passwordLastChanged` | `lastPasswordChangeDateTime` | When the user last changed or reset their password. |
@@ -178,7 +178,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `isMailEnabled` | `mailEnabled` | `true` when the group can receive email. |
 | `dynamicMembershipEnabled` | Derived from `groupTypes`, `membershipRuleProcessingState`, and `membershipRule` | `true` when the group has dynamic membership, its rule processing is on, and it has a rule. |
 | `dynamicMembershipRule` | `membershipRule` | The rule that decides a dynamic group's members, for example `user.department -eq "Sales"`. Stored only when `dynamicMembershipEnabled` is `true`. |
-| `memberCount` | Derived from `members` | The number of direct members. Owners and nested members aren't counted. |
+| `memberCount` | Derived from `members` | The number of direct members. The count excludes owners and nested members. |
 | `onPremisesSyncEnabled` | `onPremisesSyncEnabled` | `true` when the group is synchronized from an on-premises directory. |
 | `syncedSourceObjectId` | Derived from `onPremisesDomainName` and `onPremisesSecurityIdentifier` | For a synchronized group, the on-premises domain name and the group's SID separated by `\|`. |
 | `syncedSourceRealmId` | Derived from `onPremisesSecurityIdentifier` | For a synchronized group, the SID of its on-premises domain. |
@@ -207,5 +207,5 @@ Each membership record links a user or group to a group or directory role.
 | `groupId` | `id` of the group or role definition | The group or directory role. |
 | `groupType` | Derived from the collection | Whether `groupId` is a group or a directory role. |
 | `membershipSource` | Derived from the membership path | `Direct` for a direct member, owner, or role assignment. `Nested` for a member reached through a member group, or a member of a group that holds a role. |
-| `expandedFromGroupId` | Derived from the membership path | For a nested membership, the direct member group the member was reached through, or the group that holds the role. When several direct member groups lead to the same member, the first one Microsoft Graph lists is recorded. |
-| `role` | Derived from `members` or `owners` | `Member` for group members and role holders, or `Owner` for group owners. Only users are recorded as owners. |
+| `expandedFromGroupId` | Derived from the membership path | For a nested membership, the direct member group the member was reached through, or the group that holds the role. When several direct member groups lead to the same member, Access Analyzer records the first one Microsoft Graph lists. |
+| `role` | Derived from `members` or `owners` | `Member` for group members and role holders, or `Owner` for group owners. Access Analyzer records only users as owners. |

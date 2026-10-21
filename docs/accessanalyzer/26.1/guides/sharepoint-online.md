@@ -135,4 +135,4 @@ Dashboards and reports don't refresh on their own. Open one and click **Refresh*
 | **Open Access** | Access scan | Content that all authenticated users can reach without restriction |
 | **Sensitive Data Overview** | Sensitive data scan | Sensitive data classifications across SharePoint sites |
 
-**Shared Links** also appears under **Reports > Compliance** for each framework. The other three SharePoint reports live only on the **Data** page. [Data reports](../dashboards-reports/reports/data.md) describes every report and its filters, and the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) page covers each card.
+**Shared Links** also appears under **Reports > Compliance** for each framework. The other three SharePoint reports appear only on the **Data** page. [Data reports](../dashboards-reports/reports/data.md) describes every report and its filters, and the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) page covers each card.

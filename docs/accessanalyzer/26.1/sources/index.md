@@ -88,7 +88,7 @@ Select rows with the checkboxes to open the bulk action bar. It shows the number
 
 A service account fits a source when it holds the credentials the source's type uses; see [Source types](#source-types). The button stays disabled until at least one selected source can use the account. **Attach service account** is unavailable, with the tooltip **No service account fits the selected sources**, when none of your service accounts fits any selected source.
 
-When every attempt succeeds, a notification confirms how many sources got the account and how many were skipped because they need a different account type. Otherwise, the dialog switches to **Service account results** and lists each source as **Attached**, or with the reason it wasn't, such as **Incompatible account type**.
+When every attempt succeeds, a notification confirms how many sources got the account and how many it skipped because they need a different account type. Otherwise, the dialog switches to **Service account results** and lists each source as **Attached**, or with the reason it wasn't, such as **Incompatible account type**.
 
 ## The Sources Page
 

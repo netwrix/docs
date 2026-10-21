@@ -28,7 +28,7 @@ The inventory is also what a Sensitive data scan works from, so run an Access sc
 | **Exclude system shares** | On | Skips Windows administrative and system shares: `ADMIN$`, `PRINT$`, `FAX$`, `SYSVOL`, `NETLOGON`, and drive-letter shares such as `C$`. The scan always skips `IPC$`. |
 | **Exclude hidden shares** | Off | Skips hidden shares: shares whose names end in `$` but that aren't system shares, such as `Finance$`. |
 | **Include shares** | Empty | Share names to scan. When the list has entries, the scan skips share discovery, scans only the shares you name, and ignores **Exclude shares**, **Exclude system shares**, and **Exclude hidden shares**. Leave it empty to scan every share the account can reach. |
-| **Exclude shares** | Empty | Share names to skip, matched exactly, including case. Wildcards aren't supported. Ignored when **Include shares** lists shares. |
+| **Exclude shares** | Empty | Share names to skip, matched exactly, including case. The list doesn't accept wildcards. Ignored when **Include shares** lists shares. |
 | **Maximum scan depth** | 50 | How many folder levels below the share root to record, 1 or more. This guards against endless recursion. At 1, the scan records the folders and files directly in each share but doesn't open those folders. |
 | **Enable File-Level Permission Scanning** | Off | Collects the owner and permissions of individual files as well as folders. |
 
@@ -44,7 +44,7 @@ Type a share name and press Enter, or type a comma, to add it to a share list. Y
 | **Exclude URLs** | Empty | URL patterns for subsites, lists, libraries, folders, documents, and list items to skip inside the scanned site collections. Supports the `*` wildcard. |
 | **Collect OneDrive** | On | Includes users' OneDrive personal sites when **Include site collections** is set to **Scan all URLs**. When you list specific site collections, the scan covers exactly those, and this setting has no effect. |
 
-Exclude rules always win over include rules. A pattern in **Exclude URLs** matches the whole URL, ignoring case, so a pattern without a wildcard matches only the object at exactly that URL. To exclude a library, folder, or site and everything in it, end the pattern with `/*`, as in `*.sharepoint.com/sites/archive/*`. See [Microsoft 365](../sources/microsoft-365.md#access-scans) for the content Access scans always skip.
+Exclude rules always take precedence over include rules. A pattern in **Exclude URLs** matches the whole URL, ignoring case, so a pattern without a wildcard matches only the object at exactly that URL. To exclude a library, folder, or site and everything in it, end the pattern with `/*`, as in `*.sharepoint.com/sites/archive/*`. See [Microsoft 365](../sources/microsoft-365.md#access-scans) for the content Access scans always skip.
 
 ### Reports Fed by Access Scans
 

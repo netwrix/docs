@@ -124,7 +124,7 @@ A sync reads the whole domain even with **Differential Scan** turned on in these
 
 - No earlier sync of the source saved its state, as on the first sync.
 - A different domain controller answers than on the previous sync, for example after you change **Host** to another domain controller.
-- The domain controller's highest committed USN is lower than the saved one, for example after the domain controller was restored from a backup.
+- The domain controller's highest committed USN is lower than the saved one, for example after you restore the domain controller from a backup.
 - The domain controller doesn't report its highest committed USN.
 
 When a sync finishes with errors, Access Analyzer keeps the previous USN, so the next differential sync reads the same changes again.
@@ -133,7 +133,7 @@ A differential sync marks users and groups as deleted when it can read the Delet
 
 ## Collected Attributes
 
-This section is a reference list of what an Identity sync reads from Active Directory and stores. The **Attribute** column shows the name Access Analyzer stores the value under, and **Source** shows the LDAP attribute it comes from. Access Analyzer stores times in Coordinated Universal Time (UTC) and leaves an attribute empty when Active Directory has no value for it. Values described as JSON lists are stored as JavaScript Object Notation (JSON) list text, for example `["HTTP/web01", "HTTP/web01.corp.example.com"]`.
+This section is a reference list of what an Identity sync reads from Active Directory and stores. The **Attribute** column shows the name Access Analyzer stores the value under, and **Source** shows the LDAP attribute it comes from. Access Analyzer stores times in Coordinated Universal Time (UTC) and leaves an attribute empty when Active Directory has no value for it. Access Analyzer stores some values as JavaScript Object Notation (JSON) list text, for example `["HTTP/web01", "HTTP/web01.corp.example.com"]`; their descriptions say JSON list.
 
 Each record also carries identifiers and timestamps that Access Analyzer uses to track which source and sync wrote it and whether the object was deleted; they aren't listed.
 
@@ -199,7 +199,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `lastLogoff` | `lastLogoff` | The last sign-out. Most domains don't maintain this attribute, so it's usually empty. |
 | `workingHours` | `logonHours` | The hours the user is allowed to sign in, as a hexadecimal string of the 21-byte logon hours bitmap: one bit for each hour of the week, in UTC. Empty when sign-in isn't restricted. |
 | `logonWorkstations` | `userWorkstations` | The computers the user is allowed to sign in to, as a JSON list. Empty when sign-in isn't restricted to specific computers. |
-| `servicePrincipalName` | `servicePrincipalName` | The service principal names (SPNs) registered on the account, as a JSON list. An account with SPNs runs a service and can be targeted by Kerberoasting. |
+| `servicePrincipalName` | `servicePrincipalName` | The service principal names (SPNs) registered on the account, as a JSON list. An account with SPNs runs a service and is a target for Kerberoasting. |
 | `msDsAllowedToDelegateTo` | `msDS-AllowedToDelegateTo` | The services the account can act on behalf of other users to, for Kerberos constrained delegation, as a JSON list of SPNs. |
 | `msDsAllowedToActOnBehalfOf` | `msDS-AllowedToActOnBehalfOfOtherIdentity` | The accounts allowed to act on behalf of other users to this account, for resource-based constrained delegation. Stored without decoding, as a JSON list that holds the raw security descriptor bytes. |
 | `msDsSupportedEncryptionTypes` | `msDS-SupportedEncryptionTypes` | The Kerberos encryption types the account supports, as a number, for example `24` for AES128 and AES256. |
@@ -221,4 +221,4 @@ Each membership record links one group to one of its direct members.
 | Attribute | Source | Description |
 |---|---|---|
 | `groupId` | Derived from the group's `objectSid` | Identifies the group. |
-| `memberId` | Derived from the `member` value | Identifies the member by its SID, or by its GUID or distinguished name when the member has no SID. A member from another domain or forest is identified by its own SID, so an Active Directory source for that domain resolves it. |
+| `memberId` | Derived from the `member` value | Identifies the member by its SID, or by its GUID or distinguished name when the member has no SID. Access Analyzer identifies a member from another domain or forest by its own SID, so an Active Directory source for that domain resolves it. |

@@ -40,7 +40,7 @@ If you try to close the dialog before the import finishes, a warning says **If y
 
 ## File Format
 
-The file is a standard CSV with a header row. The import matches header names after trimming and lowercasing them, so `Name`, `name`, and `NAME` all work and column order doesn't matter. It ignores columns it doesn't recognize, trims every cell, and skips empty lines. Only `name` and `type` are required columns; leave out any other column when no row needs it. A file without a `type` column whose header has `name`, `hoststatus`, `fqdn`, and `isdomaincontroller` is read as an Access Analyzer 11 or 12 host list instead; see [Import an Access Analyzer 11 or 12 host list](#import-an-access-analyzer-11-or-12-host-list).
+The file is a standard CSV with a header row. The import matches header names after trimming and lowercasing them, so `Name`, `name`, and `NAME` all work and column order doesn't matter. It ignores columns it doesn't recognize, trims every cell, and skips empty lines. Only `name` and `type` are required columns; leave out any other column when no row needs it. The import reads a file without a `type` column whose header has `name`, `hoststatus`, `fqdn`, and `isdomaincontroller` as an Access Analyzer 11 or 12 host list instead; see [Import an Access Analyzer 11 or 12 host list](#import-an-access-analyzer-11-or-12-host-list).
 
 ### Columns
 
@@ -157,7 +157,7 @@ The import checks each row in this order and uses the first type that fits:
 4. A Windows or NAS host becomes a **File Server** source.
 5. Any other host, such as a Linux server, gets no type. Choose one in the preview or leave the row out.
 
-File Server and Active Directory sources are named by the host's `fqdn`, which keeps hosts with the same short name in different domains apart. SharePoint Online and Entra ID sources are named by the lowercased `name`.
+The import names File Server and Active Directory sources after the host's `fqdn`, which keeps hosts with the same short name in different domains apart. It names SharePoint Online and Entra ID sources after the lowercased `name`.
 
 A tenant name that ends in `.sharepoint.cn` or `.partner.onmschina.cn` gets **Azure China (21Vianet)** as its **Azure cloud**. A name that ends in `.sharepoint.us` or `.onmicrosoft.us` can belong to either the GCC High or the DoD cloud, so the preview asks you to choose. Other tenants get **Azure (Commercial)**.
 
