@@ -151,6 +151,8 @@ const REMOVED_KB_ARTICLES = {
   'system-configuration-and-requirements/generate-license-counts-with-cli-command': '/docs/privilegesecurediscovery/admin/licensing',
   'authentication-and-access/saml-assertion-not-yet-valid': '/docs/privilegesecurediscovery/configuration/authentication-and-sso/saml-sso-reference',
   'security-and-compliance/log4j-vulnerability-no-impact': '/docs/privilegesecurediscovery/',
+  'system-configuration-and-requirements/netwrix-privilege-secure-for-discovery-port-firewall-and-datacenter-requirements': '/docs/privilegesecurediscovery/requirements/ports-and-firewall',
+  'system-configuration-and-requirements/netwrix-privilege-secure-for-discovery-best-practices': '/docs/privilegesecurediscovery/',
 };
 
 export const privilegeSecureDiscoveryRedirects = [
