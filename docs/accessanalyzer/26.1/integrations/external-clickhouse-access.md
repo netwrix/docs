@@ -22,16 +22,21 @@ These ports are unencrypted. Credentials and query results cross the network in 
 ## Prerequisites
 
 - **Server access.** Shell access to the Access Analyzer server with `sudo` rights. `dspmctl` needs `sudo`, the same as the installer.
-- **Network path.** The external tool must reach the server on the ports you open. Open them inbound on the server's firewall and on anything between the two hosts.
+- **Network path.** The external tool must reach the server on the ports you open. Allow them on any network firewall between the two hosts.
+- **Network firewall.** A network firewall or cloud security group in front of the server, to restrict who reaches the ports. The server's own firewall can't restrict them. [Access type](#access-type) explains why.
 
 ## Access type
 
 Open the ports as a `NodePort` Service. A `NodePort` Service makes a port reachable on each node's own IP address, on a port from 30000 through 32767. A `LoadBalancer` Service doesn't work on a standard installation, because port 9000 is already in use on the server.
 
-`NodePort` has no access control in Access Analyzer, so restrict it with the server's firewall. Kubernetes opens the node ports on every node in the cluster, including agent hosts. The command in [Open the ports](#open-the-ports) sets `externalTrafficPolicy=Local`, so only the server, which runs the analytics store, answers on those ports.
+`NodePort` has no access control in Access Analyzer. Kubernetes opens the node ports on every node in the cluster, including agent hosts. The command in [Open the ports](#open-the-ports) sets `externalTrafficPolicy=Local`, so only the server, which runs the analytics store, answers on those ports.
 
 :::warning
-If you opened `NodePort` access without `externalTrafficPolicy=Local`, every agent host also forwards the node ports to the analytics store, and the server's firewall doesn't protect them. Add the setting with `sudo dspmctl set-helm-param netwrix config.clickhouse.externalAccess.externalTrafficPolicy=Local`, then repeat steps 2 and 3 of [Open the ports](#open-the-ports), or block the node ports on every agent host's firewall.
+The server's host firewall doesn't restrict the node ports, whether it's firewalld or ufw. Kubernetes redirects node-port connections to the analytics store, and its own firewall rules accept them before any firewalld or ufw rule applies, including a rule that blocks the port. Any network that can route to the server reaches the analytics store. Restrict the node ports with a network firewall or cloud security group in front of the server, so only the hosts that run your external tools reach them.
+:::
+
+:::warning
+If you opened `NodePort` access without `externalTrafficPolicy=Local`, every agent host also forwards the node ports to the analytics store. Add the setting with `sudo dspmctl set-helm-param netwrix config.clickhouse.externalAccess.externalTrafficPolicy=Local`, then repeat steps 2 and 3 of [Open the ports](#open-the-ports), or block the node ports to every agent host on your network firewall.
 :::
 
 ## Open the ports
@@ -67,7 +72,7 @@ The installer doesn't save these settings. If you run the installer again on thi
    sudo dspmctl enable-auto netwrix
    ```
 
-4. Open the node ports on the server's firewall. If Kubernetes assigned them, find them with the command in [Verify access](#verify-access).
+4. On your network firewall or cloud security group, allow the node ports to the server only from the hosts that run your external tools. If Kubernetes assigned the ports, find them with the command in [Verify access](#verify-access). You don't need a rule on the server's own firewall.
 
 ## Get the credentials
 
@@ -132,4 +137,4 @@ The old password stops working when the sync finishes, so update your external t
    sudo kubectl delete secret clickhouse-external-secret -n access-analyzer
    ```
 
-3. Remove the firewall rules you added.
+3. Remove the network firewall or security group rules you added.
