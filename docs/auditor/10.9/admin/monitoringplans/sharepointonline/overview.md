@@ -84,12 +84,6 @@ To configure Office 365 tenant as a monitored item, complete the following steps
   [SharePoint Online Ports](/docs/auditor/10.9/configuration/microsoft365/sharepointonline/ports.md#tenant-environment-endpoints)
   topic for the list.
 
-:::note
-Basic authentication is no longer possible for Exchange Online. For the already existing tenants,
-it is still possible to use basic authentication for SharePoint Online and Microsoft Entra ID
-monitoring.
-:::
-
 ![tenantenvironment](/images/auditor/10.9/admin/monitoringplans/tenantenvironment.webp)
 
 **Step 2 –** Select the authentication method to use when accessing Office 365 services:
