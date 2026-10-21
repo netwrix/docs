@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Customize Notifications
 
-GroupID generates a variety of notifications for different events, such as when someone changes
-a group, when workflows are triggered, and when profile validation is due for users. The
+GroupID generates notifications for different events, such as when someone changes
+a group, when workflows start, and when profile validation is due for users. The
 [Localization](/docs/directorymanager/11.0/gettingstarted.md#localization) topic lists the
 supported languages for notifications.
 

@@ -59,7 +59,7 @@ Passwordless authentication with QR code
 
 With the QR code option enabled for an identity store, users can scan the QR code with the
 GroupID mobile app on their smartphones to connect GroupID Admin Center or the GroupID portal to an
-identity store and sign in, without the need to provide a username and password.
+identity store and sign in, without providing a username and password.
 
 Core services deployment in Docker
 
@@ -96,8 +96,8 @@ In addition to basic authentication, GroupID 11 also supports modern authenticat
 
 Power Automate integration
 
-Link a workflow in an identity store to a Power Automate flow. When the GroupID workflow is
-triggered, GroupID automatically triggers the linked flow.
+Link a workflow in an identity store to a Power Automate flow. When the GroupID workflow
+starts, GroupID automatically triggers the linked flow.
 
 Admin Center history tracking
 
@@ -211,8 +211,8 @@ Synchronize policy
 
 Using the Synchronize policy, you can allow or disallow:
 
-- a provider to be used as a source or destination.
-- an identity store/data source to be used as a source or destination.
+- using a provider as a source or destination.
+- using an identity store/data source as a source or destination.
 
 You can choose the object types that a Synchronize job can create or sync at the destination. For each object type in an identity store and data source, you can also specify the attributes
 that will be available for mapping the source and destination fields in a Synchronize job.
@@ -225,8 +225,8 @@ _Create Job_ option isn't available to role members.
 
 Workflows support in Synchronize
 
-If a Synchronize job performs an operation in the destination identity store and a workflow is
-configured for that operation in that identity store, then GroupID generates a workflow request
+If a Synchronize job performs an operation in the destination identity store and a workflow exists
+for that operation in that identity store, then GroupID generates a workflow request
 when the job runs. If the approver approves the request, the job will run successfully. If the approver denies
 the request, you will be unable to run the job.
 
@@ -243,7 +243,7 @@ of the destination identity store.
 
 Notification server of destination
 
-If notifications are enabled for a Synchronize job, then Synchronize sends email notifications to
+If you enable notifications for a Synchronize job, then Synchronize sends email notifications to
 the specified recipients through the notification server of the destination identity store. If the destination
 identity store has no notification server configured, you can configure it while creating the
 job.

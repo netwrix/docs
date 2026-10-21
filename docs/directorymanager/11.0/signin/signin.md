@@ -112,7 +112,7 @@ code too. Use the QR code to sign into an identity store.
 
 The administrator can enable second factor authentication for a security role in an identity store.
 
-If enabled for your role in the identity store, you must pass second factor authentication after
+If the administrator enables it for your role in the identity store, you must pass second factor authentication after
 signing in via any of the [sign-in methods](#sign-in).
 
 For second factor authentication, one of the following applies:

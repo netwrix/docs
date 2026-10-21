@@ -7,7 +7,7 @@ sidebar_position: 1
 # Netwrix Directory Manager v11.0 Documentation
 
 Managing directory objects, such as Active Directory users and groups, is a continuous task.
-Employees move locations and change departments all the time, so IT professionals must constantly
+Employees move locations and change departments frequently, so IT professionals must constantly
 update security and distribution groups, often by hand.
 
 Directory Manager is an identity and access management (IAM) solution that automates these changes

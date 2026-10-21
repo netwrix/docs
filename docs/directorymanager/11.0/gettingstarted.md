@@ -42,11 +42,11 @@ another admin user in an identity store do so.
 Configure the following settings in Admin Center so that administrators and users can
 perform identity and access management tasks using GroupID:
 
-- **Create and configure identity stores** - An identity store is built on an identity provider. With an
+- **Create and configure identity stores** - You build an identity store on an identity provider. With an
   identity store, you can manage objects and object permissions in the provider. See the
   [Identity Stores](/docs/directorymanager/11.0/signin/identitystore/overview.md)
   topic for additional information.
-- **Create data sources** - A data source is built on a provider, such as directories, databases, and
+- **Create data sources** - You build a data source on a provider, such as directories, databases, and
   files. Synchronize jobs, query-based searches, and group membership queries use data sources as
   source and destination. See the
   [ Data Sources](/docs/directorymanager/11.0/signin/datasource/overview.md) topic.
