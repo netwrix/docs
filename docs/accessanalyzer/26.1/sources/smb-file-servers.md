@@ -160,7 +160,7 @@ One record per folder and per file. Shares don't have the timestamp, size, or at
 | `hidden` | `FileAttributes` hidden bit (`0x2`) | True when the object has the Hidden attribute. |
 | `isSystem` | `FileAttributes` system bit (`0x4`) | True when the object has the System attribute. |
 | `encrypted` | `FileAttributes` encrypted bit (`0x4000`) | True when the object is encrypted with the Encrypting File System (EFS). |
-| `ntfsFileId` | Directory listing `FileId` | The NTFS file ID, a number unique within the volume. It stays the same when the object is renamed or moved within the volume, so Access Analyzer uses it to recognize the object across scans. |
+| `ntfsFileId` | Directory listing `FileId` | The NTFS file ID, a number unique within the volume. It stays the same when someone renames or moves the object within the volume, so Access Analyzer uses it to recognize the object across scans. |
 | `isSymlink` | Reparse point tag | `true` when the object is a symbolic link; absent otherwise. The scan doesn't follow links. |
 | `permissionSourceId` | Security descriptors of the object and the folders above it | The share, folder, or file whose permission entries apply to this object: the object itself when it has explicit entries, blocks inheritance, or has no discretionary access control list (DACL); otherwise the nearest folder above it that does. Empty when the scan couldn't read a security descriptor the value depends on. |
 | `permissionSourceDepth` | Folder hierarchy | The number of levels between the object and its permission source: `0` when the object carries its own entries, `1` when they come from its parent folder, and so on. Empty when `permissionSourceId` is empty. |
@@ -174,7 +174,7 @@ One record for each access control list (ACL) the scan stores: the share-level p
 | `targetEntityId` | Object the ACL belongs to | The share, folder, or file the permission set applies to. |
 | `permissionGrantId` | Where the ACL comes from | `smb-share` for share-level permissions, read with `NetShareGetInfo` level 502; empty for NTFS permissions. |
 | `inheritsPermissions` | Security descriptor control flags | False when the object blocks inheritance from its parent or has no DACL; true otherwise. |
-| `isProtected` | `SE_DACL_PROTECTED` control flag | True when inheritance from the parent folder is turned off, also called broken inheritance. |
+| `isProtected` | `SE_DACL_PROTECTED` control flag | True when the object blocks inheritance from its parent folder, also called broken inheritance. |
 | `isNullDacl` | Security descriptor DACL offset | True when the security descriptor has no DACL at all. Windows then grants everyone full access to the object. |
 | `accessRights` | Access masks of the ACL's allow entries | A summary of what the allow entries grant, across all trustees: `FullControl` when any allow entry includes the Take ownership right, otherwise the matching subset of `Read`, `Write`, `Delete`, `Modify`, and `List`. `Modify` here means the right to change permissions. The summary ignores deny entries. |
 | `inheritanceFlags` | Access control entry (ACE) flags | Which child objects the entries can pass to, combined across all entries: `ContainerInherit` (subfolders), `ObjectInherit` (files), `ContainerInherit,ObjectInherit`, or `None`. |
@@ -196,7 +196,7 @@ One record for each access control entry (ACE) in a stored permission set. An ob
 | `deleteAllowed` | `DELETE` (`0x10000`) or mask bit `0x40`; `WRITE_OWNER` or `GENERIC_ALL` | True when the entry lets the trustee delete the object or the subfolders and files in it. |
 | `manageAllowed` | `WRITE_DAC` (`0x40000`) or `WRITE_OWNER` | True when the entry lets the trustee change the object's permissions. |
 | `adminAllowed` | `WRITE_OWNER` (`0x80000`) | True when the entry lets the trustee take ownership of the object. Full control includes this right. |
-| `inheritFlags` | ACE flags | Comma-separated flags: `I` when the entry is inherited from the parent folder, `OI` when files inherit it, and `CI` when subfolders inherit it, for example `I,OI,CI`. `None` when no flag is set. |
+| `inheritFlags` | ACE flags | Comma-separated flags: `I` when the object inherits the entry from its parent folder, `OI` when files inherit it, and `CI` when subfolders inherit it, for example `I,OI,CI`. `None` when no flag is set. |
 | `propagationFlags` | ACE flags | `InheritOnly` when the entry applies only to child objects and not to the object itself, `NoPropagateInherit` when it passes only to immediate children, both, or `None`. |
 | `aceOrdinal` | ACL order | The entry's position in its ACL, starting at `0`. Windows evaluates entries in this order. |
 | `aceKey` | ACE header | The entry's type, access mask, and flags in hexadecimal, as `<type>:<mask>:<flags>`, for example `00:001f01ff:13`. It tells apart several entries for the same trustee on one object. |

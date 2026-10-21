@@ -147,7 +147,7 @@ A Sensitive data scan on a File Server source has its own **Workers** field (1â€
 |---|---|---|---|
 | **Retention (days)** | 365 | 90â€“2555 | How long the audit log keeps its entries. Access Analyzer removes entries older than this from the audit log and its ClickHouse storage. |
 
-When you save a shorter retention, a **Remove older audit log entries?** dialog shows how many entries the change removes. Click **Remove entries and save** to confirm; Access Analyzer removes the entries as soon as you confirm. A copy stays in the legacy audit table until that table is retired, so lengthening the retention later can bring the entries back. If the number of entries changes while the dialog is open, a **The number of entries to delete changed** message asks you to review the new count and confirm again.
+When you save a shorter retention, a **Remove older audit log entries?** dialog shows how many entries the change removes. Click **Remove entries and save** to confirm; Access Analyzer removes the entries as soon as you confirm. A copy stays in the legacy audit table until Access Analyzer retires that table, so lengthening the retention later can bring the entries back. If the number of entries changes while the dialog is open, a **The number of entries to delete changed** message asks you to review the new count and confirm again.
 
 If Access Analyzer saves the new retention but can't reach the storage to remove the older entries, the message **Audit log retention saved, but not trimmed** appears. The audit log hides the older entries, and a notice under the setting offers **Trim now** to remove them when the storage is reachable.
 

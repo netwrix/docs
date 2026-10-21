@@ -83,7 +83,7 @@ Changing **Host** or **Domain** on an existing source shows the warning **Existi
 Success shows the message **Connection successful**. Failure shows **Connection failed** with the reason. These failures are common:
 
 - On port 389 with an IP address in **Host**, sign-in can fail; the message then starts with `DIGEST-MD5 and SIMPLE authentication failed` and asks you to use an FQDN instead of an IP address.
-- On port 636, a message that starts with `LDAPS/TLS handshake` means the TLS connection failed before sign-in. If it says the server responded but not with TLS, the port isn't an LDAPS port. If it says the handshake didn't complete, the connection was reset during the handshake: a TLS-inspecting proxy or endpoint security agent between the agent and the domain controller can cause this, as can a domain controller that doesn't offer LDAPS or, with **Enforce strict SSL validation** selected, a certificate that doesn't validate. Exempt the domain controller from TLS inspection, check that it offers LDAPS on 636 with a valid certificate, clear **Enforce strict SSL validation**, or connect on port 389 instead.
+- On port 636, a message that starts with `LDAPS/TLS handshake` means the TLS connection failed before sign-in. If it says the server responded but not with TLS, the port isn't an LDAPS port. If it says the handshake didn't complete, the connection reset during the handshake: a TLS-inspecting proxy or endpoint security agent between the agent and the domain controller can cause this, as can a domain controller that doesn't offer LDAPS or, with **Enforce strict SSL validation** selected, a certificate that doesn't validate. Exempt the domain controller from TLS inspection, check that it offers LDAPS on 636 with a valid certificate, clear **Enforce strict SSL validation**, or connect on port 389 instead.
 - On port 636, a message that starts with `Authentication failed` means the domain controller rejected the credentials. Check the service account's username and password.
 
 ## Sync Options
@@ -97,7 +97,7 @@ See [Scan types](../scans/scan-types.md) for how these options appear when you c
 
 ### Differential and Full Syncs
 
-With **Differential Scan** turned on, the first sync reads the whole domain and saves the domain controller's highest committed update sequence number (USN). Each later sync reads only the users, groups, and organizational units whose USN changed since the previous sync. When an organizational unit changes, for example because it was renamed or moved, the sync reads every user and group under it again so that their paths stay current.
+With **Differential Scan** turned on, the first sync reads the whole domain and saves the domain controller's highest committed update sequence number (USN). Each later sync reads only the users, groups, and organizational units whose USN changed since the previous sync. When an organizational unit changes, for example because someone renamed or moved it, the sync reads every user and group under it again so that their paths stay current.
 
 A sync reads the whole domain even with **Differential Scan** turned on in these cases:
 
@@ -126,7 +126,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 |---|---|---|
 | `name` | `displayName` for users, `name` for groups, falling back to `sAMAccountName` | The name reports show for the account or group. |
 | `sourceSystemId` | `objectSid` | The security identifier (SID), for example `S-1-5-21-1004336348-1177238915-682003330-1104`. File Server scans record permissions by SID, and reports match the two to show names. When an object has no readable SID, Access Analyzer stores its distinguished name instead. |
-| `objectGuid` | `objectGUID` | The object's GUID, which stays the same when the object is renamed or moved. |
+| `objectGuid` | `objectGUID` | The object's GUID, which stays the same when someone renames or moves the object. |
 | `adSamAccountName` | `sAMAccountName` | The pre-Windows 2000 logon name, for example `jane.roe`. For a user without one, Access Analyzer stores the common name. |
 | `description` | `description` | The object's description. |
 | `emailAddress` | `mail` | The email address, in lowercase. |
@@ -169,7 +169,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `passwordRequired` | Derived from `userAccountControl` | `false` when the account doesn't require a password (flag `0x20`), so it can have an empty password. |
 | `accountCannotBeDelegated` | Derived from `userAccountControl` | `true` when **Account is sensitive and cannot be delegated** is set (flag `0x100000`). |
 | `smartcardRequired` | Derived from `userAccountControl` | `true` when the user must sign in with a smart card (flag `0x40000`). |
-| `msDsUserAccountControlComputed` | `msDS-User-Account-Control-Computed` | Account flags that Active Directory calculates when queried, as a number, such as locked out (`16`) and password expired (`8388608`). Stored only when at least one flag is set. |
+| `msDsUserAccountControlComputed` | `msDS-User-Account-Control-Computed` | Account flags that Active Directory calculates when queried, as a number, such as locked out (`16`) and password expired (`8388608`). Access Analyzer stores it only when at least one flag is set. |
 | `passwordLastChanged` | `pwdLastSet` | When the password last changed. |
 | `forcePasswordChange` | Derived from `pwdLastSet` | `true` when the user must change the password at next sign-in. |
 | `accountExpires` | `accountExpires` | When the account expires. Empty when the account never expires. |
@@ -184,7 +184,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `logonWorkstations` | `userWorkstations` | The computers the user is allowed to sign in to, as a JSON list. Empty when sign-in isn't restricted to specific computers. |
 | `servicePrincipalName` | `servicePrincipalName` | The service principal names (SPNs) registered on the account, as a JSON list. An account with SPNs runs a service and is a target for Kerberoasting. |
 | `msDsAllowedToDelegateTo` | `msDS-AllowedToDelegateTo` | The services the account can act on behalf of other users to, for Kerberos constrained delegation, as a JSON list of SPNs. |
-| `msDsAllowedToActOnBehalfOf` | `msDS-AllowedToActOnBehalfOfOtherIdentity` | The accounts allowed to act on behalf of other users to this account, for resource-based constrained delegation. Stored without decoding, as a JSON list that holds the raw security descriptor bytes. |
+| `msDsAllowedToActOnBehalfOf` | `msDS-AllowedToActOnBehalfOfOtherIdentity` | The accounts allowed to act on behalf of other users to this account, for resource-based constrained delegation. Access Analyzer stores it without decoding, as a JSON list that holds the raw security descriptor bytes. |
 | `msDsSupportedEncryptionTypes` | `msDS-SupportedEncryptionTypes` | The Kerberos encryption types the account supports, as a number, for example `24` for AES128 and AES256. |
 
 ### Groups

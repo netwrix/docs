@@ -107,7 +107,7 @@ An **Identity sync** reads the whole tenant on every run; there's no differentia
 
 The sync reads users whose user type is **Member** or **Guest** and skips any other account, recording the count in the scan logs. It reads active role assignments, not eligible Privileged Identity Management (PIM) assignments. It also reads the tenant's organization details and initial domain to decide whether sign-in activity is available and to calculate password expiry dates, but it doesn't store them as records.
 
-The sync doesn't collect multi-factor authentication (MFA) status, account lock state, or the principal types a directory role can be assigned to, so report columns for them stay empty.
+The sync doesn't collect multi-factor authentication (MFA) status, account lock state, or the principal types you can assign a directory role to, so report columns for them stay empty.
 
 After each sync, a follow-up step refreshes the report tables. The synced data drives the [Identity reports](../dashboards-reports/reports/identity.md).
 
@@ -142,7 +142,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `azureAdUserType` | `userType` | `Member` for a user in the organization, or `Guest` for an external user. |
 | `azureAdCreationType` | Derived from `creationType` | How the account was created: `Standard` for a regular account, `Invitation` for an invited external user, `Local Account`, `Email Verified`, or `Self Service Sign Up`. Access Analyzer splits other values into words. |
 | `createdDate` | `createdDateTime` | When the account was created. |
-| `lastActive` | `signInActivity.lastSignInDateTime` | When the user last signed in interactively. Collected only when the tenant has a Microsoft Entra ID P1 or P2 license and the app registration has `AuditLog.Read.All`. |
+| `lastActive` | `signInActivity.lastSignInDateTime` | When the user last signed in interactively. Access Analyzer collects it only when the tenant has a Microsoft Entra ID P1 or P2 license and the app registration has `AuditLog.Read.All`. |
 | `passwordLastChanged` | `lastPasswordChangeDateTime` | When the user last changed or reset their password. |
 | `passwordExpiry` | Derived from `lastPasswordChangeDateTime`, `passwordPolicies`, and the initial domain's `passwordValidityPeriodInDays` | When the password expires: the last password change plus the password validity period of the tenant's initial domain. Empty when the user's password policies include `DisablePasswordExpiration` or when the domain's passwords never expire. |
 | `forcePasswordChange` | Derived from `passwordProfile.forceChangePasswordNextSignIn` and `passwordProfile.forceChangePasswordNextSignInWithMfa` | `true` when the user must change their password at the next sign-in. |
@@ -163,10 +163,10 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `description` | `description` | The group's description. |
 | `emailAddress` | `mail` | The group's email address. |
 | `azureAdGroupType` | Derived from `groupTypes`, `securityEnabled`, and `mailEnabled` | `Microsoft365` for a Microsoft 365 group, `Security` for a security group without email, `MailEnabledSecurity` for a mail-enabled security group, or `Distribution` for a distribution group. |
-| `isSecurityEnabled` | `securityEnabled` | `true` when the group is a security group that can be granted access. |
+| `isSecurityEnabled` | `securityEnabled` | `true` when the group is a security group that you can grant access to. |
 | `isMailEnabled` | `mailEnabled` | `true` when the group can receive email. |
 | `dynamicMembershipEnabled` | Derived from `groupTypes`, `membershipRuleProcessingState`, and `membershipRule` | `true` when the group has dynamic membership, its rule processing is on, and it has a rule. |
-| `dynamicMembershipRule` | `membershipRule` | The rule that decides a dynamic group's members, for example `user.department -eq "Sales"`. Stored only when `dynamicMembershipEnabled` is `true`. |
+| `dynamicMembershipRule` | `membershipRule` | The rule that decides a dynamic group's members, for example `user.department -eq "Sales"`. Access Analyzer stores it only when `dynamicMembershipEnabled` is `true`. |
 | `memberCount` | Derived from `members` | The number of direct members. The count excludes owners and nested members. |
 | `onPremisesSyncEnabled` | `onPremisesSyncEnabled` | `true` when the group is synchronized from an on-premises directory. |
 | `syncedSourceObjectId` | Derived from `onPremisesDomainName` and `onPremisesSecurityIdentifier` | For a synchronized group, the on-premises domain name and the group's SID separated by `\|`. |
@@ -183,7 +183,7 @@ Each record also carries identifiers and timestamps that Access Analyzer uses to
 | `azureRoleTemplateId` | `templateId` | The ID of the template the role is based on. Built-in roles have the same template ID in every tenant. |
 | `azureRoleVersion` | `version` | The role definition's version. |
 | `isBuiltIn` | `isBuiltIn` | `true` for a role Microsoft provides, or `false` for a custom role. |
-| `isEnabled` | `isEnabled` | `true` when the role can be assigned. |
+| `isEnabled` | `isEnabled` | `true` when you can assign the role. |
 | `isPrivileged` | `isPrivileged` | `true` when Microsoft classifies the role as privileged. |
 
 ### Memberships

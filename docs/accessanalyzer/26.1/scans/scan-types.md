@@ -28,11 +28,11 @@ The inventory is also what a Sensitive data scan works from, so run an Access sc
 | **Exclude system shares** | On | Skips Windows administrative and system shares: `ADMIN$`, `PRINT$`, `FAX$`, `SYSVOL`, `NETLOGON`, and drive-letter shares such as `C$`. The scan always skips `IPC$`. |
 | **Exclude hidden shares** | Off | Skips hidden shares: shares whose names end in `$` but that aren't system shares, such as `Finance$`. |
 | **Include shares** | Empty | Share names to scan. When the list has entries, the scan skips share discovery, scans only the shares you name, and ignores **Exclude shares**, **Exclude system shares**, and **Exclude hidden shares**. Leave it empty to scan every share the account can reach. |
-| **Exclude shares** | Empty | Share names to skip, matched exactly, including case. The list doesn't accept wildcards. Ignored when **Include shares** lists shares. |
+| **Exclude shares** | Empty | Share names to skip, matched exactly, including case. The list doesn't accept wildcards. The scan ignores this list when **Include shares** lists shares. |
 | **Maximum scan depth** | 50 | How many folder levels below the share root to record, 1 or more. This guards against endless recursion. At 1, the scan records the folders and files directly in each share but doesn't open those folders. |
 | **Enable File-Level Permission Scanning** | Off | Collects the owner and permissions of individual files as well as folders. |
 
-Type a share name and press Enter, or type a comma, to add it to a share list. You can also paste several names separated by commas or line breaks. A list skips a name it already holds, ignoring case. The share settings take share names only; there is no setting for individual folder paths. See [SMB file servers](../sources/smb-file-servers.md#access-scans) for how Access scans treat each kind of share.
+Enter a share name and press Enter, or type a comma, to add it to a share list. You can also paste several names separated by commas or line breaks. A list skips a name it already holds, ignoring case. The share settings take share names only; there is no setting for individual folder paths. See [SMB file servers](../sources/smb-file-servers.md#access-scans) for how Access scans treat each kind of share.
 
 ### SharePoint Online Settings
 
@@ -75,9 +75,9 @@ Changes to these settings reach the scanning service within five minutes and app
 |---|---|---|
 | **Workers** | 3 | Concurrent workers reading file content, from 1 to 20. Leave it at 3 and the scan uses **Classification workers** on the **Classification** card of **Settings > Application** (default 15). Set any other value to use that number for this scan. |
 | **Include shares** | Empty | Share names to classify, matched ignoring case. When the list has entries, the scan classifies only those shares and ignores the other share settings. Leave it empty to classify every share the Access scan collected. |
-| **Exclude shares** | Empty | Share names to skip, matched ignoring case. Ignored when **Include shares** lists shares. |
-| **Exclude system shares** | On | Skips the same system shares as the Access scan setting, such as `ADMIN$` and `C$`. Ignored when **Include shares** lists shares. |
-| **Exclude hidden shares** | Off | Skips hidden shares, such as `Finance$`. Ignored when **Include shares** lists shares. |
+| **Exclude shares** | Empty | Share names to skip, matched ignoring case. The scan ignores this list when **Include shares** lists shares. |
+| **Exclude system shares** | On | Skips the same system shares as the Access scan setting, such as `ADMIN$` and `C$`. The scan ignores this setting when **Include shares** lists shares. |
+| **Exclude hidden shares** | Off | Skips hidden shares, such as `Finance$`. The scan ignores this setting when **Include shares** lists shares. |
 | **Differential scan** | Off | Reads only files that are new, or whose last-modified time changed, since this scan last classified them. |
 
 Turn on **Differential scan** for a recurring scan after the first full pass finishes. The first run still reads everything, because the scan hasn't classified anything yet; later runs then touch only what changed. Each scan keeps its own record of what it classified, so a new scan reads every file again on its first run.
