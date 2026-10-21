@@ -33,7 +33,7 @@ With this scheme, a scan targeting `env=production` and `data=confidential` cove
 ## Ways to Set Labels
 
 - In the **Labels** field in the **Details** section of the source form, when you add or edit a source. See [Add a source](index.md#add-a-source).
-- In bulk: select several sources on the Sources page and click **Edit labels**. See [Edit labels on several sources](#edit-labels-on-several-sources).
+- In bulk: select several sources on the Sources page and click **Update labels**. See [Update labels on several sources](#update-labels-on-several-sources).
 - In a CSV import: the `labels` column takes `key=value` pairs separated by `;`. See [Import sources from a CSV file](import-sources.md).
 
 ### The Label Editor
@@ -52,10 +52,10 @@ The editor rejects mistakes inline:
 | **Label key must be at most 63 characters** / **Label value must be at most 255 characters** | Too long |
 | **Label key must not contain "=", ";", or ","** (or the value equivalent) | A forbidden character |
 
-## Edit Labels on Several Sources
+## Update Labels on Several Sources
 
 1. On the Sources page, select the sources with the row checkboxes.
-2. In the bulk action bar, click **Edit labels**. The dialog title shows how many sources you're editing.
+2. In the bulk action bar, click **Update labels**. The dialog title shows how many sources you're editing.
 3. Under **Add labels**, enter the labels every selected source should get.
 4. Under **Remove labels**, select the labels to remove. The list offers only labels that at least one selected source carries. If none of the selected sources has a label, the field reads **The selected sources have no labels to remove.**
 5. Click **Apply to N sources**. The button shows the number of sources you selected, for example **Apply to 3 sources**.
@@ -64,7 +64,7 @@ You must add or remove at least one label. If an addition would take a source pa
 
 ## Filter the Sources Page by Labels
 
-The **Filter by labels (all must match)** box in the Sources toolbar takes one or more labels and shows only the sources that carry every one of them. Selecting `env=production` and `team=finance` shows the sources that have both, not either. The page URL carries the active filter, so you can bookmark a filtered view or send the link to a colleague. Click **Clear filters** to remove it and any other active filter.
+The **Filter by labels…** box in the Sources toolbar takes one or more labels and shows only the sources that carry every one of them. Selecting `env=production` and `team=finance` shows the sources that have both, not either. The page URL carries the active filter, so you can bookmark a filtered view or send the link to a colleague. Click **Clear filters** to remove it and any other active filter.
 
 ## Target Scans at Labels
 
