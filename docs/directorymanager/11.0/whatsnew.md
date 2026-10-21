@@ -37,7 +37,7 @@ GroupID 11 is a web-based application. It has two portals:
 
 Elasticsearch support
 
-Earlier you could only use Elasticsearch deployed by GroupID. Now you can use your own instance of
+Earlier you could only use the Elasticsearch instance that GroupID deployed. Now you can use your own instance of
 Elasticsearch. GroupID 11 supports Elasticsearch v 8.0.0.
 
 GroupID as an identity provider

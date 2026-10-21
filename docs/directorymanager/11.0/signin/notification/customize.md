@@ -122,7 +122,7 @@ will show the email address of the requester, and so on.
 
 ##### Complete List of Tags
 
-Here is a complete list of tags for object attributes. Netwrix doesn't recommend using
+The following table lists all tags for object attributes. Netwrix doesn't recommend using
 other tags. By using a tag, you can display an attribute’s value in the notification.
 
 |     | Variable         | Description                                                                                                                        |
