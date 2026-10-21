@@ -38,7 +38,7 @@ export function privilegeSecureDiscoveryLegacyPaths(existingPath) {
 // page, so there is never a chain of two hops. Add a line here whenever a page
 // moves or is renamed again.
 const PAGE_MAP = {
-  "kb/system-configuration-and-requirements/generate-license-counts-with-cli-command": "kb",
+  "kb/system-configuration-and-requirements/generate-license-counts-with-cli-command": "admin/licensing",
   "administration/configuration/accountinventorycolors": "configuration/interface/account-inventory-colors",
   "administration/configuration/addadomain": "configuration/domains-and-ad/add-a-domain",
   "administration/configuration/addcertificateauthority": "appendix/legacy-iso/add-a-certificate-authority",
@@ -148,7 +148,7 @@ const PAGE_MAP = {
 // Knowledge Base articles are also published outside the product path, at
 // /docs/kb/privilegesecurediscovery. A removed article needs a redirect there too.
 const REMOVED_KB_ARTICLES = {
-  'system-configuration-and-requirements/generate-license-counts-with-cli-command': '/docs/kb/privilegesecurediscovery',
+  'system-configuration-and-requirements/generate-license-counts-with-cli-command': '/docs/privilegesecurediscovery/admin/licensing',
   'authentication-and-access/saml-assertion-not-yet-valid': '/docs/privilegesecurediscovery/configuration/authentication-and-sso/saml-sso-reference',
 };
 

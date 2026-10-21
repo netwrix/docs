@@ -5,8 +5,6 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Update the cluster diagram, which still lists "NTP UDP 123", "RADIUS UDP 1812, if used", and fixed syslog ports "UDP 514 or TCP 6514". Evidence: the code sends no NTP traffic from the product, the RADIUS port is the UDP port the administrator enters, and the syslog port is the customer collector's port, as the Ports and firewall page states.
-
 TODO: Confirm whether customers may use the Windows bridge services (`windows-bridge` and `windows-bridge-proxy`) and who enables them. Evidence: the `windows_bridge` release toggle is `enabled: false` on a 26.09.1 stack, and the bridge README calls it a preview feature that is disabled by default.
 :::
 
