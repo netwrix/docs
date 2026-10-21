@@ -1,5 +1,5 @@
 ---
-title: "Single sign-On (SSO)"
+title: "Single sign-on (SSO)"
 description: "Configure Microsoft Entra ID Single sign-on (SSO) so users sign in to the Netwrix Password Secure Windows components without entering credentials again."
 sidebar_position: 9
 ---
@@ -23,15 +23,15 @@ The information on this page is valid for version **26.10.10** and newer.
 
 ## Configure Microsoft Entra ID
 
-To configure SSO, you expose an API on the app registration, authorize the app to use it, and grant admin consent. For this, sign in to the [Azure portal](https://portal.azure.com/#azure-portal), navigate to your Entra ID, and open the app registration for Netwrix Password Secure.
+To configure SSO, you expose an API on the app registration, authorize the app to use it, and grant admin consent. For this, sign in to the [Azure portal](https://portal.azure.com/#azure-portal), go to **Microsoft Entra ID** > **App registrations**, and select the app registration for Netwrix Password Secure. If it isn't listed, select **All applications**.
 
 ### Expose an API
 
 1. Select **Expose an API**.
-2. Add an Application ID URI if none exists.
+2. If **Application ID URI** has no value, click **Add** next to it, keep the default value (`api://<application-client-id>`), and click **Save**.
 3. Click **Add a scope**.
 4. Enter `passwordsecure.sso.auth` as the scope name.
-5. Under **Who can consent?**, select **Admins only**.
+5. Under **Who can consent?**, select **Admins only**. Also, enter an **Admin consent display name** and an **Admin consent description**.
 6. Set the state to **Enabled**.
 7. Click **Add scope**.
 
@@ -40,7 +40,7 @@ To configure SSO, you expose an API on the app registration, authorize the app t
 ### Authorize the client application
 
 1. On the **Expose an API** page, under **Authorized client applications**, click **Add a client application**.
-2. In **Client ID**, enter the Application (client) ID of the Netwrix Password Secure app registration.
+2. In **Client ID**, enter the Application (client) ID of the same Netwrix Password Secure app registration. You can copy this value from the app registration's **Overview** page.
 3. Select the `passwordsecure.sso.auth` scope.
 4. Click **Add application**.
 
@@ -78,4 +78,4 @@ On the **API permissions** page, click **Grant admin consent for** your organiza
 
    ![User right for users and roles](/images/passwordsecure/current/entra_id_sso/7_User-right.webp)
 
-After you complete both steps, users with the permission sign in to the Windows App and the Autofill add-on using SSO from a Microsoft Entra ID joined device.
+After you complete both steps, users who have this user right can sign in to the Windows App and the Autofill add-on with SSO from a Microsoft Entra ID joined device.

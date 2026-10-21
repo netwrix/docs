@@ -9,14 +9,14 @@ sidebar_position: 3
 - Netwrix Password Secure now supports Italian (AI translation).
 
 ### Windows App and Autofill add-on
-- Users provisioned from Microsoft Entra ID can now sign in to the Windows components using single sign-on (SSO) if they authenticate on a Microsoft Entra ID joined device. [Setup instructions](/docs/passwordsecure/current/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/entraidconnection/entra_id_sso.md)
+- Users provisioned from Microsoft Entra ID can now sign in to the Windows components using single sign-on (SSO) if they authenticate on a Microsoft Entra ID joined device. For more information, see [Single sign-on (SSO)](/docs/passwordsecure/current/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/entraidconnection/entra_id_sso.md).
 
 ## Fixed
 ### All components
 - Missing or wrong translations in the Autofill add-on, Offline add-on, Server Manager, Web App (Advanced view), Web App (Basic view), and Windows App no longer appear.
 
 ### Server
-- The new password loading method reduces SQL timeouts when you apply a filter.
+- Applying a filter no longer causes SQL timeouts when passwords load.
 
 ### Server and Server Manager
 - An issue with stored permissions to historical data, which also affected the migration to elliptic curve cryptography (ECC), no longer occurs.
