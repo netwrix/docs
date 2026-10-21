@@ -30,7 +30,7 @@ Complete these steps during a scheduled downtime window or a support call, in ca
 
 ## Instructions
 
-1. Connect to the server that runs the product over SSH, using an account with sudo access.
+1. Using an account with sudo access, connect over SSH to the server that runs the product.
 
 2. Back up the current configuration file:
 
@@ -44,11 +44,7 @@ Complete these steps during a scheduled downtime window or a support call, in ca
    sudo grep -C4 host /secureone/conf/fluentd/fluent.conf
    ```
 
-   > **NOTE:** If the command returns no results, review the full file to confirm that the required entries exist:
-   >
-   > ```bash
-   > sudo cat /secureone/conf/fluentd/fluent.conf
-   > ```
+    > **NOTE:** The default `fluent.conf` doesn't forward logs, so it has no `<match docker.**>` section and the command returns no results. In that case, add the output from [Forward Logs to Syslog Servers and SIEM Solutions](/docs/privilegesecurediscovery/integrations/siem/forward-logs) instead of editing an existing one. To review the full file, run `sudo cat /secureone/conf/fluentd/fluent.conf`.
 
 4. Update the IP address or hostname, port, and protocol in a text editor such as `vi`, `vim`, or `nano`. For example:
 
@@ -56,7 +52,7 @@ Complete these steps during a scheduled downtime window or a support call, in ca
    sudo vim /secureone/conf/fluentd/fluent.conf
    ```
 
-5. Repeat step 3 to confirm that the file was updated and saved correctly.
+5. Repeat step 3 to confirm that your edit saved correctly.
 
 6. Restart the Fluentd service:
 
@@ -64,7 +60,7 @@ Complete these steps during a scheduled downtime window or a support call, in ca
    s1 restart fluentd
    ```
 
-7. Confirm that logs are flowing:
+7. Confirm that logs are flowing. Run this command on a Swarm manager node, because `docker service logs` works only there:
 
    ```bash
    sudo docker service logs --tail 50 --follow s1_fluentd

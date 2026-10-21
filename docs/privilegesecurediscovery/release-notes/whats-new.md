@@ -25,7 +25,7 @@ New features and changes:
 - The MongoDB upgrade cutover accepts a `--yes` (or `--non-interactive`) option, so you can run it without prompts.
 - The database status command shows the active MongoDB service and its running version.
 - Remote execution supports Python 3.13 on managed Linux systems.
-- The **Default EDR for Entra ID Exclusive Systems** setting is removed.
+- The release removes the **Default EDR for Entra ID Exclusive Systems** setting.
 
 Improvements and fixes:
 
@@ -33,12 +33,12 @@ Improvements and fixes:
 - The product creates and maintains database indexes explicitly, which improves query performance and startup consistency.
 - The MongoDB upgrade run, status, and cutover states are clearer, and the database selection persists through the next deployment.
 - Deployments block a database version the installed MongoDB can't serve, and block upgrades to releases that require MongoDB 8.0 until you complete the migration.
-- The product blocks deleting an EDR provider that is assigned to a Microsoft Entra ID domain.
+- The product blocks deleting an EDR provider that you assigned to a Microsoft Entra ID domain.
 - Hybrid identity records keep a separate value for each field, and the update repairs corrupted records.
-- Third-party components in the web interface, API, and platform services are updated to address known security issues.
+- The release updates third-party components in the web interface, API, and platform services to address known security issues.
 
 :::important
-The ISO-based installation is deprecated. Use the container-based deployment for new installations. If you run an ISO deployment, contact Netwrix Support to plan your migration.
+Netwrix deprecated the ISO-based installation. Use the container-based deployment for new installations. If you run an ISO deployment, contact Netwrix Support to plan your migration.
 :::
 
 ## Version 26.09.0
@@ -54,9 +54,9 @@ New features:
 
 Improvements and fixes:
 
-- Updated web assets load after an upgrade, so cached files no longer hide interface changes.
-- Domain selectors in Access Risk are sorted alphabetically.
-- On **Configure** > **Services**, the API service **Stop** control is disabled and states the reason.
+- After an upgrade, the browser loads the updated web assets, so cached files no longer hide interface changes.
+- Domain selectors in Access Risk list domains alphabetically.
+- On **Configure** > **Services**, the API service **Stop** control is disabled and shows the reason.
 - Dashboard, sign-in, and error screens use current product naming.
 
 To migrate an existing MongoDB 4.0 deployment, see [Upgrade MongoDB 4.0 to 8.0 for Privilege Secure for Discovery](https://community.netwrix.com/t/upgrade-mongodb-4-0-to-8-0-for-privilege-secure-for-discovery/149078). MongoDB 4.0 support will end and the backend will move to Python 3.13 in a future release, so complete the migration on 26.09.0 or 26.09.1 first.

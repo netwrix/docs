@@ -22,12 +22,6 @@ tags:
 - system-configuration-and-requirements
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: NTP is listed as TCP/123 and RADIUS as TCP/1812, as in the original article. These protocols normally use UDP (UDP/123 and UDP/1812). Confirm which transport the product uses. Evidence: none.
-
-TODO: Confirm that the syslog ports (UDP/514 and TCP/6514) match the forward-logs configuration in 26.09.1. Evidence: none.
-:::
-
 # Port, Firewall, and Datacenter Requirements
 
 ## Overview
@@ -39,12 +33,12 @@ This article lists the network, load balancer, SSL certificate, and firewall req
 ### IP Addresses
 
 - Each host picks up an IP address through DHCP.
-- A static IP address is required for production use.
+- Production use needs a static IP address.
 - The product uses non-routable link-local addresses, also known as Automatic Private IP Addressing (APIPA), for internal Docker networking.
 
 ### Production and Test Environments: Load Balancers
 
-- Depending on the HA and DR configuration, one or more load balancers are required in front of each environment, for example one for production, one for QA, and one for development.
+- Place one or more load balancers in front of each environment, depending on your high availability (HA) design. For example, use one for production, one for QA, and one for development.
 - Traffic pattern: Distribute traffic round-robin among all active nodes, which are the nodes with an active heartbeat.
 - Heartbeat: Detect whether a node is alive based on the response on port `443`.
 - Add header: Configure the load balancer to add the `X-Forwarded-For` header.
@@ -52,7 +46,7 @@ This article lists the network, load balancer, SSL certificate, and firewall req
 ### SSL Certificates
 
 - To provide HTTPS connectivity, issue and install an SSL certificate on each server.
-- The SSL certificates must have the load-balanced hostname in the Common Name (CN), have it as a Subject Alternative Name (SAN), or be issued as a wildcard certificate.
+- Each SSL certificate must contain the load-balanced hostname in the Common Name (CN) or as a Subject Alternative Name (SAN), or it must be a wildcard certificate.
 
 ### WAN Accelerators
 
@@ -65,25 +59,22 @@ WAN accelerators can affect scan times and function. Exclude the nodes from WAN 
 - ICMP
 - Windows devices:
   - `TCP/445`: Connect over SMB, negotiating the highest SMB version that the system supports, including SMB 3.1.1, and authenticate. The product then uses Microsoft Remote Procedure Call (MSRPC) services over that SMB connection for scanning, policy enforcement, and provisioning administrative privileges.
-- UNIX devices: SSH (`TCP/22`)
-- macOS devices: SSH (`TCP/22`)
+- Linux devices: SSH (`TCP/22`), with the SFTP subsystem enabled on the SSH server
 
 ### Domain Controller
 
 - LDAP (`TCP/389`) or LDAPS (`TCP/636`)
 - Kerberos (`TCP/88` and `UDP/88`)
 
-### NTP Host
+### Time Source
 
-> **NOTE:** In most configurations, NTP is available on the domain controller. In other configurations, the product might need to contact an internet-based NTP host.
-
-Outbound NTP (`TCP/123`)
+The product doesn't send NTP traffic itself. The host operating system keeps the clock, and Kerberos authentication fails when the clocks differ by more than the allowed skew. Allow outbound NTP (`UDP/123`) from each node to the time source that the host's time service uses.
 
 ### RADIUS
 
-> **NOTE:** RADIUS is required only if you use it for second-factor authentication.
+> **NOTE:** You need RADIUS only if you use it for second-factor authentication.
 
-RADIUS (`TCP/1812`)
+RADIUS on the UDP port that you enter in the RADIUS settings. The common port is `UDP/1812`.
 
 ### SAML
 
@@ -91,9 +82,8 @@ HTTPS (`TCP/443`)
 
 ### Management Workstations to the UI
 
-- HTTP (`TCP/80`) for web access
-- HTTPS (`TCP/443`) for web access
-- SSH (`TCP/22`), limited to maintenance activities only
+- HTTPS (`TCP/443`) for web access. The product doesn't serve the web interface over HTTP, so you don't need to open `TCP/80`.
+- SSH (`TCP/22`), for maintenance activities only
 
 ### API Access
 
@@ -101,8 +91,7 @@ Inbound HTTPS (`TCP/443`)
 
 ### SIEM Server
 
-- Syslog (`UDP/514` and `TCP/6514`)
-- Protocols other than syslog are also supported and might require other ports.
+The port and protocol are the ones that your collector listens on and that you set in the Fluentd configuration. Syslog collectors commonly use `UDP/514`, `TCP/514`, or `TCP/6514` (syslog over TLS). Other collectors, such as the Splunk HTTP Event Collector, use their own ports.
 
 ### HA Cluster Nodes
 
@@ -115,11 +104,6 @@ Inbound HTTPS (`TCP/443`)
   ```bash
   iptables -A INPUT -p 50 -j ACCEPT
   ```
-
-### Primary Nodes and DR Nodes
-
-- SCP (`TCP/22`) for periodically copying the database backup file.
-- A bilateral connection is recommended to facilitate failback from DR to production nodes.
 
 ### Update Server
 
