@@ -130,8 +130,8 @@ other tags. By using a tag, you can display an attribute’s value in the notifi
 | 1.  | TARGETOBJECT     | Can be any object (user/group/contact) that is under consideration in a notification.                                              |
 | 2.  | REQUESTER        | The user object who makes a workflow request.                                                                                      |
 | 3.  | APPROVER         | The approver in workflow notifications.                                                                                            |
-| 4.  | ANOTHER_APPROVER | An approver, other than the APPROVER, who performs an action on the workflow request (as there can be multiple approvers). |
-| 5.  | BEHALFEDPERSON   | The user whose manager makes join/leave requests on their behalf.                                                                |
+| 4.  | ANOTHER_APPROVER | An approver, other than the APPROVER, who performs an action on the workflow request (as there can be multiple approvers).         |
+| 5.  | BEHALFEDPERSON   | The user whose manager makes join/leave requests on their behalf.                                                                  |
 | 6.  | RECEIVER         | The receiver of a notification.                                                                                                    |
 | 7.  | AUTHOR           | A user who creates/modifies/deletes an object.                                                                                     |
 | 8.  | USER             | A user object under consideration in password-related notifications.                                                               |
