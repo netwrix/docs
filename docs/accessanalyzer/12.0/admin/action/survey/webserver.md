@@ -51,7 +51,7 @@ To enable HTTPS:
 - `keystoreType` – Must be `PKCS12` for a PFX file
 
 :::warning
-The PFX password is stored in plain text in `server.xml`. Restrict access to this file to administrators and the account that runs the **StealthAUDITSurvey** service.
+The `server.xml` file stores the PFX password in plain text. Restrict access to this file to administrators and the account that runs the **StealthAUDITSurvey** service.
 :::
 
 **Step 4 –** Save the file, then restart the **StealthAUDITSurvey** service.
