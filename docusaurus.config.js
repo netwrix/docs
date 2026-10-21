@@ -93,12 +93,16 @@ const config = {
   // own plugin instance regardless of filtering, so those stay strict to catch
   // real mistakes during single-product iteration.
   onBrokenLinks: targetProduct ? 'warn' : 'throw',
-  onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
 
   // Set Mermaid
   markdown: {
     mermaid: true,
+    // Moved here from the deprecated top-level onBrokenMarkdownLinks option
+    // (removed in Docusaurus v4).
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
     // Strip trailing periods from title/sidebar_label in generated API operation pages.
     // The OpenAPI summaries often end with a period; Docusaurus uses title as the
     // prev/next pagination label, so this cleans up navigation text site-wide.
