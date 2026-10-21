@@ -1,87 +1,99 @@
 ---
-title: "Extract a certificate and key from a PFX file"
-description: "Identify certificate file formats and use OpenSSL to extract the certificate and private key that Privilege Secure for Discovery needs."
+title: "Prepare the certificate and key files"
+description: "Learn which certificate and key the product accepts, and use OpenSSL to convert a PFX, DER, or PKCS#7 file to the PEM text that Privilege Secure for Discovery needs."
 sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm which PEM-format fields the **Configure** > **Server** certificate section accepts at 26.09.1 (certificate, key, chain). Evidence: none.
+TODO: Confirm the minimum RSA key size that the product accepts. Evidence: none; `ssl-validator` accepted a 2048-bit key in testing, and the page recommends 2048 bits or more.
+
+TODO: Confirm that the product serves the whole text that you paste, so that the intermediate certificates reach the browser. Evidence: initServerTls.js passes the stored certificate text to `https.createServer`; a test with a server certificate followed by a CA certificate returned both certificates to a client.
 :::
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: The source page showed a third-party image of an OpenSSL command prompt that no longer loads. The image was removed; capture a screenshot of the OpenSSL prompt if one is needed.
-:::
+A certificate authority (CA) can return a certificate and key in several file formats. Privilege Secure for Discovery needs both in PEM format. This page lists what the product accepts, and shows how to convert the other formats with OpenSSL. The commands work with OpenSSL 3.0, which Ubuntu Server 24.04 includes.
 
-A certificate authority (CA) can return a certificate and key in several file formats. Privilege Secure for Discovery needs the certificate and key in PEM format. This page describes the formats and shows how to extract the PEM files from a PFX file with OpenSSL.
+## What the product accepts
+
+The **Server Certificate** panel in **Configure** > **Server** checks the key and the certificate when you paste them. The panel accepts a pair only when it meets all of the following requirements:
+
+- The key is an RSA key. The panel rejects EC keys.
+- The key has no password. The panel rejects a key that begins with `-----BEGIN ENCRYPTED PRIVATE KEY-----`. It accepts both `-----BEGIN PRIVATE KEY-----` and `-----BEGIN RSA PRIVATE KEY-----`.
+- The key and the certificate are PEM text that starts at a `-----BEGIN` line and ends at an `-----END` line. Any other text, such as the `Bag Attributes` lines that OpenSSL writes when it extracts a PFX file, makes the panel reject the file.
+- The key matches the first certificate.
+- The certificate field holds the server certificate first, followed by any intermediate certificates, one after the other. The product sends the whole text to browsers. A certificate field that starts with the CA certificate doesn't match the key.
+
+A certificate that has no Subject Alternative Names (SANs) passes this check, but browsers reject it. See [Create a CSR](./create-a-csr.md).
 
 ## Certificate file formats
 
 | Format | Extensions | Contents |
 | --- | --- | --- |
-| PEM | `.pem`, `.crt`, `.cer`, `.key` | Base64 ASCII text. Preferred format. |
-| PKCS#12 (PFX) | `.pfx`, `.p12` | Binary. Server certificate, intermediate certificates, and private key in one password-protected file. |
-| PKCS#7 | `.p7b`, `.p7c` | Base64 ASCII text. Certificates only, no private key. |
-| DER | `.der`, `.cer` | Binary. Mainly used by Java-based web servers. |
-
-### PEM format
-
-Most CAs provide certificates in PEM format. A `.pem` file can hold the server certificate, the intermediate certificate, and the private key. The server and intermediate certificates can also be in a separate `.crt` or `.cer` file, and the private key in a `.key` file. Open PEM files in any text editor. PEM is the preferred format for the certificate and key that you enter in the Privilege Secure for Discovery interface.
+| PEM | `.pem`, `.crt`, `.cer`, `.key` | Base64 text. The format that the product needs. |
+| PKCS#12 (PFX) | `.pfx`, `.p12` | Binary. The server certificate, intermediate certificates, and private key in one password-protected file. Common on Windows. |
+| PKCS#7 | `.p7b`, `.p7c` | Base64 text. Certificates only, with no private key. |
+| DER | `.der`, `.cer` | Binary. Java-based servers mainly use it. |
 
 PEM files use the following markers.
 
 | Item | Begin marker | End marker |
 | --- | --- | --- |
 | Certificate | `-----BEGIN CERTIFICATE-----` | `-----END CERTIFICATE-----` |
-| Private key | `-----BEGIN RSA PRIVATE KEY-----` | `-----END RSA PRIVATE KEY-----` |
+| Private key | `-----BEGIN PRIVATE KEY-----` or `-----BEGIN RSA PRIVATE KEY-----` | The matching `END` line |
+| Encrypted private key | `-----BEGIN ENCRYPTED PRIVATE KEY-----` | `-----END ENCRYPTED PRIVATE KEY-----` |
 | Certificate signing request | `-----BEGIN CERTIFICATE REQUEST-----` | `-----END CERTIFICATE REQUEST-----` |
 
-### PKCS#12 format
+## Convert a PFX file to PEM
 
-PKCS#12 certificates are binary files with the `.pfx` or `.p12` extension. A single file stores the server certificate, the intermediate certificate, and the private key, protected by a password. PKCS#12 is mainly used on Windows.
+Run the commands on a computer that has OpenSSL. On Windows, use an OpenSSL build for Windows. See the [OpenSSL project](https://www.openssl.org/).
 
-### PKCS#7 format
-
-PKCS#7 is the Cryptographic Message Syntax Standard. Files use Base64 ASCII encoding with the `.p7b` or `.p7c` extension and store certificates only, not private keys. A PKCS#7 file is contained between the `-----BEGIN PKCS7-----` and `-----END PKCS7-----` markers.
-
-### DER format
-
-DER certificates are binary files with the `.der` or `.cer` extension.
-
-## Extract the key and certificate from a PFX file
-
-### Prerequisites
-
-OpenSSL installed on the computer that has the PFX file. On Windows, use an OpenSSL build for Windows, such as the one linked from the [OpenSSL project](https://www.openssl.org/) wiki, and run the commands in a Command Prompt that you open as an administrator in the OpenSSL `bin` folder.
-
-### Procedure
-
-1. Open a terminal and go to the folder that contains the `.pfx` file.
-2. Extract the private key.
+1. Go to the folder that has the PFX file.
+2. Extract the private key without a password, and write it as clean PEM. The command asks for the password of the PFX file.
 
    ```bash
-   openssl pkcs12 -in <file>.pfx -nocerts -out <name>.key
+   openssl pkcs12 -in <file>.pfx -nocerts -nodes | openssl pkey -out server.key
    ```
 
-   Enter the password that protects the PFX file. Then enter a new password to protect the `.key` file, and store that password securely.
-
-3. Extract the certificate.
+3. Extract the certificates, and keep only the PEM blocks.
 
    ```bash
-   openssl pkcs12 -in <file>.pfx -clcerts -nokeys -out <name>.crt
+   openssl pkcs12 -in <file>.pfx -nokeys | sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' > fullchain.crt
    ```
 
-4. Remove the password from the private key. Privilege Secure for Discovery needs an unencrypted key.
+   `fullchain.crt` has the server certificate first, followed by the intermediate certificates. Open the file in a text editor, and confirm that the server certificate is first. If it isn't, move that block to the top.
+
+4. Check that the key matches the certificate. The two hashes must be identical.
 
    ```bash
-   openssl rsa -in <name>.key -out <name>-decrypted.key
+   openssl pkey -in server.key -pubout | sha256sum
+   openssl x509 -in fullchain.crt -pubkey -noout | sha256sum
    ```
 
-   Enter the password that you created in step 2.
+If the first command fails with `unsupported` and `RC2-40-CBC`, the PFX file uses an older encryption algorithm. Add `-legacy` to each `openssl pkcs12` command.
 
-The `.crt` file and both `.key` files are in the folder where you ran the commands.
+## Convert other formats
 
-On Windows, the commands are the same without the `openssl` prefix when you run them at the OpenSSL prompt. Use full file paths, for example `pkcs12 -in "C:\certs\<file>.pfx" -nocerts -out "C:\certs\<name>.pem"`. Open the extracted `.key` and `.crt` files in a text editor to view them.
+- **DER certificate to PEM:**
+
+  ```bash
+  openssl x509 -inform der -in <file>.cer -out server.crt
+  ```
+
+- **PKCS#7 certificates to PEM:**
+
+  ```bash
+  openssl pkcs7 -print_certs -in <file>.p7b | sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' > certificates.crt
+  ```
+
+  A PKCS#7 file has no private key. Use the key that you created with the CSR.
+
+- **Remove the password from a private key:**
+
+  ```bash
+  openssl pkey -in encrypted.key -out server.key
+  ```
+
+  Enter the password when the command asks for it.
 
 :::warning
-An unencrypted private key is a security risk if the file is stolen. Restrict access to the file and delete it when you no longer need it.
+An unencrypted private key gives access to the certificate to anyone who gets the file. Restrict access to the file, and delete the copies that you no longer need.
 :::

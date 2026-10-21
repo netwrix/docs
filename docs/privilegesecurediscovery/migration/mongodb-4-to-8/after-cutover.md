@@ -1,15 +1,13 @@
 ---
 title: "Verify and maintain the deployment after cutover"
 description: "Verify that Privilege Secure for Discovery runs on MongoDB 8.0, see which settings persist, and redeploy safely after a migration."
-sidebar_position: 90
+sidebar_position: 70
 ---
 
 :::warning[Needs dev input: remove before publishing]
 TODO: The earlier procedure told readers to render the stack with `docker stack config --compose-file /secureone/docker-stack.yml` to confirm the retained MongoDB 4.0 services have zero replicas. From 26.09.1, `cutover` also writes `docker-stack.mongo-state.yml`, which `s1 deploy` merges as a second compose file. Confirm a supported way for customers to render the merged stack, or confirm that the `cutover` output is the only check needed. Evidence: s1.py _write_mongo_state_override (v26.09.1-rc).
 
-TODO: After a multi-node `retire`, confirm that `s1 db` and `s1 database-status` connect, because the replica set keeps the name `secureone8` but the fallback connection string uses `secureone`. Not tested on a live cluster. Evidence: s1.py get_db_info lines 6754-6771.
-
-TODO: Confirm how `rs.isMaster()`, `.count()`, and `DBQuery.shellBatchSize` behave in mongosh, because some pages in this documentation set still use them. Not tested. Evidence: none.
+TODO: Dev confirmed the retired-cluster bug: `get_db_info` looks for `replicaSet=secureone` after `retire`. Remove the known-issue note when a release fixes it. Evidence: s1.py:6729 and :1164.
 :::
 
 After `cutover`, the application runs on MongoDB 8.0. Use the checks on this page to confirm the result, to understand which settings the migration saved, and to avoid commands that undo it.
@@ -35,15 +33,18 @@ On a single node, the command then reports that there is no replica set to query
 
 Confirm each of the following:
 
-* `s1 database-status` reports `MongoDB version: 8.0.x`, and the active service is `db8` (single node) or a `mongoN-8` service (cluster) after `cutover`, or `db` or `mongoN` after `retire`.
+* `s1 database-status` reports `MongoDB version: 8.0.x`, and the active service is `db8` (single node) or a `mongoN-8` service (cluster) after `cutover`, or `db` or `mongoN` after `retire`. On a cluster after `retire`, the command can't reach the replica set. See the known issue in [Retire MongoDB 4.0 after cutover](./retire-mongodb-4.md).
 * A cluster's `secureone8` replica set has one primary and two secondary members.
 * The MongoDB 8.0 services each have one running replica on their expected nodes.
 * After a clean scan, each MongoDB 4.0 service has zero running replicas. If `cutover` kept MongoDB 4.0 running because of a reference, keep it running until you resolve that reference. See [Resume, roll back, or recover a migration](./resume-roll-back-recover.md).
 * The product loads and administrators can sign in.
-* The workflows you use in your environment complete normally.
+* A scan of a test system returns results.
+* A user can request just-in-time access, receive it, and lose it when it expires.
+* A directory synchronization completes.
+* The other workflows you use in your environment complete normally.
 * No write-path service stays stopped or uses MongoDB 4.0.
 
-Keep the command outputs and logs with the change record.
+Keep the command outputs and logs with the change record. The [Migration checklist](./checklist.md#phase-6-verify) lists these checks in order.
 
 ## MongoDB states
 
@@ -75,7 +76,7 @@ To review the saved settings, run the following command:
 sudo grep -nE '^(DB|REMEDIANT_DB|DB_REPLICA_COUNT|MONGO[123]_REPLICA_COUNT)=' /secureone/s1.env
 ```
 
-Each variable must appear once. Keep `/secureone/s1.env` after the migration, and don't add comments to it. Each individual MongoDB service has one desired replica. Never set a `*_REPLICA_COUNT` value above `1` for an active service.
+Each variable must appear once. Keep `/secureone/s1.env` after the migration, and don't add comments to it. Each MongoDB service runs one replica. Never set a `*_REPLICA_COUNT` value above `1` for an active service.
 
 Don't set `MONGO_VERSION=8.0` in `/secureone/s1.env` before `retire`. Until `retire` runs, that variable changes the image of the retained MongoDB 4.0 service definitions, and it can start MongoDB 8.0 against the MongoDB 4.0 data path.
 

@@ -5,16 +5,18 @@ sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm whether the product adds the protect account automatically in some configurations. Evidence: none; the earlier documentation says to add it manually or by GPO.
+TODO: Confirm whether the product adds the protect account to a system automatically in any configuration. Evidence: none; the earlier documentation says to add it manually or by GPO, and windows/scanner.py:1345-1372 only flags the account as a persistent service account.
 :::
 
-Privilege Secure for Discovery uses the protect account to update the local Administrators group on a system. Add the protect account to that group on every system you plan to protect. The protect account must be a non-interactive account with a complex password.
+Privilege Secure for Discovery uses the protect account to change the local Administrators group on a system. The product can't protect a system until the protect account is a member of that group. Add the protect account to the group on every system you plan to protect.
+
+The protect account is the account that you entered under **Protect Mode Account** when you added the domain. It must be a non-interactive account with a complex password. The product treats it as a persistent service account, so protect mode never removes it from a system. See [Service accounts](../../requirements/service-accounts.md).
 
 ## Add the account
 
 Use one of the following methods:
 
-- On a Windows domain, deploy the change with a GPO. See [Add the protect mode account to Windows endpoints by GPO](../domains-and-ad/protect-mode-account-gpo.md).
+- On a Windows domain, deploy the change with a GPO. See [Add the Protect Mode account to Windows endpoints with a GPO](../domains-and-ad/protect-mode-account-gpo.md).
 - On a single system, add the account to the local Administrators group manually.
 
 :::warning

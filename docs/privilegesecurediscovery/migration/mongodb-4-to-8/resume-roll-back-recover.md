@@ -1,7 +1,7 @@
 ---
 title: "Resume, roll back, or recover a migration"
 description: "Find the right recovery action for each migration stage, from an interrupted copy to a failed cutover, and use finish-cutover to complete a switch."
-sidebar_position: 70
+sidebar_position: 90
 ---
 
 :::warning[Needs dev input: remove before publishing]
@@ -25,7 +25,7 @@ Don't continue to the next step when any of the following applies:
 * `cutover` reports a partial switch, a stale MongoDB 4.0 reference, or a setting it couldn't save.
 * `status` reports `FAILED`, or no successful validation summary exists for the initial copy.
 
-When any condition applies, preserve the logs and contact Netwrix Support.
+When any condition applies, preserve the logs and contact Netwrix Support. The [Migration checklist](./checklist.md) repeats these conditions as a go or no-go gate before cutover.
 
 ## Resume an interrupted copy
 
@@ -135,6 +135,23 @@ See [Retire MongoDB 4.0](./retire-mongodb-4.md#recover-from-a-failed-retire).
 * **Before cutover.** The application still uses MongoDB 4.0. Leave the migration unfinished or remove the target with Support guidance.
 * **After cutover.** The MongoDB 4.0 data remains, but stopped. After the application accepts writes on MongoDB 8.0, a rollback needs data reconciliation. It isn't an automated, one-command operation. Don't change replica counts, connection strings, or replica-set configuration without Netwrix Support guidance.
 * **After retire.** The tool keeps the MongoDB 4.0 data in an archive until you delete it, so a rollback remains possible until then. Contact Netwrix Support before you attempt it.
+
+## Collect information for Netwrix Support
+
+Record the following before the migration, and include the relevant items in a support request:
+
+* Product and `s1` versions.
+* Deployment topology and stack name.
+* Database node names and Docker Swarm manager nodes.
+* Complete output from `check` on every database node.
+* Reported database size and available storage on both relevant filesystems.
+* Output from `s1 status`, `s1 database-status`, and `docker service ls | grep -i mongo`.
+* The exact command and stage that failed.
+* The final validation summary, including **Checks failed** and **Warnings**.
+* The logs in `/secureone/logs/mongo-upgrade/`.
+* Any remediation command that `cutover` printed.
+
+Don't include passwords, access tokens, registry credentials, or database connection secrets in a support request.
 
 ## Troubleshooting reference
 

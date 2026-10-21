@@ -50,7 +50,7 @@ The length of `cutover` depends on the following factors:
 * Docker volume placement.
 * Network throughput and latency between cluster nodes.
 
-Don't estimate one environment by applying a GB-per-hour or documents-per-hour formula from another. Run `check` and `run` first to see the size of your own database, and plan the window in hours rather than minutes for a large deployment.
+Don't estimate one environment by applying a GB-per-hour or documents-per-hour formula from another. Run `check` and `run` first to see the size of your own database. The `run` stage doesn't disrupt users, so treat it as a rehearsal and use how long it takes to size the window. Plan the window in hours rather than minutes for a large deployment.
 
 Schedule `run` to finish as close as practical to the approved `cutover` window. A long delay allows more source activity to accumulate before the final reconciliation. For a large or business-critical deployment, contact Netwrix Support to review the plan before you schedule the window.
 
@@ -58,18 +58,14 @@ The `retire` command is a separate step with its own, shorter application downti
 
 ## Back up before you start
 
-Take and verify an independent backup of the MongoDB 4.0 data before you start, by using your established backup and restore procedure or the procedure that Netwrix Support provides for the deployment. Keep the `key.txt` encryption key with the backup. See [High availability and disaster recovery options](../../getting-started/high-availability-and-disaster-recovery.md).
+Take and verify an independent backup of the MongoDB 4.0 data before you start, by using your established backup and restore procedure or the procedure that Netwrix Support provides for the deployment. Export a copy of the `key.txt` encryption key and keep it with the backup, but not in the same location. See [Protect and recover your deployment](../../admin/maintenance/protect-and-recover-your-deployment.md) and [Manage Docker secrets](../../install/docker-secrets.md).
 
 If a backup procedure isn't available or the restore path is unverified, don't run `cutover`. Contact Netwrix Support first. The retained MongoDB 4.0 services aren't a substitute for an independent backup.
 
-## Complete the planning checklist
+## Decide who can stop the migration
 
-Confirm each item before you continue to [Prepare hosts for the migration](./prepare-hosts.md):
+Before the window, name the person who decides to continue or stop, and agree on the condition that triggers a stop. After the application writes to MongoDB 8.0, a rollback isn't a one-command operation and needs Netwrix Support. See [Resume, roll back, or recover a migration](./resume-roll-back-recover.md#roll-back).
 
-1. You identified the deployment topology and stack name.
-2. Storage capacity is available on the source-data filesystem and the Docker named-volume filesystem.
-3. An independent backup exists and is restorable.
-4. You scheduled the maintenance window and informed its users.
-5. Directory synchronizations, bulk scans, and other long-running jobs can finish before `cutover`.
-6. Every database node can reach and authenticate to the container registry.
-7. The operator can manage Docker Swarm services on a manager node.
+## Next step
+
+Follow the planning items in the [Migration checklist](./checklist.md#phase-1-plan), and then continue to [Prepare hosts for the migration](./prepare-hosts.md).

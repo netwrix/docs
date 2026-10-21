@@ -1,5 +1,5 @@
 ---
-title: "Avoid Conflicts Between GPOs and the Product"
+title: "Avoid conflicts between GPOs and the product"
 description: "Prevent Group Policy from adding or removing local administrators that Privilege Secure for Discovery manages."
 sidebar_position: 50
 ---

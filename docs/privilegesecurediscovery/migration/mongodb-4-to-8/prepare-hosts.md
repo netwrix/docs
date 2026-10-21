@@ -6,6 +6,7 @@ sidebar_position: 30
 
 :::warning[Needs dev input: remove before publishing]
 TODO: This page uses `secureone.sh upgrade`, `install-cli`, and `verify` (present in the 26.09.1 release branch) instead of the earlier manual procedure that edited `/secureone/s1.env` and copied `/app/s1-cli` out of the s1tool image by hand. Confirm the manual procedure is no longer needed for any supported starting release. Evidence: origin/release/26.09.1-rc secureone.sh usage text (upgrade, install-cli, verify).
+:::
 
 The `s1 mongo-upgrade` commands come from the `s1` command-line tool on the host. Upgrading the application services doesn't by itself prove that every database node has the 26.09.1 tool. Prepare each database node before you run `check`.
 
@@ -73,16 +74,9 @@ The migration logic runs in a companion container image from the same configured
 
 If `check` reports that the migration image isn't pullable, treat it as a registry connectivity or authentication problem. Validate DNS, firewall access, registry authentication, and the Docker configuration. Don't override the target MongoDB version or the migration image version unless Netwrix Support directs you to.
 
-## Complete the pre-migration checklist
+## Check that the hosts are ready
 
-Confirm each item before you continue:
-
-1. The application runs 26.09.1 and the Docker Swarm and all services are healthy.
-2. Every database node reports the same `s1` version.
-3. An independent backup exists and is restorable. See [Plan the MongoDB migration](./plan.md).
-4. You confirmed the storage capacity.
-5. Long-running jobs can finish before cutover.
-6. The operator can manage Docker Swarm services on a manager node.
+Follow the preparation items in the [Migration checklist](./checklist.md#phase-2-prepare-every-database-node). Confirm that the application runs 26.09.1 and that the Docker Swarm and all services are healthy before you continue.
 
 ## Record the starting state
 

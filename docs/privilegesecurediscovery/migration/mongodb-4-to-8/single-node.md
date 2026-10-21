@@ -172,14 +172,4 @@ Don't assume a quiet terminal is a stopped process. If counters don't advance fo
 
 ## Prepare for cutover
 
-Immediately before `cutover`, confirm each item:
-
-1. The independent backup is complete and restorable.
-2. The initial copy ended with **Checks failed: 0**.
-3. No directory synchronization, bulk scan, or other long-running job is active.
-4. The maintenance window is open and stakeholders expect downtime.
-5. Registry access is still available.
-6. The operator can stay connected and monitor the command and log.
-7. You recorded `s1 status` and `s1 database-status` again.
-
-Continue with [Cut over to MongoDB 8.0](./cut-over.md).
+Complete the go or no-go items in the [Migration checklist](./checklist.md#phase-4-decide-whether-to-continue). Record `s1 status` and `s1 database-status` again immediately before cutover. Then continue with [Cut over to MongoDB 8.0](./cut-over.md).

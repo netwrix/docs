@@ -1,13 +1,13 @@
 ---
-title: "Add a Domain"
-description: "Connect Netwrix Privilege Secure for Discovery to an Active Directory domain and choose the Windows authentication method."
+title: "Add a domain"
+description: "Connect Netwrix Privilege Secure for Discovery to an Active Directory domain, set the directory and Windows connection options, and choose the default policies."
 sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the service names and the UI location for restarting the worker and scanner services after you change the Windows authentication method from NTLM to Kerberos. Evidence: none.
+TODO: Confirm that **Protect Mode** and **Scan Mode** start as **Disabled**, and **Offline Access** as **Unmanaged**, in the **New Domain (LDAP)** form for every new domain. Evidence: the form in the 26.09.1 test stack; the Default Policies apply only to computers that the product imports after you save them (ldap_sync/importer.py:740-766, db_queries/ldap_store.py:632-655).
 
-TODO: Confirm that `resolvectl status` is the correct command to show the configured DNS servers on Ubuntu Server 24.04 LTS hosts (the old page used `systemd-resolve --status ens160`). Evidence: none.
+TODO: Confirm that the worker and scanner read the Windows authentication method from the domain configuration each time they run, so that a switch between NTLM and Kerberos needs no restart. Evidence: svc_worker.py:466-483 and windows/scanner.py:1565 read `windows_auth_type` from the database when they handle a request or a scan.
 :::
 
 Add each Active Directory domain that Netwrix Privilege Secure for Discovery manages. The domain connection lets the product read users, groups, and computers, and scan and protect Windows systems with service accounts.
@@ -15,24 +15,48 @@ Add each Active Directory domain that Netwrix Privilege Secure for Discovery man
 ## Prerequisites
 
 - Administrator access to Privilege Secure for Discovery.
-- A bind account that can read the directory. See [Service accounts](../../requirements/service-accounts.md) for the permissions each account needs.
-- A scan mode account and a protect mode account for the domain.
+- A bind account that can read the directory, a scan mode account, and a protect mode account for the domain. See [Service accounts](../../requirements/service-accounts.md) for the permissions that each account needs.
 - A static domain controller (DC) address for the LDAP server. A load-balanced connection prevents the product from recognizing group updates correctly.
 
 ## Add a domain
 
 1. Select **Configure** > **Server**.
-2. Select **Add Domain** > **LDAP**.
-3. In **Domain Name**, enter the domain name, such as `example.com`, and then select **Detect**. The product fills in **LDAP Server**, **LDAP Port**, **Search Base**, and the SSL settings from DNS.
-4. Under **Directory Connection Settings**, enter the bind account in **Bind DN** and **Bind Password**. Select **Directory Authentication Method** if you need SASL. See [Configure SASL and Kerberos for LDAP](../authentication-and-sso/sasl-kerberos.md).
-5. Select **Test Connection**.
-6. Under **Windows Service Account**, enter the **Scan Mode Account** and **Protect Mode Account** credentials.
-7. Select the **Windows Authentication Method**. See the following section.
-8. Under **Default Policies**, set **Scan Mode** and **Protect Mode**.
-9. Select **Save**.
+2. In **Domain Configuration**, open the **Add Domain** list, and then select **LDAP**.
+3. Under **Directory Connection Settings**, enter the connection.
+
+   ![The Directory Connection Settings of a new domain](/images/privilegesecurediscovery/domains-and-ad/domains-ldap-connection.webp)
+
+   | Setting | Description |
+   | --- | --- |
+   | **Domain Name** | The domain name, such as `example.com`. Select **Detect** to fill in **LDAP Server**, **LDAP Port**, **Search Base**, and **SSL** from the DNS records of the domain. |
+   | **LDAP Server** | The fully qualified name of a domain controller. |
+   | **LDAP Port** | The port of the domain controller, for example `636` for LDAP over SSL. |
+   | **SSL** | Uses a secure connection to the domain controller. |
+   | **Verify Certificate** | Checks the certificate of the domain controller. Select **SSL** first to use it. |
+   | **CA Public Certificate** | The PEM certificate of the CA that issued the certificate of the domain controller. See [Trust a CA for the directory connection](../certificates/web-server-certificate-with-sans.md#trust-a-ca-for-the-directory-connection). |
+   | **Search Base** | The distinguished name where the search starts, such as `dc=example,dc=com`. |
+   | **Directory Authentication Method** | **Simple Bind**, or **SASL: Kerberos**. See [Configure SASL and Kerberos for LDAP](../authentication-and-sso/sasl-kerberos.md). |
+   | **Bind DN** and **Bind Password** | The bind account, as `DOMAIN\Username`. |
+
+4. Select **Test Connection**.
+5. Under **Directory Server Failover**, decide whether the product tries another domain controller when the configured one is unavailable. See [Configure directory server failover](./directory-server-failover.md).
+6. Under **Directory Search Settings**, keep the defaults unless Support advises otherwise. **Page Size** is 1000 and **Search Scope** is **Subtree**.
+7. Under **Windows Computer Authentication**, select the **Windows Authentication Method**. See [Choose the Windows authentication method](#choose-the-windows-authentication-method).
+8. Under **Windows Service Account**, enter the **Scan Mode Account** and **Protect Mode Account** user names and passwords. For a Kerberos domain, also enter the **Domain NetBIOS Name**.
+9. Under **Default Policies**, review **Scan Mode**, **Protect Mode**, and **Offline Access**.
+10. Optional: under **Linux Service Account**, enter the account that the product uses on Linux systems. See [Service accounts](../../requirements/service-accounts.md).
+11. Select **Save**.
+
+The domain appears in the **Domain Configuration** list with its connection, status, and default policy.
+
+![The Domain Configuration list with a domain and its default policy](/images/privilegesecurediscovery/domains-and-ad/domains-domain-list.webp)
+
+### Choose the default policies
+
+The default policies apply to the computers that the product adds to its inventory after you save the domain. They don't change computers that are already in the inventory. A new domain starts with **Scan Mode** and **Protect Mode** set to **Disabled**.
 
 :::tip
-Leave **Protect Mode** set to **Disabled** when you first set up a domain. Enable Protect Mode on a system only after the product has scanned it.
+Leave **Protect Mode** set to **Disabled** when you first set up a domain. A default of **New Accounts: JITA** protects every computer that the product imports afterward. Enable protect mode on a system only after the product has scanned it. See [Set up scan mode](../onboard-systems/set-scan-mode.md).
 :::
 
 ## Choose the Windows authentication method
@@ -43,10 +67,10 @@ When you select **Kerberos**, keep the following in mind:
 
 - The product authenticates with Kerberos only and doesn't fall back to NTLM.
 - Kerberos connects by service principal name (SPN) or fully qualified host name, not by IP address. DNS must return the correct current IP address for each target system.
-- The IP address override field on the Grant Access page doesn't work.
+- The IP address override field on the **Grant Access** page doesn't work.
 - Kerberos depends on working reverse DNS lookups. This is a Kerberos requirement and not specific to the product.
 
-If you switch from NTLM to Kerberos, restart the worker and scanner services.
+The product reads the method from the domain settings each time that it scans or handles a request, so a switch from NTLM to Kerberos needs no restart.
 
 ### Verify DNS for Kerberos
 
@@ -70,8 +94,8 @@ If you switch from NTLM to Kerberos, restart the worker and scanner services.
 
 ## Limitations
 
-- LDAP referrals aren't supported.
-- To use the directory over SASL, see [Configure SASL and Kerberos for LDAP](../authentication-and-sso/sasl-kerberos.md). SASL doesn't work with SSL and requires port 389.
+- The product doesn't support LDAP referrals.
+- SASL doesn't work with SSL and requires port 389.
 
 ## Related topics
 

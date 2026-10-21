@@ -1,13 +1,13 @@
 ---
-title: "Apply a Service Account to a Machine Directly"
-description: "Apply a service account that belongs to an interactive Active Directory group directly to machines before you remove group persistence."
+title: "Apply a service account to a machine directly"
+description: "Apply a service account that belongs to an interactive Active Directory group directly to Windows machines before you remove group persistence."
 sidebar_position: 30
 ---
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: /images/privilegesecure/4.2/discovery/admin/configuration/4995338773655_1_452x510.webp: shows a service account in Domain Admins in an older UI. Confirm it contains no customer data and re-capture in the 26.09.1 UI.
+:::warning[Needs dev input: remove before publishing]
+TODO: Confirm that the product places an account that a bulk action added to the inventory on the Windows system at the next scan, and whether that depends on the protect mode of the system. Evidence: the **Add/Update Account** bulk action stores the account with `persistent` set and `onHost` false (bulk_action/executors/add_update_account_policy_executor.py), and windows/scanner.py:540-591 (`addPersistentAdmins`) adds missing persistent accounts during a scan; not run against a real system.
 
-TODO: /images/privilegesecure/4.2/discovery/admin/configuration/4995338773655_3.webp and 4995338773655_2.webp: older UI captures. Re-capture in the 26.09.1 UI.
+TODO: Confirm that the **Account with access** filter for a group lists the systems that have the group in their account inventory, including accounts that arrived through nesting. Evidence: the filter key is `admins.current.sid` (mgmtSystemsCtrl.js:257); **Access Path** and **Access Type** apply to users only.
 :::
 
 Interactive accounts shouldn't have standing privilege. They should use Netwrix Privilege Secure for Discovery to request administrator access when needed, and the groups that contain them should be non-persistent. Sometimes interactive accounts and service accounts are members of the same group. If you remove persistence from such a group, you break any process or application that uses the service account. This page shows how to keep the service account working by applying it directly to the machines that need it.
@@ -16,96 +16,67 @@ Interactive accounts shouldn't have standing privilege. They should use Netwrix 
 
 When a group contains both interactive and service accounts, apply the service accounts directly to the required machines, or add them to a separate group and apply that group to the machines. You don't need to remove the service account from the original group. You can remove it later to keep the accounts organized.
 
-## Prerequisites
-
-- The QuickStart reporting script is installed. See [Install the QuickStart tools](../bulk-onboarding/install-the-quickstart-tools.md).
-- Familiarity with the report options in [Report on and update systems](../bulk-onboarding/report-and-update-systems.md).
-
 ## Review the groups
 
-1. Review the groups that you plan to remove persistence from and find any service accounts they contain.
+1. Review the groups that you plan to remove persistence from, and find any service accounts they contain.
 2. Check nested groups for service accounts too.
 3. Decide for each service account whether to apply it directly or through a new group of service accounts. Applying it directly is typical.
 
-In the following example, a service account is a member of the Domain Admins group. Domain Admins is an interactive group and should contain only the small set of accounts that administer the domain.
-
-![The Administrator Accounts list for a system, showing a service account in the Domain Admins group](/images/privilegesecure/4.2/discovery/admin/configuration/4995338773655_1_452x510.webp)
-
-Every machine that has Domain Admins in its local Administrators group needs the service account applied directly. If you remove persistence from Domain Admins first, the group is removed from the endpoint and the software that uses the service account stops working.
+In the following example, a service account is a member of the Domain Admins group. Domain Admins is an interactive group and should contain only the small set of accounts that administer the domain. Every machine that has Domain Admins in its local Administrators group needs the service account applied directly. If you remove persistence from Domain Admins first, the group leaves the endpoint and the software that uses the service account stops working.
 
 ## Apply the account to a single machine
 
-To apply the account to one machine, add it to the machine's account inventory in the UI. The product applies it during the next scan cycle, or immediately if you start a rescan.
+1. Select **Access** > **Grant Access**, and open the machine.
+2. In **Administrator Accounts**, select **Add Account**.
+3. In **User or Group**, enter the service account. Set **Access Permission** to **Persistent**, and save.
 
-![The Administrator Accounts pane with the option to add an account to the inventory](/images/privilegesecure/4.2/discovery/admin/configuration/4995338773655_3.webp)
-
-For many machines, use the QuickStart script.
+The product applies the account during the next scan, or immediately if you start a **Rescan**.
 
 ## Apply the account to many machines
 
-### Pull the QuickStart report
+Bulk Actions apply the account to the Windows systems that you select. For Linux systems, use the Quickstart tool in the next section.
 
-1. In the folder that contains the QuickStart reporting script, run the report:
+1. Select **Management** > **Systems**, and then select **Show Filters**.
+2. In **Account with access**, enter the interactive group, for example `Domain Admins`, and select it. The list shows the systems that have the group in their account inventory.
+
+   ![The Systems filters with the Account with access filter set to a group](/images/privilegesecurediscovery/domains-and-ad/domains-systems-account-filter.webp)
+
+3. Select the systems. You can select up to 1,000 systems at a time. To limit the change to servers or to workstations, filter further, for example with **Operating System**.
+4. Select **Bulk Actions**, select **Select Action**, and then select **Add/Update Account**.
+5. In **User or Group**, enter the service account. Set **Access Permission** to **Persistent**, and select **Save**.
+
+   ![The Add or Update Account bulk action with the Persistent access permission](/images/privilegesecurediscovery/domains-and-ad/domains-bulk-add-update-account.webp)
+
+6. Select **Execute Bulk Action**, and follow the job on **Monitor** > **Jobs**.
+
+On the selected Windows systems that don't have the account, the action adds it as a persistent account. On systems that already have it, the action sets it to persistent. To add more than one service account, run the action again for each account.
+
+## Apply the account with Quickstart
+
+Use the Quickstart reporting tool for Linux systems or for more than 1,000 systems. Install it first. See [Install the Quickstart tools](../bulk-onboarding/install-the-quickstart-tools.md), and see [Report on and update systems](../bulk-onboarding/report-and-update-systems.md) for the report options.
+
+1. Run the report. It creates an Excel file with the **Computer Data** and **Admin List** sheets.
 
    ```bash
-   reports.py --insecure
+   python reports.py --insecure
    ```
 
-   The script name depends on your installation. The command produces an Excel file with two tabs, **Computer Data** and **Admin List**.
-
-   ![An Excel workbook with the Computer Data and Admin List tabs](/images/privilegesecure/4.2/discovery/admin/configuration/4995338773655_2.webp)
-
-### Update the report
-
-1. On the **Computer Data** tab, fill the **Provision Account** column with a formula that adds the service account to the machines that have the interactive group.
-
-   The following formula finds every machine that has **Domain Admins** in the local Administrators group and sets the value `Service Account;true` for it. Replace `Domain Admins` and `Service Account` with your group and service account names.
+2. On the **Computer Data** sheet, fill the **Provision Account** column for the machines that have the interactive group. The following array formula finds every machine that has `Domain Admins` and sets the value `Service Account;true`. Replace `Domain Admins` and `Service Account` with your names. The formula uses the current column positions of the report: **system** in column B and **user** in column D of **Admin List**, and **cn** in column B of **Computer Data**. Check the header row first.
 
    ```text
    =IF(ISNA(INDEX('Admin List'!D:D,MATCH(1,(B2='Admin List'!B:B)*("Domain Admins"='Admin List'!D:D),0))),"","Service Account;true")
    ```
 
-2. Enter the formula as an array formula with `Ctrl` + `Shift` + `Enter`. Curly braces appear around the formula. In Microsoft 365, you can press `Enter`.
-3. Copy the formula down the whole column.
-4. Copy the **Provision Account** column and paste it as values to remove the formula. Formulas, extra columns, and formatting can cause the upload to fail.
-5. Filter and delete rows if you want to target only workstations or only servers.
-
-To add more than one service account, separate the entries with commas, as in `Service Account;true,Service Account2;true`.
-
-### Upload the report
-
-1. Save the file with a name that includes the date and its purpose, such as `apply_service_account_<date>.xlsx`.
-2. From the folder that contains the QuickStart script, run the upload with `--dry-run` to check the changes:
+3. Enter the formula as an array formula with `Ctrl` + `Shift` + `Enter`, and copy it down the column. In Microsoft 365, press `Enter`.
+4. Copy the **Provision Account** column and paste it as values. Formulas, extra columns, and formatting can make the upload fail.
+5. To add more than one service account, separate the entries with commas, as in `Service Account;true,Service Account2;true`.
+6. Save the file, and preview the upload:
 
    ```bash
-   reports.py --insecure --protect-mode-file apply_service_account_<date>.xlsx --dry-run
+   python reports.py --insecure --protect-mode-file apply_service_account_<date>.xlsx --dry-run
    ```
 
-3. When the dry run shows the changes you intend, run the command again without `--dry-run`.
-
-## Tips for large reports
-
-If Excel is slow, delete the rows for machines that haven't been scanned. Sort by the `last_scanned` column and delete the unwanted rows. Sorting and deleting is much faster than filtering and deleting, and it can prevent Excel from crashing. A smaller file also uploads faster.
-
-To shrink a large report:
-
-1. On the **Admin List** tab, sort the file by the **User** column (column D).
-2. Filter the **User** column to exclude the target group.
-3. Delete all the rows that remain visible. Hold `Ctrl` and select the top row to exclude it from the deletion.
-4. Save the file. Use it as the basis for applying service accounts and for removing persistence.
-
-To build the upload file from the shrunken report:
-
-1. Add the following formula to the **Provision Account** column (column AD) on the **Computer Data** tab:
-
-   ```text
-   =IF(ISNA(INDEX('Admin List'!$D$1:$D$40000,MATCH(1,(B2='Admin List'!$B$1:$B$40000)*("TARGET_GROUP"='Admin List'!$D$1:$D$40000),0))),"","Service Account;true,Service Account2;true")
-   ```
-
-2. Replace `TARGET_GROUP` with the group that contains the service accounts.
-3. Replace the service account names with the accounts to apply.
-4. Change `40000` to cover the number of rows on the **Admin List** tab.
-5. Press `Ctrl` + `Shift` + `Enter` to apply the formula as an array formula, and then copy it to the bottom of the **Computer Data** tab.
+7. When the preview shows the changes that you intend, run the command again without `--dry-run`.
 
 ## Next step
 

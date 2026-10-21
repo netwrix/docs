@@ -5,11 +5,9 @@ sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm how `rs.isMaster()`, `db.<collection>.count()`, and `DBQuery.shellBatchSize` behave in mongosh. The tool uses `rs.status()` and `db.version()`. Evidence: none (not in s1.py).
+TODO: Dev confirmed the retired-cluster bug in `get_db_info` (s1.py:6729 and :1164). Remove the known-issue note when a release fixes it. Evidence: dev answer.
 
-TODO: After a multi-node `retire`, the replica set keeps the name `secureone8`, but `s1 db` and `s1 database-status` fall back to a connection string with `replicaSet=secureone` when no `mongoN-8` service exists. Not tested on a live cluster. Evidence: s1.py (v26.09.1-rc) get_db_info lines 6754-6771.
-
-TODO: Confirm the manual `docker exec` form for a cluster member after `retire`. Evidence: none.
+TODO: Confirm that the manual connection string with `replicaSet=secureone8` opens a shell on a retired cluster, because the supported commands can't. Evidence: none; not tested on a live cluster.
 :::
 
 Use the `s1 db` command to open a shell on the database that Netwrix Privilege Secure for Discovery uses. The command selects the active database service and the correct shell binary for you, so it works on MongoDB 4.0, during a migration, and on MongoDB 8.0.
@@ -36,6 +34,8 @@ Use the `s1 db` command to open a shell on the database that Netwrix Privilege S
 The shell opens on the `SecureONE` database. To run a JavaScript file, add `--file <filename>`. Mount the file in the container under `/data/db`.
 
 To check the database state without opening a shell, run `s1 database-status`. The output shows the active database service and the live MongoDB version. For a cluster, it also lists the replica-set members.
+
+On a three-node cluster after `retire`, `s1 db` can't reach the replica set because it looks for `secureone` and the set is named `secureone8`. Use the manual method in [Open a shell manually](#open-a-shell-manually) until a fix ships.
 
 ## Choose the shell for the MongoDB version
 

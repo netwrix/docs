@@ -48,7 +48,7 @@ const PAGE_MAP = {
   "administration/configuration/azuresso": "integrations/microsoft-entra-id/saml-sso",
   "administration/configuration/certificatesslfiles": "configuration/certificates/certificate-files",
   "administration/configuration/changepasswords": "appendix/legacy-iso/change-passwords",
-  "administration/configuration/configureadfs": "configuration/authentication-and-sso/ad-fs",
+  "administration/configuration/configureadfs": "configuration/authentication-and-sso/saml-sso-reference",
   "administration/configuration/duoaccessgateway": "configuration/authentication-and-sso/duo",
   "administration/configuration/duohostedsso": "configuration/authentication-and-sso/duo",
   "administration/configuration/gpos": "configuration/domains-and-ad/group-policy-objects",
@@ -92,7 +92,7 @@ const PAGE_MAP = {
   "administration/systemmanagement/adduserorgroup": "admin/systems/add-a-user-or-group-to-an-account-inventory",
   "administration/systemmanagement/bulkactions": "admin/systems/bulk-actions",
   "administration/systemmanagement/commonuierrors": "troubleshooting/common-ui-errors",
-  "administration/systemmanagement/firstlogin": "user-guide/first-sign-in",
+  "administration/systemmanagement/firstlogin": "configuration/authentication-and-sso/reset-mfa-tokens",
   "administration/systemmanagement/jitasessions": "admin/systems/start-and-manage-jita-sessions",
   "administration/systemmanagement/linuxaddsudouser": "configuration/endpoint-preparation/linux-add-a-sudo-user",
   "administration/systemmanagement/linuxandmac": "configuration/endpoint-preparation/linux-directory-bridging",
@@ -149,6 +149,7 @@ const PAGE_MAP = {
 // /docs/kb/privilegesecurediscovery. A removed article needs a redirect there too.
 const REMOVED_KB_ARTICLES = {
   'system-configuration-and-requirements/generate-license-counts-with-cli-command': '/docs/kb/privilegesecurediscovery',
+  'authentication-and-access/saml-assertion-not-yet-valid': '/docs/privilegesecurediscovery/configuration/authentication-and-sso/saml-sso-reference',
 };
 
 export const privilegeSecureDiscoveryRedirects = [

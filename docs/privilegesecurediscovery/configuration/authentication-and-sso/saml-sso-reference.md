@@ -1,50 +1,90 @@
 ---
 title: "SAML SSO configuration reference"
-description: "Reference for the SAML fields, sign-in flows, and local recovery behavior that apply to every identity provider in Netwrix Privilege Secure for Discovery."
+description: "Reference for the SAML settings, sign-in flows, user matching, and recovery behavior that apply to every identity provider in Netwrix Privilege Secure for Discovery."
 sidebar_label: "SAML SSO reference"
 sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the exact UI labels of the SAML Configuration panel at 26.09.1 (SSO Flow option names, Auto-Redirect to IdP). Evidence: none.
+TODO: Confirm that the product doesn't validate the **Issuer** value against the identity provider's issuer in either flow. Evidence: `saml.js` sets `issuer` and `audience: false` and passes no `idpIssuer`; the **Issuer** is sent in the authentication request of the SP-initiated flow.
 
-TODO: Confirm the cause and fix for the "SAML Assertion Not Yet Valid" error (clock skew between the identity provider and the host is assumed, not verified). Evidence: none.
+TODO: Confirm the fields that **Match User By** can use for a directory user at 26.09.1: `sAMAccountName`, `distinguishedName`, `objectSid`, `objectGUID`, `cn`, `displayName`, `givenName`, `sn`, `domain_netbios`, and `domain_fqdn`. Evidence: ldap_sync/consts.py USER_ATTRIBUTES and the stored user record; the template code (`saml.js`) replaces `${field}` with any field of the user record.
 
-TODO: Confirm whether the IdP-initiated assertion consumer URL is `/api/v1/login` at 26.09.1 and whether the legacy `/api/login` path still works. Evidence: docker/node/api-legacy-onprem/app.js:58 mounts routes at /api/v1.
+TODO: Confirm the exact error text for an invalid signature, and whether a stale **Issuer Cert** produces it. Evidence: none; the product uses `@node-saml/passport-saml` with `wantAuthnResponseSigned` and `wantAssertionsSigned` on.
 :::
 
-Netwrix Privilege Secure for Discovery supports Security Assertion Markup Language (SAML) single sign-on (SSO) through an identity provider (IdP). This page is the single reference for the fields and sign-in flows that every IdP shares. Use it with the provider-specific pages.
+Netwrix Privilege Secure for Discovery supports Security Assertion Markup Language (SAML) single sign-on (SSO) through an identity provider (IdP). This page is the single reference for the settings and sign-in behavior that every IdP shares. Use it with the provider-specific pages.
 
-For Microsoft Entra ID, follow [Configure SAML SSO with Microsoft Entra ID](../../integrations/microsoft-entra-id/saml-sso.md). For other providers, see [AD FS](./ad-fs.md), [Duo](./duo.md), and [Okta](./okta.md).
+For Microsoft Entra ID, follow [Configure SAML SSO with Microsoft Entra ID](../../integrations/microsoft-entra-id/saml-sso.md). For other providers, see [Okta](./okta.md) and [Duo](./duo.md). Any IdP that supports SAML 2.0 and meets the requirements in the next section can work.
 
-## SAML configuration fields
+## What the identity provider must do
 
-Open **Configure** > **Server** > **SAML Configuration**. The values depend on the IdP and the SSO flow.
+- Send the SAML response to the assertion consumer service URL of the product, `https://<fqdn>/api/v1/login`, with the HTTP POST binding. `<fqdn>` is the fully qualified domain name (FQDN) of the product.
+- Sign both the SAML response and the SAML assertion, with the SHA-256 signature algorithm. The product rejects a response in which either signature is missing.
+- Send a claim that identifies the user. See [Match the signed-in user](#match-the-signed-in-user).
+- Enforce multifactor authentication (MFA). See [MFA with SSO](#mfa-with-sso).
 
-| Field | Description |
+Reach the product by its FQDN, not by an IP address or `localhost`, when you test SSO.
+
+## SAML configuration settings
+
+Open **Configure** > **Server** > **SAML Configuration**.
+
+![The SAML Configuration panel with its default values](/images/privilegesecurediscovery/authentication-and-sso/sso-saml-configuration.webp)
+
+| Setting | Description |
 | --- | --- |
-| **Entrypoint** | The application-specific IdP URL where Privilege Secure for Discovery sends the authentication request. |
-| **Issuer** | The entity identifier that Privilege Secure for Discovery expects for the SAML relationship. It must exactly match the value that you configure in the IdP. |
-| **Issuer Cert** | The Base64 body of the active application-specific SAML signing certificate. Exclude the `BEGIN CERTIFICATE` and `END CERTIFICATE` marker lines. |
-| **SSO Enabled** | Enables SAML authentication. Keep a tested local administrator session open while you stage or change the configuration. |
-| **SSO Flow** | Selects the IdP-initiated or service provider-initiated (SP-initiated) flow for the integration. |
-| **Auto-Redirect to IdP** | Controls whether unauthenticated requests start SSO automatically. Available in 26.09.0 and later. |
+| **Entrypoint** | The URL of the IdP where sign-in starts. For the service provider-initiated (SP-initiated) flow, it is the single sign-on URL of the IdP application. For the IdP-initiated flow, it is the URL that starts sign-in from the IdP. |
+| **Issuer** | The entity ID of the product. In the SP-initiated flow, the product sends it to the IdP in the authentication request, and the IdP application must use the same value as its audience or entity ID. In the IdP-initiated flow, the product doesn't check it. Use the product URL, for example `https://<fqdn>`, in both flows. |
+| **Issuer Cert** | The Base64 body of the signing certificate of the IdP application. Leave out the `BEGIN CERTIFICATE` and `END CERTIFICATE` lines. Update it when the IdP rolls the certificate. |
+| **SSO Enabled** | Turns SAML authentication on. Keep a tested local administrator session open while you stage or change the configuration. |
+| **SSO Flow** | **SP-Initiated** or **IdP-Initiated**. A new configuration starts as **SP-Initiated**. |
+| **force IdP reauthentication** | For the SP-initiated flow only. Asks the IdP to authenticate the user again, even if the user has an active IdP session. Selecting **SP-Initiated** turns it on. |
+| **Auto-Redirect to IdP** | Sends users to the IdP when they open the sign-in page, instead of showing the local sign-in form first. Available in 26.09.0 and later. |
+| **ID Claim** | The name of the SAML claim that identifies the user. The default is `dn`. Use `nameID` for the NameID of the assertion. |
+| **Match User By** | The field of the product user record that the claim value must equal. The default is `distinguishedName`. It can also be a template. |
+| **Non-SSO sign-in URL** | The address of the local sign-in page. Use it to sign in without SSO. |
 
 ## Choose an SSO flow
 
-- **IdP-initiated:** The user starts from the IdP, which posts the SAML assertion to the product. The IdP application points to the assertion consumer URL, `https://<fqdn>/api/v1/login`, where `<fqdn>` is the fully qualified domain name (FQDN) of the product. The **Entrypoint** is the IdP-initiated sign-on URL.
-- **SP-initiated:** The user starts from the product sign-in page and the product redirects to the IdP. The Microsoft Entra ID integration uses this flow.
+- **SP-initiated:** The user starts from the sign-in page of the product. The product sends an authentication request to the IdP, the user signs in there, and the IdP returns the response to `https://<fqdn>/api/v1/login`. The product starts the request at `https://<fqdn>/api/v1/login/sso` and checks that each response answers a request that it sent. Use this flow unless you need to start from the IdP.
+- **IdP-initiated:** The user starts from the IdP, for example from an application tile, and the IdP posts the assertion to `https://<fqdn>/api/v1/login`. When the user selects **SSO Login** on the product sign-in page, the product redirects to the **Entrypoint**.
 
-Existing configurations that predate the **SSO Flow** field use the IdP-initiated flow.
+The flow in the product must match what the IdP sends. If the product expects the SP-initiated flow and receives a response that doesn't answer a request, it starts a new request. If the product expects the IdP-initiated flow and receives a response that answers a request, it sends the user to the **Entrypoint**. A wrong **SSO Flow** setting shows up as a sign-in that returns to the IdP.
 
-## Map the distinguished name
+## Match the signed-in user
 
-The provider-specific pages map the Active Directory (AD) `distinguishedName` attribute to a SAML attribute named `dn`. The product uses this attribute to match the signed-in user to a directory account. Enter the attribute names manually if the IdP doesn't list them.
+After the IdP signs the user in, the product reads the claim that **ID Claim** names, and finds the user record whose **Match User By** field equals the claim value. The comparison is exact and case-sensitive. The user must be a user or a member of a group that you added in **Configure** > **Users and Groups**. See [Add users to Privilege Secure for Discovery](../onboard-systems/add-users-to-privilege-secure.md).
+
+**Match User By** accepts a field name or a template. In a template, `${<field>}` takes the value of a field of the user record. Useful fields are `sAMAccountName`, `distinguishedName`, `domain_netbios`, and `domain_fqdn`.
+
+| Your IdP sends | ID Claim | Match User By |
+| --- | --- | --- |
+| The user principal name (UPN) as the NameID, when the UPN suffix is the domain name | `nameID` | `${sAMAccountName}@${domain_fqdn}` |
+| The user name with the domain, such as `CORP\jsmith`, in a claim named `username` | `username` | `${domain_netbios}\${sAMAccountName}` |
+| The Active Directory (AD) distinguished name in a claim named `dn` | `dn` | `distinguishedName` |
+
+Older configurations send the distinguished name in a claim named `dn`. That mapping still works, but it needs a custom attribute in the IdP. Prefer the NameID.
+
+## MFA with SSO
+
+A user who signs in with SSO doesn't enter the authenticator code or the RADIUS second factor of the product. The IdP is the only place where MFA happens, so enforce MFA in the IdP policy for the application. The product still applies the second factor to users who sign in with a user name and password. See [Configure RADIUS authentication](./radius.md).
 
 ## Local sign-in and recovery
 
-Enabling SSO doesn't remove local username and password authentication from the sign-in page. When automatic redirection is off, the local sign-in form appears first and users select the SSO option. When automatic redirection is on, the SSO view appears first and retains **Show local login**. Preserve and test the local recovery path after every SAML change.
+Enabling SSO doesn't remove local sign-in. When **Auto-Redirect to IdP** is off, the local sign-in form appears first, and users select **SSO Login**. When it is on, the SSO view appears first and keeps **Show local login**. The **Non-SSO sign-in URL** always opens the local form.
+
+Keep and test the local recovery path, and test sign-in with a second browser session, after every SAML change.
 
 ## Troubleshoot SAML sign-in
 
-If sign-in fails with "SAML Assertion Not Yet Valid", the IdP and the product host disagree on the current time. Synchronize the clocks of both systems with a reliable time source, then try again.
+| Message or symptom | Cause | Fix |
+| --- | --- | --- |
+| `Required field '<claim>' missing in SAML profile. Available claims: …` | **ID Claim** names a claim that the IdP doesn't send. | Enter one of the available claims that the message lists, or add the claim in the IdP application. |
+| `User not found with <claim>: <value> in field "<field>"`, or `… using template "<template>"` | No user record equals the claim value. | Compare the value in the message with the user record. Check the case, the domain, and that you added the user or a group of the user. Fix **Match User By** or the claim. |
+| A signature error, or the product rejects the response | The IdP doesn't sign both the response and the assertion, doesn't use SHA-256, or the **Issuer Cert** differs from the current signing certificate. | Set the IdP to sign the response and the assertion with SHA-256, and paste the current certificate. |
+| The sign-in returns to the IdP repeatedly | **SSO Flow** doesn't match the flow of the IdP. | Match the setting to the flow that you configured. |
+
+### Fix "SAML assertion not yet valid"
+
+The error means that the assertion is valid from a time that is later than the current time of the product host. The product accepts no clock difference. Synchronize the clocks of the IdP and the product host with a reliable time source, and try again.

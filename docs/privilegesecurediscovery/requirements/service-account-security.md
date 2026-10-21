@@ -8,27 +8,29 @@ This page explains the risks and best practices that reduce the threat of exposi
 
 ## Service account exposure risk
 
-Some organizations question the security of using a single Active Directory (AD) domain user account to administer all the domain computers that the product manages. The concern is that if an attacker obtains the account credentials on one endpoint, the attacker can compromise every computer where the account has administrator privileges. The product is designed so that the service account credentials aren't exposed on managed endpoints.
+Some organizations question the security of using a single Active Directory (AD) domain user account to administer all the domain computers that the product manages. The concern is that if an attacker obtains the account credentials on one endpoint, the attacker can compromise every computer where the account has administrator privileges. The product keeps the service account credentials off the managed endpoints.
 
 ## Best practices
 
 - The service accounts don't require interactive logon. As a result, the systems that the product manages don't cache the NTLM hashes of these accounts. Without cached hashes, an attacker can't use pass-the-hash attacks or Net-NTLMv2 hashes to reach other managed systems.
 - Configure the LDAP bind, scan, and protect accounts as follows:
   1. In Active Directory Users and Computers, open the account properties and select the **Account** tab.
-  2. Select **Account is sensitive and cannot be delegated**, so that the account credentials are never cached on a computer.
+  2. Select **Account is sensitive and cannot be delegated**, so that Kerberos can't delegate the account to other services.
   3. In Group Policy, go to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Local Policies** > **User Rights Assignment**.
   4. Add the accounts to **Deny log on locally**.
   5. Add the accounts to **Deny log on through Remote Desktop Services**. On older versions of Windows, this policy is named **Deny log on through Terminal Services**.
+
+The deny log on policies stop the accounts from signing in at the console or through Remote Desktop, so Windows doesn't cache their credentials.
 
 ![The User Rights Assignment policies in Group Policy, with the deny log on policies for the service accounts](/images/privilegesecure/4.2/discovery/5773725444759_image__18__746x366.webp)
 
 ## Kerberos authentication to Windows systems
 
-Kerberos authentication makes sure that using a service account outside the product doesn't expose its credentials on any Windows system. If you change from NTLM to Kerberos, restart the worker and scanner services. You can restart them in the web interface or from the terminal. For configuration steps, see [SASL Kerberos](../configuration/authentication-and-sso/sasl-kerberos.md).
+Kerberos authentication makes sure that using a service account outside the product doesn't expose its credentials on any Windows system. If you change from NTLM to Kerberos, you don't restart any service. For the steps, see [Choose the Windows authentication method](../configuration/domains-and-ad/add-a-domain.md#choose-the-windows-authentication-method).
 
 ## Managed service accounts
 
-Some organizations ask whether AD managed service accounts (MSAs) or group managed service accounts (gMSAs) can reduce the exposure of the service account credentials. These accounts aren't supported, because the product services run on Linux, which doesn't support them. For background, see the Microsoft documentation on [managed service accounts](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/managed-service-accounts-understanding-implementing-best/ba-p/397009) and [group managed service accounts](https://learn.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
+Some organizations ask whether AD managed service accounts (MSAs) or group managed service accounts (gMSAs) can reduce the exposure of the service account credentials. The product doesn't support these accounts, because its services run on Linux, which doesn't support them. For background, see the Microsoft documentation on [managed service accounts](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/managed-service-accounts-understanding-implementing-best/ba-p/397009) and [group managed service accounts](https://learn.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
 
 ## Protected Users group
 

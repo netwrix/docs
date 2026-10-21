@@ -1,10 +1,26 @@
 ---
-title: "Domain Controllers in Privilege Secure for Discovery"
-description: "Learn why domain controllers behave differently from other endpoints and how to configure scanning and protection for them."
+title: "Domain controllers in Privilege Secure for Discovery"
+description: "Learn why domain controllers behave differently from other endpoints, which actions the product skips for them, and how to configure scanning and protection for them."
 sidebar_position: 80
 ---
 
+:::warning[Needs dev input: remove before publishing]
+TODO: Confirm that the product hides domain controllers on **Management** > **Systems**. Evidence: the interface code adds the filter `rmd.isDomainController != true` (mgmtSystemsCtrl.js:858), but in the 26.09.1 test stack a computer flagged as a domain controller still appeared in the list.
+
+TODO: Confirm whether a manual **Rescan** on **Grant Access**, or the **Scan Systems** bulk action, scans a domain controller. Evidence: the scan scheduler (svc_scan.py:1253) and the policy and JITA bulk actions (bulk_action/executors) skip systems that are flagged as domain controllers; no such check was found for **Rescan** or **Scan Systems**.
+:::
+
 Domain controllers operate differently from desktop and server endpoints. They are the source of truth for essential elements of the directory, such as users, groups, and computers. For that reason, Netwrix Privilege Secure for Discovery can't protect them like other endpoints.
+
+## How the product treats domain controllers
+
+During directory synchronization, the product marks a computer as a domain controller when its account has the domain controller flag in Active Directory (the `SERVER_TRUST_ACCOUNT` flag of `userAccountControl`). For these computers, the product does the following:
+
+- The scan scheduler skips them, even when **Scan Mode** is **Enabled**.
+- Bulk actions that change the scan or protect policy skip them, and so does a bulk just-in-time access (JITA) request.
+- Offline access management isn't available for them.
+
+The computers still appear in the directory synchronization, and an administrator can still change their settings on the **Grant Access** page.
 
 ## How domain controllers differ
 
@@ -14,18 +30,22 @@ Domain controllers behave as follows:
 
   ```text
   DOMAIN\Example-Hostname: wrong_host
-  "System hostname does not match: (u'Example-Hostname', [u'DOMAIN', u'Builtin'])"
+  System hostname does not match: ('Example-Hostname', ['DOMAIN', 'Builtin'])
   ```
 
-  In the message, `Example-Hostname` is the hostname that the product expects at the last known IP address. `DOMAIN`, the first item in the array, is the hostname that the IP address returns.
+  In the message, `Example-Hostname` is the hostname that the product expects at the last known IP address. `DOMAIN`, the first item in the list, is the hostname that the IP address returns.
 
-- They can't use Protect Mode. The only users in the local Administrators group of a domain controller are the Domain Admins, so scanning them isn't useful either.
+- They can't use protect mode. The only users in the local Administrators group of a domain controller are the Domain Admins, so scanning them isn't useful either.
 
 ## Configure domain controllers
 
-To avoid the hostname error, set **Scan Mode** to **Disabled** for the domain controllers.
+Leave **Scan Mode** and **Protect Mode** set to **Disabled** for the domain controllers. This keeps the hostname error away, even when you change a system by hand.
 
-Never apply the GPOs that grant the scan account access to local group membership to domain controllers. See [Create a scan GPO for remote SAM access](./scan-gpo-domain-controllers.md) and [Add the Protect Mode account to Windows endpoints with a GPO](./protect-mode-account-gpo.md).
+1. Select **Access** > **Grant Access**.
+2. Search for the domain controller and select it.
+3. Make sure that **Scan Mode** and **Protect Mode** show **Disabled**. If they don't, select each button and then select **Disable**.
+
+Never apply to domain controllers the GPOs that grant the scan account access to local group membership. See [Create a scan GPO for remote SAM access](./scan-gpo-domain-controllers.md) and [Add the Protect Mode account to Windows endpoints with a GPO](./protect-mode-account-gpo.md).
 
 ## Best practices
 

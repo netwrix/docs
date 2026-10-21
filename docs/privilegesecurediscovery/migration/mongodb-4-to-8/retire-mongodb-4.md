@@ -5,7 +5,7 @@ sidebar_position: 80
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: After a multi-node `retire`, the replica set keeps the name `secureone8`, but `get_db_info` finds no `mongoN-8` service and falls back to the source URI with `replicaSet=secureone`. Confirm whether `s1 db` and `s1 database-status` connect on a retired cluster. Not tested on a live cluster. Evidence: s1.py (v26.09.1-rc) get_db_info lines 6754-6771 and MONGO_UPGRADE_MULTI_NODE_CANONICAL_URI line 1227.
+TODO: Dev confirmed that after a multi-node `retire`, `get_db_info` (s1.py:6729) finds no `mongoN-8` service and falls back to `MONGO_UPGRADE_MULTI_NODE_SOURCE_URI`, which hardcodes `replicaSet=secureone` (s1.py:1164). Remove the known-issue note when a release fixes it. Evidence: dev answer; the runbook claims the commands work only through the coexistence window.
 
 TODO: Confirm the downtime a customer should expect from `retire`. The prompt text says the app stops "for a few minutes" for a rename. Evidence: s1.py retire confirmation prompts.
 
@@ -13,6 +13,10 @@ TODO: Confirm the location of the MongoDB 8.0 data on cluster nodes before `reti
 :::
 
 After `cutover`, the application runs on MongoDB 8.0 under the temporary names `<stack>_db8` or `<stack>_mongoN-8`. The `retire` command gives the canonical names back to the MongoDB 8.0 data, so the deployment matches a new MongoDB 8.0 installation. Run it after the application has run on MongoDB 8.0 long enough for you to trust it.
+
+:::warning
+Known issue: on a three-node cluster after `retire`, the `s1 db`, `s1 set-password`, and `s1 database-status` commands can't reach the replica set. They look for the replica set `secureone`, but the replica set's name is `secureone8`. The application still works. Until a fix ships, open a shell with the manual method in [Open a shell manually](../../admin/maintenance/open-the-mongodb-shell.md#open-a-shell-manually), and use the third connection string.
+:::
 
 The `retire` command never deletes the MongoDB 4.0 data. It renames that data aside, so a rollback remains possible until you remove the archive.
 

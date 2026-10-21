@@ -13,7 +13,7 @@ Use this page to find the article for an error or message that you see in the we
 ## Sign-in and authentication
 
 - [Invalid Token](/docs/kb/privilegesecurediscovery/authentication-and-access/unable-to-login-to-ui-due-to-invalid-token-error): The Google Authenticator token is incorrect or out of sync.
-- [SAML assertion not yet valid](/docs/kb/privilegesecurediscovery/authentication-and-access/saml-assertion-not-yet-valid): Sign-in with Active Directory Federation Services (AD FS) fails because of a clock difference.
+- [SAML assertion not yet valid](../configuration/authentication-and-sso/saml-sso-reference.md#fix-saml-assertion-not-yet-valid): Single sign-on fails because the clocks of the identity provider and the product host differ.
 - [Password Expired](/docs/kb/privilegesecurediscovery/authentication-and-access/managing-password-expired): The Active Directory account that the product uses to bind to the domain controller has an expired password.
 - [Invalid Request](/docs/kb/privilegesecurediscovery/troubleshooting-and-errors/error-file-copies-freezes-at-start-of-copy): The web UI sign-in fails and file copies stop at the start of the copy.
 

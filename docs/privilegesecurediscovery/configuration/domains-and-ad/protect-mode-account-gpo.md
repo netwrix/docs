@@ -1,12 +1,8 @@
 ---
-title: "Add the Protect Mode Account to Windows Endpoints with a GPO"
+title: "Add the Protect Mode account to Windows endpoints with a GPO"
 description: "Create a Group Policy Preferences GPO that adds the Protect Mode account to the local Administrators group on Windows endpoints."
 sidebar_position: 60
 ---
-
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: Images /images/privilegesecure/4.2/discovery/1500011376402_mceclip2.webp, _mceclip4.webp, _mceclip6.webp, _mceclip10.webp, _mceclip12.webp, and _mceclip13.webp show a lab test domain, a lab account name, and lab OU names. Re-capture with example.com names and replace.
-:::
 
 Use a Group Policy object (GPO) to add the Protect Mode account to the local Administrators group on Windows endpoints. The GPO uses Group Policy Preferences (GPP).
 
@@ -21,45 +17,23 @@ Never apply this GPO to domain controllers.
 
 ## Create the GPO
 
-The following steps create a GPO named `AddLocalAdmin` and link it to a test organizational unit (OU). In production, link the GPO to the OUs that contain the target endpoints. You can instead add the account to an existing GPO that already applies to those endpoints.
+The following steps create a GPO named `AddLocalAdmin`. You can instead add the setting to an existing GPO that already applies to the target endpoints.
 
 1. Open **Group Policy Management**.
 2. Go to **Forest: `<domain>`** > **Domains** > **`<domain>`** > **Group Policy Objects**. `<domain>` is your domain name.
 3. Right-click **Group Policy Objects**, select **New**, enter the GPO name, and then select **OK**.
-
-   ![Group Policy Management with the Group Policy Objects node of a domain selected](/images/privilegesecure/4.2/discovery/1500011376402_mceclip2.webp)
-
 4. Right-click the GPO and select **Edit**.
 5. Go to **Computer Configuration** > **Preferences** > **Control Panel Settings** > **Local Users and Groups**.
 6. Right-click **Local Users and Groups**, and then select **New** > **Local Group**.
-
-   ![The New Local Group option in the Local Users and Groups context menu](/images/privilegesecure/4.2/discovery/1500011376402_mceclip0.webp)
-
 7. Set **Action** to **Update**, and select **Administrators (built-in)** in the **Group name** list.
-
-   ![The Local Group properties with Action set to Update and Administrators (built-in) selected](/images/privilegesecure/4.2/discovery/1500011376402_mceclip1.webp)
-
 8. Select **Add**, and then add the Protect Mode account, `<protect-account>`.
-
-   ![The Add button in the Local Group properties](/images/privilegesecure/4.2/discovery/1500011376402_mceclip4.webp)
-
-   ![The Protect Mode account listed as a member of the local Administrators group](/images/privilegesecure/4.2/discovery/1500011376402_mceclip6.webp)
-
-9. ensure that the **Delete** options aren't selected, and then select **OK**.
-
-   ![The Local Group properties with the Delete options cleared](/images/privilegesecure/4.2/discovery/1500011376402_mceclip7.webp)
-
+9. Make sure that the **Delete all member users** and **Delete all member groups** options aren't selected, and then select **OK**.
 10. Close the Group Policy Management Editor.
 
 ## Link the GPO
 
-1. Link the GPO to the OUs that contain the target endpoints. Drag the GPO onto the OU, or right-click the GPO, copy it, and paste it under the OU.
-
-   ![The GPO linked to an organizational unit](/images/privilegesecure/4.2/discovery/1500011376402_mceclip10.webp)
-
-   ![The linked GPO shown under the organizational unit](/images/privilegesecure/4.2/discovery/1500011376402_mceclip12.webp)
-
-2. ensure that the OUs don't contain domain controllers.
+1. Link the GPO to the organizational units (OUs) that contain the target endpoints. Drag the GPO onto the OU, or right-click the OU and select **Link an Existing GPO**.
+2. Make sure that the OUs don't contain domain controllers.
 
 ## Test the GPO
 
@@ -71,9 +45,11 @@ The following steps create a GPO named `AddLocalAdmin` and link it to a test org
    gpupdate /force
    ```
 
-   ![A command prompt running gpupdate /force](/images/privilegesecure/4.2/discovery/1500011376402_mceclip13.webp)
+4. Confirm that the Protect Mode account is a member of the local Administrators group:
 
-4. Confirm that the Protect Mode account is a member of the local Administrators group.
+   ```text
+   net localgroup Administrators
+   ```
 
 ## Related topics
 

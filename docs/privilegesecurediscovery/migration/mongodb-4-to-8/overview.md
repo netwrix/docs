@@ -18,13 +18,13 @@ MongoDB 4.0 will no longer be supported and the backend will move to Python 3.13
 
 ## Check whether you need the migration
 
-Run the following command on the database host, or on any node of a cluster:
+Run the following command on the primary node, or on any node of a cluster:
 
 ```bash
-docker service ls | grep -i mongo
+sudo s1 database-status
 ```
 
-Match the result to the following table.
+The output names the active database service and the live MongoDB version. To see the services too, run `docker service ls | grep -i mongo`. Match the result to the following table.
 
 | Result | Meaning | Action |
 |--------|---------|--------|
@@ -32,8 +32,6 @@ Match the result to the following table.
 | Three services named `<stack>_mongo1`, `<stack>_mongo2`, and `<stack>_mongo3`, version 4.0 | Three-node cluster on MongoDB 4.0 | Migrate. Follow [Migrate a three-node cluster](./three-node-cluster.md). |
 | The same services running MongoDB 8.0 | New installation, or migration already finished | No migration needed. See [Verify and maintain the deployment after cutover](./after-cutover.md). |
 | Both `<stack>_db` and `<stack>_db8`, or both `<stack>_mongoN` and `<stack>_mongoN-8` | Migration in progress or finished but not retired | See [Resume, roll back, or recover a migration](./resume-roll-back-recover.md) and [Retire MongoDB 4.0](./retire-mongodb-4.md). |
-
-To read the engine version, run `s1 database-status`. The output includes the active database service and the MongoDB version. See [Verify and maintain the deployment after cutover](./after-cutover.md).
 
 ## What 26.09.1 provides
 
@@ -115,7 +113,7 @@ During the migration, the application connection string for a single node is `mo
 
 ## Migration pages
 
-Work through the pages in this order.
+Follow the [Migration checklist](./checklist.md) from start to finish. It lists every step, with the command and the result to expect. The following pages explain each step.
 
 1. [Plan the migration](./plan.md): storage, maintenance window, and backups.
 2. [Prepare hosts for the migration](./prepare-hosts.md): upgrade to 26.09.1 and install the matching `s1` command-line tool.
@@ -123,22 +121,6 @@ Work through the pages in this order.
 4. [Cut over to MongoDB 8.0](./cut-over.md): the maintenance-window step.
 5. [Verify and maintain the deployment after cutover](./after-cutover.md): validate the result.
 6. [Retire MongoDB 4.0](./retire-mongodb-4.md): restore the canonical names.
+7. [Resume, roll back, or recover a migration](./resume-roll-back-recover.md): the actions for each failure.
 
 If a step fails or stops, see [Resume, roll back, or recover a migration](./resume-roll-back-recover.md). To open a database shell on either version, see [Open the MongoDB shell](../../admin/maintenance/open-the-mongodb-shell.md).
-
-## Information to collect for Netwrix Support
-
-Record the following before the migration, and include the relevant items in a support request:
-
-* Product and `s1` versions.
-* Deployment topology and stack name.
-* Database node names and Docker Swarm manager nodes.
-* Complete output from `check` on every database node.
-* Reported database size and available storage on both relevant filesystems.
-* Output from `s1 status`, `s1 database-status`, and `docker service ls | grep -i mongo`.
-* The exact command and stage that failed.
-* The final validation summary, including **Checks failed** and **Warnings**.
-* The logs in `/secureone/logs/mongo-upgrade/`.
-* Any remediation command that `cutover` printed.
-
-Don't include passwords, access tokens, registry credentials, or database connection secrets in a support request.

@@ -5,25 +5,32 @@ sidebar_position: 20
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the user and administrator roles and what each can do at 26.09.1. Evidence: none; the earlier documentation referred to the account inventory page for the two levels.
-
-TODO: Confirm the steps to add a group on Config > Users and Groups (button and field labels). Evidence: docker/web/common/config/views/usersView.html shows the page title Manage Users and Groups and a search that the code names Add Username or Group; exact button labels not verified.
+TODO: Confirm what each role can do at 26.09.1. Evidence: the interface shows the Action menu, EDR, offline access, and directory bridging settings on Grant Access only to administrators (accessCtrl.js, AdminDatatableData.js), and shows a user their systems. No page describes the two roles.
 :::
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: /images/privilegesecure/4.2/discovery/360048268793_blobid1.webp comes from an earlier release and can show old branding and real user or group names. Re-capture on the current release with example names.
-:::
-
-Privilege Secure for Discovery has two levels of user accounts: User and Administrator. Add the people who need privileged access before you roll out protect mode, so that they can request just-in-time access (JITA) as soon as their standing access is removed. Add them by Active Directory (AD) group instead of one user at a time.
+Privilege Secure for Discovery has two levels of user accounts: **User** and **Administrator**. Add the people who need privileged access before you roll out protect mode, so that they can request just-in-time access (JITA) as soon as the product removes their standing access. Add them by Active Directory (AD) group instead of one user at a time.
 
 For the difference between adding an AD account to the product and adding it to the account inventory of a system, see [Add a user or group to an account inventory](../../admin/systems/add-a-user-or-group-to-an-account-inventory.md).
 
 ## Add a group
 
-1. Select **Config** > **Users and Groups**.
-1. Search for the AD group that contains the users who need privileged access.
-1. Add the group and set its level to **User** or **Administrator**.
+1. Select **Configure** > **Users and Groups**.
+1. In **Add Username or Group**, enter the name of the AD group that contains the users who need privileged access, and select the group from the list.
+1. Select **Add User/Group**.
 
-   ![Users and Groups page with an Active Directory group added](/images/privilegesecure/4.2/discovery/360048268793_blobid1.webp)
+   ![The Users and Groups page with an Active Directory group entered in Add Username or Group](/images/privilegesecurediscovery/onboard-systems/onboard-users-add.webp)
 
-1. Save the change.
+The product adds the group at the **User** level, and shows a confirmation message. The group appears in the table, which you can search and filter by domain, users, and groups.
+
+## Change the level of a group or user
+
+1. In the row of the group or user, select **Modify**.
+1. Select **Change to Admin** to give the **Administrator** level, or **Change to User** to return to the **User** level.
+
+   ![The Modify menu of a group, with the options Change to Admin and Remove Group](/images/privilegesecurediscovery/onboard-systems/onboard-users-modify.webp)
+
+The **Type** column shows the current level.
+
+## Remove a group or user
+
+In the **Modify** menu, select **Remove Group** or **Remove User**. For a user, the menu also has **Reset 2-Factor Token**. See [Reset a user's MFA token](../authentication-and-sso/reset-mfa-tokens.md).

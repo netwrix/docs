@@ -41,7 +41,7 @@ This stops the app briefly. Continue? [y/N]:
 
 Nothing changes if you answer `N` or press Enter. The word `briefly` is part of the prompt and isn't a duration estimate. See [Plan the MongoDB migration](./plan.md) for what determines the length of the downtime.
 
-Keep the command in the foreground and watch the log until it finishes. The log path is the first line of output.
+Run the command inside `tmux` or `screen`, so that a dropped SSH session doesn't interrupt the switch. Keep it in the foreground and watch the log until it finishes. The log path is the first line of output.
 
 ### Skip the confirmation prompt
 

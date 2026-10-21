@@ -1,159 +1,103 @@
 ---
 title: "Configure Okta SSO"
-description: "Add the distinguishedName attribute to Okta users, create the SAML application, and enter the Okta values in Privilege Secure for Discovery."
+description: "Create a SAML application in Okta, require multifactor authentication in Okta, and enter the Okta values in Privilege Secure for Discovery."
 sidebar_position: 40
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Re-verify against the current Okta Admin Console UI (Profile Editor, mappings, Import Now, the app integration wizard, and authentication policies). Evidence: none.
+TODO: Verify in an Okta tenant, after you create the application, the labels on the **Sign On** tab: **SAML Signing Certificates**, **View SAML setup instructions**, and the values **Identity Provider Single Sign-On URL**, **Identity Provider Issuer**, and **X.509 Certificate**. Evidence: the wizard fields and the signing defaults on this page were read from an Okta tenant (2026.42.1 E). The setup instructions page wasn't opened, because no application exists.
 
-TODO: Most steps in the source page exist only as screenshots. Confirm the exact UI labels and the SAML settings for the Okta app (Single sign-on URL, Audience URI, Name ID format, attribute statements). Evidence: none.
+TODO: Verify the **Authentication policy** location and the **Any two factors** policy name on the **Sign On** tab of an Okta Identity Engine application. Evidence: carried over from the earlier version of this page.
 
-TODO: Confirm the SAML application display name in the Okta catalog or custom app. Evidence: none.
-
-TODO: Confirm the assertion consumer path (`/api/login/` in the source page versus `/api/v1/login` at 26.09.1). Evidence: docker/node/api-legacy-onprem/app.js:58.
+TODO: Confirm that a user whose Okta username is the AD user principal name signs in with the `nameID` and `${sAMAccountName}@${domain_fqdn}` settings. Evidence: the match code in saml.js; no end-to-end test with Okta.
 :::
 
-Okta can act as the SAML identity provider (IdP) for Netwrix Privilege Secure for Discovery, with Okta providing multifactor authentication (MFA). This page covers the Okta and product settings. Read [SAML SSO configuration reference](./saml-sso-reference.md) first.
+Okta can act as the SAML identity provider (IdP) for Netwrix Privilege Secure for Discovery, with Okta enforcing multifactor authentication (MFA). Read the [SAML SSO configuration reference](./saml-sso-reference.md) first. This page shows the values for the Okta application and for the product. For the Okta screens, see the Okta documentation: [Create SAML app integrations](https://help.okta.com/oie/en-us/Content/Topics/apps/apps_app_integration_wizard_saml.htm) and the [SAML field reference](https://help.okta.com/oie/en-us/Content/Topics/apps/aiw-saml-reference.htm).
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: 360048120774_mceclip34.webp and 360048120774_blobid3.webp show an Okta developer tenant, application IDs, and the start of a certificate. Redact or replace before publishing.
-:::
+In the following steps, `<fqdn>` is the fully qualified domain name of Privilege Secure for Discovery.
 
 ## Prerequisites
 
-- Administrator access to Privilege Secure for Discovery and Okta.
-- The Okta Active Directory (AD) Agent installed. See [Okta AD agent integration](https://help.okta.com/en/prod/Content/Topics/Directory/ad-agent-new-integration.htm).
+- Administrator access to Okta and to Privilege Secure for Discovery.
+- Okta users that match your Active Directory (AD) users. If AD is the source of your Okta users, install the Okta AD Agent. See [Okta AD agent integration](https://help.okta.com/en/prod/Content/Topics/Directory/ad-agent-new-integration.htm).
+- Okta usernames that equal the AD user principal name (UPN) of each user, for example `jsmith@example.com`. The product matches the user from this value.
+- The users or groups added to the product. See [Add users to Privilege Secure for Discovery](../onboard-systems/add-users-to-privilege-secure.md).
 
-## Add the distinguishedName attribute to Okta users
+## Create the Okta application
 
-Skip this section if the `distinguishedName` attribute is already configured for Okta users.
+1. In the Okta Admin Console, select **Applications** > **Applications**, and then select **Create App Integration**.
+2. Select **SAML 2.0**, and then select **Next**.
+3. For **App name**, enter `Privilege Secure for Discovery`, and then select **Next**.
+4. In the **SAML Settings** section, enter the following values.
 
-1. Sign in to the Okta Admin Console.
-2. Go to **Directory** > **Profile Editor**.
-3. Select **Okta** > **User (default)**.
+   | Okta setting | Value |
+   | --- | --- |
+   | **Single sign-on URL** | `https://<fqdn>/api/v1/login` |
+   | **Use this for Recipient URL and Destination URL** | Selected, which is the default. |
+   | **Audience URI (SP Entity ID)** | `https://<fqdn>` |
+   | **Default RelayState** | Leave blank. |
+   | **Name ID format** | **Unspecified**, which is the default. |
+   | **Application username** | The Okta setting that gives the AD user principal name, for example **Okta username** when it equals the UPN. |
 
-   ![Okta Profile Editor with the default Okta user profile selected](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip2.webp)
+5. Select **Show Advanced Settings**, and confirm the following values. They are the Okta defaults, and the product requires them.
 
-4. Select **Add Attribute**.
+   | Okta setting | Value |
+   | --- | --- |
+   | **Response** | **Signed** |
+   | **Assertion Signature** | **Signed** |
+   | **Signature Algorithm** | **RSA-SHA256** |
+   | **Digest Algorithm** | **SHA256** |
 
-   ![Add Attribute button in the Okta Profile Editor](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip3.webp)
+   Leave **Honor Force Authentication** at **Yes**. The product uses it when **force IdP reauthentication** is on.
+6. Leave **Attribute Statements** empty. The product matches the user from the NameID.
+7. Select **Next**. Select **I'm an Okta customer adding an internal app**, and then select **Finish**.
 
-5. Enter the attribute settings. The following example shows one set of values. Adjust them for your environment.
+## Assign users and require MFA
 
-   ![Example settings for the distinguishedName attribute](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip4.webp)
+1. On the **Assignments** tab of the application, assign the people and groups that need access to Privilege Secure for Discovery.
+2. On the **Sign On** tab, select an **Authentication policy** that requires MFA, for example **Any two factors**.
 
-## Map the AD distinguished name
+Okta is the only place where MFA happens for SSO users. The product doesn't ask SSO users for its own second factor. See [MFA with SSO](./saml-sso-reference.md#mfa-with-sso).
 
-1. Go to **Directory** > **Profile Editor**.
-2. On the domain, select **Mappings**.
+## Get the Okta values
 
-   ![Mappings option for the Active Directory domain in the Profile Editor](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip1.webp)
+1. On the **Sign On** tab, in **SAML Signing Certificates**, select **View SAML setup instructions** for the active certificate.
+2. Copy the **Identity Provider Single Sign-On URL** and the **X.509 Certificate**.
 
-3. Under the `<domain>` to Okta User mapping, scroll down and set `appuser.dn` for `dn`.
+## Configure Privilege Secure for Discovery
 
-   ![Mapping of appuser.dn to the dn attribute](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip5.webp)
+1. Select **Configure** > **Server**.
+2. In **SAML Configuration**, enter the following values.
 
-   ![Remaining mappings in the Okta user profile](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip6.webp)
+   | Setting | Value |
+   | --- | --- |
+   | **Entrypoint** | The **Identity Provider Single Sign-On URL** from Okta. |
+   | **Issuer** | `https://<fqdn>`, the same value as the **Audience URI** in Okta. |
+   | **Issuer Cert** | The Okta certificate, without the `BEGIN CERTIFICATE` and `END CERTIFICATE` lines. |
+   | **SSO Enabled** | **Disabled** while you stage the configuration. |
+   | **SSO Flow** | **SP-Initiated** |
+   | **ID Claim** | `nameID` |
+   | **Match User By** | `${sAMAccountName}@${domain_fqdn}` |
 
-4. Save and apply the mappings.
-
-## Import AD users to retrieve the distinguishedName attribute
-
-1. Open the directory to import.
-
-   ![Okta directory list with the AD directory selected](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip7.webp)
-
-2. Select **Import Now**.
-
-   ![Import Now button](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip8.webp)
-
-3. Select **Full Import**.
-
-   ![Full Import option](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip9.webp)
-
-4. Wait for the import to finish. This can take a few minutes. Don't refresh the page.
-
-   ![Import in progress with status information](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip10.webp)
-
-   ![Import results](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip18.webp)
-
-5. Assign any new users and confirm.
-
-   ![Confirmation of newly imported users](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip13.webp)
-
-## Test authentication with AD credentials (optional)
-
-Test that an imported user can authenticate with AD credentials.
-
-![Test authentication entry in the Okta directory settings](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip14.webp)
-
-![Okta directory test page scrolled to the end](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip15.webp)
-
-![Test authentication result](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip16.webp)
-
-## Add the Privilege Secure for Discovery application
-
-1. In Okta, add a SAML application for Privilege Secure for Discovery.
-
-   ![Okta page for adding a new application](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip19.webp)
-
-   ![Application name and settings](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip20.webp)
-
-   ![SAML settings page](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip21.webp)
-
-2. Enter the SAML URLs.
-
-   - The sign-in URL format is `https://<fqdn>/api/v1/login/`, where `<fqdn>` is the fully qualified domain name of Privilege Secure for Discovery.
-   - **Audience URI** is the base URL only. Leave off `/api/v1/login/`.
-
-   ![SAML URL and Audience URI settings](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip23.webp)
-
-3. If your Okta environment requires an application user name, set it.
-
-   ![Application username setting](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip26.webp)
-
-4. Add an attribute statement for `user.dn`. If `user.dn` doesn't appear in the list, type it manually.
-5. Select **Next**, answer the feedback question, and select **Finish**.
-6. Configure the **Sign On** settings.
-
-   ![Sign On tab of the application](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip28.webp)
-
-   ![Sign On settings](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip37.webp)
-
-7. Select a user authentication policy. The example uses an **Any two factors** policy.
-
-   ![Authentication policy selection](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip29.webp)
-
-## Assign users and groups to the application
-
-Assign the Okta people and groups that need access to Privilege Secure for Discovery.
-
-![Assignments tab of the application](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip31.webp)
-
-![Assigning people and groups to the application](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip32.webp)
-
-## Retrieve the SAML information from Okta
-
-Copy the identity provider single sign-on URL, the issuer, and the signing certificate from the application's SAML setup details.
-
-![SAML setup instructions in the Okta application](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip33.webp)
-
-![Okta SAML metadata values](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip34.webp)
-
-## Enter the SAML information in Privilege Secure for Discovery
-
-1. Go to **Configure** > **Server** > **SAML Configuration**.
-2. Enter the Okta values in **Entrypoint**, **Issuer**, and **Issuer Cert** as described in the [field reference](./saml-sso-reference.md#saml-configuration-fields).
-
-   ![SAML Configuration panel fields](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_blobid2.webp)
-
-   ![SAML Configuration panel filled with Okta values](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_blobid3.webp)
-
-3. Enable **SSO Enabled** and save.
+3. Save the configuration, review the saved values, then set **SSO Enabled** to **Enabled**.
 
 ## Sign in with Okta
 
-When you sign in to Privilege Secure for Discovery, you are either redirected automatically to Okta or shown the sign-in page with an SSO option. Select **SSO Login** to sign in through Okta.
+1. Open `https://<fqdn>` in a new private browser window.
+2. Select **SSO Login**. If **Auto-Redirect to IdP** is on, the redirect to Okta starts by itself.
+3. Sign in to Okta and complete the MFA prompt.
 
-![Privilege Secure for Discovery sign-in page with the SSO Login option](/images/privilegesecure/4.2/discovery/admin/configuration/360048120774_mceclip36.webp)
+If sign-in fails, use the **Non-SSO sign-in URL** to sign in locally. See [Troubleshoot SAML sign-in](./saml-sso-reference.md#troubleshoot-saml-sign-in). The **System Log** in the Okta Admin Console shows what Okta sent.
+
+## Start from Okta (IdP-initiated)
+
+To let users start from the Okta dashboard, change the following settings.
+
+1. In Privilege Secure for Discovery, set **SSO Flow** to **IdP-Initiated**.
+2. Set **Entrypoint** to the embed link of the Okta application, from the **General** tab of the application.
+
+Users then select the application tile in Okta, and Okta posts the assertion to the product.
+
+## Send the distinguished name instead
+
+Earlier configurations send the AD distinguished name in a claim named `dn`. To keep that mapping, add an attribute statement in Okta that sends the distinguished name as `dn`. In the product, set **ID Claim** to `dn` and **Match User By** to `distinguishedName`. For the steps to map the directory attribute, see the Okta documentation on profile mappings.

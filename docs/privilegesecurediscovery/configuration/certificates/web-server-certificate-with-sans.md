@@ -1,208 +1,110 @@
 ---
-title: "Create a web server certificate with SANs"
-description: "Generate a CSR with Subject Alternative Names, convert the issued certificate to PEM, and install it on Privilege Secure for Discovery."
+title: "Install a web server certificate"
+description: "Install a CA-signed or self-signed TLS certificate on Privilege Secure for Discovery so browsers trust the web interface, and fix the common certificate errors."
 sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the restart command for the API service in the container-based deployment at 26.09.1 (the source used `s1 stop api; sleep 20; s1 start api`). Evidence: none.
+TODO: Confirm that a certificate change doesn't end signed-in sessions or interrupt a running scan. Evidence: initServerTls.js closes and restarts the HTTPS listener inside the API process when it receives the certificate change; the process and container kept running in testing, but no session or scan was running.
 
-TODO: Confirm where the certificate and key are entered (**Configure** > **Server** section name and field labels) at 26.09.1. Evidence: none.
+TODO: Confirm whether each node of a cluster serves the certificate, or only the node that runs the API service. Evidence: none; the API service is pinned to one node in the cluster stack file.
 
-TODO: Confirm how to add a CA to the trust store in the container-based deployment. The linked page is in the legacy appendix. Evidence: none.
-
-TODO: The self-signed procedure uses `openssl x509 -req`, which doesn't copy the SANs from the CSR. Confirm the supported way to create a self-signed certificate with SANs. Evidence: none.
-
-TODO: The source page included a command to generate a CA certificate (`-CAkey rootCA.crt -signkey rootCA.key`) that was malformed; it was removed. Confirm whether a replacement is needed. Evidence: none.
+TODO: Confirm the TLS versions and ciphers that the web interface offers. Evidence: api-legacy-onprem/config.js sets `TLSV2_ONLY: true` and lists ECDHE-RSA and TLS 1.3 ciphers; this page says only "TLS 1.2 or later".
 :::
 
-Install a web server certificate on Privilege Secure for Discovery to remove the TLS handshake errors that users see when they open the web interface in a browser. The process has four parts: generate a certificate signing request (CSR), have a certificate authority (CA) issue the certificate, convert the certificate to PEM format if needed, and enter the key and certificate in the product.
-
-To gather the subject details for the CSR, see [Create a CSR](./create-a-csr.md). For file formats, see [Extract a certificate and key from a PFX file](./certificate-files.md).
+A new installation uses a default certificate for the name `localhost`, so browsers show a warning when users open the product by its real name. Install a certificate for the name that users use. The certificate must come from a certificate authority (CA) that your users' browsers trust, such as the CA that your organization runs. The product accepts RSA keys only, and TLS 1.2 or later.
 
 ## Prerequisites
 
-- OpenSSL on the computer where you generate the CSR.
-- The fully qualified domain names (FQDNs) and short host names that users and cluster nodes use to reach the product.
+- A certificate and an unencrypted RSA key in PEM format, with the names that users use in the Subject Alternative Names (SANs). To create the request, see [Create a CSR](./create-a-csr.md). To convert the files that the CA returned, see [Prepare the certificate and key files](./certificate-files.md).
+- A copy of the key and certificate that the product uses now, if you have them. The product keeps the previous certificate internally, but the interface can't restore it or show its key.
+- Administrator access to Privilege Secure for Discovery.
 
-## Create a CSR with Subject Alternative Names
+## Check the key and the certificate
 
-1. Create a file named `SANs.cnf` with the following content. Replace the `DNS.<n>` entries with the alternative names to include in the CSR. Include the external host name and the FQDN and short name of every node, plus any DNS round-robin name.
+On the computer that has the files, confirm that the key matches the certificate. The two hashes must be identical.
 
-   ```ini
-   [ req ]
-   default_bits = 2048
-   distinguished_name = req_distinguished_name
-   req_extensions = req_ext
-   [ req_distinguished_name ]
-   countryName = Country Name (2 letter code)
-   stateOrProvinceName = State or Province Name (full name)
-   localityName = Locality Name (eg, city)
-   organizationName = Organization Name (eg, company)
-   commonName = Common Name (e.g. server FQDN or YOUR name)
-   [ req_ext ]
-   subjectAltName = @alt_names
-   [alt_names]
-   DNS.1 = nps-d.example.com
-   DNS.2 = node01.example.com
-   DNS.3 = node02.example.com
-   DNS.4 = node03.example.com
-   DNS.5 = node01
-   DNS.6 = node02
-   DNS.7 = node03
-   ```
+```bash
+openssl pkey -in server.key -pubout | sha256sum
+openssl x509 -in fullchain.crt -pubkey -noout | sha256sum
+```
 
-2. Generate the key and the CSR from the configuration file.
+Confirm that the certificate lists the names and the dates that you expect.
 
-   ```bash
-   sudo openssl req -out secureone.csr -newkey rsa:2048 -nodes -keyout secureone.key -config SANs.cnf
-   ```
-
-3. When prompted, enter the details for your organization. If a field has a default value, enter `.` to leave it blank.
-
-   | Prompt | Example |
-   | --- | --- |
-   | Country Name | `US` |
-   | State or Province Name | `California` |
-   | Locality Name | `San Francisco` |
-   | Organization Name | `Example Corp` |
-   | Common Name | `nps-d.example.com` |
-
-   You don't need to enter a password or passphrase. That optional field adds protection to the key pair.
-
-4. Verify that the CSR contains the correct information.
-
-   ```bash
-   sudo openssl req -text -noout -verify -in secureone.csr
-   ```
-
-5. Submit the CSR to the party that issues the certificate.
-
-## Convert a PFX file to PEM
-
-The product needs PEM files. If the CA returns a PFX file, convert it. PEM, or Privacy Enhanced Mail, is a Base64-encoded DER certificate that you can read in a text editor.
-
-1. Extract the signed certificate.
-
-   ```bash
-   sudo openssl pkcs12 -in <file>.pfx -nokeys -out secureone.crt -nodes
-   ```
-
-2. Extract the private key.
-
-   ```bash
-   sudo openssl pkcs12 -in <file>.pfx -nocerts -out secureone.key
-   ```
-
-3. Extract the CA certificates.
-
-   ```bash
-   sudo openssl pkcs12 -in <file>.pfx -cacerts -nokeys -chain -out ca-certificates.crt
-   ```
-
-## Verify the key and certificate
-
-1. Confirm that the key and certificate match. The two hashes must be identical.
-
-   ```bash
-   openssl pkey -in secureone.key -pubout -outform pem | sha256sum
-   openssl x509 -in secureone.crt -pubkey -noout -outform pem | sha256sum
-   ```
-
-2. Confirm that the key is valid.
-
-   ```bash
-   sudo openssl pkey -in secureone.key -text -noout
-   ```
-
-   The output begins with `Private-Key: (2048 bit)`.
-
-3. Confirm that the syntax of the CA certificates and the certificate is correct.
-
-   ```bash
-   sudo openssl x509 -in ca-certificates.crt -text -noout
-   sudo openssl x509 -in secureone.crt -text -noout
-   ```
-
-   The certificate output lists the version, serial number, signature algorithm, issuer, validity period, subject, and public key.
-
-   ```text
-   Certificate:
-       Data:
-           Version: 3 (0x2)
-           Serial Number: <serial-number>
-       Signature Algorithm: sha256WithRSAEncryption
-           Issuer: C=US, ST=California, L=San Francisco, O=Example Corp, CN=nps-d.example.com
-           Validity
-               Not Before: <start-date>
-               Not After : <end-date>
-           Subject: C=US, ST=California, L=San Francisco, O=Example Corp, CN=nps-d.example.com
-           Subject Public Key Info:
-               Public Key Algorithm: rsaEncryption
-                   Public-Key: (2048 bit)
-   ```
+```bash
+openssl x509 -in fullchain.crt -noout -subject -dates -ext subjectAltName
+```
 
 ## Install the certificate
 
 1. Sign in to Privilege Secure for Discovery as an administrator.
-2. Go to **Configure** > **Server** and find the section for the key and certificate.
-3. Enter the contents of the key file and the certificate file in PEM format.
-4. Save the configuration.
+2. Select **Configure** > **Server**.
+3. In the **Server Certificate** panel, review the certificate in use. The panel shows its **CN**, **SAN**, and validity dates, and hides the key.
 
-If the web interface doesn't work after you update the certificate, restart the API service through SSH.
+   ![The Server Certificate panel with the default certificate for localhost](/images/privilegesecurediscovery/certificates/cert-server-certificate-default.webp)
 
-```bash
-s1 stop api; sleep 20; s1 start api
-```
+4. Select **Update Certificate**.
+5. In **Private Key**, paste the contents of `server.key`, starting at the `BEGIN` line.
+6. In **Certificate**, paste the contents of `fullchain.crt`: the server certificate first, then the intermediate certificates.
 
-If a tool such as Microsoft Certificate Authority issued the certificate, add the public certificate chain of the CA to the `ca-certificates` store on the nodes. See [Add a certificate authority to the Ubuntu trusted authorities repository](../../appendix/legacy-iso/add-a-certificate-authority.md).
+   The panel checks the pair as you paste. When the pair is valid, the panel shows the **CN**, **SAN**, and validity dates of the new certificate, and enables **Save**. Otherwise, it shows `Invalid Key and/or Cert.` See [Fix certificate errors](#fix-certificate-errors).
 
-## Create a self-signed certificate
+7. Select **Save**.
 
-When you update an existing certificate, the `ca-certificates.crt` file can stay the same as long as it hasn't expired. To check it, run the following command.
+   ![The Server Certificate panel after the new certificate is saved](/images/privilegesecurediscovery/certificates/cert-server-certificate-installed.webp)
 
-```bash
-sudo openssl x509 -in ca-certificates.crt -text -noout
-```
-
-To create a new certificate from the CSR with SANs, run the following command.
+The product starts using the new certificate within seconds. You don't restart any service. Open the product in a new browser window by its DNS name to confirm that the browser trusts it. From another computer, you can check what the product sends:
 
 ```bash
-sudo openssl x509 -req -days 365 -in secureone.csr -signkey secureone.key -sha256 -out secureone.crt
+openssl s_client -connect <fqdn>:443 -servername <fqdn> -showcerts </dev/null
 ```
 
-## Remove the password from a private key
+The output lists the server certificate and the intermediate certificates in order.
 
-1. Copy the private key file into your OpenSSL directory, or specify the path in the command.
-2. Run the following command.
+## Fix certificate errors
+
+The panel shows the same message for every invalid pair: `Invalid Key and/or Cert.` Check the following causes.
+
+| Cause | Fix |
+| --- | --- |
+| The pasted text has lines before the `BEGIN` line, such as `Bag Attributes`. | Paste only the PEM blocks. Create the files with the commands in [Prepare the certificate and key files](./certificate-files.md). |
+| The key is encrypted. | Remove the password. The key must begin with `-----BEGIN PRIVATE KEY-----` or `-----BEGIN RSA PRIVATE KEY-----`. |
+| The key is an EC key. | Create an RSA key. The product accepts RSA keys only. |
+| The key doesn't match the certificate. | Run the hash commands in [Check the key and the certificate](#check-the-key-and-the-certificate). Use the key that you created with the CSR. |
+| The certificate field starts with a CA certificate. | Put the server certificate first, followed by the intermediate certificates. |
+
+If the panel accepts the pair but the browser still shows a warning:
+
+- The browser doesn't trust the CA. Install the root CA certificate on the computers of your users. This is the only fix when your organization runs the CA.
+- The name in the address bar isn't in the SANs. Open the product by one of the names that the certificate lists, or request a new certificate.
+- The certificate isn't valid yet or has expired. Check the dates and the clock of the computer.
+
+## Use a self-signed certificate
+
+Use a self-signed certificate for a test deployment only. Each browser shows a warning until you trust the certificate on that computer.
+
+1. Create the key and the certificate in one command. Replace the names with your own values.
 
    ```bash
-   openssl rsa -in <file1>.key -out <file2>.key
+   openssl req -x509 -newkey rsa:2048 -nodes -keyout server.key -out server.crt -days 365 \
+     -subj "/CN=nps-d.example.com" \
+     -addext "subjectAltName=DNS:nps-d.example.com,DNS:node01.example.com"
    ```
 
-3. Enter the passphrase. `<file2>.key` is now the unprotected private key.
-4. To verify that the output is unencrypted, open the file in a text editor and check the header.
+   To sign an existing CSR with its own key instead, add `-copy_extensions copy` to the `openssl x509 -req` command, so that the SANs reach the certificate.
 
-An encrypted key has `Proc-Type: 4,ENCRYPTED` and `DEK-Info` lines after the begin marker.
+2. Install `server.key` and `server.crt` as described in [Install the certificate](#install-the-certificate).
 
-```text
------BEGIN RSA PRIVATE KEY-----
-Proc-Type: 4,ENCRYPTED
-DEK-Info: DES-EDE3-CBC,<value>
-<encoded-key>
------END RSA PRIVATE KEY-----
-```
+## Trust a CA for the directory connection
 
-An unencrypted key has no such lines.
+The web certificate is what browsers see. The product also checks the certificates of the servers that it connects to. For a domain that uses LDAP over SSL, the domain settings have three options:
 
-```text
------BEGIN RSA PRIVATE KEY-----
-<encoded-key>
------END RSA PRIVATE KEY-----
-```
+- **SSL** turns on a secure connection to the directory server.
+- **Verify Certificate** makes the product check the certificate of the directory server. When it is off, the product doesn't check the certificate.
+- **CA Public Certificate** holds the PEM certificate of the CA that issued the directory server certificate. When **Verify Certificate** is on and this field is empty, the product trusts only the public CAs that its container includes. A CA that your organization runs isn't one of them, so paste its certificate here.
 
-:::warning
-An unencrypted private key is easier to use if the file is stolen. Restrict access to the file.
-:::
+You don't add a CA to the nodes. For the steps to add a domain, see [Add a domain](../domains-and-ad/add-a-domain.md).
 
-For more information, see the [OpenSSL project](https://www.openssl.org/).
+## Back up the certificate
+
+The product stores the web server certificate and its key in its database, not in a file on the node. A database backup contains the private key. See [Protect and recover your deployment](../../admin/maintenance/protect-and-recover-your-deployment.md).

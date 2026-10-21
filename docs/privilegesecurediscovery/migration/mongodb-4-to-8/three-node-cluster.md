@@ -20,7 +20,7 @@ The tool places each MongoDB 8.0 member on the same Swarm node as its MongoDB 4.
 
 Complete [Plan the MongoDB migration](./plan.md) and [Prepare hosts for the MongoDB migration](./prepare-hosts.md) on every database node.
 
-Use the explicit `--multi-node` option in every cluster command. If the deployment uses a stack name other than `s1`, place the global options before `mongo-upgrade`:
+Use the explicit `--multi-node` option in every cluster command. The `s1` tool detects a cluster from the Docker Swarm node count, so the option is a safeguard. If the deployment uses a stack name other than `s1`, place the global options before `mongo-upgrade`:
 
 ```bash
 s1 --stack <stack-name> --multi-node mongo-upgrade <command>
@@ -130,7 +130,7 @@ The states and their meaning are the same as for a single node. See [Migrate a s
 
 ## Prepare for cutover
 
-Complete the checklist in [Migrate a single-node deployment](./single-node.md#prepare-for-cutover), and confirm the following additional items:
+Complete the go or no-go items in the [Migration checklist](./checklist.md#phase-4-decide-whether-to-continue). On a cluster, also confirm the following items:
 
 * `check` passed on all three database nodes.
 * All three `secureone8` members are healthy.

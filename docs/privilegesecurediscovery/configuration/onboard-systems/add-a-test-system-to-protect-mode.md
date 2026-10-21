@@ -5,37 +5,49 @@ sidebar_position: 40
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the Insight > Computer page name and path at 26.09.1. Evidence: none; the Access > Grant Access page is in docker/web/common/access/views/accessView.html and the protect mode choices are in accessCtrl.js (New Accounts: Deny, New Accounts: JITA, Disable).
-:::
+TODO: Confirm what **New Accounts: Deny** does to a newly found administrator account, and what a user of that account sees. Evidence: windows/scanner.py:353-367 doesn't add a new administrator to the inventory when `strict_secure` is true, and logs `Protect: New Accounts - Deny: Not adding user to inventory`. The effect on the account on the system isn't traced.
 
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: /images/privilegesecure/4.2/discovery/360048268793_blobid2.webp shows the old product header and branding. Re-capture on the current release.
-
-TODO: /images/privilegesecure/4.2/discovery/360048268793_blobid3.webp comes from an earlier release. Re-capture and redact system and account names.
+TODO: Confirm the Insight > Computer page at 26.09.1. Evidence: the page title is Insight Computer, with the panels Computer Access History and Accounts with Admin Access. No test data exists for it here, so the page has no screenshot.
 :::
 
 Move one system to protect mode first to learn how just-in-time access (JITA) works before you protect many systems. Protect mode removes accounts that aren't persistent from the system and stores them in Privilege Secure for Discovery. Users can then request access to the system.
 
 ## Prerequisites
 
-- The system is scanned.
+- The product has scanned the system. The **Last Scanned** value on the **Grant Access** page shows when.
 - The protect account is in the local Administrators group on the system. See [Add the protect account to local administrators](./add-the-protect-account-to-local-administrators.md).
 
 ## Review the accounts on the system
 
+1. Select **Access** > **Grant Access**.
+1. In **System Search**, enter the name of the system and select it.
+
+   The **Administrator Accounts** table lists the accounts and groups that have administrator access. The **Persistent** column shows which accounts stay on the system, and the **On System** column shows which accounts are in the local Administrators group now.
+
+   ![The Grant Access page for a system, with its scan and protect modes and its administrator accounts](/images/privilegesecurediscovery/onboard-systems/onboard-grant-access.webp)
+
 1. Decide which service accounts must be persistent. This is the most important step, because software can stop working if its account loses access. A persistent account stays on the system.
+1. To change an account, select **Action** in its row, and then select **Set Persistent** or **Remove Persistent**.
+
+   ![The Action menu of an account, with the options Remove Admin and Remove Persistent](/images/privilegesecurediscovery/onboard-systems/onboard-account-action-menu.webp)
+
 1. Decide which groups and users need privileged access to the system. Nested groups often give more access than a person needs, so review and clean up the access as part of the move to protect mode.
 
-To see the accounts with access to a system, open the **Insight** > **Computer** page. The page lists the accounts and groups over several pages.
+The **Insight** > **Computer** page shows the access history of a system and the accounts with administrator access at each scan.
 
-![Computer page listing the accounts and groups with administrator access to a system](/images/privilegesecure/4.2/discovery/360048268793_blobid2.webp)
+## Choose a protect mode
+
+**Protect Mode** has three choices:
+
+- **Disable**: The product doesn't protect the system.
+- **New Accounts: JITA**: The product removes accounts that aren't persistent and adds them to its inventory. A user can then request access through JITA. Choose this option for a test system.
+- **New Accounts: Deny**: The product doesn't add newly found administrator accounts to its inventory, so those accounts don't get access through the product.
 
 ## Add the system to protect mode
 
-1. Select **Access** > **Grant Access**.
-1. Locate the system.
-1. Set **Protect Mode** to **New Accounts: JITA**.
+1. On the **Grant Access** page, select the **Protect Mode** button for the system.
+1. Select **New Accounts: JITA**.
 
-   ![Grant Access page showing a system with protect mode set](/images/privilegesecure/4.2/discovery/360048268793_blobid3.webp)
+   ![The Protect Mode menu of a system, with the options New Accounts: Deny and New Accounts: JITA](/images/privilegesecurediscovery/onboard-systems/onboard-protect-mode-menu.webp)
 
-Accounts that aren't persistent are removed from the system and added to Privilege Secure for Discovery. A user can now access the system through JITA if the user is also a member of an AD group that has access to the system. The product doesn't change Active Directory.
+The product removes accounts that aren't persistent from the system and adds them to Privilege Secure for Discovery. A user can now access the system through JITA if the user is also a member of an AD group that has access to the system. The product doesn't change Active Directory.

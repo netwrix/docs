@@ -1,52 +1,60 @@
 ---
 title: "Set up scan mode"
-description: "Configure the scan account and scan policy so Privilege Secure for Discovery can discover accounts on Windows systems."
+description: "Configure the scan account and the default scan policy so Privilege Secure for Discovery can discover accounts on Windows systems."
 sidebar_position: 10
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Confirm the Windows computers still need the scan GPO at 26.09.1 and which GPO page applies to which domain controller version. Evidence: none; the earlier documentation pointed to a Server 2012 or 2008 page that is now merged into the Server 2016 and later page.
+TODO: Confirm that the domain's Default Policies apply only to computers that the product imports after you save them, and that they don't change computers already in the inventory. Evidence: shared/python/src/remediant/ldap_sync/importer.py:740-766 passes the defaults as new_record_defaults, and db_queries/ldap_store.py:632-655 writes them with `$setOnInsert`. The existing-system path (`existing_id`) doesn't write them. Not tested live, because ldapsync doesn't run in the test stack.
 
-TODO: Confirm the labels and layout of the domain configuration page, including how the page opens with the arrow next to a domain. Evidence: docker/web/common/config/views/domainConfiguration.html shows Scan Mode Account, Protect Mode Account, and Default Policies > Scan Mode labels.
+TODO: Decide whether to tell readers to keep the default **Protect Mode** at **Disabled** during onboarding. A default of **New Accounts: JITA** would protect every computer that the product imports afterward. Evidence: same code as above.
 
 TODO: Confirm that a static domain controller is still required and that a load-balanced connection still causes group updates to be missed. Evidence: carried over from the earlier documentation; none in code.
-:::
-
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: /images/privilegesecure/4.2/discovery/360048268793_blobid0.webp comes from an earlier release and can show the old product branding. Re-capture on the current release and redact any domain or account names.
 :::
 
 Scan mode lets Privilege Secure for Discovery read the accounts and groups with administrator access on your Windows systems, without changing them. Set up scan mode first, so you can review the discovered access before you enable protect mode.
 
 ## Prerequisites
 
-- The Bind, Scan, and Protect domain accounts. For details, see [Service accounts](../../requirements/service-accounts.md).
+- You added the domain with its Bind, Scan, and Protect accounts. See [Add a domain](../domains-and-ad/add-a-domain.md) and [Service accounts](../../requirements/service-accounts.md).
 - A static domain controller for the domain. Privilege Secure for Discovery detects changes to groups, organizational units (OUs), and users through this connection. A load-balanced connection prevents the product from recognizing group updates correctly.
 
-## Add the scan account
+## Check the scan account
 
-1. Select **Config** > **Server Configuration**.
-1. Next to the domain, select the arrow to open the domain settings.
+1. Select **Configure** > **Server**.
+1. Select the domain to open its settings.
+1. Under **Scan Mode Account**, confirm the domain user and password. If you change either one, select **Save**.
 
-   ![Server Configuration page with the settings of a domain open](/images/privilegesecure/4.2/discovery/360048268793_blobid0.webp)
-
-1. Under **Scan Mode Account**, enter the domain user and the password.
-1. Under **Protect Mode Account**, enter the domain user and the password.
-1. Select **Save**.
+   ![The Scan Mode Account with its domain user and password](/images/privilegesecurediscovery/requirements/svcacct-scan-account.webp)
 
 ## Allow scanning of Windows systems
 
-Use the scan account to deploy a Group Policy Object (GPO) change that lets Privilege Secure for Discovery scan all Windows systems. For the steps, see [Scan GPO guide for domain controllers](../domains-and-ad/scan-gpo-domain-controllers.md).
+Windows systems restrict which accounts can read the members of the local Administrators group over the network. Ask a domain administrator to deploy a Group Policy Object (GPO) that grants the scan account this right. The scan account doesn't need administrator rights. For the steps, see [Create a scan GPO for remote SAM access](../domains-and-ad/scan-gpo-domain-controllers.md).
+
+:::warning
+Never apply this GPO to domain controllers.
+:::
 
 ## Enable scan mode for the domain
 
-1. Select **Config** > **Server Configuration**.
-1. Open the domain settings.
+1. Select **Configure** > **Server**.
+1. Select the domain to open its settings.
 1. Under **Default Policies**, set **Scan Mode** to **Enabled**.
+
+   ![The Default Policies with Scan Mode enabled and Protect Mode disabled](/images/privilegesecurediscovery/requirements/svcacct-default-policies.webp)
+
 1. Select **Save**.
 
-The product starts scanning the domain. After the first scan, review the results on the dashboard. For an explanation of the dashboard, see [Dashboard](../../admin/dashboard.md).
+The default policies apply to the computers that the product adds to its inventory from now on. To enable scan mode for systems that are already in the inventory, use the Bulk Actions **Scan Policy** action or change the system. See [Run bulk actions on systems](../../admin/systems/bulk-actions.md).
+
+After the first scan, review the results on the dashboard. For an explanation of the dashboard, see [Dashboard](../../admin/dashboard.md).
 
 ## Enable or disable scan mode for one system
 
-To change scan mode for a single system, open the system on the **Access** > **Grant Access** page and change **Scan Mode** to **Enabled** or **Disabled**. You can't disable scan mode while offline access is enabled for the system.
+1. Select **Access** > **Grant Access**.
+1. Search for the system and select it.
+1. Next to **Scan Mode**, select the button, and then select **Enable** or **Disable**.
+
+To scan the system now, select **Rescan**.
+
+You can't disable scan mode while offline access is enabled for the system. The product shows the message `Cannot disable scan while offline access is enabled`.

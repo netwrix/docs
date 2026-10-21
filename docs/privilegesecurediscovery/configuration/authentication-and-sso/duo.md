@@ -1,156 +1,92 @@
 ---
 title: "Configure Duo SSO"
-description: "Configure Duo Access Gateway or Duo hosted SSO as the SAML identity provider for Privilege Secure for Discovery."
+description: "Create a Generic SAML Service Provider application in Duo Single Sign-On and enter the Duo values in Privilege Secure for Discovery."
 sidebar_position: 30
 ---
 
 :::warning[Needs dev input: remove before publishing]
-TODO: Re-verify against the current Duo UI. Duo Access Gateway is a legacy product; confirm whether it is still supported and whether this section should stay. Evidence: none.
+TODO: Confirm which Duo attribute gives the value that **Match User By** needs, for a Duo Single Sign-On tenant with an Active Directory (AD) authentication source. Evidence: the Duo documentation lists **NameID attribute** as a choice; which attribute carries the sAMAccountName or the user principal name depends on the Duo authentication source settings, and no tenant was available to check.
 
-TODO: Confirm Duo field names (Host allowlisting, SAML Response, Service Provider) in the current Duo Single Sign-On application. Evidence: none.
-
-TODO: Confirm the assertion consumer path (`/api/login` in the source pages versus `/api/v1/login` at 26.09.1). Evidence: docker/node/api-legacy-onprem/app.js:58.
-
-TODO: Screenshots of the Duo hosted SSO tenant (account ID, company name, staff name, application key, certificate fingerprints) were removed from the text; the source images need redaction or replacement. Evidence: img-items.json (360049850994_mceclip6, mceclip7, mceclip8).
+TODO: Confirm the field names **Service Provider Login URL**, **Sign response**, and **Sign assertion** in the Duo application. Evidence: the Duo documentation for the Generic SAML Service Provider (duo.com/docs/sso-generic).
 :::
 
-Duo can act as the SAML identity provider (IdP) for Netwrix Privilege Secure for Discovery in two ways: through an on-premises Duo Access Gateway (DAG), or through Duo hosted single sign-on (SSO). Read [SAML SSO configuration reference](./saml-sso-reference.md) first for the field definitions.
+Duo Single Sign-On can act as the SAML identity provider (IdP) for Netwrix Privilege Secure for Discovery, with Duo enforcing multifactor authentication (MFA). Read the [SAML SSO configuration reference](./saml-sso-reference.md) first. This page shows the values for the Duo application and for the product. For the Duo screens, see the Duo documentation: [Generic SAML Service Provider](https://duo.com/docs/sso-generic) and [Duo Single Sign-On](https://duo.com/docs/sso).
 
-In the following procedures, `<fqdn>` is the fully qualified domain name of Privilege Secure for Discovery.
+This page doesn't cover Duo Access Gateway, the on-premises predecessor. Contact Netwrix Support if you use it.
+
+In the following steps, `<fqdn>` is the fully qualified domain name of Privilege Secure for Discovery.
 
 ## Prerequisites
 
-Both methods need a Duo service plan with the following:
+- A Duo plan with Duo Single Sign-On enabled, and an authentication source for your Active Directory (AD) users. See [Duo Single Sign-On](https://duo.com/docs/sso).
+- Duo users that match your AD users, and a way to tell which Duo user name matches which AD account.
+- The users or groups added to the product. See [Add users to Privilege Secure for Discovery](../onboard-systems/add-users-to-privilege-secure.md).
 
-- Active Directory (AD) sync configured and synced.
-- Single sign-on enabled.
-- The Duo Authentication Proxy installed and configured for AD sync and SSO.
-- A single sign-on authentication source configured and tested.
+## Create the Duo application
 
-## Duo Access Gateway
+1. In the Duo Admin Panel, select **Applications** > **Application Catalog**.
+2. Find **Generic SAML Service Provider**, which Duo labels **SSO**, and select **Add**.
+3. In **Service Provider**, enter the following values.
 
-Use this section when you integrate Privilege Secure for Discovery through an on-premises DAG.
-
-### Configure the Duo Access Gateway
-
-1. Sign in to the **Duo Access Gateway Admin Console**.
-2. Open the authentication source page and add the attribute that corresponds to the Duo user name attribute in the attributes field.
-3. Select **Applications** in the left sidebar.
-4. Locate the **Metadata** section. You provide this information to Duo when you configure the DAG as the IdP.
-5. Select **Download certificate**.
-
-### Create the Duo application
-
-1. In a new tab, sign in to the **Duo Admin Panel**.
-2. In the left sidebar, select **Applications** > **Protect an application**.
-3. Search for SAML and select the **SAML Duo Network Gateway** application.
-4. At the top of the page, enter the FQDN of the Privilege Secure for Discovery server and save the configuration.
-5. At the top of the application's property page, select **Download your configuration file** to get the file in JSON format.
-6. Return to the **DAG Admin Console**.
-7. Select **Add application**, select **Choose file**, locate the downloaded file, and upload it.
-8. Return to the **Duo Admin Panel** and set the following DAG parameters. In the table, `<base_url>` is the URL that users use to reach Privilege Secure for Discovery internally.
-
-   | Setting | Value |
+   | Duo setting | Value |
    | --- | --- |
-   | **Service provider name** | A name that identifies the environment, for example `Privilege Secure-PROD`. |
-   | **Entity ID** | `<base_url>`. Use a different Entity ID for production and non-production environments, for example `<base_url>-PROD`. The value must match the **Issuer** in the product. |
-   | **Assertion Consumer Service** | `<base_url>/api/v1/login` |
+   | **Metadata Discovery** | **None (manual import)** |
+   | **Entity ID** | `https://<fqdn>` |
+   | **Assertion Consumer Service (ACS) URL** | `https://<fqdn>/api/v1/login` |
    | **Single Logout URL** | Leave blank. |
+   | **Service Provider Login URL** | `https://<fqdn>/api/v1/login/sso`. Users who start from Duo go to this address. |
    | **Default Relay State** | Leave blank. |
 
-9. In the **SAML Response** section, set the following values.
+4. In **SAML Response**, set the following values.
+
+   | Duo setting | Value |
+   | --- | --- |
+   | **NameID format** | **Unspecified**, or the format of the attribute that you send. |
+   | **NameID attribute** | The Duo attribute that holds the AD account name that you match in the product. |
+   | **Signature Algorithm** | **SHA-256**, which is the default. |
+   | **Sign response** and **Sign assertion** | Both selected, which is the default. The product requires both. |
+
+   Leave **Assertion encryption** off, and leave the attribute mapping empty.
+5. In **Policy**, set the Duo policy that requires MFA for this application. Duo, not the product, enforces MFA for SSO users. See [MFA with SSO](./saml-sso-reference.md#mfa-with-sso).
+6. Set **User access** so that the users can sign in. New users can't sign in until you permit them.
+7. Name the application, for example `Privilege Secure for Discovery`, and select **Save**.
+
+## Get the Duo values
+
+In the **Metadata** section of the application, copy the **Single Sign-On URL** and the **Certificate**. Duo shows the **Entity ID** and the **SHA-256** fingerprint there too.
+
+## Configure Privilege Secure for Discovery
+
+1. Select **Configure** > **Server**.
+2. In **SAML Configuration**, enter the following values.
 
    | Setting | Value |
    | --- | --- |
-   | **NameID format** | `urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified` |
-   | **NameID attribute** | `Username` |
-   | **Send attributes** | The **NameID** option |
-   | **Signature algorithm** | SHA-256 |
-   | **Sign response** | Selected |
-   | **Sign assertion** | Selected |
-   | **Map attributes** | **IdP Attribute** `distinguishedName`, **SAML Response Attribute** `dn` |
+   | **Entrypoint** | The **Single Sign-On URL** from Duo. |
+   | **Issuer** | `https://<fqdn>`, the same value as the **Entity ID** in the **Service Provider** section of Duo. |
+   | **Issuer Cert** | The Duo certificate, without the `BEGIN CERTIFICATE` and `END CERTIFICATE` lines. |
+   | **SSO Enabled** | **Disabled** while you stage the configuration. |
+   | **SSO Flow** | **SP-Initiated** |
+   | **ID Claim** | `nameID` |
+   | **Match User By** | See the following table. |
 
-10. Leave **Create attributes** blank.
-
-### Enter the SAML information in Privilege Secure for Discovery
-
-1. In Duo, copy the SAML values for the application: the single sign-on URL, the entity ID, and the signing certificate.
-2. In Privilege Secure for Discovery, go to **Configure** > **Server** > **SAML Configuration**.
-3. Enter the values in **Entrypoint**, **Issuer**, and **Issuer Cert** as described in the [field reference](./saml-sso-reference.md#saml-configuration-fields).
-4. Enable **SSO Enabled** and save.
-
-The sign-in page now shows an **SSO Login** option. Select it to sign in through Duo.
-
-## Duo hosted SSO
-
-Use this section when Duo hosts the single sign-on service.
-
-### Create the Duo application
-
-1. In the Duo Admin Panel, create a SAML application for Privilege Secure for Discovery.
-
-   ![Duo Admin Panel page for creating the SAML application](/images/privilegesecure/4.2/discovery/admin/configuration/360049850994_mceclip0.webp)
-
-2. In the **Service Provider** section, enter the following values. Replace the example values with the values for your environment.
-
-   | Setting | Value |
+   | Duo sends as the NameID | Match User By |
    | --- | --- |
-   | **Base URL** | `https://<fqdn>` |
-   | **Entity ID** | Any unique string. Use the product URL. It must match the **Issuer** in the product. |
-   | **Assertion Consumer Service** | `https://<fqdn>/api/v1/login` |
+   | The AD `sAMAccountName`, for example `jsmith` | `${sAMAccountName}` |
+   | The AD user principal name, for example `jsmith@example.com`, when the suffix is the domain name | `${sAMAccountName}@${domain_fqdn}` |
 
-   ![Duo Service Provider section with the product URL entered](/images/privilegesecure/4.2/discovery/admin/configuration/360049850994_mceclip0.webp)
+   The value must equal the product user record exactly, including the case. With several domains, use a value that includes the domain.
 
-3. In the **SAML Response** section, set **NameID attribute** as required (the NameID format can also be `urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified`).
-4. Under **Map attributes**, type `distinguishedName` for **IdP Attribute** and `dn` for **SAML Response Attribute**. You must type both values manually.
+3. Save the configuration, review the saved values, then set **SSO Enabled** to **Enabled**.
 
-   ![Duo SAML Response section with the NameID setting](/images/privilegesecure/4.2/discovery/admin/configuration/360049850994_image.webp)
+## Sign in with Duo
 
-   ![Duo attribute mapping from distinguishedName to dn](/images/privilegesecure/4.2/discovery/admin/configuration/360049850994_image__1_.webp)
+1. Open `https://<fqdn>` in a new private browser window.
+2. Select **SSO Login**. If **Auto-Redirect to IdP** is on, the redirect to Duo starts by itself.
+3. Sign in with Duo, and complete the Duo prompt.
 
-5. Leave the remaining **SAML Response** fields blank.
-6. The **Policy** section needs no settings from Privilege Secure for Discovery. Configure it to suit your environment.
-7. In the **Settings** section, enter an appropriate name and configure the rest to suit your environment.
+If sign-in fails, use the **Non-SSO sign-in URL** to sign in locally. See [Troubleshoot SAML sign-in](./saml-sso-reference.md#troubleshoot-saml-sign-in).
 
-   ![Duo Settings section with the application name](/images/privilegesecure/4.2/discovery/admin/configuration/360049850994_mceclip4.webp)
+## Start from Duo (IdP-initiated)
 
-8. The **Hostname allowlist** section needs no settings from Privilege Secure for Discovery. Configure it to suit your environment.
-9. Select **Save**.
-
-### Retrieve the SAML information from Duo
-
-Open the application's **Metadata** section and copy the single sign-on URL, the entity ID, and the signing certificate.
-
-:::warning[Screenshot needs attention: remove before publishing]
-TODO: 360049850994_mceclip6.webp, mceclip7.webp, and mceclip8.webp show a Duo account ID, company names, staff names, an application key, and certificate fingerprints. Redact or replace before publishing.
-:::
-
-![Duo application metadata with the single sign-on URL and certificate](/images/privilegesecure/4.2/discovery/admin/configuration/360049850994_mceclip7.webp)
-
-### Enter the SAML information in Privilege Secure for Discovery
-
-1. Go to **Configure** > **Server** > **SAML Configuration**.
-2. Enter the Duo values in **Entrypoint**, **Issuer**, and **Issuer Cert** as described in the [field reference](./saml-sso-reference.md#saml-configuration-fields).
-
-   ![Privilege Secure for Discovery SAML Configuration panel filled with Duo values](/images/privilegesecure/4.2/discovery/admin/configuration/360049850994_mceclip8.webp)
-
-3. Enable **SSO Enabled** and save.
-
-   ![SSO Enabled option at the bottom of the SAML Configuration panel](/images/privilegesecure/4.2/discovery/admin/configuration/360049850994_mceclip9_192x74.webp)
-
-### Sign in with Duo
-
-1. On the sign-in page, select **SSO Login**.
-2. Optional: To start from Duo (IdP-initiated), use the single sign-on URL in the application's **Metadata** section.
-
-   ![Duo application Metadata section with the single sign-on URL](/images/privilegesecure/4.2/discovery/admin/configuration/360049850994_mceclip0_650x254.webp)
-
-## Troubleshoot Duo sign-in
-
-If sign-in fails with "SAML Assertion Not Yet Valid", see [Troubleshoot SAML sign-in](./saml-sso-reference.md#troubleshoot-saml-sign-in).
-
-## Related information
-
-- [Duo Authentication Proxy reference](https://duo.com/docs/authproxy-reference)
-- [Duo generic SAML single sign-on](https://duo.com/docs/sso-generic)
-- [Duo single sign-on](https://duo.com/docs/sso)
+To start from Duo instead, set **SSO Flow** to **IdP-Initiated** and set **Entrypoint** to the **Single Sign-On URL** of the Duo application. Users then use the application in Duo Central, and Duo posts the assertion to the product.

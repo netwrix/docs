@@ -1,8 +1,12 @@
 ---
-title: "Create a Scan GPO for Remote SAM Access"
-description: "Create a GPO that lets the scan account read local Administrators group membership on Windows systems that restrict remote SAM calls."
+title: "Create a scan GPO for remote SAM access"
+description: "Create a GPO that lets the scan account read local Administrators group membership on Windows systems that restrict remote SAM calls, and verify that it works."
 sidebar_position: 70
 ---
+
+:::warning[Needs dev input: remove before publishing]
+TODO: Confirm that the scan reads the local Administrators group through the remote SAM interface (SAMR over SMB), so that this policy is the setting that lets a non-administrator scan account work. Evidence: the Windows connector uses impacket over SMB (`windows_rpc`); the product code doesn't name the SAM interface.
+:::
 
 Starting with Windows Server 2016 and Windows 10 version 1607, Microsoft restricts remote enumeration of the members of local groups, including the local Administrators group. For Netwrix Privilege Secure for Discovery to list the local administrators of these systems, the scan account must be a local administrator of the target system or must have permission to read the group remotely.
 
@@ -14,7 +18,7 @@ Never apply this GPO to domain controllers. Applying it can break terminal servi
 
 ## Applies to
 
-The restriction is on by default on Windows Server 2016 and later, and on Windows 10 version 1607 and later, including Windows 11. Apply the GPO to the servers and workstations that Privilege Secure for Discovery manages.
+The restriction is on by default on Windows Server 2016 and later, and on Windows 10 version 1607 and later, including Windows 11. By default, only the local Administrators group can make remote calls to the SAM on these systems. Apply the GPO to the servers and workstations that Privilege Secure for Discovery manages.
 
 ## Prerequisites
 
@@ -27,9 +31,10 @@ The restriction is on by default on Windows Server 2016 and later, and on Window
 2. Go to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Local Policies** > **Security Options**.
 3. Double-click **Network access: Restrict clients allowed to make remote calls to SAM**.
 4. Select **Define this policy setting**, and then select **Edit Security**.
-5. Select **Add**, and then enter the scan account name.
-6. Select **Check Names**, and then select **OK**.
-7. ensure that **Remote Access** is set to **Allow**, and then select **OK**.
+5. Make sure that the **Administrators** group stays in the list with **Remote Access** set to **Allow**. Defining the policy replaces the default, so removing the group blocks the administrators.
+6. Select **Add**, and then enter the scan account name.
+7. Select **Check Names**, and then select **OK**.
+8. Make sure that **Remote Access** is set to **Allow** for the scan account, and then select **OK**.
 
 For more information, see [Network access: Restrict clients allowed to make remote calls to SAM](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-access-restrict-clients-allowed-to-make-remote-sam-calls) in the Microsoft documentation.
 
@@ -49,6 +54,8 @@ You can set the same permission with a registry item in Group Policy Preferences
    | **Value type** | `REG_SZ` |
    | **Value data** | `O:BAG:BAD:(A;;RC;;;BA)(A;;RC;;;<scan-account-sid>)` |
 
+   The value is a security descriptor. The `(A;;RC;;;BA)` entry keeps the access of the Administrators group.
+
 4. Replace `<scan-account-sid>` with the security identifier (SID) of the scan account. To find the SID, run the following command in PowerShell:
 
    ```powershell
@@ -62,6 +69,21 @@ To check the registry value on an endpoint, run the following command:
 ```text
 reg query HKLM\SYSTEM\CurrentControlSet\Control\Lsa /v restrictremotesam
 ```
+
+To find out whether the setting blocks the scan account, check the **System** log on the endpoint in Event Viewer. Windows writes events 16962 to 16969 with the source **Directory-Service-SAM**. Event 16965 shows that Windows denied a remote call to the SAM, and it lists the SID and the network address of the client. If it lists the scan account, the account isn't in the policy.
+
+## Test the policy before you enforce it
+
+Windows can log the calls that the policy would deny without blocking them. This audit-only mode helps you find other tools that read the SAM remotely, before you enforce the policy. Create the following registry value on a test system:
+
+| Field | Value |
+| --- | --- |
+| **Key Path** | `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa` |
+| **Value name** | `RestrictRemoteSamAuditOnlyMode` |
+| **Value type** | `REG_DWORD` |
+| **Value data** | `1` |
+
+In audit-only mode, event 16968 lists each client that Windows would deny. Remove the value, or set it to `0`, to enforce the policy. A restart isn't required.
 
 ## Undo the GPO on domain controllers
 

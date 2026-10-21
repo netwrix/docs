@@ -7,11 +7,7 @@ sidebar_position: 30
 :::warning[Needs dev input: remove before publishing]
 TODO: Define the supported disaster recovery (DR) approach for customers, such as a standby deployment restored from a database backup. Evidence: no backup, restore, or DR tooling in the application, deployment, or infrastructure repositories (r05-backup-dr.md).
 
-TODO: Confirm which services must stay stopped on a DR standby so that it doesn't act on managed systems. Evidence: the earlier documentation lists API, Worker, Expire, LDAP sync, and Scanner; the stack files also define worker-secondary, analytics_engine, internal_api, windows-bridge, and windows-bridge-proxy (docker-stack.prod.single.yml).
-
 TODO: Confirm that a three-node cluster continues to run without interruption when any one node fails, including the MongoDB election time. Evidence: docker-stack.prod.cluster.yml defines mongo1 to mongo3 with --replSet secureone; failover timing not documented.
-
-TODO: Confirm whether hypervisor snapshots of a stopped or quiesced node are a supported backup for a single-node deployment. Evidence: none.
 :::
 
 Privilege Secure for Discovery supports two deployment layouts: a single node and a three-node cluster. This page explains how each layout handles a failure and what to plan for disaster recovery (DR). Contact Netwrix Support to discuss the approach that fits your environment.
@@ -59,7 +55,7 @@ For the recommended protection steps, see [Protect and recover your deployment](
 Build the DR environment with the same architecture as production. A matching architecture shortens the time to switch over and reduces the chance of problems. Test the DR environment and the switch-over process at least once a year.
 
 :::warning
-Don't run the services that act on managed systems in the DR environment while production runs against the same systems. If both environments run, the DR environment overwrites the policies that production set. These services include the API, worker, expire, LDAP sync, and scanner services.
+Don't run the services that act on managed systems in the DR environment while production runs against the same systems. If both environments run, the DR environment overwrites the policies that production set. These services include the API, worker, worker-secondary, expire, scanner, LDAP sync, analytics engine, and internal API services. The health reporter, Windows bridge, message queue, and Fluentd services don't write to the database and can run.
 :::
 
 Include a DNS change in your DR plan so that users can reach the restored deployment.
