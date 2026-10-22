@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Content Aware Protection is Endpoint Protector's complete Data Loss Prevention (DLP) module for
 data in motion. It lets administrators set up and enforce content-aware and context-aware
-filtering policies for selected users, computers, groups, or departments, taking control over the
+filtering policies for selected users, computers, groups, or departments to control the
 risk of accidental or intentional transfers of sensitive company data, such as:
 
 - Personal Identifiable Information (PII): SSNs, national ID numbers, passports, driving licenses,
@@ -21,10 +21,10 @@ risk of accidental or intentional transfers of sensitive company data, such as:
   Go, Swift, PowerShell, and more) plus extensive built-in detection across graphic, office,
   archive, media, and CAD file formats.
 - Regulatory and compliance content: built-in HIPAA detection for protected health information
-  (PHI), helping meet requirements such as PCI DSS, GDPR, and HIPAA.
+  (PHI) that helps meet requirements such as PCI DSS, GDPR, and HIPAA.
 - Document classification labels: recognizes labels from Microsoft Purview Information Protection
-  (MIP) and Netwrix Data Classification (NDC), extending existing classification policies directly
-  into Content Aware Protection.
+  (MIP) and Netwrix Data Classification (NDC), so existing classification policies apply directly
+  in Content Aware Protection.
 - Confidential files and custom content: sales and marketing reports, technical documents, customer
   databases, and organization-defined dictionaries, regular expressions, file names, and domains or
   URLs.
@@ -89,5 +89,5 @@ secure communication.
 :::
 
 :::note
-**Known limitation:** When using Zoho WorkDrive or GDrive (Google Drive) sync applications, file names that are reported, blocked, or both display internal cache paths instead of the original file name, which prevents location-based and file name denylists from working reliably. Block and Report log entries may be duplicated due to application-level transfer retries, and reported file sizes may be inaccurate. File shadowing works intermittently — shadows may contain corrupted content or be created without a hash, preventing download from the server.
+**Known limitation:** When using Zoho WorkDrive or GDrive (Google Drive) sync applications, file names that are reported, blocked, or both display internal cache paths instead of the original file name, which prevents location-based and file name denylists from working reliably. Application-level transfer retries can duplicate Block and Report log entries, and reported file sizes may be inaccurate. File shadowing works intermittently — shadows may contain corrupted content or have no hash, which prevents download from the server.
 :::

@@ -107,7 +107,7 @@ EPP clients continue logging events locally during server downtime. The server r
 :::
 
 :::tip
-In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, allowing the server to focus on the upgrade and ensuring no logs remain unprocessed in the queue. You can disable client communications in several ways:
+In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, so the server can complete the upgrade and no logs remain unprocessed in the queue. You can disable client communications in several ways:
 - Blocking the EPP communication port on the perimeter or host-based firewall
 - Blocking the port at the virtual machine network stack level (vSwitch port group policy, NSX rule, or equivalent)
 
@@ -116,7 +116,7 @@ Re-enable communications after you verify the upgraded server and it's ready to 
 
 ### VM Snapshot and Backup
 
-**This step is non-negotiable. Don't proceed without completing both.**
+**This step is mandatory. Don't proceed without completing both.**
 
 :::note
 VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot leaves you with no rollback path — if a failure occurs, recovery may be impossible, and Netwrix Support can't help restore the environment.
@@ -231,7 +231,7 @@ If you use Enforced Encryption and change the IP/FQDN, every user with an EE-pro
 :::
 
 :::warning
-If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, you must review your SSO configuration after you restore the backup. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
+If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, you must review your SSO configuration after you restore the backup. SSO response/callback URLs include the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case so Netwrix Support updates it on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
 :::
 
 ### Deploying the 2608 Base Image
@@ -389,7 +389,7 @@ If you use eDiscovery with Scan Locations configured on any policy, this check i
 In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, without reporting an error.
 :::
 
-If you use Content Aware Protection, this check is recommended after restore:
+If you use Content Aware Protection, Netwrix recommends this check after restore:
 
 1. Test each active CAP policy against a known-blocked transfer to confirm it still triggers.
 2. If a policy doesn't trigger, open it, edit it, and save it — even without changing anything — to redistribute it to endpoints.
@@ -408,7 +408,7 @@ policies relying on them still work as expected.
 
 ### DPI / CAP Functionality Verification
 
-If using Deep Packet Inspection or Content Aware Protection:
+If you use Deep Packet Inspection or Content Aware Protection:
 
 1. Verify endpoints trust the root CA certificate.
 2. Test a known-blocked transfer to confirm CAP policy is active.
@@ -478,7 +478,7 @@ After reconfiguration, verify each integration is functioning:
 :::warning
 **Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after you restore the backup. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until you correct it. You have two options:
 1. Manually recreate the SSO configuration in **System Configuration → SSO / Single Sign-On** with the updated response/callback URL, and update the corresponding redirect URI in your identity provider.
-2. Raise a Netwrix Support case to have the SSO configuration updated on the backend.
+2. Raise a Netwrix Support case so Netwrix Support updates the SSO configuration on the backend.
 :::
 
 :::warning

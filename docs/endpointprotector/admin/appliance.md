@@ -38,7 +38,7 @@ By default, the appliances sync once a week with pool.ntp.org.
 - Current server time – the ﬁeld displays the current server time
 - Automatic NTP Synchronization – opt in or out to trigger the NTP synchronization automatically
 - Click Save to keep all modiﬁcations without triggering the synchronization process
-- Click Synchronize Time to trigger the synchronization, which will occur in the next 5 minutes.
+- Click Synchronize Time to trigger the synchronization, which occurs within 5 minutes.
   Endpoint Protector reports the Alerts and Logs after the 5 minutes in a format of your choice
 - Click Refresh Current Time to update the Current server time ﬁeld
 
@@ -71,18 +71,18 @@ Always click Save after changing from one IP version to another to apply the con
 ![ Change the network settings for the appliance to communicate correctly in your network using IPV6](IPV6appliancesettings.png)
 
 :::note
-For appliances hosted on the following types of images, IP change options will not be available in the UI, but only in the command line: AWS AZURE, GCP. If you are hosting EPP on one of these image types, use command line option to enter the Setup wizard and change the IP address from there.
+For appliances hosted on the following types of images, IP change options are available only in the command line, not in the UI: AWS AZURE, GCP. If you are hosting EPP on one of these image types, use command line option to enter the Setup wizard and change the IP address from there.
 :::
 
 :::note
-When transitioning from IPv4 to IPv6 or vice versa, changes to the Nginx configuration may be necessary:
+When transitioning from IPv4 to IPv6 or vice versa, you might need to change the Nginx configuration:
 - If you are using IPv4 and transitioning to IPv6, update the Nginx configuration to listen on the IPv6 address.
 - If you are using IPv6 and transitioning to IPv4, update the Nginx configuration to listen on the IPv4 address.
 For customers using the standard Nginx configuration (most users), Endpoint Protector applies these adjustments automatically. Always click Save after changing from one IP version to another to apply the configuration.
 
 For customers with custom Nginx configurations (such as those using a different port for client communication), these changes might impact the communication between the agent and server.
 
-In such scenarios, the documentation doesn't officially support custom configurations. However, the Netwrix support team is available to assist with manual configuration adjustments.
+In such scenarios, the documentation doesn't officially support custom configurations. However, the Netwrix support team can help with manual configuration adjustments.
 :::
 
 ### DNS Conﬁguration
@@ -104,8 +104,8 @@ The Client Registration Certificate feature isn't available for Linux.
 
 ### Client Registration Certiﬁcate
 
-The Client Registration Certificate feature enriches the client registration process by adding a certificate verification component: the Endpoint Protector Server validates the client's certificate during the registration phase, ensuring that only clients presenting a cryptographic identity signed by a trusted CA can register.
-This provides an additional layer of protection in the enrollment flow — ensuring that only authorized, managed devices can register with the EPP Server, even when operating on shared or untrusted networks.
+The Client Registration Certificate feature adds a certificate verification component to the client registration process: the Endpoint Protector Server validates the client's certificate during the registration phase, so only clients presenting a cryptographic identity signed by a trusted CA can register.
+As a result, only authorized, managed devices can register with the EPP Server, even when they operate on shared or untrusted networks.
 
 **Configuration**
 
@@ -126,7 +126,7 @@ When the custom certiﬁcate is **disabled** then:
 just for testing the signature (for example the Endpoint Protector Client certiﬁcate)
 
 **Step 3 –** Click **Save** and allow 2 minutes for Endpoint Protector to validate the information.
-You will view a successful message conﬁrming that Endpoint Protector added the custom certiﬁcate
+A success message conﬁrms that Endpoint Protector added the custom certiﬁcate
 and that the test certiﬁcate is valid.
 
 **Requirements**
@@ -156,7 +156,7 @@ The EPP Client verifies three key properties:
 
 
 :::note
-Starting with version 5.9.0.0, enabling this option activates Endpoint Protector Server Certiﬁcate Validation for all Endpoint Protector Client communication. This strengthens security by ensuring that all communication uses trusted and valid certiﬁcates.
+Starting with version 5.9.0.0, enabling this option activates Endpoint Protector Server Certiﬁcate Validation for all Endpoint Protector Client communication, so all communication must use trusted and valid certiﬁcates.
 :::
 
 **Configuration**
@@ -165,7 +165,7 @@ From this section, you can conﬁgure Server Certiﬁcate Validation, which ensu
 
 ![From this section, you can conﬁgure Server Certiﬁcate Validation.](servercertalidation.webp)
 
-Before enabling, verify that:
+Before you enable it, verify that:
 - The EPP Server certificate is valid and not expired.
 - A CA that all managed endpoints trust issued the EPP Server certificate.
 - The EPP Server hostname matches the certificate's CN or SAN exactly.
@@ -234,7 +234,7 @@ To create a SIEM Server, click **Add New** and provide the following information
 - Server Protocol – select the UDP or TCP server protocol
 
     :::note
-    Based on the protocol you select you can enable [SIEM Encryption](#siem-encryption).
+    Depending on the protocol you select, you can enable [SIEM Encryption](#siem-encryption).
     :::
 
 

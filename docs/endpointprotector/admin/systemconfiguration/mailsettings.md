@@ -13,7 +13,7 @@ From this section, you can configure the email server settings that Endpoint Pro
 
 ## E-mail Authorization Required
 
-When **OAuth** is selected as the E-mail Authentication Type, authorization is required to complete the email setup. Click **Sign In** to grant Endpoint Protector access to send emails on your behalf.
+When you select **OAuth** as the E-mail Authentication Type, you must authorize Endpoint Protector to complete the email setup. Click **Sign In** to grant Endpoint Protector access to send emails on your behalf.
 
 ## Administrator E-mail
 
@@ -26,7 +26,7 @@ To set an email address, go to **System Configuration** > **System Administrator
 Configure the email server that Endpoint Protector uses to send notifications and alerts.
 
 :::note
-An active Internet connection is required to use this feature.
+This feature requires an active Internet connection.
 :::
 
 ### E-mail Authentication Type
@@ -38,7 +38,7 @@ Use the **E-mail Authentication Type** dropdown to select how Endpoint Protector
 
 ### Basic authentication
 
-When **Basic** is selected, configure the following fields:
+When you select **Basic**, configure the following fields:
 
 - **E-mail Type** — select **Native** or **SMTP**
 - **Hostname**
@@ -62,7 +62,7 @@ To set a valid sender address:
 
 ### OAuth authentication
 
-When **OAuth** is selected, configure the following fields:
+When you select **OAuth**, configure the following fields:
 
 - **E-mail Type** — SMTP (read-only)
 - **E-mail Provider** — Microsoft (read-only)
@@ -82,7 +82,7 @@ The redirect URI saved in Mail Settings must exactly match the redirect URI regi
 
 ### Microsoft Azure prerequisites
 
-OAuth is supported for Microsoft Exchange Online. Your subscription must be one of the following:
+Endpoint Protector supports OAuth for Microsoft Exchange Online. Your subscription must be one of the following:
 
 - Microsoft 365 Business Basic, Standard, or Premium
 - Office 365 E1, E3, or E5
@@ -111,12 +111,12 @@ Access the logs from **System Configuration** > **Mail Settings** > **Mail Serve
 | Authentication Type | Whether the send attempt used **Basic** or **OAuth** authentication |
 | Status | Status of the captured event (`error` for all entries) |
 | Log Message | Human-readable error, including the SMTP return code or OAuth error code reported by the server |
-| Registered at | Server timestamp when the error was captured |
+| Registered at | Server timestamp when Endpoint Protector captured the error |
 | Mail Settings | Click the row to expand and review the mail server configuration in effect at the time of the error |
 
 ### What gets logged
 
-The tab captures the following error categories when encountered during a send attempt:
+The tab captures the following error categories when they occur during a send attempt:
 
 - **DNS / hostname resolution failures** — for example, *Couldn't resolve hostname `smtp.office365.com`*
 - **Connection timeouts** — for example, *Connection timed out after 30 seconds while connecting to `smtp.office365.com:587`*
@@ -132,12 +132,12 @@ Click any row to expand it and review the **Mail Settings** snapshot that was ac
 - **OAuth** entries — Hostname, SMTP Port, Username, Tenant ID, Application (Client) ID, Redirect URI
 
 :::note
-The Client Secret and the OAuth access and refresh tokens are never written to the logs.
+Endpoint Protector never writes the Client Secret or the OAuth access and refresh tokens to the logs.
 :::
 
 ### Supplemental log files
 
-Errors are also written to log files on the appliance for additional context and for cases not captured by the UI:
+Endpoint Protector also writes errors to log files on the appliance for additional context and for cases that the UI doesn't capture:
 
 | Scenario | Log file |
 |---|---|
@@ -145,7 +145,7 @@ Errors are also written to log files on the appliance for additional context and
 | Basic authentication using SMTP with TLS 1.3 | `/var/log/mail.log` |
 
 :::note
-Basic authentication errors that occur over SMTP with TLS 1.3 are written only to `/var/log/mail.log` and aren't shown in the Mail Server Logs tab. To review those errors, open the file directly on the appliance.
+Endpoint Protector writes Basic authentication errors that occur over SMTP with TLS 1.3 only to `/var/log/mail.log` and doesn't show them in the Mail Server Logs tab. To review those errors, open the file directly on the appliance.
 :::
 
 
@@ -157,7 +157,7 @@ If the test email fails and the mail logs show "SMTP Error: data not accepted", 
 
 ## UI messages
 
-The following messages are displayed during email configuration and testing:
+Endpoint Protector displays the following messages during email configuration and testing:
 
 | Situation | Message |
 |---|---|
