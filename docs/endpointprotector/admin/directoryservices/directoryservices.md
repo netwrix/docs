@@ -16,7 +16,7 @@ many entities sync efficiently without importing the entire directory.
 
 
 :::note
-This section of the documentation is provided as a best-effort guideline to support deployment. Since third-party products can change frequently, the screenshots and images may not always reflect the latest interfaces or features. For the most up-to-date information, refer to the official resources from the product vendor.
+Netwrix provides this section of the documentation as a best-effort guideline to support deployment. Since third-party products can change frequently, the screenshots and images may not always reflect the latest interfaces or features. For the most up-to-date information, refer to the official resources from the product vendor.
 :::
 
 ## Microsoft Active Directory
@@ -78,7 +78,7 @@ After synchronization, the Endpoint Protector Server shows:
 
 - Group 3 - User 5, User 4, User 3, User 2, User 1
 
-### Conﬁgure Microsoft Entra ID
+### Configure Microsoft Entra ID
 
 #### Create the Application on Microsoft Entra ID
 
@@ -266,11 +266,11 @@ Microsoft Entra ID. This switch has two states:
   to retrieve user names. This attribute is the primary source for user identiﬁcation and account
   mapping.
 - Marked (feature enabled) – Endpoint Protector uses the "onPremisesSamAccountName" Azure AD
-  attribute to retrieve user names, ensuring accurate synchronization between the local Active
+  attribute to retrieve user names, for accurate synchronization between the local Active
   Directory and Azure AD.
 
-By using this feature, Endpoint Protector ensures seamless synchronization of user names,
-preventing duplicate usernames. Enable or disable the "Map on-premises users" feature based on your
+With this feature, Endpoint Protector synchronizes user names without creating duplicate
+usernames. Enable or disable the "Map on-premises users" feature based on your
 speciﬁc hybrid environment setup and requirements.
 
 :::note
