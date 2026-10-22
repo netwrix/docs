@@ -177,6 +177,10 @@ The System Configuration Backup doesn't include logs and file shadows. If you ne
 If your organization has compliance requirements for data retention (e.g., GDPR, HIPAA, SOX), never decommission the old server until you have confirmed that an alternative solution (SIEM, external export) meets log retention requirements.
 :::
 
+### Obtaining the Offline Activation Patch
+
+To activate Content Aware Protection or eDiscovery on the 2608 server, you need the Offline Activation Patch for 2608. Request it in advance from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html), before the maintenance window begins. Servers on version 2611.0.1.x and later don't need the patch.
+
 ### Pre-Migration Checklist Summary
 
 | # | Task | Status |
@@ -191,6 +195,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 | 8 | Appliance → Server Information screenshot taken | ☐ |
 | 9 | EPP Client 5.9.4.3 Hotfix 1 downloaded (only if any endpoints are still on 5.9.4.1 or older), plus the latest 2608 client packages | ☐ |
 | 10 | Enforced Encryption (EE) Client 2608 packages downloaded (if applicable) | ☐ |
+| 11 | Offline Activation Patch for 2608 obtained from Netwrix Endpoint Protector Support | ☐ |
 
 ---
 
@@ -372,6 +377,10 @@ After successful activation, you should see a green banner at the top.
 
 ![EPP License Trial activation](licensetrialactivation.webp)
 
+:::tip Apply the Offline Activation Patch first
+To activate Content Aware Protection or eDiscovery on the new server, first apply the Offline Activation Patch that matches your server version, which is 2608 for this migration. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
+:::
+
 ### Upgrade the 2608 Image to the Latest Patch
 
 With the license active, upgrade the fresh 2608 image to the current latest patch version in the 2608 line.
@@ -439,6 +448,10 @@ This is a one-time 500 error during import. If 500 errors instead recur every fe
 ![Appliance → Server Information — license](server_info_license.webp)
 
 If the license doesn't show as active, or entitlements look incorrect, contact Netwrix Support or your account team before continuing.
+
+:::tip Apply the Offline Activation Patch first
+To activate Content Aware Protection or eDiscovery on the new server, first apply the Offline Activation Patch that matches your server version, which is 2608 for this migration. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
+:::
 
 ---
 

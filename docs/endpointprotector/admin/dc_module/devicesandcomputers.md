@@ -46,7 +46,7 @@ You can also import the devices directly from Active Directory.
 
 :::note
 For detailed information on Active Directory, refer to the
-[Directory Services](/docs/endpointprotector/admin/directoryserv.md) topic.
+[Directory Services](/docs/endpointprotector/admin/directoryservices/directoryservices.md) topic.
 :::
 
 
@@ -58,7 +58,7 @@ etc.).
 
 :::note
 For detailed information, refer to the
-[Directory Services](/docs/endpointprotector/admin/directoryserv.md) topic.
+[Directory Services](/docs/endpointprotector/admin/directoryservices/directoryservices.md) topic.
 :::
 
 
@@ -165,7 +165,7 @@ You can manually create a new computer at any time by providing these computer p
 information, or import computers from Active Directory.
 
 For more details about Active Directory, go to the
-[Directory Services](/docs/endpointprotector/admin/directoryserv.md) topic. You can also assign the computers to
+[Directory Services](/docs/endpointprotector/admin/directoryservices/directoryservices.md) topic. You can also assign the computers to
 the following for a better organization:
 
 - Devices and Computers e.g., several computers within the same oﬃce

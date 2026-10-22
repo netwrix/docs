@@ -40,11 +40,25 @@ Use the **E-mail Authentication Type** dropdown to select how Endpoint Protector
 
 When **Basic** is selected, configure the following fields:
 
-- E-mail Type — select **Native** or **SMTP**
-- Hostname
-- SMTP Port
-- Username
-- Password
+- **E-mail Type** — select **Native** or **SMTP**
+- **Hostname**
+- **SMTP Port**
+- **Require SMTP Authentication**
+- **Username**
+- **Password**
+- **Encryption Type**
+- **No-reply email address** — select **Default** or **Custom**. See [No-reply email address](#no-reply-email-address).
+- **Custom no-reply e-mail address** — the sender address Endpoint Protector uses when **No-reply email address** is set to **Custom**
+
+### No-reply email address
+
+The **No-reply email address** setting controls the sender (From) address on the emails Endpoint Protector sends. Some email providers, including Microsoft 365, reject messages whose From address isn't valid for the account, and the test email fails.
+
+To set a valid sender address:
+
+1. Set **No-reply email address** to **Custom**.
+2. In **Custom no-reply e-mail address**, enter a valid address that your provider accepts as the sender, for example the mailbox you use to authenticate.
+3. Save the settings and check that Endpoint Protector sends the test email.
 
 ### OAuth authentication
 
@@ -134,6 +148,12 @@ Errors are also written to log files on the appliance for additional context and
 Basic authentication errors that occur over SMTP with TLS 1.3 are written only to `/var/log/mail.log` and aren't shown in the Mail Server Logs tab. To review those errors, open the file directly on the appliance.
 :::
 
+
+## Troubleshooting
+
+### Test email fails with "SMTP Error: data not accepted"
+
+If the test email fails and the mail logs show "SMTP Error: data not accepted", the email provider rejected the sender (From) address. This can happen with Basic authentication and providers such as Microsoft 365, for example `smtp.office365.com` on port `587` with TLS. Set **No-reply email address** to **Custom** and enter a valid address in **Custom no-reply e-mail address**. See [No-reply email address](#no-reply-email-address).
 
 ## UI messages
 

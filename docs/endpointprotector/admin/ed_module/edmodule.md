@@ -28,6 +28,10 @@ The eDiscovery module requires separate licensing from Device Control and Conten
 
 To activate the module, navigate to **eDiscovery** and click **Enable**. If you haven't previously provided the Main Administrator's contact details, you're prompted to enter them.
 
+:::tip Apply the Offline Activation Patch first
+To activate this module, first apply the Offline Activation Patch that matches your server version. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
+:::
+
 :::warning
 The eDiscovery module requires a separate license. Contact your Netwrix representative or visit the Netwrix website to obtain an eDiscovery license.
 :::

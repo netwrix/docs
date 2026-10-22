@@ -22,7 +22,7 @@ information mentioned above. Users can also be imported into Endpoint Protector 
 Directory.
 
 For detailed information on Active Directory, refer to the
-[Directory Services](/docs/endpointprotector/admin/directoryserv.md) chapter.
+[Directory Services](/docs/endpointprotector/admin/directoryservices/directoryservices.md) chapter.
 
 There are two users created by default during the installation process of Endpoint Protector:
 
@@ -99,7 +99,7 @@ Groups can also be imported into Endpoint Protector from Active Directory.
 
 :::note
 For detailed information on Active Directory, refer to the
-[Directory Services](/docs/endpointprotector/admin/directoryserv.md) topic.
+[Directory Services](/docs/endpointprotector/admin/directoryservices/directoryservices.md) topic.
 :::
 
 

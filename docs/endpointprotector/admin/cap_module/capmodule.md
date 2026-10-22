@@ -62,6 +62,10 @@ Content Aware Protection comes as the second level of data protection available 
 Protector. The module appears but requires activation by pressing the Enable button.
 Provide the Main Administrator's contact details if you haven't already.
 
+:::tip Apply the Offline Activation Patch first
+To activate this module, first apply the Offline Activation Patch that matches your server version. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
+:::
+
 
 ![The module appears but requires activation by pressing the Enable button](activation.webp)
 
