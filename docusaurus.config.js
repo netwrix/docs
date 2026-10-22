@@ -9,6 +9,7 @@ import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
 import { accessAnalyzer261Redirects } from './src/config/redirects/accessanalyzer-26.1.js';
+import { privilegeSecureDiscoveryLegacyPaths, privilegeSecureDiscoveryRedirects } from './src/config/redirects/privilegesecurediscovery.js';
 import { directoryManager110Redirects } from './src/config/redirects/directorymanager-11.0.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
@@ -196,6 +197,7 @@ const config = {
       {
         redirects: [
           ...(activeProductIds.includes('accessanalyzer') ? accessAnalyzer261Redirects : []),
+          ...(activeProductIds.includes('privilegesecurediscovery') ? privilegeSecureDiscoveryRedirects : []),
           ...(activeProductIds.includes('directorymanager') ? directoryManager110Redirects : []),
           ...(activeProductIds.includes('changetracker')
             ? [{ from: '/docs/changetracker/componentreleases', to: '/docs/changetracker' }]
@@ -220,6 +222,9 @@ const config = {
           }),
         ],
         createRedirects(existingPath) {
+          // Privilege Secure for Discovery dropped its version folder; keep the old 2_22 addresses working.
+          const legacyPaths = privilegeSecureDiscoveryLegacyPaths(existingPath);
+          if (legacyPaths) return legacyPaths;
           for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
             const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
             if (existingPath.startsWith(versionedPrefix)) {
