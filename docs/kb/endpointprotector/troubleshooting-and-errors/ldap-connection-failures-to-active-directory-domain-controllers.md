@@ -30,29 +30,29 @@ knowledge_article_id: REPLACE_WITH_SALESFORCE_KA_ID
 
 ## Symptom
 
-Creating or testing an Active Directory connection under **Directory Services** fails, returns an authentication or connection error, or times out. Synchronization jobs may also complete without errors but import no users, computers, or groups. This can occur when configuring a new connection or after a previously working connection stops functioning.
+Creating or testing an Active Directory connection under [Directory Services](/docs/endpointprotector/admin/directoryservices) fails, returns an authentication or connection error, or times out. Synchronization jobs may also complete without errors but import no users, computers, or groups. This can occur when configuring a new connection or after a previously working connection stops functioning.
 
 ## Cause
 
 ### Invalid or Expired Service Account Credentials
 
-The account configured in the **Username** and **Password** fields no longer authenticates. This happens when the account password was changed on the domain side without updating Endpoint Protector, or when the account was disabled, locked out, or expired.
+The account configured in the Username and Password fields no longer authenticates. This happens when an administrator changes the account password in the domain without updating Netwrix Endpoint Protector, or when someone disables or locks the account, or the account expires.
 
 ### Incorrect FQDN, Hostname, or IP Address
 
-The **Server** field points to a domain controller that is unreachable, decommissioned, or was entered incorrectly. This includes cases where an IP address was used instead of a fully qualified domain name (FQDN) and the IP later changed.
+The Server field contains the address of a domain controller that is unreachable or decommissioned, or someone entered it incorrectly. This includes cases where the field holds an IP address instead of a fully qualified domain name (FQDN) and the IP address later changed.
 
 ### Insufficient Privileges for the Synchronization Account
 
-The account has valid credentials but lacks read access to the organizational units (OUs), users, computers, or groups being synchronized. This happens when delegated permissions on the target OU were removed or never granted.
+The account has valid credentials but lacks read access to the organizational units (OUs), users, computers, or groups being synchronized. This happens when no one delegated permissions on the target OU, or someone removed them.
 
-### Network or Firewall Restrictions Between the EPP Server and Domain Controllers
+### Network or Firewall Restrictions Between the Endpoint Protector Server and Domain Controllers
 
 A firewall, network segmentation change, or VPN configuration blocks the LDAP port (389) or LDAPS port (636) between the Endpoint Protector Server and the domain controller.
 
-### Typos or Misconfiguration in EPP Directory Services Settings
+### Typos or Misconfiguration in Endpoint Protector Directory Services Settings
 
-A manual entry error in the **Server**, **Port**, **Connection Type**, or **Base Search Path** fields causes the connection to fail even though the domain controller itself is reachable and healthy.
+A manual entry error in the Server, Port, Connection Type, or Base Search Path fields causes the connection to fail even though the domain controller itself is reachable and healthy.
 
 ## Resolution
 
@@ -76,7 +76,7 @@ A manual entry error in the **Server**, **Port**, **Connection Type**, or **Base
 ### Verify Synchronization Account Privileges
 
 1. Confirm the synchronization account requires only read access to the target OUs, users, computers, and groups. Domain Administrator rights are not required.
-2. In **Active Directory Users and Computers**, review the effective permissions on the target OU and confirm the account (or a group it belongs to) has **Read** access delegated.
+2. In **Active Directory Users and Computers**, review the effective permissions on the target OU and confirm the account (or a group it belongs to) has read access delegated.
 3. Re-test the connection and attempt to browse the target OU in the **Directory Browser** section after adjusting delegation.
 
 ### Verify Network and Firewall Connectivity
@@ -91,12 +91,8 @@ A manual entry error in the **Server**, **Port**, **Connection Type**, or **Base
 2. If the connection fails, confirm firewall rules allow outbound traffic from the Endpoint Protector Server to the domain controller on port 389 (LDAP) or 636 (LDAPS).
 3. Confirm no proxy, VPN, or network segmentation change has altered the route between the Endpoint Protector Server and the domain controller since the connection last worked.
 
-### Review EPP Directory Services Configuration for Typos
+### Review Endpoint Protector Directory Services Configuration for Typos
 
 1. Re-enter the **Connection Type**, **Server**, and **Port** fields in **Directory Services** > **Microsoft Active Directory**, confirming the port matches the selected connection type (389 for LDAP, 636 for LDAPS).
 2. Confirm the **Base Search Path** syntax is correct, for example `OU=Users,DC=netwrix,DC=com`.
 3. Click **Test** after each change to confirm the connection succeeds before saving.
-
-## Related Links
-
-- [Directory Services](/docs/endpointprotector/admin/directoryservices)
