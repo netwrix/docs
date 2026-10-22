@@ -10,20 +10,20 @@ sidebar_position: 40
 
 # 403 - Zero USNs by Domain
 
-Privilege Secure must point to a single Domain Controller (DC). This is because Privilege Secure
-uses the USN values from Active Directory to determine when a group has been changed. These do no
+Privilege Secure must point to a single Domain Controller (DC) because it
+uses the Update Sequence Number (USN) values from Active Directory to determine when a group changes. These do no
 propagate between DCs.
 
-When a DC is unavailable, a new one can be connected to by using the Privilege Secure UI.
-However, when this occurs, if the USN number is lower, Privilege Secure will not be aware of changes
+When a DC is unavailable, you can connect to a new one using the Privilege Secure UI.
+However, if the new DC has a lower USN, Privilege Secure isn't aware of changes
 to groups. This will impact access from changed groups.
 
 ![image.webp](/images/privilegesecure/4.2/discovery/admin/systemmanagement/4405051526935_image_384x376.webp)
 
-It is recommended to force a re-sync of Privilege Secure's LDAP information when a DC is changed.
-This is suggested during the next available maintenance window at the end of the day.
+Netwrix recommends forcing a re-sync of Privilege Secure's LDAP information when a DC changes.
+Perform the re-sync during the next available maintenance window.
 
-The script detailed in this article can be used to zero the USN for an impacted domain.
+Use the script detailed in this article to zero the USN for an impacted domain.
 
 ### Script Flow
 
@@ -40,9 +40,12 @@ The script detailed in this article can be used to zero the USN for an impacted 
 
 ### Notes
 
-- MongoDB shell command to check USNs by netbios. Script runs this before and after zero for the
+- Command to check USNs by NetBIOS. Script runs this before and after zero for the
   domain zerored. Including here for manual runs:
-  `db.discovery_config.find({type:"ldap_config"},{_id:0, domain_netbios:1,"sync.previous_usn":1,"sync.highest_usn":1})`
+  
+``` 
+  sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongo SecureONE --eval 'DBQuery.shellBatchSize = 999999999; db.secureone_config.find(   {     type: "ldap_config"} ).pretty()' | grep "fqdn\|highest\|previous"
+```
 
 ### Command to Create Script File, Open in VIM, and Make Executable
 
@@ -60,10 +63,10 @@ The script detailed in this article can be used to zero the USN for an impacted 
 sudo /secureone/setup/zero_domain_usns.sh
 ```
 
-The Customer Success Team can assist with setting this up prior to utilization.
+The Customer Success Team can assist with setting this up before use.
 
-Here is an example of a successful run against the CSTEST domain in one of the Customer Support
-labs:
+The following example shows a successful run against the CSTEST domain in a Customer Support
+lab:
 
 ```
 secureone@ip-10-100-11-40:~$ sudo /secureone/setup/zero_domain_usns.shDetected domain_netbios entries:1) CSTESTEnter number for domain to zero USNs: 1Current USN values for CSTESTdomain_netbios : CSTEST, highest_usn : 2405725, previous_usn : 2405725Zero USNs for CSTEST, are you sure?[ Y ] to continue, any other key to abort.y{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }domain_netbios : CSTEST, highest_usn : 0, previous_usn : 0Completed zeroing USNs for CSTESTsecureone@ip-10-100-11-40:~$
