@@ -42,7 +42,7 @@ The rights hierarchy for devices, from lowest to highest, is as follows:
 For the full reference, see [Priority order](/docs/endpointprotector/admin/dc_module/devicesandcomputers#priority-order) in the Devices and Computers documentation.
 
 :::note
-If you don't configure device rights, they're inherited from the default Global Rights set per Device Type (USB Storage Device, Digital Camera, iPod, Thunderbolt, Chip Card Device, etc.). See [Directory Services](/docs/endpointprotector/admin/directoryserv) for more detail on how these defaults interact with directory-synced entities.
+If you don't configure device rights, they're inherited from the default Global Rights set per Device Type (USB Storage Device, Digital Camera, iPod, Thunderbolt, Chip Card Device, etc.). See [Directory Services](/docs/endpointprotector/admin/directoryservices/directoryservices.md) for more detail on how these defaults interact with directory-synced entities.
 :::
 
 ## Instructions

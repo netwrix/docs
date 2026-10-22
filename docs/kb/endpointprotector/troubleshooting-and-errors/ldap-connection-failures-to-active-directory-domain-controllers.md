@@ -99,4 +99,4 @@ A manual entry error in the **Server**, **Port**, **Connection Type**, or **Base
 
 ## Related Links
 
-- [Directory Services](/docs/endpointprotector/admin/directoryserv)
+- [Directory Services](/docs/endpointprotector/admin/directoryservices/directoryservices.md)
