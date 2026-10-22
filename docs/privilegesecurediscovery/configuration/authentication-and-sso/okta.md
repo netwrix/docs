@@ -12,7 +12,7 @@ In the following steps, `<fqdn>` is the fully qualified domain name of Privilege
 
 - Administrator access to Okta and to Privilege Secure for Discovery.
 - Okta users that match your Active Directory (AD) users. If AD is the source of your Okta users, install the Okta AD Agent. See [Okta AD agent integration](https://help.okta.com/en/prod/Content/Topics/Directory/ad-agent-new-integration.htm).
-- Okta usernames that equal `<sAMAccountName>@<AD domain FQDN>` for each user, for example `jsmith@example.com`. An alternate UPN suffix doesn't match. The product matches the user from this value.
+- Okta usernames that equal `<sAMAccountName>@<AD domain FQDN>` for each user, for example `jsmith@example.com`. An alternate user principal name (UPN) suffix doesn't match. The product matches the user from this value.
 - The users or groups added to the product. See [Add users to Privilege Secure for Discovery](../onboard-systems/add-users-to-privilege-secure.md).
 
 ## Create the Okta application

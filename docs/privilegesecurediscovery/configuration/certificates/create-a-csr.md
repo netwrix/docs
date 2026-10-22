@@ -4,7 +4,7 @@ description: "Gather the names and subject details for a certificate signing req
 sidebar_position: 20
 ---
 
-A certificate signing request (CSR) is the file that you send to a certificate authority (CA) to get a TLS certificate for Privilege Secure for Discovery. The CA signs the request and returns the certificate. The private key stays with you. This page shows how to create the request and the key with OpenSSL 3.0, which Ubuntu Server 24.04 includes. If your organization has its own method to generate a CSR, use it, and make sure that the key is an RSA key. See [Prepare the certificate and key files](./certificate-files.md).
+A certificate signing request (CSR) is the file that you send to a certificate authority (CA) to get a TLS certificate for Privilege Secure for Discovery. The CA signs the request and returns the certificate. The private key stays with you. This page shows how to create the request and the key with OpenSSL 3.0, which Ubuntu Server 24.04 includes. If your organization has its own method to generate a CSR, use it, and ensure that the key is an RSA key. See [Prepare the certificate and key files](./certificate-files.md).
 
 ## Decide the names
 

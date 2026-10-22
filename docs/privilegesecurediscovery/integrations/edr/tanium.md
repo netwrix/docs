@@ -103,7 +103,7 @@ Tanium doesn't always number the first package parameter `$0`. If your console n
 ## Create an API token
 
 1. In Tanium Cloud, select **Administration** > **Permissions** > **API Tokens**, and select **New API Token**.
-2. Enter a note that describes the token, such as `Privilege Secure for Discovery`.
+2. Enter a note to describe the token, such as `Privilege Secure for Discovery`.
 3. Set an expiration that follows your security policy.
 4. Select the permissions that the integration needs to read sensors, read computer groups, run questions, and create and run actions. The product calls the Tanium Gateway GraphQL API for endpoints, computer groups, sensors, questions, packages, and actions, and the Tanium REST API to look up packages and sensors by name.
 5. Copy the token to a secret manager. Tanium doesn't show it again.

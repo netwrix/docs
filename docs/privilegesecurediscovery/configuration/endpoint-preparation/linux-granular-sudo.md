@@ -13,7 +13,7 @@ Back up `/etc/sudoers` before you scan a system. See [Linux systems overview](./
 The product keeps two versions of the sudoers content for a system:
 
 - The content that the last scan found on the system.
-- The staged content, which you save in the editor. The product uses it as the desired state when **Protect Mode** is **New Accounts: JITA** or **New Accounts: Deny**, and writes it to the system at the next scan.
+- The staged content, which you save in the editor. The product uses it as the target state when **Protect Mode** is **New Accounts: JITA** or **New Accounts: Deny**, and writes it to the system at the next scan.
 
 When **Protect Mode** is **Disabled**, the staged content has no effect on the system. The next scan reads the file on the system and writes it back with the rules from all included files merged into `/etc/sudoers`.
 

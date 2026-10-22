@@ -34,4 +34,4 @@ You can copy the sudoers content that Netwrix Privilege Secure for Discovery sto
 8. Run the same command without `--dry-run`. Add `--scan` to scan each changed system right away. Without it, the next scheduled or manual scan applies the change.
 9. For each target system, open **Access** > **Grant Access** and click **Sudoers** to confirm the content.
 
-If a system is not a Linux system, or the ID doesn't exist, the product skips the system and reports the reason. For all command options, see [Report and update systems](../bulk-onboarding/report-and-update-systems.md).
+If a system isn't a Linux system, or the ID doesn't exist, the product skips the system and reports the reason. For all command options, see [Report and update systems](../bulk-onboarding/report-and-update-systems.md).

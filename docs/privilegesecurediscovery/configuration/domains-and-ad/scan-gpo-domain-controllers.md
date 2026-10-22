@@ -27,10 +27,10 @@ The restriction is on by default on Windows Server 2016 and later, and on Window
 2. Go to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Local Policies** > **Security Options**.
 3. Double-click **Network access: Restrict clients allowed to make remote calls to SAM**.
 4. Select **Define this policy setting**, and then select **Edit Security**.
-5. Make sure that the **Administrators** group stays in the list with **Remote Access** set to **Allow**. Defining the policy replaces the default, so removing the group blocks the administrators.
+5. ensure that the **Administrators** group stays in the list with **Remote Access** set to **Allow**. Defining the policy replaces the default, so removing the group blocks the administrators.
 6. Select **Add**, and then enter the scan account name.
 7. Select **Check Names**, and then select **OK**.
-8. Make sure that **Remote Access** is set to **Allow** for the scan account, and then select **OK**.
+8. ensure that **Remote Access** is set to **Allow** for the scan account, and then select **OK**.
 
 For more information, see [Network access: Restrict clients allowed to make remote calls to SAM](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-access-restrict-clients-allowed-to-make-remote-sam-calls) in the Microsoft documentation.
 

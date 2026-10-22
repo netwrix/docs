@@ -13,7 +13,7 @@ Administrators can run every bulk action. Other users see only **JITA**, **Expir
 1. Select **Management** > **Systems**.
 1. Select **Show Filters**, and then filter the list by system name, domain, organizational unit (OU), operating system, active JITA sessions, Offline Access settings, or time since the system was added, last logged on, or last scanned.
 1. To find the systems that one user or group can reach, enter the account in **Account with access**. Use **Access Path** and **Access Type** to narrow the result.
-1. Select the check box for each system, or select the check box in the table header to select every system in the table.
+1. Select the checkbox for each system, or select the checkbox in the table header to select every system in the table.
 
    ![The Systems screen with filters open and three systems selected](/images/privilegesecurediscovery/admin/systems-filters-and-selection.webp)
 

@@ -16,7 +16,7 @@ Sometimes you still need access to such a machine even though the groups in its 
    ![The Retired Systems view on the Systems screen](/images/privilegesecurediscovery/admin/systems-retired-view.webp)
 
 1. Select **Show Filters**, and use the filters to find the machine.
-1. Select the check box for the machine. You can select several machines.
+1. Select the checkbox for the machine. You can select several machines.
 1. Select **Bulk Actions**. The screen reads `Restore <n> systems`.
 1. Select **Execute Bulk Action**.
 1. On **Monitor** > **Jobs**, wait for the **Restore Request** job to finish. Its message reads `Restore <n> systems.`

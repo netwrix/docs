@@ -28,7 +28,7 @@ On a system in protect mode, the product adds the account to the local Administr
 
 ## Apply the account to many machines
 
-Bulk Actions apply the account to the Windows systems that you select. For Linux systems, use the Quickstart tool in the next section.
+Bulk Actions apply the account to the Windows systems that you select. For Linux systems, use the Quickstart tool as described in [Apply the account with Quickstart](#apply-the-account-with-quickstart).
 
 1. Select **Management** > **Systems**, and then select **Show Filters**.
 2. In **Account with access**, enter the interactive group, for example `Domain Admins`, and select it. The list shows the systems that have the group in their account inventory.

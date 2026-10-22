@@ -4,7 +4,7 @@ description: "Learn why domain controllers behave differently from other endpoin
 sidebar_position: 80
 ---
 
-Domain controllers operate differently from desktop and server endpoints. They are the source of truth for essential elements of the directory, such as users, groups, and computers. For that reason, Netwrix Privilege Secure for Discovery can't protect them like other endpoints.
+Domain controllers operate differently from desktop and server endpoints. They are the authoritative source for essential elements of the directory, such as users, groups, and computers. For that reason, Netwrix Privilege Secure for Discovery can't protect them like other endpoints.
 
 ## How the product treats domain controllers
 
@@ -37,7 +37,7 @@ Leave **Scan Mode** and **Protect Mode** set to **Disabled** for the domain cont
 
 1. Select **Access** > **Grant Access**.
 2. Search for the domain controller and select it.
-3. Make sure that **Scan Mode** and **Protect Mode** show **Disabled**. If they don't, select each button and then select **Disable**.
+3. ensure that **Scan Mode** and **Protect Mode** show **Disabled**. If they don't, select each button and then select **Disable**.
 
 Never apply to domain controllers the GPOs that grant the scan account access to local group membership. See [Create a scan GPO for remote SAM access](./scan-gpo-domain-controllers.md) and [Add the Protect Mode account to Windows endpoints with a GPO](./protect-mode-account-gpo.md).
 

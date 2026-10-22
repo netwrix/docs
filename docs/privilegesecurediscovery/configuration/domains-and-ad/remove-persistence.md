@@ -39,7 +39,7 @@ Remove a group's persistence from all machines at once. A single change date, su
 
    ![The Systems filters with the Account with access filter set to a group](/images/privilegesecurediscovery/domains-and-ad/domains-systems-account-filter.webp)
 
-3. Select the check box in the table header. If the filter matches more than 1,000 systems, select **Select all systems based on this filter**.
+3. Select the checkbox in the table header. If the filter matches more than 1,000 systems, select **Select all systems based on this filter**.
 4. Select **Bulk Actions**, select **Select Action**, and then select **Add/Update Account**.
 5. In **User or Group**, enter the same group. Set **Access Permission** to **Just-In-Time**, and select **Save**.
 

@@ -26,7 +26,7 @@ The Quickstart tool is a Python script, `reports.py`, that exports reports from 
 ## Install Python
 
 1. Download Python 3.10 or later from [python.org](https://www.python.org/downloads/).
-2. Run the installer. On Windows, select the option to add Python to the `PATH` environment variable, and make sure the installer includes `pip`.
+2. Run the installer. On Windows, select the option to add Python to the `PATH` environment variable, and ensure the installer includes `pip`.
 
 ## Install the dependencies
 

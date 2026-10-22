@@ -27,13 +27,13 @@ The following steps create a GPO named `AddLocalAdmin`. You can instead add the 
 6. Right-click **Local Users and Groups**, and then select **New** > **Local Group**.
 7. Set **Action** to **Update**, and select **Administrators (built-in)** in the **Group name** list.
 8. Select **Add**, and then add the Protect Mode account, `<protect-account>`.
-9. Make sure that the **Delete all member users** and **Delete all member groups** options aren't selected, and then select **OK**.
+9. ensure that the **Delete all member users** and **Delete all member groups** options aren't selected, and then select **OK**.
 10. Close the Group Policy Management Editor.
 
 ## Link the GPO
 
 1. Link the GPO to the organizational units (OUs) that contain the target endpoints. Drag the GPO onto the OU, or right-click the OU and select **Link an Existing GPO**.
-2. Make sure that the OUs don't contain domain controllers.
+2. ensure that the OUs don't contain domain controllers.
 
 ## Test the GPO
 
