@@ -169,7 +169,7 @@ const REMOVED_KB_ARTICLES = {
 
 export const privilegeSecureDiscoveryRedirects = [
   ...Object.entries(PAGE_MAP).flatMap(([oldPath, newPath]) => {
-    const to = newPath ? `${PRODUCT_PATH}/${newPath}` : PRODUCT_PATH;
+    const to = `${PRODUCT_PATH}/${newPath}`;
     return [
       { from: `${PRODUCT_PATH}/${oldPath}`, to },
       { from: `${LEGACY_PREFIX}/${oldPath}`, to },
