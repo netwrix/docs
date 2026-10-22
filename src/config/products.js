@@ -116,9 +116,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.2',
+        label: '10.2',
+        isLatest: true,
+        sidebarFile: './sidebars/activitymonitor/10.2.js',
+      },
+      {
         version: '10.0',
         label: '10.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/activitymonitor/10.0.js',
       },
       {
@@ -140,7 +146,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/activitymonitor/7.1.js',
       },
     ],
-    defaultVersion: '10.0',
+    defaultVersion: '10.2',
   },
   {
     id: 'auditor',
