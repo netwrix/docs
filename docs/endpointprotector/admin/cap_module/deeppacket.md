@@ -79,7 +79,7 @@ The following diagrams illustrate the high-level logic for Deep Packet Inspectio
 ### For Linux
 ![Deep Packet Inspection on Linux](dpilinux.webp)
 
-## Deep Packet Inspection Certiﬁcate
+## Deep Packet Inspection Certificate
 
 The Deep Packet Inspection functionality uses Certiﬁcates generated from Endpoint Protector Root
 Certiﬁcate Authority to intercept network traﬃc by Deep Packet Inspection and for Client-Endpoint
@@ -117,7 +117,7 @@ The Endpoint Protector Client issues the Deep Packet Inspection Certificate on W
 automatically and transparently. You don't need to take any additional steps.
 :::
 
-### DPI Certiﬁcate on macOS
+### DPI Certificate on macOS
 
 Due to the latest changes in the macOS 11.0 that affect Deep Packet Inspection, the Deep Packet
 Inspection feature requires a new Root Certiﬁcate to work on that macOS version.
@@ -397,7 +397,7 @@ into data transfers made through these tools.
 To enable or disable DPI for these applications, go to **Content Aware Protection** > **Deep Packet
 Inspection Applications** and select or clear the corresponding checkboxes.
 
-## Certiﬁcate status matrix
+## Certificate status matrix
 
 The following table lists when Endpoint Protector Server reports speciﬁc states:
 

@@ -66,7 +66,7 @@ Server-Client communication before the Transfer Limit Reset Time Interval has ex
 :::
 
 
-## Generating the Oﬄine Temporary Password
+## Generating the Offline Temporary Password
 
 Depending on the options selected from the dropdown menus, the Oﬄine Temporary Password (or OTP)
 can be generated for an exact device, all devices, or all ﬁle transfers.
