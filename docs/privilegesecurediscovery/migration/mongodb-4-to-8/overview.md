@@ -7,7 +7,7 @@ sidebar_position: 10
 Netwrix Privilege Secure for Discovery 26.09.1 provides the supported path for moving an existing deployment from MongoDB 4.0 to MongoDB 8.0. Use this set of pages if your deployment still runs MongoDB 4.0. New installations use MongoDB 8.0 and don't need a migration.
 
 :::warning
-MongoDB 4.0 will no longer be supported and the backend will move to Python 3.13 in a future release. Customers still using MongoDB 4.0 must deploy 26.09.1 and complete the database migration before upgrading to that release or any later release.
+MongoDB 4.0 will no longer be supported and the backend will move to Python 3.x in a future release. Customers still using MongoDB 4.0 must deploy 26.09.1 and complete the database migration before upgrading to that release or any later release.
 :::
 
 ## Check whether you need the migration

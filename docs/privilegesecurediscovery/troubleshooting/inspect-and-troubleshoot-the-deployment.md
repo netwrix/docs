@@ -1,6 +1,6 @@
 ---
 title: "Inspect and troubleshoot the deployment"
-description: "Use Docker and s1 commands to inspect the Netwrix Privilege Secure for Discovery services, read logs, check MongoDB and the message queue, and fix common failures."
+description: "Use Docker and s1 commands to inspect Privilege Secure for Discovery services, read logs, check MongoDB and the message queue, and fix common failures."
 sidebar_position: 5
 ---
 

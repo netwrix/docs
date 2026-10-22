@@ -1,6 +1,6 @@
 ---
 title: "Perform routine maintenance"
-description: "Check services, disk space, protection coverage, logs, and database health at regular intervals on a container-based deployment of Privilege Secure for Discovery."
+description: "Check services, disk space, protection coverage, logs, and database health at regular intervals on a container-based Privilege Secure for Discovery deployment."
 sidebar_position: 10
 ---
 

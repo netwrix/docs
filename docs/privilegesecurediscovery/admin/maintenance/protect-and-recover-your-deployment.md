@@ -1,6 +1,6 @@
 ---
 title: "Protect and recover your deployment"
-description: "Learn what a Privilege Secure for Discovery backup must contain, how to back up and restore the database, why the encryption key matters, and how recovery works."
+description: "Learn what a backup must contain, how to back up and restore the database, why the encryption key matters, and how recovery works."
 sidebar_position: 20
 ---
 

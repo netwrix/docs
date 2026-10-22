@@ -2,6 +2,19 @@
 title: "Privilege Secure for Discovery Knowledge Base"
 description: "Troubleshooting guides, configuration instructions, and best practices for Netwrix Privilege Secure for Discovery."
 slug: privilege-secure-discovery
+keywords:
+- Netwrix Privilege Secure for Discovery
+- Privilege Secure for Discovery
+- NPS-D
+- Privilege Secure Discovery
+- SecureONE
+- Remediant SecureONE
+- privileged access management
+- just-in-time access
+- JITA
+- standing privilege
+- Docker
+- MongoDB
 ---
 
 # Privilege Secure for Discovery Knowledge Base

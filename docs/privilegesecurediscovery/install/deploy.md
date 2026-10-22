@@ -7,7 +7,7 @@ sidebar_position: 20
 This page covers how to download the Netwrix Privilege Secure for Discovery quickstart bundle from the Netwrix releases server, distribute it to every node, and run the deployment script. The same script upgrades an existing deployment and removes a deployment before a reinstall. For every command and option, see the [secureone.sh script reference](../appendix/secureone-script-reference.md).
 
 :::important MongoDB 4.0 and a future release
-A future release will update the backend to Python 3.13 and supported library versions. That release will require MongoDB 8.0 and will no longer support MongoDB 4.0. New installations use MongoDB 8.0. If an existing deployment still uses MongoDB 4.0, complete [Migrate from MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md) before you upgrade to that release or any later release.
+A future release will update the backend to Python 3.x and supported library versions. That release will require MongoDB 8.0 and will no longer support MongoDB 4.0. New installations use MongoDB 8.0. If an existing deployment still uses MongoDB 4.0, complete [Migrate from MongoDB 4.0 to 8.0](../migration/mongodb-4-to-8/overview.md) before you upgrade to that release or any later release.
 :::
 
 ## Prerequisites

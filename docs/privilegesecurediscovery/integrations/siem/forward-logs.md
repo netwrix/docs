@@ -1,6 +1,6 @@
 ---
 title: "Forward logs to a syslog server or SIEM"
-description: "Configure Fluentd to forward Netwrix Privilege Secure for Discovery application logs to a syslog server or a Security Information and Event Management (SIEM) solution."
+description: "Configure Fluentd to forward Privilege Secure for Discovery application logs to a syslog server or a Security Information and Event Management (SIEM) solution."
 sidebar_position: 10
 ---
 

@@ -24,7 +24,7 @@ New features and changes:
 - A new command retires the legacy MongoDB service after you upgrade, for single-node and multi-node deployments.
 - The MongoDB upgrade cutover accepts a `--yes` (or `--non-interactive`) option, so you can run it without prompts.
 - The database status command shows the active MongoDB service and its running version.
-- Remote execution supports Python 3.13 on managed Linux systems.
+- Remote execution supports Python 3.x on managed Linux systems.
 - The release removes the **Default EDR for Entra ID Exclusive Systems** setting.
 
 Improvements and fixes:
@@ -59,4 +59,4 @@ Improvements and fixes:
 - On **Configure** > **Services**, the API service **Stop** control is disabled and shows the reason.
 - Dashboard, sign-in, and error screens use current product naming.
 
-To migrate an existing MongoDB 4.0 deployment, see [Upgrade MongoDB 4.0 to 8.0 for Privilege Secure for Discovery](https://community.netwrix.com/t/upgrade-mongodb-4-0-to-8-0-for-privilege-secure-for-discovery/149078). MongoDB 4.0 support will end and the backend will move to Python 3.13 in a future release, so complete the migration on 26.09.0 or 26.09.1 first.
+To migrate an existing MongoDB 4.0 deployment, see [Upgrade MongoDB 4.0 to 8.0 for Privilege Secure for Discovery](https://community.netwrix.com/t/upgrade-mongodb-4-0-to-8-0-for-privilege-secure-for-discovery/149078). MongoDB 4.0 support will end and the backend will move to Python 3.x in a future release, so complete the migration on 26.09.0 or 26.09.1 first.

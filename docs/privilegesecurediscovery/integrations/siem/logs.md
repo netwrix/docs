@@ -1,6 +1,6 @@
 ---
 title: "Log format reference"
-description: "Learn the structure of Netwrix Privilege Secure for Discovery log messages, the log levels, the fields each service writes, and how to change a service's log level."
+description: "Learn the structure of Privilege Secure for Discovery log messages, the log levels, the fields each service writes, and how to change a service's log level."
 sidebar_position: 20
 ---
 

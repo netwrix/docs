@@ -1,6 +1,6 @@
 ---
 title: "Register Linux systems with a domain service account"
-description: "Set one Linux service account on a domain so Privilege Secure for Discovery manages Linux systems that it finds in Active Directory without per-system credentials."
+description: "Set one Linux service account on a domain so Privilege Secure for Discovery manages Linux systems it finds in Active Directory without per-system credentials."
 sidebar_position: 30
 ---
 

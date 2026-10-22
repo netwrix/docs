@@ -1,6 +1,6 @@
 ---
 title: "MongoDB migration checklist"
-description: "Follow one checklist from planning through retire to migrate Privilege Secure for Discovery from MongoDB 4.0 to 8.0, with the command and expected result for each step."
+description: "Follow one checklist from planning through retire to migrate Privilege Secure for Discovery from MongoDB 4.0 to 8.0, with the command and result for each step."
 sidebar_position: 15
 ---
 

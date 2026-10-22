@@ -1,6 +1,6 @@
 ---
 title: "Reset USN values after changing domain controllers"
-description: "Reset the stored update sequence number (USN) values for a domain so Privilege Secure for Discovery resynchronizes after you point it to a different domain controller."
+description: "Reset the stored update sequence number (USN) values for a domain so the product resynchronizes after you point it to a different domain controller."
 sidebar_position: 30
 ---
 

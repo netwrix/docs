@@ -1,6 +1,6 @@
 ---
 title: "Install the s1 CLI helper utility"
-description: "Install the s1 command-line tool and use it to check services, read logs, open a database shell, and run common maintenance commands on Netwrix Privilege Secure for Discovery."
+description: "Install the s1 command-line tool to check services, read logs, open a database shell, and run common maintenance commands on Privilege Secure for Discovery."
 sidebar_position: 60
 ---
 

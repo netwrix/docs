@@ -1,6 +1,6 @@
 ---
 title: "Control session timeouts with Group Policy"
-description: "Use Group Policy to end disconnected and idle Remote Desktop sessions so that privileged sessions don't outlive the access that Privilege Secure for Discovery grants."
+description: "Use Group Policy to end disconnected and idle Remote Desktop sessions so privileged sessions don't outlive the access that the product grants."
 sidebar_position: 20
 ---
 

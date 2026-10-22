@@ -1,6 +1,6 @@
 ---
 title: "Prepare the certificate and key files"
-description: "Learn which certificate and key the product accepts, and use OpenSSL to convert a PFX, DER, or PKCS#7 file to the PEM text that Privilege Secure for Discovery needs."
+description: "Learn which certificate and key the product accepts, and use OpenSSL to convert a PFX, DER, or PKCS#7 file to the PEM text that the product needs."
 sidebar_position: 10
 ---
 

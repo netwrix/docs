@@ -1,6 +1,6 @@
 ---
 title: "Configure Offline Access Management passwords"
-description: "Set the Offline Access Management password complexity, rotation, retention, and scan frequency for a domain, and recover access if the alternate account is locked."
+description: "Set Offline Access Management password complexity, rotation, retention, and scan frequency for a domain, and recover access if the alternate account is locked."
 sidebar_position: 90
 ---
 

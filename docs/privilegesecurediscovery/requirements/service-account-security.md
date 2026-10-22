@@ -15,10 +15,10 @@ Some organizations question the security of using a single Active Directory (AD)
 - The service accounts don't require interactive logon. As a result, the systems that the product manages don't cache the NTLM hashes of these accounts. Without cached hashes, an attacker can't use pass-the-hash attacks or Net-NTLMv2 hashes to reach other managed systems.
 - Configure the LDAP bind, scan, and protect accounts as follows:
   1. In Active Directory Users and Computers, open the account properties and select the **Account** tab.
-  2. Select **Account is sensitive and cannot be delegated**, so that Kerberos can't delegate the account to other services.
-  3. In Group Policy, go to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Local Policies** > **User Rights Assignment**.
-  4. Add the accounts to **Deny log on locally**.
-  5. Add the accounts to **Deny log on through Remote Desktop Services**. On older versions of Windows, this policy is named **Deny log on through Terminal Services**.
+     1. Select **Account is sensitive and cannot be delegated**, so that Kerberos can't delegate the account to other services.
+  2. In Group Policy, go to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Local Policies** > **User Rights Assignment**.
+     1. Add the accounts to **Deny log on locally**.
+     2. Add the accounts to **Deny log on through Remote Desktop Services**. On older versions of Windows, this policy is named **Deny log on through Terminal Services**.
 
 The deny log on policies stop the accounts from signing in at the console or through Remote Desktop, so Windows doesn't cache their credentials. For example, add `CORP\svc-scan` and `CORP\svc-protect` to both policies.
 

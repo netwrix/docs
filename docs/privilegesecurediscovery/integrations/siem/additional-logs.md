@@ -1,6 +1,6 @@
 ---
 title: "Audit log event reference"
-description: "Look up the audit events that Netwrix Privilege Secure for Discovery writes for sign-ins, tokens, users, systems, administrators, access sessions, and credentials."
+description: "Look up the audit events that Privilege Secure for Discovery writes for sign-ins, tokens, users, systems, administrators, access sessions, and credentials."
 sidebar_position: 30
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Domain controllers in Privilege Secure for Discovery"
-description: "Learn why domain controllers behave differently from other endpoints, which actions the product skips for them, and how to configure scanning and protection for them."
+description: "Learn why domain controllers behave differently from other endpoints, which actions the product skips for them, and how to configure scanning and protection."
 sidebar_position: 80
 ---
 

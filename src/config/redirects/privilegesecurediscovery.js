@@ -38,6 +38,14 @@ export function privilegeSecureDiscoveryLegacyPaths(existingPath) {
 // page, so there is never a chain of two hops. Add a line here whenever a page
 // moves or is renamed again.
 const PAGE_MAP = {
+  "kb/authentication-and-access/saml-assertion-not-yet-valid": "configuration/authentication-and-sso/saml-sso-reference",
+  "kb/security-and-compliance/log4j-vulnerability-no-impact": "",
+  "kb/database-and-backend/how-to-access-mongodb": "admin/maintenance/open-the-mongodb-shell",
+  "kb/troubleshooting-and-errors/error-offline-access-management-oam-alternate-administrator-account-is-locked-and-the-local-administ": "configuration/endpoint-preparation/oam-password-configuration",
+  "kb/security-and-compliance/forward-logs-to-siem-fluentd": "integrations/siem/forward-logs",
+  "kb/linux-and-ssh-integration/troubleshooting-linux-registration": "troubleshooting/errors-and-messages",
+  "kb/system-configuration-and-requirements/netwrix-privilege-secure-for-discovery-port-firewall-and-datacenter-requirements": "requirements/ports-and-firewall",
+  "kb/system-configuration-and-requirements/netwrix-privilege-secure-for-discovery-best-practices": "",
   "kb/system-configuration-and-requirements/generate-license-counts-with-cli-command": "admin/licensing",
   "administration/configuration/accountinventorycolors": "configuration/interface/account-inventory-colors",
   "administration/configuration/addadomain": "configuration/domains-and-ad/add-a-domain",

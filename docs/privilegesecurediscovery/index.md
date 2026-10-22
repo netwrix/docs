@@ -2,6 +2,19 @@
 title: "Netwrix Privilege Secure for Discovery documentation"
 description: "Find installation, configuration, administration, and integration guidance for Netwrix Privilege Secure for Discovery."
 sidebar_position: 1
+keywords:
+- Netwrix Privilege Secure for Discovery
+- Privilege Secure for Discovery
+- NPS-D
+- Privilege Secure Discovery
+- SecureONE
+- Remediant SecureONE
+- privileged access management
+- just-in-time access
+- JITA
+- standing privilege
+- Docker
+- MongoDB
 ---
 
 Netwrix Privilege Secure for Discovery (formerly Remediant SecureONE) discovers privileged accounts across Windows and Linux systems and lets administrators manage them from a single interface. Users request just-in-time access to the systems they need, for as long as they need it, so standing privileges disappear and the attack surface shrinks. The product is for IT administrators and security analysts who want continuous visibility into privileged access and a way to reduce it.
@@ -9,7 +22,7 @@ Netwrix Privilege Secure for Discovery (formerly Remediant SecureONE) discovers 
 Privilege Secure for Discovery runs as a set of containers on Ubuntu Server 24.04 LTS, on a single node or a three-node cluster. Container-based deployment is the recommended installation method. New installations use MongoDB 8.0.
 
 :::important MongoDB 4.0 deployments
-A future release will update the backend to Python 3.13 and supported library versions. That platform update will require MongoDB 8.0 and will no longer support MongoDB 4.0.
+A future release will update the backend to Python 3.x and supported library versions. That platform update will require MongoDB 8.0 and will no longer support MongoDB 4.0.
 
 If your deployment still uses MongoDB 4.0, complete [Upgrade MongoDB 4.0 to 8.0](./migration/mongodb-4-to-8/overview.md) before you upgrade to that release or any later version.
 :::
