@@ -222,7 +222,7 @@ Endpoint Protector then displays the Logs Report page ﬁltered for the respecti
 Endpoint Protector can control file transfers on RDP storage between Thin Clients and Windows
 Terminal Servers, as described in the following sections.
 
-#### Initial Conﬁguration
+#### Initial Configuration
 
 The process starts with the Mark as Terminal Server action in Device Control > Computers
 ![Mark as Terminal Server Action](terminalserver_19x14.webp)

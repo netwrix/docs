@@ -78,7 +78,7 @@ After synchronization, the Endpoint Protector Server shows:
 
 - Group 3 - User 5, User 4, User 3, User 2, User 1
 
-### Conﬁgure Microsoft Entra ID
+### Configure Microsoft Entra ID
 
 #### Create the Application on Microsoft Entra ID
 

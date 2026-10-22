@@ -44,7 +44,7 @@ By default, the appliances sync once a week with pool.ntp.org.
 
 ![Set a preferential time zone and/or sync the appliance to an NTP source](timezone.webp)
 
-### IP Conﬁguration {#ip-configuration}
+### IP Configuration
 
 In this section you can change the network settings for the appliance to communicate correctly in
 your network.
@@ -85,7 +85,7 @@ For customers with custom Nginx configurations (such as those using a different 
 In such scenarios, the documentation doesn't officially support custom configurations. However, the Netwrix support team can help with manual configuration adjustments.
 :::
 
-### DNS Conﬁguration
+### DNS Configuration
 
 In this section you can modify or add a DNS server address and then Save your changes.
 
@@ -102,7 +102,7 @@ that both endpoints are who they claim to be.
 The Client Registration Certificate feature isn't available for Linux.
 :::
 
-### Client Registration Certiﬁcate
+### Client Registration Certificate
 
 The Client Registration Certificate feature adds a certificate verification component to the client registration process: the Endpoint Protector Server validates the client's certificate during the registration phase, so only clients presenting a cryptographic identity signed by a trusted CA can register.
 As a result, only authorized, managed devices can register with the EPP Server, even when they operate on shared or untrusted networks.
@@ -146,7 +146,7 @@ endpoints.
 
 ![Register and then verify the Endpoint Protector Client certiﬁcate signature](clientregcert.webp)
 
-### Server Certiﬁcate Validation
+### Server Certificate Validation
 
 While Client Registration Certificate secures the registration phase, Server Certificate Validation extends certificate verification to all ongoing communication. When you enable it, the Endpoint Protector Client validates the server's SSL certificate on every outbound request — ensuring that clients only communicate with a trusted, legitimate Endpoint Protector Server and that attackers can't redirect them to a rogue or impersonated instance.
 The EPP Client verifies three key properties:

@@ -108,7 +108,7 @@ Endpoint Protector supports standard SCIM 2.0 operations, including:
 -   Bulk operations
 -   Filtering and pagination
 
-For detailed endpoint definitions, schemas, and examples, refer to the [SCIM API Technical Reference](#scim-api-technical-reference).
+For detailed endpoint definitions, schemas, and examples, refer to the [Endpoints](#endpoints) section of the SCIM API Technical Reference.
 
 ## Important Notes and Limitations
 

@@ -22,7 +22,7 @@ For detailed information on settings change or creating additional administrator
 
 ![Page for default login credentials for the root account](login.webp)
 
-## Conﬁguration Wizard
+## Configuration Wizard
 
 The Conﬁguration Wizard has several steps to deﬁne basic settings. These include
 setting up the Server Time Zone, importing Licenses, Server Update or uploading Oﬄine Patches,

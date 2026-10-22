@@ -34,11 +34,11 @@ Testing or saving a Microsoft Entra ID API Consumer under [Directory Services](/
 
 ### Expired or Invalid Client Secret
 
-The Secret ID configured on the API Consumer no longer authenticates. This happens when the client secret expires, or someone regenerates or revokes it on the application registration in Microsoft Entra ID without updating Netwrix Endpoint Protector.
+The client secret saved in the **Client Secret Value** field of the API Consumer no longer authenticates. This happens when the client secret expires, or someone regenerates or revokes it on the application registration in Microsoft Entra ID without updating Netwrix Endpoint Protector.
 
 ### Incorrect Application (Client) ID or Tenant ID
 
-The Application (client) ID or Directory (tenant) ID field on the API Consumer does not match the application registration. This happens when someone copied the values incorrectly, or deleted and recreated the application registration with new identifiers.
+The **Application (Client) ID** or **Tenant ID** field on the API Consumer does not match the **Application (client) ID** or **Directory (tenant) ID** of the application registration. This happens when someone copied the values incorrectly, or deleted and recreated the application registration with new identifiers.
 
 ### Missing or Unconsented Microsoft Graph API Permissions
 
@@ -46,25 +46,25 @@ The application registration is missing one or more of the required Microsoft Gr
 
 ### Network or Firewall Restrictions to Microsoft Graph
 
-A firewall or proxy configuration blocks outbound HTTPS traffic from the Endpoint Protector Server to the Microsoft Graph API endpoints.
+A firewall or proxy configuration blocks outbound HTTPS traffic from the Endpoint Protector Server to the Microsoft endpoints that your **Azure Cloud Environment** setting uses: `login.microsoftonline.com` and `graph.microsoft.com` for Commercial, or `login.microsoftonline.us` and `graph.microsoft.us` for GCC High.
 
 ### Typos or Misconfiguration in Endpoint Protector Entra ID Settings
 
-A manual entry error in the API Consumer name, Application ID, Tenant ID, or Secret ID fields causes the connection to fail even though the application registration itself is configured correctly. In hybrid environments, an incorrectly set Map on-premises users switch can also cause duplicate or mismatched usernames between the on-premises Active Directory and Microsoft Entra ID.
+A manual entry error in the API Consumer name, **Application (Client) ID**, **Tenant ID**, or **Client Secret Value** fields causes the connection to fail even though the application registration itself is configured correctly. In hybrid environments, an incorrectly set Map on-premises users switch can also cause duplicate or mismatched usernames between the on-premises Active Directory and Microsoft Entra ID.
 
 ## Resolution
 
 ### Verify the Client Secret
 
 1. In the Microsoft Entra ID application registration, go to **Certificates & Secrets** and confirm the client secret has not expired.
-2. If the secret has expired or was regenerated, create a new client secret and copy the **Value** immediately, since it is hidden after navigating away.
+2. If the secret has expired or was regenerated, create a new client secret and copy the **Value** (not the **Secret ID**) immediately, since it is hidden after navigating away.
 3. In **Directory Services** > **Microsoft Entra ID**, edit the API Consumer and update the **Client Secret Value** field with the new secret.
 4. Click **Test** to confirm the connection succeeds.
 
 ### Verify the Application (Client) ID and Tenant ID
 
 1. In the Microsoft Entra ID application registration, go to the **Overview** (Essentials) section and confirm the **Application (client) ID** and **Directory (tenant) ID** values.
-2. In **Directory Services** > **Microsoft Entra ID**, edit the API Consumer and confirm these values match exactly, with no extra spaces or characters.
+2. In **Directory Services** > **Microsoft Entra ID**, edit the API Consumer and confirm the **Application (Client) ID** and **Tenant ID** fields match these values exactly, with no extra spaces or characters.
 3. Click **Test** to confirm the connection succeeds.
 
 ### Verify Microsoft Graph API Permissions
@@ -75,11 +75,14 @@ A manual entry error in the API Consumer name, Application ID, Tenant ID, or Sec
 
 ### Verify Network and Firewall Connectivity to Microsoft Graph
 
-1. From the Endpoint Protector Server, confirm outbound HTTPS (port 443) connectivity to the Microsoft Graph API endpoints is allowed through any firewall or proxy.
+1. Confirm that any firewall or proxy allows outbound HTTPS (port 443) from the Endpoint Protector Server to the endpoints for your **Azure Cloud Environment**:
+   - Commercial: `login.microsoftonline.com` and `graph.microsoft.com`
+   - GCC High: `login.microsoftonline.us` and `graph.microsoft.us`
 2. Confirm no proxy, VPN, or network policy change has blocked the Endpoint Protector Server from reaching Microsoft Graph since the connection last worked.
+3. In **Directory Services** > **Microsoft Entra ID**, edit the API Consumer and click **Test** to confirm the connection succeeds.
 
 ### Review Endpoint Protector Entra ID Configuration for Typos
 
-1. Re-enter the Application ID, Tenant ID, and Secret ID fields on the API Consumer, confirming there are no extra spaces or truncated characters.
+1. Re-enter the **Application (Client) ID**, **Tenant ID**, and **Client Secret Value** fields on the API Consumer, confirming there are no extra spaces or truncated characters.
 2. In hybrid environments, confirm the **Map on-premises users** switch matches the intended behavior: unmarked uses the `userPrincipalName` attribute, marked uses the `onPremisesSamAccountName` attribute.
 3. Click **Test** after each change to confirm the connection succeeds before saving.
