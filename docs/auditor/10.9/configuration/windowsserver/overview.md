@@ -316,6 +316,8 @@ Consider the following:
 - If a user logs on with a User Account Control (UAC) elevated token, Windows records two logon events. Netwrix Auditor shows them as one record. It also collapses repeated identical logon events into one record.
 - Netwrix Auditor records a logoff only when the user signs out. A disconnected Remote Desktop session that the user doesn't sign out, or a session that ends in another way, doesn't produce a logoff record.
 
+Netwrix Auditor includes two predefined alerts for failed local logons: **Failed Local Logon to a Specific Windows Server** and **Failed Local Logons on Windows Server**. For more information about alerts, see the [Alerts](/docs/auditor/10.9/admin/alertsettings/overview.md) topic.
+
 ## VM Template Cloning
 
 While VM cloning is supported by Netwrix Auditor, an additional setup process should be taken into
