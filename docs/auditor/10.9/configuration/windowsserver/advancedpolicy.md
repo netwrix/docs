@@ -20,6 +20,8 @@ components:
 - Windows registry
 - Removable storage media
 
+To monitor Windows Server logon activity, you must also configure the Audit Logon and Audit Logoff advanced audit policies. 
+
 ## Configure Security Options
 
 Setting up both basic and advanced audit policies may lead to incorrect audit reporting. To force
@@ -57,3 +59,4 @@ System Audit Policies.
 | Account Management | <ul><li>Audit Security Group Management</li><li>Audit User Account Management</li></ul>                                              | "Success"    |
 | Object Access      | <ul><li>Audit Handle Manipulation</li><li>Audit Other Object Access Events</li><li>Audit Registry</li><li>Audit File Share</li></ul> | "Success"    |
 | Policy Change      | <ul><li>Audit Audit Policy Change</li></ul>                                                                                          | "Success"    |
+| Logon/Logoff       | <ul><li>Audit Logoff</li><li>Audit Logon</li></ul>                                                                                   | <ul><li>"Success"</li><li>"Success and Failure"</li></ul> |
