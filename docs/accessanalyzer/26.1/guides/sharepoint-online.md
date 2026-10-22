@@ -1,12 +1,12 @@
 ---
-title: Scan Microsoft 365
+title: Scan SharePoint Online
 description: Connect a SharePoint Online tenant with a certificate-based app registration, run an Access scan and a Sensitive data scan, and find the results in the SharePoint reports.
 sidebar_position: 4
 ---
 
 Connect one Microsoft 365 tenant's SharePoint Online sites and OneDrive drives to Access Analyzer and run two scans: an Access scan that collects sites, permissions, and sharing links, and a Sensitive data scan that classifies the documents the Access scan found. At the end you'll have data in the Data security dashboard and the SharePoint reports.
 
-Access Analyzer calls the source type **SharePoint Online**. It signs in to the tenant as an application with a certificate, so setup moves back and forth between Access Analyzer and the Microsoft Entra app registration.
+Access Analyzer calls the source type **SharePoint Online**. It signs in to the tenant as an application with a certificate, so setup alternates between Access Analyzer and the Microsoft Entra app registration.
 
 ## Before You Start
 
@@ -14,7 +14,7 @@ Access Analyzer calls the source type **SharePoint Online**. It signs in to the 
 
 **The network.** The Access Analyzer server needs outbound HTTPS (TCP 443) to `login.microsoftonline.com`, `graph.microsoft.com`, and your tenant's SharePoint hosts (`<tenant>.sharepoint.com` and `<tenant>-my.sharepoint.com`).
 
-**An Entra ID source for the same tenant.** Effective permissions in SharePoint depend on group membership, and Access Analyzer takes that from the latest completed Entra ID Identity sync of the same tenant. Follow [Scan Entra ID](./entra-id.md) first. Without it, Access Analyzer calculates effective permissions from SharePoint data alone.
+**An Entra ID source for the same tenant.** SharePoint Online scans record Entra ID users and groups by object ID only. Access Analyzer takes their names and group memberships from the latest completed Entra ID Identity sync of the same tenant. Follow [Scan Entra ID](./entra-id.md) first. Without it, the reports can't show names for Entra ID users and groups or expand Entra ID group membership.
 
 **In Access Analyzer.** Sign in with the Admin role.
 
@@ -29,7 +29,7 @@ SharePoint Online sources use a **Client ID/certificate** service account. Unlik
 5. In **Service account type**, select **Client ID/certificate**.
 6. In **Client (application) ID**, paste the **Application (client) ID**.
 7. In **Tenant ID**, paste the **Directory (tenant) ID**.
-8. Under **Certificate**, leave **Generate for me** selected. When you save the account, Access Analyzer creates a self-signed RSA-2048 certificate that is valid for one year.
+8. Under **Certificate**, leave **Generate for me** selected. When you save the account, Access Analyzer creates a self-signed RSA-2048 certificate valid for one year.
 9. Click **Add account**.
 10. In the **Account created and certificate generated** message, note the thumbprint and expiry date.
 11. Click **Download certificate (.pem)** and save the file.
@@ -66,7 +66,7 @@ The generated certificate expires one year after you create the account, and sca
 
 ![Add source drawer for a SharePoint Online source](/images/accessanalyzer/26.1/sources/add-sharepoint-online.webp)
 
-Field details are on the [Microsoft 365](../sources/microsoft-365.md) source page.
+Field details are on the [SharePoint Online source](../sources/microsoft-365.md) page.
 
 ## 4. Create the Access Scan
 
@@ -78,14 +78,14 @@ Run the Access scan first. The Sensitive data scan in step 6 classifies document
    ![Create scan Type step with the Access, Sensitive data, and Identity sync cards](/images/accessanalyzer/26.1/scans/create-scan-1-type.webp)
 
 3. On the **Target** step, keep **Specific sources** and select the tenant.
-4. On the **Configure** step, leave **Use default configuration** selected for the first run. The defaults are **Workers** 4, **Collect OneDrive** on, and no entries in **Include site collections**, **Exclude site collections**, or **Exclude object URLs**, so the scan covers every site collection and every OneDrive drive.
+4. On the **Configure** step, leave **Use default configuration** selected for the first run. The defaults are **Workers** 3, **Collect OneDrive** on, and no entries in **Include site collections**, **Exclude site collections**, or **Exclude URLs**, so the scan covers every site collection and every OneDrive drive. If the app registration has [service prioritization in SharePoint](https://learn.microsoft.com/en-us/sharepoint/sharepoint-prioritization) enabled, select **Customize this source** instead and set **Workers** to 24.
 5. On the **Schedule** step, leave **Manual — run on demand** for the first run. Leave the agent set to **System agent**.
 6. On the **Review** step, enter a **Name** such as `Contoso SharePoint - access`.
 7. Click **Create & run now**.
 
 ![Create scan Review step with the scan named and the summary shown](/images/accessanalyzer/26.1/scans/create-scan-5-review-named.webp)
 
-When you're ready to narrow the scan, edit it and select **Customize this source** on the **Configure** step. **Include site collections** limits the scan to the site collections you list and takes no wildcards; **Exclude site collections** and **Exclude object URLs** accept the `*` wildcard. Keep **Workers** at 4 unless the tenant has SharePoint Online prioritization (adaptive throttling) turned on; even then, 32 is the practical maximum, because beyond that throttling offsets any speed gained from more workers. Every Access scan is a full crawl of the sites in scope; there is no differential option. [Scan types](../scans/scan-types.md) describes each setting.
+When you're ready to narrow the scan, edit it and select **Customize this source** on the **Configure** step. **Include site collections** limits the scan to the site collections you list and takes no wildcards; **Exclude site collections** and **Exclude URLs** accept the `*` wildcard. Keep **Workers** at 3 for an app registration with the regular SharePoint Online request limits, or set it to 24 when the app registration has service prioritization in SharePoint enabled. Beyond those values, raise it only while scans run without throttling; when SharePoint throttles requests, every worker pauses. Every Access scan is a full crawl of the sites in scope; there is no differential option. [Scan types](../scans/scan-types.md) describes each setting.
 
 ## 5. Watch the Execution
 
@@ -97,7 +97,7 @@ If the status is **Failed**, open the row's actions menu, click **View logs**, a
 
 ## 6. Create the Sensitive Data Scan
 
-After the Access scan shows **Completed**, create the second scan. It downloads documents from the Access scan's inventory and classifies them against sensitive data patterns. By default the scan skips documents larger than 10 MB and files with excluded extensions; both limits are in [Application settings](../settings/application.md).
+After the Access scan shows **Completed**, create the second scan. It downloads documents from the Access scan's inventory and classifies them against sensitive data patterns. By default the scan classifies only the file types on **Include list** and skips documents larger than 10 MB; both settings are on the **SharePoint scanning** card in [Application settings](../settings/application.md#file-server-scanning-and-sharepoint-scanning).
 
 1. Go to **Configuration > Scans** and click **Create scan**.
 2. On the **Type** step, select **Sensitive data** and click **Next**.
@@ -135,4 +135,4 @@ Dashboards and reports don't refresh on their own. Open one and click **Refresh*
 | **Open Access** | Access scan | Content that all authenticated users can reach without restriction |
 | **Sensitive Data Overview** | Sensitive data scan | Sensitive data classifications across SharePoint sites |
 
-**Shared Links** also appears under **Reports > Compliance** for each framework. The other three SharePoint reports live only on the **Data** page. [Data reports](../dashboards-reports/reports/data.md) describes every report and its filters, and the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) page covers each card.
+**Shared Links** also appears under **Reports > Compliance** for each framework. The other three SharePoint reports appear only on the **Data** page. [Data reports](../dashboards-reports/reports/data.md) describes every report and its filters, and the [Data security dashboard](../dashboards-reports/dashboards/data-security.md) page covers each card.
