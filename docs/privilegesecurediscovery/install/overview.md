@@ -4,10 +4,6 @@ description: "Learn how the container-based deployment of Netwrix Privilege Secu
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm whether a single node is supported for production use or only for a proof of concept.
-:::
-
 Container-based deployment is the installation method for Netwrix Privilege Secure for Discovery. You deploy the product as a Docker Swarm stack on Ubuntu Server 24.04 LTS machines. A single shell script, `secureone.sh`, and a configuration package, `secureone.tar.gz`, do the work. Netwrix bundles both files in a versioned quickstart archive that you download from the Netwrix releases server.
 
 The method supports a single-node deployment and a three-node high-availability cluster. New installations use MongoDB 8.0.

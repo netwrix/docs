@@ -23,10 +23,6 @@ tags:
 knowledge_article_id: kA04u00000110oNCAQ
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm whether MODE_CCM (SMB encryption) is still unsupported at 26.09.1 and whether a product-side fix or a narrower workaround exists, such as per-share encryption settings. Evidence: none.
-:::
-
 ## Symptom
 
 You see the following error in the **Access History** of the system, or when you rescan the system from the **Grant Access** page:

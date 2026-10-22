@@ -4,10 +4,6 @@ description: "Find the article that explains an error or message in Privilege Se
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that each knowledge base article in this list still applies at 26.09.1. Evidence: none; the articles date from 2023 to 2024.
-:::
-
 Use this page to find the article for an error or message that you see in the web UI, in the Access History, or in an API response. Each link text is the exact text of the error. For errors that don't have their own article, see [Common UI errors](./common-ui-errors.md).
 
 ## Sign-in and authentication

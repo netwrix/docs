@@ -23,12 +23,6 @@ tags:
 knowledge_article_id: kA04u00000110pkCAA
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the /api/v1/mysystems/createcache endpoint and the cache generation behavior (generated after login when the user opens Grant Access search or Management > Systems) are unchanged at 26.09.1. Evidence: none.
-
-TODO: Screenshot ka04u00000116aS_0EM4u000008LUrh.png shows a lab user name; redact or re-capture it (TODO(screenshots)). Evidence: image.
-:::
-
 ## Question
 
 How does MySystems work, and why do users see only some systems?
@@ -48,8 +42,6 @@ After you sign in, you have access to the following menu items:
 - **Monitor**
 
 > **NOTE:** **Insight** might not be available, depending on how the environment is configured. It can be an administrator-only feature.
-
-![Navigation menu with Overview and Grant Access under Access, Insight, and Systems and Monitor under Management](../0-images/ka04u00000116aS_0EM4u000008LUrh.png)
 
 ### JITA and Persistent Access
 

@@ -5,14 +5,6 @@ description: "Create the Tanium Cloud sensor, package, and API token, add the ED
 sidebar_position: 40
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Decide how customers obtain the management script that goes into the Tanium sensor and package (needs PM). Today a customer can't create the sensor and package without Netwrix Support, because the `maintain_sensor` and `maintain_package` options aren't reachable from the interface or the API.
-
-TODO: Confirm the minimum Tanium API token permissions and persona (needs a Tanium tenant).
-
-TODO: QA to confirm Offline Access Management (OAM) with Tanium before the "unsupported" statement is dropped.
-:::
-
 The Tanium Cloud integration lets Netwrix Privilege Secure for Discovery scan Windows systems and manage local administrator access through Tanium. The product doesn't need a direct network connection to the target devices.
 
 The integration uses two objects in Tanium:

@@ -4,10 +4,6 @@ description: "Review the VMware virtual machine requirements for a Privilege Sec
 sidebar_position: 50
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: The VM table on this page conflicts with the storage tiers on the Sizing page. Reconcile the two.
-:::
-
 This page applies to the deprecated ISO appliance on virtual machines. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 An ISO-based installation can run on a VMware virtual machine (VM) instead of dedicated hardware.

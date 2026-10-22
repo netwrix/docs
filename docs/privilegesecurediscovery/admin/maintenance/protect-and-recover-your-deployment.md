@@ -4,10 +4,6 @@ description: "Learn what a backup must contain, how to back up and restore the d
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm whether the internal API's second database, remediant, holds anything on-premises, because mongodump --db SecureONE doesn't include it.
-:::
-
 Netwrix Privilege Secure for Discovery stores its data in MongoDB and encrypts stored credentials with a key that exists only on the deployment. A usable backup must include both. This page describes what to protect, how to back up and restore the database of a single-node or three-node deployment, and how a recovery works.
 
 ## What a backup must contain

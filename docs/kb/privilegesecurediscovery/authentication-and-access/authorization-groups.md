@@ -21,21 +21,9 @@ tags:
 - authentication-and-access
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm that the service_account_group_strategy release toggle and its migration still exist at 26.09.1, and whether the toggle is enabled by default on upgrade. Evidence: none.
-
-TODO: Confirm the account type label that the UI shows for groups after the Group Account strategy is applied. The original article names it with the legacy product name. Evidence: none.
-
-TODO: Screenshot authorization-groups-overview.png shows lab domain, IP address, account, and user names; redact or re-capture it (TODO(screenshots)). Evidence: image.
-
-TODO: Provide a supported maximum number of authorization groups. The original article stated that the limit is unknown. Evidence: none.
-:::
-
 ## Overview
 
 The **Authorization Group(s)** feature protects service accounts by granting persistent access to the members of the groups you specify. The feature is available in the UI. It depends on a database migration named `service_account_group_strategy` (Service Account Authorization Strategy). After the migration is applied during an upgrade, a database toggle must be enabled before you can use the feature.
-
-![Server Configuration page showing the Authorization Strategy list set to Group Account and the Authorization Group(s) field, with an arrow pointing to the field](../0-images/authorization-groups-overview.png)
 
 > **IMPORTANT:** This feature grants full access to all members of the groups you add. It is designed for service account protection scenarios only. Misuse can unintentionally grant broad access, so validate the group list before you save it.
 

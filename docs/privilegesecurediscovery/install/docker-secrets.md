@@ -21,7 +21,7 @@ The `key.txt` secret has the following properties:
 - The `teardown` command destroys it, because leaving the swarm deletes the swarm secrets.
 - The services need it to decrypt the credentials in the database. A restored database that runs with a different `key.txt` can't decrypt those credentials.
 
-The file has exactly two lines: the secret on line 1 (50 characters) and the salt on line 2 (17 characters). Use LF line endings and no line ending after the second line. The services derive the encryption key from both lines, and only the secret signs the sign-in tokens. A file with different bytes, including Windows (CRLF) line endings, produces a different key. Services that use different languages then derive different keys. A different key signs out every user and leaves every stored credential unreadable. The application doesn't validate the file, so a missing line produces a wrong key without an error. Don't replace the key on a running deployment. Netwrix doesn't support key rotation, so contact Netwrix Support if you need to change the key.
+The installer generates the file. Don't edit it, and don't replace the key on a running deployment. A different key signs out every user and leaves every stored credential unreadable. Netwrix doesn't support key rotation, so contact Netwrix Support if you need to change the key.
 
 ## Protect the key
 

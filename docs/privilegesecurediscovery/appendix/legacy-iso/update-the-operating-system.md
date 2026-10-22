@@ -4,10 +4,6 @@ description: "Install operating system updates on the nodes of an ISO-based Priv
 sidebar_position: 60
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Netwrix doesn't pin a Docker version, and test labs upgrade without problems on Docker 29.x. Decide as a policy call (product management or Support) whether to keep the hold on the docker-ce, docker-ce-cli, and containerd.io packages in this procedure.
-:::
-
 This page applies to the deprecated ISO appliance. For the supported deployment method, see [Legacy ISO installation](./legacy-iso-installation.md).
 
 Install operating system updates during a scheduled maintenance window, because an update can require a reboot of the server or the Docker service. The downtime depends on the deployment:

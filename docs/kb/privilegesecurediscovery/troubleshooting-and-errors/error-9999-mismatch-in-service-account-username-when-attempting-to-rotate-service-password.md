@@ -22,10 +22,6 @@ tags:
 knowledge_article_id: kA04u00000110qYCAQ
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Provide the UI path to the Local Admin Password TTL Days setting and the service to restart, and confirm that the default value is 0 at 26.09.1. Evidence: none.
-:::
-
 ## Symptom
 
 When you scan an endpoint, the scan does not complete, and the following error occurs:

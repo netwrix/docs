@@ -4,10 +4,6 @@ description: "Store the registry credential for Netwrix Privilege Secure for Dis
 sidebar_position: 40
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Verify `docker login` and `docker stack deploy --with-registry-auth` with the credential helper against the Netwrix registry.
-:::
-
 By default, `docker login` writes the registry credential to `~/.docker/config.json` as base64-encoded text. This page describes how to install the official Docker `docker-credential-pass` helper with `gopass` as the back end. GNU Privacy Guard (GPG) encrypts the credential, and Docker keeps no readable credential in its configuration file.
 
 Use the helper on each Ubuntu node that pulls Netwrix Privilege Secure for Discovery images from the Netwrix container registry. The setup is optional. You can use the plain `docker login` procedure in [Configure registry access](../requirements/registry-access.md) instead.

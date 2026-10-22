@@ -13,7 +13,7 @@ Complete these checks on the deployment before you connect it to production syst
 - [ ] The deployment passes the checks in [Verify the deployment](./verify-deployment.md), including `sudo -E bash secureone.sh verify --version <version>`, `sudo docker stack services s1`, and `s1 database-status`.
 - [ ] Each node meets the [sizing guidance](../requirements/sizing.md), and you opened the ports in the [ports and firewall rules](../requirements/ports-and-firewall.md).
 - [ ] You stored a copy of the `key.txt` encryption key outside the deployment hosts. See [Manage Docker secrets](./docker-secrets.md).
-- [ ] You have a plan to back up and recover the database and the encryption key. Netwrix doesn't publish a backup procedure, so use your own tools. See [Protect and recover your deployment](../admin/maintenance/protect-and-recover-your-deployment.md).
+- [ ] You have a plan to back up and recover the database and the encryption key. See [Protect and recover your deployment](../admin/maintenance/protect-and-recover-your-deployment.md).
 - [ ] You know the release you run and how you will upgrade it. See [Deploy Privilege Secure for Discovery with Docker](./deploy.md#upgrade-an-existing-deployment).
 
 ## Confirm access to systems

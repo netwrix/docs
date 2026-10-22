@@ -4,10 +4,6 @@ description: "Find the right recovery action for each migration stage, from an i
 sidebar_position: 90
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Netwrix Support to confirm that customers may run the abandoned-target removal commands before this section is published.
-:::
-
 The correct recovery action depends on the stage at which the migration stopped. Find your stage in the following sections. If you can't determine the stage, preserve the logs and contact Netwrix Support.
 
 ## Stop conditions
@@ -117,7 +113,7 @@ If the scan couldn't complete, the output includes the following warning:
 WARNING: could not complete the stale-reference sweep (...)
 ```
 
-The result is unknown, not confirmed clean. Check each service manually with `sudo docker service inspect <service>`.
+The scan result is incomplete. Check each service with `sudo docker service inspect <service>`.
 
 After you correct the references, run `finish-cutover`. The command repeats only the stale-reference scan and, when the scan is clean, stops MongoDB 4.0. It doesn't repeat the freeze, copy, or switch.
 

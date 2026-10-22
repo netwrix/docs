@@ -4,10 +4,6 @@ description: "Review the network, SSH, sudo, and Python requirements that a Linu
 sidebar_position: 40
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Verify on Ubuntu 22.04 and 24.04 endpoints whether registration with an RSA key needs PubkeyAcceptedKeyTypes +ssh-rsa; this page and the knowledge base article disagree.
-:::
-
 This page lists what a Linux system must provide before you register it with Netwrix Privilege Secure for Discovery. For the supported distributions and versions, see [Supported platforms](../../requirements/supported-platforms.md). To understand why the product needs these items, see [Linux systems overview](./linux-registration-modes.md).
 
 Back up `/etc/sudoers` and `/etc/sudoers.d` on each endpoint first, because the first scan rewrites `/etc/sudoers`.

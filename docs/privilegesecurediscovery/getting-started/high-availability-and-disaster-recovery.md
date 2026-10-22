@@ -4,10 +4,6 @@ description: "Compare single-node and three-node deployments and plan for high a
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Define the supported disaster recovery (DR) position for customers, such as a standby deployment restored from a database backup. The product ships no backup, restore, or DR tooling, so the supported approach needs a product management decision.
-:::
-
 Privilege Secure for Discovery supports two deployment layouts: a single node and a three-node cluster. This page explains how each layout handles a failure and what to plan for disaster recovery (DR). Contact Netwrix Support to discuss the approach that fits your environment.
 
 ## Compare the deployment layouts

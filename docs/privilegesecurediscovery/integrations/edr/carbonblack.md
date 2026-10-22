@@ -5,10 +5,6 @@ description: "Create Carbon Black Cloud API keys and an EDR provider configurati
 sidebar_position: 10
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Verify the exact Carbon Black Cloud permission names in a tenant.
-:::
-
 The Carbon Black Cloud integration lets Netwrix Privilege Secure for Discovery scan Windows systems and grant just-in-time administrator access through the Carbon Black sensor. The product doesn't need a direct network connection to the endpoint, and the endpoint doesn't need to be on the domain.
 
 For a system that uses this integration, the product scans through Carbon Black first. If that scan fails, it tries a direct connection. To manage a system, the product starts a Live Response session on the device, copies its management script to the device, runs the script, and removes the files afterward. If the device's policy has Live Response turned off, the product temporarily applies a copy of the policy with Live Response turned on, and restores the original policy when the session ends.

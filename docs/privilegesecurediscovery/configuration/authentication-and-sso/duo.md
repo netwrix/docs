@@ -4,12 +4,6 @@ description: "Create a Generic SAML Service Provider application in Duo Single S
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm which Duo attribute gives the value that **Match User By** needs, for a Duo Single Sign-On tenant with an Active Directory (AD) authentication source. Evidence: the Duo documentation lists **NameID attribute** as a choice; which attribute carries the sAMAccountName or the user principal name depends on the Duo authentication source settings, and no tenant was available to check.
-
-TODO: Confirm the field names **Service Provider Login URL**, **Sign response**, and **Sign assertion** in the Duo application. Evidence: the Duo documentation for the Generic SAML Service Provider (duo.com/docs/sso-generic).
-:::
-
 Duo Single Sign-On can act as the SAML identity provider (IdP) for Netwrix Privilege Secure for Discovery, with Duo enforcing multifactor authentication (MFA). Read the [SAML SSO configuration reference](./saml-sso-reference.md) first. This page shows the values for the Duo application and for the product. For the Duo screens, see the Duo documentation: [Generic SAML Service Provider](https://duo.com/docs/sso-generic) and [Duo Single Sign-On](https://duo.com/docs/sso).
 
 This page doesn't cover Duo Access Gateway, the on-premises predecessor. Contact Netwrix Support if you use it.

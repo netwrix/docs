@@ -5,10 +5,6 @@ description: "Create a CrowdStrike Falcon API client and an EDR provider configu
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Verify the exact scope labels in a Falcon tenant.
-:::
-
 The CrowdStrike Falcon integration lets Netwrix Privilege Secure for Discovery scan Windows systems and grant just-in-time administrator access through the Falcon sensor. The product doesn't need a direct network connection to the endpoint, and the endpoint doesn't need to be on the domain.
 
 For a system that uses this integration, the product scans through Falcon first. If that scan fails, it tries a direct connection. To manage a system, the product uploads its management script (`secureone_management.ps1`) to your Falcon Real Time Response (RTR) scripts, starts an RTR session on the device, runs the script, and closes the session.

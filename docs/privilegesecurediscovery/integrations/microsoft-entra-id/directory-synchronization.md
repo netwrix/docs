@@ -5,10 +5,6 @@ description: "Create a Microsoft Entra app registration and synchronize users, g
 sidebar_position: 20
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: PM to approve the placeholder-account convention for EDR-only deployments.
-:::
-
 Configure a dedicated Microsoft Entra app registration so that Netwrix Privilege Secure for Discovery can read users, groups, devices, and the default domain through Microsoft Graph. Complete the [integration prerequisites](./overview.md#prerequisites) before you start.
 
 ## Create an app registration

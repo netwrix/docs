@@ -23,12 +23,6 @@ tags:
 knowledge_article_id: kA04u00000110qOCAQ
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Confirm the value to pass to -Member when the local Administrators group contains a member with an incomplete name, such as DOMAIN\ with no account name. Evidence: none.
-
-TODO: Screenshot ka04u00000116da_0EM4u000008LVoZ.png shows a lab domain name, domain SID, and user name; redact or re-capture it (TODO(screenshots)). Evidence: image.
-:::
-
 ## Symptom
 
 The following error message is displayed in the upper-right corner of the **Grant Access** page:
@@ -44,8 +38,6 @@ A member of the local Administrators group on the target system has incomplete d
 ```powershell
 Get-LocalGroupMember -SID S-1-5-32-544 | ConvertTo-JSON
 ```
-
-![PowerShell output of Get-LocalGroupMember showing a member whose Name value is a domain name with no account name](../0-images/ka04u00000116da_0EM4u000008LVoZ.png)
 
 In the output, the `AccountDomainSid` and `Name` values of the member are incomplete. In the example, the `Name` value is `CONTOSO\`, but the complete value must include an account, such as `CONTOSO\svc-account`. The incomplete member causes the product to receive incomplete data for a member of the local Administrators group.
 

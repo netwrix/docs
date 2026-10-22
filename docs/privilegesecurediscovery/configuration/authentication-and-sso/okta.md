@@ -4,12 +4,6 @@ description: "Create a SAML application in Okta, require multifactor authenticat
 sidebar_position: 40
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Verify in an Okta tenant, after you create the application, the labels on the **Sign On** tab: **SAML Signing Certificates**, **View SAML setup instructions**, and the values **Identity Provider Single Sign-On URL**, **Identity Provider Issuer**, and **X.509 Certificate**. Evidence: the wizard fields and the signing defaults on this page were read from an Okta tenant (2026.42.1 E). The setup instructions page wasn't opened, because no application exists.
-
-TODO: Verify the **Authentication policy** location and the **Any two factors** policy name on the **Sign On** tab of an Okta Identity Engine application. Evidence: carried over from the earlier version of this page.
-:::
-
 Okta can act as the SAML identity provider (IdP) for Netwrix Privilege Secure for Discovery, with Okta enforcing multifactor authentication (MFA). Read the [SAML SSO configuration reference](./saml-sso-reference.md) first. This page shows the values for the Okta application and for the product. For the Okta screens, see the Okta documentation: [Create SAML app integrations](https://help.okta.com/oie/en-us/Content/Topics/apps/apps_app_integration_wizard_saml.htm) and the [SAML field reference](https://help.okta.com/oie/en-us/Content/Topics/apps/aiw-saml-reference.htm).
 
 In the following steps, `<fqdn>` is the fully qualified domain name of Privilege Secure for Discovery.

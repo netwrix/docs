@@ -4,10 +4,6 @@ description: "Follow one checklist from planning through retire to migrate Privi
 sidebar_position: 15
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Product or QA to decide whether the Phase 3 item "Checks failed: 0" is too strict. Collections that change during the live copy, such as `health_reports`, can legitimately differ, and `cutover` runs its own final reconcile and validation.
-:::
-
 Use this checklist to track the whole migration from MongoDB 4.0 to MongoDB 8.0. If the deployment runs release 26.09.0, upgrade to 26.09.1 first. Release 26.09.0 doesn't include `finish-cutover`, `retire`, the durable post-cutover state, `install-cli`, or `verify`. If you already started a migration on 26.09.0, contact Netwrix Support before you continue. Each step gives the command, the result to expect, and the page that explains it. Don't start a phase until every item in the earlier phases is complete.
 
 For a three-node cluster, add `--multi-node` before `mongo-upgrade` in each `s1` command and run `run`, `status`, `cutover`, and `retire` from the same database-manager node. The `s1` tool detects a cluster from the Docker Swarm node count, so the option is a safeguard.
@@ -56,7 +52,7 @@ Continue only if every statement is true. If any is false, stop and see [Resume,
 - [ ] You ran `s1 mongo-upgrade cutover` in the foreground, inside `tmux` or `screen`, and watched the log. See [Cut over to MongoDB 8.0](./cut-over.md).
 - [ ] The command exited with `0` and ended with `Cutover complete.` If it didn't, don't run it again. See [Resume, roll back, or recover a migration](./resume-roll-back-recover.md).
 - [ ] The output shows that the tool pinned the MongoDB 8.0 connection settings in `/secureone/s1.env`.
-- [ ] The output includes `Sweep found no remaining references` for MongoDB 4.0 and `Stopping old db...` (`Stopping old replica set...` on a cluster). An exit code of `0` and `Cutover complete.` alone don't prove that MongoDB 4.0 stopped. If the output says the old database was deliberately not stopped, see [Resume, roll back, or recover a migration](./resume-roll-back-recover.md#finish-a-cutover-that-left-mongodb-40-running).
+- [ ] The output includes `Sweep found no remaining references` for MongoDB 4.0 and `Stopping old db...` (`Stopping old replica set...` on a cluster). An exit code of `0` and `Cutover complete.` alone don't prove that MongoDB 4.0 stopped. If the output says the command deliberately left the old database running, see [Resume, roll back, or recover a migration](./resume-roll-back-recover.md#finish-a-cutover-that-left-mongodb-40-running).
 
 ## Phase 6: Verify
 

@@ -5,10 +5,6 @@ description: "Collect a SentinelOne API token, account ID, and base URL, and cre
 sidebar_position: 30
 ---
 
-:::warning[Needs dev input: remove before publishing]
-TODO: Verify the exact role labels in a SentinelOne tenant.
-:::
-
 The SentinelOne integration lets Netwrix Privilege Secure for Discovery scan Windows systems and grant just-in-time administrator access through the SentinelOne agent. The product doesn't need a direct network connection to the endpoint, and the endpoint doesn't need to be on the domain.
 
 For a system that uses this integration, the product scans through SentinelOne first. If that scan fails, it tries a direct connection. To manage a system, the product uploads its management script (`secureone_management.ps1`) to the SentinelOne remote script library, runs it on the agent, and downloads the output. The product uploads the script at the site level when you enter a **Site ID**, and at the account level otherwise.
