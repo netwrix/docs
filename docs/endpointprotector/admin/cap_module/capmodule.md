@@ -59,7 +59,7 @@ points:
 ## Content Aware Protection Activation
 
 Content Aware Protection comes as the second level of data protection available in Endpoint
-Protector. The module appears but requires activation by pressing the Enable button.
+Protector. The module appears in the console, and you activate it by clicking **Enable**.
 Provide the Main Administrator's contact details if you haven't already.
 
 :::tip Apply the Offline Activation Patch first
@@ -77,8 +77,7 @@ and requires separate licensing.
 
 ## Dashboard
 
-This section offers a quick overview in the form of graphics and charts related to the Content Aware
-Protection module.
+This section shows graphics and charts for the Content Aware Protection module.
 
 ![A quick overview in the form of graphics and charts related to the Content Aware Protection module](dashboard.webp)
 
@@ -89,5 +88,5 @@ secure communication.
 :::
 
 :::note
-**Known limitation:** When using Zoho WorkDrive or GDrive (Google Drive) sync applications, file names that are reported, blocked, or both display internal cache paths instead of the original file name, which prevents location-based and file name denylists from working reliably. Block and Report log entries may be duplicated due to application-level transfer retries, and reported file sizes may be inaccurate. File shadowing works intermittently — shadows may contain corrupted content or be created without a hash, preventing download from the server.
+**Known limitation:** When using Zoho WorkDrive or GDrive (Google Drive) sync applications, file names that are reported, blocked, or both display internal cache paths instead of the original file name, which prevents location-based and file name denylists from working reliably. Application-level transfer retries can duplicate Block and Report log entries, and reported file sizes may be inaccurate. File shadowing works intermittently — shadows may contain corrupted content or be created without a hash, preventing download from the server.
 :::

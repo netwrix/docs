@@ -16,7 +16,7 @@ many entities sync efficiently without importing the entire directory.
 
 
 :::note
-This section of the documentation is provided as a best-effort guideline to support deployment. Since third-party products can change frequently, the screenshots and images may not always reflect the latest interfaces or features. For the most up-to-date information, refer to the official resources from the product vendor.
+Netwrix provides this section of the documentation as a best-effort guideline to support deployment. Since third-party products can change frequently, the screenshots and images may not always reflect the latest interfaces or features. For the most up-to-date information, refer to the official resources from the product vendor.
 :::
 
 ## Microsoft Active Directory
@@ -233,7 +233,7 @@ ensure the created application is open then:
 - Secret ID saved earlier in the Client Secret Value ﬁeld
 - Azure Cloud Environment – select the cloud environment that matches your tenant:
   - **Commercial** (default) – uses `login.microsoftonline.com` and `graph.microsoft.com`
-  - **GCC High** – uses `login.microsoftonline.us` and `graph.microsoft.us` (for US government and regulated-industry tenants)
+  - **GCC High** – uses `login.microsoftonline.us` and `graph.microsoft.us` (for United States government and regulated-industry tenants)
 
 ![Add Graph Application to Endpoint Protector Server](azureadtwo.webp)
 
@@ -266,11 +266,10 @@ Microsoft Entra ID. This switch has two states:
   to retrieve user names. This attribute is the primary source for user identiﬁcation and account
   mapping.
 - Marked (feature enabled) – Endpoint Protector uses the "onPremisesSamAccountName" Azure AD
-  attribute to retrieve user names, ensuring accurate synchronization between the local Active
-  Directory and Azure AD.
+  attribute to retrieve user names, so user names match between the local Active Directory and
+  Azure AD.
 
-By using this feature, Endpoint Protector ensures seamless synchronization of user names,
-preventing duplicate usernames. Enable or disable the "Map on-premises users" feature based on your
+This feature prevents duplicate usernames when Endpoint Protector synchronizes user names. Enable or disable the "Map on-premises users" feature based on your
 speciﬁc hybrid environment setup and requirements.
 
 :::note

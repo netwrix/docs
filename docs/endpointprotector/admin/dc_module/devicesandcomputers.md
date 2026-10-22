@@ -109,7 +109,7 @@ Packet Inspection (DPI) status for each entity (Computer/User/Group) and the ent
 Packet Inspection is used.
 
 Endpoint Protector automatically adds any new computer that has the Endpoint Protector Client
-deployed to the database, making it manageable.
+deployed to the database, where you can manage it.
 
 ![Filter, create, uninstall, or delete a computer ](computers.webp)
 

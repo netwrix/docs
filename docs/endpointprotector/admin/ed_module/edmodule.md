@@ -20,13 +20,13 @@ The eDiscovery module provides the following key capabilities:
 - **User-initiated scans**—let end users start data-at-rest scans directly from endpoints
 - **Bulk remediation**—select and remediate multiple discovered files in a single action, with support for encryption, decryption, deletion, and quarantine
 - **Contextual detection**—configure per-policy contextual detection rules for more targeted and accurate scanning
-- **CrateDB log storage**—eDiscovery scan results are stored in CrateDB for fast queries and horizontal scalability
+- **CrateDB log storage**—Endpoint Protector stores eDiscovery scan results in CrateDB for fast queries and horizontal scalability
 
 ## eDiscovery activation
 
 The eDiscovery module requires separate licensing from Device Control and Content Aware Protection. You can activate and operate eDiscovery independently—a Device Control or CAP deployment isn't required.
 
-To activate the module, navigate to **eDiscovery** and click **Enable**. If you haven't previously provided the Main Administrator's contact details, you're prompted to enter them.
+To activate the module, navigate to **eDiscovery** and click **Enable**. If you haven't previously provided the Main Administrator's contact details, Endpoint Protector prompts you to enter them.
 
 :::tip Apply the Offline Activation Patch first
 To activate this module, first apply the Offline Activation Patch that matches your server version. Servers on version 2611.0.1.x and later don't need the patch. You can get the patch from [Netwrix Endpoint Protector Support](https://www.netwrix.com/support.html).
@@ -40,7 +40,7 @@ The eDiscovery module requires a separate license. Contact your Netwrix represen
 
 ## Dashboard
 
-The eDiscovery dashboard provides a quick overview of eDiscovery activity through graphics and charts. Dashboard metrics are sourced from CrateDB and are updated on a daily schedule.
+The eDiscovery dashboard provides a quick overview of eDiscovery activity through graphics and charts. Endpoint Protector sources dashboard metrics from CrateDB and updates them daily.
 
 The dashboard displays:
 
@@ -52,7 +52,7 @@ The dashboard displays:
 
 ## Module sections
 
-The eDiscovery module is organized into the following sections:
+The eDiscovery module has the following sections:
 
 | Section | Description |
 |---------|-------------|

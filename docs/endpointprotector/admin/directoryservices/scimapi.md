@@ -10,7 +10,7 @@ sidebar_position: 115
 
 The SCIM API Connector enables Endpoint Protector to integrate with enterprise Identity Providers (IdPs) such as Microsoft Entra ID (Azure AD), Okta, or similar platforms to **automate user and group provisioning**.
 
-Using SCIM (System for Cross-domain Identity Management), organizations can ensure that user accounts and group memberships in Endpoint Protector are automatically created, updated, and deactivated based on changes in their Identity Provider.
+With SCIM (System for Cross-domain Identity Management), Endpoint Protector automatically creates, updates, and deactivates user accounts and group memberships based on changes in the organization's Identity Provider.
 
 This integration:
 
@@ -25,13 +25,13 @@ SCIM (System for Cross-domain Identity Management) is an industry-standard proto
 
 SCIM allows an Identity Provider to:
 
--   Create users automatically when they are assigned to an application
+-   Create users automatically when an administrator assigns them to an application
 -   Update user attributes and group memberships
--   Deactivate users when access is revoked in the Identity Provider
+-   Deactivate users when an administrator revokes access in the Identity Provider
 
 **Important:**  
 SCIM manages **user and group provisioning only**.  
-Authentication and login are handled separately using SSO technologies such as SAML or OpenID Connect (OIDC).
+SSO technologies such as SAML or OpenID Connect (OIDC) handle authentication and login separately.
 
 ## How SCIM Works in Endpoint Protector
 
@@ -42,15 +42,15 @@ In a typical deployment:
     -   The SCIM Base URL
     -   The generated bearer token
 3.  The Identity Provider sends SCIM requests to Endpoint Protector whenever:
-    -   A user is assigned or removed
+    -   An administrator assigns or removes a user
     -   User attributes change
-    -   Group memberships are updated
+    -   Group memberships change
 
 Endpoint Protector processes these requests and updates its internal user and group records accordingly.
 
 ## Configuring the SCIM API Connector
 
-The SCIM API Connector is configured from:
+Configure the SCIM API Connector from:
 
 **Directory Services → SCIM API Configuration**
 
@@ -61,7 +61,7 @@ The SCIM API Connector is configured from:
 -   **SCIM API Enabled**  
     Enables or disables the SCIM API endpoints.
     -   When enabled, Endpoint Protector accepts SCIM provisioning requests.
-    -   When disabled, all SCIM requests are rejected.
+    -   When disabled, Endpoint Protector rejects all SCIM requests.
 
 **Bearer Token**
 
@@ -69,7 +69,7 @@ The SCIM API Connector is configured from:
     A tenant-specific bearer token used to authenticate SCIM requests coming from the Identity Provider.
 -   **Generate Token**  
     Generates a new bearer token.  
-    After generation, the token must be copied and configured in the Identity Provider.
+    After generation, copy the token and configure it in the Identity Provider.
 
 **Note:**  
 Rotating the token requires updating the token value in the Identity Provider.  
@@ -77,7 +77,7 @@ The old token becomes invalid immediately.
 
 **API Endpoints**
 
-The following endpoints are provided for SCIM provisioning:
+Endpoint Protector provides the following endpoints for SCIM provisioning:
 
 -   **SCIM Base URL**  
     Base endpoint for all SCIM operations.
@@ -86,7 +86,7 @@ The following endpoints are provided for SCIM provisioning:
 -   **Groups Endpoint**  
     Used to provision groups and manage group memberships.
 
-These URLs are required when configuring SCIM provisioning in the Identity Provider.
+You need these URLs when you configure SCIM provisioning in the Identity Provider.
 
 **Authentication Header Format**
 
@@ -97,7 +97,7 @@ SCIM requests must include the bearer token in the HTTP request header using one
 -   **Alternative:**  
     Authorization: Bearer \<token\>
 
-An example request is displayed in the UI for reference.
+The UI displays an example request for reference.
 
 ## Supported SCIM Operations
 
@@ -108,19 +108,19 @@ Endpoint Protector supports standard SCIM 2.0 operations, including:
 -   Bulk operations
 -   Filtering and pagination
 
-For detailed endpoint definitions, schemas, and examples, refer to the **SCIM API Technical Reference** below.
+For detailed endpoint definitions, schemas, and examples, refer to the [SCIM API Technical Reference](#scim-api-technical-reference) section.
 
 ## Important Notes and Limitations
 
 -   SCIM provisioning applies to **users and groups only**
--   Administrative roles must be assigned manually
--   Deprovisioning is performed by **deactivating users**, not deleting them
+-   You must assign administrative roles manually
+-   Deprovisioning **deactivates users** rather than deleting them
 -   Provisioning timing depends on the Identity Provider
--   Attribute mapping and group behavior are controlled by the Identity Provider
+-   The Identity Provider controls attribute mapping and group behavior
 
 ## Summary
 
-The SCIM API Connector automates user and group management in Endpoint Protector. Combined with SSO, it provides complete enterprise identity integration that improves security and reduces operational overhead.
+The SCIM API Connector automates user and group management in Endpoint Protector. Use it together with SSO, which handles authentication.
 
 ***
 
@@ -323,7 +323,7 @@ All endpoints except Discovery require Bearer token authentication.
 | `domain`     | string    | No       | readOnly   | none       | `DOMAIN`        |
 | `groups`     | complex[] | No       | readOnly   | -          | via join table  |
 
->   **Note:** Computer resource is READ-ONLY. Computers are managed by EPP clients, not through SCIM API.
+>   **Note:** Computer resource is READ-ONLY. EPP clients manage computers, not the SCIM API.
 
 ### Junction Table: User-Group Membership
 
