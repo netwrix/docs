@@ -35,8 +35,8 @@ You can configure your IT Infrastructure for monitoring in one of the following
 
         - The Audit: Force audit policy subcategory settings security option must be enabled.
         - Audit Security Group Management, Audit User Account Management, Audit Handle
-          Manipulation, Audit Other Object Access Events, Audit Registry, Audit File Share, and
-          Audit Audit Policy Change advanced audit policies must be set to _"Success"_.
+          Manipulation, Audit Other Object Access Events, Audit Registry, Audit File Share, Audit Policy Change and Audit Logoff advanced audit policies must be set to _"Success"_.
+        - The Audit: Audit Logon advanced audit policy must be set to _"Success"_ and _"Failure"_.
         - See the [Configure Local Audit Policies](/docs/auditor/10.9/configuration/windowsserver/localpolicy.md) topic and the
           [Configure Advanced Audit Policies](/docs/auditor/10.9/configuration/windowsserver/advancedpolicy.md) topic for additional information.
 
@@ -213,7 +213,6 @@ reported as _“Not Applicable”_.
 |  | DNS X25\*\* | <ul><li>Container name</li><li>Owner name</li><li>Record</li><li>Record class</li><li>TTL</li><li>X.121 PSDN address</li><li>Zone type</li></ul> |
 | File shares | Share | <ul><li>Access-based enumeration</li><li>Caching</li><li>Description</li><li>Enable BranchCache</li><li>Encrypt data access</li><li>Folder path</li><li>Share permissions</li><li>User limit</li></ul> |
 
-
 ### Windows Server Registry Keys
 
 If you want to monitor changes to system components on a Windows Server, make sure that Windows
@@ -304,6 +303,20 @@ For example:
 
 **NOTE:** In some cases, **Who** will be the system and **When** will be collection time, because
 there is no necessary event in the Security log with this path.
+
+## Local logon activity
+
+In addition to changes to system components, Netwrix Auditor can collect logon activity of local users on the audited Windows Server: failed logons (Windows event 4625), successful logons (event 4624), and logoffs (event 4647). See the [Windows Server](/docs/auditor/10.9/admin/monitoringplans/windows/overview.md) monitoring plan topic for information on enabling collection.
+
+Consider the following:
+
+- Netwrix Auditor collects only logons, logoffs, and logon attempts of local accounts of the audited server. It doesn't collect activity of domain accounts, including all activity on domain controllers. To audit this activity, use Active Directory [Logon Activity](/docs/auditor/10.9/admin/monitoringplans/logonactivity/overview.md).
+- Netwrix Auditor collects console (type 2), unlock (type 7), and Remote Desktop (type 10) logons. It collects failed network logons (type 3) only for Remote Desktop with Network Level Authentication (NLA). Each record has a logon type tag: Interactive, Unlock, or RemoteInteractive.
+- Netwrix Auditor doesn't collect service and system accounts, such as `NT AUTHORITY\SYSTEM`, `UMFD-*` (User-Mode Font Driver), and `DWM-*` (Desktop Window Manager).
+- If a user logs on with a User Account Control (UAC) elevated token, Windows records two logon events. Netwrix Auditor shows them as one record. It also collapses repeated identical logon events into one record.
+- Netwrix Auditor records a logoff only when the user signs out. A disconnected Remote Desktop session that the user doesn't sign out, or a session that ends in another way, doesn't produce a logoff record.
+
+Netwrix Auditor includes two predefined alerts for failed local logons: **Failed Local Logon to a Specific Windows Server** and **Failed Local Logons on Windows Server**. For more information about alerts, see the [Alerts](/docs/auditor/10.9/admin/alertsettings/overview.md) topic.
 
 ## VM Template Cloning
 
