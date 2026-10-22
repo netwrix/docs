@@ -7,7 +7,7 @@ sidebar_position: 20
 # Server Functionality
 
 After the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User
-Interface from the assigned IP address. For more information, refer to the dedicated chapter [Configuring EPP Server IP](/docs/endpointprotector/admin/appliance.md#ip-conﬁguration).
+Interface from the assigned IP address. For more information, refer to the dedicated chapter [Configuring EPP Server IP](/docs/endpointprotector/admin/appliance.md#ip-configuration).
 
 :::note
 Always use the IP address with HTTPS (Hypertext Transfer Protocol Secure).

@@ -44,7 +44,7 @@ By default, the appliances sync once a week with pool.ntp.org.
 
 ![Set a preferential time zone and/or sync the appliance to an NTP source](timezone.webp)
 
-### IP Conﬁguration
+### IP Conﬁguration {#ip-configuration}
 
 In this section you can change the network settings for the appliance to communicate correctly in
 your network.

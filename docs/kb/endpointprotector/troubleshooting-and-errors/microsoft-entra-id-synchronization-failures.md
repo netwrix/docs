@@ -86,4 +86,4 @@ A manual entry error in the API Consumer name, Application ID, Tenant ID, or Sec
 
 ## Related Links
 
-- [Directory Services](/docs/endpointprotector/admin/directoryservices/directoryservices.md#microsoft-entra-id)
+- [Directory Services](/docs/endpointprotector/admin/directoryservices#microsoft-entra-id)
