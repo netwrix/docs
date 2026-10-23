@@ -1,6 +1,15 @@
 ---
 title: "Ports"
-description: "Ports"
+description: "Reference for the firewall ports Privilege Secure uses with domain controllers, proxies, clients, and target environments."
+keywords:
+  - firewall rules
+  - dynamic port range
+  - domain controllers
+  - LDAP
+  - Kerberos
+  - RDP
+  - SSH
+  - WinRM
 sidebar_position: 50
 ---
 
@@ -30,41 +39,40 @@ for additional information.
 The requirements for the (Privilege Secure) application server are:
 
 - ensure that you have configured the Antivirus exclusions according to the following Netwrix
-knowledge base article:
-[SbPAM: Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
+  knowledge base article:
+  [SbPAM: Exclusions for Antivirus (AV) & Endpoint Software](/docs/kb/privilegesecure/installation-configuration-and-licensing/exclusions-for-antivirus-av-endpoint-software)
 - The following ports must be open for communication between Privilege Secure and Active Directory
-domain controllers:
+  domain controllers:
 
-| Port | Protocol | Source | Direction | Target | Purpose |
-| -------- | -------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 135 | TCP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Domain Controller | MS-RPC |
-| 389 636 | TCP UDP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Domain Controller | LDAP/LDAPS |
-| 53 | TCP UDP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | DNS Service | DNS |
-| 137 138 | UDP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Domain Controller | Net BIOS related |
-| **9389** | TCP | Privilege Secure server | ![single_direction_arrow](/images/privilegesecure/26.03/accessmanagement/requirements/single_direction_arrow.webp) | Domain Controller | Active Directory Web Services ensure that you have configured the Antivirus exclusions according to the following Netwrix knowledge base article: [SbPAM: Exclusions for Antivirus (AV) & Endpoint Software](https://kb.netwrix.com/5938) |
-| **88** | UDP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Domain Controller | Kerberos |
+  | Port | Protocol | Source | Direction | Target | Purpose |
+  | -------- | -------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | 135 | TCP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Domain Controller | MS-RPC |
+  | 389 636 | TCP UDP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Domain Controller | LDAP/LDAPS |
+  | 53 | TCP UDP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | DNS Service | DNS |
+  | 137 138 | UDP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Domain Controller | NetBIOS related |
+  | 9389 | TCP | Privilege Secure server | ![single_direction_arrow](/images/privilegesecure/26.03/accessmanagement/requirements/single_direction_arrow.webp) | Domain Controller | Active Directory Web Services |
+  | 88 | UDP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Domain Controller | Kerberos |
 
 :::note
 Privilege Secure must be able to reach the following URLs via HTTPS (port 443)
 :::
 
-
-- https://login.microsoftonline.com
-- https://graph.microsoft.com
+- `https://login.microsoftonline.com`
+- `https://graph.microsoft.com`
 
 ## Proxy Firewall Rules
 
 The following ports must be open for communication between the proxy and Privilege Secure.
 
-Proxy Server Sizing for Windows/Linux/Docker
+### Proxy Server Sizing for Windows/Linux/Docker
 
 | Administrators | Concurrent Sessions | Memory | CPU Cores | Disk (max) |
 | -------------- | ------------------- | ------ | --------- | ------------- |
 | 450 | 150 | 16 GB | 4 cores | 21 GB per day |
 | 900 | 300 | 32 GB | 8 cores | 42 GB per day |
-| 1800 | 600 | 64 GB | 16 cores | 84 G per day |
+| 1800 | 600 | 64 GB | 16 cores | 84 GB per day |
 
-Additional Considerations for SSH and RDP Clients
+### Additional Considerations for SSH and RDP Clients
 
 The following ports must be open for communication between the Client and Privilege Secure:
 
@@ -85,6 +93,6 @@ The following ports must be open for communication between Privilege Secure and 
 | 22 | TCP | Privilege Secure server | ![single_direction_arrow](/images/privilegesecure/26.03/accessmanagement/requirements/single_direction_arrow.webp) | Linux Hosts | SSH Proxy / Password change |
 | 6520 | TCP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Remote Proxy | Register Proxy Service |
 | 6500 | TCP | Privilege Secure server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Remote Action Service | Register Action Service |
-| **443** | HTTPS (TCP) | Privilege Secure Server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Azure | Azure Graph API Access |
+| 443 | HTTPS (TCP) | Privilege Secure Server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Azure | Azure Graph API Access |
 | 6523 | TCP | Privilege Secure Server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Remote Proxy | Leaf Nodes |
 | 6524 | TCP | Privilege Secure Server | ![arrow](/images/privilegesecure/26.03/accessmanagement/requirements/arrow.webp) | Remote Proxy | Cluster Nodes |

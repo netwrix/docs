@@ -1,6 +1,13 @@
 ---
 title: "Configure Secure WinRM Connection Window"
-description: "Configure Secure WinRM Connection Window"
+description: "Configure a secure WinRM connection for a host by choosing a certificate source and providing a certificate thumbprint."
+keywords:
+  - WinRM Config
+  - secure WinRM connection
+  - certificate thumbprint
+  - self-signed certificate
+  - Import certificate from host
+  - Push NPS certificate to host
 sidebar_position: 20
 ---
 
@@ -8,32 +15,27 @@ sidebar_position: 20
 
 To configure secure WinRM connection for the selected host:
 
-**Step 1 –** Navigate to the Resources page.
+1. Navigate to the Resources page.
+2. Select the resources to modify.
+3. Click the **WinRM Config** button.
 
-**Step 2 –** Select the resources to modify.
+   ![Configure Secure WinRM Connection window](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/resources/winrmconfig.webp)
 
-**Step 3 –** Click the **WinRM Config** button.
+4. Perform the following steps:
 
-![winrmconfig](/images/privilegesecure/26.03/accessmanagement/admin/policy/window/resources/winrmconfig.webp)
+   - **Choose certificate source** — Select the source to apply the certificate for the secure WinRm
+     connection to the host you want to secure. The following options are available:
+     - **Import certificate from host;**
+     - **Push NPS certificate to host;**
+     - **Generate a new self-signed certificate.**
+   - **Select a certificate** — Provide a certificate thumbprint.
 
-**Step 4 –** Perform the following steps:
+     :::note
+     This option is applicable to the host and NPS certificates. If you selected a new
+     self-signed certificate option, it is generated automatically and imported to Netwrix Privilege
+     Secure.
+     :::
 
-- Choose certificate source – Select the source to apply the certificate for the secure WinRm
-connection to the host you want resource. The following options are available:
-
-- Import certificate from host;
-- Push NPS certificate to host;
-- Generate a new self-signed certificate.
-
-- Select a certificate – Provide a certificate thumbprint.
-
-:::note
-This option is applicable to the host and NPS certificates. If you selected a new
-self-signed certificate option, it is generated automatically and imported to Netwrix Privilege
-Secure.
-:::
-
-
-**Step 5 –** Click **Submit**.
+5. Click **Submit**.
 
 Secure WinRM connection is configured for the selected host.

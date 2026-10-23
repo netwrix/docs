@@ -1,6 +1,13 @@
 ---
 title: "Users Tab for Access Certification"
-description: "Users Tab for Access Certification"
+description: "Add the users and groups that a reviewer certifies in an access certification task, and reference for the Users tab."
+keywords:
+  - Users tab
+  - Add Users to Review
+  - access certification task
+  - Available Users/Groups
+  - User Principal Name (UPN)
+  - reviewer
 sidebar_position: 30
 ---
 
@@ -9,80 +16,70 @@ sidebar_position: 30
 The Users tab shows the users and groups in the selected access certification task for which the
 reviewer must certify access entitlement.
 
-![userstab](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/tab/userstab.webp)
+![Users tab listing the users and groups in the access certification task](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/tab/userstab.webp)
 
 The Users table has the following features:
 
-- Search – Searches the table or list for matches to the search string. When matches are found, the
-table or list is filtered to the matching results.
-- Column headers can be resized and sorted by ascending or descending order:
+- **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+  filters the table or list to the matching results.
+- You can resize column headers and sort them in ascending or descending order:
+  - **Name** — Click to open the Users and Groups Details page. See the
+    [User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md)
+    topic for additional information.
+  - **User Name** — Displays the name of the account
+  - **Email** — Displays the associated email address, if available
+  - **Type** — User or Group
+- **Add button (Only visible when adding a new task)** — Opens the Add Users and Groups window. See the
+  Add Users to Review topic for additional information.
 
-- Name – Click to open the Users and Groups Details page. See the
-[User, Group, & Application Details Page](/docs/privilegesecure/25.12/admin/interface/usersgroups/usergroupapplication/usergroupapplication.md)
-topic for additional information.
-- User Name – Displays the name of the account
-- Email – Displays the associated email address, if available
-- Type – User or Group
-
-- Add button (Only visible when adding a new task) – Opens the Add Users and Groups window. See the
-Add Users to Review topic for additional information.
-
-## Add Users to Review
+## Add users to review
 
 To add users and groups to the access certification task.
 
 :::note
-It isn't possible to add or remove users after they are added.
+You can't add or remove users after you add them.
 :::
 
+1. Navigate to the **Audit and Reporting** > **Access Certification** page.
+2. In the Access Certification Task list, select the name of the task and select the **Users**
+   tab
+3. Click **Add** to open the Add Users and Groups window.
 
-**Step 1 –** Navigate to the Audit and Reporting > Access Certification page.
+   ![Add Users and Groups window with available users and groups to add](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/tab/addusers.webp)
 
-**Step 2 –** In the Access Certification Task list, select the name of the task and select the Users
-tab
+   The Add Users and Groups window has the following features:
 
-**Step 3 –** Click Add to open the Add Users and Groups window.
+   - Filter by users or groups
+   - **Search** — Searches the table or list for matches to the search string. When it finds matches, it
+     filters the table or list to the matching results.
+   - **Available Users/Groups** — Shows all users and groups added to the console
+   - **Users & Groups to Add** — Shows the users to add to the access certification task
+   - You can sort column headers in ascending or descending order:
+     - **Name** — Displays the name of the account
+     - **User Name** — SAM Account Name for the user or group
+     - **User Principal Name** — User Principal Name (UPN) of the user or group
+     - **Email** — Displays the associated email address, if available
 
-![addusers](/images/privilegesecure/25.12/accessmanagement/admin/auditreporting/tab/addusers.webp)
+4. Filter by Users or Groups, or use the **Search** feature.
+5. To add a user or group to the access certification task, click a row in the Available
+   Users/Groups table. The row moves immediately to the Users & Groups to Add table.
+6. (Optional) Click a row in the Users & Groups to Add table to move it back to the
+   Available Users/Groups table.
 
-The Add Users and Groups window has the following features:
+   :::warning
+   You can't add or remove users after you add them to the access
+   certification task.
+   :::
 
-- Filter by users or groups
-- Search – Searches the table or list for matches to the search string. When matches are found, the
-table or list is filtered to the matching results.
-- Available Users/Groups – Shows all users and groups added to the console
-- Users & Groups to Add – Shows the users to be added to the access certification task
-- Column headers can be sorted in ascending or descending order:
+7. Click **Add** to add the users and groups to the access certification task.
 
-- Name – Displays the name of the account
-- User Name – SAM Account Name for the user or group
-- User Principal Name – User Principal Name (UPN) of the user or group
-- Email – Displays the associated email address, if available
-
-**Step 4 –** Filter by Users or Groups, or use the Search feature.
-
-**Step 5 –** To add a user or group to the access certification task, click a row in the Available
-Users/Groups table and it is immediately moved to the Users & Groups to Add table.
-
-**Step 6 –** (Optional) Click a row in the Users & Groups to Add table to move it back to the
-Available Users/Groups table.
-
-:::warning
-It isn't possible to add or remove users after they are added to the access
-certification task.
-:::
-
-
-**Step 7 –** Click Add to add the users and groups to the access certification task.
-
-The new users and groups are added to the certification task and are shown on the Users Tab for
-Access Certification.
+The new users and groups appear in the certification task and on the Users Tab for Access
+Certification.
 
 :::note
-Only the assigned reviewer can interact with the entitlements after the access
-certification task is created.
+Only the assigned reviewer can interact with the entitlements after you create the access
+certification task.
 :::
-
 
 The reviewer can now log in to see the access certification tasks assigned to them and begin the
 review process. See the [Entitlements Tab for Access Certification](/docs/privilegesecure/25.12/admin/AuditReporting/accesscertification/entitlements.md) topic for

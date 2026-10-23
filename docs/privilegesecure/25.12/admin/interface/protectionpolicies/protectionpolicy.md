@@ -1,6 +1,11 @@
 ---
 title: "Add Protection Policy"
-description: "Add Protection Policy"
+description: "Add a protection policy to the console by entering a name and an optional description."
+keywords:
+  - add a protection policy
+  - protection policy name
+  - Plus icon
+  - Protection Policies
 sidebar_position: 10
 ---
 
@@ -8,20 +13,19 @@ sidebar_position: 10
 
 To add a Protection policy to the console.
 
-**Step 1 –** Navigate to the **Policy** > **Protection Policies** page.
+1. Navigate to the **Policy** > **Protection Policies** page.
+2. In the Protection Policy list, click the **Plus** icon.
 
-**Step 2 –** In the Protection Policy list, click the **Plus** icon.
+   ![Add Protection Policy](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/addprotectionpolicy.webp)
 
-![Add Protection Policy](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/addprotectionpolicy.webp)
+3. Enter the following information:
 
-**Step 3 –** Enter the following information:
+   - **Name** — Name of the protection policy
+   - **Description** — (Optional) Brief description to identify the protection policy
 
-- Name – Name of the protection policy
-- Description – (Optional) Brief description to identify the protection policy
+4. Click **Save** to create the new protection policy.
 
-**Step 4 –** Click **Save** to create the new protection policy.
-
-The new protection policy has been created. The next step is to associate Resources, Users, and
+You've created the new protection policy. The next step is to associate Resources, Users, and
 Schedule to the policy. See the following topics for additional information:
 
 - [Resources Tab for Protection Policies](/docs/privilegesecure/25.12/admin/interface/protectionpolicies/resources/resources.md)
