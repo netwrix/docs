@@ -1,6 +1,14 @@
 ---
 title: "Password Secure Integration"
 description: "Integrate Privilege Secure with Netwrix Password Secure to use stored credentials in activities, from API key to policy."
+keywords:
+  - Password Secure
+  - BYOV
+  - API key
+  - AD User template
+  - Skip Certificate Check
+  - Get-VaultCredential
+  - Integration Connectors
 sidebar_position: 30
 ---
 

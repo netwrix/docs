@@ -1,6 +1,12 @@
 ---
 title: "Silent Installer Option"
 description: "Install the Privilege Secure application from the command prompt with the silent installer, including a non-default installation directory."
+keywords:
+  - silent installer
+  - quiet install
+  - nps.exe /quiet
+  - PRODUCTDIR
+  - command prompt install
 sidebar_position: 30
 ---
 

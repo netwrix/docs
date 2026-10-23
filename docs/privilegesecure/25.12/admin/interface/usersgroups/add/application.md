@@ -1,6 +1,13 @@
 ---
 title: "Add Application"
 description: "Add an application user that calls the Privilege Secure REST API using a certificate serial number and API key."
+keywords:
+  - Application
+  - REST API
+  - Certificate Serial Number
+  - API Key
+  - Access Policy
+  - Users and Groups page
 sidebar_position: 20
 ---
 

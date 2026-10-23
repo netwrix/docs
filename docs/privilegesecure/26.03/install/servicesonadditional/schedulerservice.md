@@ -1,6 +1,13 @@
 ---
 title: "Scheduler Service Install"
 description: "Install the Scheduler Service on a remote server, then exchange encryption keys and register it with the Privilege Secure server."
+keywords:
+  - Scheduler Service
+  - NPS.SchedulerService.exe
+  - register scheduler service
+  - key exchange
+  - encryption keys
+  - remote server
 sidebar_position: 30
 ---
 

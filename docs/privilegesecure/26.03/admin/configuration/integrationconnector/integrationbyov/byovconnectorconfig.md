@@ -1,6 +1,14 @@
 ---
 title: "Bring Your Own Vault (BYOV) Connector Configuration"
 description: "Configure Privilege Secure as a BYOV integration connector, then create a user, activity, and policy that use it."
+keywords:
+  - BYOV
+  - Bring Your Own Vault
+  - Checkout Script Block
+  - Checkin Script Block
+  - Secret Vault
+  - manually-managed user
+  - Integration Connectors
 sidebar_position: 10
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "Microsoft Entra ID Details Page"
 description: "Reference for the Microsoft Entra ID Details page, including tenant settings, the Synchronize Now button, and its tabs."
+keywords:
+  - Synchronize Now
+  - Tenant ID
+  - Logon URL
+  - Email Domain
+  - Associated Domain
+  - Process Group Memberships
+  - Azure AD
 sidebar_position: 40
 ---
 

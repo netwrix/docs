@@ -1,6 +1,14 @@
 ---
 title: "Windows Platform Policy Configuration"
 description: "Configure the Windows platform policy, including the built-in account, password complexity, protection policy schedule, and scan settings."
+keywords:
+  - Windows platform
+  - Built-in Account
+  - Protection Policy Schedule
+  - Scan Schedule
+  - Verification Schedule
+  - Reset on Mismatch
+  - credential rotation
 sidebar_position: 90
 ---
 

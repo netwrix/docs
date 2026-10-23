@@ -1,6 +1,12 @@
 ---
 title: "Password History Options Page"
 description: "Set how many previous passwords can't be reused and how many days Privilege Secure keeps password history records."
+keywords:
+  - Historical Password Limit
+  - Days of Password Retention
+  - password reuse
+  - password history
+  - System Settings
 sidebar_position: 60
 ---
 

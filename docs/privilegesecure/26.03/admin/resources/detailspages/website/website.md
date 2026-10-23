@@ -1,6 +1,13 @@
 ---
 title: "Website Details"
 description: "Reference for the Website Details page, including logon URL and associated resource settings, and its tabs."
+keywords:
+  - Logon URL
+  - Associated Resource
+  - Blue arrow button
+  - Green plus button
+  - Add New Service Account
+  - website resource
 sidebar_position: 30
 ---
 

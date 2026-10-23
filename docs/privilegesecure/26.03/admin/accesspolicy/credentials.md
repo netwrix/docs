@@ -1,6 +1,14 @@
 ---
 title: "Credential Based Access Policies"
 description: "Reference for the tabs of credential based access policies, which give users access to credentials and files stored in a vault."
+keywords:
+  - credential based access policy
+  - vault
+  - Credentials tab
+  - Files tab
+  - Users tab
+  - Activities tab
+  - Add Credentials
 sidebar_position: 30
 ---
 

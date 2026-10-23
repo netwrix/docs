@@ -1,6 +1,13 @@
 ---
 title: "Host Scan Service Install"
 description: "Install the NPS Host Scan Service on another server and register it with the Privilege Secure server."
+keywords:
+  - NPS Host Scan Service
+  - NPS.HostScanService.msi
+  - key exchange
+  - encryption keys
+  - register host scan service
+  - remote server
 sidebar_position: 20
 ---
 

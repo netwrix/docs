@@ -1,6 +1,13 @@
 ---
 title: "Integration Connectors Page"
 description: "Reference for the Integration Connectors page, including connector details and the supported connector types."
+keywords:
+  - integration connectors
+  - BYOV
+  - CyberArk
+  - HashiCorp
+  - LAPS
+  - StealthAUDIT
 sidebar_position: 50
 ---
 

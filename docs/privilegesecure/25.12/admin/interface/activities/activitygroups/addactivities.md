@@ -1,6 +1,12 @@
 ---
 title: "Add Activities Window"
 description: "Add activities to an activity group from the Add Activities window and review its columns."
+keywords:
+  - Add Activities and Activity Groups window
+  - Available Activities
+  - Activities to Add
+  - add activities to an activity group
+  - Access Policies
 sidebar_position: 20
 ---
 

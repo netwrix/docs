@@ -1,6 +1,13 @@
 ---
 title: "Custom Audit Role"
 description: "Reference for the custom audit role, which lets auditors view recordings for chosen users and resources."
+keywords:
+  - custom audit role
+  - Role Management
+  - View Recordings
+  - Live Session Viewer
+  - Permission Assignment
+  - Role Users
 sidebar_position: 50
 ---
 

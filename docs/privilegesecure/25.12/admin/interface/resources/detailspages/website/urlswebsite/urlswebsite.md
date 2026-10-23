@@ -1,6 +1,13 @@
 ---
 title: "URLs Tab for Website"
 description: "Reference for the URLs tab on the Website Details page, including URL actions and match types."
+keywords:
+  - website URLs
+  - Match Type
+  - Add Website URL
+  - Starts With
+  - regex
+  - FQDN
 sidebar_position: 10
 ---
 

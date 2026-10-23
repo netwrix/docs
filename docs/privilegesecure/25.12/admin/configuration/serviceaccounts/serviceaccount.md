@@ -1,6 +1,12 @@
 ---
 title: "Add Service Account"
 description: "Add a service account to the console by entering its details, including a vault connector for vault-based accounts."
+keywords:
+  - vault connector
+  - Service Accounts list
+  - Bring Your Own Vault (BYOV) Integration
+  - add service account
+  - Privilege Secure
 sidebar_position: 10
 ---
 

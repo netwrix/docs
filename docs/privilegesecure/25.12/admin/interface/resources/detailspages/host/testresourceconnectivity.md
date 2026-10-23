@@ -1,6 +1,11 @@
 ---
 title: "Test Resource Connectivity Window"
 description: "Test connectivity to a host resource and review the test status and messages."
+keywords:
+  - Test Resource Connectivity
+  - test connectivity
+  - host resource connectivity
+  - Test button
 sidebar_position: 10
 ---
 

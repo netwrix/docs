@@ -1,6 +1,13 @@
 ---
 title: "History Tab for Microsoft Entra ID"
 description: "Reference for the History tab on the Microsoft Entra ID Details page, including session log access and event columns."
+keywords:
+  - Entra ID session history
+  - View Logs
+  - Session Logs
+  - Event Message
+  - Session ID
+  - Azure AD
 sidebar_position: 60
 ---
 

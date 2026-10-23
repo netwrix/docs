@@ -1,6 +1,13 @@
 ---
 title: "Install Remote Desktop Monitor Service on Target RDP Hosts"
 description: "Install the Remote Desktop Monitor service on target RDP hosts so Privilege Secure records Windows event activity during sessions."
+keywords:
+  - Remote Desktop Monitor
+  - NPS.TSMon.exe
+  - Terminal Services Monitor
+  - RDP hosts
+  - Live Session Viewer
+  - Record Proxy Sessions
 sidebar_position: 40
 ---
 

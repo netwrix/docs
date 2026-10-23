@@ -1,6 +1,14 @@
 ---
 title: "Historical Dashboard"
 description: "Review past sessions on the Historical dashboard, search recordings, and export the table as CSV."
+keywords:
+  - Historical sessions
+  - Export as CSV
+  - Replay Viewer
+  - Rocket icon
+  - Recording data
+  - Session User
+  - Searches
 sidebar_position: 40
 ---
 

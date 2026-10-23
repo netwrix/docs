@@ -1,6 +1,14 @@
 ---
 title: "SAML Configuration Wizard"
 description: "Configure a SAML authentication connector with the Configuration Wizard, from client setup to ID mapping and logout test."
+keywords:
+  - SAML
+  - Configuration Wizard
+  - Configure Client
+  - Test Login
+  - Test Logout
+  - Signout URI
+  - Microsoft Entra ID
 sidebar_position: 30
 ---
 

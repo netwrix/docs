@@ -1,6 +1,13 @@
 ---
 title: "Add Microsoft Entra ID Tenant"
 description: "Add a Microsoft Entra ID tenant resource by entering the tenant ID, logon URL, email domain, and service account."
+keywords:
+  - add Entra ID tenant
+  - Tenant ID
+  - Logon URL
+  - Email Domain
+  - Synchronize Now
+  - Azure AD
 sidebar_position: 40
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "Session Timeout"
 description: "Learn when the Privilege Secure Console logs out an idle user and how to stay logged in after the timeout warning."
+keywords:
+  - session timeout
+  - idle timeout
+  - automatic logout
+  - Stay Logged In
+  - inactivity
+  - Privilege Secure Console
 sidebar_position: 10
 ---
 

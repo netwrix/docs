@@ -1,6 +1,14 @@
 ---
 title: "Create Activity Session"
 description: "Create an activity session by choosing an activity and resources, adding notes, scheduling the session, and reviewing the request."
+keywords:
+  - Create Session
+  - Activity Request
+  - Resource Selection
+  - Notes
+  - Scheduling
+  - Review
+  - Ticket number
 sidebar_position: 10
 ---
 

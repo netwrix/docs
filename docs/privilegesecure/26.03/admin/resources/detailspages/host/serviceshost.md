@@ -1,6 +1,12 @@
 ---
 title: "Services Tab for Host"
 description: "Reference for the Services tab on the Host Details page, including service names, startup types, and log-on accounts."
+keywords:
+  - Windows services
+  - Startup Type
+  - Log On As
+  - Service Name
+  - Display Name
 sidebar_position: 60
 ---
 

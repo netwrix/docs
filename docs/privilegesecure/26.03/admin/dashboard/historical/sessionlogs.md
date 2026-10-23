@@ -1,6 +1,13 @@
 ---
 title: "Session Logs Window"
 description: "View the log details for a session in the Session Logs window, including the search, filter, export, and table columns."
+keywords:
+  - View Logs
+  - Export as CSV
+  - Log Level
+  - Action Service Version
+  - session log details
+  - Active dashboard
 sidebar_position: 20
 ---
 

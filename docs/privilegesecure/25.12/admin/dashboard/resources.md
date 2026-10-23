@@ -1,6 +1,14 @@
 ---
 title: "Resources Dashboard"
 description: "Review onboarded resources on the Resources dashboard, including the toolbar actions for adding, removing, and scanning, and the table columns."
+keywords:
+  - onboarded resources
+  - Change Platform
+  - Change Service Account
+  - Scan Resource
+  - Add Resources window
+  - DNS Host Name
+  - Last Scanned
 sidebar_position: 60
 ---
 

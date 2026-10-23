@@ -1,6 +1,14 @@
 ---
 title: "Audit and Reporting: Reviewer"
 description: "Review access entitlements for an access certification task, approve or deny them, and commit the changes to user access."
+keywords:
+  - access certification
+  - Review Activity Details
+  - Approve
+  - Deny
+  - Commit
+  - Entitlements
+  - reviewer
 sidebar_position: 50
 ---
 

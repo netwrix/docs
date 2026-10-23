@@ -1,6 +1,14 @@
 ---
 title: "Audit & Reporting Interface"
 description: "Overview of the Audit and Reporting interface with links to its pages for access certification, logs, events, and reports."
+keywords:
+  - Audit and Reporting
+  - Access Certification
+  - Activity Log
+  - DB Change History
+  - Events
+  - Log Files
+  - Reporting
 sidebar_position: 70
 ---
 

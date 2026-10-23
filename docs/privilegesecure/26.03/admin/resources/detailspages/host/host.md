@@ -1,6 +1,14 @@
 ---
 title: "Host Details"
 description: "Reference for the Host Details page, including connection settings, the Test and Scan Now buttons, and its tabs."
+keywords:
+  - Scan Now
+  - WinRM Config
+  - Test
+  - Trust on Discovery
+  - Action on Thumbprint Mismatch
+  - WinRM Disabled
+  - SSH Port
 sidebar_position: 10
 ---
 

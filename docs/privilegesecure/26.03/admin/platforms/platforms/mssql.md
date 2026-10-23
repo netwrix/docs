@@ -1,6 +1,14 @@
 ---
 title: "Microsoft SQL Server Platform Policy Configuration"
 description: "Configure the Microsoft SQL Server platform policy, including the built-in account, password complexity, scan schedule, and verification settings."
+keywords:
+  - Microsoft SQL Server platform
+  - Built-in Account
+  - Password Complexity Policy
+  - Scan Schedule
+  - Verification Schedule
+  - Reset on Mismatch
+  - credential rotation
 sidebar_position: 50
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "Create My Activity Session"
 description: "Create an activity session from the My Activities page, enter notes or a ticket number, and launch the session."
+keywords:
+  - create session
+  - Configure Session
+  - Start Session
+  - Access Policy
+  - ticket number
+  - session ribbon
+  - Available status
 sidebar_position: 10
 ---
 

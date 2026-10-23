@@ -1,6 +1,11 @@
 ---
 title: "Access Policies Tab for Website"
 description: "Reference for the Access Policies tab on the Website Details page, which lists policies tied to the website resource."
+keywords:
+  - website access policies
+  - Access Policy
+  - website resource
+  - policy description
 sidebar_position: 40
 ---
 

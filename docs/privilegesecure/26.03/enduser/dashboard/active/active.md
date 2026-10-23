@@ -1,6 +1,13 @@
 ---
 title: "Active Dashboard"
 description: "Reference for the Active dashboard, which lists your active sessions, their status values, and options to create or end sessions."
+keywords:
+  - Active Sessions
+  - Create Session
+  - End Session
+  - View Logs
+  - session status
+  - Logged In
 sidebar_position: 10
 ---
 

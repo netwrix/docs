@@ -1,6 +1,13 @@
 ---
 title: "Database"
 description: "Reference for the Database page, which shows the PostgreSQL or SQL Server database settings and service status."
+keywords:
+  - PostgreSQL
+  - SQL Server
+  - database settings
+  - Service Status
+  - Navigation pane
+  - System Settings
 sidebar_position: 20
 ---
 

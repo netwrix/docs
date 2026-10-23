@@ -1,6 +1,14 @@
 ---
 title: "Remote Service Node"
 description: "List the supported RDP and SSH clients and the antivirus exclusions for Privilege Secure servers and the remote Action, Proxy, and Scheduler services."
+keywords:
+  - Remote Service Node
+  - antivirus exclusions
+  - PuTTY
+  - MobaXterm
+  - Action Service
+  - Proxy Service
+  - Scheduler Service
 sidebar_position: 30
 ---
 

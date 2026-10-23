@@ -1,6 +1,14 @@
 ---
 title: "Email Service"
 description: "Configure the email service settings for notifications and review the queue of outgoing mail."
+keywords:
+  - SMTP
+  - Email Settings
+  - Email Queue
+  - Use TLS
+  - From Address
+  - Test Settings
+  - email notifications
 sidebar_position: 20
 ---
 

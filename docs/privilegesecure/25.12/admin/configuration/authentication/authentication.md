@@ -1,6 +1,14 @@
 ---
 title: "Authentication Page"
 description: "Reference for the Authentication page, including MFA, OpenID Connect, and SAML connector fields and default login options."
+keywords:
+  - multi-factor authentication (MFA)
+  - RADIUS proxy
+  - OpenID Connect
+  - SAML
+  - Set as Default
+  - Set as Exclusive
+  - authentication connectors
 sidebar_position: 40
 ---
 

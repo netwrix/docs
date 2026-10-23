@@ -1,6 +1,14 @@
 ---
 title: "Users Tab for Host"
 description: "Reference for the Users tab on the Host Details page, including account actions, table columns, and verification statuses."
+keywords:
+  - local users
+  - Manage
+  - Schedule Rotation
+  - Password Reset Options
+  - Keep Enabled
+  - sAMAccountName
+  - password rotation
 sidebar_position: 40
 ---
 

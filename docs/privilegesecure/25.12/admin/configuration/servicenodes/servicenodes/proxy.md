@@ -1,6 +1,12 @@
 ---
 title: "Proxy Service"
 description: "View the properties of the selected Proxy Service on a service node, including property names and values."
+keywords:
+  - Proxy Service
+  - service node
+  - proxy service properties
+  - Value
+  - Name
 sidebar_position: 40
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "Cisco Platform Policy Configuration"
 description: "Configure the Cisco platform policy, including the built-in account, password complexity, scan schedule, and verification settings."
+keywords:
+  - Cisco platform
+  - Built-in Account
+  - Password Complexity Policy
+  - Scan Schedule
+  - Verification Schedule
+  - Reset on Mismatch
+  - credential rotation
 sidebar_position: 30
 ---
 

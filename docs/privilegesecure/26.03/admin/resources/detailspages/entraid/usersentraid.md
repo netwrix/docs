@@ -1,6 +1,13 @@
 ---
 title: "Users Tab for Microsoft Entra ID"
 description: "Reference for the Users tab on the Microsoft Entra ID Details page, including account actions, columns, and statuses."
+keywords:
+  - Entra ID users
+  - User Principal Name
+  - Schedule Rotation
+  - Password Reset Options
+  - Rotate Start and End
+  - Azure AD
 sidebar_position: 20
 ---
 

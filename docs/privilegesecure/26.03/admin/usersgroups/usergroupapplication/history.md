@@ -1,6 +1,13 @@
 ---
 title: "History Tab"
 description: "Reference for the History tab, which lists the session history of a user, group, or application and its status values."
+keywords:
+  - History tab
+  - session history
+  - Session Logs
+  - Event Message
+  - Session ID
+  - Access Policy
 sidebar_position: 60
 ---
 

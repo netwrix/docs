@@ -1,6 +1,11 @@
 ---
 title: "Applications Tab for Microsoft Entra ID"
 description: "Reference for the Applications tab on the Microsoft Entra ID Details page, which lists applications on the resource."
+keywords:
+  - Entra ID applications
+  - Azure AD
+  - Microsoft Entra ID
+  - Application Name
 sidebar_position: 70
 ---
 

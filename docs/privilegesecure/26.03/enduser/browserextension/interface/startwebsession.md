@@ -1,6 +1,13 @@
 ---
 title: "Start Web Session"
 description: "Start a web activity session from the browser extension by selecting a resource and activity, then launching the session."
+keywords:
+  - Start Web Session
+  - web activity session
+  - Activities
+  - Current
+  - green icon
+  - browser extension
 sidebar_position: 10
 ---
 

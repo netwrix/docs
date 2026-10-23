@@ -1,6 +1,13 @@
 ---
 title: "Add Website URL Window"
 description: "Add or edit a website URL and its match type for a Microsoft Entra ID or Website resource."
+keywords:
+  - Match Type
+  - StartsWith
+  - regex
+  - FQDN
+  - add URL
+  - Edit Website URL
 sidebar_position: 10
 ---
 

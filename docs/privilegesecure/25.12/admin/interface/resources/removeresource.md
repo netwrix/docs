@@ -1,6 +1,11 @@
 ---
 title: "Remove Resource Window"
 description: "Remove a selected resource and its records from the database by using the Remove Resource window."
+keywords:
+  - Remove Resource
+  - delete a resource
+  - remove resources from database
+  - Remove button
 sidebar_position: 70
 ---
 

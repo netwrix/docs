@@ -1,6 +1,15 @@
 ---
 title: "Start Activity Session"
 description: "Start an activity session from the Active dashboard, copy or view the session password, and extend a running session."
+keywords:
+  - Active Sessions dashboard
+  - Connection icon
+  - View Password
+  - Copy to Clipboard
+  - session extension
+  - RDP
+  - SSH
+  - DirectConnect
 sidebar_position: 20
 ---
 

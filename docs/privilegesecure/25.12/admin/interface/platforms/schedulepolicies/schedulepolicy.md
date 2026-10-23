@@ -1,6 +1,13 @@
 ---
 title: "Add Schedule Policy"
 description: "Add a schedule policy to the console by choosing a frequency of hours, days, weekly, or monthly and saving the schedule."
+keywords:
+  - add schedule policy
+  - Every X Hours
+  - Every X Days
+  - Weekly
+  - Monthly
+  - frequency
 sidebar_position: 10
 ---
 

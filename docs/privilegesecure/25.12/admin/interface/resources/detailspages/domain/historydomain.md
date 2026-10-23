@@ -1,6 +1,13 @@
 ---
 title: "History Tab for Domain"
 description: "Review the synchronization history of a domain resource on the History tab, including status, event type, and service type."
+keywords:
+  - History tab
+  - synchronization history
+  - Event Type
+  - Service Type
+  - Event Message
+  - Password Rotation
 sidebar_position: 40
 ---
 

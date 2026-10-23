@@ -1,6 +1,12 @@
 ---
 title: "Client"
 description: "Check which web browsers Privilege Secure supports for accessing the web service locally or remotely."
+keywords:
+  - supported browsers
+  - Microsoft Edge
+  - Google Chrome
+  - Apple Safari
+  - browser compatibility mode
 sidebar_position: 20
 ---
 

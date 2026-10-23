@@ -1,6 +1,13 @@
 ---
 title: "Password History Window"
 description: "View the historical passwords of a managed account and show or hide them in the Password History window."
+keywords:
+  - Password History
+  - Show Passwords
+  - Hide Passwords
+  - Creation Date
+  - managed account
+  - historical passwords
 sidebar_position: 40
 ---
 

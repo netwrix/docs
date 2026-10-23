@@ -1,6 +1,14 @@
 ---
 title: "User, Group, & Application Details"
 description: "Reference for the User, Group, & Application Details page, including the lock, unlock, and reset MFA actions and its tabs."
+keywords:
+  - user details
+  - group details
+  - Lock Account
+  - Unlock Account
+  - Reset MFA
+  - Reset Password
+  - tabs
 sidebar_position: 20
 ---
 

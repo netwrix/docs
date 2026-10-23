@@ -1,6 +1,15 @@
 ---
 title: "Getting Started"
 description: "Follow the post-install steps to configure MFA, the license, service accounts, users, resources, activities, and access policies."
+keywords:
+  - configure MFA
+  - Update the License
+  - Access Policies
+  - Add New Domain
+  - Service Accounts
+  - Connection Profiles
+  - BYOV
+  - credential-based Access Policy
 sidebar_position: 30
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "Action Service"
 description: "View the Action Service event logs, the action queue, and the properties of a selected action service."
+keywords:
+  - Action Logs
+  - Action Queue
+  - Properties
+  - action service
+  - View Logs
+  - Resource
 sidebar_position: 10
 ---
 

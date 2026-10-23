@@ -1,6 +1,13 @@
 ---
 title: "Upgrade Procedure"
 description: "Upgrade Privilege Secure from an existing version by running the installer over the previous version, then restart the server and clear the browser cache."
+keywords:
+  - upgrade
+  - encryption key rotation
+  - PostgreSQL
+  - Microsoft SQL
+  - restart
+  - browser cache
 sidebar_position: 70
 ---
 

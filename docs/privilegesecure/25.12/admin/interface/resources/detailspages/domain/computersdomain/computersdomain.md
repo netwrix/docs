@@ -1,6 +1,13 @@
 ---
 title: "Computers Tab for Domain"
 description: "View domain computer objects on the Computers tab and add or remove them as NPS managed resources."
+keywords:
+  - Computers tab
+  - Add as NPS Managed Resource
+  - Remove as NPS Managed Resource
+  - Distinguished Name
+  - domain controller
+  - Not On-boarded
 sidebar_position: 30
 ---
 

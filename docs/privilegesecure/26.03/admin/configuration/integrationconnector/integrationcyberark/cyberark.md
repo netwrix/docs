@@ -1,6 +1,13 @@
 ---
 title: "Advanced CyberArk Settings"
 description: "Reference for the advanced CyberArk settings, including the checkout and checkin script blocks and their variables."
+keywords:
+  - CyberArk
+  - SkipCertificateCheck
+  - CheckoutScriptBlock
+  - CheckinScriptBlock
+  - Central Credential Provider
+  - PowerShell script block
 sidebar_position: 10
 ---
 

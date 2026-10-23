@@ -1,6 +1,14 @@
 ---
 title: "Entitlements Tab for Access Certification"
 description: "Reference for the Entitlements tab, where the assigned reviewer reviews and accepts or denies access in an access certification task."
+keywords:
+  - Entitlements tab
+  - Review
+  - Commit
+  - Export Entitlements as CSV
+  - Approved
+  - Denied
+  - Reviewer
 sidebar_position: 20
 ---
 

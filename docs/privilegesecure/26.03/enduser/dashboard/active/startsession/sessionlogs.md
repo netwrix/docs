@@ -1,6 +1,13 @@
 ---
 title: "Session Logs Window"
 description: "View the log details for an activity session, with filters, CSV export, and the Action Service version."
+keywords:
+  - View Logs
+  - Log Level
+  - Export as CSV
+  - Action Service Version
+  - session log
+  - activity session
 sidebar_position: 20
 ---
 

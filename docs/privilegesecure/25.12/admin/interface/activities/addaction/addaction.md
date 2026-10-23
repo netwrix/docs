@@ -1,6 +1,13 @@
 ---
 title: "Add Action Window"
 description: "Add a pre-session, session, or post-session action to an activity in the Add Action window."
+keywords:
+  - Add Action window
+  - Action Type
+  - Invoke Protection Policies
+  - Pre-Session (Grant)
+  - Post-Session (Remove)
+  - Paired Action
 sidebar_position: 20
 ---
 

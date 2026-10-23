@@ -1,6 +1,15 @@
 ---
 title: "Add Database"
 description: "Add a Microsoft SQL or Oracle database to the console by entering its name, platform, server details, and service account."
+keywords:
+  - add database
+  - Microsoft SQL
+  - Oracle
+  - FQDN
+  - instance name
+  - default ports
+  - Scan Now
+  - 1433
 sidebar_position: 60
 ---
 

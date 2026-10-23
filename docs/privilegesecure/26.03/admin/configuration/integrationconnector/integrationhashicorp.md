@@ -1,6 +1,12 @@
 ---
 title: "HashiCorp Integration"
 description: "Add a HashiCorp vault connector that uses the Active Directory Secrets Engine to check out accounts."
+keywords:
+  - HashiCorp
+  - Active Directory Secrets Engine
+  - Integration Connectors
+  - Access Token
+  - Skip Certificate Check
 sidebar_position: 30
 ---
 

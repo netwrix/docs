@@ -1,6 +1,13 @@
 ---
 title: "Allowed Members Tab for Protection Policies"
 description: "Reference for the Allowed Members tab of a protection policy, including how to add groups and edit protected group members."
+keywords:
+  - Allowed Members
+  - Add Group
+  - Edit Members
+  - Add Protected Group and Member
+  - local group
+  - Group Member
 sidebar_position: 30
 ---
 

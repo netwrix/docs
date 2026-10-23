@@ -1,6 +1,13 @@
 ---
 title: "Action Service Install"
 description: "Install the NPS Action Service on another server and register it with the Privilege Secure server."
+keywords:
+  - NPS Action Service
+  - NPS.ActionService.exe
+  - key exchange
+  - encryption keys
+  - register action service
+  - remote server
 sidebar_position: 20
 ---
 

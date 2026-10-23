@@ -1,6 +1,13 @@
 ---
 title: "Edit Schedule Policy"
 description: "Edit the frequency of a scheduled task in the Schedule Policy Editor window and save the changes."
+keywords:
+  - edit schedule policy
+  - Schedule Policy Editor
+  - Frequency
+  - Every X Hours
+  - Every X Days
+  - scheduled task
 sidebar_position: 20
 ---
 

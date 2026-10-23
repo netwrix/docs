@@ -1,6 +1,15 @@
 ---
 title: "Global Settings Page"
 description: "Reference for the Global Settings page, covering RDP resolution, certificate thumbprint, WinRM, idle timeout, user expiration, and encrypted files."
+keywords:
+  - RDP
+  - WinRM
+  - UI Idle Timeout
+  - User Expiration
+  - Password History Options
+  - Data Retention
+  - Encrypted Files
+  - Email Configuration
 sidebar_position: 40
 ---
 

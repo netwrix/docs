@@ -1,6 +1,14 @@
 ---
 title: "Application Server"
 description: "Review the operating system, software, hardware, permission, and virtualization requirements for the Privilege Secure application server."
+keywords:
+  - system requirements
+  - Windows Server
+  - RAM
+  - ".NET Framework 4.7.2"
+  - Windows Management Framework 5.1
+  - VMware ESX
+  - MFA
 sidebar_position: 10
 ---
 

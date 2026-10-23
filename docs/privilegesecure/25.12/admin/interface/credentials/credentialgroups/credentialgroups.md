@@ -1,6 +1,13 @@
 ---
 title: "Credential Groups Page"
 description: "Reference for the Credential Groups page, including group details and the credentials table columns."
+keywords:
+  - Credential Groups
+  - Credential Based access policies
+  - Add Credentials
+  - Remove
+  - Managed Type
+  - Method
 sidebar_position: 60
 ---
 

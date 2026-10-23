@@ -1,6 +1,14 @@
 ---
 title: "Add Approval Workflow"
 description: "Add an approval workflow with up to three approval tiers, approvers, and escalation settings to a connection profile."
+keywords:
+  - approval workflow
+  - Approval Tier
+  - Tiered
+  - Escalation Account
+  - Approvers
+  - Approvals Required
+  - Add Tier
 sidebar_position: 20
 ---
 

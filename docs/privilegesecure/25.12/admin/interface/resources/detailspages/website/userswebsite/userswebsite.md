@@ -1,6 +1,12 @@
 ---
 title: "Users Tab for Website"
 description: "Reference for the Users tab on the Website Details page, including managed user actions and table columns."
+keywords:
+  - website users
+  - managed user
+  - Login Account Template
+  - Add a Managed User
+  - User Name
 sidebar_position: 20
 ---
 

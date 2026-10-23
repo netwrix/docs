@@ -1,6 +1,13 @@
 ---
 title: "Add Reviewers Window"
 description: "Grant users the Reviewer role with the Add Reviewers window, which lists onboarded users and groups."
+keywords:
+  - Reviewer role
+  - Add Reviewers
+  - Role Management
+  - onboarded users
+  - Available Accounts
+  - Accounts to Add
 sidebar_position: 20
 ---
 

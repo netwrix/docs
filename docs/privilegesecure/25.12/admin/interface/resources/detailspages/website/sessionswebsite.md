@@ -1,6 +1,12 @@
 ---
 title: "Sessions Tab for Website"
 description: "Reference for the Sessions tab on the Website Details page, including session columns and status values."
+keywords:
+  - website sessions
+  - View Logs
+  - Waiting for Approval
+  - Requested By
+  - Login Account
 sidebar_position: 30
 ---
 

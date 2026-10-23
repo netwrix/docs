@@ -1,6 +1,15 @@
 ---
 title: "Start Activity Session"
 description: "Start an activity session from the Active dashboard, extend a running session, and connect to legacy Cisco devices."
+keywords:
+  - Session Extension
+  - Connection icon
+  - Ctrl+X
+  - DirectConnect
+  - legacy Cisco
+  - SSH
+  - RDP
+  - Proxy Service
 sidebar_position: 20
 ---
 

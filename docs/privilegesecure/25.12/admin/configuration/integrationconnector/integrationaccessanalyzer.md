@@ -1,6 +1,13 @@
 ---
 title: "Enterprise Auditor Integration"
 description: "Integrate Netwrix Access Analyzer (formerly Enterprise Auditor) with Privilege Secure by configuring an access role, service accounts, and a connector."
+keywords:
+  - Enterprise Auditor
+  - Access Analyzer
+  - Access Role
+  - Client ID
+  - Integration Connectors
+  - service account
 ---
 
 # Enterprise Auditor Integration

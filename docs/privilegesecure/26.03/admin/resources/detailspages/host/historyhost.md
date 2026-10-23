@@ -1,6 +1,12 @@
 ---
 title: "History Tab for Host"
 description: "Reference for the History tab on the Host Details page, including session log access and event columns."
+keywords:
+  - host session history
+  - View Logs
+  - Session Logs
+  - Event Message
+  - Session ID
 sidebar_position: 80
 ---
 

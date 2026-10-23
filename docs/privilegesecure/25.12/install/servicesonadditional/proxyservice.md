@@ -1,6 +1,13 @@
 ---
 title: "Proxy Service Install"
 description: "Install the NPS Proxy Service on another server and register it with the Privilege Secure server."
+keywords:
+  - NPS Proxy Service
+  - NPS.ProxyService.exe
+  - sbpam_node.json
+  - sbpam-proxy.exe
+  - register ca-hash
+  - legacy Cisco SSH ciphers
 sidebar_position: 10
 ---
 

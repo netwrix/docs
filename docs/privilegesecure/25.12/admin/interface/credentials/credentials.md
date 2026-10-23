@@ -1,6 +1,15 @@
 ---
 title: "Credentials Page"
 description: "Reference for the Credentials page, including filters, actions, and table columns for managed accounts."
+keywords:
+  - Manage
+  - Unmanage
+  - Rotate
+  - Verify
+  - View History
+  - Privilege Type
+  - Managed Type
+  - Last Logon
 sidebar_position: 60
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "SIEM Templates Page"
 description: "Review the built-in CEF and LEEF SIEM templates and add a custom SIEM template for your SIEM solution."
+keywords:
+  - SIEM Templates
+  - CEF
+  - Common Event Format
+  - LEEF
+  - Log Event Extended Format
+  - Event Picker
+  - Characters To Escape
 sidebar_position: 20
 ---
 

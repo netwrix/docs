@@ -1,6 +1,14 @@
 ---
 title: "Live Session Viewer Window"
 description: "Watch a live RDP, SSH, or website session as an administrator, and terminate or lock it from the viewer."
+keywords:
+  - Live Session Viewer
+  - RDP
+  - SSH
+  - Terminate Session
+  - Lock icon
+  - Record Proxy Sessions
+  - keystrokes
 sidebar_position: 30
 ---
 

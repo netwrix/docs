@@ -1,6 +1,12 @@
 ---
 title: "Terminate Proxy Session Window"
 description: "Disconnect a user from a live session in the Live Session Viewer and optionally cancel the activity session."
+keywords:
+  - Terminate Session
+  - Cancel Activity Session
+  - Lock Account
+  - Live Session Viewer
+  - proxy session
 sidebar_position: 40
 ---
 

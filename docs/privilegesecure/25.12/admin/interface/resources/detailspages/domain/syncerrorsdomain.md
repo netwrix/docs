@@ -1,6 +1,13 @@
 ---
 title: "Sync Errors Tab for Domain"
 description: "View the synchronization error log for a domain resource on the Sync Errors tab, including the time and message of each error."
+keywords:
+  - Sync Errors tab
+  - synchronization error log
+  - sync errors
+  - domain synchronization
+  - Time
+  - Message
 sidebar_position: 50
 ---
 

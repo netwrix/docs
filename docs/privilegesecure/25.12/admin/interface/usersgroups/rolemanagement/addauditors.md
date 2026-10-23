@@ -1,6 +1,13 @@
 ---
 title: "Add Auditor Permissions and Auditors Window"
 description: "Set auditor permissions and add users to the Auditor role so they can view historical sessions for chosen users and resources."
+keywords:
+  - Auditor role
+  - Add Auditor Permissions
+  - historical sessions
+  - session recordings
+  - Permission Assignment
+  - custom auditor roles
 sidebar_position: 30
 ---
 

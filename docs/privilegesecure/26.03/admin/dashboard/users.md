@@ -1,6 +1,14 @@
 ---
 title: "Users Dashboard"
 description: "Review session information for onboarded users and groups on the Users dashboard, including its toolbar actions and table columns."
+keywords:
+  - onboarded users
+  - Add User
+  - Add Application
+  - Remove console access
+  - User Principal Name
+  - sAMAccountName
+  - Active Sessions
 sidebar_position: 50
 ---
 

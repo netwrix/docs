@@ -1,6 +1,12 @@
 ---
 title: "Members Tab"
 description: "Reference for the Members tab, which lists the members of the selected group and their account details."
+keywords:
+  - Members tab
+  - group members
+  - User Principal Name
+  - SID
+  - Search Group Members
 sidebar_position: 30
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "Add Domain"
 description: "Add a domain resource to the console by entering the domain name, a service account, and the sync frequency."
+keywords:
+  - add a domain
+  - Domain Name
+  - Service account
+  - Use TLS
+  - FQDN
+  - domain sync
 sidebar_position: 20
 ---
 

@@ -1,6 +1,12 @@
 ---
 title: "Resource Group Tabs"
 description: "Reference for the Resource Group tabs: Resources, Host Scan, and Action Service."
+keywords:
+  - Host Scan Tab
+  - Action Service Tab
+  - Resources Tab
+  - resource group tabs
+  - preferred services
 sidebar_position: 20
 ---
 

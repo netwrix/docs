@@ -1,6 +1,14 @@
 ---
 title: "Users & Groups Page"
 description: "Reference for the Users & Groups page, which lists onboarded users and groups and lets you add users, applications, and local users."
+keywords:
+  - onboarded users
+  - license count
+  - Add User
+  - Add Application
+  - Add Local User
+  - Users Dashboard
+  - Last Login
 sidebar_position: 40
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "AWS KMS Key Rotation"
 description: "Rotate the AWS KMS key that protects the Privilege Secure encryption keys by using the Rotate AWS Key tool in the KeyTools folder."
+keywords:
+  - AWS KMS
+  - Rotate AWS Key
+  - SbPAM.RotateAwsKey
+  - KeyTools
+  - access key
+  - secret key
+  - KMS key ARN
 sidebar_position: 10
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "Scheduler Service"
 description: "View Scheduler Service action statistics for the past 24 hours and the queue of scheduled services."
+keywords:
+  - Statistics
+  - Action Queues
+  - scheduled services
+  - Job Name
+  - AQ Status
+  - Activity Status
+  - Completed With Errors
 sidebar_position: 50
 ---
 

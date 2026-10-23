@@ -1,6 +1,13 @@
 ---
 title: "Access Certification"
 description: "Create and review access certification tasks that audit and remediate user access, and reference for the Access Certification page."
+keywords:
+  - Access Certification
+  - access certification task
+  - Reviewer role
+  - Admin Role
+  - audit user access
+  - Delete icon
 sidebar_position: 10
 ---
 

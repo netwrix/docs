@@ -1,6 +1,14 @@
 ---
 title: "Action Types"
 description: "Reference for the pre-session, session, and post-session action types and their related fields."
+keywords:
+  - action types
+  - Pre-Session (Grant)
+  - Session (Connect)
+  - Post-Session (Remove)
+  - Continue on Error
+  - Run Custom PowerShell Script
+  - sudoers
 sidebar_position: 10
 ---
 

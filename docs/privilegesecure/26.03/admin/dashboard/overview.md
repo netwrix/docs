@@ -1,6 +1,14 @@
 ---
 title: "Dashboard Interface"
 description: "Learn how the Dashboard interface summarizes active, scheduled, approval, historical, user, resource, and credential information."
+keywords:
+  - Active Dashboard
+  - Scheduled Dashboard
+  - Approvals Dashboard
+  - Historical Dashboard
+  - Users Dashboard
+  - Resources Dashboard
+  - Credentials Dashboard
 sidebar_position: 40
 ---
 

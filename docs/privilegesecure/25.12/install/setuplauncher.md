@@ -1,6 +1,13 @@
 ---
 title: "Netwrix Setup Launcher"
 description: "Use the Netwrix Setup Launcher to install the PostgreSQL database and the Privilege Secure application, including the installation options."
+keywords:
+  - Netwrix Setup Launcher
+  - NPS_Setup.exe
+  - PostgreSQL 16
+  - install database
+  - Microsoft SQLServer
+  - prerequisites check
 sidebar_position: 20
 ---
 

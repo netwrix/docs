@@ -1,6 +1,13 @@
 ---
 title: "Add a Resource Group"
 description: "Add a resource group to the console, optionally map it to an OU, and set local Administrator account management."
+keywords:
+  - add a resource group
+  - Map to OU
+  - Sync Now
+  - Auto-Onboard
+  - Manage Local Administrator Accounts
+  - Notification Emails
 sidebar_position: 10
 ---
 

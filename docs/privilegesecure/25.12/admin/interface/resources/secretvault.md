@@ -1,6 +1,13 @@
 ---
 title: "Add Secret Vault"
 description: "Add a secret vault resource that stores credentials and files and gives Privilege Secure users access to them."
+keywords:
+  - Secret Vault
+  - credentials
+  - files
+  - New Secret Vault Name
+  - Secrets Vault Details
+  - Credential-based Access Policy
 sidebar_position: 50
 ---
 

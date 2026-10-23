@@ -1,6 +1,14 @@
 ---
 title: "Add Activity"
 description: "Add an activity and its pre-session, session, and post-session actions in Privilege Secure."
+keywords:
+  - add activity
+  - Add Activity icon
+  - Pre-Session (Grant)
+  - Session (Connect)
+  - Post-Session (Remove)
+  - Requester Login Format
+  - Logon URL
 sidebar_position: 10
 ---
 

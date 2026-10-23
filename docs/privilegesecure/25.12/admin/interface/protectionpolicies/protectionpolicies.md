@@ -1,6 +1,12 @@
 ---
 title: "Protection Policies Page"
 description: "Reference for the Protection Policies page, including policy search, the Name and Description fields, and its tabs."
+keywords:
+  - Invoke Protection Policy
+  - Allowed Members
+  - local groups
+  - Post Session
+  - protection policy
 sidebar_position: 30
 ---
 

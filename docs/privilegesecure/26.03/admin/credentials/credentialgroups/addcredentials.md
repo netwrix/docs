@@ -1,6 +1,14 @@
 ---
 title: "Add Credentials Window"
 description: "Add onboarded credentials to a credential group or Credential Policy Override from the Add Credentials window."
+keywords:
+  - Add Credentials
+  - Credentials to Add
+  - Available Credentials
+  - credential group
+  - Credential Policy Override
+  - Automatic
+  - Manual
 sidebar_position: 20
 ---
 

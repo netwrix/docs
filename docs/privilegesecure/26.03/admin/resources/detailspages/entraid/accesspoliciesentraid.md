@@ -1,6 +1,12 @@
 ---
 title: "Access Policies Tab for Microsoft Entra ID"
 description: "Reference for the Access Policies tab on the Microsoft Entra ID Details page, which lists policies tied to the resource."
+keywords:
+  - Entra ID access policies
+  - Azure AD
+  - Microsoft Entra ID
+  - Access Policy
+  - resource policies
 sidebar_position: 50
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "OpenID Connect Authentication"
 description: "Configure OpenID Connect login with an Okta account, including adding users and assigning them to applications."
+keywords:
+  - Okta
+  - OpenID Connect
+  - Login Format
+  - Developer Console
+  - Classic UI
+  - host-user
+  - Assign Applications
 sidebar_position: 10
 ---
 

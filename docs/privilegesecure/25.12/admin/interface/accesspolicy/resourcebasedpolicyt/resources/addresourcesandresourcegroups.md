@@ -1,6 +1,13 @@
 ---
 title: "Add Resources and Resource Groups Window"
 description: "Add resources and resource groups to an access policy, and reference for the Add Resources and Resource Groups window."
+keywords:
+  - add resources to an access policy
+  - Available Resources and Resource Groups
+  - resource group
+  - onboarded resources
+  - Access Policies
+  - Resources tab
 sidebar_position: 10
 ---
 

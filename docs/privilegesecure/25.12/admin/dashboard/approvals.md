@@ -1,6 +1,13 @@
 ---
 title: "Approvals Dashboard"
 description: "Approve or deny requested sessions on the Approvals Dashboard, with search and column details."
+keywords:
+  - Approve
+  - Deny
+  - Waiting for Approval
+  - Approval Workflows
+  - Requested By
+  - Ticket Number
 sidebar_position: 30
 ---
 

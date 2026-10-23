@@ -1,6 +1,12 @@
 ---
 title: "Groups Tab for Microsoft Entra ID"
 description: "Reference for the Groups tab on the Microsoft Entra ID Details page, which lists cloud-only Entra ID groups."
+keywords:
+  - Entra ID groups
+  - cloud-only groups
+  - Group Name
+  - hybrid environments
+  - Azure AD
 sidebar_position: 30
 ---
 

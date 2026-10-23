@@ -1,6 +1,14 @@
 ---
 title: "Secrets Vault Details Page"
 description: "Reference for the Secret Vault Details page, including how to add managed accounts and encrypted files and review sessions."
+keywords:
+  - secret vault
+  - Add a Managed Account
+  - Add Encrypted File
+  - Accounts Tab
+  - Files Tab
+  - credentials
+  - managed account
 sidebar_position: 50
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "Add Activities and Activity Groups Window"
 description: "Add activities and activity groups to an access policy, and reference for the Add Activities and Activity Groups window."
+keywords:
+  - add activities to an access policy
+  - Available Activities
+  - Activities and Groups to Add
+  - activity group
+  - Access Policies
+  - Activities tab
 sidebar_position: 10
 ---
 

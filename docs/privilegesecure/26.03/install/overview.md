@@ -1,6 +1,15 @@
 ---
 title: "Installation"
 description: "Learn the Privilege Secure architecture and deployment options, including single server, remote services, and high availability."
+keywords:
+  - system architecture
+  - Service Mesh
+  - high availability
+  - Active-Passive
+  - Active-Active
+  - Web Service
+  - LAPS
+  - Bring Your Own Vault
 sidebar_position: 30
 ---
 

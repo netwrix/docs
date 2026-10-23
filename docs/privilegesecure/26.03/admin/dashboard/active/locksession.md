@@ -1,6 +1,13 @@
 ---
 title: "Lock Session"
 description: "Lock a user's session from the Active dashboard or the Live Session Viewer when suspicious activity is observed."
+keywords:
+  - Lock Activity
+  - Unlock Activity
+  - Lock Title
+  - Lock Message
+  - Active dashboard
+  - Live Session Viewer
 sidebar_position: 50
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "Activity Log"
 description: "Reference for the Activity Log page, including its filters, the session summary table, and the user session tables."
+keywords:
+  - Activity Log
+  - session summary
+  - Export as CSV
+  - date range
+  - Top 5 Users
+  - Sessions by All Users
+  - audit sessions
 sidebar_position: 20
 ---
 

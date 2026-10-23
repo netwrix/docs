@@ -1,6 +1,15 @@
 ---
 title: "Activities Page"
 description: "Reference for the Activities page and the login account types that control how users log in to a resource during a session."
+keywords:
+  - Activities
+  - Login Account Types
+  - Requester
+  - Managed
+  - Activity Token
+  - Vault
+  - Activity Type
+  - Interactive App Launch
 sidebar_position: 70
 ---
 

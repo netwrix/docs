@@ -1,6 +1,14 @@
 ---
 title: "Login Account Templates"
 description: "Define login account templates with masks and the first, substr, replace, and trim functions to build the account an activity uses."
+keywords:
+  - login account template
+  - mask
+  - first()
+  - substr()
+  - replace()
+  - trim()
+  - "%samaccountname%"
 sidebar_position: 10
 ---
 

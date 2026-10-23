@@ -1,6 +1,14 @@
 ---
 title: "Create Resource Import CSV File"
 description: "Create a CSV file to import resources, including the required and optional columns, and download the import template."
+keywords:
+  - resource import CSV
+  - Download CSV Template
+  - nps-resource-import-template.csv
+  - DNS Host Name
+  - IP Address
+  - Credential
+  - import resources
 sidebar_position: 10
 ---
 

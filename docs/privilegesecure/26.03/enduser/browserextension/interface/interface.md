@@ -1,6 +1,13 @@
 ---
 title: "Browser Extension Interface"
 description: "Reference for the browser extension interface, including the Activities, Current, and Settings tabs."
+keywords:
+  - Activities tab
+  - Current tab
+  - Settings tab
+  - Logout button
+  - browser extension
+  - favorite icon
 sidebar_position: 90
 ---
 

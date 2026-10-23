@@ -1,6 +1,12 @@
 ---
 title: "Databases Tab"
 description: "View the databases discovered on a resource on the Databases tab, including database names, members, and status."
+keywords:
+  - Databases tab
+  - Database Name
+  - Members
+  - Status
+  - discovered databases
 sidebar_position: 10
 ---
 

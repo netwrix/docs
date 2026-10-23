@@ -1,6 +1,13 @@
 ---
 title: "Add Account to Policies Window"
 description: "Add a user, group, or application account to access policies with the Add Account to Policies window."
+keywords:
+  - Add Account to Policies
+  - access policies
+  - Available Policies
+  - Policies to Add
+  - Connection Profile
+  - Policies tab
 sidebar_position: 10
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "Scheduled Tasks"
 description: "View the tasks the console runs on a schedule, with search, sorting, run times, status, and log access."
+keywords:
+  - Task Name
+  - Last Run Time
+  - Next Run Time
+  - Last Status
+  - View Logs
+  - Recurrence
 sidebar_position: 20
 ---
 

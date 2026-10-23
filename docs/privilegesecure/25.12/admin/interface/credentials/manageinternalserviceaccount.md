@@ -1,6 +1,14 @@
 ---
 title: "Manage Internal Service Accounts"
 description: "Set Privilege Secure to manage an internal service account automatically or manually, and resolve a missing user match."
+keywords:
+  - internal service account
+  - No matching user found
+  - AD Sync
+  - Set Password
+  - Manual
+  - Automatic
+  - Active Directory
 sidebar_position: 20
 ---
 

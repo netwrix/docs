@@ -1,6 +1,13 @@
 ---
 title: "End Web Session"
 description: "End a web session from the browser extension with the END MY SESSION link and learn how the Activity closes."
+keywords:
+  - End Web Session
+  - END MY SESSION
+  - green session page
+  - browser extension
+  - web session
+  - Close Tab
 sidebar_position: 20
 ---
 

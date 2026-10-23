@@ -1,6 +1,13 @@
 ---
 title: "Sessions Tab"
 description: "Reference for the Sessions tab, which lists the sessions of a user, group, or application and their status values."
+keywords:
+  - Sessions tab
+  - End Session
+  - View Logs
+  - Session Logs
+  - Provisioning
+  - Waiting for Approval
 sidebar_position: 20
 ---
 

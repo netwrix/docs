@@ -1,6 +1,13 @@
 ---
 title: "Bring Your Own Vault (BYOV) Integration"
 description: "Add a Bring Your Own Vault (BYOV) connector to integrate Privilege Secure with a third-party vault."
+keywords:
+  - BYOV
+  - Bring Your Own Vault
+  - Integration Connectors
+  - Checkout Script Block
+  - API Url
+  - Client Certificate
 sidebar_position: 10
 ---
 

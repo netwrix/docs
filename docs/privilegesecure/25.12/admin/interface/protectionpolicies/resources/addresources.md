@@ -1,6 +1,12 @@
 ---
 title: "Add Resources Window for Protected Policy"
 description: "Add onboarded resources to a protection policy by using the Add Resources window."
+keywords:
+  - Add Resources
+  - Available Resources
+  - Resources to Add
+  - DNS Host Name
+  - protected policy
 sidebar_position: 10
 ---
 

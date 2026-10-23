@@ -1,6 +1,11 @@
 ---
 title: "Secret Vault Platform Policy Configuration"
 description: "Set the name and description of the Secret Vault platform policy and save the changes to the platform."
+keywords:
+  - Secret Vault platform
+  - platform policy
+  - policy name
+  - policy description
 sidebar_position: 70
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "Resource Groups"
 description: "Reference for the Resource Groups page, including default groups, affinity groups, OU mapping, and notification settings."
+keywords:
+  - affinity groups
+  - Action Service
+  - Host Scan
+  - Map to OU
+  - default resource groups
+  - Notification Emails
 sidebar_position: 70
 ---
 

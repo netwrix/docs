@@ -1,6 +1,14 @@
 ---
 title: "Active Dashboard"
 description: "Reference for the Active Dashboard, including filters, session actions, and table columns for active sessions."
+keywords:
+  - Active sessions
+  - Create Session
+  - End Session
+  - Lock Activity
+  - Unlock Activity
+  - Waiting for Approval
+  - Requested By
 sidebar_position: 10
 ---
 

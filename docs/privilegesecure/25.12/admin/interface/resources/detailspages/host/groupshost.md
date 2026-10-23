@@ -1,6 +1,11 @@
 ---
 title: "Groups Tab for Host"
 description: "Reference for the Groups tab on the Host Details page, which lists the local groups and members on the host."
+keywords:
+  - local groups
+  - host groups
+  - group members
+  - Group Name
 sidebar_position: 50
 ---
 

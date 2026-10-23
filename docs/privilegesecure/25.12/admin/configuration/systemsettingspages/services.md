@@ -1,6 +1,14 @@
 ---
 title: "Services Page"
 description: "Update the NPS Rest URL and register Privilege Secure web services after installing a new website certificate in IIS."
+keywords:
+  - NPS Rest URL
+  - Register Services
+  - Ignore HTTPS Certificate Errors
+  - IIS
+  - web certificate
+  - fully qualified domain name (FQDN)
+  - System Settings
 sidebar_position: 70
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "Navigation"
 description: "Learn how the menu bar, User Menu, Navigation pane, and console icons help you move around the Privilege Secure Console."
+keywords:
+  - menu bar
+  - User Menu
+  - Dark Mode
+  - Product Tour
+  - Navigation pane
+  - console icons
+  - Logout
 sidebar_position: 20
 ---
 

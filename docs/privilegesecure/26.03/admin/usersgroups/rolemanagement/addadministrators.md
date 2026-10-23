@@ -1,6 +1,13 @@
 ---
 title: "Add Administrators Window"
 description: "Grant users the Administrator role with the Add Administrators window, which lists onboarded users and groups."
+keywords:
+  - Administrator role
+  - Add Administrators
+  - Role Management
+  - onboarded users
+  - Available Accounts
+  - Accounts to Add
 sidebar_position: 10
 ---
 

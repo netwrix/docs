@@ -1,6 +1,15 @@
 ---
 title: "Replay Viewer Window"
 description: "Watch recorded RDP, SSH, and Website host sessions in the Replay Viewer window, including playback controls and details."
+keywords:
+  - session recording
+  - RDP
+  - SSH
+  - Website host
+  - Proxy Session Started
+  - Play options
+  - playback speed
+  - Record Proxy Sessions
 sidebar_position: 10
 ---
 

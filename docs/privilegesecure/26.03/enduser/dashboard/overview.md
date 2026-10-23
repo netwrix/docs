@@ -1,6 +1,12 @@
 ---
 title: "Dashboard Interface"
 description: "Learn what the Active, Scheduled, Approvals, and Historical dashboards show about activity sessions."
+keywords:
+  - Active Dashboard
+  - Scheduled Dashboard
+  - Approvals Dashboard
+  - Historical Dashboard
+  - activity sessions
 sidebar_position: 40
 ---
 

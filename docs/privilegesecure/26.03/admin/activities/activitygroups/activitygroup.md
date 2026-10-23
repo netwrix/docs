@@ -1,6 +1,12 @@
 ---
 title: "Add Activity Groups"
 description: "Add an activity group to the Privilege Secure console and assign activities to it."
+keywords:
+  - activity group
+  - Add Activity Group
+  - Activities page
+  - Activity Groups list
+  - Privilege Secure
 sidebar_position: 10
 ---
 

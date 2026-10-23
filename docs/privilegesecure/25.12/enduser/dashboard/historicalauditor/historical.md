@@ -1,6 +1,14 @@
 ---
 title: "Historical Dashboard: Auditor"
 description: "Review the Historical Dashboard as an Auditor, with filters, session actions, table columns, and metadata search."
+keywords:
+  - Auditor role
+  - All Historical
+  - Recording data
+  - replay viewer
+  - session recording
+  - Requested date
+  - Searches
 sidebar_position: 40
 ---
 

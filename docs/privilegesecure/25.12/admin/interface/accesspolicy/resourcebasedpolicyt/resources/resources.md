@@ -1,6 +1,13 @@
 ---
 title: "Resources Tab for Resource Based Access Policies"
 description: "Reference for the Resources tab, which lists the resources and resource groups associated with a resource based access policy."
+keywords:
+  - Resources tab
+  - resource group
+  - Active Session Count
+  - DNS Host Name
+  - access policy
+  - resource based access policy
 sidebar_position: 30
 ---
 

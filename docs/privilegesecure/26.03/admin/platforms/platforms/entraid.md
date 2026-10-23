@@ -1,6 +1,14 @@
 ---
 title: "Microsoft Entra ID Platform Policy Configuration"
 description: "Configure the Microsoft Entra ID platform policy, including the built-in account, password complexity, scan schedule, and verification settings."
+keywords:
+  - Microsoft Entra ID platform
+  - Azure AD
+  - Built-in Account
+  - Password Complexity Policy
+  - Scan Schedule
+  - Verification Schedule
+  - Reset on Mismatch
 sidebar_position: 20
 ---
 

@@ -1,6 +1,12 @@
 ---
 title: "LAPS Integration"
 description: "Install LAPS and add a LAPS vault connector so Privilege Secure can use local administrator passwords."
+keywords:
+  - LAPS
+  - Local Administrator Password Solution
+  - Set-AdmPwdReadPasswordPermission
+  - Integration Connectors
+  - service account
 sidebar_position: 40
 ---
 

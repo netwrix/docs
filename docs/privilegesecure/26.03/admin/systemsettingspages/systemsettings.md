@@ -1,6 +1,15 @@
 ---
 title: "System Settings"
 description: "Reference for the System Settings page, covering RDP, WinRM, idle timeout, user expiration, email, password, retention, and service options."
+keywords:
+  - RDP
+  - WinRM
+  - UI Idle Timeout
+  - User Expiration
+  - Password History Options
+  - Data Retention
+  - Encrypted Files
+  - Email Configuration
 sidebar_position: 10
 ---
 

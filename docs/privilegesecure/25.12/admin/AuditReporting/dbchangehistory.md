@@ -1,6 +1,15 @@
 ---
 title: "DB Change History Page"
 description: "Reference for the DB Change History page, which shows database additions, updates, and deletions with filters by change type and date."
+keywords:
+  - DB Change History
+  - database changes
+  - Change Type
+  - Data Table
+  - Date Range
+  - Additions
+  - Updates
+  - Deletes
 sidebar_position: 30
 ---
 

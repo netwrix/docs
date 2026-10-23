@@ -1,6 +1,14 @@
 ---
 title: "Historical Dashboard"
 description: "Reference for the Historical Dashboard, including search, filters, CSV export, session actions, and table columns."
+keywords:
+  - Historical Sessions
+  - Export as CSV
+  - Rocket icon
+  - View logs icon
+  - Session User
+  - Resource Name
+  - session history
 sidebar_position: 40
 ---
 

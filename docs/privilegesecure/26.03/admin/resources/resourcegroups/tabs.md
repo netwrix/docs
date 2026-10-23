@@ -1,6 +1,13 @@
 ---
 title: "Resource Group Tabs"
 description: "Reference for the Resource Group tabs: Resources, Access Policy, Connection Profile, Host Scan, and Action Service."
+keywords:
+  - Host Scan Tab
+  - Action Service Tab
+  - Resources Tab
+  - resource group tabs
+  - preferred services
+  - Connection Profile Tab
 sidebar_position: 20
 ---
 

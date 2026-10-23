@@ -1,6 +1,12 @@
 ---
 title: "Resources Tab for Protection Policies"
 description: "Reference for the Resources tab of a protection policy, including adding and removing resources and table columns."
+keywords:
+  - protection policy resources
+  - Add Resources
+  - Remove
+  - DNS Host Name
+  - Operating System
 sidebar_position: 20
 ---
 

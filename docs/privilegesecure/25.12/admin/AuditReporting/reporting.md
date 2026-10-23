@@ -1,6 +1,15 @@
 ---
 title: "Reporting"
 description: "View, customize, and subscribe to predefined and custom reports, and download them as PDF or CSV files, on the Reporting page."
+keywords:
+  - Reporting
+  - reports
+  - My Reports
+  - Predefined Reports
+  - subscribe to a report
+  - Schedule Policies
+  - PDF
+  - CSV
 sidebar_position: 60
 ---
 

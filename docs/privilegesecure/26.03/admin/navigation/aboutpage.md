@@ -1,6 +1,14 @@
 ---
 title: "About"
 description: "Find license information, customer details, and third party components on the About page, and learn how to upload a new license."
+keywords:
+  - User Options menu
+  - License Type
+  - License Expires
+  - Active Licenses
+  - Customer Info
+  - third party components
+  - license information
 sidebar_position: 20
 ---
 

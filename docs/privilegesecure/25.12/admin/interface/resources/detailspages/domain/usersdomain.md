@@ -1,6 +1,14 @@
 ---
 title: "Users Tab for Domain"
 description: "Reference for the Users tab on the Domain Details page, including user actions, table columns, and verification statuses."
+keywords:
+  - domain users
+  - Manage
+  - Unmanage
+  - Schedule Rotation
+  - Verify
+  - Password Reset Options
+  - sAMAccountName
 sidebar_position: 10
 ---
 

@@ -1,6 +1,12 @@
 ---
 title: "Add Credential Policy Override"
 description: "Create a Credential Policy Override with a change schedule and verification schedule, then add credentials to it."
+keywords:
+  - Add Credential Policy Override
+  - Scheduled Change Policy
+  - Verification Schedule
+  - Credential Policy Overrides
+  - Add Credentials
 sidebar_position: 10
 ---
 

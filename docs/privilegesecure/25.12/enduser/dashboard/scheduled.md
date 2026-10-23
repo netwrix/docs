@@ -1,6 +1,14 @@
 ---
 title: "Scheduled Dashboard"
 description: "Reference for the Scheduled Dashboard, including its features, session statuses, and table columns."
+keywords:
+  - Scheduled Sessions
+  - Create Session
+  - End Session
+  - Provisioning
+  - Waiting for Approval
+  - Logged In
+  - Locked
 sidebar_position: 20
 ---
 

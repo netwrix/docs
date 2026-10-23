@@ -1,6 +1,11 @@
 ---
 title: "Access Policies Tab for Host"
 description: "Reference for the Access Policies tab on the Host Details page, which lists policies tied to the host resource."
+keywords:
+  - host access policies
+  - Access Policy
+  - host resource
+  - policy description
 sidebar_position: 40
 ---
 

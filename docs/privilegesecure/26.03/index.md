@@ -1,6 +1,12 @@
 ---
 title: "Netwrix Privilege Secure for Access Management v26.03 Documentation"
 description: "Overview of Netwrix Privilege Secure for Access Management, which provides just-in-time, just-enough privileged access."
+keywords:
+  - Privileged Access Management
+  - PAM
+  - just-in-time
+  - just-enough privilege
+  - task-based administrative access
 sidebar_position: 1
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "Requirements"
 description: "Review the servers required to install Privilege Secure, including the application server, client, proxy server, and target environment."
+keywords:
+  - system requirements
+  - application server
+  - proxy server
+  - target environment
+  - client
+  - architecture
 sidebar_position: 20
 ---
 

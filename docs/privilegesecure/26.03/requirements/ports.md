@@ -1,6 +1,15 @@
 ---
 title: "Ports"
 description: "Reference for the firewall ports Privilege Secure uses with domain controllers, proxies, clients, and target environments."
+keywords:
+  - firewall rules
+  - dynamic port range
+  - domain controllers
+  - LDAP
+  - Kerberos
+  - RDP
+  - SSH
+  - WinRM
 sidebar_position: 50
 ---
 

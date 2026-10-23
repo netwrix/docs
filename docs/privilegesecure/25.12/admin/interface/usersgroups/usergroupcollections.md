@@ -1,6 +1,13 @@
 ---
 title: "User and Group Collections Page"
 description: "Reference for the User and Group Collections page, which manages collections of users and groups that share the same rights."
+keywords:
+  - collections
+  - User and Group Collections
+  - Users Dashboard
+  - policies
+  - roles
+  - Add Users and Groups
 sidebar_position: 40
 ---
 

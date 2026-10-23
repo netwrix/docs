@@ -1,6 +1,12 @@
 ---
 title: "View Password Window"
 description: "View or copy the current password of a managed account in the View Password window, which closes after 20 seconds."
+keywords:
+  - View Password
+  - Countdown
+  - Eye icon
+  - Copy to Clipboard
+  - managed account password
 sidebar_position: 50
 ---
 

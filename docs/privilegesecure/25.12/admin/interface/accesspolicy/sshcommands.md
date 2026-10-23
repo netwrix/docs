@@ -1,6 +1,15 @@
 ---
 title: "SSH Command Restriction"
 description: "Create groups of SSH command restrictions that log, block, or terminate on matching commands, and apply them to connection profiles."
+keywords:
+  - SSH command restriction
+  - Command Restriction
+  - Match (regex)
+  - Block and lock
+  - Terminate
+  - Email Recipient
+  - SSH
+  - regular expression
 sidebar_position: 60
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "Add Resources Window"
 description: "Onboard resources in the Add Resources window by importing from Active Directory, importing from a CSV file, or adding them manually."
+keywords:
+  - onboard resources
+  - Import from AD
+  - Import from CSV
+  - Add Manually
+  - Available Resources
+  - Resources to Add
+  - nps-resource-import-template.csv
 sidebar_position: 10
 ---
 

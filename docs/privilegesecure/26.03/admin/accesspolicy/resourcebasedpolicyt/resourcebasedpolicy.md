@@ -1,6 +1,14 @@
 ---
 title: "Resource Based Policy"
 description: "Reference for the Users, Activities, and Resources tabs of resource based access policies, and how to add activities and resources."
+keywords:
+  - resource based access policy
+  - Users tab
+  - Activities tab
+  - Resources tab
+  - Add Activities
+  - Add Resources
+  - Quick Add
 sidebar_position: 20
 ---
 

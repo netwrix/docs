@@ -1,6 +1,13 @@
 ---
 title: "URLs Tab for Microsoft Entra ID"
 description: "Reference for the URLs tab on the Microsoft Entra ID Details page, including URL actions and match types."
+keywords:
+  - Entra ID URLs
+  - Match Type
+  - Add Website URL
+  - browser extension
+  - regex
+  - Azure AD
 sidebar_position: 10
 ---
 

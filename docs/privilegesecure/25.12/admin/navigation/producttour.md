@@ -1,6 +1,12 @@
 ---
 title: "Product Tour"
 description: "Learn how the product tour introduces role-relevant features on first login and how to stop or restart it from the user menu."
+keywords:
+  - product tour
+  - first login
+  - restart product tour
+  - user menu
+  - walk-through
 sidebar_position: 10
 ---
 

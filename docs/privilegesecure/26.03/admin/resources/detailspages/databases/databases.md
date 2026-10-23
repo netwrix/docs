@@ -1,6 +1,15 @@
 ---
 title: "Database Details"
 description: "Review a database resource on the Database Details page, including its server details, scan options, and available tabs."
+keywords:
+  - database resource
+  - Scan Now
+  - Service Account
+  - Domain
+  - Port
+  - Roles
+  - Access Policies
+  - Databases tab
 sidebar_position: 60
 ---
 

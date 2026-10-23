@@ -1,6 +1,15 @@
 ---
 title: "Add Connection Profile"
 description: "Add a connection profile that sets the proxy, session control, credential management, website, and approval workflow settings."
+keywords:
+  - add connection profile
+  - Connection Profiles
+  - proxy
+  - Session Control
+  - Credential Management
+  - Website Settings
+  - Custom Fields
+  - Approval Workflow
 sidebar_position: 10
 ---
 

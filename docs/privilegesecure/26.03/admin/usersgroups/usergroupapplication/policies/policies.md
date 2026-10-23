@@ -1,6 +1,13 @@
 ---
 title: "Policies Tab"
 description: "Reference for the Policies tab, which lists the access policies and activities associated with a user, group, or application."
+keywords:
+  - Policies tab
+  - access policies
+  - activities
+  - Add Account to Policies
+  - Last Session
+  - user group
 sidebar_position: 40
 ---
 

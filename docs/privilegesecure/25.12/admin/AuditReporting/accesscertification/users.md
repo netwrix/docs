@@ -1,6 +1,13 @@
 ---
 title: "Users Tab for Access Certification"
 description: "Add the users and groups that a reviewer certifies in an access certification task, and reference for the Users tab."
+keywords:
+  - Users tab
+  - Add Users to Review
+  - access certification task
+  - Available Users/Groups
+  - User Principal Name (UPN)
+  - reviewer
 sidebar_position: 30
 ---
 

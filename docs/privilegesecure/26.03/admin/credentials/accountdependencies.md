@@ -1,6 +1,14 @@
 ---
 title: "Account Dependencies Window"
 description: "Review the services and scheduled tasks that depend on a service account and rotate its credentials."
+keywords:
+  - Account Dependencies
+  - Rotate Service Account
+  - Change Now
+  - Rescan Resources
+  - Rollback
+  - scheduled tasks
+  - service account password
 sidebar_position: 30
 ---
 

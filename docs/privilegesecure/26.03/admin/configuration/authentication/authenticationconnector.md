@@ -1,6 +1,13 @@
 ---
 title: "Add Authentication Connector"
 description: "Add an MFA, OpenID Connect, or SAML authentication connector to the Privilege Secure console."
+keywords:
+  - authentication connector
+  - Connection Type
+  - MFA
+  - OpenID Connect
+  - SAML
+  - Configuration Wizard
 sidebar_position: 10
 ---
 

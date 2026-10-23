@@ -1,6 +1,13 @@
 ---
 title: "Custom Credential Role"
 description: "Reference for the custom credential role, which controls managed account credential policy and access."
+keywords:
+  - custom credential role
+  - Role Management
+  - managed account
+  - Schedule Rotation
+  - Rotate Services
+  - Permission Assignment
 sidebar_position: 60
 ---
 

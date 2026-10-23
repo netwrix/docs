@@ -1,6 +1,13 @@
 ---
 title: "Schedule Tab for Protection Policies"
 description: "Reference for the Schedule tab of a protection policy, including scheduled tasks, run times, and status columns."
+keywords:
+  - protection policy schedule
+  - Task Name
+  - Last Run Time
+  - Next Run Time
+  - Recurrence
+  - View Logs
 sidebar_position: 40
 ---
 

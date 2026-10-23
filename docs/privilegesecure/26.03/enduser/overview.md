@@ -1,6 +1,14 @@
 ---
 title: "Privilege Secure End User Overview"
 description: "Learn what the end user role covers in Privilege Secure and how to log in, including MFA registration."
+keywords:
+  - end user
+  - User role
+  - MFA
+  - multi-factor authentication
+  - IdP login
+  - Log In with a Different Account
+  - Browser Extension
 sidebar_position: 60
 ---
 

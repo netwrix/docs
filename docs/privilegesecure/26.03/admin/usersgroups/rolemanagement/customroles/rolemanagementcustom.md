@@ -1,6 +1,13 @@
 ---
 title: "Custom Roles"
 description: "Create a custom access, credential, or auditor role in Role Management by entering a name, description, and target type."
+keywords:
+  - Add Role
+  - custom role
+  - Role Management
+  - Access policies
+  - Credentials
+  - Auditors
 sidebar_position: 10
 ---
 

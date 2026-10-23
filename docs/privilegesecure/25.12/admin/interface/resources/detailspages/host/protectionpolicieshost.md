@@ -1,6 +1,11 @@
 ---
 title: "Protection Policies Tab for Host"
 description: "Reference for the Protection Policies tab on the Host Details page, which lists protection policies for the host."
+keywords:
+  - host protection policies
+  - Protection Policies
+  - policy search
+  - host resource
 sidebar_position: 30
 ---
 

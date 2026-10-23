@@ -1,6 +1,13 @@
 ---
 title: "Add Local User"
 description: "Add a local user stored in the Privilege Secure database so it can be assigned roles and access policies."
+keywords:
+  - Local User
+  - New Local User
+  - Change Password Next Login
+  - password
+  - Active Directory
+  - roles
 sidebar_position: 30
 ---
 

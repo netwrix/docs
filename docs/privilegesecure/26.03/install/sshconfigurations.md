@@ -1,6 +1,14 @@
 ---
 title: "SSH Configurations"
 description: "Configure SSH session launch and the SSH encryption algorithms in the session client and proxy configuration files."
+keywords:
+  - sbpam_ssh.json
+  - sbpam_sshclient.json
+  - SSH encryption algorithms
+  - SSH ciphers
+  - key exchange
+  - session client
+  - SSH proxy
 sidebar_position: 35
 ---
 

@@ -1,6 +1,12 @@
 ---
 title: "Email Configuration Page"
 description: "Set the website URL that Privilege Secure uses for links in emails and notifications on the Email Configuration page."
+keywords:
+  - Website URL
+  - emailed links
+  - email notifications
+  - System Settings
+  - Privilege Secure
 sidebar_position: 30
 ---
 

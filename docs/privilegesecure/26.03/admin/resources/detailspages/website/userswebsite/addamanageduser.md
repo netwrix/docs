@@ -1,6 +1,13 @@
 ---
 title: "Add a Managed User Window"
 description: "Add or edit a manually managed user account that activities use to log on to a website resource."
+keywords:
+  - managed user
+  - Login Account Template
+  - Display Name
+  - Username
+  - Password
+  - website resource
 sidebar_position: 10
 ---
 

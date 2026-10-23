@@ -1,6 +1,13 @@
 ---
 title: "Add Activity Token Complexity Policy"
 description: "Add an activity token complexity policy that sets the name, length, and character rules for activity tokens."
+keywords:
+  - Activity Token Complexity Policy
+  - add activity token complexity policy
+  - activity token
+  - consecutive characters
+  - characters to exclude
+  - connection profile
 sidebar_position: 10
 ---
 

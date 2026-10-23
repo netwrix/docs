@@ -1,6 +1,13 @@
 ---
 title: "Local Account Password Options Page"
 description: "Set the length, unique characters, character requirements, and expiration days for local account passwords in Privilege Secure."
+keywords:
+  - local account password
+  - password length
+  - unique characters
+  - expiration days
+  - Require Uppercase
+  - System Settings
 sidebar_position: 50
 ---
 

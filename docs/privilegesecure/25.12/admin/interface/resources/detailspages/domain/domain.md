@@ -1,6 +1,13 @@
 ---
 title: "Domain Details Page"
 description: "Review a domain resource on the Domain Details page, including synchronization status, frequency, and the related tabs."
+keywords:
+  - Synchronize Now
+  - Use TLS
+  - Last Synchronized
+  - synchronization frequency
+  - domain synchronization
+  - Test button
 sidebar_position: 20
 ---
 

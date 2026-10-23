@@ -1,6 +1,13 @@
 ---
 title: "Sessions Tab for Microsoft Entra ID"
 description: "Reference for the Sessions tab on the Microsoft Entra ID Details page, including session columns and status values."
+keywords:
+  - Entra ID sessions
+  - View Logs
+  - Waiting for Approval
+  - Requested By
+  - Login Account
+  - Azure AD
 sidebar_position: 40
 ---
 

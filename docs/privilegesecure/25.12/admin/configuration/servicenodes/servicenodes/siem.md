@@ -1,6 +1,13 @@
 ---
 title: "SIEM Service"
 description: "View SIEM events that the SIEM Service processes, with search, a status filter, and sent details."
+keywords:
+  - SIEM Service
+  - SIEM Host
+  - Filter by Status
+  - Sent Time
+  - Not Sent
+  - Message
 sidebar_position: 60
 ---
 

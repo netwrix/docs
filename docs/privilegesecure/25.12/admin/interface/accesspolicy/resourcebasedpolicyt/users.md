@@ -1,6 +1,14 @@
 ---
 title: "Users Tab for Resource Based Access Policies"
 description: "Reference for the Users tab, which lists the users and groups associated with a resource based access policy."
+keywords:
+  - Users tab
+  - Add Users and Groups
+  - Certified
+  - Quick Add
+  - local user
+  - access policy
+  - resource based access policy
 sidebar_position: 10
 ---
 

@@ -1,6 +1,12 @@
 ---
 title: "Product Tour"
 description: "Learn how the first-login product tour works and how to stop or restart it from the user menu."
+keywords:
+  - first login
+  - X icon
+  - user menu
+  - restart tour
+  - walk-through
 sidebar_position: 10
 ---
 

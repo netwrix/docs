@@ -1,6 +1,14 @@
 ---
 title: "Password Complexity"
 description: "Review password complexity policies on the Password Complexity page and the settings that control passwords for managed accounts."
+keywords:
+  - password policy
+  - managed accounts
+  - Must Start With
+  - Max Consecutive Chars
+  - Characters to Exclude
+  - Included Characters
+  - Default policy
 sidebar_position: 30
 ---
 

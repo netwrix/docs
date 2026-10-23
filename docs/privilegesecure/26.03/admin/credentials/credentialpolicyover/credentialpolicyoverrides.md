@@ -1,6 +1,12 @@
 ---
 title: "Credential Policy Overrides"
 description: "Reference for the Credential Policy Overrides page, including override details and the credentials table."
+keywords:
+  - Credential Policy Overrides
+  - scheduled change policy
+  - verification schedule
+  - Add Credentials
+  - Managed Type
 sidebar_position: 70
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "Authentication Connector Tab"
 description: "Choose the multi-factor authentication method for a user or group on the Authentication Connector tab and see which method takes priority."
+keywords:
+  - Authentication Connector
+  - multi-factor authentication
+  - MFA
+  - Internal MFA
+  - RADIUS
+  - Duo SAML
 sidebar_position: 70
 ---
 

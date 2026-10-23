@@ -1,6 +1,13 @@
 ---
 title: "Properties Tab"
 description: "Reference for the Properties tab, which holds the display name, department, email, and account names for an application."
+keywords:
+  - Properties tab
+  - application user
+  - Display Name
+  - Department
+  - SamAccountName
+  - User Principal Name
 sidebar_position: 110
 ---
 

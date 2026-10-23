@@ -1,6 +1,12 @@
 ---
 title: "Add Credential Groups"
 description: "Create a credential group and add credentials to it for use in Credential Based access policies."
+keywords:
+  - Add Credential Groups
+  - credential group
+  - Credential Based access policies
+  - Add Credentials
+  - Credentials page
 sidebar_position: 10
 ---
 

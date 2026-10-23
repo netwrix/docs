@@ -1,6 +1,11 @@
 ---
 title: "Add Protection Policy"
 description: "Add a protection policy to the console by entering a name and an optional description."
+keywords:
+  - add a protection policy
+  - protection policy name
+  - Plus icon
+  - Protection Policies
 sidebar_position: 10
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "Add Password Complexity Policy"
 description: "Add a password complexity policy to the console by completing the name, length, start and end, and included character fields."
+keywords:
+  - add password policy
+  - Must start with
+  - Max consecutive chars
+  - Characters to exclude
+  - Include characters
+  - password complexity
 sidebar_position: 10
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "Install Components & Methods"
 description: "Reference for the files in the NPS.zip download and the installers in the Extras folder, with what each one installs."
+keywords:
+  - NPS.zip
+  - Extras folder
+  - NPS_Setup.exe
+  - Netwrix Setup Launcher
+  - PostgreSQL
+  - silent installation
+  - SbPostgreSQL16.exe
 sidebar_position: 10
 ---
 

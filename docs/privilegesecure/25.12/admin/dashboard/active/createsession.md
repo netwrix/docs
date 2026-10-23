@@ -1,6 +1,14 @@
 ---
 title: "Create Activity Session"
 description: "Create an activity session from the Active dashboard by choosing an activity, resources, notes, and a schedule."
+keywords:
+  - Activity Request
+  - Create Session
+  - Resource Selection
+  - Scheduling
+  - Review
+  - activity session
+  - Ticket number
 sidebar_position: 10
 ---
 

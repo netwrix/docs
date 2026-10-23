@@ -1,6 +1,13 @@
 ---
 title: "Remote Access Gateway"
 description: "Learn how the Remote Access Gateway extends browser-based RDP and SSH access to external users through the RAG Portal and RAG Gateway."
+keywords:
+  - Remote Access Gateway
+  - RAG Portal
+  - RAG Gateway
+  - VPN-less access
+  - browser-based RDP
+  - DMZ
 sidebar_position: 10
 ---
 

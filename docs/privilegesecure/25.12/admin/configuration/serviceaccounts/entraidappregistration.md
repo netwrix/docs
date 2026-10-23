@@ -1,6 +1,13 @@
 ---
 title: "Microsoft Entra ID App Registration"
 description: "Create a Microsoft Entra ID app registration, secret, and role assignments for a Privilege Secure service account."
+keywords:
+  - Microsoft Entra ID
+  - App Registration
+  - Tenant ID
+  - Grant Admin Consent
+  - User Administrator
+  - Password Writeback
 sidebar_position: 20
 ---
 

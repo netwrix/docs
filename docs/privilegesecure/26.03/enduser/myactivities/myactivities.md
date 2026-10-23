@@ -1,6 +1,12 @@
 ---
 title: "My Activities"
 description: "Learn how the My Activities page lists your activities as cards, sorted alphabetically or by Access Policy."
+keywords:
+  - Access interface
+  - activity cards
+  - Access Policy
+  - alphabetical order
+  - Create Activity Session
 sidebar_position: 30
 ---
 

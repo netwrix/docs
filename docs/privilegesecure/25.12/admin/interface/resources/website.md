@@ -1,6 +1,13 @@
 ---
 title: "Add Website"
 description: "Add a website resource to the Privilege Secure Console, including its logon URL, associated resource, and service account."
+keywords:
+  - Website Resource
+  - New Website
+  - Logon URL
+  - Associated Domain Controller
+  - Service Account
+  - Resources page
 sidebar_position: 30
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "Approvals Dashboard: Approver"
 description: "Reference for the Approvals Dashboard, where approvers search, approve, or deny requested sessions, with its table columns."
+keywords:
+  - Approvals Dashboard
+  - approver
+  - approve session
+  - deny session
+  - Waiting for Approval
+  - Ticket Number
+  - bulk action
 sidebar_position: 30
 ---
 

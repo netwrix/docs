@@ -1,6 +1,14 @@
 ---
 title: "Configure DirectConnect for Remote Desktop Connection"
 description: "Configure DirectConnect connection strings and client settings for PuTTY, MobaXterm, and Microsoft Remote Desktop."
+keywords:
+  - DirectConnect
+  - PuTTY
+  - MobaXterm
+  - Remote Desktop Connection Manager
+  - RDP
+  - SSH
+  - connection string
 sidebar_position: 10
 ---
 

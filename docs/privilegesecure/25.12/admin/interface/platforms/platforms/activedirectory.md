@@ -1,6 +1,14 @@
 ---
 title: "Active Directory Platform Policy Configuration"
 description: "Configure the Active Directory platform policy, including the built-in account, password complexity, scheduled change, and verification settings."
+keywords:
+  - Active Directory platform
+  - Built-in Account
+  - Password Complexity Policy
+  - Scheduled Change Policy
+  - Verification Schedule
+  - Reset on Mismatch
+  - credential rotation
 sidebar_position: 10
 ---
 

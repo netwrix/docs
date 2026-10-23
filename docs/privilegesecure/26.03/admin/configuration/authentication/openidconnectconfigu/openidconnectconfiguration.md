@@ -1,6 +1,14 @@
 ---
 title: "OpenID Connect Configuration Wizard"
 description: "Configure an OpenID Connect authentication connector with the Configuration Wizard, from client setup to ID mapping."
+keywords:
+  - OpenID Connect
+  - Configuration Wizard
+  - Configure Client
+  - Test Login
+  - Configure Id Mapping
+  - Get User Data
+  - Okta
 sidebar_position: 20
 ---
 

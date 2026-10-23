@@ -1,6 +1,12 @@
 ---
 title: "Access > My Activities Page"
 description: "Open the Access > My Activities page to see Activities as cards, sort them by name or Access Policy, and start a session."
+keywords:
+  - Access
+  - Activity cards
+  - sort by Access Policy
+  - Activity Session
+  - Create My Activity Session
 sidebar_position: 30
 ---
 

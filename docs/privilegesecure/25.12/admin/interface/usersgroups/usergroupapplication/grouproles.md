@@ -1,6 +1,12 @@
 ---
 title: "Group Roles Tab"
 description: "Reference for the Group Roles tab, which shows whether a group is assigned an application role and lets you add or remove roles."
+keywords:
+  - Group Roles
+  - application role
+  - Add Role
+  - Remove Role
+  - user groups
 sidebar_position: 90
 ---
 

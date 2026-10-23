@@ -1,6 +1,14 @@
 ---
 title: "Log File Options"
 description: "Set the minimum log level, retained file count limit, and file size limit for each Privilege Secure service."
+keywords:
+  - log level
+  - Minimum Log Level
+  - Verbose
+  - Debug
+  - Retained File Count Limit
+  - File Size Limit Bytes
+  - Action Service
 sidebar_position: 10
 ---
 

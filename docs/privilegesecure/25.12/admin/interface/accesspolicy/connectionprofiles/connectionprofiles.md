@@ -1,6 +1,12 @@
 ---
 title: "Connection Profiles Page"
 description: "Manage the session settings of an access policy with connection profiles, including approval workflows that gate session logins."
+keywords:
+  - Connection Profiles
+  - approval workflow
+  - session settings
+  - access policy
+  - connection profile
 sidebar_position: 40
 ---
 

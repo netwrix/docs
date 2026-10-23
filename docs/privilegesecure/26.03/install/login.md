@@ -1,6 +1,14 @@
 ---
 title: "Log Into the Privilege Secure Console"
 description: "Log in to the Privilege Secure Console in a browser, including the default port, MFA, and expired-license behavior."
+keywords:
+  - log in
+  - default port 6500
+  - expired license
+  - MFA Login
+  - Authentication Connector
+  - account lockout
+  - Privilege Secure Console
 sidebar_position: 50
 ---
 

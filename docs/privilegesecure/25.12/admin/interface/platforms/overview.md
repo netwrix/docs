@@ -1,6 +1,15 @@
 ---
 title: "Platforms Page"
 description: "Use the Platforms page to apply default configurations to all resources of a platform type, and find the settings for each default platform."
+keywords:
+  - platform types
+  - Copy icon
+  - Trashcan icon
+  - default platforms
+  - Microsoft Entra ID
+  - Microsoft SQL Server
+  - Oracle
+  - Cisco
 sidebar_position: 20
 ---
 

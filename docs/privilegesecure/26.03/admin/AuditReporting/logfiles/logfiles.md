@@ -1,6 +1,13 @@
 ---
 title: "Log Files"
 description: "View and search Privilege Secure log files from within the console, and find where the log files are saved."
+keywords:
+  - Log Files
+  - log file location
+  - Oldest/Newest Are At The Top
+  - Go To Top
+  - search logs
+  - ProgramData
 sidebar_position: 50
 ---
 

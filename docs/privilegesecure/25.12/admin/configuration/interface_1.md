@@ -1,6 +1,13 @@
 ---
 title: "Configuration Interface"
 description: "Reference for the Configuration interface and the related pages in the Configuration menu of the Navigation pane."
+keywords:
+  - Configuration menu
+  - Service Accounts
+  - Service Nodes
+  - System Settings
+  - SIEM
+  - Integration Connectors
 sidebar_position: 60
 ---
 

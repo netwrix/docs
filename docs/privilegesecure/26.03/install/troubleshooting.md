@@ -1,6 +1,14 @@
 ---
 title: "Troubleshooting"
 description: "Use the Enablement Toolkit to test connectivity, and sign RDP files so Windows trusts the publisher of Privilege Secure RDP connections."
+keywords:
+  - Enablement Toolkit
+  - sign RDP files
+  - untrusted publisher
+  - certificate thumbprint
+  - Group Policy
+  - InsecureSkipVerify
+  - RestURL
 sidebar_position: 80
 ---
 

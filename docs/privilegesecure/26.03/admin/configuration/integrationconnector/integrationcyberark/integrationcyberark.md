@@ -1,6 +1,13 @@
 ---
 title: "CyberArk Integration"
 description: "Add a CyberArk vault connector so Privilege Secure can use accounts from the Central Credential Provider."
+keywords:
+  - CyberArk
+  - Central Credential Provider
+  - Integration Connectors
+  - API Url
+  - App ID
+  - Client Certificate
 sidebar_position: 20
 ---
 

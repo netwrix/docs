@@ -1,6 +1,14 @@
 ---
 title: "AWS Key Management Service"
 description: "Create the AWS policy, user, and managed key that let Privilege Secure protect its encryption keys with AWS Key Management Service."
+keywords:
+  - AWS KMS
+  - AWS policy
+  - IAM
+  - Decrypt permission
+  - customer managed keys
+  - ARN
+  - least privilege policy
 sidebar_position: 60
 ---
 

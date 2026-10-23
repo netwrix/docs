@@ -1,6 +1,14 @@
 ---
 title: "Rotation Methods"
 description: "Compare credential rotation methods for Standard, Internal, and Service accounts, including buttons and management status."
+keywords:
+  - credential rotation
+  - Schedule Rotation
+  - Rotate Service Account
+  - Managed Type
+  - Automatic
+  - Manual
+  - Unmanaged
 sidebar_position: 10
 ---
 

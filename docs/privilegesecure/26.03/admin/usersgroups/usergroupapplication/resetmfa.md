@@ -1,6 +1,13 @@
 ---
 title: "Reset User MFA"
 description: "Reset a user's MFA from the Users & Groups page so the user must register a new authenticator at the next login."
+keywords:
+  - Reset MFA
+  - MFA
+  - TOTP
+  - authenticator
+  - Internal MFA
+  - Users and Groups page
 sidebar_position: 10
 ---
 

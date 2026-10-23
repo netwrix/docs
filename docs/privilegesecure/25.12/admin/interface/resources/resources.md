@@ -1,6 +1,14 @@
 ---
 title: "Resources Page"
 description: "Reference for the Resources page, including how to add, scan, and remove resources and the table columns."
+keywords:
+  - Scan Resource
+  - onboard resources
+  - New Server
+  - New Domain
+  - New Website
+  - Remove
+  - Refresh
 sidebar_position: 50
 ---
 

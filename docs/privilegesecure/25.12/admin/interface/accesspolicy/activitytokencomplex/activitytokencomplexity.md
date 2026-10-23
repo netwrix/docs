@@ -1,6 +1,14 @@
 ---
 title: "Activity Token Complexity Page"
 description: "Reference for the Activity Token Complexity page, including the rules that control the complexity of activity tokens."
+keywords:
+  - Activity Token Complexity
+  - activity tokens
+  - Must Start With
+  - Must End With
+  - Max Consecutive Chars
+  - Characters to Exclude
+  - Included Characters
 sidebar_position: 50
 ---
 

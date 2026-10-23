@@ -1,6 +1,13 @@
 ---
 title: "Browser Extension App"
 description: "Find the Privilege Secure browser extension for Chrome and Edge, which launches web sessions directly from the browser."
+keywords:
+  - Chrome
+  - Edge
+  - browser extension
+  - web sessions
+  - Chrome web store
+  - Microsoft Edge Add-ons
 sidebar_position: 60
 ---
 

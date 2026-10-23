@@ -1,6 +1,12 @@
 ---
 title: "Local Rights Tab"
 description: "Reference for the Local Rights tab, which shows the local groups and hosts where a user has been granted rights."
+keywords:
+  - Local Rights
+  - local groups
+  - Host Details
+  - host
+  - user rights
 sidebar_position: 50
 ---
 

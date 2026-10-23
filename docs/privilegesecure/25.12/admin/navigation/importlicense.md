@@ -1,6 +1,14 @@
 ---
 title: "Import the License File"
 description: "Import a license file from the About page to replace the 30-day trial license, and learn how an expired license affects users."
+keywords:
+  - Upload License File
+  - Import License
+  - expired license
+  - trial license
+  - license file
+  - User Options
+  - 30-day trial
 sidebar_position: 30
 ---
 

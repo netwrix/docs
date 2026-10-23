@@ -1,6 +1,15 @@
 ---
 title: "SIEM Server"
 description: "Define a SIEM Server endpoint, its connection method, and template, and review events the SIEM service processes."
+keywords:
+  - SIEM Server
+  - SIEM Host
+  - Server Type
+  - Use SSL
+  - TLS
+  - TCP
+  - UDP
+  - Template
 sidebar_position: 100
 ---
 

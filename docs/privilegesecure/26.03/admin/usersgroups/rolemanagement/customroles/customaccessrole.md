@@ -1,6 +1,14 @@
 ---
 title: "Custom Access Role"
 description: "Reference for the custom access role, which lets users modify selected parts of Access Policies normally reserved for Administrators."
+keywords:
+  - custom access role
+  - Role Management
+  - Access Policies
+  - Modify Name
+  - Modify Activities
+  - Permission Assignment
+  - Role Users
 sidebar_position: 40
 ---
 

@@ -1,6 +1,12 @@
 ---
 title: "Host Scan Service"
 description: "View host scan logs and the queue of pending scans that the Host Scan Service runs."
+keywords:
+  - Scan Logs
+  - Scan Queue
+  - View Logs
+  - host scanning
+  - Activity service
 sidebar_position: 30
 ---
 

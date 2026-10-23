@@ -1,6 +1,13 @@
 ---
 title: "First Launch"
 description: "Run the Setup Wizard after installation to create the primary Administrator, register MFA, sync Active Directory, and onboard a resource."
+keywords:
+  - Setup Wizard
+  - primary Administrator
+  - MFA
+  - Active Directory domain synchronization
+  - recovery codes
+  - Exit Wizard
 sidebar_position: 40
 ---
 

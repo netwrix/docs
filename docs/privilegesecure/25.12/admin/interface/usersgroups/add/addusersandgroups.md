@@ -1,6 +1,13 @@
 ---
 title: "Add Users & Groups Window"
 description: "Select and onboard users and groups with the Add Users & Groups window, and learn the fields and columns it shows."
+keywords:
+  - Add Users
+  - onboard users
+  - Active Directory
+  - Available Accounts
+  - Accounts to Add
+  - Users and Groups page
 sidebar_position: 10
 ---
 

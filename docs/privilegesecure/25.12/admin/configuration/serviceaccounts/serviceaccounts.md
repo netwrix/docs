@@ -1,6 +1,14 @@
 ---
 title: "Service Accounts Page"
 description: "Reference for the Service Accounts page, including account fields, authentication options, and vault connector settings."
+keywords:
+  - Elevation Command
+  - Authentication Method
+  - Enable Password
+  - SSH Certificate
+  - Microsoft Entra ID App Registration
+  - Vault Connector
+  - CyberArk
 sidebar_position: 10
 ---
 

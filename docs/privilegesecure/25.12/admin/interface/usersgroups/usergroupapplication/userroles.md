@@ -1,6 +1,12 @@
 ---
 title: "User Roles Tab"
 description: "Reference for the User Roles tab, which shows whether a user is assigned an application role and lets you add or remove roles."
+keywords:
+  - User Roles
+  - application role
+  - Add Role
+  - Remove Role
+  - Assigned
 sidebar_position: 80
 ---
 

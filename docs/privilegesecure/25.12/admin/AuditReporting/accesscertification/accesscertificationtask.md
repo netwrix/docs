@@ -1,6 +1,13 @@
 ---
 title: "Add Access Certification Task"
 description: "Add an access certification task that assigns a reviewer to audit and certify user access in Privilege Secure."
+keywords:
+  - add access certification task
+  - Access Certification Task list
+  - Reviewer
+  - Admin Role
+  - New Cert. Task
+  - Add Access Cert. Task
 sidebar_position: 10
 ---
 

@@ -1,6 +1,12 @@
 ---
 title: "Enroll Hosts in Management Window"
 description: "Add a domain computer as an NPS managed resource by using the Enroll Hosts in Management window and a service account."
+keywords:
+  - Enroll Hosts in Management
+  - Add as NPS Managed Resource
+  - Use Service Account
+  - add computer
+  - Computers tab
 sidebar_position: 10
 ---
 

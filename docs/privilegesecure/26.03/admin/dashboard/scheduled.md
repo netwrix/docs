@@ -1,6 +1,13 @@
 ---
 title: "Scheduled Dashboard"
 description: "See all scheduled sessions on the Scheduled dashboard, including the session status values, toolbar actions, and table columns."
+keywords:
+  - scheduled sessions
+  - Create Session
+  - End Session
+  - Waiting for Approval
+  - session status
+  - Login Account
 sidebar_position: 20
 ---
 

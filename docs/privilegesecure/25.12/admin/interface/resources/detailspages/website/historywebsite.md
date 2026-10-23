@@ -1,6 +1,12 @@
 ---
 title: "History Tab for Website"
 description: "Reference for the History tab on the Website Details page, including session log access and event columns."
+keywords:
+  - website session history
+  - View Logs
+  - Session Logs
+  - Event Message
+  - Session ID
 sidebar_position: 50
 ---
 

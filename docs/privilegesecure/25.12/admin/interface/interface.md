@@ -1,6 +1,14 @@
 ---
 title: "Policy Interface"
 description: "Overview of the Policy interface with links to its pages for access policies, platforms, users, resources, credentials, and activities."
+keywords:
+  - Policy interface
+  - Access Policy
+  - Connection Profiles
+  - Platforms
+  - Protection Policies
+  - Credentials
+  - Activities
 sidebar_position: 50
 ---
 

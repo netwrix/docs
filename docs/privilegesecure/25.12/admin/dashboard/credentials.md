@@ -1,6 +1,15 @@
 ---
 title: "Credentials Dashboard"
 description: "Reference for the Credentials dashboard, including filters, actions, and table columns for managed accounts."
+keywords:
+  - Credentials dashboard
+  - Manage
+  - Unmanage
+  - Rotate
+  - Verify
+  - View History
+  - Privilege Type
+  - Last Logon
 sidebar_position: 70
 ---
 

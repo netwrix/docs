@@ -1,6 +1,13 @@
 ---
 title: "Configure Secure WinRM Connection Window"
 description: "Configure a secure WinRM connection for a host by choosing a certificate source and providing a certificate thumbprint."
+keywords:
+  - WinRM Config
+  - secure WinRM connection
+  - certificate thumbprint
+  - self-signed certificate
+  - Import certificate from host
+  - Push NPS certificate to host
 sidebar_position: 20
 ---
 

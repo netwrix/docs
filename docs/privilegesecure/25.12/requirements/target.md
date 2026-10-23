@@ -1,6 +1,14 @@
 ---
 title: "Target Environments"
 description: "Review the target environments Privilege Secure can manage and the service account permissions each one requires."
+keywords:
+  - target environments
+  - Microsoft Active Directory
+  - Microsoft Entra ID
+  - Linux
+  - Cisco IOS
+  - Oracle
+  - service account permissions
 sidebar_position: 40
 ---
 

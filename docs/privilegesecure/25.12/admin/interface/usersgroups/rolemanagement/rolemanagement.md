@@ -1,6 +1,14 @@
 ---
 title: "Role Management Page"
 description: "Reference for the Role Management page, including default role permissions and how to add users to each role."
+keywords:
+  - Role Management
+  - default roles
+  - Administrator
+  - Reviewer
+  - Auditor
+  - Approver
+  - custom roles
 sidebar_position: 30
 ---
 

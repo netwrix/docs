@@ -1,6 +1,14 @@
 ---
 title: "Schedule Policies"
 description: "Review the configured schedule policies, see where schedules apply, and find the actions for adding, editing, and deleting them."
+keywords:
+  - schedule recurrence
+  - Change Policy
+  - Host scan
+  - Verification
+  - Green + button
+  - Edit icon
+  - credential rotation
 sidebar_position: 40
 ---
 

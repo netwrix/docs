@@ -1,6 +1,13 @@
 ---
 title: "Sessions Tab for Host"
 description: "Reference for the Sessions tab on the Host Details page, including session columns and status values."
+keywords:
+  - host sessions
+  - View Logs
+  - Waiting for Approval
+  - Requested By
+  - Login Account
+  - Session Logs
 sidebar_position: 30
 ---
 

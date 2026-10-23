@@ -1,6 +1,14 @@
 ---
 title: "Service Nodes"
 description: "Configure the services running on each installed service node and check whether they are online."
+keywords:
+  - Service Nodes
+  - Search Service Nodes
+  - Search Services
+  - Status icon
+  - Action Service
+  - Email Service
+  - Scheduler Service
 sidebar_position: 10
 ---
 

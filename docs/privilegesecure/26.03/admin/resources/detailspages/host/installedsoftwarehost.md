@@ -1,6 +1,11 @@
 ---
 title: "Installed Software Tab for Host"
 description: "Reference for the Installed Software tab on the Host Details page, which lists software installed on the host."
+keywords:
+  - installed software
+  - Software Name
+  - host software inventory
+  - Version
 sidebar_position: 90
 ---
 

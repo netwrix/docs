@@ -1,6 +1,12 @@
 ---
 title: "Session Timeout"
 description: "Learn when the Privilege Secure Console logs out an inactive user and how to stay logged in."
+keywords:
+  - Session Timeout
+  - inactivity
+  - automatic logout
+  - Stay Logged In
+  - 10 minutes
 sidebar_position: 10
 ---
 

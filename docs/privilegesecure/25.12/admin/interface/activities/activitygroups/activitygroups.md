@@ -1,6 +1,12 @@
 ---
 title: "Activity Groups Page"
 description: "Reference for the Activity Groups page, including the group list, group details, and activities table."
+keywords:
+  - activity groups
+  - Activities
+  - cross platform activities
+  - Created By
+  - Add Activities window
 sidebar_position: 30
 ---
 

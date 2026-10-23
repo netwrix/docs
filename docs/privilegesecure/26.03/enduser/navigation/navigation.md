@@ -1,6 +1,14 @@
 ---
 title: "Navigation"
 description: "Find the Privilege Secure Console menu bar, interfaces, and user menu, and look up the icons used across the console."
+keywords:
+  - menu bar
+  - User Menu
+  - Dark Mode
+  - Product Tour
+  - Logout
+  - Console Icons
+  - interface icons
 sidebar_position: 20
 ---
 
