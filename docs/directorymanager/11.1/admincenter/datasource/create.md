@@ -278,7 +278,7 @@ The data source is available on the Access tab of the Data Sources page.
 ## Create a Data Source for a Text/CSV File
 
 You can create a data source for a comma-separated values (.csv) file or a text (.txt) file. You
-must also specify the delimiter used in the file to separate values.
+must also specify the delimiter that separates values in the file.
 
 You can use this data source in queries and as a source in Synchronize jobs. You can't use it as a
 destination.
